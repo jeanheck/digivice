@@ -1,0 +1,71 @@
+## Ignore Visual Studio temporary files, type libraries, and caches
+.vs/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio 2015/2017 cache directories
+.vs/
+
+## Visual Studio Code
+.vscode/
+
+## JetBrains tools
+.idea/
+*.sln.iml
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Bb]in/
+[Oo]bj/
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Backup & temp files from Microsoft Office
+~$*
+*~
+
+## Ghostscript files
+*.pdf
+*.eps
+*.ps
+
+## ReSharper
+*_ReSharper*
+*.ReSharper.user
+
+## Rider
+.idea/
+*.sln.iml
+
+## NuGet
+*.nupkg
+*.snupkg
+# The packages folder can be ignored because of PackageReference usage
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+## Others
+.DS_Store
+Thumbs.db
