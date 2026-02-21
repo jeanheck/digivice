@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jbPxnia2Sr0=",
+  "success": true,
+  "projectFilePath": "C:\\Projetos\\digivice-backend\\Backend\\Backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jean\\.nuget\\packages\\serilog\\4.3.1\\serilog.4.3.1.nupkg.sha512",
+    "C:\\Users\\Jean\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
