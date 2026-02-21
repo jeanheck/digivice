@@ -12,7 +12,12 @@ namespace Backend.Services
         private static class Offsets
         {
             public const int ProtagonistName = 0x00048D88;
+
             public const int PartySlot1 = 0x00048DA4;
+            public const int PartySlot2 = 0x00048DA8;
+            public const int PartySlot3 = 0x00048DAC;
+
+            public static readonly int[] PartySlots = { PartySlot1, PartySlot2, PartySlot3 };
 
             // Offsets relative to Digimon base address
             public const int Experience = 0x18;
@@ -54,14 +59,14 @@ namespace Backend.Services
         public Party GetParty()
         {
             var party = new Party();
-            var slots = _memoryReader.ReadBytes(Offsets.PartySlot1, 12);
 
-            if (slots == null) return party;
-
-            for (int i = 0; i < 3; i++)
+            foreach (var slotAddress in Offsets.PartySlots)
             {
-                int idOffset = i * 4;
-                byte id = slots[idOffset];
+                // Each slot ID is an Int32, but we only need the first byte
+                var idBytes = _memoryReader.ReadBytes(slotAddress, 4);
+                if (idBytes == null) continue;
+
+                byte id = idBytes[0];
 
                 if (_digimonDatabase.TryGetValue(id, out var data))
                 {
