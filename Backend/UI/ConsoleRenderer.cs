@@ -27,8 +27,8 @@ namespace Backend.UI
             {
                 for (int i = 0; i < party.Digimons.Count; i++)
                 {
-                    var digi = party.Digimons[i];
-                    Console.WriteLine($" - Slot {i + 1}: {digi.Name.PadRight(10)} [Lvl: {digi.Level:D2}] [EXP: {digi.Experience:D6}]");
+                    var d = party.Digimons[i];
+                    Console.WriteLine($" - Slot {i + 1}: {d.Name.PadRight(10)} [Lvl: {d.Level:D2}] [EXP: {d.Experience:D6}] HP: {d.CurrentHP:D3}/{d.MaxHP:D3} MP: {d.CurrentMP:D3}/{d.MaxMP:D3}");
                 }
             }
 
