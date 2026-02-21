@@ -26,6 +26,13 @@ namespace Backend.Services
             public const int MaxHP = 0x22;
             public const int CurrentMP = 0x24;
             public const int MaxMP = 0x26;
+
+            public const int Attack = 0x28;
+            public const int Defense = 0x2A;
+            public const int Spirit = 0x2C;
+            public const int Wisdom = 0x2E;
+            public const int Speed = 0x30;
+            public const int Charisma = 0x32;
         }
 
         private static readonly Dictionary<int, (string Name, int Address)> _digimonDatabase = new()
@@ -80,7 +87,13 @@ namespace Backend.Services
                         CurrentHP = _memoryReader.ReadInt16(data.Address + Offsets.CurrentHP),
                         MaxHP = _memoryReader.ReadInt16(data.Address + Offsets.MaxHP),
                         CurrentMP = _memoryReader.ReadInt16(data.Address + Offsets.CurrentMP),
-                        MaxMP = _memoryReader.ReadInt16(data.Address + Offsets.MaxMP)
+                        MaxMP = _memoryReader.ReadInt16(data.Address + Offsets.MaxMP),
+                        Attack = _memoryReader.ReadInt16(data.Address + Offsets.Attack),
+                        Defense = _memoryReader.ReadInt16(data.Address + Offsets.Defense),
+                        Spirit = _memoryReader.ReadInt16(data.Address + Offsets.Spirit),
+                        Wisdom = _memoryReader.ReadInt16(data.Address + Offsets.Wisdom),
+                        Speed = _memoryReader.ReadInt16(data.Address + Offsets.Speed),
+                        Charisma = _memoryReader.ReadInt16(data.Address + Offsets.Charisma)
                     });
                 }
             }
