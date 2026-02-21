@@ -57,11 +57,17 @@ namespace Backend.Services
                 // In DW3, if a slot is empty, it usually has a value like 0xFF
                 if (_digimonDatabase.TryGetValue(id, out var data))
                 {
+                    // Level and Exp offsets relative to our database base addresses
+                    int exp = _memoryReader.ReadInt32(data.Address + 0x18);
+                    short lvl = _memoryReader.ReadInt16(data.Address + 0x1C);
+
                     party.Digimons.Add(new Digimon
                     {
                         Id = id,
                         Name = data.Name,
-                        BaseAddress = data.Address
+                        BaseAddress = data.Address,
+                        Experience = exp,
+                        Level = lvl
                     });
                 }
             }
