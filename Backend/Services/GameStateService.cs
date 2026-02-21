@@ -33,6 +33,14 @@ namespace Backend.Services
             public const int Wisdom = 0x2E;
             public const int Speed = 0x30;
             public const int Charisma = 0x32;
+
+            public const int FireResistance = 0x34;
+            public const int WaterResistance = 0x36;
+            public const int IceResistance = 0x38;
+            public const int WindResistance = 0x3A;
+            public const int ThunderResistance = 0x3C;
+            public const int MetalResistance = 0x3E;
+            public const int DarkResistance = 0x40;
         }
 
         private static readonly Dictionary<int, (string Name, int Address)> _digimonDatabase = new()
@@ -93,7 +101,14 @@ namespace Backend.Services
                         Spirit = _memoryReader.ReadInt16(data.Address + Offsets.Spirit),
                         Wisdom = _memoryReader.ReadInt16(data.Address + Offsets.Wisdom),
                         Speed = _memoryReader.ReadInt16(data.Address + Offsets.Speed),
-                        Charisma = _memoryReader.ReadInt16(data.Address + Offsets.Charisma)
+                        Charisma = _memoryReader.ReadInt16(data.Address + Offsets.Charisma),
+                        FireResistance = _memoryReader.ReadInt16(data.Address + Offsets.FireResistance),
+                        WaterResistance = _memoryReader.ReadInt16(data.Address + Offsets.WaterResistance),
+                        IceResistance = _memoryReader.ReadInt16(data.Address + Offsets.IceResistance),
+                        WindResistance = _memoryReader.ReadInt16(data.Address + Offsets.WindResistance),
+                        ThunderResistance = _memoryReader.ReadInt16(data.Address + Offsets.ThunderResistance),
+                        MetalResistance = _memoryReader.ReadInt16(data.Address + Offsets.MetalResistance),
+                        DarkResistance = _memoryReader.ReadInt16(data.Address + Offsets.DarkResistance)
                     });
                 }
             }
