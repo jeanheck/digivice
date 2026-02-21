@@ -14,10 +14,10 @@ namespace Backend.UI
 
             if (player != null)
             {
-                Console.WriteLine($"Player name: {player.Name}");
+                Console.WriteLine($"Player name: {player.Name.PadRight(10)} | Bits: {player.Bits:N0}");
             }
 
-            Console.WriteLine("Party:");
+            Console.WriteLine();
 
             if (party.Digimons.Count == 0)
             {
