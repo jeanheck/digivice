@@ -9,10 +9,21 @@ namespace Backend.Services
     {
         private readonly IMemoryReader _memoryReader;
 
-        private const int ProtagonistNameAddress = 0x00048D88;
-        private const int PartySlot1Address = 0x00048DA4;
+        private static class Offsets
+        {
+            public const int ProtagonistName = 0x00048D88;
+            public const int PartySlot1 = 0x00048DA4;
 
-        private readonly Dictionary<int, (string Name, int Address)> _digimonDatabase = new()
+            // Offsets relative to Digimon base address
+            public const int Experience = 0x18;
+            public const int Level = 0x1C;
+            public const int CurrentHP = 0x20;
+            public const int MaxHP = 0x22;
+            public const int CurrentMP = 0x24;
+            public const int MaxMP = 0x26;
+        }
+
+        private static readonly Dictionary<int, (string Name, int Address)> _digimonDatabase = new()
         {
             { 0, ("Kotemon", 0x0004949C) },
             { 1, ("Kumamon", 0x00049878) },
@@ -31,7 +42,7 @@ namespace Backend.Services
 
         public Player? GetPlayer()
         {
-            var bytes = _memoryReader.ReadBytes(ProtagonistNameAddress, 10);
+            var bytes = _memoryReader.ReadBytes(Offsets.ProtagonistName, 10);
             if (bytes == null) return null;
 
             return new Player
@@ -43,9 +54,7 @@ namespace Backend.Services
         public Party GetParty()
         {
             var party = new Party();
-            // Digimon IDs are likely stored as Int32 (4 bytes each)
-            // Reading 3 slots * 4 bytes = 12 bytes
-            var slots = _memoryReader.ReadBytes(PartySlot1Address, 12);
+            var slots = _memoryReader.ReadBytes(Offsets.PartySlot1, 12);
 
             if (slots == null) return party;
 
@@ -54,28 +63,19 @@ namespace Backend.Services
                 int idOffset = i * 4;
                 byte id = slots[idOffset];
 
-                // In DW3, if a slot is empty, it usually has a value like 0xFF
                 if (_digimonDatabase.TryGetValue(id, out var data))
                 {
-                    // Level, Exp, HP and MP offsets relative to our database base addresses
-                    int exp = _memoryReader.ReadInt32(data.Address + 0x18);
-                    short lvl = _memoryReader.ReadInt16(data.Address + 0x1C);
-                    short curHp = _memoryReader.ReadInt16(data.Address + 0x20);
-                    short maxHp = _memoryReader.ReadInt16(data.Address + 0x22);
-                    short curMp = _memoryReader.ReadInt16(data.Address + 0x24);
-                    short maxMp = _memoryReader.ReadInt16(data.Address + 0x26);
-
                     party.Digimons.Add(new Digimon
                     {
                         Id = id,
                         Name = data.Name,
                         BaseAddress = data.Address,
-                        Experience = exp,
-                        Level = lvl,
-                        CurrentHP = curHp,
-                        MaxHP = maxHp,
-                        CurrentMP = curMp,
-                        MaxMP = maxMp
+                        Experience = _memoryReader.ReadInt32(data.Address + Offsets.Experience),
+                        Level = _memoryReader.ReadInt16(data.Address + Offsets.Level),
+                        CurrentHP = _memoryReader.ReadInt16(data.Address + Offsets.CurrentHP),
+                        MaxHP = _memoryReader.ReadInt16(data.Address + Offsets.MaxHP),
+                        CurrentMP = _memoryReader.ReadInt16(data.Address + Offsets.CurrentMP),
+                        MaxMP = _memoryReader.ReadInt16(data.Address + Offsets.MaxMP)
                     });
                 }
             }
