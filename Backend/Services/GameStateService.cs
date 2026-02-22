@@ -12,7 +12,7 @@ namespace Backend.Services
         private static class Offsets
         {
             public const int ProtagonistName = 0x00048D88;
-            public const int Bits = 0x00048DB0;
+            public const int Bits = 0x00048DA0;
 
             public const int PartySlot1 = 0x00048DA4;
             public const int PartySlot2 = 0x00048DA8;
