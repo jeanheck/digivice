@@ -22,7 +22,7 @@ namespace Backend.Services
 
             var player = new Player
             {
-                Name = TextDecoder.DecodeProtagonist(bytes),
+                Name = TextDecoder.Decode(bytes),
                 Bits = _memoryReader.ReadInt32(PlayerAddresses.Bits),
                 Party = GetParty()
             };

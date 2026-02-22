@@ -4,11 +4,13 @@ namespace Backend.Utils
 {
     public static class TextDecoder
     {
-        public static string DecodeProtagonist(byte[] buffer) => Decode(buffer);
-
-        public static string DecodeDigimon(byte[] buffer) => Decode(buffer);
-
-        private static string Decode(byte[] buffer)
+        /// <summary>
+        /// Decodes a raw byte buffer from the game's custom character encoding into a string.
+        /// Bytes 0x01-0x25 map to uppercase characters (offset +0x33).
+        /// Bytes above 0x25 map to lowercase characters (offset +0x39).
+        /// Decoding stops at 0x00 or 0xFF terminators.
+        /// </summary>
+        public static string Decode(byte[] buffer)
         {
             if (buffer == null) return string.Empty;
 
@@ -16,10 +18,6 @@ namespace Backend.Utils
             foreach (var b in buffer)
             {
                 if (b == 0x00 || b == 0xFF) break;
-
-                // Game Rule:
-                // Uppercase/Numbers/Symbols (0x01 to 0x25): ASCII + 0x33
-                // Lowercase (above 0x25): ASCII + 0x39
 
                 if (b >= 0x01 && b <= 0x25)
                 {

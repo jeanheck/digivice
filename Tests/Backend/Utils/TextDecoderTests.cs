@@ -5,91 +5,64 @@ namespace Tests.Backend.Utils
 {
     public class TextDecoderTests
     {
+        // --- Standard decoding ---
+
         [Fact]
-        public void DecodeProtagonist_ShouldHandleSimpleText()
+        public void Decode_ShouldHandleUppercaseAsciiName()
         {
-            // "TESTE" (ASCII 54 45 53 54 45) -> ROM (21 12 20 21 12)
-            byte[] input = new byte[] { 0x21, 0x12, 0x20, 0x21, 0x12, 0x00 };
-            string expected = "TESTE";
-
-            string result = TextDecoder.DecodeProtagonist(input);
-
-            Assert.Equal(expected, result);
+            // "TESTE" -> ROM bytes: (21 12 20 21 12)
+            byte[] input = [0x21, 0x12, 0x20, 0x21, 0x12, 0x00];
+            Assert.Equal("TESTE", TextDecoder.Decode(input));
         }
 
         [Fact]
-        public void DecodeProtagonist_ShouldHandleMixedCase_Jean()
+        public void Decode_ShouldHandleMixedCaseName_Jean()
         {
-            // "Jean"
-            // 'J' (4A) -> 17 (4A - 33)
-            // 'e' (65) -> 2C (65 - 39)
-            // 'a' (61) -> 28 (61 - 39)
-            // 'n' (6E) -> 35 (6E - 39)
-            byte[] input = new byte[] { 0x17, 0x2C, 0x28, 0x35, 0x00 };
-            string expected = "Jean";
-
-            string result = TextDecoder.DecodeProtagonist(input);
-
-            Assert.Equal(expected, result);
+            // "Jean" -> J(17) e(2C) a(28) n(35)
+            byte[] input = [0x17, 0x2C, 0x28, 0x35, 0x00];
+            Assert.Equal("Jean", TextDecoder.Decode(input));
         }
 
         [Fact]
-        public void DecodeProtagonist_ShouldReturnEmpty_WhenBufferIsNull()
+        public void Decode_ShouldHandleMixedCaseDigimonName_Kotemon()
         {
-            string result = TextDecoder.DecodeProtagonist(null!);
-            Assert.Equal(string.Empty, result);
+            // "Kotemon" -> K(18) o(36) t(3B) e(2C) m(34) o(36) n(35)
+            byte[] input = [0x18, 0x36, 0x3B, 0x2C, 0x34, 0x36, 0x35, 0x00];
+            Assert.Equal("Kotemon", TextDecoder.Decode(input));
+        }
+
+        // --- Edge cases ---
+
+        [Fact]
+        public void Decode_ShouldReturnEmpty_WhenBufferIsNull()
+        {
+            Assert.Equal(string.Empty, TextDecoder.Decode(null!));
         }
 
         [Fact]
-        public void DecodeProtagonist_ShouldStopAtTerminators()
+        public void Decode_ShouldStopAtNullTerminator()
         {
-            byte[] inputWithNull = new byte[] { 0x21, 0x00, 0x12 };
-            byte[] inputWithFF = new byte[] { 0x21, 0xFF, 0x12 };
-
-            Assert.Equal("T", TextDecoder.DecodeProtagonist(inputWithNull));
-            Assert.Equal("T", TextDecoder.DecodeProtagonist(inputWithFF));
+            // Only 'T' before 0x00
+            byte[] input = [0x21, 0x00, 0x12];
+            Assert.Equal("T", TextDecoder.Decode(input));
         }
 
         [Fact]
-        public void DecodeDigimon_ShouldHandleMixedCase()
+        public void Decode_ShouldStopAtFFTerminator()
         {
-            // "Kotemon"
-            byte[] input = new byte[] { 0x18, 0x36, 0x3B, 0x2C, 0x34, 0x36, 0x35, 0x00 };
-            string expected = "Kotemon";
-
-            string result = TextDecoder.DecodeDigimon(input);
-
-            Assert.Equal(expected, result);
+            // Only 'T' before 0xFF
+            byte[] input = [0x21, 0xFF, 0x12];
+            Assert.Equal("T", TextDecoder.Decode(input));
         }
 
-        [Fact]
-        public void DecodeDigimon_ShouldHandleBoundaryCharacters()
-        {
-            // Boundary: Uppercase is <= 0x25, Lowercase is > 0x25
-            // 0x25 + 0x33 = 0x58 ('X')
-            // 0x26 + 0x39 = 0x5F ('_') - following the current logic
-
-            byte[] input = new byte[] { 0x25, 0x26 };
-            string result = TextDecoder.DecodeDigimon(input);
-
-            Assert.Equal("X_", result);
-        }
+        // --- Boundary: uppercase/lowercase transition at 0x25/0x26 ---
 
         [Fact]
-        public void DecodeDigimon_ShouldReturnEmpty_WhenBufferIsNull()
+        public void Decode_ShouldHandleBoundaryCharacters()
         {
-            string result = TextDecoder.DecodeDigimon(null!);
-            Assert.Equal(string.Empty, result);
-        }
-
-        [Fact]
-        public void DecodeDigimon_ShouldStopAtTerminators()
-        {
-            byte[] inputWithNull = new byte[] { 0x18, 0x00, 0x36 };
-            byte[] inputWithFF = new byte[] { 0x18, 0xFF, 0x36 };
-
-            Assert.Equal("K", TextDecoder.DecodeDigimon(inputWithNull));
-            Assert.Equal("K", TextDecoder.DecodeDigimon(inputWithFF));
+            // 0x25 + 0x33 = 'X', 0x26 + 0x39 = '_'
+            byte[] input = [0x25, 0x26];
+            Assert.Equal("X_", TextDecoder.Decode(input));
         }
     }
 }
