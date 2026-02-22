@@ -14,8 +14,8 @@ Esta fase foca em transformar o backend de um monitor de console em um produtor 
 ## Etapas de Implementação
 
 ### 1. Infraestrutura SignalR
-- [ ] Configurar o suporte ao SignalR no `Program.cs`.
-- [ ] Criar o `GameHub` para gerenciar as rotas do WebSocket.
+- [x] Configurar o suporte ao SignalR no `Program.cs`.
+- [x] Criar o `GameHub` para gerenciar as rotas do WebSocket.
 
 ### 2. Definição de Contratos (Eventos)
 - [x] Criar estrutura de DTOs para os eventos em `Backend/Events/Data/`.
@@ -27,8 +27,8 @@ Esta fase foca em transformar o backend de um monitor de console em um produtor 
     - **Digimon**: `DigimonVitalsChanged`, `DigimonXpGained`, `DigimonAttributesChanged`, `DigimonResistancesChanged`
 
 ### 3. Serviço de Despacho (EventDispatcher)
-- [ ] Criar `IEventService` e sua implementação.
-- [ ] Implementar lógica de comparação (Deep Equality ou Cache de Estado) para disparar eventos apenas quando houver mudanças reais na memória.
+- [x] Criar `IEventService` e sua implementação.
+- [x] Implementar lógica de comparação (Deep Equality ou Cache de Estado) para disparar eventos apenas quando houver mudanças reais na memória.
 
 ### 4. Integração com AppMonitor
 - [ ] Injetar o `IEventService` no `AppMonitor`.

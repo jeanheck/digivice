@@ -1,9 +1,11 @@
 using Backend.Core;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
+using Backend.Events.Hubs;
+using Backend.Events.Interfaces;
+using Backend.Events.Services;
 using Backend.Interfaces;
 using Backend.UI;
-using Backend.Events.Hubs;
 using Backend.Services;
 using Serilog;
 
@@ -25,6 +27,9 @@ try
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
     builder.Services.AddSingleton<ConsoleRenderer>();
     builder.Services.AddSingleton<Backend.Core.Monitor>();
+
+    // Register Event Dispatcher
+    builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
     // Register the game monitor as a hosted background service
     builder.Services.AddHostedService<MonitorBackgroundService>();
