@@ -31,8 +31,8 @@ Esta fase foca em transformar o backend de um monitor de console em um produtor 
 - [x] Implementar lógica de comparação (Deep Equality ou Cache de Estado) para disparar eventos apenas quando houver mudanças reais na memória.
 
 ### 4. Integração com AppMonitor
-- [ ] Injetar o `IEventService` no `AppMonitor`.
-- [ ] Substituir/Complementar o log de console pelos disparos de eventos.
+- [x] Injetar o `IEventService` no `AppMonitor`.
+- [x] Substituir/Complementar o log de console pelos disparos de eventos.
 
 ### 5. Validação
 - [ ] Criar testes unitários para o serviço de eventos.
