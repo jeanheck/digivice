@@ -43,7 +43,7 @@ Isso permitirá exibir à interface do usuário informações preditivas e detal
 
 ### Fase 1: Setup do Projeto Vue
 - Inicializar um projeto Vue na pasta `Frontend`.
-- Instalar e configurar a biblioteca de client do `SignalR` (`@microsoft/signalr`).
+- [x] Instalar e configurar a biblioteca de client do `SignalR` (`@microsoft/signalr`).
 - Criar a camada base de conexão persistente com o Hub do backend (`ws://localhost:XXXX/gamehub`).
 
 ### Fase 2: Consumo e Exibição Bruta (Prova de Conceito)
