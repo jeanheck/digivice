@@ -50,7 +50,6 @@ namespace Backend.Services
                 {
                     party.Digimons.Add(new Digimon
                     {
-                        Id = digimonId,
                         SlotIndex = i + 1,
                         Name = data.Name,
                         BasicInfo = new BasicInfo
