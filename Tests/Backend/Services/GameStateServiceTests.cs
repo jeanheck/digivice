@@ -21,12 +21,18 @@ namespace Tests.Backend.Services
             mockReader.Setup(r => r.ReadInt32(0x00048DA0))
                       .Returns(1234);
 
+            // Mocking Slots: Empty (0xFF) to avoid IndexOutOfRangeException when GetPlayer calls GetParty
+            mockReader.Setup(r => r.ReadBytes(0x00048DA4, 4)).Returns(new byte[] { 0xFF });
+            mockReader.Setup(r => r.ReadBytes(0x00048DA8, 4)).Returns(new byte[] { 0xFF });
+            mockReader.Setup(r => r.ReadBytes(0x00048DAC, 4)).Returns(new byte[] { 0xFF });
+
             var service = new GameStateService(mockReader.Object);
             var player = service.GetPlayer();
 
             Assert.NotNull(player);
             Assert.Equal("TESTE", player.Name);
             Assert.Equal(1234, player.Bits);
+            Assert.Empty(player.Party.Digimons);
         }
 
         [Fact]
@@ -56,7 +62,7 @@ namespace Tests.Backend.Services
             var kotemon = party.Digimons[0];
             Assert.Equal("Kotemon", kotemon.Name);
             Assert.Equal(1, kotemon.SlotIndex);
-            Assert.Equal(15, kotemon.Level);
+            Assert.Equal(15, kotemon.BasicInfo.Level);
             Assert.Equal(100, kotemon.Attributes.Attack);
             Assert.Equal(50, kotemon.Resistances.Fire);
 

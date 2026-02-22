@@ -40,9 +40,8 @@ namespace Backend.Core
                     }
 
                     var player = gameState.GetPlayer();
-                    var party = gameState.GetParty();
 
-                    _renderer.Render(player, party);
+                    _renderer.Render(player);
 
                     if (Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Q) break;
                     Thread.Sleep(1000);

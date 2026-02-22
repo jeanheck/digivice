@@ -20,11 +20,15 @@ namespace Backend.Services
             var bytes = _memoryReader.ReadBytes(PlayerAddresses.Name, PlayerAddresses.NameBufferSize);
             if (bytes == null) return null;
 
-            return new Player
+            var player = new Player
             {
                 Name = TextDecoder.DecodeProtagonist(bytes),
                 Bits = _memoryReader.ReadInt32(PlayerAddresses.Bits)
             };
+
+            player.Party = GetParty();
+
+            return player;
         }
 
         public Party GetParty()
@@ -49,13 +53,15 @@ namespace Backend.Services
                         Id = digimonId,
                         SlotIndex = i + 1,
                         Name = data.Name,
-                        BaseAddress = data.Address,
-                        Experience = _memoryReader.ReadInt32(data.Address + DigimonAddresses.BasicInfo.Experience),
-                        Level = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.Level),
-                        CurrentHP = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.CurrentHP),
-                        MaxHP = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.MaxHP),
-                        CurrentMP = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.CurrentMP),
-                        MaxMP = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.MaxMP),
+                        BasicInfo = new BasicInfo
+                        {
+                            Experience = _memoryReader.ReadInt32(data.Address + DigimonAddresses.BasicInfo.Experience),
+                            Level = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.Level),
+                            CurrentHP = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.CurrentHP),
+                            MaxHP = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.MaxHP),
+                            CurrentMP = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.CurrentMP),
+                            MaxMP = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.MaxMP)
+                        },
                         Attributes = new Attributes
                         {
                             Attack = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Attributes.Attack),

@@ -4,5 +4,6 @@ namespace Backend.Models
     {
         public string Name { get; set; } = string.Empty;
         public int Bits { get; set; }
+        public Party Party { get; set; } = new();
     }
 }
