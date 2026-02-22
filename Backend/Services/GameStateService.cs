@@ -98,19 +98,25 @@ namespace Backend.Services
                         MaxHP = _memoryReader.ReadInt16(data.Address + Offsets.MaxHP),
                         CurrentMP = _memoryReader.ReadInt16(data.Address + Offsets.CurrentMP),
                         MaxMP = _memoryReader.ReadInt16(data.Address + Offsets.MaxMP),
-                        Attack = _memoryReader.ReadInt16(data.Address + Offsets.Attack),
-                        Defense = _memoryReader.ReadInt16(data.Address + Offsets.Defense),
-                        Spirit = _memoryReader.ReadInt16(data.Address + Offsets.Spirit),
-                        Wisdom = _memoryReader.ReadInt16(data.Address + Offsets.Wisdom),
-                        Speed = _memoryReader.ReadInt16(data.Address + Offsets.Speed),
-                        Charisma = _memoryReader.ReadInt16(data.Address + Offsets.Charisma),
-                        FireResistance = _memoryReader.ReadInt16(data.Address + Offsets.FireResistance),
-                        WaterResistance = _memoryReader.ReadInt16(data.Address + Offsets.WaterResistance),
-                        IceResistance = _memoryReader.ReadInt16(data.Address + Offsets.IceResistance),
-                        WindResistance = _memoryReader.ReadInt16(data.Address + Offsets.WindResistance),
-                        ThunderResistance = _memoryReader.ReadInt16(data.Address + Offsets.ThunderResistance),
-                        MetalResistance = _memoryReader.ReadInt16(data.Address + Offsets.MetalResistance),
-                        DarkResistance = _memoryReader.ReadInt16(data.Address + Offsets.DarkResistance)
+                        Attributes = new Attributes
+                        {
+                            Attack = _memoryReader.ReadInt16(data.Address + Offsets.Attack),
+                            Defense = _memoryReader.ReadInt16(data.Address + Offsets.Defense),
+                            Spirit = _memoryReader.ReadInt16(data.Address + Offsets.Spirit),
+                            Wisdom = _memoryReader.ReadInt16(data.Address + Offsets.Wisdom),
+                            Speed = _memoryReader.ReadInt16(data.Address + Offsets.Speed),
+                            Charisma = _memoryReader.ReadInt16(data.Address + Offsets.Charisma)
+                        },
+                        Resistances = new Resistances
+                        {
+                            Fire = _memoryReader.ReadInt16(data.Address + Offsets.FireResistance),
+                            Water = _memoryReader.ReadInt16(data.Address + Offsets.WaterResistance),
+                            Ice = _memoryReader.ReadInt16(data.Address + Offsets.IceResistance),
+                            Wind = _memoryReader.ReadInt16(data.Address + Offsets.WindResistance),
+                            Thunder = _memoryReader.ReadInt16(data.Address + Offsets.ThunderResistance),
+                            Metal = _memoryReader.ReadInt16(data.Address + Offsets.MetalResistance),
+                            Dark = _memoryReader.ReadInt16(data.Address + Offsets.DarkResistance)
+                        }
                     });
                 }
             }
