@@ -1,6 +1,4 @@
 using Backend.Interfaces;
-using Backend.Models;
-using Backend.Models.Digimons;
 using Backend.Services;
 using Moq;
 
@@ -15,16 +13,16 @@ namespace Tests.Backend.Services
 
             // "TESTE"
             mockReader.Setup(r => r.ReadBytes(0x00048D88, 10))
-                      .Returns(new byte[] { 0x21, 0x12, 0x20, 0x21, 0x12, 0x00 });
+                      .Returns([0x21, 0x12, 0x20, 0x21, 0x12, 0x00]);
 
             // Bits: 1234
             mockReader.Setup(r => r.ReadInt32(0x00048DA0))
                       .Returns(1234);
 
             // Mocking Slots: Empty (0xFF) to avoid IndexOutOfRangeException when GetPlayer calls GetParty
-            mockReader.Setup(r => r.ReadBytes(0x00048DA4, 4)).Returns(new byte[] { 0xFF });
-            mockReader.Setup(r => r.ReadBytes(0x00048DA8, 4)).Returns(new byte[] { 0xFF });
-            mockReader.Setup(r => r.ReadBytes(0x00048DAC, 4)).Returns(new byte[] { 0xFF });
+            mockReader.Setup(r => r.ReadBytes(0x00048DA4, 4)).Returns([0xFF]);
+            mockReader.Setup(r => r.ReadBytes(0x00048DA8, 4)).Returns([0xFF]);
+            mockReader.Setup(r => r.ReadBytes(0x00048DAC, 4)).Returns([0xFF]);
 
             var service = new GameStateService(mockReader.Object);
             var player = service.GetPlayer();
@@ -41,11 +39,11 @@ namespace Tests.Backend.Services
             var mockReader = new Mock<IMemoryReader>();
 
             // Mocking Slot 1: Kotemon (ID 0)
-            mockReader.Setup(r => r.ReadBytes(0x00048DA4, 4)).Returns(new byte[] { 0x00, 0x00, 0x00, 0x00 });
+            mockReader.Setup(r => r.ReadBytes(0x00048DA4, 4)).Returns([0x00, 0x00, 0x00, 0x00]);
             // Mocking Slot 2: Renamon (ID 6)
-            mockReader.Setup(r => r.ReadBytes(0x00048DA8, 4)).Returns(new byte[] { 0x06, 0x00, 0x00, 0x00 });
+            mockReader.Setup(r => r.ReadBytes(0x00048DA8, 4)).Returns([0x06, 0x00, 0x00, 0x00]);
             // Mocking Slot 3: Empty (0xFF)
-            mockReader.Setup(r => r.ReadBytes(0x00048DAC, 4)).Returns(new byte[] { 0xFF, 0x00, 0x00, 0x00 });
+            mockReader.Setup(r => r.ReadBytes(0x00048DAC, 4)).Returns([0xFF, 0x00, 0x00, 0x00]);
 
             // Kotemon Stats (Base 0x0004949C)
             int kotemonBase = 0x0004949C;
@@ -60,7 +58,7 @@ namespace Tests.Backend.Services
 
             // Kotemon Assertions
             var kotemon = party.Digimons[0];
-            Assert.Equal("Kotemon", kotemon.Name);
+            Assert.Equal("Kotemon", kotemon.BasicInfo.Name);
             Assert.Equal(1, kotemon.SlotIndex);
             Assert.Equal(15, kotemon.BasicInfo.Level);
             Assert.Equal(100, kotemon.Attributes.Attack);
@@ -68,7 +66,7 @@ namespace Tests.Backend.Services
 
             // Renamon Assertions
             var renamon = party.Digimons[1];
-            Assert.Equal("Renamon", renamon.Name);
+            Assert.Equal("Renamon", renamon.BasicInfo.Name);
             Assert.Equal(2, renamon.SlotIndex);
         }
 
@@ -78,10 +76,10 @@ namespace Tests.Backend.Services
             var mockReader = new Mock<IMemoryReader>();
 
             // Mocking Slot 1: Unknown ID (0x99)
-            mockReader.Setup(r => r.ReadBytes(0x00048DA4, 4)).Returns(new byte[] { 0x99, 0x00, 0x00, 0x00 });
+            mockReader.Setup(r => r.ReadBytes(0x00048DA4, 4)).Returns([0x99, 0x00, 0x00, 0x00]);
             // Mocking Slots 2 & 3: Empty
-            mockReader.Setup(r => r.ReadBytes(0x00048DA8, 4)).Returns(new byte[] { 0xFF, 0x00, 0x00, 0x00 });
-            mockReader.Setup(r => r.ReadBytes(0x00048DAC, 4)).Returns(new byte[] { 0xFF, 0x00, 0x00, 0x00 });
+            mockReader.Setup(r => r.ReadBytes(0x00048DA8, 4)).Returns([0xFF, 0x00, 0x00, 0x00]);
+            mockReader.Setup(r => r.ReadBytes(0x00048DAC, 4)).Returns([0xFF, 0x00, 0x00, 0x00]);
 
             var service = new GameStateService(mockReader.Object);
             var party = service.GetParty();

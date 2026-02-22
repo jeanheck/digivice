@@ -2,6 +2,7 @@ namespace Backend.Models.Digimons
 {
     public class BasicInfo
     {
+        public string Name { get; set; } = string.Empty;
         public int Level { get; set; }
         public int Experience { get; set; }
 

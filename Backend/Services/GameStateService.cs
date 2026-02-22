@@ -51,9 +51,9 @@ namespace Backend.Services
                     party.Digimons.Add(new Digimon
                     {
                         SlotIndex = i + 1,
-                        Name = data.Name,
                         BasicInfo = new BasicInfo
                         {
+                            Name = data.Name,
                             Experience = _memoryReader.ReadInt32(data.Address + DigimonAddresses.BasicInfo.Experience),
                             Level = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.Level),
                             CurrentHP = _memoryReader.ReadInt16(data.Address + DigimonAddresses.BasicInfo.CurrentHP),
