@@ -5,7 +5,6 @@ using Backend.Events.Hubs;
 using Backend.Events.Interfaces;
 using Backend.Events.Services;
 using Backend.Interfaces;
-using Backend.UI;
 using Backend.Services;
 using Serilog;
 
@@ -25,8 +24,8 @@ try
     // Register game dependencies
     builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
-    builder.Services.AddSingleton<ConsoleRenderer>();
-    builder.Services.AddSingleton<Backend.Debug.DebugMonitor>();
+    builder.Services.AddSingleton<DebugConsoleRenderer>();
+    builder.Services.AddSingleton<DebugMonitor>();
 
     // Register Event Dispatcher
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();

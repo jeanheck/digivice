@@ -6,7 +6,6 @@ using Backend.Events.Hubs;
 using Backend.Models;
 using Backend.Models.Digimons;
 using Microsoft.AspNetCore.SignalR;
-using System.Linq;
 
 namespace Backend.Events.Services;
 

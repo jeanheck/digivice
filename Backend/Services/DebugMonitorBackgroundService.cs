@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Hosting;
 using Backend.Debug;
 
 namespace Backend.Services
@@ -7,7 +6,7 @@ namespace Backend.Services
     /// Hosted background service that runs the AppMonitor loop
     /// alongside the WebApplication host, using the idiomatic ASP.NET Core pattern.
     /// </summary>
-    public class DebugMonitorBackgroundService(Backend.Debug.DebugMonitor monitor) : BackgroundService
+    public class DebugMonitorBackgroundService(DebugMonitor monitor) : BackgroundService
     {
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
             => Task.Run(monitor.Run, stoppingToken);

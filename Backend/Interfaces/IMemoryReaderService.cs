@@ -1,5 +1,3 @@
-using System;
-
 namespace Backend.Interfaces
 {
     public interface IMemoryReaderService : IDisposable
