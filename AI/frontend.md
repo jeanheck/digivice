@@ -42,13 +42,13 @@ Isso permitirá exibir à interface do usuário informações preditivas e detal
 ## Próximos Passos (Requisitos Funcionais Sugeridos)
 
 ### Fase 1: Setup do Projeto Vue
-- Inicializar um projeto Vue na pasta `Frontend`.
+- [x] Inicializar um projeto Vue na pasta `Frontend`.
 - [x] Instalar e configurar a biblioteca de client do `SignalR` (`@microsoft/signalr`).
-- Criar a camada base de conexão persistente com o Hub do backend (`ws://localhost:XXXX/gamehub`).
+- [x] Criar a camada base de conexão persistente com o Hub do backend (`ws://localhost:5000/gamehub`).
 
 ### Fase 2: Consumo e Exibição Bruta (Prova de Conceito)
-- Escutar os eventos de conexão (`ConnectionStatusChanged`) para desenhar na tela se "O DuckStation está Conectado!".
-- Escutar o `InitialStateSyncEvent` para renderizar os *Digimons* atuais do time (Nome, HP, MP).
+- [x] Escutar os eventos de conexão (`ConnectionStatusChanged`) para desenhar na tela se "O DuckStation está Conectado!".
+- [x] Escutar o `InitialStateSyncEvent` para renderizar os *Digimons* atuais do time (Nome, HP, MP).
 
 ### Fase 3: Regras de Negócio de Comunidade (A "Camada do Meio")
 Para evitar que as interfaces visuais (`.vue`) fiquem poluídas com lógica matemática complexa ou bases de conhecimento estáticas pesadas, adotaremos a **Rota B (State Management via Store)**.
