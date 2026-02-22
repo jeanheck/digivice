@@ -34,15 +34,18 @@ public class EventDispatcherServiceTests
         _service = new EventDispatcherService(_mockHubContext.Object);
     }
 
-    private Player CreateTestPlayer(int bits, int hp = 100)
+    private State CreateTestState(int bits, int hp = 100)
     {
-        return new Player
+        return new State
         {
-            Name = "Atsushi",
-            Bits = bits,
+            Player = new Player
+            {
+                Name = "Atsushi",
+                Bits = bits
+            },
             Party = new Party
             {
-                Digimons = new List<Digimon>
+                Slots = new List<Digimon?>
                 {
                     new Digimon
                     {
@@ -50,7 +53,9 @@ public class EventDispatcherServiceTests
                         BasicInfo = new BasicInfo { Name = "Agumon", CurrentHP = hp, MaxHP = 200 },
                         Attributes = new Attributes { Attack = 50 },
                         Resistances = new Resistances { Fire = 10 }
-                    }
+                    },
+                    null,
+                    null
                 }
             }
         };
@@ -91,16 +96,16 @@ public class EventDispatcherServiceTests
     public void ProcessGameState_ShouldEmitInitialSyncEvent_OnFirstCall()
     {
         // Arrange
-        var player = CreateTestPlayer(500);
+        var state = CreateTestState(500);
 
         // Act
-        _service.ProcessGameState(player);
+        _service.ProcessGameState(state);
 
         // Assert
         _mockClientProxy.Verify(
             c => c.SendCoreAsync(
                 nameof(EventType.InitialStateSync),
-                It.Is<object[]>(args => ((InitialStateSyncEvent)args[0]).InitialState.Bits == 500),
+                It.Is<object[]>(args => ((InitialStateSyncEvent)args[0]).InitialState.Player.Bits == 500),
                 It.IsAny<CancellationToken>()),
             Times.Once);
     }
@@ -109,13 +114,13 @@ public class EventDispatcherServiceTests
     public void ProcessGameState_ShouldNotEmitEvents_WhenStateIsIdentical()
     {
         // Arrange
-        var player = CreateTestPlayer(500);
-        _service.ProcessGameState(player); // Initial sync
+        var state = CreateTestState(500);
+        _service.ProcessGameState(state); // Initial sync
         _mockClientProxy.Invocations.Clear();
 
         // Act
-        var identicalPlayer = CreateTestPlayer(500); // Creating a new instance but identical values
-        _service.ProcessGameState(identicalPlayer);
+        var identicalState = CreateTestState(500); // Creating a new instance but identical values
+        _service.ProcessGameState(identicalState);
 
         // Assert
         _mockClientProxy.Verify(
@@ -127,13 +132,13 @@ public class EventDispatcherServiceTests
     public void ProcessGameState_ShouldEmitBitsChangedEvent_WhenBitsChange()
     {
         // Arrange
-        var player = CreateTestPlayer(500);
-        _service.ProcessGameState(player);
+        var state = CreateTestState(500);
+        _service.ProcessGameState(state);
         _mockClientProxy.Invocations.Clear();
 
         // Act
-        var mutatedPlayer = CreateTestPlayer(600);
-        _service.ProcessGameState(mutatedPlayer);
+        var mutatedState = CreateTestState(600);
+        _service.ProcessGameState(mutatedState);
 
         // Assert
         _mockClientProxy.Verify(
@@ -148,13 +153,13 @@ public class EventDispatcherServiceTests
     public void ProcessGameState_ShouldEmitVitalsChangedEvent_WhenHPChanges()
     {
         // Arrange
-        var player = CreateTestPlayer(500, hp: 100);
-        _service.ProcessGameState(player);
+        var state = CreateTestState(500, hp: 100);
+        _service.ProcessGameState(state);
         _mockClientProxy.Invocations.Clear();
 
         // Act
-        var mutatedPlayer = CreateTestPlayer(500, hp: 80); // Digimon took damage
-        _service.ProcessGameState(mutatedPlayer);
+        var mutatedState = CreateTestState(500, hp: 80); // Digimon took damage
+        _service.ProcessGameState(mutatedState);
 
         // Assert
         _mockClientProxy.Verify(
@@ -169,14 +174,14 @@ public class EventDispatcherServiceTests
     public void ProcessGameState_ShouldEmitPartyChangedEvent_WhenDigimonListChanges()
     {
         // Arrange
-        var player = CreateTestPlayer(500);
-        _service.ProcessGameState(player);
+        var state = CreateTestState(500);
+        _service.ProcessGameState(state);
         _mockClientProxy.Invocations.Clear();
 
         // Act - Remove the only digimon mimicking a party size change
-        var mutatedPlayer = CreateTestPlayer(500);
-        mutatedPlayer.Party.Digimons.Clear();
-        _service.ProcessGameState(mutatedPlayer);
+        var mutatedState = CreateTestState(500);
+        mutatedState.Party.Slots[0] = null;
+        _service.ProcessGameState(mutatedState);
 
         // Assert
         _mockClientProxy.Verify(
@@ -191,17 +196,17 @@ public class EventDispatcherServiceTests
     public void ProcessGameState_ShouldEmitLevelUpEvent_WhenLevelIncreases()
     {
         // Arrange
-        var player = CreateTestPlayer(500);
-        player.Party.Digimons[0].BasicInfo.Level = 10;
-        player.Party.Digimons[0].BasicInfo.Experience = 1000;
-        _service.ProcessGameState(player);
+        var state = CreateTestState(500);
+        state.Party.Slots[0].BasicInfo.Level = 10;
+        state.Party.Slots[0].BasicInfo.Experience = 1000;
+        _service.ProcessGameState(state);
         _mockClientProxy.Invocations.Clear();
 
         // Act - Increase Level
-        var mutatedPlayer = CreateTestPlayer(500);
-        mutatedPlayer.Party.Digimons[0].BasicInfo.Level = 11;
-        mutatedPlayer.Party.Digimons[0].BasicInfo.Experience = 1200;
-        _service.ProcessGameState(mutatedPlayer);
+        var mutatedState = CreateTestState(500);
+        mutatedState.Party.Slots[0].BasicInfo.Level = 11;
+        mutatedState.Party.Slots[0].BasicInfo.Experience = 1200;
+        _service.ProcessGameState(mutatedState);
 
         // Assert
         _mockClientProxy.Verify(
@@ -223,17 +228,17 @@ public class EventDispatcherServiceTests
     public void ProcessGameState_ShouldNotEmitLevelUpEvent_WhenOnlyXpIncreases()
     {
         // Arrange
-        var player = CreateTestPlayer(500);
-        player.Party.Digimons[0].BasicInfo.Level = 10;
-        player.Party.Digimons[0].BasicInfo.Experience = 1000;
-        _service.ProcessGameState(player);
+        var state = CreateTestState(500);
+        state.Party.Slots[0].BasicInfo.Level = 10;
+        state.Party.Slots[0].BasicInfo.Experience = 1000;
+        _service.ProcessGameState(state);
         _mockClientProxy.Invocations.Clear();
 
         // Act - Increase ONLY XP
-        var mutatedPlayer = CreateTestPlayer(500);
-        mutatedPlayer.Party.Digimons[0].BasicInfo.Level = 10;
-        mutatedPlayer.Party.Digimons[0].BasicInfo.Experience = 1150;
-        _service.ProcessGameState(mutatedPlayer);
+        var mutatedState = CreateTestState(500);
+        mutatedState.Party.Slots[0].BasicInfo.Level = 10;
+        mutatedState.Party.Slots[0].BasicInfo.Experience = 1150;
+        _service.ProcessGameState(mutatedState);
 
         // Assert
         _mockClientProxy.Verify(

@@ -15,7 +15,16 @@ namespace Backend.Services
             _memoryReader = memoryReader;
         }
 
-        public Player? GetPlayer()
+        public State GetState()
+        {
+            return new State
+            {
+                Player = GetPlayer(),
+                Party = GetParty()
+            };
+        }
+
+        private Player? GetPlayer()
         {
             var bytes = _memoryReader.ReadBytes(PlayerAddresses.Name, PlayerAddresses.NameBufferSize);
             if (bytes == null) return null;
@@ -23,14 +32,13 @@ namespace Backend.Services
             var player = new Player
             {
                 Name = TextDecoder.Decode(bytes),
-                Bits = _memoryReader.ReadInt32(PlayerAddresses.Bits),
-                Party = GetParty()
+                Bits = _memoryReader.ReadInt32(PlayerAddresses.Bits)
             };
 
             return player;
         }
 
-        public Party GetParty()
+        private Party GetParty()
         {
             var party = new Party();
 
@@ -47,7 +55,7 @@ namespace Backend.Services
 
                 if (DigimonAddresses.Digimons.TryGetValue(digimonId, out var data))
                 {
-                    party.Digimons.Add(new Digimon
+                    party.Slots[i] = new Digimon
                     {
                         SlotIndex = i + 1,
                         BasicInfo = new BasicInfo
@@ -79,7 +87,7 @@ namespace Backend.Services
                             Metal = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Metal),
                             Dark = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Dark)
                         }
-                    });
+                    };
                 }
                 else
                 {

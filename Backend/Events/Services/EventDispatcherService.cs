@@ -11,7 +11,7 @@ namespace Backend.Events.Services;
 
 public class EventDispatcherService : Interfaces.IEventDispatcherService
 {
-    private Player? _previousState;
+    private State? _previousState;
     private bool? _previousConnectionStatus;
     private readonly IHubContext<GameHub> _hubContext;
 
@@ -37,7 +37,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         }
     }
 
-    public void ProcessGameState(Player newState)
+    public void ProcessGameState(State newState)
     {
         if (_previousState == null)
         {
@@ -50,23 +50,37 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         }
 
         // 1. Compare Player Bits
-        if (newState.Bits != _previousState.Bits)
+        if (newState.Player?.Bits != _previousState.Player?.Bits)
         {
-            var ev = new PlayerBitsChangedEvent(newState.Bits);
+            var ev = new PlayerBitsChangedEvent(newState.Player?.Bits ?? 0);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // 2. Compare Party
         bool partyChanged = false;
-        if (newState.Party.Digimons.Count != _previousState.Party.Digimons.Count)
+        var newSlots = newState.Party?.Slots ?? new List<Digimon?>();
+        var oldSlots = _previousState.Party?.Slots ?? new List<Digimon?>();
+
+        // Se a lista mudou de tamanho por algum motivo (embora sejam sempre 3 slots)
+        if (newSlots.Count != oldSlots.Count)
         {
             partyChanged = true;
         }
         else
         {
-            for (int i = 0; i < newState.Party.Digimons.Count; i++)
+            for (int i = 0; i < newSlots.Count; i++)
             {
-                if (newState.Party.Digimons[i].BasicInfo.Name != _previousState.Party.Digimons[i].BasicInfo.Name)
+                var newDigi = newSlots[i];
+                var oldDigi = oldSlots[i];
+
+                // Check for new digimon injected into a slot or removed
+                if ((newDigi == null && oldDigi != null) || (newDigi != null && oldDigi == null))
+                {
+                    partyChanged = true;
+                    break;
+                }
+
+                if (newDigi != null && oldDigi != null && newDigi.BasicInfo.Name != oldDigi.BasicInfo.Name)
                 {
                     partyChanged = true;
                     break;
@@ -76,15 +90,20 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
 
         if (partyChanged)
         {
-            var ev = new PartySlotsChangedEvent(newState.Party.Digimons);
+            // Filter out nulls for the event
+            var activeDigimons = newSlots.Where(d => d != null).Select(d => d!).ToList();
+            var ev = new PartySlotsChangedEvent(activeDigimons);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
         else
         {
             // Compare individualized digimon metrics if party structure hasn't fundamentally changed
-            for (int i = 0; i < newState.Party.Digimons.Count; i++)
+            for (int i = 0; i < newSlots.Count; i++)
             {
-                CompareDigimon(i, _previousState.Party.Digimons[i], newState.Party.Digimons[i]);
+                if (newSlots[i] != null && oldSlots[i] != null)
+                {
+                    CompareDigimon(i, oldSlots[i]!, newSlots[i]!);
+                }
             }
         }
 
@@ -144,15 +163,14 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
     }
 
     // A simple Deep clone since records aren't being used
-    private Player CloneState(Player p)
+    private State CloneState(State s)
     {
-        return new Player
+        return new State
         {
-            Name = p.Name,
-            Bits = p.Bits,
-            Party = new Party
+            Player = s.Player == null ? null : new Player { Name = s.Player.Name, Bits = s.Player.Bits },
+            Party = s.Party == null ? null : new Party
             {
-                Digimons = p.Party.Digimons.Select(d => new Digimon
+                Slots = s.Party.Slots.Select(d => d == null ? null : new Digimon
                 {
                     SlotIndex = d.SlotIndex,
                     BasicInfo = new BasicInfo
@@ -184,7 +202,8 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         Metal = d.Resistances.Metal,
                         Dark = d.Resistances.Dark
                     }
-                }).ToList()
+                }).ToList(),
+                ActiveSlotIndex = s.Party.ActiveSlotIndex
             }
         };
     }

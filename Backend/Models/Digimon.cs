@@ -1,4 +1,6 @@
-namespace Backend.Models.Digimons
+using Backend.Models.Digimons;
+
+namespace Backend.Models
 {
     public class Digimon
     {
