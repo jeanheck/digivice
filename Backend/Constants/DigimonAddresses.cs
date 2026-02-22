@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Backend.Constants
 {
-    public enum DigimonIds : byte
+    internal enum DigimonIds : byte
     {
         Kotemon = 0,
         Kumamon = 1,
@@ -14,7 +14,7 @@ namespace Backend.Constants
         Patamon = 7
     }
 
-    public static class DigimonAddresses
+    internal static class DigimonAddresses
     {
         public const byte EmptySlotId = 0xFF;
 
