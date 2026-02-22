@@ -1,9 +1,10 @@
 using Backend.Interfaces;
 using System.Diagnostics;
+using System.Linq;
 
-namespace Backend.Services
+namespace Backend.Infrastructure.Processes
 {
-    public class WindowsProcessService : IProcessService
+    public class WindowsProcessProvider : IProcessService
     {
         public int? GetProcessIdByName(string processName)
         {

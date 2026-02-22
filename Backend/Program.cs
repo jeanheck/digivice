@@ -2,6 +2,8 @@ using Backend.Interfaces;
 using Backend.Services;
 using Backend.Core;
 using Backend.UI;
+using Backend.Infrastructure.Memory;
+using Backend.Infrastructure.Processes;
 using Serilog;
 
 namespace Backend
@@ -16,7 +18,7 @@ namespace Backend
 
             Log.Information("Initializing Digivice...");
 
-            var processService = new WindowsProcessService();
+            var processService = new WindowsProcessProvider();
             var memoryProvider = new WindowsMemoryProvider();
             var renderer = new ConsoleRenderer();
 

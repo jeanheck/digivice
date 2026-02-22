@@ -1,7 +1,7 @@
 using Backend.Interfaces;
 using System.IO.MemoryMappedFiles;
 
-namespace Backend.Services
+namespace Backend.Infrastructure.Memory
 {
     public class WindowsMemoryAccessor : IMemoryAccessor
     {
