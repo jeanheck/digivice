@@ -55,3 +55,5 @@ Backend/
 - Limpeza da pasta vazia `Diagnostics`.
 - Implementação de um evento SignalR autônomo e isolado: `DigimonLevelUp`.
 - Refatoração do espaço de nomes do Monitor de `Backend.Core` para `Backend.Debug`.
+- Renomeação das classes de `Monitor` para `DebugMonitor` reduzindo ambiguidades.
+- Isolamento da execução do _Monitor via terminal_ sob um toggle feature em `appsettings.json` (`Features:Debugging`).

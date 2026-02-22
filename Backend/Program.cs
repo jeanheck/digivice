@@ -26,13 +26,19 @@ try
     builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
     builder.Services.AddSingleton<ConsoleRenderer>();
-    builder.Services.AddSingleton<Backend.Debug.Monitor>();
+    builder.Services.AddSingleton<Backend.Debug.DebugMonitor>();
 
     // Register Event Dispatcher
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
-    // Register the game monitor as a hosted background service
-    builder.Services.AddHostedService<MonitorBackgroundService>();
+    // Read the Debugging feature flag from appsettings.json
+    bool isDebugging = builder.Configuration.GetValue<bool>("Features:Debugging", false);
+
+    if (isDebugging)
+    {
+        Log.Information("Debugging flag detected! Activating Background Monitor...");
+        builder.Services.AddHostedService<DebugMonitorBackgroundService>();
+    }
 
     builder.Services.AddCors(options =>
     {
