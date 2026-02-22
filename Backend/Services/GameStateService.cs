@@ -84,21 +84,23 @@ namespace Backend.Services
         {
             var party = new Party();
 
-            foreach (var slotAddress in Offsets.PartySlots)
+            for (int i = 0; i < Offsets.PartySlots.Length; i++)
             {
+                var slotAddress = Offsets.PartySlots[i];
                 // Each slot ID is an Int32, but we only need the first byte
                 var idBytes = _memoryReader.ReadBytes(slotAddress, MemoryConstants.SlotIdSize);
                 if (idBytes == null) continue;
 
                 byte id = idBytes[0];
 
-                if (id == 0xFF || id == 0) continue; // Skip empty slots
+                if (id == 0xFF) continue; // Skip empty slots (0xFF)
 
                 if (_digimonDatabase.TryGetValue(id, out var data))
                 {
                     party.Digimons.Add(new Digimon
                     {
                         Id = id,
+                        SlotIndex = i + 1,
                         Name = data.Name,
                         BaseAddress = data.Address,
                         Experience = _memoryReader.ReadInt32(data.Address + Offsets.Experience),

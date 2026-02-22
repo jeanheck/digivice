@@ -5,6 +5,7 @@ namespace Backend.Models
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public int BaseAddress { get; set; }
+        public int SlotIndex { get; set; }
 
         public int Level { get; set; }
         public int Experience { get; set; }
