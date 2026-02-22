@@ -46,4 +46,12 @@ Backend/
     Interfaces/     # Contratos dos serviços de eventos
     Services/       # Lógica de comparação e despacho
     Hubs/           # Hubs do SignalR
+  Debug/            # Ferramentas locais de terminal e Monitor
 ```
+
+# Fase 3: Refinamentos e Funcionalidades Extras
+
+## Etapas Planejadas 
+- Limpeza da pasta vazia `Diagnostics`.
+- Implementação de um evento SignalR autônomo e isolado: `DigimonLevelUp`.
+- Refatoração do espaço de nomes do Monitor de `Backend.Core` para `Backend.Debug`.

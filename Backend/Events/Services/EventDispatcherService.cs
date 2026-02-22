@@ -108,6 +108,12 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         if (oldDigi.BasicInfo.Level != newDigi.BasicInfo.Level ||
             oldDigi.BasicInfo.Experience != newDigi.BasicInfo.Experience)
         {
+            if (newDigi.BasicInfo.Level > oldDigi.BasicInfo.Level)
+            {
+                var levelUpEv = new DigimonLevelUpEvent(index, oldDigi.BasicInfo.Level, newDigi.BasicInfo.Level);
+                _ = _hubContext.Clients.All.SendAsync(levelUpEv.Type.ToString(), levelUpEv);
+            }
+
             var ev = new DigimonXpGainedEvent(index, newDigi.BasicInfo.Level, newDigi.BasicInfo.Experience);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }

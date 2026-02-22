@@ -1,4 +1,4 @@
-using Backend.Core;
+using Backend.Debug;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;
@@ -26,7 +26,7 @@ try
     builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
     builder.Services.AddSingleton<ConsoleRenderer>();
-    builder.Services.AddSingleton<Backend.Core.Monitor>();
+    builder.Services.AddSingleton<Backend.Debug.Monitor>();
 
     // Register Event Dispatcher
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
@@ -34,10 +34,23 @@ try
     // Register the game monitor as a hosted background service
     builder.Services.AddHostedService<MonitorBackgroundService>();
 
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("AllowAll", policy =>
+        {
+            policy.SetIsOriginAllowed(_ => true) // Allow any origin, including null (local file)
+                  .AllowAnyHeader()
+                  .AllowAnyMethod()
+                  .AllowCredentials(); // Required for SignalR
+        });
+    });
+
     // Register SignalR
     builder.Services.AddSignalR();
 
     var app = builder.Build();
+
+    app.UseCors("AllowAll");
 
     // Map the WebSocket endpoint
     app.MapHub<GameHub>("/gamehub");

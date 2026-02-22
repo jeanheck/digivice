@@ -186,4 +186,68 @@ public class EventDispatcherServiceTests
                 It.IsAny<CancellationToken>()),
             Times.Once);
     }
+
+    [Fact]
+    public void ProcessGameState_ShouldEmitLevelUpEvent_WhenLevelIncreases()
+    {
+        // Arrange
+        var player = CreateTestPlayer(500);
+        player.Party.Digimons[0].BasicInfo.Level = 10;
+        player.Party.Digimons[0].BasicInfo.Experience = 1000;
+        _service.ProcessGameState(player);
+        _mockClientProxy.Invocations.Clear();
+
+        // Act - Increase Level
+        var mutatedPlayer = CreateTestPlayer(500);
+        mutatedPlayer.Party.Digimons[0].BasicInfo.Level = 11;
+        mutatedPlayer.Party.Digimons[0].BasicInfo.Experience = 1200;
+        _service.ProcessGameState(mutatedPlayer);
+
+        // Assert
+        _mockClientProxy.Verify(
+            c => c.SendCoreAsync(
+                nameof(EventType.DigimonLevelUp),
+                It.Is<object[]>(args => ((DigimonLevelUpEvent)args[0]).NewLevel == 11 && ((DigimonLevelUpEvent)args[0]).OldLevel == 10),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
+        // Should also emit XP gained
+        _mockClientProxy.Verify(
+            c => c.SendCoreAsync(
+                nameof(EventType.DigimonXpGained),
+                It.IsAny<object[]>(),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
+    }
+
+    [Fact]
+    public void ProcessGameState_ShouldNotEmitLevelUpEvent_WhenOnlyXpIncreases()
+    {
+        // Arrange
+        var player = CreateTestPlayer(500);
+        player.Party.Digimons[0].BasicInfo.Level = 10;
+        player.Party.Digimons[0].BasicInfo.Experience = 1000;
+        _service.ProcessGameState(player);
+        _mockClientProxy.Invocations.Clear();
+
+        // Act - Increase ONLY XP
+        var mutatedPlayer = CreateTestPlayer(500);
+        mutatedPlayer.Party.Digimons[0].BasicInfo.Level = 10;
+        mutatedPlayer.Party.Digimons[0].BasicInfo.Experience = 1150;
+        _service.ProcessGameState(mutatedPlayer);
+
+        // Assert
+        _mockClientProxy.Verify(
+            c => c.SendCoreAsync(
+                nameof(EventType.DigimonLevelUp),
+                It.IsAny<object[]>(),
+                It.IsAny<CancellationToken>()),
+            Times.Never);
+        // Should STILL emit XP gained
+        _mockClientProxy.Verify(
+            c => c.SendCoreAsync(
+                nameof(EventType.DigimonXpGained),
+                It.IsAny<object[]>(),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
+    }
 }
