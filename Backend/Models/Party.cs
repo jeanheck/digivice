@@ -4,6 +4,6 @@ namespace Backend.Models
 {
     public class Party
     {
-        public List<Digimon> Digimons { get; set; } = new List<Digimon>();
+        public List<Digimon> Digimons { get; set; } = [];
     }
 }
