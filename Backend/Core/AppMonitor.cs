@@ -33,6 +33,12 @@ namespace Backend.Core
 
                 while (true)
                 {
+                    if (!reader.IsConnected)
+                    {
+                        Serilog.Log.Error("Connection to DuckStation lost. Closing AppMonitor.");
+                        break;
+                    }
+
                     var player = gameState.GetPlayer();
                     var party = gameState.GetParty();
 

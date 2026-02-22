@@ -92,6 +92,8 @@ namespace Backend.Services
 
                 byte id = idBytes[0];
 
+                if (id == 0xFF || id == 0) continue; // Skip empty slots
+
                 if (_digimonDatabase.TryGetValue(id, out var data))
                 {
                     party.Digimons.Add(new Digimon
@@ -125,6 +127,10 @@ namespace Backend.Services
                             Dark = _memoryReader.ReadInt16(data.Address + Offsets.DarkResistance)
                         }
                     });
+                }
+                else
+                {
+                    Serilog.Log.Warning("Unknown Digimon ID detected in party slot: 0x{Id:X2} at address 0x{Address:X8}", id, slotAddress);
                 }
             }
 
