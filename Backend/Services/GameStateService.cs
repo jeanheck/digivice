@@ -44,6 +44,13 @@ namespace Backend.Services
             public const int DarkResistance = 0x40;
         }
 
+        private static class MemoryConstants
+        {
+            public const int ProtagonistNameLength = 10;
+            public const int SlotIdSize = 4;
+        }
+
+
         private static readonly Dictionary<int, (string Name, int Address)> _digimonDatabase = new()
         {
             { 0, ("Kotemon", 0x0004949C) },
@@ -63,7 +70,7 @@ namespace Backend.Services
 
         public Player? GetPlayer()
         {
-            var bytes = _memoryReader.ReadBytes(Offsets.ProtagonistName, 10);
+            var bytes = _memoryReader.ReadBytes(Offsets.ProtagonistName, MemoryConstants.ProtagonistNameLength);
             if (bytes == null) return null;
 
             return new Player
@@ -80,7 +87,7 @@ namespace Backend.Services
             foreach (var slotAddress in Offsets.PartySlots)
             {
                 // Each slot ID is an Int32, but we only need the first byte
-                var idBytes = _memoryReader.ReadBytes(slotAddress, 4);
+                var idBytes = _memoryReader.ReadBytes(slotAddress, MemoryConstants.SlotIdSize);
                 if (idBytes == null) continue;
 
                 byte id = idBytes[0];
