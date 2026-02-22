@@ -23,10 +23,9 @@ namespace Backend.Services
             var player = new Player
             {
                 Name = TextDecoder.DecodeProtagonist(bytes),
-                Bits = _memoryReader.ReadInt32(PlayerAddresses.Bits)
+                Bits = _memoryReader.ReadInt32(PlayerAddresses.Bits),
+                Party = GetParty()
             };
-
-            player.Party = GetParty();
 
             return player;
         }
@@ -44,7 +43,7 @@ namespace Backend.Services
 
                 byte digimonId = idBytes[0];
 
-                if (digimonId == 0xFF) continue; // Skip empty slots (0xFF)
+                if (digimonId == DigimonAddresses.EmptySlotId) continue; // Skip empty slots
 
                 if (DigimonAddresses.Digimons.TryGetValue(digimonId, out var data))
                 {

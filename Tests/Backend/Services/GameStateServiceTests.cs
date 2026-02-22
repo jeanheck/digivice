@@ -1,3 +1,4 @@
+using Backend.Constants;
 using Backend.Interfaces;
 using Backend.Services;
 using Moq;
@@ -42,8 +43,8 @@ namespace Tests.Backend.Services
             mockReader.Setup(r => r.ReadBytes(0x00048DA4, 4)).Returns([0x00, 0x00, 0x00, 0x00]);
             // Mocking Slot 2: Renamon (ID 6)
             mockReader.Setup(r => r.ReadBytes(0x00048DA8, 4)).Returns([0x06, 0x00, 0x00, 0x00]);
-            // Mocking Slot 3: Empty (0xFF)
-            mockReader.Setup(r => r.ReadBytes(0x00048DAC, 4)).Returns([0xFF, 0x00, 0x00, 0x00]);
+            // Mocking Slot 3: Empty
+            mockReader.Setup(r => r.ReadBytes(0x00048DAC, 4)).Returns([DigimonAddresses.EmptySlotId, 0x00, 0x00, 0x00]);
 
             // Kotemon Stats (Base 0x0004949C)
             int kotemonBase = 0x0004949C;

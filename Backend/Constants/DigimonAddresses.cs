@@ -14,8 +14,10 @@ namespace Backend.Constants
         Patamon = 7
     }
 
-    internal static class DigimonAddresses
+    public static class DigimonAddresses
     {
+        public const byte EmptySlotId = 0xFF;
+
         public static readonly Dictionary<byte, (string Name, int Address)> Digimons = new()
         {
             { (byte)DigimonIds.Kotemon, (nameof(DigimonIds.Kotemon), 0x0004949C) },
