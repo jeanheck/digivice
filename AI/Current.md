@@ -18,9 +18,9 @@ Esta fase foca em transformar o backend de um monitor de console em um produtor 
 - [ ] Criar o `GameHub` para gerenciar as rotas do WebSocket.
 
 ### 2. Definição de Contratos (Eventos)
-- [ ] Criar estrutura de DTOs para os eventos em `Backend/Events/Data/`.
-- [ ] Definir `BaseEvent` (Timestamp, EventType).
-- [ ] Implementar eventos específicos:
+- [x] Criar estrutura de DTOs para os eventos em `Backend/Events/Data/`.
+- [x] Definir `BaseEvent` (Timestamp, EventType).
+- [x] Implementar eventos específicos:
     - **Sistema**: `ConnectionStatusChanged`, `InitialStateSync`
     - **Jogador**: `PlayerBitsChanged`
     - **Party**: `PartySlotsChanged`
