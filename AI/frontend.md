@@ -4,66 +4,53 @@
 - **Framework Opcional**: **Vue.js** (Sugerido pelo usuário devido à familiaridade prévia).
   - *Motivo*: O Vue possui uma curva de aprendizado incrivelmente suave em comparação com React e Angular, além de uma reatividade robusta e baseada em Proxies, o que o torna ideal para consumir dados frequentes de WebSockets (SignalR) sem "sobrecarregar" a manipulação de DOM manualmente.
 
-## Discussão Arquitetural: Monorepo vs Repositório Separado
+# O Projeto: Digivice Tracker
 
-A grande decisão antes de inicializar o projeto Vue é como organizá-lo em relação ao backend C#. Aqui estão as duas principais abordagens:
+## Visão Geral
+O Digimon World 2003 possui diversas mecânicas e dados vitais ocultos do jogador (como thresholds de experiência para a próxima Digievolução, status detalhados e resistências). 
+A ideia central deste projeto Frontend é atuar como um **segundo monitor/companion app**, consumindo em tempo real os dados extraídos pelo Backend (via SignalR) e cruzando essa "leitura de memória" com bases de dados da comunidade (como wikis e planilhas). 
 
-### Opção 1: Monorepo (Tudo em `digivice-backend`)
-Nesta abordagem, renomeamos a intenção geral desse diretório (para apenas `digivice` ou mantemos `digivice-backend` mas hospedando os dois). A estrutura ficaria assim:
-```text
-/digivice-backend
-  /Backend       (Nosso código em C# .NET)
-  /Frontend      (Novo projeto Vue/Node.js)
-  /AI            (Documentação unificada)
-```
+Isso permitirá exibir à interface do usuário informações preditivas e detalhadas que o jogo original não mostra.
 
-**Vantagens (Pros):**
-- **Unificação**: Você abre apenas 1 janela do VS Code e tem acesso aos dois ecossistemas.
-- **Sincronia de Commits**: Quando alterarmos o Payload de uma classe DTO no C#, alteramos também a interface/tipo de dados no Vue no mesmo commit (PR/Push).
-- **Facilidade Cognitiva**: Todos os contextos do mesmo projeto (Documentações, Backend e UI) andam juntos, o que ajuda bots de AI (como eu) a enxergar tudo sem perder o tracking contextual.
-
-**Desvantagens (Cons):**
-- Mistura de ferramentas: Você precisará de arquivos `.gitignore` complexos lidando com `bin`, `obj` e `node_modules` ao mesmo tempo.
-- O nome da pasta atual `digivice-backend` deixaria de fazer sentido conceitual se o front morar nela.
+## Exemplo de Caso de Uso Guiador
+- **Progresso de Level e Digievolução:** O jogo não mostra quanto de EXP exato falta para o próximo nível ou para habilitar uma nova Digievolução (ex: aos 150 EXP atinge o LVL 5 e libera uma digievolução tier 1). 
+- **Solução da Interface:** Criar uma Barra de Progresso visual que cruza o `CurrentEXP` atual despachado pelo Backend com uma tabela estática de *thresholds*. A tela exibirá: *"Level 4 - Faltam 17 EXP para o Level 5"*.
 
 ---
 
-### Opção 2: Repositório Separado (Novo Diretório `digivice-frontend`)
-Nesta abordagem, criamos uma pasta na mesma hierarquia (`C:\Projetos\digivice-frontend`), isolando o ecossistema Javascript do ecossistema .NET.
+## Decisões Arquiteturais Definidas
 
-**Vantagens (Pros):**
-- **Separação de Preocupações (SoC)**: Se no futuro quisermos hospedar o backend num servidor Linux na nuvem e o Vue.js no Vercel/Netlify, ter projetos isolados facilita os pipelines/deployments contínuos.
-- **Limpeza de Ambientes**: Comandos mágicos como dependências e ferramentas (NPM/Vite x Dotnet/Nuget) não se esbarram na raiz. E o nome atual do seu repo faz sentido total para a raiz.
+1. **Monorepo:**
+   - O repositório atual `digivice-backend` será renomeado na raiz para apenas `digivice`.
+   - Projetos coexistirão no mesmo repositório do Git para garantir que o versionamento das interfaces/DTOs (Backend) ande de mãos dadas com os contratos visuais (Frontend).
 
-**Desvantagens (Cons):**
-- Exige abrir duas abas/janelas de VS Code pra codar no backend e frontend simultaneamente.
-- Mudanças em contratos/DTOs do SignalR vão exigir dois commits em dois repositórios isolados (para não quebrar tipagens).
+2. **Estrutura de Pastas:**
+   ```text
+   /digivice
+     /Backend       (Solução C# - Leitor de Memória/GameHub)
+     /Tests         (Testes Unitários da Solução C#)
+     /Frontend      (Novo Projeto Independente)
+   ```
 
-## Recomendação da IA
-
-**Opção 1 (Monorepo)**.
-Apesar do seu repositório atual se chamar "digivice-backend", a experiência integradora é fenomenal para projetos "Pet/Hobbies" e principalmente para você que quer acompanhar o desenvolvimento lado a lado de forma clara. Nós podemos facilmente renomear/refatorar arquivos `gitignore` e separar a carga de trabalho organizando em pastas `Backend` e `Frontend`. 
-
-Tendo tudo perto, ganhamos velocidade absurda pra testar as atualizações dos eventos SignalR ao vivo.
+3. **Tecnologia Frontend:**
+   - O repositório `/Frontend` será uma aplicação independente baseada em ambiente Node.js.
+   - O framework oficial de visualização/reatividade escolhido é o **Vue.js**.
+   - Outras bibliotecas (como gerenciamento de estado, roteamento ou estilização) serão definidas ao longo do desenvolvimento conforme a necessidade técnica.
 
 ---
 
-### Dúvida: O Frontend será um projeto C# ou Node.js separado?
+## Próximos Passos (Requisitos Funcionais Sugeridos)
 
-Essa é uma excelente pergunta sobre arquitetura de Monorepos! 
+### Fase 1: Setup do Projeto Vue
+- Inicializar um projeto Vue na pasta `Frontend`.
+- Instalar e configurar a biblioteca de client do `SignalR` (`@microsoft/signalr`).
+- Criar a camada base de conexão persistente com o Hub do backend (`ws://localhost:XXXX/gamehub`).
 
-Atualmente, `Backend` e `Tests` são de fato projetos C# atrelados por uma mesma **Solução (.sln)**. 
-No caso do Vue.js, **ele NÃO será um projeto C#**, e não fará parte nativamente da Solution (`.sln`) do .NET. 
+### Fase 2: Consumo e Exibição Bruta (Prova de Conceito)
+- Escutar os eventos de conexão (`ConnectionStatusChanged`) para desenhar na tela se "O DuckStation está Conectado!".
+- Escutar o `InitialStateSyncEvent` para renderizar os *Digimons* atuais do time (Nome, HP, MP).
 
-O Vue.js opera dentro do ecossistema do **Node.js**. Portanto, a pasta `/Frontend` será um **projeto node totalmente isolado**, residindo fisicamente no mesmo repositório do Git, mas com ferramentas de build completamente separadas:
-
-- **Na pasta `/Backend`**: Você continuará rodando `dotnet run` (MSBuild / Kestrel).
-- **Na pasta `/Frontend`**: Você irá rodar `npm run dev` (Vite / Node.js).
-
-**Qual a vantagem disso? (A Melhor Abordagem)**
-
-Ter uma pasta com seu próprio `package.json` vivendo lado-a-lado com sua pasta de solução `.sln` é o padrão da indústria (muito usado inclusive em arquiteturas de microsserviços do GitHub).
-- **Isolamento de Responsabilidade:** O C# compila com o SDK do .NET gerando as DLLs dele. O Vue.js compila com o Vite/NPM gerando HTML/JS/CSS estáticos puros. 
-- **O que os une?** Apenas o repositório Git. Isso significa que você empurra o código todo junto num mesmo *Commit*, garantindo que se o *Backend* na `main` sofreu uma mudança de tipagem no Websocket, o *Frontend* na mesma branch reflete isso no mesmo exato versionamento.
-
-Ou seja: seriam apenas "duas pastas vizinhas", onde cada uma usa a sua própria linguagem e ferramenta oficial de compilação. Essa **é a melhor abordagem**, pois tentar acoplar os arquivos Vue.js dentro da compilação do C# (como era feito antigamente no ASP.NET MVC/Razor) retira todo o poder e velocidade das ferramentas modernas do ecossistema JavaScript (como o *Vite* e o *Hot Module Replacement*).
+### Fase 3: Regras de Negócio de Comunidade (Knowledge Base)
+- Criar um dicionário/tabela mockada no JavaScript mapeando "Thresholds de Level Up" (Ex: `Level 5 = 150 EXP`, `Level 6 = 230 EXP`).
+- Receber o `DigimonXpGainedEvent` e calcular dinamicamente via Vue Computed Properties qual a diferença (Δ) para o próximo nível.
+- Renderizar a Barra de Progresso preditiva de experiência e digievoluções futuras.
