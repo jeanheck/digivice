@@ -18,6 +18,22 @@ namespace Tests.Backend.Utils
         }
 
         [Fact]
+        public void DecodeProtagonist_ShouldHandleMixedCase_Jean()
+        {
+            // "Jean"
+            // 'J' (4A) -> 17 (4A - 33)
+            // 'e' (65) -> 2C (65 - 39)
+            // 'a' (61) -> 28 (61 - 39)
+            // 'n' (6E) -> 35 (6E - 39)
+            byte[] input = new byte[] { 0x17, 0x2C, 0x28, 0x35, 0x00 };
+            string expected = "Jean";
+
+            string result = TextDecoder.DecodeProtagonist(input);
+
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
         public void DecodeProtagonist_ShouldReturnEmpty_WhenBufferIsNull()
         {
             string result = TextDecoder.DecodeProtagonist(null!);
