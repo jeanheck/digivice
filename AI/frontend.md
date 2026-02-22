@@ -44,6 +44,26 @@ Nesta abordagem, criamos uma pasta na mesma hierarquia (`C:\Projetos\digivice-fr
 **Opção 1 (Monorepo)**.
 Apesar do seu repositório atual se chamar "digivice-backend", a experiência integradora é fenomenal para projetos "Pet/Hobbies" e principalmente para você que quer acompanhar o desenvolvimento lado a lado de forma clara. Nós podemos facilmente renomear/refatorar arquivos `gitignore` e separar a carga de trabalho organizando em pastas `Backend` e `Frontend`. 
 
-Tendo tudo perto, ganhamos velocidade absurda pra testar as atualizações dos eventos SignalR ao vivo. 
+Tendo tudo perto, ganhamos velocidade absurda pra testar as atualizações dos eventos SignalR ao vivo.
 
-Avalie com calma qual cenário te deixa mais confortável organizar sua máquina!
+---
+
+### Dúvida: O Frontend será um projeto C# ou Node.js separado?
+
+Essa é uma excelente pergunta sobre arquitetura de Monorepos! 
+
+Atualmente, `Backend` e `Tests` são de fato projetos C# atrelados por uma mesma **Solução (.sln)**. 
+No caso do Vue.js, **ele NÃO será um projeto C#**, e não fará parte nativamente da Solution (`.sln`) do .NET. 
+
+O Vue.js opera dentro do ecossistema do **Node.js**. Portanto, a pasta `/Frontend` será um **projeto node totalmente isolado**, residindo fisicamente no mesmo repositório do Git, mas com ferramentas de build completamente separadas:
+
+- **Na pasta `/Backend`**: Você continuará rodando `dotnet run` (MSBuild / Kestrel).
+- **Na pasta `/Frontend`**: Você irá rodar `npm run dev` (Vite / Node.js).
+
+**Qual a vantagem disso? (A Melhor Abordagem)**
+
+Ter uma pasta com seu próprio `package.json` vivendo lado-a-lado com sua pasta de solução `.sln` é o padrão da indústria (muito usado inclusive em arquiteturas de microsserviços do GitHub).
+- **Isolamento de Responsabilidade:** O C# compila com o SDK do .NET gerando as DLLs dele. O Vue.js compila com o Vite/NPM gerando HTML/JS/CSS estáticos puros. 
+- **O que os une?** Apenas o repositório Git. Isso significa que você empurra o código todo junto num mesmo *Commit*, garantindo que se o *Backend* na `main` sofreu uma mudança de tipagem no Websocket, o *Frontend* na mesma branch reflete isso no mesmo exato versionamento.
+
+Ou seja: seriam apenas "duas pastas vizinhas", onde cada uma usa a sua própria linguagem e ferramenta oficial de compilação. Essa **é a melhor abordagem**, pois tentar acoplar os arquivos Vue.js dentro da compilação do C# (como era feito antigamente no ASP.NET MVC/Razor) retira todo o poder e velocidade das ferramentas modernas do ecossistema JavaScript (como o *Vite* e o *Hot Module Replacement*).
