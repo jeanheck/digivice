@@ -1,9 +1,7 @@
 using Backend.Interfaces;
 using Serilog;
-using System.Diagnostics;
-using System.IO.MemoryMappedFiles;
 
-namespace Backend
+namespace Backend.Services
 {
     public class MemoryReader : IMemoryReader
     {

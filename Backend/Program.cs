@@ -1,6 +1,7 @@
 using Backend.Core;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
+using Backend.Interfaces;
 using Backend.UI;
 using Backend.Events.Hubs;
 using Serilog;
@@ -19,8 +20,8 @@ try
     builder.Host.UseSerilog();
 
     // Register game dependencies
-    builder.Services.AddSingleton<WindowsProcessProvider>();
-    builder.Services.AddSingleton<WindowsMemoryProvider>();
+    builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
+    builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
     builder.Services.AddSingleton<ConsoleRenderer>();
     builder.Services.AddSingleton<AppMonitor>();
 
