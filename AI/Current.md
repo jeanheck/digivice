@@ -35,8 +35,8 @@ Esta fase foca em transformar o backend de um monitor de console em um produtor 
 - [x] Substituir/Complementar o log de console pelos disparos de eventos.
 
 ### 5. Validação
-- [ ] Criar testes unitários para o serviço de eventos.
-- [ ] Validar a frequência de disparos e a integridade dos dados enviados.
+- [x] Criar testes unitários para o serviço de eventos.
+- [x] Validar a frequência de disparos e a integridade dos dados enviados.
 
 ## Sugestão de Estrutura de Pastas
 ```text
