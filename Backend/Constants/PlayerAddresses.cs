@@ -1,6 +1,6 @@
 namespace Backend.Constants
 {
-    internal static class PlayerAddresses
+    public static class PlayerAddresses
     {
         public const int Name = 0x00048D88;
         public const int Bits = 0x00048DA0;
