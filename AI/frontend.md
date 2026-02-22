@@ -35,7 +35,7 @@ Isso permitirá exibir à interface do usuário informações preditivas e detal
 3. **Tecnologia Frontend:**
    - O repositório `/Frontend` será uma aplicação independente baseada em ambiente Node.js.
    - O framework oficial de visualização/reatividade escolhido é o **Vue.js**.
-   - Outras bibliotecas (como gerenciamento de estado, roteamento ou estilização) serão definidas ao longo do desenvolvimento conforme a necessidade técnica.
+   - O projeto Vue foi criado com as seguintes features ativas: Typescript, Router, Pinia, Vitest, Linter e Prettier.
 
 ---
 
