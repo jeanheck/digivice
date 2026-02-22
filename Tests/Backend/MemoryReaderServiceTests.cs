@@ -27,7 +27,7 @@ namespace Tests.Backend
             _mockMemoryProvider.Setup(p => p.OpenExisting("duckstation_1234"))
                                .Returns(_mockMemoryAccessor.Object);
 
-            var reader = new MemoryReader(_mockProcessService.Object, _mockMemoryProvider.Object);
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
 
             // Act
             bool result = reader.TryConnect();
@@ -44,7 +44,7 @@ namespace Tests.Backend
             _mockProcessService.Setup(p => p.GetProcessIdByName(It.IsAny<string>()))
                                .Returns((int?)null);
 
-            var reader = new MemoryReader(_mockProcessService.Object, _mockMemoryProvider.Object);
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
 
             // Act
             bool result = reader.TryConnect();
@@ -65,7 +65,7 @@ namespace Tests.Backend
             _mockMemoryAccessor.Setup(a => a.ReadInt32(0x100))
                                .Returns(999);
 
-            var reader = new MemoryReader(_mockProcessService.Object, _mockMemoryProvider.Object);
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
             reader.TryConnect();
 
             // Act
@@ -91,7 +91,7 @@ namespace Tests.Backend
                                    expectedData.CopyTo(buf, idx);
                                });
 
-            var reader = new MemoryReader(_mockProcessService.Object, _mockMemoryProvider.Object);
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
             reader.TryConnect();
 
             // Act
@@ -113,7 +113,7 @@ namespace Tests.Backend
             _mockMemoryAccessor.Setup(a => a.ReadInt16(0x150))
                                .Returns(42);
 
-            var reader = new MemoryReader(_mockProcessService.Object, _mockMemoryProvider.Object);
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
             reader.TryConnect();
 
             // Act
@@ -141,7 +141,7 @@ namespace Tests.Backend
                                    data.CopyTo(buf, idx);
                                });
 
-            var reader = new MemoryReader(_mockProcessService.Object, _mockMemoryProvider.Object);
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
             reader.TryConnect();
 
             // Act
@@ -169,7 +169,7 @@ namespace Tests.Backend
                                    data.CopyTo(buf, idx);
                                });
 
-            var reader = new MemoryReader(_mockProcessService.Object, _mockMemoryProvider.Object);
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
             reader.TryConnect();
 
             // Act
@@ -183,7 +183,7 @@ namespace Tests.Backend
         public void ReadInt32_ShouldReturnMinusOne_WhenNotConnected()
         {
             // Arrange
-            var reader = new MemoryReader(_mockProcessService.Object, _mockMemoryProvider.Object);
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
 
             // Act
             int result = reader.ReadInt32(0x100);

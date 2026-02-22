@@ -21,7 +21,7 @@ namespace Backend.Core
 
         public void Run()
         {
-            using (IMemoryReader reader = new MemoryReader(_processService, _memoryProvider))
+            using (IMemoryReaderService reader = new MemoryReaderService(_processService, _memoryProvider))
             {
                 if (!reader.TryConnect())
                 {

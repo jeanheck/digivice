@@ -3,14 +3,14 @@ using Serilog;
 
 namespace Backend.Services
 {
-    public class MemoryReader : IMemoryReader
+    public class MemoryReaderService : IMemoryReaderService
     {
         private readonly IProcessService _processService;
         private readonly IMemoryProvider _memoryProvider;
         private IMemoryAccessor? _accessor;
         public bool IsConnected { get; private set; }
 
-        public MemoryReader(IProcessService processService, IMemoryProvider memoryProvider)
+        public MemoryReaderService(IProcessService processService, IMemoryProvider memoryProvider)
         {
             _processService = processService;
             _memoryProvider = memoryProvider;

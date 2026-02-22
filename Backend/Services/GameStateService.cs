@@ -8,9 +8,9 @@ namespace Backend.Services
 {
     public class GameStateService
     {
-        private readonly IMemoryReader _memoryReader;
+        private readonly IMemoryReaderService _memoryReader;
 
-        public GameStateService(IMemoryReader memoryReader)
+        public GameStateService(IMemoryReaderService memoryReader)
         {
             _memoryReader = memoryReader;
         }

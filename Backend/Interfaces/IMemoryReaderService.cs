@@ -2,7 +2,7 @@ using System;
 
 namespace Backend.Interfaces
 {
-    public interface IMemoryReader : IDisposable
+    public interface IMemoryReaderService : IDisposable
     {
         bool IsConnected { get; }
         bool TryConnect();

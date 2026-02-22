@@ -10,7 +10,7 @@ namespace Tests.Backend.Services
         [Fact]
         public void GetPlayer_ShouldReturnDecodedNameAndBits()
         {
-            var mockReader = new Mock<IMemoryReader>();
+            var mockReader = new Mock<IMemoryReaderService>();
 
             // "TESTE"
             mockReader.Setup(r => r.ReadBytes(PlayerAddresses.Name, PlayerAddresses.NameBufferSize))
@@ -37,7 +37,7 @@ namespace Tests.Backend.Services
         [Fact]
         public void GetParty_ShouldHandleCorrectSlotsAndNestedStats()
         {
-            var mockReader = new Mock<IMemoryReader>();
+            var mockReader = new Mock<IMemoryReaderService>();
 
             // Mocking Slot 1: Kotemon (ID 0)
             mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot1, PlayerAddresses.PartySlotStride)).Returns([(byte)DigimonIds.Kotemon, 0x00, 0x00, 0x00]);
@@ -74,7 +74,7 @@ namespace Tests.Backend.Services
         [Fact]
         public void GetParty_ShouldSkipUnknownIDsGracefully()
         {
-            var mockReader = new Mock<IMemoryReader>();
+            var mockReader = new Mock<IMemoryReaderService>();
 
             // Mocking Slot 1: Unknown ID (0x99)
             mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot1, PlayerAddresses.PartySlotStride)).Returns([0x99, 0x00, 0x00, 0x00]);
