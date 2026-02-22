@@ -39,8 +39,8 @@ namespace Backend.Constants
 
         public static class MemoryConstants
         {
-            public const int ProtagonistNameLength = 10;
-            public const int SlotIdSize = 4;
+            public const int PlayerNameBufferSize = 10;
+            public const int PartySlotStride = 4;
         }
     }
 }

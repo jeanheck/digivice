@@ -31,7 +31,7 @@ namespace Backend.Services
 
         public Player? GetPlayer()
         {
-            var bytes = _memoryReader.ReadBytes(Offsets.PlayerName, MemoryConstants.ProtagonistNameLength);
+            var bytes = _memoryReader.ReadBytes(Offsets.PlayerName, MemoryConstants.PlayerNameBufferSize);
             if (bytes == null) return null;
 
             return new Player
@@ -49,7 +49,7 @@ namespace Backend.Services
             {
                 var slotAddress = Offsets.PartySlots[i];
                 // Each slot ID is an Int32, but we only need the first byte
-                var idBytes = _memoryReader.ReadBytes(slotAddress, MemoryConstants.SlotIdSize);
+                var idBytes = _memoryReader.ReadBytes(slotAddress, MemoryConstants.PartySlotStride);
                 if (idBytes == null) continue;
 
                 byte id = idBytes[0];
