@@ -1,12 +1,10 @@
-using System.Collections.Generic;
-
 namespace Backend.Constants
 {
-    internal static class GameOffsets
+    internal static class MemoryAddresses
     {
         public static class Offsets
         {
-            public const int ProtagonistName = 0x00048D88;
+            public const int PlayerName = 0x00048D88;
             public const int Bits = 0x00048DA0;
 
             public const int PartySlot1 = 0x00048DA4;

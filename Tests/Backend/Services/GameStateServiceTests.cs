@@ -1,4 +1,6 @@
 using Backend.Interfaces;
+using Backend.Models;
+using Backend.Models.Digimons;
 using Backend.Services;
 using Moq;
 

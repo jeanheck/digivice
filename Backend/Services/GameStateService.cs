@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using Backend.Interfaces;
 using Backend.Models;
+using Backend.Models.Digimons;
 using Backend.Utils;
 using Backend.Constants;
-using static Backend.Constants.GameOffsets;
+using static Backend.Constants.MemoryAddresses;
 
 namespace Backend.Services
 {
@@ -30,7 +31,7 @@ namespace Backend.Services
 
         public Player? GetPlayer()
         {
-            var bytes = _memoryReader.ReadBytes(Offsets.ProtagonistName, MemoryConstants.ProtagonistNameLength);
+            var bytes = _memoryReader.ReadBytes(Offsets.PlayerName, MemoryConstants.ProtagonistNameLength);
             if (bytes == null) return null;
 
             return new Player

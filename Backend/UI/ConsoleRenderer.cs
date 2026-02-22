@@ -1,5 +1,6 @@
 using System;
 using Backend.Models;
+using Backend.Models.Digimons;
 
 namespace Backend.UI
 {
