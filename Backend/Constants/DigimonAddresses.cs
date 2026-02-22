@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Backend.Constants
 {
     internal enum DigimonIds : byte
