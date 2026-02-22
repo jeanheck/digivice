@@ -3,25 +3,17 @@ using Serilog;
 
 namespace Backend.Services
 {
-    public class MemoryReaderService : IMemoryReaderService
+    public class MemoryReaderService(IProcessService processService, IMemoryProvider memoryProvider) : IMemoryReaderService
     {
-        private readonly IProcessService _processService;
-        private readonly IMemoryProvider _memoryProvider;
         private IMemoryAccessor? _accessor;
         public bool IsConnected { get; private set; }
-
-        public MemoryReaderService(IProcessService processService, IMemoryProvider memoryProvider)
-        {
-            _processService = processService;
-            _memoryProvider = memoryProvider;
-        }
 
         public bool TryConnect()
         {
             try
             {
                 // 1. Search for the specific process name using the service
-                int? processId = _processService.GetProcessIdByName("duckstation-qt-x64-ReleaseLTCG");
+                int? processId = processService.GetProcessIdByName("duckstation-qt-x64-ReleaseLTCG");
 
                 if (processId == null)
                 {
@@ -32,7 +24,7 @@ namespace Backend.Services
                 string dynamicMapName = $"duckstation_{processId}";
 
                 // 2. Attempt to open the memory mapping through the provider
-                _accessor = _memoryProvider.OpenExisting(dynamicMapName);
+                _accessor = memoryProvider.OpenExisting(dynamicMapName);
 
                 if (_accessor == null)
                 {

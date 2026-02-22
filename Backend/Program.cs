@@ -4,6 +4,7 @@ using Backend.Infrastructure.Processes;
 using Backend.Interfaces;
 using Backend.UI;
 using Backend.Events.Hubs;
+using Backend.Services;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -23,7 +24,7 @@ try
     builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
     builder.Services.AddSingleton<ConsoleRenderer>();
-    builder.Services.AddSingleton<AppMonitor>();
+    builder.Services.AddSingleton<Backend.Core.Monitor>();
 
     // Register the game monitor as a hosted background service
     builder.Services.AddHostedService<MonitorBackgroundService>();

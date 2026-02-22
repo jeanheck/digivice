@@ -6,13 +6,13 @@ using Backend.Services;
 
 namespace Backend.Core
 {
-    public class AppMonitor
+    public class Monitor
     {
         private readonly IProcessService _processService;
         private readonly IMemoryProvider _memoryProvider;
         private readonly ConsoleRenderer _renderer;
 
-        public AppMonitor(IProcessService processService, IMemoryProvider memoryProvider, ConsoleRenderer renderer)
+        public Monitor(IProcessService processService, IMemoryProvider memoryProvider, ConsoleRenderer renderer)
         {
             _processService = processService;
             _memoryProvider = memoryProvider;
@@ -21,7 +21,7 @@ namespace Backend.Core
 
         public void Run()
         {
-            using (IMemoryReaderService reader = new MemoryReaderService(_processService, _memoryProvider))
+            using (MemoryReaderService reader = new MemoryReaderService(_processService, _memoryProvider))
             {
                 if (!reader.TryConnect())
                 {
