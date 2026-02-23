@@ -34,50 +34,62 @@ const resistances = ref([
 </script>
 
 <template>
-  <div class="details-panel flex gap-4 w-full text-white text-sm">
+  <div class="relative overflow-hidden flex flex-col w-full bg-[#000a2b]">
+    <!-- Borda externa brilhante simuluada via clip-path background -->
+    <div class="absolute inset-0 bg-[#0077ff] pointer-events-none evo-border"></div>
     
-    <!-- Coluna 1: Atributos Base -->
-    <div class="flex-1 flex flex-col gap-1">
-      <div 
-        v-for="attr in attributes" 
-        :key="attr.label"
-        class="flex items-center gap-2"
-      >
-        <!-- Ícone Box com Borda -->
-        <div class="icon-box w-[28px] h-[28px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center aspect-square">
-          <component :is="attr.icon" class="w-5 h-5" :class="attr.color" />
-        </div>
-        
-        <!-- Valor Numérico -->
-        <div class="font-bold tracking-widest text-shadow">
-          {{ attr.value }}
+    <!-- Fundo interno escuro (1 pixel menor que a borda) -->
+    <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none evo-inner"></div>
+
+    <div class="relative z-10 details-panel flex gap-4 w-full p-4 text-white text-sm">
+      
+      <!-- Coluna 1: Atributos Base -->
+      <div class="flex-1 flex flex-col gap-1">
+        <div 
+          v-for="attr in attributes" 
+          :key="attr.label"
+          class="flex items-center gap-2"
+        >
+          <!-- Ícone Box com Borda -->
+          <div class="icon-box w-[28px] h-[28px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center aspect-square">
+            <component :is="attr.icon" class="w-5 h-5" :class="attr.color" />
+          </div>
+          
+          <!-- Valor Numérico -->
+          <div class="font-bold tracking-widest text-shadow">
+            {{ attr.value }}
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Coluna 2: Resistências Elementais -->
-    <div class="flex-1 flex flex-col gap-1">
-      <div 
-        v-for="res in resistances" 
-        :key="res.label"
-        class="flex items-center gap-2"
-      >
-        <!-- Ícone Box com Borda -->
-        <div class="icon-box w-[28px] h-[28px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center aspect-square">
-          <component :is="res.icon" class="w-5 h-5" :class="res.color" />
-        </div>
-        
-        <!-- Valor Numérico -->
-        <div class="font-bold tracking-widest text-shadow">
-          {{ res.value }}
+      <!-- Coluna 2: Resistências Elementais -->
+      <div class="flex-1 flex flex-col gap-1">
+        <div 
+          v-for="res in resistances" 
+          :key="res.label"
+          class="flex items-center gap-2"
+        >
+          <!-- Ícone Box com Borda -->
+          <div class="icon-box w-[28px] h-[28px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center aspect-square">
+            <component :is="res.icon" class="w-5 h-5" :class="res.color" />
+          </div>
+          
+          <!-- Valor Numérico -->
+          <div class="font-bold tracking-widest text-shadow">
+            {{ res.value }}
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </template>
 
 <style scoped>
+.evo-border, .evo-inner {
+  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+}
+
 .icon-box {
   /* Bordas em inset/outset para simular as caixinhas azuis do DW3 */
   border-width: 1px;

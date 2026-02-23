@@ -33,48 +33,60 @@ const getIconUrl = (name: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 p-3 bg-[#000a2b] border border-[#002277] rounded">
+  <div class="relative overflow-hidden flex flex-col w-full bg-[#000a2b]">
+    <!-- Borda externa brilhante simuluada via clip-path background -->
+    <div class="absolute inset-0 bg-[#0077ff] pointer-events-none evo-border"></div>
     
-    <!-- Header row: Name, Icon Box, Level & Exp -->
-    <div class="flex items-start gap-4">
-      
-      <!-- Icon Image using Vite dynamic URL -->
-      <div class="w-16 h-16 bg-[#000e3f] rounded overflow-hidden shadow flex-shrink-0 flex items-center justify-center border-2 border-[#00154a]">
-        <img 
-          :src="getIconUrl(digimon.basicInfo.name)" 
-          :alt="digimon.basicInfo.name"
-          class="w-full h-full object-cover rendering-pixelated"
-          @error="(e) => (e.target as HTMLImageElement).style.display = 'none'"
-        />
-      </div>
+    <!-- Fundo interno escuro (1 pixel menor que a borda) -->
+    <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none evo-inner"></div>
 
-      <div class="flex-1 flex flex-col gap-1 min-w-0">
-        <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
-          <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimon.basicInfo.name }}</h2>
-          <span class="text-[0.6rem] font-medium text-yellow-500 flex-shrink-0">Level {{ digimon.basicInfo.level }}</span>
-        </div>
+    <div class="relative z-10 flex flex-col gap-2 p-3">
+      <!-- Header row: Name, Icon Box, Level & Exp -->
+      <div class="flex items-start gap-4">
         
-        <!-- specialized EXP Bar -->
-        <ExpProgressBar 
-          :current-exp="digimon.basicInfo.experience" 
-          :exp-for-next-level="getExpForNextLevel(digimon.basicInfo.level)" 
-        />
+        <!-- Icon Image using Vite dynamic URL -->
+        <div class="w-16 h-16 bg-[#000e3f] rounded overflow-hidden shadow flex-shrink-0 flex items-center justify-center border-2 border-[#00154a]">
+          <img 
+            :src="getIconUrl(digimon.basicInfo.name)" 
+            :alt="digimon.basicInfo.name"
+            class="w-full h-full object-cover rendering-pixelated"
+            @error="(e) => (e.target as HTMLImageElement).style.display = 'none'"
+          />
+        </div>
+
+        <div class="flex-1 flex flex-col gap-1 min-w-0">
+          <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
+            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimon.basicInfo.name }}</h2>
+            <span class="text-[0.6rem] font-medium text-yellow-500 flex-shrink-0">Level {{ digimon.basicInfo.level }}</span>
+          </div>
+          
+          <!-- specialized EXP Bar -->
+          <ExpProgressBar 
+            :current-exp="digimon.basicInfo.experience" 
+            :exp-for-next-level="getExpForNextLevel(digimon.basicInfo.level)" 
+          />
+        </div>
+      </div>
+
+      <!-- Status Bars -->
+      <div class="flex flex-col gap-2 mt-2">
+         <ProgressBar 
+            :current-value="digimon.basicInfo.currentHP" 
+            :max-value="digimon.basicInfo.maxHP" 
+            :color-class="getHpColor(digimon.basicInfo.currentHP, digimon.basicInfo.maxHP)" 
+          />
+          <ProgressBar 
+            :current-value="digimon.basicInfo.currentMP" 
+            :max-value="digimon.basicInfo.maxMP" 
+            :color-class="getMpColor(digimon.basicInfo.currentMP, digimon.basicInfo.maxMP)" 
+          />
       </div>
     </div>
-
-    <!-- Status Bars -->
-    <div class="flex flex-col gap-2 mt-2">
-       <ProgressBar 
-          :current-value="digimon.basicInfo.currentHP" 
-          :max-value="digimon.basicInfo.maxHP" 
-          :color-class="getHpColor(digimon.basicInfo.currentHP, digimon.basicInfo.maxHP)" 
-        />
-        <ProgressBar 
-          :current-value="digimon.basicInfo.currentMP" 
-          :max-value="digimon.basicInfo.maxMP" 
-          :color-class="getMpColor(digimon.basicInfo.currentMP, digimon.basicInfo.maxMP)" 
-        />
-    </div>
-
   </div>
 </template>
+
+<style scoped>
+.evo-border, .evo-inner {
+  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+}
+</style>
