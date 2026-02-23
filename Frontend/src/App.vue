@@ -4,15 +4,13 @@ import { useGameStore } from './stores/useGameStore'
 import DigimonCard from './components/digimon/DigimonCard.vue'
 import GeneralInfoPanel from './components/layout/GeneralInfoPanel.vue'
 import PlayerFooter from './components/layout/PlayerFooter.vue'
-import AnimatedBackground from './components/layout/AnimatedBackground.vue'
 
 const store = useGameStore()
 const partySlots = computed(() => store.gameState?.party?.slots ?? [null, null, null])
 </script>
 
 <template>
-  <AnimatedBackground />
-  <main class="min-h-screen bg-transparent p-4 flex flex-col gap-4 max-w-[1800px] mx-auto text-white">
+  <main class="min-h-screen bg-gray-100 p-4 flex flex-col gap-4 max-w-[1800px] mx-auto text-black">
     <!-- Top Section: Core Game Data -->
     <div class="flex-1 flex gap-4 min-h-[600px]">
       

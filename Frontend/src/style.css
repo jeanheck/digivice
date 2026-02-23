@@ -8,9 +8,8 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #000030;
+  background-color: #f3f4f6;
   /* bg-gray-100 para fora da área de mock */
   font-family: 'Press Start 2P', cursive;
   image-rendering: pixelated;
-  color: white;
 }
