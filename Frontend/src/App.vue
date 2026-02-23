@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useGameStore } from './stores/useGameStore'
 import DigimonCard from './components/digimon/DigimonCard.vue'
 import GeneralInfoPanel from './components/layout/GeneralInfoPanel.vue'
 import PlayerFooter from './components/layout/PlayerFooter.vue'
 
-// Mock Data for testing the UI
-const dummyDigimons = ref([
-  { id: 1, name: 'Agumon', level: 5, currentExp: 156, expForNextLevel: 250, currentHp: 200, maxHp: 250, currentMp: 45, maxMp: 100 },
-  { id: 2, name: 'Gabumon', level: 6, currentExp: 50, expForNextLevel: 300, currentHp: 180, maxHp: 180, currentMp: 110, maxMp: 120 },
-  { id: 3, name: 'Patamon', level: 4, currentExp: 90, expForNextLevel: 150, currentHp: 120, maxHp: 130, currentMp: 200, maxMp: 250 }
-])
+const store = useGameStore()
+const partySlots = computed(() => store.gameState?.party?.slots ?? [null, null, null])
 </script>
 
 <template>
@@ -19,11 +16,18 @@ const dummyDigimons = ref([
       
       <!-- Digimon Slots (3 Columns) -->
       <div class="flex-[3] grid grid-cols-3 gap-4">
-        <DigimonCard 
-          v-for="digimon in dummyDigimons" 
-          :key="digimon.id" 
-          :digimon="digimon" 
-        />
+        <!-- Loop exactly 3 times -->
+        <template v-for="(digimon, index) in partySlots" :key="index">
+          <DigimonCard 
+            v-if="digimon" 
+            :digimon="digimon" 
+          />
+          
+          <!-- Empty Slot Placeholder -->
+          <div v-else class="flex flex-col h-full w-full p-4 rounded-md shadow-lg border-2 border-dashed border-gray-400 bg-gray-200/50 flex items-center justify-center">
+            <span class="text-gray-500 font-medium opacity-70">Slot Empty</span>
+          </div>
+        </template>
       </div>
 
       <!-- General Info Panel (Right Sidebar) -->
@@ -34,6 +38,6 @@ const dummyDigimons = ref([
     </div>
 
     <!-- Bottom Section: Player Info -->
-    <PlayerFooter player-name="Jean" :bits="15420" />
+    <PlayerFooter />
   </main>
 </template>

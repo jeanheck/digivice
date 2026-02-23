@@ -1,22 +1,14 @@
 <script setup lang="ts">
 import ExpProgressBar from '../ui/ExpProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
-
-// Temporary mock type until we fetch from store
-type DigimonData = {
-  name: string
-  level: number
-  currentExp: number
-  expForNextLevel: number
-  currentHp: number
-  maxHp: number
-  currentMp: number
-  maxMp: number
-}
+import type { Digimon } from '../../types/backend'
 
 defineProps<{
-  digimon: DigimonData
+  digimon: Digimon
 }>()
+
+// ExpForNextLevel will depend on the backend later, setting arbitrary 1000 for now to avoid breaking UI.
+const getExpForNextLevel = (level: number) => level * 100
 </script>
 
 <template>
@@ -31,14 +23,14 @@ defineProps<{
 
       <div class="flex-1 flex flex-col gap-1">
         <div class="flex justify-between items-baseline mb-1">
-          <h2 class="text-xl font-bold text-gray-800 leading-none">{{ digimon.name }}</h2>
-          <span class="text-sm font-semibold text-gray-600">Level {{ digimon.level }}</span>
+          <h2 class="text-xl font-bold text-gray-800 leading-none">{{ digimon.basicInfo.name }}</h2>
+          <span class="text-sm font-semibold text-gray-600">Level {{ digimon.basicInfo.level }}</span>
         </div>
         
         <!-- specialized EXP Bar -->
         <ExpProgressBar 
-          :current-exp="digimon.currentExp" 
-          :exp-for-next-level="digimon.expForNextLevel" 
+          :current-exp="digimon.basicInfo.experience" 
+          :exp-for-next-level="getExpForNextLevel(digimon.basicInfo.level)" 
         />
       </div>
     </div>
@@ -46,13 +38,13 @@ defineProps<{
     <!-- Status Bars -->
     <div class="flex flex-col gap-1 mt-1">
        <ProgressBar 
-          :current-value="digimon.currentHp" 
-          :max-value="digimon.maxHp" 
+          :current-value="digimon.basicInfo.currentHP" 
+          :max-value="digimon.basicInfo.maxHP" 
           color-class="bg-red-500" 
         />
         <ProgressBar 
-          :current-value="digimon.currentMp" 
-          :max-value="digimon.maxMp" 
+          :current-value="digimon.basicInfo.currentMP" 
+          :max-value="digimon.basicInfo.maxMP" 
           color-class="bg-blue-600" 
         />
     </div>

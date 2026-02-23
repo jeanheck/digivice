@@ -1,20 +1,9 @@
 <script setup lang="ts">
 import DigimonHeaderInfo from './DigimonHeaderInfo.vue'
-
-// Temporary mock type until we fetch from store
-type DigimonData = {
-  name: string
-  level: number
-  currentExp: number
-  expForNextLevel: number
-  currentHp: number
-  maxHp: number
-  currentMp: number
-  maxMp: number
-}
+import type { Digimon } from '../../types/backend'
 
 defineProps<{
-  digimon: DigimonData
+  digimon: Digimon
 }>()
 </script>
 

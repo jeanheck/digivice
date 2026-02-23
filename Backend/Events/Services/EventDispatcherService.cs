@@ -37,6 +37,15 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         }
     }
 
+    public void DispatchInitialStateToClient(string connectionId)
+    {
+        if (_previousState != null)
+        {
+            var ev = new InitialStateSyncEvent(_previousState);
+            _ = _hubContext.Clients.Client(connectionId).SendAsync(ev.Type.ToString(), ev);
+        }
+    }
+
     public void ProcessGameState(State newState)
     {
         if (_previousState == null)
