@@ -13,13 +13,13 @@ const percentage = computed(() => {
 </script>
 
 <template>
-  <div class="relative w-full h-6 bg-gray-300 rounded overflow-hidden shadow-inner flex items-center justify-center border border-gray-400">
+  <div class="relative w-full h-6 bg-[#000e3f] rounded overflow-hidden shadow-inner flex items-center justify-center border-2 border-[#00154a]">
     <div 
-      class="absolute left-0 top-0 h-full bg-cyan-400 transition-all duration-300 bg-opacity-90"
+      class="absolute left-0 top-0 h-full bg-gradient-to-r from-orange-600 to-yellow-500 transition-all duration-300 bg-opacity-90"
       :style="{ width: `${percentage}%` }"
     ></div>
     
-    <span class="relative z-10 text-[0.6rem] font-bold text-gray-800 drop-shadow-sm px-1 tracking-wider">
+    <span class="relative z-10 text-[0.6rem] font-bold text-white drop-shadow-md px-1 tracking-wider">
       EXP: {{ currentExp }} / {{ expForNextLevel }}
     </span>
   </div>

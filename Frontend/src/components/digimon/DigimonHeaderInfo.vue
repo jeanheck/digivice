@@ -33,13 +33,13 @@ const getIconUrl = (name: string) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 p-3 bg-gray-200 border-2 border-purple-400 rounded-md">
+  <div class="flex flex-col gap-2 p-3 bg-[#000a2b] border border-[#002277] rounded">
     
     <!-- Header row: Name, Icon Box, Level & Exp -->
     <div class="flex items-start gap-4">
       
       <!-- Icon Image using Vite dynamic URL -->
-      <div class="w-16 h-16 bg-gray-300 rounded overflow-hidden shadow flex-shrink-0 flex items-center justify-center border border-gray-400">
+      <div class="w-16 h-16 bg-[#000e3f] rounded overflow-hidden shadow flex-shrink-0 flex items-center justify-center border-2 border-[#00154a]">
         <img 
           :src="getIconUrl(digimon.basicInfo.name)" 
           :alt="digimon.basicInfo.name"
@@ -49,9 +49,9 @@ const getIconUrl = (name: string) => {
       </div>
 
       <div class="flex-1 flex flex-col gap-1 min-w-0">
-        <div class="flex justify-between items-baseline mb-1">
-          <h2 class="text-sm font-bold text-gray-800 leading-none truncate pr-2">{{ digimon.basicInfo.name }}</h2>
-          <span class="text-[0.6rem] font-semibold text-gray-600 flex-shrink-0">Level {{ digimon.basicInfo.level }}</span>
+        <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
+          <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimon.basicInfo.name }}</h2>
+          <span class="text-[0.6rem] font-medium text-yellow-500 flex-shrink-0">Level {{ digimon.basicInfo.level }}</span>
         </div>
         
         <!-- specialized EXP Bar -->

@@ -1,10 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <aside class="w-full h-full bg-yellow-500 rounded-md shadow-lg border border-yellow-600 p-4 flex flex-col">
-    <h3 class="text-yellow-900 font-bold text-lg mb-4 border-b border-yellow-600 pb-2">Geral</h3>
+  <aside class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-4 flex flex-col">
+    <div class="bg-gradient-to-r from-orange-600 to-yellow-500 p-2 rounded shadow-sm border-b-2 border-orange-700 mb-4">
+      <h3 class="text-white font-bold text-lg drop-shadow-md tracking-wider">Geral</h3>
+    </div>
     <div class="flex-1 flex items-center justify-center opacity-70">
-      <span class="text-yellow-900 font-medium italic">Informações Gerais...</span>
+      <span class="text-blue-300 font-medium italic">Informações Gerais...</span>
     </div>
   </aside>
 </template>

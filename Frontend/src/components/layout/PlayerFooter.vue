@@ -10,7 +10,7 @@ const isConnected = computed(() => store.isConnected)
 </script>
 
 <template>
-  <footer class="w-full bg-[#8B4513] text-[#FFE4B5] p-3 rounded-md shadow-lg border border-[#5c2e0c] flex items-center gap-12 px-6 relative">
+  <footer class="w-full bg-[#000a2b] text-white p-3 rounded-md shadow-lg border-2 border-[#0033aa] border-t-orange-500 flex items-center gap-12 px-6 relative">
     
     <!-- Connection Status Indicator -->
     <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2 text-sm opacity-80">
@@ -19,13 +19,13 @@ const isConnected = computed(() => store.isConnected)
     </div>
 
     <div class="font-bold text-lg">
-      <span class="opacity-80 text-sm mr-2 font-normal">Tamer:</span>
-      {{ playerName }}
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">Tamer:</span>
+      <span class="text-yellow-400 drop-shadow">{{ playerName }}</span>
     </div>
     
-    <div class="font-bold text-lg">
-      <span class="opacity-80 text-sm mr-2 font-normal">Bits:</span>
-      {{ bits }}
+    <div class="font-bold text-lg flex items-baseline">
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">Bits:</span>
+      <span class="text-white">{{ bits }}</span>
     </div>
   </footer>
 </template>

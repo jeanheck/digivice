@@ -8,12 +8,12 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col h-full w-full bg-[#8b5cf6] p-4 rounded-md shadow-lg border border-purple-700">
+  <div class="flex flex-col h-full w-full bg-[#000e3f] p-4 rounded-md shadow-lg border-2 border-[#0033aa]">
     <DigimonHeaderInfo :digimon="digimon" />
     
     <!-- Empty space for future body content -->
-    <div class="flex-1 mt-4 rounded border-2 border-dashed border-purple-400 bg-purple-500/20 flex items-center justify-center">
-      <span class="text-purple-200 font-medium">Reserved for Details</span>
+    <div class="flex-1 mt-4 rounded border-2 border-dashed border-[#0033aa] bg-[#00154a]/50 flex items-center justify-center">
+      <span class="text-[#0055ff] font-medium opacity-70">Reserved for Details</span>
     </div>
   </div>
 </template>
