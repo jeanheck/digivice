@@ -3,7 +3,7 @@ import ExpProgressBar from '../ui/ExpProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
 import type { Digimon } from '../../types/backend'
 
-defineProps<{
+const props = defineProps<{
   digimon: Digimon
 }>()
 
@@ -21,6 +21,15 @@ const getMpColor = (current: number, max: number) => {
   const percentage = current / max
   return percentage < 0.3 ? 'bg-yellow-400' : 'bg-blue-600'
 }
+
+const getIconUrl = (name: string) => {
+  try {
+    return new URL(`../../icons/digimons/${name}.png`, import.meta.url).href
+  } catch (e) {
+    // Falha silenciosa: retorna string vazia ou placeholder caso nÃ£o encontre.
+    return ''
+  }
+}
 </script>
 
 <template>
@@ -28,15 +37,21 @@ const getMpColor = (current: number, max: number) => {
     
     <!-- Header row: Name, Icon Box, Level & Exp -->
     <div class="flex items-start gap-4">
-      <!-- "Icon" placeholder block -->
-      <div class="w-16 h-16 bg-green-500 rounded text-white flex items-center justify-center font-bold shadow text-xs text-center">
-        Icon
+      
+      <!-- Icon Image using Vite dynamic URL -->
+      <div class="w-16 h-16 bg-gray-300 rounded overflow-hidden shadow flex-shrink-0 flex items-center justify-center border border-gray-400">
+        <img 
+          :src="getIconUrl(digimon.basicInfo.name)" 
+          :alt="digimon.basicInfo.name"
+          class="w-full h-full object-cover rendering-pixelated"
+          @error="(e) => (e.target as HTMLImageElement).style.display = 'none'"
+        />
       </div>
 
-      <div class="flex-1 flex flex-col gap-1">
+      <div class="flex-1 flex flex-col gap-1 min-w-0">
         <div class="flex justify-between items-baseline mb-1">
-          <h2 class="text-sm font-bold text-gray-800 leading-none truncate">{{ digimon.basicInfo.name }}</h2>
-          <span class="text-[0.6rem] font-semibold text-gray-600">Lv{{ digimon.basicInfo.level }}</span>
+          <h2 class="text-sm font-bold text-gray-800 leading-none truncate pr-2">{{ digimon.basicInfo.name }}</h2>
+          <span class="text-[0.6rem] font-semibold text-gray-600 flex-shrink-0">Level {{ digimon.basicInfo.level }}</span>
         </div>
         
         <!-- specialized EXP Bar -->
