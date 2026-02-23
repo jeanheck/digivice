@@ -10,7 +10,7 @@ const partySlots = computed(() => store.gameState?.party?.slots ?? [null, null, 
 </script>
 
 <template>
-  <main class="min-h-screen bg-gray-100 p-4 flex flex-col gap-4 max-w-[1400px] mx-auto">
+  <main class="min-h-screen bg-gray-100 p-4 flex flex-col gap-4 max-w-[1800px] mx-auto">
     <!-- Top Section: Core Game Data -->
     <div class="flex-1 flex gap-4 min-h-[600px]">
       

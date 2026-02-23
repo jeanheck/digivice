@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 /* Opcional: Adicionar estilos globais básicos que o Tailwind não cobre, ou sobrescrever o reset */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #f3f4f6; /* bg-gray-100 para fora da área de mock */
+  background-color: #f3f4f6;
+  /* bg-gray-100 para fora da área de mock */
+  font-family: 'Press Start 2P', cursive;
+  image-rendering: pixelated;
 }

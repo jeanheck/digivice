@@ -13,7 +13,7 @@ const percentage = computed(() => {
 </script>
 
 <template>
-  <div class="relative w-full h-4 bg-gray-300 rounded overflow-hidden shadow-inner flex items-center justify-center border border-gray-400">
+  <div class="relative w-full h-6 bg-gray-300 rounded overflow-hidden shadow-inner flex items-center justify-center border border-gray-400">
     <div 
       class="absolute left-0 top-0 h-full bg-cyan-400 transition-all duration-300 bg-opacity-90"
       :style="{ width: `${percentage}%` }"
