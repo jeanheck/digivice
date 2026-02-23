@@ -18,6 +18,7 @@
   "dependencies": {
     "@microsoft/signalr": "^10.0.0",
     "pinia": "^3.0.4",
+    "pixelarticons": "^2.0.2",
     "vue": "^3.5.28",
     "vue-router": "^5.0.2"
   },
