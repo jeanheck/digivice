@@ -169,6 +169,18 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             var ev = new DigimonResistancesChangedEvent(index, newDigi.Resistances.Fire, newDigi.Resistances.Water, newDigi.Resistances.Ice, newDigi.Resistances.Wind, newDigi.Resistances.Thunder, newDigi.Resistances.Metal, newDigi.Resistances.Dark);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
+
+        // Compare Equipments
+        if (oldDigi.Equipments.Head != newDigi.Equipments.Head ||
+            oldDigi.Equipments.Body != newDigi.Equipments.Body ||
+            oldDigi.Equipments.RightHand != newDigi.Equipments.RightHand ||
+            oldDigi.Equipments.LeftHand != newDigi.Equipments.LeftHand ||
+            oldDigi.Equipments.Accessory1 != newDigi.Equipments.Accessory1 ||
+            oldDigi.Equipments.Accessory2 != newDigi.Equipments.Accessory2)
+        {
+            var ev = new DigimonEquipmentsChangedEvent(index, newDigi.Equipments);
+            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+        }
     }
 
     // A simple Deep clone since records aren't being used
@@ -210,6 +222,15 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         Thunder = d.Resistances.Thunder,
                         Metal = d.Resistances.Metal,
                         Dark = d.Resistances.Dark
+                    },
+                    Equipments = new Equipments
+                    {
+                        Head = d.Equipments.Head,
+                        Body = d.Equipments.Body,
+                        RightHand = d.Equipments.RightHand,
+                        LeftHand = d.Equipments.LeftHand,
+                        Accessory1 = d.Equipments.Accessory1,
+                        Accessory2 = d.Equipments.Accessory2
                     }
                 }).ToList(),
                 ActiveSlotIndex = s.Party.ActiveSlotIndex

@@ -86,6 +86,15 @@ namespace Backend.Services
                             Thunder = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Thunder),
                             Metal = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Metal),
                             Dark = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Dark)
+                        },
+                        Equipments = new Equipments
+                        {
+                            Head = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.Head),
+                            Body = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.Body),
+                            RightHand = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.RightHand),
+                            LeftHand = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.LeftHand),
+                            Accessory1 = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.Accessory1),
+                            Accessory2 = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.Accessory2)
                         }
                     };
                 }

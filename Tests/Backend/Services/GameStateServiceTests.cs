@@ -55,6 +55,7 @@ namespace Tests.Backend.Services
             mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.BasicInfo.Level)).Returns(15);
             mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Attributes.Attack)).Returns(100);
             mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Resistances.Fire)).Returns(50);
+            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Equipments.Head)).Returns(215);
 
             var service = new GameStateService(mockReader.Object);
             var state = service.GetState();
@@ -71,6 +72,7 @@ namespace Tests.Backend.Services
             Assert.Equal(15, kotemon.BasicInfo.Level);
             Assert.Equal(100, kotemon.Attributes.Attack);
             Assert.Equal(50, kotemon.Resistances.Fire);
+            Assert.Equal(215, kotemon.Equipments.Head);
 
             // Renamon Assertions
             var renamon = state.Party.Slots[1];

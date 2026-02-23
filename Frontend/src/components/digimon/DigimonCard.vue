@@ -18,6 +18,6 @@ defineProps<{
 
     <DigimonDetails />
     
-    <DigimonEquipments />
+    <DigimonEquipments :digimon="digimon" />
   </div>
 </template>

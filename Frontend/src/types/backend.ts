@@ -27,11 +27,21 @@ export interface Resistances {
     dark: number
 }
 
+export interface Equipments {
+    head: number
+    body: number
+    rightHand: number
+    leftHand: number
+    accessory1: number
+    accessory2: number
+}
+
 export interface Digimon {
     slotIndex: number
     basicInfo: BasicInfo
     attributes: Attributes
     resistances: Resistances
+    equipments: Equipments
 }
 
 export interface Party {

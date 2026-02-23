@@ -10,5 +10,6 @@ public enum EventType
     DigimonXpGained,
     DigimonAttributesChanged,
     DigimonResistancesChanged,
-    DigimonLevelUp
+    DigimonLevelUp,
+    DigimonEquipmentsChanged
 }

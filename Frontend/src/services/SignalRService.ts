@@ -70,6 +70,11 @@ class SignalRService {
             console.log('Hub: DigimonResistancesChanged', event)
             store.updateDigimonResistances(event.partySlotIndex, event.fire, event.water, event.ice, event.wind, event.thunder, event.machine, event.dark)
         })
+
+        this.connection.on('DigimonEquipmentsChanged', (event: { partySlotIndex: number, equipments: import('../types/backend').Equipments }) => {
+            console.log('Hub: DigimonEquipmentsChanged', event)
+            store.updateDigimonEquipments(event.partySlotIndex, event.equipments)
+        })
     }
 
     public get isConnected() {

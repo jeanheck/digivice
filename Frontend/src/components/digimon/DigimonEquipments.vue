@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 
 // Importando alguns ícones genéricos do pacote @iconify-json/pixelarticons para os equipamentos
 import IconHead from '~icons/pixelarticons/user'
@@ -9,15 +9,31 @@ import IconOffhand from '~icons/pixelarticons/add-box' // Buckler
 import IconAcc1 from '~icons/pixelarticons/heart' // Power Ring
 import IconAcc2 from '~icons/pixelarticons/wind' // Speed Ring
 
-// Mock de slots de equipamento focados na nomenclatura do DW3
-const equipments = ref([
-  { slot: 'Head', item: 'Ribbon', icon: IconHead, color: 'text-pink-400' },
-  { slot: 'Body', item: 'Leather Coat', icon: IconBody, color: 'text-orange-700' },
-  { slot: 'Right', item: 'Dagger', icon: IconWeapon, color: 'text-gray-400' },
-  { slot: 'Left', item: 'Buckler', icon: IconOffhand, color: 'text-orange-900' },
-  { slot: 'Accessory', item: 'Power Ring', icon: IconAcc1, color: 'text-red-500' },
-  { slot: 'Accessory', item: 'Speed Ring', icon: IconAcc2, color: 'text-cyan-300' }
-])
+import type { Digimon } from '../../types/backend'
+
+const props = defineProps<{
+  digimon: Digimon
+}>()
+
+function getItemName(id: number) {
+    if (id === 0) return 'Empty'
+    if (id === 157) return 'Dagger'
+    if (id === 215) return 'Bandana'
+    if (id === 249) return 'Leather Coat'
+    return `Item ID: ${id}`
+}
+
+const equipments = computed(() => {
+  const eq = props.digimon.equipments
+  return [
+    { slot: 'Head', item: getItemName(eq?.head || 0), icon: IconHead, color: 'text-pink-400' },
+    { slot: 'Body', item: getItemName(eq?.body || 0), icon: IconBody, color: 'text-orange-700' },
+    { slot: 'Right', item: getItemName(eq?.rightHand || 0), icon: IconWeapon, color: 'text-gray-400' },
+    { slot: 'Left', item: getItemName(eq?.leftHand || 0), icon: IconOffhand, color: 'text-orange-900' },
+    { slot: 'Accessory 1', item: getItemName(eq?.accessory1 || 0), icon: IconAcc1, color: 'text-red-500' },
+    { slot: 'Accessory 2', item: getItemName(eq?.accessory2 || 0), icon: IconAcc2, color: 'text-cyan-300' }
+  ]
+})
 </script>
 
 <template>
