@@ -34,7 +34,7 @@ const resistances = ref([
 </script>
 
 <template>
-  <div class="details-panel flex gap-4 w-full text-white text-xs">
+  <div class="details-panel flex gap-4 w-full text-white text-sm">
     
     <!-- Coluna 1: Atributos Base -->
     <div class="flex-1 flex flex-col gap-1">
@@ -44,8 +44,8 @@ const resistances = ref([
         class="flex items-center gap-2"
       >
         <!-- Ícone Box com Borda -->
-        <div class="icon-box w-[24px] h-[24px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center">
-          <component :is="attr.icon" class="w-4 h-4" :class="attr.color" />
+        <div class="icon-box w-[28px] h-[28px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center aspect-square">
+          <component :is="attr.icon" class="w-5 h-5" :class="attr.color" />
         </div>
         
         <!-- Valor Numérico -->
@@ -63,8 +63,8 @@ const resistances = ref([
         class="flex items-center gap-2"
       >
         <!-- Ícone Box com Borda -->
-        <div class="icon-box w-[24px] h-[24px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center">
-          <component :is="res.icon" class="w-4 h-4" :class="res.color" />
+        <div class="icon-box w-[28px] h-[28px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center aspect-square">
+          <component :is="res.icon" class="w-5 h-5" :class="res.color" />
         </div>
         
         <!-- Valor Numérico -->
