@@ -10,7 +10,7 @@ body {
   overflow: hidden;
   background-color: #000030;
   background-image: url('./assets/bg-pattern.svg');
-  background-size: 128px 128px;
+  background-size: 256px 256px;
   background-repeat: repeat;
   color: white;
   font-family: 'Press Start 2P', cursive;

@@ -1,7 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128">
-  <rect x="0" y="0" width="128" height="128" fill="#000030"/>
-  <rect x="4" y="4" width="120" height="120" fill="#000e3f" stroke="#001a5e" stroke-width="2"/>
-  <rect x="12" y="12" width="104" height="104" fill="none" stroke="#00154a" stroke-width="4"/>
-  <path d="M 24 24 L 104 104 M 104 24 L 24 104" stroke="#002277" stroke-width="2" opacity="0.6"/>
-  <circle cx="64" cy="64" r="24" fill="none" stroke="#002277" stroke-width="1.5" opacity="0.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+  <!-- Fundo escuro base para todo o bloco 256x256 -->
+  <rect x="0" y="0" width="256" height="256" fill="#000030"/>
+
+  <!-- Carta 1: Quadrante Superior Esquerdo (0, 0) -->
+  <g>
+    <rect x="4" y="4" width="120" height="120" fill="#000e3f" stroke="#001a5e" stroke-width="2"/>
+    <rect x="12" y="12" width="104" height="104" fill="none" stroke="#00154a" stroke-width="4"/>
+    <path d="M 24 24 L 104 104 M 104 24 L 24 104" stroke="#002277" stroke-width="2" opacity="0.6"/>
+    <circle cx="64" cy="64" r="24" fill="none" stroke="#002277" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Carta 2: Quadrante Inferior Direito (128, 128) -->
+  <g>
+    <rect x="132" y="132" width="120" height="120" fill="#000e3f" stroke="#001a5e" stroke-width="2"/>
+    <rect x="140" y="140" width="104" height="104" fill="none" stroke="#00154a" stroke-width="4"/>
+    <path d="M 152 152 L 232 232 M 232 152 L 152 232" stroke="#002277" stroke-width="2" opacity="0.6"/>
+    <circle cx="192" cy="192" r="24" fill="none" stroke="#002277" stroke-width="1.5" opacity="0.5"/>
+  </g>
 </svg>
