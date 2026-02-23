@@ -2,6 +2,7 @@
 import DigimonHeaderInfo from './DigimonHeaderInfo.vue'
 import DigimonEvolutions from './DigimonEvolutions.vue'
 import DigimonDetails from './DigimonDetails.vue'
+import DigimonEquipments from './DigimonEquipments.vue'
 import type { Digimon } from '../../types/backend'
 
 defineProps<{
@@ -17,9 +18,6 @@ defineProps<{
 
     <DigimonDetails />
     
-    <!-- Empty space for future body content (Equipaments) -->
-    <div class="flex-1 rounded border-2 border-dashed border-[#0033aa] bg-[#00154a]/50 flex items-center justify-center min-h-[50px]">
-      <span class="text-[#0055ff] font-medium opacity-70">Reserved for Equipments</span>
-    </div>
+    <DigimonEquipments />
   </div>
 </template>
