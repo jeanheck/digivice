@@ -31,7 +31,7 @@ const evolutions = ref([
       <div class="relative z-10 w-[2px] h-full bg-[#0077ff] -skew-x-[30deg] ml-2"></div>
 
       <!-- Conteúdo (Level) -->
-      <div class="relative z-10 w-[45px] flex items-center justify-center font-bold text-sm mr-2">
+      <div class="relative z-10 w-[45px] flex items-center justify-center pl-2 font-bold text-sm mr-2">
         <span class="bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark">
           {{ evo.level }}
         </span>
