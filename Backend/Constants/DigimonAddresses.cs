@@ -58,5 +58,15 @@ namespace Backend.Constants
             public const int Metal = 0x3E;
             public const int Dark = 0x40;
         }
+
+        public static class Equipments
+        {
+            public const int Head = 0x3C0;
+            public const int Body = 0x3C2;
+            public const int RightHand = 0x3C4;
+            public const int LeftHand = 0x3C6;
+            public const int Accessory1 = 0x3C8;
+            public const int Accessory2 = 0x3CA;
+        }
     }
 }

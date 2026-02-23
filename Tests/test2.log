@@ -1,0 +1,11 @@
+﻿  Determinando os projetos a serem restaurados...
+  Todos os projetos est├úo atualizados para restaura├º├úo.
+  Backend -> C:\Projetos\digivice\Backend\bin\Debug\net10.0\Backend.dll
+  Tests -> C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll
+Execu├º├úo de teste para C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll (.NETCoreApp,Version=v10.0)
+Vers├úo do VSTest 18.0.1 (x64)
+
+Iniciando execu├º├úo de teste, espere...
+1 arquivos de teste no total corresponderam ao padr├úo especificado.
+
+Aprovado!  ÔÇô Com falha:     0, Aprovado:     1, Ignorado:     0, Total:     1, Dura├º├úo: 17 ms - Tests.dll (net10.0)

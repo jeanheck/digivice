@@ -1,0 +1,40 @@
+﻿  Determinando os projetos a serem restaurados...
+  Todos os projetos est├úo atualizados para restaura├º├úo.
+  Backend -> C:\Projetos\digivice\Backend\bin\Debug\net10.0\Backend.dll
+C:\Projetos\digivice\Tests\MemoryDumpTests.cs(20,38): error CS0246: O nome do tipo ou do namespace "ProcessService" n├úo pode ser encontrado (est├í faltando uma diretiva using ou uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(108,41): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(183,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(200,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(200,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(201,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(207,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(207,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(208,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(232,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(232,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(233,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(239,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(239,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(240,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+
+FALHA da compila├º├úo.
+
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(108,41): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(183,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(200,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(200,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(201,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(207,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(207,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(208,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(232,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(232,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(233,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(239,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(239,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(240,9): warning CS8602: Desrefer├¬ncia de uma refer├¬ncia possivelmente nula. [C:\Projetos\digivice\Tests\Tests.csproj]
+C:\Projetos\digivice\Tests\MemoryDumpTests.cs(20,38): error CS0246: O nome do tipo ou do namespace "ProcessService" n├úo pode ser encontrado (est├í faltando uma diretiva using ou uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Tests\Tests.csproj]
+    14 Aviso(s)
+    1 Erro(s)
+
+Tempo Decorrido 00:00:01.47
