@@ -21,4 +21,3 @@ Devido à complexidade, a fase será orquestrada nas vertentes Backend e Fronten
 ## 4. Frontend: Otimização de Componentes e Reatividade
 - [ ] **Etapa 4.1:** Limpar os Mocks de `DigimonEvolutions.vue`. Acoplar os laços do elemento no objeto real do *Store*, renderizando reativamente as 3 digievoluções ativas do digimon pai.
 - [ ] **Etapa 4.2:** Limpar os Mocks de `DigimonEquipments.vue`. Desenvolver o espelhamento do ID do equipamento vindo do Backend para o respectivo Título e Ícone (*pixelarticons*) na tela.
-- [ ] **Etapa 4.3:** Testes End-to-End. Equipar/desequipar itens no emulador e atestar a interface inteira refletindo instaneamente, coroando o fluxo inteiro da aplicação.

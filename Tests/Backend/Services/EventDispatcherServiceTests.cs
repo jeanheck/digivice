@@ -52,7 +52,9 @@ public class EventDispatcherServiceTests
                         SlotIndex = 0,
                         BasicInfo = new BasicInfo { Name = "Agumon", CurrentHP = hp, MaxHP = 200 },
                         Attributes = new Attributes { Strength = 50 },
-                        Resistances = new Resistances { Fire = 10 }
+                        Resistances = new Resistances { Fire = 10 },
+                        Equipments = new Equipments(),
+                        EquippedEvolutions = new Evolution?[3]
                     },
                     null,
                     null
@@ -252,6 +254,50 @@ public class EventDispatcherServiceTests
             c => c.SendCoreAsync(
                 nameof(EventType.DigimonXpGained),
                 It.IsAny<object[]>(),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
+    }
+
+    [Fact]
+    public void ProcessGameState_ShouldEmitEquipmentsChangedEvent_WhenEquipmentsChange()
+    {
+        // Arrange
+        var state = CreateTestState(500);
+        _service.ProcessGameState(state);
+        _mockClientProxy.Invocations.Clear();
+
+        // Act - Change Equipment
+        var mutatedState = CreateTestState(500);
+        mutatedState.Party.Slots[0].Equipments.RightHand = 157; // Picked up a Dagger
+        _service.ProcessGameState(mutatedState);
+
+        // Assert
+        _mockClientProxy.Verify(
+            c => c.SendCoreAsync(
+                nameof(EventType.DigimonEquipmentsChanged),
+                It.Is<object[]>(args => ((DigimonEquipmentsChangedEvent)args[0]).Equipments.RightHand == 157),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
+    }
+
+    [Fact]
+    public void ProcessGameState_ShouldEmitEvolutionsChangedEvent_WhenEvolutionsChange()
+    {
+        // Arrange
+        var state = CreateTestState(500);
+        _service.ProcessGameState(state);
+        _mockClientProxy.Invocations.Clear();
+
+        // Act - Equip an Evolution
+        var mutatedState = CreateTestState(500);
+        mutatedState.Party.Slots[0].EquippedEvolutions[0] = new Evolution { Id = 367, Level = 1 }; // Equipped Growlmon
+        _service.ProcessGameState(mutatedState);
+
+        // Assert
+        _mockClientProxy.Verify(
+            c => c.SendCoreAsync(
+                nameof(EventType.DigimonEvolutionsChanged),
+                It.Is<object[]>(args => ((DigimonEvolutionsChangedEvent)args[0]).EquippedEvolutions[0] != null && ((DigimonEvolutionsChangedEvent)args[0]).EquippedEvolutions[0]!.Id == 367),
                 It.IsAny<CancellationToken>()),
             Times.Once);
     }
