@@ -22,7 +22,7 @@ const props = defineProps<{
 const attributes = computed(() => {
   const attrs = props.digimon.attributes
   return [
-    { label: 'Strength', value: attrs.attack, icon: IconUser, color: 'text-orange-400' },
+    { label: 'Strength', value: attrs.strength, icon: IconUser, color: 'text-orange-400' },
     { label: 'Defense', value: attrs.defense, icon: IconShield, color: 'text-gray-400' },
     { label: 'Spirit', value: attrs.spirit, icon: IconHeart, color: 'text-pink-400' },
     { label: 'Wisdom', value: attrs.wisdom, icon: IconBug, color: 'text-yellow-600' },
@@ -39,7 +39,7 @@ const resistances = computed(() => {
     { label: 'Ice', value: res.ice, icon: IconDrop, color: 'text-cyan-200' },
     { label: 'Wind', value: res.wind, icon: IconWind, color: 'text-gray-100' },
     { label: 'Thunder', value: res.thunder, icon: IconZap, color: 'text-yellow-400' },
-    { label: 'Machine', value: res.metal, icon: IconShield, color: 'text-gray-500' },
+    { label: 'Machine', value: res.machine, icon: IconShield, color: 'text-gray-500' },
     { label: 'Dark', value: res.dark, icon: IconMoon, color: 'text-purple-500' },
   ]
 })

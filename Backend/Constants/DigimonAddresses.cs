@@ -40,7 +40,7 @@ namespace Backend.Constants
 
         public static class Attributes
         {
-            public const int Attack = 0x28;
+            public const int Strength = 0x28;
             public const int Defense = 0x2A;
             public const int Spirit = 0x2C;
             public const int Wisdom = 0x2E;
@@ -55,7 +55,7 @@ namespace Backend.Constants
             public const int Ice = 0x38;
             public const int Wind = 0x3A;
             public const int Thunder = 0x3C;
-            public const int Metal = 0x3E;
+            public const int Machine = 0x3E;
             public const int Dark = 0x40;
         }
 

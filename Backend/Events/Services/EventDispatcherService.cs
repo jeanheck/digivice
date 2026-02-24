@@ -146,14 +146,14 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         }
 
         // Compare Attributes
-        if (oldDigi.Attributes.Attack != newDigi.Attributes.Attack ||
+        if (oldDigi.Attributes.Strength != newDigi.Attributes.Strength ||
             oldDigi.Attributes.Defense != newDigi.Attributes.Defense ||
             oldDigi.Attributes.Spirit != newDigi.Attributes.Spirit ||
             oldDigi.Attributes.Wisdom != newDigi.Attributes.Wisdom ||
             oldDigi.Attributes.Speed != newDigi.Attributes.Speed ||
             oldDigi.Attributes.Charisma != newDigi.Attributes.Charisma)
         {
-            var ev = new DigimonAttributesChangedEvent(index, newDigi.Attributes.Attack, newDigi.Attributes.Defense, newDigi.Attributes.Spirit, newDigi.Attributes.Wisdom, newDigi.Attributes.Speed, newDigi.Attributes.Charisma);
+            var ev = new DigimonAttributesChangedEvent(index, newDigi.Attributes.Strength, newDigi.Attributes.Defense, newDigi.Attributes.Spirit, newDigi.Attributes.Wisdom, newDigi.Attributes.Speed, newDigi.Attributes.Charisma);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
@@ -163,10 +163,10 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             oldDigi.Resistances.Ice != newDigi.Resistances.Ice ||
             oldDigi.Resistances.Wind != newDigi.Resistances.Wind ||
             oldDigi.Resistances.Thunder != newDigi.Resistances.Thunder ||
-            oldDigi.Resistances.Metal != newDigi.Resistances.Metal ||
+            oldDigi.Resistances.Machine != newDigi.Resistances.Machine ||
             oldDigi.Resistances.Dark != newDigi.Resistances.Dark)
         {
-            var ev = new DigimonResistancesChangedEvent(index, newDigi.Resistances.Fire, newDigi.Resistances.Water, newDigi.Resistances.Ice, newDigi.Resistances.Wind, newDigi.Resistances.Thunder, newDigi.Resistances.Metal, newDigi.Resistances.Dark);
+            var ev = new DigimonResistancesChangedEvent(index, newDigi.Resistances.Fire, newDigi.Resistances.Water, newDigi.Resistances.Ice, newDigi.Resistances.Wind, newDigi.Resistances.Thunder, newDigi.Resistances.Machine, newDigi.Resistances.Dark);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
@@ -206,7 +206,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                     },
                     Attributes = new Attributes
                     {
-                        Attack = d.Attributes.Attack,
+                        Strength = d.Attributes.Strength,
                         Defense = d.Attributes.Defense,
                         Spirit = d.Attributes.Spirit,
                         Wisdom = d.Attributes.Wisdom,
@@ -220,7 +220,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         Ice = d.Resistances.Ice,
                         Wind = d.Resistances.Wind,
                         Thunder = d.Resistances.Thunder,
-                        Metal = d.Resistances.Metal,
+                        Machine = d.Resistances.Machine,
                         Dark = d.Resistances.Dark
                     },
                     Equipments = new Equipments

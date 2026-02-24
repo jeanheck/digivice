@@ -51,7 +51,7 @@ public class EventDispatcherServiceTests
                     {
                         SlotIndex = 0,
                         BasicInfo = new BasicInfo { Name = "Agumon", CurrentHP = hp, MaxHP = 200 },
-                        Attributes = new Attributes { Attack = 50 },
+                        Attributes = new Attributes { Strength = 50 },
                         Resistances = new Resistances { Fire = 10 }
                     },
                     null,

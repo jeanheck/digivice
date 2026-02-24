@@ -53,7 +53,7 @@ namespace Tests.Backend.Services
             // Kotemon Stats
             int kotemonBase = DigimonAddresses.Digimons[(byte)DigimonIds.Kotemon].Address;
             mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.BasicInfo.Level)).Returns(15);
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Attributes.Attack)).Returns(100);
+            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Attributes.Strength)).Returns(100);
             mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Resistances.Fire)).Returns(50);
             mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Equipments.Head)).Returns(215);
 
@@ -70,7 +70,7 @@ namespace Tests.Backend.Services
             Assert.Equal("Kotemon", kotemon.BasicInfo.Name);
             Assert.Equal(1, kotemon.SlotIndex);
             Assert.Equal(15, kotemon.BasicInfo.Level);
-            Assert.Equal(100, kotemon.Attributes.Attack);
+            Assert.Equal(100, kotemon.Attributes.Strength);
             Assert.Equal(50, kotemon.Resistances.Fire);
             Assert.Equal(215, kotemon.Equipments.Head);
 

@@ -7,7 +7,7 @@ namespace Backend.Models.Digimons
         public int Ice { get; set; }
         public int Wind { get; set; }
         public int Thunder { get; set; }
-        public int Metal { get; set; }
+        public int Machine { get; set; }
         public int Dark { get; set; }
     }
 }

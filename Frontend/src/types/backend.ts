@@ -9,7 +9,7 @@ export interface BasicInfo {
 }
 
 export interface Attributes {
-    attack: number
+    strength: number
     defense: number
     spirit: number
     wisdom: number
@@ -23,7 +23,7 @@ export interface Resistances {
     ice: number
     wind: number
     thunder: number
-    metal: number
+    machine: number
     dark: number
 }
 

@@ -54,7 +54,7 @@ export const useGameStore = defineStore('game', () => {
     function updateDigimonAttributes(slotIndex: number, strength: number, defense: number, spirit: number, wisdom: number, speed: number, charisma: number) {
         if (gameState.value?.party?.slots[slotIndex]) {
             const attrs = gameState.value.party.slots[slotIndex]!.attributes
-            attrs.attack = strength // Map strength to attack
+            attrs.strength = strength
             attrs.defense = defense
             attrs.spirit = spirit
             attrs.wisdom = wisdom
@@ -71,7 +71,7 @@ export const useGameStore = defineStore('game', () => {
             res.ice = ice
             res.wind = wind
             res.thunder = thunder
-            res.metal = machine // Map machine to metal
+            res.machine = machine
             res.dark = dark
         }
     }

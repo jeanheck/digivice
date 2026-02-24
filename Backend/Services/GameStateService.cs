@@ -70,7 +70,7 @@ namespace Backend.Services
                         },
                         Attributes = new Attributes
                         {
-                            Attack = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Attributes.Attack),
+                            Strength = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Attributes.Strength),
                             Defense = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Attributes.Defense),
                             Spirit = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Attributes.Spirit),
                             Wisdom = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Attributes.Wisdom),
@@ -84,7 +84,7 @@ namespace Backend.Services
                             Ice = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Ice),
                             Wind = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Wind),
                             Thunder = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Thunder),
-                            Metal = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Metal),
+                            Machine = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Machine),
                             Dark = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Resistances.Dark)
                         },
                         Equipments = new Equipments
