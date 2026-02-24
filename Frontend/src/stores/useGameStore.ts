@@ -82,9 +82,9 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
-    function updateDigimonEvolutions(slotIndex: number, newEvolutions: Digimon['equippedEvolutions']) {
+    function updateDigimonDigievolutions(slotIndex: number, newDigievolutions: Digimon['equippedDigievolutions']) {
         if (gameState.value?.party?.slots[slotIndex]) {
-            gameState.value.party.slots[slotIndex]!.equippedEvolutions = newEvolutions
+            gameState.value.party.slots[slotIndex]!.equippedDigievolutions = newDigievolutions
         }
     }
 
@@ -101,6 +101,6 @@ export const useGameStore = defineStore('game', () => {
         updateDigimonAttributes,
         updateDigimonResistances,
         updateDigimonEquipments,
-        updateDigimonEvolutions
+        updateDigimonDigievolutions
     }
 })

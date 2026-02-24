@@ -57,19 +57,19 @@ namespace Tests.Backend.Services
             mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Resistances.Fire)).Returns(50);
             mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Equipments.Head)).Returns(215);
 
-            // Mocks for Digivolutions
+            // Mocks for Digievolutions
             // Equipped: Slot1 = ID 367 (Growlmon), Slot2 = -1 (Empty), Slot3 = -1 (Empty)
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Evolutions.EquippedSlot1)).Returns(367);
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Evolutions.EquippedSlot2)).Returns(-1);
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Evolutions.EquippedSlot3)).Returns(-1);
+            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Digievolutions.EquippedSlot1)).Returns(367);
+            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Digievolutions.EquippedSlot2)).Returns(-1);
+            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Digievolutions.EquippedSlot3)).Returns(-1);
 
             // Unlocked Array: Entry 0 = ID 367, Level 25
-            int unlockedBase = kotemonBase + DigimonAddresses.Evolutions.UnlockedEvolutionsStart;
+            int unlockedBase = kotemonBase + DigimonAddresses.Digievolutions.UnlockedDigievolutionsStart;
             mockReader.Setup(r => r.ReadInt16(unlockedBase)).Returns(367); // ID 367
             mockReader.Setup(r => r.ReadInt16(unlockedBase + 2)).Returns(25); // Level 25
 
             // Entry 1 = ID -1 (End of list)
-            mockReader.Setup(r => r.ReadInt16(unlockedBase + DigimonAddresses.Evolutions.UnlockedEvolutionEntryStride)).Returns(-1);
+            mockReader.Setup(r => r.ReadInt16(unlockedBase + DigimonAddresses.Digievolutions.UnlockedDigievolutionEntryStride)).Returns(-1);
 
             var service = new GameStateService(mockReader.Object);
             var state = service.GetState();
@@ -88,12 +88,12 @@ namespace Tests.Backend.Services
             Assert.Equal(50, kotemon.Resistances.Fire);
             Assert.Equal(215, kotemon.Equipments.Head);
 
-            Assert.NotNull(kotemon.EquippedEvolutions);
-            Assert.NotNull(kotemon.EquippedEvolutions[0]);
-            Assert.Equal(367, kotemon.EquippedEvolutions[0]!.Id);
-            Assert.Equal(25, kotemon.EquippedEvolutions[0]!.Level);
-            Assert.Null(kotemon.EquippedEvolutions[1]);
-            Assert.Null(kotemon.EquippedEvolutions[2]);
+            Assert.NotNull(kotemon.EquippedDigievolutions);
+            Assert.NotNull(kotemon.EquippedDigievolutions[0]);
+            Assert.Equal(367, kotemon.EquippedDigievolutions[0]!.Id);
+            Assert.Equal(25, kotemon.EquippedDigievolutions[0]!.Level);
+            Assert.Null(kotemon.EquippedDigievolutions[1]);
+            Assert.Null(kotemon.EquippedDigievolutions[2]);
 
             // Renamon Assertions
             var renamon = state.Party.Slots[1];

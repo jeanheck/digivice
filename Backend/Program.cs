@@ -41,9 +41,9 @@ try
 
     builder.Services.AddCors(options =>
     {
-        options.AddPolicy("AllowAll", policy =>
+        options.AddPolicy("AllowLocalhost", policy =>
         {
-            policy.SetIsOriginAllowed(_ => true) // Allow any origin, including null (local file)
+            policy.WithOrigins("http://localhost:5173", "http://localhost:5173/")
                   .AllowAnyHeader()
                   .AllowAnyMethod()
                   .AllowCredentials(); // Required for SignalR
@@ -55,7 +55,7 @@ try
 
     var app = builder.Build();
 
-    app.UseCors("AllowAll");
+    app.UseCors("AllowLocalhost");
 
     // Map the WebSocket endpoint
     app.MapHub<GameHub>("/gamehub");

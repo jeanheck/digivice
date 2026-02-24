@@ -1,6 +1,6 @@
 namespace Backend.Models.Digimons
 {
-    public class Evolution
+    public class Digievolution
     {
         public int Id { get; set; }
         public int Level { get; set; }

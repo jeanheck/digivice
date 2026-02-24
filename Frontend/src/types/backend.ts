@@ -35,8 +35,7 @@ export interface Equipments {
     accessory1: number
     accessory2: number
 }
-
-export interface Evolution {
+export interface Digievolution {
     id: number
     level: number
 }
@@ -47,7 +46,7 @@ export interface Digimon {
     attributes: Attributes
     resistances: Resistances
     equipments: Equipments
-    equippedEvolutions: (Evolution | null)[]
+    equippedDigievolutions: (Digievolution | null)[]
 }
 
 export interface Party {

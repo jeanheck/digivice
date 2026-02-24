@@ -76,9 +76,9 @@ class SignalRService {
             store.updateDigimonEquipments(event.partySlotIndex, event.equipments)
         })
 
-        this.connection.on('DigimonEvolutionsChanged', (event: { partySlotIndex: number, equippedEvolutions: (import('../types/backend').Evolution | null)[] }) => {
-            console.log('Hub: DigimonEvolutionsChanged', event)
-            store.updateDigimonEvolutions(event.partySlotIndex, event.equippedEvolutions)
+        this.connection.on('DigimonDigievolutionsChanged', (event: { partySlotIndex: number, equippedDigievolutions: (import('../types/backend').Digievolution | null)[] }) => {
+            console.log('Hub: DigimonDigievolutionsChanged', event)
+            store.updateDigimonDigievolutions(event.partySlotIndex, event.equippedDigievolutions)
         })
     }
 

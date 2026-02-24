@@ -9,9 +9,6 @@ using Backend.Models;
 using Backend.Models.Digimons;
 using Microsoft.AspNetCore.SignalR;
 using Moq;
-using System.Collections.Generic;
-using System.Threading;
-using Xunit;
 
 namespace Tests.Backend.Services;
 
@@ -54,7 +51,7 @@ public class EventDispatcherServiceTests
                         Attributes = new Attributes { Strength = 50 },
                         Resistances = new Resistances { Fire = 10 },
                         Equipments = new Equipments(),
-                        EquippedEvolutions = new Evolution?[3]
+                        EquippedDigievolutions = new Digievolution?[3]
                     },
                     null,
                     null
@@ -281,23 +278,23 @@ public class EventDispatcherServiceTests
     }
 
     [Fact]
-    public void ProcessGameState_ShouldEmitEvolutionsChangedEvent_WhenEvolutionsChange()
+    public void ProcessGameState_ShouldEmitDigievolutionsChangedEvent_WhenDigievolutionsChange()
     {
         // Arrange
         var state = CreateTestState(500);
         _service.ProcessGameState(state);
         _mockClientProxy.Invocations.Clear();
 
-        // Act - Equip an Evolution
+        // Act - Equip a Digievolution
         var mutatedState = CreateTestState(500);
-        mutatedState.Party.Slots[0].EquippedEvolutions[0] = new Evolution { Id = 367, Level = 1 }; // Equipped Growlmon
+        mutatedState.Party.Slots[0].EquippedDigievolutions[0] = new Digievolution { Id = 367, Level = 1 }; // Equipped Growlmon
         _service.ProcessGameState(mutatedState);
 
         // Assert
         _mockClientProxy.Verify(
             c => c.SendCoreAsync(
-                nameof(EventType.DigimonEvolutionsChanged),
-                It.Is<object[]>(args => ((DigimonEvolutionsChangedEvent)args[0]).EquippedEvolutions[0] != null && ((DigimonEvolutionsChangedEvent)args[0]).EquippedEvolutions[0]!.Id == 367),
+                nameof(EventType.DigimonDigievolutionsChanged),
+                It.Is<object[]>(args => ((DigimonDigievolutionsChangedEvent)args[0]).EquippedDigievolutions[0] != null && ((DigimonDigievolutionsChangedEvent)args[0]).EquippedDigievolutions[0]!.Id == 367),
                 It.IsAny<CancellationToken>()),
             Times.Once);
     }

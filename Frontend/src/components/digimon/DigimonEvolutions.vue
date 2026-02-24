@@ -12,7 +12,7 @@ function getEvolutionName(id: number) {
 }
 
 const evolutions = computed(() => {
-  const evos = props.digimon.equippedEvolutions || [null, null, null]
+  const evos = props.digimon.equippedDigievolutions || [null, null, null]
   return [0, 1, 2].map(i => {
     const evo = evos[i]
     if (!evo) return null

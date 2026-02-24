@@ -182,12 +182,12 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
-        // Compare Equipped Evolutions
+        // Compare Equipped Digievolutions
         bool evosChanged = false;
         for (int i = 0; i < 3; i++)
         {
-            var oldEvo = oldDigi.EquippedEvolutions[i];
-            var newEvo = newDigi.EquippedEvolutions[i];
+            var oldEvo = oldDigi.EquippedDigievolutions[i];
+            var newEvo = newDigi.EquippedDigievolutions[i];
 
             if ((oldEvo == null && newEvo != null) || (oldEvo != null && newEvo == null))
             {
@@ -203,7 +203,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
 
         if (evosChanged)
         {
-            var ev = new DigimonEvolutionsChangedEvent(index, newDigi.EquippedEvolutions);
+            var ev = new DigimonDigievolutionsChangedEvent(index, newDigi.EquippedDigievolutions);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
     }
@@ -257,11 +257,11 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         Accessory1 = d.Equipments.Accessory1,
                         Accessory2 = d.Equipments.Accessory2
                     },
-                    EquippedEvolutions = new Evolution?[3]
+                    EquippedDigievolutions = new Digievolution?[3]
                     {
-                        d.EquippedEvolutions[0] != null ? new Evolution { Id = d.EquippedEvolutions[0]!.Id, Level = d.EquippedEvolutions[0]!.Level } : null,
-                        d.EquippedEvolutions[1] != null ? new Evolution { Id = d.EquippedEvolutions[1]!.Id, Level = d.EquippedEvolutions[1]!.Level } : null,
-                        d.EquippedEvolutions[2] != null ? new Evolution { Id = d.EquippedEvolutions[2]!.Id, Level = d.EquippedEvolutions[2]!.Level } : null
+                        d.EquippedDigievolutions[0] != null ? new Digievolution { Id = d.EquippedDigievolutions[0]!.Id, Level = d.EquippedDigievolutions[0]!.Level } : null,
+                        d.EquippedDigievolutions[1] != null ? new Digievolution { Id = d.EquippedDigievolutions[1]!.Id, Level = d.EquippedDigievolutions[1]!.Level } : null,
+                        d.EquippedDigievolutions[2] != null ? new Digievolution { Id = d.EquippedDigievolutions[2]!.Id, Level = d.EquippedDigievolutions[2]!.Level } : null
                     }
                 }).ToList(),
                 ActiveSlotIndex = s.Party.ActiveSlotIndex

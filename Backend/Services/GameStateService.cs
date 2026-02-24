@@ -55,12 +55,12 @@ namespace Backend.Services
 
                 if (DigimonAddresses.Digimons.TryGetValue(digimonId, out var data))
                 {
-                    var equippedEvolutions = new Evolution?[3];
+                    var equippedDigievolutions = new Digievolution?[3];
                     var equippedEvoIds = new int[]
                     {
-                        _memoryReader.ReadInt16(data.Address + DigimonAddresses.Evolutions.EquippedSlot1),
-                        _memoryReader.ReadInt16(data.Address + DigimonAddresses.Evolutions.EquippedSlot2),
-                        _memoryReader.ReadInt16(data.Address + DigimonAddresses.Evolutions.EquippedSlot3)
+                        _memoryReader.ReadInt16(data.Address + DigimonAddresses.Digievolutions.EquippedSlot1),
+                        _memoryReader.ReadInt16(data.Address + DigimonAddresses.Digievolutions.EquippedSlot2),
+                        _memoryReader.ReadInt16(data.Address + DigimonAddresses.Digievolutions.EquippedSlot3)
                     };
 
                     for (int j = 0; j < 3; j++)
@@ -69,14 +69,14 @@ namespace Backend.Services
                         // Empty slot is usually 0xFFFF (-1) or 0
                         if (id == 0xFFFF || id == -1 || id == 0)
                         {
-                            equippedEvolutions[j] = null;
+                            equippedDigievolutions[j] = null;
                             continue;
                         }
 
                         int level = 1;
-                        for (int k = 0; k < DigimonAddresses.Evolutions.MaxUnlockedEvolutions; k++)
+                        for (int k = 0; k < DigimonAddresses.Digievolutions.MaxUnlockedDigievolutions; k++)
                         {
-                            int entryAddr = data.Address + DigimonAddresses.Evolutions.UnlockedEvolutionsStart + (k * DigimonAddresses.Evolutions.UnlockedEvolutionEntryStride);
+                            int entryAddr = data.Address + DigimonAddresses.Digievolutions.UnlockedDigievolutionsStart + (k * DigimonAddresses.Digievolutions.UnlockedDigievolutionEntryStride);
                             int entryId = _memoryReader.ReadInt16(entryAddr);
                             if (entryId == id)
                             {
@@ -90,7 +90,7 @@ namespace Backend.Services
                             }
                         }
 
-                        equippedEvolutions[j] = new Evolution { Id = id, Level = level };
+                        equippedDigievolutions[j] = new Digievolution { Id = id, Level = level };
                     }
 
                     party.Slots[i] = new Digimon
@@ -134,7 +134,7 @@ namespace Backend.Services
                             Accessory1 = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.Accessory1),
                             Accessory2 = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.Accessory2)
                         },
-                        EquippedEvolutions = equippedEvolutions
+                        EquippedDigievolutions = equippedDigievolutions
                     };
                 }
                 else
