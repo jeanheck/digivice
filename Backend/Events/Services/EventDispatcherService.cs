@@ -263,8 +263,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         d.EquippedDigievolutions[1] != null ? new Digievolution { Id = d.EquippedDigievolutions[1]!.Id, Level = d.EquippedDigievolutions[1]!.Level } : null,
                         d.EquippedDigievolutions[2] != null ? new Digievolution { Id = d.EquippedDigievolutions[2]!.Id, Level = d.EquippedDigievolutions[2]!.Level } : null
                     }
-                }).ToList(),
-                ActiveSlotIndex = s.Party.ActiveSlotIndex
+                }).ToList()
             }
         };
     }

@@ -13,13 +13,30 @@ class SignalRService {
             .withAutomaticReconnect()
             .build()
 
+        this.connection.onreconnecting(() => {
+            console.warn('SignalR reconnecting...')
+            store.setConnectionStatus(false)
+        })
+
+        this.connection.onreconnected(() => {
+            console.log('SignalR reconnected.')
+            store.setConnectionStatus(true)
+        })
+
+        this.connection.onclose(() => {
+            console.error('SignalR connection closed.')
+            store.setConnectionStatus(false)
+        })
+
         this.registerEvents(store)
 
         try {
             await this.connection.start()
             console.log('SignalR Connected to GameHub.')
+            store.setConnectionStatus(true)
         } catch (err) {
             console.error('SignalR Connection Error: ', err)
+            store.setConnectionStatus(false)
         }
     }
 

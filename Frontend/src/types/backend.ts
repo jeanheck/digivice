@@ -51,7 +51,6 @@ export interface Digimon {
 
 export interface Party {
     slots: (Digimon | null)[]
-    activeSlotIndex: number
 }
 
 export interface Player {
