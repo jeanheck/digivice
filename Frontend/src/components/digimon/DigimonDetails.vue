@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 
 // Importando os ícones via unplugin-icons do pacote @iconify-json/pixelarticons
 import IconUser from '~icons/pixelarticons/user'
@@ -12,25 +12,37 @@ import IconMoon from '~icons/pixelarticons/moon'
 import IconWind from '~icons/pixelarticons/wind'
 import IconBug from '~icons/pixelarticons/bug'
 
-// Mocks baseados no Digimon World 3 (Stat -> Value)
-const attributes = ref([
-  { label: 'Strength', value: 51, icon: IconUser, color: 'text-orange-400' },
-  { label: 'Defense', value: 28, icon: IconShield, color: 'text-gray-400' },
-  { label: 'Spirit', value: 26, icon: IconHeart, color: 'text-pink-400' },
-  { label: 'Wisdom', value: 43, icon: IconBug, color: 'text-yellow-600' },
-  { label: 'Speed', value: 52, icon: IconZap, color: 'text-green-400' },
-  { label: 'Charisma', value: 1, icon: IconSun, color: 'text-yellow-400' },
-])
+import type { Digimon } from '../../types/backend'
 
-const resistances = ref([
-  { label: 'Fire', value: 115, icon: IconSun, color: 'text-red-500' },
-  { label: 'Water', value: 80, icon: IconDrop, color: 'text-blue-400' },
-  { label: 'Ice', value: 100, icon: IconDrop, color: 'text-cyan-200' },
-  { label: 'Wind', value: 130, icon: IconWind, color: 'text-gray-100' },
-  { label: 'Thunder', value: 60, icon: IconZap, color: 'text-yellow-400' },
-  { label: 'Machine', value: 115, icon: IconShield, color: 'text-gray-500' },
-  { label: 'Dark', value: 80, icon: IconMoon, color: 'text-purple-500' },
-])
+const props = defineProps<{
+  digimon: Digimon
+}>()
+
+// Mapeamento dinâmico baseado no Digimon World 3 (Stat -> Value)
+const attributes = computed(() => {
+  const attrs = props.digimon.attributes
+  return [
+    { label: 'Strength', value: attrs.attack, icon: IconUser, color: 'text-orange-400' },
+    { label: 'Defense', value: attrs.defense, icon: IconShield, color: 'text-gray-400' },
+    { label: 'Spirit', value: attrs.spirit, icon: IconHeart, color: 'text-pink-400' },
+    { label: 'Wisdom', value: attrs.wisdom, icon: IconBug, color: 'text-yellow-600' },
+    { label: 'Speed', value: attrs.speed, icon: IconZap, color: 'text-green-400' },
+    { label: 'Charisma', value: attrs.charisma, icon: IconSun, color: 'text-yellow-400' },
+  ]
+})
+
+const resistances = computed(() => {
+  const res = props.digimon.resistances
+  return [
+    { label: 'Fire', value: res.fire, icon: IconSun, color: 'text-red-500' },
+    { label: 'Water', value: res.water, icon: IconDrop, color: 'text-blue-400' },
+    { label: 'Ice', value: res.ice, icon: IconDrop, color: 'text-cyan-200' },
+    { label: 'Wind', value: res.wind, icon: IconWind, color: 'text-gray-100' },
+    { label: 'Thunder', value: res.thunder, icon: IconZap, color: 'text-yellow-400' },
+    { label: 'Machine', value: res.metal, icon: IconShield, color: 'text-gray-500' },
+    { label: 'Dark', value: res.dark, icon: IconMoon, color: 'text-purple-500' },
+  ]
+})
 </script>
 
 <template>

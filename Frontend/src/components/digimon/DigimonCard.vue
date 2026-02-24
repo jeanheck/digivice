@@ -16,7 +16,7 @@ defineProps<{
     
     <DigimonEvolutions />
 
-    <DigimonDetails />
+    <DigimonDetails :digimon="digimon" />
     
     <DigimonEquipments :digimon="digimon" />
   </div>
