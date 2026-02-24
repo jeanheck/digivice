@@ -36,12 +36,18 @@ export interface Equipments {
     accessory2: number
 }
 
+export interface Evolution {
+    id: number
+    level: number
+}
+
 export interface Digimon {
     slotIndex: number
     basicInfo: BasicInfo
     attributes: Attributes
     resistances: Resistances
     equipments: Equipments
+    equippedEvolutions: (Evolution | null)[]
 }
 
 export interface Party {

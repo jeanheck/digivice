@@ -68,5 +68,15 @@ namespace Backend.Constants
             public const int Accessory1 = 0x3C8;
             public const int Accessory2 = 0x3CA;
         }
+
+        public static class Evolutions
+        {
+            public const int EquippedSlot1 = 0x48;
+            public const int EquippedSlot2 = 0x4A;
+            public const int EquippedSlot3 = 0x4C;
+            public const int UnlockedEvolutionsStart = 0x50;
+            public const int UnlockedEvolutionEntryStride = 8;
+            public const int MaxUnlockedEvolutions = 60; // Failsafe limit for scan
+        }
     }
 }

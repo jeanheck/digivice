@@ -29,8 +29,8 @@ namespace Tests
             }
 
             int guilmonBase = 0x0004A7E8;
-            int offsetStart = 0x300;
-            int dumpLength = 0xE0;
+            int offsetStart = 0x40;
+            int dumpLength = 0x300;
 
             byte[]? bytes = memoryReader.ReadBytes(guilmonBase + offsetStart, dumpLength);
             if (bytes == null)

@@ -55,6 +55,44 @@ namespace Backend.Services
 
                 if (DigimonAddresses.Digimons.TryGetValue(digimonId, out var data))
                 {
+                    var equippedEvolutions = new Evolution?[3];
+                    var equippedEvoIds = new int[]
+                    {
+                        _memoryReader.ReadInt16(data.Address + DigimonAddresses.Evolutions.EquippedSlot1),
+                        _memoryReader.ReadInt16(data.Address + DigimonAddresses.Evolutions.EquippedSlot2),
+                        _memoryReader.ReadInt16(data.Address + DigimonAddresses.Evolutions.EquippedSlot3)
+                    };
+
+                    for (int j = 0; j < 3; j++)
+                    {
+                        int id = equippedEvoIds[j];
+                        // Empty slot is usually 0xFFFF (-1) or 0
+                        if (id == 0xFFFF || id == -1 || id == 0)
+                        {
+                            equippedEvolutions[j] = null;
+                            continue;
+                        }
+
+                        int level = 1;
+                        for (int k = 0; k < DigimonAddresses.Evolutions.MaxUnlockedEvolutions; k++)
+                        {
+                            int entryAddr = data.Address + DigimonAddresses.Evolutions.UnlockedEvolutionsStart + (k * DigimonAddresses.Evolutions.UnlockedEvolutionEntryStride);
+                            int entryId = _memoryReader.ReadInt16(entryAddr);
+                            if (entryId == id)
+                            {
+                                level = _memoryReader.ReadInt16(entryAddr + 2);
+                                break;
+                            }
+                            if (entryId == 0 || entryId == 0xFFFF || entryId == -1)
+                            {
+                                // Hit end of unlocked list without finding the level, stop scanning.
+                                break;
+                            }
+                        }
+
+                        equippedEvolutions[j] = new Evolution { Id = id, Level = level };
+                    }
+
                     party.Slots[i] = new Digimon
                     {
                         SlotIndex = i + 1,
@@ -95,7 +133,8 @@ namespace Backend.Services
                             LeftHand = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.LeftHand),
                             Accessory1 = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.Accessory1),
                             Accessory2 = _memoryReader.ReadInt16(data.Address + DigimonAddresses.Equipments.Accessory2)
-                        }
+                        },
+                        EquippedEvolutions = equippedEvolutions
                     };
                 }
                 else

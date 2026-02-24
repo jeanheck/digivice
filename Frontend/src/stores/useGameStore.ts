@@ -82,6 +82,12 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
+    function updateDigimonEvolutions(slotIndex: number, newEvolutions: Digimon['equippedEvolutions']) {
+        if (gameState.value?.party?.slots[slotIndex]) {
+            gameState.value.party.slots[slotIndex]!.equippedEvolutions = newEvolutions
+        }
+    }
+
     return {
         isConnected,
         gameState,
@@ -94,6 +100,7 @@ export const useGameStore = defineStore('game', () => {
         updateDigimonLevel,
         updateDigimonAttributes,
         updateDigimonResistances,
-        updateDigimonEquipments
+        updateDigimonEquipments,
+        updateDigimonEvolutions
     }
 })

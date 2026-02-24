@@ -1,19 +1,34 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import type { Digimon } from '../../types/backend'
 
-// Mock das três digievoluções disponíveis
-const evolutions = ref([
-  { id: 1, name: 'Beelzemon', level: 76 },
-  { id: 2, name: 'GrapLeomon', level: 99 },
-  { id: 3, name: 'Marsmon', level: 99 }
-])
+const props = defineProps<{
+  digimon: Digimon
+}>()
+
+function getEvolutionName(id: number) {
+  if (id === 367) return 'Growlmon'
+  return `Unknown (${id})`
+}
+
+const evolutions = computed(() => {
+  const evos = props.digimon.equippedEvolutions || [null, null, null]
+  return [0, 1, 2].map(i => {
+    const evo = evos[i]
+    if (!evo) return null
+    return {
+      name: getEvolutionName(evo.id),
+      level: evo.level
+    }
+  })
+})
 </script>
 
 <template>
   <div class="flex flex-col gap-[2px] w-full">
     <div 
-      v-for="evo in evolutions" 
-      :key="evo.id"
+      v-for="(evo, index) in evolutions" 
+      :key="index"
       class="evo-row relative flex w-full h-[28px] bg-[#000a2b] text-white overflow-hidden"
     >
       <!-- Borda externa brilhante simuluada via clip-path background -->
@@ -22,20 +37,23 @@ const evolutions = ref([
       <!-- Fundo interno escuro (1 pixel menor que a borda) -->
       <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none evo-inner"></div>
 
-      <!-- Conteúdo (Nome) -->
-      <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider shadow-text">
-        {{ evo.name }}
-      </div>
+      <!-- Renderiza os textos somente se o slot de digievolução tiver valor -->
+      <template v-if="evo">
+        <!-- Conteúdo (Nome) -->
+        <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider shadow-text">
+          {{ evo.name }}
+        </div>
 
-      <!-- Divisor Inclinado -->
-      <div class="relative z-10 w-[2px] h-full bg-[#0077ff] -skew-x-[30deg] ml-2"></div>
+        <!-- Divisor Inclinado -->
+        <div class="relative z-10 w-[2px] h-full bg-[#0077ff] -skew-x-[30deg] ml-2"></div>
 
-      <!-- Conteúdo (Level) -->
-      <div class="relative z-10 w-[45px] flex items-center justify-center pl-2 font-bold text-sm mr-2">
-        <span class="bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark">
-          {{ evo.level }}
-        </span>
-      </div>
+        <!-- Conteúdo (Level) -->
+        <div class="relative z-10 w-[45px] flex items-center justify-center pl-2 font-bold text-sm mr-2">
+          <span class="bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark">
+            {{ evo.level }}
+          </span>
+        </div>
+      </template>
     </div>
   </div>
 </template>

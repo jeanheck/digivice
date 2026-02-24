@@ -181,6 +181,31 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             var ev = new DigimonEquipmentsChangedEvent(index, newDigi.Equipments);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
+
+        // Compare Equipped Evolutions
+        bool evosChanged = false;
+        for (int i = 0; i < 3; i++)
+        {
+            var oldEvo = oldDigi.EquippedEvolutions[i];
+            var newEvo = newDigi.EquippedEvolutions[i];
+
+            if ((oldEvo == null && newEvo != null) || (oldEvo != null && newEvo == null))
+            {
+                evosChanged = true;
+                break;
+            }
+            if (oldEvo != null && newEvo != null && (oldEvo.Id != newEvo.Id || oldEvo.Level != newEvo.Level))
+            {
+                evosChanged = true;
+                break;
+            }
+        }
+
+        if (evosChanged)
+        {
+            var ev = new DigimonEvolutionsChangedEvent(index, newDigi.EquippedEvolutions);
+            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+        }
     }
 
     // A simple Deep clone since records aren't being used
@@ -231,6 +256,12 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         LeftHand = d.Equipments.LeftHand,
                         Accessory1 = d.Equipments.Accessory1,
                         Accessory2 = d.Equipments.Accessory2
+                    },
+                    EquippedEvolutions = new Evolution?[3]
+                    {
+                        d.EquippedEvolutions[0] != null ? new Evolution { Id = d.EquippedEvolutions[0]!.Id, Level = d.EquippedEvolutions[0]!.Level } : null,
+                        d.EquippedEvolutions[1] != null ? new Evolution { Id = d.EquippedEvolutions[1]!.Id, Level = d.EquippedEvolutions[1]!.Level } : null,
+                        d.EquippedEvolutions[2] != null ? new Evolution { Id = d.EquippedEvolutions[2]!.Id, Level = d.EquippedEvolutions[2]!.Level } : null
                     }
                 }).ToList(),
                 ActiveSlotIndex = s.Party.ActiveSlotIndex
