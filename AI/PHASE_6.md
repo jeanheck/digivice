@@ -27,7 +27,21 @@ Para a nossa aplicação vamos:
 ## Referências
 * **EXP Tables**: https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/64473556 (Salvo em `README.md`).
 
-## Plano de Ação (Checklist)
-- [ ] Construir o script/gerador para derivar o JSON de Experiência a partir dos dados brutais do GameFAQs e salvar em `src/data/static/expTable.json`.
-- [ ] Criar a estrutura e o código do `src/logic/ExpCalculator.ts`.
-- [ ] Alterar `DigimonBasicInfo.vue` para injetar a lógica e renderizar o `getExpForNextLevel`.
+## Diretriz de Uso da Camada de Lógica
+**Atenção:** Nem todos os dados vão precisar passar pela nova camada de lógica. Essa camada é estritamente reservada para dados que precisem ser calculados ou derivados (ViewState).
+Por exemplo, o status `defense` de um Digimon é um dado puro; a informação simplesmente vem do Backend via SignalR, entra na Store e é exibida no Frontend sem intermediários. Para dados puros que já temos hoje, nada muda. Usaremos a nova camada de lógica apenas para dados que precisam de tratamento especial, como por exemplo o cálculo de `getExpForNextLevel` ou agregações complexas.
+
+## Plano de Implementação (Execution Plan)
+1. **Scraping e Preparação de Dados (JSON):**
+   - [x] Criar arquivo estruturado `src/data/static/expTable.json`.
+   - [x] Inserir a tabela completa de EXP (Nível 1 ao 99) particionada por tipos compatíveis de Digimon (Agumon, Guilmon, Kotemon, Kumamon, Monmon, Patamon, Renamon, Veemon).
+
+2. **Criação da Camada Lógica Core:**
+   - [x] Criar `src/logic/ExpCalculator.ts`.
+   - [x] Implementar método `getExpForNextLevel(digimonId: number, currentLevel: number, currentExp: number): number`.
+   - [x] Tratar corner-cases (como Nível 99 absoluto, onde a EXP para o próximo nível é 0 ou maxada).
+
+3. **Integração com a Interface (`DigimonBasicInfo.vue`):**
+   - [x] Importar o `ExpCalculator`.
+   - [x] Modificar a `ProgressBar` de Experiência e as labels de Nível para utilizarem o dado calculado `getExpForNextLevel`.
+   - [x] Refatorar qualquer mock residual para assegurar total fluidez (reatividade) quando a EXP subir no Backend.

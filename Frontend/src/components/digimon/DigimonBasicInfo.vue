@@ -1,14 +1,20 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import ExpProgressBar from '../ui/ExpProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
+import { ExpCalculator } from '../../logic/ExpCalculator'
 import type { Digimon } from '../../types/backend'
 
 const props = defineProps<{
   digimon: Digimon
 }>()
 
-// ExpForNextLevel will depend on the backend later, setting arbitrary 1000 for now to avoid breaking UI.
-const getExpForNextLevel = (level: number) => level * 100
+const requiredExpForNextLevel = computed(() => {
+  return ExpCalculator.getRequiredExpForNextLevel(
+    props.digimon.basicInfo.name, 
+    props.digimon.basicInfo.level
+  )
+})
 
 const getHpColor = (current: number, max: number) => {
   if (max === 0) return 'bg-red-500'
@@ -60,10 +66,9 @@ const getIconUrl = (name: string) => {
             <span class="text-[0.6rem] font-medium text-yellow-500 flex-shrink-0">Level {{ digimon.basicInfo.level }}</span>
           </div>
           
-          <!-- specialized EXP Bar -->
           <ExpProgressBar 
             :current-exp="digimon.basicInfo.experience" 
-            :exp-for-next-level="getExpForNextLevel(digimon.basicInfo.level)" 
+            :exp-for-next-level="requiredExpForNextLevel" 
           />
         </div>
       </div>
