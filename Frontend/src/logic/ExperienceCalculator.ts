@@ -1,4 +1,4 @@
-import expTable from '../data/static/ExperienceTable.json'
+import experienceTable from '../data/static/ExperienceTable.json'
 
 export class ExperienceCalculator {
     /**
@@ -16,7 +16,7 @@ export class ExperienceCalculator {
         }
 
         // Assert cast for JSON table access via unknown
-        const table = (expTable as unknown as Record<string, Record<string, number>[]>)[digimonName]
+        const table = (experienceTable as unknown as Record<string, Record<string, number>[]>)[digimonName]
 
         if (!table) {
             console.warn(`No static EXP table found for Digimon Name: ${digimonName}`)

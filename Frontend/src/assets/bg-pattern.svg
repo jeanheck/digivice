@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256">
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="384" viewBox="0 0 256 256">
   <!-- Fundo escuro base para todo o bloco 256x256 -->
   <rect x="0" y="0" width="256" height="256" fill="#000030"/>
 

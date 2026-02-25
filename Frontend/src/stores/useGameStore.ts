@@ -88,6 +88,10 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
+    function notifyDigievolutionLevelUp(slotIndex: number, digievolutionId: number, oldLevel: number, newLevel: number) {
+        console.log(`[LEVEL UP!] Digimon in slot ${slotIndex}'s Digievolution (ID ${digievolutionId}) reached Level ${newLevel}!`)
+    }
+
     return {
         isConnected,
         gameState,
@@ -101,6 +105,7 @@ export const useGameStore = defineStore('game', () => {
         updateDigimonAttributes,
         updateDigimonResistances,
         updateDigimonEquipments,
-        updateDigimonDigievolutions
+        updateDigimonDigievolutions,
+        notifyDigievolutionLevelUp
     }
 })

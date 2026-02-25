@@ -192,12 +192,16 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             if ((oldEvo == null && newEvo != null) || (oldEvo != null && newEvo == null))
             {
                 evosChanged = true;
-                break;
+                continue;
             }
             if (oldEvo != null && newEvo != null && (oldEvo.Id != newEvo.Id || oldEvo.Level != newEvo.Level))
             {
+                if (oldEvo.Id == newEvo.Id && newEvo.Level > oldEvo.Level)
+                {
+                    var levelUpEv = new DigimonDigievolutionLevelUpEvent(index, newEvo.Id, oldEvo.Level, newEvo.Level);
+                    _ = _hubContext.Clients.All.SendAsync(levelUpEv.Type.ToString(), levelUpEv);
+                }
                 evosChanged = true;
-                break;
             }
         }
 
