@@ -25,10 +25,22 @@ const tooltipStyle = ref({ top: '0px', left: '0px' })
 const showTooltip = (event: MouseEvent) => {
   const el = event.currentTarget as HTMLElement
   const rect = el.getBoundingClientRect()
-  // Diagonal Top-Right relative to the hovered node boundaries
-  tooltipStyle.value = {
-    top: `${rect.top - 20}px`,
-    left: `${rect.right - 40}px`
+  
+  // Predict tooltip width (approximate 280px max for safe margin)
+  const estimatedTooltipWidth = 280
+  
+  if (rect.right + estimatedTooltipWidth > window.innerWidth) {
+    // Show on top-left diagonal if right edge is getting clipped
+    tooltipStyle.value = {
+      top: `${rect.top - 20}px`,
+      left: `${rect.left - estimatedTooltipWidth + 20}px`
+    }
+  } else {
+    // Diagonal Top-Right relative to the hovered node boundaries
+    tooltipStyle.value = {
+      top: `${rect.top - 20}px`,
+      left: `${rect.right - 40}px`
+    }
   }
   isHovered.value = true
 }
