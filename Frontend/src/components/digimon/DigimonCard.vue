@@ -19,5 +19,9 @@ defineProps<{
     <DigimonDetails :digimon="digimon" />
     
     <DigimonEquipments :digimon="digimon" />
+
+    <div class="flex items-center justify-center bg-[#000a2b] border-2 border-[#00154a] rounded shadow-inner py-1.5 mt-auto cursor-pointer hover:bg-[#001233] transition-colors">
+      <span class="text-[0.65rem] font-bold text-gray-400 tracking-widest uppercase">Digievolution Tree</span>
+    </div>
   </div>
 </template>

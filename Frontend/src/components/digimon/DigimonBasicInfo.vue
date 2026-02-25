@@ -16,6 +16,13 @@ const requiredExpForNextLevel = computed(() => {
   )
 })
 
+const requiredExpForCurrentLevel = computed(() => {
+  return ExperienceCalculator.getRequiredExpForCurrentLevel(
+    props.digimon.basicInfo.name, 
+    props.digimon.basicInfo.level
+  )
+})
+
 const getHpColor = (current: number, max: number) => {
   if (max === 0) return 'bg-red-500'
   const percentage = current / max
@@ -69,6 +76,7 @@ const getIconUrl = (name: string) => {
           <ExpProgressBar 
             :current-exp="digimon.basicInfo.experience" 
             :exp-for-next-level="requiredExpForNextLevel" 
+            :exp-for-current-level="requiredExpForCurrentLevel"
           />
         </div>
       </div>

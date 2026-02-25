@@ -4,3 +4,4 @@ This is a companion app that reads memory from the Digimon World 2003 game runni
 
 ## Reference Data Credits
 - **EXP Tables for Digimon**: Data extracted from GameFAQs thread by user Mehdi. [Link here](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/64473556)
+- **Digivolving Requirements**: Data extracted from GameFAQs Digimon World 3 FAQ by Med Jai. [Link here](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/72629)

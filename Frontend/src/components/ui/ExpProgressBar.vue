@@ -4,6 +4,7 @@ import { computed, ref, watch } from 'vue'
 const props = defineProps<{
   currentExp: number
   expForNextLevel: number
+  expForCurrentLevel?: number
 }>()
 
 const isLevelingUp = ref(false)
@@ -20,7 +21,13 @@ watch(() => props.expForNextLevel, (newExp, oldExp) => {
 
 const percentage = computed(() => {
   if (props.expForNextLevel <= 0) return 100
-  return Math.min(100, Math.max(0, (props.currentExp / props.expForNextLevel) * 100))
+  
+  const currentBase = props.expForCurrentLevel || 0
+  const totalRange = props.expForNextLevel - currentBase
+  
+  if (totalRange <= 0) return 100
+  
+  return Math.min(100, Math.max(0, ((props.currentExp - currentBase) / totalRange) * 100))
 })
 </script>
 
