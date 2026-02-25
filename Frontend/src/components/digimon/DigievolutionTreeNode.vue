@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { EvolutionGraph } from '../../logic/EvolutionGraph'
 import type { GraphNode } from '../../logic/EvolutionGraph'
 import DigimonIcon from '../ui/DigimonIcon.vue'
@@ -19,78 +19,122 @@ const isUnlocked = computed(() => {
   return EvolutionGraph.checkRequirements(props.digimon, props.node)
 })
 
+const isHovered = ref(false)
+const tooltipStyle = ref({ top: '0px', left: '0px' })
+
+const showTooltip = (event: MouseEvent) => {
+  const el = event.currentTarget as HTMLElement
+  const rect = el.getBoundingClientRect()
+  // Diagonal Top-Right relative to the hovered node boundaries
+  tooltipStyle.value = {
+    top: `${rect.top - 20}px`,
+    left: `${rect.right - 40}px`
+  }
+  isHovered.value = true
+}
+
+const hideTooltip = () => {
+  isHovered.value = false
+}
 </script>
 
 <template>
-  <div class="flex flex-col relative w-max" :class="{'mt-4': !isRoot}">
+  <!-- Outer Wrapper that spans the entire Subtree Height -->
+  <div class="flex relative whitespace-nowrap">
     
-    <!-- Top Row: Lines + Node -->
-    <div class="flex items-center relative z-10 group min-h-[60px]">
+    <!-- Vertical Spine & Inlet Line Wrapper (Left Side) -->
+    <div v-if="!isRoot" class="relative w-[32px] shrink-0">
       
-      <!-- Lines Container for this Node -->
-      <!-- Positioned relative to the row, sitting exactly to the left of the Node Box -->
-      <div v-if="!isRoot" class="absolute left-[-32px] w-[32px] top-0 bottom-0 pointer-events-none">
+      <!-- Vertical Spine Segment -->
+      <div class="absolute left-[16px] w-[3px] bg-[#d4af37] shadow-[0_1px_3px_black] z-0"
+           :class="{
+             'top-[39px] bottom-[-2px]': isFirstChild && !isLastChild, 
+             'top-[-2px] h-[44px]': !isFirstChild && isLastChild, 
+             'hidden': isFirstChild && isLastChild,
+             'top-[-2px] bottom-[-2px]': !isFirstChild && !isLastChild
+           }">
+      </div>
+
+      <!-- Horizontal Inlet Line -->
+      <div class="absolute right-0 h-[3px] bg-[#d4af37] shadow-[0_1px_3px_black] z-0 top-[39px]"
+           :class="isFirstChild ? 'left-[0px]' : 'left-[16px]'"></div>
+    </div>
+
+    <!-- Content (Row + Children) -->
+    <div class="flex items-start">
+      
+      <!-- Node Row (Fixed height 80px to guarantee alignment without subpixels) -->
+      <!-- Only give padding-left to Root so it looks balanced without lines -->
+      <div class="flex items-center h-[80px] relative" :class="{ 'pl-4': isRoot }">
          
-         <!-- Horizontal line (exact center of THIS ROW) -->
-         <div class="absolute left-0 right-[4px] h-[3px] bg-[#d4af37] top-1/2 -translate-y-1/2 shadow-[0_1px_3px_black]"></div>
-
-         <!-- Vertical Line Snippet -->
-         <!-- It must span from the top to connect to previous sibling, and down to connect to the next -->
-         <div class="absolute left-0 w-[3px] bg-[#d4af37] shadow-[0_1px_3px_black] top-[-16px]"
-             :class="isLastChild ? 'bottom-1/2' : 'bottom-[-16px]'"
-         ></div>
+         <!-- NODE WRAPPER (Handles hover triggers, sizing, and sibling positioning) -->
+         <div class="relative w-[300px] shrink-0 z-10 hover:z-[70]"
+              @mouseenter="showTooltip"
+              @mouseleave="hideTooltip">
+           
+           <!-- NODE BOX (Applies opacity if locked without affecting tooltip) -->
+           <div 
+             class="flex items-center p-1.5 bg-[#000a2b] border-[3px] rounded cursor-help transition-all shadow-[0_0_8px_black] w-full h-full"
+             :class="[
+               isUnlocked 
+                 ? 'border-yellow-600 hover:border-yellow-300' 
+                 : 'border-slate-800 hover:border-slate-500 opacity-60'
+             ]"
+           >
+             <DigimonIcon 
+               :digimon-name="node.name" 
+               class="w-12 h-12 transition-all"
+               :class="{ 'grayscale brightness-50': !isUnlocked }"
+             />
+             
+             <!-- Node Name -->
+             <div class="ml-3 flex-1">
+               <span class="font-bold text-[0.7rem] tracking-wider text-white break-words">{{ node.name }}</span>
+             </div>
+           </div>
+           
+           <!-- Teleported Tooltip (Breaks out of modal clipping) -->
+           <Teleport to="body">
+             <div v-if="isHovered" 
+                  class="fixed w-max p-2 bg-[#000a2b] border-2 rounded text-xs text-white z-[99999] shadow-[0_0_12px_black] pointer-events-none"
+                  :class="isUnlocked ? 'border-[#0077ff]' : 'border-slate-600'"
+                  :style="tooltipStyle">
+               <p class="font-bold mb-1 border-b pb-1 flex items-center gap-2" :class="isUnlocked ? 'text-[#ffcc00] border-[#0077ff]' : 'text-slate-400 border-slate-700'">
+                 {{ node.name }} <span v-if="!isUnlocked" class="text-red-400 ml-1">(Locked)</span>
+               </p>
+               <ul class="text-[0.7rem] text-gray-300 space-y-0.5" v-if="node.requirements.length > 0">
+                 <li v-for="(req, idx) in node.requirements" :key="idx" class="flex items-center gap-1">
+                   <span class="inline-block w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+                   <span v-if="req.Type === 'DigimonLevel'">Lv. {{ req.Value }} (Rookie)</span>
+                   <span v-else-if="req.Type === 'DigievolutionLevel'">Lv. {{ req.Value }} ({{ req.Digievolution }})</span>
+                   <span v-else-if="req.Type === 'Attribute'">{{ req.Attribute }} &ge; {{ req.Value }}</span>
+                 </li>
+               </ul>
+               <p v-else class="text-[0.6rem] text-gray-500 italic">Base</p>
+             </div>
+           </Teleport>
+         </div>
+         
+         <!-- Outlet Line (Positioned perfectly at y=39 within the 80px row) -->
+         <div v-if="hasChildren" class="h-full flex items-start">
+           <div class="w-[32px] h-[3px] bg-[#d4af37] shadow-[0_1px_3px_black] z-0 shrink-0 mt-[39px]"></div>
+         </div>
       </div>
 
-      <!-- Node Box -->
-      <div 
-        class="flex items-center p-1.5 bg-[#000a2b] border-[3px] rounded cursor-help transition-all shadow-[0_0_8px_black]"
-        :class="[
-          isUnlocked 
-            ? 'border-yellow-600 hover:border-yellow-300' 
-            : 'border-slate-800 hover:border-slate-500 opacity-60'
-        ]"
-      >
-        
-        <DigimonIcon 
-          :digimon-name="node.name" 
-          class="w-12 h-12 transition-all"
-          :class="{ 'grayscale brightness-50': !isUnlocked }"
+      <!-- Children Container -->
+      <div v-if="hasChildren" class="flex flex-col">
+         <DigievolutionTreeNode 
+          v-for="(child, index) in node.children" 
+          :key="child.id" 
+          :digimon="digimon"
+          :node="child"
+          :is-root="false"
+          :is-first-child="index === 0"
+          :is-last-child="index === node.children.length - 1"
         />
-        
-        <!-- Tooltip Placeholder for Phase 4 -->
-        <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max px-3 py-1.5 bg-black bg-opacity-95 border rounded text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-lg"
-             :class="isUnlocked ? 'border-yellow-600' : 'border-slate-600'"
-        >
-          <p class="font-bold mb-1 border-b pb-1" :class="isUnlocked ? 'text-yellow-400 border-yellow-800' : 'text-slate-400 border-slate-700'">
-            {{ node.name }} <span v-if="!isUnlocked" class="text-red-400 ml-1">(Locked)</span>
-          </p>
-          <ul class="text-[0.7rem] text-gray-300 space-y-0.5" v-if="node.requirements.length > 0">
-            <li v-for="(req, idx) in node.requirements" :key="idx" class="flex items-center gap-1">
-              <span class="inline-block w-1 h-1 rounded-full bg-slate-500"></span>
-              <span v-if="req.Type === 'DigimonLevel'">Lv. {{ req.Value }} (Rookie)</span>
-              <span v-else-if="req.Type === 'DigievolutionLevel'">Lv. {{ req.Value }} ({{ req.Digievolution }})</span>
-              <span v-else-if="req.Type === 'Attribute'">{{ req.Attribute }} {{ req.Value }}</span>
-            </li>
-          </ul>
-          <p v-else class="text-[0.6rem] text-gray-500 italic">Base</p>
-        </div>
       </div>
-    </div>
 
-    <!-- Children Container -->
-    <!-- Indented to the right so its vertical spine aligns with the left edge of children's incoming block -->
-    <div v-if="hasChildren" class="flex flex-col ml-[36px] relative">
-       <DigievolutionTreeNode 
-        v-for="(child, index) in node.children" 
-        :key="child.id" 
-        :digimon="digimon"
-        :node="child"
-        :is-root="false"
-        :is-first-child="index === 0"
-        :is-last-child="index === node.children.length - 1"
-      />
     </div>
-
   </div>
 </template>
 

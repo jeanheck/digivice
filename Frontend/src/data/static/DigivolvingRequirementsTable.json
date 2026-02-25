@@ -179,7 +179,7 @@
                 "Value": 40
             }
         ],
-        "Metal Mamemon": [
+        "MetalMamemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Kyukimon",
@@ -268,7 +268,7 @@
         "MetalGarurumon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Metal Mamemon",
+                "Digievolution": "MetalMamemon",
                 "Value": 40
             },
             {
@@ -284,14 +284,14 @@
                 "Value": 40
             }
         ],
-        "BK Wargreymon": [
+        "BKWargreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "Imperialdramon FM": [
+        "ImperialdramonFM": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -305,7 +305,7 @@
                 "Value": 99
             }
         ],
-        "Mega Gargomon": [
+        "MegaGargomon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGarurumon",
@@ -343,10 +343,10 @@
                 "Value": 40
             }
         ],
-        "Imperialdramon PM": [
+        "ImperialdramonPM": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Imperialdramon FM",
+                "Digievolution": "ImperialdramonFM",
                 "Value": 40
             },
             {
@@ -375,7 +375,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BK Wargreymon",
+                "Digievolution": "BKWargreymon",
                 "Value": 99
             }
         ]
@@ -570,7 +570,7 @@
                 "Value": 50
             }
         ],
-        "Metal Mamemon": [
+        "MetalMamemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "GrapLeomon",
@@ -659,7 +659,7 @@
         "MetalGarurumon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Metal Mamemon",
+                "Digievolution": "MetalMamemon",
                 "Value": 40
             },
             {
@@ -675,14 +675,14 @@
                 "Value": 40
             }
         ],
-        "BK Wargreymon": [
+        "BKWargreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "Imperialdramon FM": [
+        "ImperialdramonFM": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -696,7 +696,7 @@
                 "Value": 99
             }
         ],
-        "Mega Gargomon": [
+        "MegaGargomon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGarurumon",
@@ -734,10 +734,10 @@
                 "Value": 40
             }
         ],
-        "Imperialdramon PM": [
+        "ImperialdramonPM": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Imperialdramon FM",
+                "Digievolution": "ImperialdramonFM",
                 "Value": 40
             },
             {
@@ -766,7 +766,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BK Wargreymon",
+                "Digievolution": "BKWargreymon",
                 "Value": 99
             }
         ]
@@ -967,7 +967,7 @@
                 "Value": 40
             }
         ],
-        "Metal Mamemon": [
+        "MetalMamemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Armormon",
@@ -1056,7 +1056,7 @@
         "MetalGarurumon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Metal Mamemon",
+                "Digievolution": "MetalMamemon",
                 "Value": 40
             },
             {
@@ -1072,14 +1072,14 @@
                 "Value": 40
             }
         ],
-        "BK Wargreymon": [
+        "BKWargreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "Imperialdramon FM": [
+        "ImperialdramonFM": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -1093,7 +1093,7 @@
                 "Value": 99
             }
         ],
-        "Mega Gargomon": [
+        "MegaGargomon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGarurumon",
@@ -1131,10 +1131,10 @@
                 "Value": 40
             }
         ],
-        "Imperialdramon PM": [
+        "ImperialdramonPM": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Imperialdramon FM",
+                "Digievolution": "ImperialdramonFM",
                 "Value": 40
             },
             {
@@ -1163,7 +1163,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BK Wargreymon",
+                "Digievolution": "BKWargreymon",
                 "Value": 99
             }
         ]
@@ -1358,7 +1358,7 @@
                 "Value": 40
             }
         ],
-        "Metal Mamemon": [
+        "MetalMamemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Wargreymon",
@@ -1437,7 +1437,7 @@
         "MetalGarurumon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Metal Mamemon",
+                "Digievolution": "MetalMamemon",
                 "Value": 40
             }
         ],
@@ -1448,14 +1448,14 @@
                 "Value": 40
             }
         ],
-        "BK Wargreymon": [
+        "BKWargreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "Imperialdramon FM": [
+        "ImperialdramonFM": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -1469,7 +1469,7 @@
                 "Value": 99
             }
         ],
-        "Mega Gargomon": [
+        "MegaGargomon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGarurumon",
@@ -1507,10 +1507,10 @@
                 "Value": 40
             }
         ],
-        "Imperialdramon PM": [
+        "ImperialdramonPM": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Imperialdramon FM",
+                "Digievolution": "ImperialdramonFM",
                 "Value": 40
             },
             {
@@ -1539,7 +1539,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BK Wargreymon",
+                "Digievolution": "BKWargreymon",
                 "Value": 99
             }
         ]
@@ -1735,7 +1735,7 @@
                 "Value": 40
             }
         ],
-        "Metal Mamemon": [
+        "MetalMamemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Paildramon",
@@ -1829,7 +1829,7 @@
         "MetalGarurumon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Metal Mamemon",
+                "Digievolution": "MetalMamemon",
                 "Value": 40
             },
             {
@@ -1845,14 +1845,14 @@
                 "Value": 40
             }
         ],
-        "BK Wargreymon": [
+        "BKWargreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "Imperialdramon FM": [
+        "ImperialdramonFM": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -1866,7 +1866,7 @@
                 "Value": 99
             }
         ],
-        "Mega Gargomon": [
+        "MegaGargomon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGarurumon",
@@ -1904,10 +1904,10 @@
                 "Value": 40
             }
         ],
-        "Imperialdramon PM": [
+        "ImperialdramonPM": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Imperialdramon FM",
+                "Digievolution": "ImperialdramonFM",
                 "Value": 40
             },
             {
@@ -1936,7 +1936,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BK Wargreymon",
+                "Digievolution": "BKWargreymon",
                 "Value": 99
             }
         ]
@@ -2137,7 +2137,7 @@
                 "Value": 50
             }
         ],
-        "Metal Mamemon": [
+        "MetalMamemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Growlmon",
@@ -2226,7 +2226,7 @@
         "MetalGarurumon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Metal Mamemon",
+                "Digievolution": "MetalMamemon",
                 "Value": 40
             },
             {
@@ -2242,14 +2242,14 @@
                 "Value": 40
             }
         ],
-        "BK Wargreymon": [
+        "BKWargreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "Imperialdramon FM": [
+        "ImperialdramonFM": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -2263,7 +2263,7 @@
                 "Value": 99
             }
         ],
-        "Mega Gargomon": [
+        "MegaGargomon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGarurumon",
@@ -2301,10 +2301,10 @@
                 "Value": 40
             }
         ],
-        "Imperialdramon PM": [
+        "ImperialdramonPM": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Imperialdramon FM",
+                "Digievolution": "ImperialdramonFM",
                 "Value": 40
             },
             {
@@ -2333,7 +2333,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BK Wargreymon",
+                "Digievolution": "BKWargreymon",
                 "Value": 99
             }
         ]
@@ -2533,7 +2533,7 @@
                 "Value": 50
             }
         ],
-        "Metal Mamemon": [
+        "MetalMamemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Taomon",
@@ -2622,7 +2622,7 @@
         "MetalGarurumon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Metal Mamemon",
+                "Digievolution": "MetalMamemon",
                 "Value": 40
             },
             {
@@ -2642,14 +2642,14 @@
                 "Value": 15
             }
         ],
-        "BK Wargreymon": [
+        "BKWargreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "Imperialdramon FM": [
+        "ImperialdramonFM": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -2663,7 +2663,7 @@
                 "Value": 99
             }
         ],
-        "Mega Gargomon": [
+        "MegaGargomon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGarurumon",
@@ -2701,10 +2701,10 @@
                 "Value": 40
             }
         ],
-        "Imperialdramon PM": [
+        "ImperialdramonPM": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Imperialdramon FM",
+                "Digievolution": "ImperialdramonFM",
                 "Value": 40
             },
             {
@@ -2733,7 +2733,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BK Wargreymon",
+                "Digievolution": "BKWargreymon",
                 "Value": 99
             }
         ]
@@ -2792,7 +2792,7 @@
         "Growlmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Metal Mamemon",
+                "Digievolution": "MetalMamemon",
                 "Value": 20
             }
         ],
@@ -2929,7 +2929,7 @@
                 "Value": 50
             }
         ],
-        "Metal Mamemon": [
+        "MetalMamemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Armormon",
@@ -3018,7 +3018,7 @@
         "MetalGarurumon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Metal Mamemon",
+                "Digievolution": "MetalMamemon",
                 "Value": 50
             }
         ],
@@ -3033,14 +3033,14 @@
                 "Value": 15
             }
         ],
-        "BK Wargreymon": [
+        "BKWargreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "Imperialdramon FM": [
+        "ImperialdramonFM": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -3054,7 +3054,7 @@
                 "Value": 99
             }
         ],
-        "Mega Gargomon": [
+        "MegaGargomon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGarurumon",
@@ -3092,10 +3092,10 @@
                 "Value": 40
             }
         ],
-        "Imperialdramon PM": [
+        "ImperialdramonPM": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Imperialdramon FM",
+                "Digievolution": "ImperialdramonFM",
                 "Value": 40
             },
             {
@@ -3124,7 +3124,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BK Wargreymon",
+                "Digievolution": "BKWargreymon",
                 "Value": 99
             }
         ]

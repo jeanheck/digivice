@@ -5,7 +5,7 @@ const props = defineProps<{
 
 const getIconUrl = (name: string) => {
   try {
-    return new URL(`../../icons/digimons/${name}.png`, import.meta.url).href
+    return new URL(`../../assets/icons/digimons/${name}.png`, import.meta.url).href
   } catch (e) {
     // Falha silenciosa: retorna string vazia ou placeholder caso nÃ£o encontre.
     return ''

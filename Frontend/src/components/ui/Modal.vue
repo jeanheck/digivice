@@ -49,7 +49,7 @@ onUnmounted(() => {
         class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-75 p-4"
         @click.self="emit('close')"
       >
-        <div class="bg-[#000a2b] border-2 border-[#00154a] rounded shadow-[0_0_15px_rgba(0,0,0,0.8)] flex flex-col w-full max-w-6xl max-h-[90vh] overflow-hidden">
+        <div class="bg-[#000a2b] border-2 border-[#00154a] rounded shadow-[0_0_15px_rgba(0,0,0,0.8)] flex flex-col w-full max-w-[90vw] max-h-[90vh] overflow-hidden">
           
           <!-- Modal Header -->
           <div class="flex justify-between items-center bg-[#00154a] px-4 py-2 border-b-2 border-blue-900">
@@ -77,7 +77,7 @@ onUnmounted(() => {
   </Teleport>
 </template>
 
-<style scoped>
+<style>
 .custom-scrollbar::-webkit-scrollbar {
   width: 10px;
   height: 10px;

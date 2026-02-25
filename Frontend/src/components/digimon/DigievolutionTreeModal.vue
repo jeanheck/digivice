@@ -27,7 +27,7 @@ watch(() => props.isOpen, (isOpen) => {
 <template>
   <Modal 
     :is-open="isOpen" 
-    :title="`${digimon.basicInfo.name} digivolve`"
+    :title="`${digimon.basicInfo.name} Digievolution Tree`"
     @close="emit('close')"
   >
     <div class="flex min-h-[400px] w-full bg-[url('/src/assets/bg-pattern.svg')] lg:p-8 p-2 overflow-x-auto custom-scrollbar items-center">
