@@ -2,6 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import ExpProgressBar from '../ui/ExpProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
+import DigimonIcon from '../ui/DigimonIcon.vue'
 import { ExperienceCalculator } from '../../logic/ExperienceCalculator'
 import type { Digimon } from '../../types/backend'
 
@@ -69,14 +70,8 @@ const getIconUrl = (name: string) => {
       <div class="flex items-start gap-4">
         
         <!-- Icon Image using Vite dynamic URL -->
-        <div class="w-16 h-16 bg-[#000e3f] rounded overflow-hidden shadow flex-shrink-0 flex items-center justify-center border-2 border-[#00154a]">
-          <img 
-            :src="getIconUrl(digimon.basicInfo.name)" 
-            :alt="digimon.basicInfo.name"
-            class="w-full h-full object-cover rendering-pixelated"
-            @error="(e) => (e.target as HTMLImageElement).style.display = 'none'"
-          />
-        </div>
+        <!-- Icon Image using Vite dynamic URL -->
+        <DigimonIcon :digimon-name="digimon.basicInfo.name" class="w-16 h-16" />
 
         <div class="flex-1 flex flex-col gap-1 min-w-0">
           <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
