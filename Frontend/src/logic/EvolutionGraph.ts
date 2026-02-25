@@ -127,4 +127,28 @@ export class EvolutionGraph {
 
         return true
     }
+
+    /**
+     * Finds the path from a given node down to a target node name using Depth-First Search.
+     * Returns an array of node names representing the path, or null if not found.
+     */
+    static findEvolutionPath(targetName: string, currentNode: GraphNode, currentPath: string[] = []): string[] | null {
+        // Add current node to path
+        const newPath = [...currentPath, currentNode.name]
+
+        // If we found the target, return the path
+        if (currentNode.name === targetName) {
+            return newPath
+        }
+
+        // Recursively search children
+        for (const child of currentNode.children) {
+            const foundPath = this.findEvolutionPath(targetName, child, newPath)
+            if (foundPath) {
+                return foundPath
+            }
+        }
+
+        return null
+    }
 }

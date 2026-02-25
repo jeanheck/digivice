@@ -15,11 +15,30 @@ const emit = defineEmits<{
 }>()
 
 const treeRoot = ref<GraphNode | null>(null)
+const activePath = ref<string[]>([])
+
+// Handle node clicks to illuminate path
+const handleNodeClick = (nodeName: string) => {
+  if (!treeRoot.value) return
+  
+  if (activePath.value.length > 0 && activePath.value[activePath.value.length - 1] === nodeName) {
+    // Toggle off if clicking the already selected node
+    activePath.value = []
+  } else {
+    // Find path and illuminate
+    const path = EvolutionGraph.findEvolutionPath(nodeName, treeRoot.value)
+    if (path) {
+      activePath.value = path
+    }
+  }
+}
 
 watch(() => props.isOpen, (isOpen) => {
   if (isOpen && props.digimon) {
     // Build the tree only when modal opens to save processing
     treeRoot.value = EvolutionGraph.buildTree(props.digimon.basicInfo.name)
+    // Clear the active path status when reopened
+    activePath.value = []
   }
 })
 </script>
@@ -32,7 +51,13 @@ watch(() => props.isOpen, (isOpen) => {
   >
     <div class="flex min-h-[400px] w-full bg-[url('/src/assets/bg-pattern.svg')] lg:p-8 p-2 overflow-x-auto custom-scrollbar items-center">
       <div v-if="treeRoot" class="flex items-center min-w-max">
-         <DigievolutionTreeNode :digimon="digimon" :node="treeRoot" :is-root="true" />
+         <DigievolutionTreeNode 
+           :digimon="digimon" 
+           :node="treeRoot" 
+           :is-root="true"
+           :active-path="activePath"
+           @node-click="handleNodeClick"
+         />
       </div>
       <div v-else class="text-white">Carregando árvore...</div>
     </div>
