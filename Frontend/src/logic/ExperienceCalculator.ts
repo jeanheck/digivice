@@ -1,6 +1,6 @@
-import expTable from '../data/static/expTable.json'
+import expTable from '../data/static/ExperienceTable.json'
 
-export class ExpCalculator {
+export class ExperienceCalculator {
     /**
      * Calculates the total absolute experience points required to reach the next level
      * based on the provided Digimon Name and current Level.

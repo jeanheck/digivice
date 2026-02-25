@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import ExpProgressBar from '../ui/ExpProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
-import { ExpCalculator } from '../../logic/ExpCalculator'
+import { ExperienceCalculator } from '../../logic/ExperienceCalculator'
 import type { Digimon } from '../../types/backend'
 
 const props = defineProps<{
@@ -10,7 +10,7 @@ const props = defineProps<{
 }>()
 
 const requiredExpForNextLevel = computed(() => {
-  return ExpCalculator.getRequiredExpForNextLevel(
+  return ExperienceCalculator.getRequiredExpForNextLevel(
     props.digimon.basicInfo.name, 
     props.digimon.basicInfo.level
   )
