@@ -70,7 +70,7 @@ export interface QuestStep {
 }
 
 export interface Quest {
-    id: string
+    id: number
     title: string
     description: string
     prerequisites: Requisite[]

@@ -12,18 +12,29 @@ import { ref } from 'vue'
 const store = useGameStore()
 const partySlots = computed(() => store.gameState?.party?.slots ?? [null, null, null])
 
-const activeQuestForModal = ref<MainQuest | SideQuest | null>(null)
+const activeQuestId = ref<number | null>(null)
 const isQuestModalOpen = ref(false)
 
+const activeQuestForModal = computed(() => {
+  if (activeQuestId.value === null) return null;
+  const journal = store.gameState?.journal;
+  if (!journal) return null;
+  
+  if (journal.mainQuest && journal.mainQuest.id === activeQuestId.value) {
+    return journal.mainQuest;
+  }
+  return journal.sideQuests?.find(q => q.id === activeQuestId.value) || null;
+})
+
 const handleQuestClick = (quest: MainQuest | SideQuest) => {
-  activeQuestForModal.value = quest
+  activeQuestId.value = quest.id
   isQuestModalOpen.value = true
 }
 
 const handleCloseQuestModal = () => {
   isQuestModalOpen.value = false
   setTimeout(() => {
-     activeQuestForModal.value = null
+     activeQuestId.value = null
   }, 300) // Wait for fade transition
 }
 </script>
