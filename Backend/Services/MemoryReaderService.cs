@@ -43,7 +43,7 @@ namespace Backend.Services
             }
         }
 
-        public int ReadInt32(int address)
+        public int ReadInt32(long address)
         {
             if (!IsConnected || _accessor == null) return -1;
 
@@ -64,7 +64,7 @@ namespace Backend.Services
             Log.Information("Memory resources released.");
         }
 
-        public short ReadInt16(int address)
+        public short ReadInt16(long address)
         {
             if (!IsConnected || _accessor == null) return -1;
             try
@@ -77,7 +77,7 @@ namespace Backend.Services
             }
         }
 
-        public byte[]? ReadBytes(int address, int length)
+        public byte[]? ReadBytes(long address, int length)
         {
             if (!IsConnected || _accessor == null) return null;
             try
@@ -93,7 +93,7 @@ namespace Backend.Services
             }
         }
 
-        public string ReadString(int address, int length, System.Text.Encoding? encoding = null)
+        public string ReadString(long address, int length, System.Text.Encoding? encoding = null)
         {
             var bytes = ReadBytes(address, length);
             if (bytes == null) return string.Empty;

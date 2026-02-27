@@ -22,11 +22,21 @@ namespace Backend.Services
         {
             return new State
             {
+                CurrentLocation = GetCurrentLocation(),
                 Player = GetPlayer(),
                 Party = GetParty(),
                 ImportantItems = GetImportantItems(),
                 Journal = GetJournal()
             };
+        }
+
+        private string GetCurrentLocation()
+        {
+            var bytes = _memoryReader.ReadBytes(LocationAddress.CurrentMapName, LocationAddress.MapNameBufferSize);
+            if (bytes == null || bytes.Length == 0) return string.Empty;
+
+            // TextDecoder cleans up up to 0x00 and applies custom alphabet map
+            return TextDecoder.Decode(bytes);
         }
 
         private Player? GetPlayer()

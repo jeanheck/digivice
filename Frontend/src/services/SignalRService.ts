@@ -112,6 +112,11 @@ class SignalRService {
             console.log('Hub: JournalChanged', event)
             store.updateJournal(event.journal)
         })
+
+        this.connection.on('LocationChanged', (event: { location: string }) => {
+            console.log('Hub: LocationChanged', event)
+            store.updateLocation(event.location)
+        })
     }
 
     public get isConnected() {

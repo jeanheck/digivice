@@ -104,6 +104,12 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
+    function updateLocation(location: string) {
+        if (gameState.value) {
+            gameState.value.currentLocation = location
+        }
+    }
+
     return {
         isConnected,
         gameState,
@@ -120,6 +126,7 @@ export const useGameStore = defineStore('game', () => {
         updateDigimonDigievolutions,
         notifyDigievolutionLevelUp,
         updateImportantItems,
-        updateJournal
+        updateJournal,
+        updateLocation
     }
 })

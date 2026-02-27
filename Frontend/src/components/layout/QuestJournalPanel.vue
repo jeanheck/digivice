@@ -30,7 +30,7 @@ const isQuestDone = (quest: any) => {
 </script>
 
 <template>
-  <aside class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-3 flex flex-col pt-0 mt-4 overflow-hidden">
+  <aside class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-3 flex flex-col pt-0 overflow-hidden mb-1">
     <div class="w-full flex items-center justify-center border-b border-[#0033aa]/50 bg-[#000e3f] sticky top-0 py-2 z-10">
       <h3 class="font-bold tracking-widest text-[#0077ff] text-shadow-sm uppercase text-sm">Journal</h3>
     </div>

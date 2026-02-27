@@ -12,11 +12,11 @@ namespace Backend.Infrastructure.Memory
             _accessor = accessor;
         }
 
-        public int ReadInt32(int address) => _accessor.ReadInt32(address);
+        public int ReadInt32(long address) => _accessor.ReadInt32(address);
 
-        public short ReadInt16(int address) => _accessor.ReadInt16(address);
+        public short ReadInt16(long address) => _accessor.ReadInt16(address);
 
-        public void ReadArray(int address, byte[] buffer, int index, int count)
+        public void ReadArray(long address, byte[] buffer, int index, int count)
         {
             _accessor.ReadArray(address, buffer, index, count);
         }

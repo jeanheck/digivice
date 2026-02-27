@@ -86,6 +86,7 @@ export interface Journal {
 }
 
 export interface State {
+    currentLocation: string
     player: Player | null
     party: Party | null
     importantItems?: Record<string, boolean>

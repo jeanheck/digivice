@@ -59,6 +59,13 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             return;
         }
 
+        // 0. Compare Location
+        if (newState.CurrentLocation != _previousState.CurrentLocation)
+        {
+            var ev = new LocationChangedEvent(newState.CurrentLocation);
+            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+        }
+
         // 1. Compare Player Bits
         if (newState.Player?.Bits != _previousState.Player?.Bits)
         {
@@ -360,6 +367,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
     {
         return new State
         {
+            CurrentLocation = s.CurrentLocation,
             Player = s.Player == null ? null : new Player { Name = s.Player.Name, Bits = s.Player.Bits },
             Party = s.Party == null ? null : new Party
             {
