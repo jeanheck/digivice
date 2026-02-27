@@ -2,7 +2,7 @@
 
 O objetivo desta fase é construir a aba/componente de "Informações Gerais" do jogador, que atualmente não tem recebido atenção. O componente será dividido em 3 seções principais.
 
-## Etapa 1: Seção de Marcos (Milestones)
+## [x] Etapa 1: Seção de Marcos (Milestones)
 - **Descrição:** Criar uma seção na UI que exibe ícones de itens/conquistas não-obrigatórias do jogo (por exemplo, "Kicking Boots", "Fishing Pole").
 - **Comportamento:** Os ícones aparecerão apagados (em tons de cinza ou com opacidade baixa) caso o usuário não possua o item. Quando o usuário obtiver o item, o ícone se acenderá.
 - **Backend:** Precisaremos mapear as memórias que indicam se o usuário possui ou não esses itens, adicionar esses dados ao `State` e enviar via SignalR.

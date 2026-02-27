@@ -4,6 +4,7 @@ using Backend.Events.Data.Player;
 using Backend.Events.Data.System;
 using Backend.Events.Hubs;
 using Backend.Models;
+using Backend.Models.Quests;
 using Backend.Models.Digimons;
 using Microsoft.AspNetCore.SignalR;
 
@@ -140,6 +141,89 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         if (itemsChanged)
         {
             var ev = new ImportantItemsChangedEvent(newItems);
+            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+        }
+
+        // 4. Compare Journal
+        bool journalChanged = false;
+        var newJournal = newState.Journal;
+        var oldJournal = _previousState.Journal;
+
+        if (newJournal != null && oldJournal == null || newJournal == null && oldJournal != null)
+        {
+            journalChanged = true;
+        }
+        else if (newJournal != null && oldJournal != null)
+        {
+            // Diff MainQuest
+            if (newJournal.MainQuest?.Id != oldJournal.MainQuest?.Id ||
+                newJournal.MainQuest?.Done != oldJournal.MainQuest?.Done ||
+                newJournal.MainQuest?.Available != oldJournal.MainQuest?.Available)
+            {
+                journalChanged = true;
+            }
+            if (!journalChanged && newJournal.MainQuest != null && oldJournal.MainQuest != null)
+            {
+                if (newJournal.MainQuest.Steps.Count != oldJournal.MainQuest.Steps.Count)
+                {
+                    journalChanged = true;
+                }
+                else
+                {
+                    for (int j = 0; j < newJournal.MainQuest.Steps.Count; j++)
+                    {
+                        if (newJournal.MainQuest.Steps[j].IsCompleted != oldJournal.MainQuest.Steps[j].IsCompleted)
+                        {
+                            journalChanged = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Diff SideQuests
+            if (!journalChanged)
+            {
+                if (newJournal.SideQuests.Count != oldJournal.SideQuests.Count)
+                {
+                    journalChanged = true;
+                }
+                else
+                {
+                    for (int i = 0; i < newJournal.SideQuests.Count; i++)
+                    {
+                        var newQ = newJournal.SideQuests[i];
+                        var oldQ = oldJournal.SideQuests[i];
+
+                        if (newQ.Id != oldQ.Id || newQ.Done != oldQ.Done || newQ.Available != oldQ.Available)
+                        {
+                            journalChanged = true;
+                            break;
+                        }
+
+                        if (newQ.Steps.Count != oldQ.Steps.Count)
+                        {
+                            journalChanged = true;
+                            break;
+                        }
+
+                        for (int j = 0; j < newQ.Steps.Count; j++)
+                        {
+                            if (newQ.Steps[j].IsCompleted != oldQ.Steps[j].IsCompleted)
+                            {
+                                journalChanged = true;
+                                break;
+                            }
+                        }
+                        if (journalChanged) break;
+                    }
+                }
+            }
+        }
+
+        if (journalChanged)
+        {
+            var ev = new JournalChangedEvent(newState.Journal);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
@@ -296,7 +380,40 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                     }
                 }).ToList()
             },
-            ImportantItems = s.ImportantItems != null ? new Dictionary<string, bool>(s.ImportantItems) : new Dictionary<string, bool>()
+            ImportantItems = s.ImportantItems != null ? new Dictionary<string, bool>(s.ImportantItems) : new Dictionary<string, bool>(),
+            Journal = s.Journal != null ? new Journal
+            {
+                MainQuest = s.Journal.MainQuest != null ? new MainQuest
+                {
+                    Id = s.Journal.MainQuest.Id,
+                    Title = s.Journal.MainQuest.Title,
+                    Description = s.Journal.MainQuest.Description,
+                    Requirements = new List<string>(s.Journal.MainQuest.Requirements),
+                    Done = s.Journal.MainQuest.Done,
+                    Available = s.Journal.MainQuest.Available,
+                    Steps = s.Journal.MainQuest.Steps.Select(step => new QuestStep
+                    {
+                        Number = step.Number,
+                        Description = step.Description,
+                        IsCompleted = step.IsCompleted
+                    }).ToList()
+                } : null,
+                SideQuests = s.Journal.SideQuests.Select(q => new SideQuest
+                {
+                    Id = q.Id,
+                    Title = q.Title,
+                    Description = q.Description,
+                    Requirements = new List<string>(q.Requirements),
+                    Done = q.Done,
+                    Available = q.Available,
+                    Steps = q.Steps.Select(step => new QuestStep
+                    {
+                        Number = step.Number,
+                        Description = step.Description,
+                        IsCompleted = step.IsCompleted
+                    }).ToList()
+                }).ToList()
+            } : null
         };
     }
 }

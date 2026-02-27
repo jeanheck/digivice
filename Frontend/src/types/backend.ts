@@ -58,8 +58,33 @@ export interface Player {
     bits: number
 }
 
+export interface QuestStep {
+    number: number
+    description: string
+    isCompleted: boolean
+}
+
+export interface Quest {
+    id: string
+    title: string
+    description: string
+    requirements: string[]
+    steps: QuestStep[]
+    done: boolean
+    available: boolean
+}
+
+export interface MainQuest extends Quest { }
+export interface SideQuest extends Quest { }
+
+export interface Journal {
+    mainQuest: MainQuest | null
+    sideQuests: SideQuest[]
+}
+
 export interface State {
     player: Player | null
     party: Party | null
     importantItems?: Record<string, boolean>
+    journal?: Journal | null
 }

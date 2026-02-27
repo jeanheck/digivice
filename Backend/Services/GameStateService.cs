@@ -3,6 +3,8 @@ using Backend.Models;
 using Backend.Models.Digimons;
 using Backend.Utils;
 using Backend.Constants;
+using Backend.Constants.Quests.SideQuests;
+using Backend.Models.Quests;
 
 namespace Backend.Services
 {
@@ -21,7 +23,8 @@ namespace Backend.Services
             {
                 Player = GetPlayer(),
                 Party = GetParty(),
-                ImportantItems = GetImportantItems()
+                ImportantItems = GetImportantItems(),
+                Journal = GetJournal()
             };
         }
 
@@ -49,6 +52,45 @@ namespace Backend.Services
                 items[kvp.Key] = bytes != null && bytes.Length > 0 && bytes[0] == 1;
             }
             return items;
+        }
+
+        private Journal GetJournal()
+        {
+            var journal = new Journal();
+
+            // --- 1. Folder Bag Side Quest ---
+            var folderBag = new SideQuest
+            {
+                Id = FolderBagAddress.QuestId,
+                Title = FolderBagAddress.Title,
+                Description = FolderBagAddress.Description,
+                Requirements = FolderBagAddress.GetRequirements(),
+                Steps = FolderBagAddress.GetDefaultSteps(),
+                Available = true // Available immediately for testing
+            };
+
+            bool questFullyDone = true;
+
+            foreach (var step in folderBag.Steps)
+            {
+                if (FolderBagAddress.StepCompletionAddresses.TryGetValue(step.Number, out int address))
+                {
+                    var bytes = _memoryReader.ReadBytes(address, 1);
+                    bool isStepDone = bytes != null && bytes.Length > 0 && bytes[0] == 1;
+
+                    step.IsCompleted = isStepDone;
+
+                    if (!isStepDone)
+                    {
+                        questFullyDone = false;
+                    }
+                }
+            }
+
+            folderBag.Done = questFullyDone;
+            journal.SideQuests.Add(folderBag);
+
+            return journal;
         }
 
         private Party GetParty()

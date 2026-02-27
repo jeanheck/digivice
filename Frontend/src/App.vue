@@ -3,10 +3,29 @@ import { computed } from 'vue'
 import { useGameStore } from './stores/useGameStore'
 import DigimonCard from './components/digimon/DigimonCard.vue'
 import GeneralInfoPanel from './components/layout/GeneralInfoPanel.vue'
+import QuestJournalPanel from './components/layout/QuestJournalPanel.vue'
+import QuestDetailsModal from './components/layout/QuestDetailsModal.vue'
 import PlayerFooter from './components/layout/PlayerFooter.vue'
+import type { MainQuest, SideQuest } from './types/backend'
+import { ref } from 'vue'
 
 const store = useGameStore()
 const partySlots = computed(() => store.gameState?.party?.slots ?? [null, null, null])
+
+const activeQuestForModal = ref<MainQuest | SideQuest | null>(null)
+const isQuestModalOpen = ref(false)
+
+const handleQuestClick = (quest: MainQuest | SideQuest) => {
+  activeQuestForModal.value = quest
+  isQuestModalOpen.value = true
+}
+
+const handleCloseQuestModal = () => {
+  isQuestModalOpen.value = false
+  setTimeout(() => {
+     activeQuestForModal.value = null
+  }, 300) // Wait for fade transition
+}
 </script>
 
 <template>
@@ -31,13 +50,28 @@ const partySlots = computed(() => store.gameState?.party?.slots ?? [null, null, 
       </div>
 
       <!-- General Info Panel (Right Sidebar) -->
-      <div class="flex-1 min-w-[300px]">
-        <GeneralInfoPanel />
+      <div class="flex-1 min-w-[300px] flex flex-col">
+        <!-- Milestones fixed at top -->
+        <div class="h-[120px] shrink-0">
+          <GeneralInfoPanel />
+        </div>
+        
+        <!-- Scrolling Journal taking the rest of the vertical space -->
+        <div class="flex-1 min-h-0 overflow-hidden">
+          <QuestJournalPanel @quest-click="handleQuestClick" />
+        </div>
       </div>
 
     </div>
 
     <!-- Bottom Section: Player Info -->
     <PlayerFooter />
+
+    <!-- Overlays -->
+    <QuestDetailsModal 
+      :is-open="isQuestModalOpen" 
+      :quest="activeQuestForModal" 
+      @close="handleCloseQuestModal" 
+    />
   </main>
 </template>

@@ -107,6 +107,11 @@ class SignalRService {
             console.log('Hub: ImportantItemsChanged', event)
             store.updateImportantItems(event.importantItems)
         })
+
+        this.connection.on('JournalChanged', (event: { journal: import('../types/backend').Journal | null }) => {
+            console.log('Hub: JournalChanged', event)
+            store.updateJournal(event.journal)
+        })
     }
 
     public get isConnected() {

@@ -98,6 +98,12 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
+    function updateJournal(journal: import('../types/backend').Journal | null) {
+        if (gameState.value) {
+            gameState.value.journal = journal
+        }
+    }
+
     return {
         isConnected,
         gameState,
@@ -113,6 +119,7 @@ export const useGameStore = defineStore('game', () => {
         updateDigimonEquipments,
         updateDigimonDigievolutions,
         notifyDigievolutionLevelUp,
-        updateImportantItems
+        updateImportantItems,
+        updateJournal
     }
 })
