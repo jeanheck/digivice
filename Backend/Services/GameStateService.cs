@@ -58,36 +58,29 @@ namespace Backend.Services
         {
             var journal = new Journal();
 
-            // --- 1. Folder Bag Side Quest ---
-            var folderBag = new SideQuest
+            // --- Main Quest Placeholder ---
+            journal.MainQuest = new MainQuest
             {
-                Id = FolderBagAddress.QuestId,
-                Title = FolderBagAddress.Title,
-                Description = FolderBagAddress.Description,
-                Requirements = FolderBagAddress.GetRequirements(),
-                Steps = FolderBagAddress.GetDefaultSteps(),
-                Available = true // Available immediately for testing
+                Id = "main_quest_wip",
+                Title = "Unknown Objective",
+                Description = "Awaiting destination."
             };
 
-            bool questFullyDone = true;
+            // --- 1. Folder Bag Side Quest ---
+            var folderBag = new Backend.DetailedQuests.SideQuests.FolderBag();
 
-            foreach (var step in folderBag.Steps)
+            foreach (var memStep in FolderBagAddress.Steps)
             {
-                if (FolderBagAddress.StepCompletionAddresses.TryGetValue(step.Number, out int address))
+                var bytes = _memoryReader.ReadBytes(memStep.Address, 1);
+                bool isStepDone = bytes != null && bytes.Length > 0 && bytes[0] == 1;
+
+                var qStep = folderBag.Steps.FirstOrDefault(s => s.Number == memStep.Id);
+                if (qStep != null)
                 {
-                    var bytes = _memoryReader.ReadBytes(address, 1);
-                    bool isStepDone = bytes != null && bytes.Length > 0 && bytes[0] == 1;
-
-                    step.IsCompleted = isStepDone;
-
-                    if (!isStepDone)
-                    {
-                        questFullyDone = false;
-                    }
+                    qStep.IsCompleted = isStepDone;
                 }
             }
 
-            folderBag.Done = questFullyDone;
             journal.SideQuests.Add(folderBag);
 
             return journal;

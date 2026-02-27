@@ -18,24 +18,15 @@ const onQuestClick = (quest: any) => {
   emit('quest-click', quest)
 }
 
-// Temporary test mocks to fill out the sidequests UI until backend provides more
 const displaySideQuests = computed(() => {
-  const quests = [...sideQuests.value]
-  
-  if (quests.length === 1) { // We only have kicking boots right now
-    quests.push(
-      { 
-        id: 'mock_1', title: 'The Lost Card', description: 'Help the old man find his rare Digimon Card', done: false, available: true, requirements: [],
-        steps: [{ number: 1, description: 'Find card', isCompleted: false}] 
-      },
-      { 
-        id: 'mock_2', title: 'Epic Weapon', description: 'Forge the ultimate elemental weapon', done: true, available: true, requirements: [],
-        steps: [{ number: 1, description: 'Forge it', isCompleted: true}] 
-      }
-    )
-  }
-  return quests
+  return [...sideQuests.value]
 })
+
+// Calculate visually if a quest is done based on its steps
+const isQuestDone = (quest: any) => {
+  if (!quest || !quest.steps || quest.steps.length === 0) return false;
+  return quest.steps.every((s: any) => s.isCompleted);
+}
 </script>
 
 <template>
@@ -55,7 +46,7 @@ const displaySideQuests = computed(() => {
              class="p-2 rounded border border-gray-600 bg-gray-800/50 hover:bg-gray-700/60 cursor-pointer transition-colors group">
           <div class="flex items-center justify-between mb-1">
             <span class="text-white font-bold text-sm truncate group-hover:text-orange-300 transition-colors">{{ mainQuest.title }}</span>
-            <span v-if="mainQuest.done" class="text-green-400 text-xs">✔</span>
+            <span v-if="isQuestDone(mainQuest)" class="text-green-400 text-xs">✔</span>
           </div>
           <p class="text-gray-400 text-xs line-clamp-2 leading-tight">{{ mainQuest.description }}</p>
         </div>
@@ -81,18 +72,18 @@ const displaySideQuests = computed(() => {
           <div v-for="quest in displaySideQuests" :key="quest.id"
                @click="onQuestClick(quest)"
                class="p-2 rounded border cursor-pointer transition-all duration-200 group relative overflow-hidden"
-               :class="quest.done ? 'border-green-800/50 bg-green-900/20 hover:bg-green-900/40' : 'border-[#0033aa]/60 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]'">
+               :class="isQuestDone(quest) ? 'border-green-800/50 bg-green-900/20 hover:bg-green-900/40' : 'border-[#0033aa]/60 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]'">
             
-            <div v-if="quest.done" class="absolute inset-0 bg-green-500/5 pointer-events-none"></div>
+            <div v-if="isQuestDone(quest)" class="absolute inset-0 bg-green-500/5 pointer-events-none"></div>
 
             <div class="flex items-center justify-between mb-1 relative z-10">
               <span class="text-white font-bold text-xs truncate group-hover:text-cyan-300 transition-colors"
-                :class="{ 'text-gray-400 line-through': quest.done }">
+                :class="{ 'text-gray-400 line-through': isQuestDone(quest) }">
                 {{ quest.title }}
               </span>
-              <span v-if="quest.done" class="text-green-500 text-xs drop-shadow">✔</span>
+              <span v-if="isQuestDone(quest)" class="text-green-500 text-xs drop-shadow">✔</span>
             </div>
-            <p class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10" :class="{ 'opacity-50': quest.done }">
+            <p class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10" :class="{ 'opacity-50': isQuestDone(quest) }">
               {{ quest.description }}
             </p>
           </div>

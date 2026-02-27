@@ -156,13 +156,29 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         else if (newJournal != null && oldJournal != null)
         {
             // Diff MainQuest
-            if (newJournal.MainQuest?.Id != oldJournal.MainQuest?.Id ||
-                newJournal.MainQuest?.Done != oldJournal.MainQuest?.Done ||
-                newJournal.MainQuest?.Available != oldJournal.MainQuest?.Available)
+            if (newJournal.MainQuest.Id != oldJournal.MainQuest.Id)
             {
                 journalChanged = true;
             }
-            if (!journalChanged && newJournal.MainQuest != null && oldJournal.MainQuest != null)
+            if (!journalChanged)
+            {
+                if (newJournal.MainQuest.Prerequisites.Count != oldJournal.MainQuest.Prerequisites.Count)
+                {
+                    journalChanged = true;
+                }
+                else
+                {
+                    for (int j = 0; j < newJournal.MainQuest.Prerequisites.Count; j++)
+                    {
+                        if (newJournal.MainQuest.Prerequisites[j].IsDone != oldJournal.MainQuest.Prerequisites[j].IsDone)
+                        {
+                            journalChanged = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (!journalChanged)
             {
                 if (newJournal.MainQuest.Steps.Count != oldJournal.MainQuest.Steps.Count)
                 {
@@ -195,11 +211,27 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         var newQ = newJournal.SideQuests[i];
                         var oldQ = oldJournal.SideQuests[i];
 
-                        if (newQ.Id != oldQ.Id || newQ.Done != oldQ.Done || newQ.Available != oldQ.Available)
+                        if (newQ.Id != oldQ.Id)
                         {
                             journalChanged = true;
                             break;
                         }
+
+                        if (newQ.Prerequisites.Count != oldQ.Prerequisites.Count)
+                        {
+                            journalChanged = true;
+                            break;
+                        }
+
+                        for (int j = 0; j < newQ.Prerequisites.Count; j++)
+                        {
+                            if (newQ.Prerequisites[j].IsDone != oldQ.Prerequisites[j].IsDone)
+                            {
+                                journalChanged = true;
+                                break;
+                            }
+                        }
+                        if (journalChanged) break;
 
                         if (newQ.Steps.Count != oldQ.Steps.Count)
                         {
@@ -383,29 +415,25 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             ImportantItems = s.ImportantItems != null ? new Dictionary<string, bool>(s.ImportantItems) : new Dictionary<string, bool>(),
             Journal = s.Journal != null ? new Journal
             {
-                MainQuest = s.Journal.MainQuest != null ? new MainQuest
+                MainQuest = new MainQuest
                 {
                     Id = s.Journal.MainQuest.Id,
                     Title = s.Journal.MainQuest.Title,
                     Description = s.Journal.MainQuest.Description,
-                    Requirements = new List<string>(s.Journal.MainQuest.Requirements),
-                    Done = s.Journal.MainQuest.Done,
-                    Available = s.Journal.MainQuest.Available,
+                    Prerequisites = s.Journal.MainQuest.Prerequisites.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone }).ToList(),
                     Steps = s.Journal.MainQuest.Steps.Select(step => new QuestStep
                     {
                         Number = step.Number,
                         Description = step.Description,
                         IsCompleted = step.IsCompleted
                     }).ToList()
-                } : null,
+                },
                 SideQuests = s.Journal.SideQuests.Select(q => new SideQuest
                 {
                     Id = q.Id,
                     Title = q.Title,
                     Description = q.Description,
-                    Requirements = new List<string>(q.Requirements),
-                    Done = q.Done,
-                    Available = q.Available,
+                    Prerequisites = q.Prerequisites.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone }).ToList(),
                     Steps = q.Steps.Select(step => new QuestStep
                     {
                         Number = step.Number,

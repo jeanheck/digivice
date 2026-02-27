@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { MainQuest, SideQuest } from '../../types/backend'
 import IconClose from '~icons/pixelarticons/close'
 
@@ -18,6 +19,11 @@ const emit = defineEmits(['close'])
 const closeModal = () => {
   emit('close')
 }
+
+const isQuestDone = computed(() => {
+  if (!props.quest || !props.quest.steps || props.quest.steps.length === 0) return false;
+  return props.quest.steps.every(s => s.isCompleted);
+})
 </script>
 
 <template>
@@ -38,7 +44,7 @@ const closeModal = () => {
           <!-- Header -->
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-10">
             <h2 class="text-white font-bold tracking-widest text-[#00aaff] drop-shadow flex items-center gap-2">
-              <span v-if="quest.done" class="text-green-400 text-lg">✔</span>
+              <span v-if="isQuestDone" class="text-green-400 text-lg">✔</span>
               <span v-else class="text-blue-400 text-lg">●</span>
               {{ quest.title }}
             </h2>

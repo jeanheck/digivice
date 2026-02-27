@@ -58,6 +58,11 @@ export interface Player {
     bits: number
 }
 
+export interface Requisite {
+    description: string
+    isDone: boolean
+}
+
 export interface QuestStep {
     number: number
     description: string
@@ -68,17 +73,15 @@ export interface Quest {
     id: string
     title: string
     description: string
-    requirements: string[]
+    prerequisites: Requisite[]
     steps: QuestStep[]
-    done: boolean
-    available: boolean
 }
 
 export interface MainQuest extends Quest { }
 export interface SideQuest extends Quest { }
 
 export interface Journal {
-    mainQuest: MainQuest | null
+    mainQuest: MainQuest
     sideQuests: SideQuest[]
 }
 
