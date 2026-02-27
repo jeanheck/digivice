@@ -116,6 +116,33 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             }
         }
 
+        // 3. Compare Important Items
+        bool itemsChanged = false;
+        var newItems = newState.ImportantItems ?? new Dictionary<string, bool>();
+        var oldItems = _previousState.ImportantItems ?? new Dictionary<string, bool>();
+
+        if (newItems.Count != oldItems.Count)
+        {
+            itemsChanged = true;
+        }
+        else
+        {
+            foreach (var kvp in newItems)
+            {
+                if (!oldItems.TryGetValue(kvp.Key, out bool oldVal) || oldVal != kvp.Value)
+                {
+                    itemsChanged = true;
+                    break;
+                }
+            }
+        }
+
+        if (itemsChanged)
+        {
+            var ev = new ImportantItemsChangedEvent(newItems);
+            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+        }
+
         _previousState = CloneState(newState);
     }
 
@@ -268,7 +295,8 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         d.EquippedDigievolutions[2] != null ? new Digievolution { Id = d.EquippedDigievolutions[2]!.Id, Level = d.EquippedDigievolutions[2]!.Level } : null
                     }
                 }).ToList()
-            }
+            },
+            ImportantItems = s.ImportantItems != null ? new Dictionary<string, bool>(s.ImportantItems) : new Dictionary<string, bool>()
         };
     }
 }

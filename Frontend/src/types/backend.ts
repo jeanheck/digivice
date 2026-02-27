@@ -61,4 +61,5 @@ export interface Player {
 export interface State {
     player: Player | null
     party: Party | null
+    importantItems?: Record<string, boolean>
 }

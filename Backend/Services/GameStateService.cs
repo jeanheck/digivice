@@ -20,7 +20,8 @@ namespace Backend.Services
             return new State
             {
                 Player = GetPlayer(),
-                Party = GetParty()
+                Party = GetParty(),
+                ImportantItems = GetImportantItems()
             };
         }
 
@@ -36,6 +37,18 @@ namespace Backend.Services
             };
 
             return player;
+        }
+
+        private Dictionary<string, bool> GetImportantItems()
+        {
+            var items = new Dictionary<string, bool>();
+            foreach (var kvp in ImportantItemsAddresses.Items)
+            {
+                // Key items memory flags are usually 1 byte booleans (0 or 1)
+                var bytes = _memoryReader.ReadBytes(kvp.Value, 1);
+                items[kvp.Key] = bytes != null && bytes.Length > 0 && bytes[0] == 1;
+            }
+            return items;
         }
 
         private Party GetParty()

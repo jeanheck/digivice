@@ -102,6 +102,11 @@ class SignalRService {
             console.log('Hub: DigimonDigievolutionLevelUp', event)
             store.notifyDigievolutionLevelUp(event.partySlotIndex, event.digievolutionId, event.oldLevel, event.newLevel)
         })
+
+        this.connection.on('ImportantItemsChanged', (event: { importantItems: Record<string, boolean> }) => {
+            console.log('Hub: ImportantItemsChanged', event)
+            store.updateImportantItems(event.importantItems)
+        })
     }
 
     public get isConnected() {
