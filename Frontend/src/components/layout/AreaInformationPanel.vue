@@ -18,8 +18,8 @@ const currentLocation = computed(() => {
     </div>
     
     <div class="flex-1 flex flex-col mt-2 h-full">
-        <!-- 80% Space: Image/Text representation -->
-        <div class="flex-[8] relative w-full rounded border-2 border-[#0044aa]/50 bg-black bg-opacity-60 flex items-center justify-center overflow-hidden shadow-inner">
+        <!-- 100% Space: Image/Text representation -->
+        <div class="flex-1 relative w-full rounded border-2 border-[#0044aa]/50 bg-black bg-opacity-60 flex items-center justify-center overflow-hidden shadow-inner">
             
             <!-- Animated grid background -->
             <div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none animate-pan-bg"></div>
@@ -41,8 +41,8 @@ const currentLocation = computed(() => {
             <div class="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-[#00aaff]/60"></div>
         </div>
 
-        <!-- 20% Space: Area Enemies -->
-        <div class="flex-[2] w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
+        <!-- Hidden Area Enemies (Will be worked on later) -->
+        <div v-if="false" class="flex-[2] w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
              <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">Area Enemies</h4>
              <div class="flex gap-2">
                 <div class="w-[28px] h-[28px] rounded border border-[#0033aa] bg-[#001122] flex items-center justify-center shadow-inner opacity-80 hover:opacity-100 transition-opacity cursor-help" title="Betamon">

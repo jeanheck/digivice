@@ -1,0 +1,19 @@
+{
+  "attributes": {
+    "Strength": "Increases the damage dealt by physical attacks and techniques.",
+    "Defense": "Reduces the damage taken from physical attacks.",
+    "Spirit": "Increases the damage dealt by magical techniques and affects maximum MP.",
+    "Wisdom": "Improves magical hit rate, evasion against magic, and reduces damage taken from magical attacks.",
+    "Speed": "Determines turn order in battle and improves overall evasion rate.",
+    "Charisma": "Increases Digimon popularity, lowers shop prices, and allows battling certain Tamers."
+  },
+  "resistances": {
+    "Fire": "Reduces damage taken from Fire-elemental techniques.",
+    "Water": "Reduces damage taken from Water-elemental techniques.",
+    "Ice": "Reduces damage taken from Ice-elemental techniques.",
+    "Wind": "Reduces damage taken from Wind-elemental techniques.",
+    "Thunder": "Reduces damage taken from Thunder-elemental techniques.",
+    "Machine": "Reduces damage taken from Machine-elemental techniques.",
+    "Dark": "Reduces damage taken from Dark-elemental techniques."
+  }
+}

@@ -2,12 +2,12 @@
 import { computed } from 'vue'
 
 // Importando alguns ícones genéricos do pacote @iconify-json/pixelarticons para os equipamentos
-import IconHead from '../icons/IconUser.vue'
-import IconBody from '../icons/IconShield.vue'
-import IconWeapon from '../icons/IconZap.vue' // Dagger
-import IconOffhand from '../icons/IconAddBox.vue' // Buckler
-import IconAcc1 from '../icons/IconHeart.vue' // Power Ring
-import IconAcc2 from '../icons/IconWind.vue' // Speed Ring
+import IconHead from '../icons/IconHelmet.vue'
+import IconBody from '../icons/IconArmor.vue'
+import IconWeapon from '../icons/IconHandRight.vue' // Dagger
+import IconOffhand from '../icons/IconHandLeft.vue' // Buckler
+import IconAcc1 from '../icons/IconDiamond.vue' // Power Ring
+import IconAcc2 from '../icons/IconDiamond.vue' // Speed Ring
 
 import type { Digimon } from '../../types/backend'
 
@@ -26,11 +26,11 @@ function getItemName(id: number) {
 const equipments = computed(() => {
   const eq = props.digimon.equipments
   return [
-    { slot: 'Head', item: getItemName(eq?.head || 0), icon: IconHead, color: 'text-pink-400' },
-    { slot: 'Body', item: getItemName(eq?.body || 0), icon: IconBody, color: 'text-orange-700' },
+    { slot: 'Head', item: getItemName(eq?.head || 0), icon: IconHead, color: 'text-gray-400' },
+    { slot: 'Body', item: getItemName(eq?.body || 0), icon: IconBody, color: 'text-gray-400' },
     { slot: 'Right', item: getItemName(eq?.rightHand || 0), icon: IconWeapon, color: 'text-gray-400' },
-    { slot: 'Left', item: getItemName(eq?.leftHand || 0), icon: IconOffhand, color: 'text-orange-900' },
-    { slot: 'Accessory 1', item: getItemName(eq?.accessory1 || 0), icon: IconAcc1, color: 'text-red-500' },
+    { slot: 'Left', item: getItemName(eq?.leftHand || 0), icon: IconOffhand, color: 'text-gray-400' },
+    { slot: 'Accessory 1', item: getItemName(eq?.accessory1 || 0), icon: IconAcc1, color: 'text-cyan-300' },
     { slot: 'Accessory 2', item: getItemName(eq?.accessory2 || 0), icon: IconAcc2, color: 'text-cyan-300' }
   ]
 })
@@ -48,7 +48,7 @@ const equipments = computed(() => {
       <div 
         v-for="(equip, index) in equipments" 
         :key="index"
-        class="equip-row flex justify-between items-center py-1 border-b-[1px] border-[#0033aa]/50 last:border-0"
+        class="equip-row flex justify-between items-center py-1 border-b-[1px] border-[#0033aa] last:border-0"
       >
         <!-- Slot Label (Esquerda) -->
         <span class="font-bold tracking-widest text-[#0077ff] text-shadow-sm min-w-[75px]">
