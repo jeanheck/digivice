@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { MainQuest, SideQuest } from '../../types/backend'
-import IconClose from '~icons/pixelarticons/close'
+import IconClose from '../icons/IconClose.vue'
 
 export interface QuestStep {
     number: number

@@ -2,15 +2,19 @@
 import { computed } from 'vue'
 
 // Importando os ícones via unplugin-icons do pacote @iconify-json/pixelarticons
-import IconUser from '~icons/pixelarticons/user'
-import IconShield from '~icons/pixelarticons/shield'
-import IconHeart from '~icons/pixelarticons/heart'
-import IconZap from '~icons/pixelarticons/zap'
-import IconDrop from '~icons/pixelarticons/drop'
-import IconSun from '~icons/pixelarticons/sun'
-import IconMoon from '~icons/pixelarticons/moon'
-import IconWind from '~icons/pixelarticons/wind'
-import IconBug from '~icons/pixelarticons/bug'
+import IconStrengh from '../icons/IconUser.vue'
+import IconDefense from '../icons/IconShield.vue'
+import IconSpirit from '../icons/IconHeart.vue'
+import IconSpeed from '../icons/IconZap.vue'
+import IconCharisma from '../icons/IconSun.vue'
+import IconWisdom from '../icons/IconBug.vue'
+import IconFireResistance from '../icons/IconSun.vue'
+import IconWaterResistance from '../icons/IconDrop.vue'
+import IconIceResistance from '../icons/IconDrop.vue'
+import IconWindResistance from '../icons/IconWind.vue'
+import IconThunderResistance from '../icons/IconZap.vue'
+import IconMachineResistance from '../icons/IconShield.vue'
+import IconDarkResistance from '../icons/IconMoon.vue'
 
 import type { Digimon } from '../../types/backend'
 
@@ -22,25 +26,25 @@ const props = defineProps<{
 const attributes = computed(() => {
   const attrs = props.digimon.attributes
   return [
-    { label: 'Strength', value: attrs.strength, icon: IconUser, color: 'text-orange-400' },
-    { label: 'Defense', value: attrs.defense, icon: IconShield, color: 'text-gray-400' },
-    { label: 'Spirit', value: attrs.spirit, icon: IconHeart, color: 'text-pink-400' },
-    { label: 'Wisdom', value: attrs.wisdom, icon: IconBug, color: 'text-yellow-600' },
-    { label: 'Speed', value: attrs.speed, icon: IconZap, color: 'text-green-400' },
-    { label: 'Charisma', value: attrs.charisma, icon: IconSun, color: 'text-yellow-400' },
+    { label: 'Strength', value: attrs.strength, icon: IconStrengh, color: 'text-orange-400' },
+    { label: 'Defense', value: attrs.defense, icon: IconDefense, color: 'text-gray-400' },
+    { label: 'Spirit', value: attrs.spirit, icon: IconSpirit, color: 'text-pink-400' },
+    { label: 'Wisdom', value: attrs.wisdom, icon: IconWisdom, color: 'text-yellow-600' },
+    { label: 'Speed', value: attrs.speed, icon: IconSpeed, color: 'text-green-400' },
+    { label: 'Charisma', value: attrs.charisma, icon: IconCharisma, color: 'text-yellow-400' },
   ]
 })
 
 const resistances = computed(() => {
   const res = props.digimon.resistances
   return [
-    { label: 'Fire', value: res.fire, icon: IconSun, color: 'text-red-500' },
-    { label: 'Water', value: res.water, icon: IconDrop, color: 'text-blue-400' },
-    { label: 'Ice', value: res.ice, icon: IconDrop, color: 'text-cyan-200' },
-    { label: 'Wind', value: res.wind, icon: IconWind, color: 'text-gray-100' },
-    { label: 'Thunder', value: res.thunder, icon: IconZap, color: 'text-yellow-400' },
-    { label: 'Machine', value: res.machine, icon: IconShield, color: 'text-gray-500' },
-    { label: 'Dark', value: res.dark, icon: IconMoon, color: 'text-purple-500' },
+    { label: 'Fire', value: res.fire, icon: IconFireResistance, color: 'text-red-500' },
+    { label: 'Water', value: res.water, icon: IconWaterResistance, color: 'text-blue-400' },
+    { label: 'Ice', value: res.ice, icon: IconIceResistance, color: 'text-cyan-200' },
+    { label: 'Wind', value: res.wind, icon: IconWindResistance, color: 'text-gray-100' },
+    { label: 'Thunder', value: res.thunder, icon: IconThunderResistance, color: 'text-yellow-400' },
+    { label: 'Machine', value: res.machine, icon: IconMachineResistance, color: 'text-gray-500' },
+    { label: 'Dark', value: res.dark, icon: IconDarkResistance, color: 'text-purple-500' },
   ]
 })
 </script>

@@ -2,12 +2,12 @@
 import { computed } from 'vue'
 
 // Importando alguns ícones genéricos do pacote @iconify-json/pixelarticons para os equipamentos
-import IconHead from '~icons/pixelarticons/user'
-import IconBody from '~icons/pixelarticons/shield'
-import IconWeapon from '~icons/pixelarticons/zap' // Dagger
-import IconOffhand from '~icons/pixelarticons/add-box' // Buckler
-import IconAcc1 from '~icons/pixelarticons/heart' // Power Ring
-import IconAcc2 from '~icons/pixelarticons/wind' // Speed Ring
+import IconHead from '../icons/IconUser.vue'
+import IconBody from '../icons/IconShield.vue'
+import IconWeapon from '../icons/IconZap.vue' // Dagger
+import IconOffhand from '../icons/IconAddBox.vue' // Buckler
+import IconAcc1 from '../icons/IconHeart.vue' // Power Ring
+import IconAcc2 from '../icons/IconWind.vue' // Speed Ring
 
 import type { Digimon } from '../../types/backend'
 
