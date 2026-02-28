@@ -44,21 +44,21 @@ const equipments = computed(() => {
     <!-- Fundo interno escuro (1 pixel menor que a borda) -->
     <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none evo-inner"></div>
 
-    <div class="relative z-10 equipments-panel w-full flex flex-col pt-2 p-3 text-white text-sm shadow-inner">
+    <div class="relative z-10 equipments-panel w-full flex flex-col pt-2 p-3 text-white text-xs shadow-inner">
       <div 
         v-for="(equip, index) in equipments" 
         :key="index"
         class="equip-row flex justify-between items-center py-1 border-b-[1px] border-[#0033aa]/50 last:border-0"
       >
         <!-- Slot Label (Esquerda) -->
-        <span class="font-bold tracking-widest text-[#0077ff] text-shadow-sm min-w-[90px]">
+        <span class="font-bold tracking-widest text-[#0077ff] text-shadow-sm min-w-[75px]">
           {{ equip.slot }}
         </span>
 
         <!-- Container do Nome do Item + Ícone (Direita) -->
-        <div class="flex items-center justify-end gap-2 flex-1 truncate">
+        <div class="flex items-center justify-end gap-1 flex-1 truncate">
           <!-- Nome do Item (Agora na esquerda do container direito) -->
-          <span class="text-gray-300 text-shadow-sm truncate font-medium">
+          <span class="text-gray-300 text-shadow-sm truncate font-medium text-[11px]">
             {{ equip.item }}
           </span>
           

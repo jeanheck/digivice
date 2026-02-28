@@ -53,10 +53,10 @@ const resistances = computed(() => {
     <!-- Fundo interno escuro (1 pixel menor que a borda) -->
     <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none evo-inner"></div>
 
-    <div class="relative z-10 details-panel flex gap-4 w-full p-4 text-white text-sm">
-      
-      <!-- Coluna 1: Atributos Base -->
-      <div class="flex-1 flex flex-col gap-1">
+    <div class="relative z-10 details-panel flex justify-center w-full p-4 text-white text-sm">
+      <div class="flex gap-12">
+        <!-- Coluna 1: Atributos Base -->
+        <div class="flex flex-col gap-1 w-24">
         <div 
           v-for="attr in attributes" 
           :key="attr.label"
@@ -74,9 +74,9 @@ const resistances = computed(() => {
         </div>
       </div>
 
-      <!-- Coluna 2: Resistências Elementais -->
-      <div class="flex-1 flex flex-col gap-1">
-        <div 
+        <!-- Coluna 2: Resistências Elementais -->
+        <div class="flex flex-col gap-1 w-24">
+          <div 
           v-for="res in resistances" 
           :key="res.label"
           class="flex items-center gap-2"
@@ -91,8 +91,8 @@ const resistances = computed(() => {
             {{ res.value }}
           </div>
         </div>
+        </div>
       </div>
-
     </div>
   </div>
 </template>
