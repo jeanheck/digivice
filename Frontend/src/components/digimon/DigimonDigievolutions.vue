@@ -32,9 +32,7 @@ const selectedLevel = ref(0)
 function openSkills(evo: { name: string; level: number } | null) {
   if (!evo) return
   selectedDigi.value = evo.name
-  // TODO: replace with real level once memory address is found.
-  // Mocked to 47 so we see a mix of unlocked / locked / signature states.
-  selectedLevel.value = 47
+  selectedLevel.value = evo.level
   modalOpen.value = true
 }
 

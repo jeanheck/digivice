@@ -94,6 +94,54 @@ namespace Backend.Services
 
             journal.SideQuests.Add(folderBag);
 
+            // Check if the player owns the Folder Bag (prerequisite for next quests)
+            var importantItems = GetImportantItems();
+            bool hasFolderBag = importantItems.ContainsKey("FolderBag") && importantItems["FolderBag"];
+
+            // --- 2. Kicking Boots Side Quest ---
+            var kickingBoots = KickingBoots.Get();
+
+            // Set prerequisite status
+            if (kickingBoots.Prerequisites.Count > 0)
+                kickingBoots.Prerequisites[0].IsDone = hasFolderBag;
+
+            foreach (var memStep in KickingBootsAddress.Steps)
+            {
+                if (memStep.Address == 0x00000000) continue; // Skip mock/unknown addresses
+                var bytes = _memoryReader.ReadBytes(memStep.Address, 1);
+                bool isStepDone = bytes != null && bytes.Length > 0 && bytes[0] == 1;
+
+                var qStep = kickingBoots.Steps.FirstOrDefault(s => s.Number == memStep.Id);
+                if (qStep != null)
+                {
+                    qStep.IsCompleted = isStepDone;
+                }
+            }
+
+            journal.SideQuests.Add(kickingBoots);
+
+            // --- 3. Fishing Pole Side Quest ---
+            var fishingPole = FishingPole.Get();
+
+            // Set prerequisite status
+            if (fishingPole.Prerequisites.Count > 0)
+                fishingPole.Prerequisites[0].IsDone = hasFolderBag;
+
+            foreach (var memStep in FishingPoleAddress.Steps)
+            {
+                if (memStep.Address == 0x00000000) continue; // Skip mock/unknown addresses
+                var bytes = _memoryReader.ReadBytes(memStep.Address, 1);
+                bool isStepDone = bytes != null && bytes.Length > 0 && bytes[0] == 1;
+
+                var qStep = fishingPole.Steps.FirstOrDefault(s => s.Number == memStep.Id);
+                if (qStep != null)
+                {
+                    qStep.IsCompleted = isStepDone;
+                }
+            }
+
+            journal.SideQuests.Add(fishingPole);
+
             return journal;
         }
 

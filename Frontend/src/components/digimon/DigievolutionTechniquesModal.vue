@@ -44,14 +44,13 @@ const techniques = computed(() => {
 
   const maxLearnLevel = Math.max(...entry.techniques.map(t => t.learnLevel))
 
-  return entry.techniques.map((t, index) => {
+  return entry.techniques.map(t => {
     const base = techniqueById[t.techniqueId]
     return {
       ...base,
       learnLevel: t.learnLevel,
       isSignature: t.learnLevel === maxLearnLevel,
-      // MOCK: first technique forced locked, signature forced unlocked for visual testing
-      isUnlocked: index === 0 ? false : (t.learnLevel === maxLearnLevel ? true : props.currentLevel >= t.learnLevel)
+      isUnlocked: props.currentLevel >= t.learnLevel
     }
   })
 })
@@ -71,10 +70,10 @@ function elementColor(element: string): string {
 }
 
 function typeIcon(type: string): string {
-  if (type === 'Physical') return '⚔️'
-  if (type === 'Magical') return '✨'
+  if (type === 'Physical') return '🗡️'
+  if (type === 'Magical') return '🧙‍♂️'
   if (type === 'Heal') return '💚'
-  if (type === 'Support') return '💚'
+  if (type === 'Support') return '🟡'
   return '?'
 }
 </script>
@@ -135,7 +134,7 @@ function typeIcon(type: string): string {
 
               <!-- Type icon -->
               <span class="text-base leading-none mt-[1px] flex-shrink-0">
-                {{ typeIcon(tech.type) }}
+                {{ typeIcon(tech.type ?? '') }}
               </span>
 
               <!-- Content -->
@@ -157,7 +156,7 @@ function typeIcon(type: string): string {
 
                 <!-- Stats row -->
                 <div class="flex gap-3 mt-1 text-[10px]">
-                  <span :class="elementColor(tech.element)">{{ tech.element !== 'None' ? tech.element : 'Neutral' }}</span>
+                  <span :class="elementColor(tech.element ?? 'None')">{{ (tech.element ?? 'None') !== 'None' ? tech.element : 'Neutral' }}</span>
                   <span class="text-blue-300/70">MP {{ tech.mp }}</span>
                   <span class="text-red-300/70">PWR {{ tech.power }}</span>
                 </div>

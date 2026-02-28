@@ -9,9 +9,7 @@ const milestones = [
   { key: 'KickingBoots', name: 'Kicking Boots', icon: '🥾' },
   { key: 'FishingPole', name: 'Fishing Pole', icon: '🎣' },
   { key: 'ElDoradoId', name: 'El Dorado Id', icon: '💳' },
-  { key: 'FolderBag', name: 'Folder Bag', icon: '📂' },
-  { key: 'GoldId', name: 'Gold ID', icon: '🏆' },
-  { key: 'PlatinumId', name: 'Platinum ID', icon: '💎' }
+  { key: 'FolderBag', name: 'Folder Bag', icon: '📂' }
 ]
 
 const getStyle = (key: string) => {
