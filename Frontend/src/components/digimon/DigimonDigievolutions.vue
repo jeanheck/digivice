@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import type { Digimon } from '../../types/backend'
+import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue'
 
 const props = defineProps<{
   digimon: Digimon
@@ -22,6 +23,25 @@ const evolutions = computed(() => {
     }
   })
 })
+
+// Skills modal state
+const modalOpen = ref(false)
+const selectedDigi = ref<string | null>(null)
+const selectedLevel = ref(0)
+
+function openSkills(evo: { name: string; level: number } | null) {
+  if (!evo) return
+  selectedDigi.value = evo.name
+  // TODO: replace with real level once memory address is found.
+  // Mocked to 47 so we see a mix of unlocked / locked / signature states.
+  selectedLevel.value = 47
+  modalOpen.value = true
+}
+
+function closeSkills() {
+  modalOpen.value = false
+  selectedDigi.value = null
+}
 </script>
 
 <template>
@@ -30,6 +50,8 @@ const evolutions = computed(() => {
       v-for="(evo, index) in evolutions" 
       :key="index"
       class="evo-row relative flex w-full h-[28px] bg-[#000a2b] text-white overflow-hidden"
+      :class="evo ? 'cursor-pointer hover:brightness-125 transition-[filter]' : 'cursor-default'"
+      @click="openSkills(evo)"
     >
       <!-- Borda externa brilhante simuluada via clip-path background -->
       <div class="absolute inset-0 bg-[#0077ff] pointer-events-none evo-border"></div>
@@ -56,6 +78,14 @@ const evolutions = computed(() => {
       </template>
     </div>
   </div>
+
+  <!-- Skills Modal (Teleported outside component) -->
+  <DigievolutionTechniquesModal
+    :is-open="modalOpen"
+    :digivolution-name="selectedDigi"
+    :current-level="selectedLevel"
+    @close="closeSkills"
+  />
 </template>
 
 <style scoped>

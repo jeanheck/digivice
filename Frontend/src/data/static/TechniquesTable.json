@@ -1,0 +1,1504 @@
+{
+    "techniques": [
+        {
+            "id": "heat_cutter",
+            "name": "Heat Cutter",
+            "type": "Physical",
+            "element": "Fire",
+            "elementStrength": 32,
+            "mp": 18,
+            "power": 90,
+            "description": "Slash and fire damage"
+        },
+        {
+            "id": "frost_cutter",
+            "name": "Frost Cutter",
+            "type": "Physical",
+            "element": "Ice",
+            "elementStrength": 32,
+            "mp": 18,
+            "power": 90,
+            "description": "Slash with ice damage"
+        },
+        {
+            "id": "small_heal",
+            "name": "Small Heal",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 16,
+            "power": 8,
+            "description": "Heal some of your HP"
+        },
+        {
+            "id": "double_power",
+            "name": "Double Power",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 42,
+            "power": 0,
+            "description": "Increase your attack power"
+        },
+        {
+            "id": "lizard_dance",
+            "name": "Lizard Dance",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 40,
+            "power": 100,
+            "description": "Slash enemy multiple times"
+        },
+        {
+            "id": "wing_buster",
+            "name": "Wing Buster",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 18,
+            "power": 100,
+            "description": "Huge damage vs. Bird Digimon"
+        },
+        {
+            "id": "bug_buster",
+            "name": "Bug Buster",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 24,
+            "power": 130,
+            "description": "Huge damage vs. Insectoid Digimon"
+        },
+        {
+            "id": "big_shot",
+            "name": "Big Shot",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 20,
+            "power": 140,
+            "description": "Big damage if it hits"
+        },
+        {
+            "id": "fish_buster",
+            "name": "Fish Buster",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 30,
+            "power": 160,
+            "description": "Huge damage vs. Marine Digimon"
+        },
+        {
+            "id": "captain_cannon",
+            "name": "Captain Cannon",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 38,
+            "power": 200,
+            "description": "Shoot the arm cannon"
+        },
+        {
+            "id": "lightning_slash",
+            "name": "Lightning Slash",
+            "type": "Physical",
+            "element": "Thunder",
+            "elementStrength": 32,
+            "mp": 18,
+            "power": 90,
+            "description": "Thunder damage"
+        },
+        {
+            "id": "whirlwind",
+            "name": "Whirlwind",
+            "type": "Physical",
+            "element": "Wind",
+            "elementStrength": 32,
+            "mp": 18,
+            "power": 90,
+            "description": "Wind damage"
+        },
+        {
+            "id": "hammer_rush",
+            "name": "Hammer Rush",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 30,
+            "power": 100,
+            "description": "Damage from rapid blows"
+        },
+        {
+            "id": "spinal_tap",
+            "name": "Spinal Tap",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 18,
+            "power": 75,
+            "description": "Sometimes paralyzes the enemy"
+        },
+        {
+            "id": "maul_attack",
+            "name": "Maul Attack",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 40,
+            "power": 200,
+            "description": "If attacked first counter"
+        },
+        {
+            "id": "flame_ball",
+            "name": "Flame Ball",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 16,
+            "mp": 20,
+            "power": 100,
+            "description": "Shoot small fire balls"
+        },
+        {
+            "id": "triple_fire",
+            "name": "Triple Fire",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 16,
+            "mp": 25,
+            "power": 50,
+            "description": "Shoot three fire balls"
+        },
+        {
+            "id": "flame_lance",
+            "name": "Flame Lance",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 32,
+            "mp": 48,
+            "power": 300,
+            "description": "Launch fire beam"
+        },
+        {
+            "id": "nova_blast",
+            "name": "Nova Blast",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 48,
+            "mp": 60,
+            "power": 300,
+            "description": "Shoot a fire ball from the mouth"
+        },
+        {
+            "id": "air_blast",
+            "name": "Air Blast",
+            "type": "Magical",
+            "element": "Wind",
+            "elementStrength": 16,
+            "mp": 20,
+            "power": 100,
+            "description": "Shoot air balls"
+        },
+        {
+            "id": "ice_blow",
+            "name": "Ice Blow",
+            "type": "Magical",
+            "element": "Ice",
+            "elementStrength": 16,
+            "mp": 20,
+            "power": 100,
+            "description": "Shoot icicles with ice damage"
+        },
+        {
+            "id": "antidote",
+            "name": "Antidote",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 8,
+            "power": 0,
+            "description": "Cure poison on yourself"
+        },
+        {
+            "id": "veelaser",
+            "name": "Veelaser",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 48,
+            "mp": 60,
+            "power": 300,
+            "description": "Shoot a laser from the chest"
+        },
+        {
+            "id": "double_guard",
+            "name": "Double Guard",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 42,
+            "power": 0,
+            "description": "Increase your defense power"
+        },
+        {
+            "id": "picking_claw",
+            "name": "Picking Claw",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 18,
+            "power": 60,
+            "description": "Attack and steal items"
+        },
+        {
+            "id": "counter_alert",
+            "name": "Counter Alert",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 48,
+            "power": 100,
+            "description": "Counterattack during pose"
+        },
+        {
+            "id": "plasma_blade",
+            "name": "Plasma Blade",
+            "type": "Physical",
+            "element": "Thunder",
+            "elementStrength": 48,
+            "mp": 40,
+            "power": 180,
+            "description": "Slash with electrified blade"
+        },
+        {
+            "id": "thunder_bolt",
+            "name": "Thunder Bolt",
+            "type": "Magical",
+            "element": "Thunder",
+            "elementStrength": 16,
+            "mp": 20,
+            "power": 100,
+            "description": "Create a thunder ball and fire"
+        },
+        {
+            "id": "thunder_gemini",
+            "name": "Thunder Gemini",
+            "type": "Magical",
+            "element": "Thunder",
+            "elementStrength": 24,
+            "mp": 30,
+            "power": 200,
+            "description": "Create two thunder balls and fire"
+        },
+        {
+            "id": "ice_shower",
+            "name": "Ice Shower",
+            "type": "Magical",
+            "element": "Ice",
+            "elementStrength": 32,
+            "mp": 48,
+            "power": 200,
+            "description": "Shoot numerous icicles"
+        },
+        {
+            "id": "dragon_wheel",
+            "name": "Dragon Wheel",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 48,
+            "mp": 60,
+            "power": 300,
+            "description": "Shoot fire balls from 9 tails"
+        },
+        {
+            "id": "mega_tornado",
+            "name": "Mega Tornado",
+            "type": "Magical",
+            "element": "Wind",
+            "elementStrength": 24,
+            "mp": 30,
+            "power": 200,
+            "description": "Tornado against an enemy"
+        },
+        {
+            "id": "hand_of_fate",
+            "name": "Hand of Fate",
+            "type": "Physical",
+            "element": "Wind",
+            "elementStrength": 48,
+            "mp": 42,
+            "power": 180,
+            "description": "Punch the enemy with wind attacks"
+        },
+        {
+            "id": "dark_matter",
+            "name": "Dark Matter",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 16,
+            "mp": 20,
+            "power": 100,
+            "description": "Evil fireball with dark damage"
+        },
+        {
+            "id": "evil_poison",
+            "name": "Evil Poison",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 18,
+            "power": 60,
+            "description": "Magic with damage and poison"
+        },
+        {
+            "id": "armor_break",
+            "name": "Armor Break",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 39,
+            "power": 0,
+            "description": "Decrease enemy's defense"
+        },
+        {
+            "id": "stun_shock",
+            "name": "Stun Shock",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 18,
+            "power": 60,
+            "description": "Magic with damage and paralysis"
+        },
+        {
+            "id": "touch_of_evil",
+            "name": "Touch of Evil",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 40,
+            "power": 240,
+            "description": "Drain enemy's HP with claw"
+        },
+        {
+            "id": "poison_bites",
+            "name": "Poison Bites",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 18,
+            "power": 75,
+            "description": "Poison damage"
+        },
+        {
+            "id": "energy_leech",
+            "name": "Energy Leech",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 18,
+            "power": 100,
+            "description": "Magic that drains HP"
+        },
+        {
+            "id": "panic_bites",
+            "name": "Panic Bites",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 18,
+            "power": 75,
+            "description": "Confusion damage"
+        },
+        {
+            "id": "venom_stab",
+            "name": "Venom Stab",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 36,
+            "power": 200,
+            "description": "Deadly poison damage"
+        },
+        {
+            "id": "spiking_strike",
+            "name": "Spiking Strike",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 36,
+            "power": 200,
+            "description": "Stab enemy with the spike"
+        },
+        {
+            "id": "divine_rain",
+            "name": "Divine Rain",
+            "type": "Magical",
+            "element": "Water",
+            "elementStrength": 24,
+            "mp": 30,
+            "power": 150,
+            "description": "Water damage from magical rain"
+        },
+        {
+            "id": "anti_paralysis",
+            "name": "Anti-Paralysis",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 8,
+            "power": 0,
+            "description": "Cure paralysis on yourself"
+        },
+        {
+            "id": "celestial_arrow",
+            "name": "Celestial Arrow",
+            "type": "Physical",
+            "element": "Thunder",
+            "elementStrength": 48,
+            "mp": 44,
+            "power": 180,
+            "description": "Divine arrow with thunder attack"
+        },
+        {
+            "id": "burn_slash",
+            "name": "Burn Slash",
+            "type": "Physical",
+            "element": "Fire",
+            "elementStrength": 64,
+            "mp": 32,
+            "power": 130,
+            "description": "Slash with a flame blade"
+        },
+        {
+            "id": "cold_slash",
+            "name": "Cold Slash",
+            "type": "Physical",
+            "element": "Ice",
+            "elementStrength": 64,
+            "mp": 32,
+            "power": 130,
+            "description": "Slash with a ice blade"
+        },
+        {
+            "id": "blade_twister",
+            "name": "Blade Twister",
+            "type": "Physical",
+            "element": "Wind",
+            "elementStrength": 64,
+            "mp": 80,
+            "power": 120,
+            "description": "Slash multiple times with wind"
+        },
+        {
+            "id": "dino_buster",
+            "name": "Dino Buster",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 40,
+            "power": 200,
+            "description": "Huge damage vs. Dinosaur Digimon"
+        },
+        {
+            "id": "dramon_buster",
+            "name": "Dramon Buster",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 48,
+            "power": 210,
+            "description": "Huge damage vs. Dragon Digimon"
+        },
+        {
+            "id": "justice_strike",
+            "name": "Justice Strike",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 78,
+            "power": 140,
+            "description": "Shoot all firearms"
+        },
+        {
+            "id": "soul_charge",
+            "name": "Soul Charge",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 19,
+            "power": 0,
+            "description": "Save Chi to power up next blow"
+        },
+        {
+            "id": "speed_boost",
+            "name": "Speed Boost",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 48,
+            "power": 0,
+            "description": "Increase your speed"
+        },
+        {
+            "id": "cyclone_turbine",
+            "name": "Cyclone Turbine",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 80,
+            "power": 140,
+            "description": "Multiple round house kicks"
+        },
+        {
+            "id": "magic_missile",
+            "name": "Magic Missile",
+            "type": "Magical",
+            "element": "Machine",
+            "elementStrength": 32,
+            "mp": 56,
+            "power": 400,
+            "description": "Shoot missiles with magic"
+        },
+        {
+            "id": "rising_fire",
+            "name": "Rising Fire",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 32,
+            "mp": 60,
+            "power": 150,
+            "description": "Column of fire on the enemy"
+        },
+        {
+            "id": "giga_destroyer",
+            "name": "Giga Destroyer",
+            "type": "Magical",
+            "element": "Machine",
+            "elementStrength": 64,
+            "mp": 90,
+            "power": 500,
+            "description": "Launch organic missiles"
+        },
+        {
+            "id": "black_thorn",
+            "name": "Black Thorn",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 32,
+            "mp": 60,
+            "power": 150,
+            "description": "Dark damage with evil thorns"
+        },
+        {
+            "id": "dark_shot",
+            "name": "Dark Shot",
+            "type": "Magical",
+            "element": "Machine",
+            "elementStrength": 64,
+            "mp": 90,
+            "power": 500,
+            "description": "Launch organic missiles"
+        },
+        {
+            "id": "metal_attack",
+            "name": "Metal Attack",
+            "type": "Physical",
+            "element": "Machine",
+            "elementStrength": 32,
+            "mp": 26,
+            "power": 140,
+            "description": "Machine damage"
+        },
+        {
+            "id": "mechanical_bash",
+            "name": "Mechanical Bash",
+            "type": "Physical",
+            "element": "Machine",
+            "elementStrength": 64,
+            "mp": 48,
+            "power": 160,
+            "description": "Strong machine damage"
+        },
+        {
+            "id": "desperado_blaster",
+            "name": "Desperado Blaster",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 84,
+            "power": 140,
+            "description": "Rapid-fire 2 energy waves"
+        },
+        {
+            "id": "mega_guard",
+            "name": "Mega Guard",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 84,
+            "power": 0,
+            "description": "Increase allies' defense powers"
+        },
+        {
+            "id": "mega_strength",
+            "name": "Mega Strength",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 84,
+            "power": 0,
+            "description": "Increase allies' attack powers"
+        },
+        {
+            "id": "atomic_blaster",
+            "name": "Atomic Blaster",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 64,
+            "mp": 90,
+            "power": 500,
+            "description": "Burn the enemy with fire laser"
+        },
+        {
+            "id": "electro_bolt",
+            "name": "Electro Bolt",
+            "type": "Magical",
+            "element": "Thunder",
+            "elementStrength": 32,
+            "mp": 48,
+            "power": 300,
+            "description": "Large thunder ball against enemy"
+        },
+        {
+            "id": "showstorm",
+            "name": "Showstorm",
+            "type": "Magical",
+            "element": "Ice",
+            "elementStrength": 40,
+            "mp": 60,
+            "power": 250,
+            "description": "Snow spirit inflicts ice damage"
+        },
+        {
+            "id": "thunder_field",
+            "name": "Thunder Field",
+            "type": "Set Field",
+            "element": "Thunder",
+            "elementStrength": 0,
+            "mp": 100,
+            "power": 0,
+            "description": "Strengthen thunder, weaken metal"
+        },
+        {
+            "id": "bonhitsusen",
+            "name": "Bonhitsusen",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 80,
+            "power": 300,
+            "description": "Huge damage to ghouls"
+        },
+        {
+            "id": "mega_heal",
+            "name": "Mega Heal",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 74,
+            "power": 32,
+            "description": "Heal much of your HP"
+        },
+        {
+            "id": "gate_of_destiny",
+            "name": "Gate of Destiny",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 112,
+            "power": 250,
+            "description": "Open a gate and discard enemies"
+        },
+        {
+            "id": "dark_fear",
+            "name": "Dark Fear",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 32,
+            "mp": 48,
+            "power": 300,
+            "description": "Throw evil flame against enemy"
+        },
+        {
+            "id": "black_dart",
+            "name": "Black Dart",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 40,
+            "mp": 70,
+            "power": 200,
+            "description": "Fire numerous evil thorns"
+        },
+        {
+            "id": "armor_off",
+            "name": "Armor Off",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 78,
+            "power": 0,
+            "description": "Large decrease in enemy's defense"
+        },
+        {
+            "id": "confuse_gas",
+            "name": "Confuse Gas",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 40,
+            "power": 180,
+            "description": "Magic that confuses the enemy"
+        },
+        {
+            "id": "soul_snatcher",
+            "name": "Soul Snatcher",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 50,
+            "power": 150,
+            "description": "Magically drain the soul"
+        },
+        {
+            "id": "grisly_wing",
+            "name": "Grisly Wing",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 64,
+            "mp": 90,
+            "power": 300,
+            "description": "Decrease enemy's attack power"
+        },
+        {
+            "id": "twin_missile",
+            "name": "Twin Missile",
+            "type": "Magical",
+            "element": "Machine",
+            "elementStrength": 40,
+            "mp": 64,
+            "power": 450,
+            "description": "Shoot two missiles with magic"
+        },
+        {
+            "id": "slow_down",
+            "name": "Slow Down",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 41,
+            "power": 0,
+            "description": "Decrease enemy's speed"
+        },
+        {
+            "id": "energetic_bomb",
+            "name": "Energetic Bomb",
+            "type": "Physical",
+            "element": "Machine",
+            "elementStrength": 64,
+            "mp": 78,
+            "power": 240,
+            "description": "Fire machine energy balls"
+        },
+        {
+            "id": "energy_drain",
+            "name": "Energy Drain",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 72,
+            "power": 500,
+            "description": "Magic that drains many HP"
+        },
+        {
+            "id": "electro_shocker",
+            "name": "Electro Shocker",
+            "type": "Magical",
+            "element": "Thunder",
+            "elementStrength": 64,
+            "mp": 90,
+            "power": 500,
+            "description": "Fire thunder balls from the mouth"
+        },
+        {
+            "id": "hypno_gas",
+            "name": "Hypno Gas",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 40,
+            "power": 180,
+            "description": "Magic puts the enemy to sleep"
+        },
+        {
+            "id": "hypno_nebula",
+            "name": "Hypno Nebula",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 60,
+            "power": 240,
+            "description": "Magic that puts enemy to deep sleep"
+        },
+        {
+            "id": "nm_syndromer",
+            "name": "NM Syndromer",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 64,
+            "mp": 90,
+            "power": 500,
+            "description": "Dark attack by firing dark balls"
+        },
+        {
+            "id": "pinpoint_shot",
+            "name": "Pinpoint Shot",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 54,
+            "power": 220,
+            "description": "Huge damage if it hits"
+        },
+        {
+            "id": "golden_ripper",
+            "name": "Golden Ripper",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 140,
+            "power": 400,
+            "description": "Slash enemies with swords"
+        },
+        {
+            "id": "devil_shot",
+            "name": "Devil Shot",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 56,
+            "power": 220,
+            "description": "Huge damage vs. Evil Digimon"
+        },
+        {
+            "id": "dynamo_cannon",
+            "name": "DynamoCannon",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 136,
+            "power": 400,
+            "description": "Huge damage against Machines"
+        },
+        {
+            "id": "heaven_hit",
+            "name": "Heaven Hit",
+            "type": "Physical",
+            "element": "Thunder",
+            "elementStrength": 64,
+            "mp": 32,
+            "power": 160,
+            "description": "Strong thunder damage"
+        },
+        {
+            "id": "vacuum_cannon",
+            "name": "Vacuum Cannon",
+            "type": "Physical",
+            "element": "Wind",
+            "elementStrength": 64,
+            "mp": 48,
+            "power": 160,
+            "description": "Strong wind damage"
+        },
+        {
+            "id": "brain_freeze",
+            "name": "Brain Freeze",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 52,
+            "power": 180,
+            "description": "Paralyzes the enemy"
+        },
+        {
+            "id": "misshukikou",
+            "name": "Misshukikou",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 49,
+            "power": 0,
+            "description": "Save Chi to maximum for next blow"
+        },
+        {
+            "id": "mugenhadou",
+            "name": "Mugenhadou",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 148,
+            "power": 320,
+            "description": "Blast a wave to knock out enemy"
+        },
+        {
+            "id": "flame_breath",
+            "name": "Flame Breath",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 48,
+            "mp": 72,
+            "power": 500,
+            "description": "Engulf the enemy with fire breath"
+        },
+        {
+            "id": "giga_fire",
+            "name": "Giga Fire",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 48,
+            "mp": 90,
+            "power": 250,
+            "description": "Magic attack shoots 3 fire balls"
+        },
+        {
+            "id": "terra_force",
+            "name": "Terra Force",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 140,
+            "power": 480,
+            "description": "Throw a huge energy ball"
+        },
+        {
+            "id": "sylph_storm",
+            "name": "Sylph Storm",
+            "type": "Magical",
+            "element": "Wind",
+            "elementStrength": 48,
+            "mp": 72,
+            "power": 500,
+            "description": "Powerful gust of wind"
+        },
+        {
+            "id": "mega_crusher",
+            "name": "Mega Crusher",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 150,
+            "power": 500,
+            "description": "Fire a massive ball"
+        },
+        {
+            "id": "counter_strike",
+            "name": "Counter Strike",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 96,
+            "power": 240,
+            "description": "Strong counterattack during pose"
+        },
+        {
+            "id": "snapping_claw",
+            "name": "Snapping Claw",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 54,
+            "power": 240,
+            "description": "Attack and quickly steal items"
+        },
+        {
+            "id": "mega_boost",
+            "name": "Mega Boost",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 96,
+            "power": 0,
+            "description": "Increase allies' speed"
+        },
+        {
+            "id": "final_purification",
+            "name": "Final Purification",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 140,
+            "power": 320,
+            "description": "Beam counterattack from shield"
+        },
+        {
+            "id": "lightning_bolt",
+            "name": "Lightning Bolt",
+            "type": "Magical",
+            "element": "Thunder",
+            "elementStrength": 48,
+            "mp": 72,
+            "power": 500,
+            "description": "Huge thunder ball against enemy"
+        },
+        {
+            "id": "giga_freeze",
+            "name": "Giga Freeze",
+            "type": "Magical",
+            "element": "Ice",
+            "elementStrength": 48,
+            "mp": 72,
+            "power": 300,
+            "description": "Engulf the enemy with huge ice"
+        },
+        {
+            "id": "ice_field",
+            "name": "Ice Field",
+            "type": "Set Field",
+            "element": "Ice",
+            "elementStrength": 0,
+            "mp": 100,
+            "power": 0,
+            "description": "Strength ice, weaken wind"
+        },
+        {
+            "id": "kongou_kaimandra",
+            "name": "KongouKaimandra",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 150,
+            "power": 480,
+            "description": "Magic attack against ghouls"
+        },
+        {
+            "id": "giga_heal",
+            "name": "Giga Heal",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 188,
+            "power": 32,
+            "description": "Heal much of allies' HP"
+        },
+        {
+            "id": "wind_field",
+            "name": "Wind Field",
+            "type": "Set Field",
+            "element": "Wind",
+            "elementStrength": 0,
+            "mp": 100,
+            "power": 0,
+            "description": "Strengthen wind, weaken water"
+        },
+        {
+            "id": "seven_heavens",
+            "name": "Seven Heavens",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 140,
+            "power": 400,
+            "description": "Fire 7 balls against evil Digimon"
+        },
+        {
+            "id": "magical_cannon",
+            "name": "Magical Cannon",
+            "type": "Magical",
+            "element": "Machine",
+            "elementStrength": 48,
+            "mp": 72,
+            "power": 500,
+            "description": "Shoot giant missiles with magic"
+        },
+        {
+            "id": "metal_field",
+            "name": "Metal Field",
+            "type": "Set Field",
+            "element": "Machine",
+            "elementStrength": 0,
+            "mp": 100,
+            "power": 0,
+            "description": "Strength metal, weaken dark"
+        },
+        {
+            "id": "metal_wolf_claw",
+            "name": "Metal Wolf Claw",
+            "type": "Magical",
+            "element": "Ice",
+            "elementStrength": 72,
+            "mp": 150,
+            "power": 600,
+            "description": "Ice breath. Magic attack."
+        },
+        {
+            "id": "grand_wave",
+            "name": "Grand Wave",
+            "type": "Magical",
+            "element": "Water",
+            "elementStrength": 48,
+            "mp": 72,
+            "power": 300,
+            "description": "Magical tidal wave against enemy"
+        },
+        {
+            "id": "erase_poison",
+            "name": "Erase Poison",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 12,
+            "power": 0,
+            "description": "Cure all poison on allies"
+        },
+        {
+            "id": "erase_paralysis",
+            "name": "Erase Paralysis",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 12,
+            "power": 0,
+            "description": "Cure all paralysis on allies"
+        },
+        {
+            "id": "water_field",
+            "name": "Water Field",
+            "type": "Set Field",
+            "element": "Water",
+            "elementStrength": 0,
+            "mp": 100,
+            "power": 0,
+            "description": "Strengthen water, weaken fire"
+        },
+        {
+            "id": "anti_magic",
+            "name": "Anti-Magic",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 20,
+            "power": 0,
+            "description": "Cure all ailments on yourself"
+        },
+        {
+            "id": "thorn_whipping",
+            "name": "Thorn Whipping",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 130,
+            "power": 340,
+            "description": "Poison enemy with thorn whip"
+        },
+        {
+            "id": "terra_destroyer",
+            "name": "Terra Destroyer",
+            "type": "Physical",
+            "element": "Dark",
+            "elementStrength": 64,
+            "mp": 140,
+            "power": 420,
+            "description": "Throw massive dark matter"
+        },
+        {
+            "id": "fire_field",
+            "name": "Fire Field",
+            "type": "Set Field",
+            "element": "Fire",
+            "elementStrength": 0,
+            "mp": 100,
+            "power": 0,
+            "description": "Strength fire, weaken ice"
+        },
+        {
+            "id": "full_heal",
+            "name": "Full Heal",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 120,
+            "power": 127,
+            "description": "Heal almost all of your HP"
+        },
+        {
+            "id": "giga_crusher",
+            "name": "Giga Crusher",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 180,
+            "power": 640,
+            "description": "Fire the ultimate laser cannon"
+        },
+        {
+            "id": "dark_elemental",
+            "name": "Dark Elemental",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 64,
+            "mp": 120,
+            "power": 600,
+            "description": "Engulf with evil fire column"
+        },
+        {
+            "id": "crimson_cloud",
+            "name": "Crimson Cloud",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 64,
+            "mp": 150,
+            "power": 300,
+            "description": "Fire numerous evil flashes"
+        },
+        {
+            "id": "deadly_poison",
+            "name": "Deadly Poison",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 90,
+            "power": 360,
+            "description": "Fire venomous foam with magic"
+        },
+        {
+            "id": "paralyze_shock",
+            "name": "Paralyze Shock",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 90,
+            "power": 300,
+            "description": "Magic that completely paralyzes"
+        },
+        {
+            "id": "dark_field",
+            "name": "Dark Field",
+            "type": "Set Field",
+            "element": "Dark",
+            "elementStrength": 0,
+            "mp": 100,
+            "power": 0,
+            "description": "Strength dark, weaken thunder"
+        },
+        {
+            "id": "melting_blood",
+            "name": "Melting Blood",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 72,
+            "mp": 210,
+            "power": 700,
+            "description": "Unleash dark energy"
+        },
+        {
+            "id": "god_bombard",
+            "name": "God Bombard",
+            "type": "Magical",
+            "element": "Machine",
+            "elementStrength": 64,
+            "mp": 120,
+            "power": 600,
+            "description": "Most powerful missile magic"
+        },
+        {
+            "id": "mega_break",
+            "name": "Mega Break",
+            "type": "Support",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 82,
+            "power": 0,
+            "description": "Large decrease in enemy's speed"
+        },
+        {
+            "id": "giant_missile",
+            "name": "Giant Missile",
+            "type": "Physical",
+            "element": "Machine",
+            "elementStrength": 64,
+            "mp": 200,
+            "power": 480,
+            "description": "Fire all body missiles"
+        },
+        {
+            "id": "confuse_stab",
+            "name": "Confuse Stab",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 64,
+            "power": 240,
+            "description": "Massive confusion damage"
+        },
+        {
+            "id": "impact_rush",
+            "name": "Impact Rush",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 60,
+            "power": 240,
+            "description": "Huge damage from rapid blows"
+        },
+        {
+            "id": "dimension_scissors",
+            "name": "Dimension Scissors",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 200,
+            "power": 400,
+            "description": "Slash thru space and destroy"
+        },
+        {
+            "id": "final_heal",
+            "name": "Final Heal",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 240,
+            "power": 64,
+            "description": "Heal almost all of allies HP"
+        },
+        {
+            "id": "erase_magic",
+            "name": "Erase Magic",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 37,
+            "power": 0,
+            "description": "Cure all ailments on allies"
+        },
+        {
+            "id": "auto_recover",
+            "name": "Auto Recover",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 82,
+            "power": 1,
+            "description": "Gradually heal your HP"
+        },
+        {
+            "id": "crimson_flame",
+            "name": "Crimson Flame",
+            "type": "Heal",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 200,
+            "power": 0,
+            "description": "Revive all allies with max HP"
+        },
+        {
+            "id": "flame_sphere",
+            "name": "Flame Sphere",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 64,
+            "mp": 180,
+            "power": 700,
+            "description": "Magic that creates huge flames"
+        },
+        {
+            "id": "inferno",
+            "name": "Inferno",
+            "type": "Magical",
+            "element": "Fire",
+            "elementStrength": 64,
+            "mp": 200,
+            "power": 350,
+            "description": "Continuous fire columns"
+        },
+        {
+            "id": "t_sword",
+            "name": "T-Sword",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 250,
+            "power": 400,
+            "description": "Paralyze with Grey Sword"
+        },
+        {
+            "id": "soul_plunder",
+            "name": "Soul Plunder",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 160,
+            "power": 350,
+            "description": "Destroy enemy with a spell"
+        },
+        {
+            "id": "omega_blade",
+            "name": "Omega Blade",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 280,
+            "power": 500,
+            "description": "Sword move destroys evil"
+        },
+        {
+            "id": "darkness_chaos",
+            "name": "Darkness Chaos",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 72,
+            "mp": 180,
+            "power": 700,
+            "description": "Huge damage with evil flame"
+        },
+        {
+            "id": "black_scewer",
+            "name": "Black Scewer",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 72,
+            "mp": 200,
+            "power": 350,
+            "description": "Pierce with numerous dark matter"
+        },
+        {
+            "id": "confuse_nebula",
+            "name": "Confuse Nebula",
+            "type": "Magical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 90,
+            "power": 360,
+            "description": "Massive confusion magic blow"
+        },
+        {
+            "id": "blast_mode",
+            "name": "Blast Mode",
+            "type": "Physical",
+            "element": "None",
+            "elementStrength": 0,
+            "mp": 250,
+            "power": 300,
+            "description": "Multiple shots to the enemy"
+        },
+        {
+            "id": "cable_crusher",
+            "name": "Cable Crusher",
+            "type": "Magical",
+            "element": "Dark",
+            "elementStrength": 72,
+            "mp": 270,
+            "power": 800,
+            "description": "Powerful and evil magic attack"
+        }
+    ]
+}
