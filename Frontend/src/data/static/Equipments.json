@@ -1,0 +1,24 @@
+{
+    "equipments": [
+        {
+            "name": "Empty",
+            "id": 0
+        },
+        {
+            "name": "Dagger",
+            "id": 157
+        },
+        {
+            "name": "Bamboo Spear",
+            "id": 167
+        },
+        {
+            "name": "Bandana",
+            "id": 215
+        },
+        {
+            "name": "Leather Coat",
+            "id": 249
+        }
+    ]
+}

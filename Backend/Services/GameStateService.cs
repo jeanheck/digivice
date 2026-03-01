@@ -99,6 +99,7 @@ namespace Backend.Services
             if (fishingPole.Prerequisites.Count > 0)
                 fishingPole.Prerequisites[0].IsDone = hasFolderBag;
             ApplyQuestSteps(fishingPole, FishingPoleAddress.Steps);
+            ApplyStepPrerequisites(fishingPole, importantItems);
             journal.SideQuests.Add(fishingPole);
 
             return journal;
@@ -135,6 +136,56 @@ namespace Backend.Services
                 if (qStep != null)
                 {
                     qStep.IsCompleted = isStepDone;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reads consumable item quantities from RAM.
+        /// Returns a dictionary of item key → quantity owned.
+        /// </summary>
+        private Dictionary<string, int> GetConsumableItems()
+        {
+            var items = new Dictionary<string, int>();
+            foreach (var kvp in ConsumableItemsAddresses.Items)
+            {
+                if (kvp.Value == 0x00000000) continue; // Skip mocked addresses
+                var bytes = _memoryReader.ReadBytes(kvp.Value, 1);
+                items[kvp.Key] = (bytes != null && bytes.Length > 0) ? bytes[0] : 0;
+            }
+            return items;
+        }
+
+        /// <summary>
+        /// Checks step-level prerequisites by looking up item ownership.
+        /// Supports "consumable" items (quantity > 0) via ConsumableItemsAddresses
+        /// and "important" items (flag == 1) via ImportantItemsAddresses.
+        /// Prerequisites without an ItemKey are left unchanged.
+        /// </summary>
+        private void ApplyStepPrerequisites(Quest quest, Dictionary<string, bool> importantItems)
+        {
+            var consumables = GetConsumableItems();
+
+            foreach (var step in quest.Steps)
+            {
+                if (step.Prerequisites == null) continue;
+                foreach (var prereq in step.Prerequisites)
+                {
+                    if (string.IsNullOrEmpty(prereq.ItemKey) || string.IsNullOrEmpty(prereq.ItemType))
+                        continue;
+
+                    switch (prereq.ItemType)
+                    {
+                        case "consumable":
+                            if (consumables.TryGetValue(prereq.ItemKey, out int qty))
+                                prereq.IsDone = qty > 0;
+                            break;
+                        case "important":
+                            if (importantItems.TryGetValue(prereq.ItemKey, out bool owned))
+                                prereq.IsDone = owned;
+                            break;
+                            // "equipment" can be added later
+                    }
                 }
             }
         }

@@ -10,17 +10,18 @@ import IconAcc1 from '../icons/IconDiamond.vue' // Power Ring
 import IconAcc2 from '../icons/IconDiamond.vue' // Speed Ring
 
 import type { Digimon } from '../../types/backend'
+import equipmentData from '../../data/static/Equipments.json'
 
 const props = defineProps<{
   digimon: Digimon
 }>()
 
+const equipMap = new Map(
+  equipmentData.equipments.map(e => [e.id, e.name])
+)
+
 function getItemName(id: number) {
-    if (id === 0) return 'Empty'
-    if (id === 157) return 'Dagger'
-    if (id === 215) return 'Bandana'
-    if (id === 249) return 'Leather Coat'
-    return `Item ID: ${id}`
+  return equipMap.get(id) ?? `Item ID: ${id}`
 }
 
 const equipments = computed(() => {

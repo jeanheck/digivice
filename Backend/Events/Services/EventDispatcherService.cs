@@ -200,6 +200,25 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                             journalChanged = true;
                             break;
                         }
+                        // Compare step-level prerequisites
+                        var newPrereqs = newJournal.MainQuest.Steps[j].Prerequisites;
+                        var oldPrereqs = oldJournal.MainQuest.Steps[j].Prerequisites;
+                        if (newPrereqs != null && oldPrereqs != null && newPrereqs.Count == oldPrereqs.Count)
+                        {
+                            for (int k = 0; k < newPrereqs.Count; k++)
+                            {
+                                if (newPrereqs[k].IsDone != oldPrereqs[k].IsDone)
+                                {
+                                    journalChanged = true;
+                                    break;
+                                }
+                            }
+                        }
+                        else if (newPrereqs?.Count != oldPrereqs?.Count)
+                        {
+                            journalChanged = true;
+                        }
+                        if (journalChanged) break;
                     }
                 }
             }
@@ -253,6 +272,25 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                                 journalChanged = true;
                                 break;
                             }
+                            // Compare step-level prerequisites
+                            var newSPrereqs = newQ.Steps[j].Prerequisites;
+                            var oldSPrereqs = oldQ.Steps[j].Prerequisites;
+                            if (newSPrereqs != null && oldSPrereqs != null && newSPrereqs.Count == oldSPrereqs.Count)
+                            {
+                                for (int k = 0; k < newSPrereqs.Count; k++)
+                                {
+                                    if (newSPrereqs[k].IsDone != oldSPrereqs[k].IsDone)
+                                    {
+                                        journalChanged = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            else if (newSPrereqs?.Count != oldSPrereqs?.Count)
+                            {
+                                journalChanged = true;
+                            }
+                            if (journalChanged) break;
                         }
                         if (journalChanged) break;
                     }

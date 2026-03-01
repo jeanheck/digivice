@@ -2,14 +2,20 @@
 import { computed, ref } from 'vue'
 import type { Digimon } from '../../types/backend'
 import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue'
+import digievolutionData from '../../data/static/DigievolutionIds.json'
 
 const props = defineProps<{
   digimon: Digimon
 }>()
 
+const digiIdMap = new Map(
+  digievolutionData.digievolutions
+    .filter(d => d.id !== null)
+    .map(d => [d.id!, d.name])
+)
+
 function getEvolutionName(id: number) {
-  if (id === 367) return 'Growlmon'
-  return `Unknown (${id})`
+  return digiIdMap.get(id) ?? `Unknown (${id})`
 }
 
 const evolutions = computed(() => {

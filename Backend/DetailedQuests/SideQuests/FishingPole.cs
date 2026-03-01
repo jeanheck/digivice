@@ -22,7 +22,7 @@ namespace Backend.DetailedQuests.SideQuests
                     new QuestStep
                     {
                         Number = 1,
-                        Description = "Talk to the Old Man at the Beach",
+                        Description = "Talk to Tai Kong Wong at the Shell Beach",
                         IsCompleted = false
                     },
                     new QuestStep
@@ -34,13 +34,13 @@ namespace Backend.DetailedQuests.SideQuests
                     new QuestStep
                     {
                         Number = 3,
-                        Description = "Bring the items back to the Old Man at the Beach",
+                        Description = "Bring the items to Tai Kong Wong at the Shell Beach",
                         IsCompleted = false,
                         Prerequisites = new List<Requisite>
                         {
-                            new Requisite { Description = "Bamboo Spear", IsDone = false },
-                            new Requisite { Description = "Spider Web", IsDone = false },
-                            new Requisite { Description = "Divermon's reward item", IsDone = false }
+                            new Requisite { Description = "Bamboo Spear", IsDone = false, ItemKey = "BambooSpear", ItemType = "consumable" },
+                            new Requisite { Description = "Spider Web", IsDone = false, ItemKey = "SpiderWeb", ItemType = "consumable" },
+                            new Requisite { Description = "Red Snapper", IsDone = false, ItemKey = "RedSnapper", ItemType = "important" }
                         }
                     }
                 }
