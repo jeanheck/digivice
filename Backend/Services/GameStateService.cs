@@ -98,27 +98,27 @@ namespace Backend.Services
             var importantItems = GetImportantItems();
             bool hasFolderBag = importantItems.ContainsKey("FolderBag") && importantItems["FolderBag"];
 
-            // --- 2. Kicking Boots Side Quest ---
-            var kickingBoots = KickingBoots.Get();
+            // --- 2. Tree Boots Side Quest ---
+            var treeBoots = TreeBoots.Get();
 
             // Set prerequisite status
-            if (kickingBoots.Prerequisites.Count > 0)
-                kickingBoots.Prerequisites[0].IsDone = hasFolderBag;
+            if (treeBoots.Prerequisites.Count > 0)
+                treeBoots.Prerequisites[0].IsDone = hasFolderBag;
 
-            foreach (var memStep in KickingBootsAddress.Steps)
+            foreach (var memStep in TreeBootsAddress.Steps)
             {
                 if (memStep.Address == 0x00000000) continue; // Skip mock/unknown addresses
                 var bytes = _memoryReader.ReadBytes(memStep.Address, 1);
                 bool isStepDone = bytes != null && bytes.Length > 0 && bytes[0] == 1;
 
-                var qStep = kickingBoots.Steps.FirstOrDefault(s => s.Number == memStep.Id);
+                var qStep = treeBoots.Steps.FirstOrDefault(s => s.Number == memStep.Id);
                 if (qStep != null)
                 {
                     qStep.IsCompleted = isStepDone;
                 }
             }
 
-            journal.SideQuests.Add(kickingBoots);
+            journal.SideQuests.Add(treeBoots);
 
             // --- 3. Fishing Pole Side Quest ---
             var fishingPole = FishingPole.Get();

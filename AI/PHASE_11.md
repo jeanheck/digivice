@@ -14,7 +14,7 @@ The Folder Bag side quest already exists as a reference implementation. This pha
 
 | # | Quest | Prerequisite | Item Memory State |
 |---|---|---|---|
-| 2 | Kicking Boots | Folder Bag (owned) | Needs discovery |
+| 2 | Tree Boots | Folder Bag (owned) | ✅ Discovered (`0x00048DB4`) |
 | 3 | Fishing Pole | Folder Bag (owned) | Needs discovery |
 
 ### Architecture (already in place)
@@ -27,19 +27,19 @@ The Folder Bag side quest already exists as a reference implementation. This pha
 
 ### Memory Investigation Required
 
-1. **Item addresses**: Find the real memory addresses for Kicking Boots and Fishing Pole (currently mocked to FolderBag address `0x00048F42`).
+1. **Item addresses**: ~~Find the real memory addresses for Tree Boots~~ ✅ Done (`0x00048DB4`) and Fishing Pole (currently mocked to FolderBag address `0x00048F42`).
 2. **Quest triggers**: Investigate whether NPC conversation triggers use a similar 0→1 byte flag system, or a different mechanism. These determine individual quest step completion.
 
 ---
 
 ## Implementation Steps
 
-### Kicking Boots Quest
-- [ ] Discover real memory address for the Kicking Boots item
-- [ ] Investigate quest step triggers (talk to NPC, etc.)
-- [ ] Create `KickingBoots.cs` side quest definition
-- [ ] Create `KickingBootsAddress.cs` with memory step addresses
-- [ ] Wire into `GameStateService.GetJournal()`
+### Tree Boots Quest
+- [x] Discover real memory address for the Tree Boots item
+- [x] Investigate quest step triggers (talk to NPC, etc.)
+- [x] Create `TreeBoots.cs` side quest definition
+- [x] Create `TreeBootsAddress.cs` with memory step addresses
+- [x] Wire into `GameStateService.GetJournal()`
 - [ ] Test with real game data
 
 ### Fishing Pole Quest

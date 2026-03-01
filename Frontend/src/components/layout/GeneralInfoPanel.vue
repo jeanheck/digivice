@@ -6,7 +6,7 @@ const store = useGameStore()
 const items = computed(() => store.gameState?.importantItems || {})
 
 const milestones = [
-  { key: 'KickingBoots', name: 'Kicking Boots', icon: '🥾' },
+  { key: 'TreeBoots', name: 'Tree Boots', icon: '🥾' },
   { key: 'FishingPole', name: 'Fishing Pole', icon: '🎣' },
   { key: 'ElDoradoId', name: 'El Dorado Id', icon: '💳' },
   { key: 'FolderBag', name: 'Folder Bag', icon: '📂' }
