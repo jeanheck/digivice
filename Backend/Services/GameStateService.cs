@@ -3,6 +3,7 @@ using Backend.Models;
 using Backend.Models.Digimons;
 using Backend.Utils;
 using Backend.Constants;
+using Backend.Constants.Quests;
 using Backend.Constants.Quests.SideQuests;
 using Backend.Models.Quests;
 using Backend.DetailedQuests.SideQuests;
@@ -46,7 +47,7 @@ namespace Backend.Services
 
             var player = new Player
             {
-                Name = TextDecoder.Decode(bytes),
+                Name = TextDecoder.DecodeName(bytes),
                 Bits = _memoryReader.ReadInt32(PlayerAddresses.Bits)
             };
 
@@ -79,19 +80,7 @@ namespace Backend.Services
 
             // --- 1. Folder Bag Side Quest ---
             var folderBag = FolderBag.Get();
-
-            foreach (var memStep in FolderBagAddress.Steps)
-            {
-                var bytes = _memoryReader.ReadBytes(memStep.Address, 1);
-                bool isStepDone = bytes != null && bytes.Length > 0 && bytes[0] == 1;
-
-                var qStep = folderBag.Steps.FirstOrDefault(s => s.Number == memStep.Id);
-                if (qStep != null)
-                {
-                    qStep.IsCompleted = isStepDone;
-                }
-            }
-
+            ApplyQuestSteps(folderBag, FolderBagAddress.Steps);
             journal.SideQuests.Add(folderBag);
 
             // Check if the player owns the Folder Bag (prerequisite for next quests)
@@ -100,49 +89,54 @@ namespace Backend.Services
 
             // --- 2. Tree Boots Side Quest ---
             var treeBoots = TreeBoots.Get();
-
-            // Set prerequisite status
             if (treeBoots.Prerequisites.Count > 0)
                 treeBoots.Prerequisites[0].IsDone = hasFolderBag;
-
-            foreach (var memStep in TreeBootsAddress.Steps)
-            {
-                if (memStep.Address == 0x00000000) continue; // Skip mock/unknown addresses
-                var bytes = _memoryReader.ReadBytes(memStep.Address, 1);
-                bool isStepDone = bytes != null && bytes.Length > 0 && bytes[0] == 1;
-
-                var qStep = treeBoots.Steps.FirstOrDefault(s => s.Number == memStep.Id);
-                if (qStep != null)
-                {
-                    qStep.IsCompleted = isStepDone;
-                }
-            }
-
+            ApplyQuestSteps(treeBoots, TreeBootsAddress.Steps);
             journal.SideQuests.Add(treeBoots);
 
             // --- 3. Fishing Pole Side Quest ---
             var fishingPole = FishingPole.Get();
-
-            // Set prerequisite status
             if (fishingPole.Prerequisites.Count > 0)
                 fishingPole.Prerequisites[0].IsDone = hasFolderBag;
+            ApplyQuestSteps(fishingPole, FishingPoleAddress.Steps);
+            journal.SideQuests.Add(fishingPole);
 
-            foreach (var memStep in FishingPoleAddress.Steps)
+            return journal;
+        }
+
+        /// <summary>
+        /// Reads memory and marks quest steps as completed.
+        /// Supports two modes:
+        ///   - BitMask set: checks if (byte AND mask) != 0 (bit field mode)
+        ///   - BitMask null: checks if byte == 1 (legacy mode, e.g., FolderBag)
+        /// </summary>
+        private void ApplyQuestSteps(Quest quest, List<QuestAddressStep> memSteps)
+        {
+            foreach (var memStep in memSteps)
             {
-                if (memStep.Address == 0x00000000) continue; // Skip mock/unknown addresses
-                var bytes = _memoryReader.ReadBytes(memStep.Address, 1);
-                bool isStepDone = bytes != null && bytes.Length > 0 && bytes[0] == 1;
+                if (memStep.Address == 0x00000000) continue;
 
-                var qStep = fishingPole.Steps.FirstOrDefault(s => s.Number == memStep.Id);
+                var bytes = _memoryReader.ReadBytes(memStep.Address, 1);
+                if (bytes == null || bytes.Length == 0) continue;
+
+                bool isStepDone;
+                if (memStep.BitMask.HasValue)
+                {
+                    // Bitmask mode: check if any bit in the mask is set
+                    isStepDone = (bytes[0] & memStep.BitMask.Value) != 0;
+                }
+                else
+                {
+                    // Legacy mode: byte == 1
+                    isStepDone = bytes[0] == 1;
+                }
+
+                var qStep = quest.Steps.FirstOrDefault(s => s.Number == memStep.Id);
                 if (qStep != null)
                 {
                     qStep.IsCompleted = isStepDone;
                 }
             }
-
-            journal.SideQuests.Add(fishingPole);
-
-            return journal;
         }
 
         private Party GetParty()

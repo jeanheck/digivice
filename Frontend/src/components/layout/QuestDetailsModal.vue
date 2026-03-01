@@ -7,6 +7,7 @@ export interface QuestStep {
     number: number
     description: string
     isCompleted: boolean
+    prerequisites?: { description: string; isDone: boolean }[]
 }
 
 const props = defineProps<{
@@ -23,6 +24,15 @@ const closeModal = () => {
 const isQuestDone = computed(() => {
   if (!props.quest || !props.quest.steps || props.quest.steps.length === 0) return false;
   return props.quest.steps.every(s => s.isCompleted);
+})
+
+const isQuestLocked = computed(() => {
+  if (!props.quest || !props.quest.prerequisites || props.quest.prerequisites.length === 0) return false;
+  return !props.quest.prerequisites.every((p: any) => p.isDone);
+})
+
+const hasPrerequisites = computed(() => {
+  return props.quest?.prerequisites && props.quest.prerequisites.length > 0;
 })
 </script>
 
@@ -45,6 +55,7 @@ const isQuestDone = computed(() => {
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-10">
             <h2 class="text-white font-bold tracking-widest text-[#00aaff] drop-shadow flex items-center gap-2">
               <span v-if="isQuestDone" class="text-green-400 text-lg">✔</span>
+              <span v-else-if="isQuestLocked" class="text-lg">🔒</span>
               <span v-else class="text-blue-400 text-lg">●</span>
               {{ quest.title }}
             </h2>
@@ -66,6 +77,29 @@ const isQuestDone = computed(() => {
               </p>
             </div>
 
+            <!-- Prerequisites Section -->
+            <div v-if="hasPrerequisites" class="flex flex-col gap-2">
+              <h3 class="text-xs text-amber-500 font-bold uppercase tracking-wider mb-1 border-b border-amber-900/40 pb-1">
+                Prerequisites
+              </h3>
+              <div
+                v-for="(prereq, idx) in quest.prerequisites"
+                :key="idx"
+                class="flex items-start gap-3 p-2 rounded transition-colors"
+                :class="prereq.isDone ? 'bg-green-900/10 border border-green-800/30' : 'bg-red-900/10 border border-red-800/30'"
+              >
+                <div class="mt-0.5 flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors shadow-inner"
+                     :class="prereq.isDone ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)]' : 'bg-red-500/10 border-red-500/60 text-red-400'">
+                  <span v-if="prereq.isDone" class="text-xs">✔</span>
+                  <span v-else class="text-xs">✘</span>
+                </div>
+                <p class="text-sm flex-1 leading-snug transition-colors"
+                   :class="prereq.isDone ? 'text-gray-400 line-through decoration-green-900' : 'text-red-300'">
+                  {{ prereq.description }}
+                </p>
+              </div>
+            </div>
+
             <!-- Steps Progress -->
             <div class="flex flex-col gap-2">
               <h3 class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 border-b border-blue-900/40 pb-1">
@@ -85,10 +119,23 @@ const isQuestDone = computed(() => {
                 </div>
                 
                 <!-- Description -->
-                <p class="text-sm flex-1 leading-snug transition-colors"
-                   :class="step.isCompleted ? 'text-gray-400 line-through decoration-green-900' : 'text-gray-200'">
-                  {{ step.description }}
-                </p>
+                <div class="flex-1">
+                  <p class="text-sm leading-snug transition-colors"
+                     :class="step.isCompleted ? 'text-gray-400 line-through decoration-green-900' : 'text-gray-200'">
+                    {{ step.description }}
+                  </p>
+                  <!-- Step Prerequisites (items checklist) -->
+                  <div v-if="step.prerequisites && step.prerequisites.length > 0" class="mt-1.5 ml-1 flex flex-col gap-1">
+                    <div
+                      v-for="(prereq, pidx) in step.prerequisites"
+                      :key="pidx"
+                      class="flex items-center gap-2 text-xs"
+                    >
+                      <span :class="prereq.isDone ? 'text-green-400' : 'text-gray-500'">{{ prereq.isDone ? '✔' : '○' }}</span>
+                      <span :class="prereq.isDone ? 'text-gray-400 line-through' : 'text-gray-400'">{{ prereq.description }}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               <div v-if="!quest.steps || quest.steps.length === 0" class="text-center p-3 opacity-50">

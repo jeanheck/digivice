@@ -55,14 +55,24 @@ namespace Tests.Backend.Utils
             Assert.Equal("T", TextDecoder.Decode(input));
         }
 
-        // --- Boundary: uppercase/lowercase transition at 0x25/0x26 ---
+        // --- Boundary: uppercase/lowercase transition at 0x27/0x28 ---
 
         [Fact]
         public void Decode_ShouldHandleBoundaryCharacters()
         {
-            // 0x25 + 0x33 = 'X', 0x26 + 0x39 = '_'
-            byte[] input = [0x25, 0x26];
-            Assert.Equal("X_", TextDecoder.Decode(input));
+            // 0x27 = 'Z' (last uppercase), 0x28 = 'a' (first lowercase)
+            byte[] input = [0x27, 0x28];
+            Assert.Equal("Za", TextDecoder.Decode(input));
+        }
+
+        // --- DecodeName: supports digits and symbols ---
+
+        [Fact]
+        public void DecodeName_ShouldHandleLettersAndDigits()
+        {
+            // "Ta01" -> T(0x21) a(0x28) 0(0x42) 1(0x43)
+            byte[] input = [0x21, 0x28, 0x42, 0x43, 0x00];
+            Assert.Equal("Ta01", TextDecoder.DecodeName(input));
         }
     }
 }

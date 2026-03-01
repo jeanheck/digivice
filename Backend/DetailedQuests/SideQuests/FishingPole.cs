@@ -22,14 +22,26 @@ namespace Backend.DetailedQuests.SideQuests
                     new QuestStep
                     {
                         Number = 1,
-                        Description = "Talk to the NPC who mentions the Fishing Pole",
+                        Description = "Talk to the Old Man at the Beach",
                         IsCompleted = false
                     },
                     new QuestStep
                     {
                         Number = 2,
-                        Description = "Obtain the Fishing Pole",
+                        Description = "Help the Divermon at Divermon's Lake",
                         IsCompleted = false
+                    },
+                    new QuestStep
+                    {
+                        Number = 3,
+                        Description = "Bring the items back to the Old Man at the Beach",
+                        IsCompleted = false,
+                        Prerequisites = new List<Requisite>
+                        {
+                            new Requisite { Description = "Bamboo Spear", IsDone = false },
+                            new Requisite { Description = "Spider Web", IsDone = false },
+                            new Requisite { Description = "Divermon's reward item", IsDone = false }
+                        }
                     }
                 }
             };

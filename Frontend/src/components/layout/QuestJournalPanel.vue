@@ -27,6 +27,19 @@ const isQuestDone = (quest: any) => {
   if (!quest || !quest.steps || quest.steps.length === 0) return false;
   return quest.steps.every((s: any) => s.isCompleted);
 }
+
+const isQuestLocked = (quest: any) => {
+  if (!quest || !quest.prerequisites || quest.prerequisites.length === 0) return false;
+  return !quest.prerequisites.every((p: any) => p.isDone);
+}
+
+const isQuestNew = (quest: any) => {
+  if (!quest || !quest.steps || quest.steps.length === 0) return false;
+  if (isQuestLocked(quest)) return false;
+  if (isQuestDone(quest)) return false;
+  // New = all prerequisites met AND first step not yet completed
+  return !quest.steps[0].isCompleted;
+}
 </script>
 
 <template>
@@ -72,18 +85,32 @@ const isQuestDone = (quest: any) => {
           <div v-for="quest in displaySideQuests" :key="quest.id"
                @click="onQuestClick(quest)"
                class="p-2 rounded border cursor-pointer transition-all duration-200 group relative overflow-hidden"
-               :class="isQuestDone(quest) ? 'border-green-800/50 bg-green-900/20 hover:bg-green-900/40' : 'border-[#0033aa]/60 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]'">
+               :class="
+                 isQuestLocked(quest)
+                   ? 'border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70'
+                   : isQuestDone(quest)
+                     ? 'border-green-800/50 bg-green-900/20 hover:bg-green-900/40'
+                     : isQuestNew(quest)
+                       ? 'border-cyan-300/60 bg-[#001a2a] hover:bg-[#002a3a] hover:border-cyan-300'
+                       : 'border-[#0033aa]/60 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]'
+               ">
             
             <div v-if="isQuestDone(quest)" class="absolute inset-0 bg-green-500/5 pointer-events-none"></div>
 
             <div class="flex items-center justify-between mb-1 relative z-10">
-              <span class="text-white font-bold text-xs truncate group-hover:text-cyan-300 transition-colors"
-                :class="{ 'text-gray-400 line-through': isQuestDone(quest) }">
+              <span class="text-white font-bold text-xs truncate transition-colors"
+                :class="{
+                  'text-gray-500': isQuestLocked(quest),
+                  'text-gray-400 line-through': isQuestDone(quest),
+                  'group-hover:text-cyan-300': !isQuestLocked(quest) && !isQuestDone(quest)
+                }">
                 {{ quest.title }}
               </span>
-              <span v-if="isQuestDone(quest)" class="text-green-500 text-xs drop-shadow">✔</span>
+              <span v-if="isQuestDone(quest)" class="text-green-500 text-xs drop-shadow flex-shrink-0 ml-2">✔</span>
+              <span v-else-if="isQuestLocked(quest)" class="text-xs flex-shrink-0 ml-2">🔒</span>
+              <span v-else-if="isQuestNew(quest)" class="text-cyan-300 text-xs flex-shrink-0 ml-2">❕</span>
             </div>
-            <p class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10" :class="{ 'opacity-50': isQuestDone(quest) }">
+            <p class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10" :class="{ 'opacity-50': isQuestDone(quest) || isQuestLocked(quest) }">
               {{ quest.description }}
             </p>
           </div>

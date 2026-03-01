@@ -67,6 +67,7 @@ export interface QuestStep {
     number: number
     description: string
     isCompleted: boolean
+    prerequisites?: Requisite[]
 }
 
 export interface Quest {

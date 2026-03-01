@@ -433,7 +433,8 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                     {
                         Number = step.Number,
                         Description = step.Description,
-                        IsCompleted = step.IsCompleted
+                        IsCompleted = step.IsCompleted,
+                        Prerequisites = step.Prerequisites?.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone }).ToList()
                     }).ToList()
                 },
                 SideQuests = s.Journal.SideQuests.Select(q => new SideQuest
@@ -446,7 +447,8 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                     {
                         Number = step.Number,
                         Description = step.Description,
-                        IsCompleted = step.IsCompleted
+                        IsCompleted = step.IsCompleted,
+                        Prerequisites = step.Prerequisites?.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone }).ToList()
                     }).ToList()
                 }).ToList()
             } : null
