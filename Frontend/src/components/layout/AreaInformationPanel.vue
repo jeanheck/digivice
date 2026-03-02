@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { useGameStore } from '../../stores/useGameStore'
 import { computed } from 'vue'
+import locationsData from '../../data/static/Locations.json'
 
 const store = useGameStore()
+const locations = locationsData as Record<string, string>
 
 const currentLocation = computed(() => {
     const loc = store.gameState?.currentLocation
-    return loc ? loc : 'Unknown Area'
+    if (!loc || loc === 'Unknown') return 'Unknown Area'
+    
+    return locations[loc] ? locations[loc] : `Unknown Zone ${loc}`
 })
 </script>
 

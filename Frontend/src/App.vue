@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useGameStore } from './stores/useGameStore'
 import DigimonCard from './components/digimon/DigimonCard.vue'
 import QuestJournalPanel from './components/layout/QuestJournalPanel.vue'
+import AreaInformationPanel from './components/layout/AreaInformationPanel.vue'
 import QuestDetailsModal from './components/layout/QuestDetailsModal.vue'
 import PlayerFooter from './components/layout/PlayerFooter.vue'
 import type { MainQuest, SideQuest } from './types/backend'
@@ -59,9 +60,17 @@ const handleCloseQuestModal = () => {
         </template>
       </div>
 
-      <!-- Quest Journal (Right Sidebar) -->
-      <div class="flex-1 min-w-[300px] min-h-0 overflow-hidden">
-        <QuestJournalPanel @quest-click="handleQuestClick" class="h-full" />
+      <!-- Right Sidebar (Journal + Area Info) -->
+      <div class="flex-1 min-w-[300px] min-h-0 overflow-hidden flex flex-col gap-4">
+        <!-- Quest Journal -->
+        <div class="flex-[3] min-h-0 overflow-hidden">
+          <QuestJournalPanel @quest-click="handleQuestClick" class="h-full" />
+        </div>
+        
+        <!-- Area Information -->
+        <div class="flex-1 min-h-[150px]">
+          <AreaInformationPanel class="h-full" />
+        </div>
       </div>
 
     </div>

@@ -33,11 +33,10 @@ namespace Backend.Services
 
         private string GetCurrentLocation()
         {
-            var bytes = _memoryReader.ReadBytes(LocationAddress.CurrentMapName, LocationAddress.MapNameBufferSize);
-            if (bytes == null || bytes.Length == 0) return string.Empty;
+            short rawMapId = _memoryReader.ReadInt16(LocationAddress.MapIdAddress);
+            if (rawMapId < 0) return "Unknown";
 
-            // TextDecoder cleans up up to 0x00 and applies custom alphabet map
-            return TextDecoder.Decode(bytes);
+            return rawMapId.ToString("X4");
         }
 
         private Player? GetPlayer()

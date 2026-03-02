@@ -51,7 +51,7 @@ Quest triggers are stored as **bit fields** in RAM, NOT as individual 0→1 byte
 - [x] Create `FishingPole.cs` side quest definition (3 steps)
 - [x] Create `FishingPoleAddress.cs` with bit field + item flag addresses
 - [x] Wire into `GameStateService.GetJournal()`
-- [ ] Test with real game data
+- [x] Test with real game data
 
 ### UI Improvements ✅
 - [x] Locked quest style (🔒) for quests with unmet prerequisites
@@ -66,11 +66,21 @@ Quest triggers are stored as **bit fields** in RAM, NOT as individual 0→1 byte
 
 ---
 
-## Future: Step-Level Prerequisites & Inventory Reading
+## Step-Level Prerequisites & Inventory Reading ✅
 
-Some quests (e.g., Fishing Pole step 3) require specific items to complete a step. This would need:
-- `QuestStep.Prerequisites` (optional list of `Requisite`)
-- Inventory reader for consumable items (memory investigation needed)
-- UI to display step-level prerequisites
+Some quests (e.g., Fishing Pole step 3) require specific items to complete a step:
+- [x] `QuestStep.Prerequisites` (optional list of `Requisite`) — added to model
+- [x] `Requisite.ItemKey` + `Requisite.ItemType` — links prerequisite to item address
+- [x] `ConsumableItemsAddresses.cs` — addresses for stackable items (Power Charge, Spider Web, Bamboo Spear)
+- [x] `GameStateService.ApplyStepPrerequisites()` — reads RAM and sets `IsDone` for "consumable" (qty > 0) and "important" (flag == 1)
+- [x] UI step prerequisites checklist in `QuestDetailsModal.vue`
+- [x] `EventDispatcherService` — step prerequisite change detection for real-time updates
 
-Deferred to a future phase.
+### Discovered Addresses
+
+| Item | RAM Address | Type | Status |
+|---|---|---|---|
+| Power Charge | `0x048DDB` | Consumable | ✅ |
+| Spider Web | `0x048E09` | Consumable | ✅ |
+| Bamboo Spear | `0x048E57` | Consumable (weapon) | ✅ |
+| Red Snapper | `0x048DB7` | Important Item | ✅ |
