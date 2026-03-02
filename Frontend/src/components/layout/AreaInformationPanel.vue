@@ -45,18 +45,13 @@ const currentLocation = computed(() => {
             <div class="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-[#00aaff]/60"></div>
         </div>
 
-        <!-- Hidden Area Enemies (Will be worked on later) -->
-        <div v-if="false" class="flex-[2] w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
+        <!-- Area Enemies -->
+        <div class="flex-[2] w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
              <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">Area Enemies</h4>
-             <div class="flex gap-2">
-                <div class="w-[28px] h-[28px] rounded border border-[#0033aa] bg-[#001122] flex items-center justify-center shadow-inner opacity-80 hover:opacity-100 transition-opacity cursor-help" title="Betamon">
-                   <span class="text-sm">🐸</span>
-                </div>
-                <div class="w-[28px] h-[28px] rounded border border-[#0033aa] bg-[#001122] flex items-center justify-center shadow-inner opacity-80 hover:opacity-100 transition-opacity cursor-help" title="Vegiemon">
-                   <span class="text-sm">🥗</span>
-                </div>
-                <div class="w-[28px] h-[28px] rounded border border-[#0033aa] bg-[#001122] flex items-center justify-center shadow-inner opacity-80 hover:opacity-100 transition-opacity cursor-help" title="Kuwagamon">
-                   <span class="text-sm">🪲</span>
+             <div class="flex flex-wrap items-center justify-center gap-2">
+                <!-- Generic placeholders for now -->
+                <div v-for="i in 3" :key="i" class="w-[28px] h-[28px] rounded border border-[#0033aa] bg-[#001122] flex items-center justify-center shadow-inner opacity-80 hover:opacity-100 transition-opacity cursor-help" title="Unknown Enemy">
+                   <span class="text-sm">💀</span>
                 </div>
              </div>
         </div>

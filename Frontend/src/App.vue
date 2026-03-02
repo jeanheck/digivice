@@ -63,13 +63,13 @@ const handleCloseQuestModal = () => {
       <!-- Right Sidebar (Journal + Area Info) -->
       <div class="flex-1 min-w-[300px] min-h-0 overflow-hidden flex flex-col gap-4">
         <!-- Quest Journal -->
-        <div class="flex-[3] min-h-0 overflow-hidden">
-          <QuestJournalPanel @quest-click="handleQuestClick" class="h-full" />
+        <div class="flex-[3] min-h-0 overflow-hidden flex flex-col">
+          <QuestJournalPanel @quest-click="handleQuestClick" class="flex-1" />
         </div>
         
         <!-- Area Information -->
-        <div class="flex-1 min-h-[150px]">
-          <AreaInformationPanel class="h-full" />
+        <div class="flex-[2] min-h-[200px] flex flex-col">
+          <AreaInformationPanel class="flex-1" />
         </div>
       </div>
 
