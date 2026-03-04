@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useGameStore } from '../../stores/useGameStore'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import locationsData from '../../data/static/Locations.json'
+import enemiesData from '../../data/static/EnemiesTable.json'
+import EnemyDetailsModal from './EnemyDetailsModal.vue'
 
 const store = useGameStore()
 const locations = locationsData as Record<string, string>
@@ -12,6 +14,40 @@ const currentLocation = computed(() => {
     
     return locations[loc] ? locations[loc] : `Unknown Zone ${loc}`
 })
+
+const areaEnemies = computed(() => {
+    const locName = currentLocation.value
+    if (locName.startsWith('Unknown')) return []
+
+    return enemiesData.filter((enemy: any) => {
+        if (!enemy.Location || !Array.isArray(enemy.Location)) return false;
+        
+        return enemy.Location.includes(locName)
+    })
+})
+
+const currentMapImage = computed(() => {
+    const locName = currentLocation.value
+    if (locName.startsWith('Unknown')) return null
+    try {
+        return new URL(`../../assets/maps/${locName}.webp`, import.meta.url).href
+    } catch {
+        return null
+    }
+})
+
+const isEnemyModalOpen = ref(false)
+const selectedEnemy = ref<any | null>(null)
+
+const openEnemyDetails = (enemy: any) => {
+    selectedEnemy.value = enemy
+    isEnemyModalOpen.value = true
+}
+
+const closeEnemyDetails = () => {
+    isEnemyModalOpen.value = false
+    selectedEnemy.value = null
+}
 </script>
 
 <template>
@@ -22,11 +58,14 @@ const currentLocation = computed(() => {
     </div>
     
     <div class="flex-1 flex flex-col mt-2 h-full">
-        <!-- 100% Space: Image/Text representation -->
-        <div class="flex-1 relative w-full rounded border-2 border-[#0044aa]/50 bg-black bg-opacity-60 flex items-center justify-center overflow-hidden shadow-inner">
+        <!-- 75% Space: Image/Text representation -->
+        <div class="flex-[3] relative w-full rounded border-2 border-[#0044aa]/50 bg-black bg-opacity-60 flex items-center justify-center overflow-hidden shadow-inner">
             
             <!-- Animated grid background -->
             <div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none animate-pan-bg"></div>
+
+            <!-- Dynamic BG Map Image -->
+            <img v-if="currentMapImage" :src="currentMapImage" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-lighten pointer-events-none" />
 
             <!-- Scanline overlay -->
             <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] pointer-events-none opacity-40"></div>
@@ -46,16 +85,26 @@ const currentLocation = computed(() => {
         </div>
 
         <!-- Area Enemies -->
-        <div class="flex-[2] w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
-             <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">Area Enemies</h4>
-             <div class="flex flex-wrap items-center justify-center gap-2">
-                <!-- Generic placeholders for now -->
-                <div v-for="i in 3" :key="i" class="w-[28px] h-[28px] rounded border border-[#0033aa] bg-[#001122] flex items-center justify-center shadow-inner opacity-80 hover:opacity-100 transition-opacity cursor-help" title="Unknown Enemy">
-                   <span class="text-sm">💀</span>
-                </div>
+        <div class="flex-1 w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
+             <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">Enemies</h4>
+             
+             <div v-if="areaEnemies.length === 0" class="text-xs text-[#00aaff] opacity-50 italic">
+                 No encounters cataloged
+             </div>
+             <div v-else class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                <button 
+                   v-for="enemy in areaEnemies" 
+                   :key="enemy.Id" 
+                   @click="openEnemyDetails(enemy)"
+                   class="font-bold text-sm tracking-wide text-red-500 hover:text-red-400 drop-shadow-[0_0_2px_rgba(255,0,0,0.8)] transition-all flex items-center gap-1 focus:outline-none focus:ring-1 focus:ring-red-500 rounded px-1"
+                >
+                   <span class="text-[10px] opacity-70">◆</span> {{ enemy.Name }}
+                </button>
              </div>
         </div>
     </div>
+    
+    <EnemyDetailsModal :is-open="isEnemyModalOpen" :enemy="selectedEnemy" @close="closeEnemyDetails" />
   </aside>
 </template>
 

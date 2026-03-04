@@ -1,0 +1,2555 @@
+---------------------------------------------------------
+Airdramon
+Location: Asuka East - Tyranno Valley
+
+Drops: Fire Chip
+
+Stats: 
+1 STR, 4 DEF, 5 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 3 WIND, 3 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 29, BIT: 70
+
+Regular Attack: No Element
+Technique: Air Blast (Magic-Wind)
+---------------------------------------------------------
+Airdramon 2* (Gold Colored)
+Location: Asuka West - Noise Desert, S Noise Desert, Pelche Oasis
+
+Drops: Magician Rod
+
+1 STR, 4 DEF, 5 SPR, 3 WIS, 4 SPD
+3 FIRE, 2 WATER, 2 ICE, 2 WIND, 3 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 104, BIT: 215
+
+Regular Attack: No Element
+Technique: Mega Tornado (Magic-Wind)
+---------------------------------------------------------
+Andromon 
+Location: Asuka West - Dum Dum Factory, Operation Room, Secret Stairs
+
+Drops: Machine Gun
+
+3 STR, 2 DEF, 2 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 120, BIT: 200 
+
+Regular Attack: Thunder Elemental (Chance of Freeze)
+Technique: None
+---------------------------------------------------------
+Apemon 
+Location: Asuka South - Phoenix Bay, Ether Jungle
+
+Drops: Wind Power 1 
+
+2 STR, 2 DEF, 3 SPR, 3 WIS, 5 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 50, BIT: 190
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Apokarimon 
+Location: Spy Satellite - Gunslinger 1F
+
+Drops: None
+
+2 STR, 4 DEF, 5 SPR, 4 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK 
+
+EXP: 282, BIT: 550
+
+Regular Attack: No Element
+Technique: Darkness Chaos (Magic-Dark)
+---------------------------------------------------------
+Armageddemon
+Location: Spy Satellite - Gunslinger 2F
+
+Drops: None
+
+3 STR, 4 DEF, 2 SPR, 2 WIS, 4 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK 
+
+EXP: 279, BIT: 600 
+
+Regular Attack: Dark Elemental
+Technique: None
+---------------------------------------------------------
+Armormon (Boss)
+Location: (After Accepting Monmon DDRI Quest) Asuka East - Asuka Duel Island 
+
+Drops: Monmon DDNA (After Defeat)
+
+4 STR, 3 DEF, 2 SPR, 2 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 280, BIT: 560 
+
+Regular Attack: No Element
+Technique: Justice Strike (Physical, Hits Four Times)
+---------------------------------------------------------
+Bakemon 
+Location: Asuka South - Jungle Grave (In The Dark)
+
+Drops: None
+
+4 STR, 4 DEF, 3 SPR, 2 WIS, 5 SPD,
+1 FIRE, 2 WATER, 2 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 46, BIT: 90 
+
+Regular Attack: Dark Elemental
+Technique: None
+---------------------------------------------------------
+Baronmon 
+Location: Asuka East - Protocol Ruins 
+
+Drops: None
+
+4 STR, 3 DEF, 3 SPR, 3 WIS, 2 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 80, BIT: 160
+
+Regular Attack: Dark Elemental
+Technique: None
+---------------------------------------------------------
+Betamon 
+Location: Asuka Central - Shell Beach, Plug Cape
+          Asuka East - Wire Forest West, Wire Forest East, Divermon's Lake
+          
+Drops: Power Charge
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD,
+1 FIRE, 3 WATER, 2 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK 
+
+EXP: 10, BIT: 25
+
+Regular Attack: Thunder Elemental
+Technique: None
+---------------------------------------------------------
+Black Agumon (Not sure if stray coding?)
+Location: Unknown
+
+Drops: Unknown
+
+3 STR, 3 DEF, 3 SPR, 5 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 460, BIT: 930, 
+
+Regular Attack: No Element
+Technique: Mechanical Bash (Physical-Machine), Mega Crusher (Physical)
+---------------------------------------------------------
+Bulbmon (Boss)
+Location: (First Encounter) Asuka - Deeper Crevice 
+          (Riding the Gondola from the East Sector 
+           to the South Sector for the first time)
+
+          (Second Encounter) Optical Network - Bug Maze Pit
+
+(First Encounter) Drops: None
+(Second Encounter) Drops: None 
+
+3 STR, 4 DEF, 3 SPR, 2 WIS, 4 SPD, 
+2 FIRE, 3 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+(First Encounter, Bulbmon Runs) EXP: None, BIT: None
+(Second Encounter) EXP: 440, BIT: 800 
+
+(First Encounter) Regular Attack: Machine Element 
+(First Encounter) Technique: Mad Pump (Physical-Water)
+
+(Second Encounter) Regular Attack: Machine Element
+(Second Encounter) Technique: Mad Pump (Physical-Water), 
+                              Speed Boost (Increases Speed)
+---------------------------------------------------------
+Clockmon
+Location: Asuka West - Dum Dum Factory
+
+Drops: Multi Crest
+
+3 STR, 3 DEF, 4 SPR, 4 WIS, 2 SPD,
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK 
+
+EXP: 123, BIT: 250 
+
+Regular Attack: No Element
+Technique: Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)
+---------------------------------------------------------
+Coelamon
+Location: Asuka Central - Plug Cape
+          Asuka South - Bulk Swamp, Bios Swamp, Tranquil Swamp, 
+                        Bulk Bridge, Jungle Grave
+          
+Fishing: Asuka Central - Central Park, Plug Cape, 
+                         Shell Beach, Wire Forest Entrance
+         Asuka South - West Wire Forest, East Wire Forest, Wind Prairie
+                         
+Drops: Water Chip
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK 
+
+EXP: 40, BIT: 80 
+
+Regular Attack: Water Element
+Technique: None
+---------------------------------------------------------
+Crabmon 
+Location: Asuka East - Divermon's Lake 
+
+Drops: None
+
+4 STR, 2 DEF, 2 SPR, 2 WIS, 4 SPD, 
+2 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 17, BIT: 30 
+
+Regular Attack: Water Element
+Technique: None
+---------------------------------------------------------
+Creepymon 
+Location: Tamer Only
+
+Drops: None
+
+1 STR, 4 DEF, 5 SPR, 4 WIS, 3 SPD, 
+3 FIRE, 2 WATER, 3 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK 
+
+EXP: 277, BIT: 540
+
+Regular Attack: Fire Element
+Technique: Darkness Chaos (Magic-Dark)
+---------------------------------------------------------
+Cyclonemon 
+Location: Asuka City - Sewers - Water Tunnel
+
+Drops: Wisdom Chip
+
+2 STR, 3 DEF, 4 SPR, 4 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 134, BIT: 270
+
+Regular Attack: No Element
+Technique: Twin Missile (Magic-Machine)
+---------------------------------------------------------
+Cyclonemon 2* (Red Colored)
+Location: Asuka North - Dark Dungeon
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 215, BIT: 430
+
+Regular Attack: Dark Element
+Technique: None
+---------------------------------------------------------
+Datamon (Boss)
+Location: Asuka City - Sewers - Operation Room
+
+Drops: Recovery Crest (Chance Drop), Rusty Gloves (After Defeat)
+
+3 STR, 3 DEF, 4 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 340, BIT: 1000 
+
+Regular Attack: Machine Element
+Technique: Auto Recover (Heal a small portion of HP every turn or 
+                         every few turns, depending on how often 
+                         the skill is used)
+---------------------------------------------------------
+DemiDevimon 
+Location: Asuka South - Jungle Grave (In The Dark)
+
+Drops: Dark Power 1
+
+3 STR, 2 DEF, 4 SPR, 4 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK 
+
+EXP:39, BIT: 80
+
+Regular Attack: No Element
+Technique: Energy Suck (Magic)
+---------------------------------------------------------
+Devidramon 
+Location: Asuka North - Dark Dungeon 
+
+Drops: None
+
+2 STR, 3 DEF, 4 SPR, 4 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 214, BIT: 390 
+
+Regular Attack: No Element
+Technique: Dark Elemental (Magic-Dark)
+---------------------------------------------------------
+Divermon
+Location: Asuka East - Divermon's Lake (underwater) 
+          Amaterasu East - Divermon's Lake (underwater)
+          
+Fishing: Asuka East - Divermon's Lake
+         Amaterasu East - Divermon's Lake
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 4 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 118, BIT: 200, 
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Dokugumon
+Location: Asuka East - Protocol Forest
+
+Drops: Spider Web
+
+3 STR, 2 DEF, 3 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 21, BIT: 40
+
+Regular Attack: No Element (Chance of Poison)
+Technique: None
+---------------------------------------------------------
+Dokugumon 2* (Brown Colored)
+Location: Asuka West - Noise Desert, Pelche Oasis
+
+Drops: Spider Web
+
+3 STR, 2 DEF, 3 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 105, BIT: 210 
+
+Regular Attack: No Element (Chance of Poison)
+Technique: None 
+---------------------------------------------------------
+Dolphmon 
+Location: Asuka Seabeds 01, 03, 04, 07, 09
+
+Fishing: Asuka West - N Badland East, Pelche Oasis, S Badland
+
+Drops: None
+
+2 STR, 3 DEF, 3 SPR, 5 WIS, 4 SPD, 
+3 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 98, BIT: 200
+
+Regular Attack: No Element
+Technique: Divine Rain (Magic-Water)
+---------------------------------------------------------
+Drimogemon 
+Location: Asuka North - Kulon Mine
+          Circuit Boards - 02, 05, 06, 07, 10, 12, 19, 21, 22 
+
+Drops: Drill Horn
+
+4 STR, 3 DEF, 2 SPR, 2 WIS, 3 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 2 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 205, BIT: 450
+
+Regular Attack: Machine Element 
+Technique: None
+---------------------------------------------------------
+Drimogemon 2* (Gray Colored)
+Location: Circuit Boards - 03, 04, 05, 06, 07, 08, 09, 11, 13,
+                           18, 20, 23, 24, 25, 26, 28, 29, 30
+
+Drops: None
+
+4 STR, 3 DEF, 2 SPR, 2 WIS, 3 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 2 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 220, BIT: 500 
+
+Regular Attack: Machine Element
+Technique: None
+---------------------------------------------------------
+Etemon
+Location: Asuka West - South Badland, North Badland E
+
+Drops: Super Charge
+
+3 STR, 3 DEF, 3 SPR, 5 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 100, BIT: 205 
+
+Regular Attack: No Element
+Technique: Small Heal (Heal a small portion of HP)
+---------------------------------------------------------
+Flarerizamon
+Location: Asuka North - Boot Mountain, Fire Dungeon
+
+Drops: Fire Power 2
+
+2 STR, 3 DEF, 5 SPR, 3 WIS, 4 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 204, BIT: 400
+
+Regular Attack: Fire Element 
+Technique: Flame Ball (Magic-Fire)
+
+Note: Can Run Away
+---------------------------------------------------------
+Flymon
+Location: Asuka East - Wire Forest West
+          Asuka Central - Wire Forest Entrance
+
+Kicking Trees: Asuka South - Jungle Grave, Phoenix Bay
+
+Drops: None
+
+3 STR, 2 DEF, 3 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK 
+
+EXP: 66, BIT: 130
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Frigimon 
+Location: Asuka North - Snow Mountain, Freeze Mountain
+
+Kicking Trees: Asuka North - Lake of Ice, Snow Mountain
+
+Drops: Ice Chip
+
+4 STR, 4 DEF, 3 SPR, 3 WIS, 2 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 206, BIT: 420 
+
+Regular Attack: Ice Element
+Technique: None
+---------------------------------------------------------
+Fugamon
+Location: Asuka North - Kulon Mine, Kulon Pit
+
+Drops: None
+
+5 STR, 4 DEF, 2 SPR, 2 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 210, BIT: 430
+
+Regular Attack: No element
+Technique: None
+---------------------------------------------------------
+Fujinmon
+Location: Tamer Only
+
+Drops: None
+
+3 STR, 3 DEF, 5 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: None, BIT: None
+
+Regular Attack: No Element
+Technique: Sylph Storm (Magic-Wind), MaltCyclone (Physical-Wind)
+---------------------------------------------------------
+Galacticmon (Tail) 
+Location: Space
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 3 MACHINE, 3 DARK
+
+EXP: None, BIT: None
+
+Regular Attack: First Attack - No Element, 
+                Second Attack - No Element (Damage Varies)
+Technique: None
+
+Note: The last used technique against Galacticmon (Tail) will be copied when 
+      you face Galacticmon (Head). If you don't use any techniques against 
+      Galacticmon (Tail), Galacticmon (Head) will instead use '?????'.
+---------------------------------------------------------
+Galacticmon (Body) 
+Location: Space
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 3 MACHINE, 3 DARK
+
+EXP: None, BIT: None
+
+Regular Attack: None
+Technique: Ragnarok Cannon (Physical, Reduces Enemies HP to 1)
+---------------------------------------------------------
+Galacticmon (Head) 
+Location: Space
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 3 MACHINE, 3 DARK
+
+EXP: None, BIT: None
+
+Regular Attack: Wind Elemental (Magic), Counter (Physical)
+Technique: Galacticmon (Head) will use either 
+           (A.) The last technique you used against Galacticmon (Tail) or 
+           (B.) ????? 
+           
+Note: I'm not sure if Technique (B.) has Physical or Magic type damage
+---------------------------------------------------------
+Gekomon
+Location: Asuka South - Bulk Swap, Tranquil Swamp, Bulk Bridge, Jungle Grave
+
+Drops: Ice Power 1
+
+3 STR, 3 DEF, 4 SPR, 4 WIS, 3 SPD, 
+2 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 41, BIT: 85 
+
+Regular Attack: No Element
+Technique: Confuse Gas (Magic, Chance of Confuse)
+---------------------------------------------------------
+Gesomon
+Location: Seabeds 01, 02, 04 
+
+Drops: Runner Sandal
+
+3 STR, 4 DEF, 3 SPR, 2 WIS, 4 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 136, BIT: 240
+
+Regular Attack: Water Element
+Technique: None
+---------------------------------------------------------
+Gizamon
+Location: Asuka Central - Shell Beach
+          Asuka East - Kicking Forest 
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 19, BIT: 40
+
+Regular Attack: Water Element 
+Technique: None
+---------------------------------------------------------
+Goburimon 
+Location: Asuka Central - Protocol Forest, Protocol Ruins, Wire Forest East
+
+Drops: None
+
+5 STR, 3 DEF, 2 SPR, 2 WIS, 2 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 22, BIT: 45 
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Goburimon 2* (Red Colored)
+Location: Asuka West - Bullet Valley, North Badland W
+
+Drops: Naginata
+
+5 STR, 3 DEF, 2 SPR, 2 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 112, BIT: 220
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+GrapLeomon (Boss)
+Location: (After Accepting Kumamon DDRI Quest) 
+           Asuka South - Ether Jungle (Seabed Entrance)
+
+Drops: Kumamon DDNA (After Defeat)
+
+5 STR, 5 DEF, 1 SPR, 1 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK 
+
+EXP: 280, BIT: 560
+
+Regular Attack: No Element
+Technique: Cyclone Turbine (Physical, Hits Three Times)
+---------------------------------------------------------
+Guardromon 1 & 3*
+Location: Tamer Only
+
+Drops: None
+
+4 STR, 5 DEF, 3 SPR, 3 WIS, 1 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 147, BIT: 290 
+
+Regular Attack: Machine Element
+Technique: None 
+---------------------------------------------------------
+Hagurumon
+Location: Asuka West - Dum Dum Factory 
+
+Drops: Metal Power 1
+
+5 STR, 3 DEF, 3 SPR, 3 WIS, 5 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 117, BIT: 230
+
+Regular Attack: Machine Element
+Technique: Speed Up (Raises Speed)
+---------------------------------------------------------
+HiAndromon
+Location: Asuka West - Dum Dum Factory - Operation Room
+
+Drops: Rusty Rifle (After Defeat)
+
+3 STR, 3 DEF, 3 SPR, 4 WIS, 3 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 325, BIT: 500 
+
+Regular Attack: Machine Element
+Technique: Atomic Ray (Magic-Machine, Chance of KO)
+---------------------------------------------------------
+Icemon
+Location: Asuka North - Lake of Ice
+
+Drops: Ice Power 2
+
+3 STR, 4 DEF, 3 SPR, 2 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+ 
+EXP: 215, BIT: 420
+
+Regular Attack: Ice Element
+Technique: None
+---------------------------------------------------------
+Infermon
+Location: Spy Satellite - Gunslinger 1F
+
+Drops: None
+
+3 STR, 2 DEF, 4 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 276, BIT: 530
+
+Regular Attack: No Element
+Technique: Darkness Chaos (Magic-Dark)
+---------------------------------------------------------
+Kimeramon 
+Location: Asuka North - Dark Dungeon
+
+Drops: Devil Chip
+
+3 STR, 5 DEF, 1 SPR, 4 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 3 THUNDER, 2 MACHINE, 3 DARK 
+
+EXP: 223, BIT: 420
+
+Regular Attack: No Element
+Technique: Dark Elemental (Magic Dark)
+---------------------------------------------------------
+Kiwimon 
+Location: Asuka East - Wind Prairie
+
+Drops: None
+
+2 STR, 3 DEF, 3 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 1 ICE, 3 WIND, 1 THUNDER, 2 MACHINE, 2 DARK 
+
+EXP: 15, BIT: 35
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Kokatorimon
+Location: Asuka East - Wire Forest East, Protocol Forest
+
+Drops: None
+
+3 STR, 3 DEF, 2 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 1 ICE, 3 WIND, 1 THUNDER, 2 MACHINE, 2 DARK 
+
+EXP: 96, BIT: 160 
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Kokatorimon 2* (Brown Colored)
+Location: Asuka West - South Noise Desert, Mobius Desert, Mirage Tower
+          
+Kicking Trees: Asuka West - N Badland West, Bullet Valley
+          
+Drops: Over Clocked
+
+3 STR, 3 DEF, 2 SPR, 3 WIS, 5 SPD, 
+2 FIRE, 2 WATER, 1 ICE, 3 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 158, BIT: 300
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Kunemon
+Location: Asuka Central - Central Park, Wire Forest Entrance
+          Asuka East - Wire Forest West, Wire Forest East
+
+Drops: None
+
+3 STR, 2 DEF, 3 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 6, BIT: 10
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Kurisarimon
+Location: Optical Network - Bug Maze, Bug Maze Pit
+
+Drops: Drill Horn
+
+4 STR, 4 DEF, 3 SPR, 3 WIS, 2 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 225, BIT: 770
+
+Regular Attack: No Element
+Technique: Confuse Nebula (Chance of Confusion)
+
+Note: Can Run Away
+---------------------------------------------------------
+Kurisarimon 2* (Red Colored)
+Location:  Boards 01, 02, 03, 04, 05, 06, 10, 14, 15, 16, 17, 27, 30
+
+Drops: None
+
+3 STR, 4 DEF, 3 SPR, 4 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 250, BIT: 800
+
+Regular Attack: None?
+Technique: Confuse Nebula (Magic)
+---------------------------------------------------------
+Kuwagamon 
+Location: Asuka Central - Wire Forest East, Wire Forest West
+
+Drops: None
+
+4 STR, 3 DEF, 2 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 11, BIT: 20
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Kuwagamon 2* (Green Colored)
+Location: Asuka East - Wire Forest Entrance, Wire Forest East, Wire Forest West
+
+Drops: Chain Saw
+
+4 STR, 3 DEF, 2 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 150, BIT: 290
+
+Regular Attack: No Element 
+Technique: None
+---------------------------------------------------------
+Kyukimon (Boss)
+Location: (After Accepting Kotemon DDRI Quest) Asuka South - Suzaku UG Lake
+
+Drops: Kotemon DDNA (After Defeat)
+
+4 STR, 3 DEF, 3 SPR, 2 WIS, 3 SPD, 
+2 FIRE, 3 WATER, 1 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 280, BIT: 560
+
+Regular Attack: No Element
+Technique: Blade TWister (Physical-Wind)
+---------------------------------------------------------
+MagnaAngemon (Boss)
+Location: (After Accepting Patamon DDRI Quest) Asuka West - South Badland
+
+Drops: Patamon DDNA (After Defeat)
+
+1 STR, 3 DEF, 4 SPR, 5 WIS, 2 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 280, BIT: 560
+
+Regular Attack: No Element
+Technique: Gate of Destiny (Magic)
+---------------------------------------------------------
+Maildramon 
+Location: Asuka West - Mobius Desert
+
+Drops: Thunder Chip
+
+3 STR, 4 DEF, 5 SPR, 3 WIS, 2 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 110, BIT: 225
+
+Regular Attack: No Element
+Technique: Thunderbolt (Magic-Thunder)
+---------------------------------------------------------
+Mammothmon 
+Location: Asuka West - North Badland W, Bullet Valley
+
+Drops: HP Proxy
+
+4 STR, 3 DEF, 3 SPR, 3 WIS, 2 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 116, BIT: 220
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Mamemon 
+Location: Asuka West - Duct Rooms 01, 02, 03, 04, Operation Room, Secret Stairs
+
+Drop: Search Crest
+
+3 STR, 5 DEF, 3 SPR, 3 WIS, 3 SPD,
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 125, BIT: 250
+
+Regular Attack: Machine Element (Chance of Freeze)
+Technique: None
+---------------------------------------------------------
+MasterTyrannomon (Boss)
+Location: Asuka East - Tyranno Valley
+
+Drop: Old Claw (After Defeat)
+
+3 STR, 4 DEF, 4 SPR, 3 WIS, 2 SPD, 
+3 FIRE, 2 WATER, 1 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 140, BIT: 280
+
+Regular Attack: No Element
+Technique: Master Fire (Magic-Fire)
+---------------------------------------------------------
+Meramon
+Location: Asuka North - Boot Mountain
+
+Drops: None
+
+1 STR, 4 DEF, 5 SPR, 3 WIS, 3 SPD,
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 205, BIT: 410
+
+Regular Attack: Fire Element
+Technique: Flame Lance (Magic-Fire)
+---------------------------------------------------------
+MetalSeadramon
+Location: Magasta Undersea Base
+
+Drops: Crimson Cable
+
+3 STR, 4 DEF, 4 SPR, 4 WIS, 2 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 1 DARK
+
+EXP: 223, BIT: 460
+
+Regular Attack: No Element
+Technique: God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)
+---------------------------------------------------------
+MetalSeadramon 2* (Gray Colored)
+Location: Spy Satellite - Gunslinger 1F
+
+Drops: None
+
+2 STR, 4 DEF, 4 SPR, 4 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 1 DARK
+
+EXP: 271, BIT: 550
+
+Regular Attack: No Element
+Technique: God Bombard (Magic-Machine)
+---------------------------------------------------------
+Minotarumon 
+Location: Asuka East - Protocol Ruins 
+
+Drops: None
+
+5 STR, 4 DEF, 2 SPR, 2 WIS, 2 SPD, 
+1 FIRE, 2 WATER, 2 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 27, BIT: 55
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Minotarumon 2* (Green Colored)
+Location: Optical Network - Bug Maze, Bug Maze Pit
+
+Drops: Metal Power 2
+
+5 STR, 4 DEF, 2 SPR, 2 WIS, 2 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 167, BIT: 350
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Mojyamon
+Location: Asuka North - Snow Mountain, Freeze Mountain
+
+Drops: None
+
+3 STR, 3 DEF, 5 SPR, 3 WIS, 3 SPD,
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 205, BIT: 420 
+
+Regular Attack: No Element
+Technique: Ice Blow (Magic-Ice)
+---------------------------------------------------------
+Monzaemon
+Location: Tamer Only
+
+Drops: None
+
+3 STR, 3 DEF, 4 SPR, 4 WIS, 2 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 145, BIT: 320
+
+Regular Attack: No Element
+Technique: Lovely Charm (Decreases Enemy Strength)
+---------------------------------------------------------
+Musyamon 
+Location: Asuka South - Jungle Grave (before Zanbamon), 
+                        Catacombs, Catacomb Back Entrance
+
+Drops: MP Chip
+
+3 STR, 3 DEF, 5 SPR, 3 WIS, 1 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 155, BIT: 330
+
+Regular Attack: Dark Element
+Technique: None
+---------------------------------------------------------
+Musyamon 2* (Green Colored)
+Location: Optical Network - Bug Maze, Bug Maze pit
+
+Drops: MP Proxy
+
+3 STR, 3 DEF, 5 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 160, BIT: 330
+
+Regular Attack: No Element
+Technique: Dark Matter (Magic-Dark)
+---------------------------------------------------------
+Nanimon 
+Location: Tamer Only
+
+Drops: None
+
+5 STR, 1 DEF, 5 SPR, 5 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 146, BIT: 280
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Numemon (Green Colored)
+Location: Asuka West - Dum Dum Factory - Sewers
+
+Drops: Binder Crest
+
+3 STR, 4 DEF, 2 SPR, 2 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 124, BIT: 300
+
+Regular Attack: Dark Element
+Technique: None
+---------------------------------------------------------
+Numemon 2* (Purple Colored)
+Location: Asuka South - Jungle Shrine
+          Optical Network - Bug Maze, Bug Maze Pit
+          
+Drops: Dance Feather
+
+3 STR, 4 DEF, 2 SPR, 2 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 222, BIT: 660
+
+Regular Attack: No Element (Lowers Enemy Defense)
+Technique: None
+
+Note: Can Run Away
+---------------------------------------------------------
+Numemon 4* (Sky Blue Colored)
+Location: Asuka North - Ice Dungeon
+
+Drops: None
+
+3 STR, 4 DEF, 2 SPR, 2 WIS, 4 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 344, BIT: 880 
+
+Regular Attack: Ice Element
+Technique: None
+
+Note: Can Run Away
+---------------------------------------------------------
+Numemon 5* (Red Colored)
+Location: Asuka North - Fire Dungeon
+
+Kicking Trees: Asuka North - Boot Mountain
+
+Drops: Over Load
+
+3 STR, 4 DEF, 2 SPR, 2 WIS, 4 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 366, BIT: 990
+
+Regular Attack: Fire Element
+Technique: None
+
+Note: Can Run Away
+---------------------------------------------------------
+Octomon 
+Location: Seabeds 05, 06
+
+Drops: None
+
+3 STR, 3 DEF, 4 SPR, 4 WIS, 2 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 200, BIT: 400
+
+Regular Attack: Water Element
+Technique: None
+---------------------------------------------------------
+Ogremon
+Location: Asuka West - South Badland, North Badland E
+
+Drops: Power Chip
+
+5 STR, 4 DEF, 2 SPR, 2 WIS, 2 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 102, BIT: 200
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Paildramon (Boss)
+Location: (After Accepting Veemon DDRI Quest) Asuka South - Bulk Bridge
+
+Drops: Veemon DDNA
+
+3 STR, 2 DEF, 3 SPR, 4 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 2 WIND, 3 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 200, BIT: 380
+
+Regular Attack: No Element
+Technique: Desperado Blaster (Physical)
+---------------------------------------------------------
+Persiamon
+Location: Tamer Only
+
+Drops: Charm Gas
+
+3 STR, 3 DEF, 3 SPR, 5 WIS, 5 SPD,
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: None, BIT: None
+Regular Attack: No Element
+Technique: Helter Skelter (Di-Digivolves Enemy to Rookie Form), 
+           Vampire Jewel (Steals MP from Enemy)
+---------------------------------------------------------
+Phantomon 
+Location: Asuka South - Jungle Grave
+
+Drops: Ghost Fang
+
+4 STR, 4 DEF, 3 SPR, 2 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 2 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 154, BIT: 310
+
+Regular Attack: Dark Element
+Technique: None
+---------------------------------------------------------
+Pharaohmon (Boss)
+Location: Asuka East - Protocol Ruins 
+
+Drops: Old Wand (After Defeat)
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 120, BIT: 240
+
+Regular Attack: No Element
+Technique: Necromist (Physical, Chance of Poison)
+---------------------------------------------------------
+Piedmon 
+Location: Tamer Only
+
+Drops: None
+
+3 STR, 3 DEF, 2 SPR, 4 WIS, 5 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 280, BIT: 560
+
+Regular Attack: Dark Element
+Technique: None
+---------------------------------------------------------
+Pukumon 
+Location: Magasta Undersea Base
+
+Drops: Crimson Cable
+
+4 STR, 5 DEF, 1 SPR, 1 WIS, 4 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 221, BIT: 470
+
+Regular Attack: Machine Element
+Technique: None
+---------------------------------------------------------
+Puppetmon
+Location: Tamer Only 
+
+Drops: None
+
+5 STR, 2 DEF, 4 SPR, 4 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 273, BIT: 520
+
+Regular Attack: Machine Element
+Technique: None
+---------------------------------------------------------
+Raidenmon
+Location: Unknown
+
+Drops: Unknown
+
+4 STR, 4 DEF, 2 SPR, 2 WIS, 3 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 3 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: None, BIT: None 
+
+Regular Attack: Machine Element
+Technique: Gilead Plant (Heals Around Half HP, Powers Up Next Blow), 
+           Big Charge Bomb (Physical-Thunder, 
+                            Counter Attack used after Gilead Plant)
+---------------------------------------------------------
+Raijinmon
+Location: Unknown
+
+Drops: Unknown
+
+1 STR, 5 DEF, 5 SPR, 5 WIS, 3 SPD,
+2 FIRE, 3 WATER, 2 ICE, 2 WIND, 3 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: None, BIT: None
+
+Regular Attack: None
+Technique: Back Storm (Magic), Electro Ball (Magic-Thunder)
+---------------------------------------------------------
+Raremon 
+Location: Asuka City - Water Tunnel
+
+Drops: Armor Chip
+
+3 STR, 5 DEF, 3 SPR, 3 WIS, 3 SPD,
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 3 MACHINE, 3 DARK
+
+EXP: 135, BIT: 270
+
+Regular Attack: No Element
+Technique: Paralyze Shock (Magic, Chance of Freeze)
+---------------------------------------------------------
+Raremon 2* (Pink Color)
+Location: - Boards 01, 02, 03, 04, 05, 06, 10, 14, 15, 16, 17, 27, 30 
+
+Drops: Bolt Power 2 
+
+3 STR, 5 DEF, 3 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 1 THUNDER, 3 MACHINE, 3 DARK
+
+EXP: 201, BIT: 400
+
+Regular Attack: No Element
+Technique: Magical Cannon (Magic-Machine)
+---------------------------------------------------------
+RedVegimon
+Location: Asuka South - Phoenix Bay, Ether Jungle, Kicking Forest 
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 4 SPD, 
+1 FIRE, 3 WATER, 2 ICE, 3 WIND, 2 THUNDER, 1 MACHINE, 2 DARK
+
+EXP: 45, BIT: 90 
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Rockmon
+Location: Boards 03, 04, 05, 06, 08, 09, 11, 13, 18, 
+                 20, 23, 24, 25, 26, 28, 29, 30
+
+Drops: None
+
+3 STR, 4 DEF, 3 SPR, 3 WIS, 2 SPD,
+2 FIRE, 1 WATER, 2 ICE, 2 WIND, 3 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 220, BIT: 400
+
+Regular Attack: No Element
+Technique: Double Guard (Raises Defense)
+---------------------------------------------------------
+Scorpiomon
+Location: Magasta Undersea Base 
+
+Drops: Crimson Cable
+
+3 STR, 3 DEF, 4 SPR, 4 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 216, BIT: 480
+
+Regular Attack: No Element
+Technique: Grand Wave (Magic-Water)
+---------------------------------------------------------
+Seadramon
+Location: Asuka South - Bios Swamp
+          Asuka East - Divermon's Lake
+
+Fishing: Asuka East - Kicking Forest
+         Asuka South - Bulk Bridge, Tranquil Swamp, 
+                       Bios Swamp, Jungle Grave, Phoenix Bay
+                       
+Drops: Water Power 1
+
+2 STR, 4 DEF, 4 SPR, 3 WIS, 2 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 58, BIT: 120
+
+Regular Attack: Water Element
+Technique: None
+---------------------------------------------------------
+Shellmon
+Location: Asuka South - South Cape
+          Asuka Central - Shell Beach, Plug Cape
+
+Fishing: Asuka South - South Cape 
+
+Drops: Water Chip
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 91, BIT: 180
+
+Regular Attack: Water Element
+Technique: None
+---------------------------------------------------------
+ShogunGekomon
+Location: Asuka South - Suzaku UG Lake
+
+Drops: Chaos Wave
+
+3 STR, 3 DEF, 4 SPR, 4 WIS, 3 SPD, 
+2 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 101, BIT: 490
+
+Regular Attack: No Element
+Technique: Confuse Gas (Magic, Chance of Confuse)
+---------------------------------------------------------
+SkullMeramon
+Location: Asuka North - Fire Dungeon
+
+Drops: None
+
+5 STR, 4 DEF, 2 SPR, 1 WIS, 3 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 217, BIT: 430
+
+Regular Attack: No Element
+Technique: Flame Breath (Magic-Fire)
+---------------------------------------------------------
+Suijinmon
+Location: Tamer Only
+
+Drops: None
+
+5 STR, 3 DEF, 3 SPR, 3 WIS, 5 SPD, 
+2 FIRE, 3 WATER, 2 ICE, 2 WIND, 2 THUNDER, 3 MACHINE, 2 DARK 
+
+EXP: None, BIT: None
+
+Regular Attack: Mugen Cannon (Physical-Machine)
+Technique: Mega Boost (Greatly Raises Speed), 
+           Mega Strength (Greatly Raises Attack)
+---------------------------------------------------------
+Sukamon
+Location: Asuka West - Dum Dum Factory - Sewers 
+
+Drops: Wisdom Chip
+
+3 STR, 4 DEF, 2 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 129, BIT: 190
+
+Regular Attack: Dark Element
+Technique: None
+---------------------------------------------------------
+Tankmon
+Location: Tamer Only
+
+Drops: None
+
+4 STR, 5 DEF, 3 SPR, 3 WIS, 1 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 152, BIT: 300
+
+Regular Attack: Machine Element
+Technique: None
+---------------------------------------------------------
+Taomon (Boss) 
+Location: (After Accepting Renamon DDRI Quest) Asuka West - North Badland W
+
+Drops: Renamon DDNA (After Defeat)
+
+2 STR, 1 DEF, 5 SPR, 4 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 3 THUNDER, 1 MACHINE, 2 DARK
+
+EXP: 300, BIT: 580
+
+Regular Attack: No Element
+Technique: Bonhitsusen (Physical)
+---------------------------------------------------------
+Tapirmon
+Location: Asuka Central - Central Park, Wire Forest Entrance
+
+Drops: None
+
+2 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 5, BIT: 20
+
+Regular Attack: No Element
+Technique: None
+
+Note: Can Run Away
+---------------------------------------------------------
+Thundermon
+Location: Asuka West - Dum Dum Factory
+
+Drops: Pulse Guard
+
+2 STR, 4 DEF, 4 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 1 WATER, 2 ICE, 2 WIND, 3 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 115, BIT: 235
+
+Regular Attack: Thunder Element
+Technique: Thunder Gemini (Magic-Thunder)
+---------------------------------------------------------
+Tortomon
+Location: Asuka East - Divermon's Lake
+          Asuka South - Bulk Swamp, Bulk Bridge, Jungle Grave
+
+Drops: None
+
+3 STR, 4 DEF, 4 SPR, 3 WIS, 2 SPD, 
+3 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 145, BIT: 290
+
+Regular Attack: No Element
+Technique: Divine Rain (Magic-Water)
+---------------------------------------------------------
+Triceramon
+Location: Asuka Central - Plug Cape
+          Asuka East - Tyranno Valley
+
+Drops: TNT Ball
+
+4 STR, 3 DEF, 3 SPR, 3 WIS, 2 SPD, 
+3 FIRE, 2 WATER, 1 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 30, BIT: 60
+
+Regular Attack: Fire Element
+Technique: None
+---------------------------------------------------------
+Triceramon 2* (Red Colored)
+Location: Asuka East - Wind Prairie
+          Asuka North - Boot Mountain, Kulon Mine
+
+Drops: None
+
+4 STR, 3 DEF, 3 SPR, 3 WIS, 2 SPD, 
+3 FIRE, 2 WATER, 1 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 205, BIT: 400
+
+Regular Attack: Fire Element 
+Technique: None
+---------------------------------------------------------
+Tuskmon
+Location: Asuka Central - Plug Cape
+          Asuka West - Bullet Valley, North Badland W
+
+Drops: Counter Crest
+
+5 STR, 3 DEF, 2 SPR, 3 WIS, 2 SPD, 
+3 FIRE, 2 WATER, 1 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 112, BIT: 200
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Tylomon
+Location: Magasta Undersea Base
+
+Drops: Crimson Cable
+
+3 STR, 4 DEF, 2 SPR, 2 WIS, 4 SPD, 
+3 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 215, BIT: 430
+
+Regular Attack: Water Element
+Technique: None
+---------------------------------------------------------
+Tyrannomon
+Location: Asuka East - Tyranno Valley
+
+Drops: Fire Power 1
+
+3 STR, 4 DEF, 4 SPR, 2 WIS, 2 SPD, 
+3 FIRE, 2 WATER, 1 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 31, BIT: 60
+
+Regular Attack: Fire Element
+Technique: None
+---------------------------------------------------------
+Vademon
+Location: Asuka West - S Noise Desert, Mobius Desert, Mirage Tower
+
+Drops: Bolt Power 1
+
+3 STR, 3 DEF, 2 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 109, BIT: 220
+
+Regular Attack: Thunder Element (Chance of Sleep)
+Technique: None
+---------------------------------------------------------
+Vegiemon
+Location: Asuka Central - Shell Beach, Plug Cape
+          Asuka East - Kicking Forest
+
+Drops: None 
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 4 SPD, 
+1 FIRE, 3 WATER, 2 ICE, 3 WIND, 2 THUNDER, 1 MACHINE, 2 DARK
+
+EXP: 20, BIT: 40
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Vemmon (Boss)
+Location: Asuka City - Admin Center 2F
+
+Drop: None
+
+1 STR, 4 DEF, 3 SPR, 3 WIS, 4 SPD,
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 144, BIT: 0
+
+Regular Attack: No Element
+Technique: MP Absorber (Drains Enemy MP)
+---------------------------------------------------------
+VenomMyotismon 
+Location: Spy Satellite - Gunslinger 1F
+
+Drops: None
+
+4 STR, 2 DEF, 4 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 3 ICE, 3 WIND, 3 THUNDER, 3 MACHINE, 3 DARK
+
+EXP: 277, BIT: 530
+
+Regular Attack: No Element
+Technique: Darkness Chaos (Magic-Dark)
+---------------------------------------------------------
+Vikemon 2* (Red Colored)
+Location: Asuka North - Ice Dungeon
+
+Drops: None
+
+5 STR, 2 DEF, 5 SPR, 2 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 218, BIT: 430
+
+Regular Attack: Ice Element; Counter (Physical)
+Technique: None
+---------------------------------------------------------
+Warumonzaemon
+Location: Asuka West - Dum Dum Factory - Sewers
+
+Drops: None
+
+5 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 320, BIT: 740
+
+Regular Attack: Dark Element
+Technique: Heart Break Attack (Magic, Lowers Enemy Strength)
+---------------------------------------------------------
+Whamon
+Location: Magasta Undersea Base
+
+Drops: Crimson Cable
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 225, BIT: 420
+
+Regular Attack: No Element
+Technique: Hard Rain (Magic-Water)
+---------------------------------------------------------
+Woodmon
+Location: Asuka East - Kicking Forest
+          Asuka South - Phoenix Bay, Ether Jungle
+          
+Kicking Trees: Asuka Central - Central Park, Plug Cape, 
+                               Shell Beach, Wire Forest Entrance
+               Asuka East - West Wire Forest, East Wire Forest, 
+                            Divermon's Lake, Wind Prairie
+                            
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 3 WATER, 2 ICE, 3 WIND, 2 THUNDER, 1 MACHINE, 2 DARK
+
+EXP: 25, BIT: 50
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Woodmon 2* (Green Color)
+Location: Asuka South - Ether Jungle, South Cape
+
+Kicking Trees: Asuka South - Ether Jungle
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 3 WATER, 2 ICE, 3 WIND, 2 THUNDER, 1 MACHINE, 2 DARK
+
+EXP: 76, BIT: 190
+
+Regular Attack: No Element (Drains Enemy HP)
+Technique: None
+---------------------------------------------------------
+Yanmamon
+Location: Asuka East - Wind Prairie
+
+Kicking Trees: Asuka East - Kicking Forest
+               Asuka South - Bulk Swamp, Tranquil Swamp, Bios Swamp
+
+Drops: None
+
+3 STR, 2 DEF, 3 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 16, BIT: 30
+
+Regular Attack: No Element
+Technique: None
+
+---------------------------------------------------------
+Yanmamon 2* (Yellow Colored)
+Location: Asuka South - Bulk Swamp, Bulk Bridge, Tranquil Swamp, Jungle Grave
+
+Drops: None
+
+3 STR, 2 DEF, 3 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 16, BIT: 30
+
+Regular Attack: Thunder Element
+Technique: None
+---------------------------------------------------------
+---------------------------------------------------------
+
+---------------------------------------------------------
+***
+(5.0) Amaterasu Server Digimon
+***
+---------------------------------------------------------
+
+Note: 
+Digimon With an asterisk [*] beside their name are 
+different colored verisons of the Digimon with the same name
+
+Note: 
+Cardmon and all of it's forms are listed in a seperate section 
+(see Table of Contents)
+
+---------------------------------------------------------
+Antylamon
+Location: Amaterasu Central - Central Park, Shell Beach
+
+Drops: Wind Chip
+
+3 STR, 3 DEF, 4 SPR, 4 WIS, 2 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 220, BIT: 450
+
+Regular Attack: No Element
+Technique: Dark Elemental (Magic-Dark)
+---------------------------------------------------------
+Antylamon 2* (White Coloured)
+Location: Amaterasu North - Ice Dungeon
+
+Kicking Trees: Amaterasu North - Lake of Ice, Snow Mountain
+
+Drops: Ice Power S
+
+3 STR, 3 DEF, 4 SPR, 4 WIS, 2 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 245, BIT: 490
+
+Regular Attack: No Element
+Technique: Giga Freeze (Magic-Ice)
+---------------------------------------------------------
+Arukenimon
+Location: Amaterasu Central - Plug Cape
+          Amaterasu West - North Badland W, Bullet Valley
+
+Drops: Charm Gas
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 225, BIT: 450 
+
+Regular Attack: No Element (Chance of Poison)
+Technique: None
+---------------------------------------------------------
+BK KingNumemon (Boss)
+Location: Amaterasu West - Dum Dum Factory - Sewers
+
+Drops: Bit Adapter (After Defeat) 
+
+3 STR, 4 DEF, 2 SPR, 2 WIS, 3 SPD, 
+2 FIRE, 3 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 570, BIT: 1300
+
+Regular Attack: No Element (Chance of Freeze)
+Technique: Dark Pupil (Magic) (Enemy Can't Escape)
+---------------------------------------------------------
+BK MegaGargomon (Boss)
+Location: Amaterasu East - Protocol Ruins
+
+Drops: Wild Helmet (After Defeat)
+
+4 STR, 4 DEF, 3 SPR, 3 WIS, 2 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 3 DARK
+
+EXP: 450, BIT: 900 
+
+Regular Attack: No Element
+Technique: Mega Break (Largely Decreases Enemy Speed), 
+           Giant Missle (Physical-Machine)
+---------------------------------------------------------
+BK Seraphimon (Boss)
+Location: Amaterasu South - Catacomb Back Entrance
+
+Drops: Sniper Suit (After Defeat)
+
+2 STR, 3 DEF, 4 SPR, 5 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 470, BIT: 960,
+
+Regular Attack: No Element
+Technique: Giga Heal (Heal Much HP), Seven Heavens (Physical)
+---------------------------------------------------------
+BK WarGreymon (Boss)
+Location: Amaterasu City - Sewers - Operation Room
+
+Drops: Platinum ID (After Defeat)
+
+4 STR, 3 DEF, 4 SPR, 2 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 530, BIT: 1060 
+
+Regular Attack: No Element
+Technique: Black Dark (Magic-Dark), Tera Force (Physical-Dark)
+---------------------------------------------------------
+BK WarGrowlmon (Boss)
+Location: Amaterasu West - Dum Dum Factory - Operation Room
+
+Drops: Hazard Armor (After Defeat)
+
+4 STR, 2 DEF, 2 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 3 WIND, 1 THUNDER, 3 MACHINE, 3 DARK
+
+EXP: 550, BIT: 1100
+
+Regular Attack: No Element
+Technique: Mega Strength (Greatly Increase Strength), 
+           Atomic Blaster (Magic-Fire)
+---------------------------------------------------------
+Blossomon 
+Location: Amaterasu East - Wire Forest East, Wind Prarie
+
+Drops: None
+
+3 STR, 2 DEF, 3 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 3 WATER, 2 ICE, 3 WIND, 2 THUNDER, 1 MACHINE, 2 DARK
+
+EXP: 168, BIT: 340
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Blossomon 2* (Pink Colored)
+Location: Amaterasu South - Phoenix Bay, Ether Jungle
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 3 WATER, 2 ICE, 3 WIND, 2 THUNDER, 1 MACHINE, 2 DARK
+
+EXP: 179, BIT: 360
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+BlueMeramon 
+Location: Amaterasu North - Boot Mountain, Fire Dungeon
+
+Drops: MP Mega Proxy
+
+2 STR, 4 DEF, 5 SPR, 4 WIS, 3 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 243, BIT: 480
+
+Regular Attack: Fire Element
+Technique: Flame Sphere (Magic-Fire)
+---------------------------------------------------------
+Boltmon
+Location: Amaterasu North - Kulon Mine, Kulon Pit
+
+Drops: Power Brace 
+
+5 STR, 3 DEF, 4 SPR, 1 WIS, 3 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 243, BIT: 500
+
+Regular Attack: Thunder Element; Counter (Physical)
+Technique: None
+---------------------------------------------------------
+Brachiomon
+Location: Amaterasu South - Phoenix Bay, Ether Jungle
+
+Drops: Ultra Charge
+
+3 STR, 2 DEF, 4 SPR, 4 WIS, 2 SPD, 
+2 FIRE, 3 WATER, 1 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 180, BIT: 360
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Cherrymon 
+Location: Amaterasu East - Wire Forest West
+          Amaterasu South - Phoenix Bay, Ether Jungle, South Cape
+
+Drops: Recovery Crest
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 3 WATER, 2 ICE, 3 WIND, 2 THUNDER, 1 MACHINE, 2 DARK
+
+EXP: 189, BIT: 380
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Cherrymon 2* (Red Colored)
+Location: N/A?
+
+Kicking Trees: Amaterasu East Sector - Kicking Forest
+               Amaterasu South - Bulk Swamp, Tranquil Swamp, Bios Swamp, 
+                                 Jungle Grave Phoenix Bay, Ether Jungle
+
+Drops: Train Chip 1
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 3 WATER, 2 ICE, 3 WIND, 2 THUNDER, 1 MACHINE, 2 DARK 
+
+EXP: 203, BIT: 410 
+
+Regular Attack: No Element (Drains Enemy HP)
+Technique: None
+---------------------------------------------------------
+Deltamon 
+Location: Amaterasu East - Kicking Forest (Cliff), Tyranno Valley 
+
+Drops: Wind Power 2
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 2 WATER, 1 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 179, BIT: 360
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Dragomon
+Location: Seabeds 13, 19 
+
+Drops: None
+
+3 STR, 4 DEF, 5 SPR, 5 WIS, 2 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 221, BIT: 440
+
+Regular Attack: Water Element 
+Technique: None
+---------------------------------------------------------
+Ebidramon 
+Location: Amaterasu East - Divermon's Lake, Kicking Forest
+
+Fishing: Amaterasu East - Kicking Forest
+         Amaterasu South - Bulk Bridge, Tranquil Swamp, Bios Swamp, 
+                           Jungle Grave, Phoenix Bay, Ether Jungle, South Cape
+
+Drops: Water Power 2
+
+3 STR, 3 DEF, 2 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 170, BIT: 340
+
+Regular Attack: Water Element
+Technique: None
+---------------------------------------------------------
+Ebidramon 2* (Pink Colored)
+Location: N/A?
+
+Fishing: Amaterasu Central - Central Park, Plug Cape, 
+                             Shell Beach, Wire Forest Entrance
+         Amaterasu East - West Wire Forest
+         Amaterasu South - South Cape
+         Amaterasu West - N Badland East, Pelche Oasis, S Badland
+
+Drops: Train Chip 2
+
+3 STR, 3 DEF, 2 SPR, 3 WIS, 3 SPD,
+2 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 240, BIT: 480 - 
+
+Regular Attack: Water Element
+Technique: None
+
+Note: Can Run Away
+---------------------------------------------------------
+Flymon 2* (Red Color)
+Location: Amaterasu East - Wire Forest East, Divermon's Lake, Wind Prairie
+
+Drops: Glasses
+
+3 STR, 2 DEF, 3 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 165, BIT: 330
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Garbagemon 
+Location: Amaterasu West - Dum Dum Factory - Sewers
+
+Drops: Goggles
+
+3 STR, 4 DEF, 2 SPR, 2 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 235, BIT: 470
+
+Regular Attack: Dark Element
+Technique: None
+---------------------------------------------------------
+Gargoylemon 
+Location: Amaterasu East - Protocol Forest, Protocol Ruins
+
+Drops: Dark Power 2
+
+3 STR, 3 DEF, 5 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 176, BIT: 350
+
+Regular Attack: No Element
+Technique: Dark Matter (Magic-Dark)
+---------------------------------------------------------
+Ghoulmon
+Location: Amaterasu North - Dark Dungeon
+
+Drops: Dark Power S
+
+3 STR, 5 DEF, 4 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 3 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 246, BIT: 490
+
+Regular Attack: No Element
+Technique: Darkness Chaos (Magic-Dark)
+---------------------------------------------------------
+Giromon
+Location: Amaterasu West - Duct Rooms 01, 02, 03, 04, 
+                           Operation Room, Secret Stairs
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 4 WIS, 2 SPD,
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 230, BIT: 460
+
+Regular Attack: Machine Element; Counter (Physical)
+Technique: None
+---------------------------------------------------------
+Gryphonmon
+Location: Amaterasu West - Pelche Oasis, Noise Desert
+
+Drops: Wind Power S
+
+2 STR, 3 DEF, 5 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 1 ICE, 3 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 227, BIT: 440
+
+Regular Attack: No Element
+Technique: Slyph Storm (Magic-Wind)
+---------------------------------------------------------
+Guardromon 2* 
+Location: Amaterasu West - Dum Dum Factory, Operation Room, Secret Stairs
+
+Drops: None
+
+4 STR, 5 DEF, 3 SPR, 3 WIS, 2 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 231, BIT: 460
+
+Regular Attack: Machine Element
+Technique: None
+---------------------------------------------------------
+H-Kabuterimon
+Location: Amaterasu Central - Central Park, Wire Forest Entrance
+
+Kicking Trees: Asuka North - Kulon Mine
+
+Drops: None
+
+4 STR, 2 DEF, 3 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 222, BIT: 610
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+KingEtemon 
+Location: Amaterasu West - North Badland E, South Badland
+
+Drops: Charisma Chip
+
+3 STR, 3 DEF, 3 SPR, 5 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 226, BIT: 500
+
+Regular Attack: No Element
+Technique: Full Heal (Heals All HP)
+---------------------------------------------------------
+Knightmon 
+Location: Tamer Only
+
+Drops: None
+
+3 STR, 5 DEF, 5 SPR, 2 WIS, 2 SPD, 
+3 FIRE, 2 WATER, 2 ICE, 3 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 530, BIT: 1060
+
+Regular Attack: No Element
+Technique: Berserk Sword (Physical, Hits Twice), 
+           Soul Charge (Powers up the next blow)
+---------------------------------------------------------
+LadyDevimon
+Location: Amaterasu West - North Badland W, Bullet Valley
+
+Drops: Charm Gas
+
+4 STR, 2 DEF, 3 SPR, 2 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 224, BIT: 440
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Lynxmon
+Location: Amaterasu North - Fire Dungeon
+
+Drops: Fire Power S
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 244, BIT: 490
+
+Regular Attack: Fire Element
+Technique: None
+---------------------------------------------------------
+Machinedramon
+Location: Amaterasu West - Dum Dum Factory
+
+Drops: Metal Power S
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 3 DARK
+
+EXP: 235, BIT: 500
+
+Regular Attack: Machine Element (Hits Twice)
+Technique: None
+---------------------------------------------------------
+Maildramon 2* (Black Colored)
+Location: Amaterasu North - Kulon Mine, Kulon Pit
+
+Drops: Bolt Power S
+
+3 STR, 4 DEF, 4 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 242, BIT: 480
+
+Regular Attack: No Element
+Technique: Electro Bolt (Magic-Thunder)
+---------------------------------------------------------
+Mammothmon 2* (White Colored)
+Location: Amaterasu North - Freeze Mountain, Snow Mountain, Lake of Ice
+
+Drops: None
+
+4 STR, 3 DEF, 4 SPR, 3 WIS, 2 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 236, BIT: 460
+
+Regular Attack: No Element
+Technique: Ice Shower (Magic-Ice)
+---------------------------------------------------------
+MarineDevimon
+Location: Seabeds 11, 14, 17
+
+Drops: None 
+
+2 STR, 3 DEF, 2 SPR, 2 WIS, 4 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 185, BIT: 370
+
+Regular Attack: Water Element (Hits Twice)
+Technique: None
+---------------------------------------------------------
+Megadramon
+Location: Amaterasu West - Dum Dum Factory
+
+Drops: None
+
+3 STR, 3 DEF, 5 SPR, 5 WIS, 3 SPD,
+3 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 233, BIT: 450
+
+Regular Attack: Machine Element
+Technique: None
+---------------------------------------------------------
+Megadramon 2* (No Color Change)
+Location: Tamer Only
+
+Drops: None
+
+4 STR, 2 DEF, 2 SPR, 3 WIS, 4 SPD, 
+3 FIRE, 1 WATER, 2 ICE, 3 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 250, BIT: 520
+
+Regular Attack: No Element
+Technique: Atomic Blaster (Magic-Fire)
+---------------------------------------------------------
+MegaSeadramon 
+Location: Amaterasu South - Bulk Bridge, Bulk Swamp, Bios Swamp, 
+                            Tranquil Swamp, Jungle Grave
+
+Drops: Thunder Chip
+
+2 STR, 2 DEF, 4 SPR, 4 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 174, BIT: 350
+
+Regular Attack: Thunder Element
+Technique: None
+---------------------------------------------------------
+MegaSeadramon 2* (Blue Colored)
+Location: Amaterasu Central - Shell Beach, Plug Cape
+          Amaterasu City - Water Tunnel
+
+Fishing: Asuka North - Lake of ICe
+
+Drops: Water Power S
+
+2 STR, 2 DEF, 5 SPR, 4 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 221, BIT: 450
+
+Regular Attack: Thunder Element
+Technique: Grand Wave (Magic-Water)
+---------------------------------------------------------
+MetalEtemon 
+Location: Amaterasu West - North Badland E, South Badland
+
+Drops: Max Charge
+
+2 STR, 5 DEF, 3 SPR, 4 WIS, 3 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 222, BIT: 460
+
+Regular Attack: No Element
+Technique: Mega Heal (Heal a large portion of HP)
+---------------------------------------------------------
+MetalEtemon 2* (No Color Change) 
+Location: Tamer Only
+
+Drops: None
+
+3 STR, 4 DEF, 4 SPR, 2 WIS, 2 SPD, 
+3 FIRE, 1 WATER, 2 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 160, BIT: 340
+
+Regular Attack: No Element
+Technique: Giga Destroyer (Magic-Machine)
+---------------------------------------------------------
+MetalTyrannomon 
+Location: Amaterasu East - Wind Prairie, Kicking Forest (Cliff), Tyranno Valley
+
+Drops: Metal Chip
+
+3 STR, 5 DEF, 5 SPR, 1 WIS, 1 SPD, 
+3 FIRE, 2 WATER, 2 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 183, BIT: 400
+
+Regular Attack: Machine Element
+Technique: None 
+---------------------------------------------------------
+Mummymon
+Location: Amaterasu East - Protocol Ruins
+
+Drops: Mind Chip
+
+3 STR, 3 DEF, 4 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 2 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 175, BIT: 400
+
+Regular Attack: No Element
+Technique: Dark Fear (Magic-Dark)
+---------------------------------------------------------
+Numemon 3* (Brown Color)
+Location: Amaterasu South - Jungle Shrine
+
+Drops: Training Book
+
+3 STR, 4 DEF, 2 SPR, 2 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 299, BIT: 770
+
+Regular Attack: No Element
+Technique: None
+
+Note: Can Run Away
+---------------------------------------------------------
+Numemon 6* (Mint Colored)
+Location: Amaterasu West - North Badland E, South Badland
+
+Drops: Booster Chip
+
+3 STR, 5 DEF, 2 SPR, 2 WIS, 5 SPD, 
+3 FIRE, 2 WATER, 2 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 399, BIT: 1110
+
+Regular Attack: No Element
+Technique: None
+
+Note: Can Run Away
+---------------------------------------------------------
+Okuwamon
+Location: Amaterasu East - Kicking Forest, Protocol Forest
+
+Kicking Trees: Amaterasu East - East Wire Forest, Divermon's Lake, Wind Prairie
+
+Drops: None
+
+4 STR, 3 DEF, 2 SPR, 3 WIS, 3 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 172, BIT: 320
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Phantomon 2* (Blue Color)
+Location: Amaterasu South - Jungle Grave
+
+Drops: HP Chip
+
+4 STR, 5 DEF, 3 SPR, 1 WIS, 4 SPD, 
+1 FIRE, 2 WATER, 2 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 186, BIT: 370
+
+Regular Attack: Dark Element
+Technique: None
+---------------------------------------------------------
+Quetzalmon
+Location: Amaterasu West - South Noise Desert, Mobius Desert, Mirage Tower
+
+Drops: None
+
+2 STR, 3 DEF, 3 SPR, 4 WIS, 2 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 223, BIT: 440
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Roachmon
+Location: Amaterasu West - Dum Dum Factory - Sewers
+
+Drops: None
+
+2 STR, 3 DEF, 2 SPR, 2 WIS, 5 SPD, 
+1 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 234, BIT: 100
+
+Regular Attack: Dark Element
+Technique: None 
+
+Note: Only Digimon in the game to give less BIT than EXP (other than Vemmon)
+---------------------------------------------------------
+Scorpiomon 2* (Black Colored)
+Location: N/A?
+
+Fishing: Amaterasu North - Lake of Ice
+
+Drops: Train Chip 5
+
+3 STR, 3 DEF, 4 SPR, 4 WIS, 4 SPD, 
+3 FIRE, 3 WATER, 3 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 272, BIT: 510
+
+Regular Attack: No Element
+Technique: Titanic Wave (Magic-Water)
+
+Note: Can Run Away
+---------------------------------------------------------
+Seadramon 2* (White Colored)
+Location: Amaterasu South - Bulk Swamp, Bulk Bridge, Tranquil Swamp, 
+                            Bios Swamp, Jungle Grave
+
+Drops: None
+
+2 STR, 4 DEF, 5 SPR, 4 WIS, 2 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 175, BIT: 350
+
+Regular Attack: No Element
+Technique: Hard Rain (Magic-Water)
+---------------------------------------------------------
+Shadramon 
+Location: Amaterasu North - Boot Mountain, Fire Dungeon
+
+Drops: None
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 1 WATER, 3 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 235, BIT: 440
+
+Regular Attack: Fire Element
+Technique: None
+---------------------------------------------------------
+ShogunGekomon 2* (Blue Colored)
+Location: Amaterasu South - Zhu Que UG Lake
+
+Drops: Chaos Wave
+
+3 STR, 3 DEF, 5 SPR, 5 WIS, 3 SPD,
+2 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 184, BIT: 370
+
+Regular Attack: No Element
+Technique: Confuse Nebula (Magic, Chance of Confusion)
+---------------------------------------------------------
+SkullMammothmon 
+Location: Amaterasu North - Ice Dungeon
+
+Drops: None
+
+5 STR, 4 DEF, 4 SPR, 3 WIS, 1 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 247, BIT: 490
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+SkullSatamon
+Location: Amaterasu South - Catacombs
+
+Drops: Hack Sticker
+
+3 STR, 3 DEF, 4 SPR, 3 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 2 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 196, BIT: 390
+
+Regular Attack: Dark Element
+Technique: None
+---------------------------------------------------------
+Snimon 
+Location: Amaterasu East - Wire Forest West
+          Amaterasu Central - Wire Forest Entrance, Plug Cape
+
+Kicking Trees: Asuka Central - Central Park, Plug Cape, 
+                               Shell Beach, Wire Forest Entrance
+               Asuka East - West Wire Forest
+
+Drops: None
+
+3 STR, 2 DEF, 3 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 215, BIT: 420
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Snimon 2* (Orange Colored)
+Location: N/A?
+
+Kicking Trees: Amaterasu West - N Badland West, Bullet Valley
+               Amaterasu North - Boot Mountain, Kulon Mine
+
+Drops: Train Chip 3
+
+4 STR, 2 DEF, 3 SPR, 3 WIS, 4 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 1 WIND, 3 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 241, BIT: 480
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Tankmon 2* (Blue Colored)
+Location: Amaterasu West - Pelche Oasis, Noise Desert
+
+Drops: Runner Shoes
+
+4 STR, 5 DEF, 3 SPR, 3 WIS, 1 SPD, 
+2 FIRE, 1 WATER, 3 ICE, 2 WIND, 1 THUNDER, 3 MACHINE, 2 DARK
+
+EXP: 227, BIT: 470
+
+Regular Attack: Machine Element
+Technique: None
+---------------------------------------------------------
+Tortomon 2* (Purple Colored) 
+Location: Amaterasu South - Phoenix Bay, South Cape
+
+Drops: None
+
+3 STR, 4 DEF, 4 SPR, 3 WIS, 2 SPD, 
+3 FIRE, 3 WATER, 1 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 180, BIT: 360
+
+Regular Attack: No Element
+Technique: Hard Rain (Magic-Water)
+---------------------------------------------------------
+Vademon 2* (Red Colored)
+Location: Amaterasu West - Mobius Desert
+
+Drops: Cursed Puppet
+
+3 STR, 3 DEF, 2 SPR, 4 WIS, 5 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 2 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 232, BIT: 460
+
+Regular Attack: Thunder Element
+Technique: Hold Beam (Prevent enemy from escaping)
+---------------------------------------------------------
+Valkrymon 
+Location: Amaterasu West - North Badland W, Bullet Valley
+
+Drops: Dance Wing
+
+3 STR, 3 DEF, 2 SPR, 3 WIS, 5 SPD, 
+2 FIRE, 2 WATER, 2 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 225, BIT: 460
+
+Regular Attack: No Element
+Technique: None
+---------------------------------------------------------
+Vikemon
+Location: Amaterasu North - Freeze Mountain, Snow Mountain
+
+Drops: None
+
+5 STR, 2 DEF, 5 SPR, 2 WIS, 3 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 3 WIND, 2 THUNDER, 2 MACHINE, 1 DARK
+
+EXP: 236, BIT: 460
+
+Regular Attack: Ice Element
+Technique: None
+---------------------------------------------------------
+Vilemon
+Location: Amaterasu South - Jungle Grave
+
+Drops: Devil Chip
+
+3 STR, 2 DEF, 4 SPR, 3 WIS, 4 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 180, BIT: 360
+
+Regular Attack: Fire Element
+Technique: Dark Fear (Magic-Dark)
+---------------------------------------------------------
+Vilemon 2* (Purple Colored)
+Location: Amaterasu North - Dark Dungeon
+
+Drops: Hack System
+
+3 STR, 2 DEF, 4 SPR, 3 WIS, 4 SPD, 
+1 FIRE, 2 WATER, 3 ICE, 1 WIND, 2 THUNDER, 2 MACHINE, 3 DARK
+
+EXP: 239, BIT: 480
+
+Regular Attack: Fire Element
+Technique: Dark Elemental (Magic-Dark)
+---------------------------------------------------------
+Whamon 2* (White Colored)
+Location: Seabeds 12, 15, 16
+
+Fishing: Amaterasu City - Various
+
+Drops: HP Mega Proxy
+
+3 STR, 3 DEF, 3 SPR, 3 WIS, 3 SPD, 
+3 FIRE, 3 WATER, 2 ICE, 2 WIND, 1 THUNDER, 2 MACHINE, 2 DARK
+
+EXP: 235, BIT: 420
+
+Regular Attack: No Element
+Technique: Grand Wave (Magic-Water)
+---------------------------------------------------------

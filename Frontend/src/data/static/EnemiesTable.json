@@ -34,7 +34,9 @@
         "DVXP": 12,
         "EXP": 120,
         "BITS": 240,
-        "Location": ""
+        "Location": "Asuka East - Protocol Ruins",
+        "RegularAttack": "No Element",
+        "Technique": "Necromist (Physical, Chance of Poison)"
     },
     {
         "Id": 2,
@@ -108,7 +110,9 @@
         "DVXP": 32,
         "EXP": 325,
         "BITS": 500,
-        "Location": ""
+        "Location": "Asuka West - Dum Dum Factory - Operation Room",
+        "RegularAttack": "Machine Element",
+        "Technique": "Atomic Ray (Magic-Machine, Chance of KO)"
     },
     {
         "Id": 15,
@@ -182,7 +186,14 @@
         "DVXP": 1,
         "EXP": 6,
         "BITS": 10,
-        "Location": ""
+        "Location": [
+            "Central Park",
+            "Wire Forest Entrance",
+            "Wire Forest West",
+            "Wire Forest East"
+        ],
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 72,
@@ -219,7 +230,12 @@
         "DVXP": 1,
         "EXP": 5,
         "BITS": 20,
-        "Location": ""
+        "Location": [
+            "Central Park",
+            "Wire Forest Entrance"
+        ],
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 73,
@@ -256,7 +272,9 @@
         "DVXP": 3,
         "EXP": 17,
         "BITS": 30,
-        "Location": ""
+        "Location": "Asuka East - Divermon's Lake",
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 74,
@@ -293,7 +311,12 @@
         "DVXP": 4,
         "EXP": 19,
         "BITS": 40,
-        "Location": ""
+        "Location": [
+            "Shell Beach",
+            "Kicking Forest"
+        ],
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 75,
@@ -330,7 +353,9 @@
         "DVXP": 8,
         "EXP": 39,
         "BITS": 80,
-        "Location": ""
+        "Location": "Asuka South - Jungle Grave (In The Dark)",
+        "RegularAttack": "No Element",
+        "Technique": "Energy Suck (Magic)"
     },
     {
         "Id": 76,
@@ -367,7 +392,15 @@
         "DVXP": 2,
         "EXP": 10,
         "BITS": 25,
-        "Location": ""
+        "Location": [
+            "Shell Beach",
+            "Plug Cape",
+            "Wire Forest West",
+            "Wire Forest East",
+            "Divermon's Lake"
+        ],
+        "RegularAttack": "Thunder Elemental",
+        "Technique": "None"
     },
     {
         "Id": 77,
@@ -404,7 +437,13 @@
         "DVXP": 4,
         "EXP": 20,
         "BITS": 40,
-        "Location": ""
+        "Location": [
+            "Shell Beach",
+            "Plug Cape",
+            "Kicking Forest"
+        ],
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 78,
@@ -441,7 +480,12 @@
         "DVXP": 2,
         "EXP": 11,
         "BITS": 20,
-        "Location": ""
+        "Location": [
+            "Wire Forest East",
+            "Wire Forest West"
+        ],
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 79,
@@ -478,7 +522,9 @@
         "DVXP": 3,
         "EXP": 16,
         "BITS": 30,
-        "Location": ""
+        "Location": "Asuka East - Wind Prairie",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 80,
@@ -515,7 +561,9 @@
         "DVXP": 3,
         "EXP": 15,
         "BITS": 35,
-        "Location": ""
+        "Location": "Asuka East - Wind Prairie",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 81,
@@ -552,7 +600,9 @@
         "DVXP": 4,
         "EXP": 21,
         "BITS": 40,
-        "Location": ""
+        "Location": "Asuka East - Protocol Forest",
+        "RegularAttack": "No Element (Chance of Poison)",
+        "Technique": "None"
     },
     {
         "Id": 82,
@@ -589,7 +639,9 @@
         "DVXP": 4,
         "EXP": 22,
         "BITS": 45,
-        "Location": ""
+        "Location": "Asuka Central - Protocol Forest, Protocol Ruins, Wire Forest East",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 83,
@@ -626,7 +678,9 @@
         "DVXP": 16,
         "EXP": 80,
         "BITS": 160,
-        "Location": ""
+        "Location": "Asuka East - Protocol Ruins",
+        "RegularAttack": "Dark Elemental",
+        "Technique": "None"
     },
     {
         "Id": 84,
@@ -663,7 +717,9 @@
         "DVXP": 5,
         "EXP": 27,
         "BITS": 55,
-        "Location": ""
+        "Location": "Asuka East - Protocol Ruins",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 85,
@@ -700,7 +756,9 @@
         "DVXP": 13,
         "EXP": 66,
         "BITS": 130,
-        "Location": ""
+        "Location": "Asuka East - Wire Forest West Asuka Central - Wire Forest Entrance",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 86,
@@ -737,7 +795,9 @@
         "DVXP": 5,
         "EXP": 25,
         "BITS": 50,
-        "Location": ""
+        "Location": "Asuka East - Kicking Forest Asuka South - Phoenix Bay, Ether Jungle",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 87,
@@ -774,7 +834,9 @@
         "DVXP": 6,
         "EXP": 31,
         "BITS": 60,
-        "Location": ""
+        "Location": "Asuka East - Tyranno Valley",
+        "RegularAttack": "Fire Element",
+        "Technique": "None"
     },
     {
         "Id": 88,
@@ -811,7 +873,12 @@
         "DVXP": 6,
         "EXP": 30,
         "BITS": 60,
-        "Location": ""
+        "Location": [
+            "Plug Cape",
+            "Tyranno Valley"
+        ],
+        "RegularAttack": "Fire Element",
+        "Technique": "None"
     },
     {
         "Id": 89,
@@ -848,7 +915,9 @@
         "DVXP": 6,
         "EXP": 29,
         "BITS": 70,
-        "Location": ""
+        "Location": "Asuka East - Tyranno Valley",
+        "RegularAttack": "No Element",
+        "Technique": "Air Blast (Magic-Wind)"
     },
     {
         "Id": 90,
@@ -885,7 +954,9 @@
         "DVXP": 8,
         "EXP": 41,
         "BITS": 85,
-        "Location": ""
+        "Location": "Asuka South - Bulk Swap, Tranquil Swamp, Bulk Bridge, Jungle Grave",
+        "RegularAttack": "No Element",
+        "Technique": "Confuse Gas (Magic, Chance of Confuse)"
     },
     {
         "Id": 91,
@@ -922,7 +993,16 @@
         "DVXP": 8,
         "EXP": 40,
         "BITS": 80,
-        "Location": ""
+        "Location": [
+            "Plug Cape",
+            "Bulk Swamp",
+            "Bios Swamp",
+            "Tranquil Swamp",
+            "Bulk Bridge",
+            "Jungle Grave"
+        ],
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 92,
@@ -959,7 +1039,9 @@
         "DVXP": 9,
         "EXP": 46,
         "BITS": 90,
-        "Location": ""
+        "Location": "Asuka South - Jungle Grave (In The Dark)",
+        "RegularAttack": "Dark Elemental",
+        "Technique": "None"
     },
     {
         "Id": 93,
@@ -996,7 +1078,9 @@
         "DVXP": 31,
         "EXP": 154,
         "BITS": 310,
-        "Location": ""
+        "Location": "Asuka South - Jungle Grave",
+        "RegularAttack": "Dark Element",
+        "Technique": "None"
     },
     {
         "Id": 94,
@@ -1033,7 +1117,9 @@
         "DVXP": 13,
         "EXP": 96,
         "BITS": 160,
-        "Location": ""
+        "Location": "Asuka East - Wire Forest East, Protocol Forest",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 95,
@@ -1070,7 +1156,9 @@
         "DVXP": 10,
         "EXP": 50,
         "BITS": 190,
-        "Location": ""
+        "Location": "Asuka South - Phoenix Bay, Ether Jungle",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 96,
@@ -1107,7 +1195,9 @@
         "DVXP": 18,
         "EXP": 91,
         "BITS": 180,
-        "Location": ""
+        "Location": "Asuka South - South Cape Asuka Central - Shell Beach, Plug Cape",
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 97,
@@ -1144,7 +1234,9 @@
         "DVXP": 29,
         "EXP": 145,
         "BITS": 290,
-        "Location": ""
+        "Location": "Asuka East - Divermon's Lake Asuka South - Bulk Swamp, Bulk Bridge, Jungle Grave",
+        "RegularAttack": "No Element",
+        "Technique": "Divine Rain (Magic-Water)"
     },
     {
         "Id": 98,
@@ -1181,7 +1273,9 @@
         "DVXP": 20,
         "EXP": 98,
         "BITS": 200,
-        "Location": ""
+        "Location": "Asuka Seabeds 01, 03, 04, 07, 09",
+        "RegularAttack": "No Element",
+        "Technique": "Divine Rain (Magic-Water)"
     },
     {
         "Id": 99,
@@ -1218,7 +1312,9 @@
         "DVXP": 27,
         "EXP": 136,
         "BITS": 240,
-        "Location": ""
+        "Location": "Seabeds 01, 02, 04",
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 100,
@@ -1255,7 +1351,9 @@
         "DVXP": 40,
         "EXP": 200,
         "BITS": 400,
-        "Location": ""
+        "Location": "Seabeds 05, 06",
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 101,
@@ -1292,7 +1390,9 @@
         "DVXP": 24,
         "EXP": 118,
         "BITS": 200,
-        "Location": ""
+        "Location": "Asuka East - Divermon's Lake (underwater) Amaterasu East - Divermon's Lake (underwater)",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 102,
@@ -1329,7 +1429,9 @@
         "DVXP": 20,
         "EXP": 101,
         "BITS": 490,
-        "Location": ""
+        "Location": "Asuka South - Suzaku UG Lake",
+        "RegularAttack": "No Element",
+        "Technique": "Confuse Gas (Magic, Chance of Confuse)"
     },
     {
         "Id": 103,
@@ -1366,7 +1468,9 @@
         "DVXP": 12,
         "EXP": 58,
         "BITS": 120,
-        "Location": ""
+        "Location": "Asuka South - Bios Swamp Asuka East - Divermon's Lake",
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 104,
@@ -1403,7 +1507,9 @@
         "DVXP": 23,
         "EXP": 116,
         "BITS": 220,
-        "Location": ""
+        "Location": "Asuka West - North Badland W, Bullet Valley",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 105,
@@ -1440,7 +1546,9 @@
         "DVXP": 20,
         "EXP": 100,
         "BITS": 205,
-        "Location": ""
+        "Location": "Asuka West - South Badland, North Badland E",
+        "RegularAttack": "No Element",
+        "Technique": "Small Heal (Heal a small portion of HP)"
     },
     {
         "Id": 106,
@@ -1477,7 +1585,9 @@
         "DVXP": 20,
         "EXP": 102,
         "BITS": 200,
-        "Location": ""
+        "Location": "Asuka West - South Badland, North Badland E",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 107,
@@ -1514,7 +1624,9 @@
         "DVXP": 22,
         "EXP": 112,
         "BITS": 200,
-        "Location": ""
+        "Location": "Asuka Central - Plug Cape Asuka West - Bullet Valley, North Badland W",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 108,
@@ -1551,7 +1663,9 @@
         "DVXP": 44,
         "EXP": 220,
         "BITS": 400,
-        "Location": ""
+        "Location": "Boards 03, 04, 05, 06, 08, 09, 11, 13, 18, 20, 23, 24, 25, 26, 28, 29, 30",
+        "RegularAttack": "No Element",
+        "Technique": "Double Guard (Raises Defense)"
     },
     {
         "Id": 109,
@@ -1588,7 +1702,9 @@
         "DVXP": 45,
         "EXP": 223,
         "BITS": 440,
-        "Location": ""
+        "Location": "Amaterasu West - South Noise Desert, Mobius Desert, Mirage Tower",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 110,
@@ -1625,7 +1741,9 @@
         "DVXP": 22,
         "EXP": 109,
         "BITS": 220,
-        "Location": ""
+        "Location": "Asuka West - S Noise Desert, Mobius Desert, Mirage Tower",
+        "RegularAttack": "Thunder Element (Chance of Sleep)",
+        "Technique": "None"
     },
     {
         "Id": 111,
@@ -1662,7 +1780,9 @@
         "DVXP": 22,
         "EXP": 110,
         "BITS": 225,
-        "Location": ""
+        "Location": "Asuka West - Mobius Desert",
+        "RegularAttack": "No Element",
+        "Technique": "Thunderbolt (Magic-Thunder)"
     },
     {
         "Id": 112,
@@ -1699,7 +1819,9 @@
         "DVXP": 25,
         "EXP": 125,
         "BITS": 250,
-        "Location": ""
+        "Location": "Asuka West - Duct Rooms 01, 02, 03, 04, Operation Room, Secret Stairs",
+        "RegularAttack": "Machine Element (Chance of Freeze)",
+        "Technique": "None"
     },
     {
         "Id": 113,
@@ -1773,7 +1895,9 @@
         "DVXP": 23,
         "EXP": 115,
         "BITS": 235,
-        "Location": ""
+        "Location": "Asuka West - Dum Dum Factory",
+        "RegularAttack": "Thunder Element",
+        "Technique": "Thunder Gemini (Magic-Thunder)"
     },
     {
         "Id": 115,
@@ -1810,7 +1934,9 @@
         "DVXP": 23,
         "EXP": 117,
         "BITS": 230,
-        "Location": ""
+        "Location": "Asuka West - Dum Dum Factory",
+        "RegularAttack": "Machine Element",
+        "Technique": "Speed Up (Raises Speed)"
     },
     {
         "Id": 116,
@@ -1847,7 +1973,9 @@
         "DVXP": 24,
         "EXP": 123,
         "BITS": 250,
-        "Location": ""
+        "Location": "Asuka West - Dum Dum Factory",
+        "RegularAttack": "No Element",
+        "Technique": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)"
     },
     {
         "Id": 117,
@@ -1884,7 +2012,9 @@
         "DVXP": 24,
         "EXP": 120,
         "BITS": 200,
-        "Location": ""
+        "Location": "Asuka West - Dum Dum Factory, Operation Room, Secret Stairs",
+        "RegularAttack": "Thunder Elemental (Chance of Freeze)",
+        "Technique": "None"
     },
     {
         "Id": 118,
@@ -1921,7 +2051,9 @@
         "DVXP": 25,
         "EXP": 124,
         "BITS": 300,
-        "Location": ""
+        "Location": "Asuka West - Dum Dum Factory - Sewers",
+        "RegularAttack": "Dark Element",
+        "Technique": "None"
     },
     {
         "Id": 119,
@@ -1958,7 +2090,9 @@
         "DVXP": 26,
         "EXP": 129,
         "BITS": 190,
-        "Location": ""
+        "Location": "Asuka West - Dum Dum Factory - Sewers",
+        "RegularAttack": "Dark Element",
+        "Technique": "None"
     },
     {
         "Id": 120,
@@ -1995,7 +2129,9 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 470,
-        "Location": ""
+        "Location": "Amaterasu West - Dum Dum Factory - Sewers",
+        "RegularAttack": "Dark Element",
+        "Technique": "None"
     },
     {
         "Id": 121,
@@ -2032,7 +2168,9 @@
         "DVXP": 47,
         "EXP": 234,
         "BITS": 100,
-        "Location": ""
+        "Location": "Amaterasu West - Dum Dum Factory - Sewers",
+        "RegularAttack": "Dark Element",
+        "Technique": "None"
     },
     {
         "Id": 122,
@@ -2069,7 +2207,9 @@
         "DVXP": 27,
         "EXP": 135,
         "BITS": 270,
-        "Location": ""
+        "Location": "Asuka City - Water Tunnel",
+        "RegularAttack": "No Element",
+        "Technique": "Paralyze Shock (Magic, Chance of Freeze)"
     },
     {
         "Id": 123,
@@ -2106,7 +2246,9 @@
         "DVXP": 27,
         "EXP": 134,
         "BITS": 270,
-        "Location": ""
+        "Location": "Asuka City - Sewers - Water Tunnel",
+        "RegularAttack": "No Element",
+        "Technique": "Twin Missile (Magic-Machine)"
     },
     {
         "Id": 124,
@@ -2143,7 +2285,9 @@
         "DVXP": 46,
         "EXP": 233,
         "BITS": 450,
-        "Location": ""
+        "Location": "Amaterasu West - Dum Dum Factory",
+        "RegularAttack": "Machine Element",
+        "Technique": "None"
     },
     {
         "Id": 125,
@@ -2180,7 +2324,9 @@
         "DVXP": 29,
         "EXP": 145,
         "BITS": 320,
-        "Location": ""
+        "Location": "Tamer Only",
+        "RegularAttack": "No Element",
+        "Technique": "Lovely Charm (Decreases Enemy Strength)"
     },
     {
         "Id": 126,
@@ -2217,7 +2363,9 @@
         "DVXP": 30,
         "EXP": 152,
         "BITS": 300,
-        "Location": ""
+        "Location": "Tamer Only",
+        "RegularAttack": "Machine Element",
+        "Technique": "None"
     },
     {
         "Id": 127,
@@ -2254,7 +2402,9 @@
         "DVXP": 29,
         "EXP": 146,
         "BITS": 280,
-        "Location": ""
+        "Location": "Tamer Only",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 128,
@@ -2291,7 +2441,9 @@
         "DVXP": 31,
         "EXP": 155,
         "BITS": 330,
-        "Location": ""
+        "Location": "Asuka South - Jungle Grave (before Zanbamon), Catacombs, Catacomb Back Entrance",
+        "RegularAttack": "Dark Element",
+        "Technique": "None"
     },
     {
         "Id": 129,
@@ -2328,7 +2480,9 @@
         "DVXP": 36,
         "EXP": 225,
         "BITS": 770,
-        "Location": ""
+        "Location": "Optical Network - Bug Maze, Bug Maze Pit",
+        "RegularAttack": "No Element",
+        "Technique": "Confuse Nebula (Chance of Confusion)"
     },
     {
         "Id": 130,
@@ -2365,7 +2519,9 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 420,
-        "Location": ""
+        "Location": "Amaterasu East - Wire Forest West Amaterasu Central - Wire Forest Entrance, Plug Cape",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 131,
@@ -2402,7 +2558,9 @@
         "DVXP": 34,
         "EXP": 168,
         "BITS": 340,
-        "Location": ""
+        "Location": "Amaterasu East - Wire Forest East, Wind Prarie",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 132,
@@ -2439,7 +2597,9 @@
         "DVXP": 38,
         "EXP": 189,
         "BITS": 380,
-        "Location": ""
+        "Location": "Amaterasu East - Wire Forest West Amaterasu South - Phoenix Bay, Ether Jungle, South Cape",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 133,
@@ -2476,7 +2636,9 @@
         "DVXP": 35,
         "EXP": 176,
         "BITS": 350,
-        "Location": ""
+        "Location": "Amaterasu East - Protocol Forest, Protocol Ruins",
+        "RegularAttack": "No Element",
+        "Technique": "Dark Matter (Magic-Dark)"
     },
     {
         "Id": 134,
@@ -2513,7 +2675,9 @@
         "DVXP": 35,
         "EXP": 175,
         "BITS": 400,
-        "Location": ""
+        "Location": "Amaterasu East - Protocol Ruins",
+        "RegularAttack": "No Element",
+        "Technique": "Dark Fear (Magic-Dark)"
     },
     {
         "Id": 135,
@@ -2550,7 +2714,9 @@
         "DVXP": 45,
         "EXP": 225,
         "BITS": 450,
-        "Location": ""
+        "Location": "Amaterasu Central - Plug Cape Amaterasu West - North Badland W, Bullet Valley",
+        "RegularAttack": "No Element (Chance of Poison)",
+        "Technique": "None"
     },
     {
         "Id": 136,
@@ -2587,7 +2753,9 @@
         "DVXP": 34,
         "EXP": 172,
         "BITS": 320,
-        "Location": ""
+        "Location": "Amaterasu East - Kicking Forest, Protocol Forest",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 137,
@@ -2624,7 +2792,9 @@
         "DVXP": 36,
         "EXP": 183,
         "BITS": 400,
-        "Location": ""
+        "Location": "Amaterasu East - Wind Prairie, Kicking Forest (Cliff), Tyranno Valley",
+        "RegularAttack": "Machine Element",
+        "Technique": "None"
     },
     {
         "Id": 138,
@@ -2661,7 +2831,9 @@
         "DVXP": 36,
         "EXP": 179,
         "BITS": 360,
-        "Location": ""
+        "Location": "Amaterasu East - Kicking Forest (Cliff), Tyranno Valley",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 139,
@@ -2698,7 +2870,9 @@
         "DVXP": 45,
         "EXP": 225,
         "BITS": 420,
-        "Location": ""
+        "Location": "Magasta Undersea Base",
+        "RegularAttack": "No Element",
+        "Technique": "Hard Rain (Magic-Water)"
     },
     {
         "Id": 140,
@@ -2735,7 +2909,9 @@
         "DVXP": 37,
         "EXP": 185,
         "BITS": 370,
-        "Location": ""
+        "Location": "Seabeds 11, 14, 17",
+        "RegularAttack": "Water Element (Hits Twice)",
+        "Technique": "None"
     },
     {
         "Id": 141,
@@ -2772,7 +2948,9 @@
         "DVXP": 44,
         "EXP": 221,
         "BITS": 440,
-        "Location": ""
+        "Location": "Seabeds 13, 19",
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 142,
@@ -2809,7 +2987,9 @@
         "DVXP": 35,
         "EXP": 174,
         "BITS": 350,
-        "Location": ""
+        "Location": "Amaterasu South - Bulk Bridge, Bulk Swamp, Bios Swamp, Tranquil Swamp, Jungle Grave",
+        "RegularAttack": "Thunder Element",
+        "Technique": "None"
     },
     {
         "Id": 143,
@@ -2846,7 +3026,9 @@
         "DVXP": 34,
         "EXP": 170,
         "BITS": 340,
-        "Location": ""
+        "Location": "Amaterasu East - Divermon's Lake, Kicking Forest",
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 144,
@@ -2883,7 +3065,9 @@
         "DVXP": 36,
         "EXP": 180,
         "BITS": 360,
-        "Location": ""
+        "Location": "Amaterasu South - Jungle Grave",
+        "RegularAttack": "Fire Element",
+        "Technique": "Dark Fear (Magic-Dark)"
     },
     {
         "Id": 145,
@@ -2920,7 +3104,9 @@
         "DVXP": 39,
         "EXP": 196,
         "BITS": 390,
-        "Location": ""
+        "Location": "Amaterasu South - Catacombs",
+        "RegularAttack": "Dark Element",
+        "Technique": "None"
     },
     {
         "Id": 146,
@@ -2957,7 +3143,9 @@
         "DVXP": 36,
         "EXP": 180,
         "BITS": 360,
-        "Location": ""
+        "Location": "Amaterasu South - Phoenix Bay, Ether Jungle",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 147,
@@ -2994,7 +3182,9 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 450,
-        "Location": ""
+        "Location": "Asuka North - Kulon Mine Circuit Boards - 02, 05, 06, 07, 10, 12, 19, 21, 22",
+        "RegularAttack": "Machine Element",
+        "Technique": "None"
     },
     {
         "Id": 148,
@@ -3031,7 +3221,9 @@
         "DVXP": 41,
         "EXP": 204,
         "BITS": 400,
-        "Location": ""
+        "Location": "Asuka North - Boot Mountain, Fire Dungeon",
+        "RegularAttack": "Fire Element",
+        "Technique": "Flame Ball (Magic-Fire)"
     },
     {
         "Id": 149,
@@ -3068,7 +3260,9 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 410,
-        "Location": ""
+        "Location": "Asuka North - Boot Mountain",
+        "RegularAttack": "Fire Element",
+        "Technique": "Flame Lance (Magic-Fire)"
     },
     {
         "Id": 150,
@@ -3105,7 +3299,9 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 420,
-        "Location": ""
+        "Location": "Asuka North - Snow Mountain, Freeze Mountain",
+        "RegularAttack": "No Element",
+        "Technique": "Ice Blow (Magic-Ice)"
     },
     {
         "Id": 151,
@@ -3142,7 +3338,9 @@
         "DVXP": 41,
         "EXP": 206,
         "BITS": 420,
-        "Location": ""
+        "Location": "Asuka North - Snow Mountain, Freeze Mountain",
+        "RegularAttack": "Ice Element",
+        "Technique": "None"
     },
     {
         "Id": 152,
@@ -3179,7 +3377,9 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 420,
-        "Location": ""
+        "Location": "Asuka North - Lake of Ice",
+        "RegularAttack": "Ice Element",
+        "Technique": "None"
     },
     {
         "Id": 153,
@@ -3216,7 +3416,9 @@
         "DVXP": 46,
         "EXP": 230,
         "BITS": 460,
-        "Location": ""
+        "Location": "Amaterasu West - Duct Rooms 01, 02, 03, 04, Operation Room, Secret Stairs",
+        "RegularAttack": "Machine Element; Counter (Physical)",
+        "Technique": "None"
     },
     {
         "Id": 154,
@@ -3253,7 +3455,9 @@
         "DVXP": 43,
         "EXP": 218,
         "BITS": 430,
-        "Location": ""
+        "Location": "Amaterasu North - Freeze Mountain, Snow Mountain",
+        "RegularAttack": "Ice Element",
+        "Technique": "None"
     },
     {
         "Id": 155,
@@ -3290,7 +3494,9 @@
         "DVXP": 49,
         "EXP": 244,
         "BITS": 490,
-        "Location": ""
+        "Location": "Amaterasu North - Fire Dungeon",
+        "RegularAttack": "Fire Element",
+        "Technique": "None"
     },
     {
         "Id": 156,
@@ -3327,7 +3533,9 @@
         "DVXP": 43,
         "EXP": 217,
         "BITS": 430,
-        "Location": ""
+        "Location": "Asuka North - Fire Dungeon",
+        "RegularAttack": "No Element",
+        "Technique": "Flame Breath (Magic-Fire)"
     },
     {
         "Id": 157,
@@ -3364,7 +3572,9 @@
         "DVXP": 43,
         "EXP": 214,
         "BITS": 390,
-        "Location": ""
+        "Location": "Asuka North - Dark Dungeon",
+        "RegularAttack": "No Element",
+        "Technique": "Dark Elemental (Magic-Dark)"
     },
     {
         "Id": 158,
@@ -3438,7 +3648,9 @@
         "DVXP": 44,
         "EXP": 221,
         "BITS": 470,
-        "Location": ""
+        "Location": "Magasta Undersea Base",
+        "RegularAttack": "Machine Element",
+        "Technique": "None"
     },
     {
         "Id": 160,
@@ -3475,7 +3687,9 @@
         "DVXP": 44,
         "EXP": 223,
         "BITS": 460,
-        "Location": ""
+        "Location": "Magasta Undersea Base",
+        "RegularAttack": "No Element",
+        "Technique": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)"
     },
     {
         "Id": 161,
@@ -3512,7 +3726,9 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 430,
-        "Location": ""
+        "Location": "Magasta Undersea Base",
+        "RegularAttack": "Water Element",
+        "Technique": "None"
     },
     {
         "Id": 162,
@@ -3549,7 +3765,9 @@
         "DVXP": 43,
         "EXP": 216,
         "BITS": 480,
-        "Location": ""
+        "Location": "Magasta Undersea Base",
+        "RegularAttack": "No Element",
+        "Technique": "Grand Wave (Magic-Water)"
     },
     {
         "Id": 163,
@@ -3586,7 +3804,9 @@
         "DVXP": 44,
         "EXP": 220,
         "BITS": 450,
-        "Location": ""
+        "Location": "Amaterasu Central - Central Park, Shell Beach",
+        "RegularAttack": "No Element",
+        "Technique": "Dark Elemental (Magic-Dark)"
     },
     {
         "Id": 164,
@@ -3623,7 +3843,9 @@
         "DVXP": 44,
         "EXP": 222,
         "BITS": 610,
-        "Location": ""
+        "Location": "Amaterasu Central - Central Park, Wire Forest Entrance",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 165,
@@ -3660,7 +3882,9 @@
         "DVXP": 54,
         "EXP": 273,
         "BITS": 520,
-        "Location": ""
+        "Location": "Tamer Only",
+        "RegularAttack": "Machine Element",
+        "Technique": "None"
     },
     {
         "Id": 166,
@@ -3697,7 +3921,9 @@
         "DVXP": 49,
         "EXP": 247,
         "BITS": 490,
-        "Location": ""
+        "Location": "Amaterasu North - Ice Dungeon",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 167,
@@ -3771,7 +3997,9 @@
         "DVXP": 45,
         "EXP": 224,
         "BITS": 440,
-        "Location": ""
+        "Location": "Amaterasu West - North Badland W, Bullet Valley",
+        "RegularAttack": "No Element",
+        "Technique": "None"
     },
     {
         "Id": 169,
@@ -3808,7 +4036,9 @@
         "DVXP": 44,
         "EXP": 222,
         "BITS": 460,
-        "Location": ""
+        "Location": "Amaterasu West - North Badland E, South Badland",
+        "RegularAttack": "No Element",
+        "Technique": "Mega Heal (Heal a large portion of HP)"
     },
     {
         "Id": 170,
@@ -3845,7 +4075,9 @@
         "DVXP": 45,
         "EXP": 226,
         "BITS": 500,
-        "Location": ""
+        "Location": "Amaterasu West - North Badland E, South Badland",
+        "RegularAttack": "No Element",
+        "Technique": "Full Heal (Heals All HP)"
     },
     {
         "Id": 171,
@@ -3882,7 +4114,9 @@
         "DVXP": 45,
         "EXP": 227,
         "BITS": 440,
-        "Location": ""
+        "Location": "Amaterasu West - Pelche Oasis, Noise Desert",
+        "RegularAttack": "No Element",
+        "Technique": "Slyph Storm (Magic-Wind)"
     },
     {
         "Id": 172,
@@ -3919,7 +4153,9 @@
         "DVXP": 55,
         "EXP": 276,
         "BITS": 530,
-        "Location": ""
+        "Location": "Spy Satellite - Gunslinger 1F",
+        "RegularAttack": "No Element",
+        "Technique": "Darkness Chaos (Magic-Dark)"
     },
     {
         "Id": 173,
@@ -3956,7 +4192,9 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 440,
-        "Location": ""
+        "Location": "Amaterasu North - Boot Mountain, Fire Dungeon",
+        "RegularAttack": "Fire Element",
+        "Technique": "None"
     },
     {
         "Id": 174,
@@ -3993,7 +4231,9 @@
         "DVXP": 48,
         "EXP": 243,
         "BITS": 500,
-        "Location": ""
+        "Location": "Amaterasu North - Kulon Mine, Kulon Pit",
+        "RegularAttack": "Thunder Element; Counter (Physical)",
+        "Technique": "None"
     },
     {
         "Id": 175,
@@ -4030,7 +4270,9 @@
         "DVXP": 56,
         "EXP": 280,
         "BITS": 560,
-        "Location": ""
+        "Location": "Tamer Only",
+        "RegularAttack": "Dark Element",
+        "Technique": "None"
     },
     {
         "Id": 176,
@@ -4067,7 +4309,9 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 500,
-        "Location": ""
+        "Location": "Amaterasu West - Dum Dum Factory",
+        "RegularAttack": "Machine Element (Hits Twice)",
+        "Technique": "None"
     },
     {
         "Id": 177,
@@ -4104,7 +4348,9 @@
         "DVXP": 55,
         "EXP": 277,
         "BITS": 530,
-        "Location": ""
+        "Location": "Spy Satellite - Gunslinger 1F",
+        "RegularAttack": "No Element",
+        "Technique": "Darkness Chaos (Magic-Dark)"
     },
     {
         "Id": 178,
@@ -4141,7 +4387,9 @@
         "DVXP": 56,
         "EXP": 282,
         "BITS": 550,
-        "Location": ""
+        "Location": "Spy Satellite - Gunslinger 1F",
+        "RegularAttack": "No Element",
+        "Technique": "Darkness Chaos (Magic-Dark)"
     },
     {
         "Id": 179,
@@ -4178,7 +4426,9 @@
         "DVXP": 49,
         "EXP": 246,
         "BITS": 490,
-        "Location": ""
+        "Location": "Amaterasu North - Dark Dungeon",
+        "RegularAttack": "No Element",
+        "Technique": "Darkness Chaos (Magic-Dark)"
     },
     {
         "Id": 180,
@@ -4215,7 +4465,9 @@
         "DVXP": 55,
         "EXP": 277,
         "BITS": 540,
-        "Location": ""
+        "Location": "Tamer Only",
+        "RegularAttack": "Fire Element",
+        "Technique": "Darkness Chaos (Magic-Dark)"
     },
     {
         "Id": 181,
@@ -4252,7 +4504,9 @@
         "DVXP": 56,
         "EXP": 279,
         "BITS": 600,
-        "Location": ""
+        "Location": "Spy Satellite - Gunslinger 2F",
+        "RegularAttack": "Dark Elemental",
+        "Technique": "None"
     },
     {
         "Id": 182,
@@ -4881,7 +5135,9 @@
         "DVXP": 42,
         "EXP": 210,
         "BITS": 430,
-        "Location": ""
+        "Location": "Asuka North - Kulon Mine, Kulon Pit",
+        "RegularAttack": "No element",
+        "Technique": "None"
     },
     {
         "Id": 199,
@@ -5695,7 +5951,9 @@
         "DVXP": 48,
         "EXP": 243,
         "BITS": 480,
-        "Location": ""
+        "Location": "Amaterasu North - Boot Mountain, Fire Dungeon",
+        "RegularAttack": "Fire Element",
+        "Technique": "Flame Sphere (Magic-Fire)"
     },
     {
         "Id": 221,
@@ -5880,7 +6138,9 @@
         "DVXP": 53,
         "EXP": 530,
         "BITS": 1060,
-        "Location": ""
+        "Location": "Tamer Only",
+        "RegularAttack": "No Element",
+        "Technique": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)"
     },
     {
         "Id": 515,
