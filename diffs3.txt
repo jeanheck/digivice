@@ -1,0 +1,10 @@
+--- STEP 5 ---
+0x04B62E: 0A -> 0B (Bit: 0x01)
+0x04B632: 0B -> 0A (Bit: 0x01)
+0x04B63B: 00 -> 80 (Bit: 0x80)
+--- STEP 9 ---
+0x04BBAC: 9C -> 9D (Bit: 0x01)
+0x04BBAD: FA -> FE (Bit: 0x04)
+--- STEP 12 ---
+0x04B7D8: 81 -> 80 (Bit: 0x01)
+0x04B820: 81 -> 80 (Bit: 0x01)

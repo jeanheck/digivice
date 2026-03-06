@@ -6,6 +6,11 @@ const store = useGameStore()
 const mainQuest = computed(() => store.gameState?.journal?.mainQuest)
 const sideQuests = computed(() => store.gameState?.journal?.sideQuests || [])
 
+const currentMainQuestStep = computed(() => {
+  if (!mainQuest.value || !mainQuest.value.steps) return null
+  return mainQuest.value.steps.find((s: any) => !s.isCompleted) || null
+})
+
 const isSideQuestsExpanded = ref(true)
 
 const emit = defineEmits(['quest-click'])
@@ -54,14 +59,17 @@ const isQuestNew = (quest: any) => {
       <section>
         <h4 class="text-xs text-orange-400 font-bold mb-2 uppercase tracking-wide border-b border-orange-900 pb-1">Main Quest</h4>
         
-        <div v-if="mainQuest" 
+        <div v-if="mainQuest && mainQuest.id !== 0" 
              @click="onQuestClick(mainQuest)"
              class="p-2 rounded border border-gray-600 bg-gray-800/50 hover:bg-gray-700/60 cursor-pointer transition-colors group">
           <div class="flex items-center justify-between mb-1">
             <span class="text-white font-bold text-sm truncate group-hover:text-orange-300 transition-colors">{{ mainQuest.title }}</span>
             <span v-if="isQuestDone(mainQuest)" class="text-green-400 text-xs">✔</span>
           </div>
-          <p class="text-gray-400 text-xs line-clamp-2 leading-tight">{{ mainQuest.description }}</p>
+          <p class="text-gray-400 text-xs line-clamp-2 leading-tight">
+             <span v-if="currentMainQuestStep" class="text-orange-300 font-bold mr-1">[{{ currentMainQuestStep.number }}]</span>
+             {{ currentMainQuestStep ? currentMainQuestStep.description : mainQuest.description }}
+          </p>
         </div>
         
         <div v-else class="p-2 rounded border border-gray-700 border-dashed text-center opacity-60">

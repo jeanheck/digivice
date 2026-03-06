@@ -6,6 +6,7 @@ using Backend.Constants;
 using Backend.Constants.Quests;
 using Backend.Constants.Quests.SideQuests;
 using Backend.Models.Quests;
+using Backend.DetailedQuests;
 using Backend.DetailedQuests.SideQuests;
 
 namespace Backend.Services
@@ -69,13 +70,10 @@ namespace Backend.Services
         {
             var journal = new Journal();
 
-            // --- Main Quest Placeholder ---
-            journal.MainQuest = new MainQuest
-            {
-                Id = 0,
-                Title = "Unknown Objective",
-                Description = "Awaiting destination."
-            };
+            // --- Main Quest ---
+            var mainQuest = MainQuestFactory.Get();
+            ApplyQuestSteps(mainQuest, MainQuestAddress.Steps);
+            journal.MainQuest = mainQuest;
 
             // --- 1. Folder Bag Side Quest ---
             var folderBag = FolderBag.Get();
