@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Backend.Constants.Quests;
+using Backend.Models.Quests;
 
 namespace Backend.Constants.Quests.SideQuests
 {
@@ -7,7 +7,7 @@ namespace Backend.Constants.Quests.SideQuests
     {
         public static readonly List<QuestAddressStep> Steps = new()
         {
-            new QuestAddressStep { Id = 1, Address = 0x00048F42 } // Step 1: Actually having the Folder Bag
+            new QuestAddressStep { Id = 1, Address = "0x00048F42" } // Step 1: Actually having the Folder Bag
         };
     }
 }

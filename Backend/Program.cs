@@ -30,6 +30,7 @@ try
     builder.Services.AddSingleton<PlayerStateService>();
     builder.Services.AddSingleton<PartyStateService>();
     builder.Services.AddSingleton<ItemStateService>();
+    builder.Services.AddSingleton<JournalStateService>();
     builder.Services.AddSingleton<GameStateService>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();
     builder.Services.AddSingleton<DebugMonitor>();

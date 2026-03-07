@@ -10,6 +10,7 @@ namespace Backend.Services
         private PartyAddresses? _partyAddresses;
         private Dictionary<string, string>? _importantItemsAddresses;
         private Dictionary<string, string>? _consumableItemsAddresses;
+        private Dictionary<string, QuestAddresses> _sideQuestsAddresses = new();
 
         public GameDatabase()
         {
@@ -79,6 +80,27 @@ namespace Backend.Services
             _consumableItemsAddresses = JsonSerializer.Deserialize<Dictionary<string, string>>(json) ?? new Dictionary<string, string>();
 
             return _consumableItemsAddresses;
+        }
+
+        public QuestAddresses GetSideQuestAddresses(string questName)
+        {
+            if (_sideQuestsAddresses.TryGetValue(questName, out var cachedAddresses))
+            {
+                return cachedAddresses;
+            }
+
+            var path = Path.Combine(_dataDirectory, "SideQuests", $"{questName}.json");
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException($"Database file not found: {path}");
+            }
+
+            var json = File.ReadAllText(path);
+            var parsed = JsonSerializer.Deserialize<QuestAddresses>(json) ?? new QuestAddresses();
+
+            _sideQuestsAddresses[questName] = parsed;
+
+            return parsed;
         }
     }
 }

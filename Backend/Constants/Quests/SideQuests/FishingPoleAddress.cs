@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Backend.Constants.Quests;
+using Backend.Models.Quests;
 
 namespace Backend.Constants.Quests.SideQuests
 {
@@ -15,9 +15,9 @@ namespace Backend.Constants.Quests.SideQuests
 
         public static readonly List<QuestAddressStep> Steps = new()
         {
-            new QuestAddressStep { Id = 1, Address = 0x04B3B0, BitMask = 0x02 },  // bit 1: Talk to Old Man at Beach
-            new QuestAddressStep { Id = 2, Address = 0x04B3B1, BitMask = 0x10 },  // bit 4: Help Divermon at Divermon's Lake
-            new QuestAddressStep { Id = 3, Address = 0x048DB5, BitMask = null },   // legacy: byte == 1 → Fishing Pole obtained
+            new QuestAddressStep { Id = 1, Address = "0x04B3B0", BitMask = "0x02" },  // bit 1: Talk to Old Man at Beach
+            new QuestAddressStep { Id = 2, Address = "0x04B3B1", BitMask = "0x10" },  // bit 4: Help Divermon at Divermon's Lake
+            new QuestAddressStep { Id = 3, Address = "0x048DB5", BitMask = null },   // legacy: byte == 1 → Fishing Pole obtained
         };
     }
 }

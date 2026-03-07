@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Backend.Interfaces;
 using Backend.Models.Addresses;
 using Backend.Models.Resources;
+using Backend.Models.Quests;
 
 namespace Backend.Services
 {
@@ -92,6 +93,27 @@ namespace Backend.Services
 
                 var bytes = _memoryReader.ReadBytes(addressStr, 1);
                 resource[kvp.Key] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
+            }
+            return resource;
+        }
+
+        public Dictionary<int, byte> ReadQuestSteps(QuestAddresses addresses)
+        {
+            return ReadMainQuestSteps(addresses.Steps);
+        }
+
+        public Dictionary<int, byte> ReadMainQuestSteps(List<QuestAddressStep> steps)
+        {
+            var resource = new Dictionary<int, byte>();
+            foreach (var step in steps)
+            {
+                if (string.IsNullOrEmpty(step.Address)) continue;
+
+                int addressStr = Convert.ToInt32(step.Address, 16);
+                if (addressStr == 0) continue;
+
+                var bytes = _memoryReader.ReadBytes(addressStr, 1);
+                resource[step.Id] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
             }
             return resource;
         }
