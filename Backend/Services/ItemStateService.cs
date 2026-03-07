@@ -20,7 +20,13 @@ namespace Backend.Services
             var resource = _reader.ReadImportantItems(addresses);
 
             // Important items are boolean flags (0 or 1). We convert byte == 1 to True.
-            return resource.ToDictionary(kvp => kvp.Key, kvp => kvp.Value == 1);
+            return new Dictionary<string, bool>
+            {
+                { "Folderbag", resource.Folderbag == 1 },
+                { "TreeBoots", resource.TreeBoots == 1 },
+                { "FishingPole", resource.FishingPole == 1 },
+                { "RedSnapper", resource.RedSnapper == 1 }
+            };
         }
 
         public Dictionary<string, int> GetConsumableItems()
@@ -29,7 +35,12 @@ namespace Backend.Services
             var resource = _reader.ReadConsumableItems(addresses);
 
             // Consumable items map raw byte quantities to integers
-            return resource.ToDictionary(kvp => kvp.Key, kvp => (int)kvp.Value);
+            return new Dictionary<string, int>
+            {
+                { "PowerCharge", resource.PowerCharge },
+                { "SpiderWeb", resource.SpiderWeb },
+                { "BambooSpear", resource.BambooSpear }
+            };
         }
     }
 }

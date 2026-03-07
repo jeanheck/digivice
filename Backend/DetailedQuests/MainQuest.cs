@@ -91,8 +91,8 @@ namespace Backend.DetailedQuests
             return new Backend.Models.Quests.MainQuest
             {
                 Id = 1,
-                Title = "The greatest Tamer!",
-                Description = "Follow your path to become the greatest tamer of the Digital World!",
+                Title = "The greatest of them all!",
+                Description = "Become the greatest tamer of the Digital World!",
                 Steps = Steps
             };
         }

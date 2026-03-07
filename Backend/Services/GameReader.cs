@@ -69,33 +69,36 @@ namespace Backend.Services
             return resource;
         }
 
-        public Dictionary<string, byte> ReadImportantItems(Dictionary<string, string> addresses)
+        private byte ReadByteSafe(string? hexAddress)
         {
-            var resource = new Dictionary<string, byte>();
-            foreach (var kvp in addresses)
-            {
-                int addressStr = Convert.ToInt32(kvp.Value, 16);
-                if (addressStr == 0) continue;
-
-                var bytes = _memoryReader.ReadBytes(addressStr, 1);
-                resource[kvp.Key] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
-            }
-            return resource;
+            if (string.IsNullOrEmpty(hexAddress)) return 0;
+            int address = Convert.ToInt32(hexAddress, 16);
+            if (address == 0) return 0;
+            var bytes = _memoryReader.ReadBytes(address, 1);
+            return (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
         }
 
-        public Dictionary<string, byte> ReadConsumableItems(Dictionary<string, string> addresses)
+        public ImportantItemsResource ReadImportantItems(ImportantItemsAddresses addresses)
         {
-            var resource = new Dictionary<string, byte>();
-            foreach (var kvp in addresses)
+            return new ImportantItemsResource
             {
-                int addressStr = Convert.ToInt32(kvp.Value, 16);
-                if (addressStr == 0) continue;
-
-                var bytes = _memoryReader.ReadBytes(addressStr, 1);
-                resource[kvp.Key] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
-            }
-            return resource;
+                Folderbag = ReadByteSafe(addresses.Folderbag),
+                TreeBoots = ReadByteSafe(addresses.TreeBoots),
+                FishingPole = ReadByteSafe(addresses.FishingPole),
+                RedSnapper = ReadByteSafe(addresses.RedSnapper)
+            };
         }
+
+        public ConsumableItemsResource ReadConsumableItems(ConsumableItemsAddresses addresses)
+        {
+            return new ConsumableItemsResource
+            {
+                PowerCharge = ReadByteSafe(addresses.PowerCharge),
+                SpiderWeb = ReadByteSafe(addresses.SpiderWeb),
+                BambooSpear = ReadByteSafe(addresses.BambooSpear)
+            };
+        }
+
 
         public Dictionary<int, byte> ReadQuestSteps(QuestAddresses addresses)
         {

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Backend.Models.Quests;
 
 namespace Backend.Models.Addresses

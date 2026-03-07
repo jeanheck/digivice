@@ -8,8 +8,8 @@ namespace Backend.Services
         private readonly string _dataDirectory;
         private PlayerAddresses? _playerAddresses;
         private PartyAddresses? _partyAddresses;
-        private Dictionary<string, string>? _importantItemsAddresses;
-        private Dictionary<string, string>? _consumableItemsAddresses;
+        private ImportantItemsAddresses? _importantItemsAddresses;
+        private ConsumableItemsAddresses? _consumableItemsAddresses;
         private Dictionary<string, QuestAddresses> _sideQuestsAddresses = new();
 
         public GameDatabase()
@@ -50,7 +50,7 @@ namespace Backend.Services
             return _partyAddresses;
         }
 
-        public Dictionary<string, string> GetImportantItemsAddresses()
+        public ImportantItemsAddresses GetImportantItemsAddresses()
         {
             if (_importantItemsAddresses != null) return _importantItemsAddresses;
 
@@ -61,12 +61,12 @@ namespace Backend.Services
             }
 
             var json = File.ReadAllText(path);
-            _importantItemsAddresses = JsonSerializer.Deserialize<Dictionary<string, string>>(json) ?? new Dictionary<string, string>();
+            _importantItemsAddresses = JsonSerializer.Deserialize<ImportantItemsAddresses>(json) ?? new ImportantItemsAddresses();
 
             return _importantItemsAddresses;
         }
 
-        public Dictionary<string, string> GetConsumableItemsAddresses()
+        public ConsumableItemsAddresses GetConsumableItemsAddresses()
         {
             if (_consumableItemsAddresses != null) return _consumableItemsAddresses;
 
@@ -77,7 +77,7 @@ namespace Backend.Services
             }
 
             var json = File.ReadAllText(path);
-            _consumableItemsAddresses = JsonSerializer.Deserialize<Dictionary<string, string>>(json) ?? new Dictionary<string, string>();
+            _consumableItemsAddresses = JsonSerializer.Deserialize<ConsumableItemsAddresses>(json) ?? new ConsumableItemsAddresses();
 
             return _consumableItemsAddresses;
         }
