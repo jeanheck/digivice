@@ -16,12 +16,14 @@ namespace Backend.Services
         private readonly IMemoryReaderService _memoryReader;
         private readonly PlayerStateService _playerStateService;
         private readonly PartyStateService _partyStateService;
+        private readonly ItemStateService _itemStateService;
 
-        public GameStateService(IMemoryReaderService memoryReader, PlayerStateService playerStateService, PartyStateService partyStateService)
+        public GameStateService(IMemoryReaderService memoryReader, PlayerStateService playerStateService, PartyStateService partyStateService, ItemStateService itemStateService)
         {
             _memoryReader = memoryReader;
             _playerStateService = playerStateService;
             _partyStateService = partyStateService;
+            _itemStateService = itemStateService;
         }
 
         public State GetState()
@@ -30,24 +32,14 @@ namespace Backend.Services
             {
                 Player = _playerStateService.GetPlayer(),
                 Party = _partyStateService.GetParty(),
-                ImportantItems = GetImportantItems(),
+                ImportantItems = _itemStateService.GetImportantItems(),
                 Journal = GetJournal()
             };
         }
 
 
 
-        private Dictionary<string, bool> GetImportantItems()
-        {
-            var items = new Dictionary<string, bool>();
-            foreach (var kvp in ImportantItemsAddresses.Items)
-            {
-                // Key items memory flags are usually 1 byte booleans (0 or 1)
-                var bytes = _memoryReader.ReadBytes(kvp.Value, 1);
-                items[kvp.Key] = bytes != null && bytes.Length > 0 && bytes[0] == 1;
-            }
-            return items;
-        }
+
 
         private Journal GetJournal()
         {
@@ -64,7 +56,7 @@ namespace Backend.Services
             journal.SideQuests.Add(folderBag);
 
             // Check if the player owns the Folder Bag (prerequisite for next quests)
-            var importantItems = GetImportantItems();
+            var importantItems = _itemStateService.GetImportantItems();
             bool hasFolderBag = importantItems.ContainsKey("FolderBag") && importantItems["FolderBag"];
 
             // --- 2. Tree Boots Side Quest ---
@@ -120,21 +112,7 @@ namespace Backend.Services
             }
         }
 
-        /// <summary>
-        /// Reads consumable item quantities from RAM.
-        /// Returns a dictionary of item key → quantity owned.
-        /// </summary>
-        private Dictionary<string, int> GetConsumableItems()
-        {
-            var items = new Dictionary<string, int>();
-            foreach (var kvp in ConsumableItemsAddresses.Items)
-            {
-                if (kvp.Value == 0x00000000) continue; // Skip mocked addresses
-                var bytes = _memoryReader.ReadBytes(kvp.Value, 1);
-                items[kvp.Key] = (bytes != null && bytes.Length > 0) ? bytes[0] : 0;
-            }
-            return items;
-        }
+
 
         /// <summary>
         /// Checks step-level prerequisites by looking up item ownership.
@@ -144,7 +122,7 @@ namespace Backend.Services
         /// </summary>
         private void ApplyStepPrerequisites(Quest quest, Dictionary<string, bool> importantItems)
         {
-            var consumables = GetConsumableItems();
+            var consumables = _itemStateService.GetConsumableItems();
 
             foreach (var step in quest.Steps)
             {

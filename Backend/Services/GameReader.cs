@@ -67,5 +67,33 @@ namespace Backend.Services
 
             return resource;
         }
+
+        public Dictionary<string, byte> ReadImportantItems(Dictionary<string, string> addresses)
+        {
+            var resource = new Dictionary<string, byte>();
+            foreach (var kvp in addresses)
+            {
+                int addressStr = Convert.ToInt32(kvp.Value, 16);
+                if (addressStr == 0) continue;
+
+                var bytes = _memoryReader.ReadBytes(addressStr, 1);
+                resource[kvp.Key] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
+            }
+            return resource;
+        }
+
+        public Dictionary<string, byte> ReadConsumableItems(Dictionary<string, string> addresses)
+        {
+            var resource = new Dictionary<string, byte>();
+            foreach (var kvp in addresses)
+            {
+                int addressStr = Convert.ToInt32(kvp.Value, 16);
+                if (addressStr == 0) continue;
+
+                var bytes = _memoryReader.ReadBytes(addressStr, 1);
+                resource[kvp.Key] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
+            }
+            return resource;
+        }
     }
 }
