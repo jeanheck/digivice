@@ -4,7 +4,7 @@ This document outlines the 5 final implementation phases before the first public
 
 ---
 
-## Phase 1 — Digivolution Skills
+## Phase 1 — Digivolution Skills - ✅ Completed
 
 Implement the **Techniques** system for each Digivolution.
 
@@ -17,7 +17,7 @@ Implement the **Techniques** system for each Digivolution.
 
 ---
 
-## Phase 2 — Final Milestones Configuration
+## Phase 2 — Final Milestones Configuration - ✅ Completed
 
 Define and configure the complete set of **Milestones** that will be available at launch.
 
@@ -28,7 +28,7 @@ Define and configure the complete set of **Milestones** that will be available a
 
 ---
 
-## Phase 3 — Quest Configuration (Side Quests + Main Quest)
+## Phase 3 — Quest Configuration (Side Quests + Main Quest) - ✅ Completed
 
 Finalize the complete quest roster for the first release.
 

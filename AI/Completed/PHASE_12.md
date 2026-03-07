@@ -34,13 +34,13 @@ This document defines the definitive feature scope for the first version of the 
 - [x] Side Quest: The Folder Bag — fully functional
 - [x] Side Quest: The Tree Boots — fully functional
 - [x] Side Quest: The Fishing Pole — fully functional with step prerequisites
-- [ ] Main Quest: cover story up to reaching the next sector (after Bulbmon fight)
+- [x] Main Quest: cover story up to reaching the next sector (after Bulbmon fight)
 
 ### 6. Area Information
-- [ ] Panel showing current map name
-- [ ] List of enemies the player can encounter in the current area
-- [ ] Must work correctly for the first sector of the game
-- [ ] Panel integrated into the main layout (`App.vue`)
+- [x] Panel showing current map name
+- [x] List of enemies the player can encounter in the current area
+- [x] Must work correctly for the first sector of the game
+- [x] Panel integrated into the main layout (`App.vue`)
 
 ---
 
@@ -52,7 +52,5 @@ This document defines the definitive feature scope for the first version of the 
 - Equipment display
 - Tamer info (name + bits)
 - Quest Journal (Folder Bag, Tree Boots, Fishing Pole with step prerequisites and real-time updates)
-
-### ❌ Pending
-- **Main Quest** — currently a placeholder; needs story progression tracking up to Bulbmon fight
-- **Area Information** — component exists (`AreaInformationPanel.vue`) but is NOT integrated into `App.vue`; enemies list is hidden (`v-if="false"`) and hardcoded; needs data system for area→enemies mapping
+- **Main Quest** — complete story progression tracking up to Bulbmon fight
+- **Area Information** — component integrated with `App.vue` filtering dynamically using map mapping
