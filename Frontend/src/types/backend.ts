@@ -54,8 +54,9 @@ export interface Party {
 }
 
 export interface Player {
-    name: string
-    bits: number
+    name: string;
+    bits: number;
+    mapId: string;
 }
 
 export interface Requisite {
@@ -87,9 +88,8 @@ export interface Journal {
 }
 
 export interface State {
-    currentLocation: string
-    player: Player | null
-    party: Party | null
-    importantItems?: Record<string, boolean>
-    journal?: Journal | null
+    player: Player | null;
+    party: Party | null;
+    importantItems: Record<string, boolean>;
+    journal: Journal | null;
 }

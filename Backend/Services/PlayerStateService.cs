@@ -25,7 +25,8 @@ namespace Backend.Services
             var player = new Player
             {
                 Name = TextDecoder.DecodeName(resource.NameBytes),
-                Bits = resource.Bits
+                Bits = resource.Bits,
+                MapId = resource.MapId.ToString("X4")
             };
 
             return player;

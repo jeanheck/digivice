@@ -105,8 +105,8 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateLocation(location: string) {
-        if (gameState.value) {
-            gameState.value.currentLocation = location
+        if (gameState.value?.player) {
+            gameState.value.player.mapId = location
         }
     }
 

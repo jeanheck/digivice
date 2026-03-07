@@ -8,29 +8,37 @@ import EnemyDetailsModal from './EnemyDetailsModal.vue'
 const store = useGameStore()
 const locations = locationsData as Record<string, string>
 
+const currentLocationStr = computed(() => {
+    return store.gameState?.player?.mapId
+})
+
 const currentLocation = computed(() => {
-    const loc = store.gameState?.currentLocation
+    const loc = currentLocationStr.value
     if (!loc || loc === 'Unknown') return 'Unknown Area'
     
     return locations[loc] ? locations[loc] : `Unknown Zone ${loc}`
 })
 
 const areaEnemies = computed(() => {
-    const locName = currentLocation.value
-    if (locName.startsWith('Unknown')) return []
+    // We format the raw map id (e.g. 0200 -> 0x0200) to match the JSON's Location Array
+    const rawLoc = currentLocationStr.value
+    if (!rawLoc || rawLoc === 'Unknown') return []
+    
+    const formattedLoc = `0x${rawLoc}`
 
     return enemiesData.filter((enemy: any) => {
         if (!enemy.Location || !Array.isArray(enemy.Location)) return false;
         
-        return enemy.Location.includes(locName)
+        return enemy.Location.includes(formattedLoc)
     })
 })
 
 const currentMapImage = computed(() => {
-    const locName = currentLocation.value
-    if (locName.startsWith('Unknown')) return null
+    const rawLoc = currentLocationStr.value
+    if (!rawLoc || rawLoc === 'Unknown') return null
     try {
-        return new URL(`../../assets/maps/${locName}.webp`, import.meta.url).href
+        // Map images use the natural MapId value (e.g. 0200.webp)
+        return new URL(`../../assets/maps/${rawLoc}.webp`, import.meta.url).href
     } catch {
         return null
     }

@@ -60,9 +60,10 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         }
 
         // 0. Compare Location
-        if (newState.CurrentLocation != _previousState.CurrentLocation)
+        if (newState.Player != null && _previousState.Player != null &&
+            newState.Player.MapId != _previousState.Player.MapId)
         {
-            var ev = new LocationChangedEvent(newState.CurrentLocation);
+            var ev = new LocationChangedEvent(newState.Player.MapId);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
@@ -82,54 +83,67 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         }
 
         // 2. Compare Party
-        bool partyChanged = false;
-        var newSlots = newState.Party?.Slots ?? new List<Digimon?>();
-        var oldSlots = _previousState.Party?.Slots ?? new List<Digimon?>();
-
-        // Se a lista mudou de tamanho por algum motivo (embora sejam sempre 3 slots)
-        if (newSlots.Count != oldSlots.Count)
+        if (newState.Party != null && _previousState.Party != null)
         {
-            partyChanged = true;
-        }
-        else
-        {
-            for (int i = 0; i < newSlots.Count; i++)
+            if (!newState.Party.Equals(_previousState.Party))
             {
-                var newDigi = newSlots[i];
-                var oldDigi = oldSlots[i];
+                // We could dispatch granular events here if we wanted, but for now, if ANY
+                // Digimon sub-property changes anywhere in the party roster, we can trigger
+                // a PartySlotsChangedEvent to safely sync the frontend, or trigger the granular
+                // individual events by walking the slots again.
 
-                // Check for new digimon injected into a slot or removed
-                if ((newDigi == null && oldDigi != null) || (newDigi != null && oldDigi == null))
+                // To maintain granular event dispatching:
+                var newSlots = newState.Party.Slots;
+                var oldSlots = _previousState.Party.Slots;
+
+                bool partyRosterChanged = false;
+                if (newSlots.Count != oldSlots.Count)
                 {
-                    partyChanged = true;
-                    break;
+                    partyRosterChanged = true;
+                }
+                else
+                {
+                    for (int i = 0; i < newSlots.Count; i++)
+                    {
+                        var newDigi = newSlots[i];
+                        var oldDigi = oldSlots[i];
+
+                        if ((newDigi == null && oldDigi != null) || (newDigi != null && oldDigi == null) ||
+                            (newDigi != null && oldDigi != null && newDigi.BasicInfo.Name != oldDigi.BasicInfo.Name))
+                        {
+                            partyRosterChanged = true;
+                            break;
+                        }
+                    }
                 }
 
-                if (newDigi != null && oldDigi != null && newDigi.BasicInfo.Name != oldDigi.BasicInfo.Name)
+                if (partyRosterChanged)
                 {
-                    partyChanged = true;
-                    break;
+                    var activeDigimons = newSlots.Where(d => d != null).Select(d => d!).ToList();
+                    var ev = new PartySlotsChangedEvent(activeDigimons);
+                    _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+                }
+                else
+                {
+                    for (int i = 0; i < newSlots.Count; i++)
+                    {
+                        if (newSlots[i] != null && oldSlots[i] != null)
+                        {
+                            if (!newSlots[i]!.Equals(oldSlots[i]))
+                            {
+                                // The Digimon itself is not equal, so compare down to fire specific events
+                                CompareDigimon(i, oldSlots[i]!, newSlots[i]!);
+                            }
+                        }
+                    }
                 }
             }
         }
-
-        if (partyChanged)
+        else if (newState.Party != null && _previousState.Party == null)
         {
-            // Filter out nulls for the event
-            var activeDigimons = newSlots.Where(d => d != null).Select(d => d!).ToList();
+            var activeDigimons = newState.Party.Slots.Where(d => d != null).Select(d => d!).ToList();
             var ev = new PartySlotsChangedEvent(activeDigimons);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
-        }
-        else
-        {
-            // Compare individualized digimon metrics if party structure hasn't fundamentally changed
-            for (int i = 0; i < newSlots.Count; i++)
-            {
-                if (newSlots[i] != null && oldSlots[i] != null)
-                {
-                    CompareDigimon(i, oldSlots[i]!, newSlots[i]!);
-                }
-            }
         }
 
         // 3. Compare Important Items
@@ -342,67 +356,42 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         }
 
         // Compare Attributes
-        if (oldDigi.Attributes.Strength != newDigi.Attributes.Strength ||
-            oldDigi.Attributes.Defense != newDigi.Attributes.Defense ||
-            oldDigi.Attributes.Spirit != newDigi.Attributes.Spirit ||
-            oldDigi.Attributes.Wisdom != newDigi.Attributes.Wisdom ||
-            oldDigi.Attributes.Speed != newDigi.Attributes.Speed ||
-            oldDigi.Attributes.Charisma != newDigi.Attributes.Charisma)
+        if (!oldDigi.Attributes.Equals(newDigi.Attributes))
         {
             var ev = new DigimonAttributesChangedEvent(index, newDigi.Attributes.Strength, newDigi.Attributes.Defense, newDigi.Attributes.Spirit, newDigi.Attributes.Wisdom, newDigi.Attributes.Speed, newDigi.Attributes.Charisma);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // Compare Resistances
-        if (oldDigi.Resistances.Fire != newDigi.Resistances.Fire ||
-            oldDigi.Resistances.Water != newDigi.Resistances.Water ||
-            oldDigi.Resistances.Ice != newDigi.Resistances.Ice ||
-            oldDigi.Resistances.Wind != newDigi.Resistances.Wind ||
-            oldDigi.Resistances.Thunder != newDigi.Resistances.Thunder ||
-            oldDigi.Resistances.Machine != newDigi.Resistances.Machine ||
-            oldDigi.Resistances.Dark != newDigi.Resistances.Dark)
+        if (!oldDigi.Resistances.Equals(newDigi.Resistances))
         {
             var ev = new DigimonResistancesChangedEvent(index, newDigi.Resistances.Fire, newDigi.Resistances.Water, newDigi.Resistances.Ice, newDigi.Resistances.Wind, newDigi.Resistances.Thunder, newDigi.Resistances.Machine, newDigi.Resistances.Dark);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // Compare Equipments
-        if (oldDigi.Equipments.Head != newDigi.Equipments.Head ||
-            oldDigi.Equipments.Body != newDigi.Equipments.Body ||
-            oldDigi.Equipments.RightHand != newDigi.Equipments.RightHand ||
-            oldDigi.Equipments.LeftHand != newDigi.Equipments.LeftHand ||
-            oldDigi.Equipments.Accessory1 != newDigi.Equipments.Accessory1 ||
-            oldDigi.Equipments.Accessory2 != newDigi.Equipments.Accessory2)
+        if (!oldDigi.Equipments.Equals(newDigi.Equipments))
         {
             var ev = new DigimonEquipmentsChangedEvent(index, newDigi.Equipments);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // Compare Equipped Digievolutions
-        bool evosChanged = false;
-        for (int i = 0; i < 3; i++)
+        if (!Enumerable.SequenceEqual(oldDigi.EquippedDigievolutions, newDigi.EquippedDigievolutions))
         {
-            var oldEvo = oldDigi.EquippedDigievolutions[i];
-            var newEvo = newDigi.EquippedDigievolutions[i];
+            // Specifically dispatch level up events if needed by scanning them again briefly
+            for (int i = 0; i < 3; i++)
+            {
+                var oldEvo = oldDigi.EquippedDigievolutions[i];
+                var newEvo = newDigi.EquippedDigievolutions[i];
 
-            if ((oldEvo == null && newEvo != null) || (oldEvo != null && newEvo == null))
-            {
-                evosChanged = true;
-                continue;
-            }
-            if (oldEvo != null && newEvo != null && (oldEvo.Id != newEvo.Id || oldEvo.Level != newEvo.Level))
-            {
-                if (oldEvo.Id == newEvo.Id && newEvo.Level > oldEvo.Level)
+                if (oldEvo != null && newEvo != null && oldEvo.Id == newEvo.Id && newEvo.Level > oldEvo.Level)
                 {
                     var levelUpEv = new DigimonDigievolutionLevelUpEvent(index, newEvo.Id, oldEvo.Level, newEvo.Level);
                     _ = _hubContext.Clients.All.SendAsync(levelUpEv.Type.ToString(), levelUpEv);
                 }
-                evosChanged = true;
             }
-        }
 
-        if (evosChanged)
-        {
             var ev = new DigimonDigievolutionsChangedEvent(index, newDigi.EquippedDigievolutions);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
@@ -413,8 +402,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
     {
         return new State
         {
-            CurrentLocation = s.CurrentLocation,
-            Player = s.Player == null ? null : new Player { Name = s.Player.Name, Bits = s.Player.Bits },
+            Player = s.Player == null ? null : new Player { Name = s.Player.Name, Bits = s.Player.Bits, MapId = s.Player.MapId },
             Party = s.Party == null ? null : new Party
             {
                 Slots = s.Party.Slots.Select(d => d == null ? null : new Digimon

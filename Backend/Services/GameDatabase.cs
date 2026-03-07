@@ -7,6 +7,7 @@ namespace Backend.Services
     {
         private readonly string _dataDirectory;
         private PlayerAddresses? _playerAddresses;
+        private PartyAddresses? _partyAddresses;
 
         public GameDatabase()
         {
@@ -28,6 +29,22 @@ namespace Backend.Services
             _playerAddresses = JsonSerializer.Deserialize<PlayerAddresses>(json) ?? new PlayerAddresses();
 
             return _playerAddresses;
+        }
+
+        public PartyAddresses GetPartyAddresses()
+        {
+            if (_partyAddresses != null) return _partyAddresses;
+
+            var path = Path.Combine(_dataDirectory, "Party.json");
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException($"Database file not found: {path}");
+            }
+
+            var json = File.ReadAllText(path);
+            _partyAddresses = JsonSerializer.Deserialize<PartyAddresses>(json) ?? new PartyAddresses();
+
+            return _partyAddresses;
         }
     }
 }

@@ -4,5 +4,6 @@ namespace Backend.Models.Resources
     {
         public byte[]? NameBytes { get; set; }
         public int Bits { get; set; }
+        public int MapId { get; set; }
     }
 }

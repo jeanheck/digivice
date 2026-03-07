@@ -6,12 +6,13 @@ namespace Backend.Models
     {
         public string Name { get; set; } = string.Empty;
         public int Bits { get; set; }
+        public string MapId { get; set; } = string.Empty;
 
         public bool Equals(Player? other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return Name == other.Name && Bits == other.Bits;
+            return Name == other.Name && Bits == other.Bits && MapId == other.MapId;
         }
 
         public override bool Equals(object? obj)
@@ -24,7 +25,7 @@ namespace Backend.Models
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Name, Bits);
+            return HashCode.Combine(Name, Bits, MapId);
         }
     }
 }
