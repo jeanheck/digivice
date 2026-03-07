@@ -14,10 +14,12 @@ namespace Backend.Services
     public class GameStateService
     {
         private readonly IMemoryReaderService _memoryReader;
+        private readonly PlayerStateService _playerStateService;
 
-        public GameStateService(IMemoryReaderService memoryReader)
+        public GameStateService(IMemoryReaderService memoryReader, PlayerStateService playerStateService)
         {
             _memoryReader = memoryReader;
+            _playerStateService = playerStateService;
         }
 
         public State GetState()
@@ -25,7 +27,7 @@ namespace Backend.Services
             return new State
             {
                 CurrentLocation = GetCurrentLocation(),
-                Player = GetPlayer(),
+                Player = _playerStateService.GetPlayer(),
                 Party = GetParty(),
                 ImportantItems = GetImportantItems(),
                 Journal = GetJournal()
@@ -40,19 +42,7 @@ namespace Backend.Services
             return rawMapId.ToString("X4");
         }
 
-        private Player? GetPlayer()
-        {
-            var bytes = _memoryReader.ReadBytes(PlayerAddresses.Name, PlayerAddresses.NameBufferSize);
-            if (bytes == null) return null;
 
-            var player = new Player
-            {
-                Name = TextDecoder.DecodeName(bytes),
-                Bits = _memoryReader.ReadInt32(PlayerAddresses.Bits)
-            };
-
-            return player;
-        }
 
         private Dictionary<string, bool> GetImportantItems()
         {

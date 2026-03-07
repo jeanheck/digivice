@@ -24,6 +24,11 @@ try
     // Register game dependencies
     builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
+    builder.Services.AddSingleton<IMemoryReaderService, MemoryReaderService>();
+    builder.Services.AddSingleton<GameDatabase>();
+    builder.Services.AddSingleton<GameReader>();
+    builder.Services.AddSingleton<PlayerStateService>();
+    builder.Services.AddSingleton<GameStateService>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();
     builder.Services.AddSingleton<DebugMonitor>();
 

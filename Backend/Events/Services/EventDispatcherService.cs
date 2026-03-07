@@ -66,10 +66,18 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
-        // 1. Compare Player Bits
-        if (newState.Player?.Bits != _previousState.Player?.Bits)
+        // 1. Compare Player
+        if (newState.Player != null && _previousState.Player != null)
         {
-            var ev = new PlayerBitsChangedEvent(newState.Player?.Bits ?? 0);
+            if (!newState.Player.Equals(_previousState.Player))
+            {
+                var ev = new PlayerBitsChangedEvent(newState.Player.Bits);
+                _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            }
+        }
+        else if (newState.Player != null && _previousState.Player == null)
+        {
+            var ev = new PlayerBitsChangedEvent(newState.Player.Bits);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
