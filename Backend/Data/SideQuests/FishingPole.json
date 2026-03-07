@@ -1,0 +1,19 @@
+{
+    "Steps": [
+        {
+            "Id": 1,
+            "Address": "0x04B3B0",
+            "BitMask": "0x02"
+        },
+        {
+            "Id": 2,
+            "Address": "0x04B3B1",
+            "BitMask": "0x10"
+        },
+        {
+            "Id": 3,
+            "Address": "0x048DB5",
+            "BitMask": null
+        }
+    ]
+}

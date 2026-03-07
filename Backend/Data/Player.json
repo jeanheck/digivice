@@ -1,0 +1,10 @@
+{
+    "Name": "0x00048D88",
+    "Bits": "0x00048DA0",
+    "PartySlot1": "0x00048DA4",
+    "PartySlot2": "0x00048DA8",
+    "PartySlot3": "0x00048DAC",
+    "NameBufferSize": 10,
+    "PartySlotStride": 4,
+    "MapIdAddress": "0x0004B3F8"
+}

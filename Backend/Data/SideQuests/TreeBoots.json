@@ -1,0 +1,39 @@
+{
+    "Steps": [
+        {
+            "Id": 1,
+            "Address": "0x04B3B0",
+            "BitMask": "0x04"
+        },
+        {
+            "Id": 2,
+            "Address": "0x04B3B0",
+            "BitMask": "0x08"
+        },
+        {
+            "Id": 3,
+            "Address": "0x04B3B0",
+            "BitMask": "0x10"
+        },
+        {
+            "Id": 4,
+            "Address": "0x04B3B0",
+            "BitMask": "0xE0"
+        },
+        {
+            "Id": 5,
+            "Address": "0x04B3B0",
+            "BitMask": "0xC0"
+        },
+        {
+            "Id": 6,
+            "Address": "0x04B3B0",
+            "BitMask": "0x80"
+        },
+        {
+            "Id": 7,
+            "Address": "0x04B3B1",
+            "BitMask": "0x01"
+        }
+    ]
+}
