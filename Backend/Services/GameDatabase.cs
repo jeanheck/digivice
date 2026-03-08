@@ -65,7 +65,8 @@ namespace Backend.Services
             }
 
             var json = File.ReadAllText(path);
-            var itemsList = JsonSerializer.Deserialize<List<ItemAddress>>(json) ?? new List<ItemAddress>();
+            using var doc = JsonDocument.Parse(json);
+            var itemsList = doc.RootElement.GetProperty("ImportantItems").Deserialize<List<ItemAddress>>() ?? new List<ItemAddress>();
 
             _importantItemsAddresses = new ImportantItemsAddresses
             {
@@ -89,7 +90,8 @@ namespace Backend.Services
             }
 
             var json = File.ReadAllText(path);
-            var itemsList = JsonSerializer.Deserialize<List<ItemAddress>>(json) ?? new List<ItemAddress>();
+            using var doc = JsonDocument.Parse(json);
+            var itemsList = doc.RootElement.GetProperty("ConsumableItems").Deserialize<List<ItemAddress>>() ?? new List<ItemAddress>();
 
             _consumableItemsAddresses = new ConsumableItemsAddresses
             {
