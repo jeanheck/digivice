@@ -87,9 +87,36 @@ export interface Journal {
     sideQuests: SideQuest[]
 }
 
+export interface IItem {
+    id: string;
+    name: string;
+}
+
+export interface ImportantItem extends IItem {
+    has: boolean;
+}
+
+export interface ConsumableItem extends IItem {
+    quantity: number;
+}
+
+export interface ImportantItems {
+    folderBag: ImportantItem | null;
+    treeBoots: ImportantItem | null;
+    fishingPole: ImportantItem | null;
+    redSnapper: ImportantItem | null;
+}
+
+export interface ConsumableItems {
+    powerCharge: ConsumableItem | null;
+    spiderWeb: ConsumableItem | null;
+    bambooSpear: ConsumableItem | null;
+}
+
 export interface State {
     player: Player | null;
     party: Party | null;
-    importantItems: Record<string, boolean>;
+    importantItems: ImportantItems | null;
+    consumableItems: ConsumableItems | null;
     journal: Journal | null;
 }

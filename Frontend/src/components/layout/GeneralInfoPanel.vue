@@ -3,17 +3,17 @@ import { useGameStore } from '../../stores/useGameStore'
 import { computed, ref } from 'vue'
 
 const store = useGameStore()
-const items = computed(() => store.gameState?.importantItems || {})
+const items = computed(() => store.gameState?.importantItems || ({} as import('../../types/backend').ImportantItems))
 
 const milestones = [
-  { key: 'TreeBoots', name: 'Tree Boots', icon: '🥾' },
-  { key: 'FishingPole', name: 'Fishing Pole', icon: '🎣' },
-  { key: 'ElDoradoId', name: 'El Dorado Id', icon: '💳' },
-  { key: 'FolderBag', name: 'Folder Bag', icon: '📂' }
+  { key: 'treeBoots', name: 'Tree Boots', icon: '🥾' },
+  { key: 'fishingPole', name: 'Fishing Pole', icon: '🎣' },
+  { key: 'elDoradoId', name: 'El Dorado Id', icon: '💳' },
+  { key: 'folderBag', name: 'Folder Bag', icon: '📂' }
 ]
 
-const getStyle = (key: string) => {
-  return items.value[key] === true 
+const getStyle = (key: keyof import('../../types/backend').ImportantItems) => {
+  return items.value?.[key]?.has === true 
     ? 'opacity-100 drop-shadow-[0_0_6px_rgba(255,255,0,0.8)] border-[#d4af37] bg-[#1a2b4c]' 
     : 'opacity-40 grayscale border-[#445] bg-[#001122]'
 }
@@ -65,7 +65,7 @@ const moveTooltip = (event: MouseEvent) => {
         v-for="milestone in milestones" 
         :key="milestone.key"
         class="w-[50px] h-[50px] flex items-center justify-center rounded border-2 transition-all duration-300 cursor-help"
-        :class="getStyle(milestone.key)"
+        :class="getStyle(milestone.key as keyof import('../../types/backend').ImportantItems)"
         @mouseenter="e => showTooltip(e, milestone.name)"
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"

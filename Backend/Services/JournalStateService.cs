@@ -47,7 +47,7 @@ namespace Backend.Services
 
             // Check if the player owns the Folder Bag (prerequisite for next quests)
             var importantItems = _itemStateService.GetImportantItems();
-            bool hasFolderBag = importantItems.ContainsKey("FolderBag") && importantItems["FolderBag"];
+            bool hasFolderBag = importantItems.FolderBag?.Has ?? false;
 
             // --- 2. Tree Boots Side Quest ---
             var treeBoots = _database.GetSideQuest("TreeBoots");
@@ -96,7 +96,7 @@ namespace Backend.Services
             }
         }
 
-        private void ApplyStepPrerequisites(Quest quest, Dictionary<string, bool> importantItems)
+        private void ApplyStepPrerequisites(Quest quest, ImportantItems importantItems)
         {
             var consumables = _itemStateService.GetConsumableItems();
 
@@ -111,12 +111,10 @@ namespace Backend.Services
                     switch (prereq.ItemType)
                     {
                         case "consumable":
-                            if (consumables.TryGetValue(prereq.ItemKey, out int qty))
-                                prereq.IsDone = qty > 0;
+                            prereq.IsDone = consumables.GetQuantity(prereq.ItemKey) > 0;
                             break;
                         case "important":
-                            if (importantItems.TryGetValue(prereq.ItemKey, out bool owned))
-                                prereq.IsDone = owned;
+                            prereq.IsDone = importantItems.HasItem(prereq.ItemKey);
                             break;
                     }
                 }

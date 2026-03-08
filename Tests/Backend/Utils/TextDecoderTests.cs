@@ -70,8 +70,8 @@ namespace Tests.Backend.Utils
         [Fact]
         public void DecodeName_ShouldHandleLettersAndDigits()
         {
-            // "Ta01" -> T(0x21) a(0x28) 0(0x42) 1(0x43)
-            byte[] input = [0x21, 0x28, 0x42, 0x43, 0x00];
+            // "Ta01" -> T(0x21) a(0x28) 0(0x04) 1(0x05)
+            byte[] input = [0x21, 0x28, 0x04, 0x05, 0x00];
             Assert.Equal("Ta01", TextDecoder.DecodeName(input));
         }
     }

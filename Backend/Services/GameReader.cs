@@ -80,10 +80,10 @@ namespace Backend.Services
         {
             return new ImportantItemsResource
             {
-                Folderbag = ReadByteSafe(addresses.Folderbag),
-                TreeBoots = ReadByteSafe(addresses.TreeBoots),
-                FishingPole = ReadByteSafe(addresses.FishingPole),
-                RedSnapper = ReadByteSafe(addresses.RedSnapper)
+                Folderbag = ReadByteSafe(addresses.FolderBag!.Address),
+                TreeBoots = ReadByteSafe(addresses.TreeBoots!.Address),
+                FishingPole = ReadByteSafe(addresses.FishingPole!.Address),
+                RedSnapper = ReadByteSafe(addresses.RedSnapper!.Address)
             };
         }
 
@@ -91,9 +91,9 @@ namespace Backend.Services
         {
             return new ConsumableItemsResource
             {
-                PowerCharge = ReadByteSafe(addresses.PowerCharge),
-                SpiderWeb = ReadByteSafe(addresses.SpiderWeb),
-                BambooSpear = ReadByteSafe(addresses.BambooSpear)
+                PowerCharge = ReadByteSafe(addresses.PowerCharge!.Address),
+                SpiderWeb = ReadByteSafe(addresses.SpiderWeb!.Address),
+                BambooSpear = ReadByteSafe(addresses.BambooSpear!.Address)
             };
         }
 

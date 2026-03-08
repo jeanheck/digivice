@@ -1,5 +1,19 @@
 {
-    "PowerCharge": "0x048DDB",
-    "SpiderWeb": "0x048E09",
-    "BambooSpear": "0x048E57"
+    "ConsumableItems": [
+        {
+            "Id": "PowerCharge",
+            "Name": "Power Charge",
+            "Address": "0x048DDB"
+        },
+        {
+            "Id": "SpiderWeb",
+            "Name": "Spider Web",
+            "Address": "0x048E09"
+        },
+        {
+            "Id": "BambooSpear",
+            "Name": "Bamboo Spear",
+            "Address": "0x048E57"
+        }
+    ]
 }

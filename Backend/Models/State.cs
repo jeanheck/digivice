@@ -4,7 +4,8 @@ namespace Backend.Models
     {
         public Player? Player { get; set; }
         public Party? Party { get; set; }
-        public Dictionary<string, bool> ImportantItems { get; set; } = new();
+        public ImportantItems? ImportantItems { get; set; }
+        public ConsumableItems? ConsumableItems { get; set; }
         public Journal? Journal { get; set; }
     }
 }

@@ -53,9 +53,21 @@ public class EventDispatcherServiceTests
                         Equipments = new Equipments(),
                         EquippedDigievolutions = new Digievolution?[3]
                     },
-                    null,
                     null
                 }
+            },
+            ImportantItems = new ImportantItems
+            {
+                FolderBag = new ImportantItem { Id = "FolderBag", Name = "Folder Bag", Has = false },
+                TreeBoots = new ImportantItem { Id = "TreeBoots", Name = "Tree Boots", Has = false },
+                FishingPole = new ImportantItem { Id = "FishingPole", Name = "Fishing Pole", Has = false },
+                RedSnapper = new ImportantItem { Id = "RedSnapper", Name = "Red Snapper", Has = false }
+            },
+            ConsumableItems = new ConsumableItems
+            {
+                PowerCharge = new ConsumableItem { Id = "PowerCharge", Name = "Power Charge", Quantity = 0 },
+                SpiderWeb = new ConsumableItem { Id = "SpiderWeb", Name = "Spider Web", Quantity = 0 },
+                BambooSpear = new ConsumableItem { Id = "BambooSpear", Name = "Bamboo Spear", Quantity = 0 }
             }
         };
     }

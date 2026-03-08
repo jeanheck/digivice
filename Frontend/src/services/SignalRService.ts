@@ -103,7 +103,7 @@ class SignalRService {
             store.notifyDigievolutionLevelUp(event.partySlotIndex, event.digievolutionId, event.oldLevel, event.newLevel)
         })
 
-        this.connection.on('ImportantItemsChanged', (event: { importantItems: Record<string, boolean> }) => {
+        this.connection.on('ImportantItemsChanged', (event: { importantItems: import('../types/backend').ImportantItems | null }) => {
             console.log('Hub: ImportantItemsChanged', event)
             store.updateImportantItems(event.importantItems)
         })

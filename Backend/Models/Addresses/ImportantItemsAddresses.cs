@@ -2,9 +2,9 @@ namespace Backend.Models.Addresses
 {
     public class ImportantItemsAddresses
     {
-        public string? Folderbag { get; set; }
-        public string? TreeBoots { get; set; }
-        public string? FishingPole { get; set; }
-        public string? RedSnapper { get; set; }
+        public ItemAddress? FolderBag { get; set; }
+        public ItemAddress? TreeBoots { get; set; }
+        public ItemAddress? FishingPole { get; set; }
+        public ItemAddress? RedSnapper { get; set; }
     }
 }

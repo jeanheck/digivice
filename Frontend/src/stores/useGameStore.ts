@@ -92,7 +92,7 @@ export const useGameStore = defineStore('game', () => {
         console.log(`[LEVEL UP!] Digimon in slot ${slotIndex}'s Digievolution (ID ${digievolutionId}) reached Level ${newLevel}!`)
     }
 
-    function updateImportantItems(newItems: Record<string, boolean>) {
+    function updateImportantItems(newItems: import('../types/backend').ImportantItems | null) {
         if (gameState.value) {
             gameState.value.importantItems = newItems
         }

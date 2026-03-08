@@ -152,22 +152,18 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
 
         // 3. Compare Important Items
         bool itemsChanged = false;
-        var newItems = newState.ImportantItems ?? new Dictionary<string, bool>();
-        var oldItems = _previousState.ImportantItems ?? new Dictionary<string, bool>();
+        var newItems = newState.ImportantItems;
+        var oldItems = _previousState.ImportantItems;
 
-        if (newItems.Count != oldItems.Count)
+        if (newItems != null && oldItems == null || newItems == null && oldItems != null)
         {
             itemsChanged = true;
         }
-        else
+        else if (newItems != null && oldItems != null)
         {
-            foreach (var kvp in newItems)
+            if (!newItems.Equals(oldItems))
             {
-                if (!oldItems.TryGetValue(kvp.Key, out bool oldVal) || oldVal != kvp.Value)
-                {
-                    itemsChanged = true;
-                    break;
-                }
+                itemsChanged = true;
             }
         }
 
@@ -328,7 +324,19 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                     }
                 }).ToList()
             },
-            ImportantItems = s.ImportantItems != null ? new Dictionary<string, bool>(s.ImportantItems) : new Dictionary<string, bool>(),
+            ImportantItems = s.ImportantItems != null ? new ImportantItems
+            {
+                FolderBag = s.ImportantItems.FolderBag != null ? new ImportantItem { Id = s.ImportantItems.FolderBag.Id, Name = s.ImportantItems.FolderBag.Name, Has = s.ImportantItems.FolderBag.Has } : null,
+                TreeBoots = s.ImportantItems.TreeBoots != null ? new ImportantItem { Id = s.ImportantItems.TreeBoots.Id, Name = s.ImportantItems.TreeBoots.Name, Has = s.ImportantItems.TreeBoots.Has } : null,
+                FishingPole = s.ImportantItems.FishingPole != null ? new ImportantItem { Id = s.ImportantItems.FishingPole.Id, Name = s.ImportantItems.FishingPole.Name, Has = s.ImportantItems.FishingPole.Has } : null,
+                RedSnapper = s.ImportantItems.RedSnapper != null ? new ImportantItem { Id = s.ImportantItems.RedSnapper.Id, Name = s.ImportantItems.RedSnapper.Name, Has = s.ImportantItems.RedSnapper.Has } : null
+            } : null,
+            ConsumableItems = s.ConsumableItems != null ? new ConsumableItems
+            {
+                PowerCharge = s.ConsumableItems.PowerCharge != null ? new ConsumableItem { Id = s.ConsumableItems.PowerCharge.Id, Name = s.ConsumableItems.PowerCharge.Name, Quantity = s.ConsumableItems.PowerCharge.Quantity } : null,
+                SpiderWeb = s.ConsumableItems.SpiderWeb != null ? new ConsumableItem { Id = s.ConsumableItems.SpiderWeb.Id, Name = s.ConsumableItems.SpiderWeb.Name, Quantity = s.ConsumableItems.SpiderWeb.Quantity } : null,
+                BambooSpear = s.ConsumableItems.BambooSpear != null ? new ConsumableItem { Id = s.ConsumableItems.BambooSpear.Id, Name = s.ConsumableItems.BambooSpear.Name, Quantity = s.ConsumableItems.BambooSpear.Quantity } : null
+            } : null,
             Journal = s.Journal != null ? new Journal
             {
                 MainQuest = new MainQuest

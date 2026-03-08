@@ -1,6 +1,7 @@
 using System.Text.Json;
 using Backend.Models.Addresses;
 using Backend.Models.Quests;
+using System.Linq;
 
 namespace Backend.Services
 {
@@ -64,7 +65,15 @@ namespace Backend.Services
             }
 
             var json = File.ReadAllText(path);
-            _importantItemsAddresses = JsonSerializer.Deserialize<ImportantItemsAddresses>(json) ?? new ImportantItemsAddresses();
+            var itemsList = JsonSerializer.Deserialize<List<ItemAddress>>(json) ?? new List<ItemAddress>();
+
+            _importantItemsAddresses = new ImportantItemsAddresses
+            {
+                FolderBag = itemsList.FirstOrDefault(i => i.Id == "FolderBag"),
+                TreeBoots = itemsList.FirstOrDefault(i => i.Id == "TreeBoots"),
+                FishingPole = itemsList.FirstOrDefault(i => i.Id == "FishingPole"),
+                RedSnapper = itemsList.FirstOrDefault(i => i.Id == "RedSnapper")
+            };
 
             return _importantItemsAddresses;
         }
@@ -80,7 +89,14 @@ namespace Backend.Services
             }
 
             var json = File.ReadAllText(path);
-            _consumableItemsAddresses = JsonSerializer.Deserialize<ConsumableItemsAddresses>(json) ?? new ConsumableItemsAddresses();
+            var itemsList = JsonSerializer.Deserialize<List<ItemAddress>>(json) ?? new List<ItemAddress>();
+
+            _consumableItemsAddresses = new ConsumableItemsAddresses
+            {
+                PowerCharge = itemsList.FirstOrDefault(i => i.Id == "PowerCharge"),
+                SpiderWeb = itemsList.FirstOrDefault(i => i.Id == "SpiderWeb"),
+                BambooSpear = itemsList.FirstOrDefault(i => i.Id == "BambooSpear")
+            };
 
             return _consumableItemsAddresses;
         }

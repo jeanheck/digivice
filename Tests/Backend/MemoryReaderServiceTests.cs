@@ -86,7 +86,7 @@ namespace Tests.Backend
                                .Returns(_mockMemoryAccessor.Object);
 
             _mockMemoryAccessor.Setup(a => a.ReadArray(0x200, It.IsAny<byte[]>(), 0, 3))
-                               .Callback<int, byte[], int, int>((addr, buf, idx, count) =>
+                               .Callback<long, byte[], int, int>((addr, buf, idx, count) =>
                                {
                                    expectedData.CopyTo(buf, idx);
                                });
@@ -136,7 +136,7 @@ namespace Tests.Backend
                                .Returns(_mockMemoryAccessor.Object);
 
             _mockMemoryAccessor.Setup(a => a.ReadArray(0x300, It.IsAny<byte[]>(), 0, 5))
-                               .Callback<int, byte[], int, int>((addr, buf, idx, count) =>
+                               .Callback<long, byte[], int, int>((addr, buf, idx, count) =>
                                {
                                    data.CopyTo(buf, idx);
                                });
@@ -164,7 +164,7 @@ namespace Tests.Backend
                                .Returns(_mockMemoryAccessor.Object);
 
             _mockMemoryAccessor.Setup(a => a.ReadArray(0x400, It.IsAny<byte[]>(), 0, 5))
-                               .Callback<int, byte[], int, int>((addr, buf, idx, count) =>
+                               .Callback<long, byte[], int, int>((addr, buf, idx, count) =>
                                {
                                    data.CopyTo(buf, idx);
                                });

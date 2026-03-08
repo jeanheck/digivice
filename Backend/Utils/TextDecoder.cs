@@ -40,11 +40,11 @@ namespace Backend.Utils
                 map[(byte)(0x28 + i)] = (char)('a' + i);
             }
 
-            // Symbols after lowercase: bytes 0x42+
+            // Symbols after lowercase: bytes 0x4C+
             char[] postSymbols = { '.', '-', '/', '_', '~', '#', '$', '%', '&', '(', ')', '*', '+', ',', ':', ';', '<', '=', '>', '@', '"', '\'' };
             for (int i = 0; i < postSymbols.Length; i++)
             {
-                map[(byte)(0x42 + i)] = postSymbols[i];
+                map[(byte)(0x4C + i)] = postSymbols[i];
             }
 
             return map;
