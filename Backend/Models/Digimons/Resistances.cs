@@ -1,5 +1,3 @@
-using System;
-
 namespace Backend.Models.Digimons
 {
     public class Resistances : IEquatable<Resistances>

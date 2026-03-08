@@ -1,6 +1,5 @@
 using Backend.Interfaces;
 using System.Diagnostics;
-using System.Linq;
 
 namespace Backend.Infrastructure.Processes
 {

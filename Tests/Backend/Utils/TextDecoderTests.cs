@@ -1,5 +1,4 @@
 using Backend.Utils;
-using Xunit;
 
 namespace Tests.Backend.Utils
 {

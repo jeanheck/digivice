@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace Backend.Models.Digimons
 {
     public class Digievolution : IEquatable<Digievolution>

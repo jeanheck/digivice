@@ -1,5 +1,3 @@
-using System;
-
 namespace Backend.Models.Digimons
 {
     public class BasicInfo : IEquatable<BasicInfo>

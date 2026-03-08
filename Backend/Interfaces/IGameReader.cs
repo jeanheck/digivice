@@ -1,7 +1,6 @@
 using Backend.Models.Addresses;
 using Backend.Models.Quests;
 using Backend.Models.Resources;
-using System.Collections.Generic;
 
 namespace Backend.Interfaces
 {

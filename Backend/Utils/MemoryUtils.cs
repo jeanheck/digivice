@@ -1,5 +1,3 @@
-using System;
-
 namespace Backend.Utils
 {
     public static class MemoryUtils

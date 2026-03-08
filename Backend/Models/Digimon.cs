@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using Backend.Models.Digimons;
 
 namespace Backend.Models

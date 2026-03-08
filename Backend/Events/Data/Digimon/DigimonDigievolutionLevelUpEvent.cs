@@ -7,7 +7,7 @@ public class DigimonDigievolutionLevelUpEvent : BaseEvent
     public int OldLevel { get; }
     public int NewLevel { get; }
 
-    public DigimonDigievolutionLevelUpEvent(int partySlotIndex, int digievolutionId, int oldLevel, int newLevel) 
+    public DigimonDigievolutionLevelUpEvent(int partySlotIndex, int digievolutionId, int oldLevel, int newLevel)
         : base(EventType.DigimonDigievolutionLevelUp)
     {
         PartySlotIndex = partySlotIndex;

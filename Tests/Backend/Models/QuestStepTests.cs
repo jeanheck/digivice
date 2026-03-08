@@ -1,5 +1,4 @@
 using Backend.Models.Quests;
-using Xunit;
 
 namespace Tests.Backend.Models
 {

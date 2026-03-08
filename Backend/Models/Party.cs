@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace Backend.Models
 {
     public class Party : IEquatable<Party>

@@ -3,7 +3,6 @@ using Backend.Models.Addresses;
 using Backend.Models.Resources;
 using Backend.Services;
 using Moq;
-using Xunit;
 
 namespace Tests.Backend.Services
 {

@@ -1,5 +1,3 @@
-using System;
-
 namespace Backend.Events.Data;
 
 public abstract class BaseEvent

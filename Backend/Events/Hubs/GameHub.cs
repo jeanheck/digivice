@@ -1,6 +1,5 @@
 using Backend.Events.Interfaces;
 using Microsoft.AspNetCore.SignalR;
-using System.Threading.Tasks;
 
 namespace Backend.Events.Hubs
 {

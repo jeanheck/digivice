@@ -1,6 +1,4 @@
 using Backend.Services;
-using System.IO;
-using Xunit;
 
 namespace Tests.Backend.Services
 {

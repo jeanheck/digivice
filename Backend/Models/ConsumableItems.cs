@@ -1,5 +1,3 @@
-using System;
-
 namespace Backend.Models
 {
     public class ConsumableItems : IEquatable<ConsumableItems>

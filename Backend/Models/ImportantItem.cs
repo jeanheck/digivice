@@ -1,5 +1,3 @@
-using System;
-
 namespace Backend.Models
 {
     public class ImportantItem : IItem, IEquatable<ImportantItem>

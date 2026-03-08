@@ -2,7 +2,6 @@ using Backend.Services;
 using Backend.Interfaces;
 using Backend.Models.Addresses;
 using Moq;
-using Xunit;
 
 namespace Tests.Backend.Services
 {
