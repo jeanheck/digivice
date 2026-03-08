@@ -28,6 +28,7 @@ try
     builder.Services.AddSingleton<GameDatabase>();
     builder.Services.AddSingleton<GameReader>();
     builder.Services.AddSingleton<PlayerStateService>();
+    builder.Services.AddSingleton<DigimonStateService>();
     builder.Services.AddSingleton<PartyStateService>();
     builder.Services.AddSingleton<ItemStateService>();
     builder.Services.AddSingleton<JournalStateService>();

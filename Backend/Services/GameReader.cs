@@ -99,6 +99,19 @@ namespace Backend.Services
             };
         }
 
+        public DigimonResource ReadDigimonResource(int slotIndex, byte digimonId, int baseAddress)
+        {
+            // The digimon struct is quite large, 0x3CA is the last property (Accessory2), taking 2 bytes
+            // Reserving 1000 bytes covers the whole documented memory block safely
+            var logicBlock = _memoryReader.ReadBytes(baseAddress, 1000);
+            return new DigimonResource
+            {
+                SlotIndex = slotIndex,
+                BaseAddress = baseAddress,
+                LogicBlock = logicBlock ?? System.Array.Empty<byte>()
+            };
+        }
+
 
         public Dictionary<int, byte> ReadQuestSteps(QuestAddresses addresses)
         {

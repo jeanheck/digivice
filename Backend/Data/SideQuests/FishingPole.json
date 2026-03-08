@@ -1,17 +1,42 @@
 {
+    "Title": "The Fishing Pole",
+    "Description": "Obtain the Fishing Pole to start fishing for items and Digimon.",
+    "Prerequisites": [
+        "Own the Folder Bag"
+    ],
     "Steps": [
         {
             "Id": 1,
+            "Description": "Talk to Tai Kong Wong at the Shell Beach",
             "Address": "0x04B3B0",
             "BitMask": "0x02"
         },
         {
             "Id": 2,
+            "Description": "Help the Divermon at Divermon's Lake",
             "Address": "0x04B3B1",
             "BitMask": "0x10"
         },
         {
             "Id": 3,
+            "Description": "Bring the items to Tai Kong Wong at the Shell Beach",
+            "Prerequisites": [
+                {
+                    "Description": "Bamboo Spear",
+                    "ItemKey": "BambooSpear",
+                    "ItemType": "consumable"
+                },
+                {
+                    "Description": "Spider Web",
+                    "ItemKey": "SpiderWeb",
+                    "ItemType": "consumable"
+                },
+                {
+                    "Description": "Red Snapper",
+                    "ItemKey": "RedSnapper",
+                    "ItemType": "important"
+                }
+            ],
             "Address": "0x048DB5",
             "BitMask": null
         }

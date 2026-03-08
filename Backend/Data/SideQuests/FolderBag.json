@@ -1,7 +1,11 @@
 {
+    "Title": "The Folder Bag",
+    "Description": "Obtain the bag to start storing and collecting Digimon Cards.",
+    "Prerequisites": [],
     "Steps": [
         {
             "Id": 1,
+            "Description": "Speak with Divermon in the Yellow Cruiser located in Asuka City",
             "Address": "0x00048F42",
             "BitMask": null
         }
