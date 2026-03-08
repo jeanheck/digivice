@@ -2,47 +2,49 @@
     "Title": "The Tree Boots",
     "Description": "Obtain the Tree Boots to unlock new areas by kicking trees.",
     "Prerequisites": [
-        "Own the Folder Bag"
+        {
+            "Description": "Own the Folder Bag"
+        }
     ],
     "Steps": [
         {
-            "Id": 1,
+            "Number": 1,
             "Description": "Talk to the Soccer Kid Hide in Plug Cape",
             "Address": "0x04B3B0",
             "BitMask": "0x04"
         },
         {
-            "Id": 2,
+            "Number": 2,
             "Description": "Find the lost Gabumon's card",
             "Address": "0x04B3B0",
             "BitMask": "0x08"
         },
         {
-            "Id": 3,
+            "Number": 3,
             "Description": "Give the Gabumon's card to the Soccer Kid Hide",
             "Address": "0x04B3B0",
             "BitMask": "0x10"
         },
         {
-            "Id": 4,
+            "Number": 4,
             "Description": "Talk to Waitress Debbie in Lamb Chop in Asuka City",
             "Address": "0x04B3B0",
             "BitMask": "0xE0"
         },
         {
-            "Id": 5,
+            "Number": 5,
             "Description": "Find Veemon on Wind Prairie",
             "Address": "0x04B3B0",
             "BitMask": "0xC0"
         },
         {
-            "Id": 6,
+            "Number": 6,
             "Description": "Play Hide and Seek and find Veemon on Kicking Forest",
             "Address": "0x04B3B0",
             "BitMask": "0x80"
         },
         {
-            "Id": 7,
+            "Number": 7,
             "Description": "Receive the Tree Boots from Veemon",
             "Address": "0x04B3B1",
             "BitMask": "0x01"

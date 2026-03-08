@@ -1,0 +1,13 @@
+﻿  Determinando os projetos a serem restaurados...
+  Todos os projetos est├úo atualizados para restaura├º├úo.
+C:\Projetos\digivice\Backend\Services\GameStateService.cs(5,15): error CS0234: O nome de tipo ou namespace "Constants" n├úo existe no namespace "Backend" (voc├¬ est├í sem uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Backend\Backend.csproj]
+C:\Projetos\digivice\Backend\Services\PartyStateService.cs(3,15): error CS0234: O nome de tipo ou namespace "Constants" n├úo existe no namespace "Backend" (voc├¬ est├í sem uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Backend\Backend.csproj]
+
+FALHA da compila├º├úo.
+
+C:\Projetos\digivice\Backend\Services\GameStateService.cs(5,15): error CS0234: O nome de tipo ou namespace "Constants" n├úo existe no namespace "Backend" (voc├¬ est├í sem uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Backend\Backend.csproj]
+C:\Projetos\digivice\Backend\Services\PartyStateService.cs(3,15): error CS0234: O nome de tipo ou namespace "Constants" n├úo existe no namespace "Backend" (voc├¬ est├í sem uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Backend\Backend.csproj]
+    0 Aviso(s)
+    2 Erro(s)
+
+Tempo Decorrido 00:00:01.51

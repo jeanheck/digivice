@@ -77,7 +77,6 @@ namespace Backend.Models.Addresses
         public EquipmentsOffsets? Equipaments { get; set; }
         public DigievolutionsOffsets? Digievolutions { get; set; }
 
-        [JsonIgnore]
-        public const int EmptySlotId = 0xFF; // Usado globalmente como slot vazio
+        public string? EmptySlotId { get; set; }
     }
 }

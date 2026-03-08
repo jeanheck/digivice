@@ -164,5 +164,24 @@ namespace Backend.Services
             }
             catch { return 0; }
         }
+
+        public int GetDigimonBaseAddressById(DigimonAddresses addresses, byte id)
+        {
+            if (addresses.Kotemon?.Id == id) return ParseHex(addresses.Kotemon.Address);
+            if (addresses.Kumamon?.Id == id) return ParseHex(addresses.Kumamon.Address);
+            if (addresses.Monmon?.Id == id) return ParseHex(addresses.Monmon.Address);
+            if (addresses.Agumon?.Id == id) return ParseHex(addresses.Agumon.Address);
+            if (addresses.Veemon?.Id == id) return ParseHex(addresses.Veemon.Address);
+            if (addresses.Guilmon?.Id == id) return ParseHex(addresses.Guilmon.Address);
+            if (addresses.Renamon?.Id == id) return ParseHex(addresses.Renamon.Address);
+            if (addresses.Patamon?.Id == id) return ParseHex(addresses.Patamon.Address);
+            return 0;
+        }
+
+        private int ParseHex(string? hexStr)
+        {
+            if (string.IsNullOrEmpty(hexStr)) return 0;
+            try { return Convert.ToInt32(hexStr, 16); } catch { return 0; }
+        }
     }
 }

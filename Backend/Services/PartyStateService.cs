@@ -1,8 +1,4 @@
 using Backend.Models;
-using Backend.Models.Digimons;
-using Backend.Constants;
-using Backend.Interfaces;
-using System.Linq;
 
 namespace Backend.Services
 {
@@ -26,19 +22,23 @@ namespace Backend.Services
 
             var party = new Party();
 
+            var digimonAddresses = _database.GetDigimonAddresses();
+            byte emptySlotId = (byte)(string.IsNullOrEmpty(digimonAddresses.EmptySlotId) ? 0xFF : Convert.ToInt32(digimonAddresses.EmptySlotId, 16));
+
             for (int i = 0; i < resource.ActiveDigimonIds.Count && i < 3; i++)
             {
                 byte digimonId = (byte)resource.ActiveDigimonIds[i];
 
-                if (digimonId == DigimonAddresses.EmptySlotId) continue;
+                if (digimonId == emptySlotId) continue;
 
-                if (DigimonAddresses.Digimons.TryGetValue(digimonId, out var data))
+                int baseAddress = _digimonStateService.GetDigimonBaseAddressById(digimonAddresses, digimonId);
+                if (baseAddress != 0)
                 {
-                    party.Slots[i] = _digimonStateService.BuildDigimon(i + 1, digimonId, data.Address);
+                    party.Slots[i] = _digimonStateService.BuildDigimon(i + 1, digimonId, baseAddress);
                 }
                 else
                 {
-                    Serilog.Log.Warning("Unknown Digimon ID detected in party slot: 0x{Id:X2} at address 0x{Address:X8}", digimonId, addresses.PartySlot1);
+                    Serilog.Log.Warning("Unknown Digimon ID detected in party slot: 0x{Id:X2} at address 0x{AddressStr}", digimonId, addresses.PartySlot1);
                 }
             }
 

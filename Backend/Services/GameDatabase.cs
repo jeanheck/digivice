@@ -11,6 +11,7 @@ namespace Backend.Services
         private ImportantItemsAddresses? _importantItemsAddresses;
         private ConsumableItemsAddresses? _consumableItemsAddresses;
         private DigimonAddresses? _digimonAddresses;
+        private QuestAddresses? _mainQuestAddresses;
         private Dictionary<string, QuestAddresses> _sideQuestsAddresses = new();
 
         public GameDatabase()
@@ -97,6 +98,22 @@ namespace Backend.Services
             _digimonAddresses = JsonSerializer.Deserialize<DigimonAddresses>(json) ?? new DigimonAddresses();
 
             return _digimonAddresses;
+        }
+
+        public QuestAddresses GetMainQuestAddresses()
+        {
+            if (_mainQuestAddresses != null) return _mainQuestAddresses;
+
+            var path = Path.Combine(_dataDirectory, "MainQuest.json");
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException($"Database file not found: {path}");
+            }
+
+            var json = File.ReadAllText(path);
+            _mainQuestAddresses = JsonSerializer.Deserialize<QuestAddresses>(json) ?? new QuestAddresses();
+
+            return _mainQuestAddresses;
         }
 
         public QuestAddresses GetSideQuestAddresses(string questName)

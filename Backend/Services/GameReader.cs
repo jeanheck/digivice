@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using Backend.Interfaces;
 using Backend.Models.Addresses;
 using Backend.Models.Resources;
@@ -118,7 +116,7 @@ namespace Backend.Services
             return ReadMainQuestSteps(addresses.Steps);
         }
 
-        public Dictionary<int, byte> ReadMainQuestSteps(List<QuestAddressStep> steps)
+        public Dictionary<int, byte> ReadMainQuestSteps(List<QuestStep> steps)
         {
             var resource = new Dictionary<int, byte>();
             foreach (var step in steps)
@@ -129,7 +127,7 @@ namespace Backend.Services
                 if (addressStr == 0) continue;
 
                 var bytes = _memoryReader.ReadBytes(addressStr, 1);
-                resource[step.Id] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
+                resource[step.Number] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
             }
             return resource;
         }

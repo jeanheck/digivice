@@ -3,79 +3,79 @@
     "Description": "Become the greatest tamer of the Digital World!",
     "Steps": [
         {
-            "Id": 1,
+            "Number": 1,
             "Description": "Talk to Repeating Tom at Seiryu Tower, on Seiryu City",
             "Address": "0x0004B3B6",
             "BitMask": "0x80"
         },
         {
-            "Id": 2,
+            "Number": 2,
             "Description": "Talk to Seiryu Leader on Protocol Ruins",
             "Address": "0x0004B3B7",
             "BitMask": "0x01"
         },
         {
-            "Id": 3,
+            "Number": 3,
             "Description": "Defeat MasterTyrannomon on Tyranno Valley",
             "Address": "0x0004B3B7",
             "BitMask": "0x02"
         },
         {
-            "Id": 4,
+            "Number": 4,
             "Description": "Challenge the Seiryu Leader on Seiryu City",
             "Address": "0x0004B3E0",
             "BitMask": "0x04"
         },
         {
-            "Id": 5,
+            "Number": 5,
             "Description": "TGo to the East Station to reach the next sector",
             "Address": "0x0004B63B",
             "BitMask": "0x80"
         },
         {
-            "Id": 6,
+            "Number": 6,
             "Description": "Defeat the Mistery Player stopping you on the Asuka Bridge",
             "Address": "0x0004B3E0",
             "BitMask": "0x40"
         },
         {
-            "Id": 7,
+            "Number": 7,
             "Description": "Talk with the Guilmon on Asuka Inn 2F, on Asuka City",
             "Address": "0x0004B3BD",
             "BitMask": "0x10"
         },
         {
-            "Id": 8,
+            "Number": 8,
             "Description": "Talk with the Guilmon on Forest Inn",
             "Address": "0x0004B3BD",
             "BitMask": "0x20"
         },
         {
-            "Id": 9,
+            "Number": 9,
             "Description": "Talk with the Guilmon on Zephir Tower, on Seiriu City",
             "Address": "0x00048F3F",
             "BitMask": "0x01"
         },
         {
-            "Id": 10,
+            "Number": 10,
             "Description": "Return to the East Station with the card",
             "Address": "0x0004B3BD",
             "BitMask": "0x40"
         },
         {
-            "Id": 11,
+            "Number": 11,
             "Description": "Confront the Guilmon on Seiryu City about the fake card",
             "Address": "0x0004B3BD",
             "BitMask": "0x80"
         },
         {
-            "Id": 12,
+            "Number": 12,
             "Description": "Talk to the Guilmon at the Forest Inn Basements",
             "Address": "0x00048F3E",
             "BitMask": "0x01"
         },
         {
-            "Id": 13,
+            "Number": 13,
             "Description": "Return to the East Station with the real Blue Card",
             "Address": "0x0004B3C5",
             "BitMask": "0x20"

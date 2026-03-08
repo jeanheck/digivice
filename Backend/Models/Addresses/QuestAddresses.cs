@@ -4,6 +4,6 @@ namespace Backend.Models.Addresses
 {
     public class QuestAddresses
     {
-        public List<QuestAddressStep> Steps { get; set; } = new List<QuestAddressStep>();
+        public List<QuestStep> Steps { get; set; } = new List<QuestStep>();
     }
 }

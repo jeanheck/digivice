@@ -22,8 +22,9 @@ namespace Backend.Services
         {
             // --- Main Quest ---
             var mainQuest = MainQuestFactory.Get();
-            var mainQuestResource = _reader.ReadMainQuestSteps(Backend.Constants.Quests.MainQuestAddress.Steps);
-            ApplyQuestStepsLogic(mainQuest, Backend.Constants.Quests.MainQuestAddress.Steps, mainQuestResource);
+            var mainQuestAddresses = _database.GetMainQuestAddresses();
+            var mainQuestResource = _reader.ReadMainQuestSteps(mainQuestAddresses.Steps);
+            ApplyQuestStepsLogic(mainQuest, mainQuestAddresses.Steps, mainQuestResource);
             journal.MainQuest = mainQuest;
         }
 
@@ -60,11 +61,11 @@ namespace Backend.Services
             journal.SideQuests.Add(fishingPole);
         }
 
-        private void ApplyQuestStepsLogic(Quest quest, List<QuestAddressStep> memSteps, Dictionary<int, byte> activeBytes)
+        private void ApplyQuestStepsLogic(Quest quest, List<QuestStep> memSteps, Dictionary<int, byte> activeBytes)
         {
             foreach (var memStep in memSteps)
             {
-                if (!activeBytes.TryGetValue(memStep.Id, out byte value)) continue;
+                if (!activeBytes.TryGetValue(memStep.Number, out byte value)) continue;
 
                 bool isStepDone;
                 if (!string.IsNullOrEmpty(memStep.BitMask))
@@ -79,7 +80,7 @@ namespace Backend.Services
                     isStepDone = value == 1;
                 }
 
-                var qStep = quest.Steps.FirstOrDefault(s => s.Number == memStep.Id);
+                var qStep = quest.Steps.FirstOrDefault(s => s.Number == memStep.Number);
                 if (qStep != null)
                 {
                     qStep.IsCompleted = isStepDone;
