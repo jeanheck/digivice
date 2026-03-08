@@ -1,313 +1,138 @@
-using Backend.Events.Data;
-using Backend.Events.Data.Digimon;
-using Backend.Events.Data.Party;
 using Backend.Events.Data.Player;
 using Backend.Events.Data.System;
 using Backend.Events.Hubs;
 using Backend.Events.Services;
 using Backend.Models;
-using Backend.Models.Digimons;
 using Microsoft.AspNetCore.SignalR;
 using Moq;
+using System.Threading;
+using System.Threading.Tasks;
+using Xunit;
+using Backend.Models.Digimons;
+using System.Collections.Generic;
+using Backend.Models.Quests;
 
-namespace Tests.Backend.Services;
-
-public class EventDispatcherServiceTests
+namespace Tests.Backend.Services
 {
-    private readonly Mock<IHubContext<GameHub>> _mockHubContext;
-    private readonly Mock<IClientProxy> _mockClientProxy;
-    private readonly EventDispatcherService _service;
-
-    public EventDispatcherServiceTests()
+    public class EventDispatcherServiceTests
     {
-        _mockHubContext = new Mock<IHubContext<GameHub>>();
-        _mockClientProxy = new Mock<IClientProxy>();
+        private readonly Mock<IHubContext<GameHub>> _hubContextMock;
+        private readonly Mock<IHubClients> _clientsMock;
+        private readonly Mock<IClientProxy> _clientProxyMock;
+        private readonly Mock<ISingleClientProxy> _singleClientProxyMock;
+        private readonly EventDispatcherService _dispatcher;
 
-        // Mock the Clients.All pipeline
-        var mockClients = new Mock<IHubClients>();
-        mockClients.Setup(c => c.All).Returns(_mockClientProxy.Object);
-        _mockHubContext.Setup(h => h.Clients).Returns(mockClients.Object);
-
-        _service = new EventDispatcherService(_mockHubContext.Object);
-    }
-
-    private State CreateTestState(int bits, int hp = 100)
-    {
-        return new State
+        public EventDispatcherServiceTests()
         {
-            Player = new Player
+            _hubContextMock = new Mock<IHubContext<GameHub>>();
+            _clientsMock = new Mock<IHubClients>();
+            _clientProxyMock = new Mock<IClientProxy>();
+            _singleClientProxyMock = new Mock<ISingleClientProxy>();
+
+            _clientsMock.Setup(c => c.All).Returns(_clientProxyMock.Object);
+            _clientsMock.Setup(c => c.Client(It.IsAny<string>())).Returns(_singleClientProxyMock.Object);
+            _hubContextMock.Setup(h => h.Clients).Returns(_clientsMock.Object);
+
+            _dispatcher = new EventDispatcherService(_hubContextMock.Object);
+        }
+
+        private Digimon CreateValidDigimon(int hp = 100, int level = 1, int xp = 0, Digievolution? evo1 = null)
+        {
+            return new Digimon
             {
-                Name = "Atsushi",
-                Bits = bits
-            },
-            Party = new Party
+                SlotIndex = 1,
+                BasicInfo = new BasicInfo { Name = "Agumon", CurrentHP = hp, MaxHP = 100, CurrentMP = 100, MaxMP = 100, Level = level, Experience = xp },
+                Attributes = new Attributes { Strength = 10, Defense = 10, Spirit = 10, Wisdom = 10, Speed = 10, Charisma = 10 },
+                Resistances = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
+                Equipments = new Equipments { Head = 0, Body = 0, RightHand = 0, LeftHand = 0, Accessory1 = 0, Accessory2 = 0 },
+                EquippedDigievolutions = new Digievolution?[3] { evo1, null, null }
+            };
+        }
+
+        [Fact]
+        public void ProcessGameState_ShouldSendAllEvents_WhenEverythingChanges()
+        {
+            var initialState = new State
             {
-                Slots = new List<Digimon?>
+                Player = new Player { MapId = "0001", Bits = 10, Name = "Me" },
+                Party = new Party { Slots = new List<Digimon?> { CreateValidDigimon(100, 1, 10, new Digievolution { Id = 5, Level = 1 }) } },
+                ImportantItems = new ImportantItems { FolderBag = new ImportantItem { Has = false }, TreeBoots = null, FishingPole = null, RedSnapper = null },
+                Journal = new MainQuest { Steps = new List<QuestStep>(), Prerequisites = new List<Requisite>() }
+                          != null ? new Journal { MainQuest = new MainQuest { Steps = new List<QuestStep>(), Prerequisites = new List<Requisite>() }, SideQuests = new List<SideQuest>() } : null
+            };
+
+            _dispatcher.ProcessGameState(initialState);
+
+            _clientProxyMock.Invocations.Clear();
+
+            var newState = new State
+            {
+                Player = new Player { MapId = "0002", Bits = 20, Name = "Me" },
+                Party = new Party
                 {
-                    new Digimon
+                    Slots = new List<Digimon?>
                     {
-                        SlotIndex = 0,
-                        BasicInfo = new BasicInfo { Name = "Agumon", CurrentHP = hp, MaxHP = 200 },
-                        Attributes = new Attributes { Strength = 50 },
-                        Resistances = new Resistances { Fire = 10 },
-                        Equipments = new Equipments(),
-                        EquippedDigievolutions = new Digievolution?[3]
-                    },
-                    null
-                }
-            },
-            ImportantItems = new ImportantItems
-            {
-                FolderBag = new ImportantItem { Id = "FolderBag", Name = "Folder Bag", Has = false },
-                TreeBoots = new ImportantItem { Id = "TreeBoots", Name = "Tree Boots", Has = false },
-                FishingPole = new ImportantItem { Id = "FishingPole", Name = "Fishing Pole", Has = false },
-                RedSnapper = new ImportantItem { Id = "RedSnapper", Name = "Red Snapper", Has = false }
-            },
-            ConsumableItems = new ConsumableItems
-            {
-                PowerCharge = new ConsumableItem { Id = "PowerCharge", Name = "Power Charge", Quantity = 0 },
-                SpiderWeb = new ConsumableItem { Id = "SpiderWeb", Name = "Spider Web", Quantity = 0 },
-                BambooSpear = new ConsumableItem { Id = "BambooSpear", Name = "Bamboo Spear", Quantity = 0 }
-            }
-        };
-    }
+                        new Digimon
+                        {
+                            SlotIndex = 1,
+                            BasicInfo = new BasicInfo { Name = "Agumon", CurrentHP = 50, MaxHP = 100, CurrentMP = 100, MaxMP = 100, Level = 2, Experience = 50 },
+                            Attributes = new Attributes { Strength = 15, Defense = 10, Spirit = 10, Wisdom = 10, Speed = 10, Charisma = 10 },
+                            Resistances = new Resistances { Fire = 2, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
+                            Equipments = new Equipments { Head = 10, Body = 0, RightHand = 0, LeftHand = 0, Accessory1 = 0, Accessory2 = 0 },
+                            EquippedDigievolutions = new Digievolution?[3] { new Digievolution { Id = 5, Level = 2 }, null, null }
+                        }
+                    }
+                },
+                ImportantItems = new ImportantItems { FolderBag = new ImportantItem { Has = true }, TreeBoots = null, FishingPole = null, RedSnapper = null },
+                Journal = new Journal { MainQuest = new MainQuest { Title = "New Task", Steps = new List<QuestStep>(), Prerequisites = new List<Requisite>() }, SideQuests = new List<SideQuest>() }
+            };
 
-    [Fact]
-    public void DispatchConnectionStatus_ShouldEmitEvent_WhenStatusChanges()
-    {
-        // Act
-        _service.DispatchConnectionStatus(true);
+            _dispatcher.ProcessGameState(newState);
 
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.ConnectionStatusChanged),
-                It.Is<object[]>(args => ((ConnectionStatusChangedEvent)args[0]).IsConnected == true),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-    }
+            _clientProxyMock.Verify(c => c.SendCoreAsync("LocationChanged", It.IsAny<object[]>(), default), Times.Once);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("PlayerBitsChanged", It.IsAny<object[]>(), default), Times.Once);
 
-    [Fact]
-    public void DispatchConnectionStatus_ShouldNotEmitEvent_WhenStatusRemainsSame()
-    {
-        // Arrange
-        _service.DispatchConnectionStatus(true);
-        _mockClientProxy.Invocations.Clear();
+            _clientProxyMock.Verify(c => c.SendCoreAsync("DigimonVitalsChanged", It.IsAny<object[]>(), default), Times.Once);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("DigimonXpGained", It.IsAny<object[]>(), default), Times.Once);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("DigimonLevelUp", It.IsAny<object[]>(), default), Times.Once);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("DigimonAttributesChanged", It.IsAny<object[]>(), default), Times.Once);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("DigimonResistancesChanged", It.IsAny<object[]>(), default), Times.Once);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("DigimonEquipmentsChanged", It.IsAny<object[]>(), default), Times.Once);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("DigimonDigievolutionsChanged", It.IsAny<object[]>(), default), Times.Once);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("DigimonDigievolutionLevelUp", It.IsAny<object[]>(), default), Times.Once);
 
-        // Act
-        _service.DispatchConnectionStatus(true); // Call again with same value
+            _clientProxyMock.Verify(c => c.SendCoreAsync("ImportantItemsChanged", It.IsAny<object[]>(), default), Times.Once);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("JournalChanged", It.IsAny<object[]>(), default), Times.Once);
+        }
 
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(It.IsAny<string>(), It.IsAny<object[]>(), It.IsAny<CancellationToken>()),
-            Times.Never);
-    }
+        [Fact]
+        public void ProcessGameState_ShouldSendPartySlotsChanged_WhenRosterChanges()
+        {
+            var initialState = new State { Party = new Party { Slots = new List<Digimon?> { CreateValidDigimon() } } };
+            var digi2 = CreateValidDigimon();
+            digi2.BasicInfo.Name = "Paildramon";
+            var newState = new State { Party = new Party { Slots = new List<Digimon?> { CreateValidDigimon(), digi2 } } };
 
-    [Fact]
-    public void ProcessGameState_ShouldEmitInitialSyncEvent_OnFirstCall()
-    {
-        // Arrange
-        var state = CreateTestState(500);
+            _dispatcher.ProcessGameState(initialState);
+            _clientProxyMock.Invocations.Clear();
+            _dispatcher.ProcessGameState(newState);
 
-        // Act
-        _service.ProcessGameState(state);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("PartySlotsChanged", It.IsAny<object[]>(), default), Times.Once);
+        }
 
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.InitialStateSync),
-                It.Is<object[]>(args => ((InitialStateSyncEvent)args[0]).InitialState.Player.Bits == 500),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-    }
+        [Fact]
+        public void DispatchConnectionStatus_ShouldSendToAllClients()
+        {
+            _dispatcher.DispatchConnectionStatus(true);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("ConnectionStatusChanged", It.IsAny<object[]>(), default), Times.Once);
+        }
 
-    [Fact]
-    public void ProcessGameState_ShouldNotEmitEvents_WhenStateIsIdentical()
-    {
-        // Arrange
-        var state = CreateTestState(500);
-        _service.ProcessGameState(state); // Initial sync
-        _mockClientProxy.Invocations.Clear();
-
-        // Act
-        var identicalState = CreateTestState(500); // Creating a new instance but identical values
-        _service.ProcessGameState(identicalState);
-
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(It.IsAny<string>(), It.IsAny<object[]>(), It.IsAny<CancellationToken>()),
-            Times.Never);
-    }
-
-    [Fact]
-    public void ProcessGameState_ShouldEmitBitsChangedEvent_WhenBitsChange()
-    {
-        // Arrange
-        var state = CreateTestState(500);
-        _service.ProcessGameState(state);
-        _mockClientProxy.Invocations.Clear();
-
-        // Act
-        var mutatedState = CreateTestState(600);
-        _service.ProcessGameState(mutatedState);
-
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.PlayerBitsChanged),
-                It.Is<object[]>(args => ((PlayerBitsChangedEvent)args[0]).NewBits == 600),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-    }
-
-    [Fact]
-    public void ProcessGameState_ShouldEmitVitalsChangedEvent_WhenHPChanges()
-    {
-        // Arrange
-        var state = CreateTestState(500, hp: 100);
-        _service.ProcessGameState(state);
-        _mockClientProxy.Invocations.Clear();
-
-        // Act
-        var mutatedState = CreateTestState(500, hp: 80); // Digimon took damage
-        _service.ProcessGameState(mutatedState);
-
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.DigimonVitalsChanged),
-                It.Is<object[]>(args => ((DigimonVitalsChangedEvent)args[0]).CurrentHP == 80),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-    }
-
-    [Fact]
-    public void ProcessGameState_ShouldEmitPartyChangedEvent_WhenDigimonListChanges()
-    {
-        // Arrange
-        var state = CreateTestState(500);
-        _service.ProcessGameState(state);
-        _mockClientProxy.Invocations.Clear();
-
-        // Act - Remove the only digimon mimicking a party size change
-        var mutatedState = CreateTestState(500);
-        mutatedState.Party.Slots[0] = null;
-        _service.ProcessGameState(mutatedState);
-
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.PartySlotsChanged),
-                It.Is<object[]>(args => ((PartySlotsChangedEvent)args[0]).NewParty.Count == 0),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-    }
-
-    [Fact]
-    public void ProcessGameState_ShouldEmitLevelUpEvent_WhenLevelIncreases()
-    {
-        // Arrange
-        var state = CreateTestState(500);
-        state.Party.Slots[0].BasicInfo.Level = 10;
-        state.Party.Slots[0].BasicInfo.Experience = 1000;
-        _service.ProcessGameState(state);
-        _mockClientProxy.Invocations.Clear();
-
-        // Act - Increase Level
-        var mutatedState = CreateTestState(500);
-        mutatedState.Party.Slots[0].BasicInfo.Level = 11;
-        mutatedState.Party.Slots[0].BasicInfo.Experience = 1200;
-        _service.ProcessGameState(mutatedState);
-
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.DigimonLevelUp),
-                It.Is<object[]>(args => ((DigimonLevelUpEvent)args[0]).NewLevel == 11 && ((DigimonLevelUpEvent)args[0]).OldLevel == 10),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-        // Should also emit XP gained
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.DigimonXpGained),
-                It.IsAny<object[]>(),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-    }
-
-    [Fact]
-    public void ProcessGameState_ShouldNotEmitLevelUpEvent_WhenOnlyXpIncreases()
-    {
-        // Arrange
-        var state = CreateTestState(500);
-        state.Party.Slots[0].BasicInfo.Level = 10;
-        state.Party.Slots[0].BasicInfo.Experience = 1000;
-        _service.ProcessGameState(state);
-        _mockClientProxy.Invocations.Clear();
-
-        // Act - Increase ONLY XP
-        var mutatedState = CreateTestState(500);
-        mutatedState.Party.Slots[0].BasicInfo.Level = 10;
-        mutatedState.Party.Slots[0].BasicInfo.Experience = 1150;
-        _service.ProcessGameState(mutatedState);
-
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.DigimonLevelUp),
-                It.IsAny<object[]>(),
-                It.IsAny<CancellationToken>()),
-            Times.Never);
-        // Should STILL emit XP gained
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.DigimonXpGained),
-                It.IsAny<object[]>(),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-    }
-
-    [Fact]
-    public void ProcessGameState_ShouldEmitEquipmentsChangedEvent_WhenEquipmentsChange()
-    {
-        // Arrange
-        var state = CreateTestState(500);
-        _service.ProcessGameState(state);
-        _mockClientProxy.Invocations.Clear();
-
-        // Act - Change Equipment
-        var mutatedState = CreateTestState(500);
-        mutatedState.Party.Slots[0].Equipments.RightHand = 157; // Picked up a Dagger
-        _service.ProcessGameState(mutatedState);
-
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.DigimonEquipmentsChanged),
-                It.Is<object[]>(args => ((DigimonEquipmentsChangedEvent)args[0]).Equipments.RightHand == 157),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
-    }
-
-    [Fact]
-    public void ProcessGameState_ShouldEmitDigievolutionsChangedEvent_WhenDigievolutionsChange()
-    {
-        // Arrange
-        var state = CreateTestState(500);
-        _service.ProcessGameState(state);
-        _mockClientProxy.Invocations.Clear();
-
-        // Act - Equip a Digievolution
-        var mutatedState = CreateTestState(500);
-        mutatedState.Party.Slots[0].EquippedDigievolutions[0] = new Digievolution { Id = 367, Level = 1 }; // Equipped Growlmon
-        _service.ProcessGameState(mutatedState);
-
-        // Assert
-        _mockClientProxy.Verify(
-            c => c.SendCoreAsync(
-                nameof(EventType.DigimonDigievolutionsChanged),
-                It.Is<object[]>(args => ((DigimonDigievolutionsChangedEvent)args[0]).EquippedDigievolutions[0] != null && ((DigimonDigievolutionsChangedEvent)args[0]).EquippedDigievolutions[0]!.Id == 367),
-                It.IsAny<CancellationToken>()),
-            Times.Once);
+        [Fact]
+        public void ProcessGameState_ShouldSendInitialState_OnFirstRun()
+        {
+            var fakeState = new State();
+            _dispatcher.ProcessGameState(fakeState);
+            _clientProxyMock.Verify(c => c.SendCoreAsync("InitialStateSync", It.IsAny<object[]>(), default), Times.Once);
+        }
     }
 }

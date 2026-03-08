@@ -2,18 +2,19 @@ using Backend.Models;
 using Backend.Models.Digimons;
 using Backend.Models.Addresses;
 using Backend.Utils;
+using Backend.Interfaces;
 
 namespace Backend.Services
 {
     public class DigimonStateService
     {
-        private readonly GameDatabase _database;
-        private readonly GameReader _reader;
+        private readonly IGameDatabase _database;
+        private readonly IGameReader _reader;
         // GameReader fetches generic Resources, but parsing the Digimon properties
         // demands a tight mapping. We use DigimonResource which has a memory logic block.
         // It's effectively parsed here in the Service layer to create the final Digimon Model.
 
-        public DigimonStateService(GameDatabase database, GameReader reader)
+        public DigimonStateService(IGameDatabase database, IGameReader reader)
         {
             _database = database;
             _reader = reader;

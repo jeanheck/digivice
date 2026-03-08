@@ -1,14 +1,15 @@
 using Backend.Models;
+using Backend.Interfaces;
 
 namespace Backend.Services
 {
     public class PartyStateService
     {
-        private readonly GameDatabase _database;
-        private readonly GameReader _reader;
+        private readonly IGameDatabase _database;
+        private readonly IGameReader _reader;
         private readonly DigimonStateService _digimonStateService;
 
-        public PartyStateService(GameDatabase database, GameReader reader, DigimonStateService digimonStateService)
+        public PartyStateService(IGameDatabase database, IGameReader reader, DigimonStateService digimonStateService)
         {
             _database = database;
             _reader = reader;

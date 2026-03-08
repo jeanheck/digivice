@@ -1,11 +1,12 @@
 using System.Text.Json;
 using Backend.Models.Addresses;
 using Backend.Models.Quests;
+using Backend.Interfaces;
 using System.Linq;
 
 namespace Backend.Services
 {
-    public class GameDatabase
+    public class GameDatabase : IGameDatabase
     {
         private readonly string _dataDirectory;
         private PlayerAddresses? _playerAddresses;

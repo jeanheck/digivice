@@ -25,8 +25,8 @@ try
     builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
     builder.Services.AddSingleton<IMemoryReaderService, MemoryReaderService>();
-    builder.Services.AddSingleton<GameDatabase>();
-    builder.Services.AddSingleton<GameReader>();
+    builder.Services.AddSingleton<IGameDatabase, GameDatabase>();
+    builder.Services.AddSingleton<IGameReader, GameReader>();
     builder.Services.AddSingleton<PlayerStateService>();
     builder.Services.AddSingleton<DigimonStateService>();
     builder.Services.AddSingleton<PartyStateService>();

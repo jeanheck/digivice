@@ -1,15 +1,16 @@
 using Backend.Models;
 using Backend.Models.Quests;
+using Backend.Interfaces;
 
 namespace Backend.Services
 {
     public class JournalStateService
     {
-        private readonly GameDatabase _database;
-        private readonly GameReader _reader;
+        private readonly IGameDatabase _database;
+        private readonly IGameReader _reader;
         private readonly ItemsStateService _itemStateService;
 
-        public JournalStateService(GameDatabase database, GameReader reader, ItemsStateService itemStateService)
+        public JournalStateService(IGameDatabase database, IGameReader reader, ItemsStateService itemStateService)
         {
             _database = database;
             _reader = reader;

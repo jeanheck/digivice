@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="ce79991d-ad28-4ef0-aafd-2b963ab6add6" name="Jean@DESKTOP-NU2JJ62 2026-03-08 16:34:47" runUser="DESKTOP-NU2JJ62\Jean" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-03-08T16:34:47.7974435-03:00" queuing="2026-03-08T16:34:47.7974436-03:00" start="2026-03-08T16:34:47.0888993-03:00" finish="2026-03-08T16:34:47.9026860-03:00" />
+  <TestSettings name="default" id="504e73df-e54a-4415-b913-475a2a2d2e0d">
+    <Deployment runDeploymentRoot="Jean_DESKTOP-NU2JJ62_2026-03-08_16_34_47" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="f69c82cc-f254-4f36-bbe0-fb1b7697cbd4" testId="4bf5742e-352b-0b38-54ee-e5bf740f793f" testName="Tests.Backend.Services.PlayerStateServiceTests.GetPlayer_ShouldReturnNull_WhenNameBytesIsNull" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0773880" startTime="2026-03-08T16:34:47.7498467-03:00" endTime="2026-03-08T16:34:47.7949576-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f69c82cc-f254-4f36-bbe0-fb1b7697cbd4" />
+    <UnitTestResult executionId="dcc8f01b-334d-4995-b517-0d464df563f3" testId="1bad8d1e-75ff-48b4-347a-f47d779e894e" testName="Tests.Backend.Models.QuestStepTests.Equals_ShouldReturnFalse_ForDifferentCompletionState" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0054799" startTime="2026-03-08T16:34:47.7497724-03:00" endTime="2026-03-08T16:34:47.7571568-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dcc8f01b-334d-4995-b517-0d464df563f3" />
+    <UnitTestResult executionId="eb21d783-d19e-46cf-86e5-44dc527d3226" testId="c21d534e-5aed-13b3-5b52-b8d555a54231" testName="Tests.Backend.Services.EventDispatcherServiceTests.DispatchConnectionStatus_ShouldSendToAllClients" computerName="DESKTOP-NU2JJ62" duration="00:00:00.1043703" startTime="2026-03-08T16:34:47.7499379-03:00" endTime="2026-03-08T16:34:47.8302839-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb21d783-d19e-46cf-86e5-44dc527d3226">
+      <Output>
+        <ErrorInfo>
+          <Message>Moq.MockException : &#xD;
+Expected invocation on the mock once, but was 0 times: clientProxy =&gt; clientProxy.SendCoreAsync("ConnectionStatusChangedEvent", It.Is&lt;object[]&gt;(o =&gt; o != null &amp;&amp; o.Length == 1), CancellationToken)&#xD;
+&#xD;
+Performed invocations:&#xD;
+&#xD;
+   Mock&lt;IClientProxy:1&gt; (clientProxy):&#xD;
+&#xD;
+      IClientProxy.SendCoreAsync("ConnectionStatusChanged", [ConnectionStatusChangedEvent], CancellationToken)&#xD;
+</Message>
+          <StackTrace>   at Moq.Mock.Verify(Mock mock, LambdaExpression expression, Times times, String failMessage) in /_/src/Moq/Mock.cs:line 332&#xD;
+   at Moq.Mock`1.Verify[TResult](Expression`1 expression, Func`1 times) in /_/src/Moq/Mock`1.cs:line 840&#xD;
+   at Tests.Backend.Services.EventDispatcherServiceTests.DispatchConnectionStatus_ShouldSendToAllClients() in C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs:line 44&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="57ccae9c-c449-4ae4-94cd-c43278193685" testId="f767c78b-ab5f-ee01-7404-b596c3b6c030" testName="Tests.Backend.Services.ItemsStateServiceTests.GetImportantItems_ShouldMapBooleanFlags_BasedOnReaderBytes" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0013027" startTime="2026-03-08T16:34:47.8057821-03:00" endTime="2026-03-08T16:34:47.8067061-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57ccae9c-c449-4ae4-94cd-c43278193685" />
+    <UnitTestResult executionId="b665b77d-8c90-4ab0-b7ea-43d691ce5390" testId="e2dc575c-1a44-6308-63b6-8f9f92395a80" testName="Tests.Backend.Models.QuestStepTests.Equals_ShouldReturnTrue_ForIdenticalProperties" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0008952" startTime="2026-03-08T16:34:47.7667122-03:00" endTime="2026-03-08T16:34:47.7667763-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b665b77d-8c90-4ab0-b7ea-43d691ce5390" />
+    <UnitTestResult executionId="0a2e858a-f82a-446a-9648-b9e37ef55c49" testId="1eff6fb6-d80d-b7a9-f2a1-59b577ee228c" testName="Tests.Backend.Models.QuestStepTests.Equals_ShouldReturnFalse_ForDifferentMaskOrAddress" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0005661" startTime="2026-03-08T16:34:47.7664226-03:00" endTime="2026-03-08T16:34:47.7665674-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a2e858a-f82a-446a-9648-b9e37ef55c49" />
+    <UnitTestResult executionId="fa884e81-a038-45f7-9d95-1399894a6db3" testId="f76af2aa-3e7a-922d-7e6f-98f120914d8e" testName="Tests.Backend.Utils.TextDecoderTests.DecodeName_ShouldHandleSymbols" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0002576" startTime="2026-03-08T16:34:47.7699120-03:00" endTime="2026-03-08T16:34:47.7699597-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa884e81-a038-45f7-9d95-1399894a6db3" />
+    <UnitTestResult executionId="194619c1-fda8-4890-9c0a-184d9f07502c" testId="464d3d7d-2ac7-34de-e0e9-6b8c937792d5" testName="Tests.Backend.Services.GameReaderTests.ReadPlayerBits_ShouldReturnValidInt" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0039956" startTime="2026-03-08T16:34:47.8053048-03:00" endTime="2026-03-08T16:34:47.8093544-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="194619c1-fda8-4890-9c0a-184d9f07502c" />
+    <UnitTestResult executionId="25656a89-36e5-4ec7-8de9-891c06b42b8e" testId="3eeb60bd-dc8d-c7b2-3cd7-d0b171db2ff0" testName="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldStopAtFFTerminator" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0001279" startTime="2026-03-08T16:34:47.7754946-03:00" endTime="2026-03-08T16:34:47.7755380-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25656a89-36e5-4ec7-8de9-891c06b42b8e" />
+    <UnitTestResult executionId="5aacd06b-f4a9-4ee3-93c2-6a097629e447" testId="85ee19d2-73c0-27c3-37d8-e87442af998f" testName="Tests.Backend.Services.MemoryReaderServiceTests.TryConnect_ShouldReturnTrue_WhenProcessExists" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0012481" startTime="2026-03-08T16:34:47.8106801-03:00" endTime="2026-03-08T16:34:47.8118322-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5aacd06b-f4a9-4ee3-93c2-6a097629e447" />
+    <UnitTestResult executionId="5801bd0c-d51c-495a-ab58-959601643613" testId="f5dff42e-f624-5387-2e84-231a827c859f" testName="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldHandleMixedCaseName_Jean" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0001819" startTime="2026-03-08T16:34:47.7756560-03:00" endTime="2026-03-08T16:34:47.7756979-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5801bd0c-d51c-495a-ab58-959601643613" />
+    <UnitTestResult executionId="f0e92b6a-ee5a-413c-bca3-e1f6763b5307" testId="e1895d0d-9440-3ea1-fa63-71c0cfc37b79" testName="Tests.Backend.Services.PlayerStateServiceTests.GetPlayer_ShouldMapAndFormatHex_ValuesCorrectly" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0104829" startTime="2026-03-08T16:34:47.7951315-03:00" endTime="2026-03-08T16:34:47.8058607-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f0e92b6a-ee5a-413c-bca3-e1f6763b5307" />
+    <UnitTestResult executionId="8060cb7c-558e-46f6-96dc-bfeb4630211d" testId="ae356b4b-d29e-3ff6-6b36-1121c8e59112" testName="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldStopAtNullTerminator" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0005874" startTime="2026-03-08T16:34:47.7687983-03:00" endTime="2026-03-08T16:34:47.7697868-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8060cb7c-558e-46f6-96dc-bfeb4630211d" />
+    <UnitTestResult executionId="71c1ea78-e68a-4859-aff8-1af0a096de50" testId="aa1e6f13-671f-b2e7-a451-4c296a152b91" testName="Tests.Backend.Services.GameDatabaseTests.GetPlayerAddresses_ShouldFallbackSilently_OrCatchError" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0055474" startTime="2026-03-08T16:34:47.7499234-03:00" endTime="2026-03-08T16:34:47.7522395-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="71c1ea78-e68a-4859-aff8-1af0a096de50" />
+    <UnitTestResult executionId="6816a2fe-4bf3-4f45-8598-4c9a8d735815" testId="cf62ae31-462a-8474-e763-d085ceffac68" testName="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldHandleUppercaseAsciiName" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0001557" startTime="2026-03-08T16:34:47.7700778-03:00" endTime="2026-03-08T16:34:47.7701188-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6816a2fe-4bf3-4f45-8598-4c9a8d735815" />
+    <UnitTestResult executionId="853e2753-ef64-495e-afab-7dd5225c975e" testId="7de53c11-e877-1698-0e12-c01d3eeb0fc2" testName="Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendLocationChangedEvent_WhenMapIdChanges" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0052588" startTime="2026-03-08T16:34:47.8353686-03:00" endTime="2026-03-08T16:34:47.8354363-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="853e2753-ef64-495e-afab-7dd5225c975e">
+      <Output>
+        <ErrorInfo>
+          <Message>Moq.MockException : &#xD;
+Expected invocation on the mock once, but was 0 times: clientProxy =&gt; clientProxy.SendCoreAsync("LocationChangedEvent", It.Is&lt;object[]&gt;(o =&gt; o != null &amp;&amp; o.Length == 1), CancellationToken)&#xD;
+&#xD;
+Performed invocations:&#xD;
+&#xD;
+   Mock&lt;IClientProxy:2&gt; (clientProxy):&#xD;
+&#xD;
+      IClientProxy.SendCoreAsync("InitialStateSync", [InitialStateSyncEvent], CancellationToken)&#xD;
+      IClientProxy.SendCoreAsync("LocationChanged", [LocationChangedEvent], CancellationToken)&#xD;
+      IClientProxy.SendCoreAsync("PlayerBitsChanged", [PlayerBitsChangedEvent], CancellationToken)&#xD;
+</Message>
+          <StackTrace>   at Moq.Mock.Verify(Mock mock, LambdaExpression expression, Times times, String failMessage) in /_/src/Moq/Mock.cs:line 332&#xD;
+   at Moq.Mock`1.Verify[TResult](Expression`1 expression, Func`1 times) in /_/src/Moq/Mock`1.cs:line 840&#xD;
+   at Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendLocationChangedEvent_WhenMapIdChanges() in C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs:line 79&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6a005387-4b8b-493a-9714-bb51ebc930b8" testId="cae38792-4ba1-2575-bcd0-ce984244b23a" testName="Tests.Backend.Services.DigimonStateServiceTests.GetDigimon_ShouldMapAttributesCorrectly_FromLogicBlock" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0897256" startTime="2026-03-08T16:34:47.7499552-03:00" endTime="2026-03-08T16:34:47.8091544-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6a005387-4b8b-493a-9714-bb51ebc930b8" />
+    <UnitTestResult executionId="251dcc2b-1f5b-48fe-ad2f-14014ebf51ab" testId="65d34073-34ac-62ba-891d-5c8fdc83f188" testName="Tests.Backend.Services.GameReaderTests.ReadImportantItems_ShouldMapResourceFully" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0874596" startTime="2026-03-08T16:34:47.7498807-03:00" endTime="2026-03-08T16:34:47.8051041-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="251dcc2b-1f5b-48fe-ad2f-14014ebf51ab" />
+    <UnitTestResult executionId="1c4e0de1-6c1a-4550-8eb5-20360869c9eb" testId="2f86fdc2-1231-d054-d4de-8ad79001c7ce" testName="Tests.Backend.Services.MemoryReaderServiceTests.ReadString_ShouldReadAscii_AndTrimNulls" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0929357" startTime="2026-03-08T16:34:47.7498958-03:00" endTime="2026-03-08T16:34:47.8105431-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1c4e0de1-6c1a-4550-8eb5-20360869c9eb" />
+    <UnitTestResult executionId="3f097a79-2abe-41f1-8e57-cbb5db1cfe5a" testId="32b03604-186e-15e9-285b-946dcbe383a0" testName="Tests.Backend.Services.PartyStateServiceTests.GetParty_ShouldIgnoreEmptySlots_AndMapAddresses" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0894969" startTime="2026-03-08T16:34:47.7499111-03:00" endTime="2026-03-08T16:34:47.8070837-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f097a79-2abe-41f1-8e57-cbb5db1cfe5a" />
+    <UnitTestResult executionId="96d7ced7-e24b-4eee-89ab-fa83cb87f6b2" testId="3f81235b-2e86-d6ef-7017-65998bd1744d" testName="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldReturnEmpty_WhenBufferIsNull" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0009571" startTime="2026-03-08T16:34:47.7685089-03:00" endTime="2026-03-08T16:34:47.7685978-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="96d7ced7-e24b-4eee-89ab-fa83cb87f6b2" />
+    <UnitTestResult executionId="832928ec-7f0b-45c1-be67-e08e893bfae7" testId="7de69408-1a4d-ea7d-ee61-9c641b5d7a7a" testName="Tests.Backend.Services.ItemsStateServiceTests.GetConsumableItems_ShouldMapQuantity_BasedOnReaderBytes" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0878028" startTime="2026-03-08T16:34:47.7498650-03:00" endTime="2026-03-08T16:34:47.8055740-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="832928ec-7f0b-45c1-be67-e08e893bfae7" />
+    <UnitTestResult executionId="b4fd4a3a-2ae6-43c2-bf25-b463cbd3c06d" testId="2b882285-255e-ee2c-4db0-9ca5dd9d7236" testName="Tests.Backend.Services.MemoryReaderServiceTests.ReadBytes_ShouldReturnArray_WhenConnectedAndMapped" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0016864" startTime="2026-03-08T16:34:47.8119635-03:00" endTime="2026-03-08T16:34:47.8135935-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b4fd4a3a-2ae6-43c2-bf25-b463cbd3c06d" />
+    <UnitTestResult executionId="5e2b9a65-5ada-4c84-9f54-520137e36d83" testId="4b687145-f825-6ccb-6e91-fab3d494c565" testName="Tests.Backend.Services.JournalStateServiceTests.GetJournal_ShouldMapQuests_BasedOnBitmask" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0876294" startTime="2026-03-08T16:34:47.7498204-03:00" endTime="2026-03-08T16:34:47.8053589-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5e2b9a65-5ada-4c84-9f54-520137e36d83" />
+    <UnitTestResult executionId="0d8229db-bd52-4d88-ac96-84ec34801f14" testId="ebbb97d4-39bf-4f59-c35a-c2dbd3d7c4ca" testName="Tests.Backend.Utils.TextDecoderTests.DecodeName_ShouldHandleLettersAndDigits" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0132263" startTime="2026-03-08T16:34:47.7474962-03:00" endTime="2026-03-08T16:34:47.7682823-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d8229db-bd52-4d88-ac96-84ec34801f14" />
+    <UnitTestResult executionId="5c22469b-b105-4c08-8736-c2e166750b87" testId="d0e6bf53-e34e-92a9-16e6-633b777104e9" testName="Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendInitialState_OnFirstRun" computerName="DESKTOP-NU2JJ62" duration="00:00:00.0011593" startTime="2026-03-08T16:34:47.8367358-03:00" endTime="2026-03-08T16:34:47.8367772-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c22469b-b105-4c08-8736-c2e166750b87">
+      <Output>
+        <ErrorInfo>
+          <Message>Moq.MockException : &#xD;
+Expected invocation on the mock once, but was 0 times: clientProxy =&gt; clientProxy.SendCoreAsync("InitialStateSyncEvent", It.Is&lt;object[]&gt;(o =&gt; o != null &amp;&amp; o.Length == 1), CancellationToken)&#xD;
+&#xD;
+Performed invocations:&#xD;
+&#xD;
+   Mock&lt;IClientProxy:3&gt; (clientProxy):&#xD;
+&#xD;
+      IClientProxy.SendCoreAsync("InitialStateSync", [InitialStateSyncEvent], CancellationToken)&#xD;
+</Message>
+          <StackTrace>   at Moq.Mock.Verify(Mock mock, LambdaExpression expression, Times times, String failMessage) in /_/src/Moq/Mock.cs:line 332&#xD;
+   at Moq.Mock`1.Verify[TResult](Expression`1 expression, Func`1 times) in /_/src/Moq/Mock`1.cs:line 840&#xD;
+   at Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendInitialState_OnFirstRun() in C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs:line 59&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Tests.Backend.Services.DigimonStateServiceTests.GetDigimon_ShouldMapAttributesCorrectly_FromLogicBlock" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="cae38792-4ba1-2575-bcd0-ce984244b23a">
+      <Execution id="6a005387-4b8b-493a-9714-bb51ebc930b8" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.DigimonStateServiceTests" name="GetDigimon_ShouldMapAttributesCorrectly_FromLogicBlock" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.JournalStateServiceTests.GetJournal_ShouldMapQuests_BasedOnBitmask" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="4b687145-f825-6ccb-6e91-fab3d494c565">
+      <Execution id="5e2b9a65-5ada-4c84-9f54-520137e36d83" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.JournalStateServiceTests" name="GetJournal_ShouldMapQuests_BasedOnBitmask" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.ItemsStateServiceTests.GetConsumableItems_ShouldMapQuantity_BasedOnReaderBytes" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="7de69408-1a4d-ea7d-ee61-9c641b5d7a7a">
+      <Execution id="832928ec-7f0b-45c1-be67-e08e893bfae7" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.ItemsStateServiceTests" name="GetConsumableItems_ShouldMapQuantity_BasedOnReaderBytes" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Utils.TextDecoderTests.DecodeName_ShouldHandleSymbols" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="f76af2aa-3e7a-922d-7e6f-98f120914d8e">
+      <Execution id="fa884e81-a038-45f7-9d95-1399894a6db3" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Utils.TextDecoderTests" name="DecodeName_ShouldHandleSymbols" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.ItemsStateServiceTests.GetImportantItems_ShouldMapBooleanFlags_BasedOnReaderBytes" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="f767c78b-ab5f-ee01-7404-b596c3b6c030">
+      <Execution id="57ccae9c-c449-4ae4-94cd-c43278193685" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.ItemsStateServiceTests" name="GetImportantItems_ShouldMapBooleanFlags_BasedOnReaderBytes" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Models.QuestStepTests.Equals_ShouldReturnTrue_ForIdenticalProperties" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="e2dc575c-1a44-6308-63b6-8f9f92395a80">
+      <Execution id="b665b77d-8c90-4ab0-b7ea-43d691ce5390" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Models.QuestStepTests" name="Equals_ShouldReturnTrue_ForIdenticalProperties" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.GameReaderTests.ReadImportantItems_ShouldMapResourceFully" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="65d34073-34ac-62ba-891d-5c8fdc83f188">
+      <Execution id="251dcc2b-1f5b-48fe-ad2f-14014ebf51ab" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.GameReaderTests" name="ReadImportantItems_ShouldMapResourceFully" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.MemoryReaderServiceTests.ReadBytes_ShouldReturnArray_WhenConnectedAndMapped" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="2b882285-255e-ee2c-4db0-9ca5dd9d7236">
+      <Execution id="b4fd4a3a-2ae6-43c2-bf25-b463cbd3c06d" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.MemoryReaderServiceTests" name="ReadBytes_ShouldReturnArray_WhenConnectedAndMapped" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.EventDispatcherServiceTests.DispatchConnectionStatus_ShouldSendToAllClients" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="c21d534e-5aed-13b3-5b52-b8d555a54231">
+      <Execution id="eb21d783-d19e-46cf-86e5-44dc527d3226" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.EventDispatcherServiceTests" name="DispatchConnectionStatus_ShouldSendToAllClients" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendInitialState_OnFirstRun" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="d0e6bf53-e34e-92a9-16e6-633b777104e9">
+      <Execution id="5c22469b-b105-4c08-8736-c2e166750b87" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.EventDispatcherServiceTests" name="ProcessGameState_ShouldSendInitialState_OnFirstRun" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Utils.TextDecoderTests.DecodeName_ShouldHandleLettersAndDigits" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="ebbb97d4-39bf-4f59-c35a-c2dbd3d7c4ca">
+      <Execution id="0d8229db-bd52-4d88-ac96-84ec34801f14" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Utils.TextDecoderTests" name="DecodeName_ShouldHandleLettersAndDigits" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.PlayerStateServiceTests.GetPlayer_ShouldMapAndFormatHex_ValuesCorrectly" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="e1895d0d-9440-3ea1-fa63-71c0cfc37b79">
+      <Execution id="f0e92b6a-ee5a-413c-bca3-e1f6763b5307" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.PlayerStateServiceTests" name="GetPlayer_ShouldMapAndFormatHex_ValuesCorrectly" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.GameReaderTests.ReadPlayerBits_ShouldReturnValidInt" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="464d3d7d-2ac7-34de-e0e9-6b8c937792d5">
+      <Execution id="194619c1-fda8-4890-9c0a-184d9f07502c" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.GameReaderTests" name="ReadPlayerBits_ShouldReturnValidInt" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.PlayerStateServiceTests.GetPlayer_ShouldReturnNull_WhenNameBytesIsNull" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="4bf5742e-352b-0b38-54ee-e5bf740f793f">
+      <Execution id="f69c82cc-f254-4f36-bbe0-fb1b7697cbd4" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.PlayerStateServiceTests" name="GetPlayer_ShouldReturnNull_WhenNameBytesIsNull" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendLocationChangedEvent_WhenMapIdChanges" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="7de53c11-e877-1698-0e12-c01d3eeb0fc2">
+      <Execution id="853e2753-ef64-495e-afab-7dd5225c975e" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.EventDispatcherServiceTests" name="ProcessGameState_ShouldSendLocationChangedEvent_WhenMapIdChanges" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.PartyStateServiceTests.GetParty_ShouldIgnoreEmptySlots_AndMapAddresses" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="32b03604-186e-15e9-285b-946dcbe383a0">
+      <Execution id="3f097a79-2abe-41f1-8e57-cbb5db1cfe5a" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.PartyStateServiceTests" name="GetParty_ShouldIgnoreEmptySlots_AndMapAddresses" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldStopAtNullTerminator" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="ae356b4b-d29e-3ff6-6b36-1121c8e59112">
+      <Execution id="8060cb7c-558e-46f6-96dc-bfeb4630211d" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Utils.TextDecoderTests" name="Decode_ShouldStopAtNullTerminator" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldStopAtFFTerminator" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="3eeb60bd-dc8d-c7b2-3cd7-d0b171db2ff0">
+      <Execution id="25656a89-36e5-4ec7-8de9-891c06b42b8e" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Utils.TextDecoderTests" name="Decode_ShouldStopAtFFTerminator" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.MemoryReaderServiceTests.ReadString_ShouldReadAscii_AndTrimNulls" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="2f86fdc2-1231-d054-d4de-8ad79001c7ce">
+      <Execution id="1c4e0de1-6c1a-4550-8eb5-20360869c9eb" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.MemoryReaderServiceTests" name="ReadString_ShouldReadAscii_AndTrimNulls" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Models.QuestStepTests.Equals_ShouldReturnFalse_ForDifferentCompletionState" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="1bad8d1e-75ff-48b4-347a-f47d779e894e">
+      <Execution id="dcc8f01b-334d-4995-b517-0d464df563f3" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Models.QuestStepTests" name="Equals_ShouldReturnFalse_ForDifferentCompletionState" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.MemoryReaderServiceTests.TryConnect_ShouldReturnTrue_WhenProcessExists" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="85ee19d2-73c0-27c3-37d8-e87442af998f">
+      <Execution id="5aacd06b-f4a9-4ee3-93c2-6a097629e447" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.MemoryReaderServiceTests" name="TryConnect_ShouldReturnTrue_WhenProcessExists" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Models.QuestStepTests.Equals_ShouldReturnFalse_ForDifferentMaskOrAddress" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="1eff6fb6-d80d-b7a9-f2a1-59b577ee228c">
+      <Execution id="0a2e858a-f82a-446a-9648-b9e37ef55c49" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Models.QuestStepTests" name="Equals_ShouldReturnFalse_ForDifferentMaskOrAddress" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldReturnEmpty_WhenBufferIsNull" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="3f81235b-2e86-d6ef-7017-65998bd1744d">
+      <Execution id="96d7ced7-e24b-4eee-89ab-fa83cb87f6b2" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Utils.TextDecoderTests" name="Decode_ShouldReturnEmpty_WhenBufferIsNull" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Services.GameDatabaseTests.GetPlayerAddresses_ShouldFallbackSilently_OrCatchError" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="aa1e6f13-671f-b2e7-a451-4c296a152b91">
+      <Execution id="71c1ea78-e68a-4859-aff8-1af0a096de50" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Services.GameDatabaseTests" name="GetPlayerAddresses_ShouldFallbackSilently_OrCatchError" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldHandleUppercaseAsciiName" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="cf62ae31-462a-8474-e763-d085ceffac68">
+      <Execution id="6816a2fe-4bf3-4f45-8598-4c9a8d735815" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Utils.TextDecoderTests" name="Decode_ShouldHandleUppercaseAsciiName" />
+    </UnitTest>
+    <UnitTest name="Tests.Backend.Utils.TextDecoderTests.Decode_ShouldHandleMixedCaseName_Jean" storage="c:\projetos\digivice\tests\bin\debug\net10.0\tests.dll" id="f5dff42e-f624-5387-2e84-231a827c859f">
+      <Execution id="5801bd0c-d51c-495a-ab58-959601643613" />
+      <TestMethod codeBase="C:\Projetos\digivice\Tests\bin\Debug\net10.0\Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Tests.Backend.Utils.TextDecoderTests" name="Decode_ShouldHandleMixedCaseName_Jean" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="4bf5742e-352b-0b38-54ee-e5bf740f793f" executionId="f69c82cc-f254-4f36-bbe0-fb1b7697cbd4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1bad8d1e-75ff-48b4-347a-f47d779e894e" executionId="dcc8f01b-334d-4995-b517-0d464df563f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c21d534e-5aed-13b3-5b52-b8d555a54231" executionId="eb21d783-d19e-46cf-86e5-44dc527d3226" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f767c78b-ab5f-ee01-7404-b596c3b6c030" executionId="57ccae9c-c449-4ae4-94cd-c43278193685" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e2dc575c-1a44-6308-63b6-8f9f92395a80" executionId="b665b77d-8c90-4ab0-b7ea-43d691ce5390" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1eff6fb6-d80d-b7a9-f2a1-59b577ee228c" executionId="0a2e858a-f82a-446a-9648-b9e37ef55c49" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f76af2aa-3e7a-922d-7e6f-98f120914d8e" executionId="fa884e81-a038-45f7-9d95-1399894a6db3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="464d3d7d-2ac7-34de-e0e9-6b8c937792d5" executionId="194619c1-fda8-4890-9c0a-184d9f07502c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3eeb60bd-dc8d-c7b2-3cd7-d0b171db2ff0" executionId="25656a89-36e5-4ec7-8de9-891c06b42b8e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85ee19d2-73c0-27c3-37d8-e87442af998f" executionId="5aacd06b-f4a9-4ee3-93c2-6a097629e447" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f5dff42e-f624-5387-2e84-231a827c859f" executionId="5801bd0c-d51c-495a-ab58-959601643613" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e1895d0d-9440-3ea1-fa63-71c0cfc37b79" executionId="f0e92b6a-ee5a-413c-bca3-e1f6763b5307" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ae356b4b-d29e-3ff6-6b36-1121c8e59112" executionId="8060cb7c-558e-46f6-96dc-bfeb4630211d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa1e6f13-671f-b2e7-a451-4c296a152b91" executionId="71c1ea78-e68a-4859-aff8-1af0a096de50" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf62ae31-462a-8474-e763-d085ceffac68" executionId="6816a2fe-4bf3-4f45-8598-4c9a8d735815" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7de53c11-e877-1698-0e12-c01d3eeb0fc2" executionId="853e2753-ef64-495e-afab-7dd5225c975e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cae38792-4ba1-2575-bcd0-ce984244b23a" executionId="6a005387-4b8b-493a-9714-bb51ebc930b8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65d34073-34ac-62ba-891d-5c8fdc83f188" executionId="251dcc2b-1f5b-48fe-ad2f-14014ebf51ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2f86fdc2-1231-d054-d4de-8ad79001c7ce" executionId="1c4e0de1-6c1a-4550-8eb5-20360869c9eb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="32b03604-186e-15e9-285b-946dcbe383a0" executionId="3f097a79-2abe-41f1-8e57-cbb5db1cfe5a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3f81235b-2e86-d6ef-7017-65998bd1744d" executionId="96d7ced7-e24b-4eee-89ab-fa83cb87f6b2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7de69408-1a4d-ea7d-ee61-9c641b5d7a7a" executionId="832928ec-7f0b-45c1-be67-e08e893bfae7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2b882285-255e-ee2c-4db0-9ca5dd9d7236" executionId="b4fd4a3a-2ae6-43c2-bf25-b463cbd3c06d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4b687145-f825-6ccb-6e91-fab3d494c565" executionId="5e2b9a65-5ada-4c84-9f54-520137e36d83" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ebbb97d4-39bf-4f59-c35a-c2dbd3d7c4ca" executionId="0d8229db-bd52-4d88-ac96-84ec34801f14" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0e6bf53-e34e-92a9-16e6-633b777104e9" executionId="5c22469b-b105-4c08-8736-c2e166750b87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Resultados que não estão em uma lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos os resultados carregados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="26" executed="26" passed="23" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.3)&#xD;
+[xUnit.net 00:00:00.08]   Discovering: Tests&#xD;
+[xUnit.net 00:00:00.12]   Discovered:  Tests&#xD;
+[xUnit.net 00:00:00.15]   Starting:    Tests&#xD;
+[xUnit.net 00:00:00.29]       Moq.MockException : &#xD;
+[xUnit.net 00:00:00.29]       Expected invocation on the mock once, but was 0 times: clientProxy =&gt; clientProxy.SendCoreAsync("ConnectionStatusChangedEvent", It.Is&lt;object[]&gt;(o =&gt; o != null &amp;&amp; o.Length == 1), CancellationToken)&#xD;
+[xUnit.net 00:00:00.29]       &#xD;
+[xUnit.net 00:00:00.29]       Performed invocations:&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]          Mock&lt;IClientProxy:1&gt; (clientProxy):&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]             IClientProxy.SendCoreAsync("ConnectionStatusChanged", [ConnectionStatusChangedEvent], CancellationToken)&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.30]         /_/src/Moq/Mock.cs(332,0): at Moq.Mock.Verify(Mock mock, LambdaExpression expression, Times times, String failMessage)&#xD;
+[xUnit.net 00:00:00.30]         /_/src/Moq/Mock`1.cs(840,0): at Moq.Mock`1.Verify[TResult](Expression`1 expression, Func`1 times)&#xD;
+[xUnit.net 00:00:00.30]         C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(44,0): at Tests.Backend.Services.EventDispatcherServiceTests.DispatchConnectionStatus_ShouldSendToAllClients()&#xD;
+[xUnit.net 00:00:00.30]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.30]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.30]       Moq.MockException : &#xD;
+[xUnit.net 00:00:00.30]       Expected invocation on the mock once, but was 0 times: clientProxy =&gt; clientProxy.SendCoreAsync("LocationChangedEvent", It.Is&lt;object[]&gt;(o =&gt; o != null &amp;&amp; o.Length == 1), CancellationToken)&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]       Performed invocations:&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]          Mock&lt;IClientProxy:2&gt; (clientProxy):&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]             IClientProxy.SendCoreAsync("InitialStateSync", [InitialStateSyncEvent], CancellationToken)&#xD;
+[xUnit.net 00:00:00.30]             IClientProxy.SendCoreAsync("LocationChanged", [LocationChangedEvent], CancellationToken)&#xD;
+[xUnit.net 00:00:00.30]             IClientProxy.SendCoreAsync("PlayerBitsChanged", [PlayerBitsChangedEvent], CancellationToken)&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.30]         /_/src/Moq/Mock.cs(332,0): at Moq.Mock.Verify(Mock mock, LambdaExpression expression, Times times, String failMessage)&#xD;
+[xUnit.net 00:00:00.30]         /_/src/Moq/Mock`1.cs(840,0): at Moq.Mock`1.Verify[TResult](Expression`1 expression, Func`1 times)&#xD;
+[xUnit.net 00:00:00.30]         C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(79,0): at Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendLocationChangedEvent_WhenMapIdChanges()&#xD;
+[xUnit.net 00:00:00.30]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.30]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.30]       Moq.MockException : &#xD;
+[xUnit.net 00:00:00.30]       Expected invocation on the mock once, but was 0 times: clientProxy =&gt; clientProxy.SendCoreAsync("InitialStateSyncEvent", It.Is&lt;object[]&gt;(o =&gt; o != null &amp;&amp; o.Length == 1), CancellationToken)&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]       Performed invocations:&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]          Mock&lt;IClientProxy:3&gt; (clientProxy):&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]             IClientProxy.SendCoreAsync("InitialStateSync", [InitialStateSyncEvent], CancellationToken)&#xD;
+[xUnit.net 00:00:00.30]       &#xD;
+[xUnit.net 00:00:00.30]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.30]         /_/src/Moq/Mock.cs(332,0): at Moq.Mock.Verify(Mock mock, LambdaExpression expression, Times times, String failMessage)&#xD;
+[xUnit.net 00:00:00.30]         /_/src/Moq/Mock`1.cs(840,0): at Moq.Mock`1.Verify[TResult](Expression`1 expression, Func`1 times)&#xD;
+[xUnit.net 00:00:00.30]         C:\Projetos\digivice\Tests\Backend\Services\EventDispatcherServiceTests.cs(59,0): at Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendInitialState_OnFirstRun()&#xD;
+[xUnit.net 00:00:00.30]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+[xUnit.net 00:00:00.30]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)&#xD;
+[xUnit.net 00:00:00.30]   Finished:    Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="DESKTOP-NU2JJ62" outcome="Error" timestamp="2026-03-08T16:34:47.8323397-03:00">
+        <Text>[xUnit.net 00:00:00.29]     Tests.Backend.Services.EventDispatcherServiceTests.DispatchConnectionStatus_ShouldSendToAllClients [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-NU2JJ62" outcome="Error" timestamp="2026-03-08T16:34:47.8356042-03:00">
+        <Text>[xUnit.net 00:00:00.30]     Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendLocationChangedEvent_WhenMapIdChanges [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="DESKTOP-NU2JJ62" outcome="Error" timestamp="2026-03-08T16:34:47.8369387-03:00">
+        <Text>[xUnit.net 00:00:00.30]     Tests.Backend.Services.EventDispatcherServiceTests.ProcessGameState_ShouldSendInitialState_OnFirstRun [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

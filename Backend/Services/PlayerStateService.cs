@@ -1,14 +1,15 @@
 using Backend.Models;
 using Backend.Utils;
+using Backend.Interfaces;
 
 namespace Backend.Services
 {
     public class PlayerStateService
     {
-        private readonly GameDatabase _database;
-        private readonly GameReader _reader;
+        private readonly IGameDatabase _database;
+        private readonly IGameReader _reader;
 
-        public PlayerStateService(GameDatabase database, GameReader reader)
+        public PlayerStateService(IGameDatabase database, IGameReader reader)
         {
             _database = database;
             _reader = reader;

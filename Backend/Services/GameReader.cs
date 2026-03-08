@@ -5,7 +5,7 @@ using Backend.Models.Quests;
 
 namespace Backend.Services
 {
-    public class GameReader
+    public class GameReader : IGameReader
     {
         private readonly IMemoryReaderService _memoryReader;
 

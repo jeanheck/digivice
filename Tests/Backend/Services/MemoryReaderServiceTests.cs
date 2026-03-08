@@ -1,0 +1,73 @@
+using Backend.Services;
+using Backend.Interfaces;
+using Moq;
+using Xunit;
+
+namespace Tests.Backend.Services
+{
+    public class MemoryReaderServiceTests
+    {
+        private readonly Mock<IProcessService> _mockProcessService;
+        private readonly Mock<IMemoryProvider> _mockMemoryProvider;
+        private readonly Mock<IMemoryAccessor> _mockMemoryAccessor;
+
+        public MemoryReaderServiceTests()
+        {
+            _mockProcessService = new Mock<IProcessService>();
+            _mockMemoryProvider = new Mock<IMemoryProvider>();
+            _mockMemoryAccessor = new Mock<IMemoryAccessor>();
+        }
+
+        [Fact]
+        public void TryConnect_ShouldReturnTrue_WhenProcessExists()
+        {
+            _mockProcessService.Setup(p => p.GetProcessIdByName(It.IsAny<string>())).Returns(1234);
+            _mockMemoryProvider.Setup(p => p.OpenExisting(It.IsAny<string>())).Returns(_mockMemoryAccessor.Object);
+
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
+            Assert.True(reader.TryConnect());
+            Assert.True(reader.IsConnected);
+        }
+
+        [Fact]
+        public void ReadBytes_ShouldReturnArray_WhenConnectedAndMapped()
+        {
+            byte[] expectedData = [0xAA, 0xBB, 0xCC];
+            _mockProcessService.Setup(p => p.GetProcessIdByName(It.IsAny<string>())).Returns(1234);
+            _mockMemoryProvider.Setup(p => p.OpenExisting(It.IsAny<string>())).Returns(_mockMemoryAccessor.Object);
+
+            _mockMemoryAccessor.Setup(a => a.ReadArray(0x1000, It.IsAny<byte[]>(), 0, 3))
+                               .Callback<long, byte[], int, int>((addr, buf, idx, count) =>
+                               {
+                                   expectedData.CopyTo(buf, idx);
+                               });
+
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
+            reader.TryConnect();
+
+            var result = reader.ReadBytes(0x1000, 3);
+            Assert.Equal(expectedData, result);
+        }
+
+        [Fact]
+        public void ReadString_ShouldReadAscii_AndTrimNulls()
+        {
+            // Standard ASCII mapping inside MemoryReader (TextDecoder is used later downstream)
+            byte[] expectedData = System.Text.Encoding.ASCII.GetBytes("Me\0\0\0");
+            _mockProcessService.Setup(p => p.GetProcessIdByName(It.IsAny<string>())).Returns(1234);
+            _mockMemoryProvider.Setup(p => p.OpenExisting(It.IsAny<string>())).Returns(_mockMemoryAccessor.Object);
+
+            _mockMemoryAccessor.Setup(a => a.ReadArray(0x2000, It.IsAny<byte[]>(), 0, 5))
+                               .Callback<long, byte[], int, int>((addr, buf, idx, count) =>
+                               {
+                                   expectedData.CopyTo(buf, idx);
+                               });
+
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
+            reader.TryConnect();
+
+            var result = reader.ReadString(0x2000, 5);
+            Assert.Equal("Me", result); // Expected normal TextDecoder decoding behavior
+        }
+    }
+}
