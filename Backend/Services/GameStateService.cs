@@ -27,30 +27,8 @@ namespace Backend.Services
                 Player = _playerStateService.GetPlayer(),
                 Party = _partyStateService.GetParty(),
                 ImportantItems = _itemStateService.GetImportantItems(),
-                Journal = GetJournal()
+                Journal = _journalStateService.GetJournal()
             };
         }
-
-
-
-
-
-        private Journal GetJournal()
-        {
-            var journal = new Journal();
-
-            _journalStateService.ApplyMainQuest(journal);
-            _journalStateService.ApplySideQuests(journal);
-
-            return journal;
-        }
-
-
-
-
-
-
-
-
     }
 }

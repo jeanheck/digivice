@@ -1,10 +1,7 @@
-using System;
 using Backend.Models;
 using Backend.Models.Digimons;
 using Backend.Models.Addresses;
-using Backend.Models.Resources;
-using Backend.Interfaces;
-using System.Linq;
+using Backend.Utils;
 
 namespace Backend.Services
 {
@@ -22,18 +19,18 @@ namespace Backend.Services
             _reader = reader;
         }
 
-        public Digimon BuildDigimon(int slotIndex, byte digimonId, int baseAddress)
+        public Digimon GetDigimon(int slotIndex, byte digimonId, int baseAddress)
         {
             var addresses = _database.GetDigimonAddresses();
-            var resource = _reader.ReadDigimonResource(slotIndex, digimonId, baseAddress);
+            var resource = _reader.ReadDigimonResource(slotIndex, baseAddress);
 
             var digimonName = GetDigimonNameById(addresses, digimonId);
 
             var equippedEvoIds = new int[]
             {
-                ReadInt16FromBlock(resource.LogicBlock, addresses.Digievolutions?.EquipedSlot1),
-                ReadInt16FromBlock(resource.LogicBlock, addresses.Digievolutions?.EquipedSlot2),
-                ReadInt16FromBlock(resource.LogicBlock, addresses.Digievolutions?.EquipedSlot3)
+                MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Digievolutions?.EquipedSlot1),
+                MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Digievolutions?.EquipedSlot2),
+                MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Digievolutions?.EquipedSlot3)
             };
 
             var equippedDigievolutions = new Digievolution?[3];
@@ -47,9 +44,9 @@ namespace Backend.Services
                 }
 
                 int level = 1;
-                int maxEvolutions = ReadInt32OffsetSafely(addresses.Digievolutions?.MaxUnlockedDigievolutions, 60);
-                int stride = ReadInt32OffsetSafely(addresses.Digievolutions?.UnlockedDigievolutionEntryStride, 8);
-                int startOffset = ReadInt32OffsetSafely(addresses.Digievolutions?.UnlockedDigievolutionsStart, 0x50);
+                int maxEvolutions = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions?.MaxUnlockedDigievolutions, 60);
+                int stride = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions?.UnlockedDigievolutionEntryStride, 8);
+                int startOffset = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions?.UnlockedDigievolutionsStart, 0x50);
 
                 for (int k = 0; k < maxEvolutions; k++)
                 {
@@ -77,40 +74,40 @@ namespace Backend.Services
                 BasicInfo = new BasicInfo
                 {
                     Name = digimonName,
-                    Experience = ReadInt32FromBlock(resource.LogicBlock, addresses.BasicInfo?.Experience),
-                    Level = ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.Level),
-                    CurrentHP = ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.CurrentHP),
-                    MaxHP = ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.MaxHP),
-                    CurrentMP = ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.CurrentMP),
-                    MaxMP = ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.MaxMP)
+                    Experience = MemoryUtils.ReadInt32FromBlock(resource.LogicBlock, addresses.BasicInfo?.Experience),
+                    Level = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.Level),
+                    CurrentHP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.CurrentHP),
+                    MaxHP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.MaxHP),
+                    CurrentMP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.CurrentMP),
+                    MaxMP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.MaxMP)
                 },
                 Attributes = new Attributes
                 {
-                    Strength = ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Strength),
-                    Defense = ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Defense),
-                    Spirit = ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Spirit),
-                    Wisdom = ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Wisdow),
-                    Speed = ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Speed),
-                    Charisma = ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Charisma)
+                    Strength = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Strength),
+                    Defense = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Defense),
+                    Spirit = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Spirit),
+                    Wisdom = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Wisdow),
+                    Speed = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Speed),
+                    Charisma = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Charisma)
                 },
                 Resistances = new Resistances
                 {
-                    Fire = ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Fire),
-                    Water = ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Water),
-                    Ice = ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Ice),
-                    Wind = ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Wind),
-                    Thunder = ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Thunder),
-                    Machine = ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Machine),
-                    Dark = ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Dark)
+                    Fire = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Fire),
+                    Water = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Water),
+                    Ice = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Ice),
+                    Wind = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Wind),
+                    Thunder = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Thunder),
+                    Machine = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Machine),
+                    Dark = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Dark)
                 },
                 Equipments = new Equipments
                 {
-                    Head = ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Head),
-                    Body = ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Body),
-                    RightHand = ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.RightHand),
-                    LeftHand = ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.LeftHand),
-                    Accessory1 = ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Accessory1),
-                    Accessory2 = ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Accessory2)
+                    Head = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Head),
+                    Body = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Body),
+                    RightHand = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.RightHand),
+                    LeftHand = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.LeftHand),
+                    Accessory1 = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Accessory1),
+                    Accessory2 = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Accessory2)
                 },
                 EquippedDigievolutions = equippedDigievolutions
             };
@@ -118,70 +115,13 @@ namespace Backend.Services
 
         private string GetDigimonNameById(DigimonAddresses addresses, byte id)
         {
-            if (addresses.Kotemon?.Id == id) return "Kotemon";
-            if (addresses.Kumamon?.Id == id) return "Kumamon";
-            if (addresses.Monmon?.Id == id) return "Monmon";
-            if (addresses.Agumon?.Id == id) return "Agumon";
-            if (addresses.Veemon?.Id == id) return "Veemon";
-            if (addresses.Guilmon?.Id == id) return "Guilmon";
-            if (addresses.Renamon?.Id == id) return "Renamon";
-            if (addresses.Patamon?.Id == id) return "Patamon";
-            return "Unknown";
-        }
-
-        private int ReadInt32OffsetSafely(string? hexOffset, int fallback)
-        {
-            if (string.IsNullOrEmpty(hexOffset)) return fallback;
-            try
-            {
-                // Note: The json has integer strings for these sizes/strides instead of hex
-                if (int.TryParse(hexOffset, out int num)) return num;
-                return Convert.ToInt32(hexOffset, 16);
-            }
-            catch { return fallback; }
-        }
-
-        private short ReadInt16FromBlock(byte[] block, string? hexOffset)
-        {
-            if (string.IsNullOrEmpty(hexOffset) || block.Length == 0) return 0;
-            try
-            {
-                int offset = Convert.ToInt32(hexOffset, 16);
-                if (offset + 1 >= block.Length) return 0;
-                return BitConverter.ToInt16(block, offset);
-            }
-            catch { return 0; }
-        }
-
-        private int ReadInt32FromBlock(byte[] block, string? hexOffset)
-        {
-            if (string.IsNullOrEmpty(hexOffset) || block.Length == 0) return 0;
-            try
-            {
-                int offset = Convert.ToInt32(hexOffset, 16);
-                if (offset + 3 >= block.Length) return 0;
-                return BitConverter.ToInt32(block, offset);
-            }
-            catch { return 0; }
+            return addresses.Digimons?.FirstOrDefault(d => d.Id == id)?.Name ?? "Unknown";
         }
 
         public int GetDigimonBaseAddressById(DigimonAddresses addresses, byte id)
         {
-            if (addresses.Kotemon?.Id == id) return ParseHex(addresses.Kotemon.Address);
-            if (addresses.Kumamon?.Id == id) return ParseHex(addresses.Kumamon.Address);
-            if (addresses.Monmon?.Id == id) return ParseHex(addresses.Monmon.Address);
-            if (addresses.Agumon?.Id == id) return ParseHex(addresses.Agumon.Address);
-            if (addresses.Veemon?.Id == id) return ParseHex(addresses.Veemon.Address);
-            if (addresses.Guilmon?.Id == id) return ParseHex(addresses.Guilmon.Address);
-            if (addresses.Renamon?.Id == id) return ParseHex(addresses.Renamon.Address);
-            if (addresses.Patamon?.Id == id) return ParseHex(addresses.Patamon.Address);
-            return 0;
-        }
-
-        private int ParseHex(string? hexStr)
-        {
-            if (string.IsNullOrEmpty(hexStr)) return 0;
-            try { return Convert.ToInt32(hexStr, 16); } catch { return 0; }
+            var addressHex = addresses.Digimons?.FirstOrDefault(d => d.Id == id)?.Address;
+            return MemoryUtils.ParseHex(addressHex);
         }
     }
 }

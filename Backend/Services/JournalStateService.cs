@@ -1,5 +1,3 @@
-using Backend.DetailedQuests;
-using Backend.DetailedQuests.SideQuests;
 using Backend.Models;
 using Backend.Models.Quests;
 
@@ -18,47 +16,57 @@ namespace Backend.Services
             _itemStateService = itemStateService;
         }
 
-        public void ApplyMainQuest(Journal journal)
+        public Journal GetJournal()
         {
-            // --- Main Quest ---
-            var mainQuest = MainQuestFactory.Get();
-            var mainQuestAddresses = _database.GetMainQuestAddresses();
-            var mainQuestResource = _reader.ReadMainQuestSteps(mainQuestAddresses.Steps);
-            ApplyQuestStepsLogic(mainQuest, mainQuestAddresses.Steps, mainQuestResource);
-            journal.MainQuest = mainQuest;
+            var journal = new Journal
+            {
+                MainQuest = GetMainQuest(),
+                SideQuests = GetSideQuests()
+            };
+            return journal;
         }
 
-        public void ApplySideQuests(Journal journal)
+        private MainQuest GetMainQuest()
         {
+            // --- Main Quest ---
+            var mainQuest = _database.GetMainQuest();
+            var mainQuestResource = _reader.ReadQuestSteps(mainQuest.Steps);
+            ApplyQuestStepsLogic(mainQuest, mainQuest.Steps, mainQuestResource);
+            return mainQuest;
+        }
+
+        private List<SideQuest> GetSideQuests()
+        {
+            var sideQuests = new List<SideQuest>();
+
             // --- 1. Folder Bag Side Quest ---
-            var folderBagAddress = _database.GetSideQuestAddresses("FolderBag");
-            var folderBagResource = _reader.ReadQuestSteps(folderBagAddress);
-            var folderBag = FolderBag.Get();
-            ApplyQuestStepsLogic(folderBag, folderBagAddress.Steps, folderBagResource);
-            journal.SideQuests.Add(folderBag);
+            var folderBag = _database.GetSideQuest("FolderBag");
+            var folderBagResource = _reader.ReadQuestSteps(folderBag.Steps);
+            ApplyQuestStepsLogic(folderBag, folderBag.Steps, folderBagResource);
+            sideQuests.Add(folderBag);
 
             // Check if the player owns the Folder Bag (prerequisite for next quests)
             var importantItems = _itemStateService.GetImportantItems();
             bool hasFolderBag = importantItems.ContainsKey("FolderBag") && importantItems["FolderBag"];
 
             // --- 2. Tree Boots Side Quest ---
-            var treeBootsAddress = _database.GetSideQuestAddresses("TreeBoots");
-            var treeBootsResource = _reader.ReadQuestSteps(treeBootsAddress);
-            var treeBoots = TreeBoots.Get();
+            var treeBoots = _database.GetSideQuest("TreeBoots");
+            var treeBootsResource = _reader.ReadQuestSteps(treeBoots.Steps);
             if (treeBoots.Prerequisites.Count > 0)
                 treeBoots.Prerequisites[0].IsDone = hasFolderBag;
-            ApplyQuestStepsLogic(treeBoots, treeBootsAddress.Steps, treeBootsResource);
-            journal.SideQuests.Add(treeBoots);
+            ApplyQuestStepsLogic(treeBoots, treeBoots.Steps, treeBootsResource);
+            sideQuests.Add(treeBoots);
 
             // --- 3. Fishing Pole Side Quest ---
-            var fishingPoleAddress = _database.GetSideQuestAddresses("FishingPole");
-            var fishingPoleResource = _reader.ReadQuestSteps(fishingPoleAddress);
-            var fishingPole = FishingPole.Get();
+            var fishingPole = _database.GetSideQuest("FishingPole");
+            var fishingPoleResource = _reader.ReadQuestSteps(fishingPole.Steps);
             if (fishingPole.Prerequisites.Count > 0)
                 fishingPole.Prerequisites[0].IsDone = hasFolderBag;
-            ApplyQuestStepsLogic(fishingPole, fishingPoleAddress.Steps, fishingPoleResource);
+            ApplyQuestStepsLogic(fishingPole, fishingPole.Steps, fishingPoleResource);
             ApplyStepPrerequisites(fishingPole, importantItems);
-            journal.SideQuests.Add(fishingPole);
+            sideQuests.Add(fishingPole);
+
+            return sideQuests;
         }
 
         private void ApplyQuestStepsLogic(Quest quest, List<QuestStep> memSteps, Dictionary<int, byte> activeBytes)

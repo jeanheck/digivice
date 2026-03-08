@@ -106,5 +106,18 @@ namespace Backend.Services
 
             return encoding.GetString(bytes, 0, len);
         }
+
+        public byte ReadByteSafe(string? hexAddress)
+        {
+            if (string.IsNullOrEmpty(hexAddress)) return 0;
+            try
+            {
+                int address = Convert.ToInt32(hexAddress, 16);
+                if (address == 0) return 0;
+                var bytes = ReadBytes(address, 1);
+                return (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
+            }
+            catch { return 0; }
+        }
     }
 }

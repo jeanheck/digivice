@@ -24,5 +24,37 @@ namespace Backend.Models.Quests
         /// If null, uses legacy behavior: byte == 1 means completed.
         /// </summary>
         public string? BitMask { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is not QuestStep other) return false;
+
+            bool prereqsEqual = (Prerequisites == null && other.Prerequisites == null) ||
+                                (Prerequisites != null && other.Prerequisites != null &&
+                                 Prerequisites.Count == other.Prerequisites.Count &&
+                                 Prerequisites.SequenceEqual(other.Prerequisites));
+
+            return Number == other.Number &&
+                   Description == other.Description &&
+                   IsCompleted == other.IsCompleted &&
+                   Address == other.Address &&
+                   BitMask == other.BitMask &&
+                   prereqsEqual;
+        }
+
+        public override int GetHashCode()
+        {
+            var hash = new HashCode();
+            hash.Add(Number);
+            hash.Add(Description);
+            hash.Add(IsCompleted);
+            hash.Add(Address);
+            hash.Add(BitMask);
+            if (Prerequisites != null)
+            {
+                foreach (var p in Prerequisites) hash.Add(p);
+            }
+            return hash.ToHashCode();
+        }
     }
 }

@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
-
 namespace Backend.Models.Addresses
 {
     public class DigimonBaseAddress
     {
+        public string? Name { get; set; }
         public int Id { get; set; }
         public string? Address { get; set; }
     }
@@ -62,14 +60,7 @@ namespace Backend.Models.Addresses
 
     public class DigimonAddresses
     {
-        public DigimonBaseAddress? Kotemon { get; set; }
-        public DigimonBaseAddress? Kumamon { get; set; }
-        public DigimonBaseAddress? Monmon { get; set; }
-        public DigimonBaseAddress? Agumon { get; set; }
-        public DigimonBaseAddress? Veemon { get; set; }
-        public DigimonBaseAddress? Guilmon { get; set; }
-        public DigimonBaseAddress? Renamon { get; set; }
-        public DigimonBaseAddress? Patamon { get; set; }
+        public List<DigimonBaseAddress>? Digimons { get; set; }
 
         public BasicInfoOffsets? BasicInfo { get; set; }
         public AttributesOffsets? Attributes { get; set; }

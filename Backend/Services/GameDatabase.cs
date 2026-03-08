@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Backend.Models.Addresses;
+using Backend.Models.Quests;
 
 namespace Backend.Services
 {
@@ -11,8 +12,8 @@ namespace Backend.Services
         private ImportantItemsAddresses? _importantItemsAddresses;
         private ConsumableItemsAddresses? _consumableItemsAddresses;
         private DigimonAddresses? _digimonAddresses;
-        private QuestAddresses? _mainQuestAddresses;
-        private Dictionary<string, QuestAddresses> _sideQuestsAddresses = new();
+        private MainQuest? _mainQuest;
+        private Dictionary<string, SideQuest> _sideQuests = new();
 
         public GameDatabase()
         {
@@ -100,9 +101,9 @@ namespace Backend.Services
             return _digimonAddresses;
         }
 
-        public QuestAddresses GetMainQuestAddresses()
+        public MainQuest GetMainQuest()
         {
-            if (_mainQuestAddresses != null) return _mainQuestAddresses;
+            if (_mainQuest != null) return _mainQuest;
 
             var path = Path.Combine(_dataDirectory, "MainQuest.json");
             if (!File.Exists(path))
@@ -111,16 +112,16 @@ namespace Backend.Services
             }
 
             var json = File.ReadAllText(path);
-            _mainQuestAddresses = JsonSerializer.Deserialize<QuestAddresses>(json) ?? new QuestAddresses();
+            _mainQuest = JsonSerializer.Deserialize<MainQuest>(json) ?? new MainQuest();
 
-            return _mainQuestAddresses;
+            return _mainQuest;
         }
 
-        public QuestAddresses GetSideQuestAddresses(string questName)
+        public SideQuest GetSideQuest(string questName)
         {
-            if (_sideQuestsAddresses.TryGetValue(questName, out var cachedAddresses))
+            if (_sideQuests.TryGetValue(questName, out var cachedQuest))
             {
-                return cachedAddresses;
+                return cachedQuest;
             }
 
             var path = Path.Combine(_dataDirectory, "SideQuests", $"{questName}.json");
@@ -130,9 +131,9 @@ namespace Backend.Services
             }
 
             var json = File.ReadAllText(path);
-            var parsed = JsonSerializer.Deserialize<QuestAddresses>(json) ?? new QuestAddresses();
+            var parsed = JsonSerializer.Deserialize<SideQuest>(json) ?? new SideQuest();
 
-            _sideQuestsAddresses[questName] = parsed;
+            _sideQuests[questName] = parsed;
 
             return parsed;
         }

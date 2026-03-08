@@ -97,7 +97,7 @@ namespace Backend.Services
             };
         }
 
-        public DigimonResource ReadDigimonResource(int slotIndex, byte digimonId, int baseAddress)
+        public DigimonResource ReadDigimonResource(int slotIndex, int baseAddress)
         {
             // The digimon struct is quite large, 0x3CA is the last property (Accessory2), taking 2 bytes
             // Reserving 1000 bytes covers the whole documented memory block safely
@@ -111,12 +111,7 @@ namespace Backend.Services
         }
 
 
-        public Dictionary<int, byte> ReadQuestSteps(QuestAddresses addresses)
-        {
-            return ReadMainQuestSteps(addresses.Steps);
-        }
-
-        public Dictionary<int, byte> ReadMainQuestSteps(List<QuestStep> steps)
+        public Dictionary<int, byte> ReadQuestSteps(List<QuestStep> steps)
         {
             var resource = new Dictionary<int, byte>();
             foreach (var step in steps)

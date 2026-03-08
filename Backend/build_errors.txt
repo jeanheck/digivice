@@ -1,13 +1,12 @@
 ﻿  Determinando os projetos a serem restaurados...
   Todos os projetos est├úo atualizados para restaura├º├úo.
-C:\Projetos\digivice\Backend\Services\GameStateService.cs(5,15): error CS0234: O nome de tipo ou namespace "Constants" n├úo existe no namespace "Backend" (voc├¬ est├í sem uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Backend\Backend.csproj]
-C:\Projetos\digivice\Backend\Services\PartyStateService.cs(3,15): error CS0234: O nome de tipo ou namespace "Constants" n├úo existe no namespace "Backend" (voc├¬ est├í sem uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Backend\Backend.csproj]
+C:\Projetos\digivice\Backend\Infrastructure\Memory\WindowsMemoryProvider.cs(12,27): warning CA1416: Este site de chamada pode ser acessado em todas as plataformas. S├│ h├í suporte para 'MemoryMappedFile.OpenExisting(string)' em: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Projetos\digivice\Backend\Backend.csproj]
+  Backend -> C:\Projetos\digivice\Backend\bin\Debug\net10.0\Backend.dll
 
-FALHA da compila├º├úo.
+Compila├º├úo com ├¬xito.
 
-C:\Projetos\digivice\Backend\Services\GameStateService.cs(5,15): error CS0234: O nome de tipo ou namespace "Constants" n├úo existe no namespace "Backend" (voc├¬ est├í sem uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Backend\Backend.csproj]
-C:\Projetos\digivice\Backend\Services\PartyStateService.cs(3,15): error CS0234: O nome de tipo ou namespace "Constants" n├úo existe no namespace "Backend" (voc├¬ est├í sem uma refer├¬ncia de assembly?) [C:\Projetos\digivice\Backend\Backend.csproj]
-    0 Aviso(s)
-    2 Erro(s)
+C:\Projetos\digivice\Backend\Infrastructure\Memory\WindowsMemoryProvider.cs(12,27): warning CA1416: Este site de chamada pode ser acessado em todas as plataformas. S├│ h├í suporte para 'MemoryMappedFile.OpenExisting(string)' em: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Projetos\digivice\Backend\Backend.csproj]
+    1 Aviso(s)
+    0 Erro(s)
 
-Tempo Decorrido 00:00:01.51
+Tempo Decorrido 00:00:01.62

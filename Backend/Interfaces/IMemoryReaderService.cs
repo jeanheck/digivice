@@ -8,5 +8,6 @@ namespace Backend.Interfaces
         int ReadInt32(long address);
         short ReadInt16(long address);
         string ReadString(long address, int length, System.Text.Encoding? encoding = null);
+        byte ReadByteSafe(string? hexAddress);
     }
 }

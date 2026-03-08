@@ -59,27 +59,31 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             return;
         }
 
-        // 0. Compare Location
-        if (newState.Player != null && _previousState.Player != null &&
-            newState.Player.MapId != _previousState.Player.MapId)
+        // Combine Location and Player comparisons
+        if (newState.Player != null)
         {
-            var ev = new LocationChangedEvent(newState.Player.MapId);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
-        }
-
-        // 1. Compare Player
-        if (newState.Player != null && _previousState.Player != null)
-        {
-            if (!newState.Player.Equals(_previousState.Player))
+            if (_previousState.Player != null)
             {
+                // 0. Compare Location
+                if (newState.Player.MapId != _previousState.Player.MapId)
+                {
+                    var ev = new LocationChangedEvent(newState.Player.MapId);
+                    _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+                }
+
+                // 1. Compare Player
+                if (!newState.Player.Equals(_previousState.Player))
+                {
+                    var ev = new PlayerBitsChangedEvent(newState.Player.Bits);
+                    _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+                }
+            }
+            else
+            {
+                // Player just loaded in
                 var ev = new PlayerBitsChangedEvent(newState.Player.Bits);
                 _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
             }
-        }
-        else if (newState.Player != null && _previousState.Player == null)
-        {
-            var ev = new PlayerBitsChangedEvent(newState.Player.Bits);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // 2. Compare Party
@@ -184,139 +188,9 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         }
         else if (newJournal != null && oldJournal != null)
         {
-            // Diff MainQuest
-            if (newJournal.MainQuest.Id != oldJournal.MainQuest.Id)
+            if (!newJournal.Equals(oldJournal))
             {
                 journalChanged = true;
-            }
-            if (!journalChanged)
-            {
-                if (newJournal.MainQuest.Prerequisites.Count != oldJournal.MainQuest.Prerequisites.Count)
-                {
-                    journalChanged = true;
-                }
-                else
-                {
-                    for (int j = 0; j < newJournal.MainQuest.Prerequisites.Count; j++)
-                    {
-                        if (newJournal.MainQuest.Prerequisites[j].IsDone != oldJournal.MainQuest.Prerequisites[j].IsDone)
-                        {
-                            journalChanged = true;
-                            break;
-                        }
-                    }
-                }
-            }
-            if (!journalChanged)
-            {
-                if (newJournal.MainQuest.Steps.Count != oldJournal.MainQuest.Steps.Count)
-                {
-                    journalChanged = true;
-                }
-                else
-                {
-                    for (int j = 0; j < newJournal.MainQuest.Steps.Count; j++)
-                    {
-                        if (newJournal.MainQuest.Steps[j].IsCompleted != oldJournal.MainQuest.Steps[j].IsCompleted)
-                        {
-                            journalChanged = true;
-                            break;
-                        }
-                        // Compare step-level prerequisites
-                        var newPrereqs = newJournal.MainQuest.Steps[j].Prerequisites;
-                        var oldPrereqs = oldJournal.MainQuest.Steps[j].Prerequisites;
-                        if (newPrereqs != null && oldPrereqs != null && newPrereqs.Count == oldPrereqs.Count)
-                        {
-                            for (int k = 0; k < newPrereqs.Count; k++)
-                            {
-                                if (newPrereqs[k].IsDone != oldPrereqs[k].IsDone)
-                                {
-                                    journalChanged = true;
-                                    break;
-                                }
-                            }
-                        }
-                        else if (newPrereqs?.Count != oldPrereqs?.Count)
-                        {
-                            journalChanged = true;
-                        }
-                        if (journalChanged) break;
-                    }
-                }
-            }
-
-            // Diff SideQuests
-            if (!journalChanged)
-            {
-                if (newJournal.SideQuests.Count != oldJournal.SideQuests.Count)
-                {
-                    journalChanged = true;
-                }
-                else
-                {
-                    for (int i = 0; i < newJournal.SideQuests.Count; i++)
-                    {
-                        var newQ = newJournal.SideQuests[i];
-                        var oldQ = oldJournal.SideQuests[i];
-
-                        if (newQ.Id != oldQ.Id)
-                        {
-                            journalChanged = true;
-                            break;
-                        }
-
-                        if (newQ.Prerequisites.Count != oldQ.Prerequisites.Count)
-                        {
-                            journalChanged = true;
-                            break;
-                        }
-
-                        for (int j = 0; j < newQ.Prerequisites.Count; j++)
-                        {
-                            if (newQ.Prerequisites[j].IsDone != oldQ.Prerequisites[j].IsDone)
-                            {
-                                journalChanged = true;
-                                break;
-                            }
-                        }
-                        if (journalChanged) break;
-
-                        if (newQ.Steps.Count != oldQ.Steps.Count)
-                        {
-                            journalChanged = true;
-                            break;
-                        }
-
-                        for (int j = 0; j < newQ.Steps.Count; j++)
-                        {
-                            if (newQ.Steps[j].IsCompleted != oldQ.Steps[j].IsCompleted)
-                            {
-                                journalChanged = true;
-                                break;
-                            }
-                            // Compare step-level prerequisites
-                            var newSPrereqs = newQ.Steps[j].Prerequisites;
-                            var oldSPrereqs = oldQ.Steps[j].Prerequisites;
-                            if (newSPrereqs != null && oldSPrereqs != null && newSPrereqs.Count == oldSPrereqs.Count)
-                            {
-                                for (int k = 0; k < newSPrereqs.Count; k++)
-                                {
-                                    if (newSPrereqs[k].IsDone != oldSPrereqs[k].IsDone)
-                                    {
-                                        journalChanged = true;
-                                        break;
-                                    }
-                                }
-                            }
-                            else if (newSPrereqs?.Count != oldSPrereqs?.Count)
-                            {
-                                journalChanged = true;
-                            }
-                            if (journalChanged) break;
-                        }
-                        if (journalChanged) break;
-                    }
-                }
             }
         }
 

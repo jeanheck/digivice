@@ -34,7 +34,7 @@ namespace Backend.Services
                 int baseAddress = _digimonStateService.GetDigimonBaseAddressById(digimonAddresses, digimonId);
                 if (baseAddress != 0)
                 {
-                    party.Slots[i] = _digimonStateService.BuildDigimon(i + 1, digimonId, baseAddress);
+                    party.Slots[i] = _digimonStateService.GetDigimon(i + 1, digimonId, baseAddress);
                 }
                 else
                 {

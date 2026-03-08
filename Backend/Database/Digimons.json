@@ -1,37 +1,47 @@
 {
     "EmptySlotId": "0xFF",
-    "Kotemon": {
-        "Id": 0,
-        "Address": "0x0004949C"
-    },
-    "Kumamon": {
-        "Id": 1,
-        "Address": "0x00049878"
-    },
-    "Monmon": {
-        "Id": 2,
-        "Address": "0x00049C54"
-    },
-    "Agumon": {
-        "Id": 3,
-        "Address": "0x0004A030"
-    },
-    "Veemon": {
-        "Id": 4,
-        "Address": "0x0004A40C"
-    },
-    "Guilmon": {
-        "Id": 5,
-        "Address": "0x0004A7E8"
-    },
-    "Renamon": {
-        "Id": 6,
-        "Address": "0x0004ABC4"
-    },
-    "Patamon": {
-        "Id": 7,
-        "Address": "0x0004AFA0"
-    },
+    "Digimons": [
+        {
+            "Name": "Kotemon",
+            "Id": 0,
+            "Address": "0x0004949C"
+        },
+        {
+            "Name": "Kumamon",
+            "Id": 1,
+            "Address": "0x00049878"
+        },
+        {
+            "Name": "Monmon",
+            "Id": 2,
+            "Address": "0x00049C54"
+        },
+        {
+            "Name": "Agumon",
+            "Id": 3,
+            "Address": "0x0004A030"
+        },
+        {
+            "Name": "Veemon",
+            "Id": 4,
+            "Address": "0x0004A40C"
+        },
+        {
+            "Name": "Guilmon",
+            "Id": 5,
+            "Address": "0x0004A7E8"
+        },
+        {
+            "Name": "Renamon",
+            "Id": 6,
+            "Address": "0x0004ABC4"
+        },
+        {
+            "Name": "Patamon",
+            "Id": 7,
+            "Address": "0x0004AFA0"
+        }
+    ],
     "BasicInfo": {
         "Experience": "0x18",
         "Level": "0x1C",
