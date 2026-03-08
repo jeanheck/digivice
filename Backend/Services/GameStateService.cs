@@ -3,8 +3,6 @@ using Backend.Models;
 using Backend.Models.Digimons;
 using Backend.Utils;
 using Backend.Constants;
-using Backend.Constants.Quests;
-using Backend.Constants.Quests.SideQuests;
 using Backend.Models.Quests;
 using Backend.DetailedQuests;
 using Backend.DetailedQuests.SideQuests;
@@ -16,10 +14,10 @@ namespace Backend.Services
         private readonly IMemoryReaderService _memoryReader;
         private readonly PlayerStateService _playerStateService;
         private readonly PartyStateService _partyStateService;
-        private readonly ItemStateService _itemStateService;
+        private readonly ItemsStateService _itemStateService;
         private readonly JournalStateService _journalStateService;
 
-        public GameStateService(IMemoryReaderService memoryReader, PlayerStateService playerStateService, PartyStateService partyStateService, ItemStateService itemStateService, JournalStateService journalStateService)
+        public GameStateService(IMemoryReaderService memoryReader, PlayerStateService playerStateService, PartyStateService partyStateService, ItemsStateService itemStateService, JournalStateService journalStateService)
         {
             _memoryReader = memoryReader;
             _playerStateService = playerStateService;

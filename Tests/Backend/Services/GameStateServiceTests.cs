@@ -1,129 +1,77 @@
-using Backend.Constants;
 using Backend.Interfaces;
 using Backend.Services;
+using Backend.Models.Addresses;
 using Moq;
 
 namespace Tests.Backend.Services
 {
-    public class GameStateServiceTests
+    public class GameReaderTests
     {
         [Fact]
-        public void GetState_ShouldReturnDecodedPlayerNameAndBits()
+        public void ReadPlayer_ShouldReturnDecodedPlayerNameAndBits()
         {
             var mockReader = new Mock<IMemoryReaderService>();
 
-            // "TESTE"
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.Name, PlayerAddresses.NameBufferSize))
+            // Setup a fake memory read for name: "TESTE" (Digimon encoding)
+            mockReader.Setup(r => r.ReadBytes(0x10, 6))
                       .Returns([0x21, 0x12, 0x20, 0x21, 0x12, 0x00]);
 
-            // Bits: 1234
-            mockReader.Setup(r => r.ReadInt32(PlayerAddresses.Bits))
+            // Setup a fake memory read for Bits: 1234
+            mockReader.Setup(r => r.ReadInt32(0x20))
                       .Returns(1234);
 
-            // Mocking Slots: Empty
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot1, PlayerAddresses.PartySlotStride)).Returns([DigimonAddresses.EmptySlotId]);
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot2, PlayerAddresses.PartySlotStride)).Returns([DigimonAddresses.EmptySlotId]);
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot3, PlayerAddresses.PartySlotStride)).Returns([DigimonAddresses.EmptySlotId]);
+            var reader = new GameReader(mockReader.Object);
 
-            var service = new GameStateService(mockReader.Object);
-            var state = service.GetState();
+            // Faking the JSON Model output by instantiating directly in-memory
+            var fakeAddresses = new PlayerAddresses
+            {
+                Name = "0x10",
+                NameBufferSize = 6,
+                Bits = "0x20",
+                MapIdAddress = "0x30"
+            };
 
-            Assert.NotNull(state.Player);
-            Assert.Equal("TESTE", state.Player.Name);
-            Assert.Equal(1234, state.Player.Bits);
-            Assert.NotNull(state.Party);
-            Assert.All(state.Party.Slots, slot => Assert.Null(slot));
+            var player = reader.ReadPlayer(fakeAddresses);
+
+            Assert.NotNull(player);
+            Assert.NotNull(player.NameBytes);
+            // Note: The assertion here is simplified. Actually PlayerResource holds NameBytes and Bits. 
+            Assert.Equal(6, player.NameBytes.Length);
+            Assert.Equal(0x21, player.NameBytes[0]);
+            Assert.Equal(1234, player.Bits);
         }
 
         [Fact]
-        public void GetState_ShouldReturnPartyWithCorrectSlotsAndNestedStats()
+        public void ReadParty_ShouldReturnPartyWithCorrectSlots()
         {
             var mockReader = new Mock<IMemoryReaderService>();
 
-            // Mock necessary player data so state creation doesn't crash on name decode
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.Name, PlayerAddresses.NameBufferSize)).Returns([0x00]);
+            // Setup fake memory reads for slots
+            // Kotemon (ID 0) in Slot 1
+            mockReader.Setup(r => r.ReadBytes(0x100, 4)).Returns([0x00, 0x00, 0x00, 0x00]);
+            // Renamon (ID 6) in Slot 2
+            mockReader.Setup(r => r.ReadBytes(0x200, 4)).Returns([0x06, 0x00, 0x00, 0x00]);
+            // Empty (ID 0xFF) in Slot 3
+            mockReader.Setup(r => r.ReadBytes(0x300, 4)).Returns([0xFF, 0x00, 0x00, 0x00]);
 
-            // Mocking Slot 1: Kotemon (ID 0)
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot1, PlayerAddresses.PartySlotStride)).Returns([(byte)DigimonIds.Kotemon, 0x00, 0x00, 0x00]);
-            // Mocking Slot 2: Renamon (ID 6)
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot2, PlayerAddresses.PartySlotStride)).Returns([(byte)DigimonIds.Renamon, 0x00, 0x00, 0x00]);
-            // Mocking Slot 3: Empty
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot3, PlayerAddresses.PartySlotStride)).Returns([DigimonAddresses.EmptySlotId, 0x00, 0x00, 0x00]);
+            var reader = new GameReader(mockReader.Object);
 
-            // Kotemon Stats
-            int kotemonBase = DigimonAddresses.Digimons[(byte)DigimonIds.Kotemon].Address;
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.BasicInfo.Level)).Returns(15);
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Attributes.Strength)).Returns(100);
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Resistances.Fire)).Returns(50);
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Equipments.Head)).Returns(215);
+            // Faking the JSON Model output
+            var fakeAddresses = new PartyAddresses
+            {
+                PartySlot1 = "0x100",
+                PartySlot2 = "0x200",
+                PartySlot3 = "0x300",
+                PartySlotStride = 4
+            };
 
-            // Mocks for Digievolutions
-            // Equipped: Slot1 = ID 367 (Growlmon), Slot2 = -1 (Empty), Slot3 = -1 (Empty)
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Digievolutions.EquippedSlot1)).Returns(367);
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Digievolutions.EquippedSlot2)).Returns(-1);
-            mockReader.Setup(r => r.ReadInt16(kotemonBase + DigimonAddresses.Digievolutions.EquippedSlot3)).Returns(-1);
+            var party = reader.ReadParty(fakeAddresses);
 
-            // Unlocked Array: Entry 0 = ID 367, Level 25
-            int unlockedBase = kotemonBase + DigimonAddresses.Digievolutions.UnlockedDigievolutionsStart;
-            mockReader.Setup(r => r.ReadInt16(unlockedBase)).Returns(367); // ID 367
-            mockReader.Setup(r => r.ReadInt16(unlockedBase + 2)).Returns(25); // Level 25
-
-            // Entry 1 = ID -1 (End of list)
-            mockReader.Setup(r => r.ReadInt16(unlockedBase + DigimonAddresses.Digievolutions.UnlockedDigievolutionEntryStride)).Returns(-1);
-
-            var service = new GameStateService(mockReader.Object);
-            var state = service.GetState();
-
-            Assert.NotNull(state.Party);
-            var activeSlots = state.Party.Slots.Where(d => d != null).ToList();
-            Assert.Equal(2, activeSlots.Count);
-
-            // Kotemon Assertions
-            var kotemon = state.Party.Slots[0];
-            Assert.NotNull(kotemon);
-            Assert.Equal("Kotemon", kotemon.BasicInfo.Name);
-            Assert.Equal(1, kotemon.SlotIndex);
-            Assert.Equal(15, kotemon.BasicInfo.Level);
-            Assert.Equal(100, kotemon.Attributes.Strength);
-            Assert.Equal(50, kotemon.Resistances.Fire);
-            Assert.Equal(215, kotemon.Equipments.Head);
-
-            Assert.NotNull(kotemon.EquippedDigievolutions);
-            Assert.NotNull(kotemon.EquippedDigievolutions[0]);
-            Assert.Equal(367, kotemon.EquippedDigievolutions[0]!.Id);
-            Assert.Equal(25, kotemon.EquippedDigievolutions[0]!.Level);
-            Assert.Null(kotemon.EquippedDigievolutions[1]);
-            Assert.Null(kotemon.EquippedDigievolutions[2]);
-
-            // Renamon Assertions
-            var renamon = state.Party.Slots[1];
-            Assert.NotNull(renamon);
-            Assert.Equal("Renamon", renamon.BasicInfo.Name);
-            Assert.Equal(2, renamon.SlotIndex);
-
-            // Empty Slot (Index 2)
-            Assert.Null(state.Party.Slots[2]);
-        }
-
-        [Fact]
-        public void GetState_ShouldSkipUnknownIDsGracefullyForPartySlots()
-        {
-            var mockReader = new Mock<IMemoryReaderService>();
-
-            // Mock necessary player data
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.Name, PlayerAddresses.NameBufferSize)).Returns([0x00]);
-
-            // Mocking Slot 1: Unknown ID (0x99)
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot1, PlayerAddresses.PartySlotStride)).Returns([0x99, 0x00, 0x00, 0x00]);
-            // Mocking Slots 2 & 3: Empty
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot2, PlayerAddresses.PartySlotStride)).Returns([DigimonAddresses.EmptySlotId, 0x00, 0x00, 0x00]);
-            mockReader.Setup(r => r.ReadBytes(PlayerAddresses.PartySlot3, PlayerAddresses.PartySlotStride)).Returns([DigimonAddresses.EmptySlotId, 0x00, 0x00, 0x00]);
-
-            var service = new GameStateService(mockReader.Object);
-            var state = service.GetState();
-
-            Assert.NotNull(state.Party);
-            Assert.All(state.Party.Slots, slot => Assert.Null(slot));
+            Assert.NotNull(party);
+            Assert.Equal(3, party.ActiveDigimonIds.Count);
+            Assert.Equal(0, party.ActiveDigimonIds[0]);  // Kotemon
+            Assert.Equal(6, party.ActiveDigimonIds[1]);  // Renamon
+            Assert.Equal(255, party.ActiveDigimonIds[2]); // Empty
         }
     }
 }

@@ -3,12 +3,12 @@ using System.Linq;
 
 namespace Backend.Services
 {
-    public class ItemStateService
+    public class ItemsStateService
     {
         private readonly GameDatabase _database;
         private readonly GameReader _reader;
 
-        public ItemStateService(GameDatabase database, GameReader reader)
+        public ItemsStateService(GameDatabase database, GameReader reader)
         {
             _database = database;
             _reader = reader;

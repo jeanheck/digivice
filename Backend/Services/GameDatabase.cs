@@ -16,7 +16,7 @@ namespace Backend.Services
         public GameDatabase()
         {
             // Assuming the app runs from the Backend folder
-            _dataDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Data");
+            _dataDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Database");
         }
 
         public PlayerAddresses GetPlayerAddresses()

@@ -9,9 +9,9 @@ namespace Backend.Services
     {
         private readonly GameDatabase _database;
         private readonly GameReader _reader;
-        private readonly ItemStateService _itemStateService;
+        private readonly ItemsStateService _itemStateService;
 
-        public JournalStateService(GameDatabase database, GameReader reader, ItemStateService itemStateService)
+        public JournalStateService(GameDatabase database, GameReader reader, ItemsStateService itemStateService)
         {
             _database = database;
             _reader = reader;
