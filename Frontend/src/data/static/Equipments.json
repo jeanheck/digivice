@@ -1,24 +1,5878 @@
 {
     "equipments": [
         {
-            "name": "Empty",
-            "id": 0
+            "Name": "Empty",
+            "Id": 0,
+            "Type": "Unknown",
+            "Attributes": [],
+            "EquipableDigimon": []
         },
         {
-            "name": "Dagger",
-            "id": 157
+            "Name": "Dagger",
+            "Id": 157,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 15
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
         },
         {
-            "name": "Bamboo Spear",
-            "id": 167
+            "Name": "Bamboo Spear",
+            "Id": 167,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 10
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
         },
         {
-            "name": "Bandana",
-            "id": 215
+            "Name": "Bandana",
+            "Id": 215,
+            "Type": "Unknown",
+            "Attributes": [],
+            "EquipableDigimon": []
         },
         {
-            "name": "Leather Coat",
-            "id": 249
+            "Name": "Leather Coat",
+            "Id": 249,
+            "Type": "Unknown",
+            "Attributes": [],
+            "EquipableDigimon": []
+        },
+        {
+            "Name": "Angel Bow",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 220
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 52
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ],
+            "Note": "Deals extra damage to Evil-species Digimon"
+        },
+        {
+            "Name": "Apocalypse",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 40
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Atlas Buster",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 464
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 14
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 112
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Beam Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 28
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 42
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Belial Fang",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 150
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 58
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Berdys",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 240
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 70
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Bone Rod",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 60
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 7
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 39
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Brave Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 30
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon"
+            ]
+        },
+        {
+            "Name": "Brave Sword",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 110
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon"
+            ]
+        },
+        {
+            "Name": "Buckler",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 7
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 10
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Cat Glove",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 24
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 18
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Cerberus Fang",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 43
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ],
+            "Note": "Recovers a fraction of the damage as HP"
+        },
+        {
+            "Name": "Claymore",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 220
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 4
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 60
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Cluster Cannon",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 150
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Chain Saw",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 276
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 6
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 72
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Crimson Blade",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 50
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 36
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ],
+            "Note": "Recovers a fraction of the damage as HP"
+        },
+        {
+            "Name": "Crossbow",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 160
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 40
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Crystal Rod",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 16
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 56
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Destruction",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ],
+            "Note": "Very small chance of OHKO\u2019ing enemy Digimon"
+        },
+        {
+            "Name": "Deus Guard",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 120
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 24
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Patamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Divine Barrier",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 24
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon"
+            ]
+        },
+        {
+            "Name": "Divine Lance",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 70
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 34
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Divine Rod",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 84
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Addition",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon"
+            ]
+        },
+        {
+            "Name": "Dramon Guard",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 92
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 16
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Dramon Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 30
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Eternally",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 120
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 24
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 60
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Evil Fang",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 116
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Excalibur",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 120
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ],
+            "Note": "Deals extra damage to Evil-species Digimon"
+        },
+        {
+            "Name": "Fairy Tale",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 34
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 23
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Fenrir Sword",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 140
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 58
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ],
+            "Note": "Small chance of inflicting freeze on enemy Digimon"
+        },
+        {
+            "Name": "Flamberge",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 352
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 104
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Fuujin Blade",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 150
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 58
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Gaea Halberd",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 420
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 14
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 104
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Garuru Cannon",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 464
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 104
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Ghost Fang",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 94
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 34
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Grey Sword",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 130
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 56
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Guard Barrier",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 22
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 28
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Gulf Sword",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 520
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 16
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 116
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Halberd",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 184
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 4
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Handgun",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Hazard Fang",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 120
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Guilmon"
+            ]
+        },
+        {
+            "Name": "Hazard Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 28
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Guilmon"
+            ]
+        },
+        {
+            "Name": "High Security",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 35
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ],
+            "Note": "Prevents OHKOs"
+        },
+        {
+            "Name": "Immaculate",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 74
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 18
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Invincible",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 160
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 60
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Iron Glove",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 46
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 4
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 25
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Iron Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 15
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 3
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 20
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Judgment",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 120
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Justice",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 60
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 40
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Kaiser Fist",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 150
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Khakkhara",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 90
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 14
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Knight Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 18
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 25
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Kotetsu",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 60
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 40
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Kulon Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 25
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 34
+                },
+                {
+                    "Attribute": "Machine",
+                    "Type": "Addition",
+                    "Value": 7
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Kulon Sword",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 49
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Laser Cannon",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 160
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 56
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Leather Glove",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 14
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Lightning Bow",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 352
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Addition",
+                    "Value": 16
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 90
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Long Bow",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 52
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 20
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Long Sword",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 40
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 25
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Mach Guard",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 18
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Patamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Machinegun",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 114
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 35
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Magician Rod",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 54
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 37
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Masamune",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Mega Guard",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 110
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 52
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Patamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Metal Guard",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 66
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 35
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Patamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Mighty Blade",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 74
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Mighty Guard",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 86
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 14
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 44
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Patamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Millenium",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 110
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 58
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Mini Guard",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 46
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 25
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Patamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Misty Rod",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 80
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 51
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Muramasa",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 160
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 60
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Naginata",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 224
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 6
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 58
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Needle Glove",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 68
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 31
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Old Claw",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Old Wand",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 6
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Omega Halberd",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 448
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 16
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 108
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Onimaru",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 130
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Orochi Spear",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 130
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Partisan",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 50
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 25
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Positron Cannon",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 520
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 108
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Power Arm",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 90
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 40
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Psycho Blaster",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 140
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Subtraction",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Prominence",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 140
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Pulse Guard",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 60
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Patamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Punishment",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 180
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 60
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Raijin Fist",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 180
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 58
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Raven Bow",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 292
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 72
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ],
+            "Note": "Small chance of inflicting confusion on enemy Digimon"
+        },
+        {
+            "Name": "Rock Breaker",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 408
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 108
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Ronin Blade",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 120
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Ronin Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 30
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Royal Spear",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 120
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 52
+                }
+            ],
+            "EquipableDigimon": [
+                "Guilmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Rusty Glove",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Rusty Katana",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Rusty Rifle",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Ryuuzanmaru",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 380
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 100
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Saber Fang",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Seraphic Bow",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 408
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 100
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Shamshir",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 60
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 33
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Shine Blade",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 76
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Addition",
+                    "Value": 7
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 51
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Shiratorimaru",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 70
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 41
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Shishioumaru",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 22
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Short Sword",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 14
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 15
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Shotgun",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 120
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 39
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Shuriken",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 96
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 38
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Sniper Cannon",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 144
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Sniper Shield",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 29
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Soul Chopper",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 280
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 96
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon",
+                "Renamon"
+            ],
+            "Note": "Very small chance of OHKO\u2019ing enemy Digimon"
+        },
+        {
+            "Name": "Spear",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 16
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 16
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Suijin Cannon",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 170
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 58
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Super Nova",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 200
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 60
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Tempest Arm",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 160
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 56
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Tenjinmaru",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 140
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 56
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Tiger Glove",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 110
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 52
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Tin Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 15
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Trent",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 90
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ],
+            "Note": "Deals extra damage to Fish-species Digimon"
+        },
+        {
+            "Name": "Twinkle",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 36
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 40
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Vampire Lance",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ],
+            "Note": "Recovers a fraction of the damage as HP"
+        },
+        {
+            "Name": "Vanquish",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 60
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 40
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ],
+            "Note": "Very small chance of OHKO\u2019ing enemy Digimon"
+        },
+        {
+            "Name": "Venom Fang",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 140
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 56
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ],
+            "Note": "Small chance of inflicting poison on enemy Digimon"
+        },
+        {
+            "Name": "Wild Glove",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 130
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Wild Shield",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 29
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Wing Sword",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 80
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Subtraction",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Addition",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 42
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Wolf Fang",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 74
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Wooden Rod",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 40
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 3
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Yin Yang Rod",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 84
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Yin Yang Ward",
+            "Id": 0,
+            "Type": "Shield",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 27
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Zanden Sword",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 26
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 20
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Zodiac",
+            "Id": 0,
+            "Type": "WeaponSingleHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 60
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 40
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Zweihander",
+            "Id": 0,
+            "Type": "WeaponTwoHanded",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 292
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 90
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Beam Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 34
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 42
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Body Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 30
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 44
+                },
+                {
+                    "Attribute": "Machine",
+                    "Type": "Addition",
+                    "Value": 10
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Brave Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 38
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon"
+            ]
+        },
+        {
+            "Name": "Crimson Mail",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 44
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Dark Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 25
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 31
+                },
+                {
+                    "Attribute": "Dark",
+                    "Type": "Addition",
+                    "Value": 7
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Patamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Dark Cloak",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 21
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 37
+                },
+                {
+                    "Attribute": "Dark",
+                    "Type": "Addition",
+                    "Value": 10
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Digitama Mail",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 24
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Divine Robe",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 23
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon"
+            ]
+        },
+        {
+            "Name": "Down Jacket",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 25
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 39
+                },
+                {
+                    "Attribute": "Ice",
+                    "Type": "Addition",
+                    "Value": 10
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Dramon Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 39
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Gym Suit",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 19
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Hazard Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 37
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Guilmon"
+            ]
+        },
+        {
+            "Name": "Iron Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 18
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 20
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "King\u2019s Mantle",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 40
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Kulon Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 30
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 34
+                },
+                {
+                    "Attribute": "Machine",
+                    "Type": "Addition",
+                    "Value": 8
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Leather Mail",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 10
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Mirage Robe",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 35
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Misty Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 44
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Priest Robe",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 14
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Addition",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 26
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Ronin Armor",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 38
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Rubber Suit",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 18
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                },
+                {
+                    "Attribute": "Lightning",
+                    "Type": "Addition",
+                    "Value": 8
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Sniper Suit",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 28
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Tin Mail",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 15
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Wild Suit",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 28
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Ying Yang Suit",
+            "Id": 0,
+            "Type": "BodyArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 27
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Angel Ring",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 26
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 40
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Bandanna",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 4
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 10
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Baseball Cap",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 20
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Beret",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 24
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 46
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Brave Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 28
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon"
+            ]
+        },
+        {
+            "Name": "Cat Ears",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 15
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "D-Tama Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 29
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 45
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Divine Crown",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 18
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon"
+            ]
+        },
+        {
+            "Name": "Dramon Horn",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 100
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Drill Horn",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 66
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Subtraction",
+                    "Value": 1
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 37
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Glorious Horn",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 130
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 58
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Goddess Crown",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 33
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Hazard Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 27
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Guilmon"
+            ]
+        },
+        {
+            "Name": "Headband",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 12
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 18
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Hide Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 6
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 15
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Iron Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 15
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 3
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 25
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Kabuteri Horn",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 70
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 6
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Subtraction",
+                    "Value": 2
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 41
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Knight Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 25
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Kulon Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 24
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 39
+                },
+                {
+                    "Attribute": "Machine",
+                    "Type": "Addition",
+                    "Value": 5
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Kung Fu Cap",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 19
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Addition",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 34
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Magical Crown",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 18
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Matrix Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 34
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 52
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Metal Horn",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 50
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 4
+                },
+                {
+                    "Attribute": "Speed",
+                    "Type": "Subtraction",
+                    "Value": 2
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 30
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Mugen Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 39
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Mythril Crown",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 14
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 27
+                }
+            ],
+            "EquipableDigimon": [
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Night Vision",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 24
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 40
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Red Cap",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 27
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 8
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Ribbon",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 10
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Ronin Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 28
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Kotemon"
+            ]
+        },
+        {
+            "Name": "Royal Crown",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 29
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 46
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "School Cap",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 13
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Addition",
+                    "Value": 7
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 24
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Scissor Horn",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 110
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 9
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Subtraction",
+                    "Value": 4
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 54
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Shaman Mask",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 36
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Shock Horn",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 90
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 7
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Subtraction",
+                    "Value": 3
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 49
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Sniper Goggle",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 23
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Monmon"
+            ]
+        },
+        {
+            "Name": "Sun Visor",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 7
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 16
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Tin Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 9
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 20
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Trihorn",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 120
+                },
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Subtraction",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 49
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Wild Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 27
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 55
+                }
+            ],
+            "EquipableDigimon": [
+                "Kumamon"
+            ]
+        },
+        {
+            "Name": "Wing Helmet",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 19
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 36
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Wool Cap",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 16
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 28
+                },
+                {
+                    "Attribute": "Ice",
+                    "Type": "Addition",
+                    "Value": 10
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Yin Yang Hat",
+            "Id": 0,
+            "Type": "HeadArmor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 22
+                },
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 6
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 50
+                }
+            ],
+            "EquipableDigimon": [
+                "Renamon"
+            ]
+        },
+        {
+            "Name": "Antidote Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Boosts the equipped Digimon\u2019s resistance against poison"
+        },
+        {
+            "Name": "Awake Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Boosts the equipped Digimon\u2019s resistance against sleep"
+        },
+        {
+            "Name": "Binder Crest",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Reduces the chances of a wild Digimon escaping from battle"
+        },
+        {
+            "Name": "BIT Adapter",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "The equipped Digimon receives additional BIT every battle"
+        },
+        {
+            "Name": "Bolt Power 1",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a small amount of Lightning damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Bolt Power 2",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a medium amount of Lightning damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Bolt Power S",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a large amount of Lightning damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Boost Gem",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Speed",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 3
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Charisma Gem",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 20
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Counter Crest",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Allows your Digimon to counter physical attacks and techniques, dealing double the damage received"
+        },
+        {
+            "Name": "Dark Power 1",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a small amount of Dark damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Dark Power 2",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a medium amount of Dark damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Dark Power S",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a large amount of Dark damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Dark Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Dark",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 3
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Dance Feather",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Slightly increases the equipped Digimon\u2019s chances of evading an attack"
+        },
+        {
+            "Name": "Dance Wing",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Significantly increases the equipped Digimon\u2019s chances of evading an attack"
+        },
+        {
+            "Name": "EXP Adapter",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "The equipped Digimon receives additional EXP every battle"
+        },
+        {
+            "Name": "Flame Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Fire",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 3
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Fire Power 1",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a small amount of Fire damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Fire Power 2",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a medium amount of Fire damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Fire Power S",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a large amount of Fire damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Glasses",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Slightly increases the equipped Digimon\u2019s accuracy"
+        },
+        {
+            "Name": "Goggles",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Significantly increases the equipped Digimon\u2019s accuracy"
+        },
+        {
+            "Name": "Guard Gem",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "HP Proxy",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Slightly decreases the damage received by the equipped Digimon"
+        },
+        {
+            "Name": "HP Mega Proxy",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Significantly decreases the damage received by the equipped Digimon"
+        },
+        {
+            "Name": "Hack Sticker",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Slightly increases the equipped Digimon\u2019s chances of stealing an item"
+        },
+        {
+            "Name": "Hack System",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Significantly increases the equipped Digimon\u2019s chances of stealing an item"
+        },
+        {
+            "Name": "Machine Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Machine",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 3
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Metal Power 1",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a small amount of Machine damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Metal Power 2",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a medium amount of Machine damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Metal Power S",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a large amount of Machine damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "MP Proxy",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Slightly decreases the MP usage of the equipped Digimon"
+        },
+        {
+            "Name": "MP Mega Proxy",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Significantly decreases the MP usage of the equipped Digimon"
+        },
+        {
+            "Name": "Multi Crest",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Allows the attacking Digimon to hit three times, but also lowers the damage of each individual hit"
+        },
+        {
+            "Name": "Over Clocked",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Slightly increases the equipped Digimon\u2019s Blast Gauge gains"
+        },
+        {
+            "Name": "Over Load",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Significantly increases the equipped Digimon\u2019s Blast Gauge gains"
+        },
+        {
+            "Name": "Power Brace",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Significantly improves the equipped Digimon\u2019s chances of successfully completing a training course at the gym"
+        },
+        {
+            "Name": "Power Gem",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Strength",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 3
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Prayer Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 3
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Boosts the equipped Digimon\u2019s chances of surviving a potential KO"
+        },
+        {
+            "Name": "Recovery Crest",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Recovers a small amount of HP for the equipped Digimon every turn"
+        },
+        {
+            "Name": "Revive Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Boosts the equipped Digimon\u2019s resistance against paralysis"
+        },
+        {
+            "Name": "Runner Sandals",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Slightly increases the equipped Digimon\u2019s chances of running away from battle"
+        },
+        {
+            "Name": "Runner Shoes",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Significantly increases the equipped Digimon\u2019s chances of running away from battle"
+        },
+        {
+            "Name": "Search Crest",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Increases the equipped Digimon\u2019s critical hit rate"
+        },
+        {
+            "Name": "Sober Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Boosts the equipped Digimon\u2019s resistance against confusion"
+        },
+        {
+            "Name": "Spirit Gem",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Spirit",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Training Book",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Slightly improves the equipped Digimon\u2019s chances of successfully completing a training course at the gym"
+        },
+        {
+            "Name": "Water Power 1",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a small amount of Water damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Water Power 2",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a medium amount of Water damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Water Power S",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a large amount of Water damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Water Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Water",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 3
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Wind Power 1",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a small amount of Wind damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Wind Power 2",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a medium amount of Wind damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Wind Power S",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": "Adds a large amount of Wind damage to the equipped Digimon\u2019s basic attacks"
+        },
+        {
+            "Name": "Wind Ring",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Wind",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 3
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Wisdom Gem",
+            "Id": 0,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Wisdom",
+                    "Type": "Addition",
+                    "Value": 10
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
         }
     ]
 }

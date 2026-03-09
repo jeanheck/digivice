@@ -1,0 +1,3168 @@
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.01] Dinohumon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Always 10 DV EXP for Level UP
+
+Attack   : 100               Fire    :  15               Poison   : 40
+Strength :  30               Water   :  60               Paralyze :  0
+Defense  :  20               Ice     :  15               Confuse  : 10
+Spirit   :  20               Wind    :  15               Sleep    : 30
+Wisdom   :  10               Thunder :  45               KO       : 20
+Speed    :  10               Machine :  30
+Charisma :   0               Dark    :  30
+
+TECH
+
+1. Heat Cutter
+Description : Slash and fire damage
+Type        : Physical
+Level       : 5, Loaded at level 15
+MP Cost     : 18
+Accuracy    : 110
+Power       : 90
+Element     : Fire (32)
+Effect      : None
+
+2. Frost Cutter
+Description : Slash with ice damage
+Type        : Physical
+Level       : 10, Loaded at level 30
+MP Cost     : 18
+Accuracy    : 110
+Power       : 90
+Element     : Ice (32)
+Effect      : None
+
+3. Small Heal
+Description : Heal some of your HP
+Type        : Heal
+Level       : 25, Loaded at level 75
+MP Cost     : 16
+Accuracy    : 100
+Power       : 8
+Element     : None
+Effect      : Heal ( value = 8 )
+
+4. Double Power
+Description : Increase your attack power
+Type        : Support
+Level       : 40, Loaded at level 99
+MP Cost     : 42
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : POW ++ ( value = 48 )
+
+#. Lizard Dance
+Description : Slash enemy multiple times
+Type        : Physical
+Level       : 60
+MP Cost     : 40
+Accuracy    : 100
+Power       : 100
+Element     : None
+Effect      : Multi ATK ( 4x )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.02] Hookmon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Always 10 DV EXP for Level UP
+
+Attack   : 100               Fire    :  30               Poison   :  0
+Strength :  10               Water   :   0               Paralyze : 20
+Defense  :  30               Ice     :  45               Confuse  : 10
+Spirit   :  10               Wind    :  15               Sleep    : 30
+Wisdom   :  20               Thunder :  15               KO       : 40
+Speed    :  40               Machine :  60
+Charisma :   1               Dark    :  45
+
+TECH
+
+1. Wing Buster
+Description : Huge damage vs. Bird Digimon
+Type        : Physical, effective against BIRD type Digimon
+Level       : 5, Loaded at level 15
+MP Cost     : 18
+Accuracy    : 110
+Power       : 100
+Element     : None
+Effect      : None
+
+2. Bug Buster
+Description : Huge damage vs. Insectoid Digimon
+Type        : Physical, effective against INSECT type Digimon
+Level       : 10, Loaded at level 30
+MP Cost     : 24
+Accuracy    : 110
+Power       : 130
+Element     : None
+Effect      : None
+
+3. Big Shot
+Description : Big damage if it hits
+Type        : Physical
+Level       : 25, Loaded at level 99
+MP Cost     : 20
+Accuracy    : 100
+Power       : 140
+Element     : None
+Effect      : Critical ( value = 40 )
+
+4. Fish Buster
+Description : Huge damage vs. Marine Digimon
+Type        : Physical, effective against MARINE type Digimon
+Level       : 40, Loaded at level 75
+MP Cost     : 30
+Accuracy    : 110
+Power       : 160
+Element     : None
+Effect      : None
+
+#. Captain Cannon
+Description : Shoot the arm cannon
+Type        : Physical
+Level       : 60
+MP Cost     : 38
+Accuracy    : 100
+Power       : 200
+Element     : None
+Effect      : Critical ( value = 60 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.03] Grizzmon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Always 10 DV EXP for Level UP
+
+Attack   : 100               Fire    :  15               Poison   : 20
+Strength :  40               Water   :  45               Paralyze : 20
+Defense  :  40               Ice     :  30               Confuse  : 40
+Spirit   :   0               Wind    :  45               Sleep    :  0
+Wisdom   :   0               Thunder :  15               KO       : 20
+Speed    :  30               Machine :  45
+Charisma :   1               Dark    :   0
+
+TECH
+
+1. Lightning Slash
+Description : Thunder damage
+Type        : Physical
+Level       : 5, Loaded at level 15
+MP Cost     : 18
+Accuracy    : 110
+Power       : 90
+Element     : Thunder (32)
+Effect      : None
+
+2. Whirlwind
+Description : Wind damage
+Type        : Physical
+Level       : 10, Loaded at level 35
+MP Cost     : 18
+Accuracy    : 110
+Power       : 90
+Element     : Wind (32)
+Effect      : None
+
+3. Hammer Rush
+Description : Damage from rapid blows
+Type        : Physical
+Level       : 25, Loaded at level 75
+MP Cost     : 30
+Accuracy    : 100
+Power       : 100
+Element     : None
+Effect      : Multi ATK ( 3x )
+
+4. Spinal Tap
+Description : Sometimes paralyzes the enemy
+Type        : Physical
+Level       : 40, Loaded at level 99
+MP Cost     : 18
+Accuracy    : 110
+Power       : 75
+Element     : None
+Effect      : Paralyze ( rate = 80 )( value = 80 )
+
+#. Maul Attack
+Description : If attacked first counter
+Type        : Physical
+Level       : 60
+MP Cost     : 40
+Accuracy    : 127
+Power       : 200
+Element     : None
+Effect      : Counter ( value = 40 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.04] Greymon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Always 10 DV EXP for Level UP
+
+Attack   : 100               Fire    :  60               Poison   : 40
+Strength :  20               Water   :  30               Paralyze : 10
+Defense  :  30               Ice     :   0               Confuse  : 20
+Spirit   :  30               Wind    :  30               Sleep    : 10
+Wisdom   :  10               Thunder :  30               KO       : 20
+Speed    :   0               Machine :  30
+Charisma :   1               Dark    :  30
+
+TECH
+
+1. Flame Ball
+Description : Shoot small fire balls
+Type        : Magical
+Level       : 5, Loaded at level 25
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Fire (16)
+Effect      : None
+
+2. Triple Fire
+Description : Shoot three fire balls
+Type        : Magical
+Level       : 15, Loaded at level 35
+MP Cost     : 25
+Accuracy    : 100
+Power       : 50
+Element     : Fire (16)
+Effect      : Multi ATK ( 3x )
+
+3. Double Power
+Description : Increase your attack power
+Type        : Support
+Level       : 30, Loaded at level 75
+MP Cost     : 42
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : POW ++ ( value = 48 )
+
+4. Flame Lance
+Description : Launch fire beam
+Type        : Magical
+Level       : 45, Loaded at level 99
+MP Cost     : 48
+Accuracy    : 110
+Power       : 300
+Element     : Fire (32)
+Effect      : None
+
+#. Nova Blast
+Description : Shoot a fire ball from the mouth
+Type        : Magical
+Level       : 60
+MP Cost     : 60
+Accuracy    : 127
+Power       : 300
+Element     : Fire (48)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.05] Ex-Veemon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Always 10 DV EXP for Level UP
+
+Attack   : 100               Fire    :   0               Poison   : 20
+Strength :  20               Water   :  30               Paralyze : 30
+Defense  :  10               Ice     :  60               Confuse  : 10
+Spirit   :  20               Wind    :  45               Sleep    : 40
+Wisdom   :  30               Thunder :  30               KO       :  0
+Speed    :  20               Machine :  15
+Charisma :   1               Dark    :  45
+
+TECH
+
+1. Air Blast
+Description : Shoot air balls
+Type        : Magical
+Level       : 10, Loaded at level 35
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Wind (16)
+Effect      : None
+
+2. Ice Blow
+Description : Shoot icicles with ice damage
+Type        : Magical
+Level       : 20, Loaded at level 55
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Ice (16)
+Effect      : None
+
+3. Small Heal
+Description : Heal some of your HP
+Type        : Heal
+Level       : 40, Loaded at level 75
+MP Cost     : 16
+Accuracy    : 100
+Power       : 8
+Element     : None
+Effect      : Heal ( value = 8 )
+
+4. Antidote
+Description : Cure poison on yourself
+Type        : Heal
+Level       : 50, Loaded at level 99
+MP Cost     : 8
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Anti PSN
+
+#. Veelaser
+Description : Shoot a laser from the chest
+Type        : Magical
+Level       : 60
+MP Cost     : 60
+Accuracy    : 127
+Power       : 300
+Element     : Fire (48)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.06] Growlmon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Always 10 DV EXP for Level UP
+
+Attack   : 100               Fire    :  45               Poison   : 30
+Strength :  30               Water   :  15               Paralyze : 20
+Defense  :  10               Ice     :  30               Confuse  :  0
+Spirit   :  10               Wind    :  60               Sleep    : 40
+Wisdom   :  20               Thunder :   0               KO       : 10
+Speed    :  30               Machine :  45
+Charisma :   1               Dark    :  15
+
+TECH
+
+1. Double Power
+Description : Increase your attack power
+Type        : Support
+Level       : 5, Loaded at level 35
+MP Cost     : 42
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : POW ++ ( value = 48 )
+
+2. Double Guard
+Description : Increase your defense power
+Type        : Support
+Level       : 10, Loaded at level 15
+MP Cost     : 42
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : DEF ++ ( value = 48 )
+
+3. Picking Claw
+Description : Attack and steal items
+Type        : Physical
+Level       : 25, Loaded at level 99
+MP Cost     : 18
+Accuracy    : 110
+Power       : 60
+Element     : None
+Effect      : Steal ( rate = 64 )
+
+4. Counter Alert
+Description : Counterattack during pose
+Type        : Physical
+Level       : 45, Loaded at level 75
+MP Cost     : 48
+Accuracy    : 110
+Power       : 100
+Element     : None
+Effect      : Counter ( value = 40 )
+
+#. Plasma Blade
+Description : Slash with electrified blade
+Type        : Physical
+Level       : 60
+MP Cost     : 40
+Accuracy    : 127
+Power       : 180
+Element     : Thunder (48)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.07] Kyubimon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Always 10 DV EXP for Level UP
+
+Attack   : 100               Fire    :  30               Poison   : 10
+Strength :  10               Water   :  30               Paralyze : 40
+Defense  :   0               Ice     :  45               Confuse  : 20
+Spirit   :  40               Wind    :  15               Sleep    :  0
+Wisdom   :  30               Thunder :  60               KO       : 30
+Speed    :  20               Machine :   0
+Charisma :   1               Dark    :  30
+
+TECH
+
+1. Thunder Bolt
+Description : Create a thunder ball and fire
+Type        : Magical
+Level       : 5, Loaded at level 35
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Thunder (16)
+Effect      : None
+
+2. Thunder Gemini
+Description : Create two thunder balls and fire
+Type        : Magical
+Level       : 25, Loaded at level 75
+MP Cost     : 30
+Accuracy    : 110
+Power       : 200
+Element     : Thunder (24)
+Effect      : None
+
+3. Ice Blow
+Description : Shoot icicles with ice damage
+Type        : Magical
+Level       : 15, Loaded at level 45
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Ice (16)
+Effect      : None
+
+4. Ice Shower
+Description : Shoot numerous icicles
+Type        : Magical
+Level       : 55, Loaded at level 99
+MP Cost     : 48
+Accuracy    : 110
+Power       : 200
+Element     : Ice (32)
+Effect      : None
+
+#. Dragon Wheel
+Description : Shoot fire balls from 9 tails
+Type        : Magical
+Level       : 60
+MP Cost     : 60
+Accuracy    : 127
+Power       : 300
+Element     : Fire (48)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.08] Angemon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Always 10 DV EXP for Level UP
+
+Attack   : 100               Fire    :  15               Poison   : 30
+Strength :   0               Water   :  45               Paralyze :  0
+Defense  :  20               Ice     :  30               Confuse  : 20
+Spirit   :  30               Wind    :  45               Sleep    : 10
+Wisdom   :  40               Thunder :   0               KO       : 40
+Speed    :  10               Machine :  15
+Charisma :   1               Dark    :  60
+
+TECH
+
+1. Air Blast
+Description : Shoot air balls
+Type        : Magical
+Level       : 5, Loaded at level 25
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Wind (16)
+Effect      : None
+
+2. Small Heal
+Description : Heal some of your HP
+Type        : Heal
+Level       : 10, Loaded at level 40
+MP Cost     : 16
+Accuracy    : 100
+Power       : 8
+Element     : None
+Effect      : Heal ( value = 8 )
+
+3. Double Guard
+Description : Increase your defense power
+Type        : Support
+Level       : 15, Loaded at level 75
+MP Cost     : 42
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : DEF ++ ( value = 48 )
+
+4. Mega Tornado
+Description : Tornado against an enemy
+Type        : Magical
+Level       : 45, Loaded at level 99
+MP Cost     : 30
+Accuracy    : 110
+Power       : 200
+Element     : Wind (24)
+Effect      : None
+
+#. Hand of Fate
+Description : Punch the enemy with wind attacks
+Type        : Physical
+Level       : 60
+MP Cost     : 42
+Accuracy    : 127
+Power       : 180
+Element     : Wind (48)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.09] Devimon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 130               Fire    :   0               Poison   : 40
+Strength :  50               Water   :  40               Paralyze : 10
+Defense  :  10               Ice     :  60               Confuse  : 10
+Spirit   :  20               Wind    :   0               Sleep    : 10
+Wisdom   :  40               Thunder :  40               KO       : 40
+Speed    :  40               Machine :  60
+Charisma :   1               Dark    :  80
+
+TECH
+
+1. Dark Matter
+Description : Evil fireball with dark damage
+Type        : Magical
+Level       : 10, Loaded at level 45
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Dark (16)
+Effect      : None
+
+2. Evil Poison
+Description : Magic with damage and poison
+Type        : Magical
+Level       : 20, Loaded at level 80
+MP Cost     : 18
+Accuracy    : 110
+Power       : 60
+Element     : None
+Effect      : Poison ( rate = 72 )( value = 80 )
+
+3. Armor Break
+Description : Decrease enemy's defense
+Type        : Support
+Level       : 35, Loaded at level 90
+MP Cost     : 39
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : DEF - ( value = 24 )
+
+4. Stun Shock
+Description : Magic with damage and paralysis
+Type        : Magical
+Level       : 55, Loaded at level 99
+MP Cost     : 18
+Accuracy    : 110
+Power       : 60
+Element     : None
+Effect      : Paralyze ( rate = 80 )( value = 80 )
+
+#. Touch of Evil
+Description : Drain enemy's HP with claw
+Type        : Physical
+Level       : 70
+MP Cost     : 40
+Accuracy    : 127
+Power       : 240
+Element     : None
+Effect      : HP Drain ( rate = 80 )( value = 80 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.10] Stingmon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Always 10 DV EXP for Level UP
+
+Attack   : 100               Fire    :  15               Poison   :  0
+Strength :  20               Water   :  30               Paralyze : 40
+Defense  :  10               Ice     :  30               Confuse  : 30
+Spirit   :  20               Wind    :   0               Sleep    : 20
+Wisdom   :  10               Thunder :  60               KO       :  0
+Speed    :  40               Machine :  30
+Charisma :   1               Dark    :  45
+
+TECH
+
+1. Poison Bites
+Description : Poison damage
+Type        : Physical
+Level       : 10, Loaded at level 25
+MP Cost     : 18
+Accuracy    : 110
+Power       : 75
+Element     : None
+Effect      : Poison ( rate = 72 )( value = 80 )
+
+2. Energy Leech
+Description : Magic that drains HP
+Type        : Magical
+Level       : 15, Loaded at level 45
+MP Cost     : 18
+Accuracy    : 110
+Power       : 100
+Element     : None
+Effect      : HP Drain ( rate = 80 )( value = 64 )
+
+3. Panic Bites
+Description : Confusion damage
+Type        : Physical
+Level       : 35, Loaded at level 75
+MP Cost     : 18
+Accuracy    : 110
+Power       : 75
+Element     : None
+Effect      : Confuse ( rate = 80 )( value = 80 )
+
+4. Venom Stab
+Description : Deadly poison damage
+Type        : Physical
+Level       : 55, Loaded at level 99
+MP Cost     : 36
+Accuracy    : 110
+Power       : 200
+Element     : None
+Effect      : Poison ( rate = 80 )( value = 96 )
+
+#. Spiking Strike
+Description : Stab enemy with the spike
+Type        : Physical
+Level       : 60
+MP Cost     : 36
+Accuracy    : 127
+Power       : 200
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.11] Angewomon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 100               Fire    :   0               Poison   : 30
+Strength :   0               Water   :  60               Paralyze : 20
+Defense  :  30               Ice     :  15               Confuse  : 20
+Spirit   :  20               Wind    :  45               Sleep    : 20
+Wisdom   :  40               Thunder :  45               KO       : 10
+Speed    :  20               Machine :  15
+Charisma :   1               Dark    :  30
+
+TECH
+
+1. Antidote
+Description : Cure poison on yourself
+Type        : Heal
+Level       : 15, Loaded at level 35
+MP Cost     : 8
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Anti PSN
+
+2. Divine Rain
+Description : Water damage from magical rain
+Type        : Magical
+Level       : 20, Loaded at level 50
+MP Cost     : 30
+Accuracy    : 110
+Power       : 150
+Element     : Water (24)
+Effect      : None
+
+3. Anti-Paralysis
+Description : Cure paralysis on yourself
+Type        : Heal
+Level       : 30, Loaded at level 99
+MP Cost     : 8
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Anti PAR
+
+#. Celestial Arrow
+Description : Divine arrow with thunder attack
+Type        : Physical
+Level       : 70
+MP Cost     : 44
+Accuracy    : 127
+Power       : 180
+Element     : Thunder (48)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.12] Kyukimon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :  20               Poison   : 40
+Strength :  40               Water   :  80               Paralyze :  0
+Defense  :  30               Ice     :  20               Confuse  : 10
+Spirit   :  30               Wind    :  20               Sleep    : 30
+Wisdom   :  20               Thunder :  60               KO       : 20
+Speed    :  20               Machine :  40
+Charisma :   1               Dark    :  40
+
+TECH
+
+1. Heat Cutter
+Description : Slash and fire damage
+Type        : Physical
+Level       : 5, Loaded at level 15
+MP Cost     : 18
+Accuracy    : 110
+Power       : 90
+Element     : Fire (32)
+Effect      : None
+
+2. Frost Cutter
+Description : Slash with ice damage
+Type        : Physical
+Level       : 10, Loaded at level 30
+MP Cost     : 18
+Accuracy    : 110
+Power       : 90
+Element     : Ice (32)
+Effect      : None
+
+3. Burn Slash
+Description : Slash with a flame blade
+Type        : Physical
+Level       : 25, Loaded at level 50
+MP Cost     : 32
+Accuracy    : 110
+Power       : 130
+Element     : Fire (64)
+Effect      : None
+
+4. Cold Slash
+Description : Slash with a ice blade
+Type        : Physical
+Level       : 40, Loaded at level 80
+MP Cost     : 32
+Accuracy    : 110
+Power       : 130
+Element     : Ice (64)
+Effect      : None
+
+5. Big Shot
+Description : Big damage if it hits
+Type        : Physical
+Level       : 60, Loaded at level 90
+MP Cost     : 20
+Accuracy    : 100
+Power       : 140
+Element     : None
+Effect      : Critical ( value = 40 )
+
+#. Blade Twister
+Description : Slash multiple times with wind
+Type        : Physical
+Level       : 70
+MP Cost     : 80
+Accuracy    : 100
+Power       : 120
+Element     : Wind (64)
+Effect      : Multi ATK ( 3x )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.13] Armormon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :  40               Poison   :  0
+Strength :  20               Water   :   0               Paralyze : 20
+Defense  :  40               Ice     :  60               Confuse  : 10
+Spirit   :  20               Wind    :  20               Sleep    : 30
+Wisdom   :  30               Thunder :  20               KO       : 40
+Speed    :  50               Machine :  80
+Charisma :   1               Dark    :  60
+
+TECH
+
+1. Bug Buster
+Description : Huge damage vs. Insectoid Digimon
+Type        : Physical, effective against INSECT type Digimon
+Level       : 5, Loaded at level 15
+MP Cost     : 24
+Accuracy    : 110
+Power       : 130
+Element     : None
+Effect      : None
+
+2. Big Shot
+Description : Big damage if it hits
+Type        : Physical
+Level       : 10, Loaded at level 35
+MP Cost     : 20
+Accuracy    : 100
+Power       : 140
+Element     : None
+Effect      : Critical ( value = 40 )
+
+3. Fish Buster
+Description : Huge damage vs. Marine Digimon
+Type        : Physical, effective against MARINE type Digimon
+Level       : 25, Loaded at level 50
+MP Cost     : 30
+Accuracy    : 110
+Power       : 160
+Element     : None
+Effect      : None
+
+4. Dino Buster
+Description : Huge damage vs. Dinosaur Digimon
+Type        : Physical, effective against DINOSAUR type Digimon
+Level       : 45, Loaded at level 80
+MP Cost     : 40
+Accuracy    : 110
+Power       : 200
+Element     : None
+Effect      : None
+
+5. Dramon Buster
+Description : Huge damage vs. Dragon Digimon
+Type        : Physical, effective against DRAGON type Digimon
+Level       : 60, Loaded at level 90
+MP Cost     : 48
+Accuracy    : 110
+Power       : 210
+Element     : None
+Effect      : None
+
+#. Justice Strike
+Description : Shoot all firearms
+Type        : Physical
+Level       : 70
+MP Cost     : 78
+Accuracy    : 100
+Power       : 140
+Element     : None
+Effect      : Multi ATK ( 3x )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.14] GrapLeomon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :  20               Poison   : 20
+Strength :  50               Water   :  60               Paralyze : 20
+Defense  :  50               Ice     :  40               Confuse  : 40
+Spirit   :   0               Wind    :  60               Sleep    :  0
+Wisdom   :   0               Thunder :  20               KO       : 20
+Speed    :  40               Machine :  60
+Charisma :   1               Dark    :   0
+
+TECH
+
+1. Lightning Slash
+Description : Thunder damage
+Type        : Physical
+Level       : 5, Loaded at level 15
+MP Cost     : 18
+Accuracy    : 110
+Power       : 90
+Element     : Thunder (32)
+Effect      : None
+
+2. Whirlwind
+Description : Wind damage
+Type        : Physical
+Level       : 10, Loaded at level 30
+MP Cost     : 18
+Accuracy    : 110
+Power       : 90
+Element     : Wind (32)
+Effect      : None
+
+3. Soul Charge
+Description : Save Chi to power up next blow
+Type        : Support
+Level       : 25, Loaded at level 60
+MP Cost     : 19
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Chi ( value = 80 )
+
+4. Speed Boost
+Description : Increase your speed
+Type        : Support
+Level       : 40, Loaded at level 90
+MP Cost     : 48
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : SPD ++ ( value = 32 )
+
+#. Cyclone Turbine
+Description : Multiple round house kicks
+Type        : Physical
+Level       : 70
+MP Cost     : 80
+Accuracy    : 100
+Power       : 140
+Element     : None
+Effect      : Multi ATK ( 3x )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.15] MetalGreymon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :  80               Poison   : 40
+Strength :  30               Water   :  40               Paralyze : 10
+Defense  :  40               Ice     :   0               Confuse  : 20
+Spirit   :  40               Wind    :  40               Sleep    : 10
+Wisdom   :  20               Thunder :  20               KO       : 20
+Speed    :   0               Machine :  60
+Charisma :   1               Dark    :  40
+
+TECH
+
+1. Flame Ball
+Description : Shoot small fire balls
+Type        : Magical
+Level       : 5, Loaded at level 25
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Fire (16)
+Effect      : None
+
+2. Flame Lance
+Description : Launch fire beam
+Type        : Magical
+Level       : 10, Loaded at level 45
+MP Cost     : 48
+Accuracy    : 110
+Power       : 300
+Element     : Fire (32)
+Effect      : None
+
+3. Triple Fire
+Description : Shoot three fire balls
+Type        : Magical
+Level       : 15, Loaded at level 50
+MP Cost     : 25
+Accuracy    : 100
+Power       : 50
+Element     : Fire (16)
+Effect      : Multi ATK ( 3x )
+
+4. Magic Missile
+Description : Shoot missiles with magic
+Type        : Magical
+Level       : 35, Loaded at level 80
+MP Cost     : 56
+Accuracy    : 110
+Power       : 400
+Element     : Machine (32)
+Effect      : None
+
+5. Rising Fire
+Description : Column of fire on the enemy
+Type        : Magical
+Level       : 60, Loaded at level 90
+MP Cost     : 60
+Accuracy    : 100
+Power       : 150
+Element     : Fire (32)
+Effect      : Multi ATK ( 3x )
+
+#. Giga Destroyer
+Description : Launch organic missiles
+Type        : Magical
+Level       : 70
+MP Cost     : 90
+Accuracy    : 127
+Power       : 500
+Element     : Machine (64)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.16] SkullGreymon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :  60               Poison   : 30
+Strength :  50               Water   :   0               Paralyze : 20
+Defense  :  20               Ice     :  40               Confuse  : 10
+Spirit   :  40               Wind    :  20               Sleep    : 10
+Wisdom   :  10               Thunder :  20               KO       : 30
+Speed    :  30               Machine :  60
+Charisma :   1               Dark    :  80
+
+TECH
+
+1. Flame Ball
+Description : Shoot small fire balls
+Type        : Magical
+Level       : 5, Loaded at level 25
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Fire (16)
+Effect      : None
+
+2. Dark Matter
+Description : Evil fireball with dark damage
+Type        : Magical
+Level       : 15, Loaded at level 80
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Dark (16)
+Effect      : None
+
+3. Triple Fire
+Description : Shoot three fire balls
+Type        : Magical
+Level       : 35, Loaded at level 55
+MP Cost     : 25
+Accuracy    : 100
+Power       : 50
+Element     : Fire (16)
+Effect      : Multi ATK ( 3x )
+
+4. Black Thorn
+Description : Dark damage with evil thorns
+Type        : Magical
+Level       : 45, Loaded at level 90
+MP Cost     : 60
+Accuracy    : 100
+Power       : 150
+Element     : Dark (32)
+Effect      : Multi ATK ( 3x )
+
+#. Dark Shot
+Description : Launch organic missiles
+Type        : Magical
+Level       : 70
+MP Cost     : 90
+Accuracy    : 127
+Power       : 500
+Element     : Machine (64)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.17] Paildramon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :   0               Poison   : 20
+Strength :  30               Water   :  40               Paralyze : 30
+Defense  :  20               Ice     :  80               Confuse  : 10
+Spirit   :  30               Wind    :  60               Sleep    : 40
+Wisdom   :  40               Thunder :  40               KO       :  0
+Speed    :  30               Machine :  20
+Charisma :   1               Dark    :  60
+
+TECH
+
+1. Metal Attack
+Description : Machine damage
+Type        : Physical
+Level       : 5, Loaded at level 15
+MP Cost     : 26
+Accuracy    : 110
+Power       : 140
+Element     : Machine (32)
+Effect      : None
+
+2. Ice Shower
+Description : Shoot numerous icicles
+Type        : Magical
+Level       : 10, Loaded at level 40
+MP Cost     : 48
+Accuracy    : 110
+Power       : 200
+Element     : Ice (32)
+Effect      : None
+
+3. Mega Tornado
+Description : Tornado against an enemy
+Type        : Magical
+Level       : 25, Loaded at level 60
+MP Cost     : 30
+Accuracy    : 110
+Power       : 200
+Element     : Wind (24)
+Effect      : None
+
+4. Speed Boost
+Description : Increase your speed
+Type        : Support
+Level       : 55, Loaded at level 90
+MP Cost     : 48
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : SPD ++ ( value = 32 )
+
+5. Anti-Paralysis
+Description : Cure paralysis on yourself
+Type        : Heal
+Level       : 65, Loaded at level 99
+MP Cost     : 8
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Anti PAR
+
+#. Desperado Blaster
+Description : Rapid-fire 2 energy waves
+Type        : Physical
+Level       : 70
+MP Cost     : 84
+Accuracy    : 100
+Power       : 140
+Element     : None
+Effect      : Multi ATK ( 3x )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.18] Wargrowlmon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :  60               Poison   : 30
+Strength :  40               Water   :  20               Paralyze : 20
+Defense  :  20               Ice     :  40               Confuse  :  0
+Spirit   :  20               Wind    :  80               Sleep    : 40
+Wisdom   :  30               Thunder :   0               KO       : 10
+Speed    :  40               Machine :  60
+Charisma :   1               Dark    :  20
+
+TECH
+
+1. Picking Claw
+Description : Attack and steal items
+Type        : Physical
+Level       : 5, Loaded at level 15
+MP Cost     : 18
+Accuracy    : 110
+Power       : 60
+Element     : None
+Effect      : Steal ( rate = 64 )
+
+2. Counter Alert
+Description : Counterattack during pose
+Type        : Physical
+Level       : 10, Loaded at level 35
+MP Cost     : 48
+Accuracy    : 110
+Power       : 100
+Element     : None
+Effect      : Counter ( value = 40 )
+
+3. Mega Guard
+Description : Increase allies' defense powers
+Type        : Support
+Level       : 25, Loaded at level 50
+MP Cost     : 84
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : DEF ++ ( value = 64 )
+
+4. Mega Strength
+Description : Increase allies' attack powers
+Type        : Support
+Level       : 45, Loaded at level 80
+MP Cost     : 84
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : POW ++ ( value = 64 )
+
+5. Speed Boost
+Description : Increase your speed
+Type        : Support
+Level       : 60, Loaded at level 90
+MP Cost     : 48
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : SPD ++ ( value = 32 )
+
+#. Atomic Blaster
+Description : Burn the enemy with fire laser
+Type        : Magical
+Level       : 70
+MP Cost     : 90
+Accuracy    : 127
+Power       : 500
+Element     : Fire (64)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.19] Taomon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :  40               Poison   : 10
+Strength :  20               Water   :  40               Paralyze : 40
+Defense  :  10               Ice     :  60               Confuse  : 20
+Spirit   :  50               Wind    :  20               Sleep    :  0
+Wisdom   :  40               Thunder :  80               KO       : 30
+Speed    :  30               Machine :   0
+Charisma :   1               Dark    :  40
+
+TECH
+
+1. Thunder Gemini
+Description : Create two thunder balls and fire
+Type        : Magical
+Level       : 5, Loaded at level 15
+MP Cost     : 30
+Accuracy    : 110
+Power       : 200
+Element     : Thunder (24)
+Effect      : None
+
+2. Electro Bolt
+Description : Large thunder ball against enemy
+Type        : Magical
+Level       : 25, Loaded at level 65
+MP Cost     : 48
+Accuracy    : 110
+Power       : 300
+Element     : Thunder (32)
+Effect      : None
+
+3. Ice Shower
+Description : Shoot numerous icicles
+Type        : Magical
+Level       : 10, Loaded at level 35
+MP Cost     : 48
+Accuracy    : 110
+Power       : 200
+Element     : Ice (32)
+Effect      : None
+
+4. Showstorm
+Description : Snow spirit inflicts ice damage
+Type        : Magical
+Level       : 45, Loaded at level 80
+MP Cost     : 60
+Accuracy    : 110
+Power       : 250
+Element     : Ice (40)
+Effect      : None
+
+5. Thunder Field
+Description : Strengthen thunder, weaken metal
+Type        : Set Field
+Level       : 55, Loaded at level 90
+MP Cost     : 100
+Accuracy    : 100
+Power       : 0
+Element     : Thunder (0)
+Effect      : Set Field into Thunder Field
+
+#. Bonhitsusen
+Description : Huge damage to ghouls
+Type        : Physical, effective against GHOUL type Digimon
+Level       : 70
+MP Cost     : 80
+Accuracy    : 127
+Power       : 300
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.20] MagnaAngemon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :  20               Poison   : 30
+Strength :  10               Water   :  60               Paralyze :  0
+Defense  :  30               Ice     :  40               Confuse  : 20
+Spirit   :  40               Wind    :  60               Sleep    : 10
+Wisdom   :  50               Thunder :   0               KO       : 40
+Speed    :  20               Machine :  20
+Charisma :   1               Dark    :  80
+
+TECH
+
+1. Air Blast
+Description : Shoot air balls
+Type        : Magical
+Level       : 5, Loaded at level 15
+MP Cost     : 20
+Accuracy    : 110
+Power       : 100
+Element     : Wind (16)
+Effect      : None
+
+2. Small Heal
+Description : Heal some of your HP
+Type        : Heal
+Level       : 10, Loaded at level 35
+MP Cost     : 16
+Accuracy    : 100
+Power       : 8
+Element     : None
+Effect      : Heal ( value = 8 )
+
+3. Mega Tornado
+Description : Tornado against an enemy
+Type        : Magical
+Level       : 25, Loaded at level 60
+MP Cost     : 30
+Accuracy    : 110
+Power       : 200
+Element     : Wind (24)
+Effect      : None
+
+4. Mega Heal
+Description : Heal much of your HP
+Type        : Heal
+Level       : 40, Loaded at level 80
+MP Cost     : 74
+Accuracy    : 100
+Power       : 32
+Element     : None
+Effect      : Heal ( value = 32 )
+
+5. Mega Guard
+Description : Increase allies' defense powers
+Type        : Support
+Level       : 50, Loaded at level 90
+MP Cost     : 84
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : DEF ++ ( value = 64 )
+
+#. Gate of Destiny
+Description : Open a gate and discard enemies
+Type        : Magical
+Level       : 70
+MP Cost     : 112
+Accuracy    : 127
+Power       : 250
+Element     : None
+Effect      : KO ( rate = 88 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.21] Myotismon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 200               Fire    :   0               Poison   : 40
+Strength :  60               Water   :  50               Paralyze : 10
+Defense  :  20               Ice     :  75               Confuse  : 10
+Spirit   :  30               Wind    :   0               Sleep    : 10
+Wisdom   :  50               Thunder :  50               KO       : 40
+Speed    :  50               Machine :  75
+Charisma :   1               Dark    : 100
+
+TECH
+
+1. Dark Fear
+Description : Throw evil flame against enemy
+Type        : Magical
+Level       : 10, Loaded at level 30
+MP Cost     : 48
+Accuracy    : 110
+Power       : 300
+Element     : Dark (32)
+Effect      : None
+
+2. Black Dart
+Description : Fire numerous evil thorns
+Type        : Magical
+Level       : 25, Loaded at level 50
+MP Cost     : 70
+Accuracy    : 100
+Power       : 200
+Element     : Dark (40)
+Effect      : Multi ATK ( 3x )
+
+3. Armor Off
+Description : Large decrease in enemy's defense
+Type        : Support
+Level       : 40, Loaded at level 60
+MP Cost     : 78
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : DEF - ( value = 48 )
+
+4. Confuse Gas
+Description : Magic that confuses the enemy
+Type        : Magical
+Level       : 65, Loaded at level 90
+MP Cost     : 40
+Accuracy    : 110
+Power       : 180
+Element     : None
+Effect      : Confuse ( rate = 80 )( value = 80 )
+
+5. Soul Snatcher
+Description : Magically drain the soul
+Type        : Magical
+Level       : 80, Loaded at level 95
+MP Cost     : 50
+Accuracy    : 110
+Power       : 150
+Element     : None
+Effect      : KO ( rate = 72 )
+
+#. Grisly Wing
+Description : Decrease enemy's attack power
+Type        : Magical
+Level       : 85
+MP Cost     : 90
+Accuracy    : 127
+Power       : 300
+Element     : Dark (64)
+Effect      : POW -- ( value = 32 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.22] Metal Mamemon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 130               Fire    :  45               Poison   : 40
+Strength :  20               Water   :   0               Paralyze :  0
+Defense  :  40               Ice     :  30               Confuse  :  0
+Spirit   :  20               Wind    :  30               Sleep    : 30
+Wisdom   :  20               Thunder :   0               KO       : 30
+Speed    :   0               Machine :  60
+Charisma :   1               Dark    :  45
+
+TECH
+
+1. Metal Attack
+Description : Machine damage
+Type        : Physical
+Level       : 5, Loaded at level 25
+MP Cost     : 26
+Accuracy    : 110
+Power       : 140
+Element     : Machine (32)
+Effect      : None
+
+2. Mechanical Bash
+Description : Strong machine damage
+Type        : Physical
+Level       : 35, Loaded at level 80
+MP Cost     : 48
+Accuracy    : 110
+Power       : 160
+Element     : Machine (64)
+Effect      : None
+
+3. Magic Missile
+Description : Shoot missiles with magic
+Type        : Magical
+Level       : 15, Loaded at level 55
+MP Cost     : 56
+Accuracy    : 110
+Power       : 400
+Element     : Machine (32)
+Effect      : None
+
+4. Slow Down
+Description : Decrease enemy's speed
+Type        : Support
+Level       : 45, Loaded at level 90
+MP Cost     : 41
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : SPD - ( value = 16 )
+
+5. Twin Missile
+Description : Shoot two missiles with magic
+Type        : Magical
+Level       : 60, Loaded at level 99
+MP Cost     : 64
+Accuracy    : 110
+Power       : 450
+Element     : Machine (40)
+Effect      : None
+
+#. Energetic Bomb
+Description : Fire machine energy balls
+Type        : Physical
+Level       : 70
+MP Cost     : 78
+Accuracy    : 127
+Power       : 240
+Element     : Machine (64)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.23] Kabuterimon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 95
+
+Attack   : 160               Fire    :  20               Poison   :  0
+Strength :  30               Water   :  40               Paralyze : 40
+Defense  :  20               Ice     :  40               Confuse  : 30
+Spirit   :  30               Wind    :   0               Sleep    : 20
+Wisdom   :  20               Thunder :  80               KO       :  0
+Speed    :  50               Machine :  40
+Charisma :   1               Dark    :  60
+
+TECH
+
+1. Energy Leech
+Description : Magic that drains HP
+Type        : Magical
+Level       : 5, Loaded at level 25
+MP Cost     : 18
+Accuracy    : 110
+Power       : 100
+Element     : None
+Effect      : HP Drain ( rate = 80 )( value = 64 )
+
+2. Venom Stab
+Description : Deadly poison damage
+Type        : Physical
+Level       : 15, Loaded at level 50
+MP Cost     : 36
+Accuracy    : 110
+Power       : 200
+Element     : None
+Effect      : Poison ( rate = 80 )( value = 96 )
+
+3. Hammer Rush
+Description : Damage from rapid blows
+Type        : Physical
+Level       : 35, Loaded at level 90
+MP Cost     : 30
+Accuracy    : 100
+Power       : 100
+Element     : None
+Effect      : Multi ATK ( 3x )
+
+4. Energy Drain
+Description : Magic that drains many HP
+Type        : Magical
+Level       : 60, Loaded at level 99
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : None
+Effect      : HP Drain ( rate = 100 )( value = 127 )
+
+#. Electro Shocker
+Description : Fire thunder balls from the mouth
+Type        : Magical
+Level       : 70
+MP Cost     : 90
+Accuracy    : 127
+Power       : 500
+Element     : Thunder (64)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.24] Digitamamon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 160               Fire    :  40               Poison   : 20
+Strength :  30               Water   :  40               Paralyze : 20
+Defense  :  30               Ice     :  40               Confuse  : 20
+Spirit   :  30               Wind    :  40               Sleep    : 20
+Wisdom   :  30               Thunder :  40               KO       : 20
+Speed    :  30               Machine :  40
+Charisma :   1               Dark    :  40
+
+TECH
+
+1. Hypno Gas
+Description : Magic puts the enemy to sleep
+Type        : Magical
+Level       : 10, Loaded at level 50
+MP Cost     : 40
+Accuracy    : 110
+Power       : 180
+Element     : None
+Effect      : Sleep ( rate = 80 )( value = 80 )
+
+2. Soul Snatcher
+Description : Magically drain the soul
+Type        : Magical
+Level       : 30, Loaded at level 80
+MP Cost     : 50
+Accuracy    : 110
+Power       : 150
+Element     : None
+Effect      : KO ( rate = 72 )
+
+3. Hypno Nebula
+Description : Magic that puts enemy to deep sleep
+Type        : Magical
+Level       : 55, Loaded at level 99
+MP Cost     : 60
+Accuracy    : 110
+Power       : 240
+Element     : None
+Effect      : Sleep ( rate = 96 )( value = 96 )
+
+#. NM Syndromer
+Description : Dark attack by firing dark balls
+Type        : Magical
+Level       : 85
+MP Cost     : 90
+Accuracy    : 127
+Power       : 500
+Element     : Dark (64)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.25] Guardiangemon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 240               Fire    :  25               Poison   : 40
+Strength :  50               Water   : 100               Paralyze :  0
+Defense  :  40               Ice     :  25               Confuse  : 10
+Spirit   :  40               Wind    :  75               Sleep    : 30
+Wisdom   :  30               Thunder :  50               KO       : 20
+Speed    :  30               Machine :  25
+Charisma :   1               Dark    :  50
+
+TECH
+
+1. Burn Slash
+Description : Slash with a flame blade
+Type        : Physical
+Level       : 15, Loaded at level 45
+MP Cost     : 32
+Accuracy    : 110
+Power       : 130
+Element     : Fire (64)
+Effect      : None
+
+2. Cold Slash
+Description : Slash with a ice blade
+Type        : Physical
+Level       : 30, Loaded at level 55
+MP Cost     : 32
+Accuracy    : 110
+Power       : 130
+Element     : Ice (64)
+Effect      : None
+
+3. Mega Heal
+Description : Heal much of your HP
+Type        : Heal
+Level       : 40, Loaded at level 65
+MP Cost     : 74
+Accuracy    : 100
+Power       : 32
+Element     : None
+Effect      : Heal ( value = 32 )
+
+4. Hammer Rush
+Description : Damage from rapid blows
+Type        : Physical
+Level       : 50, Loaded at level 75
+MP Cost     : 30
+Accuracy    : 100
+Power       : 100
+Element     : None
+Effect      : Multi ATK ( 3x )
+
+5. Pinpoint Shot
+Description : Huge damage if it hits
+Type        : Physical
+Level       : 70, Loaded at level 99
+MP Cost     : 54
+Accuracy    : 100
+Power       : 220
+Element     : None
+Effect      : Critical ( value = 64 )
+
+#. Golden Ripper
+Description : Slash enemies with swords
+Type        : Physical, effective against EVIL type Digimon
+Level       : 85
+MP Cost     : 140
+Accuracy    : 127
+Power       : 400
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.26] Cannondramon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 240               Fire    :  50               Poison   :  0
+Strength :  30               Water   :   0               Paralyze : 20
+Defense  :  50               Ice     :  75               Confuse  : 10
+Spirit   :  30               Wind    :  25               Sleep    : 30
+Wisdom   :  40               Thunder :  25               KO       : 40
+Speed    :  60               Machine : 100
+Charisma :   1               Dark    :  75
+
+TECH
+
+1. Fish Buster
+Description : Huge damage vs. Marine Digimon
+Type        : Physical, effective against MARINE type Digimon
+Level       : 15, Loaded at level 35
+MP Cost     : 30
+Accuracy    : 110
+Power       : 160
+Element     : None
+Effect      : None
+
+2. Dino Buster
+Description : Huge damage vs. Dinosaur Digimon
+Type        : Physical, effective against DINOSAUR type Digimon
+Level       : 25, Loaded at level 50
+MP Cost     : 40
+Accuracy    : 110
+Power       : 200
+Element     : None
+Effect      : None
+
+3. Dramon Buster
+Description : Huge damage vs. Dragon Digimon
+Type        : Physical, effective against DRAGON type Digimon
+Level       : 40, Loaded at level 75
+MP Cost     : 48
+Accuracy    : 110
+Power       : 210
+Element     : None
+Effect      : None
+
+4. Pinpoint Shot
+Description : Huge damage if it hits
+Type        : Physical
+Level       : 60, Loaded at level 90
+MP Cost     : 54
+Accuracy    : 100
+Power       : 220
+Element     : None
+Effect      : Critical ( value = 64 )
+
+5. Devil Shot
+Description : Huge damage vs. Evil Digimon
+Type        : Physical, effective against EVIL type Digimon
+Level       : 80, Loaded at level 99
+MP Cost     : 56
+Accuracy    : 110
+Power       : 220
+Element     : None
+Effect      : None
+
+#. DynamoCannon
+Description : Huge damage against Machines
+Type        : Physical, effective against MACHINE type Digimon
+Level       : 85
+MP Cost     : 136
+Accuracy    : 127
+Power       : 400
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.27] Marsmon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 240               Fire    :  25               Poison   : 20
+Strength :  60               Water   :  75               Paralyze : 20
+Defense  :  60               Ice     :  50               Confuse  : 30
+Spirit   :   0               Wind    :  75               Sleep    : 10
+Wisdom   :   0               Thunder :  25               KO       : 20
+Speed    :  50               Machine :  75
+Charisma :   1               Dark    :   0
+
+TECH
+
+1. Heaven Hit
+Description : Strong thunder damage
+Type        : Physical
+Level       : 15, Loaded at level 45
+MP Cost     : 32
+Accuracy    : 110
+Power       : 160
+Element     : Thunder (64)
+Effect      : None
+
+2. Vacuum Cannon
+Description : Strong wind damage
+Type        : Physical
+Level       : 25, Loaded at level 55
+MP Cost     : 48
+Accuracy    : 110
+Power       : 160
+Element     : Wind (64)
+Effect      : None
+
+3. Brain Freeze
+Description : Paralyzes the enemy
+Type        : Physical
+Level       : 40, Loaded at level 80
+MP Cost     : 52
+Accuracy    : 110
+Power       : 180
+Element     : None
+Effect      : Paralyze ( rate = 96 )( value = 96 )
+
+4. Misshukikou
+Description : Save Chi to maximum for next blow
+Type        : Support
+Level       : 65, Loaded at level 99
+MP Cost     : 49
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Chi ( value = 127 )
+
+#. Mugenhadou
+Description : Blast a wave to knock out enemy
+Type        : Physical
+Level       : 85
+MP Cost     : 148
+Accuracy    : 127
+Power       : 320
+Element     : None
+Effect      : Sleep ( rate = 127 )( value = 127 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.28] Wargreymon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 240               Fire    : 100               Poison   : 40
+Strength :  40               Water   :  50               Paralyze : 10
+Defense  :  50               Ice     :   0               Confuse  : 20
+Spirit   :  50               Wind    :  50               Sleep    : 10
+Wisdom   :  30               Thunder :  50               KO       : 20
+Speed    :   0               Machine :  50
+Charisma :   1               Dark    :  50
+
+TECH
+
+1. Flame Lance
+Description : Launch fire beam
+Type        : Magical
+Level       : 5, Loaded at level 25
+MP Cost     : 48
+Accuracy    : 110
+Power       : 300
+Element     : Fire (32)
+Effect      : None
+
+2. Flame Breath
+Description : Engulf the enemy with fire breath
+Type        : Magical
+Level       : 35, Loaded at level 75
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : Fire (48)
+Effect      : None
+
+3. Rising Fire
+Description : Column of fire on the enemy
+Type        : Magical
+Level       : 45, Loaded at level 65
+MP Cost     : 60
+Accuracy    : 100
+Power       : 150
+Element     : Fire (32)
+Effect      : Multi ATK ( 3x )
+
+4. Twin Missile
+Description : Shoot two missiles with magic
+Type        : Magical
+Level       : 60, Loaded at level 90
+MP Cost     : 64
+Accuracy    : 110
+Power       : 450
+Element     : Machine (40)
+Effect      : None
+
+5. Giga Fire
+Description : Magic attack shoots 3 fire balls
+Type        : Magical
+Level       : 80, Loaded at level 99
+MP Cost     : 90
+Accuracy    : 100
+Power       : 250
+Element     : Fire (48)
+Effect      : Multi ATK ( 3x )
+
+#. Terra Force
+Description : Throw a huge energy ball
+Type        : Physical
+Level       : 85
+MP Cost     : 140
+Accuracy    : 127
+Power       : 480
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.29] Imperialdramon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 240               Fire    :   0               Poison   : 20
+Strength :  40               Water   :  50               Paralyze : 30
+Defense  :  30               Ice     : 100               Confuse  : 10
+Spirit   :  40               Wind    :  75               Sleep    : 40
+Wisdom   :  50               Thunder :  50               KO       :  0
+Speed    :  40               Machine :  25
+Charisma :   1               Dark    :  75
+
+TECH
+
+1. Mega Heal
+Description : Heal much of your HP
+Type        : Heal
+Level       : 5, Loaded at level 15
+MP Cost     : 74
+Accuracy    : 100
+Power       : 32
+Element     : None
+Effect      : Heal ( value = 32 )
+
+2. Mechanical Bash
+Description : Strong machine damage
+Type        : Physical
+Level       : 25, Loaded at level 60
+MP Cost     : 48
+Accuracy    : 110
+Power       : 160
+Element     : Machine (64)
+Effect      : None
+
+3. Showstorm
+Description : Snow spirit inflicts ice damage
+Type        : Magical
+Level       : 50, Loaded at level 80
+MP Cost     : 60
+Accuracy    : 110
+Power       : 250
+Element     : Ice (40)
+Effect      : None
+
+4. Sylph Storm
+Description : Powerful gust of wind
+Type        : Magical
+Level       : 70, Loaded at level 90
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : Wind (48)
+Effect      : None
+
+#. Mega Crusher
+Description : Fire a massive ball
+Type        : Physical
+Level       : 85
+MP Cost     : 150
+Accuracy    : 127
+Power       : 500
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.30] Gallantmon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 240               Fire    :  75               Poison   : 30
+Strength :  50               Water   :  25               Paralyze : 20
+Defense  :  30               Ice     :  50               Confuse  :  0
+Spirit   :  30               Wind    : 100               Sleep    : 40
+Wisdom   :  40               Thunder :   0               KO       : 10
+Speed    :  50               Machine :  75
+Charisma :   1               Dark    :  25
+
+TECH
+
+1. Speed Boost
+Description : Increase your speed
+Type        : Support
+Level       : 15, Loaded at level 35
+MP Cost     : 48
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : SPD ++ ( value = 32 )
+
+2. Counter Strike
+Description : Strong counterattack during pose
+Type        : Physical
+Level       : 25, Loaded at level 65
+MP Cost     : 96
+Accuracy    : 110
+Power       : 240
+Element     : None
+Effect      : Counter ( value = 64 )
+
+3. Snapping Claw
+Description : Attack and quickly steal items
+Type        : Physical
+Level       : 50, Loaded at level 99
+MP Cost     : 54
+Accuracy    : 110
+Power       : 240
+Element     : None
+Effect      : Steal ( rate = 96 )
+
+4. Mega Boost
+Description : Increase allies' speed
+Type        : Support
+Level       : 75, Loaded at level 90
+MP Cost     : 96
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : SPD ++ ( value = 48 )
+
+#. Final Purification
+Description : Beam counterattack from shield
+Type        : Physical
+Level       : 85
+MP Cost     : 140
+Accuracy    : 127
+Power       : 320
+Element     : None
+Effect      : Counter ( value = 96 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.31] Sakuyamon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 240               Fire    :  50               Poison   : 10
+Strength :  30               Water   :  50               Paralyze : 40
+Defense  :  20               Ice     :  75               Confuse  : 20
+Spirit   :  60               Wind    :  25               Sleep    :  0
+Wisdom   :  50               Thunder : 100               KO       : 30
+Speed    :  40               Machine :   0
+Charisma :   1               Dark    :  50
+
+TECH
+
+1. Electro Bolt
+Description : Large thunder ball against enemy
+Type        : Magical
+Level       : 5, Loaded at level 25
+MP Cost     : 48
+Accuracy    : 110
+Power       : 300
+Element     : Thunder (32)
+Effect      : None
+
+2. Lightning Bolt
+Description : Huge thunder ball against enemy
+Type        : Magical
+Level       : 40, Loaded at level 80
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : Thunder (48)
+Effect      : None
+
+3. Showstorm
+Description : Snow spirit inflicts ice damage
+Type        : Magical
+Level       : 15, Loaded at level 35
+MP Cost     : 60
+Accuracy    : 110
+Power       : 250
+Element     : Ice (40)
+Effect      : None
+
+4. Giga Freeze
+Description : Engulf the enemy with huge ice
+Type        : Magical
+Level       : 50, Loaded at level 90
+MP Cost     : 72
+Accuracy    : 110
+Power       : 300
+Element     : Ice (48)
+Effect      : None
+
+5. Ice Field
+Description : Strength ice, weaken wind
+Type        : Set Field
+Level       : 65, Loaded at level 99
+MP Cost     : 100
+Accuracy    : 100
+Power       : 0
+Element     : Ice (0)
+Effect      : Set Field into Ice Field
+
+#. KongouKaimandra
+Description : Magic attack against ghouls
+Type        : Magical, effective against GHOUL type Digimon
+Level       : 85
+MP Cost     : 150
+Accuracy    : 127
+Power       : 480
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.32] Seraphimon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 240               Fire    :  25               Poison   : 30
+Strength :  20               Water   :  75               Paralyze :  0
+Defense  :  40               Ice     :  50               Confuse  : 20
+Spirit   :  50               Wind    :  75               Sleep    : 10
+Wisdom   :  60               Thunder :   0               KO       : 40
+Speed    :  30               Machine :  25
+Charisma :   1               Dark    : 100
+
+TECH
+
+1. Mega Tornado
+Description : Tornado against an enemy
+Type        : Magical
+Level       : 5, Loaded at level 15
+MP Cost     : 30
+Accuracy    : 110
+Power       : 200
+Element     : Wind (24)
+Effect      : None
+
+2. Mega Heal
+Description : Heal much of your HP
+Type        : Heal
+Level       : 20, Loaded at level 45
+MP Cost     : 74
+Accuracy    : 100
+Power       : 32
+Element     : None
+Effect      : Heal ( value = 32 )
+
+3. Sylph Storm
+Description : Powerful gust of wind
+Type        : Magical
+Level       : 35, Loaded at level 65
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : Wind (48)
+Effect      : None
+
+4. Giga Heal
+Description : Heal much of allies' HP
+Type        : Heal
+Level       : 55, Loaded at level 99
+MP Cost     : 188
+Accuracy    : 100
+Power       : 32
+Element     : None
+Effect      : Heal ( value = 32 )
+
+5. Wind Field
+Description : Strengthen wind, weaken water
+Type        : Set Field
+Level       : 75, Loaded at level 95
+MP Cost     : 100
+Accuracy    : 100
+Power       : 0
+Element     : Wind (0)
+Effect      : Set Field into Wind Field
+
+#. Seven Heavens
+Description : Fire 7 balls against evil Digimon
+Type        : Physical, effective against EVIL type Digimon
+Level       : 85
+MP Cost     : 140
+Accuracy    : 127
+Power       : 400
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.33] MetalGarurumon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 200               Fire    :  60               Poison   : 40
+Strength :  30               Water   :   0               Paralyze :  0
+Defense  :  50               Ice     :  40               Confuse  :  0
+Spirit   :  30               Wind    :  40               Sleep    : 30
+Wisdom   :  30               Thunder :   0               KO       : 30
+Speed    :  10               Machine :  80
+Charisma :   1               Dark    :  60
+
+TECH
+
+1. Mechanical Bash
+Description : Strong machine damage
+Type        : Physical
+Level       : 10, Loaded at level 25
+MP Cost     : 48
+Accuracy    : 110
+Power       : 160
+Element     : Machine (64)
+Effect      : None
+
+2. Twin Missile
+Description : Shoot two missiles with magic
+Type        : Magical
+Level       : 15, Loaded at level 55
+MP Cost     : 64
+Accuracy    : 110
+Power       : 450
+Element     : Machine (40)
+Effect      : None
+
+3. Magical Cannon
+Description : Shoot giant missiles with magic
+Type        : Magical
+Level       : 45, Loaded at level 80
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : Machine (48)
+Effect      : None
+
+4. Metal Field
+Description : Strength metal, weaken dark
+Type        : Set Field
+Level       : 70, Loaded at level 90
+MP Cost     : 100
+Accuracy    : 100
+Power       : 0
+Element     : Machine (0)
+Effect      : Set Field into Machine Field
+
+#. Metal Wolf Claw
+Description : Ice breath. Magic attack.
+Type        : Magical
+Level       : 85
+MP Cost     : 150
+Accuracy    : 127
+Power       : 600
+Element     : Ice (72)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.34] Rosemon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 200               Fire    :   0               Poison   : 30
+Strength :  10               Water   :  80               Paralyze : 20
+Defense  :  40               Ice     :  20               Confuse  : 20
+Spirit   :  30               Wind    :  60               Sleep    : 20
+Wisdom   :  50               Thunder :  60               KO       : 10
+Speed    :  30               Machine :  20
+Charisma :   1               Dark    :  40
+
+TECH
+
+1. Grand Wave
+Description : Magical tidal wave against enemy
+Type        : Magical
+Level       : 10, Loaded at level 30
+MP Cost     : 72
+Accuracy    : 110
+Power       : 300
+Element     : Water (48)
+Effect      : None
+
+2. Erase Poison
+Description : Cure all poison on allies
+Type        : Heal
+Level       : 20, Loaded at level 55
+MP Cost     : 12
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Anti PSN
+
+3. Erase Paralysis
+Description : Cure all paralysis on allies
+Type        : Heal
+Level       : 25, Loaded at level 60
+MP Cost     : 12
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Anti PAR
+
+4. Water Field
+Description : Strengthen water, weaken fire
+Type        : Set Field
+Level       : 50, Loaded at level 80
+MP Cost     : 100
+Accuracy    : 100
+Power       : 0
+Element     : Water (0)
+Effect      : Set Field into Water Field
+
+5. Anti-Magic
+Description : Cure all ailments on yourself
+Type        : Heal
+Level       : 70, Loaded at level 90
+MP Cost     : 20
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Cured
+
+#. Thorn Whipping
+Description : Poison enemy with thorn whip
+Type        : Physical
+Level       : 85
+MP Cost     : 130
+Accuracy    : 127
+Power       : 340
+Element     : None
+Effect      : Poison ( rate = 127 )( value = 127 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.35] BK Wargreymon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 90
+
+Attack   : 240               Fire    :  75               Poison   : 30
+Strength :  60               Water   :   0               Paralyze : 20
+Defense  :  30               Ice     :  50               Confuse  : 10
+Spirit   :  50               Wind    :  25               Sleep    : 10
+Wisdom   :  20               Thunder :  25               KO       : 30
+Speed    :  40               Machine :  75
+Charisma :   1               Dark    : 100
+
+TECH
+
+1. Flame Breath
+Description : Engulf the enemy with fire breath
+Type        : Magical
+Level       : 10, Loaded at level 25
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : Fire (48)
+Effect      : None
+
+2. Dark Fear
+Description : Throw evil flame against enemy
+Type        : Magical
+Level       : 20, Loaded at level 40
+MP Cost     : 48
+Accuracy    : 110
+Power       : 300
+Element     : Dark (32)
+Effect      : None
+
+3. Giga Fire
+Description : Magic attack shoots 3 fire balls
+Type        : Magical
+Level       : 35, Loaded at level 60
+MP Cost     : 90
+Accuracy    : 100
+Power       : 250
+Element     : Fire (48)
+Effect      : Multi ATK ( 3x )
+
+4. Black Dart
+Description : Fire numerous evil thorns
+Type        : Magical
+Level       : 50, Loaded at level 80
+MP Cost     : 70
+Accuracy    : 100
+Power       : 200
+Element     : Dark (40)
+Effect      : Multi ATK ( 3x )
+
+5. Fire Field
+Description : Strength fire, weaken ice
+Type        : Set Field
+Level       : 70, Loaded at level 90
+MP Cost     : 100
+Accuracy    : 100
+Power       : 0
+Element     : Fire (0)
+Effect      : Set Field into Fire Field
+
+#. Terra Destroyer
+Description : Throw massive dark matter
+Type        : Physical
+Level       : 85
+MP Cost     : 140
+Accuracy    : 127
+Power       : 420
+Element     : Dark (64)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+       [4.36] Imperialdramon FM
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 80
+
+Attack   : 320               Fire    :   0               Poison   : 20
+Strength :  55               Water   :  60               Paralyze : 30
+Defense  :  30               Ice     : 120               Confuse  : 10
+Spirit   :  45               Wind    :  90               Sleep    : 40
+Wisdom   :  50               Thunder :  60               KO       :  0
+Speed    :  45               Machine :  30
+Charisma :   1               Dark    :  90
+
+TECH
+
+1. Heaven Hit
+Description : Strong thunder damage
+Type        : Physical
+Level       : 10, Loaded at level 30
+MP Cost     : 32
+Accuracy    : 110
+Power       : 160
+Element     : Thunder (64)
+Effect      : None
+
+2. Mega Boost
+Description : Increase allies' speed
+Type        : Support
+Level       : 20, Loaded at level 55
+MP Cost     : 96
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : SPD ++ ( value = 48 )
+
+3. Full Heal
+Description : Heal almost all of your HP
+Type        : Heal
+Level       : 45, Loaded at level 70
+MP Cost     : 120
+Accuracy    : 100
+Power       : 127
+Element     : None
+Effect      : Heal ( value = 127 )
+
+4. Counter Strike
+Description : Strong counterattack during pose
+Type        : Physical
+Level       : 60, Loaded at level 85
+MP Cost     : 96
+Accuracy    : 110
+Power       : 240
+Element     : None
+Effect      : Counter ( value = 64 )
+
+5. Giga Heal
+Description : Heal much of allies' HP
+Type        : Heal
+Level       : 75, Loaded at level 99
+MP Cost     : 188
+Accuracy    : 100
+Power       : 32
+Element     : None
+Effect      : Heal ( value = 32 )
+
+#. Giga Crusher
+Description : Fire the ultimate laser cannon
+Type        : Physical
+Level       : 90
+MP Cost     : 180
+Accuracy    : 127
+Power       : 640
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+        [4.37] MaloMyotismon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 80
+
+Attack   : 320               Fire    :   0               Poison   : 40
+Strength :  65               Water   :  60               Paralyze : 10
+Defense  :  25               Ice     :  90               Confuse  : 10
+Spirit   :  35               Wind    :   0               Sleep    : 10
+Wisdom   :  55               Thunder :  60               KO       : 40
+Speed    :  55               Machine :  90
+Charisma :   1               Dark    : 120
+
+TECH
+
+1. Dark Elemental
+Description : Engulf with evil fire column
+Type        : Magical
+Level       : 10, Loaded at level 35
+MP Cost     : 120
+Accuracy    : 110
+Power       : 600
+Element     : Dark (64)
+Effect      : None
+
+2. Crimson Cloud
+Description : Fire numerous evil flashes
+Type        : Magical
+Level       : 20, Loaded at level 55
+MP Cost     : 150
+Accuracy    : 100
+Power       : 300
+Element     : Dark (64)
+Effect      : Multi ATK ( 3x )
+
+3. Deadly Poison
+Description : Fire venomous foam with magic
+Type        : Magical
+Level       : 30, Loaded at level 70
+MP Cost     : 90
+Accuracy    : 110
+Power       : 360
+Element     : None
+Effect      : Poison ( rate = 112 )( value = 127 )
+
+4. Paralyze Shock
+Description : Magic that completely paralyzes
+Type        : Magical
+Level       : 45, Loaded at level 80
+MP Cost     : 90
+Accuracy    : 110
+Power       : 300
+Element     : None
+Effect      : Paralyze ( rate = 96 )( value = 96 )
+
+5. Dark Field
+Description : Strength dark, weaken thunder
+Type        : Set Field
+Level       : 75, Loaded at level 99
+MP Cost     : 100
+Accuracy    : 100
+Power       : 0
+Element     : Dark (0)
+Effect      : Set Field into Dark Field
+
+#. Melting Blood
+Description : Unleash dark energy
+Type        : Magical
+Level       : 90
+MP Cost     : 210
+Accuracy    : 127
+Power       : 700
+Element     : Dark (72)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.38] Mega Gargomon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 80
+
+Attack   : 320               Fire    :  75               Poison   : 40
+Strength :  50               Water   :   0               Paralyze :  0
+Defense  :  50               Ice     :  50               Confuse  :  0
+Spirit   :  40               Wind    :  50               Sleep    : 30
+Wisdom   :  40               Thunder :   0               KO       : 30
+Speed    :  20               Machine : 100
+Charisma :   1               Dark    :  75
+
+TECH
+
+1. Mechanical Bash
+Description : Strong machine damage
+Type        : Physical
+Level       : 5, Loaded at level 25
+MP Cost     : 48
+Accuracy    : 110
+Power       : 160
+Element     : Machine (64)
+Effect      : None
+
+2. Magical Cannon
+Description : Shoot giant missiles with magic
+Type        : Magical
+Level       : 20, Loaded at level 60
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : Machine (48)
+Effect      : None
+
+3. God Bombard
+Description : Most powerful missile magic
+Type        : Magical
+Level       : 50, Loaded at level 85
+MP Cost     : 120
+Accuracy    : 110
+Power       : 600
+Element     : Machine (64)
+Effect      : None
+
+4. Mega Break
+Description : Large decrease in enemy's speed
+Type        : Support
+Level       : 75, Loaded at level 99
+MP Cost     : 82
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : SPD - ( value = 32 )
+
+#. Giant Missile
+Description : Fire all body missiles
+Type        : Physical
+Level       : 90
+MP Cost     : 200
+Accuracy    : 127
+Power       : 480
+Element     : Machine (64)
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.39] GranKuwagamon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 80
+
+Attack   : 320               Fire    :  30               Poison   :  0
+Strength :  45               Water   :  60               Paralyze : 40
+Defense  :  35               Ice     :  60               Confuse  : 30
+Spirit   :  45               Wind    :   0               Sleep    : 20
+Wisdom   :  35               Thunder : 120               KO       :  0
+Speed    :  65               Machine :  60
+Charisma :   1               Dark    :  90
+
+TECH
+
+1. Venom Stab
+Description : Deadly poison damage
+Type        : Physical
+Level       : 10, Loaded at level 20
+MP Cost     : 36
+Accuracy    : 110
+Power       : 200
+Element     : None
+Effect      : Poison ( rate = 80 )( value = 96 )
+
+2. Energy Drain
+Description : Magic that drains many HP
+Type        : Magical
+Level       : 30, Loaded at level 60
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : None
+Effect      : HP Drain ( rate = 100 )( value = 127 )
+
+3. Confuse Stab
+Description : Massive confusion damage
+Type        : Physical
+Level       : 50, Loaded at level 75
+MP Cost     : 64
+Accuracy    : 110
+Power       : 240
+Element     : None
+Effect      : Confuse ( rate = 127 )( value = 127 )
+
+4. Impact Rush
+Description : Huge damage from rapid blows
+Type        : Physical
+Level       : 65, Loaded at level 85
+MP Cost     : 60
+Accuracy    : 100
+Power       : 240
+Element     : None
+Effect      : Multi ATK ( 3x )
+
+#. Dimension Scissors
+Description : Slash thru space and destroy
+Type        : Physical
+Level       : 90
+MP Cost     : 200
+Accuracy    : 110
+Power       : 400
+Element     : None
+Effect      : KO ( rate = 104 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.40] Phoenixmon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 80
+
+Attack   : 240               Fire    :   0               Poison   : 30
+Strength :  20               Water   : 100               Paralyze : 20
+Defense  :  50               Ice     :  25               Confuse  : 30
+Spirit   :  40               Wind    :  75               Sleep    : 20
+Wisdom   :  60               Thunder :  75               KO       :  0
+Speed    :  40               Machine :  25
+Charisma :   1               Dark    :  50
+
+TECH
+
+1. Full Heal
+Description : Heal almost all of your HP
+Type        : Heal
+Level       : 10, Loaded at level 30
+MP Cost     : 120
+Accuracy    : 100
+Power       : 127
+Element     : None
+Effect      : Heal ( value = 127 )
+
+2. Final Heal
+Description : Heal almost all of allies HP
+Type        : Heal
+Level       : 40, Loaded at level 70
+MP Cost     : 240
+Accuracy    : 100
+Power       : 64
+Element     : None
+Effect      : Heal ( value = 64 )
+
+3. Erase Magic
+Description : Cure all ailments on allies
+Type        : Heal
+Level       : 60, Loaded at level 80
+MP Cost     : 37
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Cured
+4. Auto Recover
+Description : Gradually heal your HP
+Type        : Heal
+Level       : 75, Loaded at level 99
+MP Cost     : 82
+Accuracy    : 100
+Power       : 1
+Element     : None
+Effect      : Auto Heal
+
+#. Crimson Flame
+Description : Revive all allies with max HP
+Type        : Heal
+Level       : 90
+MP Cost     : 200
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Revive
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.41] Omnimon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 60
+
+Attack   : 320               Fire    :  90               Poison   : 30
+Strength :  65               Water   :   0               Paralyze : 20
+Defense  :  35               Ice     :  30               Confuse  : 10
+Spirit   :  55               Wind    :  60               Sleep    : 10
+Wisdom   :  25               Thunder :  30               KO       : 30
+Speed    :  45               Machine :  90
+Charisma :   1               Dark    : 120
+
+TECH
+
+1. Flame Breath
+Description : Engulf the enemy with fire breath
+Type        : Magical
+Level       : 10, Loaded at level 25
+MP Cost     : 72
+Accuracy    : 110
+Power       : 500
+Element     : Fire (48)
+Effect      : None
+
+2. Flame Sphere
+Description : Magic that creates huge flames
+Type        : Magical
+Level       : 30, Loaded at level 55
+MP Cost     : 180
+Accuracy    : 110
+Power       : 700
+Element     : Fire (64)
+Effect      : None
+
+3. Giga Fire
+Description : Magic attack shoots 3 fire balls
+Type        : Magical
+Level       : 35, Loaded at level 70
+MP Cost     : 90
+Accuracy    : 100
+Power       : 250
+Element     : Fire (48)
+Effect      : Multi ATK ( 3x )
+
+4. Inferno
+Description : Continuous fire columns
+Type        : Magical
+Level       : 60, Loaded at level 85
+MP Cost     : 200
+Accuracy    : 100
+Power       : 350
+Element     : Fire (64)
+Effect      : Multi ATK ( 3x )
+
+#. T-Sword
+Description : Paralyze with Grey Sword
+Type        : Physical
+Level       : 99
+MP Cost     : 250
+Accuracy    : 127
+Power       : 400
+Element     : None
+Effect      : Paralyze ( rate = 104 )( value = 104 )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+       [4.42] Imperialdramon PM
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 60
+
+Attack   : 400               Fire    :   0               Poison   : 20
+Strength :  50               Water   :  60               Paralyze : 30
+Defense  :  40               Ice     : 120               Confuse  : 10
+Spirit   :  50               Wind    :  90               Sleep    : 40
+Wisdom   :  60               Thunder :  60               KO       :  0
+Speed    :  50               Machine :  30
+Charisma :   1               Dark    :  90
+
+TECH
+
+1. Auto Recover
+Description : Gradually heal your HP
+Type        : Heal
+Level       : 10, Loaded at level 40
+MP Cost     : 82
+Accuracy    : 100
+Power       : 1
+Element     : None
+Effect      : Auto Heal
+
+2. Impact Rush
+Description : Huge damage from rapid blows
+Type        : Physical
+Level       : 20, Loaded at level 60
+MP Cost     : 60
+Accuracy    : 100
+Power       : 240
+Element     : None
+Effect      : Multi ATK ( 3x )
+
+3. Erase Magic
+Description : Cure all ailments on allies
+Type        : Heal
+Level       : 30, Loaded at level 70
+MP Cost     : 37
+Accuracy    : 100
+Power       : 0
+Element     : None
+Effect      : Cured
+
+4. Soul Plunder
+Description : Destroy enemy with a spell
+Type        : Magical
+Level       : 50, Loaded at level 90
+MP Cost     : 160
+Accuracy    : 110
+Power       : 350
+Element     : None
+Effect      : KO ( rate = 96 )
+
+5. Final Heal
+Description : Heal almost all of allies HP
+Type        : Heal
+Level       : 65, Loaded at level 80
+MP Cost     : 240
+Accuracy    : 100
+Power       : 64
+Element     : None
+Effect      : Heal ( value = 64 )
+
+#. Omega Blade
+Description : Sword move destroys evil
+Type        : Physical, effective against EVIL type Digimon
+Level       : 99
+MP Cost     : 280
+Accuracy    : 127
+Power       : 500
+Element     : None
+Effect      : None
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.43] Beelzemon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 60
+
+Attack   : 400               Fire    :   0               Poison   : 40
+Strength :  60               Water   :  60               Paralyze : 10
+Defense  :  40               Ice     :  90               Confuse  : 10
+Spirit   :  40               Wind    :   0               Sleep    : 10
+Wisdom   :  60               Thunder :  60               KO       : 40
+Speed    :  60               Machine :  90
+Charisma :   1               Dark    : 120
+
+TECH
+
+1. Dark Elemental
+Description : Engulf with evil fire column
+Type        : Magical
+Level       : 5, Loaded at level 15
+MP Cost     : 120
+Accuracy    : 110
+Power       : 600
+Element     : Dark (64)
+Effect      : None
+
+2. Darkness Chaos
+Description : Huge damage with evil flame
+Type        : Magical
+Level       : 20, Loaded at level 40
+MP Cost     : 180
+Accuracy    : 110
+Power       : 700
+Element     : Dark (72)
+Effect      : None
+
+3. Black Scewer
+Description : Pierce with numerous dark matter
+Type        : Magical
+Level       : 35, Loaded at level 70
+MP Cost     : 200
+Accuracy    : 100
+Power       : 350
+Element     : Dark (72)
+Effect      : Multi ATK ( 3x )
+
+4. Confuse Nebula
+Description : Massive confusion magic blow
+Type        : Magical
+Level       : 50, Loaded at level 80
+MP Cost     : 90
+Accuracy    : 110
+Power       : 360
+Element     : None
+Effect      : Confuse ( rate = 127 )( value = 127 )
+
+5. Soul Plunder
+Description : Destroy enemy with a spell
+Type        : Magical
+Level       : 60, Loaded at level 90
+MP Cost     : 160
+Accuracy    : 110
+Power       : 350
+Element     : None
+Effect      : KO ( rate = 96 )
+
+#. Blast Mode
+Description : Multiple shots to the enemy
+Type        : Physical
+Level       : 99
+MP Cost     : 250
+Accuracy    : 100
+Power       : 300
+Element     : None
+Effect      : Multi ATK ( 3x )
+
+
+
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+         [4.44] Diaboromon
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+Skill level UP requires 10 DV EXP up to level 60
+
+Attack   : 400               Fire    :  30               Poison   : 30
+Strength :  50               Water   :  60               Paralyze : 10
+Defense  :  40               Ice     :  60               Confuse  : 30
+Spirit   :  50               Wind    :   0               Sleep    : 20
+Wisdom   :  40               Thunder :  90               KO       :  0
+Speed    :  70               Machine :  60
+Charisma :   1               Dark    : 120
+
+TECH
+
+1. Deadly Poison
+Description : Fire venomous foam with magic
+Type        : Magical
+Level       : 10, Loaded at level 30
+MP Cost     : 90
+Accuracy    : 110
+Power       : 360
+Element     : None
+Effect      : Poison ( rate = 112 )( value = 127 )
+
+2. Paralyze Shock
+Description : Magic that completely paralyzes
+Type        : Magical
+Level       : 20, Loaded at level 65
+MP Cost     : 90
+Accuracy    : 110
+Power       : 300
+Element     : None
+Effect      : Paralyze ( rate = 96 )( value = 96 )
+
+3. Confuse Nebula
+Description : Massive confusion magic blow
+Type        : Magical
+Level       : 40, Loaded at level 75
+MP Cost     : 90
+Accuracy    : 110
+Power       : 360
+Element     : None
+Effect      : Confuse ( rate = 127 )( value = 127 )
+
+4. Hypno Nebula
+Description : Magic that puts enemy to deep sleep
+Type        : Magical
+Level       : 55, Loaded at level 90
+MP Cost     : 60
+Accuracy    : 110
+Power       : 240
+Element     : None
+Effect      : Sleep ( rate = 96 )( value = 96 )
+
+#. Cable Crusher
+Description : Powerful and evil magic attack
+Type        : Magical
+Level       : 99
+MP Cost     : 270
+Accuracy    : 127
+Power       : 800
+Element     : Dark (72)
+Effect      : None

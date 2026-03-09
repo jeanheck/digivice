@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import type { Digimon } from '../../types/backend'
 import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue'
-import digievolutionData from '../../data/static/DigievolutionIds.json'
+import digievolutionData from '../../data/static/Digievolution.json'
 
 const props = defineProps<{
   digimon: Digimon

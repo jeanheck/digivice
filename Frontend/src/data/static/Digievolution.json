@@ -1,0 +1,1148 @@
+{
+    "digievolutions": [
+        {
+            "name": "Dinohumon",
+            "id": 386,
+            "Attributes": {
+                "Strength": 30,
+                "Defense": 20,
+                "Spirit": 20,
+                "Wisdom": 10,
+                "Speed": 10,
+                "Charisma": 0
+            },
+            "Resistances": {
+                "Fire": 15,
+                "Water": 60,
+                "Ice": 15,
+                "Wind": 15,
+                "Thunder": 45,
+                "Machine": 30,
+                "Dark": 30,
+                "Poison": 40,
+                "Paralyze": 0,
+                "Confuse": 10,
+                "Sleep": 30,
+                "KO": 20
+            }
+        },
+        {
+            "name": "Hookmon",
+            "id": 387,
+            "Attributes": {
+                "Strength": 10,
+                "Defense": 30,
+                "Spirit": 10,
+                "Wisdom": 20,
+                "Speed": 40,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 30,
+                "Water": 0,
+                "Ice": 45,
+                "Wind": 15,
+                "Thunder": 15,
+                "Machine": 60,
+                "Dark": 45,
+                "Poison": 0,
+                "Paralyze": 20,
+                "Confuse": 10,
+                "Sleep": 30,
+                "KO": 40
+            }
+        },
+        {
+            "name": "Grizzmon",
+            "id": null,
+            "Attributes": {
+                "Strength": 40,
+                "Defense": 40,
+                "Spirit": 0,
+                "Wisdom": 0,
+                "Speed": 30,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 15,
+                "Water": 45,
+                "Ice": 30,
+                "Wind": 45,
+                "Thunder": 15,
+                "Machine": 45,
+                "Dark": 0,
+                "Poison": 20,
+                "Paralyze": 20,
+                "Confuse": 40,
+                "Sleep": 0,
+                "KO": 20
+            }
+        },
+        {
+            "name": "Greymon",
+            "id": 5,
+            "Attributes": {
+                "Strength": 20,
+                "Defense": 30,
+                "Spirit": 30,
+                "Wisdom": 10,
+                "Speed": 0,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 60,
+                "Water": 30,
+                "Ice": 0,
+                "Wind": 30,
+                "Thunder": 30,
+                "Machine": 30,
+                "Dark": 30,
+                "Poison": 40,
+                "Paralyze": 10,
+                "Confuse": 20,
+                "Sleep": 10,
+                "KO": 20
+            }
+        },
+        {
+            "name": "Ex-Veemon",
+            "id": null,
+            "Attributes": {
+                "Strength": 20,
+                "Defense": 10,
+                "Spirit": 20,
+                "Wisdom": 30,
+                "Speed": 20,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 30,
+                "Ice": 60,
+                "Wind": 45,
+                "Thunder": 30,
+                "Machine": 15,
+                "Dark": 45,
+                "Poison": 20,
+                "Paralyze": 30,
+                "Confuse": 10,
+                "Sleep": 40,
+                "KO": 0
+            }
+        },
+        {
+            "name": "Growlmon",
+            "id": 367,
+            "Attributes": {
+                "Strength": 30,
+                "Defense": 10,
+                "Spirit": 10,
+                "Wisdom": 20,
+                "Speed": 30,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 45,
+                "Water": 15,
+                "Ice": 30,
+                "Wind": 60,
+                "Thunder": 0,
+                "Machine": 45,
+                "Dark": 15,
+                "Poison": 30,
+                "Paralyze": 20,
+                "Confuse": 0,
+                "Sleep": 40,
+                "KO": 10
+            }
+        },
+        {
+            "name": "Kyubimon",
+            "id": null,
+            "Attributes": {
+                "Strength": 10,
+                "Defense": 0,
+                "Spirit": 40,
+                "Wisdom": 30,
+                "Speed": 20,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 30,
+                "Water": 30,
+                "Ice": 45,
+                "Wind": 15,
+                "Thunder": 60,
+                "Machine": 0,
+                "Dark": 30,
+                "Poison": 10,
+                "Paralyze": 40,
+                "Confuse": 20,
+                "Sleep": 0,
+                "KO": 30
+            }
+        },
+        {
+            "name": "Angemon",
+            "id": null,
+            "Attributes": {
+                "Strength": 0,
+                "Defense": 20,
+                "Spirit": 30,
+                "Wisdom": 40,
+                "Speed": 10,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 15,
+                "Water": 45,
+                "Ice": 30,
+                "Wind": 45,
+                "Thunder": 0,
+                "Machine": 15,
+                "Dark": 60,
+                "Poison": 30,
+                "Paralyze": 0,
+                "Confuse": 20,
+                "Sleep": 10,
+                "KO": 40
+            }
+        },
+        {
+            "name": "Devimon",
+            "id": null,
+            "Attributes": {
+                "Strength": 50,
+                "Defense": 10,
+                "Spirit": 20,
+                "Wisdom": 40,
+                "Speed": 40,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 40,
+                "Ice": 60,
+                "Wind": 0,
+                "Thunder": 40,
+                "Machine": 60,
+                "Dark": 80,
+                "Poison": 40,
+                "Paralyze": 10,
+                "Confuse": 10,
+                "Sleep": 10,
+                "KO": 40
+            }
+        },
+        {
+            "name": "Stingmon",
+            "id": null,
+            "Attributes": {
+                "Strength": 20,
+                "Defense": 10,
+                "Spirit": 20,
+                "Wisdom": 10,
+                "Speed": 40,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 15,
+                "Water": 30,
+                "Ice": 30,
+                "Wind": 0,
+                "Thunder": 60,
+                "Machine": 30,
+                "Dark": 45,
+                "Poison": 0,
+                "Paralyze": 40,
+                "Confuse": 30,
+                "Sleep": 20,
+                "KO": 0
+            }
+        },
+        {
+            "name": "Angewomon",
+            "id": null,
+            "Attributes": {
+                "Strength": 0,
+                "Defense": 30,
+                "Spirit": 20,
+                "Wisdom": 40,
+                "Speed": 20,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 60,
+                "Ice": 15,
+                "Wind": 45,
+                "Thunder": 45,
+                "Machine": 15,
+                "Dark": 30,
+                "Poison": 30,
+                "Paralyze": 20,
+                "Confuse": 20,
+                "Sleep": 20,
+                "KO": 10
+            }
+        },
+        {
+            "name": "Kyukimon",
+            "id": null,
+            "Attributes": {
+                "Strength": 40,
+                "Defense": 30,
+                "Spirit": 30,
+                "Wisdom": 20,
+                "Speed": 20,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 20,
+                "Water": 80,
+                "Ice": 20,
+                "Wind": 20,
+                "Thunder": 60,
+                "Machine": 40,
+                "Dark": 40,
+                "Poison": 40,
+                "Paralyze": 0,
+                "Confuse": 10,
+                "Sleep": 30,
+                "KO": 20
+            }
+        },
+        {
+            "name": "Armormon",
+            "id": null,
+            "Attributes": {
+                "Strength": 20,
+                "Defense": 40,
+                "Spirit": 20,
+                "Wisdom": 30,
+                "Speed": 50,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 40,
+                "Water": 0,
+                "Ice": 60,
+                "Wind": 20,
+                "Thunder": 20,
+                "Machine": 80,
+                "Dark": 60,
+                "Poison": 0,
+                "Paralyze": 20,
+                "Confuse": 10,
+                "Sleep": 30,
+                "KO": 40
+            }
+        },
+        {
+            "name": "GrapLeomon",
+            "id": null,
+            "Attributes": {
+                "Strength": 50,
+                "Defense": 50,
+                "Spirit": 0,
+                "Wisdom": 0,
+                "Speed": 40,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 20,
+                "Water": 60,
+                "Ice": 40,
+                "Wind": 60,
+                "Thunder": 20,
+                "Machine": 60,
+                "Dark": 0,
+                "Poison": 20,
+                "Paralyze": 20,
+                "Confuse": 40,
+                "Sleep": 0,
+                "KO": 20
+            }
+        },
+        {
+            "name": "MetalGreymon",
+            "id": null,
+            "Attributes": {
+                "Strength": 30,
+                "Defense": 40,
+                "Spirit": 40,
+                "Wisdom": 20,
+                "Speed": 0,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 80,
+                "Water": 40,
+                "Ice": 0,
+                "Wind": 40,
+                "Thunder": 20,
+                "Machine": 60,
+                "Dark": 40,
+                "Poison": 40,
+                "Paralyze": 10,
+                "Confuse": 20,
+                "Sleep": 10,
+                "KO": 20
+            }
+        },
+        {
+            "name": "SkullGreymon",
+            "id": null,
+            "Attributes": {
+                "Strength": 50,
+                "Defense": 20,
+                "Spirit": 40,
+                "Wisdom": 10,
+                "Speed": 30,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 60,
+                "Water": 0,
+                "Ice": 40,
+                "Wind": 20,
+                "Thunder": 20,
+                "Machine": 60,
+                "Dark": 80,
+                "Poison": 30,
+                "Paralyze": 20,
+                "Confuse": 10,
+                "Sleep": 10,
+                "KO": 30
+            }
+        },
+        {
+            "name": "Paildramon",
+            "id": null,
+            "Attributes": {
+                "Strength": 30,
+                "Defense": 20,
+                "Spirit": 30,
+                "Wisdom": 40,
+                "Speed": 30,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 40,
+                "Ice": 80,
+                "Wind": 60,
+                "Thunder": 40,
+                "Machine": 20,
+                "Dark": 60,
+                "Poison": 20,
+                "Paralyze": 30,
+                "Confuse": 10,
+                "Sleep": 40,
+                "KO": 0
+            }
+        },
+        {
+            "name": "Wargrowlmon",
+            "id": null,
+            "Attributes": {
+                "Strength": 40,
+                "Defense": 20,
+                "Spirit": 20,
+                "Wisdom": 30,
+                "Speed": 40,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 60,
+                "Water": 20,
+                "Ice": 40,
+                "Wind": 80,
+                "Thunder": 0,
+                "Machine": 60,
+                "Dark": 20,
+                "Poison": 30,
+                "Paralyze": 20,
+                "Confuse": 0,
+                "Sleep": 40,
+                "KO": 10
+            }
+        },
+        {
+            "name": "Taomon",
+            "id": null,
+            "Attributes": {
+                "Strength": 20,
+                "Defense": 10,
+                "Spirit": 50,
+                "Wisdom": 40,
+                "Speed": 30,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 40,
+                "Water": 40,
+                "Ice": 60,
+                "Wind": 20,
+                "Thunder": 80,
+                "Machine": 0,
+                "Dark": 40,
+                "Poison": 10,
+                "Paralyze": 40,
+                "Confuse": 20,
+                "Sleep": 0,
+                "KO": 30
+            }
+        },
+        {
+            "name": "MagnaAngemon",
+            "id": null,
+            "Attributes": {
+                "Strength": 10,
+                "Defense": 30,
+                "Spirit": 40,
+                "Wisdom": 50,
+                "Speed": 20,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 20,
+                "Water": 60,
+                "Ice": 40,
+                "Wind": 60,
+                "Thunder": 0,
+                "Machine": 20,
+                "Dark": 80,
+                "Poison": 30,
+                "Paralyze": 0,
+                "Confuse": 20,
+                "Sleep": 10,
+                "KO": 40
+            }
+        },
+        {
+            "name": "Myotismon",
+            "id": null,
+            "Attributes": {
+                "Strength": 60,
+                "Defense": 20,
+                "Spirit": 30,
+                "Wisdom": 50,
+                "Speed": 50,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 50,
+                "Ice": 75,
+                "Wind": 0,
+                "Thunder": 50,
+                "Machine": 75,
+                "Dark": 100,
+                "Poison": 40,
+                "Paralyze": 10,
+                "Confuse": 10,
+                "Sleep": 10,
+                "KO": 40
+            }
+        },
+        {
+            "name": "Metal Mamemon",
+            "id": null,
+            "Attributes": {
+                "Strength": 20,
+                "Defense": 40,
+                "Spirit": 20,
+                "Wisdom": 20,
+                "Speed": 0,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 45,
+                "Water": 0,
+                "Ice": 30,
+                "Wind": 30,
+                "Thunder": 0,
+                "Machine": 60,
+                "Dark": 45,
+                "Poison": 40,
+                "Paralyze": 0,
+                "Confuse": 0,
+                "Sleep": 30,
+                "KO": 30
+            }
+        },
+        {
+            "name": "Kabuterimon",
+            "id": null,
+            "Attributes": {
+                "Strength": 30,
+                "Defense": 20,
+                "Spirit": 30,
+                "Wisdom": 20,
+                "Speed": 50,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 20,
+                "Water": 40,
+                "Ice": 40,
+                "Wind": 0,
+                "Thunder": 80,
+                "Machine": 40,
+                "Dark": 60,
+                "Poison": 0,
+                "Paralyze": 40,
+                "Confuse": 30,
+                "Sleep": 20,
+                "KO": 0
+            }
+        },
+        {
+            "name": "Digitamamon",
+            "id": null,
+            "Attributes": {
+                "Strength": 30,
+                "Defense": 30,
+                "Spirit": 30,
+                "Wisdom": 30,
+                "Speed": 30,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 40,
+                "Water": 40,
+                "Ice": 40,
+                "Wind": 40,
+                "Thunder": 40,
+                "Machine": 40,
+                "Dark": 40,
+                "Poison": 20,
+                "Paralyze": 20,
+                "Confuse": 20,
+                "Sleep": 20,
+                "KO": 20
+            }
+        },
+        {
+            "name": "Guardiangemon",
+            "id": null,
+            "Attributes": {
+                "Strength": 50,
+                "Defense": 40,
+                "Spirit": 40,
+                "Wisdom": 30,
+                "Speed": 30,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 25,
+                "Water": 100,
+                "Ice": 25,
+                "Wind": 75,
+                "Thunder": 50,
+                "Machine": 25,
+                "Dark": 50,
+                "Poison": 40,
+                "Paralyze": 0,
+                "Confuse": 10,
+                "Sleep": 30,
+                "KO": 20
+            }
+        },
+        {
+            "name": "Cannondramon",
+            "id": null,
+            "Attributes": {
+                "Strength": 30,
+                "Defense": 50,
+                "Spirit": 30,
+                "Wisdom": 40,
+                "Speed": 60,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 50,
+                "Water": 0,
+                "Ice": 75,
+                "Wind": 25,
+                "Thunder": 25,
+                "Machine": 100,
+                "Dark": 75,
+                "Poison": 0,
+                "Paralyze": 20,
+                "Confuse": 10,
+                "Sleep": 30,
+                "KO": 40
+            }
+        },
+        {
+            "name": "Marsmon",
+            "id": null,
+            "Attributes": {
+                "Strength": 60,
+                "Defense": 60,
+                "Spirit": 0,
+                "Wisdom": 0,
+                "Speed": 50,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 25,
+                "Water": 75,
+                "Ice": 50,
+                "Wind": 75,
+                "Thunder": 25,
+                "Machine": 75,
+                "Dark": 0,
+                "Poison": 20,
+                "Paralyze": 20,
+                "Confuse": 30,
+                "Sleep": 10,
+                "KO": 20
+            }
+        },
+        {
+            "name": "Wargreymon",
+            "id": null,
+            "Attributes": {
+                "Strength": 40,
+                "Defense": 50,
+                "Spirit": 50,
+                "Wisdom": 30,
+                "Speed": 0,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 100,
+                "Water": 50,
+                "Ice": 0,
+                "Wind": 50,
+                "Thunder": 50,
+                "Machine": 50,
+                "Dark": 50,
+                "Poison": 40,
+                "Paralyze": 10,
+                "Confuse": 20,
+                "Sleep": 10,
+                "KO": 20
+            }
+        },
+        {
+            "name": "Imperialdramon",
+            "id": null,
+            "Attributes": {
+                "Strength": 40,
+                "Defense": 30,
+                "Spirit": 40,
+                "Wisdom": 50,
+                "Speed": 40,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 50,
+                "Ice": 100,
+                "Wind": 75,
+                "Thunder": 50,
+                "Machine": 25,
+                "Dark": 75,
+                "Poison": 20,
+                "Paralyze": 30,
+                "Confuse": 10,
+                "Sleep": 40,
+                "KO": 0
+            }
+        },
+        {
+            "name": "Gallantmon",
+            "id": null,
+            "Attributes": {
+                "Strength": 50,
+                "Defense": 30,
+                "Spirit": 30,
+                "Wisdom": 40,
+                "Speed": 50,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 75,
+                "Water": 25,
+                "Ice": 50,
+                "Wind": 100,
+                "Thunder": 0,
+                "Machine": 75,
+                "Dark": 25,
+                "Poison": 30,
+                "Paralyze": 20,
+                "Confuse": 0,
+                "Sleep": 40,
+                "KO": 10
+            }
+        },
+        {
+            "name": "Sakuyamon",
+            "id": null,
+            "Attributes": {
+                "Strength": 30,
+                "Defense": 20,
+                "Spirit": 60,
+                "Wisdom": 50,
+                "Speed": 40,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 50,
+                "Water": 50,
+                "Ice": 75,
+                "Wind": 25,
+                "Thunder": 100,
+                "Machine": 0,
+                "Dark": 50,
+                "Poison": 10,
+                "Paralyze": 40,
+                "Confuse": 20,
+                "Sleep": 0,
+                "KO": 30
+            }
+        },
+        {
+            "name": "Seraphimon",
+            "id": null,
+            "Attributes": {
+                "Strength": 20,
+                "Defense": 40,
+                "Spirit": 50,
+                "Wisdom": 60,
+                "Speed": 30,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 25,
+                "Water": 75,
+                "Ice": 50,
+                "Wind": 75,
+                "Thunder": 0,
+                "Machine": 25,
+                "Dark": 100,
+                "Poison": 30,
+                "Paralyze": 0,
+                "Confuse": 20,
+                "Sleep": 10,
+                "KO": 40
+            }
+        },
+        {
+            "name": "MetalGarurumon",
+            "id": null,
+            "Attributes": {
+                "Strength": 30,
+                "Defense": 50,
+                "Spirit": 30,
+                "Wisdom": 30,
+                "Speed": 10,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 60,
+                "Water": 0,
+                "Ice": 40,
+                "Wind": 40,
+                "Thunder": 0,
+                "Machine": 80,
+                "Dark": 60,
+                "Poison": 40,
+                "Paralyze": 0,
+                "Confuse": 0,
+                "Sleep": 30,
+                "KO": 30
+            }
+        },
+        {
+            "name": "Rosemon",
+            "id": null,
+            "Attributes": {
+                "Strength": 10,
+                "Defense": 40,
+                "Spirit": 30,
+                "Wisdom": 50,
+                "Speed": 30,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 80,
+                "Ice": 20,
+                "Wind": 60,
+                "Thunder": 60,
+                "Machine": 20,
+                "Dark": 40,
+                "Poison": 30,
+                "Paralyze": 20,
+                "Confuse": 20,
+                "Sleep": 20,
+                "KO": 10
+            }
+        },
+        {
+            "name": "BK Wargreymon",
+            "id": null,
+            "Attributes": {
+                "Strength": 60,
+                "Defense": 30,
+                "Spirit": 50,
+                "Wisdom": 20,
+                "Speed": 40,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 75,
+                "Water": 0,
+                "Ice": 50,
+                "Wind": 25,
+                "Thunder": 25,
+                "Machine": 75,
+                "Dark": 100,
+                "Poison": 30,
+                "Paralyze": 20,
+                "Confuse": 10,
+                "Sleep": 10,
+                "KO": 30
+            }
+        },
+        {
+            "name": "Imperialdramon FM",
+            "id": null,
+            "Attributes": {
+                "Strength": 55,
+                "Defense": 30,
+                "Spirit": 45,
+                "Wisdom": 50,
+                "Speed": 45,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 60,
+                "Ice": 120,
+                "Wind": 90,
+                "Thunder": 60,
+                "Machine": 30,
+                "Dark": 90,
+                "Poison": 20,
+                "Paralyze": 30,
+                "Confuse": 10,
+                "Sleep": 40,
+                "KO": 0
+            }
+        },
+        {
+            "name": "MaloMyotismon",
+            "id": null,
+            "Attributes": {
+                "Strength": 65,
+                "Defense": 25,
+                "Spirit": 35,
+                "Wisdom": 55,
+                "Speed": 55,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 60,
+                "Ice": 90,
+                "Wind": 0,
+                "Thunder": 60,
+                "Machine": 90,
+                "Dark": 120,
+                "Poison": 40,
+                "Paralyze": 10,
+                "Confuse": 10,
+                "Sleep": 10,
+                "KO": 40
+            }
+        },
+        {
+            "name": "Mega Gargomon",
+            "id": null,
+            "Attributes": {
+                "Strength": 50,
+                "Defense": 50,
+                "Spirit": 40,
+                "Wisdom": 40,
+                "Speed": 20,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 75,
+                "Water": 0,
+                "Ice": 50,
+                "Wind": 50,
+                "Thunder": 0,
+                "Machine": 100,
+                "Dark": 75,
+                "Poison": 40,
+                "Paralyze": 0,
+                "Confuse": 0,
+                "Sleep": 30,
+                "KO": 30
+            }
+        },
+        {
+            "name": "GranKuwagamon",
+            "id": null,
+            "Attributes": {
+                "Strength": 45,
+                "Defense": 35,
+                "Spirit": 45,
+                "Wisdom": 35,
+                "Speed": 65,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 30,
+                "Water": 60,
+                "Ice": 60,
+                "Wind": 0,
+                "Thunder": 120,
+                "Machine": 60,
+                "Dark": 90,
+                "Poison": 0,
+                "Paralyze": 40,
+                "Confuse": 30,
+                "Sleep": 20,
+                "KO": 0
+            }
+        },
+        {
+            "name": "Phoenixmon",
+            "id": null,
+            "Attributes": {
+                "Strength": 20,
+                "Defense": 50,
+                "Spirit": 40,
+                "Wisdom": 60,
+                "Speed": 40,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 100,
+                "Ice": 25,
+                "Wind": 75,
+                "Thunder": 75,
+                "Machine": 25,
+                "Dark": 50,
+                "Poison": 30,
+                "Paralyze": 20,
+                "Confuse": 30,
+                "Sleep": 20,
+                "KO": 0
+            }
+        },
+        {
+            "name": "Omnimon",
+            "id": null,
+            "Attributes": {
+                "Strength": 65,
+                "Defense": 35,
+                "Spirit": 55,
+                "Wisdom": 25,
+                "Speed": 45,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 90,
+                "Water": 0,
+                "Ice": 30,
+                "Wind": 60,
+                "Thunder": 30,
+                "Machine": 90,
+                "Dark": 120,
+                "Poison": 30,
+                "Paralyze": 20,
+                "Confuse": 10,
+                "Sleep": 10,
+                "KO": 30
+            }
+        },
+        {
+            "name": "Imperialdramon PM",
+            "id": null,
+            "Attributes": {
+                "Strength": 50,
+                "Defense": 40,
+                "Spirit": 50,
+                "Wisdom": 60,
+                "Speed": 50,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 60,
+                "Ice": 120,
+                "Wind": 90,
+                "Thunder": 60,
+                "Machine": 30,
+                "Dark": 90,
+                "Poison": 20,
+                "Paralyze": 30,
+                "Confuse": 10,
+                "Sleep": 40,
+                "KO": 0
+            }
+        },
+        {
+            "name": "Beelzemon",
+            "id": null,
+            "Attributes": {
+                "Strength": 60,
+                "Defense": 40,
+                "Spirit": 40,
+                "Wisdom": 60,
+                "Speed": 60,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 0,
+                "Water": 60,
+                "Ice": 90,
+                "Wind": 0,
+                "Thunder": 60,
+                "Machine": 90,
+                "Dark": 120,
+                "Poison": 40,
+                "Paralyze": 10,
+                "Confuse": 10,
+                "Sleep": 10,
+                "KO": 40
+            }
+        },
+        {
+            "name": "Diaboromon",
+            "id": null,
+            "Attributes": {
+                "Strength": 50,
+                "Defense": 40,
+                "Spirit": 50,
+                "Wisdom": 40,
+                "Speed": 70,
+                "Charisma": 1
+            },
+            "Resistances": {
+                "Fire": 30,
+                "Water": 60,
+                "Ice": 60,
+                "Wind": 0,
+                "Thunder": 90,
+                "Machine": 60,
+                "Dark": 120,
+                "Poison": 30,
+                "Paralyze": 10,
+                "Confuse": 30,
+                "Sleep": 20,
+                "KO": 0
+            }
+        }
+    ]
+}

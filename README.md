@@ -11,4 +11,8 @@ This is a companion app that reads memory from the Digimon World 2003 game runni
 - **Pixelarticons**: [Pixelarticons](https://pixelarticons.com/)
 - **Weather Icons**: [Erik Flowers](https://erikflowers.github.io/weather-icons/)
 - **Digimon World 3 Attributes Mechanics**: [StrategyWiki](https://stratswiki.com/digimon-world-3/game-mechanics/attributes/)
+- **Digimon World 3 Weapons & Shields**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/weapons-shields/)
+- **Digimon World 3 Body Gear**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/body-gear/)
+- **Digimon World 3 Head Gear**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/head-gear/)
+- **Digimon World 3 Accessories**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/accessories/)
 - **Digimon World 3 Stat Discussion**: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/45368300)
