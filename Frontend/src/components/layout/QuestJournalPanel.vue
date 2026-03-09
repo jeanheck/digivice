@@ -59,7 +59,7 @@ const isQuestNew = (quest: any) => {
       <section>
         <h4 class="text-xs text-orange-400 font-bold mb-2 uppercase tracking-wide border-b border-orange-900 pb-1">Main Quest</h4>
         
-        <div v-if="mainQuest && mainQuest.id !== 0" 
+        <div v-if="mainQuest && mainQuest.title" 
              @click="onQuestClick(mainQuest)"
              class="p-2 rounded border border-gray-600 bg-gray-800/50 hover:bg-gray-700/60 cursor-pointer transition-colors group">
           <div class="flex items-center justify-between mb-1">
@@ -90,7 +90,7 @@ const isQuestNew = (quest: any) => {
         <!-- Accordion Content -->
         <div v-show="isSideQuestsExpanded" class="space-y-2">
           
-          <div v-for="quest in displaySideQuests" :key="quest.id"
+          <div v-for="quest in displaySideQuests" :key="quest.title"
                @click="onQuestClick(quest)"
                class="p-2 rounded border cursor-pointer transition-all duration-200 group relative overflow-hidden"
                :class="
