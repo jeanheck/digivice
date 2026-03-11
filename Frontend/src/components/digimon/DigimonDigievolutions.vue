@@ -24,6 +24,7 @@ const evolutions = computed(() => {
     const evo = evos[i]
     if (!evo) return null
     return {
+      id: evo.id,
       name: getEvolutionName(evo.id),
       level: evo.level
     }
@@ -66,7 +67,8 @@ function closeSkills() {
       <!-- Renderiza os textos somente se o slot de digievolução tiver valor -->
       <template v-if="evo">
         <!-- Conteúdo (Nome) -->
-        <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider shadow-text">
+        <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
+             :class="evo.id === digimon.activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
           {{ evo.name }}
         </div>
 

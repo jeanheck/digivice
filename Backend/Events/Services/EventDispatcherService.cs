@@ -265,6 +265,13 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             var ev = new DigimonDigievolutionsChangedEvent(index, newDigi.EquippedDigievolutions);
             _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
+
+        // Compare Active Digievolution
+        if (oldDigi.ActiveDigievolutionId != newDigi.ActiveDigievolutionId)
+        {
+            var ev = new DigimonActiveDigievolutionChangedEvent(index, newDigi.ActiveDigievolutionId);
+            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+        }
     }
 
     // A simple Deep clone since records aren't being used
@@ -321,7 +328,8 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         d.EquippedDigievolutions[0] != null ? new Digievolution { Id = d.EquippedDigievolutions[0]!.Id, Level = d.EquippedDigievolutions[0]!.Level } : null,
                         d.EquippedDigievolutions[1] != null ? new Digievolution { Id = d.EquippedDigievolutions[1]!.Id, Level = d.EquippedDigievolutions[1]!.Level } : null,
                         d.EquippedDigievolutions[2] != null ? new Digievolution { Id = d.EquippedDigievolutions[2]!.Id, Level = d.EquippedDigievolutions[2]!.Level } : null
-                    }
+                    },
+                    ActiveDigievolutionId = d.ActiveDigievolutionId
                 }).ToList()
             },
             ImportantItems = s.ImportantItems != null ? new ImportantItems

@@ -76,6 +76,7 @@
         "Accessory2": "0x3CA"
     },
     "Digievolutions": {
+        "ActiveDigievolution": "-4",
         "EquipedSlot1": "0x48",
         "EquipedSlot2": "0x4A",
         "EquipedSlot3": "0x4C",

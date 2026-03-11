@@ -88,6 +88,12 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
+    function updateActiveDigievolutionId(slotIndex: number, activeDigievolutionId: number | null) {
+        if (gameState.value?.party?.slots[slotIndex]) {
+            gameState.value.party.slots[slotIndex]!.activeDigievolutionId = activeDigievolutionId
+        }
+    }
+
     function notifyDigievolutionLevelUp(slotIndex: number, digievolutionId: number, oldLevel: number, newLevel: number) {
         console.log(`[LEVEL UP!] Digimon in slot ${slotIndex}'s Digievolution (ID ${digievolutionId}) reached Level ${newLevel}!`)
     }
@@ -124,6 +130,7 @@ export const useGameStore = defineStore('game', () => {
         updateDigimonResistances,
         updateDigimonEquipments,
         updateDigimonDigievolutions,
+        updateActiveDigievolutionId,
         notifyDigievolutionLevelUp,
         updateImportantItems,
         updateJournal,

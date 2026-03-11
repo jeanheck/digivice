@@ -10,7 +10,7 @@ namespace Backend.Interfaces
         PartyResource ReadParty(PartyAddresses addresses);
         ImportantItemsResource ReadImportantItems(ImportantItemsAddresses addresses);
         ConsumableItemsResource ReadConsumableItems(ConsumableItemsAddresses addresses);
-        DigimonResource ReadDigimonResource(int slotIndex, int baseAddress);
+        DigimonResource ReadDigimonResource(int slotIndex, int baseAddress, DigimonAddresses addresses);
         Dictionary<int, byte> ReadQuestSteps(List<QuestStep> steps);
     }
 }

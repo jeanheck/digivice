@@ -98,6 +98,11 @@ class SignalRService {
             store.updateDigimonDigievolutions(event.partySlotIndex, event.equippedDigievolutions)
         })
 
+        this.connection.on('DigimonActiveDigievolutionChanged', (event: { partySlotIndex: number, activeDigievolutionId: number | null }) => {
+            console.log('Hub: DigimonActiveDigievolutionChanged', event)
+            store.updateActiveDigievolutionId(event.partySlotIndex, event.activeDigievolutionId)
+        })
+
         this.connection.on('DigimonDigievolutionLevelUp', (event: { partySlotIndex: number, digievolutionId: number, oldLevel: number, newLevel: number }) => {
             console.log('Hub: DigimonDigievolutionLevelUp', event)
             store.notifyDigievolutionLevelUp(event.partySlotIndex, event.digievolutionId, event.oldLevel, event.newLevel)

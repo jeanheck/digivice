@@ -50,6 +50,7 @@ namespace Backend.Models.Addresses
 
     public class DigievolutionsOffsets
     {
+        public string? ActiveDigievolution { get; set; }
         public string? EquipedSlot1 { get; set; }
         public string? EquipedSlot2 { get; set; }
         public string? EquipedSlot3 { get; set; }

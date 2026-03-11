@@ -2,8 +2,9 @@
     "equipments": [
         {
             "Name": "Empty",
-            "Id": 0,
+            "Id": null,
             "Type": "Unknown",
+            "TypeDescription": "Unknown",
             "Attributes": [],
             "EquipableDigimon": []
         },
@@ -11,6 +12,7 @@
             "Name": "Dagger",
             "Id": 157,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -38,6 +40,7 @@
             "Name": "Bamboo Spear",
             "Id": 167,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -56,23 +59,38 @@
             ]
         },
         {
-            "Name": "Bandana",
-            "Id": 215,
-            "Type": "Unknown",
-            "Attributes": [],
-            "EquipableDigimon": []
-        },
-        {
             "Name": "Leather Coat",
             "Id": 249,
-            "Type": "Unknown",
-            "Attributes": [],
-            "EquipableDigimon": []
+            "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
+            "Attributes": [
+                {
+                    "Attribute": "Defense",
+                    "Type": "Addition",
+                    "Value": 5
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 15
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
         },
         {
             "Name": "Angel Bow",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -92,8 +110,9 @@
         },
         {
             "Name": "Apocalypse",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -115,8 +134,9 @@
         },
         {
             "Name": "Atlas Buster",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -143,8 +163,9 @@
         },
         {
             "Name": "Beam Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -170,8 +191,9 @@
         },
         {
             "Name": "Belial Fang",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -192,8 +214,9 @@
         },
         {
             "Name": "Berdys",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -218,8 +241,9 @@
         },
         {
             "Name": "Bone Rod",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -244,8 +268,9 @@
         },
         {
             "Name": "Brave Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -264,8 +289,9 @@
         },
         {
             "Name": "Brave Sword",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -284,8 +310,9 @@
         },
         {
             "Name": "Buckler",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -311,8 +338,9 @@
         },
         {
             "Name": "Cat Glove",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -331,8 +359,9 @@
         },
         {
             "Name": "Cerberus Fang",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -354,8 +383,9 @@
         },
         {
             "Name": "Claymore",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -382,8 +412,9 @@
         },
         {
             "Name": "Cluster Cannon",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -402,8 +433,9 @@
         },
         {
             "Name": "Chain Saw",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -430,8 +462,9 @@
         },
         {
             "Name": "Crimson Blade",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -451,8 +484,9 @@
         },
         {
             "Name": "Crossbow",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -471,8 +505,9 @@
         },
         {
             "Name": "Crystal Rod",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -497,8 +532,9 @@
         },
         {
             "Name": "Destruction",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -520,8 +556,9 @@
         },
         {
             "Name": "Deus Guard",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -548,8 +585,9 @@
         },
         {
             "Name": "Divine Barrier",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -568,8 +606,9 @@
         },
         {
             "Name": "Divine Lance",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -589,8 +628,9 @@
         },
         {
             "Name": "Divine Rod",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -614,8 +654,9 @@
         },
         {
             "Name": "Dramon Guard",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -639,8 +680,9 @@
         },
         {
             "Name": "Dramon Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -659,8 +701,9 @@
         },
         {
             "Name": "Eternally",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -685,8 +728,9 @@
         },
         {
             "Name": "Evil Fang",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -707,8 +751,9 @@
         },
         {
             "Name": "Excalibur",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -731,8 +776,9 @@
         },
         {
             "Name": "Fairy Tale",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -752,8 +798,9 @@
         },
         {
             "Name": "Fenrir Sword",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -778,8 +825,9 @@
         },
         {
             "Name": "Flamberge",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -806,8 +854,9 @@
         },
         {
             "Name": "Fuujin Blade",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -831,8 +880,9 @@
         },
         {
             "Name": "Gaea Halberd",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -857,8 +907,9 @@
         },
         {
             "Name": "Garuru Cannon",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -877,8 +928,9 @@
         },
         {
             "Name": "Ghost Fang",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -899,8 +951,9 @@
         },
         {
             "Name": "Grey Sword",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -922,8 +975,9 @@
         },
         {
             "Name": "Guard Barrier",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -945,8 +999,9 @@
         },
         {
             "Name": "Gulf Sword",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -973,8 +1028,9 @@
         },
         {
             "Name": "Halberd",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -999,8 +1055,9 @@
         },
         {
             "Name": "Handgun",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1019,8 +1076,9 @@
         },
         {
             "Name": "Hazard Fang",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1039,8 +1097,9 @@
         },
         {
             "Name": "Hazard Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1059,8 +1118,9 @@
         },
         {
             "Name": "High Security",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1083,8 +1143,9 @@
         },
         {
             "Name": "Immaculate",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1109,8 +1170,9 @@
         },
         {
             "Name": "Invincible",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1131,8 +1193,9 @@
         },
         {
             "Name": "Iron Glove",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1156,8 +1219,9 @@
         },
         {
             "Name": "Iron Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1184,8 +1248,9 @@
         },
         {
             "Name": "Judgment",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1204,8 +1269,9 @@
         },
         {
             "Name": "Justice",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1224,8 +1290,9 @@
         },
         {
             "Name": "Kaiser Fist",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1244,8 +1311,9 @@
         },
         {
             "Name": "Khakkhara",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1270,8 +1338,9 @@
         },
         {
             "Name": "Knight Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1293,8 +1362,9 @@
         },
         {
             "Name": "Kotetsu",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1313,8 +1383,9 @@
         },
         {
             "Name": "Kulon Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1341,8 +1412,9 @@
         },
         {
             "Name": "Kulon Sword",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1361,8 +1433,9 @@
         },
         {
             "Name": "Laser Cannon",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1381,8 +1454,9 @@
         },
         {
             "Name": "Leather Glove",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1401,8 +1475,9 @@
         },
         {
             "Name": "Lightning Bow",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1426,8 +1501,9 @@
         },
         {
             "Name": "Long Bow",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1446,8 +1522,9 @@
         },
         {
             "Name": "Long Sword",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1466,8 +1543,9 @@
         },
         {
             "Name": "Mach Guard",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1494,8 +1572,9 @@
         },
         {
             "Name": "Machinegun",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1514,8 +1593,9 @@
         },
         {
             "Name": "Magician Rod",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1540,8 +1620,9 @@
         },
         {
             "Name": "Masamune",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1560,8 +1641,9 @@
         },
         {
             "Name": "Mega Guard",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1588,8 +1670,9 @@
         },
         {
             "Name": "Metal Guard",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1616,8 +1699,9 @@
         },
         {
             "Name": "Mighty Blade",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1636,8 +1720,9 @@
         },
         {
             "Name": "Mighty Guard",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1663,8 +1748,9 @@
         },
         {
             "Name": "Millenium",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1689,8 +1775,9 @@
         },
         {
             "Name": "Mini Guard",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1717,8 +1804,9 @@
         },
         {
             "Name": "Misty Rod",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1743,8 +1831,9 @@
         },
         {
             "Name": "Muramasa",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1763,8 +1852,9 @@
         },
         {
             "Name": "Naginata",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1789,8 +1879,9 @@
         },
         {
             "Name": "Needle Glove",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1809,8 +1900,9 @@
         },
         {
             "Name": "Old Claw",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1831,8 +1923,9 @@
         },
         {
             "Name": "Old Wand",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1857,8 +1950,9 @@
         },
         {
             "Name": "Omega Halberd",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1883,8 +1977,9 @@
         },
         {
             "Name": "Onimaru",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1903,8 +1998,9 @@
         },
         {
             "Name": "Orochi Spear",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1924,8 +2020,9 @@
         },
         {
             "Name": "Partisan",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1945,8 +2042,9 @@
         },
         {
             "Name": "Positron Cannon",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1965,8 +2063,9 @@
         },
         {
             "Name": "Power Arm",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1990,8 +2089,9 @@
         },
         {
             "Name": "Psycho Blaster",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2015,8 +2115,9 @@
         },
         {
             "Name": "Prominence",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2035,8 +2136,9 @@
         },
         {
             "Name": "Pulse Guard",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2063,8 +2165,9 @@
         },
         {
             "Name": "Punishment",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2083,8 +2186,9 @@
         },
         {
             "Name": "Raijin Fist",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2103,8 +2207,9 @@
         },
         {
             "Name": "Raven Bow",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2124,8 +2229,9 @@
         },
         {
             "Name": "Rock Breaker",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2152,8 +2258,9 @@
         },
         {
             "Name": "Ronin Blade",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2172,8 +2279,9 @@
         },
         {
             "Name": "Ronin Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -2192,8 +2300,9 @@
         },
         {
             "Name": "Royal Spear",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2214,8 +2323,9 @@
         },
         {
             "Name": "Rusty Glove",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2234,8 +2344,9 @@
         },
         {
             "Name": "Rusty Katana",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2254,8 +2365,9 @@
         },
         {
             "Name": "Rusty Rifle",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2274,8 +2386,9 @@
         },
         {
             "Name": "Ryuuzanmaru",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2300,8 +2413,9 @@
         },
         {
             "Name": "Saber Fang",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2322,8 +2436,9 @@
         },
         {
             "Name": "Seraphic Bow",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2342,8 +2457,9 @@
         },
         {
             "Name": "Shamshir",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2365,8 +2481,9 @@
         },
         {
             "Name": "Shine Blade",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2390,8 +2507,9 @@
         },
         {
             "Name": "Shiratorimaru",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2410,8 +2528,9 @@
         },
         {
             "Name": "Shishioumaru",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2437,8 +2556,9 @@
         },
         {
             "Name": "Short Sword",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2457,8 +2577,9 @@
         },
         {
             "Name": "Shotgun",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2477,8 +2598,9 @@
         },
         {
             "Name": "Shuriken",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2497,8 +2619,9 @@
         },
         {
             "Name": "Sniper Cannon",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2517,8 +2640,9 @@
         },
         {
             "Name": "Sniper Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -2537,8 +2661,9 @@
         },
         {
             "Name": "Soul Chopper",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2564,8 +2689,9 @@
         },
         {
             "Name": "Spear",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2585,8 +2711,9 @@
         },
         {
             "Name": "Suijin Cannon",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2605,8 +2732,9 @@
         },
         {
             "Name": "Super Nova",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2625,8 +2753,9 @@
         },
         {
             "Name": "Tempest Arm",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2650,8 +2779,9 @@
         },
         {
             "Name": "Tenjinmaru",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2670,8 +2800,9 @@
         },
         {
             "Name": "Tiger Glove",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2690,8 +2821,9 @@
         },
         {
             "Name": "Tin Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -2717,8 +2849,9 @@
         },
         {
             "Name": "Trent",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2739,8 +2872,9 @@
         },
         {
             "Name": "Twinkle",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2765,8 +2899,9 @@
         },
         {
             "Name": "Vampire Lance",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2787,8 +2922,9 @@
         },
         {
             "Name": "Vanquish",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2810,8 +2946,9 @@
         },
         {
             "Name": "Venom Fang",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2833,8 +2970,9 @@
         },
         {
             "Name": "Wild Glove",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2858,8 +2996,9 @@
         },
         {
             "Name": "Wild Shield",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -2878,8 +3017,9 @@
         },
         {
             "Name": "Wing Sword",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2911,8 +3051,9 @@
         },
         {
             "Name": "Wolf Fang",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2933,8 +3074,9 @@
         },
         {
             "Name": "Wooden Rod",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2959,8 +3101,9 @@
         },
         {
             "Name": "Yin Yang Rod",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2984,8 +3127,9 @@
         },
         {
             "Name": "Yin Yang Ward",
-            "Id": 0,
+            "Id": null,
             "Type": "Shield",
+            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3009,8 +3153,9 @@
         },
         {
             "Name": "Zanden Sword",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3029,8 +3174,9 @@
         },
         {
             "Name": "Zodiac",
-            "Id": 0,
+            "Id": null,
             "Type": "WeaponSingleHanded",
+            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3049,8 +3195,9 @@
         },
         {
             "Name": "Zweihander",
-            "Id": 0,
+            "Id": 178,
             "Type": "WeaponTwoHanded",
+            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3077,8 +3224,9 @@
         },
         {
             "Name": "Beam Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3104,8 +3252,9 @@
         },
         {
             "Name": "Body Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3132,8 +3281,9 @@
         },
         {
             "Name": "Brave Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3152,8 +3302,9 @@
         },
         {
             "Name": "Crimson Mail",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3175,8 +3326,9 @@
         },
         {
             "Name": "Dark Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3204,8 +3356,9 @@
         },
         {
             "Name": "Dark Cloak",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3235,8 +3388,9 @@
         },
         {
             "Name": "Digitama Mail",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3262,8 +3416,9 @@
         },
         {
             "Name": "Divine Robe",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3282,8 +3437,9 @@
         },
         {
             "Name": "Down Jacket",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3310,8 +3466,9 @@
         },
         {
             "Name": "Dramon Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3330,8 +3487,9 @@
         },
         {
             "Name": "Gym Suit",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3353,8 +3511,9 @@
         },
         {
             "Name": "Hazard Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3373,8 +3532,9 @@
         },
         {
             "Name": "Iron Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3401,8 +3561,9 @@
         },
         {
             "Name": "King\u2019s Mantle",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3424,8 +3585,9 @@
         },
         {
             "Name": "Kulon Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3452,8 +3614,9 @@
         },
         {
             "Name": "Leather Mail",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3479,8 +3642,9 @@
         },
         {
             "Name": "Mirage Robe",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3502,8 +3666,9 @@
         },
         {
             "Name": "Misty Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3525,8 +3690,9 @@
         },
         {
             "Name": "Priest Robe",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3553,8 +3719,9 @@
         },
         {
             "Name": "Ronin Armor",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3573,8 +3740,9 @@
         },
         {
             "Name": "Rubber Suit",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3601,8 +3769,9 @@
         },
         {
             "Name": "Sniper Suit",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3621,8 +3790,9 @@
         },
         {
             "Name": "Tin Mail",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3648,8 +3818,9 @@
         },
         {
             "Name": "Wild Suit",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3668,8 +3839,9 @@
         },
         {
             "Name": "Ying Yang Suit",
-            "Id": 0,
+            "Id": null,
             "Type": "BodyArmor",
+            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3688,8 +3860,9 @@
         },
         {
             "Name": "Angel Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3709,8 +3882,9 @@
         },
         {
             "Name": "Bandanna",
-            "Id": 0,
+            "Id": 215,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3736,8 +3910,9 @@
         },
         {
             "Name": "Baseball Cap",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3763,8 +3938,9 @@
         },
         {
             "Name": "Beret",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3791,8 +3967,9 @@
         },
         {
             "Name": "Brave Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3811,8 +3988,9 @@
         },
         {
             "Name": "Cat Ears",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3838,8 +4016,9 @@
         },
         {
             "Name": "D-Tama Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3863,8 +4042,9 @@
         },
         {
             "Name": "Divine Crown",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3883,8 +4063,9 @@
         },
         {
             "Name": "Dramon Horn",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3908,8 +4089,9 @@
         },
         {
             "Name": "Drill Horn",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3940,8 +4122,9 @@
         },
         {
             "Name": "Glorious Horn",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3967,8 +4150,9 @@
         },
         {
             "Name": "Goddess Crown",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3988,8 +4172,9 @@
         },
         {
             "Name": "Hazard Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4008,8 +4193,9 @@
         },
         {
             "Name": "Headband",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4036,8 +4222,9 @@
         },
         {
             "Name": "Hide Helmet",
-            "Id": 0,
+            "Id": 236,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4063,8 +4250,9 @@
         },
         {
             "Name": "Iron Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4091,8 +4279,9 @@
         },
         {
             "Name": "Kabuteri Horn",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4123,8 +4312,9 @@
         },
         {
             "Name": "Knight Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4146,8 +4336,9 @@
         },
         {
             "Name": "Kulon Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4174,8 +4365,9 @@
         },
         {
             "Name": "Kung Fu Cap",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4206,8 +4398,9 @@
         },
         {
             "Name": "Magical Crown",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4227,8 +4420,9 @@
         },
         {
             "Name": "Matrix Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4250,8 +4444,9 @@
         },
         {
             "Name": "Metal Horn",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4282,8 +4477,9 @@
         },
         {
             "Name": "Mugen Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4305,8 +4501,9 @@
         },
         {
             "Name": "Mythril Crown",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4326,8 +4523,9 @@
         },
         {
             "Name": "Night Vision",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4347,8 +4545,9 @@
         },
         {
             "Name": "Red Cap",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4375,8 +4574,9 @@
         },
         {
             "Name": "Ribbon",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4402,8 +4602,9 @@
         },
         {
             "Name": "Ronin Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4422,8 +4623,9 @@
         },
         {
             "Name": "Royal Crown",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4445,8 +4647,9 @@
         },
         {
             "Name": "School Cap",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4477,8 +4680,9 @@
         },
         {
             "Name": "Scissor Horn",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4509,8 +4713,9 @@
         },
         {
             "Name": "Shaman Mask",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4532,8 +4737,9 @@
         },
         {
             "Name": "Shock Horn",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4564,8 +4770,9 @@
         },
         {
             "Name": "Sniper Goggle",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4584,8 +4791,9 @@
         },
         {
             "Name": "Sun Visor",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4611,8 +4819,9 @@
         },
         {
             "Name": "Tin Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4638,8 +4847,9 @@
         },
         {
             "Name": "Trihorn",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4670,8 +4880,9 @@
         },
         {
             "Name": "Wild Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4690,8 +4901,9 @@
         },
         {
             "Name": "Wing Helmet",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4715,8 +4927,9 @@
         },
         {
             "Name": "Wool Cap",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4747,8 +4960,9 @@
         },
         {
             "Name": "Yin Yang Hat",
-            "Id": 0,
+            "Id": null,
             "Type": "HeadArmor",
+            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4772,8 +4986,9 @@
         },
         {
             "Name": "Antidote Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -4795,8 +5010,9 @@
         },
         {
             "Name": "Awake Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -4818,8 +5034,9 @@
         },
         {
             "Name": "Binder Crest",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -4835,8 +5052,9 @@
         },
         {
             "Name": "BIT Adapter",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -4852,8 +5070,9 @@
         },
         {
             "Name": "Bolt Power 1",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -4869,8 +5088,9 @@
         },
         {
             "Name": "Bolt Power 2",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -4886,8 +5106,9 @@
         },
         {
             "Name": "Bolt Power S",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -4903,8 +5124,9 @@
         },
         {
             "Name": "Boost Gem",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Speed",
@@ -4930,8 +5152,9 @@
         },
         {
             "Name": "Charisma Gem",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -4952,8 +5175,9 @@
         },
         {
             "Name": "Counter Crest",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -4969,8 +5193,9 @@
         },
         {
             "Name": "Dark Power 1",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -4986,8 +5211,9 @@
         },
         {
             "Name": "Dark Power 2",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5003,8 +5229,9 @@
         },
         {
             "Name": "Dark Power S",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5020,8 +5247,9 @@
         },
         {
             "Name": "Dark Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Dark",
@@ -5047,8 +5275,9 @@
         },
         {
             "Name": "Dance Feather",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5064,8 +5293,9 @@
         },
         {
             "Name": "Dance Wing",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5081,8 +5311,9 @@
         },
         {
             "Name": "EXP Adapter",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5098,8 +5329,9 @@
         },
         {
             "Name": "Flame Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Fire",
@@ -5125,8 +5357,9 @@
         },
         {
             "Name": "Fire Power 1",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5142,8 +5375,9 @@
         },
         {
             "Name": "Fire Power 2",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5159,8 +5393,9 @@
         },
         {
             "Name": "Fire Power S",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5176,8 +5411,9 @@
         },
         {
             "Name": "Glasses",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5193,8 +5429,9 @@
         },
         {
             "Name": "Goggles",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5210,8 +5447,9 @@
         },
         {
             "Name": "Guard Gem",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -5237,8 +5475,9 @@
         },
         {
             "Name": "HP Proxy",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5254,8 +5493,9 @@
         },
         {
             "Name": "HP Mega Proxy",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5271,8 +5511,9 @@
         },
         {
             "Name": "Hack Sticker",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5288,8 +5529,9 @@
         },
         {
             "Name": "Hack System",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5305,8 +5547,9 @@
         },
         {
             "Name": "Machine Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Machine",
@@ -5332,8 +5575,9 @@
         },
         {
             "Name": "Metal Power 1",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5349,8 +5593,9 @@
         },
         {
             "Name": "Metal Power 2",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5366,8 +5611,9 @@
         },
         {
             "Name": "Metal Power S",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5383,8 +5629,9 @@
         },
         {
             "Name": "MP Proxy",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5400,8 +5647,9 @@
         },
         {
             "Name": "MP Mega Proxy",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5417,8 +5665,9 @@
         },
         {
             "Name": "Multi Crest",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5434,8 +5683,9 @@
         },
         {
             "Name": "Over Clocked",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5451,8 +5701,9 @@
         },
         {
             "Name": "Over Load",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5468,8 +5719,9 @@
         },
         {
             "Name": "Power Brace",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5485,8 +5737,9 @@
         },
         {
             "Name": "Power Gem",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -5512,8 +5765,9 @@
         },
         {
             "Name": "Prayer Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -5535,8 +5789,9 @@
         },
         {
             "Name": "Recovery Crest",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5552,8 +5807,9 @@
         },
         {
             "Name": "Revive Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -5575,8 +5831,9 @@
         },
         {
             "Name": "Runner Sandals",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5592,8 +5849,9 @@
         },
         {
             "Name": "Runner Shoes",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5609,8 +5867,9 @@
         },
         {
             "Name": "Search Crest",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5626,8 +5885,9 @@
         },
         {
             "Name": "Sober Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -5649,8 +5909,9 @@
         },
         {
             "Name": "Spirit Gem",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Spirit",
@@ -5676,8 +5937,9 @@
         },
         {
             "Name": "Training Book",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5693,8 +5955,9 @@
         },
         {
             "Name": "Water Power 1",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5710,8 +5973,9 @@
         },
         {
             "Name": "Water Power 2",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5727,8 +5991,9 @@
         },
         {
             "Name": "Water Power S",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5744,8 +6009,9 @@
         },
         {
             "Name": "Water Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Water",
@@ -5771,8 +6037,9 @@
         },
         {
             "Name": "Wind Power 1",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5788,8 +6055,9 @@
         },
         {
             "Name": "Wind Power 2",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5805,8 +6073,9 @@
         },
         {
             "Name": "Wind Power S",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5822,8 +6091,9 @@
         },
         {
             "Name": "Wind Ring",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Wind",
@@ -5849,8 +6119,9 @@
         },
         {
             "Name": "Wisdom Gem",
-            "Id": 0,
+            "Id": null,
             "Type": "Accessory",
+            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Wisdom",

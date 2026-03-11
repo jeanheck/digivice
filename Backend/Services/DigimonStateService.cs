@@ -23,7 +23,7 @@ namespace Backend.Services
         public Digimon GetDigimon(int slotIndex, byte digimonId, int baseAddress)
         {
             var addresses = _database.GetDigimonAddresses();
-            var resource = _reader.ReadDigimonResource(slotIndex, baseAddress);
+            var resource = _reader.ReadDigimonResource(slotIndex, baseAddress, addresses);
 
             var digimonName = GetDigimonNameById(addresses, digimonId);
 
@@ -72,6 +72,7 @@ namespace Backend.Services
             return new Digimon
             {
                 SlotIndex = slotIndex,
+                ActiveDigievolutionId = resource.ActiveDigievolutionId <= 0 || resource.ActiveDigievolutionId == 65535 ? null : resource.ActiveDigievolutionId,
                 BasicInfo = new BasicInfo
                 {
                     Name = digimonName,

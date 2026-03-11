@@ -11,6 +11,7 @@ namespace Backend.Models
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
         public Digievolution?[] EquippedDigievolutions { get; set; } = new Digievolution?[3];
+        public int? ActiveDigievolutionId { get; set; }
 
         public bool Equals(Digimon? other)
         {
@@ -21,7 +22,8 @@ namespace Backend.Models
                 !BasicInfo.Equals(other.BasicInfo) ||
                 !Attributes.Equals(other.Attributes) ||
                 !Resistances.Equals(other.Resistances) ||
-                !Equipments.Equals(other.Equipments)) return false;
+                !Equipments.Equals(other.Equipments) ||
+                ActiveDigievolutionId != other.ActiveDigievolutionId) return false;
 
             for (int i = 0; i < 3; i++)
             {
@@ -51,6 +53,7 @@ namespace Backend.Models
             hash.Add(Attributes);
             hash.Add(Resistances);
             hash.Add(Equipments);
+            hash.Add(ActiveDigievolutionId);
             foreach (var d in EquippedDigievolutions)
             {
                 hash.Add(d);

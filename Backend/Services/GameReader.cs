@@ -2,6 +2,7 @@ using Backend.Interfaces;
 using Backend.Models.Addresses;
 using Backend.Models.Resources;
 using Backend.Models.Quests;
+using Backend.Utils;
 
 namespace Backend.Services
 {
@@ -97,19 +98,28 @@ namespace Backend.Services
             };
         }
 
-        public DigimonResource ReadDigimonResource(int slotIndex, int baseAddress)
+        public DigimonResource ReadDigimonResource(int slotIndex, int baseAddress, DigimonAddresses addresses)
         {
             // The digimon struct is quite large, 0x3CA is the last property (Accessory2), taking 2 bytes
             // Reserving 1000 bytes covers the whole documented memory block safely
             var logicBlock = _memoryReader.ReadBytes(baseAddress, 1000);
+            
+            int activeEvoId = -1;
+            if (!string.IsNullOrEmpty(addresses.Digievolutions?.ActiveDigievolution))
+            {
+                int offset = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions.ActiveDigievolution, 0);
+                activeEvoId = _memoryReader.ReadInt16(baseAddress + offset);
+                Serilog.Log.Information("GameReader at {Base:X}: offset for active evo is {Offset}, read activeEvoId = {Id}", baseAddress, offset, activeEvoId);
+            }
+
             return new DigimonResource
             {
                 SlotIndex = slotIndex,
                 BaseAddress = baseAddress,
-                LogicBlock = logicBlock ?? System.Array.Empty<byte>()
+                LogicBlock = logicBlock ?? System.Array.Empty<byte>(),
+                ActiveDigievolutionId = activeEvoId
             };
         }
-
 
         public Dictionary<int, byte> ReadQuestSteps(List<QuestStep> steps)
         {

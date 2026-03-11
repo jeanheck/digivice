@@ -11,5 +11,6 @@ namespace Backend.Models.Resources
         // We will store the entire 1000-byte structure block starting at BaseAddress,
         // and let DigimonStateService parse it based on the Addresses Offsets.
         public byte[] LogicBlock { get; set; } = System.Array.Empty<byte>();
+        public int ActiveDigievolutionId { get; set; }
     }
 }
