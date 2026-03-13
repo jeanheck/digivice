@@ -189,8 +189,8 @@
         "Location": [
             "Central Park",
             "Wire Forest Entrance",
-            "Wire Forest West",
-            "Wire Forest East"
+            "West Wire Forest",
+            "East Wire Forest"
         ],
         "RegularAttack": "No Element",
         "Technique": "None"
@@ -272,7 +272,9 @@
         "DVXP": 3,
         "EXP": 17,
         "BITS": 30,
-        "Location": "Asuka East - Divermon's Lake",
+        "Location": [
+            "Divermon's Lake"
+        ],
         "RegularAttack": "Water Element",
         "Technique": "None"
     },
@@ -395,8 +397,8 @@
         "Location": [
             "Shell Beach",
             "Plug Cape",
-            "Wire Forest West",
-            "Wire Forest East",
+            "West Wire Forest",
+            "East Wire Forest",
             "Divermon's Lake"
         ],
         "RegularAttack": "Thunder Elemental",
@@ -481,8 +483,8 @@
         "EXP": 11,
         "BITS": 20,
         "Location": [
-            "Wire Forest East",
-            "Wire Forest West"
+            "East Wire Forest",
+            "West Wire Forest"
         ],
         "RegularAttack": "No Element",
         "Technique": "None"
@@ -522,7 +524,9 @@
         "DVXP": 3,
         "EXP": 16,
         "BITS": 30,
-        "Location": "Asuka East - Wind Prairie",
+        "Location": [
+            "Wind Prairie"
+        ],
         "RegularAttack": "No Element",
         "Technique": "None"
     },
@@ -561,7 +565,9 @@
         "DVXP": 3,
         "EXP": 15,
         "BITS": 35,
-        "Location": "Asuka East - Wind Prairie",
+        "Location": [
+            "Wind Prairie"
+        ],
         "RegularAttack": "No Element",
         "Technique": "None"
     },
@@ -600,7 +606,9 @@
         "DVXP": 4,
         "EXP": 21,
         "BITS": 40,
-        "Location": "Asuka East - Protocol Forest",
+        "Location": [
+            "Protocol Forest"
+        ],
         "RegularAttack": "No Element (Chance of Poison)",
         "Technique": "None"
     },
@@ -639,7 +647,11 @@
         "DVXP": 4,
         "EXP": 22,
         "BITS": 45,
-        "Location": "Asuka Central - Protocol Forest, Protocol Ruins, Wire Forest East",
+        "Location": [
+            "Protocol Forest",
+            "Protocol Ruins",
+            "Asuka - East Wire Forest"
+        ],
         "RegularAttack": "No Element",
         "Technique": "None"
     },
@@ -756,7 +768,10 @@
         "DVXP": 13,
         "EXP": 66,
         "BITS": 130,
-        "Location": "Asuka East - Wire Forest West Asuka Central - Wire Forest Entrance",
+        "Location": [
+            "Asuka West Wire Forest",
+            "Asuka Wire Forest Entrance"
+        ],
         "RegularAttack": "No Element",
         "Technique": "None"
     },
@@ -1117,7 +1132,10 @@
         "DVXP": 13,
         "EXP": 96,
         "BITS": 160,
-        "Location": "Asuka East - Wire Forest East, Protocol Forest",
+        "Location": [
+            "Asuka East - East Wire Forest",
+            "Asuka Protocol Forest"
+        ],
         "RegularAttack": "No Element",
         "Technique": "None"
     },
@@ -2519,7 +2537,11 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 420,
-        "Location": "Amaterasu East - Wire Forest West Amaterasu Central - Wire Forest Entrance, Plug Cape",
+        "Location": [
+            "Amaterasu East - West Wire Forest",
+            "Amaterasu Central - Wire Forest Entrance",
+            "Amaterasu Central - Plug Cape"
+        ],
         "RegularAttack": "No Element",
         "Technique": "None"
     },
@@ -2558,7 +2580,7 @@
         "DVXP": 34,
         "EXP": 168,
         "BITS": 340,
-        "Location": "Amaterasu East - Wire Forest East, Wind Prarie",
+        "Location": "Amaterasu East - East Wire Forest, Wind Prarie",
         "RegularAttack": "No Element",
         "Technique": "None"
     },
@@ -2597,7 +2619,7 @@
         "DVXP": 38,
         "EXP": 189,
         "BITS": 380,
-        "Location": "Amaterasu East - Wire Forest West Amaterasu South - Phoenix Bay, Ether Jungle, South Cape",
+        "Location": "Amaterasu East - West Wire Forest Amaterasu South - Phoenix Bay, Ether Jungle, South Cape",
         "RegularAttack": "No Element",
         "Technique": "None"
     },
@@ -3804,7 +3826,10 @@
         "DVXP": 44,
         "EXP": 220,
         "BITS": 450,
-        "Location": "Amaterasu Central - Central Park, Shell Beach",
+        "Location": [
+            "Amaterasu Central - Central Park",
+            "Amaterasu Central - Shell Beach"
+        ],
         "RegularAttack": "No Element",
         "Technique": "Dark Elemental (Magic-Dark)"
     },
@@ -3843,7 +3868,10 @@
         "DVXP": 44,
         "EXP": 222,
         "BITS": 610,
-        "Location": "Amaterasu Central - Central Park, Wire Forest Entrance",
+        "Location": [
+            "Amaterasu Central - Central Park",
+            "Amaterasu Central - Wire Forest Entrance"
+        ],
         "RegularAttack": "No Element",
         "Technique": "None"
     },

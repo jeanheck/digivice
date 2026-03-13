@@ -71,16 +71,52 @@
         "Name": "Central Park",
         "Image": "Central Park"
     },
+    "021E": {
+        "Name": "Wire Forest Entrance",
+        "Image": "Wire Forest Entrance"
+    },
+    "021F": {
+        "Name": "Shell Beach",
+        "Image": "Shell Beach"
+    },
     "0220": {
         "Name": "Plug Cape",
         "Image": "Plug Cape"
     },
+    "0221": {
+        "Name": "West Wire Forest",
+        "Image": "West Wire Forest"
+    },
+    "0222": {
+        "Name": "East Wire Forest",
+        "Image": "East Wire Forest"
+    },
+    "0223": {
+        "Name": "Forest Inn",
+        "Image": "Forest Inn"
+    },
+    "0224": {
+        "Name": "Forest Inn BF",
+        "Image": "Forest Inn BF"
+    },
+    "0225": {
+        "Name": "Protocol Forest",
+        "Image": "Protocol Forest"
+    },
+    "0227": {
+        "Name": "Divermon's Lake",
+        "Image": "Divermon's Lake"
+    },
     "0229": {
-        "Name": "Wind Valley",
-        "Image": "Wind Valley"
+        "Name": "Wind Prairie",
+        "Image": "Wind Prairie"
     },
     "022A": {
         "Name": "Kicking Forest",
         "Image": "Kicking Forest"
+    },
+    "022E": {
+        "Name": "Seiryu City",
+        "Image": "Seiryu City"
     }
 }

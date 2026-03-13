@@ -20,16 +20,18 @@ const currentLocation = computed(() => {
 })
 
 const areaEnemies = computed(() => {
-    // We format the raw map id (e.g. 0200 -> 0x0200) to match the JSON's Location Array
     const rawLoc = currentLocationStr.value
     if (!rawLoc || rawLoc === 'Unknown') return []
     
-    const formattedLoc = `0x${rawLoc}`
+    const locObj = locations[rawLoc]
+    const mapName = locObj ? locObj.Name : null
+    
+    if (!mapName) return [];
 
     return enemiesData.filter((enemy: any) => {
         if (!enemy.Location || !Array.isArray(enemy.Location)) return false;
         
-        return enemy.Location.includes(formattedLoc)
+        return enemy.Location.some((loc: string) => loc === mapName);
     })
 })
 
@@ -97,16 +99,16 @@ const closeEnemyDetails = () => {
              <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">Enemies</h4>
              
              <div v-if="areaEnemies.length === 0" class="text-xs text-[#00aaff] opacity-50 italic">
-                 No encounters cataloged
+                Safe Zone
              </div>
              <div v-else class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
                 <button 
                    v-for="enemy in areaEnemies" 
                    :key="enemy.Id" 
                    @click="openEnemyDetails(enemy)"
-                   class="font-bold text-sm tracking-wide text-red-500 hover:text-red-400 drop-shadow-[0_0_2px_rgba(255,0,0,0.8)] transition-all flex items-center gap-1 focus:outline-none focus:ring-1 focus:ring-red-500 rounded px-1"
+                   class="font-bold text-sm tracking-wide text-[#9e3737] hover:text-[#b24848] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)] transition-all flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-[#9e3737] rounded px-1"
                 >
-                   <span class="text-[10px] opacity-70">◆</span> {{ enemy.Name }}
+                   {{ enemy.Name }}
                 </button>
              </div>
         </div>
