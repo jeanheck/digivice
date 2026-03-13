@@ -1,12 +1,86 @@
 {
-    "0200": "Asuka City",
-    "0202": "Wire Forest Entrance",
-    "0208": "Asuka Bridge",
-    "020A": "Asuka City - Inn 1F",
-    "020C": "Asuka City - Inn 2F",
-    "020F": "Lamb Chop",
-    "021D": "Central Park",
-    "0220": "Plug Cape",
-    "0229": "Wind Valley",
-    "022A": "Kicking Forest"
+    "0200": {
+        "Name": "Asuka City",
+        "Image": "Asuka City"
+    },
+    "0201": {
+        "Name": "Asuka City",
+        "Image": "Asuka City 2"
+    },
+    "0202": {
+        "Name": "Asuka Bridge",
+        "Image": "Asuka Bridge"
+    },
+    "0203": {
+        "Name": "Main Lobby",
+        "Image": "Main Lobby"
+    },
+    "0206": {
+        "Name": "Digimon Lab",
+        "Image": "Digimon Lab"
+    },
+    "0207": {
+        "Name": "Login Room",
+        "Image": "Login Room"
+    },
+    "0208": {
+        "Name": "Arena Front Desk",
+        "Image": "Arena Front Desk"
+    },
+    "0210": {
+        "Name": "Cargo Tower",
+        "Image": "Cargo Tower"
+    },
+    "0211": {
+        "Name": "Yellow Cruiser",
+        "Image": "Yellow Cruiser"
+    },
+    "0213": {
+        "Name": "El Dorado",
+        "Image": "El Dorado"
+    },
+    "0214": {
+        "Name": "Admin Center 1F",
+        "Image": "Admin Center 1F"
+    },
+    "020A": {
+        "Name": "Asuka City - Inn 1F",
+        "Image": "Asuka City - Inn 1F"
+    },
+    "020B": {
+        "Name": "Underground Path",
+        "Image": "Underground Path"
+    },
+    "020C": {
+        "Name": "Asuka City - Inn 2F",
+        "Image": "Asuka City - Inn 2F"
+    },
+    "020D": {
+        "Name": "Smith's Shop",
+        "Image": "Smith's Shop"
+    },
+    "020F": {
+        "Name": "Lamb Chop",
+        "Image": "Lamb Chop"
+    },
+    "021B": {
+        "Name": "Asuka Sewers",
+        "Image": "Asuka Sewers"
+    },
+    "021D": {
+        "Name": "Central Park",
+        "Image": "Central Park"
+    },
+    "0220": {
+        "Name": "Plug Cape",
+        "Image": "Plug Cape"
+    },
+    "0229": {
+        "Name": "Wind Valley",
+        "Image": "Wind Valley"
+    },
+    "022A": {
+        "Name": "Kicking Forest",
+        "Image": "Kicking Forest"
+    }
 }

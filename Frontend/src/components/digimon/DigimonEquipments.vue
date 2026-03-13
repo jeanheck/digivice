@@ -17,6 +17,7 @@ const props = defineProps<{
 }>()
 
 function getItem(id: number) {
+  if (id === 0) return { Name: 'Empty', Id: 0, Type: 'Empty', Attributes: [], EquipableDigimon: [] };
   return equipmentData.equipments.find(e => e.Id === id) || { Name: `Item ID: ${id}`, Id: id, Type: 'Unknown', Attributes: [], EquipableDigimon: [] };
 }
 

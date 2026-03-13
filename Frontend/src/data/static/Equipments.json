@@ -552,7 +552,7 @@
                 "Guilmon",
                 "Veemon"
             ],
-            "Note": "Very small chance of OHKO\u2019ing enemy Digimon"
+            "Note": "Very small chance of OHKO’ing enemy Digimon"
         },
         {
             "Name": "Deus Guard",
@@ -2685,7 +2685,7 @@
                 "Monmon",
                 "Renamon"
             ],
-            "Note": "Very small chance of OHKO\u2019ing enemy Digimon"
+            "Note": "Very small chance of OHKO’ing enemy Digimon"
         },
         {
             "Name": "Spear",
@@ -2942,7 +2942,7 @@
                 "Guilmon",
                 "Veemon"
             ],
-            "Note": "Very small chance of OHKO\u2019ing enemy Digimon"
+            "Note": "Very small chance of OHKO’ing enemy Digimon"
         },
         {
             "Name": "Venom Fang",
@@ -3560,7 +3560,7 @@
             ]
         },
         {
-            "Name": "King\u2019s Mantle",
+            "Name": "King’s Mantle",
             "Id": null,
             "Type": "BodyArmor",
             "TypeDescription": "Body Armor",
@@ -5006,7 +5006,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon\u2019s resistance against poison"
+            "Note": "Boosts the equipped Digimon’s resistance against poison"
         },
         {
             "Name": "Awake Ring",
@@ -5030,7 +5030,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon\u2019s resistance against sleep"
+            "Note": "Boosts the equipped Digimon’s resistance against sleep"
         },
         {
             "Name": "Binder Crest",
@@ -5084,7 +5084,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Lightning damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a small amount of Lightning damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Bolt Power 2",
@@ -5102,7 +5102,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Lightning damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a medium amount of Lightning damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Bolt Power S",
@@ -5120,7 +5120,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Lightning damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Boost Gem",
@@ -5207,7 +5207,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Dark damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a small amount of Dark damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Dark Power 2",
@@ -5225,7 +5225,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Dark damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Dark Power S",
@@ -5243,7 +5243,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Dark damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Dark Ring",
@@ -5289,7 +5289,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon\u2019s chances of evading an attack"
+            "Note": "Slightly increases the equipped Digimon’s chances of evading an attack"
         },
         {
             "Name": "Dance Wing",
@@ -5307,7 +5307,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon\u2019s chances of evading an attack"
+            "Note": "Significantly increases the equipped Digimon’s chances of evading an attack"
         },
         {
             "Name": "EXP Adapter",
@@ -5371,7 +5371,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Fire damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a small amount of Fire damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Fire Power 2",
@@ -5389,7 +5389,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Fire damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a medium amount of Fire damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Fire Power S",
@@ -5407,7 +5407,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Fire damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Glasses",
@@ -5425,7 +5425,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon\u2019s accuracy"
+            "Note": "Slightly increases the equipped Digimon’s accuracy"
         },
         {
             "Name": "Goggles",
@@ -5443,7 +5443,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon\u2019s accuracy"
+            "Note": "Significantly increases the equipped Digimon’s accuracy"
         },
         {
             "Name": "Guard Gem",
@@ -5525,7 +5525,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon\u2019s chances of stealing an item"
+            "Note": "Slightly increases the equipped Digimon’s chances of stealing an item"
         },
         {
             "Name": "Hack System",
@@ -5543,7 +5543,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon\u2019s chances of stealing an item"
+            "Note": "Significantly increases the equipped Digimon’s chances of stealing an item"
         },
         {
             "Name": "Machine Ring",
@@ -5589,7 +5589,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Machine damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a small amount of Machine damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Metal Power 2",
@@ -5607,7 +5607,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Machine damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a medium amount of Machine damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Metal Power S",
@@ -5625,7 +5625,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Machine damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a large amount of Machine damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "MP Proxy",
@@ -5697,7 +5697,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon\u2019s Blast Gauge gains"
+            "Note": "Slightly increases the equipped Digimon’s Blast Gauge gains"
         },
         {
             "Name": "Over Load",
@@ -5715,7 +5715,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon\u2019s Blast Gauge gains"
+            "Note": "Significantly increases the equipped Digimon’s Blast Gauge gains"
         },
         {
             "Name": "Power Brace",
@@ -5733,7 +5733,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly improves the equipped Digimon\u2019s chances of successfully completing a training course at the gym"
+            "Note": "Significantly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
         },
         {
             "Name": "Power Gem",
@@ -5785,7 +5785,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon\u2019s chances of surviving a potential KO"
+            "Note": "Boosts the equipped Digimon’s chances of surviving a potential KO"
         },
         {
             "Name": "Recovery Crest",
@@ -5827,7 +5827,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon\u2019s resistance against paralysis"
+            "Note": "Boosts the equipped Digimon’s resistance against paralysis"
         },
         {
             "Name": "Runner Sandals",
@@ -5845,7 +5845,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon\u2019s chances of running away from battle"
+            "Note": "Slightly increases the equipped Digimon’s chances of running away from battle"
         },
         {
             "Name": "Runner Shoes",
@@ -5863,7 +5863,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon\u2019s chances of running away from battle"
+            "Note": "Significantly increases the equipped Digimon’s chances of running away from battle"
         },
         {
             "Name": "Search Crest",
@@ -5881,7 +5881,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Increases the equipped Digimon\u2019s critical hit rate"
+            "Note": "Increases the equipped Digimon’s critical hit rate"
         },
         {
             "Name": "Sober Ring",
@@ -5905,7 +5905,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon\u2019s resistance against confusion"
+            "Note": "Boosts the equipped Digimon’s resistance against confusion"
         },
         {
             "Name": "Spirit Gem",
@@ -5951,7 +5951,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly improves the equipped Digimon\u2019s chances of successfully completing a training course at the gym"
+            "Note": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
         },
         {
             "Name": "Water Power 1",
@@ -5969,7 +5969,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Water damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a small amount of Water damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Water Power 2",
@@ -5987,7 +5987,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Water damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a medium amount of Water damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Water Power S",
@@ -6005,7 +6005,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Water damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Water Ring",
@@ -6051,7 +6051,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Wind damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a small amount of Wind damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Wind Power 2",
@@ -6069,7 +6069,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Wind damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a medium amount of Wind damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Wind Power S",
@@ -6087,7 +6087,7 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Wind damage to the equipped Digimon\u2019s basic attacks"
+            "Note": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
         },
         {
             "Name": "Wind Ring",

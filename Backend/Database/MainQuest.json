@@ -28,7 +28,7 @@
         },
         {
             "Number": 5,
-            "Description": "TGo to the East Station to reach the next sector",
+            "Description": "Go to the East Station to reach the next sector",
             "Address": "0x0004B63B",
             "BitMask": "0x80"
         },

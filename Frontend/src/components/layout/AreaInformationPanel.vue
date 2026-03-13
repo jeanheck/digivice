@@ -6,7 +6,7 @@ import enemiesData from '../../data/static/EnemiesTable.json'
 import EnemyDetailsModal from './EnemyDetailsModal.vue'
 
 const store = useGameStore()
-const locations = locationsData as Record<string, string>
+const locations = locationsData as Record<string, any>
 
 const currentLocationStr = computed(() => {
     return store.gameState?.player?.mapId
@@ -16,7 +16,7 @@ const currentLocation = computed(() => {
     const loc = currentLocationStr.value
     if (!loc || loc === 'Unknown') return 'Unknown Area'
     
-    return locations[loc] ? locations[loc] : `Unknown Zone ${loc}`
+    return locations[loc] ? locations[loc].Name : `Unknown Zone ${loc}`
 })
 
 const areaEnemies = computed(() => {
@@ -37,8 +37,8 @@ const currentMapImage = computed(() => {
     const rawLoc = currentLocationStr.value
     if (!rawLoc || rawLoc === 'Unknown') return null
     try {
-        // Map images use the natural MapId value (e.g. 0200.webp)
-        return new URL(`../../assets/maps/${rawLoc}.webp`, import.meta.url).href
+        const imageFile = locations[rawLoc]?.Image || rawLoc
+        return new URL(`../../assets/maps/${imageFile}.webp`, import.meta.url).href
     } catch {
         return null
     }
