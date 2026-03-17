@@ -1,4 +1,4 @@
-namespace Backend.Events.Data.Player;
+namespace Backend.Events.Data;
 
 public class PlayerBitsChangedEvent : BaseEvent
 {

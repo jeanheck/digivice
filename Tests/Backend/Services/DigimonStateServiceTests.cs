@@ -33,7 +33,7 @@ namespace Tests.Backend.Services
                 Equipaments = new EquipmentsOffsets { Head = "0x0A" }
             });
 
-            _mockReader.Setup(r => r.ReadDigimonResource(1, 0))
+            _mockReader.Setup(r => r.ReadDigimonResource(1, 0, It.IsAny<DigimonAddresses>()))
                        .Returns(new DigimonResource { LogicBlock = logicBlock });
 
             var result = _digimonService.GetDigimon(1, 0x02, 0);

@@ -1,4 +1,4 @@
-namespace Backend.Events.Data.System;
+namespace Backend.Events.Data;
 
 public class LocationChangedEvent : BaseEvent
 {

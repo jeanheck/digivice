@@ -1,6 +1,6 @@
 using Backend.Models;
 
-namespace Backend.Events.Data.System;
+namespace Backend.Events.Data;
 
 public class ImportantItemsChangedEvent : BaseEvent
 {

@@ -1,7 +1,5 @@
+using Backend.Events.Data;
 using Backend.Events.Data.Digimon;
-using Backend.Events.Data.Party;
-using Backend.Events.Data.Player;
-using Backend.Events.Data.System;
 using Backend.Events.Hubs;
 using Backend.Models;
 using Backend.Models.Quests;
@@ -352,13 +350,15 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                     Id = s.Journal.MainQuest.Id,
                     Title = s.Journal.MainQuest.Title,
                     Description = s.Journal.MainQuest.Description,
-                    Prerequisites = s.Journal.MainQuest.Prerequisites.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone }).ToList(),
+                    Prerequisites = s.Journal.MainQuest.Prerequisites.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone, ItemKey = p.ItemKey, ItemType = p.ItemType }).ToList(),
                     Steps = s.Journal.MainQuest.Steps.Select(step => new QuestStep
                     {
                         Number = step.Number,
                         Description = step.Description,
                         IsCompleted = step.IsCompleted,
-                        Prerequisites = step.Prerequisites?.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone }).ToList()
+                        Address = step.Address,
+                        BitMask = step.BitMask,
+                        Prerequisites = step.Prerequisites?.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone, ItemKey = p.ItemKey, ItemType = p.ItemType }).ToList()
                     }).ToList()
                 },
                 SideQuests = s.Journal.SideQuests.Select(q => new SideQuest
@@ -366,13 +366,15 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                     Id = q.Id,
                     Title = q.Title,
                     Description = q.Description,
-                    Prerequisites = q.Prerequisites.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone }).ToList(),
+                    Prerequisites = q.Prerequisites.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone, ItemKey = p.ItemKey, ItemType = p.ItemType }).ToList(),
                     Steps = q.Steps.Select(step => new QuestStep
                     {
                         Number = step.Number,
                         Description = step.Description,
                         IsCompleted = step.IsCompleted,
-                        Prerequisites = step.Prerequisites?.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone }).ToList()
+                        Address = step.Address,
+                        BitMask = step.BitMask,
+                        Prerequisites = step.Prerequisites?.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone, ItemKey = p.ItemKey, ItemType = p.ItemType }).ToList()
                     }).ToList()
                 }).ToList()
             } : null

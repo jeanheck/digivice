@@ -1,4 +1,4 @@
-namespace Backend.Events.Data.Party;
+namespace Backend.Events.Data;
 
 public class PartySlotsChangedEvent : BaseEvent
 {
