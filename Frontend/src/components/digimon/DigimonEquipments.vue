@@ -1,13 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-// Importando alguns ícones genéricos do pacote @iconify-json/pixelarticons para os equipamentos
-import IconHead from '../icons/IconHelmet.vue'
-import IconBody from '../icons/IconArmor.vue'
-import IconWeapon from '../icons/IconHandRight.vue' // Dagger
-import IconOffhand from '../icons/IconHandLeft.vue' // Buckler
-import IconAcc1 from '../icons/IconDiamond.vue' // Power Ring
-import IconAcc2 from '../icons/IconDiamond.vue' // Speed Ring
+// SVGs removed
 
 import type { Digimon } from '../../types/backend'
 import equipmentData from '../../data/static/Equipments.json'
@@ -24,12 +18,12 @@ function getItem(id: number) {
 const equipments = computed(() => {
   const eq = props.digimon.equipments
   return [
-    { slot: 'Head', item: getItem(eq?.head || 0), icon: IconHead, color: 'text-gray-400' },
-    { slot: 'Body', item: getItem(eq?.body || 0), icon: IconBody, color: 'text-gray-400' },
-    { slot: 'Right', item: getItem(eq?.rightHand || 0), icon: IconWeapon, color: 'text-gray-400' },
-    { slot: 'Left', item: getItem(eq?.leftHand || 0), icon: IconOffhand, color: 'text-gray-400' },
-    { slot: 'Accessory 1', item: getItem(eq?.accessory1 || 0), icon: IconAcc1, color: 'text-cyan-300' },
-    { slot: 'Accessory 2', item: getItem(eq?.accessory2 || 0), icon: IconAcc2, color: 'text-cyan-300' }
+    { slot: 'Head', item: getItem(eq?.head || 0), color: 'text-gray-400' },
+    { slot: 'Body', item: getItem(eq?.body || 0), color: 'text-gray-400' },
+    { slot: 'Right', item: getItem(eq?.rightHand || 0), color: 'text-gray-400' },
+    { slot: 'Left', item: getItem(eq?.leftHand || 0), color: 'text-gray-400' },
+    { slot: 'Accessory 1', item: getItem(eq?.accessory1 || 0), color: 'text-cyan-300' },
+    { slot: 'Accessory 2', item: getItem(eq?.accessory2 || 0), color: 'text-cyan-300' }
   ]
 })
 
@@ -82,16 +76,9 @@ const moveTooltip = (event: MouseEvent) => {
           {{ equip.slot }}
         </span>
 
-        <!-- Container do Nome do Item + Ícone (Direita) -->
-        <div class="flex items-center justify-end gap-1 flex-1 truncate">
-          <!-- Nome do Item (Agora na esquerda do container direito) -->
-          <span class="text-gray-300 text-shadow-sm truncate font-medium text-[11px]">
+          <span class="text-gray-300 text-shadow-sm truncate font-medium text-[11px] text-right">
             {{ equip.item.Name }}
           </span>
-          
-          <!-- Ícone do Equipamento (Agora na direita do nome) -->
-          <component :is="equip.icon" class="w-4 h-4 flex-shrink-0" :class="equip.color" />
-        </div>
       </div>
     </div>
 

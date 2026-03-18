@@ -4,20 +4,7 @@ import DigimonDetailsTable from '../../data/static/DigimonDetailsTable.json'
 import EquipmentsData from '../../data/static/Equipments.json'
 import DigievolutionData from '../../data/static/Digievolution.json'
 
-// Importando os ícones via unplugin-icons do pacote @iconify-json/pixelarticons
-import IconStrengh from '../icons/IconHand.vue'
-import IconDefense from '../icons/IconShield.vue'
-import IconSpirit from '../icons/IconFaceId.vue'
-import IconSpeed from '../icons/IconRunFast.vue'
-import IconCharisma from '../icons/IconSparkles.vue'
-import IconWisdom from '../icons/IconBookOpen.vue'
-import IconFireResistance from '../icons/IconFire.vue'
-import IconWaterResistance from '../icons/IconDrop.vue'
-import IconIceResistance from '../icons/IconSnowflakeCold.vue'
-import IconWindResistance from '../icons/IconWind.vue'
-import IconThunderResistance from '../icons/IconLightning.vue'
-import IconMachineResistance from '../icons/IconCog.vue'
-import IconDarkResistance from '../icons/IconMoon.vue'
+// Icons removed in favor of emojis
 
 import type { Digimon } from '../../types/backend'
 
@@ -75,12 +62,12 @@ const getDigiBonus = (type: 'attributes' | 'resistances', prop: string) => {
 const attributes = computed(() => {
   const attrs = props.digimon.attributes
   return [
-    { label: 'Strength', base: attrs.strength, prop: 'strength', icon: IconStrengh, color: 'text-[#fcd883]' },
-    { label: 'Defense', base: attrs.defense, prop: 'defense', icon: IconDefense, color: 'text-gray-400' },
-    { label: 'Spirit', base: attrs.spirit, prop: 'spirit', icon: IconSpirit, color: 'text-pink-300' },
-    { label: 'Wisdom', base: attrs.wisdom, prop: 'wisdom', icon: IconWisdom, color: 'text-yellow-600' },
-    { label: 'Speed', base: attrs.speed, prop: 'speed', icon: IconSpeed, color: 'text-green-400' },
-    { label: 'Charisma', base: attrs.charisma, prop: 'charisma', icon: IconCharisma, color: 'text-yellow-300' },
+    { label: 'Strength', base: attrs.strength, prop: 'strength', icon: '👊', color: 'text-[#fcd883]' },
+    { label: 'Defense', base: attrs.defense, prop: 'defense', icon: '🛡️', color: 'text-gray-400' },
+    { label: 'Spirit', base: attrs.spirit, prop: 'spirit', icon: '🧙‍♂️', color: 'text-pink-300' },
+    { label: 'Wisdom', base: attrs.wisdom, prop: 'wisdom', icon: '📖', color: 'text-yellow-600' },
+    { label: 'Speed', base: attrs.speed, prop: 'speed', icon: '🏃', color: 'text-green-400' },
+    { label: 'Charisma', base: attrs.charisma, prop: 'charisma', icon: '✨', color: 'text-yellow-300' },
   ].map(a => {
     const equip = getEquipBonus(a.prop);
     const digi = getDigiBonus('attributes', a.prop);
@@ -91,13 +78,13 @@ const attributes = computed(() => {
 const resistances = computed(() => {
   const res = props.digimon.resistances
   return [
-    { label: 'Fire', base: res.fire, prop: 'fire', icon: IconFireResistance, color: 'text-orange-500' },
-    { label: 'Water', base: res.water, prop: 'water', icon: IconWaterResistance, color: 'text-blue-400' },
-    { label: 'Ice', base: res.ice, prop: 'ice', icon: IconIceResistance, color: 'text-cyan-200' },
-    { label: 'Wind', base: res.wind, prop: 'wind', icon: IconWindResistance, color: 'text-gray-100' },
-    { label: 'Thunder', base: res.thunder, prop: 'thunder', icon: IconThunderResistance, color: 'text-[#ffffcc]' },
-    { label: 'Machine', base: res.machine, prop: 'machine', icon: IconMachineResistance, color: 'text-gray-500' },
-    { label: 'Dark', base: res.dark, prop: 'dark', icon: IconDarkResistance, color: 'text-purple-500' },
+    { label: 'Fire', base: res.fire, prop: 'fire', icon: '🔥', color: 'text-orange-500' },
+    { label: 'Water', base: res.water, prop: 'water', icon: '💧', color: 'text-blue-400' },
+    { label: 'Ice', base: res.ice, prop: 'ice', icon: '🧊', color: 'text-cyan-200' },
+    { label: 'Wind', base: res.wind, prop: 'wind', icon: '🍃', color: 'text-gray-100' },
+    { label: 'Thunder', base: res.thunder, prop: 'thunder', icon: '⚡', color: 'text-[#ffffcc]' },
+    { label: 'Machine', base: res.machine, prop: 'machine', icon: '⚙️', color: 'text-gray-500' },
+    { label: 'Dark', base: res.dark, prop: 'dark', icon: '🌑', color: 'text-purple-500' },
   ].map(a => {
     const equip = getEquipBonus(a.prop);
     const digi = getDigiBonus('resistances', a.prop);
@@ -160,12 +147,12 @@ const moveTooltip = (event: MouseEvent) => {
           :key="attr.label"
           class="flex items-center gap-2"
         >
-          <!-- Ícone Box com Borda -->
-          <div class="icon-box w-[28px] h-[28px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center aspect-square cursor-help"
+          <!-- Icon - Cursor custom -->
+          <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20 tooltip-anchor"
                @mouseenter="e => showIconTooltip(e, attr.label, 'attributes')"
                @mousemove="moveTooltip"
                @mouseleave="hideTooltip">
-            <component :is="attr.icon" class="w-5 h-5" :class="attr.color" />
+            <span class="text-base font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1">{{ attr.icon }}</span>
           </div>
           
           <!-- Valor Numérico -->
@@ -186,12 +173,12 @@ const moveTooltip = (event: MouseEvent) => {
           :key="res.label"
           class="flex items-center gap-2"
         >
-          <!-- Ícone Box com Borda -->
-          <div class="icon-box w-[28px] h-[28px] bg-[#000a2b] border-[#0033aa] flex items-center justify-center aspect-square cursor-help"
+          <!-- Icon (Cursor custom) -->
+          <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20 tooltip-anchor relative"
                @mouseenter="e => showIconTooltip(e, res.label, 'resistances')"
                @mousemove="moveTooltip"
                @mouseleave="hideTooltip">
-            <component :is="res.icon" class="w-5 h-5" :class="res.color" />
+            <span class="text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1" :class="res.color">{{ res.icon }}</span>
           </div>
           
           <!-- Valor Numérico -->

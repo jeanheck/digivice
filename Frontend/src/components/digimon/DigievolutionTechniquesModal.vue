@@ -70,7 +70,7 @@ function elementColor(element: string): string {
 }
 
 function typeIcon(type: string): string {
-  if (type === 'Physical') return '🗡️'
+  if (type === 'Physical') return '👊'
   if (type === 'Magical') return '🧙‍♂️'
   if (type === 'Heal') return '💚'
   if (type === 'Support') return '🟡'
