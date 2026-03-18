@@ -111,12 +111,32 @@
         "Name": "Wind Prairie",
         "Image": "Wind Prairie"
     },
+    "0230": {
+        "Name": "Seiryu Tower",
+        "Image": "Seiryu Tower"
+    },
+    "0231": {
+        "Name": "Gale Tower",
+        "Image": "Gale Tower"
+    },
     "022A": {
         "Name": "Kicking Forest",
         "Image": "Kicking Forest"
     },
+    "022B": {
+        "Name": "Tyranno Valley",
+        "Image": "Tyranno Valley"
+    },
+    "022C": {
+        "Name": "East Station",
+        "Image": "East Station"
+    },
     "022E": {
         "Name": "Seiryu City",
         "Image": "Seiryu City"
+    },
+    "022F": {
+        "Name": "Zephyr Tower",
+        "Image": "Zephyr Tower"
     }
 }

@@ -810,7 +810,11 @@
         "DVXP": 5,
         "EXP": 25,
         "BITS": 50,
-        "Location": "Asuka East - Kicking Forest Asuka South - Phoenix Bay, Ether Jungle",
+        "Location": [
+            "Kicking Forest",
+            "Phoenix Bay",
+            "Ether Jungle"
+        ],
         "RegularAttack": "No Element",
         "Technique": "None"
     },
@@ -849,7 +853,9 @@
         "DVXP": 6,
         "EXP": 31,
         "BITS": 60,
-        "Location": "Asuka East - Tyranno Valley",
+        "Location": [
+            "Tyranno Valley"
+        ],
         "RegularAttack": "Fire Element",
         "Technique": "None"
     },
@@ -930,7 +936,9 @@
         "DVXP": 6,
         "EXP": 29,
         "BITS": 70,
-        "Location": "Asuka East - Tyranno Valley",
+        "Location": [
+            "Tyranno Valley"
+        ],
         "RegularAttack": "No Element",
         "Technique": "Air Blast (Magic-Wind)"
     },
