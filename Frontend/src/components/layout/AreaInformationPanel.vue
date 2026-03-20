@@ -106,7 +106,7 @@ const closeEnemyDetails = () => {
                    v-for="enemy in areaEnemies" 
                    :key="enemy.Id" 
                    @click="openEnemyDetails(enemy)"
-                   class="font-bold text-sm tracking-wide text-[#9e3737] hover:text-[#b24848] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)] transition-all flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-[#9e3737] rounded px-1"
+                   class="font-bold text-sm tracking-wide text-[#9e3737] hover:text-[#b24848] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)] transition-all flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-[#9e3737] rounded px-1 cursor-pointer"
                 >
                    {{ enemy.Name }}
                 </button>
