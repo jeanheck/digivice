@@ -121,7 +121,7 @@
             ]
         },
         {
-            "name": "Ex-Veemon",
+            "name": "ExVeemon",
             "techniques": [
                 {
                     "techniqueId": "air_blast",
@@ -666,7 +666,7 @@
             ]
         },
         {
-            "name": "Metal Mamemon",
+            "name": "MetalMamemon",
             "techniques": [
                 {
                     "techniqueId": "metal_attack",
@@ -1121,7 +1121,7 @@
             ]
         },
         {
-            "name": "Imperialdramon FM",
+            "name": "Imperialdramon-F",
             "techniques": [
                 {
                     "techniqueId": "heaven_hit",
@@ -1191,7 +1191,7 @@
             ]
         },
         {
-            "name": "Mega Gargomon",
+            "name": "MegaGargomon",
             "techniques": [
                 {
                     "techniqueId": "mechanical_bash",
@@ -1311,7 +1311,7 @@
             ]
         },
         {
-            "name": "Imperialdramon PM",
+            "name": "Imperialdramon-P",
             "techniques": [
                 {
                     "techniqueId": "auto_recover",

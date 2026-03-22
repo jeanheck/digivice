@@ -310,7 +310,7 @@
         },
         {
             "Name": "Buckler",
-            "Id": null,
+            "Id": 275,
             "Type": "Shield",
             "TypeDescription": "Shield",
             "Attributes": [
@@ -1454,7 +1454,7 @@
         },
         {
             "Name": "Leather Glove",
-            "Id": null,
+            "Id": 106,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -1466,7 +1466,7 @@
                 {
                     "Attribute": "Charisma",
                     "Type": "Addition",
-                    "Value": 14
+                    "Value": 15
                 }
             ],
             "EquipableDigimon": [
@@ -1501,7 +1501,7 @@
         },
         {
             "Name": "Long Bow",
-            "Id": null,
+            "Id": 190,
             "Type": "WeaponTwoHanded",
             "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
@@ -2556,7 +2556,7 @@
         },
         {
             "Name": "Short Sword",
-            "Id": null,
+            "Id": 92,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -3614,7 +3614,7 @@
         },
         {
             "Name": "Leather Mail",
-            "Id": null,
+            "Id": 262,
             "Type": "BodyArmor",
             "TypeDescription": "Body Armor",
             "Attributes": [
@@ -4574,7 +4574,7 @@
         },
         {
             "Name": "Ribbon",
-            "Id": null,
+            "Id": 226,
             "Type": "HeadArmor",
             "TypeDescription": "Head Armor",
             "Attributes": [
@@ -5124,7 +5124,7 @@
         },
         {
             "Name": "Boost Gem",
-            "Id": null,
+            "Id": 300,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [
@@ -5152,7 +5152,7 @@
         },
         {
             "Name": "Charisma Gem",
-            "Id": null,
+            "Id": 302,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [
@@ -5329,7 +5329,7 @@
         },
         {
             "Name": "Flame Ring",
-            "Id": null,
+            "Id": 304,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [
@@ -5447,7 +5447,7 @@
         },
         {
             "Name": "Guard Gem",
-            "Id": null,
+            "Id": 294,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [
@@ -5547,7 +5547,7 @@
         },
         {
             "Name": "Machine Ring",
-            "Id": null,
+            "Id": 309,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [
@@ -5737,7 +5737,7 @@
         },
         {
             "Name": "Power Gem",
-            "Id": null,
+            "Id": 292,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [
@@ -5909,7 +5909,7 @@
         },
         {
             "Name": "Spirit Gem",
-            "Id": null,
+            "Id": 296,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [
@@ -6009,7 +6009,7 @@
         },
         {
             "Name": "Water Ring",
-            "Id": null,
+            "Id": 305,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [
@@ -6090,13 +6090,69 @@
             "Note": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
         },
         {
+            "Name": "Ice Ring",
+            "Id": 306,
+            "Type": "Accessory",
+            "TypeDescription": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Ice",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
             "Name": "Wind Ring",
-            "Id": null,
+            "Id": 307,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Wind",
+                    "Type": "Addition",
+                    "Value": 20
+                },
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ]
+        },
+        {
+            "Name": "Thunder Ring",
+            "Id": 308,
+            "Type": "Accessory",
+            "TypeDescription": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Thunder",
                     "Type": "Addition",
                     "Value": 20
                 },
@@ -6119,7 +6175,7 @@
         },
         {
             "Name": "Wisdom Gem",
-            "Id": null,
+            "Id": 298,
             "Type": "Accessory",
             "TypeDescription": "Accessory",
             "Attributes": [

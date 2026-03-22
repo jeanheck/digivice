@@ -47,9 +47,12 @@ namespace Backend.Utils
                 map[(byte)(0x4C + i)] = postSymbols[i];
             }
 
-            // Special Symbols discovered via RAM dump ("!?")
+            // Special Symbols discovered via RAM dump ("!?.-~")
+            map[0xE5] = '.';
             map[0xE6] = '?';
             map[0xE7] = '!';
+            map[0xE8] = '-';
+            map[0xE9] = '~';
 
             return map;
         }
