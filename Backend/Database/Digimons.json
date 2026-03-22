@@ -81,7 +81,7 @@
         "EquipedSlot2": "0x4A",
         "EquipedSlot3": "0x4C",
         "UnlockedDigievolutionsStart": "0x50",
-        "UnlockedDigievolutionEntryStride": "8",
+        "UnlockedDigievolutionEntryStride": "20",
         "MaxUnlockedDigievolutions": "60"
     }
 }

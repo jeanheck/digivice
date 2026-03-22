@@ -1900,7 +1900,7 @@
         },
         {
             "Name": "Old Claw",
-            "Id": null,
+            "Id": 153,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -1923,7 +1923,7 @@
         },
         {
             "Name": "Old Wand",
-            "Id": null,
+            "Id": 141,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [

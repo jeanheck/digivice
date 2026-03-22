@@ -101,8 +101,8 @@ namespace Backend.Services
         public DigimonResource ReadDigimonResource(int slotIndex, int baseAddress, DigimonAddresses addresses)
         {
             // The digimon struct is quite large, 0x3CA is the last property (Accessory2), taking 2 bytes
-            // Reserving 1000 bytes covers the whole documented memory block safely
-            var logicBlock = _memoryReader.ReadBytes(baseAddress, 1000);
+            // Reserving 1500 bytes covers the whole documented memory block safely (Including 60x20 Evolution slots)
+            var logicBlock = _memoryReader.ReadBytes(baseAddress, 1500);
 
             int activeEvoId = -1;
             if (!string.IsNullOrEmpty(addresses.Digievolutions?.ActiveDigievolution))

@@ -729,7 +729,9 @@
         "DVXP": 5,
         "EXP": 27,
         "BITS": 55,
-        "Location": "Asuka East - Protocol Ruins",
+        "Location": [
+            "Protocol Ruins"
+        ],
         "RegularAttack": "No Element",
         "Technique": "None"
     },

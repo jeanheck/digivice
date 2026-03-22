@@ -59,6 +59,10 @@
         "Name": "Smith's Shop",
         "Image": "Smith's Shop"
     },
+    "020E": {
+        "Name": "Junk Shop",
+        "Image": "Junk Shop"
+    },
     "020F": {
         "Name": "Lamb Chop",
         "Image": "Lamb Chop"
@@ -102,6 +106,10 @@
     "0225": {
         "Name": "Protocol Forest",
         "Image": "Protocol Forest"
+    },
+    "0226": {
+        "Name": "Protocol Ruins",
+        "Image": "Protocol Ruins"
     },
     "0227": {
         "Name": "Divermon's Lake",
