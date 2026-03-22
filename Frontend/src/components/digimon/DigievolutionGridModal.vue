@@ -59,7 +59,7 @@ watch(() => props.isOpen, (isOpen) => {
           <div class="flex flex-col lg:flex-row min-h-[500px] w-full p-4 lg:p-6 gap-6 relative z-10 overflow-hidden">
             <!-- Left List (Scrollable Grid) -->
             <div class="flex-1 overflow-y-auto custom-scroll pr-2">
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <DigievolutionGridItem 
                   v-for="evo in evolutionsList" 
                   :key="evo.name"

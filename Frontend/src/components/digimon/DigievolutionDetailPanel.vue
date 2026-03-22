@@ -18,6 +18,13 @@ const isUnlocked = computed(() => {
     return EvolutionGraph.checkRequirements(props.digimon, mockNode)
 })
 
+const avatarModules = import.meta.glob('../../assets/icons/digievolutions/*.png', { eager: true })
+
+const getAvatar = (name: string) => {
+    const path = `../../assets/icons/digievolutions/${name}.png`
+    return avatarModules[path] ? (avatarModules[path] as any).default || avatarModules[path] : null
+}
+
 const getRequirementText = (req: EvolutionRequirement) => {
     switch (req.Type) {
         case 'DigimonLevel': return `Rookie Level ${req.Value} or higher`
@@ -52,14 +59,23 @@ const derivatives = computed(() => {
 <template>
   <div class="flex flex-col h-full bg-[#0c0d1b] rounded overflow-hidden relative">
     <!-- Header Hero -->
-    <div class="relative h-40 bg-gradient-to-br from-cyan-950/80 to-blue-950/40 border-b border-cyan-800/50 flex flex-col items-center justify-center p-4">
-        <h2 class="text-xl font-bold font-cyber text-white tracking-widest text-center drop-shadow-[0_0_8px_rgba(0,255,255,0.5)]">
-            {{ evolution.name }}
-        </h2>
-        
-        <div class="mt-6 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-cyber tracking-wider border ring-1"
-             :class="isUnlocked ? 'bg-emerald-950/60 text-emerald-400 border-emerald-500/50 ring-emerald-500/20' : 'bg-red-950/60 text-red-400 border-red-500/50 ring-red-500/20'">
-            {{ isUnlocked ? 'UNLOCKED' : 'LOCKED' }}
+    <div class="relative flex-none p-5 flex flex-col items-center justify-center border-b border-[#001133] bg-gradient-to-b from-[#00051a] to-transparent shrink-0">
+        <div class="relative w-full h-40 bg-gradient-to-r from-cyan-950/40 to-[#001533] rounded-lg border border-cyan-800/50 flex flex-col items-center justify-center shadow-inner overflow-hidden group">
+            
+            <img v-if="getAvatar(evolution.name)" 
+                 :src="getAvatar(evolution.name)" 
+                 class="absolute inset-0 w-full h-full object-cover object-[center_15%] opacity-30 mix-blend-screen pointer-events-none drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] transition-opacity duration-500" 
+                 alt="Avatar Overlay" />
+
+            <!-- Pattern Overlay -->
+            <h2 class="text-xl font-bold font-cyber text-white tracking-widest text-center drop-shadow-[0_0_8px_rgba(0,255,255,0.5)]">
+                {{ evolution.name }}
+            </h2>
+            
+            <div class="mt-6 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold font-cyber tracking-wider border ring-1"
+                 :class="isUnlocked ? 'bg-emerald-950/60 text-emerald-400 border-emerald-500/50 ring-emerald-500/20' : 'bg-red-950/60 text-red-400 border-red-500/50 ring-red-500/20'">
+                {{ isUnlocked ? 'UNLOCKED' : 'LOCKED' }}
+            </div>
         </div>
     </div>
 

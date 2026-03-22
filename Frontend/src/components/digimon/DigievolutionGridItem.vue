@@ -23,6 +23,13 @@ const isUnlocked = computed(() => {
     }
     return EvolutionGraph.checkRequirements(props.digimon, mockNode)
 })
+
+const avatarModules = import.meta.glob('../../assets/icons/digievolutions/*.png', { eager: true })
+
+const getAvatar = (name: string) => {
+    const path = `../../assets/icons/digievolutions/${name}.png`
+    return avatarModules[path] ? (avatarModules[path] as any).default || avatarModules[path] : null
+}
 </script>
 
 <template>
@@ -34,7 +41,13 @@ const isUnlocked = computed(() => {
       !isUnlocked ? 'opacity-70 saturate-50 hover:opacity-100' : ''
     ]"
   >
-    <div class="absolute inset-0 bg-gradient-to-t from-[#02030a] via-[#02030a]/40 to-transparent opacity-90 z-0 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[url('/src/assets/bg-pattern.svg')] opacity-10 z-0 pointer-events-none"></div>
+    
+    <img v-if="getAvatar(evolution.name)" 
+         :src="getAvatar(evolution.name)" 
+         class="absolute inset-0 w-full h-[150%] object-cover object-[center_15%] opacity-30 mix-blend-screen pointer-events-none saturate-50 group-hover:saturate-100 group-hover:opacity-60 transition-all duration-500" />
+         
+    <div class="absolute inset-0 bg-gradient-to-t from-[#02030a] via-[#02030a]/40 to-transparent opacity-70 z-0 pointer-events-none"></div>
     
     <div class="absolute top-2 right-2 z-10 transition-opacity" :class="isSelected ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'">
       <span v-if="isUnlocked" class="text-xs drop-shadow-[0_0_2px_rgba(0,0,0,1)]">🔓</span>
@@ -42,8 +55,12 @@ const isUnlocked = computed(() => {
     </div>
 
     <!-- Inner Content -->
-    <div class="relative z-10 text-[11px] sm:text-xs text-white font-cyber select-none mt-auto transition-colors break-words whitespace-normal leading-tight pr-4"
-         :class="isSelected ? 'text-cyan-300' : 'group-hover:text-cyan-200'">
+    <div class="relative z-10 text-[11px] sm:text-xs font-cyber select-none mt-auto transition-colors break-words whitespace-normal leading-tight pr-4"
+         :class="[
+           isSelected 
+            ? 'text-cyan-300 drop-shadow-[0_0_5px_rgba(0,255,255,0.5)]' 
+            : (isUnlocked ? 'text-emerald-400 group-hover:text-emerald-300' : 'text-red-500/90 group-hover:text-red-400/90')
+         ]">
       {{ evolution.name }}
     </div>
   </button>
