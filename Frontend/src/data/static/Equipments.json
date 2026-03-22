@@ -241,7 +241,7 @@
         },
         {
             "Name": "Bone Rod",
-            "Id": null,
+            "Id": 134,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -338,7 +338,7 @@
         },
         {
             "Name": "Cat Glove",
-            "Id": null,
+            "Id": 107,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -359,7 +359,7 @@
         },
         {
             "Name": "Cerberus Fang",
-            "Id": null,
+            "Id": 147,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -606,7 +606,7 @@
         },
         {
             "Name": "Divine Lance",
-            "Id": null,
+            "Id": 171,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -975,7 +975,7 @@
         },
         {
             "Name": "Guard Barrier",
-            "Id": null,
+            "Id": 279,
             "Type": "Shield",
             "TypeDescription": "Shield",
             "Attributes": [
@@ -1670,7 +1670,7 @@
         },
         {
             "Name": "Metal Guard",
-            "Id": null,
+            "Id": 201,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -2063,7 +2063,7 @@
         },
         {
             "Name": "Power Arm",
-            "Id": null,
+            "Id": 110,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -2528,7 +2528,7 @@
         },
         {
             "Name": "Shishioumaru",
-            "Id": null,
+            "Id": 158,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -2689,7 +2689,7 @@
         },
         {
             "Name": "Spear",
-            "Id": null,
+            "Id": 168,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -2821,7 +2821,7 @@
         },
         {
             "Name": "Tin Shield",
-            "Id": null,
+            "Id": 276,
             "Type": "Shield",
             "TypeDescription": "Shield",
             "Attributes": [
@@ -3017,7 +3017,7 @@
         },
         {
             "Name": "Wing Sword",
-            "Id": null,
+            "Id": 161,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -3326,7 +3326,7 @@
         },
         {
             "Name": "Dark Armor",
-            "Id": null,
+            "Id": 266,
             "Type": "BodyArmor",
             "TypeDescription": "Body Armor",
             "Attributes": [
@@ -3356,7 +3356,7 @@
         },
         {
             "Name": "Dark Cloak",
-            "Id": null,
+            "Id": 253,
             "Type": "BodyArmor",
             "TypeDescription": "Body Armor",
             "Attributes": [
@@ -3487,7 +3487,7 @@
         },
         {
             "Name": "Gym Suit",
-            "Id": null,
+            "Id": 250,
             "Type": "BodyArmor",
             "TypeDescription": "Body Armor",
             "Attributes": [
@@ -3790,7 +3790,7 @@
         },
         {
             "Name": "Tin Mail",
-            "Id": null,
+            "Id": 263,
             "Type": "BodyArmor",
             "TypeDescription": "Body Armor",
             "Attributes": [
@@ -3988,7 +3988,7 @@
         },
         {
             "Name": "Cat Ears",
-            "Id": null,
+            "Id": 227,
             "Type": "HeadArmor",
             "TypeDescription": "Head Armor",
             "Attributes": [
@@ -4279,7 +4279,7 @@
         },
         {
             "Name": "Kabuteri Horn",
-            "Id": null,
+            "Id": 209,
             "Type": "HeadArmor",
             "TypeDescription": "Head Armor",
             "Attributes": [
@@ -4398,7 +4398,7 @@
         },
         {
             "Name": "Magical Crown",
-            "Id": null,
+            "Id": 230,
             "Type": "HeadArmor",
             "TypeDescription": "Head Armor",
             "Attributes": [
@@ -4791,7 +4791,7 @@
         },
         {
             "Name": "Sun Visor",
-            "Id": null,
+            "Id": 216,
             "Type": "HeadArmor",
             "TypeDescription": "Head Armor",
             "Attributes": [
@@ -4819,7 +4819,7 @@
         },
         {
             "Name": "Tin Helmet",
-            "Id": null,
+            "Id": 237,
             "Type": "HeadArmor",
             "TypeDescription": "Head Armor",
             "Attributes": [
@@ -4901,7 +4901,7 @@
         },
         {
             "Name": "Wing Helmet",
-            "Id": null,
+            "Id": 240,
             "Type": "HeadArmor",
             "TypeDescription": "Head Armor",
             "Attributes": [
@@ -4927,7 +4927,7 @@
         },
         {
             "Name": "Wool Cap",
-            "Id": null,
+            "Id": 219,
             "Type": "HeadArmor",
             "TypeDescription": "Head Armor",
             "Attributes": [
