@@ -29,8 +29,8 @@
         {
             "Number": 5,
             "Description": "Go to the East Station to reach the next sector",
-            "Address": "0x0004B63B",
-            "BitMask": "0x80"
+            "Address": "0x0004B370",
+            "BitMask": "0x02"
         },
         {
             "Number": 6,
