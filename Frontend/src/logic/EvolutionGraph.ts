@@ -96,6 +96,23 @@ export class EvolutionGraph {
     }
 
     /**
+     * Retrieves a flat list of all possible evolutions for a given rookie.
+     * This avoids the redundant node duplication necessary in tree representations.
+     */
+    static getAllEvolutions(rookieName: string): { name: string, requirements: EvolutionRequirement[] }[] {
+        const rawData = DigivolvingRequirementsTable as unknown as Record<string, Record<string, EvolutionRequirement[]>>
+        const rookieEvolutions = rawData[rookieName]
+        if (!rookieEvolutions) {
+            return []
+        }
+        
+        return Object.keys(rookieEvolutions).map(evoName => ({
+            name: evoName,
+            requirements: rookieEvolutions[evoName]!
+        }))
+    }
+
+    /**
      * Checks if a Digimon has met all the requirements for a given evolution node.
      */
     static checkRequirements(digimon: import('../types/backend').Digimon, node: GraphNode): boolean {

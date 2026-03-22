@@ -4,14 +4,15 @@ import DigimonBasicInfo from './DigimonBasicInfo.vue'
 import DigimonDigievolutions from './DigimonDigievolutions.vue'
 import DigimonDetails from './DigimonDetails.vue'
 import DigimonEquipments from './DigimonEquipments.vue'
-import DigievolutionTreeModal from './DigievolutionTreeModal.vue'
+import DigievolutionGridModal from './DigievolutionGridModal.vue'
+// import DigievolutionTreeModal from './DigievolutionTreeModal.vue' // Legacy Mode (Backup)
 import type { Digimon } from '../../types/backend'
 
 defineProps<{
   digimon: Digimon
 }>()
 
-const isTreeModalOpen = ref(false)
+const isGridModalOpen = ref(false)
 </script>
 
 <template>
@@ -26,16 +27,24 @@ const isTreeModalOpen = ref(false)
 
     <div 
       class="flex items-center justify-center bg-[#000a2b] border-2 border-[#00154a] rounded shadow-inner py-1.5 mt-auto cursor-pointer hover:bg-[#001233] transition-colors"
-      @click="isTreeModalOpen = true"
+      @click="isGridModalOpen = true"
     >
-      <span class="text-[0.65rem] font-bold text-gray-400 tracking-widest uppercase">Digievolution Tree</span>
+      <span class="text-[0.65rem] font-bold text-gray-400 tracking-widest uppercase">Digievolutions</span>
     </div>
 
-    <!-- Teleport Modal -->
+    <!-- New Grid Modal -->
+    <DigievolutionGridModal 
+      :is-open="isGridModalOpen" 
+      :digimon="digimon"
+      @close="isGridModalOpen = false"
+    />
+
+    <!-- Legacy Teleport Modal
     <DigievolutionTreeModal 
       :is-open="isTreeModalOpen" 
       :digimon="digimon"
       @close="isTreeModalOpen = false"
     />
+    -->
   </div>
 </template>

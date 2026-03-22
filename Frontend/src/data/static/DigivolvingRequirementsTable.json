@@ -151,7 +151,7 @@
                 "Value": 5
             }
         ],
-        "Wargrowlmon": [
+        "WarGrowlmon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Growlmon",
@@ -247,7 +247,7 @@
         "Gallantmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 99
             }
         ],
@@ -284,14 +284,14 @@
                 "Value": 40
             }
         ],
-        "BKWargreymon": [
+        "BK WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "ImperialdramonFM": [
+        "Imperialdramon-F": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -343,10 +343,10 @@
                 "Value": 40
             }
         ],
-        "ImperialdramonPM": [
+        "Imperialdramon-P": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "ImperialdramonFM",
+                "Digievolution": "Imperialdramon-F",
                 "Value": 40
             },
             {
@@ -375,7 +375,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BKWargreymon",
+                "Digievolution": "BK WarGreymon",
                 "Value": 99
             }
         ]
@@ -404,7 +404,7 @@
         "Greymon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 20
             },
             {
@@ -538,7 +538,7 @@
                 "Value": 5
             }
         ],
-        "Wargrowlmon": [
+        "WarGrowlmon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Growlmon",
@@ -638,7 +638,7 @@
         "Gallantmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 99
             }
         ],
@@ -675,14 +675,14 @@
                 "Value": 40
             }
         ],
-        "BKWargreymon": [
+        "BK WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "ImperialdramonFM": [
+        "Imperialdramon-F": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -734,10 +734,10 @@
                 "Value": 40
             }
         ],
-        "ImperialdramonPM": [
+        "Imperialdramon-P": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "ImperialdramonFM",
+                "Digievolution": "Imperialdramon-F",
                 "Value": 40
             },
             {
@@ -766,7 +766,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BKWargreymon",
+                "Digievolution": "BK WarGreymon",
                 "Value": 99
             }
         ]
@@ -939,7 +939,7 @@
                 "Value": 5
             }
         ],
-        "Wargrowlmon": [
+        "WarGrowlmon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Growlmon",
@@ -1035,7 +1035,7 @@
         "Gallantmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 99
             }
         ],
@@ -1072,14 +1072,14 @@
                 "Value": 40
             }
         ],
-        "BKWargreymon": [
+        "BK WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "ImperialdramonFM": [
+        "Imperialdramon-F": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -1131,10 +1131,10 @@
                 "Value": 40
             }
         ],
-        "ImperialdramonPM": [
+        "Imperialdramon-P": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "ImperialdramonFM",
+                "Digievolution": "Imperialdramon-F",
                 "Value": 40
             },
             {
@@ -1163,7 +1163,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BKWargreymon",
+                "Digievolution": "BK WarGreymon",
                 "Value": 99
             }
         ]
@@ -1179,7 +1179,7 @@
         "Hookmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 30
             }
         ],
@@ -1326,7 +1326,7 @@
                 "Value": 5
             }
         ],
-        "Wargrowlmon": [
+        "WarGrowlmon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Growlmon",
@@ -1416,7 +1416,7 @@
         "Gallantmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 99
             }
         ],
@@ -1448,14 +1448,14 @@
                 "Value": 40
             }
         ],
-        "BKWargreymon": [
+        "BK WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "ImperialdramonFM": [
+        "Imperialdramon-F": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -1507,10 +1507,10 @@
                 "Value": 40
             }
         ],
-        "ImperialdramonPM": [
+        "Imperialdramon-P": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "ImperialdramonFM",
+                "Digievolution": "Imperialdramon-F",
                 "Value": 40
             },
             {
@@ -1539,7 +1539,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BKWargreymon",
+                "Digievolution": "BK WarGreymon",
                 "Value": 99
             }
         ]
@@ -1707,7 +1707,7 @@
                 "Value": 20
             }
         ],
-        "Wargrowlmon": [
+        "WarGrowlmon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Growlmon",
@@ -1808,7 +1808,7 @@
         "Gallantmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 99
             }
         ],
@@ -1845,14 +1845,14 @@
                 "Value": 40
             }
         ],
-        "BKWargreymon": [
+        "BK WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "ImperialdramonFM": [
+        "Imperialdramon-F": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -1904,10 +1904,10 @@
                 "Value": 40
             }
         ],
-        "ImperialdramonPM": [
+        "Imperialdramon-P": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "ImperialdramonFM",
+                "Digievolution": "Imperialdramon-F",
                 "Value": 40
             },
             {
@@ -1936,7 +1936,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BKWargreymon",
+                "Digievolution": "BK WarGreymon",
                 "Value": 99
             }
         ]
@@ -2013,7 +2013,7 @@
         "Angemon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 20
             },
             {
@@ -2049,7 +2049,7 @@
         "Angewomon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 40
             },
             {
@@ -2110,7 +2110,7 @@
                 "Value": 5
             }
         ],
-        "Wargrowlmon": [
+        "WarGrowlmon": [
             {
                 "Type": "DigimonLevel",
                 "Value": 20
@@ -2159,7 +2159,7 @@
         "Digitamamon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 30
             },
             {
@@ -2242,14 +2242,14 @@
                 "Value": 40
             }
         ],
-        "BKWargreymon": [
+        "BK WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "ImperialdramonFM": [
+        "Imperialdramon-F": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -2301,10 +2301,10 @@
                 "Value": 40
             }
         ],
-        "ImperialdramonPM": [
+        "Imperialdramon-P": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "ImperialdramonFM",
+                "Digievolution": "Imperialdramon-F",
                 "Value": 40
             },
             {
@@ -2333,7 +2333,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BKWargreymon",
+                "Digievolution": "BK WarGreymon",
                 "Value": 99
             }
         ]
@@ -2502,7 +2502,7 @@
                 "Value": 5
             }
         ],
-        "Wargrowlmon": [
+        "WarGrowlmon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Growlmon",
@@ -2602,7 +2602,7 @@
         "Gallantmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 99
             }
         ],
@@ -2642,14 +2642,14 @@
                 "Value": 15
             }
         ],
-        "BKWargreymon": [
+        "BK WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "ImperialdramonFM": [
+        "Imperialdramon-F": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -2701,10 +2701,10 @@
                 "Value": 40
             }
         ],
-        "ImperialdramonPM": [
+        "Imperialdramon-P": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "ImperialdramonFM",
+                "Digievolution": "Imperialdramon-F",
                 "Value": 40
             },
             {
@@ -2733,7 +2733,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BKWargreymon",
+                "Digievolution": "BK WarGreymon",
                 "Value": 99
             }
         ]
@@ -2902,7 +2902,7 @@
                 "Value": 5
             }
         ],
-        "Wargrowlmon": [
+        "WarGrowlmon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Growlmon",
@@ -2998,7 +2998,7 @@
         "Gallantmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargrowlmon",
+                "Digievolution": "WarGrowlmon",
                 "Value": 99
             }
         ],
@@ -3033,14 +3033,14 @@
                 "Value": 15
             }
         ],
-        "BKWargreymon": [
+        "BK WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "SkullGreymon",
                 "Value": 99
             }
         ],
-        "ImperialdramonFM": [
+        "Imperialdramon-F": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Imperialdramon",
@@ -3092,10 +3092,10 @@
                 "Value": 40
             }
         ],
-        "ImperialdramonPM": [
+        "Imperialdramon-P": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "ImperialdramonFM",
+                "Digievolution": "Imperialdramon-F",
                 "Value": 40
             },
             {
@@ -3124,7 +3124,7 @@
             },
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "BKWargreymon",
+                "Digievolution": "BK WarGreymon",
                 "Value": 99
             }
         ]

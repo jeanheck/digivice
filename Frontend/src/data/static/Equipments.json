@@ -214,7 +214,7 @@
         },
         {
             "Name": "Berdys",
-            "Id": null,
+            "Id": 185,
             "Type": "WeaponTwoHanded",
             "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
@@ -2207,7 +2207,7 @@
         },
         {
             "Name": "Raven Bow",
-            "Id": null,
+            "Id": 194,
             "Type": "WeaponTwoHanded",
             "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
@@ -2507,7 +2507,7 @@
         },
         {
             "Name": "Shiratorimaru",
-            "Id": null,
+            "Id": 96,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -2577,7 +2577,7 @@
         },
         {
             "Name": "Shotgun",
-            "Id": null,
+            "Id": 122,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
@@ -2598,7 +2598,7 @@
         },
         {
             "Name": "Shuriken",
-            "Id": null,
+            "Id": 191,
             "Type": "WeaponTwoHanded",
             "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
@@ -3153,7 +3153,7 @@
         },
         {
             "Name": "Zanden Sword",
-            "Id": null,
+            "Id": 93,
             "Type": "WeaponSingleHanded",
             "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
