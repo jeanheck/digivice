@@ -44,7 +44,6 @@ watch(() => props.isOpen, (isOpen) => {
           <!-- Header -->
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-10 shrink-0">
             <h2 class="text-white font-bold tracking-widest text-[#00aaff] drop-shadow flex items-center gap-2">
-              <span class="text-blue-400 text-lg leading-none">●</span>
               {{ digimon.basicInfo.name }} Digievolutions
             </h2>
             <button 

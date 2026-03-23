@@ -65,11 +65,25 @@ export interface Requisite {
     isDone: boolean
 }
 
+export interface MapCoordinates {
+    x: number;
+    y: number;
+}
+
+export interface StepLocation {
+    locationImage?: string;
+    target?: string;
+    locationImageCoordinates?: MapCoordinates;
+}
+
 export interface QuestStep {
     number: number
     description: string
     isCompleted: boolean
     prerequisites?: Requisite[]
+    locationOnMap?: string;
+    locationOnMapCoordinates?: MapCoordinates;
+    locations?: StepLocation[];
 }
 
 export interface Quest {

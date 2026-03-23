@@ -34,6 +34,38 @@ const isQuestLocked = computed(() => {
 const hasPrerequisites = computed(() => {
   return props.quest?.prerequisites && props.quest.prerequisites.length > 0;
 })
+
+import { ref, watch } from 'vue'
+import type { QuestStep as QuestStepType } from '../../types/backend'
+
+// Geographic Integration
+const selectedStep = ref<QuestStepType | null>(null)
+const currentLocationIndex = ref(0)
+
+const selectStep = (step: QuestStepType) => {
+  selectedStep.value = step
+  currentLocationIndex.value = 0
+}
+
+const currentLocation = computed(() => {
+  if (!selectedStep.value?.locations || selectedStep.value.locations.length === 0) return null
+  return selectedStep.value.locations[currentLocationIndex.value]
+})
+
+// Reset selection when modal opens with a different quest
+watch(() => props.quest, () => {
+  selectedStep.value = null
+  currentLocationIndex.value = 0
+})
+
+import asukaMapUrl from '../../assets/AsukaMap.webp'
+
+const mapModules = import.meta.glob('../../assets/maps/*.webp', { eager: true })
+const getLocalMapUrl = (name?: string) => {
+    if (!name) return null;
+    const path = `../../assets/maps/${name}.webp`
+    return mapModules[path] ? (mapModules[path] as any).default || mapModules[path] : null
+}
 </script>
 
 <template>
@@ -44,7 +76,7 @@ const hasPrerequisites = computed(() => {
         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
         @click.self="closeModal"
       >
-        <div class="relative w-full max-w-md bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-slide-up">
+        <div class="relative w-full max-w-5xl bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-slide-up">
           
           <!-- Cyberpunk Hexagon Pattern Background -->
           <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
@@ -68,9 +100,12 @@ const hasPrerequisites = computed(() => {
           </header>
 
           <!-- Content Body -->
-          <div class="p-4 flex flex-col gap-4 relative z-10 max-h-[70vh] overflow-y-auto custom-scroll">
+          <div class="flex flex-col lg:flex-row p-4 gap-6 relative z-10 min-h-[500px] max-h-[80vh] overflow-hidden">
             
-            <!-- Description Box -->
+            <!-- Left Info Panel -->
+            <div class="flex-1 flex flex-col gap-4 overflow-y-auto custom-scroll pr-2">
+              
+              <!-- Description Box -->
             <div class="bg-[#000a1a] p-3 rounded border border-blue-900/50 shadow-inner">
               <p class="text-gray-300 text-sm leading-relaxed font-medium">
                 {{ quest.description }}
@@ -109,8 +144,12 @@ const hasPrerequisites = computed(() => {
               <div 
                 v-for="step in quest.steps" 
                 :key="step.number"
-                class="flex items-start gap-3 p-2 rounded transition-colors group"
-                :class="step.isCompleted ? 'bg-green-900/10 border border-green-800/30' : 'bg-white/5 border border-white/10'"
+                @click="selectStep(step)"
+                class="flex items-start gap-3 p-2 rounded transition-all cursor-pointer group"
+                :class="[
+                  step.isCompleted ? 'bg-green-900/10 border border-green-800/30' : 'bg-white/5 border border-white/10',
+                  selectedStep?.number === step.number ? 'ring-1 ring-cyan-500 shadow-[0_0_10px_rgba(0,255,255,0.2)] bg-[#001a33]' : 'hover:bg-active-hover hover:border-blue-500/30'
+                ]"
               >
                 <!-- Checkbox Indicator -->
                 <div class="mt-0.5 flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors shadow-inner"
@@ -141,6 +180,66 @@ const hasPrerequisites = computed(() => {
               <div v-if="!quest.steps || quest.steps.length === 0" class="text-center p-3 opacity-50">
                  <span class="text-gray-500 text-sm italic">No specific steps tracked.</span>
               </div>
+            </div>
+            </div>
+
+            <!-- Right Geographic Intel Panel -->
+            <div class="w-full lg:w-[450px] shrink-0 flex flex-col gap-4 lg:border-l lg:border-[#0055ff]/30 lg:pl-6 overflow-y-auto custom-scroll">
+              
+              <div v-if="!selectedStep" class="flex-1 flex flex-col items-center justify-center border border-cyan-900/40 bg-[#000a1a] rounded min-h-[400px]">
+                  <span class="text-cyan-500/50 font-cyber text-sm tracking-widest text-center px-8 animate-pulse">CLICK A MISSION STEP<br/>TO BOOT GEOGRAPHIC DATA</span>
+              </div>
+              
+              <div v-else-if="!selectedStep.locationOnMap && (!selectedStep.locations || selectedStep.locations.length === 0)" class="flex-1 flex flex-col items-center justify-center border border-red-900/40 bg-[#1a0000] rounded min-h-[400px]">
+                  <span class="text-red-500/50 font-cyber text-sm tracking-widest text-center px-8">NO SIGNAL DETECTED.<br/>TARGET COORDS UNKNOWN.</span>
+              </div>
+
+              <template v-else>
+                  <!-- World Map Intel -->
+                  <div v-if="selectedStep.locationOnMap" class="relative w-full aspect-[4/3] bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group shrink-0">
+                       <img :src="asukaMapUrl" class="w-full h-full object-cover opacity-60 mix-blend-screen saturate-50 group-hover:saturate-100 transition-all duration-500" />
+                       <div class="absolute inset-0 bg-blue-900/10 z-0 pointer-events-none"></div>
+                       
+                       <!-- Map Radar Ping -->
+                       <div v-if="selectedStep.locationOnMapCoordinates" 
+                            class="absolute w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none"
+                            :style="{ left: selectedStep.locationOnMapCoordinates.x + '%', top: selectedStep.locationOnMapCoordinates.y + '%' }">
+                            <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,1)]"></div>
+                            <div class="absolute -top-5 text-[10px] font-cyber text-cyan-100 whitespace-nowrap drop-shadow bg-cyan-950/90 px-2 py-0.5 rounded border border-cyan-700/80">{{ selectedStep.locationOnMap }}</div>
+                       </div>
+                  </div>
+
+                  <!-- Local Map Intel Carousel -->
+                  <div v-if="currentLocation && getLocalMapUrl(currentLocation.locationImage)" class="relative w-full flex-1 min-h-[250px] bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group flex flex-col">
+                       <div class="relative flex-1 w-full bg-black/50 overflow-hidden">
+                           <img :src="getLocalMapUrl(currentLocation.locationImage)" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+                           
+                           <!-- Local Radar Ping -->
+                           <div v-if="currentLocation.locationImageCoordinates" 
+                                class="absolute w-6 h-6 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none transition-all duration-300"
+                                :style="{ left: currentLocation.locationImageCoordinates.x + '%', top: currentLocation.locationImageCoordinates.y + '%' }">
+                                <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
+                                <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)]"></div>
+                                <div class="absolute -top-4 text-[9px] font-cyber text-cyan-100 whitespace-nowrap drop-shadow bg-cyan-950/90 px-1.5 py-0.5 rounded border border-cyan-700/80">{{ currentLocation.target || 'TARGET' }}</div>
+                           </div>
+                       </div>
+                       
+                       <!-- Carousel Controls Overlay -->
+                       <div v-if="selectedStep.locations && selectedStep.locations.length > 1" class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-20">
+                            <button @click.prevent="currentLocationIndex = (currentLocationIndex - 1 + selectedStep.locations.length) % selectedStep.locations.length" class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)]">&lt;</button>
+                            
+                            <div class="flex gap-2 px-3 py-1.5 bg-black/80 rounded border border-cyan-900/80 shadow-[0_0_10px_rgba(0,170,255,0.2)]">
+                                <div v-for="(_, idx) in selectedStep.locations" :key="idx" 
+                                     class="w-2 h-2 rounded-full transition-all cursor-pointer" 
+                                     :class="idx === currentLocationIndex ? 'bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)] scale-110' : 'bg-cyan-900 hover:bg-cyan-600'"
+                                     @click.prevent="currentLocationIndex = idx"></div>
+                            </div>
+                            
+                            <button @click.prevent="currentLocationIndex = (currentLocationIndex + 1) % selectedStep.locations.length" class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)]">&gt;</button>
+                       </div>
+                  </div>
+              </template>
             </div>
 
           </div>

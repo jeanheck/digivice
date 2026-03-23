@@ -358,6 +358,14 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         IsCompleted = step.IsCompleted,
                         Address = step.Address,
                         BitMask = step.BitMask,
+                        LocationOnMap = step.LocationOnMap,
+                        LocationOnMapCoordinates = step.LocationOnMapCoordinates == null ? null : new MapCoordinates { X = step.LocationOnMapCoordinates.X, Y = step.LocationOnMapCoordinates.Y },
+                        Locations = step.Locations?.Select(l => new StepLocation
+                        {
+                            LocationImage = l.LocationImage,
+                            Target = l.Target,
+                            LocationImageCoordinates = l.LocationImageCoordinates == null ? null : new MapCoordinates { X = l.LocationImageCoordinates.X, Y = l.LocationImageCoordinates.Y }
+                        }).ToList(),
                         Prerequisites = step.Prerequisites?.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone, ItemKey = p.ItemKey, ItemType = p.ItemType }).ToList()
                     }).ToList()
                 },
@@ -374,6 +382,14 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         IsCompleted = step.IsCompleted,
                         Address = step.Address,
                         BitMask = step.BitMask,
+                        LocationOnMap = step.LocationOnMap,
+                        LocationOnMapCoordinates = step.LocationOnMapCoordinates == null ? null : new MapCoordinates { X = step.LocationOnMapCoordinates.X, Y = step.LocationOnMapCoordinates.Y },
+                        Locations = step.Locations?.Select(l => new StepLocation
+                        {
+                            LocationImage = l.LocationImage,
+                            Target = l.Target,
+                            LocationImageCoordinates = l.LocationImageCoordinates == null ? null : new MapCoordinates { X = l.LocationImageCoordinates.X, Y = l.LocationImageCoordinates.Y }
+                        }).ToList(),
                         Prerequisites = step.Prerequisites?.Select(p => new Requisite { Description = p.Description, IsDone = p.IsDone, ItemKey = p.ItemKey, ItemType = p.ItemType }).ToList()
                     }).ToList()
                 }).ToList()

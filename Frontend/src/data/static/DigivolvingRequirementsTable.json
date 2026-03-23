@@ -32,7 +32,7 @@
                 "Value": 20
             }
         ],
-        "Ex-Veemon": [
+        "ExVeemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Greymon",
@@ -142,7 +142,7 @@
         "Paildramon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Ex-Veemon",
+                "Digievolution": "ExVeemon",
                 "Value": 5
             },
             {
@@ -413,7 +413,7 @@
                 "Value": 200
             }
         ],
-        "Ex-Veemon": [
+        "ExVeemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Kyubimon",
@@ -529,7 +529,7 @@
         "Paildramon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Ex-Veemon",
+                "Digievolution": "ExVeemon",
                 "Value": 5
             },
             {
@@ -809,7 +809,7 @@
                 "Value": 10
             }
         ],
-        "Ex-Veemon": [
+        "ExVeemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Hookmon",
@@ -930,7 +930,7 @@
         "Paildramon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Ex-Veemon",
+                "Digievolution": "ExVeemon",
                 "Value": 5
             },
             {
@@ -1201,7 +1201,7 @@
                 "Value": 5
             }
         ],
-        "Ex-Veemon": [
+        "ExVeemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGreymon",
@@ -1317,7 +1317,7 @@
         "Paildramon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Ex-Veemon",
+                "Digievolution": "ExVeemon",
                 "Value": 5
             },
             {
@@ -1588,7 +1588,7 @@
                 "Value": 200
             }
         ],
-        "Ex-Veemon": [
+        "ExVeemon": [
             {
                 "Type": "DigimonLevel",
                 "Value": 5
@@ -1645,7 +1645,7 @@
         "Stingmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Ex-Veemon",
+                "Digievolution": "ExVeemon",
                 "Value": 30
             }
         ],
@@ -1980,7 +1980,7 @@
                 "Value": 280
             }
         ],
-        "Ex-Veemon": [
+        "ExVeemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Gallantmon",
@@ -2101,7 +2101,7 @@
         "Paildramon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Ex-Veemon",
+                "Digievolution": "ExVeemon",
                 "Value": 5
             },
             {
@@ -2377,7 +2377,7 @@
                 "Value": 280
             }
         ],
-        "Ex-Veemon": [
+        "ExVeemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Taomon",
@@ -2493,7 +2493,7 @@
         "Paildramon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Ex-Veemon",
+                "Digievolution": "ExVeemon",
                 "Value": 5
             },
             {
@@ -2777,7 +2777,7 @@
                 "Value": 140
             }
         ],
-        "Ex-Veemon": [
+        "ExVeemon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "Growlmon",
@@ -2893,7 +2893,7 @@
         "Paildramon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Ex-Veemon",
+                "Digievolution": "ExVeemon",
                 "Value": 5
             },
             {

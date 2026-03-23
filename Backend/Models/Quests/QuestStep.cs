@@ -25,6 +25,11 @@ namespace Backend.Models.Quests
         /// </summary>
         public string? BitMask { get; set; }
 
+        public string? LocationOnMap { get; set; }
+        public MapCoordinates? LocationOnMapCoordinates { get; set; }
+
+        public List<StepLocation>? Locations { get; set; }
+
         public override bool Equals(object? obj)
         {
             if (obj is not QuestStep other) return false;
@@ -34,11 +39,22 @@ namespace Backend.Models.Quests
                                  Prerequisites.Count == other.Prerequisites.Count &&
                                  Prerequisites.SequenceEqual(other.Prerequisites));
 
+            bool locMapCoordEqual = (LocationOnMapCoordinates == null && other.LocationOnMapCoordinates == null) ||
+                                    (LocationOnMapCoordinates != null && LocationOnMapCoordinates.Equals(other.LocationOnMapCoordinates));
+
+            bool locationsEqual = (Locations == null && other.Locations == null) ||
+                                  (Locations != null && other.Locations != null &&
+                                   Locations.Count == other.Locations.Count &&
+                                   Locations.SequenceEqual(other.Locations));
+
             return Number == other.Number &&
                    Description == other.Description &&
                    IsCompleted == other.IsCompleted &&
                    Address == other.Address &&
                    BitMask == other.BitMask &&
+                   LocationOnMap == other.LocationOnMap &&
+                   locMapCoordEqual &&
+                   locationsEqual &&
                    prereqsEqual;
         }
 
@@ -50,6 +66,14 @@ namespace Backend.Models.Quests
             hash.Add(IsCompleted);
             hash.Add(Address);
             hash.Add(BitMask);
+            hash.Add(LocationOnMap);
+            if (LocationOnMapCoordinates != null) hash.Add(LocationOnMapCoordinates);
+            
+            if (Locations != null)
+            {
+                foreach (var loc in Locations) hash.Add(loc);
+            }
+            
             if (Prerequisites != null)
             {
                 foreach (var p in Prerequisites) hash.Add(p);

@@ -6,7 +6,30 @@
             "Number": 1,
             "Description": "Talk to Repeating Tom at Seiryu Tower, on Seiryu City",
             "Address": "0x0004B3B6",
-            "BitMask": "0x80"
+            "BitMask": "0x80",
+            "LocationOnMap": "Seiryu City",
+            "LocationOnMapCoordinates": {
+                "X": 80.0,
+                "Y": 40.0
+            },
+            "Locations": [
+                {
+                    "LocationImage": "Seiryu City",
+                    "Target": "Seiryu Tower",
+                    "LocationImageCoordinates": {
+                        "X": 60.0,
+                        "Y": 30.0
+                    }
+                },
+                {
+                    "LocationImage": "Seiryu Tower",
+                    "Target": "Repeating Tom",
+                    "LocationImageCoordinates": {
+                        "X": 20.0,
+                        "Y": 60.0
+                    }
+                }
+            ]
         },
         {
             "Number": 2,
