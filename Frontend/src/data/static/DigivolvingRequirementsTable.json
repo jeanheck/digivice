@@ -230,7 +230,7 @@
                 "Value": 99
             }
         ],
-        "Wargreymon": [
+        "WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGreymon",
@@ -334,7 +334,7 @@
         "Omnimon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 40
             },
             {
@@ -621,7 +621,7 @@
                 "Value": 40
             }
         ],
-        "Wargreymon": [
+        "WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGreymon",
@@ -725,7 +725,7 @@
         "Omnimon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 40
             },
             {
@@ -1018,7 +1018,7 @@
                 "Value": 99
             }
         ],
-        "Wargreymon": [
+        "WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGreymon",
@@ -1122,7 +1122,7 @@
         "Omnimon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 40
             },
             {
@@ -1172,7 +1172,7 @@
         "Dinohumon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 20
             }
         ],
@@ -1259,7 +1259,7 @@
         "Stingmon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 30
             },
             {
@@ -1361,7 +1361,7 @@
         "MetalMamemon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 10
             }
         ],
@@ -1400,7 +1400,7 @@
                 "Value": 99
             }
         ],
-        "Wargreymon": [
+        "WarGreymon": [
             {
                 "Type": "DigimonLevel",
                 "Value": 40
@@ -1498,7 +1498,7 @@
         "Omnimon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 40
             },
             {
@@ -1787,7 +1787,7 @@
                 "Value": 99
             }
         ],
-        "Wargreymon": [
+        "WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGreymon",
@@ -1895,7 +1895,7 @@
         "Omnimon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 40
             },
             {
@@ -2189,7 +2189,7 @@
                 "Value": 99
             }
         ],
-        "Wargreymon": [
+        "WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGreymon",
@@ -2292,7 +2292,7 @@
         "Omnimon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 40
             },
             {
@@ -2585,7 +2585,7 @@
                 "Value": 99
             }
         ],
-        "Wargreymon": [
+        "WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGreymon",
@@ -2692,7 +2692,7 @@
         "Omnimon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 40
             },
             {
@@ -2981,7 +2981,7 @@
                 "Value": 99
             }
         ],
-        "Wargreymon": [
+        "WarGreymon": [
             {
                 "Type": "DigievolutionLevel",
                 "Digievolution": "MetalGreymon",
@@ -3083,7 +3083,7 @@
         "Omnimon": [
             {
                 "Type": "DigievolutionLevel",
-                "Digievolution": "Wargreymon",
+                "Digievolution": "WarGreymon",
                 "Value": 40
             },
             {

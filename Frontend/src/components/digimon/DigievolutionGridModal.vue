@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref, watch, nextTick } from 'vue'
+import { ref, watch } from 'vue'
 import type { Digimon } from '../../types/backend'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
-import DigievolutionGridItem from './DigievolutionGridItem.vue'
+import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
 import DigievolutionDetailPanel from './DigievolutionDetailPanel.vue'
 import IconClose from '../icons/IconClose.vue'
 
@@ -15,15 +15,24 @@ const emit = defineEmits<{
   (e: 'close'): void
 }>()
 
-const evolutionsList = ref<{ name: string, requirements: EvolutionRequirement[] }[]>([])
+const allEvolutions = ref<{ name: string, requirements: EvolutionRequirement[] }[]>([])
 const selectedEvolution = ref<{ name: string, requirements: EvolutionRequirement[] } | null>(null)
 
 watch(() => props.isOpen, (isOpen) => {
   if (isOpen && props.digimon) {
-    evolutionsList.value = EvolutionGraph.getAllEvolutions(props.digimon.basicInfo.name)
+    allEvolutions.value = EvolutionGraph.getAllEvolutions(props.digimon.basicInfo.name)
     selectedEvolution.value = null
   }
 })
+
+const handleSelectNode = (name: string) => {
+  const evo = allEvolutions.value.find(e => e.name === name)
+  if (evo) {
+    selectedEvolution.value = evo
+  } else if (name === props.digimon.basicInfo.name) {
+    selectedEvolution.value = null
+  }
+}
 </script>
 
 <template>
@@ -34,17 +43,17 @@ watch(() => props.isOpen, (isOpen) => {
         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
         @click.self="emit('close')"
       >
-        <div class="relative w-full max-w-[90vw] lg:max-w-5xl max-h-[90vh] bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-slide-up">
+        <div class="relative w-[98vw] max-w-[1800px] h-[92vh] max-h-[1000px] bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-slide-up">
           
-          <!-- Cyberpunk Hexagon Pattern Background -->
+          <!-- Hexagon Pattern Background -->
           <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
                style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l25.98 15v30L30 60 4.02 45V15z\' stroke=\'%230077ff\' stroke-width=\'1\' fill=\'none\'/%3E%3C/svg%3E');">
           </div>
 
           <!-- Header -->
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-10 shrink-0">
-            <h2 class="text-white font-bold tracking-widest text-[#00aaff] drop-shadow flex items-center gap-2">
-              {{ digimon.basicInfo.name }} Digievolutions
+            <h2 class="text-[#00aaff] font-bold tracking-widest drop-shadow flex items-center gap-2">
+                {{ digimon.basicInfo.name }} Digievolutions
             </h2>
             <button 
               @click="emit('close')"
@@ -55,41 +64,41 @@ watch(() => props.isOpen, (isOpen) => {
           </header>
 
           <!-- Content Body -->
-          <div class="flex flex-col lg:flex-row min-h-[500px] w-full p-4 lg:p-6 gap-6 relative z-10 overflow-hidden">
-            <!-- Left List (Scrollable Grid) -->
-            <div class="flex-1 overflow-y-auto custom-scroll pr-2">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <DigievolutionGridItem 
-                  v-for="evo in evolutionsList" 
-                  :key="evo.name"
-                  :evolution="evo"
-                  :digimon="digimon"
-                  :is-selected="selectedEvolution?.name === evo.name"
-                  @select="selectedEvolution = evo"
-                />
-              </div>
-              <div v-if="evolutionsList.length === 0" class="text-white text-center mt-10 font-cyber">
-                NO DATA NODES DETECTED.
-              </div>
+          <div class="flex-1 flex overflow-hidden relative z-10">
+            
+            <!-- Left: Family Tree (75%) -->
+            <div class="w-[75%] h-full border-r border-[#0055ff]/30 relative">
+              <DigievolutionFamilyTree 
+                :rookie-name="digimon.basicInfo.name"
+                :digimon="digimon"
+                :selected-node-name="selectedEvolution?.name"
+                @select-node="handleSelectNode"
+              />
             </div>
             
-            <!-- Right Panel (Interactive Focus) -->
-            <div class="w-full lg:w-[450px] shrink-0 bg-[#0f1020]/90 border border-[#0055ff]/30 rounded-lg shadow-[0_0_15px_rgba(0,119,255,0.15)] overflow-y-auto custom-scroll p-1">
-              <DigievolutionDetailPanel 
-                v-if="selectedEvolution"
-                :evolution="selectedEvolution"
-                :digimon="digimon"
-                :all-evolutions="evolutionsList"
-                @select-evolution="name => selectedEvolution = evolutionsList.find(e => e.name === name) || selectedEvolution"
-              />
-              <div v-else class="flex flex-col items-center justify-center h-full text-cyan-200/50 font-cyber p-8 text-center gap-4">
-                <div class="w-16 h-16 border-2 border-dashed border-[#0055ff] rounded-full animate-[spin_10s_linear_infinite] opacity-50 relative flex items-center justify-center">
-                   <div class="w-2 h-2 bg-[#00aaff] rounded-full"></div>
-                </div>
-                Select a Data Node to inspect properties & requirements.
+            <!-- Right: Detail Panel (25%) -->
+            <div class="w-[25%] h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col">
+              <div v-if="selectedEvolution" class="flex-1 flex flex-col p-1">
+                <DigievolutionDetailPanel 
+                  :evolution="selectedEvolution"
+                  :digimon="digimon"
+                  :all-evolutions="allEvolutions"
+                  @select-evolution="handleSelectNode"
+                />
+              </div>
+              
+              <!-- Empty State -->
+              <div v-else class="flex-1 flex flex-col items-center justify-center p-12 text-center">
+                 <p class="text-[10px] text-blue-300/40 font-cyber leading-relaxed max-w-[200px]">
+                    SELECT A DIGIEVOLUTION NODE FOR MORE DETAILS.
+                 </p>
               </div>
             </div>
+
           </div>
+
+          <!-- Footer gradient bar -->
+          <div class="h-1.5 w-full bg-gradient-to-r from-blue-900 via-cyan-500 to-blue-900 shrink-0"></div>
 
         </div>
       </div>
@@ -98,8 +107,17 @@ watch(() => props.isOpen, (isOpen) => {
 </template>
 
 <style scoped>
-.custom-scroll::-webkit-scrollbar { width: 4px; }
-.custom-scroll::-webkit-scrollbar-track { background: transparent; }
-.custom-scroll::-webkit-scrollbar-thumb { background: #0055ff55; border-radius: 2px; }
-.custom-scroll::-webkit-scrollbar-thumb:hover { background: #0077ff88; }
+.custom-scroll::-webkit-scrollbar { width: 6px; }
+.custom-scroll::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.3); border-radius: 4px; }
+.custom-scroll::-webkit-scrollbar-thumb { background: #0044aa; border-radius: 4px; }
+.custom-scroll::-webkit-scrollbar-thumb:hover { background: #0077ff; }
+
+.fade-enter-active, .fade-leave-active { transition: opacity 0.3s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-up { animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 </style>
