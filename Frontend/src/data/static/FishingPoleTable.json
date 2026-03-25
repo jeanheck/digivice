@@ -11,7 +11,7 @@
     "Prerequisites": [
         {
             "Description": {
-                "PT-BR": "Possuir a Bolsa de Cards",
+                "PT-BR": "Possuir a Mochila de Cartas",
                 "EN-US": "Own the Folder Bag"
             }
         }
@@ -20,14 +20,14 @@
         {
             "Number": 1,
             "Description": {
-                "PT-BR": "Fale com Tai Kong Wong em Shell Beach",
+                "PT-BR": "Fale com Tai Kong Wong na Praia da Concha",
                 "EN-US": "Talk to Tai Kong Wong at the Shell Beach"
             }
         },
         {
             "Number": 2,
             "Description": {
-                "PT-BR": "Ajude o Divermon em Divermon's Lake",
+                "PT-BR": "Ajude o Divermon no Lago dos Divermons",
                 "EN-US": "Help the Divermon at Divermon's Lake"
             }
         },

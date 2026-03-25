@@ -17,22 +17,28 @@ const activeQuestId = ref<string | null>(null)
 const isQuestModalOpen = ref(false)
 
 const activeQuestForModal = computed(() => {
-  if (activeQuestId.value === null) return null;
+  const questId = activeQuestId.value;
+  if (!questId) return null;
+  
   const journal = store.gameState?.journal;
   if (!journal) return null;
   
-  // Check Main Quest by Id
-  if (journal.mainQuest && journal.mainQuest.Id === activeQuestId.value) {
+  // Normalized ID comparison helper
+  const getQuestId = (q: any) => q?.Id || q?.id || q?.QuestId;
+
+  // Check Main Quest
+  if (journal.mainQuest && getQuestId(journal.mainQuest) === questId) {
     return getLocalizedQuest(journal.mainQuest);
   }
   
-  // Check Side Quests by Id
-  const sideQuest = journal.sideQuests?.find(q => q.Id === activeQuestId.value);
+  // Check Side Quests
+  const sideQuest = journal.sideQuests?.find(q => getQuestId(q) === questId);
   return sideQuest ? getLocalizedQuest(sideQuest) : null;
 })
 
 const handleQuestClick = (quest: any) => {
-  activeQuestId.value = quest.Id
+  // Normalize ID upon selection
+  activeQuestId.value = quest.Id || quest.id || quest.QuestId || null
   isQuestModalOpen.value = true
 }
 

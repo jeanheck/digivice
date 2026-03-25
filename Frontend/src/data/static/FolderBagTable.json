@@ -1,11 +1,11 @@
 {
     "Id": "FolderBag",
     "Title": {
-        "PT-BR": "A Bolsa de Cards",
+        "PT-BR": "A Mochila de Cartas",
         "EN-US": "The Folder Bag"
     },
     "Description": {
-        "PT-BR": "Obtenha a bolsa para começar a armazenar e colecionar Cards de Digimon.",
+        "PT-BR": "Obtenha a Mochila para guardar e colecionar Cartas de Digimon.",
         "EN-US": "Obtain the bag to start storing and collecting Digimon Cards."
     },
     "Prerequisites": [],
@@ -13,7 +13,7 @@
         {
             "Number": 1,
             "Description": {
-                "PT-BR": "Fale com o Divermon no Yellow Cruiser em Asuka City",
+                "PT-BR": "Fale com o Divermon no Cruzeiro Amarelo na Cidade Asuka",
                 "EN-US": "Speak with Divermon in the Yellow Cruiser located in Asuka City"
             }
         }

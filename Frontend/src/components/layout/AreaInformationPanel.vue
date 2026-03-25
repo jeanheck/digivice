@@ -88,7 +88,7 @@ const closeEnemyDetails = () => {
             
             <!-- Text overlay -->
             <div class="relative z-10 px-3 py-2 bg-black/60 border border-[#00aaff]/40 rounded backdrop-blur-sm max-w-[90%] text-center">
-                <h4 class="text-sm font-bold text-white tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] truncate">
+                <h4 class="text-xs sm:text-sm font-bold text-white tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight">
                     {{ currentLocation }}
                 </h4>
             </div>

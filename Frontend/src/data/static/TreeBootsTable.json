@@ -11,7 +11,7 @@
     "Prerequisites": [
         {
             "Description": {
-                "PT-BR": "Possuir a Bolsa de Cards",
+                "PT-BR": "Possuir a Mochila de Cartas",
                 "EN-US": "Own the Folder Bag"
             }
         }
@@ -20,7 +20,7 @@
         {
             "Number": 1,
             "Description": {
-                "PT-BR": "Fale com o Soccer Kid Hide em Plug Cape",
+                "PT-BR": "Fale com o Futebolista Hide na Capa de Plug",
                 "EN-US": "Talk to the Soccer Kid Hide in Plug Cape"
             }
         },
@@ -34,14 +34,14 @@
         {
             "Number": 3,
             "Description": {
-                "PT-BR": "Entregue o card do Gabumon ao Soccer Kid Hide",
+                "PT-BR": "Devolva o card do Gabumon ao Futebolista Hide",
                 "EN-US": "Give the Gabumon's card to the Soccer Kid Hide"
             }
         },
         {
             "Number": 4,
             "Description": {
-                "PT-BR": "Fale com a Garçonete Debbie no Lamb Chop em Asuka City",
+                "PT-BR": "Fale com Debbie no Costeleta de Cordeiro na Cidade Asuka",
                 "EN-US": "Talk to Waitress Debbie in Lamb Chop in Asuka City"
             }
         },
