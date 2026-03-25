@@ -112,11 +112,11 @@ const derivatives = computed(() => {
             
             <img v-if="getAvatar(evolution.name)" 
                  :src="getAvatar(evolution.name)" 
-                 class="absolute inset-0 w-full h-full object-cover object-[center_15%] opacity-40 pointer-events-none drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] transition-opacity duration-500" 
+                 class="absolute inset-0 w-full h-full object-cover object-[center_15%] pointer-events-none drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] transition-opacity duration-500" 
                  alt="Avatar Overlay" />
 
             <!-- Pattern Overlay -->
-            <h2 class="absolute top-3 left-4 text-lg sm:text-xl font-bold font-cyber text-white tracking-widest drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] z-10">
+            <h2 class="absolute top-3 left-4 text-lg sm:text-xl font-bold font-cyber text-white tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10">
                 {{ getLocalized(evolution.name) }}
             </h2>
         </div>

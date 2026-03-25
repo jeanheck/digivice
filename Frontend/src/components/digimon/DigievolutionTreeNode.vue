@@ -63,7 +63,8 @@ const getAvatar = (name: string) => {
         <!-- Background Avatar -->
         <img v-if="getAvatar(node.name)" 
              :src="getAvatar(node.name)" 
-             class="absolute inset-0 w-full h-[150%] object-cover object-[center_15%] opacity-60 pointer-events-none saturate-100 group-hover:opacity-100 transition-all duration-500" />
+             class="absolute inset-0 w-full h-[150%] object-cover object-[center_15%] pointer-events-none saturate-100 transition-all duration-500"
+             :class="isUnlocked ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'" />
              
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-50 z-0 pointer-events-none"></div>
 
@@ -73,7 +74,7 @@ const getAvatar = (name: string) => {
               {{ node.name }}
             </span>
             <span v-if="!isUnlocked" class="text-[10px] opacity-70 grayscale">🔒</span>
-            <span v-else-if="isSelected" class="text-[10px] text-cyan-400 animate-pulse">●</span>
+            <span v-else class="text-[10px] opacity-90">🔓</span>
         </div>
 
         <!-- Bottom: Requirements (Compact) -->
