@@ -1,19 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { MainQuest, SideQuest } from '../../types/backend'
+import { computed, ref, watch } from 'vue'
+import { useLocalization } from '../../composables/useLocalization'
+import type { MainQuest, SideQuest, QuestStep as QuestStepType } from '../../types/backend'
 import IconClose from '../icons/IconClose.vue'
-
-export interface QuestStep {
-    number: number
-    description: string
-    isCompleted: boolean
-    prerequisites?: { description: string; isDone: boolean }[]
-}
+import asukaMapUrl from '../../assets/AsukaMap.webp'
 
 const props = defineProps<{
   quest: MainQuest | SideQuest | null
   isOpen: boolean
 }>()
+
+const { t, getLocalized } = useLocalization()
 
 const emit = defineEmits(['close'])
 
@@ -35,9 +32,6 @@ const hasPrerequisites = computed(() => {
   return props.quest?.prerequisites && props.quest.prerequisites.length > 0;
 })
 
-import { ref, watch } from 'vue'
-import type { QuestStep as QuestStepType } from '../../types/backend'
-
 // Geographic Integration
 const selectedStep = ref<QuestStepType | null>(null)
 const currentLocationIndex = ref(0)
@@ -57,8 +51,6 @@ watch(() => props.quest, () => {
   selectedStep.value = null
   currentLocationIndex.value = 0
 })
-
-import asukaMapUrl from '../../assets/AsukaMap.webp'
 
 const mapModules = import.meta.glob('../../assets/maps/*.webp', { eager: true })
 const getLocalMapUrl = (name?: string) => {
@@ -89,7 +81,7 @@ const getLocalMapUrl = (name?: string) => {
               <span v-if="isQuestDone" class="text-green-400 text-lg">✔</span>
               <span v-else-if="isQuestLocked" class="text-lg">🔒</span>
               <span v-else class="text-blue-400 text-lg">●</span>
-              {{ quest.title }}
+              {{ getLocalized(quest.title) }}
             </h2>
             <button 
               @click="closeModal"
@@ -108,14 +100,14 @@ const getLocalMapUrl = (name?: string) => {
               <!-- Description Box -->
             <div class="bg-[#000a1a] p-3 rounded border border-blue-900/50 shadow-inner">
               <p class="text-gray-300 text-sm leading-relaxed font-medium">
-                {{ quest.description }}
+                {{ getLocalized(quest.description) }}
               </p>
             </div>
 
             <!-- Prerequisites Section -->
             <div v-if="hasPrerequisites" class="flex flex-col gap-2">
               <h3 class="text-xs text-amber-500 font-bold uppercase tracking-wider mb-1 border-b border-amber-900/40 pb-1">
-                Prerequisites
+                {{ $t('questDetails.prerequisites') }}
               </h3>
               <div
                 v-for="(prereq, idx) in quest.prerequisites"
@@ -130,7 +122,7 @@ const getLocalMapUrl = (name?: string) => {
                 </div>
                 <p class="text-sm flex-1 leading-snug transition-colors"
                    :class="prereq.isDone ? 'text-gray-400 line-through decoration-green-900' : 'text-red-300'">
-                  {{ prereq.description }}
+                  {{ getLocalized(prereq.description) }}
                 </p>
               </div>
             </div>
@@ -138,7 +130,7 @@ const getLocalMapUrl = (name?: string) => {
             <!-- Steps Progress -->
             <div class="flex flex-col gap-2">
               <h3 class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 border-b border-blue-900/40 pb-1">
-                Mission Steps
+                {{ $t('questDetails.missionSteps') }}
               </h3>
               
               <div 
@@ -161,7 +153,7 @@ const getLocalMapUrl = (name?: string) => {
                 <div class="flex-1">
                   <p class="text-sm leading-snug transition-colors"
                      :class="step.isCompleted ? 'text-gray-400 line-through decoration-green-900' : 'text-gray-200'">
-                    {{ step.description }}
+                    {{ getLocalized(step.description) }}
                   </p>
                   <!-- Step Prerequisites (items checklist) -->
                   <div v-if="step.prerequisites && step.prerequisites.length > 0" class="mt-1.5 ml-1 flex flex-col gap-1">
@@ -171,14 +163,14 @@ const getLocalMapUrl = (name?: string) => {
                       class="flex items-center gap-2 text-xs"
                     >
                       <span :class="prereq.isDone ? 'text-green-400' : 'text-gray-500'">{{ prereq.isDone ? '✔' : '○' }}</span>
-                      <span :class="prereq.isDone ? 'text-gray-400 line-through' : 'text-gray-400'">{{ prereq.description }}</span>
+                      <span :class="prereq.isDone ? 'text-gray-400 line-through' : 'text-gray-400'">{{ getLocalized(prereq.description) }}</span>
                     </div>
                   </div>
                 </div>
               </div>
               
               <div v-if="!quest.steps || quest.steps.length === 0" class="text-center p-3 opacity-50">
-                 <span class="text-gray-500 text-sm italic">No specific steps tracked.</span>
+                 <span class="text-gray-500 text-sm italic">{{ $t('questDetails.noSteps') }}</span>
               </div>
             </div>
             </div>
@@ -187,11 +179,11 @@ const getLocalMapUrl = (name?: string) => {
             <div class="w-full lg:w-[450px] shrink-0 flex flex-col gap-4 lg:border-l lg:border-[#0055ff]/30 lg:pl-6 overflow-y-auto custom-scroll">
               
               <div v-if="!selectedStep" class="flex-1 flex flex-col items-center justify-center border border-cyan-900/40 bg-[#000a1a] rounded min-h-[400px]">
-                  <span class="text-cyan-500/50 font-cyber text-sm tracking-widest text-center px-8 animate-pulse">CLICK A MISSION STEP<br/>TO BOOT GEOGRAPHIC DATA</span>
+                  <span class="text-cyan-500/50 font-cyber text-sm tracking-widest text-center px-8 animate-pulse" v-html="$t('questDetails.clickStep').replace('\n', '<br/>')"></span>
               </div>
               
               <div v-else-if="!selectedStep.locationOnMap && (!selectedStep.locations || selectedStep.locations.length === 0)" class="flex-1 flex flex-col items-center justify-center border border-red-900/40 bg-[#1a0000] rounded min-h-[400px]">
-                  <span class="text-red-500/50 font-cyber text-sm tracking-widest text-center px-8">NO SIGNAL DETECTED.<br/>TARGET COORDS UNKNOWN.</span>
+                  <span class="text-red-500/50 font-cyber text-sm tracking-widest text-center px-8" v-html="$t('questDetails.noSignal').replace('\n', '<br/>')"></span>
               </div>
 
               <template v-else>

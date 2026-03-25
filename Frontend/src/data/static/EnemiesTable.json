@@ -1,10 +1,7 @@
 [
     {
         "Id": 1,
-        "Name": {
-            "PT-BR": "Pharaohmon",
-            "EN-US": "Pharaohmon"
-        },
+        "Name": "Pharaohmon",
         "Level": 12,
         "HP": 816,
         "MP": 9999,
@@ -52,10 +49,7 @@
     },
     {
         "Id": 2,
-        "Name": {
-            "PT-BR": "Master Tyrannomon",
-            "EN-US": "Master Tyrannomon"
-        },
+        "Name": "Master Tyrannomon",
         "Level": 14,
         "HP": 912,
         "MP": 9999,
@@ -92,10 +86,7 @@
     },
     {
         "Id": 14,
-        "Name": {
-            "PT-BR": "HiAndromon",
-            "EN-US": "HiAndromon"
-        },
+        "Name": "HiAndromon",
         "Level": 32,
         "HP": 1776,
         "MP": 280,
@@ -143,10 +134,7 @@
     },
     {
         "Id": 15,
-        "Name": {
-            "PT-BR": "WaruMonzaemon",
-            "EN-US": "WaruMonzaemon"
-        },
+        "Name": "WaruMonzaemon",
         "Level": 32,
         "HP": 1776,
         "MP": 9999,
@@ -183,10 +171,7 @@
     },
     {
         "Id": 71,
-        "Name": {
-            "PT-BR": "Kunemon",
-            "EN-US": "Kunemon"
-        },
+        "Name": "Kunemon",
         "Level": 1,
         "HP": 120,
         "MP": 9999,
@@ -248,10 +233,7 @@
     },
     {
         "Id": 72,
-        "Name": {
-            "PT-BR": "Tapirmon",
-            "EN-US": "Tapirmon"
-        },
+        "Name": "Tapirmon",
         "Level": 1,
         "HP": 120,
         "MP": 9999,
@@ -305,10 +287,7 @@
     },
     {
         "Id": 73,
-        "Name": {
-            "PT-BR": "Crabmon",
-            "EN-US": "Crabmon"
-        },
+        "Name": "Crabmon",
         "Level": 3,
         "HP": 168,
         "MP": 9999,
@@ -358,10 +337,7 @@
     },
     {
         "Id": 74,
-        "Name": {
-            "PT-BR": "Gizamon",
-            "EN-US": "Gizamon"
-        },
+        "Name": "Gizamon",
         "Level": 4,
         "HP": 192,
         "MP": 9999,
@@ -415,10 +391,7 @@
     },
     {
         "Id": 75,
-        "Name": {
-            "PT-BR": "DemiDevimon",
-            "EN-US": "DemiDevimon"
-        },
+        "Name": "DemiDevimon",
         "Level": 8,
         "HP": 312,
         "MP": 9999,
@@ -466,10 +439,7 @@
     },
     {
         "Id": 76,
-        "Name": {
-            "PT-BR": "Betamon",
-            "EN-US": "Betamon"
-        },
+        "Name": "Betamon",
         "Level": 2,
         "HP": 144,
         "MP": 9999,
@@ -535,10 +505,7 @@
     },
     {
         "Id": 77,
-        "Name": {
-            "PT-BR": "Vegiemon",
-            "EN-US": "Vegiemon"
-        },
+        "Name": "Vegiemon",
         "Level": 4,
         "HP": 192,
         "MP": 9999,
@@ -596,10 +563,7 @@
     },
     {
         "Id": 78,
-        "Name": {
-            "PT-BR": "Kuwagamon",
-            "EN-US": "Kuwagamon"
-        },
+        "Name": "Kuwagamon",
         "Level": 2,
         "HP": 144,
         "MP": 9999,
@@ -653,10 +617,7 @@
     },
     {
         "Id": 79,
-        "Name": {
-            "PT-BR": "Yanmamon",
-            "EN-US": "Yanmamon"
-        },
+        "Name": "Yanmamon",
         "Level": 3,
         "HP": 168,
         "MP": 9999,
@@ -706,10 +667,7 @@
     },
     {
         "Id": 80,
-        "Name": {
-            "PT-BR": "Kiwimon",
-            "EN-US": "Kiwimon"
-        },
+        "Name": "Kiwimon",
         "Level": 3,
         "HP": 168,
         "MP": 9999,
@@ -759,10 +717,7 @@
     },
     {
         "Id": 81,
-        "Name": {
-            "PT-BR": "Dokugumon",
-            "EN-US": "Dokugumon"
-        },
+        "Name": "Dokugumon",
         "Level": 4,
         "HP": 192,
         "MP": 9999,
@@ -812,10 +767,7 @@
     },
     {
         "Id": 82,
-        "Name": {
-            "PT-BR": "Goburimon",
-            "EN-US": "Goburimon"
-        },
+        "Name": "Goburimon",
         "Level": 4,
         "HP": 192,
         "MP": 9999,
@@ -873,10 +825,7 @@
     },
     {
         "Id": 83,
-        "Name": {
-            "PT-BR": "Baronmon",
-            "EN-US": "Baronmon"
-        },
+        "Name": "Baronmon",
         "Level": 16,
         "HP": 504,
         "MP": 9999,
@@ -924,10 +873,7 @@
     },
     {
         "Id": 84,
-        "Name": {
-            "PT-BR": "Minotarumon",
-            "EN-US": "Minotarumon"
-        },
+        "Name": "Minotarumon",
         "Level": 5,
         "HP": 240,
         "MP": 9999,
@@ -977,10 +923,7 @@
     },
     {
         "Id": 85,
-        "Name": {
-            "PT-BR": "Flymon",
-            "EN-US": "Flymon"
-        },
+        "Name": "Flymon",
         "Level": 13,
         "HP": 432,
         "MP": 9999,
@@ -1034,10 +977,7 @@
     },
     {
         "Id": 86,
-        "Name": {
-            "PT-BR": "Woodmon",
-            "EN-US": "Woodmon"
-        },
+        "Name": "Woodmon",
         "Level": 5,
         "HP": 240,
         "MP": 9999,
@@ -1095,10 +1035,7 @@
     },
     {
         "Id": 87,
-        "Name": {
-            "PT-BR": "Tyrannomon",
-            "EN-US": "Tyrannomon"
-        },
+        "Name": "Tyrannomon",
         "Level": 6,
         "HP": 264,
         "MP": 9999,
@@ -1148,10 +1085,7 @@
     },
     {
         "Id": 88,
-        "Name": {
-            "PT-BR": "Triceramon",
-            "EN-US": "Triceramon"
-        },
+        "Name": "Triceramon",
         "Level": 6,
         "HP": 396,
         "MP": 9999,
@@ -1205,10 +1139,7 @@
     },
     {
         "Id": 89,
-        "Name": {
-            "PT-BR": "Airdramon",
-            "EN-US": "Airdramon"
-        },
+        "Name": "Airdramon",
         "Level": 6,
         "HP": 264,
         "MP": 9999,
@@ -1258,10 +1189,7 @@
     },
     {
         "Id": 90,
-        "Name": {
-            "PT-BR": "Gekomon",
-            "EN-US": "Gekomon"
-        },
+        "Name": "Gekomon",
         "Level": 8,
         "HP": 312,
         "MP": 9999,
@@ -1309,10 +1237,7 @@
     },
     {
         "Id": 91,
-        "Name": {
-            "PT-BR": "Coelamon",
-            "EN-US": "Coelamon"
-        },
+        "Name": "Coelamon",
         "Level": 8,
         "HP": 312,
         "MP": 9999,
@@ -1382,10 +1307,7 @@
     },
     {
         "Id": 92,
-        "Name": {
-            "PT-BR": "Bakemon",
-            "EN-US": "Bakemon"
-        },
+        "Name": "Bakemon",
         "Level": 9,
         "HP": 336,
         "MP": 9999,
@@ -1433,10 +1355,7 @@
     },
     {
         "Id": 93,
-        "Name": {
-            "PT-BR": "Phantomon",
-            "EN-US": "Phantomon"
-        },
+        "Name": "Phantomon",
         "Level": 31,
         "HP": 864,
         "MP": 9999,
@@ -1484,10 +1403,7 @@
     },
     {
         "Id": 94,
-        "Name": {
-            "PT-BR": "Kokatorimon",
-            "EN-US": "Kokatorimon"
-        },
+        "Name": "Kokatorimon",
         "Level": 13,
         "HP": 432,
         "MP": 9999,
@@ -1541,10 +1457,7 @@
     },
     {
         "Id": 95,
-        "Name": {
-            "PT-BR": "Apemon",
-            "EN-US": "Apemon"
-        },
+        "Name": "Apemon",
         "Level": 10,
         "HP": 360,
         "MP": 9999,
@@ -1592,10 +1505,7 @@
     },
     {
         "Id": 96,
-        "Name": {
-            "PT-BR": "Shellmon",
-            "EN-US": "Shellmon"
-        },
+        "Name": "Shellmon",
         "Level": 18,
         "HP": 552,
         "MP": 9999,
@@ -1643,10 +1553,7 @@
     },
     {
         "Id": 97,
-        "Name": {
-            "PT-BR": "Tortomon",
-            "EN-US": "Tortomon"
-        },
+        "Name": "Tortomon",
         "Level": 29,
         "HP": 816,
         "MP": 9999,
@@ -1694,10 +1601,7 @@
     },
     {
         "Id": 98,
-        "Name": {
-            "PT-BR": "Dolphmon",
-            "EN-US": "Dolphmon"
-        },
+        "Name": "Dolphmon",
         "Level": 20,
         "HP": 600,
         "MP": 120,
@@ -1745,10 +1649,7 @@
     },
     {
         "Id": 99,
-        "Name": {
-            "PT-BR": "Gesomon",
-            "EN-US": "Gesomon"
-        },
+        "Name": "Gesomon",
         "Level": 27,
         "HP": 768,
         "MP": 9999,
@@ -1796,10 +1697,7 @@
     },
     {
         "Id": 100,
-        "Name": {
-            "PT-BR": "Octomon",
-            "EN-US": "Octomon"
-        },
+        "Name": "Octomon",
         "Level": 40,
         "HP": 1080,
         "MP": 9999,
@@ -1847,10 +1745,7 @@
     },
     {
         "Id": 101,
-        "Name": {
-            "PT-BR": "Divermon",
-            "EN-US": "Divermon"
-        },
+        "Name": "Divermon",
         "Level": 24,
         "HP": 696,
         "MP": 9999,
@@ -1898,10 +1793,7 @@
     },
     {
         "Id": 102,
-        "Name": {
-            "PT-BR": "ShogunGekomon",
-            "EN-US": "ShogunGekomon"
-        },
+        "Name": "ShogunGekomon",
         "Level": 20,
         "HP": 600,
         "MP": 200,
@@ -1949,10 +1841,7 @@
     },
     {
         "Id": 103,
-        "Name": {
-            "PT-BR": "Seadramon",
-            "EN-US": "Seadramon"
-        },
+        "Name": "Seadramon",
         "Level": 12,
         "HP": 408,
         "MP": 9999,
@@ -2000,10 +1889,7 @@
     },
     {
         "Id": 104,
-        "Name": {
-            "PT-BR": "Mammothmon",
-            "EN-US": "Mammothmon"
-        },
+        "Name": "Mammothmon",
         "Level": 23,
         "HP": 672,
         "MP": 9999,
@@ -2051,10 +1937,7 @@
     },
     {
         "Id": 105,
-        "Name": {
-            "PT-BR": "Etemon",
-            "EN-US": "Etemon"
-        },
+        "Name": "Etemon",
         "Level": 20,
         "HP": 600,
         "MP": 64,
@@ -2102,10 +1985,7 @@
     },
     {
         "Id": 106,
-        "Name": {
-            "PT-BR": "Ogremon",
-            "EN-US": "Ogremon"
-        },
+        "Name": "Ogremon",
         "Level": 20,
         "HP": 600,
         "MP": 9999,
@@ -2153,10 +2033,7 @@
     },
     {
         "Id": 107,
-        "Name": {
-            "PT-BR": "Tuskmon",
-            "EN-US": "Tuskmon"
-        },
+        "Name": "Tuskmon",
         "Level": 22,
         "HP": 972,
         "MP": 9999,
@@ -2204,10 +2081,7 @@
     },
     {
         "Id": 108,
-        "Name": {
-            "PT-BR": "Rockmon",
-            "EN-US": "Rockmon"
-        },
+        "Name": "Rockmon",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -2255,10 +2129,7 @@
     },
     {
         "Id": 109,
-        "Name": {
-            "PT-BR": "Quetzalmon",
-            "EN-US": "Quetzalmon"
-        },
+        "Name": "Quetzalmon",
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -2306,10 +2177,7 @@
     },
     {
         "Id": 110,
-        "Name": {
-            "PT-BR": "Vademon",
-            "EN-US": "Vademon"
-        },
+        "Name": "Vademon",
         "Level": 22,
         "HP": 648,
         "MP": 9999,
@@ -2357,10 +2225,7 @@
     },
     {
         "Id": 111,
-        "Name": {
-            "PT-BR": "Maildramon",
-            "EN-US": "Maildramon"
-        },
+        "Name": "Maildramon",
         "Level": 22,
         "HP": 648,
         "MP": 9999,
@@ -2408,10 +2273,7 @@
     },
     {
         "Id": 112,
-        "Name": {
-            "PT-BR": "Mamemon",
-            "EN-US": "Mamemon"
-        },
+        "Name": "Mamemon",
         "Level": 25,
         "HP": 480,
         "MP": 9999,
@@ -2459,10 +2321,7 @@
     },
     {
         "Id": 113,
-        "Name": {
-            "PT-BR": "Guardromon (blue)",
-            "EN-US": "Guardromon (blue)"
-        },
+        "Name": "Guardromon (blue)",
         "Level": 29,
         "HP": 816,
         "MP": 9999,
@@ -2499,10 +2358,7 @@
     },
     {
         "Id": 114,
-        "Name": {
-            "PT-BR": "Thundermon",
-            "EN-US": "Thundermon"
-        },
+        "Name": "Thundermon",
         "Level": 23,
         "HP": 672,
         "MP": 150,
@@ -2550,10 +2406,7 @@
     },
     {
         "Id": 115,
-        "Name": {
-            "PT-BR": "Hagurumon",
-            "EN-US": "Hagurumon"
-        },
+        "Name": "Hagurumon",
         "Level": 23,
         "HP": 672,
         "MP": 336,
@@ -2601,10 +2454,7 @@
     },
     {
         "Id": 116,
-        "Name": {
-            "PT-BR": "Clockmon",
-            "EN-US": "Clockmon"
-        },
+        "Name": "Clockmon",
         "Level": 24,
         "HP": 696,
         "MP": 9999,
@@ -2652,10 +2502,7 @@
     },
     {
         "Id": 117,
-        "Name": {
-            "PT-BR": "Andromon",
-            "EN-US": "Andromon"
-        },
+        "Name": "Andromon",
         "Level": 24,
         "HP": 696,
         "MP": 9999,
@@ -2703,10 +2550,7 @@
     },
     {
         "Id": 118,
-        "Name": {
-            "PT-BR": "Numemon",
-            "EN-US": "Numemon"
-        },
+        "Name": "Numemon",
         "Level": 25,
         "HP": 720,
         "MP": 9999,
@@ -2754,10 +2598,7 @@
     },
     {
         "Id": 119,
-        "Name": {
-            "PT-BR": "Sukamon",
-            "EN-US": "Sukamon"
-        },
+        "Name": "Sukamon",
         "Level": 26,
         "HP": 744,
         "MP": 9999,
@@ -2805,10 +2646,7 @@
     },
     {
         "Id": 120,
-        "Name": {
-            "PT-BR": "Garbagemon",
-            "EN-US": "Garbagemon"
-        },
+        "Name": "Garbagemon",
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -2856,10 +2694,7 @@
     },
     {
         "Id": 121,
-        "Name": {
-            "PT-BR": "Roachmon",
-            "EN-US": "Roachmon"
-        },
+        "Name": "Roachmon",
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -2907,10 +2742,7 @@
     },
     {
         "Id": 122,
-        "Name": {
-            "PT-BR": "Raremon",
-            "EN-US": "Raremon"
-        },
+        "Name": "Raremon",
         "Level": 27,
         "HP": 768,
         "MP": 270,
@@ -2958,10 +2790,7 @@
     },
     {
         "Id": 123,
-        "Name": {
-            "PT-BR": "Cyclonemon",
-            "EN-US": "Cyclonemon"
-        },
+        "Name": "Cyclonemon",
         "Level": 27,
         "HP": 768,
         "MP": 9999,
@@ -3009,10 +2838,7 @@
     },
     {
         "Id": 124,
-        "Name": {
-            "PT-BR": "Megadramon",
-            "EN-US": "Megadramon"
-        },
+        "Name": "Megadramon",
         "Level": 46,
         "HP": 1224,
         "MP": 9999,
@@ -3060,10 +2886,7 @@
     },
     {
         "Id": 125,
-        "Name": {
-            "PT-BR": "Monzaemon",
-            "EN-US": "Monzaemon"
-        },
+        "Name": "Monzaemon",
         "Level": 29,
         "HP": 816,
         "MP": 9999,
@@ -3111,10 +2934,7 @@
     },
     {
         "Id": 126,
-        "Name": {
-            "PT-BR": "Tankmon",
-            "EN-US": "Tankmon"
-        },
+        "Name": "Tankmon",
         "Level": 30,
         "HP": 840,
         "MP": 9999,
@@ -3162,10 +2982,7 @@
     },
     {
         "Id": 127,
-        "Name": {
-            "PT-BR": "Nanimon",
-            "EN-US": "Nanimon"
-        },
+        "Name": "Nanimon",
         "Level": 29,
         "HP": 816,
         "MP": 9999,
@@ -3213,10 +3030,7 @@
     },
     {
         "Id": 128,
-        "Name": {
-            "PT-BR": "Musyamon",
-            "EN-US": "Musyamon"
-        },
+        "Name": "Musyamon",
         "Level": 31,
         "HP": 864,
         "MP": 9999,
@@ -3264,10 +3078,7 @@
     },
     {
         "Id": 129,
-        "Name": {
-            "PT-BR": "Kurisarimon",
-            "EN-US": "Kurisarimon"
-        },
+        "Name": "Kurisarimon",
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -3315,10 +3126,7 @@
     },
     {
         "Id": 130,
-        "Name": {
-            "PT-BR": "Snimon",
-            "EN-US": "Snimon"
-        },
+        "Name": "Snimon",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -3376,10 +3184,7 @@
     },
     {
         "Id": 131,
-        "Name": {
-            "PT-BR": "Blossomon",
-            "EN-US": "Blossomon"
-        },
+        "Name": "Blossomon",
         "Level": 34,
         "HP": 936,
         "MP": 9999,
@@ -3427,10 +3232,7 @@
     },
     {
         "Id": 132,
-        "Name": {
-            "PT-BR": "Cherrymon",
-            "EN-US": "Cherrymon"
-        },
+        "Name": "Cherrymon",
         "Level": 38,
         "HP": 1032,
         "MP": 9999,
@@ -3478,10 +3280,7 @@
     },
     {
         "Id": 133,
-        "Name": {
-            "PT-BR": "Gargoylemon",
-            "EN-US": "Gargoylemon"
-        },
+        "Name": "Gargoylemon",
         "Level": 35,
         "HP": 960,
         "MP": 9999,
@@ -3529,10 +3328,7 @@
     },
     {
         "Id": 134,
-        "Name": {
-            "PT-BR": "Mummymon",
-            "EN-US": "Mummymon"
-        },
+        "Name": "Mummymon",
         "Level": 35,
         "HP": 960,
         "MP": 9999,
@@ -3580,10 +3376,7 @@
     },
     {
         "Id": 135,
-        "Name": {
-            "PT-BR": "Arukenimon",
-            "EN-US": "Arukenimon"
-        },
+        "Name": "Arukenimon",
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -3631,10 +3424,7 @@
     },
     {
         "Id": 136,
-        "Name": {
-            "PT-BR": "Okuwamon",
-            "EN-US": "Okuwamon"
-        },
+        "Name": "Okuwamon",
         "Level": 34,
         "HP": 936,
         "MP": 9999,
@@ -3682,10 +3472,7 @@
     },
     {
         "Id": 137,
-        "Name": {
-            "PT-BR": "MetalTyrannomon",
-            "EN-US": "MetalTyrannomon"
-        },
+        "Name": "MetalTyrannomon",
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -3733,10 +3520,7 @@
     },
     {
         "Id": 138,
-        "Name": {
-            "PT-BR": "Deltamon",
-            "EN-US": "Deltamon"
-        },
+        "Name": "Deltamon",
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -3784,10 +3568,7 @@
     },
     {
         "Id": 139,
-        "Name": {
-            "PT-BR": "Whamon",
-            "EN-US": "Whamon"
-        },
+        "Name": "Whamon",
         "Level": 45,
         "HP": 1800,
         "MP": 9999,
@@ -3835,10 +3616,7 @@
     },
     {
         "Id": 140,
-        "Name": {
-            "PT-BR": "MarineDevimon",
-            "EN-US": "MarineDevimon"
-        },
+        "Name": "MarineDevimon",
         "Level": 37,
         "HP": 1008,
         "MP": 9999,
@@ -3886,10 +3664,7 @@
     },
     {
         "Id": 141,
-        "Name": {
-            "PT-BR": "Dragomon",
-            "EN-US": "Dragomon"
-        },
+        "Name": "Dragomon",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -3937,10 +3712,7 @@
     },
     {
         "Id": 142,
-        "Name": {
-            "PT-BR": "MegaSeadramon",
-            "EN-US": "MegaSeadramon"
-        },
+        "Name": "MegaSeadramon",
         "Level": 35,
         "HP": 960,
         "MP": 9999,
@@ -3988,10 +3760,7 @@
     },
     {
         "Id": 143,
-        "Name": {
-            "PT-BR": "Ebidramon",
-            "EN-US": "Ebidramon"
-        },
+        "Name": "Ebidramon",
         "Level": 34,
         "HP": 936,
         "MP": 9999,
@@ -4039,10 +3808,7 @@
     },
     {
         "Id": 144,
-        "Name": {
-            "PT-BR": "Vilemon",
-            "EN-US": "Vilemon"
-        },
+        "Name": "Vilemon",
         "Level": 36,
         "HP": 984,
         "MP": 96,
@@ -4090,10 +3856,7 @@
     },
     {
         "Id": 145,
-        "Name": {
-            "PT-BR": "SkullSatamon",
-            "EN-US": "SkullSatamon"
-        },
+        "Name": "SkullSatamon",
         "Level": 39,
         "HP": 1056,
         "MP": 9999,
@@ -4141,10 +3904,7 @@
     },
     {
         "Id": 146,
-        "Name": {
-            "PT-BR": "Brachiomon",
-            "EN-US": "Brachiomon"
-        },
+        "Name": "Brachiomon",
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -4192,10 +3952,7 @@
     },
     {
         "Id": 147,
-        "Name": {
-            "PT-BR": "Drimogemon",
-            "EN-US": "Drimogemon"
-        },
+        "Name": "Drimogemon",
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -4243,10 +4000,7 @@
     },
     {
         "Id": 148,
-        "Name": {
-            "PT-BR": "Flarerizamon",
-            "EN-US": "Flarerizamon"
-        },
+        "Name": "Flarerizamon",
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -4294,10 +4048,7 @@
     },
     {
         "Id": 149,
-        "Name": {
-            "PT-BR": "Meramon",
-            "EN-US": "Meramon"
-        },
+        "Name": "Meramon",
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -4345,10 +4096,7 @@
     },
     {
         "Id": 150,
-        "Name": {
-            "PT-BR": "Mojyamon",
-            "EN-US": "Mojyamon"
-        },
+        "Name": "Mojyamon",
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -4396,10 +4144,7 @@
     },
     {
         "Id": 151,
-        "Name": {
-            "PT-BR": "Frigimon",
-            "EN-US": "Frigimon"
-        },
+        "Name": "Frigimon",
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -4447,10 +4192,7 @@
     },
     {
         "Id": 152,
-        "Name": {
-            "PT-BR": "Icemon",
-            "EN-US": "Icemon"
-        },
+        "Name": "Icemon",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -4498,10 +4240,7 @@
     },
     {
         "Id": 153,
-        "Name": {
-            "PT-BR": "Giromon",
-            "EN-US": "Giromon"
-        },
+        "Name": "Giromon",
         "Level": 46,
         "HP": 1224,
         "MP": 9999,
@@ -4549,10 +4288,7 @@
     },
     {
         "Id": 154,
-        "Name": {
-            "PT-BR": "Vikemon",
-            "EN-US": "Vikemon"
-        },
+        "Name": "Vikemon",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -4600,10 +4336,7 @@
     },
     {
         "Id": 155,
-        "Name": {
-            "PT-BR": "Lynxmon",
-            "EN-US": "Lynxmon"
-        },
+        "Name": "Lynxmon",
         "Level": 49,
         "HP": 1296,
         "MP": 9999,
@@ -4651,10 +4384,7 @@
     },
     {
         "Id": 156,
-        "Name": {
-            "PT-BR": "SkullMeramon",
-            "EN-US": "SkullMeramon"
-        },
+        "Name": "SkullMeramon",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -4702,10 +4432,7 @@
     },
     {
         "Id": 157,
-        "Name": {
-            "PT-BR": "Devidramon",
-            "EN-US": "Devidramon"
-        },
+        "Name": "Devidramon",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -4753,10 +4480,7 @@
     },
     {
         "Id": 158,
-        "Name": {
-            "PT-BR": "Chimeramon",
-            "EN-US": "Chimeramon"
-        },
+        "Name": "Chimeramon",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -4793,10 +4517,7 @@
     },
     {
         "Id": 159,
-        "Name": {
-            "PT-BR": "Pukumon",
-            "EN-US": "Pukumon"
-        },
+        "Name": "Pukumon",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -4844,10 +4565,7 @@
     },
     {
         "Id": 160,
-        "Name": {
-            "PT-BR": "MetalSeadramon",
-            "EN-US": "MetalSeadramon"
-        },
+        "Name": "MetalSeadramon",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -4895,10 +4613,7 @@
     },
     {
         "Id": 161,
-        "Name": {
-            "PT-BR": "Tylomon",
-            "EN-US": "Tylomon"
-        },
+        "Name": "Tylomon",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -4946,10 +4661,7 @@
     },
     {
         "Id": 162,
-        "Name": {
-            "PT-BR": "Scorpiomon",
-            "EN-US": "Scorpiomon"
-        },
+        "Name": "Scorpiomon",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -4997,10 +4709,7 @@
     },
     {
         "Id": 163,
-        "Name": {
-            "PT-BR": "Antylamon",
-            "EN-US": "Antylamon"
-        },
+        "Name": "Antylamon",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -5054,10 +4763,7 @@
     },
     {
         "Id": 164,
-        "Name": {
-            "PT-BR": "H-Kabuterimon",
-            "EN-US": "H-Kabuterimon"
-        },
+        "Name": "H-Kabuterimon",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -5111,10 +4817,7 @@
     },
     {
         "Id": 165,
-        "Name": {
-            "PT-BR": "Puppetmon",
-            "EN-US": "Puppetmon"
-        },
+        "Name": "Puppetmon",
         "Level": 54,
         "HP": 1416,
         "MP": 9999,
@@ -5162,10 +4865,7 @@
     },
     {
         "Id": 166,
-        "Name": {
-            "PT-BR": "SkullMammothmon",
-            "EN-US": "SkullMammothmon"
-        },
+        "Name": "SkullMammothmon",
         "Level": 49,
         "HP": 1296,
         "MP": 9999,
@@ -5213,10 +4913,7 @@
     },
     {
         "Id": 167,
-        "Name": {
-            "PT-BR": "Valkyriemon",
-            "EN-US": "Valkyriemon"
-        },
+        "Name": "Valkyriemon",
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -5253,10 +4950,7 @@
     },
     {
         "Id": 168,
-        "Name": {
-            "PT-BR": "LadyDevimon",
-            "EN-US": "LadyDevimon"
-        },
+        "Name": "LadyDevimon",
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -5304,10 +4998,7 @@
     },
     {
         "Id": 169,
-        "Name": {
-            "PT-BR": "MetalEtemon",
-            "EN-US": "MetalEtemon"
-        },
+        "Name": "MetalEtemon",
         "Level": 44,
         "HP": 1176,
         "MP": 296,
@@ -5355,10 +5046,7 @@
     },
     {
         "Id": 170,
-        "Name": {
-            "PT-BR": "KingEtemon",
-            "EN-US": "KingEtemon"
-        },
+        "Name": "KingEtemon",
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -5406,10 +5094,7 @@
     },
     {
         "Id": 171,
-        "Name": {
-            "PT-BR": "Gryphonmon",
-            "EN-US": "Gryphonmon"
-        },
+        "Name": "Gryphonmon",
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -5457,10 +5142,7 @@
     },
     {
         "Id": 172,
-        "Name": {
-            "PT-BR": "Infermon",
-            "EN-US": "Infermon"
-        },
+        "Name": "Infermon",
         "Level": 55,
         "HP": 1440,
         "MP": 9999,
@@ -5508,10 +5190,7 @@
     },
     {
         "Id": 173,
-        "Name": {
-            "PT-BR": "Shadramon",
-            "EN-US": "Shadramon"
-        },
+        "Name": "Shadramon",
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -5559,10 +5238,7 @@
     },
     {
         "Id": 174,
-        "Name": {
-            "PT-BR": "Boltmon",
-            "EN-US": "Boltmon"
-        },
+        "Name": "Boltmon",
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -5610,10 +5286,7 @@
     },
     {
         "Id": 175,
-        "Name": {
-            "PT-BR": "Piedmon",
-            "EN-US": "Piedmon"
-        },
+        "Name": "Piedmon",
         "Level": 56,
         "HP": 1464,
         "MP": 9999,
@@ -5661,10 +5334,7 @@
     },
     {
         "Id": 176,
-        "Name": {
-            "PT-BR": "Machinedramon",
-            "EN-US": "Machinedramon"
-        },
+        "Name": "Machinedramon",
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -5712,10 +5382,7 @@
     },
     {
         "Id": 177,
-        "Name": {
-            "PT-BR": "VenomMyotismon",
-            "EN-US": "VenomMyotismon"
-        },
+        "Name": "VenomMyotismon",
         "Level": 55,
         "HP": 1440,
         "MP": 9999,
@@ -5763,10 +5430,7 @@
     },
     {
         "Id": 178,
-        "Name": {
-            "PT-BR": "Apokarimon",
-            "EN-US": "Apokarimon"
-        },
+        "Name": "Apokarimon",
         "Level": 56,
         "HP": 1464,
         "MP": 9999,
@@ -5814,10 +5478,7 @@
     },
     {
         "Id": 179,
-        "Name": {
-            "PT-BR": "Ghoulmon",
-            "EN-US": "Ghoulmon"
-        },
+        "Name": "Ghoulmon",
         "Level": 49,
         "HP": 1037,
         "MP": 9999,
@@ -5865,10 +5526,7 @@
     },
     {
         "Id": 180,
-        "Name": {
-            "PT-BR": "Creepymon",
-            "EN-US": "Creepymon"
-        },
+        "Name": "Creepymon",
         "Level": 55,
         "HP": 1440,
         "MP": 9999,
@@ -5916,10 +5574,7 @@
     },
     {
         "Id": 181,
-        "Name": {
-            "PT-BR": "Armageddemon",
-            "EN-US": "Armageddemon"
-        },
+        "Name": "Armageddemon",
         "Level": 56,
         "HP": 2196,
         "MP": 9999,
@@ -5967,10 +5622,7 @@
     },
     {
         "Id": 182,
-        "Name": {
-            "PT-BR": "Red Vegiemon",
-            "EN-US": "Red Vegiemon"
-        },
+        "Name": "Red Vegiemon",
         "Level": 9,
         "HP": 336,
         "MP": 9999,
@@ -6007,10 +5659,7 @@
     },
     {
         "Id": 183,
-        "Name": {
-            "PT-BR": "Kuwagamon (green)",
-            "EN-US": "Kuwagamon (green)"
-        },
+        "Name": "Kuwagamon (green)",
         "Level": 30,
         "HP": 840,
         "MP": 9999,
@@ -6047,10 +5696,7 @@
     },
     {
         "Id": 184,
-        "Name": {
-            "PT-BR": "Yanmamon (green)",
-            "EN-US": "Yanmamon (green)"
-        },
+        "Name": "Yanmamon (green)",
         "Level": 8,
         "HP": 312,
         "MP": 9999,
@@ -6087,10 +5733,7 @@
     },
     {
         "Id": 185,
-        "Name": {
-            "PT-BR": "Dokugumon (brown)",
-            "EN-US": "Dokugumon (brown)"
-        },
+        "Name": "Dokugumon (brown)",
         "Level": 21,
         "HP": 624,
         "MP": 9999,
@@ -6127,10 +5770,7 @@
     },
     {
         "Id": 186,
-        "Name": {
-            "PT-BR": "Goburimon (red)",
-            "EN-US": "Goburimon (red)"
-        },
+        "Name": "Goburimon (red)",
         "Level": 22,
         "HP": 648,
         "MP": 9999,
@@ -6167,10 +5807,7 @@
     },
     {
         "Id": 187,
-        "Name": {
-            "PT-BR": "Minotarumon (blue)",
-            "EN-US": "Minotarumon (blue)"
-        },
+        "Name": "Minotarumon (blue)",
         "Level": 33,
         "HP": 608,
         "MP": 9999,
@@ -6207,10 +5844,7 @@
     },
     {
         "Id": 188,
-        "Name": {
-            "PT-BR": "Flymon (pink)",
-            "EN-US": "Flymon (pink)"
-        },
+        "Name": "Flymon (pink)",
         "Level": 33,
         "HP": 912,
         "MP": 9999,
@@ -6247,10 +5881,7 @@
     },
     {
         "Id": 189,
-        "Name": {
-            "PT-BR": "Woodmon (green)",
-            "EN-US": "Woodmon (green)"
-        },
+        "Name": "Woodmon (green)",
         "Level": 19,
         "HP": 576,
         "MP": 9999,
@@ -6287,10 +5918,7 @@
     },
     {
         "Id": 190,
-        "Name": {
-            "PT-BR": "Triceramon (red)",
-            "EN-US": "Triceramon (red)"
-        },
+        "Name": "Triceramon (red)",
         "Level": 41,
         "HP": 1656,
         "MP": 9999,
@@ -6327,10 +5955,7 @@
     },
     {
         "Id": 191,
-        "Name": {
-            "PT-BR": "Airdramon (gold)",
-            "EN-US": "Airdramon (gold)"
-        },
+        "Name": "Airdramon (gold)",
         "Level": 21,
         "HP": 624,
         "MP": 9999,
@@ -6367,10 +5992,7 @@
     },
     {
         "Id": 192,
-        "Name": {
-            "PT-BR": "Phantomon (blue)",
-            "EN-US": "Phantomon (blue)"
-        },
+        "Name": "Phantomon (blue)",
         "Level": 37,
         "HP": 1008,
         "MP": 9999,
@@ -6407,10 +6029,7 @@
     },
     {
         "Id": 193,
-        "Name": {
-            "PT-BR": "Kokatorimon (brown)",
-            "EN-US": "Kokatorimon (brown)"
-        },
+        "Name": "Kokatorimon (brown)",
         "Level": 22,
         "HP": 648,
         "MP": 9999,
@@ -6447,10 +6066,7 @@
     },
     {
         "Id": 194,
-        "Name": {
-            "PT-BR": "Tortomon (blue)",
-            "EN-US": "Tortomon (blue)"
-        },
+        "Name": "Tortomon (blue)",
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -6487,10 +6103,7 @@
     },
     {
         "Id": 195,
-        "Name": {
-            "PT-BR": "ShogunGekomon (blue)",
-            "EN-US": "ShogunGekomon (blue)"
-        },
+        "Name": "ShogunGekomon (blue)",
         "Level": 37,
         "HP": 1008,
         "MP": 360,
@@ -6527,10 +6140,7 @@
     },
     {
         "Id": 196,
-        "Name": {
-            "PT-BR": "Seadramon (brown)",
-            "EN-US": "Seadramon (brown)"
-        },
+        "Name": "Seadramon (brown)",
         "Level": 35,
         "HP": 960,
         "MP": 9999,
@@ -6567,10 +6177,7 @@
     },
     {
         "Id": 197,
-        "Name": {
-            "PT-BR": "Mammothmon (silver)",
-            "EN-US": "Mammothmon (silver)"
-        },
+        "Name": "Mammothmon (silver)",
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -6607,10 +6214,7 @@
     },
     {
         "Id": 198,
-        "Name": {
-            "PT-BR": "Fugamon",
-            "EN-US": "Fugamon"
-        },
+        "Name": "Fugamon",
         "Level": 42,
         "HP": 1128,
         "MP": 9999,
@@ -6658,10 +6262,7 @@
     },
     {
         "Id": 199,
-        "Name": {
-            "PT-BR": "Vademon (red)",
-            "EN-US": "Vademon (red)"
-        },
+        "Name": "Vademon (red)",
         "Level": 46,
         "HP": 1224,
         "MP": 4,
@@ -6698,10 +6299,7 @@
     },
     {
         "Id": 200,
-        "Name": {
-            "PT-BR": "Maildramon (black)",
-            "EN-US": "Maildramon (black)"
-        },
+        "Name": "Maildramon (black)",
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -6738,10 +6336,7 @@
     },
     {
         "Id": 201,
-        "Name": {
-            "PT-BR": "Guardromon (white)",
-            "EN-US": "Guardromon (white)"
-        },
+        "Name": "Guardromon (white)",
         "Level": 46,
         "HP": 1224,
         "MP": 9999,
@@ -6778,10 +6373,7 @@
     },
     {
         "Id": 202,
-        "Name": {
-            "PT-BR": "Numemon (blue)",
-            "EN-US": "Numemon (blue)"
-        },
+        "Name": "Numemon (blue)",
         "Level": 31,
         "HP": 864,
         "MP": 9999,
@@ -6818,10 +6410,7 @@
     },
     {
         "Id": 203,
-        "Name": {
-            "PT-BR": "Numemon (brown)",
-            "EN-US": "Numemon (brown)"
-        },
+        "Name": "Numemon (brown)",
         "Level": 39,
         "HP": 1056,
         "MP": 9999,
@@ -6858,10 +6447,7 @@
     },
     {
         "Id": 204,
-        "Name": {
-            "PT-BR": "Numemon (aqua)",
-            "EN-US": "Numemon (aqua)"
-        },
+        "Name": "Numemon (aqua)",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -6898,10 +6484,7 @@
     },
     {
         "Id": 205,
-        "Name": {
-            "PT-BR": "Numemon (red)",
-            "EN-US": "Numemon (red)"
-        },
+        "Name": "Numemon (red)",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -6938,10 +6521,7 @@
     },
     {
         "Id": 206,
-        "Name": {
-            "PT-BR": "Numemon (white)",
-            "EN-US": "Numemon (white)"
-        },
+        "Name": "Numemon (white)",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -6978,10 +6558,7 @@
     },
     {
         "Id": 207,
-        "Name": {
-            "PT-BR": "Raremon (pink)",
-            "EN-US": "Raremon (pink)"
-        },
+        "Name": "Raremon (pink)",
         "Level": 40,
         "HP": 1080,
         "MP": 9999,
@@ -7018,10 +6595,7 @@
     },
     {
         "Id": 208,
-        "Name": {
-            "PT-BR": "Cyclonemon (pink)",
-            "EN-US": "Cyclonemon (pink)"
-        },
+        "Name": "Cyclonemon (pink)",
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -7058,10 +6632,7 @@
     },
     {
         "Id": 209,
-        "Name": {
-            "PT-BR": "Tankmon (blue)",
-            "EN-US": "Tankmon (blue)"
-        },
+        "Name": "Tankmon (blue)",
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -7098,10 +6669,7 @@
     },
     {
         "Id": 210,
-        "Name": {
-            "PT-BR": "Musyamon (green)",
-            "EN-US": "Musyamon (green)"
-        },
+        "Name": "Musyamon (green)",
         "Level": 32,
         "HP": 888,
         "MP": 9999,
@@ -7138,10 +6706,7 @@
     },
     {
         "Id": 211,
-        "Name": {
-            "PT-BR": "Kurisarimon (pink)",
-            "EN-US": "Kurisarimon (pink)"
-        },
+        "Name": "Kurisarimon (pink)",
         "Level": 40,
         "HP": 1080,
         "MP": 9999,
@@ -7178,10 +6743,7 @@
     },
     {
         "Id": 212,
-        "Name": {
-            "PT-BR": "Snimon (brown)",
-            "EN-US": "Snimon (brown)"
-        },
+        "Name": "Snimon (brown)",
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -7218,10 +6780,7 @@
     },
     {
         "Id": 213,
-        "Name": {
-            "PT-BR": "Blossomon (pink)",
-            "EN-US": "Blossomon (pink)"
-        },
+        "Name": "Blossomon (pink)",
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -7258,10 +6817,7 @@
     },
     {
         "Id": 214,
-        "Name": {
-            "PT-BR": "Cherrymon (red)",
-            "EN-US": "Cherrymon (red)"
-        },
+        "Name": "Cherrymon (red)",
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -7298,10 +6854,7 @@
     },
     {
         "Id": 215,
-        "Name": {
-            "PT-BR": "Whamon (blue)",
-            "EN-US": "Whamon (blue)"
-        },
+        "Name": "Whamon (blue)",
         "Level": 47,
         "HP": 1872,
         "MP": 9999,
@@ -7338,10 +6891,7 @@
     },
     {
         "Id": 216,
-        "Name": {
-            "PT-BR": "MegaSeadramon (gold)",
-            "EN-US": "MegaSeadramon (gold)"
-        },
+        "Name": "MegaSeadramon (gold)",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -7378,10 +6928,7 @@
     },
     {
         "Id": 217,
-        "Name": {
-            "PT-BR": "Ebidramon (pink)",
-            "EN-US": "Ebidramon (pink)"
-        },
+        "Name": "Ebidramon (pink)",
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -7418,10 +6965,7 @@
     },
     {
         "Id": 218,
-        "Name": {
-            "PT-BR": "Vilemon (purple)",
-            "EN-US": "Vilemon (purple)"
-        },
+        "Name": "Vilemon (purple)",
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -7458,10 +7002,7 @@
     },
     {
         "Id": 219,
-        "Name": {
-            "PT-BR": "Drimogemon (brown)",
-            "EN-US": "Drimogemon (brown)"
-        },
+        "Name": "Drimogemon (brown)",
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -7498,10 +7039,7 @@
     },
     {
         "Id": 220,
-        "Name": {
-            "PT-BR": "BlueMeramon",
-            "EN-US": "BlueMeramon"
-        },
+        "Name": "BlueMeramon",
         "Level": 48,
         "HP": 1272,
         "MP": 1800,
@@ -7549,10 +7087,7 @@
     },
     {
         "Id": 221,
-        "Name": {
-            "PT-BR": "Vikemon (blue)",
-            "EN-US": "Vikemon (blue)"
-        },
+        "Name": "Vikemon (blue)",
         "Level": 47,
         "HP": 1872,
         "MP": 9999,
@@ -7589,10 +7124,7 @@
     },
     {
         "Id": 222,
-        "Name": {
-            "PT-BR": "MetalSeadramon (black)",
-            "EN-US": "MetalSeadramon (black)"
-        },
+        "Name": "MetalSeadramon (black)",
         "Level": 54,
         "HP": 1416,
         "MP": 9999,
@@ -7629,10 +7161,7 @@
     },
     {
         "Id": 223,
-        "Name": {
-            "PT-BR": "Scorpiomon (black)",
-            "EN-US": "Scorpiomon (black)"
-        },
+        "Name": "Scorpiomon (black)",
         "Level": 54,
         "HP": 1416,
         "MP": 9999,
@@ -7669,10 +7198,7 @@
     },
     {
         "Id": 224,
-        "Name": {
-            "PT-BR": "Antylamon (white)",
-            "EN-US": "Antylamon (white)"
-        },
+        "Name": "Antylamon (white)",
         "Level": 49,
         "HP": 1296,
         "MP": 9999,
@@ -7709,10 +7235,7 @@
     },
     {
         "Id": 247,
-        "Name": {
-            "PT-BR": "Knightmon",
-            "EN-US": "Knightmon"
-        },
+        "Name": "Knightmon",
         "Level": 53,
         "HP": 2784,
         "MP": 9999,
@@ -7760,10 +7283,7 @@
     },
     {
         "Id": 515,
-        "Name": {
-            "PT-BR": "Cardmon (T1)",
-            "EN-US": "Cardmon (T1)"
-        },
+        "Name": "Cardmon (T1)",
         "Level": 7,
         "HP": 288,
         "MP": 9999,
@@ -7800,10 +7320,7 @@
     },
     {
         "Id": 516,
-        "Name": {
-            "PT-BR": "Cardmon (A1)",
-            "EN-US": "Cardmon (A1)"
-        },
+        "Name": "Cardmon (A1)",
         "Level": 12,
         "HP": 408,
         "MP": 9999,
@@ -7840,10 +7357,7 @@
     },
     {
         "Id": 517,
-        "Name": {
-            "PT-BR": "Cardmon (T2)",
-            "EN-US": "Cardmon (T2)"
-        },
+        "Name": "Cardmon (T2)",
         "Level": 17,
         "HP": 528,
         "MP": 9999,
@@ -7880,10 +7394,7 @@
     },
     {
         "Id": 518,
-        "Name": {
-            "PT-BR": "Cardmon (A2)",
-            "EN-US": "Cardmon (A2)"
-        },
+        "Name": "Cardmon (A2)",
         "Level": 27,
         "HP": 768,
         "MP": 9999,
@@ -7920,10 +7431,7 @@
     },
     {
         "Id": 519,
-        "Name": {
-            "PT-BR": "Cardmon (T3)",
-            "EN-US": "Cardmon (T3)"
-        },
+        "Name": "Cardmon (T3)",
         "Level": 37,
         "HP": 1008,
         "MP": 9999,
@@ -7960,10 +7468,7 @@
     },
     {
         "Id": 520,
-        "Name": {
-            "PT-BR": "Cardmon (A3)",
-            "EN-US": "Cardmon (A3)"
-        },
+        "Name": "Cardmon (A3)",
         "Level": 42,
         "HP": 1128,
         "MP": 9999,
@@ -8000,10 +7505,7 @@
     },
     {
         "Id": 521,
-        "Name": {
-            "PT-BR": "Cardmon (T4)",
-            "EN-US": "Cardmon (T4)"
-        },
+        "Name": "Cardmon (T4)",
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -8040,10 +7542,7 @@
     },
     {
         "Id": 522,
-        "Name": {
-            "PT-BR": "Cardmon (A4)",
-            "EN-US": "Cardmon (A4)"
-        },
+        "Name": "Cardmon (A4)",
         "Level": 47,
         "HP": 1248,
         "MP": 9999,

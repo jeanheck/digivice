@@ -29,7 +29,7 @@ const isGridModalOpen = ref(false)
       class="flex items-center justify-center bg-[#000a2b] border-2 border-[#00154a] rounded shadow-inner py-1.5 mt-auto cursor-pointer hover:bg-[#001233] transition-colors"
       @click="isGridModalOpen = true"
     >
-      <span class="text-[0.65rem] font-bold text-gray-400 tracking-widest uppercase">Digievolutions</span>
+      <span class="text-[0.65rem] font-bold text-gray-400 tracking-widest uppercase">{{ $t('digimon.digievolutions') }}</span>
     </div>
 
     <!-- New Grid Modal -->

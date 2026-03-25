@@ -1,40 +1,45 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useGameStore } from './stores/useGameStore'
+import { useLocalization } from './composables/useLocalization'
 import DigimonCard from './components/digimon/DigimonCard.vue'
 import QuestJournalPanel from './components/layout/QuestJournalPanel.vue'
 import AreaInformationPanel from './components/layout/AreaInformationPanel.vue'
 import QuestDetailsModal from './components/layout/QuestDetailsModal.vue'
 import PlayerFooter from './components/layout/PlayerFooter.vue'
-import type { MainQuest, SideQuest } from './types/backend'
 import { ref } from 'vue'
 
 const store = useGameStore()
+const { getLocalizedQuest } = useLocalization()
 const partySlots = computed(() => store.gameState?.party?.slots ?? [null, null, null])
 
-const activeQuestTitle = ref<string | null>(null)
+const activeQuestId = ref<string | null>(null)
 const isQuestModalOpen = ref(false)
 
 const activeQuestForModal = computed(() => {
-  if (activeQuestTitle.value === null) return null;
+  if (activeQuestId.value === null) return null;
   const journal = store.gameState?.journal;
   if (!journal) return null;
   
-  if (journal.mainQuest && journal.mainQuest.title === activeQuestTitle.value) {
-    return journal.mainQuest;
+  // Check Main Quest by Id
+  if (journal.mainQuest && journal.mainQuest.Id === activeQuestId.value) {
+    return getLocalizedQuest(journal.mainQuest);
   }
-  return journal.sideQuests?.find(q => q.title === activeQuestTitle.value) || null;
+  
+  // Check Side Quests by Id
+  const sideQuest = journal.sideQuests?.find(q => q.Id === activeQuestId.value);
+  return sideQuest ? getLocalizedQuest(sideQuest) : null;
 })
 
-const handleQuestClick = (quest: MainQuest | SideQuest) => {
-  activeQuestTitle.value = quest.title
+const handleQuestClick = (quest: any) => {
+  activeQuestId.value = quest.Id
   isQuestModalOpen.value = true
 }
 
 const handleCloseQuestModal = () => {
   isQuestModalOpen.value = false
   setTimeout(() => {
-     activeQuestTitle.value = null
+     activeQuestId.value = null
   }, 300) // Wait for fade transition
 }
 </script>

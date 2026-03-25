@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import DigimonDetailsTable from '../../data/static/DigimonDetailsTable.json'
 import EquipmentsData from '../../data/static/Equipments.json'
 import DigievolutionData from '../../data/static/Digievolution.json'
-
-// Icons removed in favor of emojis
+import { useLocalization } from '../../composables/useLocalization'
 
 import type { Digimon } from '../../types/backend'
 
 const props = defineProps<{
   digimon: Digimon
 }>()
+
+const { t, getLocalized } = useLocalization()
 
 const getEquipBonus = (prop: string) => {
     let total = 0;
@@ -22,7 +22,6 @@ const getEquipBonus = (prop: string) => {
     const items = equipIds.map(id => EquipmentsData.equipments.find(e => e.Id === id)).filter(i => i) as typeof EquipmentsData.equipments;
     
     // Para Weapons Two Handed que ocupam duas mãos, removemos duplicatas pelo ID
-    // Assumimos que a duplicata vem por ocupar o slot LeftHand e RightHand
     const uniqueItems = items.filter((item, index, self) => {
       if (item.Type === "WeaponTwoHanded") {
         return self.findIndex(i => i.Id === item.Id) === index;
@@ -58,16 +57,16 @@ const getDigiBonus = (type: 'attributes' | 'resistances', prop: string) => {
     return 0;
 }
 
-// Mapeamento dinâmico baseado no Digimon World 3 (Stat -> Value)
+// Mapeamento dinâmico
 const attributes = computed(() => {
   const attrs = props.digimon.attributes
   return [
-    { label: 'Strength', base: attrs.strength, prop: 'strength', icon: '👊', color: 'text-[#fcd883]' },
-    { label: 'Defense', base: attrs.defense, prop: 'defense', icon: '🛡️', color: 'text-gray-400' },
-    { label: 'Spirit', base: attrs.spirit, prop: 'spirit', icon: '🧙‍♂️', color: 'text-pink-300' },
-    { label: 'Wisdom', base: attrs.wisdom, prop: 'wisdom', icon: '📖', color: 'text-yellow-600' },
-    { label: 'Speed', base: attrs.speed, prop: 'speed', icon: '🏃', color: 'text-green-400' },
-    { label: 'Charisma', base: attrs.charisma, prop: 'charisma', icon: '✨', color: 'text-yellow-300' },
+    { label: t('attributes.strength'), base: attrs.strength, prop: 'strength', icon: '👊', color: 'text-[#fcd883]' },
+    { label: t('attributes.defense'), base: attrs.defense, prop: 'defense', icon: '🛡️', color: 'text-gray-400' },
+    { label: t('attributes.spirit'), base: attrs.spirit, prop: 'spirit', icon: '🧙‍♂️', color: 'text-pink-300' },
+    { label: t('attributes.wisdom'), base: attrs.wisdom, prop: 'wisdom', icon: '📖', color: 'text-yellow-600' },
+    { label: t('attributes.speed'), base: attrs.speed, prop: 'speed', icon: '🏃', color: 'text-green-400' },
+    { label: t('attributes.charisma'), base: attrs.charisma, prop: 'charisma', icon: '✨', color: 'text-yellow-300' },
   ].map(a => {
     const equip = getEquipBonus(a.prop);
     const digi = getDigiBonus('attributes', a.prop);
@@ -78,13 +77,13 @@ const attributes = computed(() => {
 const resistances = computed(() => {
   const res = props.digimon.resistances
   return [
-    { label: 'Fire', base: res.fire, prop: 'fire', icon: '🔥', color: 'text-orange-500' },
-    { label: 'Water', base: res.water, prop: 'water', icon: '💧', color: 'text-blue-400' },
-    { label: 'Ice', base: res.ice, prop: 'ice', icon: '🧊', color: 'text-cyan-200' },
-    { label: 'Wind', base: res.wind, prop: 'wind', icon: '🍃', color: 'text-gray-100' },
-    { label: 'Thunder', base: res.thunder, prop: 'thunder', icon: '⚡', color: 'text-[#ffffcc]' },
-    { label: 'Machine', base: res.machine, prop: 'machine', icon: '⚙️', color: 'text-gray-500' },
-    { label: 'Dark', base: res.dark, prop: 'dark', icon: '🌑', color: 'text-purple-500' },
+    { label: t('resistances.fire'), base: res.fire, prop: 'fire', icon: '🔥', color: 'text-orange-500' },
+    { label: t('resistances.water'), base: res.water, prop: 'water', icon: '💧', color: 'text-blue-400' },
+    { label: t('resistances.ice'), base: res.ice, prop: 'ice', icon: '🧊', color: 'text-cyan-200' },
+    { label: t('resistances.wind'), base: res.wind, prop: 'wind', icon: '🍃', color: 'text-gray-100' },
+    { label: t('resistances.thunder'), base: res.thunder, prop: 'thunder', icon: '⚡', color: 'text-[#ffffcc]' },
+    { label: t('resistances.machine'), base: res.machine, prop: 'machine', icon: '⚙️', color: 'text-gray-500' },
+    { label: t('resistances.dark'), base: res.dark, prop: 'dark', icon: '🌑', color: 'text-purple-500' },
   ].map(a => {
     const equip = getEquipBonus(a.prop);
     const digi = getDigiBonus('resistances', a.prop);
@@ -95,8 +94,8 @@ const resistances = computed(() => {
 // Tooltip Logic
 const activeTooltip = ref({ show: false, title: '', text: '', isMath: false, base: 0, equip: 0, digi: 0, total: 0, x: 0, y: 0 })
 
-const showIconTooltip = (event: MouseEvent, title: string, dictionaryType: 'attributes' | 'resistances') => {
-  const text = DigimonDetailsTable[dictionaryType][title as keyof typeof DigimonDetailsTable[typeof dictionaryType]]
+const showIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
+  const text = t(`tooltips.${propertyKey}`)
   if (!text) return
   
   let posX = event.clientX + 15
@@ -109,7 +108,7 @@ const showMathTooltip = (event: MouseEvent, title: string, base: number, equip: 
   let posX = event.clientX + 15
   if (posX + 250 > window.innerWidth) posX = event.clientX - 260
   
-  activeTooltip.value = { show: true, isMath: true, title, text: '', base, equip, digi, total, x: posX, y: event.clientY + 15 }
+  activeTooltip.value = { show: true, isMath: true, title: title, text: '', base, equip, digi, total, x: posX, y: event.clientY + 15 }
 }
 
 const hideTooltip = () => {
@@ -144,12 +143,12 @@ const moveTooltip = (event: MouseEvent) => {
         <div class="flex flex-col gap-1 w-24">
         <div 
           v-for="attr in attributes" 
-          :key="attr.label"
+          :key="attr.prop"
           class="flex items-center gap-2"
         >
           <!-- Icon - Cursor custom -->
           <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20 tooltip-anchor"
-               @mouseenter="e => showIconTooltip(e, attr.label, 'attributes')"
+               @mouseenter="e => showIconTooltip(e, attr.label, attr.prop)"
                @mousemove="moveTooltip"
                @mouseleave="hideTooltip">
             <span class="text-base font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1">{{ attr.icon }}</span>
@@ -170,12 +169,12 @@ const moveTooltip = (event: MouseEvent) => {
         <div class="flex flex-col gap-1 w-24">
           <div 
           v-for="res in resistances" 
-          :key="res.label"
+          :key="res.prop"
           class="flex items-center gap-2"
         >
           <!-- Icon (Cursor custom) -->
           <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20 tooltip-anchor relative"
-               @mouseenter="e => showIconTooltip(e, res.label, 'resistances')"
+               @mouseenter="e => showIconTooltip(e, res.label, res.prop)"
                @mousemove="moveTooltip"
                @mouseleave="hideTooltip">
             <span class="text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1" :class="res.color">{{ res.icon }}</span>
@@ -226,10 +225,10 @@ const moveTooltip = (event: MouseEvent) => {
              <!-- Legenda / Breakdown -->
              <div class="flex flex-col gap-[2px]">
                  <div class="flex justify-between text-xs items-center">
-                    <span class="text-white">Base Digimon</span>
+                    <span class="text-white">{{ $t('digimon.baseDigimon') }}</span>
                  </div>
                  <div class="flex justify-between text-xs items-center">
-                    <span class="text-[#0077ff] font-bold">Equipments</span>
+                    <span class="text-[#0077ff] font-bold">{{ $t('digimon.equipments') }}</span>
                  </div>
              </div>
           </div>

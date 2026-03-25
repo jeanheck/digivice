@@ -87,6 +87,7 @@ export interface QuestStep {
 }
 
 export interface Quest {
+    Id: string
     id: number
     title: string
     description: string

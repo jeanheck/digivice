@@ -3,10 +3,13 @@ import { computed, ref } from 'vue'
 import type { Digimon } from '../../types/backend'
 import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue'
 import digievolutionData from '../../data/static/Digievolution.json'
+import { useLocalization } from '../../composables/useLocalization'
 
 const props = defineProps<{
   digimon: Digimon
 }>()
+
+const { getLocalized } = useLocalization()
 
 const digiIdMap = new Map(
   digievolutionData.digievolutions
@@ -33,10 +36,10 @@ const evolutions = computed(() => {
 
 // Skills modal state
 const modalOpen = ref(false)
-const selectedDigi = ref<string | null>(null)
+const selectedDigi = ref<any>(null)
 const selectedLevel = ref(0)
 
-function openSkills(evo: { name: string; level: number } | null) {
+function openSkills(evo: any) {
   if (!evo) return
   selectedDigi.value = evo.name
   selectedLevel.value = evo.level
@@ -69,7 +72,7 @@ function closeSkills() {
         <!-- Conteúdo (Nome) -->
         <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
              :class="evo.id === digimon.activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
-          {{ evo.name }}
+          {{ getLocalized(evo.name) }}
         </div>
 
         <!-- Divisor Inclinado -->

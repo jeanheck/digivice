@@ -4,8 +4,10 @@ import { computed, ref } from 'vue'
 import locationsData from '../../data/static/Locations.json'
 import enemiesData from '../../data/static/EnemiesTable.json'
 import EnemyDetailsModal from './EnemyDetailsModal.vue'
+import { useLocalization } from '../../composables/useLocalization'
 
 const store = useGameStore()
+const { t, getLocalized } = useLocalization()
 const locations = locationsData as Record<string, any>
 
 const currentLocationStr = computed(() => {
@@ -14,9 +16,9 @@ const currentLocationStr = computed(() => {
 
 const currentLocation = computed(() => {
     const loc = currentLocationStr.value
-    if (!loc || loc === 'Unknown') return 'Unknown Area'
+    if (!loc || loc === 'Unknown') return t('area.unknownArea') || 'Unknown Area'
     
-    return locations[loc] ? locations[loc].Name : `Unknown Zone ${loc}`
+    return locations[loc] ? getLocalized(locations[loc].Name) : `${t('area.unknownZone') || 'Unknown Zone'} ${loc}`
 })
 
 const areaEnemies = computed(() => {
@@ -24,14 +26,17 @@ const areaEnemies = computed(() => {
     if (!rawLoc || rawLoc === 'Unknown') return []
     
     const locObj = locations[rawLoc]
-    const mapName = locObj ? locObj.Name : null
+    // Use EN-US name as the stable key for filtering in EnemiesTable
+    const mapNameEn = locObj && locObj.Name ? locObj.Name['EN-US'] : null
     
-    if (!mapName) return [];
+    if (!mapNameEn) return [];
 
-    return enemiesData.filter((enemy: any) => {
-        if (!enemy.Location || !Array.isArray(enemy.Location)) return false;
+    return (enemiesData as any[]).filter((enemy: any) => {
+        if (!enemy.Location) return false;
         
-        return enemy.Location.some((loc: string) => loc === mapName);
+        // Handle both localized object and legacy string if any
+        const enemyLocEn = typeof enemy.Location === 'object' ? enemy.Location['EN-US'] : enemy.Location;
+        return enemyLocEn === mapNameEn;
     })
 })
 
@@ -39,7 +44,8 @@ const currentMapImage = computed(() => {
     const rawLoc = currentLocationStr.value
     if (!rawLoc || rawLoc === 'Unknown') return null
     try {
-        const imageFile = locations[rawLoc]?.Image || rawLoc
+        const locEntry = locations[rawLoc]
+        const imageFile = locEntry?.Image || rawLoc
         return new URL(`../../assets/maps/${imageFile}.webp`, import.meta.url).href
     } catch {
         return null
@@ -64,7 +70,7 @@ const closeEnemyDetails = () => {
   <aside class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-3 flex flex-col pt-0 mb-1 overflow-hidden">
     <!-- Header banner -->
     <div class="w-full flex items-center justify-center border-b border-[#0033aa]/50 bg-[#000e3f] sticky top-0 py-2 z-10">
-      <h3 class="font-bold tracking-widest text-[#0077ff] text-shadow-sm uppercase text-sm">Area Information</h3>
+      <h3 class="font-bold tracking-widest text-[#0077ff] text-shadow-sm uppercase text-sm">{{ $t('area.title') }}</h3>
     </div>
     
     <div class="flex-1 flex flex-col mt-2 h-full">
@@ -96,10 +102,10 @@ const closeEnemyDetails = () => {
 
         <!-- Area Enemies -->
         <div class="flex-1 w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
-             <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">Enemies</h4>
+             <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">{{ $t('area.enemies') }}</h4>
              
              <div v-if="areaEnemies.length === 0" class="text-xs text-[#00aaff] opacity-50 italic">
-                Safe Zone
+                {{ $t('area.safeZone') || 'Safe Zone' }}
              </div>
              <div v-else class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
                 <button 
@@ -108,7 +114,7 @@ const closeEnemyDetails = () => {
                    @click="openEnemyDetails(enemy)"
                    class="font-bold text-sm tracking-wide text-[#9e3737] hover:text-[#b24848] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)] transition-all flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-[#9e3737] rounded px-1 cursor-pointer"
                 >
-                   {{ enemy.Name }}
+                   {{ getLocalized(enemy.Name) }}
                 </button>
              </div>
         </div>

@@ -2,6 +2,10 @@
 import { computed } from 'vue'
 import type { Digimon } from '../../types/backend'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
+import { useLocalization } from '../../composables/useLocalization'
+import DigievolutionData from '../../data/static/Digievolution.json'
+import TechniquesTable from '../../data/static/TechniquesTable.json'
+import DigievolutionTechniques from '../../data/static/DigievolutionTechniques.json'
 
 const props = defineProps<{
   evolution: { name: string, requirements: EvolutionRequirement[] }
@@ -12,6 +16,8 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'select-evolution', name: string): void
 }>()
+
+const { t, getLocalized } = useLocalization()
 
 const isUnlocked = computed(() => {
     const mockNode = { id: '', name: props.evolution.name, requirements: props.evolution.requirements, children: [] }
@@ -25,18 +31,15 @@ const getAvatar = (name: string) => {
     return avatarModules[path] ? (avatarModules[path] as any).default || avatarModules[path] : null
 }
 
-import TechniquesTable from '../../data/static/TechniquesTable.json'
-import DigievolutionTechniques from '../../data/static/DigievolutionTechniques.json'
-
 interface TechEntry {
   id: string
-  name: string
+  name: any
   type: string
   element: string
   elementStrength: number
   mp: number
   power: number
-  description: string
+  description: any
 }
 
 interface DigivolutionTechEntry {
@@ -50,8 +53,8 @@ const techniqueById = Object.fromEntries(
 )
 
 const techniques = computed(() => {
-  const entry = (DigievolutionTechniques as { digievolutions: { name: string; techniques: DigivolutionTechEntry[] }[] })
-    .digievolutions.find(d => d.name === props.evolution.name)
+  const entry = (DigievolutionTechniques as unknown as { digievolutions: { name: any; techniques: DigivolutionTechEntry[] }[] })
+    .digievolutions.find(d => getLocalized(d.name) === getLocalized(props.evolution.name))
   if (!entry) return []
 
   const maxLearnLevel = Math.max(...entry.techniques.map(t => t.learnLevel))
@@ -114,7 +117,7 @@ const derivatives = computed(() => {
 
             <!-- Pattern Overlay -->
             <h2 class="absolute top-3 left-4 text-lg sm:text-xl font-bold font-cyber text-white tracking-widest drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] z-10">
-                {{ evolution.name }}
+                {{ getLocalized(evolution.name) }}
             </h2>
         </div>
     </div>
@@ -124,21 +127,24 @@ const derivatives = computed(() => {
         <div v-if="reqEvolutions.length > 0" class="shrink-0">
             <div class="text-[9px] text-indigo-400/80 mb-2 flex items-center font-cyber uppercase tracking-widest">
                 <span class="text-[11px] mr-2 opacity-80 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-0.5">🧬</span>
-                Requirement Digievolutions
+                {{ $t('digievolution.requirementDigievolutions') }}
             </div>
             
             <div class="flex flex-wrap gap-2">
                 <button v-for="reqEvo in reqEvolutions" :key="reqEvo"
                       @click="emit('select-evolution', reqEvo)"
                       class="cursor-pointer hover:bg-indigo-700/50 transition-colors text-[10px] px-2 py-1.5 bg-indigo-950/30 text-indigo-200 border border-indigo-900/40 rounded font-cyber flex items-center">
-                    <div class="w-1.5 h-1.5 rounded-full mr-2 bg-indigo-500/50"></div>
-                    {{ reqEvo }}
+                    {{ getLocalized(reqEvo) }}
                 </button>
             </div>
         </div>
 
         <!-- Techniques Section -->
         <div class="flex flex-col">
+            <div class="text-[9px] text-indigo-400/80 mb-2 flex items-center font-cyber uppercase tracking-widest">
+                <span class="text-[11px] mr-2 opacity-80 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-0.5">⚔️</span>
+                {{ $t('digievolution.techniques') }}
+            </div>
             <div class="flex flex-col gap-[3px] pr-1">
                 <div
                   v-for="tech in techniques"
@@ -150,7 +156,7 @@ const derivatives = computed(() => {
                     v-if="tech.isSignature"
                     class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest"
                   >
-                    ⭐ SIG
+                    ⭐ {{ $t('digievolution.signature') }}
                   </span>
 
                   <span class="text-base leading-none mt-[1px] flex-shrink-0">
@@ -160,15 +166,17 @@ const derivatives = computed(() => {
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-1 mb-[2px]">
                       <span class="font-bold tracking-wide" :class="tech.isSignature ? 'text-yellow-300' : 'text-white'">
-                        {{ tech.name }}
+                        {{ getLocalized(tech.name) }}
                       </span>
                       <span class="text-[10px] text-cyan-400/80 ml-1">Lv.{{ tech.learnLevel }}</span>
                     </div>
 
-                    <p class="text-white/50 text-[10px] leading-snug">{{ tech.description }}</p>
+                    <p class="text-white/50 text-[10px] leading-snug">{{ getLocalized(tech.description) }}</p>
 
                     <div class="flex gap-3 mt-1 text-[9px] uppercase tracking-wider">
-                      <span :class="elementColor(tech.element ?? 'None')">{{ (tech.element ?? 'None') !== 'None' ? tech.element : 'Neutral' }}</span>
+                      <span :class="elementColor(tech.element ?? 'None')">
+                        {{ (tech.element ?? 'None') !== 'None' ? t('resistances.' + (tech.element || 'None').toLowerCase()) : t('digievolution.neutral') }}
+                      </span>
                       <span class="text-blue-300/70">MP {{ tech.mp }}</span>
                       <span class="text-red-300/70">PWR {{ tech.power }}</span>
                     </div>
@@ -176,7 +184,7 @@ const derivatives = computed(() => {
                 </div>
                 
                 <p v-if="techniques.length === 0" class="text-white/40 text-center py-4 text-[10px] italic font-cyber border border-white/5 rounded">
-                  No technique data available.
+                  {{ $t('digievolution.noTechData') }}
                 </p>
             </div>
         </div>
@@ -185,14 +193,13 @@ const derivatives = computed(() => {
         <div v-if="derivatives.length > 0" class="shrink-0">
             <div class="text-[9px] text-indigo-400/80 mb-2 flex items-center font-cyber uppercase tracking-widest">
                 <span class="text-[11px] mr-2 opacity-80 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-0.5">🧬</span>
-                Next Digievolutions
+                {{ $t('digievolution.nextDigievolutions') }}
             </div>
             <div class="flex flex-wrap gap-2">
                 <button v-for="deriv in derivatives" :key="deriv.name"
                       @click="emit('select-evolution', deriv.name)"
                       class="cursor-pointer hover:bg-indigo-700/50 transition-colors text-[10px] px-2 py-1.5 bg-indigo-950/30 text-indigo-200 border border-indigo-900/40 rounded font-cyber flex items-center">
-                    <div class="w-1.5 h-1.5 rounded-full mr-2 bg-indigo-500/50"></div>
-                    {{ deriv.name }}
+                    {{ getLocalized(deriv.name) }}
                 </button>
             </div>
         </div>

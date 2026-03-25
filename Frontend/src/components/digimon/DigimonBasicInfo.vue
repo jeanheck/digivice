@@ -4,11 +4,14 @@ import ExpProgressBar from '../ui/ExpProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
 import DigimonIcon from '../ui/DigimonIcon.vue'
 import { ExperienceCalculator } from '../../logic/ExperienceCalculator'
+import { useLocalization } from '../../composables/useLocalization'
 import type { Digimon } from '../../types/backend'
 
 const props = defineProps<{
   digimon: Digimon
 }>()
+
+const { getLocalized, t } = useLocalization()
 
 const isLevelingUp = ref(false)
 
@@ -62,19 +65,18 @@ const getMpColor = (current: number, max: number) => {
       <div class="flex items-start gap-4">
         
         <!-- Icon Image using Vite dynamic URL -->
-        <!-- Icon Image using Vite dynamic URL -->
         <DigimonIcon :digimon-name="digimon.basicInfo.name" class="w-16 h-16" />
 
         <div class="flex-1 flex flex-col gap-1 min-w-0">
           <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
-            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimon.basicInfo.name }}</h2>
+            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ getLocalized(digimon.basicInfo.name) || digimon.basicInfo.name }}</h2>
             
             <div class="relative flex items-center justify-center flex-shrink-0">
               <span 
                 class="text-[0.6rem] font-medium text-yellow-500 transition-all duration-300"
                 :class="isLevelingUp ? 'scale-150 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'scale-100'"
               >
-                Level {{ digimon.basicInfo.level }}
+                {{ $t('common.level') }} {{ digimon.basicInfo.level }}
               </span>
               
               <!-- Sparkles effect -->

@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { useGameStore } from '../../stores/useGameStore'
 import { computed, ref } from 'vue'
-
+import { useLocalization } from '../../composables/useLocalization'
+ 
 const store = useGameStore()
-const mainQuest = computed(() => store.gameState?.journal?.mainQuest)
-const sideQuests = computed(() => store.gameState?.journal?.sideQuests || [])
+const { getLocalized, getLocalizedQuest } = useLocalization()
+
+const mainQuest = computed(() => getLocalizedQuest(store.gameState?.journal?.mainQuest))
+const sideQuests = computed(() => (store.gameState?.journal?.sideQuests || []).map(q => getLocalizedQuest(q)))
 
 const currentMainQuestStep = computed(() => {
   if (!mainQuest.value || !mainQuest.value.steps) return null
@@ -50,30 +53,30 @@ const isQuestNew = (quest: any) => {
 <template>
   <aside class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-3 flex flex-col pt-0 overflow-hidden mb-1">
     <div class="w-full flex items-center justify-center border-b border-[#0033aa]/50 bg-[#000e3f] sticky top-0 py-2 z-10">
-      <h3 class="font-bold tracking-widest text-[#0077ff] text-shadow-sm uppercase text-sm">Journal</h3>
+      <h3 class="font-bold tracking-widest text-[#0077ff] text-shadow-sm uppercase text-sm">{{ $t('journal.title') }}</h3>
     </div>
     
     <div class="flex-1 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
       
       <!-- MAIN QUEST SECTION -->
       <section>
-        <h4 class="text-xs text-orange-400 font-bold mb-2 uppercase tracking-wide border-b border-orange-900 pb-1">Main Quest</h4>
+        <h4 class="text-xs text-orange-400 font-bold mb-2 uppercase tracking-wide border-b border-orange-900 pb-1">{{ $t('journal.mainQuest') }}</h4>
         
         <div v-if="mainQuest && mainQuest.title" 
              @click="onQuestClick(mainQuest)"
              class="p-2 rounded border border-gray-600 bg-gray-800/50 hover:bg-gray-700/60 cursor-pointer transition-colors group">
           <div class="flex items-center justify-between mb-1">
-            <span class="text-white font-bold text-sm truncate group-hover:text-orange-300 transition-colors">{{ mainQuest.title }}</span>
+            <span class="text-white font-bold text-sm truncate group-hover:text-orange-300 transition-colors">{{ getLocalized(mainQuest.title) }}</span>
             <span v-if="isQuestDone(mainQuest)" class="text-green-400 text-xs">✔</span>
           </div>
           <p class="text-gray-400 text-xs line-clamp-2 leading-tight">
              <span v-if="currentMainQuestStep" class="text-orange-300 font-bold mr-1">[{{ currentMainQuestStep.number }}]</span>
-             {{ currentMainQuestStep ? currentMainQuestStep.description : mainQuest.description }}
+             {{ currentMainQuestStep ? getLocalized(currentMainQuestStep.description) : getLocalized(mainQuest.description) }}
           </p>
         </div>
         
         <div v-else class="p-2 rounded border border-gray-700 border-dashed text-center opacity-60">
-          <span class="text-gray-500 text-xs italic">Awaiting Destination...</span>
+          <span class="text-gray-500 text-xs italic">{{ $t('journal.awaitingDestination') }}</span>
         </div>
       </section>
 
@@ -83,14 +86,14 @@ const isQuestNew = (quest: any) => {
           @click="toggleSideQuests"
           class="flex items-center justify-between mb-2 border-b border-blue-900 pb-1 cursor-pointer hover:bg-blue-900/30 transition-colors p-1 -mx-1 rounded"
         >
-          <h4 class="text-xs text-blue-400 font-bold uppercase tracking-wide">Side Quests</h4>
+          <h4 class="text-xs text-blue-400 font-bold uppercase tracking-wide">{{ $t('journal.sideQuests') }}</h4>
           <span class="text-blue-500 text-xs transform transition-transform duration-300" :class="{ 'rotate-180': isSideQuestsExpanded }">▼</span>
         </div>
         
         <!-- Accordion Content -->
         <div v-show="isSideQuestsExpanded" class="space-y-2">
           
-          <div v-for="quest in displaySideQuests" :key="quest.title"
+          <div v-for="quest in displaySideQuests" :key="quest.id || getLocalized(quest.title)"
                @click="onQuestClick(quest)"
                class="p-2 rounded border cursor-pointer transition-all duration-200 group relative overflow-hidden"
                :class="
@@ -108,23 +111,23 @@ const isQuestNew = (quest: any) => {
             <div class="flex items-center justify-between mb-1 relative z-10">
               <span class="text-white font-bold text-xs truncate transition-colors"
                 :class="{
-                  'text-gray-500': isQuestLocked(quest),
-                  'text-gray-400 line-through': isQuestDone(quest),
-                  'group-hover:text-cyan-300': !isQuestLocked(quest) && !isQuestDone(quest)
+                   'text-gray-500': isQuestLocked(quest),
+                   'text-gray-400 line-through': isQuestDone(quest),
+                   'group-hover:text-cyan-300': !isQuestLocked(quest) && !isQuestDone(quest)
                 }">
-                {{ quest.title }}
+                {{ getLocalized(quest.title) }}
               </span>
               <span v-if="isQuestDone(quest)" class="text-green-500 text-xs drop-shadow flex-shrink-0 ml-2">✔</span>
               <span v-else-if="isQuestLocked(quest)" class="text-xs flex-shrink-0 ml-2">🔒</span>
               <span v-else-if="isQuestNew(quest)" class="text-cyan-300 text-xs flex-shrink-0 ml-2">❕</span>
             </div>
             <p class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10" :class="{ 'opacity-50': isQuestDone(quest) || isQuestLocked(quest) }">
-              {{ quest.description }}
+              {{ getLocalized(quest.description) }}
             </p>
           </div>
 
           <div v-if="displaySideQuests.length === 0" class="p-2 text-center opacity-50">
-             <span class="text-gray-500 text-xs italic">No Side Quests Active</span>
+             <span class="text-gray-500 text-xs italic">{{ $t('journal.noSideQuests') }}</span>
           </div>
           
         </div>

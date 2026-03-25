@@ -3,16 +3,17 @@ import { computed } from 'vue'
 import IconClose from '../icons/IconClose.vue'
 import TechniquesTable from '../../data/static/TechniquesTable.json'
 import DigievolutionTechniques from '../../data/static/DigievolutionTechniques.json'
+import { useLocalization } from '../../composables/useLocalization'
 
 interface TechEntry {
   id: string
-  name: string
+  name: any
   type: string
   element: string
   elementStrength: number
   mp: number
   power: number
-  description: string
+  description: any
 }
 
 interface DigivolutionTechEntry {
@@ -22,11 +23,13 @@ interface DigivolutionTechEntry {
 
 const props = defineProps<{
   isOpen: boolean
-  digivolutionName: string | null
+  digivolutionName: any // Can be string or localized object
   currentLevel: number
 }>()
 
 const emit = defineEmits(['close'])
+
+const { t, getLocalized } = useLocalization()
 
 const closeModal = () => emit('close')
 
@@ -38,8 +41,14 @@ const techniqueById = Object.fromEntries(
 const techniques = computed(() => {
   if (!props.digivolutionName) return []
 
-  const entry = (DigievolutionTechniques as { digievolutions: { name: string; techniques: DigivolutionTechEntry[] }[] })
-    .digievolutions.find(d => d.name === props.digivolutionName)
+  const localizedName = getLocalized(props.digivolutionName)
+
+  // Use unknown first to avoid overlap errors with the new i18n structure
+  const data = (DigievolutionTechniques as unknown) as { 
+    digievolutions: { name: any; techniques: DigivolutionTechEntry[] }[] 
+  }
+  
+  const entry = data.digievolutions.find(d => getLocalized(d.name) === localizedName)
   if (!entry) return []
 
   const maxLearnLevel = Math.max(...entry.techniques.map(t => t.learnLevel))
@@ -97,8 +106,8 @@ function typeIcon(type: string): string {
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-10">
             <h2 class="font-bold tracking-widest text-[#00aaff] text-sm uppercase flex items-center gap-2">
               <span class="text-yellow-400">⚡</span>
-              {{ digivolutionName }}
-              <span class="text-white/40 font-normal text-xs">— Techniques</span>
+              {{ getLocalized(digivolutionName) }}
+              <span class="text-white/40 font-normal text-xs">— {{ $t('player.combatActions') || 'Techniques' }}</span>
             </h2>
             <button
               @click="closeModal"
@@ -129,7 +138,7 @@ function typeIcon(type: string): string {
                 v-if="tech.isSignature"
                 class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest"
               >
-                ⭐ SIG
+                ⭐ {{ $t('digievolution.signature') }}
               </span>
 
               <!-- Type icon -->
@@ -145,18 +154,20 @@ function typeIcon(type: string): string {
                     class="font-bold tracking-wide"
                     :class="tech.isSignature ? 'text-yellow-300' : tech.isUnlocked ? 'text-white' : 'text-white/40'"
                   >
-                    {{ tech.name }}
+                    {{ getLocalized(tech.name) }}
                   </span>
                   <span v-if="!tech.isUnlocked" class="text-[10px] text-red-400/80 ml-1">Lv.{{ tech.learnLevel }}</span>
                   <span v-else class="text-[10px] text-green-400/80 ml-1">✓</span>
                 </div>
 
                 <!-- Description -->
-                <p class="text-white/50 text-[11px] leading-snug">{{ tech.description }}</p>
+                <p class="text-white/50 text-[11px] leading-snug">{{ getLocalized(tech.description) }}</p>
 
                 <!-- Stats row -->
                 <div class="flex gap-3 mt-1 text-[10px]">
-                  <span :class="elementColor(tech.element ?? 'None')">{{ (tech.element ?? 'None') !== 'None' ? tech.element : 'Neutral' }}</span>
+                  <span :class="elementColor(tech.element ?? 'None')">
+                    {{ (tech.element ?? 'None') !== 'None' ? t('resistances.' + (tech.element || 'None').toLowerCase()) : t('digievolution.neutral') }}
+                  </span>
                   <span class="text-blue-300/70">MP {{ tech.mp }}</span>
                   <span class="text-red-300/70">PWR {{ tech.power }}</span>
                 </div>
@@ -165,7 +176,7 @@ function typeIcon(type: string): string {
 
             <!-- Empty state -->
             <p v-if="techniques.length === 0" class="text-white/40 text-center py-4 text-xs">
-              No technique data available.
+              {{ $t('digievolution.noTechData') }}
             </p>
           </div>
         </div>

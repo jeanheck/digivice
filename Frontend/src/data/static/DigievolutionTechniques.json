@@ -1,10 +1,7 @@
 {
     "digievolutions": [
         {
-            "name": {
-                "PT-BR": "Dinohumon",
-                "EN-US": "Dinohumon"
-            },
+            "name": "Dinohumon",
             "techniques": [
                 {
                     "techniqueId": "heat_cutter",
@@ -34,10 +31,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Hookmon",
-                "EN-US": "Hookmon"
-            },
+            "name": "Hookmon",
             "techniques": [
                 {
                     "techniqueId": "wing_buster",
@@ -67,10 +61,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Grizzmon",
-                "EN-US": "Grizzmon"
-            },
+            "name": "Grizzmon",
             "techniques": [
                 {
                     "techniqueId": "lightning_slash",
@@ -100,10 +91,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Greymon",
-                "EN-US": "Greymon"
-            },
+            "name": "Greymon",
             "techniques": [
                 {
                     "techniqueId": "flame_ball",
@@ -133,10 +121,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "ExVeemon",
-                "EN-US": "ExVeemon"
-            },
+            "name": "ExVeemon",
             "techniques": [
                 {
                     "techniqueId": "air_blast",
@@ -166,10 +151,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Growlmon",
-                "EN-US": "Growlmon"
-            },
+            "name": "Growlmon",
             "techniques": [
                 {
                     "techniqueId": "double_power",
@@ -199,10 +181,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Kyubimon",
-                "EN-US": "Kyubimon"
-            },
+            "name": "Kyubimon",
             "techniques": [
                 {
                     "techniqueId": "thunder_bolt",
@@ -232,10 +211,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Angemon",
-                "EN-US": "Angemon"
-            },
+            "name": "Angemon",
             "techniques": [
                 {
                     "techniqueId": "air_blast",
@@ -265,10 +241,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Devimon",
-                "EN-US": "Devimon"
-            },
+            "name": "Devimon",
             "techniques": [
                 {
                     "techniqueId": "dark_matter",
@@ -298,10 +271,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Stingmon",
-                "EN-US": "Stingmon"
-            },
+            "name": "Stingmon",
             "techniques": [
                 {
                     "techniqueId": "poison_bites",
@@ -331,10 +301,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Angewomon",
-                "EN-US": "Angewomon"
-            },
+            "name": "Angewomon",
             "techniques": [
                 {
                     "techniqueId": "antidote",
@@ -359,10 +326,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Kyukimon",
-                "EN-US": "Kyukimon"
-            },
+            "name": "Kyukimon",
             "techniques": [
                 {
                     "techniqueId": "heat_cutter",
@@ -397,10 +361,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Armormon",
-                "EN-US": "Armormon"
-            },
+            "name": "Armormon",
             "techniques": [
                 {
                     "techniqueId": "bug_buster",
@@ -435,10 +396,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "GrapLeomon",
-                "EN-US": "GrapLeomon"
-            },
+            "name": "GrapLeomon",
             "techniques": [
                 {
                     "techniqueId": "lightning_slash",
@@ -468,10 +426,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "MetalGreymon",
-                "EN-US": "MetalGreymon"
-            },
+            "name": "MetalGreymon",
             "techniques": [
                 {
                     "techniqueId": "flame_ball",
@@ -506,10 +461,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "SkullGreymon",
-                "EN-US": "SkullGreymon"
-            },
+            "name": "SkullGreymon",
             "techniques": [
                 {
                     "techniqueId": "flame_ball",
@@ -539,10 +491,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Paildramon",
-                "EN-US": "Paildramon"
-            },
+            "name": "Paildramon",
             "techniques": [
                 {
                     "techniqueId": "metal_attack",
@@ -577,10 +526,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "WarGrowlmon",
-                "EN-US": "WarGrowlmon"
-            },
+            "name": "WarGrowlmon",
             "techniques": [
                 {
                     "techniqueId": "picking_claw",
@@ -615,10 +561,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Taomon",
-                "EN-US": "Taomon"
-            },
+            "name": "Taomon",
             "techniques": [
                 {
                     "techniqueId": "thunder_gemini",
@@ -653,10 +596,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "MagnaAngemon",
-                "EN-US": "MagnaAngemon"
-            },
+            "name": "MagnaAngemon",
             "techniques": [
                 {
                     "techniqueId": "air_blast",
@@ -691,10 +631,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Myotismon",
-                "EN-US": "Myotismon"
-            },
+            "name": "Myotismon",
             "techniques": [
                 {
                     "techniqueId": "dark_fear",
@@ -729,10 +666,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "MetalMamemon",
-                "EN-US": "MetalMamemon"
-            },
+            "name": "MetalMamemon",
             "techniques": [
                 {
                     "techniqueId": "metal_attack",
@@ -767,10 +701,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Kabuterimon",
-                "EN-US": "Kabuterimon"
-            },
+            "name": "Kabuterimon",
             "techniques": [
                 {
                     "techniqueId": "energy_leech",
@@ -800,10 +731,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Digitamamon",
-                "EN-US": "Digitamamon"
-            },
+            "name": "Digitamamon",
             "techniques": [
                 {
                     "techniqueId": "hypno_gas",
@@ -828,10 +756,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Guardiangemon",
-                "EN-US": "Guardiangemon"
-            },
+            "name": "Guardiangemon",
             "techniques": [
                 {
                     "techniqueId": "burn_slash",
@@ -866,10 +791,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Cannondramon",
-                "EN-US": "Cannondramon"
-            },
+            "name": "Cannondramon",
             "techniques": [
                 {
                     "techniqueId": "fish_buster",
@@ -904,10 +826,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Marsmon",
-                "EN-US": "Marsmon"
-            },
+            "name": "Marsmon",
             "techniques": [
                 {
                     "techniqueId": "heaven_hit",
@@ -937,10 +856,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "WarGreymon",
-                "EN-US": "WarGreymon"
-            },
+            "name": "WarGreymon",
             "techniques": [
                 {
                     "techniqueId": "flame_lance",
@@ -975,10 +891,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Imperialdramon",
-                "EN-US": "Imperialdramon"
-            },
+            "name": "Imperialdramon",
             "techniques": [
                 {
                     "techniqueId": "mega_heal",
@@ -1008,10 +921,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Gallantmon",
-                "EN-US": "Gallantmon"
-            },
+            "name": "Gallantmon",
             "techniques": [
                 {
                     "techniqueId": "speed_boost",
@@ -1041,10 +951,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Sakuyamon",
-                "EN-US": "Sakuyamon"
-            },
+            "name": "Sakuyamon",
             "techniques": [
                 {
                     "techniqueId": "electro_bolt",
@@ -1079,10 +986,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Seraphimon",
-                "EN-US": "Seraphimon"
-            },
+            "name": "Seraphimon",
             "techniques": [
                 {
                     "techniqueId": "mega_tornado",
@@ -1117,10 +1021,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "MetalGarurumon",
-                "EN-US": "MetalGarurumon"
-            },
+            "name": "MetalGarurumon",
             "techniques": [
                 {
                     "techniqueId": "mechanical_bash",
@@ -1150,10 +1051,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Rosemon",
-                "EN-US": "Rosemon"
-            },
+            "name": "Rosemon",
             "techniques": [
                 {
                     "techniqueId": "grand_wave",
@@ -1188,10 +1086,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "BK WarGreymon",
-                "EN-US": "BK WarGreymon"
-            },
+            "name": "BK WarGreymon",
             "techniques": [
                 {
                     "techniqueId": "flame_breath",
@@ -1226,10 +1121,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Imperialdramon-F",
-                "EN-US": "Imperialdramon-F"
-            },
+            "name": "Imperialdramon-F",
             "techniques": [
                 {
                     "techniqueId": "heaven_hit",
@@ -1264,10 +1156,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "MaloMyotismon",
-                "EN-US": "MaloMyotismon"
-            },
+            "name": "MaloMyotismon",
             "techniques": [
                 {
                     "techniqueId": "dark_elemental",
@@ -1302,10 +1191,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "MegaGargomon",
-                "EN-US": "MegaGargomon"
-            },
+            "name": "MegaGargomon",
             "techniques": [
                 {
                     "techniqueId": "mechanical_bash",
@@ -1335,10 +1221,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "GranKuwagamon",
-                "EN-US": "GranKuwagamon"
-            },
+            "name": "GranKuwagamon",
             "techniques": [
                 {
                     "techniqueId": "venom_stab",
@@ -1368,10 +1251,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Phoenixmon",
-                "EN-US": "Phoenixmon"
-            },
+            "name": "Phoenixmon",
             "techniques": [
                 {
                     "techniqueId": "full_heal",
@@ -1401,10 +1281,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Omnimon",
-                "EN-US": "Omnimon"
-            },
+            "name": "Omnimon",
             "techniques": [
                 {
                     "techniqueId": "flame_breath",
@@ -1434,10 +1311,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Imperialdramon-P",
-                "EN-US": "Imperialdramon-P"
-            },
+            "name": "Imperialdramon-P",
             "techniques": [
                 {
                     "techniqueId": "auto_recover",
@@ -1472,10 +1346,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Beelzemon",
-                "EN-US": "Beelzemon"
-            },
+            "name": "Beelzemon",
             "techniques": [
                 {
                     "techniqueId": "dark_elemental",
@@ -1510,10 +1381,7 @@
             ]
         },
         {
-            "name": {
-                "PT-BR": "Diaboromon",
-                "EN-US": "Diaboromon"
-            },
+            "name": "Diaboromon",
             "techniques": [
                 {
                     "techniqueId": "deadly_poison",

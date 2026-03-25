@@ -1,0 +1,119 @@
+{
+  "common": {
+    "connected": "Conectado",
+    "disconnected": "Desconectado",
+    "connecting": "Conectando...",
+    "level": "Nível"
+  },
+  "player": {
+    "tamer": "Treinador",
+    "bits": "Bits",
+    "slotEmpty": "Slot Vazio"
+  },
+  "journal": {
+    "title": "Diário",
+    "mainQuest": "Missão Principal",
+    "sideQuests": "Missões Secundárias",
+    "noSideQuests": "Nenhuma Missão Secundária Ativa",
+    "awaitingDestination": "Aguardando Destino..."
+  },
+  "questDetails": {
+    "prerequisites": "Pré-requisitos",
+    "missionSteps": "Passos da Missão",
+    "clickStep": "CLIQUE EM UM PASSO DA MISSÃO\nPARA CARREGAR DADOS GEOGRÁFICOS",
+    "noSignal": "NENHUM SINAL DETECTADO.\nCOORDENADAS DESCONHECIDAS.",
+    "noSteps": "Nenhum passo específico rastreado."
+  },
+  "milestones": {
+    "title": "Marcos",
+    "treeBoots": "Botas de Árvore",
+    "fishingPole": "Vara de Pesca",
+    "elDoradoId": "ID de El Dorado",
+    "folderBag": "Bolsa de Cards"
+  },
+  "area": {
+    "title": "Informações da Área",
+    "enemies": "Inimigos",
+    "unknownArea": "Área Desconhecida",
+    "unknownZone": "Zona Desconhecida",
+    "safeZone": "Zona Segura"
+  },
+  "enemy": {
+    "level": "NÍVEL",
+    "species": "Espécie",
+    "possibleDrop": "Drop Possível",
+    "baseExp": "EXP Base",
+    "baseBits": "BITS Base",
+    "combatActions": "Ações de Combate",
+    "regularAttack": "Ataque Normal",
+    "technique": "Técnica",
+    "attr": "Attr",
+    "elem": "Elem",
+    "status": "Status"
+  },
+  "digimon": {
+    "digievolutions": "Digievoluções",
+    "equipments": "Equipamentos",
+    "baseDigimon": "Digimon Base",
+    "equipableBy": "Equipável por",
+    "allDigimon": "Todos os Digimon",
+    "slots": {
+      "head": "Cabeça",
+      "body": "Corpo",
+      "right": "Direita",
+      "left": "Esquerda",
+      "accessory1": "Acessório 1",
+      "accessory2": "Acessório 2"
+    },
+    "states": {
+      "empty": "Vazio",
+      "unknown": "Desconhecido",
+      "none": "Nenhum",
+      "itemID": "Item ID: {id}"
+    }
+  },
+  "digievolution": {
+    "selectNode": "SELECIONE UM NÓ DE DIGIEVOLUÇÃO PARA MAIS DETALHES.",
+    "requirementDigievolutions": "Requisitos de Digievolução",
+    "nextDigievolutions": "Próximas Digievoluções",
+    "noTechData": "Nenhum dado de técnica disponível.",
+    "signature": "SIG",
+    "neutral": "Neutro",
+    "noEvolutionData": "Nenhum dado de evolução disponível",
+    "unknownParam": "Parâmetro Desconhecido",
+    "lv": "Nv",
+    "techniques": "Técnicas"
+  },
+  "attributes": {
+    "strength": "Força",
+    "defense": "Defesa",
+    "spirit": "Espírito",
+    "wisdom": "Sabedoria",
+    "speed": "Velocidade",
+    "charisma": "Carisma"
+  },
+  "resistances": {
+    "fire": "Fogo",
+    "water": "Água",
+    "ice": "Gelo",
+    "wind": "Vento",
+    "thunder": "Trovão",
+    "machine": "Máquina",
+    "dark": "Trevas"
+  },
+  "tooltips": {
+    "strength": "Aumenta o dano causado por ataques físicos e técnicas.",
+    "defense": "Reduz o dano recebido de ataques físicos.",
+    "spirit": "Aumenta o dano causado por técnicas mágicas e afeta o MP máximo.",
+    "wisdom": "Melhora a taxa de acerto mágico, evasão contra magia e reduz o dano recebido de ataques mágicos.",
+    "speed": "Determina a ordem dos turnos em batalha e melhora a taxa de evasão geral.",
+    "charisma": "Aumenta a popularidade do Digimon, reduz preços em lojas e permite batalhar contra certos Tamers.",
+    "fire": "Reduz o dano recebido de técnicas do elemento Fogo.",
+    "water": "Reduz o dano recebido de técnicas do elemento Água.",
+    "ice": "Reduz o dano recebido de técnicas do elemento Gelo.",
+    "wind": "Reduz o dano recebido de técnicas do elemento Vento.",
+    "thunder": "Reduz o dano recebido de técnicas do elemento Trovão.",
+    "machine": "Reduz o dano recebido de técnicas do elemento Máquina.",
+    "dark": "Reduz o dano recebido de técnicas do elemento Trevas."
+  }
+}

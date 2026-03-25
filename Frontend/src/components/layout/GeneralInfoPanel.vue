@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import { useGameStore } from '../../stores/useGameStore'
 import { computed, ref } from 'vue'
+import { useLocalization } from '../../composables/useLocalization'
 
 const store = useGameStore()
+const { t } = useLocalization()
+
 const items = computed(() => store.gameState?.importantItems || ({} as import('../../types/backend').ImportantItems))
 
 const milestones = [
-  { key: 'treeBoots', name: 'Tree Boots', icon: '🥾' },
-  { key: 'fishingPole', name: 'Fishing Pole', icon: '🎣' },
-  { key: 'elDoradoId', name: 'El Dorado Id', icon: '💳' },
-  { key: 'folderBag', name: 'Folder Bag', icon: '📂' }
+  { key: 'treeBoots', nameKey: 'player.treeBoots', icon: '🥾' },
+  { key: 'fishingPole', nameKey: 'player.fishingPole', icon: '🎣' },
+  { key: 'elDoradoId', nameKey: 'player.elDoradoId', icon: '💳' },
+  { key: 'folderBag', nameKey: 'player.folderBag', icon: '📂' }
 ]
 
 const getStyle = (key: keyof import('../../types/backend').ImportantItems) => {
@@ -21,7 +24,7 @@ const getStyle = (key: keyof import('../../types/backend').ImportantItems) => {
 // Tooltip Logic
 const activeTooltip = ref({ show: false, name: '', x: 0, y: 0 })
 
-const showTooltip = (event: MouseEvent, name: string) => {
+const showTooltip = (event: MouseEvent, nameKey: string) => {
   const tooltipWidth = 160
   let posX = event.clientX + 15
   if (posX + tooltipWidth > window.innerWidth) {
@@ -30,7 +33,7 @@ const showTooltip = (event: MouseEvent, name: string) => {
 
   activeTooltip.value = {
     show: true,
-    name,
+    name: t(nameKey),
     x: posX,
     y: event.clientY + 15
   }
@@ -57,7 +60,7 @@ const moveTooltip = (event: MouseEvent) => {
 <template>
   <aside class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-3 flex flex-col items-center">
     <div class="w-full mb-3 flex items-center justify-center border-b border-[#0033aa]/50 pb-1">
-      <h3 class="font-bold tracking-widest text-[#0077ff] text-shadow-sm uppercase text-sm">Milestones</h3>
+      <h3 class="font-bold tracking-widest text-[#0077ff] text-shadow-sm uppercase text-sm">{{ $t('player.milestones') || 'Milestones' }}</h3>
     </div>
     
     <div class="flex flex-wrap gap-3 justify-center">
@@ -66,7 +69,7 @@ const moveTooltip = (event: MouseEvent) => {
         :key="milestone.key"
         class="w-[50px] h-[50px] flex items-center justify-center rounded border-2 transition-all duration-300 cursor-help"
         :class="getStyle(milestone.key as keyof import('../../types/backend').ImportantItems)"
-        @mouseenter="e => showTooltip(e, milestone.name)"
+        @mouseenter="e => showTooltip(e, milestone.nameKey)"
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"
       >

@@ -1,0 +1,119 @@
+{
+  "common": {
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "connecting": "Connecting...",
+    "level": "Level"
+  },
+  "player": {
+    "tamer": "Tamer",
+    "bits": "Bits",
+    "slotEmpty": "Slot Empty"
+  },
+  "journal": {
+    "title": "Journal",
+    "mainQuest": "Main Quest",
+    "sideQuests": "Side Quests",
+    "noSideQuests": "No Side Quests Active",
+    "awaitingDestination": "Awaiting Destination..."
+  },
+  "questDetails": {
+    "prerequisites": "Prerequisites",
+    "missionSteps": "Mission Steps",
+    "clickStep": "CLICK A MISSION STEP\nTO BOOT GEOGRAPHIC DATA",
+    "noSignal": "NO SIGNAL DETECTED.\nTARGET COORDS UNKNOWN.",
+    "noSteps": "No specific steps tracked."
+  },
+  "milestones": {
+    "title": "Milestones",
+    "treeBoots": "Tree Boots",
+    "fishingPole": "Fishing Pole",
+    "elDoradoId": "El Dorado Id",
+    "folderBag": "Folder Bag"
+  },
+  "area": {
+    "title": "Area Information",
+    "enemies": "Enemies",
+    "unknownArea": "Unknown Area",
+    "unknownZone": "Unknown Zone",
+    "safeZone": "Safe Zone"
+  },
+  "enemy": {
+    "level": "LEVEL",
+    "species": "Species",
+    "possibleDrop": "Possible Drop",
+    "baseExp": "Base EXP",
+    "baseBits": "Base BITS",
+    "combatActions": "Combat Actions",
+    "regularAttack": "Regular Attack",
+    "technique": "Technique",
+    "attr": "Attr",
+    "elem": "Elem",
+    "status": "Status"
+  },
+  "digimon": {
+    "digievolutions": "Digievolutions",
+    "equipments": "Equipments",
+    "baseDigimon": "Base Digimon",
+    "equipableBy": "Equipable by",
+    "allDigimon": "All Digimon",
+    "slots": {
+      "head": "Head",
+      "body": "Body",
+      "right": "Right",
+      "left": "Left",
+      "accessory1": "Accessory 1",
+      "accessory2": "Accessory 2"
+    },
+    "states": {
+      "empty": "Empty",
+      "unknown": "Unknown",
+      "none": "None",
+      "itemID": "Item ID: {id}"
+    }
+  },
+  "digievolution": {
+    "selectNode": "SELECT A DIGIEVOLUTION NODE FOR MORE DETAILS.",
+    "requirementDigievolutions": "Requirement Digievolutions",
+    "nextDigievolutions": "Next Digievolutions",
+    "noTechData": "No technique data available.",
+    "signature": "SIG",
+    "neutral": "Neutral",
+    "noEvolutionData": "No evolution data available",
+    "unknownParam": "Unknown Parameter",
+    "lv": "Lv",
+    "techniques": "Techniques"
+  },
+  "attributes": {
+    "strength": "Strength",
+    "defense": "Defense",
+    "spirit": "Spirit",
+    "wisdom": "Wisdom",
+    "speed": "Speed",
+    "charisma": "Charisma"
+  },
+  "resistances": {
+    "fire": "Fire",
+    "water": "Water",
+    "ice": "Ice",
+    "wind": "Wind",
+    "thunder": "Thunder",
+    "machine": "Machine",
+    "dark": "Dark"
+  },
+  "tooltips": {
+    "strength": "Increases the damage dealt by physical attacks and techniques.",
+    "defense": "Reduces the damage taken from physical attacks.",
+    "spirit": "Increases the damage dealt by magical techniques and affects maximum MP.",
+    "wisdom": "Improves magical hit rate, evasion against magic, and reduces damage taken from magical attacks.",
+    "speed": "Determines turn order in battle and improves overall evasion rate.",
+    "charisma": "Increases Digimon popularity, lowers shop prices, and allows battling certain Tamers.",
+    "fire": "Reduces damage taken from Fire-elemental techniques.",
+    "water": "Reduces damage taken from Water-elemental techniques.",
+    "ice": "Reduces damage taken from Ice-elemental techniques.",
+    "wind": "Reduces damage taken from Wind-elemental techniques.",
+    "thunder": "Reduces damage taken from Thunder-elemental techniques.",
+    "machine": "Reduces damage taken from Machine-elemental techniques.",
+    "dark": "Reduces damage taken from Dark-elemental techniques."
+  }
+}
