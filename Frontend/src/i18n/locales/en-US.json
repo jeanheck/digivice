@@ -73,6 +73,7 @@
     }
   },
   "digievolution": {
+    "title": "{name} Digievolutions",
     "selectNode": "SELECT A DIGIEVOLUTION NODE FOR MORE DETAILS.",
     "requirementDigievolutions": "Requirement Digievolutions",
     "nextDigievolutions": "Next Digievolutions",

@@ -53,7 +53,7 @@ const handleSelectNode = (name: string) => {
           <!-- Header -->
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-10 shrink-0">
             <h2 class="text-[#00aaff] font-bold tracking-widest drop-shadow flex items-center gap-2">
-                {{ digimon.basicInfo.name }} Digievolutions
+                {{ $t('digievolution.title', { name: digimon.basicInfo.name }) }}
             </h2>
             <button 
               @click="emit('close')"
@@ -90,7 +90,7 @@ const handleSelectNode = (name: string) => {
               <!-- Empty State -->
               <div v-else class="flex-1 flex flex-col items-center justify-center p-12 text-center">
                  <p class="text-[10px] text-blue-300/40 font-cyber leading-relaxed max-w-[200px]">
-                    SELECT A DIGIEVOLUTION NODE FOR MORE DETAILS.
+                    {{ $t('digievolution.selectNode') }}
                  </p>
               </div>
             </div>

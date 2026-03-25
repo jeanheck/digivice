@@ -73,7 +73,8 @@
     }
   },
   "digievolution": {
-    "selectNode": "SELECIONE UM NÓ DE DIGIEVOLUÇÃO PARA MAIS DETALHES.",
+    "title": "Digievoluções de {name}",
+    "selectNode": "SELECIONE UMA DIGIEVOLUÇÃO PARA VER MAIS DETALHES.",
     "requirementDigievolutions": "Requisitos de Digievolução",
     "nextDigievolutions": "Próximas Digievoluções",
     "noTechData": "Nenhum dado de técnica disponível.",
