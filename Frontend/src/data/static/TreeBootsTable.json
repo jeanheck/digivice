@@ -5,8 +5,8 @@
         "EN-US": "The Tree Boots"
     },
     "Description": {
-        "PT-BR": "Obtenha as Botas de Árvore para desbloquear novas áreas chutando árvores.",
-        "EN-US": "Obtain the Tree Boots to unlock new areas by kicking trees."
+        "PT-BR": "Obtenha as Botas de Árvore para encontrar Cardmons chutando árvores.",
+        "EN-US": "Obtain the Tree Boots to find Cardmons by kicking trees."
     },
     "Prerequisites": [
         {
@@ -48,22 +48,22 @@
         {
             "Number": 5,
             "Description": {
-                "PT-BR": "Encontre Veemon em Wind Prairie",
+                "PT-BR": "Encontre Veemon na Campina do Vento",
                 "EN-US": "Find Veemon on Wind Prairie"
             }
         },
         {
             "Number": 6,
             "Description": {
-                "PT-BR": "Brinque de esconde-esconde e encontre Veemon em Kicking Forest",
+                "PT-BR": "Brinque de esconde-esconde e encontre Veemon na Floresta dos Pontapés",
                 "EN-US": "Play Hide and Seek and find Veemon on Kicking Forest"
             }
         },
         {
             "Number": 7,
             "Description": {
-                "PT-BR": "Receba as Botas de Árvore do Veemon",
-                "EN-US": "Receive the Tree Boots from Veemon"
+                "PT-BR": "Receba as Botas de Árvore do Veemon após encontrá-lo",
+                "EN-US": "Receive the Tree Boots from Veemon after you find him"
             }
         }
     ]

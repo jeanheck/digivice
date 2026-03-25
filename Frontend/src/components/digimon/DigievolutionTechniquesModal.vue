@@ -107,7 +107,6 @@ function typeIcon(type: string): string {
             <h2 class="font-bold tracking-widest text-[#00aaff] text-sm uppercase flex items-center gap-2">
               <span class="text-yellow-400">⚡</span>
               {{ getLocalized(digivolutionName) }}
-              <span class="text-white/40 font-normal text-xs">— {{ $t('player.combatActions') || 'Techniques' }}</span>
             </h2>
             <button
               @click="closeModal"

@@ -3,6 +3,8 @@ import MainQuestTable from '../data/static/MainQuestTable.json';
 import FolderBagTable from '../data/static/FolderBagTable.json';
 import FishingPoleTable from '../data/static/FishingPoleTable.json';
 import TreeBootsTable from '../data/static/TreeBootsTable.json';
+import ConsumableItemsTable from '../data/static/ConsumableItemsTable.json';
+import ImportantItemsTable from '../data/static/ImportantItemsTable.json';
 
 export function useLocalization() {
   const { locale, t } = useI18n();
@@ -16,6 +18,15 @@ export function useLocalization() {
     return obj[currentLocale] || obj['EN-US'] || '';
   };
 
+  const getLocalizedItemName = (itemKey: string) => {
+    const allItems = [
+      ...ConsumableItemsTable.ConsumableItems,
+      ...ImportantItemsTable.ImportantItems
+    ];
+    const item = allItems.find(i => i.Id === itemKey);
+    return item ? item.Name : null;
+  };
+
   /**
    * Enriches a quest from the backend with local translations.
    * Relates backend data with frontend JSONs using the 'Id' property.
@@ -25,7 +36,7 @@ export function useLocalization() {
 
     const enriched = { ...backendQuest };
     
-    // Normalizing access to backend ID (SignalR often uses camelCase)
+    // Normalizing access to backend ID (SignalR often uses camelCase, JSON files use Pascal)
     const questId = backendQuest.Id || backendQuest.id || backendQuest.QuestId;
     
     // List of available quest translation tables
@@ -33,6 +44,35 @@ export function useLocalization() {
     
     // Find the matching local table by Id
     const localTable = questTables.find(table => (table as any).Id === questId);
+
+    // Helper to translate prerequisites
+    const translatePrereqs = (prereqs: any[]) => {
+      if (!prereqs || !Array.isArray(prereqs)) return prereqs;
+      return prereqs.map(p => {
+        const itemKey = p.ItemKey || p.itemKey;
+        if (itemKey) {
+          const localizedName = getLocalizedItemName(itemKey);
+          if (localizedName) {
+            // Apply translation to both casing variations for UI compatibility
+            return { 
+              ...p, 
+              description: localizedName,
+              Description: localizedName
+            };
+          }
+        }
+        return p;
+      });
+    };
+
+    // Translate quest-level prerequisites
+    const questPrereqs = enriched.prerequisites || enriched.Prerequisites;
+    if (questPrereqs) {
+      const translated = translatePrereqs(questPrereqs);
+      // Update both to be safe
+      enriched.prerequisites = translated;
+      enriched.Prerequisites = translated;
+    }
 
     if (localTable) {
       // Use PascalCase for localTable properties as seen in JSON files
@@ -42,20 +82,49 @@ export function useLocalization() {
       const backendSteps = enriched.steps || enriched.Steps;
       const localSteps = (localTable as any).Steps;
 
-      if (backendSteps && Array.isArray(backendSteps) && localSteps) {
+      if (backendSteps && Array.isArray(backendSteps)) {
         enriched.steps = backendSteps.map((step: any) => {
-          // Normalize step number access and force numeric comparison
-          const stepNum = step.number !== undefined ? step.number : step.Number;
-          const localStep = localSteps.find((s: any) => Number(s.Number) === Number(stepNum));
+          let enrichedStep = { ...step };
           
-          if (localStep) {
-            return {
-              ...step,
-              description: localStep.Description
-            };
+          // Translate step-level item prerequisites (check both cases)
+          const stepPrereqs = enrichedStep.prerequisites || enrichedStep.Prerequisites;
+          if (stepPrereqs) {
+            const translated = translatePrereqs(stepPrereqs);
+            enrichedStep.prerequisites = translated;
+            enrichedStep.Prerequisites = translated;
           }
-          return step;
+
+          // Translate step description from local table
+          if (localSteps) {
+            const stepNum = step.number !== undefined ? step.number : step.Number;
+            const localStep = localSteps.find((s: any) => Number(s.Number) === Number(stepNum));
+            
+            if (localStep) {
+              enrichedStep.description = localStep.Description;
+              enrichedStep.Description = localStep.Description;
+            }
+          }
+          
+          return enrichedStep;
         });
+        // Sync enriched.Steps if it exists
+        enriched.Steps = enriched.steps;
+      }
+    } else {
+      // Even if no local table, still translate item prerequisites if they exist
+      const backendSteps = enriched.steps || enriched.Steps;
+      if (backendSteps && Array.isArray(backendSteps)) {
+        enriched.steps = backendSteps.map((step: any) => {
+          let enrichedStep = { ...step };
+          const stepPrereqs = enrichedStep.prerequisites || enrichedStep.Prerequisites;
+          if (stepPrereqs) {
+            const translated = translatePrereqs(stepPrereqs);
+            enrichedStep.prerequisites = translated;
+            enrichedStep.Prerequisites = translated;
+          }
+          return enrichedStep;
+        });
+        enriched.Steps = enriched.steps;
       }
     }
 

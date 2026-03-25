@@ -34,8 +34,8 @@
         {
             "Number": 3,
             "Description": {
-                "PT-BR": "Leve os itens para Tai Kong Wong em Shell Beach",
-                "EN-US": "Bring the items to Tai Kong Wong at the Shell Beach"
+                "PT-BR": "Leve os itens para Tai Kong Wong na Praia da Concha para receber a Vara de Pescar",
+                "EN-US": "Bring the items to Tai Kong Wong at the Shell Beach to receive the Fishing Pole"
             },
             "Prerequisites": [
                 {
