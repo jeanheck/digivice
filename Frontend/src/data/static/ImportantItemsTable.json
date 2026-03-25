@@ -1,0 +1,32 @@
+{
+    "ImportantItems": [
+        {
+            "Id": "FolderBag",
+            "Name": {
+                "PT-BR": "Bolsa de Cards",
+                "EN-US": "Folder Bag"
+            }
+        },
+        {
+            "Id": "TreeBoots",
+            "Name": {
+                "PT-BR": "Botas de Árvore",
+                "EN-US": "Tree Boots"
+            }
+        },
+        {
+            "Id": "FishingPole",
+            "Name": {
+                "PT-BR": "Vara de Pesca",
+                "EN-US": "Fishing Pole"
+            }
+        },
+        {
+            "Id": "RedSnapper",
+            "Name": {
+                "PT-BR": "Red Snapper",
+                "EN-US": "Red Snapper"
+            }
+        }
+    ]
+}

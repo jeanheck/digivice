@@ -1,0 +1,25 @@
+{
+    "ConsumableItems": [
+        {
+            "Id": "PowerCharge",
+            "Name": {
+                "PT-BR": "Carga de Poder",
+                "EN-US": "Power Charge"
+            }
+        },
+        {
+            "Id": "SpiderWeb",
+            "Name": {
+                "PT-BR": "Teia de Aranha",
+                "EN-US": "Spider Web"
+            }
+        },
+        {
+            "Id": "BambooSpear",
+            "Name": {
+                "PT-BR": "Lança de Bambu",
+                "EN-US": "Bamboo Spear"
+            }
+        }
+    ]
+}

@@ -1,7 +1,10 @@
 {
     "digievolutions": [
         {
-            "name": "Dinohumon",
+            "name": {
+                "PT-BR": "Dinohumon",
+                "EN-US": "Dinohumon"
+            },
             "id": 386,
             "Attributes": {
                 "Strength": 30,
@@ -27,7 +30,10 @@
             }
         },
         {
-            "name": "Hookmon",
+            "name": {
+                "PT-BR": "Hookmon",
+                "EN-US": "Hookmon"
+            },
             "id": 387,
             "Attributes": {
                 "Strength": 10,
@@ -53,7 +59,10 @@
             }
         },
         {
-            "name": "Grizzmon",
+            "name": {
+                "PT-BR": "Grizzmon",
+                "EN-US": "Grizzmon"
+            },
             "id": 388,
             "Attributes": {
                 "Strength": 40,
@@ -79,7 +88,10 @@
             }
         },
         {
-            "name": "Greymon",
+            "name": {
+                "PT-BR": "Greymon",
+                "EN-US": "Greymon"
+            },
             "id": 5,
             "Attributes": {
                 "Strength": 20,
@@ -105,7 +117,10 @@
             }
         },
         {
-            "name": "ExVeemon",
+            "name": {
+                "PT-BR": "ExVeemon",
+                "EN-US": "ExVeemon"
+            },
             "id": 259,
             "Attributes": {
                 "Strength": 20,
@@ -131,7 +146,10 @@
             }
         },
         {
-            "name": "Growlmon",
+            "name": {
+                "PT-BR": "Growlmon",
+                "EN-US": "Growlmon"
+            },
             "id": 367,
             "Attributes": {
                 "Strength": 30,
@@ -157,7 +175,10 @@
             }
         },
         {
-            "name": "Kyubimon",
+            "name": {
+                "PT-BR": "Kyubimon",
+                "EN-US": "Kyubimon"
+            },
             "id": 374,
             "Attributes": {
                 "Strength": 10,
@@ -183,7 +204,10 @@
             }
         },
         {
-            "name": "Angemon",
+            "name": {
+                "PT-BR": "Angemon",
+                "EN-US": "Angemon"
+            },
             "id": 20,
             "Attributes": {
                 "Strength": 0,
@@ -209,7 +233,10 @@
             }
         },
         {
-            "name": "Devimon",
+            "name": {
+                "PT-BR": "Devimon",
+                "EN-US": "Devimon"
+            },
             "id": 6,
             "Attributes": {
                 "Strength": 50,
@@ -235,7 +262,10 @@
             }
         },
         {
-            "name": "Stingmon",
+            "name": {
+                "PT-BR": "Stingmon",
+                "EN-US": "Stingmon"
+            },
             "id": 260,
             "Attributes": {
                 "Strength": 20,
@@ -261,7 +291,10 @@
             }
         },
         {
-            "name": "Angewomon",
+            "name": {
+                "PT-BR": "Angewomon",
+                "EN-US": "Angewomon"
+            },
             "id": 234,
             "Attributes": {
                 "Strength": 0,
@@ -287,7 +320,10 @@
             }
         },
         {
-            "name": "Kyukimon",
+            "name": {
+                "PT-BR": "Kyukimon",
+                "EN-US": "Kyukimon"
+            },
             "id": 389,
             "Attributes": {
                 "Strength": 40,
@@ -313,7 +349,10 @@
             }
         },
         {
-            "name": "Armormon",
+            "name": {
+                "PT-BR": "Armormon",
+                "EN-US": "Armormon"
+            },
             "id": 390,
             "Attributes": {
                 "Strength": 20,
@@ -339,7 +378,10 @@
             }
         },
         {
-            "name": "GrapLeomon",
+            "name": {
+                "PT-BR": "GrapLeomon",
+                "EN-US": "GrapLeomon"
+            },
             "id": 391,
             "Attributes": {
                 "Strength": 50,
@@ -365,7 +407,10 @@
             }
         },
         {
-            "name": "MetalGreymon",
+            "name": {
+                "PT-BR": "MetalGreymon",
+                "EN-US": "MetalGreymon"
+            },
             "id": 12,
             "Attributes": {
                 "Strength": 30,
@@ -391,7 +436,10 @@
             }
         },
         {
-            "name": "SkullGreymon",
+            "name": {
+                "PT-BR": "SkullGreymon",
+                "EN-US": "SkullGreymon"
+            },
             "id": 26,
             "Attributes": {
                 "Strength": 50,
@@ -417,7 +465,10 @@
             }
         },
         {
-            "name": "Paildramon",
+            "name": {
+                "PT-BR": "Paildramon",
+                "EN-US": "Paildramon"
+            },
             "id": 254,
             "Attributes": {
                 "Strength": 30,
@@ -443,7 +494,10 @@
             }
         },
         {
-            "name": "WarGrowlmon",
+            "name": {
+                "PT-BR": "WarGrowlmon",
+                "EN-US": "WarGrowlmon"
+            },
             "id": 368,
             "Attributes": {
                 "Strength": 40,
@@ -469,7 +523,10 @@
             }
         },
         {
-            "name": "Taomon",
+            "name": {
+                "PT-BR": "Taomon",
+                "EN-US": "Taomon"
+            },
             "id": 375,
             "Attributes": {
                 "Strength": 20,
@@ -495,7 +552,10 @@
             }
         },
         {
-            "name": "MagnaAngemon",
+            "name": {
+                "PT-BR": "MagnaAngemon",
+                "EN-US": "MagnaAngemon"
+            },
             "id": 211,
             "Attributes": {
                 "Strength": 10,
@@ -521,7 +581,10 @@
             }
         },
         {
-            "name": "Myotismon",
+            "name": {
+                "PT-BR": "Myotismon",
+                "EN-US": "Myotismon"
+            },
             "id": 66,
             "Attributes": {
                 "Strength": 60,
@@ -547,7 +610,10 @@
             }
         },
         {
-            "name": "MetalMamemon",
+            "name": {
+                "PT-BR": "MetalMamemon",
+                "EN-US": "MetalMamemon"
+            },
             "id": 27,
             "Attributes": {
                 "Strength": 20,
@@ -573,7 +639,10 @@
             }
         },
         {
-            "name": "Kabuterimon",
+            "name": {
+                "PT-BR": "Kabuterimon",
+                "EN-US": "Kabuterimon"
+            },
             "id": 19,
             "Attributes": {
                 "Strength": 30,
@@ -599,7 +668,10 @@
             }
         },
         {
-            "name": "Digitamamon",
+            "name": {
+                "PT-BR": "Digitamamon",
+                "EN-US": "Digitamamon"
+            },
             "id": 56,
             "Attributes": {
                 "Strength": 30,
@@ -625,7 +697,10 @@
             }
         },
         {
-            "name": "Guardiangemon",
+            "name": {
+                "PT-BR": "Guardiangemon",
+                "EN-US": "Guardiangemon"
+            },
             "id": 392,
             "Attributes": {
                 "Strength": 50,
@@ -651,7 +726,10 @@
             }
         },
         {
-            "name": "Cannondramon",
+            "name": {
+                "PT-BR": "Cannondramon",
+                "EN-US": "Cannondramon"
+            },
             "id": 393,
             "Attributes": {
                 "Strength": 30,
@@ -677,7 +755,10 @@
             }
         },
         {
-            "name": "Marsmon",
+            "name": {
+                "PT-BR": "Marsmon",
+                "EN-US": "Marsmon"
+            },
             "id": 394,
             "Attributes": {
                 "Strength": 60,
@@ -703,7 +784,10 @@
             }
         },
         {
-            "name": "WarGreymon",
+            "name": {
+                "PT-BR": "WarGreymon",
+                "EN-US": "WarGreymon"
+            },
             "id": 213,
             "Attributes": {
                 "Strength": 40,
@@ -729,7 +813,10 @@
             }
         },
         {
-            "name": "Imperialdramon",
+            "name": {
+                "PT-BR": "Imperialdramon",
+                "EN-US": "Imperialdramon"
+            },
             "id": 148,
             "Attributes": {
                 "Strength": 40,
@@ -755,7 +842,10 @@
             }
         },
         {
-            "name": "Gallantmon",
+            "name": {
+                "PT-BR": "Gallantmon",
+                "EN-US": "Gallantmon"
+            },
             "id": 369,
             "Attributes": {
                 "Strength": 50,
@@ -781,7 +871,10 @@
             }
         },
         {
-            "name": "Sakuyamon",
+            "name": {
+                "PT-BR": "Sakuyamon",
+                "EN-US": "Sakuyamon"
+            },
             "id": 376,
             "Attributes": {
                 "Strength": 30,
@@ -807,7 +900,10 @@
             }
         },
         {
-            "name": "Seraphimon",
+            "name": {
+                "PT-BR": "Seraphimon",
+                "EN-US": "Seraphimon"
+            },
             "id": 214,
             "Attributes": {
                 "Strength": 20,
@@ -833,7 +929,10 @@
             }
         },
         {
-            "name": "MetalGarurumon",
+            "name": {
+                "PT-BR": "MetalGarurumon",
+                "EN-US": "MetalGarurumon"
+            },
             "id": 196,
             "Attributes": {
                 "Strength": 30,
@@ -859,7 +958,10 @@
             }
         },
         {
-            "name": "Rosemon",
+            "name": {
+                "PT-BR": "Rosemon",
+                "EN-US": "Rosemon"
+            },
             "id": 144,
             "Attributes": {
                 "Strength": 10,
@@ -885,7 +987,10 @@
             }
         },
         {
-            "name": "BK WarGreymon",
+            "name": {
+                "PT-BR": "BK WarGreymon",
+                "EN-US": "BK WarGreymon"
+            },
             "id": 267,
             "Attributes": {
                 "Strength": 60,
@@ -911,7 +1016,10 @@
             }
         },
         {
-            "name": "Imperialdramon-F",
+            "name": {
+                "PT-BR": "Imperialdramon-F",
+                "EN-US": "Imperialdramon-F"
+            },
             "id": 359,
             "Attributes": {
                 "Strength": 55,
@@ -937,7 +1045,10 @@
             }
         },
         {
-            "name": "MaloMyotismon",
+            "name": {
+                "PT-BR": "MaloMyotismon",
+                "EN-US": "MaloMyotismon"
+            },
             "id": 378,
             "Attributes": {
                 "Strength": 65,
@@ -963,7 +1074,10 @@
             }
         },
         {
-            "name": "MegaGargomon",
+            "name": {
+                "PT-BR": "MegaGargomon",
+                "EN-US": "MegaGargomon"
+            },
             "id": 372,
             "Attributes": {
                 "Strength": 50,
@@ -989,7 +1103,10 @@
             }
         },
         {
-            "name": "GranKuwagamon",
+            "name": {
+                "PT-BR": "GranKuwagamon",
+                "EN-US": "GranKuwagamon"
+            },
             "id": 230,
             "Attributes": {
                 "Strength": 45,
@@ -1015,7 +1132,10 @@
             }
         },
         {
-            "name": "Phoenixmon",
+            "name": {
+                "PT-BR": "Phoenixmon",
+                "EN-US": "Phoenixmon"
+            },
             "id": 59,
             "Attributes": {
                 "Strength": 20,
@@ -1041,7 +1161,10 @@
             }
         },
         {
-            "name": "Omnimon",
+            "name": {
+                "PT-BR": "Omnimon",
+                "EN-US": "Omnimon"
+            },
             "id": 150,
             "Attributes": {
                 "Strength": 65,
@@ -1067,7 +1190,10 @@
             }
         },
         {
-            "name": "Imperialdramon-P",
+            "name": {
+                "PT-BR": "Imperialdramon-P",
+                "EN-US": "Imperialdramon-P"
+            },
             "id": 381,
             "Attributes": {
                 "Strength": 50,
@@ -1093,7 +1219,10 @@
             }
         },
         {
-            "name": "Beelzemon",
+            "name": {
+                "PT-BR": "Beelzemon",
+                "EN-US": "Beelzemon"
+            },
             "id": 377,
             "Attributes": {
                 "Strength": 60,
@@ -1119,7 +1248,10 @@
             }
         },
         {
-            "name": "Diaboromon",
+            "name": {
+                "PT-BR": "Diaboromon",
+                "EN-US": "Diaboromon"
+            },
             "id": 151,
             "Attributes": {
                 "Strength": 50,

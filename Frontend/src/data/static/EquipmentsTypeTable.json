@@ -1,0 +1,46 @@
+{
+    "types": [
+        {
+            "Id": "WeaponSingleHanded",
+            "Description": {
+                "PT-BR": "Arma (Uma mão)",
+                "EN-US": "Weapon (Single-handed)"
+            }
+        },
+        {
+            "Id": "BodyArmor",
+            "Description": {
+                "PT-BR": "Armadura Corporal",
+                "EN-US": "Body Armor"
+            }
+        },
+        {
+            "Id": "WeaponTwoHanded",
+            "Description": {
+                "PT-BR": "Arma (Duas mãos)",
+                "EN-US": "Weapon (Two-handed)"
+            }
+        },
+        {
+            "Id": "Shield",
+            "Description": {
+                "PT-BR": "Escudo",
+                "EN-US": "Shield"
+            }
+        },
+        {
+            "Id": "Head",
+            "Description": {
+                "PT-BR": "Armadura de Cabeça",
+                "EN-US": "Head Armor"
+            }
+        },
+        {
+            "Id": "Accessory",
+            "Description": {
+                "PT-BR": "Acessório",
+                "EN-US": "Accessory"
+            }
+        }
+    ]
+}

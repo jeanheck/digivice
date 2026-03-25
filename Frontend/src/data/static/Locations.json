@@ -1,150 +1,261 @@
 {
     "0200": {
-        "Name": "Asuka City",
+        "Name": {
+            "PT-BR": "Asuka City",
+            "EN-US": "Asuka City"
+        },
         "Image": "Asuka City"
     },
     "0201": {
-        "Name": "Asuka City",
+        "Name": {
+            "PT-BR": "Asuka City",
+            "EN-US": "Asuka City"
+        },
         "Image": "Asuka City 2"
     },
     "0202": {
-        "Name": "Asuka Bridge",
+        "Name": {
+            "PT-BR": "Ponte Asuka",
+            "EN-US": "Asuka Bridge"
+        },
         "Image": "Asuka Bridge"
     },
     "0203": {
-        "Name": "Main Lobby",
+        "Name": {
+            "PT-BR": "Lobby Principal",
+            "EN-US": "Main Lobby"
+        },
         "Image": "Main Lobby"
     },
     "0206": {
-        "Name": "Digimon Lab",
+        "Name": {
+            "PT-BR": "Laboratório Digimon",
+            "EN-US": "Digimon Lab"
+        },
         "Image": "Digimon Lab"
     },
     "0207": {
-        "Name": "Login Room",
+        "Name": {
+            "PT-BR": "Sala de Login",
+            "EN-US": "Login Room"
+        },
         "Image": "Login Room"
     },
     "0208": {
-        "Name": "Arena Front Desk",
+        "Name": {
+            "PT-BR": "Recepção da Arena",
+            "EN-US": "Arena Front Desk"
+        },
         "Image": "Arena Front Desk"
     },
     "0210": {
-        "Name": "Cargo Tower",
+        "Name": {
+            "PT-BR": "Torre de Carga",
+            "EN-US": "Cargo Tower"
+        },
         "Image": "Cargo Tower"
     },
     "0211": {
-        "Name": "Yellow Cruiser",
+        "Name": {
+            "PT-BR": "Cruzador Amarelo",
+            "EN-US": "Yellow Cruiser"
+        },
         "Image": "Yellow Cruiser"
     },
     "0213": {
-        "Name": "El Dorado",
+        "Name": {
+            "PT-BR": "El Dorado",
+            "EN-US": "El Dorado"
+        },
         "Image": "El Dorado"
     },
     "0214": {
-        "Name": "Admin Center 1F",
+        "Name": {
+            "PT-BR": "Centro Admin 1F",
+            "EN-US": "Admin Center 1F"
+        },
         "Image": "Admin Center 1F"
     },
     "020A": {
-        "Name": "Asuka City - Inn 1F",
+        "Name": {
+            "PT-BR": "Asuka City - Pousada 1F",
+            "EN-US": "Asuka City - Inn 1F"
+        },
         "Image": "Asuka City - Inn 1F"
     },
     "020B": {
-        "Name": "Underground Path",
+        "Name": {
+            "PT-BR": "Passagem Subterrânea",
+            "EN-US": "Underground Path"
+        },
         "Image": "Underground Path"
     },
     "020C": {
-        "Name": "Asuka City - Inn 2F",
+        "Name": {
+            "PT-BR": "Asuka City - Pousada 2F",
+            "EN-US": "Asuka City - Inn 2F"
+        },
         "Image": "Asuka City - Inn 2F"
     },
     "020D": {
-        "Name": "Smith's Shop",
+        "Name": {
+            "PT-BR": "Loja do Ferreiro",
+            "EN-US": "Smith's Shop"
+        },
         "Image": "Smith's Shop"
     },
     "020E": {
-        "Name": "Junk Shop",
+        "Name": {
+            "PT-BR": "Loja de Sucata",
+            "EN-US": "Junk Shop"
+        },
         "Image": "Junk Shop"
     },
     "020F": {
-        "Name": "Lamb Chop",
+        "Name": {
+            "PT-BR": "Lamb Chop",
+            "EN-US": "Lamb Chop"
+        },
         "Image": "Lamb Chop"
     },
     "021B": {
-        "Name": "Asuka Sewers",
+        "Name": {
+            "PT-BR": "Esgotos de Asuka",
+            "EN-US": "Asuka Sewers"
+        },
         "Image": "Asuka Sewers"
     },
     "021D": {
-        "Name": "Central Park",
+        "Name": {
+            "PT-BR": "Parque Central",
+            "EN-US": "Central Park"
+        },
         "Image": "Central Park"
     },
     "021E": {
-        "Name": "Wire Forest Entrance",
+        "Name": {
+            "PT-BR": "Entrada da Wire Forest",
+            "EN-US": "Wire Forest Entrance"
+        },
         "Image": "Wire Forest Entrance"
     },
     "021F": {
-        "Name": "Shell Beach",
+        "Name": {
+            "PT-BR": "Shell Beach",
+            "EN-US": "Shell Beach"
+        },
         "Image": "Shell Beach"
     },
     "0220": {
-        "Name": "Plug Cape",
+        "Name": {
+            "PT-BR": "Plug Cape",
+            "EN-US": "Plug Cape"
+        },
         "Image": "Plug Cape"
     },
     "0221": {
-        "Name": "West Wire Forest",
+        "Name": {
+            "PT-BR": "Wire Forest Oeste",
+            "EN-US": "West Wire Forest"
+        },
         "Image": "West Wire Forest"
     },
     "0222": {
-        "Name": "East Wire Forest",
+        "Name": {
+            "PT-BR": "Wire Forest Leste",
+            "EN-US": "East Wire Forest"
+        },
         "Image": "East Wire Forest"
     },
     "0223": {
-        "Name": "Forest Inn",
+        "Name": {
+            "PT-BR": "Pousada da Floresta",
+            "EN-US": "Forest Inn"
+        },
         "Image": "Forest Inn"
     },
     "0224": {
-        "Name": "Forest Inn BF",
+        "Name": {
+            "PT-BR": "Pousada da Floresta - Subsolo",
+            "EN-US": "Forest Inn BF"
+        },
         "Image": "Forest Inn BF"
     },
     "0225": {
-        "Name": "Protocol Forest",
+        "Name": {
+            "PT-BR": "Floresta Protocol",
+            "EN-US": "Protocol Forest"
+        },
         "Image": "Protocol Forest"
     },
     "0226": {
-        "Name": "Protocol Ruins",
+        "Name": {
+            "PT-BR": "Ruínas Protocol",
+            "EN-US": "Protocol Ruins"
+        },
         "Image": "Protocol Ruins"
     },
     "0227": {
-        "Name": "Divermon's Lake",
+        "Name": {
+            "PT-BR": "Lago do Divermon",
+            "EN-US": "Divermon's Lake"
+        },
         "Image": "Divermon's Lake"
     },
     "0229": {
-        "Name": "Wind Prairie",
+        "Name": {
+            "PT-BR": "Pradaria do Vento",
+            "EN-US": "Wind Prairie"
+        },
         "Image": "Wind Prairie"
     },
     "0230": {
-        "Name": "Seiryu Tower",
+        "Name": {
+            "PT-BR": "Torre Seiryu",
+            "EN-US": "Seiryu Tower"
+        },
         "Image": "Seiryu Tower"
     },
     "0231": {
-        "Name": "Gale Tower",
+        "Name": {
+            "PT-BR": "Torre do Vendaval",
+            "EN-US": "Gale Tower"
+        },
         "Image": "Gale Tower"
     },
     "022A": {
-        "Name": "Kicking Forest",
+        "Name": {
+            "PT-BR": "Floresta dos Chutes",
+            "EN-US": "Kicking Forest"
+        },
         "Image": "Kicking Forest"
     },
     "022B": {
-        "Name": "Tyranno Valley",
+        "Name": {
+            "PT-BR": "Vale dos Tyranno",
+            "EN-US": "Tyranno Valley"
+        },
         "Image": "Tyranno Valley"
     },
     "022C": {
-        "Name": "East Station",
+        "Name": {
+            "PT-BR": "Estação Leste",
+            "EN-US": "East Station"
+        },
         "Image": "East Station"
     },
     "022E": {
-        "Name": "Seiryu City",
+        "Name": {
+            "PT-BR": "Seiryu City",
+            "EN-US": "Seiryu City"
+        },
         "Image": "Seiryu City"
     },
     "022F": {
-        "Name": "Zephyr Tower",
+        "Name": {
+            "PT-BR": "Torre Zephyr",
+            "EN-US": "Zephyr Tower"
+        },
         "Image": "Zephyr Tower"
     }
 }

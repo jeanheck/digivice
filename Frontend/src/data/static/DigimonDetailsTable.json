@@ -1,19 +1,58 @@
 {
   "attributes": {
-    "Strength": "Increases the damage dealt by physical attacks and techniques.",
-    "Defense": "Reduces the damage taken from physical attacks.",
-    "Spirit": "Increases the damage dealt by magical techniques and affects maximum MP.",
-    "Wisdom": "Improves magical hit rate, evasion against magic, and reduces damage taken from magical attacks.",
-    "Speed": "Determines turn order in battle and improves overall evasion rate.",
-    "Charisma": "Increases Digimon popularity, lowers shop prices, and allows battling certain Tamers."
+    "Strength": {
+      "PT-BR": "Aumenta o dano causado por ataques físicos e técnicas.",
+      "EN-US": "Increases the damage dealt by physical attacks and techniques."
+    },
+    "Defense": {
+      "PT-BR": "Reduz o dano recebido de ataques físicos.",
+      "EN-US": "Reduces the damage taken from physical attacks."
+    },
+    "Spirit": {
+      "PT-BR": "Aumenta o dano causado por técnicas mágicas e afeta o MP máximo.",
+      "EN-US": "Increases the damage dealt by magical techniques and affects maximum MP."
+    },
+    "Wisdom": {
+      "PT-BR": "Melhora a taxa de acerto mágico, evasão contra magia e reduz o dano recebido de ataques mágicos.",
+      "EN-US": "Improves magical hit rate, evasion against magic, and reduces damage taken from magical attacks."
+    },
+    "Speed": {
+      "PT-BR": "Determina a ordem dos turnos em batalha e melhora a taxa de evasão geral.",
+      "EN-US": "Determines turn order in battle and improves overall evasion rate."
+    },
+    "Charisma": {
+      "PT-BR": "Aumenta a popularidade do Digimon, reduz preços em lojas e permite batalhar contra certos Tamers.",
+      "EN-US": "Increases Digimon popularity, lowers shop prices, and allows battling certain Tamers."
+    }
   },
   "resistances": {
-    "Fire": "Reduces damage taken from Fire-elemental techniques.",
-    "Water": "Reduces damage taken from Water-elemental techniques.",
-    "Ice": "Reduces damage taken from Ice-elemental techniques.",
-    "Wind": "Reduces damage taken from Wind-elemental techniques.",
-    "Thunder": "Reduces damage taken from Thunder-elemental techniques.",
-    "Machine": "Reduces damage taken from Machine-elemental techniques.",
-    "Dark": "Reduces damage taken from Dark-elemental techniques."
+    "Fire": {
+      "PT-BR": "Reduz o dano recebido de técnicas do elemento Fogo.",
+      "EN-US": "Reduces damage taken from Fire-elemental techniques."
+    },
+    "Water": {
+      "PT-BR": "Reduz o dano recebido de técnicas do elemento Água.",
+      "EN-US": "Reduces damage taken from Water-elemental techniques."
+    },
+    "Ice": {
+      "PT-BR": "Reduz o dano recebido de técnicas do elemento Gelo.",
+      "EN-US": "Reduces damage taken from Ice-elemental techniques."
+    },
+    "Wind": {
+      "PT-BR": "Reduz o dano recebido de técnicas do elemento Vento.",
+      "EN-US": "Reduces damage taken from Wind-elemental techniques."
+    },
+    "Thunder": {
+      "PT-BR": "Reduz o dano recebido de técnicas do elemento Trovão.",
+      "EN-US": "Reduces damage taken from Thunder-elemental techniques."
+    },
+    "Machine": {
+      "PT-BR": "Reduz o dano recebido de técnicas do elemento Máquina.",
+      "EN-US": "Reduces damage taken from Machine-elemental techniques."
+    },
+    "Dark": {
+      "PT-BR": "Reduz o dano recebido de técnicas do elemento Trevas.",
+      "EN-US": "Reduces damage taken from Dark-elemental techniques."
+    }
   }
 }

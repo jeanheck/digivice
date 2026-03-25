@@ -1,0 +1,32 @@
+{
+    "Types": [
+        {
+            "Id": "Physical",
+            "Description": {
+                "PT-BR": "Físico",
+                "EN-US": "Physical"
+            }
+        },
+        {
+            "Id": "Support",
+            "Description": {
+                "PT-BR": "Suporte",
+                "EN-US": "Support"
+            }
+        },
+        {
+            "Id": "Magical",
+            "Description": {
+                "PT-BR": "Mágico",
+                "EN-US": "Magical"
+            }
+        },
+        {
+            "Id": "Heal",
+            "Description": {
+                "PT-BR": "Cura",
+                "EN-US": "Heal"
+            }
+        }
+    ]
+}

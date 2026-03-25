@@ -1,0 +1,103 @@
+{
+    "Title": {
+        "PT-BR": "O maior de todos!",
+        "EN-US": "The greatest of them all!"
+    },
+    "Description": {
+        "PT-BR": "Torne-se o maior treinador do Mundo Digital!",
+        "EN-US": "Become the greatest tamer of the Digital World!"
+    },
+    "Steps": [
+        {
+            "Number": 1,
+            "Description": {
+                "PT-BR": "Fale com Repeating Tom na Seiryu Tower, em Seiryu City",
+                "EN-US": "Talk to Repeating Tom at Seiryu Tower, on Seiryu City"
+            }
+        },
+        {
+            "Number": 2,
+            "Description": {
+                "PT-BR": "Fale com o Líder Seiryu nas Protocol Ruins",
+                "EN-US": "Talk to Seiryu Leader on Protocol Ruins"
+            }
+        },
+        {
+            "Number": 3,
+            "Description": {
+                "PT-BR": "Derrote MasterTyrannomon em Tyranno Valley",
+                "EN-US": "Defeat MasterTyrannomon on Tyranno Valley"
+            }
+        },
+        {
+            "Number": 4,
+            "Description": {
+                "PT-BR": "Desafie o Líder Seiryu em Seiryu City",
+                "EN-US": "Challenge the Seiryu Leader on Seiryu City"
+            }
+        },
+        {
+            "Number": 5,
+            "Description": {
+                "PT-BR": "Vá até a East Station para chegar ao próximo setor",
+                "EN-US": "Go to the East Station to reach the next sector"
+            }
+        },
+        {
+            "Number": 6,
+            "Description": {
+                "PT-BR": "Derrote o jogador misterioso que está te impedindo na Asuka Bridge",
+                "EN-US": "Defeat the Mystery Player stopping you on the Asuka Bridge"
+            }
+        },
+        {
+            "Number": 7,
+            "Description": {
+                "PT-BR": "Fale com o Guilmon na Asuka Inn 2F, em Asuka City",
+                "EN-US": "Talk with the Guilmon on Asuka Inn 2F, on Asuka City"
+            }
+        },
+        {
+            "Number": 8,
+            "Description": {
+                "PT-BR": "Fale com o Guilmon na Forest Inn",
+                "EN-US": "Talk with the Guilmon on Forest Inn"
+            }
+        },
+        {
+            "Number": 9,
+            "Description": {
+                "PT-BR": "Fale com o Guilmon na Zephyr Tower, em Seiryu City",
+                "EN-US": "Talk with the Guilmon on Zephyr Tower, on Seiryu City"
+            }
+        },
+        {
+            "Number": 10,
+            "Description": {
+                "PT-BR": "Retorne à East Station com o cartão",
+                "EN-US": "Return to the East Station with the card"
+            }
+        },
+        {
+            "Number": 11,
+            "Description": {
+                "PT-BR": "Confronte o Guilmon em Seiryu City sobre o cartão falso",
+                "EN-US": "Confront the Guilmon on Seiryu City about the fake card"
+            }
+        },
+        {
+            "Number": 12,
+            "Description": {
+                "PT-BR": "Fale com o Guilmon no porão da Forest Inn",
+                "EN-US": "Talk to the Guilmon at the Forest Inn Basements"
+            }
+        },
+        {
+            "Number": 13,
+            "Description": {
+                "PT-BR": "Retorne à East Station com o verdadeiro Blue Card",
+                "EN-US": "Return to the East Station with the real Blue Card"
+            }
+        }
+    ]
+}

@@ -1,7 +1,10 @@
 [
     {
         "Id": 1,
-        "Name": "Pharaohmon",
+        "Name": {
+            "PT-BR": "Pharaohmon",
+            "EN-US": "Pharaohmon"
+        },
         "Level": 12,
         "HP": 816,
         "MP": 9999,
@@ -34,13 +37,25 @@
         "DVXP": 12,
         "EXP": 120,
         "BITS": 240,
-        "Location": "Asuka East - Protocol Ruins",
-        "RegularAttack": "No Element",
-        "Technique": "Necromist (Physical, Chance of Poison)"
+        "Location": {
+            "PT-BR": "Asuka Leste - Ruínas Protocol",
+            "EN-US": "Asuka East - Protocol Ruins"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Necromist (Físico, Chance de Envenenamento)",
+            "EN-US": "Necromist (Physical, Chance of Poison)"
+        }
     },
     {
         "Id": 2,
-        "Name": "Master Tyrannomon",
+        "Name": {
+            "PT-BR": "Master Tyrannomon",
+            "EN-US": "Master Tyrannomon"
+        },
         "Level": 14,
         "HP": 912,
         "MP": 9999,
@@ -77,7 +92,10 @@
     },
     {
         "Id": 14,
-        "Name": "HiAndromon",
+        "Name": {
+            "PT-BR": "HiAndromon",
+            "EN-US": "HiAndromon"
+        },
         "Level": 32,
         "HP": 1776,
         "MP": 280,
@@ -110,13 +128,25 @@
         "DVXP": 32,
         "EXP": 325,
         "BITS": 500,
-        "Location": "Asuka West - Dum Dum Factory - Operation Room",
-        "RegularAttack": "Machine Element",
-        "Technique": "Atomic Ray (Magic-Machine, Chance of KO)"
+        "Location": {
+            "PT-BR": "Asuka Oeste - Fábrica Dum Dum - Sala de Operação",
+            "EN-US": "Asuka West - Dum Dum Factory - Operation Room"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Máquina",
+            "EN-US": "Machine Element"
+        },
+        "Technique": {
+            "PT-BR": "Atomic Ray (Mágico-Máquina, Chance de KO)",
+            "EN-US": "Atomic Ray (Magic-Machine, Chance of KO)"
+        }
     },
     {
         "Id": 15,
-        "Name": "WaruMonzaemon",
+        "Name": {
+            "PT-BR": "WaruMonzaemon",
+            "EN-US": "WaruMonzaemon"
+        },
         "Level": 32,
         "HP": 1776,
         "MP": 9999,
@@ -153,7 +183,10 @@
     },
     {
         "Id": 71,
-        "Name": "Kunemon",
+        "Name": {
+            "PT-BR": "Kunemon",
+            "EN-US": "Kunemon"
+        },
         "Level": 1,
         "HP": 120,
         "MP": 9999,
@@ -187,17 +220,38 @@
         "EXP": 6,
         "BITS": 10,
         "Location": [
-            "Central Park",
-            "Wire Forest Entrance",
-            "West Wire Forest",
-            "East Wire Forest"
+            {
+                "PT-BR": "Parque Central",
+                "EN-US": "Central Park"
+            },
+            {
+                "PT-BR": "Entrada da Wire Forest",
+                "EN-US": "Wire Forest Entrance"
+            },
+            {
+                "PT-BR": "Wire Forest Oeste",
+                "EN-US": "West Wire Forest"
+            },
+            {
+                "PT-BR": "Wire Forest Leste",
+                "EN-US": "East Wire Forest"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 72,
-        "Name": "Tapirmon",
+        "Name": {
+            "PT-BR": "Tapirmon",
+            "EN-US": "Tapirmon"
+        },
         "Level": 1,
         "HP": 120,
         "MP": 9999,
@@ -231,15 +285,30 @@
         "EXP": 5,
         "BITS": 20,
         "Location": [
-            "Central Park",
-            "Wire Forest Entrance"
+            {
+                "PT-BR": "Parque Central",
+                "EN-US": "Central Park"
+            },
+            {
+                "PT-BR": "Entrada da Wire Forest",
+                "EN-US": "Wire Forest Entrance"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 73,
-        "Name": "Crabmon",
+        "Name": {
+            "PT-BR": "Crabmon",
+            "EN-US": "Crabmon"
+        },
         "Level": 3,
         "HP": 168,
         "MP": 9999,
@@ -273,14 +342,26 @@
         "EXP": 17,
         "BITS": 30,
         "Location": [
-            "Divermon's Lake"
+            {
+                "PT-BR": "Lago do Divermon",
+                "EN-US": "Divermon's Lake"
+            }
         ],
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 74,
-        "Name": "Gizamon",
+        "Name": {
+            "PT-BR": "Gizamon",
+            "EN-US": "Gizamon"
+        },
         "Level": 4,
         "HP": 192,
         "MP": 9999,
@@ -314,15 +395,30 @@
         "EXP": 19,
         "BITS": 40,
         "Location": [
-            "Shell Beach",
-            "Kicking Forest"
+            {
+                "PT-BR": "Shell Beach",
+                "EN-US": "Shell Beach"
+            },
+            {
+                "PT-BR": "Floresta dos Chutes",
+                "EN-US": "Kicking Forest"
+            }
         ],
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 75,
-        "Name": "DemiDevimon",
+        "Name": {
+            "PT-BR": "DemiDevimon",
+            "EN-US": "DemiDevimon"
+        },
         "Level": 8,
         "HP": 312,
         "MP": 9999,
@@ -355,13 +451,25 @@
         "DVXP": 8,
         "EXP": 39,
         "BITS": 80,
-        "Location": "Asuka South - Jungle Grave (In The Dark)",
-        "RegularAttack": "No Element",
-        "Technique": "Energy Suck (Magic)"
+        "Location": {
+            "PT-BR": "Asuka Sul - Jungle Grave (No Escuro)",
+            "EN-US": "Asuka South - Jungle Grave (In The Dark)"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Energy Suck (Mágico)",
+            "EN-US": "Energy Suck (Magic)"
+        }
     },
     {
         "Id": 76,
-        "Name": "Betamon",
+        "Name": {
+            "PT-BR": "Betamon",
+            "EN-US": "Betamon"
+        },
         "Level": 2,
         "HP": 144,
         "MP": 9999,
@@ -395,18 +503,42 @@
         "EXP": 10,
         "BITS": 25,
         "Location": [
-            "Shell Beach",
-            "Plug Cape",
-            "West Wire Forest",
-            "East Wire Forest",
-            "Divermon's Lake"
+            {
+                "PT-BR": "Shell Beach",
+                "EN-US": "Shell Beach"
+            },
+            {
+                "PT-BR": "Plug Cape",
+                "EN-US": "Plug Cape"
+            },
+            {
+                "PT-BR": "Wire Forest Oeste",
+                "EN-US": "West Wire Forest"
+            },
+            {
+                "PT-BR": "Wire Forest Leste",
+                "EN-US": "East Wire Forest"
+            },
+            {
+                "PT-BR": "Lago do Divermon",
+                "EN-US": "Divermon's Lake"
+            }
         ],
-        "RegularAttack": "Thunder Elemental",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Elemento Trovão",
+            "EN-US": "Thunder Elemental"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 77,
-        "Name": "Vegiemon",
+        "Name": {
+            "PT-BR": "Vegiemon",
+            "EN-US": "Vegiemon"
+        },
         "Level": 4,
         "HP": 192,
         "MP": 9999,
@@ -440,16 +572,34 @@
         "EXP": 20,
         "BITS": 40,
         "Location": [
-            "Shell Beach",
-            "Plug Cape",
-            "Kicking Forest"
+            {
+                "PT-BR": "Shell Beach",
+                "EN-US": "Shell Beach"
+            },
+            {
+                "PT-BR": "Plug Cape",
+                "EN-US": "Plug Cape"
+            },
+            {
+                "PT-BR": "Floresta dos Chutes",
+                "EN-US": "Kicking Forest"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 78,
-        "Name": "Kuwagamon",
+        "Name": {
+            "PT-BR": "Kuwagamon",
+            "EN-US": "Kuwagamon"
+        },
         "Level": 2,
         "HP": 144,
         "MP": 9999,
@@ -483,15 +633,30 @@
         "EXP": 11,
         "BITS": 20,
         "Location": [
-            "East Wire Forest",
-            "West Wire Forest"
+            {
+                "PT-BR": "Wire Forest Leste",
+                "EN-US": "East Wire Forest"
+            },
+            {
+                "PT-BR": "Wire Forest Oeste",
+                "EN-US": "West Wire Forest"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 79,
-        "Name": "Yanmamon",
+        "Name": {
+            "PT-BR": "Yanmamon",
+            "EN-US": "Yanmamon"
+        },
         "Level": 3,
         "HP": 168,
         "MP": 9999,
@@ -525,14 +690,26 @@
         "EXP": 16,
         "BITS": 30,
         "Location": [
-            "Wind Prairie"
+            {
+                "PT-BR": "Pradaria do Vento",
+                "EN-US": "Wind Prairie"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 80,
-        "Name": "Kiwimon",
+        "Name": {
+            "PT-BR": "Kiwimon",
+            "EN-US": "Kiwimon"
+        },
         "Level": 3,
         "HP": 168,
         "MP": 9999,
@@ -566,14 +743,26 @@
         "EXP": 15,
         "BITS": 35,
         "Location": [
-            "Wind Prairie"
+            {
+                "PT-BR": "Pradaria do Vento",
+                "EN-US": "Wind Prairie"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 81,
-        "Name": "Dokugumon",
+        "Name": {
+            "PT-BR": "Dokugumon",
+            "EN-US": "Dokugumon"
+        },
         "Level": 4,
         "HP": 192,
         "MP": 9999,
@@ -607,14 +796,26 @@
         "EXP": 21,
         "BITS": 40,
         "Location": [
-            "Protocol Forest"
+            {
+                "PT-BR": "Floresta Protocol",
+                "EN-US": "Protocol Forest"
+            }
         ],
-        "RegularAttack": "No Element (Chance of Poison)",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento (Chance de Envenenamento)",
+            "EN-US": "No Element (Chance of Poison)"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 82,
-        "Name": "Goburimon",
+        "Name": {
+            "PT-BR": "Goburimon",
+            "EN-US": "Goburimon"
+        },
         "Level": 4,
         "HP": 192,
         "MP": 9999,
@@ -648,16 +849,34 @@
         "EXP": 22,
         "BITS": 45,
         "Location": [
-            "Protocol Forest",
-            "Protocol Ruins",
-            "Asuka - East Wire Forest"
+            {
+                "PT-BR": "Floresta Protocol",
+                "EN-US": "Protocol Forest"
+            },
+            {
+                "PT-BR": "Ruínas Protocol",
+                "EN-US": "Protocol Ruins"
+            },
+            {
+                "PT-BR": "Asuka - Wire Forest Leste",
+                "EN-US": "Asuka - East Wire Forest"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 83,
-        "Name": "Baronmon",
+        "Name": {
+            "PT-BR": "Baronmon",
+            "EN-US": "Baronmon"
+        },
         "Level": 16,
         "HP": 504,
         "MP": 9999,
@@ -690,13 +909,25 @@
         "DVXP": 16,
         "EXP": 80,
         "BITS": 160,
-        "Location": "Asuka East - Protocol Ruins",
-        "RegularAttack": "Dark Elemental",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Leste - Ruínas Protocol",
+            "EN-US": "Asuka East - Protocol Ruins"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Elemental"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 84,
-        "Name": "Minotarumon",
+        "Name": {
+            "PT-BR": "Minotarumon",
+            "EN-US": "Minotarumon"
+        },
         "Level": 5,
         "HP": 240,
         "MP": 9999,
@@ -730,14 +961,26 @@
         "EXP": 27,
         "BITS": 55,
         "Location": [
-            "Protocol Ruins"
+            {
+                "PT-BR": "Ruínas Protocol",
+                "EN-US": "Protocol Ruins"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 85,
-        "Name": "Flymon",
+        "Name": {
+            "PT-BR": "Flymon",
+            "EN-US": "Flymon"
+        },
         "Level": 13,
         "HP": 432,
         "MP": 9999,
@@ -771,15 +1014,30 @@
         "EXP": 66,
         "BITS": 130,
         "Location": [
-            "Asuka West Wire Forest",
-            "Asuka Wire Forest Entrance"
+            {
+                "PT-BR": "Asuka Oeste Wire Forest",
+                "EN-US": "Asuka West Wire Forest"
+            },
+            {
+                "PT-BR": "Asuka Entrada da Wire Forest",
+                "EN-US": "Asuka Wire Forest Entrance"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 86,
-        "Name": "Woodmon",
+        "Name": {
+            "PT-BR": "Woodmon",
+            "EN-US": "Woodmon"
+        },
         "Level": 5,
         "HP": 240,
         "MP": 9999,
@@ -813,16 +1071,34 @@
         "EXP": 25,
         "BITS": 50,
         "Location": [
-            "Kicking Forest",
-            "Phoenix Bay",
-            "Ether Jungle"
+            {
+                "PT-BR": "Floresta dos Chutes",
+                "EN-US": "Kicking Forest"
+            },
+            {
+                "PT-BR": "Phoenix Bay",
+                "EN-US": "Phoenix Bay"
+            },
+            {
+                "PT-BR": "Ether Jungle",
+                "EN-US": "Ether Jungle"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 87,
-        "Name": "Tyrannomon",
+        "Name": {
+            "PT-BR": "Tyrannomon",
+            "EN-US": "Tyrannomon"
+        },
         "Level": 6,
         "HP": 264,
         "MP": 9999,
@@ -856,14 +1132,26 @@
         "EXP": 31,
         "BITS": 60,
         "Location": [
-            "Tyranno Valley"
+            {
+                "PT-BR": "Vale dos Tyranno",
+                "EN-US": "Tyranno Valley"
+            }
         ],
-        "RegularAttack": "Fire Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Elemento Fogo",
+            "EN-US": "Fire Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 88,
-        "Name": "Triceramon",
+        "Name": {
+            "PT-BR": "Triceramon",
+            "EN-US": "Triceramon"
+        },
         "Level": 6,
         "HP": 396,
         "MP": 9999,
@@ -897,15 +1185,30 @@
         "EXP": 30,
         "BITS": 60,
         "Location": [
-            "Plug Cape",
-            "Tyranno Valley"
+            {
+                "PT-BR": "Plug Cape",
+                "EN-US": "Plug Cape"
+            },
+            {
+                "PT-BR": "Vale dos Tyranno",
+                "EN-US": "Tyranno Valley"
+            }
         ],
-        "RegularAttack": "Fire Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Elemento Fogo",
+            "EN-US": "Fire Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 89,
-        "Name": "Airdramon",
+        "Name": {
+            "PT-BR": "Airdramon",
+            "EN-US": "Airdramon"
+        },
         "Level": 6,
         "HP": 264,
         "MP": 9999,
@@ -939,14 +1242,26 @@
         "EXP": 29,
         "BITS": 70,
         "Location": [
-            "Tyranno Valley"
+            {
+                "PT-BR": "Vale dos Tyranno",
+                "EN-US": "Tyranno Valley"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "Air Blast (Magic-Wind)"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Air Blast (Mágico-Vento)",
+            "EN-US": "Air Blast (Magic-Wind)"
+        }
     },
     {
         "Id": 90,
-        "Name": "Gekomon",
+        "Name": {
+            "PT-BR": "Gekomon",
+            "EN-US": "Gekomon"
+        },
         "Level": 8,
         "HP": 312,
         "MP": 9999,
@@ -979,13 +1294,25 @@
         "DVXP": 8,
         "EXP": 41,
         "BITS": 85,
-        "Location": "Asuka South - Bulk Swap, Tranquil Swamp, Bulk Bridge, Jungle Grave",
-        "RegularAttack": "No Element",
-        "Technique": "Confuse Gas (Magic, Chance of Confuse)"
+        "Location": {
+            "PT-BR": "Asuka Sul - Bulk Swap, Tranquil Swamp, Bulk Bridge, Jungle Grave",
+            "EN-US": "Asuka South - Bulk Swap, Tranquil Swamp, Bulk Bridge, Jungle Grave"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Confuse Gas (Magic, Chance of Confuse)",
+            "EN-US": "Confuse Gas (Magic, Chance of Confuse)"
+        }
     },
     {
         "Id": 91,
-        "Name": "Coelamon",
+        "Name": {
+            "PT-BR": "Coelamon",
+            "EN-US": "Coelamon"
+        },
         "Level": 8,
         "HP": 312,
         "MP": 9999,
@@ -1019,19 +1346,46 @@
         "EXP": 40,
         "BITS": 80,
         "Location": [
-            "Plug Cape",
-            "Bulk Swamp",
-            "Bios Swamp",
-            "Tranquil Swamp",
-            "Bulk Bridge",
-            "Jungle Grave"
+            {
+                "PT-BR": "Plug Cape",
+                "EN-US": "Plug Cape"
+            },
+            {
+                "PT-BR": "Bulk Swamp",
+                "EN-US": "Bulk Swamp"
+            },
+            {
+                "PT-BR": "Bios Swamp",
+                "EN-US": "Bios Swamp"
+            },
+            {
+                "PT-BR": "Tranquil Swamp",
+                "EN-US": "Tranquil Swamp"
+            },
+            {
+                "PT-BR": "Bulk Bridge",
+                "EN-US": "Bulk Bridge"
+            },
+            {
+                "PT-BR": "Jungle Grave",
+                "EN-US": "Jungle Grave"
+            }
         ],
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 92,
-        "Name": "Bakemon",
+        "Name": {
+            "PT-BR": "Bakemon",
+            "EN-US": "Bakemon"
+        },
         "Level": 9,
         "HP": 336,
         "MP": 9999,
@@ -1064,13 +1418,25 @@
         "DVXP": 9,
         "EXP": 46,
         "BITS": 90,
-        "Location": "Asuka South - Jungle Grave (In The Dark)",
-        "RegularAttack": "Dark Elemental",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Sul - Jungle Grave (No Escuro)",
+            "EN-US": "Asuka South - Jungle Grave (In The Dark)"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Elemental"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 93,
-        "Name": "Phantomon",
+        "Name": {
+            "PT-BR": "Phantomon",
+            "EN-US": "Phantomon"
+        },
         "Level": 31,
         "HP": 864,
         "MP": 9999,
@@ -1103,13 +1469,25 @@
         "DVXP": 31,
         "EXP": 154,
         "BITS": 310,
-        "Location": "Asuka South - Jungle Grave",
-        "RegularAttack": "Dark Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Sul - Jungle Grave",
+            "EN-US": "Asuka South - Jungle Grave"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 94,
-        "Name": "Kokatorimon",
+        "Name": {
+            "PT-BR": "Kokatorimon",
+            "EN-US": "Kokatorimon"
+        },
         "Level": 13,
         "HP": 432,
         "MP": 9999,
@@ -1143,15 +1521,30 @@
         "EXP": 96,
         "BITS": 160,
         "Location": [
-            "Asuka East - East Wire Forest",
-            "Asuka Protocol Forest"
+            {
+                "PT-BR": "Asuka Leste - Wire Forest Leste",
+                "EN-US": "Asuka East - East Wire Forest"
+            },
+            {
+                "PT-BR": "Asuka Floresta Protocol",
+                "EN-US": "Asuka Protocol Forest"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 95,
-        "Name": "Apemon",
+        "Name": {
+            "PT-BR": "Apemon",
+            "EN-US": "Apemon"
+        },
         "Level": 10,
         "HP": 360,
         "MP": 9999,
@@ -1184,13 +1577,25 @@
         "DVXP": 10,
         "EXP": 50,
         "BITS": 190,
-        "Location": "Asuka South - Phoenix Bay, Ether Jungle",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Sul - Phoenix Bay, Ether Jungle",
+            "EN-US": "Asuka South - Phoenix Bay, Ether Jungle"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 96,
-        "Name": "Shellmon",
+        "Name": {
+            "PT-BR": "Shellmon",
+            "EN-US": "Shellmon"
+        },
         "Level": 18,
         "HP": 552,
         "MP": 9999,
@@ -1223,13 +1628,25 @@
         "DVXP": 18,
         "EXP": 91,
         "BITS": 180,
-        "Location": "Asuka South - South Cape Asuka Central - Shell Beach, Plug Cape",
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Sul - South Cape Asuka Central - Shell Beach, Plug Cape",
+            "EN-US": "Asuka South - South Cape Asuka Central - Shell Beach, Plug Cape"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 97,
-        "Name": "Tortomon",
+        "Name": {
+            "PT-BR": "Tortomon",
+            "EN-US": "Tortomon"
+        },
         "Level": 29,
         "HP": 816,
         "MP": 9999,
@@ -1262,13 +1679,25 @@
         "DVXP": 29,
         "EXP": 145,
         "BITS": 290,
-        "Location": "Asuka East - Divermon's Lake Asuka South - Bulk Swamp, Bulk Bridge, Jungle Grave",
-        "RegularAttack": "No Element",
-        "Technique": "Divine Rain (Magic-Water)"
+        "Location": {
+            "PT-BR": "Asuka Leste - Lago do Divermon Asuka Sul - Bulk Swamp, Bulk Bridge, Jungle Grave",
+            "EN-US": "Asuka East - Divermon's Lake Asuka South - Bulk Swamp, Bulk Bridge, Jungle Grave"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Divine Rain (Mágico-Água)",
+            "EN-US": "Divine Rain (Magic-Water)"
+        }
     },
     {
         "Id": 98,
-        "Name": "Dolphmon",
+        "Name": {
+            "PT-BR": "Dolphmon",
+            "EN-US": "Dolphmon"
+        },
         "Level": 20,
         "HP": 600,
         "MP": 120,
@@ -1301,13 +1730,25 @@
         "DVXP": 20,
         "EXP": 98,
         "BITS": 200,
-        "Location": "Asuka Seabeds 01, 03, 04, 07, 09",
-        "RegularAttack": "No Element",
-        "Technique": "Divine Rain (Magic-Water)"
+        "Location": {
+            "PT-BR": "Asuka Seabeds 01, 03, 04, 07, 09",
+            "EN-US": "Asuka Seabeds 01, 03, 04, 07, 09"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Divine Rain (Mágico-Água)",
+            "EN-US": "Divine Rain (Magic-Water)"
+        }
     },
     {
         "Id": 99,
-        "Name": "Gesomon",
+        "Name": {
+            "PT-BR": "Gesomon",
+            "EN-US": "Gesomon"
+        },
         "Level": 27,
         "HP": 768,
         "MP": 9999,
@@ -1340,13 +1781,25 @@
         "DVXP": 27,
         "EXP": 136,
         "BITS": 240,
-        "Location": "Seabeds 01, 02, 04",
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Seabeds 01, 02, 04",
+            "EN-US": "Seabeds 01, 02, 04"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 100,
-        "Name": "Octomon",
+        "Name": {
+            "PT-BR": "Octomon",
+            "EN-US": "Octomon"
+        },
         "Level": 40,
         "HP": 1080,
         "MP": 9999,
@@ -1379,13 +1832,25 @@
         "DVXP": 40,
         "EXP": 200,
         "BITS": 400,
-        "Location": "Seabeds 05, 06",
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Seabeds 05, 06",
+            "EN-US": "Seabeds 05, 06"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 101,
-        "Name": "Divermon",
+        "Name": {
+            "PT-BR": "Divermon",
+            "EN-US": "Divermon"
+        },
         "Level": 24,
         "HP": 696,
         "MP": 9999,
@@ -1418,13 +1883,25 @@
         "DVXP": 24,
         "EXP": 118,
         "BITS": 200,
-        "Location": "Asuka East - Divermon's Lake (underwater) Amaterasu East - Divermon's Lake (underwater)",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Leste - Lago do Divermon (underwater) Amaterasu East - Divermon's Lake (underwater)",
+            "EN-US": "Asuka East - Divermon's Lake (underwater) Amaterasu East - Divermon's Lake (underwater)"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 102,
-        "Name": "ShogunGekomon",
+        "Name": {
+            "PT-BR": "ShogunGekomon",
+            "EN-US": "ShogunGekomon"
+        },
         "Level": 20,
         "HP": 600,
         "MP": 200,
@@ -1457,13 +1934,25 @@
         "DVXP": 20,
         "EXP": 101,
         "BITS": 490,
-        "Location": "Asuka South - Suzaku UG Lake",
-        "RegularAttack": "No Element",
-        "Technique": "Confuse Gas (Magic, Chance of Confuse)"
+        "Location": {
+            "PT-BR": "Asuka Sul - Suzaku UG Lake",
+            "EN-US": "Asuka South - Suzaku UG Lake"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Confuse Gas (Magic, Chance of Confuse)",
+            "EN-US": "Confuse Gas (Magic, Chance of Confuse)"
+        }
     },
     {
         "Id": 103,
-        "Name": "Seadramon",
+        "Name": {
+            "PT-BR": "Seadramon",
+            "EN-US": "Seadramon"
+        },
         "Level": 12,
         "HP": 408,
         "MP": 9999,
@@ -1496,13 +1985,25 @@
         "DVXP": 12,
         "EXP": 58,
         "BITS": 120,
-        "Location": "Asuka South - Bios Swamp Asuka East - Divermon's Lake",
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Sul - Bios Swamp Asuka Leste - Lago do Divermon",
+            "EN-US": "Asuka South - Bios Swamp Asuka East - Divermon's Lake"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 104,
-        "Name": "Mammothmon",
+        "Name": {
+            "PT-BR": "Mammothmon",
+            "EN-US": "Mammothmon"
+        },
         "Level": 23,
         "HP": 672,
         "MP": 9999,
@@ -1535,13 +2036,25 @@
         "DVXP": 23,
         "EXP": 116,
         "BITS": 220,
-        "Location": "Asuka West - North Badland W, Bullet Valley",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Oeste - North Badland W, Bullet Valley",
+            "EN-US": "Asuka West - North Badland W, Bullet Valley"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 105,
-        "Name": "Etemon",
+        "Name": {
+            "PT-BR": "Etemon",
+            "EN-US": "Etemon"
+        },
         "Level": 20,
         "HP": 600,
         "MP": 64,
@@ -1574,13 +2087,25 @@
         "DVXP": 20,
         "EXP": 100,
         "BITS": 205,
-        "Location": "Asuka West - South Badland, North Badland E",
-        "RegularAttack": "No Element",
-        "Technique": "Small Heal (Heal a small portion of HP)"
+        "Location": {
+            "PT-BR": "Asuka Oeste - South Badland, North Badland E",
+            "EN-US": "Asuka West - South Badland, North Badland E"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Small Heal (Heal a small portion of HP)",
+            "EN-US": "Small Heal (Heal a small portion of HP)"
+        }
     },
     {
         "Id": 106,
-        "Name": "Ogremon",
+        "Name": {
+            "PT-BR": "Ogremon",
+            "EN-US": "Ogremon"
+        },
         "Level": 20,
         "HP": 600,
         "MP": 9999,
@@ -1613,13 +2138,25 @@
         "DVXP": 20,
         "EXP": 102,
         "BITS": 200,
-        "Location": "Asuka West - South Badland, North Badland E",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Oeste - South Badland, North Badland E",
+            "EN-US": "Asuka West - South Badland, North Badland E"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 107,
-        "Name": "Tuskmon",
+        "Name": {
+            "PT-BR": "Tuskmon",
+            "EN-US": "Tuskmon"
+        },
         "Level": 22,
         "HP": 972,
         "MP": 9999,
@@ -1652,13 +2189,25 @@
         "DVXP": 22,
         "EXP": 112,
         "BITS": 200,
-        "Location": "Asuka Central - Plug Cape Asuka West - Bullet Valley, North Badland W",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Central - Plug Cape Asuka Oeste - Bullet Valley, North Badland W",
+            "EN-US": "Asuka Central - Plug Cape Asuka West - Bullet Valley, North Badland W"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 108,
-        "Name": "Rockmon",
+        "Name": {
+            "PT-BR": "Rockmon",
+            "EN-US": "Rockmon"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -1691,13 +2240,25 @@
         "DVXP": 44,
         "EXP": 220,
         "BITS": 400,
-        "Location": "Boards 03, 04, 05, 06, 08, 09, 11, 13, 18, 20, 23, 24, 25, 26, 28, 29, 30",
-        "RegularAttack": "No Element",
-        "Technique": "Double Guard (Raises Defense)"
+        "Location": {
+            "PT-BR": "Boards 03, 04, 05, 06, 08, 09, 11, 13, 18, 20, 23, 24, 25, 26, 28, 29, 30",
+            "EN-US": "Boards 03, 04, 05, 06, 08, 09, 11, 13, 18, 20, 23, 24, 25, 26, 28, 29, 30"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Double Guard (Raises Defense)",
+            "EN-US": "Double Guard (Raises Defense)"
+        }
     },
     {
         "Id": 109,
-        "Name": "Quetzalmon",
+        "Name": {
+            "PT-BR": "Quetzalmon",
+            "EN-US": "Quetzalmon"
+        },
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -1730,13 +2291,25 @@
         "DVXP": 45,
         "EXP": 223,
         "BITS": 440,
-        "Location": "Amaterasu West - South Noise Desert, Mobius Desert, Mirage Tower",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu West - South Noise Desert, Mobius Desert, Mirage Tower",
+            "EN-US": "Amaterasu West - South Noise Desert, Mobius Desert, Mirage Tower"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 110,
-        "Name": "Vademon",
+        "Name": {
+            "PT-BR": "Vademon",
+            "EN-US": "Vademon"
+        },
         "Level": 22,
         "HP": 648,
         "MP": 9999,
@@ -1769,13 +2342,25 @@
         "DVXP": 22,
         "EXP": 109,
         "BITS": 220,
-        "Location": "Asuka West - S Noise Desert, Mobius Desert, Mirage Tower",
-        "RegularAttack": "Thunder Element (Chance of Sleep)",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Oeste - S Noise Desert, Mobius Desert, Mirage Tower",
+            "EN-US": "Asuka West - S Noise Desert, Mobius Desert, Mirage Tower"
+        },
+        "RegularAttack": {
+            "PT-BR": "Thunder Element (Chance of Sleep)",
+            "EN-US": "Thunder Element (Chance of Sleep)"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 111,
-        "Name": "Maildramon",
+        "Name": {
+            "PT-BR": "Maildramon",
+            "EN-US": "Maildramon"
+        },
         "Level": 22,
         "HP": 648,
         "MP": 9999,
@@ -1808,13 +2393,25 @@
         "DVXP": 22,
         "EXP": 110,
         "BITS": 225,
-        "Location": "Asuka West - Mobius Desert",
-        "RegularAttack": "No Element",
-        "Technique": "Thunderbolt (Magic-Thunder)"
+        "Location": {
+            "PT-BR": "Asuka Oeste - Mobius Desert",
+            "EN-US": "Asuka West - Mobius Desert"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Thunderbolt (Mágico-Trovão)",
+            "EN-US": "Thunderbolt (Magic-Thunder)"
+        }
     },
     {
         "Id": 112,
-        "Name": "Mamemon",
+        "Name": {
+            "PT-BR": "Mamemon",
+            "EN-US": "Mamemon"
+        },
         "Level": 25,
         "HP": 480,
         "MP": 9999,
@@ -1847,13 +2444,25 @@
         "DVXP": 25,
         "EXP": 125,
         "BITS": 250,
-        "Location": "Asuka West - Duct Rooms 01, 02, 03, 04, Operation Room, Secret Stairs",
-        "RegularAttack": "Machine Element (Chance of Freeze)",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Oeste - Duct Rooms 01, 02, 03, 04, Sala de Operação, Secret Stairs",
+            "EN-US": "Asuka West - Duct Rooms 01, 02, 03, 04, Operation Room, Secret Stairs"
+        },
+        "RegularAttack": {
+            "PT-BR": "Machine Element (Chance of Freeze)",
+            "EN-US": "Machine Element (Chance of Freeze)"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 113,
-        "Name": "Guardromon (blue)",
+        "Name": {
+            "PT-BR": "Guardromon (blue)",
+            "EN-US": "Guardromon (blue)"
+        },
         "Level": 29,
         "HP": 816,
         "MP": 9999,
@@ -1890,7 +2499,10 @@
     },
     {
         "Id": 114,
-        "Name": "Thundermon",
+        "Name": {
+            "PT-BR": "Thundermon",
+            "EN-US": "Thundermon"
+        },
         "Level": 23,
         "HP": 672,
         "MP": 150,
@@ -1923,13 +2535,25 @@
         "DVXP": 23,
         "EXP": 115,
         "BITS": 235,
-        "Location": "Asuka West - Dum Dum Factory",
-        "RegularAttack": "Thunder Element",
-        "Technique": "Thunder Gemini (Magic-Thunder)"
+        "Location": {
+            "PT-BR": "Asuka Oeste - Fábrica Dum Dum",
+            "EN-US": "Asuka West - Dum Dum Factory"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trovão",
+            "EN-US": "Thunder Element"
+        },
+        "Technique": {
+            "PT-BR": "Thunder Gemini (Mágico-Trovão)",
+            "EN-US": "Thunder Gemini (Magic-Thunder)"
+        }
     },
     {
         "Id": 115,
-        "Name": "Hagurumon",
+        "Name": {
+            "PT-BR": "Hagurumon",
+            "EN-US": "Hagurumon"
+        },
         "Level": 23,
         "HP": 672,
         "MP": 336,
@@ -1962,13 +2586,25 @@
         "DVXP": 23,
         "EXP": 117,
         "BITS": 230,
-        "Location": "Asuka West - Dum Dum Factory",
-        "RegularAttack": "Machine Element",
-        "Technique": "Speed Up (Raises Speed)"
+        "Location": {
+            "PT-BR": "Asuka Oeste - Fábrica Dum Dum",
+            "EN-US": "Asuka West - Dum Dum Factory"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Máquina",
+            "EN-US": "Machine Element"
+        },
+        "Technique": {
+            "PT-BR": "Speed Up (Raises Speed)",
+            "EN-US": "Speed Up (Raises Speed)"
+        }
     },
     {
         "Id": 116,
-        "Name": "Clockmon",
+        "Name": {
+            "PT-BR": "Clockmon",
+            "EN-US": "Clockmon"
+        },
         "Level": 24,
         "HP": 696,
         "MP": 9999,
@@ -2001,13 +2637,25 @@
         "DVXP": 24,
         "EXP": 123,
         "BITS": 250,
-        "Location": "Asuka West - Dum Dum Factory",
-        "RegularAttack": "No Element",
-        "Technique": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)"
+        "Location": {
+            "PT-BR": "Asuka Oeste - Fábrica Dum Dum",
+            "EN-US": "Asuka West - Dum Dum Factory"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)",
+            "EN-US": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)"
+        }
     },
     {
         "Id": 117,
-        "Name": "Andromon",
+        "Name": {
+            "PT-BR": "Andromon",
+            "EN-US": "Andromon"
+        },
         "Level": 24,
         "HP": 696,
         "MP": 9999,
@@ -2040,13 +2688,25 @@
         "DVXP": 24,
         "EXP": 120,
         "BITS": 200,
-        "Location": "Asuka West - Dum Dum Factory, Operation Room, Secret Stairs",
-        "RegularAttack": "Thunder Elemental (Chance of Freeze)",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Oeste - Fábrica Dum Dum, Sala de Operação, Secret Stairs",
+            "EN-US": "Asuka West - Dum Dum Factory, Operation Room, Secret Stairs"
+        },
+        "RegularAttack": {
+            "PT-BR": "Thunder Elemental (Chance of Freeze)",
+            "EN-US": "Thunder Elemental (Chance of Freeze)"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 118,
-        "Name": "Numemon",
+        "Name": {
+            "PT-BR": "Numemon",
+            "EN-US": "Numemon"
+        },
         "Level": 25,
         "HP": 720,
         "MP": 9999,
@@ -2079,13 +2739,25 @@
         "DVXP": 25,
         "EXP": 124,
         "BITS": 300,
-        "Location": "Asuka West - Dum Dum Factory - Sewers",
-        "RegularAttack": "Dark Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Oeste - Fábrica Dum Dum - Sewers",
+            "EN-US": "Asuka West - Dum Dum Factory - Sewers"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 119,
-        "Name": "Sukamon",
+        "Name": {
+            "PT-BR": "Sukamon",
+            "EN-US": "Sukamon"
+        },
         "Level": 26,
         "HP": 744,
         "MP": 9999,
@@ -2118,13 +2790,25 @@
         "DVXP": 26,
         "EXP": 129,
         "BITS": 190,
-        "Location": "Asuka West - Dum Dum Factory - Sewers",
-        "RegularAttack": "Dark Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Oeste - Fábrica Dum Dum - Sewers",
+            "EN-US": "Asuka West - Dum Dum Factory - Sewers"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 120,
-        "Name": "Garbagemon",
+        "Name": {
+            "PT-BR": "Garbagemon",
+            "EN-US": "Garbagemon"
+        },
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -2157,13 +2841,25 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 470,
-        "Location": "Amaterasu West - Dum Dum Factory - Sewers",
-        "RegularAttack": "Dark Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu West - Fábrica Dum Dum - Sewers",
+            "EN-US": "Amaterasu West - Dum Dum Factory - Sewers"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 121,
-        "Name": "Roachmon",
+        "Name": {
+            "PT-BR": "Roachmon",
+            "EN-US": "Roachmon"
+        },
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -2196,13 +2892,25 @@
         "DVXP": 47,
         "EXP": 234,
         "BITS": 100,
-        "Location": "Amaterasu West - Dum Dum Factory - Sewers",
-        "RegularAttack": "Dark Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu West - Fábrica Dum Dum - Sewers",
+            "EN-US": "Amaterasu West - Dum Dum Factory - Sewers"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 122,
-        "Name": "Raremon",
+        "Name": {
+            "PT-BR": "Raremon",
+            "EN-US": "Raremon"
+        },
         "Level": 27,
         "HP": 768,
         "MP": 270,
@@ -2235,13 +2943,25 @@
         "DVXP": 27,
         "EXP": 135,
         "BITS": 270,
-        "Location": "Asuka City - Water Tunnel",
-        "RegularAttack": "No Element",
-        "Technique": "Paralyze Shock (Magic, Chance of Freeze)"
+        "Location": {
+            "PT-BR": "Asuka City - Water Tunnel",
+            "EN-US": "Asuka City - Water Tunnel"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Paralyze Shock (Magic, Chance of Freeze)",
+            "EN-US": "Paralyze Shock (Magic, Chance of Freeze)"
+        }
     },
     {
         "Id": 123,
-        "Name": "Cyclonemon",
+        "Name": {
+            "PT-BR": "Cyclonemon",
+            "EN-US": "Cyclonemon"
+        },
         "Level": 27,
         "HP": 768,
         "MP": 9999,
@@ -2274,13 +2994,25 @@
         "DVXP": 27,
         "EXP": 134,
         "BITS": 270,
-        "Location": "Asuka City - Sewers - Water Tunnel",
-        "RegularAttack": "No Element",
-        "Technique": "Twin Missile (Magic-Machine)"
+        "Location": {
+            "PT-BR": "Asuka City - Sewers - Water Tunnel",
+            "EN-US": "Asuka City - Sewers - Water Tunnel"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Twin Missile (Magic-Machine)",
+            "EN-US": "Twin Missile (Magic-Machine)"
+        }
     },
     {
         "Id": 124,
-        "Name": "Megadramon",
+        "Name": {
+            "PT-BR": "Megadramon",
+            "EN-US": "Megadramon"
+        },
         "Level": 46,
         "HP": 1224,
         "MP": 9999,
@@ -2313,13 +3045,25 @@
         "DVXP": 46,
         "EXP": 233,
         "BITS": 450,
-        "Location": "Amaterasu West - Dum Dum Factory",
-        "RegularAttack": "Machine Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu West - Fábrica Dum Dum",
+            "EN-US": "Amaterasu West - Dum Dum Factory"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Máquina",
+            "EN-US": "Machine Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 125,
-        "Name": "Monzaemon",
+        "Name": {
+            "PT-BR": "Monzaemon",
+            "EN-US": "Monzaemon"
+        },
         "Level": 29,
         "HP": 816,
         "MP": 9999,
@@ -2352,13 +3096,25 @@
         "DVXP": 29,
         "EXP": 145,
         "BITS": 320,
-        "Location": "Tamer Only",
-        "RegularAttack": "No Element",
-        "Technique": "Lovely Charm (Decreases Enemy Strength)"
+        "Location": {
+            "PT-BR": "Tamer Only",
+            "EN-US": "Tamer Only"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Lovely Charm (Decreases Enemy Strength)",
+            "EN-US": "Lovely Charm (Decreases Enemy Strength)"
+        }
     },
     {
         "Id": 126,
-        "Name": "Tankmon",
+        "Name": {
+            "PT-BR": "Tankmon",
+            "EN-US": "Tankmon"
+        },
         "Level": 30,
         "HP": 840,
         "MP": 9999,
@@ -2391,13 +3147,25 @@
         "DVXP": 30,
         "EXP": 152,
         "BITS": 300,
-        "Location": "Tamer Only",
-        "RegularAttack": "Machine Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Tamer Only",
+            "EN-US": "Tamer Only"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Máquina",
+            "EN-US": "Machine Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 127,
-        "Name": "Nanimon",
+        "Name": {
+            "PT-BR": "Nanimon",
+            "EN-US": "Nanimon"
+        },
         "Level": 29,
         "HP": 816,
         "MP": 9999,
@@ -2430,13 +3198,25 @@
         "DVXP": 29,
         "EXP": 146,
         "BITS": 280,
-        "Location": "Tamer Only",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Tamer Only",
+            "EN-US": "Tamer Only"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 128,
-        "Name": "Musyamon",
+        "Name": {
+            "PT-BR": "Musyamon",
+            "EN-US": "Musyamon"
+        },
         "Level": 31,
         "HP": 864,
         "MP": 9999,
@@ -2469,13 +3249,25 @@
         "DVXP": 31,
         "EXP": 155,
         "BITS": 330,
-        "Location": "Asuka South - Jungle Grave (before Zanbamon), Catacombs, Catacomb Back Entrance",
-        "RegularAttack": "Dark Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Sul - Jungle Grave (before Zanbamon), Catacombs, Catacomb Back Entrance",
+            "EN-US": "Asuka South - Jungle Grave (before Zanbamon), Catacombs, Catacomb Back Entrance"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 129,
-        "Name": "Kurisarimon",
+        "Name": {
+            "PT-BR": "Kurisarimon",
+            "EN-US": "Kurisarimon"
+        },
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -2508,13 +3300,25 @@
         "DVXP": 36,
         "EXP": 225,
         "BITS": 770,
-        "Location": "Optical Network - Bug Maze, Bug Maze Pit",
-        "RegularAttack": "No Element",
-        "Technique": "Confuse Nebula (Chance of Confusion)"
+        "Location": {
+            "PT-BR": "Optical Network - Bug Maze, Bug Maze Pit",
+            "EN-US": "Optical Network - Bug Maze, Bug Maze Pit"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Confuse Nebula (Chance of Confusion)",
+            "EN-US": "Confuse Nebula (Chance of Confusion)"
+        }
     },
     {
         "Id": 130,
-        "Name": "Snimon",
+        "Name": {
+            "PT-BR": "Snimon",
+            "EN-US": "Snimon"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -2548,16 +3352,34 @@
         "EXP": 215,
         "BITS": 420,
         "Location": [
-            "Amaterasu East - West Wire Forest",
-            "Amaterasu Central - Wire Forest Entrance",
-            "Amaterasu Central - Plug Cape"
+            {
+                "PT-BR": "Amaterasu East - Wire Forest Oeste",
+                "EN-US": "Amaterasu East - West Wire Forest"
+            },
+            {
+                "PT-BR": "Amaterasu Central - Entrada da Wire Forest",
+                "EN-US": "Amaterasu Central - Wire Forest Entrance"
+            },
+            {
+                "PT-BR": "Amaterasu Central - Plug Cape",
+                "EN-US": "Amaterasu Central - Plug Cape"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 131,
-        "Name": "Blossomon",
+        "Name": {
+            "PT-BR": "Blossomon",
+            "EN-US": "Blossomon"
+        },
         "Level": 34,
         "HP": 936,
         "MP": 9999,
@@ -2590,13 +3412,25 @@
         "DVXP": 34,
         "EXP": 168,
         "BITS": 340,
-        "Location": "Amaterasu East - East Wire Forest, Wind Prarie",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu East - Wire Forest Leste, Wind Prarie",
+            "EN-US": "Amaterasu East - East Wire Forest, Wind Prarie"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 132,
-        "Name": "Cherrymon",
+        "Name": {
+            "PT-BR": "Cherrymon",
+            "EN-US": "Cherrymon"
+        },
         "Level": 38,
         "HP": 1032,
         "MP": 9999,
@@ -2629,13 +3463,25 @@
         "DVXP": 38,
         "EXP": 189,
         "BITS": 380,
-        "Location": "Amaterasu East - West Wire Forest Amaterasu South - Phoenix Bay, Ether Jungle, South Cape",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu East - Wire Forest Oeste Amaterasu South - Phoenix Bay, Ether Jungle, South Cape",
+            "EN-US": "Amaterasu East - West Wire Forest Amaterasu South - Phoenix Bay, Ether Jungle, South Cape"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 133,
-        "Name": "Gargoylemon",
+        "Name": {
+            "PT-BR": "Gargoylemon",
+            "EN-US": "Gargoylemon"
+        },
         "Level": 35,
         "HP": 960,
         "MP": 9999,
@@ -2668,13 +3514,25 @@
         "DVXP": 35,
         "EXP": 176,
         "BITS": 350,
-        "Location": "Amaterasu East - Protocol Forest, Protocol Ruins",
-        "RegularAttack": "No Element",
-        "Technique": "Dark Matter (Magic-Dark)"
+        "Location": {
+            "PT-BR": "Amaterasu East - Floresta Protocol, Ruínas Protocol",
+            "EN-US": "Amaterasu East - Protocol Forest, Protocol Ruins"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Dark Matter (Mágico-Trevas)",
+            "EN-US": "Dark Matter (Magic-Dark)"
+        }
     },
     {
         "Id": 134,
-        "Name": "Mummymon",
+        "Name": {
+            "PT-BR": "Mummymon",
+            "EN-US": "Mummymon"
+        },
         "Level": 35,
         "HP": 960,
         "MP": 9999,
@@ -2707,13 +3565,25 @@
         "DVXP": 35,
         "EXP": 175,
         "BITS": 400,
-        "Location": "Amaterasu East - Protocol Ruins",
-        "RegularAttack": "No Element",
-        "Technique": "Dark Fear (Magic-Dark)"
+        "Location": {
+            "PT-BR": "Amaterasu East - Ruínas Protocol",
+            "EN-US": "Amaterasu East - Protocol Ruins"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Dark Fear (Mágico-Trevas)",
+            "EN-US": "Dark Fear (Magic-Dark)"
+        }
     },
     {
         "Id": 135,
-        "Name": "Arukenimon",
+        "Name": {
+            "PT-BR": "Arukenimon",
+            "EN-US": "Arukenimon"
+        },
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -2746,13 +3616,25 @@
         "DVXP": 45,
         "EXP": 225,
         "BITS": 450,
-        "Location": "Amaterasu Central - Plug Cape Amaterasu West - North Badland W, Bullet Valley",
-        "RegularAttack": "No Element (Chance of Poison)",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu Central - Plug Cape Amaterasu West - North Badland W, Bullet Valley",
+            "EN-US": "Amaterasu Central - Plug Cape Amaterasu West - North Badland W, Bullet Valley"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento (Chance de Envenenamento)",
+            "EN-US": "No Element (Chance of Poison)"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 136,
-        "Name": "Okuwamon",
+        "Name": {
+            "PT-BR": "Okuwamon",
+            "EN-US": "Okuwamon"
+        },
         "Level": 34,
         "HP": 936,
         "MP": 9999,
@@ -2785,13 +3667,25 @@
         "DVXP": 34,
         "EXP": 172,
         "BITS": 320,
-        "Location": "Amaterasu East - Kicking Forest, Protocol Forest",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu East - Floresta dos Chutes, Floresta Protocol",
+            "EN-US": "Amaterasu East - Kicking Forest, Protocol Forest"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 137,
-        "Name": "MetalTyrannomon",
+        "Name": {
+            "PT-BR": "MetalTyrannomon",
+            "EN-US": "MetalTyrannomon"
+        },
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -2824,13 +3718,25 @@
         "DVXP": 36,
         "EXP": 183,
         "BITS": 400,
-        "Location": "Amaterasu East - Wind Prairie, Kicking Forest (Cliff), Tyranno Valley",
-        "RegularAttack": "Machine Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu East - Pradaria do Vento, Floresta dos Chutes (Cliff), Vale dos Tyranno",
+            "EN-US": "Amaterasu East - Wind Prairie, Kicking Forest (Cliff), Tyranno Valley"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Máquina",
+            "EN-US": "Machine Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 138,
-        "Name": "Deltamon",
+        "Name": {
+            "PT-BR": "Deltamon",
+            "EN-US": "Deltamon"
+        },
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -2863,13 +3769,25 @@
         "DVXP": 36,
         "EXP": 179,
         "BITS": 360,
-        "Location": "Amaterasu East - Kicking Forest (Cliff), Tyranno Valley",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu East - Floresta dos Chutes (Cliff), Vale dos Tyranno",
+            "EN-US": "Amaterasu East - Kicking Forest (Cliff), Tyranno Valley"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 139,
-        "Name": "Whamon",
+        "Name": {
+            "PT-BR": "Whamon",
+            "EN-US": "Whamon"
+        },
         "Level": 45,
         "HP": 1800,
         "MP": 9999,
@@ -2902,13 +3820,25 @@
         "DVXP": 45,
         "EXP": 225,
         "BITS": 420,
-        "Location": "Magasta Undersea Base",
-        "RegularAttack": "No Element",
-        "Technique": "Hard Rain (Magic-Water)"
+        "Location": {
+            "PT-BR": "Magasta Undersea Base",
+            "EN-US": "Magasta Undersea Base"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Hard Rain (Mágico-Água)",
+            "EN-US": "Hard Rain (Magic-Water)"
+        }
     },
     {
         "Id": 140,
-        "Name": "MarineDevimon",
+        "Name": {
+            "PT-BR": "MarineDevimon",
+            "EN-US": "MarineDevimon"
+        },
         "Level": 37,
         "HP": 1008,
         "MP": 9999,
@@ -2941,13 +3871,25 @@
         "DVXP": 37,
         "EXP": 185,
         "BITS": 370,
-        "Location": "Seabeds 11, 14, 17",
-        "RegularAttack": "Water Element (Hits Twice)",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Seabeds 11, 14, 17",
+            "EN-US": "Seabeds 11, 14, 17"
+        },
+        "RegularAttack": {
+            "PT-BR": "Water Element (Hits Twice)",
+            "EN-US": "Water Element (Hits Twice)"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 141,
-        "Name": "Dragomon",
+        "Name": {
+            "PT-BR": "Dragomon",
+            "EN-US": "Dragomon"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -2980,13 +3922,25 @@
         "DVXP": 44,
         "EXP": 221,
         "BITS": 440,
-        "Location": "Seabeds 13, 19",
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Seabeds 13, 19",
+            "EN-US": "Seabeds 13, 19"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 142,
-        "Name": "MegaSeadramon",
+        "Name": {
+            "PT-BR": "MegaSeadramon",
+            "EN-US": "MegaSeadramon"
+        },
         "Level": 35,
         "HP": 960,
         "MP": 9999,
@@ -3019,13 +3973,25 @@
         "DVXP": 35,
         "EXP": 174,
         "BITS": 350,
-        "Location": "Amaterasu South - Bulk Bridge, Bulk Swamp, Bios Swamp, Tranquil Swamp, Jungle Grave",
-        "RegularAttack": "Thunder Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu South - Bulk Bridge, Bulk Swamp, Bios Swamp, Tranquil Swamp, Jungle Grave",
+            "EN-US": "Amaterasu South - Bulk Bridge, Bulk Swamp, Bios Swamp, Tranquil Swamp, Jungle Grave"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trovão",
+            "EN-US": "Thunder Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 143,
-        "Name": "Ebidramon",
+        "Name": {
+            "PT-BR": "Ebidramon",
+            "EN-US": "Ebidramon"
+        },
         "Level": 34,
         "HP": 936,
         "MP": 9999,
@@ -3058,13 +4024,25 @@
         "DVXP": 34,
         "EXP": 170,
         "BITS": 340,
-        "Location": "Amaterasu East - Divermon's Lake, Kicking Forest",
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu East - Lago do Divermon, Floresta dos Chutes",
+            "EN-US": "Amaterasu East - Divermon's Lake, Kicking Forest"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 144,
-        "Name": "Vilemon",
+        "Name": {
+            "PT-BR": "Vilemon",
+            "EN-US": "Vilemon"
+        },
         "Level": 36,
         "HP": 984,
         "MP": 96,
@@ -3097,13 +4075,25 @@
         "DVXP": 36,
         "EXP": 180,
         "BITS": 360,
-        "Location": "Amaterasu South - Jungle Grave",
-        "RegularAttack": "Fire Element",
-        "Technique": "Dark Fear (Magic-Dark)"
+        "Location": {
+            "PT-BR": "Amaterasu South - Jungle Grave",
+            "EN-US": "Amaterasu South - Jungle Grave"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Fogo",
+            "EN-US": "Fire Element"
+        },
+        "Technique": {
+            "PT-BR": "Dark Fear (Mágico-Trevas)",
+            "EN-US": "Dark Fear (Magic-Dark)"
+        }
     },
     {
         "Id": 145,
-        "Name": "SkullSatamon",
+        "Name": {
+            "PT-BR": "SkullSatamon",
+            "EN-US": "SkullSatamon"
+        },
         "Level": 39,
         "HP": 1056,
         "MP": 9999,
@@ -3136,13 +4126,25 @@
         "DVXP": 39,
         "EXP": 196,
         "BITS": 390,
-        "Location": "Amaterasu South - Catacombs",
-        "RegularAttack": "Dark Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu South - Catacombs",
+            "EN-US": "Amaterasu South - Catacombs"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 146,
-        "Name": "Brachiomon",
+        "Name": {
+            "PT-BR": "Brachiomon",
+            "EN-US": "Brachiomon"
+        },
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -3175,13 +4177,25 @@
         "DVXP": 36,
         "EXP": 180,
         "BITS": 360,
-        "Location": "Amaterasu South - Phoenix Bay, Ether Jungle",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu South - Phoenix Bay, Ether Jungle",
+            "EN-US": "Amaterasu South - Phoenix Bay, Ether Jungle"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 147,
-        "Name": "Drimogemon",
+        "Name": {
+            "PT-BR": "Drimogemon",
+            "EN-US": "Drimogemon"
+        },
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -3214,13 +4228,25 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 450,
-        "Location": "Asuka North - Kulon Mine Circuit Boards - 02, 05, 06, 07, 10, 12, 19, 21, 22",
-        "RegularAttack": "Machine Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Norte - Kulon Mine Circuit Boards - 02, 05, 06, 07, 10, 12, 19, 21, 22",
+            "EN-US": "Asuka North - Kulon Mine Circuit Boards - 02, 05, 06, 07, 10, 12, 19, 21, 22"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Máquina",
+            "EN-US": "Machine Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 148,
-        "Name": "Flarerizamon",
+        "Name": {
+            "PT-BR": "Flarerizamon",
+            "EN-US": "Flarerizamon"
+        },
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -3253,13 +4279,25 @@
         "DVXP": 41,
         "EXP": 204,
         "BITS": 400,
-        "Location": "Asuka North - Boot Mountain, Fire Dungeon",
-        "RegularAttack": "Fire Element",
-        "Technique": "Flame Ball (Magic-Fire)"
+        "Location": {
+            "PT-BR": "Asuka Norte - Boot Mountain, Fire Dungeon",
+            "EN-US": "Asuka North - Boot Mountain, Fire Dungeon"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Fogo",
+            "EN-US": "Fire Element"
+        },
+        "Technique": {
+            "PT-BR": "Flame Ball (Mágico-Fogo)",
+            "EN-US": "Flame Ball (Magic-Fire)"
+        }
     },
     {
         "Id": 149,
-        "Name": "Meramon",
+        "Name": {
+            "PT-BR": "Meramon",
+            "EN-US": "Meramon"
+        },
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -3292,13 +4330,25 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 410,
-        "Location": "Asuka North - Boot Mountain",
-        "RegularAttack": "Fire Element",
-        "Technique": "Flame Lance (Magic-Fire)"
+        "Location": {
+            "PT-BR": "Asuka Norte - Boot Mountain",
+            "EN-US": "Asuka North - Boot Mountain"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Fogo",
+            "EN-US": "Fire Element"
+        },
+        "Technique": {
+            "PT-BR": "Flame Lance (Mágico-Fogo)",
+            "EN-US": "Flame Lance (Magic-Fire)"
+        }
     },
     {
         "Id": 150,
-        "Name": "Mojyamon",
+        "Name": {
+            "PT-BR": "Mojyamon",
+            "EN-US": "Mojyamon"
+        },
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -3331,13 +4381,25 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 420,
-        "Location": "Asuka North - Snow Mountain, Freeze Mountain",
-        "RegularAttack": "No Element",
-        "Technique": "Ice Blow (Magic-Ice)"
+        "Location": {
+            "PT-BR": "Asuka Norte - Snow Mountain, Freeze Mountain",
+            "EN-US": "Asuka North - Snow Mountain, Freeze Mountain"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Ice Blow (Mágico-Gelo)",
+            "EN-US": "Ice Blow (Magic-Ice)"
+        }
     },
     {
         "Id": 151,
-        "Name": "Frigimon",
+        "Name": {
+            "PT-BR": "Frigimon",
+            "EN-US": "Frigimon"
+        },
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -3370,13 +4432,25 @@
         "DVXP": 41,
         "EXP": 206,
         "BITS": 420,
-        "Location": "Asuka North - Snow Mountain, Freeze Mountain",
-        "RegularAttack": "Ice Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Norte - Snow Mountain, Freeze Mountain",
+            "EN-US": "Asuka North - Snow Mountain, Freeze Mountain"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Gelo",
+            "EN-US": "Ice Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 152,
-        "Name": "Icemon",
+        "Name": {
+            "PT-BR": "Icemon",
+            "EN-US": "Icemon"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -3409,13 +4483,25 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 420,
-        "Location": "Asuka North - Lake of Ice",
-        "RegularAttack": "Ice Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Norte - Lake of Ice",
+            "EN-US": "Asuka North - Lake of Ice"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Gelo",
+            "EN-US": "Ice Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 153,
-        "Name": "Giromon",
+        "Name": {
+            "PT-BR": "Giromon",
+            "EN-US": "Giromon"
+        },
         "Level": 46,
         "HP": 1224,
         "MP": 9999,
@@ -3448,13 +4534,25 @@
         "DVXP": 46,
         "EXP": 230,
         "BITS": 460,
-        "Location": "Amaterasu West - Duct Rooms 01, 02, 03, 04, Operation Room, Secret Stairs",
-        "RegularAttack": "Machine Element; Counter (Physical)",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu West - Duct Rooms 01, 02, 03, 04, Sala de Operação, Secret Stairs",
+            "EN-US": "Amaterasu West - Duct Rooms 01, 02, 03, 04, Operation Room, Secret Stairs"
+        },
+        "RegularAttack": {
+            "PT-BR": "Machine Element; Counter (Physical)",
+            "EN-US": "Machine Element; Counter (Physical)"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 154,
-        "Name": "Vikemon",
+        "Name": {
+            "PT-BR": "Vikemon",
+            "EN-US": "Vikemon"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -3487,13 +4585,25 @@
         "DVXP": 43,
         "EXP": 218,
         "BITS": 430,
-        "Location": "Amaterasu North - Freeze Mountain, Snow Mountain",
-        "RegularAttack": "Ice Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu North - Freeze Mountain, Snow Mountain",
+            "EN-US": "Amaterasu North - Freeze Mountain, Snow Mountain"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Gelo",
+            "EN-US": "Ice Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 155,
-        "Name": "Lynxmon",
+        "Name": {
+            "PT-BR": "Lynxmon",
+            "EN-US": "Lynxmon"
+        },
         "Level": 49,
         "HP": 1296,
         "MP": 9999,
@@ -3526,13 +4636,25 @@
         "DVXP": 49,
         "EXP": 244,
         "BITS": 490,
-        "Location": "Amaterasu North - Fire Dungeon",
-        "RegularAttack": "Fire Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu North - Fire Dungeon",
+            "EN-US": "Amaterasu North - Fire Dungeon"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Fogo",
+            "EN-US": "Fire Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 156,
-        "Name": "SkullMeramon",
+        "Name": {
+            "PT-BR": "SkullMeramon",
+            "EN-US": "SkullMeramon"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -3565,13 +4687,25 @@
         "DVXP": 43,
         "EXP": 217,
         "BITS": 430,
-        "Location": "Asuka North - Fire Dungeon",
-        "RegularAttack": "No Element",
-        "Technique": "Flame Breath (Magic-Fire)"
+        "Location": {
+            "PT-BR": "Asuka Norte - Fire Dungeon",
+            "EN-US": "Asuka North - Fire Dungeon"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Flame Breath (Mágico-Fogo)",
+            "EN-US": "Flame Breath (Magic-Fire)"
+        }
     },
     {
         "Id": 157,
-        "Name": "Devidramon",
+        "Name": {
+            "PT-BR": "Devidramon",
+            "EN-US": "Devidramon"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -3604,13 +4738,25 @@
         "DVXP": 43,
         "EXP": 214,
         "BITS": 390,
-        "Location": "Asuka North - Dark Dungeon",
-        "RegularAttack": "No Element",
-        "Technique": "Dark Elemental (Magic-Dark)"
+        "Location": {
+            "PT-BR": "Asuka Norte - Dark Dungeon",
+            "EN-US": "Asuka North - Dark Dungeon"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Dark Elemental (Mágico-Trevas)",
+            "EN-US": "Dark Elemental (Magic-Dark)"
+        }
     },
     {
         "Id": 158,
-        "Name": "Chimeramon",
+        "Name": {
+            "PT-BR": "Chimeramon",
+            "EN-US": "Chimeramon"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -3647,7 +4793,10 @@
     },
     {
         "Id": 159,
-        "Name": "Pukumon",
+        "Name": {
+            "PT-BR": "Pukumon",
+            "EN-US": "Pukumon"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -3680,13 +4829,25 @@
         "DVXP": 44,
         "EXP": 221,
         "BITS": 470,
-        "Location": "Magasta Undersea Base",
-        "RegularAttack": "Machine Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Magasta Undersea Base",
+            "EN-US": "Magasta Undersea Base"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Máquina",
+            "EN-US": "Machine Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 160,
-        "Name": "MetalSeadramon",
+        "Name": {
+            "PT-BR": "MetalSeadramon",
+            "EN-US": "MetalSeadramon"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -3719,13 +4880,25 @@
         "DVXP": 44,
         "EXP": 223,
         "BITS": 460,
-        "Location": "Magasta Undersea Base",
-        "RegularAttack": "No Element",
-        "Technique": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)"
+        "Location": {
+            "PT-BR": "Magasta Undersea Base",
+            "EN-US": "Magasta Undersea Base"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)",
+            "EN-US": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)"
+        }
     },
     {
         "Id": 161,
-        "Name": "Tylomon",
+        "Name": {
+            "PT-BR": "Tylomon",
+            "EN-US": "Tylomon"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -3758,13 +4931,25 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 430,
-        "Location": "Magasta Undersea Base",
-        "RegularAttack": "Water Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Magasta Undersea Base",
+            "EN-US": "Magasta Undersea Base"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Água",
+            "EN-US": "Water Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 162,
-        "Name": "Scorpiomon",
+        "Name": {
+            "PT-BR": "Scorpiomon",
+            "EN-US": "Scorpiomon"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -3797,13 +4982,25 @@
         "DVXP": 43,
         "EXP": 216,
         "BITS": 480,
-        "Location": "Magasta Undersea Base",
-        "RegularAttack": "No Element",
-        "Technique": "Grand Wave (Magic-Water)"
+        "Location": {
+            "PT-BR": "Magasta Undersea Base",
+            "EN-US": "Magasta Undersea Base"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Grand Wave (Mágico-Água)",
+            "EN-US": "Grand Wave (Magic-Water)"
+        }
     },
     {
         "Id": 163,
-        "Name": "Antylamon",
+        "Name": {
+            "PT-BR": "Antylamon",
+            "EN-US": "Antylamon"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -3837,15 +5034,30 @@
         "EXP": 220,
         "BITS": 450,
         "Location": [
-            "Amaterasu Central - Central Park",
-            "Amaterasu Central - Shell Beach"
+            {
+                "PT-BR": "Amaterasu Central - Parque Central",
+                "EN-US": "Amaterasu Central - Central Park"
+            },
+            {
+                "PT-BR": "Amaterasu Central - Shell Beach",
+                "EN-US": "Amaterasu Central - Shell Beach"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "Dark Elemental (Magic-Dark)"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Dark Elemental (Mágico-Trevas)",
+            "EN-US": "Dark Elemental (Magic-Dark)"
+        }
     },
     {
         "Id": 164,
-        "Name": "H-Kabuterimon",
+        "Name": {
+            "PT-BR": "H-Kabuterimon",
+            "EN-US": "H-Kabuterimon"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -3879,15 +5091,30 @@
         "EXP": 222,
         "BITS": 610,
         "Location": [
-            "Amaterasu Central - Central Park",
-            "Amaterasu Central - Wire Forest Entrance"
+            {
+                "PT-BR": "Amaterasu Central - Parque Central",
+                "EN-US": "Amaterasu Central - Central Park"
+            },
+            {
+                "PT-BR": "Amaterasu Central - Entrada da Wire Forest",
+                "EN-US": "Amaterasu Central - Wire Forest Entrance"
+            }
         ],
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 165,
-        "Name": "Puppetmon",
+        "Name": {
+            "PT-BR": "Puppetmon",
+            "EN-US": "Puppetmon"
+        },
         "Level": 54,
         "HP": 1416,
         "MP": 9999,
@@ -3920,13 +5147,25 @@
         "DVXP": 54,
         "EXP": 273,
         "BITS": 520,
-        "Location": "Tamer Only",
-        "RegularAttack": "Machine Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Tamer Only",
+            "EN-US": "Tamer Only"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Máquina",
+            "EN-US": "Machine Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 166,
-        "Name": "SkullMammothmon",
+        "Name": {
+            "PT-BR": "SkullMammothmon",
+            "EN-US": "SkullMammothmon"
+        },
         "Level": 49,
         "HP": 1296,
         "MP": 9999,
@@ -3959,13 +5198,25 @@
         "DVXP": 49,
         "EXP": 247,
         "BITS": 490,
-        "Location": "Amaterasu North - Ice Dungeon",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu North - Ice Dungeon",
+            "EN-US": "Amaterasu North - Ice Dungeon"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 167,
-        "Name": "Valkyriemon",
+        "Name": {
+            "PT-BR": "Valkyriemon",
+            "EN-US": "Valkyriemon"
+        },
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -4002,7 +5253,10 @@
     },
     {
         "Id": 168,
-        "Name": "LadyDevimon",
+        "Name": {
+            "PT-BR": "LadyDevimon",
+            "EN-US": "LadyDevimon"
+        },
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -4035,13 +5289,25 @@
         "DVXP": 45,
         "EXP": 224,
         "BITS": 440,
-        "Location": "Amaterasu West - North Badland W, Bullet Valley",
-        "RegularAttack": "No Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu West - North Badland W, Bullet Valley",
+            "EN-US": "Amaterasu West - North Badland W, Bullet Valley"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 169,
-        "Name": "MetalEtemon",
+        "Name": {
+            "PT-BR": "MetalEtemon",
+            "EN-US": "MetalEtemon"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 296,
@@ -4074,13 +5340,25 @@
         "DVXP": 44,
         "EXP": 222,
         "BITS": 460,
-        "Location": "Amaterasu West - North Badland E, South Badland",
-        "RegularAttack": "No Element",
-        "Technique": "Mega Heal (Heal a large portion of HP)"
+        "Location": {
+            "PT-BR": "Amaterasu West - North Badland E, South Badland",
+            "EN-US": "Amaterasu West - North Badland E, South Badland"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Mega Heal (Heal a large portion of HP)",
+            "EN-US": "Mega Heal (Heal a large portion of HP)"
+        }
     },
     {
         "Id": 170,
-        "Name": "KingEtemon",
+        "Name": {
+            "PT-BR": "KingEtemon",
+            "EN-US": "KingEtemon"
+        },
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -4113,13 +5391,25 @@
         "DVXP": 45,
         "EXP": 226,
         "BITS": 500,
-        "Location": "Amaterasu West - North Badland E, South Badland",
-        "RegularAttack": "No Element",
-        "Technique": "Full Heal (Heals All HP)"
+        "Location": {
+            "PT-BR": "Amaterasu West - North Badland E, South Badland",
+            "EN-US": "Amaterasu West - North Badland E, South Badland"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Full Heal (Heals All HP)",
+            "EN-US": "Full Heal (Heals All HP)"
+        }
     },
     {
         "Id": 171,
-        "Name": "Gryphonmon",
+        "Name": {
+            "PT-BR": "Gryphonmon",
+            "EN-US": "Gryphonmon"
+        },
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -4152,13 +5442,25 @@
         "DVXP": 45,
         "EXP": 227,
         "BITS": 440,
-        "Location": "Amaterasu West - Pelche Oasis, Noise Desert",
-        "RegularAttack": "No Element",
-        "Technique": "Slyph Storm (Magic-Wind)"
+        "Location": {
+            "PT-BR": "Amaterasu West - Pelche Oasis, Noise Desert",
+            "EN-US": "Amaterasu West - Pelche Oasis, Noise Desert"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Slyph Storm (Mágico-Vento)",
+            "EN-US": "Slyph Storm (Magic-Wind)"
+        }
     },
     {
         "Id": 172,
-        "Name": "Infermon",
+        "Name": {
+            "PT-BR": "Infermon",
+            "EN-US": "Infermon"
+        },
         "Level": 55,
         "HP": 1440,
         "MP": 9999,
@@ -4191,13 +5493,25 @@
         "DVXP": 55,
         "EXP": 276,
         "BITS": 530,
-        "Location": "Spy Satellite - Gunslinger 1F",
-        "RegularAttack": "No Element",
-        "Technique": "Darkness Chaos (Magic-Dark)"
+        "Location": {
+            "PT-BR": "Spy Satellite - Gunslinger 1F",
+            "EN-US": "Spy Satellite - Gunslinger 1F"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
+            "EN-US": "Darkness Chaos (Magic-Dark)"
+        }
     },
     {
         "Id": 173,
-        "Name": "Shadramon",
+        "Name": {
+            "PT-BR": "Shadramon",
+            "EN-US": "Shadramon"
+        },
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -4230,13 +5544,25 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 440,
-        "Location": "Amaterasu North - Boot Mountain, Fire Dungeon",
-        "RegularAttack": "Fire Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu North - Boot Mountain, Fire Dungeon",
+            "EN-US": "Amaterasu North - Boot Mountain, Fire Dungeon"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Fogo",
+            "EN-US": "Fire Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 174,
-        "Name": "Boltmon",
+        "Name": {
+            "PT-BR": "Boltmon",
+            "EN-US": "Boltmon"
+        },
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -4269,13 +5595,25 @@
         "DVXP": 48,
         "EXP": 243,
         "BITS": 500,
-        "Location": "Amaterasu North - Kulon Mine, Kulon Pit",
-        "RegularAttack": "Thunder Element; Counter (Physical)",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu North - Kulon Mine, Kulon Pit",
+            "EN-US": "Amaterasu North - Kulon Mine, Kulon Pit"
+        },
+        "RegularAttack": {
+            "PT-BR": "Thunder Element; Counter (Physical)",
+            "EN-US": "Thunder Element; Counter (Physical)"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 175,
-        "Name": "Piedmon",
+        "Name": {
+            "PT-BR": "Piedmon",
+            "EN-US": "Piedmon"
+        },
         "Level": 56,
         "HP": 1464,
         "MP": 9999,
@@ -4308,13 +5646,25 @@
         "DVXP": 56,
         "EXP": 280,
         "BITS": 560,
-        "Location": "Tamer Only",
-        "RegularAttack": "Dark Element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Tamer Only",
+            "EN-US": "Tamer Only"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 176,
-        "Name": "Machinedramon",
+        "Name": {
+            "PT-BR": "Machinedramon",
+            "EN-US": "Machinedramon"
+        },
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -4347,13 +5697,25 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 500,
-        "Location": "Amaterasu West - Dum Dum Factory",
-        "RegularAttack": "Machine Element (Hits Twice)",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Amaterasu West - Fábrica Dum Dum",
+            "EN-US": "Amaterasu West - Dum Dum Factory"
+        },
+        "RegularAttack": {
+            "PT-BR": "Machine Element (Hits Twice)",
+            "EN-US": "Machine Element (Hits Twice)"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 177,
-        "Name": "VenomMyotismon",
+        "Name": {
+            "PT-BR": "VenomMyotismon",
+            "EN-US": "VenomMyotismon"
+        },
         "Level": 55,
         "HP": 1440,
         "MP": 9999,
@@ -4386,13 +5748,25 @@
         "DVXP": 55,
         "EXP": 277,
         "BITS": 530,
-        "Location": "Spy Satellite - Gunslinger 1F",
-        "RegularAttack": "No Element",
-        "Technique": "Darkness Chaos (Magic-Dark)"
+        "Location": {
+            "PT-BR": "Spy Satellite - Gunslinger 1F",
+            "EN-US": "Spy Satellite - Gunslinger 1F"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
+            "EN-US": "Darkness Chaos (Magic-Dark)"
+        }
     },
     {
         "Id": 178,
-        "Name": "Apokarimon",
+        "Name": {
+            "PT-BR": "Apokarimon",
+            "EN-US": "Apokarimon"
+        },
         "Level": 56,
         "HP": 1464,
         "MP": 9999,
@@ -4425,13 +5799,25 @@
         "DVXP": 56,
         "EXP": 282,
         "BITS": 550,
-        "Location": "Spy Satellite - Gunslinger 1F",
-        "RegularAttack": "No Element",
-        "Technique": "Darkness Chaos (Magic-Dark)"
+        "Location": {
+            "PT-BR": "Spy Satellite - Gunslinger 1F",
+            "EN-US": "Spy Satellite - Gunslinger 1F"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
+            "EN-US": "Darkness Chaos (Magic-Dark)"
+        }
     },
     {
         "Id": 179,
-        "Name": "Ghoulmon",
+        "Name": {
+            "PT-BR": "Ghoulmon",
+            "EN-US": "Ghoulmon"
+        },
         "Level": 49,
         "HP": 1037,
         "MP": 9999,
@@ -4464,13 +5850,25 @@
         "DVXP": 49,
         "EXP": 246,
         "BITS": 490,
-        "Location": "Amaterasu North - Dark Dungeon",
-        "RegularAttack": "No Element",
-        "Technique": "Darkness Chaos (Magic-Dark)"
+        "Location": {
+            "PT-BR": "Amaterasu North - Dark Dungeon",
+            "EN-US": "Amaterasu North - Dark Dungeon"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
+            "EN-US": "Darkness Chaos (Magic-Dark)"
+        }
     },
     {
         "Id": 180,
-        "Name": "Creepymon",
+        "Name": {
+            "PT-BR": "Creepymon",
+            "EN-US": "Creepymon"
+        },
         "Level": 55,
         "HP": 1440,
         "MP": 9999,
@@ -4503,13 +5901,25 @@
         "DVXP": 55,
         "EXP": 277,
         "BITS": 540,
-        "Location": "Tamer Only",
-        "RegularAttack": "Fire Element",
-        "Technique": "Darkness Chaos (Magic-Dark)"
+        "Location": {
+            "PT-BR": "Tamer Only",
+            "EN-US": "Tamer Only"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Fogo",
+            "EN-US": "Fire Element"
+        },
+        "Technique": {
+            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
+            "EN-US": "Darkness Chaos (Magic-Dark)"
+        }
     },
     {
         "Id": 181,
-        "Name": "Armageddemon",
+        "Name": {
+            "PT-BR": "Armageddemon",
+            "EN-US": "Armageddemon"
+        },
         "Level": 56,
         "HP": 2196,
         "MP": 9999,
@@ -4542,13 +5952,25 @@
         "DVXP": 56,
         "EXP": 279,
         "BITS": 600,
-        "Location": "Spy Satellite - Gunslinger 2F",
-        "RegularAttack": "Dark Elemental",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Spy Satellite - Gunslinger 2F",
+            "EN-US": "Spy Satellite - Gunslinger 2F"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Trevas",
+            "EN-US": "Dark Elemental"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 182,
-        "Name": "Red Vegiemon",
+        "Name": {
+            "PT-BR": "Red Vegiemon",
+            "EN-US": "Red Vegiemon"
+        },
         "Level": 9,
         "HP": 336,
         "MP": 9999,
@@ -4585,7 +6007,10 @@
     },
     {
         "Id": 183,
-        "Name": "Kuwagamon (green)",
+        "Name": {
+            "PT-BR": "Kuwagamon (green)",
+            "EN-US": "Kuwagamon (green)"
+        },
         "Level": 30,
         "HP": 840,
         "MP": 9999,
@@ -4622,7 +6047,10 @@
     },
     {
         "Id": 184,
-        "Name": "Yanmamon (green)",
+        "Name": {
+            "PT-BR": "Yanmamon (green)",
+            "EN-US": "Yanmamon (green)"
+        },
         "Level": 8,
         "HP": 312,
         "MP": 9999,
@@ -4659,7 +6087,10 @@
     },
     {
         "Id": 185,
-        "Name": "Dokugumon (brown)",
+        "Name": {
+            "PT-BR": "Dokugumon (brown)",
+            "EN-US": "Dokugumon (brown)"
+        },
         "Level": 21,
         "HP": 624,
         "MP": 9999,
@@ -4696,7 +6127,10 @@
     },
     {
         "Id": 186,
-        "Name": "Goburimon (red)",
+        "Name": {
+            "PT-BR": "Goburimon (red)",
+            "EN-US": "Goburimon (red)"
+        },
         "Level": 22,
         "HP": 648,
         "MP": 9999,
@@ -4733,7 +6167,10 @@
     },
     {
         "Id": 187,
-        "Name": "Minotarumon (blue)",
+        "Name": {
+            "PT-BR": "Minotarumon (blue)",
+            "EN-US": "Minotarumon (blue)"
+        },
         "Level": 33,
         "HP": 608,
         "MP": 9999,
@@ -4770,7 +6207,10 @@
     },
     {
         "Id": 188,
-        "Name": "Flymon (pink)",
+        "Name": {
+            "PT-BR": "Flymon (pink)",
+            "EN-US": "Flymon (pink)"
+        },
         "Level": 33,
         "HP": 912,
         "MP": 9999,
@@ -4807,7 +6247,10 @@
     },
     {
         "Id": 189,
-        "Name": "Woodmon (green)",
+        "Name": {
+            "PT-BR": "Woodmon (green)",
+            "EN-US": "Woodmon (green)"
+        },
         "Level": 19,
         "HP": 576,
         "MP": 9999,
@@ -4844,7 +6287,10 @@
     },
     {
         "Id": 190,
-        "Name": "Triceramon (red)",
+        "Name": {
+            "PT-BR": "Triceramon (red)",
+            "EN-US": "Triceramon (red)"
+        },
         "Level": 41,
         "HP": 1656,
         "MP": 9999,
@@ -4881,7 +6327,10 @@
     },
     {
         "Id": 191,
-        "Name": "Airdramon (gold)",
+        "Name": {
+            "PT-BR": "Airdramon (gold)",
+            "EN-US": "Airdramon (gold)"
+        },
         "Level": 21,
         "HP": 624,
         "MP": 9999,
@@ -4918,7 +6367,10 @@
     },
     {
         "Id": 192,
-        "Name": "Phantomon (blue)",
+        "Name": {
+            "PT-BR": "Phantomon (blue)",
+            "EN-US": "Phantomon (blue)"
+        },
         "Level": 37,
         "HP": 1008,
         "MP": 9999,
@@ -4955,7 +6407,10 @@
     },
     {
         "Id": 193,
-        "Name": "Kokatorimon (brown)",
+        "Name": {
+            "PT-BR": "Kokatorimon (brown)",
+            "EN-US": "Kokatorimon (brown)"
+        },
         "Level": 22,
         "HP": 648,
         "MP": 9999,
@@ -4992,7 +6447,10 @@
     },
     {
         "Id": 194,
-        "Name": "Tortomon (blue)",
+        "Name": {
+            "PT-BR": "Tortomon (blue)",
+            "EN-US": "Tortomon (blue)"
+        },
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -5029,7 +6487,10 @@
     },
     {
         "Id": 195,
-        "Name": "ShogunGekomon (blue)",
+        "Name": {
+            "PT-BR": "ShogunGekomon (blue)",
+            "EN-US": "ShogunGekomon (blue)"
+        },
         "Level": 37,
         "HP": 1008,
         "MP": 360,
@@ -5066,7 +6527,10 @@
     },
     {
         "Id": 196,
-        "Name": "Seadramon (brown)",
+        "Name": {
+            "PT-BR": "Seadramon (brown)",
+            "EN-US": "Seadramon (brown)"
+        },
         "Level": 35,
         "HP": 960,
         "MP": 9999,
@@ -5103,7 +6567,10 @@
     },
     {
         "Id": 197,
-        "Name": "Mammothmon (silver)",
+        "Name": {
+            "PT-BR": "Mammothmon (silver)",
+            "EN-US": "Mammothmon (silver)"
+        },
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -5140,7 +6607,10 @@
     },
     {
         "Id": 198,
-        "Name": "Fugamon",
+        "Name": {
+            "PT-BR": "Fugamon",
+            "EN-US": "Fugamon"
+        },
         "Level": 42,
         "HP": 1128,
         "MP": 9999,
@@ -5173,13 +6643,25 @@
         "DVXP": 42,
         "EXP": 210,
         "BITS": 430,
-        "Location": "Asuka North - Kulon Mine, Kulon Pit",
-        "RegularAttack": "No element",
-        "Technique": "None"
+        "Location": {
+            "PT-BR": "Asuka Norte - Kulon Mine, Kulon Pit",
+            "EN-US": "Asuka North - Kulon Mine, Kulon Pit"
+        },
+        "RegularAttack": {
+            "PT-BR": "No element",
+            "EN-US": "No element"
+        },
+        "Technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        }
     },
     {
         "Id": 199,
-        "Name": "Vademon (red)",
+        "Name": {
+            "PT-BR": "Vademon (red)",
+            "EN-US": "Vademon (red)"
+        },
         "Level": 46,
         "HP": 1224,
         "MP": 4,
@@ -5216,7 +6698,10 @@
     },
     {
         "Id": 200,
-        "Name": "Maildramon (black)",
+        "Name": {
+            "PT-BR": "Maildramon (black)",
+            "EN-US": "Maildramon (black)"
+        },
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -5253,7 +6738,10 @@
     },
     {
         "Id": 201,
-        "Name": "Guardromon (white)",
+        "Name": {
+            "PT-BR": "Guardromon (white)",
+            "EN-US": "Guardromon (white)"
+        },
         "Level": 46,
         "HP": 1224,
         "MP": 9999,
@@ -5290,7 +6778,10 @@
     },
     {
         "Id": 202,
-        "Name": "Numemon (blue)",
+        "Name": {
+            "PT-BR": "Numemon (blue)",
+            "EN-US": "Numemon (blue)"
+        },
         "Level": 31,
         "HP": 864,
         "MP": 9999,
@@ -5327,7 +6818,10 @@
     },
     {
         "Id": 203,
-        "Name": "Numemon (brown)",
+        "Name": {
+            "PT-BR": "Numemon (brown)",
+            "EN-US": "Numemon (brown)"
+        },
         "Level": 39,
         "HP": 1056,
         "MP": 9999,
@@ -5364,7 +6858,10 @@
     },
     {
         "Id": 204,
-        "Name": "Numemon (aqua)",
+        "Name": {
+            "PT-BR": "Numemon (aqua)",
+            "EN-US": "Numemon (aqua)"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -5401,7 +6898,10 @@
     },
     {
         "Id": 205,
-        "Name": "Numemon (red)",
+        "Name": {
+            "PT-BR": "Numemon (red)",
+            "EN-US": "Numemon (red)"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -5438,7 +6938,10 @@
     },
     {
         "Id": 206,
-        "Name": "Numemon (white)",
+        "Name": {
+            "PT-BR": "Numemon (white)",
+            "EN-US": "Numemon (white)"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -5475,7 +6978,10 @@
     },
     {
         "Id": 207,
-        "Name": "Raremon (pink)",
+        "Name": {
+            "PT-BR": "Raremon (pink)",
+            "EN-US": "Raremon (pink)"
+        },
         "Level": 40,
         "HP": 1080,
         "MP": 9999,
@@ -5512,7 +7018,10 @@
     },
     {
         "Id": 208,
-        "Name": "Cyclonemon (pink)",
+        "Name": {
+            "PT-BR": "Cyclonemon (pink)",
+            "EN-US": "Cyclonemon (pink)"
+        },
         "Level": 43,
         "HP": 1152,
         "MP": 9999,
@@ -5549,7 +7058,10 @@
     },
     {
         "Id": 209,
-        "Name": "Tankmon (blue)",
+        "Name": {
+            "PT-BR": "Tankmon (blue)",
+            "EN-US": "Tankmon (blue)"
+        },
         "Level": 45,
         "HP": 1200,
         "MP": 9999,
@@ -5586,7 +7098,10 @@
     },
     {
         "Id": 210,
-        "Name": "Musyamon (green)",
+        "Name": {
+            "PT-BR": "Musyamon (green)",
+            "EN-US": "Musyamon (green)"
+        },
         "Level": 32,
         "HP": 888,
         "MP": 9999,
@@ -5623,7 +7138,10 @@
     },
     {
         "Id": 211,
-        "Name": "Kurisarimon (pink)",
+        "Name": {
+            "PT-BR": "Kurisarimon (pink)",
+            "EN-US": "Kurisarimon (pink)"
+        },
         "Level": 40,
         "HP": 1080,
         "MP": 9999,
@@ -5660,7 +7178,10 @@
     },
     {
         "Id": 212,
-        "Name": "Snimon (brown)",
+        "Name": {
+            "PT-BR": "Snimon (brown)",
+            "EN-US": "Snimon (brown)"
+        },
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -5697,7 +7218,10 @@
     },
     {
         "Id": 213,
-        "Name": "Blossomon (pink)",
+        "Name": {
+            "PT-BR": "Blossomon (pink)",
+            "EN-US": "Blossomon (pink)"
+        },
         "Level": 36,
         "HP": 984,
         "MP": 9999,
@@ -5734,7 +7258,10 @@
     },
     {
         "Id": 214,
-        "Name": "Cherrymon (red)",
+        "Name": {
+            "PT-BR": "Cherrymon (red)",
+            "EN-US": "Cherrymon (red)"
+        },
         "Level": 41,
         "HP": 1104,
         "MP": 9999,
@@ -5771,7 +7298,10 @@
     },
     {
         "Id": 215,
-        "Name": "Whamon (blue)",
+        "Name": {
+            "PT-BR": "Whamon (blue)",
+            "EN-US": "Whamon (blue)"
+        },
         "Level": 47,
         "HP": 1872,
         "MP": 9999,
@@ -5808,7 +7338,10 @@
     },
     {
         "Id": 216,
-        "Name": "MegaSeadramon (gold)",
+        "Name": {
+            "PT-BR": "MegaSeadramon (gold)",
+            "EN-US": "MegaSeadramon (gold)"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -5845,7 +7378,10 @@
     },
     {
         "Id": 217,
-        "Name": "Ebidramon (pink)",
+        "Name": {
+            "PT-BR": "Ebidramon (pink)",
+            "EN-US": "Ebidramon (pink)"
+        },
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -5882,7 +7418,10 @@
     },
     {
         "Id": 218,
-        "Name": "Vilemon (purple)",
+        "Name": {
+            "PT-BR": "Vilemon (purple)",
+            "EN-US": "Vilemon (purple)"
+        },
         "Level": 48,
         "HP": 1272,
         "MP": 9999,
@@ -5919,7 +7458,10 @@
     },
     {
         "Id": 219,
-        "Name": "Drimogemon (brown)",
+        "Name": {
+            "PT-BR": "Drimogemon (brown)",
+            "EN-US": "Drimogemon (brown)"
+        },
         "Level": 44,
         "HP": 1176,
         "MP": 9999,
@@ -5956,7 +7498,10 @@
     },
     {
         "Id": 220,
-        "Name": "BlueMeramon",
+        "Name": {
+            "PT-BR": "BlueMeramon",
+            "EN-US": "BlueMeramon"
+        },
         "Level": 48,
         "HP": 1272,
         "MP": 1800,
@@ -5989,13 +7534,25 @@
         "DVXP": 48,
         "EXP": 243,
         "BITS": 480,
-        "Location": "Amaterasu North - Boot Mountain, Fire Dungeon",
-        "RegularAttack": "Fire Element",
-        "Technique": "Flame Sphere (Magic-Fire)"
+        "Location": {
+            "PT-BR": "Amaterasu North - Boot Mountain, Fire Dungeon",
+            "EN-US": "Amaterasu North - Boot Mountain, Fire Dungeon"
+        },
+        "RegularAttack": {
+            "PT-BR": "Elemento Fogo",
+            "EN-US": "Fire Element"
+        },
+        "Technique": {
+            "PT-BR": "Flame Sphere (Mágico-Fogo)",
+            "EN-US": "Flame Sphere (Magic-Fire)"
+        }
     },
     {
         "Id": 221,
-        "Name": "Vikemon (blue)",
+        "Name": {
+            "PT-BR": "Vikemon (blue)",
+            "EN-US": "Vikemon (blue)"
+        },
         "Level": 47,
         "HP": 1872,
         "MP": 9999,
@@ -6032,7 +7589,10 @@
     },
     {
         "Id": 222,
-        "Name": "MetalSeadramon (black)",
+        "Name": {
+            "PT-BR": "MetalSeadramon (black)",
+            "EN-US": "MetalSeadramon (black)"
+        },
         "Level": 54,
         "HP": 1416,
         "MP": 9999,
@@ -6069,7 +7629,10 @@
     },
     {
         "Id": 223,
-        "Name": "Scorpiomon (black)",
+        "Name": {
+            "PT-BR": "Scorpiomon (black)",
+            "EN-US": "Scorpiomon (black)"
+        },
         "Level": 54,
         "HP": 1416,
         "MP": 9999,
@@ -6106,7 +7669,10 @@
     },
     {
         "Id": 224,
-        "Name": "Antylamon (white)",
+        "Name": {
+            "PT-BR": "Antylamon (white)",
+            "EN-US": "Antylamon (white)"
+        },
         "Level": 49,
         "HP": 1296,
         "MP": 9999,
@@ -6143,7 +7709,10 @@
     },
     {
         "Id": 247,
-        "Name": "Knightmon",
+        "Name": {
+            "PT-BR": "Knightmon",
+            "EN-US": "Knightmon"
+        },
         "Level": 53,
         "HP": 2784,
         "MP": 9999,
@@ -6176,13 +7745,25 @@
         "DVXP": 53,
         "EXP": 530,
         "BITS": 1060,
-        "Location": "Tamer Only",
-        "RegularAttack": "No Element",
-        "Technique": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)"
+        "Location": {
+            "PT-BR": "Tamer Only",
+            "EN-US": "Tamer Only"
+        },
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
+            "EN-US": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)"
+        }
     },
     {
         "Id": 515,
-        "Name": "Cardmon (T1)",
+        "Name": {
+            "PT-BR": "Cardmon (T1)",
+            "EN-US": "Cardmon (T1)"
+        },
         "Level": 7,
         "HP": 288,
         "MP": 9999,
@@ -6219,7 +7800,10 @@
     },
     {
         "Id": 516,
-        "Name": "Cardmon (A1)",
+        "Name": {
+            "PT-BR": "Cardmon (A1)",
+            "EN-US": "Cardmon (A1)"
+        },
         "Level": 12,
         "HP": 408,
         "MP": 9999,
@@ -6256,7 +7840,10 @@
     },
     {
         "Id": 517,
-        "Name": "Cardmon (T2)",
+        "Name": {
+            "PT-BR": "Cardmon (T2)",
+            "EN-US": "Cardmon (T2)"
+        },
         "Level": 17,
         "HP": 528,
         "MP": 9999,
@@ -6293,7 +7880,10 @@
     },
     {
         "Id": 518,
-        "Name": "Cardmon (A2)",
+        "Name": {
+            "PT-BR": "Cardmon (A2)",
+            "EN-US": "Cardmon (A2)"
+        },
         "Level": 27,
         "HP": 768,
         "MP": 9999,
@@ -6330,7 +7920,10 @@
     },
     {
         "Id": 519,
-        "Name": "Cardmon (T3)",
+        "Name": {
+            "PT-BR": "Cardmon (T3)",
+            "EN-US": "Cardmon (T3)"
+        },
         "Level": 37,
         "HP": 1008,
         "MP": 9999,
@@ -6367,7 +7960,10 @@
     },
     {
         "Id": 520,
-        "Name": "Cardmon (A3)",
+        "Name": {
+            "PT-BR": "Cardmon (A3)",
+            "EN-US": "Cardmon (A3)"
+        },
         "Level": 42,
         "HP": 1128,
         "MP": 9999,
@@ -6404,7 +8000,10 @@
     },
     {
         "Id": 521,
-        "Name": "Cardmon (T4)",
+        "Name": {
+            "PT-BR": "Cardmon (T4)",
+            "EN-US": "Cardmon (T4)"
+        },
         "Level": 47,
         "HP": 1248,
         "MP": 9999,
@@ -6441,7 +8040,10 @@
     },
     {
         "Id": 522,
-        "Name": "Cardmon (A4)",
+        "Name": {
+            "PT-BR": "Cardmon (A4)",
+            "EN-US": "Cardmon (A4)"
+        },
         "Level": 47,
         "HP": 1248,
         "MP": 9999,

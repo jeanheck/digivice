@@ -1,0 +1,52 @@
+{
+    "Title": {
+        "PT-BR": "A Vara de Pesca",
+        "EN-US": "The Fishing Pole"
+    },
+    "Description": {
+        "PT-BR": "Obtenha a Vara de Pesca para começar a pescar itens e Digimon.",
+        "EN-US": "Obtain the Fishing Pole to start fishing for items and Digimon."
+    },
+    "Prerequisites": [
+        {
+            "Description": {
+                "PT-BR": "Possuir a Bolsa de Cards",
+                "EN-US": "Own the Folder Bag"
+            }
+        }
+    ],
+    "Steps": [
+        {
+            "Number": 1,
+            "Description": {
+                "PT-BR": "Fale com Tai Kong Wong em Shell Beach",
+                "EN-US": "Talk to Tai Kong Wong at the Shell Beach"
+            }
+        },
+        {
+            "Number": 2,
+            "Description": {
+                "PT-BR": "Ajude o Divermon em Divermon's Lake",
+                "EN-US": "Help the Divermon at Divermon's Lake"
+            }
+        },
+        {
+            "Number": 3,
+            "Description": {
+                "PT-BR": "Leve os itens para Tai Kong Wong em Shell Beach",
+                "EN-US": "Bring the items to Tai Kong Wong at the Shell Beach"
+            },
+            "Prerequisites": [
+                {
+                    "Id": "BambooSpear"
+                },
+                {
+                    "Id": "SpiderWeb"
+                },
+                {
+                    "Id": "BambooSpear"
+                }
+            ]
+        }
+    ]
+}

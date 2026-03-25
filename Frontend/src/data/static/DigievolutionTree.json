@@ -1,25 +1,37 @@
 {
     "digievolutions": [
         {
-            "name": "Dinohumon",
+            "name": {
+                "PT-BR": "Dinohumon",
+                "EN-US": "Dinohumon"
+            },
             "family": "Kotemon",
             "before": null,
             "next": "Kyukimon"
         },
         {
-            "name": "Hookmon",
+            "name": {
+                "PT-BR": "Hookmon",
+                "EN-US": "Hookmon"
+            },
             "family": "Monmon",
             "before": null,
             "next": "Armormon"
         },
         {
-            "name": "Grizzmon",
+            "name": {
+                "PT-BR": "Grizzmon",
+                "EN-US": "Grizzmon"
+            },
             "family": "Kumamon",
             "before": null,
             "next": "GrapLeomon"
         },
         {
-            "name": "Greymon",
+            "name": {
+                "PT-BR": "Greymon",
+                "EN-US": "Greymon"
+            },
             "family": "Agumon",
             "before": null,
             "next": [
@@ -28,241 +40,361 @@
             ]
         },
         {
-            "name": "ExVeemon",
+            "name": {
+                "PT-BR": "ExVeemon",
+                "EN-US": "ExVeemon"
+            },
             "family": "Veemon",
             "before": null,
             "next": "Paildramon"
         },
         {
-            "name": "Growlmon",
+            "name": {
+                "PT-BR": "Growlmon",
+                "EN-US": "Growlmon"
+            },
             "family": "Guilmon",
             "before": null,
             "next": "WarGrowlmon"
         },
         {
-            "name": "Kyubimon",
+            "name": {
+                "PT-BR": "Kyubimon",
+                "EN-US": "Kyubimon"
+            },
             "family": "Renamon",
             "before": null,
             "next": "Taomon"
         },
         {
-            "name": "Angemon",
+            "name": {
+                "PT-BR": "Angemon",
+                "EN-US": "Angemon"
+            },
             "family": "Patamon",
             "before": null,
             "next": "MagnaAngemon"
         },
         {
-            "name": "Devimon",
+            "name": {
+                "PT-BR": "Devimon",
+                "EN-US": "Devimon"
+            },
             "family": "DemiDevimon",
             "before": null,
             "next": "Myotismon"
         },
         {
-            "name": "Stingmon",
+            "name": {
+                "PT-BR": "Stingmon",
+                "EN-US": "Stingmon"
+            },
             "family": "Wormmon",
             "before": null,
             "next": "Kabuterimon"
         },
         {
-            "name": "Angewomon",
+            "name": {
+                "PT-BR": "Angewomon",
+                "EN-US": "Angewomon"
+            },
             "family": "Gatomon",
             "before": null,
             "next": "Rosemon"
         },
         {
-            "name": "Kyukimon",
+            "name": {
+                "PT-BR": "Kyukimon",
+                "EN-US": "Kyukimon"
+            },
             "family": "Kotemon",
             "before": "Dinohumon",
             "next": "Guardiangemon"
         },
         {
-            "name": "Armormon",
+            "name": {
+                "PT-BR": "Armormon",
+                "EN-US": "Armormon"
+            },
             "family": "Monmon",
             "before": "Hookmon",
             "next": "Cannondramon"
         },
         {
-            "name": "GrapLeomon",
+            "name": {
+                "PT-BR": "GrapLeomon",
+                "EN-US": "GrapLeomon"
+            },
             "family": "Kumamon",
             "before": "Grizzmon",
             "next": "Marsmon"
         },
         {
-            "name": "MetalGreymon",
+            "name": {
+                "PT-BR": "MetalGreymon",
+                "EN-US": "MetalGreymon"
+            },
             "family": "Agumon",
             "before": "Greymon",
             "next": "WarGreymon"
         },
         {
-            "name": "SkullGreymon",
+            "name": {
+                "PT-BR": "SkullGreymon",
+                "EN-US": "SkullGreymon"
+            },
             "family": "Agumon",
             "before": "Greymon",
             "next": "BK WarGreymon"
         },
         {
-            "name": "Paildramon",
+            "name": {
+                "PT-BR": "Paildramon",
+                "EN-US": "Paildramon"
+            },
             "family": "Veemon",
             "before": "ExVeemon",
             "next": "Imperialdramon"
         },
         {
-            "name": "WarGrowlmon",
+            "name": {
+                "PT-BR": "WarGrowlmon",
+                "EN-US": "WarGrowlmon"
+            },
             "family": "Guilmon",
             "before": "Growlmon",
             "next": "Gallantmon"
         },
         {
-            "name": "Taomon",
+            "name": {
+                "PT-BR": "Taomon",
+                "EN-US": "Taomon"
+            },
             "family": "Renamon",
             "before": "Kyubimon",
             "next": "Sakuyamon"
         },
         {
-            "name": "MagnaAngemon",
+            "name": {
+                "PT-BR": "MagnaAngemon",
+                "EN-US": "MagnaAngemon"
+            },
             "family": "Patamon",
             "before": "Angemon",
             "next": "Seraphimon"
         },
         {
-            "name": "Myotismon",
+            "name": {
+                "PT-BR": "Myotismon",
+                "EN-US": "Myotismon"
+            },
             "family": "DemiDevimon",
             "before": "Devimon",
             "next": "MaloMyotismon"
         },
         {
-            "name": "MetalMamemon",
+            "name": {
+                "PT-BR": "MetalMamemon",
+                "EN-US": "MetalMamemon"
+            },
             "family": "Gabumon",
             "before": null,
             "next": "MetalGarurumon"
         },
         {
-            "name": "Kabuterimon",
+            "name": {
+                "PT-BR": "Kabuterimon",
+                "EN-US": "Kabuterimon"
+            },
             "family": "Wormmon",
             "before": "Stingmon",
             "next": "GranKuwagamon"
         },
         {
-            "name": "Digitamamon",
+            "name": {
+                "PT-BR": "Digitamamon",
+                "EN-US": "Digitamamon"
+            },
             "family": "Digitamamon",
             "before": null,
             "next": null
         },
         {
-            "name": "Guardiangemon",
+            "name": {
+                "PT-BR": "Guardiangemon",
+                "EN-US": "Guardiangemon"
+            },
             "family": "Kotemon",
             "before": "Kyukimon",
             "next": null
         },
         {
-            "name": "Cannondramon",
+            "name": {
+                "PT-BR": "Cannondramon",
+                "EN-US": "Cannondramon"
+            },
             "family": "Monmon",
             "before": "Armormon",
             "next": null
         },
         {
-            "name": "Marsmon",
+            "name": {
+                "PT-BR": "Marsmon",
+                "EN-US": "Marsmon"
+            },
             "family": "Kumamon",
             "before": "GrapLeomon",
             "next": null
         },
         {
-            "name": "WarGreymon",
+            "name": {
+                "PT-BR": "WarGreymon",
+                "EN-US": "WarGreymon"
+            },
             "family": "Agumon",
             "before": "MetalGreymon",
             "next": "Omnimon"
         },
         {
-            "name": "Imperialdramon",
+            "name": {
+                "PT-BR": "Imperialdramon",
+                "EN-US": "Imperialdramon"
+            },
             "family": "Veemon",
             "before": "Paildramon",
             "next": "Imperialdramon-F"
         },
         {
-            "name": "Gallantmon",
+            "name": {
+                "PT-BR": "Gallantmon",
+                "EN-US": "Gallantmon"
+            },
             "family": "Guilmon",
             "before": "WarGrowlmon",
             "next": null
         },
         {
-            "name": "Sakuyamon",
+            "name": {
+                "PT-BR": "Sakuyamon",
+                "EN-US": "Sakuyamon"
+            },
             "family": "Renamon",
             "before": "Taomon",
             "next": null
         },
         {
-            "name": "Seraphimon",
+            "name": {
+                "PT-BR": "Seraphimon",
+                "EN-US": "Seraphimon"
+            },
             "family": "Patamon",
             "before": "MagnaAngemon",
             "next": null
         },
         {
-            "name": "MetalGarurumon",
+            "name": {
+                "PT-BR": "MetalGarurumon",
+                "EN-US": "MetalGarurumon"
+            },
             "family": "Gabumon",
             "before": "MetalMamemon",
             "next": "MegaGargomon"
         },
         {
-            "name": "Rosemon",
+            "name": {
+                "PT-BR": "Rosemon",
+                "EN-US": "Rosemon"
+            },
             "family": "Gatomon",
             "before": "Angewomon",
             "next": "Phoenixmon"
         },
         {
-            "name": "BK WarGreymon",
+            "name": {
+                "PT-BR": "BK WarGreymon",
+                "EN-US": "BK WarGreymon"
+            },
             "family": "Agumon",
             "before": "SkullGreymon",
             "next": null
         },
         {
-            "name": "Imperialdramon-F",
+            "name": {
+                "PT-BR": "Imperialdramon-F",
+                "EN-US": "Imperialdramon-F"
+            },
             "family": "Veemon",
             "before": "Imperialdramon",
             "next": "Imperialdramon-P"
         },
         {
-            "name": "MaloMyotismon",
+            "name": {
+                "PT-BR": "MaloMyotismon",
+                "EN-US": "MaloMyotismon"
+            },
             "family": "DemiDevimon",
             "before": "Myotismon",
             "next": "Beelzemon"
         },
         {
-            "name": "MegaGargomon",
+            "name": {
+                "PT-BR": "MegaGargomon",
+                "EN-US": "MegaGargomon"
+            },
             "family": "Gabumon",
             "before": "MetalGarurumon",
             "next": null
         },
         {
-            "name": "GranKuwagamon",
+            "name": {
+                "PT-BR": "GranKuwagamon",
+                "EN-US": "GranKuwagamon"
+            },
             "family": "Wormmon",
             "before": "Kabuterimon",
             "next": "Diaboromon"
         },
         {
-            "name": "Phoenixmon",
+            "name": {
+                "PT-BR": "Phoenixmon",
+                "EN-US": "Phoenixmon"
+            },
             "family": "Gatomon",
             "before": "Rosemon",
             "next": null
         },
         {
-            "name": "Omnimon",
+            "name": {
+                "PT-BR": "Omnimon",
+                "EN-US": "Omnimon"
+            },
             "family": "Agumon",
             "before": "WarGreymon",
             "next": null
         },
         {
-            "name": "Imperialdramon-P",
+            "name": {
+                "PT-BR": "Imperialdramon-P",
+                "EN-US": "Imperialdramon-P"
+            },
             "family": "Veemon",
             "before": "Imperialdramon-F",
             "next": null
         },
         {
-            "name": "Beelzemon",
+            "name": {
+                "PT-BR": "Beelzemon",
+                "EN-US": "Beelzemon"
+            },
             "family": "DemiDevimon",
             "before": "MaloMyotismon",
             "next": null
         },
         {
-            "name": "Diaboromon",
+            "name": {
+                "PT-BR": "Diaboromon",
+                "EN-US": "Diaboromon"
+            },
             "family": "Wormmon",
             "before": "GranKuwagamon",
             "next": null

@@ -1,18 +1,22 @@
 {
     "equipments": [
         {
-            "Name": "Empty",
+            "Name": {
+                "PT-BR": "Vazio",
+                "EN-US": "Empty"
+            },
             "Id": null,
             "Type": "Unknown",
-            "TypeDescription": "Unknown",
             "Attributes": [],
             "EquipableDigimon": []
         },
         {
-            "Name": "Dagger",
+            "Name": {
+                "PT-BR": "Adaga",
+                "EN-US": "Dagger"
+            },
             "Id": 157,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -37,10 +41,12 @@
             ]
         },
         {
-            "Name": "Bamboo Spear",
+            "Name": {
+                "PT-BR": "Lança de Bambu",
+                "EN-US": "Bamboo Spear"
+            },
             "Id": 167,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -59,10 +65,12 @@
             ]
         },
         {
-            "Name": "Leather Coat",
+            "Name": {
+                "PT-BR": "Casaco de Couro",
+                "EN-US": "Leather Coat"
+            },
             "Id": 249,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -87,10 +95,12 @@
             ]
         },
         {
-            "Name": "Angel Bow",
+            "Name": {
+                "PT-BR": "Arco Angelical",
+                "EN-US": "Angel Bow"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -106,13 +116,18 @@
             "EquipableDigimon": [
                 "Monmon"
             ],
-            "Note": "Deals extra damage to Evil-species Digimon"
+            "Note": {
+                "PT-BR": "Causa dano extra a Digimons da espécie Evil",
+                "EN-US": "Deals extra damage to Evil-species Digimon"
+            }
         },
         {
-            "Name": "Apocalypse",
+            "Name": {
+                "PT-BR": "Apocalypse",
+                "EN-US": "Apocalypse"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -133,10 +148,12 @@
             ]
         },
         {
-            "Name": "Atlas Buster",
+            "Name": {
+                "PT-BR": "Atlas Buster",
+                "EN-US": "Atlas Buster"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -162,10 +179,12 @@
             ]
         },
         {
-            "Name": "Beam Shield",
+            "Name": {
+                "PT-BR": "Escudo de Energia",
+                "EN-US": "Beam Shield"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -190,10 +209,12 @@
             ]
         },
         {
-            "Name": "Belial Fang",
+            "Name": {
+                "PT-BR": "Presa de Belial",
+                "EN-US": "Belial Fang"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -213,10 +234,12 @@
             ]
         },
         {
-            "Name": "Berdys",
+            "Name": {
+                "PT-BR": "Berdys",
+                "EN-US": "Berdys"
+            },
             "Id": 185,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -240,10 +263,12 @@
             ]
         },
         {
-            "Name": "Bone Rod",
+            "Name": {
+                "PT-BR": "Cajado de Osso",
+                "EN-US": "Bone Rod"
+            },
             "Id": 134,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -267,10 +292,12 @@
             ]
         },
         {
-            "Name": "Brave Shield",
+            "Name": {
+                "PT-BR": "Escudo Bravo",
+                "EN-US": "Brave Shield"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -288,10 +315,12 @@
             ]
         },
         {
-            "Name": "Brave Sword",
+            "Name": {
+                "PT-BR": "Espada Brava",
+                "EN-US": "Brave Sword"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -309,10 +338,12 @@
             ]
         },
         {
-            "Name": "Buckler",
+            "Name": {
+                "PT-BR": "Broquel",
+                "EN-US": "Buckler"
+            },
             "Id": 275,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -337,10 +368,12 @@
             ]
         },
         {
-            "Name": "Cat Glove",
+            "Name": {
+                "PT-BR": "Luva de Gato",
+                "EN-US": "Cat Glove"
+            },
             "Id": 107,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -358,10 +391,12 @@
             ]
         },
         {
-            "Name": "Cerberus Fang",
+            "Name": {
+                "PT-BR": "Presa de Cérbero",
+                "EN-US": "Cerberus Fang"
+            },
             "Id": 147,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -379,13 +414,18 @@
                 "Guilmon",
                 "Veemon"
             ],
-            "Note": "Recovers a fraction of the damage as HP"
+            "Note": {
+                "PT-BR": "Recupera uma fração do dano causado como HP",
+                "EN-US": "Recovers a fraction of the damage as HP"
+            }
         },
         {
-            "Name": "Claymore",
+            "Name": {
+                "PT-BR": "Claymore",
+                "EN-US": "Claymore"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -411,10 +451,12 @@
             ]
         },
         {
-            "Name": "Cluster Cannon",
+            "Name": {
+                "PT-BR": "Canhão Cluster",
+                "EN-US": "Cluster Cannon"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -432,10 +474,12 @@
             ]
         },
         {
-            "Name": "Chain Saw",
+            "Name": {
+                "PT-BR": "Motosserra",
+                "EN-US": "Chain Saw"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -461,10 +505,12 @@
             ]
         },
         {
-            "Name": "Crimson Blade",
+            "Name": {
+                "PT-BR": "Lâmina Carmesim",
+                "EN-US": "Crimson Blade"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -480,13 +526,18 @@
             "EquipableDigimon": [
                 "Kotemon"
             ],
-            "Note": "Recovers a fraction of the damage as HP"
+            "Note": {
+                "PT-BR": "Recupera uma fração do dano causado como HP",
+                "EN-US": "Recovers a fraction of the damage as HP"
+            }
         },
         {
-            "Name": "Crossbow",
+            "Name": {
+                "PT-BR": "Besta",
+                "EN-US": "Crossbow"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -504,10 +555,12 @@
             ]
         },
         {
-            "Name": "Crystal Rod",
+            "Name": {
+                "PT-BR": "Cajado de Cristal",
+                "EN-US": "Crystal Rod"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -531,10 +584,12 @@
             ]
         },
         {
-            "Name": "Destruction",
+            "Name": {
+                "PT-BR": "Destruição",
+                "EN-US": "Destruction"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -552,13 +607,18 @@
                 "Guilmon",
                 "Veemon"
             ],
-            "Note": "Very small chance of OHKO’ing enemy Digimon"
+            "Note": {
+                "PT-BR": "Very small chance of OHKO’ing enemy Digimon",
+                "EN-US": "Very small chance of OHKO’ing enemy Digimon"
+            }
         },
         {
-            "Name": "Deus Guard",
+            "Name": {
+                "PT-BR": "Deus Guard",
+                "EN-US": "Deus Guard"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -584,10 +644,12 @@
             ]
         },
         {
-            "Name": "Divine Barrier",
+            "Name": {
+                "PT-BR": "Barreira Divina",
+                "EN-US": "Divine Barrier"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -605,10 +667,12 @@
             ]
         },
         {
-            "Name": "Divine Lance",
+            "Name": {
+                "PT-BR": "Lança Divina",
+                "EN-US": "Divine Lance"
+            },
             "Id": 171,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -627,10 +691,12 @@
             ]
         },
         {
-            "Name": "Divine Rod",
+            "Name": {
+                "PT-BR": "Cajado Divino",
+                "EN-US": "Divine Rod"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -653,10 +719,12 @@
             ]
         },
         {
-            "Name": "Dramon Guard",
+            "Name": {
+                "PT-BR": "Guarda Dramon",
+                "EN-US": "Dramon Guard"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -679,10 +747,12 @@
             ]
         },
         {
-            "Name": "Dramon Shield",
+            "Name": {
+                "PT-BR": "Escudo Dramon",
+                "EN-US": "Dramon Shield"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -700,10 +770,12 @@
             ]
         },
         {
-            "Name": "Eternally",
+            "Name": {
+                "PT-BR": "Eternally",
+                "EN-US": "Eternally"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -727,10 +799,12 @@
             ]
         },
         {
-            "Name": "Evil Fang",
+            "Name": {
+                "PT-BR": "Presa Maligna",
+                "EN-US": "Evil Fang"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -750,10 +824,12 @@
             ]
         },
         {
-            "Name": "Excalibur",
+            "Name": {
+                "PT-BR": "Excalibur",
+                "EN-US": "Excalibur"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -772,13 +848,18 @@
                 "Kotemon",
                 "Veemon"
             ],
-            "Note": "Deals extra damage to Evil-species Digimon"
+            "Note": {
+                "PT-BR": "Causa dano extra a Digimons da espécie Evil",
+                "EN-US": "Deals extra damage to Evil-species Digimon"
+            }
         },
         {
-            "Name": "Fairy Tale",
+            "Name": {
+                "PT-BR": "Conto de Fadas",
+                "EN-US": "Fairy Tale"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -797,10 +878,12 @@
             ]
         },
         {
-            "Name": "Fenrir Sword",
+            "Name": {
+                "PT-BR": "Espada Fenrir",
+                "EN-US": "Fenrir Sword"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -821,13 +904,18 @@
             "EquipableDigimon": [
                 "Kotemon"
             ],
-            "Note": "Small chance of inflicting freeze on enemy Digimon"
+            "Note": {
+                "PT-BR": "Chance baixa de congelar o Digimon inimigo",
+                "EN-US": "Small chance of inflicting freeze on enemy Digimon"
+            }
         },
         {
-            "Name": "Flamberge",
+            "Name": {
+                "PT-BR": "Flamberge",
+                "EN-US": "Flamberge"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -853,10 +941,12 @@
             ]
         },
         {
-            "Name": "Fuujin Blade",
+            "Name": {
+                "PT-BR": "Fuujin Blade",
+                "EN-US": "Fuujin Blade"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -879,10 +969,12 @@
             ]
         },
         {
-            "Name": "Gaea Halberd",
+            "Name": {
+                "PT-BR": "Gaea Halberd",
+                "EN-US": "Gaea Halberd"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -906,10 +998,12 @@
             ]
         },
         {
-            "Name": "Garuru Cannon",
+            "Name": {
+                "PT-BR": "Garuru Cannon",
+                "EN-US": "Garuru Cannon"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -927,10 +1021,12 @@
             ]
         },
         {
-            "Name": "Ghost Fang",
+            "Name": {
+                "PT-BR": "Ghost Fang",
+                "EN-US": "Ghost Fang"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -950,10 +1046,12 @@
             ]
         },
         {
-            "Name": "Grey Sword",
+            "Name": {
+                "PT-BR": "Grey Sword",
+                "EN-US": "Grey Sword"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -974,10 +1072,12 @@
             ]
         },
         {
-            "Name": "Guard Barrier",
+            "Name": {
+                "PT-BR": "Guard Barrier",
+                "EN-US": "Guard Barrier"
+            },
             "Id": 279,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -998,10 +1098,12 @@
             ]
         },
         {
-            "Name": "Gulf Sword",
+            "Name": {
+                "PT-BR": "Gulf Sword",
+                "EN-US": "Gulf Sword"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1027,10 +1129,12 @@
             ]
         },
         {
-            "Name": "Halberd",
+            "Name": {
+                "PT-BR": "Alabarda",
+                "EN-US": "Halberd"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1054,10 +1158,12 @@
             ]
         },
         {
-            "Name": "Handgun",
+            "Name": {
+                "PT-BR": "Handgun",
+                "EN-US": "Handgun"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1075,10 +1181,12 @@
             ]
         },
         {
-            "Name": "Hazard Fang",
+            "Name": {
+                "PT-BR": "Hazard Fang",
+                "EN-US": "Hazard Fang"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1096,10 +1204,12 @@
             ]
         },
         {
-            "Name": "Hazard Shield",
+            "Name": {
+                "PT-BR": "Hazard Shield",
+                "EN-US": "Hazard Shield"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1117,10 +1227,12 @@
             ]
         },
         {
-            "Name": "High Security",
+            "Name": {
+                "PT-BR": "High Security",
+                "EN-US": "High Security"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1139,13 +1251,18 @@
                 "Patamon",
                 "Renamon"
             ],
-            "Note": "Prevents OHKOs"
+            "Note": {
+                "PT-BR": "Previne derrotas instantâneas",
+                "EN-US": "Prevents OHKOs"
+            }
         },
         {
-            "Name": "Immaculate",
+            "Name": {
+                "PT-BR": "Immaculate",
+                "EN-US": "Immaculate"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1169,10 +1286,12 @@
             ]
         },
         {
-            "Name": "Invincible",
+            "Name": {
+                "PT-BR": "Invincible",
+                "EN-US": "Invincible"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1192,10 +1311,12 @@
             ]
         },
         {
-            "Name": "Iron Glove",
+            "Name": {
+                "PT-BR": "Iron Glove",
+                "EN-US": "Iron Glove"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1218,10 +1339,12 @@
             ]
         },
         {
-            "Name": "Iron Shield",
+            "Name": {
+                "PT-BR": "Escudo de Ferro",
+                "EN-US": "Iron Shield"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1247,10 +1370,12 @@
             ]
         },
         {
-            "Name": "Judgment",
+            "Name": {
+                "PT-BR": "Judgment",
+                "EN-US": "Judgment"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1268,10 +1393,12 @@
             ]
         },
         {
-            "Name": "Justice",
+            "Name": {
+                "PT-BR": "Justice",
+                "EN-US": "Justice"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1289,10 +1416,12 @@
             ]
         },
         {
-            "Name": "Kaiser Fist",
+            "Name": {
+                "PT-BR": "Kaiser Fist",
+                "EN-US": "Kaiser Fist"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1310,10 +1439,12 @@
             ]
         },
         {
-            "Name": "Khakkhara",
+            "Name": {
+                "PT-BR": "Khakkhara",
+                "EN-US": "Khakkhara"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1337,10 +1468,12 @@
             ]
         },
         {
-            "Name": "Knight Shield",
+            "Name": {
+                "PT-BR": "Escudo de Cavaleiro",
+                "EN-US": "Knight Shield"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1361,10 +1494,12 @@
             ]
         },
         {
-            "Name": "Kotetsu",
+            "Name": {
+                "PT-BR": "Kotetsu",
+                "EN-US": "Kotetsu"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1382,10 +1517,12 @@
             ]
         },
         {
-            "Name": "Kulon Shield",
+            "Name": {
+                "PT-BR": "Kulon Shield",
+                "EN-US": "Kulon Shield"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -1411,10 +1548,12 @@
             ]
         },
         {
-            "Name": "Kulon Sword",
+            "Name": {
+                "PT-BR": "Kulon Sword",
+                "EN-US": "Kulon Sword"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1432,10 +1571,12 @@
             ]
         },
         {
-            "Name": "Laser Cannon",
+            "Name": {
+                "PT-BR": "Laser Cannon",
+                "EN-US": "Laser Cannon"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1453,10 +1594,12 @@
             ]
         },
         {
-            "Name": "Leather Glove",
+            "Name": {
+                "PT-BR": "Leather Glove",
+                "EN-US": "Leather Glove"
+            },
             "Id": 106,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1474,10 +1617,12 @@
             ]
         },
         {
-            "Name": "Lightning Bow",
+            "Name": {
+                "PT-BR": "Lightning Bow",
+                "EN-US": "Lightning Bow"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1500,10 +1645,12 @@
             ]
         },
         {
-            "Name": "Long Bow",
+            "Name": {
+                "PT-BR": "Arco Longo",
+                "EN-US": "Long Bow"
+            },
             "Id": 190,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1521,10 +1668,12 @@
             ]
         },
         {
-            "Name": "Long Sword",
+            "Name": {
+                "PT-BR": "Espada Longa",
+                "EN-US": "Long Sword"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1542,10 +1691,12 @@
             ]
         },
         {
-            "Name": "Mach Guard",
+            "Name": {
+                "PT-BR": "Mach Guard",
+                "EN-US": "Mach Guard"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1571,10 +1722,12 @@
             ]
         },
         {
-            "Name": "Machinegun",
+            "Name": {
+                "PT-BR": "Machinegun",
+                "EN-US": "Machinegun"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1592,10 +1745,12 @@
             ]
         },
         {
-            "Name": "Magician Rod",
+            "Name": {
+                "PT-BR": "Magician Rod",
+                "EN-US": "Magician Rod"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1619,10 +1774,12 @@
             ]
         },
         {
-            "Name": "Masamune",
+            "Name": {
+                "PT-BR": "Masamune",
+                "EN-US": "Masamune"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1640,10 +1797,12 @@
             ]
         },
         {
-            "Name": "Mega Guard",
+            "Name": {
+                "PT-BR": "Mega Guard",
+                "EN-US": "Mega Guard"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1669,10 +1828,12 @@
             ]
         },
         {
-            "Name": "Metal Guard",
+            "Name": {
+                "PT-BR": "Metal Guard",
+                "EN-US": "Metal Guard"
+            },
             "Id": 201,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1698,10 +1859,12 @@
             ]
         },
         {
-            "Name": "Mighty Blade",
+            "Name": {
+                "PT-BR": "Mighty Blade",
+                "EN-US": "Mighty Blade"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1719,10 +1882,12 @@
             ]
         },
         {
-            "Name": "Mighty Guard",
+            "Name": {
+                "PT-BR": "Mighty Guard",
+                "EN-US": "Mighty Guard"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1747,10 +1912,12 @@
             ]
         },
         {
-            "Name": "Millenium",
+            "Name": {
+                "PT-BR": "Millenium",
+                "EN-US": "Millenium"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1774,10 +1941,12 @@
             ]
         },
         {
-            "Name": "Mini Guard",
+            "Name": {
+                "PT-BR": "Mini Guard",
+                "EN-US": "Mini Guard"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1803,10 +1972,12 @@
             ]
         },
         {
-            "Name": "Misty Rod",
+            "Name": {
+                "PT-BR": "Misty Rod",
+                "EN-US": "Misty Rod"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1830,10 +2001,12 @@
             ]
         },
         {
-            "Name": "Muramasa",
+            "Name": {
+                "PT-BR": "Muramasa",
+                "EN-US": "Muramasa"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1851,10 +2024,12 @@
             ]
         },
         {
-            "Name": "Naginata",
+            "Name": {
+                "PT-BR": "Naginata",
+                "EN-US": "Naginata"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1878,10 +2053,12 @@
             ]
         },
         {
-            "Name": "Needle Glove",
+            "Name": {
+                "PT-BR": "Needle Glove",
+                "EN-US": "Needle Glove"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1899,10 +2076,12 @@
             ]
         },
         {
-            "Name": "Old Claw",
+            "Name": {
+                "PT-BR": "Old Claw",
+                "EN-US": "Old Claw"
+            },
             "Id": 153,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1922,10 +2101,12 @@
             ]
         },
         {
-            "Name": "Old Wand",
+            "Name": {
+                "PT-BR": "Old Wand",
+                "EN-US": "Old Wand"
+            },
             "Id": 141,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1949,10 +2130,12 @@
             ]
         },
         {
-            "Name": "Omega Halberd",
+            "Name": {
+                "PT-BR": "Omega Halberd",
+                "EN-US": "Omega Halberd"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1976,10 +2159,12 @@
             ]
         },
         {
-            "Name": "Onimaru",
+            "Name": {
+                "PT-BR": "Onimaru",
+                "EN-US": "Onimaru"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -1997,10 +2182,12 @@
             ]
         },
         {
-            "Name": "Orochi Spear",
+            "Name": {
+                "PT-BR": "Orochi Spear",
+                "EN-US": "Orochi Spear"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2019,10 +2206,12 @@
             ]
         },
         {
-            "Name": "Partisan",
+            "Name": {
+                "PT-BR": "Partisan",
+                "EN-US": "Partisan"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2041,10 +2230,12 @@
             ]
         },
         {
-            "Name": "Positron Cannon",
+            "Name": {
+                "PT-BR": "Positron Cannon",
+                "EN-US": "Positron Cannon"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2062,10 +2253,12 @@
             ]
         },
         {
-            "Name": "Power Arm",
+            "Name": {
+                "PT-BR": "Power Arm",
+                "EN-US": "Power Arm"
+            },
             "Id": 110,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2088,10 +2281,12 @@
             ]
         },
         {
-            "Name": "Psycho Blaster",
+            "Name": {
+                "PT-BR": "Psycho Blaster",
+                "EN-US": "Psycho Blaster"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2114,10 +2309,12 @@
             ]
         },
         {
-            "Name": "Prominence",
+            "Name": {
+                "PT-BR": "Prominence",
+                "EN-US": "Prominence"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2135,10 +2332,12 @@
             ]
         },
         {
-            "Name": "Pulse Guard",
+            "Name": {
+                "PT-BR": "Pulse Guard",
+                "EN-US": "Pulse Guard"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2164,10 +2363,12 @@
             ]
         },
         {
-            "Name": "Punishment",
+            "Name": {
+                "PT-BR": "Punishment",
+                "EN-US": "Punishment"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2185,10 +2386,12 @@
             ]
         },
         {
-            "Name": "Raijin Fist",
+            "Name": {
+                "PT-BR": "Raijin Fist",
+                "EN-US": "Raijin Fist"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2206,10 +2409,12 @@
             ]
         },
         {
-            "Name": "Raven Bow",
+            "Name": {
+                "PT-BR": "Raven Bow",
+                "EN-US": "Raven Bow"
+            },
             "Id": 194,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2225,13 +2430,18 @@
             "EquipableDigimon": [
                 "Monmon"
             ],
-            "Note": "Small chance of inflicting confusion on enemy Digimon"
+            "Note": {
+                "PT-BR": "Chance baixa de causar confusão no Digimon inimigo",
+                "EN-US": "Small chance of inflicting confusion on enemy Digimon"
+            }
         },
         {
-            "Name": "Rock Breaker",
+            "Name": {
+                "PT-BR": "Rock Breaker",
+                "EN-US": "Rock Breaker"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2257,10 +2467,12 @@
             ]
         },
         {
-            "Name": "Ronin Blade",
+            "Name": {
+                "PT-BR": "Ronin Blade",
+                "EN-US": "Ronin Blade"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2278,10 +2490,12 @@
             ]
         },
         {
-            "Name": "Ronin Shield",
+            "Name": {
+                "PT-BR": "Ronin Shield",
+                "EN-US": "Ronin Shield"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -2299,10 +2513,12 @@
             ]
         },
         {
-            "Name": "Royal Spear",
+            "Name": {
+                "PT-BR": "Royal Spear",
+                "EN-US": "Royal Spear"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2322,10 +2538,12 @@
             ]
         },
         {
-            "Name": "Rusty Glove",
+            "Name": {
+                "PT-BR": "Rusty Glove",
+                "EN-US": "Rusty Glove"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2343,10 +2561,12 @@
             ]
         },
         {
-            "Name": "Rusty Katana",
+            "Name": {
+                "PT-BR": "Rusty Katana",
+                "EN-US": "Rusty Katana"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2364,10 +2584,12 @@
             ]
         },
         {
-            "Name": "Rusty Rifle",
+            "Name": {
+                "PT-BR": "Rusty Rifle",
+                "EN-US": "Rusty Rifle"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2385,10 +2607,12 @@
             ]
         },
         {
-            "Name": "Ryuuzanmaru",
+            "Name": {
+                "PT-BR": "Ryuuzanmaru",
+                "EN-US": "Ryuuzanmaru"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2412,10 +2636,12 @@
             ]
         },
         {
-            "Name": "Saber Fang",
+            "Name": {
+                "PT-BR": "Saber Fang",
+                "EN-US": "Saber Fang"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2435,10 +2661,12 @@
             ]
         },
         {
-            "Name": "Seraphic Bow",
+            "Name": {
+                "PT-BR": "Seraphic Bow",
+                "EN-US": "Seraphic Bow"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2456,10 +2684,12 @@
             ]
         },
         {
-            "Name": "Shamshir",
+            "Name": {
+                "PT-BR": "Shamshir",
+                "EN-US": "Shamshir"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2480,10 +2710,12 @@
             ]
         },
         {
-            "Name": "Shine Blade",
+            "Name": {
+                "PT-BR": "Shine Blade",
+                "EN-US": "Shine Blade"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2506,10 +2738,12 @@
             ]
         },
         {
-            "Name": "Shiratorimaru",
+            "Name": {
+                "PT-BR": "Shiratorimaru",
+                "EN-US": "Shiratorimaru"
+            },
             "Id": 96,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2527,10 +2761,12 @@
             ]
         },
         {
-            "Name": "Shishioumaru",
+            "Name": {
+                "PT-BR": "Shishioumaru",
+                "EN-US": "Shishioumaru"
+            },
             "Id": 158,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2555,10 +2791,12 @@
             ]
         },
         {
-            "Name": "Short Sword",
+            "Name": {
+                "PT-BR": "Espada Curta",
+                "EN-US": "Short Sword"
+            },
             "Id": 92,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2576,10 +2814,12 @@
             ]
         },
         {
-            "Name": "Shotgun",
+            "Name": {
+                "PT-BR": "Shotgun",
+                "EN-US": "Shotgun"
+            },
             "Id": 122,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2597,10 +2837,12 @@
             ]
         },
         {
-            "Name": "Shuriken",
+            "Name": {
+                "PT-BR": "Shuriken",
+                "EN-US": "Shuriken"
+            },
             "Id": 191,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2618,10 +2860,12 @@
             ]
         },
         {
-            "Name": "Sniper Cannon",
+            "Name": {
+                "PT-BR": "Sniper Cannon",
+                "EN-US": "Sniper Cannon"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2639,10 +2883,12 @@
             ]
         },
         {
-            "Name": "Sniper Shield",
+            "Name": {
+                "PT-BR": "Sniper Shield",
+                "EN-US": "Sniper Shield"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -2660,10 +2906,12 @@
             ]
         },
         {
-            "Name": "Soul Chopper",
+            "Name": {
+                "PT-BR": "Soul Chopper",
+                "EN-US": "Soul Chopper"
+            },
             "Id": null,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2685,13 +2933,18 @@
                 "Monmon",
                 "Renamon"
             ],
-            "Note": "Very small chance of OHKO’ing enemy Digimon"
+            "Note": {
+                "PT-BR": "Very small chance of OHKO’ing enemy Digimon",
+                "EN-US": "Very small chance of OHKO’ing enemy Digimon"
+            }
         },
         {
-            "Name": "Spear",
+            "Name": {
+                "PT-BR": "Spear",
+                "EN-US": "Spear"
+            },
             "Id": 168,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2710,10 +2963,12 @@
             ]
         },
         {
-            "Name": "Suijin Cannon",
+            "Name": {
+                "PT-BR": "Suijin Cannon",
+                "EN-US": "Suijin Cannon"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2731,10 +2986,12 @@
             ]
         },
         {
-            "Name": "Super Nova",
+            "Name": {
+                "PT-BR": "Super Nova",
+                "EN-US": "Super Nova"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2752,10 +3009,12 @@
             ]
         },
         {
-            "Name": "Tempest Arm",
+            "Name": {
+                "PT-BR": "Tempest Arm",
+                "EN-US": "Tempest Arm"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2778,10 +3037,12 @@
             ]
         },
         {
-            "Name": "Tenjinmaru",
+            "Name": {
+                "PT-BR": "Tenjinmaru",
+                "EN-US": "Tenjinmaru"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2799,10 +3060,12 @@
             ]
         },
         {
-            "Name": "Tiger Glove",
+            "Name": {
+                "PT-BR": "Tiger Glove",
+                "EN-US": "Tiger Glove"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2820,10 +3083,12 @@
             ]
         },
         {
-            "Name": "Tin Shield",
+            "Name": {
+                "PT-BR": "Tin Shield",
+                "EN-US": "Tin Shield"
+            },
             "Id": 276,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -2848,10 +3113,12 @@
             ]
         },
         {
-            "Name": "Trent",
+            "Name": {
+                "PT-BR": "Trent",
+                "EN-US": "Trent"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2868,13 +3135,18 @@
                 "Patamon",
                 "Renamon"
             ],
-            "Note": "Deals extra damage to Fish-species Digimon"
+            "Note": {
+                "PT-BR": "Causa dano extra a Digimons da espécie Peixe",
+                "EN-US": "Deals extra damage to Fish-species Digimon"
+            }
         },
         {
-            "Name": "Twinkle",
+            "Name": {
+                "PT-BR": "Twinkle",
+                "EN-US": "Twinkle"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2898,10 +3170,12 @@
             ]
         },
         {
-            "Name": "Vampire Lance",
+            "Name": {
+                "PT-BR": "Vampire Lance",
+                "EN-US": "Vampire Lance"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2918,13 +3192,18 @@
                 "Patamon",
                 "Renamon"
             ],
-            "Note": "Recovers a fraction of the damage as HP"
+            "Note": {
+                "PT-BR": "Recupera uma fração do dano causado como HP",
+                "EN-US": "Recovers a fraction of the damage as HP"
+            }
         },
         {
-            "Name": "Vanquish",
+            "Name": {
+                "PT-BR": "Vanquish",
+                "EN-US": "Vanquish"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2942,13 +3221,18 @@
                 "Guilmon",
                 "Veemon"
             ],
-            "Note": "Very small chance of OHKO’ing enemy Digimon"
+            "Note": {
+                "PT-BR": "Very small chance of OHKO’ing enemy Digimon",
+                "EN-US": "Very small chance of OHKO’ing enemy Digimon"
+            }
         },
         {
-            "Name": "Venom Fang",
+            "Name": {
+                "PT-BR": "Venom Fang",
+                "EN-US": "Venom Fang"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2966,13 +3250,18 @@
                 "Guilmon",
                 "Veemon"
             ],
-            "Note": "Small chance of inflicting poison on enemy Digimon"
+            "Note": {
+                "PT-BR": "Chance baixa de envenenar o Digimon inimigo",
+                "EN-US": "Small chance of inflicting poison on enemy Digimon"
+            }
         },
         {
-            "Name": "Wild Glove",
+            "Name": {
+                "PT-BR": "Wild Glove",
+                "EN-US": "Wild Glove"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -2995,10 +3284,12 @@
             ]
         },
         {
-            "Name": "Wild Shield",
+            "Name": {
+                "PT-BR": "Wild Shield",
+                "EN-US": "Wild Shield"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3016,10 +3307,12 @@
             ]
         },
         {
-            "Name": "Wing Sword",
+            "Name": {
+                "PT-BR": "Wing Sword",
+                "EN-US": "Wing Sword"
+            },
             "Id": 161,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3050,10 +3343,12 @@
             ]
         },
         {
-            "Name": "Wolf Fang",
+            "Name": {
+                "PT-BR": "Wolf Fang",
+                "EN-US": "Wolf Fang"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3073,10 +3368,12 @@
             ]
         },
         {
-            "Name": "Wooden Rod",
+            "Name": {
+                "PT-BR": "Cajado de Madeira",
+                "EN-US": "Wooden Rod"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3100,10 +3397,12 @@
             ]
         },
         {
-            "Name": "Yin Yang Rod",
+            "Name": {
+                "PT-BR": "Yin Yang Rod",
+                "EN-US": "Yin Yang Rod"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3126,10 +3425,12 @@
             ]
         },
         {
-            "Name": "Yin Yang Ward",
+            "Name": {
+                "PT-BR": "Yin Yang Ward",
+                "EN-US": "Yin Yang Ward"
+            },
             "Id": null,
             "Type": "Shield",
-            "TypeDescription": "Shield",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3152,10 +3453,12 @@
             ]
         },
         {
-            "Name": "Zanden Sword",
+            "Name": {
+                "PT-BR": "Zanden Sword",
+                "EN-US": "Zanden Sword"
+            },
             "Id": 93,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3173,10 +3476,12 @@
             ]
         },
         {
-            "Name": "Zodiac",
+            "Name": {
+                "PT-BR": "Zodiac",
+                "EN-US": "Zodiac"
+            },
             "Id": null,
             "Type": "WeaponSingleHanded",
-            "TypeDescription": "Weapon (Single-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3194,10 +3499,12 @@
             ]
         },
         {
-            "Name": "Zweihander",
+            "Name": {
+                "PT-BR": "Zweihander",
+                "EN-US": "Zweihander"
+            },
             "Id": 178,
             "Type": "WeaponTwoHanded",
-            "TypeDescription": "Weapon (Two-handed)",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -3223,10 +3530,12 @@
             ]
         },
         {
-            "Name": "Beam Armor",
+            "Name": {
+                "PT-BR": "Beam Armor",
+                "EN-US": "Beam Armor"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3251,10 +3560,12 @@
             ]
         },
         {
-            "Name": "Body Armor",
+            "Name": {
+                "PT-BR": "Body Armor",
+                "EN-US": "Body Armor"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3280,10 +3591,12 @@
             ]
         },
         {
-            "Name": "Brave Armor",
+            "Name": {
+                "PT-BR": "Brave Armor",
+                "EN-US": "Brave Armor"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3301,10 +3614,12 @@
             ]
         },
         {
-            "Name": "Crimson Mail",
+            "Name": {
+                "PT-BR": "Crimson Mail",
+                "EN-US": "Crimson Mail"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3325,10 +3640,12 @@
             ]
         },
         {
-            "Name": "Dark Armor",
+            "Name": {
+                "PT-BR": "Dark Armor",
+                "EN-US": "Dark Armor"
+            },
             "Id": 266,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3355,10 +3672,12 @@
             ]
         },
         {
-            "Name": "Dark Cloak",
+            "Name": {
+                "PT-BR": "Dark Cloak",
+                "EN-US": "Dark Cloak"
+            },
             "Id": 253,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3387,10 +3706,12 @@
             ]
         },
         {
-            "Name": "Digitama Mail",
+            "Name": {
+                "PT-BR": "Digitama Mail",
+                "EN-US": "Digitama Mail"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3415,10 +3736,12 @@
             ]
         },
         {
-            "Name": "Divine Robe",
+            "Name": {
+                "PT-BR": "Divine Robe",
+                "EN-US": "Divine Robe"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3436,10 +3759,12 @@
             ]
         },
         {
-            "Name": "Down Jacket",
+            "Name": {
+                "PT-BR": "Down Jacket",
+                "EN-US": "Down Jacket"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3465,10 +3790,12 @@
             ]
         },
         {
-            "Name": "Dramon Armor",
+            "Name": {
+                "PT-BR": "Dramon Armor",
+                "EN-US": "Dramon Armor"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3486,10 +3813,12 @@
             ]
         },
         {
-            "Name": "Gym Suit",
+            "Name": {
+                "PT-BR": "Gym Suit",
+                "EN-US": "Gym Suit"
+            },
             "Id": 250,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3510,10 +3839,12 @@
             ]
         },
         {
-            "Name": "Hazard Armor",
+            "Name": {
+                "PT-BR": "Hazard Armor",
+                "EN-US": "Hazard Armor"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3531,10 +3862,12 @@
             ]
         },
         {
-            "Name": "Iron Armor",
+            "Name": {
+                "PT-BR": "Iron Armor",
+                "EN-US": "Iron Armor"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3560,10 +3893,12 @@
             ]
         },
         {
-            "Name": "King’s Mantle",
+            "Name": {
+                "PT-BR": "King’s Mantle",
+                "EN-US": "King’s Mantle"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3584,10 +3919,12 @@
             ]
         },
         {
-            "Name": "Kulon Armor",
+            "Name": {
+                "PT-BR": "Kulon Armor",
+                "EN-US": "Kulon Armor"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3613,10 +3950,12 @@
             ]
         },
         {
-            "Name": "Leather Mail",
+            "Name": {
+                "PT-BR": "Leather Mail",
+                "EN-US": "Leather Mail"
+            },
             "Id": 262,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3641,10 +3980,12 @@
             ]
         },
         {
-            "Name": "Mirage Robe",
+            "Name": {
+                "PT-BR": "Mirage Robe",
+                "EN-US": "Mirage Robe"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3665,10 +4006,12 @@
             ]
         },
         {
-            "Name": "Misty Armor",
+            "Name": {
+                "PT-BR": "Misty Armor",
+                "EN-US": "Misty Armor"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3689,10 +4032,12 @@
             ]
         },
         {
-            "Name": "Priest Robe",
+            "Name": {
+                "PT-BR": "Priest Robe",
+                "EN-US": "Priest Robe"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3718,10 +4063,12 @@
             ]
         },
         {
-            "Name": "Ronin Armor",
+            "Name": {
+                "PT-BR": "Ronin Armor",
+                "EN-US": "Ronin Armor"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3739,10 +4086,12 @@
             ]
         },
         {
-            "Name": "Rubber Suit",
+            "Name": {
+                "PT-BR": "Rubber Suit",
+                "EN-US": "Rubber Suit"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3768,10 +4117,12 @@
             ]
         },
         {
-            "Name": "Sniper Suit",
+            "Name": {
+                "PT-BR": "Sniper Suit",
+                "EN-US": "Sniper Suit"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3789,10 +4140,12 @@
             ]
         },
         {
-            "Name": "Tin Mail",
+            "Name": {
+                "PT-BR": "Tin Mail",
+                "EN-US": "Tin Mail"
+            },
             "Id": 263,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3817,10 +4170,12 @@
             ]
         },
         {
-            "Name": "Wild Suit",
+            "Name": {
+                "PT-BR": "Wild Suit",
+                "EN-US": "Wild Suit"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3838,10 +4193,12 @@
             ]
         },
         {
-            "Name": "Ying Yang Suit",
+            "Name": {
+                "PT-BR": "Ying Yang Suit",
+                "EN-US": "Ying Yang Suit"
+            },
             "Id": null,
             "Type": "BodyArmor",
-            "TypeDescription": "Body Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3859,10 +4216,12 @@
             ]
         },
         {
-            "Name": "Angel Ring",
+            "Name": {
+                "PT-BR": "Angel Ring",
+                "EN-US": "Angel Ring"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3881,10 +4240,12 @@
             ]
         },
         {
-            "Name": "Bandanna",
+            "Name": {
+                "PT-BR": "Bandanna",
+                "EN-US": "Bandanna"
+            },
             "Id": 215,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3909,10 +4270,12 @@
             ]
         },
         {
-            "Name": "Baseball Cap",
+            "Name": {
+                "PT-BR": "Baseball Cap",
+                "EN-US": "Baseball Cap"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3937,10 +4300,12 @@
             ]
         },
         {
-            "Name": "Beret",
+            "Name": {
+                "PT-BR": "Beret",
+                "EN-US": "Beret"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3966,10 +4331,12 @@
             ]
         },
         {
-            "Name": "Brave Helmet",
+            "Name": {
+                "PT-BR": "Brave Helmet",
+                "EN-US": "Brave Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -3987,10 +4354,12 @@
             ]
         },
         {
-            "Name": "Cat Ears",
+            "Name": {
+                "PT-BR": "Cat Ears",
+                "EN-US": "Cat Ears"
+            },
             "Id": 227,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4015,10 +4384,12 @@
             ]
         },
         {
-            "Name": "D-Tama Helmet",
+            "Name": {
+                "PT-BR": "D-Tama Helmet",
+                "EN-US": "D-Tama Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4041,10 +4412,12 @@
             ]
         },
         {
-            "Name": "Divine Crown",
+            "Name": {
+                "PT-BR": "Divine Crown",
+                "EN-US": "Divine Crown"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4062,10 +4435,12 @@
             ]
         },
         {
-            "Name": "Dramon Horn",
+            "Name": {
+                "PT-BR": "Dramon Horn",
+                "EN-US": "Dramon Horn"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4088,10 +4463,12 @@
             ]
         },
         {
-            "Name": "Drill Horn",
+            "Name": {
+                "PT-BR": "Drill Horn",
+                "EN-US": "Drill Horn"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4121,10 +4498,12 @@
             ]
         },
         {
-            "Name": "Glorious Horn",
+            "Name": {
+                "PT-BR": "Glorious Horn",
+                "EN-US": "Glorious Horn"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4149,10 +4528,12 @@
             ]
         },
         {
-            "Name": "Goddess Crown",
+            "Name": {
+                "PT-BR": "Goddess Crown",
+                "EN-US": "Goddess Crown"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4171,10 +4552,12 @@
             ]
         },
         {
-            "Name": "Hazard Helmet",
+            "Name": {
+                "PT-BR": "Hazard Helmet",
+                "EN-US": "Hazard Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4192,10 +4575,12 @@
             ]
         },
         {
-            "Name": "Headband",
+            "Name": {
+                "PT-BR": "Headband",
+                "EN-US": "Headband"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4221,10 +4606,12 @@
             ]
         },
         {
-            "Name": "Hide Helmet",
+            "Name": {
+                "PT-BR": "Hide Helmet",
+                "EN-US": "Hide Helmet"
+            },
             "Id": 236,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4249,10 +4636,12 @@
             ]
         },
         {
-            "Name": "Iron Helmet",
+            "Name": {
+                "PT-BR": "Elmo de Ferro",
+                "EN-US": "Iron Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4278,10 +4667,12 @@
             ]
         },
         {
-            "Name": "Kabuteri Horn",
+            "Name": {
+                "PT-BR": "Kabuteri Horn",
+                "EN-US": "Kabuteri Horn"
+            },
             "Id": 209,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4311,10 +4702,12 @@
             ]
         },
         {
-            "Name": "Knight Helmet",
+            "Name": {
+                "PT-BR": "Knight Helmet",
+                "EN-US": "Knight Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4335,10 +4728,12 @@
             ]
         },
         {
-            "Name": "Kulon Helmet",
+            "Name": {
+                "PT-BR": "Kulon Helmet",
+                "EN-US": "Kulon Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4364,10 +4759,12 @@
             ]
         },
         {
-            "Name": "Kung Fu Cap",
+            "Name": {
+                "PT-BR": "Kung Fu Cap",
+                "EN-US": "Kung Fu Cap"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4397,10 +4794,12 @@
             ]
         },
         {
-            "Name": "Magical Crown",
+            "Name": {
+                "PT-BR": "Magical Crown",
+                "EN-US": "Magical Crown"
+            },
             "Id": 230,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4419,10 +4818,12 @@
             ]
         },
         {
-            "Name": "Matrix Helmet",
+            "Name": {
+                "PT-BR": "Matrix Helmet",
+                "EN-US": "Matrix Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4443,10 +4844,12 @@
             ]
         },
         {
-            "Name": "Metal Horn",
+            "Name": {
+                "PT-BR": "Metal Horn",
+                "EN-US": "Metal Horn"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4476,10 +4879,12 @@
             ]
         },
         {
-            "Name": "Mugen Helmet",
+            "Name": {
+                "PT-BR": "Mugen Helmet",
+                "EN-US": "Mugen Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4500,10 +4905,12 @@
             ]
         },
         {
-            "Name": "Mythril Crown",
+            "Name": {
+                "PT-BR": "Mythril Crown",
+                "EN-US": "Mythril Crown"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4522,10 +4929,12 @@
             ]
         },
         {
-            "Name": "Night Vision",
+            "Name": {
+                "PT-BR": "Night Vision",
+                "EN-US": "Night Vision"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4544,10 +4953,12 @@
             ]
         },
         {
-            "Name": "Red Cap",
+            "Name": {
+                "PT-BR": "Red Cap",
+                "EN-US": "Red Cap"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4573,10 +4984,12 @@
             ]
         },
         {
-            "Name": "Ribbon",
+            "Name": {
+                "PT-BR": "Ribbon",
+                "EN-US": "Ribbon"
+            },
             "Id": 226,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4601,10 +5014,12 @@
             ]
         },
         {
-            "Name": "Ronin Helmet",
+            "Name": {
+                "PT-BR": "Ronin Helmet",
+                "EN-US": "Ronin Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4622,10 +5037,12 @@
             ]
         },
         {
-            "Name": "Royal Crown",
+            "Name": {
+                "PT-BR": "Royal Crown",
+                "EN-US": "Royal Crown"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4646,10 +5063,12 @@
             ]
         },
         {
-            "Name": "School Cap",
+            "Name": {
+                "PT-BR": "School Cap",
+                "EN-US": "School Cap"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4679,10 +5098,12 @@
             ]
         },
         {
-            "Name": "Scissor Horn",
+            "Name": {
+                "PT-BR": "Scissor Horn",
+                "EN-US": "Scissor Horn"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4712,10 +5133,12 @@
             ]
         },
         {
-            "Name": "Shaman Mask",
+            "Name": {
+                "PT-BR": "Shaman Mask",
+                "EN-US": "Shaman Mask"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4736,10 +5159,12 @@
             ]
         },
         {
-            "Name": "Shock Horn",
+            "Name": {
+                "PT-BR": "Shock Horn",
+                "EN-US": "Shock Horn"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4769,10 +5194,12 @@
             ]
         },
         {
-            "Name": "Sniper Goggle",
+            "Name": {
+                "PT-BR": "Sniper Goggle",
+                "EN-US": "Sniper Goggle"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4790,10 +5217,12 @@
             ]
         },
         {
-            "Name": "Sun Visor",
+            "Name": {
+                "PT-BR": "Sun Visor",
+                "EN-US": "Sun Visor"
+            },
             "Id": 216,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4818,10 +5247,12 @@
             ]
         },
         {
-            "Name": "Tin Helmet",
+            "Name": {
+                "PT-BR": "Tin Helmet",
+                "EN-US": "Tin Helmet"
+            },
             "Id": 237,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4846,10 +5277,12 @@
             ]
         },
         {
-            "Name": "Trihorn",
+            "Name": {
+                "PT-BR": "Trihorn",
+                "EN-US": "Trihorn"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -4879,10 +5312,12 @@
             ]
         },
         {
-            "Name": "Wild Helmet",
+            "Name": {
+                "PT-BR": "Wild Helmet",
+                "EN-US": "Wild Helmet"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4900,10 +5335,12 @@
             ]
         },
         {
-            "Name": "Wing Helmet",
+            "Name": {
+                "PT-BR": "Wing Helmet",
+                "EN-US": "Wing Helmet"
+            },
             "Id": 240,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4926,10 +5363,12 @@
             ]
         },
         {
-            "Name": "Wool Cap",
+            "Name": {
+                "PT-BR": "Wool Cap",
+                "EN-US": "Wool Cap"
+            },
             "Id": 219,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4959,10 +5398,12 @@
             ]
         },
         {
-            "Name": "Yin Yang Hat",
+            "Name": {
+                "PT-BR": "Yin Yang Hat",
+                "EN-US": "Yin Yang Hat"
+            },
             "Id": null,
             "Type": "HeadArmor",
-            "TypeDescription": "Head Armor",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -4985,10 +5426,12 @@
             ]
         },
         {
-            "Name": "Antidote Ring",
+            "Name": {
+                "PT-BR": "Anel Antídoto",
+                "EN-US": "Antidote Ring"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -5006,13 +5449,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon’s resistance against poison"
+            "Note": {
+                "PT-BR": "Boosts the equipped Digimon’s resistance against poison",
+                "EN-US": "Boosts the equipped Digimon’s resistance against poison"
+            }
         },
         {
-            "Name": "Awake Ring",
+            "Name": {
+                "PT-BR": "Awake Ring",
+                "EN-US": "Awake Ring"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -5030,13 +5478,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon’s resistance against sleep"
+            "Note": {
+                "PT-BR": "Boosts the equipped Digimon’s resistance against sleep",
+                "EN-US": "Boosts the equipped Digimon’s resistance against sleep"
+            }
         },
         {
-            "Name": "Binder Crest",
+            "Name": {
+                "PT-BR": "Binder Crest",
+                "EN-US": "Binder Crest"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5048,13 +5501,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Reduces the chances of a wild Digimon escaping from battle"
+            "Note": {
+                "PT-BR": "Reduz as chances de um Digimon selvagem fugir da batalha",
+                "EN-US": "Reduces the chances of a wild Digimon escaping from battle"
+            }
         },
         {
-            "Name": "BIT Adapter",
+            "Name": {
+                "PT-BR": "BIT Adapter",
+                "EN-US": "BIT Adapter"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5066,13 +5524,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "The equipped Digimon receives additional BIT every battle"
+            "Note": {
+                "PT-BR": "O Digimon equipado recebe BIT adicional a cada batalha",
+                "EN-US": "The equipped Digimon receives additional BIT every battle"
+            }
         },
         {
-            "Name": "Bolt Power 1",
+            "Name": {
+                "PT-BR": "Bolt Power 1",
+                "EN-US": "Bolt Power 1"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5084,13 +5547,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Lightning damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a small amount of Lightning damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a small amount of Lightning damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Bolt Power 2",
+            "Name": {
+                "PT-BR": "Bolt Power 2",
+                "EN-US": "Bolt Power 2"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5102,13 +5570,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Lightning damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a medium amount of Lightning damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a medium amount of Lightning damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Bolt Power S",
+            "Name": {
+                "PT-BR": "Bolt Power S",
+                "EN-US": "Bolt Power S"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5120,13 +5593,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Boost Gem",
+            "Name": {
+                "PT-BR": "Boost Gem",
+                "EN-US": "Boost Gem"
+            },
             "Id": 300,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Speed",
@@ -5151,10 +5629,12 @@
             ]
         },
         {
-            "Name": "Charisma Gem",
+            "Name": {
+                "PT-BR": "Charisma Gem",
+                "EN-US": "Charisma Gem"
+            },
             "Id": 302,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -5174,10 +5654,12 @@
             ]
         },
         {
-            "Name": "Counter Crest",
+            "Name": {
+                "PT-BR": "Counter Crest",
+                "EN-US": "Counter Crest"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5189,13 +5671,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Allows your Digimon to counter physical attacks and techniques, dealing double the damage received"
+            "Note": {
+                "PT-BR": "Permite que o Digimon contra-ataque ataques físicos e técnicas, causando o dobro do dano recebido",
+                "EN-US": "Allows your Digimon to counter physical attacks and techniques, dealing double the damage received"
+            }
         },
         {
-            "Name": "Dark Power 1",
+            "Name": {
+                "PT-BR": "Dark Power 1",
+                "EN-US": "Dark Power 1"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5207,13 +5694,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Dark damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a small amount of Dark damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a small amount of Dark damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Dark Power 2",
+            "Name": {
+                "PT-BR": "Dark Power 2",
+                "EN-US": "Dark Power 2"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5225,13 +5717,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Dark Power S",
+            "Name": {
+                "PT-BR": "Dark Power S",
+                "EN-US": "Dark Power S"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5243,13 +5740,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Dark Ring",
+            "Name": {
+                "PT-BR": "Dark Ring",
+                "EN-US": "Dark Ring"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Dark",
@@ -5274,10 +5776,12 @@
             ]
         },
         {
-            "Name": "Dance Feather",
+            "Name": {
+                "PT-BR": "Dance Feather",
+                "EN-US": "Dance Feather"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5289,13 +5793,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon’s chances of evading an attack"
+            "Note": {
+                "PT-BR": "Slightly increases the equipped Digimon’s chances of evading an attack",
+                "EN-US": "Slightly increases the equipped Digimon’s chances of evading an attack"
+            }
         },
         {
-            "Name": "Dance Wing",
+            "Name": {
+                "PT-BR": "Dance Wing",
+                "EN-US": "Dance Wing"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5307,13 +5816,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon’s chances of evading an attack"
+            "Note": {
+                "PT-BR": "Significantly increases the equipped Digimon’s chances of evading an attack",
+                "EN-US": "Significantly increases the equipped Digimon’s chances of evading an attack"
+            }
         },
         {
-            "Name": "EXP Adapter",
+            "Name": {
+                "PT-BR": "EXP Adapter",
+                "EN-US": "EXP Adapter"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5325,13 +5839,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "The equipped Digimon receives additional EXP every battle"
+            "Note": {
+                "PT-BR": "O Digimon equipado recebe EXP adicional a cada batalha",
+                "EN-US": "The equipped Digimon receives additional EXP every battle"
+            }
         },
         {
-            "Name": "Flame Ring",
+            "Name": {
+                "PT-BR": "Flame Ring",
+                "EN-US": "Flame Ring"
+            },
             "Id": 304,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Fire",
@@ -5356,10 +5875,12 @@
             ]
         },
         {
-            "Name": "Fire Power 1",
+            "Name": {
+                "PT-BR": "Fire Power 1",
+                "EN-US": "Fire Power 1"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5371,13 +5892,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Fire damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a small amount of Fire damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a small amount of Fire damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Fire Power 2",
+            "Name": {
+                "PT-BR": "Fire Power 2",
+                "EN-US": "Fire Power 2"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5389,13 +5915,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Fire damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a medium amount of Fire damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a medium amount of Fire damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Fire Power S",
+            "Name": {
+                "PT-BR": "Fire Power S",
+                "EN-US": "Fire Power S"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5407,13 +5938,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Glasses",
+            "Name": {
+                "PT-BR": "Glasses",
+                "EN-US": "Glasses"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5425,13 +5961,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon’s accuracy"
+            "Note": {
+                "PT-BR": "Slightly increases the equipped Digimon’s accuracy",
+                "EN-US": "Slightly increases the equipped Digimon’s accuracy"
+            }
         },
         {
-            "Name": "Goggles",
+            "Name": {
+                "PT-BR": "Goggles",
+                "EN-US": "Goggles"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5443,13 +5984,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon’s accuracy"
+            "Note": {
+                "PT-BR": "Significantly increases the equipped Digimon’s accuracy",
+                "EN-US": "Significantly increases the equipped Digimon’s accuracy"
+            }
         },
         {
-            "Name": "Guard Gem",
+            "Name": {
+                "PT-BR": "Guard Gem",
+                "EN-US": "Guard Gem"
+            },
             "Id": 294,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Defense",
@@ -5474,10 +6020,12 @@
             ]
         },
         {
-            "Name": "HP Proxy",
+            "Name": {
+                "PT-BR": "HP Proxy",
+                "EN-US": "HP Proxy"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5489,13 +6037,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly decreases the damage received by the equipped Digimon"
+            "Note": {
+                "PT-BR": "Diminui levemente o dano recebido pelo Digimon equipado",
+                "EN-US": "Slightly decreases the damage received by the equipped Digimon"
+            }
         },
         {
-            "Name": "HP Mega Proxy",
+            "Name": {
+                "PT-BR": "HP Mega Proxy",
+                "EN-US": "HP Mega Proxy"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5507,13 +6060,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly decreases the damage received by the equipped Digimon"
+            "Note": {
+                "PT-BR": "Diminui significativamente o dano recebido pelo Digimon equipado",
+                "EN-US": "Significantly decreases the damage received by the equipped Digimon"
+            }
         },
         {
-            "Name": "Hack Sticker",
+            "Name": {
+                "PT-BR": "Hack Sticker",
+                "EN-US": "Hack Sticker"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5525,13 +6083,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon’s chances of stealing an item"
+            "Note": {
+                "PT-BR": "Slightly increases the equipped Digimon’s chances of stealing an item",
+                "EN-US": "Slightly increases the equipped Digimon’s chances of stealing an item"
+            }
         },
         {
-            "Name": "Hack System",
+            "Name": {
+                "PT-BR": "Hack System",
+                "EN-US": "Hack System"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5543,13 +6106,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon’s chances of stealing an item"
+            "Note": {
+                "PT-BR": "Significantly increases the equipped Digimon’s chances of stealing an item",
+                "EN-US": "Significantly increases the equipped Digimon’s chances of stealing an item"
+            }
         },
         {
-            "Name": "Machine Ring",
+            "Name": {
+                "PT-BR": "Machine Ring",
+                "EN-US": "Machine Ring"
+            },
             "Id": 309,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Machine",
@@ -5574,10 +6142,12 @@
             ]
         },
         {
-            "Name": "Metal Power 1",
+            "Name": {
+                "PT-BR": "Metal Power 1",
+                "EN-US": "Metal Power 1"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5589,13 +6159,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Machine damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a small amount of Machine damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a small amount of Machine damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Metal Power 2",
+            "Name": {
+                "PT-BR": "Metal Power 2",
+                "EN-US": "Metal Power 2"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5607,13 +6182,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Machine damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a medium amount of Machine damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a medium amount of Machine damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Metal Power S",
+            "Name": {
+                "PT-BR": "Metal Power S",
+                "EN-US": "Metal Power S"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5625,13 +6205,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Machine damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a large amount of Machine damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a large amount of Machine damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "MP Proxy",
+            "Name": {
+                "PT-BR": "MP Proxy",
+                "EN-US": "MP Proxy"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5643,13 +6228,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly decreases the MP usage of the equipped Digimon"
+            "Note": {
+                "PT-BR": "Diminui levemente o uso de MP do Digimon equipado",
+                "EN-US": "Slightly decreases the MP usage of the equipped Digimon"
+            }
         },
         {
-            "Name": "MP Mega Proxy",
+            "Name": {
+                "PT-BR": "MP Mega Proxy",
+                "EN-US": "MP Mega Proxy"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5661,13 +6251,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly decreases the MP usage of the equipped Digimon"
+            "Note": {
+                "PT-BR": "Diminui significativamente o uso de MP do Digimon equipado",
+                "EN-US": "Significantly decreases the MP usage of the equipped Digimon"
+            }
         },
         {
-            "Name": "Multi Crest",
+            "Name": {
+                "PT-BR": "Multi Crest",
+                "EN-US": "Multi Crest"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5679,13 +6274,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Allows the attacking Digimon to hit three times, but also lowers the damage of each individual hit"
+            "Note": {
+                "PT-BR": "Permite que o Digimon atacante acerte três vezes, mas reduz o dano de cada golpe individual",
+                "EN-US": "Allows the attacking Digimon to hit three times, but also lowers the damage of each individual hit"
+            }
         },
         {
-            "Name": "Over Clocked",
+            "Name": {
+                "PT-BR": "Over Clocked",
+                "EN-US": "Over Clocked"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5697,13 +6297,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon’s Blast Gauge gains"
+            "Note": {
+                "PT-BR": "Slightly increases the equipped Digimon’s Blast Gauge gains",
+                "EN-US": "Slightly increases the equipped Digimon’s Blast Gauge gains"
+            }
         },
         {
-            "Name": "Over Load",
+            "Name": {
+                "PT-BR": "Over Load",
+                "EN-US": "Over Load"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5715,13 +6320,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon’s Blast Gauge gains"
+            "Note": {
+                "PT-BR": "Significantly increases the equipped Digimon’s Blast Gauge gains",
+                "EN-US": "Significantly increases the equipped Digimon’s Blast Gauge gains"
+            }
         },
         {
-            "Name": "Power Brace",
+            "Name": {
+                "PT-BR": "Power Brace",
+                "EN-US": "Power Brace"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5733,13 +6343,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+            "Note": {
+                "PT-BR": "Significantly improves the equipped Digimon’s chances of successfully completing a training course at the gym",
+                "EN-US": "Significantly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+            }
         },
         {
-            "Name": "Power Gem",
+            "Name": {
+                "PT-BR": "Power Gem",
+                "EN-US": "Power Gem"
+            },
             "Id": 292,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Strength",
@@ -5764,10 +6379,12 @@
             ]
         },
         {
-            "Name": "Prayer Ring",
+            "Name": {
+                "PT-BR": "Prayer Ring",
+                "EN-US": "Prayer Ring"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -5785,13 +6402,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon’s chances of surviving a potential KO"
+            "Note": {
+                "PT-BR": "Boosts the equipped Digimon’s chances of surviving a potential KO",
+                "EN-US": "Boosts the equipped Digimon’s chances of surviving a potential KO"
+            }
         },
         {
-            "Name": "Recovery Crest",
+            "Name": {
+                "PT-BR": "Recovery Crest",
+                "EN-US": "Recovery Crest"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5803,13 +6425,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Recovers a small amount of HP for the equipped Digimon every turn"
+            "Note": {
+                "PT-BR": "Recupera uma pequena quantidade de HP do Digimon equipado a cada turno",
+                "EN-US": "Recovers a small amount of HP for the equipped Digimon every turn"
+            }
         },
         {
-            "Name": "Revive Ring",
+            "Name": {
+                "PT-BR": "Revive Ring",
+                "EN-US": "Revive Ring"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -5827,13 +6454,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon’s resistance against paralysis"
+            "Note": {
+                "PT-BR": "Boosts the equipped Digimon’s resistance against paralysis",
+                "EN-US": "Boosts the equipped Digimon’s resistance against paralysis"
+            }
         },
         {
-            "Name": "Runner Sandals",
+            "Name": {
+                "PT-BR": "Runner Sandals",
+                "EN-US": "Runner Sandals"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5845,13 +6477,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly increases the equipped Digimon’s chances of running away from battle"
+            "Note": {
+                "PT-BR": "Slightly increases the equipped Digimon’s chances of running away from battle",
+                "EN-US": "Slightly increases the equipped Digimon’s chances of running away from battle"
+            }
         },
         {
-            "Name": "Runner Shoes",
+            "Name": {
+                "PT-BR": "Runner Shoes",
+                "EN-US": "Runner Shoes"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5863,13 +6500,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Significantly increases the equipped Digimon’s chances of running away from battle"
+            "Note": {
+                "PT-BR": "Significantly increases the equipped Digimon’s chances of running away from battle",
+                "EN-US": "Significantly increases the equipped Digimon’s chances of running away from battle"
+            }
         },
         {
-            "Name": "Search Crest",
+            "Name": {
+                "PT-BR": "Search Crest",
+                "EN-US": "Search Crest"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5881,13 +6523,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Increases the equipped Digimon’s critical hit rate"
+            "Note": {
+                "PT-BR": "Increases the equipped Digimon’s critical hit rate",
+                "EN-US": "Increases the equipped Digimon’s critical hit rate"
+            }
         },
         {
-            "Name": "Sober Ring",
+            "Name": {
+                "PT-BR": "Sober Ring",
+                "EN-US": "Sober Ring"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Charisma",
@@ -5905,13 +6552,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Boosts the equipped Digimon’s resistance against confusion"
+            "Note": {
+                "PT-BR": "Boosts the equipped Digimon’s resistance against confusion",
+                "EN-US": "Boosts the equipped Digimon’s resistance against confusion"
+            }
         },
         {
-            "Name": "Spirit Gem",
+            "Name": {
+                "PT-BR": "Spirit Gem",
+                "EN-US": "Spirit Gem"
+            },
             "Id": 296,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Spirit",
@@ -5936,10 +6588,12 @@
             ]
         },
         {
-            "Name": "Training Book",
+            "Name": {
+                "PT-BR": "Training Book",
+                "EN-US": "Training Book"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5951,13 +6605,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+            "Note": {
+                "PT-BR": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym",
+                "EN-US": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+            }
         },
         {
-            "Name": "Water Power 1",
+            "Name": {
+                "PT-BR": "Water Power 1",
+                "EN-US": "Water Power 1"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5969,13 +6628,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Water damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a small amount of Water damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a small amount of Water damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Water Power 2",
+            "Name": {
+                "PT-BR": "Water Power 2",
+                "EN-US": "Water Power 2"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -5987,13 +6651,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Water damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a medium amount of Water damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a medium amount of Water damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Water Power S",
+            "Name": {
+                "PT-BR": "Water Power S",
+                "EN-US": "Water Power S"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -6005,13 +6674,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Water Ring",
+            "Name": {
+                "PT-BR": "Water Ring",
+                "EN-US": "Water Ring"
+            },
             "Id": 305,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Water",
@@ -6036,10 +6710,12 @@
             ]
         },
         {
-            "Name": "Wind Power 1",
+            "Name": {
+                "PT-BR": "Wind Power 1",
+                "EN-US": "Wind Power 1"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -6051,13 +6727,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a small amount of Wind damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a small amount of Wind damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a small amount of Wind damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Wind Power 2",
+            "Name": {
+                "PT-BR": "Wind Power 2",
+                "EN-US": "Wind Power 2"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -6069,13 +6750,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a medium amount of Wind damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a medium amount of Wind damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a medium amount of Wind damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Wind Power S",
+            "Name": {
+                "PT-BR": "Wind Power S",
+                "EN-US": "Wind Power S"
+            },
             "Id": null,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
                 "Agumon",
@@ -6087,13 +6773,18 @@
                 "Renamon",
                 "Veemon"
             ],
-            "Note": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
+            "Note": {
+                "PT-BR": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks",
+                "EN-US": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
+            }
         },
         {
-            "Name": "Ice Ring",
+            "Name": {
+                "PT-BR": "Ice Ring",
+                "EN-US": "Ice Ring"
+            },
             "Id": 306,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Ice",
@@ -6118,10 +6809,12 @@
             ]
         },
         {
-            "Name": "Wind Ring",
+            "Name": {
+                "PT-BR": "Wind Ring",
+                "EN-US": "Wind Ring"
+            },
             "Id": 307,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Wind",
@@ -6146,10 +6839,12 @@
             ]
         },
         {
-            "Name": "Thunder Ring",
+            "Name": {
+                "PT-BR": "Thunder Ring",
+                "EN-US": "Thunder Ring"
+            },
             "Id": 308,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Thunder",
@@ -6174,10 +6869,12 @@
             ]
         },
         {
-            "Name": "Wisdom Gem",
+            "Name": {
+                "PT-BR": "Wisdom Gem",
+                "EN-US": "Wisdom Gem"
+            },
             "Id": 298,
             "Type": "Accessory",
-            "TypeDescription": "Accessory",
             "Attributes": [
                 {
                     "Attribute": "Wisdom",

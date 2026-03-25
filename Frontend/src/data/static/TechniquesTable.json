@@ -2,1503 +2,2403 @@
     "techniques": [
         {
             "id": "heat_cutter",
-            "name": "Heat Cutter",
+            "name": {
+                "PT-BR": "Corte Térmico",
+                "EN-US": "Heat Cutter"
+            },
             "type": "Physical",
             "element": "Fire",
             "elementStrength": 32,
             "mp": 18,
             "power": 90,
-            "description": "Slash and fire damage"
+            "description": {
+                "PT-BR": "Corte com dano de fogo",
+                "EN-US": "Slash and fire damage"
+            }
         },
         {
             "id": "frost_cutter",
-            "name": "Frost Cutter",
+            "name": {
+                "PT-BR": "Corte Gélido",
+                "EN-US": "Frost Cutter"
+            },
             "type": "Physical",
             "element": "Ice",
             "elementStrength": 32,
             "mp": 18,
             "power": 90,
-            "description": "Slash with ice damage"
+            "description": {
+                "PT-BR": "Corte com dano de gelo",
+                "EN-US": "Slash with ice damage"
+            }
         },
         {
             "id": "small_heal",
-            "name": "Small Heal",
+            "name": {
+                "PT-BR": "Cura Menor",
+                "EN-US": "Small Heal"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 16,
             "power": 8,
-            "description": "Heal some of your HP"
+            "description": {
+                "PT-BR": "Recupera parte do seu HP",
+                "EN-US": "Heal some of your HP"
+            }
         },
         {
             "id": "double_power",
-            "name": "Double Power",
+            "name": {
+                "PT-BR": "Poder Duplo",
+                "EN-US": "Double Power"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 42,
             "power": 0,
-            "description": "Increase your attack power"
+            "description": {
+                "PT-BR": "Aumenta seu poder de ataque",
+                "EN-US": "Increase your attack power"
+            }
         },
         {
             "id": "lizard_dance",
-            "name": "Lizard Dance",
+            "name": {
+                "PT-BR": "Dança do Lagarto",
+                "EN-US": "Lizard Dance"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 40,
             "power": 100,
-            "description": "Slash enemy multiple times"
+            "description": {
+                "PT-BR": "Corta o inimigo várias vezes",
+                "EN-US": "Slash enemy multiple times"
+            }
         },
         {
             "id": "wing_buster",
-            "name": "Wing Buster",
+            "name": {
+                "PT-BR": "Destruidor de Asas",
+                "EN-US": "Wing Buster"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 18,
             "power": 100,
-            "description": "Huge damage vs. Bird Digimon"
+            "description": {
+                "PT-BR": "Dano enorme contra Digimon Pássaro",
+                "EN-US": "Huge damage vs. Bird Digimon"
+            }
         },
         {
             "id": "bug_buster",
-            "name": "Bug Buster",
+            "name": {
+                "PT-BR": "Destruidor de Insetos",
+                "EN-US": "Bug Buster"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 24,
             "power": 130,
-            "description": "Huge damage vs. Insectoid Digimon"
+            "description": {
+                "PT-BR": "Dano enorme contra Digimon Inseto",
+                "EN-US": "Huge damage vs. Insectoid Digimon"
+            }
         },
         {
             "id": "big_shot",
-            "name": "Big Shot",
+            "name": {
+                "PT-BR": "Tiro Certeiro",
+                "EN-US": "Big Shot"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 20,
             "power": 140,
-            "description": "Big damage if it hits"
+            "description": {
+                "PT-BR": "Grande dano se acertar",
+                "EN-US": "Big damage if it hits"
+            }
         },
         {
             "id": "fish_buster",
-            "name": "Fish Buster",
+            "name": {
+                "PT-BR": "Destruidor de Peixes",
+                "EN-US": "Fish Buster"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 30,
             "power": 160,
-            "description": "Huge damage vs. Marine Digimon"
+            "description": {
+                "PT-BR": "Dano enorme contra Digimon Marinho",
+                "EN-US": "Huge damage vs. Marine Digimon"
+            }
         },
         {
             "id": "captain_cannon",
-            "name": "Captain Cannon",
+            "name": {
+                "PT-BR": "Canhão do Capitão",
+                "EN-US": "Captain Cannon"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 38,
             "power": 200,
-            "description": "Shoot the arm cannon"
+            "description": {
+                "PT-BR": "Dispara o canhão do braço",
+                "EN-US": "Shoot the arm cannon"
+            }
         },
         {
             "id": "lightning_slash",
-            "name": "Lightning Slash",
+            "name": {
+                "PT-BR": "Corte Relâmpago",
+                "EN-US": "Lightning Slash"
+            },
             "type": "Physical",
             "element": "Thunder",
             "elementStrength": 32,
             "mp": 18,
             "power": 90,
-            "description": "Thunder damage"
+            "description": {
+                "PT-BR": "Dano de trovão",
+                "EN-US": "Thunder damage"
+            }
         },
         {
             "id": "whirlwind",
-            "name": "Whirlwind",
+            "name": {
+                "PT-BR": "Whirlwind",
+                "EN-US": "Whirlwind"
+            },
             "type": "Physical",
             "element": "Wind",
             "elementStrength": 32,
             "mp": 18,
             "power": 90,
-            "description": "Wind damage"
+            "description": {
+                "PT-BR": "Dano de vento",
+                "EN-US": "Wind damage"
+            }
         },
         {
             "id": "hammer_rush",
-            "name": "Hammer Rush",
+            "name": {
+                "PT-BR": "Investida de Martelo",
+                "EN-US": "Hammer Rush"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 30,
             "power": 100,
-            "description": "Damage from rapid blows"
+            "description": {
+                "PT-BR": "Dano por golpes rápidos",
+                "EN-US": "Damage from rapid blows"
+            }
         },
         {
             "id": "spinal_tap",
-            "name": "Spinal Tap",
+            "name": {
+                "PT-BR": "Toque Espinhal",
+                "EN-US": "Spinal Tap"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 18,
             "power": 75,
-            "description": "Sometimes paralyzes the enemy"
+            "description": {
+                "PT-BR": "Às vezes paralisa o inimigo",
+                "EN-US": "Sometimes paralyzes the enemy"
+            }
         },
         {
             "id": "maul_attack",
-            "name": "Maul Attack",
+            "name": {
+                "PT-BR": "Ataque Devastador",
+                "EN-US": "Maul Attack"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 40,
             "power": 200,
-            "description": "If attacked first counter"
+            "description": {
+                "PT-BR": "Contra-ataca se for atacado primeiro",
+                "EN-US": "If attacked first counter"
+            }
         },
         {
             "id": "flame_ball",
-            "name": "Flame Ball",
+            "name": {
+                "PT-BR": "Bola de Fogo",
+                "EN-US": "Flame Ball"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 16,
             "mp": 20,
             "power": 100,
-            "description": "Shoot small fire balls"
+            "description": {
+                "PT-BR": "Dispara pequenas bolas de fogo",
+                "EN-US": "Shoot small fire balls"
+            }
         },
         {
             "id": "triple_fire",
-            "name": "Triple Fire",
+            "name": {
+                "PT-BR": "Fogo Triplo",
+                "EN-US": "Triple Fire"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 16,
             "mp": 25,
             "power": 50,
-            "description": "Shoot three fire balls"
+            "description": {
+                "PT-BR": "Dispara três bolas de fogo",
+                "EN-US": "Shoot three fire balls"
+            }
         },
         {
             "id": "flame_lance",
-            "name": "Flame Lance",
+            "name": {
+                "PT-BR": "Lança de Fogo",
+                "EN-US": "Flame Lance"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 32,
             "mp": 48,
             "power": 300,
-            "description": "Launch fire beam"
+            "description": {
+                "PT-BR": "Lança feixe de fogo",
+                "EN-US": "Launch fire beam"
+            }
         },
         {
             "id": "nova_blast",
-            "name": "Nova Blast",
+            "name": {
+                "PT-BR": "Explosão Nova",
+                "EN-US": "Nova Blast"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 48,
             "mp": 60,
             "power": 300,
-            "description": "Shoot a fire ball from the mouth"
+            "description": {
+                "PT-BR": "Dispara uma bola de fogo pela boca",
+                "EN-US": "Shoot a fire ball from the mouth"
+            }
         },
         {
             "id": "air_blast",
-            "name": "Air Blast",
+            "name": {
+                "PT-BR": "Rajada de Ar",
+                "EN-US": "Air Blast"
+            },
             "type": "Magical",
             "element": "Wind",
             "elementStrength": 16,
             "mp": 20,
             "power": 100,
-            "description": "Shoot air balls"
+            "description": {
+                "PT-BR": "Dispara bolas de ar",
+                "EN-US": "Shoot air balls"
+            }
         },
         {
             "id": "ice_blow",
-            "name": "Ice Blow",
+            "name": {
+                "PT-BR": "Sopro de Gelo",
+                "EN-US": "Ice Blow"
+            },
             "type": "Magical",
             "element": "Ice",
             "elementStrength": 16,
             "mp": 20,
             "power": 100,
-            "description": "Shoot icicles with ice damage"
+            "description": {
+                "PT-BR": "Dispara estacas de gelo com dano de gelo",
+                "EN-US": "Shoot icicles with ice damage"
+            }
         },
         {
             "id": "antidote",
-            "name": "Antidote",
+            "name": {
+                "PT-BR": "Antidote",
+                "EN-US": "Antidote"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 8,
             "power": 0,
-            "description": "Cure poison on yourself"
+            "description": {
+                "PT-BR": "Cura veneno em si mesmo",
+                "EN-US": "Cure poison on yourself"
+            }
         },
         {
             "id": "veelaser",
-            "name": "Veelaser",
+            "name": {
+                "PT-BR": "Veelaser",
+                "EN-US": "Veelaser"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 48,
             "mp": 60,
             "power": 300,
-            "description": "Shoot a laser from the chest"
+            "description": {
+                "PT-BR": "Dispara um laser pelo peito",
+                "EN-US": "Shoot a laser from the chest"
+            }
         },
         {
             "id": "double_guard",
-            "name": "Double Guard",
+            "name": {
+                "PT-BR": "Guarda Dupla",
+                "EN-US": "Double Guard"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 42,
             "power": 0,
-            "description": "Increase your defense power"
+            "description": {
+                "PT-BR": "Aumenta seu poder de defesa",
+                "EN-US": "Increase your defense power"
+            }
         },
         {
             "id": "picking_claw",
-            "name": "Picking Claw",
+            "name": {
+                "PT-BR": "Garra Ladra",
+                "EN-US": "Picking Claw"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 18,
             "power": 60,
-            "description": "Attack and steal items"
+            "description": {
+                "PT-BR": "Ataca e rouba itens",
+                "EN-US": "Attack and steal items"
+            }
         },
         {
             "id": "counter_alert",
-            "name": "Counter Alert",
+            "name": {
+                "PT-BR": "Alerta de Contra-Ataque",
+                "EN-US": "Counter Alert"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 48,
             "power": 100,
-            "description": "Counterattack during pose"
+            "description": {
+                "PT-BR": "Contra-ataca durante pose",
+                "EN-US": "Counterattack during pose"
+            }
         },
         {
             "id": "plasma_blade",
-            "name": "Plasma Blade",
+            "name": {
+                "PT-BR": "Lâmina de Plasma",
+                "EN-US": "Plasma Blade"
+            },
             "type": "Physical",
             "element": "Thunder",
             "elementStrength": 48,
             "mp": 40,
             "power": 180,
-            "description": "Slash with electrified blade"
+            "description": {
+                "PT-BR": "Corte com lâmina eletrificada",
+                "EN-US": "Slash with electrified blade"
+            }
         },
         {
             "id": "thunder_bolt",
-            "name": "Thunder Bolt",
+            "name": {
+                "PT-BR": "Raio de Trovão",
+                "EN-US": "Thunder Bolt"
+            },
             "type": "Magical",
             "element": "Thunder",
             "elementStrength": 16,
             "mp": 20,
             "power": 100,
-            "description": "Create a thunder ball and fire"
+            "description": {
+                "PT-BR": "Cria uma bola de trovão e dispara",
+                "EN-US": "Create a thunder ball and fire"
+            }
         },
         {
             "id": "thunder_gemini",
-            "name": "Thunder Gemini",
+            "name": {
+                "PT-BR": "Trovão Gêmeo",
+                "EN-US": "Thunder Gemini"
+            },
             "type": "Magical",
             "element": "Thunder",
             "elementStrength": 24,
             "mp": 30,
             "power": 200,
-            "description": "Create two thunder balls and fire"
+            "description": {
+                "PT-BR": "Cria duas bolas de trovão e dispara",
+                "EN-US": "Create two thunder balls and fire"
+            }
         },
         {
             "id": "ice_shower",
-            "name": "Ice Shower",
+            "name": {
+                "PT-BR": "Chuva de Gelo",
+                "EN-US": "Ice Shower"
+            },
             "type": "Magical",
             "element": "Ice",
             "elementStrength": 32,
             "mp": 48,
             "power": 200,
-            "description": "Shoot numerous icicles"
+            "description": {
+                "PT-BR": "Dispara inúmeras estacas de gelo",
+                "EN-US": "Shoot numerous icicles"
+            }
         },
         {
             "id": "dragon_wheel",
-            "name": "Dragon Wheel",
+            "name": {
+                "PT-BR": "Roda do Dragão",
+                "EN-US": "Dragon Wheel"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 48,
             "mp": 60,
             "power": 300,
-            "description": "Shoot fire balls from 9 tails"
+            "description": {
+                "PT-BR": "Dispara bolas de fogo das 9 caudas",
+                "EN-US": "Shoot fire balls from 9 tails"
+            }
         },
         {
             "id": "mega_tornado",
-            "name": "Mega Tornado",
+            "name": {
+                "PT-BR": "Mega Tornado",
+                "EN-US": "Mega Tornado"
+            },
             "type": "Magical",
             "element": "Wind",
             "elementStrength": 24,
             "mp": 30,
             "power": 200,
-            "description": "Tornado against an enemy"
+            "description": {
+                "PT-BR": "Tornado contra um inimigo",
+                "EN-US": "Tornado against an enemy"
+            }
         },
         {
             "id": "hand_of_fate",
-            "name": "Hand of Fate",
+            "name": {
+                "PT-BR": "Mão do Destino",
+                "EN-US": "Hand of Fate"
+            },
             "type": "Physical",
             "element": "Wind",
             "elementStrength": 48,
             "mp": 42,
             "power": 180,
-            "description": "Punch the enemy with wind attacks"
+            "description": {
+                "PT-BR": "Soca o inimigo com ataques de vento",
+                "EN-US": "Punch the enemy with wind attacks"
+            }
         },
         {
             "id": "dark_matter",
-            "name": "Dark Matter",
+            "name": {
+                "PT-BR": "Matéria Sombria",
+                "EN-US": "Dark Matter"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 16,
             "mp": 20,
             "power": 100,
-            "description": "Evil fireball with dark damage"
+            "description": {
+                "PT-BR": "Bola de fogo maligna com dano sombrio",
+                "EN-US": "Evil fireball with dark damage"
+            }
         },
         {
             "id": "evil_poison",
-            "name": "Evil Poison",
+            "name": {
+                "PT-BR": "Veneno Maligno",
+                "EN-US": "Evil Poison"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 18,
             "power": 60,
-            "description": "Magic with damage and poison"
+            "description": {
+                "PT-BR": "Magia com dano e veneno",
+                "EN-US": "Magic with damage and poison"
+            }
         },
         {
             "id": "armor_break",
-            "name": "Armor Break",
+            "name": {
+                "PT-BR": "Quebrar Armadura",
+                "EN-US": "Armor Break"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 39,
             "power": 0,
-            "description": "Decrease enemy's defense"
+            "description": {
+                "PT-BR": "Diminui a defesa do inimigo",
+                "EN-US": "Decrease enemy's defense"
+            }
         },
         {
             "id": "stun_shock",
-            "name": "Stun Shock",
+            "name": {
+                "PT-BR": "Choque Paralisante",
+                "EN-US": "Stun Shock"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 18,
             "power": 60,
-            "description": "Magic with damage and paralysis"
+            "description": {
+                "PT-BR": "Magia com dano e paralisia",
+                "EN-US": "Magic with damage and paralysis"
+            }
         },
         {
             "id": "touch_of_evil",
-            "name": "Touch of Evil",
+            "name": {
+                "PT-BR": "Toque do Mal",
+                "EN-US": "Touch of Evil"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 40,
             "power": 240,
-            "description": "Drain enemy's HP with claw"
+            "description": {
+                "PT-BR": "Drena HP do inimigo com garra",
+                "EN-US": "Drain enemy's HP with claw"
+            }
         },
         {
             "id": "poison_bites",
-            "name": "Poison Bites",
+            "name": {
+                "PT-BR": "Mordidas Venenosas",
+                "EN-US": "Poison Bites"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 18,
             "power": 75,
-            "description": "Poison damage"
+            "description": {
+                "PT-BR": "Dano venenoso",
+                "EN-US": "Poison damage"
+            }
         },
         {
             "id": "energy_leech",
-            "name": "Energy Leech",
+            "name": {
+                "PT-BR": "Sanguessuga de Energia",
+                "EN-US": "Energy Leech"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 18,
             "power": 100,
-            "description": "Magic that drains HP"
+            "description": {
+                "PT-BR": "Magia que drena HP",
+                "EN-US": "Magic that drains HP"
+            }
         },
         {
             "id": "panic_bites",
-            "name": "Panic Bites",
+            "name": {
+                "PT-BR": "Mordidas de Pânico",
+                "EN-US": "Panic Bites"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 18,
             "power": 75,
-            "description": "Confusion damage"
+            "description": {
+                "PT-BR": "Dano com confusão",
+                "EN-US": "Confusion damage"
+            }
         },
         {
             "id": "venom_stab",
-            "name": "Venom Stab",
+            "name": {
+                "PT-BR": "Golpe Venenoso",
+                "EN-US": "Venom Stab"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 36,
             "power": 200,
-            "description": "Deadly poison damage"
+            "description": {
+                "PT-BR": "Dano venenoso mortal",
+                "EN-US": "Deadly poison damage"
+            }
         },
         {
             "id": "spiking_strike",
-            "name": "Spiking Strike",
+            "name": {
+                "PT-BR": "Golpe de Espinho",
+                "EN-US": "Spiking Strike"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 36,
             "power": 200,
-            "description": "Stab enemy with the spike"
+            "description": {
+                "PT-BR": "Apunhala o inimigo com o espinho",
+                "EN-US": "Stab enemy with the spike"
+            }
         },
         {
             "id": "divine_rain",
-            "name": "Divine Rain",
+            "name": {
+                "PT-BR": "Chuva Divina",
+                "EN-US": "Divine Rain"
+            },
             "type": "Magical",
             "element": "Water",
             "elementStrength": 24,
             "mp": 30,
             "power": 150,
-            "description": "Water damage from magical rain"
+            "description": {
+                "PT-BR": "Dano de água por chuva mágica",
+                "EN-US": "Water damage from magical rain"
+            }
         },
         {
             "id": "anti_paralysis",
-            "name": "Anti-Paralysis",
+            "name": {
+                "PT-BR": "Anti-Paralisia",
+                "EN-US": "Anti-Paralysis"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 8,
             "power": 0,
-            "description": "Cure paralysis on yourself"
+            "description": {
+                "PT-BR": "Cura paralisia em si mesmo",
+                "EN-US": "Cure paralysis on yourself"
+            }
         },
         {
             "id": "celestial_arrow",
-            "name": "Celestial Arrow",
+            "name": {
+                "PT-BR": "Flecha Celestial",
+                "EN-US": "Celestial Arrow"
+            },
             "type": "Physical",
             "element": "Thunder",
             "elementStrength": 48,
             "mp": 44,
             "power": 180,
-            "description": "Divine arrow with thunder attack"
+            "description": {
+                "PT-BR": "Flecha divina com ataque de trovão",
+                "EN-US": "Divine arrow with thunder attack"
+            }
         },
         {
             "id": "burn_slash",
-            "name": "Burn Slash",
+            "name": {
+                "PT-BR": "Corte Flamejante",
+                "EN-US": "Burn Slash"
+            },
             "type": "Physical",
             "element": "Fire",
             "elementStrength": 64,
             "mp": 32,
             "power": 130,
-            "description": "Slash with a flame blade"
+            "description": {
+                "PT-BR": "Corte com lâmina flamejante",
+                "EN-US": "Slash with a flame blade"
+            }
         },
         {
             "id": "cold_slash",
-            "name": "Cold Slash",
+            "name": {
+                "PT-BR": "Corte Gélido",
+                "EN-US": "Cold Slash"
+            },
             "type": "Physical",
             "element": "Ice",
             "elementStrength": 64,
             "mp": 32,
             "power": 130,
-            "description": "Slash with a ice blade"
+            "description": {
+                "PT-BR": "Corte com lâmina de gelo",
+                "EN-US": "Slash with a ice blade"
+            }
         },
         {
             "id": "blade_twister",
-            "name": "Blade Twister",
+            "name": {
+                "PT-BR": "Redemoinho de Lâminas",
+                "EN-US": "Blade Twister"
+            },
             "type": "Physical",
             "element": "Wind",
             "elementStrength": 64,
             "mp": 80,
             "power": 120,
-            "description": "Slash multiple times with wind"
+            "description": {
+                "PT-BR": "Corta várias vezes com vento",
+                "EN-US": "Slash multiple times with wind"
+            }
         },
         {
             "id": "dino_buster",
-            "name": "Dino Buster",
+            "name": {
+                "PT-BR": "Destruidor de Dinossauros",
+                "EN-US": "Dino Buster"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 40,
             "power": 200,
-            "description": "Huge damage vs. Dinosaur Digimon"
+            "description": {
+                "PT-BR": "Dano enorme contra Digimon Dinossauro",
+                "EN-US": "Huge damage vs. Dinosaur Digimon"
+            }
         },
         {
             "id": "dramon_buster",
-            "name": "Dramon Buster",
+            "name": {
+                "PT-BR": "Destruidor de Dramon",
+                "EN-US": "Dramon Buster"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 48,
             "power": 210,
-            "description": "Huge damage vs. Dragon Digimon"
+            "description": {
+                "PT-BR": "Dano enorme contra Digimon Dragão",
+                "EN-US": "Huge damage vs. Dragon Digimon"
+            }
         },
         {
             "id": "justice_strike",
-            "name": "Justice Strike",
+            "name": {
+                "PT-BR": "Golpe da Justiça",
+                "EN-US": "Justice Strike"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 78,
             "power": 140,
-            "description": "Shoot all firearms"
+            "description": {
+                "PT-BR": "Dispara todas as armas de fogo",
+                "EN-US": "Shoot all firearms"
+            }
         },
         {
             "id": "soul_charge",
-            "name": "Soul Charge",
+            "name": {
+                "PT-BR": "Carga Espiritual",
+                "EN-US": "Soul Charge"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 19,
             "power": 0,
-            "description": "Save Chi to power up next blow"
+            "description": {
+                "PT-BR": "Acumula Chi para fortalecer o próximo golpe",
+                "EN-US": "Save Chi to power up next blow"
+            }
         },
         {
             "id": "speed_boost",
-            "name": "Speed Boost",
+            "name": {
+                "PT-BR": "Impulso de Velocidade",
+                "EN-US": "Speed Boost"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 48,
             "power": 0,
-            "description": "Increase your speed"
+            "description": {
+                "PT-BR": "Aumenta sua velocidade",
+                "EN-US": "Increase your speed"
+            }
         },
         {
             "id": "cyclone_turbine",
-            "name": "Cyclone Turbine",
+            "name": {
+                "PT-BR": "Turbina Ciclone",
+                "EN-US": "Cyclone Turbine"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 80,
             "power": 140,
-            "description": "Multiple round house kicks"
+            "description": {
+                "PT-BR": "Múltiplos chutes giratórios",
+                "EN-US": "Multiple round house kicks"
+            }
         },
         {
             "id": "magic_missile",
-            "name": "Magic Missile",
+            "name": {
+                "PT-BR": "Míssil Mágico",
+                "EN-US": "Magic Missile"
+            },
             "type": "Magical",
             "element": "Machine",
             "elementStrength": 32,
             "mp": 56,
             "power": 400,
-            "description": "Shoot missiles with magic"
+            "description": {
+                "PT-BR": "Dispara mísseis com magia",
+                "EN-US": "Shoot missiles with magic"
+            }
         },
         {
             "id": "rising_fire",
-            "name": "Rising Fire",
+            "name": {
+                "PT-BR": "Fogo Ascendente",
+                "EN-US": "Rising Fire"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 32,
             "mp": 60,
             "power": 150,
-            "description": "Column of fire on the enemy"
+            "description": {
+                "PT-BR": "Coluna de fogo sobre o inimigo",
+                "EN-US": "Column of fire on the enemy"
+            }
         },
         {
             "id": "giga_destroyer",
-            "name": "Giga Destroyer",
+            "name": {
+                "PT-BR": "Giga Destruidor",
+                "EN-US": "Giga Destroyer"
+            },
             "type": "Magical",
             "element": "Machine",
             "elementStrength": 64,
             "mp": 90,
             "power": 500,
-            "description": "Launch organic missiles"
+            "description": {
+                "PT-BR": "Lança mísseis orgânicos",
+                "EN-US": "Launch organic missiles"
+            }
         },
         {
             "id": "black_thorn",
-            "name": "Black Thorn",
+            "name": {
+                "PT-BR": "Espinho Negro",
+                "EN-US": "Black Thorn"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 32,
             "mp": 60,
             "power": 150,
-            "description": "Dark damage with evil thorns"
+            "description": {
+                "PT-BR": "Dano sombrio com espinhos malignos",
+                "EN-US": "Dark damage with evil thorns"
+            }
         },
         {
             "id": "dark_shot",
-            "name": "Dark Shot",
+            "name": {
+                "PT-BR": "Tiro Sombrio",
+                "EN-US": "Dark Shot"
+            },
             "type": "Magical",
             "element": "Machine",
             "elementStrength": 64,
             "mp": 90,
             "power": 500,
-            "description": "Launch organic missiles"
+            "description": {
+                "PT-BR": "Lança mísseis orgânicos",
+                "EN-US": "Launch organic missiles"
+            }
         },
         {
             "id": "metal_attack",
-            "name": "Metal Attack",
+            "name": {
+                "PT-BR": "Ataque Metálico",
+                "EN-US": "Metal Attack"
+            },
             "type": "Physical",
             "element": "Machine",
             "elementStrength": 32,
             "mp": 26,
             "power": 140,
-            "description": "Machine damage"
+            "description": {
+                "PT-BR": "Dano mecânico",
+                "EN-US": "Machine damage"
+            }
         },
         {
             "id": "mechanical_bash",
-            "name": "Mechanical Bash",
+            "name": {
+                "PT-BR": "Golpe Mecânico",
+                "EN-US": "Mechanical Bash"
+            },
             "type": "Physical",
             "element": "Machine",
             "elementStrength": 64,
             "mp": 48,
             "power": 160,
-            "description": "Strong machine damage"
+            "description": {
+                "PT-BR": "Dano mecânico forte",
+                "EN-US": "Strong machine damage"
+            }
         },
         {
             "id": "desperado_blaster",
-            "name": "Desperado Blaster",
+            "name": {
+                "PT-BR": "Blaster Desesperado",
+                "EN-US": "Desperado Blaster"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 84,
             "power": 140,
-            "description": "Rapid-fire 2 energy waves"
+            "description": {
+                "PT-BR": "Dispara 2 ondas de energia em sequência",
+                "EN-US": "Rapid-fire 2 energy waves"
+            }
         },
         {
             "id": "mega_guard",
-            "name": "Mega Guard",
+            "name": {
+                "PT-BR": "Mega Guarda",
+                "EN-US": "Mega Guard"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 84,
             "power": 0,
-            "description": "Increase allies' defense powers"
+            "description": {
+                "PT-BR": "Aumenta o poder de defesa dos aliados",
+                "EN-US": "Increase allies' defense powers"
+            }
         },
         {
             "id": "mega_strength",
-            "name": "Mega Strength",
+            "name": {
+                "PT-BR": "Mega Força",
+                "EN-US": "Mega Strength"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 84,
             "power": 0,
-            "description": "Increase allies' attack powers"
+            "description": {
+                "PT-BR": "Aumenta o poder de ataque dos aliados",
+                "EN-US": "Increase allies' attack powers"
+            }
         },
         {
             "id": "atomic_blaster",
-            "name": "Atomic Blaster",
+            "name": {
+                "PT-BR": "Blaster Atômico",
+                "EN-US": "Atomic Blaster"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 64,
             "mp": 90,
             "power": 500,
-            "description": "Burn the enemy with fire laser"
+            "description": {
+                "PT-BR": "Queima o inimigo com laser de fogo",
+                "EN-US": "Burn the enemy with fire laser"
+            }
         },
         {
             "id": "electro_bolt",
-            "name": "Electro Bolt",
+            "name": {
+                "PT-BR": "Raio Elétrico",
+                "EN-US": "Electro Bolt"
+            },
             "type": "Magical",
             "element": "Thunder",
             "elementStrength": 32,
             "mp": 48,
             "power": 300,
-            "description": "Large thunder ball against enemy"
+            "description": {
+                "PT-BR": "Grande bola de trovão contra o inimigo",
+                "EN-US": "Large thunder ball against enemy"
+            }
         },
         {
             "id": "showstorm",
-            "name": "Showstorm",
+            "name": {
+                "PT-BR": "Showstorm",
+                "EN-US": "Showstorm"
+            },
             "type": "Magical",
             "element": "Ice",
             "elementStrength": 40,
             "mp": 60,
             "power": 250,
-            "description": "Snow spirit inflicts ice damage"
+            "description": {
+                "PT-BR": "Espírito da neve causa dano de gelo",
+                "EN-US": "Snow spirit inflicts ice damage"
+            }
         },
         {
             "id": "thunder_field",
-            "name": "Thunder Field",
+            "name": {
+                "PT-BR": "Campo de Trovão",
+                "EN-US": "Thunder Field"
+            },
             "type": "Set Field",
             "element": "Thunder",
             "elementStrength": 0,
             "mp": 100,
             "power": 0,
-            "description": "Strengthen thunder, weaken metal"
+            "description": {
+                "PT-BR": "Fortalece trovão, enfraquece máquina",
+                "EN-US": "Strengthen thunder, weaken metal"
+            }
         },
         {
             "id": "bonhitsusen",
-            "name": "Bonhitsusen",
+            "name": {
+                "PT-BR": "Bonhitsusen",
+                "EN-US": "Bonhitsusen"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 80,
             "power": 300,
-            "description": "Huge damage to ghouls"
+            "description": {
+                "PT-BR": "Dano enorme contra mortos-vivos",
+                "EN-US": "Huge damage to ghouls"
+            }
         },
         {
             "id": "mega_heal",
-            "name": "Mega Heal",
+            "name": {
+                "PT-BR": "Mega Cura",
+                "EN-US": "Mega Heal"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 74,
             "power": 32,
-            "description": "Heal much of your HP"
+            "description": {
+                "PT-BR": "Recupera muito do seu HP",
+                "EN-US": "Heal much of your HP"
+            }
         },
         {
             "id": "gate_of_destiny",
-            "name": "Gate of Destiny",
+            "name": {
+                "PT-BR": "Portal do Destino",
+                "EN-US": "Gate of Destiny"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 112,
             "power": 250,
-            "description": "Open a gate and discard enemies"
+            "description": {
+                "PT-BR": "Abre um portal e descarta inimigos",
+                "EN-US": "Open a gate and discard enemies"
+            }
         },
         {
             "id": "dark_fear",
-            "name": "Dark Fear",
+            "name": {
+                "PT-BR": "Medo Sombrio",
+                "EN-US": "Dark Fear"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 32,
             "mp": 48,
             "power": 300,
-            "description": "Throw evil flame against enemy"
+            "description": {
+                "PT-BR": "Lança chama maligna contra o inimigo",
+                "EN-US": "Throw evil flame against enemy"
+            }
         },
         {
             "id": "black_dart",
-            "name": "Black Dart",
+            "name": {
+                "PT-BR": "Dardo Negro",
+                "EN-US": "Black Dart"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 40,
             "mp": 70,
             "power": 200,
-            "description": "Fire numerous evil thorns"
+            "description": {
+                "PT-BR": "Dispara inúmeros espinhos malignos",
+                "EN-US": "Fire numerous evil thorns"
+            }
         },
         {
             "id": "armor_off",
-            "name": "Armor Off",
+            "name": {
+                "PT-BR": "Remover Armadura",
+                "EN-US": "Armor Off"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 78,
             "power": 0,
-            "description": "Large decrease in enemy's defense"
+            "description": {
+                "PT-BR": "Grande redução na defesa do inimigo",
+                "EN-US": "Large decrease in enemy's defense"
+            }
         },
         {
             "id": "confuse_gas",
-            "name": "Confuse Gas",
+            "name": {
+                "PT-BR": "Gás Confuso",
+                "EN-US": "Confuse Gas"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 40,
             "power": 180,
-            "description": "Magic that confuses the enemy"
+            "description": {
+                "PT-BR": "Magia que confunde o inimigo",
+                "EN-US": "Magic that confuses the enemy"
+            }
         },
         {
             "id": "soul_snatcher",
-            "name": "Soul Snatcher",
+            "name": {
+                "PT-BR": "Ladrão de Almas",
+                "EN-US": "Soul Snatcher"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 50,
             "power": 150,
-            "description": "Magically drain the soul"
+            "description": {
+                "PT-BR": "Drena a alma magicamente",
+                "EN-US": "Magically drain the soul"
+            }
         },
         {
             "id": "grisly_wing",
-            "name": "Grisly Wing",
+            "name": {
+                "PT-BR": "Asa Macabra",
+                "EN-US": "Grisly Wing"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 64,
             "mp": 90,
             "power": 300,
-            "description": "Decrease enemy's attack power"
+            "description": {
+                "PT-BR": "Diminui o poder de ataque do inimigo",
+                "EN-US": "Decrease enemy's attack power"
+            }
         },
         {
             "id": "twin_missile",
-            "name": "Twin Missile",
+            "name": {
+                "PT-BR": "Míssil Duplo",
+                "EN-US": "Twin Missile"
+            },
             "type": "Magical",
             "element": "Machine",
             "elementStrength": 40,
             "mp": 64,
             "power": 450,
-            "description": "Shoot two missiles with magic"
+            "description": {
+                "PT-BR": "Dispara dois mísseis com magia",
+                "EN-US": "Shoot two missiles with magic"
+            }
         },
         {
             "id": "slow_down",
-            "name": "Slow Down",
+            "name": {
+                "PT-BR": "Desacelerar",
+                "EN-US": "Slow Down"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 41,
             "power": 0,
-            "description": "Decrease enemy's speed"
+            "description": {
+                "PT-BR": "Diminui a velocidade do inimigo",
+                "EN-US": "Decrease enemy's speed"
+            }
         },
         {
             "id": "energetic_bomb",
-            "name": "Energetic Bomb",
+            "name": {
+                "PT-BR": "Energetic Bomb",
+                "EN-US": "Energetic Bomb"
+            },
             "type": "Physical",
             "element": "Machine",
             "elementStrength": 64,
             "mp": 78,
             "power": 240,
-            "description": "Fire machine energy balls"
+            "description": {
+                "PT-BR": "Fire machine energy balls",
+                "EN-US": "Fire machine energy balls"
+            }
         },
         {
             "id": "energy_drain",
-            "name": "Energy Drain",
+            "name": {
+                "PT-BR": "Energy Drain",
+                "EN-US": "Energy Drain"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 72,
             "power": 500,
-            "description": "Magic that drains many HP"
+            "description": {
+                "PT-BR": "Magic that drains many HP",
+                "EN-US": "Magic that drains many HP"
+            }
         },
         {
             "id": "electro_shocker",
-            "name": "Electro Shocker",
+            "name": {
+                "PT-BR": "Electro Shocker",
+                "EN-US": "Electro Shocker"
+            },
             "type": "Magical",
             "element": "Thunder",
             "elementStrength": 64,
             "mp": 90,
             "power": 500,
-            "description": "Fire thunder balls from the mouth"
+            "description": {
+                "PT-BR": "Fire thunder balls from the mouth",
+                "EN-US": "Fire thunder balls from the mouth"
+            }
         },
         {
             "id": "hypno_gas",
-            "name": "Hypno Gas",
+            "name": {
+                "PT-BR": "Hypno Gas",
+                "EN-US": "Hypno Gas"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 40,
             "power": 180,
-            "description": "Magic puts the enemy to sleep"
+            "description": {
+                "PT-BR": "Magic puts the enemy to sleep",
+                "EN-US": "Magic puts the enemy to sleep"
+            }
         },
         {
             "id": "hypno_nebula",
-            "name": "Hypno Nebula",
+            "name": {
+                "PT-BR": "Hypno Nebula",
+                "EN-US": "Hypno Nebula"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 60,
             "power": 240,
-            "description": "Magic that puts enemy to deep sleep"
+            "description": {
+                "PT-BR": "Magic that puts enemy to deep sleep",
+                "EN-US": "Magic that puts enemy to deep sleep"
+            }
         },
         {
             "id": "nm_syndromer",
-            "name": "NM Syndromer",
+            "name": {
+                "PT-BR": "NM Syndromer",
+                "EN-US": "NM Syndromer"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 64,
             "mp": 90,
             "power": 500,
-            "description": "Dark attack by firing dark balls"
+            "description": {
+                "PT-BR": "Dark attack by firing dark balls",
+                "EN-US": "Dark attack by firing dark balls"
+            }
         },
         {
             "id": "pinpoint_shot",
-            "name": "Pinpoint Shot",
+            "name": {
+                "PT-BR": "Pinpoint Shot",
+                "EN-US": "Pinpoint Shot"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 54,
             "power": 220,
-            "description": "Huge damage if it hits"
+            "description": {
+                "PT-BR": "Huge damage if it hits",
+                "EN-US": "Huge damage if it hits"
+            }
         },
         {
             "id": "golden_ripper",
-            "name": "Golden Ripper",
+            "name": {
+                "PT-BR": "Golden Ripper",
+                "EN-US": "Golden Ripper"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 140,
             "power": 400,
-            "description": "Slash enemies with swords"
+            "description": {
+                "PT-BR": "Slash enemies with swords",
+                "EN-US": "Slash enemies with swords"
+            }
         },
         {
             "id": "devil_shot",
-            "name": "Devil Shot",
+            "name": {
+                "PT-BR": "Devil Shot",
+                "EN-US": "Devil Shot"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 56,
             "power": 220,
-            "description": "Huge damage vs. Evil Digimon"
+            "description": {
+                "PT-BR": "Huge damage vs. Evil Digimon",
+                "EN-US": "Huge damage vs. Evil Digimon"
+            }
         },
         {
             "id": "dynamo_cannon",
-            "name": "DynamoCannon",
+            "name": {
+                "PT-BR": "DynamoCannon",
+                "EN-US": "DynamoCannon"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 136,
             "power": 400,
-            "description": "Huge damage against Machines"
+            "description": {
+                "PT-BR": "Huge damage against Machines",
+                "EN-US": "Huge damage against Machines"
+            }
         },
         {
             "id": "heaven_hit",
-            "name": "Heaven Hit",
+            "name": {
+                "PT-BR": "Heaven Hit",
+                "EN-US": "Heaven Hit"
+            },
             "type": "Physical",
             "element": "Thunder",
             "elementStrength": 64,
             "mp": 32,
             "power": 160,
-            "description": "Strong thunder damage"
+            "description": {
+                "PT-BR": "Strong thunder damage",
+                "EN-US": "Strong thunder damage"
+            }
         },
         {
             "id": "vacuum_cannon",
-            "name": "Vacuum Cannon",
+            "name": {
+                "PT-BR": "Vacuum Cannon",
+                "EN-US": "Vacuum Cannon"
+            },
             "type": "Physical",
             "element": "Wind",
             "elementStrength": 64,
             "mp": 48,
             "power": 160,
-            "description": "Strong wind damage"
+            "description": {
+                "PT-BR": "Strong wind damage",
+                "EN-US": "Strong wind damage"
+            }
         },
         {
             "id": "brain_freeze",
-            "name": "Brain Freeze",
+            "name": {
+                "PT-BR": "Brain Freeze",
+                "EN-US": "Brain Freeze"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 52,
             "power": 180,
-            "description": "Paralyzes the enemy"
+            "description": {
+                "PT-BR": "Paralyzes the enemy",
+                "EN-US": "Paralyzes the enemy"
+            }
         },
         {
             "id": "misshukikou",
-            "name": "Misshukikou",
+            "name": {
+                "PT-BR": "Misshukikou",
+                "EN-US": "Misshukikou"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 49,
             "power": 0,
-            "description": "Save Chi to maximum for next blow"
+            "description": {
+                "PT-BR": "Save Chi to maximum for next blow",
+                "EN-US": "Save Chi to maximum for next blow"
+            }
         },
         {
             "id": "mugenhadou",
-            "name": "Mugenhadou",
+            "name": {
+                "PT-BR": "Mugenhadou",
+                "EN-US": "Mugenhadou"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 148,
             "power": 320,
-            "description": "Blast a wave to knock out enemy"
+            "description": {
+                "PT-BR": "Blast a wave to knock out enemy",
+                "EN-US": "Blast a wave to knock out enemy"
+            }
         },
         {
             "id": "flame_breath",
-            "name": "Flame Breath",
+            "name": {
+                "PT-BR": "Flame Breath",
+                "EN-US": "Flame Breath"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 48,
             "mp": 72,
             "power": 500,
-            "description": "Engulf the enemy with fire breath"
+            "description": {
+                "PT-BR": "Engulf the enemy with fire breath",
+                "EN-US": "Engulf the enemy with fire breath"
+            }
         },
         {
             "id": "giga_fire",
-            "name": "Giga Fire",
+            "name": {
+                "PT-BR": "Giga Fire",
+                "EN-US": "Giga Fire"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 48,
             "mp": 90,
             "power": 250,
-            "description": "Magic attack shoots 3 fire balls"
+            "description": {
+                "PT-BR": "Magic attack shoots 3 fire balls",
+                "EN-US": "Magic attack shoots 3 fire balls"
+            }
         },
         {
             "id": "terra_force",
-            "name": "Terra Force",
+            "name": {
+                "PT-BR": "Terra Force",
+                "EN-US": "Terra Force"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 140,
             "power": 480,
-            "description": "Throw a huge energy ball"
+            "description": {
+                "PT-BR": "Throw a huge energy ball",
+                "EN-US": "Throw a huge energy ball"
+            }
         },
         {
             "id": "sylph_storm",
-            "name": "Sylph Storm",
+            "name": {
+                "PT-BR": "Sylph Storm",
+                "EN-US": "Sylph Storm"
+            },
             "type": "Magical",
             "element": "Wind",
             "elementStrength": 48,
             "mp": 72,
             "power": 500,
-            "description": "Powerful gust of wind"
+            "description": {
+                "PT-BR": "Powerful gust of wind",
+                "EN-US": "Powerful gust of wind"
+            }
         },
         {
             "id": "mega_crusher",
-            "name": "Mega Crusher",
+            "name": {
+                "PT-BR": "Mega Crusher",
+                "EN-US": "Mega Crusher"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 150,
             "power": 500,
-            "description": "Fire a massive ball"
+            "description": {
+                "PT-BR": "Fire a massive ball",
+                "EN-US": "Fire a massive ball"
+            }
         },
         {
             "id": "counter_strike",
-            "name": "Counter Strike",
+            "name": {
+                "PT-BR": "Counter Strike",
+                "EN-US": "Counter Strike"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 96,
             "power": 240,
-            "description": "Strong counterattack during pose"
+            "description": {
+                "PT-BR": "Strong counterattack during pose",
+                "EN-US": "Strong counterattack during pose"
+            }
         },
         {
             "id": "snapping_claw",
-            "name": "Snapping Claw",
+            "name": {
+                "PT-BR": "Snapping Claw",
+                "EN-US": "Snapping Claw"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 54,
             "power": 240,
-            "description": "Attack and quickly steal items"
+            "description": {
+                "PT-BR": "Attack and quickly steal items",
+                "EN-US": "Attack and quickly steal items"
+            }
         },
         {
             "id": "mega_boost",
-            "name": "Mega Boost",
+            "name": {
+                "PT-BR": "Mega Boost",
+                "EN-US": "Mega Boost"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 96,
             "power": 0,
-            "description": "Increase allies' speed"
+            "description": {
+                "PT-BR": "Increase allies' speed",
+                "EN-US": "Increase allies' speed"
+            }
         },
         {
             "id": "final_purification",
-            "name": "Final Purification",
+            "name": {
+                "PT-BR": "Final Purification",
+                "EN-US": "Final Purification"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 140,
             "power": 320,
-            "description": "Beam counterattack from shield"
+            "description": {
+                "PT-BR": "Beam counterattack from shield",
+                "EN-US": "Beam counterattack from shield"
+            }
         },
         {
             "id": "lightning_bolt",
-            "name": "Lightning Bolt",
+            "name": {
+                "PT-BR": "Lightning Bolt",
+                "EN-US": "Lightning Bolt"
+            },
             "type": "Magical",
             "element": "Thunder",
             "elementStrength": 48,
             "mp": 72,
             "power": 500,
-            "description": "Huge thunder ball against enemy"
+            "description": {
+                "PT-BR": "Huge thunder ball against enemy",
+                "EN-US": "Huge thunder ball against enemy"
+            }
         },
         {
             "id": "giga_freeze",
-            "name": "Giga Freeze",
+            "name": {
+                "PT-BR": "Giga Freeze",
+                "EN-US": "Giga Freeze"
+            },
             "type": "Magical",
             "element": "Ice",
             "elementStrength": 48,
             "mp": 72,
             "power": 300,
-            "description": "Engulf the enemy with huge ice"
+            "description": {
+                "PT-BR": "Engulf the enemy with huge ice",
+                "EN-US": "Engulf the enemy with huge ice"
+            }
         },
         {
             "id": "ice_field",
-            "name": "Ice Field",
+            "name": {
+                "PT-BR": "Campo de Gelo",
+                "EN-US": "Ice Field"
+            },
             "type": "Set Field",
             "element": "Ice",
             "elementStrength": 0,
             "mp": 100,
             "power": 0,
-            "description": "Strength ice, weaken wind"
+            "description": {
+                "PT-BR": "Strength ice, weaken wind",
+                "EN-US": "Strength ice, weaken wind"
+            }
         },
         {
             "id": "kongou_kaimandra",
-            "name": "KongouKaimandra",
+            "name": {
+                "PT-BR": "KongouKaimandra",
+                "EN-US": "KongouKaimandra"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 150,
             "power": 480,
-            "description": "Magic attack against ghouls"
+            "description": {
+                "PT-BR": "Magic attack against ghouls",
+                "EN-US": "Magic attack against ghouls"
+            }
         },
         {
             "id": "giga_heal",
-            "name": "Giga Heal",
+            "name": {
+                "PT-BR": "Giga Heal",
+                "EN-US": "Giga Heal"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 188,
             "power": 32,
-            "description": "Heal much of allies' HP"
+            "description": {
+                "PT-BR": "Heal much of allies' HP",
+                "EN-US": "Heal much of allies' HP"
+            }
         },
         {
             "id": "wind_field",
-            "name": "Wind Field",
+            "name": {
+                "PT-BR": "Campo de Vento",
+                "EN-US": "Wind Field"
+            },
             "type": "Set Field",
             "element": "Wind",
             "elementStrength": 0,
             "mp": 100,
             "power": 0,
-            "description": "Strengthen wind, weaken water"
+            "description": {
+                "PT-BR": "Strengthen wind, weaken water",
+                "EN-US": "Strengthen wind, weaken water"
+            }
         },
         {
             "id": "seven_heavens",
-            "name": "Seven Heavens",
+            "name": {
+                "PT-BR": "Seven Heavens",
+                "EN-US": "Seven Heavens"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 140,
             "power": 400,
-            "description": "Fire 7 balls against evil Digimon"
+            "description": {
+                "PT-BR": "Fire 7 balls against evil Digimon",
+                "EN-US": "Fire 7 balls against evil Digimon"
+            }
         },
         {
             "id": "magical_cannon",
-            "name": "Magical Cannon",
+            "name": {
+                "PT-BR": "Magical Cannon",
+                "EN-US": "Magical Cannon"
+            },
             "type": "Magical",
             "element": "Machine",
             "elementStrength": 48,
             "mp": 72,
             "power": 500,
-            "description": "Shoot giant missiles with magic"
+            "description": {
+                "PT-BR": "Shoot giant missiles with magic",
+                "EN-US": "Shoot giant missiles with magic"
+            }
         },
         {
             "id": "metal_field",
-            "name": "Metal Field",
+            "name": {
+                "PT-BR": "Metal Field",
+                "EN-US": "Metal Field"
+            },
             "type": "Set Field",
             "element": "Machine",
             "elementStrength": 0,
             "mp": 100,
             "power": 0,
-            "description": "Strength metal, weaken dark"
+            "description": {
+                "PT-BR": "Strength metal, weaken dark",
+                "EN-US": "Strength metal, weaken dark"
+            }
         },
         {
             "id": "metal_wolf_claw",
-            "name": "Metal Wolf Claw",
+            "name": {
+                "PT-BR": "Garra de Lobo Metálico",
+                "EN-US": "Metal Wolf Claw"
+            },
             "type": "Magical",
             "element": "Ice",
             "elementStrength": 72,
             "mp": 150,
             "power": 600,
-            "description": "Ice breath. Magic attack."
+            "description": {
+                "PT-BR": "Ice breath. Magic attack.",
+                "EN-US": "Ice breath. Magic attack."
+            }
         },
         {
             "id": "grand_wave",
-            "name": "Grand Wave",
+            "name": {
+                "PT-BR": "Grand Wave",
+                "EN-US": "Grand Wave"
+            },
             "type": "Magical",
             "element": "Water",
             "elementStrength": 48,
             "mp": 72,
             "power": 300,
-            "description": "Magical tidal wave against enemy"
+            "description": {
+                "PT-BR": "Magical tidal wave against enemy",
+                "EN-US": "Magical tidal wave against enemy"
+            }
         },
         {
             "id": "erase_poison",
-            "name": "Erase Poison",
+            "name": {
+                "PT-BR": "Erase Poison",
+                "EN-US": "Erase Poison"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 12,
             "power": 0,
-            "description": "Cure all poison on allies"
+            "description": {
+                "PT-BR": "Cure all poison on allies",
+                "EN-US": "Cure all poison on allies"
+            }
         },
         {
             "id": "erase_paralysis",
-            "name": "Erase Paralysis",
+            "name": {
+                "PT-BR": "Erase Paralysis",
+                "EN-US": "Erase Paralysis"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 12,
             "power": 0,
-            "description": "Cure all paralysis on allies"
+            "description": {
+                "PT-BR": "Cure all paralysis on allies",
+                "EN-US": "Cure all paralysis on allies"
+            }
         },
         {
             "id": "water_field",
-            "name": "Water Field",
+            "name": {
+                "PT-BR": "Campo de Água",
+                "EN-US": "Water Field"
+            },
             "type": "Set Field",
             "element": "Water",
             "elementStrength": 0,
             "mp": 100,
             "power": 0,
-            "description": "Strengthen water, weaken fire"
+            "description": {
+                "PT-BR": "Fortalece água, enfraquece fogo",
+                "EN-US": "Strengthen water, weaken fire"
+            }
         },
         {
             "id": "anti_magic",
-            "name": "Anti-Magic",
+            "name": {
+                "PT-BR": "Anti-Magic",
+                "EN-US": "Anti-Magic"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 20,
             "power": 0,
-            "description": "Cure all ailments on yourself"
+            "description": {
+                "PT-BR": "Cure all ailments on yourself",
+                "EN-US": "Cure all ailments on yourself"
+            }
         },
         {
             "id": "thorn_whipping",
-            "name": "Thorn Whipping",
+            "name": {
+                "PT-BR": "Thorn Whipping",
+                "EN-US": "Thorn Whipping"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 130,
             "power": 340,
-            "description": "Poison enemy with thorn whip"
+            "description": {
+                "PT-BR": "Poison enemy with thorn whip",
+                "EN-US": "Poison enemy with thorn whip"
+            }
         },
         {
             "id": "terra_destroyer",
-            "name": "Terra Destroyer",
+            "name": {
+                "PT-BR": "Terra Destroyer",
+                "EN-US": "Terra Destroyer"
+            },
             "type": "Physical",
             "element": "Dark",
             "elementStrength": 64,
             "mp": 140,
             "power": 420,
-            "description": "Throw massive dark matter"
+            "description": {
+                "PT-BR": "Throw massive dark matter",
+                "EN-US": "Throw massive dark matter"
+            }
         },
         {
             "id": "fire_field",
-            "name": "Fire Field",
+            "name": {
+                "PT-BR": "Campo de Fogo",
+                "EN-US": "Fire Field"
+            },
             "type": "Set Field",
             "element": "Fire",
             "elementStrength": 0,
             "mp": 100,
             "power": 0,
-            "description": "Strength fire, weaken ice"
+            "description": {
+                "PT-BR": "Strength fire, weaken ice",
+                "EN-US": "Strength fire, weaken ice"
+            }
         },
         {
             "id": "full_heal",
-            "name": "Full Heal",
+            "name": {
+                "PT-BR": "Cura Completa",
+                "EN-US": "Full Heal"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 120,
             "power": 127,
-            "description": "Heal almost all of your HP"
+            "description": {
+                "PT-BR": "Heal almost all of your HP",
+                "EN-US": "Heal almost all of your HP"
+            }
         },
         {
             "id": "giga_crusher",
-            "name": "Giga Crusher",
+            "name": {
+                "PT-BR": "Giga Crusher",
+                "EN-US": "Giga Crusher"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 180,
             "power": 640,
-            "description": "Fire the ultimate laser cannon"
+            "description": {
+                "PT-BR": "Fire the ultimate laser cannon",
+                "EN-US": "Fire the ultimate laser cannon"
+            }
         },
         {
             "id": "dark_elemental",
-            "name": "Dark Elemental",
+            "name": {
+                "PT-BR": "Dark Elemental",
+                "EN-US": "Dark Elemental"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 64,
             "mp": 120,
             "power": 600,
-            "description": "Engulf with evil fire column"
+            "description": {
+                "PT-BR": "Engulf with evil fire column",
+                "EN-US": "Engulf with evil fire column"
+            }
         },
         {
             "id": "crimson_cloud",
-            "name": "Crimson Cloud",
+            "name": {
+                "PT-BR": "Crimson Cloud",
+                "EN-US": "Crimson Cloud"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 64,
             "mp": 150,
             "power": 300,
-            "description": "Fire numerous evil flashes"
+            "description": {
+                "PT-BR": "Fire numerous evil flashes",
+                "EN-US": "Fire numerous evil flashes"
+            }
         },
         {
             "id": "deadly_poison",
-            "name": "Deadly Poison",
+            "name": {
+                "PT-BR": "Deadly Poison",
+                "EN-US": "Deadly Poison"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 90,
             "power": 360,
-            "description": "Fire venomous foam with magic"
+            "description": {
+                "PT-BR": "Fire venomous foam with magic",
+                "EN-US": "Fire venomous foam with magic"
+            }
         },
         {
             "id": "paralyze_shock",
-            "name": "Paralyze Shock",
+            "name": {
+                "PT-BR": "Paralyze Shock",
+                "EN-US": "Paralyze Shock"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 90,
             "power": 300,
-            "description": "Magic that completely paralyzes"
+            "description": {
+                "PT-BR": "Magic that completely paralyzes",
+                "EN-US": "Magic that completely paralyzes"
+            }
         },
         {
             "id": "dark_field",
-            "name": "Dark Field",
+            "name": {
+                "PT-BR": "Campo de Trevas",
+                "EN-US": "Dark Field"
+            },
             "type": "Set Field",
             "element": "Dark",
             "elementStrength": 0,
             "mp": 100,
             "power": 0,
-            "description": "Strength dark, weaken thunder"
+            "description": {
+                "PT-BR": "Strength dark, weaken thunder",
+                "EN-US": "Strength dark, weaken thunder"
+            }
         },
         {
             "id": "melting_blood",
-            "name": "Melting Blood",
+            "name": {
+                "PT-BR": "Melting Blood",
+                "EN-US": "Melting Blood"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 72,
             "mp": 210,
             "power": 700,
-            "description": "Unleash dark energy"
+            "description": {
+                "PT-BR": "Unleash dark energy",
+                "EN-US": "Unleash dark energy"
+            }
         },
         {
             "id": "god_bombard",
-            "name": "God Bombard",
+            "name": {
+                "PT-BR": "God Bombard",
+                "EN-US": "God Bombard"
+            },
             "type": "Magical",
             "element": "Machine",
             "elementStrength": 64,
             "mp": 120,
             "power": 600,
-            "description": "Most powerful missile magic"
+            "description": {
+                "PT-BR": "Most powerful missile magic",
+                "EN-US": "Most powerful missile magic"
+            }
         },
         {
             "id": "mega_break",
-            "name": "Mega Break",
+            "name": {
+                "PT-BR": "Mega Break",
+                "EN-US": "Mega Break"
+            },
             "type": "Support",
             "element": "None",
             "elementStrength": 0,
             "mp": 82,
             "power": 0,
-            "description": "Large decrease in enemy's speed"
+            "description": {
+                "PT-BR": "Grande redução na velocidade do inimigo",
+                "EN-US": "Large decrease in enemy's speed"
+            }
         },
         {
             "id": "giant_missile",
-            "name": "Giant Missile",
+            "name": {
+                "PT-BR": "Giant Missile",
+                "EN-US": "Giant Missile"
+            },
             "type": "Physical",
             "element": "Machine",
             "elementStrength": 64,
             "mp": 200,
             "power": 480,
-            "description": "Fire all body missiles"
+            "description": {
+                "PT-BR": "Fire all body missiles",
+                "EN-US": "Fire all body missiles"
+            }
         },
         {
             "id": "confuse_stab",
-            "name": "Confuse Stab",
+            "name": {
+                "PT-BR": "Confuse Stab",
+                "EN-US": "Confuse Stab"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 64,
             "power": 240,
-            "description": "Massive confusion damage"
+            "description": {
+                "PT-BR": "Massive confusion damage",
+                "EN-US": "Massive confusion damage"
+            }
         },
         {
             "id": "impact_rush",
-            "name": "Impact Rush",
+            "name": {
+                "PT-BR": "Impact Rush",
+                "EN-US": "Impact Rush"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 60,
             "power": 240,
-            "description": "Huge damage from rapid blows"
+            "description": {
+                "PT-BR": "Huge damage from rapid blows",
+                "EN-US": "Huge damage from rapid blows"
+            }
         },
         {
             "id": "dimension_scissors",
-            "name": "Dimension Scissors",
+            "name": {
+                "PT-BR": "Dimension Scissors",
+                "EN-US": "Dimension Scissors"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 200,
             "power": 400,
-            "description": "Slash thru space and destroy"
+            "description": {
+                "PT-BR": "Slash thru space and destroy",
+                "EN-US": "Slash thru space and destroy"
+            }
         },
         {
             "id": "final_heal",
-            "name": "Final Heal",
+            "name": {
+                "PT-BR": "Final Heal",
+                "EN-US": "Final Heal"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 240,
             "power": 64,
-            "description": "Heal almost all of allies HP"
+            "description": {
+                "PT-BR": "Heal almost all of allies HP",
+                "EN-US": "Heal almost all of allies HP"
+            }
         },
         {
             "id": "erase_magic",
-            "name": "Erase Magic",
+            "name": {
+                "PT-BR": "Erase Magic",
+                "EN-US": "Erase Magic"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 37,
             "power": 0,
-            "description": "Cure all ailments on allies"
+            "description": {
+                "PT-BR": "Cure all ailments on allies",
+                "EN-US": "Cure all ailments on allies"
+            }
         },
         {
             "id": "auto_recover",
-            "name": "Auto Recover",
+            "name": {
+                "PT-BR": "Auto Recover",
+                "EN-US": "Auto Recover"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 82,
             "power": 1,
-            "description": "Gradually heal your HP"
+            "description": {
+                "PT-BR": "Gradually heal your HP",
+                "EN-US": "Gradually heal your HP"
+            }
         },
         {
             "id": "crimson_flame",
-            "name": "Crimson Flame",
+            "name": {
+                "PT-BR": "Crimson Flame",
+                "EN-US": "Crimson Flame"
+            },
             "type": "Heal",
             "element": "None",
             "elementStrength": 0,
             "mp": 200,
             "power": 0,
-            "description": "Revive all allies with max HP"
+            "description": {
+                "PT-BR": "Revive all allies with max HP",
+                "EN-US": "Revive all allies with max HP"
+            }
         },
         {
             "id": "flame_sphere",
-            "name": "Flame Sphere",
+            "name": {
+                "PT-BR": "Flame Sphere",
+                "EN-US": "Flame Sphere"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 64,
             "mp": 180,
             "power": 700,
-            "description": "Magic that creates huge flames"
+            "description": {
+                "PT-BR": "Magic that creates huge flames",
+                "EN-US": "Magic that creates huge flames"
+            }
         },
         {
             "id": "inferno",
-            "name": "Inferno",
+            "name": {
+                "PT-BR": "Inferno",
+                "EN-US": "Inferno"
+            },
             "type": "Magical",
             "element": "Fire",
             "elementStrength": 64,
             "mp": 200,
             "power": 350,
-            "description": "Continuous fire columns"
+            "description": {
+                "PT-BR": "Continuous fire columns",
+                "EN-US": "Continuous fire columns"
+            }
         },
         {
             "id": "t_sword",
-            "name": "T-Sword",
+            "name": {
+                "PT-BR": "T-Sword",
+                "EN-US": "T-Sword"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 250,
             "power": 400,
-            "description": "Paralyze with Grey Sword"
+            "description": {
+                "PT-BR": "Paralyze with Grey Sword",
+                "EN-US": "Paralyze with Grey Sword"
+            }
         },
         {
             "id": "soul_plunder",
-            "name": "Soul Plunder",
+            "name": {
+                "PT-BR": "Soul Plunder",
+                "EN-US": "Soul Plunder"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 160,
             "power": 350,
-            "description": "Destroy enemy with a spell"
+            "description": {
+                "PT-BR": "Destroy enemy with a spell",
+                "EN-US": "Destroy enemy with a spell"
+            }
         },
         {
             "id": "omega_blade",
-            "name": "Omega Blade",
+            "name": {
+                "PT-BR": "Omega Blade",
+                "EN-US": "Omega Blade"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 280,
             "power": 500,
-            "description": "Sword move destroys evil"
+            "description": {
+                "PT-BR": "Sword move destroys evil",
+                "EN-US": "Sword move destroys evil"
+            }
         },
         {
             "id": "darkness_chaos",
-            "name": "Darkness Chaos",
+            "name": {
+                "PT-BR": "Darkness Chaos",
+                "EN-US": "Darkness Chaos"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 72,
             "mp": 180,
             "power": 700,
-            "description": "Huge damage with evil flame"
+            "description": {
+                "PT-BR": "Huge damage with evil flame",
+                "EN-US": "Huge damage with evil flame"
+            }
         },
         {
             "id": "black_scewer",
-            "name": "Black Scewer",
+            "name": {
+                "PT-BR": "Black Scewer",
+                "EN-US": "Black Scewer"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 72,
             "mp": 200,
             "power": 350,
-            "description": "Pierce with numerous dark matter"
+            "description": {
+                "PT-BR": "Pierce with numerous dark matter",
+                "EN-US": "Pierce with numerous dark matter"
+            }
         },
         {
             "id": "confuse_nebula",
-            "name": "Confuse Nebula",
+            "name": {
+                "PT-BR": "Confuse Nebula",
+                "EN-US": "Confuse Nebula"
+            },
             "type": "Magical",
             "element": "None",
             "elementStrength": 0,
             "mp": 90,
             "power": 360,
-            "description": "Massive confusion magic blow"
+            "description": {
+                "PT-BR": "Massive confusion magic blow",
+                "EN-US": "Massive confusion magic blow"
+            }
         },
         {
             "id": "blast_mode",
-            "name": "Blast Mode",
+            "name": {
+                "PT-BR": "Blast Mode",
+                "EN-US": "Blast Mode"
+            },
             "type": "Physical",
             "element": "None",
             "elementStrength": 0,
             "mp": 250,
             "power": 300,
-            "description": "Multiple shots to the enemy"
+            "description": {
+                "PT-BR": "Multiple shots to the enemy",
+                "EN-US": "Multiple shots to the enemy"
+            }
         },
         {
             "id": "cable_crusher",
-            "name": "Cable Crusher",
+            "name": {
+                "PT-BR": "Cable Crusher",
+                "EN-US": "Cable Crusher"
+            },
             "type": "Magical",
             "element": "Dark",
             "elementStrength": 72,
             "mp": 270,
             "power": 800,
-            "description": "Powerful and evil magic attack"
+            "description": {
+                "PT-BR": "Powerful and evil magic attack",
+                "EN-US": "Powerful and evil magic attack"
+            }
         }
     ]
 }

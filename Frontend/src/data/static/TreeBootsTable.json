@@ -1,0 +1,69 @@
+{
+    "Title": {
+        "PT-BR": "As Botas de Árvore",
+        "EN-US": "The Tree Boots"
+    },
+    "Description": {
+        "PT-BR": "Obtenha as Botas de Árvore para desbloquear novas áreas chutando árvores.",
+        "EN-US": "Obtain the Tree Boots to unlock new areas by kicking trees."
+    },
+    "Prerequisites": [
+        {
+            "Description": {
+                "PT-BR": "Possuir a Bolsa de Cards",
+                "EN-US": "Own the Folder Bag"
+            }
+        }
+    ],
+    "Steps": [
+        {
+            "Number": 1,
+            "Description": {
+                "PT-BR": "Fale com o Soccer Kid Hide em Plug Cape",
+                "EN-US": "Talk to the Soccer Kid Hide in Plug Cape"
+            }
+        },
+        {
+            "Number": 2,
+            "Description": {
+                "PT-BR": "Encontre o card perdido do Gabumon",
+                "EN-US": "Find the lost Gabumon's card"
+            }
+        },
+        {
+            "Number": 3,
+            "Description": {
+                "PT-BR": "Entregue o card do Gabumon ao Soccer Kid Hide",
+                "EN-US": "Give the Gabumon's card to the Soccer Kid Hide"
+            }
+        },
+        {
+            "Number": 4,
+            "Description": {
+                "PT-BR": "Fale com a Garçonete Debbie no Lamb Chop em Asuka City",
+                "EN-US": "Talk to Waitress Debbie in Lamb Chop in Asuka City"
+            }
+        },
+        {
+            "Number": 5,
+            "Description": {
+                "PT-BR": "Encontre Veemon em Wind Prairie",
+                "EN-US": "Find Veemon on Wind Prairie"
+            }
+        },
+        {
+            "Number": 6,
+            "Description": {
+                "PT-BR": "Brinque de esconde-esconde e encontre Veemon em Kicking Forest",
+                "EN-US": "Play Hide and Seek and find Veemon on Kicking Forest"
+            }
+        },
+        {
+            "Number": 7,
+            "Description": {
+                "PT-BR": "Receba as Botas de Árvore do Veemon",
+                "EN-US": "Receive the Tree Boots from Veemon"
+            }
+        }
+    ]
+}
