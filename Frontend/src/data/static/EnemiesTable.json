@@ -34,10 +34,9 @@
         "DVXP": 12,
         "EXP": 120,
         "BITS": 240,
-        "Location": {
-            "PT-BR": "Asuka Leste - Ruínas Protocol",
-            "EN-US": "Asuka East - Protocol Ruins"
-        },
+        "Location": [
+            "ProtocolRuins"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -82,7 +81,7 @@
         "DVXP": 14,
         "EXP": 140,
         "BITS": 280,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 14,
@@ -119,10 +118,9 @@
         "DVXP": 32,
         "EXP": 325,
         "BITS": 500,
-        "Location": {
-            "PT-BR": "Asuka Oeste - Fábrica Dum Dum - Sala de Operação",
-            "EN-US": "Asuka West - Dum Dum Factory - Operation Room"
-        },
+        "Location": [
+            "OperationRoom"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -167,7 +165,7 @@
         "DVXP": 32,
         "EXP": 320,
         "BITS": 740,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 71,
@@ -205,22 +203,10 @@
         "EXP": 6,
         "BITS": 10,
         "Location": [
-            {
-                "PT-BR": "Parque Central",
-                "EN-US": "Central Park"
-            },
-            {
-                "PT-BR": "Entrada da Wire Forest",
-                "EN-US": "Wire Forest Entrance"
-            },
-            {
-                "PT-BR": "Wire Forest Oeste",
-                "EN-US": "West Wire Forest"
-            },
-            {
-                "PT-BR": "Wire Forest Leste",
-                "EN-US": "East Wire Forest"
-            }
+            "CentralPark",
+            "WireForestEntrance",
+            "WestWireForest",
+            "EastWireForest"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -267,14 +253,8 @@
         "EXP": 5,
         "BITS": 20,
         "Location": [
-            {
-                "PT-BR": "Parque Central",
-                "EN-US": "Central Park"
-            },
-            {
-                "PT-BR": "Entrada da Wire Forest",
-                "EN-US": "Wire Forest Entrance"
-            }
+            "CentralPark",
+            "WireForestEntrance"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -321,10 +301,7 @@
         "EXP": 17,
         "BITS": 30,
         "Location": [
-            {
-                "PT-BR": "Lago do Divermon",
-                "EN-US": "Divermon's Lake"
-            }
+            "DivermonsLake"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
@@ -371,14 +348,8 @@
         "EXP": 19,
         "BITS": 40,
         "Location": [
-            {
-                "PT-BR": "Shell Beach",
-                "EN-US": "Shell Beach"
-            },
-            {
-                "PT-BR": "Floresta dos Chutes",
-                "EN-US": "Kicking Forest"
-            }
+            "ShellBeach",
+            "KickingForest"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
@@ -424,10 +395,9 @@
         "DVXP": 8,
         "EXP": 39,
         "BITS": 80,
-        "Location": {
-            "PT-BR": "Asuka Sul - Jungle Grave (No Escuro)",
-            "EN-US": "Asuka South - Jungle Grave (In The Dark)"
-        },
+        "Location": [
+            "JungleGraveInTheDark"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -473,26 +443,11 @@
         "EXP": 10,
         "BITS": 25,
         "Location": [
-            {
-                "PT-BR": "Shell Beach",
-                "EN-US": "Shell Beach"
-            },
-            {
-                "PT-BR": "Plug Cape",
-                "EN-US": "Plug Cape"
-            },
-            {
-                "PT-BR": "Wire Forest Oeste",
-                "EN-US": "West Wire Forest"
-            },
-            {
-                "PT-BR": "Wire Forest Leste",
-                "EN-US": "East Wire Forest"
-            },
-            {
-                "PT-BR": "Lago do Divermon",
-                "EN-US": "Divermon's Lake"
-            }
+            "ShellBeach",
+            "PlugCape",
+            "WestWireForest",
+            "EastWireForest",
+            "DivermonsLake"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Trovão",
@@ -539,18 +494,9 @@
         "EXP": 20,
         "BITS": 40,
         "Location": [
-            {
-                "PT-BR": "Shell Beach",
-                "EN-US": "Shell Beach"
-            },
-            {
-                "PT-BR": "Plug Cape",
-                "EN-US": "Plug Cape"
-            },
-            {
-                "PT-BR": "Floresta dos Chutes",
-                "EN-US": "Kicking Forest"
-            }
+            "ShellBeach",
+            "PlugCape",
+            "KickingForest"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -597,14 +543,8 @@
         "EXP": 11,
         "BITS": 20,
         "Location": [
-            {
-                "PT-BR": "Wire Forest Leste",
-                "EN-US": "East Wire Forest"
-            },
-            {
-                "PT-BR": "Wire Forest Oeste",
-                "EN-US": "West Wire Forest"
-            }
+            "EastWireForest",
+            "WestWireForest"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -651,10 +591,7 @@
         "EXP": 16,
         "BITS": 30,
         "Location": [
-            {
-                "PT-BR": "Pradaria do Vento",
-                "EN-US": "Wind Prairie"
-            }
+            "WindPrairie"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -701,10 +638,7 @@
         "EXP": 15,
         "BITS": 35,
         "Location": [
-            {
-                "PT-BR": "Pradaria do Vento",
-                "EN-US": "Wind Prairie"
-            }
+            "WindPrairie"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -751,10 +685,7 @@
         "EXP": 21,
         "BITS": 40,
         "Location": [
-            {
-                "PT-BR": "Floresta Protocol",
-                "EN-US": "Protocol Forest"
-            }
+            "ProtocolForest"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento (Chance de Envenenamento)",
@@ -801,18 +732,9 @@
         "EXP": 22,
         "BITS": 45,
         "Location": [
-            {
-                "PT-BR": "Floresta Protocol",
-                "EN-US": "Protocol Forest"
-            },
-            {
-                "PT-BR": "Ruínas Protocol",
-                "EN-US": "Protocol Ruins"
-            },
-            {
-                "PT-BR": "Asuka - Wire Forest Leste",
-                "EN-US": "Asuka - East Wire Forest"
-            }
+            "ProtocolForest",
+            "ProtocolRuins",
+            "AsukaEastWireForest"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -858,10 +780,9 @@
         "DVXP": 16,
         "EXP": 80,
         "BITS": 160,
-        "Location": {
-            "PT-BR": "Asuka Leste - Ruínas Protocol",
-            "EN-US": "Asuka East - Protocol Ruins"
-        },
+        "Location": [
+            "ProtocolRuins"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Elemental"
@@ -907,10 +828,7 @@
         "EXP": 27,
         "BITS": 55,
         "Location": [
-            {
-                "PT-BR": "Ruínas Protocol",
-                "EN-US": "Protocol Ruins"
-            }
+            "ProtocolRuins"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -957,14 +875,8 @@
         "EXP": 66,
         "BITS": 130,
         "Location": [
-            {
-                "PT-BR": "Asuka Oeste Wire Forest",
-                "EN-US": "Asuka West Wire Forest"
-            },
-            {
-                "PT-BR": "Asuka Entrada da Wire Forest",
-                "EN-US": "Asuka Wire Forest Entrance"
-            }
+            "AsukaWestWireForest",
+            "AsukaWireForestEntrance"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1011,18 +923,9 @@
         "EXP": 25,
         "BITS": 50,
         "Location": [
-            {
-                "PT-BR": "Floresta dos Chutes",
-                "EN-US": "Kicking Forest"
-            },
-            {
-                "PT-BR": "Phoenix Bay",
-                "EN-US": "Phoenix Bay"
-            },
-            {
-                "PT-BR": "Ether Jungle",
-                "EN-US": "Ether Jungle"
-            }
+            "KickingForest",
+            "PhoenixBay",
+            "EtherJungle"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1069,10 +972,7 @@
         "EXP": 31,
         "BITS": 60,
         "Location": [
-            {
-                "PT-BR": "Vale dos Tyranno",
-                "EN-US": "Tyranno Valley"
-            }
+            "TyrannoValley"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Fogo",
@@ -1119,14 +1019,8 @@
         "EXP": 30,
         "BITS": 60,
         "Location": [
-            {
-                "PT-BR": "Plug Cape",
-                "EN-US": "Plug Cape"
-            },
-            {
-                "PT-BR": "Vale dos Tyranno",
-                "EN-US": "Tyranno Valley"
-            }
+            "PlugCape",
+            "TyrannoValley"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Fogo",
@@ -1173,10 +1067,7 @@
         "EXP": 29,
         "BITS": 70,
         "Location": [
-            {
-                "PT-BR": "Vale dos Tyranno",
-                "EN-US": "Tyranno Valley"
-            }
+            "TyrannoValley"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1222,10 +1113,9 @@
         "DVXP": 8,
         "EXP": 41,
         "BITS": 85,
-        "Location": {
-            "PT-BR": "Asuka Sul - Bulk Swap, Tranquil Swamp, Bulk Bridge, Jungle Grave",
-            "EN-US": "Asuka South - Bulk Swap, Tranquil Swamp, Bulk Bridge, Jungle Grave"
-        },
+        "Location": [
+            "BulkSwap,TranquilSwamp,BulkBridge,JungleGrave"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1271,30 +1161,12 @@
         "EXP": 40,
         "BITS": 80,
         "Location": [
-            {
-                "PT-BR": "Plug Cape",
-                "EN-US": "Plug Cape"
-            },
-            {
-                "PT-BR": "Bulk Swamp",
-                "EN-US": "Bulk Swamp"
-            },
-            {
-                "PT-BR": "Bios Swamp",
-                "EN-US": "Bios Swamp"
-            },
-            {
-                "PT-BR": "Tranquil Swamp",
-                "EN-US": "Tranquil Swamp"
-            },
-            {
-                "PT-BR": "Bulk Bridge",
-                "EN-US": "Bulk Bridge"
-            },
-            {
-                "PT-BR": "Jungle Grave",
-                "EN-US": "Jungle Grave"
-            }
+            "PlugCape",
+            "BulkSwamp",
+            "BiosSwamp",
+            "TranquilSwamp",
+            "BulkBridge",
+            "JungleGrave"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
@@ -1340,10 +1212,9 @@
         "DVXP": 9,
         "EXP": 46,
         "BITS": 90,
-        "Location": {
-            "PT-BR": "Asuka Sul - Jungle Grave (No Escuro)",
-            "EN-US": "Asuka South - Jungle Grave (In The Dark)"
-        },
+        "Location": [
+            "JungleGraveInTheDark"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Elemental"
@@ -1388,10 +1259,9 @@
         "DVXP": 31,
         "EXP": 154,
         "BITS": 310,
-        "Location": {
-            "PT-BR": "Asuka Sul - Jungle Grave",
-            "EN-US": "Asuka South - Jungle Grave"
-        },
+        "Location": [
+            "JungleGrave"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -1437,14 +1307,8 @@
         "EXP": 96,
         "BITS": 160,
         "Location": [
-            {
-                "PT-BR": "Asuka Leste - Wire Forest Leste",
-                "EN-US": "Asuka East - East Wire Forest"
-            },
-            {
-                "PT-BR": "Asuka Floresta Protocol",
-                "EN-US": "Asuka Protocol Forest"
-            }
+            "EastWireForest",
+            "AsukaProtocolForest"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1490,10 +1354,9 @@
         "DVXP": 10,
         "EXP": 50,
         "BITS": 190,
-        "Location": {
-            "PT-BR": "Asuka Sul - Phoenix Bay, Ether Jungle",
-            "EN-US": "Asuka South - Phoenix Bay, Ether Jungle"
-        },
+        "Location": [
+            "PhoenixBay,EtherJungle"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1538,10 +1401,9 @@
         "DVXP": 18,
         "EXP": 91,
         "BITS": 180,
-        "Location": {
-            "PT-BR": "Asuka Sul - South Cape Asuka Central - Shell Beach, Plug Cape",
-            "EN-US": "Asuka South - South Cape Asuka Central - Shell Beach, Plug Cape"
-        },
+        "Location": [
+            "SouthCapeAsukaCentralShellBeach,PlugCape"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -1586,10 +1448,9 @@
         "DVXP": 29,
         "EXP": 145,
         "BITS": 290,
-        "Location": {
-            "PT-BR": "Asuka Leste - Lago do Divermon Asuka Sul - Bulk Swamp, Bulk Bridge, Jungle Grave",
-            "EN-US": "Asuka East - Divermon's Lake Asuka South - Bulk Swamp, Bulk Bridge, Jungle Grave"
-        },
+        "Location": [
+            "DivermonsLakeAsukaSouthBulkSwamp,BulkBridge,JungleGrave"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1634,10 +1495,9 @@
         "DVXP": 20,
         "EXP": 98,
         "BITS": 200,
-        "Location": {
-            "PT-BR": "Asuka Seabeds 01, 03, 04, 07, 09",
-            "EN-US": "Asuka Seabeds 01, 03, 04, 07, 09"
-        },
+        "Location": [
+            "AsukaSeabeds01,03,04,07,09"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1682,10 +1542,9 @@
         "DVXP": 27,
         "EXP": 136,
         "BITS": 240,
-        "Location": {
-            "PT-BR": "Seabeds 01, 02, 04",
-            "EN-US": "Seabeds 01, 02, 04"
-        },
+        "Location": [
+            "Seabeds01,02,04"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -1730,10 +1589,9 @@
         "DVXP": 40,
         "EXP": 200,
         "BITS": 400,
-        "Location": {
-            "PT-BR": "Seabeds 05, 06",
-            "EN-US": "Seabeds 05, 06"
-        },
+        "Location": [
+            "Seabeds05,06"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -1778,10 +1636,9 @@
         "DVXP": 24,
         "EXP": 118,
         "BITS": 200,
-        "Location": {
-            "PT-BR": "Asuka Leste - Lago do Divermon (underwater) Amaterasu East - Divermon's Lake (underwater)",
-            "EN-US": "Asuka East - Divermon's Lake (underwater) Amaterasu East - Divermon's Lake (underwater)"
-        },
+        "Location": [
+            "DivermonsLakeunderwaterAmaterasuEastDivermonsLakeunderwater"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1826,10 +1683,9 @@
         "DVXP": 20,
         "EXP": 101,
         "BITS": 490,
-        "Location": {
-            "PT-BR": "Asuka Sul - Suzaku UG Lake",
-            "EN-US": "Asuka South - Suzaku UG Lake"
-        },
+        "Location": [
+            "SuzakuUGLake"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1874,10 +1730,9 @@
         "DVXP": 12,
         "EXP": 58,
         "BITS": 120,
-        "Location": {
-            "PT-BR": "Asuka Sul - Bios Swamp Asuka Leste - Lago do Divermon",
-            "EN-US": "Asuka South - Bios Swamp Asuka East - Divermon's Lake"
-        },
+        "Location": [
+            "BiosSwampAsukaEastDivermonsLake"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -1922,10 +1777,9 @@
         "DVXP": 23,
         "EXP": 116,
         "BITS": 220,
-        "Location": {
-            "PT-BR": "Asuka Oeste - North Badland W, Bullet Valley",
-            "EN-US": "Asuka West - North Badland W, Bullet Valley"
-        },
+        "Location": [
+            "NorthBadlandW,BulletValley"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1970,10 +1824,9 @@
         "DVXP": 20,
         "EXP": 100,
         "BITS": 205,
-        "Location": {
-            "PT-BR": "Asuka Oeste - South Badland, North Badland E",
-            "EN-US": "Asuka West - South Badland, North Badland E"
-        },
+        "Location": [
+            "SouthBadland,NorthBadlandE"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2018,10 +1871,9 @@
         "DVXP": 20,
         "EXP": 102,
         "BITS": 200,
-        "Location": {
-            "PT-BR": "Asuka Oeste - South Badland, North Badland E",
-            "EN-US": "Asuka West - South Badland, North Badland E"
-        },
+        "Location": [
+            "SouthBadland,NorthBadlandE"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2066,10 +1918,9 @@
         "DVXP": 22,
         "EXP": 112,
         "BITS": 200,
-        "Location": {
-            "PT-BR": "Asuka Central - Plug Cape Asuka Oeste - Bullet Valley, North Badland W",
-            "EN-US": "Asuka Central - Plug Cape Asuka West - Bullet Valley, North Badland W"
-        },
+        "Location": [
+            "AsukaCentralPlugCapeAsukaWestBulletValley,NorthBadlandW"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2114,10 +1965,9 @@
         "DVXP": 44,
         "EXP": 220,
         "BITS": 400,
-        "Location": {
-            "PT-BR": "Boards 03, 04, 05, 06, 08, 09, 11, 13, 18, 20, 23, 24, 25, 26, 28, 29, 30",
-            "EN-US": "Boards 03, 04, 05, 06, 08, 09, 11, 13, 18, 20, 23, 24, 25, 26, 28, 29, 30"
-        },
+        "Location": [
+            "Boards03,04,05,06,08,09,11,13,18,20,23,24,25,26,28,29,30"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2162,10 +2012,9 @@
         "DVXP": 45,
         "EXP": 223,
         "BITS": 440,
-        "Location": {
-            "PT-BR": "Amaterasu West - South Noise Desert, Mobius Desert, Mirage Tower",
-            "EN-US": "Amaterasu West - South Noise Desert, Mobius Desert, Mirage Tower"
-        },
+        "Location": [
+            "AmaterasuWestSouthNoiseDesert,MobiusDesert,MirageTower"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2210,10 +2059,9 @@
         "DVXP": 22,
         "EXP": 109,
         "BITS": 220,
-        "Location": {
-            "PT-BR": "Asuka Oeste - S Noise Desert, Mobius Desert, Mirage Tower",
-            "EN-US": "Asuka West - S Noise Desert, Mobius Desert, Mirage Tower"
-        },
+        "Location": [
+            "SNoiseDesert,MobiusDesert,MirageTower"
+        ],
         "RegularAttack": {
             "PT-BR": "Thunder Element (Chance of Sleep)",
             "EN-US": "Thunder Element (Chance of Sleep)"
@@ -2258,10 +2106,9 @@
         "DVXP": 22,
         "EXP": 110,
         "BITS": 225,
-        "Location": {
-            "PT-BR": "Asuka Oeste - Mobius Desert",
-            "EN-US": "Asuka West - Mobius Desert"
-        },
+        "Location": [
+            "MobiusDesert"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2306,10 +2153,9 @@
         "DVXP": 25,
         "EXP": 125,
         "BITS": 250,
-        "Location": {
-            "PT-BR": "Asuka Oeste - Duct Rooms 01, 02, 03, 04, Sala de Operação, Secret Stairs",
-            "EN-US": "Asuka West - Duct Rooms 01, 02, 03, 04, Operation Room, Secret Stairs"
-        },
+        "Location": [
+            "DuctRooms01,02,03,04,OperationRoom,SecretStairs"
+        ],
         "RegularAttack": {
             "PT-BR": "Machine Element (Chance of Freeze)",
             "EN-US": "Machine Element (Chance of Freeze)"
@@ -2354,7 +2200,7 @@
         "DVXP": 29,
         "EXP": 147,
         "BITS": 290,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 114,
@@ -2391,10 +2237,9 @@
         "DVXP": 23,
         "EXP": 115,
         "BITS": 235,
-        "Location": {
-            "PT-BR": "Asuka Oeste - Fábrica Dum Dum",
-            "EN-US": "Asuka West - Dum Dum Factory"
-        },
+        "Location": [
+            "DumDumFactory"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trovão",
             "EN-US": "Thunder Element"
@@ -2439,10 +2284,9 @@
         "DVXP": 23,
         "EXP": 117,
         "BITS": 230,
-        "Location": {
-            "PT-BR": "Asuka Oeste - Fábrica Dum Dum",
-            "EN-US": "Asuka West - Dum Dum Factory"
-        },
+        "Location": [
+            "DumDumFactory"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -2487,10 +2331,9 @@
         "DVXP": 24,
         "EXP": 123,
         "BITS": 250,
-        "Location": {
-            "PT-BR": "Asuka Oeste - Fábrica Dum Dum",
-            "EN-US": "Asuka West - Dum Dum Factory"
-        },
+        "Location": [
+            "DumDumFactory"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2535,10 +2378,9 @@
         "DVXP": 24,
         "EXP": 120,
         "BITS": 200,
-        "Location": {
-            "PT-BR": "Asuka Oeste - Fábrica Dum Dum, Sala de Operação, Secret Stairs",
-            "EN-US": "Asuka West - Dum Dum Factory, Operation Room, Secret Stairs"
-        },
+        "Location": [
+            "DumDumFactory,OperationRoom,SecretStairs"
+        ],
         "RegularAttack": {
             "PT-BR": "Thunder Elemental (Chance of Freeze)",
             "EN-US": "Thunder Elemental (Chance of Freeze)"
@@ -2583,10 +2425,9 @@
         "DVXP": 25,
         "EXP": 124,
         "BITS": 300,
-        "Location": {
-            "PT-BR": "Asuka Oeste - Fábrica Dum Dum - Sewers",
-            "EN-US": "Asuka West - Dum Dum Factory - Sewers"
-        },
+        "Location": [
+            "DumDumFactorySewers"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -2631,10 +2472,9 @@
         "DVXP": 26,
         "EXP": 129,
         "BITS": 190,
-        "Location": {
-            "PT-BR": "Asuka Oeste - Fábrica Dum Dum - Sewers",
-            "EN-US": "Asuka West - Dum Dum Factory - Sewers"
-        },
+        "Location": [
+            "DumDumFactorySewers"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -2679,10 +2519,9 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 470,
-        "Location": {
-            "PT-BR": "Amaterasu West - Fábrica Dum Dum - Sewers",
-            "EN-US": "Amaterasu West - Dum Dum Factory - Sewers"
-        },
+        "Location": [
+            "AmaterasuWestDumDumFactorySewers"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -2727,10 +2566,9 @@
         "DVXP": 47,
         "EXP": 234,
         "BITS": 100,
-        "Location": {
-            "PT-BR": "Amaterasu West - Fábrica Dum Dum - Sewers",
-            "EN-US": "Amaterasu West - Dum Dum Factory - Sewers"
-        },
+        "Location": [
+            "AmaterasuWestDumDumFactorySewers"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -2775,10 +2613,9 @@
         "DVXP": 27,
         "EXP": 135,
         "BITS": 270,
-        "Location": {
-            "PT-BR": "Asuka City - Water Tunnel",
-            "EN-US": "Asuka City - Water Tunnel"
-        },
+        "Location": [
+            "AsukaCityWaterTunnel"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2823,10 +2660,9 @@
         "DVXP": 27,
         "EXP": 134,
         "BITS": 270,
-        "Location": {
-            "PT-BR": "Asuka City - Sewers - Water Tunnel",
-            "EN-US": "Asuka City - Sewers - Water Tunnel"
-        },
+        "Location": [
+            "AsukaCitySewersWaterTunnel"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2871,10 +2707,9 @@
         "DVXP": 46,
         "EXP": 233,
         "BITS": 450,
-        "Location": {
-            "PT-BR": "Amaterasu West - Fábrica Dum Dum",
-            "EN-US": "Amaterasu West - Dum Dum Factory"
-        },
+        "Location": [
+            "AmaterasuWestDumDumFactory"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -2919,10 +2754,9 @@
         "DVXP": 29,
         "EXP": 145,
         "BITS": 320,
-        "Location": {
-            "PT-BR": "Tamer Only",
-            "EN-US": "Tamer Only"
-        },
+        "Location": [
+            "TamerOnly"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2967,10 +2801,9 @@
         "DVXP": 30,
         "EXP": 152,
         "BITS": 300,
-        "Location": {
-            "PT-BR": "Tamer Only",
-            "EN-US": "Tamer Only"
-        },
+        "Location": [
+            "TamerOnly"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -3015,10 +2848,9 @@
         "DVXP": 29,
         "EXP": 146,
         "BITS": 280,
-        "Location": {
-            "PT-BR": "Tamer Only",
-            "EN-US": "Tamer Only"
-        },
+        "Location": [
+            "TamerOnly"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3063,10 +2895,9 @@
         "DVXP": 31,
         "EXP": 155,
         "BITS": 330,
-        "Location": {
-            "PT-BR": "Asuka Sul - Jungle Grave (before Zanbamon), Catacombs, Catacomb Back Entrance",
-            "EN-US": "Asuka South - Jungle Grave (before Zanbamon), Catacombs, Catacomb Back Entrance"
-        },
+        "Location": [
+            "JungleGravebeforeZanbamon,Catacombs,CatacombBackEntrance"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -3111,10 +2942,9 @@
         "DVXP": 36,
         "EXP": 225,
         "BITS": 770,
-        "Location": {
-            "PT-BR": "Optical Network - Bug Maze, Bug Maze Pit",
-            "EN-US": "Optical Network - Bug Maze, Bug Maze Pit"
-        },
+        "Location": [
+            "OpticalNetworkBugMaze,BugMazePit"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3160,18 +2990,9 @@
         "EXP": 215,
         "BITS": 420,
         "Location": [
-            {
-                "PT-BR": "Amaterasu East - Wire Forest Oeste",
-                "EN-US": "Amaterasu East - West Wire Forest"
-            },
-            {
-                "PT-BR": "Amaterasu Central - Entrada da Wire Forest",
-                "EN-US": "Amaterasu Central - Wire Forest Entrance"
-            },
-            {
-                "PT-BR": "Amaterasu Central - Plug Cape",
-                "EN-US": "Amaterasu Central - Plug Cape"
-            }
+            "AmaterasuEastWestWireForest",
+            "AmaterasuCentralWireForestEntrance",
+            "AmaterasuCentralPlugCape"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -3217,10 +3038,9 @@
         "DVXP": 34,
         "EXP": 168,
         "BITS": 340,
-        "Location": {
-            "PT-BR": "Amaterasu East - Wire Forest Leste, Wind Prarie",
-            "EN-US": "Amaterasu East - East Wire Forest, Wind Prarie"
-        },
+        "Location": [
+            "AmaterasuEastEastWireForest,WindPrarie"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3265,10 +3085,9 @@
         "DVXP": 38,
         "EXP": 189,
         "BITS": 380,
-        "Location": {
-            "PT-BR": "Amaterasu East - Wire Forest Oeste Amaterasu South - Phoenix Bay, Ether Jungle, South Cape",
-            "EN-US": "Amaterasu East - West Wire Forest Amaterasu South - Phoenix Bay, Ether Jungle, South Cape"
-        },
+        "Location": [
+            "AmaterasuEastWestWireForestAmaterasuSouthPhoenixBay,EtherJungle,SouthCape"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3313,10 +3132,9 @@
         "DVXP": 35,
         "EXP": 176,
         "BITS": 350,
-        "Location": {
-            "PT-BR": "Amaterasu East - Floresta Protocol, Ruínas Protocol",
-            "EN-US": "Amaterasu East - Protocol Forest, Protocol Ruins"
-        },
+        "Location": [
+            "AmaterasuEastProtocolForest,ProtocolRuins"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3361,10 +3179,9 @@
         "DVXP": 35,
         "EXP": 175,
         "BITS": 400,
-        "Location": {
-            "PT-BR": "Amaterasu East - Ruínas Protocol",
-            "EN-US": "Amaterasu East - Protocol Ruins"
-        },
+        "Location": [
+            "AmaterasuEastProtocolRuins"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3409,10 +3226,9 @@
         "DVXP": 45,
         "EXP": 225,
         "BITS": 450,
-        "Location": {
-            "PT-BR": "Amaterasu Central - Plug Cape Amaterasu West - North Badland W, Bullet Valley",
-            "EN-US": "Amaterasu Central - Plug Cape Amaterasu West - North Badland W, Bullet Valley"
-        },
+        "Location": [
+            "AmaterasuCentralPlugCapeAmaterasuWestNorthBadlandW,BulletValley"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento (Chance de Envenenamento)",
             "EN-US": "No Element (Chance of Poison)"
@@ -3457,10 +3273,9 @@
         "DVXP": 34,
         "EXP": 172,
         "BITS": 320,
-        "Location": {
-            "PT-BR": "Amaterasu East - Floresta dos Chutes, Floresta Protocol",
-            "EN-US": "Amaterasu East - Kicking Forest, Protocol Forest"
-        },
+        "Location": [
+            "AmaterasuEastKickingForest,ProtocolForest"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3505,10 +3320,9 @@
         "DVXP": 36,
         "EXP": 183,
         "BITS": 400,
-        "Location": {
-            "PT-BR": "Amaterasu East - Pradaria do Vento, Floresta dos Chutes (Cliff), Vale dos Tyranno",
-            "EN-US": "Amaterasu East - Wind Prairie, Kicking Forest (Cliff), Tyranno Valley"
-        },
+        "Location": [
+            "AmaterasuEastWindPrairie,KickingForestCliff,TyrannoValley"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -3553,10 +3367,9 @@
         "DVXP": 36,
         "EXP": 179,
         "BITS": 360,
-        "Location": {
-            "PT-BR": "Amaterasu East - Floresta dos Chutes (Cliff), Vale dos Tyranno",
-            "EN-US": "Amaterasu East - Kicking Forest (Cliff), Tyranno Valley"
-        },
+        "Location": [
+            "AmaterasuEastKickingForestCliff,TyrannoValley"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3601,10 +3414,9 @@
         "DVXP": 45,
         "EXP": 225,
         "BITS": 420,
-        "Location": {
-            "PT-BR": "Magasta Undersea Base",
-            "EN-US": "Magasta Undersea Base"
-        },
+        "Location": [
+            "MagastaUnderseaBase"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3649,10 +3461,9 @@
         "DVXP": 37,
         "EXP": 185,
         "BITS": 370,
-        "Location": {
-            "PT-BR": "Seabeds 11, 14, 17",
-            "EN-US": "Seabeds 11, 14, 17"
-        },
+        "Location": [
+            "Seabeds11,14,17"
+        ],
         "RegularAttack": {
             "PT-BR": "Water Element (Hits Twice)",
             "EN-US": "Water Element (Hits Twice)"
@@ -3697,10 +3508,9 @@
         "DVXP": 44,
         "EXP": 221,
         "BITS": 440,
-        "Location": {
-            "PT-BR": "Seabeds 13, 19",
-            "EN-US": "Seabeds 13, 19"
-        },
+        "Location": [
+            "Seabeds13,19"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -3745,10 +3555,9 @@
         "DVXP": 35,
         "EXP": 174,
         "BITS": 350,
-        "Location": {
-            "PT-BR": "Amaterasu South - Bulk Bridge, Bulk Swamp, Bios Swamp, Tranquil Swamp, Jungle Grave",
-            "EN-US": "Amaterasu South - Bulk Bridge, Bulk Swamp, Bios Swamp, Tranquil Swamp, Jungle Grave"
-        },
+        "Location": [
+            "AmaterasuSouthBulkBridge,BulkSwamp,BiosSwamp,TranquilSwamp,JungleGrave"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trovão",
             "EN-US": "Thunder Element"
@@ -3793,10 +3602,9 @@
         "DVXP": 34,
         "EXP": 170,
         "BITS": 340,
-        "Location": {
-            "PT-BR": "Amaterasu East - Lago do Divermon, Floresta dos Chutes",
-            "EN-US": "Amaterasu East - Divermon's Lake, Kicking Forest"
-        },
+        "Location": [
+            "AmaterasuEastDivermonsLake,KickingForest"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -3841,10 +3649,9 @@
         "DVXP": 36,
         "EXP": 180,
         "BITS": 360,
-        "Location": {
-            "PT-BR": "Amaterasu South - Jungle Grave",
-            "EN-US": "Amaterasu South - Jungle Grave"
-        },
+        "Location": [
+            "AmaterasuSouthJungleGrave"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -3889,10 +3696,9 @@
         "DVXP": 39,
         "EXP": 196,
         "BITS": 390,
-        "Location": {
-            "PT-BR": "Amaterasu South - Catacombs",
-            "EN-US": "Amaterasu South - Catacombs"
-        },
+        "Location": [
+            "AmaterasuSouthCatacombs"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -3937,10 +3743,9 @@
         "DVXP": 36,
         "EXP": 180,
         "BITS": 360,
-        "Location": {
-            "PT-BR": "Amaterasu South - Phoenix Bay, Ether Jungle",
-            "EN-US": "Amaterasu South - Phoenix Bay, Ether Jungle"
-        },
+        "Location": [
+            "AmaterasuSouthPhoenixBay,EtherJungle"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3985,10 +3790,9 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 450,
-        "Location": {
-            "PT-BR": "Asuka Norte - Kulon Mine Circuit Boards - 02, 05, 06, 07, 10, 12, 19, 21, 22",
-            "EN-US": "Asuka North - Kulon Mine Circuit Boards - 02, 05, 06, 07, 10, 12, 19, 21, 22"
-        },
+        "Location": [
+            "KulonMineCircuitBoards02,05,06,07,10,12,19,21,22"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -4033,10 +3837,9 @@
         "DVXP": 41,
         "EXP": 204,
         "BITS": 400,
-        "Location": {
-            "PT-BR": "Asuka Norte - Boot Mountain, Fire Dungeon",
-            "EN-US": "Asuka North - Boot Mountain, Fire Dungeon"
-        },
+        "Location": [
+            "BootMountain,FireDungeon"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -4081,10 +3884,9 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 410,
-        "Location": {
-            "PT-BR": "Asuka Norte - Boot Mountain",
-            "EN-US": "Asuka North - Boot Mountain"
-        },
+        "Location": [
+            "BootMountain"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -4129,10 +3931,9 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 420,
-        "Location": {
-            "PT-BR": "Asuka Norte - Snow Mountain, Freeze Mountain",
-            "EN-US": "Asuka North - Snow Mountain, Freeze Mountain"
-        },
+        "Location": [
+            "SnowMountain,FreezeMountain"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4177,10 +3978,9 @@
         "DVXP": 41,
         "EXP": 206,
         "BITS": 420,
-        "Location": {
-            "PT-BR": "Asuka Norte - Snow Mountain, Freeze Mountain",
-            "EN-US": "Asuka North - Snow Mountain, Freeze Mountain"
-        },
+        "Location": [
+            "SnowMountain,FreezeMountain"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Gelo",
             "EN-US": "Ice Element"
@@ -4225,10 +4025,9 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 420,
-        "Location": {
-            "PT-BR": "Asuka Norte - Lake of Ice",
-            "EN-US": "Asuka North - Lake of Ice"
-        },
+        "Location": [
+            "LakeofIce"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Gelo",
             "EN-US": "Ice Element"
@@ -4273,10 +4072,9 @@
         "DVXP": 46,
         "EXP": 230,
         "BITS": 460,
-        "Location": {
-            "PT-BR": "Amaterasu West - Duct Rooms 01, 02, 03, 04, Sala de Operação, Secret Stairs",
-            "EN-US": "Amaterasu West - Duct Rooms 01, 02, 03, 04, Operation Room, Secret Stairs"
-        },
+        "Location": [
+            "AmaterasuWestDuctRooms01,02,03,04,OperationRoom,SecretStairs"
+        ],
         "RegularAttack": {
             "PT-BR": "Machine Element; Counter (Physical)",
             "EN-US": "Machine Element; Counter (Physical)"
@@ -4321,10 +4119,9 @@
         "DVXP": 43,
         "EXP": 218,
         "BITS": 430,
-        "Location": {
-            "PT-BR": "Amaterasu North - Freeze Mountain, Snow Mountain",
-            "EN-US": "Amaterasu North - Freeze Mountain, Snow Mountain"
-        },
+        "Location": [
+            "AmaterasuNorthFreezeMountain,SnowMountain"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Gelo",
             "EN-US": "Ice Element"
@@ -4369,10 +4166,9 @@
         "DVXP": 49,
         "EXP": 244,
         "BITS": 490,
-        "Location": {
-            "PT-BR": "Amaterasu North - Fire Dungeon",
-            "EN-US": "Amaterasu North - Fire Dungeon"
-        },
+        "Location": [
+            "AmaterasuNorthFireDungeon"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -4417,10 +4213,9 @@
         "DVXP": 43,
         "EXP": 217,
         "BITS": 430,
-        "Location": {
-            "PT-BR": "Asuka Norte - Fire Dungeon",
-            "EN-US": "Asuka North - Fire Dungeon"
-        },
+        "Location": [
+            "FireDungeon"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4465,10 +4260,9 @@
         "DVXP": 43,
         "EXP": 214,
         "BITS": 390,
-        "Location": {
-            "PT-BR": "Asuka Norte - Dark Dungeon",
-            "EN-US": "Asuka North - Dark Dungeon"
-        },
+        "Location": [
+            "DarkDungeon"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4513,7 +4307,7 @@
         "DVXP": 44,
         "EXP": 223,
         "BITS": 420,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 159,
@@ -4550,10 +4344,9 @@
         "DVXP": 44,
         "EXP": 221,
         "BITS": 470,
-        "Location": {
-            "PT-BR": "Magasta Undersea Base",
-            "EN-US": "Magasta Undersea Base"
-        },
+        "Location": [
+            "MagastaUnderseaBase"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -4598,10 +4391,9 @@
         "DVXP": 44,
         "EXP": 223,
         "BITS": 460,
-        "Location": {
-            "PT-BR": "Magasta Undersea Base",
-            "EN-US": "Magasta Undersea Base"
-        },
+        "Location": [
+            "MagastaUnderseaBase"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4646,10 +4438,9 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 430,
-        "Location": {
-            "PT-BR": "Magasta Undersea Base",
-            "EN-US": "Magasta Undersea Base"
-        },
+        "Location": [
+            "MagastaUnderseaBase"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -4694,10 +4485,9 @@
         "DVXP": 43,
         "EXP": 216,
         "BITS": 480,
-        "Location": {
-            "PT-BR": "Magasta Undersea Base",
-            "EN-US": "Magasta Undersea Base"
-        },
+        "Location": [
+            "MagastaUnderseaBase"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4743,14 +4533,8 @@
         "EXP": 220,
         "BITS": 450,
         "Location": [
-            {
-                "PT-BR": "Amaterasu Central - Parque Central",
-                "EN-US": "Amaterasu Central - Central Park"
-            },
-            {
-                "PT-BR": "Amaterasu Central - Shell Beach",
-                "EN-US": "Amaterasu Central - Shell Beach"
-            }
+            "AmaterasuCentralCentralPark",
+            "AmaterasuCentralShellBeach"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -4797,14 +4581,8 @@
         "EXP": 222,
         "BITS": 610,
         "Location": [
-            {
-                "PT-BR": "Amaterasu Central - Parque Central",
-                "EN-US": "Amaterasu Central - Central Park"
-            },
-            {
-                "PT-BR": "Amaterasu Central - Entrada da Wire Forest",
-                "EN-US": "Amaterasu Central - Wire Forest Entrance"
-            }
+            "AmaterasuCentralCentralPark",
+            "AmaterasuCentralWireForestEntrance"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -4850,10 +4628,9 @@
         "DVXP": 54,
         "EXP": 273,
         "BITS": 520,
-        "Location": {
-            "PT-BR": "Tamer Only",
-            "EN-US": "Tamer Only"
-        },
+        "Location": [
+            "TamerOnly"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -4898,10 +4675,9 @@
         "DVXP": 49,
         "EXP": 247,
         "BITS": 490,
-        "Location": {
-            "PT-BR": "Amaterasu North - Ice Dungeon",
-            "EN-US": "Amaterasu North - Ice Dungeon"
-        },
+        "Location": [
+            "AmaterasuNorthIceDungeon"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4946,7 +4722,7 @@
         "DVXP": 45,
         "EXP": 225,
         "BITS": 460,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 168,
@@ -4983,10 +4759,9 @@
         "DVXP": 45,
         "EXP": 224,
         "BITS": 440,
-        "Location": {
-            "PT-BR": "Amaterasu West - North Badland W, Bullet Valley",
-            "EN-US": "Amaterasu West - North Badland W, Bullet Valley"
-        },
+        "Location": [
+            "AmaterasuWestNorthBadlandW,BulletValley"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5031,10 +4806,9 @@
         "DVXP": 44,
         "EXP": 222,
         "BITS": 460,
-        "Location": {
-            "PT-BR": "Amaterasu West - North Badland E, South Badland",
-            "EN-US": "Amaterasu West - North Badland E, South Badland"
-        },
+        "Location": [
+            "AmaterasuWestNorthBadlandE,SouthBadland"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5079,10 +4853,9 @@
         "DVXP": 45,
         "EXP": 226,
         "BITS": 500,
-        "Location": {
-            "PT-BR": "Amaterasu West - North Badland E, South Badland",
-            "EN-US": "Amaterasu West - North Badland E, South Badland"
-        },
+        "Location": [
+            "AmaterasuWestNorthBadlandE,SouthBadland"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5127,10 +4900,9 @@
         "DVXP": 45,
         "EXP": 227,
         "BITS": 440,
-        "Location": {
-            "PT-BR": "Amaterasu West - Pelche Oasis, Noise Desert",
-            "EN-US": "Amaterasu West - Pelche Oasis, Noise Desert"
-        },
+        "Location": [
+            "AmaterasuWestPelcheOasis,NoiseDesert"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5175,10 +4947,9 @@
         "DVXP": 55,
         "EXP": 276,
         "BITS": 530,
-        "Location": {
-            "PT-BR": "Spy Satellite - Gunslinger 1F",
-            "EN-US": "Spy Satellite - Gunslinger 1F"
-        },
+        "Location": [
+            "SpySatelliteGunslinger1F"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5223,10 +4994,9 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 440,
-        "Location": {
-            "PT-BR": "Amaterasu North - Boot Mountain, Fire Dungeon",
-            "EN-US": "Amaterasu North - Boot Mountain, Fire Dungeon"
-        },
+        "Location": [
+            "AmaterasuNorthBootMountain,FireDungeon"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -5271,10 +5041,9 @@
         "DVXP": 48,
         "EXP": 243,
         "BITS": 500,
-        "Location": {
-            "PT-BR": "Amaterasu North - Kulon Mine, Kulon Pit",
-            "EN-US": "Amaterasu North - Kulon Mine, Kulon Pit"
-        },
+        "Location": [
+            "AmaterasuNorthKulonMine,KulonPit"
+        ],
         "RegularAttack": {
             "PT-BR": "Thunder Element; Counter (Physical)",
             "EN-US": "Thunder Element; Counter (Physical)"
@@ -5319,10 +5088,9 @@
         "DVXP": 56,
         "EXP": 280,
         "BITS": 560,
-        "Location": {
-            "PT-BR": "Tamer Only",
-            "EN-US": "Tamer Only"
-        },
+        "Location": [
+            "TamerOnly"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -5367,10 +5135,9 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 500,
-        "Location": {
-            "PT-BR": "Amaterasu West - Fábrica Dum Dum",
-            "EN-US": "Amaterasu West - Dum Dum Factory"
-        },
+        "Location": [
+            "AmaterasuWestDumDumFactory"
+        ],
         "RegularAttack": {
             "PT-BR": "Machine Element (Hits Twice)",
             "EN-US": "Machine Element (Hits Twice)"
@@ -5415,10 +5182,9 @@
         "DVXP": 55,
         "EXP": 277,
         "BITS": 530,
-        "Location": {
-            "PT-BR": "Spy Satellite - Gunslinger 1F",
-            "EN-US": "Spy Satellite - Gunslinger 1F"
-        },
+        "Location": [
+            "SpySatelliteGunslinger1F"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5463,10 +5229,9 @@
         "DVXP": 56,
         "EXP": 282,
         "BITS": 550,
-        "Location": {
-            "PT-BR": "Spy Satellite - Gunslinger 1F",
-            "EN-US": "Spy Satellite - Gunslinger 1F"
-        },
+        "Location": [
+            "SpySatelliteGunslinger1F"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5511,10 +5276,9 @@
         "DVXP": 49,
         "EXP": 246,
         "BITS": 490,
-        "Location": {
-            "PT-BR": "Amaterasu North - Dark Dungeon",
-            "EN-US": "Amaterasu North - Dark Dungeon"
-        },
+        "Location": [
+            "AmaterasuNorthDarkDungeon"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5559,10 +5323,9 @@
         "DVXP": 55,
         "EXP": 277,
         "BITS": 540,
-        "Location": {
-            "PT-BR": "Tamer Only",
-            "EN-US": "Tamer Only"
-        },
+        "Location": [
+            "TamerOnly"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -5607,10 +5370,9 @@
         "DVXP": 56,
         "EXP": 279,
         "BITS": 600,
-        "Location": {
-            "PT-BR": "Spy Satellite - Gunslinger 2F",
-            "EN-US": "Spy Satellite - Gunslinger 2F"
-        },
+        "Location": [
+            "SpySatelliteGunslinger2F"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Elemental"
@@ -5655,7 +5417,7 @@
         "DVXP": 9,
         "EXP": 45,
         "BITS": 90,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 183,
@@ -5692,7 +5454,7 @@
         "DVXP": 30,
         "EXP": 150,
         "BITS": 290,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 184,
@@ -5729,7 +5491,7 @@
         "DVXP": 8,
         "EXP": 40,
         "BITS": 80,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 185,
@@ -5766,7 +5528,7 @@
         "DVXP": 21,
         "EXP": 105,
         "BITS": 210,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 186,
@@ -5803,7 +5565,7 @@
         "DVXP": 22,
         "EXP": 112,
         "BITS": 220,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 187,
@@ -5840,7 +5602,7 @@
         "DVXP": 33,
         "EXP": 167,
         "BITS": 350,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 188,
@@ -5877,7 +5639,7 @@
         "DVXP": 33,
         "EXP": 165,
         "BITS": 330,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 189,
@@ -5914,7 +5676,7 @@
         "DVXP": 19,
         "EXP": 76,
         "BITS": 190,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 190,
@@ -5951,7 +5713,7 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 400,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 191,
@@ -5988,7 +5750,7 @@
         "DVXP": 21,
         "EXP": 104,
         "BITS": 215,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 192,
@@ -6025,7 +5787,7 @@
         "DVXP": 37,
         "EXP": 186,
         "BITS": 370,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 193,
@@ -6062,7 +5824,7 @@
         "DVXP": 22,
         "EXP": 158,
         "BITS": 300,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 194,
@@ -6099,7 +5861,7 @@
         "DVXP": 36,
         "EXP": 180,
         "BITS": 360,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 195,
@@ -6136,7 +5898,7 @@
         "DVXP": 37,
         "EXP": 184,
         "BITS": 370,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 196,
@@ -6173,7 +5935,7 @@
         "DVXP": 35,
         "EXP": 175,
         "BITS": 350,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 197,
@@ -6210,7 +5972,7 @@
         "DVXP": 47,
         "EXP": 236,
         "BITS": 460,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 198,
@@ -6247,10 +6009,9 @@
         "DVXP": 42,
         "EXP": 210,
         "BITS": 430,
-        "Location": {
-            "PT-BR": "Asuka Norte - Kulon Mine, Kulon Pit",
-            "EN-US": "Asuka North - Kulon Mine, Kulon Pit"
-        },
+        "Location": [
+            "KulonMine,KulonPit"
+        ],
         "RegularAttack": {
             "PT-BR": "No element",
             "EN-US": "No element"
@@ -6295,7 +6056,7 @@
         "DVXP": 46,
         "EXP": 232,
         "BITS": 460,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 200,
@@ -6332,7 +6093,7 @@
         "DVXP": 48,
         "EXP": 242,
         "BITS": 480,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 201,
@@ -6369,7 +6130,7 @@
         "DVXP": 46,
         "EXP": 231,
         "BITS": 460,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 202,
@@ -6406,7 +6167,7 @@
         "DVXP": 31,
         "EXP": 222,
         "BITS": 660,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 203,
@@ -6443,7 +6204,7 @@
         "DVXP": 39,
         "EXP": 299,
         "BITS": 770,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 204,
@@ -6480,7 +6241,7 @@
         "DVXP": 43,
         "EXP": 344,
         "BITS": 880,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 205,
@@ -6517,7 +6278,7 @@
         "DVXP": 43,
         "EXP": 366,
         "BITS": 990,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 206,
@@ -6554,7 +6315,7 @@
         "DVXP": 44,
         "EXP": 399,
         "BITS": 1110,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 207,
@@ -6591,7 +6352,7 @@
         "DVXP": 40,
         "EXP": 201,
         "BITS": 400,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 208,
@@ -6628,7 +6389,7 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 430,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 209,
@@ -6665,7 +6426,7 @@
         "DVXP": 45,
         "EXP": 227,
         "BITS": 470,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 210,
@@ -6702,7 +6463,7 @@
         "DVXP": 32,
         "EXP": 160,
         "BITS": 330,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 211,
@@ -6739,7 +6500,7 @@
         "DVXP": 40,
         "EXP": 250,
         "BITS": 800,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 212,
@@ -6776,7 +6537,7 @@
         "DVXP": 48,
         "EXP": 241,
         "BITS": 480,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 213,
@@ -6813,7 +6574,7 @@
         "DVXP": 36,
         "EXP": 179,
         "BITS": 360,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 214,
@@ -6850,7 +6611,7 @@
         "DVXP": 41,
         "EXP": 203,
         "BITS": 410,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 215,
@@ -6887,7 +6648,7 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 420,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 216,
@@ -6924,7 +6685,7 @@
         "DVXP": 44,
         "EXP": 221,
         "BITS": 450,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 217,
@@ -6961,7 +6722,7 @@
         "DVXP": 48,
         "EXP": 240,
         "BITS": 480,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 218,
@@ -6998,7 +6759,7 @@
         "DVXP": 48,
         "EXP": 239,
         "BITS": 480,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 219,
@@ -7035,7 +6796,7 @@
         "DVXP": 44,
         "EXP": 220,
         "BITS": 500,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 220,
@@ -7072,10 +6833,9 @@
         "DVXP": 48,
         "EXP": 243,
         "BITS": 480,
-        "Location": {
-            "PT-BR": "Amaterasu North - Boot Mountain, Fire Dungeon",
-            "EN-US": "Amaterasu North - Boot Mountain, Fire Dungeon"
-        },
+        "Location": [
+            "AmaterasuNorthBootMountain,FireDungeon"
+        ],
         "RegularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -7120,7 +6880,7 @@
         "DVXP": 47,
         "EXP": 236,
         "BITS": 460,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 222,
@@ -7157,7 +6917,7 @@
         "DVXP": 54,
         "EXP": 271,
         "BITS": 550,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 223,
@@ -7194,7 +6954,7 @@
         "DVXP": 54,
         "EXP": 272,
         "BITS": 510,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 224,
@@ -7231,7 +6991,7 @@
         "DVXP": 49,
         "EXP": 245,
         "BITS": 490,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 247,
@@ -7268,10 +7028,9 @@
         "DVXP": 53,
         "EXP": 530,
         "BITS": 1060,
-        "Location": {
-            "PT-BR": "Tamer Only",
-            "EN-US": "Tamer Only"
-        },
+        "Location": [
+            "TamerOnly"
+        ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7316,7 +7075,7 @@
         "DVXP": 7,
         "EXP": 35,
         "BITS": 70,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 516,
@@ -7353,7 +7112,7 @@
         "DVXP": 12,
         "EXP": 60,
         "BITS": 120,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 517,
@@ -7390,7 +7149,7 @@
         "DVXP": 17,
         "EXP": 85,
         "BITS": 170,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 518,
@@ -7427,7 +7186,7 @@
         "DVXP": 27,
         "EXP": 135,
         "BITS": 270,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 519,
@@ -7464,7 +7223,7 @@
         "DVXP": 37,
         "EXP": 185,
         "BITS": 370,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 520,
@@ -7501,7 +7260,7 @@
         "DVXP": 42,
         "EXP": 210,
         "BITS": 420,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 521,
@@ -7538,7 +7297,7 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 470,
-        "Location": ""
+        "Location": []
     },
     {
         "Id": 522,
@@ -7575,6 +7334,6 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 470,
-        "Location": ""
+        "Location": []
     }
 ]

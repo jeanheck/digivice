@@ -12,7 +12,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Adaga",
+                "PT-BR": "Punhal",
                 "EN-US": "Dagger"
             },
             "Id": 157,
@@ -42,7 +42,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Lança de Bambu",
+                "PT-BR": "Arpão de Bambu",
                 "EN-US": "Bamboo Spear"
             },
             "Id": 167,
@@ -339,7 +339,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Broquel",
+                "PT-BR": "Escudo",
                 "EN-US": "Buckler"
             },
             "Id": 275,
@@ -1073,7 +1073,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Guard Barrier",
+                "PT-BR": "Barreira Proteção",
                 "EN-US": "Guard Barrier"
             },
             "Id": 279,
@@ -1595,7 +1595,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Leather Glove",
+                "PT-BR": "Luva de Couro",
                 "EN-US": "Leather Glove"
             },
             "Id": 106,
@@ -1829,7 +1829,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Metal Guard",
+                "PT-BR": "Protetor de Metal",
                 "EN-US": "Metal Guard"
             },
             "Id": 201,
@@ -2254,7 +2254,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Power Arm",
+                "PT-BR": "Braço Potente",
                 "EN-US": "Power Arm"
             },
             "Id": 110,
@@ -2410,7 +2410,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Raven Bow",
+                "PT-BR": "Arco Raven",
                 "EN-US": "Raven Bow"
             },
             "Id": 194,
@@ -2792,7 +2792,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Espada Curta",
+                "PT-BR": "Espada Pequena",
                 "EN-US": "Short Sword"
             },
             "Id": 92,
@@ -2815,7 +2815,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Shotgun",
+                "PT-BR": "Espingarda",
                 "EN-US": "Shotgun"
             },
             "Id": 122,
@@ -2940,7 +2940,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Spear",
+                "PT-BR": "Bambu",
                 "EN-US": "Spear"
             },
             "Id": 168,
@@ -3084,7 +3084,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Tin Shield",
+                "PT-BR": "Escudo de Aço",
                 "EN-US": "Tin Shield"
             },
             "Id": 276,
@@ -3308,7 +3308,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Wing Sword",
+                "PT-BR": "Espada Alada",
                 "EN-US": "Wing Sword"
             },
             "Id": 161,
@@ -3454,7 +3454,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Zanden Sword",
+                "PT-BR": "Espada Zanden",
                 "EN-US": "Zanden Sword"
             },
             "Id": 93,
@@ -3641,7 +3641,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Dark Armor",
+                "PT-BR": "Armadura Sombria",
                 "EN-US": "Dark Armor"
             },
             "Id": 266,
@@ -3673,7 +3673,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Dark Cloak",
+                "PT-BR": "Manto Sombrio",
                 "EN-US": "Dark Cloak"
             },
             "Id": 253,
@@ -3814,7 +3814,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Gym Suit",
+                "PT-BR": "Roupa de Academia",
                 "EN-US": "Gym Suit"
             },
             "Id": 250,
@@ -3951,7 +3951,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Leather Mail",
+                "PT-BR": "Armadura de Couro",
                 "EN-US": "Leather Mail"
             },
             "Id": 262,
@@ -4141,7 +4141,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Tin Mail",
+                "PT-BR": "Armadura de Aço",
                 "EN-US": "Tin Mail"
             },
             "Id": 263,
@@ -4241,7 +4241,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Bandanna",
+                "PT-BR": "Bandana",
                 "EN-US": "Bandanna"
             },
             "Id": 215,
@@ -4271,7 +4271,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Baseball Cap",
+                "PT-BR": "Boné de Beisebol",
                 "EN-US": "Baseball Cap"
             },
             "Id": null,
@@ -4355,7 +4355,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Cat Ears",
+                "PT-BR": "Orelhas de Gato",
                 "EN-US": "Cat Ears"
             },
             "Id": 227,
@@ -4607,7 +4607,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Hide Helmet",
+                "PT-BR": "Capacete de Couro",
                 "EN-US": "Hide Helmet"
             },
             "Id": 236,
@@ -4668,7 +4668,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Kabuteri Horn",
+                "PT-BR": "Chifre Kabuteri",
                 "EN-US": "Kabuteri Horn"
             },
             "Id": 209,
@@ -4760,7 +4760,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Kung Fu Cap",
+                "PT-BR": "Boné de Kung Fu",
                 "EN-US": "Kung Fu Cap"
             },
             "Id": null,
@@ -4795,7 +4795,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Magical Crown",
+                "PT-BR": "Coroa Mágica",
                 "EN-US": "Magical Crown"
             },
             "Id": 230,
@@ -4985,7 +4985,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Ribbon",
+                "PT-BR": "Faixa",
                 "EN-US": "Ribbon"
             },
             "Id": 226,
@@ -5064,7 +5064,7 @@
         },
         {
             "Name": {
-                "PT-BR": "School Cap",
+                "PT-BR": "Boné Escolar",
                 "EN-US": "School Cap"
             },
             "Id": null,
@@ -5218,7 +5218,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Sun Visor",
+                "PT-BR": "Visor Solar",
                 "EN-US": "Sun Visor"
             },
             "Id": 216,
@@ -5248,7 +5248,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Tin Helmet",
+                "PT-BR": "Capacete de Aço",
                 "EN-US": "Tin Helmet"
             },
             "Id": 237,
@@ -5336,7 +5336,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Wing Helmet",
+                "PT-BR": "Capacete Alado",
                 "EN-US": "Wing Helmet"
             },
             "Id": 240,
@@ -5364,7 +5364,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Wool Cap",
+                "PT-BR": "Boné de Lã",
                 "EN-US": "Wool Cap"
             },
             "Id": 219,
@@ -5456,7 +5456,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Awake Ring",
+                "PT-BR": "Anel Despertar",
                 "EN-US": "Awake Ring"
             },
             "Id": null,
@@ -5600,7 +5600,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Boost Gem",
+                "PT-BR": "Gema - Impulso",
                 "EN-US": "Boost Gem"
             },
             "Id": 300,
@@ -5630,7 +5630,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Charisma Gem",
+                "PT-BR": "Gema - Carisma",
                 "EN-US": "Charisma Gem"
             },
             "Id": 302,
@@ -5747,7 +5747,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Dark Ring",
+                "PT-BR": "Anel das Trevas",
                 "EN-US": "Dark Ring"
             },
             "Id": null,
@@ -5846,7 +5846,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Flame Ring",
+                "PT-BR": "Anel de Fogo",
                 "EN-US": "Flame Ring"
             },
             "Id": 304,
@@ -5991,7 +5991,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Guard Gem",
+                "PT-BR": "Gema - Defesa",
                 "EN-US": "Guard Gem"
             },
             "Id": 294,
@@ -6113,7 +6113,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Machine Ring",
+                "PT-BR": "Anel Metálico",
                 "EN-US": "Machine Ring"
             },
             "Id": 309,
@@ -6350,7 +6350,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Power Gem",
+                "PT-BR": "Gema - Poder",
                 "EN-US": "Power Gem"
             },
             "Id": 292,
@@ -6380,7 +6380,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Prayer Ring",
+                "PT-BR": "Anel Oração",
                 "EN-US": "Prayer Ring"
             },
             "Id": null,
@@ -6432,7 +6432,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Revive Ring",
+                "PT-BR": "Anel Ressurreição",
                 "EN-US": "Revive Ring"
             },
             "Id": null,
@@ -6530,7 +6530,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Sober Ring",
+                "PT-BR": "Anel Juízo",
                 "EN-US": "Sober Ring"
             },
             "Id": null,
@@ -6559,7 +6559,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Spirit Gem",
+                "PT-BR": "Gema - Espírito",
                 "EN-US": "Spirit Gem"
             },
             "Id": 296,
@@ -6681,7 +6681,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Water Ring",
+                "PT-BR": "Anel Aquático",
                 "EN-US": "Water Ring"
             },
             "Id": 305,
@@ -6780,7 +6780,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Ice Ring",
+                "PT-BR": "Anel de Gelo",
                 "EN-US": "Ice Ring"
             },
             "Id": 306,
@@ -6810,7 +6810,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Wind Ring",
+                "PT-BR": "Anel do Vento",
                 "EN-US": "Wind Ring"
             },
             "Id": 307,
@@ -6840,7 +6840,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Thunder Ring",
+                "PT-BR": "Anel Elétrico",
                 "EN-US": "Thunder Ring"
             },
             "Id": 308,
@@ -6870,7 +6870,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Wisdom Gem",
+                "PT-BR": "Gema - Sabedoria",
                 "EN-US": "Wisdom Gem"
             },
             "Id": 298,

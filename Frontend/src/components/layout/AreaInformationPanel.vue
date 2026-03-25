@@ -21,22 +21,22 @@ const currentLocation = computed(() => {
     return locations[loc] ? getLocalized(locations[loc].Name) : `${t('area.unknownZone') || 'Unknown Zone'} ${loc}`
 })
 
+const areaLocationId = computed(() => {
+    const loc = currentLocationStr.value
+    if (!loc || loc === 'Unknown') return null
+    return locations[loc]?.Location || null
+})
+
 const areaEnemies = computed(() => {
-    const rawLoc = currentLocationStr.value
-    if (!rawLoc || rawLoc === 'Unknown') return []
-    
-    const locObj = locations[rawLoc]
-    // Use EN-US name as the stable key for filtering in EnemiesTable
-    const mapNameEn = locObj && locObj.Name ? locObj.Name['EN-US'] : null
-    
-    if (!mapNameEn) return [];
+    const mapId = areaLocationId.value
+    if (!mapId) return []
 
     return (enemiesData as any[]).filter((enemy: any) => {
         if (!enemy.Location) return false;
         
-        // Handle both localized object and legacy string if any
-        const enemyLocEn = typeof enemy.Location === 'object' ? enemy.Location['EN-US'] : enemy.Location;
-        return enemyLocEn === mapNameEn;
+        // At this point, Location is expected to be an array of strings (Location IDs)
+        const locs = Array.isArray(enemy.Location) ? enemy.Location : [enemy.Location];
+        return locs.includes(mapId);
     })
 })
 
