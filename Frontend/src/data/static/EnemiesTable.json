@@ -6,7 +6,7 @@
         "HP": 816,
         "MP": 9999,
         "Species": 0,
-        "ItemHeld": "N/A",
+        "ItemHeld": "Old Wand",
         "Rate": 0,
         "Strength": 170,
         "Defense": 170,
@@ -44,7 +44,8 @@
         "Technique": {
             "PT-BR": "Necromist (Físico, Chance de Envenenamento)",
             "EN-US": "Necromist (Physical, Chance of Poison)"
-        }
+        },
+        "Boss": true
     },
     {
         "Id": 2,
@@ -53,7 +54,7 @@
         "HP": 912,
         "MP": 9999,
         "Species": "Dino",
-        "ItemHeld": "N/A",
+        "ItemHeld": "Old Claw",
         "Rate": 0,
         "Strength": 190,
         "Defense": 238,
@@ -81,7 +82,10 @@
         "DVXP": 14,
         "EXP": 140,
         "BITS": 280,
-        "Location": []
+        "Location": [
+            "TyrannoValley"
+        ],
+        "Boss": true
     },
     {
         "Id": 14,

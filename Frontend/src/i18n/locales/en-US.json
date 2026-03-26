@@ -3,7 +3,8 @@
     "connected": "Connected",
     "disconnected": "Disconnected",
     "connecting": "Connecting...",
-    "level": "Level"
+    "level": "Level",
+    "none": "None"
   },
   "player": {
     "tamer": "Tamer",
@@ -41,15 +42,15 @@
   "enemy": {
     "level": "LEVEL",
     "species": "Species",
-    "possibleDrop": "Possible Drop",
-    "baseExp": "Base EXP",
-    "baseBits": "Base BITS",
-    "combatActions": "Combat Actions",
+    "possibleDrop": "Drops",
+    "baseExp": "EXP",
+    "baseBits": "BITS",
+    "combatActions": "Actions",
     "regularAttack": "Regular Attack",
     "technique": "Technique",
-    "attr": "Attr",
-    "elem": "Elem",
-    "status": "Status"
+    "attr": "Attributes",
+    "elem": "Resistances",
+    "status": "Conditions"
   },
   "digimon": {
     "digievolutions": "Digievolutions",
@@ -101,6 +102,15 @@
     "thunder": "Thunder",
     "machine": "Machine",
     "dark": "Dark"
+  },
+  "conditions": {
+    "poison": "Poison",
+    "paralyze": "Paralyze",
+    "confuse": "Confuse",
+    "sleep": "Sleep",
+    "ko": "K.O.",
+    "drain": "Drain",
+    "steal": "Steal"
   },
   "tooltips": {
     "strength": "Increases the damage dealt by physical attacks and techniques.",

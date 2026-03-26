@@ -112,7 +112,8 @@ const closeEnemyDetails = () => {
                    v-for="enemy in areaEnemies" 
                    :key="enemy.Id" 
                    @click="openEnemyDetails(enemy)"
-                   class="font-bold text-sm tracking-wide text-[#9e3737] hover:text-[#b24848] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)] transition-all flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-[#9e3737] rounded px-1 cursor-pointer"
+                   class="font-bold text-sm tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
+                   :class="enemy.Boss ? 'text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]' : 'text-[#9e3737] hover:text-[#b24848] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
                 >
                    {{ getLocalized(enemy.Name) }}
                 </button>

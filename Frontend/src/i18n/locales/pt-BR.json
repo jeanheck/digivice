@@ -3,7 +3,8 @@
     "connected": "Conectado",
     "disconnected": "Desconectado",
     "connecting": "Conectando...",
-    "level": "Nível"
+    "level": "Nível",
+    "none": "Nenhum"
   },
   "player": {
     "tamer": "Treinador",
@@ -41,15 +42,15 @@
   "enemy": {
     "level": "NÍVEL",
     "species": "Espécie",
-    "possibleDrop": "Drop Possível",
-    "baseExp": "EXP Base",
-    "baseBits": "BITS Base",
-    "combatActions": "Ações de Combate",
+    "possibleDrop": "Drops",
+    "baseExp": "EXP",
+    "baseBits": "BITS",
+    "combatActions": "Ações",
     "regularAttack": "Ataque Normal",
     "technique": "Técnica",
-    "attr": "Attr",
-    "elem": "Elem",
-    "status": "Status"
+    "attr": "Atributos",
+    "elem": "Resistências",
+    "status": "Condições"
   },
   "digimon": {
     "digievolutions": "Digievoluções",
@@ -101,6 +102,15 @@
     "thunder": "Trovão",
     "machine": "Máquina",
     "dark": "Trevas"
+  },
+  "conditions": {
+    "poison": "Veneno",
+    "paralyze": "Paralisia",
+    "confuse": "Confusão",
+    "sleep": "Dormir",
+    "ko": "K.O.",
+    "drain": "Drain",
+    "steal": "Roubar"
   },
   "tooltips": {
     "strength": "Aumenta o dano causado por ataques físicos e técnicas.",

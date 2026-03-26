@@ -45,13 +45,13 @@ const elemTolsList = computed(() => {
 const statusTolsList = computed(() => {
   if (!props.enemy) return []
   return [
-    { label: t('resistances.poison'), val: props.enemy.Poison, icon: '☠️', color: 'text-green-500' },
-    { label: t('resistances.paralyse'), val: props.enemy.Paralyze, icon: '⚡', color: 'text-yellow-300' },
-    { label: t('resistances.confuse'), val: props.enemy.Confuse, icon: '😵', color: 'text-pink-400' },
-    { label: t('resistances.sleep'), val: props.enemy.Sleep, icon: '💤', color: 'text-blue-300' },
-    { label: t('resistances.ko'), val: props.enemy['K.O'] ?? (props.enemy as any)['K.O.'] ?? 0, icon: '💀', color: 'text-gray-500' },
-    { label: 'Drain', val: props.enemy.Drain, icon: '🧛', color: 'text-red-500' },
-    { label: 'Steal', val: props.enemy.Steal, icon: '🦝', color: 'text-amber-500' },
+    { label: t('conditions.poison'), val: props.enemy.Poison, icon: '☠️', color: 'text-green-500' },
+    { label: t('conditions.paralyze'), val: props.enemy.Paralyze, icon: '⚡', color: 'text-yellow-300' },
+    { label: t('conditions.confuse'), val: props.enemy.Confuse, icon: '😵', color: 'text-pink-400' },
+    { label: t('conditions.sleep'), val: props.enemy.Sleep, icon: '💤', color: 'text-blue-300' },
+    { label: t('conditions.ko'), val: props.enemy['K.O'] ?? (props.enemy as any)['K.O.'] ?? 0, icon: '💀', color: 'text-gray-500' },
+    { label: t('conditions.drain'), val: props.enemy.Drain, icon: '🧛', color: 'text-red-500' },
+    { label: t('conditions.steal'), val: props.enemy.Steal, icon: '🦝', color: 'text-amber-500' },
   ]
 })
 
@@ -85,7 +85,7 @@ const moveTooltip = (event: MouseEvent) => {
         class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
         @click.self="handleClose"
       >
-        <div class="relative w-full max-w-[500px] bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-slide-up">
+        <div class="relative w-full max-w-[1000px] bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-slide-up">
           
           <!-- Cyberpunk Hexagon Pattern Background -->
           <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
@@ -124,17 +124,17 @@ const moveTooltip = (event: MouseEvent) => {
                       <span class="text-gray-300">{{ enemy.HP }} / {{ enemy.HP }}</span>
                     </div>
                     <div class="h-1 w-full bg-[#001122] rounded overflow-hidden border border-[#22cc22]/30">
-                      <div class="h-full bg-gradient-to-r from-[#005500] to-[#22cc22] w-full"></div>
+                      <div class="h-full bg-[#22cc22] w-full shadow-[0_0_5px_rgba(34,204,34,0.5)]"></div>
                     </div>
                   </div>
                   
                   <div class="w-full">
                     <div class="flex justify-between text-[10px] mb-1">
-                      <span class="text-[#cc33cc] font-bold tracking-widest uppercase">MP</span>
+                      <span class="text-[#0077ff] font-bold tracking-widest uppercase">MP</span>
                       <span class="text-gray-300">{{ enemy.MP }} / {{ enemy.MP }}</span>
                     </div>
-                    <div class="h-1 w-full bg-[#001122] rounded overflow-hidden border border-[#cc33cc]/30">
-                      <div class="h-full bg-gradient-to-r from-[#550055] to-[#cc33cc] w-full"></div>
+                    <div class="h-1 w-full bg-[#001122] rounded overflow-hidden border border-[#0077ff]/30">
+                      <div class="h-full bg-[#0077ff] w-full shadow-[0_0_5px_rgba(0,119,255,0.5)]"></div>
                     </div>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ const moveTooltip = (event: MouseEvent) => {
                 </div>
                 <div>
                   <span class="block text-[9px] text-blue-500 uppercase tracking-wider mb-0.5">{{ $t('enemy.possibleDrop') }}</span>
-                  <span class="text-amber-300 text-xs truncate max-w-[100px] block" :title="getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none')">
+                  <span class="text-amber-300 text-xs block" :title="getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none')">
                     {{ getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none') }}
                   </span>
                 </div>
@@ -161,7 +161,7 @@ const moveTooltip = (event: MouseEvent) => {
                   <span class="text-yellow-400 text-xs">{{ enemy.BITS }}</span>
                 </div>
                 <div class="col-span-2">
-                  <span class="block text-[9px] text-blue-500 uppercase tracking-wider mb-0.5">Digivolve EXP (DVXP)</span>
+                  <span class="block text-[9px] text-blue-500 uppercase tracking-wider mb-0.5">DVXP</span>
                   <span class="text-green-400 text-xs">{{ enemy.DVXP }}</span>
                 </div>
               </div>
@@ -188,45 +188,45 @@ const moveTooltip = (event: MouseEvent) => {
 
             <!-- RIGHT COLUMN: Attributes & Tols -->
             <div class="flex-1">
-               <div class="bg-[#000a1a] border border-blue-900/50 rounded p-3 shadow-inner flex flex-row gap-4 h-full">
+               <div class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start">
                  
                  <!-- Attr List -->
-                 <div class="flex-[0.8] flex flex-col gap-1.5">
-                   <h4 class="text-[9px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1">{{ $t('enemy.attr') }}</h4>
-                   <div v-for="attr in attributesList" :key="attr.label" class="flex items-center gap-1">
-                       <div class="flex items-center w-[16px] justify-center cursor-help select-none z-20"
+                 <div class="flex-1 flex flex-col items-center gap-1.5">
+                   <h4 class="text-[9px] uppercase font-bold tracking-widest text-[#00aaff] mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.attr') }}</h4>
+                   <div v-for="attr in attributesList" :key="attr.label" class="flex items-center justify-center gap-2 w-full">
+                       <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20"
                             @mouseenter="e => showTooltip(e, attr.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">
-                         <span class="text-[14px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-0.5" :class="attr.color">{{ attr.icon }}</span>
+                         <span class="text-[16px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-[2.5px]" :class="attr.color">{{ attr.icon }}</span>
                        </div>
-                       <div class="font-bold tracking-widest text-shadow text-white text-xs">
+                       <div class="font-bold tracking-widest text-shadow text-white text-sm w-12 text-center">
                          {{ attr.val }}
                        </div>
                    </div>
                  </div>
 
                  <!-- Elem Tol List -->
-                 <div class="flex-1 flex flex-col gap-1.5 border-l border-blue-900/30 pl-3">
-                   <h4 class="text-[9px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1">{{ $t('enemy.elem') }}</h4>
-                   <div v-for="res in elemTolsList" :key="res.label" class="flex items-center justify-between gap-1 w-full max-w-[60px]">
-                       <div class="flex items-center w-[16px] justify-center cursor-help select-none z-20"
+                 <div class="flex-1 flex flex-col items-center gap-1.5 border-l border-blue-900/10 pl-3">
+                   <h4 class="text-[9px] uppercase font-bold tracking-widest text-[#00aaff] mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.elem') }}</h4>
+                   <div v-for="res in elemTolsList" :key="res.label" class="flex items-center justify-center gap-2 w-full">
+                       <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20"
                             @mouseenter="e => showTooltip(e, res.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">
-                         <span class="text-[14px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-0.5" :class="res.color">{{ res.icon }}</span>
+                         <span class="text-[16px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-[2.5px]" :class="res.color">{{ res.icon }}</span>
                        </div>
-                       <div class="font-bold tracking-widest text-shadow text-white text-xs">
+                       <div class="font-bold tracking-widest text-shadow text-white text-sm w-12 text-center">
                          {{ res.val }}
                        </div>
                    </div>
                  </div>
 
                  <!-- Status Tol List -->
-                 <div class="flex-1 flex flex-col gap-1.5 border-l border-blue-900/30 pl-3">
-                   <h4 class="text-[9px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1">{{ $t('enemy.status') }}</h4>
-                   <div v-for="st in statusTolsList" :key="st.label" class="flex items-center justify-between gap-1 w-full max-w-[60px]">
-                       <div class="flex items-center w-[16px] justify-center cursor-help select-none z-20"
+                 <div class="flex-1 flex flex-col items-center gap-1.5 border-l border-blue-900/10 pl-3">
+                   <h4 class="text-[9px] uppercase font-bold tracking-widest text-[#00aaff] mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.status') }}</h4>
+                   <div v-for="st in statusTolsList" :key="st.label" class="flex items-center justify-center gap-2 w-full">
+                       <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20"
                             @mouseenter="e => showTooltip(e, st.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">
-                         <span class="text-[14px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-0.5" :class="st.color">{{ st.icon }}</span>
+                         <span class="text-[16px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-[2.5px]" :class="st.color">{{ st.icon }}</span>
                        </div>
-                       <div class="font-bold tracking-widest text-shadow text-xs" :class="(st.val === 'Yes') ? 'text-red-400' : 'text-white'">
+                       <div class="font-bold tracking-widest text-shadow text-sm w-12 text-center" :class="(st.val === 'Yes') ? 'text-red-400' : 'text-white'">
                          {{ st.val }}
                        </div>
                    </div>
