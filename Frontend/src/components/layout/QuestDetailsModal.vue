@@ -192,14 +192,17 @@ const getLocalMapUrl = (name?: string) => {
                        <img :src="asukaMapUrl" class="w-full h-full object-cover opacity-60 mix-blend-screen saturate-50 group-hover:saturate-100 transition-all duration-500" />
                        <div class="absolute inset-0 bg-blue-900/10 z-0 pointer-events-none"></div>
                        
-                       <!-- Map Radar Ping -->
-                       <div v-if="selectedStep.locationOnMapCoordinates" 
-                            class="absolute w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none"
-                            :style="{ left: selectedStep.locationOnMapCoordinates.x + '%', top: selectedStep.locationOnMapCoordinates.y + '%' }">
-                            <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,1)]"></div>
-                            <div class="absolute -top-5 text-[10px] font-cyber text-cyan-100 whitespace-nowrap drop-shadow bg-cyan-950/90 px-2 py-0.5 rounded border border-cyan-700/80">{{ selectedStep.locationOnMap }}</div>
-                       </div>
+                        <!-- Map Radar Ping -->
+                        <div v-if="selectedStep.locationOnMapCoordinates" 
+                             class="absolute w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none"
+                             :style="{ left: selectedStep.locationOnMapCoordinates.x + '%', top: selectedStep.locationOnMapCoordinates.y + '%' }">
+                             <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
+                             <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,1)]"></div>
+                             <div class="absolute -top-7 text-[10px] font-cyber text-cyan-100 drop-shadow bg-cyan-950/90 px-2 py-0.5 rounded border border-cyan-700/80 max-w-[100px] leading-tight text-center"
+                                  :class="selectedStep.locationOnMapCoordinates.x > 80 ? 'right-0' : 'left-0'">
+                                  {{ selectedStep.locationOnMap }}
+                             </div>
+                        </div>
                   </div>
 
                   <!-- Local Map Intel Carousel -->
@@ -207,14 +210,17 @@ const getLocalMapUrl = (name?: string) => {
                        <div class="relative flex-1 w-full bg-black/50 overflow-hidden">
                            <img :src="getLocalMapUrl(currentLocation.locationImage)" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
                            
-                           <!-- Local Radar Ping -->
-                           <div v-if="currentLocation.locationImageCoordinates" 
-                                class="absolute w-6 h-6 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none transition-all duration-300"
-                                :style="{ left: currentLocation.locationImageCoordinates.x + '%', top: currentLocation.locationImageCoordinates.y + '%' }">
-                                <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
-                                <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)]"></div>
-                                <div class="absolute -top-4 text-[9px] font-cyber text-cyan-100 whitespace-nowrap drop-shadow bg-cyan-950/90 px-1.5 py-0.5 rounded border border-cyan-700/80">{{ currentLocation.target || 'TARGET' }}</div>
-                           </div>
+                            <!-- Local Radar Ping -->
+                            <div v-if="currentLocation.locationImageCoordinates" 
+                                 class="absolute w-6 h-6 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none transition-all duration-300"
+                                 :style="{ left: currentLocation.locationImageCoordinates.x + '%', top: currentLocation.locationImageCoordinates.y + '%' }">
+                                 <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
+                                 <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)]"></div>
+                                 <div class="absolute -top-6 text-[9px] font-cyber text-cyan-100 drop-shadow bg-cyan-950/90 px-1.5 py-0.5 rounded border border-cyan-700/80 max-w-[80px] leading-tight text-center"
+                                      :class="currentLocation.locationImageCoordinates.x > 80 ? 'right-0' : 'left-0'">
+                                      {{ currentLocation.target || 'TARGET' }}
+                                 </div>
+                            </div>
                        </div>
                        
                        <!-- Carousel Controls Overlay -->
