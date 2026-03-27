@@ -22,14 +22,44 @@
             "Description": {
                 "PT-BR": "Fale com Tai Kong Wong na Praia da Concha",
                 "EN-US": "Talk to Tai Kong Wong at the Shell Beach"
-            }
+            },
+            "LocationOnMap": "Shell Beach",
+            "LocationOnMapCoordinates": {
+                "X": 54,
+                "Y": 59
+            },
+            "Locations": [
+                {
+                    "LocationImage": "Shell Beach",
+                    "Target": "Tai Kong Wong",
+                    "LocationImageCoordinates": {
+                        "X": 44,
+                        "Y": 95
+                    }
+                }
+            ]
         },
         {
             "Number": 2,
             "Description": {
                 "PT-BR": "Ajude o Divermon no Lago dos Divermons",
                 "EN-US": "Help the Divermon at Divermon's Lake"
-            }
+            },
+            "LocationOnMap": "Divermon's Lake",
+            "LocationOnMapCoordinates": {
+                "X": 74.5,
+                "Y": 47
+            },
+            "Locations": [
+                {
+                    "LocationImage": "Divermon's Lake",
+                    "Target": "Divermon",
+                    "LocationImageCoordinates": {
+                        "X": 48,
+                        "Y": 46
+                    }
+                }
+            ]
         },
         {
             "Number": 3,
@@ -46,6 +76,21 @@
                 },
                 {
                     "Id": "BambooSpear"
+                }
+            ],
+            "LocationOnMap": "Shell Beach",
+            "LocationOnMapCoordinates": {
+                "X": 54,
+                "Y": 59
+            },
+            "Locations": [
+                {
+                    "LocationImage": "Shell Beach",
+                    "Target": "Tai Kong Wong",
+                    "LocationImageCoordinates": {
+                        "X": 44,
+                        "Y": 95
+                    }
                 }
             ]
         }

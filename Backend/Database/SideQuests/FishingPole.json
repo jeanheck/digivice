@@ -10,19 +10,16 @@
     "Steps": [
         {
             "Number": 1,
-            "Description": "Talk to Tai Kong Wong at the Shell Beach",
             "Address": "0x04B3B0",
             "BitMask": "0x02"
         },
         {
             "Number": 2,
-            "Description": "Help the Divermon at Divermon's Lake",
             "Address": "0x04B3B1",
             "BitMask": "0x10"
         },
         {
             "Number": 3,
-            "Description": "Bring the items to Tai Kong Wong at the Shell Beach",
             "Prerequisites": [
                 {
                     "Description": "Bamboo Spear",

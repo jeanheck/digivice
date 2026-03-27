@@ -78,7 +78,7 @@ export interface StepLocation {
 
 export interface QuestStep {
     number: number
-    description: string
+    description?: string
     isCompleted: boolean
     prerequisites?: Requisite[]
     locationOnMap?: string;
@@ -90,7 +90,7 @@ export interface Quest {
     Id: string
     id: number
     title: string
-    description: string
+    description?: string
     prerequisites: Requisite[]
     steps: QuestStep[]
 }

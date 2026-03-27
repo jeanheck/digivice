@@ -102,6 +102,31 @@ export function useLocalization() {
             if (localStep) {
               enrichedStep.description = localStep.Description;
               enrichedStep.Description = localStep.Description;
+
+              // Geographic info from local JSON
+              enrichedStep.locationOnMap = localStep.LocationOnMap;
+              enrichedStep.LocationOnMap = localStep.LocationOnMap;
+
+              if (localStep.LocationOnMapCoordinates) {
+                  const coords = localStep.LocationOnMapCoordinates;
+                  enrichedStep.locationOnMapCoordinates = {
+                      x: coords.X !== undefined ? coords.X : coords.x,
+                      y: coords.Y !== undefined ? coords.Y : coords.y
+                  };
+                  enrichedStep.LocationOnMapCoordinates = enrichedStep.locationOnMapCoordinates;
+              }
+
+              if (localStep.Locations) {
+                  enrichedStep.locations = localStep.Locations.map((loc: any) => ({
+                      locationImage: loc.LocationImage || loc.locationImage,
+                      target: loc.Target || loc.target,
+                      locationImageCoordinates: loc.LocationImageCoordinates ? {
+                          x: loc.LocationImageCoordinates.X !== undefined ? loc.LocationImageCoordinates.X : loc.LocationImageCoordinates.x,
+                          y: loc.LocationImageCoordinates.Y !== undefined ? loc.LocationImageCoordinates.Y : loc.LocationImageCoordinates.y
+                      } : null
+                  }));
+                  enrichedStep.Locations = enrichedStep.locations;
+              }
             }
           }
           
