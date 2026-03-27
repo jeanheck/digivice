@@ -16,7 +16,10 @@
                 "PT-BR": "Fale com o Divermon no Cruzeiro Amarelo na Cidade Asuka",
                 "EN-US": "Speak with Divermon in the Yellow Cruiser located in Asuka City"
             },
-            "LocationOnMap": "Asuka City",
+            "LocationOnMap": {
+                "PT-BR": "Cidade Asuka",
+                "EN-US": "Asuka City"
+            },
             "LocationOnMapCoordinates": {
                 "X": 50.5,
                 "Y": 43
@@ -24,7 +27,10 @@
             "Locations": [
                 {
                     "LocationImage": "Asuka City 2",
-                    "Target": "Yellow Cruiser",
+                    "Target": {
+                        "PT-BR": "Cruzeiro Amarelo",
+                        "EN-US": "Yellow Cruiser"
+                    },
                     "LocationImageCoordinates": {
                         "X": 46.5,
                         "Y": 24
@@ -32,7 +38,10 @@
                 },
                 {
                     "LocationImage": "Yellow Cruiser",
-                    "Target": "Divermon",
+                    "Target": {
+                        "PT-BR": "Divermon",
+                        "EN-US": "Divermon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 62,
                         "Y": 33

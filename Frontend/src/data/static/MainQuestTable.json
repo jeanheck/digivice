@@ -15,7 +15,10 @@
                 "PT-BR": "Fale com o Repetitivo Tom em Torre Seiryu na Cidade Seiryu",
                 "EN-US": "Talk to Repeating Tom at Seiryu Tower on Seiryu City"
             },
-            "LocationOnMap": "Seiryu City",
+            "LocationOnMap": {
+                "PT-BR": "Cidade Seiryu",
+                "EN-US": "Seiryu City"
+            },
             "LocationOnMapCoordinates": {
                 "X": 80.5,
                 "Y": 41
@@ -23,7 +26,10 @@
             "Locations": [
                 {
                     "LocationImage": "Seiryu City",
-                    "Target": "Seiryu Tower",
+                    "Target": {
+                        "PT-BR": "Torre Seiryu",
+                        "EN-US": "Seiryu Tower"
+                    },
                     "LocationImageCoordinates": {
                         "X": 61,
                         "Y": 29
@@ -31,7 +37,10 @@
                 },
                 {
                     "LocationImage": "Seiryu Tower",
-                    "Target": "Repeating Tom",
+                    "Target": {
+                        "PT-BR": "Repetitivo Tom",
+                        "EN-US": "Repeating Tom"
+                    },
                     "LocationImageCoordinates": {
                         "X": 26,
                         "Y": 64
@@ -45,7 +54,10 @@
                 "PT-BR": "Fale com o Líder Seiryu nas Ruínas Protocolo",
                 "EN-US": "Talk to Seiryu Leader on Protocol Ruins"
             },
-            "LocationOnMap": "Protocol Ruins",
+            "LocationOnMap": {
+                "PT-BR": "Ruínas Protocolo",
+                "EN-US": "Protocol Ruins"
+            },
             "LocationOnMapCoordinates": {
                 "X": 69.5,
                 "Y": 35.5
@@ -53,7 +65,10 @@
             "Locations": [
                 {
                     "LocationImage": "Protocol Ruins",
-                    "Target": "Seiryu Leader",
+                    "Target": {
+                        "PT-BR": "Líder Seiryu",
+                        "EN-US": "Seiryu Leader"
+                    },
                     "LocationImageCoordinates": {
                         "X": 39,
                         "Y": 16
@@ -67,7 +82,10 @@
                 "PT-BR": "Derrote o MasterTyrannomon no Vale Tyranno",
                 "EN-US": "Defeat MasterTyrannomon on Tyranno Valley"
             },
-            "LocationOnMap": "Tyranno Valley",
+            "LocationOnMap": {
+                "PT-BR": "Vale Tyranno",
+                "EN-US": "Tyranno Valley"
+            },
             "LocationOnMapCoordinates": {
                 "X": 90,
                 "Y": 38
@@ -75,7 +93,10 @@
             "Locations": [
                 {
                     "LocationImage": "Tyranno Valley",
-                    "Target": "MasterTyrannomon",
+                    "Target": {
+                        "PT-BR": "MasterTyrannomon",
+                        "EN-US": "MasterTyrannomon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 73,
                         "Y": 13
@@ -89,7 +110,10 @@
                 "PT-BR": "Desafie o Líder Seiryu na Cidade Seiryu",
                 "EN-US": "Challenge the Seiryu Leader on Seiryu City"
             },
-            "LocationOnMap": "Seiryu City",
+            "LocationOnMap": {
+                "PT-BR": "Cidade Seiryu",
+                "EN-US": "Seiryu City"
+            },
             "LocationOnMapCoordinates": {
                 "X": 80.5,
                 "Y": 41
@@ -97,7 +121,10 @@
             "Locations": [
                 {
                     "LocationImage": "Seiryu City",
-                    "Target": "Seiryu Tower",
+                    "Target": {
+                        "PT-BR": "Torre Seiryu",
+                        "EN-US": "Seiryu Tower"
+                    },
                     "LocationImageCoordinates": {
                         "X": 61,
                         "Y": 29
@@ -105,7 +132,10 @@
                 },
                 {
                     "LocationImage": "Seiryu Tower",
-                    "Target": "Seiryu City",
+                    "Target": {
+                        "PT-BR": "Cidade Seiryu",
+                        "EN-US": "Seiryu City"
+                    },
                     "LocationImageCoordinates": {
                         "X": 26,
                         "Y": 64
@@ -113,7 +143,10 @@
                 },
                 {
                     "LocationImage": "Seiryu City",
-                    "Target": "Seiryu Leader",
+                    "Target": {
+                        "PT-BR": "Líder Seiryu",
+                        "EN-US": "Seiryu Leader"
+                    },
                     "LocationImageCoordinates": {
                         "X": 20,
                         "Y": 28
@@ -124,10 +157,13 @@
         {
             "Number": 5,
             "Description": {
-                "PT-BR": "Vá até a Estação Leste para chegar ao próximo setor",
-                "EN-US": "Go to the East Station to reach the next sector"
+                "PT-BR": "Vá até a Estação Leste e interaja com a Gôndola para chegar ao próximo setor",
+                "EN-US": "Go to the East Station and interact with Gondola to reach the next sector"
             },
-            "LocationOnMap": "East Station",
+            "LocationOnMap": {
+                "PT-BR": "Estação Leste",
+                "EN-US": "East Station"
+            },
             "LocationOnMapCoordinates": {
                 "X": 88,
                 "Y": 53
@@ -135,7 +171,10 @@
             "Locations": [
                 {
                     "LocationImage": "East Station",
-                    "Target": "Gondola",
+                    "Target": {
+                        "PT-BR": "Gôndola",
+                        "EN-US": "Gondola"
+                    },
                     "LocationImageCoordinates": {
                         "X": 42,
                         "Y": 62
@@ -149,7 +188,10 @@
                 "PT-BR": "Derrote o jogador misterioso que está te impedindo na Ponte Asuka",
                 "EN-US": "Defeat the Mystery Player stopping you on the Asuka Bridge"
             },
-            "LocationOnMap": "Asuka Bridge",
+            "LocationOnMap": {
+                "PT-BR": "Ponte Asuka",
+                "EN-US": "Asuka Bridge"
+            },
             "LocationOnMapCoordinates": {
                 "X": 50.5,
                 "Y": 43
@@ -157,7 +199,10 @@
             "Locations": [
                 {
                     "LocationImage": "Asuka Bridge",
-                    "Target": "Mistery Player",
+                    "Target": {
+                        "PT-BR": "Jogador Misterioso",
+                        "EN-US": "Mistery Player"
+                    },
                     "LocationImageCoordinates": {
                         "X": 54,
                         "Y": 38
@@ -171,7 +216,10 @@
                 "PT-BR": "Fale com o Guilmon na Pousada Asuka: Andar 2 na Cidade Asuka",
                 "EN-US": "Talk with the Guilmon on Asuka Inn 2F, on Asuka City"
             },
-            "LocationOnMap": "Asuka City",
+            "LocationOnMap": {
+                "PT-BR": "Cidade Asuka",
+                "EN-US": "Asuka City"
+            },
             "LocationOnMapCoordinates": {
                 "X": 50.5,
                 "Y": 43
@@ -179,7 +227,10 @@
             "Locations": [
                 {
                     "LocationImage": "Asuka City",
-                    "Target": "Asuka Inn 1F",
+                    "Target": {
+                        "PT-BR": "Pousada Asuka: Andar 1",
+                        "EN-US": "Asuka Inn 1F"
+                    },
                     "LocationImageCoordinates": {
                         "X": 51,
                         "Y": 39
@@ -187,7 +238,10 @@
                 },
                 {
                     "LocationImage": "Asuka City - Inn 1F",
-                    "Target": "Asuka Inn 2F",
+                    "Target": {
+                        "PT-BR": "Pousada Asuka: Andar 2",
+                        "EN-US": "Asuka Inn 2F"
+                    },
                     "LocationImageCoordinates": {
                         "X": 62,
                         "Y": 10
@@ -195,7 +249,10 @@
                 },
                 {
                     "LocationImage": "Asuka City - Inn 2F",
-                    "Target": "Guilmon",
+                    "Target": {
+                        "PT-BR": "Guilmon",
+                        "EN-US": "Guilmon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 82,
                         "Y": 43
@@ -209,7 +266,10 @@
                 "PT-BR": "Fale com o Guilmon na Pousada Florestal",
                 "EN-US": "Talk with the Guilmon on Forest Inn"
             },
-            "LocationOnMap": "Forest Inn",
+            "LocationOnMap": {
+                "PT-BR": "Pousada Florestal",
+                "EN-US": "Forest Inn"
+            },
             "LocationOnMapCoordinates": {
                 "X": 67.25,
                 "Y": 54
@@ -217,7 +277,10 @@
             "Locations": [
                 {
                     "LocationImage": "Forest Inn",
-                    "Target": "Guilmon",
+                    "Target": {
+                        "PT-BR": "Guilmon",
+                        "EN-US": "Guilmon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 29,
                         "Y": 28
@@ -231,7 +294,10 @@
                 "PT-BR": "Fale com o Guilmon na Torre Zephyr na Cidade Seiryu",
                 "EN-US": "Talk with the Guilmon on Zephyr Tower, on Seiryu City"
             },
-            "LocationOnMap": "Seiryu City",
+            "LocationOnMap": {
+                "PT-BR": "Cidade Seiryu",
+                "EN-US": "Seiryu City"
+            },
             "LocationOnMapCoordinates": {
                 "X": 80.5,
                 "Y": 41
@@ -239,7 +305,10 @@
             "Locations": [
                 {
                     "LocationImage": "Seiryu City",
-                    "Target": "Zephyr Tower",
+                    "Target": {
+                        "PT-BR": "Torre Zephyr",
+                        "EN-US": "Zephyr Tower"
+                    },
                     "LocationImageCoordinates": {
                         "X": 31,
                         "Y": 51
@@ -247,7 +316,10 @@
                 },
                 {
                     "LocationImage": "Zephyr Tower",
-                    "Target": "Guilmon",
+                    "Target": {
+                        "PT-BR": "Guilmon",
+                        "EN-US": "Guilmon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 34,
                         "Y": 31
@@ -261,7 +333,10 @@
                 "PT-BR": "Retorne à Estação Leste com o Cartão Azul",
                 "EN-US": "Return to the East Station with the Blue Card"
             },
-            "LocationOnMap": "East Station",
+            "LocationOnMap": {
+                "PT-BR": "Estação Leste",
+                "EN-US": "East Station"
+            },
             "LocationOnMapCoordinates": {
                 "X": 88,
                 "Y": 53
@@ -269,7 +344,10 @@
             "Locations": [
                 {
                     "LocationImage": "East Station",
-                    "Target": "Gondola",
+                    "Target": {
+                        "PT-BR": "Gôndola",
+                        "EN-US": "Gondola"
+                    },
                     "LocationImageCoordinates": {
                         "X": 42,
                         "Y": 62
@@ -283,7 +361,10 @@
                 "PT-BR": "Confronte o Guilmon na Cidade Seiryu sobre o Cartão Azul falso",
                 "EN-US": "Confront the Guilmon on Seiryu City about the fake card"
             },
-            "LocationOnMap": "Seiryu City",
+            "LocationOnMap": {
+                "PT-BR": "Cidade Seiryu",
+                "EN-US": "Seiryu City"
+            },
             "LocationOnMapCoordinates": {
                 "X": 80.5,
                 "Y": 41
@@ -291,7 +372,10 @@
             "Locations": [
                 {
                     "LocationImage": "Seiryu City",
-                    "Target": "Guilmon",
+                    "Target": {
+                        "PT-BR": "Guilmon",
+                        "EN-US": "Guilmon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 71.5,
                         "Y": 33
@@ -305,7 +389,10 @@
                 "PT-BR": "Fale com o Guilmon Trapaceiro na Pousada Florestal (Subsolo)",
                 "EN-US": "Talk to the Guilmon at the Forest Inn Basements"
             },
-            "LocationOnMap": "Forest Inn",
+            "LocationOnMap": {
+                "PT-BR": "Pousada Florestal",
+                "EN-US": "Forest Inn"
+            },
             "LocationOnMapCoordinates": {
                 "X": 67.25,
                 "Y": 54
@@ -313,7 +400,10 @@
             "Locations": [
                 {
                     "LocationImage": "Forest Inn",
-                    "Target": "Forest Inn Basements",
+                    "Target": {
+                        "PT-BR": "Pousada Florestal (Subsolo)",
+                        "EN-US": "Forest Inn Basements"
+                    },
                     "LocationImageCoordinates": {
                         "X": 58,
                         "Y": 87
@@ -321,7 +411,10 @@
                 },
                 {
                     "LocationImage": "Forest Inn BF",
-                    "Target": "Guilmon",
+                    "Target": {
+                        "PT-BR": "Guilmon",
+                        "EN-US": "Guilmon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 31.5,
                         "Y": 95
@@ -335,7 +428,10 @@
                 "PT-BR": "Retorne a Estação Leste com o verdadeiro Cartão Azul",
                 "EN-US": "Return to the East Station with the real Blue Card"
             },
-            "LocationOnMap": "East Station",
+            "LocationOnMap": {
+                "PT-BR": "Estação Leste",
+                "EN-US": "East Station"
+            },
             "LocationOnMapCoordinates": {
                 "X": 88,
                 "Y": 53
@@ -343,7 +439,10 @@
             "Locations": [
                 {
                     "LocationImage": "East Station",
-                    "Target": "Gondola",
+                    "Target": {
+                        "PT-BR": "Gôndola",
+                        "EN-US": "Gondola"
+                    },
                     "LocationImageCoordinates": {
                         "X": 42,
                         "Y": 62

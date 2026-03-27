@@ -23,7 +23,10 @@
                 "PT-BR": "Fale com o Futebolista Hide na Capa de Plug",
                 "EN-US": "Talk to the Soccer Kid Hide in Plug Cape"
             },
-            "LocationOnMap": "Plug Cape",
+            "LocationOnMap": {
+                "PT-BR": "Capa de Plug",
+                "EN-US": "Plug Cape"
+            },
             "LocationOnMapCoordinates": {
                 "X": 45,
                 "Y": 49
@@ -31,7 +34,10 @@
             "Locations": [
                 {
                     "LocationImage": "Plug Cape",
-                    "Target": "Soccer Kid Hide",
+                    "Target": {
+                        "PT-BR": "Futebolista Hide",
+                        "EN-US": "Soccer Kid Hide"
+                    },
                     "LocationImageCoordinates": {
                         "X": 79,
                         "Y": 95
@@ -45,7 +51,10 @@
                 "PT-BR": "Encontre o card perdido do Gabumon",
                 "EN-US": "Find the lost Gabumon's card"
             },
-            "LocationOnMap": "Asuka City",
+            "LocationOnMap": {
+                "PT-BR": "Cidade Asuka",
+                "EN-US": "Asuka City"
+            },
             "LocationOnMapCoordinates": {
                 "X": 50.5,
                 "Y": 43
@@ -53,7 +62,10 @@
             "Locations": [
                 {
                     "LocationImage": "Asuka City",
-                    "Target": "Asuka Inn 1F",
+                    "Target": {
+                        "PT-BR": "Pousada Asuka: Andar 1",
+                        "EN-US": "Asuka Inn 1F"
+                    },
                     "LocationImageCoordinates": {
                         "X": 51,
                         "Y": 39
@@ -61,7 +73,10 @@
                 },
                 {
                     "LocationImage": "Asuka City - Inn 1F",
-                    "Target": "Gabumon Card",
+                    "Target": {
+                        "PT-BR": "Card Perdido",
+                        "EN-US": "Gabumon Card"
+                    },
                     "LocationImageCoordinates": {
                         "X": 35,
                         "Y": 88
@@ -75,7 +90,10 @@
                 "PT-BR": "Devolva o card do Gabumon ao Futebolista Hide",
                 "EN-US": "Give the Gabumon's card to the Soccer Kid Hide"
             },
-            "LocationOnMap": "Plug Cape",
+            "LocationOnMap": {
+                "PT-BR": "Capa de Plug",
+                "EN-US": "Plug Cape"
+            },
             "LocationOnMapCoordinates": {
                 "X": 45,
                 "Y": 49
@@ -83,7 +101,10 @@
             "Locations": [
                 {
                     "LocationImage": "Plug Cape",
-                    "Target": "Soccer Kid Hide",
+                    "Target": {
+                        "PT-BR": "Futebolista Hide",
+                        "EN-US": "Soccer Kid Hide"
+                    },
                     "LocationImageCoordinates": {
                         "X": 79,
                         "Y": 95
@@ -97,7 +118,10 @@
                 "PT-BR": "Fale com Debbie no Costeleta de Cordeiro na Cidade Asuka",
                 "EN-US": "Talk to Waitress Debbie in Lamb Chop in Asuka City"
             },
-            "LocationOnMap": "Asuka City",
+            "LocationOnMap": {
+                "PT-BR": "Cidade Asuka",
+                "EN-US": "Asuka City"
+            },
             "LocationOnMapCoordinates": {
                 "X": 50.5,
                 "Y": 43
@@ -105,7 +129,10 @@
             "Locations": [
                 {
                     "LocationImage": "Asuka City",
-                    "Target": "Lamb Chop",
+                    "Target": {
+                        "PT-BR": "Costeleta de Cordeiro",
+                        "EN-US": "Lamb Chop"
+                    },
                     "LocationImageCoordinates": {
                         "X": 23.5,
                         "Y": 56
@@ -113,7 +140,10 @@
                 },
                 {
                     "LocationImage": "Lamb Chop",
-                    "Target": "Waitress Debbie",
+                    "Target": {
+                        "PT-BR": "Debbie",
+                        "EN-US": "Waitress Debbie"
+                    },
                     "LocationImageCoordinates": {
                         "X": 48.5,
                         "Y": 87
@@ -127,7 +157,10 @@
                 "PT-BR": "Encontre Veemon na Campina do Vento",
                 "EN-US": "Find Veemon on Wind Prairie"
             },
-            "LocationOnMap": "Wind Prairie",
+            "LocationOnMap": {
+                "PT-BR": "Campina do Vento",
+                "EN-US": "Wind Prairie"
+            },
             "LocationOnMapCoordinates": {
                 "X": 81,
                 "Y": 50
@@ -135,7 +168,10 @@
             "Locations": [
                 {
                     "LocationImage": "Wind Prairie",
-                    "Target": "Veemon",
+                    "Target": {
+                        "PT-BR": "Veemon",
+                        "EN-US": "Veemon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 85,
                         "Y": 86
@@ -149,7 +185,10 @@
                 "PT-BR": "Brinque de esconde-esconde e encontre Veemon na Floresta dos Pontapés",
                 "EN-US": "Play Hide and Seek and find Veemon on Kicking Forest"
             },
-            "LocationOnMap": "Kicking Forest",
+            "LocationOnMap": {
+                "PT-BR": "Floresta dos Pontapés",
+                "EN-US": "Kicking Forest"
+            },
             "LocationOnMapCoordinates": {
                 "X": 87.5,
                 "Y": 46
@@ -157,7 +196,10 @@
             "Locations": [
                 {
                     "LocationImage": "Kicking Forest",
-                    "Target": "Veemon",
+                    "Target": {
+                        "PT-BR": "Veemon",
+                        "EN-US": "Veemon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 14,
                         "Y": 19
@@ -171,7 +213,10 @@
                 "PT-BR": "Receba as Botas de Árvore do Veemon após encontrá-lo",
                 "EN-US": "Receive the Tree Boots from Veemon after you find him"
             },
-            "LocationOnMap": "Wind Prairie",
+            "LocationOnMap": {
+                "PT-BR": "Campina do Vento",
+                "EN-US": "Wind Prairie"
+            },
             "LocationOnMapCoordinates": {
                 "X": 81,
                 "Y": 50
@@ -179,7 +224,10 @@
             "Locations": [
                 {
                     "LocationImage": "Wind Prairie",
-                    "Target": "Veemon",
+                    "Target": {
+                        "PT-BR": "Veemon",
+                        "EN-US": "Veemon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 85,
                         "Y": 86

@@ -23,7 +23,10 @@
                 "PT-BR": "Fale com Tai Kong Wong na Praia da Concha",
                 "EN-US": "Talk to Tai Kong Wong at the Shell Beach"
             },
-            "LocationOnMap": "Shell Beach",
+            "LocationOnMap": {
+                "PT-BR": "Praia da Concha",
+                "EN-US": "Shell Beach"
+            },
             "LocationOnMapCoordinates": {
                 "X": 54,
                 "Y": 59
@@ -31,7 +34,10 @@
             "Locations": [
                 {
                     "LocationImage": "Shell Beach",
-                    "Target": "Tai Kong Wong",
+                    "Target": {
+                        "PT-BR": "Tai Kong Wong",
+                        "EN-US": "Tai Kong Wong"
+                    },
                     "LocationImageCoordinates": {
                         "X": 44,
                         "Y": 95
@@ -45,7 +51,10 @@
                 "PT-BR": "Ajude o Divermon no Lago dos Divermons",
                 "EN-US": "Help the Divermon at Divermon's Lake"
             },
-            "LocationOnMap": "Divermon's Lake",
+            "LocationOnMap": {
+                "PT-BR": "Lago dos Divermons",
+                "EN-US": "Divermon's Lake"
+            },
             "LocationOnMapCoordinates": {
                 "X": 74.5,
                 "Y": 47
@@ -53,7 +62,10 @@
             "Locations": [
                 {
                     "LocationImage": "Divermon's Lake",
-                    "Target": "Divermon",
+                    "Target": {
+                        "PT-BR": "Divermon",
+                        "EN-US": "Divermon"
+                    },
                     "LocationImageCoordinates": {
                         "X": 48,
                         "Y": 46
@@ -78,7 +90,10 @@
                     "Id": "BambooSpear"
                 }
             ],
-            "LocationOnMap": "Shell Beach",
+            "LocationOnMap": {
+                "PT-BR": "Praia da Concha",
+                "EN-US": "Shell Beach"
+            },
             "LocationOnMapCoordinates": {
                 "X": 54,
                 "Y": 59
@@ -86,7 +101,10 @@
             "Locations": [
                 {
                     "LocationImage": "Shell Beach",
-                    "Target": "Tai Kong Wong",
+                    "Target": {
+                        "PT-BR": "Tai Kong Wong",
+                        "EN-US": "Tai Kong Wong"
+                    },
                     "LocationImageCoordinates": {
                         "X": 44,
                         "Y": 95

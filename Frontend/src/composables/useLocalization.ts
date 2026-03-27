@@ -104,8 +104,8 @@ export function useLocalization() {
               enrichedStep.Description = localStep.Description;
 
               // Geographic info from local JSON
-              enrichedStep.locationOnMap = localStep.LocationOnMap;
-              enrichedStep.LocationOnMap = localStep.LocationOnMap;
+              enrichedStep.locationOnMap = getLocalized(localStep.LocationOnMap || localStep.locationOnMap);
+              enrichedStep.LocationOnMap = enrichedStep.locationOnMap;
 
               if (localStep.LocationOnMapCoordinates) {
                   const coords = localStep.LocationOnMapCoordinates;
@@ -119,7 +119,7 @@ export function useLocalization() {
               if (localStep.Locations) {
                   enrichedStep.locations = localStep.Locations.map((loc: any) => ({
                       locationImage: loc.LocationImage || loc.locationImage,
-                      target: loc.Target || loc.target,
+                      target: getLocalized(loc.Target || loc.target),
                       locationImageCoordinates: loc.LocationImageCoordinates ? {
                           x: loc.LocationImageCoordinates.X !== undefined ? loc.LocationImageCoordinates.X : loc.LocationImageCoordinates.x,
                           y: loc.LocationImageCoordinates.Y !== undefined ? loc.LocationImageCoordinates.Y : loc.LocationImageCoordinates.y
