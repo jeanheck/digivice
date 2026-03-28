@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted } from 'vue'
 import IconClose from '../icons/IconClose.vue'
 import TechniquesTable from '../../data/static/TechniquesTable.json'
 import DigievolutionTechniques from '../../data/static/DigievolutionTechniques.json'
@@ -32,6 +32,20 @@ const emit = defineEmits(['close'])
 const { t, getLocalized } = useLocalization()
 
 const closeModal = () => emit('close')
+
+const handleKeydown = (e: KeyboardEvent) => {
+  if (e.key === 'Escape' && props.isOpen) {
+    closeModal()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
+})
 
 // Lookup maps
 const techniqueById = Object.fromEntries(

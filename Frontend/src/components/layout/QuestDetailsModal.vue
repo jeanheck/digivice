@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
 import type { MainQuest, SideQuest, QuestStep as QuestStepType } from '../../types/backend'
 import IconClose from '../icons/IconClose.vue'
@@ -17,6 +17,20 @@ const emit = defineEmits(['close'])
 const closeModal = () => {
   emit('close')
 }
+
+const handleKeydown = (e: KeyboardEvent) => {
+  if (e.key === 'Escape' && props.isOpen) {
+    closeModal()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
+})
 
 const isQuestDone = computed(() => {
   if (!props.quest || !props.quest.steps || props.quest.steps.length === 0) return false;

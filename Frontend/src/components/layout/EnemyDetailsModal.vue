@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import IconClose from '../icons/IconClose.vue'
 import { useLocalization } from '../../composables/useLocalization'
 
@@ -17,6 +17,20 @@ const { t, getLocalized } = useLocalization()
 const handleClose = () => {
   emit('close')
 }
+
+const handleKeydown = (e: KeyboardEvent) => {
+  if (e.key === 'Escape' && props.isOpen) {
+    handleClose()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
+})
 
 const attributesList = computed(() => {
   if (!props.enemy) return []
@@ -171,9 +185,9 @@ const enemyImageUrl = computed(() => {
                     <span class="font-bold text-gray-300">{{ enemy.BITS }}</span>
                   </div>
 
-                  <div class="flex items-center justify-between text-[11px]">
-                    <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t('enemy.possibleDrop') }}:</span>
-                    <span class="font-bold text-gray-300 text-right truncate pl-4" :title="getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none')">
+                  <div class="flex flex-col text-[11px] mt-1">
+                    <span class="font-bold text-blue-500 tracking-wider uppercase mb-1">{{ $t('enemy.possibleDrop') }}:</span>
+                    <span class="font-bold text-gray-300 text-left" :title="getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none')">
                       {{ getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none') }}
                     </span>
                   </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import type { Digimon } from '../../types/backend'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
 import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
@@ -14,6 +14,20 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'close'): void
 }>()
+
+const handleKeydown = (e: KeyboardEvent) => {
+  if (e.key === 'Escape' && props.isOpen) {
+    emit('close')
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
+})
 
 const allEvolutions = ref<{ name: string, requirements: EvolutionRequirement[] }[]>([])
 const selectedEvolution = ref<{ name: string, requirements: EvolutionRequirement[] } | null>(null)
