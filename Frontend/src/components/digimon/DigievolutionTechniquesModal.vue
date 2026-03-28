@@ -137,7 +137,7 @@ function typeIcon(type: string): string {
                 v-if="tech.isSignature"
                 class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest"
               >
-                ⭐ {{ $t('digievolution.signature') }}
+                ⭐
               </span>
 
               <!-- Type icon -->
@@ -168,7 +168,6 @@ function typeIcon(type: string): string {
                     {{ (tech.element ?? 'None') !== 'None' ? t('resistances.' + (tech.element || 'None').toLowerCase()) : t('digievolution.neutral') }}
                   </span>
                   <span class="text-blue-300/70">MP {{ tech.mp }}</span>
-                  <span class="text-red-300/70">PWR {{ tech.power }}</span>
                 </div>
               </div>
             </div>

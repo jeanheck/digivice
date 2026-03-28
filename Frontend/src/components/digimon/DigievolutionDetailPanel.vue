@@ -156,7 +156,7 @@ const derivatives = computed(() => {
                     v-if="tech.isSignature"
                     class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest"
                   >
-                    ⭐ {{ $t('digievolution.signature') }}
+                    ⭐
                   </span>
 
                   <span class="text-base leading-none mt-[1px] flex-shrink-0">
@@ -168,7 +168,7 @@ const derivatives = computed(() => {
                       <span class="font-bold tracking-wide" :class="tech.isSignature ? 'text-yellow-300' : 'text-white'">
                         {{ getLocalized(tech.name) }}
                       </span>
-                      <span class="text-[10px] text-cyan-400/80 ml-1">Lv.{{ tech.learnLevel }}</span>
+                      <span class="text-[10px] text-cyan-400/80 ml-1">{{ $t('digievolution.lv') }}.{{ tech.learnLevel }}</span>
                     </div>
 
                     <p class="text-white/50 text-[10px] leading-snug">{{ getLocalized(tech.description) }}</p>
@@ -178,7 +178,6 @@ const derivatives = computed(() => {
                         {{ (tech.element ?? 'None') !== 'None' ? t('resistances.' + (tech.element || 'None').toLowerCase()) : t('digievolution.neutral') }}
                       </span>
                       <span class="text-blue-300/70">MP {{ tech.mp }}</span>
-                      <span class="text-red-300/70">PWR {{ tech.power }}</span>
                     </div>
                   </div>
                 </div>

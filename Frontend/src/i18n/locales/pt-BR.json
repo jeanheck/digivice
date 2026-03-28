@@ -40,8 +40,8 @@
     "safeZone": "Zona Segura"
   },
   "enemy": {
-    "level": "NÍVEL",
-    "species": "Espécie",
+    "level": "Nível",
+    "specie": "Espécie",
     "possibleDrop": "Drops",
     "baseExp": "EXP",
     "baseBits": "BITS",
@@ -49,8 +49,8 @@
     "regularAttack": "Ataque Normal",
     "technique": "Técnica",
     "attr": "Atributos",
-    "elem": "Resistências",
-    "status": "Condições"
+    "elem": "Elementos",
+    "status": "Resistências"
   },
   "digimon": {
     "digievolutions": "Digievoluções",
@@ -109,8 +109,9 @@
     "confuse": "Confusão",
     "sleep": "Dormir",
     "ko": "K.O.",
-    "drain": "Drain",
-    "steal": "Roubar"
+    "drain": "Drenar",
+    "steal": "Roubar",
+    "escape": "Fugir"
   },
   "tooltips": {
     "strength": "Aumenta o dano causado por ataques físicos e técnicas.",

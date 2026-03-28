@@ -4,13 +4,16 @@ import type { Digimon } from '../../types/backend'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
 
 const props = defineProps<{
-  node: { name: string, requirements: EvolutionRequirement[] }
+  node: { name: string, requirements: EvolutionRequirement[], children?: any[] }
   digimon: Digimon
-  isSelected: boolean
+  isSelected?: boolean
+  isRoot?: boolean
+  activePath?: string[]
 }>()
 
 const emit = defineEmits<{
   (e: 'select'): void
+  (e: 'node-click', name: string): void
 }>()
 
 const isUnlocked = computed(() => {

@@ -40,8 +40,8 @@
     "safeZone": "Safe Zone"
   },
   "enemy": {
-    "level": "LEVEL",
-    "species": "Species",
+    "level": "Level",
+    "specie": "Specie",
     "possibleDrop": "Drops",
     "baseExp": "EXP",
     "baseBits": "BITS",
@@ -110,7 +110,8 @@
     "sleep": "Sleep",
     "ko": "K.O.",
     "drain": "Drain",
-    "steal": "Steal"
+    "steal": "Steal",
+    "escape": "Escape"
   },
   "tooltips": {
     "strength": "Increases the damage dealt by physical attacks and techniques.",

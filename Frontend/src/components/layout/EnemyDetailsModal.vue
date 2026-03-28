@@ -50,8 +50,9 @@ const statusTolsList = computed(() => {
     { label: t('conditions.confuse'), val: props.enemy.Confuse, icon: '😵', color: 'text-pink-400' },
     { label: t('conditions.sleep'), val: props.enemy.Sleep, icon: '💤', color: 'text-blue-300' },
     { label: t('conditions.ko'), val: props.enemy['K.O'] ?? (props.enemy as any)['K.O.'] ?? 0, icon: '💀', color: 'text-gray-500' },
-    { label: t('conditions.drain'), val: props.enemy.Drain, icon: '🧛', color: 'text-red-500' },
-    { label: t('conditions.steal'), val: props.enemy.Steal, icon: '🦝', color: 'text-amber-500' },
+    { label: t('conditions.drain'), val: props.enemy.CanDrain ? 'Yes' : 'No', icon: '🧛', color: 'text-red-500' },
+    { label: t('conditions.steal'), val: props.enemy.CanSteal ? 'Yes' : 'No', icon: '🦝', color: 'text-amber-500' },
+    { label: t('conditions.escape'), val: props.enemy.CanEscape ? 'Yes' : 'No', icon: '🏃', color: 'text-gray-400' },
   ]
 })
 
@@ -75,6 +76,17 @@ const moveTooltip = (event: MouseEvent) => {
   activeTooltip.value.x = posX
   activeTooltip.value.y = event.clientY + 15
 }
+
+// Dynamic image loading
+const enemyImages = import.meta.glob('../../assets/icons/enemies/*.png', { eager: true, as: 'url' })
+
+const enemyImageUrl = computed(() => {
+  if (!props.enemy?.Name) return null
+  const name = props.enemy.Name
+  // Try with exact name
+  const path = `../../assets/icons/enemies/${name}.png`
+  return (enemyImages[path] as string) || null
+})
 </script>
 
 <template>
@@ -109,79 +121,83 @@ const moveTooltip = (event: MouseEvent) => {
           <div class="p-4 flex flex-col sm:flex-row gap-4 relative z-10 max-h-[70vh] overflow-y-auto custom-scroll">
             
             <!-- LEFT COLUMN: Vital Stats & Core Info -->
-            <div class="flex flex-col gap-3 flex-1">
-              <!-- Vitals Card -->
-              <div class="bg-[#000a1a] border border-blue-900/50 rounded p-3 shadow-inner">
-                <div class="flex justify-between items-center mb-2 pb-1 border-b border-blue-900/30">
-                  <span class="text-[10px] font-bold text-gray-400 tracking-wider">{{ $t('enemy.level') }}</span>
-                  <span class="text-sm font-bold text-amber-400">{{ enemy.Level }}</span>
+            <div class="flex flex-col gap-4 flex-1">
+              <!-- Top Section: Image & Vitals -->
+              <div class="flex gap-4">
+                <!-- Enemy Image Container (Left 50%) -->
+                <div class="w-1/2 aspect-square bg-[#000a1a] border border-blue-900/50 rounded flex items-center justify-center shadow-inner relative group overflow-hidden">
+                  <div class="absolute inset-0 opacity-10 bg-gradient-to-br from-blue-500/20 to-transparent pointer-events-none"></div>
+                  <img v-if="enemyImageUrl" 
+                       :src="enemyImageUrl" 
+                       class="w-full h-full object-cover drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] group-hover:scale-110 transition-transform duration-500" 
+                       :alt="enemy.Name" />
+                  <div v-else class="text-4xl opacity-30 select-none">❓</div>
                 </div>
-                
-                <div class="flex flex-col gap-2">
-                  <div class="w-full">
-                    <div class="flex justify-between text-[10px] mb-1">
-                      <span class="text-[#22cc22] font-bold tracking-widest uppercase">HP</span>
-                      <span class="text-gray-300">{{ enemy.HP }} / {{ enemy.HP }}</span>
-                    </div>
-                    <div class="h-1 w-full bg-[#001122] rounded overflow-hidden border border-[#22cc22]/30">
-                      <div class="h-full bg-[#22cc22] w-full shadow-[0_0_5px_rgba(34,204,34,0.5)]"></div>
-                    </div>
+
+                <!-- Vitals Stats (Right 50%) -->
+                <div class="w-1/2 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-between gap-1.5 py-4">
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t('enemy.specie') }}:</span>
+                    <span class="font-bold text-gray-300 capitalize">{{ getLocalized(enemy.Species) || (typeof enemy.Species === 'string' ? enemy.Species : 'Unknown') }}</span>
+                  </div>
+
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t('enemy.level') }}:</span>
+                    <span class="font-bold text-gray-300">{{ enemy.Level }}</span>
                   </div>
                   
-                  <div class="w-full">
-                    <div class="flex justify-between text-[10px] mb-1">
-                      <span class="text-[#0077ff] font-bold tracking-widest uppercase">MP</span>
-                      <span class="text-gray-300">{{ enemy.MP }} / {{ enemy.MP }}</span>
-                    </div>
-                    <div class="h-1 w-full bg-[#001122] rounded overflow-hidden border border-[#0077ff]/30">
-                      <div class="h-full bg-[#0077ff] w-full shadow-[0_0_5px_rgba(0,119,255,0.5)]"></div>
-                    </div>
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-blue-500 tracking-wider uppercase">HP:</span>
+                    <span class="font-bold text-white">{{ enemy.HP }}</span>
                   </div>
-                </div>
-              </div>
+                  
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-blue-500 tracking-wider uppercase">MP:</span>
+                    <span class="font-bold text-white">{{ enemy.MP }}</span>
+                  </div>
 
-              <!-- Details Card -->
-              <div class="bg-[#000a1a] border border-blue-900/50 rounded p-3 shadow-inner text-sm grid grid-cols-2 gap-x-2 gap-y-3">
-                <div>
-                  <span class="block text-[9px] text-blue-500 uppercase tracking-wider mb-0.5">{{ $t('enemy.species') }}</span>
-                  <span class="text-gray-300 text-xs capitalize">{{ getLocalized(enemy.Species) || (typeof enemy.Species === 'string' ? enemy.Species : 'Unknown') }}</span>
-                </div>
-                <div>
-                  <span class="block text-[9px] text-blue-500 uppercase tracking-wider mb-0.5">{{ $t('enemy.possibleDrop') }}</span>
-                  <span class="text-amber-300 text-xs block" :title="getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none')">
-                    {{ getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none') }}
-                  </span>
-                </div>
-                <div>
-                  <span class="block text-[9px] text-blue-500 uppercase tracking-wider mb-0.5">{{ $t('enemy.baseExp') }}</span>
-                  <span class="text-gray-300 text-xs">{{ enemy.EXP }}</span>
-                </div>
-                <div>
-                  <span class="block text-[9px] text-blue-500 uppercase tracking-wider mb-0.5">{{ $t('enemy.baseBits') }}</span>
-                  <span class="text-yellow-400 text-xs">{{ enemy.BITS }}</span>
-                </div>
-                <div class="col-span-2">
-                  <span class="block text-[9px] text-blue-500 uppercase tracking-wider mb-0.5">DVXP</span>
-                  <span class="text-green-400 text-xs">{{ enemy.DVXP }}</span>
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t('enemy.baseExp') }}:</span>
+                    <span class="font-bold text-gray-300">{{ enemy.EXP }}</span>
+                  </div>
+
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-blue-500 tracking-wider uppercase">DVEXP:</span>
+                    <span class="font-bold text-gray-300">{{ enemy.DVXP }}</span>
+                  </div>
+
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t('enemy.baseBits') }}:</span>
+                    <span class="font-bold text-gray-300">{{ enemy.BITS }}</span>
+                  </div>
+
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t('enemy.possibleDrop') }}:</span>
+                    <span class="font-bold text-gray-300 text-right truncate pl-4" :title="getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none')">
+                      {{ getLocalized(enemy.ItemHeld) !== 'N/A' ? getLocalized(enemy.ItemHeld) : t('common.none') }}
+                    </span>
+                  </div>
                 </div>
               </div>
               
-              <!-- Attacks Card -->
-              <div class="bg-[#000a1a] border border-red-900/30 rounded p-3 shadow-inner text-sm mt-auto">
-                 <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-red-500 mb-2 border-b border-red-900/30 pb-1">{{ $t('enemy.combatActions') }}</h4>
+              <!-- Attacks Card (Updated Columns) -->
+              <div class="bg-[#000a1a] border border-red-900/30 rounded p-4 shadow-inner text-sm mt-auto">
+                 <h4 class="text-[10px] uppercase font-bold tracking-[0.2em] text-red-500 mb-4 border-b border-red-900/30 pb-1">{{ $t('enemy.combatActions') }}</h4>
                  
-                 <div class="mb-3 flex flex-col gap-0.5">
-                   <span class="text-[9px] text-gray-500 uppercase tracking-wider">{{ $t('enemy.regularAttack') }}</span>
-                   <span class="text-gray-200 text-xs relative pl-2 before:content-[''] before:absolute before:left-0 before:top-1.5 before:w-1 before:h-1 before:bg-red-500 before:rounded-full">
-                     {{ getLocalized(enemy.RegularAttack) || (typeof enemy.RegularAttack === 'string' ? enemy.RegularAttack : 'Unknown') }}
-                   </span>
-                 </div>
-                 
-                 <div class="flex flex-col gap-0.5">
-                   <span class="text-[9px] text-gray-500 uppercase tracking-wider">{{ $t('enemy.technique') }}</span>
-                   <span class="text-gray-200 text-xs relative pl-2 before:content-[''] before:absolute before:left-0 before:top-1.5 before:w-1 before:h-1 before:bg-orange-500 before:rounded-full">
-                     {{ getLocalized(enemy.Technique) || (typeof enemy.Technique === 'string' ? enemy.Technique : 'None') }}
-                   </span>
+                 <div class="flex gap-6">
+                   <div class="flex-1 flex flex-col gap-1.5">
+                     <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{ $t('enemy.regularAttack') }}</span>
+                     <span class="text-gray-200 text-xs">
+                       {{ getLocalized(enemy.RegularAttack) || (typeof enemy.RegularAttack === 'string' ? enemy.RegularAttack : 'Unknown') }}
+                     </span>
+                   </div>
+                   
+                   <div class="flex-1 flex flex-col gap-1.5">
+                     <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{ $t('enemy.technique') }}</span>
+                     <span class="text-gray-200 text-xs">
+                       {{ getLocalized(enemy.Technique) || (typeof enemy.Technique === 'string' ? enemy.Technique : 'None') }}
+                     </span>
+                   </div>
                  </div>
               </div>
             </div>
@@ -192,7 +208,7 @@ const moveTooltip = (event: MouseEvent) => {
                  
                  <!-- Attr List -->
                  <div class="flex-1 flex flex-col items-center gap-1.5">
-                   <h4 class="text-[9px] uppercase font-bold tracking-widest text-[#00aaff] mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.attr') }}</h4>
+                   <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.attr') }}</h4>
                    <div v-for="attr in attributesList" :key="attr.label" class="flex items-center justify-center gap-2 w-full">
                        <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20"
                             @mouseenter="e => showTooltip(e, attr.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">
@@ -206,7 +222,7 @@ const moveTooltip = (event: MouseEvent) => {
 
                  <!-- Elem Tol List -->
                  <div class="flex-1 flex flex-col items-center gap-1.5 border-l border-blue-900/10 pl-3">
-                   <h4 class="text-[9px] uppercase font-bold tracking-widest text-[#00aaff] mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.elem') }}</h4>
+                   <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.elem') }}</h4>
                    <div v-for="res in elemTolsList" :key="res.label" class="flex items-center justify-center gap-2 w-full">
                        <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20"
                             @mouseenter="e => showTooltip(e, res.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">
@@ -220,7 +236,7 @@ const moveTooltip = (event: MouseEvent) => {
 
                  <!-- Status Tol List -->
                  <div class="flex-1 flex flex-col items-center gap-1.5 border-l border-blue-900/10 pl-3">
-                   <h4 class="text-[9px] uppercase font-bold tracking-widest text-[#00aaff] mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.status') }}</h4>
+                   <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.status') }}</h4>
                    <div v-for="st in statusTolsList" :key="st.label" class="flex items-center justify-center gap-2 w-full">
                        <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20"
                             @mouseenter="e => showTooltip(e, st.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">

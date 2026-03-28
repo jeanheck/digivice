@@ -1,4 +1,28 @@
 {
+    "0C01": {
+        "Location": "SavingGame",
+        "Name": {
+            "PT-BR": "Salvando o jogo",
+            "EN-US": "Saving game"
+        },
+        "Image": "Saving Screen"
+    },
+    "0600": {
+        "Location": "InBattle",
+        "Name": {
+            "PT-BR": "Em batalha",
+            "EN-US": "In battle"
+        },
+        "Image": "In Battle Screen"
+    },
+    "1400": {
+        "Location": "RewardScreen",
+        "Name": {
+            "PT-BR": "Tela de recompensas",
+            "EN-US": "Reward Screen"
+        },
+        "Image": "Reward Screen"
+    },
     "0200": {
         "Location": "AsukaCity",
         "Name": {
