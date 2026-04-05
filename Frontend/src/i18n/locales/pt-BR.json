@@ -84,7 +84,8 @@
     "noEvolutionData": "Nenhum dado de evolução disponível",
     "unknownParam": "Parâmetro Desconhecido",
     "lv": "Nv",
-    "techniques": "Técnicas"
+    "techniques": "Técnicas",
+    "searchDigimon": "Digite o nome de uma Digievolução..."
   },
   "attributes": {
     "strength": "Força",
@@ -127,5 +128,11 @@
     "thunder": "Reduz o dano recebido de técnicas do elemento Trovão.",
     "machine": "Reduz o dano recebido de técnicas do elemento Máquina.",
     "dark": "Reduz o dano recebido de técnicas do elemento Trevas."
+  },
+  "techniqueTypes": {
+    "physical": "Físico",
+    "magical": "Mágico",
+    "heal": "Cura",
+    "support": "Suporte"
   }
 }

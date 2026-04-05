@@ -84,7 +84,8 @@
     "noEvolutionData": "No evolution data available",
     "unknownParam": "Unknown Parameter",
     "lv": "Lv",
-    "techniques": "Techniques"
+    "techniques": "Techniques",
+    "searchDigimon": "Type a Digievolution name..."
   },
   "attributes": {
     "strength": "Strength",
@@ -127,5 +128,11 @@
     "thunder": "Reduces damage taken from Thunder-elemental techniques.",
     "machine": "Reduces damage taken from Machine-elemental techniques.",
     "dark": "Reduces damage taken from Dark-elemental techniques."
+  },
+  "techniqueTypes": {
+    "physical": "Physical",
+    "magical": "Magical",
+    "heal": "Heal",
+    "support": "Support"
   }
 }

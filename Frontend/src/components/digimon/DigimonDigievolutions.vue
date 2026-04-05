@@ -85,6 +85,11 @@ function closeSkills() {
           </span>
         </div>
       </template>
+      <template v-else>
+        <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider text-white/80 shadow-text">
+          {{ $t('digimon.states.empty') }}
+        </div>
+      </template>
     </div>
   </div>
 

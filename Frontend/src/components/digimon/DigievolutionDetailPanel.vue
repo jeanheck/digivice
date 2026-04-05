@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import type { Digimon } from '../../types/backend'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
 import { useLocalization } from '../../composables/useLocalization'
@@ -102,6 +102,27 @@ const derivatives = computed(() => {
         evo.requirements.some(req => req.Type === 'DigievolutionLevel' && req.Digievolution === props.evolution.name)
     )
 })
+
+// Tooltip Logic
+const activeTooltip = ref({ show: false, x: 0, y: 0, type: '' })
+
+const showTypeTooltip = (event: MouseEvent, type: string) => {
+  let posX = event.clientX + 15
+  if (posX + 150 > window.innerWidth) posX = event.clientX - 160
+  activeTooltip.value = { show: true, x: posX, y: event.clientY + 15, type: type || 'Physical' }
+}
+
+const hideTooltip = () => {
+  activeTooltip.value.show = false
+}
+
+const moveTooltip = (event: MouseEvent) => {
+  if (!activeTooltip.value.show) return
+  let posX = event.clientX + 15
+  if (posX + 150 > window.innerWidth) posX = event.clientX - 160
+  activeTooltip.value.x = posX
+  activeTooltip.value.y = event.clientY + 15
+}
 </script>
 
 <template>
@@ -159,7 +180,10 @@ const derivatives = computed(() => {
                     ⭐
                   </span>
 
-                  <span class="text-base leading-none mt-[1px] flex-shrink-0">
+                  <span class="text-base leading-none mt-[1px] flex-shrink-0 cursor-help tooltip-anchor"
+                        @mouseenter="e => showTypeTooltip(e, tech.type ?? '')"
+                        @mousemove="moveTooltip"
+                        @mouseleave="hideTooltip">
                     {{ typeIcon(tech.type ?? '') }}
                   </span>
 
@@ -202,6 +226,33 @@ const derivatives = computed(() => {
                 </button>
             </div>
         </div>
-    </div>
+        </div>
+    <!-- Teleported Tooltip for Technique Types -->
+    <Teleport to="body">
+      <Transition name="fade">
+        <div 
+          v-if="activeTooltip.show"
+          class="fixed z-[9999] pointer-events-none px-3 py-1.5 bg-[#001133ee] border-[2px] border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm"
+          :style="{ top: `${activeTooltip.y}px`, left: `${activeTooltip.x}px` }"
+        >
+             <div class="font-bold text-yellow-300 text-xs shadow-black text-shadow-sm uppercase tracking-wider">
+                {{ $t('techniqueTypes.' + (activeTooltip.type || 'Physical').toLowerCase()) }}
+             </div>
+        </div>
+      </Transition>
+    </Teleport>
   </div>
 </template>
+
+<style scoped>.text-shadow-sm {
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.8);
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
