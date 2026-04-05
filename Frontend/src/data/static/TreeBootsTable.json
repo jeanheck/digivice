@@ -40,7 +40,7 @@
                     },
                     "LocationImageCoordinates": {
                         "X": 79,
-                        "Y": 95
+                        "Y": 90
                     }
                 }
             ]
@@ -79,7 +79,7 @@
                     },
                     "LocationImageCoordinates": {
                         "X": 35,
-                        "Y": 88
+                        "Y": 83
                     }
                 }
             ]
@@ -107,7 +107,7 @@
                     },
                     "LocationImageCoordinates": {
                         "X": 79,
-                        "Y": 95
+                        "Y": 90
                     }
                 }
             ]
@@ -134,7 +134,7 @@
                         "EN-US": "Lamb Chop"
                     },
                     "LocationImageCoordinates": {
-                        "X": 23.5,
+                        "X": 21,
                         "Y": 56
                     }
                 },
@@ -145,8 +145,8 @@
                         "EN-US": "Waitress Debbie"
                     },
                     "LocationImageCoordinates": {
-                        "X": 48.5,
-                        "Y": 87
+                        "X": 49,
+                        "Y": 82
                     }
                 }
             ]
@@ -173,8 +173,8 @@
                         "EN-US": "Veemon"
                     },
                     "LocationImageCoordinates": {
-                        "X": 85,
-                        "Y": 86
+                        "X": 90,
+                        "Y": 84
                     }
                 }
             ]
@@ -229,8 +229,8 @@
                         "EN-US": "Veemon"
                     },
                     "LocationImageCoordinates": {
-                        "X": 85,
-                        "Y": 86
+                        "X": 90,
+                        "Y": 84
                     }
                 }
             ]

@@ -31,8 +31,8 @@
                         "EN-US": "Seiryu Tower"
                     },
                     "LocationImageCoordinates": {
-                        "X": 61,
-                        "Y": 29
+                        "X": 59.5,
+                        "Y": 29.5
                     }
                 },
                 {
@@ -42,8 +42,8 @@
                         "EN-US": "Repeating Tom"
                     },
                     "LocationImageCoordinates": {
-                        "X": 26,
-                        "Y": 64
+                        "X": 25,
+                        "Y": 65
                     }
                 }
             ]
@@ -71,7 +71,7 @@
                     },
                     "LocationImageCoordinates": {
                         "X": 39,
-                        "Y": 16
+                        "Y": 12
                     }
                 }
             ]
@@ -99,7 +99,7 @@
                     },
                     "LocationImageCoordinates": {
                         "X": 73,
-                        "Y": 13
+                        "Y": 9
                     }
                 }
             ]
@@ -126,8 +126,8 @@
                         "EN-US": "Seiryu Tower"
                     },
                     "LocationImageCoordinates": {
-                        "X": 61,
-                        "Y": 29
+                        "X": 59.5,
+                        "Y": 29.5
                     }
                 },
                 {
@@ -137,8 +137,8 @@
                         "EN-US": "Seiryu City"
                     },
                     "LocationImageCoordinates": {
-                        "X": 26,
-                        "Y": 64
+                        "X": 28,
+                        "Y": 73
                     }
                 },
                 {
@@ -148,8 +148,8 @@
                         "EN-US": "Seiryu Leader"
                     },
                     "LocationImageCoordinates": {
-                        "X": 20,
-                        "Y": 28
+                        "X": 23.5,
+                        "Y": 28.5
                     }
                 }
             ]
@@ -176,8 +176,8 @@
                         "EN-US": "Gondola"
                     },
                     "LocationImageCoordinates": {
-                        "X": 42,
-                        "Y": 62
+                        "X": 42.5,
+                        "Y": 62.5
                     }
                 }
             ]
@@ -243,8 +243,8 @@
                         "EN-US": "Asuka Inn 2F"
                     },
                     "LocationImageCoordinates": {
-                        "X": 62,
-                        "Y": 10
+                        "X": 61.5,
+                        "Y": 6
                     }
                 },
                 {
@@ -254,8 +254,8 @@
                         "EN-US": "Guilmon"
                     },
                     "LocationImageCoordinates": {
-                        "X": 82,
-                        "Y": 43
+                        "X": 80,
+                        "Y": 42
                     }
                 }
             ]
@@ -310,7 +310,7 @@
                         "EN-US": "Zephyr Tower"
                     },
                     "LocationImageCoordinates": {
-                        "X": 31,
+                        "X": 33,
                         "Y": 51
                     }
                 },
@@ -377,7 +377,7 @@
                         "EN-US": "Guilmon"
                     },
                     "LocationImageCoordinates": {
-                        "X": 71.5,
+                        "X": 68,
                         "Y": 33
                     }
                 }
@@ -405,8 +405,8 @@
                         "EN-US": "Forest Inn Basements"
                     },
                     "LocationImageCoordinates": {
-                        "X": 58,
-                        "Y": 87
+                        "X": 56,
+                        "Y": 90
                     }
                 },
                 {

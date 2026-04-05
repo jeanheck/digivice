@@ -72,6 +72,29 @@ const getLocalMapUrl = (name?: string) => {
     const path = `../../assets/maps/${name}.webp`
     return mapModules[path] ? (mapModules[path] as any).default || mapModules[path] : null
 }
+
+function formatTooltipText(text: string) {
+  if (!text) return ''
+  const words = text.split(' ')
+  const lines: string[] = []
+  let currentLine = ''
+
+  for (const word of words) {
+    if (currentLine === '') {
+      currentLine = word
+    } else {
+      // Logic: if current line already has more than 10 chars, next word starts a new line
+      if (currentLine.length > 10) {
+        lines.push(currentLine)
+        currentLine = word
+      } else {
+        currentLine += ' ' + word
+      }
+    }
+  }
+  if (currentLine) lines.push(currentLine)
+  return lines.join('<br/>')
+}
 </script>
 
 <template>
@@ -212,15 +235,15 @@ const getLocalMapUrl = (name?: string) => {
                              :style="{ left: selectedStep.locationOnMapCoordinates.x + '%', top: selectedStep.locationOnMapCoordinates.y + '%' }">
                              <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
                              <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,1)]"></div>
-                             <div class="absolute -top-7 text-[10px] font-cyber text-cyan-100 drop-shadow bg-cyan-950/90 px-2 py-0.5 rounded border border-cyan-700/80 max-w-[100px] leading-tight text-center"
-                                  :class="selectedStep.locationOnMapCoordinates.x > 80 ? 'right-0' : 'left-0'">
-                                  {{ selectedStep.locationOnMap }}
+                             <div class="absolute left-1/2 -translate-x-1/2 text-[10px] font-cyber text-cyan-100 drop-shadow bg-cyan-950/95 px-3 py-1 rounded border border-cyan-700/80 max-w-[150px] leading-tight text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                                  :class="selectedStep.locationOnMapCoordinates.y < 20 ? 'top-[26px]' : 'bottom-[26px]'"
+                                  v-html="formatTooltipText(getLocalized(selectedStep.locationOnMap))">
                              </div>
                         </div>
                   </div>
 
                   <!-- Local Map Intel Carousel -->
-                  <div v-if="currentLocation && getLocalMapUrl(currentLocation.locationImage)" class="relative w-full flex-1 min-h-[250px] bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group flex flex-col">
+                  <div v-if="currentLocation && getLocalMapUrl(currentLocation.locationImage)" class="relative w-full aspect-[4/3] bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group flex flex-col shrink-0">
                        <div class="relative flex-1 w-full bg-black/50 overflow-hidden">
                            <img :src="getLocalMapUrl(currentLocation.locationImage)" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
                            
@@ -230,9 +253,9 @@ const getLocalMapUrl = (name?: string) => {
                                  :style="{ left: currentLocation.locationImageCoordinates.x + '%', top: currentLocation.locationImageCoordinates.y + '%' }">
                                  <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
                                  <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)]"></div>
-                                 <div class="absolute -top-6 text-[9px] font-cyber text-cyan-100 drop-shadow bg-cyan-950/90 px-1.5 py-0.5 rounded border border-cyan-700/80 max-w-[80px] leading-tight text-center"
-                                      :class="currentLocation.locationImageCoordinates.x > 80 ? 'right-0' : 'left-0'">
-                                      {{ currentLocation.target || 'TARGET' }}
+                                 <div class="absolute left-1/2 -translate-x-1/2 text-[9px] font-cyber text-cyan-100 drop-shadow bg-cyan-950/95 px-2 py-0.5 rounded border border-cyan-700/80 max-w-[120px] leading-tight text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                                      :class="currentLocation.locationImageCoordinates.y < 25 ? 'top-[25px]' : 'bottom-[25px]'"
+                                      v-html="formatTooltipText(getLocalized(currentLocation.target))">
                                  </div>
                             </div>
                        </div>
