@@ -5,7 +5,6 @@ import DigimonDigievolutions from './DigimonDigievolutions.vue'
 import DigimonDetails from './DigimonDetails.vue'
 import DigimonEquipments from './DigimonEquipments.vue'
 import DigievolutionGridModal from './DigievolutionGridModal.vue'
-// import DigievolutionTreeModal from './DigievolutionTreeModal.vue' // Legacy Mode (Backup)
 import type { Digimon } from '../../types/backend'
 
 defineProps<{
@@ -38,13 +37,5 @@ const isGridModalOpen = ref(false)
       :digimon="digimon"
       @close="isGridModalOpen = false"
     />
-
-    <!-- Legacy Teleport Modal
-    <DigievolutionTreeModal 
-      :is-open="isTreeModalOpen" 
-      :digimon="digimon"
-      @close="isTreeModalOpen = false"
-    />
-    -->
   </div>
 </template>
