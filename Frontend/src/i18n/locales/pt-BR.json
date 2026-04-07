@@ -105,14 +105,19 @@
     "dark": "Trevas"
   },
   "conditions": {
-    "poison": "Veneno",
-    "paralyze": "Paralisia",
-    "confuse": "Confusão",
-    "sleep": "Dormir",
-    "ko": "K.O.",
-    "drain": "Drenar",
-    "steal": "Roubar",
-    "escape": "Fugir"
+    "canPoison": "Pode ser Envenenado",
+    "resistancePoison": "Resistente ao Veneno",
+    "canParalyze": "Pode ser Paralisado",
+    "resistanceParalyze": "Resistente a Paralisia",
+    "canConfuse": "Pode ser Confundido",
+    "resistanceConfuse": "Resistente a Confusão",
+    "canSleep": "Pode ser Adormecido",
+    "resistanceSleep": "Resistência a Sono",
+    "canKo": "Pode ser Nocauteado",
+    "resistanceKo": "Resistência a Nocaute",
+    "drain": "Pode ser Drenado",
+    "steal": "Pode ser Roubado",
+    "escape": "Jogador pode Fugir"
   },
   "tooltips": {
     "strength": "Aumenta o dano causado por ataques físicos e técnicas.",

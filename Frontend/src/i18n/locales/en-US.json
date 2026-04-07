@@ -105,14 +105,19 @@
     "dark": "Dark"
   },
   "conditions": {
-    "poison": "Poison",
-    "paralyze": "Paralyze",
-    "confuse": "Confuse",
-    "sleep": "Sleep",
-    "ko": "K.O.",
-    "drain": "Drain",
-    "steal": "Steal",
-    "escape": "Escape"
+    "canPoison": "Can be Poisoned",
+    "resistancePoison": "Resistance from Poison",
+    "canParalyze": "Can be Paralyzed",
+    "resistanceParalyze": "Resistance from Paralyze",
+    "canConfuse": "Can be Confused",
+    "resistanceConfuse": "Resistance from Confuse",
+    "canSleep": "Can be Asleep",
+    "resistanceSleep": "Resistance from Sleep",
+    "canKo": "Can be Knocked Out",
+    "resistanceKo": "Resistance from KO",
+    "drain": "Can be Drained",
+    "steal": "Can be Stealed",
+    "escape": "Player can Escape"
   },
   "tooltips": {
     "strength": "Increases the damage dealt by physical attacks and techniques.",

@@ -59,14 +59,14 @@ const elemTolsList = computed(() => {
 const statusTolsList = computed(() => {
   if (!props.enemy) return []
   return [
-    { label: t('conditions.poison'), val: props.enemy.Poison, icon: '☠️', color: 'text-green-500' },
-    { label: t('conditions.paralyze'), val: props.enemy.Paralyze, icon: '⚡', color: 'text-yellow-300' },
-    { label: t('conditions.confuse'), val: props.enemy.Confuse, icon: '😵', color: 'text-pink-400' },
-    { label: t('conditions.sleep'), val: props.enemy.Sleep, icon: '💤', color: 'text-blue-300' },
-    { label: t('conditions.ko'), val: props.enemy['K.O'] ?? (props.enemy as any)['K.O.'] ?? 0, icon: '💀', color: 'text-gray-500' },
-    { label: t('conditions.drain'), val: props.enemy.CanDrain ? 'Yes' : 'No', icon: '🧛', color: 'text-red-500' },
-    { label: t('conditions.steal'), val: props.enemy.CanSteal ? 'Yes' : 'No', icon: '🦝', color: 'text-amber-500' },
-    { label: t('conditions.escape'), val: props.enemy.CanEscape ? 'Yes' : 'No', icon: '🏃', color: 'text-gray-400' },
+    { label: props.enemy.CanPoison ? t('conditions.resistancePoison') : t('conditions.canPoison'), val: props.enemy.CanPoison ? `${props.enemy.Poison}%` : 'No', icon: '☠️', color: 'text-green-500', valColor: props.enemy.CanPoison ? 'text-white' : 'text-red-400' },
+    { label: props.enemy.CanParalyze ? t('conditions.resistanceParalyze') : t('conditions.canParalyze'), val: props.enemy.CanParalyze ? `${props.enemy.Paralyze}%` : 'No', icon: '⚡', color: 'text-yellow-300', valColor: props.enemy.CanParalyze ? 'text-white' : 'text-red-400' },
+    { label: props.enemy.CanConfuse ? t('conditions.resistanceConfuse') : t('conditions.canConfuse'), val: props.enemy.CanConfuse ? `${props.enemy.Confuse}%` : 'No', icon: '😵', color: 'text-pink-400', valColor: props.enemy.CanConfuse ? 'text-white' : 'text-red-400' },
+    { label: props.enemy.CanSleep ? t('conditions.resistanceSleep') : t('conditions.canSleep'), val: props.enemy.CanSleep ? `${props.enemy.Sleep}%` : 'No', icon: '💤', color: 'text-blue-300', valColor: props.enemy.CanSleep ? 'text-white' : 'text-red-400' },
+    { label: props.enemy.CanKO ? t('conditions.resistanceKo') : t('conditions.canKo'), val: props.enemy.CanKO ? `${props.enemy.KO ?? 0}%` : 'No', icon: '💀', color: 'text-gray-500', valColor: props.enemy.CanKO ? 'text-white' : 'text-red-400' },
+    { label: t('conditions.drain'), val: props.enemy.CanDrain ? 'Yes' : 'No', icon: '🧛', color: 'text-red-500', valColor: props.enemy.CanDrain ? 'text-green-400' : 'text-red-400' },
+    { label: t('conditions.steal'), val: props.enemy.CanSteal ? 'Yes' : 'No', icon: '🦝', color: 'text-amber-500', valColor: props.enemy.CanSteal ? 'text-green-400' : 'text-red-400' },
+    { label: t('conditions.escape'), val: props.enemy.CanEscape ? 'Yes' : 'No', icon: '🏃', color: 'text-gray-400', valColor: props.enemy.CanEscape ? 'text-green-400' : 'text-red-400' },
   ]
 })
 
@@ -256,7 +256,7 @@ const enemyImageUrl = computed(() => {
                             @mouseenter="e => showTooltip(e, st.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">
                          <span class="text-[16px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-[2.5px]" :class="st.color">{{ st.icon }}</span>
                        </div>
-                       <div class="font-bold tracking-widest text-shadow text-sm w-12 text-center" :class="(st.val === 'Yes') ? 'text-red-400' : 'text-white'">
+                       <div class="font-bold tracking-widest text-shadow text-sm w-12 text-center" :class="st.valColor">
                          {{ st.val }}
                        </div>
                    </div>
