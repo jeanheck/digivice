@@ -16,7 +16,18 @@ try
 {
     Log.Information("Initializing Digivice Backend...");
 
-    var builder = WebApplication.CreateBuilder(args);
+    // Set base directory appropriately for single file executable / sidecar execution
+    var basePath = AppContext.BaseDirectory;
+    Directory.SetCurrentDirectory(basePath);
+
+    var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+    {
+        Args = args,
+        ContentRootPath = basePath
+    });
+
+    // Enforce port 5000 for local SignalR / API bindings
+    builder.WebHost.UseUrls("http://127.0.0.1:5000");
 
     // Use Serilog for all framework logging
     builder.Host.UseSerilog();
@@ -39,20 +50,15 @@ try
     // Register Event Dispatcher
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
-    // Read the Debugging feature flag from appsettings.json
-    bool isDebugging = builder.Configuration.GetValue<bool>("Features:Debugging", false);
-
-    if (isDebugging)
-    {
-        Log.Information("Debugging flag detected! Activating Background Monitor...");
-        builder.Services.AddHostedService<DebugMonitorBackgroundService>();
-    }
+    // Start the Background Monitor (Memory Reader)
+    Log.Information("Activating Game Memory Poller in Background...");
+    builder.Services.AddHostedService<DebugMonitorBackgroundService>();
 
     builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowLocalhost", policy =>
         {
-            policy.WithOrigins("http://localhost:5173", "http://localhost:5173/")
+            policy.SetIsOriginAllowed(origin => new Uri(origin).IsLoopback || origin.Contains("tauri"))
                   .AllowAnyHeader()
                   .AllowAnyMethod()
                   .AllowCredentials(); // Required for SignalR

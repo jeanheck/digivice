@@ -25,6 +25,9 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.0",
+    "@tauri-apps/api": "^2.10.1",
+    "@tauri-apps/cli": "^2.10.1",
+    "@tauri-apps/plugin-shell": "^2.3.5",
     "@tsconfig/node24": "^24.0.4",
     "@types/jsdom": "^27.0.0",
     "@types/node": "^24.10.13",

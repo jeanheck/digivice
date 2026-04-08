@@ -8,8 +8,13 @@ class SignalRService {
     public async startConnection() {
         const store = useGameStore()
 
+        // Determina se estamos em produção (Tauri) ou desenvolvimento (Vite)
+        // O Vite usa proxy localmente, mas em Produção o proxy não existe, precisando da URL absoluta.
+        const isProd = import.meta.env.PROD
+        const hubUrl = isProd ? 'http://localhost:5000/gamehub' : '/gamehub'
+
         this.connection = new signalR.HubConnectionBuilder()
-            .withUrl('/gamehub') // Will be proxied by Vite
+            .withUrl(hubUrl) // Usa absolute em PRD
             .withAutomaticReconnect()
             .build()
 
