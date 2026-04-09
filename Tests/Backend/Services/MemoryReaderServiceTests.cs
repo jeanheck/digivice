@@ -68,5 +68,48 @@ namespace Tests.Backend.Services
             var result = reader.ReadString(0x2000, 5);
             Assert.Equal("Me", result); // Expected normal TextDecoder decoding behavior
         }
+
+        [Fact]
+        public void ReadInt32_ShouldReturnParsedValue_WhenConnected()
+        {
+            _mockProcessService.Setup(p => p.GetProcessIdByName(It.IsAny<string>())).Returns(1234);
+            _mockMemoryProvider.Setup(p => p.OpenExisting(It.IsAny<string>())).Returns(_mockMemoryAccessor.Object);
+            _mockMemoryAccessor.Setup(a => a.ReadInt32(0x3000)).Returns(0x11223344);
+
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
+            reader.TryConnect();
+
+            Assert.Equal(0x11223344, reader.ReadInt32(0x3000));
+        }
+
+        [Fact]
+        public void ReadInt16_ShouldReturnParsedValue_WhenConnected()
+        {
+            _mockProcessService.Setup(p => p.GetProcessIdByName(It.IsAny<string>())).Returns(1234);
+            _mockMemoryProvider.Setup(p => p.OpenExisting(It.IsAny<string>())).Returns(_mockMemoryAccessor.Object);
+            _mockMemoryAccessor.Setup(a => a.ReadInt16(0x4000)).Returns((short)0x1234);
+
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
+            reader.TryConnect();
+
+            Assert.Equal((short)0x1234, reader.ReadInt16(0x4000));
+        }
+
+        [Fact]
+        public void ReadByteSafe_ShouldReturnByte_OrZeroIfAddressInvalid()
+        {
+            byte[] expectedData = { 0xAA };
+            _mockProcessService.Setup(p => p.GetProcessIdByName(It.IsAny<string>())).Returns(1234);
+            _mockMemoryProvider.Setup(p => p.OpenExisting(It.IsAny<string>())).Returns(_mockMemoryAccessor.Object);
+            _mockMemoryAccessor.Setup(a => a.ReadArray(0x50, It.IsAny<byte[]>(), 0, 1))
+                               .Callback<long, byte[], int, int>((addr, buf, idx, count) => expectedData.CopyTo(buf, idx));
+
+            var reader = new MemoryReaderService(_mockProcessService.Object, _mockMemoryProvider.Object);
+            reader.TryConnect();
+
+            Assert.Equal(0xAA, reader.ReadByteSafe("0x50"));
+            Assert.Equal(0, reader.ReadByteSafe("invalid"));
+            Assert.Equal(0, reader.ReadByteSafe(""));
+        }
     }
 }

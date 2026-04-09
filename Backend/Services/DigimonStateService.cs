@@ -58,7 +58,6 @@ namespace Backend.Services
                     if (entryId == id)
                     {
                         level = BitConverter.ToInt16(resource.LogicBlock, entryOffset + 2);
-                        //Console.WriteLine($"[DigimonStateService] Slot {j} (ID {id}) matched at K={k}! Read Level: {level}");
                         break;
                     }
                 }
