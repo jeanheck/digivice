@@ -1,4 +1,4 @@
-# Digimon World 2003 - Digivice App
+# Digivice (for Digimon World 2003)
 
 This is a companion app that reads memory from the Digimon World 2003 game running in an emulator and displays real-time data in a beautiful frontend.
 
