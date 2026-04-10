@@ -1,4 +1,4 @@
-using Backend.Debug;
+using Backend.Diagnostics;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;

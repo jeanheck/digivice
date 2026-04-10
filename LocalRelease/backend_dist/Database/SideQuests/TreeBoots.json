@@ -1,0 +1,47 @@
+{
+    "Id": "TreeBoots",
+    "Title": "The Tree Boots",
+    "Description": "Obtain the Tree Boots to unlock new areas by kicking trees.",
+    "Prerequisites": [
+        {
+            "Description": "Own the Folder Bag"
+        }
+    ],
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x04B3B0",
+            "BitMask": "0x04"
+        },
+        {
+            "Number": 2,
+            "Address": "0x04B3B0",
+            "BitMask": "0x08"
+        },
+        {
+            "Number": 3,
+            "Address": "0x04B3B0",
+            "BitMask": "0x10"
+        },
+        {
+            "Number": 4,
+            "Address": "0x04B3B0",
+            "BitMask": "0xE0"
+        },
+        {
+            "Number": 5,
+            "Address": "0x04B3B0",
+            "BitMask": "0xC0"
+        },
+        {
+            "Number": 6,
+            "Address": "0x04B3B0",
+            "BitMask": "0x80"
+        },
+        {
+            "Number": 7,
+            "Address": "0x04B3B1",
+            "BitMask": "0x01"
+        }
+    ]
+}

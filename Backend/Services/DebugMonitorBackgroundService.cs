@@ -1,4 +1,4 @@
-using Backend.Debug;
+using Backend.Diagnostics;
 
 namespace Backend.Services
 {

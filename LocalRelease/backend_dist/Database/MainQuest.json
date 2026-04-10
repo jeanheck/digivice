@@ -1,0 +1,72 @@
+{
+    "Id": "MainQuest",
+    "Title": "The greatest of them all!",
+    "Description": "Become the greatest tamer of the Digital World!",
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x0004B3B6",
+            "BitMask": "0x80"
+        },
+        {
+            "Number": 2,
+            "Address": "0x0004B3B7",
+            "BitMask": "0x01"
+        },
+        {
+            "Number": 3,
+            "Address": "0x0004B3B7",
+            "BitMask": "0x02"
+        },
+        {
+            "Number": 4,
+            "Address": "0x0004B3E0",
+            "BitMask": "0x04"
+        },
+        {
+            "Number": 5,
+            "Address": "0x0004B370",
+            "BitMask": "0x02"
+        },
+        {
+            "Number": 6,
+            "Address": "0x0004B3E0",
+            "BitMask": "0x40"
+        },
+        {
+            "Number": 7,
+            "Address": "0x0004B3BD",
+            "BitMask": "0x10"
+        },
+        {
+            "Number": 8,
+            "Address": "0x0004B3BD",
+            "BitMask": "0x20"
+        },
+        {
+            "Number": 9,
+            "Address": "0x00048F3F",
+            "BitMask": "0x01"
+        },
+        {
+            "Number": 10,
+            "Address": "0x0004B3BD",
+            "BitMask": "0x40"
+        },
+        {
+            "Number": 11,
+            "Address": "0x0004B3BD",
+            "BitMask": "0x80"
+        },
+        {
+            "Number": 12,
+            "Address": "0x00048F3E",
+            "BitMask": "0x01"
+        },
+        {
+            "Number": 13,
+            "Address": "0x0004B3C5",
+            "BitMask": "0x20"
+        }
+    ]
+}

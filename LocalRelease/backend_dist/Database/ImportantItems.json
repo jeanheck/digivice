@@ -1,0 +1,24 @@
+{
+    "ImportantItems": [
+        {
+            "Id": "FolderBag",
+            "Name": "Folder Bag",
+            "Address": "0x00048F42"
+        },
+        {
+            "Id": "TreeBoots",
+            "Name": "Tree Boots",
+            "Address": "0x00048DB4"
+        },
+        {
+            "Id": "FishingPole",
+            "Name": "Fishing Pole",
+            "Address": "0x00048DB5"
+        },
+        {
+            "Id": "RedSnapper",
+            "Name": "Red Snapper",
+            "Address": "0x00048DB7"
+        }
+    ]
+}

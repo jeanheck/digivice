@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Backend</name>
+    </assembly>
+    <members>
+        <member name="T:Backend.Events.Hubs.GameHub">
+            <summary>
+            SignalR Hub used as the WebSocket endpoint for client connections.
+            Clients connect here and receive game state events pushed by the server.
+            </summary>
+        </member>
+        <member name="P:Backend.Models.Digimons.Technique.Type">
+            <summary>Physical, Magical, or Heal</summary>
+        </member>
+        <member name="P:Backend.Models.Digimons.Technique.Element">
+            <summary>Fire, Water, Ice, Wind, Thunder, Dark, Machine, None, etc.</summary>
+        </member>
+        <member name="P:Backend.Models.Digimons.Technique.ElementStrength">
+            <summary>Numeric elemental power multiplier used by the game (16, 32, 48, 64, 72...)</summary>
+        </member>
+        <member name="P:Backend.Models.Digimons.Technique.LearnLevel">
+            <summary>Level required to learn this technique for the associated Digivolution</summary>
+        </member>
+        <member name="P:Backend.Models.Digimons.Technique.IsSignature">
+            <summary>True if this is the Signature technique (highest LearnLevel in the set)</summary>
+        </member>
+        <member name="P:Backend.Models.Quests.QuestStep.Prerequisites">
+            <summary>
+            Optional informational prerequisites for this step.
+            Displayed as a checklist inside the step — does NOT block progress.
+            </summary>
+        </member>
+        <member name="P:Backend.Models.Quests.QuestStep.BitMask">
+            <summary>
+            Bitmask to check against the byte at Address.
+            Step is completed if (byte AND BitMask) != 0.
+            
+            For cumulative flags: use a single bit (e.g., "0x04" for bit 2).
+            For rotating/phase flags: use multiple bits (e.g., "0xE0" for bits 5+6+7,
+              meaning "step is done if ANY of these bits is set").
+            
+            If null, uses legacy behavior: byte == 1 means completed.
+            </summary>
+        </member>
+        <member name="P:Backend.Models.Quests.Requisite.ItemKey">
+            <summary>
+            Optional key to automatically check if this prerequisite is met.
+            Maps to an entry in ConsumableItemsAddresses, ImportantItemsAddresses,
+            or an equipment ID. When null, IsDone must be set manually.
+            </summary>
+        </member>
+        <member name="P:Backend.Models.Quests.Requisite.ItemType">
+            <summary>
+            Type of item to check: "consumable", "equipment", or "important".
+            Used together with ItemKey to determine which address table to query.
+            </summary>
+        </member>
+        <member name="T:Backend.Services.DebugMonitorBackgroundService">
+            <summary>
+            Hosted background service that runs the AppMonitor loop
+            alongside the WebApplication host, using the idiomatic ASP.NET Core pattern.
+            </summary>
+        </member>
+        <member name="M:Backend.Services.DebugMonitorBackgroundService.#ctor(Backend.Diagnostics.DebugMonitor)">
+            <summary>
+            Hosted background service that runs the AppMonitor loop
+            alongside the WebApplication host, using the idiomatic ASP.NET Core pattern.
+            </summary>
+        </member>
+        <member name="M:Backend.Utils.TextDecoder.Decode(System.Byte[])">
+            <summary>
+            Decodes a raw byte buffer from the game's custom character encoding into a string.
+            Byte 0x01 is treated as a space character (the game uses 0x01 0x01 for one space).
+            Decoding stops at 0x00 or 0xFF terminators.
+            After decoding, consecutive spaces are collapsed and the result is trimmed.
+            Returns empty string if the result contains non-printable or invalid characters
+            (e.g. during battle when the buffer is repurposed for other UI text).
+            </summary>
+        </member>
+        <member name="M:Backend.Utils.TextDecoder.DecodeName(System.Byte[])">
+            <summary>
+            Decodes a player/character name from the game's custom encoding.
+            Same decoding as Decode(), but without the strict area-name validation,
+            allowing digits and special characters (e.g., "Ta01.?-~").
+            </summary>
+        </member>
+        <member name="M:Backend.Utils.TextDecoder.IsValidAreaName(System.String)">
+            <summary>
+            Returns true if the string looks like a valid map area name
+            (only contains ASCII letters, spaces, hyphens, and apostrophes).
+            </summary>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

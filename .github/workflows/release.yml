@@ -47,7 +47,7 @@ jobs:
 
       - name: Build Tauri App
         working-directory: ./Frontend
-        run: npm run tauri build
+        run: npx tauri build
 
       - name: Create Release Package
         # Separamos apenas o excenssial em uma pasta limpa para o jogador
