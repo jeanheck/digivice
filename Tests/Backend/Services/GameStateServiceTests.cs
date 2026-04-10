@@ -64,7 +64,8 @@ namespace Tests.Backend.Services
             mockReader.Setup(r => r.ReadQuestSteps(It.IsAny<List<QuestStep>>())).Returns(new Dictionary<int, byte>());
 
             var playerService = new PlayerStateService(mockDb.Object, mockReader.Object);
-            var digimonService = new DigimonStateService(mockDb.Object, mockReader.Object);
+            var digiEvoService = new DigievolutionStateService();
+            var digimonService = new DigimonStateService(mockDb.Object, mockReader.Object, digiEvoService);
             var partyService = new PartyStateService(mockDb.Object, mockReader.Object, digimonService);
             var itemsService = new ItemsStateService(mockDb.Object, mockReader.Object);
             var journalService = new JournalStateService(mockDb.Object, mockReader.Object, itemsService);

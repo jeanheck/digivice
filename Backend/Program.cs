@@ -39,6 +39,7 @@ try
     builder.Services.AddSingleton<IGameDatabase, GameDatabase>();
     builder.Services.AddSingleton<IGameReader, GameReader>();
     builder.Services.AddSingleton<PlayerStateService>();
+    builder.Services.AddSingleton<DigievolutionStateService>();
     builder.Services.AddSingleton<DigimonStateService>();
     builder.Services.AddSingleton<PartyStateService>();
     builder.Services.AddSingleton<ItemsStateService>();

@@ -14,10 +14,13 @@ namespace Backend.Services
         // demands a tight mapping. We use DigimonResource which has a memory logic block.
         // It's effectively parsed here in the Service layer to create the final Digimon Model.
 
-        public DigimonStateService(IGameDatabase database, IGameReader reader)
+        private readonly DigievolutionStateService _digievolutionStateService;
+
+        public DigimonStateService(IGameDatabase database, IGameReader reader, DigievolutionStateService digievolutionStateService)
         {
             _database = database;
             _reader = reader;
+            _digievolutionStateService = digievolutionStateService;
         }
 
         public Digimon GetDigimon(int slotIndex, byte digimonId, int baseAddress)
@@ -27,43 +30,7 @@ namespace Backend.Services
 
             var digimonName = GetDigimonNameById(addresses, digimonId);
 
-            var equippedEvoIds = new int[]
-            {
-                MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Digievolutions?.EquipedSlot1),
-                MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Digievolutions?.EquipedSlot2),
-                MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Digievolutions?.EquipedSlot3)
-            };
-
-            var equippedDigievolutions = new Digievolution?[3];
-            for (int j = 0; j < 3; j++)
-            {
-                int id = equippedEvoIds[j];
-                if (id == 0xFFFF || id == -1 || id == 0)
-                {
-                    equippedDigievolutions[j] = null;
-                    continue;
-                }
-
-                int level = 1;
-                int maxEvolutions = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions?.MaxUnlockedDigievolutions, 60);
-                int stride = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions?.UnlockedDigievolutionEntryStride, 8);
-                int startOffset = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions?.UnlockedDigievolutionsStart, 0x50);
-
-                for (int k = 0; k < maxEvolutions; k++)
-                {
-                    int entryOffset = startOffset + (k * stride);
-                    if (entryOffset + 2 >= resource.LogicBlock.Length) break;
-
-                    int entryId = BitConverter.ToInt16(resource.LogicBlock, entryOffset);
-                    if (entryId == id)
-                    {
-                        level = BitConverter.ToInt16(resource.LogicBlock, entryOffset + 2);
-                        break;
-                    }
-                }
-
-                equippedDigievolutions[j] = new Digievolution { Id = id, Level = level };
-            }
+            var equippedDigievolutions = _digievolutionStateService.GetEquippedDigievolutions(resource.LogicBlock, addresses.Digievolutions);
 
             return new Digimon
             {

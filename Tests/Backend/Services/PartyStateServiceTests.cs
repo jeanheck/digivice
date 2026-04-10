@@ -18,7 +18,8 @@ namespace Tests.Backend.Services
             _mockDatabase = new Mock<IGameDatabase>();
             _mockReader = new Mock<IGameReader>();
 
-            _digimonService = new DigimonStateService(_mockDatabase.Object, _mockReader.Object);
+            var digiEvoService = new DigievolutionStateService();
+            _digimonService = new DigimonStateService(_mockDatabase.Object, _mockReader.Object, digiEvoService);
             _partyService = new PartyStateService(_mockDatabase.Object, _mockReader.Object, _digimonService);
         }
 

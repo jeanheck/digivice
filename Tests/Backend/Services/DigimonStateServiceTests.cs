@@ -10,13 +10,15 @@ namespace Tests.Backend.Services
     {
         private readonly Mock<IGameDatabase> _mockDatabase;
         private readonly Mock<IGameReader> _mockReader;
+        private readonly DigievolutionStateService _digiEvoService;
         private readonly DigimonStateService _digimonService;
 
         public DigimonStateServiceTests()
         {
             _mockDatabase = new Mock<IGameDatabase>();
             _mockReader = new Mock<IGameReader>();
-            _digimonService = new DigimonStateService(_mockDatabase.Object, _mockReader.Object);
+            _digiEvoService = new DigievolutionStateService();
+            _digimonService = new DigimonStateService(_mockDatabase.Object, _mockReader.Object, _digiEvoService);
         }
 
         [Fact]
