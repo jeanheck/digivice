@@ -19,6 +19,10 @@ namespace Backend.Services
         public GameDatabase()
         {
             _dataDirectory = Path.Combine(AppContext.BaseDirectory, "Database");
+            if (!Directory.Exists(_dataDirectory))
+            {
+                _dataDirectory = Path.Combine(Environment.CurrentDirectory, "Database");
+            }
         }
 
         public PlayerAddresses GetPlayerAddresses()

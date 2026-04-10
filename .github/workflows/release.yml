@@ -1,0 +1,73 @@
+name: "Release Pipeline"
+
+on:
+  push:
+    tags:
+      - 'v*' # Aciona a action apenas quando você cria uma tag que começa com "v" (ex: v1.0.0)
+
+jobs:
+  release:
+    name: Build & Release Digivice
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10.0
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x' 
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Publish Backend as Single File
+        # Compila o backend de forma independente (Plug and Play)
+        run: |
+          dotnet publish Backend/Backend.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o backend_dist
+
+      - name: Prepare Tauri Sidecar
+        # O Tauri exige que o sidecar fique na pasta binaries com esse nome para poder embutir!
+        run: |
+          New-Item -ItemType Directory -Force -Path Frontend/src-tauri/binaries
+          Copy-Item -Path backend_dist/Backend.exe -Destination Frontend/src-tauri/binaries/backend-x86_64-pc-windows-msvc.exe
+          Copy-Item -Path backend_dist/appsettings.json -Destination Frontend/src-tauri/binaries/appsettings.json
+
+      - name: Install Frontend Dependencies
+        working-directory: ./Frontend
+        run: npm install
+
+      - name: Build Tauri App
+        working-directory: ./Frontend
+        run: npm run tauri build
+
+      - name: Create Release Package
+        # Separamos apenas o excenssial em uma pasta limpa para o jogador
+        run: |
+          New-Item -ItemType Directory -Force -Path ReleaseFolder
+          
+          # O digivice.exe compilado já engoliu o backend.exe (sidecar nativo do Tauri)
+          Copy-Item -Path Frontend/src-tauri/target/release/digivice.exe -Destination ReleaseFolder/digivice.exe
+          
+          # Copia a pasta original do Database para que o App consiga ler os JSONs
+          Copy-Item -Path Backend/Database -Destination ReleaseFolder/Database -Recurse
+          
+          # Compacta em Arquivo ZIP
+          Compress-Archive -Path ReleaseFolder/* -DestinationPath Digivice-Windows-Portable.zip
+
+      - name: Publish to GitHub Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Digivice-Windows-Portable.zip
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
