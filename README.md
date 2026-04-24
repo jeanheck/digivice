@@ -31,8 +31,10 @@ Lastly, but no less importantly, I do not own any legal rights to the game, nor 
 ## How to use
 
 * Configure your Duckstation emulator at the point that you can run a game;
+* Go to the Duckstation Settings > Advanced > Find the section "Tweaks/Hacks" and mark the option "Export Memory Shared".
 * Download the latest version Digivice (see the Releases tab). I recommend you to extract the ZIP content to a new folder;
 * Run the Digimon World 2003 on your emulador;
+* Advance on the game until you have your Digimon party running with you on the map (when the game send you to the Digimon Lab).
 * While the game was running, double-click the "digivice.exe".
 * If everything was right, the Digivice window will open working correctly.
 
