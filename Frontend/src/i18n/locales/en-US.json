@@ -52,6 +52,18 @@
     "elem": "Resistances",
     "status": "Conditions"
   },
+  "species": {
+    "Insect": "Insect",
+    "Dino": "Dinossaur",
+    "Machine": "Machine",
+    "Mammal": "Mammal",
+    "Fish": "Fish",
+    "Evil": "Evil",
+    "Plant": "Plant",
+    "Bird": "Bird",
+    "Dragon": "Dragon",
+    "Ghoul": "Ghoul"
+  },
   "digimon": {
     "digievolutions": "Digievolutions",
     "equipments": "Equipments",

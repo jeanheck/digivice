@@ -26,6 +26,39 @@
             },
             "Locations": [
                 {
+                    "LocationImage": "Asuka City",
+                    "Target": {
+                        "PT-BR": "Pousada Asuka: Andar 1",
+                        "EN-US": "Asuka Inn 1F"
+                    },
+                    "LocationImageCoordinates": {
+                        "X": 51,
+                        "Y": 39
+                    }
+                },
+                {
+                    "LocationImage": "Asuka City - Inn 1F",
+                    "Target": {
+                        "PT-BR": "Caminho Subterrâneo",
+                        "EN-US": "Underground Path"
+                    },
+                    "LocationImageCoordinates": {
+                        "X": 45,
+                        "Y": 98
+                    }
+                },
+                {
+                    "LocationImage": "Underground Path",
+                    "Target": {
+                        "PT-BR": "Cidade Asuka",
+                        "EN-US": "Asuka City"
+                    },
+                    "LocationImageCoordinates": {
+                        "X": 14,
+                        "Y": 83
+                    }
+                },
+                {
                     "LocationImage": "Asuka City 2",
                     "Target": {
                         "PT-BR": "Cruzeiro Amarelo",

@@ -152,7 +152,7 @@ const enemyImageUrl = computed(() => {
                 <div class="w-1/2 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-between gap-1.5 py-4">
                   <div class="flex items-center justify-between text-[11px]">
                     <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t('enemy.specie') }}:</span>
-                    <span class="font-bold text-gray-300 capitalize">{{ getLocalized(enemy.Species) || (typeof enemy.Species === 'string' ? enemy.Species : 'Unknown') }}</span>
+                    <span class="font-bold text-gray-300 capitalize">{{ $t(`species.${enemy.Species}`) }}</span>
                   </div>
 
                   <div class="flex items-center justify-between text-[11px]">

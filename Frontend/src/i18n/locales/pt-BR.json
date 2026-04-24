@@ -52,6 +52,18 @@
     "elem": "Elementos",
     "status": "Resistências"
   },
+  "species": {
+    "Insect": "Inseto",
+    "Dino": "Dinossauro",
+    "Machine": "Machine",
+    "Mammal": "Mamífero",
+    "Fish": "Peixe",
+    "Evil": "Maligno",
+    "Plant": "Planta",
+    "Bird": "Pássaro",
+    "Dragon": "Dragão",
+    "Ghoul": "Fantasma"
+  },
   "digimon": {
     "digievolutions": "Digievoluções",
     "equipments": "Equipamentos",

@@ -20,7 +20,7 @@ const isUnlocked = computed(() => {
 const getRequirementText = (req: EvolutionRequirement) => {
     switch (req.Type) {
         case 'DigimonLevel': return `${props.digimon.basicInfo.name} Lv ${req.Value}`
-        case 'Attribute': return `${props.digimon.basicInfo.name} ${req.Attribute} >= ${req.Value}`
+        case 'Attribute': return `${props.digimon.basicInfo.name} - ${req.Attribute} >= ${req.Value}`
         case 'DigievolutionLevel': return `${req.Digievolution} Lv ${req.Value}`
         default: return 'Unknown Parameter'
     }
