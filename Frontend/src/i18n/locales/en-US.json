@@ -9,6 +9,8 @@
   "player": {
     "tamer": "Tamer",
     "bits": "Bits",
+    "groupCharisma": "Group Charisma",
+    "groupCharismaWarning": "This value does not include the Charisma you gain from your Digivolution.",
     "slotEmpty": "Slot Empty"
   },
   "journal": {

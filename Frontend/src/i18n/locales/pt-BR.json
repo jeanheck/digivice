@@ -9,6 +9,8 @@
   "player": {
     "tamer": "Treinador",
     "bits": "Bits",
+    "groupCharisma": "Carisma do Grupo",
+    "groupCharismaWarning": "Esse valor não considera o Carisma que você ganha da sua digievolução.",
     "slotEmpty": "Slot Vazio"
   },
   "journal": {
