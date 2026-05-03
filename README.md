@@ -25,13 +25,15 @@ Lastly, but no less importantly, I do not own any legal rights to the game, nor 
 
 # Requirements
 
-**Plataform**: Windows. The Digivice was a exe software that you will run on your PC.<br />
+**Plataform**: Windows. The Digivice was a .exe software that you will run on your PC.<br />
 **Emulator**: **Must be Duckstation**. In the future, I will try to make it available for others emulators.
 
 ## How to use
 
 * Configure your Duckstation emulator at the point that you can run a game;
-* Go to the Duckstation Settings > Advanced > Find the section "Tweaks/Hacks" and mark the option "Export Memory Shared".
+* Go to the Duckstation Settings > Advanced > On "Interface Settings", mark the option check the option "Show Debug Menu";
+* A new menu named "Debugging" will appear on the left. Click on it;
+* Find the option "Export Memory Shared" and check it;
 * Download the latest version Digivice (see the Releases tab). I recommend you to extract the ZIP content to a new folder;
 * Run the Digimon World 2003 on your emulador;
 * Advance on the game until you have your Digimon party running with you on the map (when the game send you to the Digimon Lab).
