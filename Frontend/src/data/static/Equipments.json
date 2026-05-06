@@ -5879,7 +5879,7 @@
                 "PT-BR": "Fire Power 1",
                 "EN-US": "Fire Power 1"
             },
-            "Id": null,
+            "Id": 339,
             "Type": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
@@ -6533,7 +6533,7 @@
                 "PT-BR": "Anel Juízo",
                 "EN-US": "Sober Ring"
             },
-            "Id": null,
+            "Id": 314,
             "Type": "Accessory",
             "Attributes": [
                 {
@@ -6553,7 +6553,7 @@
                 "Veemon"
             ],
             "Note": {
-                "PT-BR": "Boosts the equipped Digimon’s resistance against confusion",
+                "PT-BR": "Aumenta a resistência contra Confusão do Digimon Equipado",
                 "EN-US": "Boosts the equipped Digimon’s resistance against confusion"
             }
         },

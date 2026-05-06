@@ -445,7 +445,7 @@
         "EXP": 39,
         "BITS": 80,
         "Location": [
-            "JungleGraveInTheDark"
+            "JungleGrave"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -870,7 +870,7 @@
         "EXP": 80,
         "BITS": 160,
         "Location": [
-            "ProtocolRuins - Amaterasu"
+            "ProtocolRuinsAfter"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
@@ -1238,7 +1238,10 @@
         "EXP": 41,
         "BITS": 85,
         "Location": [
-            "BulkSwap,TranquilSwamp,BulkBridge,JungleGrave"
+            "BulkSwamp",
+            "TranquilSwamp",
+            "BulkBridge",
+            "JungleGrave"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1347,7 +1350,7 @@
         "EXP": 46,
         "BITS": 90,
         "Location": [
-            "JungleGraveInTheDark"
+            "JungleGrave"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
@@ -1399,7 +1402,7 @@
         "EXP": 154,
         "BITS": 310,
         "Location": [
-            "JungleGrave"
+            "JungleGraveAfter"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
@@ -1451,8 +1454,8 @@
         "EXP": 96,
         "BITS": 160,
         "Location": [
-            "EastWireForest",
-            "AsukaProtocolForest"
+            "EastWireForestAfter",
+            "ProtocolForestAfter"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1504,7 +1507,8 @@
         "EXP": 50,
         "BITS": 190,
         "Location": [
-            "PhoenixBay,EtherJungle"
+            "PhoenixBay",
+            "EtherJungle"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1608,7 +1612,10 @@
         "EXP": 145,
         "BITS": 290,
         "Location": [
-            "DivermonsLakeAsukaSouthBulkSwamp,BulkBridge,JungleGrave"
+            "DivermonsLakeAfter",
+            "BulkSwampAfter",
+            "BulkBridgeAfter",
+            "JungleGraveAfter"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1920,7 +1927,8 @@
         "EXP": 58,
         "BITS": 120,
         "Location": [
-            "BiosSwampAsukaEastDivermonsLake"
+            "BiosSwamp",
+            "DivermonsLakeAfter"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
@@ -3210,7 +3218,9 @@
         "EXP": 155,
         "BITS": 330,
         "Location": [
-            "JungleGravebeforeZanbamon,Catacombs,CatacombBackEntrance"
+            "JungleGrave",
+            "Catacombs",
+            "CatacombBackEntrance"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Trevas",
@@ -6001,7 +6011,10 @@
         "DVXP": 9,
         "EXP": 45,
         "BITS": 90,
-        "Location": []
+        "Location": [
+            "PhoenixBay",
+            "KickingForestAfter"
+        ]
     },
     {
         "Id": 183,
@@ -6085,7 +6098,12 @@
         "DVXP": 8,
         "EXP": 40,
         "BITS": 80,
-        "Location": []
+        "Location": [
+            "BulkSwamp",
+            "BulkBridge",
+            "TranquilSwamp",
+            "JungleGrave"
+        ]
     },
     {
         "Id": 185,

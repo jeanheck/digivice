@@ -326,5 +326,101 @@
             "EN-US": "Zephyr Tower"
         },
         "Image": "Zephyr Tower"
+    },
+    "0232": {
+        "Location": "SouthStation",
+        "Name": {
+            "PT-BR": "Estação Sul",
+            "EN-US": "South Station"
+        },
+        "Image": "South Station"
+    },
+    "0233": {
+        "Location": "BulkSwamp",
+        "Name": {
+            "PT-BR": "Pântano a granel",
+            "EN-US": "Bulk Swamp"
+        },
+        "Image": "Bulk Swamp"
+    },
+    "0234": {
+        "Location": "BulkBridge",
+        "Name": {
+            "PT-BR": "Ponte em massa",
+            "EN-US": "Bulk Bridge"
+        },
+        "Image": "Bulk Bridge"
+    },
+    "0235": {
+        "Location": "BiosSwamp",
+        "Name": {
+            "PT-BR": "Pântano de Bios",
+            "EN-US": "Bios Swamp"
+        },
+        "Image": "Bios Swamp"
+    },
+    "0237": {
+        "Location": "TranquilSwamp",
+        "Name": {
+            "PT-BR": "Pântano Tranquilo",
+            "EN-US": "Tranquil Swamp"
+        },
+        "Image": "Tranquil Swamp"
+    },
+    "0238": {
+        "Location": "SwampInn",
+        "Name": {
+            "PT-BR": "Pousada Pântano",
+            "EN-US": "Swamp Inn"
+        },
+        "Image": "Swamp Inn"
+    },
+    "0239": {
+        "Location": "ShamanHouse",
+        "Name": {
+            "PT-BR": "Casa do Shaman",
+            "EN-US": "Shaman House"
+        },
+        "Image": "Shaman House"
+    },
+    "023A": {
+        "Location": "JungleGrave",
+        "Name": {
+            "PT-BR": "Túmulo da Selva",
+            "EN-US": "Jungle Grave"
+        },
+        "Image": "Jungle Grave"
+    },
+    "023B": {
+        "Location": "PhoenixBay",
+        "Name": {
+            "PT-BR": "Baía da Fênix",
+            "EN-US": "Phoenix Bay"
+        },
+        "Image": "Phoenix Bay"
+    },
+    "023E": {
+        "Location": "SuzakuCity",
+        "Name": {
+            "PT-BR": "Cidade Suzaku",
+            "EN-US": "Suzaku City"
+        },
+        "Image": "Suzaku City"
+    },
+    "023F": {
+        "Location": "SuzakuInn",
+        "Name": {
+            "PT-BR": "Pousada Suzaku",
+            "EN-US": "Suzaku Inn"
+        },
+        "Image": "Suzaku Inn"
+    },
+    "0240": {
+        "Location": "SuzakuHall",
+        "Name": {
+            "PT-BR": "Salão Suzaku",
+            "EN-US": "Suzaku Hall"
+        },
+        "Image": "Suzaku Hall"
     }
 }
