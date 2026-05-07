@@ -74,7 +74,7 @@
     "0208": {
         "Location": "ArenaFrontDesk",
         "Name": {
-            "PT-BR": "Recepção da Arena",
+            "PT-BR": "Recepção Arena Digimon",
             "EN-US": "Arena Front Desk"
         },
         "Image": "Arena Front Desk"
@@ -146,7 +146,7 @@
     "020D": {
         "Location": "SmithsShop",
         "Name": {
-            "PT-BR": "Loja do Ferreiro",
+            "PT-BR": "Loja do Smith",
             "EN-US": "Smith's Shop"
         },
         "Image": "Smith's Shop"
@@ -338,7 +338,7 @@
     "0233": {
         "Location": "BulkSwamp",
         "Name": {
-            "PT-BR": "Pântano a granel",
+            "PT-BR": "Pântano",
             "EN-US": "Bulk Swamp"
         },
         "Image": "Bulk Swamp"
@@ -346,7 +346,7 @@
     "0234": {
         "Location": "BulkBridge",
         "Name": {
-            "PT-BR": "Ponte em massa",
+            "PT-BR": "Ponte do Pântano",
             "EN-US": "Bulk Bridge"
         },
         "Image": "Bulk Bridge"
@@ -354,7 +354,7 @@
     "0235": {
         "Location": "BiosSwamp",
         "Name": {
-            "PT-BR": "Pântano de Bios",
+            "PT-BR": "Pântano Bios",
             "EN-US": "Bios Swamp"
         },
         "Image": "Bios Swamp"
@@ -370,7 +370,7 @@
     "0238": {
         "Location": "SwampInn",
         "Name": {
-            "PT-BR": "Pousada Pântano",
+            "PT-BR": "Pousada Pantanal",
             "EN-US": "Swamp Inn"
         },
         "Image": "Swamp Inn"
@@ -378,7 +378,7 @@
     "0239": {
         "Location": "ShamanHouse",
         "Name": {
-            "PT-BR": "Casa do Shaman",
+            "PT-BR": "Casa Xamã",
             "EN-US": "Shaman House"
         },
         "Image": "Shaman House"
@@ -386,7 +386,7 @@
     "023A": {
         "Location": "JungleGrave",
         "Name": {
-            "PT-BR": "Túmulo da Selva",
+            "PT-BR": "Selva Sepultura",
             "EN-US": "Jungle Grave"
         },
         "Image": "Jungle Grave"
