@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Diagnostics;
 using System.IO.MemoryMappedFiles;
@@ -66,16 +66,28 @@ namespace MemoryScanner
                         if (target.HasValue)
                         {
                             if (d2[i] != target.Value) continue;
+                            if (count < 200)
+                                Console.WriteLine($"0x{i:X8}: {d1[i]} -> {d2[i]}");
+                            count++;
                         }
                         else
                         {
-                            if (d1[i] != 0 || d2[i] != 1) continue;
-                            if (i < 0x00044000 || i > 0x00050000) continue;
-                        }
+                            // Filter out known volatile regions like 0x44xxx (coordinates/animations)
+                            // Focus on the main quest/stats flags region (0x48000 to 0x4D000)
+                            if (i < 0x00048000 || i > 0x0004D000) continue;
 
-                        if (count < 200)
-                            Console.WriteLine($"0x{i:X8}: {d1[i]} -> {d2[i]}");
-                        count++;
+                            byte addedBits = (byte)(d2[i] & ~d1[i]);
+                            byte removedBits = (byte)(d1[i] & ~d2[i]);
+
+                            if (count < 500)
+                            {
+                                Console.Write($"0x{i:X8}: 0x{d1[i]:X2} -> 0x{d2[i]:X2}");
+                                if (addedBits > 0) Console.Write($" (+ flag: 0x{addedBits:X2})");
+                                if (removedBits > 0) Console.Write($" (- flag: 0x{removedBits:X2})");
+                                Console.WriteLine();
+                            }
+                            count++;
+                        }
                     }
                 }
                 Console.WriteLine($"\nTotal differences: {count}");

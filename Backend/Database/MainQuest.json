@@ -70,8 +70,8 @@
         },
         {
             "Number": 14,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3DE",
+            "BitMask": "0x01"
         },
         {
             "Number": 15,
@@ -85,18 +85,18 @@
         },
         {
             "Number": 17,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3AF",
+            "BitMask": "0x01"
         },
         {
             "Number": 18,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3AF",
+            "BitMask": "0x02"
         },
         {
             "Number": 19,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3AF",
+            "BitMask": "0x04"
         },
         {
             "Number": 20,
@@ -105,8 +105,8 @@
         },
         {
             "Number": 21,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3AF",
+            "BitMask": "0x08"
         },
         {
             "Number": 22,
@@ -120,13 +120,13 @@
         },
         {
             "Number": 24,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3B6",
+            "BitMask": "0x02"
         },
         {
             "Number": 25,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3B2",
+            "BitMask": "0x04"
         },
         {
             "Number": 26,
@@ -135,28 +135,28 @@
         },
         {
             "Number": 27,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3C2",
+            "BitMask": "0x10"
         },
         {
             "Number": 28,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3AD",
+            "BitMask": "0x10"
         },
         {
             "Number": 29,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3AE",
+            "BitMask": "0x10"
         },
         {
             "Number": 30,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3AE",
+            "BitMask": "0x20"
         },
         {
             "Number": 31,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3AE",
+            "BitMask": "0x40"
         },
         {
             "Number": 32,
@@ -165,13 +165,13 @@
         },
         {
             "Number": 33,
-            "Address": "0x00048D6E",
-            "BitMask": "0x01"
+            "Address": "0x0004B3B6",
+            "BitMask": "0x08"
         },
         {
             "Number": 34,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3B6",
+            "BitMask": "0x10"
         },
         {
             "Number": 35,
@@ -180,23 +180,23 @@
         },
         {
             "Number": 36,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3AC",
+            "BitMask": "0x04"
         },
         {
             "Number": 37,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3B1",
+            "BitMask": "0x04"
         },
         {
             "Number": 38,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3B1",
+            "BitMask": "0x08"
         },
         {
             "Number": 39,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3BE",
+            "BitMask": "0x80"
         },
         {
             "Number": 40,
