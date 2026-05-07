@@ -192,6 +192,59 @@
         "Location": []
     },
     {
+        "Id": 99999,
+        "Name": "Zanbamon",
+        "Level": 0,
+        "HP": 0,
+        "MP": 0,
+        "Species": 0,
+        "ItemHeld": "",
+        "Rate": 0,
+        "Strength": 0,
+        "Defense": 0,
+        "Spirit": 0,
+        "Wisdom": 0,
+        "Speed": 0,
+        "Fire": 0,
+        "Water": 0,
+        "Ice": 0,
+        "Wind": 0,
+        "Thunder": 0,
+        "Machine": 0,
+        "Dark": 0,
+        "CanPoison": true,
+        "Poison": 0,
+        "CanParalyze": true,
+        "Paralyze": 0,
+        "CanConfuse": false,
+        "Confuse": 0,
+        "CanSleep": false,
+        "Sleep": 0,
+        "CanKO": false,
+        "KO": 0,
+        "CanDrain": true,
+        "CanSteal": true,
+        "STRDown": "Yes",
+        "DEFDown": "Yes",
+        "SPDDown": "Yes",
+        "CanEscape": false,
+        "DVXP": 0,
+        "EXP": 0,
+        "BITS": 0,
+        "Location": [
+            "Catacomb"
+        ],
+        "RegularAttack": {
+            "PT-BR": "",
+            "EN-US": ""
+        },
+        "Technique": {
+            "PT-BR": "",
+            "EN-US": ""
+        },
+        "Boss": true
+    },
+    {
         "Id": 71,
         "Name": "Kunemon",
         "Level": 1,
@@ -1027,9 +1080,7 @@
         "EXP": 25,
         "BITS": 50,
         "Location": [
-            "KickingForest",
-            "PhoenixBay",
-            "EtherJungle"
+            "KickingForest"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1560,7 +1611,9 @@
         "EXP": 91,
         "BITS": 180,
         "Location": [
-            "SouthCapeAsukaCentralShellBeach,PlugCape"
+            "SouthCape",
+            "ShellBeachAfter",
+            "PlugCapeAfter"
         ],
         "RegularAttack": {
             "PT-BR": "Elemento Água",
@@ -3219,7 +3272,7 @@
         "BITS": 330,
         "Location": [
             "JungleGrave",
-            "Catacombs",
+            "Catacomb",
             "CatacombBackEntrance"
         ],
         "RegularAttack": {
@@ -6313,7 +6366,10 @@
         "DVXP": 19,
         "EXP": 76,
         "BITS": 190,
-        "Location": []
+        "Location": [
+            "PhoenixBay",
+            "EtherJungle"
+        ]
     },
     {
         "Id": 190,
@@ -6869,7 +6925,9 @@
         "DVXP": 31,
         "EXP": 222,
         "BITS": 660,
-        "Location": []
+        "Location": [
+            "JungleShrine"
+        ]
     },
     {
         "Id": 203,

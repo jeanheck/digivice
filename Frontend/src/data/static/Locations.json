@@ -399,6 +399,22 @@
         },
         "Image": "Phoenix Bay"
     },
+    "023C": {
+        "Location": "EtherJungle",
+        "Name": {
+            "PT-BR": "Selva do Éter",
+            "EN-US": "Ether Jungle"
+        },
+        "Image": "Ether Jungle"
+    },
+    "023D": {
+        "Location": "SouthCape",
+        "Name": {
+            "PT-BR": "Cabo Sul",
+            "EN-US": "South Cape"
+        },
+        "Image": "South Cape"
+    },
     "023E": {
         "Location": "SuzakuCity",
         "Name": {
@@ -422,5 +438,21 @@
             "EN-US": "Suzaku Hall"
         },
         "Image": "Suzaku Hall"
+    },
+    "0242": {
+        "Location": "JungleShrine",
+        "Name": {
+            "PT-BR": "Santuário da Selva",
+            "EN-US": "Jungle Shrine"
+        },
+        "Image": "Jungle Shrine"
+    },
+    "0243": {
+        "Location": "Catacomb",
+        "Name": {
+            "PT-BR": "Catacumba",
+            "EN-US": "Catacomb"
+        },
+        "Image": "Catacomb"
     }
 }

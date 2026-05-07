@@ -858,7 +858,7 @@
                 "PT-BR": "Conto de Fadas",
                 "EN-US": "Fairy Tale"
             },
-            "Id": null,
+            "Id": 169,
             "Type": "WeaponSingleHanded",
             "Attributes": [
                 {
@@ -1315,7 +1315,7 @@
                 "PT-BR": "Iron Glove",
                 "EN-US": "Iron Glove"
             },
-            "Id": null,
+            "Id": 108,
             "Type": "WeaponSingleHanded",
             "Attributes": [
                 {
@@ -1343,7 +1343,7 @@
                 "PT-BR": "Escudo de Ferro",
                 "EN-US": "Iron Shield"
             },
-            "Id": null,
+            "Id": 277,
             "Type": "Shield",
             "Attributes": [
                 {
@@ -3866,7 +3866,7 @@
                 "PT-BR": "Iron Armor",
                 "EN-US": "Iron Armor"
             },
-            "Id": null,
+            "Id": 264,
             "Type": "BodyArmor",
             "Attributes": [
                 {
@@ -4036,7 +4036,7 @@
                 "PT-BR": "Priest Robe",
                 "EN-US": "Priest Robe"
             },
-            "Id": null,
+            "Id": 251,
             "Type": "BodyArmor",
             "Attributes": [
                 {
@@ -4274,7 +4274,7 @@
                 "PT-BR": "Boné de Beisebol",
                 "EN-US": "Baseball Cap"
             },
-            "Id": null,
+            "Id": 217,
             "Type": "HeadArmor",
             "Attributes": [
                 {
@@ -4579,7 +4579,7 @@
                 "PT-BR": "Headband",
                 "EN-US": "Headband"
             },
-            "Id": null,
+            "Id": 228,
             "Type": "HeadArmor",
             "Attributes": [
                 {
@@ -4640,7 +4640,7 @@
                 "PT-BR": "Elmo de Ferro",
                 "EN-US": "Iron Helmet"
             },
-            "Id": null,
+            "Id": 238,
             "Type": "HeadArmor",
             "Attributes": [
                 {
@@ -5430,7 +5430,7 @@
                 "PT-BR": "Anel Antídoto",
                 "EN-US": "Antidote Ring"
             },
-            "Id": null,
+            "Id": 311,
             "Type": "Accessory",
             "Attributes": [
                 {
@@ -5459,7 +5459,7 @@
                 "PT-BR": "Anel Despertar",
                 "EN-US": "Awake Ring"
             },
-            "Id": null,
+            "Id": 313,
             "Type": "Accessory",
             "Attributes": [
                 {
@@ -5780,7 +5780,7 @@
                 "PT-BR": "Dance Feather",
                 "EN-US": "Dance Feather"
             },
-            "Id": null,
+            "Id": 333,
             "Type": "Accessory",
             "Attributes": [],
             "EquipableDigimon": [
@@ -5941,6 +5941,35 @@
             "Note": {
                 "PT-BR": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks",
                 "EN-US": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks"
+            }
+        },
+        {
+            "Name": {
+                "PT-BR": "Ice Power 1",
+                "EN-US": "Ice Power 1"
+            },
+            "Id": 345,
+            "Type": "Accessory",
+            "Attributes": [
+                {
+                    "Attribute": "Charisma",
+                    "Type": "Addition",
+                    "Value": 2
+                }
+            ],
+            "EquipableDigimon": [
+                "Agumon",
+                "Guilmon",
+                "Kotemon",
+                "Kumamon",
+                "Monmon",
+                "Patamon",
+                "Renamon",
+                "Veemon"
+            ],
+            "Note": {
+                "PT-BR": "Add weak Ice to attacks",
+                "EN-US": "Add weak Ice to attacks"
             }
         },
         {
@@ -6383,7 +6412,7 @@
                 "PT-BR": "Anel Oração",
                 "EN-US": "Prayer Ring"
             },
-            "Id": null,
+            "Id": 315,
             "Type": "Accessory",
             "Attributes": [
                 {
@@ -6435,7 +6464,7 @@
                 "PT-BR": "Anel Ressurreição",
                 "EN-US": "Revive Ring"
             },
-            "Id": null,
+            "Id": 312,
             "Type": "Accessory",
             "Attributes": [
                 {
