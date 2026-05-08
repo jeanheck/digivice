@@ -359,6 +359,14 @@
         },
         "Image": "Bios Swamp"
     },
+    "0236": {
+        "Location": "ReliabilitySpot",
+        "Name": {
+            "PT-BR": "Ponto de Confiabilidade",
+            "EN-US": "Reliability Spot"
+        },
+        "Image": "Reliability Spot"
+    },
     "0237": {
         "Location": "TranquilSwamp",
         "Name": {
@@ -394,7 +402,7 @@
     "023B": {
         "Location": "PhoenixBay",
         "Name": {
-            "PT-BR": "Baía da Fênix",
+            "PT-BR": "Baía Fênix",
             "EN-US": "Phoenix Bay"
         },
         "Image": "Phoenix Bay"
@@ -402,7 +410,7 @@
     "023C": {
         "Location": "EtherJungle",
         "Name": {
-            "PT-BR": "Selva do Éter",
+            "PT-BR": "Selva de Éter",
             "EN-US": "Ether Jungle"
         },
         "Image": "Ether Jungle"
@@ -439,6 +447,14 @@
         },
         "Image": "Suzaku Hall"
     },
+    "0241": {
+        "Location": "SuzakuUndergroundLake",
+        "Name": {
+            "PT-BR": "Lago Subterrâneo Suzaku",
+            "EN-US": "Suzaku Underground Lake"
+        },
+        "Image": "Suzaku Underground Lake"
+    },
     "0242": {
         "Location": "JungleShrine",
         "Name": {
@@ -454,5 +470,21 @@
             "EN-US": "Catacomb"
         },
         "Image": "Catacomb"
+    },
+    "02E0": {
+        "Location": "Seabed",
+        "Name": {
+            "PT-BR": "Solo Oceânico",
+            "EN-US": "Seabed"
+        },
+        "Image": "Seabed 0"
+    },
+    "02E2": {
+        "Location": "Seabed",
+        "Name": {
+            "PT-BR": "Solo Oceânico",
+            "EN-US": "Seabed"
+        },
+        "Image": "Seabed 2"
     }
 }

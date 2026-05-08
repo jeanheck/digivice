@@ -509,8 +509,8 @@
         {
             "Number": 16,
             "Description": {
-                "PT-BR": "Fale com o Sepkimon em Shaman House",
-                "EN-US": "Talk to Sepkimon at Shaman House."
+                "PT-BR": "Descubra quem é o ser misterioso na Casa Xamã",
+                "EN-US": "Discover who the mysterious being is in the Shaman's House"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -537,8 +537,8 @@
         {
             "Number": 17,
             "Description": {
-                "PT-BR": "Fale com o Baronmon em Protocol Ruins",
-                "EN-US": "Speak to Baronmon in Protocol Ruins"
+                "PT-BR": "Encontre Baronmon",
+                "EN-US": "Find Baronmon"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -565,8 +565,8 @@
         {
             "Number": 18,
             "Description": {
-                "PT-BR": "Fale com Etemon com a máscara em Asuka Bridge",
-                "EN-US": "Talk to Etemon wearing the mask at Asuka Bridge"
+                "PT-BR": "Procure por Sepkimon próximo na Cidade Asuka ou arredores",
+                "EN-US": "Look for Sepkimon nearby in or around Asuka City"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -621,8 +621,8 @@
         {
             "Number": 20,
             "Description": {
-                "PT-BR": "Fale com o Homem Estranho em Divermons Lake",
-                "EN-US": "Speak to the Strange Man at Divermons Lake"
+                "PT-BR": "Procure pelo Sepikmon no Lago dos Divermons",
+                "EN-US": "Look for Sepikmon in Divermon Lake"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -705,7 +705,7 @@
         {
             "Number": 23,
             "Description": {
-                "PT-BR": "Fale com o Sepkimon em Shaman House",
+                "PT-BR": "Fale com o Sepkimon em Casa Xamã",
                 "EN-US": "Talk to Sepkimon at the Shaman House"
             },
             "LocationOnMap": {
@@ -761,8 +761,8 @@
         {
             "Number": 25,
             "Description": {
-                "PT-BR": "Fale com a Lisa em Suzaku City",
-                "EN-US": "Talk to Lisa in Suzaku City."
+                "PT-BR": "Entre em Cidade Suzaku e procure uma pousada para descansar",
+                "EN-US": "Enter Suzaku City and look for an inn to rest"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -789,8 +789,8 @@
         {
             "Number": 26,
             "Description": {
-                "PT-BR": "Derrote a Suzaku Leader",
-                "EN-US": "Defeat the Suzaku Leader"
+                "PT-BR": "Procure pela Líder Suzaku para desafiá-la",
+                "EN-US": "Look for Suzaku Leader to challenge her"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -817,8 +817,8 @@
         {
             "Number": 27,
             "Description": {
-                "PT-BR": "Fale com a Kail e retorne para Asuka City",
-                "EN-US": "Speak to Kail and return to Asuka City."
+                "PT-BR": "Siga em direção à pousada após derrotar a Líder Suzaku",
+                "EN-US": "Head towards the inn after defeating Leader Suzaku"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -845,8 +845,8 @@
         {
             "Number": 28,
             "Description": {
-                "PT-BR": "Fale com o Barman no Lamb Shop",
-                "EN-US": "Talk to the bartender at the Lamb Shop."
+                "PT-BR": "Busque por informações no Costeleta de Cordeiro",
+                "EN-US": "Search for information on Lamb Chop"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -873,8 +873,8 @@
         {
             "Number": 29,
             "Description": {
-                "PT-BR": "Fale com os idosos que viraram Digimon perto do El Dorado",
-                "EN-US": "Talk to the elderly people who turned into Digimon near El Dorado."
+                "PT-BR": "Procure pelo casal de treinadores perto do El Dorado",
+                "EN-US": "Look for the pair of trainers near El Dorado"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -901,8 +901,8 @@
         {
             "Number": 30,
             "Description": {
-                "PT-BR": "Fale com o Mischievous Mat no Asuka Sewers",
-                "EN-US": "Speak to Mischievous Mat at Asuka Sewers"
+                "PT-BR": "Vá para onde você viu Etemon pela última vez",
+                "EN-US": "Go to the place where you last saw Etemon"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -929,8 +929,8 @@
         {
             "Number": 31,
             "Description": {
-                "PT-BR": "Fale com a Kail no Main Lobby",
-                "EN-US": "Speak to Kail in the Main Lobby."
+                "PT-BR": "Relate suas descobertas a Kail no Salão Principal",
+                "EN-US": "Report your findings to Kail in the Main Lobby"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -957,8 +957,8 @@
         {
             "Number": 32,
             "Description": {
-                "PT-BR": "Confront the Mischievous Mat at Asuka Sewers",
-                "EN-US": "Confronte o Mischievous Mat no Asuka Sewers"
+                "PT-BR": "Confronte o Pernicioso Mat nos Esgotos Asuka",
+                "EN-US": "Confront the Mischievous Mat at Asuka Sewers"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -985,8 +985,8 @@
         {
             "Number": 33,
             "Description": {
-                "PT-BR": "Fale com a Kail no Underground Path",
-                "EN-US": "Talk to Kail in the Underground Path"
+                "PT-BR": "Volte para o Caminho Subterrâneo e encontre Kail",
+                "EN-US": "Return to the Underground Path and find Kail"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -1069,8 +1069,8 @@
         {
             "Number": 36,
             "Description": {
-                "PT-BR": "Fale com a Garota em Phoenix Bay",
-                "EN-US": "Talk to the Girl in Phoenix Bay"
+                "PT-BR": "Procure por pistas de como prosseguir em Baía Fênix",
+                "EN-US": "Look for clues on how to proceed in Phoenix Bay"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -1097,8 +1097,8 @@
         {
             "Number": 37,
             "Description": {
-                "PT-BR": "Encontre o santuário em Bios Swamp",
-                "EN-US": "Find the sanctuary in Bios Swamp"
+                "PT-BR": "Procure pelo gato da Nami em Pântano Bios",
+                "EN-US": "Look for Nami's cat in Bios Swamp."
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -1125,8 +1125,8 @@
         {
             "Number": 38,
             "Description": {
-                "PT-BR": "Fale com o Sepkimon em Shaman House",
-                "EN-US": "Talk to Sepkimon at Shaman House."
+                "PT-BR": "Peça ajuda ao Sepkimon para quebrar a parede",
+                "EN-US": "Ask Sepkimon for help to break down the wall"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -1153,8 +1153,8 @@
         {
             "Number": 39,
             "Description": {
-                "PT-BR": "Fale com o Baronmon em Protocol Ruins",
-                "EN-US": "Speak to Baronmon in Protocol Ruins"
+                "PT-BR": "Procure pelo Baronmon para que ele lhe ajude com bombas",
+                "EN-US": "Look for Baronmon so he can help you with bombs."
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -1181,8 +1181,8 @@
         {
             "Number": 40,
             "Description": {
-                "PT-BR": "Entregue a TNT Ball para o Baronmon",
-                "EN-US": "Deliver the TNT Ball to Baronmon."
+                "PT-BR": "Consiga uma Bola TNT de um Triceramon e entregue para Baronmon",
+                "EN-US": "Obtain a TNT Ball from a Triceramon and deliver it to Baronmon"
             },
             "LocationOnMap": {
                 "PT-BR": "",
@@ -1209,8 +1209,8 @@
         {
             "Number": 41,
             "Description": {
-                "PT-BR": "Retorne para Bios Swamp e exploda o Santuário",
-                "EN-US": "Return to Bios Swamp and destroy the Sanctuary."
+                "PT-BR": "Utilize o Chip TNT para abrir a parede em Pântano Bios",
+                "EN-US": "Use the TNT Chip to open the wall in Bios Swamp"
             },
             "LocationOnMap": {
                 "PT-BR": "",

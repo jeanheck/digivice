@@ -536,7 +536,7 @@
                 "PT-BR": "Besta",
                 "EN-US": "Crossbow"
             },
-            "Id": null,
+            "Id": 192,
             "Type": "WeaponTwoHanded",
             "Attributes": [
                 {
@@ -4033,7 +4033,7 @@
         },
         {
             "Name": {
-                "PT-BR": "Priest Robe",
+                "PT-BR": "Manto do Padre",
                 "EN-US": "Priest Robe"
             },
             "Id": 251,
