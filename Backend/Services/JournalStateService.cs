@@ -95,6 +95,16 @@ namespace Backend.Services
                     qStep.IsCompleted = isStepDone;
                 }
             }
+
+            // Cascata de conclusão: Se o próximo step estiver concluído, o step atual também deve estar.
+            // Isso resolve o problema de variáveis temporárias (como a da gôndola) que o jogo reseta posteriormente.
+            for (int i = quest.Steps.Count - 2; i >= 0; i--)
+            {
+                if (!quest.Steps[i].IsCompleted && quest.Steps[i + 1].IsCompleted)
+                {
+                    quest.Steps[i].IsCompleted = true;
+                }
+            }
         }
 
         private void ApplyStepPrerequisites(Quest quest, ImportantItems importantItems)

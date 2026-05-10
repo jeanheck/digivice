@@ -23,7 +23,7 @@
   "questDetails": {
     "prerequisites": "Pré-requisitos",
     "missionSteps": "Passos da Missão",
-    "clickStep": "CLIQUE EM UM PASSO DA MISSÃO\nPARA CARREGAR DADOS GEOGRÁFICOS",
+    "clickStep": "CLIQUE EM UM PASSO DA MISSÃO PARA CARREGAR DADOS GEOGRÁFICOS",
     "noSignal": "NENHUM SINAL DETECTADO.\nCOORDENADAS DESCONHECIDAS.",
     "noSteps": "Nenhum passo específico rastreado."
   },
@@ -64,7 +64,8 @@
     "Plant": "Planta",
     "Bird": "Pássaro",
     "Dragon": "Dragão",
-    "Ghoul": "Fantasma"
+    "Ghoul": "Fantasma",
+    "Rare": "Raro"
   },
   "digimon": {
     "digievolutions": "Digievoluções",

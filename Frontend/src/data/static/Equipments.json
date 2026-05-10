@@ -506,10 +506,10 @@
         },
         {
             "Name": {
-                "PT-BR": "Lâmina Carmesim",
+                "PT-BR": "Lâmina Crimson",
                 "EN-US": "Crimson Blade"
             },
-            "Id": null,
+            "Id": 94,
             "Type": "WeaponSingleHanded",
             "Attributes": [
                 {
@@ -520,7 +520,7 @@
                 {
                     "Attribute": "Charisma",
                     "Type": "Addition",
-                    "Value": 36
+                    "Value": 26
                 }
             ],
             "EquipableDigimon": [
@@ -645,10 +645,10 @@
         },
         {
             "Name": {
-                "PT-BR": "Barreira Divina",
+                "PT-BR": "Escudo Divino",
                 "EN-US": "Divine Barrier"
             },
-            "Id": null,
+            "Id": 281,
             "Type": "Shield",
             "Attributes": [
                 {

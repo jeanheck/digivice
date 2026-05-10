@@ -23,7 +23,7 @@
   "questDetails": {
     "prerequisites": "Prerequisites",
     "missionSteps": "Mission Steps",
-    "clickStep": "CLICK A MISSION STEP\nTO BOOT GEOGRAPHIC DATA",
+    "clickStep": "CLICK A MISSION STEP TO BOOT GEOGRAPHIC DATA",
     "noSignal": "NO SIGNAL DETECTED.\nTARGET COORDS UNKNOWN.",
     "noSteps": "No specific steps tracked."
   },
@@ -64,7 +64,8 @@
     "Plant": "Plant",
     "Bird": "Bird",
     "Dragon": "Dragon",
-    "Ghoul": "Ghoul"
+    "Ghoul": "Ghoul",
+    "Rare": "Rare"
   },
   "digimon": {
     "digievolutions": "Digievolutions",

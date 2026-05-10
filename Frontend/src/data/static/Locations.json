@@ -7,6 +7,30 @@
         },
         "Image": "Saving Screen"
     },
+    "0A00": {
+        "Location": "InTraining",
+        "Name": {
+            "PT-BR": "Em Treinamento",
+            "EN-US": "In Training"
+        },
+        "Image": "In Training Screen"
+    },
+    "0D00": {
+        "Location": "KadomatsuPiximon",
+        "Name": {
+            "PT-BR": "Dr. Kadomatsu / Piximon",
+            "EN-US": "Dr. Kadomatsu / Piximon"
+        },
+        "Image": "Kadomatsu Piximon Screen"
+    },
+    "0F00": {
+        "Location": "InStore",
+        "Name": {
+            "PT-BR": "Na Loja",
+            "EN-US": "In Store"
+        },
+        "Image": "In Store Screen"
+    },
     "0600": {
         "Location": "InBattle",
         "Name": {
@@ -14,6 +38,22 @@
             "EN-US": "In battle"
         },
         "Image": "In Battle Screen"
+    },
+    "1000": {
+        "Location": "InMenu",
+        "Name": {
+            "PT-BR": "No Menu",
+            "EN-US": "In Menu"
+        },
+        "Image": "In Menu Screen"
+    },
+    "1300": {
+        "Location": "CardShopScreen",
+        "Name": {
+            "PT-BR": "Loja de Cartas",
+            "EN-US": "Card Shop"
+        },
+        "Image": "Card Shop Screen"
     },
     "1400": {
         "Location": "RewardScreen",
@@ -311,6 +351,14 @@
         },
         "Image": "East Station"
     },
+    "022D": {
+        "Location": "Deeper Crevice",
+        "Name": {
+            "PT-BR": "Fenda Profunda",
+            "EN-US": "Deeper Crevice"
+        },
+        "Image": "Deeper Crevice"
+    },
     "022E": {
         "Location": "SeiryuCity",
         "Name": {
@@ -448,12 +496,12 @@
         "Image": "Suzaku Hall"
     },
     "0241": {
-        "Location": "SuzakuUndergroundLake",
+        "Location": "SuzakuUGLake",
         "Name": {
             "PT-BR": "Lago Subterrâneo Suzaku",
-            "EN-US": "Suzaku Underground Lake"
+            "EN-US": "Suzaku UG Lake"
         },
-        "Image": "Suzaku Underground Lake"
+        "Image": "Suzaku UG Lake"
     },
     "0242": {
         "Location": "JungleShrine",

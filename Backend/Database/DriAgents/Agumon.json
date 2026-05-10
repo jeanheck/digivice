@@ -1,0 +1,20 @@
+{
+    "Id": "DriAgentAgumon",
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "",
+            "BitMask": ""
+        },
+        {
+            "Number": 2,
+            "Address": "",
+            "BitMask": ""
+        },
+        {
+            "Number": 3,
+            "Address": "",
+            "BitMask": ""
+        }
+    ]
+}

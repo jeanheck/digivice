@@ -5,8 +5,11 @@
         "Level": 12,
         "HP": 816,
         "MP": 9999,
-        "Species": 0,
-        "ItemHeld": "Old Wand",
+        "Species": "Rare",
+        "ItemHeld": {
+            "PT-BR": "Vara Antiga",
+            "EN-US": "Old Wand"
+        },
         "Rate": 0,
         "Strength": 170,
         "Defense": 170,
@@ -47,7 +50,7 @@
             "EN-US": "No Element"
         },
         "Technique": {
-            "PT-BR": "Necromist (Físico, Chance de Envenenamento)",
+            "PT-BR": "Névoa da Morte (Físico, Chance de Envenenamento)",
             "EN-US": "Necromist (Physical, Chance of Poison)"
         },
         "Boss": true
@@ -59,7 +62,10 @@
         "HP": 912,
         "MP": 9999,
         "Species": "Dino",
-        "ItemHeld": "Old Claw",
+        "ItemHeld": {
+            "PT-BR": "Garra Antiga",
+            "EN-US": "Old Claw"
+        },
         "Rate": 0,
         "Strength": 190,
         "Defense": 238,
@@ -92,9 +98,73 @@
         "DVXP": 14,
         "EXP": 140,
         "BITS": 280,
+        "RegularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "Technique": {
+            "PT-BR": "Fogo Mestre (Fogo)",
+            "EN-US": "Master Fire (Fire)"
+        },
         "Location": [
             "TyrannoValley"
         ],
+        "Boss": true
+    },
+    {
+        "Id": 20,
+        "Name": "Zanbamon",
+        "Level": 40,
+        "HP": 2160,
+        "MP": 9999,
+        "Species": "Rare",
+        "ItemHeld": {
+            "PT-BR": "Katana Enferrujada",
+            "EN-US": "Rusty Katana"
+        },
+        "Rate": 0,
+        "Strength": 450,
+        "Defense": 450,
+        "Spirit": 430,
+        "Wisdom": 562,
+        "Speed": 360,
+        "Fire": 109,
+        "Water": 109,
+        "Ice": 109,
+        "Wind": 109,
+        "Thunder": 109,
+        "Machine": 109,
+        "Dark": 109,
+        "CanPoison": false,
+        "Poison": 0,
+        "CanParalyze": false,
+        "Paralyze": 0,
+        "CanConfuse": false,
+        "Confuse": 0,
+        "CanSleep": false,
+        "Sleep": 0,
+        "CanKO": false,
+        "KO": 0,
+        "CanDrain": true,
+        "CanSteal": true,
+        "STRDown": "Yes",
+        "DEFDown": "Yes",
+        "SPDDown": "Yes",
+        "CanEscape": false,
+        "DVXP": 40,
+        "EXP": 380,
+        "BITS": 800,
+        "Location": [
+            "Catacomb"
+        ],
+        "RegularAttack": {
+            "PT-BR": "",
+            "EN-US": ""
+        },
+        "Technique": {
+            "PT-BR": "",
+            "EN-US": ""
+        },
         "Boss": true
     },
     {
@@ -190,59 +260,6 @@
         "EXP": 320,
         "BITS": 740,
         "Location": []
-    },
-    {
-        "Id": 99999,
-        "Name": "Zanbamon",
-        "Level": 0,
-        "HP": 0,
-        "MP": 0,
-        "Species": 0,
-        "ItemHeld": "",
-        "Rate": 0,
-        "Strength": 0,
-        "Defense": 0,
-        "Spirit": 0,
-        "Wisdom": 0,
-        "Speed": 0,
-        "Fire": 0,
-        "Water": 0,
-        "Ice": 0,
-        "Wind": 0,
-        "Thunder": 0,
-        "Machine": 0,
-        "Dark": 0,
-        "CanPoison": true,
-        "Poison": 0,
-        "CanParalyze": true,
-        "Paralyze": 0,
-        "CanConfuse": false,
-        "Confuse": 0,
-        "CanSleep": false,
-        "Sleep": 0,
-        "CanKO": false,
-        "KO": 0,
-        "CanDrain": true,
-        "CanSteal": true,
-        "STRDown": "Yes",
-        "DEFDown": "Yes",
-        "SPDDown": "Yes",
-        "CanEscape": false,
-        "DVXP": 0,
-        "EXP": 0,
-        "BITS": 0,
-        "Location": [
-            "Catacomb"
-        ],
-        "RegularAttack": {
-            "PT-BR": "",
-            "EN-US": ""
-        },
-        "Technique": {
-            "PT-BR": "",
-            "EN-US": ""
-        },
-        "Boss": true
     },
     {
         "Id": 71,
@@ -516,7 +533,10 @@
         "HP": 144,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": "Power Charge",
+        "ItemHeld": {
+            "PT-BR": "Carga Energia",
+            "EN-US": "Power Charge"
+        },
         "Rate": 192,
         "Strength": 60,
         "Defense": 60,
@@ -1080,7 +1100,8 @@
         "EXP": 25,
         "BITS": 50,
         "Location": [
-            "KickingForest"
+            "KickingForest",
+            "PhoenixBay"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -1720,7 +1741,7 @@
         "EXP": 98,
         "BITS": 200,
         "Location": [
-            "AsukaSeabeds01,03,04,07,09"
+            "Seabed"
         ],
         "RegularAttack": {
             "PT-BR": "Sem Elemento",
@@ -6026,7 +6047,7 @@
     },
     {
         "Id": 182,
-        "Name": "Red Vegiemon",
+        "Name": "RedVegiemon",
         "Level": 9,
         "HP": 336,
         "MP": 9999,
@@ -6066,6 +6087,7 @@
         "BITS": 90,
         "Location": [
             "PhoenixBay",
+            "EtherJungle",
             "KickingForestAfter"
         ]
     },
