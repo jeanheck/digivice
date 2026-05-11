@@ -1,6 +1,7 @@
 import * as signalR from '@microsoft/signalr'
 import { useGameStore } from '../stores/useGameStore'
 import type { State } from '../types/backend'
+import { invoke } from '@tauri-apps/api/core'
 
 class SignalRService {
     private connection: signalR.HubConnection | null = null
@@ -11,7 +12,17 @@ class SignalRService {
         // Determina se estamos em produção (Tauri) ou desenvolvimento (Vite)
         // O Vite usa proxy localmente, mas em Produção o proxy não existe, precisando da URL absoluta.
         const isProd = import.meta.env.PROD
-        const hubUrl = isProd ? 'http://localhost:5000/gamehub' : '/gamehub'
+        let hubUrl = '/gamehub'
+        
+        if (isProd) {
+            try {
+                const port = await invoke<number>('get_backend_port')
+                hubUrl = `http://localhost:${port}/gamehub`
+            } catch (err) {
+                console.error('Failed to get backend port from Tauri:', err)
+                hubUrl = 'http://localhost:5000/gamehub' // Fallback
+            }
+        }
 
         this.connection = new signalR.HubConnectionBuilder()
             .withUrl(hubUrl) // Usa absolute em PRD
