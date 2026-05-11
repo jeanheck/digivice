@@ -48,14 +48,13 @@ try
     builder.Services.AddSingleton<JournalStateService>();
     builder.Services.AddSingleton<GameStateService>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();
-    builder.Services.AddSingleton<DebugMonitor>();
 
     // Register Event Dispatcher
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
     // Start the Background Monitor (Memory Reader)
     Log.Information("Activating Game Memory Poller in Background...");
-    builder.Services.AddHostedService<DebugMonitorBackgroundService>();
+    builder.Services.AddHostedService<GameLoopBackgroundService>();
 
     builder.Services.AddCors(options =>
     {

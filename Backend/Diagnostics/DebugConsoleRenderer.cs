@@ -52,7 +52,7 @@ namespace Backend.Diagnostics
             }
 
             Console.WriteLine("-------------------------------------------------");
-            Console.WriteLine("\nMonitoring... (Press 'Q' to exit)");
+            Console.WriteLine("\nMonitoring... (Press 'Ctrl + C' to exit)");
         }
     }
 }
