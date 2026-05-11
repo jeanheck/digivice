@@ -36,14 +36,14 @@ namespace Backend.Services
                 {
                     if (!_readerService.TryConnect())
                     {
-                        // Se falhar em conectar, despacha false e espera 1s antes de tentar novamente
+                        // If the connection fails, it sends false and waits 1 second before trying again.
                         _dispatcherService.DispatchConnectionStatus(false);
                         await Task.Delay(1000, stoppingToken);
                         continue;
                     }
                     else
                     {
-                        // Conectou com sucesso
+                        // Successful connection.
                         Serilog.Log.Information("Connected to DuckStation.");
                         _dispatcherService.DispatchConnectionStatus(true);
                     }
@@ -68,7 +68,7 @@ namespace Backend.Services
                 }
                 catch (OperationCanceledException)
                 {
-                    // Ignora o erro se a aplicação estiver sendo desligada
+                    // Ignore the error if the application is being shut down.
                     break;
                 }
                 catch (Exception ex)
@@ -91,7 +91,7 @@ namespace Backend.Services
                     break;
                 }
             }
-            
+
             Serilog.Log.Information("GameLoopBackgroundService shutting down gracefully.");
         }
     }
