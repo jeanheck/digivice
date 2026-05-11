@@ -27,7 +27,7 @@ namespace Backend.Services
             {
                 Name = TextDecoder.DecodeName(resource.NameBytes),
                 Bits = resource.Bits,
-                MapId = resource.MapId.ToString("X4")
+                MapId = resource.MapId?.ToString("X4")
             };
 
             return player;

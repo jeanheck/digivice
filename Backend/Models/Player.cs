@@ -3,8 +3,8 @@ namespace Backend.Models
     public class Player : IEquatable<Player>
     {
         public string Name { get; set; } = string.Empty;
-        public int Bits { get; set; }
-        public string MapId { get; set; } = string.Empty;
+        public int? Bits { get; set; }
+        public string? MapId { get; set; }
 
         public bool Equals(Player? other)
         {

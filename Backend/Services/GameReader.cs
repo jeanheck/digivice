@@ -108,7 +108,7 @@ namespace Backend.Services
             if (!string.IsNullOrEmpty(addresses.Digievolutions?.ActiveDigievolution))
             {
                 int offset = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions.ActiveDigievolution, 0);
-                activeEvoId = _memoryReader.ReadInt16(baseAddress + offset);
+                activeEvoId = _memoryReader.ReadInt16(baseAddress + offset) ?? -1;
             }
 
             return new DigimonResource

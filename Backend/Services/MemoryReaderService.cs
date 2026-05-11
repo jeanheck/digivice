@@ -4,7 +4,7 @@ using Serilog;
 namespace Backend.Services
 {
     public class MemoryReaderService(
-        IProcessService processService, IMemoryProvider memoryProvider) : IMemoryReaderService
+        IProcessService processService, IMemoryProvider memoryProvider, IConfiguration configuration) : IMemoryReaderService
     {
         private IMemoryAccessor? _accessor;
         public bool IsConnected { get; private set; }
@@ -14,7 +14,15 @@ namespace Backend.Services
             try
             {
                 // 1. Search for the specific process name using the service
-                int? processId = processService.GetProcessIdByName("duckstation-qt-x64-ReleaseLTCG");
+                var emulatorName = configuration.GetValue<string>("EmulatorProcessName");
+                if (string.IsNullOrEmpty(emulatorName))
+                {
+                    Log.Error("EmulatorProcessName not found in appsettings.json");
+                    IsConnected = false;
+                    return false;
+                }
+
+                int? processId = processService.GetProcessIdByName(emulatorName);
 
                 if (processId == null)
                 {
@@ -44,9 +52,9 @@ namespace Backend.Services
             }
         }
 
-        public int ReadInt32(long address)
+        public int? ReadInt32(long address)
         {
-            if (!IsConnected || _accessor == null) return -1;
+            if (!IsConnected || _accessor == null) return null;
 
             try
             {
@@ -55,7 +63,7 @@ namespace Backend.Services
             catch (Exception ex)
             {
                 Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
-                return -1;
+                return null;
             }
         }
 
@@ -65,16 +73,17 @@ namespace Backend.Services
             Log.Information("Memory resources released.");
         }
 
-        public short ReadInt16(long address)
+        public short? ReadInt16(long address)
         {
-            if (!IsConnected || _accessor == null) return -1;
+            if (!IsConnected || _accessor == null) return null;
             try
             {
                 return _accessor.ReadInt16(address);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return -1;
+                Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
+                return null;
             }
         }
 

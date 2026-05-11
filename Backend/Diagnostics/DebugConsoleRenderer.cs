@@ -19,7 +19,7 @@ namespace Backend.Diagnostics
 
             if (state?.Player == null || state?.Party == null) return;
 
-            Console.WriteLine($"Player name: {state.Player.Name.PadRight(NamePadding)} | Bits: {state.Player.Bits.ToString(BitsFormat)}");
+            Console.WriteLine($"Player name: {state.Player.Name.PadRight(NamePadding)} | Bits: {state.Player.Bits?.ToString(BitsFormat) ?? "Unknown"}");
             Console.WriteLine();
 
             var activeSlots = state.Party.Slots.Where(d => d != null).ToList();
