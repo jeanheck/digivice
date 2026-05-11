@@ -1,3 +1,6 @@
+using System.Text.Json.Serialization;
+using Backend.Utils;
+
 namespace Backend.Models.Quests
 {
     public class QuestStep
@@ -10,7 +13,8 @@ namespace Backend.Models.Quests
         /// </summary>
         public List<Requisite>? Prerequisites { get; set; }
 
-        public string? Address { get; set; }
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long Address { get; set; }
 
         /// <summary>
         /// Bitmask to check against the byte at Address.

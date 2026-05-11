@@ -1,10 +1,14 @@
+using System.Text.Json.Serialization;
+using Backend.Utils;
+
 namespace Backend.Models.Addresses
 {
     public class DigimonBaseAddress
     {
         public string? Name { get; set; }
         public int Id { get; set; }
-        public string? Address { get; set; }
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long Address { get; set; }
     }
 
     public class BasicInfoOffsets

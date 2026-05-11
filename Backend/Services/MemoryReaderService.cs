@@ -103,27 +103,11 @@ namespace Backend.Services
             }
         }
 
-        public string ReadString(long address, int length, System.Text.Encoding? encoding = null)
+        public byte ReadByteSafe(long address)
         {
-            var bytes = ReadBytes(address, length);
-            if (bytes == null) return string.Empty;
-
-            encoding ??= System.Text.Encoding.ASCII;
-
-            // Encontra o null terminator (0x00)
-            int nullIdx = Array.IndexOf(bytes, (byte)0);
-            int len = nullIdx >= 0 ? nullIdx : bytes.Length;
-
-            return encoding.GetString(bytes, 0, len);
-        }
-
-        public byte ReadByteSafe(string? hexAddress)
-        {
-            if (string.IsNullOrEmpty(hexAddress)) return 0;
+            if (address == 0) return 0;
             try
             {
-                int address = Convert.ToInt32(hexAddress, 16);
-                if (address == 0) return 0;
                 var bytes = ReadBytes(address, 1);
                 return (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
             }

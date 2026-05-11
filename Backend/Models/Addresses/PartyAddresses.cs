@@ -1,10 +1,18 @@
+using System.Text.Json.Serialization;
+using Backend.Utils;
+
 namespace Backend.Models.Addresses
 {
     public class PartyAddresses
     {
-        public string PartySlot1 { get; set; } = string.Empty;
-        public string PartySlot2 { get; set; } = string.Empty;
-        public string PartySlot3 { get; set; } = string.Empty;
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long PartySlot1 { get; set; }
+        
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long PartySlot2 { get; set; }
+        
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long PartySlot3 { get; set; }
         public int PartySlotStride { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace Backend.Interfaces
         byte[]? ReadBytes(long address, int length);
         int? ReadInt32(long address);
         short? ReadInt16(long address);
-        string ReadString(long address, int length, System.Text.Encoding? encoding = null);
-        byte ReadByteSafe(string? hexAddress);
+
+        byte ReadByteSafe(long address);
     }
 }

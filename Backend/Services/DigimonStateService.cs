@@ -85,8 +85,7 @@ namespace Backend.Services
 
         public int GetDigimonBaseAddressById(DigimonAddresses addresses, byte id)
         {
-            var addressHex = addresses.Digimons?.FirstOrDefault(d => d.Id == id)?.Address;
-            return MemoryUtils.ParseHex(addressHex);
+            return (int)(addresses.Digimons?.FirstOrDefault(d => d.Id == id)?.Address ?? 0);
         }
     }
 }
