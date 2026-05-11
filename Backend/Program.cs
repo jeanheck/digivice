@@ -26,12 +26,6 @@ try
         ContentRootPath = basePath
     });
 
-    // Enforce port 5000 for local SignalR / API bindings if no --urls argument is provided
-    if (!args.Any(a => a.StartsWith("--urls", StringComparison.OrdinalIgnoreCase)))
-    {
-        builder.WebHost.UseUrls("http://127.0.0.1:5000");
-    }
-
     // Use Serilog for all framework logging
     builder.Host.UseSerilog();
 
