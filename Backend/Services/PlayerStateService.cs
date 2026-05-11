@@ -4,28 +4,20 @@ using Backend.Interfaces;
 
 namespace Backend.Services
 {
-    public class PlayerStateService
+    public class PlayerStateService(IGameDatabase database, IGameReader reader)
     {
-        private readonly IGameDatabase _database;
-        private readonly IGameReader _reader;
-
-        public PlayerStateService(IGameDatabase database, IGameReader reader)
-        {
-            _database = database;
-            _reader = reader;
-        }
-
         public Player? GetPlayer()
         {
-            var addresses = _database.GetPlayerAddresses();
-            var resource = _reader.ReadPlayer(addresses);
+            var addresses = database.GetPlayerAddresses();
+            var resource = reader.ReadPlayer(addresses);
+            var playerName = TextDecoder.DecodeName(resource.NameBytes);
 
-            if (resource.NameBytes == null)
+            if (string.IsNullOrWhiteSpace(playerName))
                 return null;
 
             var player = new Player
             {
-                Name = TextDecoder.DecodeName(resource.NameBytes),
+                Name = playerName,
                 Bits = resource.Bits,
                 MapId = resource.MapId?.ToString("X4")
             };

@@ -65,7 +65,7 @@ namespace Backend.Utils
         /// Returns empty string if the result contains non-printable or invalid characters
         /// (e.g. during battle when the buffer is repurposed for other UI text).
         /// </summary>
-        public static string Decode(byte[] buffer)
+        public static string Decode(byte[]? buffer)
         {
             if (buffer == null) return string.Empty;
 
@@ -99,7 +99,7 @@ namespace Backend.Utils
         /// Same decoding as Decode(), but without the strict area-name validation,
         /// allowing digits and special characters (e.g., "Ta01.?-~").
         /// </summary>
-        public static string DecodeName(byte[] buffer)
+        public static string DecodeName(byte[]? buffer)
         {
             if (buffer == null) return string.Empty;
 

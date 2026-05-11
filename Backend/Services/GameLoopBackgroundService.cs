@@ -6,9 +6,9 @@ namespace Backend.Services
 {
     public class GameLoopBackgroundService
     (
-        IMemoryReaderService readerService,
+        IMemoryReaderService memoryReaderService,
         GameStateService gameStateService,
-        IEventDispatcherService dispatcherService,
+        IEventDispatcherService eventDispatcherService,
         DebugConsoleRenderer debugConsoleRenderer,
         IConfiguration configuration
     ) : BackgroundService
@@ -19,12 +19,12 @@ namespace Backend.Services
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (!readerService.IsConnected)
+                if (!memoryReaderService.IsConnected)
                 {
-                    if (!readerService.TryConnect())
+                    if (!memoryReaderService.TryConnect())
                     {
                         // If the connection fails, it sends false and waits 1 second before trying again.
-                        dispatcherService.DispatchConnectionStatus(false);
+                        eventDispatcherService.DispatchConnectionStatus(false);
                         await Task.Delay(1000, stoppingToken);
                         continue;
                     }
@@ -32,7 +32,7 @@ namespace Backend.Services
                     {
                         // Successful connection.
                         Serilog.Log.Information("Connected to DuckStation.");
-                        dispatcherService.DispatchConnectionStatus(true);
+                        eventDispatcherService.DispatchConnectionStatus(true);
                     }
                 }
 
@@ -43,7 +43,7 @@ namespace Backend.Services
                     if (state?.Player != null)
                     {
                         // Dispatch any state differences
-                        dispatcherService.ProcessGameState(state);
+                        eventDispatcherService.ProcessGameState(state);
 
                         // Render debugging console if flag is enabled
                         var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
@@ -62,9 +62,9 @@ namespace Backend.Services
                 {
                     Serilog.Log.Error(ex, "Error processing game state in GameLoopBackgroundService.");
                     // In case the connection was lost abruptly during read
-                    if (!readerService.IsConnected)
+                    if (!memoryReaderService.IsConnected)
                     {
-                        dispatcherService.DispatchConnectionStatus(false);
+                        eventDispatcherService.DispatchConnectionStatus(false);
                     }
                 }
 
