@@ -4,40 +4,27 @@ using Backend.Interfaces;
 
 namespace Backend.Services
 {
-    public class GameLoopBackgroundService : BackgroundService
+    public class GameLoopBackgroundService
+    (
+        IMemoryReaderService readerService,
+        GameStateService gameStateService,
+        IEventDispatcherService dispatcherService,
+        DebugConsoleRenderer debugConsoleRenderer,
+        IConfiguration configuration
+    ) : BackgroundService
     {
-        private readonly IMemoryReaderService _readerService;
-        private readonly GameStateService _gameStateService;
-        private readonly IEventDispatcherService _dispatcherService;
-        private readonly DebugConsoleRenderer _debugConsoleRenderer;
-        private readonly IConfiguration _configuration;
-
-        public GameLoopBackgroundService(
-            IMemoryReaderService readerService,
-            GameStateService gameStateService,
-            IEventDispatcherService dispatcherService,
-            DebugConsoleRenderer debugConsoleRenderer,
-            IConfiguration configuration)
-        {
-            _readerService = readerService;
-            _gameStateService = gameStateService;
-            _dispatcherService = dispatcherService;
-            _debugConsoleRenderer = debugConsoleRenderer;
-            _configuration = configuration;
-        }
-
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             Serilog.Log.Information("Starting GameLoopBackgroundService...");
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (!_readerService.IsConnected)
+                if (!readerService.IsConnected)
                 {
-                    if (!_readerService.TryConnect())
+                    if (!readerService.TryConnect())
                     {
                         // If the connection fails, it sends false and waits 1 second before trying again.
-                        _dispatcherService.DispatchConnectionStatus(false);
+                        dispatcherService.DispatchConnectionStatus(false);
                         await Task.Delay(1000, stoppingToken);
                         continue;
                     }
@@ -45,24 +32,24 @@ namespace Backend.Services
                     {
                         // Successful connection.
                         Serilog.Log.Information("Connected to DuckStation.");
-                        _dispatcherService.DispatchConnectionStatus(true);
+                        dispatcherService.DispatchConnectionStatus(true);
                     }
                 }
 
                 try
                 {
-                    var state = _gameStateService.GetState();
+                    var state = gameStateService.GetState();
 
                     if (state?.Player != null)
                     {
                         // Dispatch any state differences
-                        _dispatcherService.ProcessGameState(state);
+                        dispatcherService.ProcessGameState(state);
 
                         // Render debugging console if flag is enabled
-                        var isDebuggingEnabled = _configuration.GetValue<bool>("Features:Debugging");
+                        var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
                         if (isDebuggingEnabled && !Console.IsOutputRedirected)
                         {
-                            _debugConsoleRenderer.Render(state);
+                            debugConsoleRenderer.Render(state);
                         }
                     }
                 }
@@ -75,9 +62,9 @@ namespace Backend.Services
                 {
                     Serilog.Log.Error(ex, "Error processing game state in GameLoopBackgroundService.");
                     // In case the connection was lost abruptly during read
-                    if (!_readerService.IsConnected)
+                    if (!readerService.IsConnected)
                     {
-                        _dispatcherService.DispatchConnectionStatus(false);
+                        dispatcherService.DispatchConnectionStatus(false);
                     }
                 }
 
