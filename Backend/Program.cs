@@ -78,7 +78,10 @@ try
     // Map the WebSocket endpoint
     app.MapHub<GameHub>("/gamehub");
 
-    Log.Information("SignalR Hub available at ws://localhost:5000/gamehub");
+    app.Lifetime.ApplicationStarted.Register(() =>
+    {
+        Log.Information("SignalR Hub available at {Urls}/gamehub", string.Join(", ", app.Urls));
+    });
 
     await app.RunAsync();
 }
