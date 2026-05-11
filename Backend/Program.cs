@@ -9,7 +9,12 @@ using Backend.Services;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Warning()
     .WriteTo.Console()
+    .WriteTo.File("logs/backend-.txt",
+        rollingInterval: RollingInterval.Day,
+        retainedFileCountLimit: null,
+        outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
     .CreateLogger();
 
 try

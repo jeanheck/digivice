@@ -3,6 +3,7 @@ use tauri_plugin_shell::ShellExt;
 use std::sync::Mutex;
 use std::net::TcpListener;
 use tauri::State;
+use tauri_plugin_dialog::{DialogExt, MessageDialogKind};
 
 struct BackendProcess(Mutex<Option<tauri_plugin_shell::process::CommandChild>>);
 struct BackendPort(u16);
@@ -10,6 +11,18 @@ struct BackendPort(u16);
 #[tauri::command]
 fn get_backend_port(port: State<'_, BackendPort>) -> u16 {
     port.0
+}
+
+#[tauri::command]
+fn open_logs_folder(app_handle: tauri::AppHandle) {
+    let exe_path = std::env::current_exe().unwrap_or_default();
+    let logs_dir = exe_path.parent().unwrap_or(std::path::Path::new("")).join("logs");
+    
+    if !logs_dir.exists() {
+        let _ = std::fs::create_dir_all(&logs_dir);
+    }
+    
+    let _ = app_handle.shell().open(logs_dir.to_string_lossy().to_string(), None);
 }
 
 fn get_free_port() -> u16 {
@@ -23,7 +36,8 @@ fn get_free_port() -> u16 {
 pub fn run() {
   tauri::Builder::default()
     .plugin(tauri_plugin_shell::init())
-    .invoke_handler(tauri::generate_handler![get_backend_port])
+    .plugin(tauri_plugin_dialog::init())
+    .invoke_handler(tauri::generate_handler![get_backend_port, open_logs_folder])
     .setup(|app| {
       let port = get_free_port();
       app.manage(BackendPort(port));
@@ -40,9 +54,26 @@ pub fn run() {
       let sidecar_command = app.shell().sidecar("backend").unwrap()
           .args(["--urls", &format!("http://127.0.0.1:{}", port)]);
       match sidecar_command.spawn() {
-          Ok((_rx, child)) => {
+          Ok((mut rx, child)) => {
               println!("Backend sidecar spawned successfully.");
               app.manage(BackendProcess(Mutex::new(Some(child))));
+
+              let app_handle = app.handle().clone();
+              tauri::async_runtime::spawn(async move {
+                  while let Some(event) = rx.recv().await {
+                      if let tauri_plugin_shell::process::CommandEvent::Terminated(payload) = event {
+                          if payload.code != Some(0) {
+                              println!("Backend crashed with code {:?}", payload.code);
+                              let _ = app_handle.dialog()
+                                  .message("Erro Crítico: O motor do Digivice parou de funcionar inesperadamente. Verifique a pasta logs e contate o desenvolvedor.")
+                                  .title("Falha no Backend")
+                                  .kind(MessageDialogKind::Error)
+                                  .show(|_| {});
+                          }
+                          break;
+                      }
+                  }
+              });
           }
           Err(e) => {
               eprintln!("Failed to spawn backend sidecar: {}", e);

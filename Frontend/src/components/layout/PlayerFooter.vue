@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { useGameStore } from '../../stores/useGameStore'
 import { useI18n } from 'vue-i18n'
+import { invoke } from '@tauri-apps/api/core'
 import LanguageSelector from '../ui/LanguageSelector.vue'
 import EquipmentsData from '../../data/static/Equipments.json'
 import type { Digimon } from '../../types/backend'
@@ -57,6 +58,14 @@ const activeTooltip = ref({
   text: ''
 })
 
+const openLogsFolder = async () => {
+  try {
+    await invoke('open_logs_folder')
+  } catch (err) {
+    console.error('Failed to open logs folder:', err)
+  }
+}
+
 const showTooltip = (event: MouseEvent, title: string, text: string) => {
   activeTooltip.value = {
     show: true,
@@ -91,7 +100,10 @@ const moveTooltip = (event: MouseEvent) => {
     
     <!-- Language Selector & Connection Status -->
     <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-4 text-sm opacity-80">
-      <div class="flex items-center gap-2 border-r border-blue-900 pr-4 mr-2">
+      <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
+        <button @click="openLogsFolder" class="px-2 py-1 text-xs bg-blue-900/50 hover:bg-blue-800 rounded border border-blue-700 transition-colors text-blue-200 hover:text-white uppercase tracking-wider">
+          Logs
+        </button>
         <LanguageSelector />
       </div>
       
