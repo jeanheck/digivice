@@ -4,7 +4,9 @@
     "Description": "Obtain the Tree Boots to unlock new areas by kicking trees.",
     "Prerequisites": [
         {
-            "Description": "Own the Folder Bag"
+            "Description": "Own the Folder Bag",
+            "ItemKey": "FolderBag",
+            "ItemType": "important"
         }
     ],
     "Steps": [

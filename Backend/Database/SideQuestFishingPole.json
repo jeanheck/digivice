@@ -4,7 +4,9 @@
     "Description": "Obtain the Fishing Pole to start fishing for items and Digimon.",
     "Prerequisites": [
         {
-            "Description": "Own the Folder Bag"
+            "Description": "Own the Folder Bag",
+            "ItemKey": "FolderBag",
+            "ItemType": "important"
         }
     ],
     "Steps": [

@@ -9,12 +9,12 @@ namespace Backend.Models.Quests
         /// Maps to an entry in ConsumableItemsAddresses, ImportantItemsAddresses,
         /// or an equipment ID. When null, IsDone must be set manually.
         /// </summary>
-        public string ItemKey { get; set; }
+        public string ItemKey { get; set; } = string.Empty;
         /// <summary>
         /// Type of item to check: "consumable", "equipment", or "important".
         /// Used together with ItemKey to determine which address table to query.
         /// </summary>
-        public string ItemType { get; set; }
+        public string ItemType { get; set; } = string.Empty;
 
         public override bool Equals(object? obj)
         {

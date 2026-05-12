@@ -11,53 +11,36 @@ namespace Backend.Services
     {
         public Journal GetJournal()
         {
+            var importantItems = itemStateService.GetImportantItems();
+            var consumableItems = itemStateService.GetConsumableItems();
+
             return new Journal()
             {
-                MainQuest = GetMainQuest(),
-                SideQuests = GetSideQuests()
+                MainQuest = (MainQuest)ProcessQuest(gameDatabase.GetMainQuest(), importantItems, consumableItems),
+                SideQuests = gameDatabase.GetAllSideQuests()
+                    .Select(sideQuest => (SideQuest)ProcessQuest(sideQuest, importantItems, consumableItems))
+                    .ToList()
             };
         }
 
-        private MainQuest GetMainQuest()
+        private Quest ProcessQuest(Quest quest, ImportantItems importantItems, ConsumableItems consumableItems)
         {
-            var mainQuest = gameDatabase.GetMainQuest();
-            var mainQuestStepsState = gameReader.ReadQuestSteps(mainQuest.Steps);
-            ApplyQuestStepsLogic(mainQuest, mainQuestStepsState);
-            return mainQuest;
-        }
+            var questStepsState = gameReader.ReadQuestSteps(quest.Steps);
 
-        private List<SideQuest> GetSideQuests()
-        {
-            var sideQuests = new List<SideQuest>();
+            // 1. Evaluate Quest-level Prerequisites
+            ApplyRequisitesLogic(quest.Prerequisites, importantItems, consumableItems);
+            // 2. Evaluate Step Completion (Bitmasks + Cascade)
+            ApplyQuestStepsLogic(quest, questStepsState);
+            // 3. Evaluate Step-level Prerequisites
+            foreach (var step in quest.Steps)
+            {
+                if (step.Prerequisites != null)
+                {
+                    ApplyRequisitesLogic(step.Prerequisites, importantItems, consumableItems);
+                }
+            }
 
-            // --- 1. Folder Bag Side Quest ---
-            var folderBag = gameDatabase.GetSideQuestFolderBag();
-            var folderBagResource = gameReader.ReadQuestSteps(folderBag.Steps);
-            ApplyQuestStepsLogic(folderBag, folderBagResource);
-            sideQuests.Add(folderBag);
-
-            // Check if the player owns the Folder Bag (prerequisite for next quests)
-            var importantItems = itemStateService.GetImportantItems();
-            bool hasFolderBag = importantItems.FolderBag?.Has ?? false;
-
-            // --- 2. Tree Boots Side Quest ---
-            var treeBoots = gameDatabase.GetSideQuestTreeBoots();
-            var treeBootsResource = gameReader.ReadQuestSteps(treeBoots.Steps);
-            if (treeBoots.Prerequisites.Count > 0)
-                treeBoots.Prerequisites[0].IsDone = hasFolderBag;
-            ApplyQuestStepsLogic(treeBoots, treeBootsResource);
-            sideQuests.Add(treeBoots);
-
-            // --- 3. Fishing Pole Side Quest ---
-            var fishingPole = gameDatabase.GetSideQuestFishingPole();
-            var fishingPoleResource = gameReader.ReadQuestSteps(fishingPole.Steps);
-            if (fishingPole.Prerequisites.Count > 0)
-                fishingPole.Prerequisites[0].IsDone = hasFolderBag;
-            ApplyQuestStepsLogic(fishingPole, fishingPoleResource);
-            ApplyStepPrerequisites(fishingPole, importantItems);
-            sideQuests.Add(fishingPole);
-
-            return sideQuests;
+            return quest;
         }
 
         private static void ApplyQuestStepsLogic(Quest quest, Dictionary<int, byte> questStepsState)
@@ -69,8 +52,12 @@ namespace Backend.Services
                     continue;
                 }
 
-                step.IsCompleted = state == 1;
-                if (!string.IsNullOrEmpty(step.BitMask))
+                if (string.IsNullOrEmpty(step.BitMask))
+                {
+                    // Legacy mode: byte == 1 means completed
+                    step.IsCompleted = state == 1;
+                }
+                else
                 {
                     // Bitmask mode: parse hex string to int, then check if any bit in the mask is set
                     int maskValue = Convert.ToInt32(step.BitMask, 16);
@@ -89,29 +76,19 @@ namespace Backend.Services
             }
         }
 
-        private void ApplyStepPrerequisites(Quest quest, ImportantItems importantItems)
+        private static void ApplyRequisitesLogic(
+            IEnumerable<Requisite> requisites,
+            ImportantItems importantItems,
+            ConsumableItems consumableItems)
         {
-            var consumables = itemStateService.GetConsumableItems();
-
-            foreach (var step in quest.Steps)
+            foreach (var requisite in requisites)
             {
-                if (step.Prerequisites == null)
+                requisite.IsDone = requisite.ItemType switch
                 {
-                    continue;
-                }
-
-                foreach (var prerequisite in step.Prerequisites)
-                {
-                    switch (prerequisite.ItemType)
-                    {
-                        case "consumable":
-                            prerequisite.IsDone = consumables.GetQuantity(prerequisite.ItemKey) > 0;
-                            break;
-                        case "important":
-                            prerequisite.IsDone = importantItems.HasItem(prerequisite.ItemKey);
-                            break;
-                    }
-                }
+                    "consumable" => consumableItems.GetQuantity(requisite.ItemKey) > 0,
+                    "important" => importantItems.HasItem(requisite.ItemKey),
+                    _ => requisite.IsDone // Preserve manual state for unknown types
+                };
             }
         }
     }

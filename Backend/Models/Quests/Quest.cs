@@ -5,8 +5,8 @@ namespace Backend.Models.Quests
         public string? Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public List<Requisite> Prerequisites { get; set; } = new();
-        public List<QuestStep> Steps { get; set; } = new();
+        public List<Requisite> Prerequisites { get; set; } = [];
+        public List<QuestStep> Steps { get; set; } = [];
 
         public override bool Equals(object? obj)
         {
