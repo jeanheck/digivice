@@ -1,6 +1,6 @@
 namespace Backend.Models.Quests
 {
-    public class MainQuest : Quest
+    public record class MainQuest : Quest
     {
     }
 }

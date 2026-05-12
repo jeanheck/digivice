@@ -1,6 +1,6 @@
 namespace Backend.Models.Quests
 {
-    public class Requisite
+    public record class Requisite
     {
         public string Description { get; set; } = string.Empty;
         public bool IsDone { get; set; }
@@ -15,20 +15,5 @@ namespace Backend.Models.Quests
         /// Used together with ItemKey to determine which address table to query.
         /// </summary>
         public string ItemType { get; set; } = string.Empty;
-
-        public override bool Equals(object? obj)
-        {
-            if (obj is not Requisite other) return false;
-
-            return Description == other.Description &&
-                   IsDone == other.IsDone &&
-                   ItemKey == other.ItemKey &&
-                   ItemType == other.ItemType;
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Description, IsDone, ItemKey, ItemType);
-        }
     }
 }

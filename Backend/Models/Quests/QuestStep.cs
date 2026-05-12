@@ -3,7 +3,7 @@ using Backend.Utils;
 
 namespace Backend.Models.Quests
 {
-    public class QuestStep
+    public record class QuestStep
     {
         public int Number { get; set; }
         public bool IsCompleted { get; set; }
@@ -28,13 +28,12 @@ namespace Backend.Models.Quests
         /// </summary>
         public string? BitMask { get; set; }
 
-        public override bool Equals(object? obj)
+        public virtual bool Equals(QuestStep? other)
         {
-            if (obj is not QuestStep other) return false;
+            if (other is null) return false;
 
             bool prereqsEqual = (Prerequisites == null && other.Prerequisites == null) ||
                                 (Prerequisites != null && other.Prerequisites != null &&
-                                 Prerequisites.Count == other.Prerequisites.Count &&
                                  Prerequisites.SequenceEqual(other.Prerequisites));
 
             return Number == other.Number &&

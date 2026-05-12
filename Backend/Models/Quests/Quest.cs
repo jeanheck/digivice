@@ -1,6 +1,6 @@
 namespace Backend.Models.Quests
 {
-    public abstract class Quest
+    public abstract record class Quest
     {
         public string? Id { get; set; }
         public string Title { get; set; } = string.Empty;
@@ -8,18 +8,16 @@ namespace Backend.Models.Quests
         public List<Requisite> Prerequisites { get; set; } = [];
         public List<QuestStep> Steps { get; set; } = [];
 
-        public override bool Equals(object? obj)
+        public virtual bool Equals(Quest? other)
         {
-            if (obj is not Quest other) return false;
+            if (other is null) return false;
 
             bool prereqsEqual = (Prerequisites == null && other.Prerequisites == null) ||
                                 (Prerequisites != null && other.Prerequisites != null &&
-                                 Prerequisites.Count == other.Prerequisites.Count &&
                                  Prerequisites.SequenceEqual(other.Prerequisites));
 
             bool stepsEqual = (Steps == null && other.Steps == null) ||
                               (Steps != null && other.Steps != null &&
-                               Steps.Count == other.Steps.Count &&
                                Steps.SequenceEqual(other.Steps));
 
             return Id == other.Id &&
