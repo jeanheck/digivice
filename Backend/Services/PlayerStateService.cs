@@ -10,7 +10,7 @@ namespace Backend.Services
         {
             var addresses = gameDatabase.GetPlayerAddresses();
             var resource = gameReader.ReadPlayer(addresses);
-            var playerName = TextDecoder.DecodeName(resource.NameBytes);
+            var playerName = TextDecoder.DecodeName(resource.NameInBytes);
 
             if (string.IsNullOrWhiteSpace(playerName))
                 return null;

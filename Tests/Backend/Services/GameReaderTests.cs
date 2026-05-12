@@ -82,10 +82,10 @@ namespace Tests.Backend.Services
             var reader = new GameReader(_mockMemoryReader.Object);
             var result = reader.ReadParty(addresses);
 
-            Assert.Equal(3, result.ActiveDigimonIds.Count);
-            Assert.Contains((byte)5, result.ActiveDigimonIds);
-            Assert.Contains((byte)8, result.ActiveDigimonIds);
-            Assert.Contains((byte)0, result.ActiveDigimonIds);
+            Assert.Equal(3, result.DigimonIds.Count);
+            Assert.Contains((byte)5, result.DigimonIds);
+            Assert.Contains((byte)8, result.DigimonIds);
+            Assert.Contains((byte)0, result.DigimonIds);
         }
 
         [Fact]

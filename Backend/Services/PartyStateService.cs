@@ -3,49 +3,30 @@ using Backend.Interfaces;
 
 namespace Backend.Services
 {
-    public class PartyStateService
+    public class PartyStateService(
+        IGameDatabase gameDatabase,
+        IGameReader gameReader,
+        DigimonStateService digimonStateService)
     {
-        private readonly IGameDatabase _database;
-        private readonly IGameReader _reader;
-        private readonly DigimonStateService _digimonStateService;
-
-        public PartyStateService(IGameDatabase database, IGameReader reader, DigimonStateService digimonStateService)
-        {
-            _database = database;
-            _reader = reader;
-            _digimonStateService = digimonStateService;
-        }
-
         public Party GetParty()
         {
-            var addresses = _database.GetPartyAddresses();
-            var resource = _reader.ReadParty(addresses);
-
+            var partyAddresses = gameDatabase.GetPartyAddresses();
+            var resource = gameReader.ReadParty(partyAddresses);
             var party = new Party();
 
-            var digimonAddresses = _database.GetDigimonAddresses();
-            byte emptySlotId = (byte)(string.IsNullOrEmpty(digimonAddresses.EmptySlotId) ? 0xFF : Convert.ToInt32(digimonAddresses.EmptySlotId, 16));
-
-            for (int i = 0; i < resource.ActiveDigimonIds.Count && i < 3; i++)
+            for (int i = 0; i < resource.DigimonIds.Count; i++)
             {
-                byte digimonId = (byte)resource.ActiveDigimonIds[i];
-
-                if (digimonId == emptySlotId) continue;
-
-                int baseAddress = _digimonStateService.GetDigimonBaseAddressById(digimonAddresses, digimonId);
-                if (baseAddress != 0)
+                byte digimonId = (byte)resource.DigimonIds[i];
+                if (digimonStateService.IsEmptySlot(digimonId))
                 {
-                    party.Slots[i] = _digimonStateService.GetDigimon(i + 1, digimonId, baseAddress);
+                    continue;
                 }
-                else
-                {
-                    Serilog.Log.Warning("Unknown Digimon ID detected in party slot: 0x{Id:X2} at address 0x{AddressStr}", digimonId, addresses.PartySlot1);
-                }
+
+                party.Slots[i] = digimonStateService.GetDigimon(i + 1, digimonId);
             }
 
             return party;
         }
-
-
     }
 }
+

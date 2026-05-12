@@ -12,7 +12,7 @@ namespace Backend.Services
             return new PlayerResource
             {
                 Bits = memoryReader.ReadInt32(addresses.Bits),
-                NameBytes = memoryReader.ReadBytes(addresses.Name, addresses.NameBufferSize),
+                NameInBytes = memoryReader.ReadBytes(addresses.Name, addresses.NameBufferSize),
                 MapId = memoryReader.ReadInt16(addresses.MapIdAddress)
             };
         }
@@ -28,7 +28,7 @@ namespace Backend.Services
 
                 if (idBytes != null && idBytes.Length > 0)
                 {
-                    resource.ActiveDigimonIds.Add(idBytes[0]);
+                    resource.DigimonIds.Add(idBytes[0]);
                 }
             }
 
@@ -57,7 +57,7 @@ namespace Backend.Services
             };
         }
 
-        public DigimonResource ReadDigimonResource(int slotIndex, int baseAddress, DigimonAddresses addresses)
+        public DigimonResource ReadDigimon(int slotIndex, int baseAddress, DigimonAddresses addresses)
         {
             // The digimon struct is quite large, 0x3CA is the last property (Accessory2), taking 2 bytes
             // Reserving 1500 bytes covers the whole documented memory block safely (Including 60x20 Evolution slots)

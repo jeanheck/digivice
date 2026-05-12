@@ -24,7 +24,7 @@ namespace Tests.Backend.Services
         {
             _mockDatabase.Setup(db => db.GetPlayerAddresses()).Returns(new PlayerAddresses());
             _mockReader.Setup(r => r.ReadPlayer(It.IsAny<PlayerAddresses>()))
-                       .Returns(new PlayerResource { NameBytes = null });
+                       .Returns(new PlayerResource { NameInBytes = null });
 
             var result = _playerService.GetPlayer();
 
@@ -40,7 +40,7 @@ namespace Tests.Backend.Services
             _mockReader.Setup(r => r.ReadPlayer(It.IsAny<PlayerAddresses>()))
                        .Returns(new PlayerResource
                        {
-                           NameBytes = encodedName,
+                           NameInBytes = encodedName,
                            Bits = 15500,
                            MapId = 255 // Hex string should be "00FF"
                        });

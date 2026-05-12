@@ -105,6 +105,7 @@ namespace Backend.Models.Addresses
         public EquipmentsOffsets? Equipaments { get; set; }
         public DigievolutionsOffsets? Digievolutions { get; set; }
 
-        public string? EmptySlotId { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int EmptySlotId { get; set; }
     }
 }

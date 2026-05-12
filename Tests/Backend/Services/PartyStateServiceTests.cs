@@ -37,9 +37,9 @@ namespace Tests.Backend.Services
             });
 
             _mockReader.Setup(r => r.ReadParty(It.IsAny<PartyAddresses>()))
-                       .Returns(new PartyResource { ActiveDigimonIds = { 0x01, 0xFF } });
+                       .Returns(new PartyResource { DigimonIds = { 0x01, 0xFF } });
 
-            _mockReader.Setup(r => r.ReadDigimonResource(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<DigimonAddresses>()))
+            _mockReader.Setup(r => r.ReadDigimon(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<DigimonAddresses>()))
                        .Returns(new DigimonResource
                        {
                            LogicBlock = new byte[1000]

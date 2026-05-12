@@ -22,7 +22,7 @@ namespace Tests.Backend.Services
             mockDb.Setup(db => db.GetPlayerAddresses()).Returns(new PlayerAddresses());
             mockReader.Setup(r => r.ReadPlayer(It.IsAny<PlayerAddresses>())).Returns(new PlayerResource
             {
-                NameBytes = new byte[] { 0x17, 0x2C, 0x28, 0x35, 0x00 }, // Jean in Digimon World 3 custom encoding
+                NameInBytes = new byte[] { 0x17, 0x2C, 0x28, 0x35, 0x00 }, // Jean in Digimon World 3 custom encoding
                 Bits = 1000,
                 MapId = 20
             });
@@ -30,12 +30,12 @@ namespace Tests.Backend.Services
             // Party
             mockDb.Setup(db => db.GetPartyAddresses()).Returns(new PartyAddresses());
             var partyResource = new PartyResource();
-            partyResource.ActiveDigimonIds.Add(1);
+            partyResource.DigimonIds.Add(1);
             mockReader.Setup(r => r.ReadParty(It.IsAny<PartyAddresses>())).Returns(partyResource);
 
             // Digimon
             mockDb.Setup(db => db.GetDigimonAddresses()).Returns(new DigimonAddresses());
-            mockReader.Setup(r => r.ReadDigimonResource(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<DigimonAddresses>())).Returns(new DigimonResource());
+            mockReader.Setup(r => r.ReadDigimon(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<DigimonAddresses>())).Returns(new DigimonResource());
 
             // Items
             var importantMock = new ImportantItemsAddresses
