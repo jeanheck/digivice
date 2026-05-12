@@ -16,11 +16,8 @@ namespace Backend.Services
 
             for (int i = 0; i < resource.DigimonIds.Count; i++)
             {
-                byte digimonId = (byte)resource.DigimonIds[i];
-                if (digimonStateService.IsEmptySlot(digimonId))
-                {
-                    continue;
-                }
+                byte digimonId = resource.DigimonIds[i];
+                if (digimonStateService.IsEmptySlot(digimonId)) continue;
 
                 party.Slots[i] = digimonStateService.GetDigimon(i + 1, digimonId);
             }

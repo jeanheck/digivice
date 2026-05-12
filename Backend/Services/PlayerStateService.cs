@@ -13,7 +13,9 @@ namespace Backend.Services
             var playerName = TextDecoder.DecodeName(resource.NameInBytes);
 
             if (string.IsNullOrWhiteSpace(playerName))
+            {
                 return null;
+            }
 
             var player = new Player
             {

@@ -7,6 +7,10 @@ namespace Backend.Services
 {
     public class GameReader(IMemoryReaderService memoryReader) : IGameReader
     {
+        // 0x3CA is the last property (Accessory2), taking 2 bytes.
+        // 1500 bytes covers the whole documented memory block safely (Including 60x20 Evolution slots).
+        private const int DigimonMemoryBlockSize = 1500;
+
         public PlayerResource ReadPlayer(PlayerAddresses addresses)
         {
             return new PlayerResource
@@ -19,22 +23,17 @@ namespace Backend.Services
 
         public PartyResource ReadParty(PartyAddresses addresses)
         {
-            var resource = new PartyResource();
             var slotAddresses = new[] { addresses.PartySlot1, addresses.PartySlot2, addresses.PartySlot3 };
 
-            foreach (var address in slotAddresses)
+            return new PartyResource
             {
-                var idBytes = memoryReader.ReadBytes(address, addresses.PartySlotStride);
-
-                if (idBytes != null && idBytes.Length > 0)
-                {
-                    resource.DigimonIds.Add(idBytes[0]);
-                }
-            }
-
-            return resource;
+                DigimonIds = slotAddresses
+                    .Select(slot => memoryReader.ReadBytes(slot, addresses.BytesPerSlot))
+                    .Where(bytes => bytes != null && bytes.Length > 0)
+                    .Select(bytes => bytes![0])
+                    .ToList()
+            };
         }
-
 
         public ImportantItemsResource ReadImportantItems(ImportantItemsAddresses addresses)
         {
@@ -59,23 +58,21 @@ namespace Backend.Services
 
         public DigimonResource ReadDigimon(int slotIndex, int baseAddress, DigimonAddresses addresses)
         {
-            // The digimon struct is quite large, 0x3CA is the last property (Accessory2), taking 2 bytes
-            // Reserving 1500 bytes covers the whole documented memory block safely (Including 60x20 Evolution slots)
-            var logicBlock = memoryReader.ReadBytes(baseAddress, 1500);
+            var logicBlock = memoryReader.ReadBytes(baseAddress, DigimonMemoryBlockSize);
 
-            int activeEvoId = -1;
+            int activeDigievolutionId = -1;
             if (addresses.Digievolutions != null)
             {
-                int offset = addresses.Digievolutions.ActiveDigievolution;
-                activeEvoId = memoryReader.ReadInt16(baseAddress + offset) ?? -1;
+                int ActiveDigievolutionAddress = addresses.Digievolutions.ActiveDigievolution;
+                activeDigievolutionId = memoryReader.ReadInt16(baseAddress + ActiveDigievolutionAddress) ?? -1;
             }
 
             return new DigimonResource
             {
                 SlotIndex = slotIndex,
                 BaseAddress = baseAddress,
-                LogicBlock = logicBlock ?? System.Array.Empty<byte>(),
-                ActiveDigievolutionId = activeEvoId
+                LogicBlock = logicBlock ?? Array.Empty<byte>(),
+                ActiveDigievolutionId = activeDigievolutionId
             };
         }
 

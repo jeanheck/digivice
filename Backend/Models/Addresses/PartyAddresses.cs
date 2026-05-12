@@ -7,12 +7,11 @@ namespace Backend.Models.Addresses
     {
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long PartySlot1 { get; set; }
-        
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long PartySlot2 { get; set; }
-        
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long PartySlot3 { get; set; }
-        public int PartySlotStride { get; set; }
+
+        public int BytesPerSlot { get; set; }
     }
 }
