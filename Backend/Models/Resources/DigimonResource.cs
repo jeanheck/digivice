@@ -12,5 +12,13 @@ namespace Backend.Models.Resources
         // and let DigimonStateService parse it based on the Addresses Offsets.
         public byte[] LogicBlock { get; set; } = Array.Empty<byte>();
         public int ActiveDigievolutionId { get; set; }
+
+        public void Deconstruct(
+            out byte[] logicBlock,
+            out int activeDigievolutionId)
+        {
+            logicBlock = LogicBlock;
+            activeDigievolutionId = ActiveDigievolutionId;
+        }
     }
 }

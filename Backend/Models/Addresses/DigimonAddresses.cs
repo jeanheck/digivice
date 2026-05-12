@@ -106,5 +106,21 @@ namespace Backend.Models.Addresses
 
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int EmptySlotId { get; set; }
+
+        public void Deconstruct(
+            out List<DigimonBaseAddress> digimons,
+            out BasicInfoAddresses basicInfo,
+            out AttributesAddresses attributes,
+            out ResistancesAddresses resistances,
+            out EquipmentsAddresses equipaments,
+            out DigievolutionsAddresses digievolutions)
+        {
+            digimons = Digimons;
+            basicInfo = BasicInfo;
+            attributes = Attributes;
+            resistances = Resistances;
+            equipaments = Equipaments;
+            digievolutions = Digievolutions;
+        }
     }
 }

@@ -56,14 +56,17 @@ namespace Backend.Services
             };
         }
 
-        public DigimonResource ReadDigimon(int slotIndex, int baseAddress, DigimonAddresses addresses)
+        public DigimonResource ReadDigimon(
+            int slotIndex,
+            int baseAddress,
+            DigievolutionsAddresses digievolutionsAddresses)
         {
             var logicBlock = memoryReader.ReadBytes(baseAddress, DigimonMemoryBlockSize);
 
             int activeDigievolutionId = -1;
-            if (addresses.Digievolutions != null)
+            if (digievolutionsAddresses != null)
             {
-                int ActiveDigievolutionAddress = addresses.Digievolutions.ActiveDigievolution;
+                int ActiveDigievolutionAddress = digievolutionsAddresses.ActiveDigievolution;
                 activeDigievolutionId = memoryReader.ReadInt16(baseAddress + ActiveDigievolutionAddress) ?? -1;
             }
 

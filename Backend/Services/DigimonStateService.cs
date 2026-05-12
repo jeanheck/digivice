@@ -23,9 +23,9 @@ namespace Backend.Services
 
         public Digimon? GetDigimon(int slotIndex, byte digimonId)
         {
-            var addresses = Addresses;
-            var digimonEntry = addresses.Digimons?.FirstOrDefault(d => d.Id == digimonId);
+            var (digimons, basicInfo, attributes, resistances, equipaments, digievolutions) = Addresses;
 
+            var digimonEntry = digimons?.FirstOrDefault(d => d.Id == digimonId);
             if (digimonEntry == null || digimonEntry.Address == 0)
             {
                 Serilog.Log.Warning("Unknown Digimon ID: 0x{Id:X2}", digimonId);
@@ -33,51 +33,53 @@ namespace Backend.Services
             }
 
             int digimonAddress = (int)digimonEntry.Address;
-            var resource = gameReader.ReadDigimon(slotIndex, digimonAddress, addresses);
+
+            var (logicBlock, activeDigievolutionId) = gameReader
+                .ReadDigimon(slotIndex, digimonAddress, digievolutions);
             var equippedDigievolutions = digievolutionStateService
-                .GetEquippedDigievolutions(resource.LogicBlock, addresses.Digievolutions);
+                .GetEquippedDigievolutions(logicBlock, digievolutions);
 
             return new Digimon
             {
                 SlotIndex = slotIndex,
-                ActiveDigievolutionId = GetActiveDigievolutionId(resource.ActiveDigievolutionId),
+                ActiveDigievolutionId = GetActiveDigievolutionId(activeDigievolutionId),
                 BasicInfo = new BasicInfo
                 {
                     Name = digimonEntry.Name ?? UnknownDigimonName,
-                    Experience = MemoryUtils.ReadInt32FromBlock(resource.LogicBlock, addresses.BasicInfo.Experience),
-                    Level = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.Level),
-                    CurrentHP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.CurrentHP),
-                    MaxHP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.MaxHP),
-                    CurrentMP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.CurrentMP),
-                    MaxMP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.MaxMP)
+                    Experience = MemoryUtils.ReadInt32FromBlock(logicBlock, basicInfo.Experience),
+                    Level = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.Level),
+                    CurrentHP = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.CurrentHP),
+                    MaxHP = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.MaxHP),
+                    CurrentMP = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.CurrentMP),
+                    MaxMP = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.MaxMP)
                 },
                 Attributes = new Attributes
                 {
-                    Strength = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Strength),
-                    Defense = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Defense),
-                    Spirit = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Spirit),
-                    Wisdom = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Wisdow),
-                    Speed = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Speed),
-                    Charisma = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Charisma)
+                    Strength = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Strength),
+                    Defense = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Defense),
+                    Spirit = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Spirit),
+                    Wisdom = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Wisdow),
+                    Speed = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Speed),
+                    Charisma = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Charisma)
                 },
                 Resistances = new Resistances
                 {
-                    Fire = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Fire),
-                    Water = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Water),
-                    Ice = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Ice),
-                    Wind = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Wind),
-                    Thunder = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Thunder),
-                    Machine = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Machine),
-                    Dark = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Dark)
+                    Fire = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Fire),
+                    Water = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Water),
+                    Ice = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Ice),
+                    Wind = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Wind),
+                    Thunder = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Thunder),
+                    Machine = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Machine),
+                    Dark = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Dark)
                 },
                 Equipments = new Equipments
                 {
-                    Head = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.Head),
-                    Body = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.Body),
-                    RightHand = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.RightHand),
-                    LeftHand = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.LeftHand),
-                    Accessory1 = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.Accessory1),
-                    Accessory2 = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.Accessory2)
+                    Head = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Head),
+                    Body = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Body),
+                    RightHand = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.RightHand),
+                    LeftHand = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.LeftHand),
+                    Accessory1 = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Accessory1),
+                    Accessory2 = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Accessory2)
                 },
                 EquippedDigievolutions = equippedDigievolutions
             };

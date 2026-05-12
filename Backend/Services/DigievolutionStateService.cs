@@ -6,7 +6,12 @@ namespace Backend.Services
 {
     public class DigievolutionStateService
     {
-        public Digievolution[] GetEquippedDigievolutions(byte[] logicBlock, DigievolutionsAddresses digievolutionsAddresses)
+        private const int EmptySlotId = -1; // 0xFFFF in memory
+        private const int NoDigievolutionId = 0;
+
+        public Digievolution[] GetEquippedDigievolutions(
+            byte[] logicBlock,
+            DigievolutionsAddresses digievolutionsAddresses)
         {
             ReadOnlySpan<int> digievolutionsEquippedSlotsAddresses = [
                 digievolutionsAddresses.EquipedSlot1,
@@ -19,8 +24,7 @@ namespace Backend.Services
             {
                 int id = MemoryUtils.ReadInt16FromBlock(logicBlock, digievolutionsEquippedSlotsAddresses[i]);
 
-                // Redundant check for item 1/3 (will be handled separately)
-                if (id == 0xFFFF || id == -1 || id == 0)
+                if (id == EmptySlotId || id == NoDigievolutionId)
                 {
                     equippedDigievolutions[i] = null;
                     continue;
@@ -38,7 +42,7 @@ namespace Backend.Services
             for (int k = 0; k < addresses.MaxUnlockedDigievolutions; k++)
             {
                 int entryOffset = addresses.UnlockedDigievolutionsStart + (k * addresses.UnlockedDigievolutionEntryStride);
-                if (entryOffset + 2 >= logicBlock.Length) break;
+                if (entryOffset + 4 > logicBlock.Length) break;
 
                 int entryId = MemoryUtils.ReadInt16FromBlock(logicBlock, entryOffset);
                 if (entryId == id)
