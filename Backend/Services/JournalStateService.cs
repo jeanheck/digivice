@@ -41,7 +41,7 @@ namespace Backend.Services
             var sideQuests = new List<SideQuest>();
 
             // --- 1. Folder Bag Side Quest ---
-            var folderBag = _database.GetSideQuest("FolderBag");
+            var folderBag = _database.GetSideQuestFolderBag();
             var folderBagResource = _reader.ReadQuestSteps(folderBag.Steps);
             ApplyQuestStepsLogic(folderBag, folderBag.Steps, folderBagResource);
             sideQuests.Add(folderBag);
@@ -51,7 +51,7 @@ namespace Backend.Services
             bool hasFolderBag = importantItems.FolderBag?.Has ?? false;
 
             // --- 2. Tree Boots Side Quest ---
-            var treeBoots = _database.GetSideQuest("TreeBoots");
+            var treeBoots = _database.GetSideQuestTreeBoots();
             var treeBootsResource = _reader.ReadQuestSteps(treeBoots.Steps);
             if (treeBoots.Prerequisites.Count > 0)
                 treeBoots.Prerequisites[0].IsDone = hasFolderBag;
@@ -59,7 +59,7 @@ namespace Backend.Services
             sideQuests.Add(treeBoots);
 
             // --- 3. Fishing Pole Side Quest ---
-            var fishingPole = _database.GetSideQuest("FishingPole");
+            var fishingPole = _database.GetSideQuestFishingPole();
             var fishingPoleResource = _reader.ReadQuestSteps(fishingPole.Steps);
             if (fishingPole.Prerequisites.Count > 0)
                 fishingPole.Prerequisites[0].IsDone = hasFolderBag;

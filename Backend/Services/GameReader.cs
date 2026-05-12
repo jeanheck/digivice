@@ -6,24 +6,17 @@ using Backend.Utils;
 
 namespace Backend.Services
 {
-    public class GameReader : IGameReader
+    public class GameReader(IMemoryReaderService memoryReader) : IGameReader
     {
-        private readonly IMemoryReaderService _memoryReader;
-
-        public GameReader(IMemoryReaderService memoryReader)
-        {
-            _memoryReader = memoryReader;
-        }
-
         public PlayerResource ReadPlayer(PlayerAddresses addresses)
         {
             var resource = new PlayerResource();
 
             try
             {
-                resource.Bits = _memoryReader.ReadInt32(addresses.Bits);
-                resource.NameBytes = _memoryReader.ReadBytes(addresses.Name, addresses.NameBufferSize);
-                resource.MapId = _memoryReader.ReadInt16(addresses.MapIdAddress);
+                resource.Bits = memoryReader.ReadInt32(addresses.Bits);
+                resource.NameBytes = memoryReader.ReadBytes(addresses.Name, addresses.NameBufferSize);
+                resource.MapId = memoryReader.ReadInt16(addresses.MapIdAddress);
             }
             catch (Exception ex)
             {
@@ -43,7 +36,7 @@ namespace Backend.Services
 
                 foreach (var address in slotAddresses)
                 {
-                    var idBytes = _memoryReader.ReadBytes(address, addresses.PartySlotStride);
+                    var idBytes = memoryReader.ReadBytes(address, addresses.PartySlotStride);
 
                     if (idBytes != null && idBytes.Length > 0)
                     {
@@ -64,10 +57,10 @@ namespace Backend.Services
         {
             return new ImportantItemsResource
             {
-                Folderbag = _memoryReader.ReadByteSafe(addresses.FolderBag!.Address),
-                TreeBoots = _memoryReader.ReadByteSafe(addresses.TreeBoots!.Address),
-                FishingPole = _memoryReader.ReadByteSafe(addresses.FishingPole!.Address),
-                RedSnapper = _memoryReader.ReadByteSafe(addresses.RedSnapper!.Address)
+                Folderbag = memoryReader.ReadByteSafe(addresses.FolderBag!.Address),
+                TreeBoots = memoryReader.ReadByteSafe(addresses.TreeBoots!.Address),
+                FishingPole = memoryReader.ReadByteSafe(addresses.FishingPole!.Address),
+                RedSnapper = memoryReader.ReadByteSafe(addresses.RedSnapper!.Address)
             };
         }
 
@@ -75,9 +68,9 @@ namespace Backend.Services
         {
             return new ConsumableItemsResource
             {
-                PowerCharge = _memoryReader.ReadByteSafe(addresses.PowerCharge!.Address),
-                SpiderWeb = _memoryReader.ReadByteSafe(addresses.SpiderWeb!.Address),
-                BambooSpear = _memoryReader.ReadByteSafe(addresses.BambooSpear!.Address)
+                PowerCharge = memoryReader.ReadByteSafe(addresses.PowerCharge!.Address),
+                SpiderWeb = memoryReader.ReadByteSafe(addresses.SpiderWeb!.Address),
+                BambooSpear = memoryReader.ReadByteSafe(addresses.BambooSpear!.Address)
             };
         }
 
@@ -85,13 +78,13 @@ namespace Backend.Services
         {
             // The digimon struct is quite large, 0x3CA is the last property (Accessory2), taking 2 bytes
             // Reserving 1500 bytes covers the whole documented memory block safely (Including 60x20 Evolution slots)
-            var logicBlock = _memoryReader.ReadBytes(baseAddress, 1500);
+            var logicBlock = memoryReader.ReadBytes(baseAddress, 1500);
 
             int activeEvoId = -1;
             if (!string.IsNullOrEmpty(addresses.Digievolutions?.ActiveDigievolution))
             {
                 int offset = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions.ActiveDigievolution, 0);
-                activeEvoId = _memoryReader.ReadInt16(baseAddress + offset) ?? -1;
+                activeEvoId = memoryReader.ReadInt16(baseAddress + offset) ?? -1;
             }
 
             return new DigimonResource
@@ -110,7 +103,7 @@ namespace Backend.Services
             {
                 if (step.Address == 0) continue;
 
-                var bytes = _memoryReader.ReadBytes(step.Address, 1);
+                var bytes = memoryReader.ReadBytes(step.Address, 1);
                 resource[step.Number] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
             }
             return resource;

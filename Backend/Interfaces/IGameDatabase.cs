@@ -11,6 +11,8 @@ namespace Backend.Interfaces
         ConsumableItemsAddresses GetConsumableItemsAddresses();
         DigimonAddresses GetDigimonAddresses();
         MainQuest GetMainQuest();
-        SideQuest GetSideQuest(string questName);
+        SideQuest GetSideQuestFolderBag();
+        SideQuest GetSideQuestTreeBoots();
+        SideQuest GetSideQuestFishingPole();
     }
 }

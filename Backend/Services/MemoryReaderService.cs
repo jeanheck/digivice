@@ -4,7 +4,9 @@ using Serilog;
 namespace Backend.Services
 {
     public class MemoryReaderService(
-        IProcessService processService, IMemoryProvider memoryProvider, IConfiguration configuration) : IMemoryReaderService
+        IProcessService processService,
+        IMemoryProvider memoryProvider,
+        IConfiguration configuration) : IMemoryReaderService
     {
         private IMemoryAccessor? _accessor;
         public bool IsConnected { get; private set; }
