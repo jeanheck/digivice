@@ -1,29 +1,23 @@
 namespace Backend.Models
 {
-    public class Party : IEquatable<Party>
+    public record class Party
     {
-        public List<Digimon?> Slots { get; set; } = new() { null, null, null };
-        public int ActiveSlotIndex { get; set; } = -1; // -1 significa nenhum ativo inicialmente
+        public List<Digimon?> Slots { get; set; } = [];
+        public int ActiveSlotIndex { get; set; } = -1;
 
-        public bool Equals(Party? other)
+        public virtual bool Equals(Party? other)
         {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
-
-            return Slots.SequenceEqual(other.Slots);
-        }
-
-        public override bool Equals(object? obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            return Equals((Party)obj);
+            if (other is null)
+            {
+                return false;
+            }
+            return ActiveSlotIndex == other.ActiveSlotIndex && Slots.SequenceEqual(other.Slots);
         }
 
         public override int GetHashCode()
         {
             var hash = new HashCode();
+            hash.Add(ActiveSlotIndex);
             foreach (var slot in Slots)
             {
                 hash.Add(slot);
