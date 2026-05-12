@@ -81,15 +81,20 @@ namespace Backend.Services
 
         public Dictionary<int, byte> ReadQuestSteps(List<QuestStep> steps)
         {
-            var resource = new Dictionary<int, byte>();
+            var questStepsState = new Dictionary<int, byte>();
             foreach (var step in steps)
             {
-                if (step.Address == 0) continue;
+                if (step.Address == 0)
+                {
+                    continue;
+                }
 
-                var bytes = memoryReader.ReadBytes(step.Address, 1);
-                resource[step.Number] = (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
+                var stepStateInBytes = memoryReader.ReadBytes(step.Address, 1);
+                questStepsState[step.Number] = (stepStateInBytes != null && stepStateInBytes.Length > 0)
+                    ? stepStateInBytes[0]
+                    : (byte)0;
             }
-            return resource;
+            return questStepsState;
         }
     }
 }

@@ -21,8 +21,8 @@ namespace Backend.Services
         private MainQuest GetMainQuest()
         {
             var mainQuest = gameDatabase.GetMainQuest();
-            var mainQuestResource = gameReader.ReadQuestSteps(mainQuest.Steps);
-            ApplyQuestStepsLogic(mainQuest, mainQuest.Steps, mainQuestResource);
+            var mainQuestStepsState = gameReader.ReadQuestSteps(mainQuest.Steps);
+            ApplyQuestStepsLogic(mainQuest, mainQuestStepsState);
             return mainQuest;
         }
 
@@ -33,7 +33,7 @@ namespace Backend.Services
             // --- 1. Folder Bag Side Quest ---
             var folderBag = gameDatabase.GetSideQuestFolderBag();
             var folderBagResource = gameReader.ReadQuestSteps(folderBag.Steps);
-            ApplyQuestStepsLogic(folderBag, folderBag.Steps, folderBagResource);
+            ApplyQuestStepsLogic(folderBag, folderBagResource);
             sideQuests.Add(folderBag);
 
             // Check if the player owns the Folder Bag (prerequisite for next quests)
@@ -45,7 +45,7 @@ namespace Backend.Services
             var treeBootsResource = gameReader.ReadQuestSteps(treeBoots.Steps);
             if (treeBoots.Prerequisites.Count > 0)
                 treeBoots.Prerequisites[0].IsDone = hasFolderBag;
-            ApplyQuestStepsLogic(treeBoots, treeBoots.Steps, treeBootsResource);
+            ApplyQuestStepsLogic(treeBoots, treeBootsResource);
             sideQuests.Add(treeBoots);
 
             // --- 3. Fishing Pole Side Quest ---
@@ -53,41 +53,33 @@ namespace Backend.Services
             var fishingPoleResource = gameReader.ReadQuestSteps(fishingPole.Steps);
             if (fishingPole.Prerequisites.Count > 0)
                 fishingPole.Prerequisites[0].IsDone = hasFolderBag;
-            ApplyQuestStepsLogic(fishingPole, fishingPole.Steps, fishingPoleResource);
+            ApplyQuestStepsLogic(fishingPole, fishingPoleResource);
             ApplyStepPrerequisites(fishingPole, importantItems);
             sideQuests.Add(fishingPole);
 
             return sideQuests;
         }
 
-        private void ApplyQuestStepsLogic(Quest quest, List<QuestStep> memSteps, Dictionary<int, byte> activeBytes)
+        private static void ApplyQuestStepsLogic(Quest quest, Dictionary<int, byte> questStepsState)
         {
-            foreach (var memStep in memSteps)
+            foreach (var step in quest.Steps)
             {
-                if (!activeBytes.TryGetValue(memStep.Number, out byte value)) continue;
+                if (!questStepsState.TryGetValue(step.Number, out byte state))
+                {
+                    continue;
+                }
 
-                bool isStepDone;
-                if (!string.IsNullOrEmpty(memStep.BitMask))
+                step.IsCompleted = state == 1;
+                if (!string.IsNullOrEmpty(step.BitMask))
                 {
                     // Bitmask mode: parse hex string to int, then check if any bit in the mask is set
-                    int maskValue = Convert.ToInt32(memStep.BitMask, 16);
-                    isStepDone = (value & maskValue) != 0;
-                }
-                else
-                {
-                    // Legacy mode: byte == 1
-                    isStepDone = value == 1;
-                }
-
-                var qStep = quest.Steps.FirstOrDefault(s => s.Number == memStep.Number);
-                if (qStep != null)
-                {
-                    qStep.IsCompleted = isStepDone;
+                    int maskValue = Convert.ToInt32(step.BitMask, 16);
+                    step.IsCompleted = (state & maskValue) != 0;
                 }
             }
 
-            // Cascata de conclusão: Se o próximo step estiver concluído, o step atual também deve estar.
-            // Isso resolve o problema de variáveis temporárias (como a da gôndola) que o jogo reseta posteriormente.
+            // Completion cascade: If the next step is completed, the current step must also be completed.
+            // This solves the problem of temporary transfers (like the gondola transfer) where the game restarts afterward.
             for (int i = quest.Steps.Count - 2; i >= 0; i--)
             {
                 if (!quest.Steps[i].IsCompleted && quest.Steps[i + 1].IsCompleted)
@@ -103,19 +95,20 @@ namespace Backend.Services
 
             foreach (var step in quest.Steps)
             {
-                if (step.Prerequisites == null) continue;
-                foreach (var prereq in step.Prerequisites)
+                if (step.Prerequisites == null)
                 {
-                    if (string.IsNullOrEmpty(prereq.ItemKey) || string.IsNullOrEmpty(prereq.ItemType))
-                        continue;
+                    continue;
+                }
 
-                    switch (prereq.ItemType)
+                foreach (var prerequisite in step.Prerequisites)
+                {
+                    switch (prerequisite.ItemType)
                     {
                         case "consumable":
-                            prereq.IsDone = consumables.GetQuantity(prereq.ItemKey) > 0;
+                            prerequisite.IsDone = consumables.GetQuantity(prerequisite.ItemKey) > 0;
                             break;
                         case "important":
-                            prereq.IsDone = importantItems.HasItem(prereq.ItemKey);
+                            prerequisite.IsDone = importantItems.HasItem(prerequisite.ItemKey);
                             break;
                     }
                 }
