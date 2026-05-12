@@ -1,6 +1,6 @@
 namespace Backend.Models
 {
-    public class ImportantItems : IEquatable<ImportantItems>
+    public record class ImportantItems
     {
         public ImportantItem? FolderBag { get; set; }
         public ImportantItem? TreeBoots { get; set; }
@@ -18,25 +18,5 @@ namespace Backend.Models
                 _ => false
             };
         }
-
-        public bool Equals(ImportantItems? other)
-        {
-            if (other is null) return false;
-
-            bool EqualOrNull<T>(T? a, T? b) where T : IEquatable<T>
-            {
-                if (a == null && b == null) return true;
-                if (a == null || b == null) return false;
-                return a.Equals(b);
-            }
-
-            return EqualOrNull(FolderBag, other.FolderBag) &&
-                   EqualOrNull(TreeBoots, other.TreeBoots) &&
-                   EqualOrNull(FishingPole, other.FishingPole) &&
-                   EqualOrNull(RedSnapper, other.RedSnapper);
-        }
-
-        public override bool Equals(object? obj) => Equals(obj as ImportantItems);
-        public override int GetHashCode() => HashCode.Combine(FolderBag, TreeBoots, FishingPole, RedSnapper);
     }
 }

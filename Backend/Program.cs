@@ -50,6 +50,7 @@ try
     builder.Services.AddSingleton<DebugConsoleRenderer>();
 
     // Register Event Dispatcher
+    builder.Services.AddSingleton<StateChangeDetector>();
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
     // Start the Background Monitor (Memory Reader)
