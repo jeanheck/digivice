@@ -10,7 +10,7 @@ namespace Backend.Models
         public Attributes Attributes { get; set; } = new();
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
-        public Digievolution?[] EquippedDigievolutions { get; set; } = new Digievolution?[3];
+        public Digievolution[] EquippedDigievolutions { get; set; } = new Digievolution[3];
         public int? ActiveDigievolutionId { get; set; }
 
         public bool Equals(Digimon? other)

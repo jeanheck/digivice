@@ -44,40 +44,40 @@ namespace Backend.Services
                 BasicInfo = new BasicInfo
                 {
                     Name = digimonEntry.Name ?? UnknownDigimonName,
-                    Experience = MemoryUtils.ReadInt32FromBlock(resource.LogicBlock, addresses.BasicInfo?.Experience ?? 0),
-                    Level = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.Level ?? 0),
-                    CurrentHP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.CurrentHP ?? 0),
-                    MaxHP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.MaxHP ?? 0),
-                    CurrentMP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.CurrentMP ?? 0),
-                    MaxMP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo?.MaxMP ?? 0)
+                    Experience = MemoryUtils.ReadInt32FromBlock(resource.LogicBlock, addresses.BasicInfo.Experience),
+                    Level = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.Level),
+                    CurrentHP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.CurrentHP),
+                    MaxHP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.MaxHP),
+                    CurrentMP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.CurrentMP),
+                    MaxMP = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.BasicInfo.MaxMP)
                 },
                 Attributes = new Attributes
                 {
-                    Strength = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Strength ?? 0),
-                    Defense = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Defense ?? 0),
-                    Spirit = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Spirit ?? 0),
-                    Wisdom = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Wisdow ?? 0),
-                    Speed = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Speed ?? 0),
-                    Charisma = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes?.Charisma ?? 0)
+                    Strength = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Strength),
+                    Defense = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Defense),
+                    Spirit = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Spirit),
+                    Wisdom = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Wisdow),
+                    Speed = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Speed),
+                    Charisma = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Attributes.Charisma)
                 },
                 Resistances = new Resistances
                 {
-                    Fire = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Fire ?? 0),
-                    Water = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Water ?? 0),
-                    Ice = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Ice ?? 0),
-                    Wind = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Wind ?? 0),
-                    Thunder = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Thunder ?? 0),
-                    Machine = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Machine ?? 0),
-                    Dark = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances?.Dark ?? 0)
+                    Fire = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Fire),
+                    Water = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Water),
+                    Ice = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Ice),
+                    Wind = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Wind),
+                    Thunder = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Thunder),
+                    Machine = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Machine),
+                    Dark = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Resistances.Dark)
                 },
                 Equipments = new Equipments
                 {
-                    Head = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Head ?? 0),
-                    Body = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Body ?? 0),
-                    RightHand = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.RightHand ?? 0),
-                    LeftHand = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.LeftHand ?? 0),
-                    Accessory1 = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Accessory1 ?? 0),
-                    Accessory2 = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments?.Accessory2 ?? 0)
+                    Head = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.Head),
+                    Body = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.Body),
+                    RightHand = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.RightHand),
+                    LeftHand = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.LeftHand),
+                    Accessory1 = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.Accessory1),
+                    Accessory2 = MemoryUtils.ReadInt16FromBlock(resource.LogicBlock, addresses.Equipaments.Accessory2)
                 },
                 EquippedDigievolutions = equippedDigievolutions
             };

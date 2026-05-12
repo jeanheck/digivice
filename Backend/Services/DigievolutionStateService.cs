@@ -6,47 +6,48 @@ namespace Backend.Services
 {
     public class DigievolutionStateService
     {
-        public virtual Digievolution?[] GetEquippedDigievolutions(byte[] logicBlock, DigievolutionsOffsets? addresses)
+        public Digievolution[] GetEquippedDigievolutions(byte[] logicBlock, DigievolutionsAddresses digievolutionsAddresses)
         {
-            var equippedEvoIds = new int[]
-            {
-                MemoryUtils.ReadInt16FromBlock(logicBlock, addresses?.EquipedSlot1 ?? 0),
-                MemoryUtils.ReadInt16FromBlock(logicBlock, addresses?.EquipedSlot2 ?? 0),
-                MemoryUtils.ReadInt16FromBlock(logicBlock, addresses?.EquipedSlot3 ?? 0)
-            };
+            ReadOnlySpan<int> digievolutionsEquippedSlotsAddresses = [
+                digievolutionsAddresses.EquipedSlot1,
+                digievolutionsAddresses.EquipedSlot2,
+                digievolutionsAddresses.EquipedSlot3
+            ];
+            var equippedDigievolutions = new Digievolution[3];
 
-            var equippedDigievolutions = new Digievolution?[3];
-            for (int j = 0; j < 3; j++)
+            for (int i = 0; i < digievolutionsEquippedSlotsAddresses.Length; i++)
             {
-                int id = equippedEvoIds[j];
+                int id = MemoryUtils.ReadInt16FromBlock(logicBlock, digievolutionsEquippedSlotsAddresses[i]);
+
+                // Redundant check for item 1/3 (will be handled separately)
                 if (id == 0xFFFF || id == -1 || id == 0)
                 {
-                    equippedDigievolutions[j] = null;
+                    equippedDigievolutions[i] = null;
                     continue;
                 }
 
-                int level = 1;
-                int maxEvolutions = addresses?.MaxUnlockedDigievolutions ?? 60;
-                int stride = addresses?.UnlockedDigievolutionEntryStride ?? 8;
-                int startOffset = addresses?.UnlockedDigievolutionsStart ?? 0x50;
-
-                for (int k = 0; k < maxEvolutions; k++)
-                {
-                    int entryOffset = startOffset + (k * stride);
-                    if (entryOffset + 2 >= logicBlock.Length) break;
-
-                    int entryId = BitConverter.ToInt16(logicBlock, entryOffset);
-                    if (entryId == id)
-                    {
-                        level = BitConverter.ToInt16(logicBlock, entryOffset + 2);
-                        break;
-                    }
-                }
-
-                equippedDigievolutions[j] = new Digievolution { Id = id, Level = level };
+                int level = FindDigievolutionLevel(logicBlock, id, digievolutionsAddresses);
+                equippedDigievolutions[i] = new Digievolution { Id = id, Level = level };
             }
 
             return equippedDigievolutions;
+        }
+
+        private static int FindDigievolutionLevel(byte[] logicBlock, int id, DigievolutionsAddresses addresses)
+        {
+            for (int k = 0; k < addresses.MaxUnlockedDigievolutions; k++)
+            {
+                int entryOffset = addresses.UnlockedDigievolutionsStart + (k * addresses.UnlockedDigievolutionEntryStride);
+                if (entryOffset + 2 >= logicBlock.Length) break;
+
+                int entryId = MemoryUtils.ReadInt16FromBlock(logicBlock, entryOffset);
+                if (entryId == id)
+                {
+                    return MemoryUtils.ReadInt16FromBlock(logicBlock, entryOffset + 2);
+                }
+            }
+
+            return 1; // Default level if not found
         }
     }
 }

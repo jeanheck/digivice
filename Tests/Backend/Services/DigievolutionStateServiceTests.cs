@@ -47,7 +47,7 @@ namespace Tests.Backend.Services
             block[88] = 0x25; block[90] = 30;
             block[96] = 0x20; block[98] = 99;
 
-            var addresses = new DigievolutionsOffsets
+            var addresses = new DigievolutionsAddresses
             {
                 EquipedSlot1 = "2",
                 EquipedSlot2 = "4",

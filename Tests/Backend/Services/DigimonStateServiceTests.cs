@@ -30,9 +30,9 @@ namespace Tests.Backend.Services
 
             _mockDatabase.Setup(db => db.GetDigimonAddresses()).Returns(new DigimonAddresses
             {
-                BasicInfo = new BasicInfoOffsets { CurrentHP = "0x00" },
-                Attributes = new AttributesOffsets { Strength = "0x02" },
-                Equipaments = new EquipmentsOffsets { Head = "0x0A" }
+                BasicInfo = new BasicInfoAddresses { CurrentHP = "0x00" },
+                Attributes = new AttributesAddresses { Strength = "0x02" },
+                Equipaments = new EquipmentsAddresses { Head = "0x0A" }
             });
 
             _mockReader.Setup(r => r.ReadDigimon(1, 0, It.IsAny<DigimonAddresses>()))

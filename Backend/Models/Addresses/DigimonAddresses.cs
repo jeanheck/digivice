@@ -11,7 +11,7 @@ namespace Backend.Models.Addresses
         public long Address { get; set; }
     }
 
-    public class BasicInfoOffsets
+    public class BasicInfoAddresses
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Experience { get; set; }
@@ -27,7 +27,7 @@ namespace Backend.Models.Addresses
         public int MaxMP { get; set; }
     }
 
-    public class AttributesOffsets
+    public class AttributesAddresses
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Strength { get; set; }
@@ -43,7 +43,7 @@ namespace Backend.Models.Addresses
         public int Charisma { get; set; }
     }
 
-    public class ResistancesOffsets
+    public class ResistancesAddresses
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Fire { get; set; }
@@ -61,7 +61,7 @@ namespace Backend.Models.Addresses
         public int Dark { get; set; }
     }
 
-    public class EquipmentsOffsets
+    public class EquipmentsAddresses
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Head { get; set; }
@@ -77,7 +77,7 @@ namespace Backend.Models.Addresses
         public int Accessory2 { get; set; }
     }
 
-    public class DigievolutionsOffsets
+    public class DigievolutionsAddresses
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int ActiveDigievolution { get; set; }
@@ -97,13 +97,12 @@ namespace Backend.Models.Addresses
 
     public class DigimonAddresses
     {
-        public List<DigimonBaseAddress>? Digimons { get; set; }
-
-        public BasicInfoOffsets? BasicInfo { get; set; }
-        public AttributesOffsets? Attributes { get; set; }
-        public ResistancesOffsets? Resistances { get; set; }
-        public EquipmentsOffsets? Equipaments { get; set; }
-        public DigievolutionsOffsets? Digievolutions { get; set; }
+        public List<DigimonBaseAddress> Digimons { get; set; } = [];
+        public BasicInfoAddresses BasicInfo { get; set; } = new();
+        public AttributesAddresses Attributes { get; set; } = new();
+        public ResistancesAddresses Resistances { get; set; } = new();
+        public EquipmentsAddresses Equipaments { get; set; } = new();
+        public DigievolutionsAddresses Digievolutions { get; set; } = new();
 
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int EmptySlotId { get; set; }
