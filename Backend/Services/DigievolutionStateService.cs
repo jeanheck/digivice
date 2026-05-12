@@ -10,9 +10,9 @@ namespace Backend.Services
         {
             var equippedEvoIds = new int[]
             {
-                MemoryUtils.ReadInt16FromBlock(logicBlock, addresses?.EquipedSlot1),
-                MemoryUtils.ReadInt16FromBlock(logicBlock, addresses?.EquipedSlot2),
-                MemoryUtils.ReadInt16FromBlock(logicBlock, addresses?.EquipedSlot3)
+                MemoryUtils.ReadInt16FromBlock(logicBlock, addresses?.EquipedSlot1 ?? 0),
+                MemoryUtils.ReadInt16FromBlock(logicBlock, addresses?.EquipedSlot2 ?? 0),
+                MemoryUtils.ReadInt16FromBlock(logicBlock, addresses?.EquipedSlot3 ?? 0)
             };
 
             var equippedDigievolutions = new Digievolution?[3];
@@ -26,9 +26,9 @@ namespace Backend.Services
                 }
 
                 int level = 1;
-                int maxEvolutions = MemoryUtils.ReadInt32OffsetSafely(addresses?.MaxUnlockedDigievolutions, 60);
-                int stride = MemoryUtils.ReadInt32OffsetSafely(addresses?.UnlockedDigievolutionEntryStride, 8);
-                int startOffset = MemoryUtils.ReadInt32OffsetSafely(addresses?.UnlockedDigievolutionsStart, 0x50);
+                int maxEvolutions = addresses?.MaxUnlockedDigievolutions ?? 60;
+                int stride = addresses?.UnlockedDigievolutionEntryStride ?? 8;
+                int startOffset = addresses?.UnlockedDigievolutionsStart ?? 0x50;
 
                 for (int k = 0; k < maxEvolutions; k++)
                 {

@@ -2,7 +2,6 @@ using Backend.Interfaces;
 using Backend.Models.Addresses;
 using Backend.Models.Resources;
 using Backend.Models.Quests;
-using Backend.Utils;
 
 namespace Backend.Services
 {
@@ -10,43 +9,27 @@ namespace Backend.Services
     {
         public PlayerResource ReadPlayer(PlayerAddresses addresses)
         {
-            var resource = new PlayerResource();
-
-            try
+            return new PlayerResource
             {
-                resource.Bits = memoryReader.ReadInt32(addresses.Bits);
-                resource.NameBytes = memoryReader.ReadBytes(addresses.Name, addresses.NameBufferSize);
-                resource.MapId = memoryReader.ReadInt16(addresses.MapIdAddress);
-            }
-            catch (Exception ex)
-            {
-                Serilog.Log.Error(ex, "Failed to read Player memory addresses.");
-            }
-
-            return resource;
+                Bits = memoryReader.ReadInt32(addresses.Bits),
+                NameBytes = memoryReader.ReadBytes(addresses.Name, addresses.NameBufferSize),
+                MapId = memoryReader.ReadInt16(addresses.MapIdAddress)
+            };
         }
 
         public PartyResource ReadParty(PartyAddresses addresses)
         {
             var resource = new PartyResource();
+            var slotAddresses = new[] { addresses.PartySlot1, addresses.PartySlot2, addresses.PartySlot3 };
 
-            try
+            foreach (var address in slotAddresses)
             {
-                var slotAddresses = new[] { addresses.PartySlot1, addresses.PartySlot2, addresses.PartySlot3 };
+                var idBytes = memoryReader.ReadBytes(address, addresses.PartySlotStride);
 
-                foreach (var address in slotAddresses)
+                if (idBytes != null && idBytes.Length > 0)
                 {
-                    var idBytes = memoryReader.ReadBytes(address, addresses.PartySlotStride);
-
-                    if (idBytes != null && idBytes.Length > 0)
-                    {
-                        resource.ActiveDigimonIds.Add(idBytes[0]);
-                    }
+                    resource.ActiveDigimonIds.Add(idBytes[0]);
                 }
-            }
-            catch (Exception ex)
-            {
-                Serilog.Log.Error(ex, "Failed to read Party memory addresses.");
             }
 
             return resource;
@@ -57,10 +40,10 @@ namespace Backend.Services
         {
             return new ImportantItemsResource
             {
-                Folderbag = memoryReader.ReadByteSafe(addresses.FolderBag!.Address),
-                TreeBoots = memoryReader.ReadByteSafe(addresses.TreeBoots!.Address),
-                FishingPole = memoryReader.ReadByteSafe(addresses.FishingPole!.Address),
-                RedSnapper = memoryReader.ReadByteSafe(addresses.RedSnapper!.Address)
+                Folderbag = memoryReader.ReadByteSafe(addresses.FolderBag.Address),
+                TreeBoots = memoryReader.ReadByteSafe(addresses.TreeBoots.Address),
+                FishingPole = memoryReader.ReadByteSafe(addresses.FishingPole.Address),
+                RedSnapper = memoryReader.ReadByteSafe(addresses.RedSnapper.Address)
             };
         }
 
@@ -68,9 +51,9 @@ namespace Backend.Services
         {
             return new ConsumableItemsResource
             {
-                PowerCharge = memoryReader.ReadByteSafe(addresses.PowerCharge!.Address),
-                SpiderWeb = memoryReader.ReadByteSafe(addresses.SpiderWeb!.Address),
-                BambooSpear = memoryReader.ReadByteSafe(addresses.BambooSpear!.Address)
+                PowerCharge = memoryReader.ReadByteSafe(addresses.PowerCharge.Address),
+                SpiderWeb = memoryReader.ReadByteSafe(addresses.SpiderWeb.Address),
+                BambooSpear = memoryReader.ReadByteSafe(addresses.BambooSpear.Address)
             };
         }
 
@@ -81,9 +64,9 @@ namespace Backend.Services
             var logicBlock = memoryReader.ReadBytes(baseAddress, 1500);
 
             int activeEvoId = -1;
-            if (!string.IsNullOrEmpty(addresses.Digievolutions?.ActiveDigievolution))
+            if (addresses.Digievolutions != null)
             {
-                int offset = MemoryUtils.ReadInt32OffsetSafely(addresses.Digievolutions.ActiveDigievolution, 0);
+                int offset = addresses.Digievolutions.ActiveDigievolution;
                 activeEvoId = memoryReader.ReadInt16(baseAddress + offset) ?? -1;
             }
 

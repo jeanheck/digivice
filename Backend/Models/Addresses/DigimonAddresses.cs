@@ -13,54 +13,86 @@ namespace Backend.Models.Addresses
 
     public class BasicInfoOffsets
     {
-        public string? Experience { get; set; }
-        public string? Level { get; set; }
-        public string? CurrentHP { get; set; }
-        public string? MaxHP { get; set; }
-        public string? CurrentMP { get; set; }
-        public string? MaxMP { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Experience { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Level { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int CurrentHP { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int MaxHP { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int CurrentMP { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int MaxMP { get; set; }
     }
 
     public class AttributesOffsets
     {
-        public string? Strength { get; set; }
-        public string? Defense { get; set; }
-        public string? Spirit { get; set; }
-        public string? Wisdow { get; set; }
-        public string? Speed { get; set; }
-        public string? Charisma { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Strength { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Defense { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Spirit { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Wisdow { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Speed { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Charisma { get; set; }
     }
 
     public class ResistancesOffsets
     {
-        public string? Fire { get; set; }
-        public string? Water { get; set; }
-        public string? Ice { get; set; }
-        public string? Wind { get; set; }
-        public string? Thunder { get; set; }
-        public string? Machine { get; set; }
-        public string? Dark { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Fire { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Water { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Ice { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Wind { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Thunder { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Machine { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Dark { get; set; }
     }
 
     public class EquipmentsOffsets
     {
-        public string? Head { get; set; }
-        public string? Body { get; set; }
-        public string? RightHand { get; set; }
-        public string? LeftHand { get; set; }
-        public string? Accessory1 { get; set; }
-        public string? Accessory2 { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Head { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Body { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int RightHand { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int LeftHand { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Accessory1 { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Accessory2 { get; set; }
     }
 
     public class DigievolutionsOffsets
     {
-        public string? ActiveDigievolution { get; set; }
-        public string? EquipedSlot1 { get; set; }
-        public string? EquipedSlot2 { get; set; }
-        public string? EquipedSlot3 { get; set; }
-        public string? UnlockedDigievolutionsStart { get; set; }
-        public string? UnlockedDigievolutionEntryStride { get; set; }
-        public string? MaxUnlockedDigievolutions { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int ActiveDigievolution { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int EquipedSlot1 { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int EquipedSlot2 { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int EquipedSlot3 { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int UnlockedDigievolutionsStart { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int UnlockedDigievolutionEntryStride { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int MaxUnlockedDigievolutions { get; set; }
     }
 
     public class DigimonAddresses

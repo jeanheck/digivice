@@ -8,7 +8,7 @@ namespace Backend.Services
         IMemoryProvider memoryProvider,
         IConfiguration configuration) : IMemoryReaderService
     {
-        private IMemoryAccessor? _accessor;
+        private IMemoryAccessor? accessor;
         public bool IsConnected { get; private set; }
 
         public bool TryConnect()
@@ -35,9 +35,9 @@ namespace Backend.Services
                 string dynamicMapName = $"duckstation_{processId}";
 
                 // 2. Attempt to open the memory mapping through the provider
-                _accessor = memoryProvider.OpenExisting(dynamicMapName);
+                accessor = memoryProvider.OpenExisting(dynamicMapName);
 
-                if (_accessor == null)
+                if (accessor == null)
                 {
                     IsConnected = false;
                     return false;
@@ -56,11 +56,11 @@ namespace Backend.Services
 
         public int? ReadInt32(long address)
         {
-            if (!IsConnected || _accessor == null) return null;
+            if (!IsConnected || accessor == null) return null;
 
             try
             {
-                return _accessor.ReadInt32(address);
+                return accessor.ReadInt32(address);
             }
             catch (Exception ex)
             {
@@ -71,16 +71,16 @@ namespace Backend.Services
 
         public void Dispose()
         {
-            _accessor?.Dispose();
+            accessor?.Dispose();
             Log.Information("Memory resources released.");
         }
 
         public short? ReadInt16(long address)
         {
-            if (!IsConnected || _accessor == null) return null;
+            if (!IsConnected || accessor == null) return null;
             try
             {
-                return _accessor.ReadInt16(address);
+                return accessor.ReadInt16(address);
             }
             catch (Exception ex)
             {
@@ -91,11 +91,11 @@ namespace Backend.Services
 
         public byte[]? ReadBytes(long address, int length)
         {
-            if (!IsConnected || _accessor == null) return null;
+            if (!IsConnected || accessor == null) return null;
             try
             {
                 byte[] buffer = new byte[length];
-                _accessor.ReadArray(address, buffer, 0, length);
+                accessor.ReadArray(address, buffer, 0, length);
                 return buffer;
             }
             catch (Exception ex)
