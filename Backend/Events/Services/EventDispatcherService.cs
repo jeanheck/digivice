@@ -8,86 +8,83 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace Backend.Events.Services;
 
-public class EventDispatcherService : Interfaces.IEventDispatcherService
+public class EventDispatcherService(IHubContext<GameHub> hubContext) : Interfaces.IEventDispatcherService
 {
-    private State? _previousState;
-    private bool? _previousConnectionStatus;
-    private readonly IHubContext<GameHub> _hubContext;
-
-    public EventDispatcherService(IHubContext<GameHub> hubContext)
-    {
-        _hubContext = hubContext;
-    }
+    private State? previousState;
+    private bool? previousConnectionStatus;
 
     public void DispatchConnectionStatus(bool isConnected)
     {
-        if (_previousConnectionStatus == isConnected) return;
+        if (previousConnectionStatus == isConnected)
+        {
+            return;
+        }
 
-        _previousConnectionStatus = isConnected;
+        previousConnectionStatus = isConnected;
         var ev = new ConnectionStatusChangedEvent(isConnected);
 
         // Fire and forget send
-        _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+        _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
 
         if (!isConnected)
         {
             // Reset state so that next connection will do a full sync
-            _previousState = null;
+            previousState = null;
         }
     }
 
     public void DispatchInitialStateToClient(string connectionId)
     {
-        if (_previousState != null)
+        if (previousState != null)
         {
-            var ev = new InitialStateSyncEvent(_previousState);
-            _ = _hubContext.Clients.Client(connectionId).SendAsync(ev.Type.ToString(), ev);
+            var ev = new InitialStateSyncEvent(previousState);
+            _ = hubContext.Clients.Client(connectionId).SendAsync(ev.Type.ToString(), ev);
         }
     }
 
     public void ProcessGameState(State newState)
     {
-        if (_previousState == null)
+        if (previousState == null)
         {
             // Initial Sync
             var ev = new InitialStateSyncEvent(newState);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
 
-            _previousState = CloneState(newState);
+            previousState = CloneState(newState);
             return;
         }
 
         // Combine Location and Player comparisons
         if (newState.Player != null)
         {
-            if (_previousState.Player != null)
+            if (previousState.Player != null)
             {
                 // 0. Compare Location
-                if (newState.Player.MapId != _previousState.Player.MapId)
+                if (newState.Player.MapId != previousState.Player.MapId)
                 {
                     var ev = new LocationChangedEvent(newState.Player.MapId);
-                    _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+                    _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
                 }
 
                 // 1. Compare Player
-                if (!newState.Player.Equals(_previousState.Player))
+                if (!newState.Player.Equals(previousState.Player))
                 {
                     var ev = new PlayerBitsChangedEvent(newState.Player.Bits);
-                    _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+                    _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
                 }
             }
             else
             {
                 // Player just loaded in
                 var ev = new PlayerBitsChangedEvent(newState.Player.Bits);
-                _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+                _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
             }
         }
 
         // 2. Compare Party
-        if (newState.Party != null && _previousState.Party != null)
+        if (newState.Party != null && previousState.Party != null)
         {
-            if (!newState.Party.Equals(_previousState.Party))
+            if (!newState.Party.Equals(previousState.Party))
             {
                 // We could dispatch granular events here if we wanted, but for now, if ANY
                 // Digimon sub-property changes anywhere in the party roster, we can trigger
@@ -96,7 +93,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
 
                 // To maintain granular event dispatching:
                 var newSlots = newState.Party.Slots;
-                var oldSlots = _previousState.Party.Slots;
+                var oldSlots = previousState.Party.Slots;
 
                 bool partyRosterChanged = false;
                 if (newSlots.Count != oldSlots.Count)
@@ -123,7 +120,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                 {
                     var activeDigimons = newSlots.Where(d => d != null).Select(d => d!).ToList();
                     var ev = new PartySlotsChangedEvent(activeDigimons);
-                    _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+                    _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
                 }
                 else
                 {
@@ -141,17 +138,17 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                 }
             }
         }
-        else if (newState.Party != null && _previousState.Party == null)
+        else if (newState.Party != null && previousState.Party == null)
         {
             var activeDigimons = newState.Party.Slots.Where(d => d != null).Select(d => d!).ToList();
             var ev = new PartySlotsChangedEvent(activeDigimons);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // 3. Compare Important Items
         bool itemsChanged = false;
         var newItems = newState.ImportantItems;
-        var oldItems = _previousState.ImportantItems;
+        var oldItems = previousState.ImportantItems;
 
         if (newItems != null && oldItems == null || newItems == null && oldItems != null)
         {
@@ -168,13 +165,13 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         if (itemsChanged)
         {
             var ev = new ImportantItemsChangedEvent(newItems);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // 4. Compare Journal
         bool journalChanged = false;
         var newJournal = newState.Journal;
-        var oldJournal = _previousState.Journal;
+        var oldJournal = previousState.Journal;
 
         if (newJournal != null && oldJournal == null || newJournal == null && oldJournal != null)
         {
@@ -191,10 +188,10 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
         if (journalChanged)
         {
             var ev = new JournalChangedEvent(newState.Journal);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
-        _previousState = CloneState(newState);
+        previousState = CloneState(newState);
     }
 
     private void CompareDigimon(int index, Digimon oldDigi, Digimon newDigi)
@@ -206,42 +203,42 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
             oldDigi.BasicInfo.MaxMP != newDigi.BasicInfo.MaxMP)
         {
             var ev = new DigimonVitalsChangedEvent(index, newDigi.BasicInfo.CurrentHP, newDigi.BasicInfo.MaxHP, newDigi.BasicInfo.CurrentMP, newDigi.BasicInfo.MaxMP);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // Compare XP
         if (oldDigi.BasicInfo.Experience != newDigi.BasicInfo.Experience)
         {
             var ev = new DigimonXpGainedEvent(index, newDigi.BasicInfo.Level, newDigi.BasicInfo.Experience);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // Compare Level (Level Up)
         if (newDigi.BasicInfo.Level > oldDigi.BasicInfo.Level)
         {
             var levelUpEv = new DigimonLevelUpEvent(index, oldDigi.BasicInfo.Level, newDigi.BasicInfo.Level);
-            _ = _hubContext.Clients.All.SendAsync(levelUpEv.Type.ToString(), levelUpEv);
+            _ = hubContext.Clients.All.SendAsync(levelUpEv.Type.ToString(), levelUpEv);
         }
 
         // Compare Attributes
         if (!oldDigi.Attributes.Equals(newDigi.Attributes))
         {
             var ev = new DigimonAttributesChangedEvent(index, newDigi.Attributes.Strength, newDigi.Attributes.Defense, newDigi.Attributes.Spirit, newDigi.Attributes.Wisdom, newDigi.Attributes.Speed, newDigi.Attributes.Charisma);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // Compare Resistances
         if (!oldDigi.Resistances.Equals(newDigi.Resistances))
         {
             var ev = new DigimonResistancesChangedEvent(index, newDigi.Resistances.Fire, newDigi.Resistances.Water, newDigi.Resistances.Ice, newDigi.Resistances.Wind, newDigi.Resistances.Thunder, newDigi.Resistances.Machine, newDigi.Resistances.Dark);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // Compare Equipments
         if (!oldDigi.Equipments.Equals(newDigi.Equipments))
         {
             var ev = new DigimonEquipmentsChangedEvent(index, newDigi.Equipments);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // Compare Equipped Digievolutions
@@ -256,19 +253,19 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                 if (oldEvo != null && newEvo != null && oldEvo.Id == newEvo.Id && newEvo.Level > oldEvo.Level)
                 {
                     var levelUpEv = new DigimonDigievolutionLevelUpEvent(index, newEvo.Id, oldEvo.Level, newEvo.Level);
-                    _ = _hubContext.Clients.All.SendAsync(levelUpEv.Type.ToString(), levelUpEv);
+                    _ = hubContext.Clients.All.SendAsync(levelUpEv.Type.ToString(), levelUpEv);
                 }
             }
 
             var ev = new DigimonDigievolutionsChangedEvent(index, newDigi.EquippedDigievolutions);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
 
         // Compare Active Digievolution
         if (oldDigi.ActiveDigievolutionId != newDigi.ActiveDigievolutionId)
         {
             var ev = new DigimonActiveDigievolutionChangedEvent(index, newDigi.ActiveDigievolutionId);
-            _ = _hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
+            _ = hubContext.Clients.All.SendAsync(ev.Type.ToString(), ev);
         }
     }
 
@@ -321,7 +318,7 @@ public class EventDispatcherService : Interfaces.IEventDispatcherService
                         Accessory1 = d.Equipments.Accessory1,
                         Accessory2 = d.Equipments.Accessory2
                     },
-                    EquippedDigievolutions = new Digievolution?[3]
+                    EquippedDigievolutions = new Digievolution[3]
                     {
                         d.EquippedDigievolutions[0] != null ? new Digievolution { Id = d.EquippedDigievolutions[0]!.Id, Level = d.EquippedDigievolutions[0]!.Level } : null,
                         d.EquippedDigievolutions[1] != null ? new Digievolution { Id = d.EquippedDigievolutions[1]!.Id, Level = d.EquippedDigievolutions[1]!.Level } : null,

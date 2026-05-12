@@ -14,12 +14,11 @@ namespace Backend.Services
             var importantItems = itemStateService.GetImportantItems();
             var consumableItems = itemStateService.GetConsumableItems();
 
-            return new Journal()
+            return new()
             {
                 MainQuest = (MainQuest)ProcessQuest(gameDatabase.GetMainQuest(), importantItems, consumableItems),
-                SideQuests = gameDatabase.GetAllSideQuests()
-                    .Select(sideQuest => (SideQuest)ProcessQuest(sideQuest, importantItems, consumableItems))
-                    .ToList()
+                SideQuests = [.. gameDatabase.GetAllSideQuests()
+                    .Select(sideQuest => (SideQuest)ProcessQuest(sideQuest, importantItems, consumableItems))]
             };
         }
 
