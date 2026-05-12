@@ -2,7 +2,7 @@ namespace Backend.Models
 {
     public record class Party
     {
-        public List<Digimon?> Slots { get; set; } = [];
+        public List<Digimon?> Slots { get; set; } = [null, null, null];
         public int ActiveSlotIndex { get; set; } = -1;
 
         public virtual bool Equals(Party? other)

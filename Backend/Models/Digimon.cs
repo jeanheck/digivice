@@ -2,7 +2,7 @@ using Backend.Models.Digimons;
 
 namespace Backend.Models
 {
-    public class Digimon : IEquatable<Digimon>
+    public record class Digimon
     {
         public int SlotIndex { get; set; }
 
@@ -10,39 +10,20 @@ namespace Backend.Models
         public Attributes Attributes { get; set; } = new();
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
-        public Digievolution[] EquippedDigievolutions { get; set; } = new Digievolution[3];
+        public Digievolution?[] EquippedDigievolutions { get; set; } = new Digievolution?[3];
         public int? ActiveDigievolutionId { get; set; }
 
-        public bool Equals(Digimon? other)
+        public virtual bool Equals(Digimon? other)
         {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
 
-            if (SlotIndex != other.SlotIndex ||
-                !BasicInfo.Equals(other.BasicInfo) ||
-                !Attributes.Equals(other.Attributes) ||
-                !Resistances.Equals(other.Resistances) ||
-                !Equipments.Equals(other.Equipments) ||
-                ActiveDigievolutionId != other.ActiveDigievolutionId) return false;
-
-            for (int i = 0; i < 3; i++)
-            {
-                var a = EquippedDigievolutions[i];
-                var b = other.EquippedDigievolutions[i];
-                if (a == null && b != null) return false;
-                if (a != null && b == null) return false;
-                if (a != null && b != null && !a.Equals(b)) return false;
-            }
-
-            return true;
-        }
-
-        public override bool Equals(object? obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            return Equals((Digimon)obj);
+            return SlotIndex == other.SlotIndex &&
+                   BasicInfo.Equals(other.BasicInfo) &&
+                   Attributes.Equals(other.Attributes) &&
+                   Resistances.Equals(other.Resistances) &&
+                   Equipments.Equals(other.Equipments) &&
+                   ActiveDigievolutionId == other.ActiveDigievolutionId &&
+                   EquippedDigievolutions.SequenceEqual(other.EquippedDigievolutions);
         }
 
         public override int GetHashCode()

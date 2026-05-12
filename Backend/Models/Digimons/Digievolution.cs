@@ -1,19 +1,29 @@
 namespace Backend.Models.Digimons
 {
-    public class Digievolution : IEquatable<Digievolution>
+    public record class Digievolution
     {
         public int Id { get; set; }
         public int Level { get; set; }
+        public List<Technique> Techniques { get; set; } = [];
 
-        public bool Equals(Digievolution? other)
+        public virtual bool Equals(Digievolution? other)
         {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
-            return Id == other.Id && Level == other.Level;
+            if (other is null) return false;
+            return Id == other.Id && 
+                   Level == other.Level && 
+                   Techniques.SequenceEqual(other.Techniques);
         }
 
-        public override bool Equals(object? obj) => Equals(obj as Digievolution);
-        public override int GetHashCode() => HashCode.Combine(Id, Level);
-        public List<Technique> Techniques { get; set; } = new();
+        public override int GetHashCode()
+        {
+            var hash = new HashCode();
+            hash.Add(Id);
+            hash.Add(Level);
+            foreach (var tech in Techniques)
+            {
+                hash.Add(tech);
+            }
+            return hash.ToHashCode();
+        }
     }
 }
