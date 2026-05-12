@@ -39,7 +39,7 @@ namespace Backend.Services
         {
             return new ImportantItemsResource
             {
-                Folderbag = memoryReader.ReadByteSafe(addresses.FolderBag.Address),
+                FolderBag = memoryReader.ReadByteSafe(addresses.FolderBag.Address),
                 TreeBoots = memoryReader.ReadByteSafe(addresses.TreeBoots.Address),
                 FishingPole = memoryReader.ReadByteSafe(addresses.FishingPole.Address),
                 RedSnapper = memoryReader.ReadByteSafe(addresses.RedSnapper.Address)

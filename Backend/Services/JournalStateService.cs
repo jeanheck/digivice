@@ -4,34 +4,24 @@ using Backend.Interfaces;
 
 namespace Backend.Services
 {
-    public class JournalStateService
+    public class JournalStateService(
+        IGameDatabase gameDatabase,
+        IGameReader gameReader,
+        ItemsStateService itemStateService)
     {
-        private readonly IGameDatabase _database;
-        private readonly IGameReader _reader;
-        private readonly ItemsStateService _itemStateService;
-
-        public JournalStateService(IGameDatabase database, IGameReader reader, ItemsStateService itemStateService)
-        {
-            _database = database;
-            _reader = reader;
-            _itemStateService = itemStateService;
-        }
-
         public Journal GetJournal()
         {
-            var journal = new Journal
+            return new Journal()
             {
                 MainQuest = GetMainQuest(),
                 SideQuests = GetSideQuests()
             };
-            return journal;
         }
 
         private MainQuest GetMainQuest()
         {
-            // --- Main Quest ---
-            var mainQuest = _database.GetMainQuest();
-            var mainQuestResource = _reader.ReadQuestSteps(mainQuest.Steps);
+            var mainQuest = gameDatabase.GetMainQuest();
+            var mainQuestResource = gameReader.ReadQuestSteps(mainQuest.Steps);
             ApplyQuestStepsLogic(mainQuest, mainQuest.Steps, mainQuestResource);
             return mainQuest;
         }
@@ -41,26 +31,26 @@ namespace Backend.Services
             var sideQuests = new List<SideQuest>();
 
             // --- 1. Folder Bag Side Quest ---
-            var folderBag = _database.GetSideQuestFolderBag();
-            var folderBagResource = _reader.ReadQuestSteps(folderBag.Steps);
+            var folderBag = gameDatabase.GetSideQuestFolderBag();
+            var folderBagResource = gameReader.ReadQuestSteps(folderBag.Steps);
             ApplyQuestStepsLogic(folderBag, folderBag.Steps, folderBagResource);
             sideQuests.Add(folderBag);
 
             // Check if the player owns the Folder Bag (prerequisite for next quests)
-            var importantItems = _itemStateService.GetImportantItems();
+            var importantItems = itemStateService.GetImportantItems();
             bool hasFolderBag = importantItems.FolderBag?.Has ?? false;
 
             // --- 2. Tree Boots Side Quest ---
-            var treeBoots = _database.GetSideQuestTreeBoots();
-            var treeBootsResource = _reader.ReadQuestSteps(treeBoots.Steps);
+            var treeBoots = gameDatabase.GetSideQuestTreeBoots();
+            var treeBootsResource = gameReader.ReadQuestSteps(treeBoots.Steps);
             if (treeBoots.Prerequisites.Count > 0)
                 treeBoots.Prerequisites[0].IsDone = hasFolderBag;
             ApplyQuestStepsLogic(treeBoots, treeBoots.Steps, treeBootsResource);
             sideQuests.Add(treeBoots);
 
             // --- 3. Fishing Pole Side Quest ---
-            var fishingPole = _database.GetSideQuestFishingPole();
-            var fishingPoleResource = _reader.ReadQuestSteps(fishingPole.Steps);
+            var fishingPole = gameDatabase.GetSideQuestFishingPole();
+            var fishingPoleResource = gameReader.ReadQuestSteps(fishingPole.Steps);
             if (fishingPole.Prerequisites.Count > 0)
                 fishingPole.Prerequisites[0].IsDone = hasFolderBag;
             ApplyQuestStepsLogic(fishingPole, fishingPole.Steps, fishingPoleResource);
@@ -109,7 +99,7 @@ namespace Backend.Services
 
         private void ApplyStepPrerequisites(Quest quest, ImportantItems importantItems)
         {
-            var consumables = _itemStateService.GetConsumableItems();
+            var consumables = itemStateService.GetConsumableItems();
 
             foreach (var step in quest.Steps)
             {

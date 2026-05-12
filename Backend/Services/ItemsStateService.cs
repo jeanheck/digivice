@@ -1,44 +1,46 @@
 using Backend.Models;
 using Backend.Interfaces;
+using Backend.Models.Addresses;
 
 namespace Backend.Services
 {
-    public class ItemsStateService
+    public class ItemsStateService(IGameDatabase gameDatabase, IGameReader gameReader)
     {
-        private readonly IGameDatabase _database;
-        private readonly IGameReader _reader;
-
-        public ItemsStateService(IGameDatabase database, IGameReader reader)
-        {
-            _database = database;
-            _reader = reader;
-        }
-
         public ImportantItems GetImportantItems()
         {
-            var addresses = _database.GetImportantItemsAddresses();
-            var resource = _reader.ReadImportantItems(addresses);
+            var addresses = gameDatabase.GetImportantItemsAddresses();
+            var resource = gameReader.ReadImportantItems(addresses);
 
             return new ImportantItems
             {
-                FolderBag = new ImportantItem { Id = addresses.FolderBag!.Id!, Name = addresses.FolderBag.Name!, Has = resource.Folderbag == 1 },
-                TreeBoots = new ImportantItem { Id = addresses.TreeBoots!.Id!, Name = addresses.TreeBoots.Name!, Has = resource.TreeBoots == 1 },
-                FishingPole = new ImportantItem { Id = addresses.FishingPole!.Id!, Name = addresses.FishingPole.Name!, Has = resource.FishingPole == 1 },
-                RedSnapper = new ImportantItem { Id = addresses.RedSnapper!.Id!, Name = addresses.RedSnapper.Name!, Has = resource.RedSnapper == 1 }
+                FolderBag = CreateImportantItem(addresses.FolderBag, resource.FolderBag),
+                TreeBoots = CreateImportantItem(addresses.TreeBoots, resource.TreeBoots),
+                FishingPole = CreateImportantItem(addresses.FishingPole, resource.FishingPole),
+                RedSnapper = CreateImportantItem(addresses.RedSnapper, resource.RedSnapper)
             };
         }
 
         public ConsumableItems GetConsumableItems()
         {
-            var addresses = _database.GetConsumableItemsAddresses();
-            var resource = _reader.ReadConsumableItems(addresses);
+            var addresses = gameDatabase.GetConsumableItemsAddresses();
+            var resource = gameReader.ReadConsumableItems(addresses);
 
             return new ConsumableItems
             {
-                PowerCharge = new ConsumableItem { Id = addresses.PowerCharge!.Id!, Name = addresses.PowerCharge.Name!, Quantity = resource.PowerCharge },
-                SpiderWeb = new ConsumableItem { Id = addresses.SpiderWeb!.Id!, Name = addresses.SpiderWeb.Name!, Quantity = resource.SpiderWeb },
-                BambooSpear = new ConsumableItem { Id = addresses.BambooSpear!.Id!, Name = addresses.BambooSpear.Name!, Quantity = resource.BambooSpear }
+                PowerCharge = CreateConsumableItem(addresses.PowerCharge, resource.PowerCharge),
+                SpiderWeb = CreateConsumableItem(addresses.SpiderWeb, resource.SpiderWeb),
+                BambooSpear = CreateConsumableItem(addresses.BambooSpear, resource.BambooSpear)
             };
+        }
+
+        private static ImportantItem CreateImportantItem(ItemAddress address, byte resourceValue)
+        {
+            return new ImportantItem { Id = address.Id, Name = address.Name, Has = resourceValue != 0 };
+        }
+
+        private static ConsumableItem CreateConsumableItem(ItemAddress address, byte resourceValue)
+        {
+            return new ConsumableItem { Id = address.Id, Name = address.Name, Quantity = resourceValue };
         }
     }
 }
