@@ -7,6 +7,7 @@ import { signalRService } from './services/SignalRService'
 import './style.css'
 
 import i18n from './i18n'
+import { initSignalRHandlers } from './logic/signalRHandlers'
 
 const app = createApp(App)
 
@@ -14,7 +15,10 @@ app.use(createPinia())
 app.use(router)
 app.use(i18n)
 
-// Inicia a comunicação em tempo real com o Backend
+// Initializes the handlers (bridge between SignalR and Pinia)
+initSignalRHandlers()
+
+// Initiates real-time communication with the backend.
 signalRService.startConnection()
 
 app.mount('#app')
