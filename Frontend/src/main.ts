@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
-import router from './router'
 import { signalRService } from './services/SignalRService'
 import './style.css'
 
@@ -12,7 +11,6 @@ import { initSignalRHandlers } from './logic/signalRHandlers'
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(router)
 app.use(i18n)
 
 // Initializes the handlers (bridge between SignalR and Pinia)
