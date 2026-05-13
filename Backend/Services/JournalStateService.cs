@@ -16,9 +16,10 @@ namespace Backend.Services
 
             return new()
             {
-                MainQuest = (MainQuest)ProcessQuest(gameDatabase.GetMainQuest(), importantItems, consumableItems),
-                SideQuests = [.. gameDatabase.GetAllSideQuests()
-                    .Select(sideQuest => (SideQuest)ProcessQuest(sideQuest, importantItems, consumableItems))]
+                MainQuest = (MainQuest)ProcessQuest(CloneQuest(gameDatabase.GetMainQuest()), importantItems, consumableItems),
+                SideQuests = gameDatabase.GetAllSideQuests()
+                    .Select(sideQuest => (SideQuest)ProcessQuest(CloneQuest(sideQuest), importantItems, consumableItems))
+                    .ToList()
             };
         }
 
@@ -40,6 +41,21 @@ namespace Backend.Services
             }
 
             return quest;
+        }
+
+        private static T CloneQuest<T>(T template) where T : Quest
+        {
+            // Create a shallow copy of the record
+            var cloned = template with { };
+
+            // Deep copy lists to ensure mutations don't affect the cached template
+            cloned.Prerequisites = template.Prerequisites.Select(p => p with { }).ToList();
+            cloned.Steps = template.Steps.Select(s => s with
+            {
+                Prerequisites = s.Prerequisites?.Select(p => p with { }).ToList()
+            }).ToList();
+
+            return cloned;
         }
 
         private static void ApplyQuestStepsLogic(Quest quest, Dictionary<int, byte> questStepsState)
@@ -65,7 +81,6 @@ namespace Backend.Services
             }
 
             // Completion cascade: If the next step is completed, the current step must also be completed.
-            // This solves the problem of temporary transfers (like the gondola transfer) where the game restarts afterward.
             for (int i = quest.Steps.Count - 2; i >= 0; i--)
             {
                 if (!quest.Steps[i].IsCompleted && quest.Steps[i + 1].IsCompleted)

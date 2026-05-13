@@ -3,27 +3,20 @@ using System.IO.MemoryMappedFiles;
 
 namespace Backend.Infrastructure.Memory
 {
-    public class WindowsMemoryAccessor : IMemoryAccessor
+    public class WindowsMemoryAccessor(MemoryMappedViewAccessor accessor) : IMemoryAccessor
     {
-        private readonly MemoryMappedViewAccessor _accessor;
+        public int ReadInt32(long address) => accessor.ReadInt32(address);
 
-        public WindowsMemoryAccessor(MemoryMappedViewAccessor accessor)
-        {
-            _accessor = accessor;
-        }
-
-        public int ReadInt32(long address) => _accessor.ReadInt32(address);
-
-        public short ReadInt16(long address) => _accessor.ReadInt16(address);
+        public short ReadInt16(long address) => accessor.ReadInt16(address);
 
         public void ReadArray(long address, byte[] buffer, int index, int count)
         {
-            _accessor.ReadArray(address, buffer, index, count);
+            accessor.ReadArray(address, buffer, index, count);
         }
 
         public void Dispose()
         {
-            _accessor.Dispose();
+            accessor.Dispose();
         }
     }
 }
