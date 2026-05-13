@@ -16,10 +16,10 @@ const { getLocalized, t } = useLocalization();
 <template>
   <div class="relative overflow-hidden flex flex-col w-full bg-[#000a2b]">
     <!-- Borda externa brilhante simuluada via clip-path background -->
-    <div class="absolute inset-0 bg-[#0077ff] pointer-events-none evo-border"></div>
+    <div class="absolute inset-0 bg-[#0077ff] pointer-events-none dw3-beveled"></div>
     
-    <!-- Fundo interno escuro (1 pixel menor que a borda) -->
-    <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none evo-inner"></div>
+    <!-- Fundo interno escuro (1.5px menor que a borda) -->
+    <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
 
     <div class="relative z-10 flex flex-col gap-2 p-3">
       <!-- Header row: Name, Icon Box, Level & Exp -->
@@ -63,9 +63,3 @@ const { getLocalized, t } = useLocalization();
     </div>
   </div>
 </template>
-
-<style scoped>
-.evo-border, .evo-inner {
-  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
-}
-</style>

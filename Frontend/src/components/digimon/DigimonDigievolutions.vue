@@ -1,90 +1,90 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import type { Digimon } from '../../types/backend'
-import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue'
-import digievolutionData from '../../data/static/Digievolution.json'
-import { useLocalization } from '../../composables/useLocalization'
+import { computed, ref } from 'vue';
+import type { Digievolution } from '../../types/backend';
+import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue';
+import { DigievolutionRegistry } from '../../logic/DigievolutionRegistry';
 
 const props = defineProps<{
-  digimon: Digimon
-}>()
+  equippedDigievolutions: (Digievolution | null)[]
+  activeDigievolutionId: number | null;
+}>();
 
-const { getLocalized } = useLocalization()
-
-const digiIdMap = new Map(
-  digievolutionData.digievolutions
-    .filter(d => d.id !== null)
-    .map(d => [d.id!, d.name])
-)
-
-function getEvolutionName(id: number) {
-  return digiIdMap.get(id) ?? `Unknown (${id})`
+interface DisplayEvolution {
+    id: number;
+    name: string;
+    level: number;
 }
 
-const evolutions = computed(() => {
-  const evos = props.digimon.equippedDigievolutions || [null, null, null]
-  return [0, 1, 2].map(i => {
-    const evo = evos[i]
-    if (!evo) return null
-    return {
-      id: evo.id,
-      name: getEvolutionName(evo.id),
-      level: evo.level
-    }
-  })
-})
+const digievolutions = computed(() => {
+    return (props.equippedDigievolutions || []).map(digievolution => {
+        if (!digievolution) {
+            return null;
+        }
+
+        return {
+            id: digievolution.id,
+            name: DigievolutionRegistry.getDigievolutionNameById(digievolution.id),
+            level: digievolution.level
+        };
+    });
+});
 
 // Skills modal state
-const modalOpen = ref(false)
-const selectedDigi = ref<any>(null)
-const selectedLevel = ref(0)
+const modalOpen = ref(false);
+const selectedDigievolutionName = ref<string | null>(null);
+const selectedLevel = ref(0);
 
-function openSkills(evo: any) {
-  if (!evo) return
-  selectedDigi.value = evo.name
-  selectedLevel.value = evo.level
-  modalOpen.value = true
+function openSkills(digievolution: DisplayEvolution | null) {
+    if (!digievolution) {
+        return;
+    }
+    selectedDigievolutionName.value = digievolution.name;
+    selectedLevel.value = digievolution.level;
+    modalOpen.value = true;
 }
 
 function closeSkills() {
-  modalOpen.value = false
-  selectedDigi.value = null
+    modalOpen.value = false;
+    selectedDigievolutionName.value = null;
+    selectedLevel.value = 0;
 }
 </script>
 
 <template>
   <div class="flex flex-col gap-[2px] w-full">
     <div 
-      v-for="(evo, index) in evolutions" 
+      v-for="(digievolution, index) in digievolutions" 
       :key="index"
-      class="evo-row relative flex w-full h-[28px] bg-[#000a2b] text-white overflow-hidden"
-      :class="evo ? 'cursor-pointer hover:brightness-125 transition-[filter]' : 'cursor-default'"
-      @click="openSkills(evo)"
+      class="evo-row relative flex w-full h-[28px] bg-[#000a2b] text-white overflow-hidden dw3-beveled"
+      :class="digievolution ? 'cursor-pointer hover:brightness-125 transition-[filter]' : 'cursor-default'"
+      @click="openSkills(digievolution)"
     >
-      <!-- Borda externa brilhante simuluada via clip-path background -->
-      <div class="absolute inset-0 bg-[#0077ff] pointer-events-none evo-border"></div>
+      <!-- External glowing border simulated via clip-path background -->
+      <div class="absolute inset-0 bg-[#0077ff] pointer-events-none dw3-beveled"></div>
       
-      <!-- Fundo interno escuro (1 pixel menor que a borda) -->
-      <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none evo-inner"></div>
+      <!-- Internal dark background (1.5px smaller than the border) -->
+      <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
 
-      <!-- Renderiza os textos somente se o slot de digievolução tiver valor -->
-      <template v-if="evo">
-        <!-- Conteúdo (Nome) -->
-        <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
-             :class="evo.id === digimon.activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
-          {{ getLocalized(evo.name) }}
+      <!-- Render texts only if the digievolution slot has a value -->
+      <template v-if="digievolution">
+        <!-- Content (Name) -->
+        <div 
+          class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
+          :class="digievolution.id === activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
+          {{ digievolution.name }}
         </div>
 
-        <!-- Divisor Inclinado -->
+        <!-- Slanted Divider -->
         <div class="relative z-10 w-[2px] h-full bg-[#0077ff] -skew-x-[30deg] ml-2"></div>
 
-        <!-- Conteúdo (Level) -->
+        <!-- Content (Level) -->
         <div class="relative z-10 w-[45px] flex items-center justify-center pl-2 font-bold text-sm mr-2">
           <span class="bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark">
-            {{ evo.level }}
+            {{ digievolution.level }}
           </span>
         </div>
       </template>
+      
       <template v-else>
         <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider text-white/80 shadow-text">
           {{ $t('digimon.states.empty') }}
@@ -93,27 +93,11 @@ function closeSkills() {
     </div>
   </div>
 
-  <!-- Skills Modal (Teleported outside component) -->
+  <!-- Skills Modal -->
   <DigievolutionTechniquesModal
     :is-open="modalOpen"
-    :digivolution-name="selectedDigi"
+    :digivolution-name="selectedDigievolutionName"
     :current-level="selectedLevel"
     @close="closeSkills"
   />
 </template>
-
-<style scoped>
-/* O formato chanfrado do Digimon World 3 (cortes nos cantos opostos) */
-.evo-border, .evo-inner {
-  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
-}
-
-.shadow-text {
-  text-shadow: 1px 1px 0 #000;
-}
-
-.shadow-text-dark {
-  /* Uma sombra sutil pro gradient sobressair */
-  filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8));
-}
-</style>

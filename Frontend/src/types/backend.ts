@@ -47,7 +47,7 @@ export interface Digimon {
     resistances: Resistances
     equipments: Equipments
     equippedDigievolutions: (Digievolution | null)[]
-    activeDigievolutionId?: number | null
+    activeDigievolutionId: number | null
 }
 
 export interface Party {

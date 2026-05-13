@@ -29,3 +29,16 @@ body {
     background-position: 256px 256px;
   }
 }
+
+/* DW3 Global Utility Classes */
+.dw3-beveled {
+  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+}
+
+.shadow-text {
+  text-shadow: 1px 1px 0 #000;
+}
+
+.shadow-text-dark {
+  filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8));
+}
