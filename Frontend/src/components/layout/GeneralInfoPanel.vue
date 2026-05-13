@@ -6,7 +6,7 @@ import { useLocalization } from '../../composables/useLocalization'
 const store = useGameStore()
 const { t } = useLocalization()
 
-const items = computed(() => store.gameState?.importantItems || ({} as import('../../types/backend').ImportantItems))
+const items = computed(() => store.gameState?.importantItems || ({} as import('../../models').ImportantItems))
 
 const milestones = [
   { key: 'treeBoots', nameKey: 'player.treeBoots', icon: '🥾' },
@@ -15,7 +15,7 @@ const milestones = [
   { key: 'folderBag', nameKey: 'player.folderBag', icon: '📂' }
 ]
 
-const getStyle = (key: keyof import('../../types/backend').ImportantItems) => {
+const getStyle = (key: keyof import('../../models').ImportantItems) => {
   return items.value?.[key]?.has === true 
     ? 'opacity-100 drop-shadow-[0_0_6px_rgba(255,255,0,0.8)] border-[#d4af37] bg-[#1a2b4c]' 
     : 'opacity-40 grayscale border-[#445] bg-[#001122]'
@@ -68,7 +68,7 @@ const moveTooltip = (event: MouseEvent) => {
         v-for="milestone in milestones" 
         :key="milestone.key"
         class="w-[50px] h-[50px] flex items-center justify-center rounded border-2 transition-all duration-300 cursor-help"
-        :class="getStyle(milestone.key as keyof import('../../types/backend').ImportantItems)"
+        :class="getStyle(milestone.key as keyof import('../../models').ImportantItems)"
         @mouseenter="e => showTooltip(e, milestone.nameKey)"
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"

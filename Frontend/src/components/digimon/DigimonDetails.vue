@@ -4,7 +4,7 @@ import EquipmentsData from '../../data/static/Equipments.json'
 import DigievolutionData from '../../data/static/Digievolution.json'
 import { useLocalization } from '../../composables/useLocalization'
 
-import type { Digimon } from '../../types/backend'
+import type { Digimon } from '../../models'
 
 const props = defineProps<{
   digimon: Digimon

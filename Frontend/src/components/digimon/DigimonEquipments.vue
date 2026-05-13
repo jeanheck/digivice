@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
 
-import type { Digimon } from '../../types/backend'
+import type { Digimon } from '../../models'
 import equipmentData from '../../data/static/Equipments.json'
 
 const props = defineProps<{

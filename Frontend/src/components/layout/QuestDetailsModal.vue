@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
-import type { MainQuest, SideQuest, QuestStep as QuestStepType } from '../../types/backend'
+import type { MainQuest, SideQuest, QuestStep as QuestStepType } from '../../models'
 import IconClose from '../icons/IconClose.vue'
 import asukaMapUrl from '../../assets/AsukaMap.webp'
 

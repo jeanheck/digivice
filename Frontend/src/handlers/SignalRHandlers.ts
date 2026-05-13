@@ -1,6 +1,6 @@
 import { signalRService } from '../services/SignalRService'
 import { useGameStore } from '../stores/useGameStore'
-import type { GameEventMap } from '../types/events'
+import type { GameEventDTOMap } from '../dtos/events.dto'
 import { signalRLogger } from '../utils/logger'
 
 /**
@@ -8,7 +8,7 @@ import { signalRLogger } from '../utils/logger'
  * Backend Event: [Entity][Property]Changed
  * Frontend Store Action: update[Entity][Property]
  * 
- * This file is now fully automated and uses GameEventMap for type consistency.
+ * This file is now fully automated and uses GameEventDTOMap for type consistency.
  */
 export function initSignalRHandlers() {
     const store = useGameStore()
@@ -19,7 +19,7 @@ export function initSignalRHandlers() {
     // 2. Automatically map each action to its corresponding backend event
     storeActions.forEach(actionName => {
         // Convention: 'updatePlayerBits' -> 'PlayerBitsChanged'
-        const eventName = (actionName.replace('update', '') + 'Changed') as keyof GameEventMap
+        const eventName = (actionName.replace('update', '') + 'Changed') as keyof GameEventDTOMap
         
         // signalRService.on is now strongly typed!
         signalRService.on(eventName, (data) => {

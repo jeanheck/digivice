@@ -5,7 +5,7 @@ import DigimonDigievolutions from './DigimonDigievolutions.vue'
 import DigimonDetails from './DigimonDetails.vue'
 import DigimonEquipments from './DigimonEquipments.vue'
 import DigievolutionGridModal from './DigievolutionGridModal.vue'
-import type { Digimon } from '../../types/backend'
+import type { Digimon } from '../../models'
 
 defineProps<{
   digimon: Digimon

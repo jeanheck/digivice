@@ -1,126 +1,89 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { State } from '../types/backend'
-import type * as Events from '../types/events'
-import { storeLogger } from '../utils/logger'
+import type { State } from '../models/State'
+import type * as Events from '../dtos/events.dto'
+import { GameConverter } from '../converters/GameConverter'
+import { DigimonUpdater } from '../updaters/DigimonUpdater'
+import { PlayerUpdater } from '../updaters/PlayerUpdater'
+import { ItemUpdater } from '../updaters/ItemUpdater'
+import { JournalUpdater } from '../updaters/JournalUpdater'
 
 export const useGameStore = defineStore('game', () => {
     const isConnected = ref(false)
     const gameState = ref<State | null>(null)
 
     // --- Status & Sync ---
-    function updateConnectionStatus(event: Events.ConnectionStatusChanged) {
+    function updateConnectionStatus(event: Events.ConnectionStatusChangedDTO) {
         isConnected.value = event.isConnected
     }
 
-    function updateInitialState(event: Events.InitialStateChanged) {
-        gameState.value = event.initialState
+    function updateInitialState(event: Events.InitialStateChangedDTO) {
+        gameState.value = {
+            player: GameConverter.toPlayerModel(event.initialState.player),
+            party: GameConverter.toPartyModel(event.initialState.party),
+            importantItems: GameConverter.toImportantItemsModel(event.initialState.importantItems),
+            consumableItems: GameConverter.toConsumableItemsModel(event.initialState.consumableItems),
+            journal: GameConverter.toJournalModel(event.initialState.journal)
+        }
     }
 
     // --- Player Actions ---
-    function updatePlayerBits(event: Events.PlayerBitsChanged) {
-        if (gameState.value?.player) {
-            gameState.value.player.bits = event.newBits
-        }
+    function updatePlayerBits(event: Events.PlayerBitsChangedDTO) {
+        PlayerUpdater.updateBits(gameState.value, event)
     }
 
-    function updatePlayerName(event: Events.PlayerNameChanged) {
-        if (gameState.value?.player) {
-            gameState.value.player.name = event.newName
-        }
+    function updatePlayerName(event: Events.PlayerNameChangedDTO) {
+        PlayerUpdater.updateName(gameState.value, event)
     }
 
-    function updatePlayerLocation(event: Events.PlayerLocationChanged) {
-        if (gameState.value?.player) {
-            gameState.value.player.mapId = event.location
-        }
+    function updatePlayerLocation(event: Events.PlayerLocationChangedDTO) {
+        PlayerUpdater.updateLocation(gameState.value, event)
     }
 
     // --- Party & Digimon Actions ---
-    function updatePartySlots(event: Events.PartySlotsChanged) {
-        if (gameState.value?.party) {
-            gameState.value.party.slots = event.newParty
-        }
+    function updatePartySlots(event: Events.PartySlotsChangedDTO) {
+        DigimonUpdater.updateParty(gameState.value, event)
     }
 
-    function updateDigimonVitals(event: Events.DigimonVitalsChanged) {
-        if (gameState.value?.party?.slots[event.partySlotIndex]) {
-            const digimon = gameState.value.party.slots[event.partySlotIndex]!
-            digimon.basicInfo.currentHP = event.currentHP
-            digimon.basicInfo.maxHP = event.maxHP
-            digimon.basicInfo.currentMP = event.currentMP
-            digimon.basicInfo.maxMP = event.maxMP
-        }
+    function updateDigimonVitals(event: Events.DigimonVitalsChangedDTO) {
+        DigimonUpdater.updateVitals(gameState.value, event)
     }
 
-    function updateDigimonExperience(event: Events.DigimonExperienceChanged) {
-        if (gameState.value?.party?.slots[event.partySlotIndex]) {
-            const digimon = gameState.value.party.slots[event.partySlotIndex]!
-            digimon.basicInfo.level = event.level
-            digimon.basicInfo.experience = event.currentEXP
-        }
+    function updateDigimonExperience(event: Events.DigimonExperienceChangedDTO) {
+        DigimonUpdater.updateExperience(gameState.value, event)
     }
 
-    function updateDigimonLevel(event: Events.DigimonLevelChanged) {
-        if (gameState.value?.party?.slots[event.partySlotIndex]) {
-            gameState.value.party.slots[event.partySlotIndex]!.basicInfo.level = event.newLevel
-        }
+    function updateDigimonLevel(event: Events.DigimonLevelChangedDTO) {
+        DigimonUpdater.updateLevel(gameState.value, event)
     }
 
-    function updateDigimonAttributes(event: Events.DigimonAttributesChanged) {
-        if (gameState.value?.party?.slots[event.partySlotIndex]) {
-            const attrs = gameState.value.party.slots[event.partySlotIndex]!.attributes
-            attrs.strength = event.strength
-            attrs.defense = event.defense
-            attrs.spirit = event.spirit
-            attrs.wisdom = event.wisdom
-            attrs.speed = event.speed
-            attrs.charisma = event.charisma
-        }
+    function updateDigimonAttributes(event: Events.DigimonAttributesChangedDTO) {
+        DigimonUpdater.updateAttributes(gameState.value, event)
     }
 
-    function updateDigimonResistances(event: Events.DigimonResistancesChanged) {
-        if (gameState.value?.party?.slots[event.partySlotIndex]) {
-            const res = gameState.value.party.slots[event.partySlotIndex]!.resistances
-            res.fire = event.fire
-            res.water = event.water
-            res.ice = event.ice
-            res.wind = event.wind
-            res.thunder = event.thunder
-            res.machine = event.machine
-            res.dark = event.dark
-        }
+    function updateDigimonResistances(event: Events.DigimonResistancesChangedDTO) {
+        DigimonUpdater.updateResistances(gameState.value, event)
     }
 
-    function updateDigimonEquipments(event: Events.DigimonEquipmentsChanged) {
-        if (gameState.value?.party?.slots[event.partySlotIndex]) {
-            gameState.value.party.slots[event.partySlotIndex]!.equipments = event.equipments
-        }
+    function updateDigimonEquipments(event: Events.DigimonEquipmentsChangedDTO) {
+        DigimonUpdater.updateEquipments(gameState.value, event)
     }
 
-    function updateDigimonDigievolutions(event: Events.DigimonDigievolutionsChanged) {
-        if (gameState.value?.party?.slots[event.partySlotIndex]) {
-            gameState.value.party.slots[event.partySlotIndex]!.equippedDigievolutions = event.equippedDigievolutions
-        }
+    function updateDigimonDigievolutions(event: Events.DigimonDigievolutionsChangedDTO) {
+        DigimonUpdater.updateDigievolutions(gameState.value, event)
     }
 
-    function updateDigimonActiveDigievolution(event: Events.DigimonActiveDigievolutionChanged) {
-        if (gameState.value?.party?.slots[event.partySlotIndex]) {
-            gameState.value.party.slots[event.partySlotIndex]!.activeDigievolutionId = event.activeDigievolutionId
-        }
+    function updateDigimonActiveDigievolution(event: Events.DigimonActiveDigievolutionChangedDTO) {
+        DigimonUpdater.updateActiveDigievolution(gameState.value, event)
     }
 
     // --- Items & Journal ---
-    function updateImportantItems(event: Events.ImportantItemsChanged) {
-        if (gameState.value) {
-            gameState.value.importantItems = event.importantItems
-        }
+    function updateImportantItems(event: Events.ImportantItemsChangedDTO) {
+        ItemUpdater.updateImportantItems(gameState.value, event)
     }
 
-    function updateJournal(event: Events.JournalChanged) {
-        if (gameState.value) {
-            gameState.value.journal = event.journal
-        }
+    function updateJournal(event: Events.JournalChangedDTO) {
+        JournalUpdater.updateJournal(gameState.value, event)
     }
 
     return {

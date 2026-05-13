@@ -3,7 +3,7 @@ import ExperienceProgressBar from '../ui/ExperienceProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
 import DigimonIcon from '../ui/DigimonIcon.vue'
 import { useLocalization } from '../../composables/useLocalization'
-import type { Digimon } from '../../types/backend'
+import type { Digimon } from '../../models'
 import { ProgressBarTypes } from '@/types/ui'
 
 const props = defineProps<{

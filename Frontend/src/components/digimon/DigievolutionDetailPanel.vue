@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import type { Digimon } from '../../types/backend'
+import type { Digimon } from '../../models'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
 import { useLocalization } from '../../composables/useLocalization'
 import DigievolutionData from '../../data/static/Digievolution.json'

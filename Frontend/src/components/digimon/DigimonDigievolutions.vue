@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import type { Digievolution } from '../../types/backend';
+import type { Digievolution } from '../../models';
 import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue';
-import { DigievolutionRegistry } from '../../logic/DigievolutionRegistry';
 
 const props = defineProps<{
-  equippedDigievolutions: (Digievolution | null)[]
+  equippedDigievolutions: (Digievolution | null)[];
   activeDigievolutionId: number | null;
 }>();
 
+// Simple display interface for the list
 interface DisplayEvolution {
     id: number;
     name: string;
@@ -21,9 +21,10 @@ const digievolutions = computed(() => {
             return null;
         }
 
+        // Now we just use the name already provided by the Domain Model (via Converter)
         return {
             id: digievolution.id,
-            name: DigievolutionRegistry.getDigievolutionNameById(digievolution.id),
+            name: digievolution.name,
             level: digievolution.level
         };
     });

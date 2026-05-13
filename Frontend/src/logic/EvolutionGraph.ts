@@ -151,7 +151,7 @@ export class EvolutionGraph {
         }))
     }
 
-    static checkRequirements(digimon: import('../types/backend').Digimon, node: { requirements: EvolutionRequirement[] }): boolean {
+    static checkRequirements(digimon: import('../models').Digimon, node: { requirements: EvolutionRequirement[] }): boolean {
         if (node.requirements.length === 0) return true
 
         for (const req of node.requirements) {
@@ -160,7 +160,7 @@ export class EvolutionGraph {
                     if (digimon.basicInfo.level < req.Value) return false
                     break
                 case 'Attribute':
-                    const attrValue = digimon.attributes[req.Attribute?.toLowerCase() as keyof import('../types/backend').Attributes] || 0
+                    const attrValue = digimon.attributes[req.Attribute?.toLowerCase() as keyof import('../models').Attributes] || 0
                     if (attrValue < req.Value) return false
                     break
                 case 'DigievolutionLevel':
