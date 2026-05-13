@@ -1,22 +1,25 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from 'vue';
+import { DigimonExperienceCalculator } from '../../logic/DigimonExperienceCalculator';
+import { MathUtils } from '../../utils/MathUtils';
 
 const props = defineProps<{
-  currentExp: number
-  expForNextLevel: number
-  expForCurrentLevel?: number
-}>()
+  digimonName: string;
+  currentLevel: number;
+  currentExp: number;
+}>();
+
+const expForNextLevel = computed(() => {
+    return DigimonExperienceCalculator.getRequiredExpForNextLevel(props.digimonName, props.currentLevel);
+});
 
 const percentage = computed(() => {
-  if (props.expForNextLevel <= 0) return 100
-  
-  const currentBase = props.expForCurrentLevel || 0
-  const totalRange = props.expForNextLevel - currentBase
-  
-  if (totalRange <= 0) return 100
-  
-  return Math.min(100, Math.max(0, ((props.currentExp - currentBase) / totalRange) * 100))
-})
+    return DigimonExperienceCalculator.getProgressPercentageForNextLevel(
+        props.digimonName, 
+        props.currentLevel, 
+        props.currentExp
+    );
+});
 </script>
 
 <template>

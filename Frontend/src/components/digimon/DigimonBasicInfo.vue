@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import ExpProgressBar from '../ui/ExpProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
 import DigimonIcon from '../ui/DigimonIcon.vue'
-import { ExperienceCalculator } from '../../logic/ExperienceCalculator'
 import { useLocalization } from '../../composables/useLocalization'
 import type { Digimon } from '../../types/backend'
+import { ProgressBarTypes } from '@/types/ui'
 
 const props = defineProps<{
   digimon: Digimon
@@ -24,33 +24,9 @@ watch(() => props.digimon.basicInfo.level, (newLevel, oldLevel) => {
   }
 })
 
-const requiredExpForNextLevel = computed(() => {
-  return ExperienceCalculator.getRequiredExpForNextLevel(
-    props.digimon.basicInfo.name, 
-    props.digimon.basicInfo.level
-  )
-})
-
-const requiredExpForCurrentLevel = computed(() => {
-  return ExperienceCalculator.getRequiredExpForCurrentLevel(
-    props.digimon.basicInfo.name, 
-    props.digimon.basicInfo.level
-  )
-})
-
-const getHpColor = (current: number, max: number) => {
-  if (max === 0) return 'bg-red-500'
-  const percentage = current / max
-  return percentage < 0.3 ? 'bg-red-500' : 'bg-green-500'
-}
-
-const getMpColor = (current: number, max: number) => {
-  if (max === 0) return 'bg-yellow-400'
-  const percentage = current / max
-  return percentage < 0.3 ? 'bg-yellow-400' : 'bg-blue-600'
-}
 
 </script>
+
 
 <template>
   <div class="relative overflow-hidden flex flex-col w-full bg-[#000a2b]">
@@ -89,9 +65,9 @@ const getMpColor = (current: number, max: number) => {
           </div>
           
           <ExpProgressBar 
+            :digimon-name="digimon.basicInfo.name"
+            :current-level="digimon.basicInfo.level"
             :current-exp="digimon.basicInfo.experience" 
-            :exp-for-next-level="requiredExpForNextLevel" 
-            :exp-for-current-level="requiredExpForCurrentLevel"
           />
         </div>
       </div>
@@ -101,12 +77,12 @@ const getMpColor = (current: number, max: number) => {
          <ProgressBar 
             :current-value="digimon.basicInfo.currentHP" 
             :max-value="digimon.basicInfo.maxHP" 
-            :color-class="getHpColor(digimon.basicInfo.currentHP, digimon.basicInfo.maxHP)" 
+            :type=ProgressBarTypes.HP
           />
           <ProgressBar 
             :current-value="digimon.basicInfo.currentMP" 
             :max-value="digimon.basicInfo.maxMP" 
-            :color-class="getMpColor(digimon.basicInfo.currentMP, digimon.basicInfo.maxMP)" 
+            :type=ProgressBarTypes.MP
           />
       </div>
     </div>
