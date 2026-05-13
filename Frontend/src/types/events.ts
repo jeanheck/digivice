@@ -82,13 +82,6 @@ export interface DigimonActiveDigievolutionChanged {
     activeDigievolutionId: number | null
 }
 
-export interface DigimonDigievolutionLevelChanged {
-    partySlotIndex: number
-    digievolutionId: number
-    oldLevel: number
-    newLevel: number
-}
-
 // --- Items & Journal ---
 export interface ImportantItemsChanged {
     importantItems: ImportantItems | null
@@ -117,7 +110,6 @@ export interface GameEventMap {
     DigimonEquipmentsChanged: DigimonEquipmentsChanged
     DigimonDigievolutionsChanged: DigimonDigievolutionsChanged
     DigimonActiveDigievolutionChanged: DigimonActiveDigievolutionChanged
-    DigimonDigievolutionLevelChanged: DigimonDigievolutionLevelChanged
     ImportantItemsChanged: ImportantItemsChanged
     JournalChanged: JournalChanged
 }

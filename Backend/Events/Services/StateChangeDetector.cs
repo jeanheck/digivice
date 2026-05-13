@@ -162,17 +162,6 @@ public class StateChangeDetector
         // Compare Equipped Digievolutions
         if (!Enumerable.SequenceEqual(oldDigi.EquippedDigievolutions, newDigi.EquippedDigievolutions))
         {
-            for (int i = 0; i < 3; i++)
-            {
-                var oldEvo = oldDigi.EquippedDigievolutions[i];
-                var newEvo = newDigi.EquippedDigievolutions[i];
-
-                if (oldEvo != null && newEvo != null && oldEvo.Id == newEvo.Id && newEvo.Level > oldEvo.Level)
-                {
-                    events.Add(new DigimonDigievolutionLevelChangedEvent(index, newEvo.Id, oldEvo.Level, newEvo.Level));
-                }
-            }
-
             events.Add(new DigimonDigievolutionsChangedEvent(index, newDigi.EquippedDigievolutions));
         }
 

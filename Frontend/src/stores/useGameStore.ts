@@ -110,10 +110,6 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
-    function updateDigimonDigievolutionLevel(event: Events.DigimonDigievolutionLevelChanged) {
-        storeLogger.info(`[LEVEL UP!] Digimon in slot ${event.partySlotIndex}'s Digievolution (ID ${event.digievolutionId}) reached Level ${event.newLevel}!`)
-    }
-
     // --- Items & Journal ---
     function updateImportantItems(event: Events.ImportantItemsChanged) {
         if (gameState.value) {
@@ -144,7 +140,6 @@ export const useGameStore = defineStore('game', () => {
         updateDigimonEquipments,
         updateDigimonDigievolutions,
         updateDigimonActiveDigievolution,
-        updateDigimonDigievolutionLevel,
         updateImportantItems,
         updateJournal
     }
