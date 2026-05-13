@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { DigimonExperienceCalculator } from '../../logic/DigimonExperienceCalculator';
-import { MathUtils } from '../../utils/MathUtils';
 
 const props = defineProps<{
   digimonName: string;

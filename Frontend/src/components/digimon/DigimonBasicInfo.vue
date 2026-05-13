@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import ExpProgressBar from '../ui/ExpProgressBar.vue'
+import ExperienceProgressBar from '../ui/ExperienceProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
 import DigimonIcon from '../ui/DigimonIcon.vue'
 import { useLocalization } from '../../composables/useLocalization'
@@ -64,7 +64,7 @@ watch(() => props.digimon.basicInfo.level, (newLevel, oldLevel) => {
             </div>
           </div>
           
-          <ExpProgressBar 
+          <ExperienceProgressBar 
             :digimon-name="digimon.basicInfo.name"
             :current-level="digimon.basicInfo.level"
             :current-exp="digimon.basicInfo.experience" 
