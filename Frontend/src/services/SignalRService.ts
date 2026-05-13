@@ -2,6 +2,7 @@ import * as signalR from '@microsoft/signalr'
 import { invoke } from '@tauri-apps/api/core'
 import type { GameEventMap } from '../types/events'
 import { signalRLogger } from '../utils/logger'
+import { APP_CONFIG } from '../config'
 
 class SignalRService {
     private connection: signalR.HubConnection | null = null
@@ -10,8 +11,6 @@ class SignalRService {
 
     /**
      * Subscribe to a SignalR event with strong typing.
-     * @param eventName Name of the event from the backend (must exist in GameEventMap).
-     * @param handler Callback function with typed data.
      */
     public on<K extends keyof GameEventMap>(
         eventName: K,
@@ -25,7 +24,6 @@ class SignalRService {
 
     /**
      * Manually set the list of events to register with SignalR.
-     * Useful for automatic discovery of store actions.
      */
     public setEventNames(names: (keyof GameEventMap)[]) {
         names.forEach(name => {
@@ -35,19 +33,24 @@ class SignalRService {
         });
     }
 
-    public async startConnection() {
-        const isProd = import.meta.env.PROD
-        let hubUrl = '/gamehub'
-
-        if (isProd) {
-            try {
-                const port = await invoke<number>('get_backend_port')
-                hubUrl = `http://localhost:${port}/gamehub`
-            } catch (err) {
-                signalRLogger.error('Failed to get backend port from Tauri', err)
-                hubUrl = 'http://localhost:5000/gamehub'
-            }
+    private async getHubUrl(): Promise<string> {
+        // In development (Vite), we use the relative proxy.
+        if (APP_CONFIG.IS_DEV) {
+            return APP_CONFIG.BACKEND.HUB_PATH
         }
+
+        // In production (Tauri), we are trying to obtain the dynamic port from the backend.
+        try {
+            const port = await invoke<number>('get_backend_port')
+            return `http://localhost:${port}${APP_CONFIG.BACKEND.HUB_PATH}`
+        } catch (err) {
+            signalRLogger.warn(`Failed to get backend port via Tauri. Using fallback: ${APP_CONFIG.BACKEND.DEFAULT_PORT}`)
+            return APP_CONFIG.BACKEND.FALLBACK_URL
+        }
+    }
+
+    public async startConnection() {
+        const hubUrl = await this.getHubUrl()
 
         this.connection = new signalR.HubConnectionBuilder()
             .withUrl(hubUrl)
@@ -59,10 +62,10 @@ class SignalRService {
 
         try {
             await this.connection.start()
-            signalRLogger.info('Connected to GameHub')
+            signalRLogger.info(`Connected to GameHub at: ${hubUrl}`)
             this.emit('ConnectionStatusChanged', { isConnected: true })
         } catch (err) {
-            signalRLogger.error('Connection Error', err)
+            signalRLogger.error(`Connection Error at ${hubUrl}`, err)
             this.emit('ConnectionStatusChanged', { isConnected: false })
         }
     }
@@ -89,7 +92,7 @@ class SignalRService {
     private registerBackendEvents() {
         if (!this.connection) return
 
-        // Registra apenas os eventos que têm handlers definidos na GameEventMap
+        // Only logs events that have handlers defined in the GameEventMap.
         for (const eventName of this.handlers.keys()) {
             this.connection.on(eventName, (data: any) => {
                 signalRLogger.debug(`Hub Event [${eventName}]`, data)
