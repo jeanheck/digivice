@@ -1,16 +1,21 @@
 import * as signalR from '@microsoft/signalr'
 import { invoke } from '@tauri-apps/api/core'
+import type { GameEventMap } from '../types/events'
 
 class SignalRService {
     private connection: signalR.HubConnection | null = null
-    private handlers: Map<string, ((data: any) => void)[]> = new Map()
+    // Armazena handlers de forma tipada
+    private handlers: Map<keyof GameEventMap, ((data: any) => void)[]> = new Map()
 
     /**
-     * Subscribe to a SignalR event.
-     * @param eventName Name of the event from the backend.
-     * @param handler Callback function to handle the event data.
+     * Subscribe to a SignalR event with strong typing.
+     * @param eventName Name of the event from the backend (must exist in GameEventMap).
+     * @param handler Callback function with typed data.
      */
-    public on(eventName: string, handler: (data: any) => void) {
+    public on<K extends keyof GameEventMap>(
+        eventName: K, 
+        handler: (data: GameEventMap[K]) => void
+    ) {
         if (!this.handlers.has(eventName)) {
             this.handlers.set(eventName, [])
         }
@@ -21,7 +26,7 @@ class SignalRService {
      * Manually set the list of events to register with SignalR.
      * Useful for automatic discovery of store actions.
      */
-    public setEventNames(names: string[]) {
+    public setEventNames(names: (keyof GameEventMap)[]) {
         names.forEach(name => {
             if (!this.handlers.has(name)) {
                 this.handlers.set(name, []);
@@ -83,7 +88,7 @@ class SignalRService {
     private registerBackendEvents() {
         if (!this.connection) return
 
-        // Register all events that have at least one handler subscribed
+        // Registra apenas os eventos que têm handlers definidos na GameEventMap
         for (const eventName of this.handlers.keys()) {
             this.connection.on(eventName, (data: any) => {
                 this.emit(eventName, data)
@@ -91,7 +96,7 @@ class SignalRService {
         }
     }
 
-    private emit(eventName: string, data: any) {
+    private emit<K extends keyof GameEventMap>(eventName: K, data: GameEventMap[K]) {
         const eventHandlers = this.handlers.get(eventName)
         if (eventHandlers) {
             eventHandlers.forEach(handler => handler(data))
