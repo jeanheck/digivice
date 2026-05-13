@@ -74,6 +74,11 @@ class SignalRService {
             store.updateBits(event.newBits)
         })
 
+        this.connection.on('PlayerNameChanged', (event: { newName: string }) => {
+            console.log('Hub: PlayerNameChanged', event)
+            store.updatePlayerName(event.newName)
+        })
+
         this.connection.on('PartySlotsChanged', (event: { newParty: (import('../types/backend').Digimon | null)[] }) => {
             console.log('Hub: PartySlotsChanged', event)
             store.updatePartySlots(event.newParty)

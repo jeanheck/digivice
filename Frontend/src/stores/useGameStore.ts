@@ -20,6 +20,12 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
+    function updatePlayerName(newName: string) {
+        if (gameState.value?.player) {
+            gameState.value.player.name = newName
+        }
+    }
+
     function updatePartySlots(newSlots: (Digimon | null)[]) {
         if (gameState.value?.party) {
             // preserve reactivity
@@ -134,6 +140,7 @@ export const useGameStore = defineStore('game', () => {
         notifyDigievolutionLevelUp,
         updateImportantItems,
         updateJournal,
-        updateLocation
+        updateLocation,
+        updatePlayerName
     }
 })
