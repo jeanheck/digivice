@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
 import ExperienceProgressBar from '../ui/ExperienceProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
 import DigimonIcon from '../ui/DigimonIcon.vue'
@@ -11,22 +10,8 @@ const props = defineProps<{
   digimon: Digimon
 }>()
 
-const { getLocalized, t } = useLocalization()
-
-const isLevelingUp = ref(false)
-
-watch(() => props.digimon.basicInfo.level, (newLevel, oldLevel) => {
-  if (oldLevel > 0 && newLevel > oldLevel) {
-    isLevelingUp.value = true
-    setTimeout(() => {
-      isLevelingUp.value = false
-    }, 1500)
-  }
-})
-
-
+const { getLocalized, t } = useLocalization();
 </script>
-
 
 <template>
   <div class="relative overflow-hidden flex flex-col w-full bg-[#000a2b]">
@@ -48,19 +33,9 @@ watch(() => props.digimon.basicInfo.level, (newLevel, oldLevel) => {
             <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ getLocalized(digimon.basicInfo.name) || digimon.basicInfo.name }}</h2>
             
             <div class="relative flex items-center justify-center flex-shrink-0">
-              <span 
-                class="text-[0.6rem] font-medium text-yellow-500 transition-all duration-300"
-                :class="isLevelingUp ? 'scale-150 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'scale-100'"
-              >
+              <span class="text-[0.6rem] font-medium text-yellow-500">
                 {{ $t('common.level') }} {{ digimon.basicInfo.level }}
               </span>
-              
-              <!-- Sparkles effect -->
-              <div v-if="isLevelingUp" class="absolute inset-0 pointer-events-none flex items-center justify-center">
-                <div class="absolute w-1 h-1 bg-white rounded-full animate-ping" style="top: -4px; left: -4px;"></div>
-                <div class="absolute w-1.5 h-1.5 bg-yellow-300 rounded-full animate-ping" style="bottom: -2px; right: -8px; animation-delay: 100ms;"></div>
-                <div class="absolute w-1 h-1 bg-white rounded-full animate-ping" style="top: 50%; left: 110%; animation-delay: 200ms;"></div>
-              </div>
             </div>
           </div>
           
