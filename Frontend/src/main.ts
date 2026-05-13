@@ -6,7 +6,7 @@ import { signalRService } from './services/SignalRService'
 import './style.css'
 
 import i18n from './i18n'
-import { initSignalRHandlers } from './logic/signalRHandlers'
+import { initSignalRHandlers } from './handlers/SignalRHandlers'
 
 const app = createApp(App)
 
