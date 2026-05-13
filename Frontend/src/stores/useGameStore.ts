@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import type { State } from '../types/backend'
 import type * as Events from '../types/events'
+import { storeLogger } from '../utils/logger'
 
 export const useGameStore = defineStore('game', () => {
     const isConnected = ref(false)
@@ -110,7 +111,7 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateDigimonDigievolutionLevel(event: Events.DigimonDigievolutionLevelChanged) {
-        console.log(`[LEVEL UP!] Digimon in slot ${event.partySlotIndex}'s Digievolution (ID ${event.digievolutionId}) reached Level ${event.newLevel}!`)
+        storeLogger.info(`[LEVEL UP!] Digimon in slot ${event.partySlotIndex}'s Digievolution (ID ${event.digievolutionId}) reached Level ${event.newLevel}!`)
     }
 
     // --- Items & Journal ---

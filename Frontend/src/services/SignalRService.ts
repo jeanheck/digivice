@@ -1,6 +1,7 @@
 import * as signalR from '@microsoft/signalr'
 import { invoke } from '@tauri-apps/api/core'
 import type { GameEventMap } from '../types/events'
+import { signalRLogger } from '../utils/logger'
 
 class SignalRService {
     private connection: signalR.HubConnection | null = null
@@ -13,7 +14,7 @@ class SignalRService {
      * @param handler Callback function with typed data.
      */
     public on<K extends keyof GameEventMap>(
-        eventName: K, 
+        eventName: K,
         handler: (data: GameEventMap[K]) => void
     ) {
         if (!this.handlers.has(eventName)) {
@@ -37,13 +38,13 @@ class SignalRService {
     public async startConnection() {
         const isProd = import.meta.env.PROD
         let hubUrl = '/gamehub'
-        
+
         if (isProd) {
             try {
                 const port = await invoke<number>('get_backend_port')
                 hubUrl = `http://localhost:${port}/gamehub`
             } catch (err) {
-                console.error('Failed to get backend port from Tauri:', err)
+                signalRLogger.error('Failed to get backend port from Tauri', err)
                 hubUrl = 'http://localhost:5000/gamehub'
             }
         }
@@ -58,10 +59,10 @@ class SignalRService {
 
         try {
             await this.connection.start()
-            console.log('SignalR Connected to GameHub.')
+            signalRLogger.info('Connected to GameHub')
             this.emit('ConnectionStatusChanged', { isConnected: true })
         } catch (err) {
-            console.error('SignalR Connection Error: ', err)
+            signalRLogger.error('Connection Error', err)
             this.emit('ConnectionStatusChanged', { isConnected: false })
         }
     }
@@ -70,17 +71,17 @@ class SignalRService {
         if (!this.connection) return
 
         this.connection.onreconnecting(() => {
-            console.warn('SignalR reconnecting...')
+            signalRLogger.warn('Reconnecting...')
             this.emit('ConnectionStatusChanged', { isConnected: false })
         })
 
         this.connection.onreconnected(() => {
-            console.log('SignalR reconnected.')
+            signalRLogger.info('Reconnected.')
             this.emit('ConnectionStatusChanged', { isConnected: true })
         })
 
         this.connection.onclose(() => {
-            console.error('SignalR connection closed.')
+            signalRLogger.error('Connection closed.')
             this.emit('ConnectionStatusChanged', { isConnected: false })
         })
     }
@@ -91,6 +92,7 @@ class SignalRService {
         // Registra apenas os eventos que têm handlers definidos na GameEventMap
         for (const eventName of this.handlers.keys()) {
             this.connection.on(eventName, (data: any) => {
+                signalRLogger.debug(`Hub Event [${eventName}]`, data)
                 this.emit(eventName, data)
             })
         }

@@ -1,6 +1,7 @@
 import { signalRService } from '../services/SignalRService'
 import { useGameStore } from '../stores/useGameStore'
 import type { GameEventMap } from '../types/events'
+import { signalRLogger } from '../utils/logger'
 
 /**
  * Connects SignalR events to Pinia Stores actions using a naming convention:
@@ -30,5 +31,5 @@ export function initSignalRHandlers() {
         })
     })
 
-    console.log(`[SignalR] Auto-registered ${storeActions.length} event handlers with strong typing support.`)
+    signalRLogger.debug(`Auto-registered ${storeActions.length} event handlers.`)
 }
