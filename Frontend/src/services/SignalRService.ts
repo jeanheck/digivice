@@ -17,6 +17,18 @@ class SignalRService {
         this.handlers.get(eventName)?.push(handler)
     }
 
+    /**
+     * Manually set the list of events to register with SignalR.
+     * Useful for automatic discovery of store actions.
+     */
+    public setEventNames(names: string[]) {
+        names.forEach(name => {
+            if (!this.handlers.has(name)) {
+                this.handlers.set(name, []);
+            }
+        });
+    }
+
     public async startConnection() {
         const isProd = import.meta.env.PROD
         let hubUrl = '/gamehub'
@@ -71,33 +83,12 @@ class SignalRService {
     private registerBackendEvents() {
         if (!this.connection) return
 
-        // List of events supported by the backend
-        const eventNames = [
-            'ConnectionStatusChanged',
-            'InitialStateSync',
-            'PlayerBitsChanged',
-            'PlayerNameChanged',
-            'PartySlotsChanged',
-            'DigimonVitalsChanged',
-            'DigimonXpGained',
-            'DigimonLevelUp',
-            'DigimonAttributesChanged',
-            'DigimonResistancesChanged',
-            'DigimonEquipmentsChanged',
-            'DigimonDigievolutionsChanged',
-            'DigimonActiveDigievolutionChanged',
-            'DigimonDigievolutionLevelUp',
-            'ImportantItemsChanged',
-            'JournalChanged',
-            'LocationChanged'
-        ]
-
-        eventNames.forEach(eventName => {
-            this.connection!.on(eventName, (data: any) => {
-                console.log(`Hub Event [${eventName}]:`, data)
+        // Register all events that have at least one handler subscribed
+        for (const eventName of this.handlers.keys()) {
+            this.connection.on(eventName, (data: any) => {
                 this.emit(eventName, data)
             })
-        })
+        }
     }
 
     private emit(eventName: string, data: any) {

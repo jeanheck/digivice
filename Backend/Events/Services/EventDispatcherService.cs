@@ -34,7 +34,7 @@ public class EventDispatcherService(
     {
         if (previousState != null)
         {
-            SafeDispatch(new InitialStateSyncEvent(previousState), hubContext.Clients.Client(connectionId));
+            SafeDispatch(new InitialStateChangedEvent(previousState), hubContext.Clients.Client(connectionId));
         }
     }
 

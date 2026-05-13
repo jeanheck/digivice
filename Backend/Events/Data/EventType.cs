@@ -3,20 +3,20 @@ namespace Backend.Events.Data;
 public enum EventType
 {
     ConnectionStatusChanged,
-    InitialStateSync,
+    InitialStateChanged,
     PlayerBitsChanged,
+    PlayerNameChanged,
+    PlayerLocationChanged,
     PartySlotsChanged,
     DigimonVitalsChanged,
-    DigimonXpGained,
+    DigimonExperienceChanged,
     DigimonAttributesChanged,
     DigimonResistancesChanged,
-    DigimonLevelUp,
+    DigimonLevelChanged,
     DigimonEquipmentsChanged,
     DigimonDigievolutionsChanged,
-    DigimonDigievolutionLevelUp,
+    DigimonDigievolutionLevelChanged,
     DigimonActiveDigievolutionChanged,
     ImportantItemsChanged,
-    JournalChanged,
-    LocationChanged,
-    PlayerNameChanged
+    JournalChanged
 }

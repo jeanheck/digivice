@@ -14,7 +14,7 @@ public class StateChangeDetector
 
         if (previousState == null)
         {
-            events.Add(new InitialStateSyncEvent(newState));
+            events.Add(new InitialStateChangedEvent(newState));
             return events;
         }
 
@@ -25,7 +25,7 @@ public class StateChangeDetector
             {
                 if (newState.Player.MapId != previousState.Player.MapId)
                 {
-                    events.Add(new LocationChangedEvent(newState.Player.MapId));
+                    events.Add(new PlayerLocationChangedEvent(newState.Player.MapId));
                 }
 
                 if (newState.Player.Name != previousState.Player.Name)
@@ -129,16 +129,16 @@ public class StateChangeDetector
             events.Add(new DigimonVitalsChangedEvent(index, newDigi.BasicInfo.CurrentHP, newDigi.BasicInfo.MaxHP, newDigi.BasicInfo.CurrentMP, newDigi.BasicInfo.MaxMP));
         }
 
-        // Compare XP
+        // Compare XP (Experience)
         if (oldDigi.BasicInfo.Experience != newDigi.BasicInfo.Experience)
         {
-            events.Add(new DigimonXpGainedEvent(index, newDigi.BasicInfo.Level, newDigi.BasicInfo.Experience));
+            events.Add(new DigimonExperienceChangedEvent(index, newDigi.BasicInfo.Level, newDigi.BasicInfo.Experience));
         }
 
-        // Compare Level (Level Up)
+        // Compare Level
         if (newDigi.BasicInfo.Level > oldDigi.BasicInfo.Level)
         {
-            events.Add(new DigimonLevelUpEvent(index, oldDigi.BasicInfo.Level, newDigi.BasicInfo.Level));
+            events.Add(new DigimonLevelChangedEvent(index, oldDigi.BasicInfo.Level, newDigi.BasicInfo.Level));
         }
 
         // Compare Attributes
@@ -169,7 +169,7 @@ public class StateChangeDetector
 
                 if (oldEvo != null && newEvo != null && oldEvo.Id == newEvo.Id && newEvo.Level > oldEvo.Level)
                 {
-                    events.Add(new DigimonDigievolutionLevelUpEvent(index, newEvo.Id, oldEvo.Level, newEvo.Level));
+                    events.Add(new DigimonDigievolutionLevelChangedEvent(index, newEvo.Id, oldEvo.Level, newEvo.Level));
                 }
             }
 
