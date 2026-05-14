@@ -1,11 +1,6 @@
 namespace Backend.Events.Data;
 
-public class PlayerBitsChangedEvent : BaseEvent
+public class PlayerBitsChangedEvent(int? newBits) : BaseEvent(EventType.PlayerBitsChanged)
 {
-    public int? NewBits { get; }
-
-    public PlayerBitsChangedEvent(int? newBits) : base(EventType.PlayerBitsChanged)
-    {
-        NewBits = newBits;
-    }
+    public int? NewBits { get; } = newBits;
 }
