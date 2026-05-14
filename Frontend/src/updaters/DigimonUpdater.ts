@@ -1,6 +1,8 @@
 import type { State } from '../models/State';
 import type * as Events from '../dtos/events.dto';
 import { GameConverter } from '../converters/GameConverter';
+import { DigimonExperienceCalculator } from '../logic/DigimonExperienceCalculator';
+import type { BasicInfo } from '../models/Digimon';
 
 /**
  * DigimonUpdater
@@ -10,7 +12,7 @@ export class DigimonUpdater {
 
     public static updateParty(state: State | null, event: Events.PartySlotsChangedDTO) {
         if (state?.party) {
-            state.party.slots = event.newParty.map(slotDto => 
+            state.party.slots = event.newParty.map(slotDto =>
                 GameConverter.toDigimonModel(slotDto)
             );
         }
@@ -31,6 +33,9 @@ export class DigimonUpdater {
         if (digimon) {
             digimon.basicInfo.level = event.level;
             digimon.basicInfo.experience = event.currentEXP;
+
+            // Recalculate enriched experience fields
+            this.enrichExperience(digimon.basicInfo);
         }
     }
 
@@ -38,7 +43,26 @@ export class DigimonUpdater {
         const digimon = state?.party?.slots[event.partySlotIndex];
         if (digimon) {
             digimon.basicInfo.level = event.newLevel;
+
+            // Recalculate enriched experience fields (next level target changes)
+            this.enrichExperience(digimon.basicInfo);
         }
+    }
+
+    /**
+     * Private helper to enrich the BasicInfo with pre-calculated UI values.
+     */
+    private static enrichExperience(basicInfo: BasicInfo) {
+        basicInfo.experienceToReachNextLevel = DigimonExperienceCalculator.getRequiredExpForNextLevel(
+            basicInfo.name,
+            basicInfo.level
+        );
+
+        basicInfo.experiencePercentageToReachNextLevel = DigimonExperienceCalculator.getProgressPercentageForNextLevel(
+            basicInfo.name,
+            basicInfo.level,
+            basicInfo.experience
+        );
     }
 
     public static updateAttributes(state: State | null, event: Events.DigimonAttributesChangedDTO) {

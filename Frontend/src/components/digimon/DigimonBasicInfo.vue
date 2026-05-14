@@ -2,15 +2,12 @@
 import ExperienceProgressBar from '../ui/ExperienceProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
 import DigimonIcon from '../ui/DigimonIcon.vue'
-import { useLocalization } from '../../composables/useLocalization'
 import type { Digimon } from '../../models'
 import { ProgressBarTypes } from '@/types/ui'
 
 const props = defineProps<{
   digimon: Digimon
 }>()
-
-const { getLocalized, t } = useLocalization();
 </script>
 
 <template>
@@ -30,7 +27,7 @@ const { getLocalized, t } = useLocalization();
 
         <div class="flex-1 flex flex-col gap-1 min-w-0">
           <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
-            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ getLocalized(digimon.basicInfo.name) || digimon.basicInfo.name }}</h2>
+            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimon.basicInfo.name }}</h2>
             
             <div class="relative flex items-center justify-center flex-shrink-0">
               <span class="text-[0.6rem] font-medium text-yellow-500">
@@ -40,9 +37,9 @@ const { getLocalized, t } = useLocalization();
           </div>
           
           <ExperienceProgressBar 
-            :digimon-name="digimon.basicInfo.name"
-            :current-level="digimon.basicInfo.level"
-            :current-exp="digimon.basicInfo.experience" 
+            :experience-to-reach-next-level="digimon.basicInfo.experienceToReachNextLevel"
+            :experience-percentage-to-reach-next-level="digimon.basicInfo.experiencePercentageToReachNextLevel"
+            :current-experience="digimon.basicInfo.experience" 
           />
         </div>
       </div>

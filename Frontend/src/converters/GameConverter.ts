@@ -4,6 +4,7 @@ import type { Player, Party } from '../models/Player';
 import type { ImportantItems, ConsumableItems } from '../models/Items';
 import type { Journal, Quest, QuestStep } from '../models/Journal';
 import { DigievolutionRegistry } from '../logic/DigievolutionRegistry';
+import { DigimonExperienceCalculator } from '../logic/DigimonExperienceCalculator';
 
 /**
  * GameConverter
@@ -19,9 +20,23 @@ export class GameConverter {
     public static toDigimonModel(dto: DTO.DigimonDTO | null): Model.Digimon | null {
         if (!dto) return null;
 
+        const basicInfo: Model.BasicInfo = {
+            ...dto.basicInfo,
+            // Pre-calculate experience fields for the initial model
+            experienceToReachNextLevel: DigimonExperienceCalculator.getRequiredExpForNextLevel(
+                dto.basicInfo.name,
+                dto.basicInfo.level
+            ),
+            experiencePercentageToReachNextLevel: DigimonExperienceCalculator.getProgressPercentageForNextLevel(
+                dto.basicInfo.name,
+                dto.basicInfo.level,
+                dto.basicInfo.experience
+            )
+        };
+
         return {
             slotIndex: dto.slotIndex,
-            basicInfo: { ...dto.basicInfo },
+            basicInfo,
             attributes: { ...dto.attributes },
             resistances: { ...dto.resistances },
             equipments: { ...dto.equipments },

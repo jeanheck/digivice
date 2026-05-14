@@ -12,6 +12,8 @@ export interface BasicInfo {
     maxHP: number;
     currentMP: number;
     maxMP: number;
+    experienceToReachNextLevel: number;
+    experiencePercentageToReachNextLevel: number;
 }
 
 export interface Attributes {
