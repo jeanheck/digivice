@@ -125,15 +125,15 @@ export interface ConnectionStatusChangedDTO {
 }
 
 export interface InitialStateChangedDTO {
-    initialState: StateDTO;
+    state: StateDTO;
 }
 
 export interface PlayerBitsChangedDTO {
-    newBits: number;
+    bits: number;
 }
 
 export interface PlayerNameChangedDTO {
-    newName: string;
+    name: string;
 }
 
 export interface PlayerLocationChangedDTO {
@@ -141,7 +141,7 @@ export interface PlayerLocationChangedDTO {
 }
 
 export interface PartySlotsChangedDTO {
-    newParty: (DigimonDTO | null)[];
+    party: (DigimonDTO | null)[];
 }
 
 export interface DigimonVitalsChangedDTO {

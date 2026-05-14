@@ -1,13 +1,9 @@
 import type * as DTO from '../dtos/events.dto';
-import type * as Model from '../models/Digimon';
 import type { Player, Party } from '../models/Player';
 import type { ImportantItems, ConsumableItems } from '../models/Items';
 import type { Journal, Quest, QuestStep } from '../models/Journal';
 import { DigievolutionRegistry } from '../logic/DigievolutionRegistry';
-import { DigimonExperienceCalculator } from '../logic/DigimonExperienceCalculator';
-import { AttributesConverter } from './AttributesConverter';
-import { ResistancesConverter } from './ResistancesConverter';
-import { EquipmentsConverter } from './EquipmentsConverter';
+import { PartySlotsConverter } from './PartySlotsConverter';
 
 /**
  * GameConverter
@@ -20,55 +16,16 @@ export class GameConverter {
         return { ...dto };
     }
 
-    public static toDigimonModel(dto: DTO.DigimonDTO | null): Model.Digimon | null {
-        if (!dto) return null;
 
-        const basicInfo: Model.BasicInfo = {
-            ...dto.basicInfo,
-            // Pre-calculate experience fields for the initial model
-            experienceToReachNextLevel: DigimonExperienceCalculator.getRequiredExpForNextLevel(
-                dto.basicInfo.name,
-                dto.basicInfo.level
-            ),
-            experiencePercentageToReachNextLevel: DigimonExperienceCalculator.getProgressPercentageForNextLevel(
-                dto.basicInfo.name,
-                dto.basicInfo.level,
-                dto.basicInfo.experience
-            )
-        };
-
-        const equipments = EquipmentsConverter.convert(dto.equipments);
-        const activeDigievolutionId = dto.activeDigievolutionId;
-
-        return {
-            slotIndex: dto.slotIndex,
-            basicInfo,
-            attributes: AttributesConverter.convert(dto.attributes, equipments, activeDigievolutionId),
-            resistances: ResistancesConverter.convert(dto.resistances, equipments, activeDigievolutionId),
-            equipments,
-            activeDigievolutionId,
-            equippedDigievolutions: dto.equippedDigievolutions.map(evoDto => {
-                if (!evoDto) return null;
-                return {
-                    id: evoDto.id,
-                    level: evoDto.level,
-                    name: DigievolutionRegistry.getDigievolutionNameById(evoDto.id)
-                };
-            })
-        };
-    }
 
     public static toPartyModel(dto: DTO.PartyDTO | null): Party | null {
         if (!dto) return null;
         return {
-            slots: dto.slots.map(slot => this.toDigimonModel(slot))
+            slots: PartySlotsConverter.convert(dto.slots)
         };
     }
 
-    public static toImportantItemsModel(dto: DTO.ImportantItemsDTO | null): ImportantItems | null {
-        if (!dto) return null;
-        return { ...dto };
-    }
+
 
     public static toConsumableItemsModel(dto: DTO.ConsumableItemsDTO | null): ConsumableItems | null {
         if (!dto) return null;

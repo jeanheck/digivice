@@ -4,13 +4,15 @@ import type { State } from '../models/State'
 import type * as Events from '../dtos/events.dto'
 import { GameConverter } from '../converters/GameConverter'
 import { BasicInfoConverter } from '../converters/BasicInfoConverter'
-import { DigimonUpdater } from '../updaters/DigimonUpdater'
+import { PartySlotsConverter } from '../converters/PartySlotsConverter'
+import { PartySlotsUpdater } from '../updaters/PartySlotsUpdater'
+import { EquippedDigievolutionsConverter } from '../converters/EquippedDigievolutionsConverter'
+import { EquippedDigievolutionsUpdater } from '../updaters/EquippedDigievolutionsUpdater'
 import { BasicInfoUpdater } from '../updaters/BasicInfoUpdater'
 import { PlayerUpdater } from '../updaters/PlayerUpdater'
-import { ItemUpdater } from '../updaters/ItemUpdater'
+import { ImportantItemsConverter } from '../converters/ImportantItemsConverter'
+import { ImportantItemsUpdater } from '../updaters/ImportantItemsUpdater'
 import { JournalUpdater } from '../updaters/JournalUpdater'
-import { AttributesConverter } from '../converters/AttributesConverter'
-import { ResistancesConverter } from '../converters/ResistancesConverter'
 import { EquipmentsConverter } from '../converters/EquipmentsConverter'
 import { EquipmentsUpdater } from '../updaters/EquipmentsUpdater'
 import { ActiveDigievolutionConverter } from '../converters/ActiveDigievolutionConverter'
@@ -34,11 +36,11 @@ export const useGameStore = defineStore('game', () => {
 
     function updateInitialState(event: Events.InitialStateChangedDTO) {
         gameState.value = {
-            player: GameConverter.toPlayerModel(event.initialState.player),
-            party: GameConverter.toPartyModel(event.initialState.party),
-            importantItems: GameConverter.toImportantItemsModel(event.initialState.importantItems),
-            consumableItems: GameConverter.toConsumableItemsModel(event.initialState.consumableItems),
-            journal: GameConverter.toJournalModel(event.initialState.journal)
+            player: GameConverter.toPlayerModel(event.state.player),
+            party: GameConverter.toPartyModel(event.state.party),
+            importantItems: ImportantItemsConverter.convert(event.state.importantItems),
+            consumableItems: GameConverter.toConsumableItemsModel(event.state.consumableItems),
+            journal: GameConverter.toJournalModel(event.state.journal)
         }
     }
 
@@ -57,7 +59,10 @@ export const useGameStore = defineStore('game', () => {
 
     // --- Party & Digimon Actions ---
     function updatePartySlots(event: Events.PartySlotsChangedDTO) {
-        DigimonUpdater.updateParty(gameState.value, event)
+        if (!gameState.value?.party) return
+
+        const slots = PartySlotsConverter.convert(event.party)
+        PartySlotsUpdater.update(gameState.value.party, slots)
     }
 
     function updateDigimonVitals(event: Events.DigimonVitalsChangedDTO) {
@@ -129,7 +134,11 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateDigimonDigievolutions(event: Events.DigimonDigievolutionsChangedDTO) {
-        DigimonUpdater.updateDigievolutions(gameState.value, event)
+        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex)
+        if (!currentDigimon) return
+
+        const newDigievolutions = EquippedDigievolutionsConverter.convert(event.equippedDigievolutions)
+        EquippedDigievolutionsUpdater.update(currentDigimon, newDigievolutions)
     }
 
     function updateDigimonActiveDigievolution(event: Events.DigimonActiveDigievolutionChangedDTO) {
@@ -147,7 +156,10 @@ export const useGameStore = defineStore('game', () => {
 
     // --- Items & Journal ---
     function updateImportantItems(event: Events.ImportantItemsChangedDTO) {
-        ItemUpdater.updateImportantItems(gameState.value, event)
+        if (!gameState.value) return
+
+        const importantItems = ImportantItemsConverter.convert(event.importantItems)
+        ImportantItemsUpdater.update(gameState.value, importantItems)
     }
 
     function updateJournal(event: Events.JournalChangedDTO) {
