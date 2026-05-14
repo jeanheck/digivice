@@ -1,10 +1,10 @@
 import { useI18n } from 'vue-i18n';
-import MainQuestTable from '../data/static/MainQuestTable.json';
-import FolderBagTable from '../data/static/FolderBagTable.json';
-import FishingPoleTable from '../data/static/FishingPoleTable.json';
-import TreeBootsTable from '../data/static/TreeBootsTable.json';
-import ConsumableItemsTable from '../data/static/ConsumableItemsTable.json';
-import ImportantItemsTable from '../data/static/ImportantItemsTable.json';
+import MainQuestTable from '../database/MainQuestTable.json';
+import FolderBagTable from '../database/FolderBagTable.json';
+import FishingPoleTable from '../database/FishingPoleTable.json';
+import TreeBootsTable from '../database/TreeBootsTable.json';
+import ConsumableItemsTable from '../database/ConsumableItemsTable.json';
+import ImportantItemsTable from '../database/ImportantItemsTable.json';
 
 export function useLocalization() {
   const { locale, t } = useI18n();

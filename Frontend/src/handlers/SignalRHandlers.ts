@@ -1,7 +1,7 @@
 import { signalRService } from '../services/SignalRService'
 import { useGameStore } from '../stores/useGameStore'
 import type { GameEventDTOMap } from '../dtos/events.dto'
-import { signalRLogger } from '../utils/logger'
+import { signalRLogger } from '../utils/Logger'
 
 /**
  * Connects SignalR events to Pinia Stores actions using a naming convention:

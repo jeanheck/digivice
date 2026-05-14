@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted } from 'vue'
 import IconClose from '../icons/IconClose.vue'
-import TechniquesTable from '../../data/static/TechniquesTable.json'
-import DigievolutionTechniques from '../../data/static/DigievolutionTechniques.json'
+import TechniquesTable from '../../database/TechniquesTable.json'
+import DigievolutionTechniques from '../../database/DigievolutionTechniques.json'
 import { useLocalization } from '../../composables/useLocalization'
 
 interface TechEntry {

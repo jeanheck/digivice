@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import EquipmentsData from '../../data/static/Equipments.json'
-import DigievolutionData from '../../data/static/Digievolution.json'
+import EquipmentsData from '../../database/Equipments.json'
+import DigievolutionData from '../../database/Digievolution.json'
 import { useLocalization } from '../../composables/useLocalization'
 
 import type { Digimon } from '../../models'

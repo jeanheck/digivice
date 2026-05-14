@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
 
 import type { Digimon } from '../../models'
-import equipmentData from '../../data/static/Equipments.json'
+import equipmentData from '../../database/Equipments.json'
 
 const props = defineProps<{
   digimon: Digimon

@@ -1,4 +1,4 @@
-import digievolutionData from '../data/static/Digievolution.json';
+import digievolutionData from '../database/Digievolution.json';
 
 export class DigievolutionRegistry {
     private static digievolutionNameById: Map<number, string> = new Map();

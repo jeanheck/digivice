@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useGameStore } from '../../stores/useGameStore'
 import { computed, ref } from 'vue'
-import locationsData from '../../data/static/Locations.json'
-import enemiesData from '../../data/static/EnemiesTable.json'
+import locationsData from '../../database/Locations.json'
+import enemiesData from '../../database/EnemiesTable.json'
 import EnemyDetailsModal from './EnemyDetailsModal.vue'
 import { useLocalization } from '../../composables/useLocalization'
 

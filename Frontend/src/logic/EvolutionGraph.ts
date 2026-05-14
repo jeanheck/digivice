@@ -1,5 +1,5 @@
-import DigivolvingRequirementsTable from '../data/static/DigivolvingRequirementsTable.json'
-import DigievolutionTreeData from '../data/static/DigievolutionTree.json'
+import DigivolvingRequirementsTable from '../database/DigivolvingRequirementsTable.json'
+import DigievolutionTreeData from '../database/DigievolutionTree.json'
 
 // --- Types for family chain system ---
 interface TreeEntry {

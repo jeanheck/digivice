@@ -1,4 +1,4 @@
-import experienceTableJson from '../data/static/ExperienceTable.json';
+import experienceTableJson from '../database/ExperienceTable.json';
 import { MathUtils } from '../utils/MathUtils';
 
 interface ExperienceEntry {

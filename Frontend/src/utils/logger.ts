@@ -64,5 +64,4 @@ export const createLogger = (context: string, color?: string) => new Logger(cont
 
 // Default loggers
 export const signalRLogger = createLogger('SignalR', '#3498db') // Blue
-export const storeLogger = createLogger('Store', '#9b59b6')   // Purple
-export const gameLogger = createLogger('Game', '#2ecc71')    // Green
+

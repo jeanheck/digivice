@@ -4,7 +4,7 @@ import { useGameStore } from '../../stores/useGameStore'
 import { useI18n } from 'vue-i18n'
 import { invoke } from '@tauri-apps/api/core'
 import LanguageSelector from '../ui/LanguageSelector.vue'
-import EquipmentsData from '../../data/static/Equipments.json'
+import EquipmentsData from '../../database/Equipments.json'
 import type { Digimon } from '../../models'
 
 const store = useGameStore()

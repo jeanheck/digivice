@@ -3,9 +3,9 @@ import { computed, ref } from 'vue'
 import type { Digimon } from '../../models'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
 import { useLocalization } from '../../composables/useLocalization'
-import DigievolutionData from '../../data/static/Digievolution.json'
-import TechniquesTable from '../../data/static/TechniquesTable.json'
-import DigievolutionTechniques from '../../data/static/DigievolutionTechniques.json'
+import DigievolutionData from '../../database/Digievolution.json'
+import TechniquesTable from '../../database/TechniquesTable.json'
+import DigievolutionTechniques from '../../database/DigievolutionTechniques.json'
 
 const props = defineProps<{
   evolution: { name: string, requirements: EvolutionRequirement[] }
