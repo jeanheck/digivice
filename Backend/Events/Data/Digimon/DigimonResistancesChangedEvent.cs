@@ -1,26 +1,13 @@
 namespace Backend.Events.Data.Digimon;
 
-public class DigimonResistancesChangedEvent : BaseEvent
+public class DigimonResistancesChangedEvent(int partySlotIndex, int fire, int water, int ice, int wind, int thunder, int machine, int dark) : BaseEvent(EventType.DigimonResistancesChanged)
 {
-    public int PartySlotIndex { get; }
-    public int Fire { get; }
-    public int Water { get; }
-    public int Ice { get; }
-    public int Wind { get; }
-    public int Thunder { get; }
-    public int Machine { get; }
-    public int Dark { get; }
-
-    public DigimonResistancesChangedEvent(int partySlotIndex, int fire, int water, int ice, int wind, int thunder, int machine, int dark)
-        : base(EventType.DigimonResistancesChanged)
-    {
-        PartySlotIndex = partySlotIndex;
-        Fire = fire;
-        Water = water;
-        Ice = ice;
-        Wind = wind;
-        Thunder = thunder;
-        Machine = machine;
-        Dark = dark;
-    }
+    public int PartySlotIndex { get; } = partySlotIndex;
+    public int Fire { get; } = fire;
+    public int Water { get; } = water;
+    public int Ice { get; } = ice;
+    public int Wind { get; } = wind;
+    public int Thunder { get; } = thunder;
+    public int Machine { get; } = machine;
+    public int Dark { get; } = dark;
 }

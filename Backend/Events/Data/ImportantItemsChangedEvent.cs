@@ -2,12 +2,7 @@ using Backend.Models;
 
 namespace Backend.Events.Data;
 
-public class ImportantItemsChangedEvent : BaseEvent
+public class ImportantItemsChangedEvent(ImportantItems importantItems) : BaseEvent(EventType.ImportantItemsChanged)
 {
-    public ImportantItems ImportantItems { get; set; }
-
-    public ImportantItemsChangedEvent(ImportantItems importantItems) : base(EventType.ImportantItemsChanged)
-    {
-        ImportantItems = importantItems;
-    }
+    public ImportantItems ImportantItems { get; set; } = importantItems;
 }

@@ -2,15 +2,8 @@ using Backend.Models.Digimons;
 
 namespace Backend.Events.Data.Digimon;
 
-public class DigimonEquipmentsChangedEvent : BaseEvent
+public class DigimonEquipmentsChangedEvent(int partySlotIndex, Equipments equipments) : BaseEvent(EventType.DigimonEquipmentsChanged)
 {
-    public int PartySlotIndex { get; }
-    public Equipments Equipments { get; }
-
-    public DigimonEquipmentsChangedEvent(int partySlotIndex, Equipments equipments)
-        : base(EventType.DigimonEquipmentsChanged)
-    {
-        PartySlotIndex = partySlotIndex;
-        Equipments = equipments;
-    }
+    public int PartySlotIndex { get; } = partySlotIndex;
+    public Equipments Equipments { get; } = equipments;
 }

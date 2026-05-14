@@ -1,13 +1,7 @@
 namespace Backend.Events.Data;
 
-public abstract class BaseEvent
+public abstract class BaseEvent(EventType type)
 {
-    public EventType Type { get; }
-    public DateTime Timestamp { get; }
-
-    protected BaseEvent(EventType type)
-    {
-        Type = type;
-        Timestamp = DateTime.UtcNow;
-    }
+    public EventType Type { get; } = type;
+    public DateTime Timestamp { get; } = DateTime.UtcNow;
 }

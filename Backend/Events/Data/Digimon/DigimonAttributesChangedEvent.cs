@@ -1,24 +1,12 @@
 namespace Backend.Events.Data.Digimon;
 
-public class DigimonAttributesChangedEvent : BaseEvent
+public class DigimonAttributesChangedEvent(int partySlotIndex, int strength, int defense, int spirit, int wisdom, int speed, int charisma) : BaseEvent(EventType.DigimonAttributesChanged)
 {
-    public int PartySlotIndex { get; }
-    public int Strength { get; }
-    public int Defense { get; }
-    public int Spirit { get; }
-    public int Wisdom { get; }
-    public int Speed { get; }
-    public int Charisma { get; }
-
-    public DigimonAttributesChangedEvent(int partySlotIndex, int strength, int defense, int spirit, int wisdom, int speed, int charisma)
-        : base(EventType.DigimonAttributesChanged)
-    {
-        PartySlotIndex = partySlotIndex;
-        Strength = strength;
-        Defense = defense;
-        Spirit = spirit;
-        Wisdom = wisdom;
-        Speed = speed;
-        Charisma = charisma;
-    }
+    public int PartySlotIndex { get; } = partySlotIndex;
+    public int Strength { get; } = strength;
+    public int Defense { get; } = defense;
+    public int Spirit { get; } = spirit;
+    public int Wisdom { get; } = wisdom;
+    public int Speed { get; } = speed;
+    public int Charisma { get; } = charisma;
 }

@@ -1,11 +1,6 @@
 namespace Backend.Events.Data;
 
-public class PartySlotsChangedEvent : BaseEvent
+public class PartySlotsChangedEvent(List<Models.Digimon> newParty) : BaseEvent(EventType.PartySlotsChanged)
 {
-    public List<Models.Digimon> NewParty { get; }
-
-    public PartySlotsChangedEvent(List<Models.Digimon> newParty) : base(EventType.PartySlotsChanged)
-    {
-        NewParty = newParty;
-    }
+    public List<Models.Digimon> NewParty { get; } = newParty;
 }

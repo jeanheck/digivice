@@ -1,11 +1,6 @@
 namespace Backend.Events.Data;
 
-public class ConnectionStatusChangedEvent : BaseEvent
+public class ConnectionStatusChangedEvent(bool isConnected) : BaseEvent(EventType.ConnectionStatusChanged)
 {
-    public bool IsConnected { get; }
-
-    public ConnectionStatusChangedEvent(bool isConnected) : base(EventType.ConnectionStatusChanged)
-    {
-        IsConnected = isConnected;
-    }
+    public bool IsConnected { get; } = isConnected;
 }
