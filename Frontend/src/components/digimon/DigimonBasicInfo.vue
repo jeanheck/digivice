@@ -2,11 +2,11 @@
 import ExperienceProgressBar from '../ui/ExperienceProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
 import DigimonIcon from '../ui/DigimonIcon.vue'
-import type { Digimon } from '../../models'
+import type { BasicInfo } from '../../models'
 import { ProgressBarTypes } from '@/types/ui'
 
 const props = defineProps<{
-  digimon: Digimon
+  basicInfo: BasicInfo
 }>()
 </script>
 
@@ -23,23 +23,23 @@ const props = defineProps<{
       <div class="flex items-start gap-4">
         
         <!-- Icon Image using Vite dynamic URL -->
-        <DigimonIcon :digimon-name="digimon.basicInfo.name" class="w-16 h-16" />
+        <DigimonIcon :digimon-name="basicInfo.name" class="w-16 h-16" />
 
         <div class="flex-1 flex flex-col gap-1 min-w-0">
           <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
-            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimon.basicInfo.name }}</h2>
+            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ basicInfo.name }}</h2>
             
             <div class="relative flex items-center justify-center flex-shrink-0">
               <span class="text-[0.6rem] font-medium text-yellow-500">
-                {{ $t('common.level') }} {{ digimon.basicInfo.level }}
+                {{ $t('common.level') }} {{ basicInfo.level }}
               </span>
             </div>
           </div>
           
           <ExperienceProgressBar 
-            :experience-to-reach-next-level="digimon.basicInfo.experienceToReachNextLevel"
-            :experience-percentage-to-reach-next-level="digimon.basicInfo.experiencePercentageToReachNextLevel"
-            :current-experience="digimon.basicInfo.experience" 
+            :experience-to-reach-next-level="basicInfo.experienceToReachNextLevel"
+            :experience-percentage-to-reach-next-level="basicInfo.experiencePercentageToReachNextLevel"
+            :experience="basicInfo.experience" 
           />
         </div>
       </div>
@@ -47,13 +47,13 @@ const props = defineProps<{
       <!-- Status Bars -->
       <div class="flex flex-col gap-2 mt-2">
          <ProgressBar 
-            :current-value="digimon.basicInfo.currentHP" 
-            :max-value="digimon.basicInfo.maxHP" 
+            :current-value="basicInfo.currentHP" 
+            :max-value="basicInfo.maxHP" 
             :type=ProgressBarTypes.HP
           />
           <ProgressBar 
-            :current-value="digimon.basicInfo.currentMP" 
-            :max-value="digimon.basicInfo.maxMP" 
+            :current-value="basicInfo.currentMP" 
+            :max-value="basicInfo.maxMP" 
             :type=ProgressBarTypes.MP
           />
       </div>

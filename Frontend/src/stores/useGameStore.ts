@@ -14,6 +14,11 @@ export const useGameStore = defineStore('game', () => {
     const isConnected = ref(false)
     const gameState = ref<State | null>(null)
 
+    // --- Helpers ---
+    function getDigimonOnPartySlot(slotIndex: number) {
+        return gameState.value?.party?.slots[slotIndex] ?? null
+    }
+
     // --- Status & Sync ---
     function updateConnectionStatus(event: Events.ConnectionStatusChangedDTO) {
         isConnected.value = event.isConnected
@@ -48,10 +53,8 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateDigimonVitals(event: Events.DigimonVitalsChangedDTO) {
-        const currentDigimon = gameState.value?.party?.slots[event.partySlotIndex]
-        if (!currentDigimon) {
-            return;
-        }
+        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex)
+        if (!currentDigimon) return
 
         const newBasicInfo = BasicInfoConverter.convert(currentDigimon.basicInfo, {
             currentHP: event.currentHP,
@@ -64,10 +67,8 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateDigimonExperience(event: Events.DigimonExperienceChangedDTO) {
-        const currentDigimon = gameState.value?.party?.slots[event.partySlotIndex]
-        if (!currentDigimon) {
-            return;
-        }
+        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex)
+        if (!currentDigimon) return
 
         const newBasicInfo = BasicInfoConverter.convert(currentDigimon.basicInfo, {
             experience: event.experience
@@ -77,7 +78,7 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateDigimonLevel(event: Events.DigimonLevelChangedDTO) {
-        const currentDigimon = gameState.value?.party?.slots[event.partySlotIndex]
+        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex)
         if (!currentDigimon) return
 
         const newBasicInfo = BasicInfoConverter.convert(currentDigimon.basicInfo, {

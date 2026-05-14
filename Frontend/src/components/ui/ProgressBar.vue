@@ -7,8 +7,6 @@ const props = defineProps<{
   currentValue: number;
   maxValue: number;
   type?: ProgressBarTypes;
-  colorClass?: string;
-  label?: string;
 }>();
 
 const percentage = computed(() => {
@@ -16,15 +14,9 @@ const percentage = computed(() => {
 });
 
 const barColorClass = computed(() => {
-    // If a specific color class is provided, it takes precedence
-    if (props.colorClass) {
-        return props.colorClass;
-    }
-
     if (props.type === ProgressBarTypes.HP) {
         return percentage.value <= 30 ? 'bg-red-500' : 'bg-green-500';
     }
-
     if (props.type === ProgressBarTypes.MP) {
         return percentage.value <= 30 ? 'bg-yellow-400' : 'bg-blue-600';
     }
@@ -42,7 +34,7 @@ const barColorClass = computed(() => {
     ></div>
     
     <span class="relative z-10 text-[0.6rem] font-bold text-white drop-shadow-md px-1 tracking-wider">
-      {{ label || `${currentValue} / ${maxValue}` }}
+      {{ `${currentValue} / ${maxValue}` }}
     </span>
   </div>
 </template>

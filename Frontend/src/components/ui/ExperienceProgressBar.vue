@@ -1,11 +1,6 @@
 <script setup lang="ts">
-/**
- * ExperienceProgressBar
- * Purely presentational component.
- * Receives pre-calculated experience data from the domain model.
- */
 defineProps<{
-  currentExperience: number;
+  experience: number;
   experienceToReachNextLevel: number;
   experiencePercentageToReachNextLevel: number;
 }>();
@@ -21,7 +16,7 @@ defineProps<{
     
     <!-- Text Overlay -->
     <span class="relative z-10 text-[0.6rem] font-bold text-white drop-shadow-md px-1 tracking-wider">
-      EXP: {{ currentExperience }} / {{ experienceToReachNextLevel }}
+      EXP: {{ experience }} / {{ experienceToReachNextLevel }}
     </span>
   </div>
 </template>
