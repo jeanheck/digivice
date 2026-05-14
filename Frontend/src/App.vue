@@ -87,7 +87,12 @@ const handleCloseQuestModal = () => {
     </div>
 
     <!-- Bottom Section: Player Info -->
-    <PlayerFooter />
+    <PlayerFooter 
+      :player-name="store.gameState?.player?.name ?? $t('common.connecting')"
+      :bits="store.gameState?.player?.bits ?? 0"
+      :group-charisma="store.gameState?.party?.groupCharisma ?? 0"
+      :is-connected="store.isConnected"
+    />
 
     <!-- Overlays -->
     <QuestDetailsModal 

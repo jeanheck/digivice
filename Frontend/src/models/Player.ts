@@ -8,4 +8,5 @@ export interface Player {
 
 export interface Party {
     slots: (Digimon | null)[];
+    groupCharisma: number;
 }
