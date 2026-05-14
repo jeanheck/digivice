@@ -11,10 +11,12 @@ import { ItemUpdater } from '../updaters/ItemUpdater'
 import { JournalUpdater } from '../updaters/JournalUpdater'
 import { AttributesConverter } from '../converters/AttributesConverter'
 import { ResistancesConverter } from '../converters/ResistancesConverter'
-import { AttributesUpdater } from '../updaters/AttributesUpdater'
-import { ResistancesUpdater } from '../updaters/ResistancesUpdater'
 import { EquipmentsConverter } from '../converters/EquipmentsConverter'
 import { EquipmentsUpdater } from '../updaters/EquipmentsUpdater'
+import { ActiveDigievolutionConverter } from '../converters/ActiveDigievolutionConverter'
+import { ActiveDigievolutionUpdater } from '../updaters/ActiveDigievolutionUpdater'
+import { AttributesStateManager } from '../stateManagers/AttributesStateManager'
+import { ResistancesStateManager } from '../stateManagers/ResistancesStateManager'
 
 export const useGameStore = defineStore('game', () => {
     const isConnected = ref(false)
@@ -100,13 +102,7 @@ export const useGameStore = defineStore('game', () => {
             return;
         }
 
-        const newAttributes = AttributesConverter.convert(
-            event,
-            currentDigimon.equipments,
-            currentDigimon.activeDigievolutionId
-        );
-
-        AttributesUpdater.update(currentDigimon, newAttributes);
+        AttributesStateManager.refresh(currentDigimon, event);
     }
 
     function updateDigimonResistances(event: Events.DigimonResistancesChangedDTO) {
@@ -115,13 +111,7 @@ export const useGameStore = defineStore('game', () => {
             return;
         }
 
-        const newResistances = ResistancesConverter.convert(
-            event,
-            currentDigimon.equipments,
-            currentDigimon.activeDigievolutionId
-        );
-
-        ResistancesUpdater.update(currentDigimon, newResistances);
+        ResistancesStateManager.refresh(currentDigimon, event);
     }
 
     function updateDigimonEquipments(event: Events.DigimonEquipmentsChangedDTO) {
@@ -133,6 +123,9 @@ export const useGameStore = defineStore('game', () => {
         const newEquipments = EquipmentsConverter.convert(event.equipments);
 
         EquipmentsUpdater.update(currentDigimon, newEquipments);
+
+        AttributesStateManager.refresh(currentDigimon);
+        ResistancesStateManager.refresh(currentDigimon);
     }
 
     function updateDigimonDigievolutions(event: Events.DigimonDigievolutionsChangedDTO) {
@@ -140,7 +133,16 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateDigimonActiveDigievolution(event: Events.DigimonActiveDigievolutionChangedDTO) {
-        DigimonUpdater.updateActiveDigievolution(gameState.value, event)
+        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex);
+        if (!currentDigimon) {
+            return;
+        }
+
+        const newActiveDigievolutionId = ActiveDigievolutionConverter.convert(event.activeDigievolutionId);
+        ActiveDigievolutionUpdater.update(currentDigimon, newActiveDigievolutionId);
+
+        AttributesStateManager.refresh(currentDigimon);
+        ResistancesStateManager.refresh(currentDigimon);
     }
 
     // --- Items & Journal ---

@@ -32,10 +32,5 @@ export class DigimonUpdater {
         }
     }
 
-    public static updateActiveDigievolution(state: State | null, event: Events.DigimonActiveDigievolutionChangedDTO) {
-        const digimon = state?.party?.slots[event.partySlotIndex];
-        if (digimon) {
-            digimon.activeDigievolutionId = event.activeDigievolutionId;
-        }
-    }
+
 }
