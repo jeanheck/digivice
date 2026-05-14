@@ -15,7 +15,6 @@ namespace Backend.Services
                 Player = playerStateService.GetPlayer(),
                 Party = partyStateService.GetParty(),
                 ImportantItems = itemStateService.GetImportantItems(),
-                ConsumableItems = itemStateService.GetConsumableItems(),
                 Journal = journalStateService.GetJournal()
             };
         }

@@ -6,12 +6,8 @@ import { ResistancesConverter } from './ResistancesConverter';
 import { EquipmentsConverter } from './EquipmentsConverter';
 import { EquippedDigievolutionsConverter } from './EquippedDigievolutionsConverter';
 
-export class PartySlotsConverter {
-    public static convert(digimons: (DTO.DigimonDTO | null)[]): (Model.Digimon | null)[] {
-        return digimons.map(digimon => this.toDigimonModel(digimon));
-    }
-
-    private static toDigimonModel(dto: DTO.DigimonDTO | null): Model.Digimon | null {
+export class DigimonConverter {
+    public static convert(dto: DTO.DigimonDTO | null): Model.Digimon | null {
         if (!dto) return null;
 
         const basicInfo: Model.BasicInfo = {

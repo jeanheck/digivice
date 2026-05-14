@@ -70,21 +70,11 @@ export interface ImportantItemDTO extends ItemDTO {
     has: boolean;
 }
 
-export interface ConsumableItemDTO extends ItemDTO {
-    quantity: number;
-}
-
 export interface ImportantItemsDTO {
     folderBag: ImportantItemDTO;
     treeBoots: ImportantItemDTO;
     fishingPole: ImportantItemDTO;
     redSnapper: ImportantItemDTO;
-}
-
-export interface ConsumableItemsDTO {
-    powerCharge: ConsumableItemDTO;
-    spiderWeb: ConsumableItemDTO;
-    bambooSpear: ConsumableItemDTO;
 }
 
 export interface RequisiteDTO {
@@ -116,7 +106,6 @@ export interface StateDTO {
     player: PlayerDTO | null;
     party: PartyDTO | null;
     importantItems: ImportantItemsDTO | null;
-    consumableItems: ConsumableItemsDTO | null;
     journal: JournalDTO | null;
 }
 

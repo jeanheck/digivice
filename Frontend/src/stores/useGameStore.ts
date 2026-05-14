@@ -2,10 +2,11 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import type { State } from '../models/State'
 import type * as Events from '../dtos/events.dto'
-import { GameConverter } from '../converters/GameConverter'
+import { PlayerConverter } from '../converters/PlayerConverter'
+import { PartyConverter } from '../converters/PartyConverter'
+import { DigimonConverter } from '../converters/DigimonConverter'
+import { PartyUpdater } from '../updaters/PartyUpdater'
 import { BasicInfoConverter } from '../converters/BasicInfoConverter'
-import { PartySlotsConverter } from '../converters/PartySlotsConverter'
-import { PartySlotsUpdater } from '../updaters/PartySlotsUpdater'
 import { EquippedDigievolutionsConverter } from '../converters/EquippedDigievolutionsConverter'
 import { EquippedDigievolutionsUpdater } from '../updaters/EquippedDigievolutionsUpdater'
 import { BasicInfoUpdater } from '../updaters/BasicInfoUpdater'
@@ -37,10 +38,9 @@ export const useGameStore = defineStore('game', () => {
 
     function updateInitialState(event: Events.InitialStateChangedDTO) {
         gameState.value = {
-            player: GameConverter.toPlayerModel(event.state.player),
-            party: GameConverter.toPartyModel(event.state.party),
+            player: PlayerConverter.convert(event.state.player),
+            party: PartyConverter.convert(event.state.party),
             importantItems: ImportantItemsConverter.convert(event.state.importantItems),
-            consumableItems: GameConverter.toConsumableItemsModel(event.state.consumableItems),
             journal: JournalConverter.convert(event.state.journal)
         }
     }
@@ -62,8 +62,8 @@ export const useGameStore = defineStore('game', () => {
     function updatePartySlots(event: Events.PartySlotsChangedDTO) {
         if (!gameState.value?.party) return
 
-        const slots = PartySlotsConverter.convert(event.party)
-        PartySlotsUpdater.update(gameState.value.party, slots)
+        const slots = event.party.map(dto => DigimonConverter.convert(dto))
+        PartyUpdater.update(gameState.value.party, slots)
     }
 
     function updateDigimonVitals(event: Events.DigimonVitalsChangedDTO) {
