@@ -1,8 +1,6 @@
 using Backend.Events.Data;
 using Backend.Events.Data.Digimon;
 using Backend.Models;
-using Backend.Models.Quests;
-using Backend.Models.Digimons;
 
 namespace Backend.Events.Services;
 

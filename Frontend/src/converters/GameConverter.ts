@@ -1,4 +1,4 @@
-import type * as DTO from '../dtos/models.dto';
+import type * as DTO from '../dtos/events.dto';
 import type * as Model from '../models/Digimon';
 import type { Player, Party } from '../models/Player';
 import type { ImportantItems, ConsumableItems } from '../models/Items';
@@ -10,7 +10,7 @@ import { DigievolutionRegistry } from '../logic/DigievolutionRegistry';
  * Responsible for transforming raw DTOs from the backend into rich Domain Models for the UI.
  */
 export class GameConverter {
-    
+
     public static toPlayerModel(dto: DTO.PlayerDTO | null): Player | null {
         if (!dto) return null;
         return { ...dto };

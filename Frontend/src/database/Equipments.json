@@ -5351,6 +5351,11 @@
                     "Attribute": "Charisma",
                     "Type": "Addition",
                     "Value": 36
+                },
+                {
+                    "Attribute": "Wind",
+                    "Type": "Addition",
+                    "Value": 10
                 }
             ],
             "EquipableDigimon": [

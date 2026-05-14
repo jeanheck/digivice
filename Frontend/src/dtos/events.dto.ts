@@ -1,15 +1,125 @@
-import type { 
-    DigimonDTO, 
-    StateDTO, 
-    ImportantItemsDTO, 
-    JournalDTO,
-    AttributesDTO,
-    ResistancesDTO,
-    EquipmentsDTO,
-    DigievolutionDTO
-} from './models.dto';
+export interface BasicInfoDTO {
+    name: string;
+    level: number;
+    experience: number;
+    currentHP: number;
+    maxHP: number;
+    currentMP: number;
+    maxMP: number;
+}
 
-// --- Player Events ---
+export interface AttributesDTO {
+    strength: number;
+    defense: number;
+    spirit: number;
+    wisdom: number;
+    speed: number;
+    charisma: number;
+}
+
+export interface ResistancesDTO {
+    fire: number;
+    water: number;
+    ice: number;
+    wind: number;
+    thunder: number;
+    machine: number;
+    dark: number;
+}
+
+export interface EquipmentsDTO {
+    head: number;
+    body: number;
+    rightHand: number;
+    leftHand: number;
+    accessory1: number;
+    accessory2: number;
+}
+
+export interface DigievolutionDTO {
+    id: number;
+    level: number;
+}
+
+export interface DigimonDTO {
+    slotIndex: number;
+    basicInfo: BasicInfoDTO;
+    attributes: AttributesDTO;
+    resistances: ResistancesDTO;
+    equipments: EquipmentsDTO;
+    activeDigievolutionId: number | null;
+    equippedDigievolutions: (DigievolutionDTO | null)[];
+}
+
+export interface PlayerDTO {
+    name: string;
+    bits: number;
+    mapId: string;
+}
+
+export interface PartyDTO {
+    slots: (DigimonDTO | null)[];
+}
+
+export interface ItemDTO {
+    id: string;
+    name: string;
+}
+
+export interface ImportantItemDTO extends ItemDTO {
+    has: boolean;
+}
+
+export interface ConsumableItemDTO extends ItemDTO {
+    quantity: number;
+}
+
+export interface ImportantItemsDTO {
+    folderBag: ImportantItemDTO;
+    treeBoots: ImportantItemDTO;
+    fishingPole: ImportantItemDTO;
+    redSnapper: ImportantItemDTO;
+}
+
+export interface ConsumableItemsDTO {
+    powerCharge: ConsumableItemDTO;
+    spiderWeb: ConsumableItemDTO;
+    bambooSpear: ConsumableItemDTO;
+}
+
+export interface RequisiteDTO {
+    description: string;
+    isDone: boolean;
+    itemKey?: string;
+}
+
+export interface QuestStepDTO {
+    number: number;
+    isCompleted: boolean;
+    prerequisites?: RequisiteDTO[];
+}
+
+export interface QuestDTO {
+    id: string;
+    title: string;
+    description: string;
+    prerequisites: RequisiteDTO[];
+    steps: QuestStepDTO[];
+}
+
+export interface JournalDTO {
+    mainQuest: QuestDTO | null;
+    sideQuests: QuestDTO[];
+}
+
+export interface StateDTO {
+    player: PlayerDTO | null;
+    party: PartyDTO | null;
+    importantItems: ImportantItemsDTO | null;
+    consumableItems: ConsumableItemsDTO | null;
+    journal: JournalDTO | null;
+}
+
 export interface ConnectionStatusChangedDTO {
     isConnected: boolean;
 }
@@ -30,7 +140,6 @@ export interface PlayerLocationChangedDTO {
     location: string;
 }
 
-// --- Party & Digimon Events ---
 export interface PartySlotsChangedDTO {
     newParty: (DigimonDTO | null)[];
 }
@@ -55,12 +164,25 @@ export interface DigimonLevelChangedDTO {
     newLevel: number;
 }
 
-export interface DigimonAttributesChangedDTO extends AttributesDTO {
+export interface DigimonAttributesChangedDTO {
     partySlotIndex: number;
+    strength: number;
+    defense: number;
+    spirit: number;
+    wisdom: number;
+    speed: number;
+    charisma: number;
 }
 
-export interface DigimonResistancesChangedDTO extends ResistancesDTO {
+export interface DigimonResistancesChangedDTO {
     partySlotIndex: number;
+    fire: number;
+    water: number;
+    ice: number;
+    wind: number;
+    thunder: number;
+    machine: number;
+    dark: number;
 }
 
 export interface DigimonEquipmentsChangedDTO {
@@ -78,7 +200,6 @@ export interface DigimonActiveDigievolutionChangedDTO {
     activeDigievolutionId: number | null;
 }
 
-// --- Items & Journal ---
 export interface ImportantItemsChangedDTO {
     importantItems: ImportantItemsDTO | null;
 }
@@ -87,9 +208,6 @@ export interface JournalChangedDTO {
     journal: JournalDTO | null;
 }
 
-/**
- * Master Map of all SignalR events and their respective DTO payloads.
- */
 export interface GameEventDTOMap {
     ConnectionStatusChanged: ConnectionStatusChangedDTO;
     InitialStateChanged: InitialStateChangedDTO;

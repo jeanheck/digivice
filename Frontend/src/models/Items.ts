@@ -12,14 +12,14 @@ export interface ConsumableItem extends Item {
 }
 
 export interface ImportantItems {
-    folderBag: ImportantItem | null;
-    treeBoots: ImportantItem | null;
-    fishingPole: ImportantItem | null;
-    redSnapper: ImportantItem | null;
+    folderBag: ImportantItem;
+    treeBoots: ImportantItem;
+    fishingPole: ImportantItem;
+    redSnapper: ImportantItem;
 }
 
 export interface ConsumableItems {
-    powerCharge: ConsumableItem | null;
-    spiderWeb: ConsumableItem | null;
-    bambooSpear: ConsumableItem | null;
+    powerCharge: ConsumableItem;
+    spiderWeb: ConsumableItem;
+    bambooSpear: ConsumableItem;
 }
