@@ -1,19 +1,15 @@
-import EquipmentsData from '../database/Equipments.json';
 import DigievolutionData from '../database/Digievolution.json';
-import { DigimonStatusType, type Attributes, type Equipments } from '../models/Digimon';
+import { DigimonStatusType, type Attributes, type Equipments, type Equipament } from '../models/Digimon';
 import type { AttributesDTO } from '../dtos/events.dto';
 import { DigimonStatusConverter } from './DigimonStatusConverter';
 
 export class AttributesConverter {
     public static convert(
         baseAttributes: AttributesDTO,
-        equipments: Equipments | Record<string, number>,
+        equipments: Equipments,
         activeDigievolutionId: number | null
     ): Attributes {
-        const equipmentsIds = Object.values(equipments).filter(id => id > 0);
-        const filteredEquipments = equipmentsIds
-            .map(id => EquipmentsData.equipments.find(e => e.Id === id))
-            .filter(i => i);
+        const filteredEquipments = Object.values(equipments).filter(e => e !== null) as Equipament[];
 
         let activeDigievolution = null;
         if (activeDigievolutionId) {

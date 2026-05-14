@@ -1,14 +1,14 @@
-import type { DigimonStatusType } from "@/models";
+import { EquipamentType, EquipamentsAttributesOperationType, type DigimonStatusType, type Equipament } from "../models/Digimon";
 
 export class DigimonStatusCalculator {
     public static calculateBonusFromEquipaments(
         digimonStatusType: DigimonStatusType,
-        activeEquipaments: any[]): number {
+        activeEquipaments: Equipament[]): number {
         let total = 0;
 
         const uniqueItems = activeEquipaments.filter((item, index, self) => {
-            if (item.Type === "WeaponTwoHanded") {
-                return self.findIndex((i: any) => i.Id === item.Id) === index;
+            if (item.type === EquipamentType.WeaponTwoHanded) {
+                return self.findIndex((i: Equipament) => i.id === item.id) === index;
             }
             return true;
         });
@@ -16,13 +16,13 @@ export class DigimonStatusCalculator {
         const lowerCaseTarget = digimonStatusType.toLowerCase();
 
         uniqueItems.forEach(item => {
-            if (item.Attributes) {
-                item.Attributes.forEach((attr: any) => {
-                    if (attr.Attribute?.toLowerCase() === lowerCaseTarget) {
-                        if (attr.Type === "Addition") {
-                            total += attr.Value;
-                        } else if (attr.Type === "Subtraction") {
-                            total -= attr.Value;
+            if (item.attributes) {
+                item.attributes.forEach((attr) => {
+                    if (attr.attribute.toLowerCase() === lowerCaseTarget) {
+                        if (attr.type === EquipamentsAttributesOperationType.Addition) {
+                            total += attr.value;
+                        } else if (attr.type === EquipamentsAttributesOperationType.Subtraction) {
+                            total -= attr.value;
                         }
                     }
                 });

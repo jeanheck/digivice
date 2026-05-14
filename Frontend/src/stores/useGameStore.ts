@@ -13,6 +13,8 @@ import { AttributesConverter } from '../converters/AttributesConverter'
 import { ResistancesConverter } from '../converters/ResistancesConverter'
 import { AttributesUpdater } from '../updaters/AttributesUpdater'
 import { ResistancesUpdater } from '../updaters/ResistancesUpdater'
+import { EquipmentsConverter } from '../converters/EquipmentsConverter'
+import { EquipmentsUpdater } from '../updaters/EquipmentsUpdater'
 
 export const useGameStore = defineStore('game', () => {
     const isConnected = ref(false)
@@ -99,8 +101,8 @@ export const useGameStore = defineStore('game', () => {
         }
 
         const newAttributes = AttributesConverter.convert(
-            event, 
-            currentDigimon.equipments, 
+            event,
+            currentDigimon.equipments,
             currentDigimon.activeDigievolutionId
         );
 
@@ -123,7 +125,14 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateDigimonEquipments(event: Events.DigimonEquipmentsChangedDTO) {
-        DigimonUpdater.updateEquipments(gameState.value, event)
+        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex);
+        if (!currentDigimon) {
+            return;
+        }
+
+        const newEquipments = EquipmentsConverter.convert(event.equipments);
+
+        EquipmentsUpdater.update(currentDigimon, newEquipments);
     }
 
     function updateDigimonDigievolutions(event: Events.DigimonDigievolutionsChangedDTO) {

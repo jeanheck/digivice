@@ -63,13 +63,45 @@ export interface Resistances {
     dark: DigimonStatus;
 }
 
+export enum EquipamentType {
+    WeaponSingleHanded = "WeaponSingleHanded",
+    BodyArmor = "BodyArmor",
+    WeaponTwoHanded = "WeaponTwoHanded",
+    Shield = "Shield",
+    Head = "Head",
+    Accessory = "Accessory",
+    Unknown = "Unknown",
+    Empty = "Empty"
+}
+
+export enum EquipamentsAttributesOperationType {
+    Addition = "Addition",
+    Subtraction = "Subtraction"
+}
+
+export interface EquipamentsAttributes {
+    attribute: DigimonStatusType;
+    type: EquipamentsAttributesOperationType;
+    value: number;
+}
+
+export interface Equipament {
+    id: number;
+    name: Record<string, string>;
+    type: EquipamentType;
+    typeDescription: Record<string, string> | null;
+    attributes: EquipamentsAttributes[];
+    equipableDigimon: string[];
+    note?: Record<string, string>;
+}
+
 export interface Equipments {
-    head: number;
-    body: number;
-    rightHand: number;
-    leftHand: number;
-    accessory1: number;
-    accessory2: number;
+    head: Equipament | null;
+    body: Equipament | null;
+    rightHand: Equipament | null;
+    leftHand: Equipament | null;
+    accessory1: Equipament | null;
+    accessory2: Equipament | null;
 }
 
 export interface Digievolution {

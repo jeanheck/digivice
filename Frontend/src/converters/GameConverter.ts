@@ -7,6 +7,7 @@ import { DigievolutionRegistry } from '../logic/DigievolutionRegistry';
 import { DigimonExperienceCalculator } from '../logic/DigimonExperienceCalculator';
 import { AttributesConverter } from './AttributesConverter';
 import { ResistancesConverter } from './ResistancesConverter';
+import { EquipmentsConverter } from './EquipmentsConverter';
 
 /**
  * GameConverter
@@ -36,7 +37,7 @@ export class GameConverter {
             )
         };
 
-        const equipments = { ...dto.equipments };
+        const equipments = EquipmentsConverter.convert(dto.equipments);
         const activeDigievolutionId = dto.activeDigievolutionId;
 
         return {

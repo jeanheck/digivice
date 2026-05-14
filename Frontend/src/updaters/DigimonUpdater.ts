@@ -17,12 +17,6 @@ export class DigimonUpdater {
     }
 
 
-    public static updateEquipments(state: State | null, event: Events.DigimonEquipmentsChangedDTO) {
-        const digimon = state?.party?.slots[event.partySlotIndex];
-        if (digimon) {
-            digimon.equipments = { ...event.equipments };
-        }
-    }
 
     public static updateDigievolutions(state: State | null, event: Events.DigimonDigievolutionsChangedDTO) {
         const digimon = state?.party?.slots[event.partySlotIndex];

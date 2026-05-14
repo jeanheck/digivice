@@ -24,7 +24,7 @@ const isGridModalOpen = ref(false)
     <DigimonDetails 
       :attributes="digimon.attributes" 
       :resistances="digimon.resistances" />
-    <DigimonEquipments :digimon="digimon" />
+    <DigimonEquipments :equipments="digimon.equipments" />
 
     <div 
       class="flex items-center justify-center bg-[#000a2b] border-2 border-[#00154a] rounded shadow-inner py-1.5 mt-auto cursor-pointer hover:bg-[#001233] transition-colors"
