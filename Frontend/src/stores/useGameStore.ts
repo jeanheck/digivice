@@ -9,6 +9,10 @@ import { BasicInfoUpdater } from '../updaters/BasicInfoUpdater'
 import { PlayerUpdater } from '../updaters/PlayerUpdater'
 import { ItemUpdater } from '../updaters/ItemUpdater'
 import { JournalUpdater } from '../updaters/JournalUpdater'
+import { AttributesConverter } from '../converters/AttributesConverter'
+import { ResistancesConverter } from '../converters/ResistancesConverter'
+import { AttributesUpdater } from '../updaters/AttributesUpdater'
+import { ResistancesUpdater } from '../updaters/ResistancesUpdater'
 
 export const useGameStore = defineStore('game', () => {
     const isConnected = ref(false)
@@ -89,11 +93,40 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateDigimonAttributes(event: Events.DigimonAttributesChangedDTO) {
-        DigimonUpdater.updateAttributes(gameState.value, event)
+        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex);
+        if (!currentDigimon) {
+            return;
+        }
+
+        const newAttributes = AttributesConverter.convert(currentDigimon.attributes, {
+            strength: event.strength,
+            defense: event.defense,
+            spirit: event.spirit,
+            wisdom: event.wisdom,
+            speed: event.speed,
+            charisma: event.charisma
+        });
+
+        AttributesUpdater.update(currentDigimon, newAttributes);
     }
 
     function updateDigimonResistances(event: Events.DigimonResistancesChangedDTO) {
-        DigimonUpdater.updateResistances(gameState.value, event)
+        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex);
+        if (!currentDigimon) {
+            return;
+        }
+
+        const newResistances = ResistancesConverter.convert(currentDigimon.resistances, {
+            fire: event.fire,
+            water: event.water,
+            ice: event.ice,
+            wind: event.wind,
+            thunder: event.thunder,
+            machine: event.machine,
+            dark: event.dark
+        });
+
+        ResistancesUpdater.update(currentDigimon, newResistances);
     }
 
     function updateDigimonEquipments(event: Events.DigimonEquipmentsChangedDTO) {

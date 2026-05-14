@@ -16,32 +16,6 @@ export class DigimonUpdater {
         }
     }
 
-    public static updateAttributes(state: State | null, event: Events.DigimonAttributesChangedDTO) {
-        const digimon = state?.party?.slots[event.partySlotIndex];
-        if (digimon) {
-            const attrs = digimon.attributes;
-            attrs.strength = event.strength;
-            attrs.defense = event.defense;
-            attrs.spirit = event.spirit;
-            attrs.wisdom = event.wisdom;
-            attrs.speed = event.speed;
-            attrs.charisma = event.charisma;
-        }
-    }
-
-    public static updateResistances(state: State | null, event: Events.DigimonResistancesChangedDTO) {
-        const digimon = state?.party?.slots[event.partySlotIndex];
-        if (digimon) {
-            const res = digimon.resistances;
-            res.fire = event.fire;
-            res.water = event.water;
-            res.ice = event.ice;
-            res.wind = event.wind;
-            res.thunder = event.thunder;
-            res.machine = event.machine;
-            res.dark = event.dark;
-        }
-    }
 
     public static updateEquipments(state: State | null, event: Events.DigimonEquipmentsChangedDTO) {
         const digimon = state?.party?.slots[event.partySlotIndex];
