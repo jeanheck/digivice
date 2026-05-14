@@ -6,3 +6,4 @@ Por favor, siga estas práticas rigorosamente ao trabalhar neste projeto:
 2. **Ponto e Vírgula**: Use sempre ponto e vírgula (`;`) no final das instruções/linhas.
 3. **Ifs em Bloco**: Não use `if` inline (sem chaves). Sempre utilize blocos `{ }` explícitos para suas condições, mesmo quando houver apenas uma linha de instrução.
 4. **Evite comentários**: Não incluia comentários em códigos onde o contexto do próprio código é auto explicativo. Apenas utilize comentários em situações de funções complexas. Quando utilizar, escreva-os em inglês.
+5. **Converters**: Ao criar um conversor, o padrão do nome deve ser "{AlgumaCoisa}Converter.ts". E a única função da class deve ser uma função chamada "convert" (salvo exceções que também tenham funções privadas).

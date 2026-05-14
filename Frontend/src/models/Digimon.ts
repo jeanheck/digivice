@@ -16,23 +16,31 @@ export interface BasicInfo {
     experiencePercentageToReachNextLevel: number;
 }
 
+export interface DigimonStatus {
+    type: string;
+    fromDigimon: number;
+    fromEquipaments: number;
+    fromDigievolution: number;
+    sumBetweenDigimonAndEquipaments: number;
+}
+
 export interface Attributes {
-    strength: number;
-    defense: number;
-    spirit: number;
-    wisdom: number;
-    speed: number;
-    charisma: number;
+    strength: DigimonStatus;
+    defense: DigimonStatus;
+    spirit: DigimonStatus;
+    wisdom: DigimonStatus;
+    speed: DigimonStatus;
+    charisma: DigimonStatus;
 }
 
 export interface Resistances {
-    fire: number;
-    water: number;
-    ice: number;
-    wind: number;
-    thunder: number;
-    machine: number;
-    dark: number;
+    fire: DigimonStatus;
+    water: DigimonStatus;
+    ice: DigimonStatus;
+    wind: DigimonStatus;
+    thunder: DigimonStatus;
+    machine: DigimonStatus;
+    dark: DigimonStatus;
 }
 
 export interface Equipments {

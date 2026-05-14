@@ -17,14 +17,13 @@ const isGridModalOpen = ref(false)
 <template>
   <div class="flex flex-col h-full w-full bg-[#000e3f] p-4 rounded-md shadow-lg border-2 border-[#0033aa] gap-4">
     <DigimonBasicInfo :basic-info="digimon.basicInfo" />
-    
     <DigimonDigievolutions 
       :equipped-digievolutions="digimon.equippedDigievolutions"
       :active-digievolution-id="digimon.activeDigievolutionId" 
     />
-
-    <DigimonDetails :digimon="digimon" />
-    
+    <DigimonDetails 
+      :attributes="digimon.attributes" 
+      :resistances="digimon.resistances" />
     <DigimonEquipments :digimon="digimon" />
 
     <div 

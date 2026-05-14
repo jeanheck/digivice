@@ -98,14 +98,11 @@ export const useGameStore = defineStore('game', () => {
             return;
         }
 
-        const newAttributes = AttributesConverter.convert(currentDigimon.attributes, {
-            strength: event.strength,
-            defense: event.defense,
-            spirit: event.spirit,
-            wisdom: event.wisdom,
-            speed: event.speed,
-            charisma: event.charisma
-        });
+        const newAttributes = AttributesConverter.convert(
+            event, 
+            currentDigimon.equipments, 
+            currentDigimon.activeDigievolutionId
+        );
 
         AttributesUpdater.update(currentDigimon, newAttributes);
     }
@@ -116,15 +113,11 @@ export const useGameStore = defineStore('game', () => {
             return;
         }
 
-        const newResistances = ResistancesConverter.convert(currentDigimon.resistances, {
-            fire: event.fire,
-            water: event.water,
-            ice: event.ice,
-            wind: event.wind,
-            thunder: event.thunder,
-            machine: event.machine,
-            dark: event.dark
-        });
+        const newResistances = ResistancesConverter.convert(
+            event,
+            currentDigimon.equipments,
+            currentDigimon.activeDigievolutionId
+        );
 
         ResistancesUpdater.update(currentDigimon, newResistances);
     }

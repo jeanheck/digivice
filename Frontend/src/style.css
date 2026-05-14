@@ -41,4 +41,14 @@ body {
 
 .shadow-text-dark {
   filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8));
+}
+
+/* Tooltip transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }

@@ -5,6 +5,8 @@ import type { ImportantItems, ConsumableItems } from '../models/Items';
 import type { Journal, Quest, QuestStep } from '../models/Journal';
 import { DigievolutionRegistry } from '../logic/DigievolutionRegistry';
 import { DigimonExperienceCalculator } from '../logic/DigimonExperienceCalculator';
+import { AttributesConverter } from './AttributesConverter';
+import { ResistancesConverter } from './ResistancesConverter';
 
 /**
  * GameConverter
@@ -34,13 +36,16 @@ export class GameConverter {
             )
         };
 
+        const equipments = { ...dto.equipments };
+        const activeDigievolutionId = dto.activeDigievolutionId;
+
         return {
             slotIndex: dto.slotIndex,
             basicInfo,
-            attributes: { ...dto.attributes },
-            resistances: { ...dto.resistances },
-            equipments: { ...dto.equipments },
-            activeDigievolutionId: dto.activeDigievolutionId,
+            attributes: AttributesConverter.convert(dto.attributes, equipments, activeDigievolutionId),
+            resistances: ResistancesConverter.convert(dto.resistances, equipments, activeDigievolutionId),
+            equipments,
+            activeDigievolutionId,
             equippedDigievolutions: dto.equippedDigievolutions.map(evoDto => {
                 if (!evoDto) return null;
                 return {
