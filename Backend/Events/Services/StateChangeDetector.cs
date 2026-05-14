@@ -157,10 +157,10 @@ public class StateChangeDetector
             events.Add(new DigimonEquipmentsChangedEvent(index, newDigi.Equipments));
         }
 
-        // Compare Equipped Digievolutions
-        if (!Enumerable.SequenceEqual(oldDigi.EquippedDigievolutions, newDigi.EquippedDigievolutions))
+        // Compare Digievolutions
+        if (!Enumerable.SequenceEqual(oldDigi.Digievolutions, newDigi.Digievolutions))
         {
-            events.Add(new DigimonDigievolutionsChangedEvent(index, newDigi.EquippedDigievolutions));
+            events.Add(new DigimonDigievolutionsChangedEvent(index, newDigi.Digievolutions));
         }
 
         // Compare Active Digievolution

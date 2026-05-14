@@ -4,36 +4,36 @@ import { DigimonExperienceCalculator } from '../logic/DigimonExperienceCalculato
 import { AttributesConverter } from './AttributesConverter';
 import { ResistancesConverter } from './ResistancesConverter';
 import { EquipmentsConverter } from './EquipmentsConverter';
-import { EquippedDigievolutionsConverter } from './EquippedDigievolutionsConverter';
+import { DigievolutionsConverter } from './DigievolutionsConverter';
 
 export class DigimonConverter {
-    public static convert(dto: DTO.DigimonDTO | null): Model.Digimon | null {
-        if (!dto) return null;
+    public static convert(digimon: DTO.DigimonDTO | null): Model.Digimon | null {
+        if (!digimon) return null;
 
         const basicInfo: Model.BasicInfo = {
-            ...dto.basicInfo,
+            ...digimon.basicInfo,
             experienceToReachNextLevel: DigimonExperienceCalculator.getRequiredExpForNextLevel(
-                dto.basicInfo.name,
-                dto.basicInfo.level
+                digimon.basicInfo.name,
+                digimon.basicInfo.level
             ),
             experiencePercentageToReachNextLevel: DigimonExperienceCalculator.getProgressPercentageForNextLevel(
-                dto.basicInfo.name,
-                dto.basicInfo.level,
-                dto.basicInfo.experience
+                digimon.basicInfo.name,
+                digimon.basicInfo.level,
+                digimon.basicInfo.experience
             )
         };
 
-        const equipments = EquipmentsConverter.convert(dto.equipments);
-        const activeDigievolutionId = dto.activeDigievolutionId;
+        const equipments = EquipmentsConverter.convert(digimon.equipments);
+        const activeDigievolutionId = digimon.activeDigievolutionId;
 
         return {
-            slotIndex: dto.slotIndex,
+            slotIndex: digimon.slotIndex,
             basicInfo,
-            attributes: AttributesConverter.convert(dto.attributes, equipments, activeDigievolutionId),
-            resistances: ResistancesConverter.convert(dto.resistances, equipments, activeDigievolutionId),
+            attributes: AttributesConverter.convert(digimon.attributes, equipments, activeDigievolutionId),
+            resistances: ResistancesConverter.convert(digimon.resistances, equipments, activeDigievolutionId),
             equipments,
             activeDigievolutionId,
-            equippedDigievolutions: EquippedDigievolutionsConverter.convert(dto.equippedDigievolutions)
+            digievolutions: DigievolutionsConverter.convert(digimon.digievolutions)
         };
     }
 }

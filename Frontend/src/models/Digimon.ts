@@ -4,7 +4,7 @@ export interface Digimon {
     attributes: Attributes;
     resistances: Resistances;
     equipments: Equipments;
-    equippedDigievolutions: (Digievolution | null)[];
+    digievolutions: (Digievolution | null)[];
     activeDigievolutionId: number | null;
 }
 

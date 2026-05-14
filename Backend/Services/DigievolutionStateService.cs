@@ -9,32 +9,32 @@ namespace Backend.Services
         private const int EmptySlotId = -1; // 0xFFFF in memory
         private const int NoDigievolutionId = 0;
 
-        public Digievolution[] GetEquippedDigievolutions(
+        public Digievolution[] GetDigievolutions(
             byte[] logicBlock,
             DigievolutionsAddresses digievolutionsAddresses)
         {
-            ReadOnlySpan<int> digievolutionsEquippedSlotsAddresses = [
-                digievolutionsAddresses.EquipedSlot1,
-                digievolutionsAddresses.EquipedSlot2,
-                digievolutionsAddresses.EquipedSlot3
+            ReadOnlySpan<int> digievolutionsSlotsAddresses = [
+                digievolutionsAddresses.Slot1,
+                digievolutionsAddresses.Slot2,
+                digievolutionsAddresses.Slot3
             ];
-            var equippedDigievolutions = new Digievolution[3];
+            var digievolutions = new Digievolution[3];
 
-            for (int i = 0; i < digievolutionsEquippedSlotsAddresses.Length; i++)
+            for (int i = 0; i < digievolutionsSlotsAddresses.Length; i++)
             {
-                int id = MemoryUtils.ReadInt16FromBlock(logicBlock, digievolutionsEquippedSlotsAddresses[i]);
+                int id = MemoryUtils.ReadInt16FromBlock(logicBlock, digievolutionsSlotsAddresses[i]);
 
                 if (id == EmptySlotId || id == NoDigievolutionId)
                 {
-                    equippedDigievolutions[i] = null;
+                    digievolutions[i] = null;
                     continue;
                 }
 
                 int level = FindDigievolutionLevel(logicBlock, id, digievolutionsAddresses);
-                equippedDigievolutions[i] = new Digievolution { Id = id, Level = level };
+                digievolutions[i] = new Digievolution { Id = id, Level = level };
             }
 
-            return equippedDigievolutions;
+            return digievolutions;
         }
 
         private static int FindDigievolutionLevel(byte[] logicBlock, int id, DigievolutionsAddresses addresses)

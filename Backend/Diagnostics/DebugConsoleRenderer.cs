@@ -114,7 +114,7 @@ namespace Backend.Diagnostics
             sb.Append($"{Gray}   Evos:    {Reset}");
             for (int i = 0; i < 3; i++)
             {
-                var evo = d.EquippedDigievolutions[i];
+                var evo = d.Digievolutions[i];
                 string evoStr = evo != null ? $"{Yellow}[{evo.Id}Lv{evo.Level}]{Reset}" : $"{Gray}[Empty]{Reset}";
                 sb.Append($"S{i + 1}:{evoStr} ");
             }

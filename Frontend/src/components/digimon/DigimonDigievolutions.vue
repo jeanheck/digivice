@@ -1,41 +1,19 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
 import type { Digievolution } from '../../models';
 import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue';
 
 const props = defineProps<{
-  equippedDigievolutions: (Digievolution | null)[];
+  digievolutions: (Digievolution | null)[];
   activeDigievolutionId: number | null;
 }>();
-
-// Simple display interface for the list
-interface DisplayEvolution {
-    id: number;
-    name: string;
-    level: number;
-}
-
-const digievolutions = computed(() => {
-    return (props.equippedDigievolutions || []).map(digievolution => {
-        if (!digievolution) {
-            return null;
-        }
-
-        // Now we just use the name already provided by the Domain Model (via Converter)
-        return {
-            id: digievolution.id,
-            name: digievolution.name,
-            level: digievolution.level
-        };
-    });
-});
 
 // Skills modal state
 const modalOpen = ref(false);
 const selectedDigievolutionName = ref<string | null>(null);
 const selectedLevel = ref(0);
 
-function openSkills(digievolution: DisplayEvolution | null) {
+function openSkills(digievolution: Digievolution | null) {
     if (!digievolution) {
         return;
     }

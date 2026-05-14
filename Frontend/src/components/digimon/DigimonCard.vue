@@ -18,7 +18,7 @@ const isGridModalOpen = ref(false)
   <div class="flex flex-col h-full w-full bg-[#000e3f] p-4 rounded-md shadow-lg border-2 border-[#0033aa] gap-4">
     <DigimonBasicInfo :basic-info="digimon.basicInfo" />
     <DigimonDigievolutions 
-      :equipped-digievolutions="digimon.equippedDigievolutions"
+      :digievolutions="digimon.digievolutions"
       :active-digievolution-id="digimon.activeDigievolutionId" 
     />
     <DigimonDetails 

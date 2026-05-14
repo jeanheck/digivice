@@ -48,7 +48,7 @@ export interface DigimonDTO {
     resistances: ResistancesDTO;
     equipments: EquipmentsDTO;
     activeDigievolutionId: number | null;
-    equippedDigievolutions: (DigievolutionDTO | null)[];
+    digievolutions: (DigievolutionDTO | null)[];
 }
 
 export interface PlayerDTO {
@@ -179,7 +179,7 @@ export interface DigimonEquipmentsChangedDTO {
 
 export interface DigimonDigievolutionsChangedDTO {
     partySlotIndex: number;
-    equippedDigievolutions: (DigievolutionDTO | null)[];
+    digievolutions: (DigievolutionDTO | null)[];
 }
 
 export interface DigimonActiveDigievolutionChangedDTO {

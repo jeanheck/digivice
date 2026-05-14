@@ -82,11 +82,11 @@ namespace Backend.Models.Addresses
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int ActiveDigievolution { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int EquipedSlot1 { get; set; }
+        public int Slot1 { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int EquipedSlot2 { get; set; }
+        public int Slot2 { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int EquipedSlot3 { get; set; }
+        public int Slot3 { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int UnlockedDigievolutionsStart { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]

@@ -7,8 +7,8 @@ import { PartyConverter } from '../converters/PartyConverter'
 import { DigimonConverter } from '../converters/DigimonConverter'
 import { PartyUpdater } from '../updaters/PartyUpdater'
 import { BasicInfoConverter } from '../converters/BasicInfoConverter'
-import { EquippedDigievolutionsConverter } from '../converters/EquippedDigievolutionsConverter'
-import { EquippedDigievolutionsUpdater } from '../updaters/EquippedDigievolutionsUpdater'
+import { DigievolutionsConverter } from '../converters/DigievolutionsConverter'
+import { DigievolutionsUpdater } from '../updaters/DigievolutionsUpdater'
 import { BasicInfoUpdater } from '../updaters/BasicInfoUpdater'
 import { PlayerUpdater } from '../updaters/PlayerUpdater'
 import { ImportantItemsConverter } from '../converters/ImportantItemsConverter'
@@ -26,12 +26,10 @@ export const useGameStore = defineStore('game', () => {
     const isConnected = ref(false)
     const gameState = ref<State | null>(null)
 
-    // --- Helpers ---
     function getDigimonOnPartySlot(slotIndex: number) {
         return gameState.value?.party?.slots[slotIndex] ?? null
     }
 
-    // --- Status & Sync ---
     function updateConnectionStatus(event: Events.ConnectionStatusChangedDTO) {
         isConnected.value = event.isConnected
     }
@@ -45,7 +43,6 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
-    // --- Player Actions ---
     function updatePlayerBits(event: Events.PlayerBitsChangedDTO) {
         PlayerUpdater.updateBits(gameState.value, event)
     }
@@ -58,7 +55,6 @@ export const useGameStore = defineStore('game', () => {
         PlayerUpdater.updateLocation(gameState.value, event)
     }
 
-    // --- Party & Digimon Actions ---
     function updatePartySlots(event: Events.PartySlotsChangedDTO) {
         if (!gameState.value?.party) return
 
@@ -138,8 +134,8 @@ export const useGameStore = defineStore('game', () => {
         const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex)
         if (!currentDigimon) return
 
-        const newDigievolutions = EquippedDigievolutionsConverter.convert(event.equippedDigievolutions)
-        EquippedDigievolutionsUpdater.update(currentDigimon, newDigievolutions)
+        const newDigievolutions = DigievolutionsConverter.convert(event.digievolutions)
+        DigievolutionsUpdater.update(currentDigimon, newDigievolutions)
     }
 
     function updateDigimonActiveDigievolution(event: Events.DigimonActiveDigievolutionChangedDTO) {
@@ -155,7 +151,6 @@ export const useGameStore = defineStore('game', () => {
         ResistancesStateManager.refresh(currentDigimon);
     }
 
-    // --- Items & Journal ---
     function updateImportantItems(event: Events.ImportantItemsChangedDTO) {
         if (!gameState.value) return
 

@@ -49,16 +49,16 @@ namespace Tests.Backend.Services
 
             var addresses = new DigievolutionsAddresses
             {
-                EquipedSlot1 = "2",
-                EquipedSlot2 = "4",
-                EquipedSlot3 = "6",
+                Slot1 = "2",
+                Slot2 = "4",
+                Slot3 = "6",
                 UnlockedDigievolutionsStart = "0x50", // 80 decimal
                 UnlockedDigievolutionEntryStride = "8",
                 MaxUnlockedDigievolutions = "3" // Only check 3 entries
             };
 
             var service = new DigievolutionStateService();
-            var result = service.GetEquippedDigievolutions(block, addresses);
+            var result = service.GetDigievolutions(block, addresses);
 
             Assert.Equal(3, result.Length);
 

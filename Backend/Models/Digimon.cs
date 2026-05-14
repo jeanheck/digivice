@@ -10,7 +10,7 @@ namespace Backend.Models
         public Attributes Attributes { get; set; } = new();
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
-        public Digievolution?[] EquippedDigievolutions { get; set; } = new Digievolution?[3];
+        public Digievolution?[] Digievolutions { get; set; } = new Digievolution?[3];
         public int? ActiveDigievolutionId { get; set; }
 
         public virtual bool Equals(Digimon? other)
@@ -23,7 +23,7 @@ namespace Backend.Models
                    Resistances.Equals(other.Resistances) &&
                    Equipments.Equals(other.Equipments) &&
                    ActiveDigievolutionId == other.ActiveDigievolutionId &&
-                   EquippedDigievolutions.SequenceEqual(other.EquippedDigievolutions);
+                   Digievolutions.SequenceEqual(other.Digievolutions);
         }
 
         public override int GetHashCode()
@@ -35,7 +35,7 @@ namespace Backend.Models
             hash.Add(Resistances);
             hash.Add(Equipments);
             hash.Add(ActiveDigievolutionId);
-            foreach (var d in EquippedDigievolutions)
+            foreach (var d in Digievolutions)
             {
                 hash.Add(d);
             }

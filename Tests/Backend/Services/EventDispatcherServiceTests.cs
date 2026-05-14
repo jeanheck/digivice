@@ -39,7 +39,7 @@ namespace Tests.Backend.Services
                 Attributes = new Attributes { Strength = 10, Defense = 10, Spirit = 10, Wisdom = 10, Speed = 10, Charisma = 10 },
                 Resistances = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
                 Equipments = new Equipments { Head = 0, Body = 0, RightHand = 0, LeftHand = 0, Accessory1 = 0, Accessory2 = 0 },
-                EquippedDigievolutions = new Digievolution?[3] { evo1, null, null }
+                Digievolutions = new Digievolution?[3] { evo1, null, null }
             };
         }
 
@@ -73,7 +73,7 @@ namespace Tests.Backend.Services
                             Attributes = new Attributes { Strength = 15, Defense = 10, Spirit = 10, Wisdom = 10, Speed = 10, Charisma = 10 },
                             Resistances = new Resistances { Fire = 2, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
                             Equipments = new Equipments { Head = 10, Body = 0, RightHand = 0, LeftHand = 0, Accessory1 = 0, Accessory2 = 0 },
-                            EquippedDigievolutions = new Digievolution?[3] { new Digievolution { Id = 5, Level = 2 }, null, null }
+                            Digievolutions = new Digievolution?[3] { new Digievolution { Id = 5, Level = 2 }, null, null }
                         }
                     }
                 },

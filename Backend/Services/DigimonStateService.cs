@@ -37,7 +37,7 @@ namespace Backend.Services
             var (logicBlock, activeDigievolutionId) = gameReader
                 .ReadDigimon(slotIndex, digimonAddress, digievolutions);
             var equippedDigievolutions = digievolutionStateService
-                .GetEquippedDigievolutions(logicBlock, digievolutions);
+                .GetDigievolutions(logicBlock, digievolutions);
 
             return new Digimon
             {
@@ -81,7 +81,7 @@ namespace Backend.Services
                     Accessory1 = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Accessory1),
                     Accessory2 = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Accessory2)
                 },
-                EquippedDigievolutions = equippedDigievolutions
+                Digievolutions = equippedDigievolutions
             };
         }
 

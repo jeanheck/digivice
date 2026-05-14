@@ -1,7 +1,7 @@
 import type { Digimon, Digievolution } from '../models/Digimon';
 
-export class EquippedDigievolutionsUpdater {
+export class DigievolutionsUpdater {
     public static update(digimon: Digimon, newDigievolutions: (Digievolution | null)[]) {
-        digimon.equippedDigievolutions = newDigievolutions;
+        digimon.digievolutions = newDigievolutions;
     }
 }
