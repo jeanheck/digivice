@@ -1,8 +1,7 @@
 import type * as DTO from '../dtos/events.dto';
 import type { Player, Party } from '../models/Player';
 import type { ImportantItems, ConsumableItems } from '../models/Items';
-import type { Journal, Quest, QuestStep } from '../models/Journal';
-import { DigievolutionRegistry } from '../logic/DigievolutionRegistry';
+
 import { PartySlotsConverter } from './PartySlotsConverter';
 
 /**
@@ -32,38 +31,4 @@ export class GameConverter {
         return { ...dto };
     }
 
-    /**
-     * Note: Full Quest enrichment (descriptions/locations) usually happens 
-     * via localization tables. This converter handles the structural mapping.
-     */
-    public static toJournalModel(dto: DTO.JournalDTO | null): Journal | null {
-        if (!dto) return null;
-        return {
-            mainQuest: this.toQuestModel(dto.mainQuest),
-            sideQuests: dto.sideQuests.map(q => this.toQuestModel(q)).filter((q): q is Quest => q !== null)
-        };
-    }
-
-    public static toDigievolutionName(id: number): string {
-        return DigievolutionRegistry.getDigievolutionNameById(id);
-    }
-
-    private static toQuestModel(dto: DTO.QuestDTO | null): Quest | null {
-        if (!dto || !dto.id) return null;
-        return {
-            id: dto.id,
-            title: dto.title,
-            description: dto.description,
-            prerequisites: dto.prerequisites.map(p => ({ ...p })),
-            steps: dto.steps.map(s => this.toQuestStepModel(s))
-        };
-    }
-
-    private static toQuestStepModel(dto: DTO.QuestStepDTO): QuestStep {
-        return {
-            number: dto.number,
-            isCompleted: dto.isCompleted,
-            prerequisites: dto.prerequisites?.map(p => ({ ...p }))
-        };
-    }
 }

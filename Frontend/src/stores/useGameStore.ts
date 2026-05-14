@@ -12,6 +12,7 @@ import { BasicInfoUpdater } from '../updaters/BasicInfoUpdater'
 import { PlayerUpdater } from '../updaters/PlayerUpdater'
 import { ImportantItemsConverter } from '../converters/ImportantItemsConverter'
 import { ImportantItemsUpdater } from '../updaters/ImportantItemsUpdater'
+import { JournalConverter } from '../converters/JournalConverter'
 import { JournalUpdater } from '../updaters/JournalUpdater'
 import { EquipmentsConverter } from '../converters/EquipmentsConverter'
 import { EquipmentsUpdater } from '../updaters/EquipmentsUpdater'
@@ -40,7 +41,7 @@ export const useGameStore = defineStore('game', () => {
             party: GameConverter.toPartyModel(event.state.party),
             importantItems: ImportantItemsConverter.convert(event.state.importantItems),
             consumableItems: GameConverter.toConsumableItemsModel(event.state.consumableItems),
-            journal: GameConverter.toJournalModel(event.state.journal)
+            journal: JournalConverter.convert(event.state.journal)
         }
     }
 
@@ -163,7 +164,10 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateJournal(event: Events.JournalChangedDTO) {
-        JournalUpdater.updateJournal(gameState.value, event)
+        if (!gameState.value) return
+
+        const journal = JournalConverter.convert(event.journal)
+        JournalUpdater.update(gameState.value, journal)
     }
 
     return {
