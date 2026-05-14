@@ -1,15 +1,19 @@
+import type { DigimonStatusType } from "@/models";
+
 export class DigimonStatusCalculator {
-    public static getEquipBonus(targetProperty: string, equippedItems: any[]): number {
+    public static calculateBonusFromEquipaments(
+        digimonStatusType: DigimonStatusType,
+        activeEquipaments: any[]): number {
         let total = 0;
-        
-        const uniqueItems = equippedItems.filter((item, index, self) => {
+
+        const uniqueItems = activeEquipaments.filter((item, index, self) => {
             if (item.Type === "WeaponTwoHanded") {
                 return self.findIndex((i: any) => i.Id === item.Id) === index;
             }
             return true;
         });
 
-        const lowerCaseTarget = targetProperty.toLowerCase();
+        const lowerCaseTarget = digimonStatusType.toLowerCase();
 
         uniqueItems.forEach(item => {
             if (item.Attributes) {
@@ -24,21 +28,24 @@ export class DigimonStatusCalculator {
                 });
             }
         });
-        
+
         return total;
     }
 
-    public static getDigiBonus(targetProperty: string, section: 'attributes' | 'resistances', digievolution: any | null): number {
+    public static calculateBonusFromActiveDigievolution(
+        digimonStatusType: DigimonStatusType,
+        section: 'attributes' | 'resistances',
+        digievolution: any | null): number {
         if (!digievolution) {
             return 0;
         }
-        
+
         const jsonField = section === 'attributes' ? digievolution.Attributes : digievolution.Resistances;
         if (jsonField) {
-            const pascalProp = targetProperty.charAt(0).toUpperCase() + targetProperty.slice(1);
+            const pascalProp = digimonStatusType.charAt(0).toUpperCase() + digimonStatusType.slice(1);
             return jsonField[pascalProp] || 0;
         }
-        
+
         return 0;
     }
 }

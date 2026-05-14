@@ -1,23 +1,23 @@
 import { DigimonStatusCalculator } from '../logic/DigimonStatusCalculator';
-import type { DigimonStatus } from '../models/Digimon';
+import type { DigimonStatus, DigimonStatusType } from '../models/Digimon';
 
 export class DigimonStatusConverter {
     public static convert(
-        type: string,
+        digimonStatusType: DigimonStatusType,
         fromDigimon: number,
         section: 'attributes' | 'resistances',
-        filteredEquipments: any[],
+        activeEquipaments: any[],
         activeDigievolution: any | null
     ): DigimonStatus {
-        const fromEquipaments = DigimonStatusCalculator.getEquipBonus(type, filteredEquipments);
-        const fromDigievolution = DigimonStatusCalculator.getDigiBonus(type, section, activeDigievolution);
+        const bonusFromEquipaments = DigimonStatusCalculator.calculateBonusFromEquipaments(digimonStatusType, activeEquipaments);
+        const bonusFromDigievolution = DigimonStatusCalculator.calculateBonusFromActiveDigievolution(digimonStatusType, section, activeDigievolution);
 
         return {
-            type,
+            digimonStatusType,
             fromDigimon,
-            fromEquipaments,
-            fromDigievolution,
-            sumBetweenDigimonAndEquipaments: fromDigimon + fromEquipaments
+            fromEquipaments: bonusFromEquipaments,
+            fromDigievolution: bonusFromDigievolution,
+            sumBetweenDigimonAndEquipaments: fromDigimon + bonusFromEquipaments
         };
     }
 }

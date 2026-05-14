@@ -1,8 +1,12 @@
-/**
- * Domain Model for Digimon
- * This represents a "rich" Digimon entity used by the UI.
- * Unlike the DTO, this includes data merged from static registries.
- */
+export interface Digimon {
+    slotIndex: number;
+    basicInfo: BasicInfo;
+    attributes: Attributes;
+    resistances: Resistances;
+    equipments: Equipments;
+    equippedDigievolutions: (Digievolution | null)[];
+    activeDigievolutionId: number | null;
+}
 
 export interface BasicInfo {
     name: string;
@@ -16,8 +20,24 @@ export interface BasicInfo {
     experiencePercentageToReachNextLevel: number;
 }
 
+export enum DigimonStatusType {
+    strength = "strength",
+    defense = "defense",
+    spirit = "spirit",
+    wisdom = "wisdom",
+    speed = "speed",
+    charisma = "charisma",
+    fire = "fire",
+    water = "water",
+    ice = "ice",
+    wind = "wind",
+    thunder = "thunder",
+    machine = "machine",
+    dark = "dark",
+}
+
 export interface DigimonStatus {
-    type: string;
+    digimonStatusType: DigimonStatusType;
     fromDigimon: number;
     fromEquipaments: number;
     fromDigievolution: number;
@@ -56,14 +76,4 @@ export interface Digievolution {
     id: number;
     level: number;
     name: string; // Enriched via DigievolutionRegistry
-}
-
-export interface Digimon {
-    slotIndex: number;
-    basicInfo: BasicInfo;
-    attributes: Attributes;
-    resistances: Resistances;
-    equipments: Equipments;
-    equippedDigievolutions: (Digievolution | null)[];
-    activeDigievolutionId: number | null;
 }

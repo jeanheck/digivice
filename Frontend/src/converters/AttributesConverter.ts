@@ -1,6 +1,6 @@
 import EquipmentsData from '../database/Equipments.json';
 import DigievolutionData from '../database/Digievolution.json';
-import type { Attributes, Equipments } from '../models/Digimon';
+import { DigimonStatusType, type Attributes, type Equipments } from '../models/Digimon';
 import type { AttributesDTO } from '../dtos/events.dto';
 import { DigimonStatusConverter } from './DigimonStatusConverter';
 
@@ -22,12 +22,12 @@ export class AttributesConverter {
         }
 
         return {
-            strength: DigimonStatusConverter.convert('strength', baseAttributes.strength, 'attributes', filteredEquipments, activeDigievolution),
-            defense: DigimonStatusConverter.convert('defense', baseAttributes.defense, 'attributes', filteredEquipments, activeDigievolution),
-            spirit: DigimonStatusConverter.convert('spirit', baseAttributes.spirit, 'attributes', filteredEquipments, activeDigievolution),
-            wisdom: DigimonStatusConverter.convert('wisdom', baseAttributes.wisdom, 'attributes', filteredEquipments, activeDigievolution),
-            speed: DigimonStatusConverter.convert('speed', baseAttributes.speed, 'attributes', filteredEquipments, activeDigievolution),
-            charisma: DigimonStatusConverter.convert('charisma', baseAttributes.charisma, 'attributes', filteredEquipments, activeDigievolution),
+            strength: DigimonStatusConverter.convert(DigimonStatusType.strength, baseAttributes.strength, 'attributes', filteredEquipments, activeDigievolution),
+            defense: DigimonStatusConverter.convert(DigimonStatusType.defense, baseAttributes.defense, 'attributes', filteredEquipments, activeDigievolution),
+            spirit: DigimonStatusConverter.convert(DigimonStatusType.spirit, baseAttributes.spirit, 'attributes', filteredEquipments, activeDigievolution),
+            wisdom: DigimonStatusConverter.convert(DigimonStatusType.wisdom, baseAttributes.wisdom, 'attributes', filteredEquipments, activeDigievolution),
+            speed: DigimonStatusConverter.convert(DigimonStatusType.speed, baseAttributes.speed, 'attributes', filteredEquipments, activeDigievolution),
+            charisma: DigimonStatusConverter.convert(DigimonStatusType.charisma, baseAttributes.charisma, 'attributes', filteredEquipments, activeDigievolution),
         };
     }
 }
