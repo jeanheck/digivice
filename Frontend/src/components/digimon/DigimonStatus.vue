@@ -19,7 +19,7 @@ const emit = defineEmits<{
 <template>
   <div class="flex items-center gap-2">
     <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20 tooltip-anchor relative"
-         @mouseenter="e => emit('showIconTooltip', e, label, status.type)"
+         @mouseenter="e => emit('showIconTooltip', e, label, status.digimonStatusType)"
          @mousemove="e => emit('moveTooltip', e)"
          @mouseleave="emit('hideTooltip')">
       <span class="text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1" :class="colorClass">{{ icon }}</span>

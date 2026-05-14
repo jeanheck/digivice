@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue';
 import { useLocalization } from '../../composables/useLocalization';
 import type { Attributes, Resistances } from '../../models';
-import DigimonStatusComponent from './DigimonStatus.vue';
+import DigimonStatus from './DigimonStatus.vue';
 import DigimonTooltip from './DigimonTooltip.vue';
 
 const props = defineProps<{
@@ -90,9 +90,9 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="relative z-10 details-panel flex justify-center w-full p-4 text-white text-sm">
       <div class="flex gap-20 -ml-16">
         <div class="flex flex-col gap-1 w-24">
-          <DigimonStatusComponent 
+          <DigimonStatus 
             v-for="attr in computedAttributes" 
-            :key="attr.status.type"
+            :key="attr.status.digimonStatusType"
             :status="attr.status"
             :label="attr.label"
             :icon="attr.icon"
@@ -105,9 +105,9 @@ const moveTooltip = (event: MouseEvent) => {
         </div>
 
         <div class="flex flex-col gap-1 w-24">
-          <DigimonStatusComponent 
+          <DigimonStatus 
             v-for="res in computedResistances" 
-            :key="res.status.type"
+            :key="res.status.digimonStatusType"
             :status="res.status"
             :label="res.label"
             :icon="res.icon"

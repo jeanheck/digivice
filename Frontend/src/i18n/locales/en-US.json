@@ -102,6 +102,21 @@
     "techniques": "Techniques",
     "searchDigimon": "Type a Digievolution name..."
   },
+  "equipamentsAttributes": {
+    "strength": "Strength",
+    "defense": "Defense",
+    "spirit": "Spirit",
+    "wisdom": "Wisdom",
+    "speed": "Speed",
+    "charisma": "Charisma",
+    "fire": "Fire",
+    "water": "Water",
+    "ice": "Ice",
+    "wind": "Wind",
+    "thunder": "Thunder",
+    "machine": "Machine",
+    "dark": "Dark"
+  },
   "attributes": {
     "strength": "Strength",
     "defense": "Defense",
