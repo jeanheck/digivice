@@ -130,13 +130,13 @@ public class StateChangeDetector
         // Compare XP (Experience)
         if (oldDigi.BasicInfo.Experience != newDigi.BasicInfo.Experience)
         {
-            events.Add(new DigimonExperienceChangedEvent(index, newDigi.BasicInfo.Level, newDigi.BasicInfo.Experience));
+            events.Add(new DigimonExperienceChangedEvent(index, newDigi.BasicInfo.Experience));
         }
 
         // Compare Level
         if (newDigi.BasicInfo.Level > oldDigi.BasicInfo.Level)
         {
-            events.Add(new DigimonLevelChangedEvent(index, oldDigi.BasicInfo.Level, newDigi.BasicInfo.Level));
+            events.Add(new DigimonLevelChangedEvent(index, newDigi.BasicInfo.Level));
         }
 
         // Compare Attributes

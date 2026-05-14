@@ -154,14 +154,12 @@ export interface DigimonVitalsChangedDTO {
 
 export interface DigimonExperienceChangedDTO {
     partySlotIndex: number;
-    level: number;
-    currentEXP: number;
+    experience: number;
 }
 
 export interface DigimonLevelChangedDTO {
     partySlotIndex: number;
-    oldLevel: number;
-    newLevel: number;
+    level: number;
 }
 
 export interface DigimonAttributesChangedDTO {

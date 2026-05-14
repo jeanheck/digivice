@@ -3,7 +3,9 @@ import { ref } from 'vue'
 import type { State } from '../models/State'
 import type * as Events from '../dtos/events.dto'
 import { GameConverter } from '../converters/GameConverter'
+import { BasicInfoConverter } from '../converters/BasicInfoConverter'
 import { DigimonUpdater } from '../updaters/DigimonUpdater'
+import { BasicInfoUpdater } from '../updaters/BasicInfoUpdater'
 import { PlayerUpdater } from '../updaters/PlayerUpdater'
 import { ItemUpdater } from '../updaters/ItemUpdater'
 import { JournalUpdater } from '../updaters/JournalUpdater'
@@ -46,15 +48,43 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function updateDigimonVitals(event: Events.DigimonVitalsChangedDTO) {
-        DigimonUpdater.updateVitals(gameState.value, event)
+        const currentDigimon = gameState.value?.party?.slots[event.partySlotIndex]
+        if (!currentDigimon) {
+            return;
+        }
+
+        const newBasicInfo = BasicInfoConverter.convert(currentDigimon.basicInfo, {
+            currentHP: event.currentHP,
+            maxHP: event.maxHP,
+            currentMP: event.currentMP,
+            maxMP: event.maxMP
+        })
+
+        BasicInfoUpdater.update(currentDigimon, newBasicInfo)
     }
 
     function updateDigimonExperience(event: Events.DigimonExperienceChangedDTO) {
-        DigimonUpdater.updateExperience(gameState.value, event)
+        const currentDigimon = gameState.value?.party?.slots[event.partySlotIndex]
+        if (!currentDigimon) {
+            return;
+        }
+
+        const newBasicInfo = BasicInfoConverter.convert(currentDigimon.basicInfo, {
+            experience: event.experience
+        })
+
+        BasicInfoUpdater.update(currentDigimon, newBasicInfo)
     }
 
     function updateDigimonLevel(event: Events.DigimonLevelChangedDTO) {
-        DigimonUpdater.updateLevel(gameState.value, event)
+        const currentDigimon = gameState.value?.party?.slots[event.partySlotIndex]
+        if (!currentDigimon) return
+
+        const newBasicInfo = BasicInfoConverter.convert(currentDigimon.basicInfo, {
+            level: event.level
+        })
+
+        BasicInfoUpdater.update(currentDigimon, newBasicInfo)
     }
 
     function updateDigimonAttributes(event: Events.DigimonAttributesChangedDTO) {
