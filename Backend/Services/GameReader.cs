@@ -18,7 +18,7 @@ namespace Backend.Services
             {
                 Bits = memoryReader.ReadInt32(addresses.Bits),
                 NameInBytes = memoryReader.ReadBytes(addresses.Name, addresses.NameBufferSize),
-                MapId = memoryReader.ReadInt16(addresses.MapIdAddress)
+                MapId = memoryReader.ReadInt16(addresses.MapId)
             };
         }
 
