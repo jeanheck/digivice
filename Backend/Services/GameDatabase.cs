@@ -1,7 +1,6 @@
 using System.Text.Json;
 using Backend.Addresses;
 using Backend.Addresses.Digimon;
-using Backend.Models.Quests;
 using Backend.Interfaces;
 
 namespace Backend.Services
@@ -13,10 +12,11 @@ namespace Backend.Services
         private PartyAddresses? partyAddresses;
         private DigimonAddresses? digimonAddresses;
         private Dictionary<int, DigimonBaseAddress>? digimonDefinitions;
-        private MainQuest? mainQuest;
-        private SideQuest? sideQuestFolderBag;
-        private SideQuest? sideQuestTreeBoots;
-        private SideQuest? sideQuestFishingPole;
+        
+        private QuestAddresses? mainQuestAddresses;
+        private QuestAddresses? sideQuestFolderBag;
+        private QuestAddresses? sideQuestTreeBoots;
+        private QuestAddresses? sideQuestFishingPole;
 
         public GameDatabase()
         {
@@ -47,26 +47,33 @@ namespace Backend.Services
 
         public PlayerAddresses GetPlayerAddresses() =>
             LoadAndCache(ref playerAddresses, "PlayerAddresses.json");
+            
         public PartyAddresses GetPartyAddresses() =>
             LoadAndCache(ref partyAddresses, "PartyAddresses.json");
+            
         public DigimonAddresses GetDigimonAddresses() =>
             LoadAndCache(ref digimonAddresses, "DigimonAddresses.json");
+            
         public Dictionary<int, DigimonBaseAddress> GetDigimonDefinitions() =>
             LoadAndCache(ref digimonDefinitions, "DigimonsAddresses.json");
-        public MainQuest GetMainQuest() =>
-            LoadAndCache(ref mainQuest, "Quests/MainQuestAddresses.json");
-        public IEnumerable<SideQuest> GetAllSideQuests()
-        {
-            yield return GetSideQuestFolderBag();
-            yield return GetSideQuestTreeBoots();
-            yield return GetSideQuestFishingPole();
-        }
+            
+        public QuestAddresses GetMainQuest() =>
+            LoadAndCache(ref mainQuestAddresses, "Quests/MainQuestAddresses.json");
+            
+        public List<QuestAddresses> GetAllSideQuests() =>
+        [
+            GetSideQuestFolderBag(),
+            GetSideQuestTreeBoots(),
+            GetSideQuestFishingPole()
+        ];
 
-        private SideQuest GetSideQuestFolderBag() =>
+        private QuestAddresses GetSideQuestFolderBag() =>
             LoadAndCache(ref sideQuestFolderBag, "Quests/SideQuest/FolderBagAddresses.json");
-        private SideQuest GetSideQuestTreeBoots() =>
+            
+        private QuestAddresses GetSideQuestTreeBoots() =>
             LoadAndCache(ref sideQuestTreeBoots, "Quests/SideQuest/TreeBootsAddresses.json");
-        private SideQuest GetSideQuestFishingPole() =>
+            
+        private QuestAddresses GetSideQuestFishingPole() =>
             LoadAndCache(ref sideQuestFishingPole, "Quests/SideQuest/FishingPoleAddresses.json");
     }
 }

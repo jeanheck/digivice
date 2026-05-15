@@ -1,6 +1,5 @@
 using Backend.Addresses;
 using Backend.Addresses.Digimon;
-using Backend.Models.Quests;
 
 namespace Backend.Interfaces
 {
@@ -10,7 +9,7 @@ namespace Backend.Interfaces
         PartyAddresses GetPartyAddresses();
         DigimonAddresses GetDigimonAddresses();
         Dictionary<int, DigimonBaseAddress> GetDigimonDefinitions();
-        MainQuest GetMainQuest();
-        IEnumerable<SideQuest> GetAllSideQuests();
+        QuestAddresses GetMainQuest();
+        List<QuestAddresses> GetAllSideQuests();
     }
 }

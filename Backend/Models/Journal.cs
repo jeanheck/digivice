@@ -4,8 +4,8 @@ namespace Backend.Models
 {
     public record class Journal
     {
-        public MainQuest MainQuest { get; set; } = new MainQuest();
-        public List<SideQuest> SideQuests { get; set; } = [];
+        public Quest MainQuest { get; set; } = new();
+        public List<Quest> SideQuests { get; set; } = [];
 
         public virtual bool Equals(Journal? other)
         {
