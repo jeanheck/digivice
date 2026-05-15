@@ -46,7 +46,6 @@ namespace Backend.Services
                 ActiveDigievolutionId = GetActiveDigievolutionId(activeDigievolutionId),
                 BasicInfo = new BasicInfo
                 {
-                    Name = digimonEntry.Name ?? UnknownDigimonName,
                     Experience = MemoryUtils.ReadInt32FromBlock(logicBlock, basicInfo.Experience),
                     Level = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.Level),
                     CurrentHP = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.CurrentHP),

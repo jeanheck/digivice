@@ -86,7 +86,7 @@ namespace Backend.Diagnostics
         private void RenderDigimon(StringBuilder sb, Digimon d)
         {
             var b = d.BasicInfo;
-            sb.AppendLine($"{Yellow}Slot {d.SlotIndex}:{Reset} {Cyan}{b.Name.PadRight(NamePadding)}{Reset} [Lv.{b.Level.ToString(LvlFormat)}] [EXP:{b.Experience.ToString(ExpFormat)}]");
+            sb.AppendLine($"{Yellow}Slot {d.SlotIndex}:{Reset} [Lv.{b.Level.ToString(LvlFormat)}] [EXP:{b.Experience.ToString(ExpFormat)}]");
 
             // HP Bar
             sb.Append("   HP: ");

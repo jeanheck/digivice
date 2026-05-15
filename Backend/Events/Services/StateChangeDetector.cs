@@ -87,8 +87,7 @@ public class StateChangeDetector
                 var newDigi = newSlots[i];
                 var oldDigi = oldSlots[i];
 
-                if ((newDigi == null && oldDigi != null) || (newDigi != null && oldDigi == null) ||
-                    (newDigi != null && oldDigi != null && newDigi.BasicInfo.Name != oldDigi.BasicInfo.Name))
+                if ((newDigi == null && oldDigi != null) || (newDigi != null && oldDigi == null))
                 {
                     partyRosterChanged = true;
                     break;
