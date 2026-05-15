@@ -22,14 +22,33 @@ namespace Backend.Services
                 .ToList();
 
             // 3. Assemble Domain Models from Resources
+            var mainQuest = ConvertResourceToModel(mainQuestResource);
+            var sideQuests = sideQuestsResources.Select(ConvertResourceToModel).ToList();
+
+            // 4. Normalize MainQuest Progression (Cascade)
+            NormalizeMainQuestProgression(mainQuest);
+
             return new Journal
             {
-                MainQuest = AssembleQuest(mainQuestResource),
-                SideQuests = sideQuestsResources.Select(AssembleQuest).ToList()
+                MainQuest = mainQuest,
+                SideQuests = sideQuests
             };
         }
 
-        private static Quest AssembleQuest(QuestResource resource)
+        private void NormalizeMainQuestProgression(Quest mainQuest)
+        {
+            // Completion cascade: If the next step is completed (> 0), 
+            // the current step must also be considered completed.
+            for (int i = mainQuest.Steps.Count - 2; i >= 0; i--)
+            {
+                if (mainQuest.Steps[i].Value == 0 && mainQuest.Steps[i + 1].Value > 0)
+                {
+                    mainQuest.Steps[i].Value = 1;
+                }
+            }
+        }
+
+        private static Quest ConvertResourceToModel(QuestResource resource)
         {
             return new Quest
             {

@@ -1,4 +1,6 @@
-namespace Backend.Models.Quests
+using Backend.Models.Quests;
+
+namespace Backend.Models
 {
     public record class Quest
     {

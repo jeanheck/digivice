@@ -2,7 +2,7 @@ using Backend.Addresses;
 using Backend.Addresses.Digimon;
 using Backend.Resources;
 using Backend.Resources.Quests;
-using Backend.Models.Quests;
+using Backend.Models;
 
 namespace Backend.Interfaces
 {

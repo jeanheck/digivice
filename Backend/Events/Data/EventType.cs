@@ -16,6 +16,5 @@ public enum EventType
     DigimonEquipmentsChanged,
     DigimonDigievolutionsChanged,
     DigimonActiveDigievolutionChanged,
-    ImportantItemsChanged,
     JournalChanged
 }

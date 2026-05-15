@@ -5,6 +5,7 @@ using Backend.Addresses.Quests;
 using Backend.Resources;
 using Backend.Resources.Quests;
 using Backend.Models.Quests;
+using Backend.Models;
 
 namespace Backend.Services
 {
@@ -66,7 +67,7 @@ namespace Backend.Services
                 Steps = addresses.Steps.Select(step => new StepResource
                 {
                     Number = step.Number,
-                    Value = memoryReader.ReadByteSafe(step.Address),
+                    Value = ApplyMask(memoryReader.ReadByteSafe(step.Address), step.BitMask),
                     Requisites = ReadRequisiteResources(step.Requisites)
                 }).ToList()
             };
@@ -83,19 +84,19 @@ namespace Backend.Services
             }).ToList();
         }
 
+        private static byte ApplyMask(byte rawValue, long? bitMask)
+        {
+            if (bitMask == null) return rawValue;
+
+            return (byte)(rawValue & bitMask.Value);
+        }
+
         public Dictionary<int, byte> ReadQuestSteps(Quest quest)
         {
             var questStepsState = new Dictionary<int, byte>();
-
-            // 1. Read Quest-level Requisites
             ReadRequisites(quest.Requisites);
-
-            // 2. Read Step-level data and Requisites
             foreach (var step in quest.Steps)
             {
-                // Note: Domain Model 'Step' no longer has Address. 
-                // This method is now practically obsolete for the new flow.
-                // It remains only if something still depends on it.
                 if (step.Requisites != null)
                 {
                     ReadRequisites(step.Requisites);

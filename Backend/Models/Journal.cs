@@ -1,5 +1,6 @@
-using Backend.Models.Quests;
-
+using System.Collections.Generic;
+using System.Linq;
+using System;
 namespace Backend.Models
 {
     public record class Journal
