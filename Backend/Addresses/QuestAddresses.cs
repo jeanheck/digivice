@@ -1,6 +1,6 @@
 using Backend.Models.Quests;
 
-namespace Backend.Models.Addresses
+namespace Backend.Addresses
 {
     public class QuestAddresses
     {

@@ -1,5 +1,5 @@
 using Backend.Models.Digimons;
-using Backend.Models.Addresses;
+using Backend.Addresses;
 using Backend.Utils;
 
 namespace Backend.Services

@@ -1,5 +1,5 @@
 using System.Text.Json;
-using Backend.Models.Addresses;
+using Backend.Addresses;
 using Backend.Models.Quests;
 using Backend.Interfaces;
 

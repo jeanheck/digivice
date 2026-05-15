@@ -1,4 +1,4 @@
-using Backend.Models.Addresses;
+using Backend.Addresses;
 using Backend.Models.Quests;
 
 namespace Backend.Interfaces

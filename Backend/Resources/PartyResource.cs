@@ -1,4 +1,4 @@
-namespace Backend.Models.Resources
+namespace Backend.Resources
 {
     public class PartyResource
     {

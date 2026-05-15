@@ -1,6 +1,6 @@
 using Backend.Models;
 using Backend.Interfaces;
-using Backend.Models.Addresses;
+using Backend.Addresses;
 
 namespace Backend.Services
 {

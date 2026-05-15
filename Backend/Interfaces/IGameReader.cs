@@ -1,6 +1,6 @@
-using Backend.Models.Addresses;
+using Backend.Addresses;
 using Backend.Models.Quests;
-using Backend.Models.Resources;
+using Backend.Resources;
 
 namespace Backend.Interfaces
 {

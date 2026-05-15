@@ -1,4 +1,4 @@
-namespace Backend.Models.Addresses
+namespace Backend.Addresses
 {
     public class ImportantItemsAddresses
     {
