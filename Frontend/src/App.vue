@@ -12,7 +12,6 @@ import { ref } from 'vue'
 const store = useGameStore()
 const { getLocalizedQuest } = useLocalization()
 const partySlots = computed(() => store.gameState?.party?.slots ?? [null, null, null])
-
 const activeQuestId = ref<string | null>(null)
 const isQuestModalOpen = ref(false)
 
@@ -80,7 +79,7 @@ const handleCloseQuestModal = () => {
         
         <!-- Area Information -->
         <div class="flex-[2] min-h-[200px] flex flex-col">
-          <AreaInformationPanel class="flex-1" />
+          <AreaInformationPanel :area-info="store.gameState?.areaInformation ?? null" class="flex-1" />
         </div>
       </div>
 

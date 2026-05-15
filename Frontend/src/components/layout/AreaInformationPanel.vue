@@ -1,26 +1,27 @@
 <script setup lang="ts">
-import { useGameStore } from '../../stores/useGameStore'
 import { computed, ref } from 'vue'
 import EnemyDetailsModal from './EnemyDetailsModal.vue'
 import { useLocalization } from '../../composables/useLocalization'
 import type { Enemy } from '../../models/Enemy'
+import type { AreaInformation } from '../../models/AreaInformation'
 
-const store = useGameStore()
+const props = defineProps<{
+    areaInfo: AreaInformation | null
+}>()
+
 const { t, getLocalized } = useLocalization()
 
-const areaInfo = computed(() => store.gameState?.areaInformation)
-
 const currentLocation = computed(() => {
-    if (!areaInfo.value) return t('area.unknownArea') || 'Unknown Area'
-    return getLocalized(areaInfo.value.location.name)
+    if (!props.areaInfo) return t('area.unknownArea') || 'Unknown Area'
+    return getLocalized(props.areaInfo.location.name)
 })
 
-const areaEnemies = computed(() => areaInfo.value?.enemies || [])
+const areaEnemies = computed(() => props.areaInfo?.enemies || [])
 
 const currentMapImage = computed(() => {
-    if (!areaInfo.value) return null
+    if (!props.areaInfo) return null
     try {
-        const imageFile = areaInfo.value.location.image
+        const imageFile = props.areaInfo.location.image
         return new URL(`../../assets/maps/${imageFile}.webp`, import.meta.url).href
     } catch {
         return null
