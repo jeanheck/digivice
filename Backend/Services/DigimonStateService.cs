@@ -16,18 +16,18 @@ namespace Backend.Services
         private const string UnknownDigimonName = "Unknown";
 
         private DigimonAddresses Addresses => gameDatabase.GetDigimonAddresses();
+        private PartyAddresses PartyAddresses => gameDatabase.GetPartyAddresses();
 
         public bool IsEmptySlot(byte digimonId)
         {
-            return digimonId == (byte)Addresses.EmptySlotId;
+            return digimonId == (byte)PartyAddresses.EmptySlotId;
         }
 
         public Digimon? GetDigimon(int slotIndex, byte digimonId)
         {
-            var (digimons, basicInfo, attributes, resistances, equipaments, digievolutions) = Addresses;
+            var (basicInfo, attributes, resistances, equipaments, digievolutions) = Addresses;
 
-            var digimonEntry = digimons?.FirstOrDefault(d => d.Id == digimonId);
-            if (digimonEntry == null || digimonEntry.Address == 0)
+            if (!gameDatabase.GetDigimonDefinitions().TryGetValue(digimonId, out var digimonEntry) || digimonEntry.Address == 0)
             {
                 Serilog.Log.Warning("Unknown Digimon ID: 0x{Id:X2}", digimonId);
                 return null;

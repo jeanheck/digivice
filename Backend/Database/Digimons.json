@@ -1,87 +1,10 @@
 {
-    "EmptySlotId": "0xFF",
-    "Digimons": [
-        {
-            "Name": "Kotemon",
-            "Id": 0,
-            "Address": "0x0004949C"
-        },
-        {
-            "Name": "Kumamon",
-            "Id": 1,
-            "Address": "0x00049878"
-        },
-        {
-            "Name": "Monmon",
-            "Id": 2,
-            "Address": "0x00049C54"
-        },
-        {
-            "Name": "Agumon",
-            "Id": 3,
-            "Address": "0x0004A030"
-        },
-        {
-            "Name": "Veemon",
-            "Id": 4,
-            "Address": "0x0004A40C"
-        },
-        {
-            "Name": "Guilmon",
-            "Id": 5,
-            "Address": "0x0004A7E8"
-        },
-        {
-            "Name": "Renamon",
-            "Id": 6,
-            "Address": "0x0004ABC4"
-        },
-        {
-            "Name": "Patamon",
-            "Id": 7,
-            "Address": "0x0004AFA0"
-        }
-    ],
-    "BasicInfo": {
-        "Experience": "0x18",
-        "Level": "0x1C",
-        "CurrentHP": "0x20",
-        "MaxHP": "0x22",
-        "CurrentMP": "0x24",
-        "MaxMP": "0x26"
-    },
-    "Attributes": {
-        "Strength": "0x28",
-        "Defense": "0x2A",
-        "Spirit": "0x2C",
-        "Wisdow": "0x2E",
-        "Speed": "0x30",
-        "Charisma": "0x32"
-    },
-    "Resistances": {
-        "Fire": "0x34",
-        "Water": "0x36",
-        "Ice": "0x38",
-        "Wind": "0x3A",
-        "Thunder": "0x3C",
-        "Machine": "0x3E",
-        "Dark": "0x40"
-    },
-    "Equipaments": {
-        "Head": "0x3C0",
-        "Body": "0x3C2",
-        "RightHand": "0x3C4",
-        "LeftHand": "0x3C6",
-        "Accessory1": "0x3C8",
-        "Accessory2": "0x3CA"
-    },
-    "Digievolutions": {
-        "ActiveDigievolution": "-4",
-        "Slot1": "0x48",
-        "Slot2": "0x4A",
-        "Slot3": "0x4C",
-        "UnlockedDigievolutionsStart": "0x50",
-        "UnlockedDigievolutionEntryStride": "20",
-        "MaxUnlockedDigievolutions": "60"
-    }
+    "0": { "Name": "Kotemon", "Address": "0x0004949C" },
+    "1": { "Name": "Kumamon", "Address": "0x00049878" },
+    "2": { "Name": "Monmon", "Address": "0x00049C54" },
+    "3": { "Name": "Agumon", "Address": "0x0004A030" },
+    "4": { "Name": "Veemon", "Address": "0x0004A40C" },
+    "5": { "Name": "Guilmon", "Address": "0x0004A7E8" },
+    "6": { "Name": "Renamon", "Address": "0x0004ABC4" },
+    "7": { "Name": "Patamon", "Address": "0x0004AFA0" }
 }

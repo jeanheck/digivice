@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Backend.Addresses;
+using Backend.Addresses.Digimon;
 using Backend.Models.Quests;
 using Backend.Interfaces;
 
@@ -13,6 +14,7 @@ namespace Backend.Services
         private ImportantItemsAddresses? importantItemsAddresses;
         private ConsumableItemsAddresses? consumableItemsAddresses;
         private DigimonAddresses? digimonAddresses;
+        private Dictionary<int, DigimonBaseAddress>? digimonDefinitions;
         private MainQuest? mainQuest;
         private SideQuest? sideQuestFolderBag;
         private SideQuest? sideQuestTreeBoots;
@@ -50,7 +52,9 @@ namespace Backend.Services
         public PartyAddresses GetPartyAddresses() =>
             LoadAndCache(ref partyAddresses, "Party.json");
         public DigimonAddresses GetDigimonAddresses() =>
-            LoadAndCache(ref digimonAddresses, "Digimons.json");
+            LoadAndCache(ref digimonAddresses, "Digimon.json");
+        public Dictionary<int, DigimonBaseAddress> GetDigimonDefinitions() =>
+            LoadAndCache(ref digimonDefinitions, "Digimons.json");
         public MainQuest GetMainQuest() =>
             LoadAndCache(ref mainQuest, "MainQuest.json");
         public IEnumerable<SideQuest> GetAllSideQuests()

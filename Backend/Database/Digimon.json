@@ -1,0 +1,44 @@
+{
+    "BasicInfo": {
+        "Experience": "0x18",
+        "Level": "0x1C",
+        "CurrentHP": "0x20",
+        "MaxHP": "0x22",
+        "CurrentMP": "0x24",
+        "MaxMP": "0x26"
+    },
+    "Attributes": {
+        "Strength": "0x28",
+        "Defense": "0x2A",
+        "Spirit": "0x2C",
+        "Wisdow": "0x2E",
+        "Speed": "0x30",
+        "Charisma": "0x32"
+    },
+    "Resistances": {
+        "Fire": "0x34",
+        "Water": "0x36",
+        "Ice": "0x38",
+        "Wind": "0x3A",
+        "Thunder": "0x3C",
+        "Machine": "0x3E",
+        "Dark": "0x40"
+    },
+    "Equipaments": {
+        "Head": "0x3C0",
+        "Body": "0x3C2",
+        "RightHand": "0x3C4",
+        "LeftHand": "0x3C6",
+        "Accessory1": "0x3C8",
+        "Accessory2": "0x3CA"
+    },
+    "Digievolutions": {
+        "ActiveDigievolution": "-4",
+        "Slot1": "0x48",
+        "Slot2": "0x4A",
+        "Slot3": "0x4C",
+        "UnlockedDigievolutionsStart": "0x50",
+        "UnlockedDigievolutionEntryStride": "20",
+        "MaxUnlockedDigievolutions": "60"
+    }
+}

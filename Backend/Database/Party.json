@@ -2,5 +2,6 @@
     "PartySlot1": "0x00048DA4",
     "PartySlot2": "0x00048DA8",
     "PartySlot3": "0x00048DAC",
-    "BytesPerSlot": 4
+    "BytesPerSlot": 4,
+    "EmptySlotId": "0xFF"
 }

@@ -13,5 +13,8 @@ namespace Backend.Addresses
         public long PartySlot3 { get; set; }
 
         public int BytesPerSlot { get; set; }
+
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int EmptySlotId { get; set; }
     }
 }
