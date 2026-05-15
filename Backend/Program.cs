@@ -44,7 +44,6 @@ try
     builder.Services.AddSingleton<DigievolutionStateService>();
     builder.Services.AddSingleton<DigimonStateService>();
     builder.Services.AddSingleton<PartyStateService>();
-    builder.Services.AddSingleton<ItemsStateService>();
     builder.Services.AddSingleton<JournalStateService>();
     builder.Services.AddSingleton<GameStateService>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();

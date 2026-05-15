@@ -6,37 +6,35 @@ namespace Backend.Services
 {
     public class JournalStateService(
         IGameDatabase gameDatabase,
-        IGameReader gameReader,
-        ItemsStateService itemStateService)
+        IGameReader gameReader)
     {
         public Journal GetJournal()
         {
-            var importantItems = itemStateService.GetImportantItems();
-            var consumableItems = itemStateService.GetConsumableItems();
-
             return new()
             {
-                MainQuest = (MainQuest)ProcessQuest(CloneQuest(gameDatabase.GetMainQuest()), importantItems, consumableItems),
+                MainQuest = (MainQuest)ProcessQuest(CloneQuest(gameDatabase.GetMainQuest())),
                 SideQuests = gameDatabase.GetAllSideQuests()
-                    .Select(sideQuest => (SideQuest)ProcessQuest(CloneQuest(sideQuest), importantItems, consumableItems))
+                    .Select(sideQuest => (SideQuest)ProcessQuest(CloneQuest(sideQuest)))
                     .ToList()
             };
         }
 
-        private Quest ProcessQuest(Quest quest, ImportantItems importantItems, ConsumableItems consumableItems)
+        private Quest ProcessQuest(Quest quest)
         {
             var questStepsState = gameReader.ReadQuestSteps(quest.Steps);
 
-            // 1. Evaluate Quest-level Prerequisites
-            ApplyRequisitesLogic(quest.Prerequisites, importantItems, consumableItems);
+            // 1. Evaluate Quest-level Requisites
+            gameReader.ReadQuestRequisites(quest.Requisites);
+
             // 2. Evaluate Step Completion (Bitmasks + Cascade)
             ApplyQuestStepsLogic(quest, questStepsState);
-            // 3. Evaluate Step-level Prerequisites
+
+            // 3. Evaluate Step-level Requisites
             foreach (var step in quest.Steps)
             {
-                if (step.Prerequisites != null)
+                if (step.Requisites != null)
                 {
-                    ApplyRequisitesLogic(step.Prerequisites, importantItems, consumableItems);
+                    gameReader.ReadQuestRequisites(step.Requisites);
                 }
             }
 
@@ -49,10 +47,10 @@ namespace Backend.Services
             var cloned = template with { };
 
             // Deep copy lists to ensure mutations don't affect the cached template
-            cloned.Prerequisites = template.Prerequisites.Select(p => p with { }).ToList();
+            cloned.Requisites = template.Requisites.Select(r => r with { }).ToList();
             cloned.Steps = template.Steps.Select(s => s with
             {
-                Prerequisites = s.Prerequisites?.Select(p => p with { }).ToList()
+                Requisites = s.Requisites?.Select(r => r with { }).ToList()
             }).ToList();
 
             return cloned;
@@ -87,22 +85,6 @@ namespace Backend.Services
                 {
                     quest.Steps[i].IsCompleted = true;
                 }
-            }
-        }
-
-        private static void ApplyRequisitesLogic(
-            IEnumerable<Requisite> requisites,
-            ImportantItems importantItems,
-            ConsumableItems consumableItems)
-        {
-            foreach (var requisite in requisites)
-            {
-                requisite.IsDone = requisite.ItemType switch
-                {
-                    "consumable" => consumableItems.GetQuantity(requisite.ItemKey) > 0,
-                    "important" => importantItems.HasItem(requisite.ItemKey),
-                    _ => requisite.IsDone // Preserve manual state for unknown types
-                };
             }
         }
     }

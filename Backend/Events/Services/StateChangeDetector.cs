@@ -46,13 +46,7 @@ public class StateChangeDetector
         // 2. Party Comparison
         DetectPartyChanges(previousState.Party, newState.Party, events);
 
-        // 3. Important Items Comparison
-        if (HasChanged(previousState.ImportantItems, newState.ImportantItems))
-        {
-            events.Add(new ImportantItemsChangedEvent(newState.ImportantItems));
-        }
-
-        // 4. Journal Comparison
+        // 3. Journal Comparison
         if (HasChanged(previousState.Journal, newState.Journal))
         {
             events.Add(new JournalChangedEvent(newState.Journal));

@@ -5,7 +5,6 @@ namespace Backend.Services
     public class GameStateService(
         PlayerStateService playerStateService,
         PartyStateService partyStateService,
-        ItemsStateService itemStateService,
         JournalStateService journalStateService)
     {
         public State GetState()
@@ -14,7 +13,6 @@ namespace Backend.Services
             {
                 Player = playerStateService.GetPlayer(),
                 Party = partyStateService.GetParty(),
-                ImportantItems = itemStateService.GetImportantItems(),
                 Journal = journalStateService.GetJournal()
             };
         }

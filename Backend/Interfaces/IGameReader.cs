@@ -13,5 +13,6 @@ namespace Backend.Interfaces
         ConsumableItemsResource ReadConsumableItems(ConsumableItemsAddresses addresses);
         DigimonResource ReadDigimon(int slotIndex, int baseAddress, DigievolutionsAddresses digievolutionsAddresses);
         Dictionary<int, byte> ReadQuestSteps(List<QuestStep> steps);
+        void ReadQuestRequisites(IEnumerable<Requisite> requisites);
     }
 }

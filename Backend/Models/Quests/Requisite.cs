@@ -1,19 +1,16 @@
+using System.Text.Json.Serialization;
+using Backend.Utils;
+
 namespace Backend.Models.Quests
 {
     public record class Requisite
     {
-        public string Description { get; set; } = string.Empty;
+        public string Id { get; set; } = string.Empty;
+        public string Type { get; set; } = string.Empty;
+        
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long Address { get; set; }
+        
         public bool IsDone { get; set; }
-        /// <summary>
-        /// Optional key to automatically check if this prerequisite is met.
-        /// Maps to an entry in ConsumableItemsAddresses, ImportantItemsAddresses,
-        /// or an equipment ID. When null, IsDone must be set manually.
-        /// </summary>
-        public string ItemKey { get; set; } = string.Empty;
-        /// <summary>
-        /// Type of item to check: "consumable", "equipment", or "important".
-        /// Used together with ItemKey to determine which address table to query.
-        /// </summary>
-        public string ItemType { get; set; } = string.Empty;
     }
 }

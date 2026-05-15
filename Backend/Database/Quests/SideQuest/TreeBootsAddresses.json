@@ -1,10 +1,10 @@
 {
     "Id": "TreeBoots",
-    "Prerequisites": [
+    "Requisites": [
         {
-            "Description": "Own the Folder Bag",
-            "ItemKey": "FolderBag",
-            "ItemType": "important"
+            "Id": "FolderBag",
+            "Type": "ImportantItem",
+            "Address": "0x00048F42"
         }
     ],
     "Steps": [

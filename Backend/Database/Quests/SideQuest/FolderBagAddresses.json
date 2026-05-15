@@ -1,6 +1,6 @@
 {
     "Id": "FolderBag",
-    "Prerequisites": [],
+    "Requisites": [],
     "Steps": [
         {
             "Number": 1,

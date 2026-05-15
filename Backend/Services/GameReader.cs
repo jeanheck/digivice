@@ -97,5 +97,18 @@ namespace Backend.Services
             }
             return questStepsState;
         }
+        public void ReadQuestRequisites(IEnumerable<Requisite> requisites)
+        {
+            foreach (var requisite in requisites)
+            {
+                if (requisite.Address == 0)
+                {
+                    continue;
+                }
+
+                var value = memoryReader.ReadByteSafe(requisite.Address);
+                requisite.IsDone = value != 0;
+            }
+        }
     }
 }

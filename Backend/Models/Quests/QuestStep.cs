@@ -7,11 +7,12 @@ namespace Backend.Models.Quests
     {
         public int Number { get; set; }
         public bool IsCompleted { get; set; }
+        
         /// <summary>
-        /// Optional informational prerequisites for this step.
+        /// Optional informational requisites for this step.
         /// Displayed as a checklist inside the step — does NOT block progress.
         /// </summary>
-        public List<Requisite>? Prerequisites { get; set; }
+        public List<Requisite>? Requisites { get; set; }
 
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long Address { get; set; }
@@ -19,12 +20,6 @@ namespace Backend.Models.Quests
         /// <summary>
         /// Bitmask to check against the byte at Address.
         /// Step is completed if (byte AND BitMask) != 0.
-        /// 
-        /// For cumulative flags: use a single bit (e.g., "0x04" for bit 2).
-        /// For rotating/phase flags: use multiple bits (e.g., "0xE0" for bits 5+6+7,
-        ///   meaning "step is done if ANY of these bits is set").
-        /// 
-        /// If null, uses legacy behavior: byte == 1 means completed.
         /// </summary>
         public string? BitMask { get; set; }
 
@@ -32,15 +27,15 @@ namespace Backend.Models.Quests
         {
             if (other is null) return false;
 
-            bool prereqsEqual = (Prerequisites == null && other.Prerequisites == null) ||
-                                (Prerequisites != null && other.Prerequisites != null &&
-                                 Prerequisites.SequenceEqual(other.Prerequisites));
+            bool requisitesEqual = (Requisites == null && other.Requisites == null) ||
+                                 (Requisites != null && other.Requisites != null &&
+                                  Requisites.SequenceEqual(other.Requisites));
 
             return Number == other.Number &&
                    IsCompleted == other.IsCompleted &&
                    Address == other.Address &&
                    BitMask == other.BitMask &&
-                   prereqsEqual;
+                   requisitesEqual;
         }
 
         public override int GetHashCode()
@@ -51,9 +46,9 @@ namespace Backend.Models.Quests
             hash.Add(Address);
             hash.Add(BitMask);
             
-            if (Prerequisites != null)
+            if (Requisites != null)
             {
-                foreach (var p in Prerequisites) hash.Add(p);
+                foreach (var r in Requisites) hash.Add(r);
             }
             return hash.ToHashCode();
         }
