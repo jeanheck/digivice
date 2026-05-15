@@ -1,4 +1,5 @@
 using Backend.Addresses;
+using Backend.Addresses.Digimon;
 using Backend.Models.Quests;
 using Backend.Resources;
 
