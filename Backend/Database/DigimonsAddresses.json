@@ -1,10 +1,34 @@
 {
-    "0": { "Name": "Kotemon", "Address": "0x0004949C" },
-    "1": { "Name": "Kumamon", "Address": "0x00049878" },
-    "2": { "Name": "Monmon", "Address": "0x00049C54" },
-    "3": { "Name": "Agumon", "Address": "0x0004A030" },
-    "4": { "Name": "Veemon", "Address": "0x0004A40C" },
-    "5": { "Name": "Guilmon", "Address": "0x0004A7E8" },
-    "6": { "Name": "Renamon", "Address": "0x0004ABC4" },
-    "7": { "Name": "Patamon", "Address": "0x0004AFA0" }
+    "0": {
+        "Name": "Kotemon",
+        "Address": "0x0004949C"
+    },
+    "1": {
+        "Name": "Kumamon",
+        "Address": "0x00049878"
+    },
+    "2": {
+        "Name": "Monmon",
+        "Address": "0x00049C54"
+    },
+    "3": {
+        "Name": "Agumon",
+        "Address": "0x0004A030"
+    },
+    "4": {
+        "Name": "Veemon",
+        "Address": "0x0004A40C"
+    },
+    "5": {
+        "Name": "Guilmon",
+        "Address": "0x0004A7E8"
+    },
+    "6": {
+        "Name": "Renamon",
+        "Address": "0x0004ABC4"
+    },
+    "7": {
+        "Name": "Patamon",
+        "Address": "0x0004AFA0"
+    }
 }

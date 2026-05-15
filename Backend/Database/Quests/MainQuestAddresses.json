@@ -1,7 +1,5 @@
 {
     "Id": "MainQuest",
-    "Title": "The greatest of them all!",
-    "Description": "Become the greatest tamer of the Digital World!",
     "Steps": [
         {
             "Number": 1,

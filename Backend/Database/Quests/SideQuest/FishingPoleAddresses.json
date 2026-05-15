@@ -1,7 +1,5 @@
 {
     "Id": "FishingPole",
-    "Title": "The Fishing Pole",
-    "Description": "Obtain the Fishing Pole to start fishing for items and Digimon.",
     "Prerequisites": [
         {
             "Description": "Own the Folder Bag",

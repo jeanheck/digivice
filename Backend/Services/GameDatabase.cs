@@ -56,7 +56,7 @@ namespace Backend.Services
         public Dictionary<int, DigimonBaseAddress> GetDigimonDefinitions() =>
             LoadAndCache(ref digimonDefinitions, "DigimonsAddresses.json");
         public MainQuest GetMainQuest() =>
-            LoadAndCache(ref mainQuest, "MainQuestAddresses.json");
+            LoadAndCache(ref mainQuest, "Quests/MainQuestAddresses.json");
         public IEnumerable<SideQuest> GetAllSideQuests()
         {
             yield return GetSideQuestFolderBag();
@@ -68,10 +68,10 @@ namespace Backend.Services
         public ConsumableItemsAddresses GetConsumableItemsAddresses() =>
             LoadAndCache(ref consumableItemsAddresses, "ConsumableItemsAddresses.json");
         private SideQuest GetSideQuestFolderBag() =>
-            LoadAndCache(ref sideQuestFolderBag, "SideQuest/FolderBagAddresses.json");
+            LoadAndCache(ref sideQuestFolderBag, "Quests/SideQuest/FolderBagAddresses.json");
         private SideQuest GetSideQuestTreeBoots() =>
-            LoadAndCache(ref sideQuestTreeBoots, "SideQuest/TreeBootsAddresses.json");
+            LoadAndCache(ref sideQuestTreeBoots, "Quests/SideQuest/TreeBootsAddresses.json");
         private SideQuest GetSideQuestFishingPole() =>
-            LoadAndCache(ref sideQuestFishingPole, "SideQuest/FishingPoleAddresses.json");
+            LoadAndCache(ref sideQuestFishingPole, "Quests/SideQuest/FishingPoleAddresses.json");
     }
 }

@@ -1,7 +1,5 @@
 {
     "Id": "TreeBoots",
-    "Title": "The Tree Boots",
-    "Description": "Obtain the Tree Boots to unlock new areas by kicking trees.",
     "Prerequisites": [
         {
             "Description": "Own the Folder Bag",
