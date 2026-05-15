@@ -1,51 +1,26 @@
 <script setup lang="ts">
 import { useGameStore } from '../../stores/useGameStore'
 import { computed, ref } from 'vue'
-import locationsData from '../../database/Locations.json'
-import enemiesData from '../../database/EnemiesTable.json'
 import EnemyDetailsModal from './EnemyDetailsModal.vue'
 import { useLocalization } from '../../composables/useLocalization'
+import type { Enemy } from '../../models/Enemy'
 
 const store = useGameStore()
 const { t, getLocalized } = useLocalization()
-const locations = locationsData as Record<string, any>
 
-const currentLocationStr = computed(() => {
-    return store.gameState?.player?.mapId
-})
+const areaInfo = computed(() => store.gameState?.areaInformation)
 
 const currentLocation = computed(() => {
-    const loc = currentLocationStr.value
-    if (!loc || loc === 'Unknown') return t('area.unknownArea') || 'Unknown Area'
-    
-    return locations[loc] ? getLocalized(locations[loc].Name) : `${t('area.unknownZone') || 'Unknown Zone'} ${loc}`
+    if (!areaInfo.value) return t('area.unknownArea') || 'Unknown Area'
+    return getLocalized(areaInfo.value.location.name)
 })
 
-const areaLocationId = computed(() => {
-    const loc = currentLocationStr.value
-    if (!loc || loc === 'Unknown') return null
-    return locations[loc]?.Location || null
-})
-
-const areaEnemies = computed(() => {
-    const mapId = areaLocationId.value
-    if (!mapId) return []
-
-    return (enemiesData as any[]).filter((enemy: any) => {
-        if (!enemy.Location) return false;
-        
-        // At this point, Location is expected to be an array of strings (Location IDs)
-        const locs = Array.isArray(enemy.Location) ? enemy.Location : [enemy.Location];
-        return locs.includes(mapId);
-    })
-})
+const areaEnemies = computed(() => areaInfo.value?.enemies || [])
 
 const currentMapImage = computed(() => {
-    const rawLoc = currentLocationStr.value
-    if (!rawLoc || rawLoc === 'Unknown') return null
+    if (!areaInfo.value) return null
     try {
-        const locEntry = locations[rawLoc]
-        const imageFile = locEntry?.Image || rawLoc
+        const imageFile = areaInfo.value.location.image
         return new URL(`../../assets/maps/${imageFile}.webp`, import.meta.url).href
     } catch {
         return null
@@ -53,9 +28,9 @@ const currentMapImage = computed(() => {
 })
 
 const isEnemyModalOpen = ref(false)
-const selectedEnemy = ref<any | null>(null)
+const selectedEnemy = ref<Enemy | null>(null)
 
-const openEnemyDetails = (enemy: any) => {
+const openEnemyDetails = (enemy: Enemy) => {
     selectedEnemy.value = enemy
     isEnemyModalOpen.value = true
 }
@@ -110,12 +85,12 @@ const closeEnemyDetails = () => {
              <div v-else class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
                 <button 
                    v-for="enemy in areaEnemies" 
-                   :key="enemy.Id" 
+                   :key="enemy.id" 
                    @click="openEnemyDetails(enemy)"
                    class="font-bold text-sm tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
-                   :class="enemy.Boss ? 'text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]' : 'text-[#9e3737] hover:text-[#b24848] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
+                   :class="enemy.boss ? 'text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]' : 'text-[#9e3737] hover:text-[#b24848] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
                 >
-                   {{ getLocalized(enemy.Name) }}
+                   {{ enemy.name }}
                 </button>
              </div>
         </div>

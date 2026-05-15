@@ -21,6 +21,7 @@ import { ActiveDigievolutionConverter } from '../converters/ActiveDigievolutionC
 import { ActiveDigievolutionUpdater } from '../updaters/ActiveDigievolutionUpdater'
 import { AttributesStateManager } from '../stateManagers/AttributesStateManager'
 import { ResistancesStateManager } from '../stateManagers/ResistancesStateManager'
+import { AreaInformationConverter } from '../converters/AreaInformationConverter'
 
 export const useGameStore = defineStore('game', () => {
     const isConnected = ref(false)
@@ -39,7 +40,8 @@ export const useGameStore = defineStore('game', () => {
             player: PlayerConverter.convert(event.state.player),
             party: PartyConverter.convert(event.state.party),
             importantItems: ImportantItemsConverter.convert(event.state.importantItems),
-            journal: JournalConverter.convert(event.state.journal)
+            journal: JournalConverter.convert(event.state.journal),
+            areaInformation: AreaInformationConverter.convert(event.state.player?.mapId)
         }
     }
 
@@ -53,6 +55,9 @@ export const useGameStore = defineStore('game', () => {
 
     function updatePlayerLocation(event: Events.PlayerLocationChangedDTO) {
         PlayerUpdater.updateLocation(gameState.value, event)
+        if (gameState.value) {
+            gameState.value.areaInformation = AreaInformationConverter.convert(event.location)
+        }
     }
 
     function updatePartySlots(event: Events.PartySlotsChangedDTO) {
