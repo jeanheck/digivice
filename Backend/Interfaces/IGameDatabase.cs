@@ -8,8 +8,6 @@ namespace Backend.Interfaces
     {
         PlayerAddresses GetPlayerAddresses();
         PartyAddresses GetPartyAddresses();
-        ImportantItemsAddresses GetImportantItemsAddresses();
-        ConsumableItemsAddresses GetConsumableItemsAddresses();
         DigimonAddresses GetDigimonAddresses();
         Dictionary<int, DigimonBaseAddress> GetDigimonDefinitions();
         MainQuest GetMainQuest();

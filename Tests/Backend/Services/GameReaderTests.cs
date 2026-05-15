@@ -1,7 +1,8 @@
 using Backend.Services;
 using Backend.Interfaces;
-using Backend.Models.Addresses;
+using Backend.Addresses;
 using Backend.Models.Quests;
+using Backend.Resources;
 using Moq;
 
 namespace Tests.Backend.Services
@@ -20,38 +21,11 @@ namespace Tests.Backend.Services
         }
 
         [Fact]
-        public void ReadImportantItems_ShouldMapResourceFully()
-        {
-            var addresses = new ImportantItemsAddresses
-            {
-                FolderBag = new ItemAddress { Id = "FolderBag", Address = "0x20", Name = "A" },
-                TreeBoots = new ItemAddress { Id = "TreeBoots", Address = "0x30", Name = "B" },
-                FishingPole = new ItemAddress { Id = "FishingPole", Address = "0x00", Name = "C" },
-                RedSnapper = new ItemAddress { Id = "RedSnapper", Address = "0x00", Name = "D" }
-            };
-
-            // Setup the specific mocked bytes returning for these addresses
-            _mockMemoryReader.Setup(m => m.ReadBytes(It.IsAny<long>(), 1))
-                             .Returns((long address, int length) =>
-                             {
-                                 if (address == 0x20) return new byte[] { 1 };
-                                 if (address == 0x30) return new byte[] { 0 };
-                                 return new byte[] { 0 };
-                             });
-
-            var reader = new GameReader(_mockMemoryReader.Object);
-            var result = reader.ReadImportantItems(addresses);
-
-            Assert.Equal(1, result.Folderbag);
-            Assert.Equal(0, result.TreeBoots);
-        }
-
-        [Fact]
         public void ReadPlayerBits_ShouldReturnValidInt()
         {
             _mockMemoryReader.Setup(m => m.ReadInt32(It.IsAny<long>())).Returns(15000);
 
-            var addresses = new PlayerAddresses { Bits = "0x50" };
+            var addresses = new PlayerAddresses { Bits = 0x50 };
             var reader = new GameReader(_mockMemoryReader.Object);
 
             var result = reader.ReadPlayer(addresses);
@@ -64,10 +38,10 @@ namespace Tests.Backend.Services
         {
             var addresses = new PartyAddresses
             {
-                PartySlot1 = "0x10",
-                PartySlot2 = "0x20",
-                PartySlot3 = "0x30",
-                PartySlotStride = 4
+                PartySlot1 = 0x10,
+                PartySlot2 = 0x20,
+                PartySlot3 = 0x30,
+                BytesPerSlot = 4
             };
 
             _mockMemoryReader.Setup(m => m.ReadBytes(It.IsAny<long>(), 4))
@@ -89,58 +63,37 @@ namespace Tests.Backend.Services
         }
 
         [Fact]
-        public void ReadConsumableItems_ShouldMapResourceFully()
+        public void ReadQuestSteps_ShouldMapDictionaryAndRequisites()
         {
-            var addresses = new ConsumableItemsAddresses
+            var quest = new MainQuest
             {
-                PowerCharge = new ItemAddress { Id = "PowerCharge", Address = "0x40" },
-                SpiderWeb = new ItemAddress { Id = "SpiderWeb", Address = "0x41" },
-                BambooSpear = new ItemAddress { Id = "BambooSpear", Address = "0x42" }
+                Requisites = new List<Requisite> 
+                { 
+                    new Requisite { Id = "Req1", Address = 0x100 } 
+                },
+                Steps = new List<QuestStep>
+                {
+                    new QuestStep { Number = 1, Address = 0x50 },
+                    new QuestStep { Number = 2, Address = 0x51 }
+                }
             };
 
-            _mockMemoryReader.Setup(m => m.ReadBytes(It.IsAny<long>(), 1))
-                             .Returns((long address, int length) =>
+            _mockMemoryReader.Setup(m => m.ReadByteSafe(It.IsAny<long>()))
+                             .Returns((long address) =>
                              {
-                                 if (address == 0x40) return new byte[] { 10 }; // 10 charges
-                                 if (address == 0x41) return new byte[] { 5 }; // 5 webs
-                                 if (address == 0x42) return new byte[] { 0 }; // 0 spears
-                                 return new byte[] { 0 };
+                                 if (address == 0x100) return 1; // Requisite done
+                                 if (address == 0x50) return 255; // Step 1 done
+                                 if (address == 0x51) return 0; // Step 2 not done
+                                 return 0;
                              });
 
             var reader = new GameReader(_mockMemoryReader.Object);
-            var result = reader.ReadConsumableItems(addresses);
-
-            Assert.Equal(10, result.PowerCharge);
-            Assert.Equal(5, result.SpiderWeb);
-            Assert.Equal(0, result.BambooSpear);
-        }
-
-        [Fact]
-        public void ReadQuestSteps_ShouldMapDictionaryCorrectly()
-        {
-            var steps = new List<QuestStep>
-            {
-                new QuestStep { Number = 1, Address = "0x50" },
-                new QuestStep { Number = 2, Address = "0x51" },
-                new QuestStep { Number = 3, Address = "" } // Missing address
-            };
-
-            _mockMemoryReader.Setup(m => m.ReadBytes(It.IsAny<long>(), 1))
-                             .Returns((long address, int length) =>
-                             {
-                                 if (address == 0x50) return new byte[] { 255 }; // completed byte
-                                 if (address == 0x51) return new byte[] { 0 }; // not completed
-                                 return new byte[] { 0 };
-                             });
-
-            var reader = new GameReader(_mockMemoryReader.Object);
-            var result = reader.ReadQuestSteps(steps);
+            var result = reader.ReadQuestSteps(quest);
 
             Assert.Equal(2, result.Count);
             Assert.Equal(255, result[1]);
             Assert.Equal(0, result[2]);
-            // Step 3 shouldn't be mapped
-            Assert.False(result.ContainsKey(3));
+            Assert.True(quest.Requisites[0].IsDone);
         }
     }
 }

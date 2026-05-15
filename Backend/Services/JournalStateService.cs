@@ -21,22 +21,10 @@ namespace Backend.Services
 
         private Quest ProcessQuest(Quest quest)
         {
-            var questStepsState = gameReader.ReadQuestSteps(quest.Steps);
+            var questStepsState = gameReader.ReadQuestSteps(quest);
 
-            // 1. Evaluate Quest-level Requisites
-            gameReader.ReadQuestRequisites(quest.Requisites);
-
-            // 2. Evaluate Step Completion (Bitmasks + Cascade)
+            // Evaluate Step Completion (Bitmasks + Cascade)
             ApplyQuestStepsLogic(quest, questStepsState);
-
-            // 3. Evaluate Step-level Requisites
-            foreach (var step in quest.Steps)
-            {
-                if (step.Requisites != null)
-                {
-                    gameReader.ReadQuestRequisites(step.Requisites);
-                }
-            }
 
             return quest;
         }

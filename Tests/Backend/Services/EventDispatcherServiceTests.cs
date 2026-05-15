@@ -50,7 +50,7 @@ namespace Tests.Backend.Services
             {
                 Player = new Player { MapId = "0001", Bits = 10, Name = "Me" },
                 Party = new Party { Slots = new List<Digimon?> { CreateValidDigimon(100, 1, 10, new Digievolution { Id = 5, Level = 1 }) } },
-                ImportantItems = new ImportantItems { FolderBag = new ImportantItem { Has = false }, TreeBoots = null, FishingPole = null, RedSnapper = null },
+                 TreeBoots = null, FishingPole = null, RedSnapper = null },
                 Journal = new MainQuest { Steps = new List<QuestStep>(), Prerequisites = new List<Requisite>() }
                           != null ? new Journal { MainQuest = new MainQuest { Steps = new List<QuestStep>(), Prerequisites = new List<Requisite>() }, SideQuests = new List<SideQuest>() } : null
             };
@@ -77,7 +77,7 @@ namespace Tests.Backend.Services
                         }
                     }
                 },
-                ImportantItems = new ImportantItems { FolderBag = new ImportantItem { Has = true }, TreeBoots = null, FishingPole = null, RedSnapper = null },
+                 TreeBoots = null, FishingPole = null, RedSnapper = null },
                 Journal = new Journal { MainQuest = new MainQuest { Title = "New Task", Steps = new List<QuestStep>(), Prerequisites = new List<Requisite>() }, SideQuests = new List<SideQuest>() }
             };
 
@@ -104,7 +104,7 @@ namespace Tests.Backend.Services
         {
             var initialState = new State { Party = new Party { Slots = new List<Digimon?> { CreateValidDigimon() } } };
             var digi2 = CreateValidDigimon();
-            digi2.BasicInfo.Name = "Paildramon";
+            digi2.BasicInfo;
             var newState = new State { Party = new Party { Slots = new List<Digimon?> { CreateValidDigimon(), digi2 } } };
 
             _dispatcher.ProcessGameState(initialState);

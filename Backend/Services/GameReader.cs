@@ -36,78 +36,58 @@ namespace Backend.Services
             };
         }
 
-        public ImportantItemsResource ReadImportantItems(ImportantItemsAddresses addresses)
-        {
-            return new ImportantItemsResource
-            {
-                FolderBag = memoryReader.ReadByteSafe(addresses.FolderBag.Address),
-                TreeBoots = memoryReader.ReadByteSafe(addresses.TreeBoots.Address),
-                FishingPole = memoryReader.ReadByteSafe(addresses.FishingPole.Address),
-                RedSnapper = memoryReader.ReadByteSafe(addresses.RedSnapper.Address)
-            };
-        }
-
-        public ConsumableItemsResource ReadConsumableItems(ConsumableItemsAddresses addresses)
-        {
-            return new ConsumableItemsResource
-            {
-                PowerCharge = memoryReader.ReadByteSafe(addresses.PowerCharge.Address),
-                SpiderWeb = memoryReader.ReadByteSafe(addresses.SpiderWeb.Address),
-                BambooSpear = memoryReader.ReadByteSafe(addresses.BambooSpear.Address)
-            };
-        }
-
         public DigimonResource ReadDigimon(
             int slotIndex,
             int baseAddress,
             DigievolutionsAddresses digievolutionsAddresses)
         {
             var logicBlock = memoryReader.ReadBytes(baseAddress, DigimonMemoryBlockSize);
-
-            int activeDigievolutionId = -1;
-            if (digievolutionsAddresses != null)
+            if (logicBlock == null || logicBlock.Length == 0)
             {
-                int ActiveDigievolutionAddress = digievolutionsAddresses.ActiveDigievolution;
-                activeDigievolutionId = memoryReader.ReadInt16(baseAddress + ActiveDigievolutionAddress) ?? -1;
+                return new DigimonResource();
             }
+
+            var activeDigievolutionId = memoryReader.ReadInt16(baseAddress + digievolutionsAddresses.ActiveDigievolution) ?? 0;
 
             return new DigimonResource
             {
-                SlotIndex = slotIndex,
                 BaseAddress = baseAddress,
-                LogicBlock = logicBlock ?? Array.Empty<byte>(),
+                LogicBlock = logicBlock,
                 ActiveDigievolutionId = activeDigievolutionId
             };
         }
 
-        public Dictionary<int, byte> ReadQuestSteps(List<QuestStep> steps)
+        public Dictionary<int, byte> ReadQuestSteps(Quest quest)
         {
             var questStepsState = new Dictionary<int, byte>();
-            foreach (var step in steps)
-            {
-                if (step.Address == 0)
-                {
-                    continue;
-                }
 
-                var stepStateInBytes = memoryReader.ReadBytes(step.Address, 1);
-                questStepsState[step.Number] = (stepStateInBytes != null && stepStateInBytes.Length > 0)
-                    ? stepStateInBytes[0]
-                    : (byte)0;
+            // 1. Read Quest-level Requisites
+            ReadRequisites(quest.Requisites);
+
+            // 2. Read Step-level data and Requisites
+            foreach (var step in quest.Steps)
+            {
+                if (step.Address != 0)
+                {
+                    questStepsState[step.Number] = memoryReader.ReadByteSafe(step.Address);
+                }
+                if (step.Requisites != null)
+                {
+                    ReadRequisites(step.Requisites);
+                }
             }
             return questStepsState;
         }
-        public void ReadQuestRequisites(IEnumerable<Requisite> requisites)
+
+        private void ReadRequisites(IEnumerable<Requisite> requisites)
         {
             foreach (var requisite in requisites)
             {
                 if (requisite.Address == 0)
                 {
-                    continue;
+                    var value = memoryReader.ReadByteSafe(requisite.Address);
+                    requisite.IsDone = value != 0;
                 }
-
-                var value = memoryReader.ReadByteSafe(requisite.Address);
-                requisite.IsDone = value != 0;
             }
         }
     }

@@ -1,6 +1,6 @@
 using Backend.Interfaces;
-using Backend.Models.Addresses;
-using Backend.Models.Resources;
+using Backend.Addresses;
+using Backend.Resources;
 using Backend.Services;
 using Moq;
 

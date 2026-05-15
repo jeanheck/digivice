@@ -1,4 +1,4 @@
-using Backend.Models.Addresses;
+using Backend.Addresses;
 using Backend.Services;
 
 namespace Tests.Backend.Services

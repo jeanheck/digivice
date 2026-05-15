@@ -11,8 +11,6 @@ namespace Backend.Services
         private readonly string dataDirectory;
         private PlayerAddresses? playerAddresses;
         private PartyAddresses? partyAddresses;
-        private ImportantItemsAddresses? importantItemsAddresses;
-        private ConsumableItemsAddresses? consumableItemsAddresses;
         private DigimonAddresses? digimonAddresses;
         private Dictionary<int, DigimonBaseAddress>? digimonDefinitions;
         private MainQuest? mainQuest;
@@ -63,10 +61,7 @@ namespace Backend.Services
             yield return GetSideQuestTreeBoots();
             yield return GetSideQuestFishingPole();
         }
-        public ImportantItemsAddresses GetImportantItemsAddresses() =>
-            LoadAndCache(ref importantItemsAddresses, "ImportantItemsAddresses.json");
-        public ConsumableItemsAddresses GetConsumableItemsAddresses() =>
-            LoadAndCache(ref consumableItemsAddresses, "ConsumableItemsAddresses.json");
+
         private SideQuest GetSideQuestFolderBag() =>
             LoadAndCache(ref sideQuestFolderBag, "Quests/SideQuest/FolderBagAddresses.json");
         private SideQuest GetSideQuestTreeBoots() =>
