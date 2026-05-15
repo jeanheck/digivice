@@ -3,7 +3,6 @@
     "Requisites": [
         {
             "Id": "FolderBag",
-            "Type": "ImportantItem",
             "Address": "0x00048F42"
         }
     ],
@@ -45,3 +44,4 @@
         }
     ]
 }
+

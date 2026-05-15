@@ -10,6 +10,7 @@ namespace Backend.Interfaces
         PlayerResource ReadPlayer(PlayerAddresses addresses);
         PartyResource ReadParty(PartyAddresses addresses);
         DigimonResource ReadDigimon(int slotIndex, int baseAddress, DigievolutionsAddresses digievolutionsAddresses);
+        QuestResource ReadQuest(QuestAddresses addresses);
         Dictionary<int, byte> ReadQuestSteps(Quest quest);
     }
 }

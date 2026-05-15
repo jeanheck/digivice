@@ -1,7 +1,9 @@
 using Backend.Interfaces;
 using Backend.Addresses;
 using Backend.Addresses.Digimon;
+using Backend.Addresses.Quests;
 using Backend.Resources;
+using Backend.Resources.Quests;
 using Backend.Models.Quests;
 
 namespace Backend.Services
@@ -57,6 +59,32 @@ namespace Backend.Services
             };
         }
 
+        public QuestResource ReadQuest(QuestAddresses addresses)
+        {
+            return new QuestResource
+            {
+                Id = addresses.Id,
+                Requisites = ReadRequisiteResources(addresses.Requisites),
+                Steps = addresses.Steps.Select(step => new StepResource
+                {
+                    Number = step.Number,
+                    Value = memoryReader.ReadByteSafe(step.Address),
+                    Requisites = ReadRequisiteResources(step.Requisites)
+                }).ToList()
+            };
+        }
+
+        private List<RequisiteResource> ReadRequisiteResources(IEnumerable<RequisiteAddresses>? requisites)
+        {
+            if (requisites == null) return [];
+
+            return requisites.Select(req => new RequisiteResource
+            {
+                Id = req.Id,
+                Value = memoryReader.ReadByteSafe(req.Address)
+            }).ToList();
+        }
+
         public Dictionary<int, byte> ReadQuestSteps(Quest quest)
         {
             var questStepsState = new Dictionary<int, byte>();
@@ -71,6 +99,7 @@ namespace Backend.Services
                 {
                     questStepsState[step.Number] = memoryReader.ReadByteSafe(step.Address);
                 }
+
                 if (step.Requisites != null)
                 {
                     ReadRequisites(step.Requisites);
@@ -83,7 +112,7 @@ namespace Backend.Services
         {
             foreach (var requisite in requisites)
             {
-                if (requisite.Address == 0)
+                if (requisite.Address != 0)
                 {
                     var value = memoryReader.ReadByteSafe(requisite.Address);
                     requisite.IsDone = value != 0;

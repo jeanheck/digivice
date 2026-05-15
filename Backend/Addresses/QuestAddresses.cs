@@ -1,9 +1,11 @@
-using Backend.Models.Quests;
+using Backend.Addresses.Quests;
 
 namespace Backend.Addresses
 {
     public class QuestAddresses
     {
-        public List<QuestStep> Steps { get; set; } = new List<QuestStep>();
+        public string Id { get; set; } = string.Empty;
+        public List<RequisiteAddresses> Requisites { get; set; } = [];
+        public List<StepAddresses> Steps { get; set; } = [];
     }
 }

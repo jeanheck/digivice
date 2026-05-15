@@ -10,10 +10,13 @@ namespace Backend.Services
     {
         public Journal GetJournal()
         {
+            var mainQuestAddresses = gameDatabase.GetMainQuest();
+            var allSideQuestsAddresses = gameDatabase.GetAllSideQuests();
+
             return new()
             {
-                MainQuest = (MainQuest)ProcessQuest(CloneQuest(gameDatabase.GetMainQuest())),
-                SideQuests = gameDatabase.GetAllSideQuests()
+                MainQuest = (MainQuest)ProcessQuest(CloneQuest(mainQuestAddresses)),
+                SideQuests = allSideQuestsAddresses
                     .Select(sideQuest => (SideQuest)ProcessQuest(CloneQuest(sideQuest)))
                     .ToList()
             };

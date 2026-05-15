@@ -3,7 +3,6 @@
     "Requisites": [
         {
             "Id": "FolderBag",
-            "Type": "ImportantItem",
             "Address": "0x00048F42"
         }
     ],
@@ -23,17 +22,14 @@
             "Requisites": [
                 {
                     "Id": "BambooSpear",
-                    "Type": "ConsumableItem",
                     "Address": "0x048E57"
                 },
                 {
                     "Id": "SpiderWeb",
-                    "Type": "ConsumableItem",
                     "Address": "0x048E09"
                 },
                 {
                     "Id": "RedSnapper",
-                    "Type": "ConsumableItem",
                     "Address": "0x00048DB7"
                 }
             ],
@@ -42,3 +38,4 @@
         }
     ]
 }
+

@@ -6,7 +6,7 @@ namespace Backend.Models.Quests
     public record class Requisite
     {
         public string Id { get; set; } = string.Empty;
-        public string Type { get; set; } = string.Empty;
+        
         
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long Address { get; set; }

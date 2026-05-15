@@ -1,12 +1,13 @@
 using System.Text.Json.Serialization;
 using Backend.Utils;
 
-namespace Backend.Addresses
+namespace Backend.Addresses.Quests
 {
-    public class ItemAddress
+    public class RequisiteAddresses
     {
         public string Id { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;
+        
+
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long Address { get; set; }
     }
