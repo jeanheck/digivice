@@ -10,22 +10,19 @@ const props = defineProps<{
 
 // Skills modal state
 const modalOpen = ref(false);
-const selectedDigievolutionName = ref<string | null>(null);
-const selectedLevel = ref(0);
+const selectedDigievolution = ref<Digievolution | null>(null);
 
 function openSkills(digievolution: Digievolution | null) {
     if (!digievolution) {
         return;
     }
-    selectedDigievolutionName.value = digievolution.name;
-    selectedLevel.value = digievolution.level;
+    selectedDigievolution.value = digievolution;
     modalOpen.value = true;
 }
 
 function closeSkills() {
     modalOpen.value = false;
-    selectedDigievolutionName.value = null;
-    selectedLevel.value = 0;
+    selectedDigievolution.value = null;
 }
 </script>
 
@@ -75,8 +72,7 @@ function closeSkills() {
   <!-- Skills Modal -->
   <DigievolutionTechniquesModal
     :is-open="modalOpen"
-    :digivolution-name="selectedDigievolutionName"
-    :current-level="selectedLevel"
+    :digievolution="selectedDigievolution"
     @close="closeSkills"
   />
 </template>

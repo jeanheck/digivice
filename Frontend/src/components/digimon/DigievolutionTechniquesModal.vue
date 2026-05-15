@@ -1,30 +1,12 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted } from 'vue'
 import IconClose from '../icons/IconClose.vue'
-import TechniquesTable from '../../database/TechniquesTable.json'
-import DigievolutionTechniques from '../../database/DigievolutionTechniques.json'
+import type { Digievolution } from '../../models'
 import { useLocalization } from '../../composables/useLocalization'
-
-interface TechEntry {
-  id: string
-  name: any
-  type: string
-  element: string
-  elementStrength: number
-  mp: number
-  power: number
-  description: any
-}
-
-interface DigivolutionTechEntry {
-  techniqueId: string
-  learnLevel: number
-}
 
 const props = defineProps<{
   isOpen: boolean
-  digivolutionName: any // Can be string or localized object
-  currentLevel: number
+  digievolution: Digievolution | null
 }>()
 
 const emit = defineEmits(['close'])
@@ -47,35 +29,8 @@ onUnmounted(() => {
   window.removeEventListener('keydown', handleKeydown)
 })
 
-// Lookup maps
-const techniqueById = Object.fromEntries(
-  (TechniquesTable as { techniques: TechEntry[] }).techniques.map(t => [t.id, t])
-)
-
 const techniques = computed(() => {
-  if (!props.digivolutionName) return []
-
-  const localizedName = getLocalized(props.digivolutionName)
-
-  // Use unknown first to avoid overlap errors with the new i18n structure
-  const data = (DigievolutionTechniques as unknown) as { 
-    digievolutions: { name: any; techniques: DigivolutionTechEntry[] }[] 
-  }
-  
-  const entry = data.digievolutions.find(d => getLocalized(d.name) === localizedName)
-  if (!entry) return []
-
-  const maxLearnLevel = Math.max(...entry.techniques.map(t => t.learnLevel))
-
-  return entry.techniques.map(t => {
-    const base = techniqueById[t.techniqueId]
-    return {
-      ...base,
-      learnLevel: t.learnLevel,
-      isSignature: t.learnLevel === maxLearnLevel,
-      isUnlocked: props.currentLevel >= t.learnLevel
-    }
-  })
+  return props.digievolution?.techniques ?? []
 })
 
 function elementColor(element: string): string {
@@ -105,7 +60,7 @@ function typeIcon(type: string): string {
   <Teleport to="body">
     <Transition name="fade">
       <div
-        v-if="isOpen && digivolutionName"
+        v-if="isOpen && digievolution"
         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
         @click.self="closeModal"
       >
@@ -120,7 +75,7 @@ function typeIcon(type: string): string {
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-10">
             <h2 class="font-bold tracking-widest text-[#00aaff] text-sm uppercase flex items-center gap-2">
               <span class="text-yellow-400">⚡</span>
-              {{ getLocalized(digivolutionName) }}
+              {{ digievolution?.name }}
             </h2>
             <button
               @click="closeModal"
@@ -156,7 +111,7 @@ function typeIcon(type: string): string {
 
               <!-- Type icon -->
               <span class="text-base leading-none mt-[1px] flex-shrink-0">
-                {{ typeIcon(tech.type ?? '') }}
+                {{ typeIcon(tech.type?.id ?? '') }}
               </span>
 
               <!-- Content -->
