@@ -67,7 +67,7 @@ namespace Backend.Services
                 Steps = addresses.Steps.Select(step => new StepResource
                 {
                     Number = step.Number,
-                    Value = ApplyMask(memoryReader.ReadByteSafe(step.Address), step.BitMask),
+                    Value = memoryReader.ReadByteSafe(step.Address, step.BitMask),
                     Requisites = ReadRequisiteResources(step.Requisites)
                 }).ToList()
             };
@@ -84,12 +84,7 @@ namespace Backend.Services
             }).ToList();
         }
 
-        private static byte ApplyMask(byte rawValue, long? bitMask)
-        {
-            if (bitMask == null) return rawValue;
 
-            return (byte)(rawValue & bitMask.Value);
-        }
 
         public Dictionary<int, byte> ReadQuestSteps(Quest quest)
         {

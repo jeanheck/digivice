@@ -105,13 +105,27 @@ namespace Backend.Services
             }
         }
 
-        public byte ReadByteSafe(long address)
+        public byte ReadByteSafe(long address, long? bitMask = null)
         {
-            if (address == 0) return 0;
+            if (address == 0)
+            {
+                return 0;
+            }
             try
             {
                 var bytes = ReadBytes(address, 1);
-                return (bytes != null && bytes.Length > 0) ? bytes[0] : (byte)0;
+                if (bytes == null || bytes.Length == 0)
+                {
+                    return 0;
+                }
+
+                byte rawValue = bytes[0];
+                if (bitMask == null)
+                {
+                    return rawValue;
+                }
+
+                return (byte)(rawValue & bitMask.Value);
             }
             catch { return 0; }
         }
