@@ -1,6 +1,6 @@
-using Backend.Resources.Quests;
+using Backend.Memory.Resources.Quests;
 
-namespace Backend.Resources
+namespace Backend.Memory.Resources
 {
     public class QuestResource
     {

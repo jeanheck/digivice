@@ -1,4 +1,4 @@
-namespace Backend.Resources.Quests
+namespace Backend.Memory.Resources.Quests
 {
     public class StepResource
     {

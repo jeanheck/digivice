@@ -1,7 +1,7 @@
 using Backend.Memory.Addresses;
 using Backend.Memory.Readers;
 using Backend.Memory.Addresses.Digimon;
-using Backend.Resources;
+using Backend.Memory.Resources;
 
 namespace Backend.Interfaces
 {
