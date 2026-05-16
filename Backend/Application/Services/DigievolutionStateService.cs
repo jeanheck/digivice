@@ -1,10 +1,8 @@
 using Backend.Domain.Models.Digimons;
 using Backend.Memory.Readers;
-using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Digimon;
-using Backend.Utils;
 
-namespace Backend.Services
+namespace Backend.Application.Services
 {
     public class DigievolutionStateService
     {

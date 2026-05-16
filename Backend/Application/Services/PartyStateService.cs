@@ -2,7 +2,7 @@ using Backend.Domain.Models;
 using Backend.Memory.Readers;
 using Backend.Interfaces;
 
-namespace Backend.Services
+namespace Backend.Application.Services
 {
     public class PartyStateService(
         IAddressesRepository addressesRepository,
@@ -27,4 +27,3 @@ namespace Backend.Services
         }
     }
 }
-

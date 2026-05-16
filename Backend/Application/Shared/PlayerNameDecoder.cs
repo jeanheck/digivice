@@ -1,9 +1,9 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Backend.Utils
+namespace Backend.Application.Shared
 {
-    public static class TextDecoder
+    public static class PlayerNameDecoder
     {
         // Complete character map derived from game data:
         // Uppercase A-Z: bytes 0x0E - 0x27
@@ -62,7 +62,7 @@ namespace Backend.Utils
         /// Collapses consecutive spaces, trims the result, and stops at 0x00 or 0xFF.
         /// Allowing digits and special characters (e.g., "Ta01.?-~").
         /// </summary>
-        public static string DecodeName(byte[]? buffer)
+        public static string Decode(byte[]? buffer)
         {
             if (buffer == null) return string.Empty;
 
@@ -91,21 +91,6 @@ namespace Backend.Utils
             }
 
             return normalized;
-        }
-
-        /// <summary>
-        /// Returns true if the string looks like a valid map area name
-        /// (only contains ASCII letters, spaces, hyphens, and apostrophes).
-        /// </summary>
-        private static bool IsValidAreaName(string s)
-        {
-            if (string.IsNullOrWhiteSpace(s)) return false;
-            foreach (char c in s)
-            {
-                if (!char.IsLetter(c) && c != ' ' && c != '-' && c != '\'')
-                    return false;
-            }
-            return true;
         }
     }
 }

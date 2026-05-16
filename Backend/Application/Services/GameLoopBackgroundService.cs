@@ -1,14 +1,13 @@
 using Backend.Diagnostics;
-using Backend.Memory.Readers;
 using Backend.Events.Interfaces;
 using Backend.Interfaces;
 
-namespace Backend.Services
+namespace Backend.Application.Services
 {
     public class GameLoopBackgroundService
     (
         IMemoryReader MemoryReader,
-        GameStateService gameStateService,
+        StateService StateService,
         IEventDispatcherService eventDispatcherService,
         DebugConsoleRenderer debugConsoleRenderer,
         IConfiguration configuration
@@ -39,7 +38,7 @@ namespace Backend.Services
 
                 try
                 {
-                    var state = gameStateService.GetState();
+                    var state = StateService.GetState();
 
                     if (state?.Player != null)
                     {

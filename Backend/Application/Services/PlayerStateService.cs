@@ -1,8 +1,8 @@
 using Backend.Domain.Models;
-using Backend.Utils;
+using Backend.Application.Shared;
 using Backend.Interfaces;
 
-namespace Backend.Services
+namespace Backend.Application.Services
 {
     public class PlayerStateService(IAddressesRepository addressesRepository, IResourceReader resourceReader)
     {
@@ -10,7 +10,7 @@ namespace Backend.Services
         {
             var addresses = addressesRepository.GetPlayerAddresses();
             var resource = resourceReader.ReadPlayer(addresses);
-            var playerName = TextDecoder.DecodeName(resource.NameInBytes);
+            var playerName = PlayerNameDecoder.Decode(resource.NameInBytes);
 
             if (string.IsNullOrWhiteSpace(playerName))
             {

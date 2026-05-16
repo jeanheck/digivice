@@ -1,8 +1,8 @@
 using Backend.Domain.Models;
 
-namespace Backend.Services
+namespace Backend.Application.Services
 {
-    public class GameStateService(
+    public class StateService(
         PlayerStateService playerStateService,
         PartyStateService partyStateService,
         JournalStateService journalStateService)

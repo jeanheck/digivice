@@ -6,7 +6,7 @@ using Backend.Events.Hubs;
 using Backend.Events.Interfaces;
 using Backend.Events.Services;
 using Backend.Interfaces;
-using Backend.Services;
+using Backend.Application.Services;
 using Backend.Memory.Repositories;
 using Serilog;
 
@@ -47,7 +47,7 @@ try
     builder.Services.AddSingleton<DigimonStateService>();
     builder.Services.AddSingleton<PartyStateService>();
     builder.Services.AddSingleton<JournalStateService>();
-    builder.Services.AddSingleton<GameStateService>();
+    builder.Services.AddSingleton<StateService>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();
 
     // Register Event Dispatcher

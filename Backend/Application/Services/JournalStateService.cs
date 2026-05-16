@@ -3,7 +3,7 @@ using Backend.Domain.Models.Quests;
 using Backend.Interfaces;
 using Backend.Memory.Resources;
 
-namespace Backend.Services
+namespace Backend.Application.Services
 {
     public class JournalStateService(
         IAddressesRepository addressesRepository,
