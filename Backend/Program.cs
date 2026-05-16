@@ -1,5 +1,6 @@
 using Backend.Diagnostics;
 using Backend.Memory.Readers;
+using Backend.Memory.Readers.Quests;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;

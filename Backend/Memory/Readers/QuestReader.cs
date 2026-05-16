@@ -1,10 +1,11 @@
 using Backend.Memory.Addresses;
 using Backend.Memory.Resources;
+using Backend.Memory.Readers.Quests;
 
 namespace Backend.Memory.Readers
 {
     public class QuestReader(
-        IRequisiteReader requisiteReader, 
+        IRequisiteReader requisiteReader,
         IStepReader stepReader) : IQuestReader
     {
         public QuestResource Read(QuestAddresses addresses)
