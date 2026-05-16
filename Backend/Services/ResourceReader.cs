@@ -1,7 +1,7 @@
 using Backend.Interfaces;
 using Backend.Addresses;
-using Backend.Addresses.Digimon;
 using Backend.Addresses.Quests;
+using Backend.Addresses.Digimon;
 using Backend.Resources;
 using Backend.Resources.Quests;
 using Backend.Models.Quests;
@@ -9,7 +9,7 @@ using Backend.Models;
 
 namespace Backend.Services
 {
-    public class GameReader(IMemoryReaderService memoryReader) : IGameReader
+    public class ResourceReader(IMemoryReaderService memoryReader) : IResourceReader
     {
         private const int DigimonMemoryBlockSize = 1500;
 
@@ -83,8 +83,6 @@ namespace Backend.Services
                 Value = memoryReader.ReadByteSafe(req.Address)
             }).ToList();
         }
-
-
 
         public Dictionary<int, byte> ReadQuestSteps(Quest quest)
         {

@@ -4,14 +4,14 @@ using Backend.Interfaces;
 namespace Backend.Services
 {
     public class PartyStateService(
-        IGameDatabase gameDatabase,
-        IGameReader gameReader,
+        IAddressesRepository addressesRepository,
+        IResourceReader resourceReader,
         DigimonStateService digimonStateService)
     {
         public Party GetParty()
         {
-            var partyAddresses = gameDatabase.GetPartyAddresses();
-            var resource = gameReader.ReadParty(partyAddresses);
+            var partyAddresses = addressesRepository.GetPartyAddresses();
+            var resource = resourceReader.ReadParty(partyAddresses);
             var party = new Party();
 
             for (int i = 0; i < resource.DigimonIds.Count; i++)

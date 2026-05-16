@@ -3,7 +3,7 @@ using Backend.Addresses.Digimon;
 
 namespace Backend.Interfaces
 {
-    public interface IGameDatabase
+    public interface IAddressesRepository
     {
         PlayerAddresses GetPlayerAddresses();
         PartyAddresses GetPartyAddresses();

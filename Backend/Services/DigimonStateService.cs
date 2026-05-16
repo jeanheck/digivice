@@ -1,22 +1,21 @@
 using Backend.Models;
 using Backend.Models.Digimons;
 using Backend.Addresses;
-using Backend.Addresses.Digimon;
 using Backend.Utils;
 using Backend.Interfaces;
 
 namespace Backend.Services
 {
     public class DigimonStateService(
-        IGameDatabase gameDatabase,
-        IGameReader gameReader,
+        IAddressesRepository addressesRepository,
+        IResourceReader resourceReader,
         DigievolutionStateService digievolutionStateService)
     {
         private const int NoActiveDigievolution = 0xFFFF;
         private const string UnknownDigimonName = "Unknown";
 
-        private DigimonAddresses Addresses => gameDatabase.GetDigimonAddresses();
-        private PartyAddresses PartyAddresses => gameDatabase.GetPartyAddresses();
+        private DigimonAddresses Addresses => addressesRepository.GetDigimonAddresses();
+        private PartyAddresses PartyAddresses => addressesRepository.GetPartyAddresses();
 
         public bool IsEmptySlot(byte digimonId)
         {
@@ -27,7 +26,7 @@ namespace Backend.Services
         {
             var (basicInfo, attributes, resistances, equipaments, digievolutions) = Addresses;
 
-            if (!gameDatabase.GetDigimonDefinitions().TryGetValue(digimonId, out var digimonEntry) || digimonEntry.Address == 0)
+            if (!addressesRepository.GetDigimonDefinitions().TryGetValue(digimonId, out var digimonEntry) || digimonEntry.Address == 0)
             {
                 Serilog.Log.Warning("Unknown Digimon ID: 0x{Id:X2}", digimonId);
                 return null;
@@ -35,7 +34,7 @@ namespace Backend.Services
 
             int digimonAddress = (int)digimonEntry.Address;
 
-            var (logicBlock, activeDigievolutionId) = gameReader
+            var (logicBlock, activeDigievolutionId) = resourceReader
                 .ReadDigimon(slotIndex, digimonAddress, digievolutions);
             var equippedDigievolutions = digievolutionStateService
                 .GetDigievolutions(logicBlock, digievolutions);

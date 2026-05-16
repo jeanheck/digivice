@@ -6,19 +6,19 @@ using Backend.Resources;
 namespace Backend.Services
 {
     public class JournalStateService(
-        IGameDatabase gameDatabase,
-        IGameReader gameReader)
+        IAddressesRepository addressesRepository,
+        IResourceReader resourceReader)
     {
         public Journal GetJournal()
         {
             // 1. Get Definitions (Addresses)
-            var mainQuestAddresses = gameDatabase.GetMainQuest();
-            var allSideQuestsAddresses = gameDatabase.GetAllSideQuests();
+            var mainQuestAddresses = addressesRepository.GetMainQuest();
+            var allSideQuestsAddresses = addressesRepository.GetAllSideQuests();
 
             // 2. Read State (Resources)
-            var mainQuestResource = gameReader.ReadQuest(mainQuestAddresses);
+            var mainQuestResource = resourceReader.ReadQuest(mainQuestAddresses);
             var sideQuestsResources = allSideQuestsAddresses
-                .Select(gameReader.ReadQuest)
+                .Select(resourceReader.ReadQuest)
                 .ToList();
 
             // 3. Assemble Domain Models from Resources

@@ -1,17 +1,18 @@
 using Backend.Addresses;
 using Backend.Addresses.Digimon;
 using Backend.Resources;
-using Backend.Resources.Quests;
 using Backend.Models;
 
 namespace Backend.Interfaces
 {
-    public interface IGameReader
+    public interface IResourceReader
     {
         PlayerResource ReadPlayer(PlayerAddresses addresses);
         PartyResource ReadParty(PartyAddresses addresses);
-        DigimonResource ReadDigimon(int slotIndex, int baseAddress, DigievolutionsAddresses digievolutionsAddresses);
+        DigimonResource ReadDigimon(
+            int slotIndex,
+            int baseAddress,
+            DigievolutionsAddresses digievolutionsAddresses);
         QuestResource ReadQuest(QuestAddresses addresses);
-        Dictionary<int, byte> ReadQuestSteps(Quest quest);
     }
 }

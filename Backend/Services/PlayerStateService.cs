@@ -4,12 +4,12 @@ using Backend.Interfaces;
 
 namespace Backend.Services
 {
-    public class PlayerStateService(IGameDatabase gameDatabase, IGameReader gameReader)
+    public class PlayerStateService(IAddressesRepository addressesRepository, IResourceReader resourceReader)
     {
         public Player? GetPlayer()
         {
-            var addresses = gameDatabase.GetPlayerAddresses();
-            var resource = gameReader.ReadPlayer(addresses);
+            var addresses = addressesRepository.GetPlayerAddresses();
+            var resource = resourceReader.ReadPlayer(addresses);
             var playerName = TextDecoder.DecodeName(resource.NameInBytes);
 
             if (string.IsNullOrWhiteSpace(playerName))

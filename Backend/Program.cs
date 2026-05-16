@@ -6,6 +6,7 @@ using Backend.Events.Interfaces;
 using Backend.Events.Services;
 using Backend.Interfaces;
 using Backend.Services;
+using Backend.Repositories;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -38,8 +39,8 @@ try
     builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
     builder.Services.AddSingleton<IMemoryReaderService, MemoryReaderService>();
-    builder.Services.AddSingleton<IGameDatabase, GameDatabase>();
-    builder.Services.AddSingleton<IGameReader, GameReader>();
+    builder.Services.AddSingleton<IAddressesRepository, AddressesRepository>();
+    builder.Services.AddSingleton<IResourceReader, ResourceReader>();
     builder.Services.AddSingleton<PlayerStateService>();
     builder.Services.AddSingleton<DigievolutionStateService>();
     builder.Services.AddSingleton<DigimonStateService>();
