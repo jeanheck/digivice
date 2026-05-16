@@ -1,12 +1,14 @@
 using Backend.Events.Models;
-using Backend.Events.Models.Journal;
 using Backend.Events.Models.Party;
 using Backend.Events.Models.State;
 using Backend.Domain.Models;
 
 namespace Backend.Events.Diffing;
 
-public class StateDiffer(PlayerDiffer playerDiffer, DigimonDiffer digimonDiffer) : IDiffer<State>
+public class StateDiffer(
+    PlayerDiffer playerDiffer, 
+    DigimonDiffer digimonDiffer, 
+    JournalDiffer journalDiffer) : IDiffer<State>
 {
     public IEnumerable<BaseEvent> Diff(State? previousState, State newState)
     {
@@ -24,10 +26,7 @@ public class StateDiffer(PlayerDiffer playerDiffer, DigimonDiffer digimonDiffer)
         DetectPartyChanges(previousState.Party, newState.Party, events);
 
         // 3. Journal Comparison
-        if (HasChanged(previousState.Journal, newState.Journal))
-        {
-            events.Add(new JournalChangedEvent(newState.Journal));
-        }
+        events.AddRange(journalDiffer.Diff(previousState.Journal, newState.Journal));
 
         return events;
     }
@@ -84,12 +83,5 @@ public class StateDiffer(PlayerDiffer playerDiffer, DigimonDiffer digimonDiffer)
                 }
             }
         }
-    }
-
-    private static bool HasChanged<T>(T? oldVal, T? newVal) where T : class
-    {
-        if (oldVal == null && newVal == null) return false;
-        if (oldVal == null || newVal == null) return true;
-        return !oldVal.Equals(newVal);
     }
 }
