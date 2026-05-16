@@ -63,13 +63,13 @@ namespace Backend.Diagnostics
 
         private void RenderPlayer(StringBuilder sb, Player player)
         {
-            sb.AppendLine($"{Cyan}PLAYER:{Reset} {player.Name.PadRight(NamePadding)} | {Yellow}BITS:{Reset} {player.Bits?.ToString(BitsFormat) ?? "Unknown"}");
+            sb.AppendLine($"{Cyan}PLAYER:{Reset} {player.Name.PadRight(NamePadding)} | {Yellow}BITS:{Reset} {player.Bits.ToString(BitsFormat) ?? "Unknown"}");
             sb.AppendLine();
         }
 
         private void RenderParty(StringBuilder sb, Party party)
         {
-            var activeSlots = party.Slots.Where(d => d != null).ToList();
+            var activeSlots = party.Digimons.Where(d => d != null).ToList();
 
             if (activeSlots.Count == 0)
             {

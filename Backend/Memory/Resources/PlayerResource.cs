@@ -4,6 +4,6 @@ namespace Backend.Memory.Resources
     {
         public byte[]? NameInBytes { get; set; }
         public int? Bits { get; set; }
-        public int? MapId { get; set; }
+        public short? MapId { get; set; }
     }
 }

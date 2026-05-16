@@ -14,13 +14,13 @@ public static class PartyDiffer
 
         if (oldParty == null)
         {
-            var activeDigimons = newParty.Slots.Where(d => d != null).Select(d => d!).ToList();
+            var activeDigimons = newParty.Digimons.Where(d => d != null).Select(d => d!).ToList();
             events.Add(new PartySlotsChangedEvent(activeDigimons));
             return events;
         }
 
-        var newSlots = newParty.Slots;
-        var oldSlots = oldParty.Slots;
+        var newSlots = newParty.Digimons;
+        var oldSlots = oldParty.Digimons;
 
         bool partyRosterChanged = false;
         if (newSlots.Count != oldSlots.Count)

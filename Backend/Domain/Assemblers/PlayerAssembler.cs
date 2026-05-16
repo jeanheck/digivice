@@ -13,8 +13,8 @@ namespace Backend.Domain.Assemblers
             return new Player
             {
                 Name = playerName,
-                Bits = resource.Bits,
-                MapId = resource.MapId?.ToString("X4")
+                Bits = resource.Bits ?? 0,
+                MapId = resource.MapId?.ToString("X4") ?? string.Empty
             };
         }
     }

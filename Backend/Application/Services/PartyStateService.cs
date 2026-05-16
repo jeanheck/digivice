@@ -20,7 +20,7 @@ namespace Backend.Application.Services
                 byte digimonId = resource.DigimonIds[i];
                 if (digimonStateService.IsEmptySlot(digimonId)) continue;
 
-                party.Slots[i] = digimonStateService.GetDigimon(i + 1, digimonId);
+                party.Digimons[i] = digimonStateService.GetDigimon(i + 1, digimonId);
             }
 
             return party;

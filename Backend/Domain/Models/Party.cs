@@ -2,7 +2,7 @@ namespace Backend.Domain.Models
 {
     public record class Party
     {
-        public List<Digimon?> Slots { get; set; } = [null, null, null];
+        public List<Digimon?> Digimons { get; set; } = [null, null, null];
 
         public virtual bool Equals(Party? other)
         {
@@ -10,13 +10,13 @@ namespace Backend.Domain.Models
             {
                 return false;
             }
-            return Slots.SequenceEqual(other.Slots);
+            return Digimons.SequenceEqual(other.Digimons);
         }
 
         public override int GetHashCode()
         {
             var hash = new HashCode();
-            foreach (var slot in Slots)
+            foreach (var slot in Digimons)
             {
                 hash.Add(slot);
             }
