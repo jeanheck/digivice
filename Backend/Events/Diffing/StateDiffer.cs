@@ -1,5 +1,4 @@
 using Backend.Events.Models;
-using Backend.Events.Models.Digimon;
 using Backend.Events.Models.Journal;
 using Backend.Events.Models.Party;
 using Backend.Events.Models.State;
@@ -7,7 +6,7 @@ using Backend.Domain.Models;
 
 namespace Backend.Events.Diffing;
 
-public class StateDiffer(PlayerDiffer playerDiffer) : IDiffer<State>
+public class StateDiffer(PlayerDiffer playerDiffer, DigimonDiffer digimonDiffer) : IDiffer<State>
 {
     public IEnumerable<BaseEvent> Diff(State? previousState, State newState)
     {
@@ -19,7 +18,6 @@ public class StateDiffer(PlayerDiffer playerDiffer) : IDiffer<State>
             return events;
         }
 
-        // 1. Player Comparison
         events.AddRange(playerDiffer.Diff(previousState.Player, newState.Player));
 
         // 2. Party Comparison
@@ -81,64 +79,10 @@ public class StateDiffer(PlayerDiffer playerDiffer) : IDiffer<State>
                 {
                     if (!newSlots[i]!.Equals(oldSlots[i]))
                     {
-                        DetectDigimonChanges(i, oldSlots[i]!, newSlots[i]!, events);
+                        events.AddRange(digimonDiffer.Diff(i, oldSlots[i], newSlots[i]!));
                     }
                 }
             }
-        }
-    }
-
-    private void DetectDigimonChanges(int index, Digimon oldDigi, Digimon newDigi, List<BaseEvent> events)
-    {
-        // Compare Vitals
-        if (oldDigi.BasicInfo.CurrentHP != newDigi.BasicInfo.CurrentHP ||
-            oldDigi.BasicInfo.MaxHP != newDigi.BasicInfo.MaxHP ||
-            oldDigi.BasicInfo.CurrentMP != newDigi.BasicInfo.CurrentMP ||
-            oldDigi.BasicInfo.MaxMP != newDigi.BasicInfo.MaxMP)
-        {
-            events.Add(new DigimonVitalsChangedEvent(index, newDigi.BasicInfo.CurrentHP, newDigi.BasicInfo.MaxHP, newDigi.BasicInfo.CurrentMP, newDigi.BasicInfo.MaxMP));
-        }
-
-        // Compare XP (Experience)
-        if (oldDigi.BasicInfo.Experience != newDigi.BasicInfo.Experience)
-        {
-            events.Add(new DigimonExperienceChangedEvent(index, newDigi.BasicInfo.Experience));
-        }
-
-        // Compare Level
-        if (newDigi.BasicInfo.Level > oldDigi.BasicInfo.Level)
-        {
-            events.Add(new DigimonLevelChangedEvent(index, newDigi.BasicInfo.Level));
-        }
-
-        // Compare Attributes
-        if (!oldDigi.Attributes.Equals(newDigi.Attributes))
-        {
-            events.Add(new DigimonAttributesChangedEvent(index, newDigi.Attributes.Strength, newDigi.Attributes.Defense, newDigi.Attributes.Spirit, newDigi.Attributes.Wisdom, newDigi.Attributes.Speed, newDigi.Attributes.Charisma));
-        }
-
-        // Compare Resistances
-        if (!oldDigi.Resistances.Equals(newDigi.Resistances))
-        {
-            events.Add(new DigimonResistancesChangedEvent(index, newDigi.Resistances.Fire, newDigi.Resistances.Water, newDigi.Resistances.Ice, newDigi.Resistances.Wind, newDigi.Resistances.Thunder, newDigi.Resistances.Machine, newDigi.Resistances.Dark));
-        }
-
-        // Compare Equipments
-        if (!oldDigi.Equipments.Equals(newDigi.Equipments))
-        {
-            events.Add(new DigimonEquipmentsChangedEvent(index, newDigi.Equipments));
-        }
-
-        // Compare Digievolutions
-        if (!Enumerable.SequenceEqual(oldDigi.Digievolutions, newDigi.Digievolutions))
-        {
-            events.Add(new DigimonDigievolutionsChangedEvent(index, newDigi.Digievolutions));
-        }
-
-        // Compare Active Digievolution
-        if (oldDigi.ActiveDigievolutionId != newDigi.ActiveDigievolutionId)
-        {
-            events.Add(new DigimonActiveDigievolutionChangedEvent(index, newDigi.ActiveDigievolutionId));
         }
     }
 
