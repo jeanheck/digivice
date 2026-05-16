@@ -11,9 +11,10 @@ namespace Backend.Services
         private const int NoDigievolutionId = 0;
 
         public Digievolution[] GetDigievolutions(
-            byte[] logicBlock,
+            byte[] memoryBlock,
             DigievolutionsAddresses digievolutionsAddresses)
         {
+            var memoryBlockReader = new MemoryBlockReader(memoryBlock);
             ReadOnlySpan<int> digievolutionsSlotsAddresses = [
                 digievolutionsAddresses.Slot1,
                 digievolutionsAddresses.Slot2,
@@ -23,7 +24,7 @@ namespace Backend.Services
 
             for (int i = 0; i < digievolutionsSlotsAddresses.Length; i++)
             {
-                int id = MemoryUtils.ReadInt16FromBlock(logicBlock, digievolutionsSlotsAddresses[i]);
+                int id = memoryBlockReader.ReadInt16(digievolutionsSlotsAddresses[i]);
 
                 if (id == EmptySlotId || id == NoDigievolutionId)
                 {
@@ -31,24 +32,23 @@ namespace Backend.Services
                     continue;
                 }
 
-                int level = FindDigievolutionLevel(logicBlock, id, digievolutionsAddresses);
+                int level = FindDigievolutionLevel(memoryBlockReader, id, digievolutionsAddresses);
                 digievolutions[i] = new Digievolution { Id = id, Level = level };
             }
 
             return digievolutions;
         }
 
-        private static int FindDigievolutionLevel(byte[] logicBlock, int id, DigievolutionsAddresses addresses)
+        private int FindDigievolutionLevel(MemoryBlockReader blockReader, int id, DigievolutionsAddresses addresses)
         {
             for (int k = 0; k < addresses.MaxUnlockedDigievolutions; k++)
             {
                 int entryOffset = addresses.UnlockedDigievolutionsStart + (k * addresses.UnlockedDigievolutionEntryStride);
-                if (entryOffset + 4 > logicBlock.Length) break;
 
-                int entryId = MemoryUtils.ReadInt16FromBlock(logicBlock, entryOffset);
+                int entryId = blockReader.ReadInt16(entryOffset);
                 if (entryId == id)
                 {
-                    return MemoryUtils.ReadInt16FromBlock(logicBlock, entryOffset + 2);
+                    return blockReader.ReadInt16(entryOffset + 2);
                 }
             }
 

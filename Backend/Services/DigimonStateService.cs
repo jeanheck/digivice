@@ -12,7 +12,6 @@ namespace Backend.Services
         DigievolutionStateService digievolutionStateService)
     {
         private const int NoActiveDigievolution = 0xFFFF;
-        private const string UnknownDigimonName = "Unknown";
 
         private DigimonAddresses Addresses => addressesRepository.GetDigimonAddresses();
         private PartyAddresses PartyAddresses => addressesRepository.GetPartyAddresses();
@@ -36,6 +35,9 @@ namespace Backend.Services
 
             var (logicBlock, activeDigievolutionId) = resourceReader
                 .ReadDigimon(slotIndex, digimonAddress, digievolutions);
+
+            var memoryBlockReader = new MemoryBlockReader(logicBlock);
+
             var equippedDigievolutions = digievolutionStateService
                 .GetDigievolutions(logicBlock, digievolutions);
 
@@ -45,40 +47,40 @@ namespace Backend.Services
                 ActiveDigievolutionId = GetActiveDigievolutionId(activeDigievolutionId),
                 BasicInfo = new BasicInfo
                 {
-                    Experience = MemoryUtils.ReadInt32FromBlock(logicBlock, basicInfo.Experience),
-                    Level = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.Level),
-                    CurrentHP = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.CurrentHP),
-                    MaxHP = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.MaxHP),
-                    CurrentMP = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.CurrentMP),
-                    MaxMP = MemoryUtils.ReadInt16FromBlock(logicBlock, basicInfo.MaxMP)
+                    Experience = memoryBlockReader.ReadInt32(basicInfo.Experience),
+                    Level = memoryBlockReader.ReadInt16(basicInfo.Level),
+                    CurrentHP = memoryBlockReader.ReadInt16(basicInfo.CurrentHP),
+                    MaxHP = memoryBlockReader.ReadInt16(basicInfo.MaxHP),
+                    CurrentMP = memoryBlockReader.ReadInt16(basicInfo.CurrentMP),
+                    MaxMP = memoryBlockReader.ReadInt16(basicInfo.MaxMP)
                 },
                 Attributes = new Attributes
                 {
-                    Strength = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Strength),
-                    Defense = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Defense),
-                    Spirit = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Spirit),
-                    Wisdom = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Wisdow),
-                    Speed = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Speed),
-                    Charisma = MemoryUtils.ReadInt16FromBlock(logicBlock, attributes.Charisma)
+                    Strength = memoryBlockReader.ReadInt16(attributes.Strength),
+                    Defense = memoryBlockReader.ReadInt16(attributes.Defense),
+                    Spirit = memoryBlockReader.ReadInt16(attributes.Spirit),
+                    Wisdom = memoryBlockReader.ReadInt16(attributes.Wisdow),
+                    Speed = memoryBlockReader.ReadInt16(attributes.Speed),
+                    Charisma = memoryBlockReader.ReadInt16(attributes.Charisma)
                 },
                 Resistances = new Resistances
                 {
-                    Fire = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Fire),
-                    Water = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Water),
-                    Ice = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Ice),
-                    Wind = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Wind),
-                    Thunder = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Thunder),
-                    Machine = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Machine),
-                    Dark = MemoryUtils.ReadInt16FromBlock(logicBlock, resistances.Dark)
+                    Fire = memoryBlockReader.ReadInt16(resistances.Fire),
+                    Water = memoryBlockReader.ReadInt16(resistances.Water),
+                    Ice = memoryBlockReader.ReadInt16(resistances.Ice),
+                    Wind = memoryBlockReader.ReadInt16(resistances.Wind),
+                    Thunder = memoryBlockReader.ReadInt16(resistances.Thunder),
+                    Machine = memoryBlockReader.ReadInt16(resistances.Machine),
+                    Dark = memoryBlockReader.ReadInt16(resistances.Dark)
                 },
                 Equipments = new Equipments
                 {
-                    Head = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Head),
-                    Body = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Body),
-                    RightHand = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.RightHand),
-                    LeftHand = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.LeftHand),
-                    Accessory1 = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Accessory1),
-                    Accessory2 = MemoryUtils.ReadInt16FromBlock(logicBlock, equipaments.Accessory2)
+                    Head = memoryBlockReader.ReadInt16(equipaments.Head),
+                    Body = memoryBlockReader.ReadInt16(equipaments.Body),
+                    RightHand = memoryBlockReader.ReadInt16(equipaments.RightHand),
+                    LeftHand = memoryBlockReader.ReadInt16(equipaments.LeftHand),
+                    Accessory1 = memoryBlockReader.ReadInt16(equipaments.Accessory1),
+                    Accessory2 = memoryBlockReader.ReadInt16(equipaments.Accessory2)
                 },
                 Digievolutions = equippedDigievolutions
             };
