@@ -1,9 +1,9 @@
-namespace Backend.Events.Data;
+namespace Backend.Events.Models;
 
 public enum EventType
 {
     ConnectionStatusChanged,
-    InitialStateChanged,
+    InitialState,
     PlayerBitsChanged,
     PlayerNameChanged,
     PlayerLocationChanged,

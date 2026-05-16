@@ -1,5 +1,6 @@
-using Backend.Events.Data;
-using Backend.Events.Data.Digimon;
+using Backend.Events.Models;
+using Backend.Events.Models.Digimon;
+using Backend.Events.Models.Player;
 using Backend.Domain.Models;
 
 namespace Backend.Events.Services;
@@ -12,7 +13,7 @@ public class StateChangeDetector
 
         if (previousState == null)
         {
-            events.Add(new InitialStateChangedEvent(newState));
+            events.Add(new InitialStateEvent(newState));
             return events;
         }
 

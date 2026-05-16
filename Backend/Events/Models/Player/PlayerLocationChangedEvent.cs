@@ -1,4 +1,4 @@
-namespace Backend.Events.Data;
+namespace Backend.Events.Models.Player;
 
 public class PlayerLocationChangedEvent(string? location) : BaseEvent(EventType.PlayerLocationChanged)
 {

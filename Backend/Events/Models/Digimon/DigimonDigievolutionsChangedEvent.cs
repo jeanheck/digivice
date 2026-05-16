@@ -1,6 +1,6 @@
 using Backend.Domain.Models.Digimons;
 
-namespace Backend.Events.Data.Digimon;
+namespace Backend.Events.Models.Digimon;
 
 public class DigimonDigievolutionsChangedEvent(int partySlotIndex, Digievolution?[] digievolutions) : BaseEvent(EventType.DigimonDigievolutionsChanged)
 {

@@ -1,6 +1,6 @@
-using Backend.Events.Data;
-using Backend.Events.Hubs;
+using Backend.Events.Models;
 using Backend.Domain.Models;
+using Backend.Events.Hubs;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Backend.Events.Services;
@@ -8,7 +8,7 @@ namespace Backend.Events.Services;
 public class EventDispatcherService(
     IHubContext<GameHub> hubContext,
     ILogger<EventDispatcherService> logger,
-    StateChangeDetector detector) : Interfaces.IEventDispatcherService
+    StateChangeDetector detector) : IEventDispatcherService
 {
     private State? previousState;
     private bool? previousConnectionStatus;
@@ -34,7 +34,7 @@ public class EventDispatcherService(
     {
         if (previousState != null)
         {
-            SafeDispatch(new InitialStateChangedEvent(previousState), hubContext.Clients.Client(connectionId));
+            SafeDispatch(new InitialStateEvent(previousState), hubContext.Clients.Client(connectionId));
         }
     }
 

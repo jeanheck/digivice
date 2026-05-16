@@ -1,4 +1,4 @@
-namespace Backend.Events.Data.Digimon;
+namespace Backend.Events.Models.Digimon;
 
 public class DigimonExperienceChangedEvent(int partySlotIndex, int experience) : BaseEvent(EventType.DigimonExperienceChanged)
 {

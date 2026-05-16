@@ -1,4 +1,4 @@
-namespace Backend.Events.Data.Digimon;
+namespace Backend.Events.Models.Digimon;
 
 public class DigimonActiveDigievolutionChangedEvent(int partySlotIndex, int? activeDigievolutionId) : BaseEvent(EventType.DigimonActiveDigievolutionChanged)
 {

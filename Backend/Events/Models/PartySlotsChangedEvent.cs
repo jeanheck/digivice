@@ -1,4 +1,4 @@
-namespace Backend.Events.Data;
+namespace Backend.Events.Models;
 
 public class PartySlotsChangedEvent(List<Backend.Domain.Models.Digimon> newParty) : BaseEvent(EventType.PartySlotsChanged)
 {

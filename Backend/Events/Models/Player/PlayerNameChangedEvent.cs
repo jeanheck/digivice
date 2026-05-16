@@ -1,4 +1,4 @@
-namespace Backend.Events.Data;
+namespace Backend.Events.Models.Player;
 
 public class PlayerNameChangedEvent(string name) : BaseEvent(EventType.PlayerNameChanged)
 {

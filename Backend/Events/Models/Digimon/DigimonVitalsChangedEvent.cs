@@ -1,4 +1,4 @@
-namespace Backend.Events.Data.Digimon;
+namespace Backend.Events.Models.Digimon;
 
 public class DigimonVitalsChangedEvent(int partySlotIndex, int currentHP, int maxHP, int currentMP, int maxMP) : BaseEvent(EventType.DigimonVitalsChanged)
 {

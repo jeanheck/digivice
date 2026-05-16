@@ -1,25 +1,18 @@
-using Backend.Events.Interfaces;
+using Backend.Events.Services;
 using Microsoft.AspNetCore.SignalR;
 
-namespace Backend.Events.Hubs
+namespace Backend.Events.Hubs;
+
+/// <summary>
+/// SignalR Hub used as the WebSocket endpoint for client connections.
+/// Clients connect here and receive game state events pushed by the server.
+/// </summary>
+public class GameHub(IEventDispatcherService eventDispatcherService) : Hub
 {
-    /// <summary>
-    /// SignalR Hub used as the WebSocket endpoint for client connections.
-    /// Clients connect here and receive game state events pushed by the server.
-    /// </summary>
-    public class GameHub : Hub
+    public override Task OnConnectedAsync()
     {
-        private readonly IEventDispatcherService _dispatcherService;
-
-        public GameHub(IEventDispatcherService dispatcherService)
-        {
-            _dispatcherService = dispatcherService;
-        }
-
-        public override Task OnConnectedAsync()
-        {
-            _dispatcherService.DispatchInitialStateToClient(Context.ConnectionId);
-            return base.OnConnectedAsync();
-        }
+        eventDispatcherService.DispatchInitialStateToClient(Context.ConnectionId);
+        return base.OnConnectedAsync();
     }
 }
+

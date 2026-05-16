@@ -1,6 +1,6 @@
 using Backend.Domain.Models;
 
-namespace Backend.Events.Data;
+namespace Backend.Events.Models;
 
 public class JournalChangedEvent(Journal? journal) : BaseEvent(EventType.JournalChanged)
 {

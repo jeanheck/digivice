@@ -1,4 +1,4 @@
-namespace Backend.Events.Data.Digimon;
+namespace Backend.Events.Models.Digimon;
 
 public class DigimonLevelChangedEvent(int partySlotIndex, int level) : BaseEvent(EventType.DigimonLevelChanged)
 {

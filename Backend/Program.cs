@@ -3,7 +3,6 @@ using Backend.Memory.Readers;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;
-using Backend.Events.Interfaces;
 using Backend.Events.Services;
 using Backend.Application.Services;
 using Backend.Memory.Repositories;

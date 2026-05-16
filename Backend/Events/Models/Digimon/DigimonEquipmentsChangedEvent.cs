@@ -1,6 +1,6 @@
 using Backend.Domain.Models.Digimons;
 
-namespace Backend.Events.Data.Digimon;
+namespace Backend.Events.Models.Digimon;
 
 public class DigimonEquipmentsChangedEvent(int partySlotIndex, Equipments equipments) : BaseEvent(EventType.DigimonEquipmentsChanged)
 {

@@ -1,6 +1,6 @@
 using Backend.Domain.Models;
 
-namespace Backend.Events.Interfaces;
+namespace Backend.Events.Services;
 
 public interface IEventDispatcherService
 {

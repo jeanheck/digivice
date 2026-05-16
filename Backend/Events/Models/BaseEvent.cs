@@ -1,4 +1,4 @@
-namespace Backend.Events.Data;
+namespace Backend.Events.Models;
 
 public abstract class BaseEvent(EventType type)
 {

@@ -1,4 +1,4 @@
-namespace Backend.Events.Data.Digimon;
+namespace Backend.Events.Models.Digimon;
 
 public class DigimonAttributesChangedEvent(int partySlotIndex, int strength, int defense, int spirit, int wisdom, int speed, int charisma) : BaseEvent(EventType.DigimonAttributesChanged)
 {
