@@ -1,4 +1,3 @@
-using Backend.Interfaces;
 using System.IO.MemoryMappedFiles;
 
 namespace Backend.Infrastructure.Memory

@@ -1,11 +1,8 @@
-using Backend.Interfaces;
-using Backend.Memory.Readers;
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Quests;
 using Backend.Memory.Addresses.Digimon;
 using Backend.Memory.Resources;
 using Backend.Memory.Resources.Quests;
-using Backend.Domain.Models.Quests;
 
 namespace Backend.Memory.Readers
 {

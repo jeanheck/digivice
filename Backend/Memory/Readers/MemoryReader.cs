@@ -1,5 +1,5 @@
-using Backend.Interfaces;
-using Backend.Memory.Readers;
+using Backend.Infrastructure.Processes;
+using Backend.Infrastructure.Memory;
 using Serilog;
 
 namespace Backend.Memory.Readers

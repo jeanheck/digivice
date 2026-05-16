@@ -1,4 +1,4 @@
-namespace Backend.Interfaces
+namespace Backend.Memory.Readers
 {
     public interface IMemoryReader : IDisposable
     {

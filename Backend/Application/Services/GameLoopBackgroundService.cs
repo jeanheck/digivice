@@ -1,6 +1,6 @@
 using Backend.Diagnostics;
+using Backend.Memory.Readers;
 using Backend.Events.Interfaces;
-using Backend.Interfaces;
 
 namespace Backend.Application.Services
 {

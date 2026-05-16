@@ -1,4 +1,4 @@
-namespace Backend.Interfaces
+namespace Backend.Infrastructure.Memory
 {
     public interface IMemoryProvider
     {
