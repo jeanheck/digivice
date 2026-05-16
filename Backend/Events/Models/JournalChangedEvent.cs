@@ -1,8 +1,0 @@
-using Backend.Domain.Models;
-
-namespace Backend.Events.Models;
-
-public class JournalChangedEvent(Journal? journal) : BaseEvent(EventType.JournalChanged)
-{
-    public Journal? Journal { get; set; } = journal;
-}

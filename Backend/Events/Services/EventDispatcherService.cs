@@ -1,4 +1,6 @@
 using Backend.Events.Models;
+using Backend.Events.Models.Connection;
+using Backend.Events.Models.State;
 using Backend.Domain.Models;
 using Backend.Events.Hubs;
 using Microsoft.AspNetCore.SignalR;

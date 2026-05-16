@@ -1,6 +1,9 @@
 using Backend.Events.Models;
 using Backend.Events.Models.Digimon;
 using Backend.Events.Models.Player;
+using Backend.Events.Models.Journal;
+using Backend.Events.Models.Party;
+using Backend.Events.Models.State;
 using Backend.Domain.Models;
 
 namespace Backend.Events.Services;
