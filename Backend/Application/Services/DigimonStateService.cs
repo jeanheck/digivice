@@ -39,7 +39,7 @@ namespace Backend.Application.Services
             var memoryBlockReader = new MemoryBlockReader(logicBlock);
 
             var equippedDigievolutions = digievolutionStateService
-                .GetDigievolutions(logicBlock, digievolutions);
+                .GetDigievolutions(memoryBlockReader, digievolutions);
 
             return new Digimon
             {

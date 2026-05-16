@@ -10,11 +10,8 @@ namespace Backend.Application.Services
         private const int EmptySlotId = -1; // 0xFFFF in memory
         private const int NoDigievolutionId = 0;
 
-        public Digievolution[] GetDigievolutions(
-            byte[] memoryBlock,
-            DigievolutionsAddresses digievolutionsAddresses)
+        public Digievolution[] GetDigievolutions(MemoryBlockReader memoryBlockReader, DigievolutionsAddresses digievolutionsAddresses)
         {
-            var memoryBlockReader = new MemoryBlockReader(memoryBlock);
             ReadOnlySpan<int> digievolutionsSlotsAddresses = [
                 digievolutionsAddresses.Slot1,
                 digievolutionsAddresses.Slot2,
