@@ -19,10 +19,10 @@ namespace Backend.Repositories
 
         public AddressesRepository()
         {
-            dataDirectory = Path.Combine(AppContext.BaseDirectory, "Database");
+            dataDirectory = Path.Combine(AppContext.BaseDirectory, "Memory", "Definitions");
             if (!Directory.Exists(dataDirectory))
             {
-                dataDirectory = Path.Combine(Environment.CurrentDirectory, "Database");
+                dataDirectory = Path.Combine(Environment.CurrentDirectory, "Memory", "Definitions");
             }
         }
 
