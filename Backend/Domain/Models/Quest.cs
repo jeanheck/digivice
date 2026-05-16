@@ -1,6 +1,6 @@
-using Backend.Models.Quests;
+using Backend.Domain.Backend.Domain.Models.Quests;
 
-namespace Backend.Models
+namespace Backend.Domain.Models
 {
     public record class Quest
     {

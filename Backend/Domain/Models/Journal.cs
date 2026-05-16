@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System;
-namespace Backend.Models
+namespace Backend.Domain.Models
 {
     public record class Journal
     {

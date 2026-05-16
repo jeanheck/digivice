@@ -1,6 +1,6 @@
-using Backend.Models.Digimons;
+using Backend.Domain.Backend.Domain.Models.Digimons;
 
-namespace Backend.Models
+namespace Backend.Domain.Models
 {
     public record class Digimon
     {

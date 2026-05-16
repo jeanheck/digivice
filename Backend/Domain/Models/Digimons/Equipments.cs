@@ -1,4 +1,4 @@
-namespace Backend.Models.Digimons
+namespace Backend.Domain.Backend.Domain.Models.Digimons
 {
     public record class Equipments
     {

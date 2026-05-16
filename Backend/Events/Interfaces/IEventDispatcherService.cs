@@ -1,4 +1,4 @@
-using Backend.Models;
+using Backend.Domain.Models;
 
 namespace Backend.Events.Interfaces;
 

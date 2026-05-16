@@ -1,5 +1,5 @@
 using System.Text;
-using Backend.Models;
+using Backend.Domain.Models;
 
 namespace Backend.Diagnostics
 {

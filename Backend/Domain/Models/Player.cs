@@ -1,4 +1,4 @@
-namespace Backend.Models
+namespace Backend.Domain.Models
 {
     public record class Player
     {

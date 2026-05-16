@@ -1,4 +1,4 @@
-namespace Backend.Models.Quests
+namespace Backend.Domain.Backend.Domain.Models.Quests
 {
     public record class Requisite
     {

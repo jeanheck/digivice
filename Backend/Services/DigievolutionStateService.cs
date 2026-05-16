@@ -1,4 +1,4 @@
-using Backend.Models.Digimons;
+using Backend.Domain.Backend.Domain.Models.Digimons;
 using Backend.Memory.Readers;
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Digimon;

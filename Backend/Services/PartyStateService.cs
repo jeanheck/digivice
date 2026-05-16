@@ -1,4 +1,4 @@
-using Backend.Models;
+using Backend.Domain.Models;
 using Backend.Memory.Readers;
 using Backend.Interfaces;
 

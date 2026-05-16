@@ -1,6 +1,6 @@
 using Backend.Events.Data;
 using Backend.Events.Hubs;
-using Backend.Models;
+using Backend.Domain.Models;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Backend.Events.Services;
