@@ -8,19 +8,6 @@ namespace Backend.Memory.Readers
     {
         private const int DigimonMemoryBlockSize = 1500;
 
-        public PartyResource ReadPartyResource(PartyAddresses addresses)
-        {
-            var slotAddresses = new[] { addresses.PartySlot1, addresses.PartySlot2, addresses.PartySlot3 };
-
-            return new PartyResource
-            {
-                DigimonIds = [.. slotAddresses
-                    .Select(slot => memoryReader.ReadBytes(slot, addresses.BytesPerSlot))
-                    .Where(bytes => bytes != null && bytes.Length > 0)
-                    .Select(bytes => bytes![0])]
-            };
-        }
-
         public DigimonResource ReadDigimonResource(
             int slotIndex,
             int baseAddress,

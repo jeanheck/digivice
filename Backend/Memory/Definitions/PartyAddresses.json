@@ -1,13 +1,16 @@
 {
     "Slots": [
         {
-            "1": "0x00048DA4"
+            "Index": 1,
+            "Address": "0x00048DA4"
         },
         {
-            "2": "0x00048DA8"
+            "Index": 2,
+            "Address": "0x00048DA8"
         },
         {
-            "3": "0x00048DAC"
+            "Index": 3,
+            "Address": "0x00048DAC"
         }
     ],
     "BytesPerSlot": 4,
