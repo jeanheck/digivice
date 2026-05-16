@@ -4,9 +4,9 @@ using Backend.Events.Models.Digimon;
 
 namespace Backend.Events.Diffing;
 
-public class DigimonDiffer
+public static class DigimonDiffer
 {
-    public IEnumerable<BaseEvent> Diff(int index, Digimon? previous, Digimon current)
+    public static IEnumerable<BaseEvent> Diff(int index, Digimon? previous, Digimon current)
     {
         var events = new List<BaseEvent>();
 

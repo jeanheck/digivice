@@ -4,9 +4,9 @@ using Backend.Domain.Models;
 
 namespace Backend.Events.Diffing;
 
-public class StateDiffer() : IDiffer<State>
+public static class StateDiffer
 {
-    public IEnumerable<BaseEvent> Diff(State? previousState, State newState)
+    public static IEnumerable<BaseEvent> Diff(State? previousState, State newState)
     {
         var events = new List<BaseEvent>();
 

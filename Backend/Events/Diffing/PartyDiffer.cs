@@ -4,9 +4,9 @@ using Backend.Events.Models.Party;
 
 namespace Backend.Events.Diffing;
 
-public class PartyDiffer(DigimonDiffer digimonDiffer) : IDiffer<Party?>
+public static class PartyDiffer
 {
-    public IEnumerable<BaseEvent> Diff(Party? oldParty, Party? newParty)
+    public static IEnumerable<BaseEvent> Diff(Party? oldParty, Party? newParty)
     {
         var events = new List<BaseEvent>();
 
@@ -55,7 +55,7 @@ public class PartyDiffer(DigimonDiffer digimonDiffer) : IDiffer<Party?>
                 {
                     if (!newSlots[i]!.Equals(oldSlots[i]))
                     {
-                        events.AddRange(digimonDiffer.Diff(i, oldSlots[i], newSlots[i]!));
+                        events.AddRange(DigimonDiffer.Diff(i, oldSlots[i], newSlots[i]!));
                     }
                 }
             }

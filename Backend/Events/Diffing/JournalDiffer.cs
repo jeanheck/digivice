@@ -4,9 +4,9 @@ using Backend.Events.Models.Journal;
 
 namespace Backend.Events.Diffing;
 
-public class JournalDiffer : IDiffer<Journal?>
+public static class JournalDiffer
 {
-    public IEnumerable<BaseEvent> Diff(Journal? previous, Journal? current)
+    public static IEnumerable<BaseEvent> Diff(Journal? previous, Journal? current)
     {
         var events = new List<BaseEvent>();
 

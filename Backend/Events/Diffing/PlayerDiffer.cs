@@ -4,9 +4,9 @@ using Backend.Events.Models.Player;
 
 namespace Backend.Events.Diffing;
 
-public class PlayerDiffer : IDiffer<Player?>
+public static class PlayerDiffer
 {
-    public IEnumerable<BaseEvent> Diff(Player? previousPlayer, Player? newPlayer)
+    public static IEnumerable<BaseEvent> Diff(Player? previousPlayer, Player? newPlayer)
     {
         var events = new List<BaseEvent>();
 

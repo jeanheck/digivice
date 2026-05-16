@@ -52,11 +52,6 @@ try
     builder.Services.AddSingleton<DebugConsoleRenderer>();
 
     // Register Event Dispatcher
-    builder.Services.AddSingleton<PlayerDiffer>();
-    builder.Services.AddSingleton<DigimonDiffer>();
-    builder.Services.AddSingleton<JournalDiffer>();
-    builder.Services.AddSingleton<PartyDiffer>();
-    builder.Services.AddSingleton<StateDiffer>();
     builder.Services.AddSingleton<StateEventGenerator>();
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
