@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Backend.Utils
+namespace Backend.Memory.Converters
 {
     /// <summary>
     /// Converts JSON string values that may be hexadecimal ("0x48"),

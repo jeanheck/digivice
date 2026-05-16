@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Backend.Utils
+namespace Backend.Memory.Converters
 {
     public class HexStringToLongConverter : JsonConverter<long>
     {

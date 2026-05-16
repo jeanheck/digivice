@@ -3,7 +3,7 @@ using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Digimon;
 using Backend.Interfaces;
 
-namespace Backend.Repositories
+namespace Backend.Memory.Repositories
 {
     public class AddressesRepository : IAddressesRepository
     {

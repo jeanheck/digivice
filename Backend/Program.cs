@@ -7,7 +7,7 @@ using Backend.Events.Interfaces;
 using Backend.Events.Services;
 using Backend.Interfaces;
 using Backend.Services;
-using Backend.Repositories;
+using Backend.Memory.Repositories;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()

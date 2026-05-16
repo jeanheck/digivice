@@ -1,12 +1,10 @@
 using Backend.Interfaces;
-using Backend.Memory.Readers;
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Quests;
 using Backend.Memory.Addresses.Digimon;
 using Backend.Memory.Resources;
 using Backend.Memory.Resources.Quests;
 using Backend.Models.Quests;
-using Backend.Models;
 
 namespace Backend.Memory.Readers
 {
@@ -83,25 +81,6 @@ namespace Backend.Memory.Readers
                 Id = req.Id,
                 Value = memoryReader.ReadByteSafe(req.Address)
             }).ToList();
-        }
-
-        public Dictionary<int, byte> ReadQuestSteps(Quest quest)
-        {
-            var questStepsState = new Dictionary<int, byte>();
-            ReadRequisites(quest.Requisites);
-            foreach (var step in quest.Steps)
-            {
-                if (step.Requisites != null)
-                {
-                    ReadRequisites(step.Requisites);
-                }
-            }
-            return questStepsState;
-        }
-
-        private void ReadRequisites(IEnumerable<Requisite> requisites)
-        {
-            // Note: Domain Model 'Requisite' no longer has Address.
         }
     }
 }

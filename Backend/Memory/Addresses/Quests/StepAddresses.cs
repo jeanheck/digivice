@@ -1,5 +1,5 @@
 using System.Text.Json.Serialization;
-using Backend.Utils;
+using Backend.Memory.Converters;
 
 namespace Backend.Memory.Addresses.Quests
 {
