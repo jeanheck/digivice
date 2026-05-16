@@ -1,4 +1,4 @@
-using Backend.Domain.Backend.Domain.Models.Quests;
+using Backend.Domain.Models.Quests;
 
 namespace Backend.Domain.Models
 {

@@ -1,4 +1,4 @@
-namespace Backend.Domain.Backend.Domain.Models.Digimons
+namespace Backend.Domain.Models.Digimons
 {
     public record class BasicInfo
     {

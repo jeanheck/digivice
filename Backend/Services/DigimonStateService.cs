@@ -1,6 +1,6 @@
 using Backend.Domain.Models;
 using Backend.Memory.Readers;
-using Backend.Domain.Backend.Domain.Models.Digimons;
+using Backend.Domain.Models.Digimons;
 using Backend.Memory.Addresses;
 using Backend.Utils;
 using Backend.Interfaces;

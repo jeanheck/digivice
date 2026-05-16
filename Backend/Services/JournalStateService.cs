@@ -1,5 +1,5 @@
 using Backend.Domain.Models;
-using Backend.Domain.Backend.Domain.Models.Quests;
+using Backend.Domain.Models.Quests;
 using Backend.Interfaces;
 using Backend.Memory.Resources;
 

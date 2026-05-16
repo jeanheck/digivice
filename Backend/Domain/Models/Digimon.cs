@@ -1,4 +1,4 @@
-using Backend.Domain.Backend.Domain.Models.Digimons;
+using Backend.Domain.Models.Digimons;
 
 namespace Backend.Domain.Models
 {

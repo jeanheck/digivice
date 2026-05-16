@@ -4,7 +4,7 @@ using Backend.Memory.Addresses.Quests;
 using Backend.Memory.Addresses.Digimon;
 using Backend.Memory.Resources;
 using Backend.Memory.Resources.Quests;
-using Backend.Domain.Backend.Domain.Models.Quests;
+using Backend.Domain.Models.Quests;
 
 namespace Backend.Memory.Readers
 {
