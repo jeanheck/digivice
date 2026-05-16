@@ -5,6 +5,7 @@ using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;
 using Backend.Events.Services;
 using Backend.Events.Diffing;
+using Backend.Events.Generation;
 using Backend.Application.Services;
 using Backend.Memory.Repositories;
 using Serilog;
@@ -55,6 +56,7 @@ try
     builder.Services.AddSingleton<JournalDiffer>();
     builder.Services.AddSingleton<PartyDiffer>();
     builder.Services.AddSingleton<StateDiffer>();
+    builder.Services.AddSingleton<StateEventGenerator>();
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
     // Start the Background Monitor (Memory Reader)

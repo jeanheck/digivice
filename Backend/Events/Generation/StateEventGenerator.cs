@@ -2,6 +2,8 @@ using Backend.Events.Models;
 using Backend.Domain.Models;
 using Backend.Events.Diffing;
 
+namespace Backend.Events.Generation;
+
 public class StateEventGenerator(
     StateDiffer stateDiffer,
     PlayerDiffer playerDiffer,

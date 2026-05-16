@@ -3,6 +3,7 @@ using Backend.Events.Models.Connection;
 using Backend.Events.Models.State;
 using Backend.Domain.Models;
 using Backend.Events.Hubs;
+using Backend.Events.Generation;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Backend.Events.Services;
