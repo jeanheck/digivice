@@ -1,16 +1,15 @@
 using Backend.Events.Models;
 using Backend.Events.Models.Digimon;
-using Backend.Events.Models.Player;
 using Backend.Events.Models.Journal;
 using Backend.Events.Models.Party;
 using Backend.Events.Models.State;
 using Backend.Domain.Models;
 
-namespace Backend.Events.Services;
+namespace Backend.Events.Diffing;
 
-public class StateChangeDetector
+public class StateDiffer(PlayerDiffer playerDiffer) : IDiffer<State>
 {
-    public IEnumerable<BaseEvent> DetectChanges(State? previousState, State newState)
+    public IEnumerable<BaseEvent> Diff(State? previousState, State newState)
     {
         var events = new List<BaseEvent>();
 
@@ -21,31 +20,7 @@ public class StateChangeDetector
         }
 
         // 1. Player Comparison
-        if (newState.Player != null)
-        {
-            if (previousState.Player != null)
-            {
-                if (newState.Player.MapId != previousState.Player.MapId)
-                {
-                    events.Add(new PlayerLocationChangedEvent(newState.Player.MapId));
-                }
-
-                if (newState.Player.Name != previousState.Player.Name)
-                {
-                    events.Add(new PlayerNameChangedEvent(newState.Player.Name));
-                }
-
-                if (newState.Player.Bits != previousState.Player.Bits)
-                {
-                    events.Add(new PlayerBitsChangedEvent(newState.Player.Bits));
-                }
-            }
-            else
-            {
-                events.Add(new PlayerNameChangedEvent(newState.Player.Name));
-                events.Add(new PlayerBitsChangedEvent(newState.Player.Bits));
-            }
-        }
+        events.AddRange(playerDiffer.Diff(previousState.Player, newState.Player));
 
         // 2. Party Comparison
         DetectPartyChanges(previousState.Party, newState.Party, events);

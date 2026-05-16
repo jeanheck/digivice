@@ -4,6 +4,7 @@ using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;
 using Backend.Events.Services;
+using Backend.Events.Diffing;
 using Backend.Application.Services;
 using Backend.Memory.Repositories;
 using Serilog;
@@ -49,7 +50,8 @@ try
     builder.Services.AddSingleton<DebugConsoleRenderer>();
 
     // Register Event Dispatcher
-    builder.Services.AddSingleton<StateChangeDetector>();
+    builder.Services.AddSingleton<PlayerDiffer>();
+    builder.Services.AddSingleton<StateDiffer>();
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
     // Start the Background Monitor (Memory Reader)
