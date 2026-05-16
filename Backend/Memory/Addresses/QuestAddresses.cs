@@ -1,6 +1,6 @@
-using Backend.Addresses.Quests;
+using Backend.Memory.Addresses.Quests;
 
-namespace Backend.Addresses
+namespace Backend.Memory.Addresses
 {
     public class QuestAddresses
     {

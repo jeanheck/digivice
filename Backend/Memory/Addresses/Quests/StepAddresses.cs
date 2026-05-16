@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Backend.Utils;
 
-namespace Backend.Addresses.Quests
+namespace Backend.Memory.Addresses.Quests
 {
     public class StepAddresses
     {

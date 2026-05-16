@@ -1,4 +1,5 @@
 using Backend.Diagnostics;
+using Backend.Memory.Readers;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;
@@ -38,7 +39,7 @@ try
     // Register game dependencies
     builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
-    builder.Services.AddSingleton<IMemoryReaderService, MemoryReaderService>();
+    builder.Services.AddSingleton<IMemoryReader, MemoryReader>();
     builder.Services.AddSingleton<IAddressesRepository, AddressesRepository>();
     builder.Services.AddSingleton<IResourceReader, ResourceReader>();
     builder.Services.AddSingleton<PlayerStateService>();

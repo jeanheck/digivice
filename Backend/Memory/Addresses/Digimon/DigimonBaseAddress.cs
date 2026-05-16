@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Backend.Utils;
 
-namespace Backend.Addresses.Digimon
+namespace Backend.Memory.Addresses.Digimon
 {
     public class DigimonBaseAddress
     {

@@ -1,23 +1,23 @@
 using System.Text.Json.Serialization;
 using Backend.Utils;
 
-namespace Backend.Addresses.Digimon
+namespace Backend.Memory.Addresses.Digimon
 {
-    public class DigievolutionsAddresses
+    public class ResistancesAddresses
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int ActiveDigievolution { get; set; }
+        public int Fire { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Slot1 { get; set; }
+        public int Water { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Slot2 { get; set; }
+        public int Ice { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Slot3 { get; set; }
+        public int Wind { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int UnlockedDigievolutionsStart { get; set; }
+        public int Thunder { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int UnlockedDigievolutionEntryStride { get; set; }
+        public int Machine { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int MaxUnlockedDigievolutions { get; set; }
+        public int Dark { get; set; }
     }
 }

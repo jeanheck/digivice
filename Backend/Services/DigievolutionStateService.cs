@@ -1,6 +1,7 @@
 using Backend.Models.Digimons;
-using Backend.Addresses;
-using Backend.Addresses.Digimon;
+using Backend.Memory.Readers;
+using Backend.Memory.Addresses;
+using Backend.Memory.Addresses.Digimon;
 using Backend.Utils;
 
 namespace Backend.Services

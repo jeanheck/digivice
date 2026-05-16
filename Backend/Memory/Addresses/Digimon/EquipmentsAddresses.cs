@@ -1,21 +1,21 @@
 using System.Text.Json.Serialization;
 using Backend.Utils;
 
-namespace Backend.Addresses.Digimon
+namespace Backend.Memory.Addresses.Digimon
 {
-    public class BasicInfoAddresses
+    public class EquipmentsAddresses
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Experience { get; set; }
+        public int Head { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Level { get; set; }
+        public int Body { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int CurrentHP { get; set; }
+        public int RightHand { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int MaxHP { get; set; }
+        public int LeftHand { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int CurrentMP { get; set; }
+        public int Accessory1 { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int MaxMP { get; set; }
+        public int Accessory2 { get; set; }
     }
 }

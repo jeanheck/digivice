@@ -1,12 +1,13 @@
 using Backend.Interfaces;
+using Backend.Memory.Readers;
 using Serilog;
 
-namespace Backend.Services
+namespace Backend.Memory.Readers
 {
-    public class MemoryReaderService(
+    public class MemoryReader(
         IProcessService processService,
         IMemoryProvider memoryProvider,
-        IConfiguration configuration) : IMemoryReaderService
+        IConfiguration configuration) : IMemoryReader
     {
         private IMemoryAccessor? accessor;
         public bool IsConnected { get; private set; }

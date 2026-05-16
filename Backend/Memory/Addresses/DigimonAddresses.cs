@@ -1,8 +1,6 @@
-using System.Text.Json.Serialization;
-using Backend.Utils;
-using Backend.Addresses.Digimon;
+using Backend.Memory.Addresses.Digimon;
 
-namespace Backend.Addresses
+namespace Backend.Memory.Addresses
 {
     public class DigimonAddresses
     {

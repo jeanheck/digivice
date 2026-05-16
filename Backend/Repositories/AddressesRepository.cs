@@ -1,6 +1,6 @@
 using System.Text.Json;
-using Backend.Addresses;
-using Backend.Addresses.Digimon;
+using Backend.Memory.Addresses;
+using Backend.Memory.Addresses.Digimon;
 using Backend.Interfaces;
 
 namespace Backend.Repositories

@@ -1,15 +1,16 @@
 using Backend.Interfaces;
-using Backend.Addresses;
-using Backend.Addresses.Quests;
-using Backend.Addresses.Digimon;
+using Backend.Memory.Readers;
+using Backend.Memory.Addresses;
+using Backend.Memory.Addresses.Quests;
+using Backend.Memory.Addresses.Digimon;
 using Backend.Resources;
 using Backend.Resources.Quests;
 using Backend.Models.Quests;
 using Backend.Models;
 
-namespace Backend.Services
+namespace Backend.Memory.Readers
 {
-    public class ResourceReader(IMemoryReaderService memoryReader) : IResourceReader
+    public class ResourceReader(IMemoryReader memoryReader) : IResourceReader
     {
         private const int DigimonMemoryBlockSize = 1500;
 

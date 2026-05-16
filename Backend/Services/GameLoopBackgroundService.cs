@@ -1,4 +1,5 @@
 using Backend.Diagnostics;
+using Backend.Memory.Readers;
 using Backend.Events.Interfaces;
 using Backend.Interfaces;
 
@@ -6,7 +7,7 @@ namespace Backend.Services
 {
     public class GameLoopBackgroundService
     (
-        IMemoryReaderService memoryReaderService,
+        IMemoryReader MemoryReader,
         GameStateService gameStateService,
         IEventDispatcherService eventDispatcherService,
         DebugConsoleRenderer debugConsoleRenderer,
@@ -19,9 +20,9 @@ namespace Backend.Services
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (!memoryReaderService.IsConnected)
+                if (!MemoryReader.IsConnected)
                 {
-                    if (!memoryReaderService.TryConnect())
+                    if (!MemoryReader.TryConnect())
                     {
                         // If the connection fails, it sends false and waits 1 second before trying again.
                         eventDispatcherService.DispatchConnectionStatus(false);
@@ -62,7 +63,7 @@ namespace Backend.Services
                 {
                     Serilog.Log.Error(ex, "Error processing game state in GameLoopBackgroundService.");
                     // In case the connection was lost abruptly during read
-                    if (!memoryReaderService.IsConnected)
+                    if (!MemoryReader.IsConnected)
                     {
                         eventDispatcherService.DispatchConnectionStatus(false);
                     }

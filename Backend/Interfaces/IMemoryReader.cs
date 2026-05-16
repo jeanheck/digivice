@@ -1,6 +1,6 @@
 namespace Backend.Interfaces
 {
-    public interface IMemoryReaderService : IDisposable
+    public interface IMemoryReader : IDisposable
     {
         bool IsConnected { get; }
         bool TryConnect();

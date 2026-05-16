@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Backend.Utils;
 
-namespace Backend.Addresses
+namespace Backend.Memory.Addresses
 {
     public class PlayerAddresses
     {

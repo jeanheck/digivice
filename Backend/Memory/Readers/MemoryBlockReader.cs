@@ -1,4 +1,4 @@
-namespace Backend.Utils
+namespace Backend.Memory.Readers
 {
     public class MemoryBlockReader(byte[] memoryBlock)
     {
