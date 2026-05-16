@@ -1,6 +1,6 @@
 using Backend.Domain.Models;
+using Backend.Memory.Repositories;
 using Backend.Memory.Readers;
-using Backend.Interfaces;
 
 namespace Backend.Application.Services
 {

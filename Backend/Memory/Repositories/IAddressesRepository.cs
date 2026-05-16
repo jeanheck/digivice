@@ -1,7 +1,8 @@
 using Backend.Memory.Addresses;
+using Backend.Memory.Repositories;
 using Backend.Memory.Addresses.Digimon;
 
-namespace Backend.Interfaces
+namespace Backend.Memory.Repositories
 {
     public interface IAddressesRepository
     {

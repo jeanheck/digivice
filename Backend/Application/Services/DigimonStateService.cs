@@ -1,8 +1,8 @@
 using Backend.Domain.Models;
+using Backend.Memory.Repositories;
 using Backend.Memory.Readers;
 using Backend.Domain.Models.Digimons;
 using Backend.Memory.Addresses;
-using Backend.Interfaces;
 
 namespace Backend.Application.Services
 {

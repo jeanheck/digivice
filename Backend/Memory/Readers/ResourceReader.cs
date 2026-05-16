@@ -1,4 +1,5 @@
 using Backend.Interfaces;
+using Backend.Memory.Readers;
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Quests;
 using Backend.Memory.Addresses.Digimon;
