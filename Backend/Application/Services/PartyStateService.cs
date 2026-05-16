@@ -6,13 +6,13 @@ namespace Backend.Application.Services
 {
     public class PartyStateService(
         IAddressesRepository addressesRepository,
-        IResourceReader resourceReader,
+        IAddressesReader addressesReader,
         DigimonStateService digimonStateService)
     {
         public Party GetParty()
         {
             var partyAddresses = addressesRepository.GetPartyAddresses();
-            var resource = resourceReader.ReadParty(partyAddresses);
+            var resource = addressesReader.ReadPartyResource(partyAddresses);
             var party = new Party();
 
             for (int i = 0; i < resource.DigimonIds.Count; i++)

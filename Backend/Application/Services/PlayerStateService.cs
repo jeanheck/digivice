@@ -7,12 +7,12 @@ namespace Backend.Application.Services
 {
     public class PlayerStateService(
         IAddressesRepository addressesRepository, 
-        IResourceReader resourceReader)
+        IAddressesReader addressesReader)
     {
         public Player GetPlayer()
         {
             var addresses = addressesRepository.GetPlayerAddresses();
-            var resource = resourceReader.ReadPlayer(addresses);
+            var resource = addressesReader.ReadPlayerResource(addresses);
             return PlayerAssembler.Assemble(resource);
         }
     }

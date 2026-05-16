@@ -8,7 +8,7 @@ namespace Backend.Application.Services
 {
     public class DigimonStateService(
         IAddressesRepository addressesRepository,
-        IResourceReader resourceReader,
+        IAddressesReader addressesReader,
         DigievolutionStateService digievolutionStateService)
     {
         private const int NoActiveDigievolution = 0xFFFF;
@@ -33,8 +33,8 @@ namespace Backend.Application.Services
 
             int digimonAddress = (int)digimonEntry.Address;
 
-            var (logicBlock, activeDigievolutionId) = resourceReader
-                .ReadDigimon(slotIndex, digimonAddress, digievolutions);
+            var (logicBlock, activeDigievolutionId) = addressesReader
+                .ReadDigimonResource(slotIndex, digimonAddress, digievolutions);
 
             var memoryBlockReader = new MemoryBlockReader(logicBlock);
 

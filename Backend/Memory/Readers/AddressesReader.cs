@@ -6,11 +6,11 @@ using Backend.Memory.Resources.Quests;
 
 namespace Backend.Memory.Readers
 {
-    public class ResourceReader(IMemoryReader memoryReader) : IResourceReader
+    public class AddressesReader(IMemoryReader memoryReader) : IAddressesReader
     {
         private const int DigimonMemoryBlockSize = 1500;
 
-        public PlayerResource ReadPlayer(PlayerAddresses addresses)
+        public PlayerResource ReadPlayerResource(PlayerAddresses addresses)
         {
             return new PlayerResource
             {
@@ -20,7 +20,7 @@ namespace Backend.Memory.Readers
             };
         }
 
-        public PartyResource ReadParty(PartyAddresses addresses)
+        public PartyResource ReadPartyResource(PartyAddresses addresses)
         {
             var slotAddresses = new[] { addresses.PartySlot1, addresses.PartySlot2, addresses.PartySlot3 };
 
@@ -34,7 +34,7 @@ namespace Backend.Memory.Readers
             };
         }
 
-        public DigimonResource ReadDigimon(
+        public DigimonResource ReadDigimonResource(
             int slotIndex,
             int baseAddress,
             DigievolutionsAddresses digievolutionsAddresses)
@@ -55,7 +55,7 @@ namespace Backend.Memory.Readers
             };
         }
 
-        public QuestResource ReadQuest(QuestAddresses addresses)
+        public QuestResource ReadQuestResource(QuestAddresses addresses)
         {
             return new QuestResource
             {
