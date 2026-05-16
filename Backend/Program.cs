@@ -6,6 +6,7 @@ using Backend.Events.Hubs;
 using Backend.Events.Services;
 using Backend.Events.Diffing;
 using Backend.Events.Generation;
+using Backend.Domain.Assemblers;
 using Backend.Application.Services;
 using Backend.Memory.Repositories;
 using Serilog;

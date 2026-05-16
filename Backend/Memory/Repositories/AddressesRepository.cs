@@ -1,6 +1,5 @@
 using System.Text.Json;
 using Backend.Memory.Addresses;
-using Backend.Memory.Repositories;
 using Backend.Memory.Addresses.Digimon;
 namespace Backend.Memory.Repositories
 {

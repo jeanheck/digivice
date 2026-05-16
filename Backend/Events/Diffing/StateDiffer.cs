@@ -4,10 +4,7 @@ using Backend.Domain.Models;
 
 namespace Backend.Events.Diffing;
 
-public class StateDiffer(
-    PlayerDiffer playerDiffer,
-    JournalDiffer journalDiffer,
-    PartyDiffer partyDiffer) : IDiffer<State>
+public class StateDiffer() : IDiffer<State>
 {
     public IEnumerable<BaseEvent> Diff(State? previousState, State newState)
     {
