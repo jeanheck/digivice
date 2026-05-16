@@ -1,8 +1,6 @@
 using Backend.Memory.Addresses;
-using Backend.Memory.Addresses.Quests;
 using Backend.Memory.Addresses.Digimon;
 using Backend.Memory.Resources;
-using Backend.Memory.Resources.Quests;
 
 namespace Backend.Memory.Readers
 {
@@ -42,32 +40,6 @@ namespace Backend.Memory.Readers
                 LogicBlock = logicBlock,
                 ActiveDigievolutionId = activeDigievolutionId
             };
-        }
-
-        public QuestResource ReadQuestResource(QuestAddresses addresses)
-        {
-            return new QuestResource
-            {
-                Id = addresses.Id,
-                Requisites = ReadRequisiteResources(addresses.Requisites),
-                Steps = [.. addresses.Steps.Select(step => new StepResource
-                {
-                    Number = step.Number,
-                    Value = memoryReader.ReadByteSafe(step.Address, step.BitMask),
-                    Requisites = ReadRequisiteResources(step.Requisites)
-                })]
-            };
-        }
-
-        private List<RequisiteResource> ReadRequisiteResources(IEnumerable<RequisiteAddresses>? requisites)
-        {
-            if (requisites == null) return [];
-
-            return [.. requisites.Select(req => new RequisiteResource
-            {
-                Id = req.Id,
-                Value = memoryReader.ReadByteSafe(req.Address)
-            })];
         }
     }
 }

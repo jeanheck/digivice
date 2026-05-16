@@ -8,6 +8,5 @@ namespace Backend.Memory.Readers
     {
         PartyResource ReadPartyResource(PartyAddresses addresses);
         DigimonResource ReadDigimonResource(int slotIndex, int baseAddress, DigievolutionsAddresses digievolutionsAddresses);
-        QuestResource ReadQuestResource(QuestAddresses addresses);
     }
 }

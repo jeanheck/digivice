@@ -7,19 +7,18 @@ namespace Backend.Application.Services
 {
     public class JournalStateService(
         IAddressesRepository addressesRepository,
-        IAddressesReader addressesReader)
+        IQuestReader questReader)
     {
         public Journal GetJournal()
         {
             var mainQuestAddresses = addressesRepository.GetMainQuest();
             var allSideQuestsAddresses = addressesRepository.GetAllSideQuests();
 
-            var mainQuestResource = addressesReader.ReadQuestResource(mainQuestAddresses);
+            var mainQuestResource = questReader.Read(mainQuestAddresses);
             var sideQuestsResources = allSideQuestsAddresses
-                .Select(addressesReader.ReadQuestResource)
-                .ToList();
+                .Select(questReader.Read);
 
-            return JournalAssembler.Assemble(mainQuestResource, sideQuestsResources);
+            return JournalAssembler.Assemble(mainQuestResource, [.. sideQuestsResources]);
         }
     }
 }

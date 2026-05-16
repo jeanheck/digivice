@@ -11,8 +11,8 @@ namespace Backend.Memory.Addresses.Quests
         public long Address { get; set; }
 
         [JsonConverter(typeof(HexStringToLongConverter))]
-        public long? BitMask { get; set; }
+        public long BitMask { get; set; }
 
-        public List<RequisiteAddresses>? Requisites { get; set; }
+        public List<RequisiteAddresses> Requisites { get; set; } = [];
     }
 }
