@@ -53,6 +53,7 @@ try
     builder.Services.AddSingleton<PlayerDiffer>();
     builder.Services.AddSingleton<DigimonDiffer>();
     builder.Services.AddSingleton<JournalDiffer>();
+    builder.Services.AddSingleton<PartyDiffer>();
     builder.Services.AddSingleton<StateDiffer>();
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 

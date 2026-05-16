@@ -4,14 +4,13 @@ using Backend.Events.Models.State;
 using Backend.Domain.Models;
 using Backend.Events.Hubs;
 using Microsoft.AspNetCore.SignalR;
-using Backend.Events.Diffing;
 
 namespace Backend.Events.Services;
 
 public class EventDispatcherService(
     IHubContext<GameHub> hubContext,
     ILogger<EventDispatcherService> logger,
-    StateDiffer detector) : IEventDispatcherService
+    StateEventGenerator stateEventGenerator) : IEventDispatcherService
 {
     private State? previousState;
     private bool? previousConnectionStatus;
@@ -43,7 +42,7 @@ public class EventDispatcherService(
 
     public void ProcessGameState(State newState)
     {
-        var events = detector.Diff(previousState, newState);
+        var events = stateEventGenerator.Generate(previousState, newState);
 
         foreach (var ev in events)
         {

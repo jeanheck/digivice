@@ -1,14 +1,13 @@
 using Backend.Events.Models;
-using Backend.Events.Models.Party;
 using Backend.Events.Models.State;
 using Backend.Domain.Models;
 
 namespace Backend.Events.Diffing;
 
 public class StateDiffer(
-    PlayerDiffer playerDiffer, 
-    DigimonDiffer digimonDiffer, 
-    JournalDiffer journalDiffer) : IDiffer<State>
+    PlayerDiffer playerDiffer,
+    JournalDiffer journalDiffer,
+    PartyDiffer partyDiffer) : IDiffer<State>
 {
     public IEnumerable<BaseEvent> Diff(State? previousState, State newState)
     {
@@ -20,68 +19,6 @@ public class StateDiffer(
             return events;
         }
 
-        events.AddRange(playerDiffer.Diff(previousState.Player, newState.Player));
-
-        // 2. Party Comparison
-        DetectPartyChanges(previousState.Party, newState.Party, events);
-
-        // 3. Journal Comparison
-        events.AddRange(journalDiffer.Diff(previousState.Journal, newState.Journal));
-
         return events;
-    }
-
-    private void DetectPartyChanges(Party? oldParty, Party? newParty, List<BaseEvent> events)
-    {
-        if (newParty == null) return;
-
-        if (oldParty == null)
-        {
-            var activeDigimons = newParty.Slots.Where(d => d != null).Select(d => d!).ToList();
-            events.Add(new PartySlotsChangedEvent(activeDigimons));
-            return;
-        }
-
-        var newSlots = newParty.Slots;
-        var oldSlots = oldParty.Slots;
-
-        bool partyRosterChanged = false;
-        if (newSlots.Count != oldSlots.Count)
-        {
-            partyRosterChanged = true;
-        }
-        else
-        {
-            for (int i = 0; i < newSlots.Count; i++)
-            {
-                var newDigi = newSlots[i];
-                var oldDigi = oldSlots[i];
-
-                if ((newDigi == null && oldDigi != null) || (newDigi != null && oldDigi == null))
-                {
-                    partyRosterChanged = true;
-                    break;
-                }
-            }
-        }
-
-        if (partyRosterChanged)
-        {
-            var activeDigimons = newSlots.Where(d => d != null).Select(d => d!).ToList();
-            events.Add(new PartySlotsChangedEvent(activeDigimons));
-        }
-        else
-        {
-            for (int i = 0; i < newSlots.Count; i++)
-            {
-                if (newSlots[i] != null && oldSlots[i] != null)
-                {
-                    if (!newSlots[i]!.Equals(oldSlots[i]))
-                    {
-                        events.AddRange(digimonDiffer.Diff(i, oldSlots[i], newSlots[i]!));
-                    }
-                }
-            }
-        }
     }
 }
