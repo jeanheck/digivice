@@ -1,7 +1,7 @@
 using Backend.Domain.Models.Quests;
 using Backend.Memory.Resources.Quests;
 
-namespace Backend.Domain.Assemblers
+namespace Backend.Domain.Assemblers.Quests
 {
     public static class RequisiteAssembler
     {
