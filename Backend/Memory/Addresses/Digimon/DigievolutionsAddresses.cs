@@ -19,5 +19,15 @@ namespace Backend.Memory.Addresses.Digimon
         public int UnlockedDigievolutionEntryStride { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int MaxUnlockedDigievolutions { get; set; }
+
+        public void Deconstruct(
+            out int unlockedDigievolutionsStart,
+            out int unlockedDigievolutionEntryStride,
+            out int maxUnlockedDigievolutions)
+        {
+            unlockedDigievolutionsStart = UnlockedDigievolutionsStart;
+            unlockedDigievolutionEntryStride = UnlockedDigievolutionEntryStride;
+            maxUnlockedDigievolutions = MaxUnlockedDigievolutions;
+        }
     }
 }
