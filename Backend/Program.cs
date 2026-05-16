@@ -43,6 +43,7 @@ try
     builder.Services.AddSingleton<IMemoryReader, MemoryReader>();
     builder.Services.AddSingleton<IAddressesRepository, AddressesRepository>();
     builder.Services.AddSingleton<IAddressesReader, AddressesReader>();
+    builder.Services.AddSingleton<IPlayerReader, PlayerReader>();
     builder.Services.AddSingleton<PlayerStateService>();
     builder.Services.AddSingleton<DigievolutionStateService>();
     builder.Services.AddSingleton<DigimonStateService>();
