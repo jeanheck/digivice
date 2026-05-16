@@ -1,5 +1,4 @@
 using Backend.Domain.Models;
-using Backend.Domain.Models.Quests;
 using Backend.Memory.Resources;
 
 namespace Backend.Domain.Assemblers

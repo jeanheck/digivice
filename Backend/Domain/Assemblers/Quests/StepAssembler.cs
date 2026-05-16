@@ -11,7 +11,7 @@ namespace Backend.Domain.Assemblers.Quests
             {
                 Number = resource.Number,
                 Value = resource.Value,
-                Requisites = resource.Requisites.Select(RequisiteAssembler.Assemble).ToList()
+                Requisites = [.. resource.Requisites.Select(RequisiteAssembler.Assemble)]
             };
         }
     }

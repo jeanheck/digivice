@@ -11,8 +11,8 @@ namespace Backend.Domain.Assemblers
             return new Quest
             {
                 Id = resource.Id,
-                Requisites = resource.Requisites.Select(RequisiteAssembler.Assemble).ToList(),
-                Steps = resource.Steps.Select(StepAssembler.Assemble).ToList()
+                Requisites = [.. resource.Requisites.Select(RequisiteAssembler.Assemble)],
+                Steps = [.. resource.Steps.Select(StepAssembler.Assemble)]
             };
         }
     }
