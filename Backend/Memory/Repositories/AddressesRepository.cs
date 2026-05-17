@@ -8,8 +8,8 @@ namespace Backend.Memory.Repositories
         private readonly string dataDirectory;
         private PlayerAddresses? playerAddresses;
         private PartyAddresses? partyAddresses;
+        private DigimonStatusAddresses? digimonStatusAddresses;
         private DigimonAddresses? digimonAddresses;
-        private Dictionary<int, DigimonBaseAddress>? digimonDefinitions;
         private QuestAddresses? mainQuestAddresses;
         private QuestAddresses? sideQuestFolderBag;
         private QuestAddresses? sideQuestTreeBoots;
@@ -48,11 +48,11 @@ namespace Backend.Memory.Repositories
         public PartyAddresses GetPartyAddresses() =>
             LoadAndCache(ref partyAddresses, "PartyAddresses.json");
 
+        public DigimonStatusAddresses GetDigimonStatusAddresses() =>
+            LoadAndCache(ref digimonStatusAddresses, "DigimonStatusAddresses.json");
+
         public DigimonAddresses GetDigimonAddresses() =>
             LoadAndCache(ref digimonAddresses, "DigimonAddresses.json");
-
-        public Dictionary<int, DigimonBaseAddress> GetDigimonDefinitions() =>
-            LoadAndCache(ref digimonDefinitions, "DigimonsAddresses.json");
 
         public QuestAddresses GetMainQuest() =>
             LoadAndCache(ref mainQuestAddresses, "Quests/MainQuestAddresses.json");

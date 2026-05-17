@@ -1,3 +1,4 @@
+using System.Linq;
 using Backend.Domain.Models;
 using Backend.Memory.Repositories;
 using Backend.Memory.Readers;
@@ -13,13 +14,16 @@ namespace Backend.Application.Services
     {
         private const int NoActiveDigievolution = 0xFFFF;
 
-        private DigimonAddresses Addresses => addressesRepository.GetDigimonAddresses();
+        private DigimonStatusAddresses Addresses => addressesRepository.GetDigimonStatusAddresses();
 
         public Digimon? GetDigimon(int slotIndex, byte digimonId)
         {
             var (experience, level, vitals, attributes, resistances, equipaments, digievolutions) = Addresses;
 
-            if (!addressesRepository.GetDigimonDefinitions().TryGetValue(digimonId, out var digimonEntry) || digimonEntry.Address == 0)
+            var digimonEntry = addressesRepository.GetDigimonAddresses().Digimons
+                .FirstOrDefault(d => d.Id == digimonId);
+
+            if (digimonEntry == null || digimonEntry.Address == 0)
             {
                 Serilog.Log.Warning("Unknown Digimon ID: 0x{Id:X2}", digimonId);
                 return null;

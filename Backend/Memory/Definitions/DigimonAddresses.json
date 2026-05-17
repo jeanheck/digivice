@@ -1,55 +1,44 @@
 {
-    "Experience": "0x18",
-    "Level": "0x1C",
-    "Vitals": {
-        "CurrentHP": "0x20",
-        "MaxHP": "0x22",
-        "CurrentMP": "0x24",
-        "MaxMP": "0x26"
-    },
-    "Attributes": {
-        "Strength": "0x28",
-        "Defense": "0x2A",
-        "Spirit": "0x2C",
-        "Wisdow": "0x2E",
-        "Speed": "0x30",
-        "Charisma": "0x32"
-    },
-    "Resistances": {
-        "Fire": "0x34",
-        "Water": "0x36",
-        "Ice": "0x38",
-        "Wind": "0x3A",
-        "Thunder": "0x3C",
-        "Machine": "0x3E",
-        "Dark": "0x40"
-    },
-    "Equipaments": {
-        "Head": "0x3C0",
-        "Body": "0x3C2",
-        "RightHand": "0x3C4",
-        "LeftHand": "0x3C6",
-        "Accessory1": "0x3C8",
-        "Accessory2": "0x3CA"
-    },
-    "Digievolutions": {
-        "ActiveDigievolution": "-4",
-        "Slots": [
-            {
-                "Index": 1,
-                "Address": "0x48"
-            },
-            {
-                "Index": 2,
-                "Address": "0x4A"
-            },
-            {
-                "Index": 3,
-                "Address": "0x4C"
-            }
-        ],
-        "UnlockedDigievolutionsStart": "0x50",
-        "UnlockedDigievolutionEntryStride": "20",
-        "MaxUnlockedDigievolutions": "60"
-    }
+    "Digimons": [
+        {
+            "Id": 0,
+            "Name": "Kotemon",
+            "Address": "0x0004949C"
+        },
+        {
+            "Id": 1,
+            "Name": "Kumamon",
+            "Address": "0x00049878"
+        },
+        {
+            "Id": 2,
+            "Name": "Monmon",
+            "Address": "0x00049C54"
+        },
+        {
+            "Id": 3,
+            "Name": "Agumon",
+            "Address": "0x0004A030"
+        },
+        {
+            "Id": 4,
+            "Name": "Veemon",
+            "Address": "0x0004A40C"
+        },
+        {
+            "Id": 5,
+            "Name": "Guilmon",
+            "Address": "0x0004A7E8"
+        },
+        {
+            "Id": 6,
+            "Name": "Renamon",
+            "Address": "0x0004ABC4"
+        },
+        {
+            "Id": 7,
+            "Name": "Patamon",
+            "Address": "0x0004AFA0"
+        }
+    ]
 }

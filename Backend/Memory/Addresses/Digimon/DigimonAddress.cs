@@ -3,7 +3,7 @@ using Backend.Memory.Converters;
 
 namespace Backend.Memory.Addresses.Digimon
 {
-    public class DigimonBaseAddress
+    public class DigimonAddress
     {
         public string? Name { get; set; }
         public int Id { get; set; }
