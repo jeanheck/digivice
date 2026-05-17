@@ -9,6 +9,8 @@ using Backend.Events.Hubs;
 using Backend.Events.Services;
 using Backend.Events.Generation;
 using Backend.Application.Services;
+using Backend.Application.Providers;
+using Backend.Application.Loaders;
 using Backend.Memory.Repositories;
 using Serilog;
 
@@ -50,12 +52,15 @@ try
     builder.Services.AddSingleton<IStepReader, StepReader>();
     builder.Services.AddSingleton<IPlayerReader, PlayerReader>();
     builder.Services.AddSingleton<IQuestReader, QuestReader>();
-    builder.Services.AddSingleton<PlayerStateService>();
+    builder.Services.AddSingleton<PlayerLoader>();
+    builder.Services.AddSingleton<QuestLoader>();
+    builder.Services.AddSingleton<JournalLoader>();
+    builder.Services.AddSingleton<PlayerProvider>();
     builder.Services.AddSingleton<DigievolutionStateService>();
     builder.Services.AddSingleton<DigimonStateService>();
     builder.Services.AddSingleton<PartyStateService>();
-    builder.Services.AddSingleton<JournalStateService>();
-    builder.Services.AddSingleton<StateService>();
+    builder.Services.AddSingleton<JournalProvider>();
+    builder.Services.AddSingleton<StateProvider>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();
 
     // Register Event Dispatcher

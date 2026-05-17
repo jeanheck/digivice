@@ -1,6 +1,6 @@
 using Backend.Domain.Models;
 using Backend.Memory.Resources;
-using Backend.Application.Shared;
+using Backend.Domain.Shared;
 
 namespace Backend.Domain.Assemblers
 {

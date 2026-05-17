@@ -5,10 +5,10 @@ namespace Backend.Domain.Assemblers
 {
     public static class JournalAssembler
     {
-        public static Journal Assemble(QuestResource mainQuestResource, List<QuestResource> sideQuestsResources)
+        public static Journal Assemble(JournalResource resource)
         {
-            var mainQuest = QuestAssembler.Assemble(mainQuestResource);
-            var sideQuests = sideQuestsResources.Select(QuestAssembler.Assemble).ToList();
+            var mainQuest = QuestAssembler.Assemble(resource.MainQuest);
+            List<Quest> sideQuests = [.. resource.SideQuests.Select(QuestAssembler.Assemble)];
 
             NormalizeMainQuestProgression(mainQuest);
 

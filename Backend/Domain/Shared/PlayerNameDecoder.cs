@@ -1,7 +1,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Backend.Application.Shared
+namespace Backend.Domain.Shared
 {
     public static class PlayerNameDecoder
     {
@@ -64,12 +64,18 @@ namespace Backend.Application.Shared
         /// </summary>
         public static string Decode(byte[]? buffer)
         {
-            if (buffer == null) return string.Empty;
+            if (buffer == null)
+            {
+                return string.Empty;
+            }
 
             StringBuilder sb = new StringBuilder();
             foreach (var b in buffer)
             {
-                if (b == 0x00 || b == 0xFF) break;
+                if (b == 0x00 || b == 0xFF)
+                {
+                    break;
+                }
 
                 if (b == 0x01)
                 {
@@ -84,10 +90,16 @@ namespace Backend.Application.Shared
             string raw = sb.ToString();
             string normalized = Regex.Replace(raw, @" {2,}", " ").Trim();
 
-            if (string.IsNullOrWhiteSpace(normalized)) return string.Empty;
+            if (string.IsNullOrWhiteSpace(normalized))
+            {
+                return string.Empty;
+            }
             foreach (char c in normalized)
             {
-                if (char.IsControl(c)) return string.Empty;
+                if (char.IsControl(c))
+                {
+                    return string.Empty;
+                }
             }
 
             return normalized;
