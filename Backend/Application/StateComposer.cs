@@ -1,13 +1,14 @@
 using Backend.Domain.Models;
+using Backend.Application.Providers;
 
-namespace Backend.Application.Providers
+namespace Backend.Application
 {
-    public class StateProvider(
+    public class StateComposer(
         PlayerProvider playerProvider,
         PartyProvider partyProvider,
         JournalProvider journalProvider)
     {
-        public State Get()
+        public State Compose()
         {
             return new State
             {

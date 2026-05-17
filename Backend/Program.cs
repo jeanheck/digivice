@@ -8,6 +8,7 @@ using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;
 using Backend.Events.Services;
 using Backend.Events.Generation;
+using Backend.Application;
 using Backend.Application.Services;
 using Backend.Application.Providers;
 using Backend.Application.Loaders;
@@ -61,7 +62,7 @@ try
     builder.Services.AddSingleton<DigimonStateService>();
     builder.Services.AddSingleton<PartyProvider>();
     builder.Services.AddSingleton<JournalProvider>();
-    builder.Services.AddSingleton<StateProvider>();
+    builder.Services.AddSingleton<StateComposer>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();
 
     // Register Event Dispatcher

@@ -1,14 +1,14 @@
 using Backend.Diagnostics;
 using Backend.Events.Services;
 using Backend.Memory.Readers;
-using Backend.Application.Providers;
+using Backend.Application;
 
 namespace Backend.Application.Services
 {
     public class GameLoopBackgroundService
     (
         IMemoryReader MemoryReader,
-        StateProvider StateProvider,
+        StateComposer StateComposer,
         IEventDispatcherService eventDispatcherService,
         DebugConsoleRenderer debugConsoleRenderer,
         IConfiguration configuration
@@ -39,7 +39,7 @@ namespace Backend.Application.Services
 
                 try
                 {
-                    var state = StateProvider.Get();
+                    var state = StateComposer.Compose();
 
                     if (state?.Player != null)
                     {
