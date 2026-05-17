@@ -55,10 +55,11 @@ try
     builder.Services.AddSingleton<PlayerLoader>();
     builder.Services.AddSingleton<QuestLoader>();
     builder.Services.AddSingleton<JournalLoader>();
+    builder.Services.AddSingleton<PartyLoader>();
     builder.Services.AddSingleton<PlayerProvider>();
     builder.Services.AddSingleton<DigievolutionStateService>();
     builder.Services.AddSingleton<DigimonStateService>();
-    builder.Services.AddSingleton<PartyStateService>();
+    builder.Services.AddSingleton<PartyProvider>();
     builder.Services.AddSingleton<JournalProvider>();
     builder.Services.AddSingleton<StateProvider>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();

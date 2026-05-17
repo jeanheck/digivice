@@ -1,11 +1,10 @@
 using Backend.Domain.Models;
-using Backend.Application.Services;
 
 namespace Backend.Application.Providers
 {
     public class StateProvider(
         PlayerProvider playerProvider,
-        PartyStateService partyStateService,
+        PartyProvider partyProvider,
         JournalProvider journalProvider)
     {
         public State Get()
@@ -13,7 +12,7 @@ namespace Backend.Application.Providers
             return new State
             {
                 Player = playerProvider.Get(),
-                Party = partyStateService.GetParty(),
+                Party = partyProvider.Get(),
                 Journal = journalProvider.Get()
             };
         }
