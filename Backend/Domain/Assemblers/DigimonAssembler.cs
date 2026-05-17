@@ -1,6 +1,6 @@
 using Backend.Domain.Models;
 using Backend.Domain.Models.Digimons;
-using Backend.Memory.Resources;
+using Backend.Memory.Resources.Party;
 
 namespace Backend.Domain.Assemblers
 {

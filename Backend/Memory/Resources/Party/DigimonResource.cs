@@ -1,6 +1,6 @@
-using Backend.Memory.Resources.Digimon;
+using Backend.Memory.Resources.Party.Digimon;
 
-namespace Backend.Memory.Resources
+namespace Backend.Memory.Resources.Party
 {
     public class DigimonResource
     {

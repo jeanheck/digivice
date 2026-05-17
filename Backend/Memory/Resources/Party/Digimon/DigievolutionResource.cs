@@ -1,4 +1,4 @@
-namespace Backend.Memory.Resources.Digimon
+namespace Backend.Memory.Resources.Party.Digimon
 {
     public class DigievolutionResource
     {

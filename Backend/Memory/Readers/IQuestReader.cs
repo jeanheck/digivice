@@ -1,5 +1,5 @@
 using Backend.Memory.Addresses.Journal;
-using Backend.Memory.Resources;
+using Backend.Memory.Resources.Journal;
 
 namespace Backend.Memory.Readers
 {

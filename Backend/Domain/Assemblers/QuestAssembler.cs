@@ -1,5 +1,5 @@
 using Backend.Domain.Models;
-using Backend.Memory.Resources;
+using Backend.Memory.Resources.Journal;
 using Backend.Domain.Assemblers.Quests;
 
 namespace Backend.Domain.Assemblers

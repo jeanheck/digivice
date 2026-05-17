@@ -1,5 +1,5 @@
 using Backend.Memory.Addresses.Journal.Quest;
-using Backend.Memory.Resources.Quests;
+using Backend.Memory.Resources.Journal.Quest;
 
 namespace Backend.Memory.Readers.Quests
 {

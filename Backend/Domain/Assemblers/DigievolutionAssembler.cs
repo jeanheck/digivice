@@ -1,5 +1,5 @@
 using Backend.Domain.Models.Digimons;
-using Backend.Memory.Resources.Digimon;
+using Backend.Memory.Resources.Party.Digimon;
 
 namespace Backend.Domain.Assemblers
 {

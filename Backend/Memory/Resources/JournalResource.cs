@@ -1,3 +1,5 @@
+using Backend.Memory.Resources.Journal;
+
 namespace Backend.Memory.Resources
 {
     public class JournalResource
