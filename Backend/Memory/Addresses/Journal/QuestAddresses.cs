@@ -1,4 +1,4 @@
-using Backend.Memory.Addresses.Journal.Quests;
+using Backend.Memory.Addresses.Journal.Quest;
 
 namespace Backend.Memory.Addresses.Journal
 {

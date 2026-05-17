@@ -2,6 +2,7 @@ using System.Text.Json;
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Digimon;
 using Backend.Memory.Addresses.Journal;
+using Backend.Memory.Addresses.Party;
 
 namespace Backend.Memory.Repositories
 {
@@ -11,7 +12,7 @@ namespace Backend.Memory.Repositories
         private PlayerAddresses? playerAddresses;
         private PartyAddresses? partyAddresses;
         private DigimonStatusAddresses? digimonStatusAddresses;
-        private DigimonAddresses? digimonAddresses;
+        private DigimonsAddresses? digimonAddresses;
         private QuestAddresses? mainQuestAddresses;
         private QuestAddresses? sideQuestFolderBag;
         private QuestAddresses? sideQuestTreeBoots;
@@ -53,7 +54,7 @@ namespace Backend.Memory.Repositories
         public DigimonStatusAddresses GetDigimonStatusAddresses() =>
             LoadAndCache(ref digimonStatusAddresses, "Party/DigimonStatusAddresses.json");
 
-        public DigimonAddresses GetDigimonsAddresses() =>
+        public DigimonsAddresses GetDigimonsAddresses() =>
             LoadAndCache(ref digimonAddresses, "Party/DigimonsAddresses.json");
 
         public DigimonAddress? GetDigimonAddressById(int id) =>

@@ -1,6 +1,7 @@
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Digimon;
 using Backend.Memory.Addresses.Journal;
+using Backend.Memory.Addresses.Party;
 
 namespace Backend.Memory.Repositories
 {
@@ -9,7 +10,7 @@ namespace Backend.Memory.Repositories
         PlayerAddresses GetPlayerAddresses();
         PartyAddresses GetPartyAddresses();
         DigimonStatusAddresses GetDigimonStatusAddresses();
-        DigimonAddresses GetDigimonsAddresses();
+        DigimonsAddresses GetDigimonsAddresses();
         DigimonAddress? GetDigimonAddressById(int id);
         QuestAddresses GetMainQuest();
         List<QuestAddresses> GetAllSideQuests();

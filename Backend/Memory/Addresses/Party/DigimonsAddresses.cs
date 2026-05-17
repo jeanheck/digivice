@@ -1,8 +1,8 @@
 using Backend.Memory.Addresses.Digimon;
 
-namespace Backend.Memory.Addresses
+namespace Backend.Memory.Addresses.Party
 {
-    public class DigimonAddresses
+    public class DigimonsAddresses
     {
         public List<DigimonAddress> Digimons { get; set; } = [];
     }
