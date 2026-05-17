@@ -9,7 +9,6 @@ using Backend.Events.Hubs;
 using Backend.Events.Services;
 using Backend.Events.Generation;
 using Backend.Application;
-using Backend.Application.Services;
 using Backend.Application.Providers;
 using Backend.Application.Loaders;
 using Backend.Memory.Repositories;
@@ -68,8 +67,8 @@ try
     builder.Services.AddSingleton<StateEventGenerator>();
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
-    // Start the Background Monitor (Memory Reader)
-    builder.Services.AddHostedService<GameLoopBackgroundService>();
+    // Start to read the memory and check game state
+    builder.Services.AddHostedService<GameLoopService>();
 
     builder.Services.AddCors(options =>
     {

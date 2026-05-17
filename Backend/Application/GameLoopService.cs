@@ -2,9 +2,9 @@ using Backend.Diagnostics;
 using Backend.Events.Services;
 using Backend.Memory.Readers;
 
-namespace Backend.Application.Services
+namespace Backend.Application
 {
-    public class GameLoopBackgroundService
+    public class GameLoopService
     (
         IMemoryReader MemoryReader,
         StateComposer StateComposer,
@@ -15,7 +15,7 @@ namespace Backend.Application.Services
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            Serilog.Log.Information("Starting GameLoopBackgroundService...");
+            Serilog.Log.Information("Starting GameLoopService...");
 
             while (!stoppingToken.IsCancellationRequested)
             {
@@ -36,16 +36,15 @@ namespace Backend.Application.Services
                     }
                 }
 
+                // State Processing
                 try
                 {
                     var state = StateComposer.Compose();
 
-                    if (state?.Player != null)
+                    if (state.Player != null)
                     {
-                        // Dispatch any state differences
                         eventDispatcherService.ProcessGameState(state);
 
-                        // Render debugging console if flag is enabled
                         var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
                         if (isDebuggingEnabled && !Console.IsOutputRedirected)
                         {
@@ -60,7 +59,7 @@ namespace Backend.Application.Services
                 }
                 catch (Exception ex)
                 {
-                    Serilog.Log.Error(ex, "Error processing game state in GameLoopBackgroundService.");
+                    Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
                     // In case the connection was lost abruptly during read
                     if (!MemoryReader.IsConnected)
                     {
@@ -79,7 +78,7 @@ namespace Backend.Application.Services
                 }
             }
 
-            Serilog.Log.Information("GameLoopBackgroundService shutting down gracefully.");
+            Serilog.Log.Information("GameLoopService shutting down gracefully.");
         }
     }
 }

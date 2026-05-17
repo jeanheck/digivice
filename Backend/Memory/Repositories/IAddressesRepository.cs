@@ -1,5 +1,6 @@
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Digimon;
+using Backend.Memory.Addresses.Journal;
 
 namespace Backend.Memory.Repositories
 {

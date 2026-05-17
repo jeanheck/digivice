@@ -1,6 +1,7 @@
 using System.Text.Json;
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Digimon;
+using Backend.Memory.Addresses.Journal;
 
 namespace Backend.Memory.Repositories
 {
@@ -50,10 +51,10 @@ namespace Backend.Memory.Repositories
             LoadAndCache(ref partyAddresses, "PartyAddresses.json");
 
         public DigimonStatusAddresses GetDigimonStatusAddresses() =>
-            LoadAndCache(ref digimonStatusAddresses, "DigimonStatusAddresses.json");
+            LoadAndCache(ref digimonStatusAddresses, "Party/DigimonStatusAddresses.json");
 
         public DigimonAddresses GetDigimonsAddresses() =>
-            LoadAndCache(ref digimonAddresses, "DigimonsAddresses.json");
+            LoadAndCache(ref digimonAddresses, "Party/DigimonsAddresses.json");
 
         public DigimonAddress? GetDigimonAddressById(int id) =>
             GetDigimonsAddresses().Digimons.FirstOrDefault(d => d.Id == id);
