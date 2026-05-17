@@ -1,4 +1,3 @@
-using System.Linq;
 using Backend.Domain.Models;
 using Backend.Memory.Resources;
 

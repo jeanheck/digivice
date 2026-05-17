@@ -1,5 +1,5 @@
 using Backend.Domain.Models;
-using Backend.Memory.Resources;
+using Backend.Memory.Resources.Party;
 
 namespace Backend.Domain.Assemblers
 {

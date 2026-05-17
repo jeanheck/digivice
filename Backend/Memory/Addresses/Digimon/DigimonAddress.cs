@@ -5,7 +5,7 @@ namespace Backend.Memory.Addresses.Digimon
 {
     public class DigimonAddress
     {
-        public string? Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public int Id { get; set; }
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long Address { get; set; }
