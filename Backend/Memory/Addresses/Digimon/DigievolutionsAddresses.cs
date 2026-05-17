@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Backend.Memory.Converters;
+using Backend.Memory.Addresses.Party;
 
 namespace Backend.Memory.Addresses.Digimon
 {
@@ -7,12 +9,9 @@ namespace Backend.Memory.Addresses.Digimon
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int ActiveDigievolution { get; set; }
-        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Slot1 { get; set; }
-        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Slot2 { get; set; }
-        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Slot3 { get; set; }
+
+        public List<SlotAddresses> Slots { get; set; } = [];
+
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int UnlockedDigievolutionsStart { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]

@@ -1,4 +1,5 @@
 using Backend.Domain.Models;
+using Backend.Domain.Assemblers;
 using Backend.Memory.Repositories;
 using Backend.Memory.Readers.Party;
 
@@ -13,13 +14,16 @@ namespace Backend.Application.Services
         {
             var partyAddresses = addressesRepository.GetPartyAddresses();
             var resource = partyReader.Read(partyAddresses);
-            var party = new Party();
+            var party = PartyAssembler.Assemble(resource);
 
-            foreach (var slot in resource.SlotsResource)
+            foreach (var slot in party.Slots)
             {
-                if (digimonStateService.IsEmptySlot((byte)slot.DigimonId)) continue;
+                if (slot.DigimonId == partyAddresses.EmptySlotId)
+                {
+                    continue;
+                }
 
-                party.Digimons[slot.Index - 1] = digimonStateService.GetDigimon(slot.Index, (byte)slot.DigimonId);
+                slot.Digimon = digimonStateService.GetDigimon(slot.Index, (byte)slot.DigimonId);
             }
 
             return party;

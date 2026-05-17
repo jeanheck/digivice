@@ -69,7 +69,10 @@ namespace Backend.Diagnostics
 
         private void RenderParty(StringBuilder sb, Party party)
         {
-            var activeSlots = party.Digimons.Where(d => d != null).ToList();
+            var activeSlots = party.Slots
+                .Where(s => s.Digimon != null)
+                .Select(s => s.Digimon!)
+                .ToList();
 
             if (activeSlots.Count == 0)
             {

@@ -3,18 +3,17 @@ using Backend.Memory.Converters;
 
 namespace Backend.Memory.Addresses.Digimon
 {
-    public class BasicInfoAddresses
+    public class VitalsAddresses
     {
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Experience { get; set; }
-        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Level { get; set; }
-        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int CurrentHP { get; set; }
+
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int MaxHP { get; set; }
+
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int CurrentMP { get; set; }
+
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int MaxMP { get; set; }
     }

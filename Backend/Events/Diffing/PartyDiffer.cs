@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Backend.Domain.Models;
 using Backend.Events.Models;
 using Backend.Events.Models.Party;
@@ -10,17 +12,23 @@ public static class PartyDiffer
     {
         var events = new List<BaseEvent>();
 
-        if (newParty == null) return events;
+        if (newParty == null)
+        {
+            return events;
+        }
 
         if (oldParty == null)
         {
-            var activeDigimons = newParty.Digimons.Where(d => d != null).Select(d => d!).ToList();
+            var activeDigimons = newParty.Slots
+                .Where(s => s.Digimon != null)
+                .Select(s => s.Digimon!)
+                .ToList();
             events.Add(new PartySlotsChangedEvent(activeDigimons));
             return events;
         }
 
-        var newSlots = newParty.Digimons;
-        var oldSlots = oldParty.Digimons;
+        var newSlots = newParty.Slots;
+        var oldSlots = oldParty.Slots;
 
         bool partyRosterChanged = false;
         if (newSlots.Count != oldSlots.Count)
@@ -31,8 +39,8 @@ public static class PartyDiffer
         {
             for (int i = 0; i < newSlots.Count; i++)
             {
-                var newDigi = newSlots[i];
-                var oldDigi = oldSlots[i];
+                var newDigi = newSlots[i].Digimon;
+                var oldDigi = oldSlots[i].Digimon;
 
                 if ((newDigi == null && oldDigi != null) || (newDigi != null && oldDigi == null))
                 {
@@ -44,18 +52,23 @@ public static class PartyDiffer
 
         if (partyRosterChanged)
         {
-            var activeDigimons = newSlots.Where(d => d != null).Select(d => d!).ToList();
+            var activeDigimons = newSlots
+                .Where(s => s.Digimon != null)
+                .Select(s => s.Digimon!)
+                .ToList();
             events.Add(new PartySlotsChangedEvent(activeDigimons));
         }
         else
         {
             for (int i = 0; i < newSlots.Count; i++)
             {
-                if (newSlots[i] != null && oldSlots[i] != null)
+                var newDigi = newSlots[i].Digimon;
+                var oldDigi = oldSlots[i].Digimon;
+                if (newDigi != null && oldDigi != null)
                 {
-                    if (!newSlots[i]!.Equals(oldSlots[i]))
+                    if (!newDigi.Equals(oldDigi))
                     {
-                        events.AddRange(DigimonDiffer.Diff(i, oldSlots[i], newSlots[i]!));
+                        events.AddRange(DigimonDiffer.Diff(i, oldDigi, newDigi));
                     }
                 }
             }

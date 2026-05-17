@@ -14,16 +14,10 @@ namespace Backend.Application.Services
         private const int NoActiveDigievolution = 0xFFFF;
 
         private DigimonAddresses Addresses => addressesRepository.GetDigimonAddresses();
-        private PartyAddresses PartyAddresses => addressesRepository.GetPartyAddresses();
-
-        public bool IsEmptySlot(byte digimonId)
-        {
-            return digimonId == (byte)PartyAddresses.EmptySlotId;
-        }
 
         public Digimon? GetDigimon(int slotIndex, byte digimonId)
         {
-            var (basicInfo, attributes, resistances, equipaments, digievolutions) = Addresses;
+            var (experience, level, vitals, attributes, resistances, equipaments, digievolutions) = Addresses;
 
             if (!addressesRepository.GetDigimonDefinitions().TryGetValue(digimonId, out var digimonEntry) || digimonEntry.Address == 0)
             {
@@ -47,12 +41,12 @@ namespace Backend.Application.Services
                 ActiveDigievolutionId = GetActiveDigievolutionId(activeDigievolutionId),
                 BasicInfo = new BasicInfo
                 {
-                    Experience = memoryBlockReader.ReadInt32(basicInfo.Experience),
-                    Level = memoryBlockReader.ReadInt16(basicInfo.Level),
-                    CurrentHP = memoryBlockReader.ReadInt16(basicInfo.CurrentHP),
-                    MaxHP = memoryBlockReader.ReadInt16(basicInfo.MaxHP),
-                    CurrentMP = memoryBlockReader.ReadInt16(basicInfo.CurrentMP),
-                    MaxMP = memoryBlockReader.ReadInt16(basicInfo.MaxMP)
+                    Experience = memoryBlockReader.ReadInt32(experience),
+                    Level = memoryBlockReader.ReadInt16(level),
+                    CurrentHP = memoryBlockReader.ReadInt16(vitals.CurrentHP),
+                    MaxHP = memoryBlockReader.ReadInt16(vitals.MaxHP),
+                    CurrentMP = memoryBlockReader.ReadInt16(vitals.CurrentMP),
+                    MaxMP = memoryBlockReader.ReadInt16(vitals.MaxMP)
                 },
                 Attributes = new Attributes
                 {

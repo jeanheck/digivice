@@ -1,3 +1,4 @@
+using System.Linq;
 using Backend.Domain.Models.Digimons;
 using Backend.Memory.Readers;
 using Backend.Memory.Addresses.Digimon;
@@ -12,11 +13,7 @@ namespace Backend.Application.Services
 
         public Digievolution[] GetDigievolutions(MemoryBlockReader memoryBlockReader, DigievolutionsAddresses digievolutionsAddresses)
         {
-            ReadOnlySpan<int> digievolutionsSlotsAddresses = [
-                digievolutionsAddresses.Slot1,
-                digievolutionsAddresses.Slot2,
-                digievolutionsAddresses.Slot3
-            ];
+            int[] digievolutionsSlotsAddresses = [.. digievolutionsAddresses.Slots.Select(s => (int)s.Address)];
             var digievolutions = new Digievolution[3];
 
             for (int i = 0; i < digievolutionsSlotsAddresses.Length; i++)
