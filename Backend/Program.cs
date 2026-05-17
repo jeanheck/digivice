@@ -57,6 +57,7 @@ try
     builder.Services.AddSingleton<QuestLoader>();
     builder.Services.AddSingleton<JournalLoader>();
     builder.Services.AddSingleton<PartyLoader>();
+    builder.Services.AddSingleton<DigimonLoader>();
     builder.Services.AddSingleton<PlayerProvider>();
     builder.Services.AddSingleton<DigievolutionStateService>();
     builder.Services.AddSingleton<DigimonStateService>();

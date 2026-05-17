@@ -13,7 +13,8 @@ namespace Backend.Memory.Readers.Digimon
 
         public DigimonResource Read(DigimonAddress digimonAddress, DigimonStatusAddresses digimonStatusAddresses)
         {
-            var memoryBlock = memoryReader.ReadBytes(digimonAddress.Address, DigimonMemoryBlockSize);
+            var memoryBlock = memoryReader.ReadBytes(digimonAddress.Address, DigimonMemoryBlockSize)
+                ?? throw new InvalidOperationException($"Failed to read memory block for Digimon at address: 0x{digimonAddress.Address:X}");
             var memoryBlockReader = new MemoryBlockReader(memoryBlock);
 
             var digievolutionsSlots = digimonStatusAddresses.Digievolutions.Slots
