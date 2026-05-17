@@ -1,8 +1,8 @@
 using System.Text.Json.Serialization;
 using Backend.Memory.Converters;
+using Backend.Memory.Addresses.Party.Digimon;
 
-
-namespace Backend.Memory.Addresses.Digimon
+namespace Backend.Memory.Addresses.Party
 {
     public class DigimonStatusAddresses
     {

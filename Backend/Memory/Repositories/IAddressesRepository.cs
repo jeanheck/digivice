@@ -1,5 +1,4 @@
 using Backend.Memory.Addresses;
-using Backend.Memory.Addresses.Digimon;
 using Backend.Memory.Addresses.Journal;
 using Backend.Memory.Addresses.Party;
 

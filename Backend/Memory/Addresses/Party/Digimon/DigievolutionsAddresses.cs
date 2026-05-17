@@ -1,8 +1,7 @@
 using System.Text.Json.Serialization;
 using Backend.Memory.Converters;
-using Backend.Memory.Addresses.Party;
 
-namespace Backend.Memory.Addresses.Digimon
+namespace Backend.Memory.Addresses.Party.Digimon
 {
     public class DigievolutionsAddresses
     {
