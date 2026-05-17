@@ -1,7 +1,7 @@
 using Backend.Domain.Models.Digimons;
 using Backend.Memory.Resources.Party.Digimon;
 
-namespace Backend.Domain.Assemblers
+namespace Backend.Domain.Assemblers.Party.Digimon
 {
     public static class DigievolutionAssembler
     {

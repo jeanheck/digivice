@@ -1,7 +1,7 @@
 using Backend.Domain.Models.Quests;
 using Backend.Memory.Resources.Journal.Quest;
 
-namespace Backend.Domain.Assemblers.Quests
+namespace Backend.Domain.Assemblers.Journal.Quest
 {
     public static class StepAssembler
     {

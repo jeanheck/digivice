@@ -1,7 +1,7 @@
 using Backend.Domain.Models;
 using Backend.Memory.Resources.Party;
 
-namespace Backend.Domain.Assemblers
+namespace Backend.Domain.Assemblers.Party
 {
     public static class DigimonSlotAssembler
     {

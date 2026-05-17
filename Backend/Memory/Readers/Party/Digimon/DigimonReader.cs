@@ -2,7 +2,7 @@ using Backend.Memory.Addresses.Party;
 using Backend.Memory.Resources.Party;
 using Backend.Memory.Resources.Party.Digimon;
 
-namespace Backend.Memory.Readers.Digimon
+namespace Backend.Memory.Readers.Party.Digimon
 {
     public class DigimonReader(
         IMemoryReader memoryReader,

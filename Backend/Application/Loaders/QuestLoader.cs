@@ -1,5 +1,5 @@
 using Backend.Memory.Repositories;
-using Backend.Memory.Readers;
+using Backend.Memory.Readers.Journal;
 using Backend.Memory.Resources.Journal;
 
 namespace Backend.Application.Loaders

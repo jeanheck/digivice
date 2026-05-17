@@ -1,7 +1,9 @@
 using Backend.Memory.Addresses;
 using Backend.Memory.Resources;
 
-namespace Backend.Memory.Readers.Party
+using Backend.Memory.Readers.Party;
+
+namespace Backend.Memory.Readers
 {
     public class PartyReader(IDigimonSlotReader slotReader) : IPartyReader
     {
