@@ -1,24 +1,16 @@
+using Backend.Memory.Resources.Digimon;
+
 namespace Backend.Memory.Resources
 {
     public class DigimonResource
     {
-        public int SlotIndex { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public int BaseAddress { get; set; }
-
-        // As a design decision for Phase 16 onwards: since Digimons are massive, 
-        // extracting them field by field here into a naive DTO is repetitive and bloated.
-        // We will store the entire 1500-byte structure block starting at BaseAddress,
-        // and let DigimonStateService parse it based on the Addresses Offsets.
-        public byte[] LogicBlock { get; set; } = Array.Empty<byte>();
+        public int Experience { get; set; }
+        public int Level { get; set; }
+        public VitalsResource Vitals { get; set; } = new();
+        public AttributesResource Attributes { get; set; } = new();
+        public ResistancesResource Resistances { get; set; } = new();
+        public EquipmentsResource Equipments { get; set; } = new();
+        public List<DigievolutionSlotResource> Digievolutions { get; set; } = [];
         public int ActiveDigievolutionId { get; set; }
-
-        public void Deconstruct(
-            out byte[] logicBlock,
-            out int activeDigievolutionId)
-        {
-            logicBlock = LogicBlock;
-            activeDigievolutionId = ActiveDigievolutionId;
-        }
     }
 }

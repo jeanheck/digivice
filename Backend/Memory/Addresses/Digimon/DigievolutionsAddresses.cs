@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Backend.Memory.Converters;
 using Backend.Memory.Addresses.Party;

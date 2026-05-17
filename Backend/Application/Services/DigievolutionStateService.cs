@@ -1,4 +1,3 @@
-using System.Linq;
 using Backend.Domain.Models.Digimons;
 using Backend.Memory.Readers;
 using Backend.Memory.Addresses.Digimon;

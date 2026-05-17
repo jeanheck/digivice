@@ -2,18 +2,23 @@ using Backend.Domain.Models;
 using Backend.Memory.Repositories;
 using Backend.Memory.Readers;
 using Backend.Domain.Assemblers;
+using Backend.Memory.Resources;
 
 namespace Backend.Application.Services
 {
     public class PlayerStateService(
-        IAddressesRepository addressesRepository, 
+        IAddressesRepository addressesRepository,
         IPlayerReader playerReader)
     {
-        public Player GetPlayer()
+        private PlayerResource GetResource()
         {
             var addresses = addressesRepository.GetPlayerAddresses();
-            var resource = playerReader.Read(addresses);
-            return PlayerAssembler.Assemble(resource);
+            return playerReader.Read(addresses);
+        }
+
+        public Player GetPlayer()
+        {
+            return PlayerAssembler.Assemble(GetResource());
         }
     }
 }

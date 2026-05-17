@@ -6,7 +6,7 @@ namespace Backend.Domain.Models
 {
     public record class Party
     {
-        public List<Slot> Slots { get; set; } = [];
+        public List<DigimonSlot> Slots { get; set; } = [];
 
         public virtual bool Equals(Party? other)
         {

@@ -3,7 +3,7 @@ using Backend.Memory.Resources;
 
 namespace Backend.Memory.Readers.Party
 {
-    public class PartyReader(ISlotReader slotReader) : IPartyReader
+    public class PartyReader(IDigimonSlotReader slotReader) : IPartyReader
     {
         public PartyResource Read(PartyAddresses addresses)
         {

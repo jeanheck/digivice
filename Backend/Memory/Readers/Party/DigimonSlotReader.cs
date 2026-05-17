@@ -3,14 +3,14 @@ using Backend.Memory.Resources.Party;
 
 namespace Backend.Memory.Readers.Party
 {
-    public class SlotReader(IMemoryReader memoryReader) : ISlotReader
+    public class DigimonSlotReader(IMemoryReader memoryReader) : IDigimonSlotReader
     {
-        public SlotResource Read(SlotAddresses addresses, int bytesPerSlot)
+        public DigimonSlotResource Read(SlotAddresses addresses, int bytesPerSlot)
         {
             var bytes = memoryReader.ReadBytes(addresses.Address, bytesPerSlot);
             var digimonId = (bytes != null && bytes.Length > 0) ? (int)bytes[0] : 0;
 
-            return new SlotResource
+            return new DigimonSlotResource
             {
                 Index = addresses.Index,
                 DigimonId = digimonId

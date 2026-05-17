@@ -1,6 +1,6 @@
 namespace Backend.Domain.Models
 {
-    public class Slot
+    public class DigimonSlot
     {
         public int Index { get; set; }
         public int DigimonId { get; set; }

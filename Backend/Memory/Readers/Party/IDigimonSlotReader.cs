@@ -3,8 +3,8 @@ using Backend.Memory.Resources.Party;
 
 namespace Backend.Memory.Readers.Party
 {
-    public interface ISlotReader
+    public interface IDigimonSlotReader
     {
-        SlotResource Read(SlotAddresses addresses, int bytesPerSlot);
+        DigimonSlotResource Read(SlotAddresses addresses, int bytesPerSlot);
     }
 }

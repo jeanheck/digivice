@@ -2,32 +2,32 @@ using Backend.Domain.Models;
 using Backend.Domain.Assemblers;
 using Backend.Memory.Repositories;
 using Backend.Memory.Readers.Party;
-using Backend.Application.Resolvers;
+using Backend.Memory.Readers.Digimon;
 
 namespace Backend.Application.Services
 {
     public class PartyStateService(
         IAddressesRepository addressesRepository,
         IPartyReader partyReader,
-        DigimonAddressResolver digimonAddressResolver)
+        IDigimonReader digimonReader)
     {
         public Party GetParty()
         {
+            var digimonStatusAddresses = addressesRepository.GetDigimonStatusAddresses();
             var partyAddresses = addressesRepository.GetPartyAddresses();
             var partyResource = partyReader.Read(partyAddresses);
-            var party = PartyAssembler.Assemble(partyResource);
 
-            foreach (var slot in party.Slots)
+            foreach (var slotResource in partyResource.SlotsResource)
             {
-                if (slot.DigimonId == partyAddresses.EmptySlotId)
+                if (slotResource.DigimonId != partyAddresses.EmptySlotId)
                 {
-                    continue;
-                }
+                    var digimonAddress = addressesRepository.GetDigimonAddressById(slotResource.DigimonId);
 
-                var digimonAddress = digimonAddressResolver.Resolve(slot.DigimonId);
+                    slotResource.DigimonResource = digimonReader.Read(digimonAddress, digimonStatusAddresses);
+                }
             }
 
-            return party;
+            return PartyAssembler.Assemble(partyResource); ;
         }
     }
 }

@@ -44,7 +44,7 @@ try
     builder.Services.AddSingleton<IMemoryReader, MemoryReader>();
     builder.Services.AddSingleton<IAddressesRepository, AddressesRepository>();
     builder.Services.AddSingleton<IDigimonReader, DigimonReader>();
-    builder.Services.AddSingleton<ISlotReader, SlotReader>();
+    builder.Services.AddSingleton<IDigimonSlotReader, DigimonSlotReader>();
     builder.Services.AddSingleton<IPartyReader, PartyReader>();
     builder.Services.AddSingleton<IRequisiteReader, RequisiteReader>();
     builder.Services.AddSingleton<IStepReader, StepReader>();

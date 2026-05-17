@@ -18,24 +18,24 @@ public static class DigimonDiffer
         }
 
         // Compare Vitals
-        if (previous.BasicInfo.CurrentHP != current.BasicInfo.CurrentHP ||
-            previous.BasicInfo.MaxHP != current.BasicInfo.MaxHP ||
-            previous.BasicInfo.CurrentMP != current.BasicInfo.CurrentMP ||
-            previous.BasicInfo.MaxMP != current.BasicInfo.MaxMP)
+        if (previous.Vitals.CurrentHP != current.Vitals.CurrentHP ||
+            previous.Vitals.MaxHP != current.Vitals.MaxHP ||
+            previous.Vitals.CurrentMP != current.Vitals.CurrentMP ||
+            previous.Vitals.MaxMP != current.Vitals.MaxMP)
         {
-            events.Add(new DigimonVitalsChangedEvent(index, current.BasicInfo.CurrentHP, current.BasicInfo.MaxHP, current.BasicInfo.CurrentMP, current.BasicInfo.MaxMP));
+            events.Add(new DigimonVitalsChangedEvent(index, current.Vitals.CurrentHP, current.Vitals.MaxHP, current.Vitals.CurrentMP, current.Vitals.MaxMP));
         }
 
         // Compare XP (Experience)
-        if (previous.BasicInfo.Experience != current.BasicInfo.Experience)
+        if (previous.Vitals.Experience != current.Vitals.Experience)
         {
-            events.Add(new DigimonExperienceChangedEvent(index, current.BasicInfo.Experience));
+            events.Add(new DigimonExperienceChangedEvent(index, current.Vitals.Experience));
         }
 
         // Compare Level
-        if (current.BasicInfo.Level > previous.BasicInfo.Level)
+        if (current.Vitals.Level > previous.Vitals.Level)
         {
-            events.Add(new DigimonLevelChangedEvent(index, current.BasicInfo.Level));
+            events.Add(new DigimonLevelChangedEvent(index, current.Vitals.Level));
         }
 
         // Compare Attributes

@@ -9,7 +9,7 @@ namespace Backend.Domain.Assemblers
         {
             return new Party
             {
-                Slots = [.. resource.SlotsResource.Select(SlotAssembler.Assemble)]
+                Slots = [.. resource.SlotsResource.Select(DigimonSlotAssembler.Assemble)]
             };
         }
     }

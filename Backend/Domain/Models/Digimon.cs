@@ -4,21 +4,20 @@ namespace Backend.Domain.Models
 {
     public record class Digimon
     {
-        public int SlotIndex { get; set; }
-
-        public BasicInfo BasicInfo { get; set; } = new();
+        public int Level { get; set; }
+        public int Experience { get; set; }
+        public Vitals Vitals { get; set; } = new();
         public Attributes Attributes { get; set; } = new();
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
-        public Digievolution?[] Digievolutions { get; set; } = new Digievolution?[3];
-        public int? ActiveDigievolutionId { get; set; }
+        public List<DigievolutionSlot> Digievolutions { get; set; } = [];
+        public int ActiveDigievolutionId { get; set; }
 
         public virtual bool Equals(Digimon? other)
         {
             if (other is null) return false;
 
-            return SlotIndex == other.SlotIndex &&
-                   BasicInfo.Equals(other.BasicInfo) &&
+            return Vitals.Equals(other.Vitals) &&
                    Attributes.Equals(other.Attributes) &&
                    Resistances.Equals(other.Resistances) &&
                    Equipments.Equals(other.Equipments) &&
@@ -29,8 +28,7 @@ namespace Backend.Domain.Models
         public override int GetHashCode()
         {
             var hash = new HashCode();
-            hash.Add(SlotIndex);
-            hash.Add(BasicInfo);
+            hash.Add(Vitals);
             hash.Add(Attributes);
             hash.Add(Resistances);
             hash.Add(Equipments);
