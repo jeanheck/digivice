@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Backend.Memory.Addresses.Digimon;
 
 namespace Backend.Memory.Addresses

@@ -1,9 +1,8 @@
-using System.Linq;
 using Backend.Domain.Models;
 using Backend.Memory.Repositories;
 using Backend.Memory.Readers;
 using Backend.Domain.Models.Digimons;
-using Backend.Memory.Addresses;
+using Backend.Memory.Addresses.Digimon;
 
 namespace Backend.Application.Services
 {

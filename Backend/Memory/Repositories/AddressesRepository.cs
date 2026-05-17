@@ -1,6 +1,7 @@
 using System.Text.Json;
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Digimon;
+
 namespace Backend.Memory.Repositories
 {
     public class AddressesRepository : IAddressesRepository
