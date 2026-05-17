@@ -59,8 +59,6 @@ try
     builder.Services.AddSingleton<PartyLoader>();
     builder.Services.AddSingleton<DigimonLoader>();
     builder.Services.AddSingleton<PlayerProvider>();
-    builder.Services.AddSingleton<DigievolutionStateService>();
-    builder.Services.AddSingleton<DigimonStateService>();
     builder.Services.AddSingleton<PartyProvider>();
     builder.Services.AddSingleton<JournalProvider>();
     builder.Services.AddSingleton<StateComposer>();

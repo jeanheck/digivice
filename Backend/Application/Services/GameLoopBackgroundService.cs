@@ -1,7 +1,6 @@
 using Backend.Diagnostics;
 using Backend.Events.Services;
 using Backend.Memory.Readers;
-using Backend.Application;
 
 namespace Backend.Application.Services
 {
