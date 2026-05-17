@@ -1,5 +1,6 @@
 using Backend.Diagnostics;
 using Backend.Memory.Readers;
+using Backend.Memory.Readers.Digimon;
 using Backend.Memory.Readers.Quests;
 using Backend.Memory.Readers.Party;
 using Backend.Infrastructure.Memory;
@@ -42,7 +43,7 @@ try
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
     builder.Services.AddSingleton<IMemoryReader, MemoryReader>();
     builder.Services.AddSingleton<IAddressesRepository, AddressesRepository>();
-    builder.Services.AddSingleton<IAddressesReader, AddressesReader>();
+    builder.Services.AddSingleton<IDigimonReader, DigimonReader>();
     builder.Services.AddSingleton<ISlotReader, SlotReader>();
     builder.Services.AddSingleton<IPartyReader, PartyReader>();
     builder.Services.AddSingleton<IRequisiteReader, RequisiteReader>();

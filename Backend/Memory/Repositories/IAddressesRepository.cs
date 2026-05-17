@@ -8,7 +8,8 @@ namespace Backend.Memory.Repositories
         PlayerAddresses GetPlayerAddresses();
         PartyAddresses GetPartyAddresses();
         DigimonStatusAddresses GetDigimonStatusAddresses();
-        DigimonAddresses GetDigimonAddresses();
+        DigimonAddresses GetDigimonsAddresses();
+        DigimonAddress? GetDigimonAddressById(int id);
         QuestAddresses GetMainQuest();
         List<QuestAddresses> GetAllSideQuests();
     }

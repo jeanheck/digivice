@@ -52,8 +52,11 @@ namespace Backend.Memory.Repositories
         public DigimonStatusAddresses GetDigimonStatusAddresses() =>
             LoadAndCache(ref digimonStatusAddresses, "DigimonStatusAddresses.json");
 
-        public DigimonAddresses GetDigimonAddresses() =>
-            LoadAndCache(ref digimonAddresses, "DigimonAddresses.json");
+        public DigimonAddresses GetDigimonsAddresses() =>
+            LoadAndCache(ref digimonAddresses, "DigimonsAddresses.json");
+
+        public DigimonAddress? GetDigimonAddressById(int id) =>
+            GetDigimonsAddresses().Digimons.FirstOrDefault(d => d.Id == id);
 
         public QuestAddresses GetMainQuest() =>
             LoadAndCache(ref mainQuestAddresses, "Quests/MainQuestAddresses.json");

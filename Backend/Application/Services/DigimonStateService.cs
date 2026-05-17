@@ -1,6 +1,7 @@
 using Backend.Domain.Models;
 using Backend.Memory.Repositories;
 using Backend.Memory.Readers;
+using Backend.Memory.Readers.Digimon;
 using Backend.Domain.Models.Digimons;
 using Backend.Memory.Addresses.Digimon;
 
@@ -8,7 +9,7 @@ namespace Backend.Application.Services
 {
     public class DigimonStateService(
         IAddressesRepository addressesRepository,
-        IAddressesReader addressesReader,
+        IDigimonReader digimonReader,
         DigievolutionStateService digievolutionStateService)
     {
         private const int NoActiveDigievolution = 0xFFFF;
@@ -19,8 +20,7 @@ namespace Backend.Application.Services
         {
             var (experience, level, vitals, attributes, resistances, equipaments, digievolutions) = Addresses;
 
-            var digimonEntry = addressesRepository.GetDigimonAddresses().Digimons
-                .FirstOrDefault(d => d.Id == digimonId);
+            var digimonEntry = addressesRepository.GetDigimonAddressById(digimonId);
 
             if (digimonEntry == null || digimonEntry.Address == 0)
             {
@@ -30,8 +30,8 @@ namespace Backend.Application.Services
 
             int digimonAddress = (int)digimonEntry.Address;
 
-            var (logicBlock, activeDigievolutionId) = addressesReader
-                .ReadDigimonResource(slotIndex, digimonAddress, digievolutions);
+            var (logicBlock, activeDigievolutionId) = digimonReader
+                .Read(slotIndex, digimonAddress, digievolutions);
 
             var memoryBlockReader = new MemoryBlockReader(logicBlock);
 
@@ -89,4 +89,3 @@ namespace Backend.Application.Services
         }
     }
 }
-
