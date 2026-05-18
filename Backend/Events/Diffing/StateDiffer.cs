@@ -8,6 +8,11 @@ public static class StateDiffer
 {
     public static IEnumerable<BaseEvent> Diff(State? previousState, State newState)
     {
+        if (newState == previousState)
+        {
+            return [];
+        }
+
         if (previousState == null)
         {
             return [new InitialStateEvent(newState)];

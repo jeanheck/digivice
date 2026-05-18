@@ -1,4 +1,4 @@
-using Backend.Events.DTO;
+using Backend.Events.DTO.Interfaces;
 
 namespace Backend.Events.Models;
 
