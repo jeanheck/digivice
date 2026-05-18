@@ -1,4 +1,4 @@
-using Backend.Domain.Models;
+using Backend.Domain.Models.Parties;
 using Backend.Events.Models;
 using Backend.Events.Models.Digimon;
 

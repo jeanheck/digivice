@@ -1,19 +1,19 @@
-using Backend.Domain.Models;
 using Backend.Domain.Assemblers.Journal;
+using Backend.Domain.Models.Journals;
 using Backend.Memory.Resources;
 
 namespace Backend.Domain.Assemblers
 {
     public static class JournalAssembler
     {
-        public static Backend.Domain.Models.Journal Assemble(JournalResource resource)
+        public static Models.Journal Assemble(JournalResource resource)
         {
             var mainQuest = QuestAssembler.Assemble(resource.MainQuest);
             List<Quest> sideQuests = [.. resource.SideQuests.Select(QuestAssembler.Assemble)];
 
             NormalizeMainQuestProgression(mainQuest);
 
-            return new Backend.Domain.Models.Journal
+            return new Models.Journal
             {
                 MainQuest = mainQuest,
                 SideQuests = sideQuests

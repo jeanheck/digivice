@@ -1,4 +1,4 @@
-using Backend.Domain.Models;
+using Backend.Domain.Models.Parties;
 using Backend.Memory.Resources.Party;
 
 namespace Backend.Domain.Assemblers.Party

@@ -1,6 +1,4 @@
-using Backend.Domain.Models.Digimons;
-
-namespace Backend.Domain.Models
+namespace Backend.Domain.Models.Parties.Digimons
 {
     public class DigievolutionSlot
     {

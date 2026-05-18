@@ -1,5 +1,6 @@
 using System.Text;
 using Backend.Domain.Models;
+using Backend.Domain.Models.Parties;
 
 namespace Backend.Diagnostics
 {

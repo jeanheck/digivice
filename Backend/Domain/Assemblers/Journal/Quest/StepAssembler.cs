@@ -1,4 +1,4 @@
-using Backend.Domain.Models.Quests;
+using Backend.Domain.Models.Journals.Quests;
 using Backend.Memory.Resources.Journal.Quest;
 
 namespace Backend.Domain.Assemblers.Journal.Quest

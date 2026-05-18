@@ -1,4 +1,4 @@
-namespace Backend.Domain.Models.Quests
+namespace Backend.Domain.Models.Journals.Quests
 {
     public record class Step
     {

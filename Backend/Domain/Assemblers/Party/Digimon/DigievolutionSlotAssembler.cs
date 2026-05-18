@@ -1,4 +1,4 @@
-using Backend.Domain.Models;
+using Backend.Domain.Models.Parties.Digimons;
 using Backend.Memory.Resources.Party.Digimon;
 
 namespace Backend.Domain.Assemblers.Party.Digimon

@@ -1,3 +1,4 @@
+using Backend.Domain.Models.Journals;
 
 namespace Backend.Domain.Models
 {

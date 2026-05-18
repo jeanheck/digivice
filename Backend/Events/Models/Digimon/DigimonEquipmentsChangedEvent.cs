@@ -1,4 +1,4 @@
-using Backend.Domain.Models.Digimons;
+using Backend.Domain.Models.Parties.Digimons;
 
 namespace Backend.Events.Models.Digimon;
 

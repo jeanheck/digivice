@@ -1,3 +1,5 @@
+using Backend.Domain.Models.Parties;
+
 namespace Backend.Domain.Models
 {
     public record class Party

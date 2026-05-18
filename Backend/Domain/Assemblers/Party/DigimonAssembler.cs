@@ -1,4 +1,4 @@
-using Backend.Domain.Models.Digimons;
+using Backend.Domain.Models.Parties.Digimons;
 using Backend.Memory.Resources.Party;
 
 using Backend.Domain.Assemblers.Party.Digimon;
@@ -9,13 +9,13 @@ namespace Backend.Domain.Assemblers.Party
     {
         private const int NoActiveDigievolution = 0xFFFF;
 
-        public static Backend.Domain.Models.Digimon Assemble(DigimonResource resource)
+        public static Backend.Domain.Models.Parties.Digimon Assemble(DigimonResource resource)
         {
             var activeDigievolutionId = resource.ActiveDigievolutionId <= 0 || resource.ActiveDigievolutionId == NoActiveDigievolution
                 ? 0
                 : resource.ActiveDigievolutionId;
 
-            return new Backend.Domain.Models.Digimon
+            return new Backend.Domain.Models.Parties.Digimon
             {
                 Experience = resource.Experience,
                 Level = resource.Level,

@@ -1,4 +1,4 @@
-namespace Backend.Domain.Models.Digimons
+namespace Backend.Domain.Models.Parties.Digimons
 {
     public record class Digievolution
     {
