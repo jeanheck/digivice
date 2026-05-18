@@ -66,6 +66,7 @@ namespace Backend.Memory.Readers
             catch (Exception ex)
             {
                 Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
+                IsConnected = false;
                 return null;
             }
         }
@@ -86,6 +87,7 @@ namespace Backend.Memory.Readers
             catch (Exception ex)
             {
                 Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
+                IsConnected = false;
                 return null;
             }
         }
@@ -102,6 +104,7 @@ namespace Backend.Memory.Readers
             catch (Exception ex)
             {
                 Log.Error("Failed to read bytes at 0x{Address:X}: {Msg}", address, ex.Message);
+                IsConnected = false;
                 return null;
             }
         }

@@ -6,8 +6,8 @@ namespace Backend.Application
 {
     public class GameLoopService
     (
-        IMemoryReader MemoryReader,
-        StateComposer StateComposer,
+        IMemoryReader memoryReader,
+        StateComposer stateComposer,
         IEventDispatcherService eventDispatcherService,
         DebugConsoleRenderer debugConsoleRenderer,
         IConfiguration configuration
@@ -19,9 +19,10 @@ namespace Backend.Application
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (!MemoryReader.IsConnected)
+                // Trying to connect at the Duckstation
+                if (!memoryReader.IsConnected)
                 {
-                    if (!MemoryReader.TryConnect())
+                    if (!memoryReader.TryConnect())
                     {
                         // If the connection fails, it sends false and waits 1 second before trying again.
                         eventDispatcherService.DispatchConnectionStatus(false);
@@ -39,7 +40,7 @@ namespace Backend.Application
                 // State Processing
                 try
                 {
-                    var state = StateComposer.Compose();
+                    var state = stateComposer.Compose();
 
                     if (state.Player != null)
                     {
@@ -61,7 +62,7 @@ namespace Backend.Application
                 {
                     Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
                     // In case the connection was lost abruptly during read
-                    if (!MemoryReader.IsConnected)
+                    if (!memoryReader.IsConnected)
                     {
                         eventDispatcherService.DispatchConnectionStatus(false);
                     }
