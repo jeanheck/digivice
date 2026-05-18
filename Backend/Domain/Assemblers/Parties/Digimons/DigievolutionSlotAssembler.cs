@@ -1,7 +1,7 @@
 using Backend.Domain.Models.Parties.Digimons;
 using Backend.Memory.Resources.Party.Digimon;
 
-namespace Backend.Domain.Assemblers.Party.Digimon
+namespace Backend.Domain.Assemblers.Parties.Digimons
 {
     public static class DigievolutionSlotAssembler
     {

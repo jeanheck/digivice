@@ -1,13 +1,14 @@
+using Backend.Domain.Models.Journals;
 using Backend.Memory.Resources.Journal;
-using Backend.Domain.Assemblers.Journal.Quest;
+using Backend.Domain.Assemblers.Journals.Quests;
 
-namespace Backend.Domain.Assemblers.Journal
+namespace Backend.Domain.Assemblers.Journals
 {
     public static class QuestAssembler
     {
-        public static Backend.Domain.Models.Journals.Quest Assemble(QuestResource resource)
+        public static Quest Assemble(QuestResource resource)
         {
-            return new Backend.Domain.Models.Journals.Quest
+            return new Quest
             {
                 Id = resource.Id,
                 Requisites = [.. resource.Requisites.Select(RequisiteAssembler.Assemble)],

@@ -1,21 +1,22 @@
+using Backend.Domain.Models.Parties;
 using Backend.Domain.Models.Parties.Digimons;
 using Backend.Memory.Resources.Party;
 
-using Backend.Domain.Assemblers.Party.Digimon;
+using Backend.Domain.Assemblers.Parties.Digimons;
 
-namespace Backend.Domain.Assemblers.Party
+namespace Backend.Domain.Assemblers.Parties
 {
     public static class DigimonAssembler
     {
         private const int NoActiveDigievolution = 0xFFFF;
 
-        public static Backend.Domain.Models.Parties.Digimon Assemble(DigimonResource resource)
+        public static Digimon Assemble(DigimonResource resource)
         {
             var activeDigievolutionId = resource.ActiveDigievolutionId <= 0 || resource.ActiveDigievolutionId == NoActiveDigievolution
                 ? 0
                 : resource.ActiveDigievolutionId;
 
-            return new Backend.Domain.Models.Parties.Digimon
+            return new Digimon
             {
                 Experience = resource.Experience,
                 Level = resource.Level,
