@@ -1,6 +1,6 @@
 namespace Backend.Events.Types;
 
-public enum ConnectionType
+public enum ConnectionEvent
 {
     StatusChanged
 }

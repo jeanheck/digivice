@@ -1,5 +1,6 @@
 namespace Backend.Events.Types.Party.Digimon;
 
-public enum DigievolutionType
+public enum DigievolutionEvent
 {
+    LevelIncreased,
 }

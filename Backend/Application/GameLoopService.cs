@@ -1,5 +1,7 @@
 using Backend.Diagnostics;
+using Backend.Events.Diffing;
 using Backend.Events.Services;
+using Backend.Events.States;
 using Backend.Memory.Readers;
 
 namespace Backend.Application
@@ -9,7 +11,7 @@ namespace Backend.Application
         IMemoryReader memoryReader,
         StateComposer stateComposer,
         IEventDispatcherService eventDispatcherService,
-        IGameStateService gameStateService,
+        IGameStateStore gameStateStore,
         DebugConsoleRenderer debugConsoleRenderer,
         IConfiguration configuration
     ) : BackgroundService
@@ -41,14 +43,18 @@ namespace Backend.Application
                 // State Processing
                 try
                 {
-                    var state = stateComposer.Compose();
+                    var newState = stateComposer.Compose();
+                    var previousState = gameStateStore.CurrentState;
 
-                    gameStateService.ProcessNewState(state);
+                    var events = StateDiffer.Diff(previousState, newState);
+                    eventDispatcherService.DispatchEvents(events);
+
+                    gameStateStore.UpdateState(newState);
 
                     var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
                     if (isDebuggingEnabled && !Console.IsOutputRedirected)
                     {
-                        debugConsoleRenderer.Render(state);
+                        debugConsoleRenderer.Render(newState);
                     }
                 }
                 catch (OperationCanceledException)

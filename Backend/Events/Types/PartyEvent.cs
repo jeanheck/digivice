@@ -2,5 +2,6 @@ namespace Backend.Events.Types;
 
 public enum PartyEvent
 {
-    SlotsChanged
+    DigimonsSorted,
+    DigimonsChanged,
 }

@@ -2,12 +2,13 @@ namespace Backend.Events.Types.Party;
 
 public enum DigimonEvent
 {
-    VitalsChanged,
-    ExperienceChanged,
-    AttributesChanged,
-    ResistancesChanged,
-    LevelChanged,
-    EquipmentsChanged,
+    ExperienceIncreased,
+    LevelIncreased,
+    HealthChanged,
+    ManaChanged,
+    AttributeIncreased,
+    ResistanceIncreased,
+    EquipmentChanged,
     DigievolutionsChanged,
     ActiveDigievolutionChanged
 }

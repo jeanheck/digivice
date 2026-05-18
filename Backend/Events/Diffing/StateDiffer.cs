@@ -8,13 +8,16 @@ public static class StateDiffer
 {
     public static IEnumerable<BaseEvent> Diff(State? previousState, State newState)
     {
-        var events = new List<BaseEvent>();
-
         if (previousState == null)
         {
-            events.Add(new InitialStateEvent(newState));
-            return events;
+            return [new InitialStateEvent(newState)];
         }
+
+        var events = new List<BaseEvent>();
+
+        events.AddRange(PlayerDiffer.Diff(previousState.Player, newState.Player));
+        events.AddRange(PartyDiffer.Diff(previousState.Party, newState.Party));
+        events.AddRange(JournalDiffer.Diff(previousState.Journal, newState.Journal));
 
         return events;
     }
