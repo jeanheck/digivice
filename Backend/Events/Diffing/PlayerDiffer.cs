@@ -6,7 +6,7 @@ namespace Backend.Events.Diffing;
 
 public static class PlayerDiffer
 {
-    public static PlayerDTO Diff(Player? previousPlayer, Player? newPlayer)
+    public static PlayerDTO Diff(Player? previousPlayer, Player newPlayer)
     {
         if (newPlayer.HasNoChanges(previousPlayer))
         {
