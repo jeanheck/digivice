@@ -1,5 +1,5 @@
 using Backend.Diagnostics;
-using Backend.Events.Diffing;
+using Backend.Events.Factory;
 using Backend.Events.Services;
 using Backend.Events.States;
 using Backend.Memory.Readers;
@@ -46,7 +46,7 @@ namespace Backend.Application
                     var newState = stateComposer.Compose();
                     var previousState = gameStateStore.CurrentState;
 
-                    var events = StateDiffer.Diff(previousState, newState);
+                    var events = GameEventFactory.Create(previousState, newState);
                     eventDispatcherService.DispatchEvents(events);
 
                     gameStateStore.UpdateState(newState);
