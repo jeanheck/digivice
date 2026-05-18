@@ -5,9 +5,9 @@ using Backend.Events.Diffing;
 
 namespace Backend.Events.Generation;
 
-public class StateEventGenerator()
+public static class StateEventGenerator
 {
-    public IEnumerable<BaseEvent> Generate(State? previousState, State newState)
+    public static IEnumerable<BaseEvent> Generate(State? previousState, State newState)
     {
         if (previousState == null)
         {

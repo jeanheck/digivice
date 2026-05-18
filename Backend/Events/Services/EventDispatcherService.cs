@@ -1,9 +1,8 @@
 using Backend.Events.Models;
 using Backend.Events.Models.Connection;
 using Backend.Events.Models.State;
-using Backend.Domain.Models;
 using Backend.Events.Hubs;
-using Backend.Events.Generation;
+using Backend.Events.States;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Backend.Events.Services;
@@ -11,46 +10,39 @@ namespace Backend.Events.Services;
 public class EventDispatcherService(
     IHubContext<GameHub> hubContext,
     ILogger<EventDispatcherService> logger,
-    StateEventGenerator stateEventGenerator) : IEventDispatcherService
+    IGameStateStore gameStateStore) : IEventDispatcherService
 {
-    private State? previousState;
-    private bool? previousConnectionStatus;
-
     public void DispatchConnectionStatus(bool isConnected)
     {
-        if (previousConnectionStatus == isConnected)
+        if (gameStateStore.IsEmulatorConnected == isConnected)
         {
             return;
         }
 
-        previousConnectionStatus = isConnected;
+        gameStateStore.IsEmulatorConnected = isConnected;
         SafeDispatch(new ConnectionStatusChangedEvent(isConnected));
 
         if (!isConnected)
         {
-            // Reset state so that next connection will do a full sync
-            previousState = null;
+            gameStateStore.ClearState();
         }
     }
 
     public void DispatchInitialStateToClient(string connectionId)
     {
-        if (previousState != null)
+        var currentState = gameStateStore.CurrentState;
+        if (currentState != null)
         {
-            SafeDispatch(new InitialStateEvent(previousState), hubContext.Clients.Client(connectionId));
+            SafeDispatch(new InitialStateEvent(currentState), hubContext.Clients.Client(connectionId));
         }
     }
 
-    public void UpdateStateAndDispatch(State newState)
+    public void DispatchEvents(IEnumerable<BaseEvent> events)
     {
-        var events = stateEventGenerator.Generate(previousState, newState);
-
         foreach (var ev in events)
         {
             SafeDispatch(ev);
         }
-
-        previousState = newState;
     }
 
     private void SafeDispatch(BaseEvent ev, IClientProxy? target = null)

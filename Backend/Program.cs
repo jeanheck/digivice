@@ -9,6 +9,7 @@ using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;
 using Backend.Events.Services;
 using Backend.Events.Generation;
+using Backend.Events.States;
 using Backend.Application;
 using Backend.Application.Providers;
 using Backend.Application.Loaders;
@@ -64,9 +65,10 @@ try
     builder.Services.AddSingleton<StateComposer>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();
 
-    // Register Event Dispatcher
-    builder.Services.AddSingleton<StateEventGenerator>();
+    // Register Event Dispatcher and State Management
+    builder.Services.AddSingleton<IGameStateStore, GameStateStore>();
     builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
+    builder.Services.AddSingleton<IGameStateService, GameStateService>();
 
     // Start to read the memory and check game state
     builder.Services.AddHostedService<GameLoopService>();

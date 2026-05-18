@@ -9,6 +9,7 @@ namespace Backend.Application
         IMemoryReader memoryReader,
         StateComposer stateComposer,
         IEventDispatcherService eventDispatcherService,
+        IGameStateService gameStateService,
         DebugConsoleRenderer debugConsoleRenderer,
         IConfiguration configuration
     ) : BackgroundService
@@ -42,15 +43,12 @@ namespace Backend.Application
                 {
                     var state = stateComposer.Compose();
 
-                    if (state.Player != null)
-                    {
-                        eventDispatcherService.UpdateStateAndDispatch(state);
+                    gameStateService.ProcessNewState(state);
 
-                        var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
-                        if (isDebuggingEnabled && !Console.IsOutputRedirected)
-                        {
-                            debugConsoleRenderer.Render(state);
-                        }
+                    var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
+                    if (isDebuggingEnabled && !Console.IsOutputRedirected)
+                    {
+                        debugConsoleRenderer.Render(state);
                     }
                 }
                 catch (OperationCanceledException)
