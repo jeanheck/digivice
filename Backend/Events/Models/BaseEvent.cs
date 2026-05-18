@@ -1,7 +1,7 @@
 namespace Backend.Events.Models;
 
-public abstract class BaseEvent(EventType type)
+public abstract class BaseEvent(Enum type)
 {
-    public EventType Type { get; } = type;
+    public Enum Type { get; } = type;
     public DateTime Timestamp { get; } = DateTime.UtcNow;
 }
