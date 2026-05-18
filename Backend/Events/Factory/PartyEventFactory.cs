@@ -4,10 +4,10 @@ using Backend.Events.Models;
 
 namespace Backend.Events.Factory;
 
-public static class JournalEventFactory
+public static class PartyEventFactory
 {
     public static IEnumerable<BaseEvent> Create(State previousState, State newState)
     {
-        return JournalDiffer.Diff(previousState.Journal, newState.Journal);
+        return PartyDiffer.Diff(previousState.Party, newState.Party);
     }
 }
