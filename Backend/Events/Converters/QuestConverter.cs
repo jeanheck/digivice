@@ -1,6 +1,5 @@
-using System.Linq;
 using Backend.Domain.Models.Journals;
-using Backend.Events.DTO;
+using Backend.Events.DTO.Journal;
 
 namespace Backend.Events.Converters;
 

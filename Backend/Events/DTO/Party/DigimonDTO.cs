@@ -1,7 +1,8 @@
 using System.Text.Json.Serialization;
 using Backend.Events.DTO.Interfaces;
+using Backend.Events.DTO.Party.Digimon;
 
-namespace Backend.Events.DTO;
+namespace Backend.Events.DTO.Party;
 
 public record class DigimonDTO : IDTO
 {

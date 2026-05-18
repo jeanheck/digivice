@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Backend.Events.DTO.Interfaces;
 
-namespace Backend.Events.DTO;
+namespace Backend.Events.DTO.Journal;
 
 public record class RequisiteDTO : IDTO
 {

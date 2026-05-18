@@ -3,6 +3,7 @@ using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.Diffing.Journals;
 using Backend.Events.DTO;
+using Backend.Events.DTO.Journal;
 
 namespace Backend.Events.Diffing;
 
