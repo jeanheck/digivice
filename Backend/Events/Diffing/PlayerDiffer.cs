@@ -1,8 +1,9 @@
 using Backend.Domain.Models;
-using Backend.Events.Models;
-using Backend.Events.DTO;
-using Backend.Events.Types;
 using Backend.Events.Diffing.Extensions;
+using Backend.Events.DTO;
+using Backend.Events.DTO.Extensions;
+using Backend.Events.Models;
+using Backend.Events.Types;
 
 namespace Backend.Events.Diffing;
 
@@ -38,6 +39,11 @@ public static class PlayerDiffer
             dto = dto with { Location = newPlayer.MapId };
         }
 
-        return [new BaseEvent(PlayerEvent.PlayerChanged, dto)];
+        if (dto.IsNotEmpty())
+        {
+            return [new BaseEvent(PlayerEvent.PlayerChanged, dto)];
+        }
+
+        return [];
     }
 }

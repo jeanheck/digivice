@@ -2,6 +2,7 @@ using Backend.Domain.Models;
 using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.DTO;
+using Backend.Events.DTO.Extensions;
 using Backend.Events.Models;
 using Backend.Events.Types;
 
@@ -9,36 +10,36 @@ namespace Backend.Events.Diffing;
 
 public static class JournalDiffer
 {
-    public static IEnumerable<BaseEvent> Diff(Journal? previous, Journal? newState)
+    public static IEnumerable<BaseEvent> Diff(Journal? previousJournal, Journal? newJournal)
     {
-        if (newState.HasNoChanges(previous))
+        if (newJournal.HasNoChanges(previousJournal))
         {
             return [];
         }
 
-        if (previous == null)
+        if (previousJournal == null)
         {
             return [
                 new BaseEvent(JournalEvent.JournalChanged, new JournalDTO
                 {
-                    MainQuest = QuestConverter.ToDTO(newState.MainQuest),
-                    SideQuests = newState.SideQuests.Select(QuestConverter.ToDTO).ToList()
+                    MainQuest = QuestConverter.ToDTO(newJournal.MainQuest),
+                    SideQuests = newJournal.SideQuests.Select(QuestConverter.ToDTO).ToList()
                 })
             ];
         }
 
         var dto = new JournalDTO();
 
-        var mainQuestDelta = QuestDiffer.Diff(previous.MainQuest, newState.MainQuest);
+        var mainQuestDelta = QuestDiffer.Diff(previousJournal.MainQuest, newJournal.MainQuest);
         if (mainQuestDelta != null)
         {
             dto = dto with { MainQuest = mainQuestDelta };
         }
 
         var sideQuestsDelta = new List<QuestDTO>();
-        foreach (var sideQuestNewState in newState.SideQuests)
+        foreach (var sideQuestNewState in newJournal.SideQuests)
         {
-            var sideQuestPreviousState = previous.SideQuests.FirstOrDefault(q => q.Id == sideQuestNewState.Id);
+            var sideQuestPreviousState = previousJournal.SideQuests.FirstOrDefault(q => q.Id == sideQuestNewState.Id);
             var sideQuestDelta = QuestDiffer.Diff(sideQuestPreviousState, sideQuestNewState);
             if (sideQuestDelta != null)
             {
@@ -51,7 +52,7 @@ public static class JournalDiffer
             dto = dto with { SideQuests = sideQuestsDelta };
         }
 
-        if (mainQuestDelta != null || sideQuestsDelta.Count > 0)
+        if (dto.IsNotEmpty())
         {
             return [new BaseEvent(JournalEvent.JournalChanged, dto)];
         }

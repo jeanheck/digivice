@@ -1,7 +1,6 @@
-using System.Linq;
 using Backend.Domain.Models.Journals.Quests;
-using Backend.Events.DTO;
 using Backend.Events.Converters;
+using Backend.Events.DTO;
 
 namespace Backend.Events.Diffing;
 
