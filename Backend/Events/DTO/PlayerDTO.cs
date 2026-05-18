@@ -1,9 +1,8 @@
 using System.Text.Json.Serialization;
-using Backend.Events.DTO;
 
-namespace Backend.Events.Models.Player;
+namespace Backend.Events.DTO;
 
-public record class PlayerDTO
+public record class PlayerDTO : IDTO
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<string> Name { get; init; } = Optional<string>.Empty;

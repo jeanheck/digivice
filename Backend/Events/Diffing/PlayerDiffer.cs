@@ -1,6 +1,7 @@
 using Backend.Domain.Models;
 using Backend.Events.Models;
-using Backend.Events.Models.Player;
+using Backend.Events.DTO;
+using Backend.Events.Types;
 
 namespace Backend.Events.Diffing;
 
@@ -12,10 +13,11 @@ public static class PlayerDiffer
         {
             return [];
         }
+
         if (previousPlayer == null)
         {
             return [
-                new PlayerChangedEvent(new PlayerDTO
+                new BaseEvent(PlayerEvent.Changed, new PlayerDTO
                 {
                     Name = newPlayer.Name,
                     Bits = newPlayer.Bits,
@@ -25,6 +27,7 @@ public static class PlayerDiffer
         }
 
         var dto = new PlayerDTO();
+
         if (newPlayer.Name != previousPlayer.Name)
         {
             dto = dto with { Name = newPlayer.Name };
@@ -38,6 +41,6 @@ public static class PlayerDiffer
             dto = dto with { Location = newPlayer.MapId };
         }
 
-        return [new PlayerChangedEvent(dto)];
+        return [new BaseEvent(PlayerEvent.Changed, dto)];
     }
 }
