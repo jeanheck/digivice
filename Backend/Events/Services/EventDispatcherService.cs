@@ -41,7 +41,7 @@ public class EventDispatcherService(
         }
     }
 
-    public void ProcessGameState(State newState)
+    public void UpdateStateAndDispatch(State newState)
     {
         var events = stateEventGenerator.Generate(previousState, newState);
 

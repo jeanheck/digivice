@@ -44,7 +44,7 @@ namespace Backend.Application
 
                     if (state.Player != null)
                     {
-                        eventDispatcherService.ProcessGameState(state);
+                        eventDispatcherService.UpdateStateAndDispatch(state);
 
                         var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
                         if (isDebuggingEnabled && !Console.IsOutputRedirected)
