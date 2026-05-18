@@ -13,7 +13,7 @@ public static class DigimonDiffer
         if (previous == null)
         {
             // Note: If previous is null, we might want to trigger a full update event, 
-            // but in the current logic, the caller (StateDiffer) handles party roster changes separately.
+            // but in the current logic, the caller (PartyEventFactory) handles party roster changes separately.
             return events;
         }
 

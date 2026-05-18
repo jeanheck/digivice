@@ -46,7 +46,7 @@ namespace Backend.Application
                     var newState = stateComposer.Compose();
                     var previousState = gameStateStore.CurrentState;
 
-                    var events = GameEventFactory.Create(previousState, newState);
+                    var events = StateEventFactory.Create(previousState, newState);
                     eventDispatcherService.DispatchEvents(events);
 
                     gameStateStore.UpdateState(newState);

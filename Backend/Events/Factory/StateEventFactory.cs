@@ -1,7 +1,7 @@
 using Backend.Domain.Models;
-using Backend.Events.Models;
-using Backend.Events.Models.State;
+using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
+using Backend.Events.Models;
 
 namespace Backend.Events.Factory;
 
@@ -16,7 +16,7 @@ public static class StateEventFactory
 
         if (previousState == null)
         {
-            return [new InitialStateEvent(newState)];
+            return [new BaseEvent(EventType.InitialState, StateConverter.ToDTO(newState))];
         }
 
         var events = new List<BaseEvent>();

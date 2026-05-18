@@ -1,8 +1,8 @@
 using Backend.Events.Models;
-using Backend.Events.Models.State;
 using Backend.Events.Hubs;
 using Backend.Events.States;
 using Backend.Events.DTO;
+using Backend.Events.Converters;
 using Backend.Events.Types;
 using Microsoft.AspNetCore.SignalR;
 
@@ -34,7 +34,9 @@ public class EventDispatcherService(
         var currentState = gameStateStore.CurrentState;
         if (currentState != null)
         {
-            SafeDispatch(new InitialStateEvent(currentState), hubContext.Clients.Client(connectionId));
+            var stateDto = StateConverter.ToDTO(currentState);
+            var initialEvent = new BaseEvent(EventType.InitialState, stateDto);
+            SafeDispatch(initialEvent, hubContext.Clients.Client(connectionId));
         }
     }
 

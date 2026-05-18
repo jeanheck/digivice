@@ -20,11 +20,7 @@ public static class JournalDiffer
         if (previousJournal == null)
         {
             return [
-                new BaseEvent(JournalEvent.JournalChanged, new JournalDTO
-                {
-                    MainQuest = QuestConverter.ToDTO(newJournal.MainQuest),
-                    SideQuests = newJournal.SideQuests.Select(QuestConverter.ToDTO).ToList()
-                })
+                new BaseEvent(JournalEvent.JournalChanged, JournalConverter.ToDTO(newJournal))
             ];
         }
 
