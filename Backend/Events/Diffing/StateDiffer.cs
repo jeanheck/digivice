@@ -1,6 +1,7 @@
 using Backend.Events.Models;
 using Backend.Events.Models.State;
 using Backend.Domain.Models;
+using Backend.Events.Diffing.Extensions;
 
 namespace Backend.Events.Diffing;
 
@@ -8,7 +9,7 @@ public static class StateDiffer
 {
     public static IEnumerable<BaseEvent> Diff(State? previousState, State newState)
     {
-        if (newState == previousState)
+        if (newState.HasNoChanges(previousState))
         {
             return [];
         }

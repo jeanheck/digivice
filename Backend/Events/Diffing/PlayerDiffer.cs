@@ -2,6 +2,7 @@ using Backend.Domain.Models;
 using Backend.Events.Models;
 using Backend.Events.DTO;
 using Backend.Events.Types;
+using Backend.Events.Diffing.Extensions;
 
 namespace Backend.Events.Diffing;
 
@@ -9,7 +10,7 @@ public static class PlayerDiffer
 {
     public static IEnumerable<BaseEvent> Diff(Player? previousPlayer, Player? newPlayer)
     {
-        if (newPlayer == previousPlayer || newPlayer == null)
+        if (newPlayer.HasNoChanges(previousPlayer))
         {
             return [];
         }
