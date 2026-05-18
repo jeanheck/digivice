@@ -8,17 +8,10 @@ public static class PlayerDiffer
 {
     public static IEnumerable<BaseEvent> Diff(Player? previousPlayer, Player? newPlayer)
     {
-        if (newPlayer == null)
+        if (newPlayer == previousPlayer || newPlayer == null)
         {
             return [];
         }
-
-        // 1. Otimização de Performance: early exit caso os Records sejam idênticos por valor
-        if (newPlayer == previousPlayer)
-        {
-            return [];
-        }
-
         if (previousPlayer == null)
         {
             return [
@@ -31,9 +24,7 @@ public static class PlayerDiffer
             ];
         }
 
-        // 2. Acumulação baseada em imutabilidade usando expressões 'with'
         var dto = new PlayerDTO();
-
         if (newPlayer.Name != previousPlayer.Name)
         {
             dto = dto with { Name = newPlayer.Name };
@@ -47,8 +38,6 @@ public static class PlayerDiffer
             dto = dto with { Location = newPlayer.MapId };
         }
 
-        // 3. Como newPlayer != previousPlayer, com certeza pelo menos uma propriedade mudou.
-        // Retornamos diretamente o evento sem checagens extras!
         return [new PlayerChangedEvent(dto)];
     }
 }
