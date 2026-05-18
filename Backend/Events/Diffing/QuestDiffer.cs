@@ -1,5 +1,8 @@
+using System.Collections.Generic;
+using System.Linq;
 using Backend.Domain.Models.Journals;
 using Backend.Events.DTO;
+using Backend.Events.Converters;
 
 namespace Backend.Events.Diffing;
 
@@ -9,16 +12,7 @@ public static class QuestDiffer
     {
         if (previous == null)
         {
-            return new QuestDTO
-            {
-                Id = current.Id,
-                Requisites = current.Requisites
-                    .Select(r => RequisiteDiffer.Diff(null, r)!)
-                    .ToList(),
-                Steps = current.Steps
-                    .Select(s => QuestStepDiffer.Diff(null, s)!)
-                    .ToList()
-            };
+            return QuestConverter.ToDTO(current);
         }
 
         var requisitesDelta = new List<RequisiteDTO>();
@@ -39,7 +33,7 @@ public static class QuestDiffer
         foreach (var currStep in current.Steps)
         {
             var prevStep = previous.Steps.FirstOrDefault(s => s.Number == currStep.Number);
-            var stepDelta = QuestStepDiffer.Diff(prevStep, currStep);
+            var stepDelta = StepDiffer.Diff(prevStep, currStep);
             if (stepDelta != null)
             {
                 stepsDelta.Add(stepDelta);

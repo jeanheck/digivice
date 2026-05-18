@@ -1,22 +1,17 @@
+using System.Linq;
 using Backend.Domain.Models.Journals.Quests;
 using Backend.Events.DTO;
+using Backend.Events.Converters;
 
 namespace Backend.Events.Diffing;
 
-public static class QuestStepDiffer
+public static class StepDiffer
 {
     public static StepDTO? Diff(Step? previous, Step current)
     {
         if (previous == null)
         {
-            return new StepDTO
-            {
-                Number = current.Number,
-                Value = current.Value,
-                Requisites = current.Requisites
-                    .Select(r => RequisiteDiffer.Diff(null, r)!)
-                    .ToList()
-            };
+            return QuestStepConverter.ToDTO(current);
         }
 
         bool valueChanged = previous.Value != current.Value;
