@@ -1,21 +1,20 @@
 using Backend.Domain.Models;
-using Backend.Events.Models;
-using Backend.Events.Models.Party;
+using Backend.Events.DTO;
+using Backend.Events.Diffing.Extensions;
 
 namespace Backend.Events.Diffing;
 
 public static class PartyDiffer
 {
-    public static IEnumerable<BaseEvent> Diff(Party? oldParty, Party? newParty)
+    public static PartyDTO Diff(Party? previousParty, Party newParty)
     {
-        var events = new List<BaseEvent>();
-
-        if (newParty == null)
+        if (newParty.HasNoChanges(previousParty))
         {
-            return events;
+            return new PartyDTO();
         }
 
-        if (oldParty == null)
+        /*
+        if (previousParty == null)
         {
             var activeDigimons = newParty.Slots
                 .Where(s => s.Digimon != null)
@@ -26,7 +25,7 @@ public static class PartyDiffer
         }
 
         var newSlots = newParty.Slots;
-        var oldSlots = oldParty.Slots;
+        var oldSlots = previousParty.Slots;
 
         bool partyRosterChanged = false;
         if (newSlots.Count != oldSlots.Count)
@@ -71,7 +70,8 @@ public static class PartyDiffer
                 }
             }
         }
+        */
 
-        return events;
+        return new PartyDTO();
     }
 }

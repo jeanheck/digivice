@@ -6,5 +6,5 @@ public record StateDTO : IDTO
 {
     public PlayerDTO? Player { get; init; }
     public JournalDTO? Journal { get; init; }
-    public object? Party { get; init; } // Mantido como object para migração progressiva do Party
+    public PartyDTO? Party { get; init; }
 }

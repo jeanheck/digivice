@@ -72,7 +72,6 @@ namespace Backend.Diagnostics
         {
             var activeSlots = party.Slots
                 .Where(s => s.Digimon != null)
-                .Select(s => s.Digimon!)
                 .ToList();
 
             if (activeSlots.Count == 0)
@@ -81,16 +80,16 @@ namespace Backend.Diagnostics
                 return;
             }
 
-            foreach (var d in activeSlots)
+            foreach (var slot in activeSlots)
             {
-                RenderDigimon(sb, d!);
+                RenderDigimon(sb, slot.Index, slot.Digimon!);
             }
         }
 
-        private void RenderDigimon(StringBuilder sb, Digimon d)
+        private void RenderDigimon(StringBuilder sb, int slotIndex, Digimon d)
         {
             var b = d.Vitals;
-            sb.AppendLine($"{Yellow}Slot {d.SlotIndex}:{Reset} [Lv.{b.Level.ToString(LvlFormat)}] [EXP:{b.Experience.ToString(ExpFormat)}]");
+            sb.AppendLine($"{Yellow}Slot {slotIndex}:{Reset} [Lv.{d.Level.ToString(LvlFormat)}] [EXP:{d.Experience.ToString(ExpFormat)}]");
 
             // HP Bar
             sb.Append("   HP: ");
@@ -118,11 +117,13 @@ namespace Backend.Diagnostics
             sb.Append($"{Gray}   Evos:    {Reset}");
             for (int i = 0; i < 3; i++)
             {
-                var evo = d.Digievolutions[i];
-                string evoStr = evo != null ? $"{Yellow}[{evo.Id}Lv{evo.Level}]{Reset}" : $"{Gray}[Empty]{Reset}";
+                var evo = d.Digievolutions.FirstOrDefault(e => e.Index == i);
+                string evoStr = evo != null && evo.Digievolution != null
+                    ? $"{Yellow}[{evo.DigievolutionId}Lv{evo.Digievolution.Level}]{Reset}"
+                    : $"{Gray}[Empty]{Reset}";
                 sb.Append($"S{i + 1}:{evoStr} ");
             }
-            sb.AppendLine($" | {Yellow}ActiveEvo:{Reset} {d.ActiveDigievolutionId?.ToString() ?? "NULL"}");
+            sb.AppendLine($" | {Yellow}ActiveEvo:{Reset} {d.ActiveDigievolutionId.ToString()}");
             sb.AppendLine();
         }
 

@@ -1,6 +1,5 @@
 using Backend.Domain.Models.Parties;
 using Backend.Events.Models;
-using Backend.Events.Models.Digimon;
 
 namespace Backend.Events.Diffing;
 
@@ -8,12 +7,11 @@ public static class DigimonDiffer
 {
     public static IEnumerable<BaseEvent> Diff(int index, Digimon? previous, Digimon current)
     {
+        /*
         var events = new List<BaseEvent>();
 
         if (previous == null)
         {
-            // Note: If previous is null, we might want to trigger a full update event, 
-            // but in the current logic, the caller (PartyEventFactory) handles party roster changes separately.
             return events;
         }
 
@@ -69,5 +67,8 @@ public static class DigimonDiffer
         }
 
         return events;
+        */
+
+        return [];
     }
 }
