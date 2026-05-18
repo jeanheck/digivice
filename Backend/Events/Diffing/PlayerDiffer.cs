@@ -29,10 +29,6 @@ public static class PlayerDiffer
 
         var dto = new PlayerDTO();
 
-        if (newPlayer.Name != previousPlayer.Name)
-        {
-            dto = dto with { Name = newPlayer.Name };
-        }
         if (newPlayer.Bits != previousPlayer.Bits)
         {
             dto = dto with { Bits = newPlayer.Bits };
