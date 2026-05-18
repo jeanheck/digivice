@@ -15,34 +15,54 @@ public static class JournalDiffer
             return [];
         }
 
+        // 1. Estado Inicial Completo
         if (previous == null)
         {
+            var initialMain = QuestDiffer.Diff(null, newState.MainQuest)!;
+            var initialSides = newState.SideQuests.Select(q => QuestDiffer.Diff(null, q)!).ToList();
+
             return [
                 new BaseEvent(JournalEvent.JournalChanged, new JournalDTO
                 {
-                    MainQuest = newState.MainQuest,
-                    SideQuests = newState.SideQuests
+                    MainQuest = initialMain,
+                    SideQuests = initialSides
                 })
             ];
         }
 
         var dto = new JournalDTO();
 
-        if (newState.MainQuest != previous.MainQuest)
+        // 2. Compara a missão principal recursivamente
+        var mainQuestDelta = QuestDiffer.Diff(previous.MainQuest, newState.MainQuest);
+        if (mainQuestDelta != null)
         {
-            dto = dto with { MainQuest = newState.MainQuest };
+            dto = dto with { MainQuest = mainQuestDelta };
         }
 
-        bool sideQuestsChanged = (newState.SideQuests == null && previous.SideQuests != null) ||
-                                 (newState.SideQuests != null && previous.SideQuests == null) ||
-                                 (newState.SideQuests != null && previous.SideQuests != null &&
-                                  !newState.SideQuests.SequenceEqual(previous.SideQuests));
+        // 3. Compara as missões secundárias
+        var sideQuestsDelta = new List<QuestDTO>();
 
-        if (sideQuestsChanged)
+        foreach (var currSide in newState.SideQuests)
         {
-            dto = dto with { SideQuests = newState.SideQuests };
+            var prevSide = previous.SideQuests.FirstOrDefault(q => q.Id == currSide.Id);
+            var sideDelta = QuestDiffer.Diff(prevSide, currSide);
+            if (sideDelta != null)
+            {
+                sideQuestsDelta.Add(sideDelta);
+            }
         }
 
-        return [new BaseEvent(JournalEvent.JournalChanged, dto)];
+        if (sideQuestsDelta.Count > 0)
+        {
+            dto = dto with { SideQuests = sideQuestsDelta };
+        }
+
+        // 4. Retorna evento apenas se houver pelo menos um delta real detectado
+        if (mainQuestDelta != null || sideQuestsDelta.Count > 0)
+        {
+            return [new BaseEvent(JournalEvent.JournalChanged, dto)];
+        }
+
+        return [];
     }
 }

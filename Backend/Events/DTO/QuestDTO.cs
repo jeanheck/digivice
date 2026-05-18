@@ -4,11 +4,13 @@ using Backend.Events.DTO.Interfaces;
 
 namespace Backend.Events.DTO;
 
-public record class JournalDTO : IDTO
+public record class QuestDTO : IDTO
 {
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<QuestDTO> MainQuest { get; init; } = Optional<QuestDTO>.Empty;
+    public string Id { get; init; } = string.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<List<QuestDTO>> SideQuests { get; init; } = Optional<List<QuestDTO>>.Empty;
+    public Optional<List<RequisiteDTO>> Requisites { get; init; } = Optional<List<RequisiteDTO>>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<List<StepDTO>> Steps { get; init; } = Optional<List<StepDTO>>.Empty;
 }
