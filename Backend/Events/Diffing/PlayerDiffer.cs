@@ -17,7 +17,7 @@ public static class PlayerDiffer
         if (previousPlayer == null)
         {
             return [
-                new BaseEvent(PlayerEvent.Changed, new PlayerDTO
+                new BaseEvent(PlayerEvent.PlayerChanged, new PlayerDTO
                 {
                     Name = newPlayer.Name,
                     Bits = newPlayer.Bits,
@@ -41,6 +41,6 @@ public static class PlayerDiffer
             dto = dto with { Location = newPlayer.MapId };
         }
 
-        return [new BaseEvent(PlayerEvent.Changed, dto)];
+        return [new BaseEvent(PlayerEvent.PlayerChanged, dto)];
     }
 }

@@ -1,8 +1,9 @@
 using Backend.Events.Models;
-using Backend.Events.Models.Connection;
 using Backend.Events.Models.State;
 using Backend.Events.Hubs;
 using Backend.Events.States;
+using Backend.Events.DTO;
+using Backend.Events.Types;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Backend.Events.Services;
@@ -20,7 +21,7 @@ public class EventDispatcherService(
         }
 
         gameStateStore.IsEmulatorConnected = isConnected;
-        SafeDispatch(new ConnectionStatusChangedEvent(isConnected));
+        SafeDispatch(new BaseEvent(ConnectionEvent.ConnectionStatusChanged, new ConnectionDTO(isConnected)));
 
         if (!isConnected)
         {

@@ -2,5 +2,5 @@ namespace Backend.Events.Types;
 
 public enum PlayerEvent
 {
-    Changed
+    PlayerChanged
 }
