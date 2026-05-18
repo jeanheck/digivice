@@ -12,30 +12,43 @@ public static class PlayerDiffer
         {
             return [];
         }
+
+        // 1. Otimização de Performance: early exit caso os Records sejam idênticos por valor
+        if (newPlayer == previousPlayer)
+        {
+            return [];
+        }
+
         if (previousPlayer == null)
         {
             return [
-                new PlayerNameChangedEvent(newPlayer.Name),
-                new PlayerBitsChangedEvent(newPlayer.Bits),
-                new PlayerLocationChangedEvent(newPlayer.MapId)
+                new PlayerChangedEvent(new PlayerDTO
+                {
+                    Name = newPlayer.Name,
+                    Bits = newPlayer.Bits,
+                    Location = newPlayer.MapId
+                })
             ];
         }
 
-        var events = new List<BaseEvent>();
+        // 2. Acumulação baseada em imutabilidade usando expressões 'with'
+        var dto = new PlayerDTO();
 
-        if (newPlayer.MapId != previousPlayer.MapId)
-        {
-            events.Add(new PlayerLocationChangedEvent(newPlayer.MapId));
-        }
         if (newPlayer.Name != previousPlayer.Name)
         {
-            events.Add(new PlayerNameChangedEvent(newPlayer.Name));
+            dto = dto with { Name = newPlayer.Name };
         }
         if (newPlayer.Bits != previousPlayer.Bits)
         {
-            events.Add(new PlayerBitsChangedEvent(newPlayer.Bits));
+            dto = dto with { Bits = newPlayer.Bits };
+        }
+        if (newPlayer.MapId != previousPlayer.MapId)
+        {
+            dto = dto with { Location = newPlayer.MapId };
         }
 
-        return events;
+        // 3. Como newPlayer != previousPlayer, com certeza pelo menos uma propriedade mudou.
+        // Retornamos diretamente o evento sem checagens extras!
+        return [new PlayerChangedEvent(dto)];
     }
 }
