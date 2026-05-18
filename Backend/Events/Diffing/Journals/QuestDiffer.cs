@@ -1,13 +1,19 @@
 using Backend.Domain.Models.Journals;
 using Backend.Events.Converters;
+using Backend.Events.Diffing.Extensions;
 using Backend.Events.DTO;
 
-namespace Backend.Events.Diffing;
+namespace Backend.Events.Diffing.Journals;
 
 public static class QuestDiffer
 {
     public static QuestDTO? Diff(Quest? previousQuest, Quest newQuest)
     {
+        if (newQuest.HasNoChanges(previousQuest))
+        {
+            return null;
+        }
+
         if (previousQuest == null)
         {
             return QuestConverter.ToDTO(newQuest);
@@ -35,20 +41,20 @@ public static class QuestDiffer
             }
         }
 
-        if (requisitesDelta.Count > 0 || stepsDelta.Count > 0)
+        if (requisitesDelta.Count == 0 && stepsDelta.Count == 0)
         {
-            var questDto = new QuestDTO { Id = newQuest.Id };
-            if (requisitesDelta.Count > 0)
-            {
-                questDto = questDto with { Requisites = requisitesDelta };
-            }
-            if (stepsDelta.Count > 0)
-            {
-                questDto = questDto with { Steps = stepsDelta };
-            }
-            return questDto;
+            return null;
         }
 
-        return null;
+        var dto = new QuestDTO { Id = newQuest.Id };
+        if (requisitesDelta.Count > 0)
+        {
+            dto = dto with { Requisites = requisitesDelta };
+        }
+        if (stepsDelta.Count > 0)
+        {
+            dto = dto with { Steps = stepsDelta };
+        }
+        return dto;
     }
 }

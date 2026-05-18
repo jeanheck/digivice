@@ -1,6 +1,7 @@
 using Backend.Domain.Models;
 using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
+using Backend.Events.Diffing.Journals;
 using Backend.Events.DTO;
 
 namespace Backend.Events.Diffing;
