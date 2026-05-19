@@ -2,6 +2,8 @@ using Backend.Domain.Models;
 using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.DTO;
+using Backend.Events.DTO.Party;
+using Backend.Events.Diffing.Parties;
 
 namespace Backend.Events.Diffing;
 
@@ -19,65 +21,24 @@ public static class PartyDiffer
             return PartyConverter.ToDTO(newParty);
         }
 
-        /*if (previousParty == null)
-        {
-            var activeDigimons = newParty.Slots
-                .Where(s => s.Digimon != null)
-                .Select(s => s.Digimon!)
-                .ToList();
-            events.Add(new PartySlotsChangedEvent(activeDigimons));
-            return events;
-        }
+        var dto = new PartyDTO();
 
-        var newSlots = newParty.Slots;
-        var oldSlots = previousParty.Slots;
-
-        bool partyRosterChanged = false;
-        if (newSlots.Count != oldSlots.Count)
+        var digimonSlotsDelta = new List<DigimonSlotDTO>();
+        foreach (var newSlot in newParty.Slots)
         {
-            partyRosterChanged = true;
-        }
-        else
-        {
-            for (int i = 0; i < newSlots.Count; i++)
+            var previousSlot = previousParty.Slots.FirstOrDefault(s => s.Index == newSlot.Index);
+            var digimonSlotDelta = DigimonSlotDiffer.Diff(previousSlot, newSlot);
+            if (digimonSlotDelta != null)
             {
-                var newDigi = newSlots[i].Digimon;
-                var oldDigi = oldSlots[i].Digimon;
-
-                if ((newDigi == null && oldDigi != null) || (newDigi != null && oldDigi == null))
-                {
-                    partyRosterChanged = true;
-                    break;
-                }
+                digimonSlotsDelta.Add(digimonSlotDelta);
             }
         }
 
-        if (partyRosterChanged)
+        if (digimonSlotsDelta.Count > 0)
         {
-            var activeDigimons = newSlots
-                .Where(s => s.Digimon != null)
-                .Select(s => s.Digimon!)
-                .ToList();
-            events.Add(new PartySlotsChangedEvent(activeDigimons));
+            dto = dto with { Slots = digimonSlotsDelta };
         }
-        else
-        {
-            for (int i = 0; i < newSlots.Count; i++)
-            {
-                var newDigi = newSlots[i].Digimon;
-                var oldDigi = oldSlots[i].Digimon;
-                if (newDigi != null && oldDigi != null)
-                {
-                    if (!newDigi.Equals(oldDigi))
-                    {
-                        events.AddRange(DigimonDiffer.Diff(i, oldDigi, newDigi));
-                    }
-                }
-            }
-        }*/
 
-
-
-        return new PartyDTO();
+        return dto;
     }
 }
