@@ -82,48 +82,49 @@ namespace Backend.Diagnostics
 
             foreach (var slot in activeSlots)
             {
-                RenderDigimon(sb, slot.Index, slot.Digimon!);
+                RenderDigimon(sb, slot);
             }
         }
 
-        private void RenderDigimon(StringBuilder sb, int slotIndex, Digimon d)
+        private void RenderDigimon(StringBuilder sb, DigimonSlot slot)
         {
-            var b = d.Vitals;
-            sb.AppendLine($"{Yellow}Slot {slotIndex}:{Reset} [Lv.{d.Level.ToString(LvlFormat)}] [EXP:{d.Experience.ToString(ExpFormat)}]");
+            var digimon = slot.Digimon!;
+            var vitals = digimon.Vitals;
+            sb.AppendLine($"{Yellow}Slot {slot.Index} (ID: {slot.DigimonId}):{Reset} [Lv.{digimon.Level.ToString(LvlFormat)}] [EXP:{digimon.Experience.ToString(ExpFormat)}]");
 
             // HP Bar
             sb.Append("   HP: ");
-            AppendProgressBar(sb, b.CurrentHP, b.MaxHP, GetHpColor(b.CurrentHP, b.MaxHP));
-            sb.AppendLine($" {b.CurrentHP.ToString(StatFormat)}/{b.MaxHP.ToString(StatFormat)}");
+            AppendProgressBar(sb, vitals.CurrentHP, vitals.MaxHP, GetHpColor(vitals.CurrentHP, vitals.MaxHP));
+            sb.AppendLine($" {vitals.CurrentHP.ToString(StatFormat)}/{vitals.MaxHP.ToString(StatFormat)}");
 
             // MP Bar
             sb.Append("   MP: ");
-            AppendProgressBar(sb, b.CurrentMP, b.MaxMP, Blue);
-            sb.AppendLine($" {b.CurrentMP.ToString(StatFormat)}/{b.MaxMP.ToString(StatFormat)}");
+            AppendProgressBar(sb, vitals.CurrentMP, vitals.MaxMP, Blue);
+            sb.AppendLine($" {vitals.CurrentMP.ToString(StatFormat)}/{vitals.MaxMP.ToString(StatFormat)}");
 
             // Attributes
-            var attr = d.Attributes;
-            sb.AppendLine($"{Gray}   Stats:   {Reset}Atk:{attr.Strength.ToString(StatFormat)} Def:{attr.Defense.ToString(StatFormat)} Spt:{attr.Spirit.ToString(StatFormat)} Wis:{attr.Wisdom.ToString(StatFormat)} Spd:{attr.Speed.ToString(StatFormat)} Cha:{attr.Charisma.ToString(StatFormat)}");
+            var attributes = digimon.Attributes;
+            sb.AppendLine($"{Gray}   Stats:   {Reset}Atk:{attributes.Strength.ToString(StatFormat)} Def:{attributes.Defense.ToString(StatFormat)} Spt:{attributes.Spirit.ToString(StatFormat)} Wis:{attributes.Wisdom.ToString(StatFormat)} Spd:{attributes.Speed.ToString(StatFormat)} Cha:{attributes.Charisma.ToString(StatFormat)}");
 
             // Resistances
-            var res = d.Resistances;
-            sb.AppendLine($"{Gray}   Resist:  {Reset}Fir:{res.Fire.ToString(StatFormat)} Wat:{res.Water.ToString(StatFormat)} Ice:{res.Ice.ToString(StatFormat)} Wnd:{res.Wind.ToString(StatFormat)} Tdr:{res.Thunder.ToString(StatFormat)} Mtl:{res.Machine.ToString(StatFormat)} Drk:{res.Dark.ToString(StatFormat)}");
+            var resistances = digimon.Resistances;
+            sb.AppendLine($"{Gray}   Resist:  {Reset}Fir:{resistances.Fire.ToString(StatFormat)} Wat:{resistances.Water.ToString(StatFormat)} Ice:{resistances.Ice.ToString(StatFormat)} Wnd:{resistances.Wind.ToString(StatFormat)} Tdr:{resistances.Thunder.ToString(StatFormat)} Mtl:{resistances.Machine.ToString(StatFormat)} Drk:{resistances.Dark.ToString(StatFormat)}");
 
             // Equipments
-            var eq = d.Equipments;
-            sb.AppendLine($"{Gray}   Equips:  {Reset}H:{eq.Head} B:{eq.Body} R:{eq.RightHand} L:{eq.LeftHand} A1:{eq.Accessory1} A2:{eq.Accessory2}");
+            var equipments = digimon.Equipments;
+            sb.AppendLine($"{Gray}   Equips:  {Reset}H:{equipments.Head} B:{equipments.Body} R:{equipments.RightHand} L:{equipments.LeftHand} A1:{equipments.Accessory1} A2:{equipments.Accessory2}");
 
             // Evolutions
             sb.Append($"{Gray}   Evos:    {Reset}");
             for (int i = 0; i < 3; i++)
             {
-                var evo = d.Digievolutions.FirstOrDefault(e => e.Index == i);
-                string evoStr = evo != null && evo.Digievolution != null
-                    ? $"{Yellow}[{evo.DigievolutionId}Lv{evo.Digievolution.Level}]{Reset}"
+                var evolution = digimon.Digievolutions.FirstOrDefault(e => e.Index == (i + 1));
+                string evolutionStr = evolution != null && evolution.Digievolution != null
+                    ? $"{Yellow}[{evolution.DigievolutionId}Lv{evolution.Digievolution.Level}]{Reset}"
                     : $"{Gray}[Empty]{Reset}";
-                sb.Append($"S{i + 1}:{evoStr} ");
+                sb.Append($"S{i + 1}:{evolutionStr} ");
             }
-            sb.AppendLine($" | {Yellow}ActiveEvo:{Reset} {d.ActiveDigievolutionId.ToString()}");
+            sb.AppendLine($" | {Yellow}ActiveEvo:{Reset} {digimon.ActiveDigievolutionId.ToString()}");
             sb.AppendLine();
         }
 
