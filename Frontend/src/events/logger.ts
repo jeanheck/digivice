@@ -64,4 +64,3 @@ export const createLogger = (context: string, color?: string) => new Logger(cont
 
 // Default loggers
 export const signalRLogger = createLogger('SignalR', '#3498db') // Blue
-

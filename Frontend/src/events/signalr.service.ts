@@ -1,8 +1,8 @@
 import * as signalR from '@microsoft/signalr'
 import { invoke } from '@tauri-apps/api/core'
-import type { EventsMap } from '../events.map'
-import { signalRLogger } from '../../utils/Logger'
-import { APP_CONFIG } from '../../config'
+import type { EventsMap } from './events.map'
+import { signalRLogger } from './logger'
+import { APP_CONFIG } from '../config'
 
 class SignalRService {
     private connection: signalR.HubConnection | null = null

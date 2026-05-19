@@ -1,6 +1,6 @@
-import { signalRService } from '../events/services/signalr.service'
+import { signalRService } from '../events/signalr.service'
 import { useGameStore } from '../stores/useGameStore'
-import { signalRLogger } from '../utils/Logger'
+import { signalRLogger } from '../events/logger'
 
 /**
  * Conecta os 5 macro-eventos do SignalR com as respectivas ações da Pinia Store.
