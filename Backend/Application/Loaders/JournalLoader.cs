@@ -1,4 +1,5 @@
 using Backend.Memory.Resources;
+using Backend.Application.Loaders.Journals;
 
 namespace Backend.Application.Loaders
 {

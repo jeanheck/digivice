@@ -12,6 +12,8 @@ using Backend.Events.States;
 using Backend.Application;
 using Backend.Application.Providers;
 using Backend.Application.Loaders;
+using Backend.Application.Loaders.Journals;
+using Backend.Application.Loaders.Parties;
 using Backend.Memory.Repositories;
 using Serilog;
 

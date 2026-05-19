@@ -1,6 +1,8 @@
 using Backend.Domain.Models.Journals;
 using Backend.Events.DTO.Journal;
 
+using Backend.Events.Converters.Journals.Quests;
+
 namespace Backend.Events.Converters.Journals;
 
 public static class QuestConverter

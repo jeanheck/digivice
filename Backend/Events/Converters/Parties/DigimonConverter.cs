@@ -1,6 +1,8 @@
 using Backend.Domain.Models.Parties;
 using Backend.Events.DTO.Party;
 
+using Backend.Events.Converters.Parties.Digimons;
+
 namespace Backend.Events.Converters.Parties;
 
 public static class DigimonConverter

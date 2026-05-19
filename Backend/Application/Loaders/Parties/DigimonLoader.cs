@@ -2,7 +2,7 @@ using Backend.Memory.Repositories;
 using Backend.Memory.Readers.Party.Digimon;
 using Backend.Memory.Resources.Party;
 
-namespace Backend.Application.Loaders
+namespace Backend.Application.Loaders.Parties
 {
     public class DigimonLoader(
         IAddressesRepository addressesRepository,

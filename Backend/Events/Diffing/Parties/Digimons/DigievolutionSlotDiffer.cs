@@ -1,5 +1,5 @@
 using Backend.Domain.Models.Parties.Digimons;
-using Backend.Events.Converters.Parties;
+using Backend.Events.Converters.Parties.Digimons;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.DTO.Party.Digimon;
 
