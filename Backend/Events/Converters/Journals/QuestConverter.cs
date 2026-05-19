@@ -1,8 +1,6 @@
 using Backend.Domain.Models.Journals;
-using Backend.Events.DTO.Journals;
-using Backend.Events.DTO.Journals.Quests;
-
 using Backend.Events.Converters.Journals.Quests;
+using Backend.Events.DTO.Journals;
 
 namespace Backend.Events.Converters.Journals;
 
