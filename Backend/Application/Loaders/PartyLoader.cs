@@ -1,7 +1,7 @@
-using Backend.Memory.Repositories;
-using Backend.Memory.Readers;
-using Backend.Memory.Resources;
 using Backend.Application.Loaders.Parties;
+using Backend.Memory.Readers;
+using Backend.Memory.Repositories;
+using Backend.Memory.Resources;
 
 namespace Backend.Application.Loaders
 {
@@ -17,7 +17,7 @@ namespace Backend.Application.Loaders
 
             foreach (var slotResource in partyResource.SlotsResource)
             {
-                if (slotResource.DigimonId is not null/*&& slotResource.DigimonId != partyAddresses.EmptySlotId*/)
+                if (slotResource.DigimonId is not null && slotResource.DigimonId != partyAddresses.EmptySlotId)
                 {
                     slotResource.DigimonResource = digimonLoader.Load(slotResource.DigimonId.Value);
                 }
