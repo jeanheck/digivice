@@ -1,6 +1,7 @@
 using Backend.Domain.Models.Parties;
 using Backend.Events.Converters.Parties;
 using Backend.Events.Diffing.Extensions;
+using Backend.Events.Diffing.Parties.Digimons;
 using Backend.Events.DTO.Party;
 using Backend.Events.DTO.Party.Digimon;
 
@@ -23,31 +24,19 @@ public static class DigimonDiffer
         bool levelChanged = previousDigimon.Level != newDigimon.Level;
         bool experienceChanged = previousDigimon.Experience != newDigimon.Experience;
         bool activeDigievolutionIdChanged = previousDigimon.ActiveDigievolutionId != newDigimon.ActiveDigievolutionId;
-
-        var vitalsDelta = !previousDigimon.Vitals.Equals(newDigimon.Vitals)
-            ? VitalsConverter.ToDTO(newDigimon.Vitals)
-            : null;
-
-        var attributesDelta = !previousDigimon.Attributes.Equals(newDigimon.Attributes)
-            ? AttributesConverter.ToDTO(newDigimon.Attributes)
-            : null;
-
-        var resistancesDelta = !previousDigimon.Resistances.Equals(newDigimon.Resistances)
-            ? ResistancesConverter.ToDTO(newDigimon.Resistances)
-            : null;
-
-        var equipmentsDelta = !previousDigimon.Equipments.Equals(newDigimon.Equipments)
-            ? EquipmentsConverter.ToDTO(newDigimon.Equipments)
-            : null;
+        var vitalsDelta = VitalsDiffer.Diff(previousDigimon.Vitals, newDigimon.Vitals);
+        var attributesDelta = AttributesDiffer.Diff(previousDigimon.Attributes, newDigimon.Attributes);
+        var resistancesDelta = ResistancesDiffer.Diff(previousDigimon.Resistances, newDigimon.Resistances);
+        var equipmentsDelta = EquipmentsDiffer.Diff(previousDigimon.Equipments, newDigimon.Equipments);
 
         var digievolutionsDelta = new List<DigievolutionSlotDTO>();
-        foreach (var newEvolution in newDigimon.Digievolutions)
+        foreach (var newDigievolution in newDigimon.Digievolutions)
         {
-            var previousEvolution = previousDigimon.Digievolutions.FirstOrDefault(e => e.Index == newEvolution.Index);
-            var evolutionDelta = DigievolutionSlotDiffer.Diff(previousEvolution, newEvolution);
-            if (evolutionDelta != null)
+            var previousDigievolution = previousDigimon.Digievolutions.FirstOrDefault(e => e.Index == newDigievolution.Index);
+            var digievolutionDelta = DigievolutionSlotDiffer.Diff(previousDigievolution, newDigievolution);
+            if (digievolutionDelta != null)
             {
-                digievolutionsDelta.Add(evolutionDelta);
+                digievolutionsDelta.Add(digievolutionDelta);
             }
         }
 
