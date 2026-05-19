@@ -21,7 +21,7 @@ public class StateEventFactoryTests
         Assert.Single(result);
         Assert.Equal(EventType.InitialState, result[0].Type);
 
-        var dto = Assert.IsType<StateDTO>(result[0].Data);
+        var dto = Assert.IsType<StateDTO>(result[0].Payload);
         Assert.NotNull(dto.Player);
         Assert.NotNull(dto.Party);
         Assert.NotNull(dto.Journal);
@@ -49,7 +49,7 @@ public class StateEventFactoryTests
 
         var ev = Assert.Single(result);
         Assert.Equal(EventType.PlayerChanged, ev.Type);
-        Assert.IsType<PlayerDTO>(ev.Data);
+        Assert.IsType<PlayerDTO>(ev.Payload);
     }
 
     [Fact]
@@ -63,7 +63,7 @@ public class StateEventFactoryTests
 
         var ev = Assert.Single(result);
         Assert.Equal(EventType.PartyChanged, ev.Type);
-        Assert.IsType<PartyDTO>(ev.Data);
+        Assert.IsType<PartyDTO>(ev.Payload);
     }
 
     [Fact]
@@ -77,7 +77,7 @@ public class StateEventFactoryTests
 
         var ev = Assert.Single(result);
         Assert.Equal(EventType.JournalChanged, ev.Type);
-        Assert.IsType<JournalDTO>(ev.Data);
+        Assert.IsType<JournalDTO>(ev.Payload);
     }
 
     [Fact]

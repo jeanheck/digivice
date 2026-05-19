@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
-import type { MainQuest, SideQuest, QuestStep as QuestStepType } from '../../models'
+import type { Quest, QuestStep as QuestStepType } from '../../models'
 import IconClose from '../icons/IconClose.vue'
 import asukaMapUrl from '../../assets/AsukaMap.webp'
 
 const props = defineProps<{
-  quest: MainQuest | SideQuest | null
+  quest: Quest | null
   isOpen: boolean
 }>()
 

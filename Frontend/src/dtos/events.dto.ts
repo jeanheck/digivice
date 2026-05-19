@@ -1,65 +1,125 @@
-export interface BasicInfoDTO {
-    name: string;
-    level: number;
-    experience: number;
-    currentHP: number;
-    maxHP: number;
-    currentMP: number;
-    maxMP: number;
+// Sub-DTOs de Digimon
+export interface VitalsDTO {
+    maxHP?: number;
+    maxMP?: number;
+    currentHP?: number;
+    currentMP?: number;
 }
 
 export interface AttributesDTO {
-    strength: number;
-    defense: number;
-    spirit: number;
-    wisdom: number;
-    speed: number;
-    charisma: number;
+    strength?: number;
+    defense?: number;
+    spirit?: number;
+    wisdom?: number;
+    speed?: number;
+    charisma?: number;
 }
 
 export interface ResistancesDTO {
-    fire: number;
-    water: number;
-    ice: number;
-    wind: number;
-    thunder: number;
-    machine: number;
-    dark: number;
+    fire?: number;
+    water?: number;
+    ice?: number;
+    wind?: number;
+    thunder?: number;
+    machine?: number;
+    dark?: number;
 }
 
 export interface EquipmentsDTO {
-    head: number;
-    body: number;
-    rightHand: number;
-    leftHand: number;
-    accessory1: number;
-    accessory2: number;
+    head?: number;
+    body?: number;
+    rightHand?: number;
+    leftHand?: number;
+    accessory1?: number;
+    accessory2?: number;
 }
 
 export interface DigievolutionDTO {
-    id: number;
-    level: number;
+    level?: number;
 }
 
+export interface DigievolutionSlotDTO {
+    index: number;
+    digievolutionId?: number;
+    digievolution?: DigievolutionDTO | null;
+}
+
+// DTO principal de Digimon e seu Slot
 export interface DigimonDTO {
-    slotIndex: number;
-    basicInfo: BasicInfoDTO;
-    attributes: AttributesDTO;
-    resistances: ResistancesDTO;
-    equipments: EquipmentsDTO;
-    activeDigievolutionId: number | null;
-    digievolutions: (DigievolutionDTO | null)[];
+    level?: number;
+    experience?: number;
+    vitals?: VitalsDTO;
+    attributes?: AttributesDTO;
+    resistances?: ResistancesDTO;
+    equipments?: EquipmentsDTO;
+    digievolutions?: DigievolutionSlotDTO[];
+    activeDigievolutionId?: number;
 }
 
+export interface DigimonSlotDTO {
+    index: number;
+    digimonId?: number | null;
+    digimon?: DigimonDTO | null;
+}
+
+// DTOs Principais
 export interface PlayerDTO {
-    name: string;
-    bits: number;
-    mapId: string;
+    name?: string;
+    bits?: number;
+    location?: string; // Corresponde ao MapId no backend
+    mapId?: string;    // Legacy fallback
 }
 
 export interface PartyDTO {
-    slots: (DigimonDTO | null)[];
+    slots?: DigimonSlotDTO[];
 }
+
+// Diário e Missões
+export interface RequisiteDTO {
+    id: string;
+    value?: number; // Representa o byte bruto
+}
+
+export interface StepDTO {
+    number: number;
+    value?: number; // Representa o byte bruto
+    requisites?: RequisiteDTO[];
+}
+
+export interface QuestDTO {
+    id: string;
+    requisites?: RequisiteDTO[];
+    steps?: StepDTO[];
+}
+
+export interface JournalDTO {
+    mainQuest?: QuestDTO | null;
+    sideQuests?: QuestDTO[];
+}
+
+// Estado Inicial e Status de Conexão
+export interface StateDTO {
+    player: PlayerDTO | null;
+    party: PartyDTO | null;
+    journal: JournalDTO | null;
+}
+
+export interface ConnectionStatusChangedDTO {
+    isConnected: boolean;
+}
+
+// Mapeamento Estrito dos 5 Eventos do SignalR
+export interface GameEventDTOMap {
+    ConnectionStatusChanged: ConnectionStatusChangedDTO;
+    InitialState: StateDTO;
+    PlayerChanged: PlayerDTO;
+    PartyChanged: PartyDTO;
+    JournalChanged: JournalDTO;
+}
+
+// ==========================================
+// CAMADA DE COMPATIBILIDADE LEGADA (STORES)
+// ==========================================
 
 export interface ItemDTO {
     id: string;
@@ -77,44 +137,13 @@ export interface ImportantItemsDTO {
     redSnapper: ImportantItemDTO;
 }
 
-export interface RequisiteDTO {
-    description: string;
-    isDone: boolean;
-    itemKey?: string;
-}
-
-export interface QuestStepDTO {
-    number: number;
-    isCompleted: boolean;
-    prerequisites?: RequisiteDTO[];
-}
-
-export interface QuestDTO {
-    id: string;
-    title: string;
-    description: string;
-    prerequisites: RequisiteDTO[];
-    steps: QuestStepDTO[];
-}
-
-export interface JournalDTO {
-    mainQuest: QuestDTO | null;
-    sideQuests: QuestDTO[];
-}
-
-export interface StateDTO {
-    player: PlayerDTO | null;
-    party: PartyDTO | null;
-    importantItems: ImportantItemsDTO | null;
-    journal: JournalDTO | null;
-}
-
-export interface ConnectionStatusChangedDTO {
-    isConnected: boolean;
-}
-
 export interface InitialStateChangedDTO {
-    state: StateDTO;
+    state: {
+        player: PlayerDTO | null;
+        party: PartyDTO | null;
+        importantItems: ImportantItemsDTO | null;
+        journal: JournalDTO | null;
+    };
 }
 
 export interface PlayerBitsChangedDTO {
@@ -179,7 +208,7 @@ export interface DigimonEquipmentsChangedDTO {
 
 export interface DigimonDigievolutionsChangedDTO {
     partySlotIndex: number;
-    digievolutions: (DigievolutionDTO | null)[];
+    digievolutions: (DigievolutionSlotDTO[] | null);
 }
 
 export interface DigimonActiveDigievolutionChangedDTO {
@@ -193,23 +222,4 @@ export interface ImportantItemsChangedDTO {
 
 export interface JournalChangedDTO {
     journal: JournalDTO | null;
-}
-
-export interface GameEventDTOMap {
-    ConnectionStatusChanged: ConnectionStatusChangedDTO;
-    InitialStateChanged: InitialStateChangedDTO;
-    PlayerBitsChanged: PlayerBitsChangedDTO;
-    PlayerNameChanged: PlayerNameChangedDTO;
-    PlayerLocationChanged: PlayerLocationChangedDTO;
-    PartySlotsChanged: PartySlotsChangedDTO;
-    DigimonVitalsChanged: DigimonVitalsChangedDTO;
-    DigimonExperienceChanged: DigimonExperienceChangedDTO;
-    DigimonLevelChanged: DigimonLevelChangedDTO;
-    DigimonAttributesChanged: DigimonAttributesChangedDTO;
-    DigimonResistancesChanged: DigimonResistancesChangedDTO;
-    DigimonEquipmentsChanged: DigimonEquipmentsChangedDTO;
-    DigimonDigievolutionsChanged: DigimonDigievolutionsChangedDTO;
-    DigimonActiveDigievolutionChanged: DigimonActiveDigievolutionChangedDTO;
-    ImportantItemsChanged: ImportantItemsChangedDTO;
-    JournalChanged: JournalChangedDTO;
 }

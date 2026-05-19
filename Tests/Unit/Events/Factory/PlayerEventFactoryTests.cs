@@ -29,7 +29,7 @@ public class PlayerEventFactoryTests
         var ev = Assert.Single(result);
         Assert.Equal(EventType.PlayerChanged, ev.Type);
 
-        var dto = Assert.IsType<PlayerDTO>(ev.Data);
+        var dto = Assert.IsType<PlayerDTO>(ev.Payload);
         Assert.True(dto.Bits.HasValue);
         Assert.Equal(200, dto.Bits.Value);
     }

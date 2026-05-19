@@ -30,7 +30,8 @@ const isReqMet = (req: EvolutionRequirement) => {
     switch (req.Type) {
         case 'DigimonLevel': return props.digimon.basicInfo.level >= req.Value
         case 'Attribute': 
-            const val = props.digimon.attributes[req.Attribute?.toLowerCase() as keyof typeof props.digimon.attributes] || 0
+            const attr = props.digimon.attributes[req.Attribute?.toLowerCase() as keyof typeof props.digimon.attributes]
+            const val = attr ? attr.sumBetweenDigimonAndEquipaments : 0
             return val >= req.Value
         case 'DigievolutionLevel':
             // Logic for checking specific digievolution level would go here

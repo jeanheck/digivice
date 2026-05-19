@@ -94,9 +94,15 @@ class SignalRService {
 
         // Only logs events that have handlers defined in the GameEventDTOMap.
         for (const eventName of this.handlers.keys()) {
-            this.connection.on(eventName, (data: any) => {
-                signalRLogger.debug(`Hub Event [${eventName}]`, data)
-                this.emit(eventName, data)
+            this.connection.on(eventName, (eventWrapper: any) => {
+                signalRLogger.debug(`Hub Event [${eventName}]`, eventWrapper)
+
+                // Se recebemos a estrutura envelopada do backend, extraímos apenas a propriedade 'payload'
+                const payload = eventWrapper && typeof eventWrapper === 'object' && 'payload' in eventWrapper
+                    ? eventWrapper.payload
+                    : eventWrapper
+
+                this.emit(eventName, payload)
             })
         }
     }

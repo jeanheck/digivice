@@ -1,35 +1,49 @@
 import { signalRService } from '../services/SignalRService'
 import { useGameStore } from '../stores/useGameStore'
-import type { GameEventDTOMap } from '../dtos/events.dto'
 import { signalRLogger } from '../utils/Logger'
 
 /**
- * Connects SignalR events to Pinia Stores actions using a naming convention:
- * Backend Event: [Entity][Property]Changed
- * Frontend Store Action: update[Entity][Property]
- * 
- * This file is now fully automated and uses GameEventDTOMap for type consistency.
+ * Conecta os 5 macro-eventos do SignalR com as respectivas ações da Pinia Store.
  */
 export function initSignalRHandlers() {
     const store = useGameStore()
 
-    // 1. Discover all store actions starting with 'update'
-    const storeActions = Object.keys(store).filter(key => key.startsWith('update'))
+    // 1. Assina ConnectionStatusChanged
+    signalRService.on('ConnectionStatusChanged', (data) => {
+        store.updateConnectionStatus(data)
+    })
 
-    // 2. Automatically map each action to its corresponding backend event
-    storeActions.forEach(actionName => {
-        // Convention: 'updatePlayerBits' -> 'PlayerBitsChanged'
-        const eventName = (actionName.replace('update', '') + 'Changed') as keyof GameEventDTOMap
-        
-        // signalRService.on is now strongly typed!
-        signalRService.on(eventName, (data) => {
-            // Call the store action passing the typed event payload
-            const action = (store as any)[actionName]
-            if (typeof action === 'function') {
-                action(data)
-            }
+    // 2. Assina InitialState (Backend) -> Mapeia para updateInitialState da Store
+    signalRService.on('InitialState', (data) => {
+        // Envolve em um objeto contendo a propriedade 'state' para conformidade com a assinatura
+        store.updateInitialState({ 
+            state: {
+                player: data.player,
+                party: data.party,
+                importantItems: null,
+                journal: data.journal
+            } 
         })
     })
 
-    signalRLogger.debug(`Auto-registered ${storeActions.length} event handlers.`)
+    // 3. Assina PlayerChanged -> Mapeia para updatePlayer na Store
+    signalRService.on('PlayerChanged', (data) => {
+        if (typeof (store as any).updatePlayer === 'function') {
+            (store as any).updatePlayer(data)
+        }
+    })
+
+    // 4. Assina PartyChanged -> Mapeia para updateParty na Store
+    signalRService.on('PartyChanged', (data) => {
+        if (typeof (store as any).updateParty === 'function') {
+            (store as any).updateParty(data)
+        }
+    })
+
+    // 5. Assina JournalChanged -> Mapeia para updateJournal na Store
+    signalRService.on('JournalChanged', (data) => {
+        store.updateJournal({ journal: data })
+    })
+
+    signalRLogger.debug('SignalR Handlers inicializados com sucesso para os 5 macro-eventos.')
 }

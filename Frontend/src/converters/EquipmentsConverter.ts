@@ -1,18 +1,18 @@
 import type { EquipmentsDTO } from '../dtos/events.dto';
-import type { Equipments, Equipament, EquipamentsAttributes } from '../models/Digimon';
+import type { Equipments, Equipament } from '../models/Digimon';
 import { EquipamentType, DigimonStatusType, EquipamentsAttributesOperationType } from '../models/Digimon';
 import EquipmentsData from '../database/Equipments.json';
 import EquipmentsTypeTable from '../database/EquipmentsTypeTable.json';
 
 export class EquipmentsConverter {
-    public static convert(equipmentsDto: EquipmentsDTO): Equipments {
+    public static convert(equipmentsDto: EquipmentsDTO | null): Equipments {
         return {
-            head: createEquipament(equipmentsDto.head),
-            body: createEquipament(equipmentsDto.body),
-            rightHand: createEquipament(equipmentsDto.rightHand),
-            leftHand: createEquipament(equipmentsDto.leftHand),
-            accessory1: createEquipament(equipmentsDto.accessory1),
-            accessory2: createEquipament(equipmentsDto.accessory2)
+            head: createEquipament(equipmentsDto?.head ?? 0),
+            body: createEquipament(equipmentsDto?.body ?? 0),
+            rightHand: createEquipament(equipmentsDto?.rightHand ?? 0),
+            leftHand: createEquipament(equipmentsDto?.leftHand ?? 0),
+            accessory1: createEquipament(equipmentsDto?.accessory1 ?? 0),
+            accessory2: createEquipament(equipmentsDto?.accessory2 ?? 0)
         };
     }
 }

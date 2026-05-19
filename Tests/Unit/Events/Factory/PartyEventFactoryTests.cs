@@ -31,7 +31,7 @@ public class PartyEventFactoryTests
         var ev = Assert.Single(result);
         Assert.Equal(EventType.PartyChanged, ev.Type);
 
-        var dto = Assert.IsType<PartyDTO>(ev.Data);
+        var dto = Assert.IsType<PartyDTO>(ev.Payload);
         Assert.True(dto.Slots.HasValue);
         Assert.Single(dto.Slots.Value!);
     }

@@ -5,7 +5,7 @@ import { DigimonStatusConverter } from './DigimonStatusConverter';
 
 export class ResistancesConverter {
     public static convert(
-        baseResistances: ResistancesDTO,
+        baseResistances: ResistancesDTO | null,
         equipments: Equipments,
         activeDigievolutionId: number | null
     ): Resistances {
@@ -18,13 +18,13 @@ export class ResistancesConverter {
         }
 
         return {
-            fire: DigimonStatusConverter.convert(DigimonStatusType.fire, baseResistances.fire, 'resistances', filteredEquipments, activeDigievolution),
-            water: DigimonStatusConverter.convert(DigimonStatusType.water, baseResistances.water, 'resistances', filteredEquipments, activeDigievolution),
-            ice: DigimonStatusConverter.convert(DigimonStatusType.ice, baseResistances.ice, 'resistances', filteredEquipments, activeDigievolution),
-            wind: DigimonStatusConverter.convert(DigimonStatusType.wind, baseResistances.wind, 'resistances', filteredEquipments, activeDigievolution),
-            thunder: DigimonStatusConverter.convert(DigimonStatusType.thunder, baseResistances.thunder, 'resistances', filteredEquipments, activeDigievolution),
-            machine: DigimonStatusConverter.convert(DigimonStatusType.machine, baseResistances.machine, 'resistances', filteredEquipments, activeDigievolution),
-            dark: DigimonStatusConverter.convert(DigimonStatusType.dark, baseResistances.dark, 'resistances', filteredEquipments, activeDigievolution),
+            fire: DigimonStatusConverter.convert(DigimonStatusType.fire, baseResistances?.fire ?? 0, 'resistances', filteredEquipments, activeDigievolution),
+            water: DigimonStatusConverter.convert(DigimonStatusType.water, baseResistances?.water ?? 0, 'resistances', filteredEquipments, activeDigievolution),
+            ice: DigimonStatusConverter.convert(DigimonStatusType.ice, baseResistances?.ice ?? 0, 'resistances', filteredEquipments, activeDigievolution),
+            wind: DigimonStatusConverter.convert(DigimonStatusType.wind, baseResistances?.wind ?? 0, 'resistances', filteredEquipments, activeDigievolution),
+            thunder: DigimonStatusConverter.convert(DigimonStatusType.thunder, baseResistances?.thunder ?? 0, 'resistances', filteredEquipments, activeDigievolution),
+            machine: DigimonStatusConverter.convert(DigimonStatusType.machine, baseResistances?.machine ?? 0, 'resistances', filteredEquipments, activeDigievolution),
+            dark: DigimonStatusConverter.convert(DigimonStatusType.dark, baseResistances?.dark ?? 0, 'resistances', filteredEquipments, activeDigievolution),
         };
     }
 }

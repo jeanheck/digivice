@@ -5,7 +5,7 @@ import { DigimonStatusConverter } from './DigimonStatusConverter';
 
 export class AttributesConverter {
     public static convert(
-        baseAttributes: AttributesDTO,
+        baseAttributes: AttributesDTO | null,
         equipments: Equipments,
         activeDigievolutionId: number | null
     ): Attributes {
@@ -18,12 +18,12 @@ export class AttributesConverter {
         }
 
         return {
-            strength: DigimonStatusConverter.convert(DigimonStatusType.strength, baseAttributes.strength, 'attributes', filteredEquipments, activeDigievolution),
-            defense: DigimonStatusConverter.convert(DigimonStatusType.defense, baseAttributes.defense, 'attributes', filteredEquipments, activeDigievolution),
-            spirit: DigimonStatusConverter.convert(DigimonStatusType.spirit, baseAttributes.spirit, 'attributes', filteredEquipments, activeDigievolution),
-            wisdom: DigimonStatusConverter.convert(DigimonStatusType.wisdom, baseAttributes.wisdom, 'attributes', filteredEquipments, activeDigievolution),
-            speed: DigimonStatusConverter.convert(DigimonStatusType.speed, baseAttributes.speed, 'attributes', filteredEquipments, activeDigievolution),
-            charisma: DigimonStatusConverter.convert(DigimonStatusType.charisma, baseAttributes.charisma, 'attributes', filteredEquipments, activeDigievolution),
+            strength: DigimonStatusConverter.convert(DigimonStatusType.strength, baseAttributes?.strength ?? 0, 'attributes', filteredEquipments, activeDigievolution),
+            defense: DigimonStatusConverter.convert(DigimonStatusType.defense, baseAttributes?.defense ?? 0, 'attributes', filteredEquipments, activeDigievolution),
+            spirit: DigimonStatusConverter.convert(DigimonStatusType.spirit, baseAttributes?.spirit ?? 0, 'attributes', filteredEquipments, activeDigievolution),
+            wisdom: DigimonStatusConverter.convert(DigimonStatusType.wisdom, baseAttributes?.wisdom ?? 0, 'attributes', filteredEquipments, activeDigievolution),
+            speed: DigimonStatusConverter.convert(DigimonStatusType.speed, baseAttributes?.speed ?? 0, 'attributes', filteredEquipments, activeDigievolution),
+            charisma: DigimonStatusConverter.convert(DigimonStatusType.charisma, baseAttributes?.charisma ?? 0, 'attributes', filteredEquipments, activeDigievolution),
         };
     }
 }

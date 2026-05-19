@@ -31,7 +31,7 @@ public class JournalEventFactoryTests
         var ev = Assert.Single(result);
         Assert.Equal(EventType.JournalChanged, ev.Type);
 
-        var dto = Assert.IsType<JournalDTO>(ev.Data);
+        var dto = Assert.IsType<JournalDTO>(ev.Payload);
         Assert.True(dto.MainQuest.HasValue);
         Assert.Equal("MainQuest", dto.MainQuest.Value!.Id);
     }

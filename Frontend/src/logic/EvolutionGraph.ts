@@ -160,9 +160,10 @@ export class EvolutionGraph {
                     if (digimon.basicInfo.level < req.Value) return false
                     break
                 case 'Attribute':
-                    const attrValue = digimon.attributes[req.Attribute?.toLowerCase() as keyof import('../models').Attributes] || 0
+                    const attr = digimon.attributes[req.Attribute?.toLowerCase() as keyof import('../models').Attributes]
+                    const attrValue = attr ? attr.sumBetweenDigimonAndEquipaments : 0
                     if (attrValue < req.Value) return false
-                    break
+                    break;
                 case 'DigievolutionLevel':
                     return false // Verification needs mapping
             }
