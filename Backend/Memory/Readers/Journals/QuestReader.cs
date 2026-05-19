@@ -1,6 +1,6 @@
 using Backend.Memory.Addresses.Journals;
 using Backend.Memory.Readers.Journals.Quests;
-using Backend.Memory.Resources.Journal;
+using Backend.Memory.Resources.Journals;
 
 namespace Backend.Memory.Readers.Journals
 {

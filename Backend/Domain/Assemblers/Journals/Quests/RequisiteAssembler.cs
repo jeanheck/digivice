@@ -1,5 +1,5 @@
 using Backend.Domain.Models.Journals.Quests;
-using Backend.Memory.Resources.Journal.Quest;
+using Backend.Memory.Resources.Journals.Quests;
 
 namespace Backend.Domain.Assemblers.Journals.Quests
 {

@@ -1,4 +1,4 @@
-namespace Backend.Memory.Resources.Party
+namespace Backend.Memory.Resources.Parties
 {
     public class DigimonSlotResource
     {

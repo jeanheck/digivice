@@ -1,4 +1,4 @@
-namespace Backend.Memory.Resources.Party.Digimon
+namespace Backend.Memory.Resources.Parties.Digimons
 {
     public class ResistancesResource
     {

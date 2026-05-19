@@ -1,4 +1,4 @@
-using Backend.Memory.Resources.Party;
+using Backend.Memory.Resources.Parties;
 
 namespace Backend.Memory.Resources
 {

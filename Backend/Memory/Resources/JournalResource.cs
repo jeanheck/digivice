@@ -1,4 +1,4 @@
-using Backend.Memory.Resources.Journal;
+using Backend.Memory.Resources.Journals;
 
 namespace Backend.Memory.Resources
 {

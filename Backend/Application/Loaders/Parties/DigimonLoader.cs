@@ -1,6 +1,6 @@
 using Backend.Memory.Repositories;
 using Backend.Memory.Readers.Parties.Digimons;
-using Backend.Memory.Resources.Party;
+using Backend.Memory.Resources.Parties;
 
 namespace Backend.Application.Loaders.Parties
 {

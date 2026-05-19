@@ -1,4 +1,4 @@
-namespace Backend.Memory.Resources.Journal.Quest
+namespace Backend.Memory.Resources.Journals.Quests
 {
     public class RequisiteResource
     {
