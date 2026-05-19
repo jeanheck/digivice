@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Backend.Memory.Addresses;
-using Backend.Memory.Addresses.Journal;
-using Backend.Memory.Addresses.Party;
+using Backend.Memory.Addresses.Journals;
+using Backend.Memory.Addresses.Parties;
 
 namespace Backend.Memory.Repositories
 {

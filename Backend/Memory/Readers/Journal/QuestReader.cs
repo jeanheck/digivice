@@ -1,4 +1,4 @@
-using Backend.Memory.Addresses.Journal;
+using Backend.Memory.Addresses.Journals;
 using Backend.Memory.Readers.Journal.Quest;
 using Backend.Memory.Resources.Journal;
 

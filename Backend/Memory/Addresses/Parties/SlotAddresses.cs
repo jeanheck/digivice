@@ -1,12 +1,11 @@
 using System.Text.Json.Serialization;
 using Backend.Memory.Converters;
 
-namespace Backend.Memory.Addresses.Journal.Quest
+namespace Backend.Memory.Addresses.Parties
 {
-    public class RequisiteAddresses
+    public class SlotAddresses
     {
-        public string Id { get; set; } = string.Empty;
-
+        public int Index { get; set; }
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long Address { get; set; }
     }

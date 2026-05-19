@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Backend.Memory.Converters;
 
-namespace Backend.Memory.Addresses.Journal.Quest
+namespace Backend.Memory.Addresses.Journals.Quests
 {
     public class StepAddresses
     {

@@ -1,11 +1,12 @@
 using System.Text.Json.Serialization;
 using Backend.Memory.Converters;
 
-namespace Backend.Memory.Addresses.Party
+namespace Backend.Memory.Addresses.Parties
 {
-    public class SlotAddresses
+    public class DigimonAddress
     {
-        public int Index { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public int Id { get; set; }
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long Address { get; set; }
     }

@@ -1,4 +1,4 @@
-namespace Backend.Memory.Addresses.Party
+namespace Backend.Memory.Addresses.Parties
 {
     public class DigimonsAddresses
     {

@@ -1,5 +1,5 @@
 using Backend.Memory.Resources.Party.Digimon;
-using Backend.Memory.Addresses.Party;
+using Backend.Memory.Addresses.Parties;
 
 namespace Backend.Memory.Readers.Party.Digimon
 {

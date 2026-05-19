@@ -1,4 +1,4 @@
-using Backend.Memory.Addresses.Party.Digimon;
+using Backend.Memory.Addresses.Parties.Digimons;
 using Backend.Memory.Resources.Party.Digimon;
 
 namespace Backend.Memory.Readers.Party.Digimon

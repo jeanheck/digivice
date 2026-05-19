@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Backend.Memory.Converters;
 
-namespace Backend.Memory.Addresses.Party.Digimon
+namespace Backend.Memory.Addresses.Parties.Digimons
 {
     public class VitalsAddresses
     {
