@@ -51,10 +51,10 @@ namespace Backend.Memory.Repositories
             LoadAndCache(ref partyAddresses, "PartyAddresses.json");
 
         public DigimonStatusAddresses GetDigimonStatusAddresses() =>
-            LoadAndCache(ref digimonStatusAddresses, "Party/DigimonStatusAddresses.json");
+            LoadAndCache(ref digimonStatusAddresses, "Parties/DigimonStatusAddresses.json");
 
         public DigimonsAddresses GetDigimonsAddresses() =>
-            LoadAndCache(ref digimonAddresses, "Party/DigimonsAddresses.json");
+            LoadAndCache(ref digimonAddresses, "Parties/DigimonsAddresses.json");
 
         public DigimonAddress? GetDigimonAddressById(int id) =>
             GetDigimonsAddresses().Digimons.FirstOrDefault(d => d.Id == id);
@@ -70,12 +70,12 @@ namespace Backend.Memory.Repositories
         ];
 
         private QuestAddresses GetSideQuestFolderBag() =>
-            LoadAndCache(ref sideQuestFolderBag, "Quests/SideQuest/FolderBagAddresses.json");
+            LoadAndCache(ref sideQuestFolderBag, "Quests/SideQuests/FolderBagAddresses.json");
 
         private QuestAddresses GetSideQuestTreeBoots() =>
-            LoadAndCache(ref sideQuestTreeBoots, "Quests/SideQuest/TreeBootsAddresses.json");
+            LoadAndCache(ref sideQuestTreeBoots, "Quests/SideQuests/TreeBootsAddresses.json");
 
         private QuestAddresses GetSideQuestFishingPole() =>
-            LoadAndCache(ref sideQuestFishingPole, "Quests/SideQuest/FishingPoleAddresses.json");
+            LoadAndCache(ref sideQuestFishingPole, "Quests/SideQuests/FishingPoleAddresses.json");
     }
 }
