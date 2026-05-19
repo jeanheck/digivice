@@ -1,4 +1,4 @@
-# Diretrizes de Desenvolvimento - Backend
+# Diretrizes de Desenvolvimento - Testes
 
 Por favor, siga estas práticas rigorosamente ao trabalhar neste projeto:
 
@@ -10,4 +10,3 @@ Por favor, siga estas práticas rigorosamente ao trabalhar neste projeto:
 6. **Expressões de Coleção**: Sempre que possível, utilize a sintaxe de *Collection Expressions* (`[ ]`) para inicialização e mapeamento de coleções. Prefira `[.. collection]` em vez de `.ToList()`, `.ToArray()` ou `new List<T>(collection)` quando for realizar spreads ou conversões de `IEnumerable`.
 7. **Limpeza de Usings**: Sempre que realizar alterações em um arquivo, verifique e remova quaisquer diretivas `using` que não estejam mais sendo utilizadas.
 8. **Condicionais com Chaves**: Evite o uso de declarações `if` inline sem chaves. Sempre utilize blocos `{ }` mesmo para instruções de uma única linha.
-9. **Serviços Estateless para Leitores e Conversores**: Sempre mantenha as classes de leitura de memória (Readers) e conversores (Converters) totalmente livres de estado mutável (stateless). Eles devem funcionar de forma puramente funcional (dados entram, dados tratados saem) para garantir thread-safety e facilidade de testes de unidade. Delegue qualquer controle de estado para a `GameStateStore` ou orquestradores adequados.
