@@ -47,7 +47,8 @@ try
     builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
     builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
     builder.Services.AddSingleton<IMemoryReader, MemoryReader>();
-    builder.Services.AddSingleton<IAddressesRepository, AddressesRepository>();
+    var memoryDefinitionsDirectory = Path.Combine(basePath, "Memory", "Definitions");
+    builder.Services.AddSingleton<IAddressesRepository>(new AddressesRepository(memoryDefinitionsDirectory));
     builder.Services.AddSingleton<IDigimonReader, DigimonReader>();
     builder.Services.AddSingleton<IDigimonSlotReader, DigimonSlotReader>();
     builder.Services.AddSingleton<IDigievolutionReader, DigievolutionReader>();

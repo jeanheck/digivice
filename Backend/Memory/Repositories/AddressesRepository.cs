@@ -17,13 +17,9 @@ namespace Backend.Memory.Repositories
         private QuestAddresses? sideQuestTreeBoots;
         private QuestAddresses? sideQuestFishingPole;
 
-        public AddressesRepository()
+        public AddressesRepository(string dataDirectory)
         {
-            dataDirectory = Path.Combine(AppContext.BaseDirectory, "Memory", "Definitions");
-            if (!Directory.Exists(dataDirectory))
-            {
-                dataDirectory = Path.Combine(Environment.CurrentDirectory, "Memory", "Definitions");
-            }
+            this.dataDirectory = dataDirectory;
         }
 
         private T LoadAndCache<T>(ref T? cacheField, string fileName) where T : class, new()
