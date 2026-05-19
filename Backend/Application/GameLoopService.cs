@@ -20,6 +20,8 @@ namespace Backend.Application
         {
             Serilog.Log.Information("Starting GameLoopService...");
 
+            var pollingIntervalMs = configuration.GetValue<int?>("GameLoop:PollingIntervalMs") ?? 1000;
+
             while (!stoppingToken.IsCancellationRequested)
             {
                 // Trying to connect at the Duckstation
@@ -29,7 +31,7 @@ namespace Backend.Application
                     {
                         // If the connection fails, it sends false and waits 1 second before trying again.
                         eventDispatcherService.DispatchConnectionStatus(false);
-                        await Task.Delay(1000, stoppingToken);
+                        await Task.Delay(pollingIntervalMs, stoppingToken);
                         continue;
                     }
                     else
@@ -74,7 +76,7 @@ namespace Backend.Application
 
                 try
                 {
-                    await Task.Delay(1000, stoppingToken);
+                    await Task.Delay(pollingIntervalMs, stoppingToken);
                 }
                 catch (TaskCanceledException)
                 {
