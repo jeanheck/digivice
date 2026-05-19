@@ -4,9 +4,9 @@ using Backend.Application.Providers;
 namespace Backend.Application
 {
     public class StateComposer(
-        PlayerProvider playerProvider,
-        PartyProvider partyProvider,
-        JournalProvider journalProvider)
+        IPlayerProvider playerProvider,
+        IPartyProvider partyProvider,
+        IJournalProvider journalProvider)
     {
         public State Compose()
         {

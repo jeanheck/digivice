@@ -4,7 +4,7 @@ using Backend.Application.Loaders;
 
 namespace Backend.Application.Providers
 {
-    public class JournalProvider(JournalLoader journalLoader)
+    public class JournalProvider(JournalLoader journalLoader) : IJournalProvider
     {
         public Journal Get()
         {

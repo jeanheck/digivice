@@ -63,9 +63,9 @@ try
     builder.Services.AddSingleton<JournalLoader>();
     builder.Services.AddSingleton<PartyLoader>();
     builder.Services.AddSingleton<DigimonLoader>();
-    builder.Services.AddSingleton<PlayerProvider>();
-    builder.Services.AddSingleton<PartyProvider>();
-    builder.Services.AddSingleton<JournalProvider>();
+    builder.Services.AddSingleton<IPlayerProvider, PlayerProvider>();
+    builder.Services.AddSingleton<IPartyProvider, PartyProvider>();
+    builder.Services.AddSingleton<IJournalProvider, JournalProvider>();
     builder.Services.AddSingleton<StateComposer>();
     builder.Services.AddSingleton<DebugConsoleRenderer>();
 

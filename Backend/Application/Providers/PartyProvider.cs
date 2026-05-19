@@ -4,7 +4,7 @@ using Backend.Application.Loaders;
 
 namespace Backend.Application.Providers
 {
-    public class PartyProvider(PartyLoader partyLoader)
+    public class PartyProvider(PartyLoader partyLoader) : IPartyProvider
     {
         public Party Get()
         {
