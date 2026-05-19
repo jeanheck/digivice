@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Backend.Events.DTO.Interfaces;
+using Backend.Events.DTO.Party;
 
 namespace Backend.Events.DTO;
 

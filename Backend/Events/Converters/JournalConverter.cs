@@ -9,7 +9,7 @@ public static class JournalConverter
     {
         return new JournalDTO
         {
-            MainQuest = journal.MainQuest != null ? QuestConverter.ToDTO(journal.MainQuest) : null,
+            MainQuest = QuestConverter.ToDTO(journal.MainQuest),
             SideQuests = journal.SideQuests.Select(QuestConverter.ToDTO).ToList()
         };
     }
