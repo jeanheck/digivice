@@ -17,7 +17,9 @@ namespace Backend.Domain.Models.Parties
         {
             if (other is null) return false;
 
-            return Vitals.Equals(other.Vitals) &&
+            return Level == other.Level &&
+                   Experience == other.Experience &&
+                   Vitals.Equals(other.Vitals) &&
                    Attributes.Equals(other.Attributes) &&
                    Resistances.Equals(other.Resistances) &&
                    Equipments.Equals(other.Equipments) &&
@@ -28,6 +30,8 @@ namespace Backend.Domain.Models.Parties
         public override int GetHashCode()
         {
             var hash = new HashCode();
+            hash.Add(Level);
+            hash.Add(Experience);
             hash.Add(Vitals);
             hash.Add(Attributes);
             hash.Add(Resistances);
