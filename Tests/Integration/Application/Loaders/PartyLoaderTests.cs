@@ -1,39 +1,20 @@
-namespace Tests.Application.Loaders;
+namespace Tests.Integration.Application.Loaders;
 
 using System;
-using System.IO;
 using Xunit;
 using Moq;
 using Backend.Application.Loaders;
 using Backend.Application.Loaders.Parties;
-using Backend.Memory.Repositories;
 using Backend.Memory.Readers;
 using Backend.Memory.Readers.Parties;
 using Backend.Memory.Readers.Parties.Digimons;
 
-public class PartyLoaderIntegrationTests
+public class PartyLoaderTests : LoaderIntegrationTestBase
 {
-    private string GetRealDefinitionsPath()
-    {
-        var currentDir = new DirectoryInfo(AppContext.BaseDirectory);
-        while (currentDir != null)
-        {
-            var potentialPath = Path.Combine(currentDir.FullName, "Backend", "Memory", "Definitions");
-            if (Directory.Exists(potentialPath))
-            {
-                return potentialPath;
-            }
-            currentDir = currentDir.Parent;
-        }
-        throw new DirectoryNotFoundException("Could not locate Backend/Memory/Definitions folder in the directory tree.");
-    }
-
     [Fact]
     public void Load_ShouldIntegratePipelineAndSkipEmptySlots()
     {
-        // 1. Arrange - Setup real definition files path
-        var realDefinitionsPath = GetRealDefinitionsPath();
-        var addressesRepository = new AddressesRepository(realDefinitionsPath);
+        var addressesRepository = CreateAddressesRepository();
 
         // 2. Arrange - Setup mocks for lower level hardware memory reader
         var memoryReaderMock = new Mock<IMemoryReader>();
@@ -156,8 +137,7 @@ public class PartyLoaderIntegrationTests
     [Fact]
     public void TestEmptySlotId()
     {
-        var realDefinitionsPath = GetRealDefinitionsPath();
-        var addressesRepository = new AddressesRepository(realDefinitionsPath);
+        var addressesRepository = CreateAddressesRepository();
         var partyAddresses = addressesRepository.GetPartyAddresses();
         Assert.Equal(255, partyAddresses.EmptySlotId);
     }
@@ -165,9 +145,7 @@ public class PartyLoaderIntegrationTests
     [Fact]
     public void Load_ShouldHandleNullSlotBytesGracefully()
     {
-        // 1. Arrange - Setup real definition files path
-        var realDefinitionsPath = GetRealDefinitionsPath();
-        var addressesRepository = new AddressesRepository(realDefinitionsPath);
+        var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
         // Simular leitura física corrompida (null) no slot 0 (0x00048DA4)
@@ -229,9 +207,7 @@ public class PartyLoaderIntegrationTests
     [Fact]
     public void Load_ShouldThrowInvalidOperationException_WhenSlotContainsUnknownDigimonId()
     {
-        // 1. Arrange - Setup real definition files path
-        var realDefinitionsPath = GetRealDefinitionsPath();
-        var addressesRepository = new AddressesRepository(realDefinitionsPath);
+        var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
         // Slot 0 -> ID 99 (Não cadastrado na base real)
@@ -260,9 +236,7 @@ public class PartyLoaderIntegrationTests
     [Fact]
     public void Load_ShouldReturnAllEmptySlots_WhenAllSlotsAreEmpty()
     {
-        // 1. Arrange - Setup real definition files path
-        var realDefinitionsPath = GetRealDefinitionsPath();
-        var addressesRepository = new AddressesRepository(realDefinitionsPath);
+        var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
         // Todos os 3 slots com ID 255 (0xFF)
