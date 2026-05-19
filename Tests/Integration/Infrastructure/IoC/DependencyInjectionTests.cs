@@ -24,7 +24,7 @@ using Backend.Memory.Readers.Parties;
 using Backend.Memory.Readers.Parties.Digimons;
 using Backend.Memory.Repositories;
 
-public class DependencyResolutionTests
+public class DependencyInjectionTests
 {
     [Fact]
     public void AddBackendServices_ShouldResolveAllRegisteredServicesWithoutExceptions()
