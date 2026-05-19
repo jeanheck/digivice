@@ -1,7 +1,7 @@
 using Backend.Memory.Resources.Party.Digimon;
 using Backend.Memory.Addresses.Parties;
 
-namespace Backend.Memory.Readers.Party.Digimon
+namespace Backend.Memory.Readers.Parties.Digimons
 {
     public interface IDigievolutionSlotReader
     {

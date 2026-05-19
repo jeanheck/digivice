@@ -1,9 +1,9 @@
 using Backend.Diagnostics;
 using Backend.Memory.Readers;
-using Backend.Memory.Readers.Party.Digimon;
-using Backend.Memory.Readers.Journal;
-using Backend.Memory.Readers.Journal.Quest;
-using Backend.Memory.Readers.Party;
+using Backend.Memory.Readers.Parties.Digimons;
+using Backend.Memory.Readers.Journals;
+using Backend.Memory.Readers.Journals.Quests;
+using Backend.Memory.Readers.Parties;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;

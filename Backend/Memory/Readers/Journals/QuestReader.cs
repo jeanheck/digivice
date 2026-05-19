@@ -1,8 +1,8 @@
 using Backend.Memory.Addresses.Journals;
-using Backend.Memory.Readers.Journal.Quest;
+using Backend.Memory.Readers.Journals.Quests;
 using Backend.Memory.Resources.Journal;
 
-namespace Backend.Memory.Readers.Journal
+namespace Backend.Memory.Readers.Journals
 {
     public class QuestReader(
         IRequisiteReader requisiteReader,
