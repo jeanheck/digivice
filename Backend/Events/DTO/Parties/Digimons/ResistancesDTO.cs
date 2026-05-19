@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 using Backend.Events.DTO.Interfaces;
 using Backend.Events.DTO.Shared;
 
-namespace Backend.Events.DTO.Party.Digimon;
+namespace Backend.Events.DTO.Parties.Digimons;
 
 public record class ResistancesDTO : IDTO
 {

@@ -1,9 +1,9 @@
 using Backend.Domain.Models.Journals.Quests;
 using Backend.Events.Converters.Journals.Quests;
 using Backend.Events.Diffing.Extensions;
-using Backend.Events.DTO.Journal;
+using Backend.Events.DTO.Journals.Quests;
 
-namespace Backend.Events.Diffing.Journals;
+namespace Backend.Events.Diffing.Journals.Quests;
 
 public static class StepDiffer
 {
@@ -16,7 +16,7 @@ public static class StepDiffer
 
         if (previousStep == null)
         {
-            return QuestStepConverter.ToDTO(newStep);
+            return StepConverter.ToDTO(newStep);
         }
 
         bool valueChanged = previousStep.Value != newStep.Value;

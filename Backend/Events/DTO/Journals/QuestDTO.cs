@@ -1,8 +1,9 @@
 using System.Text.Json.Serialization;
 using Backend.Events.DTO.Interfaces;
 using Backend.Events.DTO.Shared;
+using Backend.Events.DTO.Journals.Quests;
 
-namespace Backend.Events.DTO.Journal;
+namespace Backend.Events.DTO.Journals;
 
 public record class QuestDTO : IDTO
 {

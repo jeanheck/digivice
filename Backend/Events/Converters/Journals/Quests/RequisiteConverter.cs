@@ -1,5 +1,5 @@
 using Backend.Domain.Models.Journals.Quests;
-using Backend.Events.DTO.Journal;
+using Backend.Events.DTO.Journals.Quests;
 
 namespace Backend.Events.Converters.Journals.Quests;
 

@@ -1,8 +1,8 @@
 using Backend.Domain.Models.Journals.Quests;
 using Backend.Events.Diffing.Extensions;
-using Backend.Events.DTO.Journal;
+using Backend.Events.DTO.Journals.Quests;
 
-namespace Backend.Events.Diffing.Journals;
+namespace Backend.Events.Diffing.Journals.Quests;
 
 public static class RequisiteDiffer
 {

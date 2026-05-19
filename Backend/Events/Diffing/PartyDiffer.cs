@@ -2,7 +2,7 @@ using Backend.Domain.Models;
 using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.DTO;
-using Backend.Events.DTO.Party;
+using Backend.Events.DTO.Parties;
 using Backend.Events.Diffing.Parties;
 
 namespace Backend.Events.Diffing;

@@ -1,5 +1,5 @@
 using Backend.Domain.Models.Parties;
-using Backend.Events.DTO.Party;
+using Backend.Events.DTO.Parties;
 
 namespace Backend.Events.Converters.Parties;
 

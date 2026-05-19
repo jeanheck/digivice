@@ -2,25 +2,25 @@ using System.Text.Json.Serialization;
 using Backend.Events.DTO.Interfaces;
 using Backend.Events.DTO.Shared;
 
-namespace Backend.Events.DTO.Party.Digimon;
+namespace Backend.Events.DTO.Parties.Digimons;
 
-public record class AttributesDTO : IDTO
+public record class EquipmentsDTO : IDTO
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> Strength { get; init; } = Optional<int>.Empty;
+    public Optional<int> Head { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> Defense { get; init; } = Optional<int>.Empty;
+    public Optional<int> Body { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> Spirit { get; init; } = Optional<int>.Empty;
+    public Optional<int> RightHand { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> Wisdom { get; init; } = Optional<int>.Empty;
+    public Optional<int> LeftHand { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> Speed { get; init; } = Optional<int>.Empty;
+    public Optional<int> Accessory1 { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> Charisma { get; init; } = Optional<int>.Empty;
+    public Optional<int> Accessory2 { get; init; } = Optional<int>.Empty;
 }

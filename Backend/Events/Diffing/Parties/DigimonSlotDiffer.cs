@@ -1,7 +1,7 @@
 using Backend.Domain.Models.Parties;
 using Backend.Events.Converters.Parties;
 using Backend.Events.Diffing.Extensions;
-using Backend.Events.DTO.Party;
+using Backend.Events.DTO.Parties;
 
 namespace Backend.Events.Diffing.Parties;
 

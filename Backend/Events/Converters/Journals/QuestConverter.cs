@@ -1,5 +1,6 @@
 using Backend.Domain.Models.Journals;
-using Backend.Events.DTO.Journal;
+using Backend.Events.DTO.Journals;
+using Backend.Events.DTO.Journals.Quests;
 
 using Backend.Events.Converters.Journals.Quests;
 
@@ -11,6 +12,6 @@ public static class QuestConverter
     {
         Id = quest.Id,
         Requisites = quest.Requisites.Select(RequisiteConverter.ToDTO).ToList(),
-        Steps = quest.Steps.Select(QuestStepConverter.ToDTO).ToList()
+        Steps = quest.Steps.Select(StepConverter.ToDTO).ToList()
     };
 }

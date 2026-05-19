@@ -2,8 +2,8 @@ using Backend.Domain.Models.Parties;
 using Backend.Events.Converters.Parties;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.Diffing.Parties.Digimons;
-using Backend.Events.DTO.Party;
-using Backend.Events.DTO.Party.Digimon;
+using Backend.Events.DTO.Parties;
+using Backend.Events.DTO.Parties.Digimons;
 
 namespace Backend.Events.Diffing.Parties;
 

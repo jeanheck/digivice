@@ -1,7 +1,10 @@
 using Backend.Domain.Models.Journals;
 using Backend.Events.Converters.Journals;
 using Backend.Events.Diffing.Extensions;
-using Backend.Events.DTO.Journal;
+using Backend.Events.DTO.Journals;
+using Backend.Events.DTO.Journals.Quests;
+
+using Backend.Events.Diffing.Journals.Quests;
 
 namespace Backend.Events.Diffing.Journals;
 

@@ -1,9 +1,9 @@
 using System.Text.Json.Serialization;
 using Backend.Events.DTO.Interfaces;
-using Backend.Events.DTO.Party.Digimon;
+using Backend.Events.DTO.Parties.Digimons;
 using Backend.Events.DTO.Shared;
 
-namespace Backend.Events.DTO.Party;
+namespace Backend.Events.DTO.Parties;
 
 public record class DigimonDTO : IDTO
 {
