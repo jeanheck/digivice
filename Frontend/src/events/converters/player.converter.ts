@@ -1,5 +1,5 @@
-import type { PlayerDTO } from '../events/dto/PlayerDTO';
-import type { Player } from '../models/Player';
+import type { PlayerDTO } from '../dto/player.dto';
+import type { Player } from '../../models/Player';
 
 export class PlayerConverter {
     public static convert(player: PlayerDTO | null): Player | null {

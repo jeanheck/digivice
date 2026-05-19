@@ -1,6 +1,6 @@
-import type { StepDTO } from '../events/dto/Journals/Quests/StepDTO';
-import type { QuestStep } from '../models/Journal';
-import { RequisiteConverter } from './RequisiteConverter';
+import type { StepDTO } from '../dto/journals/quests/step.dto';
+import type { QuestStep } from '../../models/Journal';
+import { RequisiteConverter } from './requisite.converter';
 
 export class StepConverter {
     public static convert(dto: StepDTO): QuestStep {

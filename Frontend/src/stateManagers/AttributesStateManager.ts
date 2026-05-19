@@ -1,6 +1,6 @@
 import type { Digimon } from '../models/Digimon';
 import type { AttributesDTO } from '../events/dto/events.dto';
-import { AttributesConverter } from '../converters/AttributesConverter';
+import { AttributesConverter } from '../events/converters/attributes.converter';
 import { AttributesUpdater } from '../updaters/AttributesUpdater';
 
 export class AttributesStateManager {

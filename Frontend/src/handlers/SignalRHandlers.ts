@@ -1,4 +1,4 @@
-import { signalRService } from '../services/SignalRService'
+import { signalRService } from '../events/services/signal-r.service'
 import { useGameStore } from '../stores/useGameStore'
 import { signalRLogger } from '../utils/Logger'
 

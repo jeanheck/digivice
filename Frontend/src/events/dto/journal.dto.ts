@@ -1,4 +1,4 @@
-import type { QuestDTO } from './Journals/QuestDTO';
+import type { QuestDTO } from './journals/quest.dto';
 
 export interface JournalDTO {
     mainQuest?: QuestDTO | null;

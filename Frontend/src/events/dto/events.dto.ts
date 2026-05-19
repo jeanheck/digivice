@@ -1,32 +1,32 @@
 // Export everything from individual modular files
-export type { PlayerDTO } from './PlayerDTO';
-export type { ConnectionDTO, ConnectionStatusChangedDTO } from './ConnectionDTO';
-export type { PartyDTO } from './PartyDTO';
-export type { JournalDTO } from './JournalDTO';
-export type { StateDTO } from './StateDTO';
+export type { PlayerDTO } from './player.dto';
+export type { ConnectionDTO, ConnectionStatusChangedDTO } from './connection.dto';
+export type { PartyDTO } from './party.dto';
+export type { JournalDTO } from './journal.dto';
+export type { StateDTO } from './state.dto';
 
-export type { QuestDTO } from './Journals/QuestDTO';
-export type { RequisiteDTO } from './Journals/Quests/RequisiteDTO';
-export type { StepDTO } from './Journals/Quests/StepDTO';
+export type { QuestDTO } from './journals/quest.dto';
+export type { RequisiteDTO } from './journals/quests/requisite.dto';
+export type { StepDTO } from './journals/quests/step.dto';
 
-export type { DigimonDTO } from './Parties/DigimonDTO';
-export type { DigimonSlotDTO } from './Parties/DigimonSlotDTO';
-export type { VitalsDTO } from './Parties/Digimons/VitalsDTO';
-export type { AttributesDTO } from './Parties/Digimons/AttributesDTO';
-export type { ResistancesDTO } from './Parties/Digimons/ResistancesDTO';
-export type { EquipmentsDTO } from './Parties/Digimons/EquipmentsDTO';
-export type { DigievolutionDTO } from './Parties/Digimons/DigievolutionDTO';
-export type { DigievolutionSlotDTO } from './Parties/Digimons/DigievolutionSlotDTO';
+export type { DigimonDTO } from './parties/digimon.dto';
+export type { DigimonSlotDTO } from './parties/digimon-slot.dto';
+export type { VitalsDTO } from './parties/digimons/vitals.dto';
+export type { AttributesDTO } from './parties/digimons/attributes.dto';
+export type { ResistancesDTO } from './parties/digimons/resistances.dto';
+export type { EquipmentsDTO } from './parties/digimons/equipments.dto';
+export type { DigievolutionDTO } from './parties/digimons/digievolution.dto';
+export type { DigievolutionSlotDTO } from './parties/digimons/digievolution-slot.dto';
 
 // Import local types to define the main Event DTO Map
-import type { ConnectionStatusChangedDTO } from './ConnectionDTO';
-import type { StateDTO } from './StateDTO';
-import type { PlayerDTO } from './PlayerDTO';
-import type { PartyDTO } from './PartyDTO';
-import type { JournalDTO } from './JournalDTO';
-import type { DigimonDTO } from './Parties/DigimonDTO';
-import type { DigievolutionSlotDTO } from './Parties/Digimons/DigievolutionSlotDTO';
-import type { EquipmentsDTO } from './Parties/Digimons/EquipmentsDTO';
+import type { ConnectionStatusChangedDTO } from './connection.dto';
+import type { StateDTO } from './state.dto';
+import type { PlayerDTO } from './player.dto';
+import type { PartyDTO } from './party.dto';
+import type { JournalDTO } from './journal.dto';
+import type { DigimonDTO } from './parties/digimon.dto';
+import type { DigievolutionSlotDTO } from './parties/digimons/digievolution-slot.dto';
+import type { EquipmentsDTO } from './parties/digimons/equipments.dto';
 
 // Mapeamento Estrito dos 5 Eventos do SignalR
 export interface GameEventDTOMap {

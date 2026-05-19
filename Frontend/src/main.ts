@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
-import { signalRService } from './services/SignalRService'
+import { signalRService } from './events/services/signal-r.service'
 import './style.css'
 
 import i18n from './i18n'

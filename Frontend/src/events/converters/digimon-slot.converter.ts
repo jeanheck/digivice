@@ -1,6 +1,6 @@
-import type { DigimonSlotDTO } from '../events/dto/Parties/DigimonSlotDTO';
-import type { Digimon } from '../models/Digimon';
-import { DigimonConverter } from './DigimonConverter';
+import type { DigimonSlotDTO } from '../dto/parties/digimon-slot.dto';
+import type { Digimon } from '../../models/Digimon';
+import { DigimonConverter } from './digimon.converter';
 
 export class DigimonSlotConverter {
     public static convert(slotDto: DigimonSlotDTO | null): Digimon | null {

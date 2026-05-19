@@ -1,4 +1,4 @@
-import type { DigievolutionDTO } from './DigievolutionDTO';
+import type { DigievolutionDTO } from './digievolution.dto';
 
 export interface DigievolutionSlotDTO {
     index: number;

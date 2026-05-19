@@ -1,11 +1,11 @@
-import type * as DTO from '../events/dto/events.dto';
-import type * as Model from '../models/Digimon';
-import { DigimonExperienceCalculator } from '../logic/DigimonExperienceCalculator';
-import { AttributesConverter } from './AttributesConverter';
-import { ResistancesConverter } from './ResistancesConverter';
-import { EquipmentsConverter } from './EquipmentsConverter';
-import { DigievolutionsConverter } from './DigievolutionsConverter';
-import { DigievolutionRegistry } from '../logic/DigievolutionRegistry';
+import type * as DTO from '../dto/events.dto';
+import type * as Model from '../../models/Digimon';
+import { DigimonExperienceCalculator } from '../../logic/DigimonExperienceCalculator';
+import { AttributesConverter } from './attributes.converter';
+import { ResistancesConverter } from './resistances.converter';
+import { EquipmentsConverter } from './equipments.converter';
+import { DigievolutionsConverter } from './digievolutions.converter';
+import { DigievolutionRegistry } from '../../logic/DigievolutionRegistry';
 
 export class DigimonConverter {
     public static convert(digimon: DTO.DigimonDTO | null, slotIndex: number = 0): Model.Digimon | null {
@@ -18,7 +18,7 @@ export class DigimonConverter {
 
         const level = digimon.level ?? 1;
         const experience = digimon.experience ?? 0;
-        
+
         const currentHP = digimon.vitals?.currentHP ?? 0;
         const maxHP = digimon.vitals?.maxHP ?? 0;
         const currentMP = digimon.vitals?.currentMP ?? 0;

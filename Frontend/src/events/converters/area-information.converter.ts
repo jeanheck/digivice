@@ -1,7 +1,7 @@
-import type { AreaInformation } from '../models/AreaInformation';
-import type { Enemy } from '../models/Enemy';
-import { LocationCalculator } from '../logic/LocationCalculator';
-import EnemiesData from '../database/EnemiesTable.json';
+import type { AreaInformation } from '../../models/AreaInformation';
+import type { Enemy } from '../../models/Enemy';
+import { LocationCalculator } from '../../logic/LocationCalculator';
+import EnemiesData from '../../database/EnemiesTable.json';
 
 export class AreaInformationConverter {
     public static convert(location: string | undefined | null): AreaInformation | null {

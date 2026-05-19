@@ -1,8 +1,8 @@
-import type { EquipmentsDTO } from '../events/dto/events.dto';
-import type { Equipments, Equipament } from '../models/Digimon';
-import { EquipamentType, DigimonStatusType, EquipamentsAttributesOperationType } from '../models/Digimon';
-import EquipmentsData from '../database/Equipments.json';
-import EquipmentsTypeTable from '../database/EquipmentsTypeTable.json';
+import type { EquipmentsDTO } from '../dto/events.dto';
+import type { Equipments, Equipament } from '../../models/Digimon';
+import { EquipamentType, DigimonStatusType, EquipamentsAttributesOperationType } from '../../models/Digimon';
+import EquipmentsData from '../../database/Equipments.json';
+import EquipmentsTypeTable from '../../database/EquipmentsTypeTable.json';
 
 export class EquipmentsConverter {
     public static convert(equipmentsDto: EquipmentsDTO | null): Equipments {

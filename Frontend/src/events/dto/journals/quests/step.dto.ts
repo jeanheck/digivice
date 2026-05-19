@@ -1,4 +1,4 @@
-import type { RequisiteDTO } from './RequisiteDTO';
+import type { RequisiteDTO } from './requisite.dto';
 
 export interface StepDTO {
     number: number;

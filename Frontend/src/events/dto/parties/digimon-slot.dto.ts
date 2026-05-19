@@ -1,4 +1,4 @@
-import type { DigimonDTO } from './DigimonDTO';
+import type { DigimonDTO } from './digimon.dto';
 
 export interface DigimonSlotDTO {
     index: number;
