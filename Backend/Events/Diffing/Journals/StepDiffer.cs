@@ -1,5 +1,5 @@
 using Backend.Domain.Models.Journals.Quests;
-using Backend.Events.Converters;
+using Backend.Events.Converters.Journal;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.DTO.Journal;
 
