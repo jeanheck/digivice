@@ -1,20 +1,20 @@
 import * as signalR from '@microsoft/signalr'
 import { invoke } from '@tauri-apps/api/core'
-import type { GameEventDTOMap } from '../dto/events.dto'
+import type { EventsMap } from '../events.map'
 import { signalRLogger } from '../../utils/Logger'
 import { APP_CONFIG } from '../../config'
 
 class SignalRService {
     private connection: signalR.HubConnection | null = null
     // Armazena handlers de forma tipada
-    private handlers: Map<keyof GameEventDTOMap, ((data: any) => void)[]> = new Map()
+    private handlers: Map<keyof EventsMap, ((data: any) => void)[]> = new Map()
 
     /**
      * Subscribe to a SignalR event with strong typing.
      */
-    public on<K extends keyof GameEventDTOMap>(
+    public on<K extends keyof EventsMap>(
         eventName: K,
-        handler: (data: GameEventDTOMap[K]) => void
+        handler: (data: EventsMap[K]) => void
     ) {
         if (!this.handlers.has(eventName)) {
             this.handlers.set(eventName, [])
@@ -25,7 +25,7 @@ class SignalRService {
     /**
      * Manually set the list of events to register with SignalR.
      */
-    public setEventNames(names: (keyof GameEventDTOMap)[]) {
+    public setEventNames(names: (keyof EventsMap)[]) {
         names.forEach(name => {
             if (!this.handlers.has(name)) {
                 this.handlers.set(name, []);
@@ -92,7 +92,7 @@ class SignalRService {
     private registerBackendEvents() {
         if (!this.connection) return
 
-        // Only logs events that have handlers defined in the GameEventDTOMap.
+        // Only logs events that have handlers defined in the EventsMap.
         for (const eventName of this.handlers.keys()) {
             this.connection.on(eventName, (eventWrapper: any) => {
                 signalRLogger.debug(`Hub Event [${eventName}]`, eventWrapper)
@@ -107,7 +107,7 @@ class SignalRService {
         }
     }
 
-    private emit<K extends keyof GameEventDTOMap>(eventName: K, data: GameEventDTOMap[K]) {
+    private emit<K extends keyof EventsMap>(eventName: K, data: EventsMap[K]) {
         const eventHandlers = this.handlers.get(eventName)
         if (eventHandlers) {
             eventHandlers.forEach(handler => handler(data))

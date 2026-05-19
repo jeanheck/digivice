@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import type { State } from '../models/State'
-import type * as Events from '../events/dto/events.dto'
+import type * as Events from '../events/events.map'
 import { PlayerConverter } from '../events/converters/player.converter'
 import { PartyConverter } from '../events/converters/party.converter'
 import { DigimonConverter } from '../events/converters/digimon.converter'

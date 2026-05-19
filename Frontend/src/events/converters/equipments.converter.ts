@@ -1,4 +1,4 @@
-import type { EquipmentsDTO } from '../dto/events.dto';
+import type { EquipmentsDTO } from '../events.map';
 import type { Equipments, Equipament } from '../../models/Digimon';
 import { EquipamentType, DigimonStatusType, EquipamentsAttributesOperationType } from '../../models/Digimon';
 import EquipmentsData from '../../database/Equipments.json';
