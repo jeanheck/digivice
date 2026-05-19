@@ -28,4 +28,25 @@ public class PlayerLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(nameBytes, playerResource.NameInBytes);
         Assert.Equal((short)4, playerResource.MapId);
     }
+
+    [Fact]
+    public void Load_ShouldReturnNullFields_WhenMemoryReaderCannotReadPlayerData()
+    {
+        var addressesRepository = CreateAddressesRepository();
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(m => m.ReadInt32(0x00048DA0)).Returns((int?)null);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048D88, 10)).Returns((byte[]?)null);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x0004B3F8)).Returns((short?)null);
+
+        var playerReader = new PlayerReader(memoryReaderMock.Object);
+        var playerLoader = new PlayerLoader(addressesRepository, playerReader);
+
+        var playerResource = playerLoader.Load();
+
+        Assert.NotNull(playerResource);
+        Assert.Null(playerResource.Bits);
+        Assert.Null(playerResource.NameInBytes);
+        Assert.Null(playerResource.MapId);
+    }
 }

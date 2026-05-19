@@ -45,10 +45,12 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadByteSafe(0x00048F42, null)).Returns((byte)1);
         memoryReaderMock.Setup(m => m.ReadByteSafe(0x00048F42, 0)).Returns((byte)1);
         memoryReaderMock.Setup(m => m.ReadByteSafe(0x04B3B0, 0x04)).Returns((byte)0x04);
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x04B3B0, 0xE0)).Returns((byte)0xA0);
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x04B3B0, 0xC0)).Returns((byte)0x80);
         memoryReaderMock.Setup(m => m.ReadByteSafe(0x048E57, null)).Returns((byte)1);
         memoryReaderMock.Setup(m => m.ReadByteSafe(0x048E09, null)).Returns((byte)1);
         memoryReaderMock.Setup(m => m.ReadByteSafe(0x00048DB7, null)).Returns((byte)0);
-        memoryReaderMock.Setup(m => m.ReadByteSafe(0x048DB5, 0)).Returns((byte)1);
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x048DB5, null)).Returns((byte)1);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -73,6 +75,8 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(1, treeBoots.Requisites[0].Value);
         Assert.Equal(7, treeBoots.Steps.Count);
         Assert.Equal(0x04, treeBoots.Steps[0].Value);
+        Assert.Equal(0xA0, treeBoots.Steps[3].Value);
+        Assert.Equal(0x80, treeBoots.Steps[4].Value);
 
         var fishingPole = sideQuests[2];
         Assert.Equal("FishingPole", fishingPole.Id);

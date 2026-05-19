@@ -234,6 +234,60 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
+    public void Load_ShouldHandleEmptySlotBytesGracefully()
+    {
+        var addressesRepository = CreateAddressesRepository();
+        var memoryReaderMock = new Mock<IMemoryReader>();
+
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
+            .Returns([]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
+            .Returns([0xFF, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
+            .Returns([0xFF, 0, 0, 0]);
+
+        var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
+
+        var partyResource = partyLoader.Load();
+
+        Assert.NotNull(partyResource);
+        Assert.Equal(3, partyResource.SlotsResource.Count);
+        Assert.Null(partyResource.SlotsResource[0].DigimonId);
+        Assert.Equal(0, partyResource.SlotsResource[0].DigimonResource.Level);
+        Assert.Equal(255, partyResource.SlotsResource[1].DigimonId);
+        Assert.Equal(255, partyResource.SlotsResource[2].DigimonId);
+        memoryReaderMock.Verify(m => m.ReadBytes(It.Is<int>(addr => addr != 0x00048DA4 && addr != 0x00048DA8 && addr != 0x00048DAC), It.IsAny<int>()), Times.Never);
+    }
+
+    [Fact]
+    public void Load_ShouldThrowInvalidOperationException_WhenLaterSlotContainsUnknownDigimonId()
+    {
+        var addressesRepository = CreateAddressesRepository();
+        var memoryReaderMock = new Mock<IMemoryReader>();
+
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
+            .Returns([1, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
+            .Returns([99, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
+            .Returns([0xFF, 0, 0, 0]);
+
+        var fakeMemoryBlock = new byte[1500];
+        BitConverter.GetBytes((short)12).CopyTo(fakeMemoryBlock, 28);
+
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00049878, 1500))
+            .Returns(fakeMemoryBlock);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x00049878 - 4))
+            .Returns(5);
+
+        var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
+
+        var ex = Assert.Throws<InvalidOperationException>(() => partyLoader.Load());
+        Assert.Contains("Address not found for Digimon ID 99", ex.Message);
+        memoryReaderMock.Verify(m => m.ReadBytes(0x00049878, 1500), Times.Once);
+    }
+
+    [Fact]
     public void Load_ShouldReturnAllEmptySlots_WhenAllSlotsAreEmpty()
     {
         var addressesRepository = CreateAddressesRepository();
@@ -268,5 +322,18 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
 
         // Garantir que NENHUMA tentativa de leitura de bloco de status (1500 bytes) foi feita na RAM
         memoryReaderMock.Verify(m => m.ReadBytes(It.Is<int>(addr => addr != 0x00048DA4 && addr != 0x00048DA8 && addr != 0x00048DAC), It.IsAny<int>()), Times.Never);
+    }
+
+    private static PartyLoader CreatePartyLoader(
+        Backend.Memory.Repositories.IAddressesRepository addressesRepository,
+        IMemoryReader memoryReader)
+    {
+        var digievolutionSlotReader = new DigievolutionSlotReader();
+        var digievolutionReader = new DigievolutionReader();
+        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader);
+        var digimonSlotReader = new DigimonSlotReader(memoryReader);
+        var partyReader = new PartyReader(digimonSlotReader);
+        var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
+        return new PartyLoader(addressesRepository, partyReader, digimonLoader);
     }
 }

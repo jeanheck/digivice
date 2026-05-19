@@ -95,4 +95,53 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(10, digimonResource.Digievolutions[1].DigievolutionId);
         Assert.Equal(1, digimonResource.Digievolutions[1].DigievolutionResource.Level);
     }
+
+    [Fact]
+    public void Load_ShouldIntegrateAnotherValidDigimonAddress()
+    {
+        var addressesRepository = CreateAddressesRepository();
+        var memoryBlock = new byte[1500];
+        WriteInt32(memoryBlock, 0x18, 12000);
+        WriteInt16(memoryBlock, 0x1C, 18);
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(m => m.ReadBytes(0x0004AFA0, 1500)).Returns(memoryBlock);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x0004AFA0 - 4)).Returns((short)7);
+
+        var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
+
+        var digimonResource = digimonLoader.Load(7);
+
+        Assert.NotNull(digimonResource);
+        Assert.Equal(7, digimonResource.ActiveDigievolutionId);
+        Assert.Equal(12000, digimonResource.Experience);
+        Assert.Equal(18, digimonResource.Level);
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData(1499)]
+    public void Load_ShouldThrowInvalidOperationException_WhenDigimonMemoryBlockCannotBeFullyRead(int? memoryBlockSize)
+    {
+        var addressesRepository = CreateAddressesRepository();
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00049878, 1500))
+            .Returns(memoryBlockSize is null ? null : new byte[memoryBlockSize.Value]);
+
+        var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
+
+        var exception = Assert.Throws<InvalidOperationException>(() => digimonLoader.Load(1));
+        Assert.Contains("Failed to read full memory block for Digimon", exception.Message);
+    }
+
+    private static DigimonLoader CreateDigimonLoader(
+        Backend.Memory.Repositories.IAddressesRepository addressesRepository,
+        IMemoryReader memoryReader)
+    {
+        var digievolutionSlotReader = new DigievolutionSlotReader();
+        var digievolutionReader = new DigievolutionReader();
+        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader);
+        return new DigimonLoader(addressesRepository, digimonReader);
+    }
 }
