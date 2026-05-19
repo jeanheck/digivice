@@ -2,7 +2,7 @@ using Backend.Events.DTO.Interfaces;
 
 namespace Backend.Events.Models;
 
-public class BaseEvent(Enum type, IDTO data)
+public class Event(Enum type, IDTO data)
 {
     public Enum Type { get; } = type;
     public DateTime Timestamp { get; } = DateTime.UtcNow;

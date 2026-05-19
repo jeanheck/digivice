@@ -7,7 +7,7 @@ namespace Backend.Events.Factory;
 
 public static class StateEventFactory
 {
-    public static IEnumerable<BaseEvent> Create(State? previousState, State newState)
+    public static IEnumerable<Event> Create(State? previousState, State newState)
     {
         if (newState.HasNoChanges(previousState))
         {
@@ -16,10 +16,10 @@ public static class StateEventFactory
 
         if (previousState == null)
         {
-            return [new BaseEvent(EventType.InitialState, StateConverter.ToDTO(newState))];
+            return [new Event(EventType.InitialState, StateConverter.ToDTO(newState))];
         }
 
-        var events = new List<BaseEvent>();
+        var events = new List<Event>();
 
         events.AddRange(PlayerEventFactory.Create(previousState, newState));
         events.AddRange(PartyEventFactory.Create(previousState, newState));

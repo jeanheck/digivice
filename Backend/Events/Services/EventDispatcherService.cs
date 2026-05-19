@@ -3,7 +3,6 @@ using Backend.Events.Hubs;
 using Backend.Events.States;
 using Backend.Events.DTO;
 using Backend.Events.Converters;
-using Backend.Events.Types;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Backend.Events.Services;
@@ -21,7 +20,7 @@ public class EventDispatcherService(
         }
 
         gameStateStore.IsEmulatorConnected = isConnected;
-        SafeDispatch(new BaseEvent(ConnectionEvent.ConnectionStatusChanged, new ConnectionDTO(isConnected)));
+        SafeDispatch(new Event(EventType.ConnectionStatusChanged, new ConnectionDTO(isConnected)));
 
         if (!isConnected)
         {
@@ -35,12 +34,12 @@ public class EventDispatcherService(
         if (currentState != null)
         {
             var stateDto = StateConverter.ToDTO(currentState);
-            var initialEvent = new BaseEvent(EventType.InitialState, stateDto);
+            var initialEvent = new Event(EventType.InitialState, stateDto);
             SafeDispatch(initialEvent, hubContext.Clients.Client(connectionId));
         }
     }
 
-    public void DispatchEvents(IEnumerable<BaseEvent> events)
+    public void DispatchEvents(IEnumerable<Event> events)
     {
         foreach (var ev in events)
         {
@@ -48,7 +47,7 @@ public class EventDispatcherService(
         }
     }
 
-    private void SafeDispatch(BaseEvent ev, IClientProxy? target = null)
+    private void SafeDispatch(Event ev, IClientProxy? target = null)
     {
         target ??= hubContext.Clients.All;
         _ = target.SendAsync(ev.Type.ToString(), ev)

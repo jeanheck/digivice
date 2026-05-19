@@ -5,6 +5,6 @@ namespace Backend.Events.Services;
 public interface IEventDispatcherService
 {
     void DispatchConnectionStatus(bool isConnected);
-    void DispatchEvents(IEnumerable<BaseEvent> events);
+    void DispatchEvents(IEnumerable<Event> events);
     void DispatchInitialStateToClient(string connectionId);
 }
