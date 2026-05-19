@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Backend.Events.Converters;
 
-namespace Backend.Events.DTO;
+namespace Backend.Events.DTO.Shared;
 
 [JsonConverter(typeof(OptionalJsonConverterFactory))]
 public readonly struct Optional<T>(T value)

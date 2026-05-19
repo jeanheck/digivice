@@ -1,6 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Backend.Events.DTO;
+using Backend.Events.DTO.Shared;
 
 namespace Backend.Events.Converters;
 
