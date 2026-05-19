@@ -1,0 +1,17 @@
+using Backend.Domain.Models.Parties.Digimons;
+using Backend.Events.DTO.Party.Digimon;
+
+namespace Backend.Events.Converters.Parties;
+
+public static class EquipmentsConverter
+{
+    public static EquipmentsDTO ToDTO(Equipments equipments) => new()
+    {
+        Head = equipments.Head,
+        Body = equipments.Body,
+        RightHand = equipments.RightHand,
+        LeftHand = equipments.LeftHand,
+        Accessory1 = equipments.Accessory1,
+        Accessory2 = equipments.Accessory2
+    };
+}

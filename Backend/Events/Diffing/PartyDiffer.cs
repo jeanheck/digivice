@@ -1,6 +1,7 @@
 using Backend.Domain.Models;
-using Backend.Events.DTO;
+using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
+using Backend.Events.DTO;
 
 namespace Backend.Events.Diffing;
 
@@ -13,8 +14,12 @@ public static class PartyDiffer
             return new PartyDTO();
         }
 
-        /*
         if (previousParty == null)
+        {
+            return PartyConverter.ToDTO(newParty);
+        }
+
+        /*if (previousParty == null)
         {
             var activeDigimons = newParty.Slots
                 .Where(s => s.Digimon != null)
@@ -69,8 +74,9 @@ public static class PartyDiffer
                     }
                 }
             }
-        }
-        */
+        }*/
+
+
 
         return new PartyDTO();
     }

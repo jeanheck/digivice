@@ -1,11 +1,12 @@
+using Backend.Domain.Models;
 using Backend.Events.DTO;
-using Backend.Events.Converters.Journal;
+using Backend.Events.Converters.Journals;
 
 namespace Backend.Events.Converters;
 
 public static class JournalConverter
 {
-    public static JournalDTO ToDTO(Backend.Domain.Models.Journal journal)
+    public static JournalDTO ToDTO(Journal journal)
     {
         return new JournalDTO
         {

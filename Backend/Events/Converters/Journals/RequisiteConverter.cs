@@ -1,7 +1,7 @@
 using Backend.Domain.Models.Journals.Quests;
 using Backend.Events.DTO.Journal;
 
-namespace Backend.Events.Converters.Journal;
+namespace Backend.Events.Converters.Journals;
 
 public static class RequisiteConverter
 {
