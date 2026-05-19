@@ -71,4 +71,10 @@ public class MemoryBlockReaderTests
 
         Assert.Equal(0, result);
     }
+
+    [Fact]
+    public void Constructor_ShouldThrowArgumentNullException_WhenBufferIsNull()
+    {
+        Assert.Throws<ArgumentNullException>(() => new MemoryBlockReader(null!));
+    }
 }
