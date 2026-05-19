@@ -4,10 +4,10 @@ import { LocationCalculator } from '../logic/LocationCalculator';
 import EnemiesData from '../database/EnemiesTable.json';
 
 export class AreaInformationConverter {
-    public static convert(mapId: string | undefined | null): AreaInformation | null {
-        if (!mapId) return null;
+    public static convert(location: string | undefined | null): AreaInformation | null {
+        if (!location) return null;
 
-        const locationEntry = LocationCalculator.getFromMapId(mapId);
+        const locationEntry = LocationCalculator.getFromMapId(location);
         if (!locationEntry) return null;
 
         const locationTag = locationEntry.location;

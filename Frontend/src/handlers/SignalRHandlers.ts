@@ -45,5 +45,5 @@ export function initSignalRHandlers() {
         store.updateJournal({ journal: data })
     })
 
-    signalRLogger.debug('SignalR Handlers inicializados com sucesso para os 5 macro-eventos.')
+    signalRLogger.debug('SignalR Handlers successfully initialized for the 5 macro-events.')
 }

@@ -1,6 +1,6 @@
 import * as signalR from '@microsoft/signalr'
 import { invoke } from '@tauri-apps/api/core'
-import type { GameEventDTOMap } from '../dtos/events.dto'
+import type { GameEventDTOMap } from '../events/dto/events.dto'
 import { signalRLogger } from '../utils/Logger'
 import { APP_CONFIG } from '../config'
 

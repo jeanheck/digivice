@@ -3,7 +3,7 @@ import type { Digimon } from './Digimon';
 export interface Player {
     name: string;
     bits: number;
-    mapId: string;
+    location: string;
 }
 
 export interface Party {

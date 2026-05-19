@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import type { State } from '../models/State'
-import type * as Events from '../dtos/events.dto'
+import type * as Events from '../events/dto/events.dto'
 import { PlayerConverter } from '../converters/PlayerConverter'
 import { PartyConverter } from '../converters/PartyConverter'
 import { DigimonConverter } from '../converters/DigimonConverter'
@@ -41,7 +41,7 @@ export const useGameStore = defineStore('game', () => {
             party: PartyConverter.convert(event.state.party),
             importantItems: ImportantItemsConverter.convert(event.state.importantItems),
             journal: JournalConverter.convert(event.state.journal),
-            areaInformation: AreaInformationConverter.convert(event.state.player?.mapId)
+            areaInformation: AreaInformationConverter.convert(event.state.player?.location)
         }
     }
 

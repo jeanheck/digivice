@@ -1,112 +1,32 @@
-// Sub-DTOs de Digimon
-export interface VitalsDTO {
-    maxHP?: number;
-    maxMP?: number;
-    currentHP?: number;
-    currentMP?: number;
-}
+// Export everything from individual modular files
+export type { PlayerDTO } from './PlayerDTO';
+export type { ConnectionDTO, ConnectionStatusChangedDTO } from './ConnectionDTO';
+export type { PartyDTO } from './PartyDTO';
+export type { JournalDTO } from './JournalDTO';
+export type { StateDTO } from './StateDTO';
 
-export interface AttributesDTO {
-    strength?: number;
-    defense?: number;
-    spirit?: number;
-    wisdom?: number;
-    speed?: number;
-    charisma?: number;
-}
+export type { QuestDTO } from './Journals/QuestDTO';
+export type { RequisiteDTO } from './Journals/Quests/RequisiteDTO';
+export type { StepDTO } from './Journals/Quests/StepDTO';
 
-export interface ResistancesDTO {
-    fire?: number;
-    water?: number;
-    ice?: number;
-    wind?: number;
-    thunder?: number;
-    machine?: number;
-    dark?: number;
-}
+export type { DigimonDTO } from './Parties/DigimonDTO';
+export type { DigimonSlotDTO } from './Parties/DigimonSlotDTO';
+export type { VitalsDTO } from './Parties/Digimons/VitalsDTO';
+export type { AttributesDTO } from './Parties/Digimons/AttributesDTO';
+export type { ResistancesDTO } from './Parties/Digimons/ResistancesDTO';
+export type { EquipmentsDTO } from './Parties/Digimons/EquipmentsDTO';
+export type { DigievolutionDTO } from './Parties/Digimons/DigievolutionDTO';
+export type { DigievolutionSlotDTO } from './Parties/Digimons/DigievolutionSlotDTO';
 
-export interface EquipmentsDTO {
-    head?: number;
-    body?: number;
-    rightHand?: number;
-    leftHand?: number;
-    accessory1?: number;
-    accessory2?: number;
-}
-
-export interface DigievolutionDTO {
-    level?: number;
-}
-
-export interface DigievolutionSlotDTO {
-    index: number;
-    digievolutionId?: number;
-    digievolution?: DigievolutionDTO | null;
-}
-
-// DTO principal de Digimon e seu Slot
-export interface DigimonDTO {
-    level?: number;
-    experience?: number;
-    vitals?: VitalsDTO;
-    attributes?: AttributesDTO;
-    resistances?: ResistancesDTO;
-    equipments?: EquipmentsDTO;
-    digievolutions?: DigievolutionSlotDTO[];
-    activeDigievolutionId?: number;
-}
-
-export interface DigimonSlotDTO {
-    index: number;
-    digimonId?: number | null;
-    digimon?: DigimonDTO | null;
-}
-
-// DTOs Principais
-export interface PlayerDTO {
-    name?: string;
-    bits?: number;
-    location?: string; // Corresponde ao MapId no backend
-    mapId?: string;    // Legacy fallback
-}
-
-export interface PartyDTO {
-    slots?: DigimonSlotDTO[];
-}
-
-// Diário e Missões
-export interface RequisiteDTO {
-    id: string;
-    value?: number; // Representa o byte bruto
-}
-
-export interface StepDTO {
-    number: number;
-    value?: number; // Representa o byte bruto
-    requisites?: RequisiteDTO[];
-}
-
-export interface QuestDTO {
-    id: string;
-    requisites?: RequisiteDTO[];
-    steps?: StepDTO[];
-}
-
-export interface JournalDTO {
-    mainQuest?: QuestDTO | null;
-    sideQuests?: QuestDTO[];
-}
-
-// Estado Inicial e Status de Conexão
-export interface StateDTO {
-    player: PlayerDTO | null;
-    party: PartyDTO | null;
-    journal: JournalDTO | null;
-}
-
-export interface ConnectionStatusChangedDTO {
-    isConnected: boolean;
-}
+// Import local types to define the main Event DTO Map
+import type { ConnectionStatusChangedDTO } from './ConnectionDTO';
+import type { StateDTO } from './StateDTO';
+import type { PlayerDTO } from './PlayerDTO';
+import type { PartyDTO } from './PartyDTO';
+import type { JournalDTO } from './JournalDTO';
+import type { DigimonDTO } from './Parties/DigimonDTO';
+import type { DigievolutionSlotDTO } from './Parties/Digimons/DigievolutionSlotDTO';
+import type { EquipmentsDTO } from './Parties/Digimons/EquipmentsDTO';
 
 // Mapeamento Estrito dos 5 Eventos do SignalR
 export interface GameEventDTOMap {

@@ -1,4 +1,4 @@
-import type * as DTO from '../dtos/events.dto';
+import type * as DTO from '../events/dto/events.dto';
 import type * as Model from '../models/Digimon';
 import { DigimonExperienceCalculator } from '../logic/DigimonExperienceCalculator';
 import { AttributesConverter } from './AttributesConverter';

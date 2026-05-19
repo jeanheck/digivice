@@ -1,4 +1,4 @@
-import type * as DTO from '../dtos/events.dto';
+import type * as DTO from '../events/dto/events.dto';
 import type { ImportantItems } from '../models/Items';
 
 export class ImportantItemsConverter {

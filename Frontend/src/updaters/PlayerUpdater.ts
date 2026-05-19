@@ -1,5 +1,5 @@
 import type { State } from '../models/State';
-import type * as Events from '../dtos/events.dto';
+import type * as Events from '../events/dto/events.dto';
 
 export class PlayerUpdater {
     public static updateBits(state: State | null, event: Events.PlayerBitsChangedDTO) {
@@ -16,7 +16,7 @@ export class PlayerUpdater {
 
     public static updateLocation(state: State | null, event: Events.PlayerLocationChangedDTO) {
         if (state?.player) {
-            state.player.mapId = event.location;
+            state.player.location = event.location;
         }
     }
 }

@@ -1,5 +1,5 @@
 import type { Digimon } from '../models/Digimon';
-import type { ResistancesDTO } from '../dtos/events.dto';
+import type { ResistancesDTO } from '../events/dto/events.dto';
 import { ResistancesConverter } from '../converters/ResistancesConverter';
 import { ResistancesUpdater } from '../updaters/ResistancesUpdater';
 
