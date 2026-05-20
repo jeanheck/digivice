@@ -6,7 +6,7 @@ import { APP_CONFIG } from '../config'
 
 class SignalRService {
     private connection: signalR.HubConnection | null = null
-    // Armazena handlers de forma tipada
+    // Stores handlers in a typed manner
     private handlers: Map<keyof EventsMap, ((data: any) => void)[]> = new Map()
 
     /**
@@ -20,17 +20,6 @@ class SignalRService {
             this.handlers.set(eventName, [])
         }
         this.handlers.get(eventName)?.push(handler)
-    }
-
-    /**
-     * Manually set the list of events to register with SignalR.
-     */
-    public setEventNames(names: (keyof EventsMap)[]) {
-        names.forEach(name => {
-            if (!this.handlers.has(name)) {
-                this.handlers.set(name, []);
-            }
-        });
     }
 
     private async getHubUrl(): Promise<string> {
@@ -92,14 +81,15 @@ class SignalRService {
     private registerBackendEvents() {
         if (!this.connection) return
 
-        // Only logs events that have handlers defined in the EventsMap.
-        for (const eventName of this.handlers.keys()) {
-            if (eventName === 'HubConnectionStatusChanged') continue
+        // Filter out internal client-only events from remote hub registrations
+        const backendEventNames = Array.from(this.handlers.keys())
+            .filter(name => name !== 'HubConnectionStatusChanged')
 
+        for (const eventName of backendEventNames) {
             this.connection.on(eventName, (eventWrapper: any) => {
                 signalRLogger.debug(`Hub Event [${eventName}]`, eventWrapper)
 
-                // Se recebemos a estrutura envelopada do backend, extraímos apenas a propriedade 'payload'
+                // If we receive the wrapped structure from the backend, extract only the 'payload' property
                 const payload = eventWrapper && typeof eventWrapper === 'object' && 'payload' in eventWrapper
                     ? eventWrapper.payload
                     : eventWrapper
@@ -114,10 +104,6 @@ class SignalRService {
         if (eventHandlers) {
             eventHandlers.forEach(handler => handler(data))
         }
-    }
-
-    public get isConnected() {
-        return this.connection?.state === signalR.HubConnectionState.Connected
     }
 }
 
