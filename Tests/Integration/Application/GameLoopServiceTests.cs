@@ -99,8 +99,8 @@ public class GameLoopServiceTests
         }
 
         // Verify dispatch connection status events
-        _eventDispatcherServiceMock.Verify(d => d.DispatchConnectionStatus(false), Times.AtLeastOnce);
-        _eventDispatcherServiceMock.Verify(d => d.DispatchConnectionStatus(true), Times.AtLeastOnce);
+        _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
+        _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(true), Times.AtLeastOnce);
     }
 
     [Fact]
@@ -173,6 +173,6 @@ public class GameLoopServiceTests
         }
 
         // Verify we dispatched a connection failure event on catch block when not connected
-        _eventDispatcherServiceMock.Verify(d => d.DispatchConnectionStatus(false), Times.AtLeastOnce);
+        _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
     }
 }

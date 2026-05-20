@@ -17,7 +17,7 @@ export function initializeSignalRHandlers(): void {
     });
 
     signalRService.on('InitialState', (data) => {
-        store.syncInitialState(data);
+        store.setInitialState(data);
     });
 
     signalRService.on('PlayerChanged', (data) => {

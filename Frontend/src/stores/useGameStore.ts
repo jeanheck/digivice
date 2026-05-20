@@ -21,10 +21,10 @@ export const useGameStore = defineStore('game', () => {
     const isConnected = computed(() => {
         return isConnectedWithBackend.value && isConnectedWithEmulator.value;
     });
-    const gameState = ref<State | null>(null);
+    const currentState = ref<State | null>(null);
 
     function getDigimonOnPartySlot(slotIndex: number) {
-        return gameState.value?.party?.slots[slotIndex] ?? null;
+        return currentState.value?.party?.slots[slotIndex] ?? null;
     }
 
     function syncHubConnectionStatus(event: { isConnected: boolean }): void {
@@ -35,13 +35,13 @@ export const useGameStore = defineStore('game', () => {
         isConnectedWithEmulator.value = event.isConnected;
     }
 
-    function syncInitialState(state: Events.StateDTO | null): void {
+    function setInitialState(state: Events.StateDTO | null): void {
         if (!state) {
-            gameState.value = null;
+            currentState.value = null;
             return;
         }
 
-        gameState.value = {
+        currentState.value = {
             player: PlayerConverter.convert(state.player),
             party: PartyConverter.convert(state.party),
             importantItems: null,
@@ -51,31 +51,31 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function syncPlayer(playerDto: Events.PlayerDTO | null): void {
-        if (!gameState.value || !playerDto) {
+        if (!currentState.value || !playerDto) {
             return;
         }
 
-        if (!gameState.value.player) {
-            gameState.value.player = PlayerConverter.convert(playerDto);
+        if (!currentState.value.player) {
+            currentState.value.player = PlayerConverter.convert(playerDto);
         } else {
             if (playerDto.name !== undefined) {
-                gameState.value.player.name = playerDto.name;
+                currentState.value.player.name = playerDto.name;
             }
             if (playerDto.bits !== undefined) {
-                gameState.value.player.bits = playerDto.bits;
+                currentState.value.player.bits = playerDto.bits;
             }
             if (playerDto.location !== undefined) {
-                gameState.value.player.location = playerDto.location;
+                currentState.value.player.location = playerDto.location;
             }
         }
 
         if (playerDto.location !== undefined) {
-            gameState.value.areaInformation = AreaInformationConverter.convert(playerDto.location);
+            currentState.value.areaInformation = AreaInformationConverter.convert(playerDto.location);
         }
     }
 
     function syncParty(partyDto: Events.PartyDTO | null): void {
-        if (!gameState.value?.party || !partyDto?.slots) {
+        if (!currentState.value?.party || !partyDto?.slots) {
             return;
         }
 
@@ -85,16 +85,16 @@ export const useGameStore = defineStore('game', () => {
             }
 
             const index = slotDto.index;
-            if (index < 0 || index >= gameState.value!.party!.slots.length) {
+            if (index < 0 || index >= currentState.value!.party!.slots.length) {
                 return;
             }
 
             if (slotDto.digimonId === null || slotDto.digimon === null) {
-                gameState.value!.party!.slots[index] = null;
+                currentState.value!.party!.slots[index] = null;
             } else {
-                const existingDigimon = gameState.value!.party!.slots[index];
+                const existingDigimon = currentState.value!.party!.slots[index];
                 if (!existingDigimon || existingDigimon.activeDigievolutionId !== slotDto.digimonId) {
-                    gameState.value!.party!.slots[index] = DigimonSlotConverter.convert(slotDto);
+                    currentState.value!.party!.slots[index] = DigimonSlotConverter.convert(slotDto);
                 } else {
                     const digimonDto = slotDto.digimon;
                     if (!digimonDto) {
@@ -170,28 +170,28 @@ export const useGameStore = defineStore('game', () => {
             }
         });
 
-        gameState.value.party.groupCharisma = PartyCalculator.calculateGroupCharisma(
-            gameState.value.party.slots
+        currentState.value.party.groupCharisma = PartyCalculator.calculateGroupCharisma(
+            currentState.value.party.slots
         );
     }
 
     function syncJournal(journal: Events.JournalDTO | null): void {
-        if (!gameState.value) {
+        if (!currentState.value) {
             return;
         }
 
-        gameState.value.journal = JournalConverter.convert(journal);
+        currentState.value.journal = JournalConverter.convert(journal);
     }
 
     return {
         isConnected,
         isConnectedWithBackend,
         isConnectedWithEmulator,
-        gameState,
+        currentState,
         getDigimonOnPartySlot,
         syncHubConnectionStatus,
         syncEmulatorConnectionStatus,
-        syncInitialState,
+        setInitialState,
         syncPlayer,
         syncParty,
         syncJournal

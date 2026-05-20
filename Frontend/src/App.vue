@@ -11,7 +11,7 @@ import { ref } from 'vue'
 
 const store = useGameStore()
 const { getLocalizedQuest } = useLocalization()
-const partySlots = computed(() => store.gameState?.party?.slots ?? [null, null, null])
+const partySlots = computed(() => store.currentState?.party?.slots ?? [null, null, null])
 const activeQuestId = ref<string | null>(null)
 const isQuestModalOpen = ref(false)
 
@@ -19,7 +19,7 @@ const activeQuestForModal = computed(() => {
   const questId = activeQuestId.value;
   if (!questId) return null;
   
-  const journal = store.gameState?.journal;
+  const journal = store.currentState?.journal;
   if (!journal) return null;
   
   // Normalized ID comparison helper
@@ -79,7 +79,7 @@ const handleCloseQuestModal = () => {
         
         <!-- Area Information -->
         <div class="flex-[2] min-h-[200px] flex flex-col">
-          <AreaInformationPanel :area-info="store.gameState?.areaInformation ?? null" class="flex-1" />
+          <AreaInformationPanel :area-info="store.currentState?.areaInformation ?? null" class="flex-1" />
         </div>
       </div>
 
@@ -87,9 +87,9 @@ const handleCloseQuestModal = () => {
 
     <!-- Bottom Section: Player Info -->
     <PlayerFooter 
-      :player-name="store.gameState?.player?.name ?? $t('common.connecting')"
-      :bits="store.gameState?.player?.bits ?? 0"
-      :group-charisma="store.gameState?.party?.groupCharisma ?? 0"
+      :player-name="store.currentState?.player?.name ?? $t('common.connecting')"
+      :bits="store.currentState?.player?.bits ?? 0"
+      :group-charisma="store.currentState?.party?.groupCharisma ?? 0"
       :is-connected="store.isConnected"
     />
 

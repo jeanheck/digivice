@@ -18,7 +18,7 @@ using Backend.Domain.Models;
 public class EventDispatcherServiceTests
 {
     [Fact]
-    public void DispatchConnectionStatus_ShouldReturnImmediately_WhenStatusIsSame()
+    public void DispatchEmulatorConnectionStatus_ShouldReturnImmediately_WhenStatusIsSame()
     {
         // Arrange
         var clientProxyMock = new Mock<ISingleClientProxy>();
@@ -31,7 +31,7 @@ public class EventDispatcherServiceTests
         var loggerMock = new Mock<ILogger<EventDispatcherService>>();
 
         var gameStateStoreMock = new Mock<IGameStateStore>();
-        gameStateStoreMock.Setup(g => g.IsEmulatorConnected).Returns(true); // Já está conectado
+        gameStateStoreMock.Setup(g => g.IsConnectedWithEmulator).Returns(true); // Já está conectado
 
         var service = new EventDispatcherService(
             hubContextMock.Object,
@@ -40,10 +40,10 @@ public class EventDispatcherServiceTests
         );
 
         // Act
-        service.DispatchConnectionStatus(true); // Envia o mesmo status
+        service.DispatchEmulatorConnectionStatus(true); // Envia o mesmo status
 
         // Assert
-        gameStateStoreMock.VerifySet(g => g.IsEmulatorConnected = It.IsAny<bool>(), Times.Never);
+        gameStateStoreMock.VerifySet(g => g.IsConnectedWithEmulator = It.IsAny<bool>(), Times.Never);
         clientProxyMock.Verify(
             c => c.SendCoreAsync(It.IsAny<string>(), It.IsAny<object?[]>(), It.IsAny<CancellationToken>()),
             Times.Never
@@ -51,7 +51,7 @@ public class EventDispatcherServiceTests
     }
 
     [Fact]
-    public void DispatchConnectionStatus_ShouldSetStateAndSendNotification_WhenConnected()
+    public void DispatchEmulatorConnectionStatus_ShouldSetStateAndSendNotification_WhenConnected()
     {
         // Arrange
         var clientProxyMock = new Mock<ISingleClientProxy>();
@@ -70,7 +70,7 @@ public class EventDispatcherServiceTests
         var loggerMock = new Mock<ILogger<EventDispatcherService>>();
 
         var gameStateStoreMock = new Mock<IGameStateStore>();
-        gameStateStoreMock.Setup(g => g.IsEmulatorConnected).Returns((bool?)null); // Estado anterior indefinido
+        gameStateStoreMock.Setup(g => g.IsConnectedWithEmulator).Returns((bool?)null); // Estado anterior indefinido
 
         var service = new EventDispatcherService(
             hubContextMock.Object,
@@ -79,14 +79,14 @@ public class EventDispatcherServiceTests
         );
 
         // Act
-        service.DispatchConnectionStatus(true); // Conecta
+        service.DispatchEmulatorConnectionStatus(true); // Conecta
 
         // Assert
-        gameStateStoreMock.VerifySet(g => g.IsEmulatorConnected = true, Times.Once);
+        gameStateStoreMock.VerifySet(g => g.IsConnectedWithEmulator = true, Times.Once);
         clientProxyMock.Verify(
             c => c.SendCoreAsync(
-                "ConnectionStatusChanged",
-                It.Is<object?[]>(args => args.Length == 1 && ((Event)args[0]!).Type.Equals(EventType.ConnectionStatusChanged)),
+                "EmulatorConnectionStatusChanged",
+                It.Is<object?[]>(args => args.Length == 1 && ((Event)args[0]!).Type.Equals(EventType.EmulatorConnectionStatusChanged)),
                 It.IsAny<CancellationToken>()
             ),
             Times.Once
@@ -94,7 +94,7 @@ public class EventDispatcherServiceTests
     }
 
     [Fact]
-    public void DispatchConnectionStatus_ShouldClearStateAndSendNotification_WhenDisconnected()
+    public void DispatchEmulatorConnectionStatus_ShouldClearStateAndSendNotification_WhenDisconnected()
     {
         // Arrange
         var clientProxyMock = new Mock<ISingleClientProxy>();
@@ -113,7 +113,7 @@ public class EventDispatcherServiceTests
         var loggerMock = new Mock<ILogger<EventDispatcherService>>();
 
         var gameStateStoreMock = new Mock<IGameStateStore>();
-        gameStateStoreMock.Setup(g => g.IsEmulatorConnected).Returns(true); // Conectado antes
+        gameStateStoreMock.Setup(g => g.IsConnectedWithEmulator).Returns(true); // Conectado antes
 
         var service = new EventDispatcherService(
             hubContextMock.Object,
@@ -122,15 +122,15 @@ public class EventDispatcherServiceTests
         );
 
         // Act
-        service.DispatchConnectionStatus(false); // Desconecta
+        service.DispatchEmulatorConnectionStatus(false); // Desconecta
 
         // Assert
-        gameStateStoreMock.VerifySet(g => g.IsEmulatorConnected = false, Times.Once);
+        gameStateStoreMock.VerifySet(g => g.IsConnectedWithEmulator = false, Times.Once);
         gameStateStoreMock.Verify(g => g.ClearState(), Times.Once); // Deve limpar o cache do estado global
         clientProxyMock.Verify(
             c => c.SendCoreAsync(
-                "ConnectionStatusChanged",
-                It.Is<object?[]>(args => args.Length == 1 && ((Event)args[0]!).Type.Equals(EventType.ConnectionStatusChanged)),
+                "EmulatorConnectionStatusChanged",
+                It.Is<object?[]>(args => args.Length == 1 && ((Event)args[0]!).Type.Equals(EventType.EmulatorConnectionStatusChanged)),
                 It.IsAny<CancellationToken>()
             ),
             Times.Once

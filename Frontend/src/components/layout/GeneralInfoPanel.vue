@@ -6,7 +6,7 @@ import { useLocalization } from '../../composables/useLocalization'
 const store = useGameStore()
 const { t } = useLocalization()
 
-const items = computed(() => store.gameState?.importantItems || ({} as import('../../models').ImportantItems))
+const items = computed(() => store.currentState?.importantItems || ({} as import('../../models').ImportantItems))
 
 const milestones = [
   { key: 'treeBoots', nameKey: 'player.treeBoots', icon: '🥾' },

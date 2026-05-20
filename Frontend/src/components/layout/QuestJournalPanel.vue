@@ -6,8 +6,8 @@ import { useLocalization } from '../../composables/useLocalization'
 const store = useGameStore()
 const { getLocalized, getLocalizedQuest } = useLocalization()
 
-const mainQuest = computed(() => getLocalizedQuest(store.gameState?.journal?.mainQuest))
-const sideQuests = computed(() => (store.gameState?.journal?.sideQuests || []).map(q => getLocalizedQuest(q)))
+const mainQuest = computed(() => getLocalizedQuest(store.currentState?.journal?.mainQuest))
+const sideQuests = computed(() => (store.currentState?.journal?.sideQuests || []).map(q => getLocalizedQuest(q)))
 
 const currentMainQuestStep = computed(() => {
   if (!mainQuest.value || !mainQuest.value.steps) return null

@@ -24,11 +24,11 @@ public class GameStateStoreTests
         GameStateStore gameStateStore = new GameStateStore();
         State dummyState = new State();
         gameStateStore.UpdateState(dummyState);
-        gameStateStore.IsEmulatorConnected = true;
+        gameStateStore.IsConnectedWithEmulator = true;
 
         gameStateStore.ClearState();
 
         Assert.Null(gameStateStore.CurrentState);
-        Assert.False(gameStateStore.IsEmulatorConnected);
+        Assert.False(gameStateStore.IsConnectedWithEmulator);
     }
 }
