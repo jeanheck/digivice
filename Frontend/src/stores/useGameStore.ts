@@ -5,7 +5,6 @@ import type * as Events from '../events/events.map';
 import { PlayerConverter } from '../events/converters/player.converter';
 import { PartyConverter } from '../events/converters/party.converter';
 import { JournalConverter } from '../events/converters/journal.converter';
-import { QuestConverter } from '../events/converters/quest.converter';
 import { AreaInformationConverter } from '../events/converters/area-information.converter';
 import { DigimonSlotConverter } from '../events/converters/digimon-slot.converter';
 import { DigimonConverter } from '../events/converters/digimon.converter';
@@ -15,6 +14,7 @@ import { AttributesStateManager } from '../stateManagers/AttributesStateManager'
 import { ResistancesStateManager } from '../stateManagers/ResistancesStateManager';
 import { PartyCalculator } from '../logic/PartyCalculator';
 import { PlayerSyncer } from './syncers/player.syncer';
+import { JournalSyncer } from './syncers/journal.syncer';
 
 export const useGameStore = defineStore('game', () => {
     const isConnectedWithBackend = ref(false);
@@ -157,13 +157,7 @@ export const useGameStore = defineStore('game', () => {
             return;
         }
 
-        if (journalDto.mainQuest !== undefined) {
-            journal.mainQuest = journalDto.mainQuest ? QuestConverter.convert(journalDto.mainQuest as Required<Events.QuestDTO>) : null;
-        }
-
-        if (journalDto.sideQuests !== undefined) {
-            journal.sideQuests = journalDto.sideQuests.map(q => QuestConverter.convert(q as Required<Events.QuestDTO>));
-        }
+        JournalSyncer.sync(journal, journalDto);
     }
 
     return {

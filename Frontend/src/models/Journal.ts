@@ -1,5 +1,5 @@
 export interface Requisite {
-    description: string;
+    id: string;
     isDone: boolean;
 }
 
@@ -17,8 +17,8 @@ export interface StepLocation {
 export interface Step {
     number: number;
     description?: string; // Enriched via local table
-    isCompleted: boolean;
-    prerequisites?: Requisite[];
+    isDone: boolean;
+    requisites?: Requisite[];
     locationOnMap?: string;
     locationOnMapCoordinates?: MapCoordinates;
     locations?: StepLocation[];
@@ -26,9 +26,7 @@ export interface Step {
 
 export interface Quest {
     id: string; // The GUID from backend
-    title: string;
-    description?: string;
-    prerequisites: Requisite[];
+    requisites: Requisite[];
     steps: Step[];
 }
 

@@ -45,13 +45,13 @@ export function useLocalization() {
     // Find the matching local table by Id
     const localTable = questTables.find(table => (table as any).Id === questId);
 
-    // Helper to translate prerequisites
-    const translatePrereqs = (prereqs: any[], localPrereqs?: any[]) => {
-      if (!prereqs || !Array.isArray(prereqs)) return prereqs;
-      return prereqs.map((p, index) => {
-        const itemKey = p.ItemKey || p.itemKey;
-        if (itemKey) {
-          const localizedName = getLocalizedItemName(itemKey);
+    // Helper to translate requisites
+    const translateRequisites = (requisites: any[], localRequisites?: any[]) => {
+      if (!requisites || !Array.isArray(requisites)) return requisites;
+      return requisites.map((p, index) => {
+        const id = p.id || p.Id;
+        if (id) {
+          const localizedName = getLocalizedItemName(id);
           if (localizedName) {
             // Apply translation to both casing variations for UI compatibility
             return { 
@@ -60,8 +60,8 @@ export function useLocalization() {
               Description: localizedName
             };
           }
-        } else if (localPrereqs && localPrereqs[index]) {
-          const localDescription = localPrereqs[index].Description || localPrereqs[index].description;
+        } else if (localRequisites && localRequisites[index]) {
+          const localDescription = localRequisites[index].Description || localRequisites[index].description;
           if (localDescription) {
             return {
               ...p,
@@ -74,14 +74,14 @@ export function useLocalization() {
       });
     };
 
-    // Translate quest-level prerequisites
-    const questPrereqs = enriched.prerequisites || enriched.Prerequisites;
-    if (questPrereqs) {
-      const localQuestPrereqs = localTable ? ((localTable as any).Prerequisites || (localTable as any).prerequisites) : undefined;
-      const translated = translatePrereqs(questPrereqs, localQuestPrereqs);
+    // Translate quest-level requisites
+    const questRequisites = enriched.requisites || enriched.Requisites || enriched.prerequisites || enriched.Prerequisites;
+    if (questRequisites) {
+      const localQuestRequisites = localTable ? ((localTable as any).Requisites || (localTable as any).requisites || (localTable as any).Prerequisites || (localTable as any).prerequisites) : undefined;
+      const translated = translateRequisites(questRequisites, localQuestRequisites);
       // Update both to be safe
-      enriched.prerequisites = translated;
-      enriched.Prerequisites = translated;
+      enriched.requisites = translated;
+      enriched.Requisites = translated;
     }
 
     if (localTable) {
@@ -102,13 +102,20 @@ export function useLocalization() {
             localStepObj = localSteps.find((s: any) => Number(s.Number) === Number(stepNum));
           }
 
-          // Translate step-level item prerequisites (check both cases)
-          const stepPrereqs = enrichedStep.prerequisites || enrichedStep.Prerequisites;
-          if (stepPrereqs) {
-            const localStepPrereqs = localStepObj ? (localStepObj.Prerequisites || localStepObj.prerequisites) : undefined;
-            const translated = translatePrereqs(stepPrereqs, localStepPrereqs);
-            enrichedStep.prerequisites = translated;
-            enrichedStep.Prerequisites = translated;
+          // Ensure both isDone and isCompleted are set for backwards compatibility / UI robustness
+          const stepDone = step.isDone !== undefined ? step.isDone : (step.IsDone || step.isCompleted || step.IsCompleted || false);
+          enrichedStep.isDone = stepDone;
+          enrichedStep.IsDone = stepDone;
+          enrichedStep.isCompleted = stepDone;
+          enrichedStep.IsCompleted = stepDone;
+
+          // Translate step-level item requisites (check both cases)
+          const stepRequisites = enrichedStep.requisites || enrichedStep.Requisites || enrichedStep.prerequisites || enrichedStep.Prerequisites;
+          if (stepRequisites) {
+            const localStepRequisites = localStepObj ? (localStepObj.Requisites || localStepObj.requisites || localStepObj.Prerequisites || localStepObj.prerequisites) : undefined;
+            const translated = translateRequisites(stepRequisites, localStepRequisites);
+            enrichedStep.requisites = translated;
+            enrichedStep.Requisites = translated;
           }
 
           // Translate step description from local table
@@ -148,16 +155,24 @@ export function useLocalization() {
         enriched.Steps = enriched.steps;
       }
     } else {
-      // Even if no local table, still translate item prerequisites if they exist
+      // Even if no local table, still translate item requisites if they exist
       const backendSteps = enriched.steps || enriched.Steps;
       if (backendSteps && Array.isArray(backendSteps)) {
         enriched.steps = backendSteps.map((step: any) => {
           let enrichedStep = { ...step };
-          const stepPrereqs = enrichedStep.prerequisites || enrichedStep.Prerequisites;
-          if (stepPrereqs) {
-            const translated = translatePrereqs(stepPrereqs);
-            enrichedStep.prerequisites = translated;
-            enrichedStep.Prerequisites = translated;
+
+          // Ensure both isDone and isCompleted are set for backwards compatibility / UI robustness
+          const stepDone = step.isDone !== undefined ? step.isDone : (step.IsDone || step.isCompleted || step.IsCompleted || false);
+          enrichedStep.isDone = stepDone;
+          enrichedStep.IsDone = stepDone;
+          enrichedStep.isCompleted = stepDone;
+          enrichedStep.IsCompleted = stepDone;
+
+          const stepRequisites = enrichedStep.requisites || enrichedStep.Requisites || enrichedStep.prerequisites || enrichedStep.Prerequisites;
+          if (stepRequisites) {
+            const translated = translateRequisites(stepRequisites);
+            enrichedStep.requisites = translated;
+            enrichedStep.Requisites = translated;
           }
           return enrichedStep;
         });

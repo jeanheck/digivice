@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
-import type { Quest, Step as StepType } from '../../models'
+import type { Step as StepType } from '../../models'
 import IconClose from '../icons/IconClose.vue'
 import asukaMapUrl from '../../assets/AsukaMap.webp'
 
 const props = defineProps<{
-  quest: Quest | null
+  quest: any | null
   isOpen: boolean
 }>()
 
@@ -34,16 +34,16 @@ onUnmounted(() => {
 
 const isQuestDone = computed(() => {
   if (!props.quest || !props.quest.steps || props.quest.steps.length === 0) return false;
-  return props.quest.steps.every(s => s.isCompleted);
+  return props.quest.steps.every((s: any) => s.isDone);
 })
 
 const isQuestLocked = computed(() => {
-  if (!props.quest || !props.quest.prerequisites || props.quest.prerequisites.length === 0) return false;
-  return !props.quest.prerequisites.every((p: any) => p.isDone);
+  if (!props.quest || !props.quest.requisites || props.quest.requisites.length === 0) return false;
+  return !props.quest.requisites.every((p: any) => p.isDone);
 })
 
-const hasPrerequisites = computed(() => {
-  return props.quest?.prerequisites && props.quest.prerequisites.length > 0;
+const hasRequisites = computed(() => {
+  return props.quest?.requisites && props.quest.requisites.length > 0;
 })
 
 // Geographic Integration
@@ -141,13 +141,13 @@ function formatTooltipText(text: string) {
               </p>
             </div>
 
-            <!-- Prerequisites Section -->
-            <div v-if="hasPrerequisites" class="flex flex-col gap-2">
+            <!-- Requisites Section -->
+            <div v-if="hasRequisites" class="flex flex-col gap-2">
               <h3 class="text-xs text-amber-500 font-bold uppercase tracking-wider mb-1 border-b border-amber-900/40 pb-1">
                 {{ $t('questDetails.prerequisites') }}
               </h3>
               <div
-                v-for="(prereq, idx) in quest.prerequisites"
+                v-for="(prereq, idx) in quest.requisites"
                 :key="idx"
                 class="flex items-start gap-3 p-2 rounded transition-colors"
                 :class="prereq.isDone ? 'bg-green-900/10 border border-green-800/30' : 'bg-red-900/10 border border-red-800/30'"
@@ -176,26 +176,26 @@ function formatTooltipText(text: string) {
                 @click="selectStep(step)"
                 class="flex items-start gap-3 p-2 rounded transition-all cursor-pointer group"
                 :class="[
-                  step.isCompleted ? 'bg-green-900/10 border border-green-800/30' : 'bg-white/5 border border-white/10',
+                  step.isDone ? 'bg-green-900/10 border border-green-800/30' : 'bg-white/5 border border-white/10',
                   selectedStep?.number === step.number ? 'ring-1 ring-cyan-500 shadow-[0_0_10px_rgba(0,255,255,0.2)] bg-[#001a33]' : 'hover:bg-active-hover hover:border-blue-500/30'
                 ]"
               >
                 <!-- Checkbox Indicator -->
                 <div class="mt-0.5 flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors shadow-inner"
-                     :class="step.isCompleted ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)]' : 'bg-black/50 border-gray-600'">
-                  <span v-if="step.isCompleted" class="text-xs">✔</span>
+                     :class="step.isDone ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)]' : 'bg-black/50 border-gray-600'">
+                  <span v-if="step.isDone" class="text-xs">✔</span>
                 </div>
                 
                 <!-- Description -->
                 <div class="flex-1">
                   <p class="text-sm leading-snug transition-colors"
-                     :class="step.isCompleted ? 'text-gray-400 line-through decoration-green-900' : 'text-gray-200'">
+                     :class="step.isDone ? 'text-gray-400 line-through decoration-green-900' : 'text-gray-200'">
                     {{ getLocalized(step.description) }}
                   </p>
-                  <!-- Step Prerequisites (items checklist) -->
-                  <div v-if="step.prerequisites && step.prerequisites.length > 0" class="mt-1.5 ml-1 flex flex-col gap-1">
+                  <!-- Step Requisites (items checklist) -->
+                  <div v-if="step.requisites && step.requisites.length > 0" class="mt-1.5 ml-1 flex flex-col gap-1">
                     <div
-                      v-for="(prereq, pidx) in step.prerequisites"
+                      v-for="(prereq, pidx) in step.requisites"
                       :key="pidx"
                       class="flex items-center gap-2 text-xs"
                     >

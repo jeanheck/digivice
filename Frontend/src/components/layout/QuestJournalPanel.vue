@@ -11,7 +11,7 @@ const sideQuests = computed(() => (store.currentState?.journal?.sideQuests || []
 
 const currentMainQuestStep = computed(() => {
   if (!mainQuest.value || !mainQuest.value.steps) return null
-  return mainQuest.value.steps.find((s: any) => !s.isCompleted) || null
+  return mainQuest.value.steps.find((s: any) => !s.isDone) || null
 })
 
 const isSideQuestsExpanded = ref(true)
@@ -33,20 +33,20 @@ const displaySideQuests = computed(() => {
 // Calculate visually if a quest is done based on its steps
 const isQuestDone = (quest: any) => {
   if (!quest || !quest.steps || quest.steps.length === 0) return false;
-  return quest.steps.every((s: any) => s.isCompleted);
+  return quest.steps.every((s: any) => s.isDone);
 }
 
 const isQuestLocked = (quest: any) => {
-  if (!quest || !quest.prerequisites || quest.prerequisites.length === 0) return false;
-  return !quest.prerequisites.every((p: any) => p.isDone);
+  if (!quest || !quest.requisites || quest.requisites.length === 0) return false;
+  return !quest.requisites.every((p: any) => p.isDone);
 }
 
 const isQuestNew = (quest: any) => {
   if (!quest || !quest.steps || quest.steps.length === 0) return false;
   if (isQuestLocked(quest)) return false;
   if (isQuestDone(quest)) return false;
-  // New = all prerequisites met AND first step not yet completed
-  return !quest.steps[0].isCompleted;
+  // New = all requisites met AND first step not yet completed
+  return !quest.steps[0].isDone;
 }
 </script>
 
