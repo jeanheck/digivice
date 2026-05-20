@@ -53,22 +53,19 @@ export const useGameStore = defineStore('game', () => {
     }
 
     function syncPlayer(playerDto: Events.PlayerDTO | null): void {
-        if (!currentState.value || !playerDto) {
+        const player = currentState.value?.player;
+        if (!player || !playerDto) {
             return;
         }
 
-        if (!currentState.value.player) {
-            currentState.value.player = PlayerConverter.convert(playerDto);
-        } else {
-            if (playerDto.name !== undefined) {
-                currentState.value.player.name = playerDto.name;
-            }
-            if (playerDto.bits !== undefined) {
-                currentState.value.player.bits = playerDto.bits;
-            }
-            if (playerDto.location !== undefined) {
-                currentState.value.player.location = playerDto.location;
-            }
+        if (playerDto.name !== undefined) {
+            player.name = playerDto.name;
+        }
+        if (playerDto.bits !== undefined) {
+            player.bits = playerDto.bits;
+        }
+        if (playerDto.location !== undefined) {
+            player.location = playerDto.location;
         }
     }
 
