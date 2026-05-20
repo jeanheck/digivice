@@ -5,5 +5,5 @@ import type { JournalDTO } from './journal.dto';
 export interface StateDTO {
     player: Required<PlayerDTO> | null;
     party: PartyDTO | null;
-    journal: JournalDTO | null;
+    journal: Required<JournalDTO> | null;
 }

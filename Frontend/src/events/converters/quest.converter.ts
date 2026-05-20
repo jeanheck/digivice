@@ -4,8 +4,7 @@ import { RequisiteConverter } from './requisite.converter';
 import { StepConverter } from './step.converter';
 
 export class QuestConverter {
-    public static convert(dto: QuestDTO | null): Quest | null {
-        if (!dto || !dto.id) return null;
+    public static convert(dto: Required<QuestDTO>): Quest {
         return {
             id: dto.id,
             title: '', // Preenchido via getLocalizedQuest no composable de localização

@@ -1,14 +1,14 @@
 import type { JournalDTO } from '../dto/journal.dto';
-import type { Journal, Quest } from '../../models/Journal';
+import type { QuestDTO } from '../dto/journals/quest.dto';
+import type { Journal } from '../../models/Journal';
 import { QuestConverter } from './quest.converter';
 
 export class JournalConverter {
-    public static convert(journal: JournalDTO | null): Journal | null {
-        if (!journal) return null;
+    public static convert(journal: Required<JournalDTO>): Journal {
         return {
-            mainQuest: QuestConverter.convert(journal.mainQuest ?? null),
+            mainQuest: journal.mainQuest ? QuestConverter.convert(journal.mainQuest as Required<QuestDTO>) : null,
             sideQuests: journal.sideQuests
-                ? journal.sideQuests.map(q => QuestConverter.convert(q)).filter((q): q is Quest => q !== null)
+                ? journal.sideQuests.map(q => QuestConverter.convert(q as Required<QuestDTO>))
                 : []
         };
     }
