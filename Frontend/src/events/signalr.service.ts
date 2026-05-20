@@ -63,10 +63,10 @@ class SignalRService {
         try {
             await this.connection.start()
             signalRLogger.info(`Connected to GameHub at: ${hubUrl}`)
-            this.emit('ConnectionStatusChanged', { isConnected: true })
+            this.emit('HubConnectionStatusChanged', { isConnected: true })
         } catch (err) {
             signalRLogger.error(`Connection Error at ${hubUrl}`, err)
-            this.emit('ConnectionStatusChanged', { isConnected: false })
+            this.emit('HubConnectionStatusChanged', { isConnected: false })
         }
     }
 
@@ -75,17 +75,17 @@ class SignalRService {
 
         this.connection.onreconnecting(() => {
             signalRLogger.warn('Reconnecting...')
-            this.emit('ConnectionStatusChanged', { isConnected: false })
+            this.emit('HubConnectionStatusChanged', { isConnected: false })
         })
 
         this.connection.onreconnected(() => {
             signalRLogger.info('Reconnected.')
-            this.emit('ConnectionStatusChanged', { isConnected: true })
+            this.emit('HubConnectionStatusChanged', { isConnected: true })
         })
 
         this.connection.onclose(() => {
             signalRLogger.error('Connection closed.')
-            this.emit('ConnectionStatusChanged', { isConnected: false })
+            this.emit('HubConnectionStatusChanged', { isConnected: false })
         })
     }
 
@@ -94,6 +94,8 @@ class SignalRService {
 
         // Only logs events that have handlers defined in the EventsMap.
         for (const eventName of this.handlers.keys()) {
+            if (eventName === 'HubConnectionStatusChanged') continue
+
             this.connection.on(eventName, (eventWrapper: any) => {
                 signalRLogger.debug(`Hub Event [${eventName}]`, eventWrapper)
 

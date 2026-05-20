@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import type { State } from '../models/State'
 import type * as Events from '../events/events.map'
 import { PlayerConverter } from '../events/converters/player.converter'
@@ -24,15 +24,21 @@ import { ResistancesStateManager } from '../stateManagers/ResistancesStateManage
 import { AreaInformationConverter } from '../events/converters/area-information.converter'
 
 export const useGameStore = defineStore('game', () => {
-    const isConnected = ref(false)
+    const isConnectedWithBackend = ref(false)
+    const isConnectedWithEmulator = ref(false)
+    const isConnected = computed(() => isConnectedWithBackend.value && isConnectedWithEmulator.value)
     const gameState = ref<State | null>(null)
 
     function getDigimonOnPartySlot(slotIndex: number) {
         return gameState.value?.party?.slots[slotIndex] ?? null
     }
 
-    function updateConnectionStatus(event: Events.ConnectionStatusChangedDTO) {
-        isConnected.value = event.isConnected
+    function updateHubConnectionStatus(event: { isConnected: boolean }) {
+        isConnectedWithBackend.value = event.isConnected
+    }
+
+    function updateEmulatorConnectionStatus(event: Events.EmulatorConnectionStatusChangedDTO) {
+        isConnectedWithEmulator.value = event.isConnected
     }
 
     function updateInitialState(event: Events.InitialStateChangedDTO) {
@@ -172,8 +178,11 @@ export const useGameStore = defineStore('game', () => {
 
     return {
         isConnected,
+        isConnectedWithBackend,
+        isConnectedWithEmulator,
         gameState,
-        updateConnectionStatus,
+        updateHubConnectionStatus,
+        updateEmulatorConnectionStatus,
         updateInitialState,
         updatePlayerBits,
         updatePlayerName,

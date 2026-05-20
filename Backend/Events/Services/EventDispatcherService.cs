@@ -20,7 +20,7 @@ public class EventDispatcherService(
         }
 
         gameStateStore.IsEmulatorConnected = isConnected;
-        SafeDispatch(new Event(EventType.ConnectionStatusChanged, new ConnectionDTO(isConnected)));
+        SafeDispatch(new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(isConnected)));
 
         if (!isConnected)
         {

@@ -8,9 +8,13 @@ import { signalRLogger } from '../events/logger'
 export function initSignalRHandlers() {
     const store = useGameStore()
 
-    // 1. Assina ConnectionStatusChanged
-    signalRService.on('ConnectionStatusChanged', (data) => {
-        store.updateConnectionStatus(data)
+    // 1. Assina os eventos de conexão (Backend e Emulador)
+    signalRService.on('HubConnectionStatusChanged', (data) => {
+        store.updateHubConnectionStatus(data)
+    })
+
+    signalRService.on('EmulatorConnectionStatusChanged', (data) => {
+        store.updateEmulatorConnectionStatus(data)
     })
 
     // 2. Assina InitialState (Backend) -> Mapeia para updateInitialState da Store

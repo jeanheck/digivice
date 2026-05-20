@@ -3,4 +3,4 @@ export interface ConnectionDTO {
 }
 
 // Alias for connection status change events
-export type ConnectionStatusChangedDTO = ConnectionDTO;
+export type EmulatorConnectionStatusChangedDTO = ConnectionDTO;
