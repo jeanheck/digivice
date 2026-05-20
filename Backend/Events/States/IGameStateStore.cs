@@ -5,7 +5,7 @@ namespace Backend.Events.States;
 public interface IGameStateStore
 {
     State? CurrentState { get; }
-    bool? IsEmulatorConnected { get; set; }
+    bool? IsConnectedWithEmulator { get; set; }
     void UpdateState(State state);
     void ClearState();
 }

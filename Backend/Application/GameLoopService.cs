@@ -30,7 +30,7 @@ namespace Backend.Application
                     if (!memoryReader.TryConnect())
                     {
                         // If the connection fails, it sends false and waits 1 second before trying again.
-                        eventDispatcherService.DispatchConnectionStatus(false);
+                        eventDispatcherService.DispatchEmulatorConnectionStatus(false);
                         await Task.Delay(pollingIntervalMs, stoppingToken);
                         continue;
                     }
@@ -38,7 +38,7 @@ namespace Backend.Application
                     {
                         // Successful connection.
                         Serilog.Log.Information("Connected to DuckStation.");
-                        eventDispatcherService.DispatchConnectionStatus(true);
+                        eventDispatcherService.DispatchEmulatorConnectionStatus(true);
                     }
                 }
 
@@ -70,7 +70,7 @@ namespace Backend.Application
                     // In case the connection was lost abruptly during read
                     if (!memoryReader.IsConnected)
                     {
-                        eventDispatcherService.DispatchConnectionStatus(false);
+                        eventDispatcherService.DispatchEmulatorConnectionStatus(false);
                     }
                 }
 

@@ -12,17 +12,17 @@ public class EventDispatcherService(
     ILogger<EventDispatcherService> logger,
     IGameStateStore gameStateStore) : IEventDispatcherService
 {
-    public void DispatchConnectionStatus(bool isConnected)
+    public void DispatchEmulatorConnectionStatus(bool isConnectedWithEmulator)
     {
-        if (gameStateStore.IsEmulatorConnected == isConnected)
+        if (gameStateStore.IsConnectedWithEmulator == isConnectedWithEmulator)
         {
             return;
         }
 
-        gameStateStore.IsEmulatorConnected = isConnected;
-        SafeDispatch(new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(isConnected)));
+        gameStateStore.IsConnectedWithEmulator = isConnectedWithEmulator;
+        SafeDispatch(new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(isConnectedWithEmulator)));
 
-        if (!isConnected)
+        if (!isConnectedWithEmulator)
         {
             gameStateStore.ClearState();
         }
