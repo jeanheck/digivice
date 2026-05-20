@@ -4,11 +4,11 @@ import type { Journal } from '../../models/Journal';
 import { QuestConverter } from './quest.converter';
 
 export class JournalConverter {
-    public static convert(journal: Required<JournalDTO>): Journal {
+    public static convert(journalDto: Required<JournalDTO>): Journal {
         return {
-            mainQuest: journal.mainQuest ? QuestConverter.convert(journal.mainQuest as Required<QuestDTO>) : null,
-            sideQuests: journal.sideQuests
-                ? journal.sideQuests.map(q => QuestConverter.convert(q as Required<QuestDTO>))
+            mainQuest: journalDto.mainQuest ? QuestConverter.convert(journalDto.mainQuest as Required<QuestDTO>) : null,
+            sideQuests: journalDto.sideQuests
+                ? journalDto.sideQuests.map(q => QuestConverter.convert(q as Required<QuestDTO>))
                 : []
         };
     }

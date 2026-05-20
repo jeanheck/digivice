@@ -2,11 +2,11 @@ import type { PlayerDTO } from '../dto/player.dto';
 import type { Player } from '../../models/Player';
 
 export class PlayerConverter {
-    public static convert(player: Required<PlayerDTO>): Player {
+    public static convert(playerDto: Required<PlayerDTO>): Player {
         return {
-            name: player.name,
-            bits: player.bits,
-            location: player.location
+            name: playerDto.name,
+            bits: playerDto.bits,
+            location: playerDto.location
         };
     }
 }
