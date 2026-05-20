@@ -3,7 +3,7 @@ import type { PartyDTO } from './party.dto';
 import type { JournalDTO } from './journal.dto';
 
 export interface StateDTO {
-    player: PlayerDTO | null;
+    player: Required<PlayerDTO> | null;
     party: PartyDTO | null;
     journal: JournalDTO | null;
 }

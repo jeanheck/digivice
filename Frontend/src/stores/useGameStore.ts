@@ -45,7 +45,7 @@ export const useGameStore = defineStore('game', () => {
         }
 
         currentState.value = {
-            player: PlayerConverter.convert(state.player),
+            player: state.player ? PlayerConverter.convert(state.player) : null,
             party: PartyConverter.convert(state.party),
             importantItems: null,
             journal: JournalConverter.convert(state.journal)
