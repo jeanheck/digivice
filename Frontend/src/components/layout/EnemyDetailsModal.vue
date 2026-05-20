@@ -2,7 +2,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import IconClose from '../icons/IconClose.vue'
 import { useLocalization } from '../../composables/useLocalization'
-import type { Enemy } from '../../models/Enemy'
+import type { Enemy } from '../../models/enemy'
 
 const props = defineProps<{
   isOpen: boolean

@@ -1,7 +1,7 @@
 import TechniquesTable from '../database/TechniquesTable.json';
 import DigievolutionTechniques from '../database/DigievolutionTechniques.json';
 import TechniquesTypeTable from '../database/TechniquesTypeTable.json';
-import type { Technique, TechniqueType } from '../models/Digimon';
+import type { Technique, TechniqueType } from '../models';
 import { DigievolutionRegistry } from './DigievolutionRegistry';
 
 export class TechniqueCalculator {

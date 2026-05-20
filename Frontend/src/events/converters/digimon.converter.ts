@@ -1,5 +1,5 @@
 import type * as DTO from '../events.map';
-import type * as Model from '../../models/Digimon';
+import type * as Model from '../../models';
 import { AttributesConverter } from './attributes.converter';
 import { ResistancesConverter } from './resistances.converter';
 import { EquipmentsConverter } from './equipments.converter';

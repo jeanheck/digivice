@@ -10,9 +10,9 @@ const props = defineProps<{
 
 // Skills modal state
 const modalOpen = ref(false);
-const selectedDigievolution = ref<Digievolution | null>(null);
+const selectedDigievolution = ref<any | null>(null);
 
-function openSkills(digievolution: Digievolution | null) {
+function openSkills(digievolution: any | null) {
     if (!digievolution) {
         return;
     }
@@ -46,8 +46,8 @@ function closeSkills() {
         <!-- Content (Name) -->
         <div 
           class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
-          :class="slot.digievolution.id === activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
-          {{ slot.digievolution.name }}
+          :class="(slot.digievolution as any).id === activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
+          {{ (slot.digievolution as any).name }}
         </div>
 
         <!-- Slanted Divider -->

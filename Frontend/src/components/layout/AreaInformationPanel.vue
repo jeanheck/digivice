@@ -2,8 +2,8 @@
 import { computed, ref } from 'vue'
 import EnemyDetailsModal from './EnemyDetailsModal.vue'
 import { useLocalization } from '../../composables/useLocalization'
-import type { Enemy } from '../../models/Enemy'
-import type { AreaInformation } from '../../models/AreaInformation'
+import type { Enemy } from '../../models/enemy'
+import type { AreaInformation } from '../../models/area-information'
 
 const props = defineProps<{
     areaInfo: AreaInformation | null

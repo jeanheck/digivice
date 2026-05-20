@@ -1,5 +1,5 @@
 import LocationsData from '../database/Locations.json';
-import type { Location } from '../models/Location';
+import type { Location } from '../models';
 
 export class LocationCalculator {
     public static getFromMapId(mapId: string): Location | null {

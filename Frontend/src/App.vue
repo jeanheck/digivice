@@ -89,7 +89,7 @@ const handleCloseQuestModal = () => {
     <PlayerFooter 
       :player-name="store.currentState?.player?.name ?? $t('common.connecting')"
       :bits="store.currentState?.player?.bits ?? 0"
-      :group-charisma="store.currentState?.party?.groupCharisma ?? 0"
+      :group-charisma="0"
       :is-connected="store.isConnected"
     />
 

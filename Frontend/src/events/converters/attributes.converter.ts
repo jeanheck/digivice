@@ -1,5 +1,5 @@
 import DigievolutionData from '../../database/Digievolution.json';
-import { DigimonStatusType, type Attributes, type Equipments, type Equipament } from '../../models/Digimon';
+import { DigimonStatusType, type Attributes, type Equipments, type Equipament } from '../../models';
 import type { AttributesDTO } from '../events.map';
 import { DigimonStatusConverter } from '../../converters/DigimonStatusConverter';
 

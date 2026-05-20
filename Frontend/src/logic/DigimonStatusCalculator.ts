@@ -1,4 +1,4 @@
-import { EquipamentType, EquipamentsAttributesOperationType, type DigimonStatusType, type Equipament } from "../models/Digimon";
+import { EquipamentType, EquipamentsAttributesOperationType, type DigimonStatusType, type Equipament } from "../models";
 
 export class DigimonStatusCalculator {
     public static calculateBonusFromEquipaments(

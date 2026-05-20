@@ -1,4 +1,4 @@
-import type { Requisite } from '../../models/Journal';
+import type { Requisite } from '../../models';
 import type { RequisiteDTO } from '../../events/dto/journals/quests/requisite.dto';
 
 export class RequisiteSyncer {

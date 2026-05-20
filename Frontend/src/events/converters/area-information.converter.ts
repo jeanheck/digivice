@@ -1,5 +1,4 @@
-import type { AreaInformation } from '../../models/AreaInformation';
-import type { Enemy } from '../../models/Enemy';
+import type { AreaInformation, Enemy } from '../../models';
 import { LocationCalculator } from '../../logic/LocationCalculator';
 import EnemiesData from '../../database/EnemiesTable.json';
 

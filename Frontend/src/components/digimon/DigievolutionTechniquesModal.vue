@@ -6,7 +6,7 @@ import { useLocalization } from '../../composables/useLocalization'
 
 const props = defineProps<{
   isOpen: boolean
-  digievolution: Digievolution | null
+  digievolution: any | null
 }>()
 
 const emit = defineEmits(['close'])

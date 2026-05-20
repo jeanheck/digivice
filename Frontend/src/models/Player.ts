@@ -3,4 +3,3 @@ export interface Player {
     bits: number;
     location: string;
 }
-

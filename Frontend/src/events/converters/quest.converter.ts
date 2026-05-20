@@ -1,5 +1,5 @@
 import type { QuestDTO } from '../dto/journals/quest.dto';
-import type { Quest } from '../../models/Journal';
+import type { Quest } from '../../models';
 import { RequisiteConverter } from './requisite.converter';
 import { StepConverter } from './step.converter';
 

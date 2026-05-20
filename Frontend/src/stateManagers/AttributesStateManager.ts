@@ -1,4 +1,4 @@
-import type { Digimon } from '../models/Digimon';
+import type { Digimon } from '../models';
 import type { AttributesDTO } from '../events/events.map';
 import { AttributesConverter } from '../events/converters/attributes.converter';
 import { AttributesUpdater } from '../updaters/AttributesUpdater';

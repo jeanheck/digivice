@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
-import type { State } from '../models/State';
+import type { State } from '../models';
 import type * as Events from '../events/events.map';
 import { PlayerConverter } from '../events/converters/player.converter';
 import { PartyConverter } from '../events/converters/party.converter';
@@ -12,7 +12,6 @@ import { EquipmentsConverter } from '../events/converters/equipments.converter';
 import { DigievolutionsConverter } from '../events/converters/digievolutions.converter';
 import { AttributesStateManager } from '../stateManagers/AttributesStateManager';
 import { ResistancesStateManager } from '../stateManagers/ResistancesStateManager';
-import { PartyCalculator } from '../logic/PartyCalculator';
 import { PlayerSyncer } from './syncers/player.syncer';
 import { JournalSyncer } from './syncers/journal.syncer';
 
@@ -154,10 +153,6 @@ export const useGameStore = defineStore('game', () => {
                 }
             }
         });
-
-        currentState.value.party.groupCharisma = PartyCalculator.calculateGroupCharisma(
-            currentState.value.party.slots
-        );
     }
 
     return {

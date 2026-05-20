@@ -47,7 +47,7 @@ const hasRequisites = computed(() => {
 })
 
 // Geographic Integration
-const selectedStep = ref<StepType | null>(null)
+const selectedStep = ref<any | null>(null)
 const currentLocationIndex = ref(0)
 
 const selectStep = (step: StepType) => {
@@ -267,8 +267,8 @@ function formatTooltipText(text: string) {
                             <div class="flex gap-2 px-3 py-1.5 bg-black/80 rounded border border-cyan-900/80 shadow-[0_0_10px_rgba(0,170,255,0.2)]">
                                 <div v-for="(_, idx) in selectedStep.locations" :key="idx" 
                                      class="w-2 h-2 rounded-full transition-all cursor-pointer" 
-                                     :class="idx === currentLocationIndex ? 'bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)] scale-110' : 'bg-cyan-900 hover:bg-cyan-600'"
-                                     @click.prevent="currentLocationIndex = idx"></div>
+                                     :class="Number(idx) === currentLocationIndex ? 'bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)] scale-110' : 'bg-cyan-900 hover:bg-cyan-600'"
+                                     @click.prevent="currentLocationIndex = Number(idx)"></div>
                             </div>
                             
                             <button @click.prevent="currentLocationIndex = (currentLocationIndex + 1) % selectedStep.locations.length" class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)]">&gt;</button>

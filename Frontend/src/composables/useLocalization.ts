@@ -123,30 +123,13 @@ export function useLocalization() {
             enrichedStep.description = localStepObj.Description;
             enrichedStep.Description = localStepObj.Description;
 
-            // Geographic info from local JSON
-            enrichedStep.locationOnMap = getLocalized(localStepObj.LocationOnMap || localStepObj.locationOnMap);
-            enrichedStep.LocationOnMap = enrichedStep.locationOnMap;
-
-            if (localStepObj.LocationOnMapCoordinates) {
-              const coords = localStepObj.LocationOnMapCoordinates;
-              enrichedStep.locationOnMapCoordinates = {
-                x: coords.X !== undefined ? coords.X : coords.x,
-                y: coords.Y !== undefined ? coords.Y : coords.y
-              };
-              enrichedStep.LocationOnMapCoordinates = enrichedStep.locationOnMapCoordinates;
-            }
-
-            if (localStepObj.Locations) {
-              enrichedStep.locations = localStepObj.Locations.map((loc: any) => ({
-                locationImage: loc.LocationImage || loc.locationImage,
-                target: getLocalized(loc.Target || loc.target),
-                locationImageCoordinates: loc.LocationImageCoordinates ? {
-                  x: loc.LocationImageCoordinates.X !== undefined ? loc.LocationImageCoordinates.X : loc.LocationImageCoordinates.x,
-                  y: loc.LocationImageCoordinates.Y !== undefined ? loc.LocationImageCoordinates.Y : loc.LocationImageCoordinates.y
-                } : null
-              }));
-              enrichedStep.Locations = enrichedStep.locations;
-            }
+            // Geographic info from local JSON (removed properties set to null)
+            enrichedStep.locationOnMap = null;
+            enrichedStep.LocationOnMap = null;
+            enrichedStep.locationOnMapCoordinates = null;
+            enrichedStep.LocationOnMapCoordinates = null;
+            enrichedStep.locations = null;
+            enrichedStep.Locations = null;
           }
 
           return enrichedStep;

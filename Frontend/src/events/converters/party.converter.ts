@@ -1,7 +1,6 @@
 import type { PartyDTO } from '../dto/party.dto';
-import type { Party, DigimonSlot } from '../../models/Party';
+import type { Party, DigimonSlot } from '../../models';
 import { DigimonSlotConverter } from './digimon-slot.converter';
-import { PartyCalculator } from '../../logic/PartyCalculator';
 
 export class PartyConverter {
     public static convert(party: PartyDTO | null): Party | null {
@@ -26,8 +25,7 @@ export class PartyConverter {
         });
 
         return {
-            slots,
-            groupCharisma: PartyCalculator.calculateGroupCharisma(slots)
+            slots
         };
     }
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DigimonStatus } from '../../models/Digimon';
+import type { DigimonStatus } from '../../models/digimon-status';
 
 defineProps<{
   status: DigimonStatus;

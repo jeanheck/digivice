@@ -1,5 +1,5 @@
 import { DigimonStatusCalculator } from '../logic/DigimonStatusCalculator';
-import type { DigimonStatus, DigimonStatusType } from '../models/Digimon';
+import type { DigimonStatus, DigimonStatusType } from '../models';
 
 export class DigimonStatusConverter {
     public static convert(

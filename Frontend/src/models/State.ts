@@ -1,6 +1,6 @@
-import type { Player } from './Player';
-import type { Party } from './Party';
-import type { Journal } from './Journal';
+import type { Player } from './player';
+import type { Party } from './party';
+import type { Journal } from './journal';
 
 export interface State {
     player: Player | null;

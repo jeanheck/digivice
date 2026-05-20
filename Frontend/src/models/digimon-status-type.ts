@@ -1,0 +1,15 @@
+export enum DigimonStatusType {
+    strength = "strength",
+    defense = "defense",
+    spirit = "spirit",
+    wisdom = "wisdom",
+    speed = "speed",
+    charisma = "charisma",
+    fire = "fire",
+    water = "water",
+    ice = "ice",
+    wind = "wind",
+    thunder = "thunder",
+    machine = "machine",
+    dark = "dark",
+}

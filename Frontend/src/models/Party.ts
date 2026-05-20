@@ -1,12 +1,5 @@
-import type { Digimon } from './Digimon';
-
-export interface DigimonSlot {
-    index: number;
-    digimonId: number | null;
-    digimon: Digimon | null;
-}
+import type { DigimonSlot } from './digimon-slot';
 
 export interface Party {
     slots: DigimonSlot[];
-    groupCharisma: number;
 }

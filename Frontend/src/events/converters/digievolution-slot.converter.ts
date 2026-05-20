@@ -1,7 +1,5 @@
 import type { DigievolutionSlotDTO } from '../dto/parties/digimons/digievolution-slot.dto';
-import type { DigievolutionSlot } from '../../models/Digimon';
-import { DigievolutionRegistry } from '../../logic/DigievolutionRegistry';
-import { TechniqueCalculator } from '../../logic/TechniqueCalculator';
+import type { DigievolutionSlot } from '../../models';
 
 export class DigievolutionSlotConverter {
     public static convert(slot: DigievolutionSlotDTO | null): DigievolutionSlot | null {
@@ -9,10 +7,7 @@ export class DigievolutionSlotConverter {
         
         const level = slot.digievolution?.level;
         const digievolution = (level !== undefined && level !== null) ? {
-            id: slot.digievolutionId,
-            level,
-            name: DigievolutionRegistry.getDigievolutionNameById(slot.digievolutionId),
-            techniques: TechniqueCalculator.getTechniquesForDigievolution(slot.digievolutionId, level)
+            level
         } : null;
 
         return {

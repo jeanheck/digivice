@@ -1,5 +1,5 @@
 import type { DigievolutionSlotDTO } from '../dto/parties/digimons/digievolution-slot.dto';
-import type { DigievolutionSlot } from '../../models/Digimon';
+import type { DigievolutionSlot } from '../../models';
 import { DigievolutionSlotConverter } from './digievolution-slot.converter';
 
 export class DigievolutionsConverter {

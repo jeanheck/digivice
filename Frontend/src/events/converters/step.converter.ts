@@ -1,5 +1,5 @@
 import type { StepDTO } from '../dto/journals/quests/step.dto';
-import type { Step } from '../../models/Journal';
+import type { Step } from '../../models';
 import { RequisiteConverter } from './requisite.converter';
 
 export class StepConverter {

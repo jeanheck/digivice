@@ -1,5 +1,5 @@
 import type { RequisiteDTO } from '../dto/journals/quests/requisite.dto';
-import type { Requisite } from '../../models/Journal';
+import type { Requisite } from '../../models';
 
 export class RequisiteConverter {
     public static convert(requisiteDto: RequisiteDTO): Requisite {

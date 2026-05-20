@@ -1,4 +1,4 @@
-import type { Player } from '../../models/Player';
+import type { Player } from '../../models';
 import type * as Events from '../../events/events.map';
 
 export class PlayerSyncer {

@@ -6,7 +6,7 @@ vi.mock('../stores/useGameStore', () => ({
   useGameStore: () => ({
     currentState: {
       player: { name: 'Agumon', bits: 123 },
-      party: { slots: [null, null, null], groupCharisma: 10 },
+      party: { slots: [null, null, null] },
       journal: { mainQuest: null, sideQuests: [] }
     },
     areaInformation: { location: { name: 'File Island' }, enemies: [] },
