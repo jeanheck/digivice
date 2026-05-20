@@ -52,13 +52,22 @@ export const useGameStore = defineStore('game', () => {
         };
     }
 
-    function syncPlayer(playerDto: Events.PlayerDTO | null): void {
-        const player = currentState.value?.player;
-        if (!player || !playerDto) {
+    function syncPlayer(newPlayerDto: Events.PlayerDTO | null): void {
+        const previousPlayer = currentState.value?.player;
+        if (!previousPlayer || !newPlayerDto) {
             return;
         }
 
-        PlayerSyncer.sync(player, playerDto);
+        PlayerSyncer.sync(previousPlayer, newPlayerDto);
+    }
+    
+    function syncJournal(newJournalDto: Events.JournalDTO | null): void {
+        const previousJournal = currentState.value?.journal;
+        if (!previousJournal || !newJournalDto) {
+            return;
+        }
+
+        JournalSyncer.sync(previousJournal, newJournalDto);
     }
 
     function syncParty(partyDto: Events.PartyDTO | null): void {
@@ -149,15 +158,6 @@ export const useGameStore = defineStore('game', () => {
         currentState.value.party.groupCharisma = PartyCalculator.calculateGroupCharisma(
             currentState.value.party.slots
         );
-    }
-
-    function syncJournal(journalDto: Events.JournalDTO | null): void {
-        const journal = currentState.value?.journal;
-        if (!journal || !journalDto) {
-            return;
-        }
-
-        JournalSyncer.sync(journal, journalDto);
     }
 
     return {
