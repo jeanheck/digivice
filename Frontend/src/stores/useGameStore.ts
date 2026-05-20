@@ -22,6 +22,9 @@ export const useGameStore = defineStore('game', () => {
         return isConnectedWithBackend.value && isConnectedWithEmulator.value;
     });
     const currentState = ref<State | null>(null);
+    const areaInformation = computed(() => {
+        return AreaInformationConverter.convert(currentState.value?.player?.location);
+    });
 
     function getDigimonOnPartySlot(slotIndex: number) {
         return currentState.value?.party?.slots[slotIndex] ?? null;
@@ -45,8 +48,7 @@ export const useGameStore = defineStore('game', () => {
             player: PlayerConverter.convert(state.player),
             party: PartyConverter.convert(state.party),
             importantItems: null,
-            journal: JournalConverter.convert(state.journal),
-            areaInformation: AreaInformationConverter.convert(state.player?.location)
+            journal: JournalConverter.convert(state.journal)
         };
     }
 
@@ -67,10 +69,6 @@ export const useGameStore = defineStore('game', () => {
             if (playerDto.location !== undefined) {
                 currentState.value.player.location = playerDto.location;
             }
-        }
-
-        if (playerDto.location !== undefined) {
-            currentState.value.areaInformation = AreaInformationConverter.convert(playerDto.location);
         }
     }
 
@@ -188,6 +186,7 @@ export const useGameStore = defineStore('game', () => {
         isConnectedWithBackend,
         isConnectedWithEmulator,
         currentState,
+        areaInformation,
         getDigimonOnPartySlot,
         syncHubConnectionStatus,
         syncEmulatorConnectionStatus,

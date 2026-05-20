@@ -79,7 +79,7 @@ const handleCloseQuestModal = () => {
         
         <!-- Area Information -->
         <div class="flex-[2] min-h-[200px] flex flex-col">
-          <AreaInformationPanel :area-info="store.currentState?.areaInformation ?? null" class="flex-1" />
+          <AreaInformationPanel :area-info="store.areaInformation ?? null" class="flex-1" />
         </div>
       </div>
 
