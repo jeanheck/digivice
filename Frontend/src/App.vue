@@ -57,10 +57,10 @@ const handleCloseQuestModal = () => {
       <!-- Digimon Slots (3 Columns) -->
       <div class="flex-[3] grid grid-cols-3 gap-4">
         <!-- Loop exactly 3 times -->
-        <template v-for="(digimon, index) in partySlots" :key="index">
+        <template v-for="(slot, index) in partySlots" :key="index">
           <DigimonCard 
-            v-if="digimon" 
-            :digimon="digimon" 
+            v-if="slot && slot.digimon" 
+            :digimon="slot.digimon" 
           />
           
           <!-- Empty Slot Placeholder -->

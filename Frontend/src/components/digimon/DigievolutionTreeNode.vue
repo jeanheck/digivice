@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import type { Digimon } from '../../models'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
+import { DigievolutionRegistry } from '../../logic/DigievolutionRegistry'
 
 const props = defineProps<{
   node: { name: string, requirements: EvolutionRequirement[] }
@@ -17,10 +18,17 @@ const isUnlocked = computed(() => {
     return EvolutionGraph.checkRequirements(props.digimon, props.node)
 })
 
+const digimonName = computed(() => {
+  if (props.digimon && props.digimon.activeDigievolutionId !== null && props.digimon.activeDigievolutionId !== undefined) {
+    return DigievolutionRegistry.getDigievolutionNameById(props.digimon.activeDigievolutionId);
+  }
+  return 'Unknown';
+})
+
 const getRequirementText = (req: EvolutionRequirement) => {
     switch (req.Type) {
-        case 'DigimonLevel': return `${props.digimon.basicInfo.name} Lv ${req.Value}`
-        case 'Attribute': return `${props.digimon.basicInfo.name} - ${req.Attribute} >= ${req.Value}`
+        case 'DigimonLevel': return `${digimonName.value} Lv ${req.Value}`
+        case 'Attribute': return `${digimonName.value} - ${req.Attribute} >= ${req.Value}`
         case 'DigievolutionLevel': return `${req.Digievolution} Lv ${req.Value}`
         default: return 'Unknown Parameter'
     }
@@ -28,7 +36,7 @@ const getRequirementText = (req: EvolutionRequirement) => {
 
 const isReqMet = (req: EvolutionRequirement) => {
     switch (req.Type) {
-        case 'DigimonLevel': return props.digimon.basicInfo.level >= req.Value
+        case 'DigimonLevel': return props.digimon.level >= req.Value
         case 'Attribute': 
             const attr = props.digimon.attributes[req.Attribute?.toLowerCase() as keyof typeof props.digimon.attributes]
             const val = attr ? attr.sumBetweenDigimonAndEquipaments : 0

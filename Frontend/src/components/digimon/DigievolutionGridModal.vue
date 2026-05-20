@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, ref, watch, computed } from 'vue'
 import type { Digimon } from '../../models'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
+import { DigievolutionRegistry } from '../../logic/DigievolutionRegistry'
 import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
 import DigievolutionDetailPanel from './DigievolutionDetailPanel.vue'
 import IconClose from '../icons/IconClose.vue'
@@ -29,12 +30,19 @@ onUnmounted(() => {
   window.removeEventListener('keydown', handleKeydown)
 })
 
+const digimonName = computed(() => {
+  if (props.digimon && props.digimon.activeDigievolutionId !== null && props.digimon.activeDigievolutionId !== undefined) {
+    return DigievolutionRegistry.getDigievolutionNameById(props.digimon.activeDigievolutionId);
+  }
+  return 'Unknown';
+})
+
 const allEvolutions = ref<{ name: string, requirements: EvolutionRequirement[] }[]>([])
 const selectedEvolution = ref<{ name: string, requirements: EvolutionRequirement[] } | null>(null)
 
 watch(() => props.isOpen, (isOpen) => {
   if (isOpen && props.digimon) {
-    allEvolutions.value = EvolutionGraph.getAllEvolutions(props.digimon.basicInfo.name)
+    allEvolutions.value = EvolutionGraph.getAllEvolutions(digimonName.value)
     selectedEvolution.value = null
   }
 })
@@ -43,7 +51,7 @@ const handleSelectNode = (name: string) => {
   const evo = allEvolutions.value.find(e => e.name === name)
   if (evo) {
     selectedEvolution.value = evo
-  } else if (name === props.digimon.basicInfo.name) {
+  } else if (name === digimonName.value) {
     selectedEvolution.value = null
   }
 }
@@ -90,7 +98,7 @@ const handleBlur = () => {
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-20 shrink-0 gap-8">
             <div class="flex items-center gap-6 flex-1">
                 <h2 class="text-[#00aaff] font-bold tracking-widest drop-shadow flex items-center gap-2 whitespace-nowrap">
-                    {{ $t('digievolution.title', { name: digimon.basicInfo.name }) }}
+                    {{ $t('digievolution.title', { name: digimonName }) }}
                 </h2>
                 
                 <!-- Search Bar -->
@@ -133,7 +141,7 @@ const handleBlur = () => {
             <!-- Left: Family Tree (75%) -->
             <div class="w-[75%] h-full border-r border-[#0055ff]/30 relative">
               <DigievolutionFamilyTree 
-                :rookie-name="digimon.basicInfo.name"
+                :rookie-name="digimonName"
                 :digimon="digimon"
                 :selected-node-name="selectedEvolution?.name"
                 @select-node="handleSelectNode"

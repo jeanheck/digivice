@@ -1,5 +1,5 @@
 export * from './Digimon';
 export * from './Player';
-export * from './Items';
+export * from './Party';
 export * from './Journal';
 export * from './State';

@@ -1,23 +1,25 @@
-export interface Digimon {
-    slotIndex: number;
-    basicInfo: BasicInfo;
-    attributes: Attributes;
-    resistances: Resistances;
-    equipments: Equipments;
-    digievolutions: (Digievolution | null)[];
-    activeDigievolutionId: number | null;
-}
-
-export interface BasicInfo {
-    name: string;
-    level: number;
-    experience: number;
+export interface Vitals {
     currentHP: number;
     maxHP: number;
     currentMP: number;
     maxMP: number;
-    experienceToReachNextLevel: number;
-    experiencePercentageToReachNextLevel: number;
+}
+
+export interface DigievolutionSlot {
+    index: number;
+    digievolutionId: number;
+    digievolution: Digievolution | null;
+}
+
+export interface Digimon {
+    vitals: Vitals;
+    level: number;
+    experience: number;
+    attributes: Attributes;
+    resistances: Resistances;
+    equipments: Equipments;
+    digievolutions: DigievolutionSlot[];
+    activeDigievolutionId: number | null;
 }
 
 export enum DigimonStatusType {

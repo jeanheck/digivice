@@ -1,13 +1,31 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import ExperienceProgressBar from '../ui/ExperienceProgressBar.vue'
 import ProgressBar from '../ui/ProgressBar.vue'
 import DigimonIcon from '../ui/DigimonIcon.vue'
-import type { BasicInfo } from '../../models'
+import type { Digimon } from '../../models'
 import { ProgressBarTypes } from '@/types/ui'
+import { DigievolutionRegistry } from '../../logic/DigievolutionRegistry'
+import { DigimonExperienceCalculator } from '../../logic/DigimonExperienceCalculator'
 
 const props = defineProps<{
-  basicInfo: BasicInfo
+  digimon: Digimon
 }>()
+
+const name = computed(() => {
+  if (props.digimon.activeDigievolutionId !== null && props.digimon.activeDigievolutionId !== undefined) {
+    return DigievolutionRegistry.getDigievolutionNameById(props.digimon.activeDigievolutionId);
+  }
+  return 'Unknown';
+})
+
+const experienceToReachNextLevel = computed(() => {
+  return DigimonExperienceCalculator.getRequiredExpForNextLevel(name.value, props.digimon.level);
+})
+
+const experiencePercentageToReachNextLevel = computed(() => {
+  return DigimonExperienceCalculator.getProgressPercentageForNextLevel(name.value, props.digimon.level, props.digimon.experience);
+})
 </script>
 
 <template>
@@ -23,23 +41,23 @@ const props = defineProps<{
       <div class="flex items-start gap-4">
         
         <!-- Icon Image using Vite dynamic URL -->
-        <DigimonIcon :digimon-name="basicInfo.name" class="w-16 h-16" />
+        <DigimonIcon :digimon-name="name" class="w-16 h-16" />
 
         <div class="flex-1 flex flex-col gap-1 min-w-0">
           <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
-            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ basicInfo.name }}</h2>
+            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ name }}</h2>
             
             <div class="relative flex items-center justify-center flex-shrink-0">
               <span class="text-[0.6rem] font-medium text-yellow-500">
-                {{ $t('common.level') }} {{ basicInfo.level }}
+                {{ $t('common.level') }} {{ digimon.level }}
               </span>
             </div>
           </div>
           
           <ExperienceProgressBar 
-            :experience-to-reach-next-level="basicInfo.experienceToReachNextLevel"
-            :experience-percentage-to-reach-next-level="basicInfo.experiencePercentageToReachNextLevel"
-            :experience="basicInfo.experience" 
+            :experience-to-reach-next-level="experienceToReachNextLevel"
+            :experience-percentage-to-reach-next-level="experiencePercentageToReachNextLevel"
+            :experience="digimon.experience" 
           />
         </div>
       </div>
@@ -47,13 +65,13 @@ const props = defineProps<{
       <!-- Status Bars -->
       <div class="flex flex-col gap-2 mt-2">
          <ProgressBar 
-            :current-value="basicInfo.currentHP" 
-            :max-value="basicInfo.maxHP" 
+            :current-value="digimon.vitals.currentHP" 
+            :max-value="digimon.vitals.maxHP" 
             :type=ProgressBarTypes.HP
           />
           <ProgressBar 
-            :current-value="basicInfo.currentMP" 
-            :max-value="basicInfo.maxMP" 
+            :current-value="digimon.vitals.currentMP" 
+            :max-value="digimon.vitals.maxMP" 
             :type=ProgressBarTypes.MP
           />
       </div>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { Digievolution } from '../../models';
+import type { Digievolution, DigievolutionSlot } from '../../models';
 import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue';
 
 const props = defineProps<{
-  digievolutions: (Digievolution | null)[];
+  digievolutions: DigievolutionSlot[];
   activeDigievolutionId: number | null;
 }>();
 
@@ -29,11 +29,11 @@ function closeSkills() {
 <template>
   <div class="flex flex-col gap-[2px] w-full">
     <div 
-      v-for="(digievolution, index) in digievolutions" 
+      v-for="(slot, index) in digievolutions" 
       :key="index"
       class="evo-row relative flex w-full h-[28px] bg-[#000a2b] text-white overflow-hidden dw3-beveled"
-      :class="digievolution ? 'cursor-pointer hover:brightness-125 transition-[filter]' : 'cursor-default'"
-      @click="openSkills(digievolution)"
+      :class="slot.digievolution ? 'cursor-pointer hover:brightness-125 transition-[filter]' : 'cursor-default'"
+      @click="openSkills(slot.digievolution)"
     >
       <!-- External glowing border simulated via clip-path background -->
       <div class="absolute inset-0 bg-[#0077ff] pointer-events-none dw3-beveled"></div>
@@ -42,12 +42,12 @@ function closeSkills() {
       <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
 
       <!-- Render texts only if the digievolution slot has a value -->
-      <template v-if="digievolution">
+      <template v-if="slot.digievolution">
         <!-- Content (Name) -->
         <div 
           class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
-          :class="digievolution.id === activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
-          {{ digievolution.name }}
+          :class="slot.digievolution.id === activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
+          {{ slot.digievolution.name }}
         </div>
 
         <!-- Slanted Divider -->
@@ -56,7 +56,7 @@ function closeSkills() {
         <!-- Content (Level) -->
         <div class="relative z-10 w-[45px] flex items-center justify-center pl-2 font-bold text-sm mr-2">
           <span class="bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark">
-            {{ digievolution.level }}
+            {{ slot.digievolution.level }}
           </span>
         </div>
       </template>

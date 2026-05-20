@@ -1,13 +1,13 @@
 import { MathUtils } from '@/utils/MathUtils';
-import type { Digimon } from '../models';
+import type { DigimonSlot } from '../models';
 
 export class PartyCalculator {
-    public static calculateGroupCharisma(slots: (Digimon | null)[]): number {
-        const allDigimonsCharisma = slots.map(digimon => {
-            if (!digimon) {
+    public static calculateGroupCharisma(slots: DigimonSlot[]): number {
+        const allDigimonsCharisma = slots.map(slot => {
+            if (!slot || !slot.digimon) {
                 return 0;
             }
-            return digimon.attributes.charisma.sumBetweenDigimonAndEquipaments;
+            return slot.digimon.attributes.charisma.sumBetweenDigimonAndEquipaments;
         });
 
         return MathUtils.Sum(allDigimonsCharisma);

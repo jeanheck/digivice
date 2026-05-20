@@ -35,7 +35,7 @@ const getRequirementText = (req: EvolutionRequirement) => {
 
 const isReqMet = (req: EvolutionRequirement) => {
     switch (req.Type) {
-        case 'DigimonLevel': return props.digimon.basicInfo.level >= req.Value
+        case 'DigimonLevel': return props.digimon.level >= req.Value
         case 'Attribute': 
             const attr = props.digimon.attributes[req.Attribute?.toLowerCase() as keyof typeof props.digimon.attributes]
             const val = attr ? attr.sumBetweenDigimonAndEquipaments : 0

@@ -14,7 +14,7 @@ export interface StepLocation {
     locationImageCoordinates?: MapCoordinates;
 }
 
-export interface QuestStep {
+export interface Step {
     number: number;
     description?: string; // Enriched via local table
     isCompleted: boolean;
@@ -29,7 +29,7 @@ export interface Quest {
     title: string;
     description?: string;
     prerequisites: Requisite[];
-    steps: QuestStep[];
+    steps: Step[];
 }
 
 export interface Journal {

@@ -1,16 +1,23 @@
 import type { DigievolutionSlotDTO } from '../dto/parties/digimons/digievolution-slot.dto';
-import type { Digievolution } from '../../models/Digimon';
+import type { DigievolutionSlot } from '../../models/Digimon';
 import { DigievolutionSlotConverter } from './digievolution-slot.converter';
 
 export class DigievolutionsConverter {
-    public static convert(digievolutions: DigievolutionSlotDTO[] | null): (Digievolution | null)[] {
-        const result: (Digievolution | null)[] = Array(8).fill(null);
+    public static convert(digievolutions: DigievolutionSlotDTO[] | null): DigievolutionSlot[] {
+        const result: DigievolutionSlot[] = Array.from({ length: 8 }, (_, i) => ({
+            index: i,
+            digievolutionId: 0,
+            digievolution: null
+        }));
 
         if (!digievolutions) return result;
 
         digievolutions.forEach(slot => {
             if (slot && slot.index >= 0 && slot.index < result.length) {
-                result[slot.index] = DigievolutionSlotConverter.convert(slot);
+                const converted = DigievolutionSlotConverter.convert(slot);
+                if (converted) {
+                    result[slot.index] = converted;
+                }
             }
         });
 

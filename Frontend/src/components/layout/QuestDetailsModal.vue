@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
-import type { Quest, QuestStep as QuestStepType } from '../../models'
+import type { Quest, Step as StepType } from '../../models'
 import IconClose from '../icons/IconClose.vue'
 import asukaMapUrl from '../../assets/AsukaMap.webp'
 
@@ -47,10 +47,10 @@ const hasPrerequisites = computed(() => {
 })
 
 // Geographic Integration
-const selectedStep = ref<QuestStepType | null>(null)
+const selectedStep = ref<StepType | null>(null)
 const currentLocationIndex = ref(0)
 
-const selectStep = (step: QuestStepType) => {
+const selectStep = (step: StepType) => {
   selectedStep.value = step
   currentLocationIndex.value = 0
 }

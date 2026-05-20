@@ -157,7 +157,7 @@ export class EvolutionGraph {
         for (const req of node.requirements) {
             switch (req.Type) {
                 case 'DigimonLevel':
-                    if (digimon.basicInfo.level < req.Value) return false
+                    if (digimon.level < req.Value) return false
                     break
                 case 'Attribute':
                     const attr = digimon.attributes[req.Attribute?.toLowerCase() as keyof import('../models').Attributes]
