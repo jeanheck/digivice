@@ -14,6 +14,7 @@ import { DigievolutionsConverter } from '../events/converters/digievolutions.con
 import { AttributesStateManager } from '../stateManagers/AttributesStateManager';
 import { ResistancesStateManager } from '../stateManagers/ResistancesStateManager';
 import { PartyCalculator } from '../logic/PartyCalculator';
+import { PlayerSyncer } from './syncers/player.syncer';
 
 export const useGameStore = defineStore('game', () => {
     const isConnectedWithBackend = ref(false);
@@ -58,15 +59,7 @@ export const useGameStore = defineStore('game', () => {
             return;
         }
 
-        if (playerDto.name !== undefined) {
-            player.name = playerDto.name;
-        }
-        if (playerDto.bits !== undefined) {
-            player.bits = playerDto.bits;
-        }
-        if (playerDto.location !== undefined) {
-            player.location = playerDto.location;
-        }
+        PlayerSyncer.sync(player, playerDto);
     }
 
     function syncParty(partyDto: Events.PartyDTO | null): void {
