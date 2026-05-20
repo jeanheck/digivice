@@ -1,179 +1,186 @@
-import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
-import type { State } from '../models/State'
-import type * as Events from '../events/events.map'
-import { PlayerConverter } from '../events/converters/player.converter'
-import { PartyConverter } from '../events/converters/party.converter'
-import { DigimonConverter } from '../events/converters/digimon.converter'
-import { PartyUpdater } from '../updaters/PartyUpdater'
-import { BasicInfoConverter } from '../converters/BasicInfoConverter'
-import { DigievolutionsConverter } from '../events/converters/digievolutions.converter'
-import { DigievolutionsUpdater } from '../updaters/DigievolutionsUpdater'
-import { BasicInfoUpdater } from '../updaters/BasicInfoUpdater'
-import { PlayerUpdater } from '../updaters/PlayerUpdater'
-import { ImportantItemsConverter } from '../events/converters/important-items.converter'
-import { ImportantItemsUpdater } from '../updaters/ImportantItemsUpdater'
-import { JournalConverter } from '../events/converters/journal.converter'
-import { JournalUpdater } from '../updaters/JournalUpdater'
-import { EquipmentsConverter } from '../events/converters/equipments.converter'
-import { EquipmentsUpdater } from '../updaters/EquipmentsUpdater'
-import { ActiveDigievolutionConverter } from '../events/converters/active-digievolution.converter'
-import { ActiveDigievolutionUpdater } from '../updaters/ActiveDigievolutionUpdater'
-import { AttributesStateManager } from '../stateManagers/AttributesStateManager'
-import { ResistancesStateManager } from '../stateManagers/ResistancesStateManager'
-import { AreaInformationConverter } from '../events/converters/area-information.converter'
+import { defineStore } from 'pinia';
+import { ref, computed } from 'vue';
+import type { State } from '../models/State';
+import type * as Events from '../events/events.map';
+import { PlayerConverter } from '../events/converters/player.converter';
+import { PartyConverter } from '../events/converters/party.converter';
+import { JournalConverter } from '../events/converters/journal.converter';
+import { AreaInformationConverter } from '../events/converters/area-information.converter';
+import { DigimonSlotConverter } from '../events/converters/digimon-slot.converter';
+import { DigimonExperienceCalculator } from '../logic/DigimonExperienceCalculator';
+import { DigievolutionRegistry } from '../logic/DigievolutionRegistry';
+import { EquipmentsConverter } from '../events/converters/equipments.converter';
+import { DigievolutionsConverter } from '../events/converters/digievolutions.converter';
+import { AttributesStateManager } from '../stateManagers/AttributesStateManager';
+import { ResistancesStateManager } from '../stateManagers/ResistancesStateManager';
+import { PartyCalculator } from '../logic/PartyCalculator';
 
 export const useGameStore = defineStore('game', () => {
-    const isConnectedWithBackend = ref(false)
-    const isConnectedWithEmulator = ref(false)
-    const isConnected = computed(() => isConnectedWithBackend.value && isConnectedWithEmulator.value)
-    const gameState = ref<State | null>(null)
+    const isConnectedWithBackend = ref(false);
+    const isConnectedWithEmulator = ref(false);
+    const isConnected = computed(() => {
+        return isConnectedWithBackend.value && isConnectedWithEmulator.value;
+    });
+    const gameState = ref<State | null>(null);
 
     function getDigimonOnPartySlot(slotIndex: number) {
-        return gameState.value?.party?.slots[slotIndex] ?? null
+        return gameState.value?.party?.slots[slotIndex] ?? null;
     }
 
-    function updateHubConnectionStatus(event: { isConnected: boolean }) {
-        isConnectedWithBackend.value = event.isConnected
+    function syncHubConnectionStatus(event: { isConnected: boolean }): void {
+        isConnectedWithBackend.value = event.isConnected;
     }
 
-    function updateEmulatorConnectionStatus(event: Events.EmulatorConnectionStatusChangedDTO) {
-        isConnectedWithEmulator.value = event.isConnected
+    function syncEmulatorConnectionStatus(event: Events.EmulatorConnectionStatusChangedDTO): void {
+        isConnectedWithEmulator.value = event.isConnected;
     }
 
-    function updateInitialState(event: Events.InitialStateChangedDTO) {
+    function syncInitialState(state: Events.StateDTO | null): void {
+        if (!state) {
+            gameState.value = null;
+            return;
+        }
+
         gameState.value = {
-            player: PlayerConverter.convert(event.state.player),
-            party: PartyConverter.convert(event.state.party),
-            importantItems: ImportantItemsConverter.convert(event.state.importantItems),
-            journal: JournalConverter.convert(event.state.journal),
-            areaInformation: AreaInformationConverter.convert(event.state.player?.location)
-        }
+            player: PlayerConverter.convert(state.player),
+            party: PartyConverter.convert(state.party),
+            importantItems: null,
+            journal: JournalConverter.convert(state.journal),
+            areaInformation: AreaInformationConverter.convert(state.player?.location)
+        };
     }
 
-    function updatePlayerBits(event: Events.PlayerBitsChangedDTO) {
-        PlayerUpdater.updateBits(gameState.value, event)
-    }
-
-    function updatePlayerName(event: Events.PlayerNameChangedDTO) {
-        PlayerUpdater.updateName(gameState.value, event)
-    }
-
-    function updatePlayerLocation(event: Events.PlayerLocationChangedDTO) {
-        PlayerUpdater.updateLocation(gameState.value, event)
-        if (gameState.value) {
-            gameState.value.areaInformation = AreaInformationConverter.convert(event.location)
-        }
-    }
-
-    function updatePartySlots(event: Events.PartySlotsChangedDTO) {
-        if (!gameState.value?.party) return
-
-        const slots = event.party.map(dto => DigimonConverter.convert(dto))
-        PartyUpdater.update(gameState.value.party, slots)
-    }
-
-    function updateDigimonVitals(event: Events.DigimonVitalsChangedDTO) {
-        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex)
-        if (!currentDigimon) return
-
-        const newBasicInfo = BasicInfoConverter.convert(currentDigimon.basicInfo, {
-            currentHP: event.currentHP,
-            maxHP: event.maxHP,
-            currentMP: event.currentMP,
-            maxMP: event.maxMP
-        })
-
-        BasicInfoUpdater.update(currentDigimon, newBasicInfo)
-    }
-
-    function updateDigimonExperience(event: Events.DigimonExperienceChangedDTO) {
-        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex)
-        if (!currentDigimon) return
-
-        const newBasicInfo = BasicInfoConverter.convert(currentDigimon.basicInfo, {
-            experience: event.experience
-        })
-
-        BasicInfoUpdater.update(currentDigimon, newBasicInfo)
-    }
-
-    function updateDigimonLevel(event: Events.DigimonLevelChangedDTO) {
-        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex)
-        if (!currentDigimon) return
-
-        const newBasicInfo = BasicInfoConverter.convert(currentDigimon.basicInfo, {
-            level: event.level
-        })
-
-        BasicInfoUpdater.update(currentDigimon, newBasicInfo)
-    }
-
-    function updateDigimonAttributes(event: Events.DigimonAttributesChangedDTO) {
-        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex);
-        if (!currentDigimon) {
+    function syncPlayer(playerDto: Events.PlayerDTO | null): void {
+        if (!gameState.value || !playerDto) {
             return;
         }
 
-        AttributesStateManager.refresh(currentDigimon, event);
+        if (!gameState.value.player) {
+            gameState.value.player = PlayerConverter.convert(playerDto);
+        } else {
+            if (playerDto.name !== undefined) {
+                gameState.value.player.name = playerDto.name;
+            }
+            if (playerDto.bits !== undefined) {
+                gameState.value.player.bits = playerDto.bits;
+            }
+            if (playerDto.location !== undefined) {
+                gameState.value.player.location = playerDto.location;
+            }
+        }
+
+        if (playerDto.location !== undefined) {
+            gameState.value.areaInformation = AreaInformationConverter.convert(playerDto.location);
+        }
     }
 
-    function updateDigimonResistances(event: Events.DigimonResistancesChangedDTO) {
-        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex);
-        if (!currentDigimon) {
+    function syncParty(partyDto: Events.PartyDTO | null): void {
+        if (!gameState.value?.party || !partyDto?.slots) {
             return;
         }
 
-        ResistancesStateManager.refresh(currentDigimon, event);
+        partyDto.slots.forEach((slotDto) => {
+            if (!slotDto) {
+                return;
+            }
+
+            const index = slotDto.index;
+            if (index < 0 || index >= gameState.value!.party!.slots.length) {
+                return;
+            }
+
+            if (slotDto.digimonId === null || slotDto.digimon === null) {
+                gameState.value!.party!.slots[index] = null;
+            } else {
+                const existingDigimon = gameState.value!.party!.slots[index];
+                if (!existingDigimon || existingDigimon.activeDigievolutionId !== slotDto.digimonId) {
+                    gameState.value!.party!.slots[index] = DigimonSlotConverter.convert(slotDto);
+                } else {
+                    const digimonDto = slotDto.digimon;
+                    if (!digimonDto) {
+                        return;
+                    }
+                    const digimon = existingDigimon;
+
+                    if (digimonDto.level !== undefined) {
+                        digimon.basicInfo.level = digimonDto.level;
+                    }
+                    if (digimonDto.experience !== undefined) {
+                        digimon.basicInfo.experience = digimonDto.experience;
+                    }
+
+                    if (digimonDto.level !== undefined || digimonDto.experience !== undefined) {
+                        digimon.basicInfo.experienceToReachNextLevel = DigimonExperienceCalculator.getRequiredExpForNextLevel(
+                            digimon.basicInfo.name,
+                            digimon.basicInfo.level
+                        );
+                        digimon.basicInfo.experiencePercentageToReachNextLevel = DigimonExperienceCalculator.getProgressPercentageForNextLevel(
+                            digimon.basicInfo.name,
+                            digimon.basicInfo.level,
+                            digimon.basicInfo.experience
+                        );
+                    }
+
+                    if (digimonDto.vitals) {
+                        if (digimonDto.vitals.currentHP !== undefined) {
+                            digimon.basicInfo.currentHP = digimonDto.vitals.currentHP;
+                        }
+                        if (digimonDto.vitals.maxHP !== undefined) {
+                            digimon.basicInfo.maxHP = digimonDto.vitals.maxHP;
+                        }
+                        if (digimonDto.vitals.currentMP !== undefined) {
+                            digimon.basicInfo.currentMP = digimonDto.vitals.currentMP;
+                        }
+                        if (digimonDto.vitals.maxMP !== undefined) {
+                            digimon.basicInfo.maxMP = digimonDto.vitals.maxMP;
+                        }
+                    }
+
+                    if (digimonDto.equipments) {
+                        digimon.equipments = EquipmentsConverter.convert(digimonDto.equipments);
+                    }
+
+                    if (digimonDto.activeDigievolutionId !== undefined) {
+                        digimon.activeDigievolutionId = digimonDto.activeDigievolutionId;
+                        if (digimonDto.activeDigievolutionId !== null) {
+                            digimon.basicInfo.name = DigievolutionRegistry.getDigievolutionNameById(
+                                digimonDto.activeDigievolutionId
+                            );
+                        } else {
+                            digimon.basicInfo.name = 'Unknown';
+                        }
+                    }
+
+                    if (digimonDto.digievolutions) {
+                        digimon.digievolutions = DigievolutionsConverter.convert(digimonDto.digievolutions);
+                    }
+
+                    if (digimonDto.attributes) {
+                        AttributesStateManager.refresh(digimon, digimonDto.attributes);
+                    } else if (digimonDto.equipments || digimonDto.activeDigievolutionId !== undefined) {
+                        AttributesStateManager.refresh(digimon);
+                    }
+
+                    if (digimonDto.resistances) {
+                        ResistancesStateManager.refresh(digimon, digimonDto.resistances);
+                    } else if (digimonDto.equipments || digimonDto.activeDigievolutionId !== undefined) {
+                        ResistancesStateManager.refresh(digimon);
+                    }
+                }
+            }
+        });
+
+        gameState.value.party.groupCharisma = PartyCalculator.calculateGroupCharisma(
+            gameState.value.party.slots
+        );
     }
 
-    function updateDigimonEquipments(event: Events.DigimonEquipmentsChangedDTO) {
-        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex);
-        if (!currentDigimon) {
+    function syncJournal(journal: Events.JournalDTO | null): void {
+        if (!gameState.value) {
             return;
         }
 
-        const newEquipments = EquipmentsConverter.convert(event.equipments);
-
-        EquipmentsUpdater.update(currentDigimon, newEquipments);
-
-        AttributesStateManager.refresh(currentDigimon);
-        ResistancesStateManager.refresh(currentDigimon);
-    }
-
-    function updateDigimonDigievolutions(event: Events.DigimonDigievolutionsChangedDTO) {
-        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex)
-        if (!currentDigimon) return
-
-        const newDigievolutions = DigievolutionsConverter.convert(event.digievolutions)
-        DigievolutionsUpdater.update(currentDigimon, newDigievolutions)
-    }
-
-    function updateDigimonActiveDigievolution(event: Events.DigimonActiveDigievolutionChangedDTO) {
-        const currentDigimon = getDigimonOnPartySlot(event.partySlotIndex);
-        if (!currentDigimon) {
-            return;
-        }
-
-        const newActiveDigievolutionId = ActiveDigievolutionConverter.convert(event.activeDigievolutionId);
-        ActiveDigievolutionUpdater.update(currentDigimon, newActiveDigievolutionId);
-
-        AttributesStateManager.refresh(currentDigimon);
-        ResistancesStateManager.refresh(currentDigimon);
-    }
-
-    function updateImportantItems(event: Events.ImportantItemsChangedDTO) {
-        if (!gameState.value) return
-
-        const importantItems = ImportantItemsConverter.convert(event.importantItems)
-        ImportantItemsUpdater.update(gameState.value, importantItems)
-    }
-
-    function updateJournal(event: Events.JournalChangedDTO) {
-        if (!gameState.value) return
-
-        const journal = JournalConverter.convert(event.journal)
-        JournalUpdater.update(gameState.value, journal)
+        gameState.value.journal = JournalConverter.convert(journal);
     }
 
     return {
@@ -181,22 +188,12 @@ export const useGameStore = defineStore('game', () => {
         isConnectedWithBackend,
         isConnectedWithEmulator,
         gameState,
-        updateHubConnectionStatus,
-        updateEmulatorConnectionStatus,
-        updateInitialState,
-        updatePlayerBits,
-        updatePlayerName,
-        updatePlayerLocation,
-        updatePartySlots,
-        updateDigimonVitals,
-        updateDigimonExperience,
-        updateDigimonLevel,
-        updateDigimonAttributes,
-        updateDigimonResistances,
-        updateDigimonEquipments,
-        updateDigimonDigievolutions,
-        updateDigimonActiveDigievolution,
-        updateImportantItems,
-        updateJournal
-    }
-})
+        getDigimonOnPartySlot,
+        syncHubConnectionStatus,
+        syncEmulatorConnectionStatus,
+        syncInitialState,
+        syncPlayer,
+        syncParty,
+        syncJournal
+    };
+});
