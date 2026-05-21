@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useGameStore } from '../../stores/useGameStore'
+import { useGameStore } from '../../stores/use-game-store'
 import { computed, ref } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
  

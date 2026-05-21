@@ -1,5 +1,5 @@
 import { signalRService } from './signalr.service';
-import { useGameStore } from '../stores/useGameStore';
+import { useGameStore } from '../stores/use-game-store';
 import { signalRLogger } from './logger';
 
 /**

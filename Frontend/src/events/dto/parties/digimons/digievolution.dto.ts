@@ -1,3 +1,3 @@
 export interface DigievolutionDTO {
-    level?: number;
+    level: number;
 }

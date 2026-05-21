@@ -3,16 +3,18 @@ import type { PartyDTO } from '../../events/dto/party.dto';
 import { DigimonSlotSyncer } from './digimon-slot.syncer';
 
 export class PartySyncer {
-    public static sync(previousParty: Party, partyDto: PartyDTO): void {
-        if (partyDto.slots && partyDto.slots.length > 0) {
-            partyDto.slots.forEach((slotDto) => {
-                if (slotDto) {
-                    const index = slotDto.index;
-                    if (index >= 0 && index < previousParty.slots.length) {
-                        DigimonSlotSyncer.sync(previousParty.slots, index, slotDto);
-                    }
-                }
-            });
+    public static sync(previousParty: Party, newPartyDto: PartyDTO): void {
+        if (!newPartyDto.slots || newPartyDto.slots.length === 0) {
+            return;
         }
+
+        newPartyDto.slots.forEach((newSlotDto) => {
+            if (newSlotDto) {
+                const previousSlot = previousParty.slots.find((s) => s.index === newSlotDto.index);
+                if (previousSlot) {
+                    DigimonSlotSyncer.sync(previousSlot, newSlotDto);
+                }
+            }
+        });
     }
 }

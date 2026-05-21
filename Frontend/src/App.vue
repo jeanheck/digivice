@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useGameStore } from './stores/useGameStore'
+import { useGameStore } from './stores/use-game-store'
 import { useLocalization } from './composables/useLocalization'
 import DigimonCard from './components/digimon/DigimonCard.vue'
 import QuestJournalPanel from './components/layout/QuestJournalPanel.vue'
