@@ -8,7 +8,7 @@ export * from './digimon-status';
 export * from './digimon';
 export * from './enemy';
 export * from './equipament-type';
-export * from './equipament';
+export * from './enriched/enriched-equipament';
 export * from './equipaments-attributes-operation-type';
 export * from './equipaments-attributes';
 export * from './equipments';

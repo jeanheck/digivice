@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { Equipament } from '../../models'
+import type { EnrichedEquipment } from '../../models'
 import { useLocalization } from '../../composables/useLocalization'
 
 defineProps<{
   slotLabel: string;
-  equipament: Equipament | null;
+  equipament: EnrichedEquipment | null;
   colorClass?: string;
 }>();
 
 const { getLocalized } = useLocalization();
 
 const emit = defineEmits<{
-  (e: 'showTooltip', event: MouseEvent, equip: Equipament): void;
+  (e: 'showTooltip', event: MouseEvent, equip: EnrichedEquipment): void;
   (e: 'moveTooltip', event: MouseEvent): void;
   (e: 'hideTooltip'): void;
 }>();

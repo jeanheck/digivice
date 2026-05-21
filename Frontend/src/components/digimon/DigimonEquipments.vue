@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
-import type { Equipments, Equipament } from '../../models'
+import type { Equipments, EnrichedEquipment } from '../../models'
 import DigimonEquipament from './DigimonEquipament.vue'
 import DigimonEquipmentTooltip from './DigimonEquipmentTooltip.vue'
 
@@ -23,9 +23,9 @@ const equipmentsList = computed(() => {
   ]
 })
 
-const activeTooltip = ref({ show: false, item: null as Equipament | null, x: 0, y: 0 })
+const activeTooltip = ref({ show: false, item: null as EnrichedEquipment | null, x: 0, y: 0 })
 
-const showTooltip = (event: MouseEvent, equipObj: Equipament) => {
+const showTooltip = (event: MouseEvent, equipObj: EnrichedEquipment) => {
   let posX = event.clientX + 15
   if (posX + 250 > window.innerWidth) {
       posX = event.clientX - 260

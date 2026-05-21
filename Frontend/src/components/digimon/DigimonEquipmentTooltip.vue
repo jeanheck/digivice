@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useLocalization } from '../../composables/useLocalization'
-import { EquipamentsAttributesOperationType, type Equipament } from '../../models'
+import { EquipamentsAttributesOperationType, type EnrichedEquipment } from '../../models'
 
 defineProps<{
-  activeTooltip: { show: boolean, item: Equipament | null, x: number, y: number }
+  activeTooltip: { show: boolean, item: EnrichedEquipment | null, x: number, y: number }
 }>()
 
 const { t, getLocalized } = useLocalization()

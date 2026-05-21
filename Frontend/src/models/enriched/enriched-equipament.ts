@@ -1,7 +1,7 @@
-import type { EquipamentType } from './equipament-type';
-import type { EquipamentsAttributes } from './equipaments-attributes';
+import type { EquipamentType } from '../equipament-type';
+import type { EquipamentsAttributes } from '../equipaments-attributes';
 
-export interface Equipament {
+export interface EnrichedEquipment {
     id: number;
     name: Record<string, string>;
     type: EquipamentType;

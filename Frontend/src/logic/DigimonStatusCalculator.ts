@@ -1,10 +1,10 @@
-import { EquipamentsAttributesOperationType, type DigimonStatusType, type Equipament } from "../models";
+import { EquipamentsAttributesOperationType, type DigimonStatusType, type EnrichedEquipment } from "../models";
 import { EquipmentsHelper } from "./helpers/EquipmentsHelper";
 
 export class DigimonStatusCalculator {
     public static calculateBonusFromEquipaments(
         digimonStatusType: DigimonStatusType,
-        activeEquipaments: Equipament[]
+        activeEquipaments: EnrichedEquipment[]
     ): number {
         let total = 0;
 
