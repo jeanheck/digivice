@@ -6,14 +6,9 @@ import { PlayerConverter } from '../events/converters/player.converter';
 import { PartyConverter } from '../events/converters/party.converter';
 import { JournalConverter } from '../events/converters/journal.converter';
 import { AreaInformationConverter } from '../events/converters/area-information.converter';
-import { DigimonSlotConverter } from '../events/converters/digimon-slot.converter';
-import { DigimonConverter } from '../events/converters/digimon.converter';
-import { EquipmentsConverter } from '../events/converters/equipments.converter';
-import { DigievolutionsConverter } from '../events/converters/digievolutions.converter';
-import { AttributesStateManager } from '../stateManagers/AttributesStateManager';
-import { ResistancesStateManager } from '../stateManagers/ResistancesStateManager';
 import { PlayerSyncer } from './syncers/player.syncer';
 import { JournalSyncer } from './syncers/journal.syncer';
+import { PartySyncer } from './syncers/party.syncer';
 
 export const useGameStore = defineStore('game', () => {
     const isConnectedWithBackend = ref(false);
@@ -69,90 +64,13 @@ export const useGameStore = defineStore('game', () => {
         JournalSyncer.sync(previousJournal, newJournalDto);
     }
 
-    function syncParty(partyDto: Events.PartyDTO | null): void {
-        if (!currentState.value?.party || !partyDto?.slots) {
+    function syncParty(newPartyDto: Events.PartyDTO | null): void {
+        const previousParty = currentState.value?.party;
+        if (!previousParty || !newPartyDto) {
             return;
         }
 
-        partyDto.slots.forEach((slotDto) => {
-            if (!slotDto) {
-                return;
-            }
-
-            const index = slotDto.index;
-            if (index < 0 || index >= currentState.value!.party!.slots.length) {
-                return;
-            }
-
-            if (slotDto.digimonId === undefined || slotDto.digimonId === null || !slotDto.digimon) {
-                currentState.value!.party!.slots[index] = {
-                    index,
-                    digimonId: null,
-                    digimon: null
-                };
-            } else {
-                const existingSlot = currentState.value!.party!.slots[index];
-                if (!existingSlot || existingSlot.digimonId !== slotDto.digimonId) {
-                    currentState.value!.party!.slots[index] = DigimonSlotConverter.convert(slotDto)!;
-                } else {
-                    const digimonDto = slotDto.digimon;
-                    if (!digimonDto) {
-                        return;
-                    }
-                    const digimon = existingSlot.digimon;
-                    if (!digimon) {
-                        existingSlot.digimon = DigimonConverter.convert(digimonDto);
-                        return;
-                    }
-
-                    if (digimonDto.level !== undefined) {
-                        digimon.level = digimonDto.level;
-                    }
-                    if (digimonDto.experience !== undefined) {
-                        digimon.experience = digimonDto.experience;
-                    }
-
-                    if (digimonDto.vitals) {
-                        if (digimonDto.vitals.currentHP !== undefined) {
-                            digimon.vitals.currentHP = digimonDto.vitals.currentHP;
-                        }
-                        if (digimonDto.vitals.maxHP !== undefined) {
-                            digimon.vitals.maxHP = digimonDto.vitals.maxHP;
-                        }
-                        if (digimonDto.vitals.currentMP !== undefined) {
-                            digimon.vitals.currentMP = digimonDto.vitals.currentMP;
-                        }
-                        if (digimonDto.vitals.maxMP !== undefined) {
-                            digimon.vitals.maxMP = digimonDto.vitals.maxMP;
-                        }
-                    }
-
-                    if (digimonDto.equipments) {
-                        digimon.equipments = EquipmentsConverter.convert(digimonDto.equipments)!;
-                    }
-
-                    if (digimonDto.activeDigievolutionId !== undefined) {
-                        digimon.activeDigievolutionId = digimonDto.activeDigievolutionId;
-                    }
-
-                    if (digimonDto.digievolutions) {
-                        digimon.digievolutions = DigievolutionsConverter.convert(digimonDto.digievolutions);
-                    }
-
-                    if (digimonDto.attributes) {
-                        AttributesStateManager.refresh(digimon, digimonDto.attributes);
-                    } else if (digimonDto.equipments || digimonDto.activeDigievolutionId !== undefined) {
-                        AttributesStateManager.refresh(digimon);
-                    }
-
-                    if (digimonDto.resistances) {
-                        ResistancesStateManager.refresh(digimon, digimonDto.resistances);
-                    } else if (digimonDto.equipments || digimonDto.activeDigievolutionId !== undefined) {
-                        ResistancesStateManager.refresh(digimon);
-                    }
-                }
-            }
-        });
+        PartySyncer.sync(previousParty, newPartyDto);
     }
 
     return {
