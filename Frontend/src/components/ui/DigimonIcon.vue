@@ -1,25 +1,37 @@
 <script setup lang="ts">
-const props = defineProps<{
-  digimonName: string
-}>()
+import { computed, ref } from 'vue';
 
-const getIconUrl = (name: string) => {
+const props = defineProps<{
+  digimonName: string;
+}>();
+
+const hasError = ref(false);
+
+const iconUrl = computed(() => {
   try {
-    return new URL(`../../assets/icons/digimons/${name}.png`, import.meta.url).href
+    return new URL(`../../assets/icons/digimons/${props.digimonName}.png`, import.meta.url).href;
   } catch (e) {
-    // Falha silenciosa: retorna string vazia ou placeholder caso nÃ£o encontre.
-    return ''
+    return '';
   }
-}
+});
+
+const handleImageError = () => {
+  hasError.value = true;
+};
 </script>
 
 <template>
-  <div class="bg-[#000e3f] rounded overflow-hidden shadow flex-shrink-0 flex items-center justify-center border-2 border-[#00154a]">
+  <div class="bg-[#000e3f] rounded overflow-hidden shadow shrink-0 flex items-center justify-center border-2 border-[#00154a] relative">
     <img 
-      :src="getIconUrl(digimonName)" 
+      v-if="iconUrl && !hasError"
+      :src="iconUrl" 
       :alt="digimonName"
       class="w-full h-full object-cover rendering-pixelated"
-      @error="(e) => (e.target as HTMLImageElement).style.display = 'none'"
+      @error="handleImageError"
     />
+    <div 
+      v-else 
+      class="absolute inset-0 flex items-center justify-center bg-[#001233] text-yellow-500 font-bold text-lg select-none">?
+    </div>
   </div>
 </template>

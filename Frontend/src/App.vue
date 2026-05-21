@@ -2,8 +2,8 @@
 import { computed, ref } from 'vue';
 import { useGameStore } from './stores/use-game-store';
 import { useLocalization } from './composables/useLocalization';
-import DigimonCard from './components/digimon/DigimonCard.vue';
-import QuestJournalPanel from './components/layout/QuestJournalPanel.vue';
+import Digimon from './components/digimon/Digimon.vue';
+import Journal from './components/layout/Journal.vue';
 import AreaInformationPanel from './components/layout/AreaInformationPanel.vue';
 import QuestDetailsModal from './components/layout/QuestDetailsModal.vue';
 import Footer from './components/layout/Footer.vue';
@@ -64,16 +64,17 @@ const handleCloseQuestModal = () => {
     <div class="flex-1 flex gap-4 min-h-[600px]">
       
       <div class="flex-[3] grid grid-cols-3 gap-4">
-        <DigimonCard 
+        <Digimon 
           v-for="slot in activePartySlots" 
           :key="slot.index" 
           :digimon="slot.digimon!" 
+          :digimon-id="slot.digimonId!"
         />
       </div>
 
       <div class="flex-1 min-w-[300px] min-h-0 overflow-hidden flex flex-col gap-4">
         <div class="flex-[3] min-h-0 overflow-hidden flex flex-col">
-          <QuestJournalPanel @quest-click="handleQuestClick" class="flex-1" />
+          <Journal @quest-click="handleQuestClick" class="flex-1" />
         </div>
         
         <div class="flex-[2] min-h-[200px] flex flex-col">

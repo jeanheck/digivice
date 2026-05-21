@@ -252,4 +252,36 @@ export class Repository {
     public static get digimonDetails(): Record<string, any> {
         return DigimonDetailsTableData;
     }
+
+    public static getDigimonNameById(id: number): string {
+        switch (id) {
+            case 1: {
+                return 'Kotemon';
+            }
+            case 2: {
+                return 'Monmon';
+            }
+            case 3: {
+                return 'Kumamon';
+            }
+            case 4: {
+                return 'Guilmon';
+            }
+            case 5: {
+                return 'Renamon';
+            }
+            case 6: {
+                return 'Patamon';
+            }
+            case 7: {
+                return 'Agumon';
+            }
+            case 8: {
+                return 'Veemon';
+            }
+            default: {
+                return 'Unknown';
+            }
+        }
+    }
 }

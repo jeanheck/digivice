@@ -1,27 +1,28 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import DigimonBasicInfo from './DigimonBasicInfo.vue'
+import DigimonVitalsExperience from './DigimonVitalsExperience.vue'
 import DigimonDigievolutions from './DigimonDigievolutions.vue'
-import DigimonDetails from './DigimonDetails.vue'
+import DigimonAttributesResistances from './DigimonAttributesResistances.vue'
 import DigimonEquipments from './DigimonEquipments.vue'
 import DigievolutionGridModal from './DigievolutionGridModal.vue'
 import type { Digimon } from '../../models'
 
 defineProps<{
-  digimon: Digimon
-}>()
+  digimon: Digimon;
+  digimonId: number;
+}>();
 
-const isGridModalOpen = ref(false)
+const isGridModalOpen = ref(false);
 </script>
 
 <template>
   <div class="flex flex-col h-full w-full bg-[#000e3f] p-4 rounded-md shadow-lg border-2 border-[#0033aa] gap-4">
-    <DigimonBasicInfo :digimon="digimon" />
+    <DigimonVitalsExperience :digimon="digimon" :digimon-id="digimonId" />
     <DigimonDigievolutions 
       :digievolutions="digimon.digievolutions"
       :active-digievolution-id="digimon.activeDigievolutionId" 
     />
-    <DigimonDetails 
+    <DigimonAttributesResistances 
       :attributes="digimon.attributes" 
       :resistances="digimon.resistances" />
     <DigimonEquipments :equipments="digimon.equipments" />

@@ -27,11 +27,11 @@ const globalMocks = {
       $t: (key: string) => key
     },
     stubs: {
-      QuestJournalPanel: true,
+      Journal: true,
       AreaInformationPanel: true,
       QuestDetailsModal: true,
       Footer: true,
-      DigimonCard: true
+      Digimon: true
     }
   }
 }
