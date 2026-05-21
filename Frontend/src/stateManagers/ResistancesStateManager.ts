@@ -1,6 +1,6 @@
 import type { Digimon } from '../models';
 import type { ResistancesDTO } from '../events/events.map';
-import { ResistancesConverter } from '../events/converters/resistances.converter';
+import { ResistancesConverter } from '../events/converters/parties/digimons/resistances.converter.backup';
 import { ResistancesUpdater } from '../updaters/ResistancesUpdater';
 
 export class ResistancesStateManager {

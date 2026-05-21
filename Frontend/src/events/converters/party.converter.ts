@@ -1,31 +1,11 @@
 import type { PartyDTO } from '../dto/party.dto';
 import type { Party, DigimonSlot } from '../../models';
-import { DigimonSlotConverter } from './digimon-slot.converter';
+import { DigimonSlotConverter } from './parties/digimon-slot.converter';
 
 export class PartyConverter {
-    public static convert(party: PartyDTO | null): Party | null {
-        if (!party || !party.slots) return null;
-
-        const slots: DigimonSlot[] = [];
-        for (let i = 0; i < 3; i++) {
-            slots.push({
-                index: i,
-                digimonId: null,
-                digimon: null
-            });
-        }
-
-        party.slots.forEach(slotDto => {
-            if (slotDto && slotDto.index >= 0 && slotDto.index < slots.length) {
-                const converted = DigimonSlotConverter.convert(slotDto);
-                if (converted) {
-                    slots[slotDto.index] = converted;
-                }
-            }
-        });
-
+    public static convert(partyDto: Required<PartyDTO>): Party {
         return {
-            slots
+            slots: partyDto.slots.map(slot => DigimonSlotConverter.convert(slot))
         };
     }
 }

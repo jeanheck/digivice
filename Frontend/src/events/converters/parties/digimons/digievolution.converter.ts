@@ -1,5 +1,5 @@
-import type { DigievolutionDTO } from '../dto/parties/digimons/digievolution.dto';
-import type { Digievolution } from '../../models';
+import type { DigievolutionDTO } from "@/events/dto/parties/digimons/digievolution.dto";
+import type { Digievolution } from "@/models";
 
 export class DigievolutionConverter {
     public static convert(digievolutionDto: DigievolutionDTO): Digievolution {

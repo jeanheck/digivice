@@ -4,6 +4,6 @@ import type { JournalDTO } from './journal.dto';
 
 export interface StateDTO {
     player: Required<PlayerDTO> | null;
-    party: PartyDTO | null;
+    party: Required<PartyDTO> | null;
     journal: Required<JournalDTO> | null;
 }

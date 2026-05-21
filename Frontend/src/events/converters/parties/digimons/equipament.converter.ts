@@ -1,10 +1,7 @@
-import type { Equipament } from '../../models';
-import { EquipamentType, DigimonStatusType, EquipamentsAttributesOperationType } from '../../models';
-import EquipmentsData from '../../database/Equipments.json';
-import EquipmentsTypeTable from '../../database/EquipmentsTypeTable.json';
+import type { DigimonStatusType, Equipament, EquipamentsAttributesOperationType, EquipamentType } from "@/models";
 
 export class EquipamentConverter {
-    public static convert(id: number): Equipament | null {
+    /*public static convert(id: number): Equipament | null {
         if (!id || id === 0) {
             return null;
         }
@@ -29,5 +26,5 @@ export class EquipamentConverter {
             equipableDigimon: item.EquipableDigimon || [],
             note: (item as any).Note as Record<string, string> | undefined
         };
-    }
+    }*/
 }

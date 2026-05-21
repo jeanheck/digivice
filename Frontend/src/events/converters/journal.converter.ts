@@ -1,7 +1,7 @@
 import type { JournalDTO } from '../dto/journal.dto';
 import type { QuestDTO } from '../dto/journals/quest.dto';
 import type { Journal } from '../../models';
-import { QuestConverter } from './quest.converter';
+import { QuestConverter } from './journals/quest.converter';
 
 export class JournalConverter {
     public static convert(journalDto: Required<JournalDTO>): Journal {

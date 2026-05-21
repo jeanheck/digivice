@@ -1,9 +1,9 @@
-import DigievolutionData from '../../database/Digievolution.json';
-import { type Resistances, type Equipments, DigimonStatusType, type Equipament } from '../../models';
-import type { ResistancesDTO } from '../events.map';
-import { DigimonStatusConverter } from '../../converters/DigimonStatusConverter';
+import DigievolutionData from '../../../../database/Digievolution.json';
+import { type Resistances, type Equipments, DigimonStatusType, type Equipament } from '../../../../models';
+import type { ResistancesDTO } from '../../../events.map';
+import { DigimonStatusConverter } from '../../../../converters/DigimonStatusConverter';
 
-export class ResistancesConverter {
+export class ResistancesConverterBackup {
     public static convert(
         baseResistances: ResistancesDTO | null,
         equipments: Equipments,
