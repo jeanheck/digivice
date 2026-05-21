@@ -1,31 +1,30 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { invoke } from '@tauri-apps/api/core'
-import LanguageSelector from '../ui/LanguageSelector.vue'
-import MouseTooltip from '../ui/MouseTooltip.vue'
+import { ref } from 'vue';
+import { invoke } from '@tauri-apps/api/core';
+import LanguageSelector from '../ui/LanguageSelector.vue';
+import MouseTooltip from '../ui/MouseTooltip.vue';
 
 defineProps<{
   playerName: string;
   bits: number;
   groupCharisma: number;
   isConnected: boolean;
-}>()
+}>();
 
-const tooltipRef = ref<InstanceType<typeof MouseTooltip> | null>(null)
+const tooltipRef = ref<InstanceType<typeof MouseTooltip> | null>(null);
 
 const openLogsFolder = async () => {
   try {
-    await invoke('open_logs_folder')
+    await invoke('open_logs_folder');
   } catch (err) {
-    console.error('Failed to open logs folder:', err)
+    console.error('Failed to open logs folder:', err);
   }
-}
+};
 </script>
 
 <template>
   <footer class="w-full bg-[#000a2b] text-white p-3 rounded-md shadow-lg border-2 border-[#0033aa] border-t-orange-500 flex items-center gap-12 px-6 relative">
     
-    <!-- Language Selector & Connection Status -->
     <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-4 text-sm opacity-80">
       <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
         <button @click="openLogsFolder" class="px-2 py-1 text-xs bg-blue-900/50 hover:bg-blue-800 rounded border border-blue-700 transition-colors text-blue-200 hover:text-white uppercase tracking-wider">
@@ -61,4 +60,3 @@ const openLogsFolder = async () => {
 
   <MouseTooltip ref="tooltipRef" />
 </template>
-

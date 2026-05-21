@@ -9,6 +9,7 @@ import { AreaInformationConverter } from '../events/converters/area-information.
 import { PlayerSyncer } from './syncers/player.syncer';
 import { JournalSyncer } from './syncers/journal.syncer';
 import { PartySyncer } from './syncers/party.syncer';
+import { PartyCalculator } from '../logic/PartyCalculator';
 
 export const useGameStore = defineStore('game', () => {
     const isConnectedWithBackend = ref(false);
@@ -19,6 +20,9 @@ export const useGameStore = defineStore('game', () => {
     const currentState = ref<State | null>(null);
     const areaInformation = computed(() => {
         return AreaInformationConverter.convert(currentState.value?.player?.location);
+    });
+    const groupCharisma = computed(() => {
+        return PartyCalculator.calculatePartyCharisma(currentState.value?.party?.slots ?? []);
     });
 
     function getDigimonOnPartySlot(slotIndex: number) {
@@ -79,6 +83,7 @@ export const useGameStore = defineStore('game', () => {
         isConnectedWithEmulator,
         currentState,
         areaInformation,
+        groupCharisma,
         getDigimonOnPartySlot,
         syncHubConnectionStatus,
         syncEmulatorConnectionStatus,
@@ -88,3 +93,4 @@ export const useGameStore = defineStore('game', () => {
         syncJournal
     };
 });
+

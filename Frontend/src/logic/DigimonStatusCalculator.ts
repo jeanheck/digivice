@@ -1,21 +1,18 @@
-import { EquipamentType, EquipamentsAttributesOperationType, type DigimonStatusType, type Equipament } from "../models";
+import { EquipamentsAttributesOperationType, type DigimonStatusType, type Equipament } from "../models";
+import { EquipmentsHelper } from "./helpers/EquipmentsHelper";
 
 export class DigimonStatusCalculator {
     public static calculateBonusFromEquipaments(
         digimonStatusType: DigimonStatusType,
-        activeEquipaments: Equipament[]): number {
+        activeEquipaments: Equipament[]
+    ): number {
         let total = 0;
 
-        const uniqueItems = activeEquipaments.filter((item, index, self) => {
-            if (item.type === EquipamentType.WeaponTwoHanded) {
-                return self.findIndex((i: Equipament) => i.id === item.id) === index;
-            }
-            return true;
-        });
-
+        const uniqueItems = EquipmentsHelper.getEquipmentsWithoutDuplication(activeEquipaments);
+        const affectingItems = EquipmentsHelper.getEquipmentsThatAffects(uniqueItems, digimonStatusType);
         const lowerCaseTarget = digimonStatusType.toLowerCase();
 
-        uniqueItems.forEach(item => {
+        affectingItems.forEach((item) => {
             if (item.attributes) {
                 item.attributes.forEach((attr) => {
                     if (attr.attribute.toLowerCase() === lowerCaseTarget) {
@@ -31,6 +28,7 @@ export class DigimonStatusCalculator {
 
         return total;
     }
+
 
     public static calculateBonusFromActiveDigievolution(
         digimonStatusType: DigimonStatusType,

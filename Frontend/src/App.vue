@@ -1,83 +1,81 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useGameStore } from './stores/use-game-store'
-import { useLocalization } from './composables/useLocalization'
-import DigimonCard from './components/digimon/DigimonCard.vue'
-import QuestJournalPanel from './components/layout/QuestJournalPanel.vue'
-import AreaInformationPanel from './components/layout/AreaInformationPanel.vue'
-import QuestDetailsModal from './components/layout/QuestDetailsModal.vue'
-import PlayerFooter from './components/layout/PlayerFooter.vue'
-import { ref } from 'vue'
+import { computed, ref } from 'vue';
+import { useGameStore } from './stores/use-game-store';
+import { useLocalization } from './composables/useLocalization';
+import DigimonCard from './components/digimon/DigimonCard.vue';
+import QuestJournalPanel from './components/layout/QuestJournalPanel.vue';
+import AreaInformationPanel from './components/layout/AreaInformationPanel.vue';
+import QuestDetailsModal from './components/layout/QuestDetailsModal.vue';
+import Footer from './components/layout/Footer.vue';
 
-const store = useGameStore()
-const { getLocalizedQuest } = useLocalization()
-const partySlots = computed(() => store.currentState?.party?.slots ?? [null, null, null])
-const activeQuestId = ref<string | null>(null)
-const isQuestModalOpen = ref(false)
+const store = useGameStore();
+const { getLocalizedQuest } = useLocalization();
+
+const activeQuestId = ref<string | null>(null);
+const isQuestModalOpen = ref(false);
+
+const activePartySlots = computed(() => {
+    return (store.currentState?.party?.slots ?? []).filter((slot) => {
+        return slot !== null && slot !== undefined && slot.digimon !== null;
+    });
+});
 
 const activeQuestForModal = computed(() => {
-  const questId = activeQuestId.value;
-  if (!questId) return null;
-  
-  const journal = store.currentState?.journal;
-  if (!journal) return null;
-  
-  // Normalized ID comparison helper
-  const getQuestId = (q: any) => q?.Id || q?.id || q?.QuestId;
+    const questId = activeQuestId.value;
+    if (!questId) {
+        return null;
+    }
+    
+    const journal = store.currentState?.journal;
+    if (!journal) {
+        return null;
+    }
+    
+    const getQuestId = (q: any) => {
+        return q?.Id || q?.id || q?.QuestId;
+    };
 
-  // Check Main Quest
-  if (journal.mainQuest && getQuestId(journal.mainQuest) === questId) {
-    return getLocalizedQuest(journal.mainQuest);
-  }
-  
-  // Check Side Quests
-  const sideQuest = journal.sideQuests?.find(q => getQuestId(q) === questId);
-  return sideQuest ? getLocalizedQuest(sideQuest) : null;
-})
+    if (journal.mainQuest && getQuestId(journal.mainQuest) === questId) {
+        return getLocalizedQuest(journal.mainQuest);
+    }
+    
+    const sideQuest = journal.sideQuests?.find((q) => {
+        return getQuestId(q) === questId;
+    });
+    
+    return sideQuest ? getLocalizedQuest(sideQuest) : null;
+});
 
 const handleQuestClick = (quest: any) => {
-  // Normalize ID upon selection
-  activeQuestId.value = quest.Id || quest.id || quest.QuestId || null
-  isQuestModalOpen.value = true
-}
+    activeQuestId.value = quest.Id || quest.id || quest.QuestId || null;
+    isQuestModalOpen.value = true;
+};
 
 const handleCloseQuestModal = () => {
-  isQuestModalOpen.value = false
-  setTimeout(() => {
-     activeQuestId.value = null
-  }, 300) // Wait for fade transition
-}
+    isQuestModalOpen.value = false;
+    setTimeout(() => {
+        activeQuestId.value = null;
+    }, 300);
+};
 </script>
 
 <template>
   <main class="min-h-screen bg-transparent p-4 flex flex-col gap-4 max-w-[1800px] mx-auto text-white">
-    <!-- Top Section: Core Game Data -->
     <div class="flex-1 flex gap-4 min-h-[600px]">
       
-      <!-- Digimon Slots (3 Columns) -->
       <div class="flex-[3] grid grid-cols-3 gap-4">
-        <!-- Loop exactly 3 times -->
-        <template v-for="(slot, index) in partySlots" :key="index">
-          <DigimonCard 
-            v-if="slot && slot.digimon" 
-            :digimon="slot.digimon" 
-          />
-          
-          <!-- Empty Slot Placeholder -->
-          <div v-else class="flex flex-col h-full w-full p-4 rounded-md shadow-lg border-2 border-dashed border-gray-400 bg-gray-200/50 flex items-center justify-center">
-            <span class="text-gray-500 font-medium opacity-70">Slot Empty</span>
-          </div>
-        </template>
+        <DigimonCard 
+          v-for="slot in activePartySlots" 
+          :key="slot.index" 
+          :digimon="slot.digimon!" 
+        />
       </div>
 
-      <!-- Right Sidebar (Journal + Area Info) -->
       <div class="flex-1 min-w-[300px] min-h-0 overflow-hidden flex flex-col gap-4">
-        <!-- Quest Journal -->
         <div class="flex-[3] min-h-0 overflow-hidden flex flex-col">
           <QuestJournalPanel @quest-click="handleQuestClick" class="flex-1" />
         </div>
         
-        <!-- Area Information -->
         <div class="flex-[2] min-h-[200px] flex flex-col">
           <AreaInformationPanel :area-info="store.areaInformation ?? null" class="flex-1" />
         </div>
@@ -85,15 +83,13 @@ const handleCloseQuestModal = () => {
 
     </div>
 
-    <!-- Bottom Section: Player Info -->
-    <PlayerFooter 
+    <Footer 
       :player-name="store.currentState?.player?.name ?? $t('common.connecting')"
       :bits="store.currentState?.player?.bits ?? 0"
-      :group-charisma="0"
+      :group-charisma="store.groupCharisma"
       :is-connected="store.isConnected"
     />
 
-    <!-- Overlays -->
     <QuestDetailsModal 
       :is-open="isQuestModalOpen" 
       :quest="activeQuestForModal" 

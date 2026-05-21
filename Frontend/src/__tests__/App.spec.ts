@@ -10,7 +10,8 @@ vi.mock('../stores/use-game-store', () => ({
       journal: { mainQuest: null, sideQuests: [] }
     },
     areaInformation: { location: { name: 'File Island' }, enemies: [] },
-    isConnected: true
+    isConnected: true,
+    groupCharisma: 0
   })
 }))
 
@@ -29,7 +30,7 @@ const globalMocks = {
       QuestJournalPanel: true,
       AreaInformationPanel: true,
       QuestDetailsModal: true,
-      PlayerFooter: true,
+      Footer: true,
       DigimonCard: true
     }
   }

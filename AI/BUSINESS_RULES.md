@@ -36,6 +36,7 @@ graph TD
 *   **Estado Inicial (`InitialState`):** No momento da conexão, um DTO completo do `State` é enviado ao frontend. Ele é convertido em modelo pela classe `StateConverter` e define o estado inicial da Pinia Store.
 *   **Sincronização Incremental:** Eventos subsequentes trazem DTOs contendo apenas dados que foram alterados. Os `Syncers` mutam o estado reativo da store de forma cirúrgica.
 *   **Regra de Ouro do Syncer:** Se um valor vier como `undefined` (não enviado/sem alteração), o frontend **não deve** realizar nenhuma ação.
+*   **Consumo Direto por Componentes (Single Source of Truth):** Os componentes Vue (`App.vue`, `DigimonCard.vue`, etc.) importam e consomem os dados e propriedades computadas da `useGameStore` de forma direta e reativa. Não existem controladores intermediários ou camadas extras de tráfego de dados, garantindo simplicidade e sincronia em tempo real.
 
 ---
 
