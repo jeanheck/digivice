@@ -6,20 +6,16 @@ import { Repository } from '../repositories/repository';
 import { PartyHelper } from './helpers/PartyHelper';
 
 export class PartyCalculator {
-    public static calculatePartyCharisma(slots: DigimonSlot[]): number {
-        const digimons = PartyHelper.getDigimons(slots);
+    public static calculatePartyCharisma(digimonSlots: DigimonSlot[]): number {
+        const digimons = PartyHelper.getDigimons(digimonSlots);
         const totalDigimonsCharisma = MathUtils.Sum(digimons.map((d) => Number(d.attributes.charisma)));
-
-        let totalBonusFromEquipments = 0;
-
-        for (const digimon of digimons) {
-            const activeEquips = Repository.getEquipmentsByIds(digimon.equipments);
-            const bonus = DigimonStatusCalculator.calculateBonusFromEquipaments(
+        const totalBonusFromEquipments = MathUtils.Sum(digimons.map((digimon) => {
+            const enrichedEquipments = Repository.getEquipmentsByIds(digimon.equipments);
+            return DigimonStatusCalculator.calculateBonusFromEquipaments(
                 DigimonStatusType.charisma,
-                activeEquips
+                enrichedEquipments
             );
-            totalBonusFromEquipments += bonus;
-        }
+        }));
 
         return totalDigimonsCharisma + totalBonusFromEquipments;
     }

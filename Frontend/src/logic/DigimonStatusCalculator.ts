@@ -1,32 +1,15 @@
-import { EquipamentsAttributesOperationType, type DigimonStatusType, type EnrichedEquipment } from "../models";
-import { EquipmentsHelper } from "./helpers/EquipmentsHelper";
+import { MathUtils } from "@/utils/MathUtils";
+import { type DigimonStatusType, type EnrichedEquipment } from "../models";
 
 export class DigimonStatusCalculator {
-    public static calculateBonusFromEquipaments(
-        digimonStatusType: DigimonStatusType,
-        activeEquipaments: EnrichedEquipment[]
+    public static calculateBonusFromEquipaments(digimonStatusType: DigimonStatusType, enrichedEquipments: EnrichedEquipment[]
     ): number {
-        let total = 0;
+        const lowerCaseDigimonStatusType = digimonStatusType.toLowerCase();
+        const attributes = enrichedEquipments
+            .flatMap(enrichedEquipment => enrichedEquipment.attributes)
+            .filter(attribute => attribute.attribute.toLowerCase() === lowerCaseDigimonStatusType);
 
-        const uniqueItems = EquipmentsHelper.getEquipmentsWithoutDuplication(activeEquipaments);
-        const affectingItems = EquipmentsHelper.getEquipmentsThatAffects(uniqueItems, digimonStatusType);
-        const lowerCaseTarget = digimonStatusType.toLowerCase();
-
-        affectingItems.forEach((item) => {
-            if (item.attributes) {
-                item.attributes.forEach((attr) => {
-                    if (attr.attribute.toLowerCase() === lowerCaseTarget) {
-                        if (attr.type === EquipamentsAttributesOperationType.Addition) {
-                            total += attr.value;
-                        } else if (attr.type === EquipamentsAttributesOperationType.Subtraction) {
-                            total -= attr.value;
-                        }
-                    }
-                });
-            }
-        });
-
-        return total;
+        return MathUtils.Sum(attributes.map(attribute => Number(`${attribute.type}${attribute.value}`)));
     }
 
 

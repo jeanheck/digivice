@@ -1,5 +1,3 @@
-import type { DigimonStatus } from './digimon-status';
-
 export interface Attributes {
     strength: Number;
     defense: Number;

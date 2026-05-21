@@ -181,35 +181,30 @@ export class Repository {
         return this._equipments;
     }
 
-    public static getEquipmentById(id: number | null): EnrichedEquipment | null {
-        if (id === null || id === undefined || id === 0) {
-            return null;
-        }
-        return this._equipmentsMap.get(id) || null;
+    private static getNonRepeatedIds(ids: number[]): number[] {
+        return [...new Set(ids)];
     }
 
-    public static getEquipmentsByIds(equipments: Equipments | null | undefined): EnrichedEquipment[] {
-        if (!equipments) {
-            return [];
-        }
-        const ids = [
+    private static getEquipmentsIds(equipments: Equipments) : number[] {
+        const equipamentsIds = [
             equipments.head,
             equipments.body,
             equipments.rightHand,
             equipments.leftHand,
             equipments.accessory1,
             equipments.accessory2
-        ];
-        const resolved: EnrichedEquipment[] = [];
-        for (const id of ids) {
-            if (id !== null && id !== undefined && id !== 0) {
-                const item = this._equipmentsMap.get(id);
-                if (item) {
-                    resolved.push(item);
-                }
-            }
-        }
-        return resolved;
+        ].filter((id): id is number => id !== null && id !== undefined && id !== 0);
+
+        return this.getNonRepeatedIds(equipamentsIds);
+    }
+
+    public static getEquipmentsByIds(equipments: Equipments): EnrichedEquipment[] {
+        const equipmentsIds = this.getEquipmentsIds(equipments);
+        const enrichedEquipments = equipmentsIds
+            .map((equipmentId) => this._equipmentsMap.get(equipmentId))
+            .filter((enrichedEquipment): enrichedEquipment is EnrichedEquipment => enrichedEquipment !== undefined);
+
+        return enrichedEquipments;
     }
 
     public static get enemies(): Enemy[] {
