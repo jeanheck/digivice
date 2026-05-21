@@ -1,5 +1,5 @@
-import type { Resistances } from '../../models';
-import type { ResistancesDTO } from '../../events/dto/parties/digimons/resistances.dto';
+import type { Resistances } from '@/models';
+import type { ResistancesDTO } from '@/events/dto/parties/digimons/resistances.dto';
 
 export class ResistancesSyncer {
     public static sync(previousResistances: Resistances, newResistancesDto: ResistancesDTO): void {

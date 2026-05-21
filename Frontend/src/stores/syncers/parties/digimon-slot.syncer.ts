@@ -5,19 +5,24 @@ import { DigimonSyncer } from './digimon.syncer';
 
 export class DigimonSlotSyncer {
     public static sync(previousDigimonSlot: DigimonSlot, newDigimonSlotDto: DigimonSlotDTO): void {
-        if (!newDigimonSlotDto.digimonId || !newDigimonSlotDto.digimon) {
+        const newId = newDigimonSlotDto.digimonId;
+        const newDigimon = newDigimonSlotDto.digimon;
+
+        if (newId === null || newDigimon === null) {
             previousDigimonSlot.digimonId = null;
             previousDigimonSlot.digimon = null;
             return;
         }
 
-        if (!previousDigimonSlot.digimon) {
-            previousDigimonSlot.digimonId = newDigimonSlotDto.digimonId;
-            previousDigimonSlot.digimon = DigimonConverter.convert(newDigimonSlotDto.digimon);
-            return;
-        }
+        if (newId !== undefined && newDigimon !== undefined) {
+            if (!previousDigimonSlot.digimon) {
+                previousDigimonSlot.digimonId = newId;
+                previousDigimonSlot.digimon = DigimonConverter.convert(newDigimon);
+                return;
+            }
 
-        previousDigimonSlot.digimonId = newDigimonSlotDto.digimonId;
-        DigimonSyncer.sync(previousDigimonSlot.digimon, newDigimonSlotDto.digimon);
+            previousDigimonSlot.digimonId = newId;
+            DigimonSyncer.sync(previousDigimonSlot.digimon, newDigimon);
+        }
     }
 }

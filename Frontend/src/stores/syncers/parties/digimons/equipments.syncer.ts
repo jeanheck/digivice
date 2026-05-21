@@ -1,5 +1,5 @@
-import type { Equipments } from '../../models';
-import type { EquipmentsDTO } from '../../events/dto/parties/digimons/equipments.dto';
+import type { Equipments } from '@/models';
+import type { EquipmentsDTO } from '@/events/dto/parties/digimons/equipments.dto';
 
 export class EquipmentsSyncer {
     public static sync(previousEquipments: Equipments, newEquipmentsDto: EquipmentsDTO): void {

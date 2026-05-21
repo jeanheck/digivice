@@ -1,11 +1,11 @@
 import type { Digimon } from '../../../models';
 import type { DigimonDTO } from '../../../events/dto/parties/digimon.dto';
-import { VitalsSyncer } from './vitals.syncer';
+import { VitalsSyncer } from './digimons/vitals.syncer';
 
-import { AttributesSyncer } from './attributes.syncer';
-import { ResistancesSyncer } from './resistances.syncer';
-import { DigievolutionSlotSyncer } from './digievolution-slot.syncer';
-import { EquipmentsSyncer } from './equipments.syncer';
+import { AttributesSyncer } from './digimons/attributes.syncer';
+import { ResistancesSyncer } from './digimons/resistances.syncer';
+import { DigievolutionSlotSyncer } from './digimons/digievolution-slot.syncer';
+import { EquipmentsSyncer } from './digimons/equipments.syncer';
 
 export class DigimonSyncer {
     public static sync(previousDigimon: Digimon, newDigimonDto: DigimonDTO): void {

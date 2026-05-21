@@ -1,5 +1,5 @@
-import type { Vitals } from '../../models';
-import type { VitalsDTO } from '../../events/dto/parties/digimons/vitals.dto';
+import type { Vitals } from '@/models';
+import type { VitalsDTO } from '@/events/dto/parties/digimons/vitals.dto';
 
 export class VitalsSyncer {
     public static sync(previousVitals: Vitals, newVitalsDto: VitalsDTO): void {
