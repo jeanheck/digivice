@@ -1,10 +1,10 @@
 import type { DigimonStatus } from './digimon-status';
 
 export interface Attributes {
-    strength: DigimonStatus;
-    defense: DigimonStatus;
-    spirit: DigimonStatus;
-    wisdom: DigimonStatus;
-    speed: DigimonStatus;
-    charisma: DigimonStatus;
+    strength: Number;
+    defense: Number;
+    spirit: Number;
+    wisdom: Number;
+    speed: Number;
+    charisma: Number;
 }

@@ -1,10 +1,11 @@
 import type { Digimon } from '../../models';
 import type { DigimonDTO } from '../../events/dto/parties/digimon.dto';
 import { VitalsSyncer } from './vitals.syncer';
-import { EquipmentsSyncer } from './equipments.syncer';
+
 import { AttributesSyncer } from './attributes.syncer';
 import { ResistancesSyncer } from './resistances.syncer';
 import { DigievolutionSlotSyncer } from './digievolution-slot.syncer';
+import { EquipmentsSyncer } from './equipments.syncer';
 
 export class DigimonSyncer {
     public static sync(previousDigimon: Digimon, newDigimonDto: DigimonDTO): void {
@@ -21,13 +22,13 @@ export class DigimonSyncer {
             VitalsSyncer.sync(previousDigimon.vitals, newDigimonDto.vitals);
         }
         if (newDigimonDto.equipments) {
-            EquipmentsSyncer.sync(previousDigimon, newDigimonDto.equipments);
+            EquipmentsSyncer.sync(previousDigimon.equipments, newDigimonDto.equipments);
         }
         if (newDigimonDto.attributes) {
-            AttributesSyncer.sync(previousDigimon, newDigimonDto.attributes);
+            AttributesSyncer.sync(previousDigimon.attributes, newDigimonDto.attributes);
         }
         if (newDigimonDto.resistances) {
-            ResistancesSyncer.sync(previousDigimon, newDigimonDto.resistances);
+            ResistancesSyncer.sync(previousDigimon.resistances, newDigimonDto.resistances);
         }
         if (newDigimonDto.digievolutions && newDigimonDto.digievolutions.length > 0) {
             newDigimonDto.digievolutions.forEach((newDigievolutionSlotDto) => {

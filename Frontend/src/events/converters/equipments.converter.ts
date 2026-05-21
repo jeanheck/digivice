@@ -1,41 +1,16 @@
 import type { EquipmentsDTO } from '../events.map';
-import type { Equipments, Equipament } from '../../models';
-import { EquipamentType, DigimonStatusType, EquipamentsAttributesOperationType } from '../../models';
-import EquipmentsData from '../../database/Equipments.json';
-import EquipmentsTypeTable from '../../database/EquipmentsTypeTable.json';
+import type { Equipments } from '../../models';
+import { EquipamentConverter } from './equipament.converter';
 
 export class EquipmentsConverter {
     public static convert(equipmentsDto: EquipmentsDTO | null): Equipments {
         return {
-            head: createEquipament(equipmentsDto?.head ?? 0),
-            body: createEquipament(equipmentsDto?.body ?? 0),
-            rightHand: createEquipament(equipmentsDto?.rightHand ?? 0),
-            leftHand: createEquipament(equipmentsDto?.leftHand ?? 0),
-            accessory1: createEquipament(equipmentsDto?.accessory1 ?? 0),
-            accessory2: createEquipament(equipmentsDto?.accessory2 ?? 0)
+            head: EquipamentConverter.convert(equipmentsDto?.head ?? 0),
+            body: EquipamentConverter.convert(equipmentsDto?.body ?? 0),
+            rightHand: EquipamentConverter.convert(equipmentsDto?.rightHand ?? 0),
+            leftHand: EquipamentConverter.convert(equipmentsDto?.leftHand ?? 0),
+            accessory1: EquipamentConverter.convert(equipmentsDto?.accessory1 ?? 0),
+            accessory2: EquipamentConverter.convert(equipmentsDto?.accessory2 ?? 0)
         };
     }
-}
-
-function createEquipament(id: number): Equipament | null {
-    if (!id || id === 0) return null;
-
-    const item = EquipmentsData.equipments.find(e => e.Id === id);
-    if (!item) return null;
-
-    const typeInfo = EquipmentsTypeTable.types.find(t => t.Id === item.Type);
-
-    return {
-        id: item.Id as number,
-        name: item.Name as Record<string, string>,
-        type: (item.Type as EquipamentType) || EquipamentType.Unknown,
-        typeDescription: typeInfo ? typeInfo.Description as Record<string, string> : null,
-        attributes: item.Attributes ? item.Attributes.map((a: any) => ({
-            attribute: a.Attribute.toLowerCase() as DigimonStatusType,
-            type: a.Type as EquipamentsAttributesOperationType,
-            value: a.Value
-        })) : [],
-        equipableDigimon: item.EquipableDigimon || [],
-        note: (item as any).Note as Record<string, string> | undefined
-    };
 }

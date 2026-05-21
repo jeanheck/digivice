@@ -2,18 +2,18 @@ import type { Vitals } from '../../models';
 import type { VitalsDTO } from '../../events/dto/parties/digimons/vitals.dto';
 
 export class VitalsSyncer {
-    public static sync(previousVitals: Vitals, vitalsDto: VitalsDTO): void {
-        if (vitalsDto.currentHP !== undefined) {
-            previousVitals.currentHP = vitalsDto.currentHP;
+    public static sync(previousVitals: Vitals, newVitalsDto: VitalsDTO): void {
+        if (newVitalsDto.currentHP !== undefined) {
+            previousVitals.currentHP = newVitalsDto.currentHP;
         }
-        if (vitalsDto.maxHP !== undefined) {
-            previousVitals.maxHP = vitalsDto.maxHP;
+        if (newVitalsDto.maxHP !== undefined) {
+            previousVitals.maxHP = newVitalsDto.maxHP;
         }
-        if (vitalsDto.currentMP !== undefined) {
-            previousVitals.currentMP = vitalsDto.currentMP;
+        if (newVitalsDto.currentMP !== undefined) {
+            previousVitals.currentMP = newVitalsDto.currentMP;
         }
-        if (vitalsDto.maxMP !== undefined) {
-            previousVitals.maxMP = vitalsDto.maxMP;
+        if (newVitalsDto.maxMP !== undefined) {
+            previousVitals.maxMP = newVitalsDto.maxMP;
         }
     }
 }
