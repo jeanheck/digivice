@@ -1,5 +1,5 @@
-import type { Digimon } from '../../models';
-import type { DigimonDTO } from '../../events/dto/parties/digimon.dto';
+import type { Digimon } from '../../../models';
+import type { DigimonDTO } from '../../../events/dto/parties/digimon.dto';
 import { VitalsSyncer } from './vitals.syncer';
 
 import { AttributesSyncer } from './attributes.syncer';

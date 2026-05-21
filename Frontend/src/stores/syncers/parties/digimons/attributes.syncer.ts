@@ -1,5 +1,5 @@
-import type { Attributes } from '../../models';
-import type { AttributesDTO } from '../../events/dto/parties/digimons/attributes.dto';
+import type { AttributesDTO } from "@/events/dto/parties/digimons/attributes.dto";
+import type { Attributes } from "@/models";
 
 export class AttributesSyncer {
     public static sync(previousAttributes: Attributes, newAttributesDto: AttributesDTO): void {

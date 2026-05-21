@@ -1,6 +1,6 @@
 import type { Journal } from '../../models';
 import type * as Events from '../../events/events.map';
-import { QuestSyncer } from './quest.syncer';
+import { QuestSyncer } from './journals/quest.syncer';
 
 export class JournalSyncer {
     public static sync(previousJournal: Journal, newJournalDto: Events.JournalDTO): void {

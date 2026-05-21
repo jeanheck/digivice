@@ -1,6 +1,6 @@
 import type { Party } from '../../models';
 import type { PartyDTO } from '../../events/dto/party.dto';
-import { DigimonSlotSyncer } from './digimon-slot.syncer';
+import { DigimonSlotSyncer } from './parties/digimon-slot.syncer';
 
 export class PartySyncer {
     public static sync(previousParty: Party, newPartyDto: PartyDTO): void {

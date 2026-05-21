@@ -1,7 +1,7 @@
-import type { Quest } from '../../models';
-import type { QuestDTO } from '../../events/dto/journals/quest.dto';
-import { StepSyncer } from './step.syncer';
-import { RequisiteSyncer } from './requisite.syncer';
+import type { Quest } from '../../../models';
+import type { QuestDTO } from '../../../events/dto/journals/quest.dto';
+import { RequisiteSyncer } from './quests/requisite.syncer';
+import { StepSyncer } from './quests/step.syncer';
 
 export class QuestSyncer {
     public static sync(previousQuest: Quest, newQuestDto: QuestDTO): void {

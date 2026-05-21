@@ -2,6 +2,13 @@
 
 Por favor, siga estas práticas rigorosamente ao trabalhar neste projeto:
 
+## Diretrizes primárias
+
+1. **Respostas objetivas**: Dê respostas consisas e objetivas. Não escreva textos complexos e floreados desnecessariamente. Foque no assunto. A exceção é se eu pedir detalhamento. Aí eu quero que você seja bem detalhista e explicativo.
+2. **Foque na tarefa**: Não saia procurando todos os pontos possíveis onde suas alterações possam impactar. Foque nos arquivos e no contexto atual da tarefa. Eu vou orientar você sobre o fluxo como um todo.
+
+## Diretrizes de código
+
 1. **Nomenclatura de Variáveis**: Não abrevie nomes de variáveis. Prefira nomes maiores, explícitos e que façam mais sentido para o contexto.
 2. **Construtores Primários**: Sempre que possível, utilize construtores primários (C# 12+).
 3. **Evite comentários**: Não incluia comentários em códigos onde o contexto do próprio código é auto explicativo. Apenas utilize comentários em situações de funções complexas. Quando utilizar, escreva-os em inglês.
