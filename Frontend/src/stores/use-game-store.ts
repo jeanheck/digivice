@@ -33,7 +33,7 @@ export const useGameStore = defineStore('game', () => {
         isConnectedWithBackend.value = event.isConnected;
     }
 
-    function syncEmulatorConnectionStatus(event: Events.EmulatorConnectionStatusChangedDTO): void {
+    function syncEmulatorConnectionStatus(event: { isConnected: boolean }): void {
         isConnectedWithEmulator.value = event.isConnected;
     }
 

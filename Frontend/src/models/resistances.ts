@@ -1,5 +1,3 @@
-import type { DigimonStatus } from './digimon-status';
-
 export interface Resistances {
     fire: Number;
     water: Number;

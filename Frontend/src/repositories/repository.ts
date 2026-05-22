@@ -8,7 +8,6 @@ import FolderBagTableData from '../database/FolderBagTable.json';
 import LocationsData from '../database/Locations.json';
 import MainQuestTableData from '../database/MainQuestTable.json';
 import TechniquesTableData from '../database/TechniquesTable.json';
-import TechniquesTypeTableData from '../database/TechniquesTypeTable.json';
 import TreeBootsTableData from '../database/TreeBootsTable.json';
 
 export interface DbTechnique {
@@ -60,7 +59,6 @@ export class Repository {
 
     static {
         this.initializeEnemies();
-        this.initializeTechniques();
     }
 
     private static initializeEnemies(): void {
@@ -113,29 +111,6 @@ export class Repository {
 
             this._enemies.push(resolved);
             this._enemiesMap.set(resolved.id, resolved);
-        }
-    }
-
-    private static initializeTechniques(): void {
-        for (const t of TechniquesTableData.techniques) {
-            const typeInfo = TechniquesTypeTableData.Types.find((type) => {
-                return type.Id === t.type;
-            });
-
-            const resolved: DbTechnique = {
-                id: t.id,
-                name: t.name,
-                type: t.type,
-                typeDescription: typeInfo ? typeInfo.Description : null,
-                element: t.element,
-                elementStrength: t.elementStrength,
-                mp: t.mp,
-                power: t.power,
-                description: t.description
-            };
-
-            this._techniques.push(resolved);
-            this._techniquesMap.set(resolved.id, resolved);
         }
     }
 

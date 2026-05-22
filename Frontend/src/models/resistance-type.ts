@@ -1,9 +1,9 @@
 export enum ResistanceType {
-    fire = "fire",
-    water = "water",
-    ice = "ice",
-    wind = "wind",
-    thunder = "thunder",
-    machine = "machine",
-    dark = "dark",
+    Fire = "Fire",
+    Water = "Water",
+    Ice = "Ice",
+    Wind = "Wind",
+    Thunder = "Thunder",
+    Machine = "Machine",
+    Dark = "Dark",
 }

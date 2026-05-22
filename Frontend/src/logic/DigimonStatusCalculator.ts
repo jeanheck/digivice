@@ -1,5 +1,5 @@
 import { MathUtils } from "@/utils/MathUtils";
-import { AttributeType, ResistanceType, type DigimonStatusType, type EnrichedEquipment, type Equipments } from "@/models";
+import { AttributeType, ResistanceType, type EnrichedEquipment, type Equipments } from "@/models";
 import { EquipamentRepository } from "@/repositories/equipament-repository";
 
 export class DigimonStatusCalculator {

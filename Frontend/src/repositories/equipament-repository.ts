@@ -1,5 +1,5 @@
-import { EquipamentsAttributesOperationType, type EnrichedEquipment, type Equipments } from '../models';
-import { EquipamentType } from '../models';
+import { EquipmentsAttributesOperationType, type EnrichedEquipment, type Equipments } from '../models';
+import { EquipmentType } from '../models';
 import EquipmentsData from '../database/Equipments.json';
 import EquipmentsTypeTableData from '../database/EquipmentsTypeTable.json';
 
@@ -20,12 +20,12 @@ export class EquipamentRepository {
             const resolved: EnrichedEquipment = {
                 id: item.Id ?? 0,
                 name: item.Name,
-                type: (item.Type as EquipamentType) || EquipamentType.Unknown,
+                type: (item.Type as EquipmentType) || EquipmentType.Unknown,
                 typeDescription: typeInfo ? typeInfo.Description : null,
                 attributes: item.Attributes ? item.Attributes.map((a: any) => {
                     return {
                         attribute: a.Attribute.toLowerCase() as any,
-                        type: a.Type === "Addition" ? EquipamentsAttributesOperationType.Addition : EquipamentsAttributesOperationType.Subtraction,
+                        type: a.Type === "Addition" ? EquipmentsAttributesOperationType.Addition : EquipmentsAttributesOperationType.Subtraction,
                         value: a.Value
                     };
                 }) : [],

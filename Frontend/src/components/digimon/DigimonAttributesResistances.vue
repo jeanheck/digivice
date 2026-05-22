@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useLocalization } from '@/composables/useLocalization';
-import { DigimonStatusType, AttributeType, ResistanceType } from '@/models';
+import { AttributeType, ResistanceType } from '@/models';
 import type { Attributes, Equipments, Resistances, EnrichedDigievolution, EnrichedAttributes, EnrichedResistances, EnrichedAttributeResistance } from '@/models';
 import { DigimonStatusCalculator } from '@/logic/DigimonStatusCalculator';
 import DigimonAttributeResistance from '@/components/digimon/DigimonAttributeResistance.vue';

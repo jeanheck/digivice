@@ -1,12 +1,12 @@
-import type { EquipamentType } from '../equipament-type';
-import type { EquipamentsAttributes } from '../equipaments-attributes';
+import type { EquipmentType } from '../equipment-type';
+import type { EquipmentsAttributes } from '../equipments-attributes';
 
 export interface EnrichedEquipment {
     id: number;
     name: Record<string, string>;
-    type: EquipamentType;
+    type: EquipmentType;
     typeDescription: Record<string, string> | null;
-    attributes: EquipamentsAttributes[];
+    attributes: EquipmentsAttributes[];
     equipableDigimon: string[];
     note?: Record<string, string>;
 }

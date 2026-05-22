@@ -1,6 +1,6 @@
 import { MathUtils } from '@/utils/MathUtils';
 import type { DigimonSlot } from '../models';
-import { AttributeType, DigimonStatusType } from '../models';
+import { AttributeType } from '../models';
 import { DigimonStatusCalculator } from './DigimonStatusCalculator';
 import { EquipamentRepository } from '../repositories/equipament-repository';
 import { PartyHelper } from './helpers/PartyHelper';

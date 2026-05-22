@@ -1,4 +1,4 @@
-export enum EquipamentType {
+export enum EquipmentType {
     WeaponSingleHanded = "WeaponSingleHanded",
     BodyArmor = "BodyArmor",
     WeaponTwoHanded = "WeaponTwoHanded",

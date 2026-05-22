@@ -1,6 +1,6 @@
-export type TechniqueTypeId = 'Physical' | 'Magical' | 'Heal' | 'Support';
-
-export interface TechniqueType {
-    id: TechniqueTypeId;
-    description: Record<string, string>;
+export enum TechniqueType {
+    Physical = 'Physical',
+    Magical = 'Magical',
+    Heal = 'Heal',
+    Support = 'Support'
 }

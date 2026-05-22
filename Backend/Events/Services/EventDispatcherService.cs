@@ -1,8 +1,8 @@
-using Backend.Events.Models;
-using Backend.Events.Hubs;
-using Backend.Events.States;
-using Backend.Events.DTO;
 using Backend.Events.Converters;
+using Backend.Events.DTO;
+using Backend.Events.Hubs;
+using Backend.Events.Models;
+using Backend.Events.States;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Backend.Events.Services;
@@ -36,6 +36,7 @@ public class EventDispatcherService(
             var stateDto = StateConverter.ToDTO(currentState);
             var initialEvent = new Event(EventType.InitialState, stateDto);
             SafeDispatch(initialEvent, hubContext.Clients.Client(connectionId));
+            SafeDispatch(new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(gameStateStore.IsConnectedWithEmulator ?? false)));
         }
     }
 
