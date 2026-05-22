@@ -1,56 +1,68 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useLocalization } from '../../composables/useLocalization'
-import type { Equipments, EnrichedEquipment } from '../../models'
-import DigimonEquipament from './DigimonEquipament.vue'
-import DigimonEquipmentTooltip from './DigimonEquipmentTooltip.vue'
+import { computed, ref } from 'vue';
+import type { Equipments, EnrichedEquipment } from '@/models';
+import { EquipamentRepository } from '@/repositories/equipament-repository';
+import DigimonEquipament from './DigimonEquipament.vue';
+import DigimonEquipmentTooltip from './DigimonEquipmentTooltip.vue';
 
 const props = defineProps<{
-  equipments: Equipments
-}>()
+  equipments: Equipments;
+}>();
 
-const { t } = useLocalization()
+const slotKeys = [
+  'head',
+  'body',
+  'rightHand',
+  'leftHand',
+  'accessory1',
+  'accessory2'
+] as const;
 
-const equipmentsList = computed(() => {
-  const eq = props.equipments
-  return [
-    { slot: t('digimon.slots.head'), item: eq?.head || null, color: 'text-gray-400' },
-    { slot: t('digimon.slots.body'), item: eq?.body || null, color: 'text-gray-400' },
-    { slot: t('digimon.slots.right'), item: eq?.rightHand || null, color: 'text-gray-400' },
-    { slot: t('digimon.slots.left'), item: eq?.leftHand || null, color: 'text-gray-400' },
-    { slot: t('digimon.slots.accessory1'), item: eq?.accessory1 || null, color: 'text-cyan-300' },
-    { slot: t('digimon.slots.accessory2'), item: eq?.accessory2 || null, color: 'text-cyan-300' }
-  ]
-})
+const enrichedEquipments = computed(() => {
+  return EquipamentRepository.getEquipmentsByIds(props.equipments);
+});
 
-const activeTooltip = ref({ show: false, item: null as EnrichedEquipment | null, x: 0, y: 0 })
+const getEnrichedEquipment = (
+  slotKey: 'head' | 'body' | 'rightHand' | 'leftHand' | 'accessory1' | 'accessory2'
+): EnrichedEquipment | null => {
+  const equipmentId = props.equipments?.[slotKey];
+  if (!equipmentId) {
+    return null;
+  }
+  const foundEquipment = enrichedEquipments.value.find((equipment) => {
+    return equipment.id === equipmentId;
+  });
+  return foundEquipment || null;
+};
+
+const activeTooltip = ref({ show: false, item: null as EnrichedEquipment | null, x: 0, y: 0 });
 
 const showTooltip = (event: MouseEvent, equipObj: EnrichedEquipment) => {
-  let posX = event.clientX + 15
+  let posX = event.clientX + 15;
   if (posX + 250 > window.innerWidth) {
-      posX = event.clientX - 260
+      posX = event.clientX - 260;
   }
   
-  activeTooltip.value = { show: true, item: equipObj, x: posX, y: event.clientY + 15 }
-}
+  activeTooltip.value = { show: true, item: equipObj, x: posX, y: event.clientY + 15 };
+};
 
 const hideTooltip = () => {
-  activeTooltip.value.show = false
-}
+  activeTooltip.value.show = false;
+};
 
 const moveTooltip = (event: MouseEvent) => {
   if (!activeTooltip.value.show) {
-      return
+      return;
   }
   
-  let posX = event.clientX + 15
+  let posX = event.clientX + 15;
   if (posX + 250 > window.innerWidth) {
-      posX = event.clientX - 260
+      posX = event.clientX - 260;
   }
   
-  activeTooltip.value.x = posX
-  activeTooltip.value.y = event.clientY + 15
-}
+  activeTooltip.value.x = posX;
+  activeTooltip.value.y = event.clientY + 15;
+};
 </script>
 
 <template>
@@ -60,11 +72,10 @@ const moveTooltip = (event: MouseEvent) => {
 
     <div class="relative z-10 w-full flex flex-col pt-2 p-3 text-white text-xs shadow-inner bg-[#000a2b]/40">
       <DigimonEquipament 
-        v-for="(equip, index) in equipmentsList" 
-        :key="index"
-        :slotLabel="equip.slot"
-        :equipament="equip.item"
-        :colorClass="equip.color"
+        v-for="slotKey in slotKeys" 
+        :key="slotKey"
+        :slotKey="slotKey"
+        :enrichedEquipment="getEnrichedEquipment(slotKey)"
         @showTooltip="showTooltip"
         @moveTooltip="moveTooltip"
         @hideTooltip="hideTooltip"

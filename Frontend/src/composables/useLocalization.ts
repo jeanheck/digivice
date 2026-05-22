@@ -3,8 +3,6 @@ import MainQuestTable from '../database/MainQuestTable.json';
 import FolderBagTable from '../database/FolderBagTable.json';
 import FishingPoleTable from '../database/FishingPoleTable.json';
 import TreeBootsTable from '../database/TreeBootsTable.json';
-import ConsumableItemsTable from '../database/ConsumableItemsTable.json';
-import ImportantItemsTable from '../database/ImportantItemsTable.json';
 
 export function useLocalization() {
   const { locale, t } = useI18n();
@@ -16,15 +14,6 @@ export function useLocalization() {
     // Suporte para o padrão { "PT-BR": "...", "EN-US": "..." }
     const currentLocale = locale.value.toUpperCase();
     return obj[currentLocale] || obj['EN-US'] || '';
-  };
-
-  const getLocalizedItemName = (itemKey: string) => {
-    const allItems = [
-      ...ConsumableItemsTable.ConsumableItems,
-      ...ImportantItemsTable.ImportantItems
-    ];
-    const item = allItems.find(i => i.Id === itemKey);
-    return item ? item.Name : null;
   };
 
   /**
@@ -51,7 +40,7 @@ export function useLocalization() {
       return requisites.map((p, index) => {
         const id = p.id || p.Id;
         if (id) {
-          const localizedName = getLocalizedItemName(id);
+          const localizedName = "";
           if (localizedName) {
             // Apply translation to both casing variations for UI compatibility
             return { 
