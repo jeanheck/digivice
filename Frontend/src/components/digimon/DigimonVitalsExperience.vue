@@ -4,7 +4,7 @@ import ExperienceProgressBar from '../ui/ExperienceProgressBar.vue';
 import ProgressBar from '../ui/ProgressBar.vue';
 import DigimonIcon from '../ui/DigimonIcon.vue';
 import type { Digimon } from '../../models';
-import { ProgressBarTypes } from '@/types/ui';
+import { ProgressBarTypes } from '@/constants/progress-bar-types';
 import { DigimonRepository } from '../../repositories/digimon-repository';
 import { DigimonExperienceCalculator } from '../../logic/DigimonExperienceCalculator';
 

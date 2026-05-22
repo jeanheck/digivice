@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { MathUtils } from '../../utils/MathUtils';
-import { ProgressBarTypes } from '../../types/ui';
+import { ProgressBarTypes } from '../../constants/progress-bar-types';
 
 const props = defineProps<{
   currentValue: number;

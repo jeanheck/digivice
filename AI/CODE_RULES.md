@@ -21,6 +21,7 @@ Por favor, siga estas práticas rigorosamente ao trabalhar neste projeto em qual
 3. **Nomenclatura de DTOs**: Interfaces e classes DTO devem usar PascalCase (ex: `PlayerDTO`), mas os respectivos arquivos devem usar kebab-case com sufixo `.dto.ts` (ex: `player.dto.ts`). O mesmo se aplica a pastas e subpastas de eventos, que devem usar kebab-case (ex: `journals/` e `quests/` em vez de `Journals/` e `Quests/`).
 4. **Respostas Concisas**: Sempre forneça respostas concisas, curtas e diretas. A única exceção é se o usuário pedir explicitamente um detalhamento completo de algum ponto.
 5. **Caminhos de Importação**: Prefira importar arquivos utilizando o caractere `@` para definir o caminho raiz (ex: `@/models/` em vez de `../../models/`), mantendo a consistência e legibilidade.
+6. **Aspas Duplas**: Dê preferência ao uso de aspas duplas (`"`) em strings sempre que houver a opção (ao invés de aspas simples `'`), mantendo a padronização estética do código.
 
 ## Backend: regras relacionadas ao backend
 

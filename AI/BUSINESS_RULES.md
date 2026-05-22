@@ -78,3 +78,8 @@ if (slot.digimonId === null || slot.digimon === null) {
     *   Todas as missões (principais e secundárias) e seus respectivos passos são enviados no `InitialState`.
     *   Missões **nunca são adicionadas ou removidas dinamicamente** do journal durante a execução da aplicação.
     *   Mesmo após uma missão ser finalizada, ela continua no diário. Não há flag de conclusão ("missão concluída") vinda do backend; o frontend calcula a conclusão analisando se todos os passos/requisitos estão satisfeitos.
+
+---
+
+## 3. Diretrizes de Estilo e Padronização (Frontend)
+*   **Uso de Aspas em Strings:** No código do frontend, prefira sempre utilizar aspas duplas (`"`) em strings sempre que houver a opção (ao invés de aspas simples `'`), mantendo a padronização e consistência estética do código.
