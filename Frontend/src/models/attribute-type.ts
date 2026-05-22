@@ -1,8 +1,8 @@
 export enum AttributeType {
-    strength = "strength",
-    defense = "defense",
-    spirit = "spirit",
-    wisdom = "wisdom",
-    speed = "speed",
-    charisma = "charisma",
+    Strength = "Strength",
+    Defense = "Defense",
+    Spirit = "Spirit",
+    Wisdom = "Wisdom",
+    Speed = "Speed",
+    Charisma = "Charisma",
 }

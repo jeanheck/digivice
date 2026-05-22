@@ -35,24 +35,24 @@ const createEnrichedAttributeResistance = (
 
 const enrichedAttributes = computed<EnrichedAttributes>(() => {
   return {
-    strength: createEnrichedAttributeResistance(AttributeType.strength, props.attributes, props.activeDigievolution?.attributes),
-    defense: createEnrichedAttributeResistance(AttributeType.defense, props.attributes, props.activeDigievolution?.attributes),
-    spirit: createEnrichedAttributeResistance(AttributeType.spirit, props.attributes, props.activeDigievolution?.attributes),
-    wisdom: createEnrichedAttributeResistance(AttributeType.wisdom, props.attributes, props.activeDigievolution?.attributes),
-    speed: createEnrichedAttributeResistance(AttributeType.speed, props.attributes, props.activeDigievolution?.attributes),
-    charisma: createEnrichedAttributeResistance(AttributeType.charisma, props.attributes, props.activeDigievolution?.attributes),
+    strength: createEnrichedAttributeResistance(AttributeType.Strength, props.attributes, props.activeDigievolution?.attributes),
+    defense: createEnrichedAttributeResistance(AttributeType.Defense, props.attributes, props.activeDigievolution?.attributes),
+    spirit: createEnrichedAttributeResistance(AttributeType.Spirit, props.attributes, props.activeDigievolution?.attributes),
+    wisdom: createEnrichedAttributeResistance(AttributeType.Wisdom, props.attributes, props.activeDigievolution?.attributes),
+    speed: createEnrichedAttributeResistance(AttributeType.Speed, props.attributes, props.activeDigievolution?.attributes),
+    charisma: createEnrichedAttributeResistance(AttributeType.Charisma, props.attributes, props.activeDigievolution?.attributes),
   };
 });
 
 const enrichedResistances = computed<EnrichedResistances>(() => {
   return {
-    fire: createEnrichedAttributeResistance(ResistanceType.fire, props.resistances, props.activeDigievolution?.resistances),
-    water: createEnrichedAttributeResistance(ResistanceType.water, props.resistances, props.activeDigievolution?.resistances),
-    ice: createEnrichedAttributeResistance(ResistanceType.ice, props.resistances, props.activeDigievolution?.resistances),
-    wind: createEnrichedAttributeResistance(ResistanceType.wind, props.resistances, props.activeDigievolution?.resistances),
-    thunder: createEnrichedAttributeResistance(ResistanceType.thunder, props.resistances, props.activeDigievolution?.resistances),
-    machine: createEnrichedAttributeResistance(ResistanceType.machine, props.resistances, props.activeDigievolution?.resistances),
-    dark: createEnrichedAttributeResistance(ResistanceType.dark, props.resistances, props.activeDigievolution?.resistances),
+    fire: createEnrichedAttributeResistance(ResistanceType.Fire, props.resistances, props.activeDigievolution?.resistances),
+    water: createEnrichedAttributeResistance(ResistanceType.Water, props.resistances, props.activeDigievolution?.resistances),
+    ice: createEnrichedAttributeResistance(ResistanceType.Ice, props.resistances, props.activeDigievolution?.resistances),
+    wind: createEnrichedAttributeResistance(ResistanceType.Wind, props.resistances, props.activeDigievolution?.resistances),
+    thunder: createEnrichedAttributeResistance(ResistanceType.Thunder, props.resistances, props.activeDigievolution?.resistances),
+    machine: createEnrichedAttributeResistance(ResistanceType.Machine, props.resistances, props.activeDigievolution?.resistances),
+    dark: createEnrichedAttributeResistance(ResistanceType.Dark, props.resistances, props.activeDigievolution?.resistances),
   };
 });
 
