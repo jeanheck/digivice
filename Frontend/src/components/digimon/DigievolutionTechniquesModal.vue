@@ -20,7 +20,7 @@ const closeModal = () => {
 };
 
 const handleKeydown = (e: KeyboardEvent) => {
-  if (e.key === 'Escape' && props.isOpen) {
+  if (e.key === 'Escape') {
     closeModal();
   }
 };
@@ -75,12 +75,10 @@ function typeIcon(type: TechniqueTypeId): string {
       >
         <div class="relative w-full max-w-md bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-slide-up">
 
-          <!-- Hexagon background pattern -->
           <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
                style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l25.98 15v30L30 60 4.02 45V15z\' stroke=\'%230077ff\' stroke-width=\'1\' fill=\'none\'/%3E%3C/svg%3E');">
           </div>
 
-          <!-- Header -->
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-10">
             <h2 class="font-bold tracking-widest text-[#00aaff] text-sm uppercase flex items-center gap-2">
               <span class="text-yellow-400">⚡</span>
@@ -95,22 +93,17 @@ function typeIcon(type: TechniqueTypeId): string {
             </button>
           </header>
 
-          <!-- Technique List -->
           <div class="relative z-10 flex flex-col gap-[3px] p-3 max-h-[70vh] overflow-y-auto custom-scroll">
             <div
               v-for="tech in techniques"
               :key="tech.id"
               class="relative rounded px-3 py-2 flex items-start gap-3 border transition-all text-xs"
               :class="{
-                // Signature (highest level)
                 'bg-yellow-950/30 border-yellow-500/60 shadow-[0_0_8px_rgba(234,179,8,0.2)]': tech.isSignature,
-                // Unlocked (not signature)
                 'bg-[#001a33]/80 border-[#0055ff]/40': !tech.isSignature && tech.isUnlocked,
-                // Locked
                 'bg-[#000e1f]/50 border-[#0033aa]/20 opacity-50': !tech.isUnlocked,
               }"
             >
-              <!-- Signature badge -->
               <span
                 v-if="tech.isSignature"
                 class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest"
@@ -118,14 +111,11 @@ function typeIcon(type: TechniqueTypeId): string {
                 ⭐
               </span>
 
-              <!-- Type icon -->
               <span class="text-base leading-none mt-[1px] flex-shrink-0">
                 {{ typeIcon(tech.type.id) }}
               </span>
 
-              <!-- Content -->
               <div class="flex-1 min-w-0">
-                <!-- Name + lock indicator -->
                 <div class="flex items-center gap-1 mb-[2px]">
                   <span
                     class="font-bold tracking-wide"
@@ -137,10 +127,8 @@ function typeIcon(type: TechniqueTypeId): string {
                   <span v-else class="text-[10px] text-green-400/80 ml-1">✓</span>
                 </div>
 
-                <!-- Description -->
                 <p class="text-white/50 text-[11px] leading-snug">{{ getLocalized(tech.description) }}</p>
 
-                <!-- Stats row -->
                 <div class="flex gap-3 mt-1 text-[10px]">
                   <span :class="elementColor(tech.element)">
                     {{ translateTechniqueElement(tech.element) }}
@@ -150,7 +138,6 @@ function typeIcon(type: TechniqueTypeId): string {
               </div>
             </div>
 
-            <!-- Empty state -->
             <p v-if="techniques.length === 0" class="text-white/40 text-center py-4 text-xs">
               {{ $t('digievolution.noTechData') }}
             </p>
