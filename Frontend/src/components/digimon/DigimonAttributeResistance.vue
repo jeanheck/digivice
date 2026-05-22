@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { DigimonStatus } from '../../models/digimon-status';
+import type { EnrichedAttributeResistance } from '../../models';
 
 defineProps<{
-  status: DigimonStatus;
+  enrichedAttributeResistance: EnrichedAttributeResistance;
+  propertyKey: string;
   label: string;
   icon: string;
   colorClass: string;
@@ -19,18 +20,18 @@ const emit = defineEmits<{
 <template>
   <div class="flex items-center gap-2">
     <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20 tooltip-anchor relative"
-         @mouseenter="e => emit('showIconTooltip', e, label, status.digimonStatusType)"
+         @mouseenter="e => emit('showIconTooltip', e, label, propertyKey)"
          @mousemove="e => emit('moveTooltip', e)"
          @mouseleave="emit('hideTooltip')">
       <span class="text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1" :class="colorClass">{{ icon }}</span>
     </div>
     
     <div class="font-bold tracking-widest cursor-help flex items-center"
-         @mouseenter="e => emit('showMathTooltip', e, label, status.fromDigimon, status.fromEquipaments, status.fromDigievolution, status.sumBetweenDigimonAndEquipaments)"
+         @mouseenter="e => emit('showMathTooltip', e, label, enrichedAttributeResistance.fromDigimon, enrichedAttributeResistance.fromEquipaments, enrichedAttributeResistance.fromDigievolution, enrichedAttributeResistance.sumBetweenDigimonAndEquipaments)"
          @mousemove="e => emit('moveTooltip', e)"
          @mouseleave="emit('hideTooltip')">
-      <span class="shadow-text">{{ status.sumBetweenDigimonAndEquipaments }}</span>
-      <span v-if="status.fromDigievolution > 0" class="ml-2 font-bold bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark tracking-normal">+{{ status.fromDigievolution }}</span>
+      <span class="shadow-text">{{ enrichedAttributeResistance.sumBetweenDigimonAndEquipaments }}</span>
+      <span v-if="enrichedAttributeResistance.fromDigievolution > 0" class="ml-2 font-bold bg-linear-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark tracking-normal">+{{ enrichedAttributeResistance.fromDigievolution }}</span>
     </div>
   </div>
 </template>

@@ -24,7 +24,8 @@ const isGridModalOpen = ref(false);
     />
     <DigimonAttributesResistances 
       :attributes="digimon.attributes" 
-      :resistances="digimon.resistances" />
+      :resistances="digimon.resistances"
+      :equipments="digimon.equipments" />
     <DigimonEquipments :equipments="digimon.equipments" />
 
     <div 

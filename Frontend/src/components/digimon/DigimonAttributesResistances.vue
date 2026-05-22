@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useLocalization } from '../../composables/useLocalization';
-import type { Attributes, Resistances } from '../../models';
-import DigimonStatus from './DigimonStatus.vue';
+import type { Attributes, Equipments, Resistances } from '@/models';
+import DigimonAttributeResistance from './DigimonAttributeResistance.vue';
 import DigimonTooltip from './DigimonTooltip.vue';
 
 const props = defineProps<{
   attributes: Attributes;
   resistances: Resistances;
+  equipments: Equipments;
 }>();
 
 const { t } = useLocalization();
@@ -15,25 +16,25 @@ const { t } = useLocalization();
 const computedAttributes = computed(() => {
   const attrs = props.attributes;
   return [
-    { label: t('attributes.strength'), status: attrs.strength, icon: '👊', color: 'text-[#fcd883]' },
-    { label: t('attributes.defense'), status: attrs.defense, icon: '🛡️', color: 'text-gray-400' },
-    { label: t('attributes.spirit'), status: attrs.spirit, icon: '🧙‍♂️', color: 'text-pink-300' },
-    { label: t('attributes.wisdom'), status: attrs.wisdom, icon: '📖', color: 'text-yellow-600' },
-    { label: t('attributes.speed'), status: attrs.speed, icon: '🏃', color: 'text-green-400' },
-    { label: t('attributes.charisma'), status: attrs.charisma, icon: '✨', color: 'text-yellow-300' },
+    { label: t('attributes.strength'), status: attrs.strength, icon: '👊', color: 'text-[#fcd883]', key: 'strength' },
+    { label: t('attributes.defense'), status: attrs.defense, icon: '🛡️', color: 'text-gray-400', key: 'defense' },
+    { label: t('attributes.spirit'), status: attrs.spirit, icon: '🧙‍♂️', color: 'text-pink-300', key: 'spirit' },
+    { label: t('attributes.wisdom'), status: attrs.wisdom, icon: '📖', color: 'text-yellow-600', key: 'wisdom' },
+    { label: t('attributes.speed'), status: attrs.speed, icon: '🏃', color: 'text-green-400', key: 'speed' },
+    { label: t('attributes.charisma'), status: attrs.charisma, icon: '✨', color: 'text-yellow-300', key: 'charisma' },
   ];
 });
 
 const computedResistances = computed(() => {
   const res = props.resistances;
   return [
-    { label: t('resistances.fire'), status: res.fire, icon: '🔥', color: 'text-orange-500' },
-    { label: t('resistances.water'), status: res.water, icon: '💧', color: 'text-blue-400' },
-    { label: t('resistances.ice'), status: res.ice, icon: '🧊', color: 'text-cyan-200' },
-    { label: t('resistances.wind'), status: res.wind, icon: '🍃', color: 'text-gray-100' },
-    { label: t('resistances.thunder'), status: res.thunder, icon: '⚡', color: 'text-[#ffffcc]' },
-    { label: t('resistances.machine'), status: res.machine, icon: '⚙️', color: 'text-gray-500' },
-    { label: t('resistances.dark'), status: res.dark, icon: '🌑', color: 'text-purple-500' },
+    { label: t('resistances.fire'), status: res.fire, icon: '🔥', color: 'text-orange-500', key: 'fire' },
+    { label: t('resistances.water'), status: res.water, icon: '💧', color: 'text-blue-400', key: 'water' },
+    { label: t('resistances.ice'), status: res.ice, icon: '🧊', color: 'text-cyan-200', key: 'ice' },
+    { label: t('resistances.wind'), status: res.wind, icon: '🍃', color: 'text-gray-100', key: 'wind' },
+    { label: t('resistances.thunder'), status: res.thunder, icon: '⚡', color: 'text-[#ffffcc]', key: 'thunder' },
+    { label: t('resistances.machine'), status: res.machine, icon: '⚙️', color: 'text-gray-500', key: 'machine' },
+    { label: t('resistances.dark'), status: res.dark, icon: '🌑', color: 'text-purple-500', key: 'dark' },
   ];
 });
 
@@ -90,10 +91,11 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="relative z-10 details-panel flex justify-center w-full p-4 text-white text-sm">
       <div class="flex gap-20 -ml-16">
         <div class="flex flex-col gap-1 w-24">
-          <DigimonStatus 
+          <DigimonAttributeResistance 
             v-for="attr in computedAttributes" 
-            :key="attr.status.digimonStatusType"
-            :status="attr.status"
+            :key="attr.key"
+            :enrichedAttributeResistance="attr.status"
+            :property-key="attr.key"
             :label="attr.label"
             :icon="attr.icon"
             :colorClass="attr.color"
@@ -105,10 +107,11 @@ const moveTooltip = (event: MouseEvent) => {
         </div>
 
         <div class="flex flex-col gap-1 w-24">
-          <DigimonStatus 
+          <DigimonAttributeResistance 
             v-for="res in computedResistances" 
-            :key="res.status.digimonStatusType"
-            :status="res.status"
+            :key="res.key"
+            :enrichedAttributeResistance="res.status"
+            :property-key="res.key"
             :label="res.label"
             :icon="res.icon"
             :colorClass="res.color"

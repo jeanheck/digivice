@@ -5,7 +5,7 @@ import { DigievolutionRepository } from '../../repositories/digievolution-reposi
 import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue';
 
 const props = defineProps<{
-  digievolutions: DigievolutionSlot[];
+  digievolutionsSlots: DigievolutionSlot[];
   activeDigievolutionId: number | null;
 }>();
 
@@ -13,7 +13,7 @@ const modalOpen = ref(false);
 const selectedDigievolution = ref<EnrichedDigievolution | null>(null);
 
 const enrichedDigievolutions = computed(() => {
-  return props.digievolutions.map((slot) => {
+  return props.digievolutionsSlots.map((slot) => {
     if (!slot.digievolution || slot.digievolutionId === null) {
       return null;
     }
