@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import type { Digievolution, DigievolutionSlot } from '../../models';
+import { ref, computed } from 'vue';
+import type { DigievolutionSlot, EnrichedDigievolution } from '../../models';
+import { DigievolutionRepository } from '../../repositories/digievolution-repository';
 import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue';
 
 const props = defineProps<{
@@ -8,11 +9,23 @@ const props = defineProps<{
   activeDigievolutionId: number | null;
 }>();
 
-// Skills modal state
 const modalOpen = ref(false);
-const selectedDigievolution = ref<any | null>(null);
+const selectedDigievolution = ref<EnrichedDigievolution | null>(null);
 
-function openSkills(digievolution: any | null) {
+const enrichedDigievolutions = computed(() => {
+  return props.digievolutions.map((slot) => {
+    if (!slot.digievolution || slot.digievolutionId === null) {
+      return null;
+    }
+
+    return DigievolutionRepository.getEnrichedDigievolution(
+      slot.digievolutionId,
+      slot.digievolution.level
+    );
+  });
+});
+
+function openSkills(digievolution: EnrichedDigievolution | null) {
     if (!digievolution) {
         return;
     }
@@ -29,34 +42,27 @@ function closeSkills() {
 <template>
   <div class="flex flex-col gap-[2px] w-full">
     <div 
-      v-for="(slot, index) in digievolutions" 
+      v-for="(enrichedDigievolution, index) in enrichedDigievolutions" 
       :key="index"
       class="evo-row relative flex w-full h-[28px] bg-[#000a2b] text-white overflow-hidden dw3-beveled"
-      :class="slot.digievolution ? 'cursor-pointer hover:brightness-125 transition-[filter]' : 'cursor-default'"
-      @click="openSkills(slot.digievolution)"
+      :class="enrichedDigievolution ? 'cursor-pointer hover:brightness-125 transition-[filter]' : 'cursor-default'"
+      @click="openSkills(enrichedDigievolution)"
     >
-      <!-- External glowing border simulated via clip-path background -->
       <div class="absolute inset-0 bg-[#0077ff] pointer-events-none dw3-beveled"></div>
-      
-      <!-- Internal dark background (1.5px smaller than the border) -->
       <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
 
-      <!-- Render texts only if the digievolution slot has a value -->
-      <template v-if="slot.digievolution">
-        <!-- Content (Name) -->
+      <template v-if="enrichedDigievolution">
         <div 
           class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
-          :class="(slot.digievolution as any).id === activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
-          {{ (slot.digievolution as any).name }}
+          :class="enrichedDigievolution.id === activeDigievolutionId ? 'bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'">
+          {{ enrichedDigievolution.name }}
         </div>
 
-        <!-- Slanted Divider -->
         <div class="relative z-10 w-[2px] h-full bg-[#0077ff] -skew-x-[30deg] ml-2"></div>
 
-        <!-- Content (Level) -->
         <div class="relative z-10 w-[45px] flex items-center justify-center pl-2 font-bold text-sm mr-2">
           <span class="bg-gradient-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark">
-            {{ slot.digievolution.level }}
+            {{ enrichedDigievolution.level }}
           </span>
         </div>
       </template>
@@ -69,7 +75,6 @@ function closeSkills() {
     </div>
   </div>
 
-  <!-- Skills Modal -->
   <DigievolutionTechniquesModal
     :is-open="modalOpen"
     :digievolution="selectedDigievolution"

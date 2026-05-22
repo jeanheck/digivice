@@ -69,6 +69,7 @@ if (slot.digimonId === null || slot.digimon === null) {
 *   **Level Máximo do Digimon:** O nível máximo que um Digimon pode atingir é estritamente **99**.
     *   Como os dados lidos do emulador respeitam rigorosamente a estrutura de memória do jogo original, é uma invariante de domínio que o valor de nível estará sempre dentro do intervalo de `1` a `99`.
     *   Validações defensivas de higienização de nível (como operações `Math.min` ou `Math.max` para travar o nível entre 1 e 99 no frontend) são desnecessárias e redundantes para os cálculos de experiência.
+*   **Tradução de Nomes de Digimons e Digievoluções:** Os nomes de Digimons e de suas Digievoluções são **nomes próprios** (assim como nomes de pessoas). Nomes próprios **não se traduzem** e, portanto, **nunca** devem passar por funções de localização ou internacionalização (como `getLocalized(...)`). Eles devem ser exibidos de forma literal exatamente como vêm das fontes de dados.
 
 ### 2.3. Diário de Missões (Journal)
 *   **Origem dos Dados:** A estrutura das missões (passos, nomes, etc.) é estática e carregada a partir de arquivos JSON.

@@ -31,28 +31,28 @@ export class DigimonRepository {
 
     public static getDigimonNameById(id: number): string {
         switch (id) {
-            case 1: {
+            case 0: {
                 return 'Kotemon';
             }
-            case 2: {
+            case 1: {
                 return 'Monmon';
             }
-            case 3: {
+            case 2: {
                 return 'Kumamon';
             }
-            case 4: {
+            case 3: {
                 return 'Guilmon';
             }
-            case 5: {
+            case 4: {
                 return 'Renamon';
             }
-            case 6: {
+            case 5: {
                 return 'Patamon';
             }
-            case 7: {
+            case 6: {
                 return 'Agumon';
             }
-            case 8: {
+            case 7: {
                 return 'Veemon';
             }
             default: {

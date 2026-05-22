@@ -1,6 +1,5 @@
 import type { Enemy } from '../models';
 
-import DigievolutionData from '../database/Digievolution.json';
 import DigievolutionTreeData from '../database/DigievolutionTree.json';
 import DigivolvingRequirementsTableData from '../database/DigivolvingRequirementsTable.json';
 import EnemiesTableData from '../database/EnemiesTable.json';
@@ -168,7 +167,6 @@ export class Repository {
 
     public static get digievolutions() {
         return {
-            list: DigievolutionData.digievolutions,
             tree: DigievolutionTreeData.digievolutions,
             requirements: DigivolvingRequirementsTableData
         };

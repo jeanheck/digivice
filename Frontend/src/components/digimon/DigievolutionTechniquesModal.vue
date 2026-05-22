@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted } from 'vue'
 import IconClose from '../icons/IconClose.vue'
-import type { Digievolution } from '../../models'
-import { useLocalization } from '../../composables/useLocalization'
+import type { EnrichedDigievolution } from '../../models';
+import { useLocalization } from '../../composables/useLocalization';
 
 const props = defineProps<{
-  isOpen: boolean
-  digievolution: any | null
-}>()
+  isOpen: boolean;
+  digievolution: EnrichedDigievolution | null;
+}>();
 
 const emit = defineEmits(['close'])
 

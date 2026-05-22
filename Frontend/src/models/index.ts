@@ -9,6 +9,7 @@ export * from './digimon';
 export * from './enemy';
 export * from './equipament-type';
 export * from './enriched/enriched-equipament';
+export * from './enriched/digievolution-enriched';
 export * from './equipaments-attributes-operation-type';
 export * from './equipaments-attributes';
 export * from './equipments';
