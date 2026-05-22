@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import DigimonVitalsExperience from './DigimonVitalsExperience.vue'
-import DigimonDigievolutions from './DigimonDigievolutions.vue'
-import DigimonAttributesResistances from './DigimonAttributesResistances.vue'
-import DigimonEquipments from './DigimonEquipments.vue'
-import DigievolutionGridModal from './DigievolutionGridModal.vue'
-import type { Digimon } from '@/models'
+import { ref, computed } from 'vue';
+import DigimonVitalsExperience from './DigimonVitalsExperience.vue';
+import DigimonDigievolutions from './DigimonDigievolutions.vue';
+import DigimonAttributesResistances from './DigimonAttributesResistances.vue';
+import DigimonEquipments from './DigimonEquipments.vue';
+// import DigievolutionGridModal from './DigievolutionGridModal.vue';
+import type { Digimon } from '@/models';
 import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 
 const props = defineProps<{
@@ -16,7 +16,7 @@ const props = defineProps<{
 const isGridModalOpen = ref(false);
 
 const activeDigievolution = computed(() => {
-  if(!props.digimon.activeDigievolutionId){
+  if (!props.digimon.activeDigievolutionId) {
     return null;
   }
   return DigievolutionCalculator.getActiveEnrichedDigievolution(props.digimon.digievolutions, props.digimon.activeDigievolutionId);
@@ -40,16 +40,17 @@ const activeDigievolution = computed(() => {
 
     <div 
       class="flex items-center justify-center bg-[#000a2b] border-2 border-[#00154a] rounded shadow-inner py-1.5 mt-auto cursor-pointer hover:bg-[#001233] transition-colors"
-      @click="isGridModalOpen = true"
+      @click="() => {}"
     >
       <span class="text-[0.65rem] font-bold text-gray-400 tracking-widest uppercase">{{ $t('digimon.digievolutions') }}</span>
     </div>
 
-    <!-- New Grid Modal -->
+    <!-- New Grid Modal
     <DigievolutionGridModal 
       :is-open="isGridModalOpen" 
       :digimon="digimon"
       @close="isGridModalOpen = false"
     />
+    -->
   </div>
 </template>
