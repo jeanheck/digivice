@@ -5,7 +5,7 @@ import ProgressBar from '../ui/ProgressBar.vue';
 import DigimonIcon from '../ui/DigimonIcon.vue';
 import type { Digimon } from '../../models';
 import { ProgressBarTypes } from '@/types/ui';
-import { Repository } from '../../repositories/repository';
+import { DigimonRepository } from '../../repositories/digimon-repository';
 import { DigimonExperienceCalculator } from '../../logic/DigimonExperienceCalculator';
 
 const props = defineProps<{
@@ -14,11 +14,11 @@ const props = defineProps<{
 }>();
 
 const name = computed(() => {
-  return Repository.getDigimonNameById(props.digimonId);
+  return DigimonRepository.getDigimonNameById(props.digimonId);
 });
 
 const experienceToReachNextLevel = computed(() => {
-  return DigimonExperienceCalculator.getRequiredExpForNextLevel(name.value, props.digimon.level);
+  return DigimonExperienceCalculator.getRequiredExperienceForNextLevel(name.value, props.digimon.level);
 });
 
 const experiencePercentageToReachNextLevel = computed(() => {

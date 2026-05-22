@@ -1,15 +1,9 @@
-import type { EnrichedEquipment, DigimonStatusType, Equipments } from '../models';
-import { EquipamentType } from '../models';
 import type { Enemy } from '../models';
 
 import DigievolutionData from '../database/Digievolution.json';
 import DigievolutionTreeData from '../database/DigievolutionTree.json';
-import DigimonDetailsTableData from '../database/DigimonDetailsTable.json';
 import DigivolvingRequirementsTableData from '../database/DigivolvingRequirementsTable.json';
 import EnemiesTableData from '../database/EnemiesTable.json';
-import EquipmentsData from '../database/Equipments.json';
-import EquipmentsTypeTableData from '../database/EquipmentsTypeTable.json';
-import ExperienceTableData from '../database/ExperienceTable.json';
 import FishingPoleTableData from '../database/FishingPoleTable.json';
 import FolderBagTableData from '../database/FolderBagTable.json';
 import LocationsData from '../database/Locations.json';
@@ -52,9 +46,6 @@ export interface QuestData {
 }
 
 export class Repository {
-    private static _equipments: EnrichedEquipment[] = [];
-    private static _equipmentsMap = new Map<number, EnrichedEquipment>();
-
     private static _enemies: Enemy[] = [];
     private static _enemiesMap = new Map<number, Enemy>();
 
@@ -69,36 +60,8 @@ export class Repository {
     ];
 
     static {
-        this.initializeEquipments();
         this.initializeEnemies();
         this.initializeTechniques();
-    }
-
-    private static initializeEquipments(): void {
-        for (const item of EquipmentsData.equipments) {
-            const typeInfo = EquipmentsTypeTableData.types.find((t) => {
-                return t.Id === item.Type;
-            });
-
-            const resolved: EnrichedEquipment = {
-                id: item.Id ?? 0,
-                name: item.Name,
-                type: (item.Type as EquipamentType) || EquipamentType.Unknown,
-                typeDescription: typeInfo ? typeInfo.Description : null,
-                attributes: item.Attributes ? item.Attributes.map((a: any) => {
-                    return {
-                        attribute: a.Attribute.toLowerCase() as DigimonStatusType,
-                        type: a.Type as any,
-                        value: a.Value
-                    };
-                }) : [],
-                equipableDigimon: item.EquipableDigimon || [],
-                note: (item as any).Note
-            };
-
-            this._equipments.push(resolved);
-            this._equipmentsMap.set(resolved.id, resolved);
-        }
     }
 
     private static initializeEnemies(): void {
@@ -177,36 +140,6 @@ export class Repository {
         }
     }
 
-    public static get equipments(): EnrichedEquipment[] {
-        return this._equipments;
-    }
-
-    private static getNonRepeatedIds(ids: number[]): number[] {
-        return [...new Set(ids)];
-    }
-
-    private static getEquipmentsIds(equipments: Equipments) : number[] {
-        const equipamentsIds = [
-            equipments.head,
-            equipments.body,
-            equipments.rightHand,
-            equipments.leftHand,
-            equipments.accessory1,
-            equipments.accessory2
-        ].filter((id): id is number => id !== null && id !== undefined && id !== 0);
-
-        return this.getNonRepeatedIds(equipamentsIds);
-    }
-
-    public static getEquipmentsByIds(equipments: Equipments): EnrichedEquipment[] {
-        const equipmentsIds = this.getEquipmentsIds(equipments);
-        const enrichedEquipments = equipmentsIds
-            .map((equipmentId) => this._equipmentsMap.get(equipmentId))
-            .filter((enrichedEquipment): enrichedEquipment is EnrichedEquipment => enrichedEquipment !== undefined);
-
-        return enrichedEquipments;
-    }
-
     public static get enemies(): Enemy[] {
         return this._enemies;
     }
@@ -243,45 +176,5 @@ export class Repository {
 
     public static get locations(): Record<string, any> {
         return LocationsData;
-    }
-
-    public static get experienceTable(): Record<string, any> {
-        return ExperienceTableData;
-    }
-
-    public static get digimonDetails(): Record<string, any> {
-        return DigimonDetailsTableData;
-    }
-
-    public static getDigimonNameById(id: number): string {
-        switch (id) {
-            case 1: {
-                return 'Kotemon';
-            }
-            case 2: {
-                return 'Monmon';
-            }
-            case 3: {
-                return 'Kumamon';
-            }
-            case 4: {
-                return 'Guilmon';
-            }
-            case 5: {
-                return 'Renamon';
-            }
-            case 6: {
-                return 'Patamon';
-            }
-            case 7: {
-                return 'Agumon';
-            }
-            case 8: {
-                return 'Veemon';
-            }
-            default: {
-                return 'Unknown';
-            }
-        }
     }
 }

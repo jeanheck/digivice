@@ -66,6 +66,9 @@ if (slot.digimonId === null || slot.digimon === null) {
 *   **Comportamento de Preenchimento:**
     *   Diferente da *Party*, uma vez que um slot de evolução é preenchido com dados, **ele nunca mais poderá ser esvaziado** (voltar a ser `null`).
     *   A evolução de um slot pode ser substituída/trocada por outra evolução, mas o slot nunca é resetado para vazio.
+*   **Level Máximo do Digimon:** O nível máximo que um Digimon pode atingir é estritamente **99**.
+    *   Como os dados lidos do emulador respeitam rigorosamente a estrutura de memória do jogo original, é uma invariante de domínio que o valor de nível estará sempre dentro do intervalo de `1` a `99`.
+    *   Validações defensivas de higienização de nível (como operações `Math.min` ou `Math.max` para travar o nível entre 1 e 99 no frontend) são desnecessárias e redundantes para os cálculos de experiência.
 
 ### 2.3. Diário de Missões (Journal)
 *   **Origem dos Dados:** A estrutura das missões (passos, nomes, etc.) é estática e carregada a partir de arquivos JSON.
