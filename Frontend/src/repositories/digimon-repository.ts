@@ -35,25 +35,25 @@ export class DigimonRepository {
                 return 'Kotemon';
             }
             case 1: {
-                return 'Monmon';
-            }
-            case 2: {
                 return 'Kumamon';
             }
+            case 2: {
+                return 'Monmon';
+            }
             case 3: {
-                return 'Guilmon';
-            }
-            case 4: {
-                return 'Renamon';
-            }
-            case 5: {
-                return 'Patamon';
-            }
-            case 6: {
                 return 'Agumon';
             }
-            case 7: {
+            case 4: {
                 return 'Veemon';
+            }
+            case 5: {
+                return 'Guilmon';
+            }
+            case 6: {
+                return 'Renamon';
+            }
+            case 7: {
+                return 'Patamon';
             }
             default: {
                 return 'Unknown';

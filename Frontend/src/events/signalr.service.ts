@@ -87,7 +87,7 @@ class SignalRService {
 
         for (const eventName of backendEventNames) {
             this.connection.on(eventName, (eventWrapper: any) => {
-                signalRLogger.debug(`Hub Event [${eventName}]`, eventWrapper)
+                signalRLogger.debug(`Hub Event [${eventName}]`, eventWrapper);
 
                 // If we receive the wrapped structure from the backend, extract only the 'payload' property
                 const payload = eventWrapper && typeof eventWrapper === 'object' && 'payload' in eventWrapper

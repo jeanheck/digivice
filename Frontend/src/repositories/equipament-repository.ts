@@ -1,4 +1,4 @@
-import type { EnrichedEquipment, Equipments } from '../models';
+import { EquipamentsAttributesOperationType, type EnrichedEquipment, type Equipments } from '../models';
 import { EquipamentType } from '../models';
 import EquipmentsData from '../database/Equipments.json';
 import EquipmentsTypeTableData from '../database/EquipmentsTypeTable.json';
@@ -25,7 +25,7 @@ export class EquipamentRepository {
                 attributes: item.Attributes ? item.Attributes.map((a: any) => {
                     return {
                         attribute: a.Attribute.toLowerCase() as any,
-                        type: a.Type as any,
+                        type: a.Type === "Addition" ? EquipamentsAttributesOperationType.Addition : EquipamentsAttributesOperationType.Subtraction,
                         value: a.Value
                     };
                 }) : [],
