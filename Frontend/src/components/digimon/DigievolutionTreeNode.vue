@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import type { Digimon } from '../../models'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
-import { DigievolutionRegistry } from '../../logic/DigievolutionRegistry'
+import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 
 const props = defineProps<{
   node: { name: string, requirements: EvolutionRequirement[] }
@@ -20,7 +20,7 @@ const isUnlocked = computed(() => {
 
 const digimonName = computed(() => {
   if (props.digimon && props.digimon.activeDigievolutionId !== null && props.digimon.activeDigievolutionId !== undefined) {
-    return DigievolutionRegistry.getDigievolutionNameById(props.digimon.activeDigievolutionId);
+    return DigievolutionCalculator.getDigievolutionNameById(props.digimon.activeDigievolutionId);
   }
   return 'Unknown';
 })

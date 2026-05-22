@@ -1,5 +1,6 @@
 import { MathUtils } from "@/utils/MathUtils";
-import { type DigimonStatusType, type EnrichedEquipment } from "../models";
+import { type DigimonStatusType, type EnrichedEquipment, type Equipments } from "@/models";
+import { EquipamentRepository } from "@/repositories/equipament-repository";
 
 export class DigimonStatusCalculator {
     public static calculateBonusFromEquipaments(digimonStatusType: DigimonStatusType, enrichedEquipments: EnrichedEquipment[]
@@ -10,6 +11,14 @@ export class DigimonStatusCalculator {
             .filter(attribute => attribute.attribute.toLowerCase() === lowerCaseDigimonStatusType);
 
         return MathUtils.Sum(attributes.map(attribute => Number(`${attribute.type}${attribute.value}`)));
+    }
+
+    public static calculateBonusFromRawEquipments(
+        digimonStatusType: DigimonStatusType,
+        equipments: Equipments
+    ): number {
+        const enrichedEquipments = EquipamentRepository.getEquipmentsByIds(equipments);
+        return this.calculateBonusFromEquipaments(digimonStatusType, enrichedEquipments);
     }
 
 

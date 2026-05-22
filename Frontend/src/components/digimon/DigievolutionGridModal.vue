@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted, ref, watch, computed } from 'vue'
 import type { Digimon } from '../../models'
 import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
-import { DigievolutionRegistry } from '../../logic/DigievolutionRegistry'
+import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
 import DigievolutionDetailPanel from './DigievolutionDetailPanel.vue'
 import IconClose from '../icons/IconClose.vue'
@@ -32,7 +32,7 @@ onUnmounted(() => {
 
 const digimonName = computed(() => {
   if (props.digimon && props.digimon.activeDigievolutionId !== null && props.digimon.activeDigievolutionId !== undefined) {
-    return DigievolutionRegistry.getDigievolutionNameById(props.digimon.activeDigievolutionId);
+    return DigievolutionCalculator.getDigievolutionNameById(props.digimon.activeDigievolutionId);
   }
   return 'Unknown';
 })

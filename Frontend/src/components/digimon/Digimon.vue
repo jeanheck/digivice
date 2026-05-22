@@ -1,18 +1,26 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import DigimonVitalsExperience from './DigimonVitalsExperience.vue'
 import DigimonDigievolutions from './DigimonDigievolutions.vue'
 import DigimonAttributesResistances from './DigimonAttributesResistances.vue'
 import DigimonEquipments from './DigimonEquipments.vue'
 import DigievolutionGridModal from './DigievolutionGridModal.vue'
-import type { Digimon } from '../../models'
+import type { Digimon } from '@/models'
+import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 
-defineProps<{
+const props = defineProps<{
   digimon: Digimon;
   digimonId: number;
 }>();
 
 const isGridModalOpen = ref(false);
+
+const activeDigievolution = computed(() => {
+  if(!props.digimon.activeDigievolutionId){
+    return null;
+  }
+  return DigievolutionCalculator.getActiveEnrichedDigievolution(props.digimon.digievolutions, props.digimon.activeDigievolutionId);
+});
 </script>
 
 <template>
@@ -25,7 +33,9 @@ const isGridModalOpen = ref(false);
     <DigimonAttributesResistances 
       :attributes="digimon.attributes" 
       :resistances="digimon.resistances"
-      :equipments="digimon.equipments" />
+      :active-digievolution="activeDigievolution"
+      :equipments="digimon.equipments" 
+    />
     <DigimonEquipments :equipments="digimon.equipments" />
 
     <div 

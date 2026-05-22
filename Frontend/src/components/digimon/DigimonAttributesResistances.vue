@@ -1,20 +1,63 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { useLocalization } from '../../composables/useLocalization';
-import type { Attributes, Equipments, Resistances } from '@/models';
-import DigimonAttributeResistance from './DigimonAttributeResistance.vue';
-import DigimonTooltip from './DigimonTooltip.vue';
+import { useLocalization } from '@/composables/useLocalization';
+import { DigimonStatusType } from '@/models';
+import type { Attributes, Equipments, Resistances, EnrichedDigievolution, EnrichedAttributes, EnrichedResistances, EnrichedAttributeResistance } from '@/models';
+import { DigimonStatusCalculator } from '@/logic/DigimonStatusCalculator';
+import DigimonAttributeResistance from '@/components/digimon/DigimonAttributeResistance.vue';
+import DigimonTooltip from '@/components/digimon/DigimonTooltip.vue';
 
 const props = defineProps<{
   attributes: Attributes;
   resistances: Resistances;
   equipments: Equipments;
+  activeDigievolution: EnrichedDigievolution | null;
 }>();
 
 const { t } = useLocalization();
 
+const buildEnrichedVal = (
+  key: DigimonStatusType,
+  source: any,
+  digiSource: any
+): EnrichedAttributeResistance => {
+  const val = source[key];
+  const fromDigimon = (val && typeof val === 'object') ? (val.fromDigimon ?? 0) : Number(val ?? 0);
+  const fromEquipaments = DigimonStatusCalculator.calculateBonusFromRawEquipments(key, props.equipments);
+  const fromDigievolution = digiSource ? Number(digiSource[key] ?? 0) : 0;
+  return {
+    fromDigimon,
+    fromEquipaments,
+    fromDigievolution,
+    sumBetweenDigimonAndEquipaments: fromDigimon + fromEquipaments,
+  };
+};
+
+const enrichedAttributes = computed<EnrichedAttributes>(() => {
+  return {
+    strength: buildEnrichedVal(DigimonStatusType.strength, props.attributes, props.activeDigievolution?.attributes),
+    defense: buildEnrichedVal(DigimonStatusType.defense, props.attributes, props.activeDigievolution?.attributes),
+    spirit: buildEnrichedVal(DigimonStatusType.spirit, props.attributes, props.activeDigievolution?.attributes),
+    wisdom: buildEnrichedVal(DigimonStatusType.wisdom, props.attributes, props.activeDigievolution?.attributes),
+    speed: buildEnrichedVal(DigimonStatusType.speed, props.attributes, props.activeDigievolution?.attributes),
+    charisma: buildEnrichedVal(DigimonStatusType.charisma, props.attributes, props.activeDigievolution?.attributes),
+  };
+});
+
+const enrichedResistances = computed<EnrichedResistances>(() => {
+  return {
+    fire: buildEnrichedVal(DigimonStatusType.fire, props.resistances, props.activeDigievolution?.resistances),
+    water: buildEnrichedVal(DigimonStatusType.water, props.resistances, props.activeDigievolution?.resistances),
+    ice: buildEnrichedVal(DigimonStatusType.ice, props.resistances, props.activeDigievolution?.resistances),
+    wind: buildEnrichedVal(DigimonStatusType.wind, props.resistances, props.activeDigievolution?.resistances),
+    thunder: buildEnrichedVal(DigimonStatusType.thunder, props.resistances, props.activeDigievolution?.resistances),
+    machine: buildEnrichedVal(DigimonStatusType.machine, props.resistances, props.activeDigievolution?.resistances),
+    dark: buildEnrichedVal(DigimonStatusType.dark, props.resistances, props.activeDigievolution?.resistances),
+  };
+});
+
 const computedAttributes = computed(() => {
-  const attrs = props.attributes;
+  const attrs = enrichedAttributes.value;
   return [
     { label: t('attributes.strength'), status: attrs.strength, icon: '👊', color: 'text-[#fcd883]', key: 'strength' },
     { label: t('attributes.defense'), status: attrs.defense, icon: '🛡️', color: 'text-gray-400', key: 'defense' },
@@ -26,7 +69,7 @@ const computedAttributes = computed(() => {
 });
 
 const computedResistances = computed(() => {
-  const res = props.resistances;
+  const res = enrichedResistances.value;
   return [
     { label: t('resistances.fire'), status: res.fire, icon: '🔥', color: 'text-orange-500', key: 'fire' },
     { label: t('resistances.water'), status: res.water, icon: '💧', color: 'text-blue-400', key: 'water' },
@@ -37,6 +80,7 @@ const computedResistances = computed(() => {
     { label: t('resistances.dark'), status: res.dark, icon: '🌑', color: 'text-purple-500', key: 'dark' },
   ];
 });
+
 
 const activeTooltip = ref({ show: false, title: '', text: '', isMath: false, base: 0, equip: 0, digi: 0, total: 0, x: 0, y: 0 });
 

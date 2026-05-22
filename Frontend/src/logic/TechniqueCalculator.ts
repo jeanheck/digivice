@@ -2,7 +2,7 @@ import TechniquesTable from '../database/TechniquesTable.json';
 import DigievolutionTechniques from '../database/DigievolutionTechniques.json';
 import TechniquesTypeTable from '../database/TechniquesTypeTable.json';
 import type { Technique, TechniqueType } from '../models';
-import { DigievolutionRegistry } from './DigievolutionRegistry';
+import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 
 export class TechniqueCalculator {
     private static techniqueTypesMap: Map<string, TechniqueType> | null = null;
@@ -21,7 +21,7 @@ export class TechniqueCalculator {
     }
 
     public static getTechniquesForDigievolution(digievolutionId: number, currentLevel: number): Technique[] {
-        const digievolutionName = DigievolutionRegistry.getDigievolutionNameById(digievolutionId);
+        const digievolutionName = DigievolutionCalculator.getDigievolutionNameById(digievolutionId);
         
         const entry = DigievolutionTechniques.digievolutions.find(d => d.name === digievolutionName);
         if (!entry) return [];

@@ -1,6 +1,6 @@
-import type { Attributes } from '../attributes';
-import type { Resistances } from '../resistances';
-import type { Technique } from '../technique';
+import type { Attributes } from '@/models/attributes';
+import type { Resistances } from '@/models/resistances';
+import type { Technique } from '@/models/technique';
 
 export interface EnrichedDigievolution {
     id: number;
