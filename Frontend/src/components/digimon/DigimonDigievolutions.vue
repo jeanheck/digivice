@@ -25,10 +25,7 @@ const enrichedDigievolutions = computed(() => {
   });
 });
 
-function openSkills(digievolution: EnrichedDigievolution | null) {
-    if (!digievolution) {
-        return;
-    }
+function openSkills(digievolution: EnrichedDigievolution) {
     selectedDigievolution.value = digievolution;
     modalOpen.value = true;
 }
@@ -46,7 +43,7 @@ function closeSkills() {
       :key="index"
       class="evo-row relative flex w-full h-[28px] bg-[#000a2b] text-white overflow-hidden dw3-beveled"
       :class="enrichedDigievolution ? 'cursor-pointer hover:brightness-125 transition-[filter]' : 'cursor-default'"
-      @click="openSkills(enrichedDigievolution)"
+      @click="enrichedDigievolution ? openSkills(enrichedDigievolution) : null"
     >
       <div class="absolute inset-0 bg-[#0077ff] pointer-events-none dw3-beveled"></div>
       <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
@@ -77,7 +74,8 @@ function closeSkills() {
 
   <DigievolutionTechniquesModal
     :is-open="modalOpen"
-    :digievolution="selectedDigievolution"
+    :digievolution-name="selectedDigievolution?.name ?? ''"
+    :techniques="selectedDigievolution?.techniques ?? []"
     @close="closeSkills"
   />
 </template>

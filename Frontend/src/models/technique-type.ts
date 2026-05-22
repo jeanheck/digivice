@@ -1,4 +1,6 @@
+export type TechniqueTypeId = 'Physical' | 'Magical' | 'Heal' | 'Support';
+
 export interface TechniqueType {
-    id: string;
+    id: TechniqueTypeId;
     description: Record<string, string>;
 }

@@ -134,6 +134,15 @@
     "machine": "Máquina",
     "dark": "Trevas"
   },
+  "techniquesElements": {
+    "fire": "Fogo",
+    "water": "Água",
+    "ice": "Gelo",
+    "wind": "Vento",
+    "thunder": "Trovão",
+    "machine": "Máquina",
+    "dark": "Trevas"
+  },
   "conditions": {
     "canPoison": "Pode ser Envenenado",
     "resistancePoison": "Resistente ao Veneno",

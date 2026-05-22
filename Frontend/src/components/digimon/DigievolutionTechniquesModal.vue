@@ -1,37 +1,50 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted } from 'vue'
-import IconClose from '../icons/IconClose.vue'
-import type { EnrichedDigievolution } from '../../models';
+import { watch, onUnmounted } from 'vue';
+import IconClose from '../icons/IconClose.vue';
+import type { Technique, TechniqueTypeId } from '../../models';
+import { TechniqueIcon } from '../../constants/technique-icons';
 import { useLocalization } from '../../composables/useLocalization';
 
 const props = defineProps<{
   isOpen: boolean;
-  digievolution: EnrichedDigievolution | null;
+  digievolutionName: string;
+  techniques: Technique[];
 }>();
 
-const emit = defineEmits(['close'])
+const emit = defineEmits(['close']);
 
-const { t, getLocalized } = useLocalization()
+const { t, getLocalized } = useLocalization();
 
-const closeModal = () => emit('close')
+const closeModal = () => {
+  emit('close');
+};
 
 const handleKeydown = (e: KeyboardEvent) => {
   if (e.key === 'Escape' && props.isOpen) {
-    closeModal()
+    closeModal();
   }
-}
+};
 
-onMounted(() => {
-  window.addEventListener('keydown', handleKeydown)
-})
+watch(() => props.isOpen, (open) => {
+  if (open) {
+    window.addEventListener('keydown', handleKeydown);
+  } else {
+    window.removeEventListener('keydown', handleKeydown);
+  }
+});
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeydown)
-})
+  window.removeEventListener('keydown', handleKeydown);
+});
 
-const techniques = computed(() => {
-  return props.digievolution?.techniques ?? []
-})
+function translateTechniqueElement(element: string): string {
+  if (element === 'None') {
+    return t('digievolution.neutral');
+  }
+  const key = `techniquesElements.${element.toLowerCase()}`;
+  const translated = t(key);
+  return translated === key ? element : translated;
+}
 
 function elementColor(element: string): string {
   const map: Record<string, string> = {
@@ -43,16 +56,12 @@ function elementColor(element: string): string {
     'Dark': 'text-purple-400',
     'Machine': 'text-gray-400',
     'None': 'text-white/60',
-  }
-  return map[element] ?? 'text-white/60'
+  };
+  return map[element] ?? 'text-white/60';
 }
 
-function typeIcon(type: string): string {
-  if (type === 'Physical') return '👊'
-  if (type === 'Magical') return '🧙‍♂️'
-  if (type === 'Heal') return '💚'
-  if (type === 'Support') return '🟡'
-  return '?'
+function typeIcon(type: TechniqueTypeId): string {
+  return TechniqueIcon[type];
 }
 </script>
 
@@ -60,7 +69,7 @@ function typeIcon(type: string): string {
   <Teleport to="body">
     <Transition name="fade">
       <div
-        v-if="isOpen && digievolution"
+        v-if="isOpen"
         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
         @click.self="closeModal"
       >
@@ -75,7 +84,7 @@ function typeIcon(type: string): string {
           <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-10">
             <h2 class="font-bold tracking-widest text-[#00aaff] text-sm uppercase flex items-center gap-2">
               <span class="text-yellow-400">⚡</span>
-              {{ digievolution?.name }}
+              {{ digievolutionName }}
             </h2>
             <button
               @click="closeModal"
@@ -111,7 +120,7 @@ function typeIcon(type: string): string {
 
               <!-- Type icon -->
               <span class="text-base leading-none mt-[1px] flex-shrink-0">
-                {{ typeIcon(tech.type?.id ?? '') }}
+                {{ typeIcon(tech.type.id) }}
               </span>
 
               <!-- Content -->
@@ -133,8 +142,8 @@ function typeIcon(type: string): string {
 
                 <!-- Stats row -->
                 <div class="flex gap-3 mt-1 text-[10px]">
-                  <span :class="elementColor(tech.element ?? 'None')">
-                    {{ (tech.element ?? 'None') !== 'None' ? t('resistances.' + (tech.element || 'None').toLowerCase()) : t('digievolution.neutral') }}
+                  <span :class="elementColor(tech.element)">
+                    {{ translateTechniqueElement(tech.element) }}
                   </span>
                   <span class="text-blue-300/70">MP {{ tech.mp }}</span>
                 </div>
