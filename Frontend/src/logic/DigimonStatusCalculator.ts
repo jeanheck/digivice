@@ -1,29 +1,29 @@
 import { MathUtils } from "@/utils/MathUtils";
-import { type DigimonStatusType, type EnrichedEquipment, type Equipments } from "@/models";
+import { AttributeType, ResistanceType, type DigimonStatusType, type EnrichedEquipment, type Equipments } from "@/models";
 import { EquipamentRepository } from "@/repositories/equipament-repository";
 
 export class DigimonStatusCalculator {
-    public static calculateBonusFromEquipaments(digimonStatusType: DigimonStatusType, enrichedEquipments: EnrichedEquipment[]
+    public static calculateBonusFromEquipaments(attributeOrResistanceType: AttributeType | ResistanceType, enrichedEquipments: EnrichedEquipment[]
     ): number {
-        const lowerCaseDigimonStatusType = digimonStatusType.toLowerCase();
+        const lowerCaseAttributeOrResistanceType = attributeOrResistanceType.toLowerCase();
         const attributes = enrichedEquipments
             .flatMap(enrichedEquipment => enrichedEquipment.attributes)
-            .filter(attribute => attribute.attribute.toLowerCase() === lowerCaseDigimonStatusType);
+            .filter(attribute => attribute.attribute.toLowerCase() === lowerCaseAttributeOrResistanceType);
 
         return MathUtils.Sum(attributes.map(attribute => Number(`${attribute.type}${attribute.value}`)));
     }
 
     public static calculateBonusFromRawEquipments(
-        digimonStatusType: DigimonStatusType,
+        attributeOrResistanceType: AttributeType | ResistanceType,
         equipments: Equipments
     ): number {
         const enrichedEquipments = EquipamentRepository.getEquipmentsByIds(equipments);
-        return this.calculateBonusFromEquipaments(digimonStatusType, enrichedEquipments);
+        return this.calculateBonusFromEquipaments(attributeOrResistanceType, enrichedEquipments);
     }
 
 
     public static calculateBonusFromActiveDigievolution(
-        digimonStatusType: DigimonStatusType,
+        attributeOrResistanceType: AttributeType | ResistanceType,
         section: 'attributes' | 'resistances',
         digievolution: any | null): number {
         if (!digievolution) {
@@ -32,7 +32,7 @@ export class DigimonStatusCalculator {
 
         const jsonField = section === 'attributes' ? digievolution.Attributes : digievolution.Resistances;
         if (jsonField) {
-            const pascalProp = digimonStatusType.charAt(0).toUpperCase() + digimonStatusType.slice(1);
+            const pascalProp = attributeOrResistanceType.charAt(0).toUpperCase() + attributeOrResistanceType.slice(1);
             return jsonField[pascalProp] || 0;
         }
 

@@ -32,3 +32,6 @@ export * from './step';
 export * from './technique-type';
 export * from './technique';
 export * from './vitals';
+export * from './attribute-type';
+export * from './resistance-type';
+
