@@ -1,12 +1,10 @@
 {
-    "digimonName": {
-        "0": "Kotemon",
-        "1": "Kumamon",
-        "2": "Monmon",
-        "3": "Agumon",
-        "4": "Veemon",
-        "5": "Guilmon",
-        "6": "Renamon",
-        "7": "Patamon"
-    }
+    "0": "Kotemon",
+    "1": "Kumamon",
+    "2": "Monmon",
+    "3": "Agumon",
+    "4": "Veemon",
+    "5": "Guilmon",
+    "6": "Renamon",
+    "7": "Patamon"
 }

@@ -14,7 +14,7 @@ const props = defineProps<{
 }>();
 
 const name = computed(() => {
-  return DigimonRepository.getDigimonNameById(props.digimonId);
+  return DigimonRepository.getNameById(props.digimonId);
 });
 
 const experienceToReachNextLevel = computed(() => {

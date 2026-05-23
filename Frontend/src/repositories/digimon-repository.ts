@@ -1,58 +1,16 @@
-import type { ExperienceByLevel } from "@/models/repository/experience-by-level";
-import ExperienceTableData from "../database/ExperienceTable.json";
+import type { DigimonExperienceTable } from "@/models/repository/digimon-experience-table";
+import type { DigimonNameTable } from "@/models/repository/digimon-name-table";
+import DigimonExperience from "@/tables/digimon/digimon-experience.json";
+import DigimonName from "@/tables/digimon/digimon-name.json";
 
 export class DigimonRepository {
-    public static get experienceTable(): Record<string, ExperienceByLevel[]> {
-        return (ExperienceTableData as unknown) as Record<string, ExperienceByLevel[]>;
-    }
-
-    public static getExperienceTableByDigimonName(digimonName: string): ExperienceByLevel[] | undefined {
-        return this.experienceTable[digimonName];
-    }
+    private static readonly DigimonNameData = DigimonName as DigimonNameTable;
+    private static readonly DigimonExperienceData = DigimonExperience as DigimonExperienceTable;
 
     public static getRequiredExperienceForLevel(digimonName: string, level: number): number {
-        const experienceTable = this.getExperienceTableByDigimonName(digimonName);
-        if (!experienceTable) {
-            return 0;
-        }
-
-        const requiredExperience = experienceTable[level - 1];
-        if (!requiredExperience) {
-            return 0;
-        }
-
-        return requiredExperience[level] ?? 0;
+        return this.DigimonExperienceData[digimonName]![level]!;
     }
-
-    public static getDigimonNameById(id: number): string {
-        switch (id) {
-            case 0: {
-                return 'Kotemon';
-            }
-            case 1: {
-                return 'Kumamon';
-            }
-            case 2: {
-                return 'Monmon';
-            }
-            case 3: {
-                return 'Agumon';
-            }
-            case 4: {
-                return 'Veemon';
-            }
-            case 5: {
-                return 'Guilmon';
-            }
-            case 6: {
-                return 'Renamon';
-            }
-            case 7: {
-                return 'Patamon';
-            }
-            default: {
-                return 'Unknown';
-            }
-        }
+    public static getNameById(id: number): string | null {
+        return this.DigimonNameData[id]!;
     }
 }
