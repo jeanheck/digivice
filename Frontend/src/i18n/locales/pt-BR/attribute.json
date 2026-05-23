@@ -1,0 +1,16 @@
+{
+  "attribute": {
+    "strength": "Força",
+    "strength-explanation": "Aumenta o dano causado por ataques físicos e técnicas.",
+    "defense": "Defesa",
+    "defense-explanation": "Reduz o dano recebido de ataques físicos.",
+    "spirit": "Espírito",
+    "spirit-explanation": "Aumenta o dano causado por técnicas mágicas e afeta o MP máximo.",
+    "wisdom": "Sabedoria",
+    "wisdom-explanation": "Melhora a taxa de acerto mágico, evasão contra magia e reduz o dano recebido de ataques mágicos.",
+    "speed": "Velocidade",
+    "speed-explanation": "Determina a ordem dos turnos em batalha e melhora a taxa de evasão geral.",
+    "charisma": "Carisma",
+    "charisma-explanation": "Aumenta a popularidade do Digimon, reduz preços em lojas e permite batalhar contra certos Tamers."
+  }
+}

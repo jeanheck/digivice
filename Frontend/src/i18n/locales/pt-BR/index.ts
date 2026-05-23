@@ -3,10 +3,11 @@ import areaInformation from "./area-information.json";
 import enemy from "./enemies/enemy.json";
 import species from "./enemies/species.json";
 import conditions from "./enemies/conditions.json";
-import drops from "./enemies/drops.json";
+import drops from "./enemy/drop.json";
 import techniqueTypes from "./technique-types.json";
 import digimon from "./digimon.json";
-import stats from "./stats.json";
+import attribute from "./attribute.json";
+import element from "./element.json";
 import equipments from "./equipments.json";
 import equipmentType from "./equipment-type.json";
 import location from "./location.json";
@@ -27,7 +28,8 @@ export default {
   ...drops,
   ...techniqueTypes,
   ...digimon,
-  ...stats,
+  ...attribute,
+  ...element,
   ...equipments,
   ...equipmentType,
   ...location,

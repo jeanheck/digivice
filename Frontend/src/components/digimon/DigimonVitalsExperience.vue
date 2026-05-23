@@ -41,7 +41,7 @@ const experiencePercentageToReachNextLevel = computed(() => {
             
             <div class="relative flex items-center justify-center shrink-0">
               <span class="text-[0.6rem] font-medium text-yellow-500">
-                {{ $t('common.level') }} {{ digimon.level }}
+                {{ $t('digimon.level') }} {{ digimon.level }}
               </span>
             </div>
           </div>

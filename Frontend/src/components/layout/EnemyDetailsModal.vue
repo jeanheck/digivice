@@ -188,8 +188,8 @@ const enemyImageUrl = computed(() => {
 
                   <div class="flex flex-col text-[11px] mt-1">
                     <span class="font-bold text-blue-500 tracking-wider uppercase mb-1">{{ $t('enemy.possibleDrop') }}:</span>
-                    <span class="font-bold text-gray-300 text-left" :title="enemy.itemHeld && getLocalized(enemy.itemHeld) !== 'N/A' ? getLocalized(enemy.itemHeld) : t('common.none')">
-                      {{ enemy.itemHeld && getLocalized(enemy.itemHeld) !== 'N/A' ? getLocalized(enemy.itemHeld) : t('common.none') }}
+                    <span class="font-bold text-gray-300 text-left" :title="enemy.itemHeld && getLocalized(enemy.itemHeld) !== 'N/A' ? getLocalized(enemy.itemHeld) : t('drop.none')">
+                      {{ enemy.itemHeld && getLocalized(enemy.itemHeld) !== 'N/A' ? getLocalized(enemy.itemHeld) : t('drop.none') }}
                     </span>
                   </div>
                 </div>
