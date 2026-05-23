@@ -1,5 +1,5 @@
-import type { DigimonExperienceTable } from "@/repositories/types/digimon-experience-table";
-import type { DigimonNameTable } from "@/repositories/types/digimon-name-table";
+import type { DigimonExperienceTable } from "@/repositories/tables/digimon-experience-table";
+import type { DigimonNameTable } from "@/repositories/tables/digimon-name-table";
 import DigimonExperienceJson from "@/tables/digimon/digimon-experience.json";
 import DigimonNameJson from "@/tables/digimon/digimon-name.json";
 

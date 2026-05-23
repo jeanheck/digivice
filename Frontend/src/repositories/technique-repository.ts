@@ -1,11 +1,11 @@
-import type { TechniqueTable } from '@/repositories/types/technique-table';
+import type { TechniqueTable } from '@/repositories/tables/technique-table';
 import TechniqueJson from '@/tables/digievolution/technique.json';
 import type { Technique, TechniqueType } from '@/models';
 
 export class TechniqueRepository {
     private static readonly TechniqueTable = TechniqueJson as TechniqueTable;
 
-    static {
+    /*static {
         this.initializeTechniques();
     }
 
@@ -31,5 +31,5 @@ export class TechniqueRepository {
 
     public static getTechniqueById(id: string): Technique | null {
         return this.techniquesMap.get(id) ?? null;
-    }
+    }*/
 }
