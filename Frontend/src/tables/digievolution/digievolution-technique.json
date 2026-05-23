@@ -1,1414 +1,1042 @@
 {
-    "Digievolutions": [
-        {
-            "Name": "Dinohumon",
-            "Techniques": [
-                {
-                    "TechniqueId": "HeatCutter",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "FrostCutter",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 30
-                },
-                {
-                    "TechniqueId": "SmallHeal",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "DoublePower",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "LizardDance",
-                    "LearnLevel": 60,
-                    "LoadedLevel": null
-                }
-            ]
+    "Dinohumon": {
+        "HeatCutter": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
         },
-        {
-            "Name": "Hookmon",
-            "Techniques": [
-                {
-                    "TechniqueId": "WingBuster",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "BugBuster",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 30
-                },
-                {
-                    "TechniqueId": "BigShot",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "FishBuster",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "CaptainCannon",
-                    "LearnLevel": 60,
-                    "LoadedLevel": null
-                }
-            ]
+        "FrostCutter": {
+            "LearnLevel": 10,
+            "LoadedLevel": 30
         },
-        {
-            "Name": "Grizzmon",
-            "Techniques": [
-                {
-                    "TechniqueId": "LightningSlash",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "Whirlwind",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "HammerRush",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "SpinalTap",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "MaulAttack",
-                    "LearnLevel": 60,
-                    "LoadedLevel": null
-                }
-            ]
+        "SmallHeal": {
+            "LearnLevel": 25,
+            "LoadedLevel": 75
         },
-        {
-            "Name": "Greymon",
-            "Techniques": [
-                {
-                    "TechniqueId": "FlameBall",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "TripleFire",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "DoublePower",
-                    "LearnLevel": 30,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "FlameLance",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "NovaBlast",
-                    "LearnLevel": 60,
-                    "LoadedLevel": null
-                }
-            ]
+        "DoublePower": {
+            "LearnLevel": 40,
+            "LoadedLevel": 99
         },
-        {
-            "Name": "ExVeemon",
-            "Techniques": [
-                {
-                    "TechniqueId": "AirBlast",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "IceBlow",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "SmallHeal",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "Antidote",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "Veelaser",
-                    "LearnLevel": 60,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Growlmon",
-            "Techniques": [
-                {
-                    "TechniqueId": "DoublePower",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "DoubleGuard",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "PickingClaw",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "CounterAlert",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "PlasmaBlade",
-                    "LearnLevel": 60,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Kyubimon",
-            "Techniques": [
-                {
-                    "TechniqueId": "ThunderBolt",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "ThunderGemini",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "IceBlow",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 45
-                },
-                {
-                    "TechniqueId": "IceShower",
-                    "LearnLevel": 55,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "DragonWheel",
-                    "LearnLevel": 60,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Angemon",
-            "Techniques": [
-                {
-                    "TechniqueId": "AirBlast",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "SmallHeal",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 40
-                },
-                {
-                    "TechniqueId": "DoubleGuard",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "MegaTornado",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "HandOfFate",
-                    "LearnLevel": 60,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Devimon",
-            "Techniques": [
-                {
-                    "TechniqueId": "DarkMatter",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 45
-                },
-                {
-                    "TechniqueId": "EvilPoison",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "ArmorBreak",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "StunShock",
-                    "LearnLevel": 55,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "TouchOfEvil",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Stingmon",
-            "Techniques": [
-                {
-                    "TechniqueId": "PoisonBites",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "EnergyLeech",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 45
-                },
-                {
-                    "TechniqueId": "PanicBites",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "VenomStab",
-                    "LearnLevel": 55,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "SpikingStrike",
-                    "LearnLevel": 60,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Angewomon",
-            "Techniques": [
-                {
-                    "TechniqueId": "Antidote",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "DivineRain",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 50
-                },
-                {
-                    "TechniqueId": "AntiParalysis",
-                    "LearnLevel": 30,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "CelestialArrow",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Kyukimon",
-            "Techniques": [
-                {
-                    "TechniqueId": "HeatCutter",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "FrostCutter",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 30
-                },
-                {
-                    "TechniqueId": "BurnSlash",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 50
-                },
-                {
-                    "TechniqueId": "ColdSlash",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "BigShot",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "BladeTwister",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Armormon",
-            "Techniques": [
-                {
-                    "TechniqueId": "BugBuster",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "BigShot",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "FishBuster",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 50
-                },
-                {
-                    "TechniqueId": "DinoBuster",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "DramonBuster",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "JusticeStrike",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "GrapLeomon",
-            "Techniques": [
-                {
-                    "TechniqueId": "LightningSlash",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "Whirlwind",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 30
-                },
-                {
-                    "TechniqueId": "SoulCharge",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "SpeedBoost",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "CycloneTurbine",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "MetalGreymon",
-            "Techniques": [
-                {
-                    "TechniqueId": "FlameBall",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "FlameLance",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 45
-                },
-                {
-                    "TechniqueId": "TripleFire",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 50
-                },
-                {
-                    "TechniqueId": "MagicMissile",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "RisingFire",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "GigaDestroyer",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "SkullGreymon",
-            "Techniques": [
-                {
-                    "TechniqueId": "FlameBall",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "DarkMatter",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "TripleFire",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "BlackThorn",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "DarkShot",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Paildramon",
-            "Techniques": [
-                {
-                    "TechniqueId": "MetalAttack",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "IceShower",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 40
-                },
-                {
-                    "TechniqueId": "MegaTornado",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "SpeedBoost",
-                    "LearnLevel": 55,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "AntiParalysis",
-                    "LearnLevel": 65,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "DesperadoBlaster",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "WarGrowlmon",
-            "Techniques": [
-                {
-                    "TechniqueId": "PickingClaw",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "CounterAlert",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "MegaGuard",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 50
-                },
-                {
-                    "TechniqueId": "MegaStrength",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "SpeedBoost",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "AtomicBlaster",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Taomon",
-            "Techniques": [
-                {
-                    "TechniqueId": "ThunderGemini",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "ElectroBolt",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 65
-                },
-                {
-                    "TechniqueId": "IceShower",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "Showstorm",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "ThunderField",
-                    "LearnLevel": 55,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "Bonhitsusen",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "MagnaAngemon",
-            "Techniques": [
-                {
-                    "TechniqueId": "AirBlast",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "SmallHeal",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "MegaTornado",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "MegaHeal",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "MegaGuard",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "GateOfDestiny",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Myotismon",
-            "Techniques": [
-                {
-                    "TechniqueId": "DarkFear",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 30
-                },
-                {
-                    "TechniqueId": "BlackDart",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 50
-                },
-                {
-                    "TechniqueId": "ArmorOff",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "ConfuseGas",
-                    "LearnLevel": 65,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "SoulSnatcher",
-                    "LearnLevel": 80,
-                    "LoadedLevel": 95
-                },
-                {
-                    "TechniqueId": "GrislyWing",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "MetalMamemon",
-            "Techniques": [
-                {
-                    "TechniqueId": "MetalAttack",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "MechanicalBash",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "MagicMissile",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "SlowDown",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "TwinMissile",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "EnergeticBomb",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Kabuterimon",
-            "Techniques": [
-                {
-                    "TechniqueId": "EnergyLeech",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "VenomStab",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 50
-                },
-                {
-                    "TechniqueId": "HammerRush",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "EnergyDrain",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "ElectroShocker",
-                    "LearnLevel": 70,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Digitamamon",
-            "Techniques": [
-                {
-                    "TechniqueId": "HypnoGas",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 50
-                },
-                {
-                    "TechniqueId": "SoulSnatcher",
-                    "LearnLevel": 30,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "HypnoNebula",
-                    "LearnLevel": 55,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "NmSyndromer",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Guardiangemon",
-            "Techniques": [
-                {
-                    "TechniqueId": "BurnSlash",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 45
-                },
-                {
-                    "TechniqueId": "ColdSlash",
-                    "LearnLevel": 30,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "MegaHeal",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 65
-                },
-                {
-                    "TechniqueId": "HammerRush",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "PinpointShot",
-                    "LearnLevel": 70,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "GoldenRipper",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Cannondramon",
-            "Techniques": [
-                {
-                    "TechniqueId": "FishBuster",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "DinoBuster",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 50
-                },
-                {
-                    "TechniqueId": "DramonBuster",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "PinpointShot",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "DevilShot",
-                    "LearnLevel": 80,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "DynamoCannon",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Marsmon",
-            "Techniques": [
-                {
-                    "TechniqueId": "HeavenHit",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 45
-                },
-                {
-                    "TechniqueId": "VacuumCannon",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "BrainFreeze",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "Misshukikou",
-                    "LearnLevel": 65,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "Mugenhadou",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "WarGreymon",
-            "Techniques": [
-                {
-                    "TechniqueId": "FlameLance",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "FlameBreath",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "RisingFire",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 65
-                },
-                {
-                    "TechniqueId": "TwinMissile",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "GigaFire",
-                    "LearnLevel": 80,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "TerraForce",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Imperialdramon",
-            "Techniques": [
-                {
-                    "TechniqueId": "MegaHeal",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "MechanicalBash",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "Showstorm",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "SylphStorm",
-                    "LearnLevel": 70,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "MegaCrusher",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Gallantmon",
-            "Techniques": [
-                {
-                    "TechniqueId": "SpeedBoost",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "CounterStrike",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 65
-                },
-                {
-                    "TechniqueId": "SnappingClaw",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "MegaBoost",
-                    "LearnLevel": 75,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "FinalPurification",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Sakuyamon",
-            "Techniques": [
-                {
-                    "TechniqueId": "ElectroBolt",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "LightningBolt",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "Showstorm",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "GigaFreeze",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "IceField",
-                    "LearnLevel": 65,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "KongouKaimandra",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Seraphimon",
-            "Techniques": [
-                {
-                    "TechniqueId": "MegaTornado",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "MegaHeal",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 45
-                },
-                {
-                    "TechniqueId": "SylphStorm",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 65
-                },
-                {
-                    "TechniqueId": "GigaHeal",
-                    "LearnLevel": 55,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "WindField",
-                    "LearnLevel": 75,
-                    "LoadedLevel": 95
-                },
-                {
-                    "TechniqueId": "SevenHeavens",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "MetalGarurumon",
-            "Techniques": [
-                {
-                    "TechniqueId": "MechanicalBash",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "TwinMissile",
-                    "LearnLevel": 15,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "MagicalCannon",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "MetalField",
-                    "LearnLevel": 70,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "MetalWolfClaw",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Rosemon",
-            "Techniques": [
-                {
-                    "TechniqueId": "GrandWave",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 30
-                },
-                {
-                    "TechniqueId": "ErasePoison",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "EraseParalysis",
-                    "LearnLevel": 25,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "WaterField",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "AntiMagic",
-                    "LearnLevel": 70,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "ThornWhipping",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "BK WarGreymon",
-            "Techniques": [
-                {
-                    "TechniqueId": "FlameBreath",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "DarkFear",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 40
-                },
-                {
-                    "TechniqueId": "GigaFire",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "BlackDart",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "FireField",
-                    "LearnLevel": 70,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "TerraDestroyer",
-                    "LearnLevel": 85,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Imperialdramon-F",
-            "Techniques": [
-                {
-                    "TechniqueId": "HeavenHit",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 30
-                },
-                {
-                    "TechniqueId": "MegaBoost",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "FullHeal",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 70
-                },
-                {
-                    "TechniqueId": "CounterStrike",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 85
-                },
-                {
-                    "TechniqueId": "GigaHeal",
-                    "LearnLevel": 75,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "GigaCrusher",
-                    "LearnLevel": 90,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "MaloMyotismon",
-            "Techniques": [
-                {
-                    "TechniqueId": "DarkElemental",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 35
-                },
-                {
-                    "TechniqueId": "CrimsonCloud",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "DeadlyPoison",
-                    "LearnLevel": 30,
-                    "LoadedLevel": 70
-                },
-                {
-                    "TechniqueId": "ParalyzeShock",
-                    "LearnLevel": 45,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "DarkField",
-                    "LearnLevel": 75,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "MeltingBlood",
-                    "LearnLevel": 90,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "MegaGargomon",
-            "Techniques": [
-                {
-                    "TechniqueId": "MechanicalBash",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "MagicalCannon",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "GodBombard",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 85
-                },
-                {
-                    "TechniqueId": "MegaBreak",
-                    "LearnLevel": 75,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "GiantMissile",
-                    "LearnLevel": 90,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "GranKuwagamon",
-            "Techniques": [
-                {
-                    "TechniqueId": "VenomStab",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 20
-                },
-                {
-                    "TechniqueId": "EnergyDrain",
-                    "LearnLevel": 30,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "ConfuseStab",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "ImpactRush",
-                    "LearnLevel": 65,
-                    "LoadedLevel": 85
-                },
-                {
-                    "TechniqueId": "DimensionScissors",
-                    "LearnLevel": 90,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Phoenixmon",
-            "Techniques": [
-                {
-                    "TechniqueId": "FullHeal",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 30
-                },
-                {
-                    "TechniqueId": "FinalHeal",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 70
-                },
-                {
-                    "TechniqueId": "EraseMagic",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "AutoRecover",
-                    "LearnLevel": 75,
-                    "LoadedLevel": 99
-                },
-                {
-                    "TechniqueId": "CrimsonFlame",
-                    "LearnLevel": 90,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Omnimon",
-            "Techniques": [
-                {
-                    "TechniqueId": "FlameBreath",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 25
-                },
-                {
-                    "TechniqueId": "FlameSphere",
-                    "LearnLevel": 30,
-                    "LoadedLevel": 55
-                },
-                {
-                    "TechniqueId": "GigaFire",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 70
-                },
-                {
-                    "TechniqueId": "Inferno",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 85
-                },
-                {
-                    "TechniqueId": "TSword",
-                    "LearnLevel": 99,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Imperialdramon-P",
-            "Techniques": [
-                {
-                    "TechniqueId": "AutoRecover",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 40
-                },
-                {
-                    "TechniqueId": "ImpactRush",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 60
-                },
-                {
-                    "TechniqueId": "EraseMagic",
-                    "LearnLevel": 30,
-                    "LoadedLevel": 70
-                },
-                {
-                    "TechniqueId": "SoulPlunder",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "FinalHeal",
-                    "LearnLevel": 65,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "OmegaBlade",
-                    "LearnLevel": 99,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Beelzemon",
-            "Techniques": [
-                {
-                    "TechniqueId": "DarkElemental",
-                    "LearnLevel": 5,
-                    "LoadedLevel": 15
-                },
-                {
-                    "TechniqueId": "DarknessChaos",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 40
-                },
-                {
-                    "TechniqueId": "BlackScewer",
-                    "LearnLevel": 35,
-                    "LoadedLevel": 70
-                },
-                {
-                    "TechniqueId": "ConfuseNebula",
-                    "LearnLevel": 50,
-                    "LoadedLevel": 80
-                },
-                {
-                    "TechniqueId": "SoulPlunder",
-                    "LearnLevel": 60,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "BlastMode",
-                    "LearnLevel": 99,
-                    "LoadedLevel": null
-                }
-            ]
-        },
-        {
-            "Name": "Diaboromon",
-            "Techniques": [
-                {
-                    "TechniqueId": "DeadlyPoison",
-                    "LearnLevel": 10,
-                    "LoadedLevel": 30
-                },
-                {
-                    "TechniqueId": "ParalyzeShock",
-                    "LearnLevel": 20,
-                    "LoadedLevel": 65
-                },
-                {
-                    "TechniqueId": "ConfuseNebula",
-                    "LearnLevel": 40,
-                    "LoadedLevel": 75
-                },
-                {
-                    "TechniqueId": "HypnoNebula",
-                    "LearnLevel": 55,
-                    "LoadedLevel": 90
-                },
-                {
-                    "TechniqueId": "CableCrusher",
-                    "LearnLevel": 99,
-                    "LoadedLevel": null
-                }
-            ]
+        "LizardDance": {
+            "LearnLevel": 60,
+            "LoadedLevel": null
         }
-    ]
+    },
+    "Hookmon": {
+        "WingBuster": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "BugBuster": {
+            "LearnLevel": 10,
+            "LoadedLevel": 30
+        },
+        "BigShot": {
+            "LearnLevel": 25,
+            "LoadedLevel": 99
+        },
+        "FishBuster": {
+            "LearnLevel": 40,
+            "LoadedLevel": 75
+        },
+        "CaptainCannon": {
+            "LearnLevel": 60,
+            "LoadedLevel": null
+        }
+    },
+    "Grizzmon": {
+        "LightningSlash": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "Whirlwind": {
+            "LearnLevel": 10,
+            "LoadedLevel": 35
+        },
+        "HammerRush": {
+            "LearnLevel": 25,
+            "LoadedLevel": 75
+        },
+        "SpinalTap": {
+            "LearnLevel": 40,
+            "LoadedLevel": 99
+        },
+        "MaulAttack": {
+            "LearnLevel": 60,
+            "LoadedLevel": null
+        }
+    },
+    "Greymon": {
+        "FlameBall": {
+            "LearnLevel": 5,
+            "LoadedLevel": 25
+        },
+        "TripleFire": {
+            "LearnLevel": 15,
+            "LoadedLevel": 35
+        },
+        "DoublePower": {
+            "LearnLevel": 30,
+            "LoadedLevel": 75
+        },
+        "FlameLance": {
+            "LearnLevel": 45,
+            "LoadedLevel": 99
+        },
+        "NovaBlast": {
+            "LearnLevel": 60,
+            "LoadedLevel": null
+        }
+    },
+    "ExVeemon": {
+        "AirBlast": {
+            "LearnLevel": 10,
+            "LoadedLevel": 35
+        },
+        "IceBlow": {
+            "LearnLevel": 20,
+            "LoadedLevel": 55
+        },
+        "SmallHeal": {
+            "LearnLevel": 40,
+            "LoadedLevel": 75
+        },
+        "Antidote": {
+            "LearnLevel": 50,
+            "LoadedLevel": 99
+        },
+        "Veelaser": {
+            "LearnLevel": 60,
+            "LoadedLevel": null
+        }
+    },
+    "Growlmon": {
+        "DoublePower": {
+            "LearnLevel": 5,
+            "LoadedLevel": 35
+        },
+        "DoubleGuard": {
+            "LearnLevel": 10,
+            "LoadedLevel": 15
+        },
+        "PickingClaw": {
+            "LearnLevel": 25,
+            "LoadedLevel": 99
+        },
+        "CounterAlert": {
+            "LearnLevel": 45,
+            "LoadedLevel": 75
+        },
+        "PlasmaBlade": {
+            "LearnLevel": 60,
+            "LoadedLevel": null
+        }
+    },
+    "Kyubimon": {
+        "ThunderBolt": {
+            "LearnLevel": 5,
+            "LoadedLevel": 35
+        },
+        "ThunderGemini": {
+            "LearnLevel": 25,
+            "LoadedLevel": 75
+        },
+        "IceBlow": {
+            "LearnLevel": 15,
+            "LoadedLevel": 45
+        },
+        "IceShower": {
+            "LearnLevel": 55,
+            "LoadedLevel": 99
+        },
+        "DragonWheel": {
+            "LearnLevel": 60,
+            "LoadedLevel": null
+        }
+    },
+    "Angemon": {
+        "AirBlast": {
+            "LearnLevel": 5,
+            "LoadedLevel": 25
+        },
+        "SmallHeal": {
+            "LearnLevel": 10,
+            "LoadedLevel": 40
+        },
+        "DoubleGuard": {
+            "LearnLevel": 15,
+            "LoadedLevel": 75
+        },
+        "MegaTornado": {
+            "LearnLevel": 45,
+            "LoadedLevel": 99
+        },
+        "HandOfFate": {
+            "LearnLevel": 60,
+            "LoadedLevel": null
+        }
+    },
+    "Devimon": {
+        "DarkMatter": {
+            "LearnLevel": 10,
+            "LoadedLevel": 45
+        },
+        "EvilPoison": {
+            "LearnLevel": 20,
+            "LoadedLevel": 80
+        },
+        "ArmorBreak": {
+            "LearnLevel": 35,
+            "LoadedLevel": 90
+        },
+        "StunShock": {
+            "LearnLevel": 55,
+            "LoadedLevel": 99
+        },
+        "TouchOfEvil": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "Stingmon": {
+        "PoisonBites": {
+            "LearnLevel": 10,
+            "LoadedLevel": 25
+        },
+        "EnergyLeech": {
+            "LearnLevel": 15,
+            "LoadedLevel": 45
+        },
+        "PanicBites": {
+            "LearnLevel": 35,
+            "LoadedLevel": 75
+        },
+        "VenomStab": {
+            "LearnLevel": 55,
+            "LoadedLevel": 99
+        },
+        "SpikingStrike": {
+            "LearnLevel": 60,
+            "LoadedLevel": null
+        }
+    },
+    "Angewomon": {
+        "Antidote": {
+            "LearnLevel": 15,
+            "LoadedLevel": 35
+        },
+        "DivineRain": {
+            "LearnLevel": 20,
+            "LoadedLevel": 50
+        },
+        "AntiParalysis": {
+            "LearnLevel": 30,
+            "LoadedLevel": 99
+        },
+        "CelestialArrow": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "Kyukimon": {
+        "HeatCutter": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "FrostCutter": {
+            "LearnLevel": 10,
+            "LoadedLevel": 30
+        },
+        "BurnSlash": {
+            "LearnLevel": 25,
+            "LoadedLevel": 50
+        },
+        "ColdSlash": {
+            "LearnLevel": 40,
+            "LoadedLevel": 80
+        },
+        "BigShot": {
+            "LearnLevel": 60,
+            "LoadedLevel": 90
+        },
+        "BladeTwister": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "Armormon": {
+        "BugBuster": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "BigShot": {
+            "LearnLevel": 10,
+            "LoadedLevel": 35
+        },
+        "FishBuster": {
+            "LearnLevel": 25,
+            "LoadedLevel": 50
+        },
+        "DinoBuster": {
+            "LearnLevel": 45,
+            "LoadedLevel": 80
+        },
+        "DramonBuster": {
+            "LearnLevel": 60,
+            "LoadedLevel": 90
+        },
+        "JusticeStrike": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "GrapLeomon": {
+        "LightningSlash": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "Whirlwind": {
+            "LearnLevel": 10,
+            "LoadedLevel": 30
+        },
+        "SoulCharge": {
+            "LearnLevel": 25,
+            "LoadedLevel": 60
+        },
+        "SpeedBoost": {
+            "LearnLevel": 40,
+            "LoadedLevel": 90
+        },
+        "CycloneTurbine": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "MetalGreymon": {
+        "FlameBall": {
+            "LearnLevel": 5,
+            "LoadedLevel": 25
+        },
+        "FlameLance": {
+            "LearnLevel": 10,
+            "LoadedLevel": 45
+        },
+        "TripleFire": {
+            "LearnLevel": 15,
+            "LoadedLevel": 50
+        },
+        "MagicMissile": {
+            "LearnLevel": 35,
+            "LoadedLevel": 80
+        },
+        "RisingFire": {
+            "LearnLevel": 60,
+            "LoadedLevel": 90
+        },
+        "GigaDestroyer": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "SkullGreymon": {
+        "FlameBall": {
+            "LearnLevel": 5,
+            "LoadedLevel": 25
+        },
+        "DarkMatter": {
+            "LearnLevel": 15,
+            "LoadedLevel": 80
+        },
+        "TripleFire": {
+            "LearnLevel": 35,
+            "LoadedLevel": 55
+        },
+        "BlackThorn": {
+            "LearnLevel": 45,
+            "LoadedLevel": 90
+        },
+        "DarkShot": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "Paildramon": {
+        "MetalAttack": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "IceShower": {
+            "LearnLevel": 10,
+            "LoadedLevel": 40
+        },
+        "MegaTornado": {
+            "LearnLevel": 25,
+            "LoadedLevel": 60
+        },
+        "SpeedBoost": {
+            "LearnLevel": 55,
+            "LoadedLevel": 90
+        },
+        "AntiParalysis": {
+            "LearnLevel": 65,
+            "LoadedLevel": 99
+        },
+        "DesperadoBlaster": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "WarGrowlmon": {
+        "PickingClaw": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "CounterAlert": {
+            "LearnLevel": 10,
+            "LoadedLevel": 35
+        },
+        "MegaGuard": {
+            "LearnLevel": 25,
+            "LoadedLevel": 50
+        },
+        "MegaStrength": {
+            "LearnLevel": 45,
+            "LoadedLevel": 80
+        },
+        "SpeedBoost": {
+            "LearnLevel": 60,
+            "LoadedLevel": 90
+        },
+        "AtomicBlaster": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "Taomon": {
+        "ThunderGemini": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "ElectroBolt": {
+            "LearnLevel": 25,
+            "LoadedLevel": 65
+        },
+        "IceShower": {
+            "LearnLevel": 10,
+            "LoadedLevel": 35
+        },
+        "Showstorm": {
+            "LearnLevel": 45,
+            "LoadedLevel": 80
+        },
+        "ThunderField": {
+            "LearnLevel": 55,
+            "LoadedLevel": 90
+        },
+        "Bonhitsusen": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "MagnaAngemon": {
+        "AirBlast": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "SmallHeal": {
+            "LearnLevel": 10,
+            "LoadedLevel": 35
+        },
+        "MegaTornado": {
+            "LearnLevel": 25,
+            "LoadedLevel": 60
+        },
+        "MegaHeal": {
+            "LearnLevel": 40,
+            "LoadedLevel": 80
+        },
+        "MegaGuard": {
+            "LearnLevel": 50,
+            "LoadedLevel": 90
+        },
+        "GateOfDestiny": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "Myotismon": {
+        "DarkFear": {
+            "LearnLevel": 10,
+            "LoadedLevel": 30
+        },
+        "BlackDart": {
+            "LearnLevel": 25,
+            "LoadedLevel": 50
+        },
+        "ArmorOff": {
+            "LearnLevel": 40,
+            "LoadedLevel": 60
+        },
+        "ConfuseGas": {
+            "LearnLevel": 65,
+            "LoadedLevel": 90
+        },
+        "SoulSnatcher": {
+            "LearnLevel": 80,
+            "LoadedLevel": 95
+        },
+        "GrislyWing": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "MetalMamemon": {
+        "MetalAttack": {
+            "LearnLevel": 5,
+            "LoadedLevel": 25
+        },
+        "MechanicalBash": {
+            "LearnLevel": 35,
+            "LoadedLevel": 80
+        },
+        "MagicMissile": {
+            "LearnLevel": 15,
+            "LoadedLevel": 55
+        },
+        "SlowDown": {
+            "LearnLevel": 45,
+            "LoadedLevel": 90
+        },
+        "TwinMissile": {
+            "LearnLevel": 60,
+            "LoadedLevel": 99
+        },
+        "EnergeticBomb": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "Kabuterimon": {
+        "EnergyLeech": {
+            "LearnLevel": 5,
+            "LoadedLevel": 25
+        },
+        "VenomStab": {
+            "LearnLevel": 15,
+            "LoadedLevel": 50
+        },
+        "HammerRush": {
+            "LearnLevel": 35,
+            "LoadedLevel": 90
+        },
+        "EnergyDrain": {
+            "LearnLevel": 60,
+            "LoadedLevel": 99
+        },
+        "ElectroShocker": {
+            "LearnLevel": 70,
+            "LoadedLevel": null
+        }
+    },
+    "Digitamamon": {
+        "HypnoGas": {
+            "LearnLevel": 10,
+            "LoadedLevel": 50
+        },
+        "SoulSnatcher": {
+            "LearnLevel": 30,
+            "LoadedLevel": 80
+        },
+        "HypnoNebula": {
+            "LearnLevel": 55,
+            "LoadedLevel": 99
+        },
+        "NmSyndromer": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "Guardiangemon": {
+        "BurnSlash": {
+            "LearnLevel": 15,
+            "LoadedLevel": 45
+        },
+        "ColdSlash": {
+            "LearnLevel": 30,
+            "LoadedLevel": 55
+        },
+        "MegaHeal": {
+            "LearnLevel": 40,
+            "LoadedLevel": 65
+        },
+        "HammerRush": {
+            "LearnLevel": 50,
+            "LoadedLevel": 75
+        },
+        "PinpointShot": {
+            "LearnLevel": 70,
+            "LoadedLevel": 99
+        },
+        "GoldenRipper": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "Cannondramon": {
+        "FishBuster": {
+            "LearnLevel": 15,
+            "LoadedLevel": 35
+        },
+        "DinoBuster": {
+            "LearnLevel": 25,
+            "LoadedLevel": 50
+        },
+        "DramonBuster": {
+            "LearnLevel": 40,
+            "LoadedLevel": 75
+        },
+        "PinpointShot": {
+            "LearnLevel": 60,
+            "LoadedLevel": 90
+        },
+        "DevilShot": {
+            "LearnLevel": 80,
+            "LoadedLevel": 99
+        },
+        "DynamoCannon": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "Marsmon": {
+        "HeavenHit": {
+            "LearnLevel": 15,
+            "LoadedLevel": 45
+        },
+        "VacuumCannon": {
+            "LearnLevel": 25,
+            "LoadedLevel": 55
+        },
+        "BrainFreeze": {
+            "LearnLevel": 40,
+            "LoadedLevel": 80
+        },
+        "Misshukikou": {
+            "LearnLevel": 65,
+            "LoadedLevel": 99
+        },
+        "Mugenhadou": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "WarGreymon": {
+        "FlameLance": {
+            "LearnLevel": 5,
+            "LoadedLevel": 25
+        },
+        "FlameBreath": {
+            "LearnLevel": 35,
+            "LoadedLevel": 75
+        },
+        "RisingFire": {
+            "LearnLevel": 45,
+            "LoadedLevel": 65
+        },
+        "TwinMissile": {
+            "LearnLevel": 60,
+            "LoadedLevel": 90
+        },
+        "GigaFire": {
+            "LearnLevel": 80,
+            "LoadedLevel": 99
+        },
+        "TerraForce": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "Imperialdramon": {
+        "MegaHeal": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "MechanicalBash": {
+            "LearnLevel": 25,
+            "LoadedLevel": 60
+        },
+        "Showstorm": {
+            "LearnLevel": 50,
+            "LoadedLevel": 80
+        },
+        "SylphStorm": {
+            "LearnLevel": 70,
+            "LoadedLevel": 90
+        },
+        "MegaCrusher": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "Gallantmon": {
+        "SpeedBoost": {
+            "LearnLevel": 15,
+            "LoadedLevel": 35
+        },
+        "CounterStrike": {
+            "LearnLevel": 25,
+            "LoadedLevel": 65
+        },
+        "SnappingClaw": {
+            "LearnLevel": 50,
+            "LoadedLevel": 99
+        },
+        "MegaBoost": {
+            "LearnLevel": 75,
+            "LoadedLevel": 90
+        },
+        "FinalPurification": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "Sakuyamon": {
+        "ElectroBolt": {
+            "LearnLevel": 5,
+            "LoadedLevel": 25
+        },
+        "LightningBolt": {
+            "LearnLevel": 40,
+            "LoadedLevel": 80
+        },
+        "Showstorm": {
+            "LearnLevel": 15,
+            "LoadedLevel": 35
+        },
+        "GigaFreeze": {
+            "LearnLevel": 50,
+            "LoadedLevel": 90
+        },
+        "IceField": {
+            "LearnLevel": 65,
+            "LoadedLevel": 99
+        },
+        "KongouKaimandra": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "Seraphimon": {
+        "MegaTornado": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "MegaHeal": {
+            "LearnLevel": 20,
+            "LoadedLevel": 45
+        },
+        "SylphStorm": {
+            "LearnLevel": 35,
+            "LoadedLevel": 65
+        },
+        "GigaHeal": {
+            "LearnLevel": 55,
+            "LoadedLevel": 99
+        },
+        "WindField": {
+            "LearnLevel": 75,
+            "LoadedLevel": 95
+        },
+        "SevenHeavens": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "MetalGarurumon": {
+        "MechanicalBash": {
+            "LearnLevel": 10,
+            "LoadedLevel": 25
+        },
+        "TwinMissile": {
+            "LearnLevel": 15,
+            "LoadedLevel": 55
+        },
+        "MagicalCannon": {
+            "LearnLevel": 45,
+            "LoadedLevel": 80
+        },
+        "MetalField": {
+            "LearnLevel": 70,
+            "LoadedLevel": 90
+        },
+        "MetalWolfClaw": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "Rosemon": {
+        "GrandWave": {
+            "LearnLevel": 10,
+            "LoadedLevel": 30
+        },
+        "ErasePoison": {
+            "LearnLevel": 20,
+            "LoadedLevel": 55
+        },
+        "EraseParalysis": {
+            "LearnLevel": 25,
+            "LoadedLevel": 60
+        },
+        "WaterField": {
+            "LearnLevel": 50,
+            "LoadedLevel": 80
+        },
+        "AntiMagic": {
+            "LearnLevel": 70,
+            "LoadedLevel": 90
+        },
+        "ThornWhipping": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "BK WarGreymon": {
+        "FlameBreath": {
+            "LearnLevel": 10,
+            "LoadedLevel": 25
+        },
+        "DarkFear": {
+            "LearnLevel": 20,
+            "LoadedLevel": 40
+        },
+        "GigaFire": {
+            "LearnLevel": 35,
+            "LoadedLevel": 60
+        },
+        "BlackDart": {
+            "LearnLevel": 50,
+            "LoadedLevel": 80
+        },
+        "FireField": {
+            "LearnLevel": 70,
+            "LoadedLevel": 90
+        },
+        "TerraDestroyer": {
+            "LearnLevel": 85,
+            "LoadedLevel": null
+        }
+    },
+    "Imperialdramon-F": {
+        "HeavenHit": {
+            "LearnLevel": 10,
+            "LoadedLevel": 30
+        },
+        "MegaBoost": {
+            "LearnLevel": 20,
+            "LoadedLevel": 55
+        },
+        "FullHeal": {
+            "LearnLevel": 45,
+            "LoadedLevel": 70
+        },
+        "CounterStrike": {
+            "LearnLevel": 60,
+            "LoadedLevel": 85
+        },
+        "GigaHeal": {
+            "LearnLevel": 75,
+            "LoadedLevel": 99
+        },
+        "GigaCrusher": {
+            "LearnLevel": 90,
+            "LoadedLevel": null
+        }
+    },
+    "MaloMyotismon": {
+        "DarkElemental": {
+            "LearnLevel": 10,
+            "LoadedLevel": 35
+        },
+        "CrimsonCloud": {
+            "LearnLevel": 20,
+            "LoadedLevel": 55
+        },
+        "DeadlyPoison": {
+            "LearnLevel": 30,
+            "LoadedLevel": 70
+        },
+        "ParalyzeShock": {
+            "LearnLevel": 45,
+            "LoadedLevel": 80
+        },
+        "DarkField": {
+            "LearnLevel": 75,
+            "LoadedLevel": 99
+        },
+        "MeltingBlood": {
+            "LearnLevel": 90,
+            "LoadedLevel": null
+        }
+    },
+    "MegaGargomon": {
+        "MechanicalBash": {
+            "LearnLevel": 5,
+            "LoadedLevel": 25
+        },
+        "MagicalCannon": {
+            "LearnLevel": 20,
+            "LoadedLevel": 60
+        },
+        "GodBombard": {
+            "LearnLevel": 50,
+            "LoadedLevel": 85
+        },
+        "MegaBreak": {
+            "LearnLevel": 75,
+            "LoadedLevel": 99
+        },
+        "GiantMissile": {
+            "LearnLevel": 90,
+            "LoadedLevel": null
+        }
+    },
+    "GranKuwagamon": {
+        "VenomStab": {
+            "LearnLevel": 10,
+            "LoadedLevel": 20
+        },
+        "EnergyDrain": {
+            "LearnLevel": 30,
+            "LoadedLevel": 60
+        },
+        "ConfuseStab": {
+            "LearnLevel": 50,
+            "LoadedLevel": 75
+        },
+        "ImpactRush": {
+            "LearnLevel": 65,
+            "LoadedLevel": 85
+        },
+        "DimensionScissors": {
+            "LearnLevel": 90,
+            "LoadedLevel": null
+        }
+    },
+    "Phoenixmon": {
+        "FullHeal": {
+            "LearnLevel": 10,
+            "LoadedLevel": 30
+        },
+        "FinalHeal": {
+            "LearnLevel": 40,
+            "LoadedLevel": 70
+        },
+        "EraseMagic": {
+            "LearnLevel": 60,
+            "LoadedLevel": 80
+        },
+        "AutoRecover": {
+            "LearnLevel": 75,
+            "LoadedLevel": 99
+        },
+        "CrimsonFlame": {
+            "LearnLevel": 90,
+            "LoadedLevel": null
+        }
+    },
+    "Omnimon": {
+        "FlameBreath": {
+            "LearnLevel": 10,
+            "LoadedLevel": 25
+        },
+        "FlameSphere": {
+            "LearnLevel": 30,
+            "LoadedLevel": 55
+        },
+        "GigaFire": {
+            "LearnLevel": 35,
+            "LoadedLevel": 70
+        },
+        "Inferno": {
+            "LearnLevel": 60,
+            "LoadedLevel": 85
+        },
+        "TSword": {
+            "LearnLevel": 99,
+            "LoadedLevel": null
+        }
+    },
+    "Imperialdramon-P": {
+        "AutoRecover": {
+            "LearnLevel": 10,
+            "LoadedLevel": 40
+        },
+        "ImpactRush": {
+            "LearnLevel": 20,
+            "LoadedLevel": 60
+        },
+        "EraseMagic": {
+            "LearnLevel": 30,
+            "LoadedLevel": 70
+        },
+        "SoulPlunder": {
+            "LearnLevel": 50,
+            "LoadedLevel": 90
+        },
+        "FinalHeal": {
+            "LearnLevel": 65,
+            "LoadedLevel": 80
+        },
+        "OmegaBlade": {
+            "LearnLevel": 99,
+            "LoadedLevel": null
+        }
+    },
+    "Beelzemon": {
+        "DarkElemental": {
+            "LearnLevel": 5,
+            "LoadedLevel": 15
+        },
+        "DarknessChaos": {
+            "LearnLevel": 20,
+            "LoadedLevel": 40
+        },
+        "BlackScewer": {
+            "LearnLevel": 35,
+            "LoadedLevel": 70
+        },
+        "ConfuseNebula": {
+            "LearnLevel": 50,
+            "LoadedLevel": 80
+        },
+        "SoulPlunder": {
+            "LearnLevel": 60,
+            "LoadedLevel": 90
+        },
+        "BlastMode": {
+            "LearnLevel": 99,
+            "LoadedLevel": null
+        }
+    },
+    "Diaboromon": {
+        "DeadlyPoison": {
+            "LearnLevel": 10,
+            "LoadedLevel": 30
+        },
+        "ParalyzeShock": {
+            "LearnLevel": 20,
+            "LoadedLevel": 65
+        },
+        "ConfuseNebula": {
+            "LearnLevel": 40,
+            "LoadedLevel": 75
+        },
+        "HypnoNebula": {
+            "LearnLevel": 55,
+            "LoadedLevel": 90
+        },
+        "CableCrusher": {
+            "LearnLevel": 99,
+            "LoadedLevel": null
+        }
+    }
 }
