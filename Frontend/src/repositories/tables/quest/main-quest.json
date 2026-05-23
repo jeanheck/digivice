@@ -1,47 +1,24 @@
 {
     "Id": "MainQuest",
-    "Title": {
-        "PT-BR": "O maior de todos!",
-        "EN-US": "The greatest of them all!"
-    },
-    "Description": {
-        "PT-BR": "Torne-se o maior treinador do Mundo Digital!",
-        "EN-US": "Become the greatest tamer of the Digital World!"
-    },
     "Requisites": [],
     "Steps": {
         "1": {
-            "Description": {
-                "PT-BR": "Procure pelo Líder Seiryu na Cidade Seiryu",
-                "EN-US": "Look for the Seiryu Leader in Seiryu City"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Seiryu",
-                "EN-US": "Seiryu City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "022E",
+            "Coordinates": {
                 "X": 80.5,
                 "Y": 41
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Seiryu City",
-                    "Target": {
-                        "PT-BR": "Torre Seiryu",
-                        "EN-US": "Seiryu Tower"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022E",
+                    "Coordinates": {
                         "X": 59.5,
                         "Y": 29.5
                     }
                 },
                 {
-                    "LocationImage": "Seiryu Tower",
-                    "Target": {
-                        "PT-BR": "Repetitivo Tom",
-                        "EN-US": "Repeating Tom"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0230",
+                    "Coordinates": {
                         "X": 25,
                         "Y": 65
                     }
@@ -49,26 +26,15 @@
             ]
         },
         "2": {
-            "Description": {
-                "PT-BR": "Fale com o Líder Seiryu nas Ruínas Protocolo",
-                "EN-US": "Talk to Seiryu Leader on Protocol Ruins"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Ruínas Protocolo",
-                "EN-US": "Protocol Ruins"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0226",
+            "Coordinates": {
                 "X": 69.5,
                 "Y": 35.5
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Protocol Ruins",
-                    "Target": {
-                        "PT-BR": "Líder Seiryu",
-                        "EN-US": "Seiryu Leader"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0226",
+                    "Coordinates": {
                         "X": 39,
                         "Y": 12
                     }
@@ -76,26 +42,15 @@
             ]
         },
         "3": {
-            "Description": {
-                "PT-BR": "Derrote o MasterTyrannomon no Vale Tyranno",
-                "EN-US": "Defeat MasterTyrannomon on Tyranno Valley"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Vale Tyranno",
-                "EN-US": "Tyranno Valley"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "022B",
+            "Coordinates": {
                 "X": 90,
                 "Y": 38
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Tyranno Valley",
-                    "Target": {
-                        "PT-BR": "MasterTyrannomon",
-                        "EN-US": "MasterTyrannomon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022B",
+                    "Coordinates": {
                         "X": 73,
                         "Y": 9
                     }
@@ -103,48 +58,29 @@
             ]
         },
         "4": {
-            "Description": {
-                "PT-BR": "Desafie o Líder Seiryu na Cidade Seiryu",
-                "EN-US": "Challenge the Seiryu Leader on Seiryu City"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Seiryu",
-                "EN-US": "Seiryu City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "022E",
+            "Coordinates": {
                 "X": 80.5,
                 "Y": 41
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Seiryu City",
-                    "Target": {
-                        "PT-BR": "Torre Seiryu",
-                        "EN-US": "Seiryu Tower"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022E",
+                    "Coordinates": {
                         "X": 59.5,
                         "Y": 29.5
                     }
                 },
                 {
-                    "LocationImage": "Seiryu Tower",
-                    "Target": {
-                        "PT-BR": "Cidade Seiryu",
-                        "EN-US": "Seiryu City"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0230",
+                    "Coordinates": {
                         "X": 28,
                         "Y": 73
                     }
                 },
                 {
-                    "LocationImage": "Seiryu City",
-                    "Target": {
-                        "PT-BR": "Líder Seiryu",
-                        "EN-US": "Seiryu Leader"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022E",
+                    "Coordinates": {
                         "X": 23.5,
                         "Y": 28.5
                     }
@@ -152,26 +88,15 @@
             ]
         },
         "5": {
-            "Description": {
-                "PT-BR": "Saia andando da Cidade Seiryu",
-                "EN-US": "Walk out of Seiryu City"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Seiryu",
-                "EN-US": "Seiryu City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "022E",
+            "Coordinates": {
                 "X": 80.5,
                 "Y": 41
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Seiryu City",
-                    "Target": {
-                        "PT-BR": "Saída",
-                        "EN-US": "Exit"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022E",
+                    "Coordinates": {
                         "X": 18,
                         "Y": 81
                     }
@@ -179,26 +104,15 @@
             ]
         },
         "6": {
-            "Description": {
-                "PT-BR": "Vá até a Estação Leste e interaja com a Gôndola para chegar ao próximo setor",
-                "EN-US": "Go to the East Station and interact with Gondola to reach the next sector"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Estação Leste",
-                "EN-US": "East Station"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "022C",
+            "Coordinates": {
                 "X": 88,
                 "Y": 53
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "East Station",
-                    "Target": {
-                        "PT-BR": "Gôndola",
-                        "EN-US": "Gondola"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022C",
+                    "Coordinates": {
                         "X": 42.5,
                         "Y": 62.5
                     }
@@ -206,26 +120,15 @@
             ]
         },
         "7": {
-            "Description": {
-                "PT-BR": "Derrote o jogador misterioso que está te impedindo na Ponte Asuka",
-                "EN-US": "Defeat the Mystery Player stopping you on the Asuka Bridge"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Ponte Asuka",
-                "EN-US": "Asuka Bridge"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0202",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka Bridge",
-                    "Target": {
-                        "PT-BR": "Jogador Misterioso",
-                        "EN-US": "Mistery Player"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0202",
+                    "Coordinates": {
                         "X": 54,
                         "Y": 38
                     }
@@ -233,48 +136,29 @@
             ]
         },
         "8": {
-            "Description": {
-                "PT-BR": "Fale com o Guilmon na Pousada Asuka: Andar 2 na Cidade Asuka",
-                "EN-US": "Talk with the Guilmon on Asuka Inn 2F, on Asuka City"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka City",
-                    "Target": {
-                        "PT-BR": "Pousada Asuka: Andar 1",
-                        "EN-US": "Asuka Inn 1F"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0200",
+                    "Coordinates": {
                         "X": 51,
                         "Y": 39
                     }
                 },
                 {
-                    "LocationImage": "Asuka City - Inn 1F",
-                    "Target": {
-                        "PT-BR": "Pousada Asuka: Andar 2",
-                        "EN-US": "Asuka Inn 2F"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "020A",
+                    "Coordinates": {
                         "X": 61.5,
                         "Y": 6
                     }
                 },
                 {
-                    "LocationImage": "Asuka City - Inn 2F",
-                    "Target": {
-                        "PT-BR": "Guilmon",
-                        "EN-US": "Guilmon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "020C",
+                    "Coordinates": {
                         "X": 80,
                         "Y": 42
                     }
@@ -282,26 +166,15 @@
             ]
         },
         "9": {
-            "Description": {
-                "PT-BR": "Fale com o Guilmon na Pousada Florestal",
-                "EN-US": "Talk with the Guilmon on Forest Inn"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Pousada Florestal",
-                "EN-US": "Forest Inn"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0223",
+            "Coordinates": {
                 "X": 67.25,
                 "Y": 54
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Forest Inn",
-                    "Target": {
-                        "PT-BR": "Guilmon",
-                        "EN-US": "Guilmon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0223",
+                    "Coordinates": {
                         "X": 29,
                         "Y": 28
                     }
@@ -309,37 +182,22 @@
             ]
         },
         "10": {
-            "Description": {
-                "PT-BR": "Fale com o Guilmon Trapaceiro na Torre Zephyr na Cidade Seiryu",
-                "EN-US": "Talk with the Tricky Guilmon on Zephyr Tower, on Seiryu City"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Seiryu",
-                "EN-US": "Seiryu City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "022E",
+            "Coordinates": {
                 "X": 80.5,
                 "Y": 41
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Seiryu City",
-                    "Target": {
-                        "PT-BR": "Torre Zephyr",
-                        "EN-US": "Zephyr Tower"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022E",
+                    "Coordinates": {
                         "X": 33,
                         "Y": 51
                     }
                 },
                 {
-                    "LocationImage": "Zephyr Tower",
-                    "Target": {
-                        "PT-BR": "Guilmon",
-                        "EN-US": "Guilmon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022F",
+                    "Coordinates": {
                         "X": 34,
                         "Y": 31
                     }
@@ -347,26 +205,15 @@
             ]
         },
         "11": {
-            "Description": {
-                "PT-BR": "Retorne à Estação Leste com o Cartão Azul",
-                "EN-US": "Return to the East Station with the Blue Card"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Estação Leste",
-                "EN-US": "East Station"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "022C",
+            "Coordinates": {
                 "X": 88,
                 "Y": 53
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "East Station",
-                    "Target": {
-                        "PT-BR": "Gôndola",
-                        "EN-US": "Gondola"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022C",
+                    "Coordinates": {
                         "X": 42,
                         "Y": 62
                     }
@@ -374,26 +221,15 @@
             ]
         },
         "12": {
-            "Description": {
-                "PT-BR": "Confronte o Guilmon na Cidade Seiryu sobre o Cartão Azul falso",
-                "EN-US": "Confront the Guilmon on Seiryu City about the fake card"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Seiryu",
-                "EN-US": "Seiryu City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "022E",
+            "Coordinates": {
                 "X": 80.5,
                 "Y": 41
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Seiryu City",
-                    "Target": {
-                        "PT-BR": "Guilmon",
-                        "EN-US": "Guilmon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022E",
+                    "Coordinates": {
                         "X": 68,
                         "Y": 33
                     }
@@ -401,37 +237,22 @@
             ]
         },
         "13": {
-            "Description": {
-                "PT-BR": "Fale com o Guilmon Trapaceiro na Pousada Florestal (Subsolo)",
-                "EN-US": "Talk to the Tricky Guilmon at the Forest Inn Basements"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Pousada Florestal",
-                "EN-US": "Forest Inn"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0223",
+            "Coordinates": {
                 "X": 67.25,
                 "Y": 54
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Forest Inn",
-                    "Target": {
-                        "PT-BR": "Pousada Florestal (Subsolo)",
-                        "EN-US": "Forest Inn Basements"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0223",
+                    "Coordinates": {
                         "X": 56,
                         "Y": 90
                     }
                 },
                 {
-                    "LocationImage": "Forest Inn BF",
-                    "Target": {
-                        "PT-BR": "Guilmon",
-                        "EN-US": "Guilmon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0224",
+                    "Coordinates": {
                         "X": 31.5,
                         "Y": 95
                     }
@@ -439,26 +260,15 @@
             ]
         },
         "14": {
-            "Description": {
-                "PT-BR": "Retorne a Estação Leste com o verdadeiro Cartão Azul",
-                "EN-US": "Return to the East Station with the real Blue Card"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Estação Leste",
-                "EN-US": "East Station"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "022C",
+            "Coordinates": {
                 "X": 88,
                 "Y": 53
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "East Station",
-                    "Target": {
-                        "PT-BR": "Gôndola",
-                        "EN-US": "Gondola"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "022C",
+                    "Coordinates": {
                         "X": 42,
                         "Y": 62
                     }
@@ -466,26 +276,15 @@
             ]
         },
         "15": {
-            "Description": {
-                "PT-BR": "Siga através da Selva Sepultura",
-                "EN-US": "Follow through Jungle Grave"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Selva Sepultura",
-                "EN-US": "Jungle Grave"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "023A",
+            "Coordinates": {
                 "X": 80,
                 "Y": 90
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Jungle Grave",
-                    "Target": {
-                        "PT-BR": "Zanbamon",
-                        "EN-US": "Zanbamon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "023A",
+                    "Coordinates": {
                         "X": 19,
                         "Y": 60
                     }
@@ -493,26 +292,15 @@
             ]
         },
         "16": {
-            "Description": {
-                "PT-BR": "Fale com a Gatomon em treinamento na Pousada Pantanal",
-                "EN-US": "Talk to Gatomon in training at Tranquil Inn"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Pousada Pantanal",
-                "EN-US": "Swamp Inn"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0238",
+            "Coordinates": {
                 "X": 68,
                 "Y": 78
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Swamp Inn",
-                    "Target": {
-                        "PT-BR": "Gatomon",
-                        "EN-US": "Gatomon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0238",
+                    "Coordinates": {
                         "X": 33,
                         "Y": 68
                     }
@@ -520,26 +308,15 @@
             ]
         },
         "17": {
-            "Description": {
-                "PT-BR": "Descubra quem é o ser misterioso na Casa Xamã",
-                "EN-US": "Discover who the mysterious being is in the Shaman's House"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Casa Xamã",
-                "EN-US": "Shaman House"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0239",
+            "Coordinates": {
                 "X": 71,
                 "Y": 69
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Shaman House",
-                    "Target": {
-                        "PT-BR": "Sepkimon",
-                        "EN-US": "Sepkimon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0239",
+                    "Coordinates": {
                         "X": 46,
                         "Y": 73
                     }
@@ -547,26 +324,15 @@
             ]
         },
         "18": {
-            "Description": {
-                "PT-BR": "Encontre Baronmon",
-                "EN-US": "Find Baronmon"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Ruínas Protocolo",
-                "EN-US": "Protocol Ruins"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0226",
+            "Coordinates": {
                 "X": 69.5,
                 "Y": 35.5
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Protocol Ruins",
-                    "Target": {
-                        "PT-BR": "Baronmon",
-                        "EN-US": "Baronmon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0226",
+                    "Coordinates": {
                         "X": 7,
                         "Y": 13
                     }
@@ -574,26 +340,15 @@
             ]
         },
         "19": {
-            "Description": {
-                "PT-BR": "Procure por Sepkimon próximo a Cidade Asuka ou arredores",
-                "EN-US": "Look for Sepkimon near or around Asuka City"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Ponte Asuka",
-                "EN-US": "Asuka Bridge"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0202",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka Bridge",
-                    "Target": {
-                        "PT-BR": "Sepkimon",
-                        "EN-US": "Sepkimon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0202",
+                    "Coordinates": {
                         "X": 97.5,
                         "Y": 64.5
                     }
@@ -601,26 +356,15 @@
             ]
         },
         "20": {
-            "Description": {
-                "PT-BR": "Fale com Etemon perto do El Dorado Id",
-                "EN-US": "Speak to Etemon near El Dorado."
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka City 2",
-                    "Target": {
-                        "PT-BR": "Etemon",
-                        "EN-US": "Etemon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0201",
+                    "Coordinates": {
                         "X": 55,
                         "Y": 82
                     }
@@ -628,26 +372,15 @@
             ]
         },
         "21": {
-            "Description": {
-                "PT-BR": "Procure pelo Sepikmon no Lago dos Divermons",
-                "EN-US": "Look for Sepikmon in Divermon Lake"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Lago dos Divermons",
-                "EN-US": "Divermon's Lake"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0227",
+            "Coordinates": {
                 "X": 74.5,
                 "Y": 47
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Divermon's Lake",
-                    "Target": {
-                        "PT-BR": "Sepkimon",
-                        "EN-US": "Sepkimon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0227",
+                    "Coordinates": {
                         "X": 10,
                         "Y": 40
                     }
@@ -655,26 +388,15 @@
             ]
         },
         "22": {
-            "Description": {
-                "PT-BR": "Fale com o Etemon perto do El Dorado Id novamente",
-                "EN-US": "Speak to Etemon near El Dorado ID again."
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka City 2",
-                    "Target": {
-                        "PT-BR": "Etemon",
-                        "EN-US": "Etemon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0201",
+                    "Coordinates": {
                         "X": 55,
                         "Y": 82
                     }
@@ -682,26 +404,15 @@
             ]
         },
         "23": {
-            "Description": {
-                "PT-BR": "Fale com o Etemon nos Esgotos Asuka",
-                "EN-US": "Talk to Etemon at Asuka Sewers"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka Sewers",
-                    "Target": {
-                        "PT-BR": "Etemon",
-                        "EN-US": "Etemon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "021B",
+                    "Coordinates": {
                         "X": 40,
                         "Y": 18
                     }
@@ -709,26 +420,15 @@
             ]
         },
         "24": {
-            "Description": {
-                "PT-BR": "Fale com o Sepkimon em Casa Xamã",
-                "EN-US": "Talk to Sepkimon at the Shaman House"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Casa Xamã",
-                "EN-US": "Shaman House"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0239",
+            "Coordinates": {
                 "X": 71,
                 "Y": 69
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Shaman House",
-                    "Target": {
-                        "PT-BR": "Sepkimon",
-                        "EN-US": "Sepkimon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0239",
+                    "Coordinates": {
                         "X": 46,
                         "Y": 73
                     }
@@ -736,26 +436,15 @@
             ]
         },
         "25": {
-            "Description": {
-                "PT-BR": "Fale com o Zanbamon em Jungle Grave agora que você tem a erva",
-                "EN-US": "Talk to Zanbamon in Jungle Grave now that you have the herb."
-            },
-            "LocationOnMap": {
-                "PT-BR": "Selva Sepultura",
-                "EN-US": "Jungle Grave"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "023A",
+            "Coordinates": {
                 "X": 80,
                 "Y": 90
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Jungle Grave",
-                    "Target": {
-                        "PT-BR": "Zanbamon",
-                        "EN-US": "Zanbamon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "023A",
+                    "Coordinates": {
                         "X": 19,
                         "Y": 60
                     }
@@ -763,26 +452,15 @@
             ]
         },
         "26": {
-            "Description": {
-                "PT-BR": "Entre em Cidade Suzaku e procure uma pousada para descansar",
-                "EN-US": "Enter Suzaku City and look for an inn to rest"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Suzaku",
-                "EN-US": "Suzaku City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "023E",
+            "Coordinates": {
                 "X": 61,
                 "Y": 80
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Suzaku City",
-                    "Target": {
-                        "PT-BR": "Lisa",
-                        "EN-US": "Lisa"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "023E",
+                    "Coordinates": {
                         "X": 18,
                         "Y": 36
                     }
@@ -790,26 +468,15 @@
             ]
         },
         "27": {
-            "Description": {
-                "PT-BR": "Procure pela Líder Suzaku para desafiá-la",
-                "EN-US": "Look for Suzaku Leader to challenge her"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Suzaku",
-                "EN-US": "Suzaku City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "023E",
+            "Coordinates": {
                 "X": 61,
                 "Y": 80
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Suzaku Hall",
-                    "Target": {
-                        "PT-BR": "Líder Suzaku",
-                        "EN-US": "Suzaku Leader"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0240",
+                    "Coordinates": {
                         "X": 55,
                         "Y": 37
                     }
@@ -817,26 +484,15 @@
             ]
         },
         "28": {
-            "Description": {
-                "PT-BR": "Siga em direção à pousada após derrotar a Líder Suzaku",
-                "EN-US": "Head towards the inn after defeating Leader Suzaku"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Suzaku",
-                "EN-US": "Suzaku City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "023E",
+            "Coordinates": {
                 "X": 61,
                 "Y": 80
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Suzaku City",
-                    "Target": {
-                        "PT-BR": "Kail",
-                        "EN-US": "Kail"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "023E",
+                    "Coordinates": {
                         "X": 22,
                         "Y": 33
                     }
@@ -844,37 +500,22 @@
             ]
         },
         "29": {
-            "Description": {
-                "PT-BR": "Busque por informações no Costeleta de Cordeiro",
-                "EN-US": "Search for information on Lamb Chop"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka City",
-                    "Target": {
-                        "PT-BR": "Costeleta de Cordeiro",
-                        "EN-US": "Lamb Chop"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0200",
+                    "Coordinates": {
                         "X": 21,
                         "Y": 56
                     }
                 },
                 {
-                    "LocationImage": "Lamb Chop",
-                    "Target": {
-                        "PT-BR": "Barman",
-                        "EN-US": "Barman"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "020F",
+                    "Coordinates": {
                         "X": 52,
                         "Y": 62
                     }
@@ -882,26 +523,15 @@
             ]
         },
         "30": {
-            "Description": {
-                "PT-BR": "Procure pelo casal de treinadores perto do El Dorado",
-                "EN-US": "Look for the pair of trainers near El Dorado"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka City 2",
-                    "Target": {
-                        "PT-BR": "Treinadores",
-                        "EN-US": "Trainers"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0201",
+                    "Coordinates": {
                         "X": 65,
                         "Y": 78
                     }
@@ -909,26 +539,15 @@
             ]
         },
         "31": {
-            "Description": {
-                "PT-BR": "Vá para onde você viu Etemon pela última vez",
-                "EN-US": "Go to the place where you last saw Etemon"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka Sewers",
-                    "Target": {
-                        "PT-BR": "Etemon",
-                        "EN-US": "Etemon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "021B",
+                    "Coordinates": {
                         "X": 40,
                         "Y": 18
                     }
@@ -936,26 +555,15 @@
             ]
         },
         "32": {
-            "Description": {
-                "PT-BR": "Relate suas descobertas a Kail no Salão Principal",
-                "EN-US": "Report your findings to Kail in the Main Lobby"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Main Lobby",
-                    "Target": {
-                        "PT-BR": "Kail",
-                        "EN-US": "Kail"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0203",
+                    "Coordinates": {
                         "X": 32,
                         "Y": 46
                     }
@@ -963,26 +571,15 @@
             ]
         },
         "33": {
-            "Description": {
-                "PT-BR": "Confronte o Pernicioso Mat nos Esgotos Asuka",
-                "EN-US": "Confront the Mischievous Mat at Asuka Sewers"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka Sewers",
-                    "Target": {
-                        "PT-BR": "Pernicioso Mat",
-                        "EN-US": "Pernicious Mat"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "021B",
+                    "Coordinates": {
                         "X": 40,
                         "Y": 18
                     }
@@ -990,26 +587,15 @@
             ]
         },
         "34": {
-            "Description": {
-                "PT-BR": "Volte para o Caminho Subterrâneo e encontre Kail",
-                "EN-US": "Return to the Underground Path and find Kail"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Underground Path",
-                    "Target": {
-                        "PT-BR": "Kail",
-                        "EN-US": "Kail"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "020B",
+                    "Coordinates": {
                         "X": 69,
                         "Y": 37
                     }
@@ -1017,26 +603,15 @@
             ]
         },
         "35": {
-            "Description": {
-                "PT-BR": "Entre no Centro Administrativo vestindo a roupa de Agumon",
-                "EN-US": "Enter the Admin Center dressed as Agumon."
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Main Lobby",
-                    "Target": {
-                        "PT-BR": "Centro Administrativo - 1º Andar",
-                        "EN-US": "Admin Center 1F"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0203",
+                    "Coordinates": {
                         "X": 39,
                         "Y": 26
                     }
@@ -1044,37 +619,22 @@
             ]
         },
         "36": {
-            "Description": {
-                "PT-BR": "Encontre a Kail no Admin Center",
-                "EN-US": "Find Kail in the Admin Center."
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Admin Center 1F",
-                    "Target": {
-                        "PT-BR": "Centro Administrativo - 2º Andar",
-                        "EN-US": "Centro Administrativo - 2º Andar"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0214",
+                    "Coordinates": {
                         "X": 39,
                         "Y": 13
                     }
                 },
                 {
-                    "LocationImage": "Admin Center 2F",
-                    "Target": {
-                        "PT-BR": "Kail",
-                        "EN-US": "Kail"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0215",
+                    "Coordinates": {
                         "X": 70.5,
                         "Y": 34.5
                     }
@@ -1082,26 +642,15 @@
             ]
         },
         "37": {
-            "Description": {
-                "PT-BR": "Procure por pistas de como prosseguir em Baía Fênix",
-                "EN-US": "Look for clues on how to proceed in Phoenix Bay"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Baía Fênix",
-                "EN-US": "Phoenix Bay"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "023B",
+            "Coordinates": {
                 "X": 60.5,
                 "Y": 89.5
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Phoenix Bay",
-                    "Target": {
-                        "PT-BR": "Nami",
-                        "EN-US": "Nami"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "023B",
+                    "Coordinates": {
                         "X": 70,
                         "Y": 56
                     }
@@ -1109,26 +658,15 @@
             ]
         },
         "38": {
-            "Description": {
-                "PT-BR": "Procure pelo gato da Nami em Pântano Bios",
-                "EN-US": "Look for Nami's cat in Bios Swamp."
-            },
-            "LocationOnMap": {
-                "PT-BR": "Pântano Bios",
-                "EN-US": "Bios Swamp"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0235",
+            "Coordinates": {
                 "X": 85,
                 "Y": 83
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Bios Swamp",
-                    "Target": {
-                        "PT-BR": "Gato Perdido",
-                        "EN-US": "Lost Cat"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0235",
+                    "Coordinates": {
                         "X": 80,
                         "Y": 20
                     }
@@ -1136,26 +674,15 @@
             ]
         },
         "39": {
-            "Description": {
-                "PT-BR": "Peça ajuda ao Sepkimon para quebrar a parede",
-                "EN-US": "Ask Sepkimon for help to break down the wall"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Casa Xamã",
-                "EN-US": "Shaman House"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0239",
+            "Coordinates": {
                 "X": 71,
                 "Y": 69
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Shaman House",
-                    "Target": {
-                        "PT-BR": "Sepkimon",
-                        "EN-US": "Sepkimon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0239",
+                    "Coordinates": {
                         "X": 46,
                         "Y": 73
                     }
@@ -1163,26 +690,15 @@
             ]
         },
         "40": {
-            "Description": {
-                "PT-BR": "Procure pelo Baronmon para que ele lhe ajude com bombas",
-                "EN-US": "Look for Baronmon so he can help you with bombs."
-            },
-            "LocationOnMap": {
-                "PT-BR": "Ruínas Protocolo",
-                "EN-US": "Protocol Ruins"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0226",
+            "Coordinates": {
                 "X": 69.5,
                 "Y": 35.5
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Protocol Ruins",
-                    "Target": {
-                        "PT-BR": "Baronmon",
-                        "EN-US": "Baronmon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0226",
+                    "Coordinates": {
                         "X": 7,
                         "Y": 13
                     }
@@ -1190,26 +706,15 @@
             ]
         },
         "41": {
-            "Description": {
-                "PT-BR": "Consiga uma Bola TNT de um Triceramon e entregue para Baronmon",
-                "EN-US": "Obtain a TNT Ball from a Triceramon and deliver it to Baronmon"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Ruínas Protocolo",
-                "EN-US": "Protocol Ruins"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0226",
+            "Coordinates": {
                 "X": 69.5,
                 "Y": 35.5
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Protocol Ruins",
-                    "Target": {
-                        "PT-BR": "Baronmon",
-                        "EN-US": "Baronmon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0226",
+                    "Coordinates": {
                         "X": 7,
                         "Y": 13
                     }
@@ -1217,26 +722,15 @@
             ]
         },
         "42": {
-            "Description": {
-                "PT-BR": "Utilize o Chip TNT para abrir a parede em Pântano Bios",
-                "EN-US": "Use the TNT Chip to open the wall in Bios Swamp"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Pântano Bios",
-                "EN-US": "Bios Swamp"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0235",
+            "Coordinates": {
                 "X": 85,
                 "Y": 83
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Bios Swamp",
-                    "Target": {
-                        "PT-BR": "Parede",
-                        "EN-US": "Wall"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0235",
+                    "Coordinates": {
                         "X": 80,
                         "Y": 20
                     }
@@ -1244,26 +738,15 @@
             ]
         },
         "43": {
-            "Description": {
-                "PT-BR": "Pegue o digi-ovo da sinceridade",
-                "EN-US": "Grab the digi-egg of sincerity."
-            },
-            "LocationOnMap": {
-                "PT-BR": "Pântano Bios",
-                "EN-US": "Bios Swamp"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0235",
+            "Coordinates": {
                 "X": 85,
                 "Y": 83
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Reliability Spot",
-                    "Target": {
-                        "PT-BR": "Digi-ovo da Sinceridade",
-                        "EN-US": "Digi-egg of Sincerity"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0236",
+                    "Coordinates": {
                         "X": 25,
                         "Y": 88
                     }

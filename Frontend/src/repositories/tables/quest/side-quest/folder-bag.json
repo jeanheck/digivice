@@ -1,80 +1,45 @@
 {
     "Id": "FolderBag",
-    "Title": {
-        "PT-BR": "A Mochila de Cartas",
-        "EN-US": "The Folder Bag"
-    },
-    "Description": {
-        "PT-BR": "Obtenha a Mochila para guardar e colecionar Cartas de Digimon.",
-        "EN-US": "Obtain the bag to start storing and collecting Digimon Cards."
-    },
     "Prerequisites": [],
     "Steps": {
         "1": {
-            "Description": {
-                "PT-BR": "Fale com o Divermon no Cruzeiro Amarelo na Cidade Asuka",
-                "EN-US": "Speak with Divermon in the Yellow Cruiser located in Asuka City"
-            },
-            "LocationOnMap": {
-                "PT-BR": "Cidade Asuka",
-                "EN-US": "Asuka City"
-            },
-            "LocationOnMapCoordinates": {
+            "Location": "0200",
+            "Coordinates": {
                 "X": 50.5,
                 "Y": 43
             },
-            "Locations": [
+            "ZoomedLocations": [
                 {
-                    "LocationImage": "Asuka City",
-                    "Target": {
-                        "PT-BR": "Pousada Asuka: Andar 1",
-                        "EN-US": "Asuka Inn 1F"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0200",
+                    "Coordinates": {
                         "X": 51,
                         "Y": 39
                     }
                 },
                 {
-                    "LocationImage": "Asuka City - Inn 1F",
-                    "Target": {
-                        "PT-BR": "Caminho Subterrâneo",
-                        "EN-US": "Underground Path"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "020A",
+                    "Coordinates": {
                         "X": 45,
                         "Y": 98
                     }
                 },
                 {
-                    "LocationImage": "Underground Path",
-                    "Target": {
-                        "PT-BR": "Cidade Asuka",
-                        "EN-US": "Asuka City"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "020B",
+                    "Coordinates": {
                         "X": 14,
                         "Y": 83
                     }
                 },
                 {
-                    "LocationImage": "Asuka City 2",
-                    "Target": {
-                        "PT-BR": "Cruzeiro Amarelo",
-                        "EN-US": "Yellow Cruiser"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0201",
+                    "Coordinates": {
                         "X": 45,
                         "Y": 26
                     }
                 },
                 {
-                    "LocationImage": "Yellow Cruiser",
-                    "Target": {
-                        "PT-BR": "Divermon",
-                        "EN-US": "Divermon"
-                    },
-                    "LocationImageCoordinates": {
+                    "LocationImage": "0211",
+                    "Coordinates": {
                         "X": 62,
                         "Y": 33
                     }

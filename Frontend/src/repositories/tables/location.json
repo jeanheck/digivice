@@ -79,6 +79,10 @@
     "Location": "AdminCenter1F",
     "Image": "Admin Center 1F"
   },
+  "0215": {
+    "Location": "AdminCenter2F",
+    "Image": "Admin Center 2F"
+  },
   "020A": {
     "Location": "AsukaCityInn1F",
     "Image": "Asuka City - Inn 1F"
