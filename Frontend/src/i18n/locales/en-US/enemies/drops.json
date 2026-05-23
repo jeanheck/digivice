@@ -1,0 +1,250 @@
+{
+    "drops": {
+        "OldWand": {
+            "name": "Old Wand"
+        },
+        "OldClaw": {
+            "name": "Old Claw"
+        },
+        "RustyKatana": {
+            "name": "Rusty Katana"
+        },
+        "DarkPower1": {
+            "name": "Dark Power 1"
+        },
+        "PowerCharge": {
+            "name": "Power Charge"
+        },
+        "SpiderWeb": {
+            "name": "Spider Web"
+        },
+        "FirePower1": {
+            "name": "Fire Power 1"
+        },
+        "TNTBall": {
+            "name": "TNT Ball"
+        },
+        "FireChip": {
+            "name": "Fire Chip"
+        },
+        "IcePower1": {
+            "name": "Ice Power 1"
+        },
+        "WaterChip": {
+            "name": "Water Chip"
+        },
+        "GhostFang": {
+            "name": "Ghost Fang"
+        },
+        "WindPower1": {
+            "name": "Wind Power 1"
+        },
+        "RunnerSandal": {
+            "name": "Runner Sandal"
+        },
+        "ChaosWave": {
+            "name": "Chaos Wave"
+        },
+        "WaterPower1": {
+            "name": "Water Power 1"
+        },
+        "HPProxy": {
+            "name": "HP Proxy"
+        },
+        "SuperCharge": {
+            "name": "Super Charge"
+        },
+        "PowerChip": {
+            "name": "Power Chip"
+        },
+        "CounterCrest": {
+            "name": "Counter Crest"
+        },
+        "BoltPower1": {
+            "name": "Bolt Power 1"
+        },
+        "ThunderChip": {
+            "name": "Thunder Chip"
+        },
+        "SearchCrest": {
+            "name": "Search Crest"
+        },
+        "PulseGuard": {
+            "name": "Pulse Guard"
+        },
+        "MetalPower1": {
+            "name": "Metal Power 1"
+        },
+        "MultiCrest": {
+            "name": "Multi Crest"
+        },
+        "Machinegun": {
+            "name": "Machinegun"
+        },
+        "BinderCrest": {
+            "name": "Binder Crest"
+        },
+        "WisdomChip": {
+            "name": "Wisdom Chip"
+        },
+        "Goggles": {
+            "name": "Goggles"
+        },
+        "ArmorChip": {
+            "name": "Armor Chip"
+        },
+        "MPChip": {
+            "name": "MP Chip"
+        },
+        "DrillHorn": {
+            "name": "Drill Horn"
+        },
+        "RecoverCrest": {
+            "name": "Recover Crest"
+        },
+        "DarkPower2": {
+            "name": "Dark Power 2"
+        },
+        "MindChip": {
+            "name": "Mind Chip"
+        },
+        "CharmGas": {
+            "name": "Charm Gas"
+        },
+        "MetalChip": {
+            "name": "Metal Chip"
+        },
+        "WindPower2": {
+            "name": "Wind Power 2"
+        },
+        "CrimsonCable": {
+            "name": "Crimson Cable"
+        },
+        "WaterPower2": {
+            "name": "Water Power 2"
+        },
+        "DevilChip": {
+            "name": "Devil Chip"
+        },
+        "HackSticker": {
+            "name": "Hack Sticker"
+        },
+        "UltraCharge": {
+            "name": "Ultra Charge"
+        },
+        "FirePower2": {
+            "name": "Fire Power 2"
+        },
+        "IceChip": {
+            "name": "Ice Chip"
+        },
+        "IcePower2": {
+            "name": "Ice Power 2"
+        },
+        "FirePowerS": {
+            "name": "Fire Power S"
+        },
+        "WindChip": {
+            "name": "Wind Chip"
+        },
+        "DanceWing": {
+            "name": "Dance Wing"
+        },
+        "MaxCharge": {
+            "name": "Max Charge"
+        },
+        "CharismaChip": {
+            "name": "Charisma Chip"
+        },
+        "WindPowerS": {
+            "name": "Wind Power S"
+        },
+        "PowerBrace": {
+            "name": "Power Brace"
+        },
+        "MetalPowerS": {
+            "name": "Metal Power S"
+        },
+        "DarkPowerS": {
+            "name": "Dark Power S"
+        },
+        "ChainSaw": {
+            "name": "Chain Saw"
+        },
+        "Naginata": {
+            "name": "Naginata"
+        },
+        "MetalPower2": {
+            "name": "Metal Power 2"
+        },
+        "Glasses": {
+            "name": "Glasses"
+        },
+        "MagicianRod": {
+            "name": "Magician Rod"
+        },
+        "HPChip": {
+            "name": "HP Chip"
+        },
+        "OverClocked": {
+            "name": "Over Clocked"
+        },
+        "CursedPuppet": {
+            "name": "Cursed Puppet"
+        },
+        "BoltPowerS": {
+            "name": "Bolt Power S"
+        },
+        "DanceFeather": {
+            "name": "Dance Feather"
+        },
+        "TrainingBook": {
+            "name": "Training Book"
+        },
+        "OverLoad": {
+            "name": "Over Load"
+        },
+        "BoostChip": {
+            "name": "Boost Chip"
+        },
+        "BoltPower2": {
+            "name": "Bolt Power 2"
+        },
+        "RunnerShoes": {
+            "name": "Runner Shoes"
+        },
+        "MPProxy": {
+            "name": "MP Proxy"
+        },
+        "TrainChip3": {
+            "name": "Train Chip 3"
+        },
+        "TrainChip1": {
+            "name": "Train Chip 1"
+        },
+        "HPMegaProxy": {
+            "name": "HP Mega Proxy"
+        },
+        "WaterPowerS": {
+            "name": "Water Power S"
+        },
+        "TrainChip2": {
+            "name": "Train Chip 2"
+        },
+        "HackSystem": {
+            "name": "Hack System"
+        },
+        "MPMegaProxy": {
+            "name": "MP Mega Proxy"
+        },
+        "TrainChipV": {
+            "name": "Train Chip V"
+        },
+        "IcePowerS": {
+            "name": "Ice Power S"
+        },
+        "VariousBooster": {
+            "name": "Various Booster"
+        }
+    }
+}

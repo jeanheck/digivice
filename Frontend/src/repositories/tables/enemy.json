@@ -6,10 +6,6 @@
         "HP": 816,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": {
-            "PT-BR": "Vara Antiga",
-            "EN-US": "Old Wand"
-        },
         "Rate": 0,
         "Strength": 170,
         "Defense": 170,
@@ -53,7 +49,10 @@
             "PT-BR": "Névoa da Morte (Físico, Chance de Envenenamento)",
             "EN-US": "Necromist (Physical, Chance of Poison)"
         },
-        "Boss": true
+        "Boss": true,
+        "Drops": {
+            "Id": "OldWand"
+        }
     },
     {
         "Id": 2,
@@ -62,10 +61,6 @@
         "HP": 912,
         "MP": 9999,
         "Species": "Dino",
-        "ItemHeld": {
-            "PT-BR": "Garra Antiga",
-            "EN-US": "Old Claw"
-        },
         "Rate": 0,
         "Strength": 190,
         "Defense": 238,
@@ -109,7 +104,10 @@
         "Location": [
             "TyrannoValley"
         ],
-        "Boss": true
+        "Boss": true,
+        "Drops": {
+            "Id": "OldClaw"
+        }
     },
     {
         "Id": 20,
@@ -118,10 +116,6 @@
         "HP": 2160,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": {
-            "PT-BR": "Katana Enferrujada",
-            "EN-US": "Rusty Katana"
-        },
         "Rate": 0,
         "Strength": 450,
         "Defense": 450,
@@ -165,7 +159,10 @@
             "PT-BR": "",
             "EN-US": ""
         },
-        "Boss": true
+        "Boss": true,
+        "Drops": {
+            "Id": "RustyKatana"
+        }
     },
     {
         "Id": 14,
@@ -174,7 +171,6 @@
         "HP": 1776,
         "MP": 280,
         "Species": "Machine",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 370,
         "Defense": 370,
@@ -217,7 +213,8 @@
         "Technique": {
             "PT-BR": "Atomic Ray (Mágico-Máquina, Chance de KO)",
             "EN-US": "Atomic Ray (Magic-Machine, Chance of KO)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 15,
@@ -226,7 +223,6 @@
         "HP": 1776,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 555,
         "Defense": 370,
@@ -259,7 +255,8 @@
         "DVXP": 32,
         "EXP": 320,
         "BITS": 740,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 71,
@@ -268,7 +265,6 @@
         "HP": 120,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 2,
         "Strength": 50,
         "Defense": 42,
@@ -314,7 +310,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 72,
@@ -323,7 +320,6 @@
         "HP": 120,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 42,
         "Defense": 50,
@@ -367,7 +363,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 73,
@@ -376,7 +373,6 @@
         "HP": 168,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 88,
         "Defense": 60,
@@ -419,7 +415,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 74,
@@ -428,7 +425,6 @@
         "HP": 192,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 80,
         "Defense": 80,
@@ -472,7 +468,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 75,
@@ -481,7 +478,6 @@
         "HP": 312,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": "Dark Power 1",
         "Rate": 128,
         "Strength": 130,
         "Defense": 110,
@@ -524,6 +520,9 @@
         "Technique": {
             "PT-BR": "Energy Suck (Mágico)",
             "EN-US": "Energy Suck (Magic)"
+        },
+        "Drops": {
+            "Id": "DarkPower1"
         }
     },
     {
@@ -533,10 +532,6 @@
         "HP": 144,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": {
-            "PT-BR": "Carga Energia",
-            "EN-US": "Power Charge"
-        },
         "Rate": 192,
         "Strength": 60,
         "Defense": 60,
@@ -583,6 +578,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "PowerCharge"
         }
     },
     {
@@ -592,7 +590,6 @@
         "HP": 192,
         "MP": 9999,
         "Species": "Plant",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 80,
         "Defense": 80,
@@ -637,7 +634,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 78,
@@ -646,7 +644,6 @@
         "HP": 144,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 75,
         "Defense": 60,
@@ -690,7 +687,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 79,
@@ -699,7 +697,6 @@
         "HP": 168,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 70,
         "Defense": 60,
@@ -742,7 +739,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 80,
@@ -751,7 +749,6 @@
         "HP": 168,
         "MP": 9999,
         "Species": "Bird",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 60,
         "Defense": 70,
@@ -794,7 +791,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 81,
@@ -803,7 +801,6 @@
         "HP": 192,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": "Spider Web",
         "Rate": 128,
         "Strength": 80,
         "Defense": 68,
@@ -846,6 +843,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "SpiderWeb"
         }
     },
     {
@@ -855,7 +855,6 @@
         "HP": 192,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 120,
         "Defense": 80,
@@ -900,7 +899,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 83,
@@ -909,7 +909,6 @@
         "HP": 504,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 262,
         "Defense": 210,
@@ -952,7 +951,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 84,
@@ -961,7 +961,6 @@
         "HP": 240,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 150,
         "Defense": 125,
@@ -1004,7 +1003,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 85,
@@ -1013,7 +1013,6 @@
         "HP": 432,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 180,
         "Defense": 153,
@@ -1057,7 +1056,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 86,
@@ -1066,7 +1066,6 @@
         "HP": 240,
         "MP": 9999,
         "Species": "Plant",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 100,
         "Defense": 100,
@@ -1110,7 +1109,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 87,
@@ -1119,7 +1119,6 @@
         "HP": 264,
         "MP": 9999,
         "Species": "Dino",
-        "ItemHeld": "Fire Power 1",
         "Rate": 128,
         "Strength": 110,
         "Defense": 138,
@@ -1162,6 +1161,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "FirePower1"
         }
     },
     {
@@ -1171,7 +1173,6 @@
         "HP": 396,
         "MP": 9999,
         "Species": "Dino",
-        "ItemHeld": "TNT Ball",
         "Rate": 192,
         "Strength": 138,
         "Defense": 110,
@@ -1215,6 +1216,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "TNTBall"
         }
     },
     {
@@ -1224,7 +1228,6 @@
         "HP": 264,
         "MP": 9999,
         "Species": "Dragon",
-        "ItemHeld": "Fire Chip",
         "Rate": 16,
         "Strength": 77,
         "Defense": 138,
@@ -1267,6 +1270,9 @@
         "Technique": {
             "PT-BR": "Air Blast (Mágico-Vento)",
             "EN-US": "Air Blast (Magic-Wind)"
+        },
+        "Drops": {
+            "Id": "FireChip"
         }
     },
     {
@@ -1276,7 +1282,6 @@
         "HP": 312,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Ice Power 1",
         "Rate": 128,
         "Strength": 130,
         "Defense": 130,
@@ -1322,6 +1327,9 @@
         "Technique": {
             "PT-BR": "Confuse Gas (Magic, Chance of Confuse)",
             "EN-US": "Confuse Gas (Magic, Chance of Confuse)"
+        },
+        "Drops": {
+            "Id": "IcePower1"
         }
     },
     {
@@ -1331,7 +1339,6 @@
         "HP": 312,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Water Chip",
         "Rate": 16,
         "Strength": 130,
         "Defense": 130,
@@ -1379,6 +1386,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "WaterChip"
         }
     },
     {
@@ -1388,7 +1398,6 @@
         "HP": 336,
         "MP": 9999,
         "Species": "Ghoul",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 175,
         "Defense": 175,
@@ -1431,7 +1440,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 93,
@@ -1440,7 +1450,6 @@
         "HP": 864,
         "MP": 9999,
         "Species": "Ghoul",
-        "ItemHeld": "Ghost Fang",
         "Rate": 128,
         "Strength": 450,
         "Defense": 450,
@@ -1483,6 +1492,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "GhostFang"
         }
     },
     {
@@ -1492,7 +1504,6 @@
         "HP": 432,
         "MP": 9999,
         "Species": "Bird",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 180,
         "Defense": 180,
@@ -1536,7 +1547,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 95,
@@ -1545,7 +1557,6 @@
         "HP": 360,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": "Wind Power 1",
         "Rate": 128,
         "Strength": 128,
         "Defense": 128,
@@ -1589,6 +1600,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "WindPower1"
         }
     },
     {
@@ -1598,7 +1612,6 @@
         "HP": 552,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Water Chip",
         "Rate": 16,
         "Strength": 230,
         "Defense": 230,
@@ -1643,6 +1656,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "WaterChip"
         }
     },
     {
@@ -1652,7 +1668,6 @@
         "HP": 816,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 340,
         "Defense": 425,
@@ -1698,7 +1713,8 @@
         "Technique": {
             "PT-BR": "Divine Rain (Mágico-Água)",
             "EN-US": "Divine Rain (Magic-Water)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 98,
@@ -1707,7 +1723,6 @@
         "HP": 600,
         "MP": 120,
         "Species": "Fish",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 212,
         "Defense": 250,
@@ -1750,7 +1765,8 @@
         "Technique": {
             "PT-BR": "Divine Rain (Mágico-Água)",
             "EN-US": "Divine Rain (Magic-Water)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 99,
@@ -1759,7 +1775,6 @@
         "HP": 768,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Runner Sandal",
         "Rate": 128,
         "Strength": 320,
         "Defense": 400,
@@ -1802,6 +1817,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "RunnerSandal"
         }
     },
     {
@@ -1811,7 +1829,6 @@
         "HP": 1080,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 450,
         "Defense": 450,
@@ -1854,7 +1871,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 101,
@@ -1863,7 +1881,6 @@
         "HP": 696,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 290,
         "Defense": 290,
@@ -1906,7 +1923,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 102,
@@ -1915,7 +1933,6 @@
         "HP": 600,
         "MP": 200,
         "Species": "Fish",
-        "ItemHeld": "Chaos Wave",
         "Rate": 128,
         "Strength": 250,
         "Defense": 250,
@@ -1958,6 +1975,9 @@
         "Technique": {
             "PT-BR": "Confuse Gas (Magic, Chance of Confuse)",
             "EN-US": "Confuse Gas (Magic, Chance of Confuse)"
+        },
+        "Drops": {
+            "Id": "ChaosWave"
         }
     },
     {
@@ -1967,7 +1987,6 @@
         "HP": 408,
         "MP": 9999,
         "Species": "Dragon",
-        "ItemHeld": "Water Power 1",
         "Rate": 128,
         "Strength": 144,
         "Defense": 212,
@@ -2011,6 +2030,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "WaterPower1"
         }
     },
     {
@@ -2020,7 +2042,6 @@
         "HP": 672,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": "HP Proxy",
         "Rate": 128,
         "Strength": 350,
         "Defense": 280,
@@ -2063,6 +2084,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "HPProxy"
         }
     },
     {
@@ -2072,7 +2096,6 @@
         "HP": 600,
         "MP": 64,
         "Species": "Mammal",
-        "ItemHeld": "Super Charge",
         "Rate": 128,
         "Strength": 250,
         "Defense": 250,
@@ -2115,6 +2138,9 @@
         "Technique": {
             "PT-BR": "Small Heal (Heal a small portion of HP)",
             "EN-US": "Small Heal (Heal a small portion of HP)"
+        },
+        "Drops": {
+            "Id": "SuperCharge"
         }
     },
     {
@@ -2124,7 +2150,6 @@
         "HP": 600,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Power Chip",
         "Rate": 16,
         "Strength": 375,
         "Defense": 312,
@@ -2167,6 +2192,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "PowerChip"
         }
     },
     {
@@ -2176,7 +2204,6 @@
         "HP": 972,
         "MP": 9999,
         "Species": "Dino",
-        "ItemHeld": "Counter Crest",
         "Rate": 64,
         "Strength": 405,
         "Defense": 270,
@@ -2219,6 +2246,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "CounterCrest"
         }
     },
     {
@@ -2228,7 +2258,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 490,
         "Defense": 612,
@@ -2271,7 +2300,8 @@
         "Technique": {
             "PT-BR": "Double Guard (Raises Defense)",
             "EN-US": "Double Guard (Raises Defense)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 109,
@@ -2280,7 +2310,6 @@
         "HP": 1200,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 425,
         "Defense": 500,
@@ -2323,7 +2352,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 110,
@@ -2332,7 +2362,6 @@
         "HP": 648,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Bolt Power 1",
         "Rate": 128,
         "Strength": 270,
         "Defense": 270,
@@ -2375,6 +2404,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "BoltPower1"
         }
     },
     {
@@ -2384,7 +2416,6 @@
         "HP": 648,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Thunder Chip",
         "Rate": 16,
         "Strength": 270,
         "Defense": 338,
@@ -2427,6 +2458,9 @@
         "Technique": {
             "PT-BR": "Thunderbolt (Mágico-Trovão)",
             "EN-US": "Thunderbolt (Magic-Thunder)"
+        },
+        "Drops": {
+            "Id": "ThunderChip"
         }
     },
     {
@@ -2436,7 +2470,6 @@
         "HP": 480,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Search Crest",
         "Rate": 64,
         "Strength": 300,
         "Defense": 450,
@@ -2479,6 +2512,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "SearchCrest"
         }
     },
     {
@@ -2488,7 +2524,6 @@
         "HP": 816,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 425,
         "Defense": 510,
@@ -2521,7 +2556,8 @@
         "DVXP": 29,
         "EXP": 147,
         "BITS": 290,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 114,
@@ -2530,7 +2566,6 @@
         "HP": 672,
         "MP": 150,
         "Species": "Machine",
-        "ItemHeld": "Pulse Guard",
         "Rate": 128,
         "Strength": 238,
         "Defense": 350,
@@ -2573,6 +2608,9 @@
         "Technique": {
             "PT-BR": "Thunder Gemini (Mágico-Trovão)",
             "EN-US": "Thunder Gemini (Magic-Thunder)"
+        },
+        "Drops": {
+            "Id": "PulseGuard"
         }
     },
     {
@@ -2582,7 +2620,6 @@
         "HP": 672,
         "MP": 336,
         "Species": "Machine",
-        "ItemHeld": "Metal Power 1",
         "Rate": 128,
         "Strength": 420,
         "Defense": 280,
@@ -2625,6 +2662,9 @@
         "Technique": {
             "PT-BR": "Speed Up (Raises Speed)",
             "EN-US": "Speed Up (Raises Speed)"
+        },
+        "Drops": {
+            "Id": "MetalPower1"
         }
     },
     {
@@ -2634,7 +2674,6 @@
         "HP": 696,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Multi Crest",
         "Rate": 64,
         "Strength": 290,
         "Defense": 290,
@@ -2677,6 +2716,9 @@
         "Technique": {
             "PT-BR": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)",
             "EN-US": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)"
+        },
+        "Drops": {
+            "Id": "MultiCrest"
         }
     },
     {
@@ -2686,7 +2728,6 @@
         "HP": 696,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Machinegun",
         "Rate": 128,
         "Strength": 290,
         "Defense": 246,
@@ -2729,6 +2770,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "Machinegun"
         }
     },
     {
@@ -2738,7 +2782,6 @@
         "HP": 720,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Binder Crest",
         "Rate": 64,
         "Strength": 300,
         "Defense": 375,
@@ -2781,6 +2824,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "BinderCrest"
         }
     },
     {
@@ -2790,7 +2836,6 @@
         "HP": 744,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Wisdom Chip",
         "Rate": 16,
         "Strength": 310,
         "Defense": 388,
@@ -2833,6 +2878,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "WisdomChip"
         }
     },
     {
@@ -2842,7 +2890,6 @@
         "HP": 1248,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Goggles",
         "Rate": 32,
         "Strength": 520,
         "Defense": 650,
@@ -2885,6 +2932,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "Goggles"
         }
     },
     {
@@ -2894,7 +2944,6 @@
         "HP": 1248,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 442,
         "Defense": 520,
@@ -2937,7 +2986,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 122,
@@ -2946,7 +2996,6 @@
         "HP": 768,
         "MP": 270,
         "Species": "Ghoul",
-        "ItemHeld": "Armor Chip",
         "Rate": 16,
         "Strength": 320,
         "Defense": 480,
@@ -2989,6 +3038,9 @@
         "Technique": {
             "PT-BR": "Paralyze Shock (Magic, Chance of Freeze)",
             "EN-US": "Paralyze Shock (Magic, Chance of Freeze)"
+        },
+        "Drops": {
+            "Id": "ArmorChip"
         }
     },
     {
@@ -2998,7 +3050,6 @@
         "HP": 768,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Wisdom Chip",
         "Rate": 16,
         "Strength": 272,
         "Defense": 320,
@@ -3041,6 +3092,9 @@
         "Technique": {
             "PT-BR": "Twin Missile (Magic-Machine)",
             "EN-US": "Twin Missile (Magic-Machine)"
+        },
+        "Drops": {
+            "Id": "WisdomChip"
         }
     },
     {
@@ -3050,7 +3104,6 @@
         "HP": 1224,
         "MP": 9999,
         "Species": "Dragon",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 510,
         "Defense": 510,
@@ -3093,7 +3146,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 125,
@@ -3102,7 +3156,6 @@
         "HP": 816,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 340,
         "Defense": 340,
@@ -3145,7 +3198,8 @@
         "Technique": {
             "PT-BR": "Lovely Charm (Decreases Enemy Strength)",
             "EN-US": "Lovely Charm (Decreases Enemy Strength)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 126,
@@ -3154,7 +3208,6 @@
         "HP": 840,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 438,
         "Defense": 525,
@@ -3197,7 +3250,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 127,
@@ -3206,7 +3260,6 @@
         "HP": 816,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 510,
         "Defense": 238,
@@ -3249,7 +3302,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 128,
@@ -3258,7 +3312,6 @@
         "HP": 864,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "MP Chip",
         "Rate": 16,
         "Strength": 360,
         "Defense": 360,
@@ -3303,6 +3356,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "MPChip"
         }
     },
     {
@@ -3312,7 +3368,6 @@
         "HP": 984,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": "Drill Horn",
         "Rate": 128,
         "Strength": 512,
         "Defense": 512,
@@ -3355,6 +3410,9 @@
         "Technique": {
             "PT-BR": "Confuse Nebula (Chance of Confusion)",
             "EN-US": "Confuse Nebula (Chance of Confusion)"
+        },
+        "Drops": {
+            "Id": "DrillHorn"
         }
     },
     {
@@ -3364,7 +3422,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 480,
         "Defense": 408,
@@ -3409,7 +3466,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 131,
@@ -3418,7 +3476,6 @@
         "HP": 936,
         "MP": 9999,
         "Species": "Plant",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 390,
         "Defense": 332,
@@ -3461,7 +3518,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 132,
@@ -3470,7 +3528,6 @@
         "HP": 1032,
         "MP": 9999,
         "Species": "Plant",
-        "ItemHeld": "Recover Crest",
         "Rate": 64,
         "Strength": 430,
         "Defense": 430,
@@ -3513,6 +3570,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "RecoverCrest"
         }
     },
     {
@@ -3522,7 +3582,6 @@
         "HP": 960,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": "Dark Power 2",
         "Rate": 64,
         "Strength": 400,
         "Defense": 400,
@@ -3565,6 +3624,9 @@
         "Technique": {
             "PT-BR": "Dark Matter (Mágico-Trevas)",
             "EN-US": "Dark Matter (Magic-Dark)"
+        },
+        "Drops": {
+            "Id": "DarkPower2"
         }
     },
     {
@@ -3574,7 +3636,6 @@
         "HP": 960,
         "MP": 9999,
         "Species": "Ghoul",
-        "ItemHeld": "Mind Chip",
         "Rate": 16,
         "Strength": 400,
         "Defense": 400,
@@ -3617,6 +3678,9 @@
         "Technique": {
             "PT-BR": "Dark Fear (Mágico-Trevas)",
             "EN-US": "Dark Fear (Magic-Dark)"
+        },
+        "Drops": {
+            "Id": "MindChip"
         }
     },
     {
@@ -3626,7 +3690,6 @@
         "HP": 1200,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": "Charm Gas",
         "Rate": 256,
         "Strength": 500,
         "Defense": 500,
@@ -3669,6 +3732,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "CharmGas"
         }
     },
     {
@@ -3678,7 +3744,6 @@
         "HP": 936,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 488,
         "Defense": 390,
@@ -3721,7 +3786,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 137,
@@ -3730,7 +3796,6 @@
         "HP": 984,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Metal Chip",
         "Rate": 16,
         "Strength": 410,
         "Defense": 615,
@@ -3773,6 +3838,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "MetalChip"
         }
     },
     {
@@ -3782,7 +3850,6 @@
         "HP": 984,
         "MP": 9999,
         "Species": "Dino",
-        "ItemHeld": "Wind Power 2",
         "Rate": 64,
         "Strength": 410,
         "Defense": 410,
@@ -3825,6 +3892,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "WindPower2"
         }
     },
     {
@@ -3834,7 +3904,6 @@
         "HP": 1800,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Crimson Cable",
         "Rate": 128,
         "Strength": 500,
         "Defense": 500,
@@ -3877,6 +3946,9 @@
         "Technique": {
             "PT-BR": "Hard Rain (Mágico-Água)",
             "EN-US": "Hard Rain (Magic-Water)"
+        },
+        "Drops": {
+            "Id": "CrimsonCable"
         }
     },
     {
@@ -3886,7 +3958,6 @@
         "HP": 1008,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 357,
         "Defense": 420,
@@ -3929,7 +4000,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 141,
@@ -3938,7 +4010,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 490,
         "Defense": 612,
@@ -3981,7 +4052,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 142,
@@ -3990,7 +4062,6 @@
         "HP": 960,
         "MP": 9999,
         "Species": "Dragon",
-        "ItemHeld": "Thunder Chip",
         "Rate": 16,
         "Strength": 340,
         "Defense": 340,
@@ -4033,6 +4104,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "ThunderChip"
         }
     },
     {
@@ -4042,7 +4116,6 @@
         "HP": 936,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Water Power 2",
         "Rate": 64,
         "Strength": 390,
         "Defense": 390,
@@ -4085,6 +4158,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "WaterPower2"
         }
     },
     {
@@ -4094,7 +4170,6 @@
         "HP": 984,
         "MP": 96,
         "Species": "Evil",
-        "ItemHeld": "Devil Chip",
         "Rate": 16,
         "Strength": 410,
         "Defense": 348,
@@ -4137,6 +4212,9 @@
         "Technique": {
             "PT-BR": "Dark Fear (Mágico-Trevas)",
             "EN-US": "Dark Fear (Magic-Dark)"
+        },
+        "Drops": {
+            "Id": "DevilChip"
         }
     },
     {
@@ -4146,7 +4224,6 @@
         "HP": 1056,
         "MP": 9999,
         "Species": "Ghoul",
-        "ItemHeld": "Hack Sticker",
         "Rate": 128,
         "Strength": 440,
         "Defense": 440,
@@ -4189,6 +4266,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "HackSticker"
         }
     },
     {
@@ -4198,7 +4278,6 @@
         "HP": 984,
         "MP": 9999,
         "Species": "Dino",
-        "ItemHeld": "Ultra Charge",
         "Rate": 64,
         "Strength": 410,
         "Defense": 348,
@@ -4241,6 +4320,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "UltraCharge"
         }
     },
     {
@@ -4250,7 +4332,6 @@
         "HP": 1104,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Drill Horn",
         "Rate": 128,
         "Strength": 575,
         "Defense": 460,
@@ -4293,6 +4374,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "DrillHorn"
         }
     },
     {
@@ -4302,7 +4386,6 @@
         "HP": 1104,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Fire Power 2",
         "Rate": 64,
         "Strength": 391,
         "Defense": 460,
@@ -4345,6 +4428,9 @@
         "Technique": {
             "PT-BR": "Flame Ball (Mágico-Fogo)",
             "EN-US": "Flame Ball (Magic-Fire)"
+        },
+        "Drops": {
+            "Id": "FirePower2"
         }
     },
     {
@@ -4354,7 +4440,6 @@
         "HP": 1104,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 322,
         "Defense": 575,
@@ -4397,7 +4482,8 @@
         "Technique": {
             "PT-BR": "Flame Lance (Mágico-Fogo)",
             "EN-US": "Flame Lance (Magic-Fire)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 150,
@@ -4406,7 +4492,6 @@
         "HP": 1104,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 460,
         "Defense": 460,
@@ -4449,7 +4534,8 @@
         "Technique": {
             "PT-BR": "Ice Blow (Mágico-Gelo)",
             "EN-US": "Ice Blow (Magic-Ice)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 151,
@@ -4458,7 +4544,6 @@
         "HP": 1104,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Ice Chip",
         "Rate": 16,
         "Strength": 575,
         "Defense": 575,
@@ -4501,6 +4586,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "IceChip"
         }
     },
     {
@@ -4510,7 +4598,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Ice Power 2",
         "Rate": 64,
         "Strength": 480,
         "Defense": 600,
@@ -4553,6 +4640,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "IcePower2"
         }
     },
     {
@@ -4562,7 +4652,6 @@
         "HP": 1224,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 510,
         "Defense": 510,
@@ -4605,7 +4694,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 154,
@@ -4614,7 +4704,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 720,
         "Defense": 408,
@@ -4657,7 +4746,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 155,
@@ -4666,7 +4756,6 @@
         "HP": 1296,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": "Fire Power S",
         "Rate": 32,
         "Strength": 540,
         "Defense": 540,
@@ -4709,6 +4798,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "FirePowerS"
         }
     },
     {
@@ -4718,7 +4810,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 720,
         "Defense": 600,
@@ -4761,7 +4852,8 @@
         "Technique": {
             "PT-BR": "Flame Breath (Mágico-Fogo)",
             "EN-US": "Flame Breath (Magic-Fire)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 157,
@@ -4770,7 +4862,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 408,
         "Defense": 480,
@@ -4813,7 +4904,8 @@
         "Technique": {
             "PT-BR": "Dark Elemental (Mágico-Trevas)",
             "EN-US": "Dark Elemental (Magic-Dark)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 158,
@@ -4822,7 +4914,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Devil Chip",
         "Rate": 16,
         "Strength": 490,
         "Defense": 735,
@@ -4855,7 +4946,10 @@
         "DVXP": 44,
         "EXP": 223,
         "BITS": 420,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "DevilChip"
+        }
     },
     {
         "Id": 159,
@@ -4864,7 +4958,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Crimson Cable",
         "Rate": 128,
         "Strength": 612,
         "Defense": 735,
@@ -4907,6 +5000,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "CrimsonCable"
         }
     },
     {
@@ -4916,7 +5012,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Dragon",
-        "ItemHeld": "Crimson Cable",
         "Rate": 128,
         "Strength": 490,
         "Defense": 612,
@@ -4959,6 +5054,9 @@
         "Technique": {
             "PT-BR": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)",
             "EN-US": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)"
+        },
+        "Drops": {
+            "Id": "CrimsonCable"
         }
     },
     {
@@ -4968,7 +5066,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Crimson Cable",
         "Rate": 128,
         "Strength": 480,
         "Defense": 600,
@@ -5011,6 +5108,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "CrimsonCable"
         }
     },
     {
@@ -5020,7 +5120,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Crimson Cable",
         "Rate": 128,
         "Strength": 480,
         "Defense": 480,
@@ -5063,6 +5162,9 @@
         "Technique": {
             "PT-BR": "Grand Wave (Mágico-Água)",
             "EN-US": "Grand Wave (Magic-Water)"
+        },
+        "Drops": {
+            "Id": "CrimsonCable"
         }
     },
     {
@@ -5072,7 +5174,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": "Wind Chip",
         "Rate": 16,
         "Strength": 490,
         "Defense": 490,
@@ -5116,6 +5217,9 @@
         "Technique": {
             "PT-BR": "Dark Elemental (Mágico-Trevas)",
             "EN-US": "Dark Elemental (Magic-Dark)"
+        },
+        "Drops": {
+            "Id": "WindChip"
         }
     },
     {
@@ -5125,7 +5229,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 612,
         "Defense": 416,
@@ -5169,7 +5272,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 165,
@@ -5178,7 +5282,6 @@
         "HP": 1416,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 885,
         "Defense": 502,
@@ -5221,7 +5324,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 166,
@@ -5230,7 +5334,6 @@
         "HP": 1296,
         "MP": 9999,
         "Species": "Ghoul",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 810,
         "Defense": 675,
@@ -5273,7 +5376,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 167,
@@ -5282,7 +5386,6 @@
         "HP": 1200,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Dance Wing",
         "Rate": 32,
         "Strength": 500,
         "Defense": 500,
@@ -5315,7 +5418,10 @@
         "DVXP": 45,
         "EXP": 225,
         "BITS": 460,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "DanceWing"
+        }
     },
     {
         "Id": 168,
@@ -5324,7 +5430,6 @@
         "HP": 1200,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": "Charm Gas",
         "Rate": 256,
         "Strength": 625,
         "Defense": 425,
@@ -5367,6 +5472,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "CharmGas"
         }
     },
     {
@@ -5376,7 +5484,6 @@
         "HP": 1176,
         "MP": 296,
         "Species": "Machine",
-        "ItemHeld": "Max Charge",
         "Rate": 64,
         "Strength": 416,
         "Defense": 735,
@@ -5419,6 +5526,9 @@
         "Technique": {
             "PT-BR": "Mega Heal (Heal a large portion of HP)",
             "EN-US": "Mega Heal (Heal a large portion of HP)"
+        },
+        "Drops": {
+            "Id": "MaxCharge"
         }
     },
     {
@@ -5428,7 +5538,6 @@
         "HP": 1200,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": "Charisma Chip",
         "Rate": 128,
         "Strength": 500,
         "Defense": 500,
@@ -5471,6 +5580,9 @@
         "Technique": {
             "PT-BR": "Full Heal (Heals All HP)",
             "EN-US": "Full Heal (Heals All HP)"
+        },
+        "Drops": {
+            "Id": "CharismaChip"
         }
     },
     {
@@ -5480,7 +5592,6 @@
         "HP": 1200,
         "MP": 9999,
         "Species": "Bird",
-        "ItemHeld": "Wind Power S",
         "Rate": 32,
         "Strength": 425,
         "Defense": 500,
@@ -5523,6 +5634,9 @@
         "Technique": {
             "PT-BR": "Slyph Storm (Mágico-Vento)",
             "EN-US": "Slyph Storm (Magic-Wind)"
+        },
+        "Drops": {
+            "Id": "WindPowerS"
         }
     },
     {
@@ -5532,7 +5646,6 @@
         "HP": 1440,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 600,
         "Defense": 510,
@@ -5575,7 +5688,8 @@
         "Technique": {
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 173,
@@ -5584,7 +5698,6 @@
         "HP": 1248,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 520,
         "Defense": 520,
@@ -5627,7 +5740,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 174,
@@ -5636,7 +5750,6 @@
         "HP": 1272,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Power Brace",
         "Rate": 32,
         "Strength": 795,
         "Defense": 530,
@@ -5679,6 +5792,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "PowerBrace"
         }
     },
     {
@@ -5688,7 +5804,6 @@
         "HP": 1464,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 610,
         "Defense": 610,
@@ -5731,7 +5846,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 176,
@@ -5740,7 +5856,6 @@
         "HP": 1248,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Metal Power S",
         "Rate": 32,
         "Strength": 520,
         "Defense": 520,
@@ -5783,6 +5898,9 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
+        },
+        "Drops": {
+            "Id": "MetalPowerS"
         }
     },
     {
@@ -5792,7 +5910,6 @@
         "HP": 1440,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 750,
         "Defense": 510,
@@ -5835,7 +5952,8 @@
         "Technique": {
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 178,
@@ -5844,7 +5962,6 @@
         "HP": 1464,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 518,
         "Defense": 762,
@@ -5887,7 +6004,8 @@
         "Technique": {
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 179,
@@ -5896,7 +6014,6 @@
         "HP": 1037,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": "Dark Power S",
         "Rate": 32,
         "Strength": 540,
         "Defense": 810,
@@ -5939,6 +6056,9 @@
         "Technique": {
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
+        },
+        "Drops": {
+            "Id": "DarkPowerS"
         }
     },
     {
@@ -5948,7 +6068,6 @@
         "HP": 1440,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 420,
         "Defense": 750,
@@ -5991,7 +6110,8 @@
         "Technique": {
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 181,
@@ -6000,7 +6120,6 @@
         "HP": 2196,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 610,
         "Defense": 762,
@@ -6043,7 +6162,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 182,
@@ -6052,7 +6172,6 @@
         "HP": 336,
         "MP": 9999,
         "Species": "Plant",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 140,
         "Defense": 140,
@@ -6089,7 +6208,8 @@
             "PhoenixBay",
             "EtherJungle",
             "KickingForestAfter"
-        ]
+        ],
+        "Drops": null
     },
     {
         "Id": 183,
@@ -6098,7 +6218,6 @@
         "HP": 840,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": "Chain Saw",
         "Rate": 128,
         "Strength": 438,
         "Defense": 350,
@@ -6131,7 +6250,10 @@
         "DVXP": 30,
         "EXP": 150,
         "BITS": 290,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "ChainSaw"
+        }
     },
     {
         "Id": 184,
@@ -6140,7 +6262,6 @@
         "HP": 312,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 130,
         "Defense": 110,
@@ -6178,7 +6299,8 @@
             "BulkBridge",
             "TranquilSwamp",
             "JungleGrave"
-        ]
+        ],
+        "Drops": null
     },
     {
         "Id": 185,
@@ -6187,7 +6309,6 @@
         "HP": 624,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": "Spider Web",
         "Rate": 128,
         "Strength": 260,
         "Defense": 221,
@@ -6220,7 +6341,10 @@
         "DVXP": 21,
         "EXP": 105,
         "BITS": 210,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "SpiderWeb"
+        }
     },
     {
         "Id": 186,
@@ -6229,7 +6353,6 @@
         "HP": 648,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": "Naginata",
         "Rate": 128,
         "Strength": 405,
         "Defense": 270,
@@ -6262,7 +6385,10 @@
         "DVXP": 22,
         "EXP": 112,
         "BITS": 220,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "Naginata"
+        }
     },
     {
         "Id": 187,
@@ -6271,7 +6397,6 @@
         "HP": 608,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": "Metal Power 2",
         "Rate": 64,
         "Strength": 570,
         "Defense": 475,
@@ -6304,7 +6429,10 @@
         "DVXP": 33,
         "EXP": 167,
         "BITS": 350,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "MetalPower2"
+        }
     },
     {
         "Id": 188,
@@ -6313,7 +6441,6 @@
         "HP": 912,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": "Glasses",
         "Rate": 128,
         "Strength": 380,
         "Defense": 323,
@@ -6346,7 +6473,10 @@
         "DVXP": 33,
         "EXP": 165,
         "BITS": 330,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "Glasses"
+        }
     },
     {
         "Id": 189,
@@ -6355,7 +6485,6 @@
         "HP": 576,
         "MP": 9999,
         "Species": "Plant",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 240,
         "Defense": 240,
@@ -6391,7 +6520,8 @@
         "Location": [
             "PhoenixBay",
             "EtherJungle"
-        ]
+        ],
+        "Drops": null
     },
     {
         "Id": 190,
@@ -6400,7 +6530,6 @@
         "HP": 1656,
         "MP": 9999,
         "Species": "Dino",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 575,
         "Defense": 460,
@@ -6433,7 +6562,8 @@
         "DVXP": 41,
         "EXP": 205,
         "BITS": 400,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 191,
@@ -6442,7 +6572,6 @@
         "HP": 624,
         "MP": 9999,
         "Species": "Dragon",
-        "ItemHeld": "Magician Rod",
         "Rate": 128,
         "Strength": 182,
         "Defense": 325,
@@ -6475,7 +6604,10 @@
         "DVXP": 21,
         "EXP": 104,
         "BITS": 215,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "MagicianRod"
+        }
     },
     {
         "Id": 192,
@@ -6484,7 +6616,6 @@
         "HP": 1008,
         "MP": 9999,
         "Species": "Ghoul",
-        "ItemHeld": "HP Chip",
         "Rate": 16,
         "Strength": 525,
         "Defense": 630,
@@ -6517,7 +6648,10 @@
         "DVXP": 37,
         "EXP": 186,
         "BITS": 370,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "HPChip"
+        }
     },
     {
         "Id": 193,
@@ -6526,7 +6660,6 @@
         "HP": 648,
         "MP": 9999,
         "Species": "Bird",
-        "ItemHeld": "Over Clocked",
         "Rate": 128,
         "Strength": 270,
         "Defense": 270,
@@ -6559,7 +6692,10 @@
         "DVXP": 22,
         "EXP": 158,
         "BITS": 300,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "OverClocked"
+        }
     },
     {
         "Id": 194,
@@ -6568,7 +6704,6 @@
         "HP": 984,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 410,
         "Defense": 512,
@@ -6601,7 +6736,8 @@
         "DVXP": 36,
         "EXP": 180,
         "BITS": 360,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 195,
@@ -6610,7 +6746,6 @@
         "HP": 1008,
         "MP": 360,
         "Species": "Fish",
-        "ItemHeld": "Chaos Wave",
         "Rate": 128,
         "Strength": 420,
         "Defense": 420,
@@ -6643,7 +6778,10 @@
         "DVXP": 37,
         "EXP": 184,
         "BITS": 370,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "ChaosWave"
+        }
     },
     {
         "Id": 196,
@@ -6652,7 +6790,6 @@
         "HP": 960,
         "MP": 9999,
         "Species": "Dragon",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 340,
         "Defense": 500,
@@ -6685,7 +6822,8 @@
         "DVXP": 35,
         "EXP": 175,
         "BITS": 350,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 197,
@@ -6694,7 +6832,6 @@
         "HP": 1248,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 650,
         "Defense": 520,
@@ -6727,7 +6864,8 @@
         "DVXP": 47,
         "EXP": 236,
         "BITS": 460,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 198,
@@ -6736,7 +6874,6 @@
         "HP": 1128,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 705,
         "Defense": 588,
@@ -6779,7 +6916,8 @@
         "Technique": {
             "PT-BR": "Nenhum",
             "EN-US": "None"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 199,
@@ -6788,7 +6926,6 @@
         "HP": 1224,
         "MP": 4,
         "Species": "Rare",
-        "ItemHeld": "Cursed Puppet",
         "Rate": 256,
         "Strength": 510,
         "Defense": 510,
@@ -6821,7 +6958,10 @@
         "DVXP": 46,
         "EXP": 232,
         "BITS": 460,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "CursedPuppet"
+        }
     },
     {
         "Id": 200,
@@ -6830,7 +6970,6 @@
         "HP": 1272,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Bolt Power S",
         "Rate": 32,
         "Strength": 530,
         "Defense": 662,
@@ -6863,7 +7002,10 @@
         "DVXP": 48,
         "EXP": 242,
         "BITS": 480,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "BoltPowerS"
+        }
     },
     {
         "Id": 201,
@@ -6872,7 +7014,6 @@
         "HP": 1224,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 638,
         "Defense": 765,
@@ -6905,7 +7046,8 @@
         "DVXP": 46,
         "EXP": 231,
         "BITS": 460,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 202,
@@ -6914,7 +7056,6 @@
         "HP": 864,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Dance Feather",
         "Rate": 128,
         "Strength": 360,
         "Defense": 450,
@@ -6949,7 +7090,10 @@
         "BITS": 660,
         "Location": [
             "JungleShrine"
-        ]
+        ],
+        "Drops": {
+            "Id": "DanceFeather"
+        }
     },
     {
         "Id": 203,
@@ -6958,7 +7102,6 @@
         "HP": 1056,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Training Book",
         "Rate": 128,
         "Strength": 440,
         "Defense": 550,
@@ -6991,7 +7134,10 @@
         "DVXP": 39,
         "EXP": 299,
         "BITS": 770,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "TrainingBook"
+        }
     },
     {
         "Id": 204,
@@ -7000,7 +7146,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 480,
         "Defense": 600,
@@ -7033,7 +7178,8 @@
         "DVXP": 43,
         "EXP": 344,
         "BITS": 880,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 205,
@@ -7042,7 +7188,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Over Load",
         "Rate": 32,
         "Strength": 480,
         "Defense": 600,
@@ -7075,7 +7220,10 @@
         "DVXP": 43,
         "EXP": 366,
         "BITS": 990,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "OverLoad"
+        }
     },
     {
         "Id": 206,
@@ -7084,7 +7232,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Boost Chip",
         "Rate": 16,
         "Strength": 490,
         "Defense": 735,
@@ -7117,7 +7264,10 @@
         "DVXP": 44,
         "EXP": 399,
         "BITS": 1110,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "BoostChip"
+        }
     },
     {
         "Id": 207,
@@ -7126,7 +7276,6 @@
         "HP": 1080,
         "MP": 9999,
         "Species": "Ghoul",
-        "ItemHeld": "Bolt Power 2",
         "Rate": 64,
         "Strength": 450,
         "Defense": 675,
@@ -7159,7 +7308,10 @@
         "DVXP": 40,
         "EXP": 201,
         "BITS": 400,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "BoltPower2"
+        }
     },
     {
         "Id": 208,
@@ -7168,7 +7320,6 @@
         "HP": 1152,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 480,
         "Defense": 480,
@@ -7201,7 +7352,8 @@
         "DVXP": 43,
         "EXP": 215,
         "BITS": 430,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 209,
@@ -7210,7 +7362,6 @@
         "HP": 1200,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": "Runner Shoes",
         "Rate": 32,
         "Strength": 625,
         "Defense": 750,
@@ -7243,7 +7394,10 @@
         "DVXP": 45,
         "EXP": 227,
         "BITS": 470,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "RunnerShoes"
+        }
     },
     {
         "Id": 210,
@@ -7252,7 +7406,6 @@
         "HP": 888,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "MP Proxy",
         "Rate": 128,
         "Strength": 370,
         "Defense": 370,
@@ -7285,7 +7438,10 @@
         "DVXP": 32,
         "EXP": 160,
         "BITS": 330,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "MPProxy"
+        }
     },
     {
         "Id": 211,
@@ -7294,7 +7450,6 @@
         "HP": 1080,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 450,
         "Defense": 562,
@@ -7327,7 +7482,8 @@
         "DVXP": 40,
         "EXP": 250,
         "BITS": 800,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 212,
@@ -7336,7 +7492,6 @@
         "HP": 1272,
         "MP": 9999,
         "Species": "Insect",
-        "ItemHeld": "Train Chip 3",
         "Rate": 32,
         "Strength": 662,
         "Defense": 450,
@@ -7369,7 +7524,10 @@
         "DVXP": 48,
         "EXP": 241,
         "BITS": 480,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "TrainChip3"
+        }
     },
     {
         "Id": 213,
@@ -7378,7 +7536,6 @@
         "HP": 984,
         "MP": 9999,
         "Species": "Plant",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 410,
         "Defense": 410,
@@ -7411,7 +7568,8 @@
         "DVXP": 36,
         "EXP": 179,
         "BITS": 360,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 214,
@@ -7420,7 +7578,6 @@
         "HP": 1104,
         "MP": 9999,
         "Species": "Plant",
-        "ItemHeld": "Train Chip 1",
         "Rate": 64,
         "Strength": 460,
         "Defense": 460,
@@ -7453,7 +7610,10 @@
         "DVXP": 41,
         "EXP": 203,
         "BITS": 410,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "TrainChip1"
+        }
     },
     {
         "Id": 215,
@@ -7462,7 +7622,6 @@
         "HP": 1872,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "HP Mega Proxy",
         "Rate": 32,
         "Strength": 520,
         "Defense": 520,
@@ -7495,7 +7654,10 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 420,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "HPMegaProxy"
+        }
     },
     {
         "Id": 216,
@@ -7504,7 +7666,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Dragon",
-        "ItemHeld": "Water Power S",
         "Rate": 32,
         "Strength": 416,
         "Defense": 416,
@@ -7537,7 +7698,10 @@
         "DVXP": 44,
         "EXP": 221,
         "BITS": 450,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "WaterPowerS"
+        }
     },
     {
         "Id": 217,
@@ -7546,7 +7710,6 @@
         "HP": 1272,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Train Chip 2",
         "Rate": 32,
         "Strength": 530,
         "Defense": 530,
@@ -7579,7 +7742,10 @@
         "DVXP": 48,
         "EXP": 240,
         "BITS": 480,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "TrainChip2"
+        }
     },
     {
         "Id": 218,
@@ -7588,7 +7754,6 @@
         "HP": 1272,
         "MP": 9999,
         "Species": "Evil",
-        "ItemHeld": "Hack System",
         "Rate": 32,
         "Strength": 530,
         "Defense": 450,
@@ -7621,7 +7786,10 @@
         "DVXP": 48,
         "EXP": 239,
         "BITS": 480,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "HackSystem"
+        }
     },
     {
         "Id": 219,
@@ -7630,7 +7798,6 @@
         "HP": 1176,
         "MP": 9999,
         "Species": "Machine",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 612,
         "Defense": 490,
@@ -7663,7 +7830,8 @@
         "DVXP": 44,
         "EXP": 220,
         "BITS": 500,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 220,
@@ -7672,7 +7840,6 @@
         "HP": 1272,
         "MP": 1800,
         "Species": "Rare",
-        "ItemHeld": "MP Mega Proxy",
         "Rate": 32,
         "Strength": 450,
         "Defense": 662,
@@ -7715,6 +7882,9 @@
         "Technique": {
             "PT-BR": "Flame Sphere (Mágico-Fogo)",
             "EN-US": "Flame Sphere (Magic-Fire)"
+        },
+        "Drops": {
+            "Id": "MPMegaProxy"
         }
     },
     {
@@ -7724,7 +7894,6 @@
         "HP": 1872,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 650,
         "Defense": 442,
@@ -7757,7 +7926,8 @@
         "DVXP": 47,
         "EXP": 236,
         "BITS": 460,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 222,
@@ -7766,7 +7936,6 @@
         "HP": 1416,
         "MP": 9999,
         "Species": "Dragon",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 502,
         "Defense": 738,
@@ -7799,7 +7968,8 @@
         "DVXP": 54,
         "EXP": 271,
         "BITS": 550,
-        "Location": []
+        "Location": [],
+        "Drops": null
     },
     {
         "Id": 223,
@@ -7808,7 +7978,6 @@
         "HP": 1416,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Train Chip V",
         "Rate": 16,
         "Strength": 590,
         "Defense": 590,
@@ -7841,7 +8010,10 @@
         "DVXP": 54,
         "EXP": 272,
         "BITS": 510,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "TrainChipV"
+        }
     },
     {
         "Id": 224,
@@ -7850,7 +8022,6 @@
         "HP": 1296,
         "MP": 9999,
         "Species": "Mammal",
-        "ItemHeld": "Ice Power S",
         "Rate": 32,
         "Strength": 540,
         "Defense": 540,
@@ -7883,7 +8054,10 @@
         "DVXP": 49,
         "EXP": 245,
         "BITS": 490,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "IcePowerS"
+        }
     },
     {
         "Id": 247,
@@ -7892,7 +8066,6 @@
         "HP": 2784,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": null,
         "Rate": 0,
         "Strength": 580,
         "Defense": 870,
@@ -7935,7 +8108,8 @@
         "Technique": {
             "PT-BR": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
             "EN-US": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)"
-        }
+        },
+        "Drops": null
     },
     {
         "Id": 515,
@@ -7944,7 +8118,6 @@
         "HP": 288,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Various Booster",
         "Rate": 100,
         "Strength": 120,
         "Defense": 120,
@@ -7977,7 +8150,10 @@
         "DVXP": 7,
         "EXP": 35,
         "BITS": 70,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "VariousBooster"
+        }
     },
     {
         "Id": 516,
@@ -7986,7 +8162,6 @@
         "HP": 408,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Various Booster",
         "Rate": 100,
         "Strength": 170,
         "Defense": 170,
@@ -8019,7 +8194,10 @@
         "DVXP": 12,
         "EXP": 60,
         "BITS": 120,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "VariousBooster"
+        }
     },
     {
         "Id": 517,
@@ -8028,7 +8206,6 @@
         "HP": 528,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Various Booster",
         "Rate": 100,
         "Strength": 220,
         "Defense": 220,
@@ -8061,7 +8238,10 @@
         "DVXP": 17,
         "EXP": 85,
         "BITS": 170,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "VariousBooster"
+        }
     },
     {
         "Id": 518,
@@ -8070,7 +8250,6 @@
         "HP": 768,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Various Booster",
         "Rate": 100,
         "Strength": 320,
         "Defense": 320,
@@ -8103,7 +8282,10 @@
         "DVXP": 27,
         "EXP": 135,
         "BITS": 270,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "VariousBooster"
+        }
     },
     {
         "Id": 519,
@@ -8112,7 +8294,6 @@
         "HP": 1008,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Various Booster",
         "Rate": 100,
         "Strength": 420,
         "Defense": 420,
@@ -8145,7 +8326,10 @@
         "DVXP": 37,
         "EXP": 185,
         "BITS": 370,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "VariousBooster"
+        }
     },
     {
         "Id": 520,
@@ -8154,7 +8338,6 @@
         "HP": 1128,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Various Booster",
         "Rate": 100,
         "Strength": 470,
         "Defense": 470,
@@ -8187,7 +8370,10 @@
         "DVXP": 42,
         "EXP": 210,
         "BITS": 420,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "VariousBooster"
+        }
     },
     {
         "Id": 521,
@@ -8196,7 +8382,6 @@
         "HP": 1248,
         "MP": 9999,
         "Species": "Rare",
-        "ItemHeld": "Various Booster",
         "Rate": 100,
         "Strength": 520,
         "Defense": 520,
@@ -8229,7 +8414,10 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 470,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "VariousBooster"
+        }
     },
     {
         "Id": 522,
@@ -8238,7 +8426,6 @@
         "HP": 1248,
         "MP": 9999,
         "Species": "Fish",
-        "ItemHeld": "Various Booster",
         "Rate": 100,
         "Strength": 520,
         "Defense": 520,
@@ -8271,6 +8458,9 @@
         "DVXP": 47,
         "EXP": 235,
         "BITS": 470,
-        "Location": []
+        "Location": [],
+        "Drops": {
+            "Id": "VariousBooster"
+        }
     }
 ]

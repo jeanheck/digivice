@@ -1,1204 +1,1204 @@
 {
-  "techniques": [
-    {
-      "id": "HeatCutter",
-      "type": "Physical",
-      "element": "Fire",
-      "elementStrength": 32,
-      "mp": 18,
-      "power": 90
-    },
-    {
-      "id": "FrostCutter",
-      "type": "Physical",
-      "element": "Ice",
-      "elementStrength": 32,
-      "mp": 18,
-      "power": 90
-    },
-    {
-      "id": "SmallHeal",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 16,
-      "power": 8
-    },
-    {
-      "id": "DoublePower",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 42,
-      "power": 0
-    },
-    {
-      "id": "LizardDance",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 40,
-      "power": 100
-    },
-    {
-      "id": "WingBuster",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 18,
-      "power": 100
-    },
-    {
-      "id": "BugBuster",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 24,
-      "power": 130
-    },
-    {
-      "id": "BigShot",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 20,
-      "power": 140
-    },
-    {
-      "id": "FishBuster",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 30,
-      "power": 160
-    },
-    {
-      "id": "CaptainCannon",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 38,
-      "power": 200
-    },
-    {
-      "id": "LightningSlash",
-      "type": "Physical",
-      "element": "Thunder",
-      "elementStrength": 32,
-      "mp": 18,
-      "power": 90
-    },
-    {
-      "id": "Whirlwind",
-      "type": "Physical",
-      "element": "Wind",
-      "elementStrength": 32,
-      "mp": 18,
-      "power": 90
-    },
-    {
-      "id": "HammerRush",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 30,
-      "power": 100
-    },
-    {
-      "id": "SpinalTap",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 18,
-      "power": 75
-    },
-    {
-      "id": "MaulAttack",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 40,
-      "power": 200
-    },
-    {
-      "id": "FlameBall",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 16,
-      "mp": 20,
-      "power": 100
-    },
-    {
-      "id": "TripleFire",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 16,
-      "mp": 25,
-      "power": 50
-    },
-    {
-      "id": "FlameLance",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 32,
-      "mp": 48,
-      "power": 300
-    },
-    {
-      "id": "NovaBlast",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 48,
-      "mp": 60,
-      "power": 300
-    },
-    {
-      "id": "AirBlast",
-      "type": "Magical",
-      "element": "Wind",
-      "elementStrength": 16,
-      "mp": 20,
-      "power": 100
-    },
-    {
-      "id": "IceBlow",
-      "type": "Magical",
-      "element": "Ice",
-      "elementStrength": 16,
-      "mp": 20,
-      "power": 100
-    },
-    {
-      "id": "Antidote",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 8,
-      "power": 0
-    },
-    {
-      "id": "Veelaser",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 48,
-      "mp": 60,
-      "power": 300
-    },
-    {
-      "id": "DoubleGuard",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 42,
-      "power": 0
-    },
-    {
-      "id": "PickingClaw",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 18,
-      "power": 60
-    },
-    {
-      "id": "CounterAlert",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 48,
-      "power": 100
-    },
-    {
-      "id": "PlasmaBlade",
-      "type": "Physical",
-      "element": "Thunder",
-      "elementStrength": 48,
-      "mp": 40,
-      "power": 180
-    },
-    {
-      "id": "ThunderBolt",
-      "type": "Magical",
-      "element": "Thunder",
-      "elementStrength": 16,
-      "mp": 20,
-      "power": 100
-    },
-    {
-      "id": "ThunderGemini",
-      "type": "Magical",
-      "element": "Thunder",
-      "elementStrength": 24,
-      "mp": 30,
-      "power": 200
-    },
-    {
-      "id": "IceShower",
-      "type": "Magical",
-      "element": "Ice",
-      "elementStrength": 32,
-      "mp": 48,
-      "power": 200
-    },
-    {
-      "id": "DragonWheel",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 48,
-      "mp": 60,
-      "power": 300
-    },
-    {
-      "id": "MegaTornado",
-      "type": "Magical",
-      "element": "Wind",
-      "elementStrength": 24,
-      "mp": 30,
-      "power": 200
-    },
-    {
-      "id": "HandOfFate",
-      "type": "Physical",
-      "element": "Wind",
-      "elementStrength": 48,
-      "mp": 42,
-      "power": 180
-    },
-    {
-      "id": "DarkMatter",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 16,
-      "mp": 20,
-      "power": 100
-    },
-    {
-      "id": "EvilPoison",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 18,
-      "power": 60
-    },
-    {
-      "id": "ArmorBreak",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 39,
-      "power": 0
-    },
-    {
-      "id": "StunShock",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 18,
-      "power": 60
-    },
-    {
-      "id": "TouchOfEvil",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 40,
-      "power": 240
-    },
-    {
-      "id": "PoisonBites",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 18,
-      "power": 75
-    },
-    {
-      "id": "EnergyLeech",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 18,
-      "power": 100
-    },
-    {
-      "id": "PanicBites",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 18,
-      "power": 75
-    },
-    {
-      "id": "VenomStab",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 36,
-      "power": 200
-    },
-    {
-      "id": "SpikingStrike",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 36,
-      "power": 200
-    },
-    {
-      "id": "DivineRain",
-      "type": "Magical",
-      "element": "Water",
-      "elementStrength": 24,
-      "mp": 30,
-      "power": 150
-    },
-    {
-      "id": "AntiParalysis",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 8,
-      "power": 0
-    },
-    {
-      "id": "CelestialArrow",
-      "type": "Physical",
-      "element": "Thunder",
-      "elementStrength": 48,
-      "mp": 44,
-      "power": 180
-    },
-    {
-      "id": "BurnSlash",
-      "type": "Physical",
-      "element": "Fire",
-      "elementStrength": 64,
-      "mp": 32,
-      "power": 130
-    },
-    {
-      "id": "ColdSlash",
-      "type": "Physical",
-      "element": "Ice",
-      "elementStrength": 64,
-      "mp": 32,
-      "power": 130
-    },
-    {
-      "id": "BladeTwister",
-      "type": "Physical",
-      "element": "Wind",
-      "elementStrength": 64,
-      "mp": 80,
-      "power": 120
-    },
-    {
-      "id": "DinoBuster",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 40,
-      "power": 200
-    },
-    {
-      "id": "DramonBuster",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 48,
-      "power": 210
-    },
-    {
-      "id": "JusticeStrike",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 78,
-      "power": 140
-    },
-    {
-      "id": "SoulCharge",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 19,
-      "power": 0
-    },
-    {
-      "id": "SpeedBoost",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 48,
-      "power": 0
-    },
-    {
-      "id": "CycloneTurbine",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 80,
-      "power": 140
-    },
-    {
-      "id": "MagicMissile",
-      "type": "Magical",
-      "element": "Machine",
-      "elementStrength": 32,
-      "mp": 56,
-      "power": 400
-    },
-    {
-      "id": "RisingFire",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 32,
-      "mp": 60,
-      "power": 150
-    },
-    {
-      "id": "GigaDestroyer",
-      "type": "Magical",
-      "element": "Machine",
-      "elementStrength": 64,
-      "mp": 90,
-      "power": 500
-    },
-    {
-      "id": "BlackThorn",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 32,
-      "mp": 60,
-      "power": 150
-    },
-    {
-      "id": "DarkShot",
-      "type": "Magical",
-      "element": "Machine",
-      "elementStrength": 64,
-      "mp": 90,
-      "power": 500
-    },
-    {
-      "id": "MetalAttack",
-      "type": "Physical",
-      "element": "Machine",
-      "elementStrength": 32,
-      "mp": 26,
-      "power": 140
-    },
-    {
-      "id": "MechanicalBash",
-      "type": "Physical",
-      "element": "Machine",
-      "elementStrength": 64,
-      "mp": 48,
-      "power": 160
-    },
-    {
-      "id": "DesperadoBlaster",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 84,
-      "power": 140
-    },
-    {
-      "id": "MegaGuard",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 84,
-      "power": 0
-    },
-    {
-      "id": "MegaStrength",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 84,
-      "power": 0
-    },
-    {
-      "id": "AtomicBlaster",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 64,
-      "mp": 90,
-      "power": 500
-    },
-    {
-      "id": "ElectroBolt",
-      "type": "Magical",
-      "element": "Thunder",
-      "elementStrength": 32,
-      "mp": 48,
-      "power": 300
-    },
-    {
-      "id": "Showstorm",
-      "type": "Magical",
-      "element": "Ice",
-      "elementStrength": 40,
-      "mp": 60,
-      "power": 250
-    },
-    {
-      "id": "ThunderField",
-      "type": "Set Field",
-      "element": "Thunder",
-      "elementStrength": 0,
-      "mp": 100,
-      "power": 0
-    },
-    {
-      "id": "Bonhitsusen",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 80,
-      "power": 300
-    },
-    {
-      "id": "MegaHeal",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 74,
-      "power": 32
-    },
-    {
-      "id": "GateOfDestiny",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 112,
-      "power": 250
-    },
-    {
-      "id": "DarkFear",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 32,
-      "mp": 48,
-      "power": 300
-    },
-    {
-      "id": "BlackDart",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 40,
-      "mp": 70,
-      "power": 200
-    },
-    {
-      "id": "ArmorOff",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 78,
-      "power": 0
-    },
-    {
-      "id": "ConfuseGas",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 40,
-      "power": 180
-    },
-    {
-      "id": "SoulSnatcher",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 50,
-      "power": 150
-    },
-    {
-      "id": "GrislyWing",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 64,
-      "mp": 90,
-      "power": 300
-    },
-    {
-      "id": "TwinMissile",
-      "type": "Magical",
-      "element": "Machine",
-      "elementStrength": 40,
-      "mp": 64,
-      "power": 450
-    },
-    {
-      "id": "SlowDown",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 41,
-      "power": 0
-    },
-    {
-      "id": "EnergeticBomb",
-      "type": "Physical",
-      "element": "Machine",
-      "elementStrength": 64,
-      "mp": 78,
-      "power": 240
-    },
-    {
-      "id": "EnergyDrain",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 72,
-      "power": 500
-    },
-    {
-      "id": "ElectroShocker",
-      "type": "Magical",
-      "element": "Thunder",
-      "elementStrength": 64,
-      "mp": 90,
-      "power": 500
-    },
-    {
-      "id": "HypnoGas",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 40,
-      "power": 180
-    },
-    {
-      "id": "HypnoNebula",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 60,
-      "power": 240
-    },
-    {
-      "id": "NmSyndromer",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 64,
-      "mp": 90,
-      "power": 500
-    },
-    {
-      "id": "PinpointShot",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 54,
-      "power": 220
-    },
-    {
-      "id": "GoldenRipper",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 140,
-      "power": 400
-    },
-    {
-      "id": "DevilShot",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 56,
-      "power": 220
-    },
-    {
-      "id": "DynamoCannon",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 136,
-      "power": 400
-    },
-    {
-      "id": "HeavenHit",
-      "type": "Physical",
-      "element": "Thunder",
-      "elementStrength": 64,
-      "mp": 32,
-      "power": 160
-    },
-    {
-      "id": "VacuumCannon",
-      "type": "Physical",
-      "element": "Wind",
-      "elementStrength": 64,
-      "mp": 48,
-      "power": 160
-    },
-    {
-      "id": "BrainFreeze",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 52,
-      "power": 180
-    },
-    {
-      "id": "Misshukikou",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 49,
-      "power": 0
-    },
-    {
-      "id": "Mugenhadou",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 148,
-      "power": 320
-    },
-    {
-      "id": "FlameBreath",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 48,
-      "mp": 72,
-      "power": 500
-    },
-    {
-      "id": "GigaFire",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 48,
-      "mp": 90,
-      "power": 250
-    },
-    {
-      "id": "TerraForce",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 140,
-      "power": 480
-    },
-    {
-      "id": "SylphStorm",
-      "type": "Magical",
-      "element": "Wind",
-      "elementStrength": 48,
-      "mp": 72,
-      "power": 500
-    },
-    {
-      "id": "MegaCrusher",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 150,
-      "power": 500
-    },
-    {
-      "id": "CounterStrike",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 96,
-      "power": 240
-    },
-    {
-      "id": "SnappingClaw",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 54,
-      "power": 240
-    },
-    {
-      "id": "MegaBoost",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 96,
-      "power": 0
-    },
-    {
-      "id": "FinalPurification",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 140,
-      "power": 320
-    },
-    {
-      "id": "LightningBolt",
-      "type": "Magical",
-      "element": "Thunder",
-      "elementStrength": 48,
-      "mp": 72,
-      "power": 500
-    },
-    {
-      "id": "GigaFreeze",
-      "type": "Magical",
-      "element": "Ice",
-      "elementStrength": 48,
-      "mp": 72,
-      "power": 300
-    },
-    {
-      "id": "IceField",
-      "type": "Set Field",
-      "element": "Ice",
-      "elementStrength": 0,
-      "mp": 100,
-      "power": 0
-    },
-    {
-      "id": "KongouKaimandra",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 150,
-      "power": 480
-    },
-    {
-      "id": "GigaHeal",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 188,
-      "power": 32
-    },
-    {
-      "id": "WindField",
-      "type": "Set Field",
-      "element": "Wind",
-      "elementStrength": 0,
-      "mp": 100,
-      "power": 0
-    },
-    {
-      "id": "SevenHeavens",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 140,
-      "power": 400
-    },
-    {
-      "id": "MagicalCannon",
-      "type": "Magical",
-      "element": "Machine",
-      "elementStrength": 48,
-      "mp": 72,
-      "power": 500
-    },
-    {
-      "id": "MetalField",
-      "type": "Set Field",
-      "element": "Machine",
-      "elementStrength": 0,
-      "mp": 100,
-      "power": 0
-    },
-    {
-      "id": "MetalWolfClaw",
-      "type": "Magical",
-      "element": "Ice",
-      "elementStrength": 72,
-      "mp": 150,
-      "power": 600
-    },
-    {
-      "id": "GrandWave",
-      "type": "Magical",
-      "element": "Water",
-      "elementStrength": 48,
-      "mp": 72,
-      "power": 300
-    },
-    {
-      "id": "ErasePoison",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 12,
-      "power": 0
-    },
-    {
-      "id": "EraseParalysis",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 12,
-      "power": 0
-    },
-    {
-      "id": "WaterField",
-      "type": "Set Field",
-      "element": "Water",
-      "elementStrength": 0,
-      "mp": 100,
-      "power": 0
-    },
-    {
-      "id": "AntiMagic",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 20,
-      "power": 0
-    },
-    {
-      "id": "ThornWhipping",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 130,
-      "power": 340
-    },
-    {
-      "id": "TerraDestroyer",
-      "type": "Physical",
-      "element": "Dark",
-      "elementStrength": 64,
-      "mp": 140,
-      "power": 420
-    },
-    {
-      "id": "FireField",
-      "type": "Set Field",
-      "element": "Fire",
-      "elementStrength": 0,
-      "mp": 100,
-      "power": 0
-    },
-    {
-      "id": "FullHeal",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 120,
-      "power": 127
-    },
-    {
-      "id": "GigaCrusher",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 180,
-      "power": 640
-    },
-    {
-      "id": "DarkElemental",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 64,
-      "mp": 120,
-      "power": 600
-    },
-    {
-      "id": "CrimsonCloud",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 64,
-      "mp": 150,
-      "power": 300
-    },
-    {
-      "id": "DeadlyPoison",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 90,
-      "power": 360
-    },
-    {
-      "id": "ParalyzeShock",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 90,
-      "power": 300
-    },
-    {
-      "id": "DarkField",
-      "type": "Set Field",
-      "element": "Dark",
-      "elementStrength": 0,
-      "mp": 100,
-      "power": 0
-    },
-    {
-      "id": "MeltingBlood",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 72,
-      "mp": 210,
-      "power": 700
-    },
-    {
-      "id": "GodBombard",
-      "type": "Magical",
-      "element": "Machine",
-      "elementStrength": 64,
-      "mp": 120,
-      "power": 600
-    },
-    {
-      "id": "MegaBreak",
-      "type": "Support",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 82,
-      "power": 0
-    },
-    {
-      "id": "GiantMissile",
-      "type": "Physical",
-      "element": "Machine",
-      "elementStrength": 64,
-      "mp": 200,
-      "power": 480
-    },
-    {
-      "id": "ConfuseStab",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 64,
-      "power": 240
-    },
-    {
-      "id": "ImpactRush",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 60,
-      "power": 240
-    },
-    {
-      "id": "DimensionScissors",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 200,
-      "power": 400
-    },
-    {
-      "id": "FinalHeal",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 240,
-      "power": 64
-    },
-    {
-      "id": "EraseMagic",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 37,
-      "power": 0
-    },
-    {
-      "id": "AutoRecover",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 82,
-      "power": 1
-    },
-    {
-      "id": "CrimsonFlame",
-      "type": "Heal",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 200,
-      "power": 0
-    },
-    {
-      "id": "FlameSphere",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 64,
-      "mp": 180,
-      "power": 700
-    },
-    {
-      "id": "Inferno",
-      "type": "Magical",
-      "element": "Fire",
-      "elementStrength": 64,
-      "mp": 200,
-      "power": 350
-    },
-    {
-      "id": "TSword",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 250,
-      "power": 400
-    },
-    {
-      "id": "SoulPlunder",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 160,
-      "power": 350
-    },
-    {
-      "id": "OmegaBlade",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 280,
-      "power": 500
-    },
-    {
-      "id": "DarknessChaos",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 72,
-      "mp": 180,
-      "power": 700
-    },
-    {
-      "id": "BlackScewer",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 72,
-      "mp": 200,
-      "power": 350
-    },
-    {
-      "id": "ConfuseNebula",
-      "type": "Magical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 90,
-      "power": 360
-    },
-    {
-      "id": "BlastMode",
-      "type": "Physical",
-      "element": "None",
-      "elementStrength": 0,
-      "mp": 250,
-      "power": 300
-    },
-    {
-      "id": "CableCrusher",
-      "type": "Magical",
-      "element": "Dark",
-      "elementStrength": 72,
-      "mp": 270,
-      "power": 800
-    }
-  ]
+    "Techniques": [
+        {
+            "Id": "HeatCutter",
+            "Type": "Physical",
+            "Element": "Fire",
+            "ElementStrength": 32,
+            "MP": 18,
+            "Power": 90
+        },
+        {
+            "Id": "FrostCutter",
+            "Type": "Physical",
+            "Element": "Ice",
+            "ElementStrength": 32,
+            "MP": 18,
+            "Power": 90
+        },
+        {
+            "Id": "SmallHeal",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 16,
+            "Power": 8
+        },
+        {
+            "Id": "DoublePower",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 42,
+            "Power": 0
+        },
+        {
+            "Id": "LizardDance",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 40,
+            "Power": 100
+        },
+        {
+            "Id": "WingBuster",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 18,
+            "Power": 100
+        },
+        {
+            "Id": "BugBuster",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 24,
+            "Power": 130
+        },
+        {
+            "Id": "BigShot",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 20,
+            "Power": 140
+        },
+        {
+            "Id": "FishBuster",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 30,
+            "Power": 160
+        },
+        {
+            "Id": "CaptainCannon",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 38,
+            "Power": 200
+        },
+        {
+            "Id": "LightningSlash",
+            "Type": "Physical",
+            "Element": "Thunder",
+            "ElementStrength": 32,
+            "MP": 18,
+            "Power": 90
+        },
+        {
+            "Id": "Whirlwind",
+            "Type": "Physical",
+            "Element": "Wind",
+            "ElementStrength": 32,
+            "MP": 18,
+            "Power": 90
+        },
+        {
+            "Id": "HammerRush",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 30,
+            "Power": 100
+        },
+        {
+            "Id": "SpinalTap",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 18,
+            "Power": 75
+        },
+        {
+            "Id": "MaulAttack",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 40,
+            "Power": 200
+        },
+        {
+            "Id": "FlameBall",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 16,
+            "MP": 20,
+            "Power": 100
+        },
+        {
+            "Id": "TripleFire",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 16,
+            "MP": 25,
+            "Power": 50
+        },
+        {
+            "Id": "FlameLance",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 32,
+            "MP": 48,
+            "Power": 300
+        },
+        {
+            "Id": "NovaBlast",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 48,
+            "MP": 60,
+            "Power": 300
+        },
+        {
+            "Id": "AirBlast",
+            "Type": "Magical",
+            "Element": "Wind",
+            "ElementStrength": 16,
+            "MP": 20,
+            "Power": 100
+        },
+        {
+            "Id": "IceBlow",
+            "Type": "Magical",
+            "Element": "Ice",
+            "ElementStrength": 16,
+            "MP": 20,
+            "Power": 100
+        },
+        {
+            "Id": "Antidote",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 8,
+            "Power": 0
+        },
+        {
+            "Id": "Veelaser",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 48,
+            "MP": 60,
+            "Power": 300
+        },
+        {
+            "Id": "DoubleGuard",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 42,
+            "Power": 0
+        },
+        {
+            "Id": "PickingClaw",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 18,
+            "Power": 60
+        },
+        {
+            "Id": "CounterAlert",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 48,
+            "Power": 100
+        },
+        {
+            "Id": "PlasmaBlade",
+            "Type": "Physical",
+            "Element": "Thunder",
+            "ElementStrength": 48,
+            "MP": 40,
+            "Power": 180
+        },
+        {
+            "Id": "ThunderBolt",
+            "Type": "Magical",
+            "Element": "Thunder",
+            "ElementStrength": 16,
+            "MP": 20,
+            "Power": 100
+        },
+        {
+            "Id": "ThunderGemini",
+            "Type": "Magical",
+            "Element": "Thunder",
+            "ElementStrength": 24,
+            "MP": 30,
+            "Power": 200
+        },
+        {
+            "Id": "IceShower",
+            "Type": "Magical",
+            "Element": "Ice",
+            "ElementStrength": 32,
+            "MP": 48,
+            "Power": 200
+        },
+        {
+            "Id": "DragonWheel",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 48,
+            "MP": 60,
+            "Power": 300
+        },
+        {
+            "Id": "MegaTornado",
+            "Type": "Magical",
+            "Element": "Wind",
+            "ElementStrength": 24,
+            "MP": 30,
+            "Power": 200
+        },
+        {
+            "Id": "HandOfFate",
+            "Type": "Physical",
+            "Element": "Wind",
+            "ElementStrength": 48,
+            "MP": 42,
+            "Power": 180
+        },
+        {
+            "Id": "DarkMatter",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 16,
+            "MP": 20,
+            "Power": 100
+        },
+        {
+            "Id": "EvilPoison",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 18,
+            "Power": 60
+        },
+        {
+            "Id": "ArmorBreak",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 39,
+            "Power": 0
+        },
+        {
+            "Id": "StunShock",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 18,
+            "Power": 60
+        },
+        {
+            "Id": "TouchOfEvil",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 40,
+            "Power": 240
+        },
+        {
+            "Id": "PoisonBites",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 18,
+            "Power": 75
+        },
+        {
+            "Id": "EnergyLeech",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 18,
+            "Power": 100
+        },
+        {
+            "Id": "PanicBites",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 18,
+            "Power": 75
+        },
+        {
+            "Id": "VenomStab",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 36,
+            "Power": 200
+        },
+        {
+            "Id": "SpikingStrike",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 36,
+            "Power": 200
+        },
+        {
+            "Id": "DivineRain",
+            "Type": "Magical",
+            "Element": "Water",
+            "ElementStrength": 24,
+            "MP": 30,
+            "Power": 150
+        },
+        {
+            "Id": "AntiParalysis",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 8,
+            "Power": 0
+        },
+        {
+            "Id": "CelestialArrow",
+            "Type": "Physical",
+            "Element": "Thunder",
+            "ElementStrength": 48,
+            "MP": 44,
+            "Power": 180
+        },
+        {
+            "Id": "BurnSlash",
+            "Type": "Physical",
+            "Element": "Fire",
+            "ElementStrength": 64,
+            "MP": 32,
+            "Power": 130
+        },
+        {
+            "Id": "ColdSlash",
+            "Type": "Physical",
+            "Element": "Ice",
+            "ElementStrength": 64,
+            "MP": 32,
+            "Power": 130
+        },
+        {
+            "Id": "BladeTwister",
+            "Type": "Physical",
+            "Element": "Wind",
+            "ElementStrength": 64,
+            "MP": 80,
+            "Power": 120
+        },
+        {
+            "Id": "DinoBuster",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 40,
+            "Power": 200
+        },
+        {
+            "Id": "DramonBuster",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 48,
+            "Power": 210
+        },
+        {
+            "Id": "JusticeStrike",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 78,
+            "Power": 140
+        },
+        {
+            "Id": "SoulCharge",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 19,
+            "Power": 0
+        },
+        {
+            "Id": "SpeedBoost",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 48,
+            "Power": 0
+        },
+        {
+            "Id": "CycloneTurbine",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 80,
+            "Power": 140
+        },
+        {
+            "Id": "MagicMissile",
+            "Type": "Magical",
+            "Element": "Machine",
+            "ElementStrength": 32,
+            "MP": 56,
+            "Power": 400
+        },
+        {
+            "Id": "RisingFire",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 32,
+            "MP": 60,
+            "Power": 150
+        },
+        {
+            "Id": "GigaDestroyer",
+            "Type": "Magical",
+            "Element": "Machine",
+            "ElementStrength": 64,
+            "MP": 90,
+            "Power": 500
+        },
+        {
+            "Id": "BlackThorn",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 32,
+            "MP": 60,
+            "Power": 150
+        },
+        {
+            "Id": "DarkShot",
+            "Type": "Magical",
+            "Element": "Machine",
+            "ElementStrength": 64,
+            "MP": 90,
+            "Power": 500
+        },
+        {
+            "Id": "MetalAttack",
+            "Type": "Physical",
+            "Element": "Machine",
+            "ElementStrength": 32,
+            "MP": 26,
+            "Power": 140
+        },
+        {
+            "Id": "MechanicalBash",
+            "Type": "Physical",
+            "Element": "Machine",
+            "ElementStrength": 64,
+            "MP": 48,
+            "Power": 160
+        },
+        {
+            "Id": "DesperadoBlaster",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 84,
+            "Power": 140
+        },
+        {
+            "Id": "MegaGuard",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 84,
+            "Power": 0
+        },
+        {
+            "Id": "MegaStrength",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 84,
+            "Power": 0
+        },
+        {
+            "Id": "AtomicBlaster",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 64,
+            "MP": 90,
+            "Power": 500
+        },
+        {
+            "Id": "ElectroBolt",
+            "Type": "Magical",
+            "Element": "Thunder",
+            "ElementStrength": 32,
+            "MP": 48,
+            "Power": 300
+        },
+        {
+            "Id": "Showstorm",
+            "Type": "Magical",
+            "Element": "Ice",
+            "ElementStrength": 40,
+            "MP": 60,
+            "Power": 250
+        },
+        {
+            "Id": "ThunderField",
+            "Type": "Set Field",
+            "Element": "Thunder",
+            "ElementStrength": 0,
+            "MP": 100,
+            "Power": 0
+        },
+        {
+            "Id": "Bonhitsusen",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 80,
+            "Power": 300
+        },
+        {
+            "Id": "MegaHeal",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 74,
+            "Power": 32
+        },
+        {
+            "Id": "GateOfDestiny",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 112,
+            "Power": 250
+        },
+        {
+            "Id": "DarkFear",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 32,
+            "MP": 48,
+            "Power": 300
+        },
+        {
+            "Id": "BlackDart",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 40,
+            "MP": 70,
+            "Power": 200
+        },
+        {
+            "Id": "ArmorOff",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 78,
+            "Power": 0
+        },
+        {
+            "Id": "ConfuseGas",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 40,
+            "Power": 180
+        },
+        {
+            "Id": "SoulSnatcher",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 50,
+            "Power": 150
+        },
+        {
+            "Id": "GrislyWing",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 64,
+            "MP": 90,
+            "Power": 300
+        },
+        {
+            "Id": "TwinMissile",
+            "Type": "Magical",
+            "Element": "Machine",
+            "ElementStrength": 40,
+            "MP": 64,
+            "Power": 450
+        },
+        {
+            "Id": "SlowDown",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 41,
+            "Power": 0
+        },
+        {
+            "Id": "EnergeticBomb",
+            "Type": "Physical",
+            "Element": "Machine",
+            "ElementStrength": 64,
+            "MP": 78,
+            "Power": 240
+        },
+        {
+            "Id": "EnergyDrain",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 72,
+            "Power": 500
+        },
+        {
+            "Id": "ElectroShocker",
+            "Type": "Magical",
+            "Element": "Thunder",
+            "ElementStrength": 64,
+            "MP": 90,
+            "Power": 500
+        },
+        {
+            "Id": "HypnoGas",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 40,
+            "Power": 180
+        },
+        {
+            "Id": "HypnoNebula",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 60,
+            "Power": 240
+        },
+        {
+            "Id": "NmSyndromer",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 64,
+            "MP": 90,
+            "Power": 500
+        },
+        {
+            "Id": "PinpointShot",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 54,
+            "Power": 220
+        },
+        {
+            "Id": "GoldenRipper",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 140,
+            "Power": 400
+        },
+        {
+            "Id": "DevilShot",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 56,
+            "Power": 220
+        },
+        {
+            "Id": "DynamoCannon",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 136,
+            "Power": 400
+        },
+        {
+            "Id": "HeavenHit",
+            "Type": "Physical",
+            "Element": "Thunder",
+            "ElementStrength": 64,
+            "MP": 32,
+            "Power": 160
+        },
+        {
+            "Id": "VacuumCannon",
+            "Type": "Physical",
+            "Element": "Wind",
+            "ElementStrength": 64,
+            "MP": 48,
+            "Power": 160
+        },
+        {
+            "Id": "BrainFreeze",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 52,
+            "Power": 180
+        },
+        {
+            "Id": "Misshukikou",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 49,
+            "Power": 0
+        },
+        {
+            "Id": "Mugenhadou",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 148,
+            "Power": 320
+        },
+        {
+            "Id": "FlameBreath",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 48,
+            "MP": 72,
+            "Power": 500
+        },
+        {
+            "Id": "GigaFire",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 48,
+            "MP": 90,
+            "Power": 250
+        },
+        {
+            "Id": "TerraForce",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 140,
+            "Power": 480
+        },
+        {
+            "Id": "SylphStorm",
+            "Type": "Magical",
+            "Element": "Wind",
+            "ElementStrength": 48,
+            "MP": 72,
+            "Power": 500
+        },
+        {
+            "Id": "MegaCrusher",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 150,
+            "Power": 500
+        },
+        {
+            "Id": "CounterStrike",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 96,
+            "Power": 240
+        },
+        {
+            "Id": "SnappingClaw",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 54,
+            "Power": 240
+        },
+        {
+            "Id": "MegaBoost",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 96,
+            "Power": 0
+        },
+        {
+            "Id": "FinalPurification",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 140,
+            "Power": 320
+        },
+        {
+            "Id": "LightningBolt",
+            "Type": "Magical",
+            "Element": "Thunder",
+            "ElementStrength": 48,
+            "MP": 72,
+            "Power": 500
+        },
+        {
+            "Id": "GigaFreeze",
+            "Type": "Magical",
+            "Element": "Ice",
+            "ElementStrength": 48,
+            "MP": 72,
+            "Power": 300
+        },
+        {
+            "Id": "IceField",
+            "Type": "Set Field",
+            "Element": "Ice",
+            "ElementStrength": 0,
+            "MP": 100,
+            "Power": 0
+        },
+        {
+            "Id": "KongouKaimandra",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 150,
+            "Power": 480
+        },
+        {
+            "Id": "GigaHeal",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 188,
+            "Power": 32
+        },
+        {
+            "Id": "WindField",
+            "Type": "Set Field",
+            "Element": "Wind",
+            "ElementStrength": 0,
+            "MP": 100,
+            "Power": 0
+        },
+        {
+            "Id": "SevenHeavens",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 140,
+            "Power": 400
+        },
+        {
+            "Id": "MagicalCannon",
+            "Type": "Magical",
+            "Element": "Machine",
+            "ElementStrength": 48,
+            "MP": 72,
+            "Power": 500
+        },
+        {
+            "Id": "MetalField",
+            "Type": "Set Field",
+            "Element": "Machine",
+            "ElementStrength": 0,
+            "MP": 100,
+            "Power": 0
+        },
+        {
+            "Id": "MetalWolfClaw",
+            "Type": "Magical",
+            "Element": "Ice",
+            "ElementStrength": 72,
+            "MP": 150,
+            "Power": 600
+        },
+        {
+            "Id": "GrandWave",
+            "Type": "Magical",
+            "Element": "Water",
+            "ElementStrength": 48,
+            "MP": 72,
+            "Power": 300
+        },
+        {
+            "Id": "ErasePoison",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 12,
+            "Power": 0
+        },
+        {
+            "Id": "EraseParalysis",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 12,
+            "Power": 0
+        },
+        {
+            "Id": "WaterField",
+            "Type": "Set Field",
+            "Element": "Water",
+            "ElementStrength": 0,
+            "MP": 100,
+            "Power": 0
+        },
+        {
+            "Id": "AntiMagic",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 20,
+            "Power": 0
+        },
+        {
+            "Id": "ThornWhipping",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 130,
+            "Power": 340
+        },
+        {
+            "Id": "TerraDestroyer",
+            "Type": "Physical",
+            "Element": "Dark",
+            "ElementStrength": 64,
+            "MP": 140,
+            "Power": 420
+        },
+        {
+            "Id": "FireField",
+            "Type": "Set Field",
+            "Element": "Fire",
+            "ElementStrength": 0,
+            "MP": 100,
+            "Power": 0
+        },
+        {
+            "Id": "FullHeal",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 120,
+            "Power": 127
+        },
+        {
+            "Id": "GigaCrusher",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 180,
+            "Power": 640
+        },
+        {
+            "Id": "DarkElemental",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 64,
+            "MP": 120,
+            "Power": 600
+        },
+        {
+            "Id": "CrimsonCloud",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 64,
+            "MP": 150,
+            "Power": 300
+        },
+        {
+            "Id": "DeadlyPoison",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 90,
+            "Power": 360
+        },
+        {
+            "Id": "ParalyzeShock",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 90,
+            "Power": 300
+        },
+        {
+            "Id": "DarkField",
+            "Type": "Set Field",
+            "Element": "Dark",
+            "ElementStrength": 0,
+            "MP": 100,
+            "Power": 0
+        },
+        {
+            "Id": "MeltingBlood",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 72,
+            "MP": 210,
+            "Power": 700
+        },
+        {
+            "Id": "GodBombard",
+            "Type": "Magical",
+            "Element": "Machine",
+            "ElementStrength": 64,
+            "MP": 120,
+            "Power": 600
+        },
+        {
+            "Id": "MegaBreak",
+            "Type": "Support",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 82,
+            "Power": 0
+        },
+        {
+            "Id": "GiantMissile",
+            "Type": "Physical",
+            "Element": "Machine",
+            "ElementStrength": 64,
+            "MP": 200,
+            "Power": 480
+        },
+        {
+            "Id": "ConfuseStab",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 64,
+            "Power": 240
+        },
+        {
+            "Id": "ImpactRush",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 60,
+            "Power": 240
+        },
+        {
+            "Id": "DimensionScissors",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 200,
+            "Power": 400
+        },
+        {
+            "Id": "FinalHeal",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 240,
+            "Power": 64
+        },
+        {
+            "Id": "EraseMagic",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 37,
+            "Power": 0
+        },
+        {
+            "Id": "AutoRecover",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 82,
+            "Power": 1
+        },
+        {
+            "Id": "CrimsonFlame",
+            "Type": "Heal",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 200,
+            "Power": 0
+        },
+        {
+            "Id": "FlameSphere",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 64,
+            "MP": 180,
+            "Power": 700
+        },
+        {
+            "Id": "Inferno",
+            "Type": "Magical",
+            "Element": "Fire",
+            "ElementStrength": 64,
+            "MP": 200,
+            "Power": 350
+        },
+        {
+            "Id": "TSword",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 250,
+            "Power": 400
+        },
+        {
+            "Id": "SoulPlunder",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 160,
+            "Power": 350
+        },
+        {
+            "Id": "OmegaBlade",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 280,
+            "Power": 500
+        },
+        {
+            "Id": "DarknessChaos",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 72,
+            "MP": 180,
+            "Power": 700
+        },
+        {
+            "Id": "BlackScewer",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 72,
+            "MP": 200,
+            "Power": 350
+        },
+        {
+            "Id": "ConfuseNebula",
+            "Type": "Magical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 90,
+            "Power": 360
+        },
+        {
+            "Id": "BlastMode",
+            "Type": "Physical",
+            "Element": "None",
+            "ElementStrength": 0,
+            "MP": 250,
+            "Power": 300
+        },
+        {
+            "Id": "CableCrusher",
+            "Type": "Magical",
+            "Element": "Dark",
+            "ElementStrength": 72,
+            "MP": 270,
+            "Power": 800
+        }
+    ]
 }

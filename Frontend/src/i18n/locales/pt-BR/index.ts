@@ -3,6 +3,7 @@ import areaInformation from "./area-information.json";
 import enemy from "./enemies/enemy.json";
 import species from "./enemies/species.json";
 import conditions from "./enemies/conditions.json";
+import drops from "./enemies/drops.json";
 import techniqueTypes from "./technique-types.json";
 import digimon from "./digimon.json";
 import stats from "./stats.json";
@@ -23,6 +24,7 @@ export default {
   ...enemy,
   ...species,
   ...conditions,
+  ...drops,
   ...techniqueTypes,
   ...digimon,
   ...stats,
