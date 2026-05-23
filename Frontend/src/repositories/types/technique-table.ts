@@ -1,0 +1,1 @@
+export type TechniqueTable = Record<Technique>;

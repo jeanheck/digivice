@@ -1,8 +1,9 @@
+import type { TechniqueTable } from '@/repositories/types/technique-table';
+import TechniqueJson from '@/tables/digievolution/technique.json';
 import type { Technique, TechniqueType } from '@/models';
-import TechniquesTableData from '../database/TechniquesTable.json';
 
 export class TechniqueRepository {
-    private static techniquesMap = new Map<string, Technique>();
+    private static readonly TechniqueTable = TechniqueJson as TechniqueTable;
 
     static {
         this.initializeTechniques();
