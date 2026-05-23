@@ -1,8 +1,5 @@
 {
   "common": {
-    "connected": "Connected",
-    "disconnected": "Disconnected",
-    "connecting": "Connecting...",
     "level": "Level",
     "none": "None"
   }
