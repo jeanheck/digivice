@@ -1,0 +1,37 @@
+{
+  "digimon": {
+    "digievolutions": "Digievoluctions",
+    "equipments": "Equipments",
+    "baseDigimon": "Base Digimon",
+    "equipableBy": "Equipable by",
+    "allDigimon": "All Digimon",
+    "slots": {
+      "head": "Head",
+      "body": "Body",
+      "right": "Right",
+      "left": "Left",
+      "accessory1": "Accessory 1",
+      "accessory2": "Accessory 2"
+    },
+    "states": {
+      "empty": "Empty",
+      "unknown": "Unknown",
+      "none": "None",
+      "itemID": "Item ID: {id}"
+    }
+  },
+  "digievolution": {
+    "title": "{name} Digievolutions",
+    "selectNode": "SELECT A DIGIEVOLUTION NODE FOR MORE DETAILS.",
+    "requirementDigievolutions": "Requirement Digievolutions",
+    "nextDigievolutions": "Next Digievolutions",
+    "noTechData": "No technique data available.",
+    "signature": "SIG",
+    "neutral": "Neutral",
+    "noEvolutionData": "No evolution data available",
+    "unknownParam": "Unknown Parameter",
+    "lv": "Lv",
+    "techniques": "Techniques",
+    "searchDigimon": "Type a Digievolution name..."
+  }
+}

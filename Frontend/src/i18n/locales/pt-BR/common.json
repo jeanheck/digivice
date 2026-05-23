@@ -1,0 +1,23 @@
+{
+  "common": {
+    "connected": "Conectado",
+    "disconnected": "Desconectado",
+    "connecting": "Conectando...",
+    "level": "Nível",
+    "none": "Nenhum"
+  },
+  "player": {
+    "tamer": "Treinador",
+    "bits": "Bits",
+    "groupCharisma": "Carisma do Grupo",
+    "groupCharismaWarning": "Esse valor não considera o Carisma que você ganha da sua digievolução.",
+    "slotEmpty": "Slot Vazio"
+  },
+  "milestones": {
+    "title": "Marcos",
+    "treeBoots": "Botas de Árvore",
+    "fishingPole": "Vara de Pesca",
+    "elDoradoId": "ID de El Dorado",
+    "folderBag": "Bolsa de Cards"
+  }
+}

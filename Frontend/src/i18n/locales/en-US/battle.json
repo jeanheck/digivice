@@ -1,0 +1,49 @@
+{
+  "enemy": {
+    "level": "Level",
+    "specie": "Specie",
+    "possibleDrop": "Possible Drops",
+    "baseExp": "EXP",
+    "baseBits": "BITS",
+    "combatActions": "Actions",
+    "regularAttack": "Regular Attack",
+    "technique": "Technique",
+    "attr": "Attributes",
+    "elem": "Resistances",
+    "status": "Conditions"
+  },
+  "species": {
+    "Insect": "Insect",
+    "Dino": "Dinossaur",
+    "Machine": "Machine",
+    "Mammal": "Mammal",
+    "Fish": "Fish",
+    "Evil": "Evil",
+    "Plant": "Plant",
+    "Bird": "Bird",
+    "Dragon": "Dragon",
+    "Ghoul": "Ghoul",
+    "Rare": "Rare"
+  },
+  "conditions": {
+    "canPoison": "Can be Poisoned",
+    "resistancePoison": "Resistance from Poison",
+    "canParalyze": "Can be Paralyzed",
+    "resistanceParalyze": "Resistance from Paralyze",
+    "canConfuse": "Can be Confused",
+    "resistanceConfuse": "Resistance from Confuse",
+    "canSleep": "Can be Asleep",
+    "resistanceSleep": "Resistance from Sleep",
+    "canKo": "Can be Knocked Out",
+    "resistanceKo": "Resistance from KO",
+    "drain": "Can be Drained",
+    "steal": "Can be Stealed",
+    "escape": "Player can Escape"
+  },
+  "techniqueTypes": {
+    "physical": "Physical",
+    "magical": "Magical",
+    "heal": "Heal",
+    "support": "Support"
+  }
+}
