@@ -1,538 +1,270 @@
 {
-    "0C01": {
-        "Location": "SavingGame",
-        "Name": {
-            "PT-BR": "Salvando o jogo",
-            "EN-US": "Saving game"
-        },
-        "Image": "Saving Screen"
-    },
-    "0A00": {
-        "Location": "InTraining",
-        "Name": {
-            "PT-BR": "Em Treinamento",
-            "EN-US": "In Training"
-        },
-        "Image": "In Training Screen"
-    },
-    "0D00": {
-        "Location": "KadomatsuPiximon",
-        "Name": {
-            "PT-BR": "Dr. Kadomatsu / Piximon",
-            "EN-US": "Dr. Kadomatsu / Piximon"
-        },
-        "Image": "Kadomatsu Piximon Screen"
-    },
-    "0F00": {
-        "Location": "InStore",
-        "Name": {
-            "PT-BR": "Na Loja",
-            "EN-US": "In Store"
-        },
-        "Image": "In Store Screen"
-    },
-    "0600": {
-        "Location": "InBattle",
-        "Name": {
-            "PT-BR": "Em batalha",
-            "EN-US": "In battle"
-        },
-        "Image": "In Battle Screen"
-    },
-    "1000": {
-        "Location": "InMenu",
-        "Name": {
-            "PT-BR": "No Menu",
-            "EN-US": "In Menu"
-        },
-        "Image": "In Menu Screen"
-    },
-    "1300": {
-        "Location": "CardShopScreen",
-        "Name": {
-            "PT-BR": "Loja de Cartas",
-            "EN-US": "Card Shop"
-        },
-        "Image": "Card Shop Screen"
-    },
-    "1400": {
-        "Location": "RewardScreen",
-        "Name": {
-            "PT-BR": "Tela de recompensas",
-            "EN-US": "Reward Screen"
-        },
-        "Image": "Reward Screen"
-    },
-    "0200": {
-        "Location": "AsukaCity",
-        "Name": {
-            "PT-BR": "Cidade Asuka",
-            "EN-US": "Asuka City"
-        },
-        "Image": "Asuka City"
-    },
-    "0201": {
-        "Location": "AsukaCity2",
-        "Name": {
-            "PT-BR": "Cidade Asuka",
-            "EN-US": "Asuka City"
-        },
-        "Image": "Asuka City 2"
-    },
-    "0202": {
-        "Location": "AsukaBridge",
-        "Name": {
-            "PT-BR": "Ponte Asuka",
-            "EN-US": "Asuka Bridge"
-        },
-        "Image": "Asuka Bridge"
-    },
-    "0203": {
-        "Location": "MainLobby",
-        "Name": {
-            "PT-BR": "Salão Principal",
-            "EN-US": "Main Lobby"
-        },
-        "Image": "Main Lobby"
-    },
-    "0206": {
-        "Location": "DigimonLab",
-        "Name": {
-            "PT-BR": "Laboratório Digimon",
-            "EN-US": "Digimon Lab"
-        },
-        "Image": "Digimon Lab"
-    },
-    "0207": {
-        "Location": "LoginRoom",
-        "Name": {
-            "PT-BR": "Sala de Login",
-            "EN-US": "Login Room"
-        },
-        "Image": "Login Room"
-    },
-    "0208": {
-        "Location": "ArenaFrontDesk",
-        "Name": {
-            "PT-BR": "Recepção Arena Digimon",
-            "EN-US": "Arena Front Desk"
-        },
-        "Image": "Arena Front Desk"
-    },
-    "0210": {
-        "Location": "CargoTower",
-        "Name": {
-            "PT-BR": "Torre de Carga",
-            "EN-US": "Cargo Tower"
-        },
-        "Image": "Cargo Tower"
-    },
-    "0211": {
-        "Location": "YellowCruiser",
-        "Name": {
-            "PT-BR": "Cruzeiro Amarelo",
-            "EN-US": "Yellow Cruiser"
-        },
-        "Image": "Yellow Cruiser"
-    },
-    "0212": {
-        "Location": "TunelAquático",
-        "Name": {
-            "PT-BR": "Túnel Aquático",
-            "EN-US": "Túnel Aquático"
-        },
-        "Image": "Tunel Aquático"
-    },
-    "0213": {
-        "Location": "ElDorado",
-        "Name": {
-            "PT-BR": "El Dorado",
-            "EN-US": "El Dorado"
-        },
-        "Image": "El Dorado"
-    },
-    "0214": {
-        "Location": "AdminCenter1F",
-        "Name": {
-            "PT-BR": "Centro Administrativo: Andar 1",
-            "EN-US": "Admin Center 1F"
-        },
-        "Image": "Admin Center 1F"
-    },
-    "020A": {
-        "Location": "AsukaCityInn1F",
-        "Name": {
-            "PT-BR": "Pousada Asuka: Andar 1",
-            "EN-US": "Asuka City - Inn 1F"
-        },
-        "Image": "Asuka City - Inn 1F"
-    },
-    "020B": {
-        "Location": "UndergroundPath",
-        "Name": {
-            "PT-BR": "Caminho Subterrâneo",
-            "EN-US": "Underground Path"
-        },
-        "Image": "Underground Path"
-    },
-    "020C": {
-        "Location": "AsukaCityInn2F",
-        "Name": {
-            "PT-BR": "Pousada Asuka: Andar 2",
-            "EN-US": "Asuka City - Inn 2F"
-        },
-        "Image": "Asuka City - Inn 2F"
-    },
-    "020D": {
-        "Location": "SmithsShop",
-        "Name": {
-            "PT-BR": "Loja do Smith",
-            "EN-US": "Smith's Shop"
-        },
-        "Image": "Smith's Shop"
-    },
-    "020E": {
-        "Location": "JunkShop",
-        "Name": {
-            "PT-BR": "Ferro Velho",
-            "EN-US": "Junk Shop"
-        },
-        "Image": "Junk Shop"
-    },
-    "020F": {
-        "Location": "LambChop",
-        "Name": {
-            "PT-BR": "Costeleta de Cordeiro",
-            "EN-US": "Lamb Chop"
-        },
-        "Image": "Lamb Chop"
-    },
-    "021B": {
-        "Location": "AsukaSewers",
-        "Name": {
-            "PT-BR": "Esgotos Asuka",
-            "EN-US": "Asuka Sewers"
-        },
-        "Image": "Asuka Sewers"
-    },
-    "021D": {
-        "Location": "CentralPark",
-        "Name": {
-            "PT-BR": "Parque Central",
-            "EN-US": "Central Park"
-        },
-        "Image": "Central Park"
-    },
-    "021E": {
-        "Location": "WireForestEntrance",
-        "Name": {
-            "PT-BR": "Floresta Arame (Entrada)",
-            "EN-US": "Wire Forest Entrance"
-        },
-        "Image": "Wire Forest Entrance"
-    },
-    "021F": {
-        "Location": "ShellBeach",
-        "Name": {
-            "PT-BR": "Praia da Concha",
-            "EN-US": "Shell Beach"
-        },
-        "Image": "Shell Beach"
-    },
-    "0220": {
-        "Location": "PlugCape",
-        "Name": {
-            "PT-BR": "Capa de Plug",
-            "EN-US": "Plug Cape"
-        },
-        "Image": "Plug Cape"
-    },
-    "0221": {
-        "Location": "WestWireForest",
-        "Name": {
-            "PT-BR": "Floresta Arame (Oeste)",
-            "EN-US": "West Wire Forest"
-        },
-        "Image": "West Wire Forest"
-    },
-    "0222": {
-        "Location": "EastWireForest",
-        "Name": {
-            "PT-BR": "Floresta Arame (Leste)",
-            "EN-US": "East Wire Forest"
-        },
-        "Image": "East Wire Forest"
-    },
-    "0223": {
-        "Location": "ForestInn",
-        "Name": {
-            "PT-BR": "Pousada Florestal",
-            "EN-US": "Forest Inn"
-        },
-        "Image": "Forest Inn"
-    },
-    "0224": {
-        "Location": "ForestInnBF",
-        "Name": {
-            "PT-BR": "Pousada Florestal (Subsolo)",
-            "EN-US": "Forest Inn BF"
-        },
-        "Image": "Forest Inn BF"
-    },
-    "0225": {
-        "Location": "ProtocolForest",
-        "Name": {
-            "PT-BR": "Floresta Protocolo",
-            "EN-US": "Protocol Forest"
-        },
-        "Image": "Protocol Forest"
-    },
-    "0226": {
-        "Location": "ProtocolRuins",
-        "Name": {
-            "PT-BR": "Ruínas Protocolo",
-            "EN-US": "Protocol Ruins"
-        },
-        "Image": "Protocol Ruins"
-    },
-    "0227": {
-        "Location": "DivermonsLake",
-        "Name": {
-            "PT-BR": "Lago dos Divermons",
-            "EN-US": "Divermon's Lake"
-        },
-        "Image": "Divermon's Lake"
-    },
-    "0229": {
-        "Location": "WindPrairie",
-        "Name": {
-            "PT-BR": "Campina do Vento",
-            "EN-US": "Wind Prairie"
-        },
-        "Image": "Wind Prairie"
-    },
-    "0230": {
-        "Location": "SeiryuTower",
-        "Name": {
-            "PT-BR": "Torre Seiryu",
-            "EN-US": "Seiryu Tower"
-        },
-        "Image": "Seiryu Tower"
-    },
-    "0231": {
-        "Location": "GaleTower",
-        "Name": {
-            "PT-BR": "Torre Tempestade",
-            "EN-US": "Gale Tower"
-        },
-        "Image": "Gale Tower"
-    },
-    "022A": {
-        "Location": "KickingForest",
-        "Name": {
-            "PT-BR": "Floresta dos Pontapés",
-            "EN-US": "Kicking Forest"
-        },
-        "Image": "Kicking Forest"
-    },
-    "022B": {
-        "Location": "TyrannoValley",
-        "Name": {
-            "PT-BR": "Vale Tyranno",
-            "EN-US": "Tyranno Valley"
-        },
-        "Image": "Tyranno Valley"
-    },
-    "022C": {
-        "Location": "EastStation",
-        "Name": {
-            "PT-BR": "Estação Leste",
-            "EN-US": "East Station"
-        },
-        "Image": "East Station"
-    },
-    "022D": {
-        "Location": "Deeper Crevice",
-        "Name": {
-            "PT-BR": "Fenda Profunda",
-            "EN-US": "Deeper Crevice"
-        },
-        "Image": "Deeper Crevice"
-    },
-    "022E": {
-        "Location": "SeiryuCity",
-        "Name": {
-            "PT-BR": "Cidade Seiryu",
-            "EN-US": "Seiryu City"
-        },
-        "Image": "Seiryu City"
-    },
-    "022F": {
-        "Location": "ZephyrTower",
-        "Name": {
-            "PT-BR": "Torre Zephyr",
-            "EN-US": "Zephyr Tower"
-        },
-        "Image": "Zephyr Tower"
-    },
-    "0232": {
-        "Location": "SouthStation",
-        "Name": {
-            "PT-BR": "Estação Sul",
-            "EN-US": "South Station"
-        },
-        "Image": "South Station"
-    },
-    "0233": {
-        "Location": "BulkSwamp",
-        "Name": {
-            "PT-BR": "Pântano",
-            "EN-US": "Bulk Swamp"
-        },
-        "Image": "Bulk Swamp"
-    },
-    "0234": {
-        "Location": "BulkBridge",
-        "Name": {
-            "PT-BR": "Ponte do Pântano",
-            "EN-US": "Bulk Bridge"
-        },
-        "Image": "Bulk Bridge"
-    },
-    "0235": {
-        "Location": "BiosSwamp",
-        "Name": {
-            "PT-BR": "Pântano Bios",
-            "EN-US": "Bios Swamp"
-        },
-        "Image": "Bios Swamp"
-    },
-    "0236": {
-        "Location": "ReliabilitySpot",
-        "Name": {
-            "PT-BR": "Ponto de Confiabilidade",
-            "EN-US": "Reliability Spot"
-        },
-        "Image": "Reliability Spot"
-    },
-    "0237": {
-        "Location": "TranquilSwamp",
-        "Name": {
-            "PT-BR": "Pântano Tranquilo",
-            "EN-US": "Tranquil Swamp"
-        },
-        "Image": "Tranquil Swamp"
-    },
-    "0238": {
-        "Location": "SwampInn",
-        "Name": {
-            "PT-BR": "Pousada Pantanal",
-            "EN-US": "Swamp Inn"
-        },
-        "Image": "Swamp Inn"
-    },
-    "0239": {
-        "Location": "ShamanHouse",
-        "Name": {
-            "PT-BR": "Casa Xamã",
-            "EN-US": "Shaman House"
-        },
-        "Image": "Shaman House"
-    },
-    "023A": {
-        "Location": "JungleGrave",
-        "Name": {
-            "PT-BR": "Selva Sepultura",
-            "EN-US": "Jungle Grave"
-        },
-        "Image": "Jungle Grave"
-    },
-    "023B": {
-        "Location": "PhoenixBay",
-        "Name": {
-            "PT-BR": "Baía Fênix",
-            "EN-US": "Phoenix Bay"
-        },
-        "Image": "Phoenix Bay"
-    },
-    "023C": {
-        "Location": "EtherJungle",
-        "Name": {
-            "PT-BR": "Selva de Éter",
-            "EN-US": "Ether Jungle"
-        },
-        "Image": "Ether Jungle"
-    },
-    "023D": {
-        "Location": "SouthCape",
-        "Name": {
-            "PT-BR": "Cabo Sul",
-            "EN-US": "South Cape"
-        },
-        "Image": "South Cape"
-    },
-    "023E": {
-        "Location": "SuzakuCity",
-        "Name": {
-            "PT-BR": "Cidade Suzaku",
-            "EN-US": "Suzaku City"
-        },
-        "Image": "Suzaku City"
-    },
-    "023F": {
-        "Location": "SuzakuInn",
-        "Name": {
-            "PT-BR": "Pousada Suzaku",
-            "EN-US": "Suzaku Inn"
-        },
-        "Image": "Suzaku Inn"
-    },
-    "0240": {
-        "Location": "SuzakuHall",
-        "Name": {
-            "PT-BR": "Salão Suzaku",
-            "EN-US": "Suzaku Hall"
-        },
-        "Image": "Suzaku Hall"
-    },
-    "0241": {
-        "Location": "SuzakuUGLake",
-        "Name": {
-            "PT-BR": "Lago Subterrâneo Suzaku",
-            "EN-US": "Suzaku UG Lake"
-        },
-        "Image": "Suzaku UG Lake"
-    },
-    "0242": {
-        "Location": "JungleShrine",
-        "Name": {
-            "PT-BR": "Santuário da Selva",
-            "EN-US": "Jungle Shrine"
-        },
-        "Image": "Jungle Shrine"
-    },
-    "0243": {
-        "Location": "Catacomb",
-        "Name": {
-            "PT-BR": "Catacumba",
-            "EN-US": "Catacomb"
-        },
-        "Image": "Catacomb"
-    },
-    "02E0": {
-        "Location": "Seabed",
-        "Name": {
-            "PT-BR": "Solo Oceânico",
-            "EN-US": "Seabed"
-        },
-        "Image": "Seabed 0"
-    },
-    "02E2": {
-        "Location": "Seabed",
-        "Name": {
-            "PT-BR": "Solo Oceânico",
-            "EN-US": "Seabed"
-        },
-        "Image": "Seabed 2"
-    }
+  "1000": {
+    "Location": "InMenu",
+    "Image": "In Menu Screen"
+  },
+  "1300": {
+    "Location": "CardShopScreen",
+    "Image": "Card Shop Screen"
+  },
+  "1400": {
+    "Location": "RewardScreen",
+    "Image": "Reward Screen"
+  },
+  "0C01": {
+    "Location": "SavingGame",
+    "Image": "Saving Screen"
+  },
+  "0A00": {
+    "Location": "InTraining",
+    "Image": "In Training Screen"
+  },
+  "0D00": {
+    "Location": "KadomatsuPiximon",
+    "Image": "Kadomatsu Piximon Screen"
+  },
+  "0F00": {
+    "Location": "InStore",
+    "Image": "In Store Screen"
+  },
+  "0600": {
+    "Location": "InBattle",
+    "Image": "In Battle Screen"
+  },
+  "0200": {
+    "Location": "AsukaCity",
+    "Image": "Asuka City"
+  },
+  "0201": {
+    "Location": "AsukaCity2",
+    "Image": "Asuka City 2"
+  },
+  "0202": {
+    "Location": "AsukaBridge",
+    "Image": "Asuka Bridge"
+  },
+  "0203": {
+    "Location": "MainLobby",
+    "Image": "Main Lobby"
+  },
+  "0206": {
+    "Location": "DigimonLab",
+    "Image": "Digimon Lab"
+  },
+  "0207": {
+    "Location": "LoginRoom",
+    "Image": "Login Room"
+  },
+  "0208": {
+    "Location": "ArenaFrontDesk",
+    "Image": "Arena Front Desk"
+  },
+  "0210": {
+    "Location": "CargoTower",
+    "Image": "Cargo Tower"
+  },
+  "0211": {
+    "Location": "YellowCruiser",
+    "Image": "Yellow Cruiser"
+  },
+  "0212": {
+    "Location": "TunelAquático",
+    "Image": "Tunel Aquático"
+  },
+  "0213": {
+    "Location": "ElDorado",
+    "Image": "El Dorado"
+  },
+  "0214": {
+    "Location": "AdminCenter1F",
+    "Image": "Admin Center 1F"
+  },
+  "020A": {
+    "Location": "AsukaCityInn1F",
+    "Image": "Asuka City - Inn 1F"
+  },
+  "020B": {
+    "Location": "UndergroundPath",
+    "Image": "Underground Path"
+  },
+  "020C": {
+    "Location": "AsukaCityInn2F",
+    "Image": "Asuka City - Inn 2F"
+  },
+  "020D": {
+    "Location": "SmithsShop",
+    "Image": "Smith's Shop"
+  },
+  "020E": {
+    "Location": "JunkShop",
+    "Image": "Junk Shop"
+  },
+  "020F": {
+    "Location": "LambChop",
+    "Image": "Lamb Chop"
+  },
+  "021B": {
+    "Location": "AsukaSewers",
+    "Image": "Asuka Sewers"
+  },
+  "021D": {
+    "Location": "CentralPark",
+    "Image": "Central Park"
+  },
+  "021E": {
+    "Location": "WireForestEntrance",
+    "Image": "Wire Forest Entrance"
+  },
+  "021F": {
+    "Location": "ShellBeach",
+    "Image": "Shell Beach"
+  },
+  "0220": {
+    "Location": "PlugCape",
+    "Image": "Plug Cape"
+  },
+  "0221": {
+    "Location": "WestWireForest",
+    "Image": "West Wire Forest"
+  },
+  "0222": {
+    "Location": "EastWireForest",
+    "Image": "East Wire Forest"
+  },
+  "0223": {
+    "Location": "ForestInn",
+    "Image": "Forest Inn"
+  },
+  "0224": {
+    "Location": "ForestInnBF",
+    "Image": "Forest Inn BF"
+  },
+  "0225": {
+    "Location": "ProtocolForest",
+    "Image": "Protocol Forest"
+  },
+  "0226": {
+    "Location": "ProtocolRuins",
+    "Image": "Protocol Ruins"
+  },
+  "0227": {
+    "Location": "DivermonsLake",
+    "Image": "Divermon's Lake"
+  },
+  "0229": {
+    "Location": "WindPrairie",
+    "Image": "Wind Prairie"
+  },
+  "0230": {
+    "Location": "SeiryuTower",
+    "Image": "Seiryu Tower"
+  },
+  "0231": {
+    "Location": "GaleTower",
+    "Image": "Gale Tower"
+  },
+  "022A": {
+    "Location": "KickingForest",
+    "Image": "Kicking Forest"
+  },
+  "022B": {
+    "Location": "TyrannoValley",
+    "Image": "Tyranno Valley"
+  },
+  "022C": {
+    "Location": "EastStation",
+    "Image": "East Station"
+  },
+  "022D": {
+    "Location": "Deeper Crevice",
+    "Image": "Deeper Crevice"
+  },
+  "022E": {
+    "Location": "SeiryuCity",
+    "Image": "Seiryu City"
+  },
+  "022F": {
+    "Location": "ZephyrTower",
+    "Image": "Zephyr Tower"
+  },
+  "0232": {
+    "Location": "SouthStation",
+    "Image": "South Station"
+  },
+  "0233": {
+    "Location": "BulkSwamp",
+    "Image": "Bulk Swamp"
+  },
+  "0234": {
+    "Location": "BulkBridge",
+    "Image": "Bulk Bridge"
+  },
+  "0235": {
+    "Location": "BiosSwamp",
+    "Image": "Bios Swamp"
+  },
+  "0236": {
+    "Location": "ReliabilitySpot",
+    "Image": "Reliability Spot"
+  },
+  "0237": {
+    "Location": "TranquilSwamp",
+    "Image": "Tranquil Swamp"
+  },
+  "0238": {
+    "Location": "SwampInn",
+    "Image": "Swamp Inn"
+  },
+  "0239": {
+    "Location": "ShamanHouse",
+    "Image": "Shaman House"
+  },
+  "023A": {
+    "Location": "JungleGrave",
+    "Image": "Jungle Grave"
+  },
+  "023B": {
+    "Location": "PhoenixBay",
+    "Image": "Phoenix Bay"
+  },
+  "023C": {
+    "Location": "EtherJungle",
+    "Image": "Ether Jungle"
+  },
+  "023D": {
+    "Location": "SouthCape",
+    "Image": "South Cape"
+  },
+  "023E": {
+    "Location": "SuzakuCity",
+    "Image": "Suzaku City"
+  },
+  "023F": {
+    "Location": "SuzakuInn",
+    "Image": "Suzaku Inn"
+  },
+  "0240": {
+    "Location": "SuzakuHall",
+    "Image": "Suzaku Hall"
+  },
+  "0241": {
+    "Location": "SuzakuUGLake",
+    "Image": "Suzaku UG Lake"
+  },
+  "0242": {
+    "Location": "JungleShrine",
+    "Image": "Jungle Shrine"
+  },
+  "0243": {
+    "Location": "Catacomb",
+    "Image": "Catacomb"
+  },
+  "02E0": {
+    "Location": "Seabed",
+    "Image": "Seabed 0"
+  },
+  "02E2": {
+    "Location": "Seabed",
+    "Image": "Seabed 2"
+  }
 }

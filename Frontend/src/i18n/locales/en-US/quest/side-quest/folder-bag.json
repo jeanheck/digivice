@@ -1,0 +1,28 @@
+{
+  "folderBag": {
+    "title": "The Folder Bag",
+    "description": "Obtain the bag to start storing and collecting Digimon Cards.",
+    "steps": {
+      "1": {
+        "description": "Speak with Divermon in the Yellow Cruiser located in Asuka City",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka City"
+          },
+          "3": {
+            "locationTarget": "Yellow Cruiser"
+          },
+          "4": {
+            "locationTarget": "Divermon"
+          }
+        }
+      }
+    }
+  }
+}

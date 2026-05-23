@@ -7,8 +7,15 @@ import techniqueTypes from "./technique-types.json";
 import digimon from "./digimon.json";
 import stats from "./stats.json";
 import equipments from "./equipments.json";
-import digievolution from "./digievolution.json";
+import equipmentType from "./equipment-type.json";
+import location from "./location.json";
+import technique from "./technique.json";
+import digivolution from "./digievolution.json";
 import journal from "./journal.json";
+import mainQuest from "./quest/main-quest.json";
+import fishingPole from "./quest/side-quest/fishing-pole.json";
+import folderBag from "./quest/side-quest/folder-bag.json";
+import treeBoots from "./quest/side-quest/tree-boots.json";
 
 export default {
   ...common,
@@ -20,8 +27,13 @@ export default {
   ...digimon,
   ...stats,
   ...equipments,
-  ...digievolution,
+  ...equipmentType,
+  ...location,
+  ...technique,
+  ...digivolution,
   ...journal,
+  ...mainQuest,
+  ...fishingPole,
+  ...folderBag,
+  ...treeBoots
 };
-
-

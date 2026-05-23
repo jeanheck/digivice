@@ -1,0 +1,70 @@
+{
+  "treeBoots": {
+    "title": "The Tree Boots",
+    "description": "Obtain the Tree Boots to find Cardmons by kicking trees.",
+    "steps": {
+      "1": {
+        "description": "Talk to the Soccer Kid Hide in Plug Cape",
+        "locations": {
+          "0": {
+            "locationTarget": "Soccer Kid Hide"
+          }
+        }
+      },
+      "2": {
+        "description": "Find the lost Gabumon's card",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Gabumon Card"
+          }
+        }
+      },
+      "3": {
+        "description": "Give the Gabumon's card to the Soccer Kid Hide",
+        "locations": {
+          "0": {
+            "locationTarget": "Soccer Kid Hide"
+          }
+        }
+      },
+      "4": {
+        "description": "Talk to Waitress Debbie in Lamb Chop in Asuka City",
+        "locations": {
+          "0": {
+            "locationTarget": "Lamb Chop"
+          },
+          "1": {
+            "locationTarget": "Waitress Debbie"
+          }
+        }
+      },
+      "5": {
+        "description": "Find Veemon on Wind Prairie",
+        "locations": {
+          "0": {
+            "locationTarget": "Veemon"
+          }
+        }
+      },
+      "6": {
+        "description": "Play Hide and Seek and find Veemon on Kicking Forest",
+        "locations": {
+          "0": {
+            "locationTarget": "Veemon"
+          }
+        }
+      },
+      "7": {
+        "description": "Receive the Tree Boots from Veemon after you find him",
+        "locations": {
+          "0": {
+            "locationTarget": "Veemon"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "technique": {
+    "heat_cutter": {
+      "name": "Corte Térmico",
+      "description": "Corte com dano de fogo"
+    },
+    "frost_cutter": {
+      "name": "Corte Gélido",
+      "description": "Corte com dano de gelo"
+    },
+    "small_heal": {
+      "name": "Cura Menor",
+      "description": "Recupera parte do seu HP"
+    },
+    "double_power": {
+      "name": "Poder Duplo",
+      "description": "Aumenta seu poder de ataque"
+    },
+    "lizard_dance": {
+      "name": "Dança do Lagarto",
+      "description": "Corta o inimigo várias vezes"
+    },
+    "wing_buster": {
+      "name": "Destruidor de Asas",
+      "description": "Dano enorme contra Digimon Pássaro"
+    },
+    "bug_buster": {
+      "name": "Destruidor de Insetos",
+      "description": "Dano enorme contra Digimon Inseto"
+    },
+    "big_shot": {
+      "name": "Tiro Certeiro",
+      "description": "Grande dano se acertar"
+    },
+    "fish_buster": {
+      "name": "Destruidor de Peixes",
+      "description": "Dano enorme contra Digimon Marinho"
+    },
+    "captain_cannon": {
+      "name": "Canhão do Capitão",
+      "description": "Dispara o canhão do braço"
+    },
+    "lightning_slash": {
+      "name": "Corte Relâmpago",
+      "description": "Dano de trovão"
+    },
+    "whirlwind": {
+      "name": "Redemoinho",
+      "description": "Dano de vento"
+    },
+    "hammer_rush": {
+      "name": "Investida de Martelo",
+      "description": "Dano por golpes rápidos"
+    },
+    "spinal_tap": {
+      "name": "Toque Espinhal",
+      "description": "Às vezes paralisa o inimigo"
+    },
+    "maul_attack": {
+      "name": "Ataque Devastador",
+      "description": "Contra-ataca se for atacado primeiro"
+    },
+    "flame_ball": {
+      "name": "Bola de Fogo",
+      "description": "Dispara pequenas bolas de fogo"
+    },
+    "triple_fire": {
+      "name": "Fogo Triplo",
+      "description": "Dispara três bolas de fogo"
+    },
+    "flame_lance": {
+      "name": "Lança de Fogo",
+      "description": "Lança feixe de fogo"
+    },
+    "nova_blast": {
+      "name": "Explosão Nova",
+      "description": "Dispara uma bola de fogo pela boca"
+    },
+    "air_blast": {
+      "name": "Rajada de Ar",
+      "description": "Dispara bolas de ar"
+    },
+    "ice_blow": {
+      "name": "Sopro de Gelo",
+      "description": "Dispara estacas de gelo com dano de gelo"
+    },
+    "antidote": {
+      "name": "Antídoto",
+      "description": "Cura veneno em si mesmo"
+    },
+    "veelaser": {
+      "name": "Veelaser",
+      "description": "Dispara um laser pelo peito"
+    },
+    "double_guard": {
+      "name": "Guarda Dupla",
+      "description": "Aumenta seu poder de defesa"
+    },
+    "picking_claw": {
+      "name": "Garra Ladra",
+      "description": "Ataca e rouba itens"
+    },
+    "counter_alert": {
+      "name": "Alerta de Contra-Ataque",
+      "description": "Contra-ataca durante pose"
+    },
+    "plasma_blade": {
+      "name": "Lâmina de Plasma",
+      "description": "Corte com lâmina eletrificada"
+    },
+    "thunder_bolt": {
+      "name": "Raio de Trovão",
+      "description": "Cria uma bola de trovão e dispara"
+    },
+    "thunder_gemini": {
+      "name": "Trovão Gêmeo",
+      "description": "Cria duas bolas de trovão e dispara"
+    },
+    "ice_shower": {
+      "name": "Chuva de Gelo",
+      "description": "Dispara inúmeras estacas de gelo"
+    },
+    "dragon_wheel": {
+      "name": "Roda do Dragão",
+      "description": "Dispara bolas de fogo das 9 caudas"
+    },
+    "mega_tornado": {
+      "name": "Mega Tornado",
+      "description": "Tornado contra um inimigo"
+    },
+    "hand_of_fate": {
+      "name": "Mão do Destino",
+      "description": "Soca o inimigo com ataques de vento"
+    },
+    "dark_matter": {
+      "name": "Matéria Sombria",
+      "description": "Bola de fogo maligna com dano sombrio"
+    },
+    "evil_poison": {
+      "name": "Veneno Maligno",
+      "description": "Magia com dano e veneno"
+    },
+    "armor_break": {
+      "name": "Quebrar Armadura",
+      "description": "Diminui a defesa do inimigo"
+    },
+    "stun_shock": {
+      "name": "Choque Paralisante",
+      "description": "Magia com dano e paralisia"
+    },
+    "touch_of_evil": {
+      "name": "Toque do Mal",
+      "description": "Drena HP do inimigo com garra"
+    },
+    "poison_bites": {
+      "name": "Mordidas Venenosas",
+      "description": "Dano venenoso"
+    },
+    "energy_leech": {
+      "name": "Sanguessuga de Energia",
+      "description": "Magia que drena HP"
+    },
+    "panic_bites": {
+      "name": "Mordidas de Pânico",
+      "description": "Dano com confusão"
+    },
+    "venom_stab": {
+      "name": "Golpe Venenoso",
+      "description": "Dano venenoso mortal"
+    },
+    "spiking_strike": {
+      "name": "Golpe de Espinho",
+      "description": "Apunhala o inimigo com o espinho"
+    },
+    "divine_rain": {
+      "name": "Chuva Divina",
+      "description": "Dano de água por chuva mágica"
+    },
+    "anti_paralysis": {
+      "name": "Anti-Paralisia",
+      "description": "Cura paralisia em si mesmo"
+    },
+    "celestial_arrow": {
+      "name": "Flecha Celestial",
+      "description": "Flecha divina com ataque de trovão"
+    },
+    "burn_slash": {
+      "name": "Corte Flamejante",
+      "description": "Corte com lâmina flamejante"
+    },
+    "cold_slash": {
+      "name": "Corte Gélido",
+      "description": "Corte com lâmina de gelo"
+    },
+    "blade_twister": {
+      "name": "Redemoinho de Lâminas",
+      "description": "Corta várias vezes com vento"
+    },
+    "dino_buster": {
+      "name": "Destruidor de Dinossauros",
+      "description": "Dano enorme contra Digimon Dinossauro"
+    },
+    "dramon_buster": {
+      "name": "Destruidor de Dramon",
+      "description": "Dano enorme contra Digimon Dragão"
+    },
+    "justice_strike": {
+      "name": "Golpe da Justiça",
+      "description": "Dispara todas as armas de fogo"
+    },
+    "soul_charge": {
+      "name": "Carga Espiritual",
+      "description": "Acumula Chi para fortalecer o próximo golpe"
+    },
+    "speed_boost": {
+      "name": "Impulso de Velocidade",
+      "description": "Aumenta sua velocidade"
+    },
+    "cyclone_turbine": {
+      "name": "Turbina Ciclone",
+      "description": "Múltiplos chutes giratórios"
+    },
+    "magic_missile": {
+      "name": "Míssil Mágico",
+      "description": "Dispara mísseis com magia"
+    },
+    "rising_fire": {
+      "name": "Fogo Ascendente",
+      "description": "Coluna de fogo sobre o inimigo"
+    },
+    "giga_destroyer": {
+      "name": "Giga Destruidor",
+      "description": "Lança mísseis orgânicos"
+    },
+    "black_thorn": {
+      "name": "Espinho Negro",
+      "description": "Dano sombrio com espinhos malignos"
+    },
+    "dark_shot": {
+      "name": "Tiro Sombrio",
+      "description": "Lança mísseis orgânicos"
+    },
+    "metal_attack": {
+      "name": "Ataque Metálico",
+      "description": "Dano mecânico"
+    },
+    "mechanical_bash": {
+      "name": "Golpe Mecânico",
+      "description": "Dano mecânico forte"
+    },
+    "desperado_blaster": {
+      "name": "Blaster Desesperado",
+      "description": "Dispara 2 ondas de energia em sequência"
+    },
+    "mega_guard": {
+      "name": "Mega Guarda",
+      "description": "Aumenta o poder de defesa dos aliados"
+    },
+    "mega_strength": {
+      "name": "Mega Força",
+      "description": "Aumenta o poder de ataque dos aliados"
+    },
+    "atomic_blaster": {
+      "name": "Blaster Atômico",
+      "description": "Queima o inimigo com laser de fogo"
+    },
+    "electro_bolt": {
+      "name": "Raio Elétrico",
+      "description": "Grande bola de trovão contra o inimigo"
+    },
+    "showstorm": {
+      "name": "Showstorm",
+      "description": "Espírito da neve causa dano de gelo"
+    },
+    "thunder_field": {
+      "name": "Campo de Trovão",
+      "description": "Fortalece trovão, enfraquece máquina"
+    },
+    "bonhitsusen": {
+      "name": "Bonhitsusen",
+      "description": "Dano enorme contra mortos-vivos"
+    },
+    "mega_heal": {
+      "name": "Mega Cura",
+      "description": "Recupera muito do seu HP"
+    },
+    "gate_of_destiny": {
+      "name": "Portal do Destino",
+      "description": "Abre um portal e descarta inimigos"
+    },
+    "dark_fear": {
+      "name": "Medo Sombrio",
+      "description": "Lança chama maligna contra o inimigo"
+    },
+    "black_dart": {
+      "name": "Dardo Negro",
+      "description": "Dispara inúmeros espinhos malignos"
+    },
+    "armor_off": {
+      "name": "Remover Armadura",
+      "description": "Grande redução na defesa do inimigo"
+    },
+    "confuse_gas": {
+      "name": "Gás Confuso",
+      "description": "Magia que confunde o inimigo"
+    },
+    "soul_snatcher": {
+      "name": "Ladrão de Almas",
+      "description": "Drena a alma magicamente"
+    },
+    "grisly_wing": {
+      "name": "Asa Macabra",
+      "description": "Diminui o poder de ataque do inimigo"
+    },
+    "twin_missile": {
+      "name": "Míssil Duplo",
+      "description": "Dispara dois mísseis com magia"
+    },
+    "slow_down": {
+      "name": "Desacelerar",
+      "description": "Diminui a velocidade do inimigo"
+    },
+    "energetic_bomb": {
+      "name": "Bomba Energética",
+      "description": "Dispara bolas de energia mecânica"
+    },
+    "energy_drain": {
+      "name": "Dreno de Energia",
+      "description": "Magia que drena muito HP"
+    },
+    "electro_shocker": {
+      "name": "Choque Elétrico",
+      "description": "Dispara bolas de trovão pela boca"
+    },
+    "hypno_gas": {
+      "name": "Gás Hipnótico",
+      "description": "Magia que coloca o inimigo para dormir"
+    },
+    "hypno_nebula": {
+      "name": "Nebulosa Hipnótica",
+      "description": "Magia que coloca o inimigo em sono profundo"
+    },
+    "nm_syndromer": {
+      "name": "Síndrome NM",
+      "description": "Ataque sombrio disparando bolas escuras"
+    },
+    "pinpoint_shot": {
+      "name": "Tiro de Precisão",
+      "description": "Dano enorme se acertar"
+    },
+    "golden_ripper": {
+      "name": "Estripador Dourado",
+      "description": "Corta inimigos com espadas"
+    },
+    "devil_shot": {
+      "name": "Tiro do Diabo",
+      "description": "Dano enorme contra Digimon Malignos"
+    },
+    "dynamo_cannon": {
+      "name": "Canhão Dínamo",
+      "description": "Dano enorme contra Máquinas"
+    },
+    "heaven_hit": {
+      "name": "Golpe do Céu",
+      "description": "Dano de trovão forte"
+    },
+    "vacuum_cannon": {
+      "name": "Canhão de Vácuo",
+      "description": "Dano de vento forte"
+    },
+    "brain_freeze": {
+      "name": "Cérebro Congelado",
+      "description": "Paralisa o inimigo"
+    },
+    "misshukikou": {
+      "name": "Misshukikou",
+      "description": "Acumula o Chi ao máximo para o próximo golpe"
+    },
+    "mugenhadou": {
+      "name": "Mugenhadou",
+      "description": "Dispara uma onda para nocautear o inimigo"
+    },
+    "flame_breath": {
+      "name": "Sopro de Chamas",
+      "description": "Envolve o inimigo com um sopro de fogo"
+    },
+    "giga_fire": {
+      "name": "Giga Fogo",
+      "description": "Ataque mágico dispara 3 bolas de fogo"
+    },
+    "terra_force": {
+      "name": "Força Terra",
+      "description": "Arremessa uma enorme bola de energia"
+    },
+    "sylph_storm": {
+      "name": "Tempestade de Sílfide",
+      "description": "Poderosa rajada de vento"
+    },
+    "mega_crusher": {
+      "name": "Mega Triturador",
+      "description": "Dispara uma bola massiva"
+    },
+    "counter_strike": {
+      "name": "Contra-Ataque",
+      "description": "Contra-ataque forte durante a pose"
+    },
+    "snapping_claw": {
+      "name": "Garra de Estalo",
+      "description": "Ataque e roube itens rapidamente"
+    },
+    "mega_boost": {
+      "name": "Mega Impulso",
+      "description": "Aumenta a velocidade do aliado"
+    },
+    "final_purification": {
+      "name": "Purificação Final",
+      "description": "Contra-ataque de raio a partir do escudo"
+    },
+    "lightning_bolt": {
+      "name": "Relâmpago",
+      "description": "Enorme bola de trovão contra o inimigo"
+    },
+    "giga_freeze": {
+      "name": "Giga Congelamento",
+      "description": "Envolve o inimigo com gelo enorme"
+    },
+    "ice_field": {
+      "name": "Campo de Gelo",
+      "description": "Fortalece gelo, enfraquece vento"
+    },
+    "kongou_kaimandra": {
+      "name": "KongouKaimandra",
+      "description": "Ataque mágico contra mortos-vivos"
+    },
+    "giga_heal": {
+      "name": "Giga Cura",
+      "description": "Cura muito do HP dos aliados"
+    },
+    "wind_field": {
+      "name": "Campo de Vento",
+      "description": "Fortalece vento, enfraquece água"
+    },
+    "seven_heavens": {
+      "name": "Sete Céus",
+      "description": "Dispara 7 bolas contra Digimon malignos"
+    },
+    "magical_cannon": {
+      "name": "Canhão Mágico",
+      "description": "Dispara mísseis gigantes com magia"
+    },
+    "metal_field": {
+      "name": "Metal Field",
+      "description": "Fortalece metal, enfraquece trevas"
+    },
+    "metal_wolf_claw": {
+      "name": "Garra de Lobo Metálico",
+      "description": "Sopro de gelo. Ataque mágico."
+    },
+    "grand_wave": {
+      "name": "Grande Onda",
+      "description": "Onda mágica contra o inimigo"
+    },
+    "erase_poison": {
+      "name": "Eliminar Veneno",
+      "description": "Cura todo o veneno dos aliados"
+    },
+    "erase_paralysis": {
+      "name": "Eliminar Paralisia",
+      "description": "Cura toda a paralisia dos aliados"
+    },
+    "water_field": {
+      "name": "Campo de Água",
+      "description": "Fortalece água, enfraquece fogo"
+    },
+    "anti_magic": {
+      "name": "Anti-Magia",
+      "description": "Cura todas as condições em si mesmo"
+    },
+    "thorn_whipping": {
+      "name": "Açoite de Espinhos",
+      "description": "Envenena o inimigo com um chicote de espinhos"
+    },
+    "terra_destroyer": {
+      "name": "Destruidor de Terra",
+      "description": "Arremessa matéria escura massiva"
+    },
+    "fire_field": {
+      "name": "Campo de Fogo",
+      "description": "Fortalece fogo, enfraquece gelo"
+    },
+    "full_heal": {
+      "name": "Cura Completa",
+      "description": "Cura quase todo o seu HP"
+    },
+    "giga_crusher": {
+      "name": "Giga Triturador",
+      "description": "Dispara o canhão laser definitivo"
+    },
+    "dark_elemental": {
+      "name": "Elemental das Trevas",
+      "description": "Envolve com uma coluna de fogo maligna"
+    },
+    "crimson_cloud": {
+      "name": "Nuvem Carmesim",
+      "description": "Dispara inúmeros flashes malignos"
+    },
+    "deadly_poison": {
+      "name": "Veneno Mortal",
+      "description": "Dispara espuma venenosa com magia"
+    },
+    "paralyze_shock": {
+      "name": "Choque Paralisante",
+      "description": "Magia que paralisa completamente"
+    },
+    "dark_field": {
+      "name": "Campo de Trevas",
+      "description": "Fortalece trevas, enfraquece trovão"
+    },
+    "melting_blood": {
+      "name": "Sangue Derretido",
+      "description": "Libera energia das trevas"
+    },
+    "god_bombard": {
+      "name": "Bombardeio Divino",
+      "description": "A magia de míssil mais poderosa"
+    },
+    "mega_break": {
+      "name": "Mega Break",
+      "description": "Grande redução na velocidade do inimigo"
+    },
+    "giant_missile": {
+      "name": "Míssil Gigante",
+      "description": "Dispara todos os mísseis do corpo"
+    },
+    "confuse_stab": {
+      "name": "Estocada de Confusão",
+      "description": "Dano de confusão massivo"
+    },
+    "impact_rush": {
+      "name": "Investida de Impacto",
+      "description": "Dano enorme de golpes rápidos"
+    },
+    "dimension_scissors": {
+      "name": "Tesouras Dimensionais",
+      "description": "Corta através do espaço e destrói"
+    },
+    "final_heal": {
+      "name": "Cura Final",
+      "description": "Cura quase todo o HP dos aliados"
+    },
+    "erase_magic": {
+      "name": "Eliminar Magia",
+      "description": "Cura todas as condições dos aliados"
+    },
+    "auto_recover": {
+      "name": "Auto Recuperação",
+      "description": "Recupera gradualmente seu HP"
+    },
+    "crimson_flame": {
+      "name": "Chama Carmesim",
+      "description": "Revive todos os aliados com HP máximo"
+    },
+    "flame_sphere": {
+      "name": "Esfera de Chamas",
+      "description": "Magia que cria chamas enormes"
+    },
+    "inferno": {
+      "name": "Inferno",
+      "description": "Colunas de fogo contínuas"
+    },
+    "t_sword": {
+      "name": "T-Sword",
+      "description": "Paralisa com a Espada Cinza"
+    },
+    "soul_plunder": {
+      "name": "Saque de Almas",
+      "description": "Destrói o inimigo com um feitiço"
+    },
+    "omega_blade": {
+      "name": "Omega Blade",
+      "description": "Movimento de espada que destrói o mal"
+    },
+    "darkness_chaos": {
+      "name": "Caos das Trevas",
+      "description": "Dano enorme com chama maligna"
+    },
+    "black_scewer": {
+      "name": "Espeto Negro",
+      "description": "Perfura com inúmeras matérias escuras"
+    },
+    "confuse_nebula": {
+      "name": "Nebulosa de Confusão",
+      "description": "Golpe mágico de confusão massiva"
+    },
+    "blast_mode": {
+      "name": "Blast Mode",
+      "description": "Múltiplos tiros no inimigo"
+    },
+    "cable_crusher": {
+      "name": "Triturador de Cabos",
+      "description": "Ataque mágico poderoso e maligno"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fishingPole": {
+    "title": "The Fishing Pole",
+    "description": "Obtain the Fishing Pole to start fishing for items and Digimon.",
+    "steps": {
+      "1": {
+        "description": "Talk to Tai Kong Wong at the Shell Beach",
+        "locations": {
+          "0": {
+            "locationTarget": "Tai Kong Wong"
+          }
+        }
+      },
+      "2": {
+        "description": "Help the Divermon at Divermon's Lake",
+        "locations": {
+          "0": {
+            "locationTarget": "Divermon"
+          }
+        }
+      },
+      "3": {
+        "description": "Bring the items to Tai Kong Wong at the Shell Beach to receive the Fishing Pole",
+        "locations": {
+          "0": {
+            "locationTarget": "Tai Kong Wong"
+          }
+        }
+      }
+    }
+  }
+}

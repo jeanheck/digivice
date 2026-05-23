@@ -1,0 +1,604 @@
+{
+  "technique": {
+    "heat_cutter": {
+      "name": "Heat Cutter",
+      "description": "Slash and fire damage"
+    },
+    "frost_cutter": {
+      "name": "Frost Cutter",
+      "description": "Slash with ice damage"
+    },
+    "small_heal": {
+      "name": "Small Heal",
+      "description": "Heal some of your HP"
+    },
+    "double_power": {
+      "name": "Double Power",
+      "description": "Increase your attack power"
+    },
+    "lizard_dance": {
+      "name": "Lizard Dance",
+      "description": "Slash enemy multiple times"
+    },
+    "wing_buster": {
+      "name": "Wing Buster",
+      "description": "Huge damage vs. Bird Digimon"
+    },
+    "bug_buster": {
+      "name": "Bug Buster",
+      "description": "Huge damage vs. Insectoid Digimon"
+    },
+    "big_shot": {
+      "name": "Big Shot",
+      "description": "Big damage if it hits"
+    },
+    "fish_buster": {
+      "name": "Fish Buster",
+      "description": "Huge damage vs. Marine Digimon"
+    },
+    "captain_cannon": {
+      "name": "Captain Cannon",
+      "description": "Shoot the arm cannon"
+    },
+    "lightning_slash": {
+      "name": "Lightning Slash",
+      "description": "Thunder damage"
+    },
+    "whirlwind": {
+      "name": "Whirlwind",
+      "description": "Wind damage"
+    },
+    "hammer_rush": {
+      "name": "Hammer Rush",
+      "description": "Damage from rapid blows"
+    },
+    "spinal_tap": {
+      "name": "Spinal Tap",
+      "description": "Sometimes paralyzes the enemy"
+    },
+    "maul_attack": {
+      "name": "Maul Attack",
+      "description": "If attacked first counter"
+    },
+    "flame_ball": {
+      "name": "Flame Ball",
+      "description": "Shoot small fire balls"
+    },
+    "triple_fire": {
+      "name": "Triple Fire",
+      "description": "Shoot three fire balls"
+    },
+    "flame_lance": {
+      "name": "Flame Lance",
+      "description": "Launch fire beam"
+    },
+    "nova_blast": {
+      "name": "Nova Blast",
+      "description": "Shoot a fire ball from the mouth"
+    },
+    "air_blast": {
+      "name": "Air Blast",
+      "description": "Shoot air balls"
+    },
+    "ice_blow": {
+      "name": "Ice Blow",
+      "description": "Shoot icicles with ice damage"
+    },
+    "antidote": {
+      "name": "Antidote",
+      "description": "Cure poison on yourself"
+    },
+    "veelaser": {
+      "name": "Veelaser",
+      "description": "Shoot a laser from the chest"
+    },
+    "double_guard": {
+      "name": "Double Guard",
+      "description": "Increase your defense power"
+    },
+    "picking_claw": {
+      "name": "Picking Claw",
+      "description": "Attack and steal items"
+    },
+    "counter_alert": {
+      "name": "Counter Alert",
+      "description": "Counterattack during pose"
+    },
+    "plasma_blade": {
+      "name": "Plasma Blade",
+      "description": "Slash with electrified blade"
+    },
+    "thunder_bolt": {
+      "name": "Thunder Bolt",
+      "description": "Create a thunder ball and fire"
+    },
+    "thunder_gemini": {
+      "name": "Thunder Gemini",
+      "description": "Create two thunder balls and fire"
+    },
+    "ice_shower": {
+      "name": "Ice Shower",
+      "description": "Shoot numerous icicles"
+    },
+    "dragon_wheel": {
+      "name": "Dragon Wheel",
+      "description": "Shoot fire balls from 9 tails"
+    },
+    "mega_tornado": {
+      "name": "Mega Tornado",
+      "description": "Tornado against an enemy"
+    },
+    "hand_of_fate": {
+      "name": "Hand of Fate",
+      "description": "Punch the enemy with wind attacks"
+    },
+    "dark_matter": {
+      "name": "Dark Matter",
+      "description": "Evil fireball with dark damage"
+    },
+    "evil_poison": {
+      "name": "Evil Poison",
+      "description": "Magic with damage and poison"
+    },
+    "armor_break": {
+      "name": "Armor Break",
+      "description": "Decrease enemy's defense"
+    },
+    "stun_shock": {
+      "name": "Stun Shock",
+      "description": "Magic with damage and paralysis"
+    },
+    "touch_of_evil": {
+      "name": "Touch of Evil",
+      "description": "Drain enemy's HP with claw"
+    },
+    "poison_bites": {
+      "name": "Poison Bites",
+      "description": "Poison damage"
+    },
+    "energy_leech": {
+      "name": "Energy Leech",
+      "description": "Magic that drains HP"
+    },
+    "panic_bites": {
+      "name": "Panic Bites",
+      "description": "Confusion damage"
+    },
+    "venom_stab": {
+      "name": "Venom Stab",
+      "description": "Deadly poison damage"
+    },
+    "spiking_strike": {
+      "name": "Spiking Strike",
+      "description": "Stab enemy with the spike"
+    },
+    "divine_rain": {
+      "name": "Divine Rain",
+      "description": "Water damage from magical rain"
+    },
+    "anti_paralysis": {
+      "name": "Anti-Paralysis",
+      "description": "Cure paralysis on yourself"
+    },
+    "celestial_arrow": {
+      "name": "Celestial Arrow",
+      "description": "Divine arrow with thunder attack"
+    },
+    "burn_slash": {
+      "name": "Burn Slash",
+      "description": "Slash with a flame blade"
+    },
+    "cold_slash": {
+      "name": "Cold Slash",
+      "description": "Slash with a ice blade"
+    },
+    "blade_twister": {
+      "name": "Blade Twister",
+      "description": "Slash multiple times with wind"
+    },
+    "dino_buster": {
+      "name": "Dino Buster",
+      "description": "Huge damage vs. Dinosaur Digimon"
+    },
+    "dramon_buster": {
+      "name": "Dramon Buster",
+      "description": "Huge damage vs. Dragon Digimon"
+    },
+    "justice_strike": {
+      "name": "Justice Strike",
+      "description": "Shoot all firearms"
+    },
+    "soul_charge": {
+      "name": "Soul Charge",
+      "description": "Save Chi to power up next blow"
+    },
+    "speed_boost": {
+      "name": "Speed Boost",
+      "description": "Increase your speed"
+    },
+    "cyclone_turbine": {
+      "name": "Cyclone Turbine",
+      "description": "Multiple round house kicks"
+    },
+    "magic_missile": {
+      "name": "Magic Missile",
+      "description": "Shoot missiles with magic"
+    },
+    "rising_fire": {
+      "name": "Rising Fire",
+      "description": "Column of fire on the enemy"
+    },
+    "giga_destroyer": {
+      "name": "Giga Destroyer",
+      "description": "Launch organic missiles"
+    },
+    "black_thorn": {
+      "name": "Black Thorn",
+      "description": "Dark damage with evil thorns"
+    },
+    "dark_shot": {
+      "name": "Dark Shot",
+      "description": "Launch organic missiles"
+    },
+    "metal_attack": {
+      "name": "Metal Attack",
+      "description": "Machine damage"
+    },
+    "mechanical_bash": {
+      "name": "Mechanical Bash",
+      "description": "Strong machine damage"
+    },
+    "desperado_blaster": {
+      "name": "Desperado Blaster",
+      "description": "Rapid-fire 2 energy waves"
+    },
+    "mega_guard": {
+      "name": "Mega Guard",
+      "description": "Increase allies' defense powers"
+    },
+    "mega_strength": {
+      "name": "Mega Strength",
+      "description": "Increase allies' attack powers"
+    },
+    "atomic_blaster": {
+      "name": "Atomic Blaster",
+      "description": "Burn the enemy with fire laser"
+    },
+    "electro_bolt": {
+      "name": "Electro Bolt",
+      "description": "Large thunder ball against enemy"
+    },
+    "showstorm": {
+      "name": "Showstorm",
+      "description": "Snow spirit inflicts ice damage"
+    },
+    "thunder_field": {
+      "name": "Thunder Field",
+      "description": "Strengthen thunder, weaken metal"
+    },
+    "bonhitsusen": {
+      "name": "Bonhitsusen",
+      "description": "Huge damage to ghouls"
+    },
+    "mega_heal": {
+      "name": "Mega Heal",
+      "description": "Heal much of your HP"
+    },
+    "gate_of_destiny": {
+      "name": "Gate of Destiny",
+      "description": "Open a gate and discard enemies"
+    },
+    "dark_fear": {
+      "name": "Dark Fear",
+      "description": "Throw evil flame against enemy"
+    },
+    "black_dart": {
+      "name": "Black Dart",
+      "description": "Fire numerous evil thorns"
+    },
+    "armor_off": {
+      "name": "Armor Off",
+      "description": "Large decrease in enemy's defense"
+    },
+    "confuse_gas": {
+      "name": "Confuse Gas",
+      "description": "Magic that confuses the enemy"
+    },
+    "soul_snatcher": {
+      "name": "Soul Snatcher",
+      "description": "Magically drain the soul"
+    },
+    "grisly_wing": {
+      "name": "Grisly Wing",
+      "description": "Decrease enemy's attack power"
+    },
+    "twin_missile": {
+      "name": "Twin Missile",
+      "description": "Shoot two missiles with magic"
+    },
+    "slow_down": {
+      "name": "Slow Down",
+      "description": "Decrease enemy's speed"
+    },
+    "energetic_bomb": {
+      "name": "Energetic Bomb",
+      "description": "Fire machine energy balls"
+    },
+    "energy_drain": {
+      "name": "Energy Drain",
+      "description": "Magic that drains many HP"
+    },
+    "electro_shocker": {
+      "name": "Electro Shocker",
+      "description": "Fire thunder balls from the mouth"
+    },
+    "hypno_gas": {
+      "name": "Hypno Gas",
+      "description": "Magic puts the enemy to sleep"
+    },
+    "hypno_nebula": {
+      "name": "Hypno Nebula",
+      "description": "Magic that puts enemy to deep sleep"
+    },
+    "nm_syndromer": {
+      "name": "NM Syndromer",
+      "description": "Dark attack by firing dark balls"
+    },
+    "pinpoint_shot": {
+      "name": "Pinpoint Shot",
+      "description": "Huge damage if it hits"
+    },
+    "golden_ripper": {
+      "name": "Golden Ripper",
+      "description": "Slash enemies with swords"
+    },
+    "devil_shot": {
+      "name": "Devil Shot",
+      "description": "Huge damage vs. Evil Digimon"
+    },
+    "dynamo_cannon": {
+      "name": "DynamoCannon",
+      "description": "Huge damage against Machines"
+    },
+    "heaven_hit": {
+      "name": "Heaven Hit",
+      "description": "Strong thunder damage"
+    },
+    "vacuum_cannon": {
+      "name": "Vacuum Cannon",
+      "description": "Strong wind damage"
+    },
+    "brain_freeze": {
+      "name": "Brain Freeze",
+      "description": "Paralyzes the enemy"
+    },
+    "misshukikou": {
+      "name": "Misshukikou",
+      "description": "Save Chi to maximum for next blow"
+    },
+    "mugenhadou": {
+      "name": "Mugenhadou",
+      "description": "Blast a wave to knock out enemy"
+    },
+    "flame_breath": {
+      "name": "Flame Breath",
+      "description": "Engulf the enemy with fire breath"
+    },
+    "giga_fire": {
+      "name": "Giga Fire",
+      "description": "Magic attack shoots 3 fire balls"
+    },
+    "terra_force": {
+      "name": "Terra Force",
+      "description": "Throw a huge energy ball"
+    },
+    "sylph_storm": {
+      "name": "Sylph Storm",
+      "description": "Powerful gust of wind"
+    },
+    "mega_crusher": {
+      "name": "Mega Crusher",
+      "description": "Fire a massive ball"
+    },
+    "counter_strike": {
+      "name": "Counter Strike",
+      "description": "Strong counterattack during pose"
+    },
+    "snapping_claw": {
+      "name": "Snapping Claw",
+      "description": "Attack and quickly steal items"
+    },
+    "mega_boost": {
+      "name": "Mega Boost",
+      "description": "Increase allies' speed"
+    },
+    "final_purification": {
+      "name": "Final Purification",
+      "description": "Beam counterattack from shield"
+    },
+    "lightning_bolt": {
+      "name": "Lightning Bolt",
+      "description": "Huge thunder ball against enemy"
+    },
+    "giga_freeze": {
+      "name": "Giga Freeze",
+      "description": "Engulf the enemy with huge ice"
+    },
+    "ice_field": {
+      "name": "Ice Field",
+      "description": "Strength ice, weaken wind"
+    },
+    "kongou_kaimandra": {
+      "name": "KongouKaimandra",
+      "description": "Magic attack against ghouls"
+    },
+    "giga_heal": {
+      "name": "Giga Heal",
+      "description": "Heal much of allies' HP"
+    },
+    "wind_field": {
+      "name": "Wind Field",
+      "description": "Strengthen wind, weaken water"
+    },
+    "seven_heavens": {
+      "name": "Seven Heavens",
+      "description": "Fire 7 balls against evil Digimon"
+    },
+    "magical_cannon": {
+      "name": "Magical Cannon",
+      "description": "Shoot giant missiles with magic"
+    },
+    "metal_field": {
+      "name": "Metal Field",
+      "description": "Strength metal, weaken dark"
+    },
+    "metal_wolf_claw": {
+      "name": "Metal Wolf Claw",
+      "description": "Ice breath. Magic attack."
+    },
+    "grand_wave": {
+      "name": "Grand Wave",
+      "description": "Magical tidal wave against enemy"
+    },
+    "erase_poison": {
+      "name": "Erase Poison",
+      "description": "Cure all poison on allies"
+    },
+    "erase_paralysis": {
+      "name": "Erase Paralysis",
+      "description": "Cure all paralysis on allies"
+    },
+    "water_field": {
+      "name": "Water Field",
+      "description": "Strengthen water, weaken fire"
+    },
+    "anti_magic": {
+      "name": "Anti-Magic",
+      "description": "Cure all ailments on yourself"
+    },
+    "thorn_whipping": {
+      "name": "Thorn Whipping",
+      "description": "Poison enemy with thorn whip"
+    },
+    "terra_destroyer": {
+      "name": "Terra Destroyer",
+      "description": "Throw massive dark matter"
+    },
+    "fire_field": {
+      "name": "Fire Field",
+      "description": "Strength fire, weaken ice"
+    },
+    "full_heal": {
+      "name": "Full Heal",
+      "description": "Heal almost all of your HP"
+    },
+    "giga_crusher": {
+      "name": "Giga Crusher",
+      "description": "Fire the ultimate laser cannon"
+    },
+    "dark_elemental": {
+      "name": "Dark Elemental",
+      "description": "Engulf with evil fire column"
+    },
+    "crimson_cloud": {
+      "name": "Crimson Cloud",
+      "description": "Fire numerous evil flashes"
+    },
+    "deadly_poison": {
+      "name": "Deadly Poison",
+      "description": "Fire venomous foam with magic"
+    },
+    "paralyze_shock": {
+      "name": "Paralyze Shock",
+      "description": "Magic that completely paralyzes"
+    },
+    "dark_field": {
+      "name": "Dark Field",
+      "description": "Strength dark, weaken thunder"
+    },
+    "melting_blood": {
+      "name": "Melting Blood",
+      "description": "Unleash dark energy"
+    },
+    "god_bombard": {
+      "name": "God Bombard",
+      "description": "Most powerful missile magic"
+    },
+    "mega_break": {
+      "name": "Mega Break",
+      "description": "Large decrease in enemy's speed"
+    },
+    "giant_missile": {
+      "name": "Giant Missile",
+      "description": "Fire all body missiles"
+    },
+    "confuse_stab": {
+      "name": "Confuse Stab",
+      "description": "Massive confusion damage"
+    },
+    "impact_rush": {
+      "name": "Impact Rush",
+      "description": "Huge damage from rapid blows"
+    },
+    "dimension_scissors": {
+      "name": "Dimension Scissors",
+      "description": "Slash thru space and destroy"
+    },
+    "final_heal": {
+      "name": "Final Heal",
+      "description": "Heal almost all of allies HP"
+    },
+    "erase_magic": {
+      "name": "Erase Magic",
+      "description": "Cure all ailments on allies"
+    },
+    "auto_recover": {
+      "name": "Auto Recover",
+      "description": "Gradually heal your HP"
+    },
+    "crimson_flame": {
+      "name": "Crimson Flame",
+      "description": "Revive all allies with max HP"
+    },
+    "flame_sphere": {
+      "name": "Flame Sphere",
+      "description": "Magic that creates huge flames"
+    },
+    "inferno": {
+      "name": "Inferno",
+      "description": "Continuous fire columns"
+    },
+    "t_sword": {
+      "name": "T-Sword",
+      "description": "Paralyze with Grey Sword"
+    },
+    "soul_plunder": {
+      "name": "Soul Plunder",
+      "description": "Destroy enemy with a spell"
+    },
+    "omega_blade": {
+      "name": "Omega Blade",
+      "description": "Sword move destroys evil"
+    },
+    "darkness_chaos": {
+      "name": "Darkness Chaos",
+      "description": "Huge damage with evil flame"
+    },
+    "black_scewer": {
+      "name": "Black Scewer",
+      "description": "Pierce with numerous dark matter"
+    },
+    "confuse_nebula": {
+      "name": "Confuse Nebula",
+      "description": "Massive confusion magic blow"
+    },
+    "blast_mode": {
+      "name": "Blast Mode",
+      "description": "Multiple shots to the enemy"
+    },
+    "cable_crusher": {
+      "name": "Cable Crusher",
+      "description": "Powerful and evil magic attack"
+    }
+  }
+}
