@@ -1,7 +1,7 @@
 import type { DigimonExperienceTable } from "@/repositories/tables/digimon-experience-table";
 import type { DigimonNameTable } from "@/repositories/tables/digimon-name-table";
-import DigimonExperienceJson from "@/tables/digimon/digimon-experience.json";
-import DigimonNameJson from "@/tables/digimon/digimon-name.json";
+import DigimonExperienceJson from "@/database/digimon/digimon-experience.json";
+import DigimonNameJson from "@/database/digimon/digimon-name.json";
 
 export class DigimonRepository {
     private static readonly DigimonNameTable = DigimonNameJson as DigimonNameTable;
