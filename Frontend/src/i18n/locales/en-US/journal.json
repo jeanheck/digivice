@@ -4,20 +4,11 @@
     "mainQuest": "Main Quest",
     "sideQuests": "Side Quests",
     "noSideQuests": "No Side Quests Active",
-    "awaitingDestination": "Awaiting Destination..."
-  },
-  "questDetails": {
+    "awaitingDestination": "Awaiting Destination...",
     "prerequisites": "Prerequisites",
     "missionSteps": "Mission Steps",
     "clickStep": "CLICK A MISSION STEP TO BOOT GEOGRAPHIC DATA",
     "noSignal": "NO SIGNAL DETECTED.\nTARGET COORDS UNKNOWN.",
     "noSteps": "No specific steps tracked."
-  },
-  "area": {
-    "title": "Area Information",
-    "enemies": "Enemies",
-    "unknownArea": "Unknown Area",
-    "unknownZone": "Unknown Zone",
-    "safeZone": "Safe Zone"
   }
 }

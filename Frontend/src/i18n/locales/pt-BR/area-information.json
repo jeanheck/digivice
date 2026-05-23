@@ -1,0 +1,9 @@
+{
+  "areaInformation": {
+    "title": "Informações da Área",
+    "enemies": "Inimigos",
+    "unknownArea": "Área Desconhecida",
+    "unknownZone": "Zona Desconhecida",
+    "safeZone": "Zona Segura"
+  }
+}

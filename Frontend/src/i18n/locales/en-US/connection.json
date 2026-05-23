@@ -1,0 +1,7 @@
+{
+  "connection": {
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "connecting": "Connecting..."
+  }
+}

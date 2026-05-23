@@ -1,16 +1,27 @@
 import common from "./common.json";
-import gameplay from "./gameplay.json";
-import battle from "./battle.json";
+import areaInformation from "./area-information.json";
+import enemy from "./enemies/enemy.json";
+import species from "./enemies/species.json";
+import conditions from "./enemies/conditions.json";
+import techniqueTypes from "./technique-types.json";
 import digimon from "./digimon.json";
 import stats from "./stats.json";
 import equipments from "./equipments.json";
+import digievolution from "./digievolution.json";
+import journal from "./journal.json";
 
 export default {
   ...common,
-  ...gameplay,
-  ...battle,
+  ...areaInformation,
+  ...enemy,
+  ...species,
+  ...conditions,
+  ...techniqueTypes,
   ...digimon,
   ...stats,
-  ...equipments
+  ...equipments,
+  ...digievolution,
+  ...journal,
 };
+
 

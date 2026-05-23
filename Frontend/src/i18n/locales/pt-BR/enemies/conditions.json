@@ -1,0 +1,17 @@
+{
+  "conditions": {
+    "canPoison": "Pode ser Envenenado",
+    "resistancePoison": "Resistente ao Veneno",
+    "canParalyze": "Pode ser Paralisado",
+    "resistanceParalyze": "Resistente a Paralisia",
+    "canConfuse": "Pode ser Confundido",
+    "resistanceConfuse": "Resistente a Confusão",
+    "canSleep": "Pode ser Adormecido",
+    "resistanceSleep": "Resistência a Sono",
+    "canKo": "Pode ser Nocauteado",
+    "resistanceKo": "Resistência a Nocaute",
+    "drain": "Pode ser Drenado",
+    "steal": "Pode ser Roubado",
+    "escape": "Jogador pode Fugir"
+  }
+}

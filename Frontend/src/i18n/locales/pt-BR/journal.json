@@ -4,20 +4,11 @@
     "mainQuest": "Missão Principal",
     "sideQuests": "Missões Secundárias",
     "noSideQuests": "Nenhuma Missão Secundária Ativa",
-    "awaitingDestination": "Aguardando Destino..."
-  },
-  "questDetails": {
+    "awaitingDestination": "Aguardando Destino...",
     "prerequisites": "Pré-requisitos",
     "missionSteps": "Passos da Missão",
     "clickStep": "CLIQUE EM UM PASSO DA MISSÃO PARA CARREGAR DADOS GEOGRÁFICOS",
     "noSignal": "NENHUM SINAL DETECTADO.\nCOORDENADAS DESCONHECIDAS.",
     "noSteps": "Nenhum passo específico rastreado."
-  },
-  "area": {
-    "title": "Informações da Área",
-    "enemies": "Inimigos",
-    "unknownArea": "Área Desconhecida",
-    "unknownZone": "Zona Desconhecida",
-    "safeZone": "Zona Segura"
   }
 }

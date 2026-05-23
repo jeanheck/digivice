@@ -19,19 +19,5 @@
       "none": "Nenhum",
       "itemID": "Item ID: {id}"
     }
-  },
-  "digievolution": {
-    "title": "Digievoluções de {name}",
-    "selectNode": "SELECIONE UMA DIGIEVOLUÇÃO PARA VER MAIS DETALHES.",
-    "requirementDigievolutions": "Requisitos de Digievolução",
-    "nextDigievolutions": "Próximas Digievoluções",
-    "noTechData": "Nenhum dado de técnica disponível.",
-    "signature": "SIG",
-    "neutral": "Neutro",
-    "noEvolutionData": "Nenhum dado de evolução disponível",
-    "unknownParam": "Parâmetro Desconhecido",
-    "lv": "Nv",
-    "techniques": "Técnicas",
-    "searchDigimon": "Digite o nome de uma Digievolução..."
   }
 }
