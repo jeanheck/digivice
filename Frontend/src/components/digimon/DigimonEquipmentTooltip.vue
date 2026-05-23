@@ -6,7 +6,7 @@ defineProps<{
   activeTooltip: { show: boolean, item: EnrichedEquipment | null, x: number, y: number }
 }>()
 
-const { t, getLocalized } = useLocalization()
+const { t, getLocalized, getLocalizedEquipmentName, getLocalizedEquipmentNote } = useLocalization();
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const { t, getLocalized } = useLocalization()
       >
         <div class="flex flex-col gap-1 w-full min-w-[170px]">
            <div class="font-bold text-yellow-300 text-sm border-b border-[#0066cc]/50 pb-1 mb-1 shadow-text-dark text-center uppercase tracking-wider">
-              {{ getLocalized(activeTooltip.item.name) }}
+              {{ getLocalizedEquipmentName(activeTooltip.item) }}
            </div>
            
            <div v-if="activeTooltip.item.typeDescription" class="text-blue-300 text-[10px] tracking-widest uppercase mb-1 text-center font-bold">
@@ -51,7 +51,7 @@ const { t, getLocalized } = useLocalization()
            </div>
 
            <div v-if="activeTooltip.item.note" class="mt-1 pt-1 border-t border-[#0033aa]/50 text-gray-400 text-[10px] italic leading-tight">
-              "{{ getLocalized(activeTooltip.item.note) }}"
+              "{{ getLocalizedEquipmentNote(activeTooltip.item) }}"
            </div>
         </div>
       </div>

@@ -150,15 +150,36 @@ export function useLocalization() {
         });
         enriched.Steps = enriched.steps;
       }
-    }
-
     return enriched;
+  };
+
+  const getLocalizedEquipmentName = (equip: any) => {
+    if (!equip) {
+      return "";
+    }
+    if (equip.id) {
+      return t(`equipments.${equip.id}.name`);
+    }
+    return getLocalized(equip.name);
+  };
+
+  const getLocalizedEquipmentNote = (equip: any) => {
+    if (!equip || !equip.note) {
+      return "";
+    }
+    if (equip.id) {
+      return t(`equipments.${equip.id}.note`);
+    }
+    return getLocalized(equip.note);
   };
 
   return {
     locale,
     t,
     getLocalized,
-    getLocalizedQuest
+    getLocalizedQuest,
+    getLocalizedEquipmentName,
+    getLocalizedEquipmentNote
   };
 }
+

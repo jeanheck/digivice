@@ -8,7 +8,7 @@ const props = defineProps<{
   enrichedEquipment: EnrichedEquipment | null;
 }>();
 
-const { t, getLocalized } = useLocalization();
+const { t, getLocalizedEquipmentName } = useLocalization();
 
 const emit = defineEmits<{
   (e: 'showTooltip', event: MouseEvent, equip: EnrichedEquipment): void;
@@ -47,7 +47,7 @@ const colorClass = computed(() => {
     </span>
 
     <span :class="[colorClass, 'shadow-text truncate font-medium text-[11px] text-right']">
-      {{ enrichedEquipment ? getLocalized(enrichedEquipment.name) : $t('digimon.states.empty') }}
+      {{ enrichedEquipment ? getLocalizedEquipmentName(enrichedEquipment) : $t("digimon.states.empty") }}
     </span>
   </div>
 </template>

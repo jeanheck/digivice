@@ -1,14 +1,9 @@
-import type { ExperienceByLevel } from '@/models/repository/experience-by-level';
-import ExperienceTableData from '../database/ExperienceTable.json';
-import DigimonDetailsTableData from '../database/DigimonDetailsTable.json';
+import type { ExperienceByLevel } from "@/models/repository/experience-by-level";
+import ExperienceTableData from "../database/ExperienceTable.json";
 
 export class DigimonRepository {
     public static get experienceTable(): Record<string, ExperienceByLevel[]> {
         return (ExperienceTableData as unknown) as Record<string, ExperienceByLevel[]>;
-    }
-
-    public static get digimonDetails(): Record<string, any> {
-        return DigimonDetailsTableData;
     }
 
     public static getExperienceTableByDigimonName(digimonName: string): ExperienceByLevel[] | undefined {

@@ -1,0 +1,234 @@
+{
+  "equipments": {
+    "92": {
+      "name": "Short Sword"
+    },
+    "93": {
+      "name": "Zanden Sword"
+    },
+    "94": {
+      "name": "Crimson Blade",
+      "note": "Recovers a fraction of the damage as HP"
+    },
+    "96": {
+      "name": "Shiratorimaru"
+    },
+    "106": {
+      "name": "Leather Glove"
+    },
+    "107": {
+      "name": "Cat Glove"
+    },
+    "108": {
+      "name": "Iron Glove"
+    },
+    "110": {
+      "name": "Power Arm"
+    },
+    "122": {
+      "name": "Shotgun"
+    },
+    "134": {
+      "name": "Bone Rod"
+    },
+    "141": {
+      "name": "Old Wand"
+    },
+    "147": {
+      "name": "Cerberus Fang",
+      "note": "Recovers a fraction of the damage as HP"
+    },
+    "153": {
+      "name": "Old Claw"
+    },
+    "157": {
+      "name": "Dagger"
+    },
+    "158": {
+      "name": "Shishioumaru"
+    },
+    "161": {
+      "name": "Wing Sword"
+    },
+    "167": {
+      "name": "Bamboo Spear"
+    },
+    "168": {
+      "name": "Spear"
+    },
+    "169": {
+      "name": "Fairy Tale"
+    },
+    "171": {
+      "name": "Divine Lance"
+    },
+    "178": {
+      "name": "Zweihander"
+    },
+    "185": {
+      "name": "Berdys"
+    },
+    "190": {
+      "name": "Long Bow"
+    },
+    "191": {
+      "name": "Shuriken"
+    },
+    "192": {
+      "name": "Crossbow"
+    },
+    "194": {
+      "name": "Raven Bow",
+      "note": "Small chance of inflicting confusion on enemy Digimon"
+    },
+    "201": {
+      "name": "Metal Guard"
+    },
+    "209": {
+      "name": "Kabuteri Horn"
+    },
+    "215": {
+      "name": "Bandanna"
+    },
+    "216": {
+      "name": "Sun Visor"
+    },
+    "217": {
+      "name": "Baseball Cap"
+    },
+    "219": {
+      "name": "Wool Cap"
+    },
+    "226": {
+      "name": "Ribbon"
+    },
+    "227": {
+      "name": "Cat Ears"
+    },
+    "228": {
+      "name": "Headband"
+    },
+    "230": {
+      "name": "Magical Crown"
+    },
+    "236": {
+      "name": "Hide Helmet"
+    },
+    "237": {
+      "name": "Tin Helmet"
+    },
+    "238": {
+      "name": "Iron Helmet"
+    },
+    "240": {
+      "name": "Wing Helmet"
+    },
+    "249": {
+      "name": "Leather Coat"
+    },
+    "250": {
+      "name": "Gym Suit"
+    },
+    "251": {
+      "name": "Priest Robe"
+    },
+    "253": {
+      "name": "Dark Cloak"
+    },
+    "262": {
+      "name": "Leather Mail"
+    },
+    "263": {
+      "name": "Tin Mail"
+    },
+    "264": {
+      "name": "Iron Armor"
+    },
+    "266": {
+      "name": "Dark Armor"
+    },
+    "275": {
+      "name": "Buckler"
+    },
+    "276": {
+      "name": "Tin Shield"
+    },
+    "277": {
+      "name": "Iron Shield"
+    },
+    "279": {
+      "name": "Guard Barrier"
+    },
+    "281": {
+      "name": "Divine Barrier"
+    },
+    "292": {
+      "name": "Power Gem"
+    },
+    "294": {
+      "name": "Guard Gem"
+    },
+    "296": {
+      "name": "Spirit Gem"
+    },
+    "298": {
+      "name": "Wisdom Gem"
+    },
+    "300": {
+      "name": "Boost Gem"
+    },
+    "302": {
+      "name": "Charisma Gem"
+    },
+    "304": {
+      "name": "Flame Ring"
+    },
+    "305": {
+      "name": "Water Ring"
+    },
+    "306": {
+      "name": "Ice Ring"
+    },
+    "307": {
+      "name": "Wind Ring"
+    },
+    "308": {
+      "name": "Thunder Ring"
+    },
+    "309": {
+      "name": "Machine Ring"
+    },
+    "311": {
+      "name": "Antidote Ring",
+      "note": "Boosts the equipped Digimon’s resistance against poison"
+    },
+    "312": {
+      "name": "Revive Ring",
+      "note": "Boosts the equipped Digimon’s resistance against paralysis"
+    },
+    "313": {
+      "name": "Awake Ring",
+      "note": "Boosts the equipped Digimon’s resistance against sleep"
+    },
+    "314": {
+      "name": "Sober Ring",
+      "note": "Boosts the equipped Digimon’s resistance against confusion"
+    },
+    "315": {
+      "name": "Prayer Ring",
+      "note": "Boosts the equipped Digimon’s chances of surviving a potential KO"
+    },
+    "333": {
+      "name": "Dance Feather",
+      "note": "Slightly increases the equipped Digimon’s chances of evading an attack"
+    },
+    "339": {
+      "name": "Fire Power 1",
+      "note": "Adds a small amount of Fire damage to the equipped Digimon’s basic attacks"
+    },
+    "345": {
+      "name": "Ice Power 1",
+      "note": "Add weak Ice to attacks"
+    }
+  }
+}

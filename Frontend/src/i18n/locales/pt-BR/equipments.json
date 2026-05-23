@@ -1,0 +1,234 @@
+{
+  "equipments": {
+    "92": {
+      "name": "Espada Pequena"
+    },
+    "93": {
+      "name": "Espada Zanden"
+    },
+    "94": {
+      "name": "Lâmina Crimson",
+      "note": "Recupera uma fração do dano causado como HP"
+    },
+    "96": {
+      "name": "Shiratorimaru"
+    },
+    "106": {
+      "name": "Luva de Couro"
+    },
+    "107": {
+      "name": "Luva de Gato"
+    },
+    "108": {
+      "name": "Iron Glove"
+    },
+    "110": {
+      "name": "Braço Potente"
+    },
+    "122": {
+      "name": "Espingarda"
+    },
+    "134": {
+      "name": "Cajado de Osso"
+    },
+    "141": {
+      "name": "Vara Antiga"
+    },
+    "147": {
+      "name": "Presa de Cérbero",
+      "note": "Recupera uma fração do dano causado como HP"
+    },
+    "153": {
+      "name": "Garra Antiga"
+    },
+    "157": {
+      "name": "Punhal"
+    },
+    "158": {
+      "name": "Shishioumaru"
+    },
+    "161": {
+      "name": "Espada Alada"
+    },
+    "167": {
+      "name": "Arpão de Bambu"
+    },
+    "168": {
+      "name": "Bambu"
+    },
+    "169": {
+      "name": "Conto de Fadas"
+    },
+    "171": {
+      "name": "Lança Divina"
+    },
+    "178": {
+      "name": "Zweihander"
+    },
+    "185": {
+      "name": "Berdys"
+    },
+    "190": {
+      "name": "Arco Longo"
+    },
+    "191": {
+      "name": "Shuriken"
+    },
+    "192": {
+      "name": "Besta"
+    },
+    "194": {
+      "name": "Arco Raven",
+      "note": "Chance baixa de causar confusão no Digimon inimigo"
+    },
+    "201": {
+      "name": "Protetor de Metal"
+    },
+    "209": {
+      "name": "Chifre Kabuteri"
+    },
+    "215": {
+      "name": "Bandana"
+    },
+    "216": {
+      "name": "Visor Solar"
+    },
+    "217": {
+      "name": "Boné de Beisebol"
+    },
+    "219": {
+      "name": "Boné de Lã"
+    },
+    "226": {
+      "name": "Faixa"
+    },
+    "227": {
+      "name": "Orelhas de Gato"
+    },
+    "228": {
+      "name": "Headband"
+    },
+    "230": {
+      "name": "Coroa Mágica"
+    },
+    "236": {
+      "name": "Capacete de Couro"
+    },
+    "237": {
+      "name": "Capacete de Aço"
+    },
+    "238": {
+      "name": "Elmo de Ferro"
+    },
+    "240": {
+      "name": "Capacete Alado"
+    },
+    "249": {
+      "name": "Casaco de Couro"
+    },
+    "250": {
+      "name": "Roupa de Academia"
+    },
+    "251": {
+      "name": "Manto do Padre"
+    },
+    "253": {
+      "name": "Manto Sombrio"
+    },
+    "262": {
+      "name": "Armadura de Couro"
+    },
+    "263": {
+      "name": "Armadura de Aço"
+    },
+    "264": {
+      "name": "Iron Armor"
+    },
+    "266": {
+      "name": "Armadura Sombria"
+    },
+    "275": {
+      "name": "Escudo"
+    },
+    "276": {
+      "name": "Escudo de Aço"
+    },
+    "277": {
+      "name": "Escudo de Ferro"
+    },
+    "279": {
+      "name": "Barreira Proteção"
+    },
+    "281": {
+      "name": "Escudo Divino"
+    },
+    "292": {
+      "name": "Gema - Poder"
+    },
+    "294": {
+      "name": "Gema - Defesa"
+    },
+    "296": {
+      "name": "Gema - Espírito"
+    },
+    "298": {
+      "name": "Gema - Sabedoria"
+    },
+    "300": {
+      "name": "Gema - Impulso"
+    },
+    "302": {
+      "name": "Gema - Carisma"
+    },
+    "304": {
+      "name": "Anel de Fogo"
+    },
+    "305": {
+      "name": "Anel Aquático"
+    },
+    "306": {
+      "name": "Anel de Gelo"
+    },
+    "307": {
+      "name": "Anel do Vento"
+    },
+    "308": {
+      "name": "Anel Elétrico"
+    },
+    "309": {
+      "name": "Anel Metálico"
+    },
+    "311": {
+      "name": "Anel Antídoto",
+      "note": "Boosts the equipped Digimon’s resistance against poison"
+    },
+    "312": {
+      "name": "Anel Ressurreição",
+      "note": "Boosts the equipped Digimon’s resistance against paralysis"
+    },
+    "313": {
+      "name": "Anel Despertar",
+      "note": "Boosts the equipped Digimon’s resistance against sleep"
+    },
+    "314": {
+      "name": "Anel Juízo",
+      "note": "Aumenta a resistência contra Confusão do Digimon Equipado"
+    },
+    "315": {
+      "name": "Anel Oração",
+      "note": "Boosts the equipped Digimon’s chances of surviving a potential KO"
+    },
+    "333": {
+      "name": "Dance Feather",
+      "note": "Slightly increases the equipped Digimon’s chances of evading an attack"
+    },
+    "339": {
+      "name": "Fire Power 1",
+      "note": "Adds a small amount of Fire damage to the equipped Digimon’s basic attacks"
+    },
+    "345": {
+      "name": "Ice Power 1",
+      "note": "Add weak Ice to attacks"
+    }
+  }
+}
