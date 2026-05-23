@@ -2,6 +2,9 @@
   "treeBoots": {
     "title": "The Tree Boots",
     "description": "Obtain the Tree Boots to find Cardmons by kicking trees.",
+    "requisites": {
+      "FolderBag": "Own the Folder Bag"
+    },
     "steps": {
       "1": {
         "description": "Talk to the Soccer Kid Hide in Plug Cape",

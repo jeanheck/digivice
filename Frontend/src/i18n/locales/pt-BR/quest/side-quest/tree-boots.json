@@ -2,6 +2,9 @@
   "treeBoots": {
     "title": "As Botas de Árvore",
     "description": "Obtenha as Botas de Árvore para encontrar Cardmons chutando árvores.",
+    "requisites": {
+      "FolderBag": "Possuir a Mochila de Cartas"
+    },
     "steps": {
       "1": {
         "description": "Fale com o Futebolista Hide na Capa de Plug",

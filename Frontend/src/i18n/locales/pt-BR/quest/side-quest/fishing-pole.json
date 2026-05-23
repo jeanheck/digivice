@@ -2,6 +2,9 @@
   "fishingPole": {
     "title": "A Vara de Pesca",
     "description": "Obtenha a Vara de Pesca para começar a pescar itens e Digimon.",
+    "requisites": {
+      "FolderBag": "Possuir a Mochila de Cartas"
+    },
     "steps": {
       "1": {
         "description": "Fale com Tai Kong Wong na Praia da Concha",

@@ -8,12 +8,9 @@
         "PT-BR": "Obtenha as Botas de Árvore para encontrar Cardmons chutando árvores.",
         "EN-US": "Obtain the Tree Boots to find Cardmons by kicking trees."
     },
-    "Prerequisites": [
+    "Requisites": [
         {
-            "Description": {
-                "PT-BR": "Possuir a Mochila de Cartas",
-                "EN-US": "Own the Folder Bag"
-            }
+            "Id": "FolderBag"
         }
     ],
     "Steps": [
