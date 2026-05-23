@@ -9,9 +9,8 @@
         "EN-US": "Obtain the bag to start storing and collecting Digimon Cards."
     },
     "Prerequisites": [],
-    "Steps": [
-        {
-            "Number": 1,
+    "Steps": {
+        "1": {
             "Description": {
                 "PT-BR": "Fale com o Divermon no Cruzeiro Amarelo na Cidade Asuka",
                 "EN-US": "Speak with Divermon in the Yellow Cruiser located in Asuka City"
@@ -82,5 +81,5 @@
                 }
             ]
         }
-    ]
+    }
 }

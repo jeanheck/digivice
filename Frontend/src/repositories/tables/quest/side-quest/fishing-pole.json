@@ -13,9 +13,8 @@
             "Id": "FolderBag"
         }
     ],
-    "Steps": [
-        {
-            "Number": 1,
+    "Steps": {
+        "1": {
             "Description": {
                 "PT-BR": "Fale com Tai Kong Wong na Praia da Concha",
                 "EN-US": "Talk to Tai Kong Wong at the Shell Beach"
@@ -42,8 +41,7 @@
                 }
             ]
         },
-        {
-            "Number": 2,
+        "2": {
             "Description": {
                 "PT-BR": "Ajude o Divermon no Lago dos Divermons",
                 "EN-US": "Help the Divermon at Divermon's Lake"
@@ -70,8 +68,7 @@
                 }
             ]
         },
-        {
-            "Number": 3,
+        "3": {
             "Description": {
                 "PT-BR": "Leve os itens para Tai Kong Wong na Praia da Concha para receber a Vara de Pescar",
                 "EN-US": "Bring the items to Tai Kong Wong at the Shell Beach to receive the Fishing Pole"
@@ -109,5 +106,5 @@
                 }
             ]
         }
-    ]
+    }
 }
