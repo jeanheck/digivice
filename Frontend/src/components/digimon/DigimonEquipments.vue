@@ -1,65 +1,51 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import type { Equipments, EnrichedEquipment } from '@/models';
-import { EquipmentRepository } from '@/repositories/equipment-repository';
-import DigimonEquipament from './DigimonEquipament.vue';
-import DigimonEquipmentTooltip from './DigimonEquipmentTooltip.vue';
+import { ref } from "vue";
+import type { Equipments, EnrichedEquipment } from "@/models";
+import { EquipmentRepository } from "@/repositories/equipment-repository";
+import DigimonEquipament from "./DigimonEquipament.vue";
+import EquipmentTooltip from "@/components/tooltip/EquipmentTooltip.vue";
+import { useTooltipPosition } from "@/composables/use-tooltip-position";
 
 const props = defineProps<{
   equipments: Equipments;
 }>();
 
 const slotKeys = [
-  'head',
-  'body',
-  'rightHand',
-  'leftHand',
-  'accessory1',
-  'accessory2'
+  "head",
+  "body",
+  "rightHand",
+  "leftHand",
+  "accessory1",
+  "accessory2"
 ] as const;
 
-const enrichedEquipments = computed(() => {
-  return EquipmentRepository.getEnrichedEquipmentsByIds(props.equipments);
-});
+const tooltipPosition = useTooltipPosition(300);
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+const selectedEquipment = ref<EnrichedEquipment | null>(null);
 
 const getEnrichedEquipment = (
-  slotKey: 'head' | 'body' | 'rightHand' | 'leftHand' | 'accessory1' | 'accessory2'
+  slotKey: "head" | "body" | "rightHand" | "leftHand" | "accessory1" | "accessory2"
 ): EnrichedEquipment | null => {
   const equipmentId = props.equipments?.[slotKey];
   if (!equipmentId) {
     return null;
   }
-  
+
   return EquipmentRepository.getEnrichedEquipmentById(equipmentId);
 };
 
-const activeTooltip = ref({ show: false, item: null as EnrichedEquipment | null, x: 0, y: 0 });
-
-const showTooltip = (event: MouseEvent, equipObj: EnrichedEquipment) => {
-  let posX = event.clientX + 15;
-  if (posX + 250 > window.innerWidth) {
-      posX = event.clientX - 260;
-  }
-  
-  activeTooltip.value = { show: true, item: equipObj, x: posX, y: event.clientY + 15 };
+const showTooltip = (event: MouseEvent, enrichedEquipment: EnrichedEquipment) => {
+  selectedEquipment.value = enrichedEquipment;
+  showAt(event, { maxWidth: 300 });
 };
 
 const hideTooltip = () => {
-  activeTooltip.value.show = false;
+  hide();
+  selectedEquipment.value = null;
 };
 
 const moveTooltip = (event: MouseEvent) => {
-  if (!activeTooltip.value.show) {
-      return;
-  }
-  
-  let posX = event.clientX + 15;
-  if (posX + 250 > window.innerWidth) {
-      posX = event.clientX - 260;
-  }
-  
-  activeTooltip.value.x = posX;
-  activeTooltip.value.y = event.clientY + 15;
+  move(event);
 };
 </script>
 
@@ -80,6 +66,11 @@ const moveTooltip = (event: MouseEvent) => {
       />
     </div>
 
-    <DigimonEquipmentTooltip :activeTooltip="activeTooltip" />
+    <EquipmentTooltip
+      :show="tooltipShow"
+      :x="tooltipX"
+      :y="tooltipY"
+      :equipment="selectedEquipment"
+    />
   </div>
 </template>

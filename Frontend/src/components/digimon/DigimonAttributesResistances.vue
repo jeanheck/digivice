@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import { useLocalization } from '@/composables/useLocalization';
-import { AttributeType, ResistanceType } from '@/models';
-import type { Attributes, Equipments, Resistances, EnrichedDigievolution, EnrichedAttributes, EnrichedResistances, EnrichedAttributeResistance } from '@/models';
-import { DigimonStatusCalculator } from '@/logic/DigimonStatusCalculator';
-import DigimonAttributeResistance from '@/components/digimon/DigimonAttributeResistance.vue';
-import DigimonTooltip from '@/components/digimon/DigimonTooltip.vue';
+import { computed, ref } from "vue";
+import { useLocalization } from "@/composables/useLocalization";
+import { AttributeType, ResistanceType } from "@/models";
+import type { Attributes, Equipments, Resistances, EnrichedDigievolution, EnrichedAttributes, EnrichedResistances, EnrichedAttributeResistance } from "@/models";
+import { DigimonStatusCalculator } from "@/logic/DigimonStatusCalculator";
+import DigimonAttributeResistance from "@/components/digimon/DigimonAttributeResistance.vue";
+import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
+import DigimonTooltip from "@/components/tooltip/DigimonTooltip.vue";
+import { useTooltipPosition } from "@/composables/use-tooltip-position";
 
 const props = defineProps<{
   attributes: Attributes;
@@ -15,6 +17,14 @@ const props = defineProps<{
 }>();
 
 const { t } = useLocalization();
+const tooltipPosition = useTooltipPosition();
+const { x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+
+type TooltipVariant = "none" | "default" | "math";
+const activeVariant = ref<TooltipVariant>("none");
+
+const defaultTooltipContent = ref({ title: "", text: "" });
+const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0 });
 
 const createEnrichedAttributeResistance = (
   key: AttributeType | ResistanceType,
@@ -23,7 +33,7 @@ const createEnrichedAttributeResistance = (
 ): EnrichedAttributeResistance => {
   const val = source[key];
 
-  const fromDigimon = (val && typeof val === 'object') ? (val.fromDigimon ?? 0) : Number(val ?? 0);
+  const fromDigimon = (val && typeof val === "object") ? (val.fromDigimon ?? 0) : Number(val ?? 0);
   const fromEquipaments = DigimonStatusCalculator.calculateBonusFromRawEquipments(key as unknown as AttributeType | ResistanceType, props.equipments);
   const fromDigievolution = digiSource ? Number(digiSource[key] ?? 0) : 0;
 
@@ -58,62 +68,44 @@ const enrichedResistances = computed<EnrichedResistances>(() => {
   };
 });
 
-const activeTooltip = ref({ show: false, title: '', text: '', isMath: false, base: 0, equip: 0, digi: 0, total: 0, x: 0, y: 0 });
-
-const showAttributeIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
-  const text = t(`attribute.${propertyKey}-explanation`);
+const showIconTooltip = (event: MouseEvent, title: string, text: string) => {
   if (!text) {
     return;
   }
-  
-  let posX = event.clientX + 15;
-  if (posX + 250 > window.innerWidth) {
-    posX = event.clientX - 260;
-  }
-  
-  activeTooltip.value = { show: true, isMath: false, title, text, base: 0, equip: 0, digi: 0, total: 0, x: posX, y: event.clientY + 15 };
+
+  defaultTooltipContent.value = { title, text };
+  activeVariant.value = "default";
+  showAt(event);
+};
+
+const showAttributeIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
+  showIconTooltip(event, title, t(`attribute.${propertyKey}-explanation`));
 };
 
 const showResistanceIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
-  const text = t(`element.${propertyKey}-explanation`);
-  if (!text) {
-    return;
-  }
-  
-  let posX = event.clientX + 15;
-  if (posX + 250 > window.innerWidth) {
-    posX = event.clientX - 260;
-  }
-  
-  activeTooltip.value = { show: true, isMath: false, title, text, base: 0, equip: 0, digi: 0, total: 0, x: posX, y: event.clientY + 15 };
+  showIconTooltip(event, title, t(`element.${propertyKey}-explanation`));
 };
 
-const showMathTooltip = (event: MouseEvent, title: string, base: number, equip: number, digi: number, total: number) => {
-  let posX = event.clientX + 15;
-  if (posX + 250 > window.innerWidth) {
-    posX = event.clientX - 260;
-  }
-  
-  activeTooltip.value = { show: true, isMath: true, title: title, text: '', base, equip, digi, total, x: posX, y: event.clientY + 15 };
+const showMathTooltip = (
+  event: MouseEvent,
+  title: string,
+  base: number,
+  equip: number,
+  _digi: number,
+  total: number
+) => {
+  mathTooltipContent.value = { title, base, equip, total };
+  activeVariant.value = "math";
+  showAt(event);
 };
 
 const hideTooltip = () => {
-  activeTooltip.value.show = false;
+  activeVariant.value = "none";
+  hide();
 };
 
 const moveTooltip = (event: MouseEvent) => {
-  if (!activeTooltip.value.show) {
-    return;
-  }
-  
-  const tooltipWidth = 250;
-  let posX = event.clientX + 15;
-  if (posX + tooltipWidth > window.innerWidth) {
-    posX = event.clientX - tooltipWidth - 10;
-  }
-  
-  activeTooltip.value.x = posX;
-  activeTooltip.value.y = event.clientY + 15;
+  move(event);
 };
 </script>
 
@@ -152,6 +144,22 @@ const moveTooltip = (event: MouseEvent) => {
       </div>
     </div>
 
-    <DigimonTooltip :activeTooltip="activeTooltip" />
+    <DefaultTooltip
+      :show="activeVariant === 'default'"
+      :x="tooltipX"
+      :y="tooltipY"
+      :title="defaultTooltipContent.title"
+      :text="defaultTooltipContent.text"
+    />
+
+    <DigimonTooltip
+      :show="activeVariant === 'math'"
+      :x="tooltipX"
+      :y="tooltipY"
+      :title="mathTooltipContent.title"
+      :base="mathTooltipContent.base"
+      :equip="mathTooltipContent.equip"
+      :total="mathTooltipContent.total"
+    />
   </div>
 </template>

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { invoke } from '@tauri-apps/api/core';
 import LanguageSelector from '@/components/footer/LanguageSelector.vue';
-import MouseTooltip from '../tooltip/MouseTooltip.vue';
+import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 
 defineProps<{
   playerName: string;
@@ -11,7 +11,7 @@ defineProps<{
   isConnected: boolean;
 }>();
 
-const tooltipRef = ref<InstanceType<typeof MouseTooltip> | null>(null);
+const tooltipRef = ref<InstanceType<typeof DefaultTooltip> | null>(null);
 
 const openLogsFolder = async () => {
   try {
@@ -57,5 +57,5 @@ const openLogsFolder = async () => {
     </div>
   </footer>
 
-  <MouseTooltip ref="tooltipRef" />
+  <DefaultTooltip ref="tooltipRef" placement="above" />
 </template>
