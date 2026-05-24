@@ -17,7 +17,7 @@ export class DigimonStatusCalculator {
         attributeOrResistanceType: AttributeType | ResistanceType,
         equipments: Equipments
     ): number {
-        const enrichedEquipments = EquipamentRepository.getEquipmentsByIds(equipments);
+        const enrichedEquipments = EquipamentRepository.getEnrichedEquipmentsByIds(equipments);
         return this.calculateBonusFromEquipaments(attributeOrResistanceType, enrichedEquipments);
     }
 

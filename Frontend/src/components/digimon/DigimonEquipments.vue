@@ -19,7 +19,7 @@ const slotKeys = [
 ] as const;
 
 const enrichedEquipments = computed(() => {
-  return EquipamentRepository.getEquipmentsByIds(props.equipments);
+  return EquipamentRepository.getEnrichedEquipmentsByIds(props.equipments);
 });
 
 const getEnrichedEquipment = (
