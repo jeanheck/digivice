@@ -1,3 +1,3 @@
-import type { EnrichedEquipment } from "@/models/enriched/enriched-equipament";
+import type { EquipmentRaw } from "./raws/equipment/equipment-raw";
 
-export type EquipmentTable = Record<string, EnrichedEquipment>;
+export type EquipmentTable = Record<string, EquipmentRaw>;

@@ -1,3 +1,3 @@
-import type { EnrichedDigievolution } from "@/models/enriched/enriched-digievolution";
+import type { DigievolutionRaw } from "./raws/digievolution/digievolution-raw";
 
-export type DigievolutionTable = Record<string, EnrichedDigievolution>;
+export type DigievolutionTable = Record<string, DigievolutionRaw>;
