@@ -1,8 +1,8 @@
 import { useI18n } from 'vue-i18n';
-import MainQuestTable from '../database/MainQuestTable.json';
-import FolderBagTable from '../database/FolderBagTable.json';
-import FishingPoleTable from '../database/FishingPoleTable.json';
-import TreeBootsTable from '../database/TreeBootsTable.json';
+import MainQuestJson from '@/database/quest/main-quest.json';
+import FolderBagJson from '@/database/quest/side-quest/folder-bag.json';
+import FishingPoleJson from '@/database/quest/side-quest/fishing-pole.json';
+import TreeBootsJson from '@/database/quest/side-quest/tree-boots.json';
 
 export function useLocalization() {
   const { locale, t } = useI18n();
@@ -29,7 +29,7 @@ export function useLocalization() {
     const questId = backendQuest.Id || backendQuest.id || backendQuest.QuestId;
 
     // List of available quest translation tables
-    const questTables = [MainQuestTable, FolderBagTable, FishingPoleTable, TreeBootsTable];
+    const questTables = [MainQuestJson, FolderBagJson, FishingPoleJson, TreeBootsJson];
 
     // Find the matching local table by Id
     const localTable = questTables.find(table => (table as any).Id === questId);
@@ -150,6 +150,8 @@ export function useLocalization() {
         });
         enriched.Steps = enriched.steps;
       }
+    }
+
     return enriched;
   };
 
@@ -182,4 +184,3 @@ export function useLocalization() {
     getLocalizedEquipmentNote
   };
 }
-
