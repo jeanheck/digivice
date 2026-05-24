@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import type { Equipments, EnrichedEquipment } from '@/models';
-import { EquipamentRepository } from '@/repositories/equipament-repository';
+import { EquipmentRepository } from '@/repositories/equipment-repository';
 import DigimonEquipament from './DigimonEquipament.vue';
 import DigimonEquipmentTooltip from './DigimonEquipmentTooltip.vue';
 
@@ -19,7 +19,7 @@ const slotKeys = [
 ] as const;
 
 const enrichedEquipments = computed(() => {
-  return EquipamentRepository.getEnrichedEquipmentsByIds(props.equipments);
+  return EquipmentRepository.getEnrichedEquipmentsByIds(props.equipments);
 });
 
 const getEnrichedEquipment = (
@@ -29,10 +29,8 @@ const getEnrichedEquipment = (
   if (!equipmentId) {
     return null;
   }
-  const foundEquipment = enrichedEquipments.value.find((equipment) => {
-    return equipment.id === equipmentId;
-  });
-  return foundEquipment || null;
+  
+  return EquipmentRepository.getEnrichedEquipmentById(equipmentId);
 };
 
 const activeTooltip = ref({ show: false, item: null as EnrichedEquipment | null, x: 0, y: 0 });

@@ -1,6 +1,6 @@
 import { MathUtils } from "@/utils/MathUtils";
 import { AttributeType, ResistanceType, type EnrichedEquipment, type Equipments } from "@/models";
-import { EquipamentRepository } from "@/repositories/equipament-repository";
+import { EquipmentRepository } from "@/repositories/equipment-repository";
 
 export class DigimonStatusCalculator {
     public static calculateBonusFromEquipaments(attributeOrResistanceType: AttributeType | ResistanceType, enrichedEquipments: EnrichedEquipment[]
@@ -17,7 +17,7 @@ export class DigimonStatusCalculator {
         attributeOrResistanceType: AttributeType | ResistanceType,
         equipments: Equipments
     ): number {
-        const enrichedEquipments = EquipamentRepository.getEnrichedEquipmentsByIds(equipments);
+        const enrichedEquipments = EquipmentRepository.getEnrichedEquipmentsByIds(equipments);
         return this.calculateBonusFromEquipaments(attributeOrResistanceType, enrichedEquipments);
     }
 }

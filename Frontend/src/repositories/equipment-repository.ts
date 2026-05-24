@@ -2,7 +2,7 @@ import EquipmentJson from '@/database/equipment/equipment.json';
 import type { EquipmentTable } from './tables/equipment-table';
 import type { EnrichedEquipment, Equipments } from '@/models';
 
-export class EquipamentRepository {
+export class EquipmentRepository {
     private static readonly equipmentTable = EquipmentJson as EquipmentTable;
 
     private static getEquipmentsIds(equipments: Equipments): number[] {
@@ -25,5 +25,9 @@ export class EquipamentRepository {
         const enrichedEquipments = nonRepeatedEquipmentsIds.map(equipmentId => this.equipmentTable[equipmentId]!);
 
         return enrichedEquipments;
+    }
+
+    public static getEnrichedEquipmentById(equipamentId: number): EnrichedEquipment {
+        return this.equipmentTable[equipamentId]!;
     }
 }
