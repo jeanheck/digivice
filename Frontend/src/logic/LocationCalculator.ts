@@ -1,4 +1,4 @@
-import LocationsData from '../database/Locations.json';
+import LocationsData from '@/database/location.json';
 import type { Location } from '../models';
 
 export class LocationCalculator {

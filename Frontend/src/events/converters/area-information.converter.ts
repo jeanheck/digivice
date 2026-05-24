@@ -1,6 +1,6 @@
 import type { AreaInformation, Enemy } from '../../models';
 import { LocationCalculator } from '../../logic/LocationCalculator';
-import EnemiesData from '../../database/EnemiesTable.json';
+import EnemiesData from '@/database/enemy.json'
 
 export class AreaInformationConverter {
     public static convert(location: string | undefined | null): AreaInformation | null {
