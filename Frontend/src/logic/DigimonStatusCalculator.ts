@@ -1,16 +1,17 @@
 import { MathUtils } from "@/utils/MathUtils";
-import { AttributeType, EquipmentsAttributesOperationType, ResistanceType, type EnrichedEquipment, type Equipments } from "@/models";
+import { AttributeType, EquipmentsAttributesOperationType, ResistanceType, type Equipments } from "@/models";
 import { EquipmentRepository } from "@/repositories/equipment-repository";
+import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment-raw";
 
 export class DigimonStatusCalculator {
-    public static calculateBonusFromEquipaments(attributeOrResistanceType: AttributeType | ResistanceType, enrichedEquipments: EnrichedEquipment[]
+    public static calculateBonusFromEquipaments(attributeOrResistanceType: AttributeType | ResistanceType, rawEquipments: EquipmentRaw[]
     ): number {
         const lowerCaseAttributeOrResistanceType = attributeOrResistanceType.toLowerCase();
-        const attributes = enrichedEquipments
-            .flatMap(enrichedEquipment => enrichedEquipment.attributes)
+        const attributesRaw = rawEquipments
+            .flatMap(rawEquipment => rawEquipment.attributes)
             .filter(attribute => attribute.attribute.toLowerCase() === lowerCaseAttributeOrResistanceType);
 
-        return MathUtils.Sum(attributes.map(attribute => {
+        return MathUtils.Sum(attributesRaw.map(attribute => {
             const operation = attribute.type === EquipmentsAttributesOperationType.Addition ? "+" : "-";
             return Number(`${operation}${attribute.value}`);
         }));
@@ -20,7 +21,7 @@ export class DigimonStatusCalculator {
         attributeOrResistanceType: AttributeType | ResistanceType,
         equipments: Equipments
     ): number {
-        const enrichedEquipments = EquipmentRepository.getEnrichedEquipmentsByIds(equipments);
-        return this.calculateBonusFromEquipaments(attributeOrResistanceType, enrichedEquipments);
+        const rawEquipments = EquipmentRepository.getRawEquipmentsByIds(equipments);
+        return this.calculateBonusFromEquipaments(attributeOrResistanceType, rawEquipments);
     }
 }

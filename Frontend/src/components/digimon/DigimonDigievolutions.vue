@@ -18,7 +18,7 @@ const enrichedDigievolutions = computed(() => {
       return null;
     }
 
-    return DigievolutionRepository.getEnrichedDigievolution(slot.digievolutionId);
+    return DigievolutionRepository.getRawDigievolution(slot.digievolutionId);
   });
 });
 

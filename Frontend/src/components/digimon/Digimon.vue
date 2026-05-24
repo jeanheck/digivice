@@ -19,7 +19,7 @@ const activeDigievolution = computed(() => {
   if (!props.digimon.activeDigievolutionId) {
     return null;
   }
-  return DigievolutionCalculator.getActiveEnrichedDigievolution(props.digimon.digievolutions, props.digimon.activeDigievolutionId);
+  return DigievolutionCalculator.getActiveRawDigievolution(props.digimon.activeDigievolutionId);
 });
 </script>
 

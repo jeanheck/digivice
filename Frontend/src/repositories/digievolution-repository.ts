@@ -12,10 +12,10 @@ export class DigievolutionRepository {
     public static getDigievolutionNameById(id: number): string {
         return this.digievolutionTable[id]!.name;
     }
-    public static getEnrichedDigievolution(id: number): DigievolutionRaw {
+    public static getRawDigievolution(id: number): DigievolutionRaw {
         return this.digievolutionTable[id]!;
     }
-    public static getDigievolutionTechniquesById(id: number): DigievolutionTechniqueRaw[] {
+    public static getRawDigievolutionTechniquesById(id: number): DigievolutionTechniqueRaw[] {
         return this.digievolutionTechniqueTable[id]!;
     }
 }

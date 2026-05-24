@@ -5,6 +5,7 @@ import { EquipmentRepository } from "@/repositories/equipment-repository";
 import DigimonEquipament from "./DigimonEquipament.vue";
 import EquipmentTooltip from "@/components/tooltip/EquipmentTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment-raw";
 
 const props = defineProps<{
   equipments: Equipments;
@@ -25,13 +26,13 @@ const selectedEquipment = ref<EnrichedEquipment | null>(null);
 
 const getEnrichedEquipment = (
   slotKey: "head" | "body" | "rightHand" | "leftHand" | "accessory1" | "accessory2"
-): EnrichedEquipment | null => {
+): EquipmentRaw | null => {
   const equipmentId = props.equipments?.[slotKey];
   if (!equipmentId) {
     return null;
   }
 
-  return EquipmentRepository.getEnrichedEquipmentById(equipmentId);
+  return EquipmentRepository.getRawEquipmentById(equipmentId);
 };
 
 const showTooltip = (event: MouseEvent, enrichedEquipment: EnrichedEquipment) => {
