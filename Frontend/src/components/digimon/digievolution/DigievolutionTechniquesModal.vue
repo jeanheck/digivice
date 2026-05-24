@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { watch, onUnmounted } from 'vue';
-import IconClose from '../icons/IconClose.vue';
+import IconClose from '@/components/modal/IconClose.vue';
 import type { Technique } from '@/models';
 import { TechniqueIcon } from '@/constants/technique-icons';
 import { useLocalization } from '@/composables/useLocalization';

@@ -2,7 +2,7 @@
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
 import type { Step as StepType } from '../../models'
-import IconClose from '../icons/IconClose.vue'
+import IconClose from '@/components/modal/IconClose.vue';
 import asukaMapUrl from '../../assets/AsukaMap.webp'
 
 const props = defineProps<{

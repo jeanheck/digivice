@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import ExperienceProgressBar from '../ui/ExperienceProgressBar.vue';
-import ProgressBar from '../ui/ProgressBar.vue';
-import DigimonIcon from '../ui/DigimonIcon.vue';
+import ExperienceProgressBar from '@/components/digimon/ExperienceProgressBar.vue';
+import ProgressBar from '@/components/digimon/ProgressBar.vue';
+import DigimonIcon from '@/components/digimon/DigimonIcon.vue';
 import type { Digimon } from '../../models';
 import { ProgressBarTypes } from '@/constants/progress-bar-types';
 import { DigimonRepository } from '../../repositories/digimon-repository';

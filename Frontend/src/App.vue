@@ -4,7 +4,7 @@ import { useGameStore } from './stores/use-game-store';
 import { useLocalization } from './composables/useLocalization';
 import Digimon from './components/digimon/Digimon.vue';
 import Journal from './components/journal/Journal.vue';
-import AreaInformationPanel from './components/layout/AreaInformationPanel.vue';
+import AreaInformationPanel from '@/components/area-information/AreaInformationPanel.vue';
 import QuestDetailsModal from './components/modal/QuestDetailsModal.vue';
 import Footer from './components/footer/Footer.vue';
 

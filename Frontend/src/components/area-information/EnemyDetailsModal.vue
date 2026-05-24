@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import IconClose from '../icons/IconClose.vue'
+import IconClose from '@/components/modal/IconClose.vue'
 import { useLocalization } from '../../composables/useLocalization'
 import type { Enemy } from '../../models/enemy'
 
