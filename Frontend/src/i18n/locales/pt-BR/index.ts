@@ -17,6 +17,9 @@ import mainQuest from "./quest/main-quest.json";
 import fishingPole from "./quest/side-quest/fishing-pole.json";
 import folderBag from "./quest/side-quest/folder-bag.json";
 import treeBoots from "./quest/side-quest/tree-boots.json";
+import player from "./player.json";
+import party from "./party.json";
+import connection from "./connection.json";
 
 export default {
   ...areaInformation,
@@ -37,5 +40,8 @@ export default {
   ...mainQuest,
   ...fishingPole,
   ...folderBag,
-  ...treeBoots
+  ...treeBoots,
+  ...player,
+  ...party,
+  ...connection,
 };

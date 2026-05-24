@@ -85,7 +85,7 @@ const handleCloseQuestModal = () => {
     </div>
 
     <Footer 
-      :player-name="store.currentState?.player?.name ?? $t('common.connecting')"
+      :player-name="store.currentState?.player?.name ?? $t('connection.connecting')"
       :bits="store.currentState?.player?.bits ?? 0"
       :group-charisma="store.groupCharisma"
       :is-connected="store.isConnected"

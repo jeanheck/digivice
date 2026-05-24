@@ -24,20 +24,20 @@ interface Metadata {
 }
 
 const metadataMap: Record<string, Metadata> = {
-  strength: { labelKey: 'attributes.strength', icon: '👊', colorClass: 'text-[#fcd883]' },
-  defense: { labelKey: 'attributes.defense', icon: '🛡️', colorClass: 'text-gray-400' },
-  spirit: { labelKey: 'attributes.spirit', icon: '🧙‍♂️', colorClass: 'text-pink-300' },
-  wisdom: { labelKey: 'attributes.wisdom', icon: '📖', colorClass: 'text-yellow-600' },
-  speed: { labelKey: 'attributes.speed', icon: '🏃', colorClass: 'text-green-400' },
-  charisma: { labelKey: 'attributes.charisma', icon: '✨', colorClass: 'text-yellow-300' },
+  strength: { labelKey: 'attribute.strength', icon: '👊', colorClass: 'text-[#fcd883]' },
+  defense: { labelKey: 'attribute.defense', icon: '🛡️', colorClass: 'text-gray-400' },
+  spirit: { labelKey: 'attribute.spirit', icon: '🧙‍♂️', colorClass: 'text-pink-300' },
+  wisdom: { labelKey: 'attribute.wisdom', icon: '📖', colorClass: 'text-yellow-600' },
+  speed: { labelKey: 'attribute.speed', icon: '🏃', colorClass: 'text-green-400' },
+  charisma: { labelKey: 'attribute.charisma', icon: '✨', colorClass: 'text-yellow-300' },
 
-  fire: { labelKey: 'resistances.fire', icon: '🔥', colorClass: 'text-orange-500' },
-  water: { labelKey: 'resistances.water', icon: '💧', colorClass: 'text-blue-400' },
-  ice: { labelKey: 'resistances.ice', icon: '🧊', colorClass: 'text-cyan-200' },
-  wind: { labelKey: 'resistances.wind', icon: '🍃', colorClass: 'text-gray-100' },
-  thunder: { labelKey: 'resistances.thunder', icon: '⚡', colorClass: 'text-[#ffffcc]' },
-  machine: { labelKey: 'resistances.machine', icon: '⚙️', colorClass: 'text-gray-500' },
-  dark: { labelKey: 'resistances.dark', icon: '🌑', colorClass: 'text-purple-500' }
+  fire: { labelKey: 'resistance.fire', icon: '🔥', colorClass: 'text-orange-500' },
+  water: { labelKey: 'resistance.water', icon: '💧', colorClass: 'text-blue-400' },
+  ice: { labelKey: 'resistance.ice', icon: '🧊', colorClass: 'text-cyan-200' },
+  wind: { labelKey: 'resistance.wind', icon: '🍃', colorClass: 'text-gray-100' },
+  thunder: { labelKey: 'resistance.thunder', icon: '⚡', colorClass: 'text-[#ffffcc]' },
+  machine: { labelKey: 'resistance.machine', icon: '⚙️', colorClass: 'text-gray-500' },
+  dark: { labelKey: 'resistance.dark', icon: '🌑', colorClass: 'text-purple-500' }
 };
 
 const metadata = computed(() => {

@@ -12,7 +12,7 @@ const props = defineProps<{
 const { t, getLocalized } = useLocalization()
 
 const currentLocation = computed(() => {
-    if (!props.areaInfo) return t('area.unknownArea') || 'Unknown Area'
+    if (!props.areaInfo) return t('areaInformation.unknownArea') || 'Unknown Area'
     return getLocalized(props.areaInfo.location.name)
 })
 
@@ -46,7 +46,7 @@ const closeEnemyDetails = () => {
   <aside class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-3 flex flex-col pt-0 mb-1 overflow-hidden">
     <!-- Header banner -->
     <div class="w-full flex items-center justify-center border-b border-[#0033aa]/50 bg-[#000e3f] sticky top-0 py-2 z-10">
-      <h3 class="font-bold tracking-widest text-[#0077ff] text-shadow-sm uppercase text-sm">{{ $t('area.title') }}</h3>
+      <h3 class="font-bold tracking-widest text-[#0077ff] text-shadow-sm uppercase text-sm">{{ $t('areaInformation.title') }}</h3>
     </div>
     
     <div class="flex-1 flex flex-col mt-2 h-full">
@@ -78,10 +78,10 @@ const closeEnemyDetails = () => {
 
         <!-- Area Enemies -->
         <div class="flex-1 w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
-             <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">{{ $t('area.enemies') }}</h4>
+             <h4 class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">{{ $t('areaInformation.enemies') }}</h4>
              
              <div v-if="areaEnemies.length === 0" class="text-xs text-[#00aaff] opacity-50 italic">
-                {{ $t('area.safeZone') || 'Safe Zone' }}
+                {{ $t('areaInformation.safeZone') || 'Safe Zone' }}
              </div>
              <div v-else class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
                 <button 

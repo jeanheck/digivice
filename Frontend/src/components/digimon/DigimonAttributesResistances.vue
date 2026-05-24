@@ -58,8 +58,22 @@ const enrichedResistances = computed<EnrichedResistances>(() => {
 
 const activeTooltip = ref({ show: false, title: '', text: '', isMath: false, base: 0, equip: 0, digi: 0, total: 0, x: 0, y: 0 });
 
-const showIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
-  const text = t(`tooltips.${propertyKey}`);
+const showAttributeIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
+  const text = t(`attribute.${propertyKey}`);
+  if (!text) {
+    return;
+  }
+  
+  let posX = event.clientX + 15;
+  if (posX + 250 > window.innerWidth) {
+    posX = event.clientX - 260;
+  }
+  
+  activeTooltip.value = { show: true, isMath: false, title, text, base: 0, equip: 0, digi: 0, total: 0, x: posX, y: event.clientY + 15 };
+};
+
+const showResistanceIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
+  const text = t(`element.${propertyKey}`);
   if (!text) {
     return;
   }
@@ -114,7 +128,7 @@ const moveTooltip = (event: MouseEvent) => {
             :key="key"
             :enrichedAttributeResistance="attr"
             :property-key="key"
-            @showIconTooltip="showIconTooltip"
+            @showIconTooltip="showAttributeIconTooltip"
             @showMathTooltip="showMathTooltip"
             @moveTooltip="moveTooltip"
             @hideTooltip="hideTooltip"
@@ -127,7 +141,7 @@ const moveTooltip = (event: MouseEvent) => {
             :key="key"
             :enrichedAttributeResistance="res"
             :property-key="key"
-            @showIconTooltip="showIconTooltip"
+            @showIconTooltip="showResistanceIconTooltip"
             @showMathTooltip="showMathTooltip"
             @moveTooltip="moveTooltip"
             @hideTooltip="hideTooltip"

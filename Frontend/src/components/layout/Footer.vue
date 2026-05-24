@@ -35,7 +35,7 @@ const openLogsFolder = async () => {
       
       <div class="flex items-center gap-2">
         <span class="w-3 h-3 rounded-full" :class="isConnected ? 'bg-green-500' : 'bg-red-500'"></span>
-        {{ isConnected ? $t('common.connected') : $t('common.disconnected') }}
+        {{ isConnected ? $t('connection.connected') : $t('connection.disconnected') }}
       </div>
     </div>
 
@@ -50,10 +50,10 @@ const openLogsFolder = async () => {
     </div>
     
     <div class="font-bold text-lg flex items-baseline cursor-help"
-         @mouseenter="e => tooltipRef?.show(e, $t('player.groupCharisma'), $t('player.groupCharismaWarning'))"
+         @mouseenter="e => tooltipRef?.show(e, $t('party.groupCharisma'), $t('party.groupCharismaWarning'))"
          @mousemove="e => tooltipRef?.move(e)"
          @mouseleave="() => tooltipRef?.hide()">
-      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('player.groupCharisma') }}:</span>
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('party.groupCharisma') }}:</span>
       <span class="text-white">{{ groupCharisma }}</span>
     </div>
   </footer>
