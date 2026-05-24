@@ -20,22 +20,4 @@ export class DigimonStatusCalculator {
         const enrichedEquipments = EquipamentRepository.getEnrichedEquipmentsByIds(equipments);
         return this.calculateBonusFromEquipaments(attributeOrResistanceType, enrichedEquipments);
     }
-
-
-    public static calculateBonusFromActiveDigievolution(
-        attributeOrResistanceType: AttributeType | ResistanceType,
-        section: 'attributes' | 'resistances',
-        digievolution: any | null): number {
-        if (!digievolution) {
-            return 0;
-        }
-
-        const jsonField = section === 'attributes' ? digievolution.Attributes : digievolution.Resistances;
-        if (jsonField) {
-            const pascalProp = attributeOrResistanceType.charAt(0).toUpperCase() + attributeOrResistanceType.slice(1);
-            return jsonField[pascalProp] || 0;
-        }
-
-        return 0;
-    }
 }

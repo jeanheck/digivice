@@ -16,6 +16,6 @@ export class DigievolutionCalculator {
             return null;
         }
 
-        return DigievolutionRepository.getEnrichedDigievolution(activeDigievolutionId, activeDigievolution.level);
+        return DigievolutionRepository.getEnrichedDigievolution(activeDigievolutionId);
     }
 }
