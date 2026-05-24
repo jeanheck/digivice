@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { TooltipPlacement } from "@/composables/use-tooltip-position";
 
-const props = withDefaults(
+withDefaults(
     defineProps<{
         show: boolean;
         x: number;

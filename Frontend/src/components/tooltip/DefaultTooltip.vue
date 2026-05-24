@@ -14,7 +14,7 @@ const props = withDefaults(
         placement?: TooltipPlacement;
     }>(),
     {
-        maxWidth: 250,
+        maxWidth: 300,
         placement: "below"
     }
 );
