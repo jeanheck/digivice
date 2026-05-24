@@ -1,25 +1,27 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import DigimonVitalsExperience from './DigimonVitalsExperience.vue';
 import DigimonDigievolutions from './DigimonDigievolutions.vue';
 import DigimonAttributesResistances from './DigimonAttributesResistances.vue';
 import DigimonEquipments from './DigimonEquipments.vue';
-// import DigievolutionGridModal from './DigievolutionGridModal.vue';
-import type { Digimon } from '@/models';
-import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
+import type { DigimonSlot } from '@/models';
+import { DigimonSlotPresenter } from '@/presenters/digimon-slot.presenter';
 
 const props = defineProps<{
-  digimon: Digimon;
-  digimonId: number;
+  digimonSlot: DigimonSlot;
 }>();
-
-const isGridModalOpen = ref(false);
+const digimon = computed(() => {
+  return props.digimonSlot.digimon!;
+});
+const digimonId = computed(() => {
+  return props.digimonSlot.digimonId!;
+});
 
 const activeDigievolution = computed(() => {
-  if (!props.digimon.activeDigievolutionId) {
+  if (!digimon.value.activeDigievolutionId) {
     return null;
   }
-  return DigievolutionCalculator.getActiveRawDigievolution(props.digimon.activeDigievolutionId);
+  return DigimonSlotPresenter.getActiveDigievolutionViewModel(digimon.value.activeDigievolutionId);
 });
 </script>
 

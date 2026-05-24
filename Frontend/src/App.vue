@@ -7,6 +7,7 @@ import Journal from './components/journal/Journal.vue';
 import AreaInformationPanel from '@/components/area-information/AreaInformationPanel.vue';
 import QuestDetailsModal from './components/modal/QuestDetailsModal.vue';
 import Footer from './components/footer/Footer.vue';
+import DigimonSlot from './components/digimon/DigimonSlot.vue';
 
 const store = useGameStore();
 const { getLocalizedQuest } = useLocalization();
@@ -60,24 +61,23 @@ const handleCloseQuestModal = () => {
 </script>
 
 <template>
-  <main class="min-h-screen bg-transparent p-4 flex flex-col gap-4 max-w-[1800px] mx-auto text-white">
-    <div class="flex-1 flex gap-4 min-h-[600px]">
+  <main class="min-h-screen bg-transparent p-4 flex flex-col gap-4 max-w-450 mx-auto text-white">
+    <div class="flex-1 flex gap-4 min-h-150">
       
-      <div class="flex-[3] grid grid-cols-3 gap-4">
-        <Digimon 
+      <div class="flex-3 grid grid-cols-3 gap-4">
+        <DigimonSlot
           v-for="slot in activePartySlots" 
           :key="slot.index" 
-          :digimon="slot.digimon!" 
-          :digimon-id="slot.digimonId!"
+          :digimonSlot="slot"
         />
       </div>
 
-      <div class="flex-1 min-w-[300px] min-h-0 overflow-hidden flex flex-col gap-4">
-        <div class="flex-[3] min-h-0 overflow-hidden flex flex-col">
+      <div class="flex-1 min-w-75 min-h-0 overflow-hidden flex flex-col gap-4">
+        <div class="flex-3 min-h-0 overflow-hidden flex flex-col">
           <Journal @quest-click="handleQuestClick" class="flex-1" />
         </div>
         
-        <div class="flex-[2] min-h-[200px] flex flex-col">
+        <div class="flex-2 min-h-50 flex flex-col">
           <AreaInformationPanel :area-info="store.areaInformation ?? null" class="flex-1" />
         </div>
       </div>
