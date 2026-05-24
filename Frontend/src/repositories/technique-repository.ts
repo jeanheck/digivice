@@ -1,4 +1,4 @@
-import type { TechniqueTable } from '@/repositories/tables/technique-table';
+import type { TechniqueTable } from '@/repositories/tables/digievolution/technique-table';
 import TechniqueJson from '@/database/digievolution/technique.json';
 import type { TechniqueRaw } from './tables/raws/digievolution/technique-raw';
 

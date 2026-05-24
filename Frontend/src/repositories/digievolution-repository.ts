@@ -1,7 +1,7 @@
 import DigievolutionJson from '@/database/digievolution/digievolution.json';
 import DigievolutionTechniquesJson from '@/database/digievolution/digievolution-technique.json';
-import type { DigievolutionTable } from '@/repositories/tables/digievolution-table';
-import type { DigievolutionTechniqueTable } from '@/repositories/tables/digievolution-technique-table';
+import type { DigievolutionTable } from '@/repositories/tables/digievolution/digievolution-table';
+import type { DigievolutionTechniqueTable } from '@/repositories/tables/digievolution/digievolution-technique-table';
 import type { DigievolutionRaw } from './tables/raws/digievolution/digievolution-raw';
 import type { DigievolutionTechniqueRaw } from './tables/raws/digievolution/digievolution-technique-raw';
 
