@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, watch, computed } from 'vue'
-import type { Digimon } from '../../models'
-import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
+import type { Digimon } from '@/models'
+import { EvolutionGraph, type EvolutionRequirement } from '@/logic/EvolutionGraph'
 import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
 import DigievolutionDetailPanel from './DigievolutionDetailPanel.vue'

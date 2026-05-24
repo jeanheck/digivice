@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue';
 import type { DigievolutionSlot, EnrichedDigievolution } from '../../models';
 import { DigievolutionRepository } from '../../repositories/digievolution-repository';
-import DigievolutionTechniquesModal from './DigievolutionTechniquesModal.vue';
+import DigievolutionTechniquesModal from './digievolution/DigievolutionTechniquesModal.vue';
 
 const props = defineProps<{
   digievolutionsSlots: DigievolutionSlot[];

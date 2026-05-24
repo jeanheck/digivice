@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { invoke } from '@tauri-apps/api/core';
 import LanguageSelector from '../ui/LanguageSelector.vue';
-import MouseTooltip from '../ui/MouseTooltip.vue';
+import MouseTooltip from '../tooltip/MouseTooltip.vue';
 
 defineProps<{
   playerName: string;

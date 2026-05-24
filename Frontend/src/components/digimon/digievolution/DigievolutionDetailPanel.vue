@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import type { Digimon } from '../../models'
-import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
-import { useLocalization } from '../../composables/useLocalization'
-import DigievolutionData from '../../database/Digievolution.json'
-import TechniquesTable from '../../database/TechniquesTable.json'
-import DigievolutionTechniques from '../../database/DigievolutionTechniques.json'
+import { computed, ref } from 'vue';
+import type { Digimon } from '@/models/digimon';
+import { EvolutionGraph, type EvolutionRequirement } from '@/logic/EvolutionGraph';
+import { useLocalization } from '@/composables/useLocalization';
+import TechniquesTable from '@/database/digievolution/technique.json';
+import DigievolutionTechniques from '@/database/digievolution/digievolution-technique.json';
+import type { Technique } from '@/models';
 
 const props = defineProps<{
   evolution: { name: string, requirements: EvolutionRequirement[] }
@@ -49,7 +49,7 @@ interface DigivolutionTechEntry {
 
 // Lookup maps
 const techniqueById = Object.fromEntries(
-  (TechniquesTable as { techniques: TechEntry[] }).techniques.map(t => [t.id, t])
+  (TechniquesTable as { techniques: Technique[] }).techniques.map(t => [t.id, t])
 )
 
 const techniques = computed(() => {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { Digimon } from '../../models'
-import { EvolutionGraph, type EvolutionRequirement } from '../../logic/EvolutionGraph'
+import type { Digimon } from '@/models'
+import { EvolutionGraph, type EvolutionRequirement } from '@/logic/EvolutionGraph'
 import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 
 const props = defineProps<{

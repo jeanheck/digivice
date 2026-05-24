@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { watch, ref, nextTick } from 'vue'
-import type { Digimon } from '../../models'
-import { EvolutionGraph, type FamilyChain, type EvolutionRequirement } from '../../logic/EvolutionGraph'
+import type { Digimon } from '@/models/digimon'
+import { EvolutionGraph, type FamilyChain, type EvolutionRequirement } from '@/logic/EvolutionGraph'
 import DigievolutionTreeNode from './DigievolutionTreeNode.vue'
 
 const props = defineProps<{

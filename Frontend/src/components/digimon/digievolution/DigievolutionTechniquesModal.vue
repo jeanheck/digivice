@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { watch, onUnmounted } from 'vue';
 import IconClose from '../icons/IconClose.vue';
-import type { Technique, TechniqueTypeId } from '../../models';
-import { TechniqueIcon } from '../../constants/technique-icons';
-import { useLocalization } from '../../composables/useLocalization';
+import type { Technique } from '@/models';
+import { TechniqueIcon } from '@/constants/technique-icons';
+import { useLocalization } from '@/composables/useLocalization';
 
 const props = defineProps<{
   isOpen: boolean;
