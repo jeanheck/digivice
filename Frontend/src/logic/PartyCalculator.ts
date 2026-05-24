@@ -10,12 +10,14 @@ export class PartyCalculator {
         const digimons = PartyHelper.getDigimons(digimonSlots);
         const totalDigimonsCharisma = MathUtils.Sum(digimons.map((d) => Number(d.attributes.charisma)));
         const totalBonusFromEquipments = MathUtils.Sum(digimons.map((digimon) => {
-            const enrichedEquipments = EquipmentRepository.getEnrichedEquipmentsByIds(digimon.equipments);
+            const enrichedEquipments = EquipmentRepository.getEnrichedEquipmentsByIds(digimon.equipments);            
             return DigimonStatusCalculator.calculateBonusFromEquipaments(
                 AttributeType.Charisma,
                 enrichedEquipments
             );
         }));
+
+        
 
         return totalDigimonsCharisma + totalBonusFromEquipments;
     }

@@ -22,9 +22,11 @@ const createEnrichedAttributeResistance = (
   digiSource: any
 ): EnrichedAttributeResistance => {
   const val = source[key];
+
   const fromDigimon = (val && typeof val === 'object') ? (val.fromDigimon ?? 0) : Number(val ?? 0);
   const fromEquipaments = DigimonStatusCalculator.calculateBonusFromRawEquipments(key as unknown as AttributeType | ResistanceType, props.equipments);
   const fromDigievolution = digiSource ? Number(digiSource[key] ?? 0) : 0;
+
   return {
     fromDigimon,
     fromEquipaments,
@@ -59,7 +61,7 @@ const enrichedResistances = computed<EnrichedResistances>(() => {
 const activeTooltip = ref({ show: false, title: '', text: '', isMath: false, base: 0, equip: 0, digi: 0, total: 0, x: 0, y: 0 });
 
 const showAttributeIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
-  const text = t(`attribute.${propertyKey}`);
+  const text = t(`attribute.${propertyKey}-explanation`);
   if (!text) {
     return;
   }
@@ -73,7 +75,7 @@ const showAttributeIconTooltip = (event: MouseEvent, title: string, propertyKey:
 };
 
 const showResistanceIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
-  const text = t(`element.${propertyKey}`);
+  const text = t(`element.${propertyKey}-explanation`);
   if (!text) {
     return;
   }

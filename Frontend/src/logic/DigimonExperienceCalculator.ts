@@ -9,6 +9,9 @@ export class DigimonExperienceCalculator {
     }
 
     public static getRequiredExperienceForNextLevel(digimonName: string, currentLevel: number): number {
+        if (currentLevel >= this.MAX_LEVEL) {
+            return 0;
+        }
         return DigimonRepository.getRequiredExperienceForLevel(digimonName, currentLevel + 1);
     }
 

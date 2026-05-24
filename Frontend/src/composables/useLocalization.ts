@@ -88,7 +88,7 @@ export function useLocalization() {
           let localStepObj = null;
           if (localSteps) {
             const stepNum = step.number !== undefined ? step.number : step.Number;
-            localStepObj = localSteps.find((s: any) => Number(s.Number) === Number(stepNum));
+            localStepObj = localSteps[Number(stepNum)];
           }
 
           // Ensure both isDone and isCompleted are set for backwards compatibility / UI robustness

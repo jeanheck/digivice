@@ -1,4 +1,4 @@
 export enum EquipmentsAttributesOperationType {
-    Addition = "+",
-    Subtraction = "-"
+    Addition = "Addition",
+    Subtraction = "Subtraction"
 }

@@ -28,7 +28,7 @@ const { t, getLocalized, getLocalizedEquipmentName, getLocalizedEquipmentNote } 
 
            <div v-if="activeTooltip.item.attributes && activeTooltip.item.attributes.length > 0" class="flex flex-col gap-[2px] mb-1">
                <div v-for="attr in activeTooltip.item.attributes" :key="attr.attribute" class="flex justify-between text-xs items-center bg-[#002266]/40 px-1 rounded-sm">
-                  <span class="text-gray-200">{{ t('equipamentsAttributes.' + attr.attribute) }}</span>
+                  <span class="text-gray-200">{{ t('attribute.' + attr.attribute.toLowerCase()) }}</span>
                   <span :class="attr.type === EquipmentsAttributesOperationType.Addition ? 'text-green-400' : 'text-red-400'" class="font-bold tracking-wider">
                     {{ attr.type === EquipmentsAttributesOperationType.Addition ? '+' : '-' }}{{ attr.value }}
                   </span>

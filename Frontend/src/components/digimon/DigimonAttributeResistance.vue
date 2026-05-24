@@ -31,13 +31,13 @@ const metadataMap: Record<string, Metadata> = {
   speed: { labelKey: 'attribute.speed', icon: '🏃', colorClass: 'text-green-400' },
   charisma: { labelKey: 'attribute.charisma', icon: '✨', colorClass: 'text-yellow-300' },
 
-  fire: { labelKey: 'resistance.fire', icon: '🔥', colorClass: 'text-orange-500' },
-  water: { labelKey: 'resistance.water', icon: '💧', colorClass: 'text-blue-400' },
-  ice: { labelKey: 'resistance.ice', icon: '🧊', colorClass: 'text-cyan-200' },
-  wind: { labelKey: 'resistance.wind', icon: '🍃', colorClass: 'text-gray-100' },
-  thunder: { labelKey: 'resistance.thunder', icon: '⚡', colorClass: 'text-[#ffffcc]' },
-  machine: { labelKey: 'resistance.machine', icon: '⚙️', colorClass: 'text-gray-500' },
-  dark: { labelKey: 'resistance.dark', icon: '🌑', colorClass: 'text-purple-500' }
+  fire: { labelKey: 'element.fire', icon: '🔥', colorClass: 'text-orange-500' },
+  water: { labelKey: 'element.water', icon: '💧', colorClass: 'text-blue-400' },
+  ice: { labelKey: 'element.ice', icon: '🧊', colorClass: 'text-cyan-200' },
+  wind: { labelKey: 'element.wind', icon: '🍃', colorClass: 'text-gray-100' },
+  thunder: { labelKey: 'element.thunder', icon: '⚡', colorClass: 'text-[#ffffcc]' },
+  machine: { labelKey: 'element.machine', icon: '⚙️', colorClass: 'text-gray-500' },
+  dark: { labelKey: 'element.dark', icon: '🌑', colorClass: 'text-purple-500' }
 };
 
 const metadata = computed(() => {

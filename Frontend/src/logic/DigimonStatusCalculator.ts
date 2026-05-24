@@ -1,5 +1,5 @@
 import { MathUtils } from "@/utils/MathUtils";
-import { AttributeType, ResistanceType, type EnrichedEquipment, type Equipments } from "@/models";
+import { AttributeType, EquipmentsAttributesOperationType, ResistanceType, type EnrichedEquipment, type Equipments } from "@/models";
 import { EquipmentRepository } from "@/repositories/equipment-repository";
 
 export class DigimonStatusCalculator {
@@ -10,7 +10,10 @@ export class DigimonStatusCalculator {
             .flatMap(enrichedEquipment => enrichedEquipment.attributes)
             .filter(attribute => attribute.attribute.toLowerCase() === lowerCaseAttributeOrResistanceType);
 
-        return MathUtils.Sum(attributes.map(attribute => Number(`${attribute.type}${attribute.value}`)));
+        return MathUtils.Sum(attributes.map(attribute => {
+            const operation = attribute.type === EquipmentsAttributesOperationType.Addition ? "+" : "-";
+            return Number(`${operation}${attribute.value}`);
+        }));
     }
 
     public static calculateBonusFromRawEquipments(
