@@ -1,6 +1,6 @@
 {
     "Id": "FolderBag",
-    "Prerequisites": [],
+    "Requisites": [],
     "Steps": {
         "1": {
             "Location": "0200",

@@ -39,7 +39,7 @@
             ]
         },
         "3": {
-            "Prerequisites": [
+            "Requisites": [
                 {
                     "Id": "BambooSpear"
                 },
