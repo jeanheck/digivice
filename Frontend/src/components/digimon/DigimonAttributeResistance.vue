@@ -51,7 +51,7 @@ const label = computed(() => {
 
 <template>
   <div class="flex items-center gap-2">
-    <div class="flex items-center w-[20px] justify-center cursor-help select-none z-20 tooltip-anchor relative"
+    <div class="flex items-center w-5 justify-center cursor-help select-none z-20 tooltip-anchor relative"
          @mouseenter="e => emit('showIconTooltip', e, label, propertyKey)"
          @mousemove="e => emit('moveTooltip', e)"
          @mouseleave="emit('hideTooltip')">

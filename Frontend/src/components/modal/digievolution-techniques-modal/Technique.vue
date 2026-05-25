@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { TechniqueIcon } from "@/constants/technique-icons";
 import { TechniquePresenter } from "@/presenters/technique-presenter";
-import type { TechniqueViewModel } from "@/view-models/technique-view-model";
 import { computed } from "vue";
 
 const props = defineProps<{
@@ -54,7 +53,7 @@ const techniqueViewModel = computed(() => {
         >
           {{ $t(`technique.${techniqueViewModel.id}.name`) }}
         </span>
-        <span v-if="!techniqueViewModel.isUnlocked" class="text-[10px] text-red-400/80 ml-1">Lv.{{ techniqueViewModel.learnLevel }}</span>
+        <span v-if="!techniqueViewModel.isUnlocked" class="text-[10px] text-red-400/80 ml-1">{{ $t(`digievolution.lv`) }}.{{ techniqueViewModel.learnLevel }}</span>
         <span v-else class="text-[10px] text-green-400/80 ml-1">✓</span>
       </div>
 
@@ -62,9 +61,9 @@ const techniqueViewModel = computed(() => {
 
       <div class="flex gap-3 mt-1 text-[10px]">
         <span :class="elementColor(techniqueViewModel.element)">
-          {{ $t(`element.${techniqueViewModel.element}`) }}
-        </span>
-        <span class="text-blue-300/70">MP {{ techniqueViewModel.mp }}</span>
+          {{ $t('digievolution.element') }}: {{ $t(`element.${techniqueViewModel.element}`) }}
+        </span>|
+        <span class="text-blue-300/70">{{ $t(`digievolution.mpCost`) }}: {{ techniqueViewModel.mp }}</span>
       </div>
     </div>
   </div>

@@ -11,6 +11,8 @@
     "unknownParam": "Parâmetro Desconhecido",
     "lv": "Nv",
     "techniques": "Técnicas",
-    "searchDigimon": "Digite o nome de uma Digievolução..."
+    "searchDigimon": "Digite o nome de uma Digievolução...",
+    "mpCost": "Custo de MP",
+    "element": "Elemento"
   }
 }

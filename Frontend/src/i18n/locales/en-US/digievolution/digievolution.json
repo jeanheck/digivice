@@ -11,6 +11,8 @@
     "unknownParam": "Unknown Parameter",
     "lv": "Lv",
     "techniques": "Techniques",
-    "searchDigimon": "Type a Digievolution name..."
+    "searchDigimon": "Type a Digievolution name...",
+    "mpCost": "MP Cost",
+    "element": "Element"
   }
 }
