@@ -1,19 +1,19 @@
 {
   "element": {
-    "Fire": "Fogo",
-    "Fire-explanation": "Reduz o dano recebido de técnicas do elemento Fogo.",
-    "Water": "Água",
-    "Water-explanation": "Reduz o dano recebido de técnicas do elemento Água.",
-    "Ice": "Gelo",
-    "Ice-explanation": "Reduz o dano recebido de técnicas do elemento Gelo.",
-    "Wind": "Vento",
-    "Wind-explanation": "Reduz o dano recebido de técnicas do elemento Vento.",
-    "Thunder": "Trovão",
-    "Thunder-explanation": "Reduz o dano recebido de técnicas do elemento Trovão.",
-    "Machine": "Máquina",
-    "Machine-explanation": "Reduz o dano recebido de técnicas do elemento Máquina.",
-    "Dark": "Trevas",
-    "Dark-explanation": "Reduz o dano recebido de técnicas do elemento Trevas.",
-    "None": "Nenhum"
+    "fire": "Fogo",
+    "fire-explanation": "Reduz o dano recebido de técnicas do elemento Fogo.",
+    "water": "Água",
+    "water-explanation": "Reduz o dano recebido de técnicas do elemento Água.",
+    "ice": "Gelo",
+    "ice-explanation": "Reduz o dano recebido de técnicas do elemento Gelo.",
+    "wind": "Vento",
+    "wind-explanation": "Reduz o dano recebido de técnicas do elemento Vento.",
+    "thunder": "Trovão",
+    "thunder-explanation": "Reduz o dano recebido de técnicas do elemento Trovão.",
+    "machine": "Máquina",
+    "machine-explanation": "Reduz o dano recebido de técnicas do elemento Máquina.",
+    "dark": "Trevas",
+    "dark-explanation": "Reduz o dano recebido de técnicas do elemento Trevas.",
+    "none": "Nenhum"
   }
 }
