@@ -51,6 +51,7 @@ function closeSkills(): void {
     :is-open="modalOpen"
     :digievolution-id="digievolutionId"
     :digievolution-name="digievolutionName"
+    :digievolution-level="digievolutionLevel"
     @close="closeSkills"
   />
 </template>

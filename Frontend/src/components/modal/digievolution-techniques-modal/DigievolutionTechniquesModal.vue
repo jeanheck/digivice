@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { watch, onUnmounted, computed } from 'vue';
-import IconClose from '@/components/modal/IconClose.vue';
-import { TechniqueIcon } from '@/constants/technique-icons';
-import { DigievolutionTechniquesModalPresenter } from '@/presenters/digievolution-techniques-modal.presenter';
+import { watch, onUnmounted, computed } from "vue";
+import IconClose from "@/components/modal/IconClose.vue";
+import Technique from "@/components/modal/digievolution-techniques-modal/Technique.vue";
+import { DigievolutionTechniquesModalPresenter } from "@/presenters/digievolution-techniques-modal.presenter";
 
 const props = defineProps<{
   isOpen: boolean;
   digievolutionId: number;
   digievolutionName: string;
+  digievolutionLevel: number;
 }>();
 
 const emit = defineEmits(['close']);
@@ -34,23 +35,12 @@ onUnmounted(() => {
   window.removeEventListener('keydown', handleKeydown);
 });
 
-const techniques = computed(() => {
+const digievolutionTechniquesRaw = computed(() => {
   return DigievolutionTechniquesModalPresenter.getTechniquesByDigievolutionId(props.digievolutionId);
 });
-
-function elementColor(element: string): string {
-  const map: Record<string, string> = {
-    'Fire': 'text-orange-400',
-    'Water': 'text-blue-400',
-    'Ice': 'text-cyan-300',
-    'Wind': 'text-gray-300',
-    'Thunder': 'text-yellow-300',
-    'Dark': 'text-purple-400',
-    'Machine': 'text-gray-400',
-    'None': 'text-white/60',
-  };
-  return map[element] ?? 'text-white/60';
-}
+const signatureTechniqueId = computed(() => {
+  return DigievolutionTechniquesModalPresenter.getSignatureTechnique(digievolutionTechniquesRaw.value);
+});
 </script>
 
 <template>
@@ -82,46 +72,17 @@ function elementColor(element: string): string {
           </header>
 
           <div class="relative z-10 flex flex-col gap-0.75 p-3 max-h-[70vh] overflow-y-auto custom-scroll">
-            <div
-              v-for="technique in techniques"
+            <Technique
+              v-for="technique in digievolutionTechniquesRaw"
               :key="technique.id"
-              class="relative rounded px-3 py-2 flex items-start gap-3 border transition-all text-xs"
-              :class="{
-                'bg-yellow-950/30 border-yellow-500/60 shadow-[0_0_8px_rgba(234,179,8,0.2)]': technique.isSignature,
-                'bg-[#001a33]/80 border-[#0055ff]/40': !technique.isSignature && technique.isUnlocked,
-                'bg-[#000e1f]/50 border-[#0033aa]/20 opacity-50': !technique.isUnlocked,
-              }"
-            >
-              <span v-if="technique.isSignature" class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest">⭐</span>
+              :technique-id="technique.id"
+              :learn-level="technique.learnLevel"
+              :loaded-level="technique.loadedLevel"
+              :digievolution-level="digievolutionLevel"
+              :is-signature="signatureTechniqueId === technique.id"
+            />
 
-              <span class="text-base leading-none mt-px shrink-0">
-                {{ TechniqueIcon[technique.type] }}
-              </span>
-
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-1 mb-0.5">
-                  <span
-                    class="font-bold tracking-wide"
-                    :class="technique.isSignature ? 'text-yellow-300' : technique.isUnlocked ? 'text-white' : 'text-white/40'"
-                  >
-                    {{ $t(`techniques.${technique.id}.name`) }}
-                  </span>
-                  <span v-if="!technique.isUnlocked" class="text-[10px] text-red-400/80 ml-1">Lv.{{ technique.learnLevel }}</span>
-                  <span v-else class="text-[10px] text-green-400/80 ml-1">✓</span>
-                </div>
-
-                <p class="text-white/50 text-[11px] leading-snug">{{ $t(`techniques.${technique.id}.description`) }}</p>
-
-                <div class="flex gap-3 mt-1 text-[10px]">
-                  <span :class="elementColor(technique.element)">
-                    {{ $t(`element.${technique.element}`) }}
-                  </span>
-                  <span class="text-blue-300/70">MP {{ technique.mp }}</span>
-                </div>
-              </div>
-            </div>
-
-            <p v-if="techniques.length === 0" class="text-white/40 text-center py-4 text-xs">
+            <p v-if="digievolutionTechniquesRaw.length === 0" class="text-white/40 text-center py-4 text-xs">
               {{ $t('digievolution.noTechData') }}
             </p>
           </div>

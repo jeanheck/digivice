@@ -1,19 +1,14 @@
 import { DigievolutionRepository } from "@/repositories/digievolution-repository";
-import { TechniqueRepository } from "@/repositories/technique-repository";
-import type { TechniqueViewModel } from "@/view-models/technique-view-model";
+import type { DigievolutionTechniqueRaw } from "@/repositories/tables/raws/digievolution/digievolution-technique-raw";
 
 export class DigievolutionTechniquesModalPresenter {
-    public static getTechniquesByDigievolutionId(digievolutionId: number): TechniqueViewModel[] {
-        const digievolutionsTechniqueRaw = DigievolutionRepository.getRawDigievolutionTechniquesById(digievolutionId);
-        const techniquesRaw = digievolutionsTechniqueRaw
-            .map(digievolutionTechniqueRaw => TechniqueRepository.getTechniqueById(digievolutionTechniqueRaw.id));
-        
-        return techniquesRaw.map(techniqueRaw => ({
-            type: techniqueRaw.type,
-            element: techniqueRaw.element,
-            elementStrength: techniqueRaw.elementStrength,
-            mp: techniqueRaw.mp,
-            power: techniqueRaw.power
-        }));
+    public static getTechniquesByDigievolutionId(digievolutionId: number): DigievolutionTechniqueRaw[] {
+        return DigievolutionRepository.getRawDigievolutionTechniquesById(digievolutionId);
+    }
+    public static getSignatureTechnique(digievolutionTechniquesRaw: DigievolutionTechniqueRaw[]): string {
+        const lastTechniqueToBeLearned = digievolutionTechniquesRaw.reduce((highest, current) =>
+            current.learnLevel > highest.learnLevel ? current : highest
+        );
+        return lastTechniqueToBeLearned.id;
     }
 }
