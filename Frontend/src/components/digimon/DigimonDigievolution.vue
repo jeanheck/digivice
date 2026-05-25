@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import DigievolutionTechniquesModal from "@/components/modal/DigievolutionTechniquesModal.vue";
+import DigievolutionTechniquesModal from "@/components/modal/digievolution-techniques-modal/DigievolutionTechniquesModal.vue";
 import { DigimonDigievolutionPresenter } from "@/presenters/digimon-digievolution.presenter";
 
 const props = defineProps<{
