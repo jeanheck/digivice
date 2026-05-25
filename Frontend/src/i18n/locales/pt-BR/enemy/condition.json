@@ -1,11 +1,11 @@
 {
   "conditions": {
     "canPoison": "Pode ser Envenenado",
-    "resistancePoison": "Resistente ao Veneno",
+    "resistancePoison": "Resistência ao Veneno",
     "canParalyze": "Pode ser Paralisado",
-    "resistanceParalyze": "Resistente a Paralisia",
+    "resistanceParalyze": "Resistência a Paralisia",
     "canConfuse": "Pode ser Confundido",
-    "resistanceConfuse": "Resistente a Confusão",
+    "resistanceConfuse": "Resistência a Confusão",
     "canSleep": "Pode ser Adormecido",
     "resistanceSleep": "Resistência a Sono",
     "canKo": "Pode ser Nocauteado",

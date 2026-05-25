@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import EnemyDetailsModal from "./EnemyDetailsModal.vue";
+import EnemyModal from "./EnemyModal.vue";
 import { EnemyRepository } from "@/repositories/enemy-repository";
 
 const props = defineProps<{
@@ -44,6 +44,6 @@ const closeEnemyDetails = () => {
       </button>
     </div>
 
-    <EnemyDetailsModal :is-open="isEnemyModalOpen" :enemyId="selectedEnemy" @close="closeEnemyDetails" />
+    <EnemyModal :is-open="isEnemyModalOpen" :enemyId="selectedEnemy" @close="closeEnemyDetails" />
   </div>
 </template>
