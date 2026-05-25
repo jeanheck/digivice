@@ -1,6 +1,6 @@
-export enum TechniqueIcon {
-  Physical = '👊',
-  Magical = '🧙‍♂️',
-  Heal = '💚',
-  Support = '🟡',
+export const TechniqueIcon: Record<string, string> = {
+  Physical: '👊',
+  Magical: '🧙‍♂️',
+  Heal: '💚',
+  Support: '🟡',
 }

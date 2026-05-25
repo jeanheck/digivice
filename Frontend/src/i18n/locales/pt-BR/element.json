@@ -13,6 +13,7 @@
     "machine": "Máquina",
     "machine-explanation": "Reduz o dano recebido de técnicas do elemento Máquina.",
     "dark": "Trevas",
-    "dark-explanation": "Reduz o dano recebido de técnicas do elemento Trevas."
+    "dark-explanation": "Reduz o dano recebido de técnicas do elemento Trevas.",
+    "None": "Nenhum"
   }
 }

@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import DigimonVitalsExperience from './DigimonVitalsExperience.vue';
-import DigimonDigievolutions from './DigimonDigievolutions.vue';
+import Digimon from "./Digimon.vue";
+import DigimonDigievolutionSlots from "./DigimonDigievolutionSlots.vue";
 import DigimonAttributesResistances from './DigimonAttributesResistances.vue';
 import DigimonEquipments from './DigimonEquipments.vue';
 import type { DigimonSlot } from '@/models';
 import { DigimonSlotPresenter } from '@/presenters/digimon-slot.presenter';
 
 const props = defineProps<{
-  digimonSlot: DigimonSlot;
+  slot: DigimonSlot;
 }>();
 const digimon = computed(() => {
-  return props.digimonSlot.digimon!;
+  return props.slot.digimon!;
 });
 const digimonId = computed(() => {
-  return props.digimonSlot.digimonId!;
+  return props.slot.digimonId!;
 });
 
 const activeDigievolution = computed(() => {
@@ -27,10 +27,10 @@ const activeDigievolution = computed(() => {
 
 <template>
   <div class="flex flex-col h-full w-full bg-[#000e3f] p-4 rounded-md shadow-lg border-2 border-[#0033aa] gap-4">
-    <DigimonVitalsExperience :digimon="digimon" :digimon-id="digimonId" />
-    <DigimonDigievolutions 
-      :digievolutionsSlots="digimon.digievolutions"
-      :active-digievolution-id="digimon.activeDigievolutionId" 
+    <Digimon :digimon="digimon" :digimon-id="digimonId" />
+    <DigimonDigievolutionSlots
+      :slots="digimon.digievolutions"
+      :active-digievolution-id="digimon.activeDigievolutionId"
     />
     <DigimonAttributesResistances 
       :attributes="digimon.attributes" 

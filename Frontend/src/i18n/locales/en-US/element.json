@@ -13,6 +13,7 @@
     "machine": "Machine",
     "machine-explanation": "Reduces damage taken from Machine-elemental techniques.",
     "dark": "Dark",
-    "dark-explanation": "Reduces damage taken from Dark-elemental techniques."
+    "dark-explanation": "Reduces damage taken from Dark-elemental techniques.",
+    "None": "None"
   }
 }

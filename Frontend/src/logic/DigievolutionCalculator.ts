@@ -3,7 +3,7 @@ import type { DigievolutionRaw } from '@/repositories/tables/raws/digievolution/
 
 export class DigievolutionCalculator {
     public static getDigievolutionNameById(id: number): string {
-        return DigievolutionRepository.getDigievolutionNameById(id);
+        return DigievolutionRepository.getNameById(id);
     }
 
     public static getActiveRawDigievolution(activeDigievolutionId: number): DigievolutionRaw {

@@ -9,7 +9,7 @@ export class DigievolutionRepository {
     private static readonly digievolutionTable = DigievolutionJson as DigievolutionTable;
     private static readonly digievolutionTechniqueTable = DigievolutionTechniquesJson as DigievolutionTechniqueTable;
 
-    public static getDigievolutionNameById(id: number): string {
+    public static getNameById(id: number): string {
         return this.digievolutionTable[id]!.name;
     }
     public static getRawDigievolution(id: number): DigievolutionRaw {

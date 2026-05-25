@@ -2,7 +2,6 @@
 import { computed, ref } from 'vue';
 import { useGameStore } from './stores/use-game-store';
 import { useLocalization } from './composables/useLocalization';
-import Digimon from './components/digimon/Digimon.vue';
 import Journal from './components/journal/Journal.vue';
 import AreaInformationPanel from '@/components/area-information/AreaInformationPanel.vue';
 import QuestDetailsModal from './components/modal/QuestDetailsModal.vue';
@@ -15,7 +14,7 @@ const { getLocalizedQuest } = useLocalization();
 const activeQuestId = ref<string | null>(null);
 const isQuestModalOpen = ref(false);
 
-const activePartySlots = computed(() => {
+const slotsWithDigimon = computed(() => {
     return (store.currentState?.party?.slots ?? []).filter((slot) => {
         return slot !== null && slot !== undefined && slot.digimon !== null;
     });
@@ -66,9 +65,9 @@ const handleCloseQuestModal = () => {
       
       <div class="flex-3 grid grid-cols-3 gap-4">
         <DigimonSlot
-          v-for="slot in activePartySlots" 
+          v-for="slot in slotsWithDigimon"
           :key="slot.index" 
-          :digimonSlot="slot"
+          :slot="slot"
         />
       </div>
 
