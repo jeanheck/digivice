@@ -27,7 +27,7 @@ const locationViewModel = computed(() => {
 
     <div class="flex-1 flex flex-col mt-2 h-full">
       <MapImage :locationId="locationId" :location-image-name="locationViewModel?.image ?? null" />
-      <MapEnemies :location-alias="locationViewModel?.alias ?? null" />
+      <MapEnemies :enemies-ids="locationViewModel?.enemies ?? []" />
     </div>
   </aside>
 </template>

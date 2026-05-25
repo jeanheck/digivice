@@ -1,274 +1,431 @@
 {
   "1000": {
     "alias": "InMenu",
-    "image": "In Menu Screen"
+    "image": "In Menu Screen",
+    "enemies": []
   },
   "1300": {
     "alias": "CardShopScreen",
-    "image": "Card Shop Screen"
+    "image": "Card Shop Screen",
+    "enemies": []
   },
   "1400": {
     "alias": "RewardScreen",
-    "image": "Reward Screen"
+    "image": "Reward Screen",
+    "enemies": []
   },
   "0C01": {
     "alias": "SavingGame",
-    "image": "Saving Screen"
+    "image": "Saving Screen",
+    "enemies": []
   },
   "0A00": {
     "alias": "InTraining",
-    "image": "In Training Screen"
+    "image": "In Training Screen",
+    "enemies": []
   },
   "0D00": {
     "alias": "KadomatsuPiximon",
-    "image": "Kadomatsu Piximon Screen"
+    "image": "Kadomatsu Piximon Screen",
+    "enemies": []
   },
   "0F00": {
     "alias": "InStore",
-    "image": "In Store Screen"
+    "image": "In Store Screen",
+    "enemies": []
   },
   "0600": {
     "alias": "InBattle",
-    "image": "In Battle Screen"
+    "image": "In Battle Screen",
+    "enemies": []
   },
   "0200": {
     "alias": "AsukaCity",
-    "image": "Asuka City"
+    "image": "Asuka City",
+    "enemies": []
   },
   "0201": {
     "alias": "AsukaCity2",
-    "image": "Asuka City 2"
+    "image": "Asuka City 2",
+    "enemies": []
   },
   "0202": {
     "alias": "AsukaBridge",
-    "image": "Asuka Bridge"
+    "image": "Asuka Bridge",
+    "enemies": []
   },
   "0203": {
     "alias": "MainLobby",
-    "image": "Main Lobby"
+    "image": "Main Lobby",
+    "enemies": []
   },
   "0206": {
     "alias": "DigimonLab",
-    "image": "Digimon Lab"
+    "image": "Digimon Lab",
+    "enemies": []
   },
   "0207": {
     "alias": "LoginRoom",
-    "image": "Login Room"
+    "image": "Login Room",
+    "enemies": []
   },
   "0208": {
     "alias": "ArenaFrontDesk",
-    "image": "Arena Front Desk"
+    "image": "Arena Front Desk",
+    "enemies": []
   },
   "0210": {
     "alias": "CargoTower",
-    "image": "Cargo Tower"
+    "image": "Cargo Tower",
+    "enemies": []
   },
   "0211": {
     "alias": "YellowCruiser",
-    "image": "Yellow Cruiser"
+    "image": "Yellow Cruiser",
+    "enemies": []
   },
   "0212": {
     "alias": "TunelAquático",
-    "image": "Tunel Aquático"
+    "image": "Tunel Aquático",
+    "enemies": []
   },
   "0213": {
     "alias": "ElDorado",
-    "image": "El Dorado"
+    "image": "El Dorado",
+    "enemies": []
   },
   "0214": {
     "alias": "AdminCenter1F",
-    "image": "Admin Center 1F"
+    "image": "Admin Center 1F",
+    "enemies": []
   },
   "0215": {
     "alias": "AdminCenter2F",
-    "image": "Admin Center 2F"
+    "image": "Admin Center 2F",
+    "enemies": []
   },
   "020A": {
     "alias": "AsukaCityInn1F",
-    "image": "Asuka City - Inn 1F"
+    "image": "Asuka City - Inn 1F",
+    "enemies": []
   },
   "020B": {
     "alias": "UndergroundPath",
-    "image": "Underground Path"
+    "image": "Underground Path",
+    "enemies": []
   },
   "020C": {
     "alias": "AsukaCityInn2F",
-    "image": "Asuka City - Inn 2F"
+    "image": "Asuka City - Inn 2F",
+    "enemies": []
   },
   "020D": {
     "alias": "SmithsShop",
-    "image": "Smith's Shop"
+    "image": "Smith's Shop",
+    "enemies": []
   },
   "020E": {
     "alias": "JunkShop",
-    "image": "Junk Shop"
+    "image": "Junk Shop",
+    "enemies": []
   },
   "020F": {
     "alias": "LambChop",
-    "image": "Lamb Chop"
+    "image": "Lamb Chop",
+    "enemies": []
   },
   "021B": {
     "alias": "AsukaSewers",
-    "image": "Asuka Sewers"
+    "image": "Asuka Sewers",
+    "enemies": []
   },
   "021D": {
     "alias": "CentralPark",
-    "image": "Central Park"
+    "image": "Central Park",
+    "enemies": [
+      "71",
+      "72"
+    ]
   },
   "021E": {
     "alias": "WireForestEntrance",
-    "image": "Wire Forest Entrance"
+    "image": "Wire Forest Entrance",
+    "enemies": [
+      "71",
+      "72"
+    ]
   },
   "021F": {
     "alias": "ShellBeach",
-    "image": "Shell Beach"
+    "image": "Shell Beach",
+    "enemies": [
+      "74",
+      "76",
+      "77"
+    ]
   },
   "0220": {
     "alias": "PlugCape",
-    "image": "Plug Cape"
+    "image": "Plug Cape",
+    "enemies": [
+      "76",
+      "77",
+      "88",
+      "91"
+    ]
   },
   "0221": {
     "alias": "WestWireForest",
-    "image": "West Wire Forest"
+    "image": "West Wire Forest",
+    "enemies": [
+      "71",
+      "76",
+      "78"
+    ]
   },
   "0222": {
     "alias": "EastWireForest",
-    "image": "East Wire Forest"
+    "image": "East Wire Forest",
+    "enemies": [
+      "71",
+      "76",
+      "78"
+    ]
   },
   "0223": {
     "alias": "ForestInn",
-    "image": "Forest Inn"
+    "image": "Forest Inn",
+    "enemies": []
   },
   "0224": {
     "alias": "ForestInnBF",
-    "image": "Forest Inn BF"
+    "image": "Forest Inn BF",
+    "enemies": []
   },
   "0225": {
     "alias": "ProtocolForest",
-    "image": "Protocol Forest"
+    "image": "Protocol Forest",
+    "enemies": [
+      "81",
+      "82"
+    ]
   },
   "0226": {
     "alias": "ProtocolRuins",
-    "image": "Protocol Ruins"
+    "image": "Protocol Ruins",
+    "enemies": [
+      "1",
+      "82",
+      "84"
+    ]
   },
   "0227": {
     "alias": "DivermonsLake",
-    "image": "Divermon's Lake"
+    "image": "Divermon's Lake",
+    "enemies": [
+      "73",
+      "76"
+    ]
   },
   "0229": {
     "alias": "WindPrairie",
-    "image": "Wind Prairie"
+    "image": "Wind Prairie",
+    "enemies": [
+      "79",
+      "80"
+    ]
   },
   "0230": {
     "alias": "SeiryuTower",
-    "image": "Seiryu Tower"
+    "image": "Seiryu Tower",
+    "enemies": []
   },
   "0231": {
     "alias": "GaleTower",
-    "image": "Gale Tower"
+    "image": "Gale Tower",
+    "enemies": []
   },
   "022A": {
     "alias": "KickingForest",
-    "image": "Kicking Forest"
+    "image": "Kicking Forest",
+    "enemies": [
+      "74",
+      "77",
+      "86"
+    ]
   },
   "022B": {
     "alias": "TyrannoValley",
-    "image": "Tyranno Valley"
+    "image": "Tyranno Valley",
+    "enemies": [
+      "2",
+      "87",
+      "88",
+      "89"
+    ]
   },
   "022C": {
     "alias": "EastStation",
-    "image": "East Station"
+    "image": "East Station",
+    "enemies": []
   },
   "022D": {
     "alias": "Deeper Crevice",
-    "image": "Deeper Crevice"
+    "image": "Deeper Crevice",
+    "enemies": []
   },
   "022E": {
     "alias": "SeiryuCity",
-    "image": "Seiryu City"
+    "image": "Seiryu City",
+    "enemies": []
   },
   "022F": {
     "alias": "ZephyrTower",
-    "image": "Zephyr Tower"
+    "image": "Zephyr Tower",
+    "enemies": []
   },
   "0232": {
     "alias": "SouthStation",
-    "image": "South Station"
+    "image": "South Station",
+    "enemies": []
   },
   "0233": {
     "alias": "BulkSwamp",
-    "image": "Bulk Swamp"
+    "image": "Bulk Swamp",
+    "enemies": [
+      "90",
+      "91",
+      "184"
+    ]
   },
   "0234": {
     "alias": "BulkBridge",
-    "image": "Bulk Bridge"
+    "image": "Bulk Bridge",
+    "enemies": [
+      "90",
+      "91",
+      "184"
+    ]
   },
   "0235": {
     "alias": "BiosSwamp",
-    "image": "Bios Swamp"
+    "image": "Bios Swamp",
+    "enemies": [
+      "91",
+      "103"
+    ]
   },
   "0236": {
     "alias": "ReliabilitySpot",
-    "image": "Reliability Spot"
+    "image": "Reliability Spot",
+    "enemies": []
   },
   "0237": {
     "alias": "TranquilSwamp",
-    "image": "Tranquil Swamp"
+    "image": "Tranquil Swamp",
+    "enemies": [
+      "90",
+      "91",
+      "184"
+    ]
   },
   "0238": {
     "alias": "SwampInn",
-    "image": "Swamp Inn"
+    "image": "Swamp Inn",
+    "enemies": []
   },
   "0239": {
     "alias": "ShamanHouse",
-    "image": "Shaman House"
+    "image": "Shaman House",
+    "enemies": []
   },
   "023A": {
     "alias": "JungleGrave",
-    "image": "Jungle Grave"
+    "image": "Jungle Grave",
+    "enemies": [
+      "75",
+      "90",
+      "91",
+      "92",
+      "128",
+      "184"
+    ]
   },
   "023B": {
     "alias": "PhoenixBay",
-    "image": "Phoenix Bay"
+    "image": "Phoenix Bay",
+    "enemies": [
+      "86",
+      "95",
+      "182",
+      "189"
+    ]
   },
   "023C": {
     "alias": "EtherJungle",
-    "image": "Ether Jungle"
+    "image": "Ether Jungle",
+    "enemies": [
+      "95",
+      "182",
+      "189"
+    ]
   },
   "023D": {
     "alias": "SouthCape",
-    "image": "South Cape"
+    "image": "South Cape",
+    "enemies": [
+      "96"
+    ]
   },
   "023E": {
     "alias": "SuzakuCity",
-    "image": "Suzaku City"
+    "image": "Suzaku City",
+    "enemies": []
   },
   "023F": {
     "alias": "SuzakuInn",
-    "image": "Suzaku Inn"
+    "image": "Suzaku Inn",
+    "enemies": []
   },
   "0240": {
     "alias": "SuzakuHall",
-    "image": "Suzaku Hall"
+    "image": "Suzaku Hall",
+    "enemies": []
   },
   "0241": {
     "alias": "SuzakuUGLake",
-    "image": "Suzaku UG Lake"
+    "image": "Suzaku UG Lake",
+    "enemies": [
+      "102"
+    ]
   },
   "0242": {
     "alias": "JungleShrine",
-    "image": "Jungle Shrine"
+    "image": "Jungle Shrine",
+    "enemies": [
+      "202"
+    ]
   },
   "0243": {
     "alias": "Catacomb",
-    "image": "Catacomb"
+    "image": "Catacomb",
+    "enemies": [
+      "20",
+      "128"
+    ]
   },
   "02E0": {
     "alias": "Seabed",
-    "image": "Seabed 0"
+    "image": "Seabed 0",
+    "enemies": [
+      "98"
+    ]
   },
   "02E2": {
     "alias": "Seabed",
-    "image": "Seabed 2"
+    "image": "Seabed 2",
+    "enemies": [
+      "98"
+    ]
   }
 }
