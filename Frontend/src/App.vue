@@ -3,7 +3,7 @@ import { computed, ref } from 'vue';
 import { useGameStore } from './stores/use-game-store';
 import { useLocalization } from './composables/useLocalization';
 import Journal from './components/journal/Journal.vue';
-import AreaInformationPanel from '@/components/area-information/AreaInformationPanel.vue';
+import Map from '@/components/map/Map.vue';
 import QuestDetailsModal from './components/modal/QuestDetailsModal.vue';
 import Footer from './components/footer/Footer.vue';
 import DigimonSlot from './components/digimon/DigimonSlot.vue';
@@ -77,7 +77,7 @@ const handleCloseQuestModal = () => {
         </div>
         
         <div class="flex-2 min-h-50 flex flex-col">
-          <AreaInformationPanel :area-info="store.areaInformation ?? null" class="flex-1" />
+          <Map :location-id="store.currentState?.player?.location ?? null" class="flex-1" />
         </div>
       </div>
 

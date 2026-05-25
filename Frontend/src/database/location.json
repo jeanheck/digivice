@@ -1,274 +1,274 @@
 {
   "1000": {
-    "Location": "InMenu",
-    "Image": "In Menu Screen"
+    "alias": "InMenu",
+    "image": "In Menu Screen"
   },
   "1300": {
-    "Location": "CardShopScreen",
-    "Image": "Card Shop Screen"
+    "alias": "CardShopScreen",
+    "image": "Card Shop Screen"
   },
   "1400": {
-    "Location": "RewardScreen",
-    "Image": "Reward Screen"
+    "alias": "RewardScreen",
+    "image": "Reward Screen"
   },
   "0C01": {
-    "Location": "SavingGame",
-    "Image": "Saving Screen"
+    "alias": "SavingGame",
+    "image": "Saving Screen"
   },
   "0A00": {
-    "Location": "InTraining",
-    "Image": "In Training Screen"
+    "alias": "InTraining",
+    "image": "In Training Screen"
   },
   "0D00": {
-    "Location": "KadomatsuPiximon",
-    "Image": "Kadomatsu Piximon Screen"
+    "alias": "KadomatsuPiximon",
+    "image": "Kadomatsu Piximon Screen"
   },
   "0F00": {
-    "Location": "InStore",
-    "Image": "In Store Screen"
+    "alias": "InStore",
+    "image": "In Store Screen"
   },
   "0600": {
-    "Location": "InBattle",
-    "Image": "In Battle Screen"
+    "alias": "InBattle",
+    "image": "In Battle Screen"
   },
   "0200": {
-    "Location": "AsukaCity",
-    "Image": "Asuka City"
+    "alias": "AsukaCity",
+    "image": "Asuka City"
   },
   "0201": {
-    "Location": "AsukaCity2",
-    "Image": "Asuka City 2"
+    "alias": "AsukaCity2",
+    "image": "Asuka City 2"
   },
   "0202": {
-    "Location": "AsukaBridge",
-    "Image": "Asuka Bridge"
+    "alias": "AsukaBridge",
+    "image": "Asuka Bridge"
   },
   "0203": {
-    "Location": "MainLobby",
-    "Image": "Main Lobby"
+    "alias": "MainLobby",
+    "image": "Main Lobby"
   },
   "0206": {
-    "Location": "DigimonLab",
-    "Image": "Digimon Lab"
+    "alias": "DigimonLab",
+    "image": "Digimon Lab"
   },
   "0207": {
-    "Location": "LoginRoom",
-    "Image": "Login Room"
+    "alias": "LoginRoom",
+    "image": "Login Room"
   },
   "0208": {
-    "Location": "ArenaFrontDesk",
-    "Image": "Arena Front Desk"
+    "alias": "ArenaFrontDesk",
+    "image": "Arena Front Desk"
   },
   "0210": {
-    "Location": "CargoTower",
-    "Image": "Cargo Tower"
+    "alias": "CargoTower",
+    "image": "Cargo Tower"
   },
   "0211": {
-    "Location": "YellowCruiser",
-    "Image": "Yellow Cruiser"
+    "alias": "YellowCruiser",
+    "image": "Yellow Cruiser"
   },
   "0212": {
-    "Location": "TunelAquático",
-    "Image": "Tunel Aquático"
+    "alias": "TunelAquático",
+    "image": "Tunel Aquático"
   },
   "0213": {
-    "Location": "ElDorado",
-    "Image": "El Dorado"
+    "alias": "ElDorado",
+    "image": "El Dorado"
   },
   "0214": {
-    "Location": "AdminCenter1F",
-    "Image": "Admin Center 1F"
+    "alias": "AdminCenter1F",
+    "image": "Admin Center 1F"
   },
   "0215": {
-    "Location": "AdminCenter2F",
-    "Image": "Admin Center 2F"
+    "alias": "AdminCenter2F",
+    "image": "Admin Center 2F"
   },
   "020A": {
-    "Location": "AsukaCityInn1F",
-    "Image": "Asuka City - Inn 1F"
+    "alias": "AsukaCityInn1F",
+    "image": "Asuka City - Inn 1F"
   },
   "020B": {
-    "Location": "UndergroundPath",
-    "Image": "Underground Path"
+    "alias": "UndergroundPath",
+    "image": "Underground Path"
   },
   "020C": {
-    "Location": "AsukaCityInn2F",
-    "Image": "Asuka City - Inn 2F"
+    "alias": "AsukaCityInn2F",
+    "image": "Asuka City - Inn 2F"
   },
   "020D": {
-    "Location": "SmithsShop",
-    "Image": "Smith's Shop"
+    "alias": "SmithsShop",
+    "image": "Smith's Shop"
   },
   "020E": {
-    "Location": "JunkShop",
-    "Image": "Junk Shop"
+    "alias": "JunkShop",
+    "image": "Junk Shop"
   },
   "020F": {
-    "Location": "LambChop",
-    "Image": "Lamb Chop"
+    "alias": "LambChop",
+    "image": "Lamb Chop"
   },
   "021B": {
-    "Location": "AsukaSewers",
-    "Image": "Asuka Sewers"
+    "alias": "AsukaSewers",
+    "image": "Asuka Sewers"
   },
   "021D": {
-    "Location": "CentralPark",
-    "Image": "Central Park"
+    "alias": "CentralPark",
+    "image": "Central Park"
   },
   "021E": {
-    "Location": "WireForestEntrance",
-    "Image": "Wire Forest Entrance"
+    "alias": "WireForestEntrance",
+    "image": "Wire Forest Entrance"
   },
   "021F": {
-    "Location": "ShellBeach",
-    "Image": "Shell Beach"
+    "alias": "ShellBeach",
+    "image": "Shell Beach"
   },
   "0220": {
-    "Location": "PlugCape",
-    "Image": "Plug Cape"
+    "alias": "PlugCape",
+    "image": "Plug Cape"
   },
   "0221": {
-    "Location": "WestWireForest",
-    "Image": "West Wire Forest"
+    "alias": "WestWireForest",
+    "image": "West Wire Forest"
   },
   "0222": {
-    "Location": "EastWireForest",
-    "Image": "East Wire Forest"
+    "alias": "EastWireForest",
+    "image": "East Wire Forest"
   },
   "0223": {
-    "Location": "ForestInn",
-    "Image": "Forest Inn"
+    "alias": "ForestInn",
+    "image": "Forest Inn"
   },
   "0224": {
-    "Location": "ForestInnBF",
-    "Image": "Forest Inn BF"
+    "alias": "ForestInnBF",
+    "image": "Forest Inn BF"
   },
   "0225": {
-    "Location": "ProtocolForest",
-    "Image": "Protocol Forest"
+    "alias": "ProtocolForest",
+    "image": "Protocol Forest"
   },
   "0226": {
-    "Location": "ProtocolRuins",
-    "Image": "Protocol Ruins"
+    "alias": "ProtocolRuins",
+    "image": "Protocol Ruins"
   },
   "0227": {
-    "Location": "DivermonsLake",
-    "Image": "Divermon's Lake"
+    "alias": "DivermonsLake",
+    "image": "Divermon's Lake"
   },
   "0229": {
-    "Location": "WindPrairie",
-    "Image": "Wind Prairie"
+    "alias": "WindPrairie",
+    "image": "Wind Prairie"
   },
   "0230": {
-    "Location": "SeiryuTower",
-    "Image": "Seiryu Tower"
+    "alias": "SeiryuTower",
+    "image": "Seiryu Tower"
   },
   "0231": {
-    "Location": "GaleTower",
-    "Image": "Gale Tower"
+    "alias": "GaleTower",
+    "image": "Gale Tower"
   },
   "022A": {
-    "Location": "KickingForest",
-    "Image": "Kicking Forest"
+    "alias": "KickingForest",
+    "image": "Kicking Forest"
   },
   "022B": {
-    "Location": "TyrannoValley",
-    "Image": "Tyranno Valley"
+    "alias": "TyrannoValley",
+    "image": "Tyranno Valley"
   },
   "022C": {
-    "Location": "EastStation",
-    "Image": "East Station"
+    "alias": "EastStation",
+    "image": "East Station"
   },
   "022D": {
-    "Location": "Deeper Crevice",
-    "Image": "Deeper Crevice"
+    "alias": "Deeper Crevice",
+    "image": "Deeper Crevice"
   },
   "022E": {
-    "Location": "SeiryuCity",
-    "Image": "Seiryu City"
+    "alias": "SeiryuCity",
+    "image": "Seiryu City"
   },
   "022F": {
-    "Location": "ZephyrTower",
-    "Image": "Zephyr Tower"
+    "alias": "ZephyrTower",
+    "image": "Zephyr Tower"
   },
   "0232": {
-    "Location": "SouthStation",
-    "Image": "South Station"
+    "alias": "SouthStation",
+    "image": "South Station"
   },
   "0233": {
-    "Location": "BulkSwamp",
-    "Image": "Bulk Swamp"
+    "alias": "BulkSwamp",
+    "image": "Bulk Swamp"
   },
   "0234": {
-    "Location": "BulkBridge",
-    "Image": "Bulk Bridge"
+    "alias": "BulkBridge",
+    "image": "Bulk Bridge"
   },
   "0235": {
-    "Location": "BiosSwamp",
-    "Image": "Bios Swamp"
+    "alias": "BiosSwamp",
+    "image": "Bios Swamp"
   },
   "0236": {
-    "Location": "ReliabilitySpot",
-    "Image": "Reliability Spot"
+    "alias": "ReliabilitySpot",
+    "image": "Reliability Spot"
   },
   "0237": {
-    "Location": "TranquilSwamp",
-    "Image": "Tranquil Swamp"
+    "alias": "TranquilSwamp",
+    "image": "Tranquil Swamp"
   },
   "0238": {
-    "Location": "SwampInn",
-    "Image": "Swamp Inn"
+    "alias": "SwampInn",
+    "image": "Swamp Inn"
   },
   "0239": {
-    "Location": "ShamanHouse",
-    "Image": "Shaman House"
+    "alias": "ShamanHouse",
+    "image": "Shaman House"
   },
   "023A": {
-    "Location": "JungleGrave",
-    "Image": "Jungle Grave"
+    "alias": "JungleGrave",
+    "image": "Jungle Grave"
   },
   "023B": {
-    "Location": "PhoenixBay",
-    "Image": "Phoenix Bay"
+    "alias": "PhoenixBay",
+    "image": "Phoenix Bay"
   },
   "023C": {
-    "Location": "EtherJungle",
-    "Image": "Ether Jungle"
+    "alias": "EtherJungle",
+    "image": "Ether Jungle"
   },
   "023D": {
-    "Location": "SouthCape",
-    "Image": "South Cape"
+    "alias": "SouthCape",
+    "image": "South Cape"
   },
   "023E": {
-    "Location": "SuzakuCity",
-    "Image": "Suzaku City"
+    "alias": "SuzakuCity",
+    "image": "Suzaku City"
   },
   "023F": {
-    "Location": "SuzakuInn",
-    "Image": "Suzaku Inn"
+    "alias": "SuzakuInn",
+    "image": "Suzaku Inn"
   },
   "0240": {
-    "Location": "SuzakuHall",
-    "Image": "Suzaku Hall"
+    "alias": "SuzakuHall",
+    "image": "Suzaku Hall"
   },
   "0241": {
-    "Location": "SuzakuUGLake",
-    "Image": "Suzaku UG Lake"
+    "alias": "SuzakuUGLake",
+    "image": "Suzaku UG Lake"
   },
   "0242": {
-    "Location": "JungleShrine",
-    "Image": "Jungle Shrine"
+    "alias": "JungleShrine",
+    "image": "Jungle Shrine"
   },
   "0243": {
-    "Location": "Catacomb",
-    "Image": "Catacomb"
+    "alias": "Catacomb",
+    "image": "Catacomb"
   },
   "02E0": {
-    "Location": "Seabed",
-    "Image": "Seabed 0"
+    "alias": "Seabed",
+    "image": "Seabed 0"
   },
   "02E2": {
-    "Location": "Seabed",
-    "Image": "Seabed 2"
+    "alias": "Seabed",
+    "image": "Seabed 2"
   }
 }

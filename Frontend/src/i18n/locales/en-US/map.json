@@ -1,8 +1,7 @@
 {
-  "areaInformation": {
-    "title": "Area Information",
+  "map": {
+    "map": "Map",
     "enemies": "Enemies",
-    "unknownArea": "Unknown Area",
     "unknownZone": "Unknown Zone",
     "safeZone": "Safe Zone"
   }

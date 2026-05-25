@@ -18,9 +18,6 @@ export const useGameStore = defineStore('game', () => {
         return isConnectedWithBackend.value && isConnectedWithEmulator.value;
     });
     const currentState = ref<State | null>(null);
-    const areaInformation = computed(() => {
-        return AreaInformationConverter.convert(currentState.value?.player?.location);
-    });
     const groupCharisma = computed(() => {
         return PartyCalculator.calculatePartyCharisma(currentState.value?.party?.slots ?? []);
     });
@@ -82,7 +79,6 @@ export const useGameStore = defineStore('game', () => {
         isConnectedWithBackend,
         isConnectedWithEmulator,
         currentState,
-        areaInformation,
         groupCharisma,
         getDigimonOnPartySlot,
         syncHubConnectionStatus,

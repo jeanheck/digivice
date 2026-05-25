@@ -1,4 +1,4 @@
-import areaInformation from "./area-information.json";
+import map from "./map.json";
 import enemy from "./enemy/enemy.json";
 import species from "./enemy/specie.json";
 import conditions from "./enemy/condition.json";
@@ -22,7 +22,7 @@ import party from "./party.json";
 import connection from "./connection.json";
 
 export default {
-  ...areaInformation,
+  ...map,
   ...enemy,
   ...species,
   ...conditions,
