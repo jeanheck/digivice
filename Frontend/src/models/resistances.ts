@@ -1,9 +1,9 @@
 export interface Resistances {
-    fire: Number;
-    water: Number;
-    ice: Number;
-    wind: Number;
-    thunder: Number;
-    machine: Number;
-    dark: Number;
+    fire: number;
+    water: number;
+    ice: number;
+    wind: number;
+    thunder: number;
+    machine: number;
+    dark: number;
 }

@@ -7,6 +7,6 @@ export class DigievolutionCalculator {
     }
 
     public static getActiveRawDigievolution(activeDigievolutionId: number): DigievolutionRaw {
-        return DigievolutionRepository.getRawDigievolution(activeDigievolutionId);
+        return DigievolutionRepository.getRawDigievolutionById(activeDigievolutionId);
     }
 }

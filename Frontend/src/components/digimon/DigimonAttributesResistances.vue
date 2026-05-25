@@ -8,12 +8,16 @@ import DigimonAttributeResistance from "@/components/digimon/DigimonAttributeRes
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import DigimonTooltip from "@/components/tooltip/DigimonTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import { DigimonAttributesResistancesPresenter } from "@/presenters/digimon-attributes-resistances.presenter";
+import type { AttributeResistanceViewModel } from "@/view-models/attribute-resistance-view-model";
+import type { AttributesViewModel } from "@/view-models/attributes-view-model";
+import type { ResistancesViewModel } from "@/view-models/resistances-view-model";
 
 const props = defineProps<{
   attributes: Attributes;
   resistances: Resistances;
   equipments: Equipments;
-  activeDigievolution: EnrichedDigievolution | null;
+  activeDigievolutionId: number | null;
 }>();
 
 const { t } = useLocalization();
@@ -26,16 +30,12 @@ const activeVariant = ref<TooltipVariant>("none");
 const defaultTooltipContent = ref({ title: "", text: "" });
 const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0 });
 
-const createEnrichedAttributeResistance = (
-  key: AttributeType | ResistanceType,
-  source: any,
-  digiSource: any
-): EnrichedAttributeResistance => {
-  const val = source[key];
+const activeDigievolution = computed(() => {
+  return props.activeDigievolutionId ? DigimonAttributesResistancesPresenter.getDigievolutionById(props.activeDigievolutionId!) : null;
+});
 
-  const fromDigimon = (val && typeof val === "object") ? (val.fromDigimon ?? 0) : Number(val ?? 0);
-  const fromEquipaments = DigimonStatusCalculator.calculateBonusFromRawEquipments(key as unknown as AttributeType | ResistanceType, props.equipments);
-  const fromDigievolution = digiSource ? Number(digiSource[key] ?? 0) : 0;
+const createEnrichedAttributeResistance = (type: AttributeType | ResistanceType, fromDigimon: number, fromDigievolution: number): AttributeResistanceViewModel => {
+  const fromEquipaments = DigimonStatusCalculator.calculateBonusFromRawEquipments(type as AttributeType | ResistanceType, props.equipments);
 
   return {
     fromDigimon,
@@ -45,26 +45,26 @@ const createEnrichedAttributeResistance = (
   };
 };
 
-const enrichedAttributes = computed<EnrichedAttributes>(() => {
+const attributesViewModel = computed<AttributesViewModel>(() => {
   return {
-    strength: createEnrichedAttributeResistance(AttributeType.Strength, props.attributes, props.activeDigievolution?.attributes),
-    defense: createEnrichedAttributeResistance(AttributeType.Defense, props.attributes, props.activeDigievolution?.attributes),
-    spirit: createEnrichedAttributeResistance(AttributeType.Spirit, props.attributes, props.activeDigievolution?.attributes),
-    wisdom: createEnrichedAttributeResistance(AttributeType.Wisdom, props.attributes, props.activeDigievolution?.attributes),
-    speed: createEnrichedAttributeResistance(AttributeType.Speed, props.attributes, props.activeDigievolution?.attributes),
-    charisma: createEnrichedAttributeResistance(AttributeType.Charisma, props.attributes, props.activeDigievolution?.attributes),
+    strength: createEnrichedAttributeResistance(AttributeType.strength, props.attributes.strength, activeDigievolution.value?.attributes?.strength ?? 0),
+    defense: createEnrichedAttributeResistance(AttributeType.defense, props.attributes.defense, activeDigievolution.value?.attributes?.defense ?? 0),
+    spirit: createEnrichedAttributeResistance(AttributeType.spirit, props.attributes.spirit, activeDigievolution.value?.attributes?.spirit ?? 0),
+    wisdom: createEnrichedAttributeResistance(AttributeType.wisdom, props.attributes.wisdom, activeDigievolution.value?.attributes?.wisdom ?? 0),
+    speed: createEnrichedAttributeResistance(AttributeType.speed, props.attributes.speed, activeDigievolution.value?.attributes?.speed ?? 0),
+    charisma: createEnrichedAttributeResistance(AttributeType.charisma, props.attributes.charisma, activeDigievolution.value?.attributes?.charisma ?? 0),
   };
 });
 
-const enrichedResistances = computed<EnrichedResistances>(() => {
+const resistancesViewModel = computed<ResistancesViewModel>(() => {
   return {
-    fire: createEnrichedAttributeResistance(ResistanceType.Fire, props.resistances, props.activeDigievolution?.resistances),
-    water: createEnrichedAttributeResistance(ResistanceType.Water, props.resistances, props.activeDigievolution?.resistances),
-    ice: createEnrichedAttributeResistance(ResistanceType.Ice, props.resistances, props.activeDigievolution?.resistances),
-    wind: createEnrichedAttributeResistance(ResistanceType.Wind, props.resistances, props.activeDigievolution?.resistances),
-    thunder: createEnrichedAttributeResistance(ResistanceType.Thunder, props.resistances, props.activeDigievolution?.resistances),
-    machine: createEnrichedAttributeResistance(ResistanceType.Machine, props.resistances, props.activeDigievolution?.resistances),
-    dark: createEnrichedAttributeResistance(ResistanceType.Dark, props.resistances, props.activeDigievolution?.resistances),
+    fire: createEnrichedAttributeResistance(ResistanceType.fire, props.resistances.fire, activeDigievolution.value?.resistances?.fire ?? 0),
+    water: createEnrichedAttributeResistance(ResistanceType.water, props.resistances.water, activeDigievolution.value?.resistances?.water ?? 0),
+    ice: createEnrichedAttributeResistance(ResistanceType.ice, props.resistances.ice, activeDigievolution.value?.resistances?.ice ?? 0),
+    wind: createEnrichedAttributeResistance(ResistanceType.wind, props.resistances.wind, activeDigievolution.value?.resistances?.wind ?? 0),
+    thunder: createEnrichedAttributeResistance(ResistanceType.thunder, props.resistances.thunder, activeDigievolution.value?.resistances?.thunder ?? 0),
+    machine: createEnrichedAttributeResistance(ResistanceType.machine, props.resistances.machine, activeDigievolution.value?.resistances?.machine ?? 0),
+    dark: createEnrichedAttributeResistance(ResistanceType.dark, props.resistances.dark, activeDigievolution.value?.resistances?.dark ?? 0),
   };
 });
 
@@ -118,9 +118,9 @@ const moveTooltip = (event: MouseEvent) => {
       <div class="flex gap-20 -ml-16">
         <div class="flex flex-col gap-1 w-24">
           <DigimonAttributeResistance 
-            v-for="(attr, key) in enrichedAttributes" 
+            v-for="(attributeViewModel, key) in attributesViewModel" 
             :key="key"
-            :enrichedAttributeResistance="attr"
+            :enrichedAttributeResistance="attributeViewModel"
             :property-key="key"
             @showIconTooltip="showAttributeIconTooltip"
             @showMathTooltip="showMathTooltip"
@@ -131,9 +131,9 @@ const moveTooltip = (event: MouseEvent) => {
 
         <div class="flex flex-col gap-1 w-24">
           <DigimonAttributeResistance 
-            v-for="(res, key) in enrichedResistances" 
+            v-for="(resistanceViewModel, key) in resistancesViewModel" 
             :key="key"
-            :enrichedAttributeResistance="res"
+            :enrichedAttributeResistance="resistanceViewModel"
             :property-key="key"
             @showIconTooltip="showResistanceIconTooltip"
             @showMathTooltip="showMathTooltip"

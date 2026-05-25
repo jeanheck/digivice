@@ -1,8 +1,8 @@
 export interface Attributes {
-    strength: Number;
-    defense: Number;
-    spirit: Number;
-    wisdom: Number;
-    speed: Number;
-    charisma: Number;
+    strength: number;
+    defense: number;
+    spirit: number;
+    wisdom: number;
+    speed: number;
+    charisma: number;
 }

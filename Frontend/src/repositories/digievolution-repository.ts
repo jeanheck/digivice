@@ -12,7 +12,7 @@ export class DigievolutionRepository {
     public static getNameById(id: number): string {
         return this.digievolutionTable[id]!.name;
     }
-    public static getRawDigievolution(id: number): DigievolutionRaw {
+    public static getRawDigievolutionById(id: number): DigievolutionRaw {
         return this.digievolutionTable[id]!;
     }
     public static getRawDigievolutionTechniquesById(id: number): DigievolutionTechniqueRaw[] {

@@ -12,7 +12,7 @@ export class PartyCalculator {
         const totalBonusFromEquipments = MathUtils.Sum(digimons.map((digimon) => {
             const rawEquipments = EquipmentRepository.getRawEquipmentsByIds(digimon.equipments);
             return DigimonStatusCalculator.calculateBonusFromEquipaments(
-                AttributeType.Charisma,
+                AttributeType.charisma,
                 rawEquipments
             );
         }));

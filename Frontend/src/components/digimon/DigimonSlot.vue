@@ -35,8 +35,8 @@ const activeDigievolution = computed(() => {
     <DigimonAttributesResistances 
       :attributes="digimon.attributes" 
       :resistances="digimon.resistances"
-      :active-digievolution="activeDigievolution"
       :equipments="digimon.equipments" 
+      :active-digievolution-id="digimon.activeDigievolutionId"
     />
     <DigimonEquipments :equipments="digimon.equipments" />
 

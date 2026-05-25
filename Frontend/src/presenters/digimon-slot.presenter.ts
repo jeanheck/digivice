@@ -3,6 +3,6 @@ import type { DigievolutionViewModel } from "@/view-models/digievolution-view-mo
 
 export class DigimonSlotPresenter {
     public static getActiveDigievolutionViewModel(activeDigievolutionId: number): DigievolutionViewModel {
-        return DigievolutionRepository.getRawDigievolution(activeDigievolutionId);
+        return DigievolutionRepository.getRawDigievolutionById(activeDigievolutionId);
     }
 }
