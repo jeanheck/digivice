@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useLocalization } from '@/composables/useLocalization';
-import TechniquesTable from '@/database/digievolution/technique.json';
-import DigievolutionTechniques from '@/database/digievolution/digievolution-technique.json';
-import type { Technique } from '@/models';
 import type { DigimonDigievolutionRequirementRaw } from '@/repositories/tables/raws/digimon/digimon-digievolution-requirement-raw';
+import { DigievolutionRepository } from '@/repositories';
+import { TechniquePresenter } from '@/presenters/technique-presenter';
 
 const props = defineProps<{
   evolution: DigimonDigievolutionRequirementRaw[]
   evolutionName: string | undefined
   allEvolutions: string[]
+  derivativeParameter: import('@/repositories/tables/raws/digimon/digimon-digievolution-raw').DigimonDigievolutionRaw
 }>()
 
 const emit = defineEmits<{
@@ -25,42 +25,23 @@ const getAvatar = (name: string) => {
     return avatarModules[path] ? (avatarModules[path] as any).default || avatarModules[path] : null
 }
 
-interface TechEntry {
-  id: string
-  name: any
-  type: string
-  element: string
-  elementStrength: number
-  mp: number
-  power: number
-  description: any
-}
-
-interface DigivolutionTechEntry {
-  techniqueId: string
-  learnLevel: number
-}
-
-// Lookup maps
-const techniqueById = Object.fromEntries(
-  (TechniquesTable as { techniques: Technique[] }).techniques.map(t => [t.id, t])
-)
-
 const techniques = computed(() => {
-  const entry = (DigievolutionTechniques as unknown as { digievolutions: { name: any; techniques: DigivolutionTechEntry[] }[] })
-    .digievolutions.find(d => getLocalized(d.name) === getLocalized(props.evolutionName))
-  if (!entry) return []
+  const digievolutionTechniques = DigievolutionRepository.getRawDigievolutionTechniquesByName(props.evolutionName!);
 
-  const maxLearnLevel = Math.max(...entry.techniques.map(t => t.learnLevel))
+  return digievolutionTechniques.map(digievolutionTechnique => {
+    const lastTechniqueToBeLearned = digievolutionTechniques.reduce((highest, current) =>
+      current.learnLevel > highest.learnLevel ? current : highest
+    );
+    ;
 
-  return entry.techniques.map(t => {
-    const base = techniqueById[t.techniqueId]
-    return {
-      ...base,
-      learnLevel: t.learnLevel,
-      isSignature: t.learnLevel === maxLearnLevel
-    }
-  })
+    return TechniquePresenter.getTechniqueById(
+      digievolutionTechnique.id,
+      digievolutionTechnique.learnLevel,
+      digievolutionTechnique.loadedLevel,
+      0,
+      lastTechniqueToBeLearned.id === digievolutionTechnique.id
+    )
+  });
 })
 
 function elementColor(element: string): string {
@@ -86,15 +67,25 @@ function typeIcon(type: string): string {
 }
 
 const reqEvolutions = computed(() => {
-    return props.evolution.requirements
-        .filter(req => req.Type === 'DigievolutionLevel')
-        .map(req => req.Digievolution!)
+    return props.evolution
+        .filter(req => req.type === 'DigievolutionLevel')
+        .map(req => req.digievolution!)
 })
 
 const derivatives = computed(() => {
-    return props.allEvolutions.filter(evo => 
-        evo.requirements.some(req => req.Type === 'DigievolutionLevel' && req.Digievolution === props.evolutionName)
-    )
+  const teste = Object.entries(props.derivativeParameter).map(value => value);
+  console.log('teste > ', teste);
+  console.log('teste[0] > ', teste[0]);
+  console.log('teste[0][0] > ', teste[0]![0]);
+  console.log('teste[0][1] > ', teste[0]![1]);
+
+  const result = teste.filter(entry => {
+    const requirements = entry[1];
+
+    return requirements.some(req => req.type === 'DigievolutionLevel' && req.digievolution === props.evolutionName)
+  })
+
+  return Object.values(result).map(value => value[0]);
 })
 
 // Tooltip Logic
@@ -162,40 +153,40 @@ const moveTooltip = (event: MouseEvent) => {
             </div>
             <div class="flex flex-col gap-0.75 pr-1">
                 <div
-                  v-for="tech in techniques"
-                  :key="tech.id"
+                  v-for="techniqueViewModel in techniques"
+                  :key="techniqueViewModel.id"
                   class="relative rounded px-3 py-2 flex items-start gap-3 border transition-all text-xs border-[#0055ff]/40 bg-[#001a33]/60"
-                  :class="{ 'bg-yellow-950/30 border-yellow-500/60 shadow-[0_0_8px_rgba(234,179,8,0.2)]': tech.isSignature }"
+                  :class="{ 'bg-yellow-950/30 border-yellow-500/60 shadow-[0_0_8px_rgba(234,179,8,0.2)]': techniqueViewModel.isSignature }"
                 >
                   <span
-                    v-if="tech.isSignature"
+                    v-if="techniqueViewModel.isSignature"
                     class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest"
                   >
                     ⭐
                   </span>
 
                   <span class="text-base leading-none mt-px shrink-0 cursor-help tooltip-anchor"
-                        @mouseenter="e => showTypeTooltip(e, tech.type ?? '')"
+                        @mouseenter="e => showTypeTooltip(e, techniqueViewModel.type ?? '')"
                         @mousemove="moveTooltip"
                         @mouseleave="hideTooltip">
-                    {{ typeIcon(tech.type ?? '') }}
+                    {{ typeIcon(techniqueViewModel.type ?? '') }}
                   </span>
 
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-1 mb-0.5">
-                      <span class="font-bold tracking-wide" :class="tech.isSignature ? 'text-yellow-300' : 'text-white'">
-                        {{ getLocalized(tech.name) }}
+                      <span class="font-bold tracking-wide" :class="techniqueViewModel.isSignature ? 'text-yellow-300' : 'text-white'">
+                        {{ t(`${techniqueViewModel.id}.name`) }}
                       </span>
-                      <span class="text-[10px] text-cyan-400/80 ml-1">{{ $t('digievolution.lv') }}.{{ tech.learnLevel }}</span>
+                      <span class="text-[10px] text-cyan-400/80 ml-1">{{ $t('digievolution.lv') }}.{{ techniqueViewModel.learnLevel }}</span>
                     </div>
 
-                    <p class="text-white/50 text-[10px] leading-snug">{{ getLocalized(tech.description) }}</p>
+                    <p class="text-white/50 text-[10px] leading-snug">{{ t(`${techniqueViewModel.id}.description`) }}</p>
 
                     <div class="flex gap-3 mt-1 text-[9px] uppercase tracking-wider">
-                      <span :class="elementColor(tech.element ?? 'None')">
-                        {{ (tech.element ?? 'None') !== 'None' ? t('resistances.' + (tech.element || 'None').toLowerCase()) : t('digievolution.neutral') }}
+                      <span :class="elementColor(techniqueViewModel.element ?? 'None')">
+                        {{ (techniqueViewModel.element ?? 'None') !== 'None' ? t('resistances.' + (techniqueViewModel.element || 'None').toLowerCase()) : t('digievolution.neutral') }}
                       </span>
-                      <span class="text-blue-300/70">MP {{ tech.mp }}</span>
+                      <span class="text-blue-300/70">MP {{ techniqueViewModel.mp }}</span>
                     </div>
                   </div>
                 </div>
@@ -213,10 +204,10 @@ const moveTooltip = (event: MouseEvent) => {
                 {{ $t('digievolution.nextDigievolutions') }}
             </div>
             <div class="flex flex-wrap gap-2">
-                <button v-for="deriv in derivatives" :key="deriv.name"
-                      @click="emit('select-evolution', deriv.name)"
+                <button v-for="deriv in derivatives" :key="deriv"
+                      @click="emit('select-evolution', deriv)"
                       class="cursor-pointer hover:bg-indigo-700/50 transition-colors text-[10px] px-2 py-1.5 bg-indigo-950/30 text-indigo-200 border border-indigo-900/40 rounded font-cyber flex items-center">
-                    {{ getLocalized(deriv.name) }}
+                    {{ getLocalized(deriv) }}
                 </button>
             </div>
         </div>

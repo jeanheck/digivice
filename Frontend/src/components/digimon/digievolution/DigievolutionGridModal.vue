@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, watch, computed } from 'vue'
 import type { Digimon } from '@/models'
-import { EvolutionGraph, type EvolutionRequirement } from '@/logic/EvolutionGraph'
-import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
 import DigievolutionDetailPanel from './DigievolutionDetailPanel.vue'
 import IconClose from '@/components/modal/IconClose.vue'
@@ -60,6 +58,10 @@ const handleSelectNode = (digievolutionName: string) => {
     selectedEvolutionName.value = undefined
   }
 }
+
+const derivativeParameter = computed(() => {
+  return DigimonDigievolutionRepository.getDigievolutionsByDigimonName(digimonName.value);
+});
 
 const allEvolutions = computed(() => {
   const digimonDigievolutionTable = DigimonDigievolutionRepository.getDigievolutionsByDigimonName(digimonName.value);
@@ -165,6 +167,7 @@ const handleBlur = () => {
                   :evolution="selectedEvolution"
                   :evolution-name="selectedEvolutionName"
                   :all-evolutions="allEvolutions"
+                  :derivative-parameter="derivativeParameter"
                   @select-evolution="handleSelectNode"
                 />
               </div>
