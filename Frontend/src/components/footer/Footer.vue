@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { invoke } from '@tauri-apps/api/core';
 import LanguageSelector from '@/components/footer/LanguageSelector.vue';
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
+import { PartyCalculator } from '@/logic/PartyCalculator';
+import { useGameStore } from '@/stores/use-game-store';
+
+const store = useGameStore();
 
 defineProps<{
   playerName: string;
   bits: number;
-  groupCharisma: number;
   isConnected: boolean;
 }>();
 
@@ -20,6 +23,10 @@ const openLogsFolder = async () => {
     console.error('Failed to open logs folder:', err);
   }
 };
+
+const groupCharisma = computed(() => {
+    return PartyCalculator.calculatePartyCharisma(store.currentState?.party?.slots ?? []);
+});
 </script>
 
 <template>

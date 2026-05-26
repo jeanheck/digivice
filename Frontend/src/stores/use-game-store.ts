@@ -5,11 +5,9 @@ import type * as Events from '../events/events.map';
 import { PlayerConverter } from '../events/converters/player.converter';
 import { PartyConverter } from '../events/converters/party.converter';
 import { JournalConverter } from '../events/converters/journal.converter';
-import { AreaInformationConverter } from '../events/converters/area-information.converter';
 import { PlayerSyncer } from './syncers/player.syncer';
 import { JournalSyncer } from './syncers/journal.syncer';
 import { PartySyncer } from './syncers/party.syncer';
-import { PartyCalculator } from '../logic/PartyCalculator';
 
 export const useGameStore = defineStore('game', () => {
     const isConnectedWithBackend = ref(false);
@@ -18,13 +16,6 @@ export const useGameStore = defineStore('game', () => {
         return isConnectedWithBackend.value && isConnectedWithEmulator.value;
     });
     const currentState = ref<State | null>(null);
-    const groupCharisma = computed(() => {
-        return PartyCalculator.calculatePartyCharisma(currentState.value?.party?.slots ?? []);
-    });
-
-    function getDigimonOnPartySlot(slotIndex: number) {
-        return currentState.value?.party?.slots[slotIndex] ?? null;
-    }
 
     function syncHubConnectionStatus(event: { isConnected: boolean }): void {
         isConnectedWithBackend.value = event.isConnected;
@@ -79,8 +70,6 @@ export const useGameStore = defineStore('game', () => {
         isConnectedWithBackend,
         isConnectedWithEmulator,
         currentState,
-        groupCharisma,
-        getDigimonOnPartySlot,
         syncHubConnectionStatus,
         syncEmulatorConnectionStatus,
         setInitialState,

@@ -13,7 +13,7 @@ const activeQuest = ref<QuestViewModel | null>(null);
 const isQuestModalOpen = ref(false);
 
 const slotsWithDigimon = computed(() => {
-    return (store.currentState?.party?.slots ?? []).filter((slot) => {
+    return (store.currentState?.party?.slots ?? []).filter((slot: import('./models/digimon-slot.ts').DigimonSlot) => {
         return slot !== null && slot !== undefined && slot.digimon !== null;
     });
 });
@@ -58,7 +58,6 @@ const handleCloseQuestModal = () => {
     <Footer 
       :player-name="store.currentState?.player?.name ?? $t('connection.connecting')"
       :bits="store.currentState?.player?.bits ?? 0"
-      :group-charisma="store.groupCharisma"
       :is-connected="store.isConnected"
     />
 
