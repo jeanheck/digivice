@@ -59,9 +59,6 @@ const selectStep = (step: StepViewModel) => {
 
 const currentLocation = computed(() => {
   if (!selectedStep.value?.zoomedLocations || selectedStep.value.zoomedLocations.length === 0) return null;
-
-  console.log('currentLocation > ', selectedStep.value.zoomedLocations[currentLocationIndex.value]);
-
   return selectedStep.value.zoomedLocations[currentLocationIndex.value];
 })
 
@@ -76,7 +73,6 @@ const getLocalMapUrl = (locationId?: string) => {
     if (!locationId) return null;
     const locationViewModel = QuestDetailsModalPresenter.getLocationById(locationId);
     const path = `../../assets/maps/${locationViewModel.image}.webp`
-    console.log('new path ', path);
     return mapModules[path] ? (mapModules[path] as any).default || mapModules[path] : null
 }
 
