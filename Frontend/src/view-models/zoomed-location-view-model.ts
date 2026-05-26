@@ -2,6 +2,6 @@ import type { CoordinatesViewModel } from "./coordinates-view-model";
 
 export interface ZoomedLocationViewModel
 {
-    locationImage: string,
+    location: string,
     coordinates: CoordinatesViewModel;
 }

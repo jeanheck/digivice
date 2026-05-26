@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
-import type { Step as StepType } from '../../models'
 import IconClose from '@/components/modal/IconClose.vue';
 import asukaMapUrl from '../../assets/AsukaMap.webp'
 import type { QuestViewModel } from '@/view-models/quest-view-model';
 import type { StepViewModel } from '@/view-models/step-view-model';
+import { QuestDetailsModalPresenter } from '@/presenters/quest-details-modal.presenter';
 
 const props = defineProps<{
   questViewModel: QuestViewModel | null
   isOpen: boolean
 }>()
 
-const { t, getLocalized } = useLocalization()
+const { t } = useLocalization()
 
 const emit = defineEmits(['close'])
 
@@ -58,8 +58,11 @@ const selectStep = (step: StepViewModel) => {
 }
 
 const currentLocation = computed(() => {
-  if (!selectedStep.value?.zoomedLocations || selectedStep.value.zoomedLocations.length === 0) return null
-  return selectedStep.value.zoomedLocations[currentLocationIndex.value]
+  if (!selectedStep.value?.zoomedLocations || selectedStep.value.zoomedLocations.length === 0) return null;
+
+  console.log('currentLocation > ', selectedStep.value.zoomedLocations[currentLocationIndex.value]);
+
+  return selectedStep.value.zoomedLocations[currentLocationIndex.value];
 })
 
 // Reset selection when modal opens with a different quest
@@ -69,9 +72,11 @@ watch(() => props.questViewModel, () => {
 })
 
 const mapModules = import.meta.glob('../../assets/maps/*.webp', { eager: true })
-const getLocalMapUrl = (name?: string) => {
-    if (!name) return null;
-    const path = `../../assets/maps/${name}.webp`
+const getLocalMapUrl = (locationId?: string) => {
+    if (!locationId) return null;
+    const locationViewModel = QuestDetailsModalPresenter.getLocationById(locationId);
+    const path = `../../assets/maps/${locationViewModel.image}.webp`
+    console.log('new path ', path);
     return mapModules[path] ? (mapModules[path] as any).default || mapModules[path] : null
 }
 
@@ -160,7 +165,7 @@ function formatTooltipText(text: string) {
                 </div>
                 <p class="text-sm flex-1 leading-snug transition-colors"
                    :class="requisiteViewModel.isDone ? 'text-gray-400 line-through decoration-green-900' : 'text-red-300'">
-                  {{ t(`${questViewModel.id}.${requisiteViewModel.id}`) }}
+                  {{ t(`${questViewModel.id}.requisites.${requisiteViewModel.id}`) }}
                 </p>
               </div>
             </div>
@@ -238,15 +243,15 @@ function formatTooltipText(text: string) {
                              <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,1)]"></div>
                              <div class="absolute left-1/2 -translate-x-1/2 text-[10px] font-cyber text-cyan-100 drop-shadow bg-cyan-950/95 px-3 py-1 rounded border border-cyan-700/80 max-w-37.5 leading-tight text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
                                   :class="selectedStep.coordinates.y < 20 ? 'top-6.5' : 'bottom-6.5'"
-                                  v-html="formatTooltipText(getLocalized(selectedStep.location))">
+                                  v-html="formatTooltipText(t(`location.${selectedStep.location}`))">
                              </div>
                         </div>
                   </div>
 
                   <!-- Local Map Intel Carousel -->
-                  <div v-if="currentLocation && getLocalMapUrl(currentLocation.locationImage)" class="relative w-full aspect-4/3 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group flex flex-col shrink-0">
+                  <div v-if="currentLocation" class="relative w-full aspect-4/3 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group flex flex-col shrink-0">
                        <div class="relative flex-1 w-full bg-black/50 overflow-hidden">
-                           <img :src="getLocalMapUrl(currentLocation.locationImage)" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+                           <img :src="getLocalMapUrl(currentLocation.location)" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
                            
                             <!-- Local Radar Ping -->
                             <div v-if="currentLocation.coordinates" 

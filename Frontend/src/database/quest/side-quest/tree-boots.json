@@ -14,7 +14,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0220",
+                    "location": "0220",
                     "coordinates": {
                         "x": 79,
                         "y": 90
@@ -31,14 +31,14 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0200",
+                    "location": "0200",
                     "coordinates": {
                         "x": 51,
                         "y": 39
                     }
                 },
                 {
-                    "locationImage": "020A",
+                    "location": "020A",
                     "coordinates": {
                         "x": 35,
                         "y": 83
@@ -55,7 +55,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0220",
+                    "location": "0220",
                     "coordinates": {
                         "x": 79,
                         "y": 90
@@ -72,14 +72,14 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0200",
+                    "location": "0200",
                     "coordinates": {
                         "x": 21,
                         "y": 56
                     }
                 },
                 {
-                    "locationImage": "020F",
+                    "location": "020F",
                     "coordinates": {
                         "x": 49,
                         "y": 82
@@ -96,7 +96,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0229",
+                    "location": "0229",
                     "coordinates": {
                         "x": 90,
                         "y": 84
@@ -113,7 +113,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022A",
+                    "location": "022A",
                     "coordinates": {
                         "x": 14,
                         "y": 19
@@ -130,7 +130,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0229",
+                    "location": "0229",
                     "coordinates": {
                         "x": 90,
                         "y": 84

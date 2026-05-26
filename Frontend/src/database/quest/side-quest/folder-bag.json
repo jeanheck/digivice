@@ -10,35 +10,35 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0200",
+                    "location": "0200",
                     "coordinates": {
                         "x": 51,
                         "y": 39
                     }
                 },
                 {
-                    "locationImage": "020A",
+                    "location": "020A",
                     "coordinates": {
                         "x": 45,
                         "y": 98
                     }
                 },
                 {
-                    "locationImage": "020B",
+                    "location": "020B",
                     "coordinates": {
                         "x": 14,
                         "y": 83
                     }
                 },
                 {
-                    "locationImage": "0201",
+                    "location": "0201",
                     "coordinates": {
                         "x": 45,
                         "y": 26
                     }
                 },
                 {
-                    "locationImage": "0211",
+                    "location": "0211",
                     "coordinates": {
                         "x": 62,
                         "y": 33

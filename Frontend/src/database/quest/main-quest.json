@@ -10,14 +10,14 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022E",
+                    "location": "022E",
                     "coordinates": {
                         "x": 59.5,
                         "y": 29.5
                     }
                 },
                 {
-                    "locationImage": "0230",
+                    "location": "0230",
                     "coordinates": {
                         "x": 25,
                         "y": 65
@@ -34,7 +34,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0226",
+                    "location": "0226",
                     "coordinates": {
                         "x": 39,
                         "y": 12
@@ -51,7 +51,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022B",
+                    "location": "022B",
                     "coordinates": {
                         "x": 73,
                         "y": 9
@@ -68,21 +68,21 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022E",
+                    "location": "022E",
                     "coordinates": {
                         "x": 59.5,
                         "y": 29.5
                     }
                 },
                 {
-                    "locationImage": "0230",
+                    "location": "0230",
                     "coordinates": {
                         "x": 28,
                         "y": 73
                     }
                 },
                 {
-                    "locationImage": "022E",
+                    "location": "022E",
                     "coordinates": {
                         "x": 23.5,
                         "y": 28.5
@@ -99,7 +99,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022E",
+                    "location": "022E",
                     "coordinates": {
                         "x": 18,
                         "y": 81
@@ -116,7 +116,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022C",
+                    "location": "022C",
                     "coordinates": {
                         "x": 42.5,
                         "y": 62.5
@@ -133,7 +133,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0202",
+                    "location": "0202",
                     "coordinates": {
                         "x": 54,
                         "y": 38
@@ -150,21 +150,21 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0200",
+                    "location": "0200",
                     "coordinates": {
                         "x": 51,
                         "y": 39
                     }
                 },
                 {
-                    "locationImage": "020A",
+                    "location": "020A",
                     "coordinates": {
                         "x": 61.5,
                         "y": 6
                     }
                 },
                 {
-                    "locationImage": "020C",
+                    "location": "020C",
                     "coordinates": {
                         "x": 80,
                         "y": 42
@@ -181,7 +181,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0223",
+                    "location": "0223",
                     "coordinates": {
                         "x": 29,
                         "y": 28
@@ -198,14 +198,14 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022E",
+                    "location": "022E",
                     "coordinates": {
                         "x": 33,
                         "y": 51
                     }
                 },
                 {
-                    "locationImage": "022F",
+                    "location": "022F",
                     "coordinates": {
                         "x": 34,
                         "y": 31
@@ -222,7 +222,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022C",
+                    "location": "022C",
                     "coordinates": {
                         "x": 42,
                         "y": 62
@@ -239,7 +239,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022E",
+                    "location": "022E",
                     "coordinates": {
                         "x": 68,
                         "y": 33
@@ -256,14 +256,14 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0223",
+                    "location": "0223",
                     "coordinates": {
                         "x": 56,
                         "y": 90
                     }
                 },
                 {
-                    "locationImage": "0224",
+                    "location": "0224",
                     "coordinates": {
                         "x": 31.5,
                         "y": 95
@@ -280,7 +280,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "022C",
+                    "location": "022C",
                     "coordinates": {
                         "x": 42,
                         "y": 62
@@ -297,7 +297,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "023A",
+                    "location": "023A",
                     "coordinates": {
                         "x": 19,
                         "y": 60
@@ -314,7 +314,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0238",
+                    "location": "0238",
                     "coordinates": {
                         "x": 33,
                         "y": 68
@@ -331,7 +331,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0239",
+                    "location": "0239",
                     "coordinates": {
                         "x": 46,
                         "y": 73
@@ -348,7 +348,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0226",
+                    "location": "0226",
                     "coordinates": {
                         "x": 7,
                         "y": 13
@@ -365,7 +365,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0202",
+                    "location": "0202",
                     "coordinates": {
                         "x": 97.5,
                         "y": 64.5
@@ -382,7 +382,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0201",
+                    "location": "0201",
                     "coordinates": {
                         "x": 55,
                         "y": 82
@@ -399,7 +399,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0227",
+                    "location": "0227",
                     "coordinates": {
                         "x": 10,
                         "y": 40
@@ -416,7 +416,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0201",
+                    "location": "0201",
                     "coordinates": {
                         "x": 55,
                         "y": 82
@@ -433,7 +433,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "021B",
+                    "location": "021B",
                     "coordinates": {
                         "x": 40,
                         "y": 18
@@ -450,7 +450,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0239",
+                    "location": "0239",
                     "coordinates": {
                         "x": 46,
                         "y": 73
@@ -467,7 +467,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "023A",
+                    "location": "023A",
                     "coordinates": {
                         "x": 19,
                         "y": 60
@@ -484,7 +484,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "023E",
+                    "location": "023E",
                     "coordinates": {
                         "x": 18,
                         "y": 36
@@ -501,7 +501,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0240",
+                    "location": "0240",
                     "coordinates": {
                         "x": 55,
                         "y": 37
@@ -518,7 +518,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "023E",
+                    "location": "023E",
                     "coordinates": {
                         "x": 22,
                         "y": 33
@@ -535,14 +535,14 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0200",
+                    "location": "0200",
                     "coordinates": {
                         "x": 21,
                         "y": 56
                     }
                 },
                 {
-                    "locationImage": "020F",
+                    "location": "020F",
                     "coordinates": {
                         "x": 52,
                         "y": 62
@@ -559,7 +559,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0201",
+                    "location": "0201",
                     "coordinates": {
                         "x": 65,
                         "y": 78
@@ -576,7 +576,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "021B",
+                    "location": "021B",
                     "coordinates": {
                         "x": 40,
                         "y": 18
@@ -593,7 +593,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0203",
+                    "location": "0203",
                     "coordinates": {
                         "x": 32,
                         "y": 46
@@ -610,7 +610,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "021B",
+                    "location": "021B",
                     "coordinates": {
                         "x": 40,
                         "y": 18
@@ -627,7 +627,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "020B",
+                    "location": "020B",
                     "coordinates": {
                         "x": 69,
                         "y": 37
@@ -644,7 +644,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0203",
+                    "location": "0203",
                     "coordinates": {
                         "x": 39,
                         "y": 26
@@ -661,14 +661,14 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0214",
+                    "location": "0214",
                     "coordinates": {
                         "x": 39,
                         "y": 13
                     }
                 },
                 {
-                    "locationImage": "0215",
+                    "location": "0215",
                     "coordinates": {
                         "x": 70.5,
                         "y": 34.5
@@ -685,7 +685,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "023B",
+                    "location": "023B",
                     "coordinates": {
                         "x": 70,
                         "y": 56
@@ -702,7 +702,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0235",
+                    "location": "0235",
                     "coordinates": {
                         "x": 80,
                         "y": 20
@@ -719,7 +719,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0239",
+                    "location": "0239",
                     "coordinates": {
                         "x": 46,
                         "y": 73
@@ -736,7 +736,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0226",
+                    "location": "0226",
                     "coordinates": {
                         "x": 7,
                         "y": 13
@@ -753,7 +753,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0226",
+                    "location": "0226",
                     "coordinates": {
                         "x": 7,
                         "y": 13
@@ -770,7 +770,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0235",
+                    "location": "0235",
                     "coordinates": {
                         "x": 80,
                         "y": 20
@@ -787,7 +787,7 @@
             },
             "zoomedLocations": [
                 {
-                    "locationImage": "0236",
+                    "location": "0236",
                     "coordinates": {
                         "x": 25,
                         "y": 88

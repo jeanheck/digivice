@@ -65,7 +65,7 @@ export class JournalPresenter {
                 y: stepRaw.coordinates.y
             },
             zoomedLocations: stepRaw.zoomedLocations.map(zoomedLocationRaw => ({
-                locationImage: zoomedLocationRaw.locationImage,
+                location: zoomedLocationRaw.location,
                 coordinates: {
                     x: zoomedLocationRaw.coordinates.x,
                     y: zoomedLocationRaw.coordinates.y

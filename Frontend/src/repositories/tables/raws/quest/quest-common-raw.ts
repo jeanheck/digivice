@@ -4,7 +4,7 @@ export interface CoordinatesRaw {
 }
 
 export interface ZoomedLocationRaw {
-    locationImage: string;
+    location: string;
     coordinates: CoordinatesRaw;
 }
 
