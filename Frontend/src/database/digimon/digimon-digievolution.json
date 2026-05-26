@@ -1,5 +1,5 @@
 {
-    "Kotemon": {
+    "0": {
         "Dinohumon": [
             {
                 "type": "DigimonLevel",
@@ -380,7 +380,7 @@
             }
         ]
     },
-    "Kumamon": {
+    "1": {
         "Dinohumon": [
             {
                 "type": "DigievolutionLevel",
@@ -771,7 +771,7 @@
             }
         ]
     },
-    "Monmon": {
+    "2": {
         "Dinohumon": [
             {
                 "type": "DigievolutionLevel",
@@ -1168,7 +1168,7 @@
             }
         ]
     },
-    "Agumon": {
+    "3": {
         "Dinohumon": [
             {
                 "type": "DigievolutionLevel",
@@ -1544,7 +1544,7 @@
             }
         ]
     },
-    "Veemon": {
+    "4": {
         "Dinohumon": [
             {
                 "type": "DigievolutionLevel",
@@ -1941,7 +1941,7 @@
             }
         ]
     },
-    "Guilmon": {
+    "5": {
         "Dinohumon": [
             {
                 "type": "DigievolutionLevel",
@@ -2338,7 +2338,7 @@
             }
         ]
     },
-    "Renamon": {
+    "6": {
         "Dinohumon": [
             {
                 "type": "DigievolutionLevel",
@@ -2738,7 +2738,7 @@
             }
         ]
     },
-    "Patamon": {
+    "7": {
         "Dinohumon": [
             {
                 "type": "DigievolutionLevel",

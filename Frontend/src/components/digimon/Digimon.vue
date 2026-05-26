@@ -4,7 +4,7 @@ import ExperienceProgressBar from "@/components/digimon/ExperienceProgressBar.vu
 import DigimonIcon from "@/components/digimon/DigimonIcon.vue";
 import DigimonVitals from "@/components/digimon/DigimonVitals.vue";
 import type { Digimon } from "@/models";
-import { DigimonPresenter } from "@/presenters/digimon-presenter";
+import { DigimonPresenter } from "@/presenters/digimon.presenter";
 
 const props = defineProps<{
   digimon: Digimon;
@@ -16,11 +16,11 @@ const digimonName = computed(() => {
 });
 
 const experienceToReachNextLevel = computed(() => {
-  return DigimonPresenter.getRequiredExperienceForNextLevel(digimonName.value, props.digimon.level);
+  return DigimonPresenter.getRequiredExperienceForNextLevel(props.digimonId, props.digimon.level);
 });
 
 const experiencePercentageToReachNextLevel = computed(() => {
-  return DigimonPresenter.getProgressPercentageForNextLevel(digimonName.value, props.digimon.level, props.digimon.experience);
+  return DigimonPresenter.getProgressPercentageForNextLevel(props.digimonId, props.digimon.level, props.digimon.experience);
 });
 </script>
 

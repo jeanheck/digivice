@@ -4,8 +4,7 @@ import type { Digimon } from '@/models'
 import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
 import DigievolutionDetailPanel from './DigievolutionDetailPanel.vue'
 import IconClose from '@/components/modal/IconClose.vue'
-import { DigimonRepository } from '@/repositories/digimon-repository.ts';
-import { DigimonDigievolutionRepository } from '@/repositories/digimon-digievolution-repository.ts';
+import { DigimonRepository } from "@/repositories/digimon.repository";
 import type { DigimonDigievolutionRequirementRaw } from '@/repositories/tables/raws/digimon/digimon-digievolution-requirement-raw.ts'
 
 const props = defineProps<{
@@ -48,7 +47,7 @@ watch(() => props.isOpen, (isOpen) => {
 
 const handleSelectNode = (digievolutionName: string) => {
 
-  const requirements = DigimonDigievolutionRepository.getDigievolutionRequirements(digimonName.value, digievolutionName);
+  const requirements = DigimonRepository.getDigievolutionRequirements(digimonName.value, digievolutionName);
 
   if (requirements) {
     selectedEvolution.value = requirements
@@ -60,11 +59,11 @@ const handleSelectNode = (digievolutionName: string) => {
 }
 
 const derivativeParameter = computed(() => {
-  return DigimonDigievolutionRepository.getDigievolutionsByDigimonName(digimonName.value);
+  return DigimonRepository.getDigievolutionsByDigimonName(digimonName.value);
 });
 
 const allEvolutions = computed(() => {
-  const digimonDigievolutionTable = DigimonDigievolutionRepository.getDigievolutionsByDigimonName(digimonName.value);
+  const digimonDigievolutionTable = DigimonRepository.getDigievolutionsByDigimonName(digimonName.value);
   return Object.keys(digimonDigievolutionTable) as string[];
 });
 

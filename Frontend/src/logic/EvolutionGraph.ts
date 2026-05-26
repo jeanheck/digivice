@@ -1,5 +1,5 @@
 import { DigievolutionTreeRepository } from "@/repositories/digievolution-tree-repository";
-import { DigimonDigievolutionRepository } from "@/repositories/digimon-digievolution-repository";
+import { DigimonRepository } from "@/repositories/digimon.repository";
 
 // --- Types for family chain system ---
 interface TreeEntry {
@@ -138,7 +138,7 @@ export class EvolutionGraph {
 
     static getAllEvolutions(rookieName: string): { name: string, requirements: EvolutionRequirement[] }[] {
         //const rawData = DigivolvingRequirementsTable as unknown as Record<string, Record<string, EvolutionRequirement[]>>
-        const rawData = DigimonDigievolutionRepository.getDigievolutionsByDigimonName(rookieName);
+        const rawData = DigimonRepository.getDigievolutionsByDigimonName(rookieName);
         
         return Object.keys(rawData).map(evoName => ({
             name: evoName,
