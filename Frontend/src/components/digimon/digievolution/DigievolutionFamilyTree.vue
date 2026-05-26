@@ -59,6 +59,7 @@ const hasBranching = (chain: FamilyChain): boolean => {
               <DigievolutionTreeNode
                 :node="{ name, requirements: getRequirements(name) }"
                 :digimon="digimon"
+                :digimon-name="rookieName"
                 :is-selected="selectedNodeName === name"
                 class="shrink-0"
                 :data-node-name="name"
@@ -83,6 +84,7 @@ const hasBranching = (chain: FamilyChain): boolean => {
               <DigievolutionTreeNode
                 :node="{ name, requirements: getRequirements(name) }"
                 :digimon="digimon"
+                :digimon-name="rookieName"
                 :is-selected="selectedNodeName === name"
                 class="shrink-0"
                 :data-node-name="name"
@@ -109,6 +111,7 @@ const hasBranching = (chain: FamilyChain): boolean => {
                 <DigievolutionTreeNode
                   :node="{ name, requirements: getRequirements(name) }"
                   :digimon="digimon"
+                  :digimon-name="rookieName"
                   :is-selected="selectedNodeName === name"
                   class="shrink-0"
                   :data-node-name="name"

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import Digimon from "./Digimon.vue";
 import DigimonDigievolutionSlots from "./DigimonDigievolutionSlots.vue";
+import DigievolutionGridModal from "./digievolution/DigievolutionGridModal.vue";
 import DigimonAttributesResistances from './DigimonAttributesResistances.vue';
 import DigimonEquipments from './DigimonEquipments.vue';
 import type { DigimonSlot } from '@/models';
-import { DigimonSlotPresenter } from '@/presenters/digimon-slot.presenter';
 
 const props = defineProps<{
   slot: DigimonSlot;
@@ -17,12 +17,15 @@ const digimonId = computed(() => {
   return props.slot.digimonId!;
 });
 
-const activeDigievolution = computed(() => {
-  if (!digimon.value.activeDigievolutionId) {
-    return null;
-  }
-  return DigimonSlotPresenter.getActiveDigievolutionViewModel(digimon.value.activeDigievolutionId);
-});
+const isGridModalOpen = ref(false);
+
+function openDigievolutionGrid(): void {
+  isGridModalOpen.value = true;
+}
+
+function closeDigievolutionGrid(): void {
+  isGridModalOpen.value = false;
+}
 </script>
 
 <template>
@@ -42,17 +45,16 @@ const activeDigievolution = computed(() => {
 
     <div 
       class="flex items-center justify-center bg-[#000a2b] border-2 border-[#00154a] rounded shadow-inner py-1.5 mt-auto cursor-pointer hover:bg-[#001233] transition-colors"
-      @click="() => {}"
+      @click="openDigievolutionGrid"
     >
       <span class="text-[0.65rem] font-bold text-gray-400 tracking-widest uppercase">{{ $t('digimon.digievolutions') }}</span>
     </div>
 
-    <!-- New Grid Modal
     <DigievolutionGridModal 
       :is-open="isGridModalOpen" 
       :digimon="digimon"
-      @close="isGridModalOpen = false"
+      :digimon-id="digimonId"
+      @close="closeDigievolutionGrid"
     />
-    -->
   </div>
 </template>

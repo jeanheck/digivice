@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import type { Digimon } from '@/models/digimon';
-import { EvolutionGraph, type EvolutionRequirement } from '@/logic/EvolutionGraph';
 import { useLocalization } from '@/composables/useLocalization';
 import TechniquesTable from '@/database/digievolution/technique.json';
 import DigievolutionTechniques from '@/database/digievolution/digievolution-technique.json';
 import type { Technique } from '@/models';
+import type { DigimonDigievolutionRequirementRaw } from '@/repositories/tables/raws/digimon/digimon-digievolution-requirement-raw';
 
 const props = defineProps<{
-  evolution: { name: string, requirements: EvolutionRequirement[] }
-  digimon: Digimon
-  allEvolutions: { name: string, requirements: EvolutionRequirement[] }[]
+  evolution: DigimonDigievolutionRequirementRaw[]
+  evolutionName: string | undefined
+  allEvolutions: string[]
 }>()
 
 const emit = defineEmits<{
@@ -19,15 +18,10 @@ const emit = defineEmits<{
 
 const { t, getLocalized } = useLocalization()
 
-const isUnlocked = computed(() => {
-    const mockNode = { id: '', name: props.evolution.name, requirements: props.evolution.requirements, children: [] }
-    return EvolutionGraph.checkRequirements(props.digimon, mockNode)
-})
-
-const avatarModules = import.meta.glob('../../assets/icons/digievolutions/*.png', { eager: true })
+const avatarModules = import.meta.glob('../../../assets/icons/digievolutions/*.png', { eager: true })
 
 const getAvatar = (name: string) => {
-    const path = `../../assets/icons/digievolutions/${name}.png`
+    const path = `../../../assets/icons/digievolutions/${name}.png`
     return avatarModules[path] ? (avatarModules[path] as any).default || avatarModules[path] : null
 }
 
@@ -54,7 +48,7 @@ const techniqueById = Object.fromEntries(
 
 const techniques = computed(() => {
   const entry = (DigievolutionTechniques as unknown as { digievolutions: { name: any; techniques: DigivolutionTechEntry[] }[] })
-    .digievolutions.find(d => getLocalized(d.name) === getLocalized(props.evolution.name))
+    .digievolutions.find(d => getLocalized(d.name) === getLocalized(props.evolutionName))
   if (!entry) return []
 
   const maxLearnLevel = Math.max(...entry.techniques.map(t => t.learnLevel))
@@ -99,7 +93,7 @@ const reqEvolutions = computed(() => {
 
 const derivatives = computed(() => {
     return props.allEvolutions.filter(evo => 
-        evo.requirements.some(req => req.Type === 'DigievolutionLevel' && req.Digievolution === props.evolution.name)
+        evo.requirements.some(req => req.Type === 'DigievolutionLevel' && req.Digievolution === props.evolutionName)
     )
 })
 
@@ -128,17 +122,17 @@ const moveTooltip = (event: MouseEvent) => {
 <template>
   <div class="flex flex-col h-full bg-[#0c0d1b] rounded overflow-hidden relative">
     <!-- Header Hero -->
-    <div class="relative flex-none pt-4 px-4 pb-2 flex flex-col items-center justify-center bg-gradient-to-b from-[#00051a] to-transparent shrink-0">
-        <div class="relative w-full h-32 bg-gradient-to-r from-cyan-950/40 to-[#001533] rounded-lg border border-cyan-800/50 shadow-inner overflow-hidden group">
+    <div class="relative flex-none pt-4 px-4 pb-2 flex flex-col items-center justify-center bg-linear-to-b from-[#00051a] to-transparent shrink-0">
+        <div class="relative w-full h-32 bg-linear-to-r from-cyan-950/40 to-[#001533] rounded-lg border border-cyan-800/50 shadow-inner overflow-hidden group">
             
-            <img v-if="getAvatar(evolution.name)" 
-                 :src="getAvatar(evolution.name)" 
+            <img v-if="getAvatar(evolutionName!)" 
+                 :src="getAvatar(evolutionName!)" 
                  class="absolute inset-0 w-full h-full object-cover object-[center_15%] pointer-events-none drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] transition-opacity duration-500" 
                  alt="Avatar Overlay" />
 
             <!-- Pattern Overlay -->
             <h2 class="absolute top-3 left-4 text-lg sm:text-xl font-bold font-cyber text-white tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10">
-                {{ getLocalized(evolution.name) }}
+                {{ evolutionName }}
             </h2>
         </div>
     </div>
@@ -166,7 +160,7 @@ const moveTooltip = (event: MouseEvent) => {
                 <span class="text-[11px] mr-2 opacity-80 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-0.5">⚔️</span>
                 {{ $t('digievolution.techniques') }}
             </div>
-            <div class="flex flex-col gap-[3px] pr-1">
+            <div class="flex flex-col gap-0.75 pr-1">
                 <div
                   v-for="tech in techniques"
                   :key="tech.id"
@@ -180,7 +174,7 @@ const moveTooltip = (event: MouseEvent) => {
                     ⭐
                   </span>
 
-                  <span class="text-base leading-none mt-[1px] flex-shrink-0 cursor-help tooltip-anchor"
+                  <span class="text-base leading-none mt-px shrink-0 cursor-help tooltip-anchor"
                         @mouseenter="e => showTypeTooltip(e, tech.type ?? '')"
                         @mousemove="moveTooltip"
                         @mouseleave="hideTooltip">
@@ -188,7 +182,7 @@ const moveTooltip = (event: MouseEvent) => {
                   </span>
 
                   <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-1 mb-[2px]">
+                    <div class="flex items-center gap-1 mb-0.5">
                       <span class="font-bold tracking-wide" :class="tech.isSignature ? 'text-yellow-300' : 'text-white'">
                         {{ getLocalized(tech.name) }}
                       </span>
@@ -232,7 +226,7 @@ const moveTooltip = (event: MouseEvent) => {
       <Transition name="fade">
         <div 
           v-if="activeTooltip.show"
-          class="fixed z-[9999] pointer-events-none px-3 py-1.5 bg-[#001133ee] border-[2px] border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm"
+          class="fixed z-9999 pointer-events-none px-3 py-1.5 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm"
           :style="{ top: `${activeTooltip.y}px`, left: `${activeTooltip.x}px` }"
         >
              <div class="font-bold text-yellow-300 text-xs shadow-black text-shadow-sm uppercase tracking-wider">

@@ -2,12 +2,12 @@
 import { computed } from 'vue'
 import type { Digimon } from '@/models'
 import { EvolutionGraph, type EvolutionRequirement } from '@/logic/EvolutionGraph'
-import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 
 const props = defineProps<{
   node: { name: string, requirements: EvolutionRequirement[] }
   digimon: Digimon
   isSelected?: boolean
+  digimonName: string
 }>()
 
 const emit = defineEmits<{
@@ -18,17 +18,10 @@ const isUnlocked = computed(() => {
     return EvolutionGraph.checkRequirements(props.digimon, props.node)
 })
 
-const digimonName = computed(() => {
-  if (props.digimon && props.digimon.activeDigievolutionId !== null && props.digimon.activeDigievolutionId !== undefined) {
-    return DigievolutionCalculator.getDigievolutionNameById(props.digimon.activeDigievolutionId);
-  }
-  return 'Unknown';
-})
-
 const getRequirementText = (req: EvolutionRequirement) => {
     switch (req.Type) {
-        case 'DigimonLevel': return `${digimonName.value} Lv ${req.Value}`
-        case 'Attribute': return `${digimonName.value} - ${req.Attribute} >= ${req.Value}`
+        case 'DigimonLevel': return `${props.digimonName} Lv ${req.Value}`
+        case 'Attribute': return `${props.digimonName} - ${req.Attribute} >= ${req.Value}`
         case 'DigievolutionLevel': return `${req.Digievolution} Lv ${req.Value}`
         default: return 'Unknown Parameter'
     }
@@ -39,7 +32,7 @@ const isReqMet = (req: EvolutionRequirement) => {
         case 'DigimonLevel': return props.digimon.level >= req.Value
         case 'Attribute': 
             const attr = props.digimon.attributes[req.Attribute?.toLowerCase() as keyof typeof props.digimon.attributes]
-            const val = attr ? attr.sumBetweenDigimonAndEquipaments : 0
+            const val = attr
             return val >= req.Value
         case 'DigievolutionLevel':
             // Logic for checking specific digievolution level would go here
@@ -48,10 +41,10 @@ const isReqMet = (req: EvolutionRequirement) => {
     }
 }
 
-const avatarModules = import.meta.glob('../../assets/icons/digievolutions/*.png', { eager: true })
+const avatarModules = import.meta.glob('../../../assets/icons/digievolutions/*.png', { eager: true })
 
 const getAvatar = (name: string) => {
-    const path = `../../assets/icons/digievolutions/${name}.png`
+    const path = `../../../assets/icons/digievolutions/${name}.png`
     return avatarModules[path] ? (avatarModules[path] as any).default || avatarModules[path] : null
 }
 </script>
@@ -75,7 +68,7 @@ const getAvatar = (name: string) => {
              class="absolute inset-0 w-full h-[150%] object-cover object-[center_15%] pointer-events-none saturate-100 transition-all duration-500"
              :class="isUnlocked ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'" />
              
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-50 z-0 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent opacity-50 z-0 pointer-events-none"></div>
 
         <!-- Header: Name & Lock -->
         <div class="absolute top-1.5 left-2 right-2 z-10 flex justify-between items-center">

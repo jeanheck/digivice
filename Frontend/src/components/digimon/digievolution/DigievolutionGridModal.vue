@@ -5,11 +5,15 @@ import { EvolutionGraph, type EvolutionRequirement } from '@/logic/EvolutionGrap
 import { DigievolutionCalculator } from '@/logic/DigievolutionCalculator';
 import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
 import DigievolutionDetailPanel from './DigievolutionDetailPanel.vue'
-import IconClose from '../icons/IconClose.vue'
+import IconClose from '@/components/modal/IconClose.vue'
+import { DigimonRepository } from '@/repositories/digimon-repository.ts';
+import { DigimonDigievolutionRepository } from '@/repositories/digimon-digievolution-repository.ts';
+import type { DigimonDigievolutionRequirementRaw } from '@/repositories/tables/raws/digimon/digimon-digievolution-requirement-raw.ts'
 
 const props = defineProps<{
   isOpen: boolean
   digimon: Digimon
+  digimonId: number
 }>()
 
 const emit = defineEmits<{
@@ -31,30 +35,36 @@ onUnmounted(() => {
 })
 
 const digimonName = computed(() => {
-  if (props.digimon && props.digimon.activeDigievolutionId !== null && props.digimon.activeDigievolutionId !== undefined) {
-    return DigievolutionCalculator.getDigievolutionNameById(props.digimon.activeDigievolutionId);
-  }
-  return 'Unknown';
+  return DigimonRepository.getNameById(props.digimonId);
 })
 
-const allEvolutions = ref<{ name: string, requirements: EvolutionRequirement[] }[]>([])
-const selectedEvolution = ref<{ name: string, requirements: EvolutionRequirement[] } | null>(null)
+const selectedEvolution = ref<DigimonDigievolutionRequirementRaw[] | null>(null)
+const selectedEvolutionName = ref<string | undefined>(undefined);
 
 watch(() => props.isOpen, (isOpen) => {
   if (isOpen && props.digimon) {
-    allEvolutions.value = EvolutionGraph.getAllEvolutions(digimonName.value)
     selectedEvolution.value = null
+    selectedEvolutionName.value = undefined
   }
 })
 
-const handleSelectNode = (name: string) => {
-  const evo = allEvolutions.value.find(e => e.name === name)
-  if (evo) {
-    selectedEvolution.value = evo
-  } else if (name === digimonName.value) {
+const handleSelectNode = (digievolutionName: string) => {
+
+  const requirements = DigimonDigievolutionRepository.getDigievolutionRequirements(digimonName.value, digievolutionName);
+
+  if (requirements) {
+    selectedEvolution.value = requirements
+    selectedEvolutionName.value = digievolutionName
+  } else if (digievolutionName === digimonName.value) {
     selectedEvolution.value = null
+    selectedEvolutionName.value = undefined
   }
 }
+
+const allEvolutions = computed(() => {
+  const digimonDigievolutionTable = DigimonDigievolutionRepository.getDigievolutionsByDigimonName(digimonName.value);
+  return Object.keys(digimonDigievolutionTable) as string[];
+});
 
 // Search Logic
 const searchQuery = ref('')
@@ -63,7 +73,7 @@ const showDropdown = ref(false)
 const filteredEvolutions = computed(() => {
   const query = searchQuery.value.toLowerCase()
   if (!query) return []
-  return allEvolutions.value.filter(evo => evo.name.toLowerCase().includes(query))
+  return allEvolutions.value.filter(evolution => evolution.toLowerCase().includes(query))
 })
 
 const handleSearchSelect = (name: string) => {
@@ -87,7 +97,7 @@ const handleBlur = () => {
         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
         @click.self="emit('close')"
       >
-        <div class="relative w-[98vw] max-w-[1800px] h-[92vh] max-h-[1000px] bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-slide-up">
+        <div class="relative w-[98vw] max-w-450 h-[92vh] max-h-250 bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-slide-up">
           
           <!-- Hexagon Pattern Background -->
           <div class="absolute inset-0 opacity-[0.03] pointer-events-none" 
@@ -95,14 +105,14 @@ const handleBlur = () => {
           </div>
 
           <!-- Header -->
-          <header class="flex items-center justify-between p-3 bg-gradient-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-20 shrink-0 gap-8">
+          <header class="flex items-center justify-between p-3 bg-linear-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 relative z-20 shrink-0 gap-8">
             <div class="flex items-center gap-6 flex-1">
                 <h2 class="text-[#00aaff] font-bold tracking-widest drop-shadow flex items-center gap-2 whitespace-nowrap">
                     {{ $t('digievolution.title', { name: digimonName }) }}
                 </h2>
                 
                 <!-- Search Bar -->
-                <div class="relative w-128">
+                <div class="relative w-lg">
                 <input 
                     type="text" 
                     v-model="searchQuery" 
@@ -116,12 +126,12 @@ const handleBlur = () => {
                     class="absolute top-full left-0 right-0 mt-1 bg-[#001122] border border-[#0055ff]/50 rounded shadow-[0_4px_12px_rgba(0,119,255,0.2)] max-h-48 overflow-y-auto custom-scroll z-50 flex flex-col"
                 >
                     <div 
-                    v-for="evo in filteredEvolutions" 
-                    :key="evo.name"
-                    @click.stop="handleSearchSelect(evo.name)"
+                    v-for="evolution in filteredEvolutions" 
+                    :key="evolution"
+                    @click.stop="handleSearchSelect(evolution)"
                     class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors font-cyber border-b last:border-b-0 border-[#0055ff]/20"
                     >
-                    {{ evo.name }}
+                    {{ evolution }}
                     </div>
                 </div>
                 </div>
@@ -143,7 +153,7 @@ const handleBlur = () => {
               <DigievolutionFamilyTree 
                 :rookie-name="digimonName"
                 :digimon="digimon"
-                :selected-node-name="selectedEvolution?.name"
+                :selected-node-name="selectedEvolutionName"
                 @select-node="handleSelectNode"
               />
             </div>
@@ -153,7 +163,7 @@ const handleBlur = () => {
               <div v-if="selectedEvolution" class="flex-1 flex flex-col p-1">
                 <DigievolutionDetailPanel 
                   :evolution="selectedEvolution"
-                  :digimon="digimon"
+                  :evolution-name="selectedEvolutionName"
                   :all-evolutions="allEvolutions"
                   @select-evolution="handleSelectNode"
                 />
@@ -161,7 +171,7 @@ const handleBlur = () => {
               
               <!-- Empty State -->
               <div v-else class="flex-1 flex flex-col items-center justify-center p-12 text-center">
-                 <p class="text-[10px] text-blue-300/40 font-cyber leading-relaxed max-w-[200px]">
+                 <p class="text-[10px] text-blue-300/40 font-cyber leading-relaxed max-w-50">
                     {{ $t('digievolution.selectNode') }}
                  </p>
               </div>
@@ -170,7 +180,7 @@ const handleBlur = () => {
           </div>
 
           <!-- Footer gradient bar -->
-          <div class="h-1.5 w-full bg-gradient-to-r from-blue-900 via-cyan-500 to-blue-900 shrink-0"></div>
+          <div class="h-1.5 w-full bg-linear-to-r from-blue-900 via-cyan-500 to-blue-900 shrink-0"></div>
 
         </div>
       </div>
