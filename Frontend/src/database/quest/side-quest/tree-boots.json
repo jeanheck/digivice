@@ -1,136 +1,143 @@
 {
-    "Id": "TreeBoots",
-    "Requisites": [
+    "id": "TreeBoots",
+    "requisites": [
         {
-            "Id": "FolderBag"
+            "id": "FolderBag"
         }
     ],
-    "Steps": {
+    "steps": {
         "1": {
-            "Location": "0220",
-            "Coordinates": {
-                "X": 45,
-                "Y": 49
+            "location": "0220",
+            "coordinates": {
+                "x": 45,
+                "y": 49
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0220",
-                    "Coordinates": {
-                        "X": 79,
-                        "Y": 90
+                    "locationImage": "0220",
+                    "coordinates": {
+                        "x": 79,
+                        "y": 90
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "2": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0200",
-                    "Coordinates": {
-                        "X": 51,
-                        "Y": 39
+                    "locationImage": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
                     }
                 },
                 {
-                    "LocationImage": "020A",
-                    "Coordinates": {
-                        "X": 35,
-                        "Y": 83
+                    "locationImage": "020A",
+                    "coordinates": {
+                        "x": 35,
+                        "y": 83
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "3": {
-            "Location": "0220",
-            "Coordinates": {
-                "X": 45,
-                "Y": 49
+            "location": "0220",
+            "coordinates": {
+                "x": 45,
+                "y": 49
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0220",
-                    "Coordinates": {
-                        "X": 79,
-                        "Y": 90
+                    "locationImage": "0220",
+                    "coordinates": {
+                        "x": 79,
+                        "y": 90
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "4": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0200",
-                    "Coordinates": {
-                        "X": 21,
-                        "Y": 56
+                    "locationImage": "0200",
+                    "coordinates": {
+                        "x": 21,
+                        "y": 56
                     }
                 },
                 {
-                    "LocationImage": "020F",
-                    "Coordinates": {
-                        "X": 49,
-                        "Y": 82
+                    "locationImage": "020F",
+                    "coordinates": {
+                        "x": 49,
+                        "y": 82
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "5": {
-            "Location": "0229",
-            "Coordinates": {
-                "X": 81,
-                "Y": 50
+            "location": "0229",
+            "coordinates": {
+                "x": 81,
+                "y": 50
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0229",
-                    "Coordinates": {
-                        "X": 90,
-                        "Y": 84
+                    "locationImage": "0229",
+                    "coordinates": {
+                        "x": 90,
+                        "y": 84
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "6": {
-            "Location": "022A",
-            "Coordinates": {
-                "X": 87.5,
-                "Y": 46
+            "location": "022A",
+            "coordinates": {
+                "x": 87.5,
+                "y": 46
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022A",
-                    "Coordinates": {
-                        "X": 14,
-                        "Y": 19
+                    "locationImage": "022A",
+                    "coordinates": {
+                        "x": 14,
+                        "y": 19
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "7": {
-            "Location": "0229",
-            "Coordinates": {
-                "X": 81,
-                "Y": 50
+            "location": "0229",
+            "coordinates": {
+                "x": 81,
+                "y": 50
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0229",
-                    "Coordinates": {
-                        "X": 90,
-                        "Y": 84
+                    "locationImage": "0229",
+                    "coordinates": {
+                        "x": 90,
+                        "y": 84
                     }
                 }
-            ]
+            ],
+            "requisites": []
         }
     }
 }

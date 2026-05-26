@@ -1,17 +1,15 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useGameStore } from './stores/use-game-store';
-import { useLocalization } from './composables/useLocalization';
 import Journal from './components/journal/Journal.vue';
 import Map from '@/components/map/Map.vue';
 import QuestDetailsModal from './components/modal/QuestDetailsModal.vue';
 import Footer from './components/footer/Footer.vue';
 import DigimonSlot from './components/digimon/DigimonSlot.vue';
+import type { QuestViewModel } from './view-models/quest-view-model';
 
 const store = useGameStore();
-const { getLocalizedQuest } = useLocalization();
-
-const activeQuestId = ref<string | null>(null);
+const activeQuest = ref<QuestViewModel | null>(null);
 const isQuestModalOpen = ref(false);
 
 const slotsWithDigimon = computed(() => {
@@ -20,41 +18,15 @@ const slotsWithDigimon = computed(() => {
     });
 });
 
-const activeQuestForModal = computed(() => {
-    const questId = activeQuestId.value;
-    if (!questId) {
-        return null;
-    }
-    
-    const journal = store.currentState?.journal;
-    if (!journal) {
-        return null;
-    }
-    
-    const getQuestId = (q: any) => {
-        return q?.Id || q?.id || q?.QuestId;
-    };
-
-    if (journal.mainQuest && getQuestId(journal.mainQuest) === questId) {
-        return getLocalizedQuest(journal.mainQuest);
-    }
-    
-    const sideQuest = journal.sideQuests?.find((q) => {
-        return getQuestId(q) === questId;
-    });
-    
-    return sideQuest ? getLocalizedQuest(sideQuest) : null;
-});
-
-const handleQuestClick = (quest: any) => {
-    activeQuestId.value = quest.Id || quest.id || quest.QuestId || null;
+const handleQuestClick = (questViewModel: QuestViewModel) => {
+    activeQuest.value = questViewModel;
     isQuestModalOpen.value = true;
 };
 
 const handleCloseQuestModal = () => {
     isQuestModalOpen.value = false;
     setTimeout(() => {
-        activeQuestId.value = null;
+        activeQuest.value = null;
     }, 300);
 };
 </script>
@@ -73,7 +45,7 @@ const handleCloseQuestModal = () => {
 
       <div class="flex-1 min-w-75 min-h-0 overflow-hidden flex flex-col gap-4">
         <div class="flex-3 min-h-0 overflow-hidden flex flex-col">
-          <Journal @quest-click="handleQuestClick" class="flex-1" />
+          <Journal v-if="store.currentState?.journal" @quest-click="handleQuestClick" class="flex-1" />
         </div>
         
         <div class="flex-2 min-h-50 flex flex-col">
@@ -92,7 +64,7 @@ const handleCloseQuestModal = () => {
 
     <QuestDetailsModal 
       :is-open="isQuestModalOpen" 
-      :quest="activeQuestForModal" 
+      :questViewModel="activeQuest" 
       @close="handleCloseQuestModal" 
     />
   </main>

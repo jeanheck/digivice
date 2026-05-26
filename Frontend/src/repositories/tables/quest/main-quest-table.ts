@@ -1,3 +1,3 @@
-import type { MainQuestRaw } from "../raws/quest/main-quest-raw";
+import type { QuestRaw } from "../raws/quest/quest-raw";
 
-export type MainQuestTable = MainQuestRaw;
+export type MainQuestTable = QuestRaw;

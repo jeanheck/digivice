@@ -1,3 +1,3 @@
-import type { FishingPoleRaw } from "../raws/quest/side-quest/fishing-pole-raw";
+import type { QuestRaw } from "../raws/quest/quest-raw";
 
-export type FishingPoleTable = FishingPoleRaw;
+export type FishingPoleTable = QuestRaw;

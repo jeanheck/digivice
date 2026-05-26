@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import { useGameStore } from '../../stores/use-game-store'
 import { computed, ref } from 'vue'
-import { useLocalization } from '../../composables/useLocalization'
- 
-const store = useGameStore()
-const { getLocalized, getLocalizedQuest } = useLocalization()
+import { useGameStore } from '../../stores/use-game-store'
+import { JournalPresenter } from '@/presenters/journal.presenter';
+import type { QuestViewModel } from '@/view-models/quest-view-model';
 
-const mainQuest = computed(() => getLocalizedQuest(store.currentState?.journal?.mainQuest))
-const sideQuests = computed(() => (store.currentState?.journal?.sideQuests || []).map(q => getLocalizedQuest(q)))
+const store = useGameStore()
+
+const journalViewModel = computed(() => {
+  return JournalPresenter.getJournalViewModel(store.currentState?.journal!);
+});
 
 const currentMainQuestStep = computed(() => {
-  if (!mainQuest.value || !mainQuest.value.steps) return null
-  return mainQuest.value.steps.find((s: any) => !s.isDone) || null
+  if (!journalViewModel.value.mainQuest || !journalViewModel.value.mainQuest.steps) return null
+  return journalViewModel.value.mainQuest.steps.find((s: any) => !s.isDone) || null
 })
 
 const isSideQuestsExpanded = ref(true)
@@ -22,31 +23,26 @@ const toggleSideQuests = () => {
   isSideQuestsExpanded.value = !isSideQuestsExpanded.value
 }
 
-const onQuestClick = (quest: any) => {
-  emit('quest-click', quest)
+const onQuestClick = (questViewModel: QuestViewModel) => {
+  emit('quest-click', questViewModel)
 }
 
-const displaySideQuests = computed(() => {
-  return [...sideQuests.value]
-})
-
 // Calculate visually if a quest is done based on its steps
-const isQuestDone = (quest: any) => {
+const isQuestDone = (quest: QuestViewModel) => {
   if (!quest || !quest.steps || quest.steps.length === 0) return false;
   return quest.steps.every((s: any) => s.isDone);
 }
 
-const isQuestLocked = (quest: any) => {
+const isQuestLocked = (quest: QuestViewModel) => {
   if (!quest || !quest.requisites || quest.requisites.length === 0) return false;
   return !quest.requisites.every((p: any) => p.isDone);
 }
 
-const isQuestNew = (quest: any) => {
-  if (!quest || !quest.steps || quest.steps.length === 0) return false;
+const isQuestNew = (quest: QuestViewModel) => {
   if (isQuestLocked(quest)) return false;
   if (isQuestDone(quest)) return false;
   // New = all requisites met AND first step not yet completed
-  return !quest.steps[0].isDone;
+  return quest.steps["1"]?.isDone === false;
 }
 </script>
 
@@ -62,16 +58,16 @@ const isQuestNew = (quest: any) => {
       <section>
         <h4 class="text-xs text-orange-400 font-bold mb-2 uppercase tracking-wide border-b border-orange-900 pb-1">{{ $t('journal.mainQuest') }}</h4>
         
-        <div v-if="mainQuest && mainQuest.title" 
-             @click="onQuestClick(mainQuest)"
+        <div v-if="journalViewModel.mainQuest" 
+             @click="onQuestClick(journalViewModel.mainQuest)"
              class="p-2 rounded border border-gray-600 bg-gray-800/50 hover:bg-gray-700/60 cursor-pointer transition-colors group">
           <div class="flex items-center justify-between mb-1">
-            <span class="text-white font-bold text-sm truncate group-hover:text-orange-300 transition-colors">{{ getLocalized(mainQuest.title) }}</span>
-            <span v-if="isQuestDone(mainQuest)" class="text-green-400 text-xs">✔</span>
+            <span class="text-white font-bold text-sm truncate group-hover:text-orange-300 transition-colors">{{ $t('mainQuest.title') }}</span>
+            <span v-if="isQuestDone(journalViewModel.mainQuest)" class="text-green-400 text-xs">✔</span>
           </div>
           <p class="text-gray-400 text-xs line-clamp-2 leading-tight">
              <span v-if="currentMainQuestStep" class="text-orange-300 font-bold mr-1">[{{ currentMainQuestStep.number }}]</span>
-             {{ currentMainQuestStep ? getLocalized(currentMainQuestStep.description) : getLocalized(mainQuest.description) }}
+             {{ currentMainQuestStep ? $t(`mainQuest.steps.${currentMainQuestStep.number}.description`) : $t('mainQuest.description') }}
           </p>
         </div>
         
@@ -93,43 +89,37 @@ const isQuestNew = (quest: any) => {
         <!-- Accordion Content -->
         <div v-show="isSideQuestsExpanded" class="space-y-2">
           
-          <div v-for="quest in displaySideQuests" :key="quest.id || getLocalized(quest.title)"
-               @click="onQuestClick(quest)"
-               class="p-2 rounded border cursor-pointer transition-all duration-200 group relative overflow-hidden"
-               :class="
-                 isQuestLocked(quest)
-                   ? 'border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70'
-                   : isQuestDone(quest)
-                     ? 'border-green-800/50 bg-green-900/20 hover:bg-green-900/40'
-                     : isQuestNew(quest)
-                       ? 'border-cyan-300/60 bg-[#001a2a] hover:bg-[#002a3a] hover:border-cyan-300'
-                       : 'border-[#0033aa]/60 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]'
-               ">
-            
-            <div v-if="isQuestDone(quest)" class="absolute inset-0 bg-green-500/5 pointer-events-none"></div>
+          <div v-for="sideQuest in journalViewModel.sideQuests" :key="sideQuest.id"
+            @click="onQuestClick(sideQuest)"
+            class="p-2 rounded border cursor-pointer transition-all duration-200 group relative overflow-hidden"
+            :class="
+              isQuestLocked(sideQuest)
+                ? 'border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70'
+                : isQuestDone(sideQuest)
+                  ? 'border-green-800/50 bg-green-900/20 hover:bg-green-900/40'
+                  : isQuestNew(sideQuest)
+                    ? 'border-cyan-300/60 bg-[#001a2a] hover:bg-[#002a3a] hover:border-cyan-300'
+                    : 'border-[#0033aa]/60 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]'
+            ">
+            <div v-if="isQuestDone(sideQuest)" class="absolute inset-0 bg-green-500/5 pointer-events-none"></div>
 
             <div class="flex items-center justify-between mb-1 relative z-10">
               <span class="text-white font-bold text-xs truncate transition-colors"
                 :class="{
-                   'text-gray-500': isQuestLocked(quest),
-                   'text-gray-400 line-through': isQuestDone(quest),
-                   'group-hover:text-cyan-300': !isQuestLocked(quest) && !isQuestDone(quest)
+                   'text-gray-500': isQuestLocked(sideQuest),
+                   'text-gray-400 line-through': isQuestDone(sideQuest),
+                   'group-hover:text-cyan-300': !isQuestLocked(sideQuest) && !isQuestDone(sideQuest)
                 }">
-                {{ getLocalized(quest.title) }}
+                {{ $t(`${sideQuest.id}.title`) }}
               </span>
-              <span v-if="isQuestDone(quest)" class="text-green-500 text-xs drop-shadow flex-shrink-0 ml-2">✔</span>
-              <span v-else-if="isQuestLocked(quest)" class="text-xs flex-shrink-0 ml-2">🔒</span>
-              <span v-else-if="isQuestNew(quest)" class="text-cyan-300 text-xs flex-shrink-0 ml-2">❕</span>
+              <span v-if="isQuestDone(sideQuest)" class="text-green-500 text-xs drop-shadow shrink-0 ml-2">✔</span>
+              <span v-else-if="isQuestLocked(sideQuest)" class="text-xs shrink-0 ml-2">🔒</span>
+              <span v-else-if="isQuestNew(sideQuest)" class="text-cyan-300 text-xs shrink-0 ml-2">❕</span>
             </div>
-            <p class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10" :class="{ 'opacity-50': isQuestDone(quest) || isQuestLocked(quest) }">
-              {{ getLocalized(quest.description) }}
+            <p class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10" :class="{ 'opacity-50': isQuestDone(sideQuest) || isQuestLocked(sideQuest) }">
+              {{ $t(`${sideQuest.id}.description`) }}
             </p>
           </div>
-
-          <div v-if="displaySideQuests.length === 0" class="p-2 text-center opacity-50">
-             <span class="text-gray-500 text-xs italic">{{ $t('journal.noSideQuests') }}</span>
-          </div>
-          
         </div>
       </section>
 

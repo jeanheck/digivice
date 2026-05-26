@@ -1,3 +1,3 @@
-import type { TreeBootsRaw } from "../raws/quest/side-quest/tree-boots-raw";
+import type { QuestRaw } from "../raws/quest/quest-raw";
 
-export type TreeBootsTable = TreeBootsRaw;
+export type TreeBootsTable = QuestRaw;

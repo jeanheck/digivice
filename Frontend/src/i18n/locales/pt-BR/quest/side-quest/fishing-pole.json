@@ -28,6 +28,11 @@
           "0": {
             "locationTarget": "Tai Kong Wong"
           }
+        },
+        "requisites": {
+          "BambooSpear": "Arpão de Bambu",
+          "SpiderWeb": "Teia de aranha",
+          "RedSnapper": "Pargo Vermelho"
         }
       }
     }

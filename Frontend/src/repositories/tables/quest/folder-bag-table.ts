@@ -1,3 +1,3 @@
-import type { FolderBagRaw } from "../raws/quest/side-quest/folder-bag-raw";
+import type { QuestRaw } from "../raws/quest/quest-raw";
 
-export type FolderBagTable = FolderBagRaw;
+export type FolderBagTable = QuestRaw;

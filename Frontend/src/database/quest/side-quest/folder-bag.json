@@ -1,50 +1,51 @@
 {
-    "Id": "FolderBag",
-    "Requisites": [],
-    "Steps": {
+    "id": "FolderBag",
+    "requisites": [],
+    "steps": {
         "1": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0200",
-                    "Coordinates": {
-                        "X": 51,
-                        "Y": 39
+                    "locationImage": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
                     }
                 },
                 {
-                    "LocationImage": "020A",
-                    "Coordinates": {
-                        "X": 45,
-                        "Y": 98
+                    "locationImage": "020A",
+                    "coordinates": {
+                        "x": 45,
+                        "y": 98
                     }
                 },
                 {
-                    "LocationImage": "020B",
-                    "Coordinates": {
-                        "X": 14,
-                        "Y": 83
+                    "locationImage": "020B",
+                    "coordinates": {
+                        "x": 14,
+                        "y": 83
                     }
                 },
                 {
-                    "LocationImage": "0201",
-                    "Coordinates": {
-                        "X": 45,
-                        "Y": 26
+                    "locationImage": "0201",
+                    "coordinates": {
+                        "x": 45,
+                        "y": 26
                     }
                 },
                 {
-                    "LocationImage": "0211",
-                    "Coordinates": {
-                        "X": 62,
-                        "Y": 33
+                    "locationImage": "0211",
+                    "coordinates": {
+                        "x": 62,
+                        "y": 33
                     }
                 }
-            ]
+            ],
+            "requisites": []
         }
     }
 }

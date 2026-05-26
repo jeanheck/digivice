@@ -1,22 +1,22 @@
 export interface CoordinatesRaw {
-    X: number;
-    Y: number;
+    x: number;
+    y: number;
 }
 
 export interface ZoomedLocationRaw {
-    LocationImage: string;
-    Coordinates: CoordinatesRaw;
+    locationImage: string;
+    coordinates: CoordinatesRaw;
 }
 
 export interface RequisiteRaw {
-    Id: string;
+    id: string;
 }
 
 export interface StepRaw {
-    Location: string;
-    Coordinates: CoordinatesRaw;
-    ZoomedLocations: ZoomedLocationRaw[];
-    Requisites?: RequisiteRaw[];
+    requisites: RequisiteRaw[];
+    location: string;
+    coordinates: CoordinatesRaw;
+    zoomedLocations: ZoomedLocationRaw[];
 }
 
 export type StepsRaw = Record<string, StepRaw>;

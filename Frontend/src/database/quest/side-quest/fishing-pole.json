@@ -1,67 +1,69 @@
 {
-    "Id": "FishingPole",
-    "Requisites": [
+    "id": "FishingPole",
+    "requisites": [
         {
-            "Id": "FolderBag"
+            "id": "FolderBag"
         }
     ],
-    "Steps": {
+    "steps": {
         "1": {
-            "Location": "021F",
-            "Coordinates": {
-                "X": 54,
-                "Y": 59
+            "location": "021F",
+            "coordinates": {
+                "x": 54,
+                "y": 59
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "021F",
-                    "Coordinates": {
-                        "X": 44,
-                        "Y": 86
+                    "locationImage": "021F",
+                    "coordinates": {
+                        "x": 44,
+                        "y": 86
                     }
-                }
-            ]
-        },
-        "2": {
-            "Location": "0227",
-            "Coordinates": {
-                "X": 74.5,
-                "Y": 47
-            },
-            "ZoomedLocations": [
-                {
-                    "LocationImage": "0227",
-                    "Coordinates": {
-                        "X": 47,
-                        "Y": 47
-                    }
-                }
-            ]
-        },
-        "3": {
-            "Requisites": [
-                {
-                    "Id": "BambooSpear"
-                },
-                {
-                    "Id": "SpiderWeb"
-                },
-                {
-                    "Id": "BambooSpear"
                 }
             ],
-            "Location": "021F",
-            "Coordinates": {
-                "X": 54,
-                "Y": 59
+            "requisites": []
+        },
+        "2": {
+            "location": "0227",
+            "coordinates": {
+                "x": 74.5,
+                "y": 47
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "021F",
-                    "Coordinates": {
-                        "X": 44,
-                        "Y": 86
+                    "locationImage": "0227",
+                    "coordinates": {
+                        "x": 47,
+                        "y": 47
                     }
+                }
+            ],
+            "requisites": []
+        },
+        "3": {
+            "location": "021F",
+            "coordinates": {
+                "x": 54,
+                "y": 59
+            },
+            "zoomedLocations": [
+                {
+                    "locationImage": "021F",
+                    "coordinates": {
+                        "x": 44,
+                        "y": 86
+                    }
+                }
+            ],
+            "requisites": [
+                {
+                    "id": "BambooSpear"
+                },
+                {
+                    "id": "SpiderWeb"
+                },
+                {
+                    "id": "RedSnapper"
                 }
             ]
         }

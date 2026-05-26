@@ -1,757 +1,800 @@
 {
-    "Id": "MainQuest",
-    "Requisites": [],
-    "Steps": {
+    "id": "MainQuest",
+    "requisites": [],
+    "steps": {
         "1": {
-            "Location": "022E",
-            "Coordinates": {
-                "X": 80.5,
-                "Y": 41
+            "location": "022E",
+            "coordinates": {
+                "x": 80.5,
+                "y": 41
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022E",
-                    "Coordinates": {
-                        "X": 59.5,
-                        "Y": 29.5
+                    "locationImage": "022E",
+                    "coordinates": {
+                        "x": 59.5,
+                        "y": 29.5
                     }
                 },
                 {
-                    "LocationImage": "0230",
-                    "Coordinates": {
-                        "X": 25,
-                        "Y": 65
+                    "locationImage": "0230",
+                    "coordinates": {
+                        "x": 25,
+                        "y": 65
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "2": {
-            "Location": "0226",
-            "Coordinates": {
-                "X": 69.5,
-                "Y": 35.5
+            "location": "0226",
+            "coordinates": {
+                "x": 69.5,
+                "y": 35.5
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0226",
-                    "Coordinates": {
-                        "X": 39,
-                        "Y": 12
+                    "locationImage": "0226",
+                    "coordinates": {
+                        "x": 39,
+                        "y": 12
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "3": {
-            "Location": "022B",
-            "Coordinates": {
-                "X": 90,
-                "Y": 38
+            "location": "022B",
+            "coordinates": {
+                "x": 90,
+                "y": 38
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022B",
-                    "Coordinates": {
-                        "X": 73,
-                        "Y": 9
+                    "locationImage": "022B",
+                    "coordinates": {
+                        "x": 73,
+                        "y": 9
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "4": {
-            "Location": "022E",
-            "Coordinates": {
-                "X": 80.5,
-                "Y": 41
+            "location": "022E",
+            "coordinates": {
+                "x": 80.5,
+                "y": 41
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022E",
-                    "Coordinates": {
-                        "X": 59.5,
-                        "Y": 29.5
+                    "locationImage": "022E",
+                    "coordinates": {
+                        "x": 59.5,
+                        "y": 29.5
                     }
                 },
                 {
-                    "LocationImage": "0230",
-                    "Coordinates": {
-                        "X": 28,
-                        "Y": 73
+                    "locationImage": "0230",
+                    "coordinates": {
+                        "x": 28,
+                        "y": 73
                     }
                 },
                 {
-                    "LocationImage": "022E",
-                    "Coordinates": {
-                        "X": 23.5,
-                        "Y": 28.5
+                    "locationImage": "022E",
+                    "coordinates": {
+                        "x": 23.5,
+                        "y": 28.5
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "5": {
-            "Location": "022E",
-            "Coordinates": {
-                "X": 80.5,
-                "Y": 41
+            "location": "022E",
+            "coordinates": {
+                "x": 80.5,
+                "y": 41
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022E",
-                    "Coordinates": {
-                        "X": 18,
-                        "Y": 81
+                    "locationImage": "022E",
+                    "coordinates": {
+                        "x": 18,
+                        "y": 81
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "6": {
-            "Location": "022C",
-            "Coordinates": {
-                "X": 88,
-                "Y": 53
+            "location": "022C",
+            "coordinates": {
+                "x": 88,
+                "y": 53
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022C",
-                    "Coordinates": {
-                        "X": 42.5,
-                        "Y": 62.5
+                    "locationImage": "022C",
+                    "coordinates": {
+                        "x": 42.5,
+                        "y": 62.5
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "7": {
-            "Location": "0202",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0202",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0202",
-                    "Coordinates": {
-                        "X": 54,
-                        "Y": 38
+                    "locationImage": "0202",
+                    "coordinates": {
+                        "x": 54,
+                        "y": 38
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "8": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0200",
-                    "Coordinates": {
-                        "X": 51,
-                        "Y": 39
+                    "locationImage": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
                     }
                 },
                 {
-                    "LocationImage": "020A",
-                    "Coordinates": {
-                        "X": 61.5,
-                        "Y": 6
+                    "locationImage": "020A",
+                    "coordinates": {
+                        "x": 61.5,
+                        "y": 6
                     }
                 },
                 {
-                    "LocationImage": "020C",
-                    "Coordinates": {
-                        "X": 80,
-                        "Y": 42
+                    "locationImage": "020C",
+                    "coordinates": {
+                        "x": 80,
+                        "y": 42
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "9": {
-            "Location": "0223",
-            "Coordinates": {
-                "X": 67.25,
-                "Y": 54
+            "location": "0223",
+            "coordinates": {
+                "x": 67.25,
+                "y": 54
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0223",
-                    "Coordinates": {
-                        "X": 29,
-                        "Y": 28
+                    "locationImage": "0223",
+                    "coordinates": {
+                        "x": 29,
+                        "y": 28
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "10": {
-            "Location": "022E",
-            "Coordinates": {
-                "X": 80.5,
-                "Y": 41
+            "location": "022E",
+            "coordinates": {
+                "x": 80.5,
+                "y": 41
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022E",
-                    "Coordinates": {
-                        "X": 33,
-                        "Y": 51
+                    "locationImage": "022E",
+                    "coordinates": {
+                        "x": 33,
+                        "y": 51
                     }
                 },
                 {
-                    "LocationImage": "022F",
-                    "Coordinates": {
-                        "X": 34,
-                        "Y": 31
+                    "locationImage": "022F",
+                    "coordinates": {
+                        "x": 34,
+                        "y": 31
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "11": {
-            "Location": "022C",
-            "Coordinates": {
-                "X": 88,
-                "Y": 53
+            "location": "022C",
+            "coordinates": {
+                "x": 88,
+                "y": 53
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022C",
-                    "Coordinates": {
-                        "X": 42,
-                        "Y": 62
+                    "locationImage": "022C",
+                    "coordinates": {
+                        "x": 42,
+                        "y": 62
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "12": {
-            "Location": "022E",
-            "Coordinates": {
-                "X": 80.5,
-                "Y": 41
+            "location": "022E",
+            "coordinates": {
+                "x": 80.5,
+                "y": 41
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022E",
-                    "Coordinates": {
-                        "X": 68,
-                        "Y": 33
+                    "locationImage": "022E",
+                    "coordinates": {
+                        "x": 68,
+                        "y": 33
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "13": {
-            "Location": "0223",
-            "Coordinates": {
-                "X": 67.25,
-                "Y": 54
+            "location": "0223",
+            "coordinates": {
+                "x": 67.25,
+                "y": 54
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0223",
-                    "Coordinates": {
-                        "X": 56,
-                        "Y": 90
+                    "locationImage": "0223",
+                    "coordinates": {
+                        "x": 56,
+                        "y": 90
                     }
                 },
                 {
-                    "LocationImage": "0224",
-                    "Coordinates": {
-                        "X": 31.5,
-                        "Y": 95
+                    "locationImage": "0224",
+                    "coordinates": {
+                        "x": 31.5,
+                        "y": 95
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "14": {
-            "Location": "022C",
-            "Coordinates": {
-                "X": 88,
-                "Y": 53
+            "location": "022C",
+            "coordinates": {
+                "x": 88,
+                "y": 53
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "022C",
-                    "Coordinates": {
-                        "X": 42,
-                        "Y": 62
+                    "locationImage": "022C",
+                    "coordinates": {
+                        "x": 42,
+                        "y": 62
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "15": {
-            "Location": "023A",
-            "Coordinates": {
-                "X": 80,
-                "Y": 90
+            "location": "023A",
+            "coordinates": {
+                "x": 80,
+                "y": 90
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "023A",
-                    "Coordinates": {
-                        "X": 19,
-                        "Y": 60
+                    "locationImage": "023A",
+                    "coordinates": {
+                        "x": 19,
+                        "y": 60
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "16": {
-            "Location": "0238",
-            "Coordinates": {
-                "X": 68,
-                "Y": 78
+            "location": "0238",
+            "coordinates": {
+                "x": 68,
+                "y": 78
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0238",
-                    "Coordinates": {
-                        "X": 33,
-                        "Y": 68
+                    "locationImage": "0238",
+                    "coordinates": {
+                        "x": 33,
+                        "y": 68
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "17": {
-            "Location": "0239",
-            "Coordinates": {
-                "X": 71,
-                "Y": 69
+            "location": "0239",
+            "coordinates": {
+                "x": 71,
+                "y": 69
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0239",
-                    "Coordinates": {
-                        "X": 46,
-                        "Y": 73
+                    "locationImage": "0239",
+                    "coordinates": {
+                        "x": 46,
+                        "y": 73
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "18": {
-            "Location": "0226",
-            "Coordinates": {
-                "X": 69.5,
-                "Y": 35.5
+            "location": "0226",
+            "coordinates": {
+                "x": 69.5,
+                "y": 35.5
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0226",
-                    "Coordinates": {
-                        "X": 7,
-                        "Y": 13
+                    "locationImage": "0226",
+                    "coordinates": {
+                        "x": 7,
+                        "y": 13
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "19": {
-            "Location": "0202",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0202",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0202",
-                    "Coordinates": {
-                        "X": 97.5,
-                        "Y": 64.5
+                    "locationImage": "0202",
+                    "coordinates": {
+                        "x": 97.5,
+                        "y": 64.5
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "20": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0201",
-                    "Coordinates": {
-                        "X": 55,
-                        "Y": 82
+                    "locationImage": "0201",
+                    "coordinates": {
+                        "x": 55,
+                        "y": 82
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "21": {
-            "Location": "0227",
-            "Coordinates": {
-                "X": 74.5,
-                "Y": 47
+            "location": "0227",
+            "coordinates": {
+                "x": 74.5,
+                "y": 47
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0227",
-                    "Coordinates": {
-                        "X": 10,
-                        "Y": 40
+                    "locationImage": "0227",
+                    "coordinates": {
+                        "x": 10,
+                        "y": 40
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "22": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0201",
-                    "Coordinates": {
-                        "X": 55,
-                        "Y": 82
+                    "locationImage": "0201",
+                    "coordinates": {
+                        "x": 55,
+                        "y": 82
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "23": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "021B",
-                    "Coordinates": {
-                        "X": 40,
-                        "Y": 18
+                    "locationImage": "021B",
+                    "coordinates": {
+                        "x": 40,
+                        "y": 18
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "24": {
-            "Location": "0239",
-            "Coordinates": {
-                "X": 71,
-                "Y": 69
+            "location": "0239",
+            "coordinates": {
+                "x": 71,
+                "y": 69
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0239",
-                    "Coordinates": {
-                        "X": 46,
-                        "Y": 73
+                    "locationImage": "0239",
+                    "coordinates": {
+                        "x": 46,
+                        "y": 73
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "25": {
-            "Location": "023A",
-            "Coordinates": {
-                "X": 80,
-                "Y": 90
+            "location": "023A",
+            "coordinates": {
+                "x": 80,
+                "y": 90
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "023A",
-                    "Coordinates": {
-                        "X": 19,
-                        "Y": 60
+                    "locationImage": "023A",
+                    "coordinates": {
+                        "x": 19,
+                        "y": 60
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "26": {
-            "Location": "023E",
-            "Coordinates": {
-                "X": 61,
-                "Y": 80
+            "location": "023E",
+            "coordinates": {
+                "x": 61,
+                "y": 80
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "023E",
-                    "Coordinates": {
-                        "X": 18,
-                        "Y": 36
+                    "locationImage": "023E",
+                    "coordinates": {
+                        "x": 18,
+                        "y": 36
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "27": {
-            "Location": "023E",
-            "Coordinates": {
-                "X": 61,
-                "Y": 80
+            "location": "023E",
+            "coordinates": {
+                "x": 61,
+                "y": 80
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0240",
-                    "Coordinates": {
-                        "X": 55,
-                        "Y": 37
+                    "locationImage": "0240",
+                    "coordinates": {
+                        "x": 55,
+                        "y": 37
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "28": {
-            "Location": "023E",
-            "Coordinates": {
-                "X": 61,
-                "Y": 80
+            "location": "023E",
+            "coordinates": {
+                "x": 61,
+                "y": 80
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "023E",
-                    "Coordinates": {
-                        "X": 22,
-                        "Y": 33
+                    "locationImage": "023E",
+                    "coordinates": {
+                        "x": 22,
+                        "y": 33
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "29": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0200",
-                    "Coordinates": {
-                        "X": 21,
-                        "Y": 56
+                    "locationImage": "0200",
+                    "coordinates": {
+                        "x": 21,
+                        "y": 56
                     }
                 },
                 {
-                    "LocationImage": "020F",
-                    "Coordinates": {
-                        "X": 52,
-                        "Y": 62
+                    "locationImage": "020F",
+                    "coordinates": {
+                        "x": 52,
+                        "y": 62
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "30": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0201",
-                    "Coordinates": {
-                        "X": 65,
-                        "Y": 78
+                    "locationImage": "0201",
+                    "coordinates": {
+                        "x": 65,
+                        "y": 78
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "31": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "021B",
-                    "Coordinates": {
-                        "X": 40,
-                        "Y": 18
+                    "locationImage": "021B",
+                    "coordinates": {
+                        "x": 40,
+                        "y": 18
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "32": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0203",
-                    "Coordinates": {
-                        "X": 32,
-                        "Y": 46
+                    "locationImage": "0203",
+                    "coordinates": {
+                        "x": 32,
+                        "y": 46
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "33": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "021B",
-                    "Coordinates": {
-                        "X": 40,
-                        "Y": 18
+                    "locationImage": "021B",
+                    "coordinates": {
+                        "x": 40,
+                        "y": 18
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "34": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "020B",
-                    "Coordinates": {
-                        "X": 69,
-                        "Y": 37
+                    "locationImage": "020B",
+                    "coordinates": {
+                        "x": 69,
+                        "y": 37
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "35": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0203",
-                    "Coordinates": {
-                        "X": 39,
-                        "Y": 26
+                    "locationImage": "0203",
+                    "coordinates": {
+                        "x": 39,
+                        "y": 26
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "36": {
-            "Location": "0200",
-            "Coordinates": {
-                "X": 50.5,
-                "Y": 43
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0214",
-                    "Coordinates": {
-                        "X": 39,
-                        "Y": 13
+                    "locationImage": "0214",
+                    "coordinates": {
+                        "x": 39,
+                        "y": 13
                     }
                 },
                 {
-                    "LocationImage": "0215",
-                    "Coordinates": {
-                        "X": 70.5,
-                        "Y": 34.5
+                    "locationImage": "0215",
+                    "coordinates": {
+                        "x": 70.5,
+                        "y": 34.5
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "37": {
-            "Location": "023B",
-            "Coordinates": {
-                "X": 60.5,
-                "Y": 89.5
+            "location": "023B",
+            "coordinates": {
+                "x": 60.5,
+                "y": 89.5
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "023B",
-                    "Coordinates": {
-                        "X": 70,
-                        "Y": 56
+                    "locationImage": "023B",
+                    "coordinates": {
+                        "x": 70,
+                        "y": 56
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "38": {
-            "Location": "0235",
-            "Coordinates": {
-                "X": 85,
-                "Y": 83
+            "location": "0235",
+            "coordinates": {
+                "x": 85,
+                "y": 83
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0235",
-                    "Coordinates": {
-                        "X": 80,
-                        "Y": 20
+                    "locationImage": "0235",
+                    "coordinates": {
+                        "x": 80,
+                        "y": 20
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "39": {
-            "Location": "0239",
-            "Coordinates": {
-                "X": 71,
-                "Y": 69
+            "location": "0239",
+            "coordinates": {
+                "x": 71,
+                "y": 69
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0239",
-                    "Coordinates": {
-                        "X": 46,
-                        "Y": 73
+                    "locationImage": "0239",
+                    "coordinates": {
+                        "x": 46,
+                        "y": 73
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "40": {
-            "Location": "0226",
-            "Coordinates": {
-                "X": 69.5,
-                "Y": 35.5
+            "location": "0226",
+            "coordinates": {
+                "x": 69.5,
+                "y": 35.5
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0226",
-                    "Coordinates": {
-                        "X": 7,
-                        "Y": 13
+                    "locationImage": "0226",
+                    "coordinates": {
+                        "x": 7,
+                        "y": 13
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "41": {
-            "Location": "0226",
-            "Coordinates": {
-                "X": 69.5,
-                "Y": 35.5
+            "location": "0226",
+            "coordinates": {
+                "x": 69.5,
+                "y": 35.5
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0226",
-                    "Coordinates": {
-                        "X": 7,
-                        "Y": 13
+                    "locationImage": "0226",
+                    "coordinates": {
+                        "x": 7,
+                        "y": 13
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "42": {
-            "Location": "0235",
-            "Coordinates": {
-                "X": 85,
-                "Y": 83
+            "location": "0235",
+            "coordinates": {
+                "x": 85,
+                "y": 83
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0235",
-                    "Coordinates": {
-                        "X": 80,
-                        "Y": 20
+                    "locationImage": "0235",
+                    "coordinates": {
+                        "x": 80,
+                        "y": 20
                     }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "43": {
-            "Location": "0235",
-            "Coordinates": {
-                "X": 85,
-                "Y": 83
+            "location": "0235",
+            "coordinates": {
+                "x": 85,
+                "y": 83
             },
-            "ZoomedLocations": [
+            "zoomedLocations": [
                 {
-                    "LocationImage": "0236",
-                    "Coordinates": {
-                        "X": 25,
-                        "Y": 88
+                    "locationImage": "0236",
+                    "coordinates": {
+                        "x": 25,
+                        "y": 88
                     }
                 }
-            ]
+            ],
+            "requisites": []
         }
     }
 }
