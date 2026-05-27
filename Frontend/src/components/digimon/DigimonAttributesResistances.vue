@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { AttributeType, ResistanceType } from "@/models";
-import type { Attributes, Equipments, Resistances, EnrichedDigievolution, EnrichedAttributes, EnrichedResistances, EnrichedAttributeResistance } from "@/models";
+import type { Attributes, Equipments, Resistances } from "@/models";
 import { DigimonStatusCalculator } from "@/logic/DigimonStatusCalculator";
 import DigimonAttributeResistance from "@/components/digimon/DigimonAttributeResistance.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";

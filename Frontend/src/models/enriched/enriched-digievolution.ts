@@ -1,8 +1,0 @@
-import type { Attributes } from '@/models/attributes';
-import type { Resistances } from '@/models/resistances';
-
-export interface EnrichedDigievolution {
-    name: string;
-    attributes: Attributes;
-    resistances: Resistances;
-}

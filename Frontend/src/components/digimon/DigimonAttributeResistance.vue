@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useLocalization } from '@/composables/useLocalization';
-import type { EnrichedAttributeResistance } from '@/models';
+import type { AttributeResistanceViewModel } from '@/viewmodels/digimon/attribute-resistance.viewmodel';
 
 const props = defineProps<{
-  enrichedAttributeResistance: EnrichedAttributeResistance;
+  enrichedAttributeResistance: AttributeResistanceViewModel;
   propertyKey: string;
 }>();
 

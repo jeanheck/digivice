@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import MapImage from "./MapImage.vue";
 import MapEnemies from "./MapEnemies.vue";
-import type { AreaInformation } from "../../models/area-information";
 import { computed } from "vue";
 import { MapPresenter } from "@/presenters/map.presenter.ts";
 
 const props = defineProps<{
   locationId: string | null;
-  areaInfo?: AreaInformation | null;
 }>();
 
 const locationViewModel = computed(() => {
