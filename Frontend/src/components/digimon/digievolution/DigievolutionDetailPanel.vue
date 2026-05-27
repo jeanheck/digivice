@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useLocalization } from '@/composables/useLocalization';
-import type { DigimonDigievolutionRequirementRaw } from '@/repositories/tables/raws/digimon/digimon-digievolution-requirement-raw';
+import type { DigimonDigievolutionRequirementViewModel } from '@/view-models/digimon-digievolution-requirement.viewmodel';
 import { DigievolutionRepository } from '@/repositories';
 import { TechniquePresenter } from '@/presenters/technique-presenter';
+import type { DigimonDigievolutionViewModel } from '@/view-models/digimon-digievolution.viewmodel';
 
 const props = defineProps<{
-  evolution: DigimonDigievolutionRequirementRaw[]
+  evolution: DigimonDigievolutionRequirementViewModel[]
   evolutionName: string | undefined
   allEvolutions: string[]
-  derivativeParameter: import('@/repositories/tables/raws/digimon/digimon-digievolution-raw').DigimonDigievolutionRaw
+  derivativeParameter: DigimonDigievolutionViewModel
 }>()
 
 const emit = defineEmits<{
@@ -74,10 +75,6 @@ const reqEvolutions = computed(() => {
 
 const derivatives = computed(() => {
   const teste = Object.entries(props.derivativeParameter).map(value => value);
-  console.log('teste > ', teste);
-  console.log('teste[0] > ', teste[0]);
-  console.log('teste[0][0] > ', teste[0]![0]);
-  console.log('teste[0][1] > ', teste[0]![1]);
 
   const result = teste.filter(entry => {
     const requirements = entry[1];

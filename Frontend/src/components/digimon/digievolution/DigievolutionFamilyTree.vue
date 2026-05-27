@@ -7,6 +7,7 @@ import DigievolutionTreeNode from './DigievolutionTreeNode.vue'
 const props = defineProps<{
   rookieName: string
   digimon: Digimon
+  digimonId: number
   selectedNodeName?: string
 }>()
 
@@ -17,7 +18,7 @@ const emit = defineEmits<{
 const families = ref<FamilyChain[]>([])
 
 const getRequirements = (name: string): EvolutionRequirement[] => {
-    const allEvos = EvolutionGraph.getAllEvolutions(props.rookieName)
+    const allEvos = EvolutionGraph.getAllEvolutions(props.digimonId)
     const evo = allEvos.find(e => e.name === name)
     return evo?.requirements || []
 }

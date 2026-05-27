@@ -136,9 +136,9 @@ export class EvolutionGraph {
         return chains
     }
 
-    static getAllEvolutions(rookieName: string): { name: string, requirements: EvolutionRequirement[] }[] {
+    static getAllEvolutions(digimonId: number): { name: string, requirements: EvolutionRequirement[] }[] {
         //const rawData = DigivolvingRequirementsTable as unknown as Record<string, Record<string, EvolutionRequirement[]>>
-        const rawData = DigimonRepository.getDigievolutionsByDigimonName(rookieName);
+        const rawData = DigimonRepository.getDigievolutionsById(digimonId);
         
         return Object.keys(rawData).map(evoName => ({
             name: evoName,

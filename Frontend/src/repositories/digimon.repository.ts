@@ -16,12 +16,13 @@ export class DigimonRepository {
         return this.digimonExperienceTable[id]![String(level)]!;
     }
     public static getNameById(id: number): string {
-        return this.digimonNameTable[String(id)]!;
+        return this.digimonNameTable[id]!;
     }
-    public static getDigievolutionsByDigimonName(digimonKey: string): DigimonDigievolutionRaw {
-        return this.digimonDigievolutionTable[digimonKey]!;
+    public static getDigievolutionsById(id: number): DigimonDigievolutionRaw {
+        return this.digimonDigievolutionTable[id]!;
     }
-    public static getDigievolutionRequirements(digimonKey: string, digievolutionName: string): DigimonDigievolutionRequirementRaw[] {
-        return this.digimonDigievolutionTable[digimonKey]![digievolutionName]!;
+    // TODO - change digievolutionName by digievolutionId
+    public static getDigievolutionRequirements(digimonId: number, digievolutionName: string): DigimonDigievolutionRequirementRaw[] {
+        return this.digimonDigievolutionTable[digimonId]![digievolutionName]!;
     }
 }

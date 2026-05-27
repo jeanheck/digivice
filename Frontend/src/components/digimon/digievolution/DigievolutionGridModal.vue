@@ -4,8 +4,8 @@ import type { Digimon } from '@/models'
 import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
 import DigievolutionDetailPanel from './DigievolutionDetailPanel.vue'
 import IconClose from '@/components/modal/IconClose.vue'
-import { DigimonRepository } from "@/repositories/digimon.repository";
-import type { DigimonDigievolutionRequirementRaw } from '@/repositories/tables/raws/digimon/digimon-digievolution-requirement-raw.ts'
+import { DigievolutionGridModalPresenter } from '@/presenters/digievolution-grid-modal.presenter.ts'
+import type { DigimonDigievolutionRequirementViewModel } from '@/view-models/digimon-digievolution-requirement.viewmodel.ts';
 
 const props = defineProps<{
   isOpen: boolean
@@ -32,10 +32,10 @@ onUnmounted(() => {
 })
 
 const digimonName = computed(() => {
-  return DigimonRepository.getNameById(props.digimonId);
+  return DigievolutionGridModalPresenter.getNameById(props.digimonId);
 })
 
-const selectedEvolution = ref<DigimonDigievolutionRequirementRaw[] | null>(null)
+const selectedEvolution = ref<DigimonDigievolutionRequirementViewModel[] | null>(null)
 const selectedEvolutionName = ref<string | undefined>(undefined);
 
 watch(() => props.isOpen, (isOpen) => {
@@ -46,8 +46,7 @@ watch(() => props.isOpen, (isOpen) => {
 })
 
 const handleSelectNode = (digievolutionName: string) => {
-
-  const requirements = DigimonRepository.getDigievolutionRequirements(digimonName.value, digievolutionName);
+  const requirements = DigievolutionGridModalPresenter.getDigievolutionRequirements(props.digimonId, digievolutionName);
 
   if (requirements) {
     selectedEvolution.value = requirements
@@ -59,11 +58,11 @@ const handleSelectNode = (digievolutionName: string) => {
 }
 
 const derivativeParameter = computed(() => {
-  return DigimonRepository.getDigievolutionsByDigimonName(digimonName.value);
+  return DigievolutionGridModalPresenter.getDigievolutionsById(props.digimonId);
 });
 
 const allEvolutions = computed(() => {
-  const digimonDigievolutionTable = DigimonRepository.getDigievolutionsByDigimonName(digimonName.value);
+  const digimonDigievolutionTable = DigievolutionGridModalPresenter.getDigievolutionsById(props.digimonId);
   return Object.keys(digimonDigievolutionTable) as string[];
 });
 
@@ -154,6 +153,7 @@ const handleBlur = () => {
               <DigievolutionFamilyTree 
                 :rookie-name="digimonName"
                 :digimon="digimon"
+                :digimon-id="digimonId"
                 :selected-node-name="selectedEvolutionName"
                 @select-node="handleSelectNode"
               />
