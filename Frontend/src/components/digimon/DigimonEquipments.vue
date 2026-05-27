@@ -20,6 +20,7 @@ const slotKeys = [
   "accessory2"
 ] as const;
 
+const tooltipPlacement = "below" as const;
 const tooltipPosition = useTooltipPosition(300);
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 const selectedEquipment = ref<EnrichedEquipment | null>(null);
@@ -37,7 +38,7 @@ const getEnrichedEquipment = (
 
 const showTooltip = (event: MouseEvent, enrichedEquipment: EnrichedEquipment) => {
   selectedEquipment.value = enrichedEquipment;
-  showAt(event, { maxWidth: 300 });
+  showAt(event, { maxWidth: 300, placement: tooltipPlacement });
 };
 
 const hideTooltip = () => {
@@ -46,7 +47,7 @@ const hideTooltip = () => {
 };
 
 const moveTooltip = (event: MouseEvent) => {
-  move(event);
+  move(event, tooltipPlacement);
 };
 </script>
 
@@ -72,6 +73,7 @@ const moveTooltip = (event: MouseEvent) => {
       :x="tooltipX"
       :y="tooltipY"
       :equipment="selectedEquipment"
+      placement="below"
     />
   </div>
 </template>

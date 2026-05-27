@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Tooltip from "@/components/tooltip/Tooltip.vue";
+import type { TooltipPlacement } from "@/composables/use-tooltip-position";
 import { useLocalization } from "@/composables/useLocalization";
 
 withDefaults(
@@ -12,9 +13,11 @@ withDefaults(
         equip: number;
         total: number;
         maxWidth?: number;
+        placement?: TooltipPlacement;
     }>(),
     {
-        maxWidth: 250
+        maxWidth: 250,
+        placement: "below"
     }
 );
 
@@ -28,7 +31,7 @@ const { t } = useLocalization();
     :y="y"
     :title="title"
     :max-width="maxWidth"
-    placement="below"
+    :placement="placement"
   >
     <div class="flex flex-col w-full min-w-42.5">
       <div class="text-white text-base font-bold text-center mb-2 tracking-wider shadow-text whitespace-nowrap">

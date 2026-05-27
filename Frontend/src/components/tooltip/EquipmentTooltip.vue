@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
+import type { TooltipPlacement } from "@/composables/use-tooltip-position";
 import { useLocalization } from "@/composables/useLocalization";
 import { EquipmentsAttributesOperationType, type EnrichedEquipment } from "@/models";
 
@@ -11,9 +12,11 @@ const props = withDefaults(
         y: number;
         equipment: EnrichedEquipment | null;
         maxWidth?: number;
+        placement?: TooltipPlacement;
     }>(),
     {
-        maxWidth: 300
+        maxWidth: 300,
+        placement: "below"
     }
 );
 
@@ -42,7 +45,7 @@ const equipmentWithOptionalFields = computed(() => {
     :y="y"
     :title="equipmentTitle"
     :max-width="maxWidth"
-    placement="below"
+    :placement="placement"
   >
     <div v-if="equipmentWithOptionalFields" class="flex flex-col gap-1 w-full min-w-42.5">
       <div

@@ -21,6 +21,7 @@ const props = defineProps<{
 }>();
 
 const { t } = useLocalization();
+const tooltipPlacement = "below" as const;
 const tooltipPosition = useTooltipPosition();
 const { x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 
@@ -75,7 +76,7 @@ const showIconTooltip = (event: MouseEvent, title: string, text: string) => {
 
   defaultTooltipContent.value = { title, text };
   activeVariant.value = "default";
-  showAt(event);
+  showAt(event, { placement: tooltipPlacement });
 };
 
 const showAttributeIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
@@ -96,7 +97,7 @@ const showMathTooltip = (
 ) => {
   mathTooltipContent.value = { title, base, equip, total };
   activeVariant.value = "math";
-  showAt(event);
+  showAt(event, { placement: tooltipPlacement });
 };
 
 const hideTooltip = () => {
@@ -105,7 +106,7 @@ const hideTooltip = () => {
 };
 
 const moveTooltip = (event: MouseEvent) => {
-  move(event);
+  move(event, tooltipPlacement);
 };
 </script>
 
@@ -150,6 +151,7 @@ const moveTooltip = (event: MouseEvent) => {
       :y="tooltipY"
       :title="defaultTooltipContent.title"
       :text="defaultTooltipContent.text"
+      placement="below"
     />
 
     <DigimonTooltip
@@ -160,6 +162,7 @@ const moveTooltip = (event: MouseEvent) => {
       :base="mathTooltipContent.base"
       :equip="mathTooltipContent.equip"
       :total="mathTooltipContent.total"
+      placement="below"
     />
   </div>
 </template>
