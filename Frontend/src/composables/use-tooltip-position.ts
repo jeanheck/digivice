@@ -2,6 +2,10 @@ import { ref } from "vue";
 
 export type TooltipPlacement = "above" | "below";
 
+/**
+ * Cursor-following tooltip position state. Use in the parent that handles mouseenter/move/leave;
+ * pass show, x, y to Tooltip.vue or a content wrapper. Does not own title/body content.
+ */
 export function useTooltipPosition(defaultMaxWidth = 250) {
     const show = ref(false);
     const x = ref(0);
