@@ -44,7 +44,7 @@ const equipmentWithOptionalFields = computed(() => {
     :max-width="maxWidth"
     placement="below"
   >
-    <div v-if="equipmentWithOptionalFields" class="flex flex-col gap-1 w-full min-w-[170px]">
+    <div v-if="equipmentWithOptionalFields" class="flex flex-col gap-1 w-full min-w-42.5">
       <div
         v-if="equipmentWithOptionalFields.typeDescription"
         class="text-blue-300 text-[10px] tracking-widest uppercase mb-1 text-center font-bold"
@@ -54,7 +54,7 @@ const equipmentWithOptionalFields = computed(() => {
 
       <div
         v-if="equipmentWithOptionalFields.attributes && equipmentWithOptionalFields.attributes.length > 0"
-        class="flex flex-col gap-[2px] mb-1"
+        class="flex flex-col gap-0.5 mb-1"
       >
         <div
           v-for="attribute in equipmentWithOptionalFields.attributes"

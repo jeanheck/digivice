@@ -42,9 +42,9 @@ const groupCharisma = computed(() => {
     </div>
     
     <div class="font-bold text-lg flex items-baseline cursor-help"
-         @mouseenter="e => tooltipRef?.show(e, $t('party.groupCharisma'), $t('party.groupCharismaWarning'))"
-         @mousemove="e => tooltipRef?.move(e)"
-         @mouseleave="() => tooltipRef?.hide()">
+      @mouseenter="e => tooltipRef?.show(e, $t('party.groupCharisma'), $t('party.groupCharismaWarning'))"
+      @mousemove="e => tooltipRef?.move(e)"
+      @mouseleave="() => tooltipRef?.hide()">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('party.groupCharisma') }}:</span>
       <span class="text-white">{{ groupCharisma }}</span>
     </div>

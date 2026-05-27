@@ -22,7 +22,7 @@ withDefaults(
     <Transition name="fade">
       <div
         v-if="show"
-        class="fixed z-[9999] pointer-events-none p-3 bg-[#001133ee] border-[2px] border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] flex flex-col gap-1 backdrop-blur-sm"
+        class="fixed z-9999 pointer-events-none p-3 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] flex flex-col gap-1 backdrop-blur-sm"
         :style="{
           top: `${y}px`,
           left: `${x}px`,
