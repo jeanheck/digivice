@@ -3,8 +3,8 @@ import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useLocalization } from '../../composables/useLocalization'
 import IconClose from '@/components/modal/IconClose.vue';
 import asukaMapUrl from '../../assets/AsukaMap.webp'
-import type { QuestViewModel } from '@/view-models/quest-view-model';
-import type { StepViewModel } from '@/view-models/step-view-model';
+import type { QuestViewModel } from '@/viewmodels/quest.viewmodel';
+import type { StepViewModel } from '@/viewmodels/step.viewmodel';
 import { QuestDetailsModalPresenter } from '@/presenters/quest-details-modal.presenter';
 
 const props = defineProps<{

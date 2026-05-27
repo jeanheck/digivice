@@ -1,6 +1,6 @@
-import type { CoordinatesViewModel } from "./coordinates-view-model";
-import type { RequisiteViewModel } from "./requisite-view-model";
-import type { ZoomedLocationViewModel } from "./zoomed-location-view-model";
+import type { CoordinatesViewModel } from "./coordinates.viewmodel";
+import type { RequisiteViewModel } from "./requisite.viewmodel";
+import type { ZoomedLocationViewModel } from "./zoomed-location.viewmodel";
 
 export interface StepViewModel
 {

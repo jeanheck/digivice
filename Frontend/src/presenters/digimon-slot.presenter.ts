@@ -1,5 +1,5 @@
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
-import type { DigievolutionViewModel } from "@/view-models/digievolution-view-model";
+import type { DigievolutionViewModel } from "@/viewmodels/digievolution.viewmodel";
 
 export class DigimonSlotPresenter {
     public static getActiveDigievolutionViewModel(activeDigievolutionId: number): DigievolutionViewModel {

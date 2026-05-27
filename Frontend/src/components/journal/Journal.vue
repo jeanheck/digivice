@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import { useGameStore } from '../../stores/use-game-store'
 import { JournalPresenter } from '@/presenters/journal.presenter';
-import type { QuestViewModel } from '@/view-models/quest-view-model';
+import type { QuestViewModel } from '@/viewmodels/quest.viewmodel';
 
 const store = useGameStore()
 

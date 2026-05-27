@@ -1,5 +1,5 @@
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
-import type { TechniqueViewModel } from "@/view-models/technique-view-model";
+import type { TechniqueViewModel } from "@/viewmodels/technique.viewmodel";
 
 export class TechniquePresenter {
     public static getTechniqueById(

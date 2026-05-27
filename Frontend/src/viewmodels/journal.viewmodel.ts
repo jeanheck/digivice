@@ -1,4 +1,4 @@
-import type { QuestViewModel } from "./quest-view-model";
+import type { QuestViewModel } from "./quest.viewmodel";
 
 export interface JournalViewModel {
     mainQuest: QuestViewModel;

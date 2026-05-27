@@ -6,7 +6,7 @@ import Map from '@/components/map/Map.vue';
 import QuestDetailsModal from './components/modal/QuestDetailsModal.vue';
 import Footer from './components/footer/Footer.vue';
 import DigimonSlot from './components/digimon/DigimonSlot.vue';
-import type { QuestViewModel } from './view-models/quest-view-model';
+import type { QuestViewModel } from './viewmodels/quest.viewmodel.ts';
 
 const store = useGameStore();
 const activeQuest = ref<QuestViewModel | null>(null);

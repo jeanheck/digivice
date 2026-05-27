@@ -5,7 +5,7 @@ import DigievolutionFamilyTree from './DigievolutionFamilyTree.vue'
 import DigievolutionDetailPanel from './DigievolutionDetailPanel.vue'
 import IconClose from '@/components/modal/IconClose.vue'
 import { DigievolutionGridModalPresenter } from '@/presenters/digievolution-grid-modal.presenter.ts'
-import type { DigimonDigievolutionRequirementViewModel } from '@/view-models/digimon-digievolution-requirement.viewmodel.ts';
+import type { DigimonDigievolutionRequirementViewModel } from '@/viewmodels/digimon-digievolution-requirement.viewmodel.ts';
 
 const props = defineProps<{
   isOpen: boolean

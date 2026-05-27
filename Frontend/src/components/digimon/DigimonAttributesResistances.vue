@@ -9,9 +9,9 @@ import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import DigimonTooltip from "@/components/tooltip/DigimonTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { DigimonAttributesResistancesPresenter } from "@/presenters/digimon-attributes-resistances.presenter";
-import type { AttributeResistanceViewModel } from "@/view-models/attribute-resistance-view-model";
-import type { AttributesViewModel } from "@/view-models/attributes-view-model";
-import type { ResistancesViewModel } from "@/view-models/resistances-view-model";
+import type { AttributeResistanceViewModel } from "@/viewmodels/attribute-resistance.viewmodel";
+import type { AttributesViewModel } from "@/viewmodels/attributes.viewmodel";
+import type { ResistancesViewModel } from "@/viewmodels/resistances.viewmodel";
 
 const props = defineProps<{
   attributes: Attributes;

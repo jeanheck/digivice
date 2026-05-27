@@ -1,7 +1,7 @@
 import EnemyJson from "@/database/enemy/enemy.json";
 import type { EnemyTable } from "./tables/enemy/enemy.table";
-import type { EnemyResumedViewModel } from "@/view-models/enemy-resumed-view-model";
-import type { EnemyViewModel } from "@/view-models/enemy-view-model";
+import type { EnemyResumedViewModel } from "@/viewmodels/enemy-resumed.viewmodel";
+import type { EnemyViewModel } from "@/viewmodels/enemy.viewmodel";
 
 export class EnemyRepository {
     private static readonly enemyTable = EnemyJson as EnemyTable;

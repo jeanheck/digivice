@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useLocalization } from '@/composables/useLocalization';
-import type { DigimonDigievolutionRequirementViewModel } from '@/view-models/digimon-digievolution-requirement.viewmodel';
+import type { DigimonDigievolutionRequirementViewModel } from '@/viewmodels/digimon-digievolution-requirement.viewmodel';
 import { DigievolutionRepository } from '@/repositories';
 import { TechniquePresenter } from '@/presenters/technique-presenter';
-import type { DigimonDigievolutionViewModel } from '@/view-models/digimon-digievolution.viewmodel';
+import type { DigimonDigievolutionViewModel } from '@/viewmodels/digimon-digievolution.viewmodel';
 
 const props = defineProps<{
   evolution: DigimonDigievolutionRequirementViewModel[]

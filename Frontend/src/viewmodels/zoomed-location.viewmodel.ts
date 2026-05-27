@@ -1,4 +1,4 @@
-import type { CoordinatesViewModel } from "./coordinates-view-model";
+import type { CoordinatesViewModel } from "./coordinates.viewmodel";
 
 export interface ZoomedLocationViewModel
 {
