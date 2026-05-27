@@ -23,6 +23,49 @@ Por favor, siga estas práticas rigorosamente ao trabalhar neste projeto em qual
 5. **Caminhos de Importação**: Prefira importar arquivos utilizando o caractere `@` para definir o caminho raiz (ex: `@/models/` em vez de `../../models/`), mantendo a consistência e legibilidade.
 6. **Aspas Duplas**: Dê preferência ao uso de aspas duplas (`"`) em strings sempre que houver a opção (ao invés de aspas simples `'`), mantendo a padronização estética do código.
 
+### Tooltips (fluxo padrão do Frontend)
+
+Referência de implementação: `Frontend/src/components/digimon/DigimonEquipments.vue`.
+
+#### Camadas (responsabilidade única)
+
+| Camada | Arquivo | Responsabilidade |
+|--------|---------|------------------|
+| Posição e visibilidade | `composables/use-tooltip-position.ts` | Converte `MouseEvent` em `show`, `x`, `y`; aplica `placement` (`above` \| `below`) e flip horizontal na borda da janela. Não conhece conteúdo do tooltip. |
+| Casca visual | `components/tooltip/Tooltip.vue` | Teleport, estilos DW3, prop `title` opcional, **slot** para corpo. Recebe apenas `show`, `x`, `y`, `title`, `maxWidth`, `placement`. Não escuta mouse. |
+| Conteúdo especializado | Wrappers (`EquipmentTooltip.vue`, `DefaultTooltip.vue`, `DigimonTooltip.vue`, etc.) | Montam o slot (ou só o título) e repassam props para `Tooltip.vue`. Sem lógica de mouse e sem `useTooltipPosition` interno. |
+
+#### Fluxo no componente pai (padrão obrigatório)
+
+1. No **pai** que agrupa os gatilhos de hover: `const tooltipPosition = useTooltipPosition(maxWidthOpcional)`.
+2. Desestruturar: `show`, `x`, `y`, `showAt`, `move`, `hide`.
+3. Manter refs de **conteúdo** no pai (ex.: `selectedEquipment`, `tooltipTitle` / `tooltipText`, ou variant como `activeVariant` em `DigimonAttributesResistances.vue`).
+4. Handlers no pai:
+   - `mouseenter` → definir conteúdo + `showAt(event, { maxWidth?, placement? })`
+   - `mousemove` → `move(event, placement?)`
+   - `mouseleave` → `hide()` (+ limpar conteúdo se necessário)
+5. Filhos que detectam hover emitem eventos com `MouseEvent` (ex.: `@showTooltip`, `@moveTooltip`, `@hideTooltip`); não instanciam tooltip.
+6. No template do pai, um wrapper ou `Tooltip` com `:show`, `:x`, `:y` vindos do composable.
+
+#### Escolha do componente de conteúdo
+
+- **Só título, sem corpo no slot** → usar `Tooltip.vue` diretamente com `title` preenchido e slot vazio (ex.: tipo de técnica em `DigievolutionDetailPanel.vue` na Fase 1 de padronização).
+- **Título + parágrafo de texto** → `DefaultTooltip.vue` (delega texto ao slot de `Tooltip`).
+- **Equipamento enriquecido** → `EquipmentTooltip.vue`.
+- **Breakdown base + equip + total** → `DigimonTooltip.vue`.
+- **Dois conteúdos, mesma posição** → um `useTooltipPosition` no pai + dois wrappers com `:show` condicional (padrão `DigimonAttributesResistances.vue`).
+
+#### Proibido em código novo ou refatorado
+
+- Tooltip **inline**: `<Teleport>` + div estilizada + cálculo manual de `clientX`/`clientY` na tela (usar composable + `Tooltip` ou wrapper).
+- `useTooltipPosition` **dentro** de wrapper de conteúdo (`DefaultTooltip`, etc.).
+- API imperativa no wrapper (`defineExpose({ show, hide, move })`); posição e conteúdo ficam no pai.
+- Duplicar regras de posicionamento fora de `use-tooltip-position.ts`.
+
+#### Props que o pai passa aos wrappers
+
+`show`, `x`, `y` sempre vêm do composable. Conteúdo (`title`, `text`, `equipment`, etc.) vem de refs do pai. `placement` e `maxWidth` quando o caso exigir (ex.: `Footer` com `placement="above"`).
+
 ## Backend: regras relacionadas ao backend
 
 1. **Construtores Primários**: Sempre que possível, utilize construtores primários (C# 12+).
