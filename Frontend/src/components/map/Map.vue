@@ -9,7 +9,7 @@ const props = defineProps<{
 }>();
 
 const locationViewModel = computed(() => {
-  if(!props.locationId){
+  if(!props.locationId) {
     return null;
   }
   return MapPresenter.getLocationById(props.locationId);
