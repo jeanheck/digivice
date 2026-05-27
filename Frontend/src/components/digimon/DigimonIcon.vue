@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref } from "vue";
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 
 const props = defineProps<{
   digimonName: string;
@@ -7,12 +8,8 @@ const props = defineProps<{
 
 const hasError = ref(false);
 
-const iconUrl = computed(() => {
-  try {
-    return new URL(`../../assets/icons/digimons/${props.digimonName}.png`, import.meta.url).href;
-  } catch (e) {
-    return '';
-  }
+const digimonIconUrl = computed(() => {
+  return ImageCatalog.getDigimonIconUrl(props.digimonName);
 });
 
 const handleImageError = () => {
@@ -23,8 +20,8 @@ const handleImageError = () => {
 <template>
   <div class="bg-[#000e3f] rounded overflow-hidden shadow shrink-0 flex items-center justify-center border-2 border-[#00154a] relative">
     <img 
-      v-if="iconUrl && !hasError"
-      :src="iconUrl" 
+      v-if="digimonIconUrl && !hasError"
+      :src="digimonIconUrl" 
       :alt="digimonName"
       class="w-full h-full object-cover rendering-pixelated"
       @error="handleImageError"

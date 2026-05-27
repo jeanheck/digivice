@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { useLocalization } from "../../composables/useLocalization";
 
 const props = defineProps<{
@@ -14,15 +15,7 @@ const locationName = computed(() => {
 });
 
 const locationImage = computed(() => {
-  if (!props.locationImageName) {
-    return null;
-  }
-
-  try {
-    return new URL(`../../assets/maps/${props.locationImageName}.webp`, import.meta.url).href;
-  } catch {
-    return null;
-  }
+  return ImageCatalog.getMapImageUrl(props.locationImageName);
 });
 </script>
 

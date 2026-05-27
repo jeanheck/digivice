@@ -4,6 +4,7 @@ import IconClose from "@/components/modal/IconClose.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 
 const props = defineProps<{
@@ -101,13 +102,12 @@ watch(() => props.isOpen, (isOpen) => {
   }
 });
 
-// Dynamic image loading
-const enemyImages = import.meta.glob('../../assets/icons/enemies/*.png', { eager: true, as: 'url' })
-
 const enemyImageUrl = computed(() => {
-  const path = `../../assets/icons/enemies/${enemy.value.name}.png`
-  return (enemyImages[path] as string) || null;
-})
+  if (!props.enemyId) {
+    return null;
+  }
+  return ImageCatalog.getEnemyIconUrl(enemy.value.name);
+});
 </script>
 
 <template>

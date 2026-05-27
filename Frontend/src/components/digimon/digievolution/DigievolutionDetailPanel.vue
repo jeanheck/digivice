@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -21,12 +22,9 @@ const emit = defineEmits<{
 
 const { t, getLocalized } = useLocalization()
 
-const avatarModules = import.meta.glob('../../../assets/icons/digievolutions/*.png', { eager: true })
-
-const getAvatar = (name: string) => {
-    const path = `../../../assets/icons/digievolutions/${name}.png`
-    return avatarModules[path] ? (avatarModules[path] as any).default || avatarModules[path] : null
-}
+const evolutionAvatarUrl = computed(() => {
+  return ImageCatalog.getDigievolutionIconUrl(props.evolutionName ?? null);
+});
 
 const techniques = computed(() => {
   const digievolutionTechniques = DigievolutionRepository.getRawDigievolutionTechniquesByName(props.evolutionName!);
@@ -113,8 +111,8 @@ const moveTypeTooltip = (event: MouseEvent) => {
     <div class="relative flex-none pt-4 px-4 pb-2 flex flex-col items-center justify-center bg-linear-to-b from-[#00051a] to-transparent shrink-0">
         <div class="relative w-full h-32 bg-linear-to-r from-cyan-950/40 to-[#001533] rounded-lg border border-cyan-800/50 shadow-inner overflow-hidden group">
             
-            <img v-if="getAvatar(evolutionName!)" 
-                 :src="getAvatar(evolutionName!)" 
+            <img v-if="evolutionAvatarUrl" 
+                 :src="evolutionAvatarUrl" 
                  class="absolute inset-0 w-full h-full object-cover object-[center_15%] pointer-events-none drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] transition-opacity duration-500" 
                  alt="Avatar Overlay" />
 

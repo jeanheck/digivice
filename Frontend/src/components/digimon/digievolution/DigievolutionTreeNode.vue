@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { Digimon } from '@/models'
-import { EvolutionGraph, type EvolutionRequirement } from '@/logic/EvolutionGraph'
+import { computed } from "vue";
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import type { Digimon } from "@/models";
+import { EvolutionGraph, type EvolutionRequirement } from "@/logic/EvolutionGraph";
 
 const props = defineProps<{
   node: { name: string, requirements: EvolutionRequirement[] }
@@ -41,12 +42,9 @@ const isReqMet = (req: EvolutionRequirement) => {
     }
 }
 
-const avatarModules = import.meta.glob('../../../assets/icons/digievolutions/*.png', { eager: true })
-
-const getAvatar = (name: string) => {
-    const path = `../../../assets/icons/digievolutions/${name}.png`
-    return avatarModules[path] ? (avatarModules[path] as any).default || avatarModules[path] : null
-}
+const nodeAvatarUrl = computed(() => {
+  return ImageCatalog.getDigievolutionIconUrl(props.node.name);
+});
 </script>
 
 <template>
@@ -63,8 +61,8 @@ const getAvatar = (name: string) => {
       ]"
     >
         <!-- Background Avatar -->
-        <img v-if="getAvatar(node.name)" 
-             :src="getAvatar(node.name)" 
+        <img v-if="nodeAvatarUrl" 
+             :src="nodeAvatarUrl" 
              class="absolute inset-0 w-full h-[150%] object-cover object-[center_15%] pointer-events-none saturate-100 transition-all duration-500"
              :class="isUnlocked ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'" />
              
