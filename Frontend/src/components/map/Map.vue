@@ -3,7 +3,7 @@ import MapImage from "./MapImage.vue";
 import MapEnemies from "./MapEnemies.vue";
 import type { AreaInformation } from "../../models/area-information";
 import { computed } from "vue";
-import { MapImagePresenter } from "@/presenters/map-image.presenter";
+import { MapPresenter } from "@/presenters/map.presenter.ts";
 
 const props = defineProps<{
   locationId: string | null;
@@ -14,7 +14,7 @@ const locationViewModel = computed(() => {
   if(!props.locationId){
     return null;
   }
-  return MapImagePresenter.getLocationById(props.locationId);
+  return MapPresenter.getLocationById(props.locationId);
 });
 </script>
 
