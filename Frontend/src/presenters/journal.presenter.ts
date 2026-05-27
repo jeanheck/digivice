@@ -1,5 +1,5 @@
 import type { Journal, Quest, Requisite, Step } from "@/models";
-import { JournalRepository } from "@/repositories/journal.repository";
+import { QuestRepository } from "@/repositories/quest.repository";
 import type { StepRaw } from "@/repositories/tables/raws/quest/quest-common-raw";
 import type { QuestRaw } from "@/repositories/tables/raws/quest/quest.raw";
 import type { JournalViewModel } from "@/view-models/journal-view-model";
@@ -8,10 +8,10 @@ import type { StepViewModel } from "@/view-models/step-view-model";
 
 export class JournalPresenter {
     public static getJournalViewModel(journal: Journal): JournalViewModel {
-        const mainQuestRaw = JournalRepository.getMainQuestRaw();
+        const mainQuestRaw = QuestRepository.getMainQuestRaw();
         const mainQuestViewModel = this.convertQuestRawToViewModel(mainQuestRaw, journal.mainQuest!);
 
-        const sideQuestsRaw = JournalRepository.getSideQuestsRaw();
+        const sideQuestsRaw = QuestRepository.getSideQuestsRaw();
         const sideQuestsViewModels = sideQuestsRaw
             .map(sideQuestRaw => this.convertQuestRawToViewModel(sideQuestRaw, this.getSideQuestFromJournal(journal, sideQuestRaw.id)));
 

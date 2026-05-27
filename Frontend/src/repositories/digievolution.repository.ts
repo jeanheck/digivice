@@ -3,11 +3,11 @@ import DigievolutionNameJson from "@/database/digievolution/digievolution-name.j
 import DigievolutionTechniquesJson from "@/database/digievolution/digievolution-technique.json";
 import DigievolutionTreeJson from "@/database/digievolution/digievolution-tree.json";
 import TechniqueJson from "@/database/digievolution/technique.json";
-import type { DigievolutionTable } from "@/repositories/tables/digievolution/digievolution-table";
-import type { DigievolutionNameTable } from "@/repositories/tables/digievolution/digievolution-name-table";
-import type { DigievolutionTechniqueTable } from "@/repositories/tables/digievolution/digievolution-technique-table";
-import type { DigievolutionTreeTable } from "@/repositories/tables/digievolution/digievolution-tree-table";
-import type { TechniqueTable } from "@/repositories/tables/digievolution/technique-table";
+import type { DigievolutionTable } from "@/repositories/tables/digievolution/digievolution.table";
+import type { DigievolutionNameTable } from "@/repositories/tables/digievolution/digievolution-name.table";
+import type { DigievolutionTechniqueTable } from "@/repositories/tables/digievolution/digievolution-technique.table";
+import type { DigievolutionTreeTable } from "@/repositories/tables/digievolution/digievolution-tree.table";
+import type { TechniqueTable } from "@/repositories/tables/digievolution/technique.table";
 import type { DigievolutionRaw } from "./tables/raws/digievolution/digievolution.raw";
 import type { DigievolutionTechniqueRaw } from "./tables/raws/digievolution/digievolution-technique.raw";
 import type { DigievolutionTreeRaw } from "./tables/raws/digievolution/digievolution-tree.raw";

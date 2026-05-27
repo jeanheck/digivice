@@ -1,9 +1,9 @@
 import DigimonDigievolutionJson from "@/database/digimon/digimon-digievolution.json";
 import DigimonExperienceJson from "@/database/digimon/digimon-experience.json";
 import DigimonNameJson from "@/database/digimon/digimon-name.json";
-import type { DigimonDigievolutionTable } from "@/repositories/tables/digimon/digimon-digievolution-table";
-import type { DigimonExperienceTable } from "@/repositories/tables/digimon/digimon-experience-table";
-import type { DigimonNameTable } from "@/repositories/tables/digimon/digimon-name-table";
+import type { DigimonDigievolutionTable } from "@/repositories/tables/digimon/digimon-digievolution.table";
+import type { DigimonExperienceTable } from "@/repositories/tables/digimon/digimon-experience.table";
+import type { DigimonNameTable } from "@/repositories/tables/digimon/digimon-name.table";
 import type { DigimonDigievolutionRaw } from "./tables/raws/digimon/digimon-digievolution.raw";
 import type { DigimonDigievolutionRequirementRaw } from "./tables/raws/digimon/digimon-digievolution-requirement.raw";
 

@@ -1,5 +1,5 @@
 import EnemyJson from "@/database/enemy/enemy.json";
-import type { EnemyTable } from "./tables/enemy/enemy-table";
+import type { EnemyTable } from "./tables/enemy/enemy.table";
 import type { EnemyResumedViewModel } from "@/view-models/enemy-resumed-view-model";
 import type { EnemyViewModel } from "@/view-models/enemy-view-model";
 
