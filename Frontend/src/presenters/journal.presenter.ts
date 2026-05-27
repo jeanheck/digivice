@@ -2,9 +2,9 @@ import type { Journal, Quest, Requisite, Step } from "@/models";
 import { QuestRepository } from "@/repositories/quest.repository";
 import type { QuestRaw } from "@/repositories/tables/raws/quest/quest.raw";
 import type { StepRaw } from "@/repositories/tables/raws/quest/step.raw";
-import type { JournalViewModel } from "@/viewmodels/journal.viewmodel";
-import type { QuestViewModel } from "@/viewmodels/quest.viewmodel";
-import type { StepViewModel } from "@/viewmodels/step.viewmodel";
+import type { JournalViewModel } from "@/viewmodels/quest/journal.viewmodel";
+import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
+import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 
 export class JournalPresenter {
     public static getJournalViewModel(journal: Journal): JournalViewModel {

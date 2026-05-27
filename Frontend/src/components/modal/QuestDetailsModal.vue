@@ -4,7 +4,7 @@ import { useLocalization } from '../../composables/useLocalization'
 import IconClose from '@/components/modal/IconClose.vue';
 import asukaMapUrl from '../../assets/AsukaMap.webp'
 import type { QuestViewModel } from '@/viewmodels/quest.viewmodel';
-import type { StepViewModel } from '@/viewmodels/step.viewmodel';
+import type { StepViewModel } from '@/viewmodels/quest/step.viewmodel';
 import { QuestDetailsModalPresenter } from '@/presenters/quest-details-modal.presenter';
 
 const props = defineProps<{
