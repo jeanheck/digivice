@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import { useLocalization } from "../../composables/useLocalization";
+import { useLocalization } from "@/composables/useLocalization";
+import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
   locationId: string | null;
-  locationImageName: string | null;
+  location: LocationViewModel | null;
 }>();
 
 const { t } = useLocalization();
@@ -15,14 +16,21 @@ const locationName = computed(() => {
 });
 
 const locationImage = computed(() => {
-  return ImageCatalog.getMapImageUrl(props.locationImageName);
+  return ImageCatalog.getMapImageUrl(props.location?.image ?? null);
 });
 </script>
 
 <template>
-  <div class="flex-3 relative w-full rounded border-2 border-[#0044aa]/50 bg-black bg-opacity-60 flex items-center justify-center overflow-hidden shadow-inner">
-    <img v-if="locationImage" :src="locationImage" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-lighten pointer-events-none" />
-    
+  <div
+    class="flex-3 relative w-full rounded border-2 border-[#0044aa]/50 bg-black bg-opacity-60 flex items-center justify-center overflow-hidden shadow-inner"
+    :class="{ 'bg-grid-pattern': !locationImage }"
+  >
+    <img
+      v-if="locationImage"
+      :src="locationImage"
+      class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-lighten pointer-events-none"
+    />
+
     <div class="relative z-10 px-3 py-2 bg-black/60 border border-[#00aaff]/40 rounded backdrop-blur-sm max-w-[90%] text-center">
       <h4 class="text-xs sm:text-sm font-bold text-white tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight">
         {{ locationName }}
@@ -42,14 +50,5 @@ const locationImage = computed(() => {
     linear-gradient(to right, #0055ff 1px, transparent 1px),
     linear-gradient(to bottom, #0055ff 1px, transparent 1px);
   background-size: 15px 15px;
-}
-
-.animate-pan-bg {
-  animation: panbg 20s linear infinite;
-}
-
-@keyframes panbg {
-  0% { background-position: 0 0; }
-  100% { background-position: 30px 30px; }
 }
 </style>
