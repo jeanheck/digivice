@@ -3,8 +3,8 @@ import { computed, ref } from 'vue';
 import { invoke } from '@tauri-apps/api/core';
 import LanguageSelector from '@/components/footer/LanguageSelector.vue';
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
-import { PartyCalculator } from '@/logic/PartyCalculator';
 import { useGameStore } from '@/stores/use-game-store';
+import { FooterPresenter } from '@/presenters/footer.presenter';
 
 const store = useGameStore();
 
@@ -25,7 +25,7 @@ const openLogsFolder = async () => {
 };
 
 const groupCharisma = computed(() => {
-    return PartyCalculator.calculatePartyCharisma(store.currentState?.party?.slots ?? []);
+    return FooterPresenter.getPartyCharisma(store.currentState?.party?.slots ?? []);
 });
 </script>
 
