@@ -1,4 +1,4 @@
-import { TechniqueRepository } from "@/repositories/technique-repository";
+import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import type { TechniqueViewModel } from "@/view-models/technique-view-model";
 
 export class TechniquePresenter {
@@ -9,7 +9,7 @@ export class TechniquePresenter {
         digievolutionLevel: number,
         isSignature: boolean
     ): TechniqueViewModel {
-        const techniqueRaw = TechniqueRepository.getTechniqueById(techniqueId);
+        const techniqueRaw = DigievolutionRepository.getTechniqueById(techniqueId);
         const isUnlocked = learnLevel <= digievolutionLevel;
 
         return {

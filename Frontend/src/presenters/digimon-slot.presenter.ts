@@ -1,4 +1,4 @@
-import { DigievolutionRepository } from "@/repositories/digievolution-repository";
+import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import type { DigievolutionViewModel } from "@/view-models/digievolution-view-model";
 
 export class DigimonSlotPresenter {

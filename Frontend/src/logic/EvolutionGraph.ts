@@ -1,4 +1,4 @@
-import { DigievolutionTreeRepository } from "@/repositories/digievolution-tree-repository";
+import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import { DigimonRepository } from "@/repositories/digimon.repository";
 
 // --- Types for family chain system ---
@@ -54,7 +54,7 @@ export class EvolutionGraph {
      */
 
     static buildFamilyChains(rookieFamily: string): FamilyChain[] {
-        const digievolutionTreeTable = DigievolutionTreeRepository.getDigievolutionTree();
+        const digievolutionTreeTable = DigievolutionRepository.getDigievolutionTree();
         const familiesKeys = Object.keys(digievolutionTreeTable) as string[];
 
         // Build chains for each family

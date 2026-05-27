@@ -1,4 +1,4 @@
-import { DigievolutionRepository } from "@/repositories/digievolution-repository";
+import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 
 export class DigimonDigievolutionPresenter {
     public static getDigievolutionNameById(digievolutionId: number): string {

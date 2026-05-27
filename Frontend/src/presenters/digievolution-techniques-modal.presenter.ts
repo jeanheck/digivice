@@ -1,4 +1,4 @@
-import { DigievolutionRepository } from "@/repositories/digievolution-repository";
+import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import type { DigievolutionTechniqueRaw } from "@/repositories/tables/raws/digievolution/digievolution-technique-raw";
 
 export class DigievolutionTechniquesModalPresenter {
