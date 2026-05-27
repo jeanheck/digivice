@@ -1,4 +1,5 @@
-import type { RequisiteRaw as RequisiteRaw, StepsRaw as StepsRaw } from "./quest-common-raw";
+import type { RequisiteRaw } from "./requisite.raw";
+import type { StepsRaw } from "./steps.raw";
 
 export interface QuestRaw {
     id: string;

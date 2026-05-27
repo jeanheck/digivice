@@ -6,7 +6,7 @@ import type { MainQuestTable } from "./tables/quest/main-quest-table";
 import type { TreeBootsTable } from "./tables/quest/tree-boots-table";
 import type { FishingPoleTable } from "./tables/quest/fishing-pole-table";
 import type { FolderBagTable } from "./tables/quest/folder-bag-table";
-import type { QuestRaw } from "./tables/raws/quest/quest-raw";
+import type { QuestRaw } from "./tables/raws/quest/quest.raw";
 
 export class JournalRepository {
     private static readonly mainQuestTable = MainQuestJson as MainQuestTable;

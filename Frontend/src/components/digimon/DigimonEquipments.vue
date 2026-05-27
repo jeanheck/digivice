@@ -5,7 +5,7 @@ import { EquipmentRepository } from "@/repositories/equipment.repository.ts";
 import DigimonEquipament from "./DigimonEquipament.vue";
 import EquipmentTooltip from "@/components/tooltip/EquipmentTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment-raw";
+import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw.ts";
 
 const props = defineProps<{
   equipments: Equipments;

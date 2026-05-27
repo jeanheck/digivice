@@ -4,8 +4,8 @@ import DigimonNameJson from "@/database/digimon/digimon-name.json";
 import type { DigimonDigievolutionTable } from "@/repositories/tables/digimon/digimon-digievolution-table";
 import type { DigimonExperienceTable } from "@/repositories/tables/digimon/digimon-experience-table";
 import type { DigimonNameTable } from "@/repositories/tables/digimon/digimon-name-table";
-import type { DigimonDigievolutionRaw } from "./tables/raws/digimon/digimon-digievolution-raw";
-import type { DigimonDigievolutionRequirementRaw } from "./tables/raws/digimon/digimon-digievolution-requirement-raw";
+import type { DigimonDigievolutionRaw } from "./tables/raws/digimon/digimon-digievolution.raw";
+import type { DigimonDigievolutionRequirementRaw } from "./tables/raws/digimon/digimon-digievolution-requirement.raw";
 
 export class DigimonRepository {
     private static readonly digimonNameTable = DigimonNameJson as DigimonNameTable;

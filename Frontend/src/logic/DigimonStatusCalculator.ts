@@ -1,7 +1,7 @@
 import { MathUtils } from "@/utils/MathUtils";
 import { AttributeType, EquipmentsAttributesOperationType, ResistanceType, type Equipments } from "@/models";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
-import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment-raw";
+import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
 
 export class DigimonStatusCalculator {
     public static calculateBonusFromEquipaments(type: AttributeType | ResistanceType, rawEquipments: EquipmentRaw[]

@@ -1,7 +1,7 @@
 import EquipmentJson from '@/database/equipment/equipment.json';
 import type { EquipmentTable } from './tables/equipment/equipment-table';
 import type { Equipments } from '@/models';
-import type { EquipmentRaw } from './tables/raws/equipment/equipment-raw';
+import type { EquipmentRaw } from './tables/raws/equipment/equipment.raw';
 
 export class EquipmentRepository {
     private static readonly equipmentTable = EquipmentJson as EquipmentTable;
