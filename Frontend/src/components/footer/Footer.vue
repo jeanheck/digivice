@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import { invoke } from '@tauri-apps/api/core';
-import LanguageSelector from '@/components/footer/LanguageSelector.vue';
+import { computed, ref } from "vue";
+import { invoke } from "@tauri-apps/api/core";
+import LanguageSelector from "@/components/footer/LanguageSelector.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
-import { useGameStore } from '@/stores/use-game-store';
-import { FooterPresenter } from '@/presenters/footer.presenter';
+import { useLocalization } from "@/composables/useLocalization";
+import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import { useGameStore } from "@/stores/use-game-store";
+import { FooterPresenter } from "@/presenters/footer.presenter";
 
 const store = useGameStore();
+const { t } = useLocalization();
 
 defineProps<{
   playerName: string;
@@ -14,7 +17,24 @@ defineProps<{
   isConnected: boolean;
 }>();
 
-const tooltipRef = ref<InstanceType<typeof DefaultTooltip> | null>(null);
+const tooltipPosition = useTooltipPosition(300);
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+const tooltipTitle = ref("");
+const tooltipText = ref("");
+
+const showGroupCharismaTooltip = (event: MouseEvent) => {
+  tooltipTitle.value = t("party.groupCharisma");
+  tooltipText.value = t("party.groupCharismaWarning");
+  showAt(event, { maxWidth: 300, placement: "above" });
+};
+
+const moveGroupCharismaTooltip = (event: MouseEvent) => {
+  move(event, "above");
+};
+
+const hideGroupCharismaTooltip = () => {
+  hide();
+};
 
 const openLogsFolder = async () => {
   try {
@@ -42,9 +62,9 @@ const groupCharisma = computed(() => {
     </div>
     
     <div class="font-bold text-lg flex items-baseline cursor-help"
-      @mouseenter="e => tooltipRef?.show(e, $t('party.groupCharisma'), $t('party.groupCharismaWarning'))"
-      @mousemove="e => tooltipRef?.move(e)"
-      @mouseleave="() => tooltipRef?.hide()">
+      @mouseenter="showGroupCharismaTooltip"
+      @mousemove="moveGroupCharismaTooltip"
+      @mouseleave="hideGroupCharismaTooltip">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('party.groupCharisma') }}:</span>
       <span class="text-white">{{ groupCharisma }}</span>
     </div>
@@ -64,5 +84,12 @@ const groupCharisma = computed(() => {
     </div>
   </footer>
 
-  <DefaultTooltip ref="tooltipRef" placement="above" />
+  <DefaultTooltip
+    :show="tooltipShow"
+    :x="tooltipX"
+    :y="tooltipY"
+    :title="tooltipTitle"
+    :text="tooltipText"
+    placement="above"
+  />
 </template>
