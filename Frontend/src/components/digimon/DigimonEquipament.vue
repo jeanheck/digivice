@@ -36,13 +36,13 @@ const colorClass = computed(() => {
 
 <template>
   <div 
-    :class="['flex justify-between items-center py-1 border-b-[1px] border-[#0033aa] last:border-0', 
+    :class="['flex justify-between items-center py-1 border-b border-[#0033aa] last:border-0', 
              enrichedEquipment ? 'cursor-help' : '']"
     @mouseenter="e => enrichedEquipment ? emit('showTooltip', e, enrichedEquipment) : null"
     @mousemove="e => emit('moveTooltip', e)"
     @mouseleave="emit('hideTooltip')"
   >
-    <span class="font-bold tracking-widest text-[#0077ff] shadow-text min-w-[75px]">
+    <span class="font-bold tracking-widest text-[#0077ff] shadow-text min-w-18.75">
       {{ slotLabel }}
     </span>
 
