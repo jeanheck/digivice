@@ -9,7 +9,7 @@ const props = defineProps<{
 }>();
 
 const locationViewModel = computed(() => {
-  if(!props.locationId) {
+  if (!props.locationId) {
     return null;
   }
   return MapPresenter.getLocationById(props.locationId);
@@ -25,7 +25,7 @@ const locationViewModel = computed(() => {
 
     <div class="flex-1 flex flex-col mt-2 h-full">
       <MapImage :location-id="locationId" :location="locationViewModel" />
-      <MapEnemies :enemies-ids="locationViewModel?.enemies ?? []" />
+      <MapEnemies :location="locationViewModel" />
     </div>
   </aside>
 </template>

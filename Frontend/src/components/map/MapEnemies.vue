@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import EnemyModal from "./EnemyModal.vue";
-import { EnemyRepository } from "@/repositories/enemy.repository.ts";
+import { MapPresenter } from "@/presenters/map.presenter.ts";
+import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
-  enemiesIds: string[];
+  location: LocationViewModel | null;
 }>();
 
 const resumedEnemies = computed(() => {
-  return props.enemiesIds.map((id) => EnemyRepository.getResumedEnemyById(id));
+  return MapPresenter.getResumedEnemiesByIds(props.location?.enemies ?? []);
 });
 
 const isEnemyModalOpen = ref(false);
@@ -23,6 +24,13 @@ const closeEnemyDetails = () => {
   isEnemyModalOpen.value = false;
   selectedEnemy.value = null;
 };
+
+watch(
+  () => props.location,
+  () => {
+    closeEnemyDetails();
+  }
+);
 </script>
 
 <template>
@@ -30,7 +38,7 @@ const closeEnemyDetails = () => {
     <h4 v-if="resumedEnemies.length > 0" class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">{{ $t("map.enemies") }}</h4>
 
     <div v-if="resumedEnemies.length === 0" class="text-xs text-[#00aaff] opacity-50 italic">
-      {{ $t("map.safeZone")}}
+      {{ $t("map.safeZone") }}
     </div>
     <div v-else class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
       <button
