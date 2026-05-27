@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
-import IconClose from '@/components/modal/IconClose.vue'
-import { useLocalization } from '../../composables/useLocalization'
-import { EnemyRepository } from '@/repositories/enemy.repository';
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
+import IconClose from "@/components/modal/IconClose.vue";
+import Tooltip from "@/components/tooltip/Tooltip.vue";
+import { useLocalization } from "@/composables/useLocalization";
+import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import { EnemyRepository } from "@/repositories/enemy.repository";
 
 const props = defineProps<{
   isOpen: boolean
@@ -75,26 +77,29 @@ const statusTolsList = computed(() => {
   ]
 })
 
-// Tooltip logic
-const activeTooltip = ref({ show: false, label: '', val: '', x: 0, y: 0 })
+const tooltipPlacement = "below" as const;
+const tooltipPosition = useTooltipPosition(150);
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+const tooltipTitle = ref("");
 
-const showTooltip = (event: MouseEvent, label: string) => {
-  let posX = event.clientX + 15
-  if (posX + 150 > window.innerWidth) posX = event.clientX - 160
-  
-  activeTooltip.value = { show: true, label, val: '', x: posX, y: event.clientY + 15 }
-}
+const showEnemyStatTooltip = (event: MouseEvent, label: string) => {
+  tooltipTitle.value = label;
+  showAt(event, { maxWidth: 150, placement: tooltipPlacement });
+};
 
-const hideTooltip = () => {
-  activeTooltip.value.show = false
-}
+const hideEnemyStatTooltip = () => {
+  hide();
+};
 
-const moveTooltip = (event: MouseEvent) => {
-  if (!activeTooltip.value.show) return
-  let posX = event.clientX + 15
-  activeTooltip.value.x = posX
-  activeTooltip.value.y = event.clientY + 15
-}
+const moveEnemyStatTooltip = (event: MouseEvent) => {
+  move(event, tooltipPlacement);
+};
+
+watch(() => props.isOpen, (isOpen) => {
+  if (!isOpen) {
+    hide();
+  }
+});
 
 // Dynamic image loading
 const enemyImages = import.meta.glob('../../assets/icons/enemies/*.png', { eager: true, as: 'url' })
@@ -227,7 +232,7 @@ const enemyImageUrl = computed(() => {
                    <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.attr') }}</h4>
                    <div v-for="attr in attributesList" :key="attr.label" class="flex items-center justify-center gap-2 w-full">
                        <div class="flex items-center w-5 justify-center cursor-help select-none z-20"
-                            @mouseenter="e => showTooltip(e, attr.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">
+                            @mouseenter="showEnemyStatTooltip($event, attr.label)" @mousemove="moveEnemyStatTooltip" @mouseleave="hideEnemyStatTooltip">
                          <span class="text-[16px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-[2.5px]" :class="attr.color">{{ attr.icon }}</span>
                        </div>
                        <div class="font-bold tracking-widest text-shadow text-white text-sm w-12 text-center">
@@ -241,7 +246,7 @@ const enemyImageUrl = computed(() => {
                    <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.elem') }}</h4>
                    <div v-for="res in elemTolsList" :key="res.label" class="flex items-center justify-center gap-2 w-full">
                        <div class="flex items-center w-5 justify-center cursor-help select-none z-20"
-                            @mouseenter="e => showTooltip(e, res.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">
+                            @mouseenter="showEnemyStatTooltip($event, res.label)" @mousemove="moveEnemyStatTooltip" @mouseleave="hideEnemyStatTooltip">
                          <span class="text-[16px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-[2.5px]" :class="res.color">{{ res.icon }}</span>
                        </div>
                        <div class="font-bold tracking-widest text-shadow text-white text-sm w-12 text-center">
@@ -255,7 +260,7 @@ const enemyImageUrl = computed(() => {
                    <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center">{{ $t('enemy.status') }}</h4>
                    <div v-for="st in statusTolsList" :key="st.label" class="flex items-center justify-center gap-2 w-full">
                        <div class="flex items-center w-5 justify-center cursor-help select-none z-20"
-                            @mouseenter="e => showTooltip(e, st.label)" @mousemove="moveTooltip" @mouseleave="hideTooltip">
+                            @mouseenter="showEnemyStatTooltip($event, st.label)" @mousemove="moveEnemyStatTooltip" @mouseleave="hideEnemyStatTooltip">
                          <span class="text-[16px] font-emoji opacity-90 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-[2.5px]" :class="st.color">{{ st.icon }}</span>
                        </div>
                        <div class="font-bold tracking-widest text-shadow text-sm w-12 text-center" :class="st.valColor">
@@ -274,20 +279,16 @@ const enemyImageUrl = computed(() => {
         </div>
       </div>
     </Transition>
-
-    <!-- Tooltip Teleport -->
-    <Teleport to="body">
-      <Transition name="fade">
-        <div v-if="activeTooltip.show"
-             class="fixed z-9999 pointer-events-none p-2 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] flex flex-col backdrop-blur-sm"
-             :style="{ top: `${activeTooltip.y}px`, left: `${activeTooltip.x}px` }">
-           <div class="font-bold text-yellow-300 text-xs shadow-black text-shadow-sm uppercase tracking-wider">
-              {{ activeTooltip.label }}
-           </div>
-        </div>
-      </Transition>
-    </Teleport>
   </Teleport>
+
+  <Tooltip
+    :show="tooltipShow"
+    :x="tooltipX"
+    :y="tooltipY"
+    :title="tooltipTitle"
+    :max-width="150"
+    placement="below"
+  />
 </template>
 
 <style scoped>
