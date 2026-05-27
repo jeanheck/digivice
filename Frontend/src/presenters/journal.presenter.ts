@@ -1,5 +1,5 @@
 import type { Journal, Quest, Requisite, Step } from "@/models";
-import { JournalRepository } from "@/repositories/journal-repository";
+import { JournalRepository } from "@/repositories/journal.repository";
 import type { StepRaw } from "@/repositories/tables/raws/quest/quest-common-raw";
 import type { QuestRaw } from "@/repositories/tables/raws/quest/quest-raw";
 import type { JournalViewModel } from "@/view-models/journal-view-model";

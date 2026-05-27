@@ -1,7 +1,7 @@
 import { DigimonStatusCalculator } from "@/logic/DigimonStatusCalculator";
 import { PartyHelper } from "@/logic/helpers/PartyHelper";
 import { AttributeType, type DigimonSlot } from "@/models";
-import { EquipmentRepository } from "@/repositories/equipment-repository";
+import { EquipmentRepository } from "@/repositories/equipment.repository";
 import { MathUtils } from "@/utils/MathUtils";
 
 export class FooterPresenter {

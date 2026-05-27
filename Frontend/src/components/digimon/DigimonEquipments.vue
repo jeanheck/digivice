@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { Equipments, EnrichedEquipment } from "@/models";
-import { EquipmentRepository } from "@/repositories/equipment-repository";
+import { EquipmentRepository } from "@/repositories/equipment.repository.ts";
 import DigimonEquipament from "./DigimonEquipament.vue";
 import EquipmentTooltip from "@/components/tooltip/EquipmentTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";

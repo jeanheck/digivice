@@ -1,11 +1,11 @@
-import type { MainQuestTable } from "./tables/quest/main-quest-table";
-import type { TreeBootsTable } from "./tables/quest/tree-boots-table";
-import type { FishingPoleTable } from "./tables/quest/fishing-pole-table";
-import type { FolderBagTable } from "./tables/quest/folder-bag-table";
 import MainQuestJson from "@/database/quest/main-quest.json";
 import TreeBootsJson from "@/database/quest/side-quest/tree-boots.json";
 import FishingPoleJson from "@/database/quest/side-quest/fishing-pole.json";
 import FolderBagJson from "@/database/quest/side-quest/folder-bag.json";
+import type { MainQuestTable } from "./tables/quest/main-quest-table";
+import type { TreeBootsTable } from "./tables/quest/tree-boots-table";
+import type { FishingPoleTable } from "./tables/quest/fishing-pole-table";
+import type { FolderBagTable } from "./tables/quest/folder-bag-table";
 import type { QuestRaw } from "./tables/raws/quest/quest-raw";
 
 export class JournalRepository {

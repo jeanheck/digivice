@@ -1,4 +1,4 @@
-import { LocationRepository } from "@/repositories/location-repository";
+import { LocationRepository } from "@/repositories/location.repository";
 import type { LocationViewModel } from "@/view-models/location-view-model";
 
 export class QuestDetailsModalPresenter {

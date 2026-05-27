@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import EnemyModal from "./EnemyModal.vue";
-import { EnemyRepository } from "@/repositories/enemy-repository";
+import { EnemyRepository } from "@/repositories/enemy.repository.ts";
 
 const props = defineProps<{
   enemiesIds: string[];
