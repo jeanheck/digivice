@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import { useLocalization } from '@/composables/useLocalization';
-import type { DigimonDigievolutionRequirementViewModel } from '@/viewmodels/digimon-digievolution-requirement.viewmodel';
+import { computed, ref } from "vue";
+import Tooltip from "@/components/tooltip/Tooltip.vue";
+import { useLocalization } from "@/composables/useLocalization";
+import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import type { DigimonDigievolutionRequirementViewModel } from '@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel';
 import { DigievolutionRepository } from '@/repositories';
 import { TechniquePresenter } from '@/presenters/technique-presenter';
-import type { DigimonDigievolutionViewModel } from '@/viewmodels/digimon-digievolution.viewmodel';
+import type { DigimonDigievolutionViewModel } from '@/viewmodels/digimon/digimon-digievolution.viewmodel';
 
 const props = defineProps<{
   evolution: DigimonDigievolutionRequirementViewModel[]
@@ -85,26 +87,24 @@ const derivatives = computed(() => {
   return Object.values(result).map(value => value[0]);
 })
 
-// Tooltip Logic
-const activeTooltip = ref({ show: false, x: 0, y: 0, type: '' })
+const tooltipPlacement = "below" as const;
+const tooltipPosition = useTooltipPosition(150);
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+const tooltipTitle = ref("");
 
 const showTypeTooltip = (event: MouseEvent, type: string) => {
-  let posX = event.clientX + 15
-  if (posX + 150 > window.innerWidth) posX = event.clientX - 160
-  activeTooltip.value = { show: true, x: posX, y: event.clientY + 15, type: type || 'Physical' }
-}
+  const normalizedType = type || "Physical";
+  tooltipTitle.value = t(`techniqueTypes.${normalizedType.toLowerCase()}`);
+  showAt(event, { maxWidth: 150, placement: tooltipPlacement });
+};
 
-const hideTooltip = () => {
-  activeTooltip.value.show = false
-}
+const hideTypeTooltip = () => {
+  hide();
+};
 
-const moveTooltip = (event: MouseEvent) => {
-  if (!activeTooltip.value.show) return
-  let posX = event.clientX + 15
-  if (posX + 150 > window.innerWidth) posX = event.clientX - 160
-  activeTooltip.value.x = posX
-  activeTooltip.value.y = event.clientY + 15
-}
+const moveTypeTooltip = (event: MouseEvent) => {
+  move(event, tooltipPlacement);
+};
 </script>
 
 <template>
@@ -163,9 +163,9 @@ const moveTooltip = (event: MouseEvent) => {
                   </span>
 
                   <span class="text-base leading-none mt-px shrink-0 cursor-help tooltip-anchor"
-                        @mouseenter="e => showTypeTooltip(e, techniqueViewModel.type ?? '')"
-                        @mousemove="moveTooltip"
-                        @mouseleave="hideTooltip">
+                        @mouseenter="showTypeTooltip($event, techniqueViewModel.type ?? '')"
+                        @mousemove="moveTypeTooltip"
+                        @mouseleave="hideTypeTooltip">
                     {{ typeIcon(techniqueViewModel.type ?? '') }}
                   </span>
 
@@ -209,32 +209,13 @@ const moveTooltip = (event: MouseEvent) => {
             </div>
         </div>
         </div>
-    <!-- Teleported Tooltip for Technique Types -->
-    <Teleport to="body">
-      <Transition name="fade">
-        <div 
-          v-if="activeTooltip.show"
-          class="fixed z-9999 pointer-events-none px-3 py-1.5 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm"
-          :style="{ top: `${activeTooltip.y}px`, left: `${activeTooltip.x}px` }"
-        >
-             <div class="font-bold text-yellow-300 text-xs shadow-black text-shadow-sm uppercase tracking-wider">
-                {{ $t('techniqueTypes.' + (activeTooltip.type || 'Physical').toLowerCase()) }}
-             </div>
-        </div>
-      </Transition>
-    </Teleport>
+    <Tooltip
+      :show="tooltipShow"
+      :x="tooltipX"
+      :y="tooltipY"
+      :title="tooltipTitle"
+      :max-width="150"
+      placement="below"
+    />
   </div>
 </template>
-
-<style scoped>.text-shadow-sm {
-  text-shadow: 1px 1px 0px rgba(0,0,0,0.8);
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.15s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
