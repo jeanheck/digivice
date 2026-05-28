@@ -1,5 +1,5 @@
 import { MathUtils } from "@/utils/MathUtils";
-import { AttributeType, EquipmentsAttributesOperationType, ResistanceType, type Equipments } from "@/models";
+import { AttributeType, ResistanceType, type Equipments } from "@/models";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
 
@@ -12,8 +12,7 @@ export class DigimonStatusCalculator {
             .filter(attribute => attribute.attribute.toLowerCase() === lowerCaseType);
 
         return MathUtils.Sum(attributesRaw.map(attribute => {
-            const operation = attribute.type === EquipmentsAttributesOperationType.Addition ? "+" : "-";
-            return Number(`${operation}${attribute.value}`);
+            return Number(`${attribute.type}${attribute.value}`);
         }));
     }
 

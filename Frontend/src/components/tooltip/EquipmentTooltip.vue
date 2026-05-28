@@ -3,7 +3,6 @@ import { computed } from "vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import type { TooltipPlacement } from "@/composables/use-tooltip-position";
 import { useLocalization } from "@/composables/useLocalization";
-import { EquipmentsAttributesOperationType } from "@/models";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 const props = withDefaults(
@@ -31,7 +30,7 @@ const equipmentName = computed(() => {
     return t(`equipments.${props.equipment.id}.name`);
 });
 
-const equipmentTypeDescription = computed(() => {
+const equipmentType = computed(() => {
     if (!props.equipment) {
         return "";
     }
@@ -65,10 +64,10 @@ const equipmentNote = computed(() => {
   >
     <div v-if="equipment" class="flex flex-col gap-1 w-full min-w-42.5">
       <div
-        v-if="equipmentTypeDescription"
+        v-if="equipmentType"
         class="text-blue-300 text-[10px] tracking-widest uppercase mb-1 text-center font-bold"
       >
-        {{ equipmentTypeDescription }}
+        {{ equipmentType }}
       </div>
 
       <div
@@ -82,10 +81,10 @@ const equipmentNote = computed(() => {
         >
           <span class="text-gray-200">{{ t("attribute." + attribute.attribute.toLowerCase()) }}</span>
           <span
-            :class="attribute.type === EquipmentsAttributesOperationType.Addition ? 'text-green-400' : 'text-red-400'"
+            :class="attribute.type === '+' ? 'text-green-400' : 'text-red-400'"
             class="font-bold tracking-wider"
           >
-            {{ attribute.type === EquipmentsAttributesOperationType.Addition ? "+" : "-" }}{{ attribute.value }}
+            {{ attribute.type }}{{ attribute.value }}
           </span>
         </div>
       </div>
