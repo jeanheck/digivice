@@ -9,11 +9,11 @@ export class EquipmentsSyncer {
         if (newEquipmentsDto.body !== undefined) {
             previousEquipments.body = newEquipmentsDto.body;
         }
-        if (newEquipmentsDto.rightHand !== undefined) {
-            previousEquipments.rightHand = newEquipmentsDto.rightHand;
+        if (newEquipmentsDto.right !== undefined) {
+            previousEquipments.right = newEquipmentsDto.right;
         }
-        if (newEquipmentsDto.leftHand !== undefined) {
-            previousEquipments.leftHand = newEquipmentsDto.leftHand;
+        if (newEquipmentsDto.left !== undefined) {
+            previousEquipments.left = newEquipmentsDto.left;
         }
         if (newEquipmentsDto.accessory1 !== undefined) {
             previousEquipments.accessory1 = newEquipmentsDto.accessory1;

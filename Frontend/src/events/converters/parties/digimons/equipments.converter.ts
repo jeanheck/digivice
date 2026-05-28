@@ -6,8 +6,8 @@ export class EquipmentsConverter {
         return {
             head: equipmentsDto?.head ?? null,
             body: equipmentsDto?.body ?? null,
-            rightHand: equipmentsDto?.rightHand ?? null,
-            leftHand: equipmentsDto?.leftHand ?? null,
+            right: equipmentsDto?.right ?? null,
+            left: equipmentsDto?.left ?? null,
             accessory1: equipmentsDto?.accessory1 ?? null,
             accessory2: equipmentsDto?.accessory2 ?? null
         };

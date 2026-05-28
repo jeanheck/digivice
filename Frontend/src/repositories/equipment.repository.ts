@@ -10,8 +10,8 @@ export class EquipmentRepository {
         return [
             equipments.head,
             equipments.body,
-            equipments.rightHand,
-            equipments.leftHand,
+            equipments.right,
+            equipments.left,
             equipments.accessory1,
             equipments.accessory2
         ].filter((id): id is number => id !== null && id !== undefined && id !== 0);

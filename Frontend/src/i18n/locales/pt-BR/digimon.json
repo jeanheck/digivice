@@ -6,7 +6,7 @@
     "equipableBy": "Equipável por",
     "allDigimon": "Todos os Digimon",
     "level": "Nível",
-    "slots": {
+    "equipmentSlot": {
       "head": "Cabeça",
       "body": "Corpo",
       "right": "Direita",

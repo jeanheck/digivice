@@ -1,43 +1,33 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import type { Equipments, EnrichedEquipment } from "@/models";
-import { EquipmentRepository } from "@/repositories/equipment.repository.ts";
-import DigimonEquipament from "./DigimonEquipament.vue";
+import { computed, ref } from "vue";
+import { EQUIPMENT_SLOT_KEYS } from "@/constants/equipment-slot-key";
+import type { Equipments } from "@/models";
+import DigimonEquipment from "@/components/digimon/DigimonEquipment.vue";
 import EquipmentTooltip from "@/components/tooltip/EquipmentTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw.ts";
+import { DigimonEquipmentsPresenter } from "@/presenters/digimon-equipments.presenter";
+import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 const props = defineProps<{
   equipments: Equipments;
 }>();
 
-const slotKeys = [
-  "head",
-  "body",
-  "rightHand",
-  "leftHand",
-  "accessory1",
-  "accessory2"
-] as const;
+const equipmentSlots = computed(() => {
+  return EQUIPMENT_SLOT_KEYS.map((slotKey) => {
+    return {
+      slotKey,
+      equipment: DigimonEquipmentsPresenter.getEquipmentBySlot(props.equipments, slotKey),
+    };
+  });
+});
 
 const tooltipPlacement = "below" as const;
 const tooltipPosition = useTooltipPosition(300);
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
-const selectedEquipment = ref<EnrichedEquipment | null>(null);
+const selectedEquipment = ref<EquipmentViewModel | null>(null);
 
-const getEnrichedEquipment = (
-  slotKey: "head" | "body" | "rightHand" | "leftHand" | "accessory1" | "accessory2"
-): EquipmentRaw | null => {
-  const equipmentId = props.equipments?.[slotKey];
-  if (!equipmentId) {
-    return null;
-  }
-
-  return EquipmentRepository.getRawEquipmentById(equipmentId);
-};
-
-const showTooltip = (event: MouseEvent, enrichedEquipment: EnrichedEquipment) => {
-  selectedEquipment.value = enrichedEquipment;
+const showTooltip = (event: MouseEvent, equipment: EquipmentViewModel) => {
+  selectedEquipment.value = equipment;
   showAt(event, { maxWidth: 300, placement: tooltipPlacement });
 };
 
@@ -57,14 +47,14 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
 
     <div class="relative z-10 w-full flex flex-col pt-2 p-3 text-white text-xs shadow-inner bg-[#000a2b]/40">
-      <DigimonEquipament 
-        v-for="slotKey in slotKeys" 
-        :key="slotKey"
-        :slotKey="slotKey"
-        :enrichedEquipment="getEnrichedEquipment(slotKey)"
-        @showTooltip="showTooltip"
-        @moveTooltip="moveTooltip"
-        @hideTooltip="hideTooltip"
+      <DigimonEquipment
+        v-for="equipmentSlot in equipmentSlots"
+        :key="equipmentSlot.slotKey"
+        :slot-key="equipmentSlot.slotKey"
+        :equipment="equipmentSlot.equipment"
+        @show-tooltip="showTooltip"
+        @move-tooltip="moveTooltip"
+        @hide-tooltip="hideTooltip"
       />
     </div>
 

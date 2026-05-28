@@ -3,14 +3,15 @@ import { computed } from "vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import type { TooltipPlacement } from "@/composables/use-tooltip-position";
 import { useLocalization } from "@/composables/useLocalization";
-import { EquipmentsAttributesOperationType, type EnrichedEquipment } from "@/models";
+import { EquipmentsAttributesOperationType } from "@/models";
+import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 const props = withDefaults(
     defineProps<{
         show: boolean;
         x: number;
         y: number;
-        equipment: EnrichedEquipment | null;
+        equipment: EquipmentViewModel | null;
         maxWidth?: number;
         placement?: TooltipPlacement;
     }>(),
@@ -31,7 +32,7 @@ const equipmentTitle = computed(() => {
 });
 
 const equipmentWithOptionalFields = computed(() => {
-    return props.equipment as EnrichedEquipment & {
+    return props.equipment as EquipmentViewModel & {
         typeDescription?: Record<string, string>;
         note?: Record<string, string>;
     } | null;
