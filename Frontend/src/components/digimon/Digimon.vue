@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import ExperienceProgressBar from "@/components/digimon/ExperienceProgressBar.vue";
+import ProgressBar from "@/components/digimon/ProgressBar.vue";
 import DigimonIcon from "@/components/digimon/DigimonIcon.vue";
 import DigimonVitals from "@/components/digimon/DigimonVitals.vue";
 import type { Digimon } from "@/models";
+import { ProgressBarVariant } from "@/constants/progress-bar-variant";
 import { DigimonPresenter } from "@/presenters/digimon.presenter";
 
 const props = defineProps<{
@@ -44,10 +45,11 @@ const experiencePercentageToReachNextLevel = computed(() => {
             </div>
           </div>
 
-          <ExperienceProgressBar
-            :experience-to-reach-next-level="experienceToReachNextLevel"
-            :experience-percentage-to-reach-next-level="experiencePercentageToReachNextLevel"
-            :experience="digimon.experience"
+          <ProgressBar
+            :variant="ProgressBarVariant.EXPERIENCE"
+            :current-value="digimon.experience"
+            :max-value="experienceToReachNextLevel"
+            :percentage="experiencePercentageToReachNextLevel"
           />
         </div>
       </div>
