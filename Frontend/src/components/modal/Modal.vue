@@ -1,96 +1,148 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, watch } from 'vue'
+import { onMounted, onUnmounted } from "vue";
+import IconClose from "@/components/modal/IconClose.vue";
 
-const props = defineProps<{
-  isOpen: boolean
-  title?: string
-}>()
+const DEFAULT_FOOTER_BAR_CLASS = "bg-linear-to-r from-blue-900 via-cyan-500 to-blue-900";
+
+const props = withDefaults(
+  defineProps<{
+    isOpen: boolean;
+    maxWidth?: string;
+    maxHeight?: string;
+    panelClass?: string;
+    showHexPattern?: boolean;
+    showFooterBar?: boolean;
+    footerBarClass?: string;
+    showCloseButton?: boolean;
+  }>(),
+  {
+    maxWidth: "max-w-5xl",
+    maxHeight: "",
+    panelClass: "",
+    showHexPattern: true,
+    showFooterBar: true,
+    footerBarClass: DEFAULT_FOOTER_BAR_CLASS,
+    showCloseButton: true,
+  }
+);
 
 const emit = defineEmits<{
-  (e: 'close'): void
-}>()
+  (e: "close"): void;
+}>();
 
-const handleKeydown = (e: KeyboardEvent) => {
-  if (e.key === 'Escape' && props.isOpen) {
-    emit('close')
-  }
-}
+const handleClose = () => {
+  emit("close");
+};
 
-watch(() => props.isOpen, (isOpen) => {
-  if (isOpen) {
-    document.body.style.overflow = 'hidden'
-  } else {
-    document.body.style.overflow = ''
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === "Escape" && props.isOpen) {
+    handleClose();
   }
-})
+};
 
 onMounted(() => {
-  window.addEventListener('keydown', handleKeydown)
-})
+  window.addEventListener("keydown", handleKeydown);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeydown)
-  document.body.style.overflow = ''
-})
+  window.removeEventListener("keydown", handleKeydown);
+});
 </script>
 
 <template>
   <Teleport to="body">
-    <transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="transition duration-150 ease-in"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
-    >
-      <div 
-        v-if="isOpen" 
-        class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-75 p-4"
-        @click.self="emit('close')"
+    <Transition name="modal-fade">
+      <div
+        v-if="isOpen"
+        class="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+        @click.self="handleClose"
       >
-        <div class="bg-[#000a2b] border-2 border-[#00154a] rounded shadow-[0_0_15px_rgba(0,0,0,0.8)] flex flex-col w-full max-w-[90vw] max-h-[90vh] overflow-hidden">
-          
-          <!-- Modal Header -->
-          <div class="flex justify-between items-center bg-[#00154a] px-4 py-2 border-b-2 border-blue-900">
-            <h2 class="text-white font-bold tracking-widest uppercase text-sm drop-shadow-md">
-              {{ title || 'Modal' }}
-            </h2>
-            <button 
-              @click="emit('close')"
-              class="text-blue-300 hover:text-white transition-colors focus:outline-none"
+        <div
+          class="relative w-full bg-[#001122] border-2 border-[#0055ff] shadow-[0_0_20px_rgba(0,119,255,0.4)] rounded-lg flex flex-col overflow-hidden animate-modal-slide-up"
+          :class="[maxWidth, maxHeight, panelClass]"
+        >
+          <div
+            v-if="showHexPattern"
+            class="absolute inset-0 opacity-[0.03] pointer-events-none"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l25.98 15v30L30 60 4.02 45V15z\' stroke=\'%230077ff\' stroke-width=\'1\' fill=\'none\'/%3E%3C/svg%3E');"
+          />
+
+          <header
+            class="relative z-10 flex items-center justify-between gap-4 p-3 bg-linear-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 shrink-0"
+          >
+            <div class="flex min-w-0 flex-1 items-center">
+              <slot name="header" />
+            </div>
+
+            <button
+              v-if="showCloseButton"
+              type="button"
+              class="text-gray-400 hover:text-red-400 transition-colors bg-black/30 w-7 h-7 flex items-center justify-center rounded border border-gray-700 hover:border-red-500 shrink-0"
+              @click="handleClose"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <IconClose class="w-5 h-5" />
             </button>
+          </header>
+
+          <div class="relative z-10 flex min-h-0 flex-1 flex-col">
+            <slot />
           </div>
 
-          <!-- Modal Body -->
-          <div class="flex-1 overflow-auto p-4 bg-gradient-to-b from-[#000e3f] to-[#00071f] text-white custom-scrollbar">
-            <slot></slot>
-          </div>
-
+          <slot name="footer">
+            <div
+              v-if="showFooterBar"
+              class="relative z-10 h-1.5 w-full shrink-0"
+              :class="footerBarClass"
+            />
+          </slot>
         </div>
       </div>
-    </transition>
+    </Transition>
   </Teleport>
 </template>
 
-<style>
-.custom-scrollbar::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+<style scoped>
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.3s ease;
 }
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #000a2b; 
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #002266; 
-  border: 1px solid #00154a;
-  border-radius: 2px;
+
+@keyframes modal-slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #003399; 
+
+.animate-modal-slide-up {
+  animation: modal-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+:deep(.custom-scroll)::-webkit-scrollbar {
+  width: 6px;
+}
+
+:deep(.custom-scroll)::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+:deep(.custom-scroll)::-webkit-scrollbar-thumb {
+  background: #0044aa;
+  border-radius: 4px;
+}
+
+:deep(.custom-scroll)::-webkit-scrollbar-thumb:hover {
+  background: #0077ff;
 }
 </style>
