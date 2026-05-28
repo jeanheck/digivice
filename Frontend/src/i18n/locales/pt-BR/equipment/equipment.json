@@ -1,202 +1,264 @@
 {
   "equipments": {
     "92": {
-      "name": "Espada Pequena"
+      "name": "Espada Pequena",
+      "note": null
     },
     "93": {
-      "name": "Espada Zanden"
+      "name": "Espada Zanden",
+      "note": null
     },
     "94": {
       "name": "Lâmina Crimson",
       "note": "Recupera uma fração do dano causado como HP"
     },
     "96": {
-      "name": "Shiratorimaru"
+      "name": "Shiratorimaru",
+      "note": null
     },
     "106": {
-      "name": "Luva de Couro"
+      "name": "Luva de Couro",
+      "note": null
     },
     "107": {
-      "name": "Luva de Gato"
+      "name": "Luva de Gato",
+      "note": null
     },
     "108": {
-      "name": "Iron Glove"
+      "name": "Iron Glove",
+      "note": null
     },
     "110": {
-      "name": "Braço Potente"
+      "name": "Braço Potente",
+      "note": null
     },
     "122": {
-      "name": "Espingarda"
+      "name": "Espingarda",
+      "note": null
     },
     "134": {
-      "name": "Cajado de Osso"
+      "name": "Cajado de Osso",
+      "note": null
     },
     "141": {
-      "name": "Vara Antiga"
+      "name": "Vara Antiga",
+      "note": null
     },
     "147": {
       "name": "Presa de Cérbero",
       "note": "Recupera uma fração do dano causado como HP"
     },
     "153": {
-      "name": "Garra Antiga"
+      "name": "Garra Antiga",
+      "note": null
     },
     "157": {
-      "name": "Punhal"
+      "name": "Punhal",
+      "note": null
     },
     "158": {
-      "name": "Shishioumaru"
+      "name": "Shishioumaru",
+      "note": null
     },
     "161": {
-      "name": "Espada Alada"
+      "name": "Espada Alada",
+      "note": null
     },
     "167": {
-      "name": "Arpão de Bambu"
+      "name": "Arpão de Bambu",
+      "note": null
     },
     "168": {
-      "name": "Bambu"
+      "name": "Bambu",
+      "note": null
     },
     "169": {
-      "name": "Conto de Fadas"
+      "name": "Conto de Fadas",
+      "note": null
     },
     "171": {
-      "name": "Lança Divina"
+      "name": "Lança Divina",
+      "note": null
     },
     "178": {
-      "name": "Zweihander"
+      "name": "Zweihander",
+      "note": null
     },
     "185": {
-      "name": "Berdys"
+      "name": "Berdys",
+      "note": null
     },
     "190": {
-      "name": "Arco Longo"
+      "name": "Arco Longo",
+      "note": null
     },
     "191": {
-      "name": "Shuriken"
+      "name": "Shuriken",
+      "note": null
     },
     "192": {
-      "name": "Besta"
+      "name": "Besta",
+      "note": null
     },
     "194": {
       "name": "Arco Raven",
       "note": "Chance baixa de causar confusão no Digimon inimigo"
     },
     "201": {
-      "name": "Protetor de Metal"
+      "name": "Protetor de Metal",
+      "note": null
     },
     "209": {
-      "name": "Chifre Kabuteri"
+      "name": "Chifre Kabuteri",
+      "note": null
     },
     "215": {
-      "name": "Bandana"
+      "name": "Bandana",
+      "note": null
     },
     "216": {
-      "name": "Visor Solar"
+      "name": "Visor Solar",
+      "note": null
     },
     "217": {
-      "name": "Boné de Beisebol"
+      "name": "Boné de Beisebol",
+      "note": null
     },
     "219": {
-      "name": "Boné de Lã"
+      "name": "Boné de Lã",
+      "note": null
     },
     "226": {
-      "name": "Faixa"
+      "name": "Faixa",
+      "note": null
     },
     "227": {
-      "name": "Orelhas de Gato"
+      "name": "Orelhas de Gato",
+      "note": null
     },
     "228": {
-      "name": "Headband"
+      "name": "Headband",
+      "note": null
     },
     "230": {
-      "name": "Coroa Mágica"
+      "name": "Coroa Mágica",
+      "note": null
     },
     "236": {
-      "name": "Capacete de Couro"
+      "name": "Capacete de Couro",
+      "note": null
     },
     "237": {
-      "name": "Capacete de Aço"
+      "name": "Capacete de Aço",
+      "note": null
     },
     "238": {
-      "name": "Elmo de Ferro"
+      "name": "Elmo de Ferro",
+      "note": null
     },
     "240": {
-      "name": "Capacete Alado"
+      "name": "Capacete Alado",
+      "note": null
     },
     "249": {
-      "name": "Casaco de Couro"
+      "name": "Casaco de Couro",
+      "note": null
     },
     "250": {
-      "name": "Roupa de Academia"
+      "name": "Roupa de Academia",
+      "note": null
     },
     "251": {
-      "name": "Manto do Padre"
+      "name": "Manto do Padre",
+      "note": null
     },
     "253": {
-      "name": "Manto Sombrio"
+      "name": "Manto Sombrio",
+      "note": null
     },
     "262": {
-      "name": "Armadura de Couro"
+      "name": "Armadura de Couro",
+      "note": null
     },
     "263": {
-      "name": "Armadura de Aço"
+      "name": "Armadura de Aço",
+      "note": null
     },
     "264": {
-      "name": "Iron Armor"
+      "name": "Iron Armor",
+      "note": null
     },
     "266": {
-      "name": "Armadura Sombria"
+      "name": "Armadura Sombria",
+      "note": null
     },
     "275": {
-      "name": "Escudo"
+      "name": "Escudo",
+      "note": null
     },
     "276": {
-      "name": "Escudo de Aço"
+      "name": "Escudo de Aço",
+      "note": null
     },
     "277": {
-      "name": "Escudo de Ferro"
+      "name": "Escudo de Ferro",
+      "note": null
     },
     "279": {
-      "name": "Barreira Proteção"
+      "name": "Barreira Proteção",
+      "note": null
     },
     "281": {
-      "name": "Escudo Divino"
+      "name": "Escudo Divino",
+      "note": null
     },
     "292": {
-      "name": "Gema - Poder"
+      "name": "Gema - Poder",
+      "note": null
     },
     "294": {
-      "name": "Gema - Defesa"
+      "name": "Gema - Defesa",
+      "note": null
     },
     "296": {
-      "name": "Gema - Espírito"
+      "name": "Gema - Espírito",
+      "note": null
     },
     "298": {
-      "name": "Gema - Sabedoria"
+      "name": "Gema - Sabedoria",
+      "note": null
     },
     "300": {
-      "name": "Gema - Impulso"
+      "name": "Gema - Impulso",
+      "note": null
     },
     "302": {
-      "name": "Gema - Carisma"
+      "name": "Gema - Carisma",
+      "note": null
     },
     "304": {
-      "name": "Anel de Fogo"
+      "name": "Anel de Fogo",
+      "note": null
     },
     "305": {
-      "name": "Anel Aquático"
+      "name": "Anel Aquático",
+      "note": null
     },
     "306": {
-      "name": "Anel de Gelo"
+      "name": "Anel de Gelo",
+      "note": null
     },
     "307": {
-      "name": "Anel do Vento"
+      "name": "Anel do Vento",
+      "note": null
     },
     "308": {
-      "name": "Anel Elétrico"
+      "name": "Anel Elétrico",
+      "note": null
     },
     "309": {
-      "name": "Anel Metálico"
+      "name": "Anel Metálico",
+      "note": null
     },
     "311": {
       "name": "Anel Antídoto",
@@ -229,6 +291,758 @@
     "345": {
       "name": "Ice Power 1",
       "note": "Add weak Ice to attacks"
+    },
+    "1001": {
+      "name": "Vazio",
+      "note": null
+    },
+    "1002": {
+      "name": "Arco Angelical",
+      "note": "Causa dano extra a Digimons da espécie Evil"
+    },
+    "1003": {
+      "name": "Apocalypse",
+      "note": null
+    },
+    "1004": {
+      "name": "Atlas Buster",
+      "note": null
+    },
+    "1005": {
+      "name": "Escudo de Energia",
+      "note": null
+    },
+    "1006": {
+      "name": "Presa de Belial",
+      "note": null
+    },
+    "1007": {
+      "name": "Escudo Bravo",
+      "note": null
+    },
+    "1008": {
+      "name": "Espada Brava",
+      "note": null
+    },
+    "1009": {
+      "name": "Claymore",
+      "note": null
+    },
+    "1010": {
+      "name": "Canhão Cluster",
+      "note": null
+    },
+    "1011": {
+      "name": "Motosserra",
+      "note": null
+    },
+    "1012": {
+      "name": "Cajado de Cristal",
+      "note": null
+    },
+    "1013": {
+      "name": "Destruição",
+      "note": "Very small chance of OHKO’ing enemy Digimon"
+    },
+    "1014": {
+      "name": "Deus Guard",
+      "note": null
+    },
+    "1015": {
+      "name": "Cajado Divino",
+      "note": null
+    },
+    "1016": {
+      "name": "Guarda Dramon",
+      "note": null
+    },
+    "1017": {
+      "name": "Escudo Dramon",
+      "note": null
+    },
+    "1018": {
+      "name": "Eternally",
+      "note": null
+    },
+    "1019": {
+      "name": "Presa Maligna",
+      "note": null
+    },
+    "1020": {
+      "name": "Excalibur",
+      "note": "Causa dano extra a Digimons da espécie Evil"
+    },
+    "1021": {
+      "name": "Espada Fenrir",
+      "note": "Chance baixa de congelar o Digimon inimigo"
+    },
+    "1022": {
+      "name": "Flamberge",
+      "note": null
+    },
+    "1023": {
+      "name": "Fuujin Blade",
+      "note": null
+    },
+    "1024": {
+      "name": "Gaea Halberd",
+      "note": null
+    },
+    "1025": {
+      "name": "Garuru Cannon",
+      "note": null
+    },
+    "1026": {
+      "name": "Ghost Fang",
+      "note": null
+    },
+    "1027": {
+      "name": "Grey Sword",
+      "note": null
+    },
+    "1028": {
+      "name": "Gulf Sword",
+      "note": null
+    },
+    "1029": {
+      "name": "Alabarda",
+      "note": null
+    },
+    "1030": {
+      "name": "Handgun",
+      "note": null
+    },
+    "1031": {
+      "name": "Hazard Fang",
+      "note": null
+    },
+    "1032": {
+      "name": "Hazard Shield",
+      "note": null
+    },
+    "1033": {
+      "name": "High Security",
+      "note": "Previne derrotas instantâneas"
+    },
+    "1034": {
+      "name": "Immaculate",
+      "note": null
+    },
+    "1035": {
+      "name": "Invincible",
+      "note": null
+    },
+    "1036": {
+      "name": "Judgment",
+      "note": null
+    },
+    "1037": {
+      "name": "Justice",
+      "note": null
+    },
+    "1038": {
+      "name": "Kaiser Fist",
+      "note": null
+    },
+    "1039": {
+      "name": "Khakkhara",
+      "note": null
+    },
+    "1040": {
+      "name": "Escudo de Cavaleiro",
+      "note": null
+    },
+    "1041": {
+      "name": "Kotetsu",
+      "note": null
+    },
+    "1042": {
+      "name": "Kulon Shield",
+      "note": null
+    },
+    "1043": {
+      "name": "Kulon Sword",
+      "note": null
+    },
+    "1044": {
+      "name": "Laser Cannon",
+      "note": null
+    },
+    "1045": {
+      "name": "Lightning Bow",
+      "note": null
+    },
+    "1046": {
+      "name": "Espada Longa",
+      "note": null
+    },
+    "1047": {
+      "name": "Mach Guard",
+      "note": null
+    },
+    "1048": {
+      "name": "Machinegun",
+      "note": null
+    },
+    "1049": {
+      "name": "Magician Rod",
+      "note": null
+    },
+    "1050": {
+      "name": "Masamune",
+      "note": null
+    },
+    "1051": {
+      "name": "Mega Guard",
+      "note": null
+    },
+    "1052": {
+      "name": "Mighty Blade",
+      "note": null
+    },
+    "1053": {
+      "name": "Mighty Guard",
+      "note": null
+    },
+    "1054": {
+      "name": "Millenium",
+      "note": null
+    },
+    "1055": {
+      "name": "Mini Guard",
+      "note": null
+    },
+    "1056": {
+      "name": "Misty Rod",
+      "note": null
+    },
+    "1057": {
+      "name": "Muramasa",
+      "note": null
+    },
+    "1058": {
+      "name": "Naginata",
+      "note": null
+    },
+    "1059": {
+      "name": "Needle Glove",
+      "note": null
+    },
+    "1060": {
+      "name": "Omega Halberd",
+      "note": null
+    },
+    "1061": {
+      "name": "Onimaru",
+      "note": null
+    },
+    "1062": {
+      "name": "Orochi Spear",
+      "note": null
+    },
+    "1063": {
+      "name": "Partisan",
+      "note": null
+    },
+    "1064": {
+      "name": "Positron Cannon",
+      "note": null
+    },
+    "1065": {
+      "name": "Psycho Blaster",
+      "note": null
+    },
+    "1066": {
+      "name": "Prominence",
+      "note": null
+    },
+    "1067": {
+      "name": "Pulse Guard",
+      "note": null
+    },
+    "1068": {
+      "name": "Punishment",
+      "note": null
+    },
+    "1069": {
+      "name": "Raijin Fist",
+      "note": null
+    },
+    "1070": {
+      "name": "Rock Breaker",
+      "note": null
+    },
+    "1071": {
+      "name": "Ronin Blade",
+      "note": null
+    },
+    "1072": {
+      "name": "Ronin Shield",
+      "note": null
+    },
+    "1073": {
+      "name": "Royal Spear",
+      "note": null
+    },
+    "1074": {
+      "name": "Rusty Glove",
+      "note": null
+    },
+    "1075": {
+      "name": "Rusty Katana",
+      "note": null
+    },
+    "1076": {
+      "name": "Rusty Rifle",
+      "note": null
+    },
+    "1077": {
+      "name": "Ryuuzanmaru",
+      "note": null
+    },
+    "1078": {
+      "name": "Saber Fang",
+      "note": null
+    },
+    "1079": {
+      "name": "Seraphic Bow",
+      "note": null
+    },
+    "1080": {
+      "name": "Shamshir",
+      "note": null
+    },
+    "1081": {
+      "name": "Shine Blade",
+      "note": null
+    },
+    "1082": {
+      "name": "Sniper Cannon",
+      "note": null
+    },
+    "1083": {
+      "name": "Sniper Shield",
+      "note": null
+    },
+    "1084": {
+      "name": "Soul Chopper",
+      "note": "Very small chance of OHKO’ing enemy Digimon"
+    },
+    "1085": {
+      "name": "Suijin Cannon",
+      "note": null
+    },
+    "1086": {
+      "name": "Super Nova",
+      "note": null
+    },
+    "1087": {
+      "name": "Tempest Arm",
+      "note": null
+    },
+    "1088": {
+      "name": "Tenjinmaru",
+      "note": null
+    },
+    "1089": {
+      "name": "Tiger Glove",
+      "note": null
+    },
+    "1090": {
+      "name": "Trent",
+      "note": "Causa dano extra a Digimons da espécie Peixe"
+    },
+    "1091": {
+      "name": "Twinkle",
+      "note": null
+    },
+    "1092": {
+      "name": "Vampire Lance",
+      "note": "Recupera uma fração do dano causado como HP"
+    },
+    "1093": {
+      "name": "Vanquish",
+      "note": "Very small chance of OHKO’ing enemy Digimon"
+    },
+    "1094": {
+      "name": "Venom Fang",
+      "note": "Chance baixa de envenenar o Digimon inimigo"
+    },
+    "1095": {
+      "name": "Wild Glove",
+      "note": null
+    },
+    "1096": {
+      "name": "Wild Shield",
+      "note": null
+    },
+    "1097": {
+      "name": "Wolf Fang",
+      "note": null
+    },
+    "1098": {
+      "name": "Cajado de Madeira",
+      "note": null
+    },
+    "1099": {
+      "name": "Yin Yang Rod",
+      "note": null
+    },
+    "1100": {
+      "name": "Yin Yang Ward",
+      "note": null
+    },
+    "1101": {
+      "name": "Zodiac",
+      "note": null
+    },
+    "1102": {
+      "name": "Beam Armor",
+      "note": null
+    },
+    "1103": {
+      "name": "Body Armor",
+      "note": null
+    },
+    "1104": {
+      "name": "Brave Armor",
+      "note": null
+    },
+    "1105": {
+      "name": "Crimson Mail",
+      "note": null
+    },
+    "1106": {
+      "name": "Digitama Mail",
+      "note": null
+    },
+    "1107": {
+      "name": "Divine Robe",
+      "note": null
+    },
+    "1108": {
+      "name": "Down Jacket",
+      "note": null
+    },
+    "1109": {
+      "name": "Dramon Armor",
+      "note": null
+    },
+    "1110": {
+      "name": "Hazard Armor",
+      "note": null
+    },
+    "1111": {
+      "name": "King’s Mantle",
+      "note": null
+    },
+    "1112": {
+      "name": "Kulon Armor",
+      "note": null
+    },
+    "1113": {
+      "name": "Mirage Robe",
+      "note": null
+    },
+    "1114": {
+      "name": "Misty Armor",
+      "note": null
+    },
+    "1115": {
+      "name": "Ronin Armor",
+      "note": null
+    },
+    "1116": {
+      "name": "Rubber Suit",
+      "note": null
+    },
+    "1117": {
+      "name": "Sniper Suit",
+      "note": null
+    },
+    "1118": {
+      "name": "Wild Suit",
+      "note": null
+    },
+    "1119": {
+      "name": "Ying Yang Suit",
+      "note": null
+    },
+    "1120": {
+      "name": "Angel Ring",
+      "note": null
+    },
+    "1121": {
+      "name": "Beret",
+      "note": null
+    },
+    "1122": {
+      "name": "Brave Helmet",
+      "note": null
+    },
+    "1123": {
+      "name": "D-Tama Helmet",
+      "note": null
+    },
+    "1124": {
+      "name": "Divine Crown",
+      "note": null
+    },
+    "1125": {
+      "name": "Dramon Horn",
+      "note": null
+    },
+    "1126": {
+      "name": "Drill Horn",
+      "note": null
+    },
+    "1127": {
+      "name": "Glorious Horn",
+      "note": null
+    },
+    "1128": {
+      "name": "Goddess Crown",
+      "note": null
+    },
+    "1129": {
+      "name": "Hazard Helmet",
+      "note": null
+    },
+    "1130": {
+      "name": "Knight Helmet",
+      "note": null
+    },
+    "1131": {
+      "name": "Kulon Helmet",
+      "note": null
+    },
+    "1132": {
+      "name": "Boné de Kung Fu",
+      "note": null
+    },
+    "1133": {
+      "name": "Matrix Helmet",
+      "note": null
+    },
+    "1134": {
+      "name": "Metal Horn",
+      "note": null
+    },
+    "1135": {
+      "name": "Mugen Helmet",
+      "note": null
+    },
+    "1136": {
+      "name": "Mythril Crown",
+      "note": null
+    },
+    "1137": {
+      "name": "Night Vision",
+      "note": null
+    },
+    "1138": {
+      "name": "Red Cap",
+      "note": null
+    },
+    "1139": {
+      "name": "Ronin Helmet",
+      "note": null
+    },
+    "1140": {
+      "name": "Royal Crown",
+      "note": null
+    },
+    "1141": {
+      "name": "Boné Escolar",
+      "note": null
+    },
+    "1142": {
+      "name": "Scissor Horn",
+      "note": null
+    },
+    "1143": {
+      "name": "Shaman Mask",
+      "note": null
+    },
+    "1144": {
+      "name": "Shock Horn",
+      "note": null
+    },
+    "1145": {
+      "name": "Sniper Goggle",
+      "note": null
+    },
+    "1146": {
+      "name": "Trihorn",
+      "note": null
+    },
+    "1147": {
+      "name": "Wild Helmet",
+      "note": null
+    },
+    "1148": {
+      "name": "Yin Yang Hat",
+      "note": null
+    },
+    "1149": {
+      "name": "Binder Crest",
+      "note": "Reduz as chances de um Digimon selvagem fugir da batalha"
+    },
+    "1150": {
+      "name": "BIT Adapter",
+      "note": "O Digimon equipado recebe BIT adicional a cada batalha"
+    },
+    "1151": {
+      "name": "Bolt Power 1",
+      "note": "Adds a small amount of Lightning damage to the equipped Digimon’s basic attacks"
+    },
+    "1152": {
+      "name": "Bolt Power 2",
+      "note": "Adds a medium amount of Lightning damage to the equipped Digimon’s basic attacks"
+    },
+    "1153": {
+      "name": "Bolt Power S",
+      "note": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks"
+    },
+    "1154": {
+      "name": "Counter Crest",
+      "note": "Permite que o Digimon contra-ataque ataques físicos e técnicas, causando o dobro do dano recebido"
+    },
+    "1155": {
+      "name": "Dark Power 1",
+      "note": "Adds a small amount of Dark damage to the equipped Digimon’s basic attacks"
+    },
+    "1156": {
+      "name": "Dark Power 2",
+      "note": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks"
+    },
+    "1157": {
+      "name": "Dark Power S",
+      "note": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
+    },
+    "1158": {
+      "name": "Anel das Trevas",
+      "note": null
+    },
+    "1159": {
+      "name": "Dance Wing",
+      "note": "Significantly increases the equipped Digimon’s chances of evading an attack"
+    },
+    "1160": {
+      "name": "EXP Adapter",
+      "note": "O Digimon equipado recebe EXP adicional a cada batalha"
+    },
+    "1161": {
+      "name": "Fire Power 2",
+      "note": "Adds a medium amount of Fire damage to the equipped Digimon’s basic attacks"
+    },
+    "1162": {
+      "name": "Fire Power S",
+      "note": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks"
+    },
+    "1163": {
+      "name": "Glasses",
+      "note": "Slightly increases the equipped Digimon’s accuracy"
+    },
+    "1164": {
+      "name": "Goggles",
+      "note": "Significantly increases the equipped Digimon’s accuracy"
+    },
+    "1165": {
+      "name": "HP Proxy",
+      "note": "Diminui levemente o dano recebido pelo Digimon equipado"
+    },
+    "1166": {
+      "name": "HP Mega Proxy",
+      "note": "Diminui significativamente o dano recebido pelo Digimon equipado"
+    },
+    "1167": {
+      "name": "Hack Sticker",
+      "note": "Slightly increases the equipped Digimon’s chances of stealing an item"
+    },
+    "1168": {
+      "name": "Hack System",
+      "note": "Significantly increases the equipped Digimon’s chances of stealing an item"
+    },
+    "1169": {
+      "name": "Metal Power 1",
+      "note": "Adds a small amount of Machine damage to the equipped Digimon’s basic attacks"
+    },
+    "1170": {
+      "name": "Metal Power 2",
+      "note": "Adds a medium amount of Machine damage to the equipped Digimon’s basic attacks"
+    },
+    "1171": {
+      "name": "Metal Power S",
+      "note": "Adds a large amount of Machine damage to the equipped Digimon’s basic attacks"
+    },
+    "1172": {
+      "name": "MP Proxy",
+      "note": "Diminui levemente o uso de MP do Digimon equipado"
+    },
+    "1173": {
+      "name": "MP Mega Proxy",
+      "note": "Diminui significativamente o uso de MP do Digimon equipado"
+    },
+    "1174": {
+      "name": "Multi Crest",
+      "note": "Permite que o Digimon atacante acerte três vezes, mas reduz o dano de cada golpe individual"
+    },
+    "1175": {
+      "name": "Over Clocked",
+      "note": "Slightly increases the equipped Digimon’s Blast Gauge gains"
+    },
+    "1176": {
+      "name": "Over Load",
+      "note": "Significantly increases the equipped Digimon’s Blast Gauge gains"
+    },
+    "1177": {
+      "name": "Power Brace",
+      "note": "Significantly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+    },
+    "1178": {
+      "name": "Recovery Crest",
+      "note": "Recupera uma pequena quantidade de HP do Digimon equipado a cada turno"
+    },
+    "1179": {
+      "name": "Runner Sandals",
+      "note": "Slightly increases the equipped Digimon’s chances of running away from battle"
+    },
+    "1180": {
+      "name": "Runner Shoes",
+      "note": "Significantly increases the equipped Digimon’s chances of running away from battle"
+    },
+    "1181": {
+      "name": "Search Crest",
+      "note": "Increases the equipped Digimon’s critical hit rate"
+    },
+    "1182": {
+      "name": "Training Book",
+      "note": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+    },
+    "1183": {
+      "name": "Water Power 1",
+      "note": "Adds a small amount of Water damage to the equipped Digimon’s basic attacks"
+    },
+    "1184": {
+      "name": "Water Power 2",
+      "note": "Adds a medium amount of Water damage to the equipped Digimon’s basic attacks"
+    },
+    "1185": {
+      "name": "Water Power S",
+      "note": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks"
+    },
+    "1186": {
+      "name": "Wind Power 1",
+      "note": "Adds a small amount of Wind damage to the equipped Digimon’s basic attacks"
+    },
+    "1187": {
+      "name": "Wind Power 2",
+      "note": "Adds a medium amount of Wind damage to the equipped Digimon’s basic attacks"
+    },
+    "1188": {
+      "name": "Wind Power S",
+      "note": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
     }
   }
 }

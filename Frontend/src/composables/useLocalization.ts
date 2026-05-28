@@ -166,13 +166,17 @@ export function useLocalization() {
   };
 
   const getLocalizedEquipmentNote = (equip: any) => {
-    if (!equip || !equip.note) {
+    if (!equip?.id) {
       return "";
     }
-    if (equip.id) {
-      return t(`equipments.${equip.id}.note`);
+
+    const note = t(`equipments.${equip.id}.note`);
+
+    if (!note || note === `equipments.${equip.id}.note`) {
+      return "";
     }
-    return getLocalized(equip.note);
+
+    return note;
   };
 
   return {

@@ -16,7 +16,7 @@ export class DigimonEquipmentsPresenter {
         const equipmentRaw = EquipmentRepository.getRawEquipmentById(equipmentId);
 
         return {
-            name: equipmentRaw.name,
+            id: equipmentId,
             type: equipmentRaw.type as EquipmentViewModel["type"],
             attributes: equipmentRaw.attributes.map((equipmentAttributeRaw) => ({
                 attribute: equipmentAttributeRaw.attribute as DigimonStatusType,
