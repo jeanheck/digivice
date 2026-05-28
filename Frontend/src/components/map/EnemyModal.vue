@@ -172,7 +172,7 @@ const enemyImageUrl = computed(() => {
               <span class="font-bold text-blue-500 tracking-wider uppercase mb-1">{{ $t("enemy.possibleDrop") }}:</span>
               <span
                 class="font-bold text-gray-300 text-left"
-                :title="enemy.drops && getLocalized(enemy.drops) !== 'N/A' ? getLocalized(enemy.drops) : t('drop.none')"
+                :title="enemy.drops && getLocalized(enemy.drops) !== 'N/A' ? getLocalized(enemy.drops) : t('drops.none')"
               >
                 {{ enemy.drops && getLocalized(enemy.drops) !== "N/A" ? getLocalized(enemy.drops) : t("drops.None") }}
               </span>
