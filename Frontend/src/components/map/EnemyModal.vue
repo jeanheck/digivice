@@ -5,7 +5,7 @@ import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import { EnemyRepository } from "@/repositories/enemy.repository";
+import { MapPresenter } from "@/presenters/map.presenter.ts";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -27,7 +27,7 @@ const handleClose = () => {
 };
 
 const enemy = computed(() => {
-  return EnemyRepository.getEnemyById(props.enemyId!);
+  return MapPresenter.getEnemyById(props.enemyId!);
 });
 
 const attributesList = computed(() => {

@@ -48,6 +48,6 @@ export interface EnemyViewModel {
     location: string[];
     regularAttack?: EnemyLocalizedTextViewModel;
     technique?: EnemyLocalizedTextViewModel;
-    boss?: boolean;
+    boss: boolean;
     drops: EnemyDropViewModel | null;
 }

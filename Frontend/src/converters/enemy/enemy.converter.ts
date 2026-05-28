@@ -1,0 +1,51 @@
+import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
+import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
+
+export class EnemyConverter {
+  public static convert(enemyRaw: EnemyRaw): EnemyViewModel {
+    return {
+      name: enemyRaw.name,
+      level: enemyRaw.level,
+      hp: enemyRaw.hp,
+      mp: enemyRaw.mp,
+      species: enemyRaw.species,
+      rate: enemyRaw.rate,
+      strength: enemyRaw.strength,
+      defense: enemyRaw.defense,
+      spirit: enemyRaw.spirit,
+      wisdom: enemyRaw.wisdom,
+      speed: enemyRaw.speed,
+      fire: enemyRaw.fire,
+      water: enemyRaw.water,
+      ice: enemyRaw.ice,
+      wind: enemyRaw.wind,
+      thunder: enemyRaw.thunder,
+      machine: enemyRaw.machine,
+      dark: enemyRaw.dark,
+      canPoison: enemyRaw.canPoison,
+      poison: enemyRaw.poison,
+      canParalyze: enemyRaw.canParalyze,
+      paralyze: enemyRaw.paralyze,
+      canConfuse: enemyRaw.canConfuse,
+      confuse: enemyRaw.confuse,
+      canSleep: enemyRaw.canSleep,
+      sleep: enemyRaw.sleep,
+      canKO: enemyRaw.canKO,
+      ko: enemyRaw.ko,
+      canDrain: enemyRaw.canDrain,
+      canSteal: enemyRaw.canSteal,
+      strDown: enemyRaw.strDown,
+      defDown: enemyRaw.defDown,
+      spdDown: enemyRaw.spdDown,
+      canEscape: enemyRaw.canEscape,
+      dvxp: enemyRaw.dvxp,
+      exp: enemyRaw.exp,
+      bits: enemyRaw.bits,
+      location: enemyRaw.location,
+      regularAttack: enemyRaw.regularAttack,
+      technique: enemyRaw.technique,
+      boss: enemyRaw.boss ?? false,
+      drops: enemyRaw.drops,
+    };
+  }
+}
