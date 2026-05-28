@@ -68,7 +68,7 @@ onUnmounted(() => {
           />
 
           <header
-            class="relative z-10 flex items-center justify-between gap-4 p-3 bg-linear-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 shrink-0"
+            class="relative z-30 flex items-center justify-between gap-4 overflow-visible p-3 bg-linear-to-r from-[#002244] to-[#001122] border-b border-[#0055ff]/50 shrink-0"
           >
             <div class="flex min-w-0 flex-1 items-center">
               <slot name="header" />
@@ -84,7 +84,7 @@ onUnmounted(() => {
             </button>
           </header>
 
-          <div class="relative z-10 flex min-h-0 flex-1 flex-col">
+          <div class="relative z-0 flex min-h-0 flex-1 flex-col">
             <slot />
           </div>
 

@@ -102,7 +102,7 @@ function formatTooltipText(text: string) {
   <Modal
     :is-open="isModalOpen"
     max-width="max-w-5xl"
-    max-height="max-h-[80vh]"
+    max-height="h-[90vh] max-h-[90vh]"
     @close="closeModal"
   >
     <template #header>
@@ -113,7 +113,7 @@ function formatTooltipText(text: string) {
       </h2>
     </template>
 
-    <div class="flex flex-col lg:flex-row p-4 gap-6 min-h-125 overflow-hidden">
+    <div class="flex min-h-0 flex-1 flex-col gap-6 overflow-hidden p-4 lg:flex-row">
       <div class="flex-1 flex flex-col gap-4 overflow-y-auto custom-scroll pr-2">
         <div class="bg-[#000a1a] p-3 rounded border border-blue-900/50 shadow-inner">
           <p class="text-gray-300 text-sm leading-relaxed font-medium">
@@ -197,7 +197,7 @@ function formatTooltipText(text: string) {
         </div>
       </div>
 
-      <div class="w-full lg:w-112.5 shrink-0 flex flex-col gap-4 lg:border-l lg:border-[#0055ff]/30 lg:pl-6 overflow-y-auto custom-scroll">
+      <div class="flex w-full min-h-0 shrink-0 flex-col gap-4 overflow-hidden lg:w-112.5 lg:border-l lg:border-[#0055ff]/30 lg:pl-6">
         <div v-if="!selectedStep" class="flex-1 flex flex-col items-center justify-center border border-cyan-900/40 bg-[#000a1a] rounded min-h-100">
           <span class="text-cyan-500/50 font-cyber text-sm tracking-widest text-center px-8 animate-pulse" v-html="$t('journal.clickStep').replace('\n', '<br/>')"></span>
         </div>
@@ -212,7 +212,7 @@ function formatTooltipText(text: string) {
         <template v-else>
           <div
             v-if="selectedStep.location"
-            class="relative w-full aspect-4/3 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group shrink-0"
+            class="relative w-full min-h-0 flex-1 aspect-4/3 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group"
           >
             <img :src="asukaMapUrl" class="w-full h-full object-cover opacity-60 mix-blend-screen saturate-50 group-hover:saturate-100 transition-all duration-500" />
             <div class="absolute inset-0 bg-blue-900/10 z-0 pointer-events-none"></div>
@@ -234,7 +234,7 @@ function formatTooltipText(text: string) {
 
           <div
             v-if="currentLocation"
-            class="relative w-full aspect-4/3 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group flex flex-col shrink-0"
+            class="relative flex w-full min-h-0 flex-1 flex-col aspect-4/3 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group"
           >
             <div class="relative flex-1 w-full bg-black/50 overflow-hidden">
               <img
