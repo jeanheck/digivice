@@ -11,20 +11,6 @@ const props = defineProps<{
   isSignature: boolean;
 }>();
 
-function elementColor(element: string): string {
-  const map: Record<string, string> = {
-    "Fire": "text-orange-400",
-    "Water": "text-blue-400",
-    "Ice": "text-cyan-300",
-    "Wind": "text-gray-300",
-    "Thunder": "text-yellow-300",
-    "Dark": "text-purple-400",
-    "Machine": "text-gray-400",
-    "None": "text-white/60",
-  };
-  return map[element] ?? "text-white/60";
-}
-
 const techniqueViewModel = computed(() => {
   return TechniquePresenter.getTechniqueById(props.techniqueId, props.learnLevel, props.loadedLevel, props.digievolutionLevel, props.isSignature);
 });
@@ -60,7 +46,7 @@ const techniqueViewModel = computed(() => {
       <p class="text-white/50 text-[11px] leading-snug">{{ $t(`technique.${techniqueViewModel.id}.description`) }}</p>
 
       <div class="flex gap-3 mt-1 text-[10px]">
-        <span :class="elementColor(techniqueViewModel.element)">
+        <span>
           {{ $t('digievolution.element') }}: {{ $t(`element.${techniqueViewModel.element}`) }}
         </span>|
         <span class="text-blue-300/70">{{ $t(`digievolution.mpCost`) }}: {{ techniqueViewModel.mp }}</span>

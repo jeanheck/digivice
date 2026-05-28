@@ -12,9 +12,9 @@ const props = defineProps<{
   <div class="flex flex-col gap-0.5 w-full">
     <template v-for="slot in props.slots" :key="slot.index">
       <DigimonDigievolution
-        v-if="slot.digievolutionId"
+        v-if="slot.digievolutionId && slot.digievolution"
         :digievolution-id="slot.digievolutionId!"
-        :digievolution-level="slot.digievolution?.level!"
+        :digievolution-level="slot.digievolution.level!"
         :active-digievolution-id="activeDigievolutionId"
       />
       <div

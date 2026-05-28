@@ -15,10 +15,6 @@ const emit = defineEmits<{
   (e: "close"): void;
 }>();
 
-const isModalOpen = computed(() => {
-  return props.isOpen;
-});
-
 const handleClose = () => {
   emit("close");
 };
@@ -34,7 +30,7 @@ const signatureTechniqueId = computed(() => {
 
 <template>
   <Modal
-    :is-open="isModalOpen"
+    :is-open="isOpen"
     max-width="max-w-md"
     max-height="max-h-[70vh]"
     @close="handleClose"

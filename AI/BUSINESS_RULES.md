@@ -68,8 +68,15 @@ if (slot.digimonId === null || slot.digimon === null) {
 ### 2.2. Digimon e Evoluções (Digievolutions)
 *   **Evoluções Ativas:** Cada `Digimon` gerencia sua própria lista de evoluções através de `DigievolutionSlot`.
 *   **Comportamento de Preenchimento:**
-    *   Diferente da *Party*, uma vez que um slot de evolução é preenchido com dados, **ele nunca mais poderá ser esvaziado** (voltar a ser `null`).
-    *   A evolução de um slot pode ser substituída/trocada por outra evolução, mas o slot nunca é resetado para vazio.
+    *   Um slot de digievolução pode estar **vazio** (sem evolução ativa naquele índice) ou **preenchido** (`digievolutionId` e `digievolution` não nulos no frontend).
+    *   Transições válidas: **vazio → preenchido** (primeira evolução naquele slot) e **preenchido (X) → preenchido (Y)** (troca de evolução no mesmo índice).
+    *   **Proibido na gameplay:** **preenchido → vazio** — um slot que já recebeu uma digievolução **nunca** volta a ser esvaziado (`null`).
+    *   Na UI, linha “empty” representa slots que **ainda nunca foram preenchidos** (ex.: `digievolutionId` inválido/vazio na leitura, tipicamente `0`), não um slot que “perdeu” uma evolução.
+*   **Técnicas de digievolução (catálogo estático):**
+    *   A lista de técnicas por `digievolutionId` vem de JSON estático (`digievolution-technique.json`).
+    *   **Técnica assinatura (*signature*):** a técnica com maior `learnLevel` na lista daquela digievolução (última aprendida na curva do JSON).
+    *   Nomes e descrições de **técnicas** usam i18n (`technique.{id}.name`, etc.) — são rótulos de habilidade, não nomes próprios.
+    *   Nomes de **digievoluções** (e Digimons) continuam literais, sem i18n — ver regra de nomes próprios abaixo.
 *   **Level Máximo do Digimon:** O nível máximo que um Digimon pode atingir é estritamente **99**.
     *   Como os dados lidos do emulador respeitam rigorosamente a estrutura de memória do jogo original, é uma invariante de domínio que o valor de nível estará sempre dentro do intervalo de `1` a `99`.
     *   Validações defensivas de higienização de nível (como operações `Math.min` ou `Math.max` para travar o nível entre 1 e 99 no frontend) são desnecessárias e redundantes para os cálculos de experiência.
