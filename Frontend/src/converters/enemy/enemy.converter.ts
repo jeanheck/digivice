@@ -44,7 +44,7 @@ export class EnemyConverter {
       location: enemyRaw.location,
       regularAttack: enemyRaw.regularAttack,
       technique: enemyRaw.technique,
-      boss: enemyRaw.boss ?? false,
+      boss: enemyRaw.boss,
       drops: enemyRaw.drops,
     };
   }

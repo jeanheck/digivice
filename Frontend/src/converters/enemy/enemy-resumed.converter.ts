@@ -6,7 +6,7 @@ export class EnemyResumedConverter {
     return {
       id: enemyResumedRaw.id,
       name: enemyResumedRaw.name,
-      boss: enemyResumedRaw.boss ?? false,
+      boss: enemyResumedRaw.boss,
     };
   }
 }

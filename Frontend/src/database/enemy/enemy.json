@@ -156,7 +156,8 @@
             "PT-BR": "Atomic Ray (Mágico-Máquina, Chance de KO)",
             "EN-US": "Atomic Ray (Magic-Machine, Chance of KO)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "15": {
         "name": "WaruMonzaemon",
@@ -197,7 +198,16 @@
         "exp": 320,
         "bits": 740,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "20": {
         "name": "Zanbamon",
@@ -305,7 +315,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "72": {
         "name": "Tapirmon",
@@ -357,7 +368,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "73": {
         "name": "Crabmon",
@@ -408,7 +420,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "74": {
         "name": "Gizamon",
@@ -460,7 +473,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "75": {
         "name": "DemiDevimon",
@@ -513,7 +527,8 @@
         },
         "drops": {
             "id": "DarkPower1"
-        }
+        },
+        "boss": false
     },
     "76": {
         "name": "Betamon",
@@ -570,7 +585,8 @@
         },
         "drops": {
             "id": "PowerCharge"
-        }
+        },
+        "boss": false
     },
     "77": {
         "name": "Vegiemon",
@@ -623,7 +639,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "78": {
         "name": "Kuwagamon",
@@ -675,7 +692,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "79": {
         "name": "Yanmamon",
@@ -726,7 +744,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "80": {
         "name": "Kiwimon",
@@ -777,7 +796,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "81": {
         "name": "Dokugumon",
@@ -830,7 +850,8 @@
         },
         "drops": {
             "id": "SpiderWeb"
-        }
+        },
+        "boss": false
     },
     "82": {
         "name": "Goburimon",
@@ -883,7 +904,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "83": {
         "name": "Baronmon",
@@ -934,7 +956,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "84": {
         "name": "Minotarumon",
@@ -985,7 +1008,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "85": {
         "name": "Flymon",
@@ -1037,7 +1061,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "86": {
         "name": "Woodmon",
@@ -1089,7 +1114,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "87": {
         "name": "Tyrannomon",
@@ -1142,7 +1168,8 @@
         },
         "drops": {
             "id": "FirePower1"
-        }
+        },
+        "boss": false
     },
     "88": {
         "name": "Triceramon",
@@ -1196,7 +1223,8 @@
         },
         "drops": {
             "id": "TNTBall"
-        }
+        },
+        "boss": false
     },
     "89": {
         "name": "Airdramon",
@@ -1249,7 +1277,8 @@
         },
         "drops": {
             "id": "FireChip"
-        }
+        },
+        "boss": false
     },
     "90": {
         "name": "Gekomon",
@@ -1305,7 +1334,8 @@
         },
         "drops": {
             "id": "IcePower1"
-        }
+        },
+        "boss": false
     },
     "91": {
         "name": "Coelamon",
@@ -1363,7 +1393,8 @@
         },
         "drops": {
             "id": "WaterChip"
-        }
+        },
+        "boss": false
     },
     "92": {
         "name": "Bakemon",
@@ -1414,7 +1445,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "93": {
         "name": "Phantomon",
@@ -1467,7 +1499,8 @@
         },
         "drops": {
             "id": "GhostFang"
-        }
+        },
+        "boss": false
     },
     "94": {
         "name": "Kokatorimon",
@@ -1519,7 +1552,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "95": {
         "name": "Apemon",
@@ -1573,7 +1607,8 @@
         },
         "drops": {
             "id": "WindPower1"
-        }
+        },
+        "boss": false
     },
     "96": {
         "name": "Shellmon",
@@ -1628,7 +1663,8 @@
         },
         "drops": {
             "id": "WaterChip"
-        }
+        },
+        "boss": false
     },
     "97": {
         "name": "Tortomon",
@@ -1682,7 +1718,8 @@
             "PT-BR": "Divine Rain (Mágico-Água)",
             "EN-US": "Divine Rain (Magic-Water)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "98": {
         "name": "Dolphmon",
@@ -1733,7 +1770,8 @@
             "PT-BR": "Divine Rain (Mágico-Água)",
             "EN-US": "Divine Rain (Magic-Water)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "99": {
         "name": "Gesomon",
@@ -1786,7 +1824,8 @@
         },
         "drops": {
             "id": "RunnerSandal"
-        }
+        },
+        "boss": false
     },
     "100": {
         "name": "Octomon",
@@ -1837,7 +1876,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "101": {
         "name": "Divermon",
@@ -1888,7 +1928,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "102": {
         "name": "ShogunGekomon",
@@ -1941,7 +1982,8 @@
         },
         "drops": {
             "id": "ChaosWave"
-        }
+        },
+        "boss": false
     },
     "103": {
         "name": "Seadramon",
@@ -1995,7 +2037,8 @@
         },
         "drops": {
             "id": "WaterPower1"
-        }
+        },
+        "boss": false
     },
     "104": {
         "name": "Mammothmon",
@@ -2048,7 +2091,8 @@
         },
         "drops": {
             "id": "HPProxy"
-        }
+        },
+        "boss": false
     },
     "105": {
         "name": "Etemon",
@@ -2101,7 +2145,8 @@
         },
         "drops": {
             "id": "SuperCharge"
-        }
+        },
+        "boss": false
     },
     "106": {
         "name": "Ogremon",
@@ -2154,7 +2199,8 @@
         },
         "drops": {
             "id": "PowerChip"
-        }
+        },
+        "boss": false
     },
     "107": {
         "name": "Tuskmon",
@@ -2207,7 +2253,8 @@
         },
         "drops": {
             "id": "CounterCrest"
-        }
+        },
+        "boss": false
     },
     "108": {
         "name": "Rockmon",
@@ -2258,7 +2305,8 @@
             "PT-BR": "Double Guard (Raises Defense)",
             "EN-US": "Double Guard (Raises Defense)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "109": {
         "name": "Quetzalmon",
@@ -2309,7 +2357,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "110": {
         "name": "Vademon",
@@ -2362,7 +2411,8 @@
         },
         "drops": {
             "id": "BoltPower1"
-        }
+        },
+        "boss": false
     },
     "111": {
         "name": "Maildramon",
@@ -2415,7 +2465,8 @@
         },
         "drops": {
             "id": "ThunderChip"
-        }
+        },
+        "boss": false
     },
     "112": {
         "name": "Mamemon",
@@ -2468,7 +2519,8 @@
         },
         "drops": {
             "id": "SearchCrest"
-        }
+        },
+        "boss": false
     },
     "113": {
         "name": "Guardromon (blue)",
@@ -2509,7 +2561,16 @@
         "exp": 147,
         "bits": 290,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "114": {
         "name": "Thundermon",
@@ -2562,7 +2623,8 @@
         },
         "drops": {
             "id": "PulseGuard"
-        }
+        },
+        "boss": false
     },
     "115": {
         "name": "Hagurumon",
@@ -2615,7 +2677,8 @@
         },
         "drops": {
             "id": "MetalPower1"
-        }
+        },
+        "boss": false
     },
     "116": {
         "name": "Clockmon",
@@ -2668,7 +2731,8 @@
         },
         "drops": {
             "id": "MultiCrest"
-        }
+        },
+        "boss": false
     },
     "117": {
         "name": "Andromon",
@@ -2721,7 +2785,8 @@
         },
         "drops": {
             "id": "Machinegun"
-        }
+        },
+        "boss": false
     },
     "118": {
         "name": "Numemon",
@@ -2774,7 +2839,8 @@
         },
         "drops": {
             "id": "BinderCrest"
-        }
+        },
+        "boss": false
     },
     "119": {
         "name": "Sukamon",
@@ -2827,7 +2893,8 @@
         },
         "drops": {
             "id": "WisdomChip"
-        }
+        },
+        "boss": false
     },
     "120": {
         "name": "Garbagemon",
@@ -2880,7 +2947,8 @@
         },
         "drops": {
             "id": "Goggles"
-        }
+        },
+        "boss": false
     },
     "121": {
         "name": "Roachmon",
@@ -2931,7 +2999,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "122": {
         "name": "Raremon",
@@ -2984,7 +3053,8 @@
         },
         "drops": {
             "id": "ArmorChip"
-        }
+        },
+        "boss": false
     },
     "123": {
         "name": "Cyclonemon",
@@ -3037,7 +3107,8 @@
         },
         "drops": {
             "id": "WisdomChip"
-        }
+        },
+        "boss": false
     },
     "124": {
         "name": "Megadramon",
@@ -3088,7 +3159,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "125": {
         "name": "Monzaemon",
@@ -3139,7 +3211,8 @@
             "PT-BR": "Lovely Charm (Decreases Enemy Strength)",
             "EN-US": "Lovely Charm (Decreases Enemy Strength)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "126": {
         "name": "Tankmon",
@@ -3190,7 +3263,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "127": {
         "name": "Nanimon",
@@ -3241,7 +3315,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "128": {
         "name": "Musyamon",
@@ -3296,7 +3371,8 @@
         },
         "drops": {
             "id": "MPChip"
-        }
+        },
+        "boss": false
     },
     "129": {
         "name": "Kurisarimon",
@@ -3349,7 +3425,8 @@
         },
         "drops": {
             "id": "DrillHorn"
-        }
+        },
+        "boss": false
     },
     "130": {
         "name": "Snimon",
@@ -3402,7 +3479,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "131": {
         "name": "Blossomon",
@@ -3453,7 +3531,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "132": {
         "name": "Cherrymon",
@@ -3506,7 +3585,8 @@
         },
         "drops": {
             "id": "RecoverCrest"
-        }
+        },
+        "boss": false
     },
     "133": {
         "name": "Gargoylemon",
@@ -3559,7 +3639,8 @@
         },
         "drops": {
             "id": "DarkPower2"
-        }
+        },
+        "boss": false
     },
     "134": {
         "name": "Mummymon",
@@ -3612,7 +3693,8 @@
         },
         "drops": {
             "id": "MindChip"
-        }
+        },
+        "boss": false
     },
     "135": {
         "name": "Arukenimon",
@@ -3665,7 +3747,8 @@
         },
         "drops": {
             "id": "CharmGas"
-        }
+        },
+        "boss": false
     },
     "136": {
         "name": "Okuwamon",
@@ -3716,7 +3799,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "137": {
         "name": "MetalTyrannomon",
@@ -3769,7 +3853,8 @@
         },
         "drops": {
             "id": "MetalChip"
-        }
+        },
+        "boss": false
     },
     "138": {
         "name": "Deltamon",
@@ -3822,7 +3907,8 @@
         },
         "drops": {
             "id": "WindPower2"
-        }
+        },
+        "boss": false
     },
     "139": {
         "name": "Whamon",
@@ -3875,7 +3961,8 @@
         },
         "drops": {
             "id": "CrimsonCable"
-        }
+        },
+        "boss": false
     },
     "140": {
         "name": "MarineDevimon",
@@ -3926,7 +4013,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "141": {
         "name": "Dragomon",
@@ -3977,7 +4065,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "142": {
         "name": "MegaSeadramon",
@@ -4030,7 +4119,8 @@
         },
         "drops": {
             "id": "ThunderChip"
-        }
+        },
+        "boss": false
     },
     "143": {
         "name": "Ebidramon",
@@ -4083,7 +4173,8 @@
         },
         "drops": {
             "id": "WaterPower2"
-        }
+        },
+        "boss": false
     },
     "144": {
         "name": "Vilemon",
@@ -4136,7 +4227,8 @@
         },
         "drops": {
             "id": "DevilChip"
-        }
+        },
+        "boss": false
     },
     "145": {
         "name": "SkullSatamon",
@@ -4189,7 +4281,8 @@
         },
         "drops": {
             "id": "HackSticker"
-        }
+        },
+        "boss": false
     },
     "146": {
         "name": "Brachiomon",
@@ -4242,7 +4335,8 @@
         },
         "drops": {
             "id": "UltraCharge"
-        }
+        },
+        "boss": false
     },
     "147": {
         "name": "Drimogemon",
@@ -4295,7 +4389,8 @@
         },
         "drops": {
             "id": "DrillHorn"
-        }
+        },
+        "boss": false
     },
     "148": {
         "name": "Flarerizamon",
@@ -4348,7 +4443,8 @@
         },
         "drops": {
             "id": "FirePower2"
-        }
+        },
+        "boss": false
     },
     "149": {
         "name": "Meramon",
@@ -4399,7 +4495,8 @@
             "PT-BR": "Flame Lance (Mágico-Fogo)",
             "EN-US": "Flame Lance (Magic-Fire)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "150": {
         "name": "Mojyamon",
@@ -4450,7 +4547,8 @@
             "PT-BR": "Ice Blow (Mágico-Gelo)",
             "EN-US": "Ice Blow (Magic-Ice)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "151": {
         "name": "Frigimon",
@@ -4503,7 +4601,8 @@
         },
         "drops": {
             "id": "IceChip"
-        }
+        },
+        "boss": false
     },
     "152": {
         "name": "Icemon",
@@ -4556,7 +4655,8 @@
         },
         "drops": {
             "id": "IcePower2"
-        }
+        },
+        "boss": false
     },
     "153": {
         "name": "Giromon",
@@ -4607,7 +4707,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "154": {
         "name": "Vikemon",
@@ -4658,7 +4759,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "155": {
         "name": "Lynxmon",
@@ -4711,7 +4813,8 @@
         },
         "drops": {
             "id": "FirePowerS"
-        }
+        },
+        "boss": false
     },
     "156": {
         "name": "SkullMeramon",
@@ -4762,7 +4865,8 @@
             "PT-BR": "Flame Breath (Mágico-Fogo)",
             "EN-US": "Flame Breath (Magic-Fire)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "157": {
         "name": "Devidramon",
@@ -4813,7 +4917,8 @@
             "PT-BR": "Dark Elemental (Mágico-Trevas)",
             "EN-US": "Dark Elemental (Magic-Dark)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "158": {
         "name": "Chimeramon",
@@ -4856,7 +4961,16 @@
         "location": [],
         "drops": {
             "id": "DevilChip"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "159": {
         "name": "Pukumon",
@@ -4909,7 +5023,8 @@
         },
         "drops": {
             "id": "CrimsonCable"
-        }
+        },
+        "boss": false
     },
     "160": {
         "name": "MetalSeadramon",
@@ -4962,7 +5077,8 @@
         },
         "drops": {
             "id": "CrimsonCable"
-        }
+        },
+        "boss": false
     },
     "161": {
         "name": "Tylomon",
@@ -5015,7 +5131,8 @@
         },
         "drops": {
             "id": "CrimsonCable"
-        }
+        },
+        "boss": false
     },
     "162": {
         "name": "Scorpiomon",
@@ -5068,7 +5185,8 @@
         },
         "drops": {
             "id": "CrimsonCable"
-        }
+        },
+        "boss": false
     },
     "163": {
         "name": "Antylamon",
@@ -5122,7 +5240,8 @@
         },
         "drops": {
             "id": "WindChip"
-        }
+        },
+        "boss": false
     },
     "164": {
         "name": "H-Kabuterimon",
@@ -5174,7 +5293,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "165": {
         "name": "Puppetmon",
@@ -5225,7 +5345,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "166": {
         "name": "SkullMammothmon",
@@ -5276,7 +5397,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "167": {
         "name": "Valkyriemon",
@@ -5319,7 +5441,16 @@
         "location": [],
         "drops": {
             "id": "DanceWing"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "168": {
         "name": "LadyDevimon",
@@ -5372,7 +5503,8 @@
         },
         "drops": {
             "id": "CharmGas"
-        }
+        },
+        "boss": false
     },
     "169": {
         "name": "MetalEtemon",
@@ -5425,7 +5557,8 @@
         },
         "drops": {
             "id": "MaxCharge"
-        }
+        },
+        "boss": false
     },
     "170": {
         "name": "KingEtemon",
@@ -5478,7 +5611,8 @@
         },
         "drops": {
             "id": "CharismaChip"
-        }
+        },
+        "boss": false
     },
     "171": {
         "name": "Gryphonmon",
@@ -5531,7 +5665,8 @@
         },
         "drops": {
             "id": "WindPowerS"
-        }
+        },
+        "boss": false
     },
     "172": {
         "name": "Infermon",
@@ -5582,7 +5717,8 @@
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "173": {
         "name": "Shadramon",
@@ -5633,7 +5769,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "174": {
         "name": "Boltmon",
@@ -5686,7 +5823,8 @@
         },
         "drops": {
             "id": "PowerBrace"
-        }
+        },
+        "boss": false
     },
     "175": {
         "name": "Piedmon",
@@ -5737,7 +5875,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "176": {
         "name": "Machinedramon",
@@ -5790,7 +5929,8 @@
         },
         "drops": {
             "id": "MetalPowerS"
-        }
+        },
+        "boss": false
     },
     "177": {
         "name": "VenomMyotismon",
@@ -5841,7 +5981,8 @@
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "178": {
         "name": "Apokarimon",
@@ -5892,7 +6033,8 @@
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "179": {
         "name": "Ghoulmon",
@@ -5945,7 +6087,8 @@
         },
         "drops": {
             "id": "DarkPowerS"
-        }
+        },
+        "boss": false
     },
     "180": {
         "name": "Creepymon",
@@ -5996,7 +6139,8 @@
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "181": {
         "name": "Armageddemon",
@@ -6047,7 +6191,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "182": {
         "name": "RedVegiemon",
@@ -6092,7 +6237,16 @@
             "EtherJungle",
             "KickingForestAfter"
         ],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "183": {
         "name": "Kuwagamon (green)",
@@ -6135,7 +6289,16 @@
         "location": [],
         "drops": {
             "id": "ChainSaw"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "184": {
         "name": "Yanmamon (green)",
@@ -6181,7 +6344,16 @@
             "TranquilSwamp",
             "JungleGrave"
         ],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "185": {
         "name": "Dokugumon (brown)",
@@ -6224,7 +6396,16 @@
         "location": [],
         "drops": {
             "id": "SpiderWeb"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "186": {
         "name": "Goburimon (red)",
@@ -6267,7 +6448,16 @@
         "location": [],
         "drops": {
             "id": "Naginata"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "187": {
         "name": "Minotarumon (blue)",
@@ -6310,7 +6500,16 @@
         "location": [],
         "drops": {
             "id": "MetalPower2"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "188": {
         "name": "Flymon (pink)",
@@ -6353,7 +6552,16 @@
         "location": [],
         "drops": {
             "id": "Glasses"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "189": {
         "name": "Woodmon (green)",
@@ -6397,7 +6605,16 @@
             "PhoenixBay",
             "EtherJungle"
         ],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "190": {
         "name": "Triceramon (red)",
@@ -6438,7 +6655,16 @@
         "exp": 205,
         "bits": 400,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "191": {
         "name": "Airdramon (gold)",
@@ -6481,7 +6707,16 @@
         "location": [],
         "drops": {
             "id": "MagicianRod"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "192": {
         "name": "Phantomon (blue)",
@@ -6524,7 +6759,16 @@
         "location": [],
         "drops": {
             "id": "HPChip"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "193": {
         "name": "Kokatorimon (brown)",
@@ -6567,7 +6811,16 @@
         "location": [],
         "drops": {
             "id": "OverClocked"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "194": {
         "name": "Tortomon (blue)",
@@ -6608,7 +6861,16 @@
         "exp": 180,
         "bits": 360,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "195": {
         "name": "ShogunGekomon (blue)",
@@ -6651,7 +6913,16 @@
         "location": [],
         "drops": {
             "id": "ChaosWave"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "196": {
         "name": "Seadramon (brown)",
@@ -6692,7 +6963,16 @@
         "exp": 175,
         "bits": 350,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "197": {
         "name": "Mammothmon (silver)",
@@ -6733,7 +7013,16 @@
         "exp": 236,
         "bits": 460,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "198": {
         "name": "Fugamon",
@@ -6784,7 +7073,8 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "199": {
         "name": "Vademon (red)",
@@ -6827,7 +7117,16 @@
         "location": [],
         "drops": {
             "id": "CursedPuppet"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "200": {
         "name": "Maildramon (black)",
@@ -6870,7 +7169,16 @@
         "location": [],
         "drops": {
             "id": "BoltPowerS"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "201": {
         "name": "Guardromon (white)",
@@ -6911,7 +7219,16 @@
         "exp": 231,
         "bits": 460,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "202": {
         "name": "Numemon (blue)",
@@ -6956,7 +7273,16 @@
         ],
         "drops": {
             "id": "DanceFeather"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "203": {
         "name": "Numemon (brown)",
@@ -6999,7 +7325,16 @@
         "location": [],
         "drops": {
             "id": "TrainingBook"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "204": {
         "name": "Numemon (aqua)",
@@ -7040,7 +7375,16 @@
         "exp": 344,
         "bits": 880,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "205": {
         "name": "Numemon (red)",
@@ -7083,7 +7427,16 @@
         "location": [],
         "drops": {
             "id": "OverLoad"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "206": {
         "name": "Numemon (white)",
@@ -7126,7 +7479,16 @@
         "location": [],
         "drops": {
             "id": "BoostChip"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "207": {
         "name": "Raremon (pink)",
@@ -7169,7 +7531,16 @@
         "location": [],
         "drops": {
             "id": "BoltPower2"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "208": {
         "name": "Cyclonemon (pink)",
@@ -7210,7 +7581,16 @@
         "exp": 215,
         "bits": 430,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "209": {
         "name": "Tankmon (blue)",
@@ -7253,7 +7633,16 @@
         "location": [],
         "drops": {
             "id": "RunnerShoes"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "210": {
         "name": "Musyamon (green)",
@@ -7296,7 +7685,16 @@
         "location": [],
         "drops": {
             "id": "MPProxy"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "211": {
         "name": "Kurisarimon (pink)",
@@ -7337,7 +7735,16 @@
         "exp": 250,
         "bits": 800,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "212": {
         "name": "Snimon (brown)",
@@ -7380,7 +7787,16 @@
         "location": [],
         "drops": {
             "id": "TrainChip3"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "213": {
         "name": "Blossomon (pink)",
@@ -7421,7 +7837,16 @@
         "exp": 179,
         "bits": 360,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "214": {
         "name": "Cherrymon (red)",
@@ -7464,7 +7889,16 @@
         "location": [],
         "drops": {
             "id": "TrainChip1"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "215": {
         "name": "Whamon (blue)",
@@ -7507,7 +7941,16 @@
         "location": [],
         "drops": {
             "id": "HPMegaProxy"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "216": {
         "name": "MegaSeadramon (gold)",
@@ -7550,7 +7993,16 @@
         "location": [],
         "drops": {
             "id": "WaterPowerS"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "217": {
         "name": "Ebidramon (pink)",
@@ -7593,7 +8045,16 @@
         "location": [],
         "drops": {
             "id": "TrainChip2"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "218": {
         "name": "Vilemon (purple)",
@@ -7636,7 +8097,16 @@
         "location": [],
         "drops": {
             "id": "HackSystem"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "219": {
         "name": "Drimogemon (brown)",
@@ -7677,7 +8147,16 @@
         "exp": 220,
         "bits": 500,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "220": {
         "name": "BlueMeramon",
@@ -7730,7 +8209,8 @@
         },
         "drops": {
             "id": "MPMegaProxy"
-        }
+        },
+        "boss": false
     },
     "221": {
         "name": "Vikemon (blue)",
@@ -7771,7 +8251,16 @@
         "exp": 236,
         "bits": 460,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "222": {
         "name": "MetalSeadramon (black)",
@@ -7812,7 +8301,16 @@
         "exp": 271,
         "bits": 550,
         "location": [],
-        "drops": null
+        "drops": null,
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "223": {
         "name": "Scorpiomon (black)",
@@ -7855,7 +8353,16 @@
         "location": [],
         "drops": {
             "id": "TrainChipV"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "224": {
         "name": "Antylamon (white)",
@@ -7898,7 +8405,16 @@
         "location": [],
         "drops": {
             "id": "IcePowerS"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "247": {
         "name": "Knightmon",
@@ -7949,7 +8465,8 @@
             "PT-BR": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
             "EN-US": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)"
         },
-        "drops": null
+        "drops": null,
+        "boss": false
     },
     "515": {
         "name": "Cardmon (T1)",
@@ -7992,7 +8509,16 @@
         "location": [],
         "drops": {
             "id": "VariousBooster"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "516": {
         "name": "Cardmon (A1)",
@@ -8035,7 +8561,16 @@
         "location": [],
         "drops": {
             "id": "VariousBooster"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "517": {
         "name": "Cardmon (T2)",
@@ -8078,7 +8613,16 @@
         "location": [],
         "drops": {
             "id": "VariousBooster"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "518": {
         "name": "Cardmon (A2)",
@@ -8121,7 +8665,16 @@
         "location": [],
         "drops": {
             "id": "VariousBooster"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "519": {
         "name": "Cardmon (T3)",
@@ -8164,7 +8717,16 @@
         "location": [],
         "drops": {
             "id": "VariousBooster"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "520": {
         "name": "Cardmon (A3)",
@@ -8207,7 +8769,16 @@
         "location": [],
         "drops": {
             "id": "VariousBooster"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "521": {
         "name": "Cardmon (T4)",
@@ -8250,7 +8821,16 @@
         "location": [],
         "drops": {
             "id": "VariousBooster"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     },
     "522": {
         "name": "Cardmon (A4)",
@@ -8293,6 +8873,15 @@
         "location": [],
         "drops": {
             "id": "VariousBooster"
-        }
+        },
+        "regularAttack": {
+            "PT-BR": "Sem Elemento",
+            "EN-US": "No Element"
+        },
+        "technique": {
+            "PT-BR": "Nenhum",
+            "EN-US": "None"
+        },
+        "boss": false
     }
 }

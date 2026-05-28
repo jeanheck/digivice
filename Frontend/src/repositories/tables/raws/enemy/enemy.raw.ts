@@ -46,8 +46,8 @@ export interface EnemyRaw {
     exp: number;
     bits: number;
     location: string[];
-    regularAttack?: EnemyLocalizedTextRaw;
-    technique?: EnemyLocalizedTextRaw;
-    boss?: boolean;
+    regularAttack: EnemyLocalizedTextRaw;
+    technique: EnemyLocalizedTextRaw;
+    boss: boolean;
     drops: EnemyDropRaw | null;
 }

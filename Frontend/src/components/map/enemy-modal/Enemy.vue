@@ -79,14 +79,14 @@ const { t, getLocalized } = useLocalization();
         <div class="flex-1 flex flex-col gap-1.5">
           <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{ $t("enemy.regularAttack") }}</span>
           <span class="text-gray-200 text-xs">
-            {{ enemy.regularAttack ? getLocalized(enemy.regularAttack) : "Unknown" }}
+            {{ getLocalized(enemy.regularAttack) }}
           </span>
         </div>
 
         <div class="flex-1 flex flex-col gap-1.5">
           <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{ $t("enemy.technique") }}</span>
           <span class="text-gray-200 text-xs">
-            {{ enemy.technique ? getLocalized(enemy.technique) : "None" }}
+            {{ getLocalized(enemy.technique) }}
           </span>
         </div>
       </div>

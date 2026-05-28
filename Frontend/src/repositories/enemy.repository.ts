@@ -12,7 +12,7 @@ export class EnemyRepository {
     return {
       id: enemyId,
       name: enemyRaw.name,
-      boss: enemyRaw.boss ?? false,
+      boss: enemyRaw.boss,
     };
   }
 

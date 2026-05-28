@@ -46,8 +46,8 @@ export interface EnemyViewModel {
     exp: number;
     bits: number;
     location: string[];
-    regularAttack?: EnemyLocalizedTextViewModel;
-    technique?: EnemyLocalizedTextViewModel;
+    regularAttack: EnemyLocalizedTextViewModel;
+    technique: EnemyLocalizedTextViewModel;
     boss: boolean;
     drops: EnemyDropViewModel | null;
 }
