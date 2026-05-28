@@ -1,5 +1,3 @@
-import { EnemyConverter } from "@/converters/enemy/enemy.converter";
-import { EnemyResumedConverter } from "@/converters/enemy/enemy-resumed.converter";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { LocationRepository } from "@/repositories/location.repository";
 import type { EnemyResumedViewModel } from "@/viewmodels/enemy/enemy-resumed.viewmodel";
@@ -13,13 +11,11 @@ export class MapPresenter {
 
   public static getResumedEnemiesByIds(enemyIds: string[]): EnemyResumedViewModel[] {
     return enemyIds.map((enemyId) => {
-      const enemyResumedRaw = EnemyRepository.getResumedEnemyById(enemyId);
-      return EnemyResumedConverter.convert(enemyResumedRaw);
+      return EnemyRepository.getResumedEnemyById(enemyId);
     });
   }
 
   public static getEnemyById(enemyId: string): EnemyViewModel {
-    const enemyRaw = EnemyRepository.getEnemyById(enemyId);
-    return EnemyConverter.convert(enemyRaw);
+    return EnemyRepository.getEnemyById(enemyId);
   }
 }
