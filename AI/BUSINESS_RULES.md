@@ -61,6 +61,10 @@ if (slot.digimonId === null || slot.digimon === null) {
 }
 ```
 
+*   **Identidade do Digimon vs. estado em runtime:** O `digimonId` (ID da espécie/entrada estática) pertence ao `DigimonSlot`, não ao modelo `Digimon`. O objeto `Digimon` carrega apenas estado dinâmico lido da memória (nível, EXP, vitals, equipamentos, etc.). Dados derivados de tabelas estáticas (nome, curva de EXP, digievoluções) são resolvidos no frontend usando `digimonId` + presenters/repositórios. Essa separação é intencional.
+*   **Slots vazios na gameplay:** Um slot vazio (`digimonId` e `digimon` nulos) representa uma posição do grupo sem Digimon ativo no momento — por exemplo, o jogador explorando o mapa com apenas um Digimon na party. Os três slots **sempre** existem no estado (store/syncers/backend); a UI não precisa espelhar os três cartões quando só há Digimons ativos.
+*   **Renderização na UI (`App.vue`):** O estado da party chega completo (3 slots). Na hora de desenhar, renderizar **apenas** slots ocupados (`digimonId` e `digimon` não nulos), pois isso reflete o que o jogador está vendo na gameplay no momento — não é omissão do modelo de 3 slots, é filtro de apresentação.
+
 ### 2.2. Digimon e Evoluções (Digievolutions)
 *   **Evoluções Ativas:** Cada `Digimon` gerencia sua própria lista de evoluções através de `DigievolutionSlot`.
 *   **Comportamento de Preenchimento:**
