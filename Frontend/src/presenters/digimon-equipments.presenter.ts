@@ -3,7 +3,6 @@ import type { Equipments } from "@/models";
 import type { DigimonStatusType } from "@/models/digimon-status-type";
 import type { EquipmentsAttributesOperationType } from "@/models/equipments-attributes-operation-type";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
-import { EquipmentTypeViewModel } from "@/viewmodels/digimon/equipment-type.viewmodel";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 export class DigimonEquipmentsPresenter {
@@ -18,7 +17,7 @@ export class DigimonEquipmentsPresenter {
 
         return {
             id: equipmentId,
-            type: DigimonEquipmentsPresenter.toEquipmentTypeViewModel(equipmentRaw.type),
+            type: equipmentRaw.type,
             attributes: equipmentRaw.attributes.map((equipmentAttributeRaw) => ({
                 attribute: equipmentAttributeRaw.attribute as DigimonStatusType,
                 type: equipmentAttributeRaw.type as EquipmentsAttributesOperationType,
@@ -26,15 +25,5 @@ export class DigimonEquipmentsPresenter {
             })),
             equipableDigimon: equipmentRaw.equipableDigimon,
         };
-    }
-
-    private static toEquipmentTypeViewModel(rawType: string): EquipmentTypeViewModel {
-        const equipmentTypeValues = Object.values(EquipmentTypeViewModel) as string[];
-
-        if (equipmentTypeValues.includes(rawType)) {
-            return rawType as EquipmentTypeViewModel;
-        }
-
-        return EquipmentTypeViewModel.Unknown;
     }
 }
