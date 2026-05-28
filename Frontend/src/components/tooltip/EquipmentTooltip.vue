@@ -21,15 +21,10 @@ const props = withDefaults(
     }
 );
 
-const { t, getLocalized, getLocalizedEquipmentName, getLocalizedEquipmentNote } = useLocalization();
+const { t, getLocalized } = useLocalization();
 
-const equipmentTitle = computed(() => {
-    if (!props.equipment) {
-        return "";
-    }
-
-    return getLocalizedEquipmentName(props.equipment);
-});
+const equipmentName = computed(() => props.equipment?.id ? t(`equipments.${props.equipment.id}.name`) : "");
+const equipmentNote = computed(() => props.equipment?.id ? t(`equipments.${props.equipment.id}.note`) : null);
 
 const equipmentWithOptionalFields = computed(() => {
     return props.equipment as EquipmentViewModel & {
@@ -44,7 +39,7 @@ const equipmentWithOptionalFields = computed(() => {
     :show="show && !!equipment"
     :x="x"
     :y="y"
-    :title="equipmentTitle"
+    :title="equipmentName"
     :max-width="maxWidth"
     :placement="placement"
   >
@@ -91,10 +86,10 @@ const equipmentWithOptionalFields = computed(() => {
       </div>
 
       <div
-        v-if="equipmentWithOptionalFields.note"
+        v-if="equipmentNote"
         class="mt-1 pt-1 border-t border-[#0033aa]/50 text-gray-400 text-[10px] italic leading-tight"
       >
-        "{{ getLocalizedEquipmentNote(equipmentWithOptionalFields) }}"
+        "{{ equipmentNote }}"
       </div>
     </div>
   </Tooltip>

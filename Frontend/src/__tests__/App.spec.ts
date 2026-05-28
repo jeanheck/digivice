@@ -15,12 +15,6 @@ vi.mock('../stores/use-game-store', () => ({
   })
 }))
 
-vi.mock('../composables/useLocalization', () => ({
-  useLocalization: () => ({
-    getLocalizedQuest: (q: any) => q
-  })
-}))
-
 const globalMocks = {
   global: {
     mocks: {

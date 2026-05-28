@@ -4,7 +4,6 @@ export * from './digievolution';
 export * from './digimon-slot';
 export * from './digimon-status-type';
 export * from './digimon';
-export * from './equipment-type';
 export * from './equipments-attributes-operation-type';
 export * from './equipments-attributes';
 export * from './equipments';

@@ -2,19 +2,22 @@
 import { EquipmentSlotKey } from "@/constants/equipment-slot-key";
 import { useLocalization } from "@/composables/useLocalization";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
+import { computed } from "vue";
 
 const props = defineProps<{
   slotKey: EquipmentSlotKey;
   equipment: EquipmentViewModel | null;
 }>();
 
-const { t, getLocalizedEquipmentName } = useLocalization();
+const { t } = useLocalization();
 
 const emit = defineEmits<{
   (e: "showTooltip", event: MouseEvent, equipment: EquipmentViewModel): void;
   (e: "moveTooltip", event: MouseEvent): void;
   (e: "hideTooltip"): void;
 }>();
+
+const equipmentName = computed(() => props.equipment?.id ? t(`equipments.${props.equipment.id}.name`) : t("digimon.states.empty"));
 </script>
 
 <template>
@@ -30,7 +33,7 @@ const emit = defineEmits<{
     </span>
 
     <span class="text-gray-400 shadow-text truncate font-medium text-[11px] text-right">
-      {{ equipment ? getLocalizedEquipmentName(equipment) : $t("digimon.states.empty") }}
+      {{ equipmentName }}
     </span>
   </div>
 </template>
