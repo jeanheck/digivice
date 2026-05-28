@@ -4,7 +4,8 @@
     "BodyArmor": "Body Armor",
     "WeaponTwoHanded": "Weapon (Two-handed)",
     "Shield": "Shield",
-    "Head": "Head Armor",
-    "Accessory": "Accessory"
+    "HeadArmor": "Head Armor",
+    "Accessory": "Accessory",
+    "Unknown": "Unknown"
   }
 }

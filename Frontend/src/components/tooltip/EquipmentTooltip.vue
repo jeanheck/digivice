@@ -17,20 +17,40 @@ const props = withDefaults(
     }>(),
     {
         maxWidth: 300,
-        placement: "below"
+        placement: "below",
     }
 );
 
-const { t, getLocalized } = useLocalization();
+const { t } = useLocalization();
 
-const equipmentName = computed(() => props.equipment?.id ? t(`equipments.${props.equipment.id}.name`) : "");
-const equipmentNote = computed(() => props.equipment?.id ? t(`equipments.${props.equipment.id}.note`) : null);
+const equipmentName = computed(() => {
+    if (!props.equipment?.id) {
+        return "";
+    }
 
-const equipmentWithOptionalFields = computed(() => {
-    return props.equipment as EquipmentViewModel & {
-        typeDescription?: Record<string, string>;
-        note?: Record<string, string>;
-    } | null;
+    return t(`equipments.${props.equipment.id}.name`);
+});
+
+const equipmentTypeDescription = computed(() => {
+    if (!props.equipment) {
+        return "";
+    }
+
+    return t(`equipmentType.${props.equipment.type}`);
+});
+
+const equipmentNote = computed(() => {
+    if (!props.equipment?.id) {
+        return "";
+    }
+
+    const note = t(`equipments.${props.equipment.id}.note`);
+
+    if (!note || note === `equipments.${props.equipment.id}.note`) {
+        return "";
+    }
+
+    return note;
 });
 </script>
 
@@ -43,20 +63,20 @@ const equipmentWithOptionalFields = computed(() => {
     :max-width="maxWidth"
     :placement="placement"
   >
-    <div v-if="equipmentWithOptionalFields" class="flex flex-col gap-1 w-full min-w-42.5">
+    <div v-if="equipment" class="flex flex-col gap-1 w-full min-w-42.5">
       <div
-        v-if="equipmentWithOptionalFields.typeDescription"
+        v-if="equipmentTypeDescription"
         class="text-blue-300 text-[10px] tracking-widest uppercase mb-1 text-center font-bold"
       >
-        {{ getLocalized(equipmentWithOptionalFields.typeDescription) }}
+        {{ equipmentTypeDescription }}
       </div>
 
       <div
-        v-if="equipmentWithOptionalFields.attributes && equipmentWithOptionalFields.attributes.length > 0"
+        v-if="equipment.attributes.length > 0"
         class="flex flex-col gap-0.5 mb-1"
       >
         <div
-          v-for="attribute in equipmentWithOptionalFields.attributes"
+          v-for="attribute in equipment.attributes"
           :key="attribute.attribute"
           class="flex justify-between text-xs items-center bg-[#002266]/40 px-1 rounded-sm"
         >
@@ -73,14 +93,14 @@ const equipmentWithOptionalFields = computed(() => {
       <div class="mt-1 pt-1 border-t border-[#0033aa]/50 flex flex-col gap-1">
         <span class="text-gray-400 text-[9px] uppercase tracking-widest leading-none">{{ $t("digimon.equipableBy") }}</span>
         <span class="text-gray-200 text-[11px] leading-tight">
-          <template v-if="!equipmentWithOptionalFields.equipableDigimon || equipmentWithOptionalFields.equipableDigimon.length === 0">
+          <template v-if="!equipment.equipableDigimon || equipment.equipableDigimon.length === 0">
             {{ $t("digimon.states.none") }}
           </template>
-          <template v-else-if="equipmentWithOptionalFields.equipableDigimon.length === 8">
+          <template v-else-if="equipment.equipableDigimon.length === 8">
             <span class="text-purple-300 font-bold uppercase tracking-wider text-[10px]">{{ $t("digimon.allDigimon") }}</span>
           </template>
           <template v-else>
-            {{ equipmentWithOptionalFields.equipableDigimon.join(", ") }}
+            {{ equipment.equipableDigimon.join(", ") }}
           </template>
         </span>
       </div>
