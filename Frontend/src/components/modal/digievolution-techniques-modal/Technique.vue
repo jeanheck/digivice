@@ -1,18 +1,23 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { TechniqueIcon } from "@/constants/technique-icons";
 import { TechniquePresenter } from "@/presenters/technique-presenter";
-import { computed } from "vue";
+import type { DigievolutionTechniqueRaw } from "@/repositories/tables/raws/digievolution/digievolution-technique.raw";
 
 const props = defineProps<{
-  techniqueId: string;
-  learnLevel: number;
-  loadedLevel: number;
+  technique: DigievolutionTechniqueRaw;
   digievolutionLevel: number;
   isSignature: boolean;
 }>();
 
 const techniqueViewModel = computed(() => {
-  return TechniquePresenter.getTechniqueById(props.techniqueId, props.learnLevel, props.loadedLevel, props.digievolutionLevel, props.isSignature);
+  return TechniquePresenter.getTechniqueById(
+    props.technique.id,
+    props.technique.learnLevel,
+    props.technique.loadedLevel,
+    props.digievolutionLevel,
+    props.isSignature
+  );
 });
 </script>
 
@@ -47,7 +52,7 @@ const techniqueViewModel = computed(() => {
 
       <div class="flex gap-3 mt-1 text-[10px]">
         <span>
-          {{ $t('digievolution.element') }}: {{ $t(`element.${techniqueViewModel.element}`) }}
+          {{ $t("digievolution.element") }}: {{ $t(`element.${techniqueViewModel.element}`) }}
         </span>|
         <span class="text-blue-300/70">{{ $t(`digievolution.mpCost`) }}: {{ techniqueViewModel.mp }}</span>
       </div>

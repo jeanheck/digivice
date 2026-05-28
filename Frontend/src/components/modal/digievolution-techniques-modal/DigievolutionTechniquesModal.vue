@@ -46,9 +46,7 @@ const signatureTechniqueId = computed(() => {
       <Technique
         v-for="technique in digievolutionTechniquesRaw"
         :key="technique.id"
-        :technique-id="technique.id"
-        :learn-level="technique.learnLevel"
-        :loaded-level="technique.loadedLevel"
+        :technique="technique"
         :digievolution-level="digievolutionLevel"
         :is-signature="signatureTechniqueId === technique.id"
       />
