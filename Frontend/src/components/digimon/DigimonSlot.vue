@@ -3,7 +3,7 @@ import { computed, ref } from "vue";
 import Digimon from "@/components/digimon/Digimon.vue";
 import DigimonDigievolutionsSlots from "@/components/digimon/DigimonDigievolutionsSlots.vue";
 import DigievolutionGridModal from "@/components/digimon/digievolution/DigievolutionGridModal.vue";
-import DigimonAttributesResistances from "@/components/digimon/DigimonAttributesResistances.vue";
+import DigimonStats from "@/components/digimon/DigimonStats.vue";
 import DigimonEquipments from "@/components/digimon/DigimonEquipments.vue";
 
 const props = defineProps<{
@@ -34,7 +34,7 @@ function closeDigievolutionGrid(): void {
       :slots="digimon.digievolutions"
       :active-digievolution-id="digimon.activeDigievolutionId"
     />
-    <DigimonAttributesResistances 
+    <DigimonStats
       :attributes="digimon.attributes" 
       :resistances="digimon.resistances"
       :equipments="digimon.equipments" 

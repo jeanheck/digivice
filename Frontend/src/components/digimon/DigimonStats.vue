@@ -4,7 +4,7 @@ import { useLocalization } from "@/composables/useLocalization";
 import { AttributeType, ResistanceType } from "@/models";
 import type { Attributes, Equipments, Resistances } from "@/models";
 import { DigimonStatusCalculator } from "@/logic/DigimonStatusCalculator";
-import DigimonAttributeResistance from "@/components/digimon/DigimonAttributeResistance.vue";
+import DigimonStat from "@/components/digimon/DigimonStat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import DigimonTooltip from "@/components/tooltip/DigimonTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -118,7 +118,7 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="relative z-10 details-panel flex justify-center w-full p-4 text-white text-sm">
       <div class="flex gap-20 -ml-16">
         <div class="flex flex-col gap-1 w-24">
-          <DigimonAttributeResistance 
+          <DigimonStat 
             v-for="(attributeViewModel, key) in attributesViewModel" 
             :key="key"
             :enrichedAttributeResistance="attributeViewModel"
@@ -131,7 +131,7 @@ const moveTooltip = (event: MouseEvent) => {
         </div>
 
         <div class="flex flex-col gap-1 w-24">
-          <DigimonAttributeResistance 
+          <DigimonStat 
             v-for="(resistanceViewModel, key) in resistancesViewModel" 
             :key="key"
             :enrichedAttributeResistance="resistanceViewModel"
