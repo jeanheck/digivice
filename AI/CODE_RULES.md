@@ -66,6 +66,33 @@ Referência de implementação: `Frontend/src/components/digimon/DigimonEquipmen
 
 `show`, `x`, `y` sempre vêm do composable. Conteúdo (`title`, `text`, `equipment`, etc.) vem de refs do pai. `placement` e `maxWidth` quando o caso exigir (ex.: `Footer` com `placement="above"`).
 
+### Modais (fluxo padrão do Frontend)
+
+Referência: `Frontend/src/components/modal/Modal.vue`.
+
+#### Casca e conteúdo
+
+| Camada | Arquivo | Responsabilidade |
+|--------|---------|------------------|
+| Casca visual | `components/modal/Modal.vue` | Teleport, overlay (`z-100`), ESC, clique fora, animações, hex pattern, header com `IconClose`, barra de footer, scroll `custom-scroll` via `:deep`. |
+| Conteúdo | Modais de domínio (`EnemyModal.vue`, `QuestDetailsModal.vue`, etc.) | Slots `#header` e corpo; lógica e apresentação do domínio. |
+
+#### Fluxo no modal de domínio
+
+1. Importar `Modal` com `@/components/modal/Modal.vue`.
+2. `isModalOpen`: combinar `isOpen` com o dado mínimo necessário (ex.: `enemyId !== null`, `questViewModel !== null`).
+3. `@close` → emitir `close` para o pai; **não** duplicar `Teleport`, overlay, listener de ESC nem CSS de fade/slide.
+4. Título no `#header`: `text-white`, **sem** `uppercase`.
+5. Ajustar tamanho com props `maxWidth`, `maxHeight`, `panelClass` quando o layout exigir.
+6. Corpo rolável: classe `custom-scroll` no container interno (estilos vêm do `Modal`).
+
+#### Proibido em código novo ou refatorado
+
+- Modal **inline**: `<Teleport>` + overlay + card cyber duplicando o que `Modal.vue` já faz.
+- `keydown` de Escape no filho (o `Modal` trata).
+- `IconClose` e botão de fechar custom no header do filho (usar o close do `Modal`).
+- Imports relativos longos para componentes do projeto quando `@/` resolve o caminho.
+
 ## Backend: regras relacionadas ao backend
 
 1. **Construtores Primários**: Sempre que possível, utilize construtores primários (C# 12+).
