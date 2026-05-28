@@ -2,10 +2,10 @@
 import { computed } from "vue";
 import { TechniqueIcon } from "@/constants/technique-icons";
 import { TechniquePresenter } from "@/presenters/technique-presenter";
-import type { DigievolutionTechniqueRaw } from "@/repositories/tables/raws/digievolution/digievolution-technique.raw";
+import type { DigievolutionTechniqueViewModel } from "@/viewmodels/digievolution/digievolution-technique.viewmodel";
 
 const props = defineProps<{
-  technique: DigievolutionTechniqueRaw;
+  technique: DigievolutionTechniqueViewModel;
   digievolutionLevel: number;
   isSignature: boolean;
 }>();

@@ -19,12 +19,12 @@ const handleClose = () => {
   emit("close");
 };
 
-const digievolutionTechniquesRaw = computed(() => {
+const digievolutionTechniques = computed(() => {
   return DigievolutionTechniquesModalPresenter.getTechniquesByDigievolutionId(props.digievolutionId);
 });
 
 const signatureTechniqueId = computed(() => {
-  return DigievolutionTechniquesModalPresenter.getSignatureTechnique(digievolutionTechniquesRaw.value);
+  return DigievolutionTechniquesModalPresenter.getSignatureTechnique(digievolutionTechniques.value);
 });
 </script>
 
@@ -44,14 +44,14 @@ const signatureTechniqueId = computed(() => {
 
     <div class="flex min-h-0 flex-1 flex-col gap-0.75 overflow-y-auto p-3 custom-scroll">
       <Technique
-        v-for="technique in digievolutionTechniquesRaw"
+        v-for="technique in digievolutionTechniques"
         :key="technique.id"
         :technique="technique"
         :digievolution-level="digievolutionLevel"
         :is-signature="signatureTechniqueId === technique.id"
       />
 
-      <p v-if="digievolutionTechniquesRaw.length === 0" class="py-4 text-center text-xs text-white/40">
+      <p v-if="digievolutionTechniques.length === 0" class="py-4 text-center text-xs text-white/40">
         {{ $t("digievolution.noTechData") }}
       </p>
     </div>
