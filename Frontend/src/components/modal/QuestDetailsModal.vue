@@ -2,6 +2,8 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Requisites from "@/components/modal/Requisites.vue";
+import ZoomedLocationMap from "@/components/modal/ZoomedLocationMap.vue";
+import type { ZoomedLocationMapItem } from "@/components/modal/ZoomedLocationMap.vue";
 import asukaMapUrl from "@/assets/AsukaMap.webp";
 import { useLocalization } from "@/composables/useLocalization";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
@@ -28,18 +30,35 @@ const closeModal = () => {
 };
 
 const selectedStep = ref<StepViewModel | null>(null);
-const currentLocationIndex = ref(0);
 
 const selectStep = (step: StepViewModel) => {
   selectedStep.value = step;
-  currentLocationIndex.value = 0;
 };
 
-const currentLocation = computed(() => {
-  if (!selectedStep.value?.zoomedLocations || selectedStep.value.zoomedLocations.length === 0) {
-    return null;
+const worldMapLocations = computed((): ZoomedLocationMapItem[] => {
+  if (!selectedStep.value?.location || !selectedStep.value.coordinates) {
+    return [];
   }
-  return selectedStep.value.zoomedLocations[currentLocationIndex.value];
+
+  return [{
+    imageUrl: asukaMapUrl,
+    coordinates: selectedStep.value.coordinates,
+    labelKey: `location.${selectedStep.value.location}`,
+  }];
+});
+
+const localMapLocations = computed((): ZoomedLocationMapItem[] => {
+  if (!selectedStep.value?.zoomedLocations?.length || !props.questViewModel) {
+    return [];
+  }
+
+  return selectedStep.value.zoomedLocations.map((zoomedLocation, locationIndex) => {
+    return {
+      imageUrl: QuestDetailsModalPresenter.getLocalMapUrl(zoomedLocation.location),
+      coordinates: zoomedLocation.coordinates,
+      labelKey: `${props.questViewModel!.id}.steps.${selectedStep.value!.number}.locations.${locationIndex}.locationTarget`,
+    };
+  });
 });
 
 watch(
@@ -49,34 +68,9 @@ watch(
       selectStep(questViewModel.currentStep);
     } else {
       selectedStep.value = null;
-      currentLocationIndex.value = 0;
     }
   }
 );
-
-function formatTooltipText(text: string) {
-  if (!text) {
-    return "";
-  }
-  const words = text.split(" ");
-  const lines: string[] = [];
-  let currentLine = "";
-
-  for (const word of words) {
-    if (currentLine === "") {
-      currentLine = word;
-    } else if (currentLine.length > 10) {
-      lines.push(currentLine);
-      currentLine = word;
-    } else {
-      currentLine += " " + word;
-    }
-  }
-  if (currentLine) {
-    lines.push(currentLine);
-  }
-  return lines.join("<br/>");
-}
 </script>
 
 <template>
@@ -163,82 +157,17 @@ function formatTooltipText(text: string) {
         </div>
 
         <template v-else>
-          <div
-            v-if="selectedStep.location"
-            class="relative w-full min-h-0 flex-1 aspect-4/3 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group"
-          >
-            <img :src="asukaMapUrl" class="w-full h-full object-cover opacity-60 mix-blend-screen saturate-50 group-hover:saturate-100 transition-all duration-500" />
-            <div class="absolute inset-0 bg-blue-900/10 z-0 pointer-events-none"></div>
+          <ZoomedLocationMap
+            v-if="worldMapLocations.length > 0"
+            map-variant="world"
+            :locations="worldMapLocations"
+          />
 
-            <div
-              v-if="selectedStep.coordinates"
-              class="absolute w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none"
-              :style="{ left: selectedStep.coordinates.x + '%', top: selectedStep.coordinates.y + '%' }"
-            >
-              <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,1)]"></div>
-              <div
-                class="absolute left-1/2 -translate-x-1/2 text-[10px] font-cyber text-cyan-100 drop-shadow bg-cyan-950/95 px-3 py-1 rounded border border-cyan-700/80 max-w-37.5 leading-tight text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
-                :class="selectedStep.coordinates.y < 20 ? 'top-6.5' : 'bottom-6.5'"
-                v-html="formatTooltipText(t(`location.${selectedStep.location}`))"
-              ></div>
-            </div>
-          </div>
-
-          <div
-            v-if="currentLocation"
-            class="relative flex w-full min-h-0 flex-1 flex-col aspect-4/3 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group"
-          >
-            <div class="relative flex-1 w-full bg-black/50 overflow-hidden">
-              <img
-                :src="QuestDetailsModalPresenter.getLocalMapUrl(currentLocation.location) ?? undefined"
-                class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-              />
-
-              <div
-                v-if="currentLocation.coordinates"
-                class="absolute w-6 h-6 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none transition-all duration-300"
-                :style="{ left: currentLocation.coordinates.x + '%', top: currentLocation.coordinates.y + '%' }"
-              >
-                <div class="absolute inset-0 rounded-full border border-cyan-400 animate-ping opacity-90"></div>
-                <div class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)]"></div>
-                <div
-                  class="absolute left-1/2 -translate-x-1/2 text-[9px] font-cyber text-cyan-100 drop-shadow bg-cyan-950/95 px-2 py-0.5 rounded border border-cyan-700/80 max-w-30 leading-tight text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
-                  :class="currentLocation.coordinates.y < 25 ? 'top-6.25' : 'bottom-6.25'"
-                  v-html="formatTooltipText(t(`${questViewModel!.id}.steps.${selectedStep.number}.locations.${currentLocationIndex}.locationTarget`))"
-                ></div>
-              </div>
-            </div>
-
-            <div
-              v-if="selectedStep.zoomedLocations && selectedStep.zoomedLocations.length > 1"
-              class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-20"
-            >
-              <button
-                class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)]"
-                @click.prevent="currentLocationIndex = (currentLocationIndex - 1 + selectedStep.zoomedLocations.length) % selectedStep.zoomedLocations.length"
-              >
-                &lt;
-              </button>
-
-              <div class="flex gap-2 px-3 py-1.5 bg-black/80 rounded border border-cyan-900/80 shadow-[0_0_10px_rgba(0,170,255,0.2)]">
-                <div
-                  v-for="(_, locationDotIndex) in selectedStep.zoomedLocations"
-                  :key="locationDotIndex"
-                  class="w-2 h-2 rounded-full transition-all cursor-pointer"
-                  :class="Number(locationDotIndex) === currentLocationIndex ? 'bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)] scale-110' : 'bg-cyan-900 hover:bg-cyan-600'"
-                  @click.prevent="currentLocationIndex = Number(locationDotIndex)"
-                ></div>
-              </div>
-
-              <button
-                class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)]"
-                @click.prevent="currentLocationIndex = (currentLocationIndex + 1) % selectedStep.zoomedLocations.length"
-              >
-                &gt;
-              </button>
-            </div>
-          </div>
+          <ZoomedLocationMap
+            v-if="localMapLocations.length > 0"
+            map-variant="local"
+            :locations="localMapLocations"
+          />
         </template>
       </div>
     </div>
