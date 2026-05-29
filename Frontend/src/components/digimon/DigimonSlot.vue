@@ -34,12 +34,7 @@ function closeDigievolutionGrid(): void {
       :slots="digimon.digievolutions"
       :active-digievolution-id="digimon.activeDigievolutionId"
     />
-    <DigimonStats
-      :attributes="digimon.attributes" 
-      :resistances="digimon.resistances"
-      :equipments="digimon.equipments" 
-      :active-digievolution-id="digimon.activeDigievolutionId"
-    />
+    <DigimonStats :digimon="digimon" />
     <DigimonEquipments :equipments="digimon.equipments" />
 
     <div 

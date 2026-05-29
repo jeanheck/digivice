@@ -1,24 +1,15 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useLocalization } from "@/composables/useLocalization";
-import { AttributeType, ResistanceType } from "@/models";
-import type { Attributes, Equipments, Resistances } from "@/models";
-import { DigimonStatusCalculator } from "@/logic/DigimonStatusCalculator";
+import type { Digimon } from "@/models";
 import DigimonStat from "@/components/digimon/DigimonStat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import DigimonTooltip from "@/components/tooltip/DigimonTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { DigimonStatsPresenter } from "@/presenters/digimon-stats.presenter";
-import type { StatViewModel } from "@/viewmodels/digimon/stat.viewmodel";
-import type { AttributesViewModel } from "@/viewmodels/digimon/attributes.viewmodel";
-import type { ResistancesViewModel } from "@/viewmodels/digimon/resistances.viewmodel";
-import { Stat } from "@/models/stat";
 
 const props = defineProps<{
-  attributes: Attributes;
-  resistances: Resistances;
-  equipments: Equipments;
-  activeDigievolutionId: number | null;
+  digimon: Digimon;
 }>();
 
 const { t } = useLocalization();
@@ -32,42 +23,8 @@ const activeVariant = ref<TooltipVariant>("none");
 const defaultTooltipContent = ref({ title: "", text: "" });
 const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0 });
 
-const activeDigievolution = computed(() => {
-  return props.activeDigievolutionId ? DigimonStatsPresenter.getDigievolutionById(props.activeDigievolutionId!) : null;
-});
-
-const createEnrichedAttributeResistance = (type: Stat, fromDigimon: number, fromDigievolution: number): StatViewModel => {
-  const fromEquipaments = DigimonStatusCalculator.calculateBonusFromRawEquipments(type as Stat, props.equipments);
-
-  return {
-    fromDigimon,
-    fromEquipaments,
-    fromDigievolution,
-    sumBetweenDigimonAndEquipaments: fromDigimon + fromEquipaments,
-  };
-};
-
-const attributesViewModel = computed<AttributesViewModel>(() => {
-  return {
-    strength: createEnrichedAttributeResistance(Stat.strength, props.attributes.strength, activeDigievolution.value?.attributes?.strength ?? 0),
-    defense: createEnrichedAttributeResistance(Stat.defense, props.attributes.defense, activeDigievolution.value?.attributes?.defense ?? 0),
-    spirit: createEnrichedAttributeResistance(Stat.spirit, props.attributes.spirit, activeDigievolution.value?.attributes?.spirit ?? 0),
-    wisdom: createEnrichedAttributeResistance(Stat.wisdom, props.attributes.wisdom, activeDigievolution.value?.attributes?.wisdom ?? 0),
-    speed: createEnrichedAttributeResistance(Stat.speed, props.attributes.speed, activeDigievolution.value?.attributes?.speed ?? 0),
-    charisma: createEnrichedAttributeResistance(Stat.charisma, props.attributes.charisma, activeDigievolution.value?.attributes?.charisma ?? 0),
-  };
-});
-
-const resistancesViewModel = computed<ResistancesViewModel>(() => {
-  return {
-    fire: createEnrichedAttributeResistance(Stat.fire, props.resistances.fire, activeDigievolution.value?.resistances?.fire ?? 0),
-    water: createEnrichedAttributeResistance(Stat.water, props.resistances.water, activeDigievolution.value?.resistances?.water ?? 0),
-    ice: createEnrichedAttributeResistance(Stat.ice, props.resistances.ice, activeDigievolution.value?.resistances?.ice ?? 0),
-    wind: createEnrichedAttributeResistance(Stat.wind, props.resistances.wind, activeDigievolution.value?.resistances?.wind ?? 0),
-    thunder: createEnrichedAttributeResistance(Stat.thunder, props.resistances.thunder, activeDigievolution.value?.resistances?.thunder ?? 0),
-    machine: createEnrichedAttributeResistance(Stat.machine, props.resistances.machine, activeDigievolution.value?.resistances?.machine ?? 0),
-    dark: createEnrichedAttributeResistance(Stat.dark, props.resistances.dark, activeDigievolution.value?.resistances?.dark ?? 0),
-  };
+const statsViewModel = computed(() => {
+  return DigimonStatsPresenter.getStatsViewModel(props.digimon);
 });
 
 const showIconTooltip = (event: MouseEvent, title: string, text: string) => {
@@ -119,28 +76,28 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="relative z-10 details-panel flex justify-center w-full p-4 text-white text-sm">
       <div class="flex gap-20 -ml-16">
         <div class="flex flex-col gap-1 w-24">
-          <DigimonStat 
-            v-for="(attributeViewModel, key) in attributesViewModel" 
+          <DigimonStat
+            v-for="(attributeViewModel, key) in statsViewModel.attributes"
             :key="key"
-            :enrichedAttributeResistance="attributeViewModel"
+            :enriched-attribute-resistance="attributeViewModel"
             :property-key="key"
-            @showIconTooltip="showAttributeIconTooltip"
-            @showMathTooltip="showMathTooltip"
-            @moveTooltip="moveTooltip"
-            @hideTooltip="hideTooltip"
+            @show-icon-tooltip="showAttributeIconTooltip"
+            @show-math-tooltip="showMathTooltip"
+            @move-tooltip="moveTooltip"
+            @hide-tooltip="hideTooltip"
           />
         </div>
 
         <div class="flex flex-col gap-1 w-24">
-          <DigimonStat 
-            v-for="(resistanceViewModel, key) in resistancesViewModel" 
+          <DigimonStat
+            v-for="(resistanceViewModel, key) in statsViewModel.resistances"
             :key="key"
-            :enrichedAttributeResistance="resistanceViewModel"
+            :enriched-attribute-resistance="resistanceViewModel"
             :property-key="key"
-            @showIconTooltip="showResistanceIconTooltip"
-            @showMathTooltip="showMathTooltip"
-            @moveTooltip="moveTooltip"
-            @hideTooltip="hideTooltip"
+            @show-icon-tooltip="showResistanceIconTooltip"
+            @show-math-tooltip="showMathTooltip"
+            @move-tooltip="moveTooltip"
+            @hide-tooltip="hideTooltip"
           />
         </div>
       </div>
