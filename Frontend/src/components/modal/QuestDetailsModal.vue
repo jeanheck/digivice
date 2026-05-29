@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
+import Requisites from "@/components/modal/Requisites.vue";
 import asukaMapUrl from "@/assets/AsukaMap.webp";
 import { useLocalization } from "@/composables/useLocalization";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
@@ -25,10 +26,6 @@ const isModalOpen = computed(() => {
 const closeModal = () => {
   emit("close");
 };
-
-const hasRequisites = computed(() => {
-  return props.questViewModel?.requisites && props.questViewModel.requisites.length > 0;
-});
 
 const selectedStep = ref<StepViewModel | null>(null);
 const currentLocationIndex = ref(0);
@@ -103,31 +100,12 @@ function formatTooltipText(text: string) {
           </p>
         </div>
 
-        <div v-if="hasRequisites" class="flex flex-col gap-2">
-          <h3 class="text-xs text-amber-500 font-bold uppercase tracking-wider mb-1 border-b border-amber-900/40 pb-1">
-            {{ $t("journal.prerequisites") }}
-          </h3>
-          <div
-            v-for="requisiteViewModel in questViewModel!.requisites"
-            :key="requisiteViewModel.id"
-            class="flex items-start gap-3 p-2 rounded transition-colors"
-            :class="requisiteViewModel.isDone ? 'bg-green-900/10 border border-green-800/30' : 'bg-red-900/10 border border-red-800/30'"
-          >
-            <div
-              class="mt-0.5 shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors shadow-inner"
-              :class="requisiteViewModel.isDone ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)]' : 'bg-red-500/10 border-red-500/60 text-red-400'"
-            >
-              <span v-if="requisiteViewModel.isDone" class="text-xs">✔</span>
-              <span v-else class="text-xs">✘</span>
-            </div>
-            <p
-              class="text-sm flex-1 leading-snug transition-colors"
-              :class="requisiteViewModel.isDone ? 'text-gray-400 line-through decoration-green-900' : 'text-red-300'"
-            >
-              {{ t(`${questViewModel!.id}.requisites.${requisiteViewModel.id}`) }}
-            </p>
-          </div>
-        </div>
+        <Requisites
+          :items="questViewModel!.requisites"
+          :translation-key-prefix="`${questViewModel!.id}.requisites`"
+          variant="quest"
+          title-key="journal.prerequisites"
+        />
 
         <div class="flex flex-col gap-2">
           <h3 class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 border-b border-blue-900/40 pb-1">
@@ -158,18 +136,11 @@ function formatTooltipText(text: string) {
               >
                 {{ t(`${questViewModel!.id}.steps.${stepViewModel.number}.description`) }}
               </p>
-              <div v-if="stepViewModel.requisites && stepViewModel.requisites.length > 0" class="mt-1.5 ml-1 flex flex-col gap-1">
-                <div
-                  v-for="(requisiteViewModel, prerequisiteIndex) in stepViewModel.requisites"
-                  :key="prerequisiteIndex"
-                  class="flex items-center gap-2 text-xs"
-                >
-                  <span :class="requisiteViewModel.isDone ? 'text-green-400' : 'text-gray-500'">{{ requisiteViewModel.isDone ? "✔" : "○" }}</span>
-                  <span :class="requisiteViewModel.isDone ? 'text-gray-400 line-through' : 'text-gray-400'">
-                    {{ t(`${questViewModel!.id}.steps.${stepViewModel.number}.requisites.${requisiteViewModel.id}`) }}
-                  </span>
-                </div>
-              </div>
+              <Requisites
+                :items="stepViewModel.requisites"
+                :translation-key-prefix="`${questViewModel!.id}.steps.${stepViewModel.number}.requisites`"
+                variant="step"
+              />
             </div>
           </div>
 
