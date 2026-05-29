@@ -4,11 +4,10 @@ import Modal from "@/components/modal/Modal.vue";
 import StepPanel from "./StepPanel.vue";
 import Steps from "./Steps.vue";
 import Requisites from "./Requisites.vue";
-import type { ZoomedLocationMapItem } from "./zoomed-location-map-item";
-import asukaMapUrl from "@/assets/AsukaMap.webp";
+import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
-import { QuestDetailsModalPresenter } from "@/presenters/quest-details-modal.presenter";
+import { QuestModalPresenter } from "@/presenters/quest-modal.presenter";
 
 const props = defineProps<{
   questViewModel: QuestViewModel | null;
@@ -33,30 +32,12 @@ const selectStep = (step: StepViewModel) => {
   selectedStep.value = step;
 };
 
-const worldMapLocations = computed((): ZoomedLocationMapItem[] => {
-  if (!selectedStep.value?.location || !selectedStep.value.coordinates) {
-    return [];
-  }
-
-  return [{
-    imageUrl: asukaMapUrl,
-    coordinates: selectedStep.value.coordinates,
-    labelKey: `location.${selectedStep.value.location}`,
-  }];
+const worldMapLocations = computed(() => {
+  return QuestModalPresenter.getWorldMapLocations(selectedStep.value);
 });
 
-const localMapLocations = computed((): ZoomedLocationMapItem[] => {
-  if (!selectedStep.value?.zoomedLocations?.length || !props.questViewModel) {
-    return [];
-  }
-
-  return selectedStep.value.zoomedLocations.map((zoomedLocation, locationIndex) => {
-    return {
-      imageUrl: QuestDetailsModalPresenter.getLocalMapUrl(zoomedLocation.location),
-      coordinates: zoomedLocation.coordinates,
-      labelKey: `${props.questViewModel!.id}.steps.${selectedStep.value!.number}.locations.${locationIndex}.locationTarget`,
-    };
-  });
+const localMapLocations = computed(() => {
+  return QuestModalPresenter.getLocalMapLocations(selectedStep.value, props.questViewModel?.id ?? null);
 });
 
 watch(

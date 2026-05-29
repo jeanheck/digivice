@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import ZoomedLocationMap from "./ZoomedLocationMap.vue";
-import type { ZoomedLocationMapItem } from "./zoomed-location-map-item";
+import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 
 defineProps<{
   selectedStep: StepViewModel | null;
-  worldMapLocations: ZoomedLocationMapItem[];
-  localMapLocations: ZoomedLocationMapItem[];
+  worldMapLocations: ZoomedLocationMapViewModel[];
+  localMapLocations: ZoomedLocationMapViewModel[];
 }>();
 </script>
 

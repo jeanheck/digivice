@@ -1,5 +1,6 @@
 import { DigimonStatusCalculator } from "@/logic/DigimonStatusCalculator";
-import { AttributeType, type Digimon, type DigimonSlot } from "@/models";
+import { type Digimon, type DigimonSlot } from "@/models";
+import { Stat } from "@/models/stat";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import { MathUtils } from "@/utils/MathUtils";
 
@@ -16,7 +17,7 @@ export class FooterPresenter {
         const totalBonusFromEquipments = MathUtils.Sum(digimons.map((digimon) => {
             const rawEquipments = EquipmentRepository.getRawEquipmentsByIds(digimon.equipments);
             return DigimonStatusCalculator.calculateBonusFromEquipaments(
-                AttributeType.charisma,
+                Stat.charisma,
                 rawEquipments
             );
         }));

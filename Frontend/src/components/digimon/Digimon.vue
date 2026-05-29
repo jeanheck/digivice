@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 import DigimonProfile from "@/components/digimon/DigimonProfile.vue";
 import DigimonDigievolutions from "@/components/digimon/digimon-digievolutions/DigimonDigievolutions.vue";
-import DigievolutionGridModal from "@/components/digimon/digievolution/DigievolutionGridModal.vue";
+import DigievolutionsModal from "@/components/digimon/digievolutions-modal/DigievolutionsModal.vue";
 import DigimonStats from "@/components/digimon/digimon-stats/DigimonStats.vue";
 import DigimonEquipments from "@/components/digimon/digimon-equipments/DigimonEquipments.vue";
 
@@ -44,8 +44,8 @@ function closeDigievolutionGrid(): void {
       <span class="text-[0.65rem] font-bold text-gray-400 tracking-widest uppercase">{{ $t('digimon.digievolutions') }}</span>
     </div>
 
-    <DigievolutionGridModal 
-      :is-open="isGridModalOpen" 
+    <DigievolutionsModal
+      :is-open="isGridModalOpen"
       :digimon="digimon"
       :digimon-id="digimonId"
       @close="closeDigievolutionGrid"

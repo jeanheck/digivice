@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import type { ZoomedLocationMapItem } from "./zoomed-location-map-item";
+import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
 
 const props = defineProps<{
-  locations: ZoomedLocationMapItem[];
+  locations: ZoomedLocationMapViewModel[];
   mapVariant: "world" | "local";
 }>();
 
