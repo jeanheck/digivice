@@ -3,7 +3,7 @@ import { computed, ref } from "vue";
 import { EQUIPMENT_SLOT_KEYS } from "@/constants/equipment-slot-key";
 import type { Equipments } from "@/models";
 import DigimonEquipment from "./DigimonEquipment.vue";
-import EquipmentTooltip from "@/components/tooltip/EquipmentTooltip.vue";
+import DigimonEquipmentsTooltip from "./DigimonEquipmentsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { DigimonEquipmentsPresenter } from "@/presenters/digimon-equipments.presenter";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
@@ -58,7 +58,7 @@ const moveTooltip = (event: MouseEvent) => {
       />
     </div>
 
-    <EquipmentTooltip
+    <DigimonEquipmentsTooltip
       :show="tooltipShow"
       :x="tooltipX"
       :y="tooltipY"
