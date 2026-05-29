@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
-
-export interface ZoomedLocationMapItem {
-  imageUrl: string | null;
-  coordinates: CoordinatesViewModel;
-  labelKey: string;
-}
+import type { ZoomedLocationMapItem } from "@/components/modal/zoomed-location-map-item";
 
 const props = defineProps<{
   locations: ZoomedLocationMapItem[];
