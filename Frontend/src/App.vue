@@ -45,7 +45,7 @@ const handleCloseQuestModal = () => {
 
       <div class="flex-1 min-w-75 min-h-0 overflow-hidden flex flex-col gap-4">
         <div class="flex-3 min-h-0 overflow-hidden flex flex-col">
-          <Journal v-if="store.currentState?.journal" @quest-click="handleQuestClick" class="flex-1" />
+          <Journal v-if="store.currentState?.journal" :journal="store.currentState.journal" class="flex-1" />
         </div>
         
         <div class="flex-2 min-h-50 flex flex-col">
