@@ -43,6 +43,24 @@ body {
   filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8));
 }
 
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #0033aa;
+  border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #0077ff;
+}
+
 /* Tooltip transition */
 .fade-enter-active,
 .fade-leave-active {

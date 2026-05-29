@@ -4,7 +4,7 @@
     "mainQuest": "Missão Principal",
     "sideQuests": "Missões Secundárias",
     "noSideQuests": "Nenhuma Missão Secundária Ativa",
-    "awaitingDestination": "Aguardando Destino...",
+    "questCompleted": "Missão concluída",
     "prerequisites": "Pré-requisitos",
     "missionSteps": "Passos da Missão",
     "clickStep": "CLIQUE EM UM PASSO DA MISSÃO PARA CARREGAR DADOS GEOGRÁFICOS",

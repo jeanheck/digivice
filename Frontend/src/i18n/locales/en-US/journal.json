@@ -4,7 +4,7 @@
     "mainQuest": "Main Quest",
     "sideQuests": "Side Quests",
     "noSideQuests": "No Side Quests Active",
-    "awaitingDestination": "Awaiting Destination...",
+    "questCompleted": "Quest completed",
     "prerequisites": "Prerequisites",
     "missionSteps": "Mission Steps",
     "clickStep": "CLICK A MISSION STEP TO BOOT GEOGRAPHIC DATA",

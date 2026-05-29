@@ -70,10 +70,6 @@ const isQuestNew = (quest: QuestViewModel) => {
              {{ currentMainQuestStep ? $t(`mainQuest.steps.${currentMainQuestStep.number}.description`) : $t('mainQuest.description') }}
           </p>
         </div>
-        
-        <div v-else class="p-2 rounded border border-gray-700 border-dashed text-center opacity-60">
-          <span class="text-gray-500 text-xs italic">{{ $t('journal.awaitingDestination') }}</span>
-        </div>
       </section>
 
       <!-- SIDE QUESTS SECTION -->
