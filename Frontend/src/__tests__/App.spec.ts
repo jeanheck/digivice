@@ -23,7 +23,6 @@ const globalMocks = {
     stubs: {
       Journal: true,
       AreaInformationPanel: true,
-      QuestDetailsModal: true,
       Footer: true,
       Digimon: true
     }
