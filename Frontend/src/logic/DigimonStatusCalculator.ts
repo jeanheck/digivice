@@ -1,10 +1,11 @@
 import { MathUtils } from "@/utils/MathUtils";
-import { AttributeType, ResistanceType, type Equipments } from "@/models";
+import { type Equipments } from "@/models";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
+import type { Stat } from "@/models/stat";
 
 export class DigimonStatusCalculator {
-    public static calculateBonusFromEquipaments(type: AttributeType | ResistanceType, rawEquipments: EquipmentRaw[]
+    public static calculateBonusFromEquipaments(type: Stat, rawEquipments: EquipmentRaw[]
     ): number {
         const lowerCaseType = type.toLowerCase();
         const attributesRaw = rawEquipments
@@ -17,7 +18,7 @@ export class DigimonStatusCalculator {
     }
 
     public static calculateBonusFromRawEquipments(
-        type: AttributeType | ResistanceType,
+        type: Stat,
         equipments: Equipments
     ): number {
         

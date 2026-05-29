@@ -6,4 +6,9 @@ export interface ResistancesRaw {
     thunder: number;
     machine: number;
     dark: number;
+    poison: number,
+    paralyze: number;
+    confuse: number;
+    sleep: number;
+    ko: number;
 }

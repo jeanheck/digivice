@@ -1,10 +1,10 @@
-import type { AttributeResistanceViewModel } from "./attribute-resistance.viewmodel";
+import type { StatViewModel } from "./stat.viewmodel";
 
 export interface AttributesViewModel {
-  strength: AttributeResistanceViewModel;
-  defense: AttributeResistanceViewModel;
-  spirit: AttributeResistanceViewModel;
-  wisdom: AttributeResistanceViewModel;
-  speed: AttributeResistanceViewModel;
-  charisma: AttributeResistanceViewModel;
+  strength: StatViewModel;
+  defense: StatViewModel;
+  spirit: StatViewModel;
+  wisdom: StatViewModel;
+  speed: StatViewModel;
+  charisma: StatViewModel;
 }

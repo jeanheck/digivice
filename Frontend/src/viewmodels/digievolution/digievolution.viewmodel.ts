@@ -1,8 +1,8 @@
-import type { Attributes } from "@/models/attributes";
-import type { Resistances } from "@/models/resistances";
+import type { DigievolutionAttributesViewModel } from "./digievolution-attributes.viewmodel";
+import type { DigievolutionResistancesViewModel } from "./digievolution-resistances.viewmodel";
 
 export interface DigievolutionViewModel {
     name: string;
-    attributes: Attributes;
-    resistances: Resistances;
+    attributes: DigievolutionAttributesViewModel;
+    resistances: DigievolutionResistancesViewModel;
 }
