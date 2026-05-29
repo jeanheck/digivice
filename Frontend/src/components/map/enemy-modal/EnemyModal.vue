@@ -2,10 +2,10 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import EnemyProfile from "@/components/map/enemy-modal/EnemyProfile.vue";
-import EnemyAttributes from "@/components/map/enemy-modal/EnemyAttributes.vue";
-import EnemyElements from "@/components/map/enemy-modal/EnemyElements.vue";
-import EnemyResistances from "@/components/map/enemy-modal/EnemyResistances.vue";
+import EnemyProfile from "@/components/map/enemy-modal/EnemyModalProfile.vue";
+import EnemyAttributes from "@/components/map/enemy-modal/EnemyModalAttributes.vue";
+import EnemyElements from "@/components/map/enemy-modal/EnemyModalElements.vue";
+import EnemyResistances from "@/components/map/enemy-modal/EnemyModalResistances.vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { STAT_ICONS } from "@/constants/stat-icons";

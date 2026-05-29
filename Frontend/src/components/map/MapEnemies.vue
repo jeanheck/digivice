@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import EnemyModal from "./EnemyModal.vue";
+import EnemyModal from "./enemy-modal/EnemyModal.vue";
 import { MapPresenter } from "@/presenters/map.presenter.ts";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
