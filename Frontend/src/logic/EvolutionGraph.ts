@@ -18,32 +18,11 @@ export interface FamilyChain {
     branches: FamilyBranch[]    // most families have 1 branch with all nodes; branching ones have diverging suffixes
 }
 
-export type RequirementType = 'DigimonLevel' | 'DigievolutionLevel' | 'Attribute'
-
 export interface EvolutionRequirement {
     Type: string
     Value: number
     Digievolution?: string
     Attribute?: string
-}
-
-export interface GraphNode {
-    id: string
-    name: string
-    requirements: EvolutionRequirement[]
-    level: number
-    x: number
-    y: number
-}
-
-export interface GraphLink {
-    source: string
-    target: string
-}
-
-export interface DigievolutionGraph {
-    nodes: GraphNode[]
-    links: GraphLink[]
 }
 
 export class EvolutionGraph {

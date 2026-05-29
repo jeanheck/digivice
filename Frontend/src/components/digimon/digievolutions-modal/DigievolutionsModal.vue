@@ -5,7 +5,7 @@ import Modal from "@/components/modal/Modal.vue";
 import DigievolutionFamilyTree from "./DigievolutionFamilyTree.vue";
 import DigievolutionDetailPanel from "./DigievolutionDetailPanel.vue";
 import DigievolutionsModalSearchBar from "./DigievolutionsModalSearchBar.vue";
-import { DigievolutionGridModalPresenter } from "@/presenters/digievolution-grid-modal.presenter.ts";
+import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter.ts";
 import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel.ts";
 
 const props = defineProps<{
@@ -27,7 +27,7 @@ const handleClose = () => {
 };
 
 const digimonName = computed(() => {
-  return DigievolutionGridModalPresenter.getNameById(props.digimonId);
+  return DigievolutionsModalPresenter.getNameById(props.digimonId);
 });
 
 const selectedEvolution = ref<DigimonDigievolutionRequirementViewModel[] | null>(null);
@@ -41,7 +41,7 @@ watch(() => props.isOpen, (open) => {
 });
 
 const handleSelectNode = (digievolutionName: string) => {
-  const requirements = DigievolutionGridModalPresenter.getDigievolutionRequirements(props.digimonId, digievolutionName);
+  const requirements = DigievolutionsModalPresenter.getDigievolutionRequirements(props.digimonId, digievolutionName);
 
   if (requirements) {
     selectedEvolution.value = requirements;
@@ -53,11 +53,11 @@ const handleSelectNode = (digievolutionName: string) => {
 };
 
 const derivativeParameter = computed(() => {
-  return DigievolutionGridModalPresenter.getDigievolutionsById(props.digimonId);
+  return DigievolutionsModalPresenter.getDigievolutionsById(props.digimonId);
 });
 
 const allEvolutions = computed(() => {
-  const digimonDigievolutionTable = DigievolutionGridModalPresenter.getDigievolutionsById(props.digimonId);
+  const digimonDigievolutionTable = DigievolutionsModalPresenter.getDigievolutionsById(props.digimonId);
   return Object.keys(digimonDigievolutionTable) as string[];
 });
 </script>

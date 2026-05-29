@@ -1,8 +1,8 @@
 import { DigimonRepository } from "@/repositories";
-import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon-digievolution-requirement.viewmodel";
-import type { DigimonDigievolutionViewModel } from "@/viewmodels/digimon-digievolution.viewmodel";
+import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
+import type { DigimonDigievolutionViewModel } from "@/viewmodels/digimon/digimon-digievolution.viewmodel";
 
-export class DigievolutionGridModalPresenter {
+export class DigievolutionsModalPresenter {
     public static getNameById(id: number): string {
         return DigimonRepository.getNameById(id);
     }
