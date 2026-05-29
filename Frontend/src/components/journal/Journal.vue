@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 import JournalAccordionSection from "@/components/journal/JournalAccordionSection.vue";
 import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
-import QuestDetailsModal from "@/components/modal/QuestDetailsModal.vue";
+import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
 import type { Journal } from "@/models";
 import { JournalPresenter } from "@/presenters/journal.presenter";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
@@ -69,7 +69,7 @@ const closeQuestModal = () => {
     </div>
   </aside>
 
-  <QuestDetailsModal
+  <QuestModal
     :is-open="isQuestModalOpen"
     :quest-view-model="activeQuest"
     @close="closeQuestModal"

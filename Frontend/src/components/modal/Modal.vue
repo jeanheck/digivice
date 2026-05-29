@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from "vue";
-import IconClose from "@/components/modal/IconClose.vue";
 
 const DEFAULT_FOOTER_BAR_CLASS = "bg-linear-to-r from-blue-900 via-cyan-500 to-blue-900";
 
@@ -80,7 +79,9 @@ onUnmounted(() => {
               class="text-gray-400 hover:text-red-400 transition-colors bg-black/30 w-7 h-7 flex items-center justify-center rounded border border-gray-700 hover:border-red-500 shrink-0"
               @click="handleClose"
             >
-              <IconClose class="w-5 h-5" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5">
+                <path fill="currentColor" d="M5 5h2v2H5zm4 4H7V7h2zm2 2H9V9h2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2zm2-2v2h-2V9zm2-2v2h-2V7zm0 0V5h2v2z"/>
+              </svg>
             </button>
           </header>
 

@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import type { DigievolutionSlot } from "@/models";
 import DigimonDigievolution from "./DigimonDigievolution.vue";
-import DigievolutionTechniquesModal from "@/components/modal/digievolution-techniques-modal/DigievolutionTechniquesModal.vue";
+import DigievolutionTechniquesModal from "./digievolution-techniques-modal/DigievolutionTechniquesModal.vue";
 
 defineProps<{
   slots: DigievolutionSlot[];

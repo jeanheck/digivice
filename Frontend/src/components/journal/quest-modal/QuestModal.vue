@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
-import QuestStepMapPanel from "@/components/modal/QuestStepMapPanel.vue";
-import QuestStepsList from "@/components/modal/QuestStepsList.vue";
-import Requisites from "@/components/modal/Requisites.vue";
-import type { ZoomedLocationMapItem } from "@/components/modal/zoomed-location-map-item";
+import StepPanel from "./StepPanel.vue";
+import Steps from "./Steps.vue";
+import Requisites from "./Requisites.vue";
+import type { ZoomedLocationMapItem } from "./zoomed-location-map-item";
 import asukaMapUrl from "@/assets/AsukaMap.webp";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
@@ -99,7 +99,7 @@ watch(
           title-key="journal.prerequisites"
         />
 
-        <QuestStepsList
+        <Steps
           :steps="questViewModel!.steps"
           :quest-id="questViewModel!.id"
           :selected-step-number="selectedStep?.number ?? null"
@@ -107,7 +107,7 @@ watch(
         />
       </div>
 
-      <QuestStepMapPanel
+      <StepPanel
         :selected-step="selectedStep"
         :world-map-locations="worldMapLocations"
         :local-map-locations="localMapLocations"

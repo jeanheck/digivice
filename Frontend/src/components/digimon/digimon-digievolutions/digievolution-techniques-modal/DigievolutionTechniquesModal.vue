@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Modal from "@/components/modal/Modal.vue";
-import Technique from "@/components/modal/digievolution-techniques-modal/Technique.vue";
+import Technique from "./Technique.vue";
 import { DigievolutionTechniquesModalPresenter } from "@/presenters/digievolution-techniques-modal.presenter";
 
 const props = defineProps<{

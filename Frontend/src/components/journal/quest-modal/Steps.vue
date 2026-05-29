@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Requisites from "@/components/modal/Requisites.vue";
+import Requisites from "./Requisites.vue";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 
 defineProps<{

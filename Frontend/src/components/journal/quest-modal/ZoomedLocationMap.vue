@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import type { ZoomedLocationMapItem } from "@/components/modal/zoomed-location-map-item";
+import type { ZoomedLocationMapItem } from "./zoomed-location-map-item";
 
 const props = defineProps<{
   locations: ZoomedLocationMapItem[];
