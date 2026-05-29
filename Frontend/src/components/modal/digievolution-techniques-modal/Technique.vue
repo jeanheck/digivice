@@ -52,7 +52,7 @@ const techniqueViewModel = computed(() => {
 
       <div class="flex gap-3 mt-1 text-[10px]">
         <span>
-          {{ $t("digievolution.element") }}: {{ $t(`element.${techniqueViewModel.element}`) }}
+          {{ $t("digievolution.element") }}: {{ $t(`stat.${techniqueViewModel.element}`) }}
         </span>|
         <span class="text-blue-300/70">{{ $t(`digievolution.mpCost`) }}: {{ techniqueViewModel.mp }}</span>
       </div>

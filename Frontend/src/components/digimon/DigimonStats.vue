@@ -2,6 +2,7 @@
 import { computed, ref } from "vue";
 import { useLocalization } from "@/composables/useLocalization";
 import type { Digimon } from "@/models";
+import { Stat } from "@/models/stat";
 import DigimonStat from "@/components/digimon/DigimonStat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import DigimonTooltip from "@/components/tooltip/DigimonTooltip.vue";
@@ -37,12 +38,8 @@ const showIconTooltip = (event: MouseEvent, title: string, text: string) => {
   showAt(event, { placement: tooltipPlacement });
 };
 
-const showAttributeIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
-  showIconTooltip(event, title, t(`attribute.${propertyKey}-explanation`));
-};
-
-const showResistanceIconTooltip = (event: MouseEvent, title: string, propertyKey: string) => {
-  showIconTooltip(event, title, t(`element.${propertyKey}-explanation`));
+const showStatIconTooltip = (event: MouseEvent, title: string, propertyKey: Stat) => {
+  showIconTooltip(event, title, t(`stat.${propertyKey}-explanation`));
 };
 
 const showMathTooltip = (
@@ -77,11 +74,11 @@ const moveTooltip = (event: MouseEvent) => {
       <div class="flex gap-20 -ml-16">
         <div class="flex flex-col gap-1 w-24">
           <DigimonStat
-            v-for="(attributeViewModel, key) in statsViewModel.attributes"
+            v-for="(statViewModel, key) in statsViewModel.attributes"
             :key="key"
-            :enriched-attribute-resistance="attributeViewModel"
+            :statViewModel="statViewModel"
             :property-key="key"
-            @show-icon-tooltip="showAttributeIconTooltip"
+            @show-icon-tooltip="showStatIconTooltip"
             @show-math-tooltip="showMathTooltip"
             @move-tooltip="moveTooltip"
             @hide-tooltip="hideTooltip"
@@ -90,11 +87,11 @@ const moveTooltip = (event: MouseEvent) => {
 
         <div class="flex flex-col gap-1 w-24">
           <DigimonStat
-            v-for="(resistanceViewModel, key) in statsViewModel.resistances"
+            v-for="(statViewModel, key) in statsViewModel.resistances"
             :key="key"
-            :enriched-attribute-resistance="resistanceViewModel"
+            :statViewModel="statViewModel"
             :property-key="key"
-            @show-icon-tooltip="showResistanceIconTooltip"
+            @show-icon-tooltip="showStatIconTooltip"
             @show-math-tooltip="showMathTooltip"
             @move-tooltip="moveTooltip"
             @hide-tooltip="hideTooltip"

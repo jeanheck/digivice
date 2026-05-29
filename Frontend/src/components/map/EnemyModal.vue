@@ -8,8 +8,10 @@ import EnemyElements from "@/components/map/enemy-modal/EnemyElements.vue";
 import EnemyResistances from "@/components/map/enemy-modal/EnemyResistances.vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import { STAT_ICONS } from "@/constants/stat-icons";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { MapPresenter } from "@/presenters/map.presenter.ts";
+import { Stat } from "@/models/stat";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -39,11 +41,11 @@ const attributesList = computed(() => {
     return [];
   }
   return [
-    { label: t("attribute.strength"), val: enemy.value.strength, icon: "👊" },
-    { label: t("attribute.defense"), val: enemy.value.defense, icon: "🛡️" },
-    { label: t("attribute.spirit"), val: enemy.value.spirit, icon: "🧙‍♂️" },
-    { label: t("attribute.wisdom"), val: enemy.value.wisdom, icon: "📖" },
-    { label: t("attribute.speed"), val: enemy.value.speed, icon: "🏃" },
+    { label: t("stat.strength"), val: enemy.value.strength, icon: STAT_ICONS[Stat.strength] },
+    { label: t("stat.defense"), val: enemy.value.defense, icon: STAT_ICONS[Stat.defense] },
+    { label: t("stat.spirit"), val: enemy.value.spirit, icon: STAT_ICONS[Stat.spirit] },
+    { label: t("stat.wisdom"), val: enemy.value.wisdom, icon: STAT_ICONS[Stat.wisdom] },
+    { label: t("stat.speed"), val: enemy.value.speed, icon: STAT_ICONS[Stat.speed] },
   ];
 });
 
@@ -52,13 +54,13 @@ const elemTolsList = computed(() => {
     return [];
   }
   return [
-    { label: t("element.fire"), val: enemy.value.fire, icon: "🔥" },
-    { label: t("element.water"), val: enemy.value.water, icon: "💧" },
-    { label: t("element.ice"), val: enemy.value.ice, icon: "🧊" },
-    { label: t("element.wind"), val: enemy.value.wind, icon: "🍃"  },
-    { label: t("element.thunder"), val: enemy.value.thunder, icon: "⚡" },
-    { label: t("element.machine"), val: enemy.value.machine, icon: "⚙️" },
-    { label: t("element.dark"), val: enemy.value.dark, icon: "🌑" },
+    { label: t("stat.fire"), val: enemy.value.fire, icon: STAT_ICONS[Stat.fire] },
+    { label: t("stat.water"), val: enemy.value.water, icon: STAT_ICONS[Stat.water] },
+    { label: t("stat.ice"), val: enemy.value.ice, icon: STAT_ICONS[Stat.ice] },
+    { label: t("stat.wind"), val: enemy.value.wind, icon: STAT_ICONS[Stat.wind] },
+    { label: t("stat.thunder"), val: enemy.value.thunder, icon: STAT_ICONS[Stat.thunder] },
+    { label: t("stat.machine"), val: enemy.value.machine, icon: STAT_ICONS[Stat.machine] },
+    { label: t("stat.dark"), val: enemy.value.dark, icon: STAT_ICONS[Stat.dark] },
   ];
 });
 

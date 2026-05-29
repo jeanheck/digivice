@@ -79,7 +79,7 @@ const equipmentNote = computed(() => {
           :key="attribute.attribute"
           class="flex justify-between text-xs items-center bg-[#002266]/40 px-1 rounded-sm"
         >
-          <span class="text-gray-200">{{ t("attribute." + attribute.attribute.toLowerCase()) }}</span>
+          <span class="text-gray-200">{{ t("stat." + attribute.attribute.toLowerCase()) }}</span>
           <span
             :class="attribute.type === '+' ? 'text-green-400' : 'text-red-400'"
             class="font-bold tracking-wider"

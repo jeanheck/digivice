@@ -5,8 +5,7 @@ import conditions from "./enemy/condition.json";
 import drops from "./enemy/drop.json";
 import techniqueTypes from "./digievolution/technique-type.json";
 import digimon from "./digimon.json";
-import attribute from "./attribute.json";
-import element from "./element.json";
+import stat from "./stat.json";
 import equipments from "./equipment/equipment.json";
 import equipmentType from "./equipment/equipment-type.json";
 import location from "./location.json";
@@ -29,8 +28,7 @@ export default {
   ...drops,
   ...techniqueTypes,
   ...digimon,
-  ...attribute,
-  ...element,
+  ...stat,
   ...equipments,
   ...equipmentType,
   ...location,
