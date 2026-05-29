@@ -127,22 +127,4 @@ onUnmounted(() => {
 .animate-modal-slide-up {
   animation: modal-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
-:deep(.custom-scroll)::-webkit-scrollbar {
-  width: 6px;
-}
-
-:deep(.custom-scroll)::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-}
-
-:deep(.custom-scroll)::-webkit-scrollbar-thumb {
-  background: #0044aa;
-  border-radius: 4px;
-}
-
-:deep(.custom-scroll)::-webkit-scrollbar-thumb:hover {
-  background: #0077ff;
-}
 </style>

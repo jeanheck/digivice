@@ -101,6 +101,9 @@ const onClick = () => {
       <template v-if="quest.isDone">
         {{ $t("journal.questCompleted") }}
       </template>
+      <template v-else-if="!isMainDisplayMode && quest.isLocked">
+        {{ $t(`${quest.id}.description`) }}
+      </template>
       <template v-else-if="quest.currentStep">
         <span :class="stepNumberClass">[{{ quest.currentStep.number }}]</span>
         {{ $t(`${quest.id}.steps.${quest.currentStep.number}.description`) }}
