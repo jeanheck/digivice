@@ -4,7 +4,7 @@ import { useGameStore } from "./stores/use-game-store";
 import Journal from "@/components/journal/Journal.vue";
 import Map from "@/components/map/Map.vue";
 import Footer from "@/components/footer/Footer.vue";
-import DigimonSlot from "@/components/digimon/DigimonSlot.vue";
+import Digimon from "@/components/digimon/Digimon.vue";
 import type { DigimonSlot as DigimonSlotModel } from "@/models/digimon-slot";
 
 const store = useGameStore();
@@ -20,7 +20,7 @@ const slotsWithDigimon = computed(() => {
   <main class="min-h-screen bg-transparent p-4 flex flex-col gap-4 max-w-450 mx-auto text-white">
     <div class="flex-1 flex gap-4 min-h-150">
       <div class="flex-3 grid grid-cols-3 gap-4">
-        <DigimonSlot
+        <Digimon
           v-for="slot in slotsWithDigimon"
           :key="slot.index"
           :slot="slot"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MapImage from "./MapImage.vue";
+import MapLocation from "./MapLocation.vue";
 import MapEnemies from "./MapEnemies.vue";
 import { computed } from "vue";
 import { MapPresenter } from "@/presenters/map.presenter.ts";
@@ -24,7 +24,7 @@ const locationViewModel = computed(() => {
     </div>
 
     <div class="flex-1 flex flex-col mt-2 h-full">
-      <MapImage :location-id="locationId" :location="locationViewModel" />
+      <MapLocation :location-id="locationId" :location="locationViewModel" />
       <MapEnemies :location="locationViewModel" />
     </div>
   </aside>

@@ -23,7 +23,7 @@ describe("App", () => {
         stubs: {
           Journal: true,
           Map: true,
-          DigimonSlot: true,
+          Digimon: true,
           Footer: { template: "<div />" },
         },
       },

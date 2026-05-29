@@ -3,7 +3,7 @@ import { computed, ref } from "vue";
 import { useLocalization } from "@/composables/useLocalization";
 import type { Digimon } from "@/models";
 import { Stat } from "@/models/stat";
-import DigimonStat from "@/components/digimon/DigimonStat.vue";
+import DigimonStat from "./DigimonStat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import DigimonTooltip from "@/components/tooltip/DigimonTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";

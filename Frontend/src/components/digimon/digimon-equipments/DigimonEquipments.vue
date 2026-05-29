@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 import { EQUIPMENT_SLOT_KEYS } from "@/constants/equipment-slot-key";
 import type { Equipments } from "@/models";
-import DigimonEquipment from "@/components/digimon/DigimonEquipment.vue";
+import DigimonEquipment from "./DigimonEquipment.vue";
 import EquipmentTooltip from "@/components/tooltip/EquipmentTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { DigimonEquipmentsPresenter } from "@/presenters/digimon-equipments.presenter";

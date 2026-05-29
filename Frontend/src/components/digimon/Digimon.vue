@@ -1,60 +1,54 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import ProgressBar from "@/components/digimon/ProgressBar.vue";
-import DigimonIcon from "@/components/digimon/DigimonIcon.vue";
-import DigimonVitals from "@/components/digimon/DigimonVitals.vue";
-import type { Digimon } from "@/models";
-import { ProgressBarVariant } from "@/constants/progress-bar-variant";
-import { DigimonPresenter } from "@/presenters/digimon.presenter";
+import { computed, ref } from "vue";
+import DigimonProfile from "@/components/digimon/DigimonProfile.vue";
+import DigimonDigievolutions from "@/components/digimon/digimon-digievolutions/DigimonDigievolutions.vue";
+import DigievolutionGridModal from "@/components/digimon/digievolution/DigievolutionGridModal.vue";
+import DigimonStats from "@/components/digimon/digimon-stats/DigimonStats.vue";
+import DigimonEquipments from "@/components/digimon/digimon-equipments/DigimonEquipments.vue";
 
 const props = defineProps<{
-  digimon: Digimon;
-  digimonId: number;
+  slot: import("@/models/digimon-slot").DigimonSlot;
 }>();
-
-const digimonName = computed(() => {
-  return DigimonPresenter.getDigimonNameById(props.digimonId);
+const digimon = computed(() => {
+  return props.slot.digimon!;
+});
+const digimonId = computed(() => {
+  return props.slot.digimonId!;
 });
 
-const experienceToReachNextLevel = computed(() => {
-  return DigimonPresenter.getRequiredExperienceForNextLevel(props.digimonId, props.digimon.level);
-});
+const isGridModalOpen = ref(false);
 
-const experiencePercentageToReachNextLevel = computed(() => {
-  return DigimonPresenter.getProgressPercentageForNextLevel(props.digimonId, props.digimon.level, props.digimon.experience);
-});
+function openDigievolutionGrid(): void {
+  isGridModalOpen.value = true;
+}
+
+function closeDigievolutionGrid(): void {
+  isGridModalOpen.value = false;
+}
 </script>
 
 <template>
-  <div class="relative overflow-hidden flex flex-col w-full bg-[#000a2b]">
-    <div class="absolute inset-0 bg-[#0077ff] pointer-events-none dw3-beveled"></div>
-    <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
+  <div class="flex flex-col h-full w-full bg-[#000e3f] p-4 rounded-md shadow-lg border-2 border-[#0033aa] gap-4">
+    <DigimonProfile :digimon="digimon" :digimon-id="digimonId" />
+    <DigimonDigievolutions
+      :slots="digimon.digievolutions"
+      :active-digievolution-id="digimon.activeDigievolutionId"
+    />
+    <DigimonStats :digimon="digimon" />
+    <DigimonEquipments :equipments="digimon.equipments" />
 
-    <div class="relative z-10 flex flex-col gap-2 p-3">
-      <div class="flex items-start gap-4">
-        <DigimonIcon :digimon-name="digimonName" class="w-16 h-16" />
-
-        <div class="flex-1 flex flex-col gap-1 min-w-0">
-          <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
-            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimonName }}</h2>
-
-            <div class="relative flex items-center justify-center shrink-0">
-              <span class="text-[0.6rem] font-medium text-yellow-500">
-                {{ $t("digimon.level") }} {{ digimon.level }}
-              </span>
-            </div>
-          </div>
-
-          <ProgressBar
-            :variant="ProgressBarVariant.EXPERIENCE"
-            :current-value="digimon.experience"
-            :max-value="experienceToReachNextLevel"
-            :percentage="experiencePercentageToReachNextLevel"
-          />
-        </div>
-      </div>
-
-      <DigimonVitals :vitals="digimon.vitals" />
+    <div 
+      class="flex items-center justify-center bg-[#000a2b] border-2 border-[#00154a] rounded shadow-inner py-1.5 mt-auto cursor-pointer hover:bg-[#001233] transition-colors"
+      @click="openDigievolutionGrid"
+    >
+      <span class="text-[0.65rem] font-bold text-gray-400 tracking-widest uppercase">{{ $t('digimon.digievolutions') }}</span>
     </div>
+
+    <DigievolutionGridModal 
+      :is-open="isGridModalOpen" 
+      :digimon="digimon"
+      :digimon-id="digimonId"
+      @close="closeDigievolutionGrid"
+    />
   </div>
 </template>

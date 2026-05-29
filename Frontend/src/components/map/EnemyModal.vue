@@ -2,7 +2,7 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import Enemy from "@/components/map/enemy-modal/Enemy.vue";
+import EnemyProfile from "@/components/map/enemy-modal/EnemyProfile.vue";
 import EnemyAttributes from "@/components/map/enemy-modal/EnemyAttributes.vue";
 import EnemyElements from "@/components/map/enemy-modal/EnemyElements.vue";
 import EnemyResistances from "@/components/map/enemy-modal/EnemyResistances.vue";
@@ -125,7 +125,7 @@ const enemyImageUrl = computed(() => {
     </template>
 
     <div class="p-4 flex flex-col sm:flex-row gap-4 max-h-[70vh] overflow-y-auto custom-scroll">
-      <Enemy :enemy="enemy" :enemy-image-url="enemyImageUrl" />
+      <EnemyProfile :enemy="enemy" :enemy-image-url="enemyImageUrl" />
 
       <div class="flex-1">
         <div class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start">
