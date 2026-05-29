@@ -5,7 +5,7 @@ import asukaMapUrl from "@/assets/AsukaMap.webp";
 import { useLocalization } from "@/composables/useLocalization";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
-import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import { ImageCatalog } from "@/catalogs/image.catalog";
 import { QuestDetailsModalPresenter } from "@/presenters/quest-details-modal.presenter";
 
 const props = defineProps<{
@@ -27,20 +27,6 @@ const closeModal = () => {
   emit("close");
 };
 
-const isQuestDone = computed(() => {
-  if (!props.questViewModel || !props.questViewModel.steps || props.questViewModel.steps.length === 0) {
-    return false;
-  }
-  return props.questViewModel.steps.every((step) => step.isDone);
-});
-
-const isQuestLocked = computed(() => {
-  if (!props.questViewModel || !props.questViewModel.requisites || props.questViewModel.requisites.length === 0) {
-    return false;
-  }
-  return !props.questViewModel.requisites.every((requisite) => requisite.isDone);
-});
-
 const hasRequisites = computed(() => {
   return props.questViewModel?.requisites && props.questViewModel.requisites.length > 0;
 });
@@ -60,10 +46,17 @@ const currentLocation = computed(() => {
   return selectedStep.value.zoomedLocations[currentLocationIndex.value];
 });
 
-watch(() => props.questViewModel, () => {
-  selectedStep.value = null;
-  currentLocationIndex.value = 0;
-});
+watch(
+  () => [props.isOpen, props.questViewModel] as const,
+  ([isOpen, questViewModel]) => {
+    if (isOpen && questViewModel?.currentStep) {
+      selectStep(questViewModel.currentStep);
+    } else {
+      selectedStep.value = null;
+      currentLocationIndex.value = 0;
+    }
+  }
+);
 
 const getLocalMapUrl = (locationId?: string) => {
   if (!locationId) {
@@ -102,13 +95,11 @@ function formatTooltipText(text: string) {
   <Modal
     :is-open="isModalOpen"
     max-width="max-w-5xl"
-    max-height="h-[90vh] max-h-[90vh]"
+    max-height="max-h-[90vh]"
     @close="closeModal"
   >
     <template #header>
-      <h2 class="text-white font-bold tracking-widest drop-shadow flex items-center gap-2">
-        <span v-if="isQuestDone" class="text-green-400 text-lg">✔</span>
-        <span v-else-if="isQuestLocked" class="text-lg">🔒</span>
+      <h2 class="text-white font-bold tracking-widest drop-shadow">
         {{ t(`${questViewModel!.id}.title`) }}
       </h2>
     </template>
@@ -126,8 +117,8 @@ function formatTooltipText(text: string) {
             {{ $t("journal.prerequisites") }}
           </h3>
           <div
-            v-for="(requisiteViewModel, idx) in questViewModel!.requisites"
-            :key="idx"
+            v-for="requisiteViewModel in questViewModel!.requisites"
+            :key="requisiteViewModel.id"
             class="flex items-start gap-3 p-2 rounded transition-colors"
             :class="requisiteViewModel.isDone ? 'bg-green-900/10 border border-green-800/30' : 'bg-red-900/10 border border-red-800/30'"
           >
@@ -158,7 +149,7 @@ function formatTooltipText(text: string) {
             class="flex items-start gap-3 p-2 rounded transition-all cursor-pointer group"
             :class="[
               stepViewModel.isDone ? 'bg-green-900/10 border border-green-800/30' : 'bg-white/5 border border-white/10',
-              selectedStep?.number === stepViewModel.number ? 'ring-1 ring-cyan-500 shadow-[0_0_10px_rgba(0,255,255,0.2)] bg-[#001a33]' : 'hover:bg-active-hover hover:border-blue-500/30',
+              selectedStep?.number === stepViewModel.number ? 'ring-1 ring-cyan-500 shadow-[0_0_10px_rgba(0,255,255,0.2)] bg-[#001a33]' : '',
             ]"
             @click="selectStep(stepViewModel)"
           >
