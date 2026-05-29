@@ -5,7 +5,6 @@ import asukaMapUrl from "@/assets/AsukaMap.webp";
 import { useLocalization } from "@/composables/useLocalization";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
-import { ImageCatalog } from "@/catalogs/image.catalog";
 import { QuestDetailsModalPresenter } from "@/presenters/quest-details-modal.presenter";
 
 const props = defineProps<{
@@ -57,14 +56,6 @@ watch(
     }
   }
 );
-
-const getLocalMapUrl = (locationId?: string) => {
-  if (!locationId) {
-    return null;
-  }
-  const locationViewModel = QuestDetailsModalPresenter.getLocationById(locationId);
-  return ImageCatalog.getMapImageUrl(locationViewModel.image);
-};
 
 function formatTooltipText(text: string) {
   if (!text) {
@@ -229,7 +220,7 @@ function formatTooltipText(text: string) {
           >
             <div class="relative flex-1 w-full bg-black/50 overflow-hidden">
               <img
-                :src="getLocalMapUrl(currentLocation.location) ?? undefined"
+                :src="QuestDetailsModalPresenter.getLocalMapUrl(currentLocation.location) ?? undefined"
                 class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
               />
 
