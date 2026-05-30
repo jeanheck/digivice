@@ -23,6 +23,9 @@ export class DigievolutionRepository {
     public static getNameById(id: number): string {
         return this.digievolutionNameTable[id]!;
     }
+    public static getAllDigievolutionsNames(): string[] {
+        return Object.values(this.digievolutionNameTable);
+    }
     public static getIdByName(name: string): number {
         const entry = Object.entries(this.digievolutionNameTable).find(([, digievolutionName]) => digievolutionName === name);
 

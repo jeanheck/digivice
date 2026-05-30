@@ -5,8 +5,8 @@ import Modal from "@/components/modal/Modal.vue";
 import DigievolutionsModalTree from "./DigievolutionsModalTree.vue";
 import DigievolutionDetailPanel from "./DigievolutionDetailPanel.vue";
 import DigievolutionsModalSearchBar from "./DigievolutionsModalSearchBar.vue";
-import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter.ts";
-import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel.ts";
+import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter";
+import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -19,7 +19,7 @@ const emit = defineEmits<{
 }>();
 
 const isModalOpen = computed(() => {
-  return props.isOpen && props.digimon !== null && props.digimon !== undefined;
+  return props.isOpen;
 });
 
 const handleClose = () => {
@@ -56,10 +56,7 @@ const derivativeParameter = computed(() => {
   return DigievolutionsModalPresenter.getDigievolutionsById(props.digimonId);
 });
 
-const allEvolutions = computed(() => {
-  const digimonDigievolutionTable = DigievolutionsModalPresenter.getDigievolutionsById(props.digimonId);
-  return Object.keys(digimonDigievolutionTable) as string[];
-});
+const allDigievolutionsNames = computed(() => DigievolutionsModalPresenter.getAllDigievolutionsNames());
 </script>
 
 <template>
@@ -77,7 +74,7 @@ const allEvolutions = computed(() => {
         </h2>
 
         <DigievolutionsModalSearchBar
-          :all-evolutions="allEvolutions"
+          :all-evolutions="allDigievolutionsNames"
           @select="handleSelectNode"
         />
       </div>
@@ -99,7 +96,7 @@ const allEvolutions = computed(() => {
           <DigievolutionDetailPanel
             :evolution="selectedEvolution"
             :evolution-name="selectedEvolutionName"
-            :all-evolutions="allEvolutions"
+            :all-evolutions="allDigievolutionsNames"
             :derivative-parameter="derivativeParameter"
             @select-evolution="handleSelectNode"
           />
