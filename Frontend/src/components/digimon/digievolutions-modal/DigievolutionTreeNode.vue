@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import type { Digimon } from "@/models";
-import { EvolutionGraph, type EvolutionRequirement } from "@/logic/EvolutionGraph";
+import { DigievolutionsGraph, type EvolutionRequirement } from "@/logic/digievolutions-graph/digievolutions-graph";
 
 const props = defineProps<{
   node: { name: string, requirements: EvolutionRequirement[] }
@@ -16,7 +16,7 @@ const emit = defineEmits<{
 }>()
 
 const isUnlocked = computed(() => {
-    return EvolutionGraph.checkRequirements(props.digimon, props.node)
+    return DigievolutionsGraph.checkRequirements(props.digimon, props.node)
 })
 
 const getRequirementText = (req: EvolutionRequirement) => {

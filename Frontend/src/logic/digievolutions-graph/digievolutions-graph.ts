@@ -25,7 +25,7 @@ export interface EvolutionRequirement {
     Attribute?: string
 }
 
-export class EvolutionGraph {
+export class DigievolutionsGraph {
     /**
      * Builds ordered family chains from DigievolutionTree.json.
      * Each family becomes a FamilyChain with one or more branches.

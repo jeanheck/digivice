@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { watch, ref, nextTick } from 'vue'
 import type { Digimon } from '@/models/digimon'
-import { EvolutionGraph, type FamilyChain, type EvolutionRequirement } from '@/logic/EvolutionGraph'
+import { DigievolutionsGraph, type FamilyChain, type EvolutionRequirement } from "@/logic/digievolutions-graph/digievolutions-graph";
 import DigievolutionTreeNode from './DigievolutionTreeNode.vue'
 
 const props = defineProps<{
@@ -18,7 +18,7 @@ const emit = defineEmits<{
 const families = ref<FamilyChain[]>([])
 
 const getRequirements = (name: string): EvolutionRequirement[] => {
-    const allEvos = EvolutionGraph.getAllEvolutions(props.digimonId)
+    const allEvos = DigievolutionsGraph.getAllEvolutions(props.digimonId)
     const evo = allEvos.find(e => e.name === name)
     return evo?.requirements || []
 }
@@ -28,7 +28,7 @@ const getRookieFamily = (): string => {
 }
 
 const initFamilies = () => {
-    families.value = EvolutionGraph.buildFamilyChains(getRookieFamily())
+    families.value = DigievolutionsGraph.buildFamilyChains(getRookieFamily())
 }
 
 watch(() => props.rookieName, () => initFamilies(), { immediate: true })
