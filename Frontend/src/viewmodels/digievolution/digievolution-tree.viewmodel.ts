@@ -1,3 +1,5 @@
-import type { DigievolutionTreeNodeViewModel } from "./digievolution-tree-node.viewmodel";
+import type { DigievolutionTreeFamilyViewModel } from "./digievolution-tree-family.viewmodel";
 
-export type DigievolutionsTreeViewModel = Record<string, DigievolutionTreeNodeViewModel[]>
+export interface DigievolutionsTreeViewModel {
+    families: DigievolutionTreeFamilyViewModel[];
+}
