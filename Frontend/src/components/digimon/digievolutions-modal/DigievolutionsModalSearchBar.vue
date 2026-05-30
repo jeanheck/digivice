@@ -30,9 +30,7 @@ const handleSearchSelect = (name: string) => {
 };
 
 const handleBlur = () => {
-  window.setTimeout(() => {
-    showDropdown.value = false;
-  }, 200);
+  showDropdown.value = false;
 };
 </script>
 
@@ -54,7 +52,7 @@ const handleBlur = () => {
         v-for="digievolution in filteredDigievolutions"
         :key="digievolution"
         class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors font-cyber border-b last:border-b-0 border-[#0055ff]/20"
-        @click.stop="handleSearchSelect(digievolution)"
+        @mousedown.prevent="handleSearchSelect(digievolution)"
       >
         {{ digievolution }}
       </div>

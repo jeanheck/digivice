@@ -56,7 +56,7 @@ const derivativeParameter = computed(() => {
   return DigievolutionsModalPresenter.getDigievolutionsById(props.digimonId);
 });
 
-const allDigievolutionsNames = computed(() => DigievolutionsModalPresenter.getAllDigievolutionsNames());
+const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutionsNames();
 </script>
 
 <template>
