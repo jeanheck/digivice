@@ -2,14 +2,16 @@
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import type { Digimon } from "@/models";
-import { DigievolutionsGraph, type EvolutionRequirement } from "@/logic/digievolutions-graph/digievolutions-graph";
+import { DigievolutionsGraph } from "@/logic/digievolutions-graph/digievolutions-graph";
+import type { DigievolutionsTreeFamilyNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree.viewmodel";
+import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
 
 const props = defineProps<{
-  node: { name: string, requirements: EvolutionRequirement[] }
-  digimon: Digimon
-  isSelected?: boolean
-  digimonName: string
-}>()
+  node: DigievolutionsTreeFamilyNodeViewModel;
+  digimon: Digimon;
+  isSelected?: boolean;
+  digimonName: string;
+}>();
 
 const emit = defineEmits<{
   (e: 'select'): void
@@ -19,28 +21,27 @@ const isUnlocked = computed(() => {
     return DigievolutionsGraph.checkRequirements(props.digimon, props.node)
 })
 
-const getRequirementText = (req: EvolutionRequirement) => {
-    switch (req.Type) {
-        case 'DigimonLevel': return `${props.digimonName} Lv ${req.Value}`
-        case 'Attribute': return `${props.digimonName} - ${req.Attribute} >= ${req.Value}`
-        case 'DigievolutionLevel': return `${req.Digievolution} Lv ${req.Value}`
-        default: return 'Unknown Parameter'
+const getRequirementText = (requirement: DigimonDigievolutionRequirementViewModel) => {
+    switch (requirement.type) {
+        case "DigimonLevel": return `${props.digimonName} Lv ${requirement.value}`;
+        case "Attribute": return `${props.digimonName} - ${requirement.attribute} >= ${requirement.value}`;
+        case "DigievolutionLevel": return `${requirement.digievolution} Lv ${requirement.value}`;
+        default: return "Unknown Parameter";
     }
-}
+};
 
-const isReqMet = (req: EvolutionRequirement) => {
-    switch (req.Type) {
-        case 'DigimonLevel': return props.digimon.level >= req.Value
-        case 'Attribute': 
-            const attr = props.digimon.attributes[req.Attribute?.toLowerCase() as keyof typeof props.digimon.attributes]
-            const val = attr
-            return val >= req.Value
-        case 'DigievolutionLevel':
-            // Logic for checking specific digievolution level would go here
-            return false
-        default: return false
+const isReqMet = (requirement: DigimonDigievolutionRequirementViewModel) => {
+    switch (requirement.type) {
+        case "DigimonLevel": return props.digimon.level >= requirement.value;
+        case "Attribute": {
+            const attribute = props.digimon.attributes[requirement.attribute?.toLowerCase() as keyof typeof props.digimon.attributes];
+            return attribute >= requirement.value;
+        }
+        case "DigievolutionLevel":
+            return false;
+        default: return false;
     }
-}
+};
 
 const nodeAvatarUrl = computed(() => {
   return ImageCatalog.getDigievolutionIconUrl(props.node.name);

@@ -1,72 +1,69 @@
 <script setup lang="ts">
-import { watch, ref, nextTick } from 'vue'
-import type { Digimon } from '@/models/digimon'
-import { DigievolutionsGraph, type FamilyChain, type EvolutionRequirement } from "@/logic/digievolutions-graph/digievolutions-graph";
-import DigievolutionTreeNode from './DigievolutionTreeNode.vue'
+import { computed, watch, ref, nextTick } from "vue";
+import type { Digimon } from "@/models/digimon";
+import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
+import type { DigievolutionsTreeFamilyViewModel } from "@/viewmodels/digievolution/digievolution-tree.viewmodel";
+import DigievolutionTreeNode from "./DigievolutionTreeNode.vue";
 
 const props = defineProps<{
-  rookieName: string
-  digimon: Digimon
-  digimonId: number
-  selectedNodeName?: string
-}>()
+  rookieName: string;
+  digimon: Digimon;
+  digimonId: number;
+  selectedNodeName?: string;
+}>();
 
 const emit = defineEmits<{
-  (e: 'select-node', name: string): void
-}>()
+  (e: "select-node", name: string): void;
+}>();
 
-const families = ref<FamilyChain[]>([])
+const treeViewModel = ref(DigievolutionsModalTreePresenter.getTreeViewModel(props.digimonId, props.rookieName));
 
-const getRequirements = (name: string): EvolutionRequirement[] => {
-    const allEvos = DigievolutionsGraph.getAllEvolutions(props.digimonId)
-    const evo = allEvos.find(e => e.name === name)
-    return evo?.requirements || []
-}
+const initTreeViewModel = () => {
+  treeViewModel.value = DigievolutionsModalTreePresenter.getTreeViewModel(props.digimonId, props.rookieName);
+};
 
-const getRookieFamily = (): string => {
-    return props.rookieName
-}
+watch(() => props.rookieName, () => initTreeViewModel(), { immediate: true });
 
-const initFamilies = () => {
-    families.value = DigievolutionsGraph.buildFamilyChains(getRookieFamily())
-}
+watch(() => props.digimonId, () => initTreeViewModel());
 
-watch(() => props.rookieName, () => initFamilies(), { immediate: true })
-
-// Auto-scroll to selected node when selection changes
 watch(() => props.selectedNodeName, (name) => {
-    if (!name) return
-    nextTick(() => {
-        const el = document.querySelector(`[data-node-name="${name}"]`) as HTMLElement | null
-        el?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' })
-    })
-})
+  if (!name) {
+    return;
+  }
 
-const hasBranching = (chain: FamilyChain): boolean => {
-    return chain.sharedPrefix.length > 0 && chain.branches.length > 1
-}
+  nextTick(() => {
+    const element = document.querySelector(`[data-node-name="${name}"]`) as HTMLElement | null;
+    element?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+  });
+});
+
+const hasBranching = (family: DigievolutionsTreeFamilyViewModel): boolean => {
+  return family.sharedPrefixNodes.length > 0 && family.branchPaths.length > 1;
+};
+
+const families = computed(() => {
+  return treeViewModel.value.families;
+});
 </script>
 
 <template>
   <div class="family-tree-container">
-    
-    <template v-for="(chain, chainIdx) in families" :key="chain.family">
+    <template v-for="(family, familyIndex) in families" :key="family.familyKey">
 
-      <!-- NON-BRANCHING: simple horizontal row -->
-      <div v-if="!hasBranching(chain)" class="family-row">
-        <template v-for="(branch, bIdx) in chain.branches" :key="bIdx">
+      <div v-if="!hasBranching(family)" class="family-row">
+        <template v-for="(branchPath, branchIndex) in family.branchPaths" :key="branchIndex">
           <div class="branch-row">
-            <template v-for="(name, nodeIdx) in branch.names" :key="name">
+            <template v-for="(node, nodeIndex) in branchPath" :key="node.name">
               <DigievolutionTreeNode
-                :node="{ name, requirements: getRequirements(name) }"
+                :node="node"
                 :digimon="digimon"
                 :digimon-name="rookieName"
-                :is-selected="selectedNodeName === name"
+                :is-selected="selectedNodeName === node.name"
                 class="shrink-0"
-                :data-node-name="name"
-                @select="emit('select-node', name)"
+                :data-node-name="node.name"
+                @select="emit('select-node', node.name)"
               />
-              <div v-if="nodeIdx < branch.names.length - 1" class="connector">
+              <div v-if="nodeIndex < branchPath.length - 1" class="connector">
                 <div class="connector-line">
                   <div class="connector-arrow"></div>
                 </div>
@@ -76,22 +73,20 @@ const hasBranching = (chain: FamilyChain): boolean => {
         </template>
       </div>
 
-      <!-- BRANCHING: shared prefix then forking rows -->
       <div v-else class="family-row branching">
         <div class="branch-layout">
-          <!-- Shared prefix nodes (e.g., Greymon) -->
           <div class="shared-prefix">
-            <template v-for="(name, nodeIdx) in chain.sharedPrefix" :key="name">
+            <template v-for="(node, nodeIndex) in family.sharedPrefixNodes" :key="node.name">
               <DigievolutionTreeNode
-                :node="{ name, requirements: getRequirements(name) }"
+                :node="node"
                 :digimon="digimon"
                 :digimon-name="rookieName"
-                :is-selected="selectedNodeName === name"
+                :is-selected="selectedNodeName === node.name"
                 class="shrink-0"
-                :data-node-name="name"
-                @select="emit('select-node', name)"
+                :data-node-name="node.name"
+                @select="emit('select-node', node.name)"
               />
-              <div v-if="nodeIdx < chain.sharedPrefix.length - 1" class="connector">
+              <div v-if="nodeIndex < family.sharedPrefixNodes.length - 1" class="connector">
                 <div class="connector-line">
                   <div class="connector-arrow"></div>
                 </div>
@@ -99,26 +94,23 @@ const hasBranching = (chain: FamilyChain): boolean => {
             </template>
           </div>
 
-          <!-- Fork connector (arrow from prefix to branches) -->
           <div class="fork-connector">
             <div class="fork-line-top"></div>
             <div class="fork-line-bottom"></div>
           </div>
 
-          <!-- Branch suffixes stacked vertically -->
           <div class="branch-suffixes">
-            <div v-for="(branch, bIdx) in chain.branches" :key="bIdx" class="branch-row">
-              <template v-for="(name, nodeIdx) in branch.names" :key="name">
+            <div v-for="(branchPath, branchIndex) in family.branchPaths" :key="branchIndex" class="branch-row">
+              <template v-for="(node, nodeIndex) in branchPath" :key="node.name">
                 <DigievolutionTreeNode
-                  :node="{ name, requirements: getRequirements(name) }"
+                  :node="node"
                   :digimon="digimon"
                   :digimon-name="rookieName"
-                  :is-selected="selectedNodeName === name"
-                  class="shrink-0"
-                  :data-node-name="name"
-                  @select="emit('select-node', name)"
+                  :is-selected="selectedNodeName === node.name"
+                  :data-node-name="node.name"
+                  @select="emit('select-node', node.name)"
                 />
-                <div v-if="nodeIdx < branch.names.length - 1" class="connector">
+                <div v-if="nodeIndex < branchPath.length - 1" class="connector">
                   <div class="connector-line">
                     <div class="connector-arrow"></div>
                   </div>
@@ -129,8 +121,7 @@ const hasBranching = (chain: FamilyChain): boolean => {
         </div>
       </div>
 
-      <!-- HR Separator between families -->
-      <div v-if="chainIdx < families.length - 1" class="family-separator"></div>
+      <div v-if="familyIndex < families.length - 1" class="family-separator"></div>
     </template>
 
     <div v-if="families.length === 0" class="empty-state">
@@ -164,7 +155,6 @@ const hasBranching = (chain: FamilyChain): boolean => {
   padding: 10px 8px;
 }
 
-/* --- Connectors --- */
 .connector {
   flex-shrink: 0;
   display: flex;
@@ -191,7 +181,6 @@ const hasBranching = (chain: FamilyChain): boolean => {
   border-bottom: 3px solid transparent;
 }
 
-/* --- Branching layout --- */
 .branch-layout {
   display: flex;
   align-items: center;
@@ -258,7 +247,6 @@ const hasBranching = (chain: FamilyChain): boolean => {
   border-bottom: 3px solid transparent;
 }
 
-/* Vertical stem connecting the two fork lines */
 .fork-connector::before {
   content: '';
   position: absolute;
@@ -278,13 +266,11 @@ const hasBranching = (chain: FamilyChain): boolean => {
   padding: 10px 8px 10px 0px;
 }
 
-/* --- Separator --- */
 .family-separator {
   border-bottom: 1px solid rgba(0, 102, 204, 0.3);
   margin: 12px 0;
 }
 
-/* --- Empty state --- */
 .empty-state {
   display: flex;
   align-items: center;

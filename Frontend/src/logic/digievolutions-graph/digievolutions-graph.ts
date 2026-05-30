@@ -130,24 +130,34 @@ export class DigievolutionsGraph {
         }))
     }
 
-    static checkRequirements(digimon: import('../models').Digimon, node: { requirements: EvolutionRequirement[] }): boolean {
-        if (node.requirements.length === 0) return true
+    static checkRequirements(
+        digimon: import("@/models").Digimon,
+        node: { requirements: import("@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel").DigimonDigievolutionRequirementViewModel[] }
+    ): boolean {
+        if (node.requirements.length === 0) {
+            return true;
+        }
 
-        for (const req of node.requirements) {
-            switch (req.Type) {
-                case 'DigimonLevel':
-                    if (digimon.level < req.Value) return false
-                    break
-                case 'Attribute':
-                    const attr = digimon.attributes[req.Attribute?.toLowerCase() as keyof import('../models').Attributes]
-                    const attrValue = attr;
-                    if (attrValue < req.Value) return false
+        for (const requirement of node.requirements) {
+            switch (requirement.type) {
+                case "DigimonLevel":
+                    if (digimon.level < requirement.value) {
+                        return false;
+                    }
                     break;
-                case 'DigievolutionLevel':
-                    return false // Verification needs mapping
+                case "Attribute": {
+                    const attribute = digimon.attributes[requirement.attribute?.toLowerCase() as keyof import("@/models").Attributes];
+                    if (attribute < requirement.value) {
+                        return false;
+                    }
+                    break;
+                }
+                case "DigievolutionLevel":
+                    return false;
             }
         }
-        return true
+
+        return true;
     }
 
 }

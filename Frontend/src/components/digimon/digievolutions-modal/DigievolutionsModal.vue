@@ -2,7 +2,7 @@
 import { computed, ref, watch } from "vue";
 import type { Digimon } from "@/models";
 import Modal from "@/components/modal/Modal.vue";
-import DigievolutionFamilyTree from "./DigievolutionFamilyTree.vue";
+import DigievolutionsModalTree from "./DigievolutionsModalTree.vue";
 import DigievolutionDetailPanel from "./DigievolutionDetailPanel.vue";
 import DigievolutionsModalSearchBar from "./DigievolutionsModalSearchBar.vue";
 import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter.ts";
@@ -85,7 +85,7 @@ const allEvolutions = computed(() => {
 
     <div class="flex flex-1 overflow-hidden min-h-0">
       <div class="w-[75%] h-full border-r border-[#0055ff]/30 relative">
-        <DigievolutionFamilyTree
+        <DigievolutionsModalTree
           :rookie-name="digimonName"
           :digimon="digimon"
           :digimon-id="digimonId"
