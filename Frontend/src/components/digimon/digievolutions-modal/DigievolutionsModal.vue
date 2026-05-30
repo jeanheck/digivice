@@ -73,7 +73,10 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
           {{ $t("digievolution.title", { name: digimonName }) }}
         </h2>
 
-        <DigievolutionsModalSearchBar :all-digievolutions-names="allDigievolutionsNames" @select="handleSelectNode"
+        <DigievolutionsModalSearchBar
+          :all-digievolutions-names="allDigievolutionsNames"
+          :selected-digievolution-name="selectedEvolutionName"
+          @select="handleSelectNode"
         />
       </div>
     </template>

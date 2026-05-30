@@ -12,6 +12,7 @@
     "lv": "Nv",
     "techniques": "Técnicas",
     "searchDigimon": "Digite o nome de uma Digievolução...",
+    "searchNoResults": "Nenhuma digievolução encontrada",
     "mpCost": "Custo de MP",
     "element": "Elemento"
   }
