@@ -16,10 +16,10 @@ const emit = defineEmits<{
   (e: "select-node", name: string): void;
 }>();
 
-const treeViewModel = ref(DigievolutionsModalTreePresenter.getTreeViewModel(props.digimonId, props.rookieName));
+const treeViewModel = ref(DigievolutionsModalTreePresenter.getDigievolutionsTreeViewModel(props.digimonId, props.rookieName));
 
 const initTreeViewModel = () => {
-  treeViewModel.value = DigievolutionsModalTreePresenter.getTreeViewModel(props.digimonId, props.rookieName);
+  treeViewModel.value = DigievolutionsModalTreePresenter.getDigievolutionsTreeViewModel(props.digimonId, props.rookieName);
 };
 
 watch(() => props.rookieName, () => initTreeViewModel(), { immediate: true });
