@@ -87,7 +87,7 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
           :digimon-name="digimonName"
           :digimon="digimon"
           :digimon-id="digimonId"
-          :selectedDigievolutionName="selectedDigievolutionName"
+          :selected-digievolution-name="selectedDigievolutionName"
           @select-digievolution="handleSelectNode"
         />
       </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch, nextTick } from "vue";
+import { computed, watch, nextTick, ref } from "vue";
 import type { Digimon } from "@/models/digimon";
 import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
 import type { DigievolutionTreeFamilyViewModel } from "@/viewmodels/digievolution/digievolution-tree-family.viewmodel";
@@ -17,7 +17,62 @@ const emit = defineEmits<{
   (e: "select-digievolution", name: string): void;
 }>();
 
+const familyTreeContainer = ref<HTMLElement | null>(null);
+
 const treeViewModel = DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId, props.digimonName);
+
+const scrollSelectedNodeIntoView = (name: string) => {
+  const container = familyTreeContainer.value;
+  if (!container) {
+    return;
+  }
+
+  const nodeElement = container.querySelector(`[data-node-name="${CSS.escape(name)}"]`) as HTMLElement | null;
+  if (!nodeElement) {
+    return;
+  }
+
+  const elementTopInContainer = (element: HTMLElement) => {
+    return element.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
+  };
+
+  const nodeTop = elementTopInContainer(nodeElement);
+  const nodeBottom = nodeTop + nodeElement.offsetHeight;
+  const viewportTop = container.scrollTop;
+  const viewportBottom = viewportTop + container.clientHeight;
+
+  let targetScrollTop = viewportTop;
+
+  if (nodeTop < viewportTop) {
+    targetScrollTop = nodeTop;
+  } else if (nodeBottom > viewportBottom) {
+    targetScrollTop = nodeBottom - container.clientHeight;
+  }
+
+  const familyRow = nodeElement.closest(".family-row");
+  if (familyRow) {
+    const nextSibling = familyRow.nextElementSibling;
+    const familySeparator = nextSibling instanceof HTMLElement && nextSibling.classList.contains("family-separator")
+      ? nextSibling
+      : null;
+
+    if (familySeparator) {
+      const separatorBottom = elementTopInContainer(familySeparator) + familySeparator.offsetHeight;
+      const scrollForSeparator = separatorBottom - container.clientHeight;
+      targetScrollTop = Math.max(targetScrollTop, scrollForSeparator);
+    } else {
+      targetScrollTop = container.scrollHeight - container.clientHeight;
+    }
+  }
+
+  targetScrollTop = Math.max(0, Math.min(targetScrollTop, container.scrollHeight - container.clientHeight));
+
+  if (Math.abs(targetScrollTop - container.scrollTop) < 1) {
+    return;
+  }
+
+  container.scrollTo({ top: targetScrollTop, behavior: "smooth" });
+};
 
 watch(() => props.selectedDigievolutionName, (name) => {
   if (!name) {
@@ -25,8 +80,7 @@ watch(() => props.selectedDigievolutionName, (name) => {
   }
 
   nextTick(() => {
-    const element = document.querySelector(`[data-node-name="${name}"]`) as HTMLElement | null;
-    element?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+    scrollSelectedNodeIntoView(name);
   });
 });
 
@@ -40,7 +94,7 @@ const families = computed(() => {
 </script>
 
 <template>
-  <div class="family-tree-container custom-scroll">
+  <div ref="familyTreeContainer" class="family-tree-container custom-scroll">
     <template v-for="(family, familyIndex) in families" :key="family.key">
       <DigievolutionsTreeSimpleFamily
         v-if="!hasBranching(family)"
@@ -65,7 +119,7 @@ const families = computed(() => {
     </template>
 
     <div v-if="families.length === 0" class="empty-state">
-      No evolution data available
+      {{ $t("digievolution.noEvolutionData") }}
     </div>
   </div>
 </template>
