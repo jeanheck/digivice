@@ -9,24 +9,16 @@ const props = defineProps<{
   digimonName: string;
   digimon: Digimon;
   digimonId: number;
-  selectedNodeName?: string;
+  selectedDigievolutionName?: string;
 }>();
 
 const emit = defineEmits<{
   (e: "select-digievolution", name: string): void;
 }>();
 
-const treeViewModel = ref(DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId, props.digimonName));
+const treeViewModel = DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId, props.digimonName);
 
-const initTreeViewModel = () => {
-  treeViewModel.value = DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId, props.digimonName);
-};
-
-watch(() => props.digimonName, () => initTreeViewModel(), { immediate: true });
-
-watch(() => props.digimonId, () => initTreeViewModel());
-
-watch(() => props.selectedNodeName, (name) => {
+watch(() => props.selectedDigievolutionName, (name) => {
   if (!name) {
     return;
   }
@@ -42,7 +34,7 @@ const hasBranching = (family: DigievolutionTreeFamilyViewModel): boolean => {
 };
 
 const families = computed(() => {
-  return treeViewModel.value.families;
+  return treeViewModel.families;
 });
 </script>
 
@@ -58,7 +50,7 @@ const families = computed(() => {
                 :node="node"
                 :digimon="digimon"
                 :digimon-name="digimonName"
-                :is-selected="selectedNodeName === node.name"
+                :is-selected="selectedDigievolutionName === node.name"
                 class="shrink-0"
                 :data-node-name="node.name"
                 @select="emit('select-digievolution', node.name)"
@@ -81,7 +73,7 @@ const families = computed(() => {
                 :node="node"
                 :digimon="digimon"
                 :digimon-name="digimonName"
-                :is-selected="selectedNodeName === node.name"
+                :is-selected="selectedDigievolutionName === node.name"
                 class="shrink-0"
                 :data-node-name="node.name"
                 @select="emit('select-digievolution', node.name)"
@@ -106,7 +98,7 @@ const families = computed(() => {
                   :node="node"
                   :digimon="digimon"
                   :digimon-name="digimonName"
-                  :is-selected="selectedNodeName === node.name"
+                  :is-selected="selectedDigievolutionName === node.name"
                   :data-node-name="node.name"
                   @select="emit('select-digievolution', node.name)"
                 />
