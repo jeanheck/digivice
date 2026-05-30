@@ -31,12 +31,12 @@ const digimonName = computed(() => {
 });
 
 const selectedEvolution = ref<DigimonDigievolutionRequirementViewModel[] | null>(null);
-const selectedEvolutionName = ref<string | undefined>(undefined);
+const selectedDigievolutionName = ref<string | undefined>(undefined);
 
 watch(() => props.isOpen, (open) => {
   if (open && props.digimon) {
     selectedEvolution.value = null;
-    selectedEvolutionName.value = undefined;
+    selectedDigievolutionName.value = undefined;
   }
 });
 
@@ -45,10 +45,10 @@ const handleSelectNode = (digievolutionName: string) => {
 
   if (requirements) {
     selectedEvolution.value = requirements;
-    selectedEvolutionName.value = digievolutionName;
+    selectedDigievolutionName.value = digievolutionName;
   } else if (digievolutionName === digimonName.value) {
     selectedEvolution.value = null;
-    selectedEvolutionName.value = undefined;
+    selectedDigievolutionName.value = undefined;
   }
 };
 
@@ -75,8 +75,8 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
 
         <DigievolutionsModalSearchBar
           :all-digievolutions-names="allDigievolutionsNames"
-          :selected-digievolution-name="selectedEvolutionName"
-          @select="handleSelectNode"
+          :selected-digievolution-name="selectedDigievolutionName"
+          @select-digievolution="handleSelectNode"
         />
       </div>
     </template>
@@ -87,8 +87,8 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
           :digimon-name="digimonName"
           :digimon="digimon"
           :digimon-id="digimonId"
-          :selected-node-name="selectedEvolutionName"
-          @select-node="handleSelectNode"
+          :selected-node-name="selectedDigievolutionName"
+          @select-digievolution="handleSelectNode"
         />
       </div>
 
@@ -96,10 +96,10 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
         <div v-if="selectedEvolution" class="flex-1 flex flex-col p-1">
           <DigievolutionDetailPanel
             :evolution="selectedEvolution"
-            :evolution-name="selectedEvolutionName"
+            :evolution-name="selectedDigievolutionName"
             :all-evolutions="allDigievolutionsNames"
             :derivative-parameter="derivativeParameter"
-            @select-evolution="handleSelectNode"
+            @select-digievolution="handleSelectNode"
           />
         </div>
 

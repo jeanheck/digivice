@@ -7,7 +7,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "select", name: string): void;
+  (e: "select-digievolution", name: string): void;
 }>();
 
 const searchInput = ref<HTMLInputElement | null>(null);
@@ -58,7 +58,7 @@ const handleBlur = () => {
 };
 
 const handleSearchSelect = (name: string) => {
-  emit("select", name);
+  emit("select-digievolution", name);
   searchInput.value?.blur();
 };
 </script>

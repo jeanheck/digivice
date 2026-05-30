@@ -13,7 +13,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "select-node", name: string): void;
+  (e: "select-digievolution", name: string): void;
 }>();
 
 const treeViewModel = ref(DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId, props.digimonName));
@@ -61,7 +61,7 @@ const families = computed(() => {
                 :is-selected="selectedNodeName === node.name"
                 class="shrink-0"
                 :data-node-name="node.name"
-                @select="emit('select-node', node.name)"
+                @select="emit('select-digievolution', node.name)"
               />
               <div v-if="nodeIndex < branch.length - 1" class="connector">
                 <div class="connector-line">
@@ -84,7 +84,7 @@ const families = computed(() => {
                 :is-selected="selectedNodeName === node.name"
                 class="shrink-0"
                 :data-node-name="node.name"
-                @select="emit('select-node', node.name)"
+                @select="emit('select-digievolution', node.name)"
               />
               <div v-if="nodeIndex < family.nodesBeforeFork.length - 1" class="connector">
                 <div class="connector-line">
@@ -108,7 +108,7 @@ const families = computed(() => {
                   :digimon-name="digimonName"
                   :is-selected="selectedNodeName === node.name"
                   :data-node-name="node.name"
-                  @select="emit('select-node', node.name)"
+                  @select="emit('select-digievolution', node.name)"
                 />
                 <div v-if="nodeIndex < branch.length - 1" class="connector">
                   <div class="connector-line">

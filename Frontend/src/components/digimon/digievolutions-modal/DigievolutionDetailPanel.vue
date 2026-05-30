@@ -17,8 +17,8 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'select-evolution', name: string): void
-}>()
+  (e: "select-digievolution", name: string): void;
+}>();
 
 const { t, getLocalized } = useLocalization()
 
@@ -133,7 +133,7 @@ const moveTypeTooltip = (event: MouseEvent) => {
             
             <div class="flex flex-wrap gap-2">
                 <button v-for="reqEvo in reqEvolutions" :key="reqEvo"
-                      @click="emit('select-evolution', reqEvo)"
+                      @click="emit("select-digievolution", reqEvo)"
                       class="cursor-pointer hover:bg-indigo-700/50 transition-colors text-[10px] px-2 py-1.5 bg-indigo-950/30 text-indigo-200 border border-indigo-900/40 rounded font-cyber flex items-center">
                     {{ getLocalized(reqEvo) }}
                 </button>
@@ -200,7 +200,7 @@ const moveTypeTooltip = (event: MouseEvent) => {
             </div>
             <div class="flex flex-wrap gap-2">
                 <button v-for="deriv in derivatives" :key="deriv"
-                      @click="emit('select-evolution', deriv)"
+                      @click="emit("select-digievolution", deriv)"
                       class="cursor-pointer hover:bg-indigo-700/50 transition-colors text-[10px] px-2 py-1.5 bg-indigo-950/30 text-indigo-200 border border-indigo-900/40 rounded font-cyber flex items-center">
                     {{ getLocalized(deriv) }}
                 </button>
