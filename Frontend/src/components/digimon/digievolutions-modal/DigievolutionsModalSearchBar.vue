@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 
 const props = defineProps<{
-  allEvolutions: string[];
+  allDigievolutionsNames: string[];
 }>();
 
 const emit = defineEmits<{
@@ -12,14 +12,14 @@ const emit = defineEmits<{
 const searchQuery = ref("");
 const showDropdown = ref(false);
 
-const filteredEvolutions = computed(() => {
+const filteredDigievolutions = computed(() => {
   const query = searchQuery.value.toLowerCase();
   if (!query) {
     return [];
   }
 
-  return props.allEvolutions.filter((evolution) => {
-    return evolution.toLowerCase().includes(query);
+  return props.allDigievolutionsNames.filter((digievolution) => {
+    return digievolution.toLowerCase().includes(query);
   });
 });
 
@@ -47,16 +47,16 @@ const handleBlur = () => {
       @blur="handleBlur"
     />
     <div
-      v-if="showDropdown && searchQuery && filteredEvolutions.length > 0"
+      v-if="showDropdown && searchQuery && filteredDigievolutions.length > 0"
       class="absolute top-full left-0 right-0 mt-1 bg-[#001122] border border-[#0055ff]/50 rounded shadow-[0_4px_12px_rgba(0,119,255,0.2)] max-h-48 overflow-y-auto custom-scroll z-50 flex flex-col"
     >
       <div
-        v-for="evolution in filteredEvolutions"
-        :key="evolution"
+        v-for="digievolution in filteredDigievolutions"
+        :key="digievolution"
         class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors font-cyber border-b last:border-b-0 border-[#0055ff]/20"
-        @click.stop="handleSearchSelect(evolution)"
+        @click.stop="handleSearchSelect(digievolution)"
       >
-        {{ evolution }}
+        {{ digievolution }}
       </div>
     </div>
   </div>
