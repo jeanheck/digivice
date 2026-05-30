@@ -2,24 +2,24 @@
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import type { Digimon } from "@/models";
-import { DigievolutionsGraph } from "@/logic/digievolutions-graph/digievolutions-graph";
-import type { DigievolutionsTreeFamilyNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree.viewmodel";
+import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
+import type { DigievolutionTreeNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree-node.viewmodel";
 import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
 
 const props = defineProps<{
-  node: DigievolutionsTreeFamilyNodeViewModel;
+  node: DigievolutionTreeNodeViewModel;
   digimon: Digimon;
   isSelected?: boolean;
   digimonName: string;
 }>();
 
 const emit = defineEmits<{
-  (e: 'select'): void
-}>()
+  (e: "select"): void;
+}>();
 
 const isUnlocked = computed(() => {
-    return DigievolutionsGraph.checkRequirements(props.digimon, props.node)
-})
+    return DigievolutionsModalTreePresenter.checkRequirements(props.digimon, props.node);
+});
 
 const getRequirementText = (requirement: DigimonDigievolutionRequirementViewModel) => {
     switch (requirement.type) {

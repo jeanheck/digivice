@@ -2,11 +2,11 @@
 import { computed, watch, ref, nextTick } from "vue";
 import type { Digimon } from "@/models/digimon";
 import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
-import type { DigievolutionsTreeFamilyViewModel } from "@/viewmodels/digievolution/digievolution-tree.viewmodel";
+import type { DigievolutionTreeFamilyViewModel } from "@/viewmodels/digievolution/digievolution-tree-family.viewmodel";
 import DigievolutionTreeNode from "./DigievolutionTreeNode.vue";
 
 const props = defineProps<{
-  rookieName: string;
+  digimonName: string;
   digimon: Digimon;
   digimonId: number;
   selectedNodeName?: string;
@@ -16,13 +16,13 @@ const emit = defineEmits<{
   (e: "select-node", name: string): void;
 }>();
 
-const treeViewModel = ref(DigievolutionsModalTreePresenter.getDigievolutionsTreeViewModel(props.digimonId, props.rookieName));
+const treeViewModel = ref(DigievolutionsModalTreePresenter.getDigievolutionsTreeViewModel(props.digimonId, props.digimonName));
 
 const initTreeViewModel = () => {
-  treeViewModel.value = DigievolutionsModalTreePresenter.getDigievolutionsTreeViewModel(props.digimonId, props.rookieName);
+  treeViewModel.value = DigievolutionsModalTreePresenter.getDigievolutionsTreeViewModel(props.digimonId, props.digimonName);
 };
 
-watch(() => props.rookieName, () => initTreeViewModel(), { immediate: true });
+watch(() => props.digimonName, () => initTreeViewModel(), { immediate: true });
 
 watch(() => props.digimonId, () => initTreeViewModel());
 
@@ -37,8 +37,8 @@ watch(() => props.selectedNodeName, (name) => {
   });
 });
 
-const hasBranching = (family: DigievolutionsTreeFamilyViewModel): boolean => {
-  return family.sharedPrefixNodes.length > 0 && family.branchPaths.length > 1;
+const hasBranching = (family: DigievolutionTreeFamilyViewModel): boolean => {
+  return family.nodesBeforeFork.length > 0 && family.branchs.length > 1;
 };
 
 const families = computed(() => {
@@ -51,19 +51,19 @@ const families = computed(() => {
     <template v-for="(family, familyIndex) in families" :key="family.familyKey">
 
       <div v-if="!hasBranching(family)" class="family-row">
-        <template v-for="(branchPath, branchIndex) in family.branchPaths" :key="branchIndex">
+        <template v-for="(branch, branchIndex) in family.branchs" :key="branchIndex">
           <div class="branch-row">
-            <template v-for="(node, nodeIndex) in branchPath" :key="node.name">
+            <template v-for="(node, nodeIndex) in branch" :key="node.name">
               <DigievolutionTreeNode
                 :node="node"
                 :digimon="digimon"
-                :digimon-name="rookieName"
+                :digimon-name="digimonName"
                 :is-selected="selectedNodeName === node.name"
                 class="shrink-0"
                 :data-node-name="node.name"
                 @select="emit('select-node', node.name)"
               />
-              <div v-if="nodeIndex < branchPath.length - 1" class="connector">
+              <div v-if="nodeIndex < branch.length - 1" class="connector">
                 <div class="connector-line">
                   <div class="connector-arrow"></div>
                 </div>
@@ -76,17 +76,17 @@ const families = computed(() => {
       <div v-else class="family-row branching">
         <div class="branch-layout">
           <div class="shared-prefix">
-            <template v-for="(node, nodeIndex) in family.sharedPrefixNodes" :key="node.name">
+            <template v-for="(node, nodeIndex) in family.nodesBeforeFork" :key="node.name">
               <DigievolutionTreeNode
                 :node="node"
                 :digimon="digimon"
-                :digimon-name="rookieName"
+                :digimon-name="digimonName"
                 :is-selected="selectedNodeName === node.name"
                 class="shrink-0"
                 :data-node-name="node.name"
                 @select="emit('select-node', node.name)"
               />
-              <div v-if="nodeIndex < family.sharedPrefixNodes.length - 1" class="connector">
+              <div v-if="nodeIndex < family.nodesBeforeFork.length - 1" class="connector">
                 <div class="connector-line">
                   <div class="connector-arrow"></div>
                 </div>
@@ -100,17 +100,17 @@ const families = computed(() => {
           </div>
 
           <div class="branch-suffixes">
-            <div v-for="(branchPath, branchIndex) in family.branchPaths" :key="branchIndex" class="branch-row">
-              <template v-for="(node, nodeIndex) in branchPath" :key="node.name">
+            <div v-for="(branch, branchIndex) in family.branchs" :key="branchIndex" class="branch-row">
+              <template v-for="(node, nodeIndex) in branch" :key="node.name">
                 <DigievolutionTreeNode
                   :node="node"
                   :digimon="digimon"
-                  :digimon-name="rookieName"
+                  :digimon-name="digimonName"
                   :is-selected="selectedNodeName === node.name"
                   :data-node-name="node.name"
                   @select="emit('select-node', node.name)"
                 />
-                <div v-if="nodeIndex < branchPath.length - 1" class="connector">
+                <div v-if="nodeIndex < branch.length - 1" class="connector">
                   <div class="connector-line">
                     <div class="connector-arrow"></div>
                   </div>

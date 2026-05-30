@@ -86,7 +86,7 @@ const allEvolutions = computed(() => {
     <div class="flex flex-1 overflow-hidden min-h-0">
       <div class="w-[75%] h-full border-r border-[#0055ff]/30 relative">
         <DigievolutionsModalTree
-          :rookie-name="digimonName"
+          :digimon-name="digimonName"
           :digimon="digimon"
           :digimon-id="digimonId"
           :selected-node-name="selectedEvolutionName"
