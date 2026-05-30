@@ -115,21 +115,6 @@ export class DigievolutionsGraph {
         return chains
     }
 
-    static getAllEvolutions(digimonId: number): { name: string, requirements: EvolutionRequirement[] }[] {
-        //const rawData = DigivolvingRequirementsTable as unknown as Record<string, Record<string, EvolutionRequirement[]>>
-        const rawData = DigimonRepository.getDigievolutionsById(digimonId);
-        
-        return Object.keys(rawData).map(evoName => ({
-            name: evoName,
-            requirements: rawData[evoName]!.map(requirement => ({
-                Type: requirement.type,
-                Value: requirement.value,
-                Digievolution: requirement.digievolution,
-                Attribute: requirement.attribute
-            }))
-        }))
-    }
-
     static checkRequirements(
         digimon: import("@/models").Digimon,
         node: { requirements: import("@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel").DigimonDigievolutionRequirementViewModel[] }
