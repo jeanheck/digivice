@@ -31,16 +31,7 @@ const getRequirementText = (requirement: DigimonDigievolutionRequirementViewMode
 };
 
 const isReqMet = (requirement: DigimonDigievolutionRequirementViewModel) => {
-    switch (requirement.type) {
-        case "DigimonLevel": return props.digimon.level >= requirement.value;
-        case "Attribute": {
-            const attribute = props.digimon.attributes[requirement.attribute?.toLowerCase() as keyof typeof props.digimon.attributes];
-            return attribute >= requirement.value;
-        }
-        case "DigievolutionLevel":
-            return false;
-        default: return false;
-    }
+    return DigievolutionsModalTreePresenter.isRequirementMet(props.digimon, requirement);
 };
 
 const nodeAvatarUrl = computed(() => {

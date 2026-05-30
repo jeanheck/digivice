@@ -100,6 +100,24 @@ export class DigievolutionsModalTreePresenter {
         };
     }
 
+    public static isRequirementMet(
+        digimon: Digimon,
+        requirement: DigimonDigievolutionRequirementViewModel
+    ): boolean {
+        switch (requirement.type) {
+            case "DigimonLevel":
+                return digimon.level >= requirement.value;
+            case "Attribute": {
+                const attribute = digimon.attributes[requirement.attribute?.toLowerCase() as keyof Attributes];
+                return attribute >= requirement.value;
+            }
+            case "DigievolutionLevel":
+                return false;
+            default:
+                return false;
+        }
+    }
+
     public static checkRequirements(
         digimon: Digimon,
         node: { requirements: DigimonDigievolutionRequirementViewModel[] }
@@ -109,21 +127,8 @@ export class DigievolutionsModalTreePresenter {
         }
 
         for (const requirement of node.requirements) {
-            switch (requirement.type) {
-                case "DigimonLevel":
-                    if (digimon.level < requirement.value) {
-                        return false;
-                    }
-                    break;
-                case "Attribute": {
-                    const attribute = digimon.attributes[requirement.attribute?.toLowerCase() as keyof Attributes];
-                    if (attribute < requirement.value) {
-                        return false;
-                    }
-                    break;
-                }
-                case "DigievolutionLevel":
-                    return false;
+            if (!this.isRequirementMet(digimon, requirement)) {
+                return false;
             }
         }
 
