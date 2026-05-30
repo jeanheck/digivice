@@ -3,11 +3,11 @@ import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import type { Digimon } from "@/models";
 import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
-import type { DigievolutionTreeNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree-node.viewmodel";
+import type { DigievolutionTreeFamilyNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree-family-node.viewmodel";
 import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
 
 const props = defineProps<{
-  node: DigievolutionTreeNodeViewModel;
+  node: DigievolutionTreeFamilyNodeViewModel;
   digimon: Digimon;
   isSelected?: boolean;
   digimonName: string;

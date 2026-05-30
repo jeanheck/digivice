@@ -16,10 +16,10 @@ const emit = defineEmits<{
   (e: "select-node", name: string): void;
 }>();
 
-const treeViewModel = ref(DigievolutionsModalTreePresenter.getDigievolutionsTreeViewModel(props.digimonId, props.digimonName));
+const treeViewModel = ref(DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId, props.digimonName));
 
 const initTreeViewModel = () => {
-  treeViewModel.value = DigievolutionsModalTreePresenter.getDigievolutionsTreeViewModel(props.digimonId, props.digimonName);
+  treeViewModel.value = DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId, props.digimonName);
 };
 
 watch(() => props.digimonName, () => initTreeViewModel(), { immediate: true });
@@ -48,7 +48,7 @@ const families = computed(() => {
 
 <template>
   <div class="family-tree-container">
-    <template v-for="(family, familyIndex) in families" :key="family.familyKey">
+    <template v-for="(family, familyIndex) in families" :key="family.key">
 
       <div v-if="!hasBranching(family)" class="family-row">
         <template v-for="(branch, branchIndex) in family.branchs" :key="branchIndex">
