@@ -1,16 +1,15 @@
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import { DigimonRepository } from "@/repositories/digimon.repository";
 import type { DigievolutionTreeRaw } from "@/repositories/tables/raws/digievolution/digievolution-tree.raw";
-import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
 import type { DigievolutionTreeNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree-node.viewmodel";
 import type { DigievolutionsTreeViewModel } from "@/viewmodels/digievolution/digievolution-tree.viewmodel";
 
 export class DigievolutionsModalTreePresenter {
-    public static getDigievolutionsTreeViewModel(digimonId: number, rookieFamilyKey: string): DigievolutionsTreeViewModel {
+    public static getDigievolutionsTreeViewModel(digimonId: number, digimonName: string): DigievolutionsTreeViewModel {
         const digievolutionTreeTable = DigievolutionRepository.getDigievolutionTree();
         const sortedFamilyKeys = DigievolutionsModalTreePresenter.sortFamilyKeys(
             Object.keys(digievolutionTreeTable),
-            rookieFamilyKey
+            digimonName
         );
 
         const digievolutionsTreeViewModel: DigievolutionsTreeViewModel = {};
@@ -25,18 +24,16 @@ export class DigievolutionsModalTreePresenter {
         return digievolutionsTreeViewModel;
     }
 
-    private static sortFamilyKeys(familyKeys: string[], rookieFamilyKey: string): string[] {
-        return [...familyKeys].sort((firstFamilyKey, secondFamilyKey) => {
-            if (firstFamilyKey === rookieFamilyKey) {
-                return -1;
-            }
+    private static sortFamilyKeys(familyKeys: string[], digimonName: string): string[] {
+        const otherFamilyKeys = familyKeys.filter((familyKey) => {
+            return familyKey !== digimonName;
+        });
 
-            if (secondFamilyKey === rookieFamilyKey) {
-                return 1;
-            }
-
+        otherFamilyKeys.sort((firstFamilyKey, secondFamilyKey) => {
             return firstFamilyKey.localeCompare(secondFamilyKey);
         });
+
+        return [digimonName, ...otherFamilyKeys];
     }
 
     private static buildDigievolutionTreeNodeViewModel(
