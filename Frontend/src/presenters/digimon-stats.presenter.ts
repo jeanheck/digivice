@@ -1,8 +1,10 @@
-import { DigimonStatusCalculator } from "@/logic/DigimonStatusCalculator";
 import type { Digimon } from "@/models";
 import type { Equipments } from "@/models/equipments";
 import { Stat } from "@/models/stat";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
+import { EquipmentRepository } from "@/repositories/equipment.repository";
+import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
+import { MathUtils } from "@/utils/MathUtils";
 import type { AttributesViewModel } from "@/viewmodels/digimon/attributes.viewmodel";
 import type { DigimonStatsViewModel } from "@/viewmodels/digimon/digimon-stats.viewmodel";
 import type { ResistancesViewModel } from "@/viewmodels/digimon/resistances.viewmodel";
@@ -125,13 +127,29 @@ export class DigimonStatsPresenter {
         };
     }
 
+    private static calculateBonusFromEquipaments(type: Stat, rawEquipments: EquipmentRaw[]): number {
+        const lowerCaseType = type.toLowerCase();
+        const attributesRaw = rawEquipments
+            .flatMap(rawEquipment => rawEquipment.attributes)
+            .filter(attribute => attribute.attribute.toLowerCase() === lowerCaseType);
+
+        return MathUtils.Sum(attributesRaw.map(attribute => {
+            return Number(`${attribute.type}${attribute.value}`);
+        }));
+    }
+
+    private static calculateBonusFromRawEquipments(type: Stat, equipments: Equipments): number {
+        const rawEquipments = EquipmentRepository.getRawEquipmentsByIds(equipments);
+        return DigimonStatsPresenter.calculateBonusFromEquipaments(type, rawEquipments);
+    }
+
     private static createStatViewModel(
         stat: Stat,
         fromDigimon: number,
         fromDigievolution: number,
         equipments: Equipments
     ): StatViewModel {
-        const fromEquipaments = DigimonStatusCalculator.calculateBonusFromRawEquipments(stat, equipments);
+        const fromEquipaments = DigimonStatsPresenter.calculateBonusFromRawEquipments(stat, equipments);
 
         return {
             fromDigimon,
