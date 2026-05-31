@@ -17,12 +17,55 @@ Por favor, siga estas práticas rigorosamente ao trabalhar neste projeto em qual
 ## Frontend: regras relacionadas ao frontend
 
 1. **Ponto e Vírgula**: Use sempre ponto e vírgula (`;`) no final das instruções/linhas.
-2. **Converters**: Ao criar um conversor, o padrão do nome da classe deve ser `{AlgumaCoisa}Converter` (PascalCase), mas o nome do arquivo deve ser `{alguma-coisa}.converter.ts` (kebab-case com sufixo `.converter.ts`). A única função pública da classe deve ser uma função estática chamada `convert` (salvo exceções que também tenham funções auxiliares privadas).
+2. **Converters**: Ao criar um conversor, o padrão do nome da classe deve ser `{AlgumaCoisa}Converter` (PascalCase), mas o nome do arquivo deve ser `{alguma-coisa}.converter.ts` (kebab-case com sufixo `.converter.ts`). A única função pública da classe deve ser uma função estática chamada `convert` (salvo exceções que também tenham funções auxiliares privadas). No frontend existem **dois contextos** de converter, com pastas distintas:
+   - **`events/converters/`** — pipeline em tempo real: `DTO` (SignalR) → `Model` (Pinia).
+   - **`presenters/converter/`** — dados estáticos (JSON/tabelas): `Raw` → `ViewModel`. Ver seção *Dados estáticos* abaixo.
 3. **Nomenclatura de DTOs**: Interfaces e classes DTO devem usar PascalCase (ex: `PlayerDTO`), mas os respectivos arquivos devem usar kebab-case com sufixo `.dto.ts` (ex: `player.dto.ts`). O mesmo se aplica a pastas e subpastas de eventos, que devem usar kebab-case (ex: `journals/` e `quests/` em vez de `Journals/` e `Quests/`).
 4. **Arquivos Individuais para ViewModels**: Prefira um único tipo por arquivo (interface, type alias ou classe). O nome do arquivo deve usar kebab-case com sufixo `.viewmodel.ts` (ex: `digievolution-tree-node.viewmodel.ts` para `DigievolutionTreeNodeViewModel`). Evite agrupar várias interfaces ou classes no mesmo arquivo.
 5. **Respostas Concisas**: Sempre forneça respostas concisas, curtas e diretas. A única exceção é se o usuário pedir explicitamente um detalhamento completo de algum ponto.
 6. **Caminhos de Importação**: Prefira importar arquivos utilizando o caractere `@` para definir o caminho raiz (ex: `@/models/` em vez de `../../models/`), mantendo a consistência e legibilidade.
 7. **Aspas Duplas**: Dê preferência ao uso de aspas duplas (`"`) em strings sempre que houver a opção (ao invés de aspas simples `'`), mantendo a padronização estética do código.
+
+### Dados estáticos (Repository, Presenter, Converter, ViewModel)
+
+Fluxo alvo para dados estáticos (JSON, tabelas locais). A migração dos presenters existentes para esse padrão é **incremental** — presenter por presenter.
+
+#### Camadas (responsabilidade única)
+
+| Camada | Responsabilidade |
+|--------|------------------|
+| **Repository** | Acesso aos dados estáticos. Retorna exclusivamente tipos **Raw** (ex.: `EnemyRaw`, `LocationRaw`). |
+| **Converter** (`presenters/converter/`) | Transformação **pura** e stateless: `Raw` → `ViewModel`. Não chama repository, não conhece componente nem regra de tela. |
+| **Presenter** | Orquestra o caso de uso da UI: chama repository(s), repassa o Raw ao converter quando necessário, agrega listas, aplica regras de tela (ex.: retornar `[]` quando não há dado). **Não monta ViewModel inline** quando existir transformação — delega ao converter. |
+| **ViewModel** | Contrato exposto ao componente. Tipos em arquivos `{nome}.viewmodel.ts` (kebab-case), um tipo por arquivo. |
+
+#### Fluxo padrão
+
+```
+Component → Presenter → Repository → Raw
+                ↓
+            Converter → ViewModel
+```
+
+Referências atuais de pass-through explícito (Raw estruturalmente equivalente ao ViewModel): `map.presenter.ts`, `enemy-modal.presenter.ts`.
+
+#### Raw e ViewModel estruturalmente equivalentes
+
+Quando o **Raw** e o **ViewModel** são equivalentes em estrutura (mesmos campos, sem transformação), **não é necessário** criar um converter dedicado. O presenter pode repassar o retorno do repository com conversão de tipo **explícita** no retorno (pass-through tipado).
+
+Mesmo nesses casos, **Raw** e **ViewModel** permanecem como tipos distintos — a separação de contrato é intencional, mesmo que hoje sejam espelhados.
+
+#### Quando criar converter
+
+Criar converter em `presenters/converter/` quando houver **qualquer transformação ou projeção** de Raw para ViewModel (subset de campos, campos derivados, enriquecimento, etc.). Ex.: `EnemyResumedViewModel` (`id` + subset de `EnemyRaw`) exige converter; `EnemyViewModel` espelhando `EnemyRaw` não.
+
+O converter pode receber parâmetros além do Raw quando o ViewModel depende de contexto externo ao objeto (ex.: `enemyId` + `EnemyRaw` → `EnemyResumedViewModel`).
+
+#### Proibido em código novo ou refatorado (dados estáticos)
+
+- **Converter** que chama repository ou contém lógica de orquestração de tela.
+- **Presenter** que monta ViewModel inline quando a transformação justifica um converter.
+- **Repository** que retorna ViewModel ou monta dados para apresentação.
 
 ### Tooltips (fluxo padrão do Frontend)
 

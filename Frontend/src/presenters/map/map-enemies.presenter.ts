@@ -1,16 +1,13 @@
 import { EnemyRepository } from "@/repositories/enemy.repository";
+import { EnemyResumedConverter } from "@/presenters/converter/enemy-resumed.converter";
 import type { EnemyResumedViewModel } from "@/viewmodels/enemy/enemy-resumed.viewmodel";
 
 export class MapEnemiesPresenter {
   public static getResumedEnemiesByIds(enemyIds: string[]): EnemyResumedViewModel[] {
     return enemyIds.map((enemyId) => {
-      const enemy = EnemyRepository.getEnemyById(enemyId);
+      const enemyRaw = EnemyRepository.getEnemyById(enemyId);
 
-      return {
-        id: enemyId,
-        name: enemy.name,
-        boss: enemy.boss,
-      };
+      return EnemyResumedConverter.convert(enemyId, enemyRaw);
     });
   }
 }
