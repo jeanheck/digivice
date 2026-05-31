@@ -11,7 +11,13 @@ export class MapPresenter {
 
   public static getResumedEnemiesByIds(enemyIds: string[]): EnemyResumedViewModel[] {
     return enemyIds.map((enemyId) => {
-      return EnemyRepository.getResumedEnemyById(enemyId);
+      const enemy = EnemyRepository.getEnemyById(enemyId);
+
+      return {
+        id: enemyId,
+        name: enemy.name,
+        boss: enemy.boss,
+      };
     });
   }
 
