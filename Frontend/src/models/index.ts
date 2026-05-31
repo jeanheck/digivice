@@ -2,7 +2,6 @@ export * from './attributes';
 export * from './digievolution-slot';
 export * from './digievolution';
 export * from './digimon-slot';
-export * from './digimon-status-type';
 export * from './digimon';
 export * from './equipments-attributes';
 export * from './equipments';

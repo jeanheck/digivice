@@ -1,7 +1,7 @@
-import type { DigimonStatusType } from './digimon-status-type';
+import type { Stat } from './stat';
 
 export interface EquipmentsAttributes {
-    attribute: DigimonStatusType;
+    attribute: Stat;
     type: string;
     value: number;
 }
