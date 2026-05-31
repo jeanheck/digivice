@@ -1,52 +1,46 @@
 import type { Attributes } from "@/models/attributes";
-import { Stat } from "@/models/stat";
 import { StatConverter } from "@/presenters/converter/stat.converter";
-import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
 import type { AttributesViewModel } from "@/viewmodels/digimon/attributes.viewmodel";
 import type { DigievolutionAttributesViewModel } from "@/viewmodels/digievolution/digievolution-attributes.viewmodel";
+
+export type AttributesEquipmentBonuses = Record<keyof Attributes, number>;
 
 export class AttributesConverter {
     public static convert(
         attributes: Attributes,
         digievolutionAttributes: DigievolutionAttributesViewModel | null,
-        rawEquipments: EquipmentRaw[]
+        equipmentBonuses: AttributesEquipmentBonuses
     ): AttributesViewModel {
         return {
             strength: StatConverter.convert(
-                Stat.strength,
                 attributes.strength,
-                digievolutionAttributes?.strength ?? 0,
-                rawEquipments
+                equipmentBonuses.strength,
+                digievolutionAttributes?.strength ?? 0
             ),
             defense: StatConverter.convert(
-                Stat.defense,
                 attributes.defense,
-                digievolutionAttributes?.defense ?? 0,
-                rawEquipments
+                equipmentBonuses.defense,
+                digievolutionAttributes?.defense ?? 0
             ),
             spirit: StatConverter.convert(
-                Stat.spirit,
                 attributes.spirit,
-                digievolutionAttributes?.spirit ?? 0,
-                rawEquipments
+                equipmentBonuses.spirit,
+                digievolutionAttributes?.spirit ?? 0
             ),
             wisdom: StatConverter.convert(
-                Stat.wisdom,
                 attributes.wisdom,
-                digievolutionAttributes?.wisdom ?? 0,
-                rawEquipments
+                equipmentBonuses.wisdom,
+                digievolutionAttributes?.wisdom ?? 0
             ),
             speed: StatConverter.convert(
-                Stat.speed,
                 attributes.speed,
-                digievolutionAttributes?.speed ?? 0,
-                rawEquipments
+                equipmentBonuses.speed,
+                digievolutionAttributes?.speed ?? 0
             ),
             charisma: StatConverter.convert(
-                Stat.charisma,
                 attributes.charisma,
-                digievolutionAttributes?.charisma ?? 0,
-                rawEquipments
+                equipmentBonuses.charisma,
+                digievolutionAttributes?.charisma ?? 0
             ),
         };
     }
