@@ -29,7 +29,7 @@ export class FooterPresenter {
         const totalBonusFromEquipments = MathUtils.Sum(digimons.map((digimon) => {
             const equipmentIds = EquipmentsHelper.getUniqueEquipmentIds(digimon.equipments);
             const rawEquipments = EquipmentRepository.getEquipmentsByIds(equipmentIds);
-            return FooterPresenter.calculateBonusFromEquipaments(
+            return this.calculateBonusFromEquipaments(
                 Stat.charisma,
                 rawEquipments
             );

@@ -1,6 +1,6 @@
 import { EquipmentSlotKey } from "@/constants/equipment-slot-key";
 import type { Equipments } from "@/models";
-import type { DigimonStatusType } from "@/models/digimon-status-type";
+import { EquipmentConverter } from "@/presenters/converter/equipment.converter";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
@@ -14,15 +14,6 @@ export class DigimonEquipmentsPresenter {
 
         const equipmentRaw = EquipmentRepository.getEquipmentById(equipmentId);
 
-        return {
-            id: equipmentId,
-            type: equipmentRaw.type,
-            attributes: equipmentRaw.attributes.map((equipmentAttributeRaw) => ({
-                attribute: equipmentAttributeRaw.attribute as DigimonStatusType,
-                type: equipmentAttributeRaw.type,
-                value: equipmentAttributeRaw.value,
-            })),
-            equipableDigimon: equipmentRaw.equipableDigimon,
-        };
+        return EquipmentConverter.convert(equipmentId, equipmentRaw);
     }
 }

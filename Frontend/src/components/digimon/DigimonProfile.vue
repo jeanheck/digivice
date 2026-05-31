@@ -5,7 +5,7 @@ import DigimonIcon from "@/components/digimon/DigimonIcon.vue";
 import DigimonVitals from "@/components/digimon/DigimonVitals.vue";
 import type { Digimon } from "@/models";
 import { ProgressBarVariant } from "@/constants/progress-bar-variant";
-import { DigimonPresenter } from "@/presenters/digimon.presenter";
+import { DigimonProfilePresenter } from "@/presenters/digimon-profile.presenter";
 
 const props = defineProps<{
   digimon: Digimon;
@@ -13,15 +13,15 @@ const props = defineProps<{
 }>();
 
 const digimonName = computed(() => {
-  return DigimonPresenter.getDigimonNameById(props.digimonId);
+  return DigimonProfilePresenter.getDigimonNameById(props.digimonId);
 });
 
 const experienceToReachNextLevel = computed(() => {
-  return DigimonPresenter.getRequiredExperienceForNextLevel(props.digimonId, props.digimon.level);
+  return DigimonProfilePresenter.getRequiredExperienceForNextLevel(props.digimonId, props.digimon.level);
 });
 
 const experiencePercentageToReachNextLevel = computed(() => {
-  return DigimonPresenter.getProgressPercentageForNextLevel(props.digimonId, props.digimon.level, props.digimon.experience);
+  return DigimonProfilePresenter.getProgressPercentageForNextLevel(props.digimonId, props.digimon.level, props.digimon.experience);
 });
 </script>
 
