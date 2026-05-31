@@ -92,14 +92,14 @@ const equipmentNote = computed(() => {
       <div class="mt-1 pt-1 border-t border-[#0033aa]/50 flex flex-col gap-1">
         <span class="text-gray-400 text-[9px] uppercase tracking-widest leading-none">{{ $t("digimon.equipableBy") }}</span>
         <span class="text-gray-200 text-[11px] leading-tight">
-          <template v-if="!equipment.equipableDigimon || equipment.equipableDigimon.length === 0">
+          <template v-if="equipment.equipableDigimonIds.length === 0">
             {{ $t("digimon.states.none") }}
           </template>
-          <template v-else-if="equipment.equipableDigimon.length === 8">
+          <template v-else-if="equipment.equipableDigimonIds.length === 8">
             <span class="text-purple-300 font-bold uppercase tracking-wider text-[10px]">{{ $t("digimon.allDigimon") }}</span>
           </template>
           <template v-else>
-            {{ equipment.equipableDigimon.join(", ") }}
+            {{ equipment.equipableDigimonNames.join(", ") }}
           </template>
         </span>
       </div>

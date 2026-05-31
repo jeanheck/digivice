@@ -12,7 +12,8 @@ export class EquipmentConverter {
                 type: equipmentAttributeRaw.type,
                 value: equipmentAttributeRaw.value,
             })),
-            equipableDigimon: equipmentRaw.equipableDigimon,
+            equipableDigimonIds: equipmentRaw.equipableDigimon.map((digimonId) => Number(digimonId)),
+            equipableDigimonNames: [],
         };
     }
 }
