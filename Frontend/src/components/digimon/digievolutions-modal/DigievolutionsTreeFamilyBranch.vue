@@ -7,11 +7,11 @@ defineProps<{
   nodes: DigievolutionTreeFamilyNodeViewModel[];
   digimon: Digimon;
   digimonName: string;
-  selectedDigievolutionName?: string;
+  selectedDigievolutionId?: number;
 }>();
 
 const emit = defineEmits<{
-  (e: "select-digievolution", name: string): void;
+  (e: "select-digievolution-id", digievolutionId: number): void;
 }>();
 </script>
 
@@ -21,10 +21,10 @@ const emit = defineEmits<{
       :node="node"
       :digimon="digimon"
       :digimon-name="digimonName"
-      :is-selected="selectedDigievolutionName === node.name"
+      :is-selected="selectedDigievolutionId === node.id"
       class="shrink-0"
-      :data-node-name="node.name"
-      @select="emit('select-digievolution', node.name)"
+      :data-node-id="node.id"
+      @select="emit('select-digievolution-id', node.id)"
     />
     <div v-if="nodeIndex < nodes.length - 1" class="connector">
       <div class="connector-line">

@@ -31,25 +31,40 @@ const digimonName = computed(() => {
 });
 
 const selectedEvolution = ref<DigimonDigievolutionRequirementViewModel[] | null>(null);
-const selectedDigievolutionName = ref<string | undefined>(undefined);
+const selectedDigievolutionId = ref<number | undefined>(undefined);
+
+const selectedDigievolutionName = computed(() => {
+  if (selectedDigievolutionId.value === undefined) {
+    return undefined;
+  }
+
+  return DigievolutionsModalPresenter.getDigievolutionNameById(selectedDigievolutionId.value);
+});
 
 watch(() => props.isOpen, (open) => {
   if (open && props.digimon) {
     selectedEvolution.value = null;
-    selectedDigievolutionName.value = undefined;
+    selectedDigievolutionId.value = undefined;
   }
 });
 
-const handleSelectNode = (digievolutionName: string) => {
-  const requirements = DigievolutionsModalPresenter.getDigievolutionRequirements(props.digimonId, digievolutionName);
+const handleSelectDigievolutionById = (digievolutionId: number) => {
+  const requirements = DigievolutionsModalPresenter.getDigievolutionRequirements(props.digimonId, digievolutionId);
 
-  if (requirements) {
-    selectedEvolution.value = requirements;
-    selectedDigievolutionName.value = digievolutionName;
-  } else if (digievolutionName === digimonName.value) {
+  selectedDigievolutionId.value = digievolutionId;
+  selectedEvolution.value = requirements;
+};
+
+const handleSelectDigievolutionByName = (digievolutionName: string) => {
+  if (digievolutionName === digimonName.value) {
     selectedEvolution.value = null;
-    selectedDigievolutionName.value = undefined;
+    selectedDigievolutionId.value = undefined;
+    return;
   }
+
+  const digievolutionId = DigievolutionsModalPresenter.getDigievolutionIdByName(digievolutionName);
+
+  handleSelectDigievolutionById(digievolutionId);
 };
 
 const derivativeParameter = computed(() => {
@@ -76,7 +91,7 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
         <DigievolutionsModalSearchBar
           :all-digievolutions-names="allDigievolutionsNames"
           :selected-digievolution-name="selectedDigievolutionName"
-          @select-digievolution="handleSelectNode"
+          @select-digievolution="handleSelectDigievolutionByName"
         />
       </div>
     </template>
@@ -87,8 +102,8 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
           :digimon-name="digimonName"
           :digimon="digimon"
           :digimon-id="digimonId"
-          :selected-digievolution-name="selectedDigievolutionName"
-          @select-digievolution="handleSelectNode"
+          :selected-digievolution-id="selectedDigievolutionId"
+          @select-digievolution-id="handleSelectDigievolutionById"
         />
       </div>
 
@@ -96,10 +111,9 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
         <div v-if="selectedEvolution" class="flex-1 flex flex-col p-1">
           <DigievolutionDetailPanel
             :evolution="selectedEvolution"
-            :evolution-name="selectedDigievolutionName"
-            :all-evolutions="allDigievolutionsNames"
+            :digievolution-id="selectedDigievolutionId"
             :derivative-parameter="derivativeParameter"
-            @select-digievolution="handleSelectNode"
+            @select-digievolution="handleSelectDigievolutionByName"
           />
         </div>
 

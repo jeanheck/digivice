@@ -10,18 +10,20 @@ import type { TechniqueViewModel } from "@/viewmodels/digievolution/technique.vi
 export class DigievolutionDetailPanelPresenter {
     public static getDetailPanelViewModel(
         evolution: DigimonDigievolutionRequirementViewModel[],
-        evolutionName: string | undefined,
+        digievolutionId: number | undefined,
         derivativeParameter: DigimonDigievolutionViewModel
     ): DigievolutionDetailPanelViewModel | null {
-        if (!evolutionName) {
+        if (digievolutionId === undefined) {
             return null;
         }
+
+        const evolutionName = DigievolutionRepository.getNameById(digievolutionId);
 
         return {
             evolutionName,
             requirementDigievolutionNames: this.getRequirementDigievolutionNames(evolution),
             derivativeDigievolutionNames: this.getDerivativeDigievolutionNames(derivativeParameter, evolutionName),
-            techniques: this.getTechniquesByEvolutionName(evolutionName),
+            techniques: this.getTechniquesByDigievolutionId(digievolutionId),
         };
     }
 
@@ -50,8 +52,8 @@ export class DigievolutionDetailPanelPresenter {
         });
     }
 
-    private static getTechniquesByEvolutionName(evolutionName: string): TechniqueViewModel[] {
-        const digievolutionTechniquesRaw = DigievolutionRepository.getRawDigievolutionTechniquesByName(evolutionName);
+    private static getTechniquesByDigievolutionId(digievolutionId: number): TechniqueViewModel[] {
+        const digievolutionTechniquesRaw = DigievolutionRepository.getRawDigievolutionTechniquesById(digievolutionId);
 
         if (digievolutionTechniquesRaw.length === 0) {
             return [];

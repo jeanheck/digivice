@@ -10,8 +10,7 @@ import type { DigimonDigievolutionViewModel } from '@/viewmodels/digimon/digimon
 
 const props = defineProps<{
   evolution: DigimonDigievolutionRequirementViewModel[]
-  evolutionName: string | undefined
-  allEvolutions: string[]
+  digievolutionId: number | undefined
   derivativeParameter: DigimonDigievolutionViewModel
 }>()
 
@@ -24,7 +23,7 @@ const { t, getLocalized } = useLocalization()
 const detailPanelViewModel = computed(() => {
   return DigievolutionDetailPanelPresenter.getDetailPanelViewModel(
     props.evolution,
-    props.evolutionName,
+    props.digievolutionId,
     props.derivativeParameter
   );
 });

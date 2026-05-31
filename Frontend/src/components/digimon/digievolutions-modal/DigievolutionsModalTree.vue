@@ -10,24 +10,24 @@ const props = defineProps<{
   digimonName: string;
   digimon: Digimon;
   digimonId: number;
-  selectedDigievolutionName?: string;
+  selectedDigievolutionId?: number;
 }>();
 
 const emit = defineEmits<{
-  (e: "select-digievolution", name: string): void;
+  (e: "select-digievolution-id", digievolutionId: number): void;
 }>();
 
 const familyTreeContainer = ref<HTMLElement | null>(null);
 
 const treeViewModel = DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId);
 
-const scrollSelectedNodeIntoView = (name: string) => {
+const scrollSelectedNodeIntoView = (digievolutionId: number) => {
   const container = familyTreeContainer.value;
   if (!container) {
     return;
   }
 
-  const nodeElement = container.querySelector(`[data-node-name="${CSS.escape(name)}"]`) as HTMLElement | null;
+  const nodeElement = container.querySelector(`[data-node-id="${digievolutionId}"]`) as HTMLElement | null;
   if (!nodeElement) {
     return;
   }
@@ -74,13 +74,13 @@ const scrollSelectedNodeIntoView = (name: string) => {
   container.scrollTo({ top: targetScrollTop, behavior: "smooth" });
 };
 
-watch(() => props.selectedDigievolutionName, (name) => {
-  if (!name) {
+watch(() => props.selectedDigievolutionId, (digievolutionId) => {
+  if (digievolutionId === undefined) {
     return;
   }
 
   nextTick(() => {
-    scrollSelectedNodeIntoView(name);
+    scrollSelectedNodeIntoView(digievolutionId);
   });
 });
 
@@ -101,8 +101,8 @@ const families = computed(() => {
         :branchs="family.branchs"
         :digimon="digimon"
         :digimon-name="digimonName"
-        :selected-digievolution-name="selectedDigievolutionName"
-        @select-digievolution="emit('select-digievolution', $event)"
+        :selected-digievolution-id="selectedDigievolutionId"
+        @select-digievolution-id="emit('select-digievolution-id', $event)"
       />
 
       <DigievolutionsTreeForkFamily
@@ -111,8 +111,8 @@ const families = computed(() => {
         :branchs="family.branchs"
         :digimon="digimon"
         :digimon-name="digimonName"
-        :selected-digievolution-name="selectedDigievolutionName"
-        @select-digievolution="emit('select-digievolution', $event)"
+        :selected-digievolution-id="selectedDigievolutionId"
+        @select-digievolution-id="emit('select-digievolution-id', $event)"
       />
 
       <div v-if="familyIndex < families.length - 1" class="family-separator"></div>

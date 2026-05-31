@@ -8,11 +8,11 @@ defineProps<{
   branchs: DigievolutionTreeFamilyNodeViewModel[][];
   digimon: Digimon;
   digimonName: string;
-  selectedDigievolutionName?: string;
+  selectedDigievolutionId?: number;
 }>();
 
 const emit = defineEmits<{
-  (e: "select-digievolution", name: string): void;
+  (e: "select-digievolution-id", digievolutionId: number): void;
 }>();
 </script>
 
@@ -24,8 +24,8 @@ const emit = defineEmits<{
           :nodes="nodesBeforeFork"
           :digimon="digimon"
           :digimon-name="digimonName"
-          :selected-digievolution-name="selectedDigievolutionName"
-          @select-digievolution="emit('select-digievolution', $event)"
+          :selected-digievolution-id="selectedDigievolutionId"
+          @select-digievolution-id="emit('select-digievolution-id', $event)"
         />
       </div>
 
@@ -44,8 +44,8 @@ const emit = defineEmits<{
             :nodes="branch"
             :digimon="digimon"
             :digimon-name="digimonName"
-            :selected-digievolution-name="selectedDigievolutionName"
-            @select-digievolution="emit('select-digievolution', $event)"
+            :selected-digievolution-id="selectedDigievolutionId"
+            @select-digievolution-id="emit('select-digievolution-id', $event)"
           />
         </div>
       </div>
