@@ -6,7 +6,6 @@ import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import type { DigimonDigievolutionRequirementViewModel } from '@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel';
 import { DigievolutionDetailPanelPresenter } from "@/presenters/digievolutions-modal/digievolution-detail-panel.presenter";
-import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import type { DigimonDigievolutionViewModel } from '@/viewmodels/digimon/digimon-digievolution.viewmodel';
 
 const props = defineProps<{
@@ -22,16 +21,16 @@ const emit = defineEmits<{
 
 const { t, getLocalized } = useLocalization()
 
-const evolutionAvatarUrl = computed(() => {
-  return ImageCatalog.getDigievolutionIconUrl(props.evolutionName ?? null);
+const detailPanelViewModel = computed(() => {
+  return DigievolutionDetailPanelPresenter.getDetailPanelViewModel(
+    props.evolution,
+    props.evolutionName,
+    props.derivativeParameter
+  );
 });
 
-const techniques = computed(() => {
-  if (!props.evolutionName) {
-    return [];
-  }
-
-  return DigievolutionDetailPanelPresenter.getTechniquesByEvolutionName(props.evolutionName);
+const evolutionAvatarUrl = computed(() => {
+  return ImageCatalog.getDigievolutionIconUrl(detailPanelViewModel.value?.evolutionName ?? null);
 });
 
 function elementColor(element: string): string {
@@ -57,24 +56,16 @@ function typeIcon(type: string): string {
 }
 
 const reqEvolutions = computed(() => {
-    return props.evolution
-        .filter(req => req.type === 'DigievolutionLevel')
-        .map(req => req.digievolution!)
-})
+  return detailPanelViewModel.value?.requirementDigievolutionNames ?? [];
+});
 
 const derivatives = computed(() => {
-  const entries = Object.entries(props.derivativeParameter);
+  return detailPanelViewModel.value?.derivativeDigievolutionNames ?? [];
+});
 
-  const matchingEntries = entries.filter(([, requirements]) => {
-    return requirements.some((requirement) => {
-      return requirement.type === "DigievolutionLevel" && requirement.digievolution === props.evolutionName;
-    });
-  });
-
-  return matchingEntries.map(([digievolutionIdKey]) => {
-    return DigievolutionRepository.getNameById(Number(digievolutionIdKey));
-  });
-})
+const techniques = computed(() => {
+  return detailPanelViewModel.value?.techniques ?? [];
+});
 
 const tooltipPlacement = "below" as const;
 const tooltipPosition = useTooltipPosition(150);
@@ -109,7 +100,7 @@ const moveTypeTooltip = (event: MouseEvent) => {
 
             <!-- Pattern Overlay -->
             <h2 class="absolute top-3 left-4 text-lg sm:text-xl font-bold font-cyber text-white tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10">
-                {{ evolutionName }}
+                {{ detailPanelViewModel?.evolutionName }}
             </h2>
         </div>
     </div>
