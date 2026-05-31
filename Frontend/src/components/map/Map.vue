@@ -2,7 +2,7 @@
 import MapLocation from "./MapLocation.vue";
 import MapEnemies from "./MapEnemies.vue";
 import { computed } from "vue";
-import { MapPresenter } from "@/presenters/map.presenter.ts";
+import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 
 const props = defineProps<{
   locationId: string | null;

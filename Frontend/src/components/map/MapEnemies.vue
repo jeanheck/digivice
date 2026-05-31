@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import EnemyModal from "./enemy-modal/EnemyModal.vue";
-import { MapPresenter } from "@/presenters/map.presenter.ts";
+import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter.ts";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
@@ -9,7 +9,7 @@ const props = defineProps<{
 }>();
 
 const resumedEnemies = computed(() => {
-  return MapPresenter.getResumedEnemiesByIds(props.location?.enemies ?? []);
+  return MapEnemiesPresenter.getResumedEnemiesByIds(props.location?.enemies ?? []);
 });
 
 const isEnemyModalOpen = ref(false);

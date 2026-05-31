@@ -10,7 +10,7 @@ import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { STAT_ICONS } from "@/constants/stat-icons";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import { MapPresenter } from "@/presenters/map.presenter.ts";
+import { EnemyModalPresenter } from "@/presenters/map/enemy-modal.presenter.ts";
 import { Stat } from "@/models/stat";
 
 const props = defineProps<{
@@ -33,7 +33,7 @@ const handleClose = () => {
 };
 
 const enemy = computed(() => {
-  return MapPresenter.getEnemyById(props.enemyId!);
+  return EnemyModalPresenter.getEnemyById(props.enemyId!);
 });
 
 const attributesList = computed(() => {
