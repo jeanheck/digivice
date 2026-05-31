@@ -1,7 +1,3 @@
-export interface EnemyDropViewModel {
-    id: string;
-}
-
 export interface EnemyLocalizedTextViewModel {
     "PT-BR": string;
     "EN-US": string;
@@ -45,9 +41,8 @@ export interface EnemyViewModel {
     dvxp: number;
     exp: number;
     bits: number;
-    location: string[];
+    dropId: string | null;
     regularAttack: EnemyLocalizedTextViewModel;
     technique: EnemyLocalizedTextViewModel;
     boss: boolean;
-    drops: EnemyDropViewModel | null;
 }

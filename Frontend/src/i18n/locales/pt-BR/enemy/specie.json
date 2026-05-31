@@ -1,15 +1,15 @@
 {
   "species": {
-    "Insect": "Inseto",
-    "Dino": "Dinossauro",
-    "Machine": "Machine",
-    "Mammal": "Mamífero",
-    "Fish": "Peixe",
-    "Evil": "Maligno",
-    "Plant": "Planta",
-    "Bird": "Pássaro",
-    "Dragon": "Dragão",
-    "Ghoul": "Fantasma",
-    "Rare": "Raro"
+    "insect": "Inseto",
+    "dino": "Dinossauro",
+    "machine": "Machine",
+    "mammal": "Mamífero",
+    "fish": "Peixe",
+    "evil": "Maligno",
+    "plant": "Planta",
+    "bird": "Pássaro",
+    "dragon": "Dragão",
+    "ghoul": "Fantasma",
+    "rare": "Raro"
   }
 }

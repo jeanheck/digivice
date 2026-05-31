@@ -4,7 +4,7 @@
         "level": 12,
         "hp": 816,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 170,
         "defense": 170,
@@ -37,9 +37,6 @@
         "dvxp": 12,
         "exp": 120,
         "bits": 240,
-        "location": [
-            "ProtocolRuins"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -49,16 +46,14 @@
             "EN-US": "Necromist (Physical, Chance of Poison)"
         },
         "boss": true,
-        "drops": {
-            "id": "OldWand"
-        }
+        "dropId": "oldWand"
     },
     "2": {
         "name": "MasterTyrannomon",
         "level": 14,
         "hp": 912,
         "mp": 9999,
-        "species": "Dino",
+        "species": "dino",
         "rate": 0,
         "strength": 190,
         "defense": 238,
@@ -99,20 +94,15 @@
             "PT-BR": "Fogo Mestre (Fogo)",
             "EN-US": "Master Fire (Fire)"
         },
-        "location": [
-            "TyrannoValley"
-        ],
         "boss": true,
-        "drops": {
-            "id": "OldClaw"
-        }
+        "dropId": "oldClaw"
     },
     "14": {
         "name": "HiAndromon",
         "level": 32,
         "hp": 1776,
         "mp": 280,
-        "species": "Machine",
+        "species": "machine",
         "rate": 0,
         "strength": 370,
         "defense": 370,
@@ -145,9 +135,6 @@
         "dvxp": 32,
         "exp": 325,
         "bits": 500,
-        "location": [
-            "OperationRoom"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -156,15 +143,15 @@
             "PT-BR": "Atomic Ray (Mágico-Máquina, Chance de KO)",
             "EN-US": "Atomic Ray (Magic-Machine, Chance of KO)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "15": {
         "name": "WaruMonzaemon",
         "level": 32,
         "hp": 1776,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 555,
         "defense": 370,
@@ -197,8 +184,6 @@
         "dvxp": 32,
         "exp": 320,
         "bits": 740,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -207,14 +192,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "20": {
         "name": "Zanbamon",
         "level": 40,
         "hp": 2160,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 450,
         "defense": 450,
@@ -247,9 +233,6 @@
         "dvxp": 40,
         "exp": 380,
         "bits": 800,
-        "location": [
-            "Catacomb"
-        ],
         "regularAttack": {
             "PT-BR": "",
             "EN-US": ""
@@ -259,16 +242,14 @@
             "EN-US": ""
         },
         "boss": true,
-        "drops": {
-            "id": "RustyKatana"
-        }
+        "dropId": "rustyKatana"
     },
     "71": {
         "name": "Kunemon",
         "level": 1,
         "hp": 120,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 2,
         "strength": 50,
         "defense": 42,
@@ -301,12 +282,6 @@
         "dvxp": 1,
         "exp": 6,
         "bits": 10,
-        "location": [
-            "CentralPark",
-            "WireForestEntrance",
-            "WestWireForest",
-            "EastWireForest"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -315,15 +290,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "72": {
         "name": "Tapirmon",
         "level": 1,
         "hp": 120,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 0,
         "strength": 42,
         "defense": 50,
@@ -356,10 +331,6 @@
         "dvxp": 1,
         "exp": 5,
         "bits": 20,
-        "location": [
-            "CentralPark",
-            "WireForestEntrance"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -368,15 +339,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "73": {
         "name": "Crabmon",
         "level": 3,
         "hp": 168,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 0,
         "strength": 88,
         "defense": 60,
@@ -409,9 +380,6 @@
         "dvxp": 3,
         "exp": 17,
         "bits": 30,
-        "location": [
-            "DivermonsLake"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -420,15 +388,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "74": {
         "name": "Gizamon",
         "level": 4,
         "hp": 192,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 0,
         "strength": 80,
         "defense": 80,
@@ -461,10 +429,6 @@
         "dvxp": 4,
         "exp": 19,
         "bits": 40,
-        "location": [
-            "ShellBeach",
-            "KickingForest"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -473,15 +437,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "75": {
         "name": "DemiDevimon",
         "level": 8,
         "hp": 312,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 128,
         "strength": 130,
         "defense": 110,
@@ -514,9 +478,6 @@
         "dvxp": 8,
         "exp": 39,
         "bits": 80,
-        "location": [
-            "JungleGrave"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -525,17 +486,15 @@
             "PT-BR": "Energy Suck (Mágico)",
             "EN-US": "Energy Suck (Magic)"
         },
-        "drops": {
-            "id": "DarkPower1"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "darkPower1"
     },
     "76": {
         "name": "Betamon",
         "level": 2,
         "hp": 144,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 192,
         "strength": 60,
         "defense": 60,
@@ -568,13 +527,6 @@
         "dvxp": 2,
         "exp": 10,
         "bits": 25,
-        "location": [
-            "ShellBeach",
-            "PlugCape",
-            "WestWireForest",
-            "EastWireForest",
-            "DivermonsLake"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trovão",
             "EN-US": "Thunder Elemental"
@@ -583,17 +535,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "PowerCharge"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "powerCharge"
     },
     "77": {
         "name": "Vegiemon",
         "level": 4,
         "hp": 192,
         "mp": 9999,
-        "species": "Plant",
+        "species": "plant",
         "rate": 0,
         "strength": 80,
         "defense": 80,
@@ -626,11 +576,6 @@
         "dvxp": 4,
         "exp": 20,
         "bits": 40,
-        "location": [
-            "ShellBeach",
-            "PlugCape",
-            "KickingForest"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -639,15 +584,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "78": {
         "name": "Kuwagamon",
         "level": 2,
         "hp": 144,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 75,
         "defense": 60,
@@ -680,10 +625,6 @@
         "dvxp": 2,
         "exp": 11,
         "bits": 20,
-        "location": [
-            "EastWireForest",
-            "WestWireForest"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -692,15 +633,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "79": {
         "name": "Yanmamon",
         "level": 3,
         "hp": 168,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 70,
         "defense": 60,
@@ -733,9 +674,6 @@
         "dvxp": 3,
         "exp": 16,
         "bits": 30,
-        "location": [
-            "WindPrairie"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -744,15 +682,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "80": {
         "name": "Kiwimon",
         "level": 3,
         "hp": 168,
         "mp": 9999,
-        "species": "Bird",
+        "species": "bird",
         "rate": 0,
         "strength": 60,
         "defense": 70,
@@ -785,9 +723,6 @@
         "dvxp": 3,
         "exp": 15,
         "bits": 35,
-        "location": [
-            "WindPrairie"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -796,15 +731,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "81": {
         "name": "Dokugumon",
         "level": 4,
         "hp": 192,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 128,
         "strength": 80,
         "defense": 68,
@@ -837,9 +772,6 @@
         "dvxp": 4,
         "exp": 21,
         "bits": 40,
-        "location": [
-            "ProtocolForest"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento (Chance de Envenenamento)",
             "EN-US": "No Element (Chance of Poison)"
@@ -848,17 +780,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "SpiderWeb"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "spiderWeb"
     },
     "82": {
         "name": "Goburimon",
         "level": 4,
         "hp": 192,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 0,
         "strength": 120,
         "defense": 80,
@@ -891,11 +821,6 @@
         "dvxp": 4,
         "exp": 22,
         "bits": 45,
-        "location": [
-            "ProtocolForest",
-            "ProtocolRuins",
-            "AsukaEastWireForest"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -904,15 +829,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "83": {
         "name": "Baronmon",
         "level": 16,
         "hp": 504,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 262,
         "defense": 210,
@@ -945,9 +870,6 @@
         "dvxp": 16,
         "exp": 80,
         "bits": 160,
-        "location": [
-            "ProtocolRuinsAfter"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Elemental"
@@ -956,15 +878,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "84": {
         "name": "Minotarumon",
         "level": 5,
         "hp": 240,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 0,
         "strength": 150,
         "defense": 125,
@@ -997,9 +919,6 @@
         "dvxp": 5,
         "exp": 27,
         "bits": 55,
-        "location": [
-            "ProtocolRuins"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1008,15 +927,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "85": {
         "name": "Flymon",
         "level": 13,
         "hp": 432,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 180,
         "defense": 153,
@@ -1049,10 +968,6 @@
         "dvxp": 13,
         "exp": 66,
         "bits": 130,
-        "location": [
-            "AsukaWestWireForest",
-            "AsukaWireForestEntrance"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1061,15 +976,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "86": {
         "name": "Woodmon",
         "level": 5,
         "hp": 240,
         "mp": 9999,
-        "species": "Plant",
+        "species": "plant",
         "rate": 0,
         "strength": 100,
         "defense": 100,
@@ -1102,10 +1017,6 @@
         "dvxp": 5,
         "exp": 25,
         "bits": 50,
-        "location": [
-            "KickingForest",
-            "PhoenixBay"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1114,15 +1025,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "87": {
         "name": "Tyrannomon",
         "level": 6,
         "hp": 264,
         "mp": 9999,
-        "species": "Dino",
+        "species": "dino",
         "rate": 128,
         "strength": 110,
         "defense": 138,
@@ -1155,9 +1066,6 @@
         "dvxp": 6,
         "exp": 31,
         "bits": 60,
-        "location": [
-            "TyrannoValley"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -1166,17 +1074,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "FirePower1"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "firePower1"
     },
     "88": {
         "name": "Triceramon",
         "level": 6,
         "hp": 396,
         "mp": 9999,
-        "species": "Dino",
+        "species": "dino",
         "rate": 192,
         "strength": 138,
         "defense": 110,
@@ -1209,10 +1115,6 @@
         "dvxp": 6,
         "exp": 30,
         "bits": 60,
-        "location": [
-            "PlugCape",
-            "TyrannoValley"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -1221,17 +1123,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "TNTBall"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "tntBall"
     },
     "89": {
         "name": "Airdramon",
         "level": 6,
         "hp": 264,
         "mp": 9999,
-        "species": "Dragon",
+        "species": "dragon",
         "rate": 16,
         "strength": 77,
         "defense": 138,
@@ -1264,9 +1164,6 @@
         "dvxp": 6,
         "exp": 29,
         "bits": 70,
-        "location": [
-            "TyrannoValley"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1275,17 +1172,15 @@
             "PT-BR": "Air Blast (Mágico-Vento)",
             "EN-US": "Air Blast (Magic-Wind)"
         },
-        "drops": {
-            "id": "FireChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "fireChip"
     },
     "90": {
         "name": "Gekomon",
         "level": 8,
         "hp": 312,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 128,
         "strength": 130,
         "defense": 130,
@@ -1318,12 +1213,6 @@
         "dvxp": 8,
         "exp": 41,
         "bits": 85,
-        "location": [
-            "BulkSwamp",
-            "TranquilSwamp",
-            "BulkBridge",
-            "JungleGrave"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1332,17 +1221,15 @@
             "PT-BR": "Confuse Gas (Magic, Chance of Confuse)",
             "EN-US": "Confuse Gas (Magic, Chance of Confuse)"
         },
-        "drops": {
-            "id": "IcePower1"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "icePower1"
     },
     "91": {
         "name": "Coelamon",
         "level": 8,
         "hp": 312,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 16,
         "strength": 130,
         "defense": 130,
@@ -1375,14 +1262,6 @@
         "dvxp": 8,
         "exp": 40,
         "bits": 80,
-        "location": [
-            "PlugCape",
-            "BulkSwamp",
-            "BiosSwamp",
-            "TranquilSwamp",
-            "BulkBridge",
-            "JungleGrave"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -1391,17 +1270,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "WaterChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "waterChip"
     },
     "92": {
         "name": "Bakemon",
         "level": 9,
         "hp": 336,
         "mp": 9999,
-        "species": "Ghoul",
+        "species": "ghoul",
         "rate": 0,
         "strength": 175,
         "defense": 175,
@@ -1434,9 +1311,6 @@
         "dvxp": 9,
         "exp": 46,
         "bits": 90,
-        "location": [
-            "JungleGrave"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Elemental"
@@ -1445,15 +1319,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "93": {
         "name": "Phantomon",
         "level": 31,
         "hp": 864,
         "mp": 9999,
-        "species": "Ghoul",
+        "species": "ghoul",
         "rate": 128,
         "strength": 450,
         "defense": 450,
@@ -1486,9 +1360,6 @@
         "dvxp": 31,
         "exp": 154,
         "bits": 310,
-        "location": [
-            "JungleGraveAfter"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -1497,17 +1368,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "GhostFang"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "ghostFang"
     },
     "94": {
         "name": "Kokatorimon",
         "level": 13,
         "hp": 432,
         "mp": 9999,
-        "species": "Bird",
+        "species": "bird",
         "rate": 0,
         "strength": 180,
         "defense": 180,
@@ -1540,10 +1409,6 @@
         "dvxp": 13,
         "exp": 96,
         "bits": 160,
-        "location": [
-            "EastWireForestAfter",
-            "ProtocolForestAfter"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1552,15 +1417,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "95": {
         "name": "Apemon",
         "level": 10,
         "hp": 360,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 128,
         "strength": 128,
         "defense": 128,
@@ -1593,10 +1458,6 @@
         "dvxp": 10,
         "exp": 50,
         "bits": 190,
-        "location": [
-            "PhoenixBay",
-            "EtherJungle"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1605,17 +1466,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "WindPower1"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "windPower1"
     },
     "96": {
         "name": "Shellmon",
         "level": 18,
         "hp": 552,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 16,
         "strength": 230,
         "defense": 230,
@@ -1648,11 +1507,6 @@
         "dvxp": 18,
         "exp": 91,
         "bits": 180,
-        "location": [
-            "SouthCape",
-            "ShellBeachAfter",
-            "PlugCapeAfter"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -1661,17 +1515,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "WaterChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "waterChip"
     },
     "97": {
         "name": "Tortomon",
         "level": 29,
         "hp": 816,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 0,
         "strength": 340,
         "defense": 425,
@@ -1704,12 +1556,6 @@
         "dvxp": 29,
         "exp": 145,
         "bits": 290,
-        "location": [
-            "DivermonsLakeAfter",
-            "BulkSwampAfter",
-            "BulkBridgeAfter",
-            "JungleGraveAfter"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1718,15 +1564,15 @@
             "PT-BR": "Divine Rain (Mágico-Água)",
             "EN-US": "Divine Rain (Magic-Water)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "98": {
         "name": "Dolphmon",
         "level": 20,
         "hp": 600,
         "mp": 120,
-        "species": "Fish",
+        "species": "fish",
         "rate": 0,
         "strength": 212,
         "defense": 250,
@@ -1759,9 +1605,6 @@
         "dvxp": 20,
         "exp": 98,
         "bits": 200,
-        "location": [
-            "Seabed"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1770,15 +1613,15 @@
             "PT-BR": "Divine Rain (Mágico-Água)",
             "EN-US": "Divine Rain (Magic-Water)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "99": {
         "name": "Gesomon",
         "level": 27,
         "hp": 768,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 128,
         "strength": 320,
         "defense": 400,
@@ -1811,9 +1654,6 @@
         "dvxp": 27,
         "exp": 136,
         "bits": 240,
-        "location": [
-            "Seabeds01,02,04"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -1822,17 +1662,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "RunnerSandal"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "runnerSandal"
     },
     "100": {
         "name": "Octomon",
         "level": 40,
         "hp": 1080,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 0,
         "strength": 450,
         "defense": 450,
@@ -1865,9 +1703,6 @@
         "dvxp": 40,
         "exp": 200,
         "bits": 400,
-        "location": [
-            "Seabeds05,06"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -1876,15 +1711,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "101": {
         "name": "Divermon",
         "level": 24,
         "hp": 696,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 0,
         "strength": 290,
         "defense": 290,
@@ -1917,9 +1752,6 @@
         "dvxp": 24,
         "exp": 118,
         "bits": 200,
-        "location": [
-            "DivermonsLakeunderwaterAmaterasuEastDivermonsLakeunderwater"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1928,15 +1760,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "102": {
         "name": "ShogunGekomon",
         "level": 20,
         "hp": 600,
         "mp": 200,
-        "species": "Fish",
+        "species": "fish",
         "rate": 128,
         "strength": 250,
         "defense": 250,
@@ -1969,9 +1801,6 @@
         "dvxp": 20,
         "exp": 101,
         "bits": 490,
-        "location": [
-            "SuzakuUGLake"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -1980,17 +1809,15 @@
             "PT-BR": "Confuse Gas (Magic, Chance of Confuse)",
             "EN-US": "Confuse Gas (Magic, Chance of Confuse)"
         },
-        "drops": {
-            "id": "ChaosWave"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "chaosWave"
     },
     "103": {
         "name": "Seadramon",
         "level": 12,
         "hp": 408,
         "mp": 9999,
-        "species": "Dragon",
+        "species": "dragon",
         "rate": 128,
         "strength": 144,
         "defense": 212,
@@ -2023,10 +1850,6 @@
         "dvxp": 12,
         "exp": 58,
         "bits": 120,
-        "location": [
-            "BiosSwamp",
-            "DivermonsLakeAfter"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -2035,17 +1858,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "WaterPower1"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "waterPower1"
     },
     "104": {
         "name": "Mammothmon",
         "level": 23,
         "hp": 672,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 128,
         "strength": 350,
         "defense": 280,
@@ -2078,9 +1899,6 @@
         "dvxp": 23,
         "exp": 116,
         "bits": 220,
-        "location": [
-            "NorthBadlandW,BulletValley"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2089,17 +1907,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "HPProxy"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "hpProxy"
     },
     "105": {
         "name": "Etemon",
         "level": 20,
         "hp": 600,
         "mp": 64,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 128,
         "strength": 250,
         "defense": 250,
@@ -2132,9 +1948,6 @@
         "dvxp": 20,
         "exp": 100,
         "bits": 205,
-        "location": [
-            "SouthBadland,NorthBadlandE"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2143,17 +1956,15 @@
             "PT-BR": "Small Heal (Heal a small portion of HP)",
             "EN-US": "Small Heal (Heal a small portion of HP)"
         },
-        "drops": {
-            "id": "SuperCharge"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "superCharge"
     },
     "106": {
         "name": "Ogremon",
         "level": 20,
         "hp": 600,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 16,
         "strength": 375,
         "defense": 312,
@@ -2186,9 +1997,6 @@
         "dvxp": 20,
         "exp": 102,
         "bits": 200,
-        "location": [
-            "SouthBadland,NorthBadlandE"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2197,17 +2005,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "PowerChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "powerChip"
     },
     "107": {
         "name": "Tuskmon",
         "level": 22,
         "hp": 972,
         "mp": 9999,
-        "species": "Dino",
+        "species": "dino",
         "rate": 64,
         "strength": 405,
         "defense": 270,
@@ -2240,9 +2046,6 @@
         "dvxp": 22,
         "exp": 112,
         "bits": 200,
-        "location": [
-            "AsukaCentralPlugCapeAsukaWestBulletValley,NorthBadlandW"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2251,17 +2054,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "CounterCrest"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "counterCrest"
     },
     "108": {
         "name": "Rockmon",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 490,
         "defense": 612,
@@ -2294,9 +2095,6 @@
         "dvxp": 44,
         "exp": 220,
         "bits": 400,
-        "location": [
-            "Boards03,04,05,06,08,09,11,13,18,20,23,24,25,26,28,29,30"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2305,15 +2103,15 @@
             "PT-BR": "Double Guard (Raises Defense)",
             "EN-US": "Double Guard (Raises Defense)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "109": {
         "name": "Quetzalmon",
         "level": 45,
         "hp": 1200,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 425,
         "defense": 500,
@@ -2346,9 +2144,6 @@
         "dvxp": 45,
         "exp": 223,
         "bits": 440,
-        "location": [
-            "AmaterasuWestSouthNoiseDesert,MobiusDesert,MirageTower"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2357,15 +2152,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "110": {
         "name": "Vademon",
         "level": 22,
         "hp": 648,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 128,
         "strength": 270,
         "defense": 270,
@@ -2398,9 +2193,6 @@
         "dvxp": 22,
         "exp": 109,
         "bits": 220,
-        "location": [
-            "SNoiseDesert,MobiusDesert,MirageTower"
-        ],
         "regularAttack": {
             "PT-BR": "Thunder Element (Chance of Sleep)",
             "EN-US": "Thunder Element (Chance of Sleep)"
@@ -2409,17 +2201,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "BoltPower1"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "boltPower1"
     },
     "111": {
         "name": "Maildramon",
         "level": 22,
         "hp": 648,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 16,
         "strength": 270,
         "defense": 338,
@@ -2452,9 +2242,6 @@
         "dvxp": 22,
         "exp": 110,
         "bits": 225,
-        "location": [
-            "MobiusDesert"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2463,17 +2250,15 @@
             "PT-BR": "Thunderbolt (Mágico-Trovão)",
             "EN-US": "Thunderbolt (Magic-Thunder)"
         },
-        "drops": {
-            "id": "ThunderChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "thunderChip"
     },
     "112": {
         "name": "Mamemon",
         "level": 25,
         "hp": 480,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 64,
         "strength": 300,
         "defense": 450,
@@ -2506,9 +2291,6 @@
         "dvxp": 25,
         "exp": 125,
         "bits": 250,
-        "location": [
-            "DuctRooms01,02,03,04,OperationRoom,SecretStairs"
-        ],
         "regularAttack": {
             "PT-BR": "Machine Element (Chance of Freeze)",
             "EN-US": "Machine Element (Chance of Freeze)"
@@ -2517,17 +2299,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "SearchCrest"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "searchCrest"
     },
     "113": {
         "name": "Guardromon (blue)",
         "level": 29,
         "hp": 816,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 0,
         "strength": 425,
         "defense": 510,
@@ -2560,8 +2340,6 @@
         "dvxp": 29,
         "exp": 147,
         "bits": 290,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2570,14 +2348,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "114": {
         "name": "Thundermon",
         "level": 23,
         "hp": 672,
         "mp": 150,
-        "species": "Machine",
+        "species": "machine",
         "rate": 128,
         "strength": 238,
         "defense": 350,
@@ -2610,9 +2389,6 @@
         "dvxp": 23,
         "exp": 115,
         "bits": 235,
-        "location": [
-            "DumDumFactory"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trovão",
             "EN-US": "Thunder Element"
@@ -2621,17 +2397,15 @@
             "PT-BR": "Thunder Gemini (Mágico-Trovão)",
             "EN-US": "Thunder Gemini (Magic-Thunder)"
         },
-        "drops": {
-            "id": "PulseGuard"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "pulseGuard"
     },
     "115": {
         "name": "Hagurumon",
         "level": 23,
         "hp": 672,
         "mp": 336,
-        "species": "Machine",
+        "species": "machine",
         "rate": 128,
         "strength": 420,
         "defense": 280,
@@ -2664,9 +2438,6 @@
         "dvxp": 23,
         "exp": 117,
         "bits": 230,
-        "location": [
-            "DumDumFactory"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -2675,17 +2446,15 @@
             "PT-BR": "Speed Up (Raises Speed)",
             "EN-US": "Speed Up (Raises Speed)"
         },
-        "drops": {
-            "id": "MetalPower1"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "metalPower1"
     },
     "116": {
         "name": "Clockmon",
         "level": 24,
         "hp": 696,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 64,
         "strength": 290,
         "defense": 290,
@@ -2718,9 +2487,6 @@
         "dvxp": 24,
         "exp": 123,
         "bits": 250,
-        "location": [
-            "DumDumFactory"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -2729,17 +2495,15 @@
             "PT-BR": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)",
             "EN-US": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)"
         },
-        "drops": {
-            "id": "MultiCrest"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "multiCrest"
     },
     "117": {
         "name": "Andromon",
         "level": 24,
         "hp": 696,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 128,
         "strength": 290,
         "defense": 246,
@@ -2772,9 +2536,6 @@
         "dvxp": 24,
         "exp": 120,
         "bits": 200,
-        "location": [
-            "DumDumFactory,OperationRoom,SecretStairs"
-        ],
         "regularAttack": {
             "PT-BR": "Thunder Elemental (Chance of Freeze)",
             "EN-US": "Thunder Elemental (Chance of Freeze)"
@@ -2783,17 +2544,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "Machinegun"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "machinegun"
     },
     "118": {
         "name": "Numemon",
         "level": 25,
         "hp": 720,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 64,
         "strength": 300,
         "defense": 375,
@@ -2826,9 +2585,6 @@
         "dvxp": 25,
         "exp": 124,
         "bits": 300,
-        "location": [
-            "DumDumFactorySewers"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -2837,17 +2593,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "BinderCrest"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "binderCrest"
     },
     "119": {
         "name": "Sukamon",
         "level": 26,
         "hp": 744,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 16,
         "strength": 310,
         "defense": 388,
@@ -2880,9 +2634,6 @@
         "dvxp": 26,
         "exp": 129,
         "bits": 190,
-        "location": [
-            "DumDumFactorySewers"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -2891,17 +2642,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "WisdomChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "wisdomChip"
     },
     "120": {
         "name": "Garbagemon",
         "level": 47,
         "hp": 1248,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 32,
         "strength": 520,
         "defense": 650,
@@ -2934,9 +2683,6 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 470,
-        "location": [
-            "AmaterasuWestDumDumFactorySewers"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -2945,17 +2691,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "Goggles"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "goggles"
     },
     "121": {
         "name": "Roachmon",
         "level": 47,
         "hp": 1248,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 442,
         "defense": 520,
@@ -2988,9 +2732,6 @@
         "dvxp": 47,
         "exp": 234,
         "bits": 100,
-        "location": [
-            "AmaterasuWestDumDumFactorySewers"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -2999,15 +2740,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "122": {
         "name": "Raremon",
         "level": 27,
         "hp": 768,
         "mp": 270,
-        "species": "Ghoul",
+        "species": "ghoul",
         "rate": 16,
         "strength": 320,
         "defense": 480,
@@ -3040,9 +2781,6 @@
         "dvxp": 27,
         "exp": 135,
         "bits": 270,
-        "location": [
-            "AsukaCityWaterTunnel"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3051,17 +2789,15 @@
             "PT-BR": "Paralyze Shock (Magic, Chance of Freeze)",
             "EN-US": "Paralyze Shock (Magic, Chance of Freeze)"
         },
-        "drops": {
-            "id": "ArmorChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "armorChip"
     },
     "123": {
         "name": "Cyclonemon",
         "level": 27,
         "hp": 768,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 16,
         "strength": 272,
         "defense": 320,
@@ -3094,9 +2830,6 @@
         "dvxp": 27,
         "exp": 134,
         "bits": 270,
-        "location": [
-            "AsukaCitySewersWaterTunnel"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3105,17 +2838,15 @@
             "PT-BR": "Twin Missile (Magic-Machine)",
             "EN-US": "Twin Missile (Magic-Machine)"
         },
-        "drops": {
-            "id": "WisdomChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "wisdomChip"
     },
     "124": {
         "name": "Megadramon",
         "level": 46,
         "hp": 1224,
         "mp": 9999,
-        "species": "Dragon",
+        "species": "dragon",
         "rate": 0,
         "strength": 510,
         "defense": 510,
@@ -3148,9 +2879,6 @@
         "dvxp": 46,
         "exp": 233,
         "bits": 450,
-        "location": [
-            "AmaterasuWestDumDumFactory"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -3159,15 +2887,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "125": {
         "name": "Monzaemon",
         "level": 29,
         "hp": 816,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 340,
         "defense": 340,
@@ -3200,9 +2928,6 @@
         "dvxp": 29,
         "exp": 145,
         "bits": 320,
-        "location": [
-            "TamerOnly"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3211,15 +2936,15 @@
             "PT-BR": "Lovely Charm (Decreases Enemy Strength)",
             "EN-US": "Lovely Charm (Decreases Enemy Strength)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "126": {
         "name": "Tankmon",
         "level": 30,
         "hp": 840,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 0,
         "strength": 438,
         "defense": 525,
@@ -3252,9 +2977,6 @@
         "dvxp": 30,
         "exp": 152,
         "bits": 300,
-        "location": [
-            "TamerOnly"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -3263,15 +2985,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "127": {
         "name": "Nanimon",
         "level": 29,
         "hp": 816,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 510,
         "defense": 238,
@@ -3304,9 +3026,6 @@
         "dvxp": 29,
         "exp": 146,
         "bits": 280,
-        "location": [
-            "TamerOnly"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3315,15 +3034,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "128": {
         "name": "Musyamon",
         "level": 31,
         "hp": 864,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 16,
         "strength": 360,
         "defense": 360,
@@ -3356,11 +3075,6 @@
         "dvxp": 31,
         "exp": 155,
         "bits": 330,
-        "location": [
-            "JungleGrave",
-            "Catacomb",
-            "CatacombBackEntrance"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -3369,17 +3083,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "MPChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "mpChip"
     },
     "129": {
         "name": "Kurisarimon",
         "level": 36,
         "hp": 984,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 128,
         "strength": 512,
         "defense": 512,
@@ -3412,9 +3124,6 @@
         "dvxp": 36,
         "exp": 225,
         "bits": 770,
-        "location": [
-            "OpticalNetworkBugMaze,BugMazePit"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3423,17 +3132,15 @@
             "PT-BR": "Confuse Nebula (Chance of Confusion)",
             "EN-US": "Confuse Nebula (Chance of Confusion)"
         },
-        "drops": {
-            "id": "DrillHorn"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "drillHorn"
     },
     "130": {
         "name": "Snimon",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 480,
         "defense": 408,
@@ -3466,11 +3173,6 @@
         "dvxp": 43,
         "exp": 215,
         "bits": 420,
-        "location": [
-            "AmaterasuEastWestWireForest",
-            "AmaterasuCentralWireForestEntrance",
-            "AmaterasuCentralPlugCape"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3479,15 +3181,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "131": {
         "name": "Blossomon",
         "level": 34,
         "hp": 936,
         "mp": 9999,
-        "species": "Plant",
+        "species": "plant",
         "rate": 0,
         "strength": 390,
         "defense": 332,
@@ -3520,9 +3222,6 @@
         "dvxp": 34,
         "exp": 168,
         "bits": 340,
-        "location": [
-            "AmaterasuEastEastWireForest,WindPrarie"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3531,15 +3230,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "132": {
         "name": "Cherrymon",
         "level": 38,
         "hp": 1032,
         "mp": 9999,
-        "species": "Plant",
+        "species": "plant",
         "rate": 64,
         "strength": 430,
         "defense": 430,
@@ -3572,9 +3271,6 @@
         "dvxp": 38,
         "exp": 189,
         "bits": 380,
-        "location": [
-            "AmaterasuEastWestWireForestAmaterasuSouthPhoenixBay,EtherJungle,SouthCape"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3583,17 +3279,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "RecoverCrest"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "recoverCrest"
     },
     "133": {
         "name": "Gargoylemon",
         "level": 35,
         "hp": 960,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 64,
         "strength": 400,
         "defense": 400,
@@ -3626,9 +3320,6 @@
         "dvxp": 35,
         "exp": 176,
         "bits": 350,
-        "location": [
-            "AmaterasuEastProtocolForest,ProtocolRuins"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3637,17 +3328,15 @@
             "PT-BR": "Dark Matter (Mágico-Trevas)",
             "EN-US": "Dark Matter (Magic-Dark)"
         },
-        "drops": {
-            "id": "DarkPower2"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "darkPower2"
     },
     "134": {
         "name": "Mummymon",
         "level": 35,
         "hp": 960,
         "mp": 9999,
-        "species": "Ghoul",
+        "species": "ghoul",
         "rate": 16,
         "strength": 400,
         "defense": 400,
@@ -3680,9 +3369,6 @@
         "dvxp": 35,
         "exp": 175,
         "bits": 400,
-        "location": [
-            "AmaterasuEastProtocolRuins"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3691,17 +3377,15 @@
             "PT-BR": "Dark Fear (Mágico-Trevas)",
             "EN-US": "Dark Fear (Magic-Dark)"
         },
-        "drops": {
-            "id": "MindChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "mindChip"
     },
     "135": {
         "name": "Arukenimon",
         "level": 45,
         "hp": 1200,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 256,
         "strength": 500,
         "defense": 500,
@@ -3734,9 +3418,6 @@
         "dvxp": 45,
         "exp": 225,
         "bits": 450,
-        "location": [
-            "AmaterasuCentralPlugCapeAmaterasuWestNorthBadlandW,BulletValley"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento (Chance de Envenenamento)",
             "EN-US": "No Element (Chance of Poison)"
@@ -3745,17 +3426,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "CharmGas"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "charmGas"
     },
     "136": {
         "name": "Okuwamon",
         "level": 34,
         "hp": 936,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 488,
         "defense": 390,
@@ -3788,9 +3467,6 @@
         "dvxp": 34,
         "exp": 172,
         "bits": 320,
-        "location": [
-            "AmaterasuEastKickingForest,ProtocolForest"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3799,15 +3475,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "137": {
         "name": "MetalTyrannomon",
         "level": 36,
         "hp": 984,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 16,
         "strength": 410,
         "defense": 615,
@@ -3840,9 +3516,6 @@
         "dvxp": 36,
         "exp": 183,
         "bits": 400,
-        "location": [
-            "AmaterasuEastWindPrairie,KickingForestCliff,TyrannoValley"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -3851,17 +3524,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "MetalChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "metalChip"
     },
     "138": {
         "name": "Deltamon",
         "level": 36,
         "hp": 984,
         "mp": 9999,
-        "species": "Dino",
+        "species": "dino",
         "rate": 64,
         "strength": 410,
         "defense": 410,
@@ -3894,9 +3565,6 @@
         "dvxp": 36,
         "exp": 179,
         "bits": 360,
-        "location": [
-            "AmaterasuEastKickingForestCliff,TyrannoValley"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3905,17 +3573,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "WindPower2"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "windPower2"
     },
     "139": {
         "name": "Whamon",
         "level": 45,
         "hp": 1800,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 128,
         "strength": 500,
         "defense": 500,
@@ -3948,9 +3614,6 @@
         "dvxp": 45,
         "exp": 225,
         "bits": 420,
-        "location": [
-            "MagastaUnderseaBase"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -3959,17 +3622,15 @@
             "PT-BR": "Hard Rain (Mágico-Água)",
             "EN-US": "Hard Rain (Magic-Water)"
         },
-        "drops": {
-            "id": "CrimsonCable"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "crimsonCable"
     },
     "140": {
         "name": "MarineDevimon",
         "level": 37,
         "hp": 1008,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 0,
         "strength": 357,
         "defense": 420,
@@ -4002,9 +3663,6 @@
         "dvxp": 37,
         "exp": 185,
         "bits": 370,
-        "location": [
-            "Seabeds11,14,17"
-        ],
         "regularAttack": {
             "PT-BR": "Water Element (Hits Twice)",
             "EN-US": "Water Element (Hits Twice)"
@@ -4013,15 +3671,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "141": {
         "name": "Dragomon",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 0,
         "strength": 490,
         "defense": 612,
@@ -4054,9 +3712,6 @@
         "dvxp": 44,
         "exp": 221,
         "bits": 440,
-        "location": [
-            "Seabeds13,19"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -4065,15 +3720,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "142": {
         "name": "MegaSeadramon",
         "level": 35,
         "hp": 960,
         "mp": 9999,
-        "species": "Dragon",
+        "species": "dragon",
         "rate": 16,
         "strength": 340,
         "defense": 340,
@@ -4106,9 +3761,6 @@
         "dvxp": 35,
         "exp": 174,
         "bits": 350,
-        "location": [
-            "AmaterasuSouthBulkBridge,BulkSwamp,BiosSwamp,TranquilSwamp,JungleGrave"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trovão",
             "EN-US": "Thunder Element"
@@ -4117,17 +3769,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "ThunderChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "thunderChip"
     },
     "143": {
         "name": "Ebidramon",
         "level": 34,
         "hp": 936,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 64,
         "strength": 390,
         "defense": 390,
@@ -4160,9 +3810,6 @@
         "dvxp": 34,
         "exp": 170,
         "bits": 340,
-        "location": [
-            "AmaterasuEastDivermonsLake,KickingForest"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -4171,17 +3818,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "WaterPower2"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "waterPower2"
     },
     "144": {
         "name": "Vilemon",
         "level": 36,
         "hp": 984,
         "mp": 96,
-        "species": "Evil",
+        "species": "evil",
         "rate": 16,
         "strength": 410,
         "defense": 348,
@@ -4214,9 +3859,6 @@
         "dvxp": 36,
         "exp": 180,
         "bits": 360,
-        "location": [
-            "AmaterasuSouthJungleGrave"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -4225,17 +3867,15 @@
             "PT-BR": "Dark Fear (Mágico-Trevas)",
             "EN-US": "Dark Fear (Magic-Dark)"
         },
-        "drops": {
-            "id": "DevilChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "devilChip"
     },
     "145": {
         "name": "SkullSatamon",
         "level": 39,
         "hp": 1056,
         "mp": 9999,
-        "species": "Ghoul",
+        "species": "ghoul",
         "rate": 128,
         "strength": 440,
         "defense": 440,
@@ -4268,9 +3908,6 @@
         "dvxp": 39,
         "exp": 196,
         "bits": 390,
-        "location": [
-            "AmaterasuSouthCatacombs"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -4279,17 +3916,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "HackSticker"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "hackSticker"
     },
     "146": {
         "name": "Brachiomon",
         "level": 36,
         "hp": 984,
         "mp": 9999,
-        "species": "Dino",
+        "species": "dino",
         "rate": 64,
         "strength": 410,
         "defense": 348,
@@ -4322,9 +3957,6 @@
         "dvxp": 36,
         "exp": 180,
         "bits": 360,
-        "location": [
-            "AmaterasuSouthPhoenixBay,EtherJungle"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4333,17 +3965,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "UltraCharge"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "ultraCharge"
     },
     "147": {
         "name": "Drimogemon",
         "level": 41,
         "hp": 1104,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 128,
         "strength": 575,
         "defense": 460,
@@ -4376,9 +4006,6 @@
         "dvxp": 41,
         "exp": 205,
         "bits": 450,
-        "location": [
-            "KulonMineCircuitBoards02,05,06,07,10,12,19,21,22"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -4387,17 +4014,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "DrillHorn"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "drillHorn"
     },
     "148": {
         "name": "Flarerizamon",
         "level": 41,
         "hp": 1104,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 64,
         "strength": 391,
         "defense": 460,
@@ -4430,9 +4055,6 @@
         "dvxp": 41,
         "exp": 204,
         "bits": 400,
-        "location": [
-            "BootMountain,FireDungeon"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -4441,17 +4063,15 @@
             "PT-BR": "Flame Ball (Mágico-Fogo)",
             "EN-US": "Flame Ball (Magic-Fire)"
         },
-        "drops": {
-            "id": "FirePower2"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "firePower2"
     },
     "149": {
         "name": "Meramon",
         "level": 41,
         "hp": 1104,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 322,
         "defense": 575,
@@ -4484,9 +4104,6 @@
         "dvxp": 41,
         "exp": 205,
         "bits": 410,
-        "location": [
-            "BootMountain"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -4495,15 +4112,15 @@
             "PT-BR": "Flame Lance (Mágico-Fogo)",
             "EN-US": "Flame Lance (Magic-Fire)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "150": {
         "name": "Mojyamon",
         "level": 41,
         "hp": 1104,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 0,
         "strength": 460,
         "defense": 460,
@@ -4536,9 +4153,6 @@
         "dvxp": 41,
         "exp": 205,
         "bits": 420,
-        "location": [
-            "SnowMountain,FreezeMountain"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4547,15 +4161,15 @@
             "PT-BR": "Ice Blow (Mágico-Gelo)",
             "EN-US": "Ice Blow (Magic-Ice)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "151": {
         "name": "Frigimon",
         "level": 41,
         "hp": 1104,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 16,
         "strength": 575,
         "defense": 575,
@@ -4588,9 +4202,6 @@
         "dvxp": 41,
         "exp": 206,
         "bits": 420,
-        "location": [
-            "SnowMountain,FreezeMountain"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Gelo",
             "EN-US": "Ice Element"
@@ -4599,17 +4210,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "IceChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "iceChip"
     },
     "152": {
         "name": "Icemon",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 64,
         "strength": 480,
         "defense": 600,
@@ -4642,9 +4251,6 @@
         "dvxp": 43,
         "exp": 215,
         "bits": 420,
-        "location": [
-            "LakeofIce"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Gelo",
             "EN-US": "Ice Element"
@@ -4653,17 +4259,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "IcePower2"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "icePower2"
     },
     "153": {
         "name": "Giromon",
         "level": 46,
         "hp": 1224,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 0,
         "strength": 510,
         "defense": 510,
@@ -4696,9 +4300,6 @@
         "dvxp": 46,
         "exp": 230,
         "bits": 460,
-        "location": [
-            "AmaterasuWestDuctRooms01,02,03,04,OperationRoom,SecretStairs"
-        ],
         "regularAttack": {
             "PT-BR": "Machine Element; Counter (Physical)",
             "EN-US": "Machine Element; Counter (Physical)"
@@ -4707,15 +4308,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "154": {
         "name": "Vikemon",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 0,
         "strength": 720,
         "defense": 408,
@@ -4748,9 +4349,6 @@
         "dvxp": 43,
         "exp": 218,
         "bits": 430,
-        "location": [
-            "AmaterasuNorthFreezeMountain,SnowMountain"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Gelo",
             "EN-US": "Ice Element"
@@ -4759,15 +4357,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "155": {
         "name": "Lynxmon",
         "level": 49,
         "hp": 1296,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 32,
         "strength": 540,
         "defense": 540,
@@ -4800,9 +4398,6 @@
         "dvxp": 49,
         "exp": 244,
         "bits": 490,
-        "location": [
-            "AmaterasuNorthFireDungeon"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -4811,17 +4406,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "FirePowerS"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "firePowerS"
     },
     "156": {
         "name": "SkullMeramon",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 720,
         "defense": 600,
@@ -4854,9 +4447,6 @@
         "dvxp": 43,
         "exp": 217,
         "bits": 430,
-        "location": [
-            "FireDungeon"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4865,15 +4455,15 @@
             "PT-BR": "Flame Breath (Mágico-Fogo)",
             "EN-US": "Flame Breath (Magic-Fire)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "157": {
         "name": "Devidramon",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 0,
         "strength": 408,
         "defense": 480,
@@ -4906,9 +4496,6 @@
         "dvxp": 43,
         "exp": 214,
         "bits": 390,
-        "location": [
-            "DarkDungeon"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4917,15 +4504,15 @@
             "PT-BR": "Dark Elemental (Mágico-Trevas)",
             "EN-US": "Dark Elemental (Magic-Dark)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "158": {
         "name": "Chimeramon",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 16,
         "strength": 490,
         "defense": 735,
@@ -4958,10 +4545,6 @@
         "dvxp": 44,
         "exp": 223,
         "bits": 420,
-        "location": [],
-        "drops": {
-            "id": "DevilChip"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -4970,14 +4553,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "devilChip"
     },
     "159": {
         "name": "Pukumon",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 128,
         "strength": 612,
         "defense": 735,
@@ -5010,9 +4594,6 @@
         "dvxp": 44,
         "exp": 221,
         "bits": 470,
-        "location": [
-            "MagastaUnderseaBase"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -5021,17 +4602,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "CrimsonCable"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "crimsonCable"
     },
     "160": {
         "name": "MetalSeadramon",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Dragon",
+        "species": "dragon",
         "rate": 128,
         "strength": 490,
         "defense": 612,
@@ -5064,9 +4643,6 @@
         "dvxp": 44,
         "exp": 223,
         "bits": 460,
-        "location": [
-            "MagastaUnderseaBase"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5075,17 +4651,15 @@
             "PT-BR": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)",
             "EN-US": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)"
         },
-        "drops": {
-            "id": "CrimsonCable"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "crimsonCable"
     },
     "161": {
         "name": "Tylomon",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 128,
         "strength": 480,
         "defense": 600,
@@ -5118,9 +4692,6 @@
         "dvxp": 43,
         "exp": 215,
         "bits": 430,
-        "location": [
-            "MagastaUnderseaBase"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Água",
             "EN-US": "Water Element"
@@ -5129,17 +4700,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "CrimsonCable"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "crimsonCable"
     },
     "162": {
         "name": "Scorpiomon",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 128,
         "strength": 480,
         "defense": 480,
@@ -5172,9 +4741,6 @@
         "dvxp": 43,
         "exp": 216,
         "bits": 480,
-        "location": [
-            "MagastaUnderseaBase"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5183,17 +4749,15 @@
             "PT-BR": "Grand Wave (Mágico-Água)",
             "EN-US": "Grand Wave (Magic-Water)"
         },
-        "drops": {
-            "id": "CrimsonCable"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "crimsonCable"
     },
     "163": {
         "name": "Antylamon",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 16,
         "strength": 490,
         "defense": 490,
@@ -5226,10 +4790,6 @@
         "dvxp": 44,
         "exp": 220,
         "bits": 450,
-        "location": [
-            "AmaterasuCentralCentralPark",
-            "AmaterasuCentralShellBeach"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5238,17 +4798,15 @@
             "PT-BR": "Dark Elemental (Mágico-Trevas)",
             "EN-US": "Dark Elemental (Magic-Dark)"
         },
-        "drops": {
-            "id": "WindChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "windChip"
     },
     "164": {
         "name": "H-Kabuterimon",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 612,
         "defense": 416,
@@ -5281,10 +4839,6 @@
         "dvxp": 44,
         "exp": 222,
         "bits": 610,
-        "location": [
-            "AmaterasuCentralCentralPark",
-            "AmaterasuCentralWireForestEntrance"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5293,15 +4847,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "165": {
         "name": "Puppetmon",
         "level": 54,
         "hp": 1416,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 0,
         "strength": 885,
         "defense": 502,
@@ -5334,9 +4888,6 @@
         "dvxp": 54,
         "exp": 273,
         "bits": 520,
-        "location": [
-            "TamerOnly"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Máquina",
             "EN-US": "Machine Element"
@@ -5345,15 +4896,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "166": {
         "name": "SkullMammothmon",
         "level": 49,
         "hp": 1296,
         "mp": 9999,
-        "species": "Ghoul",
+        "species": "ghoul",
         "rate": 0,
         "strength": 810,
         "defense": 675,
@@ -5386,9 +4937,6 @@
         "dvxp": 49,
         "exp": 247,
         "bits": 490,
-        "location": [
-            "AmaterasuNorthIceDungeon"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5397,15 +4945,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "167": {
         "name": "Valkyriemon",
         "level": 45,
         "hp": 1200,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 32,
         "strength": 500,
         "defense": 500,
@@ -5438,10 +4986,6 @@
         "dvxp": 45,
         "exp": 225,
         "bits": 460,
-        "location": [],
-        "drops": {
-            "id": "DanceWing"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5450,14 +4994,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "danceWing"
     },
     "168": {
         "name": "LadyDevimon",
         "level": 45,
         "hp": 1200,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 256,
         "strength": 625,
         "defense": 425,
@@ -5490,9 +5035,6 @@
         "dvxp": 45,
         "exp": 224,
         "bits": 440,
-        "location": [
-            "AmaterasuWestNorthBadlandW,BulletValley"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5501,17 +5043,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "CharmGas"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "charmGas"
     },
     "169": {
         "name": "MetalEtemon",
         "level": 44,
         "hp": 1176,
         "mp": 296,
-        "species": "Machine",
+        "species": "machine",
         "rate": 64,
         "strength": 416,
         "defense": 735,
@@ -5544,9 +5084,6 @@
         "dvxp": 44,
         "exp": 222,
         "bits": 460,
-        "location": [
-            "AmaterasuWestNorthBadlandE,SouthBadland"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5555,17 +5092,15 @@
             "PT-BR": "Mega Heal (Heal a large portion of HP)",
             "EN-US": "Mega Heal (Heal a large portion of HP)"
         },
-        "drops": {
-            "id": "MaxCharge"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "maxCharge"
     },
     "170": {
         "name": "KingEtemon",
         "level": 45,
         "hp": 1200,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 128,
         "strength": 500,
         "defense": 500,
@@ -5598,9 +5133,6 @@
         "dvxp": 45,
         "exp": 226,
         "bits": 500,
-        "location": [
-            "AmaterasuWestNorthBadlandE,SouthBadland"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5609,17 +5141,15 @@
             "PT-BR": "Full Heal (Heals All HP)",
             "EN-US": "Full Heal (Heals All HP)"
         },
-        "drops": {
-            "id": "CharismaChip"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "charismaChip"
     },
     "171": {
         "name": "Gryphonmon",
         "level": 45,
         "hp": 1200,
         "mp": 9999,
-        "species": "Bird",
+        "species": "bird",
         "rate": 32,
         "strength": 425,
         "defense": 500,
@@ -5652,9 +5182,6 @@
         "dvxp": 45,
         "exp": 227,
         "bits": 440,
-        "location": [
-            "AmaterasuWestPelcheOasis,NoiseDesert"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5663,17 +5190,15 @@
             "PT-BR": "Slyph Storm (Mágico-Vento)",
             "EN-US": "Slyph Storm (Magic-Wind)"
         },
-        "drops": {
-            "id": "WindPowerS"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "windPowerS"
     },
     "172": {
         "name": "Infermon",
         "level": 55,
         "hp": 1440,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 600,
         "defense": 510,
@@ -5706,9 +5231,6 @@
         "dvxp": 55,
         "exp": 276,
         "bits": 530,
-        "location": [
-            "SpySatelliteGunslinger1F"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5717,15 +5239,15 @@
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "173": {
         "name": "Shadramon",
         "level": 47,
         "hp": 1248,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 520,
         "defense": 520,
@@ -5758,9 +5280,6 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 440,
-        "location": [
-            "AmaterasuNorthBootMountain,FireDungeon"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -5769,15 +5288,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "174": {
         "name": "Boltmon",
         "level": 48,
         "hp": 1272,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 32,
         "strength": 795,
         "defense": 530,
@@ -5810,9 +5329,6 @@
         "dvxp": 48,
         "exp": 243,
         "bits": 500,
-        "location": [
-            "AmaterasuNorthKulonMine,KulonPit"
-        ],
         "regularAttack": {
             "PT-BR": "Thunder Element; Counter (Physical)",
             "EN-US": "Thunder Element; Counter (Physical)"
@@ -5821,17 +5337,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "PowerBrace"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "powerBrace"
     },
     "175": {
         "name": "Piedmon",
         "level": 56,
         "hp": 1464,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 610,
         "defense": 610,
@@ -5864,9 +5378,6 @@
         "dvxp": 56,
         "exp": 280,
         "bits": 560,
-        "location": [
-            "TamerOnly"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Element"
@@ -5875,15 +5386,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "176": {
         "name": "Machinedramon",
         "level": 47,
         "hp": 1248,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 32,
         "strength": 520,
         "defense": 520,
@@ -5916,9 +5427,6 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 500,
-        "location": [
-            "AmaterasuWestDumDumFactory"
-        ],
         "regularAttack": {
             "PT-BR": "Machine Element (Hits Twice)",
             "EN-US": "Machine Element (Hits Twice)"
@@ -5927,17 +5435,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": {
-            "id": "MetalPowerS"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "metalPowerS"
     },
     "177": {
         "name": "VenomMyotismon",
         "level": 55,
         "hp": 1440,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 0,
         "strength": 750,
         "defense": 510,
@@ -5970,9 +5476,6 @@
         "dvxp": 55,
         "exp": 277,
         "bits": 530,
-        "location": [
-            "SpySatelliteGunslinger1F"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -5981,15 +5484,15 @@
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "178": {
         "name": "Apokarimon",
         "level": 56,
         "hp": 1464,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 0,
         "strength": 518,
         "defense": 762,
@@ -6022,9 +5525,6 @@
         "dvxp": 56,
         "exp": 282,
         "bits": 550,
-        "location": [
-            "SpySatelliteGunslinger1F"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6033,15 +5533,15 @@
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "179": {
         "name": "Ghoulmon",
         "level": 49,
         "hp": 1037,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 32,
         "strength": 540,
         "defense": 810,
@@ -6074,9 +5574,6 @@
         "dvxp": 49,
         "exp": 246,
         "bits": 490,
-        "location": [
-            "AmaterasuNorthDarkDungeon"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6085,17 +5582,15 @@
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
         },
-        "drops": {
-            "id": "DarkPowerS"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "darkPowerS"
     },
     "180": {
         "name": "Creepymon",
         "level": 55,
         "hp": 1440,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 0,
         "strength": 420,
         "defense": 750,
@@ -6128,9 +5623,6 @@
         "dvxp": 55,
         "exp": 277,
         "bits": 540,
-        "location": [
-            "TamerOnly"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -6139,15 +5631,15 @@
             "PT-BR": "Darkness Chaos (Mágico-Trevas)",
             "EN-US": "Darkness Chaos (Magic-Dark)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "181": {
         "name": "Armageddemon",
         "level": 56,
         "hp": 2196,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 0,
         "strength": 610,
         "defense": 762,
@@ -6180,9 +5672,6 @@
         "dvxp": 56,
         "exp": 279,
         "bits": 600,
-        "location": [
-            "SpySatelliteGunslinger2F"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Trevas",
             "EN-US": "Dark Elemental"
@@ -6191,15 +5680,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "182": {
         "name": "RedVegiemon",
         "level": 9,
         "hp": 336,
         "mp": 9999,
-        "species": "Plant",
+        "species": "plant",
         "rate": 0,
         "strength": 140,
         "defense": 140,
@@ -6232,12 +5721,6 @@
         "dvxp": 9,
         "exp": 45,
         "bits": 90,
-        "location": [
-            "PhoenixBay",
-            "EtherJungle",
-            "KickingForestAfter"
-        ],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6246,14 +5729,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "183": {
         "name": "Kuwagamon (green)",
         "level": 30,
         "hp": 840,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 128,
         "strength": 438,
         "defense": 350,
@@ -6286,10 +5770,6 @@
         "dvxp": 30,
         "exp": 150,
         "bits": 290,
-        "location": [],
-        "drops": {
-            "id": "ChainSaw"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6298,14 +5778,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "chainSaw"
     },
     "184": {
         "name": "Yanmamon (green)",
         "level": 8,
         "hp": 312,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 130,
         "defense": 110,
@@ -6338,13 +5819,6 @@
         "dvxp": 8,
         "exp": 40,
         "bits": 80,
-        "location": [
-            "BulkSwamp",
-            "BulkBridge",
-            "TranquilSwamp",
-            "JungleGrave"
-        ],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6353,14 +5827,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "185": {
         "name": "Dokugumon (brown)",
         "level": 21,
         "hp": 624,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 128,
         "strength": 260,
         "defense": 221,
@@ -6393,10 +5868,6 @@
         "dvxp": 21,
         "exp": 105,
         "bits": 210,
-        "location": [],
-        "drops": {
-            "id": "SpiderWeb"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6405,14 +5876,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "spiderWeb"
     },
     "186": {
         "name": "Goburimon (red)",
         "level": 22,
         "hp": 648,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 128,
         "strength": 405,
         "defense": 270,
@@ -6445,10 +5917,6 @@
         "dvxp": 22,
         "exp": 112,
         "bits": 220,
-        "location": [],
-        "drops": {
-            "id": "Naginata"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6457,14 +5925,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "naginata"
     },
     "187": {
         "name": "Minotarumon (blue)",
         "level": 33,
         "hp": 608,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 64,
         "strength": 570,
         "defense": 475,
@@ -6497,10 +5966,6 @@
         "dvxp": 33,
         "exp": 167,
         "bits": 350,
-        "location": [],
-        "drops": {
-            "id": "MetalPower2"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6509,14 +5974,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "metalPower2"
     },
     "188": {
         "name": "Flymon (pink)",
         "level": 33,
         "hp": 912,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 128,
         "strength": 380,
         "defense": 323,
@@ -6549,10 +6015,6 @@
         "dvxp": 33,
         "exp": 165,
         "bits": 330,
-        "location": [],
-        "drops": {
-            "id": "Glasses"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6561,14 +6023,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "glasses"
     },
     "189": {
         "name": "Woodmon (green)",
         "level": 19,
         "hp": 576,
         "mp": 9999,
-        "species": "Plant",
+        "species": "plant",
         "rate": 0,
         "strength": 240,
         "defense": 240,
@@ -6601,11 +6064,6 @@
         "dvxp": 19,
         "exp": 76,
         "bits": 190,
-        "location": [
-            "PhoenixBay",
-            "EtherJungle"
-        ],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6614,14 +6072,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "190": {
         "name": "Triceramon (red)",
         "level": 41,
         "hp": 1656,
         "mp": 9999,
-        "species": "Dino",
+        "species": "dino",
         "rate": 0,
         "strength": 575,
         "defense": 460,
@@ -6654,8 +6113,6 @@
         "dvxp": 41,
         "exp": 205,
         "bits": 400,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6664,14 +6121,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "191": {
         "name": "Airdramon (gold)",
         "level": 21,
         "hp": 624,
         "mp": 9999,
-        "species": "Dragon",
+        "species": "dragon",
         "rate": 128,
         "strength": 182,
         "defense": 325,
@@ -6704,10 +6162,6 @@
         "dvxp": 21,
         "exp": 104,
         "bits": 215,
-        "location": [],
-        "drops": {
-            "id": "MagicianRod"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6716,14 +6170,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "magicianRod"
     },
     "192": {
         "name": "Phantomon (blue)",
         "level": 37,
         "hp": 1008,
         "mp": 9999,
-        "species": "Ghoul",
+        "species": "ghoul",
         "rate": 16,
         "strength": 525,
         "defense": 630,
@@ -6756,10 +6211,6 @@
         "dvxp": 37,
         "exp": 186,
         "bits": 370,
-        "location": [],
-        "drops": {
-            "id": "HPChip"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6768,14 +6219,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "hpChip"
     },
     "193": {
         "name": "Kokatorimon (brown)",
         "level": 22,
         "hp": 648,
         "mp": 9999,
-        "species": "Bird",
+        "species": "bird",
         "rate": 128,
         "strength": 270,
         "defense": 270,
@@ -6808,10 +6260,6 @@
         "dvxp": 22,
         "exp": 158,
         "bits": 300,
-        "location": [],
-        "drops": {
-            "id": "OverClocked"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6820,14 +6268,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "overClocked"
     },
     "194": {
         "name": "Tortomon (blue)",
         "level": 36,
         "hp": 984,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 0,
         "strength": 410,
         "defense": 512,
@@ -6860,8 +6309,6 @@
         "dvxp": 36,
         "exp": 180,
         "bits": 360,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6870,14 +6317,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "195": {
         "name": "ShogunGekomon (blue)",
         "level": 37,
         "hp": 1008,
         "mp": 360,
-        "species": "Fish",
+        "species": "fish",
         "rate": 128,
         "strength": 420,
         "defense": 420,
@@ -6910,10 +6358,6 @@
         "dvxp": 37,
         "exp": 184,
         "bits": 370,
-        "location": [],
-        "drops": {
-            "id": "ChaosWave"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6922,14 +6366,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "chaosWave"
     },
     "196": {
         "name": "Seadramon (brown)",
         "level": 35,
         "hp": 960,
         "mp": 9999,
-        "species": "Dragon",
+        "species": "dragon",
         "rate": 0,
         "strength": 340,
         "defense": 500,
@@ -6962,8 +6407,6 @@
         "dvxp": 35,
         "exp": 175,
         "bits": 350,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -6972,14 +6415,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "197": {
         "name": "Mammothmon (silver)",
         "level": 47,
         "hp": 1248,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 0,
         "strength": 650,
         "defense": 520,
@@ -7012,8 +6456,6 @@
         "dvxp": 47,
         "exp": 236,
         "bits": 460,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7022,14 +6464,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "198": {
         "name": "Fugamon",
         "level": 42,
         "hp": 1128,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 705,
         "defense": 588,
@@ -7062,9 +6505,6 @@
         "dvxp": 42,
         "exp": 210,
         "bits": 430,
-        "location": [
-            "KulonMine,KulonPit"
-        ],
         "regularAttack": {
             "PT-BR": "No element",
             "EN-US": "No element"
@@ -7073,15 +6513,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "199": {
         "name": "Vademon (red)",
         "level": 46,
         "hp": 1224,
         "mp": 4,
-        "species": "Rare",
+        "species": "rare",
         "rate": 256,
         "strength": 510,
         "defense": 510,
@@ -7114,10 +6554,6 @@
         "dvxp": 46,
         "exp": 232,
         "bits": 460,
-        "location": [],
-        "drops": {
-            "id": "CursedPuppet"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7126,14 +6562,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "cursedPuppet"
     },
     "200": {
         "name": "Maildramon (black)",
         "level": 48,
         "hp": 1272,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 32,
         "strength": 530,
         "defense": 662,
@@ -7166,10 +6603,6 @@
         "dvxp": 48,
         "exp": 242,
         "bits": 480,
-        "location": [],
-        "drops": {
-            "id": "BoltPowerS"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7178,14 +6611,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "boltPowerS"
     },
     "201": {
         "name": "Guardromon (white)",
         "level": 46,
         "hp": 1224,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 0,
         "strength": 638,
         "defense": 765,
@@ -7218,8 +6652,6 @@
         "dvxp": 46,
         "exp": 231,
         "bits": 460,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7228,14 +6660,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "202": {
         "name": "Numemon (blue)",
         "level": 31,
         "hp": 864,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 128,
         "strength": 360,
         "defense": 450,
@@ -7268,12 +6701,6 @@
         "dvxp": 31,
         "exp": 222,
         "bits": 660,
-        "location": [
-            "JungleShrine"
-        ],
-        "drops": {
-            "id": "DanceFeather"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7282,14 +6709,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "danceFeather"
     },
     "203": {
         "name": "Numemon (brown)",
         "level": 39,
         "hp": 1056,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 128,
         "strength": 440,
         "defense": 550,
@@ -7322,10 +6750,6 @@
         "dvxp": 39,
         "exp": 299,
         "bits": 770,
-        "location": [],
-        "drops": {
-            "id": "TrainingBook"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7334,14 +6758,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "trainingBook"
     },
     "204": {
         "name": "Numemon (aqua)",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 480,
         "defense": 600,
@@ -7374,8 +6799,6 @@
         "dvxp": 43,
         "exp": 344,
         "bits": 880,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7384,14 +6807,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "205": {
         "name": "Numemon (red)",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 32,
         "strength": 480,
         "defense": 600,
@@ -7424,10 +6848,6 @@
         "dvxp": 43,
         "exp": 366,
         "bits": 990,
-        "location": [],
-        "drops": {
-            "id": "OverLoad"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7436,14 +6856,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "overLoad"
     },
     "206": {
         "name": "Numemon (white)",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 16,
         "strength": 490,
         "defense": 735,
@@ -7476,10 +6897,6 @@
         "dvxp": 44,
         "exp": 399,
         "bits": 1110,
-        "location": [],
-        "drops": {
-            "id": "BoostChip"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7488,14 +6905,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "boostChip"
     },
     "207": {
         "name": "Raremon (pink)",
         "level": 40,
         "hp": 1080,
         "mp": 9999,
-        "species": "Ghoul",
+        "species": "ghoul",
         "rate": 64,
         "strength": 450,
         "defense": 675,
@@ -7528,10 +6946,6 @@
         "dvxp": 40,
         "exp": 201,
         "bits": 400,
-        "location": [],
-        "drops": {
-            "id": "BoltPower2"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7540,14 +6954,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "boltPower2"
     },
     "208": {
         "name": "Cyclonemon (pink)",
         "level": 43,
         "hp": 1152,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 480,
         "defense": 480,
@@ -7580,8 +6995,6 @@
         "dvxp": 43,
         "exp": 215,
         "bits": 430,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7590,14 +7003,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "209": {
         "name": "Tankmon (blue)",
         "level": 45,
         "hp": 1200,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 32,
         "strength": 625,
         "defense": 750,
@@ -7630,10 +7044,6 @@
         "dvxp": 45,
         "exp": 227,
         "bits": 470,
-        "location": [],
-        "drops": {
-            "id": "RunnerShoes"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7642,14 +7052,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "runnerShoes"
     },
     "210": {
         "name": "Musyamon (green)",
         "level": 32,
         "hp": 888,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 128,
         "strength": 370,
         "defense": 370,
@@ -7682,10 +7093,6 @@
         "dvxp": 32,
         "exp": 160,
         "bits": 330,
-        "location": [],
-        "drops": {
-            "id": "MPProxy"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7694,14 +7101,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "mpProxy"
     },
     "211": {
         "name": "Kurisarimon (pink)",
         "level": 40,
         "hp": 1080,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 0,
         "strength": 450,
         "defense": 562,
@@ -7734,8 +7142,6 @@
         "dvxp": 40,
         "exp": 250,
         "bits": 800,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7744,14 +7150,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "212": {
         "name": "Snimon (brown)",
         "level": 48,
         "hp": 1272,
         "mp": 9999,
-        "species": "Insect",
+        "species": "insect",
         "rate": 32,
         "strength": 662,
         "defense": 450,
@@ -7784,10 +7191,6 @@
         "dvxp": 48,
         "exp": 241,
         "bits": 480,
-        "location": [],
-        "drops": {
-            "id": "TrainChip3"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7796,14 +7199,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "trainChip3"
     },
     "213": {
         "name": "Blossomon (pink)",
         "level": 36,
         "hp": 984,
         "mp": 9999,
-        "species": "Plant",
+        "species": "plant",
         "rate": 0,
         "strength": 410,
         "defense": 410,
@@ -7836,8 +7240,6 @@
         "dvxp": 36,
         "exp": 179,
         "bits": 360,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7846,14 +7248,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "214": {
         "name": "Cherrymon (red)",
         "level": 41,
         "hp": 1104,
         "mp": 9999,
-        "species": "Plant",
+        "species": "plant",
         "rate": 64,
         "strength": 460,
         "defense": 460,
@@ -7886,10 +7289,6 @@
         "dvxp": 41,
         "exp": 203,
         "bits": 410,
-        "location": [],
-        "drops": {
-            "id": "TrainChip1"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7898,14 +7297,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "trainChip1"
     },
     "215": {
         "name": "Whamon (blue)",
         "level": 47,
         "hp": 1872,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 32,
         "strength": 520,
         "defense": 520,
@@ -7938,10 +7338,6 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 420,
-        "location": [],
-        "drops": {
-            "id": "HPMegaProxy"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -7950,14 +7346,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "hpMegaProxy"
     },
     "216": {
         "name": "MegaSeadramon (gold)",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Dragon",
+        "species": "dragon",
         "rate": 32,
         "strength": 416,
         "defense": 416,
@@ -7990,10 +7387,6 @@
         "dvxp": 44,
         "exp": 221,
         "bits": 450,
-        "location": [],
-        "drops": {
-            "id": "WaterPowerS"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8002,14 +7395,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "waterPowerS"
     },
     "217": {
         "name": "Ebidramon (pink)",
         "level": 48,
         "hp": 1272,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 32,
         "strength": 530,
         "defense": 530,
@@ -8042,10 +7436,6 @@
         "dvxp": 48,
         "exp": 240,
         "bits": 480,
-        "location": [],
-        "drops": {
-            "id": "TrainChip2"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8054,14 +7444,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "trainChip2"
     },
     "218": {
         "name": "Vilemon (purple)",
         "level": 48,
         "hp": 1272,
         "mp": 9999,
-        "species": "Evil",
+        "species": "evil",
         "rate": 32,
         "strength": 530,
         "defense": 450,
@@ -8094,10 +7485,6 @@
         "dvxp": 48,
         "exp": 239,
         "bits": 480,
-        "location": [],
-        "drops": {
-            "id": "HackSystem"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8106,14 +7493,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "hackSystem"
     },
     "219": {
         "name": "Drimogemon (brown)",
         "level": 44,
         "hp": 1176,
         "mp": 9999,
-        "species": "Machine",
+        "species": "machine",
         "rate": 0,
         "strength": 612,
         "defense": 490,
@@ -8146,8 +7534,6 @@
         "dvxp": 44,
         "exp": 220,
         "bits": 500,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8156,14 +7542,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "220": {
         "name": "BlueMeramon",
         "level": 48,
         "hp": 1272,
         "mp": 1800,
-        "species": "Rare",
+        "species": "rare",
         "rate": 32,
         "strength": 450,
         "defense": 662,
@@ -8196,9 +7583,6 @@
         "dvxp": 48,
         "exp": 243,
         "bits": 480,
-        "location": [
-            "AmaterasuNorthBootMountain,FireDungeon"
-        ],
         "regularAttack": {
             "PT-BR": "Elemento Fogo",
             "EN-US": "Fire Element"
@@ -8207,17 +7591,15 @@
             "PT-BR": "Flame Sphere (Mágico-Fogo)",
             "EN-US": "Flame Sphere (Magic-Fire)"
         },
-        "drops": {
-            "id": "MPMegaProxy"
-        },
-        "boss": false
+        "boss": false,
+        "dropId": "mpMegaProxy"
     },
     "221": {
         "name": "Vikemon (blue)",
         "level": 47,
         "hp": 1872,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 0,
         "strength": 650,
         "defense": 442,
@@ -8250,8 +7632,6 @@
         "dvxp": 47,
         "exp": 236,
         "bits": 460,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8260,14 +7640,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "222": {
         "name": "MetalSeadramon (black)",
         "level": 54,
         "hp": 1416,
         "mp": 9999,
-        "species": "Dragon",
+        "species": "dragon",
         "rate": 0,
         "strength": 502,
         "defense": 738,
@@ -8300,8 +7681,6 @@
         "dvxp": 54,
         "exp": 271,
         "bits": 550,
-        "location": [],
-        "drops": null,
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8310,14 +7689,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "223": {
         "name": "Scorpiomon (black)",
         "level": 54,
         "hp": 1416,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 16,
         "strength": 590,
         "defense": 590,
@@ -8350,10 +7730,6 @@
         "dvxp": 54,
         "exp": 272,
         "bits": 510,
-        "location": [],
-        "drops": {
-            "id": "TrainChipV"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8362,14 +7738,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "trainChipV"
     },
     "224": {
         "name": "Antylamon (white)",
         "level": 49,
         "hp": 1296,
         "mp": 9999,
-        "species": "Mammal",
+        "species": "mammal",
         "rate": 32,
         "strength": 540,
         "defense": 540,
@@ -8402,10 +7779,6 @@
         "dvxp": 49,
         "exp": 245,
         "bits": 490,
-        "location": [],
-        "drops": {
-            "id": "IcePowerS"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8414,14 +7787,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "icePowerS"
     },
     "247": {
         "name": "Knightmon",
         "level": 53,
         "hp": 2784,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 0,
         "strength": 580,
         "defense": 870,
@@ -8454,9 +7828,6 @@
         "dvxp": 53,
         "exp": 530,
         "bits": 1060,
-        "location": [
-            "TamerOnly"
-        ],
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8465,15 +7836,15 @@
             "PT-BR": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
             "EN-US": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)"
         },
-        "drops": null,
-        "boss": false
+        "boss": false,
+        "dropId": null
     },
     "515": {
         "name": "Cardmon (T1)",
         "level": 7,
         "hp": 288,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 100,
         "strength": 120,
         "defense": 120,
@@ -8506,10 +7877,6 @@
         "dvxp": 7,
         "exp": 35,
         "bits": 70,
-        "location": [],
-        "drops": {
-            "id": "VariousBooster"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8518,14 +7885,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "variousBooster"
     },
     "516": {
         "name": "Cardmon (A1)",
         "level": 12,
         "hp": 408,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 100,
         "strength": 170,
         "defense": 170,
@@ -8558,10 +7926,6 @@
         "dvxp": 12,
         "exp": 60,
         "bits": 120,
-        "location": [],
-        "drops": {
-            "id": "VariousBooster"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8570,14 +7934,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "variousBooster"
     },
     "517": {
         "name": "Cardmon (T2)",
         "level": 17,
         "hp": 528,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 100,
         "strength": 220,
         "defense": 220,
@@ -8610,10 +7975,6 @@
         "dvxp": 17,
         "exp": 85,
         "bits": 170,
-        "location": [],
-        "drops": {
-            "id": "VariousBooster"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8622,14 +7983,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "variousBooster"
     },
     "518": {
         "name": "Cardmon (A2)",
         "level": 27,
         "hp": 768,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 100,
         "strength": 320,
         "defense": 320,
@@ -8662,10 +8024,6 @@
         "dvxp": 27,
         "exp": 135,
         "bits": 270,
-        "location": [],
-        "drops": {
-            "id": "VariousBooster"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8674,14 +8032,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "variousBooster"
     },
     "519": {
         "name": "Cardmon (T3)",
         "level": 37,
         "hp": 1008,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 100,
         "strength": 420,
         "defense": 420,
@@ -8714,10 +8073,6 @@
         "dvxp": 37,
         "exp": 185,
         "bits": 370,
-        "location": [],
-        "drops": {
-            "id": "VariousBooster"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8726,14 +8081,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "variousBooster"
     },
     "520": {
         "name": "Cardmon (A3)",
         "level": 42,
         "hp": 1128,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 100,
         "strength": 470,
         "defense": 470,
@@ -8766,10 +8122,6 @@
         "dvxp": 42,
         "exp": 210,
         "bits": 420,
-        "location": [],
-        "drops": {
-            "id": "VariousBooster"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8778,14 +8130,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "variousBooster"
     },
     "521": {
         "name": "Cardmon (T4)",
         "level": 47,
         "hp": 1248,
         "mp": 9999,
-        "species": "Rare",
+        "species": "rare",
         "rate": 100,
         "strength": 520,
         "defense": 520,
@@ -8818,10 +8171,6 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 470,
-        "location": [],
-        "drops": {
-            "id": "VariousBooster"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8830,14 +8179,15 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "variousBooster"
     },
     "522": {
         "name": "Cardmon (A4)",
         "level": 47,
         "hp": 1248,
         "mp": 9999,
-        "species": "Fish",
+        "species": "fish",
         "rate": 100,
         "strength": 520,
         "defense": 520,
@@ -8870,10 +8220,6 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 470,
-        "location": [],
-        "drops": {
-            "id": "VariousBooster"
-        },
         "regularAttack": {
             "PT-BR": "Sem Elemento",
             "EN-US": "No Element"
@@ -8882,6 +8228,7 @@
             "PT-BR": "Nenhum",
             "EN-US": "None"
         },
-        "boss": false
+        "boss": false,
+        "dropId": "variousBooster"
     }
 }

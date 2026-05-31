@@ -1,7 +1,3 @@
-export interface EnemyDropRaw {
-    id: string;
-}
-
 export interface EnemyLocalizedTextRaw {
     "PT-BR": string;
     "EN-US": string;
@@ -45,9 +41,8 @@ export interface EnemyRaw {
     dvxp: number;
     exp: number;
     bits: number;
-    location: string[];
+    dropId: string | null;
     regularAttack: EnemyLocalizedTextRaw;
     technique: EnemyLocalizedTextRaw;
     boss: boolean;
-    drops: EnemyDropRaw | null;
 }

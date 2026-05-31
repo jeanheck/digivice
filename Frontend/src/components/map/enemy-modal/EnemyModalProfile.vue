@@ -1,13 +1,22 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useLocalization } from "@/composables/useLocalization";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
-defineProps<{
+const props = defineProps<{
   enemy: EnemyViewModel;
   enemyImageUrl: string | null;
 }>();
 
 const { t, getLocalized } = useLocalization();
+
+const dropLabel = computed(() => {
+  if (!props.enemy.dropId) {
+    return t("drops.none");
+  }
+
+  return t(`drops.${props.enemy.dropId}`);
+});
 </script>
 
 <template>
@@ -64,9 +73,9 @@ const { t, getLocalized } = useLocalization();
           <span class="font-bold text-blue-500 tracking-wider uppercase mb-1">{{ $t("enemy.possibleDrop") }}:</span>
           <span
             class="font-bold text-gray-300 text-left"
-            :title="enemy.drops && getLocalized(enemy.drops) !== 'N/A' ? getLocalized(enemy.drops) : t('drops.none')"
+            :title="dropLabel"
           >
-            {{ enemy.drops && getLocalized(enemy.drops) !== "N/A" ? getLocalized(enemy.drops) : t("drops.None") }}
+            {{ dropLabel }}
           </span>
         </div>
       </div>
