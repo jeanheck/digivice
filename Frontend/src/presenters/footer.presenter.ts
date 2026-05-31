@@ -1,5 +1,6 @@
 import { type Digimon, type DigimonSlot } from "@/models";
 import { Stat } from "@/models/stat";
+import { EquipmentsHelper } from "@/presenters/helpers/equipments.helper";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
 import { MathUtils } from "@/utils/MathUtils";
@@ -26,7 +27,8 @@ export class FooterPresenter {
         const digimons = this.getDigimons(digimonSlots);
         const totalDigimonsCharisma = MathUtils.Sum(digimons.map((d) => Number(d.attributes.charisma)));
         const totalBonusFromEquipments = MathUtils.Sum(digimons.map((digimon) => {
-            const rawEquipments = EquipmentRepository.getRawEquipmentsByIds(digimon.equipments);
+            const equipmentIds = EquipmentsHelper.getUniqueEquipmentIds(digimon.equipments);
+            const rawEquipments = EquipmentRepository.getEquipmentsByIds(equipmentIds);
             return FooterPresenter.calculateBonusFromEquipaments(
                 Stat.charisma,
                 rawEquipments

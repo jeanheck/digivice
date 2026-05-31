@@ -12,7 +12,7 @@ export class DigimonEquipmentsPresenter {
             return null;
         }
 
-        const equipmentRaw = EquipmentRepository.getRawEquipmentById(equipmentId);
+        const equipmentRaw = EquipmentRepository.getEquipmentById(equipmentId);
 
         return {
             id: equipmentId,

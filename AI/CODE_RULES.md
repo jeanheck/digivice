@@ -67,6 +67,31 @@ O converter pode receber parâmetros além do Raw quando o ViewModel depende de 
 - **Presenter** que monta ViewModel inline quando a transformação justifica um converter.
 - **Repository** que retorna ViewModel ou monta dados para apresentação.
 
+### Helpers (regras reutilizáveis para presenters)
+
+Pasta: `presenters/helpers/`. Helpers concentram lógica de domínio ou de apresentação **reutilizada por mais de um presenter**, sem acesso a dados nem montagem de ViewModel.
+
+#### Convenção
+
+- **Classe:** `{AlgumaCoisa}Helper` (PascalCase).
+- **Arquivo:** `{alguma-coisa}.helper.ts` (kebab-case com sufixo `.helper.ts`).
+- **Métodos:** estáticos, stateless, funções puras (dados entram, dados saem).
+
+#### Responsabilidade
+
+| Camada | Responsabilidade |
+|--------|------------------|
+| **Helper** | Regras reutilizáveis sobre models de domínio (ex.: extrair IDs de slots, deduplicar). Não chama repository, converter nem conhece componente. |
+| **Presenter** | Orquestra helper + repository + converter conforme o caso de uso da tela. |
+
+Referência: `EquipmentsHelper` (`getEquipmentIds`, `getUniqueEquipmentIds`).
+
+#### Proibido em código novo ou refatorado (helpers)
+
+- **Helper** que chama repository ou monta ViewModel.
+- **Repository** com regras de domínio (extração de IDs, deduplicação, filtros de negócio).
+- Duplicar a mesma regra em vários presenters quando um helper resolve.
+
 ### Tooltips (fluxo padrão do Frontend)
 
 Referência de implementação: `Frontend/src/components/digimon/DigimonEquipments.vue`.
