@@ -1,8 +1,8 @@
 import type { DigimonDigievolutionRequirementViewModel } from "../digimon/digimon-digievolution-requirement.viewmodel";
 
 export interface DigievolutionTreeFamilyNodeViewModel {
+    id: number;
     name: string;
-    before: string | null;
-    next: string | string[] | null;
+    next: number | number[] | null;
     requirements: DigimonDigievolutionRequirementViewModel[];
 }

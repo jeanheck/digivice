@@ -16,7 +16,7 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <template v-for="(node, nodeIndex) in nodes" :key="node.name">
+  <template v-for="(node, nodeIndex) in nodes" :key="node.id">
     <DigievolutionTreeNode
       :node="node"
       :digimon="digimon"

@@ -1,250 +1,206 @@
 {
-    "3": [
-        {
-            "name": "Greymon",
-            "before": null,
-            "next": [
-                "MetalGreymon",
-                "SkullGreymon"
-            ]
-        },
-        {
-            "name": "MetalGreymon",
-            "before": "Greymon",
-            "next": "WarGreymon"
-        },
-        {
-            "name": "WarGreymon",
-            "before": "MetalGreymon",
-            "next": "Omnimon"
-        },
-        {
-            "name": "Omnimon",
-            "before": "WarGreymon",
-            "next": null
-        },
-        {
-            "name": "SkullGreymon",
-            "before": "Greymon",
-            "next": "BK WarGreymon"
-        },
-        {
-            "name": "BK WarGreymon",
-            "before": "SkullGreymon",
-            "next": null
-        }
-    ],
-    "11": [
-        {
-            "name": "Devimon",
-            "before": null,
-            "next": "Myotismon"
-        },
-        {
-            "name": "Myotismon",
-            "before": "Devimon",
-            "next": "MaloMyotismon"
-        },
-        {
-            "name": "MaloMyotismon",
-            "before": "Myotismon",
-            "next": "Beelzemon"
-        },
-        {
-            "name": "Beelzemon",
-            "before": "MaloMyotismon",
-            "next": null
-        }
-    ],
-    "8": [
-        {
-            "name": "Digitamamon",
-            "before": null,
-            "next": null
-        }
-    ],
-    "9": [
-        {
-            "name": "MetalMamemon",
-            "before": null,
-            "next": "MetalGarurumon"
-        },
-        {
-            "name": "MetalGarurumon",
-            "before": "MetalMamemon",
-            "next": "MegaGargomon"
-        },
-        {
-            "name": "MegaGargomon",
-            "before": "MetalGarurumon",
-            "next": null
-        }
-    ],
-    "10": [
-        {
-            "name": "Angewomon",
-            "before": null,
-            "next": "Rosemon"
-        },
-        {
-            "name": "Rosemon",
-            "before": "Angewomon",
-            "next": "Phoenixmon"
-        },
-        {
-            "name": "Phoenixmon",
-            "before": "Rosemon",
-            "next": null
-        }
-    ],
-    "5": [
-        {
-            "name": "Growlmon",
-            "before": null,
-            "next": "WarGrowlmon"
-        },
-        {
-            "name": "WarGrowlmon",
-            "before": "Growlmon",
-            "next": "Gallantmon"
-        },
-        {
-            "name": "Gallantmon",
-            "before": "WarGrowlmon",
-            "next": null
-        }
-    ],
     "0": [
         {
-            "name": "Dinohumon",
-            "before": null,
-            "next": "Kyukimon"
+            "id": "386",
+            "next": "389"
         },
         {
-            "name": "Kyukimon",
-            "before": "Dinohumon",
-            "next": "Guardiangemon"
+            "id": "389",
+            "next": "392"
         },
         {
-            "name": "Guardiangemon",
-            "before": "Kyukimon",
+            "id": "392",
             "next": null
         }
     ],
     "1": [
         {
-            "name": "Grizzmon",
-            "before": null,
-            "next": "GrapLeomon"
+            "id": "388",
+            "next": "391"
         },
         {
-            "name": "GrapLeomon",
-            "before": "Grizzmon",
-            "next": "Marsmon"
+            "id": "391",
+            "next": "394"
         },
         {
-            "name": "Marsmon",
-            "before": "GrapLeomon",
+            "id": "394",
             "next": null
         }
     ],
     "2": [
         {
-            "name": "Hookmon",
-            "before": null,
-            "next": "Armormon"
+            "id": "387",
+            "next": "390"
         },
         {
-            "name": "Armormon",
-            "before": "Hookmon",
-            "next": "Cannondramon"
+            "id": "390",
+            "next": "393"
         },
         {
-            "name": "Cannondramon",
-            "before": "Armormon",
+            "id": "393",
             "next": null
         }
     ],
-    "7": [
+    "3": [
         {
-            "name": "Angemon",
-            "before": null,
-            "next": "MagnaAngemon"
+            "id": "5",
+            "next": [
+                "12",
+                "26"
+            ]
         },
         {
-            "name": "MagnaAngemon",
-            "before": "Angemon",
-            "next": "Seraphimon"
+            "id": "12",
+            "next": "213"
         },
         {
-            "name": "Seraphimon",
-            "before": "MagnaAngemon",
+            "id": "213",
+            "next": "150"
+        },
+        {
+            "id": "150",
             "next": null
-        }
-    ],
-    "6": [
-        {
-            "name": "Kyubimon",
-            "before": null,
-            "next": "Taomon"
         },
         {
-            "name": "Taomon",
-            "before": "Kyubimon",
-            "next": "Sakuyamon"
+            "id": "26",
+            "next": "267"
         },
         {
-            "name": "Sakuyamon",
-            "before": "Taomon",
+            "id": "267",
             "next": null
         }
     ],
     "4": [
         {
-            "name": "ExVeemon",
-            "before": null,
-            "next": "Paildramon"
+            "id": "259",
+            "next": "254"
         },
         {
-            "name": "Paildramon",
-            "before": "ExVeemon",
-            "next": "Imperialdramon"
+            "id": "254",
+            "next": "148"
         },
         {
-            "name": "Imperialdramon",
-            "before": "Paildramon",
-            "next": "Imperialdramon-F"
+            "id": "148",
+            "next": "359"
         },
         {
-            "name": "Imperialdramon-F",
-            "before": "Imperialdramon",
-            "next": "Imperialdramon-P"
+            "id": "359",
+            "next": "381"
         },
         {
-            "name": "Imperialdramon-P",
-            "before": "Imperialdramon-F",
+            "id": "381",
+            "next": null
+        }
+    ],
+    "5": [
+        {
+            "id": "367",
+            "next": "368"
+        },
+        {
+            "id": "368",
+            "next": "369"
+        },
+        {
+            "id": "369",
+            "next": null
+        }
+    ],
+    "6": [
+        {
+            "id": "374",
+            "next": "375"
+        },
+        {
+            "id": "375",
+            "next": "376"
+        },
+        {
+            "id": "376",
+            "next": null
+        }
+    ],
+    "7": [
+        {
+            "id": "20",
+            "next": "211"
+        },
+        {
+            "id": "211",
+            "next": "214"
+        },
+        {
+            "id": "214",
+            "next": null
+        }
+    ],
+    "8": [
+        {
+            "id": "56",
+            "next": null
+        }
+    ],
+    "9": [
+        {
+            "id": "27",
+            "next": "196"
+        },
+        {
+            "id": "196",
+            "next": "372"
+        },
+        {
+            "id": "372",
+            "next": null
+        }
+    ],
+    "10": [
+        {
+            "id": "234",
+            "next": "144"
+        },
+        {
+            "id": "144",
+            "next": "59"
+        },
+        {
+            "id": "59",
+            "next": null
+        }
+    ],
+    "11": [
+        {
+            "id": "6",
+            "next": "66"
+        },
+        {
+            "id": "66",
+            "next": "378"
+        },
+        {
+            "id": "378",
+            "next": "377"
+        },
+        {
+            "id": "377",
             "next": null
         }
     ],
     "12": [
         {
-            "name": "Stingmon",
-            "before": null,
-            "next": "Kabuterimon"
+            "id": "260",
+            "next": "19"
         },
         {
-            "name": "Kabuterimon",
-            "before": "Stingmon",
-            "next": "GranKuwagamon"
+            "id": "19",
+            "next": "230"
         },
         {
-            "name": "GranKuwagamon",
-            "before": "Kabuterimon",
-            "next": "Diaboromon"
+            "id": "230",
+            "next": "151"
         },
         {
-            "name": "Diaboromon",
-            "before": "GranKuwagamon",
+            "id": "151",
             "next": null
         }
     ]

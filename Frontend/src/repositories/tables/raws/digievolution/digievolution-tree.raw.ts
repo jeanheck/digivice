@@ -1,5 +1,4 @@
 export interface DigievolutionTreeRaw {
-    name: string;
-    before: string | null;
+    id: string;
     next: string | string[] | null;
 }

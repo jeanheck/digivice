@@ -45,7 +45,7 @@ export class DigievolutionsModalTreePresenter {
         familyKey: string,
         familyNodes: DigievolutionTreeFamilyNodeViewModel[]
     ): DigievolutionTreeFamilyViewModel {
-        if(!this.familyHasFork(familyNodes)){
+        if (!this.familyHasFork(familyNodes)) {
             return {
                 key: familyKey,
                 nodesBeforeFork: [],
@@ -54,38 +54,39 @@ export class DigievolutionsModalTreePresenter {
         }
 
         const forkNode = this.findForkNode(familyNodes);
-        const forkNomeIndex = familyNodes.indexOf(forkNode);
-        const branchStartNodeNames = forkNode.next as Array<string>;
-        const branchs = branchStartNodeNames.map((branchStartNodeName) => {
-            return this.buildBranch(branchStartNodeName, familyNodes);
+        const forkNodeIndex = familyNodes.indexOf(forkNode);
+        const branchStartNodeIds = forkNode.next as number[];
+        const branchs = branchStartNodeIds.map((branchStartNodeId) => {
+            return this.buildBranch(branchStartNodeId, familyNodes);
         });
 
         return {
             key: familyKey,
-            nodesBeforeFork: familyNodes.slice(0, forkNomeIndex + 1),
+            nodesBeforeFork: familyNodes.slice(0, forkNodeIndex + 1),
             branchs,
         };
     }
+
     private static familyHasFork(familyNodes: DigievolutionTreeFamilyNodeViewModel[]): boolean {
-        return familyNodes.some(node => Array.isArray(node.next));
+        return familyNodes.some((node) => Array.isArray(node.next));
     }
 
     private static findForkNode(familyNodes: DigievolutionTreeFamilyNodeViewModel[]): DigievolutionTreeFamilyNodeViewModel {
-        return familyNodes.find(node => Array.isArray(node.next))!;
+        return familyNodes.find((node) => Array.isArray(node.next))!;
     }
 
     private static buildBranch(
-        startNodeName: string,
+        startNodeId: number,
         familyNodes: DigievolutionTreeFamilyNodeViewModel[]
     ): DigievolutionTreeFamilyNodeViewModel[] {
         const branch: DigievolutionTreeFamilyNodeViewModel[] = [];
-        let nextNodeName: string | null = startNodeName;
+        let nextNodeId: number | null = startNodeId;
 
         do {
-            const currentNode: DigievolutionTreeFamilyNodeViewModel = familyNodes.find(node => nextNodeName === node.name)!;
+            const currentNode: DigievolutionTreeFamilyNodeViewModel = familyNodes.find((node) => nextNodeId === node.id)!;
             branch.push(currentNode);
-            nextNodeName = currentNode.next as string | null;
-        } while (nextNodeName);
+            nextNodeId = currentNode.next as number | null;
+        } while (nextNodeId);
 
         return branch;
     }
@@ -94,15 +95,26 @@ export class DigievolutionsModalTreePresenter {
         digimonId: number,
         digievolutionTreeRaw: DigievolutionTreeRaw
     ): DigievolutionTreeFamilyNodeViewModel {
+        const digievolutionId = Number(digievolutionTreeRaw.id);
+
         return {
-            name: digievolutionTreeRaw.name,
-            before: digievolutionTreeRaw.before,
-            next: digievolutionTreeRaw.next,
-            requirements: DigimonRepository.getDigievolutionRequirements(
-                digimonId,
-                DigievolutionRepository.getIdByName(digievolutionTreeRaw.name)
-            ),
+            id: digievolutionId,
+            name: DigievolutionRepository.getNameById(digievolutionId),
+            next: this.parseNext(digievolutionTreeRaw.next),
+            requirements: DigimonRepository.getDigievolutionRequirements(digimonId, digievolutionId),
         };
+    }
+
+    private static parseNext(next: string | string[] | null): number | number[] | null {
+        if (next === null) {
+            return null;
+        }
+
+        if (Array.isArray(next)) {
+            return next.map((digievolutionId) => Number(digievolutionId));
+        }
+
+        return Number(next);
     }
 
     public static isRequirementMet(
