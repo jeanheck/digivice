@@ -98,7 +98,10 @@ export class DigievolutionsModalTreePresenter {
             name: digievolutionTreeRaw.name,
             before: digievolutionTreeRaw.before,
             next: digievolutionTreeRaw.next,
-            requirements: DigimonRepository.getDigievolutionRequirements(digimonId, digievolutionTreeRaw.name),
+            requirements: DigimonRepository.getDigievolutionRequirements(
+                digimonId,
+                DigievolutionRepository.getIdByName(digievolutionTreeRaw.name)
+            ),
         };
     }
 

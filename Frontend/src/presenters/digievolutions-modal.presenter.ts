@@ -12,8 +12,9 @@ export class DigievolutionsModalPresenter {
     public static getAllDigievolutionsNames() : string[] {
         return DigievolutionRepository.getAllDigievolutionsNames();
     }
-    // TODO - change digievolutionName by digievolutionId
     public static getDigievolutionRequirements(digimonId: number, digievolutionName: string): DigimonDigievolutionRequirementViewModel[] {
-        return DigimonRepository.getDigievolutionRequirements(digimonId, digievolutionName);
+        const digievolutionId = DigievolutionRepository.getIdByName(digievolutionName);
+
+        return DigimonRepository.getDigievolutionRequirements(digimonId, digievolutionId);
     }
 }

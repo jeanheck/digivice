@@ -1,64 +1,38 @@
 {
     "0": {
-        "Dinohumon": [
-            {
-                "type": "DigimonLevel",
-                "value": 5
-            }
-        ],
-        "Hookmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Growlmon"
-            }
-        ],
-        "Grizzmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "Growlmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 280,
-                "attribute": "Speed"
-            }
-        ],
-        "Greymon": [
+        "5": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
                 "digievolution": "Dinohumon"
             }
         ],
-        "ExVeemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 10,
-                "digievolution": "Greymon"
-            }
-        ],
-        "Growlmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Taomon"
-            },
-            {
-                "type": "Attribute",
-                "value": 200,
-                "attribute": "Fire"
-            }
-        ],
-        "Kyubimon": [
+        "6": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
-                "digievolution": "Guardiangemon"
+                "digievolution": "Digitamamon"
             }
         ],
-        "Angemon": [
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Greymon"
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 15
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "20": [
             {
                 "type": "DigievolutionLevel",
                 "value": 30,
@@ -70,21 +44,140 @@
                 "attribute": "Wind"
             }
         ],
-        "Devimon": [
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Greymon"
+            },
+            {
+                "type": "Attribute",
+                "value": 140,
+                "attribute": "Dark"
+            }
+        ],
+        "27": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
-                "digievolution": "Digitamamon"
+                "digievolution": "Kyukimon"
+            },
+            {
+                "type": "Attribute",
+                "value": 140,
+                "attribute": "Machine"
             }
         ],
-        "Stingmon": [
+        "56": [
             {
                 "type": "DigievolutionLevel",
-                "value": 10,
-                "digievolution": "Guardiangemon"
+                "value": 40,
+                "digievolution": "Taomon"
+            },
+            {
+                "type": "Attribute",
+                "value": 280,
+                "attribute": "Wisdom"
             }
         ],
-        "Angewomon": [
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Rosemon"
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Devimon"
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Angewomon"
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Paildramon"
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "WarGreymon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalGarurumon"
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GranKuwagamon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "BK WarGreymon"
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalMamemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 200,
+                "attribute": "Machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Angemon"
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MetalGreymon"
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MagnaAngemon"
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kabuterimon"
+            }
+        ],
+        "234": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
@@ -96,50 +189,7 @@
                 "attribute": "Water"
             }
         ],
-        "Kyukimon": [
-            {
-                "type": "DigimonLevel",
-                "value": 20
-            }
-        ],
-        "Armormon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Hookmon"
-            }
-        ],
-        "GrapLeomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Grizzmon"
-            }
-        ],
-        "MetalGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Greymon"
-            },
-            {
-                "type": "DigimonLevel",
-                "value": 15
-            }
-        ],
-        "SkullGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Greymon"
-            },
-            {
-                "type": "Attribute",
-                "value": 140,
-                "attribute": "Dark"
-            }
-        ],
-        "Paildramon": [
+        "254": [
             {
                 "type": "DigievolutionLevel",
                 "value": 5,
@@ -151,211 +201,89 @@
                 "digievolution": "Stingmon"
             }
         ],
-        "WarGrowlmon": [
+        "259": [
             {
                 "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Growlmon"
+                "value": 10,
+                "digievolution": "Greymon"
             }
         ],
-        "Taomon": [
+        "260": [
             {
                 "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kyubimon"
+                "value": 10,
+                "digievolution": "Guardiangemon"
             }
         ],
-        "MagnaAngemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Angemon"
-            }
-        ],
-        "Myotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Devimon"
-            }
-        ],
-        "MetalMamemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Kyukimon"
-            },
-            {
-                "type": "Attribute",
-                "value": 140,
-                "attribute": "Machine"
-            }
-        ],
-        "Kabuterimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "Digitamamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Taomon"
-            },
-            {
-                "type": "Attribute",
-                "value": 280,
-                "attribute": "Wisdom"
-            }
-        ],
-        "Guardiangemon": [
-            {
-                "type": "DigimonLevel",
-                "value": 40
-            }
-        ],
-        "Cannondramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Armormon"
-            }
-        ],
-        "Marsmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "GrapLeomon"
-            }
-        ],
-        "WarGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MetalGreymon"
-            }
-        ],
-        "Imperialdramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Paildramon"
-            }
-        ],
-        "Gallantmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "WarGrowlmon"
-            }
-        ],
-        "Sakuyamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Taomon"
-            }
-        ],
-        "Seraphimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MagnaAngemon"
-            }
-        ],
-        "MetalGarurumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalMamemon"
-            },
-            {
-                "type": "Attribute",
-                "value": 200,
-                "attribute": "Machine"
-            }
-        ],
-        "Rosemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Angewomon"
-            }
-        ],
-        "BK WarGreymon": [
+        "267": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "SkullGreymon"
             }
         ],
-        "Imperialdramon-F": [
+        "359": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "Imperialdramon"
             }
         ],
-        "MaloMyotismon": [
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Taomon"
+            },
+            {
+                "type": "Attribute",
+                "value": 200,
+                "attribute": "Fire"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Growlmon"
+            }
+        ],
+        "369": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Myotismon"
+                "digievolution": "WarGrowlmon"
             }
         ],
-        "MegaGargomon": [
+        "372": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "MetalGarurumon"
             }
         ],
-        "GranKuwagamon": [
+        "374": [
             {
                 "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kabuterimon"
+                "value": 20,
+                "digievolution": "Guardiangemon"
             }
         ],
-        "Phoenixmon": [
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kyubimon"
+            }
+        ],
+        "376": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Rosemon"
+                "digievolution": "Taomon"
             }
         ],
-        "Omnimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "WarGreymon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalGarurumon"
-            }
-        ],
-        "Imperialdramon-P": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon-F"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Omnimon"
-            }
-        ],
-        "Beelzemon": [
+        "377": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -367,41 +295,93 @@
                 "digievolution": "Gallantmon"
             }
         ],
-        "Diaboromon": [
+        "378": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "GranKuwagamon"
+                "digievolution": "Myotismon"
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon-F"
             },
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "BK WarGreymon"
-            }
-        ]
-    },
-    "1": {
-        "Dinohumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "MetalGreymon"
+                "value": 40,
+                "digievolution": "Omnimon"
             }
         ],
-        "Hookmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Kabuterimon"
-            }
-        ],
-        "Grizzmon": [
+        "386": [
             {
                 "type": "DigimonLevel",
                 "value": 5
             }
         ],
-        "Greymon": [
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Growlmon"
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "Growlmon"
+            },
+            {
+                "type": "Attribute",
+                "value": 280,
+                "attribute": "Speed"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Hookmon"
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Grizzmon"
+            }
+        ],
+        "392": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Armormon"
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GrapLeomon"
+            }
+        ]
+    },
+    "1": {
+        "5": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
@@ -413,14 +393,230 @@
                 "attribute": "Fire"
             }
         ],
-        "ExVeemon": [
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": "Marsmon"
+            }
+        ],
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Greymon"
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Myotismon"
+            },
+            {
+                "type": "Attribute",
+                "value": 280,
+                "attribute": "Wind"
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Greymon"
+            },
+            {
+                "type": "Attribute",
+                "value": 160,
+                "attribute": "Dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "GrapLeomon"
+            },
+            {
+                "type": "Attribute",
+                "value": 150,
+                "attribute": "Machine"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "Grizzmon"
+            },
+            {
+                "type": "Attribute",
+                "value": 80,
+                "attribute": "Wisdom"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Rosemon"
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Devimon"
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Angewomon"
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Paildramon"
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "WarGreymon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalGarurumon"
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GranKuwagamon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "BK WarGreymon"
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalMamemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 200,
+                "attribute": "Machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Angemon"
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MetalGreymon"
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MagnaAngemon"
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kabuterimon"
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Angemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 280,
+                "attribute": "Water"
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": "ExVeemon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "259": [
             {
                 "type": "DigievolutionLevel",
                 "value": 10,
                 "digievolution": "Kyubimon"
             }
         ],
-        "Growlmon": [
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "Marsmon"
+            },
+            {
+                "type": "Attribute",
+                "value": 400,
+                "attribute": "Speed"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "SkullGreymon"
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Imperialdramon"
+            }
+        ],
+        "367": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
@@ -432,7 +628,28 @@
                 "attribute": "Power"
             }
         ],
-        "Kyubimon": [
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Growlmon"
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "WarGrowlmon"
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MetalGarurumon"
+            }
+        ],
+        "374": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
@@ -444,108 +661,7 @@
                 "attribute": "Spirit"
             }
         ],
-        "Angemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Myotismon"
-            },
-            {
-                "type": "Attribute",
-                "value": 280,
-                "attribute": "Wind"
-            }
-        ],
-        "Devimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 10,
-                "digievolution": "Marsmon"
-            }
-        ],
-        "Stingmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "Marsmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 400,
-                "attribute": "Speed"
-            }
-        ],
-        "Angewomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Angemon"
-            },
-            {
-                "type": "Attribute",
-                "value": 280,
-                "attribute": "Water"
-            }
-        ],
-        "Kyukimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Dinohumon"
-            }
-        ],
-        "Armormon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Hookmon"
-            }
-        ],
-        "GrapLeomon": [
-            {
-                "type": "DigimonLevel",
-                "value": 20
-            }
-        ],
-        "MetalGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Greymon"
-            }
-        ],
-        "SkullGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Greymon"
-            },
-            {
-                "type": "Attribute",
-                "value": 160,
-                "attribute": "Dark"
-            }
-        ],
-        "Paildramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 5,
-                "digievolution": "ExVeemon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 5,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "WarGrowlmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Growlmon"
-            }
-        ],
-        "Taomon": [
+        "375": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -556,197 +672,14 @@
                 "value": 15
             }
         ],
-        "MagnaAngemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Angemon"
-            }
-        ],
-        "Myotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Devimon"
-            }
-        ],
-        "MetalMamemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "GrapLeomon"
-            },
-            {
-                "type": "Attribute",
-                "value": 150,
-                "attribute": "Machine"
-            }
-        ],
-        "Kabuterimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "Digitamamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "Grizzmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 80,
-                "attribute": "Wisdom"
-            }
-        ],
-        "Guardiangemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Kyukimon"
-            }
-        ],
-        "Cannondramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Armormon"
-            }
-        ],
-        "Marsmon": [
-            {
-                "type": "DigimonLevel",
-                "value": 40
-            }
-        ],
-        "WarGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MetalGreymon"
-            }
-        ],
-        "Imperialdramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Paildramon"
-            }
-        ],
-        "Gallantmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "WarGrowlmon"
-            }
-        ],
-        "Sakuyamon": [
+        "376": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "Taomon"
             }
         ],
-        "Seraphimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MagnaAngemon"
-            }
-        ],
-        "MetalGarurumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalMamemon"
-            },
-            {
-                "type": "Attribute",
-                "value": 200,
-                "attribute": "Machine"
-            }
-        ],
-        "Rosemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Angewomon"
-            }
-        ],
-        "BK WarGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "SkullGreymon"
-            }
-        ],
-        "Imperialdramon-F": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Imperialdramon"
-            }
-        ],
-        "MaloMyotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Myotismon"
-            }
-        ],
-        "MegaGargomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MetalGarurumon"
-            }
-        ],
-        "GranKuwagamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kabuterimon"
-            }
-        ],
-        "Phoenixmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Rosemon"
-            }
-        ],
-        "Omnimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "WarGreymon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalGarurumon"
-            }
-        ],
-        "Imperialdramon-P": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon-F"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Omnimon"
-            }
-        ],
-        "Beelzemon": [
+        "377": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -758,101 +691,95 @@
                 "digievolution": "Gallantmon"
             }
         ],
-        "Diaboromon": [
+        "378": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "GranKuwagamon"
+                "digievolution": "Myotismon"
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon-F"
             },
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "BK WarGreymon"
+                "value": 40,
+                "digievolution": "Omnimon"
             }
-        ]
-    },
-    "2": {
-        "Dinohumon": [
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "MetalGreymon"
+            }
+        ],
+        "387": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
-                "digievolution": "MetalGreymon"
-            },
-            {
-                "type": "Attribute",
-                "value": 250,
-                "attribute": "Power"
+                "digievolution": "Kabuterimon"
             }
         ],
-        "Hookmon": [
+        "388": [
             {
                 "type": "DigimonLevel",
                 "value": 5
             }
         ],
-        "Grizzmon": [
+        "389": [
             {
                 "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Growlmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 460,
-                "attribute": "Defense"
+                "value": 50,
+                "digievolution": "Dinohumon"
             }
         ],
-        "Greymon": [
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Hookmon"
+            }
+        ],
+        "391": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Kyukimon"
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Armormon"
+            }
+        ],
+        "394": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ]
+    },
+    "2": {
+        "5": [
             {
                 "type": "DigievolutionLevel",
                 "value": 10,
                 "digievolution": "Cannondramon"
             }
         ],
-        "ExVeemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Hookmon"
-            }
-        ],
-        "Growlmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Kyukimon"
-            },
-            {
-                "type": "Attribute",
-                "value": 320,
-                "attribute": "Speed"
-            }
-        ],
-        "Kyubimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 10,
-                "digievolution": "Angewomon"
-            },
-            {
-                "type": "Attribute",
-                "value": 200,
-                "attribute": "Spirit"
-            }
-        ],
-        "Angemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Armormon"
-            },
-            {
-                "type": "Attribute",
-                "value": 120,
-                "attribute": "Wind"
-            }
-        ],
-        "Devimon": [
+        "6": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
@@ -864,19 +791,166 @@
                 "attribute": "Spirit"
             }
         ],
-        "Stingmon": [
+        "12": [
             {
                 "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "MetalGreymon"
+                "value": 40,
+                "digievolution": "Greymon"
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Armormon"
             },
             {
                 "type": "Attribute",
-                "value": 200,
-                "attribute": "Thunder"
+                "value": 120,
+                "attribute": "Wind"
             }
         ],
-        "Angewomon": [
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Greymon"
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "attribute": "Dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Armormon"
+            },
+            {
+                "type": "Attribute",
+                "value": 180,
+                "attribute": "Machine"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "Armormon"
+            },
+            {
+                "type": "Attribute",
+                "value": 160,
+                "attribute": "Power"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Rosemon"
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Devimon"
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Angewomon"
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Paildramon"
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "WarGreymon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalGarurumon"
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GranKuwagamon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "BK WarGreymon"
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalMamemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 240,
+                "attribute": "Machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Angemon"
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MetalGreymon"
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MagnaAngemon"
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kabuterimon"
+            }
+        ],
+        "234": [
             {
                 "type": "DigievolutionLevel",
                 "value": 30,
@@ -888,46 +962,7 @@
                 "attribute": "Water"
             }
         ],
-        "Kyukimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Dinohumon"
-            }
-        ],
-        "Armormon": [
-            {
-                "type": "DigimonLevel",
-                "value": 20
-            }
-        ],
-        "GrapLeomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Grizzmon"
-            }
-        ],
-        "MetalGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Greymon"
-            }
-        ],
-        "SkullGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Greymon"
-            },
-            {
-                "type": "Attribute",
-                "value": 300,
-                "attribute": "Dark"
-            }
-        ],
-        "Paildramon": [
+        "254": [
             {
                 "type": "DigievolutionLevel",
                 "value": 5,
@@ -939,211 +974,99 @@
                 "digievolution": "Stingmon"
             }
         ],
-        "WarGrowlmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Growlmon"
-            }
-        ],
-        "Taomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kyubimon"
-            }
-        ],
-        "MagnaAngemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Angemon"
-            }
-        ],
-        "Myotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Devimon"
-            }
-        ],
-        "MetalMamemon": [
+        "259": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
-                "digievolution": "Armormon"
-            },
-            {
-                "type": "Attribute",
-                "value": 180,
-                "attribute": "Machine"
+                "digievolution": "Hookmon"
             }
         ],
-        "Kabuterimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "Digitamamon": [
+        "260": [
             {
                 "type": "DigievolutionLevel",
                 "value": 30,
-                "digievolution": "Armormon"
-            },
-            {
-                "type": "Attribute",
-                "value": 160,
-                "attribute": "Power"
-            }
-        ],
-        "Guardiangemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Kyukimon"
-            }
-        ],
-        "Cannondramon": [
-            {
-                "type": "DigimonLevel",
-                "value": 40
-            }
-        ],
-        "Marsmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "GrapLeomon"
-            }
-        ],
-        "WarGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
                 "digievolution": "MetalGreymon"
-            }
-        ],
-        "Imperialdramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Paildramon"
-            }
-        ],
-        "Gallantmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "WarGrowlmon"
-            }
-        ],
-        "Sakuyamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Taomon"
-            }
-        ],
-        "Seraphimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MagnaAngemon"
-            }
-        ],
-        "MetalGarurumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalMamemon"
             },
             {
                 "type": "Attribute",
-                "value": 240,
-                "attribute": "Machine"
+                "value": 200,
+                "attribute": "Thunder"
             }
         ],
-        "Rosemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Angewomon"
-            }
-        ],
-        "BK WarGreymon": [
+        "267": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "SkullGreymon"
             }
         ],
-        "Imperialdramon-F": [
+        "359": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "Imperialdramon"
             }
         ],
-        "MaloMyotismon": [
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Kyukimon"
+            },
+            {
+                "type": "Attribute",
+                "value": 320,
+                "attribute": "Speed"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Growlmon"
+            }
+        ],
+        "369": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Myotismon"
+                "digievolution": "WarGrowlmon"
             }
         ],
-        "MegaGargomon": [
+        "372": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "MetalGarurumon"
             }
         ],
-        "GranKuwagamon": [
+        "374": [
             {
                 "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon"
+                "value": 10,
+                "digievolution": "Angewomon"
             },
             {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kabuterimon"
+                "type": "Attribute",
+                "value": 200,
+                "attribute": "Spirit"
             }
         ],
-        "Phoenixmon": [
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kyubimon"
+            }
+        ],
+        "376": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Rosemon"
+                "digievolution": "Taomon"
             }
         ],
-        "Omnimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "WarGreymon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalGarurumon"
-            }
-        ],
-        "Imperialdramon-P": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon-F"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Omnimon"
-            }
-        ],
-        "Beelzemon": [
+        "377": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -1155,96 +1078,104 @@
                 "digievolution": "Gallantmon"
             }
         ],
-        "Diaboromon": [
+        "378": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "GranKuwagamon"
+                "digievolution": "Myotismon"
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon-F"
             },
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "BK WarGreymon"
+                "value": 40,
+                "digievolution": "Omnimon"
             }
-        ]
-    },
-    "3": {
-        "Dinohumon": [
+        ],
+        "386": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
-                "digievolution": "WarGreymon"
-            }
-        ],
-        "Hookmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "WarGrowlmon"
-            }
-        ],
-        "Grizzmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "MetalGarurumon"
+                "digievolution": "MetalGreymon"
             },
             {
                 "type": "Attribute",
-                "value": 400,
-                "attribute": "Defense"
+                "value": 250,
+                "attribute": "Power"
             }
         ],
-        "Greymon": [
+        "387": [
             {
                 "type": "DigimonLevel",
                 "value": 5
             }
         ],
-        "ExVeemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "MetalGreymon"
-            },
-            {
-                "type": "Attribute",
-                "value": 100,
-                "attribute": "Ice"
-            }
-        ],
-        "Growlmon": [
+        "388": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
-                "digievolution": "Greymon"
-            }
-        ],
-        "Kyubimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "MetalGreymon"
+                "digievolution": "Growlmon"
             },
             {
                 "type": "Attribute",
-                "value": 300,
-                "attribute": "Spirit"
+                "value": 460,
+                "attribute": "Defense"
             }
         ],
-        "Angemon": [
+        "389": [
             {
                 "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Kabuterimon"
-            },
-            {
-                "type": "Attribute",
-                "value": 300,
-                "attribute": "Wisdom"
+                "value": 50,
+                "digievolution": "Dinohumon"
             }
         ],
-        "Devimon": [
+        "390": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Grizzmon"
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Kyukimon"
+            }
+        ],
+        "393": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GrapLeomon"
+            }
+        ]
+    },
+    "3": {
+        "5": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "6": [
             {
                 "type": "DigievolutionLevel",
                 "value": 30,
@@ -1256,53 +1187,32 @@
                 "attribute": "Dark"
             }
         ],
-        "Stingmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "WarGreymon"
-            },
-            {
-                "type": "Attribute",
-                "value": 260,
-                "attribute": "Speed"
-            }
-        ],
-        "Angewomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "MagnaAngemon"
-            }
-        ],
-        "Kyukimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Dinohumon"
-            }
-        ],
-        "Armormon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Hookmon"
-            }
-        ],
-        "GrapLeomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Grizzmon"
-            }
-        ],
-        "MetalGreymon": [
+        "12": [
             {
                 "type": "DigimonLevel",
                 "value": 20
             }
         ],
-        "SkullGreymon": [
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Kabuterimon"
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "attribute": "Wisdom"
+            }
+        ],
+        "26": [
             {
                 "type": "DigievolutionLevel",
                 "value": 50,
@@ -1314,169 +1224,100 @@
                 "attribute": "Dark"
             }
         ],
-        "Paildramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 5,
-                "digievolution": "ExVeemon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 5,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "WarGrowlmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Growlmon"
-            },
-            {
-                "type": "DigimonLevel",
-                "value": 15
-            }
-        ],
-        "Taomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kyubimon"
-            }
-        ],
-        "MagnaAngemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Angemon"
-            }
-        ],
-        "Myotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Devimon"
-            }
-        ],
-        "MetalMamemon": [
+        "27": [
             {
                 "type": "DigievolutionLevel",
                 "value": 10,
                 "digievolution": "WarGreymon"
             }
         ],
-        "Kabuterimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "Digitamamon": [
+        "56": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
                 "digievolution": "MetalGarurumon"
             }
         ],
-        "Guardiangemon": [
+        "59": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Kyukimon"
+                "digievolution": "Rosemon"
             }
         ],
-        "Cannondramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Armormon"
-            }
-        ],
-        "Marsmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "GrapLeomon"
-            }
-        ],
-        "WarGreymon": [
-            {
-                "type": "DigimonLevel",
-                "value": 40
-            }
-        ],
-        "Imperialdramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Paildramon"
-            }
-        ],
-        "Gallantmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "WarGrowlmon"
-            }
-        ],
-        "Sakuyamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Taomon"
-            }
-        ],
-        "Seraphimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MagnaAngemon"
-            }
-        ],
-        "MetalGarurumon": [
+        "66": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
-                "digievolution": "MetalMamemon"
+                "digievolution": "Devimon"
             }
         ],
-        "Rosemon": [
+        "144": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
                 "digievolution": "Angewomon"
             }
         ],
-        "BK WarGreymon": [
+        "148": [
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "SkullGreymon"
+                "value": 50,
+                "digievolution": "Paildramon"
             }
         ],
-        "Imperialdramon-F": [
+        "150": [
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Imperialdramon"
-            }
-        ],
-        "MaloMyotismon": [
+                "value": 40,
+                "digievolution": "WarGreymon"
+            },
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Myotismon"
-            }
-        ],
-        "MegaGargomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
+                "value": 40,
                 "digievolution": "MetalGarurumon"
             }
         ],
-        "GranKuwagamon": [
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GranKuwagamon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "BK WarGreymon"
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalMamemon"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Angemon"
+            }
+        ],
+        "213": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MagnaAngemon"
+            }
+        ],
+        "230": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -1488,38 +1329,122 @@
                 "digievolution": "Kabuterimon"
             }
         ],
-        "Phoenixmon": [
+        "234": [
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Rosemon"
+                "value": 20,
+                "digievolution": "MagnaAngemon"
             }
         ],
-        "Omnimon": [
+        "254": [
             {
                 "type": "DigievolutionLevel",
-                "value": 40,
+                "value": 5,
+                "digievolution": "ExVeemon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "259": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "MetalGreymon"
+            },
+            {
+                "type": "Attribute",
+                "value": 100,
+                "attribute": "Ice"
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
                 "digievolution": "WarGreymon"
             },
             {
+                "type": "Attribute",
+                "value": 260,
+                "attribute": "Speed"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "SkullGreymon"
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Imperialdramon"
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Greymon"
+            }
+        ],
+        "368": [
+            {
                 "type": "DigievolutionLevel",
                 "value": 40,
+                "digievolution": "Growlmon"
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 15
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "WarGrowlmon"
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
                 "digievolution": "MetalGarurumon"
             }
         ],
-        "Imperialdramon-P": [
+        "374": [
             {
                 "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon-F"
+                "value": 20,
+                "digievolution": "MetalGreymon"
             },
             {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Omnimon"
+                "type": "Attribute",
+                "value": 300,
+                "attribute": "Spirit"
             }
         ],
-        "Beelzemon": [
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kyubimon"
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Taomon"
+            }
+        ],
+        "377": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -1531,52 +1456,96 @@
                 "digievolution": "Gallantmon"
             }
         ],
-        "Diaboromon": [
+        "378": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "GranKuwagamon"
+                "digievolution": "Myotismon"
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon-F"
             },
             {
                 "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Omnimon"
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "WarGreymon"
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "WarGrowlmon"
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "MetalGarurumon"
+            },
+            {
+                "type": "Attribute",
+                "value": 400,
+                "attribute": "Defense"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Dinohumon"
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Hookmon"
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Grizzmon"
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "BK WarGreymon"
+                "digievolution": "Kyukimon"
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Armormon"
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GrapLeomon"
             }
         ]
     },
     "4": {
-        "Dinohumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "Imperialdramon"
-            }
-        ],
-        "Hookmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 35,
-                "digievolution": "Imperialdramon"
-            },
-            {
-                "type": "Attribute",
-                "value": 160,
-                "attribute": "Machine"
-            }
-        ],
-        "Grizzmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 45,
-                "digievolution": "Imperialdramon"
-            },
-            {
-                "type": "Attribute",
-                "value": 200,
-                "attribute": "Defense"
-            }
-        ],
-        "Greymon": [
+        "5": [
             {
                 "type": "DigievolutionLevel",
                 "value": 35,
@@ -1588,49 +1557,7 @@
                 "attribute": "Defense"
             }
         ],
-        "ExVeemon": [
-            {
-                "type": "DigimonLevel",
-                "value": 5
-            }
-        ],
-        "Growlmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "Paildramon"
-            },
-            {
-                "type": "Attribute",
-                "value": 90,
-                "attribute": "Fire"
-            }
-        ],
-        "Kyubimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Paildramon"
-            },
-            {
-                "type": "Attribute",
-                "value": 200,
-                "attribute": "Ice"
-            }
-        ],
-        "Angemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 45,
-                "digievolution": "Paildramon"
-            },
-            {
-                "type": "Attribute",
-                "value": 230,
-                "attribute": "Wisdom"
-            }
-        ],
-        "Devimon": [
+        "6": [
             {
                 "type": "DigievolutionLevel",
                 "value": 25,
@@ -1642,49 +1569,33 @@
                 "attribute": "Dark"
             }
         ],
-        "Stingmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "ExVeemon"
-            }
-        ],
-        "Angewomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "MagnaAngemon"
-            }
-        ],
-        "Kyukimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Dinohumon"
-            }
-        ],
-        "Armormon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Hookmon"
-            }
-        ],
-        "GrapLeomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Grizzmon"
-            }
-        ],
-        "MetalGreymon": [
+        "12": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
                 "digievolution": "Greymon"
             }
         ],
-        "SkullGreymon": [
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 45,
+                "digievolution": "Paildramon"
+            },
+            {
+                "type": "Attribute",
+                "value": 230,
+                "attribute": "Wisdom"
+            }
+        ],
+        "26": [
             {
                 "type": "DigievolutionLevel",
                 "value": 50,
@@ -1696,46 +1607,7 @@
                 "attribute": "Dark"
             }
         ],
-        "Paildramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 5,
-                "digievolution": "Stingmon"
-            },
-            {
-                "type": "DigimonLevel",
-                "value": 20
-            }
-        ],
-        "WarGrowlmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Growlmon"
-            }
-        ],
-        "Taomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Kyubimon"
-            }
-        ],
-        "MagnaAngemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Angemon"
-            }
-        ],
-        "Myotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Devimon"
-            }
-        ],
-        "MetalMamemon": [
+        "27": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
@@ -1747,14 +1619,7 @@
                 "attribute": "Machine"
             }
         ],
-        "Kabuterimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "Digitamamon": [
+        "56": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
@@ -1766,35 +1631,28 @@
                 "attribute": "Wisdom"
             }
         ],
-        "Guardiangemon": [
+        "59": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Kyukimon"
+                "digievolution": "Rosemon"
             }
         ],
-        "Cannondramon": [
+        "66": [
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Armormon"
+                "value": 40,
+                "digievolution": "Devimon"
             }
         ],
-        "Marsmon": [
+        "144": [
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "GrapLeomon"
+                "value": 40,
+                "digievolution": "Angewomon"
             }
         ],
-        "WarGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MetalGreymon"
-            }
-        ],
-        "Imperialdramon": [
+        "148": [
             {
                 "type": "DigievolutionLevel",
                 "value": 50,
@@ -1805,94 +1663,7 @@
                 "value": 40
             }
         ],
-        "Gallantmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "WarGrowlmon"
-            }
-        ],
-        "Sakuyamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Taomon"
-            }
-        ],
-        "Seraphimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MagnaAngemon"
-            }
-        ],
-        "MetalGarurumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalMamemon"
-            },
-            {
-                "type": "Attribute",
-                "value": 140,
-                "attribute": "Machine"
-            }
-        ],
-        "Rosemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Angewomon"
-            }
-        ],
-        "BK WarGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "SkullGreymon"
-            }
-        ],
-        "Imperialdramon-F": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Imperialdramon"
-            }
-        ],
-        "MaloMyotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Myotismon"
-            }
-        ],
-        "MegaGargomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MetalGarurumon"
-            }
-        ],
-        "GranKuwagamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kabuterimon"
-            }
-        ],
-        "Phoenixmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Rosemon"
-            }
-        ],
-        "Omnimon": [
+        "150": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -1904,19 +1675,168 @@
                 "digievolution": "MetalGarurumon"
             }
         ],
-        "Imperialdramon-P": [
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GranKuwagamon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "BK WarGreymon"
+            }
+        ],
+        "196": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
-                "digievolution": "Imperialdramon-F"
+                "digievolution": "MetalMamemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 140,
+                "attribute": "Machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Angemon"
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MetalGreymon"
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MagnaAngemon"
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon"
             },
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
-                "digievolution": "Omnimon"
+                "digievolution": "Kabuterimon"
             }
         ],
-        "Beelzemon": [
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "MagnaAngemon"
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": "Stingmon"
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "259": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "ExVeemon"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "SkullGreymon"
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Imperialdramon"
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "Paildramon"
+            },
+            {
+                "type": "Attribute",
+                "value": 90,
+                "attribute": "Fire"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Growlmon"
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "WarGrowlmon"
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MetalGarurumon"
+            }
+        ],
+        "374": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Paildramon"
+            },
+            {
+                "type": "Attribute",
+                "value": 200,
+                "attribute": "Ice"
+            }
+        ],
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Kyubimon"
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Taomon"
+            }
+        ],
+        "377": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -1928,47 +1848,101 @@
                 "digievolution": "Gallantmon"
             }
         ],
-        "Diaboromon": [
+        "378": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "GranKuwagamon"
+                "digievolution": "Myotismon"
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon-F"
             },
             {
                 "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Omnimon"
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "Imperialdramon"
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 35,
+                "digievolution": "Imperialdramon"
+            },
+            {
+                "type": "Attribute",
+                "value": 160,
+                "attribute": "Machine"
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 45,
+                "digievolution": "Imperialdramon"
+            },
+            {
+                "type": "Attribute",
+                "value": 200,
+                "attribute": "Defense"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Dinohumon"
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Hookmon"
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Grizzmon"
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "BK WarGreymon"
+                "digievolution": "Kyukimon"
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Armormon"
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GrapLeomon"
             }
         ]
     },
     "5": {
-        "Dinohumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "MetalGreymon"
-            },
-            {
-                "type": "Attribute",
-                "value": 400,
-                "attribute": "Power"
-            }
-        ],
-        "Hookmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Dinohumon"
-            }
-        ],
-        "Grizzmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 10,
-                "digievolution": "Gallantmon"
-            }
-        ],
-        "Greymon": [
+        "5": [
             {
                 "type": "DigievolutionLevel",
                 "value": 30,
@@ -1980,49 +1954,7 @@
                 "attribute": "Fire"
             }
         ],
-        "ExVeemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Gallantmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 300,
-                "attribute": "Wind"
-            }
-        ],
-        "Growlmon": [
-            {
-                "type": "DigimonLevel",
-                "value": 5
-            }
-        ],
-        "Kyubimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 10,
-                "digievolution": "Angewomon"
-            },
-            {
-                "type": "Attribute",
-                "value": 200,
-                "attribute": "Spirit"
-            }
-        ],
-        "Angemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "WarGrowlmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 180,
-                "attribute": "Spirit"
-            }
-        ],
-        "Devimon": [
+        "6": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
@@ -2034,19 +1966,166 @@
                 "attribute": "Dark"
             }
         ],
-        "Stingmon": [
+        "12": [
             {
                 "type": "DigievolutionLevel",
-                "value": 30,
+                "value": 40,
+                "digievolution": "Greymon"
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "WarGrowlmon"
+            },
+            {
+                "type": "Attribute",
+                "value": 180,
+                "attribute": "Spirit"
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Greymon"
+            },
+            {
+                "type": "Attribute",
+                "value": 140,
+                "attribute": "Dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
                 "digievolution": "Growlmon"
             },
             {
                 "type": "Attribute",
-                "value": 80,
-                "attribute": "Thunder"
+                "value": 100,
+                "attribute": "Defense"
             }
         ],
-        "Angewomon": [
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "WarGrowlmon"
+            },
+            {
+                "type": "Attribute",
+                "value": 120,
+                "attribute": "Dark"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Rosemon"
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Devimon"
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Angewomon"
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Paildramon"
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "WarGreymon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalGarurumon"
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GranKuwagamon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "BK WarGreymon"
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalMamemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 190,
+                "attribute": "Machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Angemon"
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MetalGreymon"
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MagnaAngemon"
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kabuterimon"
+            }
+        ],
+        "234": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -2058,47 +2137,7 @@
                 "attribute": "Water"
             }
         ],
-        "Kyukimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Dinohumon"
-            }
-        ],
-        "Armormon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Hookmon"
-            }
-        ],
-        "GrapLeomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Grizzmon"
-            }
-        ],
-        "MetalGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Greymon"
-            }
-        ],
-        "SkullGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Greymon"
-            },
-            {
-                "type": "Attribute",
-                "value": 140,
-                "attribute": "Dark"
-            }
-        ],
-        "Paildramon": [
+        "254": [
             {
                 "type": "DigievolutionLevel",
                 "value": 5,
@@ -2110,210 +2149,96 @@
                 "digievolution": "Stingmon"
             }
         ],
-        "WarGrowlmon": [
-            {
-                "type": "DigimonLevel",
-                "value": 20
-            }
-        ],
-        "Taomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kyubimon"
-            }
-        ],
-        "MagnaAngemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Angemon"
-            }
-        ],
-        "Myotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Devimon"
-            }
-        ],
-        "MetalMamemon": [
+        "259": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
+                "digievolution": "Gallantmon"
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "attribute": "Wind"
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
                 "digievolution": "Growlmon"
             },
             {
                 "type": "Attribute",
-                "value": 100,
-                "attribute": "Defense"
+                "value": 80,
+                "attribute": "Thunder"
             }
         ],
-        "Kabuterimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "Digitamamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "WarGrowlmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 120,
-                "attribute": "Dark"
-            }
-        ],
-        "Guardiangemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Kyukimon"
-            }
-        ],
-        "Cannondramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Armormon"
-            }
-        ],
-        "Marsmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "GrapLeomon"
-            }
-        ],
-        "WarGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MetalGreymon"
-            }
-        ],
-        "Imperialdramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Paildramon"
-            }
-        ],
-        "Gallantmon": [
-            {
-                "type": "DigimonLevel",
-                "value": 40
-            }
-        ],
-        "Sakuyamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Taomon"
-            }
-        ],
-        "Seraphimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MagnaAngemon"
-            }
-        ],
-        "MetalGarurumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalMamemon"
-            },
-            {
-                "type": "Attribute",
-                "value": 190,
-                "attribute": "Machine"
-            }
-        ],
-        "Rosemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Angewomon"
-            }
-        ],
-        "BK WarGreymon": [
+        "267": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "SkullGreymon"
             }
         ],
-        "Imperialdramon-F": [
+        "359": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "Imperialdramon"
             }
         ],
-        "MaloMyotismon": [
+        "367": [
             {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Myotismon"
+                "type": "DigimonLevel",
+                "value": 5
             }
         ],
-        "MegaGargomon": [
+        "368": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "369": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "372": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "MetalGarurumon"
             }
         ],
-        "GranKuwagamon": [
+        "374": [
             {
                 "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon"
+                "value": 10,
+                "digievolution": "Angewomon"
             },
             {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kabuterimon"
+                "type": "Attribute",
+                "value": 200,
+                "attribute": "Spirit"
             }
         ],
-        "Phoenixmon": [
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kyubimon"
+            }
+        ],
+        "376": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Rosemon"
+                "digievolution": "Taomon"
             }
         ],
-        "Omnimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "WarGreymon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalGarurumon"
-            }
-        ],
-        "Imperialdramon-P": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon-F"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Omnimon"
-            }
-        ],
-        "Beelzemon": [
+        "377": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -2325,47 +2250,96 @@
                 "digievolution": "Gallantmon"
             }
         ],
-        "Diaboromon": [
+        "378": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "GranKuwagamon"
+                "digievolution": "Myotismon"
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon-F"
             },
             {
                 "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Omnimon"
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "MetalGreymon"
+            },
+            {
+                "type": "Attribute",
+                "value": 400,
+                "attribute": "Power"
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Dinohumon"
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": "Gallantmon"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Dinohumon"
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Hookmon"
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Grizzmon"
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "BK WarGreymon"
+                "digievolution": "Kyukimon"
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Armormon"
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GrapLeomon"
             }
         ]
     },
     "6": {
-        "Dinohumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Grizzmon"
-            }
-        ],
-        "Hookmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Kyukimon"
-            }
-        ],
-        "Grizzmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Myotismon"
-            },
-            {
-                "type": "Attribute",
-                "value": 300,
-                "attribute": "Power"
-            }
-        ],
-        "Greymon": [
+        "5": [
             {
                 "type": "DigievolutionLevel",
                 "value": 30,
@@ -2377,37 +2351,28 @@
                 "attribute": "Defense"
             }
         ],
-        "ExVeemon": [
+        "6": [
             {
                 "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Taomon"
-            },
-            {
-                "type": "Attribute",
-                "value": 120,
-                "attribute": "Wind"
+                "value": 10,
+                "digievolution": "Sakuyamon"
             }
         ],
-        "Growlmon": [
+        "12": [
             {
                 "type": "DigievolutionLevel",
-                "value": 20,
+                "value": 40,
+                "digievolution": "Greymon"
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
                 "digievolution": "Stingmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 80,
-                "attribute": "Defense"
             }
         ],
-        "Kyubimon": [
-            {
-                "type": "DigimonLevel",
-                "value": 5
-            }
-        ],
-        "Angemon": [
+        "20": [
             {
                 "type": "DigievolutionLevel",
                 "value": 30,
@@ -2419,66 +2384,7 @@
                 "attribute": "Wind"
             }
         ],
-        "Devimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 10,
-                "digievolution": "Sakuyamon"
-            }
-        ],
-        "Stingmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Kyubimon"
-            },
-            {
-                "type": "Attribute",
-                "value": 80,
-                "attribute": "Power"
-            }
-        ],
-        "Angewomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "Kyubimon"
-            },
-            {
-                "type": "Attribute",
-                "value": 160,
-                "attribute": "Spirit"
-            }
-        ],
-        "Kyukimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Dinohumon"
-            }
-        ],
-        "Armormon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Hookmon"
-            }
-        ],
-        "GrapLeomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Grizzmon"
-            }
-        ],
-        "MetalGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Greymon"
-            }
-        ],
-        "SkullGreymon": [
+        "26": [
             {
                 "type": "DigievolutionLevel",
                 "value": 50,
@@ -2490,50 +2396,7 @@
                 "attribute": "Dark"
             }
         ],
-        "Paildramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 5,
-                "digievolution": "ExVeemon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 5,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "WarGrowlmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Growlmon"
-            },
-            {
-                "type": "DigimonLevel",
-                "value": 25
-            }
-        ],
-        "Taomon": [
-            {
-                "type": "DigimonLevel",
-                "value": 20
-            }
-        ],
-        "MagnaAngemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Angemon"
-            }
-        ],
-        "Myotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Devimon"
-            }
-        ],
-        "MetalMamemon": [
+        "27": [
             {
                 "type": "DigievolutionLevel",
                 "value": 30,
@@ -2545,14 +2408,7 @@
                 "attribute": "Machine"
             }
         ],
-        "Kabuterimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "Digitamamon": [
+        "56": [
             {
                 "type": "DigievolutionLevel",
                 "value": 20,
@@ -2564,62 +2420,63 @@
                 "attribute": "Wisdom"
             }
         ],
-        "Guardiangemon": [
+        "59": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Kyukimon"
+                "digievolution": "Rosemon"
             }
         ],
-        "Cannondramon": [
+        "66": [
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Armormon"
+                "value": 50,
+                "digievolution": "Devimon"
             }
         ],
-        "Marsmon": [
+        "144": [
             {
                 "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "GrapLeomon"
-            }
-        ],
-        "WarGreymon": [
+                "value": 40,
+                "digievolution": "Angewomon"
+            },
             {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MetalGreymon"
+                "type": "DigimonLevel",
+                "value": 15
             }
         ],
-        "Imperialdramon": [
+        "148": [
             {
                 "type": "DigievolutionLevel",
                 "value": 50,
                 "digievolution": "Paildramon"
             }
         ],
-        "Gallantmon": [
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "WarGreymon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalGarurumon"
+            }
+        ],
+        "151": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "WarGrowlmon"
-            }
-        ],
-        "Sakuyamon": [
-            {
-                "type": "DigimonLevel",
-                "value": 40
-            }
-        ],
-        "Seraphimon": [
+                "digievolution": "GranKuwagamon"
+            },
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "MagnaAngemon"
+                "digievolution": "BK WarGreymon"
             }
         ],
-        "MetalGarurumon": [
+        "196": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -2631,46 +2488,28 @@
                 "attribute": "Machine"
             }
         ],
-        "Rosemon": [
+        "211": [
             {
                 "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Angewomon"
-            },
-            {
-                "type": "DigimonLevel",
-                "value": 15
+                "value": 50,
+                "digievolution": "Angemon"
             }
         ],
-        "BK WarGreymon": [
+        "213": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "SkullGreymon"
+                "digievolution": "MetalGreymon"
             }
         ],
-        "Imperialdramon-F": [
+        "214": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Imperialdramon"
+                "digievolution": "MagnaAngemon"
             }
         ],
-        "MaloMyotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Myotismon"
-            }
-        ],
-        "MegaGargomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MetalGarurumon"
-            }
-        ],
-        "GranKuwagamon": [
+        "230": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -2682,215 +2521,19 @@
                 "digievolution": "Kabuterimon"
             }
         ],
-        "Phoenixmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Rosemon"
-            }
-        ],
-        "Omnimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "WarGreymon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalGarurumon"
-            }
-        ],
-        "Imperialdramon-P": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon-F"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Omnimon"
-            }
-        ],
-        "Beelzemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MaloMyotismon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Gallantmon"
-            }
-        ],
-        "Diaboromon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "GranKuwagamon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "BK WarGreymon"
-            }
-        ]
-    },
-    "7": {
-        "Dinohumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Growlmon"
-            }
-        ],
-        "Hookmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 10,
-                "digievolution": "Seraphimon"
-            }
-        ],
-        "Grizzmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Growlmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 240,
-                "attribute": "Power"
-            }
-        ],
-        "Greymon": [
+        "234": [
             {
                 "type": "DigievolutionLevel",
                 "value": 30,
-                "digievolution": "MagnaAngemon"
+                "digievolution": "Kyubimon"
             },
             {
                 "type": "Attribute",
-                "value": 140,
-                "attribute": "Fire"
-            }
-        ],
-        "ExVeemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "Growlmon"
-            },
-            {
-                "type": "Attribute",
-                "value": 320,
-                "attribute": "Wind"
-            }
-        ],
-        "Growlmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "MetalMamemon"
-            }
-        ],
-        "Kyubimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Armormon"
-            },
-            {
-                "type": "Attribute",
-                "value": 300,
+                "value": 160,
                 "attribute": "Spirit"
             }
         ],
-        "Angemon": [
-            {
-                "type": "DigimonLevel",
-                "value": 5
-            }
-        ],
-        "Devimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "Armormon"
-            },
-            {
-                "type": "Attribute",
-                "value": 300,
-                "attribute": "Dark"
-            }
-        ],
-        "Stingmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "MagnaAngemon"
-            },
-            {
-                "type": "Attribute",
-                "value": 100,
-                "attribute": "Thunder"
-            }
-        ],
-        "Angewomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 30,
-                "digievolution": "Angemon"
-            },
-            {
-                "type": "Attribute",
-                "value": 180,
-                "attribute": "Wisdom"
-            }
-        ],
-        "Kyukimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Dinohumon"
-            }
-        ],
-        "Armormon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Hookmon"
-            }
-        ],
-        "GrapLeomon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Grizzmon"
-            }
-        ],
-        "MetalGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Greymon"
-            }
-        ],
-        "SkullGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Greymon"
-            },
-            {
-                "type": "Attribute",
-                "value": 220,
-                "attribute": "Dark"
-            }
-        ],
-        "Paildramon": [
+        "254": [
             {
                 "type": "DigievolutionLevel",
                 "value": 5,
@@ -2902,209 +2545,100 @@
                 "digievolution": "Stingmon"
             }
         ],
-        "WarGrowlmon": [
+        "259": [
             {
                 "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Growlmon"
+                "value": 20,
+                "digievolution": "Taomon"
+            },
+            {
+                "type": "Attribute",
+                "value": 120,
+                "attribute": "Wind"
             }
         ],
-        "Taomon": [
+        "260": [
             {
                 "type": "DigievolutionLevel",
-                "value": 40,
+                "value": 20,
                 "digievolution": "Kyubimon"
-            }
-        ],
-        "MagnaAngemon": [
-            {
-                "type": "DigimonLevel",
-                "value": 20
-            }
-        ],
-        "Myotismon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Devimon"
-            }
-        ],
-        "MetalMamemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Armormon"
             },
             {
                 "type": "Attribute",
-                "value": 140,
-                "attribute": "Machine"
-            }
-        ],
-        "Kabuterimon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Stingmon"
-            }
-        ],
-        "Digitamamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 20,
-                "digievolution": "Angemon"
-            },
-            {
-                "type": "Attribute",
-                "value": 100,
+                "value": 80,
                 "attribute": "Power"
             }
         ],
-        "Guardiangemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Kyukimon"
-            }
-        ],
-        "Cannondramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Armormon"
-            }
-        ],
-        "Marsmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "GrapLeomon"
-            }
-        ],
-        "WarGreymon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "MetalGreymon"
-            }
-        ],
-        "Imperialdramon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "Paildramon"
-            }
-        ],
-        "Gallantmon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "WarGrowlmon"
-            }
-        ],
-        "Sakuyamon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Taomon"
-            }
-        ],
-        "Seraphimon": [
-            {
-                "type": "DigimonLevel",
-                "value": 40
-            }
-        ],
-        "MetalGarurumon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 50,
-                "digievolution": "MetalMamemon"
-            }
-        ],
-        "Rosemon": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Angewomon"
-            },
-            {
-                "type": "DigimonLevel",
-                "value": 15
-            }
-        ],
-        "BK WarGreymon": [
+        "267": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "SkullGreymon"
             }
         ],
-        "Imperialdramon-F": [
+        "359": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "Imperialdramon"
             }
         ],
-        "MaloMyotismon": [
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Stingmon"
+            },
+            {
+                "type": "Attribute",
+                "value": 80,
+                "attribute": "Defense"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Growlmon"
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 25
+            }
+        ],
+        "369": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
-                "digievolution": "Myotismon"
+                "digievolution": "WarGrowlmon"
             }
         ],
-        "MegaGargomon": [
+        "372": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "MetalGarurumon"
             }
         ],
-        "GranKuwagamon": [
+        "374": [
             {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Kabuterimon"
+                "type": "DigimonLevel",
+                "value": 5
             }
         ],
-        "Phoenixmon": [
+        "375": [
             {
-                "type": "DigievolutionLevel",
-                "value": 99,
-                "digievolution": "Rosemon"
+                "type": "DigimonLevel",
+                "value": 20
             }
         ],
-        "Omnimon": [
+        "376": [
             {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "WarGreymon"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "MetalGarurumon"
+                "type": "DigimonLevel",
+                "value": 40
             }
         ],
-        "Imperialdramon-P": [
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Imperialdramon-F"
-            },
-            {
-                "type": "DigievolutionLevel",
-                "value": 40,
-                "digievolution": "Omnimon"
-            }
-        ],
-        "Beelzemon": [
+        "377": [
             {
                 "type": "DigievolutionLevel",
                 "value": 40,
@@ -3116,7 +2650,220 @@
                 "digievolution": "Gallantmon"
             }
         ],
-        "Diaboromon": [
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Myotismon"
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon-F"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Omnimon"
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Grizzmon"
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Kyukimon"
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Myotismon"
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "attribute": "Power"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Dinohumon"
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Hookmon"
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Grizzmon"
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Kyukimon"
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Armormon"
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GrapLeomon"
+            }
+        ]
+    },
+    "7": {
+        "5": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "MagnaAngemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 140,
+                "attribute": "Fire"
+            }
+        ],
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "Armormon"
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "attribute": "Dark"
+            }
+        ],
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Greymon"
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "20": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Greymon"
+            },
+            {
+                "type": "Attribute",
+                "value": 220,
+                "attribute": "Dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Armormon"
+            },
+            {
+                "type": "Attribute",
+                "value": 140,
+                "attribute": "Machine"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Angemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 100,
+                "attribute": "Power"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Rosemon"
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Devimon"
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Angewomon"
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 15
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Paildramon"
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "WarGreymon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MetalGarurumon"
+            }
+        ],
+        "151": [
             {
                 "type": "DigievolutionLevel",
                 "value": 99,
@@ -3126,6 +2873,259 @@
                 "type": "DigievolutionLevel",
                 "value": 99,
                 "digievolution": "BK WarGreymon"
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "MetalMamemon"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MetalGreymon"
+            }
+        ],
+        "214": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kabuterimon"
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "Angemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 180,
+                "attribute": "Wisdom"
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": "ExVeemon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": "Stingmon"
+            }
+        ],
+        "259": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": "Growlmon"
+            },
+            {
+                "type": "Attribute",
+                "value": 320,
+                "attribute": "Wind"
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "MagnaAngemon"
+            },
+            {
+                "type": "Attribute",
+                "value": 100,
+                "attribute": "Thunder"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "SkullGreymon"
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Imperialdramon"
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "MetalMamemon"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Growlmon"
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "WarGrowlmon"
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "MetalGarurumon"
+            }
+        ],
+        "374": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Armormon"
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "attribute": "Spirit"
+            }
+        ],
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Kyubimon"
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Taomon"
+            }
+        ],
+        "377": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "MaloMyotismon"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Gallantmon"
+            }
+        ],
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Myotismon"
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Imperialdramon-F"
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Omnimon"
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": "Growlmon"
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": "Seraphimon"
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": "Growlmon"
+            },
+            {
+                "type": "Attribute",
+                "value": 240,
+                "attribute": "Power"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Dinohumon"
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Hookmon"
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": "Grizzmon"
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Kyukimon"
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "Armormon"
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": "GrapLeomon"
             }
         ]
     }

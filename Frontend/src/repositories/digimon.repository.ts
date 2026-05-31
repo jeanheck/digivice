@@ -21,8 +21,7 @@ export class DigimonRepository {
     public static getDigievolutionsById(id: number): DigimonDigievolutionRaw {
         return this.digimonDigievolutionTable[id]!;
     }
-    // TODO - change digievolutionName by digievolutionId
-    public static getDigievolutionRequirements(digimonId: number, digievolutionName: string): DigimonDigievolutionRequirementRaw[] {
-        return this.digimonDigievolutionTable[digimonId]![digievolutionName]!;
+    public static getDigievolutionRequirements(digimonId: number, digievolutionId: number): DigimonDigievolutionRequirementRaw[] {
+        return this.digimonDigievolutionTable[digimonId]![String(digievolutionId)]!;
     }
 }

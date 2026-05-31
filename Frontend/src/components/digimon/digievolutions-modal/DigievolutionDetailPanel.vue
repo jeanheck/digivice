@@ -6,6 +6,7 @@ import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import type { DigimonDigievolutionRequirementViewModel } from '@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel';
 import { DigievolutionDetailPanelPresenter } from "@/presenters/digievolutions-modal/digievolution-detail-panel.presenter";
+import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import type { DigimonDigievolutionViewModel } from '@/viewmodels/digimon/digimon-digievolution.viewmodel';
 
 const props = defineProps<{
@@ -62,15 +63,17 @@ const reqEvolutions = computed(() => {
 })
 
 const derivatives = computed(() => {
-  const teste = Object.entries(props.derivativeParameter).map(value => value);
+  const entries = Object.entries(props.derivativeParameter);
 
-  const result = teste.filter(entry => {
-    const requirements = entry[1];
+  const matchingEntries = entries.filter(([, requirements]) => {
+    return requirements.some((requirement) => {
+      return requirement.type === "DigievolutionLevel" && requirement.digievolution === props.evolutionName;
+    });
+  });
 
-    return requirements.some(req => req.type === 'DigievolutionLevel' && req.digievolution === props.evolutionName)
-  })
-
-  return Object.values(result).map(value => value[0]);
+  return matchingEntries.map(([digievolutionIdKey]) => {
+    return DigievolutionRepository.getNameById(Number(digievolutionIdKey));
+  });
 })
 
 const tooltipPlacement = "below" as const;
