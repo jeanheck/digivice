@@ -5,8 +5,7 @@ import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import type { DigimonDigievolutionRequirementViewModel } from '@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel';
-import { DigievolutionRepository } from '@/repositories';
-import { TechniquePresenter } from '@/presenters/technique-presenter';
+import { DigievolutionDetailPanelPresenter } from "@/presenters/digievolutions-modal/digievolution-detail-panel.presenter";
 import type { DigimonDigievolutionViewModel } from '@/viewmodels/digimon/digimon-digievolution.viewmodel';
 
 const props = defineProps<{
@@ -27,23 +26,12 @@ const evolutionAvatarUrl = computed(() => {
 });
 
 const techniques = computed(() => {
-  const digievolutionTechniques = DigievolutionRepository.getRawDigievolutionTechniquesByName(props.evolutionName!);
+  if (!props.evolutionName) {
+    return [];
+  }
 
-  return digievolutionTechniques.map(digievolutionTechnique => {
-    const lastTechniqueToBeLearned = digievolutionTechniques.reduce((highest, current) =>
-      current.learnLevel > highest.learnLevel ? current : highest
-    );
-    ;
-
-    return TechniquePresenter.getTechniqueById(
-      digievolutionTechnique.id,
-      digievolutionTechnique.learnLevel,
-      digievolutionTechnique.loadedLevel,
-      0,
-      lastTechniqueToBeLearned.id === digievolutionTechnique.id
-    )
-  });
-})
+  return DigievolutionDetailPanelPresenter.getTechniquesByEvolutionName(props.evolutionName);
+});
 
 function elementColor(element: string): string {
   const map: Record<string, string> = {

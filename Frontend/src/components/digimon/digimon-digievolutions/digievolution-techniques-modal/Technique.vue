@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { TechniqueIcon } from "@/constants/technique-icons";
-import { TechniquePresenter } from "@/presenters/technique-presenter";
+import { TechniquePresenter } from "@/presenters/technique.presenter";
 import type { DigievolutionTechniqueViewModel } from "@/viewmodels/digievolution/digievolution-technique.viewmodel";
 
 const props = defineProps<{
@@ -11,12 +11,10 @@ const props = defineProps<{
 }>();
 
 const techniqueViewModel = computed(() => {
-  return TechniquePresenter.getTechniqueById(
-    props.technique.id,
-    props.technique.learnLevel,
-    props.technique.loadedLevel,
-    props.digievolutionLevel,
-    props.isSignature
+  return TechniquePresenter.getTechniqueViewModel(
+    props.technique,
+    props.isSignature,
+    props.digievolutionLevel
   );
 });
 </script>
