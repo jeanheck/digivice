@@ -41,7 +41,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Wind"
+                "attribute": "wind"
             }
         ],
         "26": [
@@ -53,7 +53,7 @@
             {
                 "type": "Attribute",
                 "value": 140,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "27": [
@@ -65,7 +65,7 @@
             {
                 "type": "Attribute",
                 "value": 140,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "56": [
@@ -77,7 +77,7 @@
             {
                 "type": "Attribute",
                 "value": 280,
-                "attribute": "Wisdom"
+                "attribute": "wisdom"
             }
         ],
         "59": [
@@ -141,7 +141,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "211": [
@@ -186,7 +186,7 @@
             {
                 "type": "Attribute",
                 "value": 360,
-                "attribute": "Water"
+                "attribute": "water"
             }
         ],
         "254": [
@@ -238,7 +238,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Fire"
+                "attribute": "fire"
             }
         ],
         "368": [
@@ -336,7 +336,7 @@
             {
                 "type": "Attribute",
                 "value": 280,
-                "attribute": "Speed"
+                "attribute": "speed"
             }
         ],
         "389": [
@@ -390,7 +390,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Fire"
+                "attribute": "fire"
             }
         ],
         "6": [
@@ -423,7 +423,7 @@
             {
                 "type": "Attribute",
                 "value": 280,
-                "attribute": "Wind"
+                "attribute": "wind"
             }
         ],
         "26": [
@@ -435,7 +435,7 @@
             {
                 "type": "Attribute",
                 "value": 160,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "27": [
@@ -447,7 +447,7 @@
             {
                 "type": "Attribute",
                 "value": 150,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "56": [
@@ -459,7 +459,7 @@
             {
                 "type": "Attribute",
                 "value": 80,
-                "attribute": "Wisdom"
+                "attribute": "wisdom"
             }
         ],
         "59": [
@@ -523,7 +523,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "211": [
@@ -568,7 +568,7 @@
             {
                 "type": "Attribute",
                 "value": 280,
-                "attribute": "Water"
+                "attribute": "water"
             }
         ],
         "254": [
@@ -599,7 +599,7 @@
             {
                 "type": "Attribute",
                 "value": 400,
-                "attribute": "Speed"
+                "attribute": "speed"
             }
         ],
         "267": [
@@ -625,7 +625,7 @@
             {
                 "type": "Attribute",
                 "value": 480,
-                "attribute": "Power"
+                "attribute": "power"
             }
         ],
         "368": [
@@ -658,7 +658,7 @@
             {
                 "type": "Attribute",
                 "value": 80,
-                "attribute": "Spirit"
+                "attribute": "spirit"
             }
         ],
         "375": [
@@ -788,7 +788,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "Spirit"
+                "attribute": "spirit"
             }
         ],
         "12": [
@@ -814,7 +814,7 @@
             {
                 "type": "Attribute",
                 "value": 120,
-                "attribute": "Wind"
+                "attribute": "wind"
             }
         ],
         "26": [
@@ -826,7 +826,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "27": [
@@ -838,7 +838,7 @@
             {
                 "type": "Attribute",
                 "value": 180,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "56": [
@@ -850,7 +850,7 @@
             {
                 "type": "Attribute",
                 "value": 160,
-                "attribute": "Power"
+                "attribute": "power"
             }
         ],
         "59": [
@@ -914,7 +914,7 @@
             {
                 "type": "Attribute",
                 "value": 240,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "211": [
@@ -959,7 +959,7 @@
             {
                 "type": "Attribute",
                 "value": 110,
-                "attribute": "Water"
+                "attribute": "water"
             }
         ],
         "254": [
@@ -990,7 +990,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Thunder"
+                "attribute": "thunder"
             }
         ],
         "267": [
@@ -1016,7 +1016,7 @@
             {
                 "type": "Attribute",
                 "value": 320,
-                "attribute": "Speed"
+                "attribute": "speed"
             }
         ],
         "368": [
@@ -1049,7 +1049,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Spirit"
+                "attribute": "spirit"
             }
         ],
         "375": [
@@ -1106,7 +1106,7 @@
             {
                 "type": "Attribute",
                 "value": 250,
-                "attribute": "Power"
+                "attribute": "power"
             }
         ],
         "387": [
@@ -1124,7 +1124,7 @@
             {
                 "type": "Attribute",
                 "value": 460,
-                "attribute": "Defense"
+                "attribute": "defense"
             }
         ],
         "389": [
@@ -1184,7 +1184,7 @@
             {
                 "type": "Attribute",
                 "value": 250,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "12": [
@@ -1209,7 +1209,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "Wisdom"
+                "attribute": "wisdom"
             }
         ],
         "26": [
@@ -1221,7 +1221,7 @@
             {
                 "type": "Attribute",
                 "value": 130,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "27": [
@@ -1357,7 +1357,7 @@
             {
                 "type": "Attribute",
                 "value": 100,
-                "attribute": "Ice"
+                "attribute": "ice"
             }
         ],
         "260": [
@@ -1369,7 +1369,7 @@
             {
                 "type": "Attribute",
                 "value": 260,
-                "attribute": "Speed"
+                "attribute": "speed"
             }
         ],
         "267": [
@@ -1427,7 +1427,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "Spirit"
+                "attribute": "spirit"
             }
         ],
         "375": [
@@ -1498,7 +1498,7 @@
             {
                 "type": "Attribute",
                 "value": 400,
-                "attribute": "Defense"
+                "attribute": "defense"
             }
         ],
         "389": [
@@ -1554,7 +1554,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Defense"
+                "attribute": "defense"
             }
         ],
         "6": [
@@ -1566,7 +1566,7 @@
             {
                 "type": "Attribute",
                 "value": 160,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "12": [
@@ -1592,7 +1592,7 @@
             {
                 "type": "Attribute",
                 "value": 230,
-                "attribute": "Wisdom"
+                "attribute": "wisdom"
             }
         ],
         "26": [
@@ -1604,7 +1604,7 @@
             {
                 "type": "Attribute",
                 "value": 190,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "27": [
@@ -1616,7 +1616,7 @@
             {
                 "type": "Attribute",
                 "value": 100,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "56": [
@@ -1628,7 +1628,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "Wisdom"
+                "attribute": "wisdom"
             }
         ],
         "59": [
@@ -1696,7 +1696,7 @@
             {
                 "type": "Attribute",
                 "value": 140,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "211": [
@@ -1786,7 +1786,7 @@
             {
                 "type": "Attribute",
                 "value": 90,
-                "attribute": "Fire"
+                "attribute": "fire"
             }
         ],
         "368": [
@@ -1819,7 +1819,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Ice"
+                "attribute": "ice"
             }
         ],
         "375": [
@@ -1883,7 +1883,7 @@
             {
                 "type": "Attribute",
                 "value": 160,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "388": [
@@ -1895,7 +1895,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Defense"
+                "attribute": "defense"
             }
         ],
         "389": [
@@ -1951,7 +1951,7 @@
             {
                 "type": "Attribute",
                 "value": 280,
-                "attribute": "Fire"
+                "attribute": "fire"
             }
         ],
         "6": [
@@ -1963,7 +1963,7 @@
             {
                 "type": "Attribute",
                 "value": 160,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "12": [
@@ -1989,7 +1989,7 @@
             {
                 "type": "Attribute",
                 "value": 180,
-                "attribute": "Spirit"
+                "attribute": "spirit"
             }
         ],
         "26": [
@@ -2001,7 +2001,7 @@
             {
                 "type": "Attribute",
                 "value": 140,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "27": [
@@ -2013,7 +2013,7 @@
             {
                 "type": "Attribute",
                 "value": 100,
-                "attribute": "Defense"
+                "attribute": "defense"
             }
         ],
         "56": [
@@ -2025,7 +2025,7 @@
             {
                 "type": "Attribute",
                 "value": 120,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "59": [
@@ -2089,7 +2089,7 @@
             {
                 "type": "Attribute",
                 "value": 190,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "211": [
@@ -2134,7 +2134,7 @@
             {
                 "type": "Attribute",
                 "value": 140,
-                "attribute": "Water"
+                "attribute": "water"
             }
         ],
         "254": [
@@ -2158,7 +2158,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "Wind"
+                "attribute": "wind"
             }
         ],
         "260": [
@@ -2170,7 +2170,7 @@
             {
                 "type": "Attribute",
                 "value": 80,
-                "attribute": "Thunder"
+                "attribute": "thunder"
             }
         ],
         "267": [
@@ -2221,7 +2221,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "Spirit"
+                "attribute": "spirit"
             }
         ],
         "375": [
@@ -2278,7 +2278,7 @@
             {
                 "type": "Attribute",
                 "value": 400,
-                "attribute": "Power"
+                "attribute": "power"
             }
         ],
         "387": [
@@ -2348,7 +2348,7 @@
             {
                 "type": "Attribute",
                 "value": 280,
-                "attribute": "Defense"
+                "attribute": "defense"
             }
         ],
         "6": [
@@ -2381,7 +2381,7 @@
             {
                 "type": "Attribute",
                 "value": 150,
-                "attribute": "Wind"
+                "attribute": "wind"
             }
         ],
         "26": [
@@ -2393,7 +2393,7 @@
             {
                 "type": "Attribute",
                 "value": 250,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "27": [
@@ -2405,7 +2405,7 @@
             {
                 "type": "Attribute",
                 "value": 100,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "56": [
@@ -2417,7 +2417,7 @@
             {
                 "type": "Attribute",
                 "value": 400,
-                "attribute": "Wisdom"
+                "attribute": "wisdom"
             }
         ],
         "59": [
@@ -2485,7 +2485,7 @@
             {
                 "type": "Attribute",
                 "value": 120,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "211": [
@@ -2530,7 +2530,7 @@
             {
                 "type": "Attribute",
                 "value": 160,
-                "attribute": "Spirit"
+                "attribute": "spirit"
             }
         ],
         "254": [
@@ -2554,7 +2554,7 @@
             {
                 "type": "Attribute",
                 "value": 120,
-                "attribute": "Wind"
+                "attribute": "wind"
             }
         ],
         "260": [
@@ -2566,7 +2566,7 @@
             {
                 "type": "Attribute",
                 "value": 80,
-                "attribute": "Power"
+                "attribute": "power"
             }
         ],
         "267": [
@@ -2592,7 +2592,7 @@
             {
                 "type": "Attribute",
                 "value": 80,
-                "attribute": "Defense"
+                "attribute": "defense"
             }
         ],
         "368": [
@@ -2692,7 +2692,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "Power"
+                "attribute": "power"
             }
         ],
         "389": [
@@ -2748,7 +2748,7 @@
             {
                 "type": "Attribute",
                 "value": 140,
-                "attribute": "Fire"
+                "attribute": "fire"
             }
         ],
         "6": [
@@ -2760,7 +2760,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "12": [
@@ -2792,7 +2792,7 @@
             {
                 "type": "Attribute",
                 "value": 220,
-                "attribute": "Dark"
+                "attribute": "dark"
             }
         ],
         "27": [
@@ -2804,7 +2804,7 @@
             {
                 "type": "Attribute",
                 "value": 140,
-                "attribute": "Machine"
+                "attribute": "machine"
             }
         ],
         "56": [
@@ -2816,7 +2816,7 @@
             {
                 "type": "Attribute",
                 "value": 100,
-                "attribute": "Power"
+                "attribute": "power"
             }
         ],
         "59": [
@@ -2922,7 +2922,7 @@
             {
                 "type": "Attribute",
                 "value": 180,
-                "attribute": "Wisdom"
+                "attribute": "wisdom"
             }
         ],
         "254": [
@@ -2946,7 +2946,7 @@
             {
                 "type": "Attribute",
                 "value": 320,
-                "attribute": "Wind"
+                "attribute": "wind"
             }
         ],
         "260": [
@@ -2958,7 +2958,7 @@
             {
                 "type": "Attribute",
                 "value": 100,
-                "attribute": "Thunder"
+                "attribute": "thunder"
             }
         ],
         "267": [
@@ -3012,7 +3012,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "Spirit"
+                "attribute": "spirit"
             }
         ],
         "375": [
@@ -3083,7 +3083,7 @@
             {
                 "type": "Attribute",
                 "value": 240,
-                "attribute": "Power"
+                "attribute": "power"
             }
         ],
         "389": [
