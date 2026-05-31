@@ -1,5 +1,5 @@
 {
-    "Agumon": [
+    "3": [
         {
             "name": "Greymon",
             "before": null,
@@ -34,7 +34,7 @@
             "next": null
         }
     ],
-    "DemiDevimon": [
+    "11": [
         {
             "name": "Devimon",
             "before": null,
@@ -56,14 +56,14 @@
             "next": null
         }
     ],
-    "Digitamamon": [
+    "8": [
         {
             "name": "Digitamamon",
             "before": null,
             "next": null
         }
     ],
-    "Gabumon": [
+    "9": [
         {
             "name": "MetalMamemon",
             "before": null,
@@ -80,7 +80,7 @@
             "next": null
         }
     ],
-    "Gatomon": [
+    "10": [
         {
             "name": "Angewomon",
             "before": null,
@@ -97,7 +97,7 @@
             "next": null
         }
     ],
-    "Guilmon": [
+    "5": [
         {
             "name": "Growlmon",
             "before": null,
@@ -114,7 +114,7 @@
             "next": null
         }
     ],
-    "Kotemon": [
+    "0": [
         {
             "name": "Dinohumon",
             "before": null,
@@ -131,7 +131,7 @@
             "next": null
         }
     ],
-    "Kumamon": [
+    "1": [
         {
             "name": "Grizzmon",
             "before": null,
@@ -148,7 +148,7 @@
             "next": null
         }
     ],
-    "Monmon": [
+    "2": [
         {
             "name": "Hookmon",
             "before": null,
@@ -165,7 +165,7 @@
             "next": null
         }
     ],
-    "Patamon": [
+    "7": [
         {
             "name": "Angemon",
             "before": null,
@@ -182,7 +182,7 @@
             "next": null
         }
     ],
-    "Renamon": [
+    "6": [
         {
             "name": "Kyubimon",
             "before": null,
@@ -199,7 +199,7 @@
             "next": null
         }
     ],
-    "Veemon": [
+    "4": [
         {
             "name": "ExVeemon",
             "before": null,
@@ -226,7 +226,7 @@
             "next": null
         }
     ],
-    "Wormmon": [
+    "12": [
         {
             "name": "Stingmon",
             "before": null,

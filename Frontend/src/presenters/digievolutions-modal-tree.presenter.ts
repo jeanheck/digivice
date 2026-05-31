@@ -8,11 +8,11 @@ import type { DigievolutionTreeFamilyNodeViewModel } from "@/viewmodels/digievol
 import type { DigievolutionsTreeViewModel } from "@/viewmodels/digievolution/digievolution-tree.viewmodel";
 
 export class DigievolutionsModalTreePresenter {
-    public static getDigievolutionsTree(digimonId: number, digimonName: string): DigievolutionsTreeViewModel {
+    public static getDigievolutionsTree(digimonId: number): DigievolutionsTreeViewModel {
         const digievolutionTreeTable = DigievolutionRepository.getDigievolutionTree();
         const sortedFamilyKeys = this.sortFamilyKeys(
             Object.keys(digievolutionTreeTable),
-            digimonName
+            digimonId
         );
 
         const digievolutionTreeFamiliesViewModel = sortedFamilyKeys.map((key) => {
@@ -27,16 +27,18 @@ export class DigievolutionsModalTreePresenter {
         return { families: digievolutionTreeFamiliesViewModel };
     }
 
-    private static sortFamilyKeys(familyKeys: string[], digimonName: string): string[] {
+    private static sortFamilyKeys(familyKeys: string[], digimonId: number): string[] {
+        const currentFamilyKey = String(digimonId);
+
         const otherFamilyKeys = familyKeys.filter((familyKey) => {
-            return familyKey !== digimonName;
+            return familyKey !== currentFamilyKey;
         });
 
         otherFamilyKeys.sort((firstFamilyKey, secondFamilyKey) => {
-            return firstFamilyKey.localeCompare(secondFamilyKey);
+            return Number(firstFamilyKey) - Number(secondFamilyKey);
         });
 
-        return [digimonName, ...otherFamilyKeys];
+        return [currentFamilyKey, ...otherFamilyKeys];
     }
 
     private static buildDigievolutionTreeFamily(

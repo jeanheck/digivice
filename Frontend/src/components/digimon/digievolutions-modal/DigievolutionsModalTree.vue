@@ -19,7 +19,7 @@ const emit = defineEmits<{
 
 const familyTreeContainer = ref<HTMLElement | null>(null);
 
-const treeViewModel = DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId, props.digimonName);
+const treeViewModel = DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId);
 
 const scrollSelectedNodeIntoView = (name: string) => {
   const container = familyTreeContainer.value;
