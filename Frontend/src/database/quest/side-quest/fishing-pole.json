@@ -1,5 +1,5 @@
 {
-    "id": "FishingPole",
+    "id": "fishingPole",
     "requisites": [
         {
             "id": "FolderBag"

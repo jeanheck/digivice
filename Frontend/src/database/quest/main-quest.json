@@ -1,5 +1,5 @@
 {
-    "id": "MainQuest",
+    "id": "mainQuest",
     "requisites": [],
     "steps": {
         "1": {

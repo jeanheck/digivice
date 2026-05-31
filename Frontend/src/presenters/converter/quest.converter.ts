@@ -29,7 +29,7 @@ export class QuestConverter {
         const cardVariant = QuestConverter.resolveCardVariant(isLocked, isDone, isNew);
 
         return {
-            id: QuestConverter.pascalToCamelCase(questRaw.id),
+            id: questRaw.id,
             requisites,
             steps,
             isDone,
@@ -38,14 +38,6 @@ export class QuestConverter {
             currentStep,
             cardVariant,
         };
-    }
-
-    private static pascalToCamelCase(value: string): string {
-        if (!value) {
-            return value;
-        }
-
-        return value.charAt(0).toLowerCase() + value.slice(1);
     }
 
     private static resolveCardVariant(isLocked: boolean, isDone: boolean, isNew: boolean): QuestCardVariant {
