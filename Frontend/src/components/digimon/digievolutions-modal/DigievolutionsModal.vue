@@ -3,7 +3,7 @@ import { computed, ref, watch } from "vue";
 import type { Digimon } from "@/models";
 import Modal from "@/components/modal/Modal.vue";
 import DigievolutionsModalTree from "./DigievolutionsModalTree.vue";
-import DigievolutionDetailPanel from "./DigievolutionDetailPanel.vue";
+import DigievolutionsModalDigievolutionDetails from "./DigievolutionsModalDigievolutionDetails.vue";
 import DigievolutionsModalSearchBar from "./DigievolutionsModalSearchBar.vue";
 import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter";
 import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
@@ -109,7 +109,7 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
 
       <div class="w-[25%] h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col">
         <div v-if="selectedEvolution" class="flex-1 flex flex-col p-1">
-          <DigievolutionDetailPanel
+          <DigievolutionsModalDigievolutionDetails
             :evolution="selectedEvolution"
             :digievolution-id="selectedDigievolutionId"
             :derivative-parameter="derivativeParameter"

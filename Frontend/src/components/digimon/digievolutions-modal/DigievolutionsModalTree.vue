@@ -3,8 +3,8 @@ import { computed, watch, nextTick, ref } from "vue";
 import type { Digimon } from "@/models/digimon";
 import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
 import type { DigievolutionTreeFamilyViewModel } from "@/viewmodels/digievolution/digievolution-tree-family.viewmodel";
-import DigievolutionsTreeSimpleFamily from "./DigievolutionsTreeSimpleFamily.vue";
-import DigievolutionsTreeForkFamily from "./DigievolutionsTreeForkFamily.vue";
+import DigievolutionsTreeSimpleFamily from "./digievolutions-tree/DigievolutionsTreeSimpleFamily.vue";
+import DigievolutionsTreeForkFamily from "./digievolutions-tree/DigievolutionsTreeForkFamily.vue";
 
 const props = defineProps<{
   digimonName: string;
