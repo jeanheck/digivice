@@ -1,6 +1,6 @@
 {
   "92": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -18,7 +18,7 @@
     ]
   },
   "93": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -36,7 +36,7 @@
     ]
   },
   "94": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -54,7 +54,7 @@
     ]
   },
   "96": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -72,7 +72,7 @@
     ]
   },
   "106": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -90,7 +90,7 @@
     ]
   },
   "107": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -108,7 +108,7 @@
     ]
   },
   "108": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -131,7 +131,7 @@
     ]
   },
   "110": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -154,7 +154,7 @@
     ]
   },
   "122": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -172,7 +172,7 @@
     ]
   },
   "134": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -196,7 +196,7 @@
     ]
   },
   "141": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -220,7 +220,7 @@
     ]
   },
   "147": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -240,7 +240,7 @@
     ]
   },
   "153": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -260,7 +260,7 @@
     ]
   },
   "157": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -285,7 +285,7 @@
     ]
   },
   "158": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -310,7 +310,7 @@
     ]
   },
   "161": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -341,7 +341,7 @@
     ]
   },
   "167": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -360,7 +360,7 @@
     ]
   },
   "168": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -379,7 +379,7 @@
     ]
   },
   "169": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -398,7 +398,7 @@
     ]
   },
   "171": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -417,7 +417,7 @@
     ]
   },
   "178": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -443,7 +443,7 @@
     ]
   },
   "185": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -467,7 +467,7 @@
     ]
   },
   "190": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -485,7 +485,7 @@
     ]
   },
   "191": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -503,7 +503,7 @@
     ]
   },
   "192": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -521,7 +521,7 @@
     ]
   },
   "194": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -539,7 +539,7 @@
     ]
   },
   "201": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -565,7 +565,7 @@
     ]
   },
   "209": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Strength",
@@ -595,7 +595,7 @@
     ]
   },
   "215": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -620,7 +620,7 @@
     ]
   },
   "216": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -645,7 +645,7 @@
     ]
   },
   "217": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -670,7 +670,7 @@
     ]
   },
   "219": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -700,7 +700,7 @@
     ]
   },
   "226": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -725,7 +725,7 @@
     ]
   },
   "227": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -750,7 +750,7 @@
     ]
   },
   "228": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -776,7 +776,7 @@
     ]
   },
   "230": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -795,7 +795,7 @@
     ]
   },
   "236": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -820,7 +820,7 @@
     ]
   },
   "237": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -845,7 +845,7 @@
     ]
   },
   "238": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -871,7 +871,7 @@
     ]
   },
   "240": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -899,7 +899,7 @@
     ]
   },
   "249": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -924,7 +924,7 @@
     ]
   },
   "250": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -945,7 +945,7 @@
     ]
   },
   "251": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -971,7 +971,7 @@
     ]
   },
   "253": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1000,7 +1000,7 @@
     ]
   },
   "262": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1025,7 +1025,7 @@
     ]
   },
   "263": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1050,7 +1050,7 @@
     ]
   },
   "264": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1076,7 +1076,7 @@
     ]
   },
   "266": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1103,7 +1103,7 @@
     ]
   },
   "275": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1128,7 +1128,7 @@
     ]
   },
   "276": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1153,7 +1153,7 @@
     ]
   },
   "277": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1179,7 +1179,7 @@
     ]
   },
   "279": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1200,7 +1200,7 @@
     ]
   },
   "281": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1218,7 +1218,7 @@
     ]
   },
   "292": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1243,7 +1243,7 @@
     ]
   },
   "294": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1268,7 +1268,7 @@
     ]
   },
   "296": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Spirit",
@@ -1293,7 +1293,7 @@
     ]
   },
   "298": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Wisdom",
@@ -1318,7 +1318,7 @@
     ]
   },
   "300": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Speed",
@@ -1343,7 +1343,7 @@
     ]
   },
   "302": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Charisma",
@@ -1363,7 +1363,7 @@
     ]
   },
   "304": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Fire",
@@ -1388,7 +1388,7 @@
     ]
   },
   "305": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Water",
@@ -1413,7 +1413,7 @@
     ]
   },
   "306": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Ice",
@@ -1438,7 +1438,7 @@
     ]
   },
   "307": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Wind",
@@ -1463,7 +1463,7 @@
     ]
   },
   "308": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Thunder",
@@ -1488,7 +1488,7 @@
     ]
   },
   "309": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Machine",
@@ -1513,7 +1513,7 @@
     ]
   },
   "311": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Charisma",
@@ -1533,7 +1533,7 @@
     ]
   },
   "312": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Charisma",
@@ -1553,7 +1553,7 @@
     ]
   },
   "313": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Charisma",
@@ -1573,7 +1573,7 @@
     ]
   },
   "314": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Charisma",
@@ -1593,7 +1593,7 @@
     ]
   },
   "315": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Charisma",
@@ -1613,7 +1613,7 @@
     ]
   },
   "333": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -1627,7 +1627,7 @@
     ]
   },
   "339": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -1641,7 +1641,7 @@
     ]
   },
   "345": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Charisma",
@@ -1661,12 +1661,12 @@
     ]
   },
   "1001": {
-    "type": "Unknown",
+    "type": "unknown",
     "attributes": [],
     "equipableDigimon": []
   },
   "1002": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1684,7 +1684,7 @@
     ]
   },
   "1003": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1705,7 +1705,7 @@
     ]
   },
   "1004": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1731,7 +1731,7 @@
     ]
   },
   "1005": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1756,7 +1756,7 @@
     ]
   },
   "1006": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1776,7 +1776,7 @@
     ]
   },
   "1007": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -1794,7 +1794,7 @@
     ]
   },
   "1008": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1812,7 +1812,7 @@
     ]
   },
   "1009": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1838,7 +1838,7 @@
     ]
   },
   "1010": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1856,7 +1856,7 @@
     ]
   },
   "1011": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1882,7 +1882,7 @@
     ]
   },
   "1012": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1906,7 +1906,7 @@
     ]
   },
   "1013": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1926,7 +1926,7 @@
     ]
   },
   "1014": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1952,7 +1952,7 @@
     ]
   },
   "1015": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1975,7 +1975,7 @@
     ]
   },
   "1016": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -1998,7 +1998,7 @@
     ]
   },
   "1017": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -2016,7 +2016,7 @@
     ]
   },
   "1018": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2040,7 +2040,7 @@
     ]
   },
   "1019": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2060,7 +2060,7 @@
     ]
   },
   "1020": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2081,7 +2081,7 @@
     ]
   },
   "1021": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2104,7 +2104,7 @@
     ]
   },
   "1022": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2130,7 +2130,7 @@
     ]
   },
   "1023": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2153,7 +2153,7 @@
     ]
   },
   "1024": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2177,7 +2177,7 @@
     ]
   },
   "1025": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2195,7 +2195,7 @@
     ]
   },
   "1026": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2215,7 +2215,7 @@
     ]
   },
   "1027": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2236,7 +2236,7 @@
     ]
   },
   "1028": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2262,7 +2262,7 @@
     ]
   },
   "1029": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2286,7 +2286,7 @@
     ]
   },
   "1030": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2304,7 +2304,7 @@
     ]
   },
   "1031": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2322,7 +2322,7 @@
     ]
   },
   "1032": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -2340,7 +2340,7 @@
     ]
   },
   "1033": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -2361,7 +2361,7 @@
     ]
   },
   "1034": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2385,7 +2385,7 @@
     ]
   },
   "1035": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2405,7 +2405,7 @@
     ]
   },
   "1036": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2423,7 +2423,7 @@
     ]
   },
   "1037": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2441,7 +2441,7 @@
     ]
   },
   "1038": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2459,7 +2459,7 @@
     ]
   },
   "1039": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2483,7 +2483,7 @@
     ]
   },
   "1040": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -2504,7 +2504,7 @@
     ]
   },
   "1041": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2522,7 +2522,7 @@
     ]
   },
   "1042": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -2548,7 +2548,7 @@
     ]
   },
   "1043": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2566,7 +2566,7 @@
     ]
   },
   "1044": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2584,7 +2584,7 @@
     ]
   },
   "1045": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2607,7 +2607,7 @@
     ]
   },
   "1046": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2625,7 +2625,7 @@
     ]
   },
   "1047": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2651,7 +2651,7 @@
     ]
   },
   "1048": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2669,7 +2669,7 @@
     ]
   },
   "1049": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2693,7 +2693,7 @@
     ]
   },
   "1050": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2711,7 +2711,7 @@
     ]
   },
   "1051": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2737,7 +2737,7 @@
     ]
   },
   "1052": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2755,7 +2755,7 @@
     ]
   },
   "1053": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2780,7 +2780,7 @@
     ]
   },
   "1054": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2804,7 +2804,7 @@
     ]
   },
   "1055": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2830,7 +2830,7 @@
     ]
   },
   "1056": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2854,7 +2854,7 @@
     ]
   },
   "1057": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2872,7 +2872,7 @@
     ]
   },
   "1058": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2896,7 +2896,7 @@
     ]
   },
   "1059": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2914,7 +2914,7 @@
     ]
   },
   "1060": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2938,7 +2938,7 @@
     ]
   },
   "1061": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2956,7 +2956,7 @@
     ]
   },
   "1062": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2975,7 +2975,7 @@
     ]
   },
   "1063": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -2994,7 +2994,7 @@
     ]
   },
   "1064": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3012,7 +3012,7 @@
     ]
   },
   "1065": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3035,7 +3035,7 @@
     ]
   },
   "1066": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3053,7 +3053,7 @@
     ]
   },
   "1067": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3079,7 +3079,7 @@
     ]
   },
   "1068": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3097,7 +3097,7 @@
     ]
   },
   "1069": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3115,7 +3115,7 @@
     ]
   },
   "1070": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3141,7 +3141,7 @@
     ]
   },
   "1071": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3159,7 +3159,7 @@
     ]
   },
   "1072": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3177,7 +3177,7 @@
     ]
   },
   "1073": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3197,7 +3197,7 @@
     ]
   },
   "1074": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3215,7 +3215,7 @@
     ]
   },
   "1075": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3233,7 +3233,7 @@
     ]
   },
   "1076": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3251,7 +3251,7 @@
     ]
   },
   "1077": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3275,7 +3275,7 @@
     ]
   },
   "1078": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3295,7 +3295,7 @@
     ]
   },
   "1079": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3313,7 +3313,7 @@
     ]
   },
   "1080": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3334,7 +3334,7 @@
     ]
   },
   "1081": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3357,7 +3357,7 @@
     ]
   },
   "1082": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3375,7 +3375,7 @@
     ]
   },
   "1083": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3393,7 +3393,7 @@
     ]
   },
   "1084": {
-    "type": "WeaponTwoHanded",
+    "type": "weaponTwoHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3417,7 +3417,7 @@
     ]
   },
   "1085": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3435,7 +3435,7 @@
     ]
   },
   "1086": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3453,7 +3453,7 @@
     ]
   },
   "1087": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3476,7 +3476,7 @@
     ]
   },
   "1088": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3494,7 +3494,7 @@
     ]
   },
   "1089": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3512,7 +3512,7 @@
     ]
   },
   "1090": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3531,7 +3531,7 @@
     ]
   },
   "1091": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3555,7 +3555,7 @@
     ]
   },
   "1092": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3574,7 +3574,7 @@
     ]
   },
   "1093": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3594,7 +3594,7 @@
     ]
   },
   "1094": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3614,7 +3614,7 @@
     ]
   },
   "1095": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3637,7 +3637,7 @@
     ]
   },
   "1096": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3655,7 +3655,7 @@
     ]
   },
   "1097": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3675,7 +3675,7 @@
     ]
   },
   "1098": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3699,7 +3699,7 @@
     ]
   },
   "1099": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3722,7 +3722,7 @@
     ]
   },
   "1100": {
-    "type": "Shield",
+    "type": "shield",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3745,7 +3745,7 @@
     ]
   },
   "1101": {
-    "type": "WeaponSingleHanded",
+    "type": "weaponSingleHanded",
     "attributes": [
       {
         "attribute": "Strength",
@@ -3763,7 +3763,7 @@
     ]
   },
   "1102": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3788,7 +3788,7 @@
     ]
   },
   "1103": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3814,7 +3814,7 @@
     ]
   },
   "1104": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3832,7 +3832,7 @@
     ]
   },
   "1105": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3853,7 +3853,7 @@
     ]
   },
   "1106": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3878,7 +3878,7 @@
     ]
   },
   "1107": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3896,7 +3896,7 @@
     ]
   },
   "1108": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3922,7 +3922,7 @@
     ]
   },
   "1109": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3940,7 +3940,7 @@
     ]
   },
   "1110": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3958,7 +3958,7 @@
     ]
   },
   "1111": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -3979,7 +3979,7 @@
     ]
   },
   "1112": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4005,7 +4005,7 @@
     ]
   },
   "1113": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4026,7 +4026,7 @@
     ]
   },
   "1114": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4047,7 +4047,7 @@
     ]
   },
   "1115": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4065,7 +4065,7 @@
     ]
   },
   "1116": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4091,7 +4091,7 @@
     ]
   },
   "1117": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4109,7 +4109,7 @@
     ]
   },
   "1118": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4127,7 +4127,7 @@
     ]
   },
   "1119": {
-    "type": "BodyArmor",
+    "type": "bodyArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4145,7 +4145,7 @@
     ]
   },
   "1120": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4164,7 +4164,7 @@
     ]
   },
   "1121": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4190,7 +4190,7 @@
     ]
   },
   "1122": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4208,7 +4208,7 @@
     ]
   },
   "1123": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4231,7 +4231,7 @@
     ]
   },
   "1124": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4249,7 +4249,7 @@
     ]
   },
   "1125": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Strength",
@@ -4272,7 +4272,7 @@
     ]
   },
   "1126": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Strength",
@@ -4302,7 +4302,7 @@
     ]
   },
   "1127": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Strength",
@@ -4327,7 +4327,7 @@
     ]
   },
   "1128": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4346,7 +4346,7 @@
     ]
   },
   "1129": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4364,7 +4364,7 @@
     ]
   },
   "1130": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4385,7 +4385,7 @@
     ]
   },
   "1131": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4411,7 +4411,7 @@
     ]
   },
   "1132": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4441,7 +4441,7 @@
     ]
   },
   "1133": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4462,7 +4462,7 @@
     ]
   },
   "1134": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Strength",
@@ -4492,7 +4492,7 @@
     ]
   },
   "1135": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4513,7 +4513,7 @@
     ]
   },
   "1136": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4532,7 +4532,7 @@
     ]
   },
   "1137": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4551,7 +4551,7 @@
     ]
   },
   "1138": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4577,7 +4577,7 @@
     ]
   },
   "1139": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4595,7 +4595,7 @@
     ]
   },
   "1140": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4616,7 +4616,7 @@
     ]
   },
   "1141": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4646,7 +4646,7 @@
     ]
   },
   "1142": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Strength",
@@ -4676,7 +4676,7 @@
     ]
   },
   "1143": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4697,7 +4697,7 @@
     ]
   },
   "1144": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Strength",
@@ -4727,7 +4727,7 @@
     ]
   },
   "1145": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4745,7 +4745,7 @@
     ]
   },
   "1146": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Strength",
@@ -4775,7 +4775,7 @@
     ]
   },
   "1147": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4793,7 +4793,7 @@
     ]
   },
   "1148": {
-    "type": "HeadArmor",
+    "type": "headArmor",
     "attributes": [
       {
         "attribute": "Defense",
@@ -4816,7 +4816,7 @@
     ]
   },
   "1149": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4830,7 +4830,7 @@
     ]
   },
   "1150": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4844,7 +4844,7 @@
     ]
   },
   "1151": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4858,7 +4858,7 @@
     ]
   },
   "1152": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4872,7 +4872,7 @@
     ]
   },
   "1153": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4886,7 +4886,7 @@
     ]
   },
   "1154": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4900,7 +4900,7 @@
     ]
   },
   "1155": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4914,7 +4914,7 @@
     ]
   },
   "1156": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4928,7 +4928,7 @@
     ]
   },
   "1157": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4942,7 +4942,7 @@
     ]
   },
   "1158": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [
       {
         "attribute": "Dark",
@@ -4967,7 +4967,7 @@
     ]
   },
   "1159": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4981,7 +4981,7 @@
     ]
   },
   "1160": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -4995,7 +4995,7 @@
     ]
   },
   "1161": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5009,7 +5009,7 @@
     ]
   },
   "1162": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5023,7 +5023,7 @@
     ]
   },
   "1163": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5037,7 +5037,7 @@
     ]
   },
   "1164": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5051,7 +5051,7 @@
     ]
   },
   "1165": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5065,7 +5065,7 @@
     ]
   },
   "1166": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5079,7 +5079,7 @@
     ]
   },
   "1167": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5093,7 +5093,7 @@
     ]
   },
   "1168": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5107,7 +5107,7 @@
     ]
   },
   "1169": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5121,7 +5121,7 @@
     ]
   },
   "1170": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5135,7 +5135,7 @@
     ]
   },
   "1171": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5149,7 +5149,7 @@
     ]
   },
   "1172": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5163,7 +5163,7 @@
     ]
   },
   "1173": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5177,7 +5177,7 @@
     ]
   },
   "1174": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5191,7 +5191,7 @@
     ]
   },
   "1175": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5205,7 +5205,7 @@
     ]
   },
   "1176": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5219,7 +5219,7 @@
     ]
   },
   "1177": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5233,7 +5233,7 @@
     ]
   },
   "1178": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5247,7 +5247,7 @@
     ]
   },
   "1179": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5261,7 +5261,7 @@
     ]
   },
   "1180": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5275,7 +5275,7 @@
     ]
   },
   "1181": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5289,7 +5289,7 @@
     ]
   },
   "1182": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5303,7 +5303,7 @@
     ]
   },
   "1183": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5317,7 +5317,7 @@
     ]
   },
   "1184": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5331,7 +5331,7 @@
     ]
   },
   "1185": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5345,7 +5345,7 @@
     ]
   },
   "1186": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5359,7 +5359,7 @@
     ]
   },
   "1187": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",
@@ -5373,7 +5373,7 @@
     ]
   },
   "1188": {
-    "type": "Accessory",
+    "type": "accessory",
     "attributes": [],
     "equipableDigimon": [
       "Agumon",

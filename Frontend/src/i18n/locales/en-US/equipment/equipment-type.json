@@ -1,11 +1,11 @@
 {
   "equipmentType": {
-    "WeaponSingleHanded": "Weapon (Single-handed)",
-    "BodyArmor": "Body Armor",
-    "WeaponTwoHanded": "Weapon (Two-handed)",
-    "Shield": "Shield",
-    "HeadArmor": "Head Armor",
-    "Accessory": "Accessory",
-    "Unknown": "Unknown"
+    "weaponSingleHanded": "Weapon (Single-handed)",
+    "bodyArmor": "Body Armor",
+    "weaponTwoHanded": "Weapon (Two-handed)",
+    "shield": "Shield",
+    "headArmor": "Head Armor",
+    "accessory": "Accessory",
+    "unknown": "Unknown"
   }
 }
