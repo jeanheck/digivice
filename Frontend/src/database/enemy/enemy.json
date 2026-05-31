@@ -37,16 +37,10 @@
         "dvxp": 12,
         "exp": 120,
         "bits": 240,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Névoa da Morte (Físico, Chance de Envenenamento)",
-            "EN-US": "Necromist (Physical, Chance of Poison)"
-        },
         "boss": true,
-        "dropId": "oldWand"
+        "dropId": "oldWand",
+        "regularAttackId": "noElement",
+        "techniqueId": "necromist"
     },
     "2": {
         "name": "MasterTyrannomon",
@@ -86,16 +80,10 @@
         "dvxp": 14,
         "exp": 140,
         "bits": 280,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Fogo Mestre (Fogo)",
-            "EN-US": "Master Fire (Fire)"
-        },
         "boss": true,
-        "dropId": "oldClaw"
+        "dropId": "oldClaw",
+        "regularAttackId": "noElement",
+        "techniqueId": "masterFire"
     },
     "14": {
         "name": "HiAndromon",
@@ -135,16 +123,10 @@
         "dvxp": 32,
         "exp": 325,
         "bits": 500,
-        "regularAttack": {
-            "PT-BR": "Elemento Máquina",
-            "EN-US": "Machine Element"
-        },
-        "technique": {
-            "PT-BR": "Atomic Ray (Mágico-Máquina, Chance de KO)",
-            "EN-US": "Atomic Ray (Magic-Machine, Chance of KO)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "machineElement",
+        "techniqueId": "atomicRay"
     },
     "15": {
         "name": "WaruMonzaemon",
@@ -184,16 +166,10 @@
         "dvxp": 32,
         "exp": 320,
         "bits": 740,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "20": {
         "name": "Zanbamon",
@@ -233,16 +209,10 @@
         "dvxp": 40,
         "exp": 380,
         "bits": 800,
-        "regularAttack": {
-            "PT-BR": "",
-            "EN-US": ""
-        },
-        "technique": {
-            "PT-BR": "",
-            "EN-US": ""
-        },
         "boss": true,
-        "dropId": "rustyKatana"
+        "dropId": "rustyKatana",
+        "regularAttackId": null,
+        "techniqueId": null
     },
     "71": {
         "name": "Kunemon",
@@ -282,16 +252,10 @@
         "dvxp": 1,
         "exp": 6,
         "bits": 10,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "72": {
         "name": "Tapirmon",
@@ -331,16 +295,10 @@
         "dvxp": 1,
         "exp": 5,
         "bits": 20,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "73": {
         "name": "Crabmon",
@@ -380,16 +338,10 @@
         "dvxp": 3,
         "exp": 17,
         "bits": 30,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "74": {
         "name": "Gizamon",
@@ -429,16 +381,10 @@
         "dvxp": 4,
         "exp": 19,
         "bits": 40,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "75": {
         "name": "DemiDevimon",
@@ -478,16 +424,10 @@
         "dvxp": 8,
         "exp": 39,
         "bits": 80,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Energy Suck (Mágico)",
-            "EN-US": "Energy Suck (Magic)"
-        },
         "boss": false,
-        "dropId": "darkPower1"
+        "dropId": "darkPower1",
+        "regularAttackId": "noElement",
+        "techniqueId": "energySuck"
     },
     "76": {
         "name": "Betamon",
@@ -527,16 +467,10 @@
         "dvxp": 2,
         "exp": 10,
         "bits": 25,
-        "regularAttack": {
-            "PT-BR": "Elemento Trovão",
-            "EN-US": "Thunder Elemental"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "powerCharge"
+        "dropId": "powerCharge",
+        "regularAttackId": "thunderElemental",
+        "techniqueId": "none"
     },
     "77": {
         "name": "Vegiemon",
@@ -576,16 +510,10 @@
         "dvxp": 4,
         "exp": 20,
         "bits": 40,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "78": {
         "name": "Kuwagamon",
@@ -625,16 +553,10 @@
         "dvxp": 2,
         "exp": 11,
         "bits": 20,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "79": {
         "name": "Yanmamon",
@@ -674,16 +596,10 @@
         "dvxp": 3,
         "exp": 16,
         "bits": 30,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "80": {
         "name": "Kiwimon",
@@ -723,16 +639,10 @@
         "dvxp": 3,
         "exp": 15,
         "bits": 35,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "81": {
         "name": "Dokugumon",
@@ -772,16 +682,10 @@
         "dvxp": 4,
         "exp": 21,
         "bits": 40,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento (Chance de Envenenamento)",
-            "EN-US": "No Element (Chance of Poison)"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "spiderWeb"
+        "dropId": "spiderWeb",
+        "regularAttackId": "noElementChanceOfPoison",
+        "techniqueId": "none"
     },
     "82": {
         "name": "Goburimon",
@@ -821,16 +725,10 @@
         "dvxp": 4,
         "exp": 22,
         "bits": 45,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "83": {
         "name": "Baronmon",
@@ -870,16 +768,10 @@
         "dvxp": 16,
         "exp": 80,
         "bits": 160,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Elemental"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "darkElemental",
+        "techniqueId": "none"
     },
     "84": {
         "name": "Minotarumon",
@@ -919,16 +811,10 @@
         "dvxp": 5,
         "exp": 27,
         "bits": 55,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "85": {
         "name": "Flymon",
@@ -968,16 +854,10 @@
         "dvxp": 13,
         "exp": 66,
         "bits": 130,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "86": {
         "name": "Woodmon",
@@ -1017,16 +897,10 @@
         "dvxp": 5,
         "exp": 25,
         "bits": 50,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "87": {
         "name": "Tyrannomon",
@@ -1066,16 +940,10 @@
         "dvxp": 6,
         "exp": 31,
         "bits": 60,
-        "regularAttack": {
-            "PT-BR": "Elemento Fogo",
-            "EN-US": "Fire Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "firePower1"
+        "dropId": "firePower1",
+        "regularAttackId": "fireElement",
+        "techniqueId": "none"
     },
     "88": {
         "name": "Triceramon",
@@ -1115,16 +983,10 @@
         "dvxp": 6,
         "exp": 30,
         "bits": 60,
-        "regularAttack": {
-            "PT-BR": "Elemento Fogo",
-            "EN-US": "Fire Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "tntBall"
+        "dropId": "tntBall",
+        "regularAttackId": "fireElement",
+        "techniqueId": "none"
     },
     "89": {
         "name": "Airdramon",
@@ -1164,16 +1026,10 @@
         "dvxp": 6,
         "exp": 29,
         "bits": 70,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Air Blast (Mágico-Vento)",
-            "EN-US": "Air Blast (Magic-Wind)"
-        },
         "boss": false,
-        "dropId": "fireChip"
+        "dropId": "fireChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "airBlast"
     },
     "90": {
         "name": "Gekomon",
@@ -1213,16 +1069,10 @@
         "dvxp": 8,
         "exp": 41,
         "bits": 85,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Confuse Gas (Magic, Chance of Confuse)",
-            "EN-US": "Confuse Gas (Magic, Chance of Confuse)"
-        },
         "boss": false,
-        "dropId": "icePower1"
+        "dropId": "icePower1",
+        "regularAttackId": "noElement",
+        "techniqueId": "confuseGas"
     },
     "91": {
         "name": "Coelamon",
@@ -1262,16 +1112,10 @@
         "dvxp": 8,
         "exp": 40,
         "bits": 80,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "waterChip"
+        "dropId": "waterChip",
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "92": {
         "name": "Bakemon",
@@ -1311,16 +1155,10 @@
         "dvxp": 9,
         "exp": 46,
         "bits": 90,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Elemental"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "darkElemental",
+        "techniqueId": "none"
     },
     "93": {
         "name": "Phantomon",
@@ -1360,16 +1198,10 @@
         "dvxp": 31,
         "exp": 154,
         "bits": 310,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "ghostFang"
+        "dropId": "ghostFang",
+        "regularAttackId": "darkElement",
+        "techniqueId": "none"
     },
     "94": {
         "name": "Kokatorimon",
@@ -1409,16 +1241,10 @@
         "dvxp": 13,
         "exp": 96,
         "bits": 160,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "95": {
         "name": "Apemon",
@@ -1458,16 +1284,10 @@
         "dvxp": 10,
         "exp": 50,
         "bits": 190,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "windPower1"
+        "dropId": "windPower1",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "96": {
         "name": "Shellmon",
@@ -1507,16 +1327,10 @@
         "dvxp": 18,
         "exp": 91,
         "bits": 180,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "waterChip"
+        "dropId": "waterChip",
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "97": {
         "name": "Tortomon",
@@ -1556,16 +1370,10 @@
         "dvxp": 29,
         "exp": 145,
         "bits": 290,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Divine Rain (Mágico-Água)",
-            "EN-US": "Divine Rain (Magic-Water)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "divineRain"
     },
     "98": {
         "name": "Dolphmon",
@@ -1605,16 +1413,10 @@
         "dvxp": 20,
         "exp": 98,
         "bits": 200,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Divine Rain (Mágico-Água)",
-            "EN-US": "Divine Rain (Magic-Water)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "divineRain"
     },
     "99": {
         "name": "Gesomon",
@@ -1654,16 +1456,10 @@
         "dvxp": 27,
         "exp": 136,
         "bits": 240,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "runnerSandal"
+        "dropId": "runnerSandal",
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "100": {
         "name": "Octomon",
@@ -1703,16 +1499,10 @@
         "dvxp": 40,
         "exp": 200,
         "bits": 400,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "101": {
         "name": "Divermon",
@@ -1752,16 +1542,10 @@
         "dvxp": 24,
         "exp": 118,
         "bits": 200,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "102": {
         "name": "ShogunGekomon",
@@ -1801,16 +1585,10 @@
         "dvxp": 20,
         "exp": 101,
         "bits": 490,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Confuse Gas (Magic, Chance of Confuse)",
-            "EN-US": "Confuse Gas (Magic, Chance of Confuse)"
-        },
         "boss": false,
-        "dropId": "chaosWave"
+        "dropId": "chaosWave",
+        "regularAttackId": "noElement",
+        "techniqueId": "confuseGas"
     },
     "103": {
         "name": "Seadramon",
@@ -1850,16 +1628,10 @@
         "dvxp": 12,
         "exp": 58,
         "bits": 120,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "waterPower1"
+        "dropId": "waterPower1",
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "104": {
         "name": "Mammothmon",
@@ -1899,16 +1671,10 @@
         "dvxp": 23,
         "exp": 116,
         "bits": 220,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "hpProxy"
+        "dropId": "hpProxy",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "105": {
         "name": "Etemon",
@@ -1948,16 +1714,10 @@
         "dvxp": 20,
         "exp": 100,
         "bits": 205,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Small Heal (Heal a small portion of HP)",
-            "EN-US": "Small Heal (Heal a small portion of HP)"
-        },
         "boss": false,
-        "dropId": "superCharge"
+        "dropId": "superCharge",
+        "regularAttackId": "noElement",
+        "techniqueId": "smallHeal"
     },
     "106": {
         "name": "Ogremon",
@@ -1997,16 +1757,10 @@
         "dvxp": 20,
         "exp": 102,
         "bits": 200,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "powerChip"
+        "dropId": "powerChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "107": {
         "name": "Tuskmon",
@@ -2046,16 +1800,10 @@
         "dvxp": 22,
         "exp": 112,
         "bits": 200,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "counterCrest"
+        "dropId": "counterCrest",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "108": {
         "name": "Rockmon",
@@ -2095,16 +1843,10 @@
         "dvxp": 44,
         "exp": 220,
         "bits": 400,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Double Guard (Raises Defense)",
-            "EN-US": "Double Guard (Raises Defense)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "doubleGuard"
     },
     "109": {
         "name": "Quetzalmon",
@@ -2144,16 +1886,10 @@
         "dvxp": 45,
         "exp": 223,
         "bits": 440,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "110": {
         "name": "Vademon",
@@ -2193,16 +1929,10 @@
         "dvxp": 22,
         "exp": 109,
         "bits": 220,
-        "regularAttack": {
-            "PT-BR": "Thunder Element (Chance of Sleep)",
-            "EN-US": "Thunder Element (Chance of Sleep)"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "boltPower1"
+        "dropId": "boltPower1",
+        "regularAttackId": "thunderElementChanceOfSleep",
+        "techniqueId": "none"
     },
     "111": {
         "name": "Maildramon",
@@ -2242,16 +1972,10 @@
         "dvxp": 22,
         "exp": 110,
         "bits": 225,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Thunderbolt (Mágico-Trovão)",
-            "EN-US": "Thunderbolt (Magic-Thunder)"
-        },
         "boss": false,
-        "dropId": "thunderChip"
+        "dropId": "thunderChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "thunderbolt"
     },
     "112": {
         "name": "Mamemon",
@@ -2291,16 +2015,10 @@
         "dvxp": 25,
         "exp": 125,
         "bits": 250,
-        "regularAttack": {
-            "PT-BR": "Machine Element (Chance of Freeze)",
-            "EN-US": "Machine Element (Chance of Freeze)"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "searchCrest"
+        "dropId": "searchCrest",
+        "regularAttackId": "machineElementChanceOfFreeze",
+        "techniqueId": "none"
     },
     "113": {
         "name": "Guardromon (blue)",
@@ -2340,16 +2058,10 @@
         "dvxp": 29,
         "exp": 147,
         "bits": 290,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "114": {
         "name": "Thundermon",
@@ -2389,16 +2101,10 @@
         "dvxp": 23,
         "exp": 115,
         "bits": 235,
-        "regularAttack": {
-            "PT-BR": "Elemento Trovão",
-            "EN-US": "Thunder Element"
-        },
-        "technique": {
-            "PT-BR": "Thunder Gemini (Mágico-Trovão)",
-            "EN-US": "Thunder Gemini (Magic-Thunder)"
-        },
         "boss": false,
-        "dropId": "pulseGuard"
+        "dropId": "pulseGuard",
+        "regularAttackId": "thunderElement",
+        "techniqueId": "thunderGemini"
     },
     "115": {
         "name": "Hagurumon",
@@ -2438,16 +2144,10 @@
         "dvxp": 23,
         "exp": 117,
         "bits": 230,
-        "regularAttack": {
-            "PT-BR": "Elemento Máquina",
-            "EN-US": "Machine Element"
-        },
-        "technique": {
-            "PT-BR": "Speed Up (Raises Speed)",
-            "EN-US": "Speed Up (Raises Speed)"
-        },
         "boss": false,
-        "dropId": "metalPower1"
+        "dropId": "metalPower1",
+        "regularAttackId": "machineElement",
+        "techniqueId": "speedUp"
     },
     "116": {
         "name": "Clockmon",
@@ -2487,16 +2187,10 @@
         "dvxp": 24,
         "exp": 123,
         "bits": 250,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)",
-            "EN-US": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)"
-        },
         "boss": false,
-        "dropId": "multiCrest"
+        "dropId": "multiCrest",
+        "regularAttackId": "noElement",
+        "techniqueId": "magicMissile"
     },
     "117": {
         "name": "Andromon",
@@ -2536,16 +2230,10 @@
         "dvxp": 24,
         "exp": 120,
         "bits": 200,
-        "regularAttack": {
-            "PT-BR": "Thunder Elemental (Chance of Freeze)",
-            "EN-US": "Thunder Elemental (Chance of Freeze)"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "machinegun"
+        "dropId": "machinegun",
+        "regularAttackId": "thunderElementalChanceOfFreeze",
+        "techniqueId": "none"
     },
     "118": {
         "name": "Numemon",
@@ -2585,16 +2273,10 @@
         "dvxp": 25,
         "exp": 124,
         "bits": 300,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "binderCrest"
+        "dropId": "binderCrest",
+        "regularAttackId": "darkElement",
+        "techniqueId": "none"
     },
     "119": {
         "name": "Sukamon",
@@ -2634,16 +2316,10 @@
         "dvxp": 26,
         "exp": 129,
         "bits": 190,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "wisdomChip"
+        "dropId": "wisdomChip",
+        "regularAttackId": "darkElement",
+        "techniqueId": "none"
     },
     "120": {
         "name": "Garbagemon",
@@ -2683,16 +2359,10 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 470,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "goggles"
+        "dropId": "goggles",
+        "regularAttackId": "darkElement",
+        "techniqueId": "none"
     },
     "121": {
         "name": "Roachmon",
@@ -2732,16 +2402,10 @@
         "dvxp": 47,
         "exp": 234,
         "bits": 100,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "darkElement",
+        "techniqueId": "none"
     },
     "122": {
         "name": "Raremon",
@@ -2781,16 +2445,10 @@
         "dvxp": 27,
         "exp": 135,
         "bits": 270,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Paralyze Shock (Magic, Chance of Freeze)",
-            "EN-US": "Paralyze Shock (Magic, Chance of Freeze)"
-        },
         "boss": false,
-        "dropId": "armorChip"
+        "dropId": "armorChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "paralyzeShock"
     },
     "123": {
         "name": "Cyclonemon",
@@ -2830,16 +2488,10 @@
         "dvxp": 27,
         "exp": 134,
         "bits": 270,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Twin Missile (Magic-Machine)",
-            "EN-US": "Twin Missile (Magic-Machine)"
-        },
         "boss": false,
-        "dropId": "wisdomChip"
+        "dropId": "wisdomChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "twinMissile"
     },
     "124": {
         "name": "Megadramon",
@@ -2879,16 +2531,10 @@
         "dvxp": 46,
         "exp": 233,
         "bits": 450,
-        "regularAttack": {
-            "PT-BR": "Elemento Máquina",
-            "EN-US": "Machine Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "machineElement",
+        "techniqueId": "none"
     },
     "125": {
         "name": "Monzaemon",
@@ -2928,16 +2574,10 @@
         "dvxp": 29,
         "exp": 145,
         "bits": 320,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Lovely Charm (Decreases Enemy Strength)",
-            "EN-US": "Lovely Charm (Decreases Enemy Strength)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "lovelyCharm"
     },
     "126": {
         "name": "Tankmon",
@@ -2977,16 +2617,10 @@
         "dvxp": 30,
         "exp": 152,
         "bits": 300,
-        "regularAttack": {
-            "PT-BR": "Elemento Máquina",
-            "EN-US": "Machine Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "machineElement",
+        "techniqueId": "none"
     },
     "127": {
         "name": "Nanimon",
@@ -3026,16 +2660,10 @@
         "dvxp": 29,
         "exp": 146,
         "bits": 280,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "128": {
         "name": "Musyamon",
@@ -3075,16 +2703,10 @@
         "dvxp": 31,
         "exp": 155,
         "bits": 330,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "mpChip"
+        "dropId": "mpChip",
+        "regularAttackId": "darkElement",
+        "techniqueId": "none"
     },
     "129": {
         "name": "Kurisarimon",
@@ -3124,16 +2746,10 @@
         "dvxp": 36,
         "exp": 225,
         "bits": 770,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Confuse Nebula (Chance of Confusion)",
-            "EN-US": "Confuse Nebula (Chance of Confusion)"
-        },
         "boss": false,
-        "dropId": "drillHorn"
+        "dropId": "drillHorn",
+        "regularAttackId": "noElement",
+        "techniqueId": "confuseNebula"
     },
     "130": {
         "name": "Snimon",
@@ -3173,16 +2789,10 @@
         "dvxp": 43,
         "exp": 215,
         "bits": 420,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "131": {
         "name": "Blossomon",
@@ -3222,16 +2832,10 @@
         "dvxp": 34,
         "exp": 168,
         "bits": 340,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "132": {
         "name": "Cherrymon",
@@ -3271,16 +2875,10 @@
         "dvxp": 38,
         "exp": 189,
         "bits": 380,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "recoverCrest"
+        "dropId": "recoverCrest",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "133": {
         "name": "Gargoylemon",
@@ -3320,16 +2918,10 @@
         "dvxp": 35,
         "exp": 176,
         "bits": 350,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Dark Matter (Mágico-Trevas)",
-            "EN-US": "Dark Matter (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": "darkPower2"
+        "dropId": "darkPower2",
+        "regularAttackId": "noElement",
+        "techniqueId": "darkMatter"
     },
     "134": {
         "name": "Mummymon",
@@ -3369,16 +2961,10 @@
         "dvxp": 35,
         "exp": 175,
         "bits": 400,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Dark Fear (Mágico-Trevas)",
-            "EN-US": "Dark Fear (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": "mindChip"
+        "dropId": "mindChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "darkFear"
     },
     "135": {
         "name": "Arukenimon",
@@ -3418,16 +3004,10 @@
         "dvxp": 45,
         "exp": 225,
         "bits": 450,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento (Chance de Envenenamento)",
-            "EN-US": "No Element (Chance of Poison)"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "charmGas"
+        "dropId": "charmGas",
+        "regularAttackId": "noElementChanceOfPoison",
+        "techniqueId": "none"
     },
     "136": {
         "name": "Okuwamon",
@@ -3467,16 +3047,10 @@
         "dvxp": 34,
         "exp": 172,
         "bits": 320,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "137": {
         "name": "MetalTyrannomon",
@@ -3516,16 +3090,10 @@
         "dvxp": 36,
         "exp": 183,
         "bits": 400,
-        "regularAttack": {
-            "PT-BR": "Elemento Máquina",
-            "EN-US": "Machine Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "metalChip"
+        "dropId": "metalChip",
+        "regularAttackId": "machineElement",
+        "techniqueId": "none"
     },
     "138": {
         "name": "Deltamon",
@@ -3565,16 +3133,10 @@
         "dvxp": 36,
         "exp": 179,
         "bits": 360,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "windPower2"
+        "dropId": "windPower2",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "139": {
         "name": "Whamon",
@@ -3614,16 +3176,10 @@
         "dvxp": 45,
         "exp": 225,
         "bits": 420,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Hard Rain (Mágico-Água)",
-            "EN-US": "Hard Rain (Magic-Water)"
-        },
         "boss": false,
-        "dropId": "crimsonCable"
+        "dropId": "crimsonCable",
+        "regularAttackId": "noElement",
+        "techniqueId": "hardRain"
     },
     "140": {
         "name": "MarineDevimon",
@@ -3663,16 +3219,10 @@
         "dvxp": 37,
         "exp": 185,
         "bits": 370,
-        "regularAttack": {
-            "PT-BR": "Water Element (Hits Twice)",
-            "EN-US": "Water Element (Hits Twice)"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "waterElementHitsTwice",
+        "techniqueId": "none"
     },
     "141": {
         "name": "Dragomon",
@@ -3712,16 +3262,10 @@
         "dvxp": 44,
         "exp": 221,
         "bits": 440,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "142": {
         "name": "MegaSeadramon",
@@ -3761,16 +3305,10 @@
         "dvxp": 35,
         "exp": 174,
         "bits": 350,
-        "regularAttack": {
-            "PT-BR": "Elemento Trovão",
-            "EN-US": "Thunder Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "thunderChip"
+        "dropId": "thunderChip",
+        "regularAttackId": "thunderElement",
+        "techniqueId": "none"
     },
     "143": {
         "name": "Ebidramon",
@@ -3810,16 +3348,10 @@
         "dvxp": 34,
         "exp": 170,
         "bits": 340,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "waterPower2"
+        "dropId": "waterPower2",
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "144": {
         "name": "Vilemon",
@@ -3859,16 +3391,10 @@
         "dvxp": 36,
         "exp": 180,
         "bits": 360,
-        "regularAttack": {
-            "PT-BR": "Elemento Fogo",
-            "EN-US": "Fire Element"
-        },
-        "technique": {
-            "PT-BR": "Dark Fear (Mágico-Trevas)",
-            "EN-US": "Dark Fear (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": "devilChip"
+        "dropId": "devilChip",
+        "regularAttackId": "fireElement",
+        "techniqueId": "darkFear"
     },
     "145": {
         "name": "SkullSatamon",
@@ -3908,16 +3434,10 @@
         "dvxp": 39,
         "exp": 196,
         "bits": 390,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "hackSticker"
+        "dropId": "hackSticker",
+        "regularAttackId": "darkElement",
+        "techniqueId": "none"
     },
     "146": {
         "name": "Brachiomon",
@@ -3957,16 +3477,10 @@
         "dvxp": 36,
         "exp": 180,
         "bits": 360,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "ultraCharge"
+        "dropId": "ultraCharge",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "147": {
         "name": "Drimogemon",
@@ -4006,16 +3520,10 @@
         "dvxp": 41,
         "exp": 205,
         "bits": 450,
-        "regularAttack": {
-            "PT-BR": "Elemento Máquina",
-            "EN-US": "Machine Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "drillHorn"
+        "dropId": "drillHorn",
+        "regularAttackId": "machineElement",
+        "techniqueId": "none"
     },
     "148": {
         "name": "Flarerizamon",
@@ -4055,16 +3563,10 @@
         "dvxp": 41,
         "exp": 204,
         "bits": 400,
-        "regularAttack": {
-            "PT-BR": "Elemento Fogo",
-            "EN-US": "Fire Element"
-        },
-        "technique": {
-            "PT-BR": "Flame Ball (Mágico-Fogo)",
-            "EN-US": "Flame Ball (Magic-Fire)"
-        },
         "boss": false,
-        "dropId": "firePower2"
+        "dropId": "firePower2",
+        "regularAttackId": "fireElement",
+        "techniqueId": "flameBall"
     },
     "149": {
         "name": "Meramon",
@@ -4104,16 +3606,10 @@
         "dvxp": 41,
         "exp": 205,
         "bits": 410,
-        "regularAttack": {
-            "PT-BR": "Elemento Fogo",
-            "EN-US": "Fire Element"
-        },
-        "technique": {
-            "PT-BR": "Flame Lance (Mágico-Fogo)",
-            "EN-US": "Flame Lance (Magic-Fire)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "fireElement",
+        "techniqueId": "flameLance"
     },
     "150": {
         "name": "Mojyamon",
@@ -4153,16 +3649,10 @@
         "dvxp": 41,
         "exp": 205,
         "bits": 420,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Ice Blow (Mágico-Gelo)",
-            "EN-US": "Ice Blow (Magic-Ice)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "iceBlow"
     },
     "151": {
         "name": "Frigimon",
@@ -4202,16 +3692,10 @@
         "dvxp": 41,
         "exp": 206,
         "bits": 420,
-        "regularAttack": {
-            "PT-BR": "Elemento Gelo",
-            "EN-US": "Ice Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "iceChip"
+        "dropId": "iceChip",
+        "regularAttackId": "iceElement",
+        "techniqueId": "none"
     },
     "152": {
         "name": "Icemon",
@@ -4251,16 +3735,10 @@
         "dvxp": 43,
         "exp": 215,
         "bits": 420,
-        "regularAttack": {
-            "PT-BR": "Elemento Gelo",
-            "EN-US": "Ice Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "icePower2"
+        "dropId": "icePower2",
+        "regularAttackId": "iceElement",
+        "techniqueId": "none"
     },
     "153": {
         "name": "Giromon",
@@ -4300,16 +3778,10 @@
         "dvxp": 46,
         "exp": 230,
         "bits": 460,
-        "regularAttack": {
-            "PT-BR": "Machine Element; Counter (Physical)",
-            "EN-US": "Machine Element; Counter (Physical)"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "machineElementCounterPhysical",
+        "techniqueId": "none"
     },
     "154": {
         "name": "Vikemon",
@@ -4349,16 +3821,10 @@
         "dvxp": 43,
         "exp": 218,
         "bits": 430,
-        "regularAttack": {
-            "PT-BR": "Elemento Gelo",
-            "EN-US": "Ice Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "iceElement",
+        "techniqueId": "none"
     },
     "155": {
         "name": "Lynxmon",
@@ -4398,16 +3864,10 @@
         "dvxp": 49,
         "exp": 244,
         "bits": 490,
-        "regularAttack": {
-            "PT-BR": "Elemento Fogo",
-            "EN-US": "Fire Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "firePowerS"
+        "dropId": "firePowerS",
+        "regularAttackId": "fireElement",
+        "techniqueId": "none"
     },
     "156": {
         "name": "SkullMeramon",
@@ -4447,16 +3907,10 @@
         "dvxp": 43,
         "exp": 217,
         "bits": 430,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Flame Breath (Mágico-Fogo)",
-            "EN-US": "Flame Breath (Magic-Fire)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "flameBreath"
     },
     "157": {
         "name": "Devidramon",
@@ -4496,16 +3950,10 @@
         "dvxp": 43,
         "exp": 214,
         "bits": 390,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Dark Elemental (Mágico-Trevas)",
-            "EN-US": "Dark Elemental (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "darkElemental"
     },
     "158": {
         "name": "Chimeramon",
@@ -4545,16 +3993,10 @@
         "dvxp": 44,
         "exp": 223,
         "bits": 420,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "devilChip"
+        "dropId": "devilChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "159": {
         "name": "Pukumon",
@@ -4594,16 +4036,10 @@
         "dvxp": 44,
         "exp": 221,
         "bits": 470,
-        "regularAttack": {
-            "PT-BR": "Elemento Máquina",
-            "EN-US": "Machine Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "crimsonCable"
+        "dropId": "crimsonCable",
+        "regularAttackId": "machineElement",
+        "techniqueId": "none"
     },
     "160": {
         "name": "MetalSeadramon",
@@ -4643,16 +4079,10 @@
         "dvxp": 44,
         "exp": 223,
         "bits": 460,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)",
-            "EN-US": "God Bombard (Magic-Machine), Capture Beam (Enemy Can't Escape)"
-        },
         "boss": false,
-        "dropId": "crimsonCable"
+        "dropId": "crimsonCable",
+        "regularAttackId": "noElement",
+        "techniqueId": "godBombard"
     },
     "161": {
         "name": "Tylomon",
@@ -4692,16 +4122,10 @@
         "dvxp": 43,
         "exp": 215,
         "bits": 430,
-        "regularAttack": {
-            "PT-BR": "Elemento Água",
-            "EN-US": "Water Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "crimsonCable"
+        "dropId": "crimsonCable",
+        "regularAttackId": "waterElement",
+        "techniqueId": "none"
     },
     "162": {
         "name": "Scorpiomon",
@@ -4741,16 +4165,10 @@
         "dvxp": 43,
         "exp": 216,
         "bits": 480,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Grand Wave (Mágico-Água)",
-            "EN-US": "Grand Wave (Magic-Water)"
-        },
         "boss": false,
-        "dropId": "crimsonCable"
+        "dropId": "crimsonCable",
+        "regularAttackId": "noElement",
+        "techniqueId": "grandWave"
     },
     "163": {
         "name": "Antylamon",
@@ -4790,16 +4208,10 @@
         "dvxp": 44,
         "exp": 220,
         "bits": 450,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Dark Elemental (Mágico-Trevas)",
-            "EN-US": "Dark Elemental (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": "windChip"
+        "dropId": "windChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "darkElemental"
     },
     "164": {
         "name": "H-Kabuterimon",
@@ -4839,16 +4251,10 @@
         "dvxp": 44,
         "exp": 222,
         "bits": 610,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "165": {
         "name": "Puppetmon",
@@ -4888,16 +4294,10 @@
         "dvxp": 54,
         "exp": 273,
         "bits": 520,
-        "regularAttack": {
-            "PT-BR": "Elemento Máquina",
-            "EN-US": "Machine Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "machineElement",
+        "techniqueId": "none"
     },
     "166": {
         "name": "SkullMammothmon",
@@ -4937,16 +4337,10 @@
         "dvxp": 49,
         "exp": 247,
         "bits": 490,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "167": {
         "name": "Valkyriemon",
@@ -4986,16 +4380,10 @@
         "dvxp": 45,
         "exp": 225,
         "bits": 460,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "danceWing"
+        "dropId": "danceWing",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "168": {
         "name": "LadyDevimon",
@@ -5035,16 +4423,10 @@
         "dvxp": 45,
         "exp": 224,
         "bits": 440,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "charmGas"
+        "dropId": "charmGas",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "169": {
         "name": "MetalEtemon",
@@ -5084,16 +4466,10 @@
         "dvxp": 44,
         "exp": 222,
         "bits": 460,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Mega Heal (Heal a large portion of HP)",
-            "EN-US": "Mega Heal (Heal a large portion of HP)"
-        },
         "boss": false,
-        "dropId": "maxCharge"
+        "dropId": "maxCharge",
+        "regularAttackId": "noElement",
+        "techniqueId": "megaHeal"
     },
     "170": {
         "name": "KingEtemon",
@@ -5133,16 +4509,10 @@
         "dvxp": 45,
         "exp": 226,
         "bits": 500,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Full Heal (Heals All HP)",
-            "EN-US": "Full Heal (Heals All HP)"
-        },
         "boss": false,
-        "dropId": "charismaChip"
+        "dropId": "charismaChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "fullHeal"
     },
     "171": {
         "name": "Gryphonmon",
@@ -5182,16 +4552,10 @@
         "dvxp": 45,
         "exp": 227,
         "bits": 440,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Slyph Storm (Mágico-Vento)",
-            "EN-US": "Slyph Storm (Magic-Wind)"
-        },
         "boss": false,
-        "dropId": "windPowerS"
+        "dropId": "windPowerS",
+        "regularAttackId": "noElement",
+        "techniqueId": "slyphStorm"
     },
     "172": {
         "name": "Infermon",
@@ -5231,16 +4595,10 @@
         "dvxp": 55,
         "exp": 276,
         "bits": 530,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
-            "EN-US": "Darkness Chaos (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "darknessChaos"
     },
     "173": {
         "name": "Shadramon",
@@ -5280,16 +4638,10 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 440,
-        "regularAttack": {
-            "PT-BR": "Elemento Fogo",
-            "EN-US": "Fire Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "fireElement",
+        "techniqueId": "none"
     },
     "174": {
         "name": "Boltmon",
@@ -5329,16 +4681,10 @@
         "dvxp": 48,
         "exp": 243,
         "bits": 500,
-        "regularAttack": {
-            "PT-BR": "Thunder Element; Counter (Physical)",
-            "EN-US": "Thunder Element; Counter (Physical)"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "powerBrace"
+        "dropId": "powerBrace",
+        "regularAttackId": "thunderElementCounterPhysical",
+        "techniqueId": "none"
     },
     "175": {
         "name": "Piedmon",
@@ -5378,16 +4724,10 @@
         "dvxp": 56,
         "exp": 280,
         "bits": 560,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "darkElement",
+        "techniqueId": "none"
     },
     "176": {
         "name": "Machinedramon",
@@ -5427,16 +4767,10 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 500,
-        "regularAttack": {
-            "PT-BR": "Machine Element (Hits Twice)",
-            "EN-US": "Machine Element (Hits Twice)"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "metalPowerS"
+        "dropId": "metalPowerS",
+        "regularAttackId": "machineElementHitsTwice",
+        "techniqueId": "none"
     },
     "177": {
         "name": "VenomMyotismon",
@@ -5476,16 +4810,10 @@
         "dvxp": 55,
         "exp": 277,
         "bits": 530,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
-            "EN-US": "Darkness Chaos (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "darknessChaos"
     },
     "178": {
         "name": "Apokarimon",
@@ -5525,16 +4853,10 @@
         "dvxp": 56,
         "exp": 282,
         "bits": 550,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
-            "EN-US": "Darkness Chaos (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "darknessChaos"
     },
     "179": {
         "name": "Ghoulmon",
@@ -5574,16 +4896,10 @@
         "dvxp": 49,
         "exp": 246,
         "bits": 490,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
-            "EN-US": "Darkness Chaos (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": "darkPowerS"
+        "dropId": "darkPowerS",
+        "regularAttackId": "noElement",
+        "techniqueId": "darknessChaos"
     },
     "180": {
         "name": "Creepymon",
@@ -5623,16 +4939,10 @@
         "dvxp": 55,
         "exp": 277,
         "bits": 540,
-        "regularAttack": {
-            "PT-BR": "Elemento Fogo",
-            "EN-US": "Fire Element"
-        },
-        "technique": {
-            "PT-BR": "Darkness Chaos (Mágico-Trevas)",
-            "EN-US": "Darkness Chaos (Magic-Dark)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "fireElement",
+        "techniqueId": "darknessChaos"
     },
     "181": {
         "name": "Armageddemon",
@@ -5672,16 +4982,10 @@
         "dvxp": 56,
         "exp": 279,
         "bits": 600,
-        "regularAttack": {
-            "PT-BR": "Elemento Trevas",
-            "EN-US": "Dark Elemental"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "darkElemental",
+        "techniqueId": "none"
     },
     "182": {
         "name": "RedVegiemon",
@@ -5721,16 +5025,10 @@
         "dvxp": 9,
         "exp": 45,
         "bits": 90,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "183": {
         "name": "Kuwagamon (green)",
@@ -5770,16 +5068,10 @@
         "dvxp": 30,
         "exp": 150,
         "bits": 290,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "chainSaw"
+        "dropId": "chainSaw",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "184": {
         "name": "Yanmamon (green)",
@@ -5819,16 +5111,10 @@
         "dvxp": 8,
         "exp": 40,
         "bits": 80,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "185": {
         "name": "Dokugumon (brown)",
@@ -5868,16 +5154,10 @@
         "dvxp": 21,
         "exp": 105,
         "bits": 210,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "spiderWeb"
+        "dropId": "spiderWeb",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "186": {
         "name": "Goburimon (red)",
@@ -5917,16 +5197,10 @@
         "dvxp": 22,
         "exp": 112,
         "bits": 220,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "naginata"
+        "dropId": "naginata",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "187": {
         "name": "Minotarumon (blue)",
@@ -5966,16 +5240,10 @@
         "dvxp": 33,
         "exp": 167,
         "bits": 350,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "metalPower2"
+        "dropId": "metalPower2",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "188": {
         "name": "Flymon (pink)",
@@ -6015,16 +5283,10 @@
         "dvxp": 33,
         "exp": 165,
         "bits": 330,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "glasses"
+        "dropId": "glasses",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "189": {
         "name": "Woodmon (green)",
@@ -6064,16 +5326,10 @@
         "dvxp": 19,
         "exp": 76,
         "bits": 190,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "190": {
         "name": "Triceramon (red)",
@@ -6113,16 +5369,10 @@
         "dvxp": 41,
         "exp": 205,
         "bits": 400,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "191": {
         "name": "Airdramon (gold)",
@@ -6162,16 +5412,10 @@
         "dvxp": 21,
         "exp": 104,
         "bits": 215,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "magicianRod"
+        "dropId": "magicianRod",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "192": {
         "name": "Phantomon (blue)",
@@ -6211,16 +5455,10 @@
         "dvxp": 37,
         "exp": 186,
         "bits": 370,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "hpChip"
+        "dropId": "hpChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "193": {
         "name": "Kokatorimon (brown)",
@@ -6260,16 +5498,10 @@
         "dvxp": 22,
         "exp": 158,
         "bits": 300,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "overClocked"
+        "dropId": "overClocked",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "194": {
         "name": "Tortomon (blue)",
@@ -6309,16 +5541,10 @@
         "dvxp": 36,
         "exp": 180,
         "bits": 360,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "195": {
         "name": "ShogunGekomon (blue)",
@@ -6358,16 +5584,10 @@
         "dvxp": 37,
         "exp": 184,
         "bits": 370,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "chaosWave"
+        "dropId": "chaosWave",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "196": {
         "name": "Seadramon (brown)",
@@ -6407,16 +5627,10 @@
         "dvxp": 35,
         "exp": 175,
         "bits": 350,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "197": {
         "name": "Mammothmon (silver)",
@@ -6456,16 +5670,10 @@
         "dvxp": 47,
         "exp": 236,
         "bits": 460,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "198": {
         "name": "Fugamon",
@@ -6505,16 +5713,10 @@
         "dvxp": 42,
         "exp": 210,
         "bits": 430,
-        "regularAttack": {
-            "PT-BR": "No element",
-            "EN-US": "No element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "199": {
         "name": "Vademon (red)",
@@ -6554,16 +5756,10 @@
         "dvxp": 46,
         "exp": 232,
         "bits": 460,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "cursedPuppet"
+        "dropId": "cursedPuppet",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "200": {
         "name": "Maildramon (black)",
@@ -6603,16 +5799,10 @@
         "dvxp": 48,
         "exp": 242,
         "bits": 480,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "boltPowerS"
+        "dropId": "boltPowerS",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "201": {
         "name": "Guardromon (white)",
@@ -6652,16 +5842,10 @@
         "dvxp": 46,
         "exp": 231,
         "bits": 460,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "202": {
         "name": "Numemon (blue)",
@@ -6701,16 +5885,10 @@
         "dvxp": 31,
         "exp": 222,
         "bits": 660,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "danceFeather"
+        "dropId": "danceFeather",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "203": {
         "name": "Numemon (brown)",
@@ -6750,16 +5928,10 @@
         "dvxp": 39,
         "exp": 299,
         "bits": 770,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "trainingBook"
+        "dropId": "trainingBook",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "204": {
         "name": "Numemon (aqua)",
@@ -6799,16 +5971,10 @@
         "dvxp": 43,
         "exp": 344,
         "bits": 880,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "205": {
         "name": "Numemon (red)",
@@ -6848,16 +6014,10 @@
         "dvxp": 43,
         "exp": 366,
         "bits": 990,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "overLoad"
+        "dropId": "overLoad",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "206": {
         "name": "Numemon (white)",
@@ -6897,16 +6057,10 @@
         "dvxp": 44,
         "exp": 399,
         "bits": 1110,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "boostChip"
+        "dropId": "boostChip",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "207": {
         "name": "Raremon (pink)",
@@ -6946,16 +6100,10 @@
         "dvxp": 40,
         "exp": 201,
         "bits": 400,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "boltPower2"
+        "dropId": "boltPower2",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "208": {
         "name": "Cyclonemon (pink)",
@@ -6995,16 +6143,10 @@
         "dvxp": 43,
         "exp": 215,
         "bits": 430,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "209": {
         "name": "Tankmon (blue)",
@@ -7044,16 +6186,10 @@
         "dvxp": 45,
         "exp": 227,
         "bits": 470,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "runnerShoes"
+        "dropId": "runnerShoes",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "210": {
         "name": "Musyamon (green)",
@@ -7093,16 +6229,10 @@
         "dvxp": 32,
         "exp": 160,
         "bits": 330,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "mpProxy"
+        "dropId": "mpProxy",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "211": {
         "name": "Kurisarimon (pink)",
@@ -7142,16 +6272,10 @@
         "dvxp": 40,
         "exp": 250,
         "bits": 800,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "212": {
         "name": "Snimon (brown)",
@@ -7191,16 +6315,10 @@
         "dvxp": 48,
         "exp": 241,
         "bits": 480,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "trainChip3"
+        "dropId": "trainChip3",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "213": {
         "name": "Blossomon (pink)",
@@ -7240,16 +6358,10 @@
         "dvxp": 36,
         "exp": 179,
         "bits": 360,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "214": {
         "name": "Cherrymon (red)",
@@ -7289,16 +6401,10 @@
         "dvxp": 41,
         "exp": 203,
         "bits": 410,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "trainChip1"
+        "dropId": "trainChip1",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "215": {
         "name": "Whamon (blue)",
@@ -7338,16 +6444,10 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 420,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "hpMegaProxy"
+        "dropId": "hpMegaProxy",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "216": {
         "name": "MegaSeadramon (gold)",
@@ -7387,16 +6487,10 @@
         "dvxp": 44,
         "exp": 221,
         "bits": 450,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "waterPowerS"
+        "dropId": "waterPowerS",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "217": {
         "name": "Ebidramon (pink)",
@@ -7436,16 +6530,10 @@
         "dvxp": 48,
         "exp": 240,
         "bits": 480,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "trainChip2"
+        "dropId": "trainChip2",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "218": {
         "name": "Vilemon (purple)",
@@ -7485,16 +6573,10 @@
         "dvxp": 48,
         "exp": 239,
         "bits": 480,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "hackSystem"
+        "dropId": "hackSystem",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "219": {
         "name": "Drimogemon (brown)",
@@ -7534,16 +6616,10 @@
         "dvxp": 44,
         "exp": 220,
         "bits": 500,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "220": {
         "name": "BlueMeramon",
@@ -7583,16 +6659,10 @@
         "dvxp": 48,
         "exp": 243,
         "bits": 480,
-        "regularAttack": {
-            "PT-BR": "Elemento Fogo",
-            "EN-US": "Fire Element"
-        },
-        "technique": {
-            "PT-BR": "Flame Sphere (Mágico-Fogo)",
-            "EN-US": "Flame Sphere (Magic-Fire)"
-        },
         "boss": false,
-        "dropId": "mpMegaProxy"
+        "dropId": "mpMegaProxy",
+        "regularAttackId": "fireElement",
+        "techniqueId": "flameSphere"
     },
     "221": {
         "name": "Vikemon (blue)",
@@ -7632,16 +6702,10 @@
         "dvxp": 47,
         "exp": 236,
         "bits": 460,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "222": {
         "name": "MetalSeadramon (black)",
@@ -7681,16 +6745,10 @@
         "dvxp": 54,
         "exp": 271,
         "bits": 550,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "223": {
         "name": "Scorpiomon (black)",
@@ -7730,16 +6788,10 @@
         "dvxp": 54,
         "exp": 272,
         "bits": 510,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "trainChipV"
+        "dropId": "trainChipV",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "224": {
         "name": "Antylamon (white)",
@@ -7779,16 +6831,10 @@
         "dvxp": 49,
         "exp": 245,
         "bits": 490,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "icePowerS"
+        "dropId": "icePowerS",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "247": {
         "name": "Knightmon",
@@ -7828,16 +6874,10 @@
         "dvxp": 53,
         "exp": 530,
         "bits": 1060,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
-            "EN-US": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)"
-        },
         "boss": false,
-        "dropId": null
+        "dropId": null,
+        "regularAttackId": "noElement",
+        "techniqueId": "berserkSword"
     },
     "515": {
         "name": "Cardmon (T1)",
@@ -7877,16 +6917,10 @@
         "dvxp": 7,
         "exp": 35,
         "bits": 70,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "variousBooster"
+        "dropId": "variousBooster",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "516": {
         "name": "Cardmon (A1)",
@@ -7926,16 +6960,10 @@
         "dvxp": 12,
         "exp": 60,
         "bits": 120,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "variousBooster"
+        "dropId": "variousBooster",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "517": {
         "name": "Cardmon (T2)",
@@ -7975,16 +7003,10 @@
         "dvxp": 17,
         "exp": 85,
         "bits": 170,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "variousBooster"
+        "dropId": "variousBooster",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "518": {
         "name": "Cardmon (A2)",
@@ -8024,16 +7046,10 @@
         "dvxp": 27,
         "exp": 135,
         "bits": 270,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "variousBooster"
+        "dropId": "variousBooster",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "519": {
         "name": "Cardmon (T3)",
@@ -8073,16 +7089,10 @@
         "dvxp": 37,
         "exp": 185,
         "bits": 370,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "variousBooster"
+        "dropId": "variousBooster",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "520": {
         "name": "Cardmon (A3)",
@@ -8122,16 +7132,10 @@
         "dvxp": 42,
         "exp": 210,
         "bits": 420,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "variousBooster"
+        "dropId": "variousBooster",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "521": {
         "name": "Cardmon (T4)",
@@ -8171,16 +7175,10 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 470,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "variousBooster"
+        "dropId": "variousBooster",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     },
     "522": {
         "name": "Cardmon (A4)",
@@ -8220,15 +7218,9 @@
         "dvxp": 47,
         "exp": 235,
         "bits": 470,
-        "regularAttack": {
-            "PT-BR": "Sem Elemento",
-            "EN-US": "No Element"
-        },
-        "technique": {
-            "PT-BR": "Nenhum",
-            "EN-US": "None"
-        },
         "boss": false,
-        "dropId": "variousBooster"
+        "dropId": "variousBooster",
+        "regularAttackId": "noElement",
+        "techniqueId": "none"
     }
 }

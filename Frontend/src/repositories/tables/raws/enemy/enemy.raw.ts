@@ -1,8 +1,3 @@
-export interface EnemyLocalizedTextRaw {
-    "PT-BR": string;
-    "EN-US": string;
-}
-
 export interface EnemyRaw {
     name: string;
     level: number;
@@ -42,7 +37,7 @@ export interface EnemyRaw {
     exp: number;
     bits: number;
     dropId: string | null;
-    regularAttack: EnemyLocalizedTextRaw;
-    technique: EnemyLocalizedTextRaw;
+    regularAttackId: string | null;
+    techniqueId: string | null;
     boss: boolean;
 }

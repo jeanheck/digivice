@@ -8,7 +8,7 @@ const props = defineProps<{
   enemyImageUrl: string | null;
 }>();
 
-const { t, getLocalized } = useLocalization();
+const { t } = useLocalization();
 
 const dropLabel = computed(() => {
   if (!props.enemy.dropId) {
@@ -16,6 +16,22 @@ const dropLabel = computed(() => {
   }
 
   return t(`drops.${props.enemy.dropId}`);
+});
+
+const regularAttackLabel = computed(() => {
+  if (!props.enemy.regularAttackId) {
+    return "";
+  }
+
+  return t(`regularAttacks.${props.enemy.regularAttackId}`);
+});
+
+const techniqueLabel = computed(() => {
+  if (!props.enemy.techniqueId) {
+    return "";
+  }
+
+  return t(`enemyTechniques.${props.enemy.techniqueId}`);
 });
 </script>
 
@@ -88,14 +104,14 @@ const dropLabel = computed(() => {
         <div class="flex-1 flex flex-col gap-1.5">
           <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{ $t("enemy.regularAttack") }}</span>
           <span class="text-gray-200 text-xs">
-            {{ getLocalized(enemy.regularAttack) }}
+            {{ regularAttackLabel }}
           </span>
         </div>
 
         <div class="flex-1 flex flex-col gap-1.5">
           <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{ $t("enemy.technique") }}</span>
           <span class="text-gray-200 text-xs">
-            {{ getLocalized(enemy.technique) }}
+            {{ techniqueLabel }}
           </span>
         </div>
       </div>

@@ -3,6 +3,8 @@ import enemy from "./enemy/enemy.json";
 import species from "./enemy/specie.json";
 import conditions from "./enemy/condition.json";
 import drops from "./enemy/drop.json";
+import regularAttacks from "./enemy/enemy-regular-attack.json";
+import enemyTechniques from "./enemy/enemy-technique.json";
 import techniqueTypes from "./digievolution/technique-type.json";
 import digimon from "./digimon.json";
 import stat from "./stat.json";
@@ -26,6 +28,8 @@ export default {
   ...species,
   ...conditions,
   ...drops,
+  ...regularAttacks,
+  ...enemyTechniques,
   ...techniqueTypes,
   ...digimon,
   ...stat,

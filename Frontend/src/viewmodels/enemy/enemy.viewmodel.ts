@@ -1,8 +1,3 @@
-export interface EnemyLocalizedTextViewModel {
-    "PT-BR": string;
-    "EN-US": string;
-}
-
 export interface EnemyViewModel {
     name: string;
     level: number;
@@ -42,7 +37,7 @@ export interface EnemyViewModel {
     exp: number;
     bits: number;
     dropId: string | null;
-    regularAttack: EnemyLocalizedTextViewModel;
-    technique: EnemyLocalizedTextViewModel;
+    regularAttackId: string | null;
+    techniqueId: string | null;
     boss: boolean;
 }
