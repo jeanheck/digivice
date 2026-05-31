@@ -2,7 +2,7 @@ import type { Digimon } from "@/models";
 import type { Equipments } from "@/models/equipments";
 import { Stat } from "@/models/stat";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
-import { EquipmentsHelper } from "@/presenters/helpers/equipments.helper";
+import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
 import { MathUtils } from "@/utils/MathUtils";

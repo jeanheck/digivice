@@ -69,7 +69,7 @@ O converter pode receber parâmetros além do Raw quando o ViewModel depende de 
 
 ### Helpers (regras reutilizáveis para presenters)
 
-Pasta: `presenters/helpers/`. Helpers concentram lógica de domínio ou de apresentação **reutilizada por mais de um presenter**, sem acesso a dados nem montagem de ViewModel.
+Pasta: `presenters/helper/`. Helpers concentram lógica de domínio ou de apresentação **reutilizada por mais de um presenter**, sem acesso a dados nem montagem de ViewModel.
 
 #### Convenção
 
