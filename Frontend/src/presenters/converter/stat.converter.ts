@@ -1,6 +1,6 @@
 import { Stat } from "@/models/stat";
+import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
-import { MathUtils } from "@/utils/MathUtils";
 import type { StatViewModel } from "@/viewmodels/digimon/stat.viewmodel";
 
 export class StatConverter {
@@ -10,7 +10,7 @@ export class StatConverter {
         fromDigievolution: number,
         rawEquipments: EquipmentRaw[]
     ): StatViewModel {
-        const fromEquipaments = StatConverter.calculateBonusFromEquipaments(stat, rawEquipments);
+        const fromEquipaments = EquipmentsHelper.calculateBonusFromEquipaments(stat, rawEquipments);
 
         return {
             fromDigimon,
@@ -18,16 +18,5 @@ export class StatConverter {
             fromDigievolution,
             sumBetweenDigimonAndEquipaments: fromDigimon + fromEquipaments,
         };
-    }
-
-    private static calculateBonusFromEquipaments(stat: Stat, rawEquipments: EquipmentRaw[]): number {
-        const lowerCaseType = stat.toLowerCase();
-        const attributesRaw = rawEquipments
-            .flatMap((rawEquipment) => rawEquipment.attributes)
-            .filter((attribute) => attribute.attribute.toLowerCase() === lowerCaseType);
-
-        return MathUtils.Sum(attributesRaw.map((attribute) => {
-            return Number(`${attribute.type}${attribute.value}`);
-        }));
     }
 }

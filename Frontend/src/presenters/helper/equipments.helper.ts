@@ -1,4 +1,7 @@
 import type { Equipments } from "@/models";
+import { Stat } from "@/models/stat";
+import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
+import { MathUtils } from "@/utils/MathUtils";
 
 export class EquipmentsHelper {
   public static getEquipmentIds(equipments: Equipments): number[] {
@@ -16,5 +19,16 @@ export class EquipmentsHelper {
     const equipmentIds = EquipmentsHelper.getEquipmentIds(equipments);
 
     return [...new Set(equipmentIds)];
+  }
+
+  public static calculateBonusFromEquipaments(stat: Stat, rawEquipments: EquipmentRaw[]): number {
+    const lowerCaseType = stat.toLowerCase();
+    const attributesRaw = rawEquipments
+      .flatMap((rawEquipment) => rawEquipment.attributes)
+      .filter((attribute) => attribute.attribute.toLowerCase() === lowerCaseType);
+
+    return MathUtils.Sum(attributesRaw.map((attribute) => {
+      return Number(`${attribute.type}${attribute.value}`);
+    }));
   }
 }
