@@ -6,7 +6,6 @@ import DigievolutionsModalTree from "./DigievolutionsModalTree.vue";
 import DigievolutionsModalDigievolutionDetails from "./DigievolutionsModalDigievolutionDetails.vue";
 import DigievolutionsModalSearchBar from "./DigievolutionsModalSearchBar.vue";
 import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter";
-import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -30,48 +29,19 @@ const digimonName = computed(() => {
   return DigievolutionsModalPresenter.getNameById(props.digimonId);
 });
 
-const selectedEvolution = ref<DigimonDigievolutionRequirementViewModel[] | null>(null);
 const selectedDigievolutionId = ref<number | undefined>(undefined);
-
-const selectedDigievolutionName = computed(() => {
-  if (selectedDigievolutionId.value === undefined) {
-    return undefined;
-  }
-
-  return DigievolutionsModalPresenter.getDigievolutionNameById(selectedDigievolutionId.value);
-});
 
 watch(() => props.isOpen, (open) => {
   if (open && props.digimon) {
-    selectedEvolution.value = null;
     selectedDigievolutionId.value = undefined;
   }
 });
 
 const handleSelectDigievolutionById = (digievolutionId: number) => {
-  const requirements = DigievolutionsModalPresenter.getDigievolutionRequirements(props.digimonId, digievolutionId);
-
   selectedDigievolutionId.value = digievolutionId;
-  selectedEvolution.value = requirements;
 };
 
-const handleSelectDigievolutionByName = (digievolutionName: string) => {
-  if (digievolutionName === digimonName.value) {
-    selectedEvolution.value = null;
-    selectedDigievolutionId.value = undefined;
-    return;
-  }
-
-  const digievolutionId = DigievolutionsModalPresenter.getDigievolutionIdByName(digievolutionName);
-
-  handleSelectDigievolutionById(digievolutionId);
-};
-
-const derivativeParameter = computed(() => {
-  return DigievolutionsModalPresenter.getDigievolutionsById(props.digimonId);
-});
-
-const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutionsNames();
+const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
 </script>
 
 <template>
@@ -89,9 +59,9 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
         </h2>
 
         <DigievolutionsModalSearchBar
-          :all-digievolutions-names="allDigievolutionsNames"
-          :selected-digievolution-name="selectedDigievolutionName"
-          @select-digievolution="handleSelectDigievolutionByName"
+          :all-digievolutions="allDigievolutions"
+          :selected-digievolution-id="selectedDigievolutionId"
+          @select-digievolution-id="handleSelectDigievolutionById"
         />
       </div>
     </template>
@@ -108,12 +78,11 @@ const allDigievolutionsNames = DigievolutionsModalPresenter.getAllDigievolutions
       </div>
 
       <div class="w-[25%] h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col">
-        <div v-if="selectedEvolution" class="flex-1 flex flex-col p-1">
+        <div v-if="selectedDigievolutionId !== undefined" class="flex-1 flex flex-col p-1">
           <DigievolutionsModalDigievolutionDetails
-            :evolution="selectedEvolution"
+            :digimon-id="digimonId"
             :digievolution-id="selectedDigievolutionId"
-            :derivative-parameter="derivativeParameter"
-            @select-digievolution="handleSelectDigievolutionByName"
+            @select-digievolution-id="handleSelectDigievolutionById"
           />
         </div>
 

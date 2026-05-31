@@ -22,6 +22,14 @@ export class DigievolutionRepository {
     public static getAllDigievolutionsNames(): string[] {
         return Object.values(this.digievolutionTable).map((digievolution) => digievolution.name);
     }
+    public static getAllDigievolutions(): { id: number; name: string }[] {
+        return Object.entries(this.digievolutionTable).map(([id, digievolution]) => {
+            return {
+                id: Number(id),
+                name: digievolution.name,
+            };
+        });
+    }
     public static getIdByName(name: string): number {
         const entry = Object.entries(this.digievolutionTable).find(([, digievolution]) => digievolution.name === name);
 

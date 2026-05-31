@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { TechniqueIcon } from "@/constants/technique-icons";
+import { getTechniqueTypeIcon } from "@/constants/technique-icons";
 import { TechniquePresenter } from "@/presenters/technique.presenter";
 import type { DigievolutionTechniqueViewModel } from "@/viewmodels/digievolution/digievolution-technique.viewmodel";
 
@@ -31,7 +31,7 @@ const techniqueViewModel = computed(() => {
     <span v-if="techniqueViewModel.isSignature" class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest">⭐</span>
 
     <span class="text-base leading-none mt-px shrink-0">
-      {{ TechniqueIcon[techniqueViewModel.type] }}
+      {{ getTechniqueTypeIcon(techniqueViewModel.type) }}
     </span>
 
     <div class="flex-1 min-w-0">

@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
+import type { DigievolutionsModalDigievolutionLinkViewModel } from "@/viewmodels/digievolution/digievolutions-modal-digievolution-link.viewmodel";
 
 const props = defineProps<{
-  allDigievolutionsNames: string[];
-  selectedDigievolutionName?: string;
+  allDigievolutions: DigievolutionsModalDigievolutionLinkViewModel[];
+  selectedDigievolutionId?: number;
 }>();
 
 const emit = defineEmits<{
-  (e: "select-digievolution", name: string): void;
+  (e: "select-digievolution-id", digievolutionId: number): void;
 }>();
 
 const searchInput = ref<HTMLInputElement | null>(null);
@@ -15,14 +16,24 @@ const searchQuery = ref("");
 const showDropdown = ref(false);
 const isFocused = ref(false);
 
+const selectedDigievolutionName = computed(() => {
+  if (props.selectedDigievolutionId === undefined) {
+    return "";
+  }
+
+  return props.allDigievolutions.find((digievolution) => {
+    return digievolution.id === props.selectedDigievolutionId;
+  })?.name ?? "";
+});
+
 const filteredDigievolutions = computed(() => {
   const query = searchQuery.value.toLowerCase();
   if (!query) {
     return [];
   }
 
-  return props.allDigievolutionsNames.filter((digievolution) => {
-    return digievolution.toLowerCase().includes(query);
+  return props.allDigievolutions.filter((digievolution) => {
+    return digievolution.name.toLowerCase().includes(query);
   });
 });
 
@@ -32,14 +43,14 @@ const inputValue = computed({
       return searchQuery.value;
     }
 
-    return props.selectedDigievolutionName ?? "";
+    return selectedDigievolutionName.value;
   },
   set(value: string) {
     searchQuery.value = value;
   },
 });
 
-watch(() => props.selectedDigievolutionName, () => {
+watch(() => props.selectedDigievolutionId, () => {
   searchQuery.value = "";
   showDropdown.value = false;
   isFocused.value = false;
@@ -57,8 +68,8 @@ const handleBlur = () => {
   searchQuery.value = "";
 };
 
-const handleSearchSelect = (name: string) => {
-  emit("select-digievolution", name);
+const handleSearchSelect = (digievolutionId: number) => {
+  emit("select-digievolution-id", digievolutionId);
   searchInput.value?.blur();
 };
 </script>
@@ -81,11 +92,11 @@ const handleSearchSelect = (name: string) => {
       <template v-if="filteredDigievolutions.length > 0">
         <div
           v-for="digievolution in filteredDigievolutions"
-          :key="digievolution"
+          :key="digievolution.id"
           class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors font-cyber border-b last:border-b-0 border-[#0055ff]/20"
-          @mousedown.prevent="handleSearchSelect(digievolution)"
+          @mousedown.prevent="handleSearchSelect(digievolution.id)"
         >
-          {{ digievolution }}
+          {{ digievolution.name }}
         </div>
       </template>
       <p
