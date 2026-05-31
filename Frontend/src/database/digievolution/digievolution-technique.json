@@ -1,1278 +1,1278 @@
 {
     "5": [
         {
-            "id": "FlameBall",
+            "id": "flameBall",
             "learnLevel": 5,
             "loadedLevel": 25
         },
         {
-            "id": "TripleFire",
+            "id": "tripleFire",
             "learnLevel": 15,
             "loadedLevel": 35
         },
         {
-            "id": "DoublePower",
+            "id": "doublePower",
             "learnLevel": 30,
             "loadedLevel": 75
         },
         {
-            "id": "FlameLance",
+            "id": "flameLance",
             "learnLevel": 45,
             "loadedLevel": 99
         },
         {
-            "id": "NovaBlast",
+            "id": "novaBlast",
             "learnLevel": 60,
             "loadedLevel": null
         }
     ],
     "6": [
         {
-            "id": "DarkMatter",
+            "id": "darkMatter",
             "learnLevel": 10,
             "loadedLevel": 45
         },
         {
-            "id": "EvilPoison",
+            "id": "evilPoison",
             "learnLevel": 20,
             "loadedLevel": 80
         },
         {
-            "id": "ArmorBreak",
+            "id": "armorBreak",
             "learnLevel": 35,
             "loadedLevel": 90
         },
         {
-            "id": "StunShock",
+            "id": "stunShock",
             "learnLevel": 55,
             "loadedLevel": 99
         },
         {
-            "id": "TouchOfEvil",
+            "id": "touchOfEvil",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "12": [
         {
-            "id": "FlameBall",
+            "id": "flameBall",
             "learnLevel": 5,
             "loadedLevel": 25
         },
         {
-            "id": "FlameLance",
+            "id": "flameLance",
             "learnLevel": 10,
             "loadedLevel": 45
         },
         {
-            "id": "TripleFire",
+            "id": "tripleFire",
             "learnLevel": 15,
             "loadedLevel": 50
         },
         {
-            "id": "MagicMissile",
+            "id": "magicMissile",
             "learnLevel": 35,
             "loadedLevel": 80
         },
         {
-            "id": "RisingFire",
+            "id": "risingFire",
             "learnLevel": 60,
             "loadedLevel": 90
         },
         {
-            "id": "GigaDestroyer",
+            "id": "gigaDestroyer",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "19": [
         {
-            "id": "EnergyLeech",
+            "id": "energyLeech",
             "learnLevel": 5,
             "loadedLevel": 25
         },
         {
-            "id": "VenomStab",
+            "id": "venomStab",
             "learnLevel": 15,
             "loadedLevel": 50
         },
         {
-            "id": "HammerRush",
+            "id": "hammerRush",
             "learnLevel": 35,
             "loadedLevel": 90
         },
         {
-            "id": "EnergyDrain",
+            "id": "energyDrain",
             "learnLevel": 60,
             "loadedLevel": 99
         },
         {
-            "id": "ElectroShocker",
+            "id": "electroShocker",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "20": [
         {
-            "id": "AirBlast",
+            "id": "airBlast",
             "learnLevel": 5,
             "loadedLevel": 25
         },
         {
-            "id": "SmallHeal",
+            "id": "smallHeal",
             "learnLevel": 10,
             "loadedLevel": 40
         },
         {
-            "id": "DoubleGuard",
+            "id": "doubleGuard",
             "learnLevel": 15,
             "loadedLevel": 75
         },
         {
-            "id": "MegaTornado",
+            "id": "megaTornado",
             "learnLevel": 45,
             "loadedLevel": 99
         },
         {
-            "id": "HandOfFate",
+            "id": "handOfFate",
             "learnLevel": 60,
             "loadedLevel": null
         }
     ],
     "26": [
         {
-            "id": "FlameBall",
+            "id": "flameBall",
             "learnLevel": 5,
             "loadedLevel": 25
         },
         {
-            "id": "DarkMatter",
+            "id": "darkMatter",
             "learnLevel": 15,
             "loadedLevel": 80
         },
         {
-            "id": "TripleFire",
+            "id": "tripleFire",
             "learnLevel": 35,
             "loadedLevel": 55
         },
         {
-            "id": "BlackThorn",
+            "id": "blackThorn",
             "learnLevel": 45,
             "loadedLevel": 90
         },
         {
-            "id": "DarkShot",
+            "id": "darkShot",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "27": [
         {
-            "id": "MetalAttack",
+            "id": "metalAttack",
             "learnLevel": 5,
             "loadedLevel": 25
         },
         {
-            "id": "MechanicalBash",
+            "id": "mechanicalBash",
             "learnLevel": 35,
             "loadedLevel": 80
         },
         {
-            "id": "MagicMissile",
+            "id": "magicMissile",
             "learnLevel": 15,
             "loadedLevel": 55
         },
         {
-            "id": "SlowDown",
+            "id": "slowDown",
             "learnLevel": 45,
             "loadedLevel": 90
         },
         {
-            "id": "TwinMissile",
+            "id": "twinMissile",
             "learnLevel": 60,
             "loadedLevel": 99
         },
         {
-            "id": "EnergeticBomb",
+            "id": "energeticBomb",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "56": [
         {
-            "id": "HypnoGas",
+            "id": "hypnoGas",
             "learnLevel": 10,
             "loadedLevel": 50
         },
         {
-            "id": "SoulSnatcher",
+            "id": "soulSnatcher",
             "learnLevel": 30,
             "loadedLevel": 80
         },
         {
-            "id": "HypnoNebula",
+            "id": "hypnoNebula",
             "learnLevel": 55,
             "loadedLevel": 99
         },
         {
-            "id": "NmSyndromer",
+            "id": "nmSyndromer",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "59": [
         {
-            "id": "FullHeal",
+            "id": "fullHeal",
             "learnLevel": 10,
             "loadedLevel": 30
         },
         {
-            "id": "FinalHeal",
+            "id": "finalHeal",
             "learnLevel": 40,
             "loadedLevel": 70
         },
         {
-            "id": "EraseMagic",
+            "id": "eraseMagic",
             "learnLevel": 60,
             "loadedLevel": 80
         },
         {
-            "id": "AutoRecover",
+            "id": "autoRecover",
             "learnLevel": 75,
             "loadedLevel": 99
         },
         {
-            "id": "CrimsonFlame",
+            "id": "crimsonFlame",
             "learnLevel": 90,
             "loadedLevel": null
         }
     ],
     "66": [
         {
-            "id": "DarkFear",
+            "id": "darkFear",
             "learnLevel": 10,
             "loadedLevel": 30
         },
         {
-            "id": "BlackDart",
+            "id": "blackDart",
             "learnLevel": 25,
             "loadedLevel": 50
         },
         {
-            "id": "ArmorOff",
+            "id": "armorOff",
             "learnLevel": 40,
             "loadedLevel": 60
         },
         {
-            "id": "ConfuseGas",
+            "id": "confuseGas",
             "learnLevel": 65,
             "loadedLevel": 90
         },
         {
-            "id": "SoulSnatcher",
+            "id": "soulSnatcher",
             "learnLevel": 80,
             "loadedLevel": 95
         },
         {
-            "id": "GrislyWing",
+            "id": "grislyWing",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "144": [
         {
-            "id": "GrandWave",
+            "id": "grandWave",
             "learnLevel": 10,
             "loadedLevel": 30
         },
         {
-            "id": "ErasePoison",
+            "id": "erasePoison",
             "learnLevel": 20,
             "loadedLevel": 55
         },
         {
-            "id": "EraseParalysis",
+            "id": "eraseParalysis",
             "learnLevel": 25,
             "loadedLevel": 60
         },
         {
-            "id": "WaterField",
+            "id": "waterField",
             "learnLevel": 50,
             "loadedLevel": 80
         },
         {
-            "id": "AntiMagic",
+            "id": "antiMagic",
             "learnLevel": 70,
             "loadedLevel": 90
         },
         {
-            "id": "ThornWhipping",
+            "id": "thornWhipping",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "148": [
         {
-            "id": "MegaHeal",
+            "id": "megaHeal",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "MechanicalBash",
+            "id": "mechanicalBash",
             "learnLevel": 25,
             "loadedLevel": 60
         },
         {
-            "id": "Showstorm",
+            "id": "showstorm",
             "learnLevel": 50,
             "loadedLevel": 80
         },
         {
-            "id": "SylphStorm",
+            "id": "sylphStorm",
             "learnLevel": 70,
             "loadedLevel": 90
         },
         {
-            "id": "MegaCrusher",
+            "id": "megaCrusher",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "150": [
         {
-            "id": "FlameBreath",
+            "id": "flameBreath",
             "learnLevel": 10,
             "loadedLevel": 25
         },
         {
-            "id": "FlameSphere",
+            "id": "flameSphere",
             "learnLevel": 30,
             "loadedLevel": 55
         },
         {
-            "id": "GigaFire",
+            "id": "gigaFire",
             "learnLevel": 35,
             "loadedLevel": 70
         },
         {
-            "id": "Inferno",
+            "id": "inferno",
             "learnLevel": 60,
             "loadedLevel": 85
         },
         {
-            "id": "TSword",
+            "id": "tSword",
             "learnLevel": 99,
             "loadedLevel": null
         }
     ],
     "151": [
         {
-            "id": "DeadlyPoison",
+            "id": "deadlyPoison",
             "learnLevel": 10,
             "loadedLevel": 30
         },
         {
-            "id": "ParalyzeShock",
+            "id": "paralyzeShock",
             "learnLevel": 20,
             "loadedLevel": 65
         },
         {
-            "id": "ConfuseNebula",
+            "id": "confuseNebula",
             "learnLevel": 40,
             "loadedLevel": 75
         },
         {
-            "id": "HypnoNebula",
+            "id": "hypnoNebula",
             "learnLevel": 55,
             "loadedLevel": 90
         },
         {
-            "id": "CableCrusher",
+            "id": "cableCrusher",
             "learnLevel": 99,
             "loadedLevel": null
         }
     ],
     "196": [
         {
-            "id": "MechanicalBash",
+            "id": "mechanicalBash",
             "learnLevel": 10,
             "loadedLevel": 25
         },
         {
-            "id": "TwinMissile",
+            "id": "twinMissile",
             "learnLevel": 15,
             "loadedLevel": 55
         },
         {
-            "id": "MagicalCannon",
+            "id": "magicalCannon",
             "learnLevel": 45,
             "loadedLevel": 80
         },
         {
-            "id": "MetalField",
+            "id": "metalField",
             "learnLevel": 70,
             "loadedLevel": 90
         },
         {
-            "id": "MetalWolfClaw",
+            "id": "metalWolfClaw",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "211": [
         {
-            "id": "AirBlast",
+            "id": "airBlast",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "SmallHeal",
+            "id": "smallHeal",
             "learnLevel": 10,
             "loadedLevel": 35
         },
         {
-            "id": "MegaTornado",
+            "id": "megaTornado",
             "learnLevel": 25,
             "loadedLevel": 60
         },
         {
-            "id": "MegaHeal",
+            "id": "megaHeal",
             "learnLevel": 40,
             "loadedLevel": 80
         },
         {
-            "id": "MegaGuard",
+            "id": "megaGuard",
             "learnLevel": 50,
             "loadedLevel": 90
         },
         {
-            "id": "GateOfDestiny",
+            "id": "gateOfDestiny",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "213": [
         {
-            "id": "FlameLance",
+            "id": "flameLance",
             "learnLevel": 5,
             "loadedLevel": 25
         },
         {
-            "id": "FlameBreath",
+            "id": "flameBreath",
             "learnLevel": 35,
             "loadedLevel": 75
         },
         {
-            "id": "RisingFire",
+            "id": "risingFire",
             "learnLevel": 45,
             "loadedLevel": 65
         },
         {
-            "id": "TwinMissile",
+            "id": "twinMissile",
             "learnLevel": 60,
             "loadedLevel": 90
         },
         {
-            "id": "GigaFire",
+            "id": "gigaFire",
             "learnLevel": 80,
             "loadedLevel": 99
         },
         {
-            "id": "TerraForce",
+            "id": "terraForce",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "214": [
         {
-            "id": "MegaTornado",
+            "id": "megaTornado",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "MegaHeal",
+            "id": "megaHeal",
             "learnLevel": 20,
             "loadedLevel": 45
         },
         {
-            "id": "SylphStorm",
+            "id": "sylphStorm",
             "learnLevel": 35,
             "loadedLevel": 65
         },
         {
-            "id": "GigaHeal",
+            "id": "gigaHeal",
             "learnLevel": 55,
             "loadedLevel": 99
         },
         {
-            "id": "WindField",
+            "id": "windField",
             "learnLevel": 75,
             "loadedLevel": 95
         },
         {
-            "id": "SevenHeavens",
+            "id": "sevenHeavens",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "230": [
         {
-            "id": "VenomStab",
+            "id": "venomStab",
             "learnLevel": 10,
             "loadedLevel": 20
         },
         {
-            "id": "EnergyDrain",
+            "id": "energyDrain",
             "learnLevel": 30,
             "loadedLevel": 60
         },
         {
-            "id": "ConfuseStab",
+            "id": "confuseStab",
             "learnLevel": 50,
             "loadedLevel": 75
         },
         {
-            "id": "ImpactRush",
+            "id": "impactRush",
             "learnLevel": 65,
             "loadedLevel": 85
         },
         {
-            "id": "DimensionScissors",
+            "id": "dimensionScissors",
             "learnLevel": 90,
             "loadedLevel": null
         }
     ],
     "234": [
         {
-            "id": "Antidote",
+            "id": "antidote",
             "learnLevel": 15,
             "loadedLevel": 35
         },
         {
-            "id": "DivineRain",
+            "id": "divineRain",
             "learnLevel": 20,
             "loadedLevel": 50
         },
         {
-            "id": "AntiParalysis",
+            "id": "antiParalysis",
             "learnLevel": 30,
             "loadedLevel": 99
         },
         {
-            "id": "CelestialArrow",
+            "id": "celestialArrow",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "254": [
         {
-            "id": "MetalAttack",
+            "id": "metalAttack",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "IceShower",
+            "id": "iceShower",
             "learnLevel": 10,
             "loadedLevel": 40
         },
         {
-            "id": "MegaTornado",
+            "id": "megaTornado",
             "learnLevel": 25,
             "loadedLevel": 60
         },
         {
-            "id": "SpeedBoost",
+            "id": "speedBoost",
             "learnLevel": 55,
             "loadedLevel": 90
         },
         {
-            "id": "AntiParalysis",
+            "id": "antiParalysis",
             "learnLevel": 65,
             "loadedLevel": 99
         },
         {
-            "id": "DesperadoBlaster",
+            "id": "desperadoBlaster",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "259": [
         {
-            "id": "AirBlast",
+            "id": "airBlast",
             "learnLevel": 10,
             "loadedLevel": 35
         },
         {
-            "id": "IceBlow",
+            "id": "iceBlow",
             "learnLevel": 20,
             "loadedLevel": 55
         },
         {
-            "id": "SmallHeal",
+            "id": "smallHeal",
             "learnLevel": 40,
             "loadedLevel": 75
         },
         {
-            "id": "Antidote",
+            "id": "antidote",
             "learnLevel": 50,
             "loadedLevel": 99
         },
         {
-            "id": "Veelaser",
+            "id": "veelaser",
             "learnLevel": 60,
             "loadedLevel": null
         }
     ],
     "260": [
         {
-            "id": "PoisonBites",
+            "id": "poisonBites",
             "learnLevel": 10,
             "loadedLevel": 25
         },
         {
-            "id": "EnergyLeech",
+            "id": "energyLeech",
             "learnLevel": 15,
             "loadedLevel": 45
         },
         {
-            "id": "PanicBites",
+            "id": "panicBites",
             "learnLevel": 35,
             "loadedLevel": 75
         },
         {
-            "id": "VenomStab",
+            "id": "venomStab",
             "learnLevel": 55,
             "loadedLevel": 99
         },
         {
-            "id": "SpikingStrike",
+            "id": "spikingStrike",
             "learnLevel": 60,
             "loadedLevel": null
         }
     ],
     "267": [
         {
-            "id": "FlameBreath",
+            "id": "flameBreath",
             "learnLevel": 10,
             "loadedLevel": 25
         },
         {
-            "id": "DarkFear",
+            "id": "darkFear",
             "learnLevel": 20,
             "loadedLevel": 40
         },
         {
-            "id": "GigaFire",
+            "id": "gigaFire",
             "learnLevel": 35,
             "loadedLevel": 60
         },
         {
-            "id": "BlackDart",
+            "id": "blackDart",
             "learnLevel": 50,
             "loadedLevel": 80
         },
         {
-            "id": "FireField",
+            "id": "fireField",
             "learnLevel": 70,
             "loadedLevel": 90
         },
         {
-            "id": "TerraDestroyer",
+            "id": "terraDestroyer",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "359": [
         {
-            "id": "HeavenHit",
+            "id": "heavenHit",
             "learnLevel": 10,
             "loadedLevel": 30
         },
         {
-            "id": "MegaBoost",
+            "id": "megaBoost",
             "learnLevel": 20,
             "loadedLevel": 55
         },
         {
-            "id": "FullHeal",
+            "id": "fullHeal",
             "learnLevel": 45,
             "loadedLevel": 70
         },
         {
-            "id": "CounterStrike",
+            "id": "counterStrike",
             "learnLevel": 60,
             "loadedLevel": 85
         },
         {
-            "id": "GigaHeal",
+            "id": "gigaHeal",
             "learnLevel": 75,
             "loadedLevel": 99
         },
         {
-            "id": "GigaCrusher",
+            "id": "gigaCrusher",
             "learnLevel": 90,
             "loadedLevel": null
         }
     ],
     "367": [
         {
-            "id": "DoublePower",
+            "id": "doublePower",
             "learnLevel": 5,
             "loadedLevel": 35
         },
         {
-            "id": "DoubleGuard",
+            "id": "doubleGuard",
             "learnLevel": 10,
             "loadedLevel": 15
         },
         {
-            "id": "PickingClaw",
+            "id": "pickingClaw",
             "learnLevel": 25,
             "loadedLevel": 99
         },
         {
-            "id": "CounterAlert",
+            "id": "counterAlert",
             "learnLevel": 45,
             "loadedLevel": 75
         },
         {
-            "id": "PlasmaBlade",
+            "id": "plasmaBlade",
             "learnLevel": 60,
             "loadedLevel": null
         }
     ],
     "368": [
         {
-            "id": "PickingClaw",
+            "id": "pickingClaw",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "CounterAlert",
+            "id": "counterAlert",
             "learnLevel": 10,
             "loadedLevel": 35
         },
         {
-            "id": "MegaGuard",
+            "id": "megaGuard",
             "learnLevel": 25,
             "loadedLevel": 50
         },
         {
-            "id": "MegaStrength",
+            "id": "megaStrength",
             "learnLevel": 45,
             "loadedLevel": 80
         },
         {
-            "id": "SpeedBoost",
+            "id": "speedBoost",
             "learnLevel": 60,
             "loadedLevel": 90
         },
         {
-            "id": "AtomicBlaster",
+            "id": "atomicBlaster",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "369": [
         {
-            "id": "SpeedBoost",
+            "id": "speedBoost",
             "learnLevel": 15,
             "loadedLevel": 35
         },
         {
-            "id": "CounterStrike",
+            "id": "counterStrike",
             "learnLevel": 25,
             "loadedLevel": 65
         },
         {
-            "id": "SnappingClaw",
+            "id": "snappingClaw",
             "learnLevel": 50,
             "loadedLevel": 99
         },
         {
-            "id": "MegaBoost",
+            "id": "megaBoost",
             "learnLevel": 75,
             "loadedLevel": 90
         },
         {
-            "id": "FinalPurification",
+            "id": "finalPurification",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "372": [
         {
-            "id": "MechanicalBash",
+            "id": "mechanicalBash",
             "learnLevel": 5,
             "loadedLevel": 25
         },
         {
-            "id": "MagicalCannon",
+            "id": "magicalCannon",
             "learnLevel": 20,
             "loadedLevel": 60
         },
         {
-            "id": "GodBombard",
+            "id": "godBombard",
             "learnLevel": 50,
             "loadedLevel": 85
         },
         {
-            "id": "MegaBreak",
+            "id": "megaBreak",
             "learnLevel": 75,
             "loadedLevel": 99
         },
         {
-            "id": "GiantMissile",
+            "id": "giantMissile",
             "learnLevel": 90,
             "loadedLevel": null
         }
     ],
     "374": [
         {
-            "id": "ThunderBolt",
+            "id": "thunderBolt",
             "learnLevel": 5,
             "loadedLevel": 35
         },
         {
-            "id": "ThunderGemini",
+            "id": "thunderGemini",
             "learnLevel": 25,
             "loadedLevel": 75
         },
         {
-            "id": "IceBlow",
+            "id": "iceBlow",
             "learnLevel": 15,
             "loadedLevel": 45
         },
         {
-            "id": "IceShower",
+            "id": "iceShower",
             "learnLevel": 55,
             "loadedLevel": 99
         },
         {
-            "id": "DragonWheel",
+            "id": "dragonWheel",
             "learnLevel": 60,
             "loadedLevel": null
         }
     ],
     "375": [
         {
-            "id": "ThunderGemini",
+            "id": "thunderGemini",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "ElectroBolt",
+            "id": "electroBolt",
             "learnLevel": 25,
             "loadedLevel": 65
         },
         {
-            "id": "IceShower",
+            "id": "iceShower",
             "learnLevel": 10,
             "loadedLevel": 35
         },
         {
-            "id": "Showstorm",
+            "id": "showstorm",
             "learnLevel": 45,
             "loadedLevel": 80
         },
         {
-            "id": "ThunderField",
+            "id": "thunderField",
             "learnLevel": 55,
             "loadedLevel": 90
         },
         {
-            "id": "Bonhitsusen",
+            "id": "bonhitsusen",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "376": [
         {
-            "id": "ElectroBolt",
+            "id": "electroBolt",
             "learnLevel": 5,
             "loadedLevel": 25
         },
         {
-            "id": "LightningBolt",
+            "id": "lightningBolt",
             "learnLevel": 40,
             "loadedLevel": 80
         },
         {
-            "id": "Showstorm",
+            "id": "showstorm",
             "learnLevel": 15,
             "loadedLevel": 35
         },
         {
-            "id": "GigaFreeze",
+            "id": "gigaFreeze",
             "learnLevel": 50,
             "loadedLevel": 90
         },
         {
-            "id": "IceField",
+            "id": "iceField",
             "learnLevel": 65,
             "loadedLevel": 99
         },
         {
-            "id": "KongouKaimandra",
+            "id": "kongouKaimandra",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "377": [
         {
-            "id": "DarkElemental",
+            "id": "darkElemental",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "DarknessChaos",
+            "id": "darknessChaos",
             "learnLevel": 20,
             "loadedLevel": 40
         },
         {
-            "id": "BlackScewer",
+            "id": "blackScewer",
             "learnLevel": 35,
             "loadedLevel": 70
         },
         {
-            "id": "ConfuseNebula",
+            "id": "confuseNebula",
             "learnLevel": 50,
             "loadedLevel": 80
         },
         {
-            "id": "SoulPlunder",
+            "id": "soulPlunder",
             "learnLevel": 60,
             "loadedLevel": 90
         },
         {
-            "id": "BlastMode",
+            "id": "blastMode",
             "learnLevel": 99,
             "loadedLevel": null
         }
     ],
     "378": [
         {
-            "id": "DarkElemental",
+            "id": "darkElemental",
             "learnLevel": 10,
             "loadedLevel": 35
         },
         {
-            "id": "CrimsonCloud",
+            "id": "crimsonCloud",
             "learnLevel": 20,
             "loadedLevel": 55
         },
         {
-            "id": "DeadlyPoison",
+            "id": "deadlyPoison",
             "learnLevel": 30,
             "loadedLevel": 70
         },
         {
-            "id": "ParalyzeShock",
+            "id": "paralyzeShock",
             "learnLevel": 45,
             "loadedLevel": 80
         },
         {
-            "id": "DarkField",
+            "id": "darkField",
             "learnLevel": 75,
             "loadedLevel": 99
         },
         {
-            "id": "MeltingBlood",
+            "id": "meltingBlood",
             "learnLevel": 90,
             "loadedLevel": null
         }
     ],
     "381": [
         {
-            "id": "AutoRecover",
+            "id": "autoRecover",
             "learnLevel": 10,
             "loadedLevel": 40
         },
         {
-            "id": "ImpactRush",
+            "id": "impactRush",
             "learnLevel": 20,
             "loadedLevel": 60
         },
         {
-            "id": "EraseMagic",
+            "id": "eraseMagic",
             "learnLevel": 30,
             "loadedLevel": 70
         },
         {
-            "id": "SoulPlunder",
+            "id": "soulPlunder",
             "learnLevel": 50,
             "loadedLevel": 90
         },
         {
-            "id": "FinalHeal",
+            "id": "finalHeal",
             "learnLevel": 65,
             "loadedLevel": 80
         },
         {
-            "id": "OmegaBlade",
+            "id": "omegaBlade",
             "learnLevel": 99,
             "loadedLevel": null
         }
     ],
     "386": [
         {
-            "id": "HeatCutter",
+            "id": "heatCutter",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "FrostCutter",
+            "id": "frostCutter",
             "learnLevel": 10,
             "loadedLevel": 30
         },
         {
-            "id": "SmallHeal",
+            "id": "smallHeal",
             "learnLevel": 25,
             "loadedLevel": 75
         },
         {
-            "id": "DoublePower",
+            "id": "doublePower",
             "learnLevel": 40,
             "loadedLevel": 99
         },
         {
-            "id": "LizardDance",
+            "id": "lizardDance",
             "learnLevel": 60,
             "loadedLevel": null
         }
     ],
     "387": [
         {
-            "id": "WingBuster",
+            "id": "wingBuster",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "BugBuster",
+            "id": "bugBuster",
             "learnLevel": 10,
             "loadedLevel": 30
         },
         {
-            "id": "BigShot",
+            "id": "bigShot",
             "learnLevel": 25,
             "loadedLevel": 99
         },
         {
-            "id": "FishBuster",
+            "id": "fishBuster",
             "learnLevel": 40,
             "loadedLevel": 75
         },
         {
-            "id": "CaptainCannon",
+            "id": "captainCannon",
             "learnLevel": 60,
             "loadedLevel": null
         }
     ],
     "388": [
         {
-            "id": "LightningSlash",
+            "id": "lightningSlash",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "Whirlwind",
+            "id": "whirlwind",
             "learnLevel": 10,
             "loadedLevel": 35
         },
         {
-            "id": "HammerRush",
+            "id": "hammerRush",
             "learnLevel": 25,
             "loadedLevel": 75
         },
         {
-            "id": "SpinalTap",
+            "id": "spinalTap",
             "learnLevel": 40,
             "loadedLevel": 99
         },
         {
-            "id": "MaulAttack",
+            "id": "maulAttack",
             "learnLevel": 60,
             "loadedLevel": null
         }
     ],
     "389": [
         {
-            "id": "HeatCutter",
+            "id": "heatCutter",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "FrostCutter",
+            "id": "frostCutter",
             "learnLevel": 10,
             "loadedLevel": 30
         },
         {
-            "id": "BurnSlash",
+            "id": "burnSlash",
             "learnLevel": 25,
             "loadedLevel": 50
         },
         {
-            "id": "ColdSlash",
+            "id": "coldSlash",
             "learnLevel": 40,
             "loadedLevel": 80
         },
         {
-            "id": "BigShot",
+            "id": "bigShot",
             "learnLevel": 60,
             "loadedLevel": 90
         },
         {
-            "id": "BladeTwister",
+            "id": "bladeTwister",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "390": [
         {
-            "id": "BugBuster",
+            "id": "bugBuster",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "BigShot",
+            "id": "bigShot",
             "learnLevel": 10,
             "loadedLevel": 35
         },
         {
-            "id": "FishBuster",
+            "id": "fishBuster",
             "learnLevel": 25,
             "loadedLevel": 50
         },
         {
-            "id": "DinoBuster",
+            "id": "dinoBuster",
             "learnLevel": 45,
             "loadedLevel": 80
         },
         {
-            "id": "DramonBuster",
+            "id": "dramonBuster",
             "learnLevel": 60,
             "loadedLevel": 90
         },
         {
-            "id": "JusticeStrike",
+            "id": "justiceStrike",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "391": [
         {
-            "id": "LightningSlash",
+            "id": "lightningSlash",
             "learnLevel": 5,
             "loadedLevel": 15
         },
         {
-            "id": "Whirlwind",
+            "id": "whirlwind",
             "learnLevel": 10,
             "loadedLevel": 30
         },
         {
-            "id": "SoulCharge",
+            "id": "soulCharge",
             "learnLevel": 25,
             "loadedLevel": 60
         },
         {
-            "id": "SpeedBoost",
+            "id": "speedBoost",
             "learnLevel": 40,
             "loadedLevel": 90
         },
         {
-            "id": "CycloneTurbine",
+            "id": "cycloneTurbine",
             "learnLevel": 70,
             "loadedLevel": null
         }
     ],
     "392": [
         {
-            "id": "BurnSlash",
+            "id": "burnSlash",
             "learnLevel": 15,
             "loadedLevel": 45
         },
         {
-            "id": "ColdSlash",
+            "id": "coldSlash",
             "learnLevel": 30,
             "loadedLevel": 55
         },
         {
-            "id": "MegaHeal",
+            "id": "megaHeal",
             "learnLevel": 40,
             "loadedLevel": 65
         },
         {
-            "id": "HammerRush",
+            "id": "hammerRush",
             "learnLevel": 50,
             "loadedLevel": 75
         },
         {
-            "id": "PinpointShot",
+            "id": "pinpointShot",
             "learnLevel": 70,
             "loadedLevel": 99
         },
         {
-            "id": "GoldenRipper",
+            "id": "goldenRipper",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "393": [
         {
-            "id": "FishBuster",
+            "id": "fishBuster",
             "learnLevel": 15,
             "loadedLevel": 35
         },
         {
-            "id": "DinoBuster",
+            "id": "dinoBuster",
             "learnLevel": 25,
             "loadedLevel": 50
         },
         {
-            "id": "DramonBuster",
+            "id": "dramonBuster",
             "learnLevel": 40,
             "loadedLevel": 75
         },
         {
-            "id": "PinpointShot",
+            "id": "pinpointShot",
             "learnLevel": 60,
             "loadedLevel": 90
         },
         {
-            "id": "DevilShot",
+            "id": "devilShot",
             "learnLevel": 80,
             "loadedLevel": 99
         },
         {
-            "id": "DynamoCannon",
+            "id": "dynamoCannon",
             "learnLevel": 85,
             "loadedLevel": null
         }
     ],
     "394": [
         {
-            "id": "HeavenHit",
+            "id": "heavenHit",
             "learnLevel": 15,
             "loadedLevel": 45
         },
         {
-            "id": "VacuumCannon",
+            "id": "vacuumCannon",
             "learnLevel": 25,
             "loadedLevel": 55
         },
         {
-            "id": "BrainFreeze",
+            "id": "brainFreeze",
             "learnLevel": 40,
             "loadedLevel": 80
         },
         {
-            "id": "Misshukikou",
+            "id": "misshukikou",
             "learnLevel": 65,
             "loadedLevel": 99
         },
         {
-            "id": "Mugenhadou",
+            "id": "mugenhadou",
             "learnLevel": 85,
             "loadedLevel": null
         }

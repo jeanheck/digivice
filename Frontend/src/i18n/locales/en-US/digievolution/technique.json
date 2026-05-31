@@ -1,602 +1,602 @@
 {
   "technique": {
-    "HeatCutter": {
+    "heatCutter": {
       "name": "Heat Cutter",
       "description": "Slash and fire damage"
     },
-    "FrostCutter": {
+    "frostCutter": {
       "name": "Frost Cutter",
       "description": "Slash with ice damage"
     },
-    "SmallHeal": {
+    "smallHeal": {
       "name": "Small Heal",
       "description": "Heal some of your HP"
     },
-    "DoublePower": {
+    "doublePower": {
       "name": "Double Power",
       "description": "Increase your attack power"
     },
-    "LizardDance": {
+    "lizardDance": {
       "name": "Lizard Dance",
       "description": "Slash enemy multiple times"
     },
-    "WingBuster": {
+    "wingBuster": {
       "name": "Wing Buster",
       "description": "Huge damage vs. Bird Digimon"
     },
-    "BugBuster": {
+    "bugBuster": {
       "name": "Bug Buster",
       "description": "Huge damage vs. Insectoid Digimon"
     },
-    "BigShot": {
+    "bigShot": {
       "name": "Big Shot",
       "description": "Big damage if it hits"
     },
-    "FishBuster": {
+    "fishBuster": {
       "name": "Fish Buster",
       "description": "Huge damage vs. Marine Digimon"
     },
-    "CaptainCannon": {
+    "captainCannon": {
       "name": "Captain Cannon",
       "description": "Shoot the arm cannon"
     },
-    "LightningSlash": {
+    "lightningSlash": {
       "name": "Lightning Slash",
       "description": "Thunder damage"
     },
-    "Whirlwind": {
+    "whirlwind": {
       "name": "Whirlwind",
       "description": "Wind damage"
     },
-    "HammerRush": {
+    "hammerRush": {
       "name": "Hammer Rush",
       "description": "Damage from rapid blows"
     },
-    "SpinalTap": {
+    "spinalTap": {
       "name": "Spinal Tap",
       "description": "Sometimes paralyzes the enemy"
     },
-    "MaulAttack": {
+    "maulAttack": {
       "name": "Maul Attack",
       "description": "If attacked first counter"
     },
-    "FlameBall": {
+    "flameBall": {
       "name": "Flame Ball",
       "description": "Shoot small fire balls"
     },
-    "TripleFire": {
+    "tripleFire": {
       "name": "Triple Fire",
       "description": "Shoot three fire balls"
     },
-    "FlameLance": {
+    "flameLance": {
       "name": "Flame Lance",
       "description": "Launch fire beam"
     },
-    "NovaBlast": {
+    "novaBlast": {
       "name": "Nova Blast",
       "description": "Shoot a fire ball from the mouth"
     },
-    "AirBlast": {
+    "airBlast": {
       "name": "Air Blast",
       "description": "Shoot air balls"
     },
-    "IceBlow": {
+    "iceBlow": {
       "name": "Ice Blow",
       "description": "Shoot icicles with ice damage"
     },
-    "Antidote": {
+    "antidote": {
       "name": "Antidote",
       "description": "Cure poison on yourself"
     },
-    "Veelaser": {
+    "veelaser": {
       "name": "Veelaser",
       "description": "Shoot a laser from the chest"
     },
-    "DoubleGuard": {
+    "doubleGuard": {
       "name": "Double Guard",
       "description": "Increase your defense power"
     },
-    "PickingClaw": {
+    "pickingClaw": {
       "name": "Picking Claw",
       "description": "Attack and steal items"
     },
-    "CounterAlert": {
+    "counterAlert": {
       "name": "Counter Alert",
       "description": "Counterattack during pose"
     },
-    "PlasmaBlade": {
+    "plasmaBlade": {
       "name": "Plasma Blade",
       "description": "Slash with electrified blade"
     },
-    "ThunderBolt": {
+    "thunderBolt": {
       "name": "Thunder Bolt",
       "description": "Create a thunder ball and fire"
     },
-    "ThunderGemini": {
+    "thunderGemini": {
       "name": "Thunder Gemini",
       "description": "Create two thunder balls and fire"
     },
-    "IceShower": {
+    "iceShower": {
       "name": "Ice Shower",
       "description": "Shoot numerous icicles"
     },
-    "DragonWheel": {
+    "dragonWheel": {
       "name": "Dragon Wheel",
       "description": "Shoot fire balls from 9 tails"
     },
-    "MegaTornado": {
+    "megaTornado": {
       "name": "Mega Tornado",
       "description": "Tornado against an enemy"
     },
-    "HandOfFate": {
+    "handOfFate": {
       "name": "Hand of Fate",
       "description": "Punch the enemy with wind attacks"
     },
-    "DarkMatter": {
+    "darkMatter": {
       "name": "Dark Matter",
       "description": "Evil fireball with dark damage"
     },
-    "EvilPoison": {
+    "evilPoison": {
       "name": "Evil Poison",
       "description": "Magic with damage and poison"
     },
-    "ArmorBreak": {
+    "armorBreak": {
       "name": "Armor Break",
       "description": "Decrease enemy's defense"
     },
-    "StunShock": {
+    "stunShock": {
       "name": "Stun Shock",
       "description": "Magic with damage and paralysis"
     },
-    "TouchOfEvil": {
+    "touchOfEvil": {
       "name": "Touch of Evil",
       "description": "Drain enemy's HP with claw"
     },
-    "PoisonBites": {
+    "poisonBites": {
       "name": "Poison Bites",
       "description": "Poison damage"
     },
-    "EnergyLeech": {
+    "energyLeech": {
       "name": "Energy Leech",
       "description": "Magic that drains HP"
     },
-    "PanicBites": {
+    "panicBites": {
       "name": "Panic Bites",
       "description": "Confusion damage"
     },
-    "VenomStab": {
+    "venomStab": {
       "name": "Venom Stab",
       "description": "Deadly poison damage"
     },
-    "SpikingStrike": {
+    "spikingStrike": {
       "name": "Spiking Strike",
       "description": "Stab enemy with the spike"
     },
-    "DivineRain": {
+    "divineRain": {
       "name": "Divine Rain",
       "description": "Water damage from magical rain"
     },
-    "AntiParalysis": {
+    "antiParalysis": {
       "name": "Anti-Paralysis",
       "description": "Cure paralysis on yourself"
     },
-    "CelestialArrow": {
+    "celestialArrow": {
       "name": "Celestial Arrow",
       "description": "Divine arrow with thunder attack"
     },
-    "BurnSlash": {
+    "burnSlash": {
       "name": "Burn Slash",
       "description": "Slash with a flame blade"
     },
-    "ColdSlash": {
+    "coldSlash": {
       "name": "Cold Slash",
       "description": "Slash with a ice blade"
     },
-    "BladeTwister": {
+    "bladeTwister": {
       "name": "Blade Twister",
       "description": "Slash multiple times with wind"
     },
-    "DinoBuster": {
+    "dinoBuster": {
       "name": "Dino Buster",
       "description": "Huge damage vs. Dinosaur Digimon"
     },
-    "DramonBuster": {
+    "dramonBuster": {
       "name": "Dramon Buster",
       "description": "Huge damage vs. Dragon Digimon"
     },
-    "JusticeStrike": {
+    "justiceStrike": {
       "name": "Justice Strike",
       "description": "Shoot all firearms"
     },
-    "SoulCharge": {
+    "soulCharge": {
       "name": "Soul Charge",
       "description": "Save Chi to power up next blow"
     },
-    "SpeedBoost": {
+    "speedBoost": {
       "name": "Speed Boost",
       "description": "Increase your speed"
     },
-    "CycloneTurbine": {
+    "cycloneTurbine": {
       "name": "Cyclone Turbine",
       "description": "Multiple round house kicks"
     },
-    "MagicMissile": {
+    "magicMissile": {
       "name": "Magic Missile",
       "description": "Shoot missiles with magic"
     },
-    "RisingFire": {
+    "risingFire": {
       "name": "Rising Fire",
       "description": "Column of fire on the enemy"
     },
-    "GigaDestroyer": {
+    "gigaDestroyer": {
       "name": "Giga Destroyer",
       "description": "Launch organic missiles"
     },
-    "BlackThorn": {
+    "blackThorn": {
       "name": "Black Thorn",
       "description": "Dark damage with evil thorns"
     },
-    "DarkShot": {
+    "darkShot": {
       "name": "Dark Shot",
       "description": "Launch organic missiles"
     },
-    "MetalAttack": {
+    "metalAttack": {
       "name": "Metal Attack",
       "description": "Machine damage"
     },
-    "MechanicalBash": {
+    "mechanicalBash": {
       "name": "Mechanical Bash",
       "description": "Strong machine damage"
     },
-    "DesperadoBlaster": {
+    "desperadoBlaster": {
       "name": "Desperado Blaster",
       "description": "Rapid-fire 2 energy waves"
     },
-    "MegaGuard": {
+    "megaGuard": {
       "name": "Mega Guard",
       "description": "Increase allies' defense powers"
     },
-    "MegaStrength": {
+    "megaStrength": {
       "name": "Mega Strength",
       "description": "Increase allies' attack powers"
     },
-    "AtomicBlaster": {
+    "atomicBlaster": {
       "name": "Atomic Blaster",
       "description": "Burn the enemy with fire laser"
     },
-    "ElectroBolt": {
+    "electroBolt": {
       "name": "Electro Bolt",
       "description": "Large thunder ball against enemy"
     },
-    "Showstorm": {
+    "showstorm": {
       "name": "Showstorm",
       "description": "Snow spirit inflicts ice damage"
     },
-    "ThunderField": {
+    "thunderField": {
       "name": "Thunder Field",
       "description": "Strengthen thunder, weaken metal"
     },
-    "Bonhitsusen": {
+    "bonhitsusen": {
       "name": "Bonhitsusen",
       "description": "Huge damage to ghouls"
     },
-    "MegaHeal": {
+    "megaHeal": {
       "name": "Mega Heal",
       "description": "Heal much of your HP"
     },
-    "GateOfDestiny": {
+    "gateOfDestiny": {
       "name": "Gate of Destiny",
       "description": "Open a gate and discard enemies"
     },
-    "DarkFear": {
+    "darkFear": {
       "name": "Dark Fear",
       "description": "Throw evil flame against enemy"
     },
-    "BlackDart": {
+    "blackDart": {
       "name": "Black Dart",
       "description": "Fire numerous evil thorns"
     },
-    "ArmorOff": {
+    "armorOff": {
       "name": "Armor Off",
       "description": "Large decrease in enemy's defense"
     },
-    "ConfuseGas": {
+    "confuseGas": {
       "name": "Confuse Gas",
       "description": "Magic that confuses the enemy"
     },
-    "SoulSnatcher": {
+    "soulSnatcher": {
       "name": "Soul Snatcher",
       "description": "Magically drain the soul"
     },
-    "GrislyWing": {
+    "grislyWing": {
       "name": "Grisly Wing",
       "description": "Decrease enemy's attack power"
     },
-    "TwinMissile": {
+    "twinMissile": {
       "name": "Twin Missile",
       "description": "Shoot two missiles with magic"
     },
-    "SlowDown": {
+    "slowDown": {
       "name": "Slow Down",
       "description": "Decrease enemy's speed"
     },
-    "EnergeticBomb": {
+    "energeticBomb": {
       "name": "Energetic Bomb",
       "description": "Fire machine energy balls"
     },
-    "EnergyDrain": {
+    "energyDrain": {
       "name": "Energy Drain",
       "description": "Magic that drains many HP"
     },
-    "ElectroShocker": {
+    "electroShocker": {
       "name": "Electro Shocker",
       "description": "Fire thunder balls from the mouth"
     },
-    "HypnoGas": {
+    "hypnoGas": {
       "name": "Hypno Gas",
       "description": "Magic puts the enemy to sleep"
     },
-    "HypnoNebula": {
+    "hypnoNebula": {
       "name": "Hypno Nebula",
       "description": "Magic that puts enemy to deep sleep"
     },
-    "NmSyndromer": {
+    "nmSyndromer": {
       "name": "NM Syndromer",
       "description": "Dark attack by firing dark balls"
     },
-    "PinpointShot": {
+    "pinpointShot": {
       "name": "Pinpoint Shot",
       "description": "Huge damage if it hits"
     },
-    "GoldenRipper": {
+    "goldenRipper": {
       "name": "Golden Ripper",
       "description": "Slash enemies with swords"
     },
-    "DevilShot": {
+    "devilShot": {
       "name": "Devil Shot",
       "description": "Huge damage vs. Evil Digimon"
     },
-    "DynamoCannon": {
+    "dynamoCannon": {
       "name": "DynamoCannon",
       "description": "Huge damage against Machines"
     },
-    "HeavenHit": {
+    "heavenHit": {
       "name": "Heaven Hit",
       "description": "Strong thunder damage"
     },
-    "VacuumCannon": {
+    "vacuumCannon": {
       "name": "Vacuum Cannon",
       "description": "Strong wind damage"
     },
-    "BrainFreeze": {
+    "brainFreeze": {
       "name": "Brain Freeze",
       "description": "Paralyzes the enemy"
     },
-    "Misshukikou": {
+    "misshukikou": {
       "name": "Misshukikou",
       "description": "Save Chi to maximum for next blow"
     },
-    "Mugenhadou": {
+    "mugenhadou": {
       "name": "Mugenhadou",
       "description": "Blast a wave to knock out enemy"
     },
-    "FlameBreath": {
+    "flameBreath": {
       "name": "Flame Breath",
       "description": "Engulf the enemy with fire breath"
     },
-    "GigaFire": {
+    "gigaFire": {
       "name": "Giga Fire",
       "description": "Magic attack shoots 3 fire balls"
     },
-    "TerraForce": {
+    "terraForce": {
       "name": "Terra Force",
       "description": "Throw a huge energy ball"
     },
-    "SylphStorm": {
+    "sylphStorm": {
       "name": "Sylph Storm",
       "description": "Powerful gust of wind"
     },
-    "MegaCrusher": {
+    "megaCrusher": {
       "name": "Mega Crusher",
       "description": "Fire a massive ball"
     },
-    "CounterStrike": {
+    "counterStrike": {
       "name": "Counter Strike",
       "description": "Strong counterattack during pose"
     },
-    "SnappingClaw": {
+    "snappingClaw": {
       "name": "Snapping Claw",
       "description": "Attack and quickly steal items"
     },
-    "MegaBoost": {
+    "megaBoost": {
       "name": "Mega Boost",
       "description": "Increase allies' speed"
     },
-    "FinalPurification": {
+    "finalPurification": {
       "name": "Final Purification",
       "description": "Beam counterattack from shield"
     },
-    "LightningBolt": {
+    "lightningBolt": {
       "name": "Lightning Bolt",
       "description": "Huge thunder ball against enemy"
     },
-    "GigaFreeze": {
+    "gigaFreeze": {
       "name": "Giga Freeze",
       "description": "Engulf the enemy with huge ice"
     },
-    "IceField": {
+    "iceField": {
       "name": "Ice Field",
       "description": "Strength ice, weaken wind"
     },
-    "KongouKaimandra": {
+    "kongouKaimandra": {
       "name": "KongouKaimandra",
       "description": "Magic attack against ghouls"
     },
-    "GigaHeal": {
+    "gigaHeal": {
       "name": "Giga Heal",
       "description": "Heal much of allies' HP"
     },
-    "WindField": {
+    "windField": {
       "name": "Wind Field",
       "description": "Strengthen wind, weaken water"
     },
-    "SevenHeavens": {
+    "sevenHeavens": {
       "name": "Seven Heavens",
       "description": "Fire 7 balls against evil Digimon"
     },
-    "MagicalCannon": {
+    "magicalCannon": {
       "name": "Magical Cannon",
       "description": "Shoot giant missiles with magic"
     },
-    "MetalField": {
+    "metalField": {
       "name": "Metal Field",
       "description": "Strength metal, weaken dark"
     },
-    "MetalWolfClaw": {
+    "metalWolfClaw": {
       "name": "Metal Wolf Claw",
       "description": "Ice breath. Magic attack."
     },
-    "GrandWave": {
+    "grandWave": {
       "name": "Grand Wave",
       "description": "Magical tidal wave against enemy"
     },
-    "ErasePoison": {
+    "erasePoison": {
       "name": "Erase Poison",
       "description": "Cure all poison on allies"
     },
-    "EraseParalysis": {
+    "eraseParalysis": {
       "name": "Erase Paralysis",
       "description": "Cure all paralysis on allies"
     },
-    "WaterField": {
+    "waterField": {
       "name": "Water Field",
       "description": "Strengthen water, weaken fire"
     },
-    "AntiMagic": {
+    "antiMagic": {
       "name": "Anti-Magic",
       "description": "Cure all ailments on yourself"
     },
-    "ThornWhipping": {
+    "thornWhipping": {
       "name": "Thorn Whipping",
       "description": "Poison enemy with thorn whip"
     },
-    "TerraDestroyer": {
+    "terraDestroyer": {
       "name": "Terra Destroyer",
       "description": "Throw massive dark matter"
     },
-    "FireField": {
+    "fireField": {
       "name": "Fire Field",
       "description": "Strength fire, weaken ice"
     },
-    "FullHeal": {
+    "fullHeal": {
       "name": "Full Heal",
       "description": "Heal almost all of your HP"
     },
-    "GigaCrusher": {
+    "gigaCrusher": {
       "name": "Giga Crusher",
       "description": "Fire the ultimate laser cannon"
     },
-    "DarkElemental": {
+    "darkElemental": {
       "name": "Dark Elemental",
       "description": "Engulf with evil fire column"
     },
-    "CrimsonCloud": {
+    "crimsonCloud": {
       "name": "Crimson Cloud",
       "description": "Fire numerous evil flashes"
     },
-    "DeadlyPoison": {
+    "deadlyPoison": {
       "name": "Deadly Poison",
       "description": "Fire venomous foam with magic"
     },
-    "ParalyzeShock": {
+    "paralyzeShock": {
       "name": "Paralyze Shock",
       "description": "Magic that completely paralyzes"
     },
-    "DarkField": {
+    "darkField": {
       "name": "Dark Field",
       "description": "Strength dark, weaken thunder"
     },
-    "MeltingBlood": {
+    "meltingBlood": {
       "name": "Melting Blood",
       "description": "Unleash dark energy"
     },
-    "GodBombard": {
+    "godBombard": {
       "name": "God Bombard",
       "description": "Most powerful missile magic"
     },
-    "MegaBreak": {
+    "megaBreak": {
       "name": "Mega Break",
       "description": "Large decrease in enemy's speed"
     },
-    "GiantMissile": {
+    "giantMissile": {
       "name": "Giant Missile",
       "description": "Fire all body missiles"
     },
-    "ConfuseStab": {
+    "confuseStab": {
       "name": "Confuse Stab",
       "description": "Massive confusion damage"
     },
-    "ImpactRush": {
+    "impactRush": {
       "name": "Impact Rush",
       "description": "Huge damage from rapid blows"
     },
-    "DimensionScissors": {
+    "dimensionScissors": {
       "name": "Dimension Scissors",
       "description": "Slash thru space and destroy"
     },
-    "FinalHeal": {
+    "finalHeal": {
       "name": "Final Heal",
       "description": "Heal almost all of allies HP"
     },
-    "EraseMagic": {
+    "eraseMagic": {
       "name": "Erase Magic",
       "description": "Cure all ailments on allies"
     },
-    "AutoRecover": {
+    "autoRecover": {
       "name": "Auto Recover",
       "description": "Gradually heal your HP"
     },
-    "CrimsonFlame": {
+    "crimsonFlame": {
       "name": "Crimson Flame",
       "description": "Revive all allies with max HP"
     },
-    "FlameSphere": {
+    "flameSphere": {
       "name": "Flame Sphere",
       "description": "Magic that creates huge flames"
     },
-    "Inferno": {
+    "inferno": {
       "name": "Inferno",
       "description": "Continuous fire columns"
     },
-    "TSword": {
+    "tSword": {
       "name": "T-Sword",
       "description": "Paralyze with Grey Sword"
     },
-    "SoulPlunder": {
+    "soulPlunder": {
       "name": "Soul Plunder",
       "description": "Destroy enemy with a spell"
     },
-    "OmegaBlade": {
+    "omegaBlade": {
       "name": "Omega Blade",
       "description": "Sword move destroys evil"
     },
-    "DarknessChaos": {
+    "darknessChaos": {
       "name": "Darkness Chaos",
       "description": "Huge damage with evil flame"
     },
-    "BlackScewer": {
+    "blackScewer": {
       "name": "Black Scewer",
       "description": "Pierce with numerous dark matter"
     },
-    "ConfuseNebula": {
+    "confuseNebula": {
       "name": "Confuse Nebula",
       "description": "Massive confusion magic blow"
     },
-    "BlastMode": {
+    "blastMode": {
       "name": "Blast Mode",
       "description": "Multiple shots to the enemy"
     },
-    "CableCrusher": {
+    "cableCrusher": {
       "name": "Cable Crusher",
       "description": "Powerful and evil magic attack"
     }

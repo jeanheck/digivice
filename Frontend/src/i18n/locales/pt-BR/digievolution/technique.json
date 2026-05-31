@@ -1,602 +1,602 @@
 {
   "technique": {
-    "HeatCutter": {
+    "heatCutter": {
       "name": "Corte Térmico",
       "description": "Corte com dano de fogo"
     },
-    "FrostCutter": {
+    "frostCutter": {
       "name": "Corte Gélido",
       "description": "Corte com dano de gelo"
     },
-    "SmallHeal": {
+    "smallHeal": {
       "name": "Cura Menor",
       "description": "Recupera parte do seu HP"
     },
-    "DoublePower": {
+    "doublePower": {
       "name": "Poder Duplo",
       "description": "Aumenta seu poder de ataque"
     },
-    "LizardDance": {
+    "lizardDance": {
       "name": "Dança do Lagarto",
       "description": "Corta o inimigo várias vezes"
     },
-    "WingBuster": {
+    "wingBuster": {
       "name": "Destruidor de Asas",
       "description": "Dano enorme contra Digimon Pássaro"
     },
-    "BugBuster": {
+    "bugBuster": {
       "name": "Destruidor de Insetos",
       "description": "Dano enorme contra Digimon Inseto"
     },
-    "BigShot": {
+    "bigShot": {
       "name": "Tiro Certeiro",
       "description": "Grande dano se acertar"
     },
-    "FishBuster": {
+    "fishBuster": {
       "name": "Destruidor de Peixes",
       "description": "Dano enorme contra Digimon Marinho"
     },
-    "CaptainCannon": {
+    "captainCannon": {
       "name": "Canhão do Capitão",
       "description": "Dispara o canhão do braço"
     },
-    "LightningSlash": {
+    "lightningSlash": {
       "name": "Corte Relâmpago",
       "description": "Dano de trovão"
     },
-    "Whirlwind": {
+    "whirlwind": {
       "name": "Redemoinho",
       "description": "Dano de vento"
     },
-    "HammerRush": {
+    "hammerRush": {
       "name": "Investida de Martelo",
       "description": "Dano por golpes rápidos"
     },
-    "SpinalTap": {
+    "spinalTap": {
       "name": "Toque Espinhal",
       "description": "Às vezes paralisa o inimigo"
     },
-    "MaulAttack": {
+    "maulAttack": {
       "name": "Ataque Devastador",
       "description": "Contra-ataca se for atacado primeiro"
     },
-    "FlameBall": {
+    "flameBall": {
       "name": "Bola de Fogo",
       "description": "Dispara pequenas bolas de fogo"
     },
-    "TripleFire": {
+    "tripleFire": {
       "name": "Fogo Triplo",
       "description": "Dispara três bolas de fogo"
     },
-    "FlameLance": {
+    "flameLance": {
       "name": "Lança de Fogo",
       "description": "Lança feixe de fogo"
     },
-    "NovaBlast": {
+    "novaBlast": {
       "name": "Explosão Nova",
       "description": "Dispara uma bola de fogo pela boca"
     },
-    "AirBlast": {
+    "airBlast": {
       "name": "Rajada de Ar",
       "description": "Dispara bolas de ar"
     },
-    "IceBlow": {
+    "iceBlow": {
       "name": "Sopro de Gelo",
       "description": "Dispara estacas de gelo com dano de gelo"
     },
-    "Antidote": {
+    "antidote": {
       "name": "Antídoto",
       "description": "Cura veneno em si mesmo"
     },
-    "Veelaser": {
+    "veelaser": {
       "name": "Veelaser",
       "description": "Dispara um laser pelo peito"
     },
-    "DoubleGuard": {
+    "doubleGuard": {
       "name": "Guarda Dupla",
       "description": "Aumenta seu poder de defesa"
     },
-    "PickingClaw": {
+    "pickingClaw": {
       "name": "Garra Ladra",
       "description": "Ataca e rouba itens"
     },
-    "CounterAlert": {
+    "counterAlert": {
       "name": "Alerta de Contra-Ataque",
       "description": "Contra-ataca durante pose"
     },
-    "PlasmaBlade": {
+    "plasmaBlade": {
       "name": "Lâmina de Plasma",
       "description": "Corte com lâmina eletrificada"
     },
-    "ThunderBolt": {
+    "thunderBolt": {
       "name": "Raio de Trovão",
       "description": "Cria uma bola de trovão e dispara"
     },
-    "ThunderGemini": {
+    "thunderGemini": {
       "name": "Trovão Gêmeo",
       "description": "Cria duas bolas de trovão e dispara"
     },
-    "IceShower": {
+    "iceShower": {
       "name": "Chuva de Gelo",
       "description": "Dispara inúmeras estacas de gelo"
     },
-    "DragonWheel": {
+    "dragonWheel": {
       "name": "Roda do Dragão",
       "description": "Dispara bolas de fogo das 9 caudas"
     },
-    "MegaTornado": {
+    "megaTornado": {
       "name": "Mega Tornado",
       "description": "Tornado contra um inimigo"
     },
-    "HandOfFate": {
+    "handOfFate": {
       "name": "Mão do Destino",
       "description": "Soca o inimigo com ataques de vento"
     },
-    "DarkMatter": {
+    "darkMatter": {
       "name": "Matéria Sombria",
       "description": "Bola de fogo maligna com dano sombrio"
     },
-    "EvilPoison": {
+    "evilPoison": {
       "name": "Veneno Maligno",
       "description": "Magia com dano e veneno"
     },
-    "ArmorBreak": {
+    "armorBreak": {
       "name": "Quebrar Armadura",
       "description": "Diminui a defesa do inimigo"
     },
-    "StunShock": {
+    "stunShock": {
       "name": "Choque Paralisante",
       "description": "Magia com dano e paralisia"
     },
-    "TouchOfEvil": {
+    "touchOfEvil": {
       "name": "Toque do Mal",
       "description": "Drena HP do inimigo com garra"
     },
-    "PoisonBites": {
+    "poisonBites": {
       "name": "Mordidas Venenosas",
       "description": "Dano venenoso"
     },
-    "EnergyLeech": {
+    "energyLeech": {
       "name": "Sanguessuga de Energia",
       "description": "Magia que drena HP"
     },
-    "PanicBites": {
+    "panicBites": {
       "name": "Mordidas de Pânico",
       "description": "Dano com confusão"
     },
-    "VenomStab": {
+    "venomStab": {
       "name": "Golpe Venenoso",
       "description": "Dano venenoso mortal"
     },
-    "SpikingStrike": {
+    "spikingStrike": {
       "name": "Golpe de Espinho",
       "description": "Apunhala o inimigo com o espinho"
     },
-    "DivineRain": {
+    "divineRain": {
       "name": "Chuva Divina",
       "description": "Dano de água por chuva mágica"
     },
-    "AntiParalysis": {
+    "antiParalysis": {
       "name": "Anti-Paralisia",
       "description": "Cura paralisia em si mesmo"
     },
-    "CelestialArrow": {
+    "celestialArrow": {
       "name": "Flecha Celestial",
       "description": "Flecha divina com ataque de trovão"
     },
-    "BurnSlash": {
+    "burnSlash": {
       "name": "Corte Flamejante",
       "description": "Corte com lâmina flamejante"
     },
-    "ColdSlash": {
+    "coldSlash": {
       "name": "Corte Gélido",
       "description": "Corte com lâmina de gelo"
     },
-    "BladeTwister": {
+    "bladeTwister": {
       "name": "Redemoinho de Lâminas",
       "description": "Corta várias vezes com vento"
     },
-    "DinoBuster": {
+    "dinoBuster": {
       "name": "Destruidor de Dinossauros",
       "description": "Dano enorme contra Digimon Dinossauro"
     },
-    "DramonBuster": {
+    "dramonBuster": {
       "name": "Destruidor de Dramon",
       "description": "Dano enorme contra Digimon Dragão"
     },
-    "JusticeStrike": {
+    "justiceStrike": {
       "name": "Golpe da Justiça",
       "description": "Dispara todas as armas de fogo"
     },
-    "SoulCharge": {
+    "soulCharge": {
       "name": "Carga Espiritual",
       "description": "Acumula Chi para fortalecer o próximo golpe"
     },
-    "SpeedBoost": {
+    "speedBoost": {
       "name": "Impulso de Velocidade",
       "description": "Aumenta sua velocidade"
     },
-    "CycloneTurbine": {
+    "cycloneTurbine": {
       "name": "Turbina Ciclone",
       "description": "Múltiplos chutes giratórios"
     },
-    "MagicMissile": {
+    "magicMissile": {
       "name": "Míssil Mágico",
       "description": "Dispara mísseis com magia"
     },
-    "RisingFire": {
+    "risingFire": {
       "name": "Fogo Ascendente",
       "description": "Coluna de fogo sobre o inimigo"
     },
-    "GigaDestroyer": {
+    "gigaDestroyer": {
       "name": "Giga Destruidor",
       "description": "Lança mísseis orgânicos"
     },
-    "BlackThorn": {
+    "blackThorn": {
       "name": "Espinho Negro",
       "description": "Dano sombrio com espinhos malignos"
     },
-    "DarkShot": {
+    "darkShot": {
       "name": "Tiro Sombrio",
       "description": "Lança mísseis orgânicos"
     },
-    "MetalAttack": {
+    "metalAttack": {
       "name": "Ataque Metálico",
       "description": "Dano mecânico"
     },
-    "MechanicalBash": {
+    "mechanicalBash": {
       "name": "Golpe Mecânico",
       "description": "Dano mecânico forte"
     },
-    "DesperadoBlaster": {
+    "desperadoBlaster": {
       "name": "Blaster Desesperado",
       "description": "Dispara 2 ondas de energia em sequência"
     },
-    "MegaGuard": {
+    "megaGuard": {
       "name": "Mega Guarda",
       "description": "Aumenta o poder de defesa dos aliados"
     },
-    "MegaStrength": {
+    "megaStrength": {
       "name": "Mega Força",
       "description": "Aumenta o poder de ataque dos aliados"
     },
-    "AtomicBlaster": {
+    "atomicBlaster": {
       "name": "Blaster Atômico",
       "description": "Queima o inimigo com laser de fogo"
     },
-    "ElectroBolt": {
+    "electroBolt": {
       "name": "Raio Elétrico",
       "description": "Grande bola de trovão contra o inimigo"
     },
-    "Showstorm": {
+    "showstorm": {
       "name": "Showstorm",
       "description": "Espírito da neve causa dano de gelo"
     },
-    "ThunderField": {
+    "thunderField": {
       "name": "Campo de Trovão",
       "description": "Fortalece trovão, enfraquece máquina"
     },
-    "Bonhitsusen": {
+    "bonhitsusen": {
       "name": "Bonhitsusen",
       "description": "Dano enorme contra mortos-vivos"
     },
-    "MegaHeal": {
+    "megaHeal": {
       "name": "Mega Cura",
       "description": "Recupera muito do seu HP"
     },
-    "GateOfDestiny": {
+    "gateOfDestiny": {
       "name": "Portal do Destino",
       "description": "Abre um portal e descarta inimigos"
     },
-    "DarkFear": {
+    "darkFear": {
       "name": "Medo Sombrio",
       "description": "Lança chama maligna contra o inimigo"
     },
-    "BlackDart": {
+    "blackDart": {
       "name": "Dardo Negro",
       "description": "Dispara inúmeros espinhos malignos"
     },
-    "ArmorOff": {
+    "armorOff": {
       "name": "Remover Armadura",
       "description": "Grande redução na defesa do inimigo"
     },
-    "ConfuseGas": {
+    "confuseGas": {
       "name": "Gás Confuso",
       "description": "Magia que confunde o inimigo"
     },
-    "SoulSnatcher": {
+    "soulSnatcher": {
       "name": "Ladrão de Almas",
       "description": "Drena a alma magicamente"
     },
-    "GrislyWing": {
+    "grislyWing": {
       "name": "Asa Macabra",
       "description": "Diminui o poder de ataque do inimigo"
     },
-    "TwinMissile": {
+    "twinMissile": {
       "name": "Míssil Duplo",
       "description": "Dispara dois mísseis com magia"
     },
-    "SlowDown": {
+    "slowDown": {
       "name": "Desacelerar",
       "description": "Diminui a velocidade do inimigo"
     },
-    "EnergeticBomb": {
+    "energeticBomb": {
       "name": "Bomba Energética",
       "description": "Dispara bolas de energia mecânica"
     },
-    "EnergyDrain": {
+    "energyDrain": {
       "name": "Dreno de Energia",
       "description": "Magia que drena muito HP"
     },
-    "ElectroShocker": {
+    "electroShocker": {
       "name": "Choque Elétrico",
       "description": "Dispara bolas de trovão pela boca"
     },
-    "HypnoGas": {
+    "hypnoGas": {
       "name": "Gás Hipnótico",
       "description": "Magia que coloca o inimigo para dormir"
     },
-    "HypnoNebula": {
+    "hypnoNebula": {
       "name": "Nebulosa Hipnótica",
       "description": "Magia que coloca o inimigo em sono profundo"
     },
-    "NmSyndromer": {
+    "nmSyndromer": {
       "name": "Síndrome NM",
       "description": "Ataque sombrio disparando bolas escuras"
     },
-    "PinpointShot": {
+    "pinpointShot": {
       "name": "Tiro de Precisão",
       "description": "Dano enorme se acertar"
     },
-    "GoldenRipper": {
+    "goldenRipper": {
       "name": "Estripador Dourado",
       "description": "Corta inimigos com espadas"
     },
-    "DevilShot": {
+    "devilShot": {
       "name": "Tiro do Diabo",
       "description": "Dano enorme contra Digimon Malignos"
     },
-    "DynamoCannon": {
+    "dynamoCannon": {
       "name": "Canhão Dínamo",
       "description": "Dano enorme contra Máquinas"
     },
-    "HeavenHit": {
+    "heavenHit": {
       "name": "Golpe do Céu",
       "description": "Dano de trovão forte"
     },
-    "VacuumCannon": {
+    "vacuumCannon": {
       "name": "Canhão de Vácuo",
       "description": "Dano de vento forte"
     },
-    "BrainFreeze": {
+    "brainFreeze": {
       "name": "Cérebro Congelado",
       "description": "Paralisa o inimigo"
     },
-    "Misshukikou": {
+    "misshukikou": {
       "name": "Misshukikou",
       "description": "Acumula o Chi ao máximo para o próximo golpe"
     },
-    "Mugenhadou": {
+    "mugenhadou": {
       "name": "Mugenhadou",
       "description": "Dispara uma onda para nocautear o inimigo"
     },
-    "FlameBreath": {
+    "flameBreath": {
       "name": "Sopro de Chamas",
       "description": "Envolve o inimigo com um sopro de fogo"
     },
-    "GigaFire": {
+    "gigaFire": {
       "name": "Giga Fogo",
       "description": "Ataque mágico dispara 3 bolas de fogo"
     },
-    "TerraForce": {
+    "terraForce": {
       "name": "Força Terra",
       "description": "Arremessa uma enorme bola de energia"
     },
-    "SylphStorm": {
+    "sylphStorm": {
       "name": "Tempestade de Sílfide",
       "description": "Poderosa rajada de vento"
     },
-    "MegaCrusher": {
+    "megaCrusher": {
       "name": "Mega Triturador",
       "description": "Dispara uma bola massiva"
     },
-    "CounterStrike": {
+    "counterStrike": {
       "name": "Contra-Ataque",
       "description": "Contra-ataque forte durante a pose"
     },
-    "SnappingClaw": {
+    "snappingClaw": {
       "name": "Garra de Estalo",
       "description": "Ataque e roube itens rapidamente"
     },
-    "MegaBoost": {
+    "megaBoost": {
       "name": "Mega Impulso",
       "description": "Aumenta a velocidade do aliado"
     },
-    "FinalPurification": {
+    "finalPurification": {
       "name": "Purificação Final",
       "description": "Contra-ataque de raio a partir do escudo"
     },
-    "LightningBolt": {
+    "lightningBolt": {
       "name": "Relâmpago",
       "description": "Enorme bola de trovão contra o inimigo"
     },
-    "GigaFreeze": {
+    "gigaFreeze": {
       "name": "Giga Congelamento",
       "description": "Envolve o inimigo com gelo enorme"
     },
-    "IceField": {
+    "iceField": {
       "name": "Campo de Gelo",
       "description": "Fortalece gelo, enfraquece vento"
     },
-    "KongouKaimandra": {
+    "kongouKaimandra": {
       "name": "KongouKaimandra",
       "description": "Ataque mágico contra mortos-vivos"
     },
-    "GigaHeal": {
+    "gigaHeal": {
       "name": "Giga Cura",
       "description": "Cura muito do HP dos aliados"
     },
-    "WindField": {
+    "windField": {
       "name": "Campo de Vento",
       "description": "Fortalece vento, enfraquece água"
     },
-    "SevenHeavens": {
+    "sevenHeavens": {
       "name": "Sete Céus",
       "description": "Dispara 7 bolas contra Digimon malignos"
     },
-    "MagicalCannon": {
+    "magicalCannon": {
       "name": "Canhão Mágico",
       "description": "Dispara mísseis gigantes com magia"
     },
-    "MetalField": {
+    "metalField": {
       "name": "Metal Field",
       "description": "Fortalece metal, enfraquece trevas"
     },
-    "MetalWolfClaw": {
+    "metalWolfClaw": {
       "name": "Garra de Lobo Metálico",
       "description": "Sopro de gelo. Ataque mágico."
     },
-    "GrandWave": {
+    "grandWave": {
       "name": "Grande Onda",
       "description": "Onda mágica contra o inimigo"
     },
-    "ErasePoison": {
+    "erasePoison": {
       "name": "Eliminar Veneno",
       "description": "Cura todo o veneno dos aliados"
     },
-    "EraseParalysis": {
+    "eraseParalysis": {
       "name": "Eliminar Paralisia",
       "description": "Cura toda a paralisia dos aliados"
     },
-    "WaterField": {
+    "waterField": {
       "name": "Campo de Água",
       "description": "Fortalece água, enfraquece fogo"
     },
-    "AntiMagic": {
+    "antiMagic": {
       "name": "Anti-Magia",
       "description": "Cura todas as condições em si mesmo"
     },
-    "ThornWhipping": {
+    "thornWhipping": {
       "name": "Açoite de Espinhos",
       "description": "Envenena o inimigo com um chicote de espinhos"
     },
-    "TerraDestroyer": {
+    "terraDestroyer": {
       "name": "Destruidor de Terra",
       "description": "Arremessa matéria escura massiva"
     },
-    "FireField": {
+    "fireField": {
       "name": "Campo de Fogo",
       "description": "Fortalece fogo, enfraquece gelo"
     },
-    "FullHeal": {
+    "fullHeal": {
       "name": "Cura Completa",
       "description": "Cura quase todo o seu HP"
     },
-    "GigaCrusher": {
+    "gigaCrusher": {
       "name": "Giga Triturador",
       "description": "Dispara o canhão laser definitivo"
     },
-    "DarkElemental": {
+    "darkElemental": {
       "name": "Elemental das Trevas",
       "description": "Envolve com uma coluna de fogo maligna"
     },
-    "CrimsonCloud": {
+    "crimsonCloud": {
       "name": "Nuvem Carmesim",
       "description": "Dispara inúmeros flashes malignos"
     },
-    "DeadlyPoison": {
+    "deadlyPoison": {
       "name": "Veneno Mortal",
       "description": "Dispara espuma venenosa com magia"
     },
-    "ParalyzeShock": {
+    "paralyzeShock": {
       "name": "Choque Paralisante",
       "description": "Magia que paralisa completamente"
     },
-    "DarkField": {
+    "darkField": {
       "name": "Campo de Trevas",
       "description": "Fortalece trevas, enfraquece trovão"
     },
-    "MeltingBlood": {
+    "meltingBlood": {
       "name": "Sangue Derretido",
       "description": "Libera energia das trevas"
     },
-    "GodBombard": {
+    "godBombard": {
       "name": "Bombardeio Divino",
       "description": "A magia de míssil mais poderosa"
     },
-    "MegaBreak": {
+    "megaBreak": {
       "name": "Mega Break",
       "description": "Grande redução na velocidade do inimigo"
     },
-    "GiantMissile": {
+    "giantMissile": {
       "name": "Míssil Gigante",
       "description": "Dispara todos os mísseis do corpo"
     },
-    "ConfuseStab": {
+    "confuseStab": {
       "name": "Estocada de Confusão",
       "description": "Dano de confusão massivo"
     },
-    "ImpactRush": {
+    "impactRush": {
       "name": "Investida de Impacto",
       "description": "Dano enorme de golpes rápidos"
     },
-    "DimensionScissors": {
+    "dimensionScissors": {
       "name": "Tesouras Dimensionais",
       "description": "Corta através do espaço e destrói"
     },
-    "FinalHeal": {
+    "finalHeal": {
       "name": "Cura Final",
       "description": "Cura quase todo o HP dos aliados"
     },
-    "EraseMagic": {
+    "eraseMagic": {
       "name": "Eliminar Magia",
       "description": "Cura todas as condições dos aliados"
     },
-    "AutoRecover": {
+    "autoRecover": {
       "name": "Auto Recuperação",
       "description": "Recupera gradualmente seu HP"
     },
-    "CrimsonFlame": {
+    "crimsonFlame": {
       "name": "Chama Carmesim",
       "description": "Revive todos os aliados com HP máximo"
     },
-    "FlameSphere": {
+    "flameSphere": {
       "name": "Esfera de Chamas",
       "description": "Magia que cria chamas enormes"
     },
-    "Inferno": {
+    "inferno": {
       "name": "Inferno",
       "description": "Colunas de fogo contínuas"
     },
-    "TSword": {
+    "tSword": {
       "name": "T-Sword",
       "description": "Paralisa com a Espada Cinza"
     },
-    "SoulPlunder": {
+    "soulPlunder": {
       "name": "Saque de Almas",
       "description": "Destrói o inimigo com um feitiço"
     },
-    "OmegaBlade": {
+    "omegaBlade": {
       "name": "Omega Blade",
       "description": "Movimento de espada que destrói o mal"
     },
-    "DarknessChaos": {
+    "darknessChaos": {
       "name": "Caos das Trevas",
       "description": "Dano enorme com chama maligna"
     },
-    "BlackScewer": {
+    "blackScewer": {
       "name": "Espeto Negro",
       "description": "Perfura com inúmeras matérias escuras"
     },
-    "ConfuseNebula": {
+    "confuseNebula": {
       "name": "Nebulosa de Confusão",
       "description": "Golpe mágico de confusão massiva"
     },
-    "BlastMode": {
+    "blastMode": {
       "name": "Blast Mode",
       "description": "Múltiplos tiros no inimigo"
     },
-    "CableCrusher": {
+    "cableCrusher": {
       "name": "Triturador de Cabos",
       "description": "Ataque mágico poderoso e maligno"
     }

@@ -1,1048 +1,1048 @@
 {
-    "HeatCutter": {
+    "heatCutter": {
         "type": "physical",
         "element": "fire",
         "elementStrength": 32,
         "mp": 18,
         "power": 90
     },
-    "FrostCutter": {
+    "frostCutter": {
         "type": "physical",
         "element": "ice",
         "elementStrength": 32,
         "mp": 18,
         "power": 90
     },
-    "SmallHeal": {
+    "smallHeal": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 16,
         "power": 8
     },
-    "DoublePower": {
+    "doublePower": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 42,
         "power": 0
     },
-    "LizardDance": {
+    "lizardDance": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 40,
         "power": 100
     },
-    "WingBuster": {
+    "wingBuster": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 18,
         "power": 100
     },
-    "BugBuster": {
+    "bugBuster": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 24,
         "power": 130
     },
-    "BigShot": {
+    "bigShot": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 20,
         "power": 140
     },
-    "FishBuster": {
+    "fishBuster": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 30,
         "power": 160
     },
-    "CaptainCannon": {
+    "captainCannon": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 38,
         "power": 200
     },
-    "LightningSlash": {
+    "lightningSlash": {
         "type": "physical",
         "element": "thunder",
         "elementStrength": 32,
         "mp": 18,
         "power": 90
     },
-    "Whirlwind": {
+    "whirlwind": {
         "type": "physical",
         "element": "wind",
         "elementStrength": 32,
         "mp": 18,
         "power": 90
     },
-    "HammerRush": {
+    "hammerRush": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 30,
         "power": 100
     },
-    "SpinalTap": {
+    "spinalTap": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 18,
         "power": 75
     },
-    "MaulAttack": {
+    "maulAttack": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 40,
         "power": 200
     },
-    "FlameBall": {
+    "flameBall": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 16,
         "mp": 20,
         "power": 100
     },
-    "TripleFire": {
+    "tripleFire": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 16,
         "mp": 25,
         "power": 50
     },
-    "FlameLance": {
+    "flameLance": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 32,
         "mp": 48,
         "power": 300
     },
-    "NovaBlast": {
+    "novaBlast": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 48,
         "mp": 60,
         "power": 300
     },
-    "AirBlast": {
+    "airBlast": {
         "type": "magical",
         "element": "wind",
         "elementStrength": 16,
         "mp": 20,
         "power": 100
     },
-    "IceBlow": {
+    "iceBlow": {
         "type": "magical",
         "element": "ice",
         "elementStrength": 16,
         "mp": 20,
         "power": 100
     },
-    "Antidote": {
+    "antidote": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 8,
         "power": 0
     },
-    "Veelaser": {
+    "veelaser": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 48,
         "mp": 60,
         "power": 300
     },
-    "DoubleGuard": {
+    "doubleGuard": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 42,
         "power": 0
     },
-    "PickingClaw": {
+    "pickingClaw": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 18,
         "power": 60
     },
-    "CounterAlert": {
+    "counterAlert": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 48,
         "power": 100
     },
-    "PlasmaBlade": {
+    "plasmaBlade": {
         "type": "physical",
         "element": "thunder",
         "elementStrength": 48,
         "mp": 40,
         "power": 180
     },
-    "ThunderBolt": {
+    "thunderBolt": {
         "type": "magical",
         "element": "thunder",
         "elementStrength": 16,
         "mp": 20,
         "power": 100
     },
-    "ThunderGemini": {
+    "thunderGemini": {
         "type": "magical",
         "element": "thunder",
         "elementStrength": 24,
         "mp": 30,
         "power": 200
     },
-    "IceShower": {
+    "iceShower": {
         "type": "magical",
         "element": "ice",
         "elementStrength": 32,
         "mp": 48,
         "power": 200
     },
-    "DragonWheel": {
+    "dragonWheel": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 48,
         "mp": 60,
         "power": 300
     },
-    "MegaTornado": {
+    "megaTornado": {
         "type": "magical",
         "element": "wind",
         "elementStrength": 24,
         "mp": 30,
         "power": 200
     },
-    "HandOfFate": {
+    "handOfFate": {
         "type": "physical",
         "element": "wind",
         "elementStrength": 48,
         "mp": 42,
         "power": 180
     },
-    "DarkMatter": {
+    "darkMatter": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 16,
         "mp": 20,
         "power": 100
     },
-    "EvilPoison": {
+    "evilPoison": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 18,
         "power": 60
     },
-    "ArmorBreak": {
+    "armorBreak": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 39,
         "power": 0
     },
-    "StunShock": {
+    "stunShock": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 18,
         "power": 60
     },
-    "TouchOfEvil": {
+    "touchOfEvil": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 40,
         "power": 240
     },
-    "PoisonBites": {
+    "poisonBites": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 18,
         "power": 75
     },
-    "EnergyLeech": {
+    "energyLeech": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 18,
         "power": 100
     },
-    "PanicBites": {
+    "panicBites": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 18,
         "power": 75
     },
-    "VenomStab": {
+    "venomStab": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 36,
         "power": 200
     },
-    "SpikingStrike": {
+    "spikingStrike": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 36,
         "power": 200
     },
-    "DivineRain": {
+    "divineRain": {
         "type": "magical",
         "element": "water",
         "elementStrength": 24,
         "mp": 30,
         "power": 150
     },
-    "AntiParalysis": {
+    "antiParalysis": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 8,
         "power": 0
     },
-    "CelestialArrow": {
+    "celestialArrow": {
         "type": "physical",
         "element": "thunder",
         "elementStrength": 48,
         "mp": 44,
         "power": 180
     },
-    "BurnSlash": {
+    "burnSlash": {
         "type": "physical",
         "element": "fire",
         "elementStrength": 64,
         "mp": 32,
         "power": 130
     },
-    "ColdSlash": {
+    "coldSlash": {
         "type": "physical",
         "element": "ice",
         "elementStrength": 64,
         "mp": 32,
         "power": 130
     },
-    "BladeTwister": {
+    "bladeTwister": {
         "type": "physical",
         "element": "wind",
         "elementStrength": 64,
         "mp": 80,
         "power": 120
     },
-    "DinoBuster": {
+    "dinoBuster": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 40,
         "power": 200
     },
-    "DramonBuster": {
+    "dramonBuster": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 48,
         "power": 210
     },
-    "JusticeStrike": {
+    "justiceStrike": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 78,
         "power": 140
     },
-    "SoulCharge": {
+    "soulCharge": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 19,
         "power": 0
     },
-    "SpeedBoost": {
+    "speedBoost": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 48,
         "power": 0
     },
-    "CycloneTurbine": {
+    "cycloneTurbine": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 80,
         "power": 140
     },
-    "MagicMissile": {
+    "magicMissile": {
         "type": "magical",
         "element": "machine",
         "elementStrength": 32,
         "mp": 56,
         "power": 400
     },
-    "RisingFire": {
+    "risingFire": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 32,
         "mp": 60,
         "power": 150
     },
-    "GigaDestroyer": {
+    "gigaDestroyer": {
         "type": "magical",
         "element": "machine",
         "elementStrength": 64,
         "mp": 90,
         "power": 500
     },
-    "BlackThorn": {
+    "blackThorn": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 32,
         "mp": 60,
         "power": 150
     },
-    "DarkShot": {
+    "darkShot": {
         "type": "magical",
         "element": "machine",
         "elementStrength": 64,
         "mp": 90,
         "power": 500
     },
-    "MetalAttack": {
+    "metalAttack": {
         "type": "physical",
         "element": "machine",
         "elementStrength": 32,
         "mp": 26,
         "power": 140
     },
-    "MechanicalBash": {
+    "mechanicalBash": {
         "type": "physical",
         "element": "machine",
         "elementStrength": 64,
         "mp": 48,
         "power": 160
     },
-    "DesperadoBlaster": {
+    "desperadoBlaster": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 84,
         "power": 140
     },
-    "MegaGuard": {
+    "megaGuard": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 84,
         "power": 0
     },
-    "MegaStrength": {
+    "megaStrength": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 84,
         "power": 0
     },
-    "AtomicBlaster": {
+    "atomicBlaster": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 64,
         "mp": 90,
         "power": 500
     },
-    "ElectroBolt": {
+    "electroBolt": {
         "type": "magical",
         "element": "thunder",
         "elementStrength": 32,
         "mp": 48,
         "power": 300
     },
-    "Showstorm": {
+    "showstorm": {
         "type": "magical",
         "element": "ice",
         "elementStrength": 40,
         "mp": 60,
         "power": 250
     },
-    "ThunderField": {
+    "thunderField": {
         "type": "set field",
         "element": "thunder",
         "elementStrength": 0,
         "mp": 100,
         "power": 0
     },
-    "Bonhitsusen": {
+    "bonhitsusen": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 80,
         "power": 300
     },
-    "MegaHeal": {
+    "megaHeal": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 74,
         "power": 32
     },
-    "GateOfDestiny": {
+    "gateOfDestiny": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 112,
         "power": 250
     },
-    "DarkFear": {
+    "darkFear": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 32,
         "mp": 48,
         "power": 300
     },
-    "BlackDart": {
+    "blackDart": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 40,
         "mp": 70,
         "power": 200
     },
-    "ArmorOff": {
+    "armorOff": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 78,
         "power": 0
     },
-    "ConfuseGas": {
+    "confuseGas": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 40,
         "power": 180
     },
-    "SoulSnatcher": {
+    "soulSnatcher": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 50,
         "power": 150
     },
-    "GrislyWing": {
+    "grislyWing": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 64,
         "mp": 90,
         "power": 300
     },
-    "TwinMissile": {
+    "twinMissile": {
         "type": "magical",
         "element": "machine",
         "elementStrength": 40,
         "mp": 64,
         "power": 450
     },
-    "SlowDown": {
+    "slowDown": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 41,
         "power": 0
     },
-    "EnergeticBomb": {
+    "energeticBomb": {
         "type": "physical",
         "element": "machine",
         "elementStrength": 64,
         "mp": 78,
         "power": 240
     },
-    "EnergyDrain": {
+    "energyDrain": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 72,
         "power": 500
     },
-    "ElectroShocker": {
+    "electroShocker": {
         "type": "magical",
         "element": "thunder",
         "elementStrength": 64,
         "mp": 90,
         "power": 500
     },
-    "HypnoGas": {
+    "hypnoGas": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 40,
         "power": 180
     },
-    "HypnoNebula": {
+    "hypnoNebula": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 60,
         "power": 240
     },
-    "NmSyndromer": {
+    "nmSyndromer": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 64,
         "mp": 90,
         "power": 500
     },
-    "PinpointShot": {
+    "pinpointShot": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 54,
         "power": 220
     },
-    "GoldenRipper": {
+    "goldenRipper": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 140,
         "power": 400
     },
-    "DevilShot": {
+    "devilShot": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 56,
         "power": 220
     },
-    "DynamoCannon": {
+    "dynamoCannon": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 136,
         "power": 400
     },
-    "HeavenHit": {
+    "heavenHit": {
         "type": "physical",
         "element": "thunder",
         "elementStrength": 64,
         "mp": 32,
         "power": 160
     },
-    "VacuumCannon": {
+    "vacuumCannon": {
         "type": "physical",
         "element": "wind",
         "elementStrength": 64,
         "mp": 48,
         "power": 160
     },
-    "BrainFreeze": {
+    "brainFreeze": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 52,
         "power": 180
     },
-    "Misshukikou": {
+    "misshukikou": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 49,
         "power": 0
     },
-    "Mugenhadou": {
+    "mugenhadou": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 148,
         "power": 320
     },
-    "FlameBreath": {
+    "flameBreath": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 48,
         "mp": 72,
         "power": 500
     },
-    "GigaFire": {
+    "gigaFire": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 48,
         "mp": 90,
         "power": 250
     },
-    "TerraForce": {
+    "terraForce": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 140,
         "power": 480
     },
-    "SylphStorm": {
+    "sylphStorm": {
         "type": "magical",
         "element": "wind",
         "elementStrength": 48,
         "mp": 72,
         "power": 500
     },
-    "MegaCrusher": {
+    "megaCrusher": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 150,
         "power": 500
     },
-    "CounterStrike": {
+    "counterStrike": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 96,
         "power": 240
     },
-    "SnappingClaw": {
+    "snappingClaw": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 54,
         "power": 240
     },
-    "MegaBoost": {
+    "megaBoost": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 96,
         "power": 0
     },
-    "FinalPurification": {
+    "finalPurification": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 140,
         "power": 320
     },
-    "LightningBolt": {
+    "lightningBolt": {
         "type": "magical",
         "element": "thunder",
         "elementStrength": 48,
         "mp": 72,
         "power": 500
     },
-    "GigaFreeze": {
+    "gigaFreeze": {
         "type": "magical",
         "element": "ice",
         "elementStrength": 48,
         "mp": 72,
         "power": 300
     },
-    "IceField": {
+    "iceField": {
         "type": "set field",
         "element": "ice",
         "elementStrength": 0,
         "mp": 100,
         "power": 0
     },
-    "KongouKaimandra": {
+    "kongouKaimandra": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 150,
         "power": 480
     },
-    "GigaHeal": {
+    "gigaHeal": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 188,
         "power": 32
     },
-    "WindField": {
+    "windField": {
         "type": "set field",
         "element": "wind",
         "elementStrength": 0,
         "mp": 100,
         "power": 0
     },
-    "SevenHeavens": {
+    "sevenHeavens": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 140,
         "power": 400
     },
-    "MagicalCannon": {
+    "magicalCannon": {
         "type": "magical",
         "element": "machine",
         "elementStrength": 48,
         "mp": 72,
         "power": 500
     },
-    "MetalField": {
+    "metalField": {
         "type": "set field",
         "element": "machine",
         "elementStrength": 0,
         "mp": 100,
         "power": 0
     },
-    "MetalWolfClaw": {
+    "metalWolfClaw": {
         "type": "magical",
         "element": "ice",
         "elementStrength": 72,
         "mp": 150,
         "power": 600
     },
-    "GrandWave": {
+    "grandWave": {
         "type": "magical",
         "element": "water",
         "elementStrength": 48,
         "mp": 72,
         "power": 300
     },
-    "ErasePoison": {
+    "erasePoison": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 12,
         "power": 0
     },
-    "EraseParalysis": {
+    "eraseParalysis": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 12,
         "power": 0
     },
-    "WaterField": {
+    "waterField": {
         "type": "set field",
         "element": "water",
         "elementStrength": 0,
         "mp": 100,
         "power": 0
     },
-    "AntiMagic": {
+    "antiMagic": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 20,
         "power": 0
     },
-    "ThornWhipping": {
+    "thornWhipping": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 130,
         "power": 340
     },
-    "TerraDestroyer": {
+    "terraDestroyer": {
         "type": "physical",
         "element": "dark",
         "elementStrength": 64,
         "mp": 140,
         "power": 420
     },
-    "FireField": {
+    "fireField": {
         "type": "set field",
         "element": "fire",
         "elementStrength": 0,
         "mp": 100,
         "power": 0
     },
-    "FullHeal": {
+    "fullHeal": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 120,
         "power": 127
     },
-    "GigaCrusher": {
+    "gigaCrusher": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 180,
         "power": 640
     },
-    "DarkElemental": {
+    "darkElemental": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 64,
         "mp": 120,
         "power": 600
     },
-    "CrimsonCloud": {
+    "crimsonCloud": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 64,
         "mp": 150,
         "power": 300
     },
-    "DeadlyPoison": {
+    "deadlyPoison": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 90,
         "power": 360
     },
-    "ParalyzeShock": {
+    "paralyzeShock": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 90,
         "power": 300
     },
-    "DarkField": {
+    "darkField": {
         "type": "set field",
         "element": "dark",
         "elementStrength": 0,
         "mp": 100,
         "power": 0
     },
-    "MeltingBlood": {
+    "meltingBlood": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 72,
         "mp": 210,
         "power": 700
     },
-    "GodBombard": {
+    "godBombard": {
         "type": "magical",
         "element": "machine",
         "elementStrength": 64,
         "mp": 120,
         "power": 600
     },
-    "MegaBreak": {
+    "megaBreak": {
         "type": "support",
         "element": "none",
         "elementStrength": 0,
         "mp": 82,
         "power": 0
     },
-    "GiantMissile": {
+    "giantMissile": {
         "type": "physical",
         "element": "machine",
         "elementStrength": 64,
         "mp": 200,
         "power": 480
     },
-    "ConfuseStab": {
+    "confuseStab": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 64,
         "power": 240
     },
-    "ImpactRush": {
+    "impactRush": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 60,
         "power": 240
     },
-    "DimensionScissors": {
+    "dimensionScissors": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 200,
         "power": 400
     },
-    "FinalHeal": {
+    "finalHeal": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 240,
         "power": 64
     },
-    "EraseMagic": {
+    "eraseMagic": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 37,
         "power": 0
     },
-    "AutoRecover": {
+    "autoRecover": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 82,
         "power": 1
     },
-    "CrimsonFlame": {
+    "crimsonFlame": {
         "type": "heal",
         "element": "none",
         "elementStrength": 0,
         "mp": 200,
         "power": 0
     },
-    "FlameSphere": {
+    "flameSphere": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 64,
         "mp": 180,
         "power": 700
     },
-    "Inferno": {
+    "inferno": {
         "type": "magical",
         "element": "fire",
         "elementStrength": 64,
         "mp": 200,
         "power": 350
     },
-    "TSword": {
+    "tSword": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 250,
         "power": 400
     },
-    "SoulPlunder": {
+    "soulPlunder": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 160,
         "power": 350
     },
-    "OmegaBlade": {
+    "omegaBlade": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 280,
         "power": 500
     },
-    "DarknessChaos": {
+    "darknessChaos": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 72,
         "mp": 180,
         "power": 700
     },
-    "BlackScewer": {
+    "blackScewer": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 72,
         "mp": 200,
         "power": 350
     },
-    "ConfuseNebula": {
+    "confuseNebula": {
         "type": "magical",
         "element": "none",
         "elementStrength": 0,
         "mp": 90,
         "power": 360
     },
-    "BlastMode": {
+    "blastMode": {
         "type": "physical",
         "element": "none",
         "elementStrength": 0,
         "mp": 250,
         "power": 300
     },
-    "CableCrusher": {
+    "cableCrusher": {
         "type": "magical",
         "element": "dark",
         "elementStrength": 72,
