@@ -42,7 +42,7 @@ export class QuestModalPresenter {
             return null;
         }
 
-        const locationViewModel = LocationRepository.getLocationById(locationId);
-        return ImageCatalog.getMapImageUrl(locationViewModel.image);
+        const locationRaw = LocationRepository.getLocationById(locationId);
+        return ImageCatalog.getMapImageUrl(locationRaw.image);
     }
 }
