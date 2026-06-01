@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Technique from "./Technique.vue";
-import { DigievolutionTechniquesModalPresenter } from "@/presenters/digievolution-techniques-modal.presenter";
+import { TechniquesModalPresenter } from "@/presenters/techniques-modal.presenter";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -20,11 +20,11 @@ const handleClose = () => {
 };
 
 const digievolutionTechniques = computed(() => {
-  return DigievolutionTechniquesModalPresenter.getTechniquesByDigievolutionId(props.digievolutionId);
+  return TechniquesModalPresenter.getTechniquesByDigievolutionId(props.digievolutionId);
 });
 
 const signatureTechniqueId = computed(() => {
-  return DigievolutionTechniquesModalPresenter.getSignatureTechnique(digievolutionTechniques.value);
+  return TechniquesModalPresenter.getSignatureTechniqueId(digievolutionTechniques.value);
 });
 </script>
 

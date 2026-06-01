@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MapLocation from "./MapLocation.vue";
-import MapEnemies from "./MapEnemies.vue";
+import Location from "./Location.vue";
+import Enemies from "./Enemies.vue";
 import { computed } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
@@ -24,8 +24,8 @@ const locationViewModel = computed(() => {
     </div>
 
     <div class="flex-1 flex flex-col mt-2 h-full">
-      <MapLocation :location="locationViewModel" />
-      <MapEnemies :location="locationViewModel" />
+      <Location :location="locationViewModel" />
+      <Enemies :location="locationViewModel" />
     </div>
   </aside>
 </template>

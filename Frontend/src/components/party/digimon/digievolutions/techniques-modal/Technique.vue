@@ -11,11 +11,7 @@ const props = defineProps<{
 }>();
 
 const techniqueViewModel = computed(() => {
-  return TechniquePresenter.getTechniqueViewModel(
-    props.technique,
-    props.isSignature,
-    props.digievolutionLevel
-  );
+  return TechniquePresenter.getTechnique(props.technique, props.isSignature, props.digievolutionLevel);
 });
 </script>
 

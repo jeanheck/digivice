@@ -4,7 +4,7 @@ import type { DigievolutionTechniqueViewModel } from "@/viewmodels/digievolution
 import type { TechniqueViewModel } from "@/viewmodels/digievolution/technique.viewmodel";
 
 export class TechniquePresenter {
-    public static getTechniqueViewModel(
+    public static getTechnique(
         digievolutionTechnique: DigievolutionTechniqueViewModel,
         isSignature: boolean,
         digievolutionLevel: number

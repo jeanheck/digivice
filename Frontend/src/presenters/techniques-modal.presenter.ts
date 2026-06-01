@@ -3,7 +3,7 @@ import { DigievolutionTechniquesHelper } from "@/presenters/helper/digievolution
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import type { DigievolutionTechniqueViewModel } from "@/viewmodels/digievolution/digievolution-technique.viewmodel";
 
-export class DigievolutionTechniquesModalPresenter {
+export class TechniquesModalPresenter {
     public static getTechniquesByDigievolutionId(digievolutionId: number): DigievolutionTechniqueViewModel[] {
         const digievolutionTechniquesRaw = DigievolutionRepository.getRawDigievolutionTechniquesById(digievolutionId);
 
@@ -12,7 +12,7 @@ export class DigievolutionTechniquesModalPresenter {
         });
     }
 
-    public static getSignatureTechnique(digievolutionTechniques: DigievolutionTechniqueViewModel[]): string {
+    public static getSignatureTechniqueId(digievolutionTechniques: DigievolutionTechniqueViewModel[]): string {
         return DigievolutionTechniquesHelper.getSignatureTechniqueId(digievolutionTechniques);
     }
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { DigimonDigievolutionPresenter } from "@/presenters/digimon-digievolution.presenter";
+import { DigievolutionPresenter } from "@/presenters/digievolution.presenter";
 import type { DigievolutionResumedViewModel } from "@/viewmodels/digievolution/digievolution-resumed.viewmodel";
 
 const props = defineProps<{
@@ -22,7 +22,7 @@ const digievolutionName = computed(() => {
     return "";
   }
 
-  return DigimonDigievolutionPresenter.getDigievolutionNameById(props.digievolutionId!);
+  return DigievolutionPresenter.getNameById(props.digievolutionId!);
 });
 
 const isActiveDigievolution = computed(() => {
