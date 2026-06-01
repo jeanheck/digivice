@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { DigievolutionSlot } from "@/models";
-import DigimonDigievolution from "./DigimonDigievolution.vue";
-import DigievolutionTechniquesModal from "./digievolution-techniques-modal/DigievolutionTechniquesModal.vue";
+import Digievolution from "./Digievolution.vue";
+import TechniquesModal from "./techniques-modal/TechniquesModal.vue";
 import type { DigievolutionResumedViewModel } from "@/viewmodels/digievolution/digievolution-resumed.viewmodel";
 
 defineProps<{
@@ -25,7 +25,7 @@ function closeTechniques(): void {
 
 <template>
   <div class="flex flex-col gap-0.5 w-full">
-    <DigimonDigievolution
+    <Digievolution
       v-for="slot in slots"
       :key="slot.index"
       :digievolution-id="slot.digievolutionId"
@@ -34,7 +34,7 @@ function closeTechniques(): void {
       @open-techniques="openTechniques"
     />
 
-    <DigievolutionTechniquesModal
+    <TechniquesModal
       v-if="selectedDigievolution"
       :is-open="isTechniquesModalOpen"
       :digievolution-id="selectedDigievolution.id"
