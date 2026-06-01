@@ -7,15 +7,12 @@ import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 
 const store = useGameStore();
 
-const locationId = computed(() => {
-  return store.currentState?.player?.location ?? null;
-});
-
 const locationViewModel = computed(() => {
-  if (!locationId.value) {
+  const locationId = store.currentState?.player?.location ?? null;
+  if (locationId === null) {
     return null;
   }
-  return MapPresenter.getLocationById(locationId.value);
+  return MapPresenter.getLocationById(locationId);
 });
 </script>
 
@@ -27,7 +24,7 @@ const locationViewModel = computed(() => {
     </div>
 
     <div class="flex-1 flex flex-col mt-2 h-full">
-      <MapLocation :location-id="locationId" :location="locationViewModel" />
+      <MapLocation :location="locationViewModel" />
       <MapEnemies :location="locationViewModel" />
     </div>
   </aside>

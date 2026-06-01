@@ -5,14 +5,13 @@ import { useLocalization } from "@/composables/useLocalization";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
-  locationId: string | null;
   location: LocationViewModel | null;
 }>();
 
 const { t } = useLocalization();
 
 const locationName = computed(() => {
-  return props.locationId ? t(`location.${props.locationId}`) : t("map.unknownZone");
+  return props.location?.id ? t(`location.${props.location.id}`) : t("map.unknownZone");
 });
 
 const locationImage = computed(() => {
