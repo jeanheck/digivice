@@ -115,20 +115,16 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(evolutionSlot2.DigievolutionResource);
         Assert.Equal(1, evolutionSlot2.DigievolutionResource.Level); // Não cadastrado na RAM, padrão 1
 
-        // Validar Slots 1 e 2 (Vazios com ID 255)
+        // Validar Slots 1 e 2 (Vazios — normalizados para null)
         var slot1 = partyResource.SlotsResource[1];
         Assert.Equal(2, slot1.Index);
-        Assert.Equal(255, slot1.DigimonId);
-        Assert.NotNull(slot1.DigimonResource); // Não é nulo pois o construtor inicia com new()
-        Assert.Equal(0, slot1.DigimonResource.Level); // Mas fica com valores zerados padrão do new()
-        Assert.Empty(slot1.DigimonResource.Digievolutions);
+        Assert.Null(slot1.DigimonId);
+        Assert.Null(slot1.DigimonResource);
 
         var slot2 = partyResource.SlotsResource[2];
         Assert.Equal(3, slot2.Index);
-        Assert.Equal(255, slot2.DigimonId);
-        Assert.NotNull(slot2.DigimonResource);
-        Assert.Equal(0, slot2.DigimonResource.Level);
-        Assert.Empty(slot2.DigimonResource.Digievolutions);
+        Assert.Null(slot2.DigimonId);
+        Assert.Null(slot2.DigimonResource);
 
         // Validação da Garantia Física: digimonLoader nunca foi chamado para ID 255 (sem I/O binário desnecessário)
         memoryReaderMock.Verify(m => m.ReadBytes(It.Is<int>(addr => addr != 0x00048DA4 && addr != 0x00048DA8 && addr != 0x00048DAC && addr != 0x00049878), It.IsAny<int>()), Times.Never);
@@ -189,8 +185,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         // Slot 0 (Falha de I/O de bytes) -> Pulado
         var slot0 = partyResource.SlotsResource[0];
         Assert.Null(slot0.DigimonId);
-        Assert.NotNull(slot0.DigimonResource);
-        Assert.Equal(0, slot0.DigimonResource.Level); // Padrão
+        Assert.Null(slot0.DigimonResource);
 
         // Slot 1 (Monmon carregado)
         var slot1 = partyResource.SlotsResource[1];
@@ -200,8 +195,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
 
         // Slot 2 (Vazio) -> Pulado
         var slot2 = partyResource.SlotsResource[2];
-        Assert.Equal(255, slot2.DigimonId);
-        Assert.Equal(0, slot2.DigimonResource.Level); // Padrão
+        Assert.Null(slot2.DigimonId);
+        Assert.Null(slot2.DigimonResource);
     }
 
     [Fact]
@@ -253,9 +248,9 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(partyResource);
         Assert.Equal(3, partyResource.SlotsResource.Count);
         Assert.Null(partyResource.SlotsResource[0].DigimonId);
-        Assert.Equal(0, partyResource.SlotsResource[0].DigimonResource.Level);
-        Assert.Equal(255, partyResource.SlotsResource[1].DigimonId);
-        Assert.Equal(255, partyResource.SlotsResource[2].DigimonId);
+        Assert.Null(partyResource.SlotsResource[0].DigimonResource);
+        Assert.Null(partyResource.SlotsResource[1].DigimonId);
+        Assert.Null(partyResource.SlotsResource[2].DigimonId);
         memoryReaderMock.Verify(m => m.ReadBytes(It.Is<int>(addr => addr != 0x00048DA4 && addr != 0x00048DA8 && addr != 0x00048DAC), It.IsAny<int>()), Times.Never);
     }
 
@@ -315,9 +310,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(3, partyResource.SlotsResource.Count);
         Assert.All(partyResource.SlotsResource, slot =>
         {
-            Assert.Equal(255, slot.DigimonId);
-            Assert.NotNull(slot.DigimonResource);
-            Assert.Equal(0, slot.DigimonResource.Level);
+            Assert.Null(slot.DigimonId);
+            Assert.Null(slot.DigimonResource);
         });
 
         // Garantir que NENHUMA tentativa de leitura de bloco de status (1500 bytes) foi feita na RAM

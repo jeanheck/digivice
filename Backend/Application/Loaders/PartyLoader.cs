@@ -21,6 +21,11 @@ namespace Backend.Application.Loaders
                 {
                     slotResource.DigimonResource = digimonLoader.Load(slotResource.DigimonId.Value);
                 }
+                else
+                {
+                    slotResource.DigimonId = null;
+                    slotResource.DigimonResource = null;
+                }
             }
 
             return partyResource;

@@ -68,6 +68,17 @@ public class DigimonSlotDifferTests
     }
 
     [Fact]
+    public void Diff_ShouldReturnNull_WhenBothSlotsAreEmpty()
+    {
+        var previous = new DigimonSlot { Index = 2, DigimonId = null, Digimon = null };
+        var newObj = new DigimonSlot { Index = 2, DigimonId = null, Digimon = null };
+
+        var result = DigimonSlotDiffer.Diff(previous, newObj);
+
+        Assert.Null(result);
+    }
+
+    [Fact]
     public void Diff_ShouldReturnFullDTO_WhenDigimonIdChangedToAnotherActiveId()
     {
         var previous = new DigimonSlot { Index = 1, DigimonId = 3, Digimon = CreateBaseDigimon() };

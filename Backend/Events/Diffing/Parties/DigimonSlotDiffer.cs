@@ -34,7 +34,7 @@ public static class DigimonSlotDiffer
             return DigimonSlotConverter.ToDTO(newDigimonSlot);
         }
 
-        var digimonDelta = DigimonDiffer.Diff(previousDigimonSlot.Digimon!, newDigimonSlot.Digimon!);
+        var digimonDelta = DigimonDiffer.Diff(previousDigimonSlot.Digimon, newDigimonSlot.Digimon);
         if (digimonDelta == null)
         {
             return null;

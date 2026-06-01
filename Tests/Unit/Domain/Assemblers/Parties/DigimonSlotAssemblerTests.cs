@@ -33,4 +33,22 @@ public class DigimonSlotAssemblerTests
         Assert.NotNull(result.Digimon);
         Assert.Equal(5, result.Digimon.Level);
     }
+
+    [Fact]
+    public void Assemble_ShouldReturnNullDigimon_WhenDigimonResourceIsNull()
+    {
+        var resource = new DigimonSlotResource
+        {
+            Index = 2,
+            DigimonId = null,
+            DigimonResource = null
+        };
+
+        var result = DigimonSlotAssembler.Assemble(resource);
+
+        Assert.NotNull(result);
+        Assert.Equal(2, result.Index);
+        Assert.Null(result.DigimonId);
+        Assert.Null(result.Digimon);
+    }
 }

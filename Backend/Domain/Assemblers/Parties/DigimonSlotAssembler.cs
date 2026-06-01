@@ -11,8 +11,10 @@ namespace Backend.Domain.Assemblers.Parties
             {
                 Index = resource.Index,
                 DigimonId = resource.DigimonId,
-                Digimon = DigimonAssembler.Assemble(resource.DigimonResource)
-            }; ;
+                Digimon = resource.DigimonResource != null
+                    ? DigimonAssembler.Assemble(resource.DigimonResource)
+                    : null
+            };
         }
     }
 }

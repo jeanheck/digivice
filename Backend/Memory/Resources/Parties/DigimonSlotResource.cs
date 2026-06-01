@@ -4,6 +4,6 @@ namespace Backend.Memory.Resources.Parties
     {
         public int Index { get; set; }
         public int? DigimonId { get; set; }
-        public DigimonResource DigimonResource { get; set; } = new();
+        public DigimonResource? DigimonResource { get; set; }
     }
 }
