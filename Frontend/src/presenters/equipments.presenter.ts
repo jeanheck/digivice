@@ -5,7 +5,7 @@ import { DigimonRepository } from "@/repositories/digimon.repository";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
-export class DigimonEquipmentsPresenter {
+export class EquipmentsPresenter {
     public static getEquipmentBySlot(equipments: Equipments, slotKey: EquipmentSlotKey): EquipmentViewModel | null {
         const equipmentId = equipments[slotKey];
 

@@ -2,10 +2,10 @@
 import { computed, ref } from "vue";
 import { EQUIPMENT_SLOT_KEYS } from "@/constants/equipment-slot-key";
 import type { Equipments } from "@/models";
-import DigimonEquipment from "./DigimonEquipment.vue";
-import DigimonEquipmentsTooltip from "./DigimonEquipmentsTooltip.vue";
+import Equipment from "./Equipment.vue";
+import EquipmentsTooltip from "./EquipmentsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import { DigimonEquipmentsPresenter } from "@/presenters/digimon-equipments.presenter";
+import { EquipmentsPresenter } from "@/presenters/equipments.presenter.ts";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 const props = defineProps<{
@@ -16,7 +16,7 @@ const equipmentSlots = computed(() => {
   return EQUIPMENT_SLOT_KEYS.map((slotKey) => {
     return {
       slotKey,
-      equipment: DigimonEquipmentsPresenter.getEquipmentBySlot(props.equipments, slotKey),
+      equipment: EquipmentsPresenter.getEquipmentBySlot(props.equipments, slotKey),
     };
   });
 });
@@ -47,7 +47,7 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
 
     <div class="relative z-10 w-full flex flex-col pt-2 p-3 text-white text-xs shadow-inner bg-[#000a2b]/40">
-      <DigimonEquipment
+      <Equipment
         v-for="equipmentSlot in equipmentSlots"
         :key="equipmentSlot.slotKey"
         :slot-key="equipmentSlot.slotKey"
@@ -58,7 +58,7 @@ const moveTooltip = (event: MouseEvent) => {
       />
     </div>
 
-    <DigimonEquipmentsTooltip
+    <EquipmentsTooltip
       :show="tooltipShow"
       :x="tooltipX"
       :y="tooltipY"

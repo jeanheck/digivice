@@ -3,8 +3,8 @@ import { computed, ref } from "vue";
 import Profile from "@/components/party/digimon/profile/Profile.vue";
 import Digievolutions from "@/components/party/digimon/digievolutions/Digievolutions.vue";
 import DigievolutionsModal from "@/components/party/digimon/digievolutions-modal/DigievolutionsModal.vue";
-import Stats from "@/components/party/digimon/digimon-stats/Stats.vue";
-import DigimonEquipments from "@/components/party/digimon/digimon-equipments/DigimonEquipments.vue";
+import Stats from "@/components/party/digimon/stats/Stats.vue";
+import Equipments from "@/components/party/digimon/equipments/Equipments.vue";
 import type { DigimonSlot } from "@/models";
 
 const props = defineProps<{
@@ -38,7 +38,7 @@ function closeDigievolutionGrid(): void {
       :active-digievolution-id="digimon.activeDigievolutionId"
     />
     <Stats :digimon="digimon" />
-    <DigimonEquipments :equipments="digimon.equipments" />
+    <Equipments :equipments="digimon.equipments" />
 
     <div 
       class="flex items-center justify-center bg-[#000a2b] border-2 border-[#00154a] rounded shadow-inner py-1.5 mt-auto cursor-pointer hover:bg-[#001233] transition-colors"
