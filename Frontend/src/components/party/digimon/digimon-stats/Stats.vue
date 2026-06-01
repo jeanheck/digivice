@@ -5,9 +5,9 @@ import type { Digimon } from "@/models";
 import { Stat } from "@/models/stat";
 import DigimonStat from "./DigimonStat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
-import DigimonStatsTooltip from "./DigimonStatsTooltip.vue";
+import StatsTooltip from "./StatsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import { DigimonStatsPresenter } from "@/presenters/digimon-stats.presenter";
+import { StatsPresenter } from "@/presenters/stats.presenter.ts";
 
 const props = defineProps<{
   digimon: Digimon;
@@ -25,7 +25,7 @@ const defaultTooltipContent = ref({ title: "", text: "" });
 const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0 });
 
 const statsViewModel = computed(() => {
-  return DigimonStatsPresenter.getStatsViewModel(props.digimon);
+  return StatsPresenter.getStatsViewModel(props.digimon);
 });
 
 const showIconTooltip = (event: MouseEvent, title: string, text: string) => {
@@ -109,7 +109,7 @@ const moveTooltip = (event: MouseEvent) => {
       placement="below"
     />
 
-    <DigimonStatsTooltip
+    <StatsTooltip
       :show="activeVariant === 'math'"
       :x="tooltipX"
       :y="tooltipY"

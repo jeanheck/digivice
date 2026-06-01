@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { EnemyNumericStatItem } from "@/components/map/enemy-modal/EnemyAttributes.vue";
+import type { EnemyNumericStatItem } from "@/components/map/enemy-modal/EnemyModalAttributes.vue";
 
 defineProps<{
   items: EnemyNumericStatItem[];

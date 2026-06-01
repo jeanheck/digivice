@@ -15,10 +15,10 @@ import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipmen
 import type { DigimonStatsViewModel } from "@/viewmodels/digimon/digimon-stats.viewmodel";
 import type { DigievolutionViewModel } from "@/viewmodels/digievolution/digievolution.viewmodel";
 
-export class DigimonStatsPresenter {
+export class StatsPresenter {
     public static getStatsViewModel(digimon: Digimon): DigimonStatsViewModel {
         const activeDigievolution = digimon.activeDigievolutionId !== null && digimon.activeDigievolutionId !== 0
-            ? DigimonStatsPresenter.getDigievolutionById(digimon.activeDigievolutionId)
+            ? this.getDigievolutionById(digimon.activeDigievolutionId)
             : null;
         const equipmentIds = EquipmentsHelper.getUniqueEquipmentIds(digimon.equipments);
         const rawEquipments = EquipmentRepository.getEquipmentsByIds(equipmentIds);
@@ -27,12 +27,12 @@ export class DigimonStatsPresenter {
             attributes: AttributesConverter.convert(
                 digimon.attributes,
                 activeDigievolution?.attributes ?? null,
-                DigimonStatsPresenter.getAttributesEquipmentBonuses(rawEquipments)
+                this.getAttributesEquipmentBonuses(rawEquipments)
             ),
             resistances: ResistancesConverter.convert(
                 digimon.resistances,
                 activeDigievolution?.resistances ?? null,
-                DigimonStatsPresenter.getResistancesEquipmentBonuses(rawEquipments)
+                this.getResistancesEquipmentBonuses(rawEquipments)
             ),
         };
     }
