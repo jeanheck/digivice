@@ -3,7 +3,7 @@ import { computed, ref } from "vue";
 import { useLocalization } from "@/composables/useLocalization";
 import type { Digimon } from "@/models";
 import { StatKey } from "@/constants/stat/stat-key";
-import DigimonStat from "./DigimonStat.vue";
+import Stat from "./Stat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import StatsTooltip from "./StatsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -73,7 +73,7 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="relative z-10 details-panel flex justify-center w-full p-4 text-white text-sm">
       <div class="flex gap-20 -ml-16">
         <div class="flex flex-col gap-1 w-24">
-          <DigimonStat
+          <Stat
             v-for="(statViewModel, key) in statsViewModel.attributes"
             :key="key"
             :statViewModel="statViewModel"
@@ -86,7 +86,7 @@ const moveTooltip = (event: MouseEvent) => {
         </div>
 
         <div class="flex flex-col gap-1 w-24">
-          <DigimonStat
+          <Stat
             v-for="(statViewModel, key) in statsViewModel.resistances"
             :key="key"
             :statViewModel="statViewModel"
