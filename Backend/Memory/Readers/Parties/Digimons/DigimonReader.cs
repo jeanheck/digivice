@@ -29,8 +29,15 @@ namespace Backend.Memory.Readers.Parties.Digimons
                 .ToList();
             foreach (var digievolutionSlot in digievolutionsSlots)
             {
-                digievolutionSlot.DigievolutionResource = digievolutionReader
-                    .Read(memoryBlockReader, digievolutionSlot.DigievolutionId, digimonStatusAddresses.Digievolutions);
+                if (digievolutionSlot.DigievolutionId is not null)
+                {
+                    digievolutionSlot.DigievolutionResource = digievolutionReader
+                        .Read(memoryBlockReader, digievolutionSlot.DigievolutionId.Value, digimonStatusAddresses.Digievolutions);
+                }
+                else
+                {
+                    digievolutionSlot.DigievolutionResource = null;
+                }
             }
 
             var activeDigievolutionId = memoryReader.ReadInt16(digimonAddress.Address + digimonStatusAddresses.Digievolutions.ActiveDigievolution);

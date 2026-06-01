@@ -7,7 +7,7 @@ namespace Backend.Events.Diffing.Parties.Digimons;
 
 public static class DigievolutionDiffer
 {
-    public static DigievolutionDTO? Diff(Digievolution? previousDigievolution, Digievolution newDigievolution)
+    public static DigievolutionDTO? Diff(Digievolution? previousDigievolution, Digievolution? newDigievolution)
     {
         if (newDigievolution.HasNoChanges(previousDigievolution))
         {

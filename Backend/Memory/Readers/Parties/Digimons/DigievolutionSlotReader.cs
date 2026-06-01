@@ -7,10 +7,12 @@ namespace Backend.Memory.Readers.Parties.Digimons
     {
         public DigievolutionSlotResource Read(MemoryBlockReader memoryBlockReader, SlotAddresses slotAddresses)
         {
+            int digievolutionId = memoryBlockReader.ReadInt16((int)slotAddresses.Address);
+
             return new DigievolutionSlotResource
             {
                 Index = slotAddresses.Index,
-                DigievolutionId = memoryBlockReader.ReadInt16((int)slotAddresses.Address)
+                DigievolutionId = digievolutionId > 0 ? digievolutionId : null
             };
         }
     }

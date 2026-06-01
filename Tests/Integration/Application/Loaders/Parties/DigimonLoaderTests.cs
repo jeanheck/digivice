@@ -91,9 +91,11 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(106, digimonResource.Equipments.Accessory2);
         Assert.Equal(3, digimonResource.Digievolutions.Count);
         Assert.Equal(5, digimonResource.Digievolutions[0].DigievolutionId);
-        Assert.Equal(3, digimonResource.Digievolutions[0].DigievolutionResource.Level);
+        Assert.Equal(3, digimonResource.Digievolutions[0].DigievolutionResource!.Level);
         Assert.Equal(10, digimonResource.Digievolutions[1].DigievolutionId);
-        Assert.Equal(1, digimonResource.Digievolutions[1].DigievolutionResource.Level);
+        Assert.Equal(1, digimonResource.Digievolutions[1].DigievolutionResource!.Level);
+        Assert.Null(digimonResource.Digievolutions[2].DigievolutionId);
+        Assert.Null(digimonResource.Digievolutions[2].DigievolutionResource);
     }
 
     [Fact]

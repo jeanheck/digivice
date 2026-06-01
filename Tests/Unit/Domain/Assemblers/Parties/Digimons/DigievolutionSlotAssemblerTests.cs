@@ -23,4 +23,22 @@ public class DigievolutionSlotAssemblerTests
         Assert.NotNull(result.Digievolution);
         Assert.Equal(15, result.Digievolution.Level);
     }
+
+    [Fact]
+    public void Assemble_ShouldReturnNullFields_WhenResourceIsEmpty()
+    {
+        var resource = new DigievolutionSlotResource
+        {
+            Index = 3,
+            DigievolutionId = null,
+            DigievolutionResource = null
+        };
+
+        var result = DigievolutionSlotAssembler.Assemble(resource);
+
+        Assert.NotNull(result);
+        Assert.Equal(3, result.Index);
+        Assert.Null(result.DigievolutionId);
+        Assert.Null(result.Digievolution);
+    }
 }

@@ -30,14 +30,15 @@ public class DigievolutionSlotConverterTests
         var slot = new DigievolutionSlot
         {
             Index = 3,
-            DigievolutionId = 0,
+            DigievolutionId = null,
             Digievolution = null
         };
 
         var dto = DigievolutionSlotConverter.ToDTO(slot);
 
         Assert.Equal(3, dto.Index);
-        Assert.Equal(0, dto.DigievolutionId.Value);
+        Assert.True(dto.DigievolutionId.HasValue);
+        Assert.Null(dto.DigievolutionId.Value);
         Assert.True(dto.Digievolution.HasValue);
         Assert.Null(dto.Digievolution.Value);
     }

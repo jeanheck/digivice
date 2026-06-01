@@ -11,7 +11,9 @@ namespace Backend.Domain.Assemblers.Parties.Digimons
             {
                 Index = resource.Index,
                 DigievolutionId = resource.DigievolutionId,
-                Digievolution = DigievolutionAssembler.Assemble(resource.DigievolutionResource)
+                Digievolution = resource.DigievolutionResource != null
+                    ? DigievolutionAssembler.Assemble(resource.DigievolutionResource)
+                    : null
             };
         }
     }

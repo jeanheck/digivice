@@ -27,8 +27,8 @@ public static class DigievolutionSlotDiffer
         }
 
         var digievolutionDelta = DigievolutionDiffer.Diff(
-            previousDigievolutionSlot.Digievolution!,
-            newDigievolutionSlot.Digievolution!);
+            previousDigievolutionSlot.Digievolution,
+            newDigievolutionSlot.Digievolution);
 
         if (digievolutionDelta != null)
         {
