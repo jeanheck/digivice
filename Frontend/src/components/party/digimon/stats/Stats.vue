@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 import { useLocalization } from "@/composables/useLocalization";
 import type { Digimon } from "@/models";
-import { Stat } from "@/models/stat";
+import { StatKey } from "@/constants/stat/stat-key";
 import DigimonStat from "./DigimonStat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import StatsTooltip from "./StatsTooltip.vue";
@@ -38,7 +38,7 @@ const showIconTooltip = (event: MouseEvent, title: string, text: string) => {
   showAt(event, { placement: tooltipPlacement });
 };
 
-const showStatIconTooltip = (event: MouseEvent, title: string, propertyKey: Stat) => {
+const showStatIconTooltip = (event: MouseEvent, title: string, propertyKey: StatKey) => {
   showIconTooltip(event, title, t(`stat.${propertyKey}-explanation`));
 };
 

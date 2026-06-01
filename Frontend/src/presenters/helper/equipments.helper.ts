@@ -1,5 +1,5 @@
 import type { Equipments } from "@/models";
-import { Stat } from "@/models/stat";
+import { StatKey } from "@/constants/stat/stat-key";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
 import { MathUtils } from "@/utils/MathUtils";
 
@@ -21,7 +21,7 @@ export class EquipmentsHelper {
     return [...new Set(equipmentIds)];
   }
 
-  public static calculateBonusFromEquipaments(stat: Stat, rawEquipments: EquipmentRaw[]): number {
+  public static calculateBonusFromEquipaments(stat: StatKey, rawEquipments: EquipmentRaw[]): number {
     const lowerCaseType = stat.toLowerCase();
     const attributesRaw = rawEquipments
       .flatMap((rawEquipment) => rawEquipment.attributes)

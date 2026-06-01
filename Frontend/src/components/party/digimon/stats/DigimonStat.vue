@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { STAT_ICONS } from "@/constants/stat-icons";
+import { StatIcon } from "@/constants/stat/stat-icon";
 import { useLocalization } from "@/composables/useLocalization";
-import { Stat } from "@/models/stat";
+import { StatKey } from "@/constants/stat/stat-key";
 import type { StatViewModel } from "@/viewmodels/digimon/stat.viewmodel";
 
 const props = defineProps<{
@@ -11,7 +11,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "showIconTooltip", event: MouseEvent, title: string, propertyKey: Stat): void;
+  (e: "showIconTooltip", event: MouseEvent, title: string, propertyKey: StatKey): void;
   (e: "showMathTooltip", event: MouseEvent, title: string, base: number, equip: number, digi: number, total: number): void;
   (e: "moveTooltip", event: MouseEvent): void;
   (e: "hideTooltip"): void;
@@ -23,10 +23,10 @@ const label = computed(() => {
   return t(`stat.${props.propertyKey}`);
 });
 
-const stat = computed(() => props.propertyKey as Stat);
+const stat = computed(() => props.propertyKey as StatKey);
 
 const icon = computed(() => {
-  return STAT_ICONS[stat.value];
+  return StatIcon[stat.value];
 });
 
 </script>
