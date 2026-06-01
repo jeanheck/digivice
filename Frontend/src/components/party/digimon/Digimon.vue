@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import Profile from "@/components/party/digimon/digimon-profile/Profile.vue";
+import Profile from "@/components/party/digimon/profile/Profile.vue";
 import DigimonDigievolutions from "@/components/party/digimon/digimon-digievolutions/DigimonDigievolutions.vue";
 import DigievolutionsModal from "@/components/party/digimon/digievolutions-modal/DigievolutionsModal.vue";
 import DigimonStats from "@/components/party/digimon/digimon-stats/DigimonStats.vue";
