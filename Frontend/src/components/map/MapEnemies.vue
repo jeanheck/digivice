@@ -12,6 +12,8 @@ const resumedEnemies = computed(() => {
   return MapEnemiesPresenter.getResumedEnemiesByIds(props.location?.enemies ?? []);
 });
 
+const hasEnemies = computed(() => resumedEnemies.value.length > 0);
+
 const isEnemyModalOpen = ref(false);
 const selectedEnemy = ref<string | null>(null);
 
@@ -35,9 +37,9 @@ watch(
 
 <template>
   <div class="flex-1 w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
-    <h4 v-if="resumedEnemies.length > 0" class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">{{ $t("map.enemies") }}</h4>
+    <h4 v-if="hasEnemies" class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#00aaff] mb-1">{{ $t("map.enemies") }}</h4>
 
-    <div v-if="resumedEnemies.length === 0" class="text-xs text-[#00aaff] opacity-50 italic">
+    <div v-if="!hasEnemies" class="text-xs text-[#00aaff] opacity-50 italic">
       {{ $t("map.safeZone") }}
     </div>
     <div v-else class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">

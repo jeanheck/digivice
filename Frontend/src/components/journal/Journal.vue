@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import JournalAccordionSection from "@/components/journal/JournalAccordionSection.vue";
+import JournalQuestsSection from "@/components/journal/JournalQuestsSection.vue";
 import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
 import { useGameStore } from "@/stores/use-game-store";
@@ -56,7 +56,7 @@ const closeQuestModal = () => {
         />
       </section>
 
-      <JournalAccordionSection
+      <JournalQuestsSection
         :title="$t('journal.sideQuests')"
         title-class="text-blue-400"
         border-class="border-blue-900"
@@ -70,7 +70,7 @@ const closeQuestModal = () => {
           display-mode="side"
           @click="openQuestModal"
         />
-      </JournalAccordionSection>
+      </JournalQuestsSection>
     </div>
   </aside>
 

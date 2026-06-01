@@ -4,7 +4,6 @@ import Modal from "@/components/modal/Modal.vue";
 import StepPanel from "./StepPanel.vue";
 import Steps from "./Steps.vue";
 import Requisites from "./Requisites.vue";
-import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 import { QuestModalPresenter } from "@/presenters/quest-modal.presenter";
