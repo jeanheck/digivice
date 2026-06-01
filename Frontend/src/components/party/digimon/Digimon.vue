@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import DigimonProfile from "@/components/digimon/DigimonProfile.vue";
-import DigimonDigievolutions from "@/components/digimon/digimon-digievolutions/DigimonDigievolutions.vue";
-import DigievolutionsModal from "@/components/digimon/digievolutions-modal/DigievolutionsModal.vue";
-import DigimonStats from "@/components/digimon/digimon-stats/DigimonStats.vue";
-import DigimonEquipments from "@/components/digimon/digimon-equipments/DigimonEquipments.vue";
+import DigimonProfile from "@/components/party/digimon/DigimonProfile.vue";
+import DigimonDigievolutions from "@/components/party/digimon/digimon-digievolutions/DigimonDigievolutions.vue";
+import DigievolutionsModal from "@/components/party/digimon/digievolutions-modal/DigievolutionsModal.vue";
+import DigimonStats from "@/components/party/digimon/digimon-stats/DigimonStats.vue";
+import DigimonEquipments from "@/components/party/digimon/digimon-equipments/DigimonEquipments.vue";
 import type { DigimonSlot } from "@/models";
 
 const props = defineProps<{

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import ProgressBar from "@/components/digimon/ProgressBar.vue";
+import ProgressBar from "@/components/party/digimon/ProgressBar.vue";
 import type { Vitals } from "@/models";
 import { ProgressBarVariant } from "@/constants/progress-bar-variant";
 import { MathUtils } from "@/utils/MathUtils";
