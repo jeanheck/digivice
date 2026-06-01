@@ -3,23 +3,18 @@ import { ref } from "vue";
 import type { DigievolutionSlot } from "@/models";
 import DigimonDigievolution from "./DigimonDigievolution.vue";
 import DigievolutionTechniquesModal from "./digievolution-techniques-modal/DigievolutionTechniquesModal.vue";
+import type { DigievolutionResumedViewModel } from "@/viewmodels/digievolution/digievolution-resumed.viewmodel";
 
 defineProps<{
   slots: DigievolutionSlot[];
   activeDigievolutionId: number | null;
 }>();
 
-interface SelectedDigievolution {
-  id: number;
-  name: string;
-  level: number;
-}
-
 const isTechniquesModalOpen = ref(false);
-const selectedDigievolution = ref<SelectedDigievolution | null>(null);
+const selectedDigievolution = ref<DigievolutionResumedViewModel | null>(null);
 
-function openTechniques(payload: SelectedDigievolution): void {
-  selectedDigievolution.value = payload;
+function openTechniques(digievolutionResumedViewModel: DigievolutionResumedViewModel): void {
+  selectedDigievolution.value = digievolutionResumedViewModel;
   isTechniquesModalOpen.value = true;
 }
 
@@ -30,17 +25,14 @@ function closeTechniques(): void {
 
 <template>
   <div class="flex flex-col gap-0.5 w-full">
-    <template v-for="slot in slots" :key="slot.index">
-      <DigimonDigievolution
-        v-if="slot.digievolutionId && slot.digievolution"
-        variant="filled"
-        :digievolution-id="slot.digievolutionId"
-        :digievolution-level="slot.digievolution.level"
-        :active-digievolution-id="activeDigievolutionId"
-        @open-techniques="openTechniques"
-      />
-      <DigimonDigievolution v-else variant="empty" />
-    </template>
+    <DigimonDigievolution
+      v-for="slot in slots"
+      :key="slot.index"
+      :digievolution-id="slot.digievolutionId"
+      :digievolution-level="slot.digievolution?.level ?? null"
+      :active-digievolution-id="activeDigievolutionId"
+      @open-techniques="openTechniques"
+    />
 
     <DigievolutionTechniquesModal
       v-if="selectedDigievolution"
