@@ -9,7 +9,7 @@ namespace Backend.Events.Diffing.Parties;
 
 public static class DigimonDiffer
 {
-    public static DigimonDTO? Diff(Digimon? previousDigimon, Digimon newDigimon)
+    public static DigimonDTO? Diff(Digimon? previousDigimon, Digimon? newDigimon)
     {
         if (newDigimon.HasNoChanges(previousDigimon))
         {
