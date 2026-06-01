@@ -58,8 +58,7 @@ function handleRowClick(): void {
     </template>
 
     <template v-else>
-      <div
-        class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
+      <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
         :class="isActiveDigievolution ? 'bg-linear-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'"
       >
         {{ digievolutionName }}
