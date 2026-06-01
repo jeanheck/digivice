@@ -8,12 +8,8 @@ import EnemyElements from "@/components/map/enemy-modal/EnemyModalElements.vue";
 import EnemyResistances from "@/components/map/enemy-modal/EnemyModalResistances.vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import { StatIcon } from "@/constants/stat/stat-icon";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { EnemyModalPresenter } from "@/presenters/map/enemy-modal.presenter.ts";
-import { StatKey } from "@/constants/stat/stat-key";
-import type { Element } from "@/constants/stat/element";
-import type { EnemyAttribute } from "@/constants/stat/attribute/enemy-attribute";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -38,22 +34,6 @@ const enemy = computed(() => {
   return EnemyModalPresenter.getEnemyById(props.enemyId!);
 });
 
-const attributesList = computed(() => {
-  const attributes = Object.keys(enemy.value.attributes);
-  return attributes.map((key) => {
-    const attributeKey = key as EnemyAttribute;
-    return { label: t(`stat.${key}`), val: enemy.value.attributes[attributeKey], icon: StatIcon[attributeKey] };
-  })
-});
-
-const elemTolsList = computed(() => {
-  const elements = Object.keys(enemy.value.elements);
-  return elements.map((key) => {
-    const elementKey = key as Element;
-    return { label: t(`stat.${key}`), val: enemy.value.elements[elementKey], icon: StatIcon[elementKey] };
-  })
-});
-
 const statusTolsList = computed(() => {
   if (!props.enemyId) {
     return [];
@@ -74,6 +54,11 @@ const tooltipPlacement = "below" as const;
 const tooltipPosition = useTooltipPosition(150);
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 const tooltipTitle = ref("");
+
+const showEnemyStatKeyTooltip = (event: MouseEvent, statKey: string) => {
+  tooltipTitle.value = t(`stat.${statKey}`);
+  showAt(event, { maxWidth: 150, placement: tooltipPlacement });
+};
 
 const showEnemyStatTooltip = (event: MouseEvent, label: string) => {
   tooltipTitle.value = label;
@@ -120,14 +105,14 @@ const enemyImageUrl = computed(() => {
       <div class="flex-1">
         <div class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start">
           <EnemyAttributes
-            :items="attributesList"
-            @show-stat-tooltip="showEnemyStatTooltip"
+            :attributes="enemy.attributes"
+            @show-stat-key-tooltip="showEnemyStatKeyTooltip"
             @move-stat-tooltip="moveEnemyStatTooltip"
             @hide-stat-tooltip="hideEnemyStatTooltip"
           />
           <EnemyElements
-            :items="elemTolsList"
-            @show-stat-tooltip="showEnemyStatTooltip"
+            :elements="enemy.elements"
+            @show-stat-key-tooltip="showEnemyStatKeyTooltip"
             @move-stat-tooltip="moveEnemyStatTooltip"
             @hide-stat-tooltip="hideEnemyStatTooltip"
           />
