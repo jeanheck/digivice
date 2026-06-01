@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { ProgressBarVariant } from "@/constants/progress-bar-variant";
 
 const props = defineProps<{
-  variant: ProgressBarVariant;
+  variant: string;
   currentValue: number;
   maxValue: number;
   percentage: number;
@@ -22,7 +22,7 @@ const barColorClass = computed(() => {
 });
 
 const transitionDurationClass = computed(() => {
-  if (props.variant === ProgressBarVariant.EXPERIENCE) {
+  if (props.variant === ProgressBarVariant.Experience) {
     return "duration-500";
   }
 

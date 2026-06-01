@@ -1,5 +1,5 @@
-export enum ProgressBarVariant {
-    HP = "hp",
-    MP = "mp",
-    EXPERIENCE = "experience",
-}
+export const ProgressBarVariant = {
+    HP: "HP",
+    MP: "MP",
+    Experience: "Experience",
+} as const;

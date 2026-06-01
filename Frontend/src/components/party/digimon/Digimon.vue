@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import DigimonProfile from "@/components/party/digimon/DigimonProfile.vue";
+import Profile from "@/components/party/digimon/digimon-profile/Profile.vue";
 import DigimonDigievolutions from "@/components/party/digimon/digimon-digievolutions/DigimonDigievolutions.vue";
 import DigievolutionsModal from "@/components/party/digimon/digievolutions-modal/DigievolutionsModal.vue";
 import DigimonStats from "@/components/party/digimon/digimon-stats/DigimonStats.vue";
@@ -32,7 +32,7 @@ function closeDigievolutionGrid(): void {
 
 <template>
   <div class="flex flex-col h-full w-full bg-[#000e3f] p-4 rounded-md shadow-lg border-2 border-[#0033aa] gap-4">
-    <DigimonProfile :digimon="digimon" :digimon-id="digimonId" />
+    <Profile :digimon="digimon" :digimon-id="digimonId" />
     <DigimonDigievolutions
       :slots="digimon.digievolutions"
       :active-digievolution-id="digimon.activeDigievolutionId"

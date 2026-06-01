@@ -1,10 +1,10 @@
 import { DigimonRepository } from "@/repositories/digimon.repository";
 import { MathUtils } from "@/utils/MathUtils";
 
-export class DigimonProfilePresenter {
+export class ProfilePresenter {
     private static readonly MAX_LEVEL = 99;
 
-    public static getDigimonNameById(id: number): string {
+    public static getNameById(id: number): string {
         return DigimonRepository.getNameById(id);
     }
 
@@ -16,7 +16,7 @@ export class DigimonProfilePresenter {
         return DigimonRepository.getRequiredExperienceForLevel(id, level + 1);
     }
 
-    public static getProgressPercentageForNextLevel(id: number, level: number, experience: number): number {
+    public static calculateProgressPercentageForNextLevel(id: number, level: number, experience: number): number {
         if (level === this.MAX_LEVEL) {
             return 100;
         }

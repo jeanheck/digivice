@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import ProgressBar from "@/components/party/digimon/ProgressBar.vue";
-import DigimonIcon from "@/components/party/digimon/DigimonIcon.vue";
-import DigimonVitals from "@/components/party/digimon/DigimonVitals.vue";
+import ProgressBar from "@/components/party/digimon/digimon-profile/ProgressBar.vue";
+import Icon from "@/components/party/digimon/digimon-profile/Icon.vue";
+import Vitals from "@/components/party/digimon/digimon-profile/Vitals.vue";
 import type { Digimon } from "@/models";
 import { ProgressBarVariant } from "@/constants/progress-bar-variant";
-import { DigimonProfilePresenter } from "@/presenters/digimon-profile.presenter";
+import { ProfilePresenter } from "@/presenters/digimon-profile.presenter";
 
 const props = defineProps<{
   digimon: Digimon;
@@ -13,15 +13,15 @@ const props = defineProps<{
 }>();
 
 const digimonName = computed(() => {
-  return DigimonProfilePresenter.getDigimonNameById(props.digimonId);
+  return ProfilePresenter.getNameById(props.digimonId);
 });
 
 const experienceToReachNextLevel = computed(() => {
-  return DigimonProfilePresenter.getRequiredExperienceForNextLevel(props.digimonId, props.digimon.level);
+  return ProfilePresenter.getRequiredExperienceForNextLevel(props.digimonId, props.digimon.level);
 });
 
 const experiencePercentageToReachNextLevel = computed(() => {
-  return DigimonProfilePresenter.getProgressPercentageForNextLevel(props.digimonId, props.digimon.level, props.digimon.experience);
+  return ProfilePresenter.calculateProgressPercentageForNextLevel(props.digimonId, props.digimon.level, props.digimon.experience);
 });
 </script>
 
@@ -32,7 +32,7 @@ const experiencePercentageToReachNextLevel = computed(() => {
 
     <div class="relative z-10 flex flex-col gap-2 p-3">
       <div class="flex items-start gap-4">
-        <DigimonIcon :digimon-name="digimonName" class="w-16 h-16" />
+        <Icon :digimon-name="digimonName" class="w-16 h-16" />
 
         <div class="flex-1 flex flex-col gap-1 min-w-0">
           <div class="flex justify-between items-baseline mb-1 border-b border-[#00154a] pb-1">
@@ -46,7 +46,7 @@ const experiencePercentageToReachNextLevel = computed(() => {
           </div>
 
           <ProgressBar
-            :variant="ProgressBarVariant.EXPERIENCE"
+            :variant="ProgressBarVariant.Experience"
             :current-value="digimon.experience"
             :max-value="experienceToReachNextLevel"
             :percentage="experiencePercentageToReachNextLevel"
@@ -54,7 +54,7 @@ const experiencePercentageToReachNextLevel = computed(() => {
         </div>
       </div>
 
-      <DigimonVitals :vitals="digimon.vitals" />
+      <Vitals :vitals="digimon.vitals" />
     </div>
   </div>
 </template>
