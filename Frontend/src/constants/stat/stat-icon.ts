@@ -1,7 +1,8 @@
 import { StatKey } from "@/constants/stat/stat-key";
+import { Attribute } from "./attribute/attribute";
 
 export const StatIcon: Record<StatKey, string> = {
-    [StatKey.strength]: "👊",
+    [Attribute.strength]: "👊",
     [StatKey.defense]: "🛡️",
     [StatKey.spirit]: "🧙‍♂️",
     [StatKey.wisdom]: "📖",
