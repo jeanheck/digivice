@@ -37,30 +37,24 @@ const enemy = computed(() => {
 });
 
 const attributesList = computed(() => {
-  if (!props.enemyId) {
-    return [];
-  }
   return [
-    { label: t("stat.strength"), val: enemy.value.strength, icon: StatIcon[StatKey.strength] },
-    { label: t("stat.defense"), val: enemy.value.defense, icon: StatIcon[StatKey.defense] },
-    { label: t("stat.spirit"), val: enemy.value.spirit, icon: StatIcon[StatKey.spirit] },
-    { label: t("stat.wisdom"), val: enemy.value.wisdom, icon: StatIcon[StatKey.wisdom] },
-    { label: t("stat.speed"), val: enemy.value.speed, icon: StatIcon[StatKey.speed] },
+    { label: t("stat.strength"), val: enemy.value.attributes.strength, icon: StatIcon[StatKey.strength] },
+    { label: t("stat.defense"), val: enemy.value.attributes.defense, icon: StatIcon[StatKey.defense] },
+    { label: t("stat.spirit"), val: enemy.value.attributes.spirit, icon: StatIcon[StatKey.spirit] },
+    { label: t("stat.wisdom"), val: enemy.value.attributes.wisdom, icon: StatIcon[StatKey.wisdom] },
+    { label: t("stat.speed"), val: enemy.value.attributes.speed, icon: StatIcon[StatKey.speed] },
   ];
 });
 
 const elemTolsList = computed(() => {
-  if (!props.enemyId) {
-    return [];
-  }
   return [
-    { label: t("stat.fire"), val: enemy.value.fire, icon: StatIcon[StatKey.fire] },
-    { label: t("stat.water"), val: enemy.value.water, icon: StatIcon[StatKey.water] },
-    { label: t("stat.ice"), val: enemy.value.ice, icon: StatIcon[StatKey.ice] },
-    { label: t("stat.wind"), val: enemy.value.wind, icon: StatIcon[StatKey.wind] },
-    { label: t("stat.thunder"), val: enemy.value.thunder, icon: StatIcon[StatKey.thunder] },
-    { label: t("stat.machine"), val: enemy.value.machine, icon: StatIcon[StatKey.machine] },
-    { label: t("stat.dark"), val: enemy.value.dark, icon: StatIcon[StatKey.dark] },
+    { label: t("stat.fire"), val: enemy.value.elements.fire, icon: StatIcon[StatKey.fire] },
+    { label: t("stat.water"), val: enemy.value.elements.water, icon: StatIcon[StatKey.water] },
+    { label: t("stat.ice"), val: enemy.value.elements.ice, icon: StatIcon[StatKey.ice] },
+    { label: t("stat.wind"), val: enemy.value.elements.wind, icon: StatIcon[StatKey.wind] },
+    { label: t("stat.thunder"), val: enemy.value.elements.thunder, icon: StatIcon[StatKey.thunder] },
+    { label: t("stat.machine"), val: enemy.value.elements.machine, icon: StatIcon[StatKey.machine] },
+    { label: t("stat.dark"), val: enemy.value.elements.dark, icon: StatIcon[StatKey.dark] },
   ];
 });
 

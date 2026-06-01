@@ -7,7 +7,7 @@ import type { StatViewModel } from "@/viewmodels/digimon/stat.viewmodel";
 
 const props = defineProps<{
   statViewModel: StatViewModel;
-  propertyKey: string;
+  stat: string;
 }>();
 
 const emit = defineEmits<{
@@ -20,13 +20,13 @@ const emit = defineEmits<{
 const { t } = useLocalization();
 
 const label = computed(() => {
-  return t(`stat.${props.propertyKey}`);
+  return t(`stat.${props.stat}`);
 });
 
-const stat = computed(() => props.propertyKey as StatKey);
+const statKey = computed(() => props.stat as StatKey);
 
 const icon = computed(() => {
-  return StatIcon[stat.value];
+  return StatIcon[statKey.value];
 });
 
 </script>
@@ -35,7 +35,7 @@ const icon = computed(() => {
   <div class="flex items-center gap-2">
     <div
       class="flex items-center w-5 justify-center cursor-help select-none z-20 tooltip-anchor relative"
-      @mouseenter="(event) => emit('showIconTooltip', event, label, stat)"
+      @mouseenter="(event) => emit('showIconTooltip', event, label, statKey)"
       @mousemove="(event) => emit('moveTooltip', event)"
       @mouseleave="emit('hideTooltip')"
     >

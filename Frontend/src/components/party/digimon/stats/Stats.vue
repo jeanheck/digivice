@@ -76,8 +76,8 @@ const moveTooltip = (event: MouseEvent) => {
           <Stat
             v-for="(statViewModel, key) in statsViewModel.attributes"
             :key="key"
-            :statViewModel="statViewModel"
-            :property-key="key"
+            :stat-view-model="statViewModel"
+            :stat="key"
             @show-icon-tooltip="showStatIconTooltip"
             @show-math-tooltip="showMathTooltip"
             @move-tooltip="moveTooltip"
@@ -89,8 +89,8 @@ const moveTooltip = (event: MouseEvent) => {
           <Stat
             v-for="(statViewModel, key) in statsViewModel.resistances"
             :key="key"
-            :statViewModel="statViewModel"
-            :property-key="key"
+            :stat-view-model="statViewModel"
+            :stat="key"
             @show-icon-tooltip="showStatIconTooltip"
             @show-math-tooltip="showMathTooltip"
             @move-tooltip="moveTooltip"

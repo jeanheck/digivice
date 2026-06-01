@@ -5,18 +5,22 @@ export interface EnemyViewModel {
     mp: number;
     species: string;
     rate: number;
-    strength: number;
-    defense: number;
-    spirit: number;
-    wisdom: number;
-    speed: number;
-    fire: number;
-    water: number;
-    ice: number;
-    wind: number;
-    thunder: number;
-    machine: number;
-    dark: number;
+    attributes: {
+        strength: number;
+        defense: number;
+        spirit: number;
+        wisdom: number;
+        speed: number;
+    },
+    elements: {
+        fire: number;
+        water: number;
+        ice: number;
+        wind: number;
+        thunder: number;
+        machine: number;
+        dark: number;
+    },
     canPoison: boolean;
     poison: number;
     canParalyze: boolean;
