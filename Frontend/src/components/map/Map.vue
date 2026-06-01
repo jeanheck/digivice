@@ -2,17 +2,20 @@
 import MapLocation from "./MapLocation.vue";
 import MapEnemies from "./MapEnemies.vue";
 import { computed } from "vue";
+import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 
-const props = defineProps<{
-  locationId: string | null;
-}>();
+const store = useGameStore();
+
+const locationId = computed(() => {
+  return store.currentState?.player?.location ?? null;
+});
 
 const locationViewModel = computed(() => {
-  if (!props.locationId) {
+  if (!locationId.value) {
     return null;
   }
-  return MapPresenter.getLocationById(props.locationId);
+  return MapPresenter.getLocationById(locationId.value);
 });
 </script>
 

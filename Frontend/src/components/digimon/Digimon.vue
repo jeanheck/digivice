@@ -5,13 +5,16 @@ import DigimonDigievolutions from "@/components/digimon/digimon-digievolutions/D
 import DigievolutionsModal from "@/components/digimon/digievolutions-modal/DigievolutionsModal.vue";
 import DigimonStats from "@/components/digimon/digimon-stats/DigimonStats.vue";
 import DigimonEquipments from "@/components/digimon/digimon-equipments/DigimonEquipments.vue";
+import type { DigimonSlot } from "@/models";
 
 const props = defineProps<{
-  slot: import("@/models/digimon-slot").DigimonSlot;
+  slot: DigimonSlot;
 }>();
+
 const digimon = computed(() => {
   return props.slot.digimon!;
 });
+
 const digimonId = computed(() => {
   return props.slot.digimonId!;
 });

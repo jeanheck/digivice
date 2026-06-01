@@ -1,7 +1,6 @@
 {
   "connection": {
     "connected": "Conectado",
-    "disconnected": "Desconectado",
-    "connecting": "Conectando..."
+    "disconnected": "Desconectado"
   }
 }

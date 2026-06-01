@@ -45,6 +45,7 @@ graph TD
 ### 2.1. O Grupo (Party)
 *   **Capacidade Máxima:** No jogo, o jogador pode ter até 3 Digimons ativos em seu grupo.
 *   **Estrutura de Slots:** O objeto `Party` possui uma lista que **sempre contém exatamente 3 slots** (`DigimonSlot`), independentemente de quantos estejam ocupados.
+*   **Mínimo de Slots Ocupados:** A lista de `DigimonSlot` **sempre contém pelo menos 1 slot preenchido**. Não é possível existir uma lista com todos os slots vazios.
 *   **Validação de Estado do Slot:**
     *   **Slot Ocupado:** Ambas as propriedades `digimonId` (ID numérico) e `digimon` (Entidade `Digimon`) **devem ter valor não-nulo** simultaneamente.
     *   **Slot Vazio:** Ambas as propriedades `digimonId` e `digimon` **devem ser nulas** simultaneamente.

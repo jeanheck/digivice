@@ -11,11 +11,17 @@ import { FooterPresenter } from "@/presenters/footer.presenter";
 const store = useGameStore();
 const { t } = useLocalization();
 
-defineProps<{
-  playerName: string;
-  bits: number;
-  isConnected: boolean;
-}>();
+const playerName = computed(() => {
+  return store.currentState?.player?.name ?? null;
+});
+
+const playerBits = computed(() => {
+  return store.currentState?.player?.bits ?? 0;
+});
+
+const connectionStatus = computed(() => {
+  return store.isConnected ? t('connection.connected') : t('connection.disconnected');
+});
 
 const tooltipPosition = useTooltipPosition(300);
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
@@ -38,14 +44,14 @@ const hideGroupCharismaTooltip = () => {
 
 const openLogsFolder = async () => {
   try {
-    await invoke('open_logs_folder');
+    await invoke("open_logs_folder");
   } catch (err) {
-    console.error('Failed to open logs folder:', err);
+    console.error("Failed to open logs folder:", err);
   }
 };
 
 const groupCharisma = computed(() => {
-    return FooterPresenter.getPartyCharisma(store.currentState?.party?.slots ?? []);
+  return FooterPresenter.getPartyCharisma(store.currentState?.party?.slots ?? []);
 });
 </script>
 
@@ -58,7 +64,7 @@ const groupCharisma = computed(() => {
     
     <div class="font-bold text-lg flex items-baseline">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('player.bits') }}:</span>
-      <span class="text-white">{{ bits }}</span>
+      <span class="text-white">{{ playerBits }}</span>
     </div>
     
     <div class="font-bold text-lg flex items-baseline cursor-help"
@@ -78,8 +84,8 @@ const groupCharisma = computed(() => {
       </div>
       
       <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full" :class="isConnected ? 'bg-green-500' : 'bg-red-500'"></span>
-        {{ isConnected ? $t('connection.connected') : $t('connection.disconnected') }}
+        <span class="w-3 h-3 rounded-full" :class="connectionStatus ? 'bg-green-500' : 'bg-red-500'"></span>
+        {{ connectionStatus }}
       </div>
     </div>
   </footer>

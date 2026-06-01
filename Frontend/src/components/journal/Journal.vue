@@ -3,16 +3,18 @@ import { computed, ref } from "vue";
 import JournalAccordionSection from "@/components/journal/JournalAccordionSection.vue";
 import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
-import type { Journal } from "@/models";
+import { useGameStore } from "@/stores/use-game-store";
 import { JournalPresenter } from "@/presenters/journal.presenter";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 
-const props = defineProps<{
-  journal: Journal;
-}>();
+const store = useGameStore();
 
 const journalViewModel = computed(() => {
-  return JournalPresenter.getJournalViewModel(props.journal);
+  const journal = store.currentState?.journal;
+  if (journal === null || journal === undefined) {
+    return null;
+  }
+  return JournalPresenter.getJournalViewModel(journal);
 });
 
 const activeQuest = ref<QuestViewModel | null>(null);
@@ -32,7 +34,10 @@ const closeQuestModal = () => {
 </script>
 
 <template>
-  <aside class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-3 flex flex-col pt-0 overflow-hidden mb-1">
+  <aside
+    v-if="journalViewModel"
+    class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-3 flex flex-col pt-0 overflow-hidden mb-1"
+  >
     <div class="w-full flex items-center justify-center border-b border-[#0033aa]/50 bg-[#000e3f] sticky top-0 py-2 z-10">
       <h3 class="font-bold tracking-widest text-[#0077ff] shadow-text uppercase text-sm">{{ $t("journal.title") }}</h3>
     </div>
