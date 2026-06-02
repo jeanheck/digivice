@@ -296,3 +296,10 @@ body {
 .animate-modal-slide-up {
   animation: modal-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, #0055ff 1px, transparent 1px),
+    linear-gradient(to bottom, #0055ff 1px, transparent 1px);
+  background-size: 15px 15px;
+}

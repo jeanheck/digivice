@@ -42,12 +42,3 @@ const locationImage = computed(() => {
     <div class="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-[#00aaff]/60"></div>
   </div>
 </template>
-
-<style scoped>
-.bg-grid-pattern {
-  background-image:
-    linear-gradient(to right, #0055ff 1px, transparent 1px),
-    linear-gradient(to bottom, #0055ff 1px, transparent 1px);
-  background-size: 15px 15px;
-}
-</style>
