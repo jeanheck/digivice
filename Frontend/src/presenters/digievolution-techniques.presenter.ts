@@ -5,27 +5,42 @@ import { DigievolutionRepository } from "@/repositories/digievolution.repository
 import { DigimonRepository } from "@/repositories/digimon.repository";
 import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
 import type { DigimonDigievolutionViewModel } from "@/viewmodels/digimon/digimon-digievolution.viewmodel";
-import type { DigievolutionsModalDigievolutionDetailsViewModel } from "@/viewmodels/digievolution/digievolutions-modal-digievolution-details.viewmodel";
 import type { DigievolutionsModalDigievolutionLinkViewModel } from "@/viewmodels/digievolution/digievolutions-modal-digievolution-link.viewmodel";
+import type { DigievolutionTechniquesViewModel } from "@/viewmodels/digievolution/digievolution-techniques.viewmodel";
 import type { TechniqueViewModel } from "@/viewmodels/digievolution/technique.viewmodel";
 
-export class DigievolutionsModalDigievolutionDetailsPresenter {
-    public static getDetailPanelViewModel(
-        digimonId: number,
-        digievolutionId: number | undefined
-    ): DigievolutionsModalDigievolutionDetailsViewModel | null {
-        if (digievolutionId === undefined) {
-            return null;
+export interface DigievolutionTechniquesOptions {
+    digimonId?: number;
+    digievolutionLevel?: number;
+    showTreeSections?: boolean;
+}
+
+export class DigievolutionTechniquesPresenter {
+    public static getViewModel(
+        digievolutionId: number,
+        options: DigievolutionTechniquesOptions = {}
+    ): DigievolutionTechniquesViewModel {
+        const { digimonId, digievolutionLevel, showTreeSections = false } = options;
+        const evolutionName = DigievolutionRepository.getNameById(digievolutionId);
+        const techniques = this.getTechniquesByDigievolutionId(digievolutionId, digievolutionLevel);
+
+        if (!showTreeSections || digimonId === undefined) {
+            return {
+                evolutionName,
+                requirementDigievolutions: [],
+                derivativeDigievolutions: [],
+                techniques,
+            };
         }
 
         const evolutionRequirements = DigimonRepository.getDigievolutionRequirements(digimonId, digievolutionId);
         const digievolutionsByDigimon = DigimonRepository.getDigievolutionsById(digimonId);
 
         return {
-            evolutionName: DigievolutionRepository.getNameById(digievolutionId),
+            evolutionName,
             requirementDigievolutions: this.getRequirementDigievolutions(evolutionRequirements),
             derivativeDigievolutions: this.getDerivativeDigievolutions(digievolutionsByDigimon, digievolutionId),
-            techniques: this.getTechniquesByDigievolutionId(digievolutionId),
+            techniques,
         };
     }
 
@@ -35,11 +50,11 @@ export class DigievolutionsModalDigievolutionDetailsPresenter {
         return evolutionRequirements
             .filter((requirement) => requirement.type === "DigievolutionLevel")
             .map((requirement) => {
-                const digievolutionId = DigievolutionRepository.getIdByName(requirement.digievolution!);
+                const requirementDigievolutionId = DigievolutionRepository.getIdByName(requirement.digievolution!);
 
                 return {
-                    id: digievolutionId,
-                    name: DigievolutionRepository.getNameById(digievolutionId),
+                    id: requirementDigievolutionId,
+                    name: DigievolutionRepository.getNameById(requirementDigievolutionId),
                 };
             });
     }
@@ -68,7 +83,10 @@ export class DigievolutionsModalDigievolutionDetailsPresenter {
             });
     }
 
-    private static getTechniquesByDigievolutionId(digievolutionId: number): TechniqueViewModel[] {
+    private static getTechniquesByDigievolutionId(
+        digievolutionId: number,
+        digievolutionLevel?: number
+    ): TechniqueViewModel[] {
         const digievolutionTechniquesRaw = DigievolutionRepository.getRawDigievolutionTechniquesById(digievolutionId);
 
         if (digievolutionTechniquesRaw.length === 0) {
@@ -87,7 +105,8 @@ export class DigievolutionsModalDigievolutionDetailsPresenter {
             return TechniqueConverter.convert(
                 digievolutionTechnique,
                 techniqueRaw,
-                isSignature
+                isSignature,
+                digievolutionLevel
             );
         });
     }

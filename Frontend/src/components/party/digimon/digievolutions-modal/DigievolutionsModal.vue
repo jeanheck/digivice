@@ -3,7 +3,7 @@ import { computed, ref, watch } from "vue";
 import type { Digimon } from "@/models";
 import Modal from "@/components/modal/Modal.vue";
 import Tree from "./tree/Tree.vue";
-import DigievolutionsModalDigievolutionDetails from "./details/DigievolutionsModalDigievolutionDetails.vue";
+import DigievolutionTechniques from "@/components/party/digimon/digievolution-techniques/DigievolutionTechniques.vue";
 import SearchBar from "./SearchBar.vue";
 import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter";
 
@@ -79,9 +79,10 @@ const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
 
       <div class="w-[25%] h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col">
         <div v-if="selectedDigievolutionId !== undefined" class="flex-1 flex flex-col p-1">
-          <DigievolutionsModalDigievolutionDetails
+          <DigievolutionTechniques
             :digimon-id="digimonId"
             :digievolution-id="selectedDigievolutionId"
+            show-tree-sections
             @select-digievolution-id="handleSelectDigievolutionById"
           />
         </div>

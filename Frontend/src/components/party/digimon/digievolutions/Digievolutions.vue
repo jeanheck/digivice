@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import Modal from "@/components/modal/Modal.vue";
+import DigievolutionTechniques from "@/components/party/digimon/digievolution-techniques/DigievolutionTechniques.vue";
 import type { DigievolutionSlot } from "@/models";
 import Digievolution from "./Digievolution.vue";
-import TechniquesModal from "./techniques-modal/TechniquesModal.vue";
 import type { DigievolutionResumedViewModel } from "@/viewmodels/digievolution/digievolution-resumed.viewmodel";
 
 defineProps<{
@@ -34,13 +35,18 @@ function closeTechniques(): void {
       @open-techniques="openTechniques"
     />
 
-    <TechniquesModal
+    <Modal
       v-if="selectedDigievolution"
       :is-open="isTechniquesModalOpen"
-      :digievolution-id="selectedDigievolution.id"
-      :digievolution-name="selectedDigievolution.name"
-      :digievolution-level="selectedDigievolution.level"
+      max-width="max-w-lg"
+      max-height="max-h-[75vh]"
+      :show-footer-bar="false"
       @close="closeTechniques"
-    />
+    >
+      <DigievolutionTechniques
+        :digievolution-id="selectedDigievolution.id"
+        :digievolution-level="selectedDigievolution.level"
+      />
+    </Modal>
   </div>
 </template>
