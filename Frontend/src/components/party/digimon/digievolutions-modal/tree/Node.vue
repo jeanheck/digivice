@@ -42,7 +42,7 @@ const nodeAvatarUrl = computed(() => {
 <template>
   <div 
     @click="emit('select')"
-    class="node-container group relative w-54 h-20 transition-all duration-300 cursor-pointer"
+    class="group relative w-54 h-20 transition-all duration-300 cursor-pointer select-none"
   >
     <!-- Node Frame -->
     <div
@@ -81,9 +81,3 @@ const nodeAvatarUrl = computed(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.node-container {
-    user-select: none;
-}
-</style>

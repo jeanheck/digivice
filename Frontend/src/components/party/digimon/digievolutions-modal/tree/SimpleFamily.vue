@@ -32,16 +32,3 @@ const emit = defineEmits<{
     </div>
   </div>
 </template>
-
-<style scoped>
-.family-row {
-  margin-bottom: 8px;
-  overflow-x: auto;
-}
-
-.branch-row {
-  display: flex;
-  align-items: center;
-  padding: 10px 8px;
-}
-</style>

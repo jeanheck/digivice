@@ -123,27 +123,3 @@ const families = computed(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.family-tree-container {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background: #001122;
-  padding: 16px;
-}
-
-.family-separator {
-  border-bottom: 1px solid rgba(0, 102, 204, 0.3);
-  margin: 12px 0;
-}
-
-.empty-state {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: rgba(0, 255, 255, 0.4);
-  font-size: 14px;
-}
-</style>

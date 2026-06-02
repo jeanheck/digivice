@@ -33,31 +33,3 @@ const emit = defineEmits<{
     </div>
   </template>
 </template>
-
-<style scoped>
-.connector {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  margin: 0 4px;
-}
-
-.connector-line {
-  width: 32px;
-  height: 2px;
-  background: linear-gradient(to right, rgba(0, 255, 255, 0.25), rgba(0, 255, 255, 0.45));
-  position: relative;
-}
-
-.connector-arrow {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 5px solid rgba(0, 255, 255, 0.45);
-  border-top: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-}
-</style>
