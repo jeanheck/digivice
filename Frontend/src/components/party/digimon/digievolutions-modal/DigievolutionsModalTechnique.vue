@@ -3,7 +3,6 @@ import { computed, ref } from "vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import { getTechniqueElementColorClass } from "@/constants/technique-element-colors";
 import type { TechniqueViewModel } from "@/viewmodels/digievolution/technique.viewmodel";
 import type { Constant } from "@/constants/constant";
 import { IconConstant } from "@/constants/icon.constant";
@@ -44,6 +43,23 @@ const moveTypeTooltip = (event: MouseEvent) => {
 const icon = computed(() => {
   return IconConstant[props.technique.type as Constant];
 });
+
+const TechniqueElementColorClass: Record<string, string> = {
+    fire: "text-orange-400",
+    water: "text-blue-400",
+    ice: "text-cyan-300",
+    wind: "text-gray-300",
+    thunder: "text-yellow-300",
+    dark: "text-purple-400",
+    machine: "text-gray-400",
+    none: "text-white/60",
+};
+
+function getTechniqueElementColorClass(element: string): string {
+    const normalizedElement = element.toLowerCase();
+
+    return TechniqueElementColorClass[normalizedElement] ?? "text-white/60";
+}
 </script>
 
 <template>
