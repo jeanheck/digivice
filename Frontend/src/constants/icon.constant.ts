@@ -1,31 +1,31 @@
-import { Attribute } from "./stat/attribute/attribute";
-import { Element } from "./stat/element";
-import { Condition } from "./stat/condition";
+import { AttributeConstant } from "./stat/attribute/attribute.constant";
+import { ElementConstant } from "./stat/element.constant";
+import { ConditionConstant } from "./stat/condition.constant";
 import type { Constant as ConstantsType } from "./constant";
 import { Constant } from "./constant";
 
 export const IconConstant: Record<ConstantsType, string> = {
-    [Attribute.strength]: "👊",
-    [Attribute.defense]: "🛡️",
-    [Attribute.spirit]: "🧙‍♂️",
-    [Attribute.wisdom]: "📖",
-    [Attribute.speed]: "🏃",
-    [Attribute.charisma]: "✨",
-    [Element.fire]: "🔥",
-    [Element.water]: "💧",
-    [Element.ice]: "🧊",
-    [Element.wind]: "🍃",
-    [Element.thunder]: "⚡",
-    [Element.machine]: "⚙️",
-    [Element.dark]: "🌑",
-    [Condition.poison]: "☠️",
-    [Condition.paralyze]: "⚡",
-    [Condition.confuse]: "😵",
-    [Condition.sleep]: "💤",
-    [Condition.ko]: "💀",
-    [Condition.drain]: "🧛",
-    [Condition.steal]: "🦝",
-    [Condition.escape]: "🏃",
+    [AttributeConstant.strength]: "👊",
+    [AttributeConstant.defense]: "🛡️",
+    [AttributeConstant.spirit]: "🧙‍♂️",
+    [AttributeConstant.wisdom]: "📖",
+    [AttributeConstant.speed]: "🏃",
+    [AttributeConstant.charisma]: "✨",
+    [ElementConstant.fire]: "🔥",
+    [ElementConstant.water]: "💧",
+    [ElementConstant.ice]: "🧊",
+    [ElementConstant.wind]: "🍃",
+    [ElementConstant.thunder]: "⚡",
+    [ElementConstant.machine]: "⚙️",
+    [ElementConstant.dark]: "🌑",
+    [ConditionConstant.poison]: "☠️",
+    [ConditionConstant.paralyze]: "⚡",
+    [ConditionConstant.confuse]: "😵",
+    [ConditionConstant.sleep]: "💤",
+    [ConditionConstant.ko]: "💀",
+    [ConditionConstant.drain]: "🧛",
+    [ConditionConstant.steal]: "🦝",
+    [ConditionConstant.escape]: "🏃",
     [Constant.physical]: "👊",
     [Constant.magical]: "🧙‍♂️",
     [Constant.heal]: "💚",

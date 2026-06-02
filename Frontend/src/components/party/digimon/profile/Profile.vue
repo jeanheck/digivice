@@ -4,7 +4,7 @@ import ProgressBar from "@/components/party/digimon/profile/ProgressBar.vue";
 import Icon from "@/components/party/digimon/profile/Icon.vue";
 import Vitals from "@/components/party/digimon/profile/Vitals.vue";
 import type { Digimon } from "@/models";
-import { ProgressBarVariant } from "@/constants/progress-bar-variant";
+import { ProgressBarConstant } from "@/constants/progress-bar.constant";
 import { ProfilePresenter } from "@/presenters/profile.presenter";
 
 const props = defineProps<{
@@ -46,7 +46,7 @@ const experiencePercentageToReachNextLevel = computed(() => {
           </div>
 
           <ProgressBar
-            :variant="ProgressBarVariant.Experience"
+            :variant="ProgressBarConstant.experience"
             :current-value="digimon.experience"
             :max-value="experienceToReachNextLevel"
             :percentage="experiencePercentageToReachNextLevel"

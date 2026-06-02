@@ -1,4 +1,4 @@
-export enum Element {
+export enum ElementConstant {
     fire = "fire",
     water = "water",
     ice = "ice",

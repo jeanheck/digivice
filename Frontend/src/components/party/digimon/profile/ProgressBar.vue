@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { ProgressBarVariant } from "@/constants/progress-bar-variant";
+import { ProgressBarConstant } from "@/constants/progress-bar.constant";
 
 const props = defineProps<{
   variant: string;
@@ -10,11 +10,11 @@ const props = defineProps<{
 }>();
 
 const barColorClass = computed(() => {
-  if (props.variant === ProgressBarVariant.HP) {
+  if (props.variant === ProgressBarConstant.hp) {
     return props.percentage <= 30 ? "bg-red-500" : "bg-green-500";
   }
 
-  if (props.variant === ProgressBarVariant.MP) {
+  if (props.variant === ProgressBarConstant.mp) {
     return props.percentage <= 30 ? "bg-yellow-400" : "bg-blue-600";
   }
 
@@ -22,7 +22,7 @@ const barColorClass = computed(() => {
 });
 
 const transitionDurationClass = computed(() => {
-  if (props.variant === ProgressBarVariant.Experience) {
+  if (props.variant === ProgressBarConstant.experience) {
     return "duration-500";
   }
 

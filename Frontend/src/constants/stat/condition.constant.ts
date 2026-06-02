@@ -1,4 +1,4 @@
-export enum Condition {
+export enum ConditionConstant {
     poison = "poison",
     paralyze = "paralyze",
     confuse = "confuse",

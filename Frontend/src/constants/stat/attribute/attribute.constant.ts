@@ -1,4 +1,4 @@
-export enum Attribute {
+export enum AttributeConstant {
     strength = "strength",
     defense = "defense",
     spirit = "spirit",

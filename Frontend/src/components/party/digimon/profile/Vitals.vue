@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import ProgressBar from "@/components/party/digimon/profile/ProgressBar.vue";
 import type { Vitals } from "@/models";
-import { ProgressBarVariant } from "@/constants/progress-bar-variant";
+import { ProgressBarConstant } from "@/constants/progress-bar.constant";
 import { MathUtils } from "@/utils/MathUtils";
 
 const props = defineProps<{
@@ -21,13 +21,13 @@ const mpPercentage = computed(() => {
 <template>
   <div class="flex flex-col gap-2 mt-2">
     <ProgressBar
-      :variant="ProgressBarVariant.HP"
+      :variant="ProgressBarConstant.hp"
       :current-value="vitals.currentHP"
       :max-value="vitals.maxHP"
       :percentage="hpPercentage"
     />
     <ProgressBar
-      :variant="ProgressBarVariant.MP"
+      :variant="ProgressBarConstant.mp"
       :current-value="vitals.currentMP"
       :max-value="vitals.maxMP"
       :percentage="mpPercentage"
