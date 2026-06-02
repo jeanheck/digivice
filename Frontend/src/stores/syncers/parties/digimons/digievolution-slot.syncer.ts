@@ -8,22 +8,18 @@ export class DigievolutionSlotSyncer {
         const newId = newDigievolutionSlotDto.digievolutionId;
         const newDigievolution = newDigievolutionSlotDto.digievolution;
 
-        if (newId === null || newDigievolution === null) {
-            previousDigievolutionSlot.digievolutionId = null;
-            previousDigievolutionSlot.digievolution = null;
+        if (newId != undefined && newDigievolution != undefined) {
+            previousDigievolutionSlot.digievolutionId = newId;
+            previousDigievolutionSlot.digievolution = DigievolutionConverter.convert(newDigievolution);
             return;
         }
 
-        if (newId !== undefined && newDigievolution !== undefined) {
-            previousDigievolutionSlot.digievolutionId = newId;
-
+        if (newDigievolution != undefined) {
             const previousDigievolution = previousDigievolutionSlot.digievolution;
-            if (!previousDigievolution) {
-                previousDigievolutionSlot.digievolution = DigievolutionConverter.convert(newDigievolution);
+            if (previousDigievolution) {
+                DigievolutionSyncer.sync(previousDigievolution, newDigievolution);
                 return;
             }
-
-            DigievolutionSyncer.sync(previousDigievolution, newDigievolution);
         }
     }
 }

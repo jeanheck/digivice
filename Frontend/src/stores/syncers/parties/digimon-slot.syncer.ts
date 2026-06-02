@@ -21,7 +21,12 @@ export class DigimonSlotSyncer {
                 return;
             }
 
-            previousDigimonSlot.digimonId = newId;
+            if(newId !== previousDigimonSlot.digimonId) {
+                previousDigimonSlot.digimonId = newId;
+                previousDigimonSlot.digimon = DigimonConverter.convert(newDigimon);
+                return;
+            }
+
             DigimonSyncer.sync(previousDigimonSlot.digimon, newDigimon);
         }
     }
