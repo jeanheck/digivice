@@ -1,5 +1,5 @@
 import type { AttributesDTO } from "@/events/dto/parties/digimons/attributes.dto";
-import type { Attributes } from "@/models/attributes";
+import type { Attributes } from "@/models/party/digimon/attributes";
 
 export class AttributesConverter {
     public static convert(newAttributesDto: AttributesDTO | null): Attributes {

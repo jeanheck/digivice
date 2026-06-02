@@ -3,7 +3,7 @@ import { computed } from "vue";
 import ProgressBar from "@/components/party/digimon/profile/ProgressBar.vue";
 import Icon from "@/components/party/digimon/profile/Icon.vue";
 import Vitals from "@/components/party/digimon/profile/Vitals.vue";
-import type { Digimon } from "@/models";
+import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import { ProgressBarConstant } from "@/constants/progress-bar.constant";
 import { ProfilePresenter } from "@/presenters/profile.presenter";
 

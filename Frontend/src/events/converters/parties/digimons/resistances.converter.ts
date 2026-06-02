@@ -1,5 +1,5 @@
 import type { ResistancesDTO } from "@/events/dto/parties/digimons/resistances.dto";
-import type { Resistances } from "@/models/resistances";
+import type { Resistances } from "@/models/party/digimon/resistances";
 
 export class ResistancesConverter {
     public static convert(newResistancesDto: ResistancesDTO | null): Resistances {

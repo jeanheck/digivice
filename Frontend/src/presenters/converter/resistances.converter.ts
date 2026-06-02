@@ -1,4 +1,4 @@
-import type { Resistances } from "@/models/resistances";
+import type { Resistances } from "@/models/party/digimon/resistances";
 import { StatConverter } from "@/presenters/converter/stat.converter";
 import type { ResistancesViewModel } from "@/viewmodels/digimon/resistances.viewmodel";
 import type { DigievolutionResistancesViewModel } from "@/viewmodels/digievolution/digievolution-resistances.viewmodel";

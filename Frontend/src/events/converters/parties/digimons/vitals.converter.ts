@@ -1,5 +1,5 @@
 import type { VitalsDTO } from "@/events/dto/parties/digimons/vitals.dto";
-import type { Vitals } from "@/models/vitals";
+import type { Vitals } from "@/models/party/digimon/vitals";
 
 export class VitalsConverter {
     public static convert(newVitalsDto: VitalsDTO | null): Vitals {

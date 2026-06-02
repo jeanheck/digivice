@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import type { Digimon } from "@/models";
+import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import { Constant } from "@/constants/constant.ts";
 import Stat from "./Stat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";

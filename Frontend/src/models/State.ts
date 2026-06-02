@@ -1,5 +1,5 @@
 import type { Player } from './player';
-import type { Party } from './party';
+import type { Party } from './party/party';
 import type { Journal } from './journal';
 
 export interface State {
