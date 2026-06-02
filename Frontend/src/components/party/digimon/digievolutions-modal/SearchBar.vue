@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import type { DigievolutionsModalDigievolutionLinkViewModel } from "@/viewmodels/digievolution/digievolutions-modal-digievolution-link.viewmodel";
+import type { LinkViewModel } from "@/viewmodels/digievolution/link.viewmodel";
 
 const props = defineProps<{
-  allDigievolutions: DigievolutionsModalDigievolutionLinkViewModel[];
+  allDigievolutions: LinkViewModel[];
   selectedDigievolutionId?: number;
 }>();
 

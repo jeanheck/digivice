@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import DigievolutionLinks from "@/components/party/digimon/digievolution-techniques/DigievolutionLinks.vue";
+import Links from "@/components/party/digimon/digievolution-techniques/Links.vue";
 import SectionTitle from "@/components/party/digimon/digievolution-techniques/SectionTitle.vue";
 import Technique from "@/components/party/digimon/digievolution-techniques/Technique.vue";
 import { DigievolutionTechniquesPresenter } from "@/presenters/digievolution-techniques.presenter";
@@ -53,7 +53,7 @@ const evolutionAvatarUrl = computed(() => {
           icon="🧬"
           :label="$t('digievolution.requirementDigievolutions')"
         />
-        <DigievolutionLinks
+        <Links
           :digievolution-links="viewModel.requirementDigievolutions"
           @select-digievolution-id="$emit('select-digievolution-id', $event)"
         />
@@ -86,7 +86,7 @@ const evolutionAvatarUrl = computed(() => {
           icon="🧬"
           :label="$t('digievolution.nextDigievolutions')"
         />
-        <DigievolutionLinks
+        <Links
           :digievolution-links="viewModel.derivativeDigievolutions"
           @select-digievolution-id="$emit('select-digievolution-id', $event)"
         />

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { DigievolutionsModalDigievolutionLinkViewModel } from "@/viewmodels/digievolution/digievolutions-modal-digievolution-link.viewmodel";
+import type { LinkViewModel } from "@/viewmodels/digievolution/link.viewmodel";
 
 defineProps<{
-  digievolutionLinks: DigievolutionsModalDigievolutionLinkViewModel[];
+  digievolutionLinks: LinkViewModel[];
 }>();
 
 const emit = defineEmits<{
