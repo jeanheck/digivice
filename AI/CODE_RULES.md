@@ -25,6 +25,7 @@ Por favor, siga estas práticas rigorosamente ao trabalhar neste projeto em qual
 5. **Respostas Concisas**: Sempre forneça respostas concisas, curtas e diretas. A única exceção é se o usuário pedir explicitamente um detalhamento completo de algum ponto.
 6. **Caminhos de Importação**: Prefira importar arquivos utilizando o caractere `@` para definir o caminho raiz (ex: `@/models/` em vez de `../../models/`), mantendo a consistência e legibilidade.
 7. **Aspas Duplas**: Dê preferência ao uso de aspas duplas (`"`) em strings sempre que houver a opção (ao invés de aspas simples `'`), mantendo a padronização estética do código.
+8. **Sem testes no Frontend**: Não crie, não adicione e não gere testes automatizados no Frontend (Vitest, arquivos `*.spec.ts`, pasta `__tests__`, etc.). Essa decisão é intencional do projeto. A IA não deve sugerir nem incluir testes de frontend em implementações, refatorações ou revisões, salvo pedido explícito do usuário em contrário.
 
 ### Coerência visual e estilos (Frontend)
 
@@ -216,6 +217,8 @@ Referência: `Frontend/src/components/modal/Modal.vue`.
 6. **Evitar Prefixos com Underline (`_`)**: Evite utilizar variáveis, campos privados ou propriedades com o caractere sublinhado/underline (`_`) como prefixo. Em vez disso, prefira declarar propriedades somente leitura em PascalCase (iniciando com letra maiúscula) para armazenar injeções de dependência ou parâmetros de construtores primários que necessitem de validação.
 7. **Inicialização Simplificada de Objetos**: Sempre prefira inicializar os objetos com `new();` ao invés de `new Object();` quando for possível.
 
-## Tests: regras relacionadas aos testes
+## Tests (Backend): regras relacionadas aos testes
+
+Estas regras aplicam-se ao **Backend** (projeto `Tests/`). O Frontend não possui testes automatizados — ver regra *Sem testes no Frontend* acima.
 
 1. **Dupla Verificação de Corner Cases**: Sempre ao finalizar a implementação de testes de unidade para qualquer classe, método ou função, faça uma dupla verificação minuciosa buscando por caminhos alternativos, fallbacks, cenários de concorrência/nulos, exceptions de I/O de infraestrutura e corner cases no código-fonte original, adicionando testes focados especificamente para cobrir essas fronteiras e manter a robustez do software.
