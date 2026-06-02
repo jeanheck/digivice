@@ -5,8 +5,8 @@ import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { getTechniqueElementColorClass } from "@/constants/technique-element-colors";
 import type { TechniqueViewModel } from "@/viewmodels/digievolution/technique.viewmodel";
-import type { StatKey } from "@/constants/stat-key";
-import { Icon } from "@/constants/icon";
+import type { Constants } from "@/constants/constants";
+import { IconConstants } from "@/constants/icon.constants";
 
 const props = defineProps<{
   technique: TechniqueViewModel;
@@ -42,7 +42,7 @@ const moveTypeTooltip = (event: MouseEvent) => {
 };
 
 const icon = computed(() => {
-  return Icon[props.technique.type as StatKey];
+  return IconConstants[props.technique.type as Constants];
 });
 </script>
 

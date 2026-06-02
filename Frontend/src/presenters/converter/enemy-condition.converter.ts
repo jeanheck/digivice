@@ -1,5 +1,5 @@
 import { Condition } from "@/constants/stat/condition";
-import { Icon } from "@/constants/icon";
+import { IconConstants } from "@/constants/icon.constants";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
@@ -20,7 +20,7 @@ export class EnemyConditionConverter {
             return {
                 conditionKey,
                 can: condition.can,
-                icon: Icon[conditionKey],
+                icon: IconConstants[conditionKey],
                 value: condition.can ? `${condition.value}%` : "",
             };
         }
@@ -28,7 +28,7 @@ export class EnemyConditionConverter {
         return {
             conditionKey,
             can: condition.can,
-            icon: Icon[conditionKey]
+            icon: IconConstants[conditionKey]
         };
     }
 }

@@ -1,5 +1,5 @@
 import { type Digimon, type DigimonSlot } from "@/models";
-import { StatKey } from "@/constants/stat-key";
+import { Constants } from "@/constants/constants";
 import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import { MathUtils } from "@/utils/MathUtils";
@@ -18,7 +18,7 @@ export class FooterPresenter {
             const equipmentIds = EquipmentsHelper.getUniqueEquipmentIds(digimon.equipments);
             const rawEquipments = EquipmentRepository.getEquipmentsByIds(equipmentIds);
             return EquipmentsHelper.calculateBonusFromEquipaments(
-                StatKey.charisma,
+                Constants.charisma,
                 rawEquipments
             );
         }));

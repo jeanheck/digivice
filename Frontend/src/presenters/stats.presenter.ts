@@ -1,5 +1,5 @@
 import type { Digimon } from "@/models";
-import { StatKey } from "@/constants/stat-key";
+import { Constants } from "@/constants/constants";
 import {
     AttributesConverter,
     type AttributesEquipmentBonuses,
@@ -39,24 +39,24 @@ export class StatsPresenter {
 
     private static getAttributesEquipmentBonuses(rawEquipments: EquipmentRaw[]): AttributesEquipmentBonuses {
         return {
-            strength: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.strength, rawEquipments),
-            defense: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.defense, rawEquipments),
-            spirit: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.spirit, rawEquipments),
-            wisdom: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.wisdom, rawEquipments),
-            speed: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.speed, rawEquipments),
-            charisma: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.charisma, rawEquipments),
+            strength: EquipmentsHelper.calculateBonusFromEquipaments(Constants.strength, rawEquipments),
+            defense: EquipmentsHelper.calculateBonusFromEquipaments(Constants.defense, rawEquipments),
+            spirit: EquipmentsHelper.calculateBonusFromEquipaments(Constants.spirit, rawEquipments),
+            wisdom: EquipmentsHelper.calculateBonusFromEquipaments(Constants.wisdom, rawEquipments),
+            speed: EquipmentsHelper.calculateBonusFromEquipaments(Constants.speed, rawEquipments),
+            charisma: EquipmentsHelper.calculateBonusFromEquipaments(Constants.charisma, rawEquipments),
         };
     }
 
     private static getResistancesEquipmentBonuses(rawEquipments: EquipmentRaw[]): ResistancesEquipmentBonuses {
         return {
-            fire: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.fire, rawEquipments),
-            water: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.water, rawEquipments),
-            ice: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.ice, rawEquipments),
-            wind: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.wind, rawEquipments),
-            thunder: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.thunder, rawEquipments),
-            machine: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.machine, rawEquipments),
-            dark: EquipmentsHelper.calculateBonusFromEquipaments(StatKey.dark, rawEquipments),
+            fire: EquipmentsHelper.calculateBonusFromEquipaments(Constants.fire, rawEquipments),
+            water: EquipmentsHelper.calculateBonusFromEquipaments(Constants.water, rawEquipments),
+            ice: EquipmentsHelper.calculateBonusFromEquipaments(Constants.ice, rawEquipments),
+            wind: EquipmentsHelper.calculateBonusFromEquipaments(Constants.wind, rawEquipments),
+            thunder: EquipmentsHelper.calculateBonusFromEquipaments(Constants.thunder, rawEquipments),
+            machine: EquipmentsHelper.calculateBonusFromEquipaments(Constants.machine, rawEquipments),
+            dark: EquipmentsHelper.calculateBonusFromEquipaments(Constants.dark, rawEquipments),
         };
     }
 

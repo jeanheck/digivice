@@ -1,4 +1,4 @@
-export enum StatKey {
+export enum Constants {
     strength = "strength",
     defense = "defense",
     spirit = "spirit",

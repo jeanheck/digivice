@@ -1,7 +1,7 @@
-import type { StatKey } from "@/constants/stat-key";
+import type { Constants } from "@/constants/constants";
 
 export interface EquipmentsAttributes {
-    attribute: StatKey;
+    attribute: Constants;
     type: string;
     value: number;
 }
