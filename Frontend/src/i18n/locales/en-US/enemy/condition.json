@@ -28,6 +28,8 @@
     },
     "escape": {
       "canSuffer": "Player can Escape"
-    }
+    },
+    "yes": "Yes",
+    "no": "No"
   }
 }

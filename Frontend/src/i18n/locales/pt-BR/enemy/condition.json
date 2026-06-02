@@ -28,6 +28,8 @@
     },
     "escape": {
       "canSuffer": "Jogador pode Fugir"
-    }
+    },
+    "yes": "Sim",
+    "no": "Não"
   }
 }
