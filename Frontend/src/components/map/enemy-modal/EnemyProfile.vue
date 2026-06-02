@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = defineProps<{
@@ -8,7 +8,7 @@ const props = defineProps<{
   enemyImageUrl: string | null;
 }>();
 
-const { t } = useLocalization();
+const { t } = useI18n();
 
 const dropLabel = computed(() => {
   if (!props.enemy.dropId) {

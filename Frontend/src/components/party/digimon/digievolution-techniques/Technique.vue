@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import type { TechniqueViewModel } from "@/viewmodels/digievolution/technique.viewmodel";
 import type { Constant } from "@/constants/constant";
@@ -11,7 +11,7 @@ const props = defineProps<{
   technique: TechniqueViewModel;
 }>();
 
-const { t } = useLocalization();
+const { t } = useI18n();
 
 function getElementLabel(element: string): string {
   if (element.toLowerCase() === "none") {

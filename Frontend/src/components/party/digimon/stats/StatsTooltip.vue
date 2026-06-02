@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import type { TooltipPlacement } from "@/composables/use-tooltip-position";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 
 withDefaults(
     defineProps<{
@@ -21,7 +21,7 @@ withDefaults(
     }
 );
 
-const { t } = useLocalization();
+const { t } = useI18n();
 </script>
 
 <template>

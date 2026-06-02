@@ -6,7 +6,7 @@ import EnemyProfile from "@/components/map/enemy-modal/EnemyProfile.vue";
 import EnemyAttributes from "@/components/map/enemy-modal/EnemyAttributes.vue";
 import EnemyElements from "@/components/map/enemy-modal/EnemyElements.vue";
 import EnemyConditions from "@/components/map/enemy-modal/EnemyConditions.vue";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { EnemyModalPresenter } from "@/presenters/map/enemy-modal.presenter.ts";
@@ -20,7 +20,7 @@ const emit = defineEmits<{
   (e: "close"): void;
 }>();
 
-const { t } = useLocalization();
+const { t } = useI18n();
 
 const isModalOpen = computed(() => {
   return props.isOpen && props.enemyId !== null;

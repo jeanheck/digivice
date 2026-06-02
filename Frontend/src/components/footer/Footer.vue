@@ -3,13 +3,13 @@ import { computed, ref } from "vue";
 import { invoke } from "@tauri-apps/api/core";
 import LanguageSelector from "@/components/footer/LanguageSelector.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { useGameStore } from "@/stores/use-game-store";
 import { FooterPresenter } from "@/presenters/footer.presenter";
 
 const store = useGameStore();
-const { t } = useLocalization();
+const { t } = useI18n();
 
 const playerName = computed(() => {
   return store.currentState?.player?.name ?? null;

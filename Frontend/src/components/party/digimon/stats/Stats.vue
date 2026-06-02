@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 import type { Digimon } from "@/models";
 import { Constant } from "@/constants/constant.ts";
 import Stat from "./Stat.vue";
@@ -13,7 +13,7 @@ const props = defineProps<{
   digimon: Digimon;
 }>();
 
-const { t } = useLocalization();
+const { t } = useI18n();
 const tooltipPlacement = "below" as const;
 const tooltipPosition = useTooltipPosition();
 const { x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { IconConstant } from "@/constants/icon.constant";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 import { Constant } from "@/constants/constant";
 import type { StatViewModel } from "@/viewmodels/digimon/stat.viewmodel";
 
@@ -17,7 +17,7 @@ const emit = defineEmits<{
   (e: "hideTooltip"): void;
 }>();
 
-const { t } = useLocalization();
+const { t } = useI18n();
 
 const label = computed(() => {
   return t(`stat.${props.stat}`);

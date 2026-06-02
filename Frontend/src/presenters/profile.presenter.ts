@@ -1,5 +1,5 @@
 import { DigimonRepository } from "@/repositories/digimon.repository";
-import { MathUtils } from "@/utils/MathUtils";
+import { MathHelper } from "@/presenters/helper/math.helper";
 
 export class ProfilePresenter {
     private static readonly MAX_LEVEL = 99;
@@ -26,6 +26,6 @@ export class ProfilePresenter {
         const totalRequiredInThisLevel = requiredExperienceForNextLevel - requiredExperienceForCurrentLevel;
         const progressInThisLevel = experience - requiredExperienceForCurrentLevel;
 
-        return MathUtils.calculatePercentage(progressInThisLevel, totalRequiredInThisLevel);
+        return MathHelper.calculatePercentage(progressInThisLevel, totalRequiredInThisLevel);
     }
 }

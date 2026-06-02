@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import type { TooltipPlacement } from "@/composables/use-tooltip-position";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 const props = withDefaults(
@@ -20,7 +20,7 @@ const props = withDefaults(
     }
 );
 
-const { t } = useLocalization();
+const { t } = useI18n();
 
 const equipmentName = computed(() => {
     if (!props.equipment?.id) {

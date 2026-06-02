@@ -1,7 +1,7 @@
 import type { Equipments } from "@/models";
 import { Constant } from "@/constants/constant";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
-import { MathUtils } from "@/utils/MathUtils";
+import { MathHelper } from "@/presenters/helper/math.helper";
 
 export class EquipmentsHelper {
   public static getEquipmentIds(equipments: Equipments): number[] {
@@ -27,7 +27,7 @@ export class EquipmentsHelper {
       .flatMap((rawEquipment) => rawEquipment.attributes)
       .filter((attribute) => attribute.attribute.toLowerCase() === lowerCaseType);
 
-    return MathUtils.Sum(attributesRaw.map((attribute) => {
+    return MathHelper.sum(attributesRaw.map((attribute) => {
       return Number(`${attribute.type}${attribute.value}`);
     }));
   }

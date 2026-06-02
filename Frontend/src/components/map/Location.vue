@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
   location: LocationViewModel | null;
 }>();
 
-const { t } = useLocalization();
+const { t } = useI18n();
 
 const locationName = computed(() => {
   return props.location?.id ? t(`location.${props.location.id}`) : t("map.unknownZone");

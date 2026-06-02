@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { EquipmentConstant } from "@/constants/equipment.constant";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 import { computed } from "vue";
 
@@ -9,7 +9,7 @@ const props = defineProps<{
   equipment: EquipmentViewModel | null;
 }>();
 
-const { t } = useLocalization();
+const { t } = useI18n();
 
 const emit = defineEmits<{
   (e: "showTooltip", event: MouseEvent, equipment: EquipmentViewModel): void;

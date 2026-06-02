@@ -3,9 +3,9 @@ import { computed } from "vue";
 import { EnemyConditionsPresenter } from "@/presenters/map/enemy-modal/enemy-conditions.presenter";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
-import { useLocalization } from "@/composables/useLocalization";
+import { useI18n } from "vue-i18n";
 
-const { t } = useLocalization();
+const { t } = useI18n();
 
 const props = defineProps<{
   conditions: EnemyViewModel["conditions"];
