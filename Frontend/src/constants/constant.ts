@@ -1,4 +1,4 @@
-export enum Constants {
+export enum Constant {
     strength = "strength",
     defense = "defense",
     spirit = "spirit",

@@ -2,8 +2,8 @@
 import { computed } from "vue";
 import { TechniquePresenter } from "@/presenters/technique.presenter";
 import type { DigievolutionTechniqueViewModel } from "@/viewmodels/digievolution/digievolution-technique.viewmodel";
-import { IconConstants } from "@/constants/icon.constants";
-import type { Constants } from "@/constants/constants";
+import { IconConstant } from "@/constants/icon.constant";
+import type { Constant } from "@/constants/constant";
 
 const props = defineProps<{
   technique: DigievolutionTechniqueViewModel;
@@ -16,7 +16,7 @@ const techniqueViewModel = computed(() => {
 });
 
 const icon = computed(() => {
-  return IconConstants[techniqueViewModel.value.type as Constants];
+  return IconConstant[techniqueViewModel.value.type as Constant];
 });
 </script>
 

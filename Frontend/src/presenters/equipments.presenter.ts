@@ -1,4 +1,4 @@
-import { EquipmentSlotKey } from "@/constants/equipment-slot-key";
+import { EquipmentConstant } from "@/constants/equipment.constant";
 import type { Equipments } from "@/models";
 import { EquipmentConverter } from "@/presenters/converter/equipment.converter";
 import { DigimonRepository } from "@/repositories/digimon.repository";
@@ -6,7 +6,7 @@ import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 export class EquipmentsPresenter {
-    public static getEquipmentBySlot(equipments: Equipments, slotKey: EquipmentSlotKey): EquipmentViewModel | null {
+    public static getEquipmentBySlot(equipments: Equipments, slotKey: EquipmentConstant): EquipmentViewModel | null {
         const equipmentId = equipments[slotKey];
 
         if (!equipmentId) {

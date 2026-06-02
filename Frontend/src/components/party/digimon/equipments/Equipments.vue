@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { EQUIPMENT_SLOT_KEYS } from "@/constants/equipment-slot-key";
+import { EQUIPMENT_SLOT_KEYS } from "@/constants/equipment.constant.ts";
 import type { Equipments } from "@/models";
 import Equipment from "./Equipment.vue";
 import EquipmentsTooltip from "./EquipmentsTooltip.vue";

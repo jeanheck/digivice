@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { EquipmentSlotKey } from "@/constants/equipment-slot-key";
+import { EquipmentConstant } from "@/constants/equipment.constant";
 import { useLocalization } from "@/composables/useLocalization";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 import { computed } from "vue";
 
 const props = defineProps<{
-  slotKey: EquipmentSlotKey;
+  slotKey: EquipmentConstant;
   equipment: EquipmentViewModel | null;
 }>();
 

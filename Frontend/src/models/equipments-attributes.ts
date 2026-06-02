@@ -1,7 +1,7 @@
-import type { Constants } from "@/constants/constants";
+import type { Constant } from "@/constants/constant";
 
 export interface EquipmentsAttributes {
-    attribute: Constants;
+    attribute: Constant;
     type: string;
     value: number;
 }
