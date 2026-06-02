@@ -1,5 +1,5 @@
 export interface EnemyStatViewModel {
     statKey: string;
-    value: string;
+    value: number;
     icon: string;
 }

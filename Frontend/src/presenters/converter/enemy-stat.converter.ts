@@ -8,20 +8,20 @@ import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel
 export class EnemyStatConverter {
     public static convertAttributes(attributes: EnemyViewModel["attributes"]): EnemyStatViewModel[] {
         return Object.values(EnemyAttribute).map((statKey) => {
-            return EnemyStatConverter.toStatViewModel(statKey, attributes[statKey]);
+            return this.toStatViewModel(statKey, attributes[statKey]);
         });
     }
 
     public static convertElements(elements: EnemyViewModel["elements"]): EnemyStatViewModel[] {
         return Object.values(Element).map((statKey) => {
-            return EnemyStatConverter.toStatViewModel(statKey, elements[statKey]);
+            return this.toStatViewModel(statKey, elements[statKey]);
         });
     }
 
     private static toStatViewModel(statKey: string, numericValue: number): EnemyStatViewModel {
         return {
             statKey,
-            value: String(numericValue),
+            value: numericValue,
             icon: StatIcon[statKey as StatKey],
         };
     }

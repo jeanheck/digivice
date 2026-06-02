@@ -15,4 +15,12 @@ export const StatIcon: Record<StatKey, string> = {
     [StatKey.thunder]: "⚡",
     [StatKey.machine]: "⚙️",
     [StatKey.dark]: "🌑",
+    [StatKey.poison]: "☠️",
+    [StatKey.paralyze]: "⚡",
+    [StatKey.confuse]: "❓",
+    [StatKey.sleep]: "💤",
+    [StatKey.ko]: "💀",
+    [StatKey.drain]: "🧛",
+    [StatKey.steal]: "🦝",
+    [StatKey.escape]: "🏃",
 };
