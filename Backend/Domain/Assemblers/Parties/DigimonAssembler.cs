@@ -1,8 +1,7 @@
+using Backend.Domain.Assemblers.Parties.Digimons;
 using Backend.Domain.Models.Parties;
 using Backend.Domain.Models.Parties.Digimons;
 using Backend.Memory.Resources.Parties;
-
-using Backend.Domain.Assemblers.Parties.Digimons;
 
 namespace Backend.Domain.Assemblers.Parties
 {
@@ -55,7 +54,8 @@ namespace Backend.Domain.Assemblers.Parties
                     Accessory1 = resource.Equipments.Accessory1,
                     Accessory2 = resource.Equipments.Accessory2
                 },
-                Digievolutions = resource.Digievolutions.Select(DigievolutionSlotAssembler.Assemble).ToList(),
+                Digievolutions = [.. resource.Digievolutions.Select(DigievolutionSlotAssembler.Assemble)],
+                StoredDigievolutions = [.. resource.StoredDigievolutions.Select(StoredDigievolutionAssembler.Assemble)],
                 ActiveDigievolutionId = activeDigievolutionId
             };
         }

@@ -11,6 +11,7 @@ namespace Backend.Domain.Models.Parties
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
         public List<DigievolutionSlot> Digievolutions { get; set; } = [];
+        public List<StoredDigievolution> StoredDigievolutions { get; set; } = [];
         public int ActiveDigievolutionId { get; set; }
 
         public virtual bool Equals(Digimon? other)
@@ -24,7 +25,8 @@ namespace Backend.Domain.Models.Parties
                    Resistances.Equals(other.Resistances) &&
                    Equipments.Equals(other.Equipments) &&
                    ActiveDigievolutionId == other.ActiveDigievolutionId &&
-                   Digievolutions.SequenceEqual(other.Digievolutions);
+                   Digievolutions.SequenceEqual(other.Digievolutions) &&
+                   StoredDigievolutions.SequenceEqual(other.StoredDigievolutions);
         }
 
         public override int GetHashCode()
@@ -37,9 +39,13 @@ namespace Backend.Domain.Models.Parties
             hash.Add(Resistances);
             hash.Add(Equipments);
             hash.Add(ActiveDigievolutionId);
-            foreach (var d in Digievolutions)
+            foreach (var digievolutionSlot in Digievolutions)
             {
-                hash.Add(d);
+                hash.Add(digievolutionSlot);
+            }
+            foreach (var storedDigievolution in StoredDigievolutions)
+            {
+                hash.Add(storedDigievolution);
             }
             return hash.ToHashCode();
         }

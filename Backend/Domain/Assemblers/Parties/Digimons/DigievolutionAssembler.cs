@@ -9,7 +9,8 @@ namespace Backend.Domain.Assemblers.Parties.Digimons
         {
             return new Digievolution
             {
-                Level = resource.Level
+                Level = resource.Level,
+                Dvxp = resource.Dvxp
             };
         }
     }

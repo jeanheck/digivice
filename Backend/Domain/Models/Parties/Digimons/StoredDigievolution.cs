@@ -1,26 +1,26 @@
 namespace Backend.Domain.Models.Parties.Digimons
 {
-    public record class Digievolution
+    public record class StoredDigievolution
     {
+        public int DigievolutionId { get; set; }
         public int Level { get; set; }
-        public int Dvxp { get; set; }
 
-        public virtual bool Equals(Digievolution? other)
+        public virtual bool Equals(StoredDigievolution? other)
         {
             if (other is null)
             {
                 return false;
             }
 
-            return Level == other.Level &&
-                   Dvxp == other.Dvxp;
+            return DigievolutionId == other.DigievolutionId &&
+                   Level == other.Level;
         }
 
         public override int GetHashCode()
         {
             var hash = new HashCode();
+            hash.Add(DigievolutionId);
             hash.Add(Level);
-            hash.Add(Dvxp);
             return hash.ToHashCode();
         }
     }
