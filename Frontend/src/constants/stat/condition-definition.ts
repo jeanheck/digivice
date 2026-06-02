@@ -1,54 +1,30 @@
 import { Condition } from "@/constants/stat/condition";
 
-interface ResistanceConditionDefinition {
-    kind: "resistance";
-    resistanceTooltipKey: string;
-    canSufferTooltipKey: string;
-}
+export const BOOLEAN_CONDITION_KEYS = new Set<string>([
+    Condition.canDrain,
+    Condition.canSteal,
+    Condition.canEscape,
+]);
 
-interface BooleanConditionDefinition {
-    kind: "boolean";
-    tooltipKey: string;
-}
-
-export type ConditionDefinition = ResistanceConditionDefinition | BooleanConditionDefinition;
-
-export const ConditionDefinition: Record<Condition, ConditionDefinition> = {
-    [Condition.poison]: {
-        kind: "resistance",
-        resistanceTooltipKey: "conditions.resistancePoison",
-        canSufferTooltipKey: "conditions.canPoison",
+export const RESISTANCE_TOOLTIP_KEYS: Record<string, { resistance: string; canSuffer: string }> = {
+    [Condition.canPoison]: {
+        resistance: "conditions.resistancePoison",
+        canSuffer: "conditions.canPoison",
     },
-    [Condition.paralyze]: {
-        kind: "resistance",
-        resistanceTooltipKey: "conditions.resistanceParalyze",
-        canSufferTooltipKey: "conditions.canParalyze",
+    [Condition.canParalyze]: {
+        resistance: "conditions.resistanceParalyze",
+        canSuffer: "conditions.canParalyze",
     },
-    [Condition.confuse]: {
-        kind: "resistance",
-        resistanceTooltipKey: "conditions.resistanceConfuse",
-        canSufferTooltipKey: "conditions.canConfuse",
+    [Condition.canConfuse]: {
+        resistance: "conditions.resistanceConfuse",
+        canSuffer: "conditions.canConfuse",
     },
-    [Condition.sleep]: {
-        kind: "resistance",
-        resistanceTooltipKey: "conditions.resistanceSleep",
-        canSufferTooltipKey: "conditions.canSleep",
+    [Condition.canSleep]: {
+        resistance: "conditions.resistanceSleep",
+        canSuffer: "conditions.canSleep",
     },
-    [Condition.ko]: {
-        kind: "resistance",
-        resistanceTooltipKey: "conditions.resistanceKo",
-        canSufferTooltipKey: "conditions.canKo",
-    },
-    [Condition.drain]: {
-        kind: "boolean",
-        tooltipKey: "conditions.drain",
-    },
-    [Condition.steal]: {
-        kind: "boolean",
-        tooltipKey: "conditions.steal",
-    },
-    [Condition.escape]: {
-        kind: "boolean",
-        tooltipKey: "conditions.escape",
+    [Condition.canKo]: {
+        resistance: "conditions.resistanceKo",
+        canSuffer: "conditions.canKo",
     },
 };

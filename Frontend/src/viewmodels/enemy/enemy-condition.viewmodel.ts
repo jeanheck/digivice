@@ -1,7 +1,6 @@
 export interface EnemyConditionViewModel {
     conditionKey: string;
-    tooltipKey: string;
-    value: string;
+    can: boolean;
+    value: string | null;
     icon: string;
-    valueColorClass: string;
 }
