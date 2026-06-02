@@ -32,7 +32,7 @@ withDefaults(
       >
         <div
           v-if="title"
-          class="font-bold text-yellow-300 text-sm border-b border-[#0066cc]/50 pb-1 mb-1 shadow-black text-shadow-sm uppercase tracking-wider"
+          class="font-bold text-yellow-300 text-sm border-b border-[#0066cc]/50 pb-1 mb-1 shadow-black shadow-text uppercase tracking-wider"
         >
           {{ title }}
         </div>
@@ -42,19 +42,3 @@ withDefaults(
     </Transition>
   </Teleport>
 </template>
-
-<style scoped>
-.text-shadow-sm {
-  text-shadow: 1px 1px 0 #000;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.15s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

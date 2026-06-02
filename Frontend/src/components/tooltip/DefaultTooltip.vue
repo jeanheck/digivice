@@ -28,14 +28,8 @@ withDefaults(
     :max-width="maxWidth"
     :placement="placement"
   >
-    <div class="text-gray-100 text-xs leading-relaxed shadow-black text-shadow-sm">
+    <div class="text-gray-100 text-xs leading-relaxed shadow-black shadow-text">
       {{ text }}
     </div>
   </Tooltip>
 </template>
-
-<style scoped>
-.text-shadow-sm {
-  text-shadow: 1px 1px 0 #000;
-}
-</style>
