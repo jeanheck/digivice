@@ -35,6 +35,32 @@ body {
   clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
 }
 
+.dw3-panel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: #000a2b;
+}
+
+.dw3-panel-border {
+  position: absolute;
+  inset: 0;
+  background-color: #0077ff;
+  pointer-events: none;
+}
+
+.dw3-panel-inner {
+  position: absolute;
+  inset: 1.5px;
+  background-color: #000a2b;
+  pointer-events: none;
+}
+
+.dw3-panel-content {
+  position: relative;
+  z-index: 10;
+}
+
 .shadow-text {
   text-shadow: 1px 1px 0 #000;
 }

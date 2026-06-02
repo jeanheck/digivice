@@ -43,19 +43,19 @@ function openTechniques(): void {
 </script>
 
 <template>
-  <div class="evo-row relative flex w-full h-7 bg-[#000a2b] text-white overflow-hidden dw3-beveled">
-    <div class="absolute inset-0 bg-[#0077ff] pointer-events-none dw3-beveled"></div>
-    <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
+  <div class="dw3-panel evo-row flex h-7 text-white dw3-beveled">
+    <div class="dw3-panel-border dw3-beveled"></div>
+    <div class="dw3-panel-inner dw3-beveled"></div>
 
     <template v-if="isEmpty">
-      <div class="relative z-10 flex-1 flex items-center px-4 font-bold text-sm tracking-wider text-white/80 shadow-text cursor-default">
+      <div class="dw3-panel-content flex-1 flex items-center px-4 font-bold text-sm tracking-wider text-white/80 shadow-text cursor-default">
         {{ $t("digimon.states.empty") }}
       </div>
     </template>
 
     <div
       v-else
-      class="relative z-10 flex flex-1 w-full items-center cursor-pointer hover:brightness-125 transition-[filter]"
+      class="dw3-panel-content flex flex-1 w-full items-center cursor-pointer hover:brightness-125 transition-[filter]"
       @click="openTechniques"
     >
       <div

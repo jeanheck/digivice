@@ -42,11 +42,11 @@ const moveTooltip = (event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="relative overflow-hidden flex flex-col w-full bg-[#000a2b]">
-    <div class="absolute inset-0 bg-[#0077ff] pointer-events-none dw3-beveled"></div>
-    <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
+  <div class="dw3-panel flex flex-col">
+    <div class="dw3-panel-border dw3-beveled"></div>
+    <div class="dw3-panel-inner dw3-beveled"></div>
 
-    <div class="relative z-10 w-full flex flex-col pt-2 p-3 text-white text-xs shadow-inner bg-[#000a2b]/40">
+    <div class="dw3-panel-content w-full flex flex-col pt-2 p-3 text-white text-xs">
       <Equipment
         v-for="equipmentSlot in equipmentSlots"
         :key="equipmentSlot.slotKey"

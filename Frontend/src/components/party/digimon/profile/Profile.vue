@@ -26,11 +26,11 @@ const experiencePercentageToReachNextLevel = computed(() => {
 </script>
 
 <template>
-  <div class="relative overflow-hidden flex flex-col w-full bg-[#000a2b]">
-    <div class="absolute inset-0 bg-[#0077ff] pointer-events-none dw3-beveled"></div>
-    <div class="absolute inset-[1.5px] bg-[#000a2b] pointer-events-none dw3-beveled"></div>
+  <div class="dw3-panel flex flex-col">
+    <div class="dw3-panel-border dw3-beveled"></div>
+    <div class="dw3-panel-inner dw3-beveled"></div>
 
-    <div class="relative z-10 flex flex-col gap-2 p-3">
+    <div class="dw3-panel-content flex flex-col gap-2 p-3">
       <div class="flex items-start gap-4">
         <Icon :digimon-name="digimonName" class="w-16 h-16" />
 
