@@ -1,6 +1,6 @@
 import { EnemyAttribute } from "@/constants/stat/attribute/enemy-attribute";
 import { Element } from "@/constants/stat/element";
-import { StatIcon } from "@/constants/stat/stat-icon";
+import { Icon } from "@/constants/stat/icon";
 import { StatKey } from "@/constants/stat/stat-key";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
@@ -22,7 +22,7 @@ export class EnemyStatConverter {
         return {
             statKey,
             value: numericValue,
-            icon: StatIcon[statKey as StatKey],
+            icon: Icon[statKey as StatKey],
         };
     }
 }

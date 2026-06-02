@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { StatIcon } from "@/constants/stat/stat-icon";
+import { Icon } from "@/constants/stat/icon";
 import { useLocalization } from "@/composables/useLocalization";
 import { StatKey } from "@/constants/stat/stat-key";
 import type { StatViewModel } from "@/viewmodels/digimon/stat.viewmodel";
@@ -26,7 +26,7 @@ const label = computed(() => {
 const statKey = computed(() => props.stat as StatKey);
 
 const icon = computed(() => {
-  return StatIcon[statKey.value];
+  return Icon[statKey.value];
 });
 
 </script>
