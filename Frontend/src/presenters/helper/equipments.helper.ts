@@ -1,5 +1,5 @@
 import type { Equipments } from "@/models";
-import { StatKey } from "@/constants/stat/stat-key";
+import { StatKey } from "@/constants/stat-key";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
 import { MathUtils } from "@/utils/MathUtils";
 

@@ -2,8 +2,8 @@
 import { computed } from "vue";
 import { TechniquePresenter } from "@/presenters/technique.presenter";
 import type { DigievolutionTechniqueViewModel } from "@/viewmodels/digievolution/digievolution-technique.viewmodel";
-import { Icon } from "@/constants/stat/icon";
-import type { StatKey } from "@/constants/stat/stat-key";
+import { Icon } from "@/constants/icon";
+import type { StatKey } from "@/constants/stat-key";
 
 const props = defineProps<{
   technique: DigievolutionTechniqueViewModel;

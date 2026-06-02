@@ -1,4 +1,4 @@
-import type { StatKey } from "@/constants/stat/stat-key";
+import type { StatKey } from "@/constants/stat-key";
 
 export interface EquipmentsAttributes {
     attribute: StatKey;

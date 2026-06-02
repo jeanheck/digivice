@@ -1,7 +1,7 @@
-import { Attribute } from "./attribute/attribute";
-import { Element } from "./element";
-import { Condition } from "./condition";
-import { Technique } from "../technique";
+import { Attribute } from "./stat/attribute/attribute";
+import { Element } from "./stat/element";
+import { Condition } from "./stat/condition";
+import { Technique } from "./technique";
 import type { StatKey } from "./stat-key";
 
 export const Icon: Record<StatKey, string> = {

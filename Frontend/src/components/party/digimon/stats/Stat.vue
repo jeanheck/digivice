@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { Icon } from "@/constants/stat/icon";
+import { Icon } from "@/constants/icon";
 import { useLocalization } from "@/composables/useLocalization";
-import { StatKey } from "@/constants/stat/stat-key";
+import { StatKey } from "@/constants/stat-key";
 import type { StatViewModel } from "@/viewmodels/digimon/stat.viewmodel";
 
 const props = defineProps<{

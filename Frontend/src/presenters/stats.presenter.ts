@@ -1,5 +1,5 @@
 import type { Digimon } from "@/models";
-import { StatKey } from "@/constants/stat/stat-key";
+import { StatKey } from "@/constants/stat-key";
 import {
     AttributesConverter,
     type AttributesEquipmentBonuses,

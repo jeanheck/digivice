@@ -1,4 +1,4 @@
-import type { StatKey } from "@/constants/stat/stat-key";
+import type { StatKey } from "@/constants/stat-key";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 

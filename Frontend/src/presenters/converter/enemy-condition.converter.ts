@@ -1,5 +1,5 @@
 import { Condition } from "@/constants/stat/condition";
-import { Icon } from "@/constants/stat/icon";
+import { Icon } from "@/constants/icon";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 

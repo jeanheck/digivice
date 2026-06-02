@@ -1,5 +1,5 @@
 import { type Digimon, type DigimonSlot } from "@/models";
-import { StatKey } from "@/constants/stat/stat-key";
+import { StatKey } from "@/constants/stat-key";
 import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import { MathUtils } from "@/utils/MathUtils";
