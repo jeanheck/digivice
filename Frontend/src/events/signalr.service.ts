@@ -3,6 +3,7 @@ import { invoke } from '@tauri-apps/api/core'
 import type { EventsMap } from './events.map'
 import { signalRLogger } from './logger'
 import { APP_CONFIG } from '../config'
+import { formatHubConnectionError } from './hub-connection-error'
 
 class SignalRService {
     private connection: signalR.HubConnection | null = null
@@ -55,7 +56,10 @@ class SignalRService {
             this.emit('HubConnectionStatusChanged', { isConnected: true })
         } catch (err) {
             signalRLogger.error(`Connection Error at ${hubUrl}`, err)
-            this.emit('HubConnectionStatusChanged', { isConnected: false })
+            this.emit('HubConnectionStatusChanged', {
+                isConnected: false,
+                errorMessage: formatHubConnectionError(err),
+            })
         }
     }
 
@@ -64,7 +68,10 @@ class SignalRService {
 
         this.connection.onreconnecting(() => {
             signalRLogger.warn('Reconnecting...')
-            this.emit('HubConnectionStatusChanged', { isConnected: false })
+            this.emit('HubConnectionStatusChanged', {
+                isConnected: false,
+                errorMessage: 'Reconnecting to backend...',
+            })
         })
 
         this.connection.onreconnected(() => {
@@ -72,9 +79,12 @@ class SignalRService {
             this.emit('HubConnectionStatusChanged', { isConnected: true })
         })
 
-        this.connection.onclose(() => {
-            signalRLogger.error('Connection closed.')
-            this.emit('HubConnectionStatusChanged', { isConnected: false })
+        this.connection.onclose((err) => {
+            signalRLogger.error('Connection closed.', err)
+            this.emit('HubConnectionStatusChanged', {
+                isConnected: false,
+                errorMessage: err ? formatHubConnectionError(err) : 'Connection closed.',
+            })
         })
     }
 

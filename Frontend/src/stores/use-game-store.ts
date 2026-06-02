@@ -12,13 +12,23 @@ import { PartySyncer } from './syncers/party.syncer';
 export const useGameStore = defineStore('game', () => {
     const isConnectedWithBackend = ref(false);
     const isConnectedWithEmulator = ref(false);
+    const lastHubConnectionError = ref<string | null>(null);
     const isConnected = computed(() => {
         return isConnectedWithBackend.value && isConnectedWithEmulator.value;
     });
     const currentState = ref<State | null>(null);
 
-    function syncHubConnectionStatus(event: { isConnected: boolean }): void {
+    function syncHubConnectionStatus(event: { isConnected: boolean; errorMessage?: string }): void {
         isConnectedWithBackend.value = event.isConnected;
+
+        if (event.isConnected) {
+            lastHubConnectionError.value = null;
+            return;
+        }
+
+        if (event.errorMessage) {
+            lastHubConnectionError.value = event.errorMessage;
+        }
     }
 
     function syncEmulatorConnectionStatus(event: { isConnected: boolean }): void {
@@ -72,6 +82,7 @@ export const useGameStore = defineStore('game', () => {
         isConnected,
         isConnectedWithBackend,
         isConnectedWithEmulator,
+        lastHubConnectionError,
         currentState,
         syncHubConnectionStatus,
         syncEmulatorConnectionStatus,

@@ -24,6 +24,30 @@ describe("useGameStore", () => {
         expect(store.currentState).toBeNull();
     });
 
+    it("stores hub error message when backend disconnects", () => {
+        const store = useGameStore();
+
+        store.syncHubConnectionStatus({
+            isConnected: false,
+            errorMessage: "Connection refused",
+        });
+
+        expect(store.isConnectedWithBackend).toBe(false);
+        expect(store.lastHubConnectionError).toBe("Connection refused");
+    });
+
+    it("clears hub error message when backend reconnects", () => {
+        const store = useGameStore();
+
+        store.syncHubConnectionStatus({
+            isConnected: false,
+            errorMessage: "Connection refused",
+        });
+        store.syncHubConnectionStatus({ isConnected: true });
+
+        expect(store.lastHubConnectionError).toBeNull();
+    });
+
     it("keeps currentState when emulator reconnects", () => {
         const store = useGameStore();
 

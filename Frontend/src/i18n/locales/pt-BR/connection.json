@@ -2,5 +2,15 @@
   "connection": {
     "connected": "Conectado",
     "disconnected": "Desconectado"
+  },
+  "errors": {
+    "backend": {
+      "title": "Não foi possível conectar ao Digivice",
+      "hint": "Verifique se o aplicativo foi iniciado corretamente e tente novamente."
+    },
+    "emulator": {
+      "title": "Emulador não encontrado",
+      "hint": "Abra o Duckstation, carregue o Digimon World 2003 e, em Debugging, ative Export Memory Shared."
+    }
   }
 }

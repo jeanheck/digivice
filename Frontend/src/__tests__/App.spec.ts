@@ -10,6 +10,9 @@ vi.mock("../stores/use-game-store", () => ({
       journal: { mainQuest: null, sideQuests: [] },
     },
     isConnected: true,
+    isConnectedWithBackend: true,
+    isConnectedWithEmulator: true,
+    lastHubConnectionError: null,
   }),
 }));
 
