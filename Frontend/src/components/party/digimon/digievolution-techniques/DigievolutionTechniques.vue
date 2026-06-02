@@ -41,7 +41,7 @@ const evolutionAvatarUrl = computed(() => {
           :alt="viewModel.evolutionName"
         />
 
-        <h2 class="absolute top-3 left-4 text-lg sm:text-xl font-bold font-cyber text-white tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10">
+        <h2 class="absolute top-3 left-4 text-lg sm:text-xl font-bold text-white tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10">
           {{ viewModel.evolutionName }}
         </h2>
       </div>
@@ -74,7 +74,7 @@ const evolutionAvatarUrl = computed(() => {
 
           <p
             v-if="!viewModel.techniques.length"
-            class="text-white/40 text-center py-4 text-[10px] italic font-cyber border border-white/5 rounded"
+            class="text-white/40 text-center py-4 text-[10px] italic border border-white/5 rounded"
           >
             {{ $t("digievolution.noTechData") }}
           </p>

@@ -88,7 +88,7 @@ const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
         </div>
 
         <div v-else class="flex-1 flex flex-col items-center justify-center p-12 text-center">
-          <p class="text-[10px] text-blue-300/40 font-cyber leading-relaxed max-w-50">
+          <p class="text-[10px] text-blue-300/40 leading-relaxed max-w-50">
             {{ $t("digievolution.selectNode") }}
           </p>
         </div>

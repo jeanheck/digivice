@@ -144,7 +144,6 @@ const families = computed(() => {
   justify-content: center;
   height: 100%;
   color: rgba(0, 255, 255, 0.4);
-  font-family: "Cyber", monospace;
   font-size: 14px;
 }
 </style>

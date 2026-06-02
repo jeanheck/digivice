@@ -16,7 +16,7 @@ defineProps<{
       v-if="!selectedStep"
       class="flex-1 flex flex-col items-center justify-center border border-cyan-900/40 bg-[#000a1a] rounded min-h-100"
     >
-      <span class="text-cyan-500/50 font-cyber text-sm tracking-widest text-center px-8 animate-pulse whitespace-pre-line">
+      <span class="text-cyan-500/50 text-sm tracking-widest text-center px-8 animate-pulse whitespace-pre-line">
         {{ $t("journal.clickStep") }}
       </span>
     </div>
@@ -25,7 +25,7 @@ defineProps<{
       v-else-if="!selectedStep.location && (!selectedStep.zoomedLocations || selectedStep.zoomedLocations.length === 0)"
       class="flex-1 flex flex-col items-center justify-center border border-red-900/40 bg-[#1a0000] rounded min-h-100"
     >
-      <span class="text-red-500/50 font-cyber text-sm tracking-widest text-center px-8 whitespace-pre-line">
+      <span class="text-red-500/50 text-sm tracking-widest text-center px-8 whitespace-pre-line">
         {{ $t("journal.noSignal") }}
       </span>
     </div>

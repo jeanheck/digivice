@@ -81,7 +81,7 @@ const handleSearchSelect = (digievolutionId: number) => {
       v-model="inputValue"
       type="text"
       :placeholder="$t('digievolution.searchDigimon')"
-      class="w-full bg-[#001a33]/60 border border-[#0055ff]/50 rounded px-3 py-1 text-xs text-[#00aaff] placeholder-[#00aaff]/40 outline-none focus:border-[#00aaff] focus:bg-[#002244] font-cyber transition-all"
+      class="w-full bg-[#001a33]/60 border border-[#0055ff]/50 rounded px-3 py-1 text-xs text-[#00aaff] placeholder-[#00aaff]/40 outline-none focus:border-[#00aaff] focus:bg-[#002244] transition-all"
       @focus="handleFocus"
       @blur="handleBlur"
     />
@@ -93,7 +93,7 @@ const handleSearchSelect = (digievolutionId: number) => {
         <div
           v-for="digievolution in filteredDigievolutions"
           :key="digievolution.id"
-          class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors font-cyber border-b last:border-b-0 border-[#0055ff]/20"
+          class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors border-b last:border-b-0 border-[#0055ff]/20"
           @mousedown.prevent="handleSearchSelect(digievolution.id)"
         >
           {{ digievolution.name }}
@@ -101,7 +101,7 @@ const handleSearchSelect = (digievolutionId: number) => {
       </template>
       <p
         v-else
-        class="px-3 py-2 text-xs text-[#00aaff]/50 font-cyber italic"
+        class="px-3 py-2 text-xs text-[#00aaff]/50 italic"
       >
         {{ $t("digievolution.searchNoResults") }}
       </p>

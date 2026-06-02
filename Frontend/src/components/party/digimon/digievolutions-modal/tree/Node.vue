@@ -62,7 +62,7 @@ const nodeAvatarUrl = computed(() => {
 
         <!-- Header: Name & Lock -->
         <div class="absolute top-1.5 left-2 right-2 z-10 flex justify-between items-center">
-            <span class="text-[10px] sm:text-[11px] font-cyber font-bold select-none text-white drop-shadow-[0_2px_2px_black] truncate pr-1">
+            <span class="text-[10px] sm:text-[11px] font-bold select-none text-white drop-shadow-[0_2px_2px_black] truncate pr-1">
               {{ node.name }}
             </span>
             <span v-if="!isUnlocked" class="text-[10px] opacity-70 grayscale">🔒</span>
@@ -72,7 +72,7 @@ const nodeAvatarUrl = computed(() => {
         <!-- Bottom: Requirements (Compact) -->
         <div class="absolute bottom-1.5 left-2 right-2 z-10 flex flex-col gap-0.5 pointer-events-none">
             <template v-for="(req, idx) in node.requirements.slice(0, 2)" :key="idx">
-                <span class="text-[8px] font-cyber font-bold tracking-tight truncate"
+                <span class="text-[8px] font-bold tracking-tight truncate"
                       :class="isReqMet(req) ? 'text-emerald-400' : 'text-[#ddd]'">
                     {{ getRequirementText(req) }}
                 </span>
