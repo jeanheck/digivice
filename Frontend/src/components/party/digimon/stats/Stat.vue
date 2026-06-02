@@ -51,7 +51,7 @@ const icon = computed(() => {
       <span class="shadow-text">{{ statViewModel.sumBetweenDigimonAndEquipaments }}</span>
       <span
         v-if="statViewModel.fromDigievolution > 0"
-        class="ml-2 font-bold bg-linear-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark tracking-normal"
+        class="ml-2 font-bold text-dw3-gold shadow-text-dark tracking-normal"
       >+{{ statViewModel.fromDigievolution }}</span>
     </div>
   </div>

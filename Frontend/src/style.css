@@ -69,6 +69,13 @@ body {
   filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8));
 }
 
+.text-dw3-gold {
+  background: linear-gradient(to bottom, #ffcc00, #ff6600);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .custom-scroll::-webkit-scrollbar {
   width: 4px;
 }

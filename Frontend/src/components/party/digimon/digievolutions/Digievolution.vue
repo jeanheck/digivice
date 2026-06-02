@@ -60,7 +60,7 @@ function openTechniques(): void {
     >
       <div
         class="flex-1 flex items-center px-4 font-bold text-sm tracking-wider"
-        :class="isActiveDigievolution ? 'bg-linear-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark' : 'shadow-text'"
+        :class="isActiveDigievolution ? 'text-dw3-gold shadow-text-dark' : 'shadow-text'"
       >
         {{ digievolutionName }}
       </div>
@@ -68,7 +68,7 @@ function openTechniques(): void {
       <div class="w-0.5 h-full bg-[#0077ff] -skew-x-30 ml-2"></div>
 
       <div class="w-11.25 flex items-center justify-center pl-2 font-bold text-sm mr-2">
-        <span class="bg-linear-to-b from-[#ffcc00] to-[#ff6600] text-transparent bg-clip-text shadow-text-dark">
+        <span class="text-dw3-gold shadow-text-dark">
           {{ digievolutionLevel }}
         </span>
       </div>
