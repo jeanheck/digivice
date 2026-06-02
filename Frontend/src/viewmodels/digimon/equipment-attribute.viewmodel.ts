@@ -1,6 +1,6 @@
 import type { Constant } from "@/constants/constant";
 
-export interface EquipmentsAttributes {
+export interface EquipmentAttributeViewModel {
     attribute: Constant;
     type: string;
     value: number;

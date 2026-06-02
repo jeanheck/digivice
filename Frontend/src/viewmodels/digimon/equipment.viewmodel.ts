@@ -1,9 +1,9 @@
-import type { EquipmentsAttributes } from "@/models/equipments-attributes";
+import type { EquipmentAttributeViewModel } from "@/viewmodels/digimon/equipment-attribute.viewmodel";
 
 export interface EquipmentViewModel {
     id: number;
     type: string;
-    attributes: EquipmentsAttributes[];
+    attributes: EquipmentAttributeViewModel[];
     equipableDigimonIds: number[];
     equipableDigimonNames: string[];
 }

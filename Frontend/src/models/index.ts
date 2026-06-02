@@ -3,7 +3,6 @@ export * from './party/digimon/digievolution-slot';
 export * from './party/digimon/digievolution';
 export * from './party/digimon-slot';
 export * from './party/digimon/digimon';
-export * from './equipments-attributes';
 export * from './party/digimon/equipments';
 export * from './journal/journal';
 export * from './party/party';
