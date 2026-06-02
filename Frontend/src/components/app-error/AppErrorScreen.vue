@@ -30,7 +30,7 @@ const { t } = useI18n();
 
         <p
           v-if="props.error.detail"
-          class="text-[0.55rem] leading-relaxed text-blue-300/80 break-words font-mono"
+          class="text-[0.55rem] leading-relaxed text-blue-300/80 wrap-break-word font-mono"
         >
           {{ props.error.detail }}
         </p>

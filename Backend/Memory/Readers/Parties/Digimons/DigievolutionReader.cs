@@ -27,10 +27,10 @@ namespace Backend.Memory.Readers.Parties.Digimons
             for (int i = 0; i < maxUnlockedDigievolutions; i++)
             {
                 int offset = unlockedDigievolutionsStart + (i * unlockedDigievolutionEntryStride);
-                int entryDigievolutionId = blockReader.ReadInt16(offset);
+                int entryDigievolutionId = blockReader.ReadInt16(offset + digievolutionsAddresses.Id);
                 if (entryDigievolutionId == digievolutionId)
                 {
-                    return blockReader.ReadInt16(offset + 2);
+                    return blockReader.ReadInt16(offset + digievolutionsAddresses.Level);
                 }
             }
 

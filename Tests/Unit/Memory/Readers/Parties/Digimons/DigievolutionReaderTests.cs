@@ -22,7 +22,10 @@ public class DigievolutionReaderTests
         {
             UnlockedDigievolutionsStart = 10,
             UnlockedDigievolutionEntryStride = 4,
-            MaxUnlockedDigievolutions = 3
+            MaxUnlockedDigievolutions = 3,
+            Id = 0,
+            Level = 2,
+            Dvxp = 4
         };
 
         var block = new byte[256];
@@ -57,7 +60,10 @@ public class DigievolutionReaderTests
         {
             UnlockedDigievolutionsStart = 10,
             UnlockedDigievolutionEntryStride = 4,
-            MaxUnlockedDigievolutions = 2
+            MaxUnlockedDigievolutions = 2,
+            Id = 0,
+            Level = 2,
+            Dvxp = 4
         };
 
         var block = new byte[256];

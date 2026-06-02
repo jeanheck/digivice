@@ -50,6 +50,9 @@
         ],
         "UnlockedDigievolutionsStart": "0x50",
         "UnlockedDigievolutionEntryStride": "20",
-        "MaxUnlockedDigievolutions": "60"
+        "MaxUnlockedDigievolutions": "60",
+        "Id": "0x00",
+        "Level": "0x02",
+        "Dvxp": "0x04"
     }
 }

@@ -17,6 +17,15 @@ namespace Backend.Memory.Addresses.Parties.Digimons
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int MaxUnlockedDigievolutions { get; set; }
 
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Id { get; set; }
+
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Level { get; set; }
+
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Dvxp { get; set; }
+
         public void Deconstruct(
             out int unlockedDigievolutionsStart,
             out int unlockedDigievolutionEntryStride,
