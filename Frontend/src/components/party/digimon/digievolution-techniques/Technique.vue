@@ -66,9 +66,9 @@ function getTechniqueElementColorClass(element: string): string {
   <div
     class="relative rounded px-3 py-2 flex items-start gap-3 border transition-all text-xs"
     :class="{
-      'bg-yellow-950/30 border-yellow-500/60 shadow-[0_0_8px_rgba(234,179,8,0.2)]': technique.isSignature,
+      'bg-[#000e1f]/50 border-[#0033aa]/20 opacity-50': !technique.isUnlocked,
+      'bg-yellow-950/30 border-yellow-500/60 shadow-[0_0_8px_rgba(234,179,8,0.2)]': technique.isSignature && technique.isUnlocked,
       'bg-[#001a33]/60 border-[#0055ff]/40': !technique.isSignature && technique.isUnlocked,
-      'bg-[#000e1f]/50 border-[#0033aa]/20 opacity-50': !technique.isSignature && !technique.isUnlocked,
     }"
   >
     <span
