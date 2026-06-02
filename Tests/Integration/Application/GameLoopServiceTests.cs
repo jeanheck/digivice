@@ -141,11 +141,7 @@ public class GameLoopServiceTests
     [Fact]
     public async Task ExecuteAsync_ShouldHandleAbruptExceptionsAndDisconnect()
     {
-        // Setup initial connection, but throw exception on player provider (fails StateComposer.Compose)
-        _memoryReaderMock.SetupSequence(r => r.IsConnected)
-            .Returns(true)
-            .Returns(false); // Fails the connection loss check in catch block
-
+        _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
         _playerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
 
         var service = new GameLoopService(
@@ -159,7 +155,6 @@ public class GameLoopServiceTests
         using var cts = new CancellationTokenSource();
         var serviceTask = service.StartAsync(cts.Token);
 
-        // Allow loop to run and execute catch block
         await Task.Delay(50);
         await cts.CancelAsync();
         
@@ -172,7 +167,40 @@ public class GameLoopServiceTests
             // Expected
         }
 
-        // Verify we dispatched a connection failure event on catch block when not connected
+        _memoryReaderMock.Verify(r => r.Disconnect(), Times.AtLeastOnce);
+        _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
+    }
+
+    [Fact]
+    public async Task ExecuteAsync_ShouldDisconnectAndDispatchFalse_WhenComposeThrowsWhileReaderReportsConnected()
+    {
+        _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
+        _playerProviderMock.Setup(p => p.Get()).Throws(new InvalidOperationException("Address not found for Digimon ID 208"));
+
+        var service = new GameLoopService(
+            _memoryReaderMock.Object,
+            _stateComposer,
+            _eventDispatcherServiceMock.Object,
+            _gameStateStore,
+            _debugConsoleRenderer,
+            _configuration);
+
+        using var cts = new CancellationTokenSource();
+        var serviceTask = service.StartAsync(cts.Token);
+
+        await Task.Delay(50);
+        await cts.CancelAsync();
+
+        try
+        {
+            await serviceTask;
+        }
+        catch (OperationCanceledException)
+        {
+            // Expected
+        }
+
+        _memoryReaderMock.Verify(r => r.Disconnect(), Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
     }
 }

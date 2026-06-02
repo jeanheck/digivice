@@ -67,11 +67,8 @@ namespace Backend.Application
                 catch (Exception ex)
                 {
                     Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
-                    // In case the connection was lost abruptly during read
-                    if (!memoryReader.IsConnected)
-                    {
-                        eventDispatcherService.DispatchEmulatorConnectionStatus(false);
-                    }
+                    memoryReader.Disconnect();
+                    eventDispatcherService.DispatchEmulatorConnectionStatus(false);
                 }
 
                 try

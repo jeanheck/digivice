@@ -23,6 +23,9 @@ export const useGameStore = defineStore('game', () => {
 
     function syncEmulatorConnectionStatus(event: { isConnected: boolean }): void {
         isConnectedWithEmulator.value = event.isConnected;
+        if (!event.isConnected) {
+            currentState.value = null;
+        }
     }
 
     function setInitialState(state: Events.StateDTO | null): void {

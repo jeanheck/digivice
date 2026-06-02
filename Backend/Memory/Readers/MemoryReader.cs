@@ -71,9 +71,16 @@ namespace Backend.Memory.Readers
             }
         }
 
-        public void Dispose()
+        public void Disconnect()
         {
             accessor?.Dispose();
+            accessor = null;
+            IsConnected = false;
+        }
+
+        public void Dispose()
+        {
+            Disconnect();
             Log.Information("Memory resources released.");
         }
 

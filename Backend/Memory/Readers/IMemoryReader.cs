@@ -4,6 +4,7 @@ namespace Backend.Memory.Readers
     {
         bool IsConnected { get; }
         bool TryConnect();
+        void Disconnect();
         byte[]? ReadBytes(long address, int length);
         int? ReadInt32(long address);
         short? ReadInt16(long address);
