@@ -2,9 +2,9 @@
 import { computed, ref, watch } from "vue";
 import type { Digimon } from "@/models";
 import Modal from "@/components/modal/Modal.vue";
-import DigievolutionsModalTree from "./DigievolutionsModalTree.vue";
-import DigievolutionsModalDigievolutionDetails from "./DigievolutionsModalDigievolutionDetails.vue";
-import DigievolutionsModalSearchBar from "./DigievolutionsModalSearchBar.vue";
+import Tree from "./Tree.vue";
+import DigievolutionsModalDigievolutionDetails from "./details/DigievolutionsModalDigievolutionDetails.vue";
+import SearchBar from "./SearchBar.vue";
 import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter";
 
 const props = defineProps<{
@@ -58,7 +58,7 @@ const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
           {{ $t("digievolution.title", { name: digimonName }) }}
         </h2>
 
-        <DigievolutionsModalSearchBar
+        <SearchBar
           :all-digievolutions="allDigievolutions"
           :selected-digievolution-id="selectedDigievolutionId"
           @select-digievolution-id="handleSelectDigievolutionById"
@@ -68,7 +68,7 @@ const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
 
     <div class="flex flex-1 overflow-hidden min-h-0">
       <div class="w-[75%] h-full border-r border-[#0055ff]/30 relative">
-        <DigievolutionsModalTree
+        <Tree
           :digimon-name="digimonName"
           :digimon="digimon"
           :digimon-id="digimonId"
