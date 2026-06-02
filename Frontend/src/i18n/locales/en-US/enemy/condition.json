@@ -1,17 +1,33 @@
 {
   "conditions": {
-    "canpoison": "Can be Poisoned",
-    "resistancepoison": "Resistance from Poison",
-    "canparalyze": "Can be Paralyzed",
-    "resistanceparalyze": "Resistance from Paralyze",
-    "canconfuse": "Can be Confused",
-    "resistanceconfuse": "Resistance from Confuse",
-    "cansleep": "Can be Asleep",
-    "resistancesleep": "Resistance from Sleep",
-    "canko": "Can be Knocked Out",
-    "resistanceko": "Resistance from KO",
-    "drain": "Can be Drained",
-    "steal": "Can be Stealed",
-    "escape": "Player can Escape"
+    "poison": {
+      "canSuffer": "Can be Poisoned",
+      "vunerable": "Resistance from Poison"
+    },
+    "paralyze": {
+      "canSuffer": "Can be Paralyzed",
+      "vunerable": "Resistance from Paralyze"
+    },
+    "confuse": {
+      "canSuffer": "Can be Confused",
+      "vunerable": "Resistance from Confuse"
+    },
+    "sleep": {
+      "canSuffer": "Can be Asleep",
+      "vunerable": "Resistance from Sleep"
+    },
+    "ko": {
+      "canSuffer": "Can be Knocked Out",
+      "vunerable": "Resistance from KO"
+    },
+    "drain": {
+      "canSuffer": "Can be Drained"
+    },
+    "steal": {
+      "canSuffer": "Can be Stealed"
+    },
+    "escape": {
+      "canSuffer": "Player can Escape"
+    }
   }
 }

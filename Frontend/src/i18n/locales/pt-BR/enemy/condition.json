@@ -1,17 +1,33 @@
 {
   "conditions": {
-    "canpoison": "Pode ser Envenenado",
-    "resistancepoison": "Resistência ao Veneno",
-    "canparalyze": "Pode ser Paralisado",
-    "resistanceparalyze": "Resistência a Paralisia",
-    "canconfuse": "Pode ser Confundido",
-    "resistanceconfuse": "Resistência a Confusão",
-    "cansleep": "Pode ser Adormecido",
-    "resistancesleep": "Resistência a Sono",
-    "canko": "Pode ser Nocauteado",
-    "resistanceko": "Resistência a Nocaute",
-    "drain": "Pode ser Drenado",
-    "steal": "Pode ser Roubado",
-    "escape": "Jogador pode Fugir"
+    "poison": {
+      "canSuffer": "Pode ser Envenenado",
+      "vunerable": "Resistência ao Veneno"
+    },
+    "paralyze": {
+      "canSuffer": "Pode ser Paralisado",
+      "vunerable": "Resistência a Paralisia"
+    },
+    "confuse": {
+      "canSuffer": "Pode ser Confundido",
+      "vunerable": "Resistência a Confusão"
+    },
+    "sleep": {
+      "canSuffer": "Pode ser Adormecido",
+      "vunerable": "Resistência a Sono"
+    },
+    "ko": {
+      "canSuffer": "Pode ser Nocauteado",
+      "vunerable": "Resistência a Nocaute"
+    },
+    "drain": {
+      "canSuffer": "Pode ser Drenado"
+    },
+    "steal": {
+      "canSuffer": "Pode ser Roubado"
+    },
+    "escape": {
+      "canSuffer": "Jogador pode Fugir"
+    }
   }
 }

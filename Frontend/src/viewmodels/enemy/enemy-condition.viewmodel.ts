@@ -1,6 +1,6 @@
 export interface EnemyConditionViewModel {
     conditionKey: string;
     can: boolean;
-    value: string | null;
+    value?: string;
     icon: string;
 }

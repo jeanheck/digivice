@@ -1,9 +1,5 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import {
-  BOOLEAN_CONDITION_KEYS,
-  RESISTANCE_TOOLTIP_KEYS,
-} from "@/constants/stat/condition-definition";
 import { EnemyConditionsPresenter } from "@/presenters/map/enemy-modal/enemy-conditions.presenter";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
@@ -22,24 +18,20 @@ const conditions = computed(() => {
   return EnemyConditionsPresenter.getConditions(props.conditions);
 });
 
-function isBooleanCondition(conditionKey: string): boolean {
-  return BOOLEAN_CONDITION_KEYS.has(conditionKey);
+function isBooleanCondition(condition: EnemyConditionViewModel): boolean {
+  return !("value" in condition);
 }
 
 function getDisplayValue(condition: EnemyConditionViewModel): string {
-  if (condition.value !== null) {
-    return condition.value;
-  }
-
-  if (isBooleanCondition(condition.conditionKey)) {
+  if (isBooleanCondition(condition)) {
     return condition.can ? "Yes" : "No";
   }
 
-  return "No";
+  return condition.value ?? "No";
 }
 
 function getValueColorClass(condition: EnemyConditionViewModel): string {
-  if (isBooleanCondition(condition.conditionKey)) {
+  if (isBooleanCondition(condition)) {
     return condition.can ? "text-green-400" : "text-red-400";
   }
 
@@ -47,13 +39,14 @@ function getValueColorClass(condition: EnemyConditionViewModel): string {
 }
 
 function getTooltipKey(condition: EnemyConditionViewModel): string {
-  if (isBooleanCondition(condition.conditionKey)) {
-    return `conditions.${condition.conditionKey}`;
+  if (isBooleanCondition(condition)) {
+    return `conditions.${condition.conditionKey}.canSuffer`;
   }
 
-  const tooltipKeys = RESISTANCE_TOOLTIP_KEYS[condition.conditionKey]!;
+  const canSufferTooltip = `conditions.${condition.conditionKey}.canSuffer`;
+  const vunerableTooltip = `conditions.${condition.conditionKey}.vunerable`;
 
-  return condition.can ? tooltipKeys.resistance : tooltipKeys.canSuffer;
+  return condition.can ? vunerableTooltip : canSufferTooltip;
 }
 </script>
 
