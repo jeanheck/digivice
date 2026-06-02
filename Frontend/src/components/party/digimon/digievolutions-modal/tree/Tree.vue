@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, watch, nextTick, ref } from "vue";
 import type { Digimon } from "@/models/digimon";
-import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
-import type { DigievolutionTreeFamilyViewModel } from "@/viewmodels/digievolution/digievolution-tree-family.viewmodel";
+import { TreePresenter } from "@/presenters/tree.presenter.ts";
+import type { FamilyViewModel } from "@/viewmodels/digievolution/family.viewmodel.ts";
 import SimpleFamily from "./SimpleFamily.vue";
 import ForkFamily from "./ForkFamily.vue";
 
@@ -19,7 +19,7 @@ const emit = defineEmits<{
 
 const familyTreeContainer = ref<HTMLElement | null>(null);
 
-const treeViewModel = DigievolutionsModalTreePresenter.getDigievolutionsTree(props.digimonId);
+const treeViewModel = TreePresenter.getDigievolutionsTree(props.digimonId);
 
 const scrollSelectedNodeIntoView = (digievolutionId: number) => {
   const container = familyTreeContainer.value;
@@ -84,7 +84,7 @@ watch(() => props.selectedDigievolutionId, (digievolutionId) => {
   });
 });
 
-const hasBranching = (family: DigievolutionTreeFamilyViewModel): boolean => {
+const hasBranching = (family: FamilyViewModel): boolean => {
   return family.nodesBeforeFork.length > 0 && family.branchs.length > 1;
 };
 

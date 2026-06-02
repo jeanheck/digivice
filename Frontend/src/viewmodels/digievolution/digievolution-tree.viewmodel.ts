@@ -1,5 +1,5 @@
-import type { DigievolutionTreeFamilyViewModel } from "./digievolution-tree-family.viewmodel";
+import type { FamilyViewModel } from "./family.viewmodel";
 
 export interface DigievolutionsTreeViewModel {
-    families: DigievolutionTreeFamilyViewModel[];
+    families: FamilyViewModel[];
 }

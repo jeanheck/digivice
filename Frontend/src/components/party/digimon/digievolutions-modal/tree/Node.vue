@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import type { Digimon } from "@/models";
-import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
+import { NodePresenter } from "@/presenters/node.presenter";
 import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel";
 import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
 
@@ -18,7 +18,7 @@ const emit = defineEmits<{
 }>();
 
 const isUnlocked = computed(() => {
-    return DigievolutionsModalTreePresenter.checkRequirements(props.digimon, props.node);
+    return NodePresenter.checkRequirements(props.digimon, props.node);
 });
 
 const getRequirementText = (requirement: RequirementViewModel) => {
@@ -31,7 +31,7 @@ const getRequirementText = (requirement: RequirementViewModel) => {
 };
 
 const isReqMet = (requirement: RequirementViewModel) => {
-    return DigievolutionsModalTreePresenter.isRequirementMet(props.digimon, requirement);
+    return NodePresenter.isRequirementMet(props.digimon, requirement);
 };
 
 const nodeAvatarUrl = computed(() => {

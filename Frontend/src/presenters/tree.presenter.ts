@@ -1,13 +1,11 @@
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import { DigimonRepository } from "@/repositories/digimon.repository";
 import type { DigievolutionTreeRaw } from "@/repositories/tables/raws/digievolution/digievolution-tree.raw";
-import type { Attributes, Digimon } from "@/models";
-import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
-import type { DigievolutionTreeFamilyViewModel } from "@/viewmodels/digievolution/digievolution-tree-family.viewmodel";
+import type { FamilyViewModel } from "@/viewmodels/digievolution/family.viewmodel";
 import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel";
 import type { DigievolutionsTreeViewModel } from "@/viewmodels/digievolution/digievolution-tree.viewmodel";
 
-export class DigievolutionsModalTreePresenter {
+export class TreePresenter {
     public static getDigievolutionsTree(digimonId: number): DigievolutionsTreeViewModel {
         const digievolutionTreeTable = DigievolutionRepository.getDigievolutionTree();
         const sortedFamilyKeys = this.sortFamilyKeys(
@@ -44,7 +42,7 @@ export class DigievolutionsModalTreePresenter {
     private static buildDigievolutionTreeFamily(
         familyKey: string,
         familyNodes: NodeViewModel[]
-    ): DigievolutionTreeFamilyViewModel {
+    ): FamilyViewModel {
         if (!this.familyHasFork(familyNodes)) {
             return {
                 key: familyKey,
@@ -115,40 +113,5 @@ export class DigievolutionsModalTreePresenter {
         }
 
         return Number(next);
-    }
-
-    public static isRequirementMet(
-        digimon: Digimon,
-        requirement: RequirementViewModel
-    ): boolean {
-        switch (requirement.type) {
-            case "DigimonLevel":
-                return digimon.level >= requirement.value;
-            case "Attribute": {
-                const attribute = digimon.attributes[requirement.attribute?.toLowerCase() as keyof Attributes];
-                return attribute >= requirement.value;
-            }
-            case "DigievolutionLevel": // TODO - Check how we will read this information on backend first
-                return false;
-            default:
-                return false;
-        }
-    }
-
-    public static checkRequirements(
-        digimon: Digimon,
-        node: { requirements: RequirementViewModel[] }
-    ): boolean {
-        if (node.requirements.length === 0) {
-            return true;
-        }
-
-        for (const requirement of node.requirements) {
-            if (!this.isRequirementMet(digimon, requirement)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 }
