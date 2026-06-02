@@ -4,6 +4,11 @@ import { ConditionIcon } from "@/constants/stat/condition-icon";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
+type EnemyResistanceCondition = {
+    can: boolean;
+    value: number;
+};
+
 export class EnemyConditionConverter {
     public static convertConditions(conditions: EnemyViewModel["conditions"]): EnemyConditionViewModel[] {
         return Object.values(Condition).map((conditionKey) => {
@@ -16,27 +21,29 @@ export class EnemyConditionConverter {
         conditions: EnemyViewModel["conditions"]
     ): EnemyConditionViewModel {
         const definition = ConditionDefinition[conditionKey];
+        const condition = conditions[conditionKey];
 
-        if (definition.kind === "resistance") {
-            const hasResistance = conditions[definition.canField];
+        if (definition.kind === "boolean") {
+            const isEnabled = condition.can;
 
             return {
                 conditionKey,
-                tooltipKey: hasResistance ? definition.resistanceTooltipKey : definition.canSufferTooltipKey,
-                value: hasResistance ? `${conditions[definition.valueField]}%` : "No",
+                tooltipKey: definition.tooltipKey,
+                value: isEnabled ? "Yes" : "No",
                 icon: ConditionIcon[conditionKey],
-                valueColorClass: hasResistance ? "text-white" : "text-red-400",
+                valueColorClass: isEnabled ? "text-green-400" : "text-red-400",
             };
         }
 
-        const isEnabled = conditions[definition.canField];
+        const resistanceCondition = condition as EnemyResistanceCondition;
+        const hasResistance = resistanceCondition.can;
 
         return {
             conditionKey,
-            tooltipKey: definition.tooltipKey,
-            value: isEnabled ? "Yes" : "No",
+            tooltipKey: hasResistance ? definition.resistanceTooltipKey : definition.canSufferTooltipKey,
+            value: hasResistance ? `${resistanceCondition.value}%` : "No",
             icon: ConditionIcon[conditionKey],
-            valueColorClass: isEnabled ? "text-green-400" : "text-red-400",
+            valueColorClass: hasResistance ? "text-white" : "text-red-400",
         };
     }
 }

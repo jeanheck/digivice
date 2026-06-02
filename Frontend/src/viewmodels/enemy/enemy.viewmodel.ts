@@ -22,19 +22,35 @@ export interface EnemyViewModel {
         dark: number;
     },
     conditions: {
-        canPoison: boolean;
-        poison: number;
-        canParalyze: boolean;
-        paralyze: number;
-        canConfuse: boolean;
-        confuse: number;
-        canSleep: boolean;
-        sleep: number;
-        canKO: boolean;
-        ko: number;
-        canDrain: boolean;
-        canSteal: boolean;
-        canEscape: boolean;
+        poison: {
+            can: boolean;
+            value: number;
+        }
+        paralyze: {
+            can: boolean;
+            value: number;
+        },
+        confuse: {
+            can: boolean;
+            value: number;
+        },
+        sleep: {
+            can: boolean;
+            value: number;
+        },
+        ko: {
+            can: boolean;
+            value: number;
+        },
+        drain: {
+            can: boolean;
+        },
+        steal: {
+            can: boolean;
+        },
+        escape: {
+            can: boolean;
+        }
     }
     strDown: string;
     defDown: string;

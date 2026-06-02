@@ -27,21 +27,36 @@ export class EnemyConverter {
                 dark: enemyRaw.dark,
             },
             conditions: {
-                canPoison: enemyRaw.canPoison,
-                poison: enemyRaw.poison,
-                canParalyze: enemyRaw.canParalyze,
-                paralyze: enemyRaw.paralyze,
-                canConfuse: enemyRaw.canConfuse,
-                confuse: enemyRaw.confuse,
-                canSleep: enemyRaw.canSleep,
-                sleep: enemyRaw.sleep,
-                canKO: enemyRaw.canKO,
-                ko: enemyRaw.ko,
-                canDrain: enemyRaw.canDrain,
-                canSteal: enemyRaw.canSteal,
-                canEscape: enemyRaw.canEscape
+                poison: {
+                    can: enemyRaw.canPoison,
+                    value: enemyRaw.poison,
+                },
+                paralyze: {
+                    can: enemyRaw.canParalyze,
+                    value: enemyRaw.paralyze,
+                },
+                confuse: {
+                    can: enemyRaw.canConfuse,
+                    value: enemyRaw.confuse,
+                },
+                sleep: {
+                    can: enemyRaw.canSleep,
+                    value: enemyRaw.sleep,
+                },
+                ko: {
+                    can: enemyRaw.canKO,
+                    value: enemyRaw.ko,
+                },
+                drain: {
+                    can: enemyRaw.canDrain,
+                },
+                steal: {
+                    can: enemyRaw.canSteal,
+                },
+                escape: {
+                    can: enemyRaw.canEscape,
+                }
             },
-            
             strDown: enemyRaw.strDown,
             defDown: enemyRaw.defDown,
             spdDown: enemyRaw.spdDown,
