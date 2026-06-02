@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
 import Digimon from "@/components/party/digimon/Digimon.vue";
-import { PartyPresenter } from "@/presenters/party.presenter";
+import { PartyPresenter } from "@/presenters/party/party.presenter";
 
 const store = useGameStore();
 

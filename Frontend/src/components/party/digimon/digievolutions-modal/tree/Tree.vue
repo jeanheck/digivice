@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, watch, nextTick, ref } from "vue";
 import type { Digimon } from "@/models/digimon";
-import { TreePresenter } from "@/presenters/tree.presenter.ts";
+import { TreePresenter } from "@/presenters/tree/tree.presenter.ts";
 import type { FamilyViewModel } from "@/viewmodels/digievolution/family.viewmodel.ts";
 import SimpleFamily from "./SimpleFamily.vue";
 import ForkFamily from "./ForkFamily.vue";

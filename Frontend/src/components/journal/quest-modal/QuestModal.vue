@@ -6,7 +6,7 @@ import Steps from "./Steps.vue";
 import Requisites from "./Requisites.vue";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
-import { QuestModalPresenter } from "@/presenters/quest-modal.presenter";
+import { QuestModalPresenter } from "@/presenters/journal/quest-modal.presenter.ts";
 
 const props = defineProps<{
   questViewModel: QuestViewModel | null;

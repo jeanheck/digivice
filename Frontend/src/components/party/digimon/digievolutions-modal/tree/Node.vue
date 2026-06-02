@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import type { Digimon } from "@/models";
-import { NodePresenter } from "@/presenters/node.presenter";
+import { NodePresenter } from "@/presenters/tree/node.presenter";
 import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel";
 import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
 

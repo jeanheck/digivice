@@ -7,7 +7,7 @@ import Stat from "./Stat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import StatsTooltip from "./StatsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import { StatsPresenter } from "@/presenters/stats.presenter.ts";
+import { StatsPresenter } from "@/presenters/party/digimon/stats.presenter.ts";
 
 const props = defineProps<{
   digimon: Digimon;

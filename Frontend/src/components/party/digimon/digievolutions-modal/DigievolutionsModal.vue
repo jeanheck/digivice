@@ -5,7 +5,7 @@ import Modal from "@/components/modal/Modal.vue";
 import Tree from "./tree/Tree.vue";
 import DigievolutionTechniques from "@/components/party/digimon/digievolution-techniques/DigievolutionTechniques.vue";
 import SearchBar from "./SearchBar.vue";
-import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter";
+import { DigievolutionsModalPresenter } from "@/presenters/digievolution/digievolutions-modal.presenter.ts";
 
 const props = defineProps<{
   isOpen: boolean;

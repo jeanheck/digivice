@@ -4,7 +4,7 @@ import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import Links from "@/components/party/digimon/digievolution-techniques/Links.vue";
 import SectionTitle from "@/components/party/digimon/digievolution-techniques/SectionTitle.vue";
 import Technique from "@/components/party/digimon/digievolution-techniques/Technique.vue";
-import { DigievolutionTechniquesPresenter } from "@/presenters/digievolution-techniques.presenter";
+import { DigievolutionTechniquesPresenter } from "@/presenters/digievolution/digievolution-techniques.presenter";
 
 const props = defineProps<{
   digievolutionId: number;

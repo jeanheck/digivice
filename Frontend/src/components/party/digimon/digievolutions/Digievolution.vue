@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { DigievolutionPresenter } from "@/presenters/digievolution.presenter";
+import { DigievolutionPresenter } from "@/presenters/digievolution/digievolution.presenter";
 import type { DigievolutionResumedViewModel } from "@/viewmodels/digievolution/digievolution-resumed.viewmodel";
 
 const props = defineProps<{
