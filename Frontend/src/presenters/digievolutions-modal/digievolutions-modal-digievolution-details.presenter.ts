@@ -3,7 +3,7 @@ import { TechniqueConverter } from "@/presenters/converter/technique.converter";
 import { DigievolutionTechniquesHelper } from "@/presenters/helper/digievolution-techniques.helper";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import { DigimonRepository } from "@/repositories/digimon.repository";
-import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
+import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
 import type { DigimonDigievolutionViewModel } from "@/viewmodels/digimon/digimon-digievolution.viewmodel";
 import type { DigievolutionsModalDigievolutionDetailsViewModel } from "@/viewmodels/digievolution/digievolutions-modal-digievolution-details.viewmodel";
 import type { DigievolutionsModalDigievolutionLinkViewModel } from "@/viewmodels/digievolution/digievolutions-modal-digievolution-link.viewmodel";
@@ -30,7 +30,7 @@ export class DigievolutionsModalDigievolutionDetailsPresenter {
     }
 
     private static getRequirementDigievolutions(
-        evolutionRequirements: DigimonDigievolutionRequirementViewModel[]
+        evolutionRequirements: RequirementViewModel[]
     ): DigievolutionsModalDigievolutionLinkViewModel[] {
         return evolutionRequirements
             .filter((requirement) => requirement.type === "DigievolutionLevel")

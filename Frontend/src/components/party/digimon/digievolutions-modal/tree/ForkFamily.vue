@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { Digimon } from "@/models/digimon";
-import type { DigievolutionTreeFamilyNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree-family-node.viewmodel";
-import DigievolutionsTreeFamilyBranch from "./DigievolutionsTreeFamilyBranch.vue";
+import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel.ts";
+import Branch from "./Branch.vue";
 
 defineProps<{
-  nodesBeforeFork: DigievolutionTreeFamilyNodeViewModel[];
-  branchs: DigievolutionTreeFamilyNodeViewModel[][];
+  nodesBeforeFork: NodeViewModel[];
+  branchs: NodeViewModel[][];
   digimon: Digimon;
   digimonName: string;
   selectedDigievolutionId?: number;
@@ -20,7 +20,7 @@ const emit = defineEmits<{
   <div class="family-row branching">
     <div class="branch-layout">
       <div class="shared-prefix">
-        <DigievolutionsTreeFamilyBranch
+        <Branch
           :nodes="nodesBeforeFork"
           :digimon="digimon"
           :digimon-name="digimonName"
@@ -40,7 +40,7 @@ const emit = defineEmits<{
           :key="branchIndex"
           class="branch-row"
         >
-          <DigievolutionsTreeFamilyBranch
+          <Branch
             :nodes="branch"
             :digimon="digimon"
             :digimon-name="digimonName"

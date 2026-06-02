@@ -1,3 +1,3 @@
-import type { DigimonDigievolutionRequirementViewModel } from "./digimon-digievolution-requirement.viewmodel";
+import type { RequirementViewModel } from "./requirement.viewmodel";
 
-export type DigimonDigievolutionViewModel = Record<string, DigimonDigievolutionRequirementViewModel[]>
+export type DigimonDigievolutionViewModel = Record<string, RequirementViewModel[]>

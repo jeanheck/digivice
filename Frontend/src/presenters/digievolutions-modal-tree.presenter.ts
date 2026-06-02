@@ -2,9 +2,9 @@ import { DigievolutionRepository } from "@/repositories/digievolution.repository
 import { DigimonRepository } from "@/repositories/digimon.repository";
 import type { DigievolutionTreeRaw } from "@/repositories/tables/raws/digievolution/digievolution-tree.raw";
 import type { Attributes, Digimon } from "@/models";
-import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
+import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
 import type { DigievolutionTreeFamilyViewModel } from "@/viewmodels/digievolution/digievolution-tree-family.viewmodel";
-import type { DigievolutionTreeFamilyNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree-family-node.viewmodel";
+import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel";
 import type { DigievolutionsTreeViewModel } from "@/viewmodels/digievolution/digievolution-tree.viewmodel";
 
 export class DigievolutionsModalTreePresenter {
@@ -43,7 +43,7 @@ export class DigievolutionsModalTreePresenter {
 
     private static buildDigievolutionTreeFamily(
         familyKey: string,
-        familyNodes: DigievolutionTreeFamilyNodeViewModel[]
+        familyNodes: NodeViewModel[]
     ): DigievolutionTreeFamilyViewModel {
         if (!this.familyHasFork(familyNodes)) {
             return {
@@ -67,23 +67,23 @@ export class DigievolutionsModalTreePresenter {
         };
     }
 
-    private static familyHasFork(familyNodes: DigievolutionTreeFamilyNodeViewModel[]): boolean {
+    private static familyHasFork(familyNodes: NodeViewModel[]): boolean {
         return familyNodes.some((node) => Array.isArray(node.next));
     }
 
-    private static findForkNode(familyNodes: DigievolutionTreeFamilyNodeViewModel[]): DigievolutionTreeFamilyNodeViewModel {
+    private static findForkNode(familyNodes: NodeViewModel[]): NodeViewModel {
         return familyNodes.find((node) => Array.isArray(node.next))!;
     }
 
     private static buildBranch(
         startNodeId: number,
-        familyNodes: DigievolutionTreeFamilyNodeViewModel[]
-    ): DigievolutionTreeFamilyNodeViewModel[] {
-        const branch: DigievolutionTreeFamilyNodeViewModel[] = [];
+        familyNodes: NodeViewModel[]
+    ): NodeViewModel[] {
+        const branch: NodeViewModel[] = [];
         let nextNodeId: number | null = startNodeId;
 
         do {
-            const currentNode: DigievolutionTreeFamilyNodeViewModel = familyNodes.find((node) => nextNodeId === node.id)!;
+            const currentNode: NodeViewModel = familyNodes.find((node) => nextNodeId === node.id)!;
             branch.push(currentNode);
             nextNodeId = currentNode.next as number | null;
         } while (nextNodeId);
@@ -94,7 +94,7 @@ export class DigievolutionsModalTreePresenter {
     private static buildDigievolutionTreeNode(
         digimonId: number,
         digievolutionTreeRaw: DigievolutionTreeRaw
-    ): DigievolutionTreeFamilyNodeViewModel {
+    ): NodeViewModel {
         const digievolutionId = Number(digievolutionTreeRaw.id);
 
         return {
@@ -119,7 +119,7 @@ export class DigievolutionsModalTreePresenter {
 
     public static isRequirementMet(
         digimon: Digimon,
-        requirement: DigimonDigievolutionRequirementViewModel
+        requirement: RequirementViewModel
     ): boolean {
         switch (requirement.type) {
             case "DigimonLevel":
@@ -137,7 +137,7 @@ export class DigievolutionsModalTreePresenter {
 
     public static checkRequirements(
         digimon: Digimon,
-        node: { requirements: DigimonDigievolutionRequirementViewModel[] }
+        node: { requirements: RequirementViewModel[] }
     ): boolean {
         if (node.requirements.length === 0) {
             return true;

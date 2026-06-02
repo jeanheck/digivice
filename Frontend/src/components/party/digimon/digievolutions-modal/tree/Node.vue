@@ -3,11 +3,11 @@ import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import type { Digimon } from "@/models";
 import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
-import type { DigievolutionTreeFamilyNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree-family-node.viewmodel";
-import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
+import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel";
+import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
 
 const props = defineProps<{
-  node: DigievolutionTreeFamilyNodeViewModel;
+  node: NodeViewModel;
   digimon: Digimon;
   isSelected?: boolean;
   digimonName: string;
@@ -21,7 +21,7 @@ const isUnlocked = computed(() => {
     return DigievolutionsModalTreePresenter.checkRequirements(props.digimon, props.node);
 });
 
-const getRequirementText = (requirement: DigimonDigievolutionRequirementViewModel) => {
+const getRequirementText = (requirement: RequirementViewModel) => {
     switch (requirement.type) {
         case "DigimonLevel": return `${props.digimonName} Lv ${requirement.value}`;
         case "Attribute": return `${props.digimonName} - ${requirement.attribute} >= ${requirement.value}`;
@@ -30,7 +30,7 @@ const getRequirementText = (requirement: DigimonDigievolutionRequirementViewMode
     }
 };
 
-const isReqMet = (requirement: DigimonDigievolutionRequirementViewModel) => {
+const isReqMet = (requirement: RequirementViewModel) => {
     return DigievolutionsModalTreePresenter.isRequirementMet(props.digimon, requirement);
 };
 

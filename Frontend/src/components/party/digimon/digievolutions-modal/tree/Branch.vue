@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { Digimon } from "@/models/digimon";
-import type { DigievolutionTreeFamilyNodeViewModel } from "@/viewmodels/digievolution/digievolution-tree-family-node.viewmodel";
-import DigievolutionsTreeNode from "./DigievolutionsTreeNode.vue";
+import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel.ts";
+import Node from "./Node.vue";
 
 defineProps<{
-  nodes: DigievolutionTreeFamilyNodeViewModel[];
+  nodes: NodeViewModel[];
   digimon: Digimon;
   digimonName: string;
   selectedDigievolutionId?: number;
@@ -17,7 +17,7 @@ const emit = defineEmits<{
 
 <template>
   <template v-for="(node, nodeIndex) in nodes" :key="node.id">
-    <DigievolutionsTreeNode
+    <Node
       :node="node"
       :digimon="digimon"
       :digimon-name="digimonName"

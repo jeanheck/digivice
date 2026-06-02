@@ -1,5 +1,5 @@
 import { DigievolutionRepository, DigimonRepository } from "@/repositories";
-import type { DigimonDigievolutionRequirementViewModel } from "@/viewmodels/digimon/digimon-digievolution-requirement.viewmodel";
+import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
 import type { DigievolutionsModalDigievolutionLinkViewModel } from "@/viewmodels/digievolution/digievolutions-modal-digievolution-link.viewmodel";
 
 export class DigievolutionsModalPresenter {
@@ -15,7 +15,7 @@ export class DigievolutionsModalPresenter {
     public static getDigievolutionRequirements(
         digimonId: number,
         digievolutionId: number
-    ): DigimonDigievolutionRequirementViewModel[] {
+    ): RequirementViewModel[] {
         return DigimonRepository.getDigievolutionRequirements(digimonId, digievolutionId);
     }
 }

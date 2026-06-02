@@ -1,7 +1,7 @@
-import type { DigievolutionTreeFamilyNodeViewModel } from "./digievolution-tree-family-node.viewmodel";
+import type { NodeViewModel } from "./node.viewmodel";
 
 export interface DigievolutionTreeFamilyViewModel {
     key: string;
-    nodesBeforeFork: DigievolutionTreeFamilyNodeViewModel[];
-    branchs: DigievolutionTreeFamilyNodeViewModel[][];
+    nodesBeforeFork: NodeViewModel[];
+    branchs: NodeViewModel[][];
 }

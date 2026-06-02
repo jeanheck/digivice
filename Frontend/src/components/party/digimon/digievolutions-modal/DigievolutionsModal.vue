@@ -2,7 +2,7 @@
 import { computed, ref, watch } from "vue";
 import type { Digimon } from "@/models";
 import Modal from "@/components/modal/Modal.vue";
-import Tree from "./Tree.vue";
+import Tree from "./tree/Tree.vue";
 import DigievolutionsModalDigievolutionDetails from "./details/DigievolutionsModalDigievolutionDetails.vue";
 import SearchBar from "./SearchBar.vue";
 import { DigievolutionsModalPresenter } from "@/presenters/digievolutions-modal.presenter";

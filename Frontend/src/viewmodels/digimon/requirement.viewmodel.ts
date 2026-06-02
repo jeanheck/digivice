@@ -1,4 +1,4 @@
-export interface DigimonDigievolutionRequirementViewModel {
+export interface RequirementViewModel {
     type: string;
     digievolution?: string;
     attribute?: string;

@@ -3,8 +3,8 @@ import { computed, watch, nextTick, ref } from "vue";
 import type { Digimon } from "@/models/digimon";
 import { DigievolutionsModalTreePresenter } from "@/presenters/digievolutions-modal-tree.presenter";
 import type { DigievolutionTreeFamilyViewModel } from "@/viewmodels/digievolution/digievolution-tree-family.viewmodel";
-import DigievolutionsTreeSimpleFamily from "./digievolutions-tree/DigievolutionsTreeSimpleFamily.vue";
-import DigievolutionsTreeForkFamily from "./digievolutions-tree/DigievolutionsTreeForkFamily.vue";
+import SimpleFamily from "./SimpleFamily.vue";
+import ForkFamily from "./ForkFamily.vue";
 
 const props = defineProps<{
   digimonName: string;
@@ -96,7 +96,7 @@ const families = computed(() => {
 <template>
   <div ref="familyTreeContainer" class="family-tree-container custom-scroll">
     <template v-for="(family, familyIndex) in families" :key="family.key">
-      <DigievolutionsTreeSimpleFamily
+      <SimpleFamily
         v-if="!hasBranching(family)"
         :branchs="family.branchs"
         :digimon="digimon"
@@ -105,7 +105,7 @@ const families = computed(() => {
         @select-digievolution-id="emit('select-digievolution-id', $event)"
       />
 
-      <DigievolutionsTreeForkFamily
+      <ForkFamily
         v-else
         :nodes-before-fork="family.nodesBeforeFork"
         :branchs="family.branchs"
