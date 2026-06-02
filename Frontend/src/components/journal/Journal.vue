@@ -36,10 +36,10 @@ const closeQuestModal = () => {
 <template>
   <aside
     v-if="journalViewModel"
-    class="w-full h-full bg-[#000e3f] rounded-md shadow-lg border-2 border-[#0033aa] p-3 flex flex-col pt-0 overflow-hidden mb-1"
+    class="dw3-aside"
   >
-    <div class="w-full flex items-center justify-center border-b border-[#0033aa]/50 bg-[#000e3f] sticky top-0 py-2 z-10">
-      <h3 class="font-bold tracking-widest text-[#0077ff] shadow-text uppercase text-sm">{{ $t("journal.title") }}</h3>
+    <div class="dw3-aside-header">
+      <h3 class="dw3-aside-title shadow-text">{{ $t("journal.title") }}</h3>
     </div>
 
     <div class="flex-1 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
