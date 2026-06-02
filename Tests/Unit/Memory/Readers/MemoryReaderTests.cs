@@ -69,6 +69,85 @@ public class MemoryReaderTests
     }
 
     [Fact]
+    public void IsConnectionAlive_ShouldReturnTrue_WhenConnectedProcessStillExists()
+    {
+        var processServiceMock = new Mock<IProcessService>();
+        processServiceMock.Setup(p => p.GetProcessIdByName("duckstation")).Returns(1234);
+
+        var memoryAccessorMock = new Mock<IMemoryAccessor>();
+        var memoryProviderMock = new Mock<IMemoryProvider>();
+        memoryProviderMock.Setup(m => m.OpenExisting("duckstation_1234")).Returns(memoryAccessorMock.Object);
+
+        var configSectionMock = new Mock<IConfigurationSection>();
+        configSectionMock.Setup(s => s.Value).Returns("duckstation");
+        var configurationMock = new Mock<IConfiguration>();
+        configurationMock.Setup(c => c.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
+
+        var reader = new MemoryReader(
+            processServiceMock.Object,
+            memoryProviderMock.Object,
+            configurationMock.Object
+        );
+        reader.TryConnect();
+
+        Assert.True(reader.IsConnectionAlive());
+    }
+
+    [Fact]
+    public void IsConnectionAlive_ShouldReturnFalse_WhenEmulatorProcessIsGone()
+    {
+        var processServiceMock = new Mock<IProcessService>();
+        processServiceMock.SetupSequence(p => p.GetProcessIdByName("duckstation"))
+            .Returns(1234)
+            .Returns((int?)null);
+
+        var memoryAccessorMock = new Mock<IMemoryAccessor>();
+        var memoryProviderMock = new Mock<IMemoryProvider>();
+        memoryProviderMock.Setup(m => m.OpenExisting("duckstation_1234")).Returns(memoryAccessorMock.Object);
+
+        var configSectionMock = new Mock<IConfigurationSection>();
+        configSectionMock.Setup(s => s.Value).Returns("duckstation");
+        var configurationMock = new Mock<IConfiguration>();
+        configurationMock.Setup(c => c.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
+
+        var reader = new MemoryReader(
+            processServiceMock.Object,
+            memoryProviderMock.Object,
+            configurationMock.Object
+        );
+        reader.TryConnect();
+
+        Assert.False(reader.IsConnectionAlive());
+    }
+
+    [Fact]
+    public void IsConnectionAlive_ShouldReturnFalse_WhenEmulatorProcessIdChanges()
+    {
+        var processServiceMock = new Mock<IProcessService>();
+        processServiceMock.SetupSequence(p => p.GetProcessIdByName("duckstation"))
+            .Returns(1234)
+            .Returns(5678);
+
+        var memoryAccessorMock = new Mock<IMemoryAccessor>();
+        var memoryProviderMock = new Mock<IMemoryProvider>();
+        memoryProviderMock.Setup(m => m.OpenExisting("duckstation_1234")).Returns(memoryAccessorMock.Object);
+
+        var configSectionMock = new Mock<IConfigurationSection>();
+        configSectionMock.Setup(s => s.Value).Returns("duckstation");
+        var configurationMock = new Mock<IConfiguration>();
+        configurationMock.Setup(c => c.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
+
+        var reader = new MemoryReader(
+            processServiceMock.Object,
+            memoryProviderMock.Object,
+            configurationMock.Object
+        );
+        reader.TryConnect();
+
+        Assert.False(reader.IsConnectionAlive());
+    }
+
+    [Fact]
     public void Disconnect_ShouldSetIsConnectedFalse_AndDisposeAccessor()
     {
         var processServiceMock = new Mock<IProcessService>();

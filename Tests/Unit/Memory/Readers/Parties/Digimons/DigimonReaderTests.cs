@@ -24,14 +24,13 @@ public class DigimonReaderTests
     }
 
     [Fact]
-    public void Read_ShouldThrowInvalidOperationException_WhenMemoryBlockIsTooShort()
+    public void Read_ShouldReturnNull_WhenMemoryBlockIsTooShort()
     {
-        // Arrange
         var address = new DigimonAddress { Id = 1, Address = 0x800100 };
         var statusAddresses = new DigimonStatusAddresses();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(new byte[1000]); // Retorna apenas 1000 bytes
+        memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(new byte[1000]);
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
@@ -42,8 +41,9 @@ public class DigimonReaderTests
             evolutionReaderMock.Object
         );
 
-        // Act & Assert
-        Assert.Throws<InvalidOperationException>(() => reader.Read(address, statusAddresses));
+        var result = reader.Read(address, statusAddresses);
+
+        Assert.Null(result);
     }
 
     [Fact]

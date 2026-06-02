@@ -18,6 +18,77 @@ using Backend.Domain.Models;
 public class EventDispatcherServiceTests
 {
     [Fact]
+    public void DispatchEmulatorConnectionStatus_ShouldClearStateAndNotify_WhenAlreadyDisconnectedButStateExists()
+    {
+        var clientProxyMock = new Mock<ISingleClientProxy>();
+        clientProxyMock.Setup(c => c.SendCoreAsync(
+            It.IsAny<string>(),
+            It.IsAny<object?[]>(),
+            It.IsAny<CancellationToken>()))
+            .Returns(Task.CompletedTask);
+
+        var hubClientsMock = new Mock<IHubClients>();
+        hubClientsMock.Setup(c => c.All).Returns(clientProxyMock.Object);
+
+        var hubContextMock = new Mock<IHubContext<GameHub>>();
+        hubContextMock.Setup(h => h.Clients).Returns(hubClientsMock.Object);
+
+        var loggerMock = new Mock<ILogger<EventDispatcherService>>();
+        var gameStateStore = new GameStateStore();
+        gameStateStore.IsConnectedWithEmulator = false;
+        gameStateStore.UpdateState(new State());
+
+        var service = new EventDispatcherService(
+            hubContextMock.Object,
+            loggerMock.Object,
+            gameStateStore
+        );
+
+        service.DispatchEmulatorConnectionStatus(false);
+
+        Assert.Null(gameStateStore.CurrentState);
+        Assert.False(gameStateStore.IsConnectedWithEmulator);
+        clientProxyMock.Verify(
+            c => c.SendCoreAsync(
+                "EmulatorConnectionStatusChanged",
+                It.IsAny<object?[]>(),
+                It.IsAny<CancellationToken>()
+            ),
+            Times.Once
+        );
+    }
+
+    [Fact]
+    public void DispatchEmulatorConnectionStatus_ShouldNotNotifyClients_WhenStoreWasClearedBeforeDispatch()
+    {
+        var clientProxyMock = new Mock<ISingleClientProxy>();
+        var hubClientsMock = new Mock<IHubClients>();
+        hubClientsMock.Setup(c => c.All).Returns(clientProxyMock.Object);
+
+        var hubContextMock = new Mock<IHubContext<GameHub>>();
+        hubContextMock.Setup(h => h.Clients).Returns(hubClientsMock.Object);
+
+        var loggerMock = new Mock<ILogger<EventDispatcherService>>();
+        var gameStateStore = new GameStateStore();
+        gameStateStore.IsConnectedWithEmulator = true;
+        gameStateStore.UpdateState(new State());
+        gameStateStore.ClearState();
+
+        var service = new EventDispatcherService(
+            hubContextMock.Object,
+            loggerMock.Object,
+            gameStateStore
+        );
+
+        service.DispatchEmulatorConnectionStatus(false);
+
+        clientProxyMock.Verify(
+            c => c.SendCoreAsync(It.IsAny<string>(), It.IsAny<object?[]>(), It.IsAny<CancellationToken>()),
+            Times.Never
+        );
+    }
+
+    [Fact]
     public void DispatchEmulatorConnectionStatus_ShouldReturnImmediately_WhenStatusIsSame()
     {
         // Arrange
@@ -125,8 +196,7 @@ public class EventDispatcherServiceTests
         service.DispatchEmulatorConnectionStatus(false); // Desconecta
 
         // Assert
-        gameStateStoreMock.VerifySet(g => g.IsConnectedWithEmulator = false, Times.Once);
-        gameStateStoreMock.Verify(g => g.ClearState(), Times.Once); // Deve limpar o cache do estado global
+        gameStateStoreMock.Verify(g => g.ClearState(), Times.Once);
         clientProxyMock.Verify(
             c => c.SendCoreAsync(
                 "EmulatorConnectionStatusChanged",

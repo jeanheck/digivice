@@ -200,12 +200,11 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
-    public void Load_ShouldThrowInvalidOperationException_WhenSlotContainsUnknownDigimonId()
+    public void Load_ShouldTreatUnknownDigimonIdAsEmptySlot_WhenSlotContainsUnknownDigimonId()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        // Slot 0 -> ID 99 (Não cadastrado na base real)
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
             .Returns([99, 0, 0, 0]);
 
@@ -214,18 +213,14 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
             .Returns([0xFF, 0, 0, 0]);
 
-        var digievolutionSlotReader = new DigievolutionSlotReader();
-        var digievolutionReader = new DigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader);
-        var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
-        var partyReader = new PartyReader(digimonSlotReader);
+        var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
 
-        var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var partyLoader = new PartyLoader(addressesRepository, partyReader, digimonLoader);
+        var partyResource = partyLoader.Load();
 
-        // 2. Act & Assert - Deve disparar a exceção de Fail-Fast
-        var ex = Assert.Throws<InvalidOperationException>(() => partyLoader.Load());
-        Assert.Contains("Address not found for Digimon ID 99", ex.Message);
+        Assert.NotNull(partyResource);
+        Assert.Null(partyResource.SlotsResource[0].DigimonId);
+        Assert.Null(partyResource.SlotsResource[0].DigimonResource);
+        memoryReaderMock.Verify(m => m.ReadBytes(It.Is<int>(addr => addr != 0x00048DA4 && addr != 0x00048DA8 && addr != 0x00048DAC), It.IsAny<int>()), Times.Never);
     }
 
     [Fact]
@@ -255,7 +250,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
-    public void Load_ShouldThrowInvalidOperationException_WhenLaterSlotContainsUnknownDigimonId()
+    public void Load_ShouldTreatUnknownDigimonIdAsEmptySlot_WhenLaterSlotContainsUnknownDigimonId()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
@@ -277,8 +272,13 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
 
         var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
 
-        var ex = Assert.Throws<InvalidOperationException>(() => partyLoader.Load());
-        Assert.Contains("Address not found for Digimon ID 99", ex.Message);
+        var partyResource = partyLoader.Load();
+
+        Assert.NotNull(partyResource);
+        Assert.Equal(1, partyResource.SlotsResource[0].DigimonId);
+        Assert.NotNull(partyResource.SlotsResource[0].DigimonResource);
+        Assert.Null(partyResource.SlotsResource[1].DigimonId);
+        Assert.Null(partyResource.SlotsResource[1].DigimonResource);
         memoryReaderMock.Verify(m => m.ReadBytes(0x00049878, 1500), Times.Once);
     }
 

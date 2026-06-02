@@ -5,6 +5,6 @@ namespace Backend.Memory.Readers.Parties.Digimons
 {
     public interface IDigimonReader
     {
-        DigimonResource Read(DigimonAddress digimonAddress, DigimonStatusAddresses digimonStatusAddresses);
+        DigimonResource? Read(DigimonAddress digimonAddress, DigimonStatusAddresses digimonStatusAddresses);
     }
 }

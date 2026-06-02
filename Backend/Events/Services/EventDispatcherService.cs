@@ -14,6 +14,22 @@ public class EventDispatcherService(
 {
     public void DispatchEmulatorConnectionStatus(bool isConnectedWithEmulator)
     {
+        if (!isConnectedWithEmulator)
+        {
+            var shouldNotifyClients =
+                gameStateStore.IsConnectedWithEmulator != isConnectedWithEmulator
+                || gameStateStore.CurrentState != null;
+
+            gameStateStore.ClearState();
+
+            if (shouldNotifyClients)
+            {
+                SafeDispatch(new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(isConnectedWithEmulator)));
+            }
+
+            return;
+        }
+
         if (gameStateStore.IsConnectedWithEmulator == isConnectedWithEmulator)
         {
             return;
@@ -21,11 +37,6 @@ public class EventDispatcherService(
 
         gameStateStore.IsConnectedWithEmulator = isConnectedWithEmulator;
         SafeDispatch(new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(isConnectedWithEmulator)));
-
-        if (!isConnectedWithEmulator)
-        {
-            gameStateStore.ClearState();
-        }
     }
 
     public void DispatchInitialStateToClient(string connectionId)

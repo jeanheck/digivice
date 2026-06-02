@@ -28,6 +28,11 @@ public class GameLoopServiceTests
     private readonly StateComposer _stateComposer;
     private readonly IConfiguration _configuration;
 
+    private void SetupConnectedMemoryReader()
+    {
+        _memoryReaderMock.Setup(r => r.IsConnectionAlive()).Returns(true);
+    }
+
     public GameLoopServiceTests()
     {
         _memoryReaderMock = new Mock<IMemoryReader>();
@@ -74,6 +79,8 @@ public class GameLoopServiceTests
             .Returns(false) // First connection attempt fails
             .Returns(true);  // Second connection attempt succeeds
 
+        _memoryReaderMock.Setup(r => r.IsConnectionAlive()).Returns(true);
+
         var service = new GameLoopService(
             _memoryReaderMock.Object,
             _stateComposer,
@@ -104,9 +111,43 @@ public class GameLoopServiceTests
     }
 
     [Fact]
+    public async Task ExecuteAsync_ShouldDisconnect_WhenConnectionIsNoLongerAlive()
+    {
+        _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
+        _memoryReaderMock.Setup(r => r.IsConnectionAlive()).Returns(false);
+
+        var service = new GameLoopService(
+            _memoryReaderMock.Object,
+            _stateComposer,
+            _eventDispatcherServiceMock.Object,
+            _gameStateStore,
+            _debugConsoleRenderer,
+            _configuration);
+
+        using var cts = new CancellationTokenSource();
+        var serviceTask = service.StartAsync(cts.Token);
+
+        await Task.Delay(50);
+        await cts.CancelAsync();
+
+        try
+        {
+            await serviceTask;
+        }
+        catch (OperationCanceledException)
+        {
+            // Expected
+        }
+
+        _memoryReaderMock.Verify(r => r.Disconnect(), Times.AtLeastOnce);
+        _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
+    }
+
+    [Fact]
     public async Task ExecuteAsync_ShouldReadStateAndDispatchEvents_WhenConnected()
     {
         _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
+        SetupConnectedMemoryReader();
 
         var service = new GameLoopService(
             _memoryReaderMock.Object,
@@ -142,6 +183,7 @@ public class GameLoopServiceTests
     public async Task ExecuteAsync_ShouldHandleAbruptExceptionsAndDisconnect()
     {
         _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
+        SetupConnectedMemoryReader();
         _playerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
 
         var service = new GameLoopService(
@@ -175,6 +217,7 @@ public class GameLoopServiceTests
     public async Task ExecuteAsync_ShouldDisconnectAndDispatchFalse_WhenComposeThrowsWhileReaderReportsConnected()
     {
         _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
+        SetupConnectedMemoryReader();
         _playerProviderMock.Setup(p => p.Get()).Throws(new InvalidOperationException("Address not found for Digimon ID 208"));
 
         var service = new GameLoopService(
@@ -202,5 +245,51 @@ public class GameLoopServiceTests
 
         _memoryReaderMock.Verify(r => r.Disconnect(), Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
+        Assert.Null(_gameStateStore.CurrentState);
+    }
+
+    [Fact]
+    public async Task ExecuteAsync_ShouldDispatchDisconnect_WhenComposeThrows()
+    {
+        _gameStateStore.UpdateState(new State
+        {
+            Player = new Player { Name = "Agumon", Bits = 123, MapId = "0001" }
+        });
+        _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
+        SetupConnectedMemoryReader();
+
+        var throwingPlayerProviderMock = new Mock<IPlayerProvider>();
+        throwingPlayerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
+        var stateComposer = new StateComposer(
+            throwingPlayerProviderMock.Object,
+            _partyProviderMock.Object,
+            _journalProviderMock.Object);
+
+        var service = new GameLoopService(
+            _memoryReaderMock.Object,
+            stateComposer,
+            _eventDispatcherServiceMock.Object,
+            _gameStateStore,
+            _debugConsoleRenderer,
+            _configuration);
+
+        using var cts = new CancellationTokenSource();
+        var serviceTask = service.StartAsync(cts.Token);
+
+        await Task.Delay(50);
+        await cts.CancelAsync();
+
+        try
+        {
+            await serviceTask;
+        }
+        catch (OperationCanceledException)
+        {
+            // Expected
+        }
+
+        _eventDispatcherServiceMock.Verify(
+            d => d.DispatchEmulatorConnectionStatus(false),
+            Times.AtLeastOnce);
     }
 }

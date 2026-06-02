@@ -3,6 +3,7 @@ namespace Backend.Memory.Readers
     public interface IMemoryReader : IDisposable
     {
         bool IsConnected { get; }
+        bool IsConnectionAlive();
         bool TryConnect();
         void Disconnect();
         byte[]? ReadBytes(long address, int length);

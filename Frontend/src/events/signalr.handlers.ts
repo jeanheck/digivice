@@ -1,6 +1,7 @@
 import { signalRService } from './signalr.service';
 import { useGameStore } from '../stores/use-game-store';
 import { signalRLogger } from './logger';
+import { parseConnectionStatus } from './connection-status';
 
 /**
  * Initializes the SignalR handlers to bridge incoming backend events with the Pinia store actions.
@@ -13,7 +14,7 @@ export function initializeSignalRHandlers(): void {
     });
 
     signalRService.on('EmulatorConnectionStatusChanged', (data) => {
-        store.syncEmulatorConnectionStatus(data);
+        store.syncEmulatorConnectionStatus(parseConnectionStatus(data));
     });
 
     signalRService.on('InitialState', (data) => {

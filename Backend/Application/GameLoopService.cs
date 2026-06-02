@@ -24,6 +24,13 @@ namespace Backend.Application
 
             while (!stoppingToken.IsCancellationRequested)
             {
+                if (memoryReader.IsConnected && !memoryReader.IsConnectionAlive())
+                {
+                    MarkEmulatorDisconnected();
+                    await Task.Delay(pollingIntervalMs, stoppingToken);
+                    continue;
+                }
+
                 // Trying to connect at the Duckstation
                 if (!memoryReader.IsConnected)
                 {
@@ -67,8 +74,7 @@ namespace Backend.Application
                 catch (Exception ex)
                 {
                     Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
-                    memoryReader.Disconnect();
-                    eventDispatcherService.DispatchEmulatorConnectionStatus(false);
+                    MarkEmulatorDisconnected();
                 }
 
                 try
@@ -83,6 +89,18 @@ namespace Backend.Application
             }
 
             Serilog.Log.Information("GameLoopService shutting down gracefully.");
+        }
+
+        private void MarkEmulatorDisconnected()
+        {
+            memoryReader.Disconnect();
+            eventDispatcherService.DispatchEmulatorConnectionStatus(false);
+
+            var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
+            if (isDebuggingEnabled && !Console.IsOutputRedirected)
+            {
+                debugConsoleRenderer.Render(null);
+            }
         }
     }
 }

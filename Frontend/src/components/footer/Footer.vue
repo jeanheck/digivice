@@ -19,8 +19,10 @@ const playerBits = computed(() => {
   return store.currentState?.player?.bits ?? 0;
 });
 
-const connectionStatus = computed(() => {
-  return store.isConnected ? t('connection.connected') : t('connection.disconnected');
+const isConnected = computed(() => store.isConnected);
+
+const connectionStatusLabel = computed(() => {
+  return isConnected.value ? t("connection.connected") : t("connection.disconnected");
 });
 
 const tooltipPosition = useTooltipPosition(300);
@@ -84,8 +86,8 @@ const groupCharisma = computed(() => {
       </div>
       
       <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full" :class="connectionStatus ? 'bg-green-500' : 'bg-red-500'"></span>
-        {{ connectionStatus }}
+        <span class="w-3 h-3 rounded-full" :class="isConnected ? 'bg-green-500' : 'bg-red-500'"></span>
+        {{ connectionStatusLabel }}
       </div>
     </div>
   </footer>

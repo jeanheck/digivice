@@ -123,7 +123,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
     [Theory]
     [InlineData(null)]
     [InlineData(1499)]
-    public void Load_ShouldThrowInvalidOperationException_WhenDigimonMemoryBlockCannotBeFullyRead(int? memoryBlockSize)
+    public void Load_ShouldReturnNull_WhenDigimonMemoryBlockCannotBeFullyRead(int? memoryBlockSize)
     {
         var addressesRepository = CreateAddressesRepository();
 
@@ -133,8 +133,22 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
 
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
-        var exception = Assert.Throws<InvalidOperationException>(() => digimonLoader.Load(1));
-        Assert.Contains("Failed to read full memory block for Digimon", exception.Message);
+        var digimonResource = digimonLoader.Load(1);
+
+        Assert.Null(digimonResource);
+    }
+
+    [Fact]
+    public void Load_ShouldReturnNull_WhenDigimonIdIsNotRegistered()
+    {
+        var addressesRepository = CreateAddressesRepository();
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
+
+        var digimonResource = digimonLoader.Load(99);
+
+        Assert.Null(digimonResource);
+        memoryReaderMock.Verify(m => m.ReadBytes(It.IsAny<long>(), It.IsAny<int>()), Times.Never);
     }
 
     private static DigimonLoader CreateDigimonLoader(

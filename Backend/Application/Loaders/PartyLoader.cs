@@ -19,7 +19,16 @@ namespace Backend.Application.Loaders
             {
                 if (slotResource.DigimonId is not null && slotResource.DigimonId != partyAddresses.EmptySlotId)
                 {
-                    slotResource.DigimonResource = digimonLoader.Load(slotResource.DigimonId.Value);
+                    var digimonResource = digimonLoader.Load(slotResource.DigimonId.Value);
+                    if (digimonResource is null)
+                    {
+                        slotResource.DigimonId = null;
+                        slotResource.DigimonResource = null;
+                    }
+                    else
+                    {
+                        slotResource.DigimonResource = digimonResource;
+                    }
                 }
                 else
                 {

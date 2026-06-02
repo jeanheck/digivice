@@ -8,12 +8,15 @@ namespace Backend.Application.Loaders.Parties
         IAddressesRepository addressesRepository,
         IDigimonReader digimonReader)
     {
-        public DigimonResource Load(int digimonId)
+        public DigimonResource? Load(int digimonId)
         {
-            var digimonStatusAddresses = addressesRepository.GetDigimonStatusAddresses();
-            var digimonAddress = addressesRepository.GetDigimonAddressById(digimonId)
-                ?? throw new InvalidOperationException($"Address not found for Digimon ID {digimonId}");
+            var digimonAddress = addressesRepository.GetDigimonAddressById(digimonId);
+            if (digimonAddress is null)
+            {
+                return null;
+            }
 
+            var digimonStatusAddresses = addressesRepository.GetDigimonStatusAddresses();
             return digimonReader.Read(digimonAddress, digimonStatusAddresses);
         }
     }

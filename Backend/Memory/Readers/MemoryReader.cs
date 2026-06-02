@@ -10,10 +10,30 @@ namespace Backend.Memory.Readers
         IConfiguration configuration) : IMemoryReader
     {
         private IMemoryAccessor? accessor;
+        private int? connectedProcessId;
         public bool IsConnected { get; private set; }
+
+        public bool IsConnectionAlive()
+        {
+            if (!IsConnected || accessor == null || connectedProcessId is null)
+            {
+                return false;
+            }
+
+            var emulatorName = configuration.GetValue<string>("EmulatorProcessName");
+            if (string.IsNullOrEmpty(emulatorName))
+            {
+                return false;
+            }
+
+            var currentProcessId = processService.GetProcessIdByName(emulatorName);
+            return currentProcessId == connectedProcessId;
+        }
 
         public bool TryConnect()
         {
+            Disconnect();
+
             try
             {
                 // 1. Search for the specific process name using the service
@@ -44,6 +64,7 @@ namespace Backend.Memory.Readers
                     return false;
                 }
 
+                connectedProcessId = processId;
                 IsConnected = true;
                 Log.Information("Connected to DuckStation! Mapping found: {MapName}", dynamicMapName);
                 return true;
@@ -75,6 +96,7 @@ namespace Backend.Memory.Readers
         {
             accessor?.Dispose();
             accessor = null;
+            connectedProcessId = null;
             IsConnected = false;
         }
 
