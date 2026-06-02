@@ -20,4 +20,8 @@ export enum StatKey {
     drain = "drain",
     steal = "steal",
     escape = "escape",
+    physical = "physical",
+    magical = "magical",
+    heal = "heal",
+    support = "support",
 }

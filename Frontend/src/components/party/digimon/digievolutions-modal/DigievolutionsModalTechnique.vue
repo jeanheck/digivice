@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useLocalization } from "@/composables/useLocalization";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import { getTechniqueTypeIcon } from "@/constants/technique-icons";
 import { getTechniqueElementColorClass } from "@/constants/technique-element-colors";
 import type { TechniqueViewModel } from "@/viewmodels/digievolution/technique.viewmodel";
+import type { StatKey } from "@/constants/stat/stat-key";
+import { Icon } from "@/constants/stat/icon";
 
-defineProps<{
+const props = defineProps<{
   technique: TechniqueViewModel;
 }>();
 
@@ -39,6 +40,10 @@ const hideTypeTooltip = () => {
 const moveTypeTooltip = (event: MouseEvent) => {
   move(event, tooltipPlacement);
 };
+
+const icon = computed(() => {
+  return Icon[props.technique.type as StatKey];
+});
 </script>
 
 <template>
@@ -59,7 +64,7 @@ const moveTypeTooltip = (event: MouseEvent) => {
       @mousemove="moveTypeTooltip"
       @mouseleave="hideTypeTooltip"
     >
-      {{ getTechniqueTypeIcon(technique.type) }}
+      {{ icon }}
     </span>
 
     <div class="flex-1 min-w-0">

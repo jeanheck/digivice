@@ -1,7 +1,8 @@
-import { StatKey } from "@/constants/stat/stat-key";
 import { Attribute } from "./attribute/attribute";
 import { Element } from "./element";
 import { Condition } from "./condition";
+import { Technique } from "../technique";
+import type { StatKey } from "./stat-key";
 
 export const Icon: Record<StatKey, string> = {
     [Attribute.strength]: "👊",
@@ -25,4 +26,8 @@ export const Icon: Record<StatKey, string> = {
     [Condition.drain]: "🧛",
     [Condition.steal]: "🦝",
     [Condition.escape]: "🏃",
+    [Technique.physical]: "👊",
+    [Technique.magical]: "🧙‍♂️",
+    [Technique.heal]: "💚",
+    [Technique.support]: "🟡",
 };

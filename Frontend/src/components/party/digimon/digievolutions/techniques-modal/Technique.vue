@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { getTechniqueTypeIcon } from "@/constants/technique-icons";
 import { TechniquePresenter } from "@/presenters/technique.presenter";
 import type { DigievolutionTechniqueViewModel } from "@/viewmodels/digievolution/digievolution-technique.viewmodel";
+import { Icon } from "@/constants/stat/icon";
+import type { StatKey } from "@/constants/stat/stat-key";
 
 const props = defineProps<{
   technique: DigievolutionTechniqueViewModel;
@@ -12,6 +13,10 @@ const props = defineProps<{
 
 const techniqueViewModel = computed(() => {
   return TechniquePresenter.getTechnique(props.technique, props.isSignature, props.digievolutionLevel);
+});
+
+const icon = computed(() => {
+  return Icon[techniqueViewModel.value.type as StatKey];
 });
 </script>
 
@@ -27,7 +32,7 @@ const techniqueViewModel = computed(() => {
     <span v-if="techniqueViewModel.isSignature" class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest">⭐</span>
 
     <span class="text-base leading-none mt-px shrink-0">
-      {{ getTechniqueTypeIcon(techniqueViewModel.type) }}
+      {{ icon }}
     </span>
 
     <div class="flex-1 min-w-0">
