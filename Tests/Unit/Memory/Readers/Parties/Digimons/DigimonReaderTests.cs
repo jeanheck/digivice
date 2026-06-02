@@ -34,11 +34,13 @@ public class DigimonReaderTests
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
+        var storedDigievolutionReaderMock = new Mock<IStoredDigievolutionReader>();
 
         var reader = new DigimonReader(
             memoryReaderMock.Object,
             slotReaderMock.Object,
-            evolutionReaderMock.Object
+            evolutionReaderMock.Object,
+            storedDigievolutionReaderMock.Object
         );
 
         var result = reader.Read(address, statusAddresses);
@@ -108,11 +110,16 @@ public class DigimonReaderTests
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
+        var storedDigievolutionReaderMock = new Mock<IStoredDigievolutionReader>();
+        storedDigievolutionReaderMock
+            .Setup(s => s.Read(It.IsAny<MemoryBlockReader>(), statusAddresses.Digievolutions))
+            .Returns([]);
 
         var reader = new DigimonReader(
             memoryReaderMock.Object,
             slotReaderMock.Object,
-            evolutionReaderMock.Object
+            evolutionReaderMock.Object,
+            storedDigievolutionReaderMock.Object
         );
 
         // Act
@@ -183,11 +190,16 @@ public class DigimonReaderTests
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
+        var storedDigievolutionReaderMock = new Mock<IStoredDigievolutionReader>();
+        storedDigievolutionReaderMock
+            .Setup(s => s.Read(It.IsAny<MemoryBlockReader>(), statusAddresses.Digievolutions))
+            .Returns([]);
 
         var reader = new DigimonReader(
             memoryReaderMock.Object,
             slotReaderMock.Object,
-            evolutionReaderMock.Object
+            evolutionReaderMock.Object,
+            storedDigievolutionReaderMock.Object
         );
 
         // Act
@@ -233,17 +245,30 @@ public class DigimonReaderTests
         slotReaderMock.Setup(s => s.Read(It.IsAny<MemoryBlockReader>(), slotAddress1)).Returns(slotResource1);
         slotReaderMock.Setup(s => s.Read(It.IsAny<MemoryBlockReader>(), slotAddress2)).Returns(slotResource2);
 
-        var evolutionResource1 = new DigievolutionResource { Level = 10 };
-        var evolutionResource2 = new DigievolutionResource { Level = 25 };
+        var evolutionResource1 = new DigievolutionResource { Level = 10, Dvxp = 500 };
+        var evolutionResource2 = new DigievolutionResource { Level = 25, Dvxp = 1200 };
 
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
         evolutionReaderMock.Setup(e => e.Read(It.IsAny<MemoryBlockReader>(), 12, statusAddresses.Digievolutions)).Returns(evolutionResource1);
         evolutionReaderMock.Setup(e => e.Read(It.IsAny<MemoryBlockReader>(), 15, statusAddresses.Digievolutions)).Returns(evolutionResource2);
 
+        var storedDigievolutions = new List<StoredDigievolutionResource>
+        {
+            new() { DigievolutionId = 12, Level = 10 },
+            new() { DigievolutionId = 15, Level = 25 },
+            new() { DigievolutionId = 99, Level = 5 }
+        };
+
+        var storedDigievolutionReaderMock = new Mock<IStoredDigievolutionReader>();
+        storedDigievolutionReaderMock
+            .Setup(s => s.Read(It.IsAny<MemoryBlockReader>(), statusAddresses.Digievolutions))
+            .Returns(storedDigievolutions);
+
         var reader = new DigimonReader(
             memoryReaderMock.Object,
             slotReaderMock.Object,
-            evolutionReaderMock.Object
+            evolutionReaderMock.Object,
+            storedDigievolutionReaderMock.Object
         );
 
         // Act
@@ -256,5 +281,8 @@ public class DigimonReaderTests
         Assert.Equal(evolutionResource1, result.Digievolutions[0].DigievolutionResource);
         Assert.Equal(slotResource2, result.Digievolutions[1]);
         Assert.Equal(evolutionResource2, result.Digievolutions[1].DigievolutionResource);
+        Assert.Equal(3, result.StoredDigievolutions.Count);
+        Assert.Equal(99, result.StoredDigievolutions[2].DigievolutionId);
+        Assert.Equal(5, result.StoredDigievolutions[2].Level);
     }
 }

@@ -31,6 +31,7 @@ namespace Backend.Infrastructure
             services.AddSingleton<IDigimonReader, DigimonReader>();
             services.AddSingleton<IDigimonSlotReader, DigimonSlotReader>();
             services.AddSingleton<IDigievolutionReader, DigievolutionReader>();
+            services.AddSingleton<IStoredDigievolutionReader, StoredDigievolutionReader>();
             services.AddSingleton<IDigievolutionSlotReader, DigievolutionSlotReader>();
             services.AddSingleton<IPartyReader, PartyReader>();
             services.AddSingleton<IRequisiteReader, RequisiteReader>();

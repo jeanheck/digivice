@@ -74,7 +74,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         // 3. Arrange - Instanciação da árvore de dependências reais (Pipeline Completo)
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader);
+        var storedDigievolutionReader = new StoredDigievolutionReader();
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader);
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -168,7 +169,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
 
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader);
+        var storedDigievolutionReader = new StoredDigievolutionReader();
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader);
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -295,7 +297,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
 
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader);
+        var storedDigievolutionReader = new StoredDigievolutionReader();
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader);
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -324,7 +327,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     {
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader);
+        var storedDigievolutionReader = new StoredDigievolutionReader();
+        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader);
         var digimonSlotReader = new DigimonSlotReader(memoryReader);
         var partyReader = new PartyReader(digimonSlotReader);
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);

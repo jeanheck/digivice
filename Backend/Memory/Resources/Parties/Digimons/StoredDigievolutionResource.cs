@@ -1,8 +1,8 @@
 namespace Backend.Memory.Resources.Parties.Digimons
 {
-    public class DigievolutionResource
+    public class StoredDigievolutionResource
     {
+        public int DigievolutionId { get; set; }
         public int Level { get; set; }
-        public int Dvxp { get; set; }
     }
 }

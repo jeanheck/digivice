@@ -11,6 +11,7 @@ namespace Backend.Memory.Resources.Parties
         public ResistancesResource Resistances { get; set; } = new();
         public EquipmentsResource Equipments { get; set; } = new();
         public List<DigievolutionSlotResource> Digievolutions { get; set; } = [];
+        public List<StoredDigievolutionResource> StoredDigievolutions { get; set; } = [];
         public int ActiveDigievolutionId { get; set; }
     }
 }

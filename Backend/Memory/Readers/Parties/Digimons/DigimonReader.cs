@@ -7,7 +7,8 @@ namespace Backend.Memory.Readers.Parties.Digimons
     public class DigimonReader(
         IMemoryReader memoryReader,
         IDigievolutionSlotReader digievolutionSlotReader,
-        IDigievolutionReader digievolutionReader) : IDigimonReader
+        IDigievolutionReader digievolutionReader,
+        IStoredDigievolutionReader storedDigievolutionReader) : IDigimonReader
     {
         private const int DigimonMemoryBlockSize = 1500;
 
@@ -80,7 +81,10 @@ namespace Backend.Memory.Readers.Parties.Digimons
                     Accessory1 = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Accessory1),
                     Accessory2 = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Accessory2)
                 },
-                Digievolutions = digievolutionsSlots
+                Digievolutions = digievolutionsSlots,
+                StoredDigievolutions = storedDigievolutionReader.Read(
+                    memoryBlockReader,
+                    digimonStatusAddresses.Digievolutions)
             };
         }
     }
