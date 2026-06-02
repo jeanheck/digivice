@@ -26,6 +26,50 @@ Por favor, siga estas práticas rigorosamente ao trabalhar neste projeto em qual
 6. **Caminhos de Importação**: Prefira importar arquivos utilizando o caractere `@` para definir o caminho raiz (ex: `@/models/` em vez de `../../models/`), mantendo a consistência e legibilidade.
 7. **Aspas Duplas**: Dê preferência ao uso de aspas duplas (`"`) em strings sempre que houver a opção (ao invés de aspas simples `'`), mantendo a padronização estética do código.
 
+### Coerência visual e estilos (Frontend)
+
+Ao criar ou alterar componentes Vue, **priorize reutilizar o visual já estabelecido** em `Frontend/src/style.css` e em componentes existentes do mesmo contexto. O objetivo é manter a aparência DW3 coerente em toda a aplicação.
+
+#### Fonte e base
+
+- A única fonte do app é **`Press Start 2P`**, definida globalmente no `body` (`style.css`). Não introduza fontes alternativas em componentes isolados.
+- Fundo, cor de texto padrão e `image-rendering: pixelated` vêm do global — não redefina no componente sem necessidade.
+
+#### Antes de estilizar inline
+
+1. Consulte **`Frontend/src/style.css`** e verifique se já existe uma classe utilitária aplicável.
+2. Busque um **componente similar** já implementado (ex.: outro painel do card do Digimon, outro aside, outro modal) e siga o mesmo padrão de markup + classes.
+3. Só crie estilos novos (Tailwind inline ou CSS) quando não houver equivalente reutilizável.
+
+#### Classes globais DW3 (referência principal)
+
+| Classe | Uso |
+|--------|-----|
+| `dw3-beveled` | Chanfro/corte nos cantos |
+| `dw3-panel` + `dw3-panel-border` + `dw3-panel-inner` + `dw3-panel-content` | Painéis com borda azul chanfrada (Profile, Stats, Equipments, Digievolution) |
+| `dw3-aside` + `dw3-aside-header` + `dw3-aside-title` | Sidebars (Map, Journal) |
+| `shadow-text` / `shadow-text-dark` | Sombra em textos pixel |
+| `text-dw3-gold` | Texto destacado laranja/amarelo (digievolução ativa, bônus) |
+| `custom-scroll` | Barras de rolagem padronizadas |
+| `bg-grid-pattern` | Fallback de grid (Location sem imagem) |
+
+Outros padrões compartilhados (tree, modal, tooltip) estão em `style.css` ou documentados nas seções *Tooltips* e *Modais* abaixo.
+
+#### Regras práticas
+
+- **Painéis e cards:** prefira as classes `dw3-*` em vez de remontar manualmente `bg-[#0077ff]` + `inset-[1.5px]` + `dw3-beveled`.
+- **Sidebars:** use `dw3-aside` em vez de copiar strings longas de Tailwind do Map/Journal.
+- **Destaque dourado:** use `text-dw3-gold shadow-text-dark`, não duplique o gradiente inline.
+- **Scroll:** use `custom-scroll` em áreas roláveis; no corpo de modais, o padrão já vem do `Modal.vue`.
+- **Cores:** quando possível, reutilize os mesmos tokens já usados nos componentes vizinhos (`#000a2b`, `#000e3f`, `#0033aa`, `#0077ff`, `#00aaff`). Evite variantes arbitrárias da mesma intenção visual.
+- **`<style scoped>`:** evite criar CSS scoped para padrões que podem ser compartilhados — extraia para `style.css` quando o padrão for reutilizável ou já existir equivalente global.
+
+#### Proibido em código novo ou refatorado (estilos)
+
+- Inventar paleta, tipografia ou moldura de painel **sem** checar `style.css` e componentes de referência.
+- Duplicar no template blocos longos de classes que já têm utilitário global (ex.: refazer borda chanfrada fora de `dw3-panel`).
+- Adicionar `<style scoped>` com padrões copiados de outro componente quando deveriam ser classes globais.
+
 ### Dados estáticos (Repository, Presenter, Converter, ViewModel)
 
 Fluxo alvo para dados estáticos (JSON, tabelas locais). A migração dos presenters existentes para esse padrão é **incremental** — presenter por presenter.
