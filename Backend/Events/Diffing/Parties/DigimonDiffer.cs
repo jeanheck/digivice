@@ -30,13 +30,28 @@ public static class DigimonDiffer
         var equipmentsDelta = EquipmentsDiffer.Diff(previousDigimon.Equipments, newDigimon.Equipments);
 
         var digievolutionsDelta = new List<DigievolutionSlotDTO>();
-        foreach (var newDigievolution in newDigimon.Digievolutions)
+        foreach (var newDigievolutionSlot in newDigimon.Digievolutions)
         {
-            var previousDigievolution = previousDigimon.Digievolutions.FirstOrDefault(e => e.Index == newDigievolution.Index);
-            var digievolutionDelta = DigievolutionSlotDiffer.Diff(previousDigievolution, newDigievolution);
-            if (digievolutionDelta != null)
+            var previousDigievolutionSlot = previousDigimon.Digievolutions
+                .FirstOrDefault(slot => slot.Index == newDigievolutionSlot.Index);
+            var digievolutionSlotDelta = DigievolutionSlotDiffer.Diff(previousDigievolutionSlot, newDigievolutionSlot);
+            if (digievolutionSlotDelta != null)
             {
-                digievolutionsDelta.Add(digievolutionDelta);
+                digievolutionsDelta.Add(digievolutionSlotDelta);
+            }
+        }
+
+        var storedDigievolutionsDelta = new List<StoredDigievolutionDTO>();
+        foreach (var newStoredDigievolution in newDigimon.StoredDigievolutions)
+        {
+            var previousStoredDigievolution = previousDigimon.StoredDigievolutions
+                .FirstOrDefault(stored => stored.DigievolutionId == newStoredDigievolution.DigievolutionId);
+            var storedDigievolutionDelta = StoredDigievolutionDiffer.Diff(
+                previousStoredDigievolution,
+                newStoredDigievolution);
+            if (storedDigievolutionDelta != null)
+            {
+                storedDigievolutionsDelta.Add(storedDigievolutionDelta);
             }
         }
 
@@ -47,7 +62,8 @@ public static class DigimonDiffer
                              attributesDelta != null ||
                              resistancesDelta != null ||
                              equipmentsDelta != null ||
-                             digievolutionsDelta.Count > 0;
+                             digievolutionsDelta.Count > 0 ||
+                             storedDigievolutionsDelta.Count > 0;
 
         if (!hasAnyChanges)
         {
@@ -86,6 +102,10 @@ public static class DigimonDiffer
         if (digievolutionsDelta.Count > 0)
         {
             dto = dto with { Digievolutions = digievolutionsDelta };
+        }
+        if (storedDigievolutionsDelta.Count > 0)
+        {
+            dto = dto with { StoredDigievolutions = storedDigievolutionsDelta };
         }
 
         return dto;

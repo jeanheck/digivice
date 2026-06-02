@@ -50,6 +50,47 @@ public class DigimonDifferTests
         Assert.Equal(150, result.Vitals.Value.CurrentHP.Value);
     }
 
+    [Fact]
+    public void Diff_ShouldReturnStoredDigievolutionsDelta_WhenStoredLevelChanges()
+    {
+        var previous = CreateBaseDigimon();
+        previous.StoredDigievolutions = [new StoredDigievolution { DigievolutionId = 386, Level = 14 }];
+
+        var newObj = CreateBaseDigimon();
+        newObj.StoredDigievolutions = [new StoredDigievolution { DigievolutionId = 386, Level = 15 }];
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.False(result.Level.HasValue);
+        Assert.True(result.StoredDigievolutions.HasValue);
+        var storedDelta = Assert.Single(result.StoredDigievolutions.Value!);
+        Assert.Equal(386, storedDelta.DigievolutionId.Value);
+        Assert.Equal(15, storedDelta.Level.Value);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnStoredDigievolutionsDelta_WhenNewDigievolutionIsUnlocked()
+    {
+        var previous = CreateBaseDigimon();
+        previous.StoredDigievolutions = [new StoredDigievolution { DigievolutionId = 386, Level = 14 }];
+
+        var newObj = CreateBaseDigimon();
+        newObj.StoredDigievolutions =
+        [
+            new StoredDigievolution { DigievolutionId = 386, Level = 14 },
+            new StoredDigievolution { DigievolutionId = 260, Level = 1 }
+        ];
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.True(result.StoredDigievolutions.HasValue);
+        var storedDelta = Assert.Single(result.StoredDigievolutions.Value!);
+        Assert.Equal(260, storedDelta.DigievolutionId.Value);
+        Assert.Equal(1, storedDelta.Level.Value);
+    }
+
     private static Digimon CreateBaseDigimon()
     {
         return new Digimon

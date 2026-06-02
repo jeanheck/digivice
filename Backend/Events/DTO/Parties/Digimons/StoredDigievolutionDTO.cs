@@ -4,11 +4,11 @@ using Backend.Events.DTO.Shared;
 
 namespace Backend.Events.DTO.Parties.Digimons;
 
-public record class DigievolutionDTO : IDTO
+public record class StoredDigievolutionDTO : IDTO
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> Level { get; init; } = Optional<int>.Empty;
+    public Optional<int> DigievolutionId { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> Dvxp { get; init; } = Optional<int>.Empty;
+    public Optional<int> Level { get; init; } = Optional<int>.Empty;
 }

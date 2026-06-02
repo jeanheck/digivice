@@ -30,4 +30,7 @@ public record class DigimonDTO : IDTO
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<int> ActiveDigievolutionId { get; init; } = Optional<int>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<List<StoredDigievolutionDTO>> StoredDigievolutions { get; init; } = Optional<List<StoredDigievolutionDTO>>.Empty;
 }

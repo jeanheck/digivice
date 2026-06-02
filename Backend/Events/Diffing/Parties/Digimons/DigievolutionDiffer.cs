@@ -19,6 +19,18 @@ public static class DigievolutionDiffer
             return DigievolutionConverter.ToDTO(newDigievolution);
         }
 
-        return new DigievolutionDTO { Level = newDigievolution.Level };
+        var dto = new DigievolutionDTO();
+
+        if (newDigievolution.Level != previousDigievolution.Level)
+        {
+            dto = dto with { Level = newDigievolution.Level };
+        }
+
+        if (newDigievolution.Dvxp != previousDigievolution.Dvxp)
+        {
+            dto = dto with { Dvxp = newDigievolution.Dvxp };
+        }
+
+        return dto;
     }
 }

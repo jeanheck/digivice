@@ -24,8 +24,13 @@ public class DigimonConverterTests
                 {
                     Index = 1,
                     DigievolutionId = 5,
-                    Digievolution = new Digievolution { Level = 9 }
+                    Digievolution = new Digievolution { Level = 9, Dvxp = 200 }
                 }
+            ],
+            StoredDigievolutions =
+            [
+                new StoredDigievolution { DigievolutionId = 5, Level = 9 },
+                new StoredDigievolution { DigievolutionId = 99, Level = 3 }
             ]
         };
 
@@ -46,5 +51,10 @@ public class DigimonConverterTests
         Assert.Equal(1, evolutionSlot.Index);
         Assert.Equal(5, evolutionSlot.DigievolutionId.Value);
         Assert.Equal(9, evolutionSlot.Digievolution.Value!.Level.Value);
+        Assert.Equal(200, evolutionSlot.Digievolution.Value!.Dvxp.Value);
+
+        Assert.Equal(2, dto.StoredDigievolutions.Value!.Count);
+        Assert.Equal(99, dto.StoredDigievolutions.Value[1].DigievolutionId.Value);
+        Assert.Equal(3, dto.StoredDigievolutions.Value[1].Level.Value);
     }
 }

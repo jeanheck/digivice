@@ -16,6 +16,9 @@ public static class DigimonConverter
         Resistances = ResistancesConverter.ToDTO(digimon.Resistances),
         Equipments = EquipmentsConverter.ToDTO(digimon.Equipments),
         Digievolutions = digimon.Digievolutions.Select(DigievolutionSlotConverter.ToDTO).ToList(),
+        StoredDigievolutions = digimon.StoredDigievolutions
+            .Select(StoredDigievolutionConverter.ToDTO)
+            .ToList(),
         ActiveDigievolutionId = digimon.ActiveDigievolutionId
     };
 }
