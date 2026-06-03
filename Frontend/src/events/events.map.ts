@@ -17,6 +17,7 @@ export type { ResistancesDTO } from './dto/parties/digimons/resistances.dto';
 export type { EquipmentsDTO } from './dto/parties/digimons/equipments.dto';
 export type { DigievolutionDTO } from './dto/parties/digimons/digievolution.dto';
 export type { DigievolutionSlotDTO } from './dto/parties/digimons/digievolution-slot.dto';
+export type { StoredDigievolutionDTO } from './dto/parties/digimons/stored-digievolution.dto';
 
 // Import local types to define the main Event DTO Map
 import type { EmulatorConnectionStatusChangedDTO } from './dto/connection.dto';

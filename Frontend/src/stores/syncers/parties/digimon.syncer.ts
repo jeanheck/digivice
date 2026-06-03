@@ -5,7 +5,9 @@ import { VitalsSyncer } from './digimons/vitals.syncer';
 import { AttributesSyncer } from './digimons/attributes.syncer';
 import { ResistancesSyncer } from './digimons/resistances.syncer';
 import { DigievolutionSlotSyncer } from './digimons/digievolution-slot.syncer';
+import { StoredDigievolutionSyncer } from './digimons/stored-digievolution.syncer';
 import { EquipmentsSyncer } from './digimons/equipments.syncer';
+import { StoredDigievolutionConverter } from '@/events/converters/parties/digimons/stored-digievolution.converter';
 
 export class DigimonSyncer {
     public static sync(previousDigimon: Digimon, newDigimonDto: DigimonDTO): void {
@@ -37,6 +39,28 @@ export class DigimonSyncer {
                     if (previousDigievolutionSlot) {
                         DigievolutionSlotSyncer.sync(previousDigievolutionSlot, newDigievolutionSlotDto);
                     }
+                }
+            });
+        }
+        if (newDigimonDto.storedDigievolutions && newDigimonDto.storedDigievolutions.length > 0) {
+            newDigimonDto.storedDigievolutions.forEach((newStoredDigievolutionDto) => {
+                if (!newStoredDigievolutionDto || newStoredDigievolutionDto.digievolutionId === undefined) {
+                    return;
+                }
+
+                const previousStoredDigievolution = previousDigimon.storedDigievolutions.find(
+                    (stored) => stored.digievolutionId === newStoredDigievolutionDto.digievolutionId
+                );
+
+                if (previousStoredDigievolution) {
+                    StoredDigievolutionSyncer.sync(previousStoredDigievolution, newStoredDigievolutionDto);
+                    return;
+                }
+
+                if (newStoredDigievolutionDto.level !== undefined) {
+                    previousDigimon.storedDigievolutions.push(
+                        StoredDigievolutionConverter.convert(newStoredDigievolutionDto)
+                    );
                 }
             });
         }

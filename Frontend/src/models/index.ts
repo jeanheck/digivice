@@ -1,6 +1,7 @@
 export * from './party/digimon/attributes';
 export * from './party/digimon/digievolution-slot';
 export * from './party/digimon/digievolution';
+export * from './party/digimon/stored-digievolution';
 export * from './party/digimon-slot';
 export * from './party/digimon/digimon';
 export * from './party/digimon/equipments';
