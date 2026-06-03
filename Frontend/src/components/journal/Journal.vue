@@ -5,7 +5,6 @@ import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { JournalPresenter } from "@/presenters/journal/journal.presenter";
-import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 
 const store = useGameStore();
 
@@ -17,18 +16,18 @@ const journalViewModel = computed(() => {
   return JournalPresenter.getJournalViewModel(journal);
 });
 
-const activeQuest = ref<QuestViewModel | null>(null);
+const activeQuestId = ref<string | null>(null);
 const isQuestModalOpen = ref(false);
 
-const openQuestModal = (questViewModel: QuestViewModel) => {
-  activeQuest.value = questViewModel;
+const openQuestModal = (questId: string) => {
+  activeQuestId.value = questId;
   isQuestModalOpen.value = true;
 };
 
 const closeQuestModal = () => {
   isQuestModalOpen.value = false;
   setTimeout(() => {
-    activeQuest.value = null;
+    activeQuestId.value = null;
   }, 300);
 };
 </script>
@@ -73,7 +72,7 @@ const closeQuestModal = () => {
 
   <QuestModal
     :is-open="isQuestModalOpen"
-    :quest-view-model="activeQuest"
+    :quest-id="activeQuestId"
     @close="closeQuestModal"
   />
 </template>

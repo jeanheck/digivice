@@ -12,7 +12,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  click: [quest: QuestViewModel];
+  click: [questId: string];
 }>();
 
 const QUEST_CARD_VARIANT_CLASSES: Record<QuestCardVariant, string> = {
@@ -88,7 +88,7 @@ const doneIconClass = computed(() => {
 });
 
 const onClick = () => {
-  emit("click", props.quest);
+  emit("click", props.quest.id);
 };
 </script>
 

@@ -4,12 +4,12 @@ import Modal from "@/components/modal/Modal.vue";
 import StepPanel from "./StepPanel.vue";
 import Steps from "./Steps.vue";
 import Requisites from "./Requisites.vue";
-import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 import { QuestModalPresenter } from "@/presenters/journal/quest-modal.presenter.ts";
+import { useGameStore } from "@/stores/use-game-store";
 
 const props = defineProps<{
-  questViewModel: QuestViewModel | null;
+  questId: string | null;
   isOpen: boolean;
 }>();
 
@@ -17,18 +17,41 @@ const emit = defineEmits<{
   (e: "close"): void;
 }>();
 
+const store = useGameStore();
+
+const questViewModel = computed(() => {
+  if (props.questId === null) {
+    return null;
+  }
+
+  const journal = store.currentState?.journal;
+  if (journal === null || journal === undefined) {
+    return null;
+  }
+
+  return QuestModalPresenter.getQuestViewModel(journal, props.questId);
+});
+
 const isModalOpen = computed(() => {
-  return props.isOpen && props.questViewModel !== null;
+  return props.isOpen && questViewModel.value !== null;
 });
 
 const closeModal = () => {
   emit("close");
 };
 
-const selectedStep = ref<StepViewModel | null>(null);
+const selectedStepNumber = ref<string | null>(null);
+
+const selectedStep = computed(() => {
+  if (questViewModel.value === null || selectedStepNumber.value === null) {
+    return null;
+  }
+
+  return questViewModel.value.steps.find((step) => step.number === selectedStepNumber.value) ?? null;
+});
 
 const selectStep = (step: StepViewModel) => {
-  selectedStep.value = step;
+  selectedStepNumber.value = step.number;
 };
 
 const worldMapLocations = computed(() => {
@@ -36,17 +59,18 @@ const worldMapLocations = computed(() => {
 });
 
 const localMapLocations = computed(() => {
-  return QuestModalPresenter.getLocalMapLocations(selectedStep.value, props.questViewModel?.id ?? null);
+  return QuestModalPresenter.getLocalMapLocations(selectedStep.value, props.questId);
 });
 
 watch(
-  () => [props.isOpen, props.questViewModel] as const,
-  ([isOpen, questViewModel]) => {
-    if (isOpen && questViewModel?.currentStep) {
-      selectStep(questViewModel.currentStep);
-    } else {
-      selectedStep.value = null;
+  () => [props.isOpen, props.questId] as const,
+  ([isOpen, questId]) => {
+    if (!isOpen || questId === null) {
+      selectedStepNumber.value = null;
+      return;
     }
+
+    selectedStepNumber.value = questViewModel.value?.currentStep?.number ?? null;
   }
 );
 </script>
