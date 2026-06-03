@@ -52,7 +52,7 @@ public class StoredDigievolutionReaderTests
     }
 
     [Fact]
-    public void Read_ShouldReturnEmptyList_WhenNoUnlockedEntriesExist()
+    public void Read_ShouldReturnEmptyList_WhenFirstEntryIsEmpty()
     {
         var digievolutionsAddresses = new DigievolutionsAddresses
         {
@@ -67,7 +67,7 @@ public class StoredDigievolutionReaderTests
         var block = new byte[256];
         WriteInt16(block, 10, 0);
         WriteInt16(block, 12, 15);
-        WriteInt16(block, 14, 0);
+        WriteInt16(block, 14, 99);
         WriteInt16(block, 16, 40);
 
         var memoryBlockReader = new MemoryBlockReader(block);
@@ -76,5 +76,36 @@ public class StoredDigievolutionReaderTests
         var result = reader.Read(memoryBlockReader, digievolutionsAddresses);
 
         Assert.Empty(result);
+    }
+
+    [Fact]
+    public void Read_ShouldStopAtFirstEmptyEntry_AndIgnoreGarbageAfterIt()
+    {
+        var digievolutionsAddresses = new DigievolutionsAddresses
+        {
+            UnlockedDigievolutionsStart = 10,
+            UnlockedDigievolutionEntryStride = 4,
+            MaxUnlockedDigievolutions = 4,
+            Id = 0,
+            Level = 2,
+            Dvxp = 4
+        };
+
+        var block = new byte[256];
+        WriteInt16(block, 10, 3);
+        WriteInt16(block, 12, 15);
+        WriteInt16(block, 14, 0);
+        WriteInt16(block, 16, 0);
+        WriteInt16(block, 18, 240);
+        WriteInt16(block, 20, 180);
+
+        var memoryBlockReader = new MemoryBlockReader(block);
+        var reader = new StoredDigievolutionReader();
+
+        var result = reader.Read(memoryBlockReader, digievolutionsAddresses);
+
+        Assert.Single(result);
+        Assert.Equal(3, result[0].DigievolutionId);
+        Assert.Equal(15, result[0].Level);
     }
 }

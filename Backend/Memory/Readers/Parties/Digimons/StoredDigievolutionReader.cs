@@ -21,7 +21,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
 
                 if (digievolutionId <= 0)
                 {
-                    continue;
+                    break;
                 }
 
                 storedDigievolutions.Add(new StoredDigievolutionResource
