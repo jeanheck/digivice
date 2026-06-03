@@ -39,7 +39,7 @@ const experiencePercentageToReachNextLevel = computed(() => {
             <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimonName }}</h2>
 
             <div class="relative flex items-center justify-center shrink-0">
-              <span class="text-[0.6rem] font-medium text-yellow-500">
+              <span class="text-[0.6rem] font-medium text-yellow-400">
                 {{ $t("digimon.level") }} {{ digimon.level }}
               </span>
             </div>

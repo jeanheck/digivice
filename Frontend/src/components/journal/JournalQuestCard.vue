@@ -5,6 +5,9 @@ import type { QuestCardVariant, QuestViewModel } from "@/viewmodels/quest/quest.
 const props = defineProps<{
   quest: QuestViewModel;
   displayMode: "main" | "side";
+  stepNumberAccentClass?: string;
+  questTitleAccentClass?: string;
+  questTitleHoverAccentClass?: string;
 }>();
 
 const emit = defineEmits<{
@@ -14,8 +17,8 @@ const emit = defineEmits<{
 const QUEST_CARD_VARIANT_CLASSES: Record<QuestCardVariant, string> = {
   locked: "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70",
   done: "border-green-800/50 bg-green-900/20 hover:bg-green-900/40",
-  new: "border-cyan-300/60 bg-[#001a2a] hover:bg-[#002a3a] hover:border-cyan-300",
-  active: "border-[#0033aa]/60 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]",
+  new: "border-white/60 bg-[#001a2a] hover:bg-[#002a3a] hover:border-white",
+  active: "border-[#0033aa]/0 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]",
 };
 
 const isMainDisplayMode = computed(() => {
@@ -32,7 +35,7 @@ const cardClass = computed(() => {
 
 const titleClass = computed(() => {
   if (isMainDisplayMode.value) {
-    return "group-hover:text-orange-300";
+    return "text-yellow-300 group-hover:text-yellow-400";
   }
 
   if (props.quest.isLocked) {
@@ -43,15 +46,28 @@ const titleClass = computed(() => {
     return "text-gray-400 line-through";
   }
 
-  return "group-hover:text-cyan-300";
+  const accentTitleClass = props.questTitleAccentClass ?? "text-blue-300";
+  const accentTitleHoverClass = props.questTitleHoverAccentClass ?? "group-hover:text-blue-400";
+
+  return `${accentTitleClass} ${accentTitleHoverClass}`;
 });
 
 const stepNumberClass = computed(() => {
   if (isMainDisplayMode.value) {
-    return "text-orange-300 font-bold mr-1";
+    return "text-yellow-400 font-bold mr-1";
   }
 
-  return "text-cyan-300 font-bold mr-1";
+  const accentStepNumberClass = props.stepNumberAccentClass ?? "text-blue-400";
+
+  return `${accentStepNumberClass} font-bold mr-1`;
+});
+
+const titleSizeClass = computed(() => {
+  if (isMainDisplayMode.value) {
+    return "text-xs";
+  }
+
+  return "text-[10px]";
 });
 
 const doneIconClass = computed(() => {
@@ -83,15 +99,15 @@ const onClick = () => {
 
     <div class="flex items-center justify-between mb-1 relative z-10">
       <span
-        class="text-white font-bold text-xs truncate transition-colors"
-        :class="titleClass"
+        class="font-bold truncate transition-colors"
+        :class="[titleSizeClass, titleClass]"
       >
         {{ $t(`${quest.id}.title`) }}
       </span>
 
       <span v-if="quest.isDone" :class="doneIconClass">✔</span>
       <span v-else-if="!isMainDisplayMode && quest.isLocked" class="text-xs shrink-0 ml-2">🔒</span>
-      <span v-else-if="!isMainDisplayMode && quest.isNew" class="text-cyan-300 text-xs shrink-0 ml-2">❕</span>
+      <span v-else-if="!isMainDisplayMode && quest.isNew" class="text-xs shrink-0 ml-2">❕</span>
     </div>
 
     <p

@@ -31,6 +31,14 @@ const closeQuestModal = () => {
     activeQuest.value = null;
   }, 300);
 };
+
+const sideQuestSectionTitleClass = "text-cyan-400";
+const sideQuestSectionBorderClass = "border-cyan-800";
+const sideQuestSectionChevronClass = "text-cyan-400";
+const sideQuestSectionHeaderHoverClass = "hover:bg-cyan-900/30";
+const sideQuestStepNumberClass = "text-cyan-600";
+const sideQuestTitleClass = "text-cyan-400";
+const sideQuestTitleHoverClass = "group-hover:text-cyan-400";
 </script>
 
 <template>
@@ -44,7 +52,7 @@ const closeQuestModal = () => {
 
     <div class="flex-1 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
       <section>
-        <h4 class="text-xs text-orange-400 font-bold mb-2 uppercase tracking-wide border-b border-orange-900 pb-1">
+        <h4 class="text-xs text-yellow-400 font-bold mb-2 uppercase tracking-wide border-b border-yellow-700/60 pb-1">
           {{ $t("journal.mainQuest") }}
         </h4>
 
@@ -58,16 +66,19 @@ const closeQuestModal = () => {
 
       <JournalQuestsSection
         :title="$t('journal.sideQuests')"
-        title-class="text-blue-400"
-        border-class="border-blue-900"
-        chevron-class="text-blue-500"
-        header-hover-class="hover:bg-blue-900/30"
+        :title-class="sideQuestSectionTitleClass"
+        :border-class="sideQuestSectionBorderClass"
+        :chevron-class="sideQuestSectionChevronClass"
+        :header-hover-class="sideQuestSectionHeaderHoverClass"
       >
         <JournalQuestCard
           v-for="sideQuest in journalViewModel.sideQuests"
           :key="sideQuest.id"
           :quest="sideQuest"
           display-mode="side"
+          :step-number-accent-class="sideQuestStepNumberClass"
+          :quest-title-accent-class="sideQuestTitleClass"
+          :quest-title-hover-accent-class="sideQuestTitleHoverClass"
           @click="openQuestModal"
         />
       </JournalQuestsSection>
