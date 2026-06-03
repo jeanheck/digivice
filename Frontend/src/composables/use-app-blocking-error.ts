@@ -6,6 +6,14 @@ export function useAppBlockingError() {
     const store = useGameStore();
 
     return computed((): AppBlockingErrorViewModel | null => {
+        if (store.backendProcessFailed) {
+            return {
+                kind: "backend-crashed",
+                titleKey: "errors.backendCrashed.title",
+                hintKey: "errors.backendCrashed.hint",
+            };
+        }
+
         if (!store.isConnectedWithBackend) {
             return {
                 kind: "backend-unreachable",

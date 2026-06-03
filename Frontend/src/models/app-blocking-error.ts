@@ -1,4 +1,4 @@
-export type AppBlockingErrorKind = "backend-unreachable" | "emulator-not-found";
+export type AppBlockingErrorKind = "backend-crashed" | "backend-unreachable" | "emulator-not-found";
 
 export interface AppBlockingErrorViewModel {
     kind: AppBlockingErrorKind;

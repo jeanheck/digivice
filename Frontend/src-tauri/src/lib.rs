@@ -3,7 +3,7 @@ use tauri_plugin_shell::ShellExt;
 use std::sync::Mutex;
 use std::net::TcpListener;
 use tauri::State;
-use tauri_plugin_dialog::{DialogExt, MessageDialogKind};
+use tauri::Emitter;
 
 struct BackendProcess(Mutex<Option<tauri_plugin_shell::process::CommandChild>>);
 struct BackendPort(u16);
@@ -13,18 +13,6 @@ fn get_backend_port(port: State<'_, BackendPort>) -> u16 {
     port.0
 }
 
-#[tauri::command]
-fn open_logs_folder(app_handle: tauri::AppHandle) {
-    let exe_path = std::env::current_exe().unwrap_or_default();
-    let logs_dir = exe_path.parent().unwrap_or(std::path::Path::new("")).join("logs");
-    
-    if !logs_dir.exists() {
-        let _ = std::fs::create_dir_all(&logs_dir);
-    }
-    
-    let _ = app_handle.shell().open(logs_dir.to_string_lossy().to_string(), None);
-}
-
 fn get_free_port() -> u16 {
     TcpListener::bind("127.0.0.1:0")
         .and_then(|listener| listener.local_addr())
@@ -32,25 +20,19 @@ fn get_free_port() -> u16 {
         .unwrap_or(5000)
 }
 
+fn emit_backend_crashed(app_handle: &tauri::AppHandle, exit_code: Option<i32>) {
+    let _ = app_handle.emit("backend-crashed", exit_code);
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
   tauri::Builder::default()
     .plugin(tauri_plugin_shell::init())
-    .plugin(tauri_plugin_dialog::init())
-    .invoke_handler(tauri::generate_handler![get_backend_port, open_logs_folder])
+    .invoke_handler(tauri::generate_handler![get_backend_port])
     .setup(|app| {
       let port = get_free_port();
       app.manage(BackendPort(port));
 
-      if cfg!(debug_assertions) {
-        app.handle().plugin(
-          tauri_plugin_log::Builder::default()
-            .level(log::LevelFilter::Info)
-            .build(),
-        )?;
-      }
-
-      // Despacha o nosso Sidecar do backend
       let sidecar_command = app.shell().sidecar("backend").unwrap()
           .args(["--urls", &format!("http://127.0.0.1:{}", port)]);
       match sidecar_command.spawn() {
@@ -64,11 +46,7 @@ pub fn run() {
                       if let tauri_plugin_shell::process::CommandEvent::Terminated(payload) = event {
                           if payload.code != Some(0) {
                               println!("Backend crashed with code {:?}", payload.code);
-                              let _ = app_handle.dialog()
-                                  .message("Erro Crítico: O motor do Digivice parou de funcionar inesperadamente. Verifique a pasta logs e contate o desenvolvedor.")
-                                  .title("Falha no Backend")
-                                  .kind(MessageDialogKind::Error)
-                                  .show(|_| {});
+                              emit_backend_crashed(&app_handle, payload.code);
                           }
                           break;
                       }
@@ -77,13 +55,13 @@ pub fn run() {
           }
           Err(e) => {
               eprintln!("Failed to spawn backend sidecar: {}", e);
+              emit_backend_crashed(app.handle(), None);
           }
       }
 
       Ok(())
     })
     .on_window_event(|window, event| {
-         // Mata agressivamente o sidecar se o aplicativo for fechado
          if let tauri::WindowEvent::Destroyed = event {
             if let Some(state) = window.try_state::<BackendProcess>() {
                 if let Ok(mut child_lock) = state.0.lock() {

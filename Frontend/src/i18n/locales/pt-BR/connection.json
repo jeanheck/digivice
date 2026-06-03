@@ -4,6 +4,10 @@
     "disconnected": "Desconectado"
   },
   "errors": {
+    "backendCrashed": {
+      "title": "O motor do Digivice parou",
+      "hint": "Feche o aplicativo e abra novamente. Se o problema continuar, contate o desenvolvedor."
+    },
     "backend": {
       "title": "Não foi possível conectar ao Digivice",
       "hint": "Verifique se o aplicativo foi iniciado corretamente e tente novamente."

@@ -4,6 +4,10 @@
     "disconnected": "Disconnected"
   },
   "errors": {
+    "backendCrashed": {
+      "title": "Digivice engine stopped",
+      "hint": "Close the app and open it again. If the problem persists, contact the developer."
+    },
     "backend": {
       "title": "Could not connect to Digivice",
       "hint": "Make sure the application started correctly and try again."
