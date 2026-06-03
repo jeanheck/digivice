@@ -31,14 +31,6 @@ const closeQuestModal = () => {
     activeQuest.value = null;
   }, 300);
 };
-
-const sideQuestSectionTitleClass = "text-cyan-400";
-const sideQuestSectionBorderClass = "border-cyan-800";
-const sideQuestSectionChevronClass = "text-cyan-400";
-const sideQuestSectionHeaderHoverClass = "hover:bg-cyan-900/30";
-const sideQuestStepNumberClass = "text-cyan-600";
-const sideQuestTitleClass = "text-cyan-400";
-const sideQuestTitleHoverClass = "group-hover:text-cyan-400";
 </script>
 
 <template>
@@ -66,19 +58,13 @@ const sideQuestTitleHoverClass = "group-hover:text-cyan-400";
 
       <JournalQuestsSection
         :title="$t('journal.sideQuests')"
-        :title-class="sideQuestSectionTitleClass"
-        :border-class="sideQuestSectionBorderClass"
-        :chevron-class="sideQuestSectionChevronClass"
-        :header-hover-class="sideQuestSectionHeaderHoverClass"
+        accent-color="cyan"
       >
         <JournalQuestCard
           v-for="sideQuest in journalViewModel.sideQuests"
           :key="sideQuest.id"
           :quest="sideQuest"
           display-mode="side"
-          :step-number-accent-class="sideQuestStepNumberClass"
-          :quest-title-accent-class="sideQuestTitleClass"
-          :quest-title-hover-accent-class="sideQuestTitleHoverClass"
           @click="openQuestModal"
         />
       </JournalQuestsSection>

@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, inject } from "vue";
 import type { QuestCardVariant, QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
+import {
+    getJournalSectionPalette,
+    journalSectionPaletteKey,
+} from "@/components/journal/journal-section-palette";
 
 const props = defineProps<{
   quest: QuestViewModel;
   displayMode: "main" | "side";
-  stepNumberAccentClass?: string;
-  questTitleAccentClass?: string;
-  questTitleHoverAccentClass?: string;
 }>();
 
 const emit = defineEmits<{
@@ -23,6 +24,16 @@ const QUEST_CARD_VARIANT_CLASSES: Record<QuestCardVariant, string> = {
 
 const isMainDisplayMode = computed(() => {
   return props.displayMode === "main";
+});
+
+const sectionPalette = inject(journalSectionPaletteKey, null);
+
+const sideQuestPalette = computed(() => {
+  if (sectionPalette !== null) {
+    return sectionPalette.value;
+  }
+
+  return getJournalSectionPalette("cyan");
 });
 
 const cardClass = computed(() => {
@@ -46,8 +57,8 @@ const titleClass = computed(() => {
     return "text-gray-400 line-through";
   }
 
-  const accentTitleClass = props.questTitleAccentClass ?? "text-blue-300";
-  const accentTitleHoverClass = props.questTitleHoverAccentClass ?? "group-hover:text-blue-400";
+  const accentTitleClass = sideQuestPalette.value.questTitleClass;
+  const accentTitleHoverClass = sideQuestPalette.value.questTitleHoverClass;
 
   return `${accentTitleClass} ${accentTitleHoverClass}`;
 });
@@ -57,9 +68,7 @@ const stepNumberClass = computed(() => {
     return "text-yellow-400 font-bold mr-1";
   }
 
-  const accentStepNumberClass = props.stepNumberAccentClass ?? "text-blue-400";
-
-  return `${accentStepNumberClass} font-bold mr-1`;
+  return `${sideQuestPalette.value.stepNumberClass} font-bold mr-1`;
 });
 
 const titleSizeClass = computed(() => {
