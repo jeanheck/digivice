@@ -21,15 +21,6 @@ const isUnlocked = computed(() => {
     return NodePresenter.checkRequirements(props.digimon, props.node);
 });
 
-const getRequirementText = (requirement: RequirementViewModel) => {
-    switch (requirement.type) {
-        case "DigimonLevel": return `${props.digimonName} Lv ${requirement.value}`;
-        case "Attribute": return `${props.digimonName} - ${requirement.attribute} >= ${requirement.value}`;
-        case "DigievolutionLevel": return `${requirement.digievolution} Lv ${requirement.value}`;
-        default: return "Unknown Parameter";
-    }
-};
-
 const isReqMet = (requirement: RequirementViewModel) => {
     return NodePresenter.isRequirementMet(props.digimon, requirement);
 };
@@ -74,7 +65,7 @@ const nodeAvatarUrl = computed(() => {
             <template v-for="(req, idx) in node.requirements.slice(0, 2)" :key="idx">
                 <span class="text-[8px] font-bold tracking-tight truncate"
                       :class="isReqMet(req) ? 'text-emerald-400' : 'text-[#ddd]'">
-                    {{ getRequirementText(req) }}
+                    {{ NodePresenter.getRequirementText(digimonName, req) }}
                 </span>
             </template>
         </div>

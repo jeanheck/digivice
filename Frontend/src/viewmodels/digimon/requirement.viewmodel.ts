@@ -1,6 +1,6 @@
 export interface RequirementViewModel {
     type: string;
-    digievolution?: string;
+    digievolution?: number;
     attribute?: string;
     value: number;
 }

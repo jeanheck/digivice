@@ -1,6 +1,6 @@
 export interface DigimonDigievolutionRequirementRaw {
     type: string;
-    digievolution?: string;
+    digievolution?: number;
     attribute?: string;
     value: number;
 }

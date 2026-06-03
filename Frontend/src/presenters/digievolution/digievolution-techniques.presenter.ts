@@ -50,7 +50,7 @@ export class DigievolutionTechniquesPresenter {
         return evolutionRequirements
             .filter((requirement) => requirement.type === "DigievolutionLevel")
             .map((requirement) => {
-                const requirementDigievolutionId = DigievolutionRepository.getIdByName(requirement.digievolution!);
+                const requirementDigievolutionId = requirement.digievolution!;
 
                 return {
                     id: requirementDigievolutionId,
@@ -70,7 +70,7 @@ export class DigievolutionTechniquesPresenter {
                         return false;
                     }
 
-                    return DigievolutionRepository.getIdByName(requirement.digievolution) === digievolutionId;
+                    return requirement.digievolution === digievolutionId;
                 });
             })
             .map(([candidateDigievolutionId]) => {
