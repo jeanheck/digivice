@@ -39,9 +39,9 @@
                 "digievolution": 375
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 200,
-                "attribute": "wind"
+                "stat": "wind"
             }
         ],
         "26": [
@@ -51,9 +51,9 @@
                 "digievolution": 5
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 140,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "27": [
@@ -63,9 +63,9 @@
                 "digievolution": 389
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 140,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "56": [
@@ -77,7 +77,7 @@
             {
                 "type": "Attribute",
                 "value": 280,
-                "attribute": "wisdom"
+                "stat": "wisdom"
             }
         ],
         "59": [
@@ -139,9 +139,9 @@
                 "digievolution": 27
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 200,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "211": [
@@ -184,9 +184,9 @@
                 "digievolution": 375
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 360,
-                "attribute": "water"
+                "stat": "water"
             }
         ],
         "254": [
@@ -236,9 +236,9 @@
                 "digievolution": 375
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 200,
-                "attribute": "fire"
+                "stat": "fire"
             }
         ],
         "368": [
@@ -336,7 +336,7 @@
             {
                 "type": "Attribute",
                 "value": 280,
-                "attribute": "speed"
+                "stat": "speed"
             }
         ],
         "389": [
@@ -388,9 +388,9 @@
                 "digievolution": 368
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 200,
-                "attribute": "fire"
+                "stat": "fire"
             }
         ],
         "6": [
@@ -421,9 +421,9 @@
                 "digievolution": 66
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 280,
-                "attribute": "wind"
+                "stat": "wind"
             }
         ],
         "26": [
@@ -433,9 +433,9 @@
                 "digievolution": 5
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 160,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "27": [
@@ -445,9 +445,9 @@
                 "digievolution": 391
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 150,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "56": [
@@ -459,7 +459,7 @@
             {
                 "type": "Attribute",
                 "value": 80,
-                "attribute": "wisdom"
+                "stat": "wisdom"
             }
         ],
         "59": [
@@ -521,9 +521,9 @@
                 "digievolution": 27
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 200,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "211": [
@@ -566,9 +566,9 @@
                 "digievolution": 20
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 280,
-                "attribute": "water"
+                "stat": "water"
             }
         ],
         "254": [
@@ -599,7 +599,7 @@
             {
                 "type": "Attribute",
                 "value": 400,
-                "attribute": "speed"
+                "stat": "speed"
             }
         ],
         "267": [
@@ -625,7 +625,7 @@
             {
                 "type": "Attribute",
                 "value": 480,
-                "attribute": "strength"
+                "stat": "strength"
             }
         ],
         "368": [
@@ -658,7 +658,7 @@
             {
                 "type": "Attribute",
                 "value": 80,
-                "attribute": "spirit"
+                "stat": "spirit"
             }
         ],
         "375": [
@@ -788,7 +788,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "spirit"
+                "stat": "spirit"
             }
         ],
         "12": [
@@ -812,9 +812,9 @@
                 "digievolution": 390
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 120,
-                "attribute": "wind"
+                "stat": "wind"
             }
         ],
         "26": [
@@ -824,9 +824,9 @@
                 "digievolution": 5
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 300,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "27": [
@@ -836,9 +836,9 @@
                 "digievolution": 390
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 180,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "56": [
@@ -850,7 +850,7 @@
             {
                 "type": "Attribute",
                 "value": 160,
-                "attribute": "strength"
+                "stat": "strength"
             }
         ],
         "59": [
@@ -912,9 +912,9 @@
                 "digievolution": 27
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 240,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "211": [
@@ -957,9 +957,9 @@
                 "digievolution": 211
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 110,
-                "attribute": "water"
+                "stat": "water"
             }
         ],
         "254": [
@@ -988,9 +988,9 @@
                 "digievolution": 12
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 200,
-                "attribute": "thunder"
+                "stat": "thunder"
             }
         ],
         "267": [
@@ -1016,7 +1016,7 @@
             {
                 "type": "Attribute",
                 "value": 320,
-                "attribute": "speed"
+                "stat": "speed"
             }
         ],
         "368": [
@@ -1049,7 +1049,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "spirit"
+                "stat": "spirit"
             }
         ],
         "375": [
@@ -1106,7 +1106,7 @@
             {
                 "type": "Attribute",
                 "value": 250,
-                "attribute": "strength"
+                "stat": "strength"
             }
         ],
         "387": [
@@ -1124,7 +1124,7 @@
             {
                 "type": "Attribute",
                 "value": 460,
-                "attribute": "defense"
+                "stat": "defense"
             }
         ],
         "389": [
@@ -1182,9 +1182,9 @@
                 "digievolution": 211
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 250,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "12": [
@@ -1209,7 +1209,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "wisdom"
+                "stat": "wisdom"
             }
         ],
         "26": [
@@ -1219,9 +1219,9 @@
                 "digievolution": 5
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 130,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "27": [
@@ -1355,9 +1355,9 @@
                 "digievolution": 12
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 100,
-                "attribute": "ice"
+                "stat": "ice"
             }
         ],
         "260": [
@@ -1369,7 +1369,7 @@
             {
                 "type": "Attribute",
                 "value": 260,
-                "attribute": "speed"
+                "stat": "speed"
             }
         ],
         "267": [
@@ -1427,7 +1427,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "spirit"
+                "stat": "spirit"
             }
         ],
         "375": [
@@ -1498,7 +1498,7 @@
             {
                 "type": "Attribute",
                 "value": 400,
-                "attribute": "defense"
+                "stat": "defense"
             }
         ],
         "389": [
@@ -1554,7 +1554,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "defense"
+                "stat": "defense"
             }
         ],
         "6": [
@@ -1564,9 +1564,9 @@
                 "digievolution": 254
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 160,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "12": [
@@ -1592,7 +1592,7 @@
             {
                 "type": "Attribute",
                 "value": 230,
-                "attribute": "wisdom"
+                "stat": "wisdom"
             }
         ],
         "26": [
@@ -1602,9 +1602,9 @@
                 "digievolution": 5
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 190,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "27": [
@@ -1614,9 +1614,9 @@
                 "digievolution": 254
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 100,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "56": [
@@ -1628,7 +1628,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "wisdom"
+                "stat": "wisdom"
             }
         ],
         "59": [
@@ -1694,9 +1694,9 @@
                 "digievolution": 27
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 140,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "211": [
@@ -1784,9 +1784,9 @@
                 "digievolution": 254
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 90,
-                "attribute": "fire"
+                "stat": "fire"
             }
         ],
         "368": [
@@ -1817,9 +1817,9 @@
                 "digievolution": 254
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 200,
-                "attribute": "ice"
+                "stat": "ice"
             }
         ],
         "375": [
@@ -1881,9 +1881,9 @@
                 "digievolution": 148
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 160,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "388": [
@@ -1895,7 +1895,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "defense"
+                "stat": "defense"
             }
         ],
         "389": [
@@ -1949,9 +1949,9 @@
                 "digievolution": 369
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 280,
-                "attribute": "fire"
+                "stat": "fire"
             }
         ],
         "6": [
@@ -1961,9 +1961,9 @@
                 "digievolution": 391
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 160,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "12": [
@@ -1989,7 +1989,7 @@
             {
                 "type": "Attribute",
                 "value": 180,
-                "attribute": "spirit"
+                "stat": "spirit"
             }
         ],
         "26": [
@@ -1999,9 +1999,9 @@
                 "digievolution": 5
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 140,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "27": [
@@ -2013,7 +2013,7 @@
             {
                 "type": "Attribute",
                 "value": 100,
-                "attribute": "defense"
+                "stat": "defense"
             }
         ],
         "56": [
@@ -2023,9 +2023,9 @@
                 "digievolution": 368
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 120,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "59": [
@@ -2087,9 +2087,9 @@
                 "digievolution": 27
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 190,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "211": [
@@ -2132,9 +2132,9 @@
                 "digievolution": 368
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 140,
-                "attribute": "water"
+                "stat": "water"
             }
         ],
         "254": [
@@ -2156,9 +2156,9 @@
                 "digievolution": 369
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 300,
-                "attribute": "wind"
+                "stat": "wind"
             }
         ],
         "260": [
@@ -2168,9 +2168,9 @@
                 "digievolution": 367
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 80,
-                "attribute": "thunder"
+                "stat": "thunder"
             }
         ],
         "267": [
@@ -2221,7 +2221,7 @@
             {
                 "type": "Attribute",
                 "value": 200,
-                "attribute": "spirit"
+                "stat": "spirit"
             }
         ],
         "375": [
@@ -2278,7 +2278,7 @@
             {
                 "type": "Attribute",
                 "value": 400,
-                "attribute": "strength"
+                "stat": "strength"
             }
         ],
         "387": [
@@ -2348,7 +2348,7 @@
             {
                 "type": "Attribute",
                 "value": 280,
-                "attribute": "defense"
+                "stat": "defense"
             }
         ],
         "6": [
@@ -2379,9 +2379,9 @@
                 "digievolution": 376
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 150,
-                "attribute": "wind"
+                "stat": "wind"
             }
         ],
         "26": [
@@ -2391,9 +2391,9 @@
                 "digievolution": 5
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 250,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "27": [
@@ -2403,9 +2403,9 @@
                 "digievolution": 375
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 100,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "56": [
@@ -2417,7 +2417,7 @@
             {
                 "type": "Attribute",
                 "value": 400,
-                "attribute": "wisdom"
+                "stat": "wisdom"
             }
         ],
         "59": [
@@ -2483,9 +2483,9 @@
                 "digievolution": 27
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 120,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "211": [
@@ -2530,7 +2530,7 @@
             {
                 "type": "Attribute",
                 "value": 160,
-                "attribute": "spirit"
+                "stat": "spirit"
             }
         ],
         "254": [
@@ -2552,9 +2552,9 @@
                 "digievolution": 375
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 120,
-                "attribute": "wind"
+                "stat": "wind"
             }
         ],
         "260": [
@@ -2566,7 +2566,7 @@
             {
                 "type": "Attribute",
                 "value": 80,
-                "attribute": "strength"
+                "stat": "strength"
             }
         ],
         "267": [
@@ -2592,7 +2592,7 @@
             {
                 "type": "Attribute",
                 "value": 80,
-                "attribute": "defense"
+                "stat": "defense"
             }
         ],
         "368": [
@@ -2692,7 +2692,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "strength"
+                "stat": "strength"
             }
         ],
         "389": [
@@ -2746,9 +2746,9 @@
                 "digievolution": 211
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 140,
-                "attribute": "fire"
+                "stat": "fire"
             }
         ],
         "6": [
@@ -2758,9 +2758,9 @@
                 "digievolution": 390
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 300,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "12": [
@@ -2790,9 +2790,9 @@
                 "digievolution": 5
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 220,
-                "attribute": "dark"
+                "stat": "dark"
             }
         ],
         "27": [
@@ -2802,9 +2802,9 @@
                 "digievolution": 390
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 140,
-                "attribute": "machine"
+                "stat": "machine"
             }
         ],
         "56": [
@@ -2816,7 +2816,7 @@
             {
                 "type": "Attribute",
                 "value": 100,
-                "attribute": "strength"
+                "stat": "strength"
             }
         ],
         "59": [
@@ -2922,7 +2922,7 @@
             {
                 "type": "Attribute",
                 "value": 180,
-                "attribute": "wisdom"
+                "stat": "wisdom"
             }
         ],
         "254": [
@@ -2944,9 +2944,9 @@
                 "digievolution": 367
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 320,
-                "attribute": "wind"
+                "stat": "wind"
             }
         ],
         "260": [
@@ -2956,9 +2956,9 @@
                 "digievolution": 211
             },
             {
-                "type": "Attribute",
+                "type": "Resistance",
                 "value": 100,
-                "attribute": "thunder"
+                "stat": "thunder"
             }
         ],
         "267": [
@@ -3012,7 +3012,7 @@
             {
                 "type": "Attribute",
                 "value": 300,
-                "attribute": "spirit"
+                "stat": "spirit"
             }
         ],
         "375": [
@@ -3083,7 +3083,7 @@
             {
                 "type": "Attribute",
                 "value": 240,
-                "attribute": "strength"
+                "stat": "strength"
             }
         ],
         "389": [

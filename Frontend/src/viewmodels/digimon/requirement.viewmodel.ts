@@ -1,6 +1,8 @@
+import type { DigievolutionRequirementConstant } from "@/constants/digievolution-requirement.constant";
+
 export interface RequirementViewModel {
-    type: string;
+    type: DigievolutionRequirementConstant;
     digievolution?: number;
-    attribute?: string;
+    stat?: string;
     value: number;
 }
