@@ -1,3 +1,4 @@
+import type { ComposerTranslation } from "vue-i18n";
 import type { Attributes, Digimon, Resistances } from "@/models";
 import { DigievolutionRequirementConstant } from "@/constants/digievolution-requirement.constant";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
@@ -7,24 +8,27 @@ import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.view
 export class NodePresenter {
     public static getRequirementText(
         digimonName: string,
-        requirement: RequirementViewModel
+        requirement: RequirementViewModel,
+        translate: ComposerTranslation
     ): string {
+        const levelLabel = translate("digievolution.lv");
+
         switch (requirement.type) {
             case DigievolutionRequirementConstant.DigimonLevel:
-                return `${digimonName} Lv ${requirement.value}`;
+                return `${digimonName} ${levelLabel} ${requirement.value}`;
             case DigievolutionRequirementConstant.Attribute:
             case DigievolutionRequirementConstant.Resistance:
-                return `${digimonName} - ${requirement.stat} >= ${requirement.value}`;
+                return `${digimonName}: ${this.capitalize(requirement.stat!)} >= ${requirement.value}`;
             case DigievolutionRequirementConstant.DigievolutionLevel: {
                 if (requirement.digievolution === undefined) {
-                    return "Unknown Parameter";
+                    return translate("digievolution.unknownParam");
                 }
 
                 const digievolutionName = DigievolutionRepository.getNameById(requirement.digievolution);
-                return `${digievolutionName} Lv ${requirement.value}`;
+                return `${digievolutionName} ${levelLabel}.${requirement.value}`;
             }
             default:
-                return "Unknown Parameter";
+                return translate("digievolution.unknownParam");
         }
     }
 
@@ -78,5 +82,9 @@ export class NodePresenter {
         }
 
         return true;
+    }
+
+    private static capitalize(value: string): string {
+        return value.charAt(0).toUpperCase() + value.slice(1);
     }
 }

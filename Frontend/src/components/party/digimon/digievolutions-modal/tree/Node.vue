@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import type { Digimon } from "@/models";
 import { NodePresenter } from "@/presenters/tree/node.presenter";
@@ -16,6 +17,8 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "select"): void;
 }>();
+
+const { t } = useI18n();
 
 const isUnlocked = computed(() => {
     return NodePresenter.checkRequirements(props.digimon, props.node);
@@ -65,7 +68,7 @@ const nodeAvatarUrl = computed(() => {
             <template v-for="(req, idx) in node.requirements.slice(0, 2)" :key="idx">
                 <span class="text-[8px] font-bold tracking-tight truncate"
                       :class="isReqMet(req) ? 'text-emerald-400' : 'text-[#ddd]'">
-                    {{ NodePresenter.getRequirementText(digimonName, req) }}
+                    {{ NodePresenter.getRequirementText(digimonName, req, t) }}
                 </span>
             </template>
         </div>
