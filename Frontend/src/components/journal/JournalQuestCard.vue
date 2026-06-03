@@ -78,7 +78,7 @@ const onClick = () => {
   >
     <div
       v-if="!isMainDisplayMode && quest.isDone"
-      class="absolute inset-0 bg-green-500/5 pointer-events-none"
+      class="absolute inset-0 bg-green-500/15 pointer-events-none"
     />
 
     <div class="flex items-center justify-between mb-1 relative z-10">
