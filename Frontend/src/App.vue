@@ -18,7 +18,7 @@ const blockingError = useAppBlockingError();
 
       <div class="flex-1 min-w-75 min-h-0 overflow-hidden flex flex-col gap-4">
         <div class="flex-3 min-h-0 overflow-hidden flex flex-col">
-          <Journal class="flex-1" />
+          <Journal />
         </div>
 
         <div class="flex-2 min-h-50 flex flex-col">

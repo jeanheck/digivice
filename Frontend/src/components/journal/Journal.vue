@@ -36,7 +36,7 @@ const closeQuestModal = () => {
 <template>
   <aside
     v-if="journalViewModel"
-    class="dw3-aside"
+    class="dw3-aside flex-1 min-h-0"
   >
     <div class="dw3-aside-header">
       <h3 class="dw3-aside-title shadow-text">{{ $t("journal.title") }}</h3>
