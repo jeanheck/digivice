@@ -12,7 +12,8 @@ const locationViewModel = computed(() => {
   if (locationId === null) {
     return null;
   }
-  return MapPresenter.getLocationById(locationId);
+  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
+  return MapPresenter.getLocationById(locationId, mainQuest);
 });
 </script>
 

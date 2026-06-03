@@ -184,8 +184,20 @@
   "0227": {
     "image": "Divermon's Lake",
     "enemies": [
-      "73",
-      "76"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "73",
+          "76"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 27,
+        "ids": [
+          "73",
+          "103"
+        ]
+      }
     ]
   },
   "0229": {

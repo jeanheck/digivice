@@ -2,11 +2,15 @@ import type { LocationRaw } from "@/repositories/tables/raws/location/location.r
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 export class LocationConverter {
-  public static convert(locationId: string, locationRaw: LocationRaw): LocationViewModel {
+  public static convert(
+    locationId: string,
+    locationRaw: LocationRaw,
+    resolvedEnemyIds: string[],
+  ): LocationViewModel {
     return {
       id: locationId,
       image: locationRaw.image,
-      enemies: locationRaw.enemies,
+      enemies: resolvedEnemyIds,
     };
   }
 }
