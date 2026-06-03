@@ -17,7 +17,7 @@ public class DigimonConverterTests
             Vitals = new Vitals { CurrentHP = 101, MaxHP = 202, CurrentMP = 33, MaxMP = 44 },
             Attributes = new Attributes { Strength = 1, Defense = 2, Spirit = 3, Wisdom = 4, Speed = 5, Charisma = 6 },
             Resistances = new Resistances { Fire = 7, Water = 8, Ice = 9, Wind = 10, Thunder = 11, Machine = 12, Dark = 13 },
-            Equipments = new Equipments { Head = 14, Body = 15, RightHand = 16, LeftHand = 17, Accessory1 = 18, Accessory2 = 19 },
+            Equipments = new Equipments { Head = 14, Body = 15, Right = 16, Left = 17, Accessory1 = 18, Accessory2 = 19 },
             Digievolutions =
             [
                 new DigievolutionSlot
@@ -46,7 +46,7 @@ public class DigimonConverterTests
         Assert.Equal(1, dto.Attributes.Value!.Strength.Value);
         Assert.Equal(4, dto.Attributes.Value.Wisdom.Value);
         Assert.Equal(13, dto.Resistances.Value!.Dark.Value);
-        Assert.Equal(16, dto.Equipments.Value!.RightHand.Value);
+        Assert.Equal(16, dto.Equipments.Value!.Right.Value);
         var evolutionSlot = Assert.Single(dto.Digievolutions.Value!);
         Assert.Equal(1, evolutionSlot.Index);
         Assert.Equal(5, evolutionSlot.DigievolutionId.Value);

@@ -112,7 +112,7 @@ namespace Backend.Diagnostics
 
             // Equipments
             var equipments = digimon.Equipments;
-            sb.AppendLine($"{Gray}   Equips:  {Reset}H:{equipments.Head} B:{equipments.Body} R:{equipments.RightHand} L:{equipments.LeftHand} A1:{equipments.Accessory1} A2:{equipments.Accessory2}");
+            sb.AppendLine($"{Gray}   Equips:  {Reset}H:{equipments.Head} B:{equipments.Body} R:{equipments.Right} L:{equipments.Left} A1:{equipments.Accessory1} A2:{equipments.Accessory2}");
 
             // Evolutions
             sb.Append($"{Gray}   Evos:    {Reset}");

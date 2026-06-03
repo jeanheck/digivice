@@ -13,10 +13,10 @@ public record class EquipmentsDTO : IDTO
     public Optional<int> Body { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> RightHand { get; init; } = Optional<int>.Empty;
+    public Optional<int> Right { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> LeftHand { get; init; } = Optional<int>.Empty;
+    public Optional<int> Left { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<int> Accessory1 { get; init; } = Optional<int>.Empty;

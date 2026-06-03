@@ -12,16 +12,16 @@ public class EquipmentsConverterTests
         {
             Head = 1,
             Body = 2,
-            RightHand = 3,
-            LeftHand = 4,
+            Right = 3,
+            Left = 4,
             Accessory1 = 5,
             Accessory2 = 6
         });
 
         Assert.Equal(1, dto.Head.Value);
         Assert.Equal(2, dto.Body.Value);
-        Assert.Equal(3, dto.RightHand.Value);
-        Assert.Equal(4, dto.LeftHand.Value);
+        Assert.Equal(3, dto.Right.Value);
+        Assert.Equal(4, dto.Left.Value);
         Assert.Equal(5, dto.Accessory1.Value);
         Assert.Equal(6, dto.Accessory2.Value);
     }

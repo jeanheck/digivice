@@ -10,9 +10,9 @@ namespace Backend.Memory.Addresses.Parties.Digimons
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Body { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int RightHand { get; set; }
+        public int Right { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int LeftHand { get; set; }
+        public int Left { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Accessory1 { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]

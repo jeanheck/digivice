@@ -1,9 +1,9 @@
 namespace Tests.Events.Diffing;
 
-using Backend.Events.Diffing;
 using Backend.Domain.Models;
 using Backend.Domain.Models.Parties;
 using Backend.Domain.Models.Parties.Digimons;
+using Backend.Events.Diffing;
 
 public class PartyDifferTests
 {
@@ -29,7 +29,8 @@ public class PartyDifferTests
 
         Assert.NotNull(result);
         Assert.True(result.Slots.HasValue);
-        
+
+
         var slots = result.Slots.Value!;
         Assert.Single(slots);
         Assert.Equal(0, slots[0].Index);
@@ -51,12 +52,14 @@ public class PartyDifferTests
 
         Assert.NotNull(result);
         Assert.True(result.Slots.HasValue);
-        
+
+
         var slots = result.Slots.Value!;
         Assert.Single(slots);
         Assert.Equal(0, slots[0].Index);
         Assert.True(slots[0].Digimon.HasValue);
-        
+
+
         var digimon = slots[0].Digimon.Value!;
         Assert.True(digimon.Level.HasValue);
         Assert.Equal(15, digimon.Level.Value);
@@ -72,7 +75,7 @@ public class PartyDifferTests
             Vitals = new Vitals { CurrentHP = 100, MaxHP = 100, CurrentMP = 50, MaxMP = 50 },
             Attributes = new Attributes { Strength = 5, Defense = 5, Spirit = 5, Wisdom = 5, Speed = 5, Charisma = 5 },
             Resistances = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
-            Equipments = new Equipments { Head = 0, Body = 0, RightHand = 0, LeftHand = 0, Accessory1 = 0, Accessory2 = 0 },
+            Equipments = new Equipments { Head = 0, Body = 0, Right = 0, Left = 0, Accessory1 = 0, Accessory2 = 0 },
             Digievolutions = []
         };
     }

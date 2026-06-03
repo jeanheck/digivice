@@ -86,8 +86,8 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(70, digimonResource.Resistances.Dark);
         Assert.Equal(101, digimonResource.Equipments.Head);
         Assert.Equal(102, digimonResource.Equipments.Body);
-        Assert.Equal(103, digimonResource.Equipments.RightHand);
-        Assert.Equal(104, digimonResource.Equipments.LeftHand);
+        Assert.Equal(103, digimonResource.Equipments.Right);
+        Assert.Equal(104, digimonResource.Equipments.Left);
         Assert.Equal(105, digimonResource.Equipments.Accessory1);
         Assert.Equal(106, digimonResource.Equipments.Accessory2);
         Assert.Equal(3, digimonResource.Digievolutions.Count);

@@ -27,8 +27,8 @@
     "Equipaments": {
         "Head": "0x3C0",
         "Body": "0x3C2",
-        "RightHand": "0x3C4",
-        "LeftHand": "0x3C6",
+        "Right": "0x3C4",
+        "Left": "0x3C6",
         "Accessory1": "0x3C8",
         "Accessory2": "0x3CA"
     },

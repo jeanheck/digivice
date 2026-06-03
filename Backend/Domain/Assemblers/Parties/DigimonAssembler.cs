@@ -49,8 +49,8 @@ namespace Backend.Domain.Assemblers.Parties
                 {
                     Head = resource.Equipments.Head,
                     Body = resource.Equipments.Body,
-                    RightHand = resource.Equipments.RightHand,
-                    LeftHand = resource.Equipments.LeftHand,
+                    Right = resource.Equipments.Right,
+                    Left = resource.Equipments.Left,
                     Accessory1 = resource.Equipments.Accessory1,
                     Accessory2 = resource.Equipments.Accessory2
                 },

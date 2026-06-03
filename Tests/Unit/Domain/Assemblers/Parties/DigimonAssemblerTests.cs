@@ -32,7 +32,7 @@ public class DigimonAssemblerTests
             Vitals = new VitalsResource { CurrentHP = 100, MaxHP = 120, CurrentMP = 50, MaxMP = 60 },
             Attributes = new AttributesResource { Strength = 10, Defense = 11, Spirit = 12, Wisdow = 13, Speed = 14, Charisma = 15 },
             Resistances = new ResistancesResource { Fire = 1, Water = 2, Ice = 3, Wind = 4, Thunder = 5, Machine = 6, Dark = 7 },
-            Equipments = new EquipmentsResource { Head = 101, Body = 102, RightHand = 103, LeftHand = 104, Accessory1 = 105, Accessory2 = 106 },
+            Equipments = new EquipmentsResource { Head = 101, Body = 102, Right = 103, Left = 104, Accessory1 = 105, Accessory2 = 106 },
             Digievolutions = [
                 new DigievolutionSlotResource { Index = 0, DigievolutionId = 1, DigievolutionResource = new DigievolutionResource { Level = 5, Dvxp = 200 } }
             ],

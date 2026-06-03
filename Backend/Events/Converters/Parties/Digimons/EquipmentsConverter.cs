@@ -9,8 +9,8 @@ public static class EquipmentsConverter
     {
         Head = equipments.Head,
         Body = equipments.Body,
-        RightHand = equipments.RightHand,
-        LeftHand = equipments.LeftHand,
+        Right = equipments.Right,
+        Left = equipments.Left,
         Accessory1 = equipments.Accessory1,
         Accessory2 = equipments.Accessory2
     };

@@ -1,13 +1,13 @@
 namespace Tests.Memory.Readers.Parties.Digimons;
 
 using System;
-using Xunit;
-using Moq;
-using Backend.Memory.Readers;
-using Backend.Memory.Readers.Parties.Digimons;
 using Backend.Memory.Addresses.Parties;
 using Backend.Memory.Addresses.Parties.Digimons;
+using Backend.Memory.Readers;
+using Backend.Memory.Readers.Parties.Digimons;
 using Backend.Memory.Resources.Parties.Digimons;
+using Moq;
+using Xunit;
 
 public class DigimonReaderTests
 {
@@ -61,7 +61,7 @@ public class DigimonReaderTests
             Vitals = new VitalsAddresses { CurrentHP = 16, MaxHP = 18, CurrentMP = 20, MaxMP = 22 },
             Attributes = new AttributesAddresses { Strength = 24, Defense = 26, Spirit = 28, Wisdow = 30, Speed = 32, Charisma = 34 },
             Resistances = new ResistancesAddresses { Fire = 36, Water = 38, Ice = 40, Wind = 42, Thunder = 44, Machine = 46, Dark = 48 },
-            Equipaments = new EquipmentsAddresses { Head = 50, Body = 52, RightHand = 54, LeftHand = 56, Accessory1 = 58, Accessory2 = 60 },
+            Equipaments = new EquipmentsAddresses { Head = 50, Body = 52, Right = 54, Left = 56, Accessory1 = 58, Accessory2 = 60 },
             Digievolutions = new DigievolutionsAddresses
             {
                 ActiveDigievolution = 200,
@@ -99,8 +99,8 @@ public class DigimonReaderTests
         // Equipments
         WriteInt16(block, 50, 101);   // Head
         WriteInt16(block, 52, 102);   // Body
-        WriteInt16(block, 54, 103);   // RightHand
-        WriteInt16(block, 56, 104);   // LeftHand
+        WriteInt16(block, 54, 103);   // Right
+        WriteInt16(block, 56, 104);   // Left
         WriteInt16(block, 58, 105);   // Accessory1
         WriteInt16(block, 60, 106);   // Accessory2
 
@@ -157,8 +157,8 @@ public class DigimonReaderTests
         // Equipments
         Assert.Equal(101, result.Equipments.Head);
         Assert.Equal(102, result.Equipments.Body);
-        Assert.Equal(103, result.Equipments.RightHand);
-        Assert.Equal(104, result.Equipments.LeftHand);
+        Assert.Equal(103, result.Equipments.Right);
+        Assert.Equal(104, result.Equipments.Left);
         Assert.Equal(105, result.Equipments.Accessory1);
         Assert.Equal(106, result.Equipments.Accessory2);
     }

@@ -29,13 +29,13 @@ public static class EquipmentsDiffer
         {
             dto = dto with { Body = newEquipaments.Body };
         }
-        if (newEquipaments.RightHand != previousEquipaments.RightHand)
+        if (newEquipaments.Right != previousEquipaments.Right)
         {
-            dto = dto with { RightHand = newEquipaments.RightHand };
+            dto = dto with { Right = newEquipaments.Right };
         }
-        if (newEquipaments.LeftHand != previousEquipaments.LeftHand)
+        if (newEquipaments.Left != previousEquipaments.Left)
         {
-            dto = dto with { LeftHand = newEquipaments.LeftHand };
+            dto = dto with { Left = newEquipaments.Left };
         }
         if (newEquipaments.Accessory1 != previousEquipaments.Accessory1)
         {

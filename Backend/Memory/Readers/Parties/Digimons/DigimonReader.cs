@@ -76,8 +76,8 @@ namespace Backend.Memory.Readers.Parties.Digimons
                 {
                     Head = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Head),
                     Body = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Body),
-                    RightHand = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.RightHand),
-                    LeftHand = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.LeftHand),
+                    Right = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Right),
+                    Left = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Left),
                     Accessory1 = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Accessory1),
                     Accessory2 = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Accessory2)
                 },
