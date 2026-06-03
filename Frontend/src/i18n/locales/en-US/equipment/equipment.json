@@ -260,6 +260,10 @@
       "name": "Machine Ring",
       "note": null
     },
+    "310": {
+      "name": "Dark Ring",
+      "note": null
+    },
     "311": {
       "name": "Antidote Ring",
       "note": "Boosts the equipped Digimon’s resistance against poison"
@@ -919,10 +923,6 @@
     "1157": {
       "name": "Dark Power S",
       "note": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
-    },
-    "1158": {
-      "name": "Dark Ring",
-      "note": null
     },
     "1159": {
       "name": "Dance Wing",

@@ -1512,6 +1512,31 @@
             "4"
         ]
     },
+    "310": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "dark",
+                "type": "+",
+                "value": 20
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 3
+            }
+        ],
+        "equipableDigimon": [
+            "3",
+            "5",
+            "0",
+            "1",
+            "2",
+            "7",
+            "6",
+            "4"
+        ]
+    },
     "311": {
         "type": "accessory",
         "attributes": [
@@ -4930,31 +4955,6 @@
     "1157": {
         "type": "accessory",
         "attributes": [],
-        "equipableDigimon": [
-            "3",
-            "5",
-            "0",
-            "1",
-            "2",
-            "7",
-            "6",
-            "4"
-        ]
-    },
-    "1158": {
-        "type": "accessory",
-        "attributes": [
-            {
-                "attribute": "dark",
-                "type": "+",
-                "value": 20
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 3
-            }
-        ],
         "equipableDigimon": [
             "3",
             "5",

@@ -14,7 +14,7 @@
     },
     "doublePower": {
       "name": "Poder Duplo",
-      "description": "Aumenta seu poder de ataque"
+      "description": "Aumente seu poder de ataque."
     },
     "lizardDance": {
       "name": "Dança do Lagarto",
@@ -93,8 +93,8 @@
       "description": "Dispara um laser pelo peito"
     },
     "doubleGuard": {
-      "name": "Guarda Dupla",
-      "description": "Aumenta seu poder de defesa"
+      "name": "Defesa Dupla",
+      "description": "Aumenta seu poder de defesa."
     },
     "pickingClaw": {
       "name": "Garra Ladra",
@@ -261,7 +261,7 @@
       "description": "Aumenta o poder de ataque dos aliados"
     },
     "atomicBlaster": {
-      "name": "Blaster Atômico",
+      "name": "Explosão Atômica",
       "description": "Queima o inimigo com laser de fogo"
     },
     "electroBolt": {

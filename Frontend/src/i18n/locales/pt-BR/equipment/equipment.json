@@ -6,7 +6,7 @@
     },
     "93": {
       "name": "Espada Zanden",
-      "note": null
+      "note": "Armazena energia para golpear o inimigo."
     },
     "94": {
       "name": "Lâmina Crimson",
@@ -14,7 +14,7 @@
     },
     "96": {
       "name": "Shiratorimaru",
-      "note": null
+      "note": "Espada do Mushamon."
     },
     "106": {
       "name": "Luva de Couro",
@@ -22,7 +22,7 @@
     },
     "107": {
       "name": "Luva de Gato",
-      "note": null
+      "note": "Soqueie como um gato."
     },
     "108": {
       "name": "Iron Glove",
@@ -30,27 +30,27 @@
     },
     "110": {
       "name": "Braço Potente",
-      "note": null
+      "note": "Luvas de braço que causam dano."
     },
     "122": {
       "name": "Espingarda",
-      "note": null
+      "note": "Um tiro causa dano poderoso."
     },
     "134": {
       "name": "Cajado de Osso",
-      "note": null
+      "note": "Cajado único feito de osso."
     },
     "141": {
       "name": "Vara Antiga",
-      "note": null
+      "note": "Magia ainda está dormente."
     },
     "147": {
       "name": "Presa de Cérbero",
-      "note": "Recupera uma fração do dano causado como HP"
+      "note": "Drena HP pela ferida causada ao inimigo."
     },
     "153": {
       "name": "Garra Antiga",
-      "note": null
+      "note": "Garra com o DNA de animais antigos."
     },
     "157": {
       "name": "Punhal",
@@ -58,11 +58,11 @@
     },
     "158": {
       "name": "Shishioumaru",
-      "note": null
+      "note": "Espada do Leomon."
     },
     "161": {
       "name": "Espada Alada",
-      "note": null
+      "note": "Fácil de empunhar ataques rápidos."
     },
     "167": {
       "name": "Arpão de Bambu",
@@ -70,7 +70,7 @@
     },
     "168": {
       "name": "Bambu",
-      "note": null
+      "note": "Fácil de usar e muito poderoso."
     },
     "169": {
       "name": "Conto de Fadas",
@@ -78,15 +78,15 @@
     },
     "171": {
       "name": "Lança Divina",
-      "note": null
+      "note": "Lança poderosa feita com ossos fossilizados."
     },
     "178": {
       "name": "Zweihander",
-      "note": null
+      "note": "Espada alemã de duas mãos."
     },
     "185": {
       "name": "Berdys",
-      "note": null
+      "note": "Machado pesado com o cabo longo."
     },
     "190": {
       "name": "Arco Longo",
@@ -94,7 +94,7 @@
     },
     "191": {
       "name": "Shuriken",
-      "note": null
+      "note": "Arma de arremesso para assassinos."
     },
     "192": {
       "name": "Besta",
@@ -102,15 +102,15 @@
     },
     "194": {
       "name": "Arco Raven",
-      "note": "Chance baixa de causar confusão no Digimon inimigo"
+      "note": "A maldição do corvo confunde o inimigo."
     },
     "201": {
       "name": "Protetor de Metal",
-      "note": null
+      "note": "Arma defensiva de metal que pode atacar."
     },
     "209": {
       "name": "Chifre Kabuteri",
-      "note": null
+      "note": "Chifre para nocautear o inimigo."
     },
     "215": {
       "name": "Bandana",
@@ -118,7 +118,7 @@
     },
     "216": {
       "name": "Visor Solar",
-      "note": null
+      "note": "Protege a cabeça com o visor."
     },
     "217": {
       "name": "Boné de Beisebol",
@@ -126,7 +126,7 @@
     },
     "219": {
       "name": "Boné de Lã",
-      "note": null
+      "note": "Protege a cabeça do frio."
     },
     "226": {
       "name": "Faixa",
@@ -134,7 +134,7 @@
     },
     "227": {
       "name": "Orelhas de Gato",
-      "note": null
+      "note": "Orelhas sensuais de gato."
     },
     "228": {
       "name": "Headband",
@@ -142,7 +142,7 @@
     },
     "230": {
       "name": "Coroa Mágica",
-      "note": null
+      "note": "Usado por feiticeiros para proteger a cabeça."
     },
     "236": {
       "name": "Capacete de Couro",
@@ -150,7 +150,7 @@
     },
     "237": {
       "name": "Capacete de Aço",
-      "note": null
+      "note": "Capacete feito de metal leve."
     },
     "238": {
       "name": "Elmo de Ferro",
@@ -158,7 +158,7 @@
     },
     "240": {
       "name": "Capacete Alado",
-      "note": null
+      "note": "Leve e fácil de desviar de ataques."
     },
     "249": {
       "name": "Casaco de Couro",
@@ -166,7 +166,7 @@
     },
     "250": {
       "name": "Roupa de Academia",
-      "note": null
+      "note": "Facilita a locomoção com este traje."
     },
     "251": {
       "name": "Manto do Padre",
@@ -174,7 +174,7 @@
     },
     "253": {
       "name": "Manto Sombrio",
-      "note": null
+      "note": "Manto estranho que drena a escuridão."
     },
     "262": {
       "name": "Armadura de Couro",
@@ -182,7 +182,7 @@
     },
     "263": {
       "name": "Armadura de Aço",
-      "note": null
+      "note": "Armadura feita com metal leve."
     },
     "264": {
       "name": "Iron Armor",
@@ -190,7 +190,7 @@
     },
     "266": {
       "name": "Armadura Sombria",
-      "note": null
+      "note": "Armadura misteriosa com poderes sombrios."
     },
     "275": {
       "name": "Escudo",
@@ -198,7 +198,7 @@
     },
     "276": {
       "name": "Escudo de Aço",
-      "note": null
+      "note": "Escudo leve e fácil de usar."
     },
     "277": {
       "name": "Escudo de Ferro",
@@ -206,79 +206,83 @@
     },
     "279": {
       "name": "Barreira Proteção",
-      "note": null
+      "note": "Uma barreira com um amplo alcance."
     },
     "281": {
       "name": "Escudo Divino",
-      "note": null
+      "note": "Barreira com uma luz Divina."
     },
     "292": {
       "name": "Gema - Poder",
-      "note": null
+      "note": "Aumenta o poder."
     },
     "294": {
       "name": "Gema - Defesa",
-      "note": null
+      "note": "Aumenta a defesa."
     },
     "296": {
       "name": "Gema - Espírito",
-      "note": null
+      "note": "Aumenta o espírito."
     },
     "298": {
       "name": "Gema - Sabedoria",
-      "note": null
+      "note": "Aumenta a sabedoria."
     },
     "300": {
       "name": "Gema - Impulso",
-      "note": null
+      "note": "Aumenta a velocidade."
     },
     "302": {
       "name": "Gema - Carisma",
-      "note": null
+      "note": "Anel da moda."
     },
     "304": {
       "name": "Anel de Fogo",
-      "note": null
+      "note": "Forte contra o fogo."
     },
     "305": {
       "name": "Anel Aquático",
-      "note": null
+      "note": "Forte contra a água."
     },
     "306": {
       "name": "Anel de Gelo",
-      "note": null
+      "note": "Forte contra o gelo."
     },
     "307": {
       "name": "Anel do Vento",
-      "note": null
+      "note": "Forte contra o vento."
     },
     "308": {
       "name": "Anel Elétrico",
-      "note": null
+      "note": "Forte contra o trovão."
     },
     "309": {
       "name": "Anel Metálico",
-      "note": null
+      "note": "Forte contra máquina."
+    },
+    "310": {
+      "name": "Anel das Trevas",
+      "note": "Forte contra a escuridão."
     },
     "311": {
       "name": "Anel Antídoto",
-      "note": "Boosts the equipped Digimon’s resistance against poison"
+      "note": "Mais resistente ao veneno."
     },
     "312": {
       "name": "Anel Ressurreição",
-      "note": "Boosts the equipped Digimon’s resistance against paralysis"
+      "note": "Mais resistente à paralisia."
     },
     "313": {
       "name": "Anel Despertar",
-      "note": "Boosts the equipped Digimon’s resistance against sleep"
+      "note": "Mais resistente ao sono."
     },
     "314": {
       "name": "Anel Juízo",
-      "note": "Aumenta a resistência contra Confusão do Digimon Equipado"
+      "note": "Mais resistente à confusão."
     },
     "315": {
       "name": "Anel Oração",
-      "note": "Boosts the equipped Digimon’s chances of surviving a potential KO"
+      "note": "Mais resistente à nocaute."
     },
     "333": {
       "name": "Dance Feather",
@@ -919,10 +923,6 @@
     "1157": {
       "name": "Dark Power S",
       "note": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
-    },
-    "1158": {
-      "name": "Anel das Trevas",
-      "note": null
     },
     "1159": {
       "name": "Dance Wing",
