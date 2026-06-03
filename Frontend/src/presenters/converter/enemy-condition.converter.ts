@@ -21,7 +21,7 @@ export class EnemyConditionConverter {
                 conditionKey,
                 can: condition.can,
                 icon: IconConstant[conditionKey],
-                value: condition.can ? `${condition.value}%` : "",
+                value: condition.can ? condition.value.toString() : "",
             };
         }
 

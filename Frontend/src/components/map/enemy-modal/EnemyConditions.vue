@@ -30,7 +30,7 @@ function calculateValue(condition: EnemyConditionViewModel): string {
     return condition.can ? t("conditions.yes") : t("conditions.no");
   }
 
-  return condition.value ?? t("conditions.no");
+  return condition.value && Number(condition.value) >= 0 ? `${condition.value}%` : t("conditions.no");
 }
 
 function calculateColorClass(condition: EnemyConditionViewModel): string {
