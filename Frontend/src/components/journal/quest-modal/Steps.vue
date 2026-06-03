@@ -26,11 +26,14 @@ const onSelectStep = (step: StepViewModel) => {
     <div
       v-for="stepViewModel in steps"
       :key="stepViewModel.number"
-      class="flex items-start gap-3 p-2 rounded transition-all cursor-pointer group"
-      :class="[
-        stepViewModel.isDone ? 'bg-green-900/10 border border-green-800/30' : 'bg-white/5 border border-white/10',
-        selectedStepNumber === stepViewModel.number ? 'ring-1 ring-cyan-500 shadow-[0_0_10px_rgba(0,255,255,0.2)] bg-[#001a33]' : '',
-      ]"
+      class="flex items-start gap-3 p-2 rounded border transition-all cursor-pointer group"
+      :class="
+        stepViewModel.isDone
+          ? 'bg-green-900/10 border-green-800/30'
+          : selectedStepNumber === stepViewModel.number
+            ? 'bg-[#001a33] border-cyan-500 shadow-[0_0_10px_rgba(0,255,255,0.2)]'
+            : 'bg-white/5 border-white/10'
+      "
       @click="onSelectStep(stepViewModel)"
     >
       <div

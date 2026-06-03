@@ -47,7 +47,7 @@ const nodeAvatarUrl = computed(() => {
         <img v-if="nodeAvatarUrl" 
              :src="nodeAvatarUrl" 
              class="absolute inset-0 w-full h-[150%] object-cover object-[center_15%] pointer-events-none saturate-100 transition-all duration-500"
-             :class="isUnlocked ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'" />
+             :class="isUnlocked ? 'opacity-100' : 'opacity-30 group-hover:opacity-100'" />
              
         <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent opacity-50 z-0 pointer-events-none"></div>
 

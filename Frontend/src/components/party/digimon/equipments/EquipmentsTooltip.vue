@@ -89,7 +89,7 @@ const equipmentNote = computed(() => {
         </div>
       </div>
 
-      <div class="mt-1 pt-1 border-t border-[#0033aa]/50 flex flex-col gap-1">
+      <div class="mt-1 pt-1 border-t border-[#0033aa]/50 flex flex-col gap-1 text-center">
         <span class="text-gray-400 text-[9px] uppercase tracking-widest leading-none">{{ $t("digimon.equipableBy") }}</span>
         <span class="text-gray-200 text-[11px] leading-tight">
           <template v-if="equipment.equipableDigimonIds.length === 0">

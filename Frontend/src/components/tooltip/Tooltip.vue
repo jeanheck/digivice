@@ -32,7 +32,7 @@ withDefaults(
       >
         <div
           v-if="title"
-          class="font-bold text-yellow-300 text-sm border-b border-[#0066cc]/50 pb-1 mb-1 shadow-black shadow-text uppercase tracking-wider"
+          class="font-bold text-yellow-300 text-sm border-b border-[#0066cc]/50 pb-1 mb-1 shadow-black shadow-text uppercase tracking-wider text-center"
         >
           {{ title }}
         </div>

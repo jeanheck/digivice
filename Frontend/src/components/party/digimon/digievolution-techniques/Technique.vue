@@ -55,10 +55,24 @@ const TechniqueElementColorClass: Record<string, string> = {
     none: "text-white/60",
 };
 
+const UnlockedTechniqueElementColorClass: Record<string, string> = {
+    fire: "text-orange-300",
+    water: "text-blue-300",
+    ice: "text-cyan-200",
+    wind: "text-gray-200",
+    thunder: "text-yellow-200",
+    dark: "text-purple-300",
+    machine: "text-gray-300",
+    none: "text-white/80",
+};
+
 function getTechniqueElementColorClass(element: string): string {
     const normalizedElement = element.toLowerCase();
+    const colorMap = props.technique.isUnlocked
+        ? UnlockedTechniqueElementColorClass
+        : TechniqueElementColorClass;
 
-    return TechniqueElementColorClass[normalizedElement] ?? "text-white/60";
+    return colorMap[normalizedElement] ?? (props.technique.isUnlocked ? "text-white/80" : "text-white/60");
 }
 </script>
 
@@ -67,13 +81,14 @@ function getTechniqueElementColorClass(element: string): string {
     class="relative rounded px-3 py-2 flex items-start gap-3 border transition-all text-xs"
     :class="{
       'bg-[#000e1f]/50 border-[#0033aa]/20 opacity-50': !technique.isUnlocked,
-      'bg-yellow-950/30 border-yellow-500/60 shadow-[0_0_8px_rgba(234,179,8,0.2)]': technique.isSignature && technique.isUnlocked,
-      'bg-[#001a33]/60 border-[#0055ff]/40': !technique.isSignature && technique.isUnlocked,
+      'bg-yellow-950/40 border-yellow-400/70 shadow-[0_0_10px_rgba(234,179,8,0.3)]': technique.isSignature && technique.isUnlocked,
+      'bg-[#001a33]/80 border-[#0077ff]/55': !technique.isSignature && technique.isUnlocked,
     }"
   >
     <span
       v-if="technique.isSignature"
-      class="absolute top-1 right-2 text-[10px] text-yellow-400 font-bold tracking-widest"
+      class="absolute top-1 right-2 text-[10px] font-bold tracking-widest"
+      :class="technique.isUnlocked ? 'text-yellow-300' : 'text-yellow-400'"
     >
       ⭐
     </span>
@@ -91,20 +106,30 @@ function getTechniqueElementColorClass(element: string): string {
       <div class="flex items-center gap-1 mb-0.5">
         <span
           class="font-bold tracking-wide"
-          :class="technique.isSignature ? 'text-yellow-300' : 'text-white'"
+          :class="
+            technique.isUnlocked
+              ? technique.isSignature ? 'text-yellow-200' : 'text-white'
+              : technique.isSignature ? 'text-yellow-300' : 'text-white'
+          "
         >
           {{ t(`technique.${technique.id}.name`) }}
         </span>
-        <span class="text-[10px] text-cyan-400/80 ml-1">{{ t("digievolution.lv") }}.{{ technique.learnLevel }}</span>
+        <span
+          class="text-[10px] ml-1"
+          :class="technique.isUnlocked ? 'text-cyan-300' : 'text-cyan-400/80'"
+        >{{ t("digievolution.lv") }}.{{ technique.learnLevel }}</span>
       </div>
 
-      <p class="text-white/50 text-[10px] leading-snug">{{ t(`technique.${technique.id}.description`) }}</p>
+      <p
+        class="text-[10px] leading-snug"
+        :class="technique.isUnlocked ? 'text-white/75' : 'text-white/50'"
+      >{{ t(`technique.${technique.id}.description`) }}</p>
 
       <div class="flex gap-3 mt-1 text-[9px] uppercase tracking-wider">
         <span :class="getTechniqueElementColorClass(technique.element)">
           {{ getElementLabel(technique.element) }}
         </span>
-        <span class="text-blue-300/70">{{ t("digievolution.mpCost") }}: {{ technique.mp }}</span>
+        <span :class="technique.isUnlocked ? 'text-blue-300' : 'text-blue-300/70'">{{ t("digievolution.mpCost") }}: {{ technique.mp }}</span>
       </div>
     </div>
 
