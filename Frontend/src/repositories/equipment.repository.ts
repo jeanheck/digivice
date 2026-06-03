@@ -10,6 +10,16 @@ export class EquipmentRepository {
   }
 
   public static getEquipmentsByIds(equipmentIds: number[]): EquipmentRaw[] {
-    return equipmentIds.map((equipmentId) => this.equipmentTable[equipmentId]!);
+    return equipmentIds.map((equipmentId) => {
+      const equipmentRaw = this.equipmentTable[equipmentId];
+      return equipmentRaw
+        ? equipmentRaw
+        : {
+            type: "Unknown Equipment",
+            attributes: [],
+            equipableDigimon: [],
+          } as EquipmentRaw;
+        ;
+    });
   }
 }

@@ -4,6 +4,16 @@ import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmode
 
 export class EquipmentConverter {
     public static convert(equipmentId: number, equipmentRaw: EquipmentRaw): EquipmentViewModel {
+        if(equipmentRaw === undefined) {
+            return {
+                id: equipmentId,
+                type: "Non Mapped Equipment",
+                attributes: [],
+                equipableDigimonIds: [],
+                equipableDigimonNames: [],
+            }
+        }
+
         return {
             id: equipmentId,
             type: equipmentRaw.type,
