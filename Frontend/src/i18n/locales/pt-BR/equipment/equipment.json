@@ -2,7 +2,7 @@
   "equipments": {
     "92": {
       "name": "Espada Pequena",
-      "note": null
+      "note": "Pequena Katana. Direio ou Esquerdo."
     },
     "93": {
       "name": "Espada Zanden",
@@ -18,7 +18,7 @@
     },
     "106": {
       "name": "Luva de Couro",
-      "note": null
+      "note": "Uma luva de couro."
     },
     "107": {
       "name": "Luva de Gato",
@@ -54,7 +54,7 @@
     },
     "157": {
       "name": "Punhal",
-      "note": null
+      "note": "Faca pequena para iniciantes."
     },
     "158": {
       "name": "Shishioumaru",
@@ -66,7 +66,7 @@
     },
     "167": {
       "name": "Arpão de Bambu",
-      "note": null
+      "note": "Arpão de bambu parecido com um mastro."
     },
     "168": {
       "name": "Bambu",
@@ -90,7 +90,7 @@
     },
     "190": {
       "name": "Arco Longo",
-      "note": null
+      "note": "Arco feito a mão."
     },
     "191": {
       "name": "Shuriken",
@@ -114,7 +114,7 @@
     },
     "215": {
       "name": "Bandana",
-      "note": null
+      "note": "Coloque na cabeça para melhorar a defesa."
     },
     "216": {
       "name": "Visor Solar",
@@ -130,7 +130,7 @@
     },
     "226": {
       "name": "Faixa",
-      "note": null
+      "note": "Coloque na cabeça para melhorar a defesa."
     },
     "227": {
       "name": "Orelhas de Gato",
@@ -146,7 +146,7 @@
     },
     "236": {
       "name": "Capacete de Couro",
-      "note": null
+      "note": "Capacete feito de couro."
     },
     "237": {
       "name": "Capacete de Aço",
@@ -162,7 +162,7 @@
     },
     "249": {
       "name": "Casaco de Couro",
-      "note": null
+      "note": "Jaqueta feita de couro."
     },
     "250": {
       "name": "Roupa de Academia",
@@ -178,7 +178,7 @@
     },
     "262": {
       "name": "Armadura de Couro",
-      "note": null
+      "note": "Armadura feita de couro."
     },
     "263": {
       "name": "Armadura de Aço",
@@ -194,7 +194,7 @@
     },
     "275": {
       "name": "Escudo",
-      "note": null
+      "note": "Escudo leve e pequeno."
     },
     "276": {
       "name": "Escudo de Aço",
