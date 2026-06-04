@@ -30,14 +30,14 @@
             "location": "0226",
             "coordinates": {
                 "x": 69.5,
-                "y": 35.5
+                "y": 37.5
             },
             "zoomedLocations": [
                 {
                     "location": "0226",
                     "coordinates": {
                         "x": 39,
-                        "y": 12
+                        "y": 19
                     }
                 }
             ],
@@ -46,15 +46,15 @@
         "3": {
             "location": "022B",
             "coordinates": {
-                "x": 90,
-                "y": 38
+                "x": 90.5,
+                "y": 38.5
             },
             "zoomedLocations": [
                 {
                     "location": "022B",
                     "coordinates": {
                         "x": 73,
-                        "y": 9
+                        "y": 22
                     }
                 }
             ],
@@ -63,14 +63,14 @@
         "4": {
             "location": "022E",
             "coordinates": {
-                "x": 80.5,
-                "y": 41
+                "x": 81,
+                "y": 43
             },
             "zoomedLocations": [
                 {
                     "location": "022E",
                     "coordinates": {
-                        "x": 59.5,
+                        "x": 58,
                         "y": 29.5
                     }
                 },
@@ -78,13 +78,13 @@
                     "location": "0230",
                     "coordinates": {
                         "x": 28,
-                        "y": 73
+                        "y": 68
                     }
                 },
                 {
                     "location": "022E",
                     "coordinates": {
-                        "x": 23.5,
+                        "x": 29,
                         "y": 28.5
                     }
                 }

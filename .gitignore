@@ -67,6 +67,9 @@ artifacts/
 *.nuget.props
 *.nuget.targets
 
+## Memory scanner
+tools/memoryscanner/snapshot/
+
 ## Others
 .DS_Store
 Thumbs.db

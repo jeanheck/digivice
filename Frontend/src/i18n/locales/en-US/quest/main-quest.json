@@ -23,10 +23,10 @@
         }
       },
       "3": {
-        "description": "Defeat MasterTyrannomon on Tyranno Valley",
+        "description": "Defeat Master Tyrannomon on Tyranno Valley",
         "locations": {
           "0": {
-            "locationTarget": "MasterTyrannomon"
+            "locationTarget": "Master Tyrannomon"
           }
         }
       },
