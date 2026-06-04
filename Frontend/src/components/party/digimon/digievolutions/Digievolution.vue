@@ -7,6 +7,7 @@ import type { DigievolutionResumedViewModel } from "@/viewmodels/digievolution/d
 const props = defineProps<{
   digievolutionId: number | null;
   digievolutionLevel: number | null;
+  digievolutionDvxp: number | null;
   activeDigievolutionId: number | null;
 }>();
 
@@ -83,7 +84,10 @@ function openTechniques(): void {
       </div>
 
       <div class="w-full shrink-0 px-4 pt-0.5">
-        <DigievolutionDvxpSegments :is-active-digievolution="isActiveDigievolution" />
+        <DigievolutionDvxpSegments
+          :is-active-digievolution="isActiveDigievolution"
+          :dvxp="digievolutionDvxp ?? 0"
+        />
       </div>
     </div>
   </div>

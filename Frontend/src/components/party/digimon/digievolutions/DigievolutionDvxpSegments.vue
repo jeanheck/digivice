@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { computed } from "vue";
+import { DigievolutionDvxpSegmentsPresenter } from "@/presenters/digievolution/digievolution-dvxp-segments.presenter";
+
 const props = defineProps<{
   isActiveDigievolution: boolean;
+  dvxp: number;
 }>();
 
 const segmentCount = 10;
-const previewFilledSegmentCount = 7;
 
+const filledSegmentCount = computed(() => {
+  return DigievolutionDvxpSegmentsPresenter.getFilledSegmentCount(props.dvxp);
+});
 function getSegmentClass(isFilled: boolean): string {
   if (props.isActiveDigievolution) {
     if (isFilled) {
@@ -29,7 +35,7 @@ function getSegmentClass(isFilled: boolean): string {
       v-for="segmentIndex in segmentCount"
       :key="segmentIndex"
       class="flex-1 min-w-0 transition-colors duration-500"
-      :class="getSegmentClass(segmentIndex <= previewFilledSegmentCount)"
+      :class="getSegmentClass(segmentIndex <= filledSegmentCount)"
     ></div>
   </div>
 </template>

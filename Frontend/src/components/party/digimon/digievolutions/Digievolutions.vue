@@ -31,6 +31,7 @@ function closeTechniques(): void {
       :key="slot.index"
       :digievolution-id="slot.digievolutionId"
       :digievolution-level="slot.digievolution?.level ?? null"
+      :digievolution-dvxp="slot.digievolution?.dvxp ?? null"
       :active-digievolution-id="activeDigievolutionId"
       @open-techniques="openTechniques"
     />
