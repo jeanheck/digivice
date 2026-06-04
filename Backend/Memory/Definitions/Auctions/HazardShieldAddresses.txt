@@ -4,8 +4,8 @@ Local: mesmo cenário de leilão em Asuka
 
 Contexto de gameplay
 - Leilão disponível após completar o step 15 da main quest (primeiro encontro com Zanbamon).
-- Step que encerra a janela: ainda não identificado.
-- Mesmas regras gerais do leilão #1: entrar no cenário consome a instância; compra vs. desistência ainda não investigados neste leilão.
+- Janela encerra ao completar o step 21 da main quest (confirmado in-game + compare memória).
+- Mesmas regras gerais do leilão #1: entrar no cenário consome a instância; compra vs. desistência investigados.
 
 ================================================================================
 Endereços confirmados / palpite forte (por camada)
@@ -20,7 +20,12 @@ Endereços confirmados / palpite forte (por camada)
      Desliga bits 0, 1 e 2; liga bit 3.
 
    Leitura sugerida — 2º leilão na janela:
-     (byte & 0x08) != 0
+     (byte & 0x08) != 0 && (byte & 0x01) == 0
+     → valor 0x08 (step 15 feito, step 21 não)
+
+   Fechamento da janela (step 21 completo):
+     bit 0x01 liga junto ao 0x08 → valor 0x09
+     Ver AI/Step21Addresses.txt
 
    Nota: mesmo byte do leilão #1 (0x4B370), bit diferente:
      - 1º leilão: bit 0 (0x01), entre step 4 e step 6
@@ -114,7 +119,7 @@ Próximos testes
 [x] Entrar no cenário e sair sem comprar → 0x4B38A bit 0x02
 [x] Comprar o item → 0x48ECF bit 0x01
 [x] Vender o item → 0x48ECF zera (0x01 → 0x00)
-[ ] Identificar step que fecha a janela → qual bit de 0x4B370 desliga
+[x] Identificar step que fecha a janela → step 21 (0x4B370 bit 0x01 liga, 0x08 permanece → 0x09)
 
 ================================================================================
 Status

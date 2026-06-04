@@ -292,15 +292,15 @@
         "15": {
             "location": "023A",
             "coordinates": {
-                "x": 80,
-                "y": 90
+                "x": 79,
+                "y": 85
             },
             "zoomedLocations": [
                 {
                     "location": "023A",
                     "coordinates": {
                         "x": 19,
-                        "y": 60
+                        "y": 57
                     }
                 }
             ],
@@ -310,13 +310,13 @@
             "location": "0238",
             "coordinates": {
                 "x": 68,
-                "y": 78
+                "y": 74
             },
             "zoomedLocations": [
                 {
                     "location": "0238",
                     "coordinates": {
-                        "x": 33,
+                        "x": 35,
                         "y": 68
                     }
                 }
@@ -327,14 +327,14 @@
             "location": "0239",
             "coordinates": {
                 "x": 71,
-                "y": 69
+                "y": 67
             },
             "zoomedLocations": [
                 {
                     "location": "0239",
                     "coordinates": {
-                        "x": 46,
-                        "y": 73
+                        "x": 45,
+                        "y": 70
                     }
                 }
             ],
@@ -344,14 +344,14 @@
             "location": "0226",
             "coordinates": {
                 "x": 69.5,
-                "y": 35.5
+                "y": 37.5
             },
             "zoomedLocations": [
                 {
                     "location": "0226",
                     "coordinates": {
                         "x": 7,
-                        "y": 13
+                        "y": 19
                     }
                 }
             ],
@@ -367,8 +367,8 @@
                 {
                     "location": "0202",
                     "coordinates": {
-                        "x": 97.5,
-                        "y": 64.5
+                        "x": 80,
+                        "y": 64
                     }
                 }
             ],
