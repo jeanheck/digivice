@@ -5,22 +5,22 @@
         "1": {
             "location": "022E",
             "coordinates": {
-                "x": 80.5,
-                "y": 41
+                "x": 81,
+                "y": 43
             },
             "zoomedLocations": [
                 {
                     "location": "022E",
                     "coordinates": {
-                        "x": 59.5,
+                        "x": 58,
                         "y": 29.5
                     }
                 },
                 {
                     "location": "0230",
                     "coordinates": {
-                        "x": 25,
-                        "y": 65
+                        "x": 27,
+                        "y": 63
                     }
                 }
             ],
