@@ -294,12 +294,18 @@ namespace MemoryScanner
                 {
                     int number = step.GetProperty("Number").GetInt32();
                     int addr = Convert.ToInt32(step.GetProperty("Address").GetString()!.Replace("0x", ""), 16);
-                    byte mask = Convert.ToByte(step.GetProperty("BitMask").GetString()!.Replace("0x", ""), 16);
-                    bool was = (before[addr] & mask) != 0;
-                    bool now = (after[addr] & mask) != 0;
+                    var bitMasks = step.GetProperty("BitMasks")
+                        .EnumerateArray()
+                        .Select(maskElement => Convert.ToByte(maskElement.GetString()!.Replace("0x", ""), 16))
+                        .ToList();
+                    bool was = IsStepDone(before[addr], bitMasks);
+                    bool now = IsStepDone(after[addr], bitMasks);
                     if (was == now) continue;
                     changed++;
-                    Console.WriteLine($"Step {number,2}: {(was ? "done" : "open")} -> {(now ? "done" : "open")}  @ 0x{addr:X8} mask 0x{mask:X2}  byte 0x{before[addr]:X2}->0x{after[addr]:X2}");
+                    string masksLabel = bitMasks.Count == 0
+                        ? "raw"
+                        : string.Join("+", bitMasks.Select(mask => $"0x{mask:X2}"));
+                    Console.WriteLine($"Step {number,2}: {(was ? "done" : "open")} -> {(now ? "done" : "open")}  @ 0x{addr:X8} mask {masksLabel}  byte 0x{before[addr]:X2}->0x{after[addr]:X2}");
                 }
                 if (changed == 0)
                     Console.WriteLine("(no tracked main-quest bits changed)");
@@ -338,6 +344,24 @@ namespace MemoryScanner
             Console.WriteLine("\n=== Player bits @ 0x48DA0 (volatile, do not use alone) ===");
             Console.WriteLine($"before: {BitConverter.ToString(before, playerBitsAddr, 8)}");
             Console.WriteLine($"after:  {BitConverter.ToString(after, playerBitsAddr, 8)}");
+        }
+
+        static bool IsStepDone(byte rawValue, List<byte> bitMasks)
+        {
+            if (bitMasks.Count == 0)
+            {
+                return rawValue != 0;
+            }
+
+            foreach (byte bitMask in bitMasks)
+            {
+                if ((rawValue & bitMask) == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

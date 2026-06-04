@@ -12,9 +12,33 @@ namespace Backend.Memory.Readers.Journals.Quests
             return new StepResource
             {
                 Number = addresses.Number,
-                Value = memoryReader.ReadByteSafe(addresses.Address, addresses.BitMask),
+                Value = ReadValue(addresses.Address, addresses.BitMasks),
                 Requisites = [.. addresses.Requisites.Select(requisiteReader.Read)]
             };
+        }
+
+        private byte ReadValue(long address, List<long> bitMasks)
+        {
+            if (bitMasks.Count == 0)
+            {
+                return memoryReader.ReadByteSafe(address);
+            }
+
+            if (bitMasks.Count == 1)
+            {
+                return memoryReader.ReadByteSafe(address, bitMasks[0]);
+            }
+
+            byte rawValue = memoryReader.ReadByteSafe(address);
+            foreach (long bitMask in bitMasks)
+            {
+                if ((rawValue & bitMask) == 0)
+                {
+                    return 0;
+                }
+            }
+
+            return (byte)(rawValue & bitMasks[0]);
         }
     }
 }

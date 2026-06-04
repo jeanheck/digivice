@@ -18,7 +18,7 @@ public class StepReaderTests
         {
             Number = 3,
             Address = 0x5500,
-            BitMask = 0x0F,
+            BitMasks = [0x0F],
             Requisites = [reqAddresses]
         };
 
@@ -41,5 +41,77 @@ public class StepReaderTests
         Assert.Equal(2, result.Value);
         Assert.Single(result.Requisites);
         Assert.Equal(expectedRequisiteResource, result.Requisites[0]);
+    }
+
+    [Fact]
+    public void Read_ShouldReturnZero_WhenNotAllBitMasksAreSet()
+    {
+        // Arrange
+        var addresses = new StepAddresses
+        {
+            Number = 21,
+            Address = 0x4B370,
+            BitMasks = [0x01, 0x08]
+        };
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x4B370, null)).Returns((byte)0x01);
+
+        var requisiteReaderMock = new Mock<IRequisiteReader>();
+        var reader = new StepReader(memoryReaderMock.Object, requisiteReaderMock.Object);
+
+        // Act
+        var result = reader.Read(addresses);
+
+        // Assert
+        Assert.Equal(0, result.Value);
+    }
+
+    [Fact]
+    public void Read_ShouldReturnFirstBitMaskValue_WhenAllBitMasksAreSet()
+    {
+        // Arrange
+        var addresses = new StepAddresses
+        {
+            Number = 21,
+            Address = 0x4B370,
+            BitMasks = [0x01, 0x08]
+        };
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x4B370, null)).Returns((byte)0x09);
+
+        var requisiteReaderMock = new Mock<IRequisiteReader>();
+        var reader = new StepReader(memoryReaderMock.Object, requisiteReaderMock.Object);
+
+        // Act
+        var result = reader.Read(addresses);
+
+        // Assert
+        Assert.Equal(0x01, result.Value);
+    }
+
+    [Fact]
+    public void Read_ShouldReturnRawByte_WhenBitMasksIsEmpty()
+    {
+        // Arrange
+        var addresses = new StepAddresses
+        {
+            Number = 1,
+            Address = 0x48F42,
+            BitMasks = []
+        };
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x48F42, null)).Returns((byte)1);
+
+        var requisiteReaderMock = new Mock<IRequisiteReader>();
+        var reader = new StepReader(memoryReaderMock.Object, requisiteReaderMock.Object);
+
+        // Act
+        var result = reader.Read(addresses);
+
+        // Assert
+        Assert.Equal(1, result.Value);
     }
 }
