@@ -80,7 +80,7 @@ const selectLocation = (locationIndex: number) => {
 <template>
   <div
     v-if="activeLocation"
-    class="relative mx-auto shrink-0 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group"
+    class="relative mx-auto shrink-0 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)]"
     :style="{ width: `${MAP_DISPLAY_WIDTH_PX}px` }"
   >
     <div
@@ -116,26 +116,15 @@ const selectLocation = (locationIndex: number) => {
     </div>
 
     <div
-      class="relative overflow-hidden bg-black/50"
-      :class="{ 'bg-black/30': isWorldMap }"
+      class="relative overflow-hidden"
       :style="mapImageFrameStyle"
     >
       <img
         v-if="activeLocation.imageUrl"
         :key="activeLocation.imageUrl"
         :src="activeLocation.imageUrl"
-        class="block w-full h-full transition-all duration-500"
-        :class="
-          isWorldMap
-            ? 'opacity-60 mix-blend-screen saturate-50 group-hover:saturate-100'
-            : 'opacity-70 group-hover:opacity-100'
-        "
+        class="block w-full h-full"
         @load="onImageLoad"
-      />
-
-      <div
-        v-if="isWorldMap"
-        class="absolute inset-0 bg-blue-900/10 z-0 pointer-events-none"
       />
 
       <div
