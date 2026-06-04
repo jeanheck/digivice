@@ -418,7 +418,7 @@
                 {
                     "location": "0201",
                     "coordinates": {
-                        "x": 55,
+                        "x": 50,
                         "y": 82
                     }
                 }
@@ -435,8 +435,8 @@
                 {
                     "location": "021B",
                     "coordinates": {
-                        "x": 40,
-                        "y": 18
+                        "x": 36,
+                        "y": 23
                     }
                 }
             ],
@@ -446,14 +446,14 @@
             "location": "0239",
             "coordinates": {
                 "x": 71,
-                "y": 69
+                "y": 67
             },
             "zoomedLocations": [
                 {
                     "location": "0239",
                     "coordinates": {
-                        "x": 46,
-                        "y": 73
+                        "x": 45,
+                        "y": 70
                     }
                 }
             ],
@@ -462,15 +462,15 @@
         "25": {
             "location": "023A",
             "coordinates": {
-                "x": 80,
-                "y": 90
+                "x": 79,
+                "y": 85
             },
             "zoomedLocations": [
                 {
                     "location": "023A",
                     "coordinates": {
                         "x": 19,
-                        "y": 60
+                        "y": 57
                     }
                 }
             ],
@@ -479,15 +479,15 @@
         "26": {
             "location": "023E",
             "coordinates": {
-                "x": 61,
-                "y": 80
+                "x": 60.5,
+                "y": 77
             },
             "zoomedLocations": [
                 {
                     "location": "023E",
                     "coordinates": {
-                        "x": 18,
-                        "y": 36
+                        "x": 19,
+                        "y": 37
                     }
                 }
             ],
