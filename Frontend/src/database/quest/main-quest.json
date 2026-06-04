@@ -94,14 +94,14 @@
         "5": {
             "location": "022E",
             "coordinates": {
-                "x": 80.5,
-                "y": 41
+                "x": 81,
+                "y": 43
             },
             "zoomedLocations": [
                 {
                     "location": "022E",
                     "coordinates": {
-                        "x": 18,
+                        "x": 24.5,
                         "y": 81
                     }
                 }
@@ -118,7 +118,7 @@
                 {
                     "location": "022C",
                     "coordinates": {
-                        "x": 42.5,
+                        "x": 45.5,
                         "y": 62.5
                     }
                 }
@@ -159,15 +159,15 @@
                 {
                     "location": "020A",
                     "coordinates": {
-                        "x": 61.5,
-                        "y": 6
+                        "x": 61,
+                        "y": 16
                     }
                 },
                 {
                     "location": "020C",
                     "coordinates": {
-                        "x": 80,
-                        "y": 42
+                        "x": 88,
+                        "y": 45
                     }
                 }
             ],
@@ -183,8 +183,8 @@
                 {
                     "location": "0223",
                     "coordinates": {
-                        "x": 29,
-                        "y": 28
+                        "x": 28,
+                        "y": 29
                     }
                 }
             ],
@@ -193,22 +193,22 @@
         "10": {
             "location": "022E",
             "coordinates": {
-                "x": 80.5,
-                "y": 41
+                "x": 81,
+                "y": 43
             },
             "zoomedLocations": [
                 {
                     "location": "022E",
                     "coordinates": {
-                        "x": 33,
+                        "x": 37,
                         "y": 51
                     }
                 },
                 {
                     "location": "022F",
                     "coordinates": {
-                        "x": 34,
-                        "y": 31
+                        "x": 32,
+                        "y": 29
                     }
                 }
             ],
@@ -224,8 +224,8 @@
                 {
                     "location": "022C",
                     "coordinates": {
-                        "x": 42,
-                        "y": 62
+                        "x": 45.5,
+                        "y": 62.5
                     }
                 }
             ],
@@ -234,14 +234,14 @@
         "12": {
             "location": "022E",
             "coordinates": {
-                "x": 80.5,
-                "y": 41
+                "x": 81,
+                "y": 43
             },
             "zoomedLocations": [
                 {
                     "location": "022E",
                     "coordinates": {
-                        "x": 68,
+                        "x": 65.5,
                         "y": 33
                     }
                 }
@@ -258,15 +258,15 @@
                 {
                     "location": "0223",
                     "coordinates": {
-                        "x": 56,
-                        "y": 90
+                        "x": 58,
+                        "y": 87
                     }
                 },
                 {
                     "location": "0224",
                     "coordinates": {
-                        "x": 31.5,
-                        "y": 95
+                        "x": 31,
+                        "y": 82
                     }
                 }
             ],
@@ -282,8 +282,8 @@
                 {
                     "location": "022C",
                     "coordinates": {
-                        "x": 42,
-                        "y": 62
+                        "x": 45.5,
+                        "y": 62.5
                     }
                 }
             ],
