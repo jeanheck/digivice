@@ -6,6 +6,7 @@ import type { DigievolutionResumedViewModel } from "@/viewmodels/digievolution/d
 const props = defineProps<{
   digievolutionId: number | null;
   digievolutionLevel: number | null;
+  digievolutionDvxp: number | null;
   activeDigievolutionId: number | null;
 }>();
 
@@ -67,7 +68,15 @@ function openTechniques(): void {
 
       <div class="w-0.5 h-full bg-[#0077ff] -skew-x-30 ml-2"></div>
 
-      <div class="w-11.25 flex items-center justify-center pl-2 font-bold text-sm mr-2">
+      <div class="shrink-0 flex items-center justify-center pl-2 font-bold text-sm">
+        <span class="text-white shadow-text whitespace-nowrap">
+          Dvxp: {{ digievolutionDvxp }}
+        </span>
+      </div>
+
+      <div class="w-0.5 h-full bg-[#0077ff] -skew-x-30 ml-2"></div>
+
+      <div class="w-11.25 shrink-0 flex items-center justify-center pl-2 font-bold text-sm mr-2">
         <span class="text-dw3-gold shadow-text-dark">
           {{ digievolutionLevel }}
         </span>
