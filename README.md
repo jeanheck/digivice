@@ -60,3 +60,5 @@ To build this, I used public that from the game that is available along many lin
 - **Digimon World 3 Mechanics & Digivolutions**: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/80568401)
 - **Digimon World 3 Stat Calculation**: Data for internal stat calculations. [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/62602581)
 - **ENTENDA AS FRAQUEZAS E TOLERÂNCIAS NO DIGIMON WORLD 3**: [Battle Dice](https://www.youtube.com/watch?v=6UbWt7AyHMI)
+- **Digimon World 3 – Item List**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/24593)
+- **Digimon World 3 – FAQ (European)**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/21889)

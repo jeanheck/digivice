@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed, nextTick, ref, watch } from "vue";
 import { MAP_DISPLAY_WIDTH_PX } from "@/constants/map-display.constant";
 import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
 
@@ -9,6 +9,7 @@ const props = defineProps<{
 }>();
 
 const currentLocationIndex = ref(0);
+const mapImageElement = ref<HTMLImageElement | null>(null);
 const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
 
 const activeLocation = computed(() => {
@@ -41,27 +42,60 @@ const mapImageFrameStyle = computed(() => {
   };
 });
 
+function applyImageNaturalSizeFromElement(imageElement: HTMLImageElement): boolean {
+  if (imageElement.naturalWidth === 0) {
+    return false;
+  }
+
+  imageNaturalSize.value = {
+    width: imageElement.naturalWidth,
+    height: imageElement.naturalHeight,
+  };
+
+  return true;
+}
+
+async function trySyncImageNaturalSizeFromLoadedImage(): Promise<void> {
+  await nextTick();
+  const imageElement = mapImageElement.value;
+
+  if (imageElement === null) {
+    return;
+  }
+
+  applyImageNaturalSizeFromElement(imageElement);
+}
+
 watch(
   () => props.locations,
-  () => {
+  async (newLocations, oldLocations) => {
+    const previousImageUrl = oldLocations?.[0]?.imageUrl ?? null;
+    const nextImageUrl = newLocations[0]?.imageUrl ?? null;
+
     currentLocationIndex.value = 0;
-    imageNaturalSize.value = null;
+
+    if (previousImageUrl !== nextImageUrl) {
+      imageNaturalSize.value = null;
+    }
+
+    await trySyncImageNaturalSizeFromLoadedImage();
   }
 );
 
 watch(
   () => activeLocation.value?.imageUrl,
-  () => {
+  async (newImageUrl, oldImageUrl) => {
+    if (newImageUrl === oldImageUrl) {
+      return;
+    }
+
     imageNaturalSize.value = null;
+    await trySyncImageNaturalSizeFromLoadedImage();
   }
 );
 
 const onImageLoad = (event: Event) => {
-  const imageElement = event.target as HTMLImageElement;
-  imageNaturalSize.value = {
-    width: imageElement.naturalWidth,
-    height: imageElement.naturalHeight,
-  };
+  applyImageNaturalSizeFromElement(event.target as HTMLImageElement);
 };
 
 const showPreviousLocation = () => {
@@ -121,6 +155,7 @@ const selectLocation = (locationIndex: number) => {
     >
       <img
         v-if="activeLocation.imageUrl"
+        ref="mapImageElement"
         :key="activeLocation.imageUrl"
         :src="activeLocation.imageUrl"
         class="block w-full h-full"
