@@ -10,12 +10,16 @@
         {
             "Number": 1,
             "Address": "0x04B3B0",
-            "BitMask": "0x02"
+            "BitMasks": [
+                "0x02"
+            ]
         },
         {
             "Number": 2,
             "Address": "0x04B3B1",
-            "BitMask": "0x10"
+            "BitMasks": [
+                "0x10"
+            ]
         },
         {
             "Number": 3,
@@ -34,8 +38,7 @@
                 }
             ],
             "Address": "0x048DB5",
-            "BitMask": null
+            "BitMasks": []
         }
     ]
 }
-
