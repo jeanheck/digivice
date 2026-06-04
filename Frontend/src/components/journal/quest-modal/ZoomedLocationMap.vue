@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
+import { MAP_DISPLAY_WIDTH_PX } from "@/constants/map-display.constant";
 import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
 
 const props = defineProps<{
@@ -8,6 +9,7 @@ const props = defineProps<{
 }>();
 
 const currentLocationIndex = ref(0);
+const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
 
 const activeLocation = computed(() => {
   return props.locations[currentLocationIndex.value] ?? null;
@@ -21,12 +23,46 @@ const isWorldMap = computed(() => {
   return props.mapVariant === "world";
 });
 
+const mapImageFrameStyle = computed(() => {
+  if (imageNaturalSize.value === null) {
+    return {
+      width: `${MAP_DISPLAY_WIDTH_PX}px`,
+      minHeight: `${Math.round(MAP_DISPLAY_WIDTH_PX * 0.75)}px`,
+    };
+  }
+
+  const displayHeight = Math.round(
+    MAP_DISPLAY_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width)
+  );
+
+  return {
+    width: `${MAP_DISPLAY_WIDTH_PX}px`,
+    height: `${displayHeight}px`,
+  };
+});
+
 watch(
   () => props.locations,
   () => {
     currentLocationIndex.value = 0;
+    imageNaturalSize.value = null;
   }
 );
+
+watch(
+  () => activeLocation.value?.imageUrl,
+  () => {
+    imageNaturalSize.value = null;
+  }
+);
+
+const onImageLoad = (event: Event) => {
+  const imageElement = event.target as HTMLImageElement;
+  imageNaturalSize.value = {
+    width: imageElement.naturalWidth,
+    height: imageElement.naturalHeight,
+  };
+};
 
 const showPreviousLocation = () => {
   currentLocationIndex.value = (currentLocationIndex.value - 1 + props.locations.length) % props.locations.length;
@@ -44,22 +80,57 @@ const selectLocation = (locationIndex: number) => {
 <template>
   <div
     v-if="activeLocation"
-    class="relative w-full min-h-0 flex-1 aspect-4/3 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group"
-    :class="{ 'flex flex-col': !isWorldMap }"
+    class="relative mx-auto shrink-0 bg-[#00051a] border border-cyan-800/50 rounded overflow-hidden shadow-[0_0_15px_rgba(0,170,255,0.1)] group"
+    :style="{ width: `${MAP_DISPLAY_WIDTH_PX}px` }"
   >
     <div
-      class="relative w-full overflow-hidden"
-      :class="isWorldMap ? 'h-full' : 'flex-1 bg-black/50'"
+      v-if="showPagination"
+      class="flex items-center justify-center gap-3 px-3 py-2 border-b border-cyan-900/50 bg-black/40 z-20"
+    >
+      <button
+        type="button"
+        class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)]"
+        @click.prevent="showPreviousLocation"
+      >
+        &lt;
+      </button>
+
+      <div class="flex gap-2 px-3 py-1.5 bg-black/80 rounded border border-cyan-900/80 shadow-[0_0_10px_rgba(0,170,255,0.2)]">
+        <button
+          v-for="(_, locationDotIndex) in locations"
+          :key="locationDotIndex"
+          type="button"
+          class="w-2 h-2 rounded-full transition-all cursor-pointer"
+          :class="Number(locationDotIndex) === currentLocationIndex ? 'bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)] scale-110' : 'bg-cyan-900 hover:bg-cyan-600'"
+          @click.prevent="selectLocation(Number(locationDotIndex))"
+        />
+      </div>
+
+      <button
+        type="button"
+        class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)]"
+        @click.prevent="showNextLocation"
+      >
+        &gt;
+      </button>
+    </div>
+
+    <div
+      class="relative overflow-hidden bg-black/50"
+      :class="{ 'bg-black/30': isWorldMap }"
+      :style="mapImageFrameStyle"
     >
       <img
         v-if="activeLocation.imageUrl"
+        :key="activeLocation.imageUrl"
         :src="activeLocation.imageUrl"
-        class="w-full h-full object-cover transition-all duration-500"
+        class="block w-full h-full transition-all duration-500"
         :class="
           isWorldMap
             ? 'opacity-60 mix-blend-screen saturate-50 group-hover:saturate-100'
-            : 'absolute inset-0 opacity-70 group-hover:opacity-100'
+            : 'opacity-70 group-hover:opacity-100'
         "
+        @load="onImageLoad"
       />
 
       <div
@@ -68,6 +139,7 @@ const selectLocation = (locationIndex: number) => {
       />
 
       <div
+        v-if="imageNaturalSize"
         class="absolute -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none"
         :class="[
           isWorldMap ? 'w-8 h-8' : 'w-6 h-6 transition-all duration-300',
@@ -96,38 +168,6 @@ const selectLocation = (locationIndex: number) => {
           {{ $t(activeLocation.labelKey) }}
         </div>
       </div>
-    </div>
-
-    <div
-      v-if="showPagination"
-      class="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-3 z-20"
-    >
-      <button
-        type="button"
-        class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)]"
-        @click.prevent="showPreviousLocation"
-      >
-        &lt;
-      </button>
-
-      <div class="flex gap-2 px-3 py-1.5 bg-black/80 rounded border border-cyan-900/80 shadow-[0_0_10px_rgba(0,170,255,0.2)]">
-        <button
-          v-for="(_, locationDotIndex) in locations"
-          :key="locationDotIndex"
-          type="button"
-          class="w-2 h-2 rounded-full transition-all cursor-pointer"
-          :class="Number(locationDotIndex) === currentLocationIndex ? 'bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)] scale-110' : 'bg-cyan-900 hover:bg-cyan-600'"
-          @click.prevent="selectLocation(Number(locationDotIndex))"
-        />
-      </div>
-
-      <button
-        type="button"
-        class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)]"
-        @click.prevent="showNextLocation"
-      >
-        &gt;
-      </button>
     </div>
   </div>
 </template>

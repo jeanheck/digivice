@@ -78,8 +78,9 @@ watch(
 <template>
   <Modal
     :is-open="isModalOpen"
-    max-width="max-w-[clamp(64rem,50vw,90rem)]"
-    max-height="max-h-[min(90vh,1000px)]"
+    max-width="max-w-450"
+    max-height="h-[92vh] max-h-250"
+    panel-class="w-[98vw]"
     @close="closeModal"
   >
     <template #header>

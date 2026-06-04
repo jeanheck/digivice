@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex w-full min-h-0 shrink-0 flex-col gap-4 overflow-hidden lg:w-112.5 lg:border-l lg:border-[#0055ff]/30 lg:pl-6">
+  <div class="flex w-full min-h-0 shrink-0 flex-col items-center gap-4 overflow-y-auto custom-scroll lg:w-[536px] lg:border-l lg:border-[#0055ff]/30 lg:pl-6">
     <div
       v-if="!selectedStep"
       class="flex-1 flex flex-col items-center justify-center border border-cyan-900/40 bg-[#000a1a] rounded min-h-100"
