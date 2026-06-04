@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ZoomedLocationMap from "./ZoomedLocationMap.vue";
+import { MAP_PANEL_MIN_WIDTH_PX } from "@/constants/map-display.constant";
 import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 
@@ -11,7 +12,10 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex w-full min-h-0 shrink-0 flex-col items-center gap-4 overflow-y-auto custom-scroll lg:w-[536px] lg:border-l lg:border-[#0055ff]/30 lg:pl-6">
+  <div
+    class="flex min-h-0 shrink-0 flex-col items-center gap-4 overflow-x-hidden overflow-y-auto custom-scroll [scrollbar-gutter:stable] lg:flex-[0.6] lg:border-l lg:border-[#0055ff]/30 lg:pl-6"
+    :style="{ minWidth: `${MAP_PANEL_MIN_WIDTH_PX}px` }"
+  >
     <div
       v-if="!selectedStep"
       class="flex-1 flex flex-col items-center justify-center border border-cyan-900/40 bg-[#000a1a] rounded min-h-100"
