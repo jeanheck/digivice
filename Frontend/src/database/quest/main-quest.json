@@ -496,8 +496,8 @@
         "27": {
             "location": "023E",
             "coordinates": {
-                "x": 61,
-                "y": 80
+                "x": 60.5,
+                "y": 77
             },
             "zoomedLocations": [
                 {
@@ -513,8 +513,8 @@
         "28": {
             "location": "023E",
             "coordinates": {
-                "x": 61,
-                "y": 80
+                "x": 60.5,
+                "y": 77
             },
             "zoomedLocations": [
                 {
@@ -537,8 +537,8 @@
                 {
                     "location": "0200",
                     "coordinates": {
-                        "x": 21,
-                        "y": 56
+                        "x": 23,
+                        "y": 58
                     }
                 },
                 {
