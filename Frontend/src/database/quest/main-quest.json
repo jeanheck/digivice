@@ -578,8 +578,8 @@
                 {
                     "location": "021B",
                     "coordinates": {
-                        "x": 40,
-                        "y": 18
+                        "x": 36,
+                        "y": 23
                     }
                 }
             ],
@@ -612,8 +612,8 @@
                 {
                     "location": "021B",
                     "coordinates": {
-                        "x": 40,
-                        "y": 18
+                        "x": 36,
+                        "y": 23
                     }
                 }
             ],
@@ -629,8 +629,8 @@
                 {
                     "location": "020B",
                     "coordinates": {
-                        "x": 69,
-                        "y": 37
+                        "x": 65,
+                        "y": 35
                     }
                 }
             ],
@@ -646,7 +646,7 @@
                 {
                     "location": "0203",
                     "coordinates": {
-                        "x": 39,
+                        "x": 40,
                         "y": 26
                     }
                 }
@@ -664,13 +664,13 @@
                     "location": "0214",
                     "coordinates": {
                         "x": 39,
-                        "y": 13
+                        "y": 18
                     }
                 },
                 {
                     "location": "0215",
                     "coordinates": {
-                        "x": 70.5,
+                        "x": 62.5,
                         "y": 34.5
                     }
                 }
@@ -681,13 +681,13 @@
             "location": "023B",
             "coordinates": {
                 "x": 60.5,
-                "y": 89.5
+                "y": 84
             },
             "zoomedLocations": [
                 {
                     "location": "023B",
                     "coordinates": {
-                        "x": 70,
+                        "x": 62,
                         "y": 56
                     }
                 }
@@ -698,13 +698,13 @@
             "location": "0235",
             "coordinates": {
                 "x": 85,
-                "y": 83
+                "y": 78.5
             },
             "zoomedLocations": [
                 {
                     "location": "0235",
                     "coordinates": {
-                        "x": 80,
+                        "x": 78,
                         "y": 20
                     }
                 }
@@ -715,14 +715,14 @@
             "location": "0239",
             "coordinates": {
                 "x": 71,
-                "y": 69
+                "y": 67
             },
             "zoomedLocations": [
                 {
                     "location": "0239",
                     "coordinates": {
-                        "x": 46,
-                        "y": 73
+                        "x": 45,
+                        "y": 70
                     }
                 }
             ],
@@ -732,14 +732,14 @@
             "location": "0226",
             "coordinates": {
                 "x": 69.5,
-                "y": 35.5
+                "y": 37.5
             },
             "zoomedLocations": [
                 {
                     "location": "0226",
                     "coordinates": {
                         "x": 7,
-                        "y": 13
+                        "y": 19
                     }
                 }
             ],
@@ -749,14 +749,14 @@
             "location": "0226",
             "coordinates": {
                 "x": 69.5,
-                "y": 35.5
+                "y": 37.5
             },
             "zoomedLocations": [
                 {
                     "location": "0226",
                     "coordinates": {
                         "x": 7,
-                        "y": 13
+                        "y": 19
                     }
                 }
             ],
@@ -766,13 +766,13 @@
             "location": "0235",
             "coordinates": {
                 "x": 85,
-                "y": 83
+                "y": 78.5
             },
             "zoomedLocations": [
                 {
                     "location": "0235",
                     "coordinates": {
-                        "x": 80,
+                        "x": 78,
                         "y": 20
                     }
                 }
@@ -783,14 +783,14 @@
             "location": "0235",
             "coordinates": {
                 "x": 85,
-                "y": 83
+                "y": 78.5
             },
             "zoomedLocations": [
                 {
                     "location": "0236",
                     "coordinates": {
                         "x": 25,
-                        "y": 88
+                        "y": 71
                     }
                 }
             ],
