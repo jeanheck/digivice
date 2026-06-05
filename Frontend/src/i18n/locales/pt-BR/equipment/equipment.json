@@ -10,7 +10,7 @@
     },
     "94": {
       "name": "Lâmina Crimson",
-      "note": "Recupera uma fração do dano causado como HP"
+      "note": "Drena os pontos de vida de um adversário."
     },
     "96": {
       "name": "Shiratorimaru",
@@ -25,8 +25,8 @@
       "note": "Soqueie como um gato."
     },
     "108": {
-      "name": "Iron Glove",
-      "note": null
+      "name": "Luva de Ferro",
+      "note": "Bandagem reforçada com metal."
     },
     "110": {
       "name": "Braço Potente",
@@ -60,6 +60,10 @@
       "name": "Shishioumaru",
       "note": "Espada do Leomon."
     },
+    "159": {
+      "name": "Espada Longa",
+      "note": "Espada leve e longa."
+    },
     "161": {
       "name": "Espada Alada",
       "note": "Fácil de empunhar ataques rápidos."
@@ -73,8 +77,8 @@
       "note": "Fácil de usar e muito poderoso."
     },
     "169": {
-      "name": "Conto de Fadas",
-      "note": null
+      "name": "Conta de Fadas",
+      "note": "Arpão pequeno, mas poderoso."
     },
     "171": {
       "name": "Lança Divina",
@@ -98,7 +102,7 @@
     },
     "192": {
       "name": "Besta",
-      "note": null
+      "note": "Poderoso mecanismo de disparo."
     },
     "194": {
       "name": "Arco Raven",
@@ -122,7 +126,7 @@
     },
     "217": {
       "name": "Boné de Beisebol",
-      "note": null
+      "note": "Fácil de movimentar a armadura da cabeça."
     },
     "219": {
       "name": "Boné de Lã",
@@ -137,8 +141,8 @@
       "note": "Orelhas sensuais de gato."
     },
     "228": {
-      "name": "Headband",
-      "note": null
+      "name": "Cabeceira",
+      "note": "Desvia do ataque inimigo com coragem."
     },
     "230": {
       "name": "Coroa Mágica",
@@ -153,8 +157,8 @@
       "note": "Capacete feito de metal leve."
     },
     "238": {
-      "name": "Elmo de Ferro",
-      "note": null
+      "name": "Capacete de Ferro",
+      "note": "Capacete robusto feito de ferro."
     },
     "240": {
       "name": "Capacete Alado",
@@ -170,7 +174,7 @@
     },
     "251": {
       "name": "Manto do Padre",
-      "note": null
+      "note": "manto usado por sacerdotes."
     },
     "253": {
       "name": "Manto Sombrio",
@@ -185,8 +189,8 @@
       "note": "Armadura feita com metal leve."
     },
     "264": {
-      "name": "Iron Armor",
-      "note": null
+      "name": "Armadura de Ferro",
+      "note": "Armadura resistente feita de ferro."
     },
     "266": {
       "name": "Armadura Sombria",
@@ -202,7 +206,7 @@
     },
     "277": {
       "name": "Escudo de Ferro",
-      "note": null
+      "note": "Escudo robusto feito com ferro."
     },
     "279": {
       "name": "Barreira Proteção",
@@ -474,10 +478,6 @@
     },
     "1045": {
       "name": "Lightning Bow",
-      "note": null
-    },
-    "1046": {
-      "name": "Espada Longa",
       "note": null
     },
     "1047": {
