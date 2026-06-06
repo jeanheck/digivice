@@ -1,0 +1,229 @@
+Sniper Shield — investigação de memória (leilão #3)
+Item: Sniper Shield (id 1083)
+Local: mesmo cenário de leilão em Asuka
+
+Contexto de gameplay
+- Leilão disponível após completar o step 28 da main quest.
+- Janela encerra ao completar o step 34 da main quest (confirmado in-game + compare memória).
+- Mesmas regras gerais dos leilões anteriores: entrar no cenário consome a instância; compra vs. desistência investigados abaixo.
+
+================================================================================
+Endereços confirmados / palpite forte (por camada)
+================================================================================
+
+1. Gatilho da quest (step 28, separado da janela)
+   Endereço: 0x0004B3DE
+   Bitmask: 0x10 (bit 4) — MainQuestAddresses.json step 28
+
+   Compare (antes/depois step 28):
+     0x45 → 0x55  (+ flag: 0x10)
+
+   Mesmo endereço do gatilho do leilão #2 (step 15 @ 0x4B3DE bit 0x01); bit diferente por era de leilão.
+
+2. Janela da história (3º leilão aberto)
+   Endereço: 0x0004B370
+   Bitmask leilão aberto: 0x04 (bit 2)
+
+   Compare (antes/depois step 28; mapas diferentes, muito ruído colateral):
+     0x0B → 0x0C  (+ flag: 0x04, - flag: 0x03)
+     Sinal limpo de abertura: bit 2 liga (+0x04). O -0x03 (desliga bits 0 e 1) é provável colateral do progresso entre steps 27→28.
+
+   Padrão observado nos leilões anteriores (mesmo byte, bits distintos):
+     - 1º leilão: bit 0 (0x01), entre step 4 e step 6
+     - 2º leilão: bit 3 (0x08), após step 15 até step 21
+     - 3º leilão: bit 2 (0x04), após step 28
+
+   Valor típico com janela aberta (step 28 feito, step 34 não):
+     0x0C = bit 2 (3º leilão) + bit 3 (era do 2º leilão ainda presente)
+
+   Fechamento da janela (step 34 completo):
+     0x0C → 0x0D  (+ flag: 0x01)
+     Bit 0 liga como marcador de fechamento; bit 2 (janela) permanece ligado — mesmo modelo do leilão #2 (step 21 liga bit 0 junto ao 0x08 → 0x09).
+
+   Leitura sugerida — 3º leilão na janela:
+     (byte & 0x04) != 0 && (byte & 0x01) == 0
+     → valor 0x0C (step 28 feito, step 34 não)
+
+   Nota: bit 0x04 também é a máscara de instância consumida em 0x4B38A — bytes diferentes, papéis distintos.
+   Nota: bit 0 (0x01) é marcador compartilhado de fechamento pelos steps 21 (#2) e 34 (#3); não desliga o bit de janela do leilão.
+
+3. Instância deste leilão já aconteceu (entrou no cenário)
+   Endereço: 0x0004B38A
+   Bitmask: 0x04 (bit 2)
+
+   Compare (entrou e saiu sem comprar):
+     0x03 → 0x07  (+ flag: 0x04)
+     Bits 0 e 1 (leilões #1 e #2) já estavam ligados; bit 2 (leilão #3) liga ao consumir a instância.
+
+   Mesmo byte dos leilões anteriores — bits sequenciais por instância:
+     - 1º leilão: bit 0 (0x01)
+     - 2º leilão: bit 1 (0x02)
+     - 3º leilão: bit 2 (0x04)
+
+   Leitura sugerida — instância ainda ativa (dá para participar):
+     (byte & 0x04) == 0
+   Combinado com janela aberta:
+     (0x4B370 & 0x04) != 0 && (0x4B370 & 0x01) == 0 && (0x4B38A & 0x04) == 0
+
+4. Possui Sniper Shield no inventário (agora)
+   Endereço: 0x00048ECA
+   Bitmask: 0x01 (bit 0)
+
+   Compare (comprou no leilão):
+     0x00 → 0x01  (+ flag: 0x01)
+
+   Compare (vendeu o item):
+     0x01 → 0x00  (- flag: 0x01)
+
+   NÃO liga ao entrar e sair sem comprar (mesmo compare de instância em 0x4B38A).
+   Desliga ao vender — espelha o padrão dos leilões #1 e #2.
+
+   Leitura sugerida — tem o item no momento:
+     (byte & 0x01) != 0
+
+================================================================================
+Modelo compartilhado — byte 0x4B370
+================================================================================
+
+| Bit | Mask  | Papel                                      | Status        |
+|-----|-------|--------------------------------------------|---------------|
+| 0   | 0x01  | Janela 1º leilão; fechamento #2 (step 21) e #3 (step 34) | Confirmado |
+| 1   | 0x02  | Step 6 completo                            | Confirmado    |
+| 2   | 0x04  | Janela do 3º leilão (após step 28)         | Confirmado    |
+| 3   | 0x08  | Janela do 2º leilão (após step 15)         | Confirmado    |
+
+Modelo compartilhado — byte 0x4B38A (instância consumida)
+
+| Bit | Mask  | Papel                                      | Status        |
+|-----|-------|--------------------------------------------|---------------|
+| 0   | 0x01  | 1º leilão (Divine Barrier) já aconteceu    | Confirmado    |
+| 1   | 0x02  | 2º leilão (Hazard Shield) já aconteceu     | Confirmado    |
+| 2   | 0x04  | 3º leilão (Sniper Shield) já aconteceu     | Confirmado    |
+
+Modelo compartilhado — gatilho de quest por leilão (byte 0x4B3DE)
+
+| Bit | Mask  | Papel                                      | Status        |
+|-----|-------|--------------------------------------------|---------------|
+| 0   | 0x01  | Step 15 completo (abre era do 2º leilão)   | Confirmado    |
+| 4   | 0x10  | Step 28 completo (abre era do 3º leilão)   | Confirmado    |
+
+================================================================================
+Análise dos compares fornecidos
+================================================================================
+
+Compare A — participou sem comprar (leilão já em andamento)
+  Sinal de leilão:
+    0x4B38A: 0x03 → 0x07 (+0x04) — instância consumida (confirmado)
+  Sem sinal de posse:
+    0x48ECA inalterado (esperado)
+
+Compare B — comprou o item (leilão já em andamento)
+  Mesmo que A, mais:
+    0x48ECA: 0x00 → 0x01 — posse do item (confirmado)
+    0x48DA0: 0x0C → 0xCC — bits do jogador (gastou dinheiro; volátil)
+    0x48DA1: 0x38 → 0x31 — bits do jogador (volátil)
+
+Compare D — antes/depois step 28 (abertura da janela; mapas diferentes)
+  Sinal de leilão:
+    0x4B3DE: 0x45 → 0x55 (+0x10) — step 28 completo (confirmado)
+    0x4B370: 0x0B → 0x0C (+0x04) — janela abre (confirmado; -0x03 é colateral)
+    0x4B400: 0x00 → 0x04 (+0x04) — secundário, espelha 0x4B370
+  Sem sinal de instância ou posse:
+    0x4B38A, 0x48ECA inalterados (esperado — só abrir a janela ≠ entrar no cenário)
+  Colateral de quest (provável redundância):
+    0x4B3C2: 0x0F → 0x1F (+0x10) — paralelo ao step 28 em 0x4B3DE
+  Ruído dominante neste compare:
+    0x4B3F8, 0x4B410, 0x48D68 — mapa (0x3E → 0x00)
+    0x48D6C–0x48D84 — jogador volátil
+    0x4B618–0x4B643 — heap/sessão
+    0x4B824–0x4BA22 — encounter cache
+    0x4BBAC, 0x4BBAD — timer de sessão
+
+Compare E — antes/depois step 34 (fechamento da janela)
+  Sinal de quest:
+    0x4B3B6: 0x82 → 0x8A (+0x08) — step 34 completo (confirmado; MainQuestAddresses.json)
+  Sinal de leilão:
+    0x4B370: 0x0C → 0x0D (+0x01) — janela fecha (marcador bit 0; bit 2 permanece)
+  Sem sinal de instância ou posse:
+    0x4B38A, 0x48ECA inalterados (esperado)
+  Colateral de quest (não é step 34):
+    0x4B3DE: 0x55 → 0x75 (+0x20) — outro progresso no mesmo byte
+  Ruído dominante:
+    0x4B3F8, 0x4B400, 0x4B410, 0x48D68 — mapa
+    0x48D6C–0x48D84 — jogador volátil
+    0x4B618–0x4B64F — heap/sessão
+    0x4B824–0x4BA21 — encounter cache
+    0x4BBAC, 0x4BBAD — timer de sessão
+
+Compare F — antes/depois step 33 (controle negativo; janela ainda aberta)
+  Endereços de leilão inalterados: 0x4B370, 0x4B38A, 0x4B3DE, 0x48ECA (esperado)
+  Sinal de quest: 0x48DBF +0x01 (step 33)
+  Ruído: mapa (±0x10 em 0x4B3F8/0x4B400), encounter cache, heap, jogador volátil
+
+Compare C — vendeu o item
+  Sinal de leilão:
+    0x48ECA: 0x01 → 0x00 — posse removida (confirmado)
+    0x48DA0: 0xCC → 0xC4 — bits do jogador (recebeu dinheiro; volátil)
+    0x48DA1: 0x31 → 0x5C — bits do jogador (volátil)
+  Instância permanece consumida:
+    0x4B38A inalterado (esperado — vender não reabre o leilão)
+  Colateral de mapa/inventário:
+    0x4B3F8: 0x12 → 0x0D — MapId (PlayerAddresses.json)
+    0x4B618–0x4B63F — bloco escrito (provável atualização de estrutura ao vender)
+
+Sinais comuns aos três compares (não específicos do leilão #3):
+  0x48D68, 0x48D6C–0x48D74, 0x48D7D, 0x48D82, 0x48D84 — região volátil do jogador
+  0x4B400: 0x13 → 0x10 (-0x03) — secundário; aparece também nos leilões #1 e #2
+  0x4B618, 0x4B624–0x4B628 — heap/sessão
+  0x4B824–0x4BA21 — encounter cache (ruído de sessão; padrão 0x10→0xC3 sem compra, 0x10→0x11 com compra)
+  0x4BBAC, 0x4BBAD — provável timer de sessão
+
+================================================================================
+Endereços descartados ou secundários
+================================================================================
+
+- 0x0004B3F8 — MapId; muda ao vender (troca de mapa), não é flag de leilão.
+- 0x00048DA0, 0x00048DA1 — bits do jogador (dinheiro); voláteis, não usar sozinhos.
+- 0x4B824–0x4BA21 — encounter cache; ruído de sessão (documentado em DivineBarrierAddresses.txt).
+- 0x4B618–0x4B63F — escrita em bloco ao vender; estrutura de inventário, não flag de leilão.
+- 0x494xxx — stats do Digimon; ruído quando aplicável.
+- 0x4B3C2 (+0x10) — redundância com step 28 em 0x4B3DE; apareceu no compare D.
+
+================================================================================
+Referência cruzada — leilões #1, #2 e #3
+================================================================================
+
+| Camada           | Leilão #1 (Divine Barrier) | Leilão #2 (Hazard Shield) | Leilão #3 (Sniper Shield) |
+|------------------|----------------------------|---------------------------|---------------------------|
+| Item id          | 281                        | 1032                      | 1083                      |
+| Quest trigger    | step 4 @ 0x4B3E0           | step 15 @ 0x4B3DE 0x01    | step 28 @ 0x4B3DE 0x10    |
+| Janela           | 0x4B370 bit 0x01           | 0x4B370 bit 0x08          | 0x4B370 bit 0x04          |
+| Janela fecha em  | step 6 (bit 0x02)          | step 21 (bit 0x01+0x08)   | step 34 (bit 0x01+0x04)   |
+| Instância        | 0x4B38A bit 0x01           | 0x4B38A bit 0x02          | 0x4B38A bit 0x04          |
+| Posse (agora)    | 0x48EC9 bit 0x01           | 0x48ECF bit 0x01          | 0x48ECA bit 0x01          |
+
+Padrão observado:
+  - Instância (0x4B38A): bits sequenciais 0, 1, 2 — confirmado nos três leilões.
+  - Janela (0x4B370): bits não sequenciais 0, 3, 2 — confirmado nos três leilões.
+  - Posse (0x48ECx): endereços vizinhos mas não estritamente sequenciais por número do leilão (EC9, ECF, ECA).
+  - Quest trigger (0x4B3DE): mesmo byte, bits distintos por era (0x01 para step 15, 0x10 para step 28).
+  - Máscara 0x04 reutilizada: janela em 0x4B370 e instância em 0x4B38A (bytes diferentes).
+  - Fechamento: bit 0 (0x01) liga no step de encerramento; bit de janela do leilão permanece (modelo #2 e #3).
+
+================================================================================
+Próximos testes
+================================================================================
+
+[x] Compare antes/depois do step 28 → 0x4B370 bit 0x04 (janela); 0x4B3DE bit 0x10 (quest)
+[x] Identificar step que fecha a janela → step 34 (0x4B370 bit 0x01 liga, 0x04 permanece → 0x0D)
+[ ] Confirmar que 0x48ECA não liga se o item for obtido por outro meio no jogo
+[x] Entrar no cenário e sair sem comprar → 0x4B38A bit 0x04
+[x] Comprar o item → 0x48ECA bit 0x01
+[x] Vender o item → 0x48ECA zera (0x01 → 0x00)
+
+================================================================================
+Status
+================================================================================
+
+Investigação manual via snapshots. Endereços ainda não integrados ao backend.
+Janela (0x4B370), instância (0x4B38A) e posse (0x48ECA) confirmados. Abertura (step 28) e fechamento (step 34) da janela confirmados.
