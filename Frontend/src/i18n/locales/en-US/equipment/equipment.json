@@ -16,6 +16,10 @@
       "name": "Shiratorimaru",
       "note": null
     },
+    "102": {
+      "name": "Rusty Katana",
+      "note": null
+    },
     "106": {
       "name": "Leather Glove",
       "note": null
@@ -350,7 +354,7 @@
     },
     "1013": {
       "name": "Destruction",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
+      "note": "Very small chance of knocking out enemy Digimon"
     },
     "1014": {
       "name": "Deus Guard",
@@ -590,10 +594,6 @@
     },
     "1074": {
       "name": "Rusty Glove",
-      "note": null
-    },
-    "1075": {
-      "name": "Rusty Katana",
       "note": null
     },
     "1076": {

@@ -71,6 +71,24 @@
             "0"
         ]
     },
+    "102": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 20
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 30
+            }
+        ],
+        "equipableDigimon": [
+            "0"
+        ]
+    },
     "106": {
         "type": "weaponSingleHanded",
         "attributes": [
@@ -3237,24 +3255,6 @@
         ],
         "equipableDigimon": [
             "1"
-        ]
-    },
-    "1075": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 20
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 30
-            }
-        ],
-        "equipableDigimon": [
-            "0"
         ]
     },
     "1076": {

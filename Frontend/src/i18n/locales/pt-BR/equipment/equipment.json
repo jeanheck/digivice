@@ -16,6 +16,10 @@
       "name": "Shiratorimaru",
       "note": "Espada do Mushamon."
     },
+    "102": {
+      "name": "Katana Oxidada",
+      "note": "Oxidado com um brilho misterioso."
+    },
     "106": {
       "name": "Luva de Couro",
       "note": "Uma luva de couro."
@@ -590,10 +594,6 @@
     },
     "1074": {
       "name": "Rusty Glove",
-      "note": null
-    },
-    "1075": {
-      "name": "Rusty Katana",
       "note": null
     },
     "1076": {
