@@ -121,41 +121,105 @@
   "021E": {
     "image": "Wire Forest Entrance",
     "enemies": [
-      "71",
-      "72"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "71",
+          "72"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 27,
+        "ids": [
+          "71",
+          "85"
+        ]
+      }
     ]
   },
   "021F": {
     "image": "Shell Beach",
     "enemies": [
-      "74",
-      "76",
-      "77"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "74",
+          "76",
+          "77"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 27,
+        "ids": [
+          "77",
+          "96"
+        ]
+      }
     ]
   },
   "0220": {
     "image": "Plug Cape",
     "enemies": [
-      "76",
-      "77",
-      "88",
-      "91"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "76",
+          "77",
+          "88",
+          "91"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 27,
+        "ids": [
+          "76",
+          "77",
+          "96",
+          "107"
+        ]
+      }
     ]
   },
   "0221": {
     "image": "West Wire Forest",
     "enemies": [
-      "71",
-      "76",
-      "78"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "71",
+          "76",
+          "78"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 27,
+        "ids": [
+          "76",
+          "78",
+          "85"
+        ]
+      }
     ]
   },
   "0222": {
     "image": "East Wire Forest",
     "enemies": [
-      "71",
-      "76",
-      "78"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "71",
+          "76",
+          "78"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 27,
+        "ids": [
+          "78",
+          "94",
+          "82"
+        ]
+      }
     ]
   },
   "0223": {
@@ -176,9 +240,22 @@
   "0226": {
     "image": "Protocol Ruins",
     "enemies": [
-      "1",
-      "82",
-      "84"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "1",
+          "82",
+          "84"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 27,
+        "ids": [
+          "1",
+          "84",
+          "83"
+        ]
+      }
     ]
   },
   "0227": {
@@ -218,9 +295,21 @@
   "022A": {
     "image": "Kicking Forest",
     "enemies": [
-      "74",
-      "77",
-      "86"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "74",
+          "77",
+          "86"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 27,
+        "ids": [
+          "74",
+          "182"
+        ]
+      }
     ]
   },
   "022B": {
