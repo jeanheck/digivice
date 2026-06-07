@@ -3,10 +3,12 @@ import { computed } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import AuctionCurrentPanel from "@/components/journal/auction-modal/AuctionCurrentPanel.vue";
 import AuctionListItem from "@/components/journal/auction-modal/AuctionListItem.vue";
+import type { Journal } from "@/models";
 import { AuctionPresenter } from "@/presenters/auction/auction.presenter";
 
-defineProps<{
+const props = defineProps<{
   isOpen: boolean;
+  journal: Journal | null;
 }>();
 
 const emit = defineEmits<{
@@ -14,11 +16,11 @@ const emit = defineEmits<{
 }>();
 
 const currentAuction = computed(() => {
-  return AuctionPresenter.getAuctionCurrentViewModel();
+  return AuctionPresenter.getAuctionCurrentViewModel(props.journal);
 });
 
 const auctionHistory = computed(() => {
-  return AuctionPresenter.getAuctionHistoryViewModels();
+  return AuctionPresenter.getAuctionHistoryViewModels(props.journal);
 });
 
 const closeModal = () => {

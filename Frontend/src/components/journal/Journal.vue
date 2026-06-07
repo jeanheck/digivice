@@ -35,7 +35,8 @@ const closeQuestModal = () => {
 };
 
 const auctionCardViewModel = computed(() => {
-  return AuctionPresenter.getAuctionCardViewModel();
+  const journal = store.currentState?.journal ?? null;
+  return AuctionPresenter.getAuctionCardViewModel(journal);
 });
 
 const isAuctionModalOpen = ref(false);
@@ -77,7 +78,7 @@ const closeAuctionModal = () => {
 
       <JournalQuestsSection
         :title="$t('journal.sideQuests')"
-        accent-color="cyan"
+        accent-color="teal"
       >
         <JournalQuestCard
           v-for="sideQuest in journalViewModel.sideQuests"
@@ -90,7 +91,7 @@ const closeAuctionModal = () => {
 
       <JournalQuestsSection
         :title="$t('journal.legendaryWeapons')"
-        accent-color="purple"
+        accent-color="cyan"
       >
         <JournalQuestCard
           v-for="legendaryWeapon in journalViewModel.legendaryWeapons"
@@ -103,7 +104,7 @@ const closeAuctionModal = () => {
 
       <JournalQuestsSection
         :title="$t('journal.driAgents')"
-        accent-color="rose"
+        accent-color="sky"
       >
         <JournalQuestCard
           v-for="driAgent in journalViewModel.driAgents"
@@ -124,6 +125,7 @@ const closeAuctionModal = () => {
 
   <AuctionModal
     :is-open="isAuctionModalOpen"
+    :journal="store.currentState?.journal ?? null"
     @close="closeAuctionModal"
   />
 </template>
