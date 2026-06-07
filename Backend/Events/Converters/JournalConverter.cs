@@ -11,7 +11,8 @@ public static class JournalConverter
         return new JournalDTO
         {
             MainQuest = QuestConverter.ToDTO(journal.MainQuest),
-            SideQuests = journal.SideQuests.Select(QuestConverter.ToDTO).ToList()
+            SideQuests = journal.SideQuests.Select(QuestConverter.ToDTO).ToList(),
+            LegendaryWeapons = journal.LegendaryWeapons.Select(QuestConverter.ToDTO).ToList()
         };
     }
 }

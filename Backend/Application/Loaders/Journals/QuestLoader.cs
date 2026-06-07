@@ -17,5 +17,10 @@ namespace Backend.Application.Loaders.Journals
         {
             return [.. addressesRepository.GetAllSideQuests().Select(questReader.Read)];
         }
+
+        public List<QuestResource> LoadLegendaryWeapons()
+        {
+            return [.. addressesRepository.GetAllLegendaryWeapons().Select(questReader.Read)];
+        }
     }
 }

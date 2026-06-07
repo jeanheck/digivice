@@ -6,6 +6,7 @@ namespace Backend.Domain.Models
     {
         public Quest MainQuest { get; set; } = new();
         public List<Quest> SideQuests { get; set; } = [];
+        public List<Quest> LegendaryWeapons { get; set; } = [];
 
         public virtual bool Equals(Journal? other)
         {
@@ -18,7 +19,11 @@ namespace Backend.Domain.Models
                                    (SideQuests != null && other.SideQuests != null &&
                                     SideQuests.SequenceEqual(other.SideQuests));
 
-            return mainQuestEqual && sideQuestsEqual;
+            bool legendaryWeaponsEqual = (LegendaryWeapons == null && other.LegendaryWeapons == null) ||
+                                         (LegendaryWeapons != null && other.LegendaryWeapons != null &&
+                                          LegendaryWeapons.SequenceEqual(other.LegendaryWeapons));
+
+            return mainQuestEqual && sideQuestsEqual && legendaryWeaponsEqual;
         }
 
         public override int GetHashCode()
@@ -30,6 +35,13 @@ namespace Backend.Domain.Models
                 foreach (var sq in SideQuests)
                 {
                     hash.Add(sq);
+                }
+            }
+            if (LegendaryWeapons != null)
+            {
+                foreach (var legendaryWeapon in LegendaryWeapons)
+                {
+                    hash.Add(legendaryWeapon);
                 }
             }
             return hash.ToHashCode();

@@ -91,4 +91,46 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0, fishingPole.Steps[2].Requisites[2].Value);
         Assert.Equal(1, fishingPole.Steps[2].Value);
     }
+
+    [Fact]
+    public void LoadLegendaryWeapons_ShouldIntegrateLegendaryWeaponAddressesAndReaderPipeline()
+    {
+        var addressesRepository = CreateAddressesRepository();
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38E, 0x01)).Returns((byte)0x01);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38E, 0x02)).Returns((byte)0x02);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38E, 0x04)).Returns((byte)0x04);
+
+        var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
+        var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
+        var questReader = new QuestReader(requisiteReader, stepReader);
+        var questLoader = new QuestLoader(addressesRepository, questReader);
+
+        var legendaryWeapons = questLoader.LoadLegendaryWeapons();
+
+        Assert.NotNull(legendaryWeapons);
+        Assert.Equal(3, legendaryWeapons.Count);
+
+        var eternally = legendaryWeapons[0];
+        Assert.Equal("eternally", eternally.Id);
+        Assert.Empty(eternally.Requisites);
+        Assert.Single(eternally.Steps);
+        Assert.Equal(1, eternally.Steps[0].Number);
+        Assert.Equal(0x01, eternally.Steps[0].Value);
+
+        var invincible = legendaryWeapons[1];
+        Assert.Equal("invincible", invincible.Id);
+        Assert.Empty(invincible.Requisites);
+        Assert.Single(invincible.Steps);
+        Assert.Equal(1, invincible.Steps[0].Number);
+        Assert.Equal(0x02, invincible.Steps[0].Value);
+
+        var muramasa = legendaryWeapons[2];
+        Assert.Equal("Muramasa", muramasa.Id);
+        Assert.Empty(muramasa.Requisites);
+        Assert.Single(muramasa.Steps);
+        Assert.Equal(1, muramasa.Steps[0].Number);
+        Assert.Equal(0x04, muramasa.Steps[0].Value);
+    }
 }

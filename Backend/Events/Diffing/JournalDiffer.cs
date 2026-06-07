@@ -45,6 +45,23 @@ public static class JournalDiffer
             dto = dto with { SideQuests = sideQuestsDelta };
         }
 
+        var legendaryWeaponsDelta = new List<QuestDTO>();
+        foreach (var legendaryWeaponNewState in newJournal.LegendaryWeapons)
+        {
+            var legendaryWeaponPreviousState = previousJournal.LegendaryWeapons
+                .FirstOrDefault(quest => quest.Id == legendaryWeaponNewState.Id);
+            var legendaryWeaponDelta = QuestDiffer.Diff(legendaryWeaponPreviousState, legendaryWeaponNewState);
+            if (legendaryWeaponDelta != null)
+            {
+                legendaryWeaponsDelta.Add(legendaryWeaponDelta);
+            }
+        }
+
+        if (legendaryWeaponsDelta.Count > 0)
+        {
+            dto = dto with { LegendaryWeapons = legendaryWeaponsDelta };
+        }
+
         return dto;
     }
 }

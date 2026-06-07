@@ -136,4 +136,38 @@ public class JournalDifferTests
         Assert.Equal("2", sideQuests[0].Id);
         Assert.Equal((byte)1, sideQuests[0].Steps.Value![0].Value.Value);
     }
+
+    [Fact]
+    public void Diff_ShouldReturnDelta_WhenLegendaryWeaponsChanged()
+    {
+        var previous = new Journal
+        {
+            MainQuest = new Quest { Id = "1" },
+            SideQuests = [],
+            LegendaryWeapons = [
+                new Quest { Id = "eternally", Requisites = [], Steps = [new Step { Number = 1, Value = 0 }] }
+            ]
+        };
+        var newObj = new Journal
+        {
+            MainQuest = new Quest { Id = "1" },
+            SideQuests = [],
+            LegendaryWeapons = [
+                new Quest { Id = "eternally", Requisites = [], Steps = [new Step { Number = 1, Value = 1 }] }
+            ]
+        };
+
+        var result = JournalDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.False(result.MainQuest.HasValue);
+        Assert.False(result.SideQuests.HasValue);
+        Assert.True(result.LegendaryWeapons.HasValue);
+
+        var legendaryWeapons = result.LegendaryWeapons.Value!;
+        Assert.Single(legendaryWeapons);
+        Assert.Equal("eternally", legendaryWeapons[0].Id);
+        Assert.True(legendaryWeapons[0].Steps.HasValue);
+        Assert.Equal((byte)1, legendaryWeapons[0].Steps.Value![0].Value.Value);
+    }
 }

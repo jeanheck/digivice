@@ -16,6 +16,9 @@ namespace Backend.Memory.Repositories
         private QuestAddresses? sideQuestFolderBag;
         private QuestAddresses? sideQuestTreeBoots;
         private QuestAddresses? sideQuestFishingPole;
+        private QuestAddresses? legendaryWeaponEternally;
+        private QuestAddresses? legendaryWeaponInvincible;
+        private QuestAddresses? legendaryWeaponMuramasa;
 
         public AddressesRepository(string dataDirectory)
         {
@@ -73,5 +76,21 @@ namespace Backend.Memory.Repositories
 
         private QuestAddresses GetSideQuestFishingPole() =>
             LoadAndCache(ref sideQuestFishingPole, "Quests/SideQuests/FishingPoleAddresses.json");
+
+        public List<QuestAddresses> GetAllLegendaryWeapons() =>
+        [
+            GetLegendaryWeaponEternally(),
+            GetLegendaryWeaponInvincible(),
+            GetLegendaryWeaponMuramasa()
+        ];
+
+        private QuestAddresses GetLegendaryWeaponEternally() =>
+            LoadAndCache(ref legendaryWeaponEternally, "Quests/LegendaryWeapons/EternallyAddresses.json");
+
+        private QuestAddresses GetLegendaryWeaponInvincible() =>
+            LoadAndCache(ref legendaryWeaponInvincible, "Quests/LegendaryWeapons/InvincibleAddresses.json");
+
+        private QuestAddresses GetLegendaryWeaponMuramasa() =>
+            LoadAndCache(ref legendaryWeaponMuramasa, "Quests/LegendaryWeapons/MuramasaAddresses.json");
     }
 }

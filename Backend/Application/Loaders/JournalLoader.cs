@@ -10,7 +10,8 @@ namespace Backend.Application.Loaders
             return new JournalResource
             {
                 MainQuest = questLoader.LoadMainQuest(),
-                SideQuests = questLoader.LoadSideQuests()
+                SideQuests = questLoader.LoadSideQuests(),
+                LegendaryWeapons = questLoader.LoadLegendaryWeapons()
             };
         }
     }

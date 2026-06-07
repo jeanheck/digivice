@@ -11,13 +11,15 @@ namespace Backend.Domain.Assemblers
         {
             var mainQuest = QuestAssembler.Assemble(resource.MainQuest);
             List<Quest> sideQuests = [.. resource.SideQuests.Select(QuestAssembler.Assemble)];
+            List<Quest> legendaryWeapons = [.. resource.LegendaryWeapons.Select(QuestAssembler.Assemble)];
 
             NormalizeMainQuestProgression(mainQuest);
 
             return new Journal
             {
                 MainQuest = mainQuest,
-                SideQuests = sideQuests
+                SideQuests = sideQuests,
+                LegendaryWeapons = legendaryWeapons
             };
         }
 

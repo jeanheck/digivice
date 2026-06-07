@@ -13,5 +13,6 @@ namespace Backend.Memory.Repositories
         DigimonAddress? GetDigimonAddressById(int id);
         QuestAddresses GetMainQuest();
         List<QuestAddresses> GetAllSideQuests();
+        List<QuestAddresses> GetAllLegendaryWeapons();
     }
 }
