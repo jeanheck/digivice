@@ -1673,6 +1673,20 @@
             "4"
         ]
     },
+    "318": {
+        "type": "accessory",
+        "attributes": [],
+        "equipableDigimon": [
+            "3",
+            "5",
+            "0",
+            "1",
+            "2",
+            "7",
+            "6",
+            "4"
+        ]
+    },
     "333": {
         "type": "accessory",
         "attributes": [],
@@ -1701,6 +1715,20 @@
             "4"
         ]
     },
+    "342": {
+        "type": "accessory",
+        "attributes": [],
+        "equipableDigimon": [
+            "3",
+            "5",
+            "0",
+            "1",
+            "2",
+            "7",
+            "6",
+            "4"
+        ]
+    },
     "345": {
         "type": "accessory",
         "attributes": [
@@ -1710,6 +1738,20 @@
                 "value": 2
             }
         ],
+        "equipableDigimon": [
+            "3",
+            "5",
+            "0",
+            "1",
+            "2",
+            "7",
+            "6",
+            "4"
+        ]
+    },
+    "357": {
+        "type": "accessory",
+        "attributes": [],
         "equipableDigimon": [
             "3",
             "5",
@@ -4910,34 +4952,6 @@
             "4"
         ]
     },
-    "1154": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "3",
-            "5",
-            "0",
-            "1",
-            "2",
-            "7",
-            "6",
-            "4"
-        ]
-    },
-    "1155": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "3",
-            "5",
-            "0",
-            "1",
-            "2",
-            "7",
-            "6",
-            "4"
-        ]
-    },
     "1156": {
         "type": "accessory",
         "attributes": [],
@@ -5289,20 +5303,6 @@
         ]
     },
     "1182": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "3",
-            "5",
-            "0",
-            "1",
-            "2",
-            "7",
-            "6",
-            "4"
-        ]
-    },
-    "1183": {
         "type": "accessory",
         "attributes": [],
         "equipableDigimon": [

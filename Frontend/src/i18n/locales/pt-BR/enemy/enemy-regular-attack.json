@@ -3,19 +3,17 @@
         "noElement": "Sem Elemento",
         "machineElement": "Elemento Máquina",
         "waterElement": "Elemento Água",
-        "thunderElemental": "Elemento Trovão",
         "noElementChanceOfPoison": "Sem Elemento (Chance de Envenenamento)",
-        "darkElemental": "Elemento Trevas",
-        "fireElement": "Elemento Fogo",
         "darkElement": "Elemento Trevas",
-        "thunderElementChanceOfSleep": "Thunder Element (Chance of Sleep)",
-        "machineElementChanceOfFreeze": "Machine Element (Chance of Freeze)",
+        "fireElement": "Elemento Fogo",
+        "thunderElementChanceOfSleep": "Elemento Trovão (Chance de Adormecer)",
+        "machineElementChanceOfFreeze": "Elemento Máquina (Chance de Paralisar)",
         "thunderElement": "Elemento Trovão",
-        "thunderElementalChanceOfFreeze": "Thunder Elemental (Chance of Freeze)",
-        "waterElementHitsTwice": "Water Element (Hits Twice)",
+        "thunderElementChanceOfFreeze": "Elemento Trovão (Chance de Paralisar)",
+        "waterElementHitsTwice": "Elemento Água (Acerta duas vezes)",
         "iceElement": "Elemento Gelo",
-        "machineElementCounterPhysical": "Machine Element; Counter (Physical)",
-        "thunderElementCounterPhysical": "Thunder Element; Counter (Physical)",
-        "machineElementHitsTwice": "Machine Element (Hits Twice)"
+        "machineElementCounterPhysical": "Elemento Máquina, Físico, Contra-ataque",
+        "thunderElementCounterPhysical": "Elemento Trovão, Físico, Contra-ataque",
+        "machineElementHitsTwice": "Elemento Máquina (Acerta duas vezes)"
     }
 }

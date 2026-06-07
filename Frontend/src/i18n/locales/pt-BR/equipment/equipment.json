@@ -292,17 +292,29 @@
       "name": "Anel Oração",
       "note": "Mais resistente à nocaute."
     },
+    "318": {
+      "name": "Contra Crista",
+      "note": "Retalia automaticamente."
+    },
     "333": {
       "name": "Dance Feather",
       "note": "Slightly increases the equipped Digimon’s chances of evading an attack"
     },
     "339": {
-      "name": "Fire Power 1",
-      "note": "Adds a small amount of Fire damage to the equipped Digimon’s basic attacks"
+      "name": "Poder de Fogo 1",
+      "note": "Adiciona fogo fraco aos ataques."
+    },
+    "342": {
+      "name": "Poder Aquático 1",
+      "note": "Adiciona água fraca aos ataques."
     },
     "345": {
-      "name": "Ice Power 1",
-      "note": "Add weak Ice to attacks"
+      "name": "Poder Gelo 1",
+      "note": "Adiciona gelo fraco aos ataques."
+    },
+    "357": {
+      "name": "Poder Trevas 1",
+      "note": "Adiciona escuridão fraca aos ataques."
     },
     "1001": {
       "name": "Vazio",
@@ -908,14 +920,6 @@
       "name": "Bolt Power S",
       "note": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks"
     },
-    "1154": {
-      "name": "Counter Crest",
-      "note": "Permite que o Digimon contra-ataque ataques físicos e técnicas, causando o dobro do dano recebido"
-    },
-    "1155": {
-      "name": "Dark Power 1",
-      "note": "Adds a small amount of Dark damage to the equipped Digimon’s basic attacks"
-    },
     "1156": {
       "name": "Dark Power 2",
       "note": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks"
@@ -1019,10 +1023,6 @@
     "1182": {
       "name": "Training Book",
       "note": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
-    },
-    "1183": {
-      "name": "Water Power 1",
-      "note": "Adds a small amount of Water damage to the equipped Digimon’s basic attacks"
     },
     "1184": {
       "name": "Water Power 2",

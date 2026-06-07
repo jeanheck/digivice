@@ -469,7 +469,7 @@
         "bits": 25,
         "boss": false,
         "dropId": "powerCharge",
-        "regularAttackId": "thunderElemental",
+        "regularAttackId": "thunderElement",
         "techniqueId": "none"
     },
     "77": {
@@ -770,7 +770,7 @@
         "bits": 160,
         "boss": false,
         "dropId": null,
-        "regularAttackId": "darkElemental",
+        "regularAttackId": "darkElement",
         "techniqueId": "none"
     },
     "84": {
@@ -1157,7 +1157,7 @@
         "bits": 90,
         "boss": false,
         "dropId": null,
-        "regularAttackId": "darkElemental",
+        "regularAttackId": "darkElement",
         "techniqueId": "none"
     },
     "93": {
@@ -2232,7 +2232,7 @@
         "bits": 200,
         "boss": false,
         "dropId": "machinegun",
-        "regularAttackId": "thunderElementalChanceOfFreeze",
+        "regularAttackId": "thunderElementChanceOfFreeze",
         "techniqueId": "none"
     },
     "118": {
@@ -4984,7 +4984,7 @@
         "bits": 600,
         "boss": false,
         "dropId": null,
-        "regularAttackId": "darkElemental",
+        "regularAttackId": "darkElement",
         "techniqueId": "none"
     },
     "182": {
