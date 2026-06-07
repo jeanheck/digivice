@@ -26,6 +26,7 @@ import driAgentAgumon from "./quest/dri-agents/dri-agent-agumon.json";
 import player from "./player.json";
 import party from "./party.json";
 import connection from "./connection.json";
+import auction from "./auction.json";
 
 export default {
   ...map,
@@ -55,7 +56,8 @@ export default {
   ...driAgentAgumon,
   ...player,
   ...party,
-  ...connection
+  ...connection,
+  ...auction,
 };
 
 

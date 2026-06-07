@@ -1,0 +1,18 @@
+{
+  "auction": {
+    "title": "Leilões",
+    "cardIdleTitle": "Leilões",
+    "cardIdleSubtitle": "Nenhum leilão em andamento",
+    "cardActiveSubtitle": "Leilão em andamento — clique para detalhes",
+    "modalTitle": "Leilões",
+    "activeBanner": "Leilão em andamento agora",
+    "stepRange": "Steps {openStep}–{closeStep}",
+    "status": {
+      "notYetOccurred": "Ainda não ocorreu",
+      "bought": "Você comprou no leilão",
+      "participatedWithoutPurchase": "Você foi, mas não comprou",
+      "missed": "Você não foi ao leilão",
+      "availableNow": "Disponível agora — você ainda pode ir"
+    }
+  }
+}

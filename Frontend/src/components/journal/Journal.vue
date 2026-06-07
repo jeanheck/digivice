@@ -2,9 +2,12 @@
 import { computed, ref } from "vue";
 import JournalQuestsSection from "@/components/journal/JournalQuestsSection.vue";
 import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
+import AuctionCard from "@/components/journal/AuctionCard.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
+import AuctionModal from "@/components/journal/auction-modal/AuctionModal.vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { JournalPresenter } from "@/presenters/journal/journal.presenter";
+import { AuctionPresenter } from "@/presenters/auction/auction.presenter";
 
 const store = useGameStore();
 
@@ -30,6 +33,20 @@ const closeQuestModal = () => {
     activeQuestId.value = null;
   }, 300);
 };
+
+const auctionCardViewModel = computed(() => {
+  return AuctionPresenter.getAuctionCardViewModel();
+});
+
+const isAuctionModalOpen = ref(false);
+
+const openAuctionModal = () => {
+  isAuctionModalOpen.value = true;
+};
+
+const closeAuctionModal = () => {
+  isAuctionModalOpen.value = false;
+};
 </script>
 
 <template>
@@ -43,15 +60,18 @@ const closeQuestModal = () => {
 
     <div class="flex-1 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
       <section>
-        <h4 class="text-xs text-yellow-400 font-bold mb-2 uppercase tracking-wide border-b border-yellow-700/60 pb-1">
-          {{ $t("journal.mainQuest") }}
-        </h4>
-
         <JournalQuestCard
           v-if="journalViewModel.mainQuest"
           :quest="journalViewModel.mainQuest"
           display-mode="main"
           @click="openQuestModal"
+        />
+      </section>
+
+      <section>
+        <AuctionCard
+          :auction-card="auctionCardViewModel"
+          @click="openAuctionModal"
         />
       </section>
 
@@ -100,5 +120,10 @@ const closeQuestModal = () => {
     :is-open="isQuestModalOpen"
     :quest-id="activeQuestId"
     @close="closeQuestModal"
+  />
+
+  <AuctionModal
+    :is-open="isAuctionModalOpen"
+    @close="closeAuctionModal"
   />
 </template>

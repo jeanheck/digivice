@@ -1,0 +1,18 @@
+{
+  "auction": {
+    "title": "Auctions",
+    "cardIdleTitle": "Auctions",
+    "cardIdleSubtitle": "No auction in progress",
+    "cardActiveSubtitle": "Auction in progress — click for details",
+    "modalTitle": "Auctions",
+    "activeBanner": "Auction in progress now",
+    "stepRange": "Steps {openStep}–{closeStep}",
+    "status": {
+      "notYetOccurred": "Has not occurred yet",
+      "bought": "You bought at the auction",
+      "participatedWithoutPurchase": "You went, but did not buy",
+      "missed": "You did not go to the auction",
+      "availableNow": "Available now — you can still go"
+    }
+  }
+}
