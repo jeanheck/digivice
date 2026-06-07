@@ -4,10 +4,10 @@
     "description": "Obtenha a Arma Lendária Invincible",
     "steps": {
       "1": {
-        "description": "Derrote Master Tyrannomon para receber a Garra Antiga",
+        "description": "Derrote MasterTyrannomon para receber a Garra Antiga",
         "locations": {
           "0": {
-            "locationTarget": "Master Tyrannomon"
+            "locationTarget": "MasterTyrannomon"
           }
         }
       }

@@ -24,6 +24,27 @@ const isWorldMap = computed(() => {
   return props.mapVariant === "world";
 });
 
+const MAP_LABEL_LEFT_EDGE_THRESHOLD_PERCENT = 25;
+const MAP_LABEL_RIGHT_EDGE_THRESHOLD_PERCENT = 75;
+
+const mapLabelHorizontalAnchorClass = computed(() => {
+  const coordinateX = activeLocation.value?.coordinates.x;
+
+  if (coordinateX === undefined) {
+    return "left-1/2 -translate-x-1/2";
+  }
+
+  if (coordinateX <= MAP_LABEL_LEFT_EDGE_THRESHOLD_PERCENT) {
+    return "left-1/2 translate-x-0";
+  }
+
+  if (coordinateX >= MAP_LABEL_RIGHT_EDGE_THRESHOLD_PERCENT) {
+    return "left-1/2 -translate-x-full";
+  }
+
+  return "left-1/2 -translate-x-1/2";
+});
+
 const mapImageFrameStyle = computed(() => {
   if (imageNaturalSize.value === null) {
     return {
@@ -176,8 +197,9 @@ const selectLocation = (locationIndex: number) => {
           :class="isWorldMap ? 'w-2.5 h-2.5 shadow-[0_0_10px_rgba(0,255,255,1)]' : 'w-2 h-2 shadow-[0_0_8px_rgba(0,255,255,1)]'"
         />
         <div
-          class="absolute left-1/2 -translate-x-1/2 w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight"
-          :class="
+          class="absolute w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight"
+          :class="[
+            mapLabelHorizontalAnchorClass,
             isWorldMap
               ? [
                   'text-[10px] px-3 py-1',
@@ -186,8 +208,8 @@ const selectLocation = (locationIndex: number) => {
               : [
                   'text-[9px] px-2 py-0.5',
                   activeLocation.coordinates.y < 25 ? 'top-6.25' : 'bottom-6.25',
-                ]
-          "
+                ],
+          ]"
         >
           {{ $t(activeLocation.labelKey) }}
         </div>

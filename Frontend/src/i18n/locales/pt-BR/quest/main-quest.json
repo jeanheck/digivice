@@ -23,10 +23,10 @@
         }
       },
       "3": {
-        "description": "Derrote Master Tyrannomon no Vale Tyranno",
+        "description": "Derrote MasterTyrannomon no Vale Tyranno",
         "locations": {
           "0": {
-            "locationTarget": "Master Tyrannomon"
+            "locationTarget": "MasterTyrannomon"
           }
         }
       },

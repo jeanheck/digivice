@@ -4,10 +4,10 @@
     "description": "Obtain the Legendary Weapon Invincible",
     "steps": {
       "1": {
-        "description": "Defeat Master Tyrannomon to receive the Old Claw",
+        "description": "Defeat MasterTyrannomon to receive the Old Claw",
         "locations": {
           "0": {
-            "locationTarget": "Master Tyrannomon"
+            "locationTarget": "MasterTyrannomon"
           }
         }
       }
