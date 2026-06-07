@@ -137,11 +137,10 @@ const participationDescription = computed(() => {
     </p>
 
     <p
-      v-if="participationDescription !== null"
-      class="text-[10px] leading-tight mt-1 relative z-10"
-      :class="participationDescriptionClass"
+      class="text-[10px] leading-tight mt-1 min-h-[12px] relative z-10"
+      :class="participationDescription !== null ? participationDescriptionClass : 'invisible'"
     >
-      {{ participationDescription }}
+      {{ participationDescription ?? "\u00A0" }}
     </p>
   </div>
 </template>

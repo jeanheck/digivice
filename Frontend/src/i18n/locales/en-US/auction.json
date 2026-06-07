@@ -9,9 +9,10 @@
     "currentIdleTitle": "No auction at Cargo Tower",
     "currentIdleSubtitle": "Keep progressing through the main quest",
     "currentActiveTitle": "Now! Auction at Cargo Tower!",
-    "currentActiveAcquire": "Acquire {equipmentName}!",
-    "purchasePrice": "Price: {price} bits",
-    "resalePrice": "Resale: {price} bits",
+    "currentActiveAcquirePrefix": "Acquire",
+    "purchasePriceLabel": "Price:",
+    "resalePriceLabel": "Resale:",
+    "bitsLabel": "bits",
     "closesWhenLabel": "CLOSES WHEN:",
     "historySubtitle": "History",
     "historyTiming": {

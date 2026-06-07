@@ -33,14 +33,12 @@ const titleText = computed(() => {
   return t("auction.currentIdleTitle");
 });
 
-const descriptionText = computed(() => {
-  if (props.currentAuction.isActive && props.currentAuction.equipmentId !== null) {
-    return t("auction.currentActiveAcquire", {
-      equipmentName: t(`equipments.${props.currentAuction.equipmentId}.name`),
-    });
+const equipmentName = computed(() => {
+  if (props.currentAuction.equipmentId === null) {
+    return null;
   }
 
-  return t("auction.currentIdleSubtitle");
+  return t(`equipments.${props.currentAuction.equipmentId}.name`);
 });
 
 const closesWhenText = computed(() => {
@@ -78,21 +76,33 @@ const closesWhenText = computed(() => {
       </div>
 
       <p
+        v-if="currentAuction.isActive && equipmentName !== null"
         class="text-[11px] leading-relaxed"
-        :class="currentAuction.isActive ? 'text-cyan-200/90' : 'text-gray-400'"
       >
-        {{ descriptionText }}
+        <span class="text-white">{{ $t("auction.currentActiveAcquirePrefix") }}</span>
+        <span class="text-cyan-300">&nbsp;{{ equipmentName }}</span>
+        <span class="text-white">!</span>
+      </p>
+      <p
+        v-else
+        class="text-[11px] leading-relaxed text-gray-400"
+      >
+        {{ $t("auction.currentIdleSubtitle") }}
       </p>
 
       <div
         v-if="currentAuction.isActive && currentAuction.purchasePrice !== null && currentAuction.resalePrice !== null"
         class="flex flex-wrap gap-x-4 gap-y-1 pt-1"
       >
-        <p class="text-[10px] text-cyan-300">
-          {{ $t("auction.purchasePrice", { price: currentAuction.purchasePrice }) }}
+        <p class="text-[10px]">
+          <span class="text-white">{{ $t("auction.purchasePriceLabel") }} </span>
+          <span class="text-cyan-300">&nbsp;{{ currentAuction.purchasePrice }}&nbsp;</span>
+          <span class="text-white"> {{ $t("auction.bitsLabel") }}&nbsp;-</span>
         </p>
-        <p class="text-[10px] text-cyan-200/80">
-          {{ $t("auction.resalePrice", { price: currentAuction.resalePrice }) }}
+        <p class="text-[10px]">
+          <span class="text-white">{{ $t("auction.resalePriceLabel") }} </span>
+          <span class="text-cyan-300">&nbsp;{{ currentAuction.resalePrice }}&nbsp;</span>
+          <span class="text-white"> {{ $t("auction.bitsLabel") }}</span>
         </p>
       </div>
 
@@ -100,9 +110,9 @@ const closesWhenText = computed(() => {
         v-if="currentAuction.isActive && closesWhenText !== null"
         class="pt-2 border-t border-cyan-400/20"
       >
-        <p class="text-[10px] text-cyan-200/80 leading-relaxed">
-          <span>{{ $t("auction.closesWhenLabel") }}</span>
-          {{ closesWhenText }}
+        <p class="text-[10px] leading-relaxed">
+          <span class="text-white">{{ $t("auction.closesWhenLabel") }}</span>
+          <span class="text-cyan-200/80">&nbsp;{{ closesWhenText }}</span>
         </p>
       </div>
     </div>
