@@ -61,25 +61,52 @@ Session noise after battles or map activity. Always discard for progress flags.
 
 Three steps per agent. Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`.
 
-### Agumon (`DriAgentAgumon`)
+### DRI step 1 — shared byte (confirmed)
 
-| Step | Event (gameplay) | Address | BitMask | Status |
-|------|------------------|---------|---------|--------|
-| 1 | TBD | — | — | Not mapped |
-| 2 | TBD | — | — | Not mapped |
-| 3 | TBD | — | — | Not mapped |
+Byte **0x4B38C** — one bit per agent, sequential OR:
 
-Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`
+| Agent | BitMask | Evidence |
+|-------|---------|----------|
+| Agumon | `0x01` | `0x02 → 0x03` after talk (Guilmon bit already set) |
+| Guilmon | `0x02` | `0x00 → 0x02` after talk |
+
+### DRI step 2 — shared byte (confirmed)
+
+Byte **0x4B3B7** — one bit per agent (main quest also uses `0x01`, `0x02` on same byte):
+
+| Agent | BitMask | Evidence |
+|-------|---------|----------|
+| Agumon | `0x04` | `0x0B → 0x0F` after defeat |
+| Guilmon | `0x08` | `0x03 → 0x0B` after Wargrowlmon |
 
 ### Guilmon (`DriAgentGuilmon`)
 
 | Step | Event (gameplay) | Address | BitMask | Status |
 |------|------------------|---------|---------|--------|
-| 1 | TBD | — | — | Not mapped |
-| 2 | TBD | — | — | Not mapped |
-| 3 | TBD | — | — | Not mapped |
+| 1 | Talk to DRI agent | `0x4B38C` | `0x02` | confirmed |
+| 2 | Defeat Wargrowlmon + DNA | `0x4B3B7` | `0x08` | confirmed |
+| 2 | DNA possession (requisite) | `0x48DD2` | raw `!= 0` | confirmed |
+| 3 | Deliver DNA to agent | `0x4A7E0` | `0x08` | confirmed |
 
 Snapshots: `Tools/MemoryScanner/Snapshots/investigation_guilmon/`
+
+### DRI step 3 — per-agent byte (confirmed)
+
+| Agent | Address | BitMask | Evidence |
+|-------|---------|---------|----------|
+| Guilmon | `0x4A7E0` | `0x08` | `0x00 → 0x08` after delivery |
+| Agumon | `0x4A028` | `0x06` | `0x00 → 0x06` after delivery (`0x02 \| 0x04`) |
+
+### Agumon (`DriAgentAgumon`)
+
+| Step | Event (gameplay) | Address | BitMask | Status |
+|------|------------------|---------|---------|--------|
+| 1 | Talk to DRI agent | `0x4B38C` | `0x01` | confirmed |
+| 2 | Defeat MetalGreymon + DNA | `0x4B3B7` | `0x04` | confirmed |
+| 2 | DNA possession (requisite) | `0x48DB6` | raw `!= 0` | confirmed |
+| 3 | Deliver DNA to agent | `0x4A028` | `0x06` | confirmed |
+
+Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`
 
 ---
 

@@ -3,18 +3,30 @@
     "Steps": [
         {
             "Number": 1,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B38C",
+            "BitMasks": [
+                "0x02"
+            ]
         },
         {
             "Number": 2,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004B3B7",
+            "BitMasks": [
+                "0x08"
+            ],
+            "Requisites": [
+                {
+                    "Id": "GuilmonDna",
+                    "Address": "0x00048DD2"
+                }
+            ]
         },
         {
             "Number": 3,
-            "Address": "",
-            "BitMask": ""
+            "Address": "0x0004A7E0",
+            "BitMasks": [
+                "0x08"
+            ]
         }
     ]
 }
