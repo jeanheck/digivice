@@ -176,15 +176,15 @@ const selectLocation = (locationIndex: number) => {
           :class="isWorldMap ? 'w-2.5 h-2.5 shadow-[0_0_10px_rgba(0,255,255,1)]' : 'w-2 h-2 shadow-[0_0_8px_rgba(0,255,255,1)]'"
         />
         <div
-          class="absolute left-1/2 -translate-x-1/2 text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] line-clamp-3 leading-tight"
+          class="absolute left-1/2 -translate-x-1/2 w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight"
           :class="
             isWorldMap
               ? [
-                  'text-[10px] px-3 py-1 max-w-37.5',
+                  'text-[10px] px-3 py-1',
                   activeLocation.coordinates.y < 20 ? 'top-6.5' : 'bottom-6.5',
                 ]
               : [
-                  'text-[9px] px-2 py-0.5 max-w-30',
+                  'text-[9px] px-2 py-0.5',
                   activeLocation.coordinates.y < 25 ? 'top-6.25' : 'bottom-6.25',
                 ]
           "

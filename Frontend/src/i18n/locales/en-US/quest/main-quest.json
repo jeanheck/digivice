@@ -26,7 +26,7 @@
         "description": "Defeat Master Tyrannomon on Tyranno Valley",
         "locations": {
           "0": {
-            "locationTarget": "Master Tyrannomon"
+            "locationTarget": "MasterTyrannomon"
           }
         }
       },
