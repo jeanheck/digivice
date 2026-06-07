@@ -1,17 +1,31 @@
 {
   "auction": {
     "title": "Auctions",
-    "cardIdleTitle": "Auctions",
-    "cardIdleSubtitle": "No auction in progress",
-    "cardActiveSubtitle": "Auction in progress — click for details",
+    "cardIdleTitle": "No auction at the moment",
+    "cardIdleSubtitle": "Keep progressing through the main quest",
+    "cardActiveTitle": "An auction is happening!",
+    "cardActiveSubtitle": "Click for more details!",
     "modalTitle": "Auctions",
-    "activeBanner": "Auction in progress now",
+    "currentIdleTitle": "No auction at Cargo Tower",
+    "currentIdleSubtitle": "Keep progressing through the main quest",
+    "currentActiveTitle": "Now! Auction at Cargo Tower!",
+    "currentActiveAcquire": "Acquire {equipmentName}!",
+    "purchasePrice": "Price: {price} bits",
+    "resalePrice": "Resale: {price} bits",
+    "closesWhenLabel": "Closes when:",
+    "historySubtitle": "History",
     "stepRange": "Steps {openStep}–{closeStep}",
     "status": {
       "notYetOccurred": "Has not occurred yet",
       "availableNow": "Happening now — you can still go",
       "participated": "You participated in the auction",
       "missed": "You did not participate in the auction"
+    },
+    "closesWhen": {
+      "divineBarrier": "the player interacts with the gondola for the first time (Step 6), or the player participates in the auction.",
+      "hazardShield": "the player progresses beyond Step 21, or the player participates in the auction.",
+      "sniperShield": "the player progresses beyond Step 34, or the player participates in the auction.",
+      "dramonShield": "the player progresses beyond Step 43, or the player participates in the auction."
     }
   }
 }

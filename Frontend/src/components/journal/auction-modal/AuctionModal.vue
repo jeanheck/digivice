@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Modal from "@/components/modal/Modal.vue";
+import AuctionCurrentPanel from "@/components/journal/auction-modal/AuctionCurrentPanel.vue";
 import AuctionListItem from "@/components/journal/auction-modal/AuctionListItem.vue";
 import { AuctionPresenter } from "@/presenters/auction/auction.presenter";
 
@@ -12,12 +13,12 @@ const emit = defineEmits<{
   (e: "close"): void;
 }>();
 
-const auctionList = computed(() => {
-  return AuctionPresenter.getAuctionListViewModels();
+const currentAuction = computed(() => {
+  return AuctionPresenter.getAuctionCurrentViewModel();
 });
 
-const activeAuction = computed(() => {
-  return AuctionPresenter.getActiveAuction();
+const auctionHistory = computed(() => {
+  return AuctionPresenter.getAuctionHistoryViewModels();
 });
 
 const closeModal = () => {
@@ -39,25 +40,19 @@ const closeModal = () => {
     </template>
 
     <div class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 custom-scroll">
-      <div
-        v-if="activeAuction"
-        class="p-3 rounded border border-amber-400/80 bg-[#2a1a00] auction-card-active shrink-0"
-      >
-        <p class="text-[10px] uppercase tracking-widest text-amber-300/80 mb-1">
-          {{ $t("auction.activeBanner") }}
-        </p>
-        <p class="text-dw3-gold font-bold text-sm shadow-text-dark">
-          {{ $t(`equipments.${activeAuction.equipmentId}.name`) }}
-        </p>
-      </div>
+      <AuctionCurrentPanel :current-auction="currentAuction" />
 
-      <div class="space-y-2">
+      <section class="space-y-2">
+        <h3 class="text-xs font-bold uppercase tracking-wide text-gray-400 border-b border-gray-700/40 pb-1">
+          {{ $t("auction.historySubtitle") }}
+        </h3>
+
         <AuctionListItem
-          v-for="auction in auctionList"
+          v-for="auction in auctionHistory"
           :key="auction.id"
           :auction="auction"
         />
-      </div>
+      </section>
     </div>
   </Modal>
 </template>
