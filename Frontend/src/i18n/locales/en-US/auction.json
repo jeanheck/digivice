@@ -28,10 +28,10 @@
       "participation": "Go to Cargo Tower to participate!"
     },
     "closesWhen": {
-      "divineBarrier": "the player interacts with the gondola for the first time (Step 6), or the player participates in the auction.",
-      "hazardShield": "the player progresses beyond Step 21, or the player participates in the auction.",
-      "sniperShield": "the player progresses beyond Step 34, or the player participates in the auction.",
-      "dramonShield": "the player progresses beyond Step 43, or the player participates in the auction."
+      "divineBarrier": "interact with the Gondola for the first time (step 6), or participate in the Auction",
+      "hazardShield": "recover the Sepkimon mask (step 23), or participate in the auction",
+      "sniperShield": "talk to Kail in the Underground Path (step 34), or participate in the auction",
+      "dramonShield": "return to Bios Swamp with the TNT Chip (step 42), or participate in the auction"
     }
   }
 }

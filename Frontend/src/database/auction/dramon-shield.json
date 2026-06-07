@@ -2,7 +2,7 @@
     "id": "dramonShield",
     "steps": {
         "startsWhenComplete": 36,
-        "endsWhenComplete": 43
+        "endsWhenComplete": 42
     },
     "price": 1600,
     "resale": 11000

@@ -28,10 +28,10 @@
       "participation": "Vá até a Torre de Carga para participar!"
     },
     "closesWhen": {
-      "divineBarrier": "o jogador interagir com a gôndola pela primeira vez (Step 6), ou o jogador participar do leilão.",
-      "hazardShield": "o jogador avançar além do Step 21, ou o jogador participar do leilão.",
-      "sniperShield": "o jogador avançar além do Step 34, ou o jogador participar do leilão.",
-      "dramonShield": "o jogador avançar além do Step 43, ou o jogador participar do leilão."
+      "divineBarrier": "interagir com a Gôndola pela primeira vez (passo 6), ou participar do Leilão",
+      "hazardShield": "recuperar a máscara do Sepkimon (passo 23), ou participar do leilão",
+      "sniperShield": "falar com a Kail no Caminho Subterrâneo (passo 34), ou participar do leilão",
+      "dramonShield": "retornar ao Pântano Bios com o Chip TNT (passo 42), ou participar do leilão"
     }
   }
 }

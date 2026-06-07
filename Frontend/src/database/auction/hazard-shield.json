@@ -2,7 +2,7 @@
     "id": "hazardShield",
     "steps": {
         "startsWhenComplete": 15,
-        "endsWhenComplete": 21
+        "endsWhenComplete": 23
     },
     "price": 800,
     "resale": 11000
