@@ -9,18 +9,18 @@
         {
             "Number": 2,
             "Address": "0x0004B3B7",
-            "BitMasks": ["0x08"],
-            "Requisites": [
-                {
-                    "Id": "guilmonDna",
-                    "Address": "0x00048DD2"
-                }
-            ]
+            "BitMasks": ["0x08"]
         },
         {
             "Number": 3,
             "Address": "0x0004A7E0",
-            "BitMasks": ["0x08"]
+            "BitMasks": ["0x08"],
+            "Requisites": [
+                {
+                    "Id": "guilmonDDNA",
+                    "Address": "0x00048DD2"
+                }
+            ]
         }
     ]
 }

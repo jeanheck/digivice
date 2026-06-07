@@ -57,13 +57,13 @@
             ],
             "requisites": [
                 {
-                    "id": "BambooSpear"
+                    "id": "bambooSpear"
                 },
                 {
-                    "id": "SpiderWeb"
+                    "id": "spiderWeb"
                 },
                 {
-                    "id": "RedSnapper"
+                    "id": "redSnapper"
                 }
             ]
         }

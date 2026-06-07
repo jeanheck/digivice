@@ -63,15 +63,15 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(3, sideQuests.Count);
 
         var folderBag = sideQuests[0];
-        Assert.Equal("FolderBag", folderBag.Id);
+        Assert.Equal("folderBag", folderBag.Id);
         Assert.Empty(folderBag.Requisites);
         Assert.Single(folderBag.Steps);
         Assert.Equal(1, folderBag.Steps[0].Value);
 
         var treeBoots = sideQuests[1];
-        Assert.Equal("TreeBoots", treeBoots.Id);
+        Assert.Equal("treeBoots", treeBoots.Id);
         Assert.Single(treeBoots.Requisites);
-        Assert.Equal("FolderBag", treeBoots.Requisites[0].Id);
+        Assert.Equal("folderBag", treeBoots.Requisites[0].Id);
         Assert.Equal(1, treeBoots.Requisites[0].Value);
         Assert.Equal(7, treeBoots.Steps.Count);
         Assert.Equal(0x04, treeBoots.Steps[0].Value);
@@ -79,15 +79,15 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0x80, treeBoots.Steps[4].Value);
 
         var fishingPole = sideQuests[2];
-        Assert.Equal("FishingPole", fishingPole.Id);
+        Assert.Equal("fishingPole", fishingPole.Id);
         Assert.Single(fishingPole.Requisites);
         Assert.Equal(3, fishingPole.Steps.Count);
         Assert.Equal(3, fishingPole.Steps[2].Requisites.Count);
-        Assert.Equal("BambooSpear", fishingPole.Steps[2].Requisites[0].Id);
+        Assert.Equal("bambooSpear", fishingPole.Steps[2].Requisites[0].Id);
         Assert.Equal(1, fishingPole.Steps[2].Requisites[0].Value);
-        Assert.Equal("SpiderWeb", fishingPole.Steps[2].Requisites[1].Id);
+        Assert.Equal("spiderWeb", fishingPole.Steps[2].Requisites[1].Id);
         Assert.Equal(1, fishingPole.Steps[2].Requisites[1].Value);
-        Assert.Equal("RedSnapper", fishingPole.Steps[2].Requisites[2].Id);
+        Assert.Equal("redSnapper", fishingPole.Steps[2].Requisites[2].Id);
         Assert.Equal(0, fishingPole.Steps[2].Requisites[2].Value);
         Assert.Equal(1, fishingPole.Steps[2].Value);
     }
@@ -166,7 +166,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0x02, guilmon.Steps[0].Value);
         Assert.Equal(0x08, guilmon.Steps[1].Value);
         Assert.Single(guilmon.Steps[1].Requisites);
-        Assert.Equal("guilmonDna", guilmon.Steps[1].Requisites[0].Id);
+        Assert.Equal("guilmonDDNA", guilmon.Steps[1].Requisites[0].Id);
         Assert.Equal(1, guilmon.Steps[1].Requisites[0].Value);
         Assert.Equal(0x08, guilmon.Steps[2].Value);
 

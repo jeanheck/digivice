@@ -67,7 +67,7 @@ Quests/
 
 Not multiline unless the array has many entries.
 
-**Ids:** always **camelCase** in JSON (`muramasa`, `driAgentGuilmon`, `guilmonDna`).
+**Ids:** always **camelCase** in JSON (`muramasa`, `driAgentGuilmon`, `guilmonDDNA`).
 Fix PascalCase or other casing when integrating.
 
 `Id` must match the quest id used across backend and (later) frontend.

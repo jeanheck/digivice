@@ -30,9 +30,9 @@
           }
         },
         "requisites": {
-          "BambooSpear": "Arpão de Bambu",
-          "SpiderWeb": "Teia de aranha",
-          "RedSnapper": "Pargo Vermelho"
+          "bambooSpear": "Arpão de Bambu",
+          "spiderWeb": "Teia de aranha",
+          "redSnapper": "Pargo Vermelho"
         }
       }
     }

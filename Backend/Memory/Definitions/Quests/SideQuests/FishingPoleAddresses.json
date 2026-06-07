@@ -25,15 +25,15 @@
             "Number": 3,
             "Requisites": [
                 {
-                    "Id": "BambooSpear",
+                    "Id": "bambooSpear",
                     "Address": "0x048E57"
                 },
                 {
-                    "Id": "SpiderWeb",
+                    "Id": "spiderWeb",
                     "Address": "0x048E09"
                 },
                 {
-                    "Id": "RedSnapper",
+                    "Id": "redSnapper",
                     "Address": "0x00048DB7"
                 }
             ],

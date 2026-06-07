@@ -1,19 +1,34 @@
 {
   "driAgentGuilmon": {
-    "title": "DRI Agent Guilmon",
-    "description": "Recrute Guilmon como DRI Agent.",
+    "title": "DRI Jimmy (Guilmon)",
+    "description": "Adicione Guilmon ao seu grupo de Digimons",
     "steps": {
       "1": {
-        "description": "Inicie a missão do DRI Agent Guilmon"
+        "description": "Procure pelo DRI Jimmy na Cidade Seiryu",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Jimmy"
+          }
+        }
       },
       "2": {
-        "description": "Obtenha o DNA de Guilmon",
-        "requisites": {
-          "guilmonDna": "DNA de Guilmon"
+        "description": "Vença WarGrowlmon em batalha para receber o DDNA do Guilmon",
+        "locations": {
+          "0": {
+            "locationTarget": "WarGrowlmon"
+          }
         }
       },
       "3": {
-        "description": "Conclua o recrutamento do DRI Agent Guilmon"
+        "description": "Entregue o DDNA do Guilmon para DRI Jimmy",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Jimmy"
+          }
+        },
+        "requisites": {
+          "guilmonDDNA": "DDNA de Guilmon"
+        }
       }
     }
   }

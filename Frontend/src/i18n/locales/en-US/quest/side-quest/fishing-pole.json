@@ -30,9 +30,9 @@
           }
         },
         "requisites": {
-          "BambooSpear": "Bamboo Spear",
-          "SpiderWeb": "Spider Web",
-          "RedSnapper": "Red Snapper"
+          "bambooSpear": "Bamboo Spear",
+          "spiderWeb": "Spider Web",
+          "redSnapper": "Red Snapper"
         }
       }
     }
