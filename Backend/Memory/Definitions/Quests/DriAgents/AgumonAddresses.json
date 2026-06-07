@@ -17,7 +17,7 @@
             "BitMasks": ["0x06"],
             "Requisites": [
                 {
-                    "Id": "agumonDna",
+                    "Id": "agumonDDNA",
                     "Address": "0x00048DB6"
                 }
             ]

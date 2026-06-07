@@ -177,7 +177,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0x01, agumon.Steps[0].Value);
         Assert.Equal(0x04, agumon.Steps[1].Value);
         Assert.Single(agumon.Steps[1].Requisites);
-        Assert.Equal("agumonDna", agumon.Steps[1].Requisites[0].Id);
+        Assert.Equal("agumonDDNA", agumon.Steps[1].Requisites[0].Id);
         Assert.Equal(1, agumon.Steps[1].Requisites[0].Value);
         Assert.Equal(0x06, agumon.Steps[2].Value);
     }

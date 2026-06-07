@@ -1,19 +1,34 @@
 {
   "driAgentAgumon": {
-    "title": "DRI Agent Agumon",
-    "description": "Recrute Agumon como DRI Agent.",
+    "title": "DRI Johann (Agumon)",
+    "description": "Adicione Agumon ao seu grupo de Digimons",
     "steps": {
       "1": {
-        "description": "Inicie a missão do DRI Agent Agumon"
+        "description": "Procure pelo DRI Johann no Vale Tyranno",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Johann"
+          }
+        }
       },
       "2": {
-        "description": "Obtenha o DNA de Agumon",
-        "requisites": {
-          "agumonDna": "DNA de Agumon"
+        "description": "Vença MetalGreymon em batalha para receber o DDNA do Agumon",
+        "locations": {
+          "0": {
+            "locationTarget": "MetalGreymon"
+          }
         }
       },
       "3": {
-        "description": "Conclua o recrutamento do DRI Agent Agumon"
+        "description": "Entregue o DDNA do Agumon para DRI Johann",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Johann"
+          }
+        },
+        "requisites": {
+          "agumonDDNA": "DDNA de Agumon"
+        }
       }
     }
   }

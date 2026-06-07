@@ -3,35 +3,59 @@
     "requisites": [],
     "steps": {
         "1": {
-            "location": "",
+            "location": "022B",
             "coordinates": {
-                "x": 0,
-                "y": 0
+                "x": 90.5,
+                "y": 38.5
             },
-            "zoomedLocations": [],
+            "zoomedLocations": [
+                {
+                    "location": "022B",
+                    "coordinates": {
+                        "x": 52,
+                        "y": 79
+                    }
+                }
+            ],
             "requisites": []
         },
         "2": {
-            "location": "",
+            "location": "0233",
             "coordinates": {
-                "x": 0,
-                "y": 0
+                "x": 79,
+                "y": 73
             },
-            "zoomedLocations": [],
-            "requisites": [
+            "zoomedLocations": [
                 {
-                    "id": "agumonDna"
+                    "location": "0233",
+                    "coordinates": {
+                        "x": 34,
+                        "y": 47
+                    }
                 }
-            ]
+            ],
+            "requisites": []
         },
         "3": {
-            "location": "",
+            "location": "022B",
             "coordinates": {
-                "x": 0,
-                "y": 0
+                "x": 90.5,
+                "y": 38.5
             },
-            "zoomedLocations": [],
-            "requisites": []
+            "zoomedLocations": [
+                {
+                    "location": "022B",
+                    "coordinates": {
+                        "x": 52,
+                        "y": 79
+                    }
+                }
+            ],
+            "requisites": [
+                {
+                    "id": "agumonDDNA"
+                }
+            ]
         }
     }
 }
