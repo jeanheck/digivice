@@ -312,6 +312,10 @@
       "name": "Ice Power 1",
       "note": "Add weak Ice to attacks"
     },
+    "348": {
+      "name": "Wind Power 1",
+      "note": "Adds a small amount of Wind damage to the equipped Digimon’s basic attacks"
+    },
     "357": {
       "name": "Dark Power 1",
       "note": "Adds a small amount of Dark damage to the equipped Digimon’s basic attacks"
@@ -1031,10 +1035,6 @@
     "1185": {
       "name": "Water Power S",
       "note": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks"
-    },
-    "1186": {
-      "name": "Wind Power 1",
-      "note": "Adds a small amount of Wind damage to the equipped Digimon’s basic attacks"
     },
     "1187": {
       "name": "Wind Power 2",

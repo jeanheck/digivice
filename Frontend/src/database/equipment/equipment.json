@@ -1749,6 +1749,20 @@
             "4"
         ]
     },
+    "348": {
+        "type": "accessory",
+        "attributes": [],
+        "equipableDigimon": [
+            "3",
+            "5",
+            "0",
+            "1",
+            "2",
+            "7",
+            "6",
+            "4"
+        ]
+    },
     "357": {
         "type": "accessory",
         "attributes": [],
@@ -5331,20 +5345,6 @@
         ]
     },
     "1185": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "3",
-            "5",
-            "0",
-            "1",
-            "2",
-            "7",
-            "6",
-            "4"
-        ]
-    },
-    "1186": {
         "type": "accessory",
         "attributes": [],
         "equipableDigimon": [
