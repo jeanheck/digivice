@@ -25,9 +25,13 @@ const isMissed = computed(() => {
   return props.auction.status === "missed";
 });
 
+const isPastAuction = computed(() => {
+  return isParticipated.value || isMissed.value;
+});
+
 const cardClass = computed(() => {
   if (isAvailableNow.value) {
-    return "border-amber-400/80 bg-[#2a1a00] auction-card-active";
+    return "border-cyan-400/80 bg-[#001a2a] auction-card-active";
   }
 
   if (isParticipated.value) {
@@ -43,7 +47,7 @@ const cardClass = computed(() => {
 
 const titleClass = computed(() => {
   if (isAvailableNow.value) {
-    return "text-dw3-gold";
+    return "text-cyan-300";
   }
 
   if (isParticipated.value) {
@@ -57,9 +61,17 @@ const titleClass = computed(() => {
   return "text-gray-500";
 });
 
-const statusTextClass = computed(() => {
-  if (isAvailableNow.value) {
-    return "text-amber-200/90";
+const timingDescriptionClass = computed(() => {
+  if (isMissed.value) {
+    return "text-rose-300/70";
+  }
+
+  return "text-gray-400";
+});
+
+const participationDescriptionClass = computed(() => {
+  if (isParticipated.value) {
+    return "text-green-400/90";
   }
 
   if (isMissed.value) {
@@ -69,15 +81,28 @@ const statusTextClass = computed(() => {
   return "text-gray-400";
 });
 
-const statusLabel = computed(() => {
-  return t(`auction.status.${props.auction.status}`);
+const timingDescription = computed(() => {
+  if (isNotYetOccurred.value) {
+    return t("auction.historyTiming.upcoming");
+  }
+
+  if (isPastAuction.value) {
+    return t("auction.historyTiming.alreadyEnded");
+  }
+
+  return t("auction.historyTiming.alreadyEnded");
 });
 
-const stepRangeLabel = computed(() => {
-  return t("auction.stepRange", {
-    openStep: props.auction.openStep,
-    closeStep: props.auction.closeStep,
-  });
+const participationDescription = computed(() => {
+  if (isParticipated.value) {
+    return t("auction.historyParticipation.participated");
+  }
+
+  if (isMissed.value) {
+    return t("auction.historyParticipation.missed");
+  }
+
+  return null;
 });
 </script>
 
@@ -88,7 +113,7 @@ const stepRangeLabel = computed(() => {
   >
     <div
       v-if="isAvailableNow"
-      class="absolute inset-0 bg-amber-500/10 pointer-events-none"
+      class="absolute inset-0 bg-cyan-500/10 pointer-events-none"
     />
 
     <div
@@ -101,18 +126,22 @@ const stepRangeLabel = computed(() => {
         {{ $t(`equipments.${auction.equipmentId}.name`) }}
       </span>
 
-      <span v-if="isAvailableNow" class="text-xs shrink-0 ml-2 text-amber-300 animate-auction-pulse">◆</span>
+      <span v-if="isAvailableNow" class="text-xs shrink-0 ml-2 text-cyan-300 animate-auction-pulse">◆</span>
       <span v-else-if="isParticipated" class="text-green-400 text-xs shrink-0 ml-2">✔</span>
       <span v-else-if="isNotYetOccurred" class="text-xs shrink-0 ml-2">🔒</span>
       <span v-else-if="isMissed" class="text-rose-400/80 text-xs shrink-0 ml-2">✕</span>
     </div>
 
-    <p class="text-[10px] leading-tight relative z-10" :class="statusTextClass">
-      {{ statusLabel }}
+    <p class="text-[10px] leading-tight relative z-10" :class="timingDescriptionClass">
+      {{ timingDescription }}
     </p>
 
-    <p class="text-[10px] text-gray-500 leading-tight mt-1 relative z-10">
-      {{ stepRangeLabel }}
+    <p
+      v-if="participationDescription !== null"
+      class="text-[10px] leading-tight mt-1 relative z-10"
+      :class="participationDescriptionClass"
+    >
+      {{ participationDescription }}
     </p>
   </div>
 </template>

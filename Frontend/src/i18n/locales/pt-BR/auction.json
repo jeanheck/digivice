@@ -12,14 +12,15 @@
     "currentActiveAcquire": "Adquira {equipmentName}!",
     "purchasePrice": "Preço: {price} bits",
     "resalePrice": "Revenda: {price} bits",
-    "closesWhenLabel": "Se encerra quando:",
+    "closesWhenLabel": "TERMINA QUANDO:",
     "historySubtitle": "Histórico",
-    "stepRange": "Steps {openStep}–{closeStep}",
-    "status": {
-      "notYetOccurred": "Ainda não ocorreu",
-      "availableNow": "Ocorrendo agora — você ainda pode ir",
-      "participated": "Você participou do leilão",
-      "missed": "Você não participou do leilão"
+    "historyTiming": {
+      "alreadyEnded": "Esse Leilão já terminou",
+      "upcoming": "Esse Leilão vai acontecer no futuro"
+    },
+    "historyParticipation": {
+      "participated": "Você participou desse leilão",
+      "missed": "Infelizmente, você perdeu esse leilão"
     },
     "closesWhen": {
       "divineBarrier": "o jogador interagir com a gôndola pela primeira vez (Step 6), ou o jogador participar do leilão.",

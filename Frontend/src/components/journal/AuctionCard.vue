@@ -19,7 +19,7 @@ const isActive = computed(() => {
 
 const cardClass = computed(() => {
   if (isActive.value) {
-    return "border-amber-400/80 bg-[#2a1a00] hover:bg-[#3a2800] hover:border-amber-300 auction-card-active";
+    return "border-cyan-400/80 bg-[#001a2a] hover:bg-[#002a3a] hover:border-cyan-300 auction-card-active";
   }
 
   return "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70";
@@ -27,7 +27,7 @@ const cardClass = computed(() => {
 
 const titleClass = computed(() => {
   if (isActive.value) {
-    return "text-dw3-gold group-hover:text-yellow-300";
+    return "text-cyan-300 group-hover:text-cyan-200";
   }
 
   return "text-gray-500";
@@ -62,7 +62,7 @@ const onClick = () => {
   >
     <div
       v-if="isActive"
-      class="absolute inset-0 bg-amber-500/10 pointer-events-none"
+      class="absolute inset-0 bg-cyan-500/10 pointer-events-none"
     />
 
     <div class="flex items-center justify-between mb-1 relative z-10">
@@ -73,13 +73,13 @@ const onClick = () => {
         {{ titleText }}
       </span>
 
-      <span v-if="isActive" class="text-xs shrink-0 ml-2 text-amber-300 animate-auction-pulse">◆</span>
+      <span v-if="isActive" class="text-xs shrink-0 ml-2 text-cyan-300 animate-auction-pulse">◆</span>
       <span v-else class="text-xs shrink-0 ml-2">🔒</span>
     </div>
 
     <p
       class="text-gray-400 text-[10px] leading-tight line-clamp-2 relative z-10"
-      :class="{ 'opacity-50': !isActive }"
+      :class="{ 'opacity-50': !isActive, 'text-cyan-200/90': isActive }"
     >
       {{ subtitleText }}
     </p>
