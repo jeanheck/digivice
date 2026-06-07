@@ -31,12 +31,18 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadByteSafe(0x0004B3B7, 0x04)).Returns((byte)0x00);
         memoryReaderMock.Setup(m => m.ReadByteSafe(0x00048DB6, null)).Returns((byte)0);
         memoryReaderMock.Setup(m => m.ReadByteSafe(0x0004A028, 0x06)).Returns((byte)0x00);
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x0004B38A, 0x01)).Returns((byte)0x01);
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x0004B38A, 0x02)).Returns((byte)0x00);
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x0004B38A, 0x04)).Returns((byte)0x00);
+        memoryReaderMock.Setup(m => m.ReadByteSafe(0x0004B38A, 0x08)).Returns((byte)0x00);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
         var questReader = new QuestReader(requisiteReader, stepReader);
         var questLoader = new QuestLoader(addressesRepository, questReader);
-        var journalLoader = new JournalLoader(questLoader);
+        var auctionReader = new AuctionReader(memoryReaderMock.Object);
+        var auctionLoader = new AuctionLoader(addressesRepository, auctionReader);
+        var journalLoader = new JournalLoader(questLoader, auctionLoader);
 
         var journalResource = journalLoader.Load();
 
@@ -63,5 +69,8 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0x02, journalResource.DriAgents[0].Steps[0].Value);
         Assert.Equal(0, journalResource.DriAgents[0].Steps[1].Value);
         Assert.Equal(0, journalResource.DriAgents[1].Steps[0].Value);
+        Assert.Equal(4, journalResource.Auctions.Count);
+        Assert.Contains(journalResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
+        Assert.Contains(journalResource.Auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x00);
     }
 }

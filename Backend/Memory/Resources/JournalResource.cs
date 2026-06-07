@@ -8,5 +8,6 @@ namespace Backend.Memory.Resources
         public List<QuestResource> SideQuests { get; set; } = [];
         public List<QuestResource> LegendaryWeapons { get; set; } = [];
         public List<QuestResource> DriAgents { get; set; } = [];
+        public List<AuctionResource> Auctions { get; set; } = [];
     }
 }

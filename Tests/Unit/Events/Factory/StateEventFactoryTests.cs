@@ -81,6 +81,20 @@ public class StateEventFactoryTests
     }
 
     [Fact]
+    public void Create_ShouldReturnJournalChangedEvent_WhenOnlyAuctionsChange()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.Journal.Auctions[0].Value = 0x01;
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.JournalChanged, ev.Type);
+        Assert.IsType<JournalDTO>(ev.Payload);
+    }
+
+    [Fact]
     public void Create_ShouldReturnEventsInDomainOrder_WhenMultipleSectionsChange()
     {
         var previousState = CreateBaseState();
@@ -88,6 +102,7 @@ public class StateEventFactoryTests
         newState.Player.Bits = 999;
         newState.Party.Slots[0].Digimon!.Level = 22;
         newState.Journal.MainQuest.Steps[0].Value = 1;
+        newState.Journal.Auctions[0].Value = 0x01;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
@@ -127,7 +142,15 @@ public class StateEventFactoryTests
                     Steps = [new Step { Number = 1, Value = 0 }],
                     Requisites = []
                 },
-                SideQuests = []
+                SideQuests = [],
+                Auctions =
+                [
+                    new Auction
+                    {
+                        Id = "divineBarrier",
+                        Value = 0x00,
+                    }
+                ]
             }
         };
     }

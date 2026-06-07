@@ -3,7 +3,7 @@ using Backend.Application.Loaders.Journals;
 
 namespace Backend.Application.Loaders
 {
-    public class JournalLoader(QuestLoader questLoader) : IJournalLoader
+    public class JournalLoader(QuestLoader questLoader, IAuctionLoader auctionLoader) : IJournalLoader
     {
         public JournalResource Load()
         {
@@ -12,7 +12,8 @@ namespace Backend.Application.Loaders
                 MainQuest = questLoader.LoadMainQuest(),
                 SideQuests = questLoader.LoadSideQuests(),
                 LegendaryWeapons = questLoader.LoadLegendaryWeapons(),
-                DriAgents = questLoader.LoadDriAgents()
+                DriAgents = questLoader.LoadDriAgents(),
+                Auctions = auctionLoader.Load().Auctions,
             };
         }
     }

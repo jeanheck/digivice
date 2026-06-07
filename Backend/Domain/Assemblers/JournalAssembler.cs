@@ -13,6 +13,7 @@ namespace Backend.Domain.Assemblers
             List<Quest> sideQuests = [.. resource.SideQuests.Select(QuestAssembler.Assemble)];
             List<Quest> legendaryWeapons = [.. resource.LegendaryWeapons.Select(QuestAssembler.Assemble)];
             List<Quest> driAgents = [.. resource.DriAgents.Select(QuestAssembler.Assemble)];
+            List<Auction> auctions = AuctionAssembler.Assemble(resource.Auctions);
 
             NormalizeMainQuestProgression(mainQuest);
 
@@ -21,7 +22,8 @@ namespace Backend.Domain.Assemblers
                 MainQuest = mainQuest,
                 SideQuests = sideQuests,
                 LegendaryWeapons = legendaryWeapons,
-                DriAgents = driAgents
+                DriAgents = driAgents,
+                Auctions = auctions,
             };
         }
 

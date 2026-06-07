@@ -38,8 +38,10 @@ namespace Backend.Infrastructure
             services.AddSingleton<IStepReader, StepReader>();
             services.AddSingleton<IPlayerReader, PlayerReader>();
             services.AddSingleton<IQuestReader, QuestReader>();
+            services.AddSingleton<IAuctionReader, AuctionReader>();
             
             services.AddSingleton<IPlayerLoader, PlayerLoader>();
+            services.AddSingleton<IAuctionLoader, AuctionLoader>();
             services.AddSingleton<QuestLoader>();
             services.AddSingleton<IJournalLoader, JournalLoader>();
             services.AddSingleton<IPartyLoader, PartyLoader>();

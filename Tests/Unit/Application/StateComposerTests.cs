@@ -5,6 +5,7 @@ using Backend.Application.Providers;
 using Backend.Domain.Models;
 using Backend.Domain.Models.Journals;
 using Moq;
+using Xunit;
 
 public class StateComposerTests
 {

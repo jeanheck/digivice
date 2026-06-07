@@ -11,7 +11,7 @@ public static class StateConverter
         {
             Player = state.Player != null ? PlayerConverter.ToDTO(state.Player) : null,
             Journal = state.Journal != null ? JournalConverter.ToDTO(state.Journal) : null,
-            Party = state.Party != null ? PartyConverter.ToDTO(state.Party) : null
+            Party = state.Party != null ? PartyConverter.ToDTO(state.Party) : null,
         };
     }
 }

@@ -5,9 +5,9 @@ using Backend.Memory.Addresses.Parties;
 
 namespace Backend.Memory.Repositories
 {
-    public class AddressesRepository : IAddressesRepository
+    public class AddressesRepository(string dataDirectory) : IAddressesRepository
     {
-        private readonly string dataDirectory;
+        private readonly string dataDirectory = dataDirectory;
         private PlayerAddresses? playerAddresses;
         private PartyAddresses? partyAddresses;
         private DigimonStatusAddresses? digimonStatusAddresses;
@@ -21,11 +21,7 @@ namespace Backend.Memory.Repositories
         private QuestAddresses? legendaryWeaponMuramasa;
         private QuestAddresses? driAgentGuilmon;
         private QuestAddresses? driAgentAgumon;
-
-        public AddressesRepository(string dataDirectory)
-        {
-            this.dataDirectory = dataDirectory;
-        }
+        private AuctionAddresses? auctionAddresses;
 
         private T LoadAndCache<T>(ref T? cacheField, string fileName) where T : class, new()
         {
@@ -106,5 +102,8 @@ namespace Backend.Memory.Repositories
 
         private QuestAddresses GetDriAgentAgumon() =>
             LoadAndCache(ref driAgentAgumon, "Quests/DriAgents/AgumonAddresses.json");
+
+        public AuctionAddresses GetAuctionAddresses() =>
+            LoadAndCache(ref auctionAddresses, "AuctionAddresses.json");
     }
 }

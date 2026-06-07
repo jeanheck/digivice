@@ -41,7 +41,23 @@ public class JournalEventFactoryTests
         return new State { Journal = journal };
     }
 
-    private static Journal CreateJournal(byte stepValue)
+    [Fact]
+    public void Create_ShouldReturnJournalChangedEvent_WhenOnlyAuctionsChange()
+    {
+        var previousState = CreateState(CreateJournal(0, 0x00));
+        var newState = CreateState(CreateJournal(0, 0x01));
+
+        var result = JournalEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.JournalChanged, ev.Type);
+
+        var dto = Assert.IsType<JournalDTO>(ev.Payload);
+        Assert.True(dto.Auctions.HasValue);
+        Assert.Equal("divineBarrier", dto.Auctions.Value![0].Id);
+    }
+
+    private static Journal CreateJournal(byte stepValue, byte auctionValue = 0)
     {
         return new Journal
         {
@@ -51,7 +67,11 @@ public class JournalEventFactoryTests
                 Steps = [new Step { Number = 1, Value = stepValue }],
                 Requisites = []
             },
-            SideQuests = []
+            SideQuests = [],
+            Auctions =
+            [
+                new Auction { Id = "divineBarrier", Value = auctionValue },
+            ],
         };
     }
 }

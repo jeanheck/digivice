@@ -46,7 +46,6 @@ public class GameLoopServiceTests
         var player = new Player { Name = "Agumon", Bits = 123, MapId = "0001" };
         var party = new Party { Slots = [] };
         var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };
-
         _playerProviderMock.Setup(p => p.Get()).Returns(player);
         _partyProviderMock.Setup(p => p.Get()).Returns(party);
         _journalProviderMock.Setup(p => p.Get()).Returns(journal);

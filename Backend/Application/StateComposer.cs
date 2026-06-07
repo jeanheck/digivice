@@ -14,7 +14,7 @@ namespace Backend.Application
             {
                 Player = playerProvider.Get(),
                 Party = partyProvider.Get(),
-                Journal = journalProvider.Get()
+                Journal = journalProvider.Get(),
             };
         }
     }
