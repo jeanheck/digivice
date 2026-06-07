@@ -27,7 +27,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var mainQuest = questLoader.LoadMainQuest();
 
         Assert.NotNull(mainQuest);
-        Assert.Equal("MainQuest", mainQuest.Id);
+        Assert.Equal("mainQuest", mainQuest.Id);
         Assert.Empty(mainQuest.Requisites);
         Assert.Equal(43, mainQuest.Steps.Count);
         Assert.Equal(1, mainQuest.Steps[0].Number);
@@ -71,7 +71,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var treeBoots = sideQuests[1];
         Assert.Equal("treeBoots", treeBoots.Id);
         Assert.Single(treeBoots.Requisites);
-        Assert.Equal("folderBag", treeBoots.Requisites[0].Id);
+        Assert.Equal("FolderBag", treeBoots.Requisites[0].Id);
         Assert.Equal(1, treeBoots.Requisites[0].Value);
         Assert.Equal(7, treeBoots.Steps.Count);
         Assert.Equal(0x04, treeBoots.Steps[0].Value);
@@ -165,10 +165,10 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(3, guilmon.Steps.Count);
         Assert.Equal(0x02, guilmon.Steps[0].Value);
         Assert.Equal(0x08, guilmon.Steps[1].Value);
-        Assert.Single(guilmon.Steps[1].Requisites);
-        Assert.Equal("guilmonDDNA", guilmon.Steps[1].Requisites[0].Id);
-        Assert.Equal(1, guilmon.Steps[1].Requisites[0].Value);
         Assert.Equal(0x08, guilmon.Steps[2].Value);
+        Assert.Single(guilmon.Steps[2].Requisites);
+        Assert.Equal("guilmonDDNA", guilmon.Steps[2].Requisites[0].Id);
+        Assert.Equal(1, guilmon.Steps[2].Requisites[0].Value);
 
         var agumon = driAgents[1];
         Assert.Equal("driAgentAgumon", agumon.Id);
@@ -176,9 +176,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(3, agumon.Steps.Count);
         Assert.Equal(0x01, agumon.Steps[0].Value);
         Assert.Equal(0x04, agumon.Steps[1].Value);
-        Assert.Single(agumon.Steps[1].Requisites);
-        Assert.Equal("agumonDDNA", agumon.Steps[1].Requisites[0].Id);
-        Assert.Equal(1, agumon.Steps[1].Requisites[0].Value);
         Assert.Equal(0x06, agumon.Steps[2].Value);
+        Assert.Single(agumon.Steps[2].Requisites);
+        Assert.Equal("agumonDDNA", agumon.Steps[2].Requisites[0].Id);
+        Assert.Equal(1, agumon.Steps[2].Requisites[0].Value);
     }
 }

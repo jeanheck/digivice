@@ -47,13 +47,13 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         var journalResource = journalLoader.Load();
 
         Assert.NotNull(journalResource);
-        Assert.Equal("MainQuest", journalResource.MainQuest.Id);
+        Assert.Equal("mainQuest", journalResource.MainQuest.Id);
         Assert.Equal(43, journalResource.MainQuest.Steps.Count);
         Assert.Equal(0x80, journalResource.MainQuest.Steps[0].Value);
         Assert.Equal(3, journalResource.SideQuests.Count);
-        Assert.Equal("FolderBag", journalResource.SideQuests[0].Id);
-        Assert.Equal("TreeBoots", journalResource.SideQuests[1].Id);
-        Assert.Equal("FishingPole", journalResource.SideQuests[2].Id);
+        Assert.Equal("folderBag", journalResource.SideQuests[0].Id);
+        Assert.Equal("treeBoots", journalResource.SideQuests[1].Id);
+        Assert.Equal("fishingPole", journalResource.SideQuests[2].Id);
         Assert.Equal(1, journalResource.SideQuests[0].Steps[0].Value);
         Assert.Equal(0x04, journalResource.SideQuests[1].Steps[0].Value);
         Assert.Equal(3, journalResource.LegendaryWeapons.Count);

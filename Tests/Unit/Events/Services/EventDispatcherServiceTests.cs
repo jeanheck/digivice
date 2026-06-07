@@ -252,6 +252,7 @@ public class EventDispatcherServiceTests
 
         var hubClientsMock = new Mock<IHubClients>();
         hubClientsMock.Setup(c => c.Client("client1")).Returns(clientProxyMock.Object);
+        hubClientsMock.Setup(c => c.All).Returns(clientProxyMock.Object);
 
         var hubContextMock = new Mock<IHubContext<GameHub>>();
         hubContextMock.Setup(h => h.Clients).Returns(hubClientsMock.Object);
@@ -431,6 +432,7 @@ public class EventDispatcherServiceTests
 
         var hubClientsMock = new Mock<IHubClients>();
         hubClientsMock.Setup(c => c.Client("client1")).Returns(clientProxyMock.Object);
+        hubClientsMock.Setup(c => c.All).Returns(clientProxyMock.Object);
 
         var hubContextMock = new Mock<IHubContext<GameHub>>();
         hubContextMock.Setup(h => h.Clients).Returns(hubClientsMock.Object);

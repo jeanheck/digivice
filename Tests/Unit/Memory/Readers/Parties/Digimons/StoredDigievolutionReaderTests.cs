@@ -32,10 +32,8 @@ public class StoredDigievolutionReaderTests
         WriteInt16(block, 12, 15);
         WriteInt16(block, 14, 5);
         WriteInt16(block, 16, 40);
-        WriteInt16(block, 18, 0);
-        WriteInt16(block, 20, 99);
-        WriteInt16(block, 22, 8);
-        WriteInt16(block, 24, 20);
+        WriteInt16(block, 18, 8);
+        WriteInt16(block, 20, 20);
 
         var memoryBlockReader = new MemoryBlockReader(block);
         var reader = new StoredDigievolutionReader();
