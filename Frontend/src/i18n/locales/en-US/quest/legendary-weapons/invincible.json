@@ -1,0 +1,11 @@
+{
+  "invincible": {
+    "title": "Invincible",
+    "description": "Obtain the legendary sword Invincible.",
+    "steps": {
+      "1": {
+        "description": "Acquire Invincible"
+      }
+    }
+  }
+}

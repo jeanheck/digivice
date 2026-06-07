@@ -1,0 +1,11 @@
+{
+  "muramasa": {
+    "title": "Muramasa",
+    "description": "Obtain the legendary sword Muramasa.",
+    "steps": {
+      "1": {
+        "description": "Acquire Muramasa"
+      }
+    }
+  }
+}

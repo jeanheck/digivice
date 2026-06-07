@@ -8,7 +8,7 @@ Maintained by quest-pattern-frontend skill. Append entries; do not remove withou
 |----------|------------------|--------|-----------------|
 | Main quest | Yes | Yellow (hardcoded) | mainQuest |
 | Side quests | Yes | `cyan` | folderBag |
-| Legendary weapons | No | `purple` (planned) | — |
+| Legendary weapons | Yes | `purple` | eternally |
 | DRI agents | No | `rose` (planned) | — |
 
 ## Quests registered (static JSON + i18n)
@@ -19,9 +19,11 @@ Maintained by quest-pattern-frontend skill. Append entries; do not remove withou
 - `fishingPole`
 - `treeBoots`
 
-### Legendary weapons
+### Legendary weapons (2026-06-06)
 
-_(none yet)_
+- `eternally`
+- `invincible`
+- `muramasa`
 
 ### DRI agents
 
@@ -29,6 +31,6 @@ _(none yet)_
 
 ## Palette notes
 
-- `cyan` — side quests (live)
+- `cyan` — side quests
+- `purple` — legendary weapons
 - `red` — defined in palette, unused; replace with `rose` when wiring DRI agents
-- `purple` — add when wiring legendary weapons

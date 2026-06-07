@@ -67,6 +67,19 @@ const closeQuestModal = () => {
           @click="openQuestModal"
         />
       </JournalQuestsSection>
+
+      <JournalQuestsSection
+        :title="$t('journal.legendaryWeapons')"
+        accent-color="purple"
+      >
+        <JournalQuestCard
+          v-for="legendaryWeapon in journalViewModel.legendaryWeapons"
+          :key="legendaryWeapon.id"
+          :quest="legendaryWeapon"
+          display-mode="side"
+          @click="openQuestModal"
+        />
+      </JournalQuestsSection>
     </div>
   </aside>
 

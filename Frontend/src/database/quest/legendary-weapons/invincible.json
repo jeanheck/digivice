@@ -1,0 +1,15 @@
+{
+    "id": "invincible",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "",
+            "coordinates": {
+                "x": 0,
+                "y": 0
+            },
+            "zoomedLocations": [],
+            "requisites": []
+        }
+    }
+}

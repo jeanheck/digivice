@@ -9,7 +9,10 @@ export class JournalConverter {
             mainQuest: journalDto.mainQuest ? QuestConverter.convert(journalDto.mainQuest as Required<QuestDTO>) : null,
             sideQuests: journalDto.sideQuests
                 ? journalDto.sideQuests.map(q => QuestConverter.convert(q as Required<QuestDTO>))
-                : []
+                : [],
+            legendaryWeapons: journalDto.legendaryWeapons
+                ? journalDto.legendaryWeapons.map((questDto) => QuestConverter.convert(questDto as Required<QuestDTO>))
+                : [],
         };
     }
 }

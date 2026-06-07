@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Digimon } from "@/models/digimon";
+import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel.ts";
 import Node from "./Node.vue";
 

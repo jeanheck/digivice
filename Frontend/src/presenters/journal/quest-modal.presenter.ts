@@ -21,16 +21,26 @@ export class QuestModalPresenter {
         }
 
         const sideQuestRaw = QuestRepository.getSideQuestsRaw().find((raw) => raw.id === questId);
-        if (sideQuestRaw === undefined) {
-            return null;
+        if (sideQuestRaw !== undefined) {
+            const sideQuest = journal.sideQuests.find((quest) => quest.id === questId);
+            if (sideQuest === undefined) {
+                return null;
+            }
+
+            return QuestConverter.convert(sideQuestRaw, sideQuest, { calculateNewStatus: true });
         }
 
-        const sideQuest = journal.sideQuests.find((quest) => quest.id === questId);
-        if (sideQuest === undefined) {
-            return null;
+        const legendaryWeaponRaw = QuestRepository.getLegendaryWeaponsRaw().find((raw) => raw.id === questId);
+        if (legendaryWeaponRaw !== undefined) {
+            const legendaryWeapon = journal.legendaryWeapons.find((quest) => quest.id === questId);
+            if (legendaryWeapon === undefined) {
+                return null;
+            }
+
+            return QuestConverter.convert(legendaryWeaponRaw, legendaryWeapon, { calculateNewStatus: true });
         }
 
-        return QuestConverter.convert(sideQuestRaw, sideQuest, { calculateNewStatus: true });
+        return null;
     }
 
     public static getWorldMapLocations(selectedStep: StepViewModel | null): ZoomedLocationMapViewModel[] {

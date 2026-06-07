@@ -15,9 +15,14 @@ export class JournalPresenter {
             .map((sideQuestRaw) => QuestModalPresenter.getQuestViewModel(journal, sideQuestRaw.id))
             .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
 
+        const legendaryWeaponsViewModels = QuestRepository.getLegendaryWeaponsRaw()
+            .map((legendaryWeaponRaw) => QuestModalPresenter.getQuestViewModel(journal, legendaryWeaponRaw.id))
+            .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
+
         return {
             mainQuest: mainQuestViewModel,
             sideQuests: sideQuestsViewModels,
+            legendaryWeapons: legendaryWeaponsViewModels,
         };
     }
 }

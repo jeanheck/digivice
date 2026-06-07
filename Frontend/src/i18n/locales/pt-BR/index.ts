@@ -18,6 +18,9 @@ import mainQuest from "./quest/main-quest.json";
 import fishingPole from "./quest/side-quest/fishing-pole.json";
 import folderBag from "./quest/side-quest/folder-bag.json";
 import treeBoots from "./quest/side-quest/tree-boots.json";
+import eternally from "./quest/legendary-weapons/eternally.json";
+import invincible from "./quest/legendary-weapons/invincible.json";
+import muramasa from "./quest/legendary-weapons/muramasa.json";
 import player from "./player.json";
 import party from "./party.json";
 import connection from "./connection.json";
@@ -43,6 +46,9 @@ export default {
   ...fishingPole,
   ...folderBag,
   ...treeBoots,
+  ...eternally,
+  ...invincible,
+  ...muramasa,
   ...player,
   ...party,
   ...connection,

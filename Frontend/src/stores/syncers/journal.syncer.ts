@@ -17,6 +17,18 @@ export class JournalSyncer {
                 }
             });
         }
+
+        if (newJournalDto.legendaryWeapons && newJournalDto.legendaryWeapons.length > 0) {
+            newJournalDto.legendaryWeapons.forEach((newLegendaryWeaponDto) => {
+                const previousLegendaryWeapon = previousJournal.legendaryWeapons.find((quest) => {
+                    return quest.id === newLegendaryWeaponDto.id;
+                });
+
+                if (previousLegendaryWeapon) {
+                    QuestSyncer.sync(previousLegendaryWeapon, newLegendaryWeaponDto);
+                }
+            });
+        }
     }
 }
 
