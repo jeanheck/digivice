@@ -1,6 +1,6 @@
 import type { ComputedRef, InjectionKey } from "vue";
 
-export type JournalSectionAccentColor = "cyan" | "purple" | "rose";
+export type JournalSectionAccentColor = "cyan" | "purple" | "rose" | "emerald" | "teal" | "sky";
 
 export interface JournalSectionPalette {
     sectionTitleClass: string;
@@ -39,6 +39,33 @@ const JOURNAL_SECTION_PALETTES: Record<JournalSectionAccentColor, JournalSection
         stepNumberClass: "text-rose-600",
         questTitleClass: "text-rose-400",
         questTitleHoverClass: "group-hover:text-rose-400",
+    },
+    emerald: {
+        sectionTitleClass: "text-emerald-400",
+        sectionBorderClass: "border-emerald-800",
+        sectionChevronClass: "text-emerald-400",
+        sectionHeaderHoverClass: "hover:bg-emerald-900/30",
+        stepNumberClass: "text-emerald-600",
+        questTitleClass: "text-emerald-400",
+        questTitleHoverClass: "group-hover:text-emerald-400",
+    },
+    teal: {
+        sectionTitleClass: "text-teal-400",
+        sectionBorderClass: "border-teal-800",
+        sectionChevronClass: "text-teal-400",
+        sectionHeaderHoverClass: "hover:bg-teal-900/30",
+        stepNumberClass: "text-teal-600",
+        questTitleClass: "text-teal-400",
+        questTitleHoverClass: "group-hover:text-teal-400",
+    },
+    sky: {
+        sectionTitleClass: "text-sky-400",
+        sectionBorderClass: "border-sky-800",
+        sectionChevronClass: "text-sky-400",
+        sectionHeaderHoverClass: "hover:bg-sky-900/30",
+        stepNumberClass: "text-sky-600",
+        questTitleClass: "text-sky-400",
+        questTitleHoverClass: "group-hover:text-sky-400",
     },
 };
 
