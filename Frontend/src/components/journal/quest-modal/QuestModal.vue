@@ -62,6 +62,10 @@ const localMapLocations = computed(() => {
   return QuestModalPresenter.getLocalMapLocations(selectedStep.value, props.questId);
 });
 
+const currentStepNumber = computed(() => {
+  return questViewModel.value?.currentStep?.number ?? null;
+});
+
 watch(
   () => [props.isOpen, props.questId] as const,
   ([isOpen, questId]) => {
@@ -70,9 +74,29 @@ watch(
       return;
     }
 
-    selectedStepNumber.value = questViewModel.value?.currentStep?.number ?? null;
+    selectedStepNumber.value = currentStepNumber.value;
   }
 );
+
+watch(currentStepNumber, (nextCurrentStepNumber, previousCurrentStepNumber) => {
+  if (!props.isOpen) {
+    return;
+  }
+
+  if (previousCurrentStepNumber === undefined) {
+    return;
+  }
+
+  if (selectedStepNumber.value !== previousCurrentStepNumber) {
+    return;
+  }
+
+  if (nextCurrentStepNumber === previousCurrentStepNumber) {
+    return;
+  }
+
+  selectedStepNumber.value = nextCurrentStepNumber;
+});
 </script>
 
 <template>
