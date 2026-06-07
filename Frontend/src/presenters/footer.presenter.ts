@@ -15,7 +15,10 @@ export class FooterPresenter {
         const digimons = this.getDigimons(digimonSlots);
         const totalDigimonsCharisma = MathHelper.sum(digimons.map((d) => Number(d.attributes.charisma)));
         const totalBonusFromEquipments = MathHelper.sum(digimons.map((digimon) => {
-            const equipmentIds = EquipmentsHelper.getUniqueEquipmentIds(digimon.equipments);
+            const equipmentIds = EquipmentsHelper.getBonusCalculationEquipmentIds(
+                digimon.equipments,
+                (equipmentId) => EquipmentRepository.getEquipmentById(equipmentId).type
+            );
             const rawEquipments = EquipmentRepository.getEquipmentsByIds(equipmentIds);
             return EquipmentsHelper.calculateBonusFromEquipaments(
                 Constant.charisma,

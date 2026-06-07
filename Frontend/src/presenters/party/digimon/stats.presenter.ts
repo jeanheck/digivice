@@ -20,7 +20,10 @@ export class StatsPresenter {
         const activeDigievolution = digimon.activeDigievolutionId !== null && digimon.activeDigievolutionId !== 0
             ? this.getDigievolutionById(digimon.activeDigievolutionId)
             : null;
-        const equipmentIds = EquipmentsHelper.getUniqueEquipmentIds(digimon.equipments);
+        const equipmentIds = EquipmentsHelper.getBonusCalculationEquipmentIds(
+            digimon.equipments,
+            (equipmentId) => EquipmentRepository.getEquipmentById(equipmentId).type
+        );
         const rawEquipments = EquipmentRepository.getEquipmentsByIds(equipmentIds);
 
         return {
