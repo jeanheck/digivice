@@ -1,0 +1,9 @@
+{
+    "id": "divineBarrier",
+    "steps": {
+        "startsWhenComplete": 4,
+        "endsWhenComplete": 6
+    },
+    "price": 800,
+    "resale": 11000
+}

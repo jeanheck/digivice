@@ -1,0 +1,9 @@
+{
+    "id": "dramonShield",
+    "steps": {
+        "startsWhenComplete": 36,
+        "endsWhenComplete": 43
+    },
+    "price": 1600,
+    "resale": 11000
+}

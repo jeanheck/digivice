@@ -1,0 +1,9 @@
+{
+    "id": "hazardShield",
+    "steps": {
+        "startsWhenComplete": 15,
+        "endsWhenComplete": 21
+    },
+    "price": 800,
+    "resale": 11000
+}
