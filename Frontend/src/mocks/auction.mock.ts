@@ -1,11 +1,11 @@
-import type { AuctionModalStatus } from "@/viewmodels/auction/auction-status";
+import type { AuctionStatus } from "@/viewmodels/auction/auction-status";
 
 export interface AuctionMockEntry {
     id: string;
     equipmentId: number;
     openStep: number;
     closeStep: number;
-    status: AuctionModalStatus;
+    status: AuctionStatus;
 }
 
 export const MOCK_WINDOW_OPEN_EQUIPMENT_ID: number | null = 1032;
@@ -16,14 +16,14 @@ export const AUCTION_MOCK_ENTRIES: AuctionMockEntry[] = [
         equipmentId: 281,
         openStep: 4,
         closeStep: 6,
-        status: "bought",
+        status: "participated",
     },
     {
         id: "auction-hazard-shield",
         equipmentId: 1032,
         openStep: 15,
         closeStep: 21,
-        status: "participatedWithoutPurchase",
+        status: "availableNow",
     },
     {
         id: "auction-sniper-shield",

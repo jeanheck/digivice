@@ -1,7 +1,5 @@
-export type AuctionModalStatus =
+export type AuctionStatus =
     | "notYetOccurred"
-    | "bought"
-    | "participatedWithoutPurchase"
+    | "availableNow"
+    | "participated"
     | "missed";
-
-export type AuctionRuntimeStatus = AuctionModalStatus | "availableNow";

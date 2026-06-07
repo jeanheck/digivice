@@ -9,10 +9,9 @@
     "stepRange": "Steps {openStep}–{closeStep}",
     "status": {
       "notYetOccurred": "Ainda não ocorreu",
-      "bought": "Você comprou no leilão",
-      "participatedWithoutPurchase": "Você foi, mas não comprou",
-      "missed": "Você não foi ao leilão",
-      "availableNow": "Disponível agora — você ainda pode ir"
+      "availableNow": "Ocorrendo agora — você ainda pode ir",
+      "participated": "Você participou do leilão",
+      "missed": "Você não participou do leilão"
     }
   }
 }

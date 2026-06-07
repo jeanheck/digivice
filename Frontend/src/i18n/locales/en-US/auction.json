@@ -9,10 +9,9 @@
     "stepRange": "Steps {openStep}–{closeStep}",
     "status": {
       "notYetOccurred": "Has not occurred yet",
-      "bought": "You bought at the auction",
-      "participatedWithoutPurchase": "You went, but did not buy",
-      "missed": "You did not go to the auction",
-      "availableNow": "Available now — you can still go"
+      "availableNow": "Happening now — you can still go",
+      "participated": "You participated in the auction",
+      "missed": "You did not participate in the auction"
     }
   }
 }
