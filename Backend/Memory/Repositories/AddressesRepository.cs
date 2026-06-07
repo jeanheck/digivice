@@ -19,6 +19,8 @@ namespace Backend.Memory.Repositories
         private QuestAddresses? legendaryWeaponEternally;
         private QuestAddresses? legendaryWeaponInvincible;
         private QuestAddresses? legendaryWeaponMuramasa;
+        private QuestAddresses? driAgentGuilmon;
+        private QuestAddresses? driAgentAgumon;
 
         public AddressesRepository(string dataDirectory)
         {
@@ -92,5 +94,17 @@ namespace Backend.Memory.Repositories
 
         private QuestAddresses GetLegendaryWeaponMuramasa() =>
             LoadAndCache(ref legendaryWeaponMuramasa, "Quests/LegendaryWeapons/MuramasaAddresses.json");
+
+        public List<QuestAddresses> GetAllDriAgents() =>
+        [
+            GetDriAgentGuilmon(),
+            GetDriAgentAgumon()
+        ];
+
+        private QuestAddresses GetDriAgentGuilmon() =>
+            LoadAndCache(ref driAgentGuilmon, "Quests/DriAgents/GuilmonAddresses.json");
+
+        private QuestAddresses GetDriAgentAgumon() =>
+            LoadAndCache(ref driAgentAgumon, "Quests/DriAgents/AgumonAddresses.json");
     }
 }

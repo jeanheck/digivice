@@ -22,5 +22,10 @@ namespace Backend.Application.Loaders.Journals
         {
             return [.. addressesRepository.GetAllLegendaryWeapons().Select(questReader.Read)];
         }
+
+        public List<QuestResource> LoadDriAgents()
+        {
+            return [.. addressesRepository.GetAllDriAgents().Select(questReader.Read)];
+        }
     }
 }

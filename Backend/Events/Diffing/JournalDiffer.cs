@@ -62,6 +62,23 @@ public static class JournalDiffer
             dto = dto with { LegendaryWeapons = legendaryWeaponsDelta };
         }
 
+        var driAgentsDelta = new List<QuestDTO>();
+        foreach (var driAgentNewState in newJournal.DriAgents)
+        {
+            var driAgentPreviousState = previousJournal.DriAgents
+                .FirstOrDefault(quest => quest.Id == driAgentNewState.Id);
+            var driAgentDelta = QuestDiffer.Diff(driAgentPreviousState, driAgentNewState);
+            if (driAgentDelta != null)
+            {
+                driAgentsDelta.Add(driAgentDelta);
+            }
+        }
+
+        if (driAgentsDelta.Count > 0)
+        {
+            dto = dto with { DriAgents = driAgentsDelta };
+        }
+
         return dto;
     }
 }

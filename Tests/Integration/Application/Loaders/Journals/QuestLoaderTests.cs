@@ -127,10 +127,58 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0x02, invincible.Steps[0].Value);
 
         var muramasa = legendaryWeapons[2];
-        Assert.Equal("Muramasa", muramasa.Id);
+        Assert.Equal("muramasa", muramasa.Id);
         Assert.Empty(muramasa.Requisites);
         Assert.Single(muramasa.Steps);
         Assert.Equal(1, muramasa.Steps[0].Number);
         Assert.Equal(0x04, muramasa.Steps[0].Value);
+    }
+
+    [Fact]
+    public void LoadDriAgents_ShouldIntegrateDriAgentAddressesAndReaderPipeline()
+    {
+        var addressesRepository = CreateAddressesRepository();
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38C, 0x02)).Returns((byte)0x02);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B3B7, 0x08)).Returns((byte)0x08);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x00048DD2, null)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004A7E0, 0x08)).Returns((byte)0x08);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38C, 0x01)).Returns((byte)0x01);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B3B7, 0x04)).Returns((byte)0x04);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x00048DB6, null)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004A028, 0x06)).Returns((byte)0x06);
+
+        var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
+        var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
+        var questReader = new QuestReader(requisiteReader, stepReader);
+        var questLoader = new QuestLoader(addressesRepository, questReader);
+
+        var driAgents = questLoader.LoadDriAgents();
+
+        Assert.NotNull(driAgents);
+        Assert.Equal(2, driAgents.Count);
+
+        var guilmon = driAgents[0];
+        Assert.Equal("driAgentGuilmon", guilmon.Id);
+        Assert.Empty(guilmon.Requisites);
+        Assert.Equal(3, guilmon.Steps.Count);
+        Assert.Equal(0x02, guilmon.Steps[0].Value);
+        Assert.Equal(0x08, guilmon.Steps[1].Value);
+        Assert.Single(guilmon.Steps[1].Requisites);
+        Assert.Equal("guilmonDna", guilmon.Steps[1].Requisites[0].Id);
+        Assert.Equal(1, guilmon.Steps[1].Requisites[0].Value);
+        Assert.Equal(0x08, guilmon.Steps[2].Value);
+
+        var agumon = driAgents[1];
+        Assert.Equal("driAgentAgumon", agumon.Id);
+        Assert.Empty(agumon.Requisites);
+        Assert.Equal(3, agumon.Steps.Count);
+        Assert.Equal(0x01, agumon.Steps[0].Value);
+        Assert.Equal(0x04, agumon.Steps[1].Value);
+        Assert.Single(agumon.Steps[1].Requisites);
+        Assert.Equal("agumonDna", agumon.Steps[1].Requisites[0].Id);
+        Assert.Equal(1, agumon.Steps[1].Requisites[0].Value);
+        Assert.Equal(0x06, agumon.Steps[2].Value);
     }
 }

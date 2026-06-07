@@ -170,4 +170,51 @@ public class JournalDifferTests
         Assert.True(legendaryWeapons[0].Steps.HasValue);
         Assert.Equal((byte)1, legendaryWeapons[0].Steps.Value![0].Value.Value);
     }
+
+    [Fact]
+    public void Diff_ShouldReturnDelta_WhenDriAgentsChanged()
+    {
+        var previous = new Journal
+        {
+            MainQuest = new Quest { Id = "1" },
+            SideQuests = [],
+            LegendaryWeapons = [],
+            DriAgents = [
+                new Quest
+                {
+                    Id = "driAgentGuilmon",
+                    Requisites = [],
+                    Steps = [new Step { Number = 1, Value = 0 }]
+                }
+            ]
+        };
+        var newObj = new Journal
+        {
+            MainQuest = new Quest { Id = "1" },
+            SideQuests = [],
+            LegendaryWeapons = [],
+            DriAgents = [
+                new Quest
+                {
+                    Id = "driAgentGuilmon",
+                    Requisites = [],
+                    Steps = [new Step { Number = 1, Value = 1 }]
+                }
+            ]
+        };
+
+        var result = JournalDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.False(result.MainQuest.HasValue);
+        Assert.False(result.SideQuests.HasValue);
+        Assert.False(result.LegendaryWeapons.HasValue);
+        Assert.True(result.DriAgents.HasValue);
+
+        var driAgents = result.DriAgents.Value!;
+        Assert.Single(driAgents);
+        Assert.Equal("driAgentGuilmon", driAgents[0].Id);
+        Assert.True(driAgents[0].Steps.HasValue);
+        Assert.Equal((byte)1, driAgents[0].Steps.Value![0].Value.Value);
+    }
 }

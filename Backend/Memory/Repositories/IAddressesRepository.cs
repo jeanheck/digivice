@@ -14,5 +14,6 @@ namespace Backend.Memory.Repositories
         QuestAddresses GetMainQuest();
         List<QuestAddresses> GetAllSideQuests();
         List<QuestAddresses> GetAllLegendaryWeapons();
+        List<QuestAddresses> GetAllDriAgents();
     }
 }

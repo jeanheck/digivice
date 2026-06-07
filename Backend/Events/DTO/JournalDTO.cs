@@ -15,4 +15,7 @@ public record class JournalDTO : IDTO
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<List<QuestDTO>> LegendaryWeapons { get; init; } = Optional<List<QuestDTO>>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<List<QuestDTO>> DriAgents { get; init; } = Optional<List<QuestDTO>>.Empty;
 }

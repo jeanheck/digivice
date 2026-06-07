@@ -11,7 +11,8 @@ namespace Backend.Application.Loaders
             {
                 MainQuest = questLoader.LoadMainQuest(),
                 SideQuests = questLoader.LoadSideQuests(),
-                LegendaryWeapons = questLoader.LoadLegendaryWeapons()
+                LegendaryWeapons = questLoader.LoadLegendaryWeapons(),
+                DriAgents = questLoader.LoadDriAgents()
             };
         }
     }

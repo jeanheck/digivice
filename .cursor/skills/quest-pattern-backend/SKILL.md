@@ -59,7 +59,18 @@ Quests/
 `StepAddresses` expects `BitMasks` (array). If the file uses singular
 `BitMask`, normalize to `"BitMasks": ["0x04"]`. Empty array = raw byte (`!= 0`).
 
-`Id` in JSON must match the quest id used across backend and (later) frontend.
+**Formatting:** keep `BitMasks` on one line when there is a single mask:
+
+```json
+"BitMasks": ["0x04"]
+```
+
+Not multiline unless the array has many entries.
+
+**Ids:** always **camelCase** in JSON (`muramasa`, `driAgentGuilmon`, `guilmonDna`).
+Fix PascalCase or other casing when integrating.
+
+`Id` must match the quest id used across backend and (later) frontend.
 
 ---
 
@@ -80,7 +91,8 @@ Copy and track progress. Skip steps marked **SKIP** when the condition is met.
 - [ ] File in correct subfolder under `Backend/Memory/Definitions/Quests/`
   (`SideQuests/`, `LegendaryWeapons/`, or `DriAgents/`)
 - [ ] Naming: `{Name}Addresses.json` (e.g. `Quests/LegendaryWeapons/MuramasaAddresses.json`)
-- [ ] `BitMask` → `BitMasks` array if needed
+- [ ] `BitMask` → `BitMasks` array if needed (single mask: one line)
+- [ ] All `Id` fields in camelCase (quest and requisite)
 - [ ] Step `Number` values sequential and unique within the quest
 
 **SKIP** if user already created the file via memory-compare.
