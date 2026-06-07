@@ -1,5 +1,6 @@
 {
     "id": "hazardShield",
+    "equipmentId": "1032",
     "steps": {
         "startsWhenComplete": 15,
         "endsWhenComplete": 23

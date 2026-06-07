@@ -1,5 +1,6 @@
 {
     "id": "divineBarrier",
+    "equipmentId": "281",
     "steps": {
         "startsWhenComplete": 4,
         "endsWhenComplete": 6
