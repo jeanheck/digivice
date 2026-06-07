@@ -12,7 +12,7 @@ Legendary weapons share **0x0004B38E** with power-of-two masks:
 
 When prior bits are set: expect `0x03 → 0x07 (+0x04)`.
 
-JSON: `LegendaryWeapons/*Addresses.json` — singular `BitMask` per step.
+JSON: `Quests/LegendaryWeapons/*Addresses.json` — singular `BitMask` per step.
 
 ---
 
@@ -59,7 +59,7 @@ Session noise after battles or map activity. Always discard for progress flags.
 
 ## DRI agents
 
-Three steps per agent. Definitions: `Backend/Memory/Definitions/DriAgents/`.
+Three steps per agent. Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`.
 
 ### Agumon (`DriAgentAgumon`)
 

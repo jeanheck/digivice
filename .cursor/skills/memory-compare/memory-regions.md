@@ -26,20 +26,24 @@ each investigation. Append new entries; do not remove without strong evidence.
 
 ## Quest / progress flags
 
+Definitions root: `Backend/Memory/Definitions/Quests/`
+
 | Range / Address | Purpose | Source |
 |-----------------|---------|--------|
-| 0x0004B370 | Main quest + auction story window | MainQuestAddresses, DivineBarrierAddresses.txt |
+| 0x0004B370 | Main quest + auction story window | `Quests/MainQuestAddresses.json`, DivineBarrierAddresses.txt |
 | 0x0004B38A | Auction instance consumed | DivineBarrierAddresses.txt |
-| 0x0004B38E | Legendary weapons | Eternally 0x01, Invincible 0x02, Muramasa 0x04 |
-| 0x0004B3B6 – 0x0004B3FF | Main quest steps | MainQuestAddresses.json |
-| 0x00048F3x – 0x00048F4x | Side quest flags | SideQuests/*.json |
+| 0x0004B38E | Legendary weapons | `Quests/LegendaryWeapons/` — Eternally 0x01, Invincible 0x02, Muramasa 0x04 |
+| 0x0004B3B6 – 0x0004B3FF | Main quest steps | `Quests/MainQuestAddresses.json` |
+| 0x00048F3x – 0x00048F4x | Side quest flags | `Quests/SideQuests/*.json` |
 
 ## DRI agents
 
+Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`
+
 | Agent | Status | Notes |
 |-------|--------|-------|
-| Agumon | Not mapped | 3 steps — see DriAgents/Agumon.json |
-| Guilmon | Not mapped | 3 steps — see DriAgents/Guilmon.json |
+| Agumon | Not mapped | 3 steps — `AgumonAddresses.json` |
+| Guilmon | Not mapped | 3 steps — `GuilmonAddresses.json` |
 
 Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`,
 `investigation_guilmon/`.

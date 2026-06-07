@@ -33,14 +33,26 @@ types and pipelines. **Do not** create per-quest classes like `MuramasaResource`
 Create new types only when adding a **new category slot** on `Journal` (first
 Legendary Weapon, first DRI Agent, etc.).
 
+## Definitions layout
+
+All quest-pattern trackers live under `Backend/Memory/Definitions/Quests/`:
+
+```
+Quests/
+├── MainQuestAddresses.json
+├── SideQuests/
+├── LegendaryWeapons/
+└── DriAgents/
+```
+
 ## Category map
 
 | Category | Definitions folder | Journal collection | Reference implementation |
 |----------|-------------------|--------------------|--------------------------|
 | Main quest | `Quests/MainQuestAddresses.json` | `MainQuest` | Already wired |
 | Side quests | `Quests/SideQuests/` | `SideQuests` | FolderBag, TreeBoots, FishingPole |
-| Legendary weapons | `LegendaryWeapons/` | `LegendaryWeapons` *(create on first item)* | Side quests pattern |
-| DRI agents | `DriAgents/` | `DriAgents` *(create on first item)* | Side quests pattern |
+| Legendary weapons | `Quests/LegendaryWeapons/` | `LegendaryWeapons` *(create on first item)* | Side quests pattern |
+| DRI agents | `Quests/DriAgents/` | `DriAgents` *(create on first item)* | Side quests pattern |
 
 ## JSON schema note
 
@@ -65,8 +77,9 @@ Copy and track progress. Skip steps marked **SKIP** when the condition is met.
 
 ### 1. Definitions JSON
 
-- [ ] File in correct folder under `Backend/Memory/Definitions/`
-- [ ] Naming: `{Name}Addresses.json` (e.g. `MuramasaAddresses.json`)
+- [ ] File in correct subfolder under `Backend/Memory/Definitions/Quests/`
+  (`SideQuests/`, `LegendaryWeapons/`, or `DriAgents/`)
+- [ ] Naming: `{Name}Addresses.json` (e.g. `Quests/LegendaryWeapons/MuramasaAddresses.json`)
 - [ ] `BitMask` → `BitMasks` array if needed
 - [ ] Step `Number` values sequential and unique within the quest
 

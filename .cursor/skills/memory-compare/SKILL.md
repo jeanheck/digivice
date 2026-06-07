@@ -65,13 +65,23 @@ Optional: gameplay context; snapshots under `Tools/MemoryScanner/Snapshots/`
 - Empty `BitMasks` → step read as `byte != 0`
 - Multiple `BitMasks` on one step → **all** must be set
 
+## Definitions layout (quests)
+
+All quest-like trackers live under `Backend/Memory/Definitions/Quests/`:
+
+- `MainQuestAddresses.json`
+- `SideQuests/`
+- `LegendaryWeapons/`
+- `DriAgents/`
+
 ## Domain hints
 
 | Domain | Definitions / anchors | Typical diff shape |
 |--------|----------------------|-------------------|
-| Main/side quest | `Quests/**`, `MainQuestAddresses.json` | Bit flip in `0x4B3xx` |
-| Legendary weapons | `LegendaryWeapons/**` | Sequential bit on `0x4B38E` |
-| DRI agents | `DriAgents/Agumon.json`, `Guilmon.json` | TBD — see known-patterns.md |
+| Main quest | `Quests/MainQuestAddresses.json` | Bit flip in `0x4B3xx` |
+| Side quests | `Quests/SideQuests/` | Bit flip or raw byte |
+| Legendary weapons | `Quests/LegendaryWeapons/` | Sequential bit on `0x4B38E` |
+| DRI agents | `Quests/DriAgents/` | TBD — see known-patterns.md |
 | Player | `PlayerAddresses.json` (`Bits`, `MapId`, `Name`) | MapId byte change on transition |
 | Party | `PartyAddresses.json` (slots `0x48DA4+`) | Slot ID bytes |
 | Digimon stats | `Parties/DigimonStatusAddresses.json` (offsets) | Multi-byte counters at `~0x494xxx` |

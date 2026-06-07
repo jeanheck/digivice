@@ -20,7 +20,8 @@
 
 | Concern | Path |
 |---------|------|
-| Definitions | `Backend/Memory/Definitions/` |
+| Quest definitions | `Backend/Memory/Definitions/Quests/` (`SideQuests/`, `LegendaryWeapons/`, `DriAgents/`, `MainQuestAddresses.json`) |
+| Other definitions | `Backend/Memory/Definitions/` (Player, Party, Auctions, …) |
 | Address types | `Backend/Memory/Addresses/Journals/` |
 | Readers | `Backend/Memory/Readers/Journals/` |
 | Resources | `Backend/Memory/Resources/Journals/` |
@@ -46,4 +47,5 @@
 
 When `LegendaryWeapons` or `DriAgents` is not yet on `Journal`, mirror the
 `SideQuests` slot across all layers listed in SKILL.md step 3 before registering
-individual tracker JSON files.
+individual `*Addresses.json` files under `Quests/LegendaryWeapons/` or
+`Quests/DriAgents/`.
