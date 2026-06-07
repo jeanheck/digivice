@@ -1,6 +1,7 @@
-import type { Journal } from '../../models';
-import type * as Events from '../../events/events.map';
-import { QuestSyncer } from './journals/quest.syncer';
+import type { Journal } from "../../models";
+import type * as Events from "../../events/events.map";
+import { AuctionSyncer } from "./journals/auction.syncer";
+import { QuestSyncer } from "./journals/quest.syncer";
 
 export class JournalSyncer {
     public static sync(previousJournal: Journal, newJournalDto: Events.JournalDTO): void {
@@ -38,6 +39,18 @@ export class JournalSyncer {
 
                 if (previousDriAgent) {
                     QuestSyncer.sync(previousDriAgent, newDriAgentDto);
+                }
+            });
+        }
+
+        if (newJournalDto.auctions && newJournalDto.auctions.length > 0) {
+            newJournalDto.auctions.forEach((newAuctionDto) => {
+                const previousAuction = previousJournal.auctions.find((auction) => {
+                    return auction.id === newAuctionDto.id;
+                });
+
+                if (previousAuction) {
+                    AuctionSyncer.sync(previousAuction, newAuctionDto);
                 }
             });
         }
