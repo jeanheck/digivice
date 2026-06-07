@@ -1,6 +1,8 @@
 {
   "party": {
     "groupCharisma": "Group Charisma",
-    "groupCharismaWarning": "This value does not include the Charisma you gain from your Digivolution."
+    "groupCharismaWarning": "This value does not include the Charisma you gain from your Digivolution",
+    "groupLevel": "Group Level",
+    "groupLevelExplanation": "Sum of the level of all Digimons in the party"
   }
 }

@@ -28,4 +28,12 @@ export class FooterPresenter {
 
         return totalDigimonsCharisma + totalBonusFromEquipments;
     }
+
+    public static getPartyLevel(digimonSlots: DigimonSlot[]): number {
+        const digimons = this.getDigimons(digimonSlots);
+
+        return MathHelper.sum(digimons.map((digimon) => {
+            return digimon.level;
+        }));
+    }
 }

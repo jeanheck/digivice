@@ -43,8 +43,26 @@ const hideGroupCharismaTooltip = () => {
   hide();
 };
 
+const showGroupLevelTooltip = (event: MouseEvent) => {
+  tooltipTitle.value = t("party.groupLevel");
+  tooltipText.value = t("party.groupLevelExplanation");
+  showAt(event, { maxWidth: 300, placement: "above" });
+};
+
+const moveGroupLevelTooltip = (event: MouseEvent) => {
+  move(event, "above");
+};
+
+const hideGroupLevelTooltip = () => {
+  hide();
+};
+
 const groupCharisma = computed(() => {
   return FooterPresenter.getPartyCharisma(store.currentState?.party?.slots ?? []);
+});
+
+const groupPartyLevel = computed(() => {
+  return FooterPresenter.getPartyLevel(store.currentState?.party?.slots ?? []);
 });
 </script>
 
@@ -66,6 +84,14 @@ const groupCharisma = computed(() => {
       @mouseleave="hideGroupCharismaTooltip">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('party.groupCharisma') }}:</span>
       <span class="text-white">{{ groupCharisma }}</span>
+    </div>
+
+    <div class="font-bold text-lg flex items-baseline cursor-help"
+      @mouseenter="showGroupLevelTooltip"
+      @mousemove="moveGroupLevelTooltip"
+      @mouseleave="hideGroupLevelTooltip">
+      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('party.groupLevel') }}:</span>
+      <span class="text-white">{{ groupPartyLevel }}</span>
     </div>
 
     <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-4 text-sm opacity-80">
