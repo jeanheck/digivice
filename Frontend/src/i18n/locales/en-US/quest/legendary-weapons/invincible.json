@@ -1,10 +1,15 @@
 {
   "invincible": {
     "title": "Invincible",
-    "description": "Obtain the legendary sword Invincible.",
+    "description": "Obtain the Legendary Weapon Invincible",
     "steps": {
       "1": {
-        "description": "Acquire Invincible"
+        "description": "Defeat Master Tyrannomon to receive the Old Claw",
+        "locations": {
+          "0": {
+            "locationTarget": "Master Tyrannomon"
+          }
+        }
       }
     }
   }

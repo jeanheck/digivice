@@ -1,10 +1,15 @@
 {
   "eternally": {
     "title": "Eternally",
-    "description": "Obtain the legendary sword Eternally.",
+    "description": "Obtain the Legendary Weapon Eternally.",
     "steps": {
       "1": {
-        "description": "Acquire Eternally"
+        "description": "Defeat Pharaohmon to receive the Old Wand",
+        "locations": {
+          "0": {
+            "locationTarget": "Pharaohmon"
+          }
+        }
       }
     }
   }

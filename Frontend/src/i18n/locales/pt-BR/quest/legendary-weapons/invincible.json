@@ -1,10 +1,15 @@
 {
   "invincible": {
     "title": "Invincible",
-    "description": "Obtenha a espada lendária Invincible.",
+    "description": "Obtenha a Arma Lendária Invincible",
     "steps": {
       "1": {
-        "description": "Adquira Invincible"
+        "description": "Derrote Master Tyrannomon para receber a Garra Antiga",
+        "locations": {
+          "0": {
+            "locationTarget": "Master Tyrannomon"
+          }
+        }
       }
     }
   }

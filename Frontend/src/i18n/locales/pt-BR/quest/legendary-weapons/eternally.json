@@ -1,10 +1,15 @@
 {
   "eternally": {
     "title": "Eternally",
-    "description": "Obtenha a espada lendária Eternally.",
+    "description": "Obtenha a Arma Lendária Eternally",
     "steps": {
       "1": {
-        "description": "Adquira Eternally"
+        "description": "Derrote Pharaohmon para receber a Vara Antiga",
+        "locations": {
+          "0": {
+            "locationTarget": "Pharaohmon"
+          }
+        }
       }
     }
   }
