@@ -1,0 +1,37 @@
+{
+    "id": "driAgentAgumon",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "",
+            "coordinates": {
+                "x": 0,
+                "y": 0
+            },
+            "zoomedLocations": [],
+            "requisites": []
+        },
+        "2": {
+            "location": "",
+            "coordinates": {
+                "x": 0,
+                "y": 0
+            },
+            "zoomedLocations": [],
+            "requisites": [
+                {
+                    "id": "agumonDna"
+                }
+            ]
+        },
+        "3": {
+            "location": "",
+            "coordinates": {
+                "x": 0,
+                "y": 0
+            },
+            "zoomedLocations": [],
+            "requisites": []
+        }
+    }
+}

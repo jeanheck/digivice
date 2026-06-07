@@ -13,6 +13,9 @@ export class JournalConverter {
             legendaryWeapons: journalDto.legendaryWeapons
                 ? journalDto.legendaryWeapons.map((questDto) => QuestConverter.convert(questDto as Required<QuestDTO>))
                 : [],
+            driAgents: journalDto.driAgents
+                ? journalDto.driAgents.map((questDto) => QuestConverter.convert(questDto as Required<QuestDTO>))
+                : [],
         };
     }
 }

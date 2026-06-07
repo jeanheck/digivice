@@ -40,6 +40,16 @@ export class QuestModalPresenter {
             return QuestConverter.convert(legendaryWeaponRaw, legendaryWeapon, { calculateNewStatus: true });
         }
 
+        const driAgentRaw = QuestRepository.getDriAgentsRaw().find((raw) => raw.id === questId);
+        if (driAgentRaw !== undefined) {
+            const driAgent = journal.driAgents.find((quest) => quest.id === questId);
+            if (driAgent === undefined) {
+                return null;
+            }
+
+            return QuestConverter.convert(driAgentRaw, driAgent, { calculateNewStatus: true });
+        }
+
         return null;
     }
 

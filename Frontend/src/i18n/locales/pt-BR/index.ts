@@ -21,6 +21,8 @@ import treeBoots from "./quest/side-quest/tree-boots.json";
 import eternally from "./quest/legendary-weapons/eternally.json";
 import invincible from "./quest/legendary-weapons/invincible.json";
 import muramasa from "./quest/legendary-weapons/muramasa.json";
+import driAgentGuilmon from "./quest/dri-agents/dri-agent-guilmon.json";
+import driAgentAgumon from "./quest/dri-agents/dri-agent-agumon.json";
 import player from "./player.json";
 import party from "./party.json";
 import connection from "./connection.json";
@@ -49,6 +51,8 @@ export default {
   ...eternally,
   ...invincible,
   ...muramasa,
+  ...driAgentGuilmon,
+  ...driAgentAgumon,
   ...player,
   ...party,
   ...connection,

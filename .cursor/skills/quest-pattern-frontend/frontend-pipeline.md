@@ -68,7 +68,7 @@ currentState.journal
 |----------|--------|
 | Side quests | `cyan` (live) |
 | Legendary weapons | `purple` |
-| DRI agents | `rose` (replaces unused `red` in palette) |
+| DRI agents | `rose` |
 
 ## Aside section order
 

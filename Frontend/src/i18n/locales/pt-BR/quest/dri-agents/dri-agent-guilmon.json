@@ -1,0 +1,20 @@
+{
+  "driAgentGuilmon": {
+    "title": "DRI Agent Guilmon",
+    "description": "Recrute Guilmon como DRI Agent.",
+    "steps": {
+      "1": {
+        "description": "Inicie a missão do DRI Agent Guilmon"
+      },
+      "2": {
+        "description": "Obtenha o DNA de Guilmon",
+        "requisites": {
+          "guilmonDna": "DNA de Guilmon"
+        }
+      },
+      "3": {
+        "description": "Conclua o recrutamento do DRI Agent Guilmon"
+      }
+    }
+  }
+}

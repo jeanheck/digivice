@@ -29,6 +29,18 @@ export class JournalSyncer {
                 }
             });
         }
+
+        if (newJournalDto.driAgents && newJournalDto.driAgents.length > 0) {
+            newJournalDto.driAgents.forEach((newDriAgentDto) => {
+                const previousDriAgent = previousJournal.driAgents.find((quest) => {
+                    return quest.id === newDriAgentDto.id;
+                });
+
+                if (previousDriAgent) {
+                    QuestSyncer.sync(previousDriAgent, newDriAgentDto);
+                }
+            });
+        }
     }
 }
 

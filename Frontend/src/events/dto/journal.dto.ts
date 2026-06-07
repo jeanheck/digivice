@@ -4,4 +4,5 @@ export interface JournalDTO {
     mainQuest?: QuestDTO | null;
     sideQuests?: QuestDTO[];
     legendaryWeapons?: QuestDTO[];
+    driAgents?: QuestDTO[];
 }

@@ -19,10 +19,15 @@ export class JournalPresenter {
             .map((legendaryWeaponRaw) => QuestModalPresenter.getQuestViewModel(journal, legendaryWeaponRaw.id))
             .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
 
+        const driAgentsViewModels = QuestRepository.getDriAgentsRaw()
+            .map((driAgentRaw) => QuestModalPresenter.getQuestViewModel(journal, driAgentRaw.id))
+            .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
+
         return {
             mainQuest: mainQuestViewModel,
             sideQuests: sideQuestsViewModels,
             legendaryWeapons: legendaryWeaponsViewModels,
+            driAgents: driAgentsViewModels,
         };
     }
 }

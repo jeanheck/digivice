@@ -80,6 +80,19 @@ const closeQuestModal = () => {
           @click="openQuestModal"
         />
       </JournalQuestsSection>
+
+      <JournalQuestsSection
+        :title="$t('journal.driAgents')"
+        accent-color="rose"
+      >
+        <JournalQuestCard
+          v-for="driAgent in journalViewModel.driAgents"
+          :key="driAgent.id"
+          :quest="driAgent"
+          display-mode="side"
+          @click="openQuestModal"
+        />
+      </JournalQuestsSection>
     </div>
   </aside>
 

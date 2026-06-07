@@ -4,4 +4,5 @@ export interface Journal {
     mainQuest: Quest | null;
     sideQuests: Quest[];
     legendaryWeapons: Quest[];
+    driAgents: Quest[];
 }

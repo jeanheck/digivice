@@ -1,0 +1,20 @@
+{
+  "driAgentAgumon": {
+    "title": "DRI Agent Agumon",
+    "description": "Recruit Agumon as a DRI Agent.",
+    "steps": {
+      "1": {
+        "description": "Begin the Agumon DRI Agent quest"
+      },
+      "2": {
+        "description": "Obtain Agumon's DNA",
+        "requisites": {
+          "agumonDna": "Agumon DNA"
+        }
+      },
+      "3": {
+        "description": "Complete the Agumon DRI Agent recruitment"
+      }
+    }
+  }
+}

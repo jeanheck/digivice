@@ -4,4 +4,5 @@ export interface JournalViewModel {
     mainQuest: QuestViewModel | null;
     sideQuests: QuestViewModel[];
     legendaryWeapons: QuestViewModel[];
+    driAgents: QuestViewModel[];
 }
