@@ -23,6 +23,10 @@
       "participated": "You participated in this auction",
       "missed": "Unfortunately, you missed this auction"
     },
+    "historyActive": {
+      "timing": "Auction happening now!",
+      "participation": "Go to Cargo Tower to participate!"
+    },
     "closesWhen": {
       "divineBarrier": "the player interacts with the gondola for the first time (Step 6), or the player participates in the auction.",
       "hazardShield": "the player progresses beyond Step 21, or the player participates in the auction.",

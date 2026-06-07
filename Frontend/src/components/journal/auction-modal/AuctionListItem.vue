@@ -31,7 +31,7 @@ const isPastAuction = computed(() => {
 
 const cardClass = computed(() => {
   if (isAvailableNow.value) {
-    return "border-cyan-400/80 bg-[#001a2a] auction-card-active";
+    return "border-cyan-400/80 bg-[#001a2a]";
   }
 
   if (isParticipated.value) {
@@ -62,6 +62,10 @@ const titleClass = computed(() => {
 });
 
 const timingDescriptionClass = computed(() => {
+  if (isAvailableNow.value) {
+    return "text-cyan-200/90";
+  }
+
   if (isMissed.value) {
     return "text-rose-300/70";
   }
@@ -70,6 +74,10 @@ const timingDescriptionClass = computed(() => {
 });
 
 const participationDescriptionClass = computed(() => {
+  if (isAvailableNow.value) {
+    return "text-cyan-300/80";
+  }
+
   if (isParticipated.value) {
     return "text-green-400/90";
   }
@@ -82,6 +90,10 @@ const participationDescriptionClass = computed(() => {
 });
 
 const timingDescription = computed(() => {
+  if (isAvailableNow.value) {
+    return t("auction.historyActive.timing");
+  }
+
   if (isNotYetOccurred.value) {
     return t("auction.historyTiming.upcoming");
   }
@@ -94,6 +106,10 @@ const timingDescription = computed(() => {
 });
 
 const participationDescription = computed(() => {
+  if (isAvailableNow.value) {
+    return t("auction.historyActive.participation");
+  }
+
   if (isParticipated.value) {
     return t("auction.historyParticipation.participated");
   }
@@ -126,7 +142,7 @@ const participationDescription = computed(() => {
         {{ $t(`equipments.${auction.equipmentId}.name`) }}
       </span>
 
-      <span v-if="isAvailableNow" class="text-xs shrink-0 ml-2 text-cyan-300 animate-auction-pulse">◆</span>
+      <span v-if="isAvailableNow" class="text-xs shrink-0 ml-2 text-cyan-300">◆</span>
       <span v-else-if="isParticipated" class="text-green-400 text-xs shrink-0 ml-2">✔</span>
       <span v-else-if="isNotYetOccurred" class="text-xs shrink-0 ml-2">🔒</span>
       <span v-else-if="isMissed" class="text-rose-400/80 text-xs shrink-0 ml-2">✕</span>

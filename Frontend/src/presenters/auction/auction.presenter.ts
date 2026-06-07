@@ -62,9 +62,7 @@ export class AuctionPresenter {
     }
 
     public static getAuctionHistoryViewModels(): AuctionListItemViewModel[] {
-        return this.getAuctionListViewModels().filter((auctionListItemViewModel) => {
-            return auctionListItemViewModel.status !== "availableNow";
-        });
+        return this.getAuctionListViewModels();
     }
 
     public static getActiveAuction(): AuctionListItemViewModel | null {
