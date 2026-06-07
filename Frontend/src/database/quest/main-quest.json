@@ -135,7 +135,7 @@
                 {
                     "location": "0202",
                     "coordinates": {
-                        "x": 54,
+                        "x": 52,
                         "y": 38
                     }
                 }
@@ -382,6 +382,27 @@
             },
             "zoomedLocations": [
                 {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
+                    }
+                },
+                {
+                    "location": "020A",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 91
+                    }
+                },
+                {
+                    "location": "020B",
+                    "coordinates": {
+                        "x": 22,
+                        "y": 83
+                    }
+                },
+                {
                     "location": "0201",
                     "coordinates": {
                         "x": 55,
@@ -416,6 +437,27 @@
             },
             "zoomedLocations": [
                 {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
+                    }
+                },
+                {
+                    "location": "020A",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 91
+                    }
+                },
+                {
+                    "location": "020B",
+                    "coordinates": {
+                        "x": 22,
+                        "y": 83
+                    }
+                },
+                {
                     "location": "0201",
                     "coordinates": {
                         "x": 50,
@@ -432,6 +474,27 @@
                 "y": 43
             },
             "zoomedLocations": [
+                {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
+                    }
+                },
+                {
+                    "location": "020A",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 91
+                    }
+                },
+                {
+                    "location": "020B",
+                    "coordinates": {
+                        "x": 94,
+                        "y": 86
+                    }
+                },
                 {
                     "location": "021B",
                     "coordinates": {
@@ -501,6 +564,13 @@
             },
             "zoomedLocations": [
                 {
+                    "location": "023E",
+                    "coordinates": {
+                        "x": 42,
+                        "y": 12
+                    }
+                },
+                {
                     "location": "0240",
                     "coordinates": {
                         "x": 55,
@@ -559,6 +629,27 @@
             },
             "zoomedLocations": [
                 {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
+                    }
+                },
+                {
+                    "location": "020A",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 91
+                    }
+                },
+                {
+                    "location": "020B",
+                    "coordinates": {
+                        "x": 22,
+                        "y": 83
+                    }
+                },
+                {
                     "location": "0201",
                     "coordinates": {
                         "x": 65,
@@ -575,6 +666,27 @@
                 "y": 43
             },
             "zoomedLocations": [
+                {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
+                    }
+                },
+                {
+                    "location": "020A",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 91
+                    }
+                },
+                {
+                    "location": "020B",
+                    "coordinates": {
+                        "x": 94,
+                        "y": 86
+                    }
+                },
                 {
                     "location": "021B",
                     "coordinates": {
@@ -593,6 +705,13 @@
             },
             "zoomedLocations": [
                 {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 79.5,
+                        "y": 23.5
+                    }
+                },
+                {
                     "location": "0203",
                     "coordinates": {
                         "x": 32,
@@ -610,6 +729,27 @@
             },
             "zoomedLocations": [
                 {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
+                    }
+                },
+                {
+                    "location": "020A",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 91
+                    }
+                },
+                {
+                    "location": "020B",
+                    "coordinates": {
+                        "x": 94,
+                        "y": 86
+                    }
+                },
+                {
                     "location": "021B",
                     "coordinates": {
                         "x": 36,
@@ -626,6 +766,20 @@
                 "y": 43
             },
             "zoomedLocations": [
+                {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
+                    }
+                },
+                {
+                    "location": "020A",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 91
+                    }
+                },
                 {
                     "location": "020B",
                     "coordinates": {

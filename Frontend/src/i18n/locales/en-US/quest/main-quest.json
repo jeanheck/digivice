@@ -124,7 +124,7 @@
             "locationTarget": "Forest Inn Basements"
           },
           "1": {
-            "locationTarget": "Guilmon"
+            "locationTarget": "Tricky Guilmon"
           }
         }
       },
@@ -177,9 +177,18 @@
         }
       },
       "20": {
-        "description": "Speak to Etemon near El Dorado.",
+        "description": "Speak to Etemon near El Dorado",
         "locations": {
           "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka City"
+          },
+          "3": {
             "locationTarget": "Etemon"
           }
         }
@@ -193,23 +202,41 @@
         }
       },
       "22": {
-        "description": "Speak to Etemon near El Dorado ID again.",
+        "description": "Speak to Etemon near El Dorado ID again",
         "locations": {
           "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka City"
+          },
+          "3": {
             "locationTarget": "Etemon"
           }
         }
       },
       "23": {
-        "description": "Talk to Etemon at Asuka Sewers",
+        "description": "Chase Etemon through the Asuka Sewers",
         "locations": {
           "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka Sewers"
+          },
+          "3": {
             "locationTarget": "Etemon"
           }
         }
       },
       "24": {
-        "description": "Talk to Sepkimon at the Shaman House",
+        "description": "Return the mask to Sepkimon at the Shaman's House",
         "locations": {
           "0": {
             "locationTarget": "Sepkimon"
@@ -217,7 +244,7 @@
         }
       },
       "25": {
-        "description": "Talk to Zanbamon in Jungle Grave now that you have the herb.",
+        "description": "Use the Smell Herb to lure Zanbamon out of the Jungle Grave",
         "locations": {
           "0": {
             "locationTarget": "Zanbamon"
@@ -233,15 +260,18 @@
         }
       },
       "27": {
-        "description": "Look for Suzaku Leader to challenge her",
+        "description": "Challenge Leader Suzaku in the Suzaku Hall",
         "locations": {
           "0": {
             "locationTarget": "Suzaku Leader"
+          },
+          "1": {
+            "locationTarget": "Suzaku Hall"
           }
         }
       },
       "28": {
-        "description": "Head towards the inn after defeating Leader Suzaku",
+        "description": "Return to Suzaku Inn after defeating Leader Suzaku",
         "locations": {
           "0": {
             "locationTarget": "Kail"
@@ -260,10 +290,19 @@
         }
       },
       "30": {
-        "description": "Look for the pair of trainers near El Dorado",
+        "description": "Look for the trainers couple near El Dorado",
         "locations": {
           "0": {
-            "locationTarget": "Trainers"
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka City"
+          },
+          "3": {
+            "locationTarget": "Trainers couple"
           }
         }
       },
@@ -271,6 +310,15 @@
         "description": "Go to the place where you last saw Etemon",
         "locations": {
           "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka Sewers"
+          },
+          "3": {
             "locationTarget": "Etemon"
           }
         }
@@ -279,6 +327,9 @@
         "description": "Report your findings to Kail in the Main Lobby",
         "locations": {
           "0": {
+            "locationTarget": "Main Lobby"
+          },
+          "1": {
             "locationTarget": "Kail"
           }
         }
@@ -287,6 +338,15 @@
         "description": "Confront the Mischievous Mat at Asuka Sewers",
         "locations": {
           "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka Sewers"
+          },
+          "3": {
             "locationTarget": "Pernicious Mat"
           }
         }
@@ -295,12 +355,18 @@
         "description": "Return to the Underground Path and find Kail",
         "locations": {
           "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "3": {
             "locationTarget": "Kail"
           }
         }
       },
       "35": {
-        "description": "Enter the Admin Center dressed as Agumon.",
+        "description": "Enter the Admin Center dressed as Agumon",
         "locations": {
           "0": {
             "locationTarget": "Admin Center 1F"
@@ -308,10 +374,10 @@
         }
       },
       "36": {
-        "description": "Find Kail in the Admin Center.",
+        "description": "Find Kail in the Admin Center 2F",
         "locations": {
           "0": {
-            "locationTarget": "Centro Administrativo - 2º Andar"
+            "locationTarget": "Admin Center 2F"
           },
           "1": {
             "locationTarget": "Kail"
@@ -327,7 +393,7 @@
         }
       },
       "38": {
-        "description": "Look for Nami's cat in Bios Swamp.",
+        "description": "Look for Nami's cat in Bios Swamp",
         "locations": {
           "0": {
             "locationTarget": "Lost Cat"
@@ -343,7 +409,7 @@
         }
       },
       "40": {
-        "description": "Look for Baronmon so he can help you with bombs.",
+        "description": "Look for Baronmon so he can help you with bombs",
         "locations": {
           "0": {
             "locationTarget": "Baronmon"
@@ -367,10 +433,10 @@
         }
       },
       "43": {
-        "description": "Grab the digi-egg of sincerity.",
+        "description": "Find the Digi-Egg of Sincerity",
         "locations": {
           "0": {
-            "locationTarget": "Digi-egg of Sincerity"
+            "locationTarget": "Digi-Egg of Sincerity"
           }
         }
       }

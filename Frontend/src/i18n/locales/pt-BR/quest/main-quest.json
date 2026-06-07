@@ -15,7 +15,7 @@
         }
       },
       "2": {
-        "description": "Fale com o Líder Seiryu nas Ruínas Protocolo",
+        "description": "Fale com Líder Seiryu nas Ruínas Protocolo",
         "locations": {
           "0": {
             "locationTarget": "Líder Seiryu"
@@ -23,7 +23,7 @@
         }
       },
       "3": {
-        "description": "Derrote o Master Tyrannomon no Vale Tyranno",
+        "description": "Derrote Master Tyrannomon no Vale Tyranno",
         "locations": {
           "0": {
             "locationTarget": "Master Tyrannomon"
@@ -69,7 +69,7 @@
         }
       },
       "8": {
-        "description": "Fale com o Guilmon na Pousada Asuka: Andar 2 na Cidade Asuka",
+        "description": "Fale com Guilmon na Pousada Asuka: Andar 2 na Cidade Asuka",
         "locations": {
           "0": {
             "locationTarget": "Pousada Asuka: Andar 1"
@@ -83,7 +83,7 @@
         }
       },
       "9": {
-        "description": "Fale com o Guilmon na Pousada Florestal",
+        "description": "Fale com Guilmon na Pousada Florestal",
         "locations": {
           "0": {
             "locationTarget": "Guilmon"
@@ -91,7 +91,7 @@
         }
       },
       "10": {
-        "description": "Fale com o Guilmon Trapaceiro na Torre Zephyr na Cidade Seiryu",
+        "description": "Fale com Guilmon Trapaceiro na Torre Zephyr na Cidade Seiryu",
         "locations": {
           "0": {
             "locationTarget": "Torre Zephyr"
@@ -118,13 +118,13 @@
         }
       },
       "13": {
-        "description": "Fale com o Guilmon Trapaceiro na Pousada Florestal (Subsolo)",
+        "description": "Fale com Guilmon Trapaceiro na Pousada Florestal (Subsolo)",
         "locations": {
           "0": {
             "locationTarget": "Pousada Florestal (Subsolo)"
           },
           "1": {
-            "locationTarget": "Guilmon"
+            "locationTarget": "Guilmon Trapaceiro"
           }
         }
       },
@@ -180,6 +180,15 @@
         "description": "Fale com Etemon perto do El Dorado Id",
         "locations": {
           "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Cidade Asuka"
+          },
+          "3": {
             "locationTarget": "Etemon"
           }
         }
@@ -193,23 +202,41 @@
         }
       },
       "22": {
-        "description": "Fale com o Etemon perto do El Dorado Id novamente",
+        "description": "Fale com Etemon perto do El Dorado Id novamente",
         "locations": {
           "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Cidade Asuka"
+          },
+          "3": {
             "locationTarget": "Etemon"
           }
         }
       },
       "23": {
-        "description": "Fale com o Etemon nos Esgotos Asuka",
+        "description": "Persiga Etemon nos Esgotos Asuka",
         "locations": {
           "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Esgotos Asuka"
+          },
+          "3": {
             "locationTarget": "Etemon"
           }
         }
       },
       "24": {
-        "description": "Fale com o Sepkimon em Casa Xamã",
+        "description": "Retorne a máscara ao Sepkimon na Casa Xamã",
         "locations": {
           "0": {
             "locationTarget": "Sepkimon"
@@ -217,7 +244,7 @@
         }
       },
       "25": {
-        "description": "Fale com o Zanbamon em Jungle Grave agora que você tem a erva",
+        "description": "Use a Erva Fedida para tirar Zanbamon da Selva Sepultura",
         "locations": {
           "0": {
             "locationTarget": "Zanbamon"
@@ -233,15 +260,18 @@
         }
       },
       "27": {
-        "description": "Procure pela Líder Suzaku para desafiá-la",
+        "description": "Desafie a Líder Suzaku no Salão Suzaku",
         "locations": {
           "0": {
+            "locationTarget": "Salão Suzaku"
+          },
+          "1": {
             "locationTarget": "Líder Suzaku"
           }
         }
       },
       "28": {
-        "description": "Siga em direção à pousada após derrotar a Líder Suzaku",
+        "description": "Retorne à Pousada Suzaku após derrotar a Líder Suzaku",
         "locations": {
           "0": {
             "locationTarget": "Kail"
@@ -263,7 +293,16 @@
         "description": "Procure pelo casal de treinadores perto do El Dorado",
         "locations": {
           "0": {
-            "locationTarget": "Treinadores"
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Cidade Asuka"
+          },
+          "3": {
+            "locationTarget": "Casal de treinadores"
           }
         }
       },
@@ -271,6 +310,15 @@
         "description": "Vá para onde você viu Etemon pela última vez",
         "locations": {
           "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Esgotos Asuka"
+          },
+          "3": {
             "locationTarget": "Etemon"
           }
         }
@@ -279,6 +327,9 @@
         "description": "Relate suas descobertas a Kail no Salão Principal",
         "locations": {
           "0": {
+            "locationTarget": "Salão Principal"
+          },
+          "1": {
             "locationTarget": "Kail"
           }
         }
@@ -287,6 +338,15 @@
         "description": "Confronte o Pernicioso Mat nos Esgotos Asuka",
         "locations": {
           "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Esgotos Asuka"
+          },
+          "3": {
             "locationTarget": "Pernicioso Mat"
           }
         }
@@ -295,6 +355,12 @@
         "description": "Volte para o Caminho Subterrâneo e encontre Kail",
         "locations": {
           "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
             "locationTarget": "Kail"
           }
         }
@@ -308,7 +374,7 @@
         }
       },
       "36": {
-        "description": "Encontre a Kail no Admin Center",
+        "description": "Encontre a Kail no Centro Administrativo - 2º Andar",
         "locations": {
           "0": {
             "locationTarget": "Centro Administrativo - 2º Andar"
@@ -367,10 +433,10 @@
         }
       },
       "43": {
-        "description": "Pegue o digi-ovo da sinceridade",
+        "description": "Encontre o Digi-Ovo da Sinceridade",
         "locations": {
           "0": {
-            "locationTarget": "Digi-ovo da Sinceridade"
+            "locationTarget": "Digi-Ovo da Sinceridade"
           }
         }
       }
