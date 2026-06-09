@@ -14,6 +14,8 @@
     "searchDigimon": "Type a Digievolution name...",
     "searchNoResults": "No digievolution found",
     "mpCost": "MP Cost",
+    "learnAt": "Learn at",
+    "loadAt": "Load at",
     "element": "Element"
   }
 }

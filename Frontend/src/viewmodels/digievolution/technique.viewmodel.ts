@@ -1,7 +1,7 @@
 export interface TechniqueViewModel {
     id: string;
     learnLevel: number;
-    loadedLevel: number;
+    loadedLevel: number | null;
     type: string;
     element: string;
     elementStrength: number;

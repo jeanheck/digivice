@@ -63,7 +63,7 @@ const UnlockedTechniqueElementColorClass: Record<string, string> = {
     thunder: "text-yellow-200",
     dark: "text-purple-300",
     machine: "text-gray-300",
-    none: "text-white/80",
+    none: "text-white/40",
 };
 
 function getTechniqueElementColorClass(element: string): string {
@@ -88,7 +88,6 @@ function getTechniqueElementColorClass(element: string): string {
     <span
       v-if="technique.isSignature"
       class="absolute top-1 right-2 text-[10px] font-bold tracking-widest"
-      :class="technique.isUnlocked ? 'text-yellow-300' : 'text-yellow-400'"
     >
       ⭐
     </span>
@@ -103,7 +102,7 @@ function getTechniqueElementColorClass(element: string): string {
     </span>
 
     <div class="flex-1 min-w-0">
-      <div class="flex items-center gap-1 mb-0.5">
+      <div class="mb-0.5">
         <span
           class="font-bold tracking-wide"
           :class="
@@ -114,16 +113,15 @@ function getTechniqueElementColorClass(element: string): string {
         >
           {{ t(`technique.${technique.id}.name`) }}
         </span>
-        <span
-          class="text-[10px] ml-1"
-          :class="technique.isUnlocked ? 'text-cyan-300' : 'text-cyan-400/80'"
-        >{{ t("digievolution.lv") }}.{{ technique.learnLevel }}</span>
       </div>
 
-      <p
-        class="text-[10px] leading-snug"
-        :class="technique.isUnlocked ? 'text-white/75' : 'text-white/50'"
-      >{{ t(`technique.${technique.id}.description`) }}</p>
+      <div
+        class="flex gap-3 mb-0.5 text-[10px]"
+        :class="technique.isUnlocked ? 'text-cyan-500' : 'text-cyan-400/80'"
+      >
+        <span>{{ t("digievolution.learnAt") }}: {{ t("digievolution.lv") }}.{{ technique.learnLevel }}</span>
+        <span v-if="technique.loadedLevel !== null">| {{ t("digievolution.loadAt") }}: {{ t("digievolution.lv") }}.{{ technique.loadedLevel }}</span>
+      </div>
 
       <div class="flex gap-3 mt-1 text-[9px] uppercase tracking-wider">
         <span :class="getTechniqueElementColorClass(technique.element)">
@@ -131,6 +129,11 @@ function getTechniqueElementColorClass(element: string): string {
         </span>
         <span :class="technique.isUnlocked ? 'text-blue-300' : 'text-blue-300/70'">{{ t("digievolution.mpCost") }}: {{ technique.mp }}</span>
       </div>
+
+      <p
+        class="text-[10px] leading-tight min-h-5.5"
+        :class="technique.isUnlocked ? 'text-white/85' : 'text-white/50'"
+      >{{ t(`technique.${technique.id}.description`) }}</p>
     </div>
 
     <Tooltip

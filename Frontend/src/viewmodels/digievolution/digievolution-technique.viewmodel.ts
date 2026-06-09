@@ -1,5 +1,5 @@
 export interface DigievolutionTechniqueViewModel {
     id: string;
     learnLevel: number;
-    loadedLevel: number;
+    loadedLevel: number | null;
 }
