@@ -476,7 +476,7 @@
         "power": 250
     },
     "thunderField": {
-        "type": "set field",
+        "type": "field",
         "element": "thunder",
         "elementStrength": 0,
         "mp": 100,
@@ -742,7 +742,7 @@
         "power": 300
     },
     "iceField": {
-        "type": "set field",
+        "type": "field",
         "element": "ice",
         "elementStrength": 0,
         "mp": 100,
@@ -763,7 +763,7 @@
         "power": 32
     },
     "windField": {
-        "type": "set field",
+        "type": "field",
         "element": "wind",
         "elementStrength": 0,
         "mp": 100,
@@ -784,7 +784,7 @@
         "power": 500
     },
     "metalField": {
-        "type": "set field",
+        "type": "field",
         "element": "machine",
         "elementStrength": 0,
         "mp": 100,
@@ -819,7 +819,7 @@
         "power": 0
     },
     "waterField": {
-        "type": "set field",
+        "type": "field",
         "element": "water",
         "elementStrength": 0,
         "mp": 100,
@@ -847,7 +847,7 @@
         "power": 420
     },
     "fireField": {
-        "type": "set field",
+        "type": "field",
         "element": "fire",
         "elementStrength": 0,
         "mp": 100,
@@ -896,7 +896,7 @@
         "power": 300
     },
     "darkField": {
-        "type": "set field",
+        "type": "field",
         "element": "dark",
         "elementStrength": 0,
         "mp": 100,

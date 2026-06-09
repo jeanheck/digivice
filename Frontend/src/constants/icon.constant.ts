@@ -30,4 +30,5 @@ export const IconConstant: Record<ConstantsType, string> = {
     [Constant.magical]: "🧙‍♂️",
     [Constant.heal]: "💚",
     [Constant.support]: "🟡",
+    [Constant.field]: "🔵"
 };

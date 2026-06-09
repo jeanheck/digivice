@@ -3,6 +3,7 @@
     "physical": "Físico",
     "magical": "Mágico",
     "heal": "Cura",
-    "support": "Suporte"
+    "support": "Suporte",
+    "field": "Campo"
   }
 }
