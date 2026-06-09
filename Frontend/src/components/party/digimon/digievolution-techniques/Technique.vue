@@ -22,21 +22,31 @@ function getElementLabel(element: string): string {
 }
 
 const tooltipPlacement = "below" as const;
-const tooltipPosition = useTooltipPosition(150);
-const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+const typeTooltipMaxWidth = 200;
+const badgeTooltipMaxWidth = 320;
+const tooltipPosition = useTooltipPosition(typeTooltipMaxWidth);
+const { show: tooltipShow, x: tooltipX, y: tooltipY, maxWidth: tooltipMaxWidth, showAt, move, hide } = tooltipPosition;
 const tooltipTitle = ref("");
+
+const showTooltip = (event: MouseEvent, title: string, maxWidth: number) => {
+  tooltipTitle.value = title;
+  showAt(event, { maxWidth, placement: tooltipPlacement });
+};
 
 const showTypeTooltip = (event: MouseEvent, type: string) => {
   const normalizedType = (type || "physical").toLowerCase();
-  tooltipTitle.value = t(`techniqueTypes.${normalizedType}`);
-  showAt(event, { maxWidth: 150, placement: tooltipPlacement });
+  showTooltip(event, t(`techniqueTypes.${normalizedType}`), typeTooltipMaxWidth);
 };
 
-const hideTypeTooltip = () => {
+const showBadgeTooltip = (event: MouseEvent, i18nKey: string) => {
+  showTooltip(event, t(i18nKey), badgeTooltipMaxWidth);
+};
+
+const hideTooltip = () => {
   hide();
 };
 
-const moveTypeTooltip = (event: MouseEvent) => {
+const moveTooltip = (event: MouseEvent) => {
   move(event, tooltipPlacement);
 };
 
@@ -85,18 +95,42 @@ function getTechniqueElementColorClass(element: string): string {
       'bg-[#001a33]/80 border-[#0077ff]/55': !technique.isSignature && technique.isUnlocked,
     }"
   >
-    <span
-      v-if="technique.isSignature"
-      class="absolute top-1 right-2 text-[10px] font-bold tracking-widest"
-    >
-      ⭐
-    </span>
+    <div class="absolute top-1 right-2 flex flex-col items-end gap-0.5 font-bold tracking-widest">
+      <span
+        class="cursor-help whitespace-nowrap flex items-center gap-0.5 text-[9px]"
+        @mouseenter="showBadgeTooltip($event, 'digievolution.levelToLearn')"
+        @mousemove="moveTooltip"
+        @mouseleave="hideTooltip"
+      >
+        <span class="text-[14px] leading-none">📜</span>
+        <span>{{ t("digievolution.lv") }}.{{ technique.learnLevel }}</span>
+      </span>
+
+      <span
+        v-if="technique.loadedLevel !== null"
+        class="cursor-help whitespace-nowrap flex items-center gap-0.5 text-[9px]"
+        @mouseenter="showBadgeTooltip($event, 'digievolution.levelToLoad')"
+        @mousemove="moveTooltip"
+        @mouseleave="hideTooltip"
+      >
+        <span class="text-[14px] leading-none">🫴</span>
+        <span>{{ t("digievolution.lv") }}.{{ technique.loadedLevel }}</span>
+      </span>
+
+      <span
+        v-else-if="technique.isSignature"
+        class="cursor-help text-base leading-none"
+        @mouseenter="showBadgeTooltip($event, 'digievolution.signatureTechnique')"
+        @mousemove="moveTooltip"
+        @mouseleave="hideTooltip"
+      >⭐</span>
+    </div>
 
     <span
       class="text-base leading-none mt-px shrink-0 cursor-help tooltip-anchor"
       @mouseenter="showTypeTooltip($event, technique.type)"
-      @mousemove="moveTypeTooltip"
-      @mouseleave="hideTypeTooltip"
+      @mousemove="moveTooltip"
+      @mouseleave="hideTooltip"
     >
       {{ icon }}
     </span>
@@ -113,14 +147,6 @@ function getTechniqueElementColorClass(element: string): string {
         >
           {{ t(`technique.${technique.id}.name`) }}
         </span>
-      </div>
-
-      <div
-        class="flex gap-3 mb-0.5 text-[10px]"
-        :class="technique.isUnlocked ? 'text-cyan-500' : 'text-cyan-400/80'"
-      >
-        <span>{{ t("digievolution.learnAt") }}: {{ t("digievolution.lv") }}.{{ technique.learnLevel }}</span>
-        <span v-if="technique.loadedLevel !== null">| {{ t("digievolution.loadAt") }}: {{ t("digievolution.lv") }}.{{ technique.loadedLevel }}</span>
       </div>
 
       <div class="flex gap-3 mt-1 text-[9px] uppercase tracking-wider">
@@ -141,7 +167,7 @@ function getTechniqueElementColorClass(element: string): string {
       :x="tooltipX"
       :y="tooltipY"
       :title="tooltipTitle"
-      :max-width="150"
+      :max-width="tooltipMaxWidth"
       placement="below"
     />
   </div>

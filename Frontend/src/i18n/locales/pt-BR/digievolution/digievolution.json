@@ -14,8 +14,9 @@
     "searchDigimon": "Digite o nome de uma Digievolução...",
     "searchNoResults": "Nenhuma digievolução encontrada",
     "mpCost": "Custo de MP",
-    "learnAt": "Aprende",
-    "loadAt": "Carrega",
+    "levelToLearn": "Nível para aprender",
+    "levelToLoad": "Nível para carregar",
+    "signatureTechnique": "Técnica Assinatura",
     "element": "Elemento"
   }
 }

@@ -14,8 +14,9 @@
     "searchDigimon": "Type a Digievolution name...",
     "searchNoResults": "No digievolution found",
     "mpCost": "MP Cost",
-    "learnAt": "Learn at",
-    "loadAt": "Load at",
+    "levelToLearn": "Level to Learn",
+    "levelToLoad": "Level to Load",
+    "signatureTechnique": "Signature Technique",
     "element": "Element"
   }
 }

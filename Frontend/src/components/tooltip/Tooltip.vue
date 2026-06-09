@@ -22,7 +22,7 @@ withDefaults(
     <Transition name="fade">
       <div
         v-if="show"
-        class="fixed z-9999 pointer-events-none p-3 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] flex flex-col gap-1 backdrop-blur-sm"
+        class="fixed z-9999 pointer-events-none p-3 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] flex flex-col gap-1 backdrop-blur-sm w-max"
         :style="{
           top: `${y}px`,
           left: `${x}px`,
@@ -32,7 +32,7 @@ withDefaults(
       >
         <div
           v-if="title"
-          class="font-bold text-yellow-300 text-sm border-b border-[#0066cc]/50 pb-1 mb-1 shadow-black shadow-text uppercase tracking-wider text-center"
+          class="font-bold text-yellow-300 text-sm border-b border-[#0066cc]/50 pb-1 mb-1 shadow-black shadow-text uppercase tracking-wider text-center whitespace-nowrap"
         >
           {{ title }}
         </div>
