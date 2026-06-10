@@ -18,14 +18,17 @@ public class DuckstationConnector(
             return DuckstationConnectionStatus.ConnectionLost;
         }
 
-        if (!memoryReader.IsConnected && !memoryReader.TryConnect())
+        if (!memoryReader.IsConnected)
         {
-            eventDispatcherService.DispatchEmulatorConnectionStatus(false);
-            return DuckstationConnectionStatus.WaitingForEmulator;
-        }
+            if (!memoryReader.TryConnect())
+            {
+                eventDispatcherService.DispatchEmulatorConnectionStatus(false);
+                return DuckstationConnectionStatus.WaitingForEmulator;
+            }
 
-        Serilog.Log.Information("Connected to DuckStation.");
-        eventDispatcherService.DispatchEmulatorConnectionStatus(true);
+            Serilog.Log.Information("Connected to DuckStation.");
+            eventDispatcherService.DispatchEmulatorConnectionStatus(true);
+        }
 
         return DuckstationConnectionStatus.Ready;
     }
