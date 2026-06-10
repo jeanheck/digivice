@@ -9,15 +9,13 @@ public sealed class DuckstationConnector(
     IMemoryProvider memoryProvider,
     IConfiguration configuration) : IDuckstationConnector
 {
-    private IMemoryAccessor? accessor;
-    private int? connectedProcessId;
-
     public bool IsConnected { get; private set; }
-    public IMemoryAccessor? Accessor => accessor;
+    public IMemoryAccessor? Accessor { get; private set; }
+    private int? ConnectedProcessId { get; set; }
 
     public bool IsConnectionAlive()
     {
-        if (!IsConnected || accessor == null || connectedProcessId is null)
+        if (!IsConnected || Accessor == null || ConnectedProcessId is null)
         {
             return false;
         }
@@ -29,7 +27,7 @@ public sealed class DuckstationConnector(
         }
 
         var currentProcessId = processService.GetProcessIdByName(emulatorName);
-        return currentProcessId == connectedProcessId;
+        return currentProcessId == ConnectedProcessId;
     }
 
     public bool TryConnect()
@@ -56,15 +54,15 @@ public sealed class DuckstationConnector(
 
             string duckstationMapName = $"duckstation_{processId}";
 
-            accessor = memoryProvider.OpenExisting(duckstationMapName);
+            Accessor = memoryProvider.OpenExisting(duckstationMapName);
 
-            if (accessor == null)
+            if (Accessor == null)
             {
                 IsConnected = false;
                 return false;
             }
 
-            connectedProcessId = processId;
+            ConnectedProcessId = processId;
             IsConnected = true;
             Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
             return true;
@@ -78,9 +76,9 @@ public sealed class DuckstationConnector(
 
     public void Disconnect()
     {
-        accessor?.Dispose();
-        accessor = null;
-        connectedProcessId = null;
+        Accessor?.Dispose();
+        Accessor = null;
+        ConnectedProcessId = null;
         IsConnected = false;
     }
 
