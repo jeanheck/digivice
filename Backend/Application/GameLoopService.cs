@@ -2,6 +2,7 @@ using Backend.Diagnostics;
 using Backend.Events.Factory;
 using Backend.Events.Services;
 using Backend.Events.States;
+using Backend.Memory;
 
 namespace Backend.Application
 {
@@ -40,12 +41,14 @@ namespace Backend.Application
 
                     gameStateStore.UpdateState(newState);
 
-                    if (duckstationConnectionCoordinator.HandleSilentReadFailure()
-                        && isDebuggingEnabled
-                        && !Console.IsOutputRedirected)
+                    if (isDebuggingEnabled && !Console.IsOutputRedirected)
                     {
                         debugConsoleRenderer.Render(newState);
                     }
+                }
+                catch (MemoryReadException)
+                {
+                    duckstationConnectionCoordinator.HandleMemoryReadFailure();
                 }
                 catch (OperationCanceledException)
                 {

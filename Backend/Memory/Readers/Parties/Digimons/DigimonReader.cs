@@ -16,7 +16,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
         {
             var memoryBlock = memoryReader.ReadBytes(digimonAddress.Address, DigimonMemoryBlockSize);
 
-            if (memoryBlock == null || memoryBlock.Length < DigimonMemoryBlockSize)
+            if (memoryBlock.Length < DigimonMemoryBlockSize)
             {
                 return null;
             }
@@ -43,7 +43,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
 
             return new DigimonResource
             {
-                ActiveDigievolutionId = activeDigievolutionId ?? 0,
+                ActiveDigievolutionId = activeDigievolutionId,
                 Experience = memoryBlockReader.ReadInt32(digimonStatusAddresses.Experience),
                 Level = memoryBlockReader.ReadInt16(digimonStatusAddresses.Level),
                 Vitals = new VitalsResource

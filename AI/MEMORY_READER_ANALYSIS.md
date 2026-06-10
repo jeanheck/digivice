@@ -7,34 +7,35 @@
 
 ## Resumo executivo
 
-`MemoryReader` é o **ponto de acoplamento entre o backend e a RAM do Duckstation**. Hoje ela concentra **lifecycle de conexão**, **descoberta do emulador**, **política de erro de I/O** e **leitura bruta de memória** — tudo numa única classe.
+`MemoryReader` é o **cliente de I/O** sobre a RAM do Duckstation. A **sessão** (connect/disconnect/alive) já foi extraída para `DuckstationConnector`, orquestrada pelo `DuckstationConnectionCoordinator`.
 
-Há responsabilidade demais aqui, e isso explica parte da complexidade que apareceu no `DuckstationConnector` e no `GameLoopService` (checks pós-compose, falhas silenciosas, etc.).
+O que ainda concentra complexidade: **política de erro silenciosa** (`null`/`0` + `InvalidateConnection`) e **`ReadByteSafe`** (lógica de domínio na camada de infra). Passos 4 e 5 do plano abaixo endereçam isso.
 
 ---
 
 ## Papel atual no sistema
 
 ```
-DuckstationConnector / GameLoop
+GameLoopService
          │
          ▼
-    IMemoryReader  ◄── singleton, estado mutável
-         │
-    ┌────┴────┐
-    │         │
- TryConnect   ReadInt32 / ReadBytes / ReadByteSafe ...
- IsConnectionAlive
- Disconnect
+DuckstationConnectionCoordinator  ◄── connect/disconnect, eventos, HandleSilentReadFailure
          │
          ▼
- IProcessService + IMemoryProvider + IConfiguration
+IDuckstationConnector (DuckstationConnector)  ◄── singleton, sessão Duckstation
+         │
+    TryConnect / Disconnect / IsConnectionAlive / InvalidateConnection
+         │
+         ▼
+    IMemoryReader (MemoryReader)  ◄── thin reader sobre sessão
+         │
+    ReadInt32 / ReadInt16 / ReadBytes / ReadByteSafe
          │
          ▼
  PlayerReader, DigimonReader, StepReader, AuctionReader ...
 ```
 
-Registrada como **singleton** em DI. Todos os domain readers (`PlayerReader`, `DigimonReader`, etc.) dependem da mesma instância — o que faz sentido enquanto existir **uma** sessão com o emulador por vez.
+Registrados como **singleton** em DI. Todos os domain readers dependem de `IMemoryReader`; lifecycle de conexão ficou em `IDuckstationConnector`, orquestrado pelo `DuckstationConnectionCoordinator`.
 
 ---
 
@@ -118,7 +119,9 @@ Só compara PID do processo. **Não valida** se o mapping/acessor ainda funciona
 
 ### 4. Duplicação de código nos `Read*`
 
-O bloco guard + try/catch + log + `IsConnected = false` está copiado 3 vezes. Manutenção frágil.
+~~O bloco guard + try/catch + log + `IsConnected = false` está copiado 3 vezes. Manutenção frágil.~~
+
+Parcialmente endereçado: `GetConnectedAccessor`, `HandleReadFailure` e `TryRead<T>` centralizam guard + erro em `ReadInt32`/`ReadInt16`; `ReadBytes` reutiliza os helpers. Política de erro ainda é a mesma (passo 4 pendente).
 
 ### 5. `TryConnect` engole exceções sem log
 
@@ -145,7 +148,9 @@ Isso é lógica de **domain reader** (como `StepReader` já faz composição de 
 
 ### 7. Interface `IMemoryReader` inflada
 
-Quem só lê memória (`PlayerReader`) vê métodos de conexão. Quem orquestra conexão (`DuckstationConnector`) vê métodos de leitura. **Interface Segregation Principle** violado.
+~~Quem só lê memória (`PlayerReader`) vê métodos de conexão. Quem orquestra conexão (`DuckstationConnector`) vê métodos de leitura.~~
+
+Parcialmente resolvido: conexão em `IDuckstationConnector`; `IMemoryReader` ainda expõe `ReadByteSafe` (domínio — passo 5 pendente).
 
 ### 8. Estado mutável em serviço singleton
 
@@ -160,24 +165,15 @@ Funciona hoje (um loop, uma sessão), mas:
 
 ### 10. Log duplicado de conexão
 
-`MemoryReader.TryConnect` loga `"Connected to DuckStation! Mapping found..."` e o `DuckstationConnector` loga `"Connected to DuckStation."` — ruído duplicado na reconexão.
+`DuckstationConnector.TryConnect` loga sucesso ao conectar. Ruído baixo; sem ação pendente.
 
 ---
 
 ## Problema relacionado fora da classe (mas afeta confiabilidade)
 
-Em `WindowsMemoryProvider.OpenExisting`:
+~~Em `WindowsMemoryProvider.OpenExisting` o `MemoryMappedFile` era descartado ao retornar enquanto o accessor continuava em uso.~~
 
-```csharp
-using var memoryMappedFile = MemoryMappedFile.OpenExisting(mapName);
-var accessor = memoryMappedFile.CreateViewAccessor();
-return new WindowsMemoryAccessor(accessor);
-// memoryMappedFile é disposed aqui ao sair do método
-```
-
-O `MemoryMappedFile` é descartado ao retornar, mas o `MemoryMappedViewAccessor` continua em uso. Isso **pode** causar leituras instáveis ou falhas intermitentes — e alimentar exatamente o tipo de erro silencioso que `MemoryReader` trata com `IsConnected = false`.
-
-**Prioridade:** investigar e corrigir antes ou junto da refatoração do `MemoryReader`. Ver discussão em sessão de dev ou documento dedicado quando a correção for feita.
+**Corrigido** no passo 1 da refatoração.
 
 ---
 
@@ -199,30 +195,86 @@ Enquanto **conexão e leitura** morarem juntos, qualquer mudança de política d
 ### Separação mínima recomendada
 
 ```
-IDuckstationSession          IMemoryReader (ou IMemorySessionReader)
-├── TryConnect()             ├── ReadInt32(address)
-├── Disconnect()             ├── ReadInt16(address)
-├── IsConnected              └── ReadBytes(address, length)
+IDuckstationConnector              IMemoryReader
+├── TryConnect()                   ├── ReadInt32(address)
+├── Disconnect()                   ├── ReadInt16(address)
+├── IsConnected                    └── ReadBytes(address, length)
 ├── IsConnectionAlive()
-└── expõe/leasing do accessor
+├── InvalidateConnection()
+└── Accessor
 ```
 
-- **Session** — processo, mapping, PID, lifecycle. Sem métodos `Read*`.
-- **Reader** — só I/O sobre sessão ativa. Sem `TryConnect`.
-- **`ReadByteSafe`** — mover para helper/reader de domínio (`StepReader`, `AuctionReader`).
-- **Política de falha** — decidir num lugar só:
-  - opção A: leitura lança `MemoryReadException` → session trata
-  - opção B: leitura retorna `Result<T>` → session decide desconectar
+- **Connector** — processo, mapping, PID, lifecycle. Sem métodos `Read*`.
+- **MemoryReader** — só I/O sobre sessão ativa. Sem `TryConnect`.
+- **`ReadByteSafe`** — sair de `IMemoryReader`; lógica compartilhada via helper de domínio (passo 5).
+- **Política de falha** — **opção A escolhida** (jun/2026):
+  - ~~opção A: leitura lança `MemoryReadException` → sessão trata~~ **← adotada**
+  - opção B: leitura retorna `Result<T>` → sessão decide desconectar
   - opção C (atual, pior): `null`/`0` + flag mutável espalhada
 
 ### Ordem de refatoração sugerida
 
 1. ~~Investigar/corrigir lifetime do `MemoryMappedFile` em `WindowsMemoryProvider`~~ ✅
 2. ~~Extrair `DuckstationConnector` (connect/disconnect/alive) de `MemoryReader`~~ ✅
-3. ~~Deixar `MemoryReader` só como thin reader sobre sessão~~ ✅
-4. Unificar política de erro de I/O
-5. Mover `ReadByteSafe` para domain layer
-6. ~~Segregar interfaces (`IDuckstationConnector` vs `IMemoryReader`)~~ ✅ (parcial — coordinator renomeado para `DuckstationConnectionCoordinator`)
+3. ~~Deixar `MemoryReader` só como thin reader sobre sessão~~ ✅ (inclui helpers `TryRead`, `GetConnectedAccessor`, `HandleReadFailure`)
+4. ~~**Unificar política de erro de I/O** — opção A (`MemoryReadException`)~~ ✅
+5. Mover `ReadByteSafe` para domain layer — **próximo passo**
+6. ~~Segregar interfaces (`IDuckstationConnector` vs `IMemoryReader`)~~ ✅ (parcial — `DuckstationConnectionCoordinator` orquestra conexão)
+
+---
+
+### Passo 4 — Política de erro (opção A): plano de implementação
+
+**Decisão:** falha de I/O na leitura lança `MemoryReadException`. Quem trata desconexão/eventos é a camada de sessão/coordinator — não o reader retornando `null`/`0` silenciosamente.
+
+**Comportamento alvo:**
+
+| Situação | Comportamento |
+|----------|---------------|
+| Desconectado antes da leitura | `MemoryReadException` (sessão indisponível) |
+| Erro de I/O no accessor | `MemoryReadException` (inner exception preservada) |
+| Leitura bem-sucedida | retorna valor (`int`, `short`, `byte[]`) — **não nullable** |
+| Domain reader recebe exceção | propaga até quem orquestra o tick |
+
+**Arquivos / mudanças:**
+
+1. **`MemoryReadException`** — nova exceção de domínio/infra (ex.: `Backend/Memory/MemoryReadException.cs`).
+2. **`MemoryReader`** — remover retorno `null` por falha; remover `InvalidateConnection()` de dentro do reader; lançar `MemoryReadException` em falha/desconectado; manter log de erro antes de lançar.
+3. **`IMemoryReader`** — assinaturas passam a retornar tipos não anuláveis (`int`, `short`, `byte[]`); documentar que lança `MemoryReadException`.
+4. **Domain readers** (`PlayerReader`, `DigimonReader`, etc.) — tratar exceção ou deixar propagar conforme cada caso (ex.: `DigimonReader` hoje checa `memoryBlock == null`; passará a usar try/catch ou deixar subir).
+5. **`DuckstationConnectionCoordinator` / `GameLoopService`** — capturar `MemoryReadException` no tick (substituir/complementar `HandleSilentReadFailure`); chamar `MarkDuckstationDisconnected()` / `Disconnect()` + evento `false`.
+6. **`InvalidateConnection`** — revisar se ainda é necessário ou se `Disconnect()` no coordinator basta após opção A.
+7. **Testes** — atualizar `MemoryReaderTests` e leitores afetados; cenários: desconectado, I/O error, sucesso.
+
+**Fora de escopo deste passo:** mover `ReadByteSafe` (passo 5); expandir `IsConnectionAlive` com probe de mapping.
+
+---
+
+### Passo 5 — `ReadByteSafe` na domain layer: plano de implementação
+
+**Depende do passo 4.** Só implementar depois que `ReadBytes` tiver política de erro explícita.
+
+**Motivo:** `ReadByteSafe` mistura I/O com regras de domínio (`address == 0`, bitmask, retorno `0` em falha). Não pertence a `MemoryReader`/`IMemoryReader`.
+
+**Consumidores atuais:** `StepReader`, `AuctionReader`, `RequisiteReader`.
+
+**Abordagem — sem duplicar código em três readers:**
+
+```
+IMemoryReader.ReadBytes(address, 1)   ← I/O puro (+ MemoryReadException)
+        ↓
+FlagByteHelper (estático, stateless)    ← address==0, bitmask simples
+        ↓
+StepReader / AuctionReader / RequisiteReader
+```
+
+- **`FlagByteHelper`** — helper compartilhado (ex.: `Backend/Memory/Readers/Helpers/FlagByteHelper.cs`); métodos estáticos; chama `IMemoryReader.ReadBytes`; aplica `address == 0` e bitmask opcional.
+- **`StepReader`** — delega casos simples ao helper; mantém `ReadValue` com lógica **específica** de múltiplas bitmasks (AND).
+- **`AuctionReader` / `RequisiteReader`** — delegam ao helper.
+- **`IMemoryReader`** — remover `ReadByteSafe`.
+- **Testes** — mover/adaptar casos de `MemoryReaderTests` para helper + readers de domínio.
+
+**Analogia:** mesmo princípio de separação do `MemoryBlockReader` (I/O vs interpretação), mas sem bloco contíguo — flags espalhadas na RAM usam helper leve, não outra classe de infra.
 
 ---
 
@@ -230,18 +282,18 @@ IDuckstationSession          IMemoryReader (ou IMemorySessionReader)
 
 | Critério | Nota | Comentário |
 |----------|------|------------|
-| Single Responsibility | ⚠️ Baixo | Conexão + I/O + domínio |
+| Single Responsibility | ⚠️ Médio | Sessão separada; `ReadByteSafe` ainda mistura domínio |
 | Testabilidade | ✅ Alto | Bem coberta |
-| Consistência de API | ⚠️ Baixo | `null` vs `0`, semântica ambígua |
-| Acoplamento | ⚠️ Médio | Config + processo + I/O juntos |
-| Impacto na conexão | ⚠️ Alto | Falhas silenciosas propagam complexidade |
-| Alinhamento CODE_RULES | ⚠️ Parcial | Readers deveriam ser stateless; esta é stateful por natureza — mas deveria ser **só** session, não reader+session |
-| Manutenibilidade | ⚠️ Médio | Duplicação nos `Read*`, interface grande |
+| Consistência de API | ⚠️ Baixo | `null` vs `0` — passo 4 (opção A) endereça |
+| Acoplamento | ✅ Médio-alto | Connector vs reader segregados |
+| Impacto na conexão | ⚠️ Médio | `HandleSilentReadFailure` até passo 4 |
+| Alinhamento CODE_RULES | ⚠️ Parcial | Reader stateless exceto efeito colateral de `InvalidateConnection` |
+| Manutenibilidade | ✅ Médio-alto | `TryRead` centraliza guard/erro; passo 4 unifica política |
 
 ---
 
 ## Conclusão
 
-`MemoryReader` funciona e é bem testada, mas é um **facade acidental** que mistura três papéis: **gerenciador de sessão Duckstation**, **cliente de I/O** e **utilitário de domínio**. Isso não é só “organização de código” — é a raiz de comportamentos difíceis de raciocinar (falha silenciosa, checks redundantes, estado inconsistente entre leituras).
+A refatoração estrutural (passos 1–3 e 6 parcial) já separou **sessão Duckstation** (`DuckstationConnector`) de **I/O** (`MemoryReader`). O que resta é tornar a **política de erro explícita** (passo 4, opção A) e retirar **lógica de domínio** do `ReadByteSafe` (passo 5).
 
-Refatorar aqui primeiro **desbloqueia** simplificar o `DuckstationConnector` depois: ele passaria a falar com uma sessão clara, com política de erro explícita, em vez de reagir a efeitos colaterais escondidos dentro dos `Read*`.
+Com a opção A, o `GameLoopService` deixa de inferir sessão morta via `HandleSilentReadFailure` + `IsConnected`; passa a reagir a `MemoryReadException` num único ponto. Isso simplifica o coordinator e elimina estados intermediários (`InvalidateConnection` com accessor zumbi).

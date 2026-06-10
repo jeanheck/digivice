@@ -38,15 +38,9 @@ public class DuckstationConnectionCoordinator(
         MarkDuckstationDisconnected();
     }
 
-    public bool HandleSilentReadFailure()
+    public void HandleMemoryReadFailure()
     {
-        if (duckstationConnector.IsConnected)
-        {
-            return true;
-        }
-
         MarkDuckstationDisconnected();
-        return false;
     }
 
     private void MarkDuckstationDisconnected()

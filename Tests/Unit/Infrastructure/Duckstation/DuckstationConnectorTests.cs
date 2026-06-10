@@ -253,32 +253,5 @@ public class DuckstationConnectorTests
         Assert.False(result);
         Assert.False(connector.IsConnected);
     }
-
-    [Fact]
-    public void InvalidateConnection_ShouldSetIsConnectedFalse_WithoutDisposingAccessor()
-    {
-        var processServiceMock = new Mock<IProcessService>();
-        processServiceMock.Setup(processService => processService.GetProcessIdByName("duckstation")).Returns(1234);
-
-        var memoryAccessorMock = new Mock<IMemoryAccessor>();
-        var memoryProviderMock = new Mock<IMemoryProvider>();
-        memoryProviderMock.Setup(memoryProvider => memoryProvider.OpenExisting("duckstation_1234")).Returns(memoryAccessorMock.Object);
-
-        var configSectionMock = new Mock<IConfigurationSection>();
-        configSectionMock.Setup(section => section.Value).Returns("duckstation");
-        var configurationMock = new Mock<IConfiguration>();
-        configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
-
-        var connector = new DuckstationConnector(
-            processServiceMock.Object,
-            memoryProviderMock.Object,
-            configurationMock.Object);
-        connector.TryConnect();
-
-        connector.InvalidateConnection();
-
-        Assert.False(connector.IsConnected);
-        Assert.NotNull(connector.Accessor);
-        memoryAccessorMock.Verify(accessor => accessor.Dispose(), Times.Never);
-    }
 }
+

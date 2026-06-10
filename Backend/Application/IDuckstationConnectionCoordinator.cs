@@ -4,5 +4,5 @@ public interface IDuckstationConnectionCoordinator
 {
     DuckstationConnectionStatus GetConnectionStatus();
     void HandleProcessingFailure(Exception exception);
-    bool HandleSilentReadFailure();
+    void HandleMemoryReadFailure();
 }

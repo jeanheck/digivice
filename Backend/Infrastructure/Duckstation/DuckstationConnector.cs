@@ -82,11 +82,6 @@ public sealed class DuckstationConnector(
         IsConnected = false;
     }
 
-    public void InvalidateConnection()
-    {
-        IsConnected = false;
-    }
-
     public void Dispose()
     {
         Disconnect();

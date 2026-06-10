@@ -114,32 +114,13 @@ public class DuckstationConnectionCoordinatorTests
     }
 
     [Fact]
-    public void HandleSilentReadFailure_ShouldDisconnectDispatchFalseAndReturnFalse_WhenConnectorIsDisconnected()
+    public void HandleMemoryReadFailure_ShouldDisconnectDispatchFalse()
     {
-        DuckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(false);
-
         var coordinator = CreateCoordinator();
 
-        var result = coordinator.HandleSilentReadFailure();
+        coordinator.HandleMemoryReadFailure();
 
-        Assert.False(result);
         DuckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.Once);
         EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(false), Times.Once);
-    }
-
-    [Fact]
-    public void HandleSilentReadFailure_ShouldReturnTrue_WhenConnectorIsStillConnected()
-    {
-        DuckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(true);
-
-        var coordinator = CreateCoordinator();
-
-        var result = coordinator.HandleSilentReadFailure();
-
-        Assert.True(result);
-        DuckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.Never);
-        EventDispatcherServiceMock.Verify(
-            dispatcher => dispatcher.DispatchEmulatorConnectionStatus(It.IsAny<bool>()),
-            Times.Never);
     }
 }

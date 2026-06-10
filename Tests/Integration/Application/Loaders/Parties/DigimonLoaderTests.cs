@@ -121,16 +121,28 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(18, digimonResource.Level);
     }
 
-    [Theory]
-    [InlineData(null)]
-    [InlineData(1499)]
-    public void Load_ShouldReturnNull_WhenDigimonMemoryBlockCannotBeFullyRead(int? memoryBlockSize)
+    [Fact]
+    public void Load_ShouldThrowMemoryReadException_WhenDigimonMemoryBlockCannotBeRead()
     {
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x00049878, 1500))
-            .Returns(memoryBlockSize is null ? null : new byte[memoryBlockSize.Value]);
+            .Throws(new Backend.Memory.MemoryReadException(0x00049878, "Memory session is not connected."));
+
+        var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
+
+        Assert.Throws<Backend.Memory.MemoryReadException>(() => digimonLoader.Load(1));
+    }
+
+    [Fact]
+    public void Load_ShouldReturnNull_WhenDigimonMemoryBlockIsTooShort()
+    {
+        var addressesRepository = CreateAddressesRepository();
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00049878, 1500))
+            .Returns(new byte[1499]);
 
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 

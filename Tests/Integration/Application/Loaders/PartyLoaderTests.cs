@@ -140,14 +140,42 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
-    public void Load_ShouldHandleNullSlotBytesGracefully()
+    public void Load_ShouldThrowMemoryReadException_WhenSlotBytesCannotBeRead()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        // Simular leitura física corrompida (null) no slot 0 (0x00048DA4)
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
-            .Returns((byte[]?)null);
+            .Throws(new Backend.Memory.MemoryReadException(0x00048DA4, "Memory session is not connected."));
+
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
+            .Returns([2, 0, 0, 0]);
+
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
+            .Returns([0xFF, 0, 0, 0]);
+
+        var digievolutionSlotReader = new DigievolutionSlotReader();
+        var digievolutionReader = new DigievolutionReader();
+        var storedDigievolutionReader = new StoredDigievolutionReader();
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader);
+        var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
+        var partyReader = new PartyReader(digimonSlotReader);
+
+        var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
+        var partyLoader = new PartyLoader(addressesRepository, partyReader, digimonLoader);
+
+        Assert.Throws<Backend.Memory.MemoryReadException>(() => partyLoader.Load());
+    }
+
+    [Fact]
+    public void Load_ShouldLoadParty_WhenAllSlotBytesAreReadable()
+    {
+        var addressesRepository = CreateAddressesRepository();
+        var memoryReaderMock = new Mock<IMemoryReader>();
+
+        // Slot 0 (0x00048DA4) -> bytes vazios (sem Digimon)
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
+            .Returns([]);
 
         // Slot 1 (0x00048DA8) -> ID 2 (Monmon)
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
@@ -184,7 +212,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(partyResource);
         Assert.Equal(3, partyResource.SlotsResource.Count);
 
-        // Slot 0 (Falha de I/O de bytes) -> Pulado
+        // Slot 0 (ID 0) -> vazio
         var slot0 = partyResource.SlotsResource[0];
         Assert.Null(slot0.DigimonId);
         Assert.Null(slot0.DigimonResource);

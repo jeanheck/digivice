@@ -1,6 +1,7 @@
 namespace Tests.Integration.Application.Loaders;
 
 using Backend.Application.Loaders;
+using Backend.Memory;
 using Backend.Memory.Readers;
 using Moq;
 using Xunit;
@@ -30,23 +31,17 @@ public class PlayerLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
-    public void Load_ShouldReturnNullFields_WhenMemoryReaderCannotReadPlayerData()
+    public void Load_ShouldThrowMemoryReadException_WhenMemoryReaderCannotReadPlayerData()
     {
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadInt32(0x00048DA0)).Returns((int?)null);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048D88, 10)).Returns((byte[]?)null);
-        memoryReaderMock.Setup(m => m.ReadInt16(0x0004B3F8)).Returns((short?)null);
+        memoryReaderMock.Setup(m => m.ReadInt32(0x00048DA0))
+            .Throws(new MemoryReadException(0x00048DA0, "Memory session is not connected."));
 
         var playerReader = new PlayerReader(memoryReaderMock.Object);
         var playerLoader = new PlayerLoader(addressesRepository, playerReader);
 
-        var playerResource = playerLoader.Load();
-
-        Assert.NotNull(playerResource);
-        Assert.Null(playerResource.Bits);
-        Assert.Null(playerResource.NameInBytes);
-        Assert.Null(playerResource.MapId);
+        Assert.Throws<MemoryReadException>(() => playerLoader.Load());
     }
 }

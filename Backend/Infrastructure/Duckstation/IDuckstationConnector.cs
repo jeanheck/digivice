@@ -9,5 +9,4 @@ public interface IDuckstationConnector : IDisposable
     bool IsConnectionAlive();
     bool TryConnect();
     void Disconnect();
-    void InvalidateConnection();
 }

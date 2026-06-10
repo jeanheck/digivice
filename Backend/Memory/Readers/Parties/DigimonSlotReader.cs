@@ -8,7 +8,7 @@ namespace Backend.Memory.Readers.Parties
         public DigimonSlotResource Read(SlotAddresses addresses, int bytesPerSlot)
         {
             var bytes = memoryReader.ReadBytes(addresses.Address, bytesPerSlot);
-            int? digimonId = (bytes != null && bytes.Length > 0) ? (int)bytes[0] : null;
+            int? digimonId = bytes.Length > 0 ? bytes[0] : null;
 
             return new DigimonSlotResource
             {

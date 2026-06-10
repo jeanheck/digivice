@@ -164,7 +164,7 @@ public class DigimonReaderTests
     }
 
     [Fact]
-    public void Read_ShouldFallbackToZeroActiveDigievolutionId_WhenMemoryReaderReturnsNull()
+    public void Read_ShouldUseZeroActiveDigievolutionId_WhenMemoryReaderReturnsZero()
     {
         // Arrange
         var address = new DigimonAddress { Id = 1, Address = 0x800100 };
@@ -186,7 +186,7 @@ public class DigimonReaderTests
         var block = new byte[1500];
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
-        memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short?)null); // Retorna nulo
+        memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)0);
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
@@ -207,7 +207,7 @@ public class DigimonReaderTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(0, result.ActiveDigievolutionId); // Deve fazer fallback para 0
+        Assert.Equal(0, result.ActiveDigievolutionId);
     }
 
     [Fact]

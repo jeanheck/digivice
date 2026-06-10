@@ -6,55 +6,45 @@ namespace Backend.Memory.Readers
 {
     public class MemoryReader(IDuckstationConnector duckstationConnector) : IMemoryReader
     {
-        private IMemoryAccessor? GetConnectedAccessor()
+        private IMemoryAccessor GetConnectedAccessor(long address)
         {
             var accessor = duckstationConnector.Accessor;
             if (!duckstationConnector.IsConnected || accessor == null)
             {
-                return null;
+                throw new MemoryReadException(address, "Memory session is not connected.");
             }
 
             return accessor;
         }
 
-        private void HandleReadFailure(long address, Exception ex)
+        private T ReadValue<T>(long address, Func<IMemoryAccessor, T> read) where T : struct
         {
-            Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
-            duckstationConnector.InvalidateConnection();
-        }
-
-        private T? TryRead<T>(long address, Func<IMemoryAccessor, T> read) where T : struct
-        {
-            var accessor = GetConnectedAccessor();
-            if (accessor == null)
-            {
-                return null;
-            }
+            var accessor = GetConnectedAccessor(address);
 
             try
             {
                 return read(accessor);
             }
+            catch (MemoryReadException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
-                HandleReadFailure(address, ex);
-                return null;
+                Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
+                throw new MemoryReadException(address, $"Failed to read memory at 0x{address:X}.", ex);
             }
         }
 
-        public int? ReadInt32(long address) =>
-            TryRead(address, accessor => accessor.ReadInt32(address));
+        public int ReadInt32(long address) =>
+            ReadValue(address, accessor => accessor.ReadInt32(address));
 
-        public short? ReadInt16(long address) =>
-            TryRead(address, accessor => accessor.ReadInt16(address));
+        public short ReadInt16(long address) =>
+            ReadValue(address, accessor => accessor.ReadInt16(address));
 
-        public byte[]? ReadBytes(long address, int length)
+        public byte[] ReadBytes(long address, int length)
         {
-            var accessor = GetConnectedAccessor();
-            if (accessor == null)
-            {
-                return null;
-            }
+            var accessor = GetConnectedAccessor(address);
 
             try
             {
@@ -62,10 +52,14 @@ namespace Backend.Memory.Readers
                 accessor.ReadArray(address, buffer, 0, length);
                 return buffer;
             }
+            catch (MemoryReadException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
-                HandleReadFailure(address, ex);
-                return null;
+                Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
+                throw new MemoryReadException(address, $"Failed to read memory at 0x{address:X}.", ex);
             }
         }
 
@@ -76,26 +70,14 @@ namespace Backend.Memory.Readers
                 return 0;
             }
 
-            try
+            var bytes = ReadBytes(address, 1);
+            byte rawValue = bytes[0];
+            if (bitMask == null)
             {
-                var bytes = ReadBytes(address, 1);
-                if (bytes == null || bytes.Length == 0)
-                {
-                    return 0;
-                }
-
-                byte rawValue = bytes[0];
-                if (bitMask == null)
-                {
-                    return rawValue;
-                }
-
-                return (byte)(rawValue & bitMask.Value);
+                return rawValue;
             }
-            catch
-            {
-                return 0;
-            }
+
+            return (byte)(rawValue & bitMask.Value);
         }
     }
 }
