@@ -1,11 +1,12 @@
 using Backend.Infrastructure.Duckstation;
+using Backend.Infrastructure.Memory;
 using Serilog;
 
 namespace Backend.Memory.Readers
 {
     public class MemoryReader(IDuckstationConnector duckstationConnector) : IMemoryReader
     {
-        public int? ReadInt32(long address)
+        private IMemoryAccessor? GetConnectedAccessor()
         {
             var accessor = duckstationConnector.Accessor;
             if (!duckstationConnector.IsConnected || accessor == null)
@@ -13,42 +14,44 @@ namespace Backend.Memory.Readers
                 return null;
             }
 
-            try
-            {
-                return accessor.ReadInt32(address);
-            }
-            catch (Exception ex)
-            {
-                Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
-                duckstationConnector.InvalidateConnection();
-                return null;
-            }
+            return accessor;
         }
 
-        public short? ReadInt16(long address)
+        private void HandleReadFailure(long address, Exception ex)
         {
-            var accessor = duckstationConnector.Accessor;
-            if (!duckstationConnector.IsConnected || accessor == null)
+            Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
+            duckstationConnector.InvalidateConnection();
+        }
+
+        private T? TryRead<T>(long address, Func<IMemoryAccessor, T> read) where T : struct
+        {
+            var accessor = GetConnectedAccessor();
+            if (accessor == null)
             {
                 return null;
             }
 
             try
             {
-                return accessor.ReadInt16(address);
+                return read(accessor);
             }
             catch (Exception ex)
             {
-                Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
-                duckstationConnector.InvalidateConnection();
+                HandleReadFailure(address, ex);
                 return null;
             }
         }
+
+        public int? ReadInt32(long address) =>
+            TryRead(address, accessor => accessor.ReadInt32(address));
+
+        public short? ReadInt16(long address) =>
+            TryRead(address, accessor => accessor.ReadInt16(address));
 
         public byte[]? ReadBytes(long address, int length)
         {
-            var accessor = duckstationConnector.Accessor;
-            if (!duckstationConnector.IsConnected || accessor == null)
+            var accessor = GetConnectedAccessor();
+            if (accessor == null)
             {
                 return null;
             }
@@ -61,8 +64,7 @@ namespace Backend.Memory.Readers
             }
             catch (Exception ex)
             {
-                Log.Error("Failed to read bytes at 0x{Address:X}: {Msg}", address, ex.Message);
-                duckstationConnector.InvalidateConnection();
+                HandleReadFailure(address, ex);
                 return null;
             }
         }

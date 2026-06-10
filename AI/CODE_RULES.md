@@ -216,6 +216,7 @@ Referência: `Frontend/src/components/modal/Modal.vue`.
 5. **Serviços Estateless para Leitores e Conversores**: Sempre mantenha as classes de leitura de memória (Readers) e conversores (Converters) totalmente livres de estado mutável (stateless). Eles devem funcionar de forma puramente funcional (dados entram, dados tratados saem) para garantir thread-safety e facilidade de testes de unidade. Delegue qualquer controle de estado para a `GameStateStore` ou orquestradores adequados.
 6. **Evitar Prefixos com Underline (`_`)**: Evite utilizar variáveis, campos privados ou propriedades com o caractere sublinhado/underline (`_`) como prefixo. Em vez disso, prefira declarar propriedades somente leitura em PascalCase (iniciando com letra maiúscula) para armazenar injeções de dependência ou parâmetros de construtores primários que necessitem de validação.
 7. **Inicialização Simplificada de Objetos**: Sempre prefira inicializar os objetos com `new();` ao invés de `new Object();` quando for possível.
+8. **Ordem dos Métodos na Classe**: Em classes C#, declare **métodos privados no início** da classe e **métodos públicos depois**. Helpers internos ficam agrupados acima da API pública exposta pela classe.
 
 ## Tests (Backend): regras relacionadas aos testes
 
