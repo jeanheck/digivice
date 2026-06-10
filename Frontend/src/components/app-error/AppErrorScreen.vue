@@ -20,7 +20,7 @@ const { t } = useI18n();
       <div class="dw3-panel-inner dw3-beveled"></div>
 
       <div class="dw3-panel-content flex flex-col gap-4 p-6 text-center">
-        <h1 class="text-sm leading-relaxed text-dw3-gold shadow-text-dark">
+        <h1 class="text-sm leading-relaxed shadow-text-dark">
           {{ t(props.error.titleKey) }}
         </h1>
 

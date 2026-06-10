@@ -26,9 +26,7 @@ namespace Backend.Application
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                var connectionStatus = duckstationConnector.EnsureSession();
-
-                if (connectionStatus != DuckstationConnectionStatus.Ready)
+                if (duckstationConnector.getConnectionStatus() != DuckstationConnectionStatus.Ready)
                 {
                     await Task.Delay(pollingIntervalMs, stoppingToken);
                     continue;

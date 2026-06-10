@@ -4,5 +4,5 @@ public enum DuckstationConnectionStatus
 {
     Ready,
     WaitingForEmulator,
-    SessionLost
+    ConnectionLost
 }

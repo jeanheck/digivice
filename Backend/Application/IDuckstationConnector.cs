@@ -2,7 +2,7 @@ namespace Backend.Application;
 
 public interface IDuckstationConnector
 {
-    DuckstationConnectionStatus EnsureSession();
+    DuckstationConnectionStatus getConnectionStatus();
     void HandleProcessingFailure(Exception exception);
     void HandleSilentReadFailure();
 }

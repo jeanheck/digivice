@@ -1,12 +1,12 @@
 namespace Tests.Unit.Application;
 
-using Microsoft.Extensions.Configuration;
-using Moq;
-using Xunit;
 using Backend.Application;
 using Backend.Diagnostics;
 using Backend.Events.Services;
 using Backend.Memory.Readers;
+using Microsoft.Extensions.Configuration;
+using Moq;
+using Xunit;
 
 public class DuckstationConnectorTests
 {
@@ -47,7 +47,7 @@ public class DuckstationConnectorTests
 
         var connector = CreateConnector();
 
-        var status = connector.EnsureSession();
+        var status = connector.getConnectionStatus();
 
         Assert.Equal(DuckstationConnectionStatus.Ready, status);
         EventDispatcherServiceMock.Verify(
@@ -63,9 +63,9 @@ public class DuckstationConnectorTests
 
         var connector = CreateConnector();
 
-        var status = connector.EnsureSession();
+        var status = connector.getConnectionStatus();
 
-        Assert.Equal(DuckstationConnectionStatus.SessionLost, status);
+        Assert.Equal(DuckstationConnectionStatus.ConnectionLost, status);
         MemoryReaderMock.Verify(reader => reader.Disconnect(), Times.Once);
         EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(false), Times.Once);
     }
@@ -78,7 +78,7 @@ public class DuckstationConnectorTests
 
         var connector = CreateConnector();
 
-        var status = connector.EnsureSession();
+        var status = connector.getConnectionStatus();
 
         Assert.Equal(DuckstationConnectionStatus.WaitingForEmulator, status);
         MemoryReaderMock.Verify(reader => reader.Disconnect(), Times.Never);
@@ -96,7 +96,7 @@ public class DuckstationConnectorTests
 
         var connector = CreateConnector();
 
-        var status = connector.EnsureSession();
+        var status = connector.getConnectionStatus();
 
         Assert.Equal(DuckstationConnectionStatus.Ready, status);
         EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(true), Times.Once);

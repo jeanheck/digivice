@@ -10,25 +10,22 @@ public class DuckstationConnector(
     DebugConsoleRenderer debugConsoleRenderer,
     IConfiguration configuration) : IDuckstationConnector
 {
-    public DuckstationConnectionStatus EnsureSession()
+    public DuckstationConnectionStatus getConnectionStatus()
     {
         if (memoryReader.IsConnected && !memoryReader.IsConnectionAlive())
         {
             MarkDuckstationDisconnected();
-            return DuckstationConnectionStatus.SessionLost;
+            return DuckstationConnectionStatus.ConnectionLost;
         }
 
-        if (!memoryReader.IsConnected)
+        if (!memoryReader.IsConnected && !memoryReader.TryConnect())
         {
-            if (!memoryReader.TryConnect())
-            {
-                eventDispatcherService.DispatchEmulatorConnectionStatus(false);
-                return DuckstationConnectionStatus.WaitingForEmulator;
-            }
-
-            Serilog.Log.Information("Connected to DuckStation.");
-            eventDispatcherService.DispatchEmulatorConnectionStatus(true);
+            eventDispatcherService.DispatchEmulatorConnectionStatus(false);
+            return DuckstationConnectionStatus.WaitingForEmulator;
         }
+
+        Serilog.Log.Information("Connected to DuckStation.");
+        eventDispatcherService.DispatchEmulatorConnectionStatus(true);
 
         return DuckstationConnectionStatus.Ready;
     }
