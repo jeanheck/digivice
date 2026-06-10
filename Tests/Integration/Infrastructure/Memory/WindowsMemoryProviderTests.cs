@@ -47,6 +47,35 @@ public class WindowsMemoryProviderTests
     }
 
     [Fact]
+    public void OpenExisting_ShouldAllowReopen_AfterAccessorIsDisposed()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string mapName = $"digivice_test_mapping_{Guid.NewGuid()}";
+        long capacity = 1024;
+
+        using MemoryMappedFile memoryMappedFile = MemoryMappedFile.CreateNew(mapName, capacity);
+        using MemoryMappedViewAccessor viewAccessor = memoryMappedFile.CreateViewAccessor();
+        viewAccessor.Write(0x10, 424242);
+
+        Mock<ILogger<WindowsMemoryProvider>> loggerMock = new Mock<ILogger<WindowsMemoryProvider>>();
+        WindowsMemoryProvider provider = new WindowsMemoryProvider(loggerMock.Object);
+
+        IMemoryAccessor? firstAccessor = provider.OpenExisting(mapName);
+        Assert.NotNull(firstAccessor);
+        Assert.Equal(424242, firstAccessor.ReadInt32(0x10));
+        firstAccessor.Dispose();
+
+        IMemoryAccessor? secondAccessor = provider.OpenExisting(mapName);
+        Assert.NotNull(secondAccessor);
+        Assert.Equal(424242, secondAccessor.ReadInt32(0x10));
+        secondAccessor.Dispose();
+    }
+
+    [Fact]
     public void OpenExisting_ShouldReturnNull_WhenMappingDoesNotExist()
     {
         if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))

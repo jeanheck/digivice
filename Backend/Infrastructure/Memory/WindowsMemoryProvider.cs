@@ -14,11 +14,11 @@ public class WindowsMemoryProvider(ILogger<WindowsMemoryProvider> logger) : IMem
         try
         {
 #pragma warning disable CA1416 // OpenExisting is only supported on Windows.
-            using var memoryMappedFile = MemoryMappedFile.OpenExisting(mapName);
+            var memoryMappedFile = MemoryMappedFile.OpenExisting(mapName);
 #pragma warning restore CA1416
-            var accessor = memoryMappedFile.CreateViewAccessor();
+            var memoryMappedViewAccessor = memoryMappedFile.CreateViewAccessor();
 
-            return new WindowsMemoryAccessor(accessor);
+            return new WindowsMemoryAccessor(memoryMappedFile, memoryMappedViewAccessor);
         }
         catch (FileNotFoundException)
         {

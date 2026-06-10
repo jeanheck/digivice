@@ -1,5 +1,5 @@
-using Backend.Infrastructure.Processes;
 using Backend.Infrastructure.Memory;
+using Backend.Infrastructure.Processes;
 using Serilog;
 
 namespace Backend.Memory.Readers
@@ -53,10 +53,10 @@ namespace Backend.Memory.Readers
                     return false;
                 }
 
-                string dynamicMapName = $"duckstation_{processId}";
+                string duckstationMapName = $"duckstation_{processId}";
 
                 // 2. Attempt to open the memory mapping through the provider
-                accessor = memoryProvider.OpenExisting(dynamicMapName);
+                accessor = memoryProvider.OpenExisting(duckstationMapName);
 
                 if (accessor == null)
                 {
@@ -66,7 +66,7 @@ namespace Backend.Memory.Readers
 
                 connectedProcessId = processId;
                 IsConnected = true;
-                Log.Information("Connected to DuckStation! Mapping found: {MapName}", dynamicMapName);
+                Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
                 return true;
             }
             catch (Exception)
