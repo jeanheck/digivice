@@ -1,32 +1,31 @@
 using Backend.Diagnostics;
 using Backend.Events.Services;
-using Backend.Memory.Readers;
+using Backend.Infrastructure.Duckstation;
 
 namespace Backend.Application;
 
-public class DuckstationConnector(
-    IMemoryReader memoryReader,
+public class DuckstationConnectionCoordinator(
+    IDuckstationConnector duckstationConnector,
     IEventDispatcherService eventDispatcherService,
     DebugConsoleRenderer debugConsoleRenderer,
-    IConfiguration configuration) : IDuckstationConnector
+    IConfiguration configuration) : IDuckstationConnectionCoordinator
 {
-    public DuckstationConnectionStatus getConnectionStatus()
+    public DuckstationConnectionStatus GetConnectionStatus()
     {
-        if (memoryReader.IsConnected && !memoryReader.IsConnectionAlive())
+        if (duckstationConnector.IsConnected && !duckstationConnector.IsConnectionAlive())
         {
             MarkDuckstationDisconnected();
             return DuckstationConnectionStatus.ConnectionLost;
         }
 
-        if (!memoryReader.IsConnected)
+        if (!duckstationConnector.IsConnected)
         {
-            if (!memoryReader.TryConnect())
+            if (!duckstationConnector.TryConnect())
             {
                 eventDispatcherService.DispatchEmulatorConnectionStatus(false);
                 return DuckstationConnectionStatus.WaitingForEmulator;
             }
 
-            Serilog.Log.Information("Connected to DuckStation.");
             eventDispatcherService.DispatchEmulatorConnectionStatus(true);
         }
 
@@ -39,17 +38,20 @@ public class DuckstationConnector(
         MarkDuckstationDisconnected();
     }
 
-    public void HandleSilentReadFailure()
+    public bool HandleSilentReadFailure()
     {
-        if (!memoryReader.IsConnected)
+        if (duckstationConnector.IsConnected)
         {
-            MarkDuckstationDisconnected();
+            return true;
         }
+
+        MarkDuckstationDisconnected();
+        return false;
     }
 
     private void MarkDuckstationDisconnected()
     {
-        memoryReader.Disconnect();
+        duckstationConnector.Disconnect();
         eventDispatcherService.DispatchEmulatorConnectionStatus(false);
 
         var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");

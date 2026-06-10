@@ -217,12 +217,12 @@ IDuckstationSession          IMemoryReader (ou IMemorySessionReader)
 
 ### Ordem de refatoração sugerida
 
-1. Investigar/corrigir lifetime do `MemoryMappedFile` em `WindowsMemoryProvider`
-2. Extrair `DuckstationSession` (connect/disconnect/alive) de `MemoryReader`
-3. Deixar `MemoryReader` só como thin reader sobre sessão
+1. ~~Investigar/corrigir lifetime do `MemoryMappedFile` em `WindowsMemoryProvider`~~ ✅
+2. ~~Extrair `DuckstationConnector` (connect/disconnect/alive) de `MemoryReader`~~ ✅
+3. ~~Deixar `MemoryReader` só como thin reader sobre sessão~~ ✅
 4. Unificar política de erro de I/O
 5. Mover `ReadByteSafe` para domain layer
-6. Segregar interfaces (`IDuckstationSession` vs `IMemoryReader`)
+6. ~~Segregar interfaces (`IDuckstationConnector` vs `IMemoryReader`)~~ ✅ (parcial — coordinator renomeado para `DuckstationConnectionCoordinator`)
 
 ---
 

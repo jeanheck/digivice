@@ -6,6 +6,7 @@ using Backend.Application.Providers;
 using Backend.Diagnostics;
 using Backend.Events.Services;
 using Backend.Events.States;
+using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Memory.Readers;
@@ -23,6 +24,7 @@ namespace Backend.Infrastructure
         {
             services.AddSingleton<IProcessService, WindowsProcessProvider>();
             services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
+            services.AddSingleton<IDuckstationConnector, DuckstationConnector>();
             services.AddSingleton<IMemoryReader, MemoryReader>();
             
             string memoryDefinitionsDirectory = Path.Combine(basePath, "Memory", "Definitions");
@@ -53,7 +55,7 @@ namespace Backend.Infrastructure
             
             services.AddSingleton<StateComposer>();
             services.AddSingleton<DebugConsoleRenderer>();
-            services.AddSingleton<IDuckstationConnector, DuckstationConnector>();
+            services.AddSingleton<IDuckstationConnectionCoordinator, DuckstationConnectionCoordinator>();
 
             services.AddSingleton<IGameStateStore, GameStateStore>();
             services.AddSingleton<IEventDispatcherService, EventDispatcherService>();

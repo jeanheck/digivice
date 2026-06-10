@@ -15,6 +15,7 @@ using Backend.Application.Providers;
 using Backend.Diagnostics;
 using Backend.Events.Services;
 using Backend.Events.States;
+using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Memory.Readers;
@@ -48,7 +49,9 @@ public class DependencyInjectionTests
 
         Assert.NotNull(provider.GetRequiredService<IProcessService>());
         Assert.NotNull(provider.GetRequiredService<IMemoryProvider>());
+        Assert.NotNull(provider.GetRequiredService<IDuckstationConnector>());
         Assert.NotNull(provider.GetRequiredService<IMemoryReader>());
+        Assert.NotNull(provider.GetRequiredService<IDuckstationConnectionCoordinator>());
         Assert.NotNull(provider.GetRequiredService<IAddressesRepository>());
         
         Assert.NotNull(provider.GetRequiredService<IDigimonReader>());

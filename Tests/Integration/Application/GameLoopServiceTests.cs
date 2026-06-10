@@ -14,11 +14,11 @@ using Backend.Domain.Models;
 using Backend.Domain.Models.Journals;
 using Backend.Events.Services;
 using Backend.Events.States;
-using Backend.Memory.Readers;
+using Backend.Infrastructure.Duckstation;
 
 public class GameLoopServiceTests
 {
-    private readonly Mock<IMemoryReader> _memoryReaderMock;
+    private readonly Mock<IDuckstationConnector> _duckstationConnectorMock;
     private readonly Mock<IPlayerProvider> _playerProviderMock;
     private readonly Mock<IPartyProvider> _partyProviderMock;
     private readonly Mock<IJournalProvider> _journalProviderMock;
@@ -28,10 +28,10 @@ public class GameLoopServiceTests
     private readonly StateComposer _stateComposer;
     private readonly IConfiguration _configuration;
 
-    private DuckstationConnector CreateDuckstationConnector()
+    private DuckstationConnectionCoordinator CreateDuckstationConnectionCoordinator()
     {
-        return new DuckstationConnector(
-            _memoryReaderMock.Object,
+        return new DuckstationConnectionCoordinator(
+            _duckstationConnectorMock.Object,
             _eventDispatcherServiceMock.Object,
             _debugConsoleRenderer,
             _configuration);
@@ -40,8 +40,7 @@ public class GameLoopServiceTests
     private GameLoopService CreateGameLoopService(StateComposer? stateComposer = null)
     {
         return new GameLoopService(
-            _memoryReaderMock.Object,
-            CreateDuckstationConnector(),
+            CreateDuckstationConnectionCoordinator(),
             stateComposer ?? _stateComposer,
             _eventDispatcherServiceMock.Object,
             _gameStateStore,
@@ -49,14 +48,14 @@ public class GameLoopServiceTests
             _configuration);
     }
 
-    private void SetupConnectedMemoryReader()
+    private void SetupConnectedDuckstationConnector()
     {
-        _memoryReaderMock.Setup(r => r.IsConnectionAlive()).Returns(true);
+        _duckstationConnectorMock.Setup(connector => connector.IsConnectionAlive()).Returns(true);
     }
 
     public GameLoopServiceTests()
     {
-        _memoryReaderMock = new Mock<IMemoryReader>();
+        _duckstationConnectorMock = new Mock<IDuckstationConnector>();
         _playerProviderMock = new Mock<IPlayerProvider>();
         _partyProviderMock = new Mock<IPartyProvider>();
         _journalProviderMock = new Mock<IJournalProvider>();
@@ -88,38 +87,34 @@ public class GameLoopServiceTests
     [Fact]
     public async Task ExecuteAsync_ShouldCycleConnectionOfflineThenOnline()
     {
-        // Setup memory reader connection sequence
-        _memoryReaderMock.SetupSequence(r => r.IsConnected)
-            .Returns(false) // First loop check: not connected, will try to connect
-            .Returns(false) // Second loop check: still not connected
-            .Returns(true)  // Third loop check: connected
-            .Returns(true); // Remaining checks
+        _duckstationConnectorMock.SetupSequence(connector => connector.IsConnected)
+            .Returns(false)
+            .Returns(false)
+            .Returns(true)
+            .Returns(true);
 
-        _memoryReaderMock.SetupSequence(r => r.TryConnect())
-            .Returns(false) // First connection attempt fails
-            .Returns(true);  // Second connection attempt succeeds
+        _duckstationConnectorMock.SetupSequence(connector => connector.TryConnect())
+            .Returns(false)
+            .Returns(true);
 
-        _memoryReaderMock.Setup(r => r.IsConnectionAlive()).Returns(true);
+        _duckstationConnectorMock.Setup(connector => connector.IsConnectionAlive()).Returns(true);
 
         var service = CreateGameLoopService();
 
         using var cts = new CancellationTokenSource();
         var serviceTask = service.StartAsync(cts.Token);
 
-        // Allow some loops to run (1ms interval)
         await Task.Delay(100);
         await cts.CancelAsync();
-        
+
         try
         {
             await serviceTask;
         }
         catch (OperationCanceledException)
         {
-            // Expected
         }
 
-        // Verify dispatch connection status events
         _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(true), Times.AtLeastOnce);
     }
@@ -127,8 +122,8 @@ public class GameLoopServiceTests
     [Fact]
     public async Task ExecuteAsync_ShouldDisconnect_WhenConnectionIsNoLongerAlive()
     {
-        _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
-        _memoryReaderMock.Setup(r => r.IsConnectionAlive()).Returns(false);
+        _duckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(true);
+        _duckstationConnectorMock.Setup(connector => connector.IsConnectionAlive()).Returns(false);
 
         var service = CreateGameLoopService();
 
@@ -144,38 +139,34 @@ public class GameLoopServiceTests
         }
         catch (OperationCanceledException)
         {
-            // Expected
         }
 
-        _memoryReaderMock.Verify(r => r.Disconnect(), Times.AtLeastOnce);
+        _duckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
     }
 
     [Fact]
     public async Task ExecuteAsync_ShouldReadStateAndDispatchEvents_WhenConnected()
     {
-        _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
-        SetupConnectedMemoryReader();
+        _duckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(true);
+        SetupConnectedDuckstationConnector();
 
         var service = CreateGameLoopService();
 
         using var cts = new CancellationTokenSource();
         var serviceTask = service.StartAsync(cts.Token);
 
-        // Allow loops to run
         await Task.Delay(100);
         await cts.CancelAsync();
-        
+
         try
         {
             await serviceTask;
         }
         catch (OperationCanceledException)
         {
-            // Expected
         }
 
-        // Verify that state composer was called, state updated, and events were dispatched
         _playerProviderMock.Verify(p => p.Get(), Times.AtLeastOnce);
         Assert.NotNull(_gameStateStore.CurrentState);
         _eventDispatcherServiceMock.Verify(d => d.DispatchEvents(It.IsAny<IEnumerable<Backend.Events.Models.Event>>()), Times.AtLeastOnce);
@@ -184,8 +175,8 @@ public class GameLoopServiceTests
     [Fact]
     public async Task ExecuteAsync_ShouldHandleAbruptExceptionsAndDisconnect()
     {
-        _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
-        SetupConnectedMemoryReader();
+        _duckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(true);
+        SetupConnectedDuckstationConnector();
         _playerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
 
         var service = CreateGameLoopService();
@@ -195,25 +186,24 @@ public class GameLoopServiceTests
 
         await Task.Delay(50);
         await cts.CancelAsync();
-        
+
         try
         {
             await serviceTask;
         }
         catch (OperationCanceledException)
         {
-            // Expected
         }
 
-        _memoryReaderMock.Verify(r => r.Disconnect(), Times.AtLeastOnce);
+        _duckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
     }
 
     [Fact]
     public async Task ExecuteAsync_ShouldDisconnectAndDispatchFalse_WhenComposeThrowsWhileReaderReportsConnected()
     {
-        _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
-        SetupConnectedMemoryReader();
+        _duckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(true);
+        SetupConnectedDuckstationConnector();
         _playerProviderMock.Setup(p => p.Get()).Throws(new InvalidOperationException("Address not found for Digimon ID 208"));
 
         var service = CreateGameLoopService();
@@ -230,10 +220,9 @@ public class GameLoopServiceTests
         }
         catch (OperationCanceledException)
         {
-            // Expected
         }
 
-        _memoryReaderMock.Verify(r => r.Disconnect(), Times.AtLeastOnce);
+        _duckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
         Assert.Null(_gameStateStore.CurrentState);
     }
@@ -245,8 +234,8 @@ public class GameLoopServiceTests
         {
             Player = new Player { Name = "Agumon", Bits = 123, MapId = "0001" }
         });
-        _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
-        SetupConnectedMemoryReader();
+        _duckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(true);
+        SetupConnectedDuckstationConnector();
 
         var throwingPlayerProviderMock = new Mock<IPlayerProvider>();
         throwingPlayerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
@@ -269,7 +258,6 @@ public class GameLoopServiceTests
         }
         catch (OperationCanceledException)
         {
-            // Expected
         }
 
         _eventDispatcherServiceMock.Verify(

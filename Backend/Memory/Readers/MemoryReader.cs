@@ -1,84 +1,17 @@
-using Backend.Infrastructure.Memory;
-using Backend.Infrastructure.Processes;
+using Backend.Infrastructure.Duckstation;
 using Serilog;
 
 namespace Backend.Memory.Readers
 {
-    public class MemoryReader(
-        IProcessService processService,
-        IMemoryProvider memoryProvider,
-        IConfiguration configuration) : IMemoryReader
+    public class MemoryReader(IDuckstationConnector duckstationConnector) : IMemoryReader
     {
-        private IMemoryAccessor? accessor;
-        private int? connectedProcessId;
-        public bool IsConnected { get; private set; }
-
-        public bool IsConnectionAlive()
-        {
-            if (!IsConnected || accessor == null || connectedProcessId is null)
-            {
-                return false;
-            }
-
-            var emulatorName = configuration.GetValue<string>("EmulatorProcessName");
-            if (string.IsNullOrEmpty(emulatorName))
-            {
-                return false;
-            }
-
-            var currentProcessId = processService.GetProcessIdByName(emulatorName);
-            return currentProcessId == connectedProcessId;
-        }
-
-        public bool TryConnect()
-        {
-            Disconnect();
-
-            try
-            {
-                // 1. Search for the specific process name using the service
-                var emulatorName = configuration.GetValue<string>("EmulatorProcessName");
-                if (string.IsNullOrEmpty(emulatorName))
-                {
-                    Log.Error("EmulatorProcessName not found in appsettings.json");
-                    IsConnected = false;
-                    return false;
-                }
-
-                int? processId = processService.GetProcessIdByName(emulatorName);
-
-                if (processId == null)
-                {
-                    IsConnected = false;
-                    return false;
-                }
-
-                string duckstationMapName = $"duckstation_{processId}";
-
-                // 2. Attempt to open the memory mapping through the provider
-                accessor = memoryProvider.OpenExisting(duckstationMapName);
-
-                if (accessor == null)
-                {
-                    IsConnected = false;
-                    return false;
-                }
-
-                connectedProcessId = processId;
-                IsConnected = true;
-                Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
-                return true;
-            }
-            catch (Exception)
-            {
-                IsConnected = false;
-                return false;
-            }
-        }
-
         public int? ReadInt32(long address)
         {
-            if (!IsConnected || accessor == null) return null;
+            var accessor = duckstationConnector.Accessor;
+            if (!duckstationConnector.IsConnected || accessor == null)
+            {
+                return null;
+            }
 
             try
             {
@@ -87,28 +20,19 @@ namespace Backend.Memory.Readers
             catch (Exception ex)
             {
                 Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
-                IsConnected = false;
+                duckstationConnector.InvalidateConnection();
                 return null;
             }
         }
 
-        public void Disconnect()
-        {
-            accessor?.Dispose();
-            accessor = null;
-            connectedProcessId = null;
-            IsConnected = false;
-        }
-
-        public void Dispose()
-        {
-            Disconnect();
-            Log.Information("Memory resources released.");
-        }
-
         public short? ReadInt16(long address)
         {
-            if (!IsConnected || accessor == null) return null;
+            var accessor = duckstationConnector.Accessor;
+            if (!duckstationConnector.IsConnected || accessor == null)
+            {
+                return null;
+            }
+
             try
             {
                 return accessor.ReadInt16(address);
@@ -116,14 +40,19 @@ namespace Backend.Memory.Readers
             catch (Exception ex)
             {
                 Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
-                IsConnected = false;
+                duckstationConnector.InvalidateConnection();
                 return null;
             }
         }
 
         public byte[]? ReadBytes(long address, int length)
         {
-            if (!IsConnected || accessor == null) return null;
+            var accessor = duckstationConnector.Accessor;
+            if (!duckstationConnector.IsConnected || accessor == null)
+            {
+                return null;
+            }
+
             try
             {
                 byte[] buffer = new byte[length];
@@ -133,7 +62,7 @@ namespace Backend.Memory.Readers
             catch (Exception ex)
             {
                 Log.Error("Failed to read bytes at 0x{Address:X}: {Msg}", address, ex.Message);
-                IsConnected = false;
+                duckstationConnector.InvalidateConnection();
                 return null;
             }
         }
@@ -144,6 +73,7 @@ namespace Backend.Memory.Readers
             {
                 return 0;
             }
+
             try
             {
                 var bytes = ReadBytes(address, 1);
@@ -160,7 +90,10 @@ namespace Backend.Memory.Readers
 
                 return (byte)(rawValue & bitMask.Value);
             }
-            catch { return 0; }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }

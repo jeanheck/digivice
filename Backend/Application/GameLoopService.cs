@@ -2,14 +2,12 @@ using Backend.Diagnostics;
 using Backend.Events.Factory;
 using Backend.Events.Services;
 using Backend.Events.States;
-using Backend.Memory.Readers;
 
 namespace Backend.Application
 {
     public class GameLoopService
     (
-        IMemoryReader memoryReader,
-        IDuckstationConnector duckstationConnector,
+        IDuckstationConnectionCoordinator duckstationConnectionCoordinator,
         StateComposer stateComposer,
         IEventDispatcherService eventDispatcherService,
         IGameStateStore gameStateStore,
@@ -26,7 +24,7 @@ namespace Backend.Application
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (duckstationConnector.getConnectionStatus() != DuckstationConnectionStatus.Ready)
+                if (duckstationConnectionCoordinator.GetConnectionStatus() != DuckstationConnectionStatus.Ready)
                 {
                     await Task.Delay(pollingIntervalMs, stoppingToken);
                     continue;
@@ -42,11 +40,9 @@ namespace Backend.Application
 
                     gameStateStore.UpdateState(newState);
 
-                    if (!memoryReader.IsConnected)
-                    {
-                        duckstationConnector.HandleSilentReadFailure();
-                    }
-                    else if (isDebuggingEnabled && !Console.IsOutputRedirected)
+                    if (duckstationConnectionCoordinator.HandleSilentReadFailure()
+                        && isDebuggingEnabled
+                        && !Console.IsOutputRedirected)
                     {
                         debugConsoleRenderer.Render(newState);
                     }
@@ -57,7 +53,7 @@ namespace Backend.Application
                 }
                 catch (Exception ex)
                 {
-                    duckstationConnector.HandleProcessingFailure(ex);
+                    duckstationConnectionCoordinator.HandleProcessingFailure(ex);
                 }
 
                 try
