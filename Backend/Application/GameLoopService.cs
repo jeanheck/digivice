@@ -9,6 +9,7 @@ namespace Backend.Application
     public class GameLoopService
     (
         IMemoryReader memoryReader,
+        IDuckstationConnector duckstationConnector,
         StateComposer stateComposer,
         IEventDispatcherService eventDispatcherService,
         IGameStateStore gameStateStore,
@@ -21,35 +22,18 @@ namespace Backend.Application
             Serilog.Log.Information("Starting GameLoopService...");
 
             var pollingIntervalMs = configuration.GetValue<int?>("GameLoop:PollingIntervalMs") ?? 1000;
+            var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (memoryReader.IsConnected && !memoryReader.IsConnectionAlive())
+                var connectionStatus = duckstationConnector.EnsureSession();
+
+                if (connectionStatus != DuckstationConnectionStatus.Ready)
                 {
-                    MarkEmulatorDisconnected();
                     await Task.Delay(pollingIntervalMs, stoppingToken);
                     continue;
                 }
 
-                // Trying to connect at the Duckstation
-                if (!memoryReader.IsConnected)
-                {
-                    if (!memoryReader.TryConnect())
-                    {
-                        // If the connection fails, it sends false and waits 1 second before trying again.
-                        eventDispatcherService.DispatchEmulatorConnectionStatus(false);
-                        await Task.Delay(pollingIntervalMs, stoppingToken);
-                        continue;
-                    }
-                    else
-                    {
-                        // Successful connection.
-                        Serilog.Log.Information("Connected to DuckStation.");
-                        eventDispatcherService.DispatchEmulatorConnectionStatus(true);
-                    }
-                }
-
-                // State Processing
                 try
                 {
                     var newState = stateComposer.Compose();
@@ -60,21 +44,22 @@ namespace Backend.Application
 
                     gameStateStore.UpdateState(newState);
 
-                    var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
-                    if (isDebuggingEnabled && !Console.IsOutputRedirected)
+                    if (!memoryReader.IsConnected)
+                    {
+                        duckstationConnector.HandleSilentReadFailure();
+                    }
+                    else if (isDebuggingEnabled && !Console.IsOutputRedirected)
                     {
                         debugConsoleRenderer.Render(newState);
                     }
                 }
                 catch (OperationCanceledException)
                 {
-                    // Ignore the error if the application is being shut down.
                     break;
                 }
                 catch (Exception ex)
                 {
-                    Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
-                    MarkEmulatorDisconnected();
+                    duckstationConnector.HandleProcessingFailure(ex);
                 }
 
                 try
@@ -83,24 +68,11 @@ namespace Backend.Application
                 }
                 catch (TaskCanceledException)
                 {
-                    // Saída natural do loop ao dar Ctrl+C
                     break;
                 }
             }
 
             Serilog.Log.Information("GameLoopService shutting down gracefully.");
-        }
-
-        private void MarkEmulatorDisconnected()
-        {
-            memoryReader.Disconnect();
-            eventDispatcherService.DispatchEmulatorConnectionStatus(false);
-
-            var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
-            if (isDebuggingEnabled && !Console.IsOutputRedirected)
-            {
-                debugConsoleRenderer.Render(null);
-            }
         }
     }
 }

@@ -41,14 +41,19 @@ public class EventDispatcherService(
 
     public void DispatchInitialStateToClient(string connectionId)
     {
+        var target = hubContext.Clients.Client(connectionId);
         var currentState = gameStateStore.CurrentState;
+
         if (currentState != null)
         {
             var stateDto = StateConverter.ToDTO(currentState);
             var initialEvent = new Event(EventType.InitialState, stateDto);
-            SafeDispatch(initialEvent, hubContext.Clients.Client(connectionId));
-            SafeDispatch(new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(gameStateStore.IsConnectedWithEmulator ?? false)));
+            SafeDispatch(initialEvent, target);
         }
+
+        SafeDispatch(
+            new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(gameStateStore.IsConnectedWithEmulator ?? false)),
+            target);
     }
 
     public void DispatchEvents(IEnumerable<Event> events)

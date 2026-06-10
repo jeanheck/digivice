@@ -28,6 +28,27 @@ public class GameLoopServiceTests
     private readonly StateComposer _stateComposer;
     private readonly IConfiguration _configuration;
 
+    private DuckstationConnector CreateDuckstationConnector()
+    {
+        return new DuckstationConnector(
+            _memoryReaderMock.Object,
+            _eventDispatcherServiceMock.Object,
+            _debugConsoleRenderer,
+            _configuration);
+    }
+
+    private GameLoopService CreateGameLoopService(StateComposer? stateComposer = null)
+    {
+        return new GameLoopService(
+            _memoryReaderMock.Object,
+            CreateDuckstationConnector(),
+            stateComposer ?? _stateComposer,
+            _eventDispatcherServiceMock.Object,
+            _gameStateStore,
+            _debugConsoleRenderer,
+            _configuration);
+    }
+
     private void SetupConnectedMemoryReader()
     {
         _memoryReaderMock.Setup(r => r.IsConnectionAlive()).Returns(true);
@@ -80,13 +101,7 @@ public class GameLoopServiceTests
 
         _memoryReaderMock.Setup(r => r.IsConnectionAlive()).Returns(true);
 
-        var service = new GameLoopService(
-            _memoryReaderMock.Object,
-            _stateComposer,
-            _eventDispatcherServiceMock.Object,
-            _gameStateStore,
-            _debugConsoleRenderer,
-            _configuration);
+        var service = CreateGameLoopService();
 
         using var cts = new CancellationTokenSource();
         var serviceTask = service.StartAsync(cts.Token);
@@ -115,13 +130,7 @@ public class GameLoopServiceTests
         _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
         _memoryReaderMock.Setup(r => r.IsConnectionAlive()).Returns(false);
 
-        var service = new GameLoopService(
-            _memoryReaderMock.Object,
-            _stateComposer,
-            _eventDispatcherServiceMock.Object,
-            _gameStateStore,
-            _debugConsoleRenderer,
-            _configuration);
+        var service = CreateGameLoopService();
 
         using var cts = new CancellationTokenSource();
         var serviceTask = service.StartAsync(cts.Token);
@@ -148,13 +157,7 @@ public class GameLoopServiceTests
         _memoryReaderMock.Setup(r => r.IsConnected).Returns(true);
         SetupConnectedMemoryReader();
 
-        var service = new GameLoopService(
-            _memoryReaderMock.Object,
-            _stateComposer,
-            _eventDispatcherServiceMock.Object,
-            _gameStateStore,
-            _debugConsoleRenderer,
-            _configuration);
+        var service = CreateGameLoopService();
 
         using var cts = new CancellationTokenSource();
         var serviceTask = service.StartAsync(cts.Token);
@@ -185,13 +188,7 @@ public class GameLoopServiceTests
         SetupConnectedMemoryReader();
         _playerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
 
-        var service = new GameLoopService(
-            _memoryReaderMock.Object,
-            _stateComposer,
-            _eventDispatcherServiceMock.Object,
-            _gameStateStore,
-            _debugConsoleRenderer,
-            _configuration);
+        var service = CreateGameLoopService();
 
         using var cts = new CancellationTokenSource();
         var serviceTask = service.StartAsync(cts.Token);
@@ -219,13 +216,7 @@ public class GameLoopServiceTests
         SetupConnectedMemoryReader();
         _playerProviderMock.Setup(p => p.Get()).Throws(new InvalidOperationException("Address not found for Digimon ID 208"));
 
-        var service = new GameLoopService(
-            _memoryReaderMock.Object,
-            _stateComposer,
-            _eventDispatcherServiceMock.Object,
-            _gameStateStore,
-            _debugConsoleRenderer,
-            _configuration);
+        var service = CreateGameLoopService();
 
         using var cts = new CancellationTokenSource();
         var serviceTask = service.StartAsync(cts.Token);
@@ -264,13 +255,7 @@ public class GameLoopServiceTests
             _partyProviderMock.Object,
             _journalProviderMock.Object);
 
-        var service = new GameLoopService(
-            _memoryReaderMock.Object,
-            stateComposer,
-            _eventDispatcherServiceMock.Object,
-            _gameStateStore,
-            _debugConsoleRenderer,
-            _configuration);
+        var service = CreateGameLoopService(stateComposer);
 
         using var cts = new CancellationTokenSource();
         var serviceTask = service.StartAsync(cts.Token);

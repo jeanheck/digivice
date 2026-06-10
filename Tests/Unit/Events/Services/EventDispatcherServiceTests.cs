@@ -208,10 +208,15 @@ public class EventDispatcherServiceTests
     }
 
     [Fact]
-    public void DispatchInitialStateToClient_ShouldNotSend_WhenCurrentStateIsNull()
+    public void DispatchInitialStateToClient_ShouldSendEmulatorStatusOnly_WhenCurrentStateIsNull()
     {
-        // Arrange
         var clientProxyMock = new Mock<ISingleClientProxy>();
+        clientProxyMock.Setup(c => c.SendCoreAsync(
+            It.IsAny<string>(),
+            It.IsAny<object?[]>(),
+            It.IsAny<CancellationToken>()))
+            .Returns(Task.CompletedTask);
+
         var hubClientsMock = new Mock<IHubClients>();
         hubClientsMock.Setup(c => c.Client("client1")).Returns(clientProxyMock.Object);
 
@@ -221,7 +226,8 @@ public class EventDispatcherServiceTests
         var loggerMock = new Mock<ILogger<EventDispatcherService>>();
 
         var gameStateStoreMock = new Mock<IGameStateStore>();
-        gameStateStoreMock.Setup(g => g.CurrentState).Returns((State?)null); // Estado nulo
+        gameStateStoreMock.Setup(g => g.CurrentState).Returns((State?)null);
+        gameStateStoreMock.Setup(g => g.IsConnectedWithEmulator).Returns(false);
 
         var service = new EventDispatcherService(
             hubContextMock.Object,
@@ -229,13 +235,23 @@ public class EventDispatcherServiceTests
             gameStateStoreMock.Object
         );
 
-        // Act
         service.DispatchInitialStateToClient("client1");
 
-        // Assert
         clientProxyMock.Verify(
-            c => c.SendCoreAsync(It.IsAny<string>(), It.IsAny<object?[]>(), It.IsAny<CancellationToken>()),
+            c => c.SendCoreAsync(
+                "InitialState",
+                It.IsAny<object?[]>(),
+                It.IsAny<CancellationToken>()
+            ),
             Times.Never
+        );
+        clientProxyMock.Verify(
+            c => c.SendCoreAsync(
+                "EmulatorConnectionStatusChanged",
+                It.Is<object?[]>(args => args.Length == 1 && ((Event)args[0]!).Type.Equals(EventType.EmulatorConnectionStatusChanged)),
+                It.IsAny<CancellationToken>()
+            ),
+            Times.Once
         );
     }
 
