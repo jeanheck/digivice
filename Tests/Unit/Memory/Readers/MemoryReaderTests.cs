@@ -14,7 +14,7 @@ public class MemoryReaderTests
     {
         var duckstationSession = new DuckstationSession();
         var accessorMock = new Mock<IMemoryAccessor>();
-        duckstationSession.Accessor = accessorMock.Object;
+        duckstationSession.SetAccessor(accessorMock.Object);
 
         return (duckstationSession, accessorMock, new MemoryReader(duckstationSession));
     }

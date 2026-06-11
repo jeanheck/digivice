@@ -1,4 +1,4 @@
-namespace Backend.Application;
+namespace Backend.Infrastructure.Duckstation;
 
 public interface IDuckstationConnector
 {

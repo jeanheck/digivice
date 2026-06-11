@@ -1,4 +1,3 @@
-using Backend.Application;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Serilog;
@@ -13,39 +12,15 @@ public sealed class DuckstationConnector(
 {
     private readonly string? EmulatorProcessName = configuration.GetValue<string>("EmulatorProcessName");
 
-    private bool IsConnected { get; set; }
     private int? ConnectedProcessId { get; set; }
+    private bool HasLoggedSuccessfulConnection { get; set; }
 
-    public bool EnsureConnection()
-    {
-        if (IsConnected && !IsConnectionAlive())
-        {
-            Disconnect();
-            return false;
-        }
-
-        if (!IsConnected)
-        {
-            if (!TryConnect())
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    public void Disconnect()
-    {
-        duckstationSession.Accessor?.Dispose();
-        duckstationSession.Accessor = null;
-        ConnectedProcessId = null;
-        IsConnected = false;
-    }
+    private bool HasActiveConnection =>
+        ConnectedProcessId is not null && duckstationSession.Accessor is not null;
 
     private bool IsConnectionAlive()
     {
-        if (!IsConnected || duckstationSession.Accessor == null || ConnectedProcessId is null)
+        if (!HasActiveConnection)
         {
             return false;
         }
@@ -68,7 +43,6 @@ public sealed class DuckstationConnector(
             if (string.IsNullOrEmpty(EmulatorProcessName))
             {
                 Log.Error("EmulatorProcessName not found in appsettings.json");
-                IsConnected = false;
                 return false;
             }
 
@@ -76,7 +50,6 @@ public sealed class DuckstationConnector(
 
             if (processId == null)
             {
-                IsConnected = false;
                 return false;
             }
 
@@ -86,21 +59,54 @@ public sealed class DuckstationConnector(
 
             if (accessor == null)
             {
-                IsConnected = false;
                 return false;
             }
 
-            duckstationSession.Accessor = accessor;
+            duckstationSession.SetAccessor(accessor);
             ConnectedProcessId = processId;
-            IsConnected = true;
-            Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
+            LogSuccessfulConnectionIfFirstTime(duckstationMapName);
             return true;
         }
         catch (Exception ex)
         {
             Log.Error("Failed to connect to DuckStation: {Msg}", ex.Message);
-            IsConnected = false;
             return false;
         }
+    }
+
+    public bool EnsureConnection()
+    {
+        if (HasActiveConnection && !IsConnectionAlive())
+        {
+            Disconnect();
+            return false;
+        }
+
+        if (!HasActiveConnection)
+        {
+            if (!TryConnect())
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void Disconnect()
+    {
+        duckstationSession.ClearAccessor();
+        ConnectedProcessId = null;
+    }
+
+    private void LogSuccessfulConnectionIfFirstTime(string duckstationMapName)
+    {
+        if (HasLoggedSuccessfulConnection)
+        {
+            return;
+        }
+
+        HasLoggedSuccessfulConnection = true;
+        Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
     }
 }

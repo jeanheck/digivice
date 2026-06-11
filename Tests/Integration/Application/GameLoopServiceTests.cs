@@ -11,6 +11,7 @@ using Backend.Domain.Models;
 using Backend.Domain.Models.Journals;
 using Backend.Events.Services;
 using Backend.Events.States;
+using Backend.Infrastructure.Duckstation;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using Xunit;

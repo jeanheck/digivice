@@ -63,7 +63,7 @@ public class FlagByteHelperTests
     {
         var duckstationSession = new DuckstationSession();
         var accessorMock = new Mock<IMemoryAccessor>();
-        duckstationSession.Accessor = accessorMock.Object;
+        duckstationSession.SetAccessor(accessorMock.Object);
         accessorMock.Setup(accessor => accessor.ReadArray(0x800100, It.IsAny<byte[]>(), 0, 1))
             .Callback<long, byte[], int, int>((address, buffer, index, count) => { buffer[0] = 90; });
 

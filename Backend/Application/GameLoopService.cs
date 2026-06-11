@@ -2,6 +2,7 @@ using Backend.Diagnostics;
 using Backend.Events.Factory;
 using Backend.Events.Services;
 using Backend.Events.States;
+using Backend.Infrastructure.Duckstation;
 using Backend.Memory;
 
 namespace Backend.Application
@@ -23,59 +24,65 @@ namespace Backend.Application
             var pollingIntervalMs = configuration.GetValue<int?>("GameLoop:PollingIntervalMs") ?? 1000;
             var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
 
-            while (!stoppingToken.IsCancellationRequested)
+            try
             {
-                if (!duckstationConnector.EnsureConnection())
+                while (!stoppingToken.IsCancellationRequested)
                 {
-                    NotifyEmulatorUnavailable(isDebuggingEnabled);
-                    await Task.Delay(pollingIntervalMs, stoppingToken);
-                    continue;
-                }
-
-                eventDispatcherService.DispatchEmulatorConnectionStatus(true);
-
-                try
-                {
-                    var newState = stateComposer.Compose();
-                    var previousState = gameStateStore.CurrentState;
-
-                    var events = StateEventFactory.Create(previousState, newState);
-                    eventDispatcherService.DispatchEvents(events);
-
-                    gameStateStore.UpdateState(newState);
-
-                    if (isDebuggingEnabled && !Console.IsOutputRedirected)
+                    if (!duckstationConnector.EnsureConnection())
                     {
-                        debugConsoleRenderer.Render(newState);
+                        NotifyEmulatorUnavailable(isDebuggingEnabled);
+                        await Task.Delay(pollingIntervalMs, stoppingToken);
+                        continue;
+                    }
+
+                    eventDispatcherService.DispatchEmulatorConnectionStatus(true);
+
+                    try
+                    {
+                        var newState = stateComposer.Compose();
+                        var previousState = gameStateStore.CurrentState;
+
+                        var events = StateEventFactory.Create(previousState, newState);
+                        eventDispatcherService.DispatchEvents(events);
+
+                        gameStateStore.UpdateState(newState);
+
+                        if (isDebuggingEnabled && !Console.IsOutputRedirected)
+                        {
+                            debugConsoleRenderer.Render(newState);
+                        }
+                    }
+                    catch (MemoryReadException)
+                    {
+                        duckstationConnector.Disconnect();
+                        NotifyEmulatorUnavailable(isDebuggingEnabled);
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
+                        duckstationConnector.Disconnect();
+                        NotifyEmulatorUnavailable(isDebuggingEnabled);
+                    }
+
+                    try
+                    {
+                        await Task.Delay(pollingIntervalMs, stoppingToken);
+                    }
+                    catch (TaskCanceledException)
+                    {
+                        break;
                     }
                 }
-                catch (MemoryReadException)
-                {
-                    duckstationConnector.Disconnect();
-                    NotifyEmulatorUnavailable(isDebuggingEnabled);
-                }
-                catch (OperationCanceledException)
-                {
-                    break;
-                }
-                catch (Exception ex)
-                {
-                    Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
-                    duckstationConnector.Disconnect();
-                    NotifyEmulatorUnavailable(isDebuggingEnabled);
-                }
-
-                try
-                {
-                    await Task.Delay(pollingIntervalMs, stoppingToken);
-                }
-                catch (TaskCanceledException)
-                {
-                    break;
-                }
             }
-
-            Serilog.Log.Information("GameLoopService shutting down gracefully.");
+            finally
+            {
+                duckstationConnector.Disconnect();
+                Serilog.Log.Information("GameLoopService shutting down gracefully.");
+            }
         }
 
         private void NotifyEmulatorUnavailable(bool isDebuggingEnabled)
