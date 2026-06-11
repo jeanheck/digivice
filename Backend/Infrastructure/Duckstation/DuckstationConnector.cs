@@ -18,22 +18,6 @@ public sealed class DuckstationConnector(
     private bool HasActiveConnection =>
         ConnectedProcessId is not null && duckstationSession.Accessor is not null;
 
-    private bool IsConnectionAlive()
-    {
-        if (!HasActiveConnection)
-        {
-            return false;
-        }
-
-        if (string.IsNullOrEmpty(EmulatorProcessName))
-        {
-            return false;
-        }
-
-        var currentProcessId = processService.GetProcessIdByName(EmulatorProcessName);
-        return currentProcessId == ConnectedProcessId;
-    }
-
     private bool TryConnect()
     {
         Disconnect();
@@ -64,7 +48,13 @@ public sealed class DuckstationConnector(
 
             duckstationSession.SetAccessor(accessor);
             ConnectedProcessId = processId;
-            LogSuccessfulConnectionIfFirstTime(duckstationMapName);
+
+            if (!HasLoggedSuccessfulConnection)
+            {
+                HasLoggedSuccessfulConnection = true;
+                Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
+            }
+
             return true;
         }
         catch (Exception ex)
@@ -76,10 +66,14 @@ public sealed class DuckstationConnector(
 
     public bool EnsureConnection()
     {
-        if (HasActiveConnection && !IsConnectionAlive())
+        if (HasActiveConnection)
         {
-            Disconnect();
-            return false;
+            if (string.IsNullOrEmpty(EmulatorProcessName)
+                || processService.GetProcessIdByName(EmulatorProcessName) != ConnectedProcessId)
+            {
+                Disconnect();
+                return false;
+            }
         }
 
         if (!HasActiveConnection)
@@ -97,16 +91,5 @@ public sealed class DuckstationConnector(
     {
         duckstationSession.ClearAccessor();
         ConnectedProcessId = null;
-    }
-
-    private void LogSuccessfulConnectionIfFirstTime(string duckstationMapName)
-    {
-        if (HasLoggedSuccessfulConnection)
-        {
-            return;
-        }
-
-        HasLoggedSuccessfulConnection = true;
-        Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
     }
 }

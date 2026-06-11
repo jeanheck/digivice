@@ -25,11 +25,11 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 
 ---
 
-## 1. Saúde da sessão — `IsConnectionAlive`
+## 1. Saúde da sessão — alive check em `EnsureConnection`
 
-**Problema:** `IsConnectionAlive()` valida apenas se o processo do emulador ainda existe e se o PID coincide. Não verifica se o **mapping/acessor ainda funciona**.
+**Problema:** o trecho em `EnsureConnection()` que valida conexão ativa verifica apenas se o processo do emulador ainda existe e se o PID coincide. Não verifica se o **mapping/acessor ainda funciona**.
 
-**Cenário:** processo vivo, PID igual, mapping inválido → `IsConnectionAlive() == true`, mas leituras falham no compose.
+**Cenário:** processo vivo, PID igual, mapping inválido → `EnsureConnection()` retorna `true`, mas leituras falham no compose.
 
 **Estado atual:** falha de I/O é detectada de forma **reativa** via `MemoryReadException` → `HandleMemoryReadFailure()` no tick seguinte.
 
@@ -95,7 +95,7 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 
 | Ordem | Tópico | Motivo |
 |-------|--------|--------|
-| 1 | §1 Probe em `IsConnectionAlive` | Só se houver problema real em runtime |
+| 1 | §1 Probe no alive check de `EnsureConnection` | Só se houver problema real em runtime |
 | 2 | §4 Resources non-nullable | Refactor transversal |
 | 3 | §2, §3, §5 | Cosmético ou premissa documental |
 

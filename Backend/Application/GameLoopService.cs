@@ -17,6 +17,16 @@ namespace Backend.Application
         IConfiguration configuration
     ) : BackgroundService
     {
+        private void NotifyEmulatorUnavailable(bool isDebuggingEnabled)
+        {
+            eventDispatcherService.DispatchEmulatorConnectionStatus(false);
+
+            if (isDebuggingEnabled && !Console.IsOutputRedirected)
+            {
+                debugConsoleRenderer.Render(null);
+            }
+        }
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             Serilog.Log.Information("Starting GameLoopService...");
@@ -82,16 +92,6 @@ namespace Backend.Application
             {
                 duckstationConnector.Disconnect();
                 Serilog.Log.Information("GameLoopService shutting down gracefully.");
-            }
-        }
-
-        private void NotifyEmulatorUnavailable(bool isDebuggingEnabled)
-        {
-            eventDispatcherService.DispatchEmulatorConnectionStatus(false);
-
-            if (isDebuggingEnabled && !Console.IsOutputRedirected)
-            {
-                debugConsoleRenderer.Render(null);
             }
         }
     }
