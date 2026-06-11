@@ -55,7 +55,7 @@ namespace Backend.Infrastructure
 
             services.AddSingleton<StateComposer>();
             services.AddSingleton<DebugConsoleRenderer>();
-            services.AddSingleton<IDuckstationConnectionCoordinator, DuckstationConnectionHandler>();
+            services.AddSingleton<IDuckstationConnectionHandler, DuckstationConnectionHandler>();
 
             services.AddSingleton<IGameStateStore, GameStateStore>();
             services.AddSingleton<IEventDispatcherService, EventDispatcherService>();

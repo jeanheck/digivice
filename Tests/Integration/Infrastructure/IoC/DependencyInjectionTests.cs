@@ -2,11 +2,6 @@ namespace Tests.Integration.Infrastructure.IoC;
 
 using System;
 using System.Linq;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Xunit;
-using Backend.Infrastructure;
 using Backend.Application;
 using Backend.Application.Loaders;
 using Backend.Application.Loaders.Journals;
@@ -15,6 +10,7 @@ using Backend.Application.Providers;
 using Backend.Diagnostics;
 using Backend.Events.Services;
 using Backend.Events.States;
+using Backend.Infrastructure;
 using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
@@ -24,6 +20,10 @@ using Backend.Memory.Readers.Journals.Quests;
 using Backend.Memory.Readers.Parties;
 using Backend.Memory.Readers.Parties.Digimons;
 using Backend.Memory.Repositories;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Xunit;
 
 public class DependencyInjectionTests
 {
@@ -51,9 +51,10 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IMemoryProvider>());
         Assert.NotNull(provider.GetRequiredService<IDuckstationConnector>());
         Assert.NotNull(provider.GetRequiredService<IMemoryReader>());
-        Assert.NotNull(provider.GetRequiredService<IDuckstationConnectionCoordinator>());
+        Assert.NotNull(provider.GetRequiredService<IDuckstationConnectionHandler>());
         Assert.NotNull(provider.GetRequiredService<IAddressesRepository>());
-        
+
+
         Assert.NotNull(provider.GetRequiredService<IDigimonReader>());
         Assert.NotNull(provider.GetRequiredService<IDigimonSlotReader>());
         Assert.NotNull(provider.GetRequiredService<IDigievolutionReader>());

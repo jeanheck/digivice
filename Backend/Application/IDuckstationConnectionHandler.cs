@@ -1,8 +1,8 @@
 namespace Backend.Application;
 
-public interface IDuckstationConnectionCoordinator
+public interface IDuckstationConnectionHandler
 {
-    DuckstationConnectionStatus Handle();
+    bool Handle();
     void HandleProcessingFailure(Exception exception);
     void HandleMemoryReadFailure();
 }

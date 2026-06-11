@@ -40,53 +40,53 @@ public class DuckstationConnectionCoordinatorTests
     }
 
     [Fact]
-    public void GetConnectionStatus_ShouldReturnReady_WhenConnectedAndAlive()
+    public void Handle_ShouldReturnTrue_WhenConnectedAndAlive()
     {
         DuckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(true);
         DuckstationConnectorMock.Setup(connector => connector.IsConnectionAlive()).Returns(true);
 
         var coordinator = CreateCoordinator();
 
-        var status = coordinator.Handle();
+        var isReadyToCompose = coordinator.Handle();
 
-        Assert.Equal(DuckstationConnectionStatus.Ready, status);
+        Assert.True(isReadyToCompose);
         EventDispatcherServiceMock.Verify(
             dispatcher => dispatcher.DispatchEmulatorConnectionStatus(It.IsAny<bool>()),
             Times.Never);
     }
 
     [Fact]
-    public void GetConnectionStatus_ShouldReturnConnectionLost_WhenConnectedButNotAlive()
+    public void Handle_ShouldReturnFalse_WhenConnectedButNotAlive()
     {
         DuckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(true);
         DuckstationConnectorMock.Setup(connector => connector.IsConnectionAlive()).Returns(false);
 
         var coordinator = CreateCoordinator();
 
-        var status = coordinator.Handle();
+        var isReadyToCompose = coordinator.Handle();
 
-        Assert.Equal(DuckstationConnectionStatus.ConnectionLost, status);
+        Assert.False(isReadyToCompose);
         DuckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.Once);
         EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(false), Times.Once);
     }
 
     [Fact]
-    public void GetConnectionStatus_ShouldReturnWaitingForEmulator_WhenTryConnectFails()
+    public void Handle_ShouldReturnFalse_WhenTryConnectFails()
     {
         DuckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(false);
         DuckstationConnectorMock.Setup(connector => connector.TryConnect()).Returns(false);
 
         var coordinator = CreateCoordinator();
 
-        var status = coordinator.Handle();
+        var isReadyToCompose = coordinator.Handle();
 
-        Assert.Equal(DuckstationConnectionStatus.WaitingForEmulator, status);
+        Assert.False(isReadyToCompose);
         DuckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.Never);
         EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(false), Times.Once);
     }
 
     [Fact]
-    public void GetConnectionStatus_ShouldReturnReady_WhenTryConnectSucceeds()
+    public void Handle_ShouldReturnTrue_WhenTryConnectSucceeds()
     {
         DuckstationConnectorMock.Setup(connector => connector.IsConnected).Returns(false);
         DuckstationConnectorMock.SetupSequence(connector => connector.TryConnect())
@@ -96,9 +96,9 @@ public class DuckstationConnectionCoordinatorTests
 
         var coordinator = CreateCoordinator();
 
-        var status = coordinator.Handle();
+        var isReadyToCompose = coordinator.Handle();
 
-        Assert.Equal(DuckstationConnectionStatus.Ready, status);
+        Assert.True(isReadyToCompose);
         EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(true), Times.Once);
     }
 

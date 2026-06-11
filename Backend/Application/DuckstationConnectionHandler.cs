@@ -8,14 +8,14 @@ public class DuckstationConnectionHandler(
     IDuckstationConnector duckstationConnector,
     IEventDispatcherService eventDispatcherService,
     DebugConsoleRenderer debugConsoleRenderer,
-    IConfiguration configuration) : IDuckstationConnectionCoordinator
+    IConfiguration configuration) : IDuckstationConnectionHandler
 {
-    public DuckstationConnectionStatus Handle()
+    public bool Handle()
     {
         if (duckstationConnector.IsConnected && !duckstationConnector.IsConnectionAlive())
         {
             MarkDuckstationDisconnected();
-            return DuckstationConnectionStatus.ConnectionLost;
+            return false;
         }
 
         if (!duckstationConnector.IsConnected)
@@ -23,13 +23,13 @@ public class DuckstationConnectionHandler(
             if (!duckstationConnector.TryConnect())
             {
                 eventDispatcherService.DispatchEmulatorConnectionStatus(false);
-                return DuckstationConnectionStatus.WaitingForEmulator;
+                return false;
             }
 
             eventDispatcherService.DispatchEmulatorConnectionStatus(true);
         }
 
-        return DuckstationConnectionStatus.Ready;
+        return true;
     }
 
     public void HandleProcessingFailure(Exception exception)

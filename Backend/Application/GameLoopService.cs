@@ -8,7 +8,7 @@ namespace Backend.Application
 {
     public class GameLoopService
     (
-        IDuckstationConnectionCoordinator duckstationConnectionCoordinator,
+        IDuckstationConnectionHandler duckstationConnectionCoordinator,
         StateComposer stateComposer,
         IEventDispatcherService eventDispatcherService,
         IGameStateStore gameStateStore,
@@ -25,7 +25,7 @@ namespace Backend.Application
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (duckstationConnectionCoordinator.Handle() != DuckstationConnectionStatus.Ready)
+                if (!duckstationConnectionCoordinator.Handle())
                 {
                     await Task.Delay(pollingIntervalMs, stoppingToken);
                     continue;
