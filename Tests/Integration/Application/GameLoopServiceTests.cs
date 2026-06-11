@@ -4,9 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Moq;
-using Xunit;
 using Backend.Application;
 using Backend.Application.Providers;
 using Backend.Diagnostics;
@@ -15,6 +12,9 @@ using Backend.Domain.Models.Journals;
 using Backend.Events.Services;
 using Backend.Events.States;
 using Backend.Infrastructure.Duckstation;
+using Microsoft.Extensions.Configuration;
+using Moq;
+using Xunit;
 
 public class GameLoopServiceTests
 {
@@ -28,9 +28,9 @@ public class GameLoopServiceTests
     private readonly StateComposer _stateComposer;
     private readonly IConfiguration _configuration;
 
-    private DuckstationConnectionCoordinator CreateDuckstationConnectionCoordinator()
+    private DuckstationConnectionHandler CreateDuckstationConnectionCoordinator()
     {
-        return new DuckstationConnectionCoordinator(
+        return new DuckstationConnectionHandler(
             _duckstationConnectorMock.Object,
             _eventDispatcherServiceMock.Object,
             _debugConsoleRenderer,

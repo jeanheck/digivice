@@ -30,9 +30,9 @@ public class DuckstationConnectionCoordinatorTests
             .Build();
     }
 
-    private DuckstationConnectionCoordinator CreateCoordinator()
+    private DuckstationConnectionHandler CreateCoordinator()
     {
-        return new DuckstationConnectionCoordinator(
+        return new DuckstationConnectionHandler(
             DuckstationConnectorMock.Object,
             EventDispatcherServiceMock.Object,
             DebugConsoleRenderer,
@@ -47,7 +47,7 @@ public class DuckstationConnectionCoordinatorTests
 
         var coordinator = CreateCoordinator();
 
-        var status = coordinator.GetConnectionStatus();
+        var status = coordinator.Handle();
 
         Assert.Equal(DuckstationConnectionStatus.Ready, status);
         EventDispatcherServiceMock.Verify(
@@ -63,7 +63,7 @@ public class DuckstationConnectionCoordinatorTests
 
         var coordinator = CreateCoordinator();
 
-        var status = coordinator.GetConnectionStatus();
+        var status = coordinator.Handle();
 
         Assert.Equal(DuckstationConnectionStatus.ConnectionLost, status);
         DuckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.Once);
@@ -78,7 +78,7 @@ public class DuckstationConnectionCoordinatorTests
 
         var coordinator = CreateCoordinator();
 
-        var status = coordinator.GetConnectionStatus();
+        var status = coordinator.Handle();
 
         Assert.Equal(DuckstationConnectionStatus.WaitingForEmulator, status);
         DuckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.Never);
@@ -96,7 +96,7 @@ public class DuckstationConnectionCoordinatorTests
 
         var coordinator = CreateCoordinator();
 
-        var status = coordinator.GetConnectionStatus();
+        var status = coordinator.Handle();
 
         Assert.Equal(DuckstationConnectionStatus.Ready, status);
         EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(true), Times.Once);

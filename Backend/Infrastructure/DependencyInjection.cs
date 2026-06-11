@@ -26,10 +26,10 @@ namespace Backend.Infrastructure
             services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
             services.AddSingleton<IDuckstationConnector, DuckstationConnector>();
             services.AddSingleton<IMemoryReader, MemoryReader>();
-            
+
             string memoryDefinitionsDirectory = Path.Combine(basePath, "Memory", "Definitions");
             services.AddSingleton<IAddressesRepository>(new AddressesRepository(memoryDefinitionsDirectory));
-            
+
             services.AddSingleton<IDigimonReader, DigimonReader>();
             services.AddSingleton<IDigimonSlotReader, DigimonSlotReader>();
             services.AddSingleton<IDigievolutionReader, DigievolutionReader>();
@@ -41,21 +41,21 @@ namespace Backend.Infrastructure
             services.AddSingleton<IPlayerReader, PlayerReader>();
             services.AddSingleton<IQuestReader, QuestReader>();
             services.AddSingleton<IAuctionReader, AuctionReader>();
-            
+
             services.AddSingleton<IPlayerLoader, PlayerLoader>();
             services.AddSingleton<IAuctionLoader, AuctionLoader>();
             services.AddSingleton<QuestLoader>();
             services.AddSingleton<IJournalLoader, JournalLoader>();
             services.AddSingleton<IPartyLoader, PartyLoader>();
             services.AddSingleton<DigimonLoader>();
-            
+
             services.AddSingleton<IPlayerProvider, PlayerProvider>();
             services.AddSingleton<IPartyProvider, PartyProvider>();
             services.AddSingleton<IJournalProvider, JournalProvider>();
-            
+
             services.AddSingleton<StateComposer>();
             services.AddSingleton<DebugConsoleRenderer>();
-            services.AddSingleton<IDuckstationConnectionCoordinator, DuckstationConnectionCoordinator>();
+            services.AddSingleton<IDuckstationConnectionCoordinator, DuckstationConnectionHandler>();
 
             services.AddSingleton<IGameStateStore, GameStateStore>();
             services.AddSingleton<IEventDispatcherService, EventDispatcherService>();

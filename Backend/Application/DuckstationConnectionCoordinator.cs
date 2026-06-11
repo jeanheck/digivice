@@ -4,13 +4,13 @@ using Backend.Infrastructure.Duckstation;
 
 namespace Backend.Application;
 
-public class DuckstationConnectionCoordinator(
+public class DuckstationConnectionHandler(
     IDuckstationConnector duckstationConnector,
     IEventDispatcherService eventDispatcherService,
     DebugConsoleRenderer debugConsoleRenderer,
     IConfiguration configuration) : IDuckstationConnectionCoordinator
 {
-    public DuckstationConnectionStatus GetConnectionStatus()
+    public DuckstationConnectionStatus Handle()
     {
         if (duckstationConnector.IsConnected && !duckstationConnector.IsConnectionAlive())
         {

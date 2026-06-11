@@ -45,33 +45,7 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 
 ---
 
-## 2. Configuração — cache de `EmulatorProcessName`
-
-**Problema:** `DuckstationConnector` relê `EmulatorProcessName` do `IConfiguration` em `TryConnect` e `IsConnectionAlive`. O valor não muda durante a execução.
-
-**Onde:** `Backend/Infrastructure/Duckstation/DuckstationConnector.cs`
-
-**Sugestão:** campo `readonly` inicializado no construtor primário, ou método privado `GetEmulatorProcessName()` para DRY entre os dois métodos.
-
-**Impacto:** baixo (micro-otimização + legibilidade).
-
-**Prioridade:** baixa.
-
----
-
-## 3. Conexão — log em falhas de `TryConnect`
-
-**Problema:** o `catch` de `TryConnect` seta `IsConnected = false` e retorna `false` **sem log**, diferente das leituras que logam antes de lançar `MemoryReadException`.
-
-**Sugestão:** adicionar `Log.Error` (ou `Log.Warning`) no catch, alinhado ao padrão do `MemoryReader`.
-
-**Impacto:** melhora diagnóstico quando connect falha por exceção inesperada (não só “processo não encontrado”).
-
-**Prioridade:** baixa.
-
----
-
-## 4. Conexão — ruído de log no sucesso
+## 2. Conexão — ruído de log no sucesso
 
 **Problema:** `TryConnect` loga `"Connected to DuckStation! Mapping found..."` a cada reconexão bem-sucedida.
 
@@ -81,7 +55,7 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 
 ---
 
-## 5. Concorrência — singletons sem sincronização
+## 3. Concorrência — singletons sem sincronização
 
 **Problema:** `DuckstationConnector` e `MemoryReader` são singletons com estado mutável (`IsConnected`, accessor). Não há lock; funciona porque só o `GameLoopService` orquestra connect/disconnect hoje.
 
@@ -93,19 +67,7 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 
 ---
 
-## 6. Domain readers — leituras repetidas no mesmo endereço
-
-**Problema:** `AuctionReader` chama `FlagByteHelper.Read` (e portanto `ReadBytes(address, 1)`) **uma vez por leilão**, todos no **mesmo endereço** compartilhado.
-
-**Sugestão:** ler o byte bruto uma vez (`FlagByteHelper.Read` sem mask ou `ReadBytes` direto) e aplicar bitmasks no loop — mesmo padrão mental do `MemoryBlockReader` (fetch once, parse many).
-
-**Impacto:** menos I/O por tick quando há vários leilões; código ligeiramente mais explícito.
-
-**Prioridade:** baixa — otimização; comportamento externo idêntico.
-
----
-
-## 7. Modelo de recursos — campos nullable pós-`MemoryReadException`
+## 4. Modelo de recursos — campos nullable pós-`MemoryReadException`
 
 **Problema:** `PlayerResource` (e possivelmente outros resources) ainda expõe `int?`, `short?`, `byte[]?` herdados da era em que leitura falha retornava `null`.
 
@@ -117,7 +79,7 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 
 ---
 
-## 8. `DigimonReader` — validação de bloco curto
+## 5. `DigimonReader` — validação de bloco curto
 
 **Problema:** após `ReadBytes`, ainda há check `memoryBlock.Length < DigimonMemoryBlockSize` → retorna `null` (domínio), enquanto falha de I/O lança exceção.
 
@@ -133,12 +95,9 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 
 | Ordem | Tópico | Motivo |
 |-------|--------|--------|
-| 1 | §3 Log em `TryConnect` | Diagnóstico fácil, diff pequeno |
-| 2 | §2 Cache `EmulatorProcessName` | DRY simples |
-| 3 | §6 `AuctionReader` single read | Ganho concreto sem mudar API |
-| 4 | §1 Probe em `IsConnectionAlive` | Só se houver problema real em runtime |
-| 5 | §7 Resources non-nullable | Refactor transversal |
-| 6 | §4, §5, §8 | Cosmético ou premissa documental |
+| 1 | §1 Probe em `IsConnectionAlive` | Só se houver problema real em runtime |
+| 2 | §4 Resources non-nullable | Refactor transversal |
+| 3 | §2, §3, §5 | Cosmético ou premissa documental |
 
 ---
 
@@ -149,3 +108,6 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 - Política de erro unificada (`MemoryReadException` + `HandleMemoryReadFailure`) ✅
 - `ReadByteSafe` → `FlagByteHelper` na domain layer ✅
 - `InvalidateConnection` / `HandleSilentReadFailure` ✅ removidos
+- Cache de `EmulatorProcessName` no `DuckstationConnector` ✅
+- Log em falhas de `TryConnect` ✅
+- `AuctionReader` — leitura única do byte compartilhado ✅
