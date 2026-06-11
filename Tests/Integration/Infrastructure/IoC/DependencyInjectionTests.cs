@@ -49,9 +49,9 @@ public class DependencyInjectionTests
 
         Assert.NotNull(provider.GetRequiredService<IProcessService>());
         Assert.NotNull(provider.GetRequiredService<IMemoryProvider>());
-        Assert.NotNull(provider.GetRequiredService<IDuckstationConnector>());
+        Assert.NotNull(provider.GetRequiredService<IDuckstationConnection>());
         Assert.NotNull(provider.GetRequiredService<IMemoryReader>());
-        Assert.NotNull(provider.GetRequiredService<IDuckstationConnectionHandler>());
+        Assert.NotNull(provider.GetRequiredService<IDuckstationConnector>());
         Assert.NotNull(provider.GetRequiredService<IAddressesRepository>());
 
 

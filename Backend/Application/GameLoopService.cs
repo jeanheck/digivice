@@ -8,7 +8,7 @@ namespace Backend.Application
 {
     public class GameLoopService
     (
-        IDuckstationConnectionHandler duckstationConnectionCoordinator,
+        IDuckstationConnector duckstationConnector,
         StateComposer stateComposer,
         IEventDispatcherService eventDispatcherService,
         IGameStateStore gameStateStore,
@@ -25,7 +25,7 @@ namespace Backend.Application
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (!duckstationConnectionCoordinator.Handle())
+                if (!duckstationConnector.EnsureConnection())
                 {
                     await Task.Delay(pollingIntervalMs, stoppingToken);
                     continue;
@@ -48,7 +48,7 @@ namespace Backend.Application
                 }
                 catch (MemoryReadException)
                 {
-                    duckstationConnectionCoordinator.HandleMemoryReadFailure();
+                    duckstationConnector.HandleMemoryReadFailure();
                 }
                 catch (OperationCanceledException)
                 {
@@ -56,7 +56,7 @@ namespace Backend.Application
                 }
                 catch (Exception ex)
                 {
-                    duckstationConnectionCoordinator.HandleProcessingFailure(ex);
+                    duckstationConnector.HandleProcessingFailure(ex);
                 }
 
                 try

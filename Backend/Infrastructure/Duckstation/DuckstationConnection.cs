@@ -4,10 +4,10 @@ using Serilog;
 
 namespace Backend.Infrastructure.Duckstation;
 
-public sealed class DuckstationConnector(
+public sealed class DuckstationConnection(
     IProcessService processService,
     IMemoryProvider memoryProvider,
-    IConfiguration configuration) : IDuckstationConnector
+    IConfiguration configuration) : IDuckstationConnection
 {
     private readonly string? EmulatorProcessName = configuration.GetValue<string>("EmulatorProcessName");
 

@@ -1,7 +1,7 @@
 # Melhorias opcionais — camada de memória e Duckstation
 
 > Referência de contexto para evoluções futuras no backend (memória, sessão Duckstation, game loop).
-> A refatoração principal está **concluída** (jun/2026): `DuckstationConnector`, `MemoryReader` com `MemoryReadException`, `FlagByteHelper`, `DuckstationConnectionCoordinator`.
+> A refatoração principal está **concluída** (jun/2026): `DuckstationConnection`, `DuckstationConnector`, `MemoryReader` com `MemoryReadException`, `FlagByteHelper`.
 
 ---
 
@@ -11,10 +11,10 @@
 GameLoopService
          │
          ▼
-DuckstationConnectionCoordinator   ← connect/disconnect, eventos, HandleMemoryReadFailure
+DuckstationConnector               ← EnsureConnection, eventos, HandleMemoryReadFailure
          │
          ▼
-IDuckstationConnector              ← TryConnect, Disconnect, IsConnectionAlive
+IDuckstationConnection             ← TryConnect, Disconnect, IsConnectionAlive
          │
          ▼
 IMemoryReader                      ← ReadInt32 / ReadInt16 / ReadBytes (+ MemoryReadException)
@@ -57,7 +57,7 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 
 ## 3. Concorrência — singletons sem sincronização
 
-**Problema:** `DuckstationConnector` e `MemoryReader` são singletons com estado mutável (`IsConnected`, accessor). Não há lock; funciona porque só o `GameLoopService` orquestra connect/disconnect hoje.
+**Problema:** `DuckstationConnection` e `MemoryReader` são singletons com estado mutável (`IsConnected`, accessor). Não há lock; funciona porque só o `GameLoopService` orquestra connect/disconnect hoje.
 
 **Risco futuro:** segundo consumidor (endpoint HTTP, job paralelo) poderia causar race.
 
@@ -104,10 +104,10 @@ Domain readers + FlagByteHelper    ← flags de journal/auction
 ## Fora de escopo / já resolvido
 
 - Lifetime do `MemoryMappedFile` em `WindowsMemoryProvider` ✅
-- Separação sessão (`DuckstationConnector`) vs I/O (`MemoryReader`) ✅
+- Separação sessão (`DuckstationConnection`) vs I/O (`MemoryReader`) ✅
 - Política de erro unificada (`MemoryReadException` + `HandleMemoryReadFailure`) ✅
 - `ReadByteSafe` → `FlagByteHelper` na domain layer ✅
 - `InvalidateConnection` / `HandleSilentReadFailure` ✅ removidos
-- Cache de `EmulatorProcessName` no `DuckstationConnector` ✅
+- Cache de `EmulatorProcessName` no `DuckstationConnection` ✅
 - Log em falhas de `TryConnect` ✅
 - `AuctionReader` — leitura única do byte compartilhado ✅

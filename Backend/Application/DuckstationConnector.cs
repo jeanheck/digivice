@@ -4,23 +4,23 @@ using Backend.Infrastructure.Duckstation;
 
 namespace Backend.Application;
 
-public class DuckstationConnectionHandler(
-    IDuckstationConnector duckstationConnector,
+public class DuckstationConnector(
+    IDuckstationConnection duckstationConnection,
     IEventDispatcherService eventDispatcherService,
     DebugConsoleRenderer debugConsoleRenderer,
-    IConfiguration configuration) : IDuckstationConnectionHandler
+    IConfiguration configuration) : IDuckstationConnector
 {
-    public bool Handle()
+    public bool EnsureConnection()
     {
-        if (duckstationConnector.IsConnected && !duckstationConnector.IsConnectionAlive())
+        if (duckstationConnection.IsConnected && !duckstationConnection.IsConnectionAlive())
         {
             MarkDuckstationDisconnected();
             return false;
         }
 
-        if (!duckstationConnector.IsConnected)
+        if (!duckstationConnection.IsConnected)
         {
-            if (!duckstationConnector.TryConnect())
+            if (!duckstationConnection.TryConnect())
             {
                 eventDispatcherService.DispatchEmulatorConnectionStatus(false);
                 return false;
@@ -45,7 +45,7 @@ public class DuckstationConnectionHandler(
 
     private void MarkDuckstationDisconnected()
     {
-        duckstationConnector.Disconnect();
+        duckstationConnection.Disconnect();
         eventDispatcherService.DispatchEmulatorConnectionStatus(false);
 
         var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");

@@ -4,12 +4,12 @@ using Serilog;
 
 namespace Backend.Memory.Readers
 {
-    public class MemoryReader(IDuckstationConnector duckstationConnector) : IMemoryReader
+    public class MemoryReader(IDuckstationConnection duckstationConnection) : IMemoryReader
     {
         private IMemoryAccessor GetConnectedAccessor(long address)
         {
-            var accessor = duckstationConnector.Accessor;
-            if (!duckstationConnector.IsConnected || accessor == null)
+            var accessor = duckstationConnection.Accessor;
+            if (!duckstationConnection.IsConnected || accessor == null)
             {
                 throw new MemoryReadException(address, "Memory session is not connected.");
             }

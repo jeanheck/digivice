@@ -10,24 +10,24 @@ using Xunit;
 
 public class MemoryReaderTests
 {
-    private static (Mock<IDuckstationConnector> ConnectorMock, Mock<IMemoryAccessor> AccessorMock, MemoryReader Reader) CreateConnectedReader()
+    private static (Mock<IDuckstationConnection> ConnectionMock, Mock<IMemoryAccessor> AccessorMock, MemoryReader Reader) CreateConnectedReader()
     {
-        var connectorMock = new Mock<IDuckstationConnector>();
+        var connectionMock = new Mock<IDuckstationConnection>();
         var accessorMock = new Mock<IMemoryAccessor>();
-        connectorMock.Setup(connector => connector.IsConnected).Returns(true);
-        connectorMock.Setup(connector => connector.Accessor).Returns(accessorMock.Object);
+        connectionMock.Setup(connection => connection.IsConnected).Returns(true);
+        connectionMock.Setup(connection => connection.Accessor).Returns(accessorMock.Object);
 
-        return (connectorMock, accessorMock, new MemoryReader(connectorMock.Object));
+        return (connectionMock, accessorMock, new MemoryReader(connectionMock.Object));
     }
 
     [Fact]
     public void ReadInt32_ShouldThrowMemoryReadException_WhenDisconnected()
     {
-        var connectorMock = new Mock<IDuckstationConnector>();
-        connectorMock.Setup(connector => connector.IsConnected).Returns(false);
-        connectorMock.Setup(connector => connector.Accessor).Returns((IMemoryAccessor?)null);
+        var connectionMock = new Mock<IDuckstationConnection>();
+        connectionMock.Setup(connection => connection.IsConnected).Returns(false);
+        connectionMock.Setup(connection => connection.Accessor).Returns((IMemoryAccessor?)null);
 
-        var reader = new MemoryReader(connectorMock.Object);
+        var reader = new MemoryReader(connectionMock.Object);
 
         var exception = Assert.Throws<MemoryReadException>(() => reader.ReadInt32(0x800100));
 
@@ -80,11 +80,11 @@ public class MemoryReaderTests
     [Fact]
     public void ReadInt16_ShouldThrowMemoryReadException_WhenDisconnected()
     {
-        var connectorMock = new Mock<IDuckstationConnector>();
-        connectorMock.Setup(connector => connector.IsConnected).Returns(false);
-        connectorMock.Setup(connector => connector.Accessor).Returns((IMemoryAccessor?)null);
+        var connectionMock = new Mock<IDuckstationConnection>();
+        connectionMock.Setup(connection => connection.IsConnected).Returns(false);
+        connectionMock.Setup(connection => connection.Accessor).Returns((IMemoryAccessor?)null);
 
-        var reader = new MemoryReader(connectorMock.Object);
+        var reader = new MemoryReader(connectionMock.Object);
 
         Assert.Throws<MemoryReadException>(() => reader.ReadInt16(0x800100));
     }
@@ -115,11 +115,11 @@ public class MemoryReaderTests
     [Fact]
     public void ReadBytes_ShouldThrowMemoryReadException_WhenDisconnected()
     {
-        var connectorMock = new Mock<IDuckstationConnector>();
-        connectorMock.Setup(connector => connector.IsConnected).Returns(false);
-        connectorMock.Setup(connector => connector.Accessor).Returns((IMemoryAccessor?)null);
+        var connectionMock = new Mock<IDuckstationConnection>();
+        connectionMock.Setup(connection => connection.IsConnected).Returns(false);
+        connectionMock.Setup(connection => connection.Accessor).Returns((IMemoryAccessor?)null);
 
-        var reader = new MemoryReader(connectorMock.Object);
+        var reader = new MemoryReader(connectionMock.Object);
 
         Assert.Throws<MemoryReadException>(() => reader.ReadBytes(0x800100, 3));
     }

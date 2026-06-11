@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Moq;
 using Xunit;
 
-public class DuckstationConnectorTests
+public class DuckstationConnectionTests
 {
     [Fact]
     public void TryConnect_ShouldReturnTrue_WhenProcessAndAccessorExist()
@@ -24,16 +24,16 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
 
-        var result = connector.TryConnect();
+        var result = connection.TryConnect();
 
         Assert.True(result);
-        Assert.True(connector.IsConnected);
-        Assert.Same(memoryAccessorMock.Object, connector.Accessor);
+        Assert.True(connection.IsConnected);
+        Assert.Same(memoryAccessorMock.Object, connection.Accessor);
     }
 
     [Fact]
@@ -49,15 +49,15 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
 
-        var result = connector.TryConnect();
+        var result = connection.TryConnect();
 
         Assert.False(result);
-        Assert.False(connector.IsConnected);
+        Assert.False(connection.IsConnected);
     }
 
     [Fact]
@@ -75,13 +75,13 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
-        connector.TryConnect();
+        connection.TryConnect();
 
-        Assert.True(connector.IsConnectionAlive());
+        Assert.True(connection.IsConnectionAlive());
     }
 
     [Fact]
@@ -101,13 +101,13 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
-        connector.TryConnect();
+        connection.TryConnect();
 
-        Assert.False(connector.IsConnectionAlive());
+        Assert.False(connection.IsConnectionAlive());
     }
 
     [Fact]
@@ -127,13 +127,13 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
-        connector.TryConnect();
+        connection.TryConnect();
 
-        Assert.False(connector.IsConnectionAlive());
+        Assert.False(connection.IsConnectionAlive());
     }
 
     [Fact]
@@ -151,16 +151,16 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
-        connector.TryConnect();
+        connection.TryConnect();
 
-        connector.Disconnect();
+        connection.Disconnect();
 
-        Assert.False(connector.IsConnected);
-        Assert.Null(connector.Accessor);
+        Assert.False(connection.IsConnected);
+        Assert.Null(connection.Accessor);
         memoryAccessorMock.Verify(accessor => accessor.Dispose(), Times.Once);
     }
 
@@ -175,15 +175,15 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
 
-        connector.Disconnect();
-        connector.Disconnect();
+        connection.Disconnect();
+        connection.Disconnect();
 
-        Assert.False(connector.IsConnected);
+        Assert.False(connection.IsConnected);
     }
 
     [Fact]
@@ -197,15 +197,15 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
 
-        var result = connector.TryConnect();
+        var result = connection.TryConnect();
 
         Assert.False(result);
-        Assert.False(connector.IsConnected);
+        Assert.False(connection.IsConnected);
     }
 
     [Fact]
@@ -222,15 +222,15 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
 
-        var result = connector.TryConnect();
+        var result = connection.TryConnect();
 
         Assert.False(result);
-        Assert.False(connector.IsConnected);
+        Assert.False(connection.IsConnected);
     }
 
     [Fact]
@@ -247,15 +247,15 @@ public class DuckstationConnectorTests
         var configurationMock = new Mock<IConfiguration>();
         configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
-        var connector = new DuckstationConnector(
+        var connection = new DuckstationConnection(
             processServiceMock.Object,
             memoryProviderMock.Object,
             configurationMock.Object);
 
-        var result = connector.TryConnect();
+        var result = connection.TryConnect();
 
         Assert.False(result);
-        Assert.False(connector.IsConnected);
+        Assert.False(connection.IsConnected);
     }
 }
 
