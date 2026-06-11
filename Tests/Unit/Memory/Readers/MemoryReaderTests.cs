@@ -10,24 +10,20 @@ using Xunit;
 
 public class MemoryReaderTests
 {
-    private static (Mock<IDuckstationConnection> ConnectionMock, Mock<IMemoryAccessor> AccessorMock, MemoryReader Reader) CreateConnectedReader()
+    private static (DuckstationSession Session, Mock<IMemoryAccessor> AccessorMock, MemoryReader Reader) CreateConnectedReader()
     {
-        var connectionMock = new Mock<IDuckstationConnection>();
+        var duckstationSession = new DuckstationSession();
         var accessorMock = new Mock<IMemoryAccessor>();
-        connectionMock.Setup(connection => connection.IsConnected).Returns(true);
-        connectionMock.Setup(connection => connection.Accessor).Returns(accessorMock.Object);
+        duckstationSession.Accessor = accessorMock.Object;
 
-        return (connectionMock, accessorMock, new MemoryReader(connectionMock.Object));
+        return (duckstationSession, accessorMock, new MemoryReader(duckstationSession));
     }
 
     [Fact]
     public void ReadInt32_ShouldThrowMemoryReadException_WhenDisconnected()
     {
-        var connectionMock = new Mock<IDuckstationConnection>();
-        connectionMock.Setup(connection => connection.IsConnected).Returns(false);
-        connectionMock.Setup(connection => connection.Accessor).Returns((IMemoryAccessor?)null);
-
-        var reader = new MemoryReader(connectionMock.Object);
+        var duckstationSession = new DuckstationSession();
+        var reader = new MemoryReader(duckstationSession);
 
         var exception = Assert.Throws<MemoryReadException>(() => reader.ReadInt32(0x800100));
 
@@ -80,11 +76,8 @@ public class MemoryReaderTests
     [Fact]
     public void ReadInt16_ShouldThrowMemoryReadException_WhenDisconnected()
     {
-        var connectionMock = new Mock<IDuckstationConnection>();
-        connectionMock.Setup(connection => connection.IsConnected).Returns(false);
-        connectionMock.Setup(connection => connection.Accessor).Returns((IMemoryAccessor?)null);
-
-        var reader = new MemoryReader(connectionMock.Object);
+        var duckstationSession = new DuckstationSession();
+        var reader = new MemoryReader(duckstationSession);
 
         Assert.Throws<MemoryReadException>(() => reader.ReadInt16(0x800100));
     }
@@ -115,11 +108,8 @@ public class MemoryReaderTests
     [Fact]
     public void ReadBytes_ShouldThrowMemoryReadException_WhenDisconnected()
     {
-        var connectionMock = new Mock<IDuckstationConnection>();
-        connectionMock.Setup(connection => connection.IsConnected).Returns(false);
-        connectionMock.Setup(connection => connection.Accessor).Returns((IMemoryAccessor?)null);
-
-        var reader = new MemoryReader(connectionMock.Object);
+        var duckstationSession = new DuckstationSession();
+        var reader = new MemoryReader(duckstationSession);
 
         Assert.Throws<MemoryReadException>(() => reader.ReadBytes(0x800100, 3));
     }

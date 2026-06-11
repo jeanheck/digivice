@@ -61,14 +61,13 @@ public class FlagByteHelperTests
     [Fact]
     public void Read_ShouldIntegrateWithMemoryReader_WhenConnected()
     {
-        var connectionMock = new Mock<IDuckstationConnection>();
+        var duckstationSession = new DuckstationSession();
         var accessorMock = new Mock<IMemoryAccessor>();
-        connectionMock.Setup(connection => connection.IsConnected).Returns(true);
-        connectionMock.Setup(connection => connection.Accessor).Returns(accessorMock.Object);
+        duckstationSession.Accessor = accessorMock.Object;
         accessorMock.Setup(accessor => accessor.ReadArray(0x800100, It.IsAny<byte[]>(), 0, 1))
             .Callback<long, byte[], int, int>((address, buffer, index, count) => { buffer[0] = 90; });
 
-        var memoryReader = new MemoryReader(connectionMock.Object);
+        var memoryReader = new MemoryReader(duckstationSession);
 
         var result = FlagByteHelper.Read(memoryReader, 0x800100, 15);
 

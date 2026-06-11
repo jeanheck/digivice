@@ -1,23 +1,51 @@
+using Backend.Application;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Serilog;
 
 namespace Backend.Infrastructure.Duckstation;
 
-public sealed class DuckstationConnection(
+public sealed class DuckstationConnector(
+    DuckstationSession duckstationSession,
     IProcessService processService,
     IMemoryProvider memoryProvider,
-    IConfiguration configuration) : IDuckstationConnection
+    IConfiguration configuration) : IDuckstationConnector
 {
     private readonly string? EmulatorProcessName = configuration.GetValue<string>("EmulatorProcessName");
 
-    public bool IsConnected { get; private set; }
-    public IMemoryAccessor? Accessor { get; private set; }
+    private bool IsConnected { get; set; }
     private int? ConnectedProcessId { get; set; }
 
-    public bool IsConnectionAlive()
+    public bool EnsureConnection()
     {
-        if (!IsConnected || Accessor == null || ConnectedProcessId is null)
+        if (IsConnected && !IsConnectionAlive())
+        {
+            Disconnect();
+            return false;
+        }
+
+        if (!IsConnected)
+        {
+            if (!TryConnect())
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void Disconnect()
+    {
+        duckstationSession.Accessor?.Dispose();
+        duckstationSession.Accessor = null;
+        ConnectedProcessId = null;
+        IsConnected = false;
+    }
+
+    private bool IsConnectionAlive()
+    {
+        if (!IsConnected || duckstationSession.Accessor == null || ConnectedProcessId is null)
         {
             return false;
         }
@@ -31,7 +59,7 @@ public sealed class DuckstationConnection(
         return currentProcessId == ConnectedProcessId;
     }
 
-    public bool TryConnect()
+    private bool TryConnect()
     {
         Disconnect();
 
@@ -54,14 +82,15 @@ public sealed class DuckstationConnection(
 
             string duckstationMapName = $"duckstation_{processId}";
 
-            Accessor = memoryProvider.OpenExisting(duckstationMapName);
+            IMemoryAccessor? accessor = memoryProvider.OpenExisting(duckstationMapName);
 
-            if (Accessor == null)
+            if (accessor == null)
             {
                 IsConnected = false;
                 return false;
             }
 
+            duckstationSession.Accessor = accessor;
             ConnectedProcessId = processId;
             IsConnected = true;
             Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
@@ -73,20 +102,5 @@ public sealed class DuckstationConnection(
             IsConnected = false;
             return false;
         }
-    }
-
-    public void Disconnect()
-    {
-        Accessor?.Dispose();
-        Accessor = null;
-        ConnectedProcessId = null;
-        IsConnected = false;
-    }
-
-    public void Dispose()
-    {
-        Disconnect();
-        Log.Information("Memory resources released.");
-        GC.SuppressFinalize(this);
     }
 }

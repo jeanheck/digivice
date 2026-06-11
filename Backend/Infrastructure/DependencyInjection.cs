@@ -24,7 +24,9 @@ namespace Backend.Infrastructure
         {
             services.AddSingleton<IProcessService, WindowsProcessProvider>();
             services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
-            services.AddSingleton<IDuckstationConnection, DuckstationConnection>();
+            services.AddSingleton<DuckstationSession>();
+            services.AddSingleton<IDuckstationSession>(provider => provider.GetRequiredService<DuckstationSession>());
+            services.AddSingleton<IDuckstationConnector, DuckstationConnector>();
             services.AddSingleton<IMemoryReader, MemoryReader>();
 
             string memoryDefinitionsDirectory = Path.Combine(basePath, "Memory", "Definitions");
@@ -55,7 +57,6 @@ namespace Backend.Infrastructure
 
             services.AddSingleton<StateComposer>();
             services.AddSingleton<DebugConsoleRenderer>();
-            services.AddSingleton<IDuckstationConnector, DuckstationConnector>();
 
             services.AddSingleton<IGameStateStore, GameStateStore>();
             services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
