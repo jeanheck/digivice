@@ -62,22 +62,5 @@ namespace Backend.Memory.Readers
                 throw new MemoryReadException(address, $"Failed to read memory at 0x{address:X}.", ex);
             }
         }
-
-        public byte ReadByteSafe(long address, long? bitMask = null)
-        {
-            if (address == 0)
-            {
-                return 0;
-            }
-
-            var bytes = ReadBytes(address, 1);
-            byte rawValue = bytes[0];
-            if (bitMask == null)
-            {
-                return rawValue;
-            }
-
-            return (byte)(rawValue & bitMask.Value);
-        }
     }
 }

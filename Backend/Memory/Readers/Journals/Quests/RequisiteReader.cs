@@ -1,4 +1,5 @@
 using Backend.Memory.Addresses.Journals.Quests;
+using Backend.Memory.Readers.Helpers;
 using Backend.Memory.Resources.Journals.Quests;
 
 namespace Backend.Memory.Readers.Journals.Quests
@@ -10,7 +11,7 @@ namespace Backend.Memory.Readers.Journals.Quests
             return new RequisiteResource
             {
                 Id = addresses.Id,
-                Value = memoryReader.ReadByteSafe(addresses.Address)
+                Value = FlagByteHelper.Read(memoryReader, addresses.Address)
             };
         }
     }

@@ -25,7 +25,7 @@ public class StepReaderTests
         var expectedRequisiteResource = new RequisiteResource { Id = "Req2", Value = 5 };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadByteSafe(0x5500, 0x0F)).Returns((byte)2);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x5500, 1)).Returns([(byte)2]);
 
         var requisiteReaderMock = new Mock<IRequisiteReader>();
         requisiteReaderMock.Setup(r => r.Read(reqAddresses)).Returns(expectedRequisiteResource);
@@ -55,7 +55,7 @@ public class StepReaderTests
         };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadByteSafe(0x4B370, null)).Returns((byte)0x01);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x4B370, 1)).Returns([(byte)0x01]);
 
         var requisiteReaderMock = new Mock<IRequisiteReader>();
         var reader = new StepReader(memoryReaderMock.Object, requisiteReaderMock.Object);
@@ -79,7 +79,7 @@ public class StepReaderTests
         };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadByteSafe(0x4B370, null)).Returns((byte)0x09);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x4B370, 1)).Returns([(byte)0x09]);
 
         var requisiteReaderMock = new Mock<IRequisiteReader>();
         var reader = new StepReader(memoryReaderMock.Object, requisiteReaderMock.Object);
@@ -103,7 +103,7 @@ public class StepReaderTests
         };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadByteSafe(0x48F42, null)).Returns((byte)1);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x48F42, 1)).Returns([(byte)1]);
 
         var requisiteReaderMock = new Mock<IRequisiteReader>();
         var reader = new StepReader(memoryReaderMock.Object, requisiteReaderMock.Object);

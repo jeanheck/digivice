@@ -35,29 +35,6 @@ public class MemoryReaderTests
     }
 
     [Fact]
-    public void ReadByteSafe_ShouldApplyBitMask_WhenMaskIsProvided()
-    {
-        var (_, accessorMock, reader) = CreateConnectedReader();
-        accessorMock.Setup(accessor => accessor.ReadArray(0x800100, It.IsAny<byte[]>(), 0, 1))
-            .Callback<long, byte[], int, int>((address, buffer, index, count) => { buffer[0] = 90; });
-
-        var result = reader.ReadByteSafe(0x800100, 15);
-
-        Assert.Equal(10, result);
-    }
-
-    [Fact]
-    public void ReadByteSafe_ShouldReturnZero_WhenAddressIsZero()
-    {
-        var connectorMock = new Mock<IDuckstationConnector>();
-        var reader = new MemoryReader(connectorMock.Object);
-
-        var result = reader.ReadByteSafe(0);
-
-        Assert.Equal(0, result);
-    }
-
-    [Fact]
     public void ReadInt32_ShouldThrowMemoryReadException_WhenAccessorThrows()
     {
         var (_, accessorMock, reader) = CreateConnectedReader();
@@ -145,27 +122,5 @@ public class MemoryReaderTests
         var reader = new MemoryReader(connectorMock.Object);
 
         Assert.Throws<MemoryReadException>(() => reader.ReadBytes(0x800100, 3));
-    }
-
-    [Fact]
-    public void ReadByteSafe_ShouldReturnRawByte_WhenMaskIsNull()
-    {
-        var (_, accessorMock, reader) = CreateConnectedReader();
-        accessorMock.Setup(accessor => accessor.ReadArray(0x800100, It.IsAny<byte[]>(), 0, 1))
-            .Callback<long, byte[], int, int>((address, buffer, index, count) => { buffer[0] = 77; });
-
-        var result = reader.ReadByteSafe(0x800100, null);
-
-        Assert.Equal(77, result);
-    }
-
-    [Fact]
-    public void ReadByteSafe_ShouldThrowMemoryReadException_WhenReadBytesFails()
-    {
-        var (_, accessorMock, reader) = CreateConnectedReader();
-        accessorMock.Setup(accessor => accessor.ReadArray(It.IsAny<long>(), It.IsAny<byte[]>(), It.IsAny<int>(), It.IsAny<int>()))
-            .Throws(new Exception("I/O error"));
-
-        Assert.Throws<MemoryReadException>(() => reader.ReadByteSafe(0x800100, null));
     }
 }

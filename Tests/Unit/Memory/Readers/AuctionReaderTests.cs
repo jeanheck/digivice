@@ -23,10 +23,7 @@ public class AuctionReaderTests
         };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38A, 0x01)).Returns((byte)0x01);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38A, 0x02)).Returns((byte)0x00);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38A, 0x04)).Returns((byte)0x04);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38A, 0x08)).Returns((byte)0x00);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x05]);
 
         var reader = new AuctionReader(memoryReaderMock.Object);
 
@@ -52,7 +49,7 @@ public class AuctionReaderTests
         };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38A, 0x01)).Returns((byte)0x00);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x00]);
 
         var reader = new AuctionReader(memoryReaderMock.Object);
 

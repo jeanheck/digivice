@@ -13,10 +13,7 @@ public class AuctionLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38A, 0x01)).Returns((byte)0x01);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38A, 0x02)).Returns((byte)0x02);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38A, 0x04)).Returns((byte)0x00);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByteSafe(0x0004B38A, 0x08)).Returns((byte)0x00);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x03]);
 
         var auctionReader = new AuctionReader(memoryReaderMock.Object);
         var auctionLoader = new AuctionLoader(addressesRepository, auctionReader);

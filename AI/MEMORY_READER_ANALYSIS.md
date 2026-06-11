@@ -9,7 +9,7 @@
 
 `MemoryReader` é o **cliente de I/O** sobre a RAM do Duckstation. A **sessão** (connect/disconnect/alive) já foi extraída para `DuckstationConnector`, orquestrada pelo `DuckstationConnectionCoordinator`.
 
-O que ainda concentra complexidade: **política de erro silenciosa** (`null`/`0` + `InvalidateConnection`) e **`ReadByteSafe`** (lógica de domínio na camada de infra). Passos 4 e 5 do plano abaixo endereçam isso.
+O que ainda concentra complexidade após passos 4–5: expandir `IsConnectionAlive` com probe de mapping (decisão separada, fora do roadmap principal).
 
 ---
 
@@ -29,7 +29,7 @@ IDuckstationConnector (DuckstationConnector)  ◄── singleton, sessão Ducks
          ▼
     IMemoryReader (MemoryReader)  ◄── thin reader sobre sessão
          │
-    ReadInt32 / ReadInt16 / ReadBytes / ReadByteSafe
+    ReadInt32 / ReadInt16 / ReadBytes
          │
          ▼
  PlayerReader, DigimonReader, StepReader, AuctionReader ...
@@ -49,7 +49,7 @@ Registrados como **singleton** em DI. Todos os domain readers dependem de `IMemo
 | 4 | **Configuração** — lê `EmulatorProcessName` em runtime | `TryConnect`, `IsConnectionAlive` |
 | 5 | **I/O bruto** — delegar ao `IMemoryAccessor` | `ReadInt32`, `ReadInt16`, `ReadBytes` |
 | 6 | **Política de erro de leitura** — log + `IsConnected = false` + `null` | todos os `Read*` |
-| 7 | **Helper de domínio** — endereço zero, bitmask | `ReadByteSafe` |
+| 7 | ~~**Helper de domínio** — endereço zero, bitmask~~ | ~~`ReadByteSafe`~~ → `FlagByteHelper` ✅ |
 
 **Veredicto SRP:** a classe **não tem uma única responsabilidade**. O mínimo natural seria separar **sessão** (conectar/manter/desconectar) de **leitura** (operar sobre uma sessão aberta).
 
@@ -150,7 +150,7 @@ Isso é lógica de **domain reader** (como `StepReader` já faz composição de 
 
 ~~Quem só lê memória (`PlayerReader`) vê métodos de conexão. Quem orquestra conexão (`DuckstationConnector`) vê métodos de leitura.~~
 
-Parcialmente resolvido: conexão em `IDuckstationConnector`; `IMemoryReader` ainda expõe `ReadByteSafe` (domínio — passo 5 pendente).
+Parcialmente resolvido: conexão em `IDuckstationConnector`; `ReadByteSafe` removido de `IMemoryReader` (passo 5 ✅).
 
 ### 8. Estado mutável em serviço singleton
 
@@ -206,11 +206,8 @@ IDuckstationConnector              IMemoryReader
 
 - **Connector** — processo, mapping, PID, lifecycle. Sem métodos `Read*`.
 - **MemoryReader** — só I/O sobre sessão ativa. Sem `TryConnect`.
-- **`ReadByteSafe`** — sair de `IMemoryReader`; lógica compartilhada via helper de domínio (passo 5).
-- **Política de falha** — **opção A escolhida** (jun/2026):
-  - ~~opção A: leitura lança `MemoryReadException` → sessão trata~~ **← adotada**
-  - opção B: leitura retorna `Result<T>` → sessão decide desconectar
-  - opção C (atual, pior): `null`/`0` + flag mutável espalhada
+- ~~**`ReadByteSafe`** — sair de `IMemoryReader`; lógica compartilhada via `FlagByteHelper`~~ ✅
+- **Política de falha** — **opção A adotada** (jun/2026): `MemoryReadException` → coordinator trata ✅
 
 ### Ordem de refatoração sugerida
 
@@ -218,7 +215,7 @@ IDuckstationConnector              IMemoryReader
 2. ~~Extrair `DuckstationConnector` (connect/disconnect/alive) de `MemoryReader`~~ ✅
 3. ~~Deixar `MemoryReader` só como thin reader sobre sessão~~ ✅ (inclui helpers `TryRead`, `GetConnectedAccessor`, `HandleReadFailure`)
 4. ~~**Unificar política de erro de I/O** — opção A (`MemoryReadException`)~~ ✅
-5. Mover `ReadByteSafe` para domain layer — **próximo passo**
+5. ~~Mover `ReadByteSafe` para domain layer (`FlagByteHelper`)~~ ✅
 6. ~~Segregar interfaces (`IDuckstationConnector` vs `IMemoryReader`)~~ ✅ (parcial — `DuckstationConnectionCoordinator` orquestra conexão)
 
 ---
@@ -282,18 +279,16 @@ StepReader / AuctionReader / RequisiteReader
 
 | Critério | Nota | Comentário |
 |----------|------|------------|
-| Single Responsibility | ⚠️ Médio | Sessão separada; `ReadByteSafe` ainda mistura domínio |
+| Single Responsibility | ✅ Alto | Sessão, I/O e flags de domínio separados |
 | Testabilidade | ✅ Alto | Bem coberta |
-| Consistência de API | ⚠️ Baixo | `null` vs `0` — passo 4 (opção A) endereça |
-| Acoplamento | ✅ Médio-alto | Connector vs reader segregados |
-| Impacto na conexão | ⚠️ Médio | `HandleSilentReadFailure` até passo 4 |
-| Alinhamento CODE_RULES | ⚠️ Parcial | Reader stateless exceto efeito colateral de `InvalidateConnection` |
-| Manutenibilidade | ✅ Médio-alto | `TryRead` centraliza guard/erro; passo 4 unifica política |
+| Consistência de API | ✅ Alto | `MemoryReadException` unificada; flags via helper |
+| Acoplamento | ✅ Médio-alto | Connector vs reader vs FlagByteHelper segregados |
+| Impacto na conexão | ✅ Alto | `HandleMemoryReadFailure` no coordinator |
+| Alinhamento CODE_RULES | ✅ Alto | Reader stateless; sem efeitos colaterais na leitura |
+| Manutenibilidade | ✅ Alto | `TryRead` + `FlagByteHelper` centralizam lógica |
 
 ---
 
 ## Conclusão
 
-A refatoração estrutural (passos 1–3 e 6 parcial) já separou **sessão Duckstation** (`DuckstationConnector`) de **I/O** (`MemoryReader`). O que resta é tornar a **política de erro explícita** (passo 4, opção A) e retirar **lógica de domínio** do `ReadByteSafe` (passo 5).
-
-Com a opção A, o `GameLoopService` deixa de inferir sessão morta via `HandleSilentReadFailure` + `IsConnected`; passa a reagir a `MemoryReadException` num único ponto. Isso simplifica o coordinator e elimina estados intermediários (`InvalidateConnection` com accessor zumbi).
+A refatoração da camada de memória está **concluída** (passos 1–6). `MemoryReader` é I/O puro com `MemoryReadException`; flags de journal/auction usam `FlagByteHelper`; lifecycle de sessão fica no `DuckstationConnector` orquestrado pelo `DuckstationConnectionCoordinator`.
