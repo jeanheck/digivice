@@ -171,7 +171,7 @@ public class GameLoopServiceTests
         {
         }
 
-        _duckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.AtLeastOnce);
+        _duckstationConnectorMock.Verify(connector => connector.ClearSession(), Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
     }
 
@@ -197,7 +197,7 @@ public class GameLoopServiceTests
         {
         }
 
-        _duckstationConnectorMock.Verify(connector => connector.Disconnect(), Times.AtLeastOnce);
+        _duckstationConnectorMock.Verify(connector => connector.ClearSession(), Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(d => d.DispatchEmulatorConnectionStatus(false), Times.AtLeastOnce);
         Assert.Null(_gameStateStore.CurrentState);
     }

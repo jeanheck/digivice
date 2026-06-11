@@ -124,7 +124,7 @@ public class DuckstationConnectorTests
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnFalse_WhenEmulatorProcessIdChanges()
+    public void EnsureConnection_ShouldReturnFalse_WhenEmulatorProcessIdChangesAndMappingIsMissing()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -151,7 +151,38 @@ public class DuckstationConnectorTests
     }
 
     [Fact]
-    public void Disconnect_ShouldClearSessionAccessor_AndDisposeAccessor()
+    public void EnsureConnection_ShouldReturnTrue_WhenEmulatorProcessIdChangesAndMappingExists()
+    {
+        var duckstationSession = new DuckstationSession();
+        var processServiceMock = new Mock<IProcessService>();
+        processServiceMock.SetupSequence(processService => processService.GetProcessIdByName("duckstation"))
+            .Returns(1234)
+            .Returns(5678)
+            .Returns(5678);
+
+        var oldMemoryAccessorMock = new Mock<IMemoryAccessor>();
+        var newMemoryAccessorMock = new Mock<IMemoryAccessor>();
+        var memoryProviderMock = new Mock<IMemoryProvider>();
+        memoryProviderMock.Setup(memoryProvider => memoryProvider.OpenExisting("duckstation_1234")).Returns(oldMemoryAccessorMock.Object);
+        memoryProviderMock.Setup(memoryProvider => memoryProvider.OpenExisting("duckstation_5678")).Returns(newMemoryAccessorMock.Object);
+
+        var connector = CreateConnector(
+            duckstationSession,
+            processServiceMock,
+            memoryProviderMock,
+            CreateConfigurationMock("duckstation"));
+
+        Assert.True(connector.EnsureConnection());
+
+        var result = connector.EnsureConnection();
+
+        Assert.True(result);
+        Assert.Same(newMemoryAccessorMock.Object, duckstationSession.Accessor);
+        oldMemoryAccessorMock.Verify(accessor => accessor.Dispose(), Times.Once);
+    }
+
+    [Fact]
+    public void ClearSession_ShouldClearSessionAccessor_AndDisposeAccessor()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -168,14 +199,14 @@ public class DuckstationConnectorTests
             CreateConfigurationMock("duckstation"));
         connector.EnsureConnection();
 
-        connector.Disconnect();
+        connector.ClearSession();
 
         Assert.Null(duckstationSession.Accessor);
         memoryAccessorMock.Verify(accessor => accessor.Dispose(), Times.Once);
     }
 
     [Fact]
-    public void Disconnect_ShouldBeIdempotent_WhenAlreadyDisconnected()
+    public void ClearSession_ShouldBeIdempotent_WhenAlreadyDisconnected()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -187,8 +218,8 @@ public class DuckstationConnectorTests
             memoryProviderMock,
             CreateConfigurationMock("duckstation"));
 
-        connector.Disconnect();
-        connector.Disconnect();
+        connector.ClearSession();
+        connector.ClearSession();
 
         Assert.Null(duckstationSession.Accessor);
     }

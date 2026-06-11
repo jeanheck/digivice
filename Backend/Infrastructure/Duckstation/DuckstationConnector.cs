@@ -11,16 +11,20 @@ public sealed class DuckstationConnector(
     IConfiguration configuration) : IDuckstationConnector
 {
     private readonly string? EmulatorProcessName = configuration.GetValue<string>("EmulatorProcessName");
-
     private int? ConnectedProcessId { get; set; }
-    private bool HasLoggedSuccessfulConnection { get; set; }
 
     private bool HasActiveConnection =>
         ConnectedProcessId is not null && duckstationSession.Accessor is not null;
+    private bool ProcessIdChanged => processService.GetProcessIdByName(EmulatorProcessName!) != ConnectedProcessId;
 
-    private bool TryConnect()
+    public bool EnsureConnection()
     {
-        Disconnect();
+        if (HasActiveConnection && !ProcessIdChanged)
+        {
+            return true;
+        }
+
+        ClearSession();
 
         try
         {
@@ -34,27 +38,22 @@ public sealed class DuckstationConnector(
 
             if (processId == null)
             {
+                Log.Error("Duckstation Process ID not found!");
                 return false;
             }
 
             string duckstationMapName = $"duckstation_{processId}";
+            IMemoryAccessor? memoryAcessor = memoryProvider.OpenExisting(duckstationMapName);
 
-            IMemoryAccessor? accessor = memoryProvider.OpenExisting(duckstationMapName);
-
-            if (accessor == null)
+            if (memoryAcessor == null)
             {
+                Log.Error("Duckstation Memory Acessor not found!");
                 return false;
             }
 
-            duckstationSession.SetAccessor(accessor);
+            Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
+            duckstationSession.SetAccessor(memoryAcessor);
             ConnectedProcessId = processId;
-
-            if (!HasLoggedSuccessfulConnection)
-            {
-                HasLoggedSuccessfulConnection = true;
-                Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
-            }
-
             return true;
         }
         catch (Exception ex)
@@ -64,30 +63,7 @@ public sealed class DuckstationConnector(
         }
     }
 
-    public bool EnsureConnection()
-    {
-        if (HasActiveConnection)
-        {
-            if (string.IsNullOrEmpty(EmulatorProcessName)
-                || processService.GetProcessIdByName(EmulatorProcessName) != ConnectedProcessId)
-            {
-                Disconnect();
-                return false;
-            }
-        }
-
-        if (!HasActiveConnection)
-        {
-            if (!TryConnect())
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    public void Disconnect()
+    public void ClearSession()
     {
         duckstationSession.ClearAccessor();
         ConnectedProcessId = null;

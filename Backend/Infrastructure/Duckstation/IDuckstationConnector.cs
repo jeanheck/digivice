@@ -3,5 +3,5 @@ namespace Backend.Infrastructure.Duckstation;
 public interface IDuckstationConnector
 {
     bool EnsureConnection();
-    void Disconnect();
+    void ClearSession();
 }

@@ -64,7 +64,7 @@ namespace Backend.Application
                     }
                     catch (MemoryReadException)
                     {
-                        duckstationConnector.Disconnect();
+                        duckstationConnector.ClearSession();
                         NotifyEmulatorUnavailable(isDebuggingEnabled);
                     }
                     catch (OperationCanceledException)
@@ -74,7 +74,7 @@ namespace Backend.Application
                     catch (Exception ex)
                     {
                         Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
-                        duckstationConnector.Disconnect();
+                        duckstationConnector.ClearSession();
                         NotifyEmulatorUnavailable(isDebuggingEnabled);
                     }
 
@@ -90,7 +90,7 @@ namespace Backend.Application
             }
             finally
             {
-                duckstationConnector.Disconnect();
+                duckstationConnector.ClearSession();
                 Serilog.Log.Information("GameLoopService shutting down gracefully.");
             }
         }
