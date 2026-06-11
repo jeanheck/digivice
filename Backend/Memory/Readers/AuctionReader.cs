@@ -8,11 +8,13 @@ namespace Backend.Memory.Readers
     {
         public AuctionsResource Read(AuctionAddresses addresses)
         {
+            byte rawValue = FlagByteHelper.Read(memoryReader, addresses.Address);
+
             var auctionResources = addresses.Auctions.Select(auctionEntry => {
                 return new AuctionResource
                 {
                     Id = auctionEntry.Key,
-                    Value = FlagByteHelper.Read(memoryReader, addresses.Address, auctionEntry.Value.BitMask),
+                    Value = (byte)(rawValue & auctionEntry.Value.BitMask),
                 };
             }).ToList();
 

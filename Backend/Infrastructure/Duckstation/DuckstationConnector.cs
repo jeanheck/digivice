@@ -9,6 +9,8 @@ public sealed class DuckstationConnector(
     IMemoryProvider memoryProvider,
     IConfiguration configuration) : IDuckstationConnector
 {
+    private readonly string? EmulatorProcessName = configuration.GetValue<string>("EmulatorProcessName");
+
     public bool IsConnected { get; private set; }
     public IMemoryAccessor? Accessor { get; private set; }
     private int? ConnectedProcessId { get; set; }
@@ -20,13 +22,12 @@ public sealed class DuckstationConnector(
             return false;
         }
 
-        var emulatorName = configuration.GetValue<string>("EmulatorProcessName");
-        if (string.IsNullOrEmpty(emulatorName))
+        if (string.IsNullOrEmpty(EmulatorProcessName))
         {
             return false;
         }
 
-        var currentProcessId = processService.GetProcessIdByName(emulatorName);
+        var currentProcessId = processService.GetProcessIdByName(EmulatorProcessName);
         return currentProcessId == ConnectedProcessId;
     }
 
@@ -36,15 +37,14 @@ public sealed class DuckstationConnector(
 
         try
         {
-            var emulatorName = configuration.GetValue<string>("EmulatorProcessName");
-            if (string.IsNullOrEmpty(emulatorName))
+            if (string.IsNullOrEmpty(EmulatorProcessName))
             {
                 Log.Error("EmulatorProcessName not found in appsettings.json");
                 IsConnected = false;
                 return false;
             }
 
-            int? processId = processService.GetProcessIdByName(emulatorName);
+            int? processId = processService.GetProcessIdByName(EmulatorProcessName);
 
             if (processId == null)
             {
@@ -67,8 +67,9 @@ public sealed class DuckstationConnector(
             Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
             return true;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            Log.Error("Failed to connect to DuckStation: {Msg}", ex.Message);
             IsConnected = false;
             return false;
         }

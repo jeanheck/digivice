@@ -34,6 +34,7 @@ public class AuctionReaderTests
         Assert.Equal(0x00, GetValue(result, "hazardShield"));
         Assert.Equal(0x04, GetValue(result, "sniperShield"));
         Assert.Equal(0x00, GetValue(result, "dramonShield"));
+        memoryReaderMock.Verify(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1), Times.Once);
     }
 
     [Fact]

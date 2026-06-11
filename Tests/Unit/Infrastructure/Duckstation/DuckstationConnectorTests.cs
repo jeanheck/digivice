@@ -169,7 +169,11 @@ public class DuckstationConnectorTests
     {
         var processServiceMock = new Mock<IProcessService>();
         var memoryProviderMock = new Mock<IMemoryProvider>();
+
+        var configSectionMock = new Mock<IConfigurationSection>();
+        configSectionMock.Setup(section => section.Value).Returns("duckstation");
         var configurationMock = new Mock<IConfiguration>();
+        configurationMock.Setup(configuration => configuration.GetSection("EmulatorProcessName")).Returns(configSectionMock.Object);
 
         var connector = new DuckstationConnector(
             processServiceMock.Object,
