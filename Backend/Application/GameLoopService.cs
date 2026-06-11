@@ -27,9 +27,12 @@ namespace Backend.Application
             {
                 if (!duckstationConnector.EnsureConnection())
                 {
+                    NotifyEmulatorUnavailable(isDebuggingEnabled);
                     await Task.Delay(pollingIntervalMs, stoppingToken);
                     continue;
                 }
+
+                eventDispatcherService.DispatchEmulatorConnectionStatus(true);
 
                 try
                 {
@@ -48,7 +51,8 @@ namespace Backend.Application
                 }
                 catch (MemoryReadException)
                 {
-                    duckstationConnector.HandleMemoryReadFailure();
+                    duckstationConnector.Disconnect();
+                    NotifyEmulatorUnavailable(isDebuggingEnabled);
                 }
                 catch (OperationCanceledException)
                 {
@@ -56,7 +60,9 @@ namespace Backend.Application
                 }
                 catch (Exception ex)
                 {
-                    duckstationConnector.HandleProcessingFailure(ex);
+                    Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
+                    duckstationConnector.Disconnect();
+                    NotifyEmulatorUnavailable(isDebuggingEnabled);
                 }
 
                 try
@@ -70,6 +76,16 @@ namespace Backend.Application
             }
 
             Serilog.Log.Information("GameLoopService shutting down gracefully.");
+        }
+
+        private void NotifyEmulatorUnavailable(bool isDebuggingEnabled)
+        {
+            eventDispatcherService.DispatchEmulatorConnectionStatus(false);
+
+            if (isDebuggingEnabled && !Console.IsOutputRedirected)
+            {
+                debugConsoleRenderer.Render(null);
+            }
         }
     }
 }

@@ -1,42 +1,22 @@
 namespace Tests.Unit.Application;
 
 using Backend.Application;
-using Backend.Diagnostics;
-using Backend.Events.Services;
 using Backend.Infrastructure.Duckstation;
-using Microsoft.Extensions.Configuration;
 using Moq;
 using Xunit;
 
 public class DuckstationConnectorTests
 {
     private readonly Mock<IDuckstationConnection> DuckstationConnectionMock;
-    private readonly Mock<IEventDispatcherService> EventDispatcherServiceMock;
-    private readonly DebugConsoleRenderer DebugConsoleRenderer;
-    private readonly IConfiguration Configuration;
 
     public DuckstationConnectorTests()
     {
         DuckstationConnectionMock = new Mock<IDuckstationConnection>();
-        EventDispatcherServiceMock = new Mock<IEventDispatcherService>();
-        DebugConsoleRenderer = new DebugConsoleRenderer();
-
-        var inMemorySettings = new Dictionary<string, string?>
-        {
-            { "Features:Debugging", "false" }
-        };
-        Configuration = new ConfigurationBuilder()
-            .AddInMemoryCollection(inMemorySettings)
-            .Build();
     }
 
     private DuckstationConnector CreateDuckstationConnector()
     {
-        return new DuckstationConnector(
-            DuckstationConnectionMock.Object,
-            EventDispatcherServiceMock.Object,
-            DebugConsoleRenderer,
-            Configuration);
+        return new DuckstationConnector(DuckstationConnectionMock.Object);
     }
 
     [Fact]
@@ -50,9 +30,6 @@ public class DuckstationConnectorTests
         var isReadyToCompose = duckstationConnector.EnsureConnection();
 
         Assert.True(isReadyToCompose);
-        EventDispatcherServiceMock.Verify(
-            dispatcher => dispatcher.DispatchEmulatorConnectionStatus(It.IsAny<bool>()),
-            Times.Never);
     }
 
     [Fact]
@@ -67,7 +44,6 @@ public class DuckstationConnectorTests
 
         Assert.False(isReadyToCompose);
         DuckstationConnectionMock.Verify(connection => connection.Disconnect(), Times.Once);
-        EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(false), Times.Once);
     }
 
     [Fact]
@@ -82,7 +58,6 @@ public class DuckstationConnectorTests
 
         Assert.False(isReadyToCompose);
         DuckstationConnectionMock.Verify(connection => connection.Disconnect(), Times.Never);
-        EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(false), Times.Once);
     }
 
     [Fact]
@@ -99,28 +74,15 @@ public class DuckstationConnectorTests
         var isReadyToCompose = duckstationConnector.EnsureConnection();
 
         Assert.True(isReadyToCompose);
-        EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(true), Times.Once);
     }
 
     [Fact]
-    public void HandleProcessingFailure_ShouldDisconnectAndDispatchFalse()
+    public void Disconnect_ShouldDisconnectConnection()
     {
         var duckstationConnector = CreateDuckstationConnector();
 
-        duckstationConnector.HandleProcessingFailure(new Exception("RAM read error"));
+        duckstationConnector.Disconnect();
 
         DuckstationConnectionMock.Verify(connection => connection.Disconnect(), Times.Once);
-        EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(false), Times.Once);
-    }
-
-    [Fact]
-    public void HandleMemoryReadFailure_ShouldDisconnectDispatchFalse()
-    {
-        var duckstationConnector = CreateDuckstationConnector();
-
-        duckstationConnector.HandleMemoryReadFailure();
-
-        DuckstationConnectionMock.Verify(connection => connection.Disconnect(), Times.Once);
-        EventDispatcherServiceMock.Verify(dispatcher => dispatcher.DispatchEmulatorConnectionStatus(false), Times.Once);
     }
 }

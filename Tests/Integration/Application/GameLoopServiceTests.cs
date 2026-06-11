@@ -30,11 +30,7 @@ public class GameLoopServiceTests
 
     private DuckstationConnector CreateDuckstationConnector()
     {
-        return new DuckstationConnector(
-            _duckstationConnectionMock.Object,
-            _eventDispatcherServiceMock.Object,
-            _debugConsoleRenderer,
-            _configuration);
+        return new DuckstationConnector(_duckstationConnectionMock.Object);
     }
 
     private GameLoopService CreateGameLoopService(StateComposer? stateComposer = null)
