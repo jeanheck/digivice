@@ -41,13 +41,13 @@ namespace Backend.Application
             {
                 while (!stoppingToken.IsCancellationRequested)
                 {
-                    var connection = duckstationConnector.EnsureConnection();
-                    if (!connection.IsSuccess)
+                    var connectionAttemptResult = duckstationConnector.EnsureConnection();
+                    if (!connectionAttemptResult.IsSuccess)
                     {
                         NotifyEmulatorUnavailable(
                             isDebuggingEnabled,
-                            connection.ErrorCode!,
-                            connection.ErrorDetail);
+                            connectionAttemptResult.ErrorCode!,
+                            connectionAttemptResult.ErrorDetail);
                         await Task.Delay(pollingIntervalMs, stoppingToken);
                         continue;
                     }
