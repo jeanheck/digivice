@@ -1,6 +1,7 @@
 import { computed } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
 import type { AppBlockingErrorViewModel } from "@/models/app-blocking-error";
+import { EmulatorConnectionErrorHelper } from "@/events/helpers/emulator-connection-error.helper";
 
 export function useAppBlockingError() {
     const store = useGameStore();
@@ -24,10 +25,15 @@ export function useAppBlockingError() {
         }
 
         if (!store.isConnectedWithEmulator) {
+            const { titleKey, hintKey } = EmulatorConnectionErrorHelper.resolveErrorKeys(
+                store.lastEmulatorConnectionErrorCode
+            );
+
             return {
                 kind: "emulator-not-found",
-                titleKey: "errors.emulator.title",
-                hintKey: "errors.emulator.hint",
+                titleKey,
+                hintKey,
+                detail: store.lastEmulatorConnectionErrorDetail ?? undefined,
             };
         }
 

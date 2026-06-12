@@ -1,6 +1,7 @@
 export interface ConnectionDTO {
     isConnected: boolean;
+    errorCode?: string | null;
+    errorDetail?: string | null;
 }
 
-// Alias for connection status change events
 export type EmulatorConnectionStatusChangedDTO = ConnectionDTO;

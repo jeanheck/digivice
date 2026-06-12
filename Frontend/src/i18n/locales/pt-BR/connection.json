@@ -14,7 +14,33 @@
     },
     "emulator": {
       "title": "Emulador não encontrado",
-      "hint": "Abra o Duckstation, carregue o Digimon World 2003 e, em Debugging, ative Export Memory Shared."
+      "hint": "Abra o Duckstation, carregue o Digimon World 2003 e, em Debugging, ative Export Memory Shared.",
+      "codes": {
+        "config_missing": {
+          "title": "Configuração do emulador ausente",
+          "hint": "O app não encontrou EmulatorProcessName nas configurações do backend. Contate o desenvolvedor."
+        },
+        "process_not_found": {
+          "title": "Emulador não encontrado",
+          "hint": "Abra o Duckstation e carregue o Digimon World 2003 antes de usar o Digivice."
+        },
+        "mapping_not_found": {
+          "title": "Exportação de memória indisponível",
+          "hint": "No Duckstation, abra Debugging e ative Export Memory Shared, depois recarregue o jogo."
+        },
+        "connection_failed": {
+          "title": "Não foi possível conectar à memória do Duckstation",
+          "hint": "O app encontrou o Duckstation, mas falhou ao abrir o mapeamento de memória compartilhada. Veja o detalhe técnico abaixo."
+        },
+        "memory_read_failed": {
+          "title": "Falha ao ler a memória do emulador",
+          "hint": "A conexão foi perdida durante a leitura dos dados do jogo. Veja o detalhe técnico abaixo."
+        },
+        "state_compose_failed": {
+          "title": "Falha ao processar o estado do jogo",
+          "hint": "O app conectou ao Duckstation, mas não conseguiu montar o estado atual do jogo. Veja o detalhe técnico abaixo."
+        }
+      }
     }
   }
 }

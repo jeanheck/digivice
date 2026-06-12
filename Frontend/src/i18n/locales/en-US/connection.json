@@ -14,7 +14,33 @@
     },
     "emulator": {
       "title": "Emulator not found",
-      "hint": "Open Duckstation, load Digimon World 2003, and enable Export Memory Shared under Debugging."
+      "hint": "Open Duckstation, load Digimon World 2003, and enable Export Memory Shared under Debugging.",
+      "codes": {
+        "config_missing": {
+          "title": "Emulator configuration missing",
+          "hint": "The app could not find EmulatorProcessName in the backend settings. Contact the developer."
+        },
+        "process_not_found": {
+          "title": "Emulator not found",
+          "hint": "Open Duckstation and load Digimon World 2003 before using the Digivice."
+        },
+        "mapping_not_found": {
+          "title": "Memory export not available",
+          "hint": "In Duckstation, open Debugging and enable Export Memory Shared, then reload the game."
+        },
+        "connection_failed": {
+          "title": "Could not connect to Duckstation memory",
+          "hint": "The app found Duckstation but failed to open the shared memory mapping. Check the technical detail below."
+        },
+        "memory_read_failed": {
+          "title": "Failed to read emulator memory",
+          "hint": "The connection was lost while reading game data. Check the technical detail below."
+        },
+        "state_compose_failed": {
+          "title": "Failed to process game state",
+          "hint": "The app connected to Duckstation but could not build the current game state. Check the technical detail below."
+        }
+      }
     }
   }
 }

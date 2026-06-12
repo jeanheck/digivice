@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import type { State } from '../models';
+import type { EmulatorConnectionStatus } from "../models/emulator-connection-status";
 import type * as Events from '../events/events.map';
 import { PlayerConverter } from '../events/converters/player.converter';
 import { PartyConverter } from '../events/converters/party.converter';
@@ -14,6 +15,8 @@ export const useGameStore = defineStore('game', () => {
     const isConnectedWithEmulator = ref(false);
     const backendProcessFailed = ref(false);
     const lastHubConnectionError = ref<string | null>(null);
+    const lastEmulatorConnectionErrorCode = ref<string | null>(null);
+    const lastEmulatorConnectionErrorDetail = ref<string | null>(null);
     const isConnected = computed(() => {
         return isConnectedWithBackend.value && isConnectedWithEmulator.value;
     });
@@ -40,11 +43,18 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
-    function syncEmulatorConnectionStatus(event: { isConnected: boolean }): void {
+    function syncEmulatorConnectionStatus(event: EmulatorConnectionStatus): void {
         isConnectedWithEmulator.value = event.isConnected;
-        if (!event.isConnected) {
-            currentState.value = null;
+
+        if (event.isConnected) {
+            lastEmulatorConnectionErrorCode.value = null;
+            lastEmulatorConnectionErrorDetail.value = null;
+            return;
         }
+
+        currentState.value = null;
+        lastEmulatorConnectionErrorCode.value = event.errorCode;
+        lastEmulatorConnectionErrorDetail.value = event.errorDetail;
     }
 
     function setInitialState(state: Events.StateDTO | null): void {
@@ -93,6 +103,8 @@ export const useGameStore = defineStore('game', () => {
         isConnectedWithEmulator,
         backendProcessFailed,
         lastHubConnectionError,
+        lastEmulatorConnectionErrorCode,
+        lastEmulatorConnectionErrorDetail,
         setBackendProcessFailed,
         currentState,
         syncHubConnectionStatus,
