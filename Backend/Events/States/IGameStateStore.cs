@@ -6,6 +6,8 @@ public interface IGameStateStore
 {
     State? CurrentState { get; }
     bool? IsConnectedWithEmulator { get; set; }
+    string? LastEmulatorConnectionErrorCode { get; set; }
+    string? LastEmulatorConnectionErrorDetail { get; set; }
     int ConnectedClientCount { get; }
     bool HasConnectedClients => ConnectedClientCount > 0;
     void UpdateState(State state);

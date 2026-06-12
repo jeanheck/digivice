@@ -32,7 +32,7 @@ public class DuckstationConnectorTests
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnTrue_WhenProcessAndAccessorExist()
+    public void EnsureConnection_ShouldReturnSuccess_WhenProcessAndAccessorExist()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -50,12 +50,13 @@ public class DuckstationConnectorTests
 
         var result = connector.EnsureConnection();
 
-        Assert.True(result);
+        Assert.True(result.IsSuccess);
+        Assert.Null(result.ErrorCode);
         Assert.Same(memoryAccessorMock.Object, duckstationSession.Accessor);
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnFalse_WhenProcessNotFound()
+    public void EnsureConnection_ShouldReturnProcessNotFound_WhenProcessNotFound()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -71,12 +72,13 @@ public class DuckstationConnectorTests
 
         var result = connector.EnsureConnection();
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.Equal(EmulatorConnectionErrorCodes.ProcessNotFound, result.ErrorCode);
         Assert.Null(duckstationSession.Accessor);
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnTrue_WhenConnectedProcessStillExists()
+    public void EnsureConnection_ShouldReturnSuccess_WhenConnectedProcessStillExists()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -92,12 +94,12 @@ public class DuckstationConnectorTests
             memoryProviderMock,
             CreateConfigurationMock("duckstation"));
 
-        Assert.True(connector.EnsureConnection());
-        Assert.True(connector.EnsureConnection());
+        Assert.True(connector.EnsureConnection().IsSuccess);
+        Assert.True(connector.EnsureConnection().IsSuccess);
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnFalse_WhenEmulatorProcessIsGone()
+    public void EnsureConnection_ShouldReturnProcessNotFound_WhenEmulatorProcessIsGone()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -115,21 +117,23 @@ public class DuckstationConnectorTests
             memoryProviderMock,
             CreateConfigurationMock("duckstation"));
 
-        Assert.True(connector.EnsureConnection());
+        Assert.True(connector.EnsureConnection().IsSuccess);
 
         var result = connector.EnsureConnection();
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.Equal(EmulatorConnectionErrorCodes.ProcessNotFound, result.ErrorCode);
         Assert.Null(duckstationSession.Accessor);
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnFalse_WhenEmulatorProcessIdChangesAndMappingIsMissing()
+    public void EnsureConnection_ShouldReturnMappingNotFound_WhenEmulatorProcessIdChangesAndMappingIsMissing()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
         processServiceMock.SetupSequence(processService => processService.GetProcessIdByName("duckstation"))
             .Returns(1234)
+            .Returns(5678)
             .Returns(5678);
 
         var memoryAccessorMock = new Mock<IMemoryAccessor>();
@@ -142,16 +146,17 @@ public class DuckstationConnectorTests
             memoryProviderMock,
             CreateConfigurationMock("duckstation"));
 
-        Assert.True(connector.EnsureConnection());
+        Assert.True(connector.EnsureConnection().IsSuccess);
 
         var result = connector.EnsureConnection();
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.Equal(EmulatorConnectionErrorCodes.MappingNotFound, result.ErrorCode);
         Assert.Null(duckstationSession.Accessor);
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnTrue_WhenEmulatorProcessIdChangesAndMappingExists()
+    public void EnsureConnection_ShouldReturnSuccess_WhenEmulatorProcessIdChangesAndMappingExists()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -172,11 +177,11 @@ public class DuckstationConnectorTests
             memoryProviderMock,
             CreateConfigurationMock("duckstation"));
 
-        Assert.True(connector.EnsureConnection());
+        Assert.True(connector.EnsureConnection().IsSuccess);
 
         var result = connector.EnsureConnection();
 
-        Assert.True(result);
+        Assert.True(result.IsSuccess);
         Assert.Same(newMemoryAccessorMock.Object, duckstationSession.Accessor);
         oldMemoryAccessorMock.Verify(accessor => accessor.Dispose(), Times.Once);
     }
@@ -225,7 +230,7 @@ public class DuckstationConnectorTests
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnFalse_WhenConfigValueIsEmpty()
+    public void EnsureConnection_ShouldReturnConfigMissing_WhenConfigValueIsEmpty()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -239,12 +244,13 @@ public class DuckstationConnectorTests
 
         var result = connector.EnsureConnection();
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.Equal(EmulatorConnectionErrorCodes.ConfigMissing, result.ErrorCode);
         Assert.Null(duckstationSession.Accessor);
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnFalse_WhenAccessorIsNull()
+    public void EnsureConnection_ShouldReturnMappingNotFound_WhenAccessorIsNull()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -261,12 +267,13 @@ public class DuckstationConnectorTests
 
         var result = connector.EnsureConnection();
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.Equal(EmulatorConnectionErrorCodes.MappingNotFound, result.ErrorCode);
         Assert.Null(duckstationSession.Accessor);
     }
 
     [Fact]
-    public void EnsureConnection_ShouldReturnFalse_WhenOpenExistingThrowsException()
+    public void EnsureConnection_ShouldReturnConnectionFailed_WhenOpenExistingThrowsException()
     {
         var duckstationSession = new DuckstationSession();
         var processServiceMock = new Mock<IProcessService>();
@@ -283,7 +290,9 @@ public class DuckstationConnectorTests
 
         var result = connector.EnsureConnection();
 
-        Assert.False(result);
+        Assert.False(result.IsSuccess);
+        Assert.Equal(EmulatorConnectionErrorCodes.ConnectionFailed, result.ErrorCode);
+        Assert.Equal("Open mapping error", result.ErrorDetail);
         Assert.Null(duckstationSession.Accessor);
     }
 }

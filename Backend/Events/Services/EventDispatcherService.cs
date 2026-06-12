@@ -12,7 +12,10 @@ public class EventDispatcherService(
     ILogger<EventDispatcherService> logger,
     IGameStateStore gameStateStore) : IEventDispatcherService
 {
-    public void DispatchEmulatorConnectionStatus(bool isConnectedWithEmulator)
+    public void DispatchEmulatorConnectionStatus(
+        bool isConnectedWithEmulator,
+        string? errorCode = null,
+        string? errorDetail = null)
     {
         if (!isConnectedWithEmulator)
         {
@@ -20,11 +23,13 @@ public class EventDispatcherService(
                 gameStateStore.IsConnectedWithEmulator != isConnectedWithEmulator
                 || gameStateStore.CurrentState != null;
 
+            gameStateStore.LastEmulatorConnectionErrorCode = errorCode;
+            gameStateStore.LastEmulatorConnectionErrorDetail = errorDetail;
             gameStateStore.ClearState();
 
             if (shouldNotifyClients)
             {
-                SafeDispatch(new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(isConnectedWithEmulator)));
+                SafeDispatch(CreateConnectionEvent(false, errorCode, errorDetail));
             }
 
             return;
@@ -36,7 +41,9 @@ public class EventDispatcherService(
         }
 
         gameStateStore.IsConnectedWithEmulator = isConnectedWithEmulator;
-        SafeDispatch(new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(isConnectedWithEmulator)));
+        gameStateStore.LastEmulatorConnectionErrorCode = null;
+        gameStateStore.LastEmulatorConnectionErrorDetail = null;
+        SafeDispatch(CreateConnectionEvent(true));
     }
 
     public void DispatchInitialStateToClient(string connectionId)
@@ -51,8 +58,12 @@ public class EventDispatcherService(
             SafeDispatch(initialEvent, target);
         }
 
+        var isConnected = gameStateStore.IsConnectedWithEmulator ?? false;
         SafeDispatch(
-            new Event(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(gameStateStore.IsConnectedWithEmulator ?? false)),
+            CreateConnectionEvent(
+                isConnected,
+                isConnected ? null : gameStateStore.LastEmulatorConnectionErrorCode,
+                isConnected ? null : gameStateStore.LastEmulatorConnectionErrorDetail),
             target);
     }
 
@@ -63,6 +74,12 @@ public class EventDispatcherService(
             SafeDispatch(ev);
         }
     }
+
+    private static Event CreateConnectionEvent(
+        bool isConnected,
+        string? errorCode = null,
+        string? errorDetail = null) =>
+        new(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(isConnected, errorCode, errorDetail));
 
     private void SafeDispatch(Event ev, IClientProxy? target = null)
     {

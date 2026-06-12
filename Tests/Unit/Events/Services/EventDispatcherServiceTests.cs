@@ -208,6 +208,129 @@ public class EventDispatcherServiceTests
     }
 
     [Fact]
+    public void DispatchEmulatorConnectionStatus_ShouldSendErrorCodeInPayload_WhenDisconnected()
+    {
+        var clientProxyMock = new Mock<ISingleClientProxy>();
+        clientProxyMock.Setup(c => c.SendCoreAsync(
+            It.IsAny<string>(),
+            It.IsAny<object?[]>(),
+            It.IsAny<CancellationToken>()))
+            .Returns(Task.CompletedTask);
+
+        var hubClientsMock = new Mock<IHubClients>();
+        hubClientsMock.Setup(c => c.All).Returns(clientProxyMock.Object);
+
+        var hubContextMock = new Mock<IHubContext<GameHub>>();
+        hubContextMock.Setup(h => h.Clients).Returns(hubClientsMock.Object);
+
+        var loggerMock = new Mock<ILogger<EventDispatcherService>>();
+        var gameStateStore = new GameStateStore();
+        gameStateStore.IsConnectedWithEmulator = true;
+
+        var service = new EventDispatcherService(
+            hubContextMock.Object,
+            loggerMock.Object,
+            gameStateStore);
+
+        service.DispatchEmulatorConnectionStatus(
+            false,
+            "process_not_found",
+            null);
+
+        Assert.Equal("process_not_found", gameStateStore.LastEmulatorConnectionErrorCode);
+        clientProxyMock.Verify(
+            c => c.SendCoreAsync(
+                "EmulatorConnectionStatusChanged",
+                It.Is<object?[]>(args =>
+                    args.Length == 1
+                    && GetConnectionDto(args[0]!).ErrorCode == "process_not_found"
+                    && GetConnectionDto(args[0]!).IsConnected == false),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
+    }
+
+    [Fact]
+    public void DispatchEmulatorConnectionStatus_ShouldClearErrorCode_WhenConnected()
+    {
+        var clientProxyMock = new Mock<ISingleClientProxy>();
+        clientProxyMock.Setup(c => c.SendCoreAsync(
+            It.IsAny<string>(),
+            It.IsAny<object?[]>(),
+            It.IsAny<CancellationToken>()))
+            .Returns(Task.CompletedTask);
+
+        var hubClientsMock = new Mock<IHubClients>();
+        hubClientsMock.Setup(c => c.All).Returns(clientProxyMock.Object);
+
+        var hubContextMock = new Mock<IHubContext<GameHub>>();
+        hubContextMock.Setup(h => h.Clients).Returns(hubClientsMock.Object);
+
+        var loggerMock = new Mock<ILogger<EventDispatcherService>>();
+        var gameStateStore = new GameStateStore
+        {
+            LastEmulatorConnectionErrorCode = "process_not_found",
+            LastEmulatorConnectionErrorDetail = "detail"
+        };
+
+        var service = new EventDispatcherService(
+            hubContextMock.Object,
+            loggerMock.Object,
+            gameStateStore);
+
+        service.DispatchEmulatorConnectionStatus(true);
+
+        Assert.Null(gameStateStore.LastEmulatorConnectionErrorCode);
+        Assert.Null(gameStateStore.LastEmulatorConnectionErrorDetail);
+    }
+
+    [Fact]
+    public void DispatchInitialStateToClient_ShouldIncludeLastError_WhenEmulatorIsOffline()
+    {
+        var clientProxyMock = new Mock<ISingleClientProxy>();
+        clientProxyMock.Setup(c => c.SendCoreAsync(
+            It.IsAny<string>(),
+            It.IsAny<object?[]>(),
+            It.IsAny<CancellationToken>()))
+            .Returns(Task.CompletedTask);
+
+        var hubClientsMock = new Mock<IHubClients>();
+        hubClientsMock.Setup(c => c.Client("client1")).Returns(clientProxyMock.Object);
+
+        var hubContextMock = new Mock<IHubContext<GameHub>>();
+        hubContextMock.Setup(h => h.Clients).Returns(hubClientsMock.Object);
+
+        var loggerMock = new Mock<ILogger<EventDispatcherService>>();
+        var gameStateStore = new GameStateStore
+        {
+            IsConnectedWithEmulator = false,
+            LastEmulatorConnectionErrorCode = "mapping_not_found"
+        };
+
+        var service = new EventDispatcherService(
+            hubContextMock.Object,
+            loggerMock.Object,
+            gameStateStore);
+
+        service.DispatchInitialStateToClient("client1");
+
+        clientProxyMock.Verify(
+            c => c.SendCoreAsync(
+                "EmulatorConnectionStatusChanged",
+                It.Is<object?[]>(args =>
+                    args.Length == 1
+                    && GetConnectionDto(args[0]!).IsConnected == false
+                    && GetConnectionDto(args[0]!).ErrorCode == "mapping_not_found"),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
+    }
+
+    private static ConnectionDTO GetConnectionDto(object eventObject)
+    {
+        var ev = (Event)eventObject;
+        return (ConnectionDTO)ev.Payload;
+    }
+
+    [Fact]
     public void DispatchInitialStateToClient_ShouldSendEmulatorStatusOnly_WhenCurrentStateIsNull()
     {
         var clientProxyMock = new Mock<ISingleClientProxy>();

@@ -6,6 +6,8 @@ public class GameStateStore : IGameStateStore
 {
     public State? CurrentState { get; private set; }
     public bool? IsConnectedWithEmulator { get; set; }
+    public string? LastEmulatorConnectionErrorCode { get; set; }
+    public string? LastEmulatorConnectionErrorDetail { get; set; }
     public int ConnectedClientCount { get; private set; }
     public bool HasConnectedClients => ConnectedClientCount > 0;
 

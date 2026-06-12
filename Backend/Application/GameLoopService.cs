@@ -17,9 +17,12 @@ namespace Backend.Application
         IConfiguration configuration
     ) : BackgroundService
     {
-        private void NotifyEmulatorUnavailable(bool isDebuggingEnabled)
+        private void NotifyEmulatorUnavailable(
+            bool isDebuggingEnabled,
+            string errorCode,
+            string? errorDetail = null)
         {
-            eventDispatcherService.DispatchEmulatorConnectionStatus(false);
+            eventDispatcherService.DispatchEmulatorConnectionStatus(false, errorCode, errorDetail);
 
             if (isDebuggingEnabled && !Console.IsOutputRedirected)
             {
@@ -38,9 +41,13 @@ namespace Backend.Application
             {
                 while (!stoppingToken.IsCancellationRequested)
                 {
-                    if (!duckstationConnector.EnsureConnection())
+                    var connection = duckstationConnector.EnsureConnection();
+                    if (!connection.IsSuccess)
                     {
-                        NotifyEmulatorUnavailable(isDebuggingEnabled);
+                        NotifyEmulatorUnavailable(
+                            isDebuggingEnabled,
+                            connection.ErrorCode!,
+                            connection.ErrorDetail);
                         await Task.Delay(pollingIntervalMs, stoppingToken);
                         continue;
                     }
@@ -62,10 +69,13 @@ namespace Backend.Application
                             debugConsoleRenderer.Render(newState);
                         }
                     }
-                    catch (MemoryReadException)
+                    catch (MemoryReadException ex)
                     {
                         duckstationConnector.ClearSession();
-                        NotifyEmulatorUnavailable(isDebuggingEnabled);
+                        NotifyEmulatorUnavailable(
+                            isDebuggingEnabled,
+                            EmulatorConnectionErrorCodes.MemoryReadFailed,
+                            ex.Message);
                     }
                     catch (OperationCanceledException)
                     {
@@ -75,7 +85,10 @@ namespace Backend.Application
                     {
                         Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
                         duckstationConnector.ClearSession();
-                        NotifyEmulatorUnavailable(isDebuggingEnabled);
+                        NotifyEmulatorUnavailable(
+                            isDebuggingEnabled,
+                            EmulatorConnectionErrorCodes.StateComposeFailed,
+                            ex.Message);
                     }
 
                     try
