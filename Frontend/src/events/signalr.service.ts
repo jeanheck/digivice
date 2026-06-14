@@ -71,6 +71,7 @@ class SignalRService {
             this.emit('HubConnectionStatusChanged', {
                 isConnected: false,
                 errorMessage: 'Reconnecting to backend...',
+                preserveGameState: true,
             })
         })
 

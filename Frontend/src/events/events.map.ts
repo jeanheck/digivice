@@ -34,5 +34,9 @@ export interface EventsMap {
     PlayerChanged: PlayerDTO;
     PartyChanged: PartyDTO;
     JournalChanged: JournalDTO;
-    HubConnectionStatusChanged: { isConnected: boolean; errorMessage?: string };
+    HubConnectionStatusChanged: {
+        isConnected: boolean;
+        errorMessage?: string;
+        preserveGameState?: boolean;
+    };
 }

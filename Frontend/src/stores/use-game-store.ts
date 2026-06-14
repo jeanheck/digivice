@@ -22,20 +22,32 @@ export const useGameStore = defineStore('game', () => {
     });
     const currentState = ref<State | null>(null);
 
+    function clearGameState(): void {
+        currentState.value = null;
+    }
+
     function setBackendProcessFailed(failed: boolean): void {
         backendProcessFailed.value = failed;
         if (failed) {
             isConnectedWithBackend.value = false;
-            currentState.value = null;
+            clearGameState();
         }
     }
 
-    function syncHubConnectionStatus(event: { isConnected: boolean; errorMessage?: string }): void {
+    function syncHubConnectionStatus(event: {
+        isConnected: boolean;
+        errorMessage?: string;
+        preserveGameState?: boolean;
+    }): void {
         isConnectedWithBackend.value = event.isConnected;
 
         if (event.isConnected) {
             lastHubConnectionError.value = null;
             return;
+        }
+
+        if (!event.preserveGameState) {
+            clearGameState();
         }
 
         if (event.errorMessage) {
@@ -52,14 +64,14 @@ export const useGameStore = defineStore('game', () => {
             return;
         }
 
-        currentState.value = null;
+        clearGameState();
         lastEmulatorConnectionErrorCode.value = event.errorCode;
         lastEmulatorConnectionErrorDetail.value = event.errorDetail;
     }
 
     function setInitialState(state: Events.StateDTO | null): void {
         if (!state) {
-            currentState.value = null;
+            clearGameState();
             return;
         }
 
