@@ -8,8 +8,6 @@ public class GameStateStore : IGameStateStore
     public bool? IsConnectedWithEmulator { get; set; }
     public string? LastEmulatorConnectionErrorCode { get; set; }
     public string? LastEmulatorConnectionErrorDetail { get; set; }
-    public int ConnectedClientCount { get; private set; }
-    public bool HasConnectedClients => ConnectedClientCount > 0;
 
     public void UpdateState(State state) => CurrentState = state;
 
@@ -17,18 +15,5 @@ public class GameStateStore : IGameStateStore
     {
         CurrentState = null;
         IsConnectedWithEmulator = false;
-    }
-
-    public void RegisterClientConnection()
-    {
-        ConnectedClientCount++;
-    }
-
-    public void UnregisterClientConnection()
-    {
-        if (ConnectedClientCount > 0)
-        {
-            ConnectedClientCount--;
-        }
     }
 }
