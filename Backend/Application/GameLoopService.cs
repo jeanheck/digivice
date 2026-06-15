@@ -17,19 +17,6 @@ namespace Backend.Application
         IConfiguration configuration
     ) : BackgroundService
     {
-        private void NotifyEmulatorUnavailable(
-            bool isDebuggingEnabled,
-            string errorCode,
-            string? errorDetail = null)
-        {
-            eventDispatcherService.DispatchEmulatorConnectionStatus(false, errorCode, errorDetail);
-
-            if (isDebuggingEnabled && !Console.IsOutputRedirected)
-            {
-                debugConsoleRenderer.Render(null);
-            }
-        }
-
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             Serilog.Log.Information("Starting GameLoopService...");
@@ -44,15 +31,23 @@ namespace Backend.Application
                     var connectionAttemptResult = duckstationConnector.EnsureConnection();
                     if (!connectionAttemptResult.IsSuccess)
                     {
-                        NotifyEmulatorUnavailable(
-                            isDebuggingEnabled,
-                            connectionAttemptResult.ErrorCode!,
-                            connectionAttemptResult.ErrorDetail);
+                        eventDispatcherService.DispatchEvents(
+                            ConnectionEventFactory.CreateError(
+                                gameStateStore,
+                                connectionAttemptResult.ErrorCode!,
+                                connectionAttemptResult.ErrorDetail));
+
+                        if (isDebuggingEnabled && !Console.IsOutputRedirected)
+                        {
+                            debugConsoleRenderer.Render(null);
+                        }
+
                         await Task.Delay(pollingIntervalMs, stoppingToken);
                         continue;
                     }
 
-                    eventDispatcherService.DispatchEmulatorConnectionStatus(true);
+                    eventDispatcherService.DispatchEvents(
+                    ConnectionEventFactory.CreateSuccess(gameStateStore));
 
                     try
                     {
@@ -72,10 +67,16 @@ namespace Backend.Application
                     catch (MemoryReadException ex)
                     {
                         duckstationConnector.ClearSession();
-                        NotifyEmulatorUnavailable(
-                            isDebuggingEnabled,
-                            EmulatorConnectionErrorCodes.MemoryReadFailed,
-                            ex.Message);
+                        eventDispatcherService.DispatchEvents(
+                            ConnectionEventFactory.CreateError(
+                                gameStateStore,
+                                EmulatorConnectionErrorCodes.MemoryReadFailed,
+                                ex.Message));
+
+                        if (isDebuggingEnabled && !Console.IsOutputRedirected)
+                        {
+                            debugConsoleRenderer.Render(null);
+                        }
                     }
                     catch (OperationCanceledException)
                     {
@@ -85,10 +86,16 @@ namespace Backend.Application
                     {
                         Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
                         duckstationConnector.ClearSession();
-                        NotifyEmulatorUnavailable(
-                            isDebuggingEnabled,
-                            EmulatorConnectionErrorCodes.StateComposeFailed,
-                            ex.Message);
+                        eventDispatcherService.DispatchEvents(
+                            ConnectionEventFactory.CreateError(
+                                gameStateStore,
+                                EmulatorConnectionErrorCodes.StateComposeFailed,
+                                ex.Message));
+
+                        if (isDebuggingEnabled && !Console.IsOutputRedirected)
+                        {
+                            debugConsoleRenderer.Render(null);
+                        }
                     }
 
                     try
