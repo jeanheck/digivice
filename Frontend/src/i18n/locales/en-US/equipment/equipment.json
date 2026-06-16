@@ -2,11 +2,11 @@
   "equipments": {
     "92": {
       "name": "Short Sword",
-      "note": null
+      "note": "Short katana."
     },
     "93": {
       "name": "Zanden Sword",
-      "note": null
+      "note": "Store energy and slashes."
     },
     "94": {
       "name": "Crimson Blade",
@@ -14,99 +14,99 @@
     },
     "96": {
       "name": "Shiratorimaru",
-      "note": null
+      "note": "Mushamon's sword"
     },
     "102": {
       "name": "Rusty Katana",
-      "note": null
+      "note": "Rusted with a mysterious shine."
     },
     "106": {
       "name": "Leather Glove",
-      "note": null
+      "note": "A leather glove."
     },
     "107": {
       "name": "Cat Glove",
-      "note": null
+      "note": "Punch like a cat."
     },
     "108": {
       "name": "Iron Glove",
-      "note": null
+      "note": "Bandage reinforced with metal."
     },
     "110": {
       "name": "Power Arm",
-      "note": null
+      "note": "Arm gloves that inflicts damage."
     },
     "122": {
       "name": "Shotgun",
-      "note": null
+      "note": "One shot does heavy damage."
     },
     "134": {
       "name": "Bone Rod",
-      "note": null
+      "note": "An unique rod from a bone."
     },
     "141": {
       "name": "Old Wand",
-      "note": null
+      "note": "Magic is still left dormant."
     },
     "147": {
       "name": "Cerberus Fang",
-      "note": "Recovers a fraction of the damage as HP"
+      "note": "Drains HP from the wound."
     },
     "153": {
       "name": "Old Claw",
-      "note": null
+      "note": "Claw with DNA of ancient beasts."
     },
     "157": {
       "name": "Dagger",
-      "note": null
+      "note": "Short knife for a beginner."
     },
     "158": {
       "name": "Shishioumaru",
-      "note": null
+      "note": "Leomon's sword."
     },
     "159": {
       "name": "Long Sword",
-      "note": null
+      "note": "Light and long sword."
     },
     "161": {
       "name": "Wing Sword",
-      "note": null
+      "note": "Easy to wield for fast attacks."
     },
     "167": {
       "name": "Bamboo Spear",
-      "note": null
+      "note": "Bamboo spear like a pole."
     },
     "168": {
       "name": "Spear",
-      "note": null
+      "note": "Easy to use and pretty powerful."
     },
     "169": {
       "name": "Fairy Tale",
-      "note": null
+      "note": "Small, but powerful spear."
     },
     "171": {
       "name": "Divine Lance",
-      "note": null
+      "note": "Hard lance from fossilized bone."
     },
     "178": {
       "name": "Zweihander",
-      "note": null
+      "note": "German large two-handed sword."
     },
     "185": {
       "name": "Berdys",
-      "note": null
+      "note": "Heavy axe with long hilt."
     },
     "190": {
       "name": "Long Bow",
-      "note": null
+      "note": "Hand-drawn bow."
     },
     "191": {
       "name": "Shuriken",
-      "note": null
+      "note": "Hand thrown weapon for assassins."
     },
     "192": {
       "name": "Crossbow",
-      "note": null
+      "note": "Powerful with shooting mechanism."
     },
     "194": {
       "name": "Raven Bow",
@@ -114,211 +114,211 @@
     },
     "201": {
       "name": "Metal Guard",
-      "note": null
+      "note": "Metal defensive weapon to attack."
     },
     "209": {
       "name": "Kabuteri Horn",
-      "note": null
+      "note": "Horn to knock-out the enemy."
     },
     "215": {
       "name": "Bandanna",
-      "note": null
+      "note": "Put it around the head for defense."
     },
     "216": {
       "name": "Sun Visor",
-      "note": null
+      "note": "Protect the head with the visor."
     },
     "217": {
       "name": "Baseball Cap",
-      "note": null
+      "note": "Easy to move around head armor."
     },
     "219": {
       "name": "Wool Cap",
-      "note": null
+      "note": "Protects the head from the cold."
     },
     "226": {
       "name": "Ribbon",
-      "note": null
+      "note": "Put it on the head for defense."
     },
     "227": {
       "name": "Cat Ears",
-      "note": null
+      "note": "Cute cat ears."
     },
     "228": {
       "name": "Headband",
-      "note": null
+      "note": "Evade enemy attack with guts."
     },
     "230": {
       "name": "Magical Crown",
-      "note": null
+      "note": "Used by wizard to protect the head."
     },
     "236": {
       "name": "Hide Helmet",
-      "note": null
+      "note": "Helmet made from leather."
     },
     "237": {
       "name": "Tin Helmet",
-      "note": null
+      "note": "Helmet made from light metal."
     },
     "238": {
       "name": "Iron Helmet",
-      "note": null
+      "note": "Sturdy helmet made from iron."
     },
     "240": {
       "name": "Wing Helmet",
-      "note": null
+      "note": "Light and easy evade to attacks."
     },
     "249": {
       "name": "Leather Coat",
-      "note": null
+      "note": "Jacket made from leather."
     },
     "250": {
       "name": "Gym Suit",
-      "note": null
+      "note": "Easy to move combat suit."
     },
     "251": {
       "name": "Priest Robe",
-      "note": null
+      "note": "Robe worn by priests."
     },
     "253": {
       "name": "Dark Cloak",
-      "note": null
+      "note": "Strange cloak that drains darkness."
     },
     "262": {
       "name": "Leather Mail",
-      "note": null
+      "note": "Armor made from leather."
     },
     "263": {
       "name": "Tin Mail",
-      "note": null
+      "note": "Armor made with light metal."
     },
     "264": {
       "name": "Iron Armor",
-      "note": null
+      "note": "Sturdy armor made from iron."
     },
     "266": {
       "name": "Dark Armor",
-      "note": null
+      "note": "Eerie armor with dark powers."
     },
     "275": {
       "name": "Buckler",
-      "note": null
+      "note": "Light and small shield."
     },
     "276": {
       "name": "Tin Shield",
-      "note": null
+      "note": "Light and easy to use shield."
     },
     "277": {
       "name": "Iron Shield",
-      "note": null
+      "note": "Sturdy shield made with iron."
     },
     "279": {
       "name": "Guard Barrier",
-      "note": null
+      "note": "A barrier with a wide range."
     },
     "281": {
       "name": "Divine Barrier",
-      "note": null
+      "note": "Barrier with a divine right."
     },
     "292": {
       "name": "Power Gem",
-      "note": null
+      "note": "Increse attack power."
     },
     "294": {
       "name": "Guard Gem",
-      "note": null
+      "note": "Increase defense."
     },
     "296": {
       "name": "Spirit Gem",
-      "note": null
+      "note": "Increase spirit."
     },
     "298": {
       "name": "Wisdom Gem",
-      "note": null
+      "note": "Increase wisdom."
     },
     "300": {
       "name": "Boost Gem",
-      "note": null
+      "note": "Increase speed."
     },
     "302": {
       "name": "Charisma Gem",
-      "note": null
+      "note": "Trendy ring."
     },
     "304": {
       "name": "Flame Ring",
-      "note": null
+      "note": "Strong against fire."
     },
     "305": {
       "name": "Water Ring",
-      "note": null
+      "note": "Strong against water."
     },
     "306": {
       "name": "Ice Ring",
-      "note": null
+      "note": "Strong against ice."
     },
     "307": {
       "name": "Wind Ring",
-      "note": null
+      "note": "Strong against wind."
     },
     "308": {
       "name": "Thunder Ring",
-      "note": null
+      "note": "Strong against thunder."
     },
     "309": {
       "name": "Machine Ring",
-      "note": null
+      "note": "Strong against machine."
     },
     "310": {
       "name": "Dark Ring",
-      "note": null
+      "note": "Strong against darkness."
     },
     "311": {
       "name": "Antidote Ring",
-      "note": "Boosts the equipped Digimon’s resistance against poison"
+      "note": "More resistant to poison."
     },
     "312": {
       "name": "Revive Ring",
-      "note": "Boosts the equipped Digimon’s resistance against paralysis"
+      "note": "More resistant to paralysis."
     },
     "313": {
       "name": "Awake Ring",
-      "note": "Boosts the equipped Digimon’s resistance against sleep"
+      "note": "More resistant to sleep."
     },
     "314": {
       "name": "Sober Ring",
-      "note": "Boosts the equipped Digimon’s resistance against confusion"
+      "note": "More resistant to confusion."
     },
     "315": {
       "name": "Prayer Ring",
-      "note": "Boosts the equipped Digimon’s chances of surviving a potential KO"
+      "note": "More resistant to KO."
     },
     "318": {
       "name": "Counter Crest",
-      "note": "Allows your Digimon to counter physical attacks and techniques, dealing double the damage received"
+      "note": "Automatically retaliate."
     },
     "333": {
       "name": "Dance Feather",
-      "note": "Slightly increases the equipped Digimon’s chances of evading an attack"
+      "note": "Evade a little better."
     },
     "339": {
       "name": "Fire Power 1",
-      "note": "Adds a small amount of Fire damage to the equipped Digimon’s basic attacks"
+      "note": "Add weak fire to attacks."
     },
     "342": {
       "name": "Water Power 1",
-      "note": "Adds a small amount of Water damage to the equipped Digimon’s basic attacks"
+      "note": "Add weak water to attacks."
     },
     "345": {
       "name": "Ice Power 1",
-      "note": "Add weak Ice to attacks"
+      "note": "Add weak ice to attacks."
     },
     "348": {
       "name": "Wind Power 1",
-      "note": "Adds a small amount of Wind damage to the equipped Digimon’s basic attacks"
+      "note": "Add weak wind to attacks."
     },
     "357": {
       "name": "Dark Power 1",
-      "note": "Adds a small amount of Dark damage to the equipped Digimon’s basic attacks"
+      "note": "Add weak dark to attacks."
     },
     "1001": {
       "name": "Empty",
