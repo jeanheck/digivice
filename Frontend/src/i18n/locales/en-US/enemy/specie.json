@@ -1,0 +1,15 @@
+{
+  "species": {
+    "insect": "Insect",
+    "dino": "Dinossaur",
+    "machine": "Machine",
+    "mammal": "Mammal",
+    "fish": "Fish",
+    "evil": "Evil",
+    "plant": "Plant",
+    "bird": "Bird",
+    "dragon": "Dragon",
+    "ghoul": "Ghoul",
+    "rare": "Rare"
+  }
+}

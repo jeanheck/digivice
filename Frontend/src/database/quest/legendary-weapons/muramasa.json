@@ -1,0 +1,37 @@
+{
+    "id": "muramasa",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "023C",
+            "coordinates": {
+                "x": 52,
+                "y": 82.5
+            },
+            "zoomedLocations": [
+                {
+                    "location": "023C",
+                    "coordinates": {
+                        "x": 78,
+                        "y": 14
+                    }
+                },
+                {
+                    "location": "0242",
+                    "coordinates": {
+                        "x": 88,
+                        "y": 57
+                    }
+                },
+                {
+                    "location": "0243",
+                    "coordinates": {
+                        "x": 76,
+                        "y": 21
+                    }
+                }
+            ],
+            "requisites": []
+        }
+    }
+}

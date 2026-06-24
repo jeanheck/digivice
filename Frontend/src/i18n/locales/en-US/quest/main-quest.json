@@ -1,0 +1,445 @@
+{
+  "mainQuest": {
+    "title": "Main Quest",
+    "description": "Become the greatest tamer of the Digital World!",
+    "steps": {
+      "1": {
+        "description": "Look for the Seiryu Leader in Seiryu City",
+        "locations": {
+          "0": {
+            "locationTarget": "Seiryu Tower"
+          },
+          "1": {
+            "locationTarget": "Repeating Tom"
+          }
+        }
+      },
+      "2": {
+        "description": "Talk to Seiryu Leader on Protocol Ruins",
+        "locations": {
+          "0": {
+            "locationTarget": "Seiryu Leader"
+          }
+        }
+      },
+      "3": {
+        "description": "Defeat MasterTyrannomon on Tyranno Valley",
+        "locations": {
+          "0": {
+            "locationTarget": "MasterTyrannomon"
+          }
+        }
+      },
+      "4": {
+        "description": "Challenge the Seiryu Leader on Seiryu City",
+        "locations": {
+          "0": {
+            "locationTarget": "Seiryu Tower"
+          },
+          "1": {
+            "locationTarget": "Seiryu City"
+          },
+          "2": {
+            "locationTarget": "Seiryu Leader"
+          }
+        }
+      },
+      "5": {
+        "description": "Walk out of Seiryu City",
+        "locations": {
+          "0": {
+            "locationTarget": "Exit"
+          }
+        }
+      },
+      "6": {
+        "description": "Go to the East Station and interact with Gondola to reach the next sector",
+        "locations": {
+          "0": {
+            "locationTarget": "Gondola"
+          }
+        }
+      },
+      "7": {
+        "description": "Defeat the Mystery Player stopping you on the Asuka Bridge",
+        "locations": {
+          "0": {
+            "locationTarget": "Mistery Player"
+          }
+        }
+      },
+      "8": {
+        "description": "Talk with the Guilmon on Asuka Inn 2F, on Asuka City",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Asuka Inn 2F"
+          },
+          "2": {
+            "locationTarget": "Guilmon"
+          }
+        }
+      },
+      "9": {
+        "description": "Talk with the Guilmon on Forest Inn",
+        "locations": {
+          "0": {
+            "locationTarget": "Guilmon"
+          }
+        }
+      },
+      "10": {
+        "description": "Talk with the Tricky Guilmon on Zephyr Tower, on Seiryu City",
+        "locations": {
+          "0": {
+            "locationTarget": "Zephyr Tower"
+          },
+          "1": {
+            "locationTarget": "Guilmon"
+          }
+        }
+      },
+      "11": {
+        "description": "Return to the East Station with the Blue Card",
+        "locations": {
+          "0": {
+            "locationTarget": "Gondola"
+          }
+        }
+      },
+      "12": {
+        "description": "Confront the Guilmon on Seiryu City about the fake card",
+        "locations": {
+          "0": {
+            "locationTarget": "Guilmon"
+          }
+        }
+      },
+      "13": {
+        "description": "Talk to the Tricky Guilmon at the Forest Inn Basements",
+        "locations": {
+          "0": {
+            "locationTarget": "Forest Inn Basements"
+          },
+          "1": {
+            "locationTarget": "Tricky Guilmon"
+          }
+        }
+      },
+      "14": {
+        "description": "Return to the East Station with the real Blue Card",
+        "locations": {
+          "0": {
+            "locationTarget": "Gondola"
+          }
+        }
+      },
+      "15": {
+        "description": "Follow through Jungle Grave",
+        "locations": {
+          "0": {
+            "locationTarget": "Zanbamon"
+          }
+        }
+      },
+      "16": {
+        "description": "Talk to Gatomon in training at Tranquil Inn",
+        "locations": {
+          "0": {
+            "locationTarget": "Gatomon"
+          }
+        }
+      },
+      "17": {
+        "description": "Discover who the mysterious being is in the Shaman's House",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "18": {
+        "description": "Find Baronmon",
+        "locations": {
+          "0": {
+            "locationTarget": "Baronmon"
+          }
+        }
+      },
+      "19": {
+        "description": "Look for Sepkimon near or around Asuka City",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "20": {
+        "description": "Speak to Etemon near El Dorado",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka City"
+          },
+          "3": {
+            "locationTarget": "Etemon"
+          }
+        }
+      },
+      "21": {
+        "description": "Look for Sepikmon in Divermon Lake",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "22": {
+        "description": "Speak to Etemon near El Dorado ID again",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka City"
+          },
+          "3": {
+            "locationTarget": "Etemon"
+          }
+        }
+      },
+      "23": {
+        "description": "Chase Etemon through the Asuka Sewers",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka Sewers"
+          },
+          "3": {
+            "locationTarget": "Etemon"
+          }
+        }
+      },
+      "24": {
+        "description": "Return the mask to Sepkimon at the Shaman's House",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "25": {
+        "description": "Use the Smell Herb to lure Zanbamon out of the Jungle Grave",
+        "locations": {
+          "0": {
+            "locationTarget": "Zanbamon"
+          }
+        }
+      },
+      "26": {
+        "description": "Enter Suzaku City and look for an inn to rest",
+        "locations": {
+          "0": {
+            "locationTarget": "Lisa"
+          }
+        }
+      },
+      "27": {
+        "description": "Challenge Leader Suzaku in the Suzaku Hall",
+        "locations": {
+          "0": {
+            "locationTarget": "Suzaku Leader"
+          },
+          "1": {
+            "locationTarget": "Suzaku Hall"
+          }
+        }
+      },
+      "28": {
+        "description": "Return to Suzaku Inn after defeating Leader Suzaku",
+        "locations": {
+          "0": {
+            "locationTarget": "Kail"
+          }
+        }
+      },
+      "29": {
+        "description": "Search for information on Lamb Chop",
+        "locations": {
+          "0": {
+            "locationTarget": "Lamb Chop"
+          },
+          "1": {
+            "locationTarget": "Barman"
+          }
+        }
+      },
+      "30": {
+        "description": "Look for the trainers couple near El Dorado",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka City"
+          },
+          "3": {
+            "locationTarget": "Trainers couple"
+          }
+        }
+      },
+      "31": {
+        "description": "Go to the place where you last saw Etemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka Sewers"
+          },
+          "3": {
+            "locationTarget": "Etemon"
+          }
+        }
+      },
+      "32": {
+        "description": "Report your findings to Kail in the Main Lobby",
+        "locations": {
+          "0": {
+            "locationTarget": "Main Lobby"
+          },
+          "1": {
+            "locationTarget": "Kail"
+          }
+        }
+      },
+      "33": {
+        "description": "Confront the Mischievous Mat at Asuka Sewers",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "2": {
+            "locationTarget": "Asuka Sewers"
+          },
+          "3": {
+            "locationTarget": "Pernicious Mat"
+          }
+        }
+      },
+      "34": {
+        "description": "Return to the Underground Path and find Kail",
+        "locations": {
+          "0": {
+            "locationTarget": "Asuka Inn 1F"
+          },
+          "1": {
+            "locationTarget": "Underground Path"
+          },
+          "3": {
+            "locationTarget": "Kail"
+          }
+        }
+      },
+      "35": {
+        "description": "Enter the Admin Center dressed as Agumon",
+        "locations": {
+          "0": {
+            "locationTarget": "Admin Center 1F"
+          }
+        }
+      },
+      "36": {
+        "description": "Find Kail in the Admin Center 2F",
+        "locations": {
+          "0": {
+            "locationTarget": "Admin Center 2F"
+          },
+          "1": {
+            "locationTarget": "Kail"
+          }
+        }
+      },
+      "37": {
+        "description": "Look for clues on how to proceed in Phoenix Bay",
+        "locations": {
+          "0": {
+            "locationTarget": "Nami"
+          }
+        }
+      },
+      "38": {
+        "description": "Look for Nami's cat in Bios Swamp",
+        "locations": {
+          "0": {
+            "locationTarget": "Lost Cat"
+          }
+        }
+      },
+      "39": {
+        "description": "Ask Sepkimon for help to break down the wall",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "40": {
+        "description": "Look for Baronmon so he can help you with bombs",
+        "locations": {
+          "0": {
+            "locationTarget": "Baronmon"
+          }
+        }
+      },
+      "41": {
+        "description": "Obtain a TNT Ball from a Triceramon and deliver it to Baronmon",
+        "locations": {
+          "0": {
+            "locationTarget": "Baronmon"
+          }
+        }
+      },
+      "42": {
+        "description": "Use the TNT Chip to open the wall in Bios Swamp",
+        "locations": {
+          "0": {
+            "locationTarget": "Wall"
+          }
+        }
+      },
+      "43": {
+        "description": "Find the Digi-Egg of Sincerity",
+        "locations": {
+          "0": {
+            "locationTarget": "Digi-Egg of Sincerity"
+          }
+        }
+      }
+    }
+  }
+}

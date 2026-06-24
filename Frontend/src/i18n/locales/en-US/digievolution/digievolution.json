@@ -1,0 +1,22 @@
+{
+  "digievolution": {
+    "title": "{name} Digievolutions",
+    "selectNode": "SELECT A DIGIEVOLUTION NODE FOR MORE DETAILS.",
+    "requirementDigievolutions": "Requirement Digievolutions",
+    "nextDigievolutions": "Next Digievolutions",
+    "noTechData": "No technique data available.",
+    "signature": "SIG",
+    "neutral": "Neutral",
+    "noEvolutionData": "No evolution data available",
+    "unknownParam": "Unknown Parameter",
+    "lv": "Lv",
+    "techniques": "Techniques",
+    "searchDigimon": "Type a Digievolution name...",
+    "searchNoResults": "No digievolution found",
+    "mpCost": "MP Cost",
+    "levelToLearn": "Level to Learn",
+    "levelToLoad": "Level to Load",
+    "signatureTechnique": "Signature Technique",
+    "element": "Element"
+  }
+}

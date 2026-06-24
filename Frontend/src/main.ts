@@ -2,19 +2,26 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
-import router from './router'
-import { signalRService } from './services/SignalRService'
+import { signalRService } from './events/signalr.service'
 import './style.css'
 
 import i18n from './i18n'
+import { initializeSignalRHandlers } from './events/signalr.handlers';
+import { initializeTauriBackendProcessListener } from './events/tauri-backend-process.listener';
+
 
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(router)
 app.use(i18n)
 
-// Inicia a comunicação em tempo real com o Backend
+initializeTauriBackendProcessListener();
+
+// Initializes the handlers (bridge between SignalR and Pinia)
+initializeSignalRHandlers();
+
+// Initiates real-time communication with the backend.
 signalRService.startConnection()
 
 app.mount('#app')
+

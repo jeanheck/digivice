@@ -1,0 +1,16 @@
+{
+  "journal": {
+    "title": "Diário",
+    "mainQuest": "Missão Principal",
+    "sideQuests": "Missões Secundárias",
+    "legendaryWeapons": "Armas Lendárias",
+    "driAgents": "Agentes DRI",
+    "noSideQuests": "Nenhuma Missão Secundária Ativa",
+    "questCompleted": "Missão concluída",
+    "prerequisites": "Pré-requisitos",
+    "missionSteps": "Passos da Missão",
+    "clickStep": "CLIQUE EM UM PASSO DA MISSÃO PARA CARREGAR DADOS GEOGRÁFICOS",
+    "noSignal": "NENHUM SINAL DETECTADO.\nCOORDENADAS DESCONHECIDAS.",
+    "noSteps": "Nenhum passo específico rastreado."
+  }
+}

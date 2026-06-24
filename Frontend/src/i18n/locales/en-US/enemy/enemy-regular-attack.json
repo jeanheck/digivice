@@ -1,0 +1,21 @@
+{
+    "regularAttacks": {
+        "noElement": "No Element",
+        "machineElement": "Machine Element",
+        "waterElement": "Water Element",
+        "thunderElemental": "Thunder Elemental",
+        "noElementChanceOfPoison": "No Element (Chance of Poison)",
+        "darkElemental": "Dark Elemental",
+        "fireElement": "Fire Element",
+        "darkElement": "Dark Element",
+        "thunderElementChanceOfSleep": "Thunder Element (Chance of Sleep)",
+        "machineElementChanceOfFreeze": "Machine Element (Chance of Freeze)",
+        "thunderElement": "Thunder Element",
+        "thunderElementalChanceOfFreeze": "Thunder Elemental (Chance of Freeze)",
+        "waterElementHitsTwice": "Water Element (Hits Twice)",
+        "iceElement": "Ice Element",
+        "machineElementCounterPhysical": "Machine Element; Counter (Physical)",
+        "thunderElementCounterPhysical": "Thunder Element; Counter (Physical)",
+        "machineElementHitsTwice": "Machine Element (Hits Twice)"
+    }
+}

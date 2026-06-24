@@ -1,0 +1,73 @@
+{
+  "treeBoots": {
+    "title": "As Botas de Árvore",
+    "description": "Obtenha as Botas de Árvore para encontrar Cardmons chutando árvores.",
+    "requisites": {
+      "FolderBag": "Possuir a Mochila de Cartas"
+    },
+    "steps": {
+      "1": {
+        "description": "Fale com o Futebolista Hide na Capa de Plug",
+        "locations": {
+          "0": {
+            "locationTarget": "Futebolista Hide"
+          }
+        }
+      },
+      "2": {
+        "description": "Encontre o card perdido do Gabumon",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Card Perdido"
+          }
+        }
+      },
+      "3": {
+        "description": "Devolva o card do Gabumon ao Futebolista Hide",
+        "locations": {
+          "0": {
+            "locationTarget": "Futebolista Hide"
+          }
+        }
+      },
+      "4": {
+        "description": "Fale com Debbie no Costeleta de Cordeiro na Cidade Asuka",
+        "locations": {
+          "0": {
+            "locationTarget": "Costeleta de Cordeiro"
+          },
+          "1": {
+            "locationTarget": "Debbie"
+          }
+        }
+      },
+      "5": {
+        "description": "Encontre Veemon na Campina do Vento",
+        "locations": {
+          "0": {
+            "locationTarget": "Veemon"
+          }
+        }
+      },
+      "6": {
+        "description": "Brinque de esconde-esconde e encontre Veemon na Floresta dos Pontapés",
+        "locations": {
+          "0": {
+            "locationTarget": "Veemon"
+          }
+        }
+      },
+      "7": {
+        "description": "Receba as Botas de Árvore do Veemon após encontrá-lo",
+        "locations": {
+          "0": {
+            "locationTarget": "Veemon"
+          }
+        }
+      }
+    }
+  }
+}

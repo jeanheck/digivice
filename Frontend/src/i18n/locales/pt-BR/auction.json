@@ -1,0 +1,37 @@
+{
+  "auction": {
+    "title": "Leilões",
+    "cardIdleTitle": "Nenhum Leilão no momento",
+    "cardIdleSubtitle": "Continue avançando na missão principal",
+    "cardActiveTitle": "Está acontecendo um Leilão!",
+    "cardActiveSubtitle": "Clique para obter mais detalhes!",
+    "modalTitle": "Leilões",
+    "currentIdleTitle": "Nenhum Leilão na Torre de Carga",
+    "currentIdleSubtitle": "Continue avançando na missão principal",
+    "currentActiveTitle": "Leilão acontecendo agora!",
+    "currentActiveAcquirePrefix": "Adquira",
+    "purchasePriceLabel": "Preço:",
+    "resalePriceLabel": "Revenda:",
+    "bitsLabel": "bits",
+    "closesWhenLabel": "TERMINA QUANDO:",
+    "historySubtitle": "Histórico",
+    "historyTiming": {
+      "alreadyEnded": "Esse Leilão já terminou",
+      "upcoming": "Esse Leilão vai acontecer no futuro"
+    },
+    "historyParticipation": {
+      "participated": "Você participou desse leilão",
+      "missed": "Infelizmente, você perdeu esse leilão"
+    },
+    "historyActive": {
+      "timing": "Leilão acontecendo agora!",
+      "participation": "Vá até a Torre de Carga para participar!"
+    },
+    "closesWhen": {
+      "divineBarrier": "interagir com a Gôndola pela primeira vez (passo 6), ou participar do Leilão",
+      "hazardShield": "recuperar a máscara do Sepkimon (passo 23), ou participar do leilão",
+      "sniperShield": "falar com a Kail no Caminho Subterrâneo (passo 34), ou participar do leilão",
+      "dramonShield": "retornar ao Pântano Bios com o Chip TNT (passo 42), ou participar do leilão"
+    }
+  }
+}

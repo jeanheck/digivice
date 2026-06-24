@@ -1,0 +1,3132 @@
+{
+    "0": {
+        "5": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 386
+            }
+        ],
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 56
+            }
+        ],
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 5
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 15
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 260
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 375
+            },
+            {
+                "type": "Resistance",
+                "value": 200,
+                "stat": "wind"
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 5
+            },
+            {
+                "type": "Resistance",
+                "value": 140,
+                "stat": "dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 389
+            },
+            {
+                "type": "Resistance",
+                "value": 140,
+                "stat": "machine"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 375
+            },
+            {
+                "type": "Attribute",
+                "value": 280,
+                "stat": "wisdom"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 144
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 6
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 234
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 254
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 213
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 196
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 230
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 267
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 27
+            },
+            {
+                "type": "Resistance",
+                "value": 200,
+                "stat": "machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 20
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 12
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 211
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 148
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 19
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 375
+            },
+            {
+                "type": "Resistance",
+                "value": 360,
+                "stat": "water"
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 259
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 260
+            }
+        ],
+        "259": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 5
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 392
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 26
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 148
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 375
+            },
+            {
+                "type": "Resistance",
+                "value": 200,
+                "stat": "fire"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 367
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 368
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 196
+            }
+        ],
+        "374": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 392
+            }
+        ],
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 374
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 375
+            }
+        ],
+        "377": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 378
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 369
+            }
+        ],
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 66
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 359
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 150
+            }
+        ],
+        "386": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 367
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 367
+            },
+            {
+                "type": "Attribute",
+                "value": 280,
+                "stat": "speed"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 387
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 388
+            }
+        ],
+        "392": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 390
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 391
+            }
+        ]
+    },
+    "1": {
+        "5": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 368
+            },
+            {
+                "type": "Resistance",
+                "value": 200,
+                "stat": "fire"
+            }
+        ],
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 394
+            }
+        ],
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 5
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 260
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 66
+            },
+            {
+                "type": "Resistance",
+                "value": 280,
+                "stat": "wind"
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 5
+            },
+            {
+                "type": "Resistance",
+                "value": 160,
+                "stat": "dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 391
+            },
+            {
+                "type": "Resistance",
+                "value": 150,
+                "stat": "machine"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 388
+            },
+            {
+                "type": "Attribute",
+                "value": 80,
+                "stat": "wisdom"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 144
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 6
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 234
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 254
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 213
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 196
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 230
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 267
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 27
+            },
+            {
+                "type": "Resistance",
+                "value": 200,
+                "stat": "machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 20
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 12
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 211
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 148
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 19
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 20
+            },
+            {
+                "type": "Resistance",
+                "value": 280,
+                "stat": "water"
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 259
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 260
+            }
+        ],
+        "259": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 374
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 394
+            },
+            {
+                "type": "Attribute",
+                "value": 400,
+                "stat": "speed"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 26
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 148
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 394
+            },
+            {
+                "type": "Attribute",
+                "value": 480,
+                "stat": "strength"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 367
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 368
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 196
+            }
+        ],
+        "374": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 388
+            },
+            {
+                "type": "Attribute",
+                "value": 80,
+                "stat": "spirit"
+            }
+        ],
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 374
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 15
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 375
+            }
+        ],
+        "377": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 378
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 369
+            }
+        ],
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 66
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 359
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 150
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 12
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 19
+            }
+        ],
+        "388": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 386
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 387
+            }
+        ],
+        "391": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 389
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 390
+            }
+        ],
+        "394": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ]
+    },
+    "2": {
+        "5": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 393
+            }
+        ],
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 26
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "stat": "spirit"
+            }
+        ],
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 5
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 260
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 390
+            },
+            {
+                "type": "Resistance",
+                "value": 120,
+                "stat": "wind"
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 5
+            },
+            {
+                "type": "Resistance",
+                "value": 300,
+                "stat": "dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 390
+            },
+            {
+                "type": "Resistance",
+                "value": 180,
+                "stat": "machine"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 390
+            },
+            {
+                "type": "Attribute",
+                "value": 160,
+                "stat": "strength"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 144
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 6
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 234
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 254
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 213
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 196
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 230
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 267
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 27
+            },
+            {
+                "type": "Resistance",
+                "value": 240,
+                "stat": "machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 20
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 12
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 211
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 148
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 19
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 211
+            },
+            {
+                "type": "Resistance",
+                "value": 110,
+                "stat": "water"
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 259
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 260
+            }
+        ],
+        "259": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 387
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 12
+            },
+            {
+                "type": "Resistance",
+                "value": 200,
+                "stat": "thunder"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 26
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 148
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 389
+            },
+            {
+                "type": "Attribute",
+                "value": 320,
+                "stat": "speed"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 367
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 368
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 196
+            }
+        ],
+        "374": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 234
+            },
+            {
+                "type": "Attribute",
+                "value": 200,
+                "stat": "spirit"
+            }
+        ],
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 374
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 375
+            }
+        ],
+        "377": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 378
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 369
+            }
+        ],
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 66
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 359
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 150
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 12
+            },
+            {
+                "type": "Attribute",
+                "value": 250,
+                "stat": "strength"
+            }
+        ],
+        "387": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 367
+            },
+            {
+                "type": "Attribute",
+                "value": 460,
+                "stat": "defense"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 386
+            }
+        ],
+        "390": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 388
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 389
+            }
+        ],
+        "393": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 391
+            }
+        ]
+    },
+    "3": {
+        "5": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 211
+            },
+            {
+                "type": "Resistance",
+                "value": 250,
+                "stat": "dark"
+            }
+        ],
+        "12": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 260
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 19
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "stat": "wisdom"
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 5
+            },
+            {
+                "type": "Resistance",
+                "value": 130,
+                "stat": "dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 213
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 196
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 144
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 6
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 234
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 254
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 213
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 196
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 230
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 267
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 27
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 20
+            }
+        ],
+        "213": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 211
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 148
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 19
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 211
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 259
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 260
+            }
+        ],
+        "259": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 12
+            },
+            {
+                "type": "Resistance",
+                "value": 100,
+                "stat": "ice"
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 213
+            },
+            {
+                "type": "Attribute",
+                "value": 260,
+                "stat": "speed"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 26
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 148
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 5
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 367
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 15
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 368
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 196
+            }
+        ],
+        "374": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 12
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "stat": "spirit"
+            }
+        ],
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 374
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 375
+            }
+        ],
+        "377": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 378
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 369
+            }
+        ],
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 66
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 359
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 150
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 213
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 368
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 196
+            },
+            {
+                "type": "Attribute",
+                "value": 400,
+                "stat": "defense"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 386
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 387
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 388
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 389
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 390
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 391
+            }
+        ]
+    },
+    "4": {
+        "5": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 35,
+                "digievolution": 254
+            },
+            {
+                "type": "Attribute",
+                "value": 200,
+                "stat": "defense"
+            }
+        ],
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 25,
+                "digievolution": 254
+            },
+            {
+                "type": "Resistance",
+                "value": 160,
+                "stat": "dark"
+            }
+        ],
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 5
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 260
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 45,
+                "digievolution": 254
+            },
+            {
+                "type": "Attribute",
+                "value": 230,
+                "stat": "wisdom"
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 5
+            },
+            {
+                "type": "Resistance",
+                "value": 190,
+                "stat": "dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 254
+            },
+            {
+                "type": "Resistance",
+                "value": 100,
+                "stat": "machine"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 148
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "stat": "wisdom"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 144
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 6
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 234
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 254
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 213
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 196
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 230
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 267
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 27
+            },
+            {
+                "type": "Resistance",
+                "value": 140,
+                "stat": "machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 20
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 12
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 211
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 148
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 19
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 211
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 260
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "259": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 259
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 26
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 148
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 254
+            },
+            {
+                "type": "Resistance",
+                "value": 90,
+                "stat": "fire"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 367
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 368
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 196
+            }
+        ],
+        "374": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 254
+            },
+            {
+                "type": "Resistance",
+                "value": 200,
+                "stat": "ice"
+            }
+        ],
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 374
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 375
+            }
+        ],
+        "377": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 378
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 369
+            }
+        ],
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 66
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 359
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 150
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 148
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 35,
+                "digievolution": 148
+            },
+            {
+                "type": "Resistance",
+                "value": 160,
+                "stat": "machine"
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 45,
+                "digievolution": 148
+            },
+            {
+                "type": "Attribute",
+                "value": 200,
+                "stat": "defense"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 386
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 387
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 388
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 389
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 390
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 391
+            }
+        ]
+    },
+    "5": {
+        "5": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 369
+            },
+            {
+                "type": "Resistance",
+                "value": 280,
+                "stat": "fire"
+            }
+        ],
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 391
+            },
+            {
+                "type": "Resistance",
+                "value": 160,
+                "stat": "dark"
+            }
+        ],
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 5
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 260
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 368
+            },
+            {
+                "type": "Attribute",
+                "value": 180,
+                "stat": "spirit"
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 5
+            },
+            {
+                "type": "Resistance",
+                "value": 140,
+                "stat": "dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 367
+            },
+            {
+                "type": "Attribute",
+                "value": 100,
+                "stat": "defense"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 368
+            },
+            {
+                "type": "Resistance",
+                "value": 120,
+                "stat": "dark"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 144
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 6
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 234
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 254
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 213
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 196
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 230
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 267
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 27
+            },
+            {
+                "type": "Resistance",
+                "value": 190,
+                "stat": "machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 20
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 12
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 211
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 148
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 19
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 368
+            },
+            {
+                "type": "Resistance",
+                "value": 140,
+                "stat": "water"
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 259
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 260
+            }
+        ],
+        "259": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 369
+            },
+            {
+                "type": "Resistance",
+                "value": 300,
+                "stat": "wind"
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 367
+            },
+            {
+                "type": "Resistance",
+                "value": 80,
+                "stat": "thunder"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 26
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 148
+            }
+        ],
+        "367": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "368": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "369": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 196
+            }
+        ],
+        "374": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 234
+            },
+            {
+                "type": "Attribute",
+                "value": 200,
+                "stat": "spirit"
+            }
+        ],
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 374
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 375
+            }
+        ],
+        "377": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 378
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 369
+            }
+        ],
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 66
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 359
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 150
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 12
+            },
+            {
+                "type": "Attribute",
+                "value": 400,
+                "stat": "strength"
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 386
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 369
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 386
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 387
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 388
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 389
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 390
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 391
+            }
+        ]
+    },
+    "6": {
+        "5": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 388
+            },
+            {
+                "type": "Attribute",
+                "value": 280,
+                "stat": "defense"
+            }
+        ],
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 376
+            }
+        ],
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 5
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 260
+            }
+        ],
+        "20": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 376
+            },
+            {
+                "type": "Resistance",
+                "value": 150,
+                "stat": "wind"
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 5
+            },
+            {
+                "type": "Resistance",
+                "value": 250,
+                "stat": "dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 375
+            },
+            {
+                "type": "Resistance",
+                "value": 100,
+                "stat": "machine"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 376
+            },
+            {
+                "type": "Attribute",
+                "value": 400,
+                "stat": "wisdom"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 144
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 6
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 234
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 15
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 254
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 213
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 196
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 230
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 267
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 27
+            },
+            {
+                "type": "Resistance",
+                "value": 120,
+                "stat": "machine"
+            }
+        ],
+        "211": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 20
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 12
+            }
+        ],
+        "214": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 211
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 148
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 19
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 374
+            },
+            {
+                "type": "Attribute",
+                "value": 160,
+                "stat": "spirit"
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 259
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 260
+            }
+        ],
+        "259": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 375
+            },
+            {
+                "type": "Resistance",
+                "value": 120,
+                "stat": "wind"
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 374
+            },
+            {
+                "type": "Attribute",
+                "value": 80,
+                "stat": "strength"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 26
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 148
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 260
+            },
+            {
+                "type": "Attribute",
+                "value": 80,
+                "stat": "defense"
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 367
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 25
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 368
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 196
+            }
+        ],
+        "374": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "375": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "376": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "377": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 378
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 369
+            }
+        ],
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 66
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 359
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 150
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 388
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 389
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 66
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "stat": "strength"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 386
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 387
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 388
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 389
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 390
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 391
+            }
+        ]
+    },
+    "7": {
+        "5": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 211
+            },
+            {
+                "type": "Resistance",
+                "value": 140,
+                "stat": "fire"
+            }
+        ],
+        "6": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 390
+            },
+            {
+                "type": "Resistance",
+                "value": 300,
+                "stat": "dark"
+            }
+        ],
+        "12": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 5
+            }
+        ],
+        "19": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 260
+            }
+        ],
+        "20": [
+            {
+                "type": "DigimonLevel",
+                "value": 5
+            }
+        ],
+        "26": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 5
+            },
+            {
+                "type": "Resistance",
+                "value": 220,
+                "stat": "dark"
+            }
+        ],
+        "27": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 390
+            },
+            {
+                "type": "Resistance",
+                "value": 140,
+                "stat": "machine"
+            }
+        ],
+        "56": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 20
+            },
+            {
+                "type": "Attribute",
+                "value": 100,
+                "stat": "strength"
+            }
+        ],
+        "59": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 144
+            }
+        ],
+        "66": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 6
+            }
+        ],
+        "144": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 234
+            },
+            {
+                "type": "DigimonLevel",
+                "value": 15
+            }
+        ],
+        "148": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 254
+            }
+        ],
+        "150": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 213
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 196
+            }
+        ],
+        "151": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 230
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 267
+            }
+        ],
+        "196": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 27
+            }
+        ],
+        "211": [
+            {
+                "type": "DigimonLevel",
+                "value": 20
+            }
+        ],
+        "213": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 12
+            }
+        ],
+        "214": [
+            {
+                "type": "DigimonLevel",
+                "value": 40
+            }
+        ],
+        "230": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 148
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 19
+            }
+        ],
+        "234": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 20
+            },
+            {
+                "type": "Attribute",
+                "value": 180,
+                "stat": "wisdom"
+            }
+        ],
+        "254": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 259
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 5,
+                "digievolution": 260
+            }
+        ],
+        "259": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 30,
+                "digievolution": 367
+            },
+            {
+                "type": "Resistance",
+                "value": 320,
+                "stat": "wind"
+            }
+        ],
+        "260": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 211
+            },
+            {
+                "type": "Resistance",
+                "value": 100,
+                "stat": "thunder"
+            }
+        ],
+        "267": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 26
+            }
+        ],
+        "359": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 148
+            }
+        ],
+        "367": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 27
+            }
+        ],
+        "368": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 367
+            }
+        ],
+        "369": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 368
+            }
+        ],
+        "372": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 196
+            }
+        ],
+        "374": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 390
+            },
+            {
+                "type": "Attribute",
+                "value": 300,
+                "stat": "spirit"
+            }
+        ],
+        "375": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 374
+            }
+        ],
+        "376": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 375
+            }
+        ],
+        "377": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 378
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 369
+            }
+        ],
+        "378": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 66
+            }
+        ],
+        "381": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 359
+            },
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 150
+            }
+        ],
+        "386": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 20,
+                "digievolution": 367
+            }
+        ],
+        "387": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 10,
+                "digievolution": 214
+            }
+        ],
+        "388": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 40,
+                "digievolution": 367
+            },
+            {
+                "type": "Attribute",
+                "value": 240,
+                "stat": "strength"
+            }
+        ],
+        "389": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 386
+            }
+        ],
+        "390": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 387
+            }
+        ],
+        "391": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 50,
+                "digievolution": 388
+            }
+        ],
+        "392": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 389
+            }
+        ],
+        "393": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 390
+            }
+        ],
+        "394": [
+            {
+                "type": "DigievolutionLevel",
+                "value": 99,
+                "digievolution": 391
+            }
+        ]
+    }
+}

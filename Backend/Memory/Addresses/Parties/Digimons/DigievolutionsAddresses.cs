@@ -1,0 +1,39 @@
+using System.Text.Json.Serialization;
+using Backend.Memory.Converters;
+
+namespace Backend.Memory.Addresses.Parties.Digimons
+{
+    public class DigievolutionsAddresses
+    {
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int ActiveDigievolution { get; set; }
+
+        public List<SlotAddresses> Slots { get; set; } = [];
+
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int UnlockedDigievolutionsStart { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int UnlockedDigievolutionEntryStride { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int MaxUnlockedDigievolutions { get; set; }
+
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Id { get; set; }
+
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Level { get; set; }
+
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Dvxp { get; set; }
+
+        public void Deconstruct(
+            out int unlockedDigievolutionsStart,
+            out int unlockedDigievolutionEntryStride,
+            out int maxUnlockedDigievolutions)
+        {
+            unlockedDigievolutionsStart = UnlockedDigievolutionsStart;
+            unlockedDigievolutionEntryStride = UnlockedDigievolutionEntryStride;
+            maxUnlockedDigievolutions = MaxUnlockedDigievolutions;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "Id": "fishingPole",
+    "Requisites": [
+        {
+            "Id": "FolderBag",
+            "Address": "0x00048F42"
+        }
+    ],
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x04B3B0",
+            "BitMasks": [
+                "0x02"
+            ]
+        },
+        {
+            "Number": 2,
+            "Address": "0x04B3B1",
+            "BitMasks": [
+                "0x10"
+            ]
+        },
+        {
+            "Number": 3,
+            "Requisites": [
+                {
+                    "Id": "bambooSpear",
+                    "Address": "0x048E57"
+                },
+                {
+                    "Id": "spiderWeb",
+                    "Address": "0x048E09"
+                },
+                {
+                    "Id": "redSnapper",
+                    "Address": "0x00048DB7"
+                }
+            ],
+            "Address": "0x048DB5",
+            "BitMasks": []
+        }
+    ]
+}

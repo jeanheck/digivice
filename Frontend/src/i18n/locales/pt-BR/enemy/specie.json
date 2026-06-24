@@ -1,0 +1,15 @@
+{
+  "species": {
+    "insect": "Inseto",
+    "dino": "Dinossauro",
+    "machine": "Machine",
+    "mammal": "Mamífero",
+    "fish": "Peixe",
+    "evil": "Maligno",
+    "plant": "Planta",
+    "bird": "Pássaro",
+    "dragon": "Dragão",
+    "ghoul": "Fantasma",
+    "rare": "Raro"
+  }
+}

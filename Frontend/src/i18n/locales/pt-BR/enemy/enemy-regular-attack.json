@@ -1,0 +1,19 @@
+{
+    "regularAttacks": {
+        "noElement": "Sem Elemento",
+        "machineElement": "Elemento Máquina",
+        "waterElement": "Elemento Água",
+        "noElementChanceOfPoison": "Sem Elemento (Chance de Envenenamento)",
+        "darkElement": "Elemento Trevas",
+        "fireElement": "Elemento Fogo",
+        "thunderElementChanceOfSleep": "Elemento Trovão (Chance de Adormecer)",
+        "machineElementChanceOfFreeze": "Elemento Máquina (Chance de Paralisar)",
+        "thunderElement": "Elemento Trovão",
+        "thunderElementChanceOfFreeze": "Elemento Trovão (Chance de Paralisar)",
+        "waterElementHitsTwice": "Elemento Água (Acerta duas vezes)",
+        "iceElement": "Elemento Gelo",
+        "machineElementCounterPhysical": "Elemento Máquina, Físico, Contra-ataque",
+        "thunderElementCounterPhysical": "Elemento Trovão, Físico, Contra-ataque",
+        "machineElementHitsTwice": "Elemento Máquina (Acerta duas vezes)"
+    }
+}

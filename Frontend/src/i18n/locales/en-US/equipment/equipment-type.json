@@ -1,0 +1,11 @@
+{
+  "equipmentType": {
+    "weaponSingleHanded": "Weapon (Single-handed)",
+    "bodyArmor": "Body Armor",
+    "weaponTwoHanded": "Weapon (Two-handed)",
+    "shield": "Shield",
+    "headArmor": "Head Armor",
+    "accessory": "Accessory",
+    "unknown": "Unknown"
+  }
+}

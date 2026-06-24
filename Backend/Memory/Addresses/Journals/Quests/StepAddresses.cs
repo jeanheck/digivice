@@ -1,0 +1,18 @@
+using System.Text.Json.Serialization;
+using Backend.Memory.Converters;
+
+namespace Backend.Memory.Addresses.Journals.Quests
+{
+    public class StepAddresses
+    {
+        public int Number { get; set; }
+
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long Address { get; set; }
+
+        [JsonConverter(typeof(HexStringListToLongListConverter))]
+        public List<long> BitMasks { get; set; } = [];
+
+        public List<RequisiteAddresses> Requisites { get; set; } = [];
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "id": "driAgentGuilmon",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "022E",
+            "coordinates": {
+                "x": 81,
+                "y": 43
+            },
+            "zoomedLocations": [
+                {
+                    "location": "022E",
+                    "coordinates": {
+                        "x": 85,
+                        "y": 52
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "2": {
+            "location": "023C",
+            "coordinates": {
+                "x": 52,
+                "y": 82.5
+            },
+            "zoomedLocations": [
+                {
+                    "location": "023C",
+                    "coordinates": {
+                        "x": 79,
+                        "y": 31.5
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "3": {
+            "location": "022E",
+            "coordinates": {
+                "x": 81,
+                "y": 43
+            },
+            "zoomedLocations": [
+                {
+                    "location": "022E",
+                    "coordinates": {
+                        "x": 85,
+                        "y": 52
+                    }
+                }
+            ],
+            "requisites": [
+                {
+                    "id": "guilmonDDNA"
+                }
+            ]
+        }
+    }
+}

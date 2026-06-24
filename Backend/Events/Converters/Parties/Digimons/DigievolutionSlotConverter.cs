@@ -1,0 +1,14 @@
+using Backend.Domain.Models.Parties.Digimons;
+using Backend.Events.DTO.Parties.Digimons;
+
+namespace Backend.Events.Converters.Parties.Digimons;
+
+public static class DigievolutionSlotConverter
+{
+    public static DigievolutionSlotDTO ToDTO(DigievolutionSlot slot) => new()
+    {
+        Index = slot.Index,
+        DigievolutionId = slot.DigievolutionId,
+        Digievolution = slot.Digievolution != null ? DigievolutionConverter.ToDTO(slot.Digievolution) : null
+    };
+}

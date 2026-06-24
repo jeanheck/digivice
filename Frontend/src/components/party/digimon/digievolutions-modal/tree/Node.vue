@@ -1,0 +1,77 @@
+<script setup lang="ts">
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import type { Digimon } from "@/models";
+import { NodePresenter } from "@/presenters/tree/node.presenter";
+import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel";
+import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
+
+const props = defineProps<{
+  node: NodeViewModel;
+  digimon: Digimon;
+  isSelected?: boolean;
+  digimonName: string;
+}>();
+
+const emit = defineEmits<{
+  (e: "select"): void;
+}>();
+
+const { t } = useI18n();
+
+const isUnlocked = computed(() => {
+    return NodePresenter.checkRequirements(props.digimon, props.node);
+});
+
+const isReqMet = (requirement: RequirementViewModel) => {
+    return NodePresenter.isRequirementMet(props.digimon, requirement);
+};
+
+const nodeAvatarUrl = computed(() => {
+  return ImageCatalog.getDigievolutionIconUrl(props.node.name);
+});
+</script>
+
+<template>
+  <div 
+    @click="emit('select')"
+    class="group relative w-54 h-20 transition-all duration-300 cursor-pointer select-none"
+  >
+    <!-- Node Frame -->
+    <div
+      class="absolute inset-0 border-2 rounded-md overflow-hidden transition-all duration-300 shadow-[0_4px_10px_black]"
+      :class="[
+        isSelected ? 'border-cyan-400 bg-cyan-900/40 shadow-[0_0_20px_rgba(0,255,255,0.5)] scale-105 z-10' : 'border-[#1a1c35] bg-[#0c0d1a]/95 hover:border-cyan-700 hover:bg-cyan-950/20',
+        !isUnlocked ? 'grayscale-[0.4] opacity-80' : ''
+      ]"
+    >
+        <!-- Background Avatar -->
+        <img v-if="nodeAvatarUrl" 
+             :src="nodeAvatarUrl" 
+             class="absolute inset-0 w-full h-[150%] object-cover object-[center_15%] pointer-events-none saturate-100 transition-all duration-500"
+             :class="isUnlocked ? 'opacity-100' : 'opacity-30 group-hover:opacity-100'" />
+             
+        <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent opacity-50 z-0 pointer-events-none"></div>
+
+        <!-- Header: Name & Lock -->
+        <div class="absolute top-1.5 left-2 right-2 z-10 flex justify-between items-center">
+            <span class="text-[10px] sm:text-[11px] font-bold select-none text-white drop-shadow-[0_2px_2px_black] truncate pr-1">
+              {{ node.name }}
+            </span>
+            <span v-if="!isUnlocked" class="text-[10px] opacity-70 grayscale">🔒</span>
+            <span v-else class="text-[10px] opacity-90">🔓</span>
+        </div>
+
+        <!-- Bottom: Requirements (Compact) -->
+        <div class="absolute bottom-1.5 left-2 right-2 z-10 flex flex-col gap-0.5 pointer-events-none">
+            <template v-for="(req, idx) in node.requirements.slice(0, 2)" :key="idx">
+                <span class="text-[8px] font-bold tracking-tight truncate"
+                      :class="isReqMet(req) ? 'text-emerald-400' : 'text-[#ddd]'">
+                    {{ NodePresenter.getRequirementText(digimonName, req, t) }}
+                </span>
+            </template>
+        </div>
+    </div>
+  </div>
+</template>

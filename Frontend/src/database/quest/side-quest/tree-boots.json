@@ -1,0 +1,143 @@
+{
+    "id": "treeBoots",
+    "requisites": [
+        {
+            "id": "FolderBag"
+        }
+    ],
+    "steps": {
+        "1": {
+            "location": "0220",
+            "coordinates": {
+                "x": 45,
+                "y": 49
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0220",
+                    "coordinates": {
+                        "x": 79,
+                        "y": 86
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "2": {
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
+                    }
+                },
+                {
+                    "location": "020A",
+                    "coordinates": {
+                        "x": 38,
+                        "y": 73
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "3": {
+            "location": "0220",
+            "coordinates": {
+                "x": 45,
+                "y": 49
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0220",
+                    "coordinates": {
+                        "x": 79,
+                        "y": 86
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "4": {
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 23,
+                        "y": 58
+                    }
+                },
+                {
+                    "location": "020F",
+                    "coordinates": {
+                        "x": 49,
+                        "y": 82
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "5": {
+            "location": "0229",
+            "coordinates": {
+                "x": 81,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0229",
+                    "coordinates": {
+                        "x": 85,
+                        "y": 85
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "6": {
+            "location": "022A",
+            "coordinates": {
+                "x": 87.5,
+                "y": 46
+            },
+            "zoomedLocations": [
+                {
+                    "location": "022A",
+                    "coordinates": {
+                        "x": 13.5,
+                        "y": 25.5
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "7": {
+            "location": "0229",
+            "coordinates": {
+                "x": 81,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0229",
+                    "coordinates": {
+                        "x": 83,
+                        "y": 85
+                    }
+                }
+            ],
+            "requisites": []
+        }
+    }
+}

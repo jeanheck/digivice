@@ -1,0 +1,51 @@
+{
+    "id": "folderBag",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "0200",
+            "coordinates": {
+                "x": 50.5,
+                "y": 43
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0200",
+                    "coordinates": {
+                        "x": 51,
+                        "y": 39
+                    }
+                },
+                {
+                    "location": "020A",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 91
+                    }
+                },
+                {
+                    "location": "020B",
+                    "coordinates": {
+                        "x": 22,
+                        "y": 83
+                    }
+                },
+                {
+                    "location": "0201",
+                    "coordinates": {
+                        "x": 47,
+                        "y": 26
+                    }
+                },
+                {
+                    "location": "0211",
+                    "coordinates": {
+                        "x": 62,
+                        "y": 33
+                    }
+                }
+            ],
+            "requisites": []
+        }
+    }
+}

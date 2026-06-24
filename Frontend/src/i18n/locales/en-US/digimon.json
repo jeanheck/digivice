@@ -1,0 +1,24 @@
+{
+  "digimon": {
+    "digievolutions": "Digievolutions",
+    "equipments": "Equipments",
+    "baseDigimon": "Base Digimon",
+    "equipableBy": "Equipable by",
+    "allDigimon": "All Digimon",
+    "level": "Level",
+    "equipmentSlot": {
+      "head": "Head",
+      "body": "Body",
+      "right": "Right",
+      "left": "Left",
+      "accessory1": "Accessory 1",
+      "accessory2": "Accessory 2"
+    },
+    "states": {
+      "empty": "Empty",
+      "unknown": "Unknown",
+      "none": "None",
+      "itemID": "Item ID: {id}"
+    }
+  }
+}
