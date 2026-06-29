@@ -291,6 +291,12 @@
         },
         {
             "Number": 42,
+            "Requisites": [
+                {
+                    "Id": "tntBall",
+                    "Address": "0x0485BE"
+                }
+            ],
             "Address": "0x0004B3DE",
             "BitMasks": [
                 "0x80"

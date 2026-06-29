@@ -61,6 +61,8 @@ Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`,
 
 | Address | Purpose | Source |
 |---------|---------|--------|
+| 0x0004858F – 0x000486FF | Consumable/equipment **quantity** table (1 byte per item ID) | GameFAQs item guide; TNT Ball compare investigation |
+| 0x000485BE | TNT Ball quantity (item Val. `0x005A`) | GameFAQs `dmw3.i05`; snapshots `99-tnt-ball` / `98-tnt-ball` |
 | 0x00048EC9 | Divine Barrier — current possession | DivineBarrierAddresses.txt |
 | 0x00048DD2 | Guilmon DNA — important item (permanent after obtain) | DriAgents/Guilmon investigation |
 | 0x00048DB6 | Agumon DNA — important item (permanent after obtain) | DriAgents/Agumon investigation |

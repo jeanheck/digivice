@@ -430,6 +430,9 @@
           "0": {
             "locationTarget": "Wall"
           }
+        },
+        "requisites": {
+          "tntBall": "TNT Ball"
         }
       },
       "43": {

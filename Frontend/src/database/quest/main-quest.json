@@ -931,7 +931,11 @@
                     }
                 }
             ],
-            "requisites": []
+            "requisites": [
+                {
+                    "id": "tntBall"
+                }
+            ]
         },
         "43": {
             "location": "0235",
