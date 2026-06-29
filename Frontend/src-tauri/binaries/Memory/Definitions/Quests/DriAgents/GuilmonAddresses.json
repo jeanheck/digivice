@@ -1,0 +1,26 @@
+{
+    "Id": "driAgentGuilmon",
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x0004B38C",
+            "BitMasks": ["0x02"]
+        },
+        {
+            "Number": 2,
+            "Address": "0x0004B3B7",
+            "BitMasks": ["0x08"]
+        },
+        {
+            "Number": 3,
+            "Address": "0x0004A7E0",
+            "BitMasks": ["0x08"],
+            "Requisites": [
+                {
+                    "Id": "guilmonDDNA",
+                    "Address": "0x00048DD2"
+                }
+            ]
+        }
+    ]
+}

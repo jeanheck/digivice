@@ -1,0 +1,44 @@
+{
+    "Digimons": [
+        {
+            "Id": 0,
+            "Name": "Kotemon",
+            "Address": "0x0004949C"
+        },
+        {
+            "Id": 1,
+            "Name": "Kumamon",
+            "Address": "0x00049878"
+        },
+        {
+            "Id": 2,
+            "Name": "Monmon",
+            "Address": "0x00049C54"
+        },
+        {
+            "Id": 3,
+            "Name": "Agumon",
+            "Address": "0x0004A030"
+        },
+        {
+            "Id": 4,
+            "Name": "Veemon",
+            "Address": "0x0004A40C"
+        },
+        {
+            "Id": 5,
+            "Name": "Guilmon",
+            "Address": "0x0004A7E8"
+        },
+        {
+            "Id": 6,
+            "Name": "Renamon",
+            "Address": "0x0004ABC4"
+        },
+        {
+            "Id": 7,
+            "Name": "Patamon",
+            "Address": "0x0004AFA0"
+        }
+    ]
+}
