@@ -36,6 +36,10 @@
       "name": "Braço Potente",
       "note": "Luvas de braço que causam dano."
     },
+    "111": {
+      "name": "Luva de Tigre",
+      "note": "Ataque como um tigre de caça."
+    },
     "122": {
       "name": "Espingarda",
       "note": "Um tiro causa dano poderoso."
@@ -132,9 +136,29 @@
       "name": "Boné de Beisebol",
       "note": "Fácil de movimentar a armadura da cabeça."
     },
+    "218": {
+      "name": "Boné Escolar",
+      "note": "Parece mais inteligente quando usado."
+    },
     "219": {
       "name": "Boné de Lã",
       "note": "Protege a cabeça do frio."
+    },
+    "220": {
+      "name": "Boné de Kung Fu",
+      "note": "Boné para combate."
+    },
+    "223": {
+      "name": "Visão Noturna",
+      "note": "Torna a visão mais fácil no escuro."
+    },
+    "224": {
+      "name": "Boina",
+      "note": "Chapéu que o torna mais inteligente."
+    },
+    "225": {
+      "name": "Boné Vermelho",
+      "note": "Aumenta sua magia natura."
     },
     "226": {
       "name": "Faixa",
@@ -152,6 +176,14 @@
       "name": "Coroa Mágica",
       "note": "Usado por feiticeiros para proteger a cabeça."
     },
+    "231": {
+      "name": "Mascará Xamã",
+      "note": "Máscara usada em um ritual amaldiçoado."
+    },
+    "234": {
+      "name": "Coroa Real",
+      "note": "Uma coroa real histórica."
+    },
     "236": {
       "name": "Capacete de Couro",
       "note": "Capacete feito de couro."
@@ -168,6 +200,14 @@
       "name": "Capacete Alado",
       "note": "Leve e fácil de desviar de ataques."
     },
+    "242": {
+      "name": "Capacete Selvagem",
+      "note": "Capacete lendário de combate."
+    },
+    "246": {
+      "name": "Capacete Digitama",
+      "note": "Criado através da casca de Digitama."
+    },
     "249": {
       "name": "Casaco de Couro",
       "note": "Jaqueta feita de couro."
@@ -179,6 +219,10 @@
     "251": {
       "name": "Manto do Padre",
       "note": "manto usado por sacerdotes."
+    },
+    "252": {
+      "name": "Terno de Borracha",
+      "note": "Terno resistente ao trovão."
     },
     "253": {
       "name": "Manto Sombrio",
@@ -664,10 +708,6 @@
       "name": "Tenjinmaru",
       "note": null
     },
-    "1089": {
-      "name": "Tiger Glove",
-      "note": null
-    },
     "1090": {
       "name": "Trent",
       "note": "Causa dano extra a Digimons da espécie Peixe"
@@ -772,10 +812,6 @@
       "name": "Ronin Armor",
       "note": null
     },
-    "1116": {
-      "name": "Rubber Suit",
-      "note": null
-    },
     "1117": {
       "name": "Sniper Suit",
       "note": null
@@ -792,16 +828,8 @@
       "name": "Angel Ring",
       "note": null
     },
-    "1121": {
-      "name": "Beret",
-      "note": null
-    },
     "1122": {
       "name": "Brave Helmet",
-      "note": null
-    },
-    "1123": {
-      "name": "D-Tama Helmet",
       "note": null
     },
     "1124": {
@@ -836,10 +864,6 @@
       "name": "Kulon Helmet",
       "note": null
     },
-    "1132": {
-      "name": "Boné de Kung Fu",
-      "note": null
-    },
     "1133": {
       "name": "Matrix Helmet",
       "note": null
@@ -856,32 +880,12 @@
       "name": "Mythril Crown",
       "note": null
     },
-    "1137": {
-      "name": "Night Vision",
-      "note": null
-    },
-    "1138": {
-      "name": "Red Cap",
-      "note": null
-    },
     "1139": {
       "name": "Ronin Helmet",
       "note": null
     },
-    "1140": {
-      "name": "Royal Crown",
-      "note": null
-    },
-    "1141": {
-      "name": "Boné Escolar",
-      "note": null
-    },
     "1142": {
       "name": "Scissor Horn",
-      "note": null
-    },
-    "1143": {
-      "name": "Shaman Mask",
       "note": null
     },
     "1144": {
@@ -894,10 +898,6 @@
     },
     "1146": {
       "name": "Trihorn",
-      "note": null
-    },
-    "1147": {
-      "name": "Wild Helmet",
       "note": null
     },
     "1148": {

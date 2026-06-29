@@ -36,6 +36,10 @@
       "name": "Power Arm",
       "note": "Arm gloves that inflicts damage."
     },
+    "111": {
+      "name": "Tiger Glove",
+      "note": null
+    },
     "122": {
       "name": "Shotgun",
       "note": "One shot does heavy damage."
@@ -132,9 +136,29 @@
       "name": "Baseball Cap",
       "note": "Easy to move around head armor."
     },
+    "218": {
+      "name": "School Cap",
+      "note": null
+    },
     "219": {
       "name": "Wool Cap",
       "note": "Protects the head from the cold."
+    },
+    "220": {
+      "name": "Kung Fu Cap",
+      "note": null
+    },
+    "223": {
+      "name": "Night Vision",
+      "note": null
+    },
+    "224": {
+      "name": "Beret",
+      "note": null
+    },
+    "225": {
+      "name": "Red Cap",
+      "note": null
     },
     "226": {
       "name": "Ribbon",
@@ -152,6 +176,14 @@
       "name": "Magical Crown",
       "note": "Used by wizard to protect the head."
     },
+    "231": {
+      "name": "Shaman Mask",
+      "note": ""
+    },
+    "234": {
+      "name": "Royal Crown",
+      "note": null
+    },
     "236": {
       "name": "Hide Helmet",
       "note": "Helmet made from leather."
@@ -168,6 +200,14 @@
       "name": "Wing Helmet",
       "note": "Light and easy evade to attacks."
     },
+    "242": {
+      "name": "Wild Helmet",
+      "note": null
+    },
+    "246": {
+      "name": "D-Tama Helmet",
+      "note": null
+    },
     "249": {
       "name": "Leather Coat",
       "note": "Jacket made from leather."
@@ -179,6 +219,10 @@
     "251": {
       "name": "Priest Robe",
       "note": "Robe worn by priests."
+    },
+    "252": {
+      "name": "Rubber Suit",
+      "note": null
     },
     "253": {
       "name": "Dark Cloak",
@@ -664,10 +708,6 @@
       "name": "Tenjinmaru",
       "note": null
     },
-    "1089": {
-      "name": "Tiger Glove",
-      "note": null
-    },
     "1090": {
       "name": "Trent",
       "note": "Deals extra damage to Fish-species Digimon"
@@ -772,10 +812,6 @@
       "name": "Ronin Armor",
       "note": null
     },
-    "1116": {
-      "name": "Rubber Suit",
-      "note": null
-    },
     "1117": {
       "name": "Sniper Suit",
       "note": null
@@ -792,16 +828,8 @@
       "name": "Angel Ring",
       "note": null
     },
-    "1121": {
-      "name": "Beret",
-      "note": null
-    },
     "1122": {
       "name": "Brave Helmet",
-      "note": null
-    },
-    "1123": {
-      "name": "D-Tama Helmet",
       "note": null
     },
     "1124": {
@@ -836,10 +864,6 @@
       "name": "Kulon Helmet",
       "note": null
     },
-    "1132": {
-      "name": "Kung Fu Cap",
-      "note": null
-    },
     "1133": {
       "name": "Matrix Helmet",
       "note": null
@@ -856,32 +880,12 @@
       "name": "Mythril Crown",
       "note": null
     },
-    "1137": {
-      "name": "Night Vision",
-      "note": null
-    },
-    "1138": {
-      "name": "Red Cap",
-      "note": null
-    },
     "1139": {
       "name": "Ronin Helmet",
       "note": null
     },
-    "1140": {
-      "name": "Royal Crown",
-      "note": null
-    },
-    "1141": {
-      "name": "School Cap",
-      "note": null
-    },
     "1142": {
       "name": "Scissor Horn",
-      "note": null
-    },
-    "1143": {
-      "name": "Shaman Mask",
       "note": null
     },
     "1144": {
@@ -894,10 +898,6 @@
     },
     "1146": {
       "name": "Trihorn",
-      "note": null
-    },
-    "1147": {
-      "name": "Wild Helmet",
       "note": null
     },
     "1148": {
