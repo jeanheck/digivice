@@ -1,0 +1,28 @@
+{
+  "folderBag": {
+    "title": "A Mochila de Cartas",
+    "description": "Obtenha a Mochila para guardar e colecionar Cartas de Digimon.",
+    "steps": {
+      "1": {
+        "description": "Fale com o Divermon no Cruzeiro Amarelo na Cidade Asuka",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Cidade Asuka"
+          },
+          "3": {
+            "locationTarget": "Cruzeiro Amarelo"
+          },
+          "4": {
+            "locationTarget": "Divermon"
+          }
+        }
+      }
+    }
+  }
+}

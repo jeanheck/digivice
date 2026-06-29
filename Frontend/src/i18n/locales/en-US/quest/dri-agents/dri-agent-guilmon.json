@@ -1,0 +1,35 @@
+{
+  "driAgentGuilmon": {
+    "title": "Guilmon - DRI Jimmy (30 ~ 45)",
+    "description": "Add Guilmon to your Digimon party",
+    "steps": {
+      "1": {
+        "description": "Look for Dri Jimmy in Seiryu City",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Jimmy"
+          }
+        }
+      },
+      "2": {
+        "description": "Defeat WarGrowlmon in battle to receive Guilmon's DDNA",
+        "locations": {
+          "0": {
+            "locationTarget": "WarGrowlmon"
+          }
+        }
+      },
+      "3": {
+        "description": "Deliver Guilmon's DNA to DRI Jimmy",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Jimmy"
+          }
+        },
+        "requisites": {
+          "guilmonDDNA": "Guilmon's DNA"
+        }
+      }
+    }
+  }
+}

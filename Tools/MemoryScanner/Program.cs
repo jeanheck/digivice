@@ -3,6 +3,7 @@ using System.IO;
 using System.Diagnostics;
 using System.IO.MemoryMappedFiles;
 using System.Linq;
+using System.Text.Json;
 
 namespace MemoryScanner
 {
@@ -20,6 +21,7 @@ namespace MemoryScanner
                 Console.WriteLine("  compare-stable <f1> <f2> <value> [size]                                   - addresses that stayed at value");
                 Console.WriteLine("  intersect-changed <f1> <f2> <f3> [size] [start] [end] [max-val]           - f1==f3 AND f1!=f2; max-val filters small ints");
                 Console.WriteLine("  dump <file.bin> <start-hex> <length>                                      - dump raw hex bytes at an address");
+                Console.WriteLine("  analyze-pair <before.bin> <after.bin>                                     - quest + encounter cache report");
                 return;
             }
 
@@ -225,6 +227,141 @@ namespace MemoryScanner
                 }
                 Console.WriteLine();
             }
+            else if (cmd == "analyze-pair")
+            {
+                if (args.Length < 3)
+                {
+                    Console.WriteLine("Usage: analyze-pair <before.bin> <after.bin>");
+                    return;
+                }
+
+                byte[] before = File.ReadAllBytes(args[1]);
+                byte[] after = File.ReadAllBytes(args[2]);
+                if (before.Length != after.Length || before.Length != 2 * 1024 * 1024)
+                {
+                    Console.WriteLine("Snapshots must be 2 MiB PS1 RAM dumps.");
+                    return;
+                }
+
+                AnalyzePair(before, after);
+            }
+        }
+
+        static string? FindMainQuestDefinitionsPath()
+        {
+            string relative = Path.Combine("Backend", "Memory", "Definitions", "Quests", "MainQuestAddresses.json");
+            var roots = new[]
+            {
+                Directory.GetCurrentDirectory(),
+                AppContext.BaseDirectory,
+                Path.GetDirectoryName(typeof(Program).Assembly.Location) ?? ""
+            };
+            foreach (var root in roots.Where(r => !string.IsNullOrEmpty(r)))
+            {
+                var dir = new DirectoryInfo(root);
+                for (int i = 0; i < 8 && dir != null; i++, dir = dir.Parent)
+                {
+                    var candidate = Path.Combine(dir.FullName, relative);
+                    if (File.Exists(candidate))
+                        return candidate;
+                }
+            }
+            return null;
+        }
+
+        static void AnalyzePair(byte[] before, byte[] after)
+        {
+            const int mapIdAddr = 0x0004B3F8;
+            const int encounterCacheStart = 0x0004B824;
+            const int encounterCacheEnd = 0x0004BB00;
+            const int playerBitsAddr = 0x00048DA0;
+
+            Console.WriteLine("=== Map (should be equal if same area) ===");
+            Console.WriteLine($"MapId @ 0x{mapIdAddr:X8}: 0x{before[mapIdAddr]:X2} -> 0x{after[mapIdAddr]:X2} (0227 = Divermon's Lake when 0x27)");
+
+            Console.WriteLine("\n=== Main quest steps (MainQuestAddresses.json) ===");
+            var questPath = FindMainQuestDefinitionsPath();
+
+            if (questPath == null)
+            {
+                Console.WriteLine("Quest definitions not found (MainQuestAddresses.json).");
+            }
+            else
+            {
+                using var doc = JsonDocument.Parse(File.ReadAllText(questPath));
+                int changed = 0;
+                foreach (var step in doc.RootElement.GetProperty("Steps").EnumerateArray())
+                {
+                    int number = step.GetProperty("Number").GetInt32();
+                    int addr = Convert.ToInt32(step.GetProperty("Address").GetString()!.Replace("0x", ""), 16);
+                    var bitMasks = step.GetProperty("BitMasks")
+                        .EnumerateArray()
+                        .Select(maskElement => Convert.ToByte(maskElement.GetString()!.Replace("0x", ""), 16))
+                        .ToList();
+                    bool was = IsStepDone(before[addr], bitMasks);
+                    bool now = IsStepDone(after[addr], bitMasks);
+                    if (was == now) continue;
+                    changed++;
+                    string masksLabel = bitMasks.Count == 0
+                        ? "raw"
+                        : string.Join("+", bitMasks.Select(mask => $"0x{mask:X2}"));
+                    Console.WriteLine($"Step {number,2}: {(was ? "done" : "open")} -> {(now ? "done" : "open")}  @ 0x{addr:X8} mask {masksLabel}  byte 0x{before[addr]:X2}->0x{after[addr]:X2}");
+                }
+                if (changed == 0)
+                    Console.WriteLine("(no tracked main-quest bits changed)");
+            }
+
+            Console.WriteLine("\n=== Encounter cache fingerprint (RAM pointers, session-specific) ===");
+            int slots = 0;
+            ushort? beforePtr = null;
+            ushort? afterPtr = null;
+            for (int off = encounterCacheStart; off < encounterCacheEnd; off += 4)
+            {
+                ushort ptrBefore = BitConverter.ToUInt16(before, off);
+                ushort ptrAfter = BitConverter.ToUInt16(after, off);
+                byte stageBefore = before[off + 2];
+                byte stageAfter = after[off + 2];
+                if (ptrBefore == ptrAfter && stageBefore == stageAfter) continue;
+                slots++;
+                if (beforePtr == null) { beforePtr = ptrBefore; afterPtr = ptrAfter; }
+                if (slots <= 3)
+                    Console.WriteLine($"0x{off:X8}: ptr 0x{ptrBefore:X4}->0x{ptrAfter:X4}  stage 0x{stageBefore:X2}->0x{stageAfter:X2}");
+            }
+            if (slots > 3)
+                Console.WriteLine($"... {slots} slots changed (same pattern in each)");
+            if (beforePtr.HasValue)
+                Console.WriteLine($"Summary: first slot ptr 0x{beforePtr:X4} -> 0x{afterPtr:X4}  (early pool ~0x28AC, late pool ~0x8942 for Divermon's Lake)");
+
+            Console.WriteLine("\n=== Live RAM hook (Digivice backend) ===");
+            bool step27 = (after[0x00048DBA] & 0x01) != 0;
+            bool step28 = (after[0x0004B3DE] & 0x10) != 0;
+            Console.WriteLine($"Step 27 complete: {step27}");
+            Console.WriteLine($"Step 28 complete: {step28}");
+            Console.WriteLine(step27
+                ? "0227 enemies suggestion: 73 Crabmon, 103 Seadramon (76 Betamon likely out)"
+                : "0227 enemies suggestion: 73 Crabmon, 76 Betamon");
+
+            Console.WriteLine("\n=== Player bits @ 0x48DA0 (volatile, do not use alone) ===");
+            Console.WriteLine($"before: {BitConverter.ToString(before, playerBitsAddr, 8)}");
+            Console.WriteLine($"after:  {BitConverter.ToString(after, playerBitsAddr, 8)}");
+        }
+
+        static bool IsStepDone(byte rawValue, List<byte> bitMasks)
+        {
+            if (bitMasks.Count == 0)
+            {
+                return rawValue != 0;
+            }
+
+            foreach (byte bitMask in bitMasks)
+            {
+                if ((rawValue & bitMask) == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

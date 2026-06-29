@@ -34,6 +34,7 @@ bld/
 ## Build results
 [Bb]in/
 [Oo]bj/
+[Tt]est[Rr]esults/
 
 ## .NET Core
 project.lock.json
@@ -65,6 +66,9 @@ artifacts/
 !**/packages/build/
 *.nuget.props
 *.nuget.targets
+
+## Memory scanner
+tools/memoryscanner/snapshot/
 
 ## Others
 .DS_Store

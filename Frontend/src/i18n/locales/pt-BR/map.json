@@ -1,0 +1,8 @@
+{
+  "map": {
+    "map": "Mapa",
+    "enemies": "Inimigos",
+    "unknownZone": "Zona Desconhecida",
+    "safeZone": "Zona Segura"
+  }
+}

@@ -1,14 +1,9 @@
-using Backend.Diagnostics;
-using Backend.Infrastructure.Memory;
-using Backend.Infrastructure.Processes;
 using Backend.Events.Hubs;
-using Backend.Events.Interfaces;
-using Backend.Events.Services;
-using Backend.Interfaces;
-using Backend.Services;
+using Backend.Infrastructure;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Warning()
     .WriteTo.Console()
     .CreateLogger();
 
@@ -26,34 +21,11 @@ try
         ContentRootPath = basePath
     });
 
-    // Enforce port 5000 for local SignalR / API bindings
-    builder.WebHost.UseUrls("http://127.0.0.1:5000");
-
     // Use Serilog for all framework logging
     builder.Host.UseSerilog();
 
-    // Register game dependencies
-    builder.Services.AddSingleton<IProcessService, WindowsProcessProvider>();
-    builder.Services.AddSingleton<IMemoryProvider, WindowsMemoryProvider>();
-    builder.Services.AddSingleton<IMemoryReaderService, MemoryReaderService>();
-    builder.Services.AddSingleton<IGameDatabase, GameDatabase>();
-    builder.Services.AddSingleton<IGameReader, GameReader>();
-    builder.Services.AddSingleton<PlayerStateService>();
-    builder.Services.AddSingleton<DigievolutionStateService>();
-    builder.Services.AddSingleton<DigimonStateService>();
-    builder.Services.AddSingleton<PartyStateService>();
-    builder.Services.AddSingleton<ItemsStateService>();
-    builder.Services.AddSingleton<JournalStateService>();
-    builder.Services.AddSingleton<GameStateService>();
-    builder.Services.AddSingleton<DebugConsoleRenderer>();
-    builder.Services.AddSingleton<DebugMonitor>();
-
-    // Register Event Dispatcher
-    builder.Services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
-
-    // Start the Background Monitor (Memory Reader)
-    Log.Information("Activating Game Memory Poller in Background...");
-    builder.Services.AddHostedService<DebugMonitorBackgroundService>();
+    // Register backend services modularly
+    builder.Services.AddBackendServices(basePath);
 
     builder.Services.AddCors(options =>
     {
@@ -76,7 +48,10 @@ try
     // Map the WebSocket endpoint
     app.MapHub<GameHub>("/gamehub");
 
-    Log.Information("SignalR Hub available at ws://localhost:5000/gamehub");
+    app.Lifetime.ApplicationStarted.Register(() =>
+    {
+        Log.Information("SignalR Hub available at {Urls}/gamehub", string.Join(", ", app.Urls));
+    });
 
     await app.RunAsync();
 }

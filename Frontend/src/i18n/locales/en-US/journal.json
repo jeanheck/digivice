@@ -1,0 +1,16 @@
+{
+  "journal": {
+    "title": "Journal",
+    "mainQuest": "Main Quest",
+    "sideQuests": "Side Quests",
+    "legendaryWeapons": "Legendary Weapons",
+    "driAgents": "DRI Agents",
+    "noSideQuests": "No Side Quests Active",
+    "questCompleted": "Quest completed",
+    "prerequisites": "Prerequisites",
+    "missionSteps": "Mission Steps",
+    "clickStep": "CLICK A MISSION STEP TO BOOT GEOGRAPHIC DATA",
+    "noSignal": "NO SIGNAL DETECTED.\nTARGET COORDS UNKNOWN.",
+    "noSteps": "No specific steps tracked."
+  }
+}

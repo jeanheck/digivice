@@ -1,0 +1,26 @@
+{
+    "Id": "driAgentAgumon",
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x0004B38C",
+            "BitMasks": ["0x01"]
+        },
+        {
+            "Number": 2,
+            "Address": "0x0004B3B7",
+            "BitMasks": ["0x04"]
+        },
+        {
+            "Number": 3,
+            "Address": "0x0004A028",
+            "BitMasks": ["0x06"],
+            "Requisites": [
+                {
+                    "Id": "agumonDDNA",
+                    "Address": "0x00048DB6"
+                }
+            ]
+        }
+    ]
+}

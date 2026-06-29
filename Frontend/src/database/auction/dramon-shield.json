@@ -1,0 +1,10 @@
+{
+    "id": "dramonShield",
+    "equipmentId": "1017",
+    "steps": {
+        "startsWhenComplete": 36,
+        "endsWhenComplete": 42
+    },
+    "price": 1600,
+    "resale": 11000
+}

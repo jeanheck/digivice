@@ -1,0 +1,31 @@
+{
+  "stat": {
+    "strength": "Strength",
+    "strength-explanation": "Increases the damage dealt by physical attacks and techniques.",
+    "defense": "Defense",
+    "defense-explanation": "Reduces the damage taken from physical attacks.",
+    "spirit": "Spirit",
+    "spirit-explanation": "Increases the damage dealt by magical techniques and affects maximum MP.",
+    "wisdom": "Wisdom",
+    "wisdom-explanation": "Improves magical hit rate, evasion against magic, and reduces damage taken from magical attacks.",
+    "speed": "Speed",
+    "speed-explanation": "Determines turn order in battle and improves overall evasion rate.",
+    "charisma": "Charisma",
+    "charisma-explanation": "Increases Digimon popularity, lowers shop prices, and allows battling certain Tamers.",
+    "fire": "Fire",
+    "fire-explanation": "Reduces damage taken from Fire-elemental techniques.",
+    "water": "Water",
+    "water-explanation": "Reduces damage taken from Water-elemental techniques.",
+    "ice": "Ice",
+    "ice-explanation": "Reduces damage taken from Ice-elemental techniques.",
+    "wind": "Wind",
+    "wind-explanation": "Reduces damage taken from Wind-elemental techniques.",
+    "thunder": "Thunder",
+    "thunder-explanation": "Reduces damage taken from Thunder-elemental techniques.",
+    "machine": "Machine",
+    "machine-explanation": "Reduces damage taken from Machine-elemental techniques.",
+    "dark": "Dark",
+    "dark-explanation": "Reduces damage taken from Dark-elemental techniques.",
+    "none": "None"
+  }
+}

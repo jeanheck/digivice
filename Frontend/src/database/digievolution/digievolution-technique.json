@@ -1,0 +1,1280 @@
+{
+    "5": [
+        {
+            "id": "flameBall",
+            "learnLevel": 5,
+            "loadedLevel": 25
+        },
+        {
+            "id": "tripleFire",
+            "learnLevel": 15,
+            "loadedLevel": 35
+        },
+        {
+            "id": "doublePower",
+            "learnLevel": 30,
+            "loadedLevel": 75
+        },
+        {
+            "id": "flameLance",
+            "learnLevel": 45,
+            "loadedLevel": 99
+        },
+        {
+            "id": "novaBlast",
+            "learnLevel": 60,
+            "loadedLevel": null
+        }
+    ],
+    "6": [
+        {
+            "id": "darkMatter",
+            "learnLevel": 10,
+            "loadedLevel": 45
+        },
+        {
+            "id": "evilPoison",
+            "learnLevel": 20,
+            "loadedLevel": 80
+        },
+        {
+            "id": "armorBreak",
+            "learnLevel": 35,
+            "loadedLevel": 90
+        },
+        {
+            "id": "stunShock",
+            "learnLevel": 55,
+            "loadedLevel": 99
+        },
+        {
+            "id": "touchOfEvil",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "12": [
+        {
+            "id": "flameBall",
+            "learnLevel": 5,
+            "loadedLevel": 25
+        },
+        {
+            "id": "flameLance",
+            "learnLevel": 10,
+            "loadedLevel": 45
+        },
+        {
+            "id": "tripleFire",
+            "learnLevel": 15,
+            "loadedLevel": 50
+        },
+        {
+            "id": "magicMissile",
+            "learnLevel": 35,
+            "loadedLevel": 80
+        },
+        {
+            "id": "risingFire",
+            "learnLevel": 60,
+            "loadedLevel": 90
+        },
+        {
+            "id": "gigaDestroyer",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "19": [
+        {
+            "id": "energyLeech",
+            "learnLevel": 5,
+            "loadedLevel": 25
+        },
+        {
+            "id": "venomStab",
+            "learnLevel": 15,
+            "loadedLevel": 50
+        },
+        {
+            "id": "hammerRush",
+            "learnLevel": 35,
+            "loadedLevel": 90
+        },
+        {
+            "id": "energyDrain",
+            "learnLevel": 60,
+            "loadedLevel": 99
+        },
+        {
+            "id": "electroShocker",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "20": [
+        {
+            "id": "airBlast",
+            "learnLevel": 5,
+            "loadedLevel": 25
+        },
+        {
+            "id": "smallHeal",
+            "learnLevel": 10,
+            "loadedLevel": 40
+        },
+        {
+            "id": "doubleGuard",
+            "learnLevel": 15,
+            "loadedLevel": 75
+        },
+        {
+            "id": "megaTornado",
+            "learnLevel": 45,
+            "loadedLevel": 99
+        },
+        {
+            "id": "handOfFate",
+            "learnLevel": 60,
+            "loadedLevel": null
+        }
+    ],
+    "26": [
+        {
+            "id": "flameBall",
+            "learnLevel": 5,
+            "loadedLevel": 25
+        },
+        {
+            "id": "darkMatter",
+            "learnLevel": 15,
+            "loadedLevel": 80
+        },
+        {
+            "id": "tripleFire",
+            "learnLevel": 35,
+            "loadedLevel": 55
+        },
+        {
+            "id": "blackThorn",
+            "learnLevel": 45,
+            "loadedLevel": 90
+        },
+        {
+            "id": "darkShot",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "27": [
+        {
+            "id": "metalAttack",
+            "learnLevel": 5,
+            "loadedLevel": 25
+        },
+        {
+            "id": "mechanicalBash",
+            "learnLevel": 35,
+            "loadedLevel": 80
+        },
+        {
+            "id": "magicMissile",
+            "learnLevel": 15,
+            "loadedLevel": 55
+        },
+        {
+            "id": "slowDown",
+            "learnLevel": 45,
+            "loadedLevel": 90
+        },
+        {
+            "id": "twinMissile",
+            "learnLevel": 60,
+            "loadedLevel": 99
+        },
+        {
+            "id": "energeticBomb",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "56": [
+        {
+            "id": "hypnoGas",
+            "learnLevel": 10,
+            "loadedLevel": 50
+        },
+        {
+            "id": "soulSnatcher",
+            "learnLevel": 30,
+            "loadedLevel": 80
+        },
+        {
+            "id": "hypnoNebula",
+            "learnLevel": 55,
+            "loadedLevel": 99
+        },
+        {
+            "id": "nmSyndromer",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "59": [
+        {
+            "id": "fullHeal",
+            "learnLevel": 10,
+            "loadedLevel": 30
+        },
+        {
+            "id": "finalHeal",
+            "learnLevel": 40,
+            "loadedLevel": 70
+        },
+        {
+            "id": "eraseMagic",
+            "learnLevel": 60,
+            "loadedLevel": 80
+        },
+        {
+            "id": "autoRecover",
+            "learnLevel": 75,
+            "loadedLevel": 99
+        },
+        {
+            "id": "crimsonFlame",
+            "learnLevel": 90,
+            "loadedLevel": null
+        }
+    ],
+    "66": [
+        {
+            "id": "darkFear",
+            "learnLevel": 10,
+            "loadedLevel": 30
+        },
+        {
+            "id": "blackDart",
+            "learnLevel": 25,
+            "loadedLevel": 50
+        },
+        {
+            "id": "armorOff",
+            "learnLevel": 40,
+            "loadedLevel": 60
+        },
+        {
+            "id": "confuseGas",
+            "learnLevel": 65,
+            "loadedLevel": 90
+        },
+        {
+            "id": "soulSnatcher",
+            "learnLevel": 80,
+            "loadedLevel": 95
+        },
+        {
+            "id": "grislyWing",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "144": [
+        {
+            "id": "grandWave",
+            "learnLevel": 10,
+            "loadedLevel": 30
+        },
+        {
+            "id": "erasePoison",
+            "learnLevel": 20,
+            "loadedLevel": 55
+        },
+        {
+            "id": "eraseParalysis",
+            "learnLevel": 25,
+            "loadedLevel": 60
+        },
+        {
+            "id": "waterField",
+            "learnLevel": 50,
+            "loadedLevel": 80
+        },
+        {
+            "id": "antiMagic",
+            "learnLevel": 70,
+            "loadedLevel": 90
+        },
+        {
+            "id": "thornWhipping",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "148": [
+        {
+            "id": "megaHeal",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "mechanicalBash",
+            "learnLevel": 25,
+            "loadedLevel": 60
+        },
+        {
+            "id": "showstorm",
+            "learnLevel": 50,
+            "loadedLevel": 80
+        },
+        {
+            "id": "sylphStorm",
+            "learnLevel": 70,
+            "loadedLevel": 90
+        },
+        {
+            "id": "megaCrusher",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "150": [
+        {
+            "id": "flameBreath",
+            "learnLevel": 10,
+            "loadedLevel": 25
+        },
+        {
+            "id": "flameSphere",
+            "learnLevel": 30,
+            "loadedLevel": 55
+        },
+        {
+            "id": "gigaFire",
+            "learnLevel": 35,
+            "loadedLevel": 70
+        },
+        {
+            "id": "inferno",
+            "learnLevel": 60,
+            "loadedLevel": 85
+        },
+        {
+            "id": "tSword",
+            "learnLevel": 99,
+            "loadedLevel": null
+        }
+    ],
+    "151": [
+        {
+            "id": "deadlyPoison",
+            "learnLevel": 10,
+            "loadedLevel": 30
+        },
+        {
+            "id": "paralyzeShock",
+            "learnLevel": 20,
+            "loadedLevel": 65
+        },
+        {
+            "id": "confuseNebula",
+            "learnLevel": 40,
+            "loadedLevel": 75
+        },
+        {
+            "id": "hypnoNebula",
+            "learnLevel": 55,
+            "loadedLevel": 90
+        },
+        {
+            "id": "cableCrusher",
+            "learnLevel": 99,
+            "loadedLevel": null
+        }
+    ],
+    "196": [
+        {
+            "id": "mechanicalBash",
+            "learnLevel": 10,
+            "loadedLevel": 25
+        },
+        {
+            "id": "twinMissile",
+            "learnLevel": 15,
+            "loadedLevel": 55
+        },
+        {
+            "id": "magicalCannon",
+            "learnLevel": 45,
+            "loadedLevel": 80
+        },
+        {
+            "id": "metalField",
+            "learnLevel": 70,
+            "loadedLevel": 90
+        },
+        {
+            "id": "metalWolfClaw",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "211": [
+        {
+            "id": "airBlast",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "smallHeal",
+            "learnLevel": 10,
+            "loadedLevel": 35
+        },
+        {
+            "id": "megaTornado",
+            "learnLevel": 25,
+            "loadedLevel": 60
+        },
+        {
+            "id": "megaHeal",
+            "learnLevel": 40,
+            "loadedLevel": 80
+        },
+        {
+            "id": "megaGuard",
+            "learnLevel": 50,
+            "loadedLevel": 90
+        },
+        {
+            "id": "gateOfDestiny",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "213": [
+        {
+            "id": "flameLance",
+            "learnLevel": 5,
+            "loadedLevel": 25
+        },
+        {
+            "id": "flameBreath",
+            "learnLevel": 35,
+            "loadedLevel": 75
+        },
+        {
+            "id": "risingFire",
+            "learnLevel": 45,
+            "loadedLevel": 65
+        },
+        {
+            "id": "twinMissile",
+            "learnLevel": 60,
+            "loadedLevel": 90
+        },
+        {
+            "id": "gigaFire",
+            "learnLevel": 80,
+            "loadedLevel": 99
+        },
+        {
+            "id": "terraForce",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "214": [
+        {
+            "id": "megaTornado",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "megaHeal",
+            "learnLevel": 20,
+            "loadedLevel": 45
+        },
+        {
+            "id": "sylphStorm",
+            "learnLevel": 35,
+            "loadedLevel": 65
+        },
+        {
+            "id": "gigaHeal",
+            "learnLevel": 55,
+            "loadedLevel": 99
+        },
+        {
+            "id": "windField",
+            "learnLevel": 75,
+            "loadedLevel": 95
+        },
+        {
+            "id": "sevenHeavens",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "230": [
+        {
+            "id": "venomStab",
+            "learnLevel": 10,
+            "loadedLevel": 20
+        },
+        {
+            "id": "energyDrain",
+            "learnLevel": 30,
+            "loadedLevel": 60
+        },
+        {
+            "id": "confuseStab",
+            "learnLevel": 50,
+            "loadedLevel": 75
+        },
+        {
+            "id": "impactRush",
+            "learnLevel": 65,
+            "loadedLevel": 85
+        },
+        {
+            "id": "dimensionScissors",
+            "learnLevel": 90,
+            "loadedLevel": null
+        }
+    ],
+    "234": [
+        {
+            "id": "antidote",
+            "learnLevel": 15,
+            "loadedLevel": 35
+        },
+        {
+            "id": "divineRain",
+            "learnLevel": 20,
+            "loadedLevel": 50
+        },
+        {
+            "id": "antiParalysis",
+            "learnLevel": 30,
+            "loadedLevel": 99
+        },
+        {
+            "id": "celestialArrow",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "254": [
+        {
+            "id": "metalAttack",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "iceShower",
+            "learnLevel": 10,
+            "loadedLevel": 40
+        },
+        {
+            "id": "megaTornado",
+            "learnLevel": 25,
+            "loadedLevel": 60
+        },
+        {
+            "id": "speedBoost",
+            "learnLevel": 55,
+            "loadedLevel": 90
+        },
+        {
+            "id": "antiParalysis",
+            "learnLevel": 65,
+            "loadedLevel": 99
+        },
+        {
+            "id": "desperadoBlaster",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "259": [
+        {
+            "id": "airBlast",
+            "learnLevel": 10,
+            "loadedLevel": 35
+        },
+        {
+            "id": "iceBlow",
+            "learnLevel": 20,
+            "loadedLevel": 55
+        },
+        {
+            "id": "smallHeal",
+            "learnLevel": 40,
+            "loadedLevel": 75
+        },
+        {
+            "id": "antidote",
+            "learnLevel": 50,
+            "loadedLevel": 99
+        },
+        {
+            "id": "veelaser",
+            "learnLevel": 60,
+            "loadedLevel": null
+        }
+    ],
+    "260": [
+        {
+            "id": "poisonBites",
+            "learnLevel": 10,
+            "loadedLevel": 25
+        },
+        {
+            "id": "energyLeech",
+            "learnLevel": 15,
+            "loadedLevel": 45
+        },
+        {
+            "id": "panicBites",
+            "learnLevel": 35,
+            "loadedLevel": 75
+        },
+        {
+            "id": "venomStab",
+            "learnLevel": 55,
+            "loadedLevel": 99
+        },
+        {
+            "id": "spikingStrike",
+            "learnLevel": 60,
+            "loadedLevel": null
+        }
+    ],
+    "267": [
+        {
+            "id": "flameBreath",
+            "learnLevel": 10,
+            "loadedLevel": 25
+        },
+        {
+            "id": "darkFear",
+            "learnLevel": 20,
+            "loadedLevel": 40
+        },
+        {
+            "id": "gigaFire",
+            "learnLevel": 35,
+            "loadedLevel": 60
+        },
+        {
+            "id": "blackDart",
+            "learnLevel": 50,
+            "loadedLevel": 80
+        },
+        {
+            "id": "fireField",
+            "learnLevel": 70,
+            "loadedLevel": 90
+        },
+        {
+            "id": "terraDestroyer",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "359": [
+        {
+            "id": "heavenHit",
+            "learnLevel": 10,
+            "loadedLevel": 30
+        },
+        {
+            "id": "megaBoost",
+            "learnLevel": 20,
+            "loadedLevel": 55
+        },
+        {
+            "id": "fullHeal",
+            "learnLevel": 45,
+            "loadedLevel": 70
+        },
+        {
+            "id": "counterStrike",
+            "learnLevel": 60,
+            "loadedLevel": 85
+        },
+        {
+            "id": "gigaHeal",
+            "learnLevel": 75,
+            "loadedLevel": 99
+        },
+        {
+            "id": "gigaCrusher",
+            "learnLevel": 90,
+            "loadedLevel": null
+        }
+    ],
+    "367": [
+        {
+            "id": "doublePower",
+            "learnLevel": 5,
+            "loadedLevel": 35
+        },
+        {
+            "id": "doubleGuard",
+            "learnLevel": 10,
+            "loadedLevel": 15
+        },
+        {
+            "id": "pickingClaw",
+            "learnLevel": 25,
+            "loadedLevel": 99
+        },
+        {
+            "id": "counterAlert",
+            "learnLevel": 45,
+            "loadedLevel": 75
+        },
+        {
+            "id": "plasmaBlade",
+            "learnLevel": 60,
+            "loadedLevel": null
+        }
+    ],
+    "368": [
+        {
+            "id": "pickingClaw",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "counterAlert",
+            "learnLevel": 10,
+            "loadedLevel": 35
+        },
+        {
+            "id": "megaGuard",
+            "learnLevel": 25,
+            "loadedLevel": 50
+        },
+        {
+            "id": "megaStrength",
+            "learnLevel": 45,
+            "loadedLevel": 80
+        },
+        {
+            "id": "speedBoost",
+            "learnLevel": 60,
+            "loadedLevel": 90
+        },
+        {
+            "id": "atomicBlaster",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "369": [
+        {
+            "id": "speedBoost",
+            "learnLevel": 15,
+            "loadedLevel": 35
+        },
+        {
+            "id": "counterStrike",
+            "learnLevel": 25,
+            "loadedLevel": 65
+        },
+        {
+            "id": "snappingClaw",
+            "learnLevel": 50,
+            "loadedLevel": 99
+        },
+        {
+            "id": "megaBoost",
+            "learnLevel": 75,
+            "loadedLevel": 90
+        },
+        {
+            "id": "finalPurification",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "372": [
+        {
+            "id": "mechanicalBash",
+            "learnLevel": 5,
+            "loadedLevel": 25
+        },
+        {
+            "id": "magicalCannon",
+            "learnLevel": 20,
+            "loadedLevel": 60
+        },
+        {
+            "id": "godBombard",
+            "learnLevel": 50,
+            "loadedLevel": 85
+        },
+        {
+            "id": "megaBreak",
+            "learnLevel": 75,
+            "loadedLevel": 99
+        },
+        {
+            "id": "giantMissile",
+            "learnLevel": 90,
+            "loadedLevel": null
+        }
+    ],
+    "374": [
+        {
+            "id": "thunderBolt",
+            "learnLevel": 5,
+            "loadedLevel": 35
+        },
+        {
+            "id": "thunderGemini",
+            "learnLevel": 25,
+            "loadedLevel": 75
+        },
+        {
+            "id": "iceBlow",
+            "learnLevel": 15,
+            "loadedLevel": 45
+        },
+        {
+            "id": "iceShower",
+            "learnLevel": 55,
+            "loadedLevel": 99
+        },
+        {
+            "id": "dragonWheel",
+            "learnLevel": 60,
+            "loadedLevel": null
+        }
+    ],
+    "375": [
+        {
+            "id": "thunderGemini",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "electroBolt",
+            "learnLevel": 25,
+            "loadedLevel": 65
+        },
+        {
+            "id": "iceShower",
+            "learnLevel": 10,
+            "loadedLevel": 35
+        },
+        {
+            "id": "showstorm",
+            "learnLevel": 45,
+            "loadedLevel": 80
+        },
+        {
+            "id": "thunderField",
+            "learnLevel": 55,
+            "loadedLevel": 90
+        },
+        {
+            "id": "bonhitsusen",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "376": [
+        {
+            "id": "electroBolt",
+            "learnLevel": 5,
+            "loadedLevel": 25
+        },
+        {
+            "id": "lightningBolt",
+            "learnLevel": 40,
+            "loadedLevel": 80
+        },
+        {
+            "id": "showstorm",
+            "learnLevel": 15,
+            "loadedLevel": 35
+        },
+        {
+            "id": "gigaFreeze",
+            "learnLevel": 50,
+            "loadedLevel": 90
+        },
+        {
+            "id": "iceField",
+            "learnLevel": 65,
+            "loadedLevel": 99
+        },
+        {
+            "id": "kongouKaimandra",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "377": [
+        {
+            "id": "darkElemental",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "darknessChaos",
+            "learnLevel": 20,
+            "loadedLevel": 40
+        },
+        {
+            "id": "blackScewer",
+            "learnLevel": 35,
+            "loadedLevel": 70
+        },
+        {
+            "id": "confuseNebula",
+            "learnLevel": 50,
+            "loadedLevel": 80
+        },
+        {
+            "id": "soulPlunder",
+            "learnLevel": 60,
+            "loadedLevel": 90
+        },
+        {
+            "id": "blastMode",
+            "learnLevel": 99,
+            "loadedLevel": null
+        }
+    ],
+    "378": [
+        {
+            "id": "darkElemental",
+            "learnLevel": 10,
+            "loadedLevel": 35
+        },
+        {
+            "id": "crimsonCloud",
+            "learnLevel": 20,
+            "loadedLevel": 55
+        },
+        {
+            "id": "deadlyPoison",
+            "learnLevel": 30,
+            "loadedLevel": 70
+        },
+        {
+            "id": "paralyzeShock",
+            "learnLevel": 45,
+            "loadedLevel": 80
+        },
+        {
+            "id": "darkField",
+            "learnLevel": 75,
+            "loadedLevel": 99
+        },
+        {
+            "id": "meltingBlood",
+            "learnLevel": 90,
+            "loadedLevel": null
+        }
+    ],
+    "381": [
+        {
+            "id": "autoRecover",
+            "learnLevel": 10,
+            "loadedLevel": 40
+        },
+        {
+            "id": "impactRush",
+            "learnLevel": 20,
+            "loadedLevel": 60
+        },
+        {
+            "id": "eraseMagic",
+            "learnLevel": 30,
+            "loadedLevel": 70
+        },
+        {
+            "id": "soulPlunder",
+            "learnLevel": 50,
+            "loadedLevel": 90
+        },
+        {
+            "id": "finalHeal",
+            "learnLevel": 65,
+            "loadedLevel": 80
+        },
+        {
+            "id": "omegaBlade",
+            "learnLevel": 99,
+            "loadedLevel": null
+        }
+    ],
+    "386": [
+        {
+            "id": "heatCutter",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "frostCutter",
+            "learnLevel": 10,
+            "loadedLevel": 30
+        },
+        {
+            "id": "smallHeal",
+            "learnLevel": 25,
+            "loadedLevel": 75
+        },
+        {
+            "id": "doublePower",
+            "learnLevel": 40,
+            "loadedLevel": 99
+        },
+        {
+            "id": "lizardDance",
+            "learnLevel": 60,
+            "loadedLevel": null
+        }
+    ],
+    "387": [
+        {
+            "id": "wingBuster",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "bugBuster",
+            "learnLevel": 10,
+            "loadedLevel": 30
+        },
+        {
+            "id": "bigShot",
+            "learnLevel": 25,
+            "loadedLevel": 99
+        },
+        {
+            "id": "fishBuster",
+            "learnLevel": 40,
+            "loadedLevel": 75
+        },
+        {
+            "id": "captainCannon",
+            "learnLevel": 60,
+            "loadedLevel": null
+        }
+    ],
+    "388": [
+        {
+            "id": "lightningSlash",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "whirlwind",
+            "learnLevel": 10,
+            "loadedLevel": 35
+        },
+        {
+            "id": "hammerRush",
+            "learnLevel": 25,
+            "loadedLevel": 75
+        },
+        {
+            "id": "spinalTap",
+            "learnLevel": 40,
+            "loadedLevel": 99
+        },
+        {
+            "id": "maulAttack",
+            "learnLevel": 60,
+            "loadedLevel": null
+        }
+    ],
+    "389": [
+        {
+            "id": "heatCutter",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "frostCutter",
+            "learnLevel": 10,
+            "loadedLevel": 30
+        },
+        {
+            "id": "burnSlash",
+            "learnLevel": 25,
+            "loadedLevel": 50
+        },
+        {
+            "id": "coldSlash",
+            "learnLevel": 40,
+            "loadedLevel": 80
+        },
+        {
+            "id": "bigShot",
+            "learnLevel": 60,
+            "loadedLevel": 90
+        },
+        {
+            "id": "bladeTwister",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "390": [
+        {
+            "id": "bugBuster",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "bigShot",
+            "learnLevel": 10,
+            "loadedLevel": 35
+        },
+        {
+            "id": "fishBuster",
+            "learnLevel": 25,
+            "loadedLevel": 50
+        },
+        {
+            "id": "dinoBuster",
+            "learnLevel": 45,
+            "loadedLevel": 80
+        },
+        {
+            "id": "dramonBuster",
+            "learnLevel": 60,
+            "loadedLevel": 90
+        },
+        {
+            "id": "justiceStrike",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "391": [
+        {
+            "id": "lightningSlash",
+            "learnLevel": 5,
+            "loadedLevel": 15
+        },
+        {
+            "id": "whirlwind",
+            "learnLevel": 10,
+            "loadedLevel": 30
+        },
+        {
+            "id": "soulCharge",
+            "learnLevel": 25,
+            "loadedLevel": 60
+        },
+        {
+            "id": "speedBoost",
+            "learnLevel": 40,
+            "loadedLevel": 90
+        },
+        {
+            "id": "cycloneTurbine",
+            "learnLevel": 70,
+            "loadedLevel": null
+        }
+    ],
+    "392": [
+        {
+            "id": "burnSlash",
+            "learnLevel": 15,
+            "loadedLevel": 45
+        },
+        {
+            "id": "coldSlash",
+            "learnLevel": 30,
+            "loadedLevel": 55
+        },
+        {
+            "id": "megaHeal",
+            "learnLevel": 40,
+            "loadedLevel": 65
+        },
+        {
+            "id": "hammerRush",
+            "learnLevel": 50,
+            "loadedLevel": 75
+        },
+        {
+            "id": "pinpointShot",
+            "learnLevel": 70,
+            "loadedLevel": 99
+        },
+        {
+            "id": "goldenRipper",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "393": [
+        {
+            "id": "fishBuster",
+            "learnLevel": 15,
+            "loadedLevel": 35
+        },
+        {
+            "id": "dinoBuster",
+            "learnLevel": 25,
+            "loadedLevel": 50
+        },
+        {
+            "id": "dramonBuster",
+            "learnLevel": 40,
+            "loadedLevel": 75
+        },
+        {
+            "id": "pinpointShot",
+            "learnLevel": 60,
+            "loadedLevel": 90
+        },
+        {
+            "id": "devilShot",
+            "learnLevel": 80,
+            "loadedLevel": 99
+        },
+        {
+            "id": "dynamoCannon",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ],
+    "394": [
+        {
+            "id": "heavenHit",
+            "learnLevel": 15,
+            "loadedLevel": 45
+        },
+        {
+            "id": "vacuumCannon",
+            "learnLevel": 25,
+            "loadedLevel": 55
+        },
+        {
+            "id": "brainFreeze",
+            "learnLevel": 40,
+            "loadedLevel": 80
+        },
+        {
+            "id": "misshukikou",
+            "learnLevel": 65,
+            "loadedLevel": 99
+        },
+        {
+            "id": "mugenhadou",
+            "learnLevel": 85,
+            "loadedLevel": null
+        }
+    ]
+}

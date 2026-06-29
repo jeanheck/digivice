@@ -1,0 +1,35 @@
+{
+  "driAgentAgumon": {
+    "title": "Agumon - DRI Johann (30 ~ 45)",
+    "description": "Add Agumon to your Digimon party",
+    "steps": {
+      "1": {
+        "description": "Look for Dri Johann in Tyranno Valley",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Johann"
+          }
+        }
+      },
+      "2": {
+        "description": "Defeat MetalGreymon in battle to receive Agumon's DDNA",
+        "locations": {
+          "0": {
+            "locationTarget": "MetalGreymon"
+          }
+        }
+      },
+      "3": {
+        "description": "Deliver Agumon's DNA to DRI Johann",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Johann"
+          }
+        },
+        "requisites": {
+          "agumonDDNA": "Agumon's DNA"
+        }
+      }
+    }
+  }
+}

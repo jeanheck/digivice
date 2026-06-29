@@ -1,0 +1,15 @@
+{
+  "enemy": {
+    "level": "Nível",
+    "specie": "Espécie",
+    "possibleDrop": "Possíveis Drops",
+    "baseExp": "EXP",
+    "baseBits": "BITS",
+    "combatActions": "Ações",
+    "regularAttack": "Ataque Normal",
+    "technique": "Técnica",
+    "attr": "Atributos",
+    "elem": "Elementos",
+    "status": "Resistências"
+  }
+}

@@ -1,0 +1,445 @@
+{
+  "mainQuest": {
+    "title": "Missão Principal",
+    "description": "Torne-se o maior treinador do Mundo Digital!",
+    "steps": {
+      "1": {
+        "description": "Procure pelo Líder Seiryu na Cidade Seiryu",
+        "locations": {
+          "0": {
+            "locationTarget": "Torre Seiryu"
+          },
+          "1": {
+            "locationTarget": "Repetitivo Tom"
+          }
+        }
+      },
+      "2": {
+        "description": "Fale com Líder Seiryu nas Ruínas Protocolo",
+        "locations": {
+          "0": {
+            "locationTarget": "Líder Seiryu"
+          }
+        }
+      },
+      "3": {
+        "description": "Derrote MasterTyrannomon no Vale Tyranno",
+        "locations": {
+          "0": {
+            "locationTarget": "MasterTyrannomon"
+          }
+        }
+      },
+      "4": {
+        "description": "Desafie o Líder Seiryu na Cidade Seiryu",
+        "locations": {
+          "0": {
+            "locationTarget": "Torre Seiryu"
+          },
+          "1": {
+            "locationTarget": "Cidade Seiryu"
+          },
+          "2": {
+            "locationTarget": "Líder Seiryu"
+          }
+        }
+      },
+      "5": {
+        "description": "Saia andando da Cidade Seiryu",
+        "locations": {
+          "0": {
+            "locationTarget": "Saída"
+          }
+        }
+      },
+      "6": {
+        "description": "Vá até a Estação Leste e interaja com a Gôndola para chegar ao próximo setor",
+        "locations": {
+          "0": {
+            "locationTarget": "Gôndola"
+          }
+        }
+      },
+      "7": {
+        "description": "Derrote o jogador misterioso que está te impedindo na Ponte Asuka",
+        "locations": {
+          "0": {
+            "locationTarget": "Jogador Misterioso"
+          }
+        }
+      },
+      "8": {
+        "description": "Fale com Guilmon na Pousada Asuka: Andar 2 na Cidade Asuka",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Pousada Asuka: Andar 2"
+          },
+          "2": {
+            "locationTarget": "Guilmon"
+          }
+        }
+      },
+      "9": {
+        "description": "Fale com Guilmon na Pousada Florestal",
+        "locations": {
+          "0": {
+            "locationTarget": "Guilmon"
+          }
+        }
+      },
+      "10": {
+        "description": "Fale com Guilmon Trapaceiro na Torre Zephyr na Cidade Seiryu",
+        "locations": {
+          "0": {
+            "locationTarget": "Torre Zephyr"
+          },
+          "1": {
+            "locationTarget": "Guilmon"
+          }
+        }
+      },
+      "11": {
+        "description": "Retorne à Estação Leste com o Cartão Azul",
+        "locations": {
+          "0": {
+            "locationTarget": "Gôndola"
+          }
+        }
+      },
+      "12": {
+        "description": "Confronte o Guilmon na Cidade Seiryu sobre o Cartão Azul falso",
+        "locations": {
+          "0": {
+            "locationTarget": "Guilmon"
+          }
+        }
+      },
+      "13": {
+        "description": "Fale com Guilmon Trapaceiro na Pousada Florestal (Subsolo)",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Florestal (Subsolo)"
+          },
+          "1": {
+            "locationTarget": "Guilmon Trapaceiro"
+          }
+        }
+      },
+      "14": {
+        "description": "Retorne a Estação Leste com o verdadeiro Cartão Azul",
+        "locations": {
+          "0": {
+            "locationTarget": "Gôndola"
+          }
+        }
+      },
+      "15": {
+        "description": "Siga através da Selva Sepultura",
+        "locations": {
+          "0": {
+            "locationTarget": "Zanbamon"
+          }
+        }
+      },
+      "16": {
+        "description": "Fale com a Gatomon em treinamento na Pousada Pantanal",
+        "locations": {
+          "0": {
+            "locationTarget": "Gatomon"
+          }
+        }
+      },
+      "17": {
+        "description": "Descubra quem é o ser misterioso na Casa Xamã",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "18": {
+        "description": "Encontre Baronmon",
+        "locations": {
+          "0": {
+            "locationTarget": "Baronmon"
+          }
+        }
+      },
+      "19": {
+        "description": "Procure por Sepkimon próximo a Cidade Asuka ou arredores",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "20": {
+        "description": "Fale com Etemon perto do El Dorado Id",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Cidade Asuka"
+          },
+          "3": {
+            "locationTarget": "Etemon"
+          }
+        }
+      },
+      "21": {
+        "description": "Procure pelo Sepikmon no Lago dos Divermons",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "22": {
+        "description": "Fale com Etemon perto do El Dorado Id novamente",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Cidade Asuka"
+          },
+          "3": {
+            "locationTarget": "Etemon"
+          }
+        }
+      },
+      "23": {
+        "description": "Persiga Etemon nos Esgotos Asuka",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Esgotos Asuka"
+          },
+          "3": {
+            "locationTarget": "Etemon"
+          }
+        }
+      },
+      "24": {
+        "description": "Retorne a máscara ao Sepkimon na Casa Xamã",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "25": {
+        "description": "Use a Erva Fedida para tirar Zanbamon da Selva Sepultura",
+        "locations": {
+          "0": {
+            "locationTarget": "Zanbamon"
+          }
+        }
+      },
+      "26": {
+        "description": "Entre em Cidade Suzaku e procure uma pousada para descansar",
+        "locations": {
+          "0": {
+            "locationTarget": "Lisa"
+          }
+        }
+      },
+      "27": {
+        "description": "Desafie a Líder Suzaku no Salão Suzaku",
+        "locations": {
+          "0": {
+            "locationTarget": "Salão Suzaku"
+          },
+          "1": {
+            "locationTarget": "Líder Suzaku"
+          }
+        }
+      },
+      "28": {
+        "description": "Retorne à Pousada Suzaku após derrotar a Líder Suzaku",
+        "locations": {
+          "0": {
+            "locationTarget": "Kail"
+          }
+        }
+      },
+      "29": {
+        "description": "Busque por informações no Costeleta de Cordeiro",
+        "locations": {
+          "0": {
+            "locationTarget": "Costeleta de Cordeiro"
+          },
+          "1": {
+            "locationTarget": "Mestre John"
+          }
+        }
+      },
+      "30": {
+        "description": "Procure pelo casal de treinadores perto do El Dorado",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Cidade Asuka"
+          },
+          "3": {
+            "locationTarget": "Casal de treinadores"
+          }
+        }
+      },
+      "31": {
+        "description": "Vá para onde você viu Etemon pela última vez",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Esgotos Asuka"
+          },
+          "3": {
+            "locationTarget": "Etemon"
+          }
+        }
+      },
+      "32": {
+        "description": "Relate suas descobertas a Kail no Salão Principal",
+        "locations": {
+          "0": {
+            "locationTarget": "Salão Principal"
+          },
+          "1": {
+            "locationTarget": "Kail"
+          }
+        }
+      },
+      "33": {
+        "description": "Confronte o Pernicioso Mat nos Esgotos Asuka",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Esgotos Asuka"
+          },
+          "3": {
+            "locationTarget": "Pernicioso Mat"
+          }
+        }
+      },
+      "34": {
+        "description": "Volte para o Caminho Subterrâneo e encontre Kail",
+        "locations": {
+          "0": {
+            "locationTarget": "Pousada Asuka: Andar 1"
+          },
+          "1": {
+            "locationTarget": "Caminho Subterrâneo"
+          },
+          "2": {
+            "locationTarget": "Kail"
+          }
+        }
+      },
+      "35": {
+        "description": "Entre no Centro Administrativo vestindo a roupa de Agumon",
+        "locations": {
+          "0": {
+            "locationTarget": "Centro Administrativo - 1º Andar"
+          }
+        }
+      },
+      "36": {
+        "description": "Encontre a Kail no Centro Administrativo - 2º Andar",
+        "locations": {
+          "0": {
+            "locationTarget": "Centro Administrativo - 2º Andar"
+          },
+          "1": {
+            "locationTarget": "Kail"
+          }
+        }
+      },
+      "37": {
+        "description": "Procure por pistas de como prosseguir em Baía Fênix",
+        "locations": {
+          "0": {
+            "locationTarget": "Nami"
+          }
+        }
+      },
+      "38": {
+        "description": "Procure pelo gato da Nami em Pântano Bios",
+        "locations": {
+          "0": {
+            "locationTarget": "Gato Perdido"
+          }
+        }
+      },
+      "39": {
+        "description": "Peça ajuda ao Sepkimon para quebrar a parede",
+        "locations": {
+          "0": {
+            "locationTarget": "Sepkimon"
+          }
+        }
+      },
+      "40": {
+        "description": "Procure pelo Baronmon para que ele lhe ajude com bombas",
+        "locations": {
+          "0": {
+            "locationTarget": "Baronmon"
+          }
+        }
+      },
+      "41": {
+        "description": "Consiga uma Bola TNT de um Triceramon e entregue para Baronmon",
+        "locations": {
+          "0": {
+            "locationTarget": "Baronmon"
+          }
+        }
+      },
+      "42": {
+        "description": "Utilize o Chip TNT para abrir a parede em Pântano Bios",
+        "locations": {
+          "0": {
+            "locationTarget": "Parede"
+          }
+        }
+      },
+      "43": {
+        "description": "Encontre o Digi-Ovo da Sinceridade",
+        "locations": {
+          "0": {
+            "locationTarget": "Digi-Ovo da Sinceridade"
+          }
+        }
+      }
+    }
+  }
+}

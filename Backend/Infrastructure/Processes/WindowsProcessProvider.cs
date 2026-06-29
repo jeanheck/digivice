@@ -1,4 +1,3 @@
-using Backend.Interfaces;
 using System.Diagnostics;
 
 namespace Backend.Infrastructure.Processes

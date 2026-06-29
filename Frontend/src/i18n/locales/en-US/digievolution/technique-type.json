@@ -1,0 +1,9 @@
+{
+  "techniqueTypes": {
+    "physical": "Physical",
+    "magical": "Magical",
+    "heal": "Heal",
+    "support": "Support",
+    "field": "Field"
+  }
+}

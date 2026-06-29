@@ -1,0 +1,60 @@
+{
+    "Id": "treeBoots",
+    "Requisites": [
+        {
+            "Id": "FolderBag",
+            "Address": "0x00048F42"
+        }
+    ],
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x04B3B0",
+            "BitMasks": [
+                "0x04"
+            ]
+        },
+        {
+            "Number": 2,
+            "Address": "0x04B3B0",
+            "BitMasks": [
+                "0x08"
+            ]
+        },
+        {
+            "Number": 3,
+            "Address": "0x04B3B0",
+            "BitMasks": [
+                "0x10"
+            ]
+        },
+        {
+            "Number": 4,
+            "Address": "0x04B3B0",
+            "BitMasks": [
+                "0xE0"
+            ]
+        },
+        {
+            "Number": 5,
+            "Address": "0x04B3B0",
+            "BitMasks": [
+                "0xC0"
+            ]
+        },
+        {
+            "Number": 6,
+            "Address": "0x04B3B0",
+            "BitMasks": [
+                "0x80"
+            ]
+        },
+        {
+            "Number": 7,
+            "Address": "0x04B3B1",
+            "BitMasks": [
+                "0x01"
+            ]
+        }
+    ]
+}

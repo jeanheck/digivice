@@ -1,0 +1,37 @@
+{
+  "auction": {
+    "title": "Auctions",
+    "cardIdleTitle": "No auction at the moment",
+    "cardIdleSubtitle": "Keep progressing through the main quest",
+    "cardActiveTitle": "An auction is happening!",
+    "cardActiveSubtitle": "Click for more details!",
+    "modalTitle": "Auctions",
+    "currentIdleTitle": "No auction at Cargo Tower",
+    "currentIdleSubtitle": "Keep progressing through the main quest",
+    "currentActiveTitle": "Now! Auction at Cargo Tower!",
+    "currentActiveAcquirePrefix": "Acquire",
+    "purchasePriceLabel": "Price:",
+    "resalePriceLabel": "Resale:",
+    "bitsLabel": "bits",
+    "closesWhenLabel": "CLOSES WHEN:",
+    "historySubtitle": "History",
+    "historyTiming": {
+      "alreadyEnded": "This auction has already ended",
+      "upcoming": "This auction will happen in the future"
+    },
+    "historyParticipation": {
+      "participated": "You participated in this auction",
+      "missed": "Unfortunately, you missed this auction"
+    },
+    "historyActive": {
+      "timing": "Auction happening now!",
+      "participation": "Go to Cargo Tower to participate!"
+    },
+    "closesWhen": {
+      "divineBarrier": "interact with the Gondola for the first time (step 6), or participate in the Auction",
+      "hazardShield": "recover the Sepkimon mask (step 23), or participate in the auction",
+      "sniperShield": "talk to Kail in the Underground Path (step 34), or participate in the auction",
+      "dramonShield": "return to Bios Swamp with the TNT Chip (step 42), or participate in the auction"
+    }
+  }
+}
