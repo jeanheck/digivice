@@ -40,6 +40,38 @@
       "name": "Tiger Glove",
       "note": null
     },
+    "112": {
+      "name": "Wild Glove",
+      "note": null
+    },
+    "113": {
+      "name": "Kaiser Fist",
+      "note": null
+    },
+    "114": {
+      "name": "Tempest Arm",
+      "note": null
+    },
+    "115": {
+      "name": "Raijin Fist",
+      "note": null
+    },
+    "116": {
+      "name": "Rusty Glove",
+      "note": null
+    },
+    "117": {
+      "name": "Zodiac",
+      "note": null
+    },
+    "118": {
+      "name": "Prominence",
+      "note": null
+    },
+    "119": {
+      "name": "Super Nova",
+      "note": null
+    },
     "122": {
       "name": "Shotgun",
       "note": "One shot does heavy damage."
@@ -228,6 +260,26 @@
       "name": "Dark Cloak",
       "note": "Strange cloak that drains darkness."
     },
+    "254": {
+      "name": "Down Jacket",
+      "note": null
+    },
+    "258": {
+      "name": "Wild Suit",
+      "note": null
+    },
+    "259": {
+      "name": "Body Armor",
+      "note": null
+    },
+    "260": {
+      "name": "Mirage Robe",
+      "note": null
+    },
+    "261": {
+      "name": "King’s Mantle",
+      "note": null
+    },
     "262": {
       "name": "Leather Mail",
       "note": "Armor made from leather."
@@ -239,6 +291,10 @@
     "264": {
       "name": "Iron Armor",
       "note": "Sturdy armor made from iron."
+    },
+    "265": {
+      "name": "Digitama Mail",
+      "note": null
     },
     "266": {
       "name": "Dark Armor",
@@ -512,10 +568,6 @@
       "name": "Justice",
       "note": null
     },
-    "1038": {
-      "name": "Kaiser Fist",
-      "note": null
-    },
     "1039": {
       "name": "Khakkhara",
       "note": null
@@ -620,20 +672,12 @@
       "name": "Psycho Blaster",
       "note": null
     },
-    "1066": {
-      "name": "Prominence",
-      "note": null
-    },
     "1067": {
       "name": "Pulse Guard",
       "note": null
     },
     "1068": {
       "name": "Punishment",
-      "note": null
-    },
-    "1069": {
-      "name": "Raijin Fist",
       "note": null
     },
     "1070": {
@@ -650,10 +694,6 @@
     },
     "1073": {
       "name": "Royal Spear",
-      "note": null
-    },
-    "1074": {
-      "name": "Rusty Glove",
       "note": null
     },
     "1076": {
@@ -696,14 +736,6 @@
       "name": "Suijin Cannon",
       "note": null
     },
-    "1086": {
-      "name": "Super Nova",
-      "note": null
-    },
-    "1087": {
-      "name": "Tempest Arm",
-      "note": null
-    },
     "1088": {
       "name": "Tenjinmaru",
       "note": null
@@ -728,10 +760,6 @@
       "name": "Venom Fang",
       "note": "Small chance of inflicting poison on enemy Digimon"
     },
-    "1095": {
-      "name": "Wild Glove",
-      "note": null
-    },
     "1096": {
       "name": "Wild Shield",
       "note": null
@@ -752,16 +780,8 @@
       "name": "Yin Yang Ward",
       "note": null
     },
-    "1101": {
-      "name": "Zodiac",
-      "note": null
-    },
     "1102": {
       "name": "Beam Armor",
-      "note": null
-    },
-    "1103": {
-      "name": "Body Armor",
       "note": null
     },
     "1104": {
@@ -772,16 +792,8 @@
       "name": "Crimson Mail",
       "note": null
     },
-    "1106": {
-      "name": "Digitama Mail",
-      "note": null
-    },
     "1107": {
       "name": "Divine Robe",
-      "note": null
-    },
-    "1108": {
-      "name": "Down Jacket",
       "note": null
     },
     "1109": {
@@ -792,16 +804,8 @@
       "name": "Hazard Armor",
       "note": null
     },
-    "1111": {
-      "name": "King’s Mantle",
-      "note": null
-    },
     "1112": {
       "name": "Kulon Armor",
-      "note": null
-    },
-    "1113": {
-      "name": "Mirage Robe",
       "note": null
     },
     "1114": {
@@ -814,10 +818,6 @@
     },
     "1117": {
       "name": "Sniper Suit",
-      "note": null
-    },
-    "1118": {
-      "name": "Wild Suit",
       "note": null
     },
     "1119": {

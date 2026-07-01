@@ -40,6 +40,38 @@
       "name": "Luva de Tigre",
       "note": "Ataque como um tigre de caça."
     },
+    "112": {
+      "name": "Luva Selvagem",
+      "note": "Arma de combate lendária."
+    },
+    "113": {
+      "name": "Punho Kaiser",
+      "note": "Luvas de alta qualidade."
+    },
+    "114": {
+      "name": "Braço Tormenta",
+      "note": "Soqueie com a velocidade da luz."
+    },
+    "115": {
+      "name": "Punho Raijin",
+      "note": "Luvas míticas."
+    },
+    "116": {
+      "name": "Luva Enferrujada",
+      "note": "Enferrujada e não efetiva."
+    },
+    "117": {
+      "name": "Zodíaco",
+      "note": "Carregado com o poder das bestas."
+    },
+    "118": {
+      "name": "Prominência",
+      "note": "Luvas que escolhem seu usuário."
+    },
+    "119": {
+      "name": "Super Nova",
+      "note": "Luvas fantasmas que brilham."
+    },
     "122": {
       "name": "Espingarda",
       "note": "Um tiro causa dano poderoso."
@@ -228,6 +260,26 @@
       "name": "Manto Sombrio",
       "note": "Manto estranho que drena a escuridão."
     },
+    "254": {
+      "name": "Jaqueta",
+      "note": "Jaqueta para o clima ártico."
+    },
+    "258": {
+      "name": "Traje Selvagem",
+      "note": "Traje lendário de combate."
+    },
+    "259": {
+      "name": "Armadura Corporal",
+      "note": "Resiste a ataques de máquina."
+    },
+    "260": {
+      "name": "Manto Miragem",
+      "note": "Encare os inimigos e evite os ataques."
+    },
+    "261": {
+      "name": "Manto do Rei",
+      "note": "Ao vestir lhe dá a dignidade de um rei."
+    },
     "262": {
       "name": "Armadura de Couro",
       "note": "Armadura feita de couro."
@@ -239,6 +291,10 @@
     "264": {
       "name": "Armadura de Ferro",
       "note": "Armadura resistente feita de ferro."
+    },
+    "265": {
+      "name": "Armadura Digitama",
+      "note": "Conchas Digitamas de gesso."
     },
     "266": {
       "name": "Armadura Sombria",
@@ -512,10 +568,6 @@
       "name": "Justice",
       "note": null
     },
-    "1038": {
-      "name": "Kaiser Fist",
-      "note": null
-    },
     "1039": {
       "name": "Khakkhara",
       "note": null
@@ -620,20 +672,12 @@
       "name": "Psycho Blaster",
       "note": null
     },
-    "1066": {
-      "name": "Prominence",
-      "note": null
-    },
     "1067": {
       "name": "Pulse Guard",
       "note": null
     },
     "1068": {
       "name": "Punishment",
-      "note": null
-    },
-    "1069": {
-      "name": "Raijin Fist",
       "note": null
     },
     "1070": {
@@ -650,10 +694,6 @@
     },
     "1073": {
       "name": "Royal Spear",
-      "note": null
-    },
-    "1074": {
-      "name": "Rusty Glove",
       "note": null
     },
     "1076": {
@@ -696,14 +736,6 @@
       "name": "Suijin Cannon",
       "note": null
     },
-    "1086": {
-      "name": "Super Nova",
-      "note": null
-    },
-    "1087": {
-      "name": "Tempest Arm",
-      "note": null
-    },
     "1088": {
       "name": "Tenjinmaru",
       "note": null
@@ -728,10 +760,6 @@
       "name": "Venom Fang",
       "note": "Chance baixa de envenenar o Digimon inimigo"
     },
-    "1095": {
-      "name": "Wild Glove",
-      "note": null
-    },
     "1096": {
       "name": "Wild Shield",
       "note": null
@@ -752,16 +780,8 @@
       "name": "Yin Yang Ward",
       "note": null
     },
-    "1101": {
-      "name": "Zodiac",
-      "note": null
-    },
     "1102": {
       "name": "Beam Armor",
-      "note": null
-    },
-    "1103": {
-      "name": "Body Armor",
       "note": null
     },
     "1104": {
@@ -772,16 +792,8 @@
       "name": "Crimson Mail",
       "note": null
     },
-    "1106": {
-      "name": "Digitama Mail",
-      "note": null
-    },
     "1107": {
       "name": "Divine Robe",
-      "note": null
-    },
-    "1108": {
-      "name": "Down Jacket",
       "note": null
     },
     "1109": {
@@ -792,16 +804,8 @@
       "name": "Hazard Armor",
       "note": null
     },
-    "1111": {
-      "name": "King’s Mantle",
-      "note": null
-    },
     "1112": {
       "name": "Kulon Armor",
-      "note": null
-    },
-    "1113": {
-      "name": "Mirage Robe",
       "note": null
     },
     "1114": {
@@ -814,10 +818,6 @@
     },
     "1117": {
       "name": "Sniper Suit",
-      "note": null
-    },
-    "1118": {
-      "name": "Wild Suit",
       "note": null
     },
     "1119": {

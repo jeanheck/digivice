@@ -189,6 +189,160 @@
             "1"
         ]
     },
+    "112": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 130
+            },
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 8
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 55
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
+    "113": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 150
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 54
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
+    "114": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 160
+            },
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 10
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 56
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
+    "115": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 180
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 58
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
+    "116": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 20
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 30
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
+    "117": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 60
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 40
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
+    "118": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 140
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 50
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
+    "119": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 200
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 60
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
     "122": {
         "type": "weaponSingleHanded",
         "attributes": [
@@ -1293,6 +1447,118 @@
             "4"
         ]
     },
+    "254": {
+        "type": "bodyArmor",
+        "attributes": [
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 25
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 39
+            },
+            {
+                "attribute": "ice",
+                "type": "+",
+                "value": 10
+            }
+        ],
+        "equipableDigimon": [
+            "1",
+            "2",
+            "7",
+            "6"
+        ]
+    },
+    "258": {
+        "type": "bodyArmor",
+        "attributes": [
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 28
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 55
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
+    "259": {
+        "type": "bodyArmor",
+        "attributes": [
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 30
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 44
+            },
+            {
+                "attribute": "machine",
+                "type": "+",
+                "value": 10
+            }
+        ],
+        "equipableDigimon": [
+            "1",
+            "2",
+            "7",
+            "6"
+        ]
+    },
+    "260": {
+        "type": "bodyArmor",
+        "attributes": [
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 35
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 50
+            }
+        ],
+        "equipableDigimon": [
+            "1",
+            "2",
+            "7",
+            "6"
+        ]
+    },
+    "261": {
+        "type": "bodyArmor",
+        "attributes": [
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 40
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 55
+            }
+        ],
+        "equipableDigimon": [
+            "1",
+            "2",
+            "7",
+            "6"
+        ]
+    },
     "262": {
         "type": "bodyArmor",
         "attributes": [
@@ -1366,6 +1632,31 @@
             "3",
             "5",
             "0",
+            "4"
+        ]
+    },
+    "265": {
+        "type": "bodyArmor",
+        "attributes": [
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 20
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 24
+            }
+        ],
+        "equipableDigimon": [
+            "3",
+            "5",
+            "0",
+            "1",
+            "2",
+            "7",
+            "6",
             "4"
         ]
     },
@@ -2815,24 +3106,6 @@
             "2"
         ]
     },
-    "1038": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 150
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 54
-            }
-        ],
-        "equipableDigimon": [
-            "1"
-        ]
-    },
     "1039": {
         "type": "weaponSingleHanded",
         "attributes": [
@@ -3391,24 +3664,6 @@
             "2"
         ]
     },
-    "1066": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 140
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 50
-            }
-        ],
-        "equipableDigimon": [
-            "1"
-        ]
-    },
     "1067": {
         "type": "weaponSingleHanded",
         "attributes": [
@@ -3451,24 +3706,6 @@
         ],
         "equipableDigimon": [
             "2"
-        ]
-    },
-    "1069": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 180
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 58
-            }
-        ],
-        "equipableDigimon": [
-            "1"
         ]
     },
     "1070": {
@@ -3551,24 +3788,6 @@
             "5",
             "7",
             "6"
-        ]
-    },
-    "1074": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 20
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 30
-            }
-        ],
-        "equipableDigimon": [
-            "1"
         ]
     },
     "1076": {
@@ -3773,47 +3992,6 @@
             "2"
         ]
     },
-    "1086": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 200
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 60
-            }
-        ],
-        "equipableDigimon": [
-            "1"
-        ]
-    },
-    "1087": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 160
-            },
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 10
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 56
-            }
-        ],
-        "equipableDigimon": [
-            "1"
-        ]
-    },
     "1088": {
         "type": "weaponSingleHanded",
         "attributes": [
@@ -3934,29 +4112,6 @@
             "4"
         ]
     },
-    "1095": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 130
-            },
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 8
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 55
-            }
-        ],
-        "equipableDigimon": [
-            "1"
-        ]
-    },
     "1096": {
         "type": "shield",
         "attributes": [
@@ -4065,24 +4220,6 @@
             "6"
         ]
     },
-    "1101": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 60
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 40
-            }
-        ],
-        "equipableDigimon": [
-            "1"
-        ]
-    },
     "1102": {
         "type": "bodyArmor",
         "attributes": [
@@ -4106,32 +4243,6 @@
             "7",
             "6",
             "4"
-        ]
-    },
-    "1103": {
-        "type": "bodyArmor",
-        "attributes": [
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 30
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 44
-            },
-            {
-                "attribute": "machine",
-                "type": "+",
-                "value": 10
-            }
-        ],
-        "equipableDigimon": [
-            "1",
-            "2",
-            "7",
-            "6"
         ]
     },
     "1104": {
@@ -4173,31 +4284,6 @@
             "4"
         ]
     },
-    "1106": {
-        "type": "bodyArmor",
-        "attributes": [
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 20
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 24
-            }
-        ],
-        "equipableDigimon": [
-            "3",
-            "5",
-            "0",
-            "1",
-            "2",
-            "7",
-            "6",
-            "4"
-        ]
-    },
     "1107": {
         "type": "bodyArmor",
         "attributes": [
@@ -4214,32 +4300,6 @@
         ],
         "equipableDigimon": [
             "7"
-        ]
-    },
-    "1108": {
-        "type": "bodyArmor",
-        "attributes": [
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 25
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 39
-            },
-            {
-                "attribute": "ice",
-                "type": "+",
-                "value": 10
-            }
-        ],
-        "equipableDigimon": [
-            "1",
-            "2",
-            "7",
-            "6"
         ]
     },
     "1109": {
@@ -4278,27 +4338,6 @@
             "5"
         ]
     },
-    "1111": {
-        "type": "bodyArmor",
-        "attributes": [
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 40
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 55
-            }
-        ],
-        "equipableDigimon": [
-            "1",
-            "2",
-            "7",
-            "6"
-        ]
-    },
     "1112": {
         "type": "bodyArmor",
         "attributes": [
@@ -4323,27 +4362,6 @@
             "5",
             "0",
             "4"
-        ]
-    },
-    "1113": {
-        "type": "bodyArmor",
-        "attributes": [
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 35
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 50
-            }
-        ],
-        "equipableDigimon": [
-            "1",
-            "2",
-            "7",
-            "6"
         ]
     },
     "1114": {
@@ -4401,24 +4419,6 @@
         ],
         "equipableDigimon": [
             "2"
-        ]
-    },
-    "1118": {
-        "type": "bodyArmor",
-        "attributes": [
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 28
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 55
-            }
-        ],
-        "equipableDigimon": [
-            "1"
         ]
     },
     "1119": {
