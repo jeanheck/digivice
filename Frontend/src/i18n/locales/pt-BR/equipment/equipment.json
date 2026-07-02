@@ -72,9 +72,53 @@
       "name": "Super Nova",
       "note": "Luvas fantasmas que brilham."
     },
+    "120": {
+      "name": "Revólver",
+      "note": "Arma pequena de fácil manuseio."
+    },
+    "121": {
+      "name": "Metralhadora",
+      "note": "Arma automática de uma mão."
+    },
     "122": {
       "name": "Espingarda",
       "note": "Um tiro causa dano poderoso."
+    },
+    "123": {
+      "name": "Psico Blaster",
+      "note": "Lança bombas de energia."
+    },
+    "124": {
+      "name": "Canhão Sniper",
+      "note": "Arma giratória lendária."
+    },
+    "125": {
+      "name": "Canhão Cluster",
+      "note": "Lança pacotes de bombas."
+    },
+    "126": {
+      "name": "Canhão Laser",
+      "note": "Atira raios de calor."
+    },
+    "127": {
+      "name": "Canhão Suijin",
+      "note": "Canhão mítico."
+    },
+    "128": {
+      "name": "Rifle Enferrujado",
+      "note": "Inestimável, mas não pode ser usado."
+    },
+    "129": {
+      "name": "Justiça",
+      "note": "Rifle revivido personalizado."
+    },
+    "130": {
+      "name": "Julgamento",
+      "note": "Rifle personalizado de alta habilidade."
+    },
+    "131": {
+      "name": "Punição",
+      "note": "Rifle personalizado completo."
     },
     "134": {
       "name": "Cajado de Osso",
@@ -184,6 +228,10 @@
       "name": "Claymore",
       "note": "Espada larga de duas mãos."
     },
+    "177": {
+      "name": "Motosserra",
+      "note": null
+    },
     "178": {
       "name": "Zweihander",
       "note": "Espada alemã de duas mãos."
@@ -224,9 +272,33 @@
       "name": "Arco Raven",
       "note": "A maldição do corvo confunde o inimigo."
     },
+    "199": {
+      "name": "Mini Protetor",
+      "note": "Pequena arma defensiva que pode atacar."
+    },
+    "200": {
+      "name": "Protetor de Pulso",
+      "note": "Arma defensiva que pode atacar."
+    },
     "201": {
       "name": "Protetor de Metal",
       "note": "Arma defensiva de metal que pode atacar."
+    },
+    "202": {
+      "name": "Protetor Potente",
+      "note": "Eficiênte e adepto de ataques."
+    },
+    "204": {
+      "name": "Protetor Mach",
+      "note": "Rotação rápida para ataques."
+    },
+    "205": {
+      "name": "Protetor Mega",
+      "note": "Defesa poderosa que é uma arma."
+    },
+    "206": {
+      "name": "Protetor Deus",
+      "note": "Carga Divina que destrói o inimigo."
     },
     "207": {
       "name": "Chifre de Metal",
@@ -280,6 +352,10 @@
       "name": "Boné de Kung Fu",
       "note": "Boné para combate."
     },
+    "222": {
+      "name": "Oculos de Sniper",
+      "note": "Lendário óculos giratório."
+    },
     "223": {
       "name": "Visão Noturna",
       "note": "Torna a visão mais fácil no escuro."
@@ -304,6 +380,10 @@
       "name": "Cabeceira",
       "note": "Desvia do ataque inimigo com coragem."
     },
+    "229": {
+      "name": "Coroa Mítica",
+      "note": "Coroa feita de metal mágico."
+    },
     "230": {
       "name": "Coroa Mágica",
       "note": "Usado por feiticeiros para proteger a cabeça."
@@ -312,9 +392,21 @@
       "name": "Mascará Xamã",
       "note": "Máscara usada em um ritual amaldiçoado."
     },
+    "232": {
+      "name": "Coroa Divina",
+      "note": "Coroa com uma luz Divina."
+    },
+    "233": {
+      "name": "Anel Angelical",
+      "note": "Anel flutuando acima da cabeça."
+    },
     "234": {
       "name": "Coroa Real",
       "note": "Uma coroa real histórica."
+    },
+    "235": {
+      "name": "Coroa da Deusa",
+      "note": "Coroa mítica usada por uma deusa."
     },
     "236": {
       "name": "Capacete de Couro",
@@ -383,6 +475,10 @@
     "254": {
       "name": "Jaqueta",
       "note": "Jaqueta para o clima ártico."
+    },
+    "256": {
+      "name": "Terno Sniper",
+      "note": "Terno lendário."
     },
     "258": {
       "name": "Traje Selvagem",
@@ -584,20 +680,8 @@
       "name": "Espada Brava",
       "note": null
     },
-    "1010": {
-      "name": "Canhão Cluster",
-      "note": null
-    },
-    "177": {
-      "name": "Motosserra",
-      "note": null
-    },
     "1012": {
       "name": "Cajado de Cristal",
-      "note": null
-    },
-    "1014": {
-      "name": "Deus Guard",
       "note": null
     },
     "1015": {
@@ -640,10 +724,6 @@
       "name": "Alabarda",
       "note": null
     },
-    "1030": {
-      "name": "Handgun",
-      "note": null
-    },
     "1032": {
       "name": "Escudo Hazard",
       "note": null
@@ -654,14 +734,6 @@
     },
     "1034": {
       "name": "Immaculate",
-      "note": null
-    },
-    "1036": {
-      "name": "Judgment",
-      "note": null
-    },
-    "1037": {
-      "name": "Justice",
       "note": null
     },
     "1039": {
@@ -684,20 +756,8 @@
       "name": "Kulon Sword",
       "note": null
     },
-    "1044": {
-      "name": "Laser Cannon",
-      "note": null
-    },
     "1045": {
       "name": "Lightning Bow",
-      "note": null
-    },
-    "1047": {
-      "name": "Mach Guard",
-      "note": null
-    },
-    "1048": {
-      "name": "Machinegun",
       "note": null
     },
     "1049": {
@@ -708,24 +768,12 @@
       "name": "Masamune",
       "note": null
     },
-    "1051": {
-      "name": "Mega Guard",
-      "note": null
-    },
     "1052": {
       "name": "Mighty Blade",
       "note": null
     },
-    "1053": {
-      "name": "Mighty Guard",
-      "note": null
-    },
     "1054": {
       "name": "Millenium",
-      "note": null
-    },
-    "1055": {
-      "name": "Mini Guard",
       "note": null
     },
     "1056": {
@@ -764,28 +812,12 @@
       "name": "Positron Cannon",
       "note": null
     },
-    "1065": {
-      "name": "Psycho Blaster",
-      "note": null
-    },
-    "1067": {
-      "name": "Pulse Guard",
-      "note": null
-    },
-    "1068": {
-      "name": "Punishment",
-      "note": null
-    },
     "1071": {
       "name": "Ronin Blade",
       "note": null
     },
     "1072": {
       "name": "Ronin Shield",
-      "note": null
-    },
-    "1076": {
-      "name": "Rusty Rifle",
       "note": null
     },
     "1077": {
@@ -800,10 +832,6 @@
       "name": "Shine Blade",
       "note": null
     },
-    "1082": {
-      "name": "Sniper Cannon",
-      "note": null
-    },
     "1083": {
       "name": "Escudo Sniper",
       "note": null
@@ -811,10 +839,6 @@
     "1084": {
       "name": "Soul Chopper",
       "note": "Very small chance of OHKO’ing enemy Digimon"
-    },
-    "1085": {
-      "name": "Suijin Cannon",
-      "note": null
     },
     "1088": {
       "name": "Tenjinmaru",
@@ -868,48 +892,24 @@
       "name": "Ronin Armor",
       "note": null
     },
-    "1117": {
-      "name": "Sniper Suit",
-      "note": null
-    },
     "1119": {
       "name": "Ying Yang Suit",
-      "note": null
-    },
-    "1120": {
-      "name": "Angel Ring",
       "note": null
     },
     "1122": {
       "name": "Brave Helmet",
       "note": null
     },
-    "1124": {
-      "name": "Divine Crown",
-      "note": null
-    },
     "1125": {
       "name": "Dramon Horn",
-      "note": null
-    },
-    "1128": {
-      "name": "Goddess Crown",
       "note": null
     },
     "1130": {
       "name": "Knight Helmet",
       "note": null
     },
-    "1136": {
-      "name": "Mythril Crown",
-      "note": null
-    },
     "1139": {
       "name": "Ronin Helmet",
-      "note": null
-    },
-    "1145": {
-      "name": "Sniper Goggle",
       "note": null
     },
     "1148": {

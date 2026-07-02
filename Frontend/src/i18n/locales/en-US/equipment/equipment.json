@@ -72,9 +72,53 @@
       "name": "Super Nova",
       "note": null
     },
+    "120": {
+      "name": "Handgun",
+      "note": null
+    },
+    "121": {
+      "name": "Machinegun",
+      "note": null
+    },
     "122": {
       "name": "Shotgun",
       "note": "One shot does heavy damage."
+    },
+    "123": {
+      "name": "Psycho Blaster",
+      "note": null
+    },
+    "124": {
+      "name": "Sniper Cannon",
+      "note": null
+    },
+    "125": {
+      "name": "Cluster Cannon",
+      "note": null
+    },
+    "126": {
+      "name": "Laser Cannon",
+      "note": null
+    },
+    "127": {
+      "name": "Suijin Cannon",
+      "note": null
+    },
+    "128": {
+      "name": "Rusty Rifle",
+      "note": null
+    },
+    "129": {
+      "name": "Justice",
+      "note": null
+    },
+    "130": {
+      "name": "Judgment",
+      "note": null
+    },
+    "131": {
+      "name": "Punishment",
+      "note": null
     },
     "134": {
       "name": "Bone Rod",
@@ -184,6 +228,10 @@
       "name": "Royal Spear",
       "note": null
     },
+    "177": {
+      "name": "Chain Saw",
+      "note": null
+    },
     "178": {
       "name": "Zweihander",
       "note": "German large two-handed sword."
@@ -224,9 +272,33 @@
       "name": "Raven Bow",
       "note": "Small chance of inflicting confusion on enemy Digimon"
     },
+    "199": {
+      "name": "Mini Guard",
+      "note": null
+    },
+    "200": {
+      "name": "Pulse Guard",
+      "note": null
+    },
     "201": {
       "name": "Metal Guard",
       "note": "Metal defensive weapon to attack."
+    },
+    "202": {
+      "name": "Mighty Guard",
+      "note": null
+    },
+    "204": {
+      "name": "Mach Guard",
+      "note": null
+    },
+    "205": {
+      "name": "Mega Guard",
+      "note": null
+    },
+    "206": {
+      "name": "Deus Guard",
+      "note": null
     },
     "207": {
       "name": "Metal Horn",
@@ -280,6 +352,10 @@
       "name": "Kung Fu Cap",
       "note": null
     },
+    "222": {
+      "name": "Sniper Goggle",
+      "note": null
+    },
     "223": {
       "name": "Night Vision",
       "note": null
@@ -304,6 +380,10 @@
       "name": "Headband",
       "note": "Evade enemy attack with guts."
     },
+    "229": {
+      "name": "Mythril Crown",
+      "note": null
+    },
     "230": {
       "name": "Magical Crown",
       "note": "Used by wizard to protect the head."
@@ -312,8 +392,20 @@
       "name": "Shaman Mask",
       "note": ""
     },
+    "232": {
+      "name": "Divine Crown",
+      "note": null
+    },
+    "233": {
+      "name": "Angel Ring",
+      "note": null
+    },
     "234": {
       "name": "Royal Crown",
+      "note": null
+    },
+    "235": {
+      "name": "Goddess Crown",
       "note": null
     },
     "236": {
@@ -382,6 +474,10 @@
     },
     "254": {
       "name": "Down Jacket",
+      "note": null
+    },
+    "256": {
+      "name": "Sniper Suit",
       "note": null
     },
     "258": {
@@ -584,20 +680,8 @@
       "name": "Brave Sword",
       "note": null
     },
-    "1010": {
-      "name": "Cluster Cannon",
-      "note": null
-    },
-    "177": {
-      "name": "Chain Saw",
-      "note": null
-    },
     "1012": {
       "name": "Crystal Rod",
-      "note": null
-    },
-    "1014": {
-      "name": "Deus Guard",
       "note": null
     },
     "1015": {
@@ -640,10 +724,6 @@
       "name": "Halberd",
       "note": null
     },
-    "1030": {
-      "name": "Handgun",
-      "note": null
-    },
     "1032": {
       "name": "Hazard Shield",
       "note": null
@@ -654,14 +734,6 @@
     },
     "1034": {
       "name": "Immaculate",
-      "note": null
-    },
-    "1036": {
-      "name": "Judgment",
-      "note": null
-    },
-    "1037": {
-      "name": "Justice",
       "note": null
     },
     "1039": {
@@ -684,20 +756,8 @@
       "name": "Kulon Sword",
       "note": null
     },
-    "1044": {
-      "name": "Laser Cannon",
-      "note": null
-    },
     "1045": {
       "name": "Lightning Bow",
-      "note": null
-    },
-    "1047": {
-      "name": "Mach Guard",
-      "note": null
-    },
-    "1048": {
-      "name": "Machinegun",
       "note": null
     },
     "1049": {
@@ -708,24 +768,12 @@
       "name": "Masamune",
       "note": null
     },
-    "1051": {
-      "name": "Mega Guard",
-      "note": null
-    },
     "1052": {
       "name": "Mighty Blade",
       "note": null
     },
-    "1053": {
-      "name": "Mighty Guard",
-      "note": null
-    },
     "1054": {
       "name": "Millenium",
-      "note": null
-    },
-    "1055": {
-      "name": "Mini Guard",
       "note": null
     },
     "1056": {
@@ -764,28 +812,12 @@
       "name": "Positron Cannon",
       "note": null
     },
-    "1065": {
-      "name": "Psycho Blaster",
-      "note": null
-    },
-    "1067": {
-      "name": "Pulse Guard",
-      "note": null
-    },
-    "1068": {
-      "name": "Punishment",
-      "note": null
-    },
     "1071": {
       "name": "Ronin Blade",
       "note": null
     },
     "1072": {
       "name": "Ronin Shield",
-      "note": null
-    },
-    "1076": {
-      "name": "Rusty Rifle",
       "note": null
     },
     "1077": {
@@ -800,10 +832,6 @@
       "name": "Shine Blade",
       "note": null
     },
-    "1082": {
-      "name": "Sniper Cannon",
-      "note": null
-    },
     "1083": {
       "name": "Sniper Shield",
       "note": null
@@ -811,10 +839,6 @@
     "1084": {
       "name": "Soul Chopper",
       "note": "Very small chance of OHKO’ing enemy Digimon"
-    },
-    "1085": {
-      "name": "Suijin Cannon",
-      "note": null
     },
     "1088": {
       "name": "Tenjinmaru",
@@ -868,48 +892,24 @@
       "name": "Ronin Armor",
       "note": null
     },
-    "1117": {
-      "name": "Sniper Suit",
-      "note": null
-    },
     "1119": {
       "name": "Ying Yang Suit",
-      "note": null
-    },
-    "1120": {
-      "name": "Angel Ring",
       "note": null
     },
     "1122": {
       "name": "Brave Helmet",
       "note": null
     },
-    "1124": {
-      "name": "Divine Crown",
-      "note": null
-    },
     "1125": {
       "name": "Dramon Horn",
-      "note": null
-    },
-    "1128": {
-      "name": "Goddess Crown",
       "note": null
     },
     "1130": {
       "name": "Knight Helmet",
       "note": null
     },
-    "1136": {
-      "name": "Mythril Crown",
-      "note": null
-    },
     "1139": {
       "name": "Ronin Helmet",
-      "note": null
-    },
-    "1145": {
-      "name": "Sniper Goggle",
       "note": null
     },
     "1148": {
