@@ -84,13 +84,53 @@
       "name": "Old Wand",
       "note": "Magic is still left dormant."
     },
+    "145": {
+      "name": "Wolf Fang",
+      "note": null
+    },
+    "146": {
+      "name": "Ghost Fang",
+      "note": null
+    },
     "147": {
       "name": "Cerberus Fang",
       "note": "Drains HP from the wound."
     },
+    "148": {
+      "name": "Presa Maligna",
+      "note": null
+    },
+    "149": {
+      "name": "Hazard Fang",
+      "note": null
+    },
+    "150": {
+      "name": "Saber Fang",
+      "note": null
+    },
+    "151": {
+      "name": "Venom Fang",
+      "note": "Small chance of inflicting poison on enemy Digimon"
+    },
+    "152": {
+      "name": "Belial Fang",
+      "note": null
+    },
     "153": {
       "name": "Old Claw",
       "note": "Claw with DNA of ancient beasts."
+    },
+    "154": {
+      "name": "Vanquish",
+      "note": "Very small chance of OHKO’ing enemy Digimon"
+    },
+    "155": {
+      "name": "Destruction",
+      "note": "Very small chance of knocking out enemy Digimon"
+    },
+    "156": {
+      "name": "Invincible",
+      "note": null
     },
     "157": {
       "name": "Dagger",
@@ -104,9 +144,21 @@
       "name": "Long Sword",
       "note": "Light and long sword."
     },
+    "160": {
+      "name": "Shamshir",
+      "note": null
+    },
     "161": {
       "name": "Wing Sword",
       "note": "Easy to wield for fast attacks."
+    },
+    "164": {
+      "name": "Excalibur",
+      "note": "Deals extra damage to Evil-species Digimon"
+    },
+    "165": {
+      "name": "Grey Sword",
+      "note": null
     },
     "167": {
       "name": "Bamboo Spear",
@@ -124,9 +176,33 @@
       "name": "Divine Lance",
       "note": "Hard lance from fossilized bone."
     },
+    "176": {
+      "name": "Claymore",
+      "note": null
+    },
+    "174": {
+      "name": "Royal Spear",
+      "note": null
+    },
     "178": {
       "name": "Zweihander",
       "note": "German large two-handed sword."
+    },
+    "179": {
+      "name": "Flamberge",
+      "note": null
+    },
+    "180": {
+      "name": "Rock Breaker",
+      "note": null
+    },
+    "181": {
+      "name": "Atlas Buster",
+      "note": null
+    },
+    "182": {
+      "name": "Gulf Sword",
+      "note": null
     },
     "185": {
       "name": "Berdys",
@@ -152,9 +228,33 @@
       "name": "Metal Guard",
       "note": "Metal defensive weapon to attack."
     },
+    "207": {
+      "name": "Metal Horn",
+      "note": null
+    },
+    "208": {
+      "name": "Drill Horn",
+      "note": null
+    },
     "209": {
       "name": "Kabuteri Horn",
       "note": "Horn to knock-out the enemy."
+    },
+    "210": {
+      "name": "Shock Horn",
+      "note": null
+    },
+    "212": {
+      "name": "Scissor Horn",
+      "note": null
+    },
+    "213": {
+      "name": "Trihorn",
+      "note": null
+    },
+    "214": {
+      "name": "Glorious Horn",
+      "note": null
     },
     "215": {
       "name": "Bandanna",
@@ -228,16 +328,36 @@
       "name": "Iron Helmet",
       "note": "Sturdy helmet made from iron."
     },
+    "239": {
+      "name": "Warrior Helmet",
+      "note": null
+    },
     "240": {
       "name": "Wing Helmet",
       "note": "Light and easy evade to attacks."
+    },
+    "241": {
+      "name": "Kulon Helmet",
+      "note": null
     },
     "242": {
       "name": "Wild Helmet",
       "note": null
     },
+    "245": {
+      "name": "Hazard Helmet",
+      "note": null
+    },
     "246": {
       "name": "D-Tama Helmet",
+      "note": null
+    },
+    "247": {
+      "name": "Matrix Helmet",
+      "note": null
+    },
+    "248": {
+      "name": "Mugen Helmet",
       "note": null
     },
     "249": {
@@ -299,6 +419,26 @@
     "266": {
       "name": "Dark Armor",
       "note": "Eerie armor with dark powers."
+    },
+    "267": {
+      "name": "Kulon Armor",
+      "note": null
+    },
+    "270": {
+      "name": "Hazard Armor",
+      "note": null
+    },
+    "272": {
+      "name": "Armadura Cilíndrica",
+      "note": null
+    },
+    "273": {
+      "name": "Misty Armor",
+      "note": null
+    },
+    "274": {
+      "name": "Crimson Mail",
+      "note": null
     },
     "275": {
       "name": "Buckler",
@@ -432,16 +572,8 @@
       "name": "Apocalypse",
       "note": null
     },
-    "1004": {
-      "name": "Atlas Buster",
-      "note": null
-    },
     "1005": {
       "name": "Beam Shield",
-      "note": null
-    },
-    "1006": {
-      "name": "Belial Fang",
       "note": null
     },
     "1007": {
@@ -450,10 +582,6 @@
     },
     "1008": {
       "name": "Brave Sword",
-      "note": null
-    },
-    "1009": {
-      "name": "Claymore",
       "note": null
     },
     "1010": {
@@ -467,10 +595,6 @@
     "1012": {
       "name": "Crystal Rod",
       "note": null
-    },
-    "1013": {
-      "name": "Destruction",
-      "note": "Very small chance of knocking out enemy Digimon"
     },
     "1014": {
       "name": "Deus Guard",
@@ -496,17 +620,9 @@
       "name": "Evil Fang",
       "note": null
     },
-    "1020": {
-      "name": "Excalibur",
-      "note": "Deals extra damage to Evil-species Digimon"
-    },
     "1021": {
       "name": "Fenrir Sword",
       "note": "Small chance of inflicting freeze on enemy Digimon"
-    },
-    "1022": {
-      "name": "Flamberge",
-      "note": null
     },
     "1023": {
       "name": "Fuujin Blade",
@@ -520,28 +636,12 @@
       "name": "Garuru Cannon",
       "note": null
     },
-    "1026": {
-      "name": "Ghost Fang",
-      "note": null
-    },
-    "1027": {
-      "name": "Grey Sword",
-      "note": null
-    },
-    "1028": {
-      "name": "Gulf Sword",
-      "note": null
-    },
     "1029": {
       "name": "Halberd",
       "note": null
     },
     "1030": {
       "name": "Handgun",
-      "note": null
-    },
-    "1031": {
-      "name": "Hazard Fang",
       "note": null
     },
     "1032": {
@@ -554,10 +654,6 @@
     },
     "1034": {
       "name": "Immaculate",
-      "note": null
-    },
-    "1035": {
-      "name": "Invincible",
       "note": null
     },
     "1036": {
@@ -680,20 +776,12 @@
       "name": "Punishment",
       "note": null
     },
-    "1070": {
-      "name": "Rock Breaker",
-      "note": null
-    },
     "1071": {
       "name": "Ronin Blade",
       "note": null
     },
     "1072": {
       "name": "Ronin Shield",
-      "note": null
-    },
-    "1073": {
-      "name": "Royal Spear",
       "note": null
     },
     "1076": {
@@ -704,16 +792,8 @@
       "name": "Ryuuzanmaru",
       "note": null
     },
-    "1078": {
-      "name": "Saber Fang",
-      "note": null
-    },
     "1079": {
       "name": "Seraphic Bow",
-      "note": null
-    },
-    "1080": {
-      "name": "Shamshir",
       "note": null
     },
     "1081": {
@@ -752,20 +832,8 @@
       "name": "Vampire Lance",
       "note": "Recovers a fraction of the damage as HP"
     },
-    "1093": {
-      "name": "Vanquish",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
-    },
-    "1094": {
-      "name": "Venom Fang",
-      "note": "Small chance of inflicting poison on enemy Digimon"
-    },
     "1096": {
       "name": "Wild Shield",
-      "note": null
-    },
-    "1097": {
-      "name": "Wolf Fang",
       "note": null
     },
     "1098": {
@@ -788,28 +856,12 @@
       "name": "Brave Armor",
       "note": null
     },
-    "1105": {
-      "name": "Crimson Mail",
-      "note": null
-    },
     "1107": {
       "name": "Divine Robe",
       "note": null
     },
     "1109": {
       "name": "Dramon Armor",
-      "note": null
-    },
-    "1110": {
-      "name": "Hazard Armor",
-      "note": null
-    },
-    "1112": {
-      "name": "Kulon Armor",
-      "note": null
-    },
-    "1114": {
-      "name": "Misty Armor",
       "note": null
     },
     "1115": {
@@ -840,40 +892,12 @@
       "name": "Dramon Horn",
       "note": null
     },
-    "1126": {
-      "name": "Drill Horn",
-      "note": null
-    },
-    "1127": {
-      "name": "Glorious Horn",
-      "note": null
-    },
     "1128": {
       "name": "Goddess Crown",
       "note": null
     },
-    "1129": {
-      "name": "Hazard Helmet",
-      "note": null
-    },
     "1130": {
       "name": "Knight Helmet",
-      "note": null
-    },
-    "1131": {
-      "name": "Kulon Helmet",
-      "note": null
-    },
-    "1133": {
-      "name": "Matrix Helmet",
-      "note": null
-    },
-    "1134": {
-      "name": "Metal Horn",
-      "note": null
-    },
-    "1135": {
-      "name": "Mugen Helmet",
       "note": null
     },
     "1136": {
@@ -884,20 +908,8 @@
       "name": "Ronin Helmet",
       "note": null
     },
-    "1142": {
-      "name": "Scissor Horn",
-      "note": null
-    },
-    "1144": {
-      "name": "Shock Horn",
-      "note": null
-    },
     "1145": {
       "name": "Sniper Goggle",
-      "note": null
-    },
-    "1146": {
-      "name": "Trihorn",
       "note": null
     },
     "1148": {

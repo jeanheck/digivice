@@ -84,13 +84,53 @@
       "name": "Vara Antiga",
       "note": "Magia ainda está dormente."
     },
+    "145": {
+      "name": "Presa de Lobo",
+      "note": "Arma inventada com presas de uma besta."
+    },
+    "146": {
+      "name": "Presa Fantasma",
+      "note": "Arma inventada com presas de um ogro."
+    },
     "147": {
       "name": "Presa de Cérbero",
       "note": "Drena HP pela ferida causada ao inimigo."
     },
+    "148": {
+      "name": "Presa Maligna",
+      "note": "Dispara ataques igual a um tigre."
+    },
+    "149": {
+      "name": "Presa Hazard",
+      "note": "Presas lendárias capturadas na natureza."
+    },
+    "150": {
+      "name": "Presa de Sabre",
+      "note": "O braço equipado visa o ponto fraco."
+    },
+    "151": {
+      "name": "Presa Venom",
+      "note": "Envenene a ferida."
+    },
+    "152": {
+      "name": "Presa de Demônio",
+      "note": "Presas míticas largadas por um demônio."
+    },
     "153": {
       "name": "Garra Antiga",
       "note": "Garra com o DNA de animais antigos."
+    },
+    "154": {
+      "name": "Superar",
+      "note": "Garra que derruba um adversário."
+    },
+    "155": {
+      "name": "Destruição",
+      "note": "Um golpe desmembrará o inimigo."
+    },
+    "156": {
+      "name": "Invencível",
+      "note": "Garra mítica do Rei Besta."
     },
     "157": {
       "name": "Punhal",
@@ -104,9 +144,21 @@
       "name": "Espada Longa",
       "note": "Espada leve e longa."
     },
+    "160": {
+      "name": "Shamshir",
+      "note": "Cimitarra persa."
+    },
     "161": {
       "name": "Espada Alada",
       "note": "Fácil de empunhar ataques rápidos."
+    },
+    "164": {
+      "name": "Escalibur",
+      "note": "Espada Divina que destrói o mal."
+    },
+    "165": {
+      "name": "Espada cinza",
+      "note": "Parte de um DNA Digimon digievoluído."
     },
     "167": {
       "name": "Arpão de Bambu",
@@ -124,9 +176,33 @@
       "name": "Lança Divina",
       "note": "Lança poderosa feita com ossos fossilizados."
     },
+    "174": {
+      "name": "Arpão Real",
+      "note": "Lança Divina dos Cavaleiros Reais."
+    },
+    "176": {
+      "name": "Claymore",
+      "note": "Espada larga de duas mãos."
+    },
     "178": {
       "name": "Zweihander",
       "note": "Espada alemã de duas mãos."
+    },
+    "179": {
+      "name": "Flamberge",
+      "note": "Linda espada de duas mãos."
+    },
+    "180": {
+      "name": "Quebrador Rocha",
+      "note": "Espada de duas mãos classificada com alto desempenho."
+    },
+    "181": {
+      "name": "Buster Atlas",
+      "note": "Matou o gigante lendário."
+    },
+    "182": {
+      "name": "Espada Gulf",
+      "note": "Grande Cimitarra da Pérsia."
     },
     "185": {
       "name": "Berdys",
@@ -152,9 +228,33 @@
       "name": "Protetor de Metal",
       "note": "Arma defensiva de metal que pode atacar."
     },
+    "207": {
+      "name": "Chifre de Metal",
+      "note": "Chifre para cabeçadas."
+    },
+    "208": {
+      "name": "Chifre de Broca",
+      "note": "Reforçado com uma forma de broca."
+    },
     "209": {
       "name": "Chifre Kabuteri",
       "note": "Chifre para nocautear o inimigo."
+    },
+    "210": {
+      "name": "Chifre Elétrico",
+      "note": "Chifre que paralisa o corpo."
+    },
+    "212": {
+      "name": "Chifre Afiado",
+      "note": "Corte na carne, chifre brutal."
+    },
+    "213": {
+      "name": "Chifre Triplo",
+      "note": "Três chifres da cabeça ao nariz."
+    },
+    "214": {
+      "name": "Chifre Glorioso",
+      "note": "Chifre mítico de um animal sagrado."
     },
     "215": {
       "name": "Bandana",
@@ -228,17 +328,37 @@
       "name": "Capacete de Ferro",
       "note": "Capacete robusto feito de ferro."
     },
+    "239": {
+      "name": "Capacete Cavaleiro",
+      "note": "Capacete eficiênte para cavaleiros."
+    },
     "240": {
       "name": "Capacete Alado",
       "note": "Leve e fácil de desviar de ataques."
+    },
+    "241": {
+      "name": "Capacete Kulon",
+      "note": "Capacete robusto feito com fusão de materiais."
     },
     "242": {
       "name": "Capacete Selvagem",
       "note": "Capacete lendário de combate."
     },
+    "245": {
+      "name": "Capacete Hazard",
+      "note": "Capacete selvagem lendário."
+    },
     "246": {
       "name": "Capacete Digitama",
       "note": "Criado através da casca de Digitama."
+    },
+    "247": {
+      "name": "Capacete Matrix",
+      "note": "Analisa os ataques inimigos e desvia."
+    },
+    "248": {
+      "name": "Capacete Mugen",
+      "note": "Feito da cabeça do Machinedramon."
     },
     "249": {
       "name": "Casaco de Couro",
@@ -299,6 +419,26 @@
     "266": {
       "name": "Armadura Sombria",
       "note": "Armadura misteriosa com poderes sombrios."
+    },
+    "267": {
+      "name": "Armadura Kulon",
+      "note": "Armadura robusta e resistente."
+    },
+    "270": {
+      "name": "Armadura Hazard",
+      "note": "Armadura selvagem lendária."
+    },
+    "272": {
+      "name": "Armadura Cilíndrica",
+      "note": "Armadura brilhante e decorativa."
+    },
+    "273": {
+      "name": "Armadura Nebulosa",
+      "note": "Torna o usuário mais oculto."
+    },
+    "274": {
+      "name": "Armadura Crimson",
+      "note": "Armadura vermelha flamejante."
     },
     "275": {
       "name": "Escudo",
@@ -432,16 +572,8 @@
       "name": "Apocalypse",
       "note": null
     },
-    "1004": {
-      "name": "Atlas Buster",
-      "note": null
-    },
     "1005": {
       "name": "Escudo de Energia",
-      "note": null
-    },
-    "1006": {
-      "name": "Presa de Belial",
       "note": null
     },
     "1007": {
@@ -450,10 +582,6 @@
     },
     "1008": {
       "name": "Espada Brava",
-      "note": null
-    },
-    "1009": {
-      "name": "Claymore",
       "note": null
     },
     "1010": {
@@ -467,10 +595,6 @@
     "1012": {
       "name": "Cajado de Cristal",
       "note": null
-    },
-    "1013": {
-      "name": "Destruição",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
     },
     "1014": {
       "name": "Deus Guard",
@@ -496,17 +620,9 @@
       "name": "Presa Maligna",
       "note": null
     },
-    "1020": {
-      "name": "Excalibur",
-      "note": "Causa dano extra a Digimons da espécie Evil"
-    },
     "1021": {
       "name": "Espada Fenrir",
       "note": "Chance baixa de congelar o Digimon inimigo"
-    },
-    "1022": {
-      "name": "Flamberge",
-      "note": null
     },
     "1023": {
       "name": "Fuujin Blade",
@@ -520,28 +636,12 @@
       "name": "Garuru Cannon",
       "note": null
     },
-    "1026": {
-      "name": "Ghost Fang",
-      "note": null
-    },
-    "1027": {
-      "name": "Grey Sword",
-      "note": null
-    },
-    "1028": {
-      "name": "Gulf Sword",
-      "note": null
-    },
     "1029": {
       "name": "Alabarda",
       "note": null
     },
     "1030": {
       "name": "Handgun",
-      "note": null
-    },
-    "1031": {
-      "name": "Hazard Fang",
       "note": null
     },
     "1032": {
@@ -555,10 +655,6 @@
     "1034": {
       "name": "Immaculate",
       "note": null
-    },
-    "1035": {
-      "name": "Invencível",
-      "note": "Garra mítica do Rei Besta."
     },
     "1036": {
       "name": "Judgment",
@@ -680,20 +776,12 @@
       "name": "Punishment",
       "note": null
     },
-    "1070": {
-      "name": "Rock Breaker",
-      "note": null
-    },
     "1071": {
       "name": "Ronin Blade",
       "note": null
     },
     "1072": {
       "name": "Ronin Shield",
-      "note": null
-    },
-    "1073": {
-      "name": "Royal Spear",
       "note": null
     },
     "1076": {
@@ -704,16 +792,8 @@
       "name": "Ryuuzanmaru",
       "note": null
     },
-    "1078": {
-      "name": "Saber Fang",
-      "note": null
-    },
     "1079": {
       "name": "Seraphic Bow",
-      "note": null
-    },
-    "1080": {
-      "name": "Shamshir",
       "note": null
     },
     "1081": {
@@ -752,20 +832,8 @@
       "name": "Vampire Lance",
       "note": "Recupera uma fração do dano causado como HP"
     },
-    "1093": {
-      "name": "Vanquish",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
-    },
-    "1094": {
-      "name": "Venom Fang",
-      "note": "Chance baixa de envenenar o Digimon inimigo"
-    },
     "1096": {
       "name": "Wild Shield",
-      "note": null
-    },
-    "1097": {
-      "name": "Wolf Fang",
       "note": null
     },
     "1098": {
@@ -788,28 +856,12 @@
       "name": "Brave Armor",
       "note": null
     },
-    "1105": {
-      "name": "Crimson Mail",
-      "note": null
-    },
     "1107": {
       "name": "Divine Robe",
       "note": null
     },
     "1109": {
       "name": "Dramon Armor",
-      "note": null
-    },
-    "1110": {
-      "name": "Hazard Armor",
-      "note": null
-    },
-    "1112": {
-      "name": "Kulon Armor",
-      "note": null
-    },
-    "1114": {
-      "name": "Misty Armor",
       "note": null
     },
     "1115": {
@@ -840,40 +892,12 @@
       "name": "Dramon Horn",
       "note": null
     },
-    "1126": {
-      "name": "Drill Horn",
-      "note": null
-    },
-    "1127": {
-      "name": "Glorious Horn",
-      "note": null
-    },
     "1128": {
       "name": "Goddess Crown",
       "note": null
     },
-    "1129": {
-      "name": "Hazard Helmet",
-      "note": null
-    },
     "1130": {
       "name": "Knight Helmet",
-      "note": null
-    },
-    "1131": {
-      "name": "Kulon Helmet",
-      "note": null
-    },
-    "1133": {
-      "name": "Matrix Helmet",
-      "note": null
-    },
-    "1134": {
-      "name": "Metal Horn",
-      "note": null
-    },
-    "1135": {
-      "name": "Mugen Helmet",
       "note": null
     },
     "1136": {
@@ -884,20 +908,8 @@
       "name": "Ronin Helmet",
       "note": null
     },
-    "1142": {
-      "name": "Scissor Horn",
-      "note": null
-    },
-    "1144": {
-      "name": "Shock Horn",
-      "note": null
-    },
     "1145": {
       "name": "Sniper Goggle",
-      "note": null
-    },
-    "1146": {
-      "name": "Trihorn",
       "note": null
     },
     "1148": {
