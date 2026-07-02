@@ -120,13 +120,53 @@
       "name": "Punição",
       "note": "Rifle personalizado completo."
     },
+    "132": {
+      "name": "Cajado de Madeira",
+      "note": "Haste feita de carvalho."
+    },
+    "133": {
+      "name": "Cajado Mágico",
+      "note": "O cajado de um mago."
+    },
     "134": {
       "name": "Cajado de Osso",
       "note": "Cajado único feito de osso."
     },
+    "135": {
+      "name": "Cajado Nebuloso",
+      "note": "O cajado de um eremita."
+    },
+    "137": {
+      "name": "Bastão Yin Yang",
+      "note": "Bastão Divino de tempos antigos."
+    },
+    "138": {
+      "name": "Khakkhara",
+      "note": "Disse para ser usado para afastar o mal."
+    },
+    "139": {
+      "name": "Cajado de Cristal",
+      "note": "Cajado de cristal com poderes mágicos."
+    },
+    "140": {
+      "name": "Milênio",
+      "note": "Poder para governar um país."
+    },
     "141": {
       "name": "Vara Antiga",
       "note": "Magia ainda está dormente."
+    },
+    "142": {
+      "name": "Cintilação",
+      "note": "Cajado que emite luzes misteriosas."
+    },
+    "143": {
+      "name": "Imaculado",
+      "note": "Cajado purificado com poderes divinos."
+    },
+    "144": {
+      "name": "Eternamente",
+      "note": "Cajado mítico com poderes infinitos."
     },
     "145": {
       "name": "Presa de Lobo",
@@ -252,9 +292,33 @@
       "name": "Espada Gulf",
       "note": "Grande Cimitarra da Pérsia."
     },
+    "183": {
+      "name": "Alabarda",
+      "note": "Punho longo para atacar de forma eficiente."
+    },
+    "184": {
+      "name": "Naginata",
+      "note": "Espada regular de duas mãos."
+    },
     "185": {
       "name": "Berdys",
       "note": "Machado pesado com o cabo longo."
+    },
+    "186": {
+      "name": "Chopper",
+      "note": "Foice que destrói a alma."
+    },
+    "187": {
+      "name": "Ryuuzanmaru",
+      "note": "Destrói a armadura do inimigo."
+    },
+    "188": {
+      "name": "Alabarda Gaea",
+      "note": "Pode defender e ainda atacar."
+    },
+    "189": {
+      "name": "Alabarda Omega",
+      "note": "A mais poderosa Alabarda mítica."
     },
     "190": {
       "name": "Arco Longo",
@@ -268,9 +332,29 @@
       "name": "Besta",
       "note": "Poderoso mecanismo de disparo."
     },
+    "193": {
+      "name": "Arco Angelical",
+      "note": "Arco Angélico contra Digimons malígnos."
+    },
     "194": {
       "name": "Arco Raven",
       "note": "A maldição do corvo confunde o inimigo."
+    },
+    "195": {
+      "name": "Arco Relampial",
+      "note": "Arco de alta potência com disparos de fogo."
+    },
+    "196": {
+      "name": "Arco Angelical",
+      "note": "Arco Angélico contra Digimons malígnos."
+    },
+    "197": {
+      "name": "Canhão Garuru",
+      "note": "Parte de um DNA Digimon digievoluído."
+    },
+    "198": {
+      "name": "Canhão Positron",
+      "note": "Arma proíbida."
     },
     "199": {
       "name": "Mini Protetor",
@@ -351,6 +435,10 @@
     "220": {
       "name": "Boné de Kung Fu",
       "note": "Boné para combate."
+    },
+    "221": {
+      "name": "Chapéu Yin Yang",
+      "note": "Chapéu Divino de campos antigos."
     },
     "222": {
       "name": "Oculos de Sniper",
@@ -436,6 +524,10 @@
       "name": "Capacete Selvagem",
       "note": "Capacete lendário de combate."
     },
+    "244": {
+      "name": "Capacete Valente",
+      "note": "Gravado com crista da coragem."
+    },
     "245": {
       "name": "Capacete Hazard",
       "note": "Capacete selvagem lendário."
@@ -479,6 +571,10 @@
     "256": {
       "name": "Terno Sniper",
       "note": "Terno lendário."
+    },
+    "257": {
+      "name": "Traje Yin Yang",
+      "note": "Traje lendário de tempos antigos."
     },
     "258": {
       "name": "Traje Selvagem",
@@ -524,6 +620,10 @@
       "name": "Armadura Hazard",
       "note": "Armadura selvagem lendária."
     },
+    "271": {
+      "name": "Armadura Corajosa",
+      "note": "Gravado com crista da coragem."
+    },
     "272": {
       "name": "Armadura Cilíndrica",
       "note": "Armadura brilhante e decorativa."
@@ -555,6 +655,18 @@
     "281": {
       "name": "Escudo Divino",
       "note": "Barreira com uma luz Divina."
+    },
+    "282": {
+      "name": "Escudo Sniper",
+      "note": "Barricada lendário."
+    },
+    "289": {
+      "name": "Escudo Cilíndrico",
+      "note": ""
+    },
+    "290": {
+      "name": "Alta Segurança",
+      "note": "Escudo que protege a vida."
     },
     "292": {
       "name": "Gema - Poder",
@@ -660,16 +772,8 @@
       "name": "Vazio",
       "note": null
     },
-    "1002": {
-      "name": "Arco Angelical",
-      "note": "Causa dano extra a Digimons da espécie Evil"
-    },
     "1003": {
       "name": "Apocalypse",
-      "note": null
-    },
-    "1005": {
-      "name": "Escudo de Energia",
       "note": null
     },
     "1007": {
@@ -678,10 +782,6 @@
     },
     "1008": {
       "name": "Espada Brava",
-      "note": null
-    },
-    "1012": {
-      "name": "Cajado de Cristal",
       "note": null
     },
     "1015": {
@@ -696,10 +796,6 @@
       "name": "Escudo Dramon",
       "note": null
     },
-    "1018": {
-      "name": "Eternamente",
-      "note": null
-    },
     "1019": {
       "name": "Presa Maligna",
       "note": null
@@ -712,32 +808,8 @@
       "name": "Fuujin Blade",
       "note": null
     },
-    "1024": {
-      "name": "Gaea Halberd",
-      "note": null
-    },
-    "1025": {
-      "name": "Garuru Cannon",
-      "note": null
-    },
-    "1029": {
-      "name": "Alabarda",
-      "note": null
-    },
     "1032": {
       "name": "Escudo Hazard",
-      "note": null
-    },
-    "1033": {
-      "name": "High Security",
-      "note": "Previne derrotas instantâneas"
-    },
-    "1034": {
-      "name": "Immaculate",
-      "note": null
-    },
-    "1039": {
-      "name": "Khakkhara",
       "note": null
     },
     "1040": {
@@ -756,14 +828,6 @@
       "name": "Kulon Sword",
       "note": null
     },
-    "1045": {
-      "name": "Lightning Bow",
-      "note": null
-    },
-    "1049": {
-      "name": "Magician Rod",
-      "note": null
-    },
     "1050": {
       "name": "Masamune",
       "note": null
@@ -772,28 +836,12 @@
       "name": "Mighty Blade",
       "note": null
     },
-    "1054": {
-      "name": "Millenium",
-      "note": null
-    },
-    "1056": {
-      "name": "Misty Rod",
-      "note": null
-    },
     "1057": {
       "name": "Muramasa",
       "note": null
     },
-    "1058": {
-      "name": "Naginata",
-      "note": null
-    },
     "1059": {
       "name": "Needle Glove",
-      "note": null
-    },
-    "1060": {
-      "name": "Omega Halberd",
       "note": null
     },
     "1061": {
@@ -808,10 +856,6 @@
       "name": "Partisan",
       "note": null
     },
-    "1064": {
-      "name": "Positron Cannon",
-      "note": null
-    },
     "1071": {
       "name": "Ronin Blade",
       "note": null
@@ -820,25 +864,9 @@
       "name": "Ronin Shield",
       "note": null
     },
-    "1077": {
-      "name": "Ryuuzanmaru",
-      "note": null
-    },
-    "1079": {
-      "name": "Seraphic Bow",
-      "note": null
-    },
     "1081": {
       "name": "Shine Blade",
       "note": null
-    },
-    "1083": {
-      "name": "Escudo Sniper",
-      "note": null
-    },
-    "1084": {
-      "name": "Soul Chopper",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
     },
     "1088": {
       "name": "Tenjinmaru",
@@ -848,10 +876,6 @@
       "name": "Trent",
       "note": "Causa dano extra a Digimons da espécie Peixe"
     },
-    "1091": {
-      "name": "Twinkle",
-      "note": null
-    },
     "1092": {
       "name": "Vampire Lance",
       "note": "Recupera uma fração do dano causado como HP"
@@ -860,24 +884,12 @@
       "name": "Wild Shield",
       "note": null
     },
-    "1098": {
-      "name": "Cajado de Madeira",
-      "note": null
-    },
-    "1099": {
-      "name": "Yin Yang Rod",
-      "note": null
-    },
     "1100": {
       "name": "Yin Yang Ward",
       "note": null
     },
     "1102": {
       "name": "Beam Armor",
-      "note": null
-    },
-    "1104": {
-      "name": "Brave Armor",
       "note": null
     },
     "1107": {
@@ -892,14 +904,6 @@
       "name": "Ronin Armor",
       "note": null
     },
-    "1119": {
-      "name": "Ying Yang Suit",
-      "note": null
-    },
-    "1122": {
-      "name": "Brave Helmet",
-      "note": null
-    },
     "1125": {
       "name": "Dramon Horn",
       "note": null
@@ -910,10 +914,6 @@
     },
     "1139": {
       "name": "Ronin Helmet",
-      "note": null
-    },
-    "1148": {
-      "name": "Yin Yang Hat",
       "note": null
     },
     "1149": {

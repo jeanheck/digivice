@@ -120,13 +120,53 @@
       "name": "Punishment",
       "note": null
     },
+    "132": {
+      "name": "Wooden Rod",
+      "note": null
+    },
+    "133": {
+      "name": "Magician Rod",
+      "note": null
+    },
     "134": {
       "name": "Bone Rod",
       "note": "An unique rod from a bone."
     },
+    "135": {
+      "name": "Misty Rod",
+      "note": null
+    },
+    "137": {
+      "name": "Yin Yang Rod",
+      "note": null
+    },
+    "138": {
+      "name": "Khakkhara",
+      "note": null
+    },
+    "139": {
+      "name": "Crystal Rod",
+      "note": null
+    },
+    "140": {
+      "name": "Millenium",
+      "note": null
+    },
     "141": {
       "name": "Old Wand",
       "note": "Magic is still left dormant."
+    },
+    "142": {
+      "name": "Twinkle",
+      "note": null
+    },
+    "143": {
+      "name": "Immaculate",
+      "note": null
+    },
+    "144": {
+      "name": "Eternally",
+      "note": null
     },
     "145": {
       "name": "Wolf Fang",
@@ -252,9 +292,33 @@
       "name": "Gulf Sword",
       "note": null
     },
+    "183": {
+      "name": "Halberd",
+      "note": null
+    },
+    "184": {
+      "name": "Naginata",
+      "note": null
+    },
     "185": {
       "name": "Berdys",
       "note": "Heavy axe with long hilt."
+    },
+    "186": {
+      "name": "Soul Chopper",
+      "note": "Very small chance of OHKO’ing enemy Digimon"
+    },
+    "187": {
+      "name": "Ryuuzanmaru",
+      "note": null
+    },
+    "188": {
+      "name": "Gaea Halberd",
+      "note": null
+    },
+    "189": {
+      "name": "Omega Halberd",
+      "note": null
     },
     "190": {
       "name": "Long Bow",
@@ -268,9 +332,29 @@
       "name": "Crossbow",
       "note": "Powerful with shooting mechanism."
     },
+    "193": {
+      "name": "Angel Bow",
+      "note": "Deals extra damage to Evil-species Digimon"
+    },
     "194": {
       "name": "Raven Bow",
       "note": "Small chance of inflicting confusion on enemy Digimon"
+    },
+    "195": {
+      "name": "Lightning Bow",
+      "note": null
+    },
+    "196": {
+      "name": "Seraphic Bow",
+      "note": null
+    },
+    "197": {
+      "name": "Garuru Cannon",
+      "note": null
+    },
+    "198": {
+      "name": "Positron Cannon",
+      "note": null
     },
     "199": {
       "name": "Mini Guard",
@@ -350,6 +434,10 @@
     },
     "220": {
       "name": "Kung Fu Cap",
+      "note": null
+    },
+    "221": {
+      "name": "Yin Yang Hat",
       "note": null
     },
     "222": {
@@ -436,6 +524,10 @@
       "name": "Wild Helmet",
       "note": null
     },
+    "244": {
+      "name": "Brave Helmet",
+      "note": null
+    },
     "245": {
       "name": "Hazard Helmet",
       "note": null
@@ -478,6 +570,10 @@
     },
     "256": {
       "name": "Sniper Suit",
+      "note": null
+    },
+    "257": {
+      "name": "Yin Yang Suit",
       "note": null
     },
     "258": {
@@ -524,6 +620,10 @@
       "name": "Hazard Armor",
       "note": null
     },
+    "271": {
+      "name": "Brave Armor",
+      "note": null
+    },
     "272": {
       "name": "Armadura Cilíndrica",
       "note": null
@@ -555,6 +655,18 @@
     "281": {
       "name": "Divine Barrier",
       "note": "Barrier with a divine right."
+    },
+    "282": {
+      "name": "Sniper Shield",
+      "note": null
+    },
+    "289": {
+      "name": "Beam Shield",
+      "note": null
+    },
+    "290": {
+      "name": "High Security",
+      "note": "Prevents OHKOs"
     },
     "292": {
       "name": "Power Gem",
@@ -660,16 +772,8 @@
       "name": "Empty",
       "note": null
     },
-    "1002": {
-      "name": "Angel Bow",
-      "note": "Deals extra damage to Evil-species Digimon"
-    },
     "1003": {
       "name": "Apocalypse",
-      "note": null
-    },
-    "1005": {
-      "name": "Beam Shield",
       "note": null
     },
     "1007": {
@@ -678,10 +782,6 @@
     },
     "1008": {
       "name": "Brave Sword",
-      "note": null
-    },
-    "1012": {
-      "name": "Crystal Rod",
       "note": null
     },
     "1015": {
@@ -696,10 +796,6 @@
       "name": "Dramon Shield",
       "note": null
     },
-    "1018": {
-      "name": "Eternally",
-      "note": null
-    },
     "1019": {
       "name": "Evil Fang",
       "note": null
@@ -712,32 +808,8 @@
       "name": "Fuujin Blade",
       "note": null
     },
-    "1024": {
-      "name": "Gaea Halberd",
-      "note": null
-    },
-    "1025": {
-      "name": "Garuru Cannon",
-      "note": null
-    },
-    "1029": {
-      "name": "Halberd",
-      "note": null
-    },
     "1032": {
       "name": "Hazard Shield",
-      "note": null
-    },
-    "1033": {
-      "name": "High Security",
-      "note": "Prevents OHKOs"
-    },
-    "1034": {
-      "name": "Immaculate",
-      "note": null
-    },
-    "1039": {
-      "name": "Khakkhara",
       "note": null
     },
     "1040": {
@@ -756,14 +828,6 @@
       "name": "Kulon Sword",
       "note": null
     },
-    "1045": {
-      "name": "Lightning Bow",
-      "note": null
-    },
-    "1049": {
-      "name": "Magician Rod",
-      "note": null
-    },
     "1050": {
       "name": "Masamune",
       "note": null
@@ -772,28 +836,12 @@
       "name": "Mighty Blade",
       "note": null
     },
-    "1054": {
-      "name": "Millenium",
-      "note": null
-    },
-    "1056": {
-      "name": "Misty Rod",
-      "note": null
-    },
     "1057": {
       "name": "Muramasa",
       "note": null
     },
-    "1058": {
-      "name": "Naginata",
-      "note": null
-    },
     "1059": {
       "name": "Needle Glove",
-      "note": null
-    },
-    "1060": {
-      "name": "Omega Halberd",
       "note": null
     },
     "1061": {
@@ -808,10 +856,6 @@
       "name": "Partisan",
       "note": null
     },
-    "1064": {
-      "name": "Positron Cannon",
-      "note": null
-    },
     "1071": {
       "name": "Ronin Blade",
       "note": null
@@ -820,25 +864,9 @@
       "name": "Ronin Shield",
       "note": null
     },
-    "1077": {
-      "name": "Ryuuzanmaru",
-      "note": null
-    },
-    "1079": {
-      "name": "Seraphic Bow",
-      "note": null
-    },
     "1081": {
       "name": "Shine Blade",
       "note": null
-    },
-    "1083": {
-      "name": "Sniper Shield",
-      "note": null
-    },
-    "1084": {
-      "name": "Soul Chopper",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
     },
     "1088": {
       "name": "Tenjinmaru",
@@ -848,10 +876,6 @@
       "name": "Trent",
       "note": "Deals extra damage to Fish-species Digimon"
     },
-    "1091": {
-      "name": "Twinkle",
-      "note": null
-    },
     "1092": {
       "name": "Vampire Lance",
       "note": "Recovers a fraction of the damage as HP"
@@ -860,24 +884,12 @@
       "name": "Wild Shield",
       "note": null
     },
-    "1098": {
-      "name": "Wooden Rod",
-      "note": null
-    },
-    "1099": {
-      "name": "Yin Yang Rod",
-      "note": null
-    },
     "1100": {
       "name": "Yin Yang Ward",
       "note": null
     },
     "1102": {
       "name": "Beam Armor",
-      "note": null
-    },
-    "1104": {
-      "name": "Brave Armor",
       "note": null
     },
     "1107": {
@@ -892,14 +904,6 @@
       "name": "Ronin Armor",
       "note": null
     },
-    "1119": {
-      "name": "Ying Yang Suit",
-      "note": null
-    },
-    "1122": {
-      "name": "Brave Helmet",
-      "note": null
-    },
     "1125": {
       "name": "Dramon Horn",
       "note": null
@@ -910,10 +914,6 @@
     },
     "1139": {
       "name": "Ronin Helmet",
-      "note": null
-    },
-    "1148": {
-      "name": "Yin Yang Hat",
       "note": null
     },
     "1149": {
