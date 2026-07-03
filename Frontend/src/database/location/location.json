@@ -327,7 +327,9 @@
   },
   "022D": {
     "image": "Deeper Crevice",
-    "enemies": []
+    "enemies": [
+      "21"
+    ]
   },
   "022E": {
     "image": "Seiryu City",
