@@ -277,6 +277,10 @@
       }
     ]
   },
+  "0228": {
+    "image": "Duel Island",
+    "enemies": []
+  },
   "0229": {
     "image": "Wind Prairie",
     "enemies": [
@@ -327,7 +331,9 @@
   },
   "022D": {
     "image": "Deeper Crevice",
-    "enemies": []
+    "enemies": [
+      "21"
+    ]
   },
   "022E": {
     "image": "Seiryu City",

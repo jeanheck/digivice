@@ -1,13 +1,14 @@
 {
     "enemyTechniques": {
         "necromist": "Névoa da Morte (Físico, Chance de Envenenamento)",
+        "madPump": "Mad Pump (Físico, Água)",
         "masterFire": "Fogo Mestre (Fogo)",
         "atomicRay": "Atomic Ray (Mágica, Máquina, Chance de KO)",
         "none": "Nenhum",
         "energySuck": "Energy Suck (Mágica)",
         "airBlast": "Air Blast (Mágica, Vento)",
         "confuseGas": "Gás Confuso (Mágica, Chance de Confundir)",
-        "divineRain": "Chuva Divina (Mágica-Água)",
+        "divineRain": "Chuva Divina (Mágica, Água)",
         "smallHeal": "Small Heal (Heal a small portion of HP)",
         "doubleGuard": "Double Guard (Raises Defense)",
         "thunderbolt": "Thunderbolt (Mágica, Trovão)",

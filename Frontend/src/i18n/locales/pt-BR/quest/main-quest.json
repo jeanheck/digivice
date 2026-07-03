@@ -430,6 +430,9 @@
           "0": {
             "locationTarget": "Parede"
           }
+        },
+        "requisites": {
+          "tntBall": "Bola TNT"
         }
       },
       "43": {

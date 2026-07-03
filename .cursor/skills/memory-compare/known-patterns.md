@@ -55,6 +55,17 @@ Session noise after battles or map activity. Always discard for progress flags.
 - **Current possession** (common item): may clear on sell — e.g. Divine Barrier
   at `0x48EC9`. Test with sell or `intersect-changed`.
 
+## Item quantity vs quest requisite (confirmed)
+
+- **Stack quantity** (how many you carry): one byte per catalog item in
+  `0x0004858F+` (sequential by item Val.). TNT Ball = **`0x000485BE`**
+  (Val. `0x005A`, code `300485BE`).
+- **Quest requisite** (has item for journal): separate byte, raw `!= 0` — e.g.
+  TNT Ball requisite in `MainQuestAddresses.json` at **`0x00048E57`** (shared
+  with other key items).
+- Compare hunting `99 → 98` (`0x63 → 0x62`) must hit the quantity byte; a
+  requisite flag at `0x48E57` will not decrement when using one from a stack.
+
 ---
 
 ## DRI agents
