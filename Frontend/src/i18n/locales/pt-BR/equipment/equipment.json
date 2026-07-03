@@ -12,13 +12,49 @@
       "name": "Lâmina Crimson",
       "note": "Drena os pontos de vida de um adversário."
     },
+    "95": {
+      "name": "Lâmina Mighty",
+      "note": "Espada afiada de um único gume."
+    },
     "96": {
       "name": "Shiratorimaru",
       "note": "Espada do Mushamon."
     },
+    "97": {
+      "name": "Lâmina Brilho",
+      "note": "Espada com uma lâmina brilhante."
+    },
+    "98": {
+      "name": "Lâmina Ronin",
+      "note": "Espada samurai lendária."
+    },
+    "99": {
+      "name": "Onimaru",
+      "note": "Disse para cortar o braço de um ogro."
+    },
+    "100": {
+      "name": "Tenjinmaru",
+      "note": "A mais alta classificação de Katana."
+    },
+    "101": {
+      "name": "Espada Fuujin",
+      "note": "Espada fantasma de um único gume."
+    },
     "102": {
       "name": "Katana Oxidada",
       "note": "Oxidado com um brilho misterioso."
+    },
+    "103": {
+      "name": "Kotetsu",
+      "note": "Katana forjada por um mestre."
+    },
+    "104": {
+      "name": "Masamune",
+      "note": "Katana lendária."
+    },
+    "105": {
+      "name": "Muramasa",
+      "note": "Espada mítica fantasma revivida."
     },
     "106": {
       "name": "Luva de Couro",
@@ -244,6 +280,10 @@
       "name": "Espada cinza",
       "note": "Parte de um DNA Digimon digievoluído."
     },
+    "166": {
+      "name": "Espada Fenrir",
+      "note": "Espada demoníaca que congela o inimigo."
+    },
     "167": {
       "name": "Arpão de Bambu",
       "note": "Arpão de bambu parecido com um mastro."
@@ -256,13 +296,29 @@
       "name": "Conta de Fadas",
       "note": "Arpão pequeno, mas poderoso."
     },
+    "170": {
+      "name": "Partisan",
+      "note": "Grande ponta de lança que causa enorme dano."
+    },
     "171": {
       "name": "Lança Divina",
       "note": "Lança poderosa feita com ossos fossilizados."
     },
+    "172": {
+      "name": "Trento",
+      "note": "Grande dano à inimigos submarinos."
+    },
+    "173": {
+      "name": "Lança do Vampiro",
+      "note": "Drena a HP do oponente."
+    },
     "174": {
       "name": "Arpão Real",
       "note": "Lança Divina dos Cavaleiros Reais."
+    },
+    "175": {
+      "name": "Arpão Orochi",
+      "note": "Arpão que destruiu o Orochi."
     },
     "176": {
       "name": "Claymore",
@@ -270,7 +326,7 @@
     },
     "177": {
       "name": "Motosserra",
-      "note": null
+      "note": "Empunhe com duas mãos e fatie."
     },
     "178": {
       "name": "Zweihander",
@@ -524,6 +580,10 @@
       "name": "Capacete Selvagem",
       "note": "Capacete lendário de combate."
     },
+    "243": {
+      "name": "Capacete Ronin",
+      "note": "Capacete ronin lendário."
+    },
     "244": {
       "name": "Capacete Valente",
       "note": "Gravado com crista da coragem."
@@ -616,6 +676,10 @@
       "name": "Armadura Kulon",
       "note": "Armadura robusta e resistente."
     },
+    "269": {
+      "name": "Armadura Ronin",
+      "note": "Armadura Ronin lendária."
+    },
     "270": {
       "name": "Armadura Hazard",
       "note": "Armadura selvagem lendária."
@@ -660,13 +724,21 @@
       "name": "Escudo Sniper",
       "note": "Barricada lendário."
     },
+    "284": {
+      "name": "Escudo Ronin",
+      "note": "Escudo do lendário Ronin."
+    },
     "289": {
       "name": "Escudo Cilíndrico",
-      "note": ""
+      "note": "Escudo decorativo e brilhante."
     },
     "290": {
       "name": "Alta Segurança",
       "note": "Escudo que protege a vida."
+    },
+    "291": {
+      "name": "Apocalipse",
+      "note": "Escudo divíno lendário."
     },
     "292": {
       "name": "Gema - Poder",
@@ -772,10 +844,6 @@
       "name": "Vazio",
       "note": null
     },
-    "1003": {
-      "name": "Apocalypse",
-      "note": null
-    },
     "1007": {
       "name": "Escudo Bravo",
       "note": null
@@ -800,24 +868,12 @@
       "name": "Presa Maligna",
       "note": null
     },
-    "1021": {
-      "name": "Espada Fenrir",
-      "note": "Chance baixa de congelar o Digimon inimigo"
-    },
-    "1023": {
-      "name": "Fuujin Blade",
-      "note": null
-    },
     "1032": {
       "name": "Escudo Hazard",
       "note": null
     },
     "1040": {
       "name": "Escudo de Cavaleiro",
-      "note": null
-    },
-    "1041": {
-      "name": "Kotetsu",
       "note": null
     },
     "1042": {
@@ -828,57 +884,9 @@
       "name": "Kulon Sword",
       "note": null
     },
-    "1050": {
-      "name": "Masamune",
-      "note": null
-    },
-    "1052": {
-      "name": "Mighty Blade",
-      "note": null
-    },
-    "1057": {
-      "name": "Muramasa",
-      "note": null
-    },
     "1059": {
       "name": "Needle Glove",
       "note": null
-    },
-    "1061": {
-      "name": "Onimaru",
-      "note": null
-    },
-    "1062": {
-      "name": "Orochi Spear",
-      "note": null
-    },
-    "1063": {
-      "name": "Partisan",
-      "note": null
-    },
-    "1071": {
-      "name": "Ronin Blade",
-      "note": null
-    },
-    "1072": {
-      "name": "Ronin Shield",
-      "note": null
-    },
-    "1081": {
-      "name": "Shine Blade",
-      "note": null
-    },
-    "1088": {
-      "name": "Tenjinmaru",
-      "note": null
-    },
-    "1090": {
-      "name": "Trent",
-      "note": "Causa dano extra a Digimons da espécie Peixe"
-    },
-    "1092": {
-      "name": "Vampire Lance",
-      "note": "Recupera uma fração do dano causado como HP"
     },
     "1096": {
       "name": "Wild Shield",
@@ -900,20 +908,12 @@
       "name": "Dramon Armor",
       "note": null
     },
-    "1115": {
-      "name": "Ronin Armor",
-      "note": null
-    },
     "1125": {
       "name": "Dramon Horn",
       "note": null
     },
     "1130": {
       "name": "Knight Helmet",
-      "note": null
-    },
-    "1139": {
-      "name": "Ronin Helmet",
       "note": null
     },
     "1149": {

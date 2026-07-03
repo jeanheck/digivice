@@ -12,13 +12,49 @@
       "name": "Crimson Blade",
       "note": "Recovers a fraction of the damage as HP"
     },
+    "95": {
+      "name": "Mighty Blade",
+      "note": null
+    },
     "96": {
       "name": "Shiratorimaru",
       "note": "Mushamon's sword"
     },
+    "97": {
+      "name": "Shine Blade",
+      "note": null
+    },
+    "98": {
+      "name": "Ronin Blade",
+      "note": null
+    },
+    "99": {
+      "name": "Onimaru",
+      "note": null
+    },
+    "100": {
+      "name": "Tenjinmaru",
+      "note": null
+    },
+    "101": {
+      "name": "Fuujin Blade",
+      "note": null
+    },
     "102": {
       "name": "Rusty Katana",
       "note": "Rusted with a mysterious shine."
+    },
+    "103": {
+      "name": "Kotetsu",
+      "note": null
+    },
+    "104": {
+      "name": "Masamune",
+      "note": null
+    },
+    "105": {
+      "name": "Muramasa",
+      "note": null
     },
     "106": {
       "name": "Leather Glove",
@@ -244,6 +280,10 @@
       "name": "Grey Sword",
       "note": null
     },
+    "166": {
+      "name": "Fenrir Sword",
+      "note": "Small chance of inflicting freeze on enemy Digimon"
+    },
     "167": {
       "name": "Bamboo Spear",
       "note": "Bamboo spear like a pole."
@@ -256,9 +296,25 @@
       "name": "Fairy Tale",
       "note": "Small, but powerful spear."
     },
+    "170": {
+      "name": "Partisan",
+      "note": null
+    },
     "171": {
       "name": "Divine Lance",
       "note": "Hard lance from fossilized bone."
+    },
+    "172": {
+      "name": "Trent",
+      "note": "Deals extra damage to Fish-species Digimon"
+    },
+    "173": {
+      "name": "Vampire Lance",
+      "note": "Recovers a fraction of the damage as HP"
+    },
+    "175": {
+      "name": "Orochi Spear",
+      "note": null
     },
     "176": {
       "name": "Claymore",
@@ -524,6 +580,10 @@
       "name": "Wild Helmet",
       "note": null
     },
+    "243": {
+      "name": "Ronin Helmet",
+      "note": null
+    },
     "244": {
       "name": "Brave Helmet",
       "note": null
@@ -616,6 +676,10 @@
       "name": "Kulon Armor",
       "note": null
     },
+    "269": {
+      "name": "Ronin Armor",
+      "note": null
+    },
     "270": {
       "name": "Hazard Armor",
       "note": null
@@ -660,6 +724,10 @@
       "name": "Sniper Shield",
       "note": null
     },
+    "284": {
+      "name": "Ronin Shield",
+      "note": null
+    },
     "289": {
       "name": "Beam Shield",
       "note": null
@@ -667,6 +735,10 @@
     "290": {
       "name": "High Security",
       "note": "Prevents OHKOs"
+    },
+    "291": {
+      "name": "Apocalypse",
+      "note": null
     },
     "292": {
       "name": "Power Gem",
@@ -772,10 +844,6 @@
       "name": "Empty",
       "note": null
     },
-    "1003": {
-      "name": "Apocalypse",
-      "note": null
-    },
     "1007": {
       "name": "Brave Shield",
       "note": null
@@ -800,24 +868,12 @@
       "name": "Evil Fang",
       "note": null
     },
-    "1021": {
-      "name": "Fenrir Sword",
-      "note": "Small chance of inflicting freeze on enemy Digimon"
-    },
-    "1023": {
-      "name": "Fuujin Blade",
-      "note": null
-    },
     "1032": {
       "name": "Hazard Shield",
       "note": null
     },
     "1040": {
       "name": "Knight Shield",
-      "note": null
-    },
-    "1041": {
-      "name": "Kotetsu",
       "note": null
     },
     "1042": {
@@ -828,57 +884,9 @@
       "name": "Kulon Sword",
       "note": null
     },
-    "1050": {
-      "name": "Masamune",
-      "note": null
-    },
-    "1052": {
-      "name": "Mighty Blade",
-      "note": null
-    },
-    "1057": {
-      "name": "Muramasa",
-      "note": null
-    },
     "1059": {
       "name": "Needle Glove",
       "note": null
-    },
-    "1061": {
-      "name": "Onimaru",
-      "note": null
-    },
-    "1062": {
-      "name": "Orochi Spear",
-      "note": null
-    },
-    "1063": {
-      "name": "Partisan",
-      "note": null
-    },
-    "1071": {
-      "name": "Ronin Blade",
-      "note": null
-    },
-    "1072": {
-      "name": "Ronin Shield",
-      "note": null
-    },
-    "1081": {
-      "name": "Shine Blade",
-      "note": null
-    },
-    "1088": {
-      "name": "Tenjinmaru",
-      "note": null
-    },
-    "1090": {
-      "name": "Trent",
-      "note": "Deals extra damage to Fish-species Digimon"
-    },
-    "1092": {
-      "name": "Vampire Lance",
-      "note": "Recovers a fraction of the damage as HP"
     },
     "1096": {
       "name": "Wild Shield",
@@ -900,20 +908,12 @@
       "name": "Dramon Armor",
       "note": null
     },
-    "1115": {
-      "name": "Ronin Armor",
-      "note": null
-    },
     "1125": {
       "name": "Dramon Horn",
       "note": null
     },
     "1130": {
       "name": "Knight Helmet",
-      "note": null
-    },
-    "1139": {
-      "name": "Ronin Helmet",
       "note": null
     },
     "1149": {
