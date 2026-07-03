@@ -277,6 +277,10 @@
       }
     ]
   },
+  "0228": {
+    "image": "Duel Island",
+    "enemies": []
+  },
   "0229": {
     "image": "Wind Prairie",
     "enemies": [
