@@ -10,6 +10,7 @@
     "hp": "HP",
     "mp": "MP",
     "blast": "Blast",
+    "tp": "Training Points",
     "equipmentSlot": {
       "head": "Head",
       "body": "Body",

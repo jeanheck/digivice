@@ -16,7 +16,7 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
-const { show, x, y, showAt, move, hide } = useTooltipPosition();
+const { show, x, y, showAt, move, hide } = useTooltipPosition(350);
 const tooltipTitle = ref("");
 
 function onShowTooltip(event: MouseEvent, variant: string): void {
@@ -62,7 +62,12 @@ const mpPercentage = computed(() => {
       <div class="flex items-start gap-4">
         <div class="flex flex-col gap-2">
           <Icon :digimon-name="digimonName" class="w-16 h-16" />
-          <TrainingPoints :tp="digimon.tp" />
+          <TrainingPoints
+            :tp="digimon.tp"
+            @show-tooltip="onShowTooltip($event, 'tp')"
+            @move-tooltip="onMoveTooltip"
+            @hide-tooltip="onHideTooltip"
+          />
         </div>
 
         <div class="flex-1 flex flex-col gap-1 min-w-0">
@@ -119,6 +124,6 @@ const mpPercentage = computed(() => {
       </div>
     </div>
 
-    <Tooltip :show="show" :x="x" :y="y" :title="tooltipTitle" />
+    <Tooltip :show="show" :x="x" :y="y" :title="tooltipTitle" :max-width="350" />
   </div>
 </template>
