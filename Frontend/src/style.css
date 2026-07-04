@@ -65,6 +65,14 @@ body {
   text-shadow: 1px 1px 0 #000;
 }
 
+.text-outline-black {
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
 .shadow-text-dark {
   filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8));
 }

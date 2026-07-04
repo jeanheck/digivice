@@ -38,7 +38,7 @@ const transitionDurationClass = computed(() => {
       :style="{ width: `${percentage}%` }"
     ></div>
 
-    <span class="relative z-10 text-[0.6rem] font-bold text-white drop-shadow-md px-1 tracking-wider">
+    <span class="relative z-10 text-[0.6rem] font-bold text-white text-outline-black px-1 tracking-wider">
       {{ `${currentValue} / ${maxValue}` }}
     </span>
   </div>
