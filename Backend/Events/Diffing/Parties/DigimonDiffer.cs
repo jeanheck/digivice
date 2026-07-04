@@ -22,6 +22,7 @@ public static class DigimonDiffer
         }
 
         bool levelChanged = previousDigimon.Level != newDigimon.Level;
+        bool tpChanged = previousDigimon.TP != newDigimon.TP;
         bool experienceChanged = previousDigimon.Experience != newDigimon.Experience;
         bool activeDigievolutionIdChanged = previousDigimon.ActiveDigievolutionId != newDigimon.ActiveDigievolutionId;
         var vitalsDelta = VitalsDiffer.Diff(previousDigimon.Vitals, newDigimon.Vitals);
@@ -56,6 +57,7 @@ public static class DigimonDiffer
         }
 
         bool hasAnyChanges = levelChanged ||
+                             tpChanged ||
                              experienceChanged ||
                              activeDigievolutionIdChanged ||
                              vitalsDelta != null ||
@@ -74,6 +76,10 @@ public static class DigimonDiffer
         if (levelChanged)
         {
             dto = dto with { Level = newDigimon.Level };
+        }
+        if (tpChanged)
+        {
+            dto = dto with { TP = newDigimon.TP };
         }
         if (experienceChanged)
         {

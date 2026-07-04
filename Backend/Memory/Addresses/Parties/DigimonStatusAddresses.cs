@@ -10,6 +10,8 @@ namespace Backend.Memory.Addresses.Parties
         public int Experience { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Level { get; set; }
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int TP { get; set; }
         public VitalsAddresses Vitals { get; set; } = new();
         public AttributesAddresses Attributes { get; set; } = new();
         public ResistancesAddresses Resistances { get; set; } = new();
@@ -19,6 +21,7 @@ namespace Backend.Memory.Addresses.Parties
         public void Deconstruct(
             out int experience,
             out int level,
+            out int tp,
             out VitalsAddresses vitals,
             out AttributesAddresses attributes,
             out ResistancesAddresses resistances,
@@ -27,6 +30,7 @@ namespace Backend.Memory.Addresses.Parties
         {
             experience = Experience;
             level = Level;
+            tp = TP;
             vitals = Vitals;
             attributes = Attributes;
             resistances = Resistances;

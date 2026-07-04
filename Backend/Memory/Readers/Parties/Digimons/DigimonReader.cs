@@ -46,6 +46,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
                 ActiveDigievolutionId = activeDigievolutionId,
                 Experience = memoryBlockReader.ReadInt32(digimonStatusAddresses.Experience),
                 Level = memoryBlockReader.ReadInt16(digimonStatusAddresses.Level),
+                TP = memoryBlockReader.ReadInt16(digimonStatusAddresses.TP),
                 Vitals = new VitalsResource
                 {
                     CurrentHP = memoryBlockReader.ReadInt16(digimonStatusAddresses.Vitals.CurrentHP),

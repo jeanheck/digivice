@@ -96,6 +96,7 @@ public class DigimonDifferTests
         return new Digimon
         {
             Level = 10,
+            TP = 5,
             Experience = 1000,
             ActiveDigievolutionId = 3,
             Vitals = new Vitals { CurrentHP = 100, MaxHP = 100, CurrentMP = 50, MaxMP = 50 },

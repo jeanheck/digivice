@@ -12,6 +12,7 @@ public class DigimonConverterTests
         var digimon = new Digimon
         {
             Level = 42,
+            TP = 20,
             Experience = 123456,
             ActiveDigievolutionId = 5,
             Vitals = new Vitals { CurrentHP = 101, MaxHP = 202, CurrentMP = 33, MaxMP = 44 },
@@ -37,6 +38,7 @@ public class DigimonConverterTests
         var dto = DigimonConverter.ToDTO(digimon);
 
         Assert.Equal(42, dto.Level.Value);
+        Assert.Equal(20, dto.TP.Value);
         Assert.Equal(123456, dto.Experience.Value);
         Assert.Equal(5, dto.ActiveDigievolutionId.Value);
         Assert.Equal(101, dto.Vitals.Value!.CurrentHP.Value);

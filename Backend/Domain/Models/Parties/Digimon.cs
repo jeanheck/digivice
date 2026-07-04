@@ -5,6 +5,7 @@ namespace Backend.Domain.Models.Parties
     public record class Digimon
     {
         public int Level { get; set; }
+        public int TP { get; set; }
         public int Experience { get; set; }
         public Vitals Vitals { get; set; } = new();
         public Attributes Attributes { get; set; } = new();
@@ -19,6 +20,7 @@ namespace Backend.Domain.Models.Parties
             if (other is null) return false;
 
             return Level == other.Level &&
+                   TP == other.TP &&
                    Experience == other.Experience &&
                    Vitals.Equals(other.Vitals) &&
                    Attributes.Equals(other.Attributes) &&
@@ -33,6 +35,7 @@ namespace Backend.Domain.Models.Parties
         {
             var hash = new HashCode();
             hash.Add(Level);
+            hash.Add(TP);
             hash.Add(Experience);
             hash.Add(Vitals);
             hash.Add(Attributes);

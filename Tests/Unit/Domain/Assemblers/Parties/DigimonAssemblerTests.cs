@@ -28,6 +28,7 @@ public class DigimonAssemblerTests
         {
             Experience = 5000,
             Level = 30,
+            TP = 15,
             ActiveDigievolutionId = 12,
             Vitals = new VitalsResource { CurrentHP = 100, MaxHP = 120, CurrentMP = 50, MaxMP = 60 },
             Attributes = new AttributesResource { Strength = 10, Defense = 11, Spirit = 12, Wisdow = 13, Speed = 14, Charisma = 15 },
@@ -47,6 +48,7 @@ public class DigimonAssemblerTests
         Assert.NotNull(result);
         Assert.Equal(5000, result.Experience);
         Assert.Equal(30, result.Level);
+        Assert.Equal(15, result.TP);
         Assert.Equal(12, result.ActiveDigievolutionId);
 
         // Vitals
@@ -88,6 +90,7 @@ public class DigimonAssemblerTests
         {
             Experience = 100,
             Level = 1,
+            TP = 0,
             Vitals = new VitalsResource(),
             Attributes = new AttributesResource(),
             Resistances = new ResistancesResource(),

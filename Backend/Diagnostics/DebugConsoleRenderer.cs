@@ -90,7 +90,7 @@ namespace Backend.Diagnostics
         {
             var digimon = slot.Digimon!;
             var vitals = digimon.Vitals;
-            sb.AppendLine($"{Yellow}Slot {slot.Index} (ID: {slot.DigimonId}):{Reset} [Lv.{digimon.Level.ToString(LvlFormat)}] [EXP:{digimon.Experience.ToString(ExpFormat)}]");
+            sb.AppendLine($"{Yellow}Slot {slot.Index} (ID: {slot.DigimonId}):{Reset} [Lv.{digimon.Level.ToString(LvlFormat)}] [TP:{digimon.TP.ToString(StatFormat)}] [EXP:{digimon.Experience.ToString(ExpFormat)}]");
 
             // HP Bar
             sb.Append("   HP: ");

@@ -10,6 +10,7 @@ public static class DigimonConverter
     public static DigimonDTO ToDTO(Digimon digimon) => new()
     {
         Level = digimon.Level,
+        TP = digimon.TP,
         Experience = digimon.Experience,
         Vitals = VitalsConverter.ToDTO(digimon.Vitals),
         Attributes = AttributesConverter.ToDTO(digimon.Attributes),
