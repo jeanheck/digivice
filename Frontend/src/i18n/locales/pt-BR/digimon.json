@@ -6,6 +6,10 @@
     "equipableBy": "Equipável por",
     "allDigimon": "Todos os Digimon",
     "level": "Nível",
+    "experience": "Experiência",
+    "hp": "HP",
+    "mp": "MP",
+    "blast": "Fúria",
     "equipmentSlot": {
       "head": "Cabeça",
       "body": "Corpo",
