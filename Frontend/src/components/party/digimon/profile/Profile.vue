@@ -62,7 +62,7 @@ const mpPercentage = computed(() => {
       <div class="flex items-start gap-4">
         <div class="flex flex-col gap-2">
           <Icon :digimon-name="digimonName" class="w-16 h-16" />
-          <TrainingPoints />
+          <TrainingPoints :tp="digimon.tp" />
         </div>
 
         <div class="flex-1 flex flex-col gap-1 min-w-0">

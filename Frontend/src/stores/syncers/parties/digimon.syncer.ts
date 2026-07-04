@@ -14,6 +14,9 @@ export class DigimonSyncer {
         if (newDigimonDto.level !== undefined) {
             previousDigimon.level = newDigimonDto.level;
         }
+        if (newDigimonDto.tp !== undefined) {
+            previousDigimon.tp = newDigimonDto.tp;
+        }
         if (newDigimonDto.experience !== undefined) {
             previousDigimon.experience = newDigimonDto.experience;
         }

@@ -11,6 +11,7 @@ export class DigimonConverter {
     public static convert(digimonDto: DigimonDTO): Digimon {
         return {
             level: digimonDto.level ?? 1,
+            tp: digimonDto.tp ?? 0,
             experience: digimonDto.experience ?? 0,
             activeDigievolutionId: digimonDto.activeDigievolutionId ?? null,
             vitals: VitalsConverter.convert(digimonDto.vitals ?? null),

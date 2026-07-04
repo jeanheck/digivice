@@ -7,6 +7,7 @@ import type { StoredDigievolutionDTO } from './digimons/stored-digievolution.dto
 
 export interface DigimonDTO {
     level?: number;
+    tp?: number;
     experience?: number;
     vitals?: VitalsDTO;
     attributes?: AttributesDTO;
