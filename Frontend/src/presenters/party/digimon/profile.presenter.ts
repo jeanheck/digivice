@@ -28,4 +28,12 @@ export class ProfilePresenter {
 
         return MathHelper.calculatePercentage(progressInThisLevel, totalRequiredInThisLevel);
     }
+
+    public static getHpPercentage(currentHP: number, maxHP: number): number {
+        return MathHelper.calculatePercentage(currentHP, maxHP);
+    }
+
+    public static getMpPercentage(currentMP: number, maxMP: number): number {
+        return MathHelper.calculatePercentage(currentMP, maxMP);
+    }
 }

@@ -2,7 +2,6 @@
 import { computed } from "vue";
 import ProgressBar from "@/components/party/digimon/profile/ProgressBar.vue";
 import Icon from "@/components/party/digimon/profile/Icon.vue";
-import Vitals from "@/components/party/digimon/profile/Vitals.vue";
 import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import { ProgressBarConstant } from "@/constants/progress-bar.constant";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
@@ -22,6 +21,14 @@ const experienceToReachNextLevel = computed(() => {
 
 const experiencePercentageToReachNextLevel = computed(() => {
   return ProfilePresenter.calculateProgressPercentageForNextLevel(props.digimonId, props.digimon.level, props.digimon.experience);
+});
+
+const hpPercentage = computed(() => {
+  return ProfilePresenter.getHpPercentage(props.digimon.vitals.currentHP, props.digimon.vitals.maxHP);
+});
+
+const mpPercentage = computed(() => {
+  return ProfilePresenter.getMpPercentage(props.digimon.vitals.currentMP, props.digimon.vitals.maxMP);
 });
 </script>
 
@@ -61,16 +68,16 @@ const experiencePercentageToReachNextLevel = computed(() => {
 
           <ProgressBar
             :variant="ProgressBarConstant.hp"
-            :current-value="537"
-            :max-value="537"
-            :percentage="100"
+            :current-value="digimon.vitals.currentHP"
+            :max-value="digimon.vitals.maxHP"
+            :percentage="hpPercentage"
           />
 
           <ProgressBar
             :variant="ProgressBarConstant.mp"
-            :current-value="680"
-            :max-value="680"
-            :percentage="100"
+            :current-value="digimon.vitals.currentMP"
+            :max-value="digimon.vitals.maxMP"
+            :percentage="mpPercentage"
           />
 
           <ProgressBar
