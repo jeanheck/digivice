@@ -1,367 +1,316 @@
-using System;
-using System.IO;
 using System.Diagnostics;
 using System.IO.MemoryMappedFiles;
-using System.Linq;
 using System.Text.Json;
 
-namespace MemoryScanner
+namespace MemoryScanner;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        if (args.Length == 0)
         {
-            if (args.Length == 0)
+            PrintHelp();
+            return;
+        }
+
+        try
+        {
+            RunCommand(args);
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine($"Error: {exception.Message}");
+        }
+    }
+
+    static void RunCommand(string[] args)
+    {
+        var command = args[0].ToLowerInvariant();
+
+        switch (command)
+        {
+            case "snapshot":
+                RunSnapshot(args);
+                break;
+            case "compare":
+                ScanCommands.CompareBytes(args);
+                break;
+            case "search-value":
+                ScanCommands.SearchValue(args);
+                break;
+            case "compare-changed":
+                ScanCommands.CompareChanged(args);
+                break;
+            case "compare-stable":
+                ScanCommands.CompareStable(args);
+                break;
+            case "intersect-changed":
+                ScanCommands.IntersectChanged(args);
+                break;
+            case "compare-delta":
+                ScanCommands.CompareDelta(args);
+                break;
+            case "chain-match":
+                ScanCommands.ChainMatch(args);
+                break;
+            case "dump":
+                RunDump(args);
+                break;
+            case "fill":
+                RunFill(args);
+                break;
+            case "analyze-pair":
+                RunAnalyzePair(args);
+                break;
+            default:
+                Console.WriteLine($"Unknown command '{command}'.");
+                PrintHelp();
+                break;
+        }
+    }
+
+    static void PrintHelp()
+    {
+        Console.WriteLine("Commands:");
+        Console.WriteLine("  snapshot <file.bin>");
+        Console.WriteLine("  compare <f1> <f2> [targetByte] [--region quest|full|stats|inventory] [--range 0xSTART,0xEND] [--max-results N]");
+        Console.WriteLine("  search-value <file> <value> [size] [rangeStart] [rangeEnd] [--size N] [--region NAME] [--range 0xS,0xE] [--max-results N]");
+        Console.WriteLine("  compare-changed <f1> <f2> <newVal> [size] [rangeStart] [rangeEnd] [oldVal] [--old-val N] [--size N] [--region NAME]");
+        Console.WriteLine("  compare-stable <f1> <f2> <value> [size] [--size N] [--region NAME]");
+        Console.WriteLine("  compare-delta <f1> <f2> <delta> [size] [--size N] [--region NAME]");
+        Console.WriteLine("  intersect-changed <f1> <f2> <f3> [size] [start] [end] [maxVal] [--max-val N] [--size N] [--region NAME]");
+        Console.WriteLine("  chain-match <f1> <f2> ... --values v1,v2,... [--size 4] [--region full] [--max-results N]");
+        Console.WriteLine("  dump <file.bin> <start-hex> <length>");
+        Console.WriteLine("  analyze-pair <before.bin> <after.bin>");
+        Console.WriteLine();
+        Console.WriteLine("Regions: full (default typed), quest (default compare bytes), stats, inventory");
+        Console.WriteLine("Value sizes: 1 = byte, 2 = Int16, 4 = Int32 (little-endian)");
+    }
+
+    static void RunSnapshot(string[] args)
+    {
+        var processes = Process.GetProcessesByName("duckstation-qt-x64-ReleaseLTCG");
+        if (processes.Length == 0)
+        {
+            Console.WriteLine("DuckStation not found.");
+            return;
+        }
+
+        string mapName = $"duckstation_{processes[0].Id}";
+        using var memoryMappedFile = MemoryMappedFile.OpenExisting(mapName);
+        using var accessor = memoryMappedFile.CreateViewAccessor();
+
+        byte[] ram = new byte[SnapshotLoader.RamSize];
+        accessor.ReadArray(0, ram, 0, SnapshotLoader.RamSize);
+        File.WriteAllBytes(args[1], ram);
+        Console.WriteLine($"Saved {args[1]}");
+    }
+
+    static void RunDump(string[] args)
+    {
+        byte[] data = SnapshotLoader.Load(args[1]);
+        int start = Convert.ToInt32(args[2].Replace("0x", ""), 16);
+        int length = int.Parse(args[3]);
+        Console.Write($"0x{start:X8}: ");
+        for (int index = 0; index < length && start + index < data.Length; index++)
+        {
+            Console.Write($"{data[start + index]:X2} ");
+            if ((index + 1) % 16 == 0)
             {
-                Console.WriteLine("Commands:");
-                Console.WriteLine("  snapshot <file.bin>                                                       - save PS1 RAM snapshot");
-                Console.WriteLine("  compare <file1.bin> <file2.bin> [value]                                   - find bytes that went 0->1");
-                Console.WriteLine("  search-value <file.bin> <value> [size=1] [range-start] [range-end]        - find addresses holding a value");
-                Console.WriteLine("  compare-changed <f1> <f2> <new-val> [size] [range-start] [range-end]      - addresses that changed to new-val");
-                Console.WriteLine("  compare-stable <f1> <f2> <value> [size]                                   - addresses that stayed at value");
-                Console.WriteLine("  intersect-changed <f1> <f2> <f3> [size] [start] [end] [max-val]           - f1==f3 AND f1!=f2; max-val filters small ints");
-                Console.WriteLine("  dump <file.bin> <start-hex> <length>                                      - dump raw hex bytes at an address");
-                Console.WriteLine("  analyze-pair <before.bin> <after.bin>                                     - quest + encounter cache report");
-                return;
-            }
-
-            var cmd = args[0].ToLower();
-
-            if (cmd == "snapshot")
-            {
-                var procs = Process.GetProcessesByName("duckstation-qt-x64-ReleaseLTCG");
-                if (procs.Length == 0)
-                {
-                    Console.WriteLine("DuckStation not found.");
-                    return;
-                }
-
-                string mapName = $"duckstation_{procs[0].Id}";
-                try
-                {
-                    using var mmf = MemoryMappedFile.OpenExisting(mapName);
-                    using var accessor = mmf.CreateViewAccessor();
-
-                    int ramSize = 2 * 1024 * 1024;
-                    byte[] ram = new byte[ramSize];
-                    accessor.ReadArray(0, ram, 0, ramSize);
-
-                    File.WriteAllBytes(args[1], ram);
-                    Console.WriteLine($"Saved {args[1]}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error mapping memory: {ex.Message}");
-                }
-            }
-            else if (cmd == "compare")
-            {
-                byte[] d1 = File.ReadAllBytes(args[1]);
-                byte[] d2 = File.ReadAllBytes(args[2]);
-                byte? target = args.Length > 3 ? byte.Parse(args[3]) : null;
-
-                int count = 0;
-                for (int i = 0; i < d1.Length; i++)
-                {
-                    if (d1[i] != d2[i])
-                    {
-                        if (target.HasValue)
-                        {
-                            if (d2[i] != target.Value) continue;
-                            if (count < 200)
-                                Console.WriteLine($"0x{i:X8}: {d1[i]} -> {d2[i]}");
-                            count++;
-                        }
-                        else
-                        {
-                            // Filter out known volatile regions like 0x44xxx (coordinates/animations)
-                            // Focus on the main quest/stats flags region (0x48000 to 0x4D000)
-                            if (i < 0x00048000 || i > 0x0004D000) continue;
-
-                            byte addedBits = (byte)(d2[i] & ~d1[i]);
-                            byte removedBits = (byte)(d1[i] & ~d2[i]);
-
-                            if (count < 500)
-                            {
-                                Console.Write($"0x{i:X8}: 0x{d1[i]:X2} -> 0x{d2[i]:X2}");
-                                if (addedBits > 0) Console.Write($" (+ flag: 0x{addedBits:X2})");
-                                if (removedBits > 0) Console.Write($" (- flag: 0x{removedBits:X2})");
-                                Console.WriteLine();
-                            }
-                            count++;
-                        }
-                    }
-                }
-                Console.WriteLine($"\nTotal differences: {count}");
-            }
-            else if (cmd == "fill" && args.Length == 4)
-            {
-                int start = Convert.ToInt32(args[1].Replace("0x", ""), 16);
-                int end = Convert.ToInt32(args[2].Replace("0x", ""), 16);
-                byte val = byte.Parse(args[3]);
-
-                var procs = Process.GetProcessesByName("duckstation-qt-x64-ReleaseLTCG");
-                if (procs.Length == 0)
-                {
-                    Console.WriteLine("DuckStation not found.");
-                    return;
-                }
-
-                string mapName = $"duckstation_{procs[0].Id}";
-                try
-                {
-                    using var mmf = MemoryMappedFile.OpenExisting(mapName);
-                    using var accessor = mmf.CreateViewAccessor();
-
-                    for (int i = start; i <= end; i++)
-                    {
-                        accessor.Write(i, val);
-                    }
-                    Console.WriteLine($"Filled addresses from 0x{start:X8} to 0x{end:X8} with value {val}.");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error writing memory: {ex.Message}");
-                }
-            }
-            else if (cmd == "search-value")
-            {
-                byte[] data = File.ReadAllBytes(args[1]);
-                int targetVal = Convert.ToInt32(args[2]);
-                int size = args.Length > 3 ? int.Parse(args[3]) : 1;
-                int rangeStart = args.Length > 4 ? Convert.ToInt32(args[4].Replace("0x", ""), 16) : 0;
-                int rangeEnd = args.Length > 5 ? Convert.ToInt32(args[5].Replace("0x", ""), 16) : data.Length - size;
-                int count = 0;
-                for (int i = rangeStart; i < rangeEnd; i++)
-                {
-                    int val = size == 2 ? BitConverter.ToInt16(data, i) : data[i];
-                    if (val == targetVal)
-                    {
-                        if (count < 200)
-                            Console.WriteLine($"0x{i:X8}: {val}");
-                        count++;
-                    }
-                }
-                Console.WriteLine($"\nTotal matches: {count}");
-            }
-            else if (cmd == "compare-changed")
-            {
-                byte[] d1 = File.ReadAllBytes(args[1]);
-                byte[] d2 = File.ReadAllBytes(args[2]);
-                int newVal = Convert.ToInt32(args[3]);
-                int size = args.Length > 4 ? int.Parse(args[4]) : 1;
-                int rangeStart = args.Length > 5 ? Convert.ToInt32(args[5].Replace("0x", ""), 16) : 0;
-                int rangeEnd = args.Length > 6 ? Convert.ToInt32(args[6].Replace("0x", ""), 16) : d1.Length - size;
-                int count = 0;
-                for (int i = rangeStart; i < rangeEnd; i++)
-                {
-                    int v1 = size == 2 ? BitConverter.ToInt16(d1, i) : d1[i];
-                    int v2 = size == 2 ? BitConverter.ToInt16(d2, i) : d2[i];
-                    if (v1 != v2 && v2 == newVal)
-                    {
-                        if (count < 200)
-                            Console.WriteLine($"0x{i:X8}: {v1} -> {v2}");
-                        count++;
-                    }
-                }
-                Console.WriteLine($"\nTotal matches: {count}");
-            }
-            else if (cmd == "compare-stable")
-            {
-                byte[] d1 = File.ReadAllBytes(args[1]);
-                byte[] d2 = File.ReadAllBytes(args[2]);
-                int targetVal = Convert.ToInt32(args[3]);
-                int size = args.Length > 4 ? int.Parse(args[4]) : 1;
-                int count = 0;
-                for (int i = 0; i < d1.Length - size; i++)
-                {
-                    int v1 = size == 2 ? BitConverter.ToInt16(d1, i) : d1[i];
-                    int v2 = size == 2 ? BitConverter.ToInt16(d2, i) : d2[i];
-                    if (v1 == targetVal && v2 == targetVal)
-                    {
-                        if (count < 200)
-                            Console.WriteLine($"0x{i:X8}: {targetVal} (stable)");
-                        count++;
-                    }
-                }
-                Console.WriteLine($"\nTotal matches: {count}");
-            }
-            else if (cmd == "intersect-changed")
-            {
-                // intersect-changed <f1> <f2> <f3> [size=1] [range-start] [range-end] [max-val]
-                // Finds addresses where: f1 == f3 (returned to original) AND f1 != f2 (changed in middle)
-                // If max-val is provided, only shows results where 0 <= v1,v2 <= max-val
-                byte[] d1 = File.ReadAllBytes(args[1]);
-                byte[] d2 = File.ReadAllBytes(args[2]);
-                byte[] d3 = File.ReadAllBytes(args[3]);
-                int size = args.Length > 4 ? int.Parse(args[4]) : 1;
-                int rangeStart = args.Length > 5 ? Convert.ToInt32(args[5].Replace("0x", ""), 16) : 0;
-                int rangeEnd = args.Length > 6 ? Convert.ToInt32(args[6].Replace("0x", ""), 16) : d1.Length - size;
-                int maxVal = args.Length > 7 ? int.Parse(args[7]) : int.MaxValue;
-                int count = 0;
-                for (int i = rangeStart; i < rangeEnd; i++)
-                {
-                    int v1 = size == 2 ? BitConverter.ToInt16(d1, i) : d1[i];
-                    int v2 = size == 2 ? BitConverter.ToInt16(d2, i) : d2[i];
-                    int v3 = size == 2 ? BitConverter.ToInt16(d3, i) : d3[i];
-                    if (v1 == v3 && v1 != v2 && v1 >= 0 && v1 <= maxVal && v2 >= 0 && v2 <= maxVal)
-                    {
-                        if (count < 300)
-                            Console.WriteLine($"0x{i:X8}: {v1} -> {v2} -> {v3}");
-                        count++;
-                    }
-                }
-                Console.WriteLine($"\nTotal matches: {count}");
-            }
-            else if (cmd == "dump")
-            {
-                // dump <file.bin> <start-hex> <length>
-                byte[] data = File.ReadAllBytes(args[1]);
-                int start = Convert.ToInt32(args[2].Replace("0x", ""), 16);
-                int len = int.Parse(args[3]);
-                Console.Write($"0x{start:X8}: ");
-                for (int i = 0; i < len && start + i < data.Length; i++)
-                {
-                    Console.Write($"{data[start + i]:X2} ");
-                    if ((i + 1) % 16 == 0) Console.Write($"\n0x{start + i + 1:X8}: ");
-                }
-                Console.WriteLine();
-            }
-            else if (cmd == "analyze-pair")
-            {
-                if (args.Length < 3)
-                {
-                    Console.WriteLine("Usage: analyze-pair <before.bin> <after.bin>");
-                    return;
-                }
-
-                byte[] before = File.ReadAllBytes(args[1]);
-                byte[] after = File.ReadAllBytes(args[2]);
-                if (before.Length != after.Length || before.Length != 2 * 1024 * 1024)
-                {
-                    Console.WriteLine("Snapshots must be 2 MiB PS1 RAM dumps.");
-                    return;
-                }
-
-                AnalyzePair(before, after);
+                Console.Write($"\n0x{start + index + 1:X8}: ");
             }
         }
 
-        static string? FindMainQuestDefinitionsPath()
+        Console.WriteLine();
+    }
+
+    static void RunFill(string[] args)
+    {
+        if (args.Length != 4)
         {
-            string relative = Path.Combine("Backend", "Memory", "Definitions", "Quests", "MainQuestAddresses.json");
-            var roots = new[]
-            {
-                Directory.GetCurrentDirectory(),
-                AppContext.BaseDirectory,
-                Path.GetDirectoryName(typeof(Program).Assembly.Location) ?? ""
-            };
-            foreach (var root in roots.Where(r => !string.IsNullOrEmpty(r)))
-            {
-                var dir = new DirectoryInfo(root);
-                for (int i = 0; i < 8 && dir != null; i++, dir = dir.Parent)
-                {
-                    var candidate = Path.Combine(dir.FullName, relative);
-                    if (File.Exists(candidate))
-                        return candidate;
-                }
-            }
-            return null;
+            Console.WriteLine("Usage: fill <start-hex> <end-hex> <byteValue>");
+            return;
         }
 
-        static void AnalyzePair(byte[] before, byte[] after)
+        int start = Convert.ToInt32(args[1].Replace("0x", ""), 16);
+        int end = Convert.ToInt32(args[2].Replace("0x", ""), 16);
+        byte value = byte.Parse(args[3]);
+
+        var processes = Process.GetProcessesByName("duckstation-qt-x64-ReleaseLTCG");
+        if (processes.Length == 0)
         {
-            const int mapIdAddr = 0x0004B3F8;
-            const int encounterCacheStart = 0x0004B824;
-            const int encounterCacheEnd = 0x0004BB00;
-            const int playerBitsAddr = 0x00048DA0;
-
-            Console.WriteLine("=== Map (should be equal if same area) ===");
-            Console.WriteLine($"MapId @ 0x{mapIdAddr:X8}: 0x{before[mapIdAddr]:X2} -> 0x{after[mapIdAddr]:X2} (0227 = Divermon's Lake when 0x27)");
-
-            Console.WriteLine("\n=== Main quest steps (MainQuestAddresses.json) ===");
-            var questPath = FindMainQuestDefinitionsPath();
-
-            if (questPath == null)
-            {
-                Console.WriteLine("Quest definitions not found (MainQuestAddresses.json).");
-            }
-            else
-            {
-                using var doc = JsonDocument.Parse(File.ReadAllText(questPath));
-                int changed = 0;
-                foreach (var step in doc.RootElement.GetProperty("Steps").EnumerateArray())
-                {
-                    int number = step.GetProperty("Number").GetInt32();
-                    int addr = Convert.ToInt32(step.GetProperty("Address").GetString()!.Replace("0x", ""), 16);
-                    var bitMasks = step.GetProperty("BitMasks")
-                        .EnumerateArray()
-                        .Select(maskElement => Convert.ToByte(maskElement.GetString()!.Replace("0x", ""), 16))
-                        .ToList();
-                    bool was = IsStepDone(before[addr], bitMasks);
-                    bool now = IsStepDone(after[addr], bitMasks);
-                    if (was == now) continue;
-                    changed++;
-                    string masksLabel = bitMasks.Count == 0
-                        ? "raw"
-                        : string.Join("+", bitMasks.Select(mask => $"0x{mask:X2}"));
-                    Console.WriteLine($"Step {number,2}: {(was ? "done" : "open")} -> {(now ? "done" : "open")}  @ 0x{addr:X8} mask {masksLabel}  byte 0x{before[addr]:X2}->0x{after[addr]:X2}");
-                }
-                if (changed == 0)
-                    Console.WriteLine("(no tracked main-quest bits changed)");
-            }
-
-            Console.WriteLine("\n=== Encounter cache fingerprint (RAM pointers, session-specific) ===");
-            int slots = 0;
-            ushort? beforePtr = null;
-            ushort? afterPtr = null;
-            for (int off = encounterCacheStart; off < encounterCacheEnd; off += 4)
-            {
-                ushort ptrBefore = BitConverter.ToUInt16(before, off);
-                ushort ptrAfter = BitConverter.ToUInt16(after, off);
-                byte stageBefore = before[off + 2];
-                byte stageAfter = after[off + 2];
-                if (ptrBefore == ptrAfter && stageBefore == stageAfter) continue;
-                slots++;
-                if (beforePtr == null) { beforePtr = ptrBefore; afterPtr = ptrAfter; }
-                if (slots <= 3)
-                    Console.WriteLine($"0x{off:X8}: ptr 0x{ptrBefore:X4}->0x{ptrAfter:X4}  stage 0x{stageBefore:X2}->0x{stageAfter:X2}");
-            }
-            if (slots > 3)
-                Console.WriteLine($"... {slots} slots changed (same pattern in each)");
-            if (beforePtr.HasValue)
-                Console.WriteLine($"Summary: first slot ptr 0x{beforePtr:X4} -> 0x{afterPtr:X4}  (early pool ~0x28AC, late pool ~0x8942 for Divermon's Lake)");
-
-            Console.WriteLine("\n=== Live RAM hook (Digivice backend) ===");
-            bool step27 = (after[0x00048DBA] & 0x01) != 0;
-            bool step28 = (after[0x0004B3DE] & 0x10) != 0;
-            Console.WriteLine($"Step 27 complete: {step27}");
-            Console.WriteLine($"Step 28 complete: {step28}");
-            Console.WriteLine(step27
-                ? "0227 enemies suggestion: 73 Crabmon, 103 Seadramon (76 Betamon likely out)"
-                : "0227 enemies suggestion: 73 Crabmon, 76 Betamon");
-
-            Console.WriteLine("\n=== Player bits @ 0x48DA0 (volatile, do not use alone) ===");
-            Console.WriteLine($"before: {BitConverter.ToString(before, playerBitsAddr, 8)}");
-            Console.WriteLine($"after:  {BitConverter.ToString(after, playerBitsAddr, 8)}");
+            Console.WriteLine("DuckStation not found.");
+            return;
         }
 
-        static bool IsStepDone(byte rawValue, List<byte> bitMasks)
-        {
-            if (bitMasks.Count == 0)
-            {
-                return rawValue != 0;
-            }
+        string mapName = $"duckstation_{processes[0].Id}";
+        using var memoryMappedFile = MemoryMappedFile.OpenExisting(mapName);
+        using var accessor = memoryMappedFile.CreateViewAccessor();
 
-            foreach (byte bitMask in bitMasks)
+        for (int address = start; address <= end; address++)
+        {
+            accessor.Write(address, value);
+        }
+
+        Console.WriteLine($"Filled addresses from 0x{start:X8} to 0x{end:X8} with value {value}.");
+    }
+
+    static void RunAnalyzePair(string[] args)
+    {
+        if (args.Length < 3)
+        {
+            Console.WriteLine("Usage: analyze-pair <before.bin> <after.bin>");
+            return;
+        }
+
+        byte[] before = SnapshotLoader.Load(args[1]);
+        byte[] after = SnapshotLoader.Load(args[2]);
+        AnalyzePair(before, after);
+    }
+
+    static string? FindMainQuestDefinitionsPath()
+    {
+        string relative = Path.Combine("Backend", "Memory", "Definitions", "Quests", "MainQuestAddresses.json");
+        var roots = new[]
+        {
+            Directory.GetCurrentDirectory(),
+            AppContext.BaseDirectory,
+            Path.GetDirectoryName(typeof(Program).Assembly.Location) ?? ""
+        };
+
+        foreach (var root in roots.Where(root => !string.IsNullOrEmpty(root)))
+        {
+            var directory = new DirectoryInfo(root);
+            for (int depth = 0; depth < 8 && directory != null; depth++, directory = directory.Parent)
             {
-                if ((rawValue & bitMask) == 0)
+                var candidate = Path.Combine(directory.FullName, relative);
+                if (File.Exists(candidate))
                 {
-                    return false;
+                    return candidate;
                 }
             }
-
-            return true;
         }
+
+        return null;
+    }
+
+    static void AnalyzePair(byte[] before, byte[] after)
+    {
+        const int mapIdAddress = 0x0004B3F8;
+        const int encounterCacheStart = 0x0004B824;
+        const int encounterCacheEnd = 0x0004BB00;
+        const int playerBitsAddress = 0x00048DA0;
+
+        Console.WriteLine("=== Map (should be equal if same area) ===");
+        Console.WriteLine($"MapId @ 0x{mapIdAddress:X8}: 0x{before[mapIdAddress]:X2} -> 0x{after[mapIdAddress]:X2} (0227 = Divermon's Lake when 0x27)");
+
+        Console.WriteLine("\n=== Main quest steps (MainQuestAddresses.json) ===");
+        var questPath = FindMainQuestDefinitionsPath();
+
+        if (questPath == null)
+        {
+            Console.WriteLine("Quest definitions not found (MainQuestAddresses.json).");
+        }
+        else
+        {
+            using var document = JsonDocument.Parse(File.ReadAllText(questPath));
+            int changed = 0;
+            foreach (var step in document.RootElement.GetProperty("Steps").EnumerateArray())
+            {
+                int number = step.GetProperty("Number").GetInt32();
+                int address = Convert.ToInt32(step.GetProperty("Address").GetString()!.Replace("0x", ""), 16);
+                var bitMasks = step.GetProperty("BitMasks")
+                    .EnumerateArray()
+                    .Select(maskElement => Convert.ToByte(maskElement.GetString()!.Replace("0x", ""), 16))
+                    .ToList();
+                bool was = IsStepDone(before[address], bitMasks);
+                bool now = IsStepDone(after[address], bitMasks);
+                if (was == now)
+                {
+                    continue;
+                }
+
+                changed++;
+                string masksLabel = bitMasks.Count == 0
+                    ? "raw"
+                    : string.Join("+", bitMasks.Select(mask => $"0x{mask:X2}"));
+                Console.WriteLine($"Step {number,2}: {(was ? "done" : "open")} -> {(now ? "done" : "open")}  @ 0x{address:X8} mask {masksLabel}  byte 0x{before[address]:X2}->0x{after[address]:X2}");
+            }
+
+            if (changed == 0)
+            {
+                Console.WriteLine("(no tracked main-quest bits changed)");
+            }
+        }
+
+        Console.WriteLine("\n=== Encounter cache fingerprint (RAM pointers, session-specific) ===");
+        int slots = 0;
+        ushort? beforePointer = null;
+        ushort? afterPointer = null;
+        for (int offset = encounterCacheStart; offset < encounterCacheEnd; offset += 4)
+        {
+            ushort pointerBefore = BitConverter.ToUInt16(before, offset);
+            ushort pointerAfter = BitConverter.ToUInt16(after, offset);
+            byte stageBefore = before[offset + 2];
+            byte stageAfter = after[offset + 2];
+            if (pointerBefore == pointerAfter && stageBefore == stageAfter)
+            {
+                continue;
+            }
+
+            slots++;
+            if (beforePointer == null)
+            {
+                beforePointer = pointerBefore;
+                afterPointer = pointerAfter;
+            }
+
+            if (slots <= 3)
+            {
+                Console.WriteLine($"0x{offset:X8}: ptr 0x{pointerBefore:X4}->0x{pointerAfter:X4}  stage 0x{stageBefore:X2}->0x{stageAfter:X2}");
+            }
+        }
+
+        if (slots > 3)
+        {
+            Console.WriteLine($"... {slots} slots changed (same pattern in each)");
+        }
+
+        if (beforePointer.HasValue)
+        {
+            Console.WriteLine($"Summary: first slot ptr 0x{beforePointer:X4} -> 0x{afterPointer:X4}  (early pool ~0x28AC, late pool ~0x8942 for Divermon's Lake)");
+        }
+
+        Console.WriteLine("\n=== Live RAM hook (Digivice backend) ===");
+        bool step27 = (after[0x00048DBA] & 0x01) != 0;
+        bool step28 = (after[0x0004B3DE] & 0x10) != 0;
+        Console.WriteLine($"Step 27 complete: {step27}");
+        Console.WriteLine($"Step 28 complete: {step28}");
+        Console.WriteLine(step27
+            ? "0227 enemies suggestion: 73 Crabmon, 103 Seadramon (76 Betamon likely out)"
+            : "0227 enemies suggestion: 73 Crabmon, 76 Betamon");
+
+        Console.WriteLine("\n=== Player bits @ 0x48DA0 (volatile, do not use alone) ===");
+        Console.WriteLine($"before: {BitConverter.ToString(before, playerBitsAddress, 8)}");
+        Console.WriteLine($"after:  {BitConverter.ToString(after, playerBitsAddress, 8)}");
+    }
+
+    static bool IsStepDone(byte rawValue, List<byte> bitMasks)
+    {
+        if (bitMasks.Count == 0)
+        {
+            return rawValue != 0;
+        }
+
+        foreach (byte bitMask in bitMasks)
+        {
+            if ((rawValue & bitMask) == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

@@ -1,7 +1,8 @@
 # RAM Regions
 
-PS1 save RAM: **2 MiB** snapshot. MemoryScanner `compare` focuses on
-**0x00048000 – 0x0004D000** by default.
+PS1 save RAM: **2 MiB** snapshot (`0x0`–`0x1FFFFF`). MemoryScanner `compare` defaults to
+**quest** region (`0x48000`–`0x4D000`); typed commands default to **full** RAM.
+Use `--size 4` for Int32 counters (blast gauge, EXP, Bits).
 
 This file is **incrementally maintained** by the memory-compare skill after
 each investigation. Append new entries; do not remove without strong evidence.

@@ -132,11 +132,18 @@ Rules:
 
 ## MemoryScanner (suggest only — do not run)
 
+Doc: `Tools/MemoryScanner/README.md`. Value sizes: 1=byte, 2=Int16, 4=Int32.
+
 | Command | When to suggest |
 |---------|-----------------|
+| `compare f1 f2 [--region quest]` | Quest flags (byte, bit analysis) |
+| `chain-match f1 f2 ... --values v1,v2,... --size 4` | Counter with known values per snapshot (blast gauge, EXP) |
+| `compare-changed f1 f2 newVal --size N [--old-val prev]` | Value changed to X (optionally from A) |
+| `compare-delta f1 f2 delta --size N` | Known increment between two snapshots |
+| `intersect-changed f1 f2 f3 [--size 1]` | Reversibility (buy → sell, enter → leave) |
+| `search-value file val --size N [--region NAME]` | Find all addresses holding a value |
 | `analyze-pair before after` | Main quest may be involved |
 | `dump file.bin 0xADDR 32` | Inspect bytes around candidate |
-| `intersect-changed f1 f2 f3` | Reversibility (buy → sell, enter → leave) |
 
 ## Additional resources
 

@@ -121,6 +121,16 @@ Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`
 
 ---
 
+## Blast gauge Int32 (confirmed)
+
+| Address | Type | Range | Evidence |
+|---------|------|-------|----------|
+| `0x00042B74` | Int32 | 0–1000 | `chain-match` snapshots `0-blast` / `200-blast` / `400-blast`: `00 00 00 00` → `C8 00 00 00` → `90 01 00 00` |
+
+Use `chain-match --size 4 --region full` for counter hunts; byte-only `compare` will not find this.
+
+---
+
 ## Validation checklist
 
 - **Permanent progress**: reload save — flag persists
