@@ -62,3 +62,4 @@ To build this, I used public that from the game that is available along many lin
 - **ENTENDA AS FRAQUEZAS E TOLERÂNCIAS NO DIGIMON WORLD 3**: [Battle Dice](https://www.youtube.com/watch?v=6UbWt7AyHMI)
 - **Digimon World 3 – Item List**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/24593)
 - **Digimon World 3 – FAQ (European)**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/21889)
+- **Digimon World 3 – Guides and FAQs**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/16028-underground-seabed-map)

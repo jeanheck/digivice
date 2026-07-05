@@ -459,6 +459,67 @@
       "128"
     ]
   },
+  "0247": {
+    "image": "South Badland",
+    "enemies": [
+      "105",
+      "106"
+    ]
+  },
+  "0248": {
+    "image": "Noise Desert",
+    "enemies": [
+      "191",
+      "185"
+    ]
+  },
+  "0249": {
+    "image": "Pelche Oasis",
+    "enemies": [
+      "185",
+      "191"
+    ]
+  },
+  "024A": {
+    "image": "North Badland W",
+    "enemies": [
+      "104",
+      "107",
+      "186"
+    ]
+  },
+  "024B": {
+    "image": "North Badland E",
+    "enemies": [
+      "105",
+      "106"
+    ]
+  },
+  "024C": {
+    "image": "Bullet Valley",
+    "enemies": [
+      "104",
+      "107",
+      "186"
+    ]
+  },
+  "024D": {
+    "image": "Dum Dum Factory",
+    "enemies": [
+      "114",
+      "115",
+      "116",
+      "117"
+    ]
+  },
+  "0257": {
+    "image": "Noise Desert (South)",
+    "enemies": [
+      "110",
+      "191",
+      "193"
+    ]
+  },
   "02E0": {
     "image": "Seabed 0",
     "enemies": [
@@ -467,6 +528,18 @@
   },
   "02E2": {
     "image": "Seabed 2",
+    "enemies": [
+      "98"
+    ]
+  },
+  "02E3": {
+    "image": "Seabed 3",
+    "enemies": [
+      "98"
+    ]
+  },
+  "02E6": {
+    "image": "Seabed 6",
     "enemies": [
       "98"
     ]
