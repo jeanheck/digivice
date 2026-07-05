@@ -442,6 +442,38 @@
             "locationTarget": "Digi-Ovo da Sinceridade"
           }
         }
+      },
+      "44": {
+        "description": "Vá em direção a cidade byakko",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "45": {
+        "description": "Desafie o Líder de Byakko",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "46": {
+        "description": "Fale com o soldado",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "47": {
+        "description": "Vá para a saída onde o Nunemon está",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
       }
     }
   }

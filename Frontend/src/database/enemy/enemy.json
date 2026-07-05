@@ -123,7 +123,7 @@
         "dvxp": 32,
         "exp": 325,
         "bits": 500,
-        "boss": false,
+        "boss": true,
         "dropId": null,
         "regularAttackId": "machineElement",
         "techniqueId": "atomicRay"
@@ -166,7 +166,7 @@
         "dvxp": 32,
         "exp": 320,
         "bits": 740,
-        "boss": false,
+        "boss": true,
         "dropId": null,
         "regularAttackId": "noElement",
         "techniqueId": "none"

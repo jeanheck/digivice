@@ -512,12 +512,90 @@
       "117"
     ]
   },
+  "024E": {
+    "image": "Duct Room",
+    "enemies": [
+      "112"
+    ]
+  },
+  "024F": {
+    "image": "Duct Room",
+    "enemies": [
+      "112"
+    ]
+  },
+  "0250": {
+    "image": "Duct Room",
+    "enemies": [
+      "112"
+    ]
+  },
+  "0251": {
+    "image": "Duct Room",
+    "enemies": [
+      "112"
+    ]
+  },
+  "0252": {
+    "image": "Operation Room",
+    "enemies": [
+      "14",
+      "117"
+    ]
+  },
+  "0253": {
+    "image": "Secret Stairs",
+    "enemies": [
+      "112",
+      "117"
+    ]
+  },
+  "0254": {
+    "image": "Sewers",
+    "enemies": [
+      "15",
+      "118",
+      "119"
+    ]
+  },
+  "0255": {
+    "image": "Secret Room",
+    "enemies": [
+    ]
+  },
   "0257": {
     "image": "Noise Desert (South)",
     "enemies": [
       "110",
       "191",
       "193"
+    ]
+  },
+  "0258": {
+    "image": "Mobius Desert",
+    "enemies": [
+    ]
+  },
+  "0259": {
+    "image": "Mobius Desert 2",
+    "enemies": [
+    ]
+  },
+  "025A": {
+    "image": "Mirage Tower",
+    "enemies": [
+      "110",
+      "193"
+    ]
+  },
+  "025B": {
+    "image": "Mirage Hall",
+    "enemies": [
+    ]
+  },
+  "025C": {
+    "image": "Mirage Room",
+    "enemies": [
     ]
   },
   "025D": {

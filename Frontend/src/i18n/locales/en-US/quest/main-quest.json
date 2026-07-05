@@ -442,6 +442,38 @@
             "locationTarget": "Digi-Egg of Sincerity"
           }
         }
+      },
+      "44": {
+        "description": "Step 44",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "45": {
+        "description": "Step 44",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "46": {
+        "description": "Step 44",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "47": {
+        "description": "Step 44",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
       }
     }
   }

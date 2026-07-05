@@ -308,6 +308,34 @@
             "BitMasks": [
                 "0x01"
             ]
+        },
+        {
+            "Number": 44,
+            "Address": "0x0004B3DF",
+            "BitMasks": [
+                "0x10"
+            ]
+        },
+        {
+            "Number": 45,
+            "Address": "0x0004B3E1",
+            "BitMasks": [
+                "0x40"
+            ]
+        },
+        {
+            "Number": 46,
+            "Address": "0x0004B3AC",
+            "BitMasks": [
+                "0x08"
+            ]
+        },
+        {
+            "Number": 47,
+            "Address": "0x0004B3E2",
+            "BitMasks": [
+                "0x01"
+            ]
         }
     ]
 }
