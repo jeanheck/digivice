@@ -63,3 +63,4 @@ To build this, I used public that from the game that is available along many lin
 - **Digimon World 3 – Item List**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/24593)
 - **Digimon World 3 – FAQ (European)**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/21889)
 - **Digimon World 3 – Guides and FAQs**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/16028-underground-seabed-map)
+- **Digimon World 3 – Detonado Completo (Guia Passo a Passo)**: [revolutionarena](https://revolutionarena.com/pt-br/digimon-world-3-detonado-completo-guia-passo-a-passo/)

@@ -520,6 +520,26 @@
       "193"
     ]
   },
+  "025D": {
+    "image": "Byakko City",
+    "enemies": [
+    ]
+  },
+  "025E": {
+    "image": "Byakko Dome",
+    "enemies": [
+    ]
+  },
+  "025F": {
+    "image": "Storage Room",
+    "enemies": [
+    ]
+  },
+  "0260": {
+    "image": "Underground Cave",
+    "enemies": [
+    ]
+  },
   "02E0": {
     "image": "Seabed 0",
     "enemies": [
