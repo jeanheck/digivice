@@ -34,6 +34,7 @@
         "slyphStorm": "Slyph Storm (Magic-Wind)",
         "darknessChaos": "Darkness Chaos (Magic-Dark)",
         "flameSphere": "Flame Sphere (Magic-Fire)",
-        "berserkSword": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)"
+        "berserkSword": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
+        "heartBreakAttack": "Heart Break Attack (Magic, Lowers Enemy Strength)"
     }
 }

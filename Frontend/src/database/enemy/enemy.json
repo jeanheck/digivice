@@ -124,7 +124,7 @@
         "exp": 325,
         "bits": 500,
         "boss": true,
-        "dropId": null,
+        "dropId": "rustyRifle",
         "regularAttackId": "machineElement",
         "techniqueId": "atomicRay"
     },
@@ -168,8 +168,8 @@
         "bits": 740,
         "boss": true,
         "dropId": null,
-        "regularAttackId": "noElement",
-        "techniqueId": "none"
+        "regularAttackId": "darkElement",
+        "techniqueId": "heartBreakAttack"
     },
     "20": {
         "name": "Zanbamon",
@@ -5160,7 +5160,7 @@
         "techniqueId": "none"
     },
     "185": {
-        "name": "Dokugumon (brown)",
+        "name": "Dokugumon(Brown)",
         "level": 21,
         "hp": 624,
         "mp": 9999,
@@ -5199,7 +5199,7 @@
         "bits": 210,
         "boss": false,
         "dropId": "spiderWeb",
-        "regularAttackId": "noElement",
+        "regularAttackId": "noElementChanceOfPoison",
         "techniqueId": "none"
     },
     "186": {
@@ -5418,7 +5418,7 @@
         "techniqueId": "none"
     },
     "191": {
-        "name": "Airdramon (gold)",
+        "name": "Airdramon(Gold)",
         "level": 21,
         "hp": 624,
         "mp": 9999,
@@ -5504,7 +5504,7 @@
         "techniqueId": "none"
     },
     "193": {
-        "name": "Kokatorimon (brown)",
+        "name": "Kokatorimon(Brown)",
         "level": 22,
         "hp": 648,
         "mp": 9999,

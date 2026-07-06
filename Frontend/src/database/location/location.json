@@ -566,8 +566,6 @@
   "0257": {
     "image": "Noise Desert (South)",
     "enemies": [
-      "110",
-      "191",
       "193"
     ]
   },

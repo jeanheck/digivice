@@ -3,18 +3,18 @@
         "necromist": "Névoa da Morte (Físico, Chance de Envenenamento)",
         "madPump": "Mad Pump (Físico, Água)",
         "masterFire": "Fogo Mestre (Fogo)",
-        "atomicRay": "Atomic Ray (Mágica, Máquina, Chance de KO)",
+        "atomicRay": "Raio Atômico (Mágica, Máquina, Chance de nocaute)",
         "none": "Nenhum",
         "energySuck": "Energy Suck (Mágica)",
         "airBlast": "Air Blast (Mágica, Vento)",
         "confuseGas": "Gás Confuso (Mágica, Chance de Confundir)",
         "divineRain": "Chuva Divina (Mágica, Água)",
-        "smallHeal": "Small Heal (Heal a small portion of HP)",
+        "smallHeal": "Cura Pequena",
         "doubleGuard": "Double Guard (Raises Defense)",
-        "thunderbolt": "Thunderbolt (Mágica, Trovão)",
-        "thunderGemini": "Thunder Gemini (Mágica, Trovão)",
-        "speedUp": "Speed Up (Raises Speed)",
-        "magicMissile": "Magic Missile (Magic-Machine), Slow Down (Decrease Enemy Speed)",
+        "thunderbolt": "Meteóro Elétrico (Mágica, Trovão)",
+        "thunderGemini": "Trovão Gêmeo (Mágica, Trovão)",
+        "speedUp": "Velocidade Acima (Aumenta velocidade)",
+        "magicMissile": "Míssil Mágico(Mágica, Máquina)",
         "paralyzeShock": "Paralyze Shock (Magic, Chance of Freeze)",
         "twinMissile": "Twin Missile (Magic-Machine)",
         "lovelyCharm": "Lovely Charm (Decreases Enemy Strength)",
@@ -34,6 +34,7 @@
         "slyphStorm": "Slyph Storm (Mágica, Vento)",
         "darknessChaos": "Darkness Chaos (Mágica, Trevas)",
         "flameSphere": "Flame Sphere (Mágica, Fogo)",
-        "berserkSword": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)"
+        "berserkSword": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
+        "heartBreakAttack": "Ataque da Paixão (Mágica, Diminui a força)"
     }
 }
