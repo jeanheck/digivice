@@ -574,11 +574,17 @@
   "0258": {
     "image": "Mobius Desert",
     "enemies": [
+      "110",
+      "111",
+      "193"
     ]
   },
   "0259": {
     "image": "Mobius Desert 2",
     "enemies": [
+      "110",
+      "111",
+      "193"
     ]
   },
   "025A": {

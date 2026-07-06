@@ -1021,6 +1021,176 @@
                 }
             ],
             "requisites": []
+        },
+        "48": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "49": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "50": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "51": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "52": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "53": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "54": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "55": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "56": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "57": {
+            "location": "0235",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0236",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
         }
     }
 }

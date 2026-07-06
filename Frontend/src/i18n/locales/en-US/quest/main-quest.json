@@ -444,7 +444,7 @@
         }
       },
       "44": {
-        "description": "Step 44",
+        "description": "Head towards Byakko City",
         "locations": {
           "0": {
             "locationTarget": "Something"
@@ -452,7 +452,7 @@
         }
       },
       "45": {
-        "description": "Step 44",
+        "description": "Challenge Leader Byakko in Byakko City",
         "locations": {
           "0": {
             "locationTarget": "Something"
@@ -460,7 +460,7 @@
         }
       },
       "46": {
-        "description": "Step 44",
+        "description": "Find someone to help you get out of the Underground Cave",
         "locations": {
           "0": {
             "locationTarget": "Something"
@@ -468,7 +468,87 @@
         }
       },
       "47": {
-        "description": "Step 44",
+        "description": "Find a way out of the Underground Cave",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "48": {
+        "description": "Challenge the true Byakko Leader in the Mirage Tower",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "49": {
+        "description": "Enter the Dum Dum Factory",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "50": {
+        "description": "Chase down Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "51": {
+        "description": "Enter Piping Room 01",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "52": {
+        "description": "Keep chasing Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "53": {
+        "description": "Don't give up! Go after Numemon!",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "54": {
+        "description": "Does he never get tired? Follow Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "55": {
+        "description": "Go up the stairs behind Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "56": {
+        "description": "Challenge HiAndromon to continue your search for Numemon.",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "57": {
+        "description": "Protect Lisa from WaruMonzaemon in the sewers.",
         "locations": {
           "0": {
             "locationTarget": "Something"

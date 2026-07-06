@@ -5117,7 +5117,7 @@
         "techniqueId": "none"
     },
     "184": {
-        "name": "Yanmamon (green)",
+        "name": "Yanmamon(Green)",
         "level": 8,
         "hp": 312,
         "mp": 9999,
@@ -5203,7 +5203,7 @@
         "techniqueId": "none"
     },
     "186": {
-        "name": "Goburimon (red)",
+        "name": "Goburimon(Red)",
         "level": 22,
         "hp": 648,
         "mp": 9999,
@@ -5332,7 +5332,7 @@
         "techniqueId": "none"
     },
     "189": {
-        "name": "Woodmon (green)",
+        "name": "Woodmon(Green)",
         "level": 19,
         "hp": 576,
         "mp": 9999,
@@ -5891,7 +5891,7 @@
         "techniqueId": "none"
     },
     "202": {
-        "name": "Numemon (blue)",
+        "name": "Numemon(Blue)",
         "level": 31,
         "hp": 864,
         "mp": 9999,

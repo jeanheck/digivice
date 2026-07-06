@@ -444,7 +444,7 @@
         }
       },
       "44": {
-        "description": "Vá em direção a cidade byakko",
+        "description": "Vá em direção à Cidade Byakko",
         "locations": {
           "0": {
             "locationTarget": "Something"
@@ -452,7 +452,7 @@
         }
       },
       "45": {
-        "description": "Desafie o Líder de Byakko",
+        "description": "Desafie o Líder Byakko na Cidade Byakko",
         "locations": {
           "0": {
             "locationTarget": "Something"
@@ -460,7 +460,7 @@
         }
       },
       "46": {
-        "description": "Fale com o soldado",
+        "description": "Procure alguém para te ajudar a sair da Caverna Subterrânea",
         "locations": {
           "0": {
             "locationTarget": "Something"
@@ -468,7 +468,87 @@
         }
       },
       "47": {
-        "description": "Vá para a saída onde o Nunemon está",
+        "description": "Busque uma maneira de sair da Caverna Subterrânea",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "48": {
+        "description": "Desafie o verdadeiro Líder Byakko na Torre Miragem",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "49": {
+        "description": "Entre na Fábrica Dum Dum",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "50": {
+        "description": "Persiga o Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "51": {
+        "description": "Entre na Sala de Tubulação 01",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "52": {
+        "description": "Continue perseguindo o Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "53": {
+        "description": "Não desista! Vá atrás do Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "54": {
+        "description": "Ele não cansa nunca? Siga Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "55": {
+        "description": "Suba as escadas atrás de Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "56": {
+        "description": "Desafie HiAndromon para continuar sua busca pelo Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Something"
+          }
+        }
+      },
+      "57": {
+        "description": "Proteja a Lisa contra WaruMonzaemon nos Esgotos",
         "locations": {
           "0": {
             "locationTarget": "Something"

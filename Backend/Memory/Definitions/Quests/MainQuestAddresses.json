@@ -336,6 +336,76 @@
             "BitMasks": [
                 "0x01"
             ]
+        },
+        {
+            "Number": 48,
+            "Address": "0x0004B3E5",
+            "BitMasks": [
+                "0x40"
+            ]
+        },
+        {
+            "Number": 49,
+            "Address": "0x0004B3E5",
+            "BitMasks": [
+                "0x10"
+            ]
+        },
+        {
+            "Number": 50,
+            "Address": "0x0004B3E2",
+            "BitMasks": [
+                "0x02"
+            ]
+        },
+        {
+            "Number": 51,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x08"
+            ]
+        },
+        {
+            "Number": 52,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x10"
+            ]
+        },
+        {
+            "Number": 53,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x20"
+            ]
+        },
+        {
+            "Number": 54,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x40"
+            ]
+        },
+        {
+            "Number": 55,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x80"
+            ]
+        },
+        {
+            "Number": 56,
+            "Address": "0x0004B3E5",
+            "BitMasks": [
+                "0x01"
+            ]
+        },
+        {
+            "Number": 57,
+            "Address": "0x0004B3CA",
+            "BitMasks": [
+                "0x20"
+            ]
         }
     ]
 }
