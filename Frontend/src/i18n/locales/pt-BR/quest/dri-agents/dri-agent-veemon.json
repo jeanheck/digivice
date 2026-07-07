@@ -1,0 +1,35 @@
+{
+  "driAgentVeemon": {
+    "title": "Veemon - DRI Bob (1 ~ 30)",
+    "description": "Adicione Veemon ao seu grupo de Digimons",
+    "steps": {
+      "1": {
+        "description": "Procure pelo DRI Bob em Ruínas Protocolo",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Bob"
+          }
+        }
+      },
+      "2": {
+        "description": "Vença Paildramon em batalha para receber o DDNA do Veemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Paildramon"
+          }
+        }
+      },
+      "3": {
+        "description": "Entregue o DDNA do Veemon para DRI Bob",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Bob"
+          }
+        },
+        "requisites": {
+          "guilmonDDNA": "DDNA de Veemon"
+        }
+      }
+    }
+  }
+}

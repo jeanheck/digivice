@@ -29,6 +29,7 @@ Maintained by quest-pattern-frontend skill. Append entries; do not remove withou
 
 - `driAgentGuilmon`
 - `driAgentAgumon`
+- `driAgentVeemon`
 
 ## Palette notes
 

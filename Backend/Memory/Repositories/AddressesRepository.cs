@@ -21,6 +21,7 @@ namespace Backend.Memory.Repositories
         private QuestAddresses? legendaryWeaponMuramasa;
         private QuestAddresses? driAgentGuilmon;
         private QuestAddresses? driAgentAgumon;
+        private QuestAddresses? driAgentVeemon;
         private AuctionAddresses? auctionAddresses;
 
         private T LoadAndCache<T>(ref T? cacheField, string fileName) where T : class, new()
@@ -94,7 +95,8 @@ namespace Backend.Memory.Repositories
         public List<QuestAddresses> GetAllDriAgents() =>
         [
             GetDriAgentGuilmon(),
-            GetDriAgentAgumon()
+            GetDriAgentAgumon(),
+            GetDriAgentVeemon()
         ];
 
         private QuestAddresses GetDriAgentGuilmon() =>
@@ -102,6 +104,9 @@ namespace Backend.Memory.Repositories
 
         private QuestAddresses GetDriAgentAgumon() =>
             LoadAndCache(ref driAgentAgumon, "Quests/DriAgents/AgumonAddresses.json");
+
+        private QuestAddresses GetDriAgentVeemon() =>
+            LoadAndCache(ref driAgentVeemon, "Quests/DriAgents/VeemonAddresses.json");
 
         public AuctionAddresses GetAuctionAddresses() =>
             LoadAndCache(ref auctionAddresses, "AuctionAddresses.json");

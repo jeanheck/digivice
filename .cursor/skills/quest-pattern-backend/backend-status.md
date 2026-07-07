@@ -23,3 +23,4 @@ Maintained by quest-pattern-backend skill. Append entries; do not remove without
 
 - `driAgentGuilmon` — `Quests/DriAgents/GuilmonAddresses.json` (3 steps + `guilmonDDNA` requisite)
 - `driAgentAgumon` — `Quests/DriAgents/AgumonAddresses.json` (3 steps + `agumonDDNA` requisite)
+- `driAgentVeemon` — `Quests/DriAgents/Veemonddresses.json` (3 steps + `veemonDDNA` requisite)

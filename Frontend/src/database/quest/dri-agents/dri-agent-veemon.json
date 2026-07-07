@@ -1,0 +1,61 @@
+{
+    "id": "driAgentVeemon",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "022B",
+            "coordinates": {
+                "x": 90.5,
+                "y": 38.5
+            },
+            "zoomedLocations": [
+                {
+                    "location": "022B",
+                    "coordinates": {
+                        "x": 52,
+                        "y": 79
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "2": {
+            "location": "0233",
+            "coordinates": {
+                "x": 79,
+                "y": 73
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0233",
+                    "coordinates": {
+                        "x": 34,
+                        "y": 47
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "3": {
+            "location": "022B",
+            "coordinates": {
+                "x": 90.5,
+                "y": 38.5
+            },
+            "zoomedLocations": [
+                {
+                    "location": "022B",
+                    "coordinates": {
+                        "x": 52,
+                        "y": 79
+                    }
+                }
+            ],
+            "requisites": [
+                {
+                    "id": "veemonDDNA"
+                }
+            ]
+        }
+    }
+}

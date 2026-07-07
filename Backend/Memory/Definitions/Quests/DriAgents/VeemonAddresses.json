@@ -1,0 +1,26 @@
+{
+    "Id": "driAgentVeemon",
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x0004B38C",
+            "BitMasks": ["0x80"]
+        },
+        {
+            "Number": 2,
+            "Address": "0x0004B3B8",
+            "BitMasks": ["0x02"]
+        },
+        {
+            "Number": 3,
+            "Address": "0x0004A404",
+            "BitMasks": ["0x07"],
+            "Requisites": [
+                {
+                    "Id": "veemonDDNA",
+                    "Address": "0x00048DD3"
+                }
+            ]
+        }
+    ]
+}

@@ -23,6 +23,7 @@ import invincible from "./quest/legendary-weapons/invincible.json";
 import muramasa from "./quest/legendary-weapons/muramasa.json";
 import driAgentGuilmon from "./quest/dri-agents/dri-agent-guilmon.json";
 import driAgentAgumon from "./quest/dri-agents/dri-agent-agumon.json";
+import driAgentVeemon from "./quest/dri-agents/dri-agent-veemon.json";
 import player from "./player.json";
 import party from "./party.json";
 import connection from "./connection.json";
@@ -54,6 +55,7 @@ export default {
   ...muramasa,
   ...driAgentGuilmon,
   ...driAgentAgumon,
+  ...driAgentVeemon,
   ...player,
   ...party,
   ...connection,

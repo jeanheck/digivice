@@ -4,6 +4,7 @@ import InvincibleJson from "@/database/quest/legendary-weapons/invincible.json";
 import MuramasaJson from "@/database/quest/legendary-weapons/muramasa.json";
 import DriAgentGuilmonJson from "@/database/quest/dri-agents/dri-agent-guilmon.json";
 import DriAgentAgumonJson from "@/database/quest/dri-agents/dri-agent-agumon.json";
+import DriAgentVeemonJson from "@/database/quest/dri-agents/dri-agent-veemon.json";
 import TreeBootsJson from "@/database/quest/side-quest/tree-boots.json";
 import FishingPoleJson from "@/database/quest/side-quest/fishing-pole.json";
 import FolderBagJson from "@/database/quest/side-quest/folder-bag.json";
@@ -13,6 +14,7 @@ import type { InvincibleTable } from "@/repositories/tables/quest/legendary-weap
 import type { MuramasaTable } from "@/repositories/tables/quest/legendary-weapons/muramasa.table";
 import type { DriAgentGuilmonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-guilmon.table";
 import type { DriAgentAgumonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-agumon.table";
+import type { DriAgentVeemonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-veemon.table";
 import type { TreeBootsTable } from "@/repositories/tables/quest/side-quest/tree-boots.table";
 import type { FishingPoleTable } from "@/repositories/tables/quest/side-quest/fishing-pole.table";
 import type { FolderBagTable } from "@/repositories/tables/quest/side-quest/folder-bag.table";
@@ -25,6 +27,7 @@ export class QuestRepository {
     private static readonly muramasaTable = MuramasaJson as MuramasaTable;
     private static readonly driAgentGuilmonTable = DriAgentGuilmonJson as DriAgentGuilmonTable;
     private static readonly driAgentAgumonTable = DriAgentAgumonJson as DriAgentAgumonTable;
+    private static readonly driAgentVeemonTable = DriAgentVeemonJson as DriAgentVeemonTable;
     private static readonly treeBootsTable = TreeBootsJson as TreeBootsTable;
     private static readonly fishingPoleTable = FishingPoleJson as FishingPoleTable;
     private static readonly folderBagTable = FolderBagJson as FolderBagTable;
@@ -39,6 +42,6 @@ export class QuestRepository {
         return [this.eternallyTable, this.invincibleTable, this.muramasaTable];
     }
     public static getDriAgentsRaw(): QuestRaw[] {
-        return [this.driAgentGuilmonTable, this.driAgentAgumonTable];
+        return [this.driAgentGuilmonTable, this.driAgentAgumonTable, this.driAgentVeemonTable];
     }
 }
