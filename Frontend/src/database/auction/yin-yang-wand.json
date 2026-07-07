@@ -1,0 +1,10 @@
+{
+    "id": "yinYangWand",
+    "equipmentId": "137",
+    "steps": {
+        "startsWhenComplete": 47,
+        "endsWhenComplete": 48
+    },
+    "price": 2700,
+    "resale": 30000
+}

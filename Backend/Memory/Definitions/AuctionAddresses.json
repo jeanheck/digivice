@@ -12,6 +12,9 @@
         },
         "dramonShield": {
             "BitMask": "0x08"
+        },
+        "yinYangWand": {
+            "BitMask": "0x10"
         }
     }
 }

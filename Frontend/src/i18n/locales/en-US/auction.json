@@ -31,7 +31,8 @@
       "divineBarrier": "interact with the Gondola for the first time (step 6), or participate in the Auction",
       "hazardShield": "recover the Sepkimon mask (step 23), or participate in the auction",
       "sniperShield": "talk to Kail in the Underground Path (step 34), or participate in the auction",
-      "dramonShield": "return to Bios Swamp with the TNT Chip (step 42), or participate in the auction"
+      "dramonShield": "return to Bios Swamp with the TNT Chip (step 42), or participate in the auction",
+      "yinYangWand": "challenge the true Byakko Leader (step 48), or participate in the auction"
     }
   }
 }
