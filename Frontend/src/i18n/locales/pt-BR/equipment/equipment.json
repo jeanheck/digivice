@@ -428,6 +428,10 @@
       "name": "Protetor Potente",
       "note": "Eficiênte e adepto de ataques."
     },
+    "203": {
+      "name": "Protetor Dramon",
+      "note": "Carga de poder lendária do Dramon."
+    },
     "204": {
       "name": "Protetor Mach",
       "note": "Rotação rápida para ataques."
@@ -455,6 +459,10 @@
     "210": {
       "name": "Chifre Elétrico",
       "note": "Chifre que paralisa o corpo."
+    },
+    "211": {
+      "name": "Chifre Dramon",
+      "note": "Chifre lendário com poder de Dramon."
     },
     "212": {
       "name": "Chifre Afiado",
@@ -676,6 +684,10 @@
       "name": "Armadura Kulon",
       "note": "Armadura robusta e resistente."
     },
+    "268": {
+      "name": "Armadura Dramon",
+      "note": "Armadura lendária com o poder de Dramon."
+    },
     "269": {
       "name": "Armadura Ronin",
       "note": "Armadura Ronin lendária."
@@ -727,6 +739,10 @@
     "284": {
       "name": "Escudo Ronin",
       "note": "Escudo do lendário Ronin."
+    },
+    "288": {
+      "name": "Escudo Dramon",
+      "note": "Escudo Dramon de poder lendário."
     },
     "289": {
       "name": "Escudo Cilíndrico",
@@ -856,14 +872,6 @@
       "name": "Cajado Divino",
       "note": null
     },
-    "1016": {
-      "name": "Guarda Dramon",
-      "note": null
-    },
-    "1017": {
-      "name": "Escudo Dramon",
-      "note": null
-    },
     "1019": {
       "name": "Presa Maligna",
       "note": null
@@ -902,14 +910,6 @@
     },
     "1107": {
       "name": "Divine Robe",
-      "note": null
-    },
-    "1109": {
-      "name": "Dramon Armor",
-      "note": null
-    },
-    "1125": {
-      "name": "Dramon Horn",
       "note": null
     },
     "1130": {

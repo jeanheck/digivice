@@ -428,6 +428,10 @@
       "name": "Mighty Guard",
       "note": null
     },
+    "203": {
+      "name": "Dramon Guard",
+      "note": null
+    },
     "204": {
       "name": "Mach Guard",
       "note": null
@@ -454,6 +458,10 @@
     },
     "210": {
       "name": "Shock Horn",
+      "note": null
+    },
+    "211": {
+      "name": "Dramon Horn",
       "note": null
     },
     "212": {
@@ -676,6 +684,10 @@
       "name": "Kulon Armor",
       "note": null
     },
+    "268": {
+      "name": "Dramon Armor",
+      "note": null
+    },
     "269": {
       "name": "Ronin Armor",
       "note": null
@@ -726,6 +738,10 @@
     },
     "284": {
       "name": "Ronin Shield",
+      "note": null
+    },
+    "288": {
+      "name": "Dramon Shield",
       "note": null
     },
     "289": {
@@ -856,14 +872,6 @@
       "name": "Divine Rod",
       "note": null
     },
-    "1016": {
-      "name": "Dramon Guard",
-      "note": null
-    },
-    "1017": {
-      "name": "Dramon Shield",
-      "note": null
-    },
     "1019": {
       "name": "Evil Fang",
       "note": null
@@ -902,14 +910,6 @@
     },
     "1107": {
       "name": "Divine Robe",
-      "note": null
-    },
-    "1109": {
-      "name": "Dramon Armor",
-      "note": null
-    },
-    "1125": {
-      "name": "Dramon Horn",
       "note": null
     },
     "1130": {
