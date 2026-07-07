@@ -18,7 +18,7 @@ When you reach the next sector, many features will still work, but many will be 
 
 ## Before you continue
 
-**This only supports the game Digimon World 2003. It will not work on Digimon World 3.**<br /><br />
+**This only supports the game Digimon World 2003. It will not work on Digimon World 3.**<br />
 
 All the game information used here was taken from many different sources that I found on web (see the Reference Data Credits below). So, as I could have free access to them to do this project, if you are reading this, feel free to get any data that you find here that you think that could be usefull for you develop your things.<br /><br />
 Lastly, but no less importantly, I do not own any legal rights to the game, nor to the Digimon work itself. Even the name "Digivice" it's something from the Digimon context. **All copyrights belong to the respective game developers and the copyright holders of Digimon**. This is just a study project, in which I'm combining a learning experience with a game that marked my childhood.
@@ -43,7 +43,7 @@ Lastly, but no less importantly, I do not own any legal rights to the game, nor 
 
 ## Reference Data Credits
 
-To build this, I used public that from the game that is available along many links around the web. Below you can see the original sources, if you want. </ br>
+To build this, I used public that from the game that is available along many links around the web. Below you can see the original sources, if you want.<br />
 Nothing that I develop would be possible without those people that grinded all those information in the past. So, thanks for all of them.
 
 - **EXP Tables for Digimon**: Data extracted from GameFAQs thread by user Mehdi. [Link here](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/64473556)
