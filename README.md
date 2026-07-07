@@ -43,7 +43,7 @@ Lastly, but no less importantly, I do not own any legal rights to the game, nor 
 
 ## Reference Data Credits
 
-To build this, I used public that from the game that is available along many links around the web. Below you can see the original sources, if you want.<br />
+To build this, I used public that from the game that is available along many links around the web. Below you can see the original sources, if you want.
 Nothing that I develop would be possible without those people that grinded all those information in the past. So, thanks for all of them.
 
 - **EXP Tables for Digimon**: Data extracted from GameFAQs thread by user Mehdi. [Link here](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/64473556)
