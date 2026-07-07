@@ -447,7 +447,7 @@
         "description": "Head towards Byakko City",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Numemon"
           }
         }
       },
@@ -455,7 +455,10 @@
         "description": "Challenge Leader Byakko in Byakko City",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Byakko Dome"
+          },
+          "1": {
+            "locationTarget": "Byakko Leader"
           }
         }
       },
@@ -463,7 +466,7 @@
         "description": "Find someone to help you get out of the Underground Cave",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Byakko Citizen"
           }
         }
       },
@@ -471,7 +474,7 @@
         "description": "Find a way out of the Underground Cave",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Exit"
           }
         }
       },
@@ -479,7 +482,13 @@
         "description": "Challenge the true Byakko Leader in the Mirage Tower",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Mirage Hall"
+          },
+          "1": {
+            "locationTarget": "Mirage Room"
+          },
+          "2": {
+            "locationTarget": "Byakko Leader"
           }
         }
       },
@@ -487,7 +496,7 @@
         "description": "Enter the Dum Dum Factory",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Enter the factory"
           }
         }
       },
@@ -495,7 +504,7 @@
         "description": "Chase down Numemon",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Numemon"
           }
         }
       },
@@ -503,7 +512,7 @@
         "description": "Enter Piping Room 01",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Duct Room 1"
           }
         }
       },
@@ -511,7 +520,7 @@
         "description": "Keep chasing Numemon",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Numemon"
           }
         }
       },
@@ -519,7 +528,7 @@
         "description": "Don't give up! Go after Numemon!",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Numemon"
           }
         }
       },
@@ -527,7 +536,7 @@
         "description": "Does he never get tired? Follow Numemon",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Numemon"
           }
         }
       },
@@ -535,7 +544,7 @@
         "description": "Go up the stairs behind Numemon",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Numemon"
           }
         }
       },
@@ -543,7 +552,10 @@
         "description": "Challenge HiAndromon to continue your search for Numemon.",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Operation Room"
+          },
+          "1": {
+            "locationTarget": "HiAndromon"
           }
         }
       },
@@ -551,7 +563,13 @@
         "description": "Protect Lisa from WaruMonzaemon in the sewers.",
         "locations": {
           "0": {
-            "locationTarget": "Something"
+            "locationTarget": "Secret Stairs"
+          },
+          "1": {
+            "locationTarget": "Sewers"
+          },
+          "2": {
+            "locationTarget": "Lisa"
           }
         }
       }

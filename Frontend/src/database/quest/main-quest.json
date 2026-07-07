@@ -955,238 +955,280 @@
             "requisites": []
         },
         "44": {
-            "location": "0235",
+            "location": "0248",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 21.5,
+                "y": 72
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "0248",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 15,
+                        "y": 26
                     }
                 }
             ],
             "requisites": []
         },
         "45": {
-            "location": "0235",
+            "location": "025D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18.5,
+                "y": 59
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "025D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 75,
+                        "y": 12
+                    }
+                },
+                {
+                    "location": "025E",
+                    "coordinates": {
+                        "x": 40,
+                        "y": 26.5
                     }
                 }
             ],
             "requisites": []
         },
         "46": {
-            "location": "0235",
+            "location": "025D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18.5,
+                "y": 59
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "0260",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 31,
+                        "y": 21
                     }
                 }
             ],
             "requisites": []
         },
         "47": {
-            "location": "0235",
+            "location": "025D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18.5,
+                "y": 59
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "0260",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 91,
+                        "y": 45
                     }
                 }
             ],
             "requisites": []
         },
         "48": {
-            "location": "0235",
+            "location": "025A",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 12.5,
+                "y": 84.5
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "025A",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 66,
+                        "y": 32
+                    }
+                },
+                {
+                    "location": "025B",
+                    "coordinates": {
+                        "x": 40,
+                        "y": 16
+                    }
+                },
+                {
+                    "location": "025C",
+                    "coordinates": {
+                        "x": 65.5,
+                        "y": 19.5
                     }
                 }
             ],
             "requisites": []
         },
         "49": {
-            "location": "0235",
+            "location": "024D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18,
+                "y": 38
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "024D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 7,
+                        "y": 89
                     }
                 }
             ],
             "requisites": []
         },
         "50": {
-            "location": "0235",
+            "location": "024D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18,
+                "y": 38
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "024D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 35.5,
+                        "y": 60
                     }
                 }
             ],
             "requisites": []
         },
         "51": {
-            "location": "0235",
+            "location": "024D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18,
+                "y": 38
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "024D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 62.5,
+                        "y": 75
                     }
                 }
             ],
             "requisites": []
         },
         "52": {
-            "location": "0235",
+            "location": "024D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18,
+                "y": 38
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "024D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 45.5,
+                        "y": 28.5
                     }
                 }
             ],
             "requisites": []
         },
         "53": {
-            "location": "0235",
+            "location": "024D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18,
+                "y": 38
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "024D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 76,
+                        "y": 59.5
                     }
                 }
             ],
             "requisites": []
         },
         "54": {
-            "location": "0235",
+            "location": "024D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18,
+                "y": 38
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "024D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 86,
+                        "y": 41
                     }
                 }
             ],
             "requisites": []
         },
         "55": {
-            "location": "0235",
+            "location": "024D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18,
+                "y": 38
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "024D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 45.5,
+                        "y": 41
                     }
                 }
             ],
             "requisites": []
         },
         "56": {
-            "location": "0235",
+            "location": "024D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18,
+                "y": 38
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "024D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 78,
+                        "y": 19.5
+                    }
+                },
+                {
+                    "location": "0252",
+                    "coordinates": {
+                        "x": 73,
+                        "y": 23
                     }
                 }
             ],
             "requisites": []
         },
         "57": {
-            "location": "0235",
+            "location": "024D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 18,
+                "y": 38
             },
             "zoomedLocations": [
                 {
-                    "location": "0236",
+                    "location": "024D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 8,
+                        "y": 46
+                    }
+                },
+                {
+                    "location": "0253",
+                    "coordinates": {
+                        "x": 18,
+                        "y": 73.5
+                    }
+                },
+                {
+                    "location": "0254",
+                    "coordinates": {
+                        "x": 48.5,
+                        "y": 41.5
                     }
                 }
             ],
