@@ -1121,6 +1121,30 @@
                 {
                     "location": "024D",
                     "coordinates": {
+                        "x": 62.5,
+                        "y": 75
+                    }
+                },
+                {
+                    "location": "024E",
+                    "coordinates": {
+                        "x": 59,
+                        "y": 61
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "53": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
                         "x": 45.5,
                         "y": 28.5
                     }
@@ -1128,7 +1152,31 @@
             ],
             "requisites": []
         },
-        "53": {
+        "54": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 57,
+                        "y": 19
+                    }
+                },
+                {
+                    "location": "024E",
+                    "coordinates": {
+                        "x": 59,
+                        "y": 61
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "55": {
             "location": "024D",
             "coordinates": {
                 "x": 18,
@@ -1145,7 +1193,31 @@
             ],
             "requisites": []
         },
-        "54": {
+        "56": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 91,
+                        "y": 60
+                    }
+                },
+                {
+                    "location": "024E",
+                    "coordinates": {
+                        "x": 59,
+                        "y": 61
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "57": {
             "location": "024D",
             "coordinates": {
                 "x": 18,
@@ -1162,7 +1234,31 @@
             ],
             "requisites": []
         },
-        "55": {
+        "58": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 75,
+                        "y": 35
+                    }
+                },
+                {
+                    "location": "024E",
+                    "coordinates": {
+                        "x": 59,
+                        "y": 61
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "59": {
             "location": "024D",
             "coordinates": {
                 "x": 18,
@@ -1179,7 +1275,7 @@
             ],
             "requisites": []
         },
-        "56": {
+        "60": {
             "location": "024D",
             "coordinates": {
                 "x": 18,
@@ -1203,7 +1299,7 @@
             ],
             "requisites": []
         },
-        "57": {
+        "61": {
             "location": "024D",
             "coordinates": {
                 "x": 18,

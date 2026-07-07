@@ -509,7 +509,7 @@
         }
       },
       "51": {
-        "description": "Enter Piping Room 01",
+        "description": "Enter Duct Room 01",
         "locations": {
           "0": {
             "locationTarget": "Duct Room 1"
@@ -517,6 +517,17 @@
         }
       },
       "52": {
+        "description": "Open the box on the Duct Room 1",
+        "locations": {
+          "0": {
+            "locationTarget": "Duct Room 1"
+          },
+          "1": {
+            "locationTarget": "Box"
+          }
+        }
+      },
+      "53": {
         "description": "Keep chasing Numemon",
         "locations": {
           "0": {
@@ -524,7 +535,18 @@
           }
         }
       },
-      "53": {
+      "54": {
+        "description": "Open the box on the Duct Room 4",
+        "locations": {
+          "0": {
+            "locationTarget": "Duct Room 4"
+          },
+          "1": {
+            "locationTarget": "Box"
+          }
+        }
+      },
+      "55": {
         "description": "Don't give up! Go after Numemon!",
         "locations": {
           "0": {
@@ -532,7 +554,18 @@
           }
         }
       },
-      "54": {
+      "56": {
+        "description": "Open the box on the Duct Room 2",
+        "locations": {
+          "0": {
+            "locationTarget": "Duct Room 2"
+          },
+          "1": {
+            "locationTarget": "Box"
+          }
+        }
+      },
+      "57": {
         "description": "Does he never get tired? Follow Numemon",
         "locations": {
           "0": {
@@ -540,16 +573,27 @@
           }
         }
       },
-      "55": {
-        "description": "Go up the stairs behind Numemon",
+      "58": {
+        "description": "Open the box on the Duct Room 3",
+        "locations": {
+          "0": {
+            "locationTarget": "Duct Room 3"
+          },
+          "1": {
+            "locationTarget": "Box"
+          }
+        }
+      },
+      "59": {
+        "description": "Go to the center of the factory to look for Numemon",
         "locations": {
           "0": {
             "locationTarget": "Numemon"
           }
         }
       },
-      "56": {
-        "description": "Challenge HiAndromon to continue your search for Numemon.",
+      "60": {
+        "description": "Ask HiAndromon for information about Numemon inside the Operations Room",
         "locations": {
           "0": {
             "locationTarget": "Operation Room"
@@ -559,8 +603,8 @@
           }
         }
       },
-      "57": {
-        "description": "Protect Lisa from WaruMonzaemon in the sewers.",
+      "61": {
+        "description": "Head to the Sewers to find Numemon",
         "locations": {
           "0": {
             "locationTarget": "Secret Stairs"
@@ -569,7 +613,7 @@
             "locationTarget": "Sewers"
           },
           "2": {
-            "locationTarget": "Lisa"
+            "locationTarget": "Numemon"
           }
         }
       }
