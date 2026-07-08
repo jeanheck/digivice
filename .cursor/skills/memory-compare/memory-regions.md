@@ -17,6 +17,21 @@ each investigation. Append new entries; do not remove without strong evidence.
 | 0x00048DA0 | Player bits (money etc.) | PlayerAddresses.json — **volatile** |
 | 0x0004B3F8 | MapId | PlayerAddresses.json — changes on map transition |
 
+See also **Map / location** for seabed routing fields.
+
+## Map / location
+
+| Address | Field | Source |
+|---------|-------|--------|
+| 0x0004B3F8 | Current MapId | PlayerAddresses.json |
+| 0x0004B400 | PreviousMapId (rolling) | seabed-routing investigation — map just left on each transition |
+| 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
+| 0x00048D68 | PreviousMapId mirror (player block) | seabed-routing investigation — mirrors `0x4B400` |
+| 0x00048D78 | Seabed route context | seabed-routing investigation — set on dive, persists underwater |
+| 0x00048D7A | Submerged session flag (`0x01` = underwater) | seabed-routing investigation |
+
+Details: [seabed-routing-investigation.md](seabed-routing-investigation.md).
+
 ## Party
 
 | Address | Field | Source |
@@ -88,6 +103,8 @@ Diffs here are expected after battles; usually not quest flags.
 |-------|---------|--------|
 | 0x0004B824 – 0x0004BB00 | Encounter cache (session pointers) | Program.cs analyze-pair |
 | 0x00044xxx | Coordinates / animations | MemoryScanner compare filter |
+| 0x00048D6C – 0x00048D84 | Player spawn / facing on map transition | seabed-routing investigation |
+| 0x0004B618 – 0x0004B653 | Entity pointer table (map load) | seabed-routing investigation |
 | 0x00048DA0 | Player bits — money/spend | DivineBarrierAddresses.txt |
 | ASCII runs (0x20, 0x73…) | Dialog/text buffers | Muramasa investigation |
 
@@ -101,6 +118,7 @@ Diffs here are expected after battles; usually not quest flags.
 | Legendary weapon | 0x4B38E | Sequential power-of-two bit |
 | DRI agent | 0x4B38C, 0x4B3B7, 0x4A7xx | Per-agent bit on shared bytes |
 | Map change | 0x4B3F8 (MapId) | Byte value change |
+| Map / seabed routing | 0x4B3F8, 0x4B400, 0x48D78, 0x48D7A | MapId + route context on dive; see seabed-routing-investigation.md |
 | Digimon stats | ~0x494xxx | Multi-byte numeric deltas |
 | Common item possession | ~0x48ECx | Often 0x00 ↔ 0x01 |
 | Auction | 0x4B370, 0x4B38A | Bit flags, story window |

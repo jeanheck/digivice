@@ -131,6 +131,54 @@ Use `chain-match --size 4 --region full` for counter hunts; byte-only `compare` 
 
 ---
 
+## Seabed underwater routing (confirmed)
+
+Seabed maps (`02Ex`) are **shared** across surface routes. `MapId` alone cannot
+identify which route or exit applies.
+
+Full method and evidence: [seabed-routing-investigation.md](seabed-routing-investigation.md).
+
+### Rolling PreviousMapId — `0x4B400` (confirmed)
+
+On every map transition, `0x4B400` receives the map the player **just left**:
+
+- First dive: surface entry map (`0x3E` Suzaku, `0x27` Divermon's Lake).
+- Later seabed segments: previous seabed map (`0xE2` after leaving first segment).
+- Emerge: last seabed segment (`0xE0`).
+
+Useful as route hint **only on the first underwater segment**. On shared later
+segments, `0x4B400` is identical across routes.
+
+`0x48D68` mirrors `0x4B400` in the player block. `0x4B410` mirrors current
+`MapId` (`0x4B3F8`).
+
+### Seabed route context — `0x48D78` (confirmed)
+
+- Set once on dive (`0x00` → route value).
+- **Unchanged** while walking between seabed maps on the same session.
+- Cleared on surface emerge (`→ 0x00`).
+- Primary discriminator when two players share the same `MapId` on seabed.
+
+| `0x48D78` | Surface entry | Surface exit |
+|-----------|---------------|--------------|
+| `0x07` | Suzaku City (`023E`) | Suzaku UG Lake (`0241`) |
+| `0x08` | Divermon's Lake (`0227`) | Duel Island (`0228`) |
+
+Table incomplete — more dive points not yet mapped.
+
+### Submerged session flag — `0x48D7A` (confirmed)
+
+`0x01` for the entire underwater session; `0x00` on surface. Indicates
+submerged state, not which route.
+
+### How it was found
+
+Paired `compare` across: (1) dive entry, (2) seabed segment walk, (3) two
+different surface entries through the same seabed corridor, (4) surface emerge.
+Cross-route diff on step 3 isolated `0x48D78` as the persistent route field.
+
+---
+
 ## Validation checklist
 
 - **Permanent progress**: reload save — flag persists
