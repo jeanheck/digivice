@@ -12,12 +12,12 @@ const emit = defineEmits<{
 
 <template>
   <div
-    class="w-16 h-16 bg-[#000e3f] border-2 border-[#00154a] rounded flex flex-col items-center justify-center gap-2 cursor-help"
+    class="w-20 h-6 bg-[#000e3f] border-2 border-[#00154a] rounded flex items-center justify-center gap-0.5 cursor-help"
     @mouseenter="emit('showTooltip', $event)"
     @mousemove="emit('moveTooltip', $event)"
     @mouseleave="emit('hideTooltip')"
   >
-    <span class="text-[2rem] leading-none">🏋️‍♂️</span>
-    <span class="text-[1rem] font-bold text-white">{{ tp }}</span>
+    <span class="inline-flex items-center justify-center leading-none text-[1rem] translate-y-[-1px]">💪</span>
+    <span class="text-[0.8rem] font-bold text-white">{{ tp }}</span>
   </div>
 </template>

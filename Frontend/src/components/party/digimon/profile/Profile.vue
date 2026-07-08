@@ -3,6 +3,7 @@ import { computed, ref } from "vue";
 import ProgressBar from "@/components/party/digimon/profile/ProgressBar.vue";
 import Icon from "@/components/party/digimon/profile/Icon.vue";
 import TrainingPoints from "@/components/party/digimon/profile/TrainingPoints.vue";
+import DigievolutionsButton from "@/components/party/digimon/profile/DigievolutionsButton.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import { ProgressBarConstant } from "@/constants/progress-bar.constant";
@@ -13,6 +14,10 @@ import { useI18n } from "vue-i18n";
 const props = defineProps<{
   digimon: Digimon;
   digimonId: number;
+}>();
+
+const emit = defineEmits<{
+  openDigievolutions: [];
 }>();
 
 const { t } = useI18n();
@@ -30,6 +35,10 @@ function onMoveTooltip(event: MouseEvent): void {
 
 function onHideTooltip(): void {
   hide();
+}
+
+function onOpenDigievolutions(): void {
+  emit("openDigievolutions");
 }
 
 const digimonName = computed(() => {
@@ -58,29 +67,36 @@ const mpPercentage = computed(() => {
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled"></div>
 
-    <div class="dw3-panel-content flex flex-col gap-2 p-3">
-      <div class="flex items-start gap-4">
-        <div class="flex flex-col gap-2">
-          <Icon :digimon-name="digimonName" class="w-16 h-16" />
-          <TrainingPoints
-            :tp="digimon.tp"
-            @show-tooltip="onShowTooltip($event, 'tp')"
-            @move-tooltip="onMoveTooltip"
-            @hide-tooltip="onHideTooltip"
-          />
+    <div class="dw3-panel-content p-2">
+      <div class="grid grid-cols-[auto_1fr] grid-rows-5 gap-x-2 gap-y-1">
+        <div class="col-start-1 row-start-1 row-span-3 w-20">
+          <Icon :digimon-name="digimonName" class="w-full aspect-square" />
         </div>
 
-        <div class="flex-1 flex flex-col gap-1 min-w-0">
-          <div class="flex justify-between items-baseline mb-1">
-            <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimonName }}</h2>
+        <DigievolutionsButton
+          class="col-start-1 row-start-4"
+          @open-digievolutions="onOpenDigievolutions"
+          @show-tooltip="onShowTooltip($event, 'digievolutions')"
+          @move-tooltip="onMoveTooltip"
+          @hide-tooltip="onHideTooltip"
+        />
 
-            <div class="relative flex items-center justify-center shrink-0">
-              <span class="text-[0.6rem] font-medium text-yellow-400">
-                {{ $t("digimon.level") }} {{ digimon.level }}
-              </span>
-            </div>
-          </div>
+        <TrainingPoints
+          class="col-start-1 row-start-5"
+          :tp="digimon.tp"
+          @show-tooltip="onShowTooltip($event, 'tp')"
+          @move-tooltip="onMoveTooltip"
+          @hide-tooltip="onHideTooltip"
+        />
 
+        <div class="col-start-2 row-start-1 flex justify-between items-baseline min-w-0 h-6">
+          <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimonName }}</h2>
+          <span class="text-[0.6rem] font-medium text-yellow-400 shrink-0">
+            Nv {{ digimon.level }}
+          </span>
+        </div>
+
+        <div class="col-start-2 row-start-2 min-w-0 h-6">
           <ProgressBar
             :variant="ProgressBarConstant.experience"
             :current-value="digimon.experience"
@@ -90,7 +106,9 @@ const mpPercentage = computed(() => {
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
+        </div>
 
+        <div class="col-start-2 row-start-3 min-w-0 h-6">
           <ProgressBar
             :variant="ProgressBarConstant.hp"
             :current-value="digimon.vitals.currentHP"
@@ -100,23 +118,15 @@ const mpPercentage = computed(() => {
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
+        </div>
 
+        <div class="col-start-2 row-start-4 min-w-0 h-6">
           <ProgressBar
             :variant="ProgressBarConstant.mp"
             :current-value="digimon.vitals.currentMP"
             :max-value="digimon.vitals.maxMP"
             :percentage="mpPercentage"
             @show-tooltip="onShowTooltip($event, ProgressBarConstant.mp)"
-            @move-tooltip="onMoveTooltip"
-            @hide-tooltip="onHideTooltip"
-          />
-
-          <ProgressBar
-            :variant="ProgressBarConstant.blast"
-            :current-value="50"
-            :max-value="100"
-            :percentage="50"
-            @show-tooltip="onShowTooltip($event, ProgressBarConstant.blast)"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
