@@ -111,7 +111,7 @@ dotnet run -- search-value Snapshots/atual.bin 100 --size 2 --region stats
 ### dump
 
 ```powershell
-dotnet run -- dump Snapshots/atual.bin 0x42B74 8
+dotnet run -- dump Snapshots/atual.bin 0x42B7E 4
 ```
 
 ### analyze-pair

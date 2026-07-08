@@ -123,11 +123,29 @@ Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`
 
 ## Blast gauge Int32 (confirmed)
 
-| Address | Type | Range | Evidence |
-|---------|------|-------|----------|
-| `0x00042B74` | Int32 | 0–1000 | `chain-match` snapshots `0-blast` / `200-blast` / `400-blast`: `00 00 00 00` → `C8 00 00 00` → `90 01 00 00` |
+**Domain (in-game, validated):** each Digimon has its **own** blast gauge (0–1000).
+Not a single global bar. With 3 Digimons in party, each keeps its own value even
+out of battle (no HUD display, but values persist per slot).
 
-Use `chain-match --size 4 --region full` for counter hunts; byte-only `compare` will not find this.
+**Formula:** `address = 0x00042B74 + (2 × rookieId)` — Int32 LE, range 0–1000.
+`rookieId` matches `DigimonsAddresses.json` (`Id` 0–7).
+
+| Address | Digimon | Rookie `Id` | Evidence |
+|---------|---------|-------------|----------|
+| `0x00042B74` | Kotemon | 0 | `chain-match` `0-blast` / `200-blast` / `400-blast` |
+| `0x00042B76` | Kumamon | 1 | derived from formula |
+| `0x00042B78` | Monmon | 2 | derived from formula |
+| `0x00042B7A` | Agumon | 3 | derived from formula |
+| `0x00042B7C` | Veemon | 4 | derived from formula |
+| `0x00042B7E` | Guilmon | 5 | `chain-match` `guilmon_0` … `guilmon_999` |
+| `0x00042B80` | Renamon | 6 | `chain-match` `renamon_0` … `renamon_999` |
+| `0x00042B82` | Patamon | 7 | `chain-match` `patamon_0` … `patamon_999` |
+
+Snapshots: `guilmon_*.bin`, `patamon_*.bin`, `renamon_*.bin` under
+`Tools/MemoryScanner/Snapshots/`.
+
+Use `chain-match --size 4 --region full` for counter hunts; byte-only `compare`
+will not find these (addresses are below quest region `0x48000`).
 
 ---
 

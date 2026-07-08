@@ -91,6 +91,7 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 | Range | Purpose | Notes |
 |-------|---------|-------|
 | ~0x000494xxx | Digimon stat blocks | Battle noise — level, HP, EXP changes |
+| `0x00042B74` + `2 × rookieId` | Blast gauge (Int32, 0–1000, per Digimon) | Confirmed — see known-patterns.md |
 | Offsets | See DigimonStatusAddresses.json | Relative to each digimon base |
 
 Diffs here are expected after battles; usually not quest flags.
