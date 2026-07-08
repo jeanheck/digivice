@@ -31,7 +31,7 @@ function closeDigievolutionGrid(): void {
 </script>
 
 <template>
-  <div class="flex flex-col h-full w-full bg-[#000e3f] p-4 rounded-md shadow-lg border-2 border-[#0033aa] gap-4">
+  <div class="flex flex-col h-full w-full bg-[#000e3f] p-2 rounded-md shadow-lg border-2 border-[#0033aa] gap-2">
     <Profile :digimon="digimon" :digimon-id="digimonId" />
     <Digievolutions
       :slots="digimon.digievolutions"
