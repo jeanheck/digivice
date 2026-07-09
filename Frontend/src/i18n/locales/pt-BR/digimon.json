@@ -9,7 +9,7 @@
     "experience": "Experiência",
     "hp": "HP",
     "mp": "MP",
-    "blast": "Fúria",
+    "blastGauge": "Medidor de Pressão",
     "tp": "Pontos de Treinamento",
     "equipmentSlot": {
       "head": "Cabeça",

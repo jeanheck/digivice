@@ -22,7 +22,7 @@ const barColorClass = computed(() => {
   if (props.variant === ProgressBarConstant.mp) {
     return props.percentage <= 30 ? "bg-yellow-400" : "bg-blue-600";
   }
-  if (props.variant === ProgressBarConstant.blast) {
+  if (props.variant === ProgressBarConstant.blastGauge) {
     return props.percentage <= 30 ? "bg-amber-200" : "bg-amber-200";
   }
 

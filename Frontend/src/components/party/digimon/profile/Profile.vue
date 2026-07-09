@@ -138,11 +138,11 @@ const blastGaugePercentage = computed(() => {
 
         <div class="col-start-2 row-start-5 min-w-0 h-6">
           <ProgressBar
-            :variant="ProgressBarConstant.blast"
+            :variant="ProgressBarConstant.blastGauge"
             :current-value="digimon.blastGauge"
             :max-value="1000"
             :percentage="blastGaugePercentage"
-            @show-tooltip="onShowTooltip($event, ProgressBarConstant.blast)"
+            @show-tooltip="onShowTooltip($event, ProgressBarConstant.blastGauge)"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
