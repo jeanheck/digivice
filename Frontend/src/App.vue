@@ -14,7 +14,7 @@ const blockingError = useAppBlockingError();
 
   <main v-else class="h-screen min-h-0 overflow-hidden bg-transparent p-4 flex flex-col gap-4 max-w-450 mx-auto text-white">
     <div class="flex-1 min-h-0 flex gap-4 overflow-hidden">
-      <div class="flex-3 min-h-0 overflow-hidden">
+      <div class="flex-3 min-h-0 h-full overflow-hidden">
         <Party />
       </div>
 
