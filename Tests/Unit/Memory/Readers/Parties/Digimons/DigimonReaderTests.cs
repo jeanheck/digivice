@@ -11,6 +11,7 @@ using Xunit;
 
 public class DigimonReaderTests
 {
+    private const long BlastGaugeAddress = 0x42B76;
     private static void WriteInt16(byte[] block, int offset, short value)
     {
         var bytes = BitConverter.GetBytes(value);
@@ -109,6 +110,7 @@ public class DigimonReaderTests
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
         memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)3); // ActiveDigievolutionId
+        memoryReaderMock.Setup(m => m.ReadInt16(BlastGaugeAddress)).Returns((short)750);
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
@@ -133,6 +135,7 @@ public class DigimonReaderTests
         Assert.Equal(85000, result.Experience);
         Assert.Equal(45, result.Level);
         Assert.Equal(32, result.TP);
+        Assert.Equal(750, result.BlastGauge);
 
         // Vitals
         Assert.Equal(500, result.Vitals.CurrentHP);
@@ -190,6 +193,7 @@ public class DigimonReaderTests
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
         memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)0);
+        memoryReaderMock.Setup(m => m.ReadInt16(BlastGaugeAddress)).Returns((short)0);
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
@@ -240,6 +244,7 @@ public class DigimonReaderTests
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
         memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)5);
+        memoryReaderMock.Setup(m => m.ReadInt16(BlastGaugeAddress)).Returns((short)200);
 
         var slotResource1 = new DigievolutionSlotResource { Index = 0, DigievolutionId = 12 };
         var slotResource2 = new DigievolutionSlotResource { Index = 1, DigievolutionId = 15 };

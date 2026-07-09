@@ -13,6 +13,7 @@ public class DigimonConverterTests
         {
             Level = 42,
             TP = 20,
+            BlastGauge = 850,
             Experience = 123456,
             ActiveDigievolutionId = 5,
             Vitals = new Vitals { CurrentHP = 101, MaxHP = 202, CurrentMP = 33, MaxMP = 44 },
@@ -39,6 +40,7 @@ public class DigimonConverterTests
 
         Assert.Equal(42, dto.Level.Value);
         Assert.Equal(20, dto.TP.Value);
+        Assert.Equal(850, dto.BlastGauge.Value);
         Assert.Equal(123456, dto.Experience.Value);
         Assert.Equal(5, dto.ActiveDigievolutionId.Value);
         Assert.Equal(101, dto.Vitals.Value!.CurrentHP.Value);

@@ -3,42 +3,50 @@
         {
             "Id": 0,
             "Name": "Kotemon",
-            "Address": "0x0004949C"
+            "Address": "0x0004949C",
+            "BlastGaugeAddress": "0x00042B74"
         },
         {
             "Id": 1,
             "Name": "Kumamon",
-            "Address": "0x00049878"
+            "Address": "0x00049878",
+            "BlastGaugeAddress": "0x00042B76"
         },
         {
             "Id": 2,
             "Name": "Monmon",
-            "Address": "0x00049C54"
+            "Address": "0x00049C54",
+            "BlastGaugeAddress": "0x00042B78"
         },
         {
             "Id": 3,
             "Name": "Agumon",
-            "Address": "0x0004A030"
+            "Address": "0x0004A030",
+            "BlastGaugeAddress": "0x00042B7A"
         },
         {
             "Id": 4,
             "Name": "Veemon",
-            "Address": "0x0004A40C"
+            "Address": "0x0004A40C",
+            "BlastGaugeAddress": "0x00042B7C"
         },
         {
             "Id": 5,
             "Name": "Guilmon",
-            "Address": "0x0004A7E8"
+            "Address": "0x0004A7E8",
+            "BlastGaugeAddress": "0x00042B7E"
         },
         {
             "Id": 6,
             "Name": "Renamon",
-            "Address": "0x0004ABC4"
+            "Address": "0x0004ABC4",
+            "BlastGaugeAddress": "0x00042B80"
         },
         {
             "Id": 7,
             "Name": "Patamon",
-            "Address": "0x0004AFA0"
+            "Address": "0x0004AFA0",
+            "BlastGaugeAddress": "0x00042B82"
         }
     ]
 }

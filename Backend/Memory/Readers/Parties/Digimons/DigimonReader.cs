@@ -47,6 +47,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
                 Experience = memoryBlockReader.ReadInt32(digimonStatusAddresses.Experience),
                 Level = memoryBlockReader.ReadInt16(digimonStatusAddresses.Level),
                 TP = memoryBlockReader.ReadInt16(digimonStatusAddresses.TP),
+                BlastGauge = memoryReader.ReadInt16(digimonAddress.BlastGaugeAddress),
                 Vitals = new VitalsResource
                 {
                     CurrentHP = memoryBlockReader.ReadInt16(digimonStatusAddresses.Vitals.CurrentHP),

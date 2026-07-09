@@ -91,12 +91,28 @@ public class DigimonDifferTests
         Assert.Equal(1, storedDelta.Level.Value);
     }
 
+    [Fact]
+    public void Diff_ShouldReturnBlastGaugeDelta_WhenOnlyBlastGaugeChanges()
+    {
+        var previous = CreateBaseDigimon();
+        var newObj = CreateBaseDigimon();
+        newObj.BlastGauge = 500;
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.True(result.BlastGauge.HasValue);
+        Assert.Equal(500, result.BlastGauge.Value);
+        Assert.False(result.Level.HasValue);
+    }
+
     private static Digimon CreateBaseDigimon()
     {
         return new Digimon
         {
             Level = 10,
             TP = 5,
+            BlastGauge = 100,
             Experience = 1000,
             ActiveDigievolutionId = 3,
             Vitals = new Vitals { CurrentHP = 100, MaxHP = 100, CurrentMP = 50, MaxMP = 50 },

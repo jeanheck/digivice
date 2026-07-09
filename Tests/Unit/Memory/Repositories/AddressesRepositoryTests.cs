@@ -3,11 +3,11 @@ namespace Tests.Memory.Repositories;
 using System;
 using System.IO;
 using System.Text.Json;
-using Xunit;
-using Backend.Memory.Repositories;
 using Backend.Memory.Addresses;
-using Backend.Memory.Addresses.Parties;
 using Backend.Memory.Addresses.Journals;
+using Backend.Memory.Addresses.Parties;
+using Backend.Memory.Repositories;
+using Xunit;
 
 public class AddressesRepositoryTests : IDisposable
 {
@@ -96,8 +96,8 @@ public class AddressesRepositoryTests : IDisposable
         var fakeDigimons = new DigimonsAddresses
         {
             Digimons = [
-                new DigimonAddress { Id = 1, Name = "Agumon", Address = 0x800100 },
-                new DigimonAddress { Id = 2, Name = "Gabumon", Address = 0x800200 }
+                new DigimonAddress { Id = 1, Name = "Agumon", Address = 0x800100, BlastGaugeAddress = 0x00042B76 },
+                new DigimonAddress { Id = 2, Name = "Gabumon", Address = 0x800200, BlastGaugeAddress = 0x00042B78 }
             ]
         };
         var json = JsonSerializer.Serialize(fakeDigimons);
@@ -111,6 +111,8 @@ public class AddressesRepositoryTests : IDisposable
         Assert.Equal(2, result.Digimons.Count);
         Assert.Equal("Agumon", result.Digimons[0].Name);
         Assert.Equal(0x800100, result.Digimons[0].Address);
+        Assert.Equal(0x00042B76, result.Digimons[0].BlastGaugeAddress);
+        Assert.Equal(0x00042B78, result.Digimons[1].BlastGaugeAddress);
     }
 
     [Fact]

@@ -54,6 +54,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x00049878, 1500)).Returns(memoryBlock);
         memoryReaderMock.Setup(m => m.ReadInt16(0x00049878 - 4)).Returns((short)5);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x00042B76)).Returns((short)400);
 
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
@@ -67,6 +68,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(5, digimonResource.ActiveDigievolutionId);
         Assert.Equal(85000, digimonResource.Experience);
         Assert.Equal(45, digimonResource.Level);
+        Assert.Equal(400, digimonResource.BlastGauge);
         Assert.Equal(500, digimonResource.Vitals.CurrentHP);
         Assert.Equal(1000, digimonResource.Vitals.MaxHP);
         Assert.Equal(200, digimonResource.Vitals.CurrentMP);
@@ -110,6 +112,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x0004AFA0, 1500)).Returns(memoryBlock);
         memoryReaderMock.Setup(m => m.ReadInt16(0x0004AFA0 - 4)).Returns((short)7);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x00042B82)).Returns((short)999);
 
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
@@ -119,6 +122,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(7, digimonResource.ActiveDigievolutionId);
         Assert.Equal(12000, digimonResource.Experience);
         Assert.Equal(18, digimonResource.Level);
+        Assert.Equal(999, digimonResource.BlastGauge);
     }
 
     [Fact]
