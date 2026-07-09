@@ -101,7 +101,6 @@ const groupPartyLevel = computed(() => {
       
       <div class="flex items-center gap-2">
         <span class="w-3 h-3 rounded-full" :class="isConnected ? 'bg-green-500' : 'bg-red-500'"></span>
-        {{ connectionStatusLabel }}
       </div>
     </div>
   </footer>
