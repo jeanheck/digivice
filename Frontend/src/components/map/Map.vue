@@ -18,12 +18,12 @@ const locationViewModel = computed(() => {
 </script>
 
 <template>
-  <aside class="dw3-aside">
+  <aside class="dw3-aside flex-1 min-h-0">
     <div class="dw3-aside-header">
       <h3 class="dw3-aside-title shadow-text">{{ $t("map.map") }}</h3>
     </div>
 
-    <div class="flex-1 flex flex-col mt-2 h-full">
+    <div class="flex-1 min-h-0 flex flex-col mt-2 overflow-hidden">
       <Location :location="locationViewModel" />
       <Enemies :location="locationViewModel" />
     </div>

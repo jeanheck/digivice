@@ -67,18 +67,18 @@ const groupPartyLevel = computed(() => {
 </script>
 
 <template>
-  <footer class="w-full bg-[#000a2b] text-white p-3 rounded-md shadow-lg border-2 border-[#0033aa] flex items-center gap-12 px-6 relative">
-    <div class="font-bold text-lg">
+  <footer class="w-full bg-[#000a2b] text-white p-2 rounded-md shadow-lg border-2 border-[#0033aa] flex items-center gap-12 px-6 relative">
+    <div class="font-bold text-ms">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('player.tamer') }}:</span>
       <span class="text-yellow-400 drop-shadow">{{ playerName }}</span>
     </div>
     
-    <div class="font-bold text-lg flex items-baseline">
+    <div class="font-bold text-ms flex items-baseline">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('player.bits') }}:</span>
       <span class="text-white">{{ playerBits }}</span>
     </div>
     
-    <div class="font-bold text-lg flex items-baseline cursor-help"
+    <div class="font-bold text-ms flex items-baseline cursor-help"
       @mouseenter="showGroupCharismaTooltip"
       @mousemove="moveGroupCharismaTooltip"
       @mouseleave="hideGroupCharismaTooltip">
@@ -86,7 +86,7 @@ const groupPartyLevel = computed(() => {
       <span class="text-white">{{ groupCharisma }}</span>
     </div>
 
-    <div class="font-bold text-lg flex items-baseline cursor-help"
+    <div class="font-bold text-ms flex items-baseline cursor-help"
       @mouseenter="showGroupLevelTooltip"
       @mousemove="moveGroupLevelTooltip"
       @mouseleave="hideGroupLevelTooltip">

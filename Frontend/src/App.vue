@@ -12,21 +12,23 @@ const blockingError = useAppBlockingError();
 <template>
   <AppErrorScreen v-if="blockingError" :error="blockingError" />
 
-  <main v-else class="min-h-screen bg-transparent p-4 flex flex-col gap-4 max-w-450 mx-auto text-white">
-    <div class="flex-1 flex gap-4 min-h-150">
-      <Party />
+  <main v-else class="h-screen min-h-0 overflow-hidden bg-transparent p-4 flex flex-col gap-4 max-w-450 mx-auto text-white">
+    <div class="flex-1 min-h-0 flex gap-4 overflow-hidden">
+      <div class="flex-3 min-h-0 overflow-hidden">
+        <Party />
+      </div>
 
       <div class="flex-1 min-w-75 min-h-0 overflow-hidden flex flex-col gap-4">
-        <div class="flex-3 min-h-0 overflow-hidden flex flex-col">
+        <div class="flex-1 min-h-0 overflow-hidden flex flex-col">
           <Journal />
         </div>
 
-        <div class="flex-2 min-h-50 flex flex-col">
-          <Map class="flex-1" />
+        <div class="flex-1 min-h-0 overflow-hidden flex flex-col">
+          <Map />
         </div>
       </div>
     </div>
 
-    <Footer />
+    <Footer class="shrink-0" />
   </main>
 </template>

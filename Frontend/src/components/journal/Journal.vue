@@ -59,7 +59,7 @@ const closeAuctionModal = () => {
       <h3 class="dw3-aside-title shadow-text">{{ $t("journal.title") }}</h3>
     </div>
 
-    <div class="flex-1 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
+    <div class="flex-1 min-h-0 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
       <section>
         <JournalQuestCard
           v-if="journalViewModel.mainQuest"
