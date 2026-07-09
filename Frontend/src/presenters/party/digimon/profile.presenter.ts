@@ -3,6 +3,7 @@ import { MathHelper } from "@/presenters/helper/math.helper";
 
 export class ProfilePresenter {
     private static readonly MAX_LEVEL = 99;
+    private static readonly MAX_BLAST_GAUGE = 1000;
 
     public static getNameById(id: number): string {
         return DigimonRepository.getNameById(id);
@@ -35,5 +36,9 @@ export class ProfilePresenter {
 
     public static getMpPercentage(currentMP: number, maxMP: number): number {
         return MathHelper.calculatePercentage(currentMP, maxMP);
+    }
+
+    public static getBlastGaugePercentage(blastGauge: number): number {
+        return MathHelper.calculatePercentage(blastGauge, this.MAX_BLAST_GAUGE);
     }
 }

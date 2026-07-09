@@ -60,6 +60,10 @@ const hpPercentage = computed(() => {
 const mpPercentage = computed(() => {
   return ProfilePresenter.getMpPercentage(props.digimon.vitals.currentMP, props.digimon.vitals.maxMP);
 });
+
+const blastGaugePercentage = computed(() => {
+  return ProfilePresenter.getBlastGaugePercentage(props.digimon.blastGauge);
+});
 </script>
 
 <template>
@@ -135,9 +139,9 @@ const mpPercentage = computed(() => {
         <div class="col-start-2 row-start-5 min-w-0 h-6">
           <ProgressBar
             :variant="ProgressBarConstant.blast"
-            :current-value="0"
+            :current-value="digimon.blastGauge"
             :max-value="1000"
-            :percentage="0"
+            :percentage="blastGaugePercentage"
             @show-tooltip="onShowTooltip($event, ProgressBarConstant.blast)"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"

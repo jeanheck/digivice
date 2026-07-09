@@ -17,6 +17,9 @@ export class DigimonSyncer {
         if (newDigimonDto.tp !== undefined) {
             previousDigimon.tp = newDigimonDto.tp;
         }
+        if (newDigimonDto.blastGauge !== undefined) {
+            previousDigimon.blastGauge = newDigimonDto.blastGauge;
+        }
         if (newDigimonDto.experience !== undefined) {
             previousDigimon.experience = newDigimonDto.experience;
         }
