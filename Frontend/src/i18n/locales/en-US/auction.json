@@ -1,8 +1,8 @@
 {
   "auction": {
     "title": "Auctions",
-    "cardIdleTitle": "No auction at the moment",
-    "cardIdleSubtitle": "Keep progressing through the main quest",
+    "cardIdleTitle": "No auction now",
+    "cardIdleSubtitle": "Maybe later...",
     "cardActiveTitle": "An auction is happening!",
     "cardActiveSubtitle": "Click for more details!",
     "modalTitle": "Auctions",
