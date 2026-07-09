@@ -32,18 +32,18 @@ const icon = computed(() => {
 </script>
 
 <template>
-  <div class="flex items-center gap-2">
+  <div class="flex items-center gap-1.5 min-w-0">
     <div
-      class="flex items-center w-5 justify-center cursor-help select-none z-20 tooltip-anchor relative"
+      class="flex items-center w-5 shrink-0 justify-center cursor-help select-none z-20 tooltip-anchor relative"
       @mouseenter="(event) => emit('showIconTooltip', event, label, statKey)"
       @mousemove="(event) => emit('moveTooltip', event)"
       @mouseleave="emit('hideTooltip')"
     >
-      <span class="text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1">{{ icon }}</span>
+      <span class="text-sm font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1">{{ icon }}</span>
     </div>
 
     <div
-      class="font-bold tracking-widest cursor-help flex items-center"
+      class="font-bold tracking-wide cursor-help flex items-center min-w-0"
       @mouseenter="(event) => emit('showMathTooltip', event, label, statViewModel.fromDigimon, statViewModel.fromEquipaments, statViewModel.fromDigievolution, statViewModel.sumBetweenDigimonAndEquipaments)"
       @mousemove="(event) => emit('moveTooltip', event)"
       @mouseleave="emit('hideTooltip')"
@@ -51,7 +51,7 @@ const icon = computed(() => {
       <span class="shadow-text">{{ statViewModel.sumBetweenDigimonAndEquipaments }}</span>
       <span
         v-if="statViewModel.fromDigievolution > 0"
-        class="ml-2 font-bold text-dw3-gold shadow-text-dark tracking-normal"
+        class="ml-1 sm:ml-2 font-bold text-dw3-gold shadow-text-dark tracking-normal shrink-0"
       >+{{ statViewModel.fromDigievolution }}</span>
     </div>
   </div>
