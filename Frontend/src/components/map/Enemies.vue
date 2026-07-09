@@ -36,7 +36,7 @@ watch(
 </script>
 
 <template>
-  <div class="shrink-0 w-full mt-1 py-1 border-t border-[#0033aa]/50 flex flex-col items-center">
+  <div class="shrink-0 w-full min-h-11 mt-1 py-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
     <div v-if="!hasEnemies" class="text-xs text-[#00aaff] opacity-50 italic">
       {{ $t("map.safeZone") }}
     </div>
@@ -45,7 +45,7 @@ watch(
         v-for="enemy in resumedEnemies"
         :key="enemy.id"
         @click="openEnemyDetails(enemy.id)"
-        class="font-bold text-xs tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
+        class="font-bold text-[11px] tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
         :class="enemy.boss ? 'text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]' : 'text-[#9e3737] hover:text-[#b24848] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
       >
         {{ enemy.name }}
