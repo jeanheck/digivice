@@ -36,7 +36,7 @@ watch(
 </script>
 
 <template>
-  <div class="flex-1 w-full mt-2 pt-2 border-t border-[#0033aa]/50 flex flex-col justify-center items-center">
+  <div class="shrink-0 w-full mt-1 py-1 border-t border-[#0033aa]/50 flex flex-col items-center">
     <div v-if="!hasEnemies" class="text-xs text-[#00aaff] opacity-50 italic">
       {{ $t("map.safeZone") }}
     </div>

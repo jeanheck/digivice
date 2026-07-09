@@ -96,7 +96,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin-bottom: 0.25rem;
 }
 
 .dw3-aside-header {

@@ -19,11 +19,11 @@ const blockingError = useAppBlockingError();
       </div>
 
       <div class="flex-1 min-w-75 min-h-0 overflow-hidden flex flex-col gap-4">
-        <div class="flex-1 min-h-0 overflow-hidden flex flex-col">
+        <div class="flex-3 min-h-0 overflow-hidden flex flex-col">
           <Journal />
         </div>
 
-        <div class="flex-1 min-h-0 overflow-hidden flex flex-col">
+        <div class="flex-2 min-h-0 overflow-hidden flex flex-col">
           <Map />
         </div>
       </div>
