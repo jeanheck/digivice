@@ -1,126 +1,156 @@
 {
   "1000": {
     "image": "In Menu Screen",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "1300": {
     "image": "Card Shop Screen",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "1400": {
     "image": "Reward Screen",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0C01": {
     "image": "Saving Screen",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0A00": {
     "image": "In Training Screen",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0D00": {
     "image": "Kadomatsu Piximon Screen",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0F00": {
     "image": "In Store Screen",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0600": {
     "image": "In Battle Screen",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0200": {
     "image": "Asuka City",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0201": {
     "image": "Asuka City 2",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0202": {
     "image": "Asuka Bridge",
-    "enemies": []
+    "enemies": [],
+    "dock": true
   },
   "0203": {
     "image": "Main Lobby",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0204": {
     "image": "Main Lobby",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0206": {
     "image": "Digimon Lab",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0207": {
     "image": "Login Room",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0208": {
     "image": "Arena Front Desk",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0210": {
     "image": "Cargo Tower",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0211": {
     "image": "Yellow Cruiser",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0212": {
     "image": "Tunel Aquático",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0213": {
     "image": "El Dorado",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0214": {
     "image": "Admin Center 1F",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0215": {
     "image": "Admin Center 2F",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "020A": {
     "image": "Asuka City - Inn 1F",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "020B": {
     "image": "Underground Path",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "020C": {
     "image": "Asuka City - Inn 2F",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "020D": {
     "image": "Smith's Shop",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "020E": {
     "image": "Junk Shop",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "020F": {
     "image": "Lamb Chop",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "021B": {
     "image": "Asuka Sewers",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "021D": {
     "image": "Central Park",
     "enemies": [
       "71",
       "72"
-    ]
+    ],
+    "dock": true
   },
   "021E": {
     "image": "Wire Forest Entrance",
@@ -139,7 +169,8 @@
           "85"
         ]
       }
-    ]
+    ],
+    "dock": false
   },
   "021F": {
     "image": "Shell Beach",
@@ -159,7 +190,8 @@
           "96"
         ]
       }
-    ]
+    ],
+    "dock": true
   },
   "0220": {
     "image": "Plug Cape",
@@ -182,7 +214,8 @@
           "107"
         ]
       }
-    ]
+    ],
+    "dock": true
   },
   "0221": {
     "image": "West Wire Forest",
@@ -203,7 +236,8 @@
           "85"
         ]
       }
-    ]
+    ],
+    "dock": false
   },
   "0222": {
     "image": "East Wire Forest",
@@ -224,22 +258,26 @@
           "82"
         ]
       }
-    ]
+    ],
+    "dock": false
   },
   "0223": {
     "image": "Forest Inn",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0224": {
     "image": "Forest Inn BF",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0225": {
     "image": "Protocol Forest",
     "enemies": [
       "81",
       "82"
-    ]
+    ],
+    "dock": false
   },
   "0226": {
     "image": "Protocol Ruins",
@@ -260,7 +298,8 @@
           "83"
         ]
       }
-    ]
+    ],
+    "dock": false
   },
   "0227": {
     "image": "Divermons Lake",
@@ -279,26 +318,31 @@
           "103"
         ]
       }
-    ]
+    ],
+    "dock": true
   },
   "0228": {
     "image": "Duel Island",
-    "enemies": []
+    "enemies": [],
+    "dock": true
   },
   "0229": {
     "image": "Wind Prairie",
     "enemies": [
       "79",
       "80"
-    ]
+    ],
+    "dock": false
   },
   "0230": {
     "image": "Seiryu Tower",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0231": {
     "image": "Gale Tower",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "022A": {
     "image": "Kicking Forest",
@@ -318,7 +362,8 @@
           "182"
         ]
       }
-    ]
+    ],
+    "dock": true
   },
   "022B": {
     "image": "Tyranno Valley",
@@ -327,29 +372,35 @@
       "87",
       "88",
       "89"
-    ]
+    ],
+    "dock": false
   },
   "022C": {
     "image": "East Station",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "022D": {
     "image": "Deeper Crevice",
     "enemies": [
       "21"
-    ]
+    ],
+    "dock": false
   },
   "022E": {
     "image": "Seiryu City",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "022F": {
     "image": "Zephyr Tower",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0232": {
     "image": "South Station",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0233": {
     "image": "Bulk Swamp",
@@ -357,7 +408,8 @@
       "90",
       "91",
       "184"
-    ]
+    ],
+    "dock": false
   },
   "0234": {
     "image": "Bulk Bridge",
@@ -365,18 +417,21 @@
       "90",
       "91",
       "184"
-    ]
+    ],
+    "dock": true
   },
   "0235": {
     "image": "Bios Swamp",
     "enemies": [
       "91",
       "103"
-    ]
+    ],
+    "dock": false
   },
   "0236": {
     "image": "Reliability Spot",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0237": {
     "image": "Tranquil Swamp",
@@ -384,15 +439,18 @@
       "90",
       "91",
       "184"
-    ]
+    ],
+    "dock": false
   },
   "0238": {
     "image": "Swamp Inn",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0239": {
     "image": "Shaman House",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "023A": {
     "image": "Jungle Grave",
@@ -403,7 +461,8 @@
       "92",
       "128",
       "184"
-    ]
+    ],
+    "dock": false
   },
   "023B": {
     "image": "Phoenix Bay",
@@ -412,7 +471,8 @@
       "95",
       "182",
       "189"
-    ]
+    ],
+    "dock": true
   },
   "023C": {
     "image": "Ether Jungle",
@@ -420,65 +480,76 @@
       "95",
       "182",
       "189"
-    ]
+    ],
+    "dock": false
   },
   "023D": {
     "image": "South Cape",
     "enemies": [
       "96"
-    ]
+    ],
+    "dock": true
   },
   "023E": {
     "image": "Suzaku City",
-    "enemies": []
+    "enemies": [],
+    "dock": true
   },
   "023F": {
     "image": "Suzaku Inn",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0240": {
     "image": "Suzaku Hall",
-    "enemies": []
+    "enemies": [],
+    "dock": false
   },
   "0241": {
     "image": "Suzaku UG Lake",
     "enemies": [
       "102"
-    ]
+    ],
+    "dock": false
   },
   "0242": {
     "image": "Jungle Shrine",
     "enemies": [
       "202"
-    ]
+    ],
+    "dock": false
   },
   "0243": {
     "image": "Catacomb",
     "enemies": [
       "20",
       "128"
-    ]
+    ],
+    "dock": false
   },
   "0247": {
     "image": "South Badland",
     "enemies": [
       "105",
       "106"
-    ]
+    ],
+    "dock": true
   },
   "0248": {
     "image": "Noise Desert",
     "enemies": [
       "191",
       "185"
-    ]
+    ],
+    "dock": false
   },
   "0249": {
     "image": "Pelche Oasis",
     "enemies": [
       "185",
       "191"
-    ]
+    ],
+    "dock": false
   },
   "024A": {
     "image": "North Badland W",
@@ -486,14 +557,16 @@
       "104",
       "107",
       "186"
-    ]
+    ],
+    "dock": false
   },
   "024B": {
     "image": "North Badland E",
     "enemies": [
       "105",
       "106"
-    ]
+    ],
+    "dock": true
   },
   "024C": {
     "image": "Bullet Valley",
@@ -501,7 +574,8 @@
       "104",
       "107",
       "186"
-    ]
+    ],
+    "dock": false
   },
   "024D": {
     "image": "Dum Dum Factory",
@@ -510,45 +584,52 @@
       "115",
       "116",
       "117"
-    ]
+    ],
+    "dock": false
   },
   "024E": {
     "image": "Duct Room",
     "enemies": [
       "112"
-    ]
+    ],
+    "dock": false
   },
   "024F": {
     "image": "Duct Room",
     "enemies": [
       "112"
-    ]
+    ],
+    "dock": false
   },
   "0250": {
     "image": "Duct Room",
     "enemies": [
       "112"
-    ]
+    ],
+    "dock": false
   },
   "0251": {
     "image": "Duct Room",
     "enemies": [
       "112"
-    ]
+    ],
+    "dock": false
   },
   "0252": {
     "image": "Operation Room",
     "enemies": [
       "14",
       "117"
-    ]
+    ],
+    "dock": false
   },
   "0253": {
     "image": "Secret Stairs",
     "enemies": [
       "112",
       "117"
-    ]
+    ],
+    "dock": false
   },
   "0254": {
     "image": "Sewers",
@@ -556,18 +637,20 @@
       "15",
       "118",
       "119"
-    ]
+    ],
+    "dock": false
   },
   "0255": {
     "image": "Secret Room",
-    "enemies": [
-    ]
+    "enemies": [],
+    "dock": false
   },
   "0257": {
     "image": "Noise Desert (South)",
     "enemies": [
       "193"
-    ]
+    ],
+    "dock": false
   },
   "0258": {
     "image": "Mobius Desert",
@@ -575,7 +658,8 @@
       "110",
       "111",
       "193"
-    ]
+    ],
+    "dock": false
   },
   "0259": {
     "image": "Mobius Desert 2",
@@ -583,67 +667,73 @@
       "110",
       "111",
       "193"
-    ]
+    ],
+    "dock": false
   },
   "025A": {
     "image": "Mirage Tower",
     "enemies": [
       "110",
       "193"
-    ]
+    ],
+    "dock": false
   },
   "025B": {
     "image": "Mirage Hall",
-    "enemies": [
-    ]
+    "enemies": [],
+    "dock": false
   },
   "025C": {
     "image": "Mirage Room",
-    "enemies": [
-    ]
+    "enemies": [],
+    "dock": false
   },
   "025D": {
     "image": "Byakko City",
-    "enemies": [
-    ]
+    "enemies": [],
+    "dock": false
   },
   "025E": {
     "image": "Byakko Dome",
-    "enemies": [
-    ]
+    "enemies": [],
+    "dock": false
   },
   "025F": {
     "image": "Storage Room",
-    "enemies": [
-    ]
+    "enemies": [],
+    "dock": false
   },
   "0260": {
     "image": "Underground Cave",
-    "enemies": [
-    ]
+    "enemies": [],
+    "dock": false
   },
   "02E0": {
     "image": "Seabed 0",
     "enemies": [
       "98"
-    ]
+    ],
+    "dock": false
   },
   "02E2": {
     "image": "Seabed 2",
     "enemies": [
       "98"
-    ]
+    ],
+    "dock": false
   },
   "02E3": {
     "image": "Seabed 3",
     "enemies": [
       "98"
-    ]
+    ],
+    "dock": false
   },
   "02E6": {
     "image": "Seabed 6",
     "enemies": [
       "98"
-    ]
+    ],
+    "dock": false
   }
 }

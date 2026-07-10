@@ -8,6 +8,7 @@ export type LocationEnemiesRaw = string[] | LocationEnemyPhaseRaw[];
 export interface LocationRaw {
     image: string;
     enemies: LocationEnemiesRaw;
+    dock: boolean;
 }
 
 export function isLocationEnemyPhaseList(enemies: LocationEnemiesRaw): enemies is LocationEnemyPhaseRaw[] {
