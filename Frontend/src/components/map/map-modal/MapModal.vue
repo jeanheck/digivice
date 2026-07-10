@@ -50,8 +50,8 @@ const selectSection = (section: MapModalSection) => {
             type="button"
             class="text-sm tracking-widest px-2 py-1 rounded border transition-colors duration-150 cursor-pointer"
             :class="selectedSection === 'enemies'
-              ? 'text-red-600 border-red-600 bg-red-500/15'
-              : 'text-red-900 border-transparent hover:text-red-600 hover:border-red-600 hover:bg-red-500/15'"
+              ? 'text-[#bc3737] border-[#bc3737] bg-red-500/15'
+              : 'text-red-900 border-transparent hover:text-[#bc3737] hover:border-[#bc3737] hover:bg-red-500/15'"
             @click="selectSection('enemies')"
           >
             {{ $t("map.enemies") }}
