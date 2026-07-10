@@ -27,7 +27,7 @@
           }
         },
         "requisites": {
-          "VeemonDDNA": "Veemon's DNA"
+          "veemonDDNA": "Veemon's DDNA"
         }
       }
     }
