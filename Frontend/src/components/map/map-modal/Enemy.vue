@@ -41,7 +41,7 @@ const moveEnemyStatTooltip = (event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="flex flex-1 min-h-0 max-h-120 flex-col">
+  <div class="flex flex-1 flex-col">
     <div class="flex flex-1 min-h-0 flex-col sm:flex-row gap-4">
       <EnemyProfile :enemy="enemy" :enemy-image-url="enemyImageUrl" />
 

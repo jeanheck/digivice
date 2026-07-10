@@ -44,8 +44,8 @@ watch(
 </script>
 
 <template>
-  <div class="flex flex-1 min-h-0 w-full flex-col p-4 gap-4">
-    <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 w-full shrink-0">
+  <div class="flex flex-1 min-h-0 w-full flex-col p-4">
+    <div class="flex flex-1 min-h-0 flex-wrap items-center justify-center gap-x-5 w-full">
       <button
         v-for="enemy in resumedEnemies"
         :key="enemy.id"
@@ -62,11 +62,22 @@ watch(
       </button>
     </div>
 
-    <Enemy
-      v-if="selectedEnemy"
-      :enemy="selectedEnemy"
-      :enemy-image-url="enemyImageUrl"
-      class="flex-1 min-h-0"
-    />
+    <div class="mt-auto min-h-0 w-full">
+      <Enemy
+        v-if="selectedEnemy"
+        :enemy="selectedEnemy"
+        :enemy-image-url="enemyImageUrl"
+        class="min-h-130"
+      />
+
+      <div
+        v-else
+        class="flex w-full flex-col items-center justify-center border border-cyan-900/40 bg-[#000a1a] rounded min-h-130 py-8"
+      >
+        <span class="text-white/50 text-sm tracking-widest text-center px-8 animate-pulse">
+          {{ $t("mapModal.selectEnemy") }}
+        </span>
+      </div>
+    </div>
   </div>
 </template>
