@@ -1,5 +1,18 @@
+<script setup lang="ts">
+import asukaMapUrl from "@/assets/AsukaMap.webp";
+import DockMapFrame from "@/components/map/map-modal/DockMapFrame.vue";
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+
+const plugCapeMapUrl = ImageCatalog.getMapImageUrl("Plug Cape");
+</script>
+
 <template>
-  <div class="flex flex-1 min-h-0 w-full p-4">
-    Docks
+  <div class="flex flex-1 min-h-0 w-full gap-4 p-4 overflow-auto">
+    <div class="flex flex-1 min-w-0 items-center justify-center">
+      <DockMapFrame :image-url="asukaMapUrl" />
+    </div>
+    <div class="flex flex-1 min-w-0 items-center justify-center">
+      <DockMapFrame :image-url="plugCapeMapUrl" />
+    </div>
   </div>
 </template>
