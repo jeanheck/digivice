@@ -39,7 +39,7 @@ const closeMapModal = () => {
 
     <MapModal
       :is-open="isMapModalOpen"
-      :title="locationName"
+      :location="location"
       @close="closeMapModal"
     />
   </div>
