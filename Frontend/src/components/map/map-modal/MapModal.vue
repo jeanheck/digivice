@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import Modal from "@/components/modal/Modal.vue";
+import EnemiesSection from "@/components/map/map-modal/EnemiesSection.vue";
+import DocksSection from "@/components/map/map-modal/DocksSection.vue";
+import BoxesSection from "@/components/map/map-modal/BoxesSection.vue";
 
 type MapModalSection = "enemies" | "docks" | "boxes";
 
@@ -79,6 +82,10 @@ const selectSection = (section: MapModalSection) => {
       </div>
     </template>
 
-    <div class="p-4" />
+    <div class="flex flex-1 min-h-0 flex-col overflow-hidden">
+      <EnemiesSection v-if="selectedSection === 'enemies'" />
+      <DocksSection v-else-if="selectedSection === 'docks'" />
+      <BoxesSection v-else-if="selectedSection === 'boxes'" />
+    </div>
   </Modal>
 </template>
