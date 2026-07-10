@@ -102,8 +102,8 @@ function getTechniqueElementColorClass(element: string): string {
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"
       >
-        <span class="text-[14px] leading-none">📜</span>
-        <span>{{ t("digievolution.lv") }}.{{ technique.learnLevel }}</span>
+        <span class="text-orange-200 leading-none inline-flex text-[10px] translate-y-px">{{ technique.learnLevel }}</span>
+        <span class="leading-none inline-flex text-[15px] -translate-y-0.5">📜</span>
       </span>
 
       <span
@@ -113,8 +113,8 @@ function getTechniqueElementColorClass(element: string): string {
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"
       >
-        <span class="text-[14px] leading-none">🫴</span>
-        <span>{{ t("digievolution.lv") }}.{{ technique.loadedLevel }}</span>
+        <span class="text-amber-300 leading-none inline-flex text-[10px] translate-y-px">{{ technique.loadedLevel }}</span>
+        <span class="leading-none inline-flex text-[15px] -translate-y-0.5">🫴</span>
       </span>
 
       <span

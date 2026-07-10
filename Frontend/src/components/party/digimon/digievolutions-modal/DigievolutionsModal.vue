@@ -67,7 +67,7 @@ const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
     </template>
 
     <div class="flex flex-1 overflow-hidden min-h-0">
-      <div class="w-[75%] h-full border-r border-[#0055ff]/30 relative">
+      <div class="w-[75%] min-w-0 h-full border-r border-[#0055ff]/30 relative">
         <Tree
           :digimon-name="digimonName"
           :digimon="digimon"
@@ -77,7 +77,7 @@ const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
         />
       </div>
 
-      <div class="w-[25%] h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col">
+      <div class="w-[25%] min-w-100 h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col">
         <div v-if="selectedDigievolutionId !== undefined" class="flex-1 flex flex-col p-1">
           <DigievolutionTechniques
             :digimon-id="digimonId"

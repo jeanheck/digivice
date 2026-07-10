@@ -17,7 +17,7 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="family-row branching">
+  <div class="family-row branching custom-scroll">
     <div class="branch-layout">
       <div class="shared-prefix">
         <Branch
