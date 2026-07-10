@@ -2,8 +2,8 @@
 import Location from "./Location.vue";
 import Enemies from "./Enemies.vue";
 import Seabed from "./Seabed.vue";
-import Docks from "./Docks.vue";
-import Boxes from "./Boxes.vue";
+import DocksButton from "./DocksButton.vue";
+import BoxesButton from "./BoxesButton.vue";
 import MapModal from "@/components/map/map-modal/MapModal.vue";
 import { computed, ref } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
@@ -74,8 +74,8 @@ function onBoxesClick(): void {
 
       <div class="w-full flex justify-center shrink-0 px-0.5 pb-1">
         <div class="flex gap-1 w-full max-w-[95%]">
-          <Docks @click="onDocksClick" />
-          <Boxes @click="onBoxesClick" />
+          <DocksButton @click="onDocksClick" />
+          <BoxesButton @click="onBoxesClick" />
         </div>
       </div>
     </div>
