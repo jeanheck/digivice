@@ -19,7 +19,7 @@ export const IconConstant: Record<ConstantsType, string> = {
     [ElementConstant.machine]: "⚙️",
     [ElementConstant.dark]: "🌑",
     [ConditionConstant.poison]: "☠️",
-    [ConditionConstant.paralyze]: "⚡",
+    [ConditionConstant.paralyze]: "🗲",
     [ConditionConstant.confuse]: "😵",
     [ConditionConstant.sleep]: "💤",
     [ConditionConstant.ko]: "💀",
