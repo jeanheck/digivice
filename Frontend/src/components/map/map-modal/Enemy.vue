@@ -41,8 +41,8 @@ const moveEnemyStatTooltip = (event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="flex flex-1 min-h-0 flex-col">
-    <div class="flex flex-1 min-h-0 flex-col sm:flex-row gap-4 overflow-y-auto custom-scroll">
+  <div class="flex flex-1 min-h-0 max-h-120 flex-col">
+    <div class="flex flex-1 min-h-0 flex-col sm:flex-row gap-4">
       <EnemyProfile :enemy="enemy" :enemy-image-url="enemyImageUrl" />
 
       <div class="flex-1 min-h-0">

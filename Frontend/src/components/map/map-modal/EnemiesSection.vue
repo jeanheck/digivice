@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import EnemyData from "@/components/map/map-modal/EnemyData.vue";
+import Enemy from "@/components/map/map-modal/Enemy.vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter.ts";
 import { EnemyModalPresenter } from "@/presenters/map/enemy-modal.presenter.ts";
@@ -52,17 +52,17 @@ watch(
         type="button"
         class="font-bold tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
         :class="selectedEnemyId === enemy.id
-          ? 'text-sm text-[#ffe4e4] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'
+          ? 'text-sm text-[#ff7878] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'
           : enemy.boss
             ? 'text-sm text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]'
-            : 'text-sm text-[#bc3737] hover:text-[#ffe4e4] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
+            : 'text-sm text-[#bc3737] hover:text-[#ff7878] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
         @click="selectEnemy(enemy.id)"
       >
         {{ enemy.name }}
       </button>
     </div>
 
-    <EnemyData
+    <Enemy
       v-if="selectedEnemy"
       :enemy="selectedEnemy"
       :enemy-image-url="enemyImageUrl"

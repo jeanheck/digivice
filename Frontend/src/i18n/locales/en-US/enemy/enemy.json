@@ -2,7 +2,8 @@
   "enemy": {
     "level": "Level",
     "specie": "Specie",
-    "possibleDrop": "Possible Drops",
+    "drop": "Drop",
+    "dropRate": "Drop rate",
     "baseExp": "EXP",
     "baseBits": "BITS",
     "combatActions": "Actions",
