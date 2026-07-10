@@ -348,7 +348,7 @@ body {
   width: 100%;
   max-width: 95%;
   padding: 0.5rem 0.75rem;
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: rgb(0 14 63 / 0.8);
   border: 1px solid rgb(0 170 255 / 0.4);
   border-radius: 0.25rem;
   backdrop-filter: blur(4px);
@@ -358,7 +358,7 @@ body {
   width: fit-content;
   max-width: 95%;
   padding: 0.5rem 0.75rem;
-  background-color: rgb(0 0 0 / 0.8);
+  background-color: rgb(0 14 63 / 0.8);
   border: 1px solid rgb(0 170 255 / 0.4);
   border-radius: 0.25rem;
   backdrop-filter: blur(4px);
@@ -378,7 +378,7 @@ body {
 }
 
 .map-info-panel.map-info-panel-action:hover {
-  background-color: rgb(0 0 0 / 0.9);
+  background-color: rgb(0 14 63 / 0.9);
   border-color: rgb(0 170 255 / 0.6);
 }
 
@@ -388,6 +388,6 @@ body {
 }
 
 .map-info-panel-fit.map-info-panel-action:hover {
-  background-color: rgb(0 0 0 / 0.9);
+  background-color: rgb(0 14 63 / 0.9);
   border-color: rgb(0 170 255 / 0.6);
 }
