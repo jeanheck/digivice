@@ -40,14 +40,16 @@ function closeTechniques(): void {
       v-if="selectedDigievolution"
       :is-open="isTechniquesModalOpen"
       max-width="max-w-lg"
-      max-height="max-h-[75vh]"
+      max-height="h-[700px] max-h-[92vh]"
       :show-footer-bar="false"
       @close="closeTechniques"
     >
-      <DigievolutionTechniques
-        :digievolution-id="selectedDigievolution.id"
-        :digievolution-level="selectedDigievolution.level"
-      />
+      <div class="flex flex-1 min-h-0 flex-col overflow-hidden">
+        <DigievolutionTechniques
+          :digievolution-id="selectedDigievolution.id"
+          :digievolution-level="selectedDigievolution.level"
+        />
+      </div>
     </Modal>
   </div>
 </template>
