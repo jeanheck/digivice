@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Location from "./Location.vue";
 import Enemies from "./Enemies.vue";
-import SeabedDirections from "./SeabedDirections.vue";
+import Seabed from "./Seabed.vue";
 import Docks from "./Docks.vue";
 import Boxes from "./Boxes.vue";
 import { computed } from "vue";
@@ -53,7 +53,8 @@ function onBoxesClick(): void {
       <div class="flex flex-col items-center gap-2 shrink-0">
         <Location :location="locationViewModel" />
         <Enemies :location="locationViewModel" />
-        <SeabedDirections />
+        <Seabed />
+        <!--<SeabedDirections />-->
       </div>
 
       <div class="flex-1 min-h-0" />
