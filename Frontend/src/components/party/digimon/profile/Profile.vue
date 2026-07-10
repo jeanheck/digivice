@@ -72,7 +72,7 @@ const blastGaugePercentage = computed(() => {
     <div class="dw3-panel-inner dw3-beveled"></div>
 
     <div class="dw3-panel-content p-2">
-      <div class="grid grid-cols-[auto_1fr] grid-rows-5 gap-x-2 gap-y-1">
+      <div class="grid grid-cols-[auto_1fr] grid-rows-[auto_1fr_auto_auto_auto] gap-x-2 gap-y-1">
         <div class="col-start-1 row-start-1 row-span-3 w-20">
           <Icon :digimon-name="digimonName" class="w-full aspect-square" />
         </div>
@@ -93,14 +93,14 @@ const blastGaugePercentage = computed(() => {
           @hide-tooltip="onHideTooltip"
         />
 
-        <div class="col-start-2 row-start-1 flex justify-between items-baseline min-w-0 h-6">
+        <div class="col-start-2 row-start-1 flex justify-between items-baseline min-w-0">
           <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimonName }}</h2>
-          <span class="text-[0.6rem] font-medium text-yellow-400 shrink-0">
+          <span class="text-[0.6rem] font-medium text-yellow-400 shrink-0 leading-none">
             Nv {{ digimon.level }}
           </span>
         </div>
 
-        <div class="col-start-2 row-start-2 min-w-0 h-6">
+        <div class="col-start-2 row-start-2 min-w-0 flex flex-col">
           <ProgressBar
             :variant="ProgressBarConstant.experience"
             :current-value="digimon.experience"
@@ -110,6 +110,7 @@ const blastGaugePercentage = computed(() => {
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
+          <div class="mt-auto pt-1 border-b border-[#0033aa]/50"></div>
         </div>
 
         <div class="col-start-2 row-start-3 min-w-0 h-6">
