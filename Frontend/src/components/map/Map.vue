@@ -4,7 +4,8 @@ import Enemies from "./Enemies.vue";
 import Seabed from "./Seabed.vue";
 import Docks from "./Docks.vue";
 import Boxes from "./Boxes.vue";
-import { computed } from "vue";
+import MapModal from "@/components/map/map-modal/MapModal.vue";
+import { computed, ref } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
@@ -23,6 +24,19 @@ const locationViewModel = computed(() => {
 const locationImage = computed(() => {
   return ImageCatalog.getMapImageUrl(locationViewModel.value?.image ?? null);
 });
+
+const isMapModalOpen = ref(false);
+const initialEnemyId = ref<string | null>(null);
+
+const openMapModal = (enemyId: string) => {
+  initialEnemyId.value = enemyId;
+  isMapModalOpen.value = true;
+};
+
+const closeMapModal = () => {
+  isMapModalOpen.value = false;
+  initialEnemyId.value = null;
+};
 
 function onDocksClick(): void {
 }
@@ -52,7 +66,7 @@ function onBoxesClick(): void {
     <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1">
       <div class="flex flex-col items-center gap-2 shrink-0">
         <Location :location="locationViewModel" />
-        <Enemies :location="locationViewModel" />
+        <Enemies :location="locationViewModel" @open-map-modal="openMapModal" />
         <!--<Seabed />-->
       </div>
 
@@ -65,5 +79,12 @@ function onBoxesClick(): void {
         </div>
       </div>
     </div>
+
+    <MapModal
+      :is-open="isMapModalOpen"
+      :location="locationViewModel"
+      :initial-enemy-id="initialEnemyId"
+      @close="closeMapModal"
+    />
   </aside>
 </template>

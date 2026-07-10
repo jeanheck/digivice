@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed } from "vue";
 import Enemy from "@/components/map/map-modal/Enemy.vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter.ts";
@@ -7,24 +7,23 @@ import { EnemyModalPresenter } from "@/presenters/map/enemy-modal.presenter.ts";
 
 const props = defineProps<{
   enemyIds: string[];
+  selectedEnemyId: string | null;
+}>();
+
+const emit = defineEmits<{
+  (e: "select-enemy", enemyId: string): void;
 }>();
 
 const resumedEnemies = computed(() => {
   return MapEnemiesPresenter.getResumedEnemiesByIds(props.enemyIds);
 });
 
-const selectedEnemyId = ref<string | null>(null);
-
-const selectEnemy = (enemyId: string) => {
-  selectedEnemyId.value = enemyId;
-};
-
 const selectedEnemy = computed(() => {
-  if (selectedEnemyId.value === null) {
+  if (props.selectedEnemyId === null) {
     return null;
   }
 
-  return EnemyModalPresenter.getEnemyById(selectedEnemyId.value);
+  return EnemyModalPresenter.getEnemyById(props.selectedEnemyId);
 });
 
 const enemyImageUrl = computed(() => {
@@ -35,12 +34,9 @@ const enemyImageUrl = computed(() => {
   return ImageCatalog.getEnemyIconUrl(selectedEnemy.value.name);
 });
 
-watch(
-  () => props.enemyIds,
-  () => {
-    selectedEnemyId.value = null;
-  }
-);
+const selectEnemy = (enemyId: string) => {
+  emit("select-enemy", enemyId);
+};
 </script>
 
 <template>
@@ -52,10 +48,10 @@ watch(
         type="button"
         class="font-bold tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
         :class="selectedEnemyId === enemy.id
-          ? 'text-sm text-[#ff7878] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'
+          ? 'text-sm text-[#ffd9d9] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'
           : enemy.boss
             ? 'text-sm text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]'
-            : 'text-sm text-[#bc3737] hover:text-[#ff7878] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
+            : 'text-sm text-[#bc3737] hover:text-[#ffd9d9] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
         @click="selectEnemy(enemy.id)"
       >
         {{ enemy.name }}
@@ -69,15 +65,6 @@ watch(
         :enemy-image-url="enemyImageUrl"
         class="min-h-130"
       />
-
-      <div
-        v-else
-        class="flex w-full flex-col items-center justify-center border border-cyan-900/40 bg-[#000a1a] rounded min-h-130 py-8"
-      >
-        <span class="text-white/50 text-sm tracking-widest text-center px-8 animate-pulse">
-          {{ $t("mapModal.selectEnemy") }}
-        </span>
-      </div>
     </div>
   </div>
 </template>

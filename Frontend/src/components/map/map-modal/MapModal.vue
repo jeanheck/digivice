@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import Modal from "@/components/modal/Modal.vue";
 import Sections from "@/components/map/map-modal/Sections.vue";
@@ -13,6 +13,7 @@ type MapModalSection = "enemies" | "docks" | "boxes";
 const props = defineProps<{
   isOpen: boolean;
   location: LocationViewModel | null;
+  initialEnemyId: string | null;
 }>();
 
 const emit = defineEmits<{
@@ -34,6 +35,38 @@ const enemyIds = computed(() => {
 });
 
 const selectedSection = ref<MapModalSection>("enemies");
+const selectedEnemyId = ref<string | null>(null);
+
+const selectFirstEnemy = () => {
+  selectedEnemyId.value = enemyIds.value[0] ?? null;
+};
+
+const applyOpenSelection = () => {
+  selectedSection.value = "enemies";
+  selectedEnemyId.value = props.initialEnemyId;
+};
+
+watch(
+  () => props.isOpen,
+  (isOpen) => {
+    if (isOpen) {
+      applyOpenSelection();
+    }
+  }
+);
+
+watch(
+  enemyIds,
+  () => {
+    if (!props.isOpen || selectedSection.value !== "enemies") {
+      return;
+    }
+
+    if (selectedEnemyId.value === null || !enemyIds.value.includes(selectedEnemyId.value)) {
+      selectFirstEnemy();
+    }
+  }
+);
 
 const closeModal = () => {
   emit("close");
@@ -41,6 +74,14 @@ const closeModal = () => {
 
 const selectSection = (section: MapModalSection) => {
   selectedSection.value = section;
+
+  if (section === "enemies") {
+    selectFirstEnemy();
+  }
+};
+
+const selectEnemy = (enemyId: string) => {
+  selectedEnemyId.value = enemyId;
 };
 </script>
 
@@ -66,6 +107,8 @@ const selectSection = (section: MapModalSection) => {
       <EnemiesSection
         v-if="selectedSection === 'enemies'"
         :enemy-ids="enemyIds"
+        :selected-enemy-id="selectedEnemyId"
+        @select-enemy="selectEnemy"
       />
       <DocksSection v-else-if="selectedSection === 'docks'" />
       <BoxesSection v-else-if="selectedSection === 'boxes'" />

@@ -2,7 +2,6 @@
   "mapModal": {
     "enemies": "Inimigos",
     "docks": "Docas",
-    "boxes": "Caixas",
-    "selectEnemy": "Clique em um Inimigo para ver detalhes"
+    "boxes": "Caixas"
   }
 }

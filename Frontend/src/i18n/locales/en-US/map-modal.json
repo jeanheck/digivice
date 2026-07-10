@@ -2,7 +2,6 @@
   "mapModal": {
     "enemies": "Enemies",
     "docks": "Docks",
-    "boxes": "Boxes",
-    "selectEnemy": "Click on an Enemy to view details"
+    "boxes": "Boxes"
   }
 }

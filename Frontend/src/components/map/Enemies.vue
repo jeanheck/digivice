@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
-import EnemyModal from "./enemy-modal/EnemyModal.vue";
+import { computed } from "vue";
 import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter.ts";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
   location: LocationViewModel | null;
+}>();
+
+const emit = defineEmits<{
+  (e: "open-map-modal", enemyId: string): void;
 }>();
 
 const resumedEnemies = computed(() => {
@@ -14,25 +17,9 @@ const resumedEnemies = computed(() => {
 
 const hasEnemies = computed(() => resumedEnemies.value.length > 0);
 
-const isEnemyModalOpen = ref(false);
-const selectedEnemy = ref<string | null>(null);
-
-const openEnemyDetails = (enemyId: string) => {
-  selectedEnemy.value = enemyId;
-  isEnemyModalOpen.value = true;
+const openMapModal = (enemyId: string) => {
+  emit("open-map-modal", enemyId);
 };
-
-const closeEnemyDetails = () => {
-  isEnemyModalOpen.value = false;
-  selectedEnemy.value = null;
-};
-
-watch(
-  () => props.location,
-  () => {
-    closeEnemyDetails();
-  }
-);
 </script>
 
 <template>
@@ -45,15 +32,14 @@ watch(
         <button
           v-for="enemy in resumedEnemies"
           :key="enemy.id"
-          @click="openEnemyDetails(enemy.id)"
+          type="button"
           class="font-bold text-[10px] 2xl:text-xs tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
           :class="enemy.boss ? 'text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]' : 'text-[#bc3737] hover:text-[#c76060] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
+          @click="openMapModal(enemy.id)"
         >
           {{ enemy.name }}
         </button>
       </div>
     </div>
-
-    <EnemyModal :is-open="isEnemyModalOpen" :enemyId="selectedEnemy" @close="closeEnemyDetails" />
   </div>
 </template>
