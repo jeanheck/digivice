@@ -29,26 +29,30 @@ const hasRight = computed(() => props.rightLocations.length > 0);
 
 <template>
   <div v-if="hasEmerge || hasLeft || hasRight" class="w-full flex justify-center shrink-0 px-0.5">
-    <div class="map-info-panel flex flex-col gap-1.5">
-      <div v-if="hasEmerge" class="flex items-start justify-center gap-3">
+    <div class="map-info-panel flex flex-col gap-2.5">
+      <div v-if="hasEmerge" class="flex items-start justify-center gap-3 w-full">
         <div
           v-for="(point, index) in emerge"
           :key="`${point.location}-${index}`"
-          class="flex flex-col items-center gap-0.5 min-w-0"
+          class="flex flex-1 flex-col items-center gap-0.5 min-w-0"
         >
-          <span class="text-[15px] leading-none">{{ point.emoji }}</span>
-          <span class="text-[9px] text-cyan-300 text-center leading-tight">{{ point.location }}</span>
+          <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">{{ point.emoji }}</span>
+          <span class="text-[9px] text-cyan-100 text-center leading-tight">{{ point.location }}</span>
         </div>
       </div>
 
       <div v-if="hasLeft" class="flex items-center gap-1.5 w-full">
-        <span class="text-[15px] leading-none shrink-0">⬅️</span>
-        <span class="text-[9px] text-cyan-300 text-left leading-tight min-w-0">{{ leftLocations.join(", ") }}</span>
+        <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">⬅️</span>
+        <div class="flex flex-col text-[9px] text-cyan-200 text-left leading-tight min-w-0">
+          <span v-for="(location, index) in leftLocations" :key="index">{{ location }}</span>
+        </div>
       </div>
 
       <div v-if="hasRight" class="flex items-center justify-end gap-1.5 w-full">
-        <span class="text-[9px] text-cyan-300 text-right leading-tight min-w-0">{{ rightLocations.join(", ") }}</span>
-        <span class="text-[15px] leading-none shrink-0">➡️</span>
+        <div class="flex flex-col text-[9px] text-cyan-300 text-right leading-tight min-w-0">
+          <span v-for="(location, index) in rightLocations" :key="index">{{ location }}</span>
+        </div>
+        <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">➡️</span>
       </div>
     </div>
   </div>
