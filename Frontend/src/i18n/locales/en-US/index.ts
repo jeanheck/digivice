@@ -1,4 +1,5 @@
 import map from "./map.json";
+import mapModal from "./map-modal.json";
 import enemy from "./enemy/enemy.json";
 import species from "./enemy/specie.json";
 import conditions from "./enemy/condition.json";
@@ -31,6 +32,7 @@ import auction from "./auction.json";
 
 export default {
   ...map,
+  ...mapModal,
   ...enemy,
   ...species,
   ...conditions,

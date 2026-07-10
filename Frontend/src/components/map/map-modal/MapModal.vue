@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import Modal from "@/components/modal/Modal.vue";
+import Sections from "@/components/map/map-modal/Sections.vue";
 import EnemiesSection from "@/components/map/map-modal/EnemiesSection.vue";
 import DocksSection from "@/components/map/map-modal/DocksSection.vue";
 import BoxesSection from "@/components/map/map-modal/BoxesSection.vue";
@@ -45,40 +46,7 @@ const selectSection = (section: MapModalSection) => {
           {{ title }}
         </h2>
 
-        <nav class="flex items-center gap-4 min-w-0">
-          <button
-            type="button"
-            class="text-sm tracking-widest px-2 py-1 rounded border transition-colors duration-150 cursor-pointer"
-            :class="selectedSection === 'enemies'
-              ? 'text-[#bc3737] border-[#bc3737] bg-red-500/15'
-              : 'text-red-900 border-transparent hover:text-[#bc3737] hover:border-[#bc3737] hover:bg-red-500/15'"
-            @click="selectSection('enemies')"
-          >
-            {{ $t("map.enemies") }}
-          </button>
-
-          <button
-            type="button"
-            class="text-sm tracking-widest px-2 py-1 rounded border transition-colors duration-150 cursor-pointer"
-            :class="selectedSection === 'docks'
-              ? 'text-cyan-300 border-cyan-300 bg-cyan-300/15'
-              : 'text-cyan-500 border-transparent hover:text-cyan-300 hover:border-cyan-300 hover:bg-cyan-300/15'"
-            @click="selectSection('docks')"
-          >
-            {{ $t("map.docks") }}
-          </button>
-
-          <button
-            type="button"
-            class="text-sm tracking-widest px-2 py-1 rounded border transition-colors duration-150 cursor-pointer"
-            :class="selectedSection === 'boxes'
-              ? 'text-yellow-500 border-yellow-500 bg-yellow-500/15'
-              : 'text-yellow-700 border-transparent hover:text-yellow-500 hover:border-yellow-500 hover:bg-yellow-500/15'"
-            @click="selectSection('boxes')"
-          >
-            {{ $t("map.boxes") }}
-          </button>
-        </nav>
+        <Sections :selected="selectedSection" @select="selectSection" />
       </div>
     </template>
 
