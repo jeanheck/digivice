@@ -103,7 +103,7 @@ watch(
       />
 
       <svg
-        class="absolute inset-0 w-full h-full z-[9]"
+        class="absolute inset-0 w-full h-full z-9"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >

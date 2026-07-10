@@ -1,17 +1,13 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
+import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 
 const MAP_FRAME_WIDTH_PX = 600;
 
 const props = defineProps<{
   imageUrl: string | null;
+  coordinates: CoordinatesViewModel | null;
 }>();
-
-const dock = {
-  name: "Divermon's Lake",
-  x: 70,
-  y: 70,
-};
 
 const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
 
@@ -69,8 +65,9 @@ watch(
       />
 
       <div
+        v-if="coordinates"
         class="absolute z-10 w-3.5 h-3.5 rounded-full bg-cyan-500/50 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-        :style="{ left: dock.x + '%', top: dock.y + '%' }"
+        :style="{ left: coordinates.x + '%', top: coordinates.y + '%' }"
       />
     </div>
   </div>
