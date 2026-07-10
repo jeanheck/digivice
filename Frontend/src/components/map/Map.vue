@@ -32,7 +32,7 @@ function onBoxesClick(): void {
 </script>
 
 <template>
-  <aside class="dw3-aside flex-1 min-h-0 !pt-1.5 !pb-1.5 relative overflow-hidden">
+  <aside class="dw3-aside flex-1 min-h-0 pt-1.5! pb-1.5! relative overflow-hidden">
     <div
       class="absolute inset-0 bg-black bg-opacity-60"
       :class="{ 'bg-grid-pattern': !locationImage }"
@@ -53,7 +53,7 @@ function onBoxesClick(): void {
       <div class="flex flex-col items-center gap-2 shrink-0">
         <Location :location="locationViewModel" />
         <Enemies :location="locationViewModel" />
-        <Seabed />
+        <!--<Seabed />-->
       </div>
 
       <div class="flex-1 min-h-0" />
