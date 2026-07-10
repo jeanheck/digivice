@@ -75,7 +75,7 @@ const closeModal = () => {
 const selectSection = (section: MapModalSection) => {
   selectedSection.value = section;
 
-  if (section === "enemies") {
+  if (section === "enemies" && selectedEnemyId.value === null) {
     selectFirstEnemy();
   }
 };
