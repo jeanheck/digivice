@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import { computed, ref, watch } from "vue";
 
 const MAP_FRAME_WIDTH_PX = 600;
 
-const imageUrl = ImageCatalog.getMapImageUrl("Divermons Lake");
+const props = defineProps<{
+  imageUrl: string | null;
+}>();
 
 const dock = {
   name: "Divermon's Lake",
@@ -44,6 +45,13 @@ const onImageLoad = (event: Event) => {
     height: imageElement.naturalHeight,
   };
 };
+
+watch(
+  () => props.imageUrl,
+  () => {
+    imageNaturalSize.value = null;
+  }
+);
 </script>
 
 <template>

@@ -10,6 +10,8 @@ import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 
+type MapModalSection = "enemies" | "docks" | "boxes";
+
 const store = useGameStore();
 
 const locationViewModel = computed(() => {
@@ -27,8 +29,10 @@ const locationImage = computed(() => {
 
 const isMapModalOpen = ref(false);
 const initialEnemyId = ref<string | null>(null);
+const initialSection = ref<MapModalSection>("enemies");
 
 const openMapModal = (enemyId: string) => {
+  initialSection.value = "enemies";
   initialEnemyId.value = enemyId;
   isMapModalOpen.value = true;
 };
@@ -36,9 +40,13 @@ const openMapModal = (enemyId: string) => {
 const closeMapModal = () => {
   isMapModalOpen.value = false;
   initialEnemyId.value = null;
+  initialSection.value = "enemies";
 };
 
 function onDocksClick(): void {
+  initialSection.value = "docks";
+  initialEnemyId.value = null;
+  isMapModalOpen.value = true;
 }
 
 function onBoxesClick(): void {
@@ -74,7 +82,7 @@ function onBoxesClick(): void {
 
       <div class="w-full flex justify-center shrink-0 px-0.5 pb-1">
         <div class="flex gap-1 w-full max-w-[95%]">
-          <DocksButton @click="onDocksClick" />
+          <DocksButton :dock="locationViewModel?.dock ?? false" @click="onDocksClick" />
           <BoxesButton @click="onBoxesClick" />
         </div>
       </div>
@@ -84,6 +92,7 @@ function onBoxesClick(): void {
       :is-open="isMapModalOpen"
       :location="locationViewModel"
       :initial-enemy-id="initialEnemyId"
+      :initial-section="initialSection"
       @close="closeMapModal"
     />
   </aside>

@@ -14,6 +14,7 @@ const props = defineProps<{
   isOpen: boolean;
   location: LocationViewModel | null;
   initialEnemyId: string | null;
+  initialSection: MapModalSection;
 }>();
 
 const emit = defineEmits<{
@@ -42,7 +43,7 @@ const selectFirstEnemy = () => {
 };
 
 const applyOpenSelection = () => {
-  selectedSection.value = "enemies";
+  selectedSection.value = props.initialSection;
   selectedEnemyId.value = props.initialEnemyId;
 };
 
@@ -110,7 +111,7 @@ const selectEnemy = (enemyId: string) => {
         :selected-enemy-id="selectedEnemyId"
         @select-enemy="selectEnemy"
       />
-      <DocksSection v-else-if="selectedSection === 'docks'" />
+      <DocksSection v-else-if="selectedSection === 'docks'" :location="location" />
       <BoxesSection v-else-if="selectedSection === 'boxes'" />
     </div>
   </Modal>

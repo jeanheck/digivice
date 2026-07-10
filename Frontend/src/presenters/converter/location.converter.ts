@@ -11,6 +11,7 @@ export class LocationConverter {
       id: locationId,
       image: locationRaw.image,
       enemies: resolvedEnemyIds,
+      dock: locationRaw.dock,
     };
   }
 }
