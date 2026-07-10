@@ -39,11 +39,11 @@ const icon = computed(() => {
       @mousemove="(event) => emit('moveTooltip', event)"
       @mouseleave="emit('hideTooltip')"
     >
-      <span class="text-sm font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1">{{ icon }}</span>
+      <span class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1">{{ icon }}</span>
     </div>
 
     <div
-      class="font-bold tracking-wide cursor-help flex items-center min-w-0"
+      class="font-bold tracking-wide cursor-help flex items-center min-w-0 text-xs 2xl:text-base"
       @mouseenter="(event) => emit('showMathTooltip', event, label, statViewModel.fromDigimon, statViewModel.fromEquipaments, statViewModel.fromDigievolution, statViewModel.sumBetweenDigimonAndEquipaments)"
       @mousemove="(event) => emit('moveTooltip', event)"
       @mouseleave="emit('hideTooltip')"
