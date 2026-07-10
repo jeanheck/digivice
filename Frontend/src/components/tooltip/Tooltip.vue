@@ -32,7 +32,8 @@ withDefaults(
       >
         <div
           v-if="title"
-          class="font-bold text-yellow-300 text-sm border-b border-[#0066cc]/50 pb-1 mb-1 shadow-black shadow-text uppercase tracking-wider text-center whitespace-nowrap"
+          class="font-bold text-yellow-300 text-sm shadow-black shadow-text uppercase tracking-wider text-center whitespace-nowrap"
+          :class="{ 'border-b border-[#0066cc]/50 pb-1 mb-1': !!$slots.default }"
         >
           {{ title }}
         </div>

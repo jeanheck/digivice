@@ -21,7 +21,7 @@ const equipmentSlots = computed(() => {
   });
 });
 
-const tooltipPlacement = "below" as const;
+const tooltipPlacement = "above" as const;
 const tooltipPosition = useTooltipPosition(300);
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 const selectedEquipment = ref<EquipmentViewModel | null>(null);
@@ -63,7 +63,7 @@ const moveTooltip = (event: MouseEvent) => {
       :x="tooltipX"
       :y="tooltipY"
       :equipment="selectedEquipment"
-      placement="below"
+      :placement="tooltipPlacement"
     />
   </div>
 </template>
