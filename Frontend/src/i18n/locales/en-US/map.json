@@ -2,6 +2,8 @@
   "map": {
     "map": "Map",
     "enemies": "Enemies",
+    "docks": "Docks",
+    "boxes": "Boxes",
     "unknownZone": "Unknown Zone",
     "safeZone": "Safe Zone"
   }

@@ -381,3 +381,13 @@ body {
   background-color: rgb(0 0 0 / 0.9);
   border-color: rgb(0 170 255 / 0.6);
 }
+
+.map-info-panel-fit.map-info-panel-action {
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.map-info-panel-fit.map-info-panel-action:hover {
+  background-color: rgb(0 0 0 / 0.9);
+  border-color: rgb(0 170 255 / 0.6);
+}
