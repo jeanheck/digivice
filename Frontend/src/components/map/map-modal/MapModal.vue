@@ -88,9 +88,9 @@ const selectEnemy = (enemyId: string) => {
 <template>
   <Modal
     :is-open="isModalOpen"
-    max-width="max-w-450"
-    max-height="h-[92vh] max-h-250"
-    panel-class="w-[98vw]"
+    max-width="max-w-[1334px]"
+    max-height="h-[700px] max-h-[700px]"
+    panel-class="w-[1334px]"
     @close="closeModal"
   >
     <template #header>
