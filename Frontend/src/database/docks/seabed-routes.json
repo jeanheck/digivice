@@ -1,0 +1,22 @@
+{
+    "1": {
+        "docks": [
+            { "location": "0227", "x": 74.5, "y": 47, "type": "normal" },
+            { "location": "0228", "x": 76.5, "y": 24, "type": "normal" }
+        ]
+    },
+    "2": {
+        "docks": [
+            { "location": "0234", "x": 79, "y": 72, "type": "normal" },
+            { "location": "021D", "x": 50.5, "y": 50.5, "type": "normal" },
+            { "location": "022A", "x": 87, "y": 47, "type": "normal" }
+        ]
+    },
+    "3": {
+        "docks": [
+            { "location": "0200", "x": 46.5, "y": 43, "type": "dead-end" },
+            { "location": "0202", "x": 51, "y": 44, "type": "normal" },
+            { "location": "021B", "x": 55, "y": 40, "type": "dead-end" }
+        ]
+    }
+}

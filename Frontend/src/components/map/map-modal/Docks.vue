@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
+import { DocksPresenter } from "@/presenters/map/docks.presenter";
 
 const MAP_FRAME_WIDTH_PX = 600;
 
@@ -7,33 +8,9 @@ const props = defineProps<{
   imageUrl: string | null;
 }>();
 
-const routes = [
-  {
-    name: "Divermon's Lake - Duel Island",
-    docks: [
-      { name: "Divermon's Lake", x: 74.5, y: 47, type: "normal" },
-      { name: "Duel Island", x: 76.5, y: 24, type: "normal" },
-    ],
-  },
-  {
-    name: "Bulk Bridge - Central Park - Kicking Forest",
-    docks: [
-      { name: "Bulk Bridge", x: 79, y: 72, type: "normal" },
-      { name: "Central Park", x: 50.5, y: 50.5, type: "normal" },
-      { name: "Kicking Forest", x: 87, y: 47, type: "normal" },
-    ],
-  },
-  {
-    name: "Asuka City - Asuka Bridge - Asuka Sewers",
-    docks: [
-      { name: "Asuka City", x: 46.5, y: 43, type: "dead-end" },
-      { name: "Asuka Bridge", x: 51, y: 44, type: "normal" },
-      { name: "Asuka Sewers", x: 55, y: 40, type: "dead-end" },
-    ],
-  },
-];
+const routes = DocksPresenter.getRoutes();
 
-const hoveredRouteName = ref<string | null>(null);
+const hoveredRouteId = ref<string | null>(null);
 
 const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
 
@@ -55,16 +32,16 @@ const mapImageFrameStyle = computed(() => {
   };
 });
 
-function onRouteEnter(routeName: string): void {
-  hoveredRouteName.value = routeName;
+function onRouteEnter(routeId: string): void {
+  hoveredRouteId.value = routeId;
 }
 
 function onRouteLeave(): void {
-  hoveredRouteName.value = null;
+  hoveredRouteId.value = null;
 }
 
-function isRouteHovered(routeName: string): boolean {
-  return hoveredRouteName.value === routeName;
+function isRouteHovered(routeId: string): boolean {
+  return hoveredRouteId.value === routeId;
 }
 
 const onImageLoad = (event: Event) => {
@@ -109,11 +86,11 @@ watch(
       >
         <template
           v-for="route in routes"
-          :key="route.name"
+          :key="route.id"
         >
           <template
             v-for="segmentIndex in route.docks.length - 1"
-            :key="`${route.name}-${segmentIndex}`"
+            :key="`${route.id}-${segmentIndex}`"
           >
             <line
               :x1="route.docks[segmentIndex - 1].x"
@@ -124,7 +101,7 @@ watch(
               stroke-width="3"
               pointer-events="stroke"
               cursor="help"
-              @mouseenter="onRouteEnter(route.name)"
+              @mouseenter="onRouteEnter(route.id)"
               @mouseleave="onRouteLeave"
             />
             <line
@@ -132,9 +109,9 @@ watch(
               :y1="route.docks[segmentIndex - 1].y"
               :x2="route.docks[segmentIndex].x"
               :y2="route.docks[segmentIndex].y"
-              :stroke="isRouteHovered(route.name) ? '#67e8f9' : '#06b6d4'"
-              :stroke-opacity="isRouteHovered(route.name) ? 1 : 0.5"
-              :stroke-width="isRouteHovered(route.name) ? 1 : 1"
+              :stroke="isRouteHovered(route.id) ? '#67e8f9' : '#06b6d4'"
+              :stroke-opacity="isRouteHovered(route.id) ? 1 : 0.5"
+              :stroke-width="isRouteHovered(route.id) ? 1 : 0.9"
               pointer-events="none"
             />
           </template>
@@ -143,18 +120,18 @@ watch(
 
       <template
         v-for="route in routes"
-        :key="route.name"
+        :key="route.id"
       >
         <div
           v-for="dock in route.docks"
-          :key="dock.name"
+          :key="dock.location"
           class="absolute z-10 rounded-full -translate-x-1/2 -translate-y-1/2 transition-all"
           :class="[
             dock.type === 'dead-end' ? 'w-3 h-3 cursor-help' : 'w-7 h-7 cursor-pointer',
-            isRouteHovered(route.name) ? 'bg-cyan-300' : 'bg-cyan-500/50',
+            isRouteHovered(route.id) ? 'bg-cyan-300' : 'bg-cyan-500/50',
           ]"
           :style="{ left: dock.x + '%', top: dock.y + '%' }"
-          @mouseenter="onRouteEnter(route.name)"
+          @mouseenter="onRouteEnter(route.id)"
           @mouseleave="onRouteLeave"
         />
       </template>
