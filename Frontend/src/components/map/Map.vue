@@ -23,6 +23,10 @@ const locationImage = computed(() => {
   return ImageCatalog.getMapImageUrl(locationViewModel.value?.image ?? null);
 });
 
+const isSeabedLocation = computed(() => {
+  return MapPresenter.isSeabedLocation(locationViewModel.value?.id ?? null);
+});
+
 const isEnemyModalOpen = ref(false);
 const selectedEnemyId = ref<string | null>(null);
 
@@ -59,7 +63,7 @@ const closeEnemyModal = () => {
       <div class="flex flex-col items-center gap-2 shrink-0">
         <Location :location="locationViewModel" />
         <Enemies :location="locationViewModel" @open-enemy-modal="openEnemyModal" />
-        <Seabed />
+        <Seabed v-if="isSeabedLocation" />
       </div>
 
       <div class="flex-1 min-h-0" />

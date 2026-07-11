@@ -1,0 +1,9 @@
+{
+    "0": {
+        "emerge": [
+            { "on": "center", "location": "Divermon's Lake" }
+        ],
+        "left": [],
+        "right": ["Seabed"]
+    }
+}

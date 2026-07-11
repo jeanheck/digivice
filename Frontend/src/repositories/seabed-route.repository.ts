@@ -1,4 +1,4 @@
-import SeabedRoutesJson from "@/database/docks/seabed-routes.json";
+import SeabedRoutesJson from "@/database/seabed/seabed-routes.json";
 import type { SeabedRoutesTable } from "./tables/dock/seabed-routes.table";
 
 export class SeabedRouteRepository {

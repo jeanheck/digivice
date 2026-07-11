@@ -27,7 +27,7 @@ See also **Map / location** for seabed routing fields.
 | 0x0004B400 | PreviousMapId (rolling) | seabed-routing investigation — map just left on each transition |
 | 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
 | 0x00048D68 | PreviousMapId mirror (player block) | seabed-routing investigation — mirrors `0x4B400` |
-| 0x00048D78 | Seabed route context | seabed-routing investigation — set on dive, persists underwater |
+| 0x00048D78 | Seabed route context (corridor / dock pair) | seabed-routing investigation — set on dive, persists underwater; same from either entry |
 | 0x00048D7A | Submerged session flag (`0x01` = underwater) | seabed-routing investigation |
 
 Details: [seabed-routing-investigation.md](seabed-routing-investigation.md).

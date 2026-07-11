@@ -13,12 +13,17 @@ surface-to-surface routes. A dive point on the surface selects which corridor
 and which exit destination apply — the current `MapId` alone cannot distinguish
 routes while underwater.
 
+`0x48D78` identifies the **corridor** (the dock pair), not the entry dock.
+Entering from either end of the same link keeps the same route context; only
+the seabed segment order and `PreviousMapId` reverse.
+
 Example routes (confirmed):
 
-| Surface entry | Seabed path | Surface exit |
-|---------------|-------------|--------------|
-| `023E` Suzaku City | `02E2` → `02E0` | `0241` Suzaku UG Lake |
-| `0227` Divermon's Lake | `02E2` → `02E0` | `0228` Duel Island |
+| Surface A | Seabed path (A→B) | Surface B | `0x48D78` |
+|-----------|-------------------|-----------|-----------|
+| `023E` Suzaku City | `02E2` → `02E0` | `0241` Suzaku UG Lake | `0x07` |
+| `0227` Divermon's Lake | `02E2` → `02E0` | `0228` Duel Island | `0x08` |
+| `0228` Duel Island | `02E0` → `02E2` | `0227` Divermon's Lake | `0x08` *(same corridor, reverse)* |
 
 Location IDs reference `Frontend/src/database/location/location.json`.
 
@@ -69,6 +74,21 @@ Compare **last seabed** vs **surface after exit**.
 - Exit destination is not encoded in `0x4B400` at emerge time; it was resolved
   using route context (`0x48D78`) set at dive.
 
+### Step 5 — Reverse-direction control (same corridor)
+
+Run the **same dock pair** starting from the opposite surface dock (e.g.
+Duel Island → Divermon's Lake after documenting Divermon's Lake → Duel Island).
+
+- Seabed segment order reverses (`E0` → `E2` instead of `E2` → `E0`).
+- On first dive, `0x4B400` equals the new surface entry (`28` from Duel Island).
+- `0x48D78` stays the **same** as the forward run (`08`) for the whole session.
+- Confirms `D78` is corridor identity, not entry-dock identity.
+
+Snapshots used for the reverse Divermon's ↔ Duel run:
+`Tools/MemoryScanner/Snapshots/before_dive_duel_island.bin`,
+`first_seabed_after_dive.bin`, `second_seabed_after_dive.bin`,
+`divermons_lake_after_emerge.bin`.
+
 ---
 
 ## Confirmed addresses
@@ -86,7 +106,7 @@ Compare **last seabed** vs **surface after exit**.
 | Address | Field | Type | Behavior |
 |---------|-------|------|----------|
 | `0x00048D68` | PreviousMapId mirror | u8 | Mirrors `0x4B400` on every observed transition (~32 bytes before name at `0x48D88`). |
-| `0x00048D78` | Seabed route context | u8 | Set on dive; **persists** for the whole underwater session; cleared on surface emerge. Route discriminator on shared seabed maps. |
+| `0x00048D78` | Seabed route context | u8 | Set on dive; **persists** for the whole underwater session; cleared on surface emerge. Identifies the **corridor** (dock pair), independent of which end you enter. |
 | `0x00048D7A` | Submerged session flag | u8 | `0x01` while underwater; `0x00` on surface. Same for all routes — indicates session, not which route. |
 
 ---
@@ -119,12 +139,27 @@ differs (`08` vs `07`) and exits differ (`28` vs `41`).
 
 ---
 
+## Evidence — Duel Island → Divermon's Lake (reverse of `0x08`)
+
+| Stage | `B3F8` | `B400` | `D78` | `D7A` |
+|-------|--------|--------|-------|-------|
+| Duel Island (before dive) | `28` | `E0` *(stale)* | `00` | `00` |
+| First seabed (`02E0`) | `E0` | `28` | `08` | `01` |
+| Second seabed (`02E2`) | `E2` | `E0` | `08` | `01` |
+| Divermon's Lake (after emerge) | `27` | `E2` | `00` | `00` |
+
+Same `D78` (`08`) as Divermon's Lake → Duel Island. Only segment order and
+surface ends reverse. Mirrors (`B410` / `D68`) matched `B3F8` / `B400` on
+every stage.
+
+---
+
 ## Route context values (partial)
 
-| `0x48D78` | Surface entry | Surface exit | Status |
-|-----------|---------------|--------------|--------|
-| `0x07` | `023E` Suzaku City | `0241` Suzaku UG Lake | confirmed |
-| `0x08` | `0227` Divermon's Lake | `0228` Duel Island | confirmed |
+| `0x48D78` | Dock pair (bidirectional) | Status |
+|-----------|---------------------------|--------|
+| `0x07` | `023E` Suzaku City ↔ `0241` Suzaku UG Lake | confirmed (one direction tested) |
+| `0x08` | `0227` Divermon's Lake ↔ `0228` Duel Island | confirmed both directions |
 
 Other dive points not yet mapped. Values may be route indices, not derived from
 map IDs directly.
@@ -147,9 +182,12 @@ map IDs directly.
 
 When `MapId` is a seabed ID (`02Ex`) and `0x48D7A == 0x01`:
 
-1. Read `0x48D78` to resolve which route / exit table applies.
-2. On the **first** underwater segment only, `0x4B400` also equals the surface
-   entry map (redundant with `D78` for confirmed routes).
+1. Read `0x48D78` to resolve which **corridor** (dock pair) applies — same
+   value from either entry dock.
+2. Use current `MapId` + corridor table to know which surface exits are still
+   reachable; do not assume a single “forward” exit from `D78` alone.
+3. On the **first** underwater segment only, `0x4B400` equals the surface
+   entry map (useful to know *which end* you entered from).
 
 Not yet added to `PlayerAddresses.json` or backend readers.
 
@@ -157,7 +195,10 @@ Not yet added to `PlayerAddresses.json` or backend readers.
 
 ## Status
 
-- [x] Confirmed via paired compares (two full routes)
+- [x] Confirmed via paired compares (two full corridors; Suzaku one way,
+      Divermon's ↔ Duel both ways)
+- [x] `0x48D78` confirmed as corridor identity (direction-independent)
 - [x] Retrofed to `memory-regions.md` and `known-patterns.md`
 - [ ] Integrated in `PlayerAddresses.json` / backend
 - [ ] Route table complete for all dive points
+- [ ] Reverse test for Suzaku City ↔ Suzaku UG Lake (`0x07`)

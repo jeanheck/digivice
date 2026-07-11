@@ -175,12 +175,14 @@ segments, `0x4B400` is identical across routes.
 - Set once on dive (`0x00` → route value).
 - **Unchanged** while walking between seabed maps on the same session.
 - Cleared on surface emerge (`→ 0x00`).
+- Identifies the **corridor** (dock pair), not the entry dock — same value
+  when diving from either end of the link.
 - Primary discriminator when two players share the same `MapId` on seabed.
 
-| `0x48D78` | Surface entry | Surface exit |
-|-----------|---------------|--------------|
-| `0x07` | Suzaku City (`023E`) | Suzaku UG Lake (`0241`) |
-| `0x08` | Divermon's Lake (`0227`) | Duel Island (`0228`) |
+| `0x48D78` | Dock pair (bidirectional) |
+|-----------|---------------------------|
+| `0x07` | Suzaku City (`023E`) ↔ Suzaku UG Lake (`0241`) |
+| `0x08` | Divermon's Lake (`0227`) ↔ Duel Island (`0228`) *(both directions)* |
 
 Table incomplete — more dive points not yet mapped.
 
@@ -192,8 +194,10 @@ submerged state, not which route.
 ### How it was found
 
 Paired `compare` across: (1) dive entry, (2) seabed segment walk, (3) two
-different surface entries through the same seabed corridor, (4) surface emerge.
-Cross-route diff on step 3 isolated `0x48D78` as the persistent route field.
+different surface entries through the same seabed corridor, (4) surface emerge,
+(5) reverse direction on the same dock pair. Cross-route diff on step 3
+isolated `0x48D78`; step 5 showed `D78` is corridor identity (still `0x08`
+for Duel Island → Divermon's Lake).
 
 ---
 
