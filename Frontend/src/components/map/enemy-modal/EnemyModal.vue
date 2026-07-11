@@ -6,7 +6,7 @@ import EnemyProfile from "@/components/map/enemy-modal/EnemyProfile.vue";
 import EnemyAttributes from "@/components/map/enemy-modal/EnemyAttributes.vue";
 import EnemyElements from "@/components/map/enemy-modal/EnemyElements.vue";
 import EnemyConditions from "@/components/map/enemy-modal/EnemyConditions.vue";
-import SearchBar from "@/components/party/digimon/digievolutions-modal/SearchBar.vue";
+import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
@@ -23,19 +23,24 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
+const selectedEnemyId = ref<string | null>(null);
+
 const isModalOpen = computed(() => {
-  return props.isOpen && props.enemyId !== null;
+  return props.isOpen && selectedEnemyId.value !== null;
 });
 
 const handleClose = () => {
   emit("close");
 };
 
-const handleSearchSelectDigievolutionId = (_digievolutionId: number) => {
+const handleSearchSelect = (id: string) => {
+  selectedEnemyId.value = id;
 };
 
+const allSearchItems = EnemyModalPresenter.getAllSearchItems();
+
 const enemy = computed(() => {
-  return EnemyModalPresenter.getEnemyById(props.enemyId!);
+  return EnemyModalPresenter.getEnemyById(selectedEnemyId.value!);
 });
 
 const tooltipPlacement = "below" as const;
@@ -61,14 +66,21 @@ const moveEnemyStatTooltip = (event: MouseEvent) => {
   move(event, tooltipPlacement);
 };
 
-watch(() => props.isOpen, (open) => {
-  if (!open) {
+watch(
+  () => props.isOpen,
+  (open) => {
+    if (open) {
+      selectedEnemyId.value = props.enemyId;
+      return;
+    }
+
     hide();
+    selectedEnemyId.value = null;
   }
-});
+);
 
 const enemyImageUrl = computed(() => {
-  if (!props.enemyId) {
+  if (selectedEnemyId.value === null) {
     return null;
   }
   return ImageCatalog.getEnemyIconUrl(enemy.value.name);
@@ -89,8 +101,11 @@ const enemyImageUrl = computed(() => {
         </h2>
 
         <SearchBar
-          :all-digievolutions="[]"
-          @select-digievolution-id="handleSearchSelectDigievolutionId"
+          :items="allSearchItems"
+          :selected-id="selectedEnemyId ?? undefined"
+          :placeholder="t('enemy.searchPlaceholder')"
+          :no-results-label="t('enemy.searchNoResults')"
+          @select="handleSearchSelect"
         />
       </div>
     </template>

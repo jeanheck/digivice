@@ -1,6 +1,8 @@
 {
   "enemy": {
     "bestiary": "Bestiário",
+    "searchPlaceholder": "Digite o nome de um inimigo...",
+    "searchNoResults": "Nenhum inimigo encontrado",
     "level": "Nível",
     "specie": "Espécie",
     "drop": "Drop",

@@ -8,4 +8,8 @@ export class EnemyRepository {
   public static getEnemyById(enemyId: string): EnemyRaw {
     return this.enemyTable[enemyId]!;
   }
+
+  public static getEnemyTable(): EnemyTable {
+    return this.enemyTable;
+  }
 }
