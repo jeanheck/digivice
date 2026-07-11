@@ -1,6 +1,7 @@
 import { ref } from "vue";
 
 export type TooltipPlacement = "above" | "below";
+export type TooltipHorizontalAlign = "right" | "left";
 
 /**
  * Cursor-following tooltip position state. Use in the parent that handles mouseenter/move/leave;
@@ -11,15 +12,23 @@ export function useTooltipPosition(defaultMaxWidth = 250) {
     const x = ref(0);
     const y = ref(0);
     const maxWidth = ref(defaultMaxWidth);
+    const horizontalAlign = ref<TooltipHorizontalAlign>("right");
 
     function updatePosition(
         event: MouseEvent,
         width: number,
-        placement: TooltipPlacement
+        placement: TooltipPlacement,
+        align: TooltipHorizontalAlign
     ): void {
-        let positionX = event.clientX + 15;
-        if (positionX + width > window.innerWidth) {
-            positionX = event.clientX - width - 10;
+        let positionX: number;
+
+        if (align === "left") {
+            positionX = event.clientX - 15;
+        } else {
+            positionX = event.clientX + 15;
+            if (positionX + width > window.innerWidth) {
+                positionX = event.clientX - width - 10;
+            }
         }
 
         x.value = positionX;
@@ -28,7 +37,11 @@ export function useTooltipPosition(defaultMaxWidth = 250) {
 
     function showAt(
         event: MouseEvent,
-        options?: { maxWidth?: number; placement?: TooltipPlacement }
+        options?: {
+            maxWidth?: number;
+            placement?: TooltipPlacement;
+            align?: TooltipHorizontalAlign;
+        }
     ): void {
         show.value = true;
 
@@ -36,7 +49,14 @@ export function useTooltipPosition(defaultMaxWidth = 250) {
             maxWidth.value = options.maxWidth;
         }
 
-        updatePosition(event, maxWidth.value, options?.placement ?? "below");
+        horizontalAlign.value = options?.align ?? "right";
+
+        updatePosition(
+            event,
+            maxWidth.value,
+            options?.placement ?? "below",
+            horizontalAlign.value
+        );
     }
 
     function move(event: MouseEvent, placement: TooltipPlacement = "below"): void {
@@ -44,11 +64,12 @@ export function useTooltipPosition(defaultMaxWidth = 250) {
             return;
         }
 
-        updatePosition(event, maxWidth.value, placement);
+        updatePosition(event, maxWidth.value, placement, horizontalAlign.value);
     }
 
     function hide(): void {
         show.value = false;
+        horizontalAlign.value = "right";
     }
 
     return {
@@ -56,6 +77,7 @@ export function useTooltipPosition(defaultMaxWidth = 250) {
         x,
         y,
         maxWidth,
+        horizontalAlign,
         showAt,
         move,
         hide

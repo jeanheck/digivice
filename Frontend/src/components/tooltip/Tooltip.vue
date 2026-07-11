@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import type { TooltipPlacement } from "@/composables/use-tooltip-position";
+import { computed } from "vue";
+import type { TooltipHorizontalAlign, TooltipPlacement } from "@/composables/use-tooltip-position";
 
-withDefaults(
+const props = withDefaults(
     defineProps<{
         show: boolean;
         x: number;
@@ -9,12 +10,25 @@ withDefaults(
         title: string;
         maxWidth?: number;
         placement?: TooltipPlacement;
+        horizontalAlign?: TooltipHorizontalAlign;
     }>(),
     {
         maxWidth: 250,
-        placement: "below"
+        placement: "below",
+        horizontalAlign: "right"
     }
 );
+
+const tooltipTransform = computed(() => {
+    const translateX = props.horizontalAlign === "left" ? "-100%" : "0";
+    const translateY = props.placement === "above" ? "-100%" : "0";
+
+    if (translateX === "0" && translateY === "0") {
+        return undefined;
+    }
+
+    return `translate(${translateX}, ${translateY})`;
+});
 </script>
 
 <template>
@@ -27,7 +41,7 @@ withDefaults(
           top: `${y}px`,
           left: `${x}px`,
           maxWidth: `${maxWidth}px`,
-          transform: placement === 'above' ? 'translateY(-100%)' : undefined
+          transform: tooltipTransform
         }"
       >
         <div

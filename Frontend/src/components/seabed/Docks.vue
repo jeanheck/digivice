@@ -2,8 +2,10 @@
 import { computed, ref, watch } from "vue";
 import { DocksPresenter } from "@/presenters/map/docks.presenter";
 import type { SeabedRouteDockLabelPlacement } from "@/repositories/tables/raws/dock/seabed-route-dock.raw";
-
-const MAP_FRAME_WIDTH_PX = 600;
+import {
+  SEABED_MAP_FRAME_MAX_HEIGHT_PX,
+  SEABED_MAP_FRAME_WIDTH_PX,
+} from "@/components/seabed/seabed-map-frame";
 
 const props = defineProps<{
   imageUrl: string | null;
@@ -22,17 +24,17 @@ const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
 const mapImageFrameStyle = computed(() => {
   if (imageNaturalSize.value === null) {
     return {
-      width: `${MAP_FRAME_WIDTH_PX}px`,
-      minHeight: `${Math.round(MAP_FRAME_WIDTH_PX * 0.75)}px`,
+      width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
+      minHeight: `${Math.round(SEABED_MAP_FRAME_WIDTH_PX * 0.75)}px`,
     };
   }
 
   const displayHeight = Math.round(
-    MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width)
+    SEABED_MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width)
   );
 
   return {
-    width: `${MAP_FRAME_WIDTH_PX}px`,
+    width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
     height: `${displayHeight}px`,
   };
 });
@@ -96,8 +98,11 @@ watch(
 
 <template>
   <div
-    class="relative shrink-0 max-h-full min-h-0 overflow-visible bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
-    :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
+    class="relative shrink-0 min-h-0 overflow-y-auto overflow-x-hidden custom-scroll bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
+    :style="{
+      width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
+      maxHeight: `${SEABED_MAP_FRAME_MAX_HEIGHT_PX}px`,
+    }"
   >
     <div class="relative overflow-visible" :style="mapImageFrameStyle">
       <img

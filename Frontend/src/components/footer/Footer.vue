@@ -53,7 +53,7 @@ const showDocksTooltip = (event: MouseEvent) => {
   isTitleOnlyTooltip.value = true;
   tooltipTitle.value = t("map.seabed");
   tooltipText.value = "";
-  showAt(event, { maxWidth: 160, placement: "above" });
+  showAt(event, { maxWidth: 300, placement: "above", align: "left" });
 };
 
 const moveDocksTooltip = (event: MouseEvent) => {
@@ -163,8 +163,9 @@ const groupPartyLevel = computed(() => {
     :x="tooltipX"
     :y="tooltipY"
     :title="tooltipTitle"
-    :max-width="160"
+    :max-width="300"
     placement="above"
+    horizontal-align="left"
   />
 
   <DefaultTooltip

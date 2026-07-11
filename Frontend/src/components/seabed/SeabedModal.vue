@@ -70,9 +70,9 @@ const closeModal = () => {
 <template>
   <Modal
     :is-open="isModalOpen"
-    max-width="max-w-[1334px]"
-    max-height="h-[700px] max-h-[700px]"
-    panel-class="w-[1334px]"
+    max-width="max-w-[1300px]"
+    max-height="h-[650px] max-h-[620px]"
+    panel-class="w-[1300px]"
     @close="closeModal"
   >
     <template #header>
@@ -81,11 +81,9 @@ const closeModal = () => {
       </h2>
     </template>
 
-    <div class="flex flex-1 min-h-0 w-full gap-4 p-4 overflow-y-auto overflow-x-hidden">
-      <div class="flex flex-1 min-w-0 min-h-0 max-h-full items-center justify-center">
+    <div class="flex flex-1 min-h-0 h-full w-full p-4 overflow-hidden items-start justify-center">
+      <div class="flex gap-4 items-start min-h-0 max-h-full">
         <Docks :image-url="asukaMapUrl" @select-dock="onSelectDock" />
-      </div>
-      <div class="flex flex-1 min-w-0 min-h-0 max-h-full items-center justify-center">
         <Dock
           :image-url="dockViewModel?.imageUrl ?? null"
           :coordinates="dockViewModel?.coordinates ?? null"
