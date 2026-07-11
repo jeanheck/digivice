@@ -6,6 +6,7 @@ import EnemyProfile from "@/components/map/enemy-modal/EnemyProfile.vue";
 import EnemyAttributes from "@/components/map/enemy-modal/EnemyAttributes.vue";
 import EnemyElements from "@/components/map/enemy-modal/EnemyElements.vue";
 import EnemyConditions from "@/components/map/enemy-modal/EnemyConditions.vue";
+import SearchBar from "@/components/party/digimon/digievolutions-modal/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
@@ -28,6 +29,9 @@ const isModalOpen = computed(() => {
 
 const handleClose = () => {
   emit("close");
+};
+
+const handleSearchSelectDigievolutionId = (_digievolutionId: number) => {
 };
 
 const enemy = computed(() => {
@@ -74,13 +78,21 @@ const enemyImageUrl = computed(() => {
 <template>
   <Modal
     :is-open="isModalOpen"
-    max-width="max-w-250"
+    max-width="max-w-[1200px]"
+    panel-class="w-[1200px]"
     @close="handleClose"
   >
     <template #header>
-      <h2 class="text-white font-bold tracking-widest drop-shadow flex items-center gap-2">
-        {{ enemy.name || $t("enemy.detailsTitle") }}
-      </h2>
+      <div class="flex items-center gap-6 flex-1 min-w-0">
+        <h2 class="text-white font-bold tracking-widest drop-shadow flex items-center gap-2 whitespace-nowrap shrink-0">
+          {{ $t("enemy.bestiary") }}
+        </h2>
+
+        <SearchBar
+          :all-digievolutions="[]"
+          @select-digievolution-id="handleSearchSelectDigievolutionId"
+        />
+      </div>
     </template>
 
     <div class="p-4 flex flex-col sm:flex-row gap-4 max-h-[70vh] overflow-y-auto custom-scroll">

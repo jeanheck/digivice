@@ -38,12 +38,12 @@ const techniqueLabel = computed(() => {
 <template>
   <div class="flex flex-col gap-4 flex-1">
     <div class="flex gap-4">
-      <div class="w-1/2 aspect-square bg-[#000a1a] border border-blue-900/50 rounded flex items-center justify-center shadow-inner relative group overflow-hidden">
+      <div class="w-1/2 aspect-square self-start shrink-0 bg-[#000a1a] border border-blue-900/50 rounded flex items-center justify-center shadow-inner relative group overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-linear-to-br from-blue-500/20 to-transparent pointer-events-none"></div>
         <img
           v-if="enemyImageUrl"
           :src="enemyImageUrl"
-          class="w-full h-full object-cover drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] group-hover:scale-110 transition-transform duration-500"
+          class="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(0,170,255,0.4)] group-hover:scale-110 transition-transform duration-500"
           :alt="enemy.name"
         />
         <div v-else class="text-4xl opacity-30 select-none">❓</div>

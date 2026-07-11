@@ -4,6 +4,7 @@ import Enemies from "./Enemies.vue";
 import Seabed from "./Seabed.vue";
 import DocksButton from "./DocksButton.vue";
 import MapModal from "@/components/map/map-modal/MapModal.vue";
+import EnemyModal from "@/components/map/enemy-modal/EnemyModal.vue";
 import { computed, ref } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
@@ -30,10 +31,23 @@ const isMapModalOpen = ref(false);
 const initialEnemyId = ref<string | null>(null);
 const initialSection = ref<MapModalSection>("enemies");
 
-const openMapModal = (enemyId: string) => {
-  initialSection.value = "enemies";
-  initialEnemyId.value = enemyId;
-  isMapModalOpen.value = true;
+const isEnemyModalOpen = ref(false);
+const selectedEnemyId = ref<string | null>(null);
+
+// const openMapModal = (enemyId: string) => {
+//   initialSection.value = "enemies";
+//   initialEnemyId.value = enemyId;
+//   isMapModalOpen.value = true;
+// };
+
+const openEnemyModal = (enemyId: string) => {
+  selectedEnemyId.value = enemyId;
+  isEnemyModalOpen.value = true;
+};
+
+const closeEnemyModal = () => {
+  isEnemyModalOpen.value = false;
+  selectedEnemyId.value = null;
 };
 
 const closeMapModal = () => {
@@ -70,7 +84,7 @@ function onDocksClick(): void {
     <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1">
       <div class="flex flex-col items-center gap-2 shrink-0">
         <Location :location="locationViewModel" />
-        <Enemies :location="locationViewModel" @open-map-modal="openMapModal" />
+        <Enemies :location="locationViewModel" @open-enemy-modal="openEnemyModal" />
         <!--<Seabed />-->
       </div>
 
@@ -82,6 +96,12 @@ function onDocksClick(): void {
         </div>
       </div>
     </div>
+
+    <EnemyModal
+      :is-open="isEnemyModalOpen"
+      :enemy-id="selectedEnemyId"
+      @close="closeEnemyModal"
+    />
 
     <MapModal
       :is-open="isMapModalOpen"

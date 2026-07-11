@@ -75,7 +75,7 @@ const handleSearchSelect = (digievolutionId: number) => {
 </script>
 
 <template>
-  <div class="relative w-lg min-w-0 flex-1 max-w-lg">
+  <div class="relative min-w-0 flex-1 w-full">
     <input
       ref="searchInput"
       v-model="inputValue"

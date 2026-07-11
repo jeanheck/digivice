@@ -8,7 +8,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "open-map-modal", enemyId: string): void;
+  (e: "open-enemy-modal", enemyId: string): void;
 }>();
 
 const resumedEnemies = computed(() => {
@@ -17,8 +17,8 @@ const resumedEnemies = computed(() => {
 
 const hasEnemies = computed(() => resumedEnemies.value.length > 0);
 
-const openMapModal = (enemyId: string) => {
-  emit("open-map-modal", enemyId);
+const openEnemyModal = (enemyId: string) => {
+  emit("open-enemy-modal", enemyId);
 };
 </script>
 
@@ -35,7 +35,7 @@ const openMapModal = (enemyId: string) => {
           type="button"
           class="font-bold text-[10px] 2xl:text-xs tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
           :class="enemy.boss ? 'text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]' : 'text-[#bc3737] hover:text-[#c76060] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
-          @click="openMapModal(enemy.id)"
+          @click="openEnemyModal(enemy.id)"
         >
           {{ enemy.name }}
         </button>
