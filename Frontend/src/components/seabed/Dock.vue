@@ -7,31 +7,34 @@ import {
 } from "@/components/seabed/seabed-map-frame";
 
 const props = defineProps<{
-  imageUrl: string | null;
+  imageUrl: string;
   coordinates: CoordinatesViewModel | null;
 }>();
 
 const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
 
-const isEmptyState = computed(() => {
-  return props.imageUrl === null;
+const displayHeight = computed(() => {
+  if (imageNaturalSize.value === null) {
+    return Math.round(SEABED_MAP_FRAME_WIDTH_PX * 0.75);
+  }
+
+  return Math.round(
+    SEABED_MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width)
+  );
 });
 
 const mapImageFrameStyle = computed(() => {
-  if (imageNaturalSize.value === null) {
-    return {
-      width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
-      minHeight: `${Math.round(SEABED_MAP_FRAME_WIDTH_PX * 0.75)}px`,
-    };
-  }
-
-  const displayHeight = Math.round(
-    SEABED_MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width)
-  );
-
   return {
     width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
-    height: `${displayHeight}px`,
+    height: `${displayHeight.value}px`,
+  };
+});
+
+const mapFrameStyle = computed(() => {
+  return {
+    width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
+    minHeight: `${displayHeight.value}px`,
+    maxHeight: `${SEABED_MAP_FRAME_MAX_HEIGHT_PX}px`,
   };
 });
 
@@ -59,24 +62,13 @@ watch(
 <template>
   <div
     class="relative shrink-0 min-h-0 overflow-y-auto overflow-x-hidden custom-scroll bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
-    :style="{
-      width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
-      maxHeight: `${SEABED_MAP_FRAME_MAX_HEIGHT_PX}px`,
-    }"
+    :style="mapFrameStyle"
   >
     <div
       class="relative overflow-hidden flex items-center justify-center"
       :style="mapImageFrameStyle"
     >
-      <p
-        v-if="isEmptyState"
-        class="text-cyan-500/50 text-sm tracking-widest text-center px-8"
-      >
-        {{ $t("map.noDock") }}
-      </p>
-
       <img
-        v-if="imageUrl"
         :key="imageUrl"
         :src="imageUrl"
         class="block w-full h-full"

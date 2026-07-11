@@ -98,7 +98,7 @@ watch(
 
 <template>
   <div
-    class="relative shrink-0 min-h-0 overflow-y-auto overflow-x-hidden custom-scroll bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
+    class="relative shrink-0 min-h-0 overflow-visible bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
     :style="{
       width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
       maxHeight: `${SEABED_MAP_FRAME_MAX_HEIGHT_PX}px`,
@@ -173,16 +173,32 @@ watch(
               isRouteHovered(route.id) ? 'bg-cyan-300' : 'bg-cyan-500/50',
             ]"
           />
-
-          <div
-            v-if="isRouteHovered(route.id)"
-            class="absolute w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight text-[10px] px-2 py-0.5 pointer-events-none"
-            :class="getLabelPlacementClasses(dock.labelPlacement)"
-          >
-            {{ $t(`location.${dock.location}`) }}
-          </div>
         </div>
       </template>
+
+      <div class="absolute inset-0 z-20 pointer-events-none">
+        <template
+          v-for="route in routes"
+          :key="`label-${route.id}`"
+        >
+          <template v-if="isRouteHovered(route.id)">
+            <div
+              v-for="dock in route.docks"
+              :key="`label-${dock.location}`"
+              class="absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
+              :class="dock.type === 'dead-end' ? 'w-3 h-3' : 'w-7 h-7'"
+              :style="{ left: dock.x + '%', top: dock.y + '%' }"
+            >
+              <div
+                class="absolute w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight text-[10px] px-2 py-0.5"
+                :class="getLabelPlacementClasses(dock.labelPlacement)"
+              >
+                {{ $t(`location.${dock.location}`) }}
+              </div>
+            </div>
+          </template>
+        </template>
+      </div>
     </div>
   </div>
 </template>

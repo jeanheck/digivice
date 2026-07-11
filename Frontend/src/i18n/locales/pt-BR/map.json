@@ -5,7 +5,8 @@
     "docks": "Docas",
     "seabed": "Solo Oceânico",
     "seabedRoutes": "Rotas Marítimas",
-    "noDock": "Esse mapa não tem uma doca. Você ainda pode usar o mapa ao lado para verificar outros mapas com docas, ou rotas completas.",
+    "noDock": "ESSE MAPA NÃO POSSUI DOCA",
+    "noDockHint": "USE O MAPA À ESQUERDA PARA VER ROTAS COMPLETAS OU PROCURAR DOCAS PELO MAPA",
     "unknownZone": "Zona Desconhecida",
     "safeZone": "Zona Segura"
   }

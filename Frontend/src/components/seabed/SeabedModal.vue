@@ -7,6 +7,7 @@ import Docks from "@/components/seabed/Docks.vue";
 import { DocksSectionPresenter } from "@/presenters/map/docks-section.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
+import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/seabed-map-frame";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -81,13 +82,26 @@ const closeModal = () => {
       </h2>
     </template>
 
-    <div class="flex flex-1 min-h-0 h-full w-full p-4 overflow-hidden items-start justify-center">
-      <div class="flex gap-4 items-start min-h-0 max-h-full">
+    <div class="flex flex-1 min-h-0 h-full w-full p-4 overflow-visible items-center justify-center">
+      <div class="flex gap-4 items-center min-h-0 max-h-full">
         <Docks :image-url="asukaMapUrl" @select-dock="onSelectDock" />
         <Dock
-          :image-url="dockViewModel?.imageUrl ?? null"
-          :coordinates="dockViewModel?.coordinates ?? null"
+          v-if="dockViewModel?.imageUrl"
+          :image-url="dockViewModel.imageUrl"
+          :coordinates="dockViewModel.coordinates ?? null"
         />
+        <div
+          v-else
+          class="flex flex-col items-center justify-center gap-3 px-8"
+          :style="{ width: `${SEABED_MAP_FRAME_WIDTH_PX}px` }"
+        >
+          <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
+            {{ $t("map.noDock") }}
+          </span>
+          <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
+            {{ $t("map.noDockHint") }}
+          </span>
+        </div>
       </div>
     </div>
   </Modal>

@@ -5,7 +5,8 @@
     "docks": "Docks",
     "seabed": "Seabed",
     "seabedRoutes": "Seabed",
-    "noDock": "This map has no dock. You can still use the map on the left to check other maps with docks, or full routes.",
+    "noDock": "THIS MAP HAS NO DOCK", 
+    "noDockHint": "USE THE MAP ON THE LEFT TO SEE FULL ROUTES OR LOOK FOR DOCKS ON THE MAP",
     "unknownZone": "Unknown Zone",
     "safeZone": "Safe Zone"
   }
