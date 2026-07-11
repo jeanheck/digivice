@@ -1,7 +1,7 @@
 # Seabed underwater routing — memory investigation
 
 Domain: map / location  
-Status: confirmed (not integrated in backend)  
+Status: confirmed — `SeabedRoute` / `IsSubmerged` in `PlayerAddresses.json` + Player pipeline; frontend pending  
 Related: [known-patterns.md](known-patterns.md), [memory-regions.md](memory-regions.md)
 
 ---
@@ -106,8 +106,8 @@ Snapshots used for the reverse Divermon's ↔ Duel run:
 | Address | Field | Type | Behavior |
 |---------|-------|------|----------|
 | `0x00048D68` | PreviousMapId mirror | u8 | Mirrors `0x4B400` on every observed transition (~32 bytes before name at `0x48D88`). |
-| `0x00048D78` | Seabed route context | u8 | Set on dive; **persists** for the whole underwater session; cleared on surface emerge. Identifies the **corridor** (dock pair), independent of which end you enter. |
-| `0x00048D7A` | Submerged session flag | u8 | `0x01` while underwater; `0x00` on surface. Same for all routes — indicates session, not which route. |
+| `0x00048D78` | SeabedRoute | u8 | In `PlayerAddresses.json` as `SeabedRoute`. Set on dive; **persists** for the whole underwater session; cleared on surface emerge. Identifies the **corridor** (dock pair), independent of which end you enter. |
+| `0x00048D7A` | IsSubmerged | u8 | In `PlayerAddresses.json` as `IsSubmerged`. `0x01` while underwater; `0x00` on surface. Domain maps to `bool` (`== 0x01`). Indicates session, not which route. |
 
 ---
 
@@ -178,18 +178,25 @@ map IDs directly.
 
 ---
 
-## Tracker implications (future integration)
+## Tracker implications
 
-When `MapId` is a seabed ID (`02Ex`) and `0x48D7A == 0x01`:
+### Done (backend Player pipeline)
 
-1. Read `0x48D78` to resolve which **corridor** (dock pair) applies — same
-   value from either entry dock.
-2. Use current `MapId` + corridor table to know which surface exits are still
-   reachable; do not assume a single “forward” exit from `D78` alone.
-3. On the **first** underwater segment only, `0x4B400` equals the surface
-   entry map (useful to know *which end* you entered from).
+- `SeabedRoute` (`0x48D78`) and `IsSubmerged` (`0x48D7A`) are in
+  `PlayerAddresses.json`, read by `PlayerReader`, assembled on `Player`, and
+  emitted via `PlayerChanged` (`PlayerDTO`).
 
-Not yet added to `PlayerAddresses.json` or backend readers.
+### Still open
+
+When `MapId` is a seabed ID (`02Ex`) and `IsSubmerged`:
+
+1. Use `SeabedRoute` + a **corridor table** (static) to resolve dock pair /
+   reachable exits — table not built yet; do not assume a single “forward”
+   exit from the route byte alone.
+2. On the **first** underwater segment only, `0x4B400` equals the surface
+   entry map (useful to know *which end* you entered from) — not yet in
+   `PlayerAddresses.json`.
+3. Frontend syncer / store for the new `PlayerDTO` fields.
 
 ---
 
@@ -199,6 +206,8 @@ Not yet added to `PlayerAddresses.json` or backend readers.
       Divermon's ↔ Duel both ways)
 - [x] `0x48D78` confirmed as corridor identity (direction-independent)
 - [x] Retrofed to `memory-regions.md` and `known-patterns.md`
-- [ ] Integrated in `PlayerAddresses.json` / backend
+- [x] Integrated in `PlayerAddresses.json` / backend (`SeabedRoute`, `IsSubmerged`)
+- [ ] Frontend consumes `SeabedRoute` / `IsSubmerged`
+- [ ] `PreviousMapId` (`0x4B400`) in backend
 - [ ] Route table complete for all dive points
 - [ ] Reverse test for Suzaku City ↔ Suzaku UG Lake (`0x07`)

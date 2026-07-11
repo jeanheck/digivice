@@ -82,8 +82,8 @@ All quest-like trackers live under `Backend/Memory/Definitions/Quests/`:
 | Side quests | `Quests/SideQuests/` | Bit flip or raw byte |
 | Legendary weapons | `Quests/LegendaryWeapons/` | Sequential bit on `0x4B38E` |
 | DRI agents | `Quests/DriAgents/` | TBD — see known-patterns.md |
-| Player | `PlayerAddresses.json` (`Bits`, `MapId`, `Name`) | MapId byte change on transition |
-| Map / seabed | `PlayerAddresses.json` + [seabed-routing-investigation.md](seabed-routing-investigation.md) | MapId change; `0x48D78` route context on dive |
+| Player | `PlayerAddresses.json` (`Bits`, `MapId`, `Name`, `SeabedRoute`, `IsSubmerged`) | MapId byte change on transition; seabed fields on dive/emerge |
+| Map / seabed | `PlayerAddresses.json` (`SeabedRoute`, `IsSubmerged`) + [seabed-routing-investigation.md](seabed-routing-investigation.md) | MapId change; `0x48D78` / `0x48D7A` on dive |
 | Party | `PartyAddresses.json` (slots `0x48DA4+`) | Slot ID bytes |
 | Digimon stats | `Parties/DigimonStatusAddresses.json` (offsets) | Multi-byte counters at `~0x494xxx` |
 | Common items | `Auctions/*.txt` | Often `0x48ECx`, may clear on sell |
@@ -151,4 +151,4 @@ Doc: `Tools/MemoryScanner/README.md`. Value sizes: 1=byte, 2=Int16, 4=Int32.
 - [memory-regions.md](memory-regions.md) — RAM map, noise, anchors
 - [known-patterns.md](known-patterns.md) — confirmed patterns, DRI placeholders
 - [investigation-template.md](investigation-template.md) — post-confirmation doc
-- [seabed-routing-investigation.md](seabed-routing-investigation.md) — seabed route context, PreviousMapId
+- [seabed-routing-investigation.md](seabed-routing-investigation.md) — SeabedRoute, IsSubmerged, PreviousMapId

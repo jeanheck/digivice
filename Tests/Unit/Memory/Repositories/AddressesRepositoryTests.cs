@@ -36,7 +36,9 @@ public class AddressesRepositoryTests : IDisposable
             NameBufferSize = 10,
             Name = 0x00048D88,
             Bits = 0x00048DA0,
-            MapId = 0x0004B3F8
+            MapId = 0x0004B3F8,
+            SeabedRoute = 0x00048D78,
+            IsSubmerged = 0x00048D7A
         };
         var json = JsonSerializer.Serialize(fakePlayer);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "PlayerAddresses.json"), json);
@@ -50,6 +52,8 @@ public class AddressesRepositoryTests : IDisposable
         Assert.Equal(0x00048D88, result.Name);
         Assert.Equal(0x00048DA0, result.Bits);
         Assert.Equal(0x0004B3F8, result.MapId);
+        Assert.Equal(0x00048D78, result.SeabedRoute);
+        Assert.Equal(0x00048D7A, result.IsSubmerged);
     }
 
     [Fact]

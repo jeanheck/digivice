@@ -16,7 +16,9 @@ public class PlayerReaderTests
             Bits = 0x1000,
             Name = 0x2000,
             NameBufferSize = 10,
-            MapId = 0x3000
+            MapId = 0x3000,
+            SeabedRoute = 0x4000,
+            IsSubmerged = 0x5000
         };
 
         var nameBytes = new byte[] { 65, 103, 117, 109, 111, 110, 0, 0, 0, 0 }; // "Agumon"
@@ -25,6 +27,8 @@ public class PlayerReaderTests
         memoryReaderMock.Setup(m => m.ReadInt32(0x1000)).Returns(15000);
         memoryReaderMock.Setup(m => m.ReadBytes(0x2000, 10)).Returns(nameBytes);
         memoryReaderMock.Setup(m => m.ReadInt16(0x3000)).Returns((short)4);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x4000, 1)).Returns([(byte)0x08]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x5000, 1)).Returns([(byte)0x01]);
 
         var reader = new PlayerReader(memoryReaderMock.Object);
 
@@ -36,5 +40,7 @@ public class PlayerReaderTests
         Assert.Equal(15000, result.Bits);
         Assert.Equal(nameBytes, result.NameInBytes);
         Assert.Equal((short)4, result.MapId);
+        Assert.Equal((byte)0x08, result.SeabedRoute);
+        Assert.Equal((byte)0x01, result.IsSubmerged);
     }
 }

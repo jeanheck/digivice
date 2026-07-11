@@ -170,7 +170,9 @@ segments, `0x4B400` is identical across routes.
 `0x48D68` mirrors `0x4B400` in the player block. `0x4B410` mirrors current
 `MapId` (`0x4B3F8`).
 
-### Seabed route context — `0x48D78` (confirmed)
+### SeabedRoute — `0x48D78` (confirmed, in PlayerAddresses)
+
+Wired as `SeabedRoute` on the Player backend pipeline (`PlayerChanged`).
 
 - Set once on dive (`0x00` → route value).
 - **Unchanged** while walking between seabed maps on the same session.
@@ -186,7 +188,10 @@ segments, `0x4B400` is identical across routes.
 
 Table incomplete — more dive points not yet mapped.
 
-### Submerged session flag — `0x48D7A` (confirmed)
+### IsSubmerged — `0x48D7A` (confirmed, in PlayerAddresses)
+
+Wired as `IsSubmerged` on the Player backend pipeline (`PlayerChanged`).
+Domain `bool` from byte `== 0x01`.
 
 `0x01` for the entire underwater session; `0x00` on surface. Indicates
 submerged state, not which route.

@@ -14,4 +14,10 @@ public record class PlayerDTO : IDTO
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<string> Location { get; init; } = Optional<string>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<byte> SeabedRoute { get; init; } = Optional<byte>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<bool> IsSubmerged { get; init; } = Optional<bool>.Empty;
 }

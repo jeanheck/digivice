@@ -2,5 +2,7 @@
     "Name": "0x00048D88",
     "NameBufferSize": 10,
     "Bits": "0x00048DA0",
-    "MapId": "0x0004B3F8"
+    "MapId": "0x0004B3F8",
+    "SeabedRoute": "0x00048D78",
+    "IsSubmerged": "0x00048D7A"
 }

@@ -16,8 +16,10 @@ each investigation. Append new entries; do not remove without strong evidence.
 | 0x00048D88 | Player name buffer | PlayerAddresses.json |
 | 0x00048DA0 | Player bits (money etc.) | PlayerAddresses.json — **volatile** |
 | 0x0004B3F8 | MapId | PlayerAddresses.json — changes on map transition |
+| 0x00048D78 | SeabedRoute | PlayerAddresses.json — corridor / dock pair; set on dive |
+| 0x00048D7A | IsSubmerged | PlayerAddresses.json — `0x01` underwater |
 
-See also **Map / location** for seabed routing fields.
+See also **Map / location** for seabed routing fields (including investigation-only mirrors).
 
 ## Map / location
 
@@ -27,8 +29,8 @@ See also **Map / location** for seabed routing fields.
 | 0x0004B400 | PreviousMapId (rolling) | seabed-routing investigation — map just left on each transition |
 | 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
 | 0x00048D68 | PreviousMapId mirror (player block) | seabed-routing investigation — mirrors `0x4B400` |
-| 0x00048D78 | Seabed route context (corridor / dock pair) | seabed-routing investigation — set on dive, persists underwater; same from either entry |
-| 0x00048D7A | Submerged session flag (`0x01` = underwater) | seabed-routing investigation |
+| 0x00048D78 | SeabedRoute (corridor / dock pair) | PlayerAddresses.json — set on dive, persists underwater; same from either entry |
+| 0x00048D7A | IsSubmerged (`0x01` = underwater) | PlayerAddresses.json |
 
 Details: [seabed-routing-investigation.md](seabed-routing-investigation.md).
 
@@ -119,7 +121,7 @@ Diffs here are expected after battles; usually not quest flags.
 | Legendary weapon | 0x4B38E | Sequential power-of-two bit |
 | DRI agent | 0x4B38C, 0x4B3B7, 0x4A7xx | Per-agent bit on shared bytes |
 | Map change | 0x4B3F8 (MapId) | Byte value change |
-| Map / seabed routing | 0x4B3F8, 0x4B400, 0x48D78, 0x48D7A | MapId + route context on dive; see seabed-routing-investigation.md |
+| Map / seabed routing | 0x4B3F8, 0x4B400, 0x48D78, 0x48D7A | MapId + SeabedRoute / IsSubmerged on dive; see seabed-routing-investigation.md |
 | Digimon stats | ~0x494xxx | Multi-byte numeric deltas |
 | Common item possession | ~0x48ECx | Often 0x00 ↔ 0x01 |
 | Auction | 0x4B370, 0x4B38A | Bit flags, story window |

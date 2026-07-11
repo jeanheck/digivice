@@ -12,7 +12,9 @@ public class PlayerConverterTests
         {
             Name = "Agumon",
             Bits = 12345,
-            MapId = "00AF"
+            MapId = "00AF",
+            SeabedRoute = 0x08,
+            IsSubmerged = true
         };
 
         var dto = PlayerConverter.ToDTO(player);
@@ -23,5 +25,9 @@ public class PlayerConverterTests
         Assert.Equal(12345, dto.Bits.Value);
         Assert.True(dto.Location.HasValue);
         Assert.Equal("00AF", dto.Location.Value);
+        Assert.True(dto.SeabedRoute.HasValue);
+        Assert.Equal((byte)0x08, dto.SeabedRoute.Value);
+        Assert.True(dto.IsSubmerged.HasValue);
+        Assert.True(dto.IsSubmerged.Value);
     }
 }

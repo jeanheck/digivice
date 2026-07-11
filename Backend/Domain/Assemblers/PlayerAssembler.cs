@@ -14,7 +14,9 @@ namespace Backend.Domain.Assemblers
             {
                 Name = playerName,
                 Bits = resource.Bits ?? 0,
-                MapId = resource.MapId?.ToString("X4") ?? string.Empty
+                MapId = resource.MapId?.ToString("X4") ?? string.Empty,
+                SeabedRoute = resource.SeabedRoute ?? 0,
+                IsSubmerged = resource.IsSubmerged == 0x01
             };
         }
     }

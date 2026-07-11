@@ -13,5 +13,9 @@ namespace Backend.Memory.Addresses
         public long Bits { get; set; }
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long MapId { get; set; }
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long SeabedRoute { get; set; }
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long IsSubmerged { get; set; }
     }
 }
