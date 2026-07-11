@@ -11,6 +11,7 @@ export class SeabedRouteConverter {
           x: dockRaw.x,
           y: dockRaw.y,
           type: dockRaw.type,
+          labelPlacement: dockRaw.labelPlacement,
         };
       }),
     };

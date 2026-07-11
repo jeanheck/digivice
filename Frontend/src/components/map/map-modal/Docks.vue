@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { DocksPresenter } from "@/presenters/map/docks.presenter";
+import type { SeabedRouteDockLabelPlacement } from "@/repositories/tables/raws/dock/seabed-route-dock.raw";
 
 const MAP_FRAME_WIDTH_PX = 600;
 
@@ -44,6 +45,22 @@ function isRouteHovered(routeId: string): boolean {
   return hoveredRouteId.value === routeId;
 }
 
+function getLabelPlacementClasses(labelPlacement: SeabedRouteDockLabelPlacement): string {
+  if (labelPlacement === "below") {
+    return "top-full mt-1 left-1/2 -translate-x-1/2";
+  }
+
+  if (labelPlacement === "left") {
+    return "right-full mr-1 top-1/2 -translate-y-1/2";
+  }
+
+  if (labelPlacement === "right") {
+    return "left-full ml-1 top-1/2 -translate-y-1/2";
+  }
+
+  return "bottom-full mb-1 left-1/2 -translate-x-1/2";
+}
+
 const onImageLoad = (event: Event) => {
   const imageElement = event.target as HTMLImageElement;
 
@@ -70,7 +87,7 @@ watch(
     class="relative shrink-0 max-h-full min-h-0 overflow-y-auto overflow-x-hidden custom-scroll bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
     :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
   >
-    <div class="relative overflow-hidden" :style="mapImageFrameStyle">
+    <div class="relative overflow-visible" :style="mapImageFrameStyle">
       <img
         v-if="imageUrl"
         :key="imageUrl"
@@ -125,15 +142,28 @@ watch(
         <div
           v-for="dock in route.docks"
           :key="dock.location"
-          class="absolute z-10 rounded-full -translate-x-1/2 -translate-y-1/2 transition-all"
-          :class="[
-            dock.type === 'dead-end' ? 'w-3 h-3 cursor-help' : 'w-7 h-7 cursor-pointer',
-            isRouteHovered(route.id) ? 'bg-cyan-300' : 'bg-cyan-500/50',
-          ]"
+          class="absolute z-10 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
+          :class="dock.type === 'dead-end' ? 'w-3 h-3' : 'w-7 h-7'"
           :style="{ left: dock.x + '%', top: dock.y + '%' }"
           @mouseenter="onRouteEnter(route.id)"
           @mouseleave="onRouteLeave"
-        />
+        >
+          <div
+            class="rounded-full w-full h-full transition-all"
+            :class="[
+              dock.type === 'dead-end' ? 'cursor-help' : 'cursor-pointer',
+              isRouteHovered(route.id) ? 'bg-cyan-300' : 'bg-cyan-500/50',
+            ]"
+          />
+
+          <div
+            v-if="isRouteHovered(route.id)"
+            class="absolute w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight text-[10px] px-2 py-0.5 pointer-events-none"
+            :class="getLabelPlacementClasses(dock.labelPlacement)"
+          >
+            {{ $t(`location.${dock.location}`) }}
+          </div>
+        </div>
       </template>
     </div>
   </div>
