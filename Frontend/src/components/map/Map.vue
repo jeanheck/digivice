@@ -59,7 +59,7 @@ const closeEnemyModal = () => {
       <div class="flex flex-col items-center gap-2 shrink-0">
         <Location :location="locationViewModel" />
         <Enemies :location="locationViewModel" @open-enemy-modal="openEnemyModal" />
-        <!--<Seabed />-->
+        <Seabed />
       </div>
 
       <div class="flex-1 min-h-0" />

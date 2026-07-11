@@ -29,7 +29,7 @@ const hasRight = computed(() => props.rightLocations.length > 0);
 
 <template>
   <div v-if="hasEmerge || hasLeft || hasRight" class="w-full flex justify-center shrink-0 px-0.5">
-    <div class="map-info-panel flex flex-col gap-2.5">
+    <div class="map-info-panel flex flex-col gap-6">
       <div v-if="hasEmerge" class="flex items-start justify-center gap-3 w-full">
         <div
           v-for="(point, index) in emerge"

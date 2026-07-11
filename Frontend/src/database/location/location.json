@@ -109,6 +109,11 @@
     "enemies": [],
     "dock": false
   },
+  "021C": {
+    "image": "Command Room",
+    "enemies": [],
+    "dock": false
+  },
   "020A": {
     "image": "Asuka City - Inn 1F",
     "enemies": [],
@@ -710,6 +715,13 @@
   },
   "02E0": {
     "image": "Seabed 0",
+    "enemies": [
+      "98"
+    ],
+    "dock": false
+  },
+  "02E1": {
+    "image": "Seabed 1",
     "enemies": [
       "98"
     ],
