@@ -2,15 +2,11 @@
 import Location from "./Location.vue";
 import Enemies from "./Enemies.vue";
 import Seabed from "./Seabed.vue";
-import DocksButton from "./DocksButton.vue";
-import MapModal from "@/components/map/map-modal/MapModal.vue";
 import EnemyModal from "@/components/map/enemy-modal/EnemyModal.vue";
 import { computed, ref } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-
-type MapModalSection = "enemies" | "docks";
 
 const store = useGameStore();
 
@@ -27,18 +23,8 @@ const locationImage = computed(() => {
   return ImageCatalog.getMapImageUrl(locationViewModel.value?.image ?? null);
 });
 
-const isMapModalOpen = ref(false);
-const initialEnemyId = ref<string | null>(null);
-const initialSection = ref<MapModalSection>("enemies");
-
 const isEnemyModalOpen = ref(false);
 const selectedEnemyId = ref<string | null>(null);
-
-// const openMapModal = (enemyId: string) => {
-//   initialSection.value = "enemies";
-//   initialEnemyId.value = enemyId;
-//   isMapModalOpen.value = true;
-// };
 
 const openEnemyModal = (enemyId: string) => {
   selectedEnemyId.value = enemyId;
@@ -49,18 +35,6 @@ const closeEnemyModal = () => {
   isEnemyModalOpen.value = false;
   selectedEnemyId.value = null;
 };
-
-const closeMapModal = () => {
-  isMapModalOpen.value = false;
-  initialEnemyId.value = null;
-  initialSection.value = "enemies";
-};
-
-function onDocksClick(): void {
-  initialSection.value = "docks";
-  initialEnemyId.value = null;
-  isMapModalOpen.value = true;
-}
 </script>
 
 <template>
@@ -89,26 +63,12 @@ function onDocksClick(): void {
       </div>
 
       <div class="flex-1 min-h-0" />
-
-      <div class="w-full flex justify-center shrink-0 px-0.5 pb-1">
-        <div class="flex gap-1 w-full max-w-[95%]">
-          <DocksButton :dock="locationViewModel?.dock ?? false" @click="onDocksClick" />
-        </div>
-      </div>
     </div>
 
     <EnemyModal
       :is-open="isEnemyModalOpen"
       :enemy-id="selectedEnemyId"
       @close="closeEnemyModal"
-    />
-
-    <MapModal
-      :is-open="isMapModalOpen"
-      :location="locationViewModel"
-      :initial-enemy-id="initialEnemyId"
-      :initial-section="initialSection"
-      @close="closeMapModal"
     />
   </aside>
 </template>

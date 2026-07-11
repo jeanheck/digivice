@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import LanguageSelector from "@/components/footer/LanguageSelector.vue";
+import DocksButton from "@/components/footer/DocksButton.vue";
+import SeabedModal from "@/components/seabed/SeabedModal.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
+import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { useGameStore } from "@/stores/use-game-store";
 import { FooterPresenter } from "@/presenters/footer.presenter";
+import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 
 const store = useGameStore();
 const { t } = useI18n();
@@ -20,16 +24,49 @@ const playerBits = computed(() => {
 
 const isConnected = computed(() => store.isConnected);
 
-const connectionStatusLabel = computed(() => {
-  return isConnected.value ? t("connection.connected") : t("connection.disconnected");
+const locationViewModel = computed(() => {
+  const locationId = store.currentState?.player?.location ?? null;
+  if (locationId === null) {
+    return null;
+  }
+  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
+  return MapPresenter.getLocationById(locationId, mainQuest);
 });
+
+const isSeabedModalOpen = ref(false);
+
+function onDocksClick(): void {
+  isSeabedModalOpen.value = true;
+}
+
+function closeSeabedModal(): void {
+  isSeabedModalOpen.value = false;
+}
 
 const tooltipPosition = useTooltipPosition(300);
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 const tooltipTitle = ref("");
 const tooltipText = ref("");
+const isTitleOnlyTooltip = ref(false);
+
+const showDocksTooltip = (event: MouseEvent) => {
+  isTitleOnlyTooltip.value = true;
+  tooltipTitle.value = t("map.seabed");
+  tooltipText.value = "";
+  showAt(event, { maxWidth: 160, placement: "above" });
+};
+
+const moveDocksTooltip = (event: MouseEvent) => {
+  move(event, "above");
+};
+
+const hideDocksTooltip = () => {
+  hide();
+  isTitleOnlyTooltip.value = false;
+};
 
 const showGroupCharismaTooltip = (event: MouseEvent) => {
+  isTitleOnlyTooltip.value = false;
   tooltipTitle.value = t("party.groupCharisma");
   tooltipText.value = t("party.groupCharismaWarning");
   showAt(event, { maxWidth: 300, placement: "above" });
@@ -44,6 +81,7 @@ const hideGroupCharismaTooltip = () => {
 };
 
 const showGroupLevelTooltip = (event: MouseEvent) => {
+  isTitleOnlyTooltip.value = false;
   tooltipTitle.value = t("party.groupLevel");
   tooltipText.value = t("party.groupLevelExplanation");
   showAt(event, { maxWidth: 300, placement: "above" });
@@ -96,6 +134,15 @@ const groupPartyLevel = computed(() => {
 
     <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-4 text-sm opacity-80">
       <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
+        <DocksButton
+          @click="onDocksClick"
+          @show-tooltip="showDocksTooltip"
+          @move-tooltip="moveDocksTooltip"
+          @hide-tooltip="hideDocksTooltip"
+        />
+      </div>
+
+      <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
         <LanguageSelector />
       </div>
       
@@ -105,8 +152,23 @@ const groupPartyLevel = computed(() => {
     </div>
   </footer>
 
+  <SeabedModal
+    :is-open="isSeabedModalOpen"
+    :location="locationViewModel"
+    @close="closeSeabedModal"
+  />
+
+  <Tooltip
+    :show="tooltipShow && isTitleOnlyTooltip"
+    :x="tooltipX"
+    :y="tooltipY"
+    :title="tooltipTitle"
+    :max-width="160"
+    placement="above"
+  />
+
   <DefaultTooltip
-    :show="tooltipShow"
+    :show="tooltipShow && !isTitleOnlyTooltip"
     :x="tooltipX"
     :y="tooltipY"
     :title="tooltipTitle"

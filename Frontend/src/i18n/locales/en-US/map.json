@@ -3,6 +3,9 @@
     "map": "Map",
     "enemies": "Enemies",
     "docks": "Docks",
+    "seabed": "Seabed",
+    "seabedRoutes": "Seabed",
+    "noDock": "This map has no dock. You can still use the map on the left to check other maps with docks, or full routes.",
     "unknownZone": "Unknown Zone",
     "safeZone": "Safe Zone"
   }

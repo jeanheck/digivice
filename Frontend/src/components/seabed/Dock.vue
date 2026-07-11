@@ -63,7 +63,7 @@ watch(
         v-if="!imageUrl"
         class="text-cyan-500/50 text-sm tracking-widest text-center px-8"
       >
-        {{ $t("mapModal.noDock") }}
+        {{ $t("map.noDock") }}
       </p>
 
       <img

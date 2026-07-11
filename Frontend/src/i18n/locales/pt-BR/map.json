@@ -3,6 +3,9 @@
     "map": "Mapa",
     "enemies": "Inimigos",
     "docks": "Docas",
+    "seabed": "Solo Oceânico",
+    "seabedRoutes": "Rotas Marítimas",
+    "noDock": "Esse mapa não tem uma doca. Você ainda pode usar o mapa ao lado para verificar outros mapas com docas, ou rotas completas.",
     "unknownZone": "Zona Desconhecida",
     "safeZone": "Zona Segura"
   }
