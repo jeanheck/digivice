@@ -1,5 +1,5 @@
-import type { Player } from '../../models';
-import type * as Events from '../../events/events.map';
+import type { Player } from "../../models";
+import type * as Events from "../../events/events.map";
 
 export class PlayerSyncer {
     public static sync(previousPlayer: Player, newPlayerDto: Events.PlayerDTO): void {
@@ -11,6 +11,12 @@ export class PlayerSyncer {
         }
         if (newPlayerDto.location !== undefined) {
             previousPlayer.location = newPlayerDto.location;
+        }
+        if (newPlayerDto.seabedRoute !== undefined) {
+            previousPlayer.seabedRoute = newPlayerDto.seabedRoute;
+        }
+        if (newPlayerDto.isSubmerged !== undefined) {
+            previousPlayer.isSubmerged = newPlayerDto.isSubmerged;
         }
     }
 }

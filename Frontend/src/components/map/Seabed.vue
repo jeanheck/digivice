@@ -8,6 +8,8 @@ export interface SeabedEmergePoint {
 
 const props = withDefaults(
   defineProps<{
+    seabedRoute: number;
+    isSubmerged: boolean;
     emerge?: SeabedEmergePoint[];
     leftLocations?: string[];
     rightLocations?: string[];
