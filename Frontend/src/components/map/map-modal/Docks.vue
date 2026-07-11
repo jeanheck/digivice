@@ -84,7 +84,7 @@ watch(
 
 <template>
   <div
-    class="relative shrink-0 max-h-full min-h-0 overflow-y-auto overflow-x-hidden custom-scroll bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
+    class="relative shrink-0 max-h-full min-h-0 overflow-visible bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
     :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
   >
     <div class="relative overflow-visible" :style="mapImageFrameStyle">
