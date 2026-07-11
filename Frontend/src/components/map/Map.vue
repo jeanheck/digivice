@@ -31,6 +31,10 @@ const seabedRoute = computed(() => {
   return store.currentState?.player?.seabedRoute ?? 0;
 });
 
+const locationId = computed(() => {
+  return store.currentState?.player?.location ?? null;
+});
+
 const isEnemyModalOpen = ref(false);
 const selectedEnemyId = ref<string | null>(null);
 
@@ -70,6 +74,7 @@ const closeEnemyModal = () => {
         <Seabed
           v-if="isSubmerged"
           :seabed-route="seabedRoute"
+          :location-id="locationId"
         />
       </div>
 

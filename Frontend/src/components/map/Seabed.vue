@@ -1,31 +1,49 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+import type { Constant } from "@/constants/constant";
+import { IconConstant } from "@/constants/icon.constant";
+import type { SeabedConstant } from "@/constants/seabed.constant";
+import { SeabedPresenter } from "@/presenters/map/seabed.presenter";
 
-export interface SeabedEmergePoint {
-  emoji: string;
-  location: string;
+const props = defineProps<{
+  seabedRoute: number;
+  locationId: string | null;
+}>();
+
+const { t } = useI18n();
+
+const routeLocation = computed(() => {
+  if (props.locationId === null) {
+    return null;
+  }
+
+  return SeabedPresenter.getRouteLocation(props.seabedRoute, props.locationId);
+});
+
+const emerge = computed(() => {
+  return routeLocation.value?.emerge ?? [];
+});
+
+const leftLocations = computed(() => {
+  return routeLocation.value?.left ?? [];
+});
+
+const rightLocations = computed(() => {
+  return routeLocation.value?.right ?? [];
+});
+
+const hasEmerge = computed(() => emerge.value.length > 0);
+const hasLeft = computed(() => leftLocations.value.length > 0);
+const hasRight = computed(() => rightLocations.value.length > 0);
+
+function getEmergeEmoji(on: SeabedConstant): string {
+  return IconConstant[on];
 }
 
-const props = withDefaults(
-  defineProps<{
-    seabedRoute: number;
-    emerge?: SeabedEmergePoint[];
-    leftLocations?: string[];
-    rightLocations?: string[];
-  }>(),
-  {
-    emerge: () => [
-      { emoji: "↖️", location: "Asuka City" },
-      { emoji: "⬆️", location: "Asuka City" },
-    ],
-    leftLocations: () => ["Solo Oceânico", "Terreno Baldio (Nordeste)"],
-    rightLocations: () => ["Solo Oceânico", "Capa de Plug"],
-  }
-);
-
-const hasEmerge = computed(() => props.emerge.length > 0);
-const hasLeft = computed(() => props.leftLocations.length > 0);
-const hasRight = computed(() => props.rightLocations.length > 0);
+function getLocationName(locationId: string): string {
+  return t(`location.${locationId}`);
+}
 </script>
 
 <template>
@@ -37,21 +55,21 @@ const hasRight = computed(() => props.rightLocations.length > 0);
           :key="`${point.location}-${index}`"
           class="flex flex-1 flex-col items-center gap-0.5 min-w-0"
         >
-          <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">{{ point.emoji }}</span>
-          <span class="text-[9px] text-cyan-100 text-center leading-tight">{{ point.location }}</span>
+          <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">{{ getEmergeEmoji(point.on) }}</span>
+          <span class="text-[9px] text-cyan-100 text-center leading-tight">{{ getLocationName(point.location) }}</span>
         </div>
       </div>
 
       <div v-if="hasLeft" class="flex items-center gap-1.5 w-full">
         <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">⬅️</span>
         <div class="flex flex-col text-[9px] text-cyan-200 text-left leading-tight min-w-0">
-          <span v-for="(location, index) in leftLocations" :key="index">{{ location }}</span>
+          <span v-for="(locationId, index) in leftLocations" :key="index">{{ getLocationName(locationId) }}</span>
         </div>
       </div>
 
       <div v-if="hasRight" class="flex items-center justify-end gap-1.5 w-full">
         <div class="flex flex-col text-[9px] text-cyan-300 text-right leading-tight min-w-0">
-          <span v-for="(location, index) in rightLocations" :key="index">{{ location }}</span>
+          <span v-for="(locationId, index) in rightLocations" :key="index">{{ getLocationName(locationId) }}</span>
         </div>
         <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">➡️</span>
       </div>

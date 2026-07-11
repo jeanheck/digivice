@@ -3,7 +3,7 @@
         "02E2": {
             "emerge": [
                 {
-                    "on": "left",
+                    "on": "topLeft",
                     "location": "0227"
                 }
             ],
@@ -13,7 +13,7 @@
         "02E0": {
             "emerge": [
                 {
-                    "on": "right",
+                    "on": "topRight",
                     "location": "0228"
                 }
             ],

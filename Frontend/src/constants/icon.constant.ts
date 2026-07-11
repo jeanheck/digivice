@@ -3,6 +3,7 @@ import { ElementConstant } from "./stat/element.constant";
 import { ConditionConstant } from "./stat/condition.constant";
 import type { Constant as ConstantsType } from "./constant";
 import { Constant } from "./constant";
+import { SeabedConstant } from "./seabed.constant";
 
 export const IconConstant: Record<ConstantsType, string> = {
     [AttributeConstant.strength]: "👊",
@@ -30,5 +31,8 @@ export const IconConstant: Record<ConstantsType, string> = {
     [Constant.magical]: "🧙‍♂️",
     [Constant.heal]: "💚",
     [Constant.support]: "🟡",
-    [Constant.field]: "🔵"
+    [Constant.field]: "🔵",
+    [SeabedConstant.topLeft]: "↖️",
+    [SeabedConstant.top]: "⬆️",
+    [SeabedConstant.topRight]: "↗️",
 };

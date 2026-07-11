@@ -1,6 +1,6 @@
-export type SeabedRouteEmergeSideViewModel = "left" | "right";
+import type { SeabedConstant } from "@/constants/seabed.constant";
 
 export interface SeabedRouteEmergeViewModel {
-  on: SeabedRouteEmergeSideViewModel;
+  on: SeabedConstant;
   location: string;
 }
