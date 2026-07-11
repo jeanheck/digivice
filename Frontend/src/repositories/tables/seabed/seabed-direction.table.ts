@@ -1,3 +1,3 @@
 import type { SeabedDirectionRaw } from "../raws/seabed/seabed-direction.raw";
 
-export type SeabedDirectionsTable = Record<string, SeabedDirectionRaw>;
+export type SeabedDirectionTable = Record<string, SeabedDirectionRaw>;

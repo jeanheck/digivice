@@ -1,10 +1,10 @@
 import SeabedDirectionsJson from "@/database/seabed/seabed-directions.json";
-import type { SeabedDirectionsTable as SeabedDirectionsTable } from "./tables/seabed/seabed-directions.table";
+import type { SeabedDirectionTable } from "./tables/seabed/seabed-direction.table";
 
 export class SeabedDirectionsRepository {
-  private static readonly seabedDirectionsTable = SeabedDirectionsJson as SeabedDirectionsTable;
+  private static readonly seabedDirectionsTable = SeabedDirectionsJson as SeabedDirectionTable;
 
-  public static getAll(): SeabedDirectionsTable {
+  public static getAll(): SeabedDirectionTable {
     return this.seabedDirectionsTable;
   }
 }

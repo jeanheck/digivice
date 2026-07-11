@@ -1,13 +1,13 @@
-import { SeabedRouteConverter } from "@/presenters/converter/seabed-route.converter";
+import { SeabedDirectionConverter } from "@/presenters/converter/seabed-direction.converter";
 import { SeabedDirectionsRepository } from "@/repositories/seabed-direction.repository";
-import type { SeabedRouteViewModel } from "@/viewmodels/dock/seabed-route.viewmodel";
+import type { SeabedDirectionViewModel } from "@/viewmodels/dock/seabed-direction.viewmodel";
 
 export class DocksPresenter {
-  public static getRoutes(): SeabedRouteViewModel[] {
+  public static getRoutes(): SeabedDirectionViewModel[] {
     const seabedRoutesTable = SeabedDirectionsRepository.getAll();
 
     return Object.entries(seabedRoutesTable).map(([routeId, seabedRouteRaw]) => {
-      return SeabedRouteConverter.convert(routeId, seabedRouteRaw);
+      return SeabedDirectionConverter.convert(routeId, seabedRouteRaw);
     });
   }
 }
