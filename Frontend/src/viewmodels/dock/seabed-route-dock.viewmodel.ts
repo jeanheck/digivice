@@ -3,7 +3,7 @@ import type {
   SeabedDirectionDockType,
 } from "@/repositories/tables/raws/seabed/seabed-direction-dock.raw";
 
-export interface SeabedRouteDockViewModel {
+export interface SeabedDirectionDockViewModel {
   location: string;
   x: number;
   y: number;

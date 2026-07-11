@@ -4,10 +4,10 @@ import type { SeabedDirectionViewModel } from "@/viewmodels/dock/seabed-directio
 
 export class DocksPresenter {
   public static getRoutes(): SeabedDirectionViewModel[] {
-    const seabedRoutesTable = SeabedDirectionsRepository.getAll();
+    const seabedDirectionsTable = SeabedDirectionsRepository.getAll();
 
-    return Object.entries(seabedRoutesTable).map(([routeId, seabedRouteRaw]) => {
-      return SeabedDirectionConverter.convert(routeId, seabedRouteRaw);
+    return Object.entries(seabedDirectionsTable).map(([routeId, seabedDirectionRaw]) => {
+      return SeabedDirectionConverter.convert(routeId, seabedDirectionRaw);
     });
   }
 }
