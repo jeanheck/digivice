@@ -1,4 +1,153 @@
 {
+    "1": {
+        "02E0": {
+            "emerge": [
+                {
+                    "on": "topRight",
+                    "location": "022A"
+                }
+            ],
+            "left": ["02E6", "021D"],
+            "right": []
+        },
+        "02E6": {
+            "emerge": [],
+            "left": ["02E5", "021D"],
+            "right": ["02E0", "022A"]
+        },
+        "02E5": {
+            "emerge": [
+                {
+                    "on": "top",
+                    "location": "021D"
+                }
+            ],
+            "left": ["02E4", "0234"],
+            "right": ["02E6", "022A"]
+        },
+        "02E4": {
+            "emerge": [],
+            "left": ["02E5", "0234"],
+            "right": ["02E5", "021D"]
+        },
+        "02E7": {
+            "emerge": [],
+            "left": [],
+            "right": ["02E5", "0234"]
+        }
+    },
+    "2": {
+        "02E1": {
+            "emerge": [
+                {
+                    "on": "topLeft",
+                    "location": "0202"
+                },
+                {
+                    "on": "top",
+                    "location": "0202"
+                }
+            ],
+            "left": [],
+            "right": ["02E0", "021B"]
+        },
+        "02E0": {
+            "emerge": [
+                {
+                    "on": "topRight",
+                    "location": "021B"
+                }
+            ],
+            "left": ["02E1", "0202"],
+            "right": []
+        }
+    },
+    "3": {
+        "02E3": {
+            "emerge": [
+                {
+                    "on": "topRight",
+                    "location": "0220"
+                }
+            ],
+            "left": ["02E6", "024B"],
+            "right": []
+        },
+        "02E6": {
+            "emerge": [],
+            "left": ["02E2", "024B"],
+            "right": ["02E3", "0220"]
+        },
+        "02E2": {
+            "emerge": [
+                {
+                    "on": "topLeft",
+                    "location": "024B"
+                }
+            ],
+            "left": [],
+            "right": ["02E6", "0220"]
+        }
+    },
+    "4": {
+        "02E3": {
+            "emerge": [
+                {
+                    "on": "topRight",
+                    "location": "021F"
+                }
+            ],
+            "left": ["02E4", "023B"],
+            "right": []
+        },
+        "02E4": {
+            "emerge": [],
+            "left": ["02E5", "023B"],
+            "right": ["02E3", "021F"]
+        },
+        "02E5": {
+            "emerge": [
+                {
+                    "on": "top",
+                    "location": "023B"
+                }
+            ],
+            "left": ["02E2", "023C"],
+            "right": ["02E4", "021F"]
+        },
+        "02E2": {
+            "emerge": [
+                {
+                    "on": "topLeft",
+                    "location": "023C"
+                }
+            ],
+            "left": [],
+            "right": ["02E5", "023B"]
+        }
+    },
+    "7": {
+        "02E2": {
+            "emerge": [
+                {
+                    "on": "topLeft",
+                    "location": "023E"
+                }
+            ],
+            "left": [],
+            "right": ["02E0", "0241"]
+        },
+        "02E0": {
+            "emerge": [
+                {
+                    "on": "topRight",
+                    "location": "0241"
+                }
+            ],
+            "left": ["02E2", "023E"],
+            "right": []
+        }
+    },
     "8": {
         "02E2": {
             "emerge": [
@@ -19,6 +168,34 @@
             ],
             "left": ["02E2", "0227"],
             "right": []
+        }
+    },
+    "9": {
+        "02E3": {
+            "emerge": [
+                {
+                    "on": "topRight",
+                    "location": "023D"
+                }
+            ],
+            "left": ["02E6", "0247"],
+            "right": []
+        },
+        "02E6": {
+            "emerge": [
+            ],
+            "left": ["02E2", "0247"],
+            "right": ["02E3", "023D"]
+        },
+        "02E2": {
+            "emerge": [
+                {
+                    "on": "topLeft",
+                    "location": "0247"
+                }
+            ],
+            "left": [],
+            "right": ["02E6", "023D"]
         }
     }
 }

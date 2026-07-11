@@ -741,8 +741,29 @@
     ],
     "dock": false
   },
+  "02E4": {
+    "image": "Seabed 4",
+    "enemies": [
+      "98"
+    ],
+    "dock": false
+  },
+  "02E5": {
+    "image": "Seabed 5",
+    "enemies": [
+      "98"
+    ],
+    "dock": false
+  },
   "02E6": {
     "image": "Seabed 6",
+    "enemies": [
+      "98"
+    ],
+    "dock": false
+  },
+  "02E7": {
+    "image": "Seabed 7",
     "enemies": [
       "98"
     ],
