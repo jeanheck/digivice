@@ -202,7 +202,7 @@ const selectLocation = (locationIndex: number) => {
             mapLabelHorizontalAnchorClass,
             isWorldMap
               ? [
-                  'text-[10px] px-3 py-1',
+                  'text-[9px] px-3 py-1',
                   activeLocation.coordinates.y < 20 ? 'top-6.5' : 'bottom-6.5',
                 ]
               : [
