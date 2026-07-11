@@ -1,4 +1,4 @@
-import type { DockRaw } from "@/repositories/tables/raws/dock/dock.raw";
+import type { DockRaw } from "@/repositories/tables/raws/seabed/dock.raw";
 import type { DockViewModel } from "@/viewmodels/dock/dock.viewmodel";
 
 export class DockConverter {

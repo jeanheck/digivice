@@ -1,9 +1,48 @@
 {
-    "0": {
-        "emerge": [
-            { "on": "center", "location": "Divermon's Lake" }
-        ],
-        "left": [],
-        "right": ["Seabed"]
+    "1": {
+        "docks": [
+            { "location": "0227", "x": 74.5, "y": 47, "type": "normal", "labelPlacement": "below" },
+            { "location": "0228", "x": 76.5, "y": 24, "type": "normal", "labelPlacement": "above" }
+        ]
+    },
+    "2": {
+        "docks": [
+            { "location": "02E0", "x": 76, "y": 67, "type": "dead-end", "labelPlacement": "above" },
+            { "location": "0234", "x": 79, "y": 72, "type": "normal", "labelPlacement": "below" },
+            { "location": "021D", "x": 50.5, "y": 50.5, "type": "normal", "labelPlacement": "left" },
+            { "location": "022A", "x": 87, "y": 47, "type": "normal", "labelPlacement": "above" }
+        ]
+    },
+    "3": {
+        "docks": [
+            { "location": "0200", "x": 46.5, "y": 43, "type": "dead-end", "labelPlacement": "left" },
+            { "location": "0202", "x": 51, "y": 44, "type": "normal", "labelPlacement": "below" },
+            { "location": "021B", "x": 55, "y": 40, "type": "dead-end", "labelPlacement": "right" }
+        ]
+    },
+    "4": {
+        "docks": [
+            { "location": "023E", "x": 60.5, "y": 76, "type": "normal", "labelPlacement": "below" },
+            { "location": "0241", "x": 62, "y": 70, "type": "dead-end", "labelPlacement": "above" }
+        ]
+    },
+    "5": {
+        "docks": [
+            { "location": "021F", "x": 54, "y": 58, "type": "normal", "labelPlacement": "left" },
+            { "location": "023B", "x": 61, "y": 83.5, "type": "normal", "labelPlacement": "below" },
+            { "location": "023C", "x": 52, "y": 84, "type": "dead-end", "labelPlacement": "left" }
+        ]
+    },
+    "6": {
+        "docks": [
+            { "location": "023D", "x": 44, "y": 75, "type": "normal", "labelPlacement": "below" },
+            { "location": "0247", "x": 31, "y": 69, "type": "normal", "labelPlacement": "above" }
+        ]
+    },
+    "7": {
+        "docks": [
+            { "location": "0220", "x": 44.5, "y": 50, "type": "normal", "labelPlacement": "above" },
+            { "location": "024B", "x": 34, "y": 56.5, "type": "normal", "labelPlacement": "below" }
+        ]
     }
 }

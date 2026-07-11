@@ -5,4 +5,4 @@ export { DigievolutionRepository } from "./digievolution.repository";
 export { QuestRepository as JournalRepository } from "./quest.repository";
 export { LocationRepository } from "./location.repository";
 export { DockRepository } from "./dock.repository";
-export { SeabedRouteRepository } from "./seabed-route.repository";
+export { SeabedDirectionsRepository as SeabedRouteRepository } from "./seabed-direction.repository";

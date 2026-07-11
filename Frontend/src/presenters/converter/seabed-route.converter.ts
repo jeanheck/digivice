@@ -1,8 +1,8 @@
-import type { SeabedRouteRaw } from "@/repositories/tables/raws/dock/seabed-route.raw";
+import type { SeabedDirectionRaw } from "@/repositories/tables/raws/seabed/seabed-direction.raw";
 import type { SeabedRouteViewModel } from "@/viewmodels/dock/seabed-route.viewmodel";
 
 export class SeabedRouteConverter {
-  public static convert(routeId: string, seabedRouteRaw: SeabedRouteRaw): SeabedRouteViewModel {
+  public static convert(routeId: string, seabedRouteRaw: SeabedDirectionRaw): SeabedRouteViewModel {
     return {
       id: routeId,
       docks: seabedRouteRaw.docks.map((dockRaw) => {

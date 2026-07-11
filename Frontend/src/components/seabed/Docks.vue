@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { DocksPresenter } from "@/presenters/map/docks.presenter";
-import type { SeabedRouteDockLabelPlacement } from "@/repositories/tables/raws/dock/seabed-route-dock.raw";
+import type { DockLabelPosition } from "@/repositories/tables/raws/seabed/seabed-direction-dock.raw";
 import {
   SEABED_MAP_FRAME_MAX_HEIGHT_PX,
   SEABED_MAP_FRAME_WIDTH_PX,
@@ -59,7 +59,7 @@ function isRouteHovered(routeId: string): boolean {
   return hoveredRouteId.value === routeId;
 }
 
-function getLabelPlacementClasses(labelPlacement: SeabedRouteDockLabelPlacement): string {
+function getLabelPlacementClasses(labelPlacement: DockLabelPosition): string {
   if (labelPlacement === "below") {
     return "top-full mt-1 left-1/2 -translate-x-1/2";
   }

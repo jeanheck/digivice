@@ -70,7 +70,6 @@ const closeEnemyModal = () => {
         <Seabed
           v-if="isSubmerged"
           :seabed-route="seabedRoute"
-          :is-submerged="isSubmerged"
         />
       </div>
 
