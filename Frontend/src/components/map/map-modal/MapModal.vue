@@ -5,10 +5,9 @@ import Modal from "@/components/modal/Modal.vue";
 import Sections from "@/components/map/map-modal/Sections.vue";
 import EnemiesSection from "@/components/map/map-modal/EnemiesSection.vue";
 import DocksSection from "@/components/map/map-modal/DocksSection.vue";
-import BoxesSection from "@/components/map/map-modal/BoxesSection.vue";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
-type MapModalSection = "enemies" | "docks" | "boxes";
+type MapModalSection = "enemies" | "docks";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -112,7 +111,6 @@ const selectEnemy = (enemyId: string) => {
         @select-enemy="selectEnemy"
       />
       <DocksSection v-else-if="selectedSection === 'docks'" :location="location" />
-      <BoxesSection v-else-if="selectedSection === 'boxes'" />
     </div>
   </Modal>
 </template>

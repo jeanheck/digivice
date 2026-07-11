@@ -2,7 +2,6 @@
   "mapModal": {
     "enemies": "Enemies",
     "docks": "Docks",
-    "boxes": "Boxes",
     "noDock": "This map has no dock. You can still use the map on the left to check other maps with docks, or full routes."
   }
 }

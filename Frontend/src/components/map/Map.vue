@@ -3,14 +3,13 @@ import Location from "./Location.vue";
 import Enemies from "./Enemies.vue";
 import Seabed from "./Seabed.vue";
 import DocksButton from "./DocksButton.vue";
-import BoxesButton from "./BoxesButton.vue";
 import MapModal from "@/components/map/map-modal/MapModal.vue";
 import { computed, ref } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 
-type MapModalSection = "enemies" | "docks" | "boxes";
+type MapModalSection = "enemies" | "docks";
 
 const store = useGameStore();
 
@@ -48,9 +47,6 @@ function onDocksClick(): void {
   initialEnemyId.value = null;
   isMapModalOpen.value = true;
 }
-
-function onBoxesClick(): void {
-}
 </script>
 
 <template>
@@ -83,7 +79,6 @@ function onBoxesClick(): void {
       <div class="w-full flex justify-center shrink-0 px-0.5 pb-1">
         <div class="flex gap-1 w-full max-w-[95%]">
           <DocksButton :dock="locationViewModel?.dock ?? false" @click="onDocksClick" />
-          <BoxesButton @click="onBoxesClick" />
         </div>
       </div>
     </div>
