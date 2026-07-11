@@ -9,6 +9,10 @@ const props = defineProps<{
   imageUrl: string | null;
 }>();
 
+const emit = defineEmits<{
+  "select-dock": [locationId: string];
+}>();
+
 const routes = DocksPresenter.getRoutes();
 
 const hoveredRouteId = ref<string | null>(null);
@@ -32,6 +36,14 @@ const mapImageFrameStyle = computed(() => {
     height: `${displayHeight}px`,
   };
 });
+
+function onDockClick(locationId: string, dockType: string): void {
+  if (dockType !== "normal") {
+    return;
+  }
+
+  emit("select-dock", locationId);
+}
 
 function onRouteEnter(routeId: string): void {
   hoveredRouteId.value = routeId;
@@ -147,6 +159,7 @@ watch(
           :style="{ left: dock.x + '%', top: dock.y + '%' }"
           @mouseenter="onRouteEnter(route.id)"
           @mouseleave="onRouteLeave"
+          @click="onDockClick(dock.location, dock.type)"
         >
           <div
             class="rounded-full w-full h-full transition-all"
