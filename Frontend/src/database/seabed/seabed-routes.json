@@ -159,25 +159,28 @@
         }
     },
     "8": {
-        "02E2-1": {
-            "emerge": [
-                {
-                    "on": "topLeft",
-                    "location": "0227"
-                }
-            ],
-            "left": [],
-            "right": ["02E0", "0228"]
-        },
-        "02E0-1": {
-            "emerge": [
-                {
-                    "on": "topRight",
-                    "location": "0228"
-                }
-            ],
-            "left": ["02E2", "0227"],
-            "right": []
+        "enemies": [],
+        "maps": {
+            "02E2-1": {
+                "emerge": [
+                    {
+                        "on": "topLeft",
+                        "location": "0227"
+                    }
+                ],
+                "left": [],
+                "right": ["02E0", "0228"]
+            },
+            "02E0-1": {
+                "emerge": [
+                    {
+                        "on": "topRight",
+                        "location": "0228"
+                    }
+                ],
+                "left": ["02E2", "0227"],
+                "right": []
+            }
         }
     },
     "9": {

@@ -173,14 +173,14 @@
             "loadedLevel": 25
         },
         {
-            "id": "mechanicalBash",
-            "learnLevel": 35,
-            "loadedLevel": 80
-        },
-        {
             "id": "magicMissile",
             "learnLevel": 15,
             "loadedLevel": 55
+        },
+        {
+            "id": "mechanicalBash",
+            "learnLevel": 35,
+            "loadedLevel": 80
         },
         {
             "id": "slowDown",
@@ -861,14 +861,14 @@
             "loadedLevel": 15
         },
         {
-            "id": "electroBolt",
-            "learnLevel": 25,
-            "loadedLevel": 65
-        },
-        {
             "id": "iceShower",
             "learnLevel": 10,
             "loadedLevel": 35
+        },
+        {
+            "id": "electroBolt",
+            "learnLevel": 25,
+            "loadedLevel": 65
         },
         {
             "id": "showstorm",
@@ -893,14 +893,14 @@
             "loadedLevel": 25
         },
         {
-            "id": "lightningBolt",
-            "learnLevel": 40,
-            "loadedLevel": 80
-        },
-        {
             "id": "showstorm",
             "learnLevel": 15,
             "loadedLevel": 35
+        },
+        {
+            "id": "lightningBolt",
+            "learnLevel": 40,
+            "loadedLevel": 80
         },
         {
             "id": "gigaFreeze",
