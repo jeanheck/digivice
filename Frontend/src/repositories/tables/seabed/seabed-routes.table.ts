@@ -1,3 +1,3 @@
-import type { SeabedRouteLocationRaw } from "../raws/seabed/seabed-route-location.raw";
+import type { SeabedRouteRaw } from "../raws/seabed/seabed-route.raw";
 
-export type SeabedRoutesTable = Record<string, Record<string, SeabedRouteLocationRaw>>;
+export type SeabedRoutesTable = Record<string, SeabedRouteRaw>;

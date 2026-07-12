@@ -715,58 +715,42 @@
   },
   "02E0": {
     "image": "Seabed 0",
-    "enemies": [
-      "98"
-    ],
+    "enemies": [],
     "dock": false
   },
   "02E1": {
     "image": "Seabed 1",
-    "enemies": [
-      "98"
-    ],
+    "enemies": [],
     "dock": false
   },
   "02E2": {
     "image": "Seabed 2",
-    "enemies": [
-      "98"
-    ],
+    "enemies": [],
     "dock": false
   },
   "02E3": {
     "image": "Seabed 3",
-    "enemies": [
-      "98"
-    ],
+    "enemies": [],
     "dock": false
   },
   "02E4": {
     "image": "Seabed 4",
-    "enemies": [
-      "98"
-    ],
+    "enemies": [],
     "dock": false
   },
   "02E5": {
     "image": "Seabed 5",
-    "enemies": [
-      "98"
-    ],
+    "enemies": [],
     "dock": false
   },
   "02E6": {
     "image": "Seabed 6",
-    "enemies": [
-      "98"
-    ],
+    "enemies": [],
     "dock": false
   },
   "02E7": {
     "image": "Seabed 7",
-    "enemies": [
-      "98"
-    ],
+    "enemies": [],
     "dock": false
   }
 }

@@ -2,6 +2,7 @@ import { LocationConverter } from "@/presenters/converter/location.converter";
 import { QuestHelper } from "@/presenters/helper/quest.helper";
 import type { Quest } from "@/models";
 import { LocationRepository } from "@/repositories/location.repository";
+import { SeabedRoutesRepository } from "@/repositories/seabed-routes.repository";
 import {
     isLocationEnemyPhaseList,
     type LocationEnemiesRaw,
@@ -14,7 +15,10 @@ export class MapPresenter {
     "02E1",
     "02E2",
     "02E3",
+    "02E4",
+    "02E5",
     "02E6",
+    "02E7",
   ]);
 
   private static resolveEnemyIds(enemies: LocationEnemiesRaw, lastCompletedMainQuestStep: number): string[] {
@@ -37,10 +41,18 @@ export class MapPresenter {
     return matchingPhase.ids;
   }
 
-  public static getLocationById(locationId: string, mainQuest: Quest | null): LocationViewModel {
+  public static getLocationById(
+    locationId: string,
+    mainQuest: Quest | null,
+    seabedRoute: number = 0,
+  ): LocationViewModel {
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const lastCompletedMainQuestStep = QuestHelper.getLastCompletedMainQuestStep(mainQuest);
-    const enemyIds = MapPresenter.resolveEnemyIds(locationRaw.enemies, lastCompletedMainQuestStep);
+    const enemyIds = MapPresenter.isSeabedLocation(locationId)
+      ? MapPresenter.resolveSeabedEnemyIds(seabedRoute)
+      : MapPresenter.resolveEnemyIds(
+          locationRaw.enemies,
+          QuestHelper.getLastCompletedMainQuestStep(mainQuest),
+        );
 
     return LocationConverter.convert(locationId, locationRaw, enemyIds);
   }
@@ -51,5 +63,13 @@ export class MapPresenter {
     }
 
     return MapPresenter.seabedLocationIds.has(locationId);
+  }
+
+  private static resolveSeabedEnemyIds(seabedRoute: number): string[] {
+    if (seabedRoute === 0) {
+      return [];
+    }
+
+    return SeabedRoutesRepository.getEnemiesByRoute(String(seabedRoute));
   }
 }

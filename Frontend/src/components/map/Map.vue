@@ -16,7 +16,8 @@ const locationViewModel = computed(() => {
     return null;
   }
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
-  return MapPresenter.getLocationById(locationId, mainQuest);
+  const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
+  return MapPresenter.getLocationById(locationId, mainQuest, seabedRoute);
 });
 
 const locationImage = computed(() => {

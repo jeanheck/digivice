@@ -55,7 +55,8 @@ watch(
 const dockViewModel = computed(() => {
   return DocksSectionPresenter.getDockByLocationId(
     selectedLocationId.value,
-    store.currentState?.journal?.mainQuest ?? null
+    store.currentState?.journal?.mainQuest ?? null,
+    store.currentState?.player?.seabedRoute ?? 0,
   );
 });
 

@@ -25,13 +25,14 @@ export class DocksSectionPresenter {
 
   public static getDockByLocationId(
     locationId: string | null,
-    mainQuest: Quest | null
+    mainQuest: Quest | null,
+    seabedRoute: number = 0,
   ): DockViewModel | null {
     if (locationId === null) {
       return null;
     }
 
-    const location = MapPresenter.getLocationById(locationId, mainQuest);
+    const location = MapPresenter.getLocationById(locationId, mainQuest, seabedRoute);
 
     return DocksSectionPresenter.getDock(location);
   }
