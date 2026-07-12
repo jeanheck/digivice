@@ -9,7 +9,7 @@ export class SeabedRoutesRepository {
     return this.seabedRoutesTable;
   }
 
-  public static getByRouteAndLocation(routeId: string, locationId: string): SeabedRouteLocationRaw | null {
-    return this.seabedRoutesTable[routeId]?.[locationId] ?? null;
+  public static getByRouteAndLocation(routeId: string, locationKey: string): SeabedRouteLocationRaw | null {
+    return this.seabedRoutesTable[routeId]?.[locationKey] ?? null;
   }
 }

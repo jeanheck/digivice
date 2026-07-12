@@ -19,7 +19,7 @@ const routeLocation = computed(() => {
     return null;
   }
 
-  return SeabedPresenter.getRouteLocation(props.seabedRoute, props.locationId);
+  return SeabedPresenter.getRouteLocation(props.seabedRoute, props.locationId, props.seabedRouteType);
 });
 
 const emerge = computed(() => {
