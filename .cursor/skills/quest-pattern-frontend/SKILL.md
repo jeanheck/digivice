@@ -3,9 +3,9 @@ name: quest-pattern-frontend
 description: >-
   Integrates journal quest sections into the Digivice frontend — SignalR
   reception through Pinia syncers, static JSON, presenters, and Journal UI.
-  Use when the user explicitly asks to wire a new journal category (legendary
-  weapons, DRI agents) or add a quest to an existing category on the frontend.
-disable-model-invocation: true
+  Use when the user asks to wire a new journal category (legendary weapons,
+  DRI agents), add a quest to an existing category, or register another DRI
+  agent on the frontend.
 ---
 
 # Quest Pattern — Frontend Integration
@@ -312,6 +312,46 @@ File: `repositories/quest.repository.ts`
 ### 5. Retrofeed
 
 Append quest id under the category in [frontend-status.md](frontend-status.md).
+
+---
+
+### DRI agents (Workflow B specialization)
+
+Category `driAgents` is already wired (accent `rose`). Adding another agent is
+**only** static data + repository + i18n. Reference: `dri-agent-kumamon` /
+`dri-agent-monmon`.
+
+| Create / edit | Path pattern |
+|---------------|--------------|
+| Database JSON | `Frontend/src/database/quest/dri-agents/dri-agent-{rookie}.json` |
+| Table type | `Frontend/src/repositories/tables/quest/dri-agents/dri-agent-{rookie}.table.ts` → `export type DriAgent{Rookie}Table = QuestRaw` |
+| i18n en-US | `Frontend/src/i18n/locales/en-US/quest/dri-agents/dri-agent-{rookie}.json` |
+| i18n pt-BR | `Frontend/src/i18n/locales/pt-BR/quest/dri-agents/dri-agent-{rookie}.json` |
+| Locale indexes | Import + spread in `en-US/index.ts` and `pt-BR/index.ts` |
+| Repository | `quest.repository.ts` — import JSON + type; append in `getDriAgentsRaw()` |
+
+**i18n shape:**
+
+- Root key: `driAgent{Rookie}`
+- `title`: `"{Rookie} - DRI {Npc} ({levelRange})"` (e.g. `Kumamon - DRI Yuji (60 ~ 90)`)
+- `description`: add rookie to party
+- Steps `1` / `2` / `3`: look for agent → defeat boss for DDNA → deliver DNA
+- Step 3 `requisites.{rookie}DDNA`: label for the DNA item
+- `locationTarget` strings for map markers (agent name / boss name)
+
+**Locations (database JSON):**
+
+- Use correct `location` mapIds from `Frontend/src/database/location/location.json`
+- Coordinates: provisional `x`/`y` `50` (and matching `zoomedLocations`) until the
+  user supplies real markers — same approach as Monmon/Kumamon
+- Step 3 `requisites`: `[{ "id": "{rookie}DDNA" }]` matching backend
+
+**SKIP:** `Journal.vue` section, palette, syncers, converters, presenters (already
+iterate `getDriAgentsRaw()`).
+
+**No frontend tests** (project rule).
+
+For backend + frontend together, use skill `dri-agent-integrate`.
 
 ---
 

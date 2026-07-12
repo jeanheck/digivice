@@ -81,13 +81,33 @@ All quest-like trackers live under `Backend/Memory/Definitions/Quests/`:
 | Main quest | `Quests/MainQuestAddresses.json` | Bit flip in `0x4B3xx` |
 | Side quests | `Quests/SideQuests/` | Bit flip or raw byte |
 | Legendary weapons | `Quests/LegendaryWeapons/` | Sequential bit on `0x4B38E` |
-| DRI agents | `Quests/DriAgents/` | TBD — see known-patterns.md |
+| DRI agents | `Quests/DriAgents/` + [dri-agent-hunt.md](dri-agent-hunt.md) | 3 pairs: talk / boss / deliver; see hunt order below |
 | Player | `PlayerAddresses.json` (`Bits`, `MapId`, `Name`, `SeabedRoute`, `IsSubmerged`) | MapId byte change on transition; seabed fields on dive/emerge |
 | Map / seabed | `PlayerAddresses.json` (`SeabedRoute`, `IsSubmerged`) + [seabed-routing-investigation.md](seabed-routing-investigation.md) | MapId change; `0x48D78` / `0x48D7A` on dive |
 | Party | `PartyAddresses.json` (slots `0x48DA4+`) | Slot ID bytes |
 | Digimon stats | `Parties/DigimonStatusAddresses.json` (offsets) | Multi-byte counters at `~0x494xxx` |
 | Common items | `Auctions/*.txt` | Often `0x48ECx`, may clear on sell |
 | Auctions | `Auctions/*.txt` | `0x4B370`, `0x4B38A` region |
+
+## DRI agent investigation
+
+When the domain is a DRI agent quest, follow [dri-agent-hunt.md](dri-agent-hunt.md).
+Confirmed per-agent tables: [known-patterns.md](known-patterns.md) (DRI agents section).
+
+**Snapshots (six files):** `{rookie}_before/after_dri_agent`,
+`{rookie}_before/after_{boss}`, `{rookie}_before/after_gives_dna_to_agent`
+under `Tools/MemoryScanner/Snapshots/`.
+
+**Hunt order:**
+
+1. Talk → new bit on shared **`0x4B38C`**
+2. Boss → new bit on **`0x4B3B7`** or **`0x4B3B8`**
+3. DNA → `0x00 → 0x01` in **`~0x48DBx`** or **`~0x48Fxx`**
+4. Deliver → per-agent byte in **`~0x4Axxx`** or **`~0x49xxx`**
+
+Filter encounter cache `0x4B824`–`0x4BB00`. Suggest JSON under
+`Quests/DriAgents/{Name}Addresses.json`. For end-to-end wiring after
+confirmation, point the user to skill `dri-agent-integrate`.
 
 ## Output template
 
@@ -123,7 +143,7 @@ After each investigation, update skill reference files **without being asked**:
 
 **[known-patterns.md](known-patterns.md)**
 - New recurring pattern (confirmed, not guessed)
-- Fill in DRI agent sections when Agumon/Guilmon addresses are confirmed
+- Fill in DRI agent sections when a new agent’s addresses are confirmed
 - Mark entries `(confirmed)` vs `(suspected)` when uncertain
 
 Rules:
@@ -149,6 +169,8 @@ Doc: `Tools/MemoryScanner/README.md`. Value sizes: 1=byte, 2=Int16, 4=Int32.
 ## Additional resources
 
 - [memory-regions.md](memory-regions.md) — RAM map, noise, anchors
-- [known-patterns.md](known-patterns.md) — confirmed patterns, DRI placeholders
+- [known-patterns.md](known-patterns.md) — confirmed patterns, DRI agent tables
+- [dri-agent-hunt.md](dri-agent-hunt.md) — DRI snapshot convention and hunt order
 - [investigation-template.md](investigation-template.md) — post-confirmation doc
 - [seabed-routing-investigation.md](seabed-routing-investigation.md) — SeabedRoute, IsSubmerged, PreviousMapId
+- Sibling skill: `.cursor/skills/dri-agent-integrate/` — end-to-end DRI wiring after addresses confirmed
