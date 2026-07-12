@@ -18,7 +18,7 @@ public class PlayerReaderTests
             NameBufferSize = 10,
             MapId = 0x3000,
             SeabedRoute = 0x4000,
-            IsSubmerged = 0x5000
+            SeabedRouteType = 0x5000
         };
 
         var nameBytes = new byte[] { 65, 103, 117, 109, 111, 110, 0, 0, 0, 0 }; // "Agumon"
@@ -41,6 +41,6 @@ public class PlayerReaderTests
         Assert.Equal(nameBytes, result.NameInBytes);
         Assert.Equal((short)4, result.MapId);
         Assert.Equal((byte)0x08, result.SeabedRoute);
-        Assert.Equal((byte)0x01, result.IsSubmerged);
+        Assert.Equal((byte)0x01, result.SeabedRouteType);
     }
 }

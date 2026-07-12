@@ -6,6 +6,6 @@ namespace Backend.Domain.Models
         public int Bits { get; set; }
         public string MapId { get; set; } = string.Empty;
         public byte SeabedRoute { get; set; }
-        public bool IsSubmerged { get; set; }
+        public byte SeabedRouteType { get; set; }
     }
 }

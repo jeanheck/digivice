@@ -31,7 +31,7 @@ public class PlayerLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(nameBytes, playerResource.NameInBytes);
         Assert.Equal((short)4, playerResource.MapId);
         Assert.Equal((byte)0x08, playerResource.SeabedRoute);
-        Assert.Equal((byte)0x01, playerResource.IsSubmerged);
+        Assert.Equal((byte)0x01, playerResource.SeabedRouteType);
     }
 
     [Fact]

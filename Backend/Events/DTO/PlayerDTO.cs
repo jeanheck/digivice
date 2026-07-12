@@ -19,5 +19,5 @@ public record class PlayerDTO : IDTO
     public Optional<byte> SeabedRoute { get; init; } = Optional<byte>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<bool> IsSubmerged { get; init; } = Optional<bool>.Empty;
+    public Optional<byte> SeabedRouteType { get; init; } = Optional<byte>.Empty;
 }

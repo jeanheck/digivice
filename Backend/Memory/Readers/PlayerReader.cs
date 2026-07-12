@@ -13,7 +13,7 @@ namespace Backend.Memory.Readers
                 NameInBytes = memoryReader.ReadBytes(addresses.Name, addresses.NameBufferSize),
                 MapId = memoryReader.ReadInt16(addresses.MapId),
                 SeabedRoute = memoryReader.ReadBytes(addresses.SeabedRoute, 1)[0],
-                IsSubmerged = memoryReader.ReadBytes(addresses.IsSubmerged, 1)[0]
+                SeabedRouteType = memoryReader.ReadBytes(addresses.SeabedRouteType, 1)[0]
             };
         }
     }

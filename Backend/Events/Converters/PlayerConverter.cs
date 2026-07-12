@@ -13,7 +13,7 @@ public static class PlayerConverter
             Bits = player.Bits,
             Location = player.MapId,
             SeabedRoute = player.SeabedRoute,
-            IsSubmerged = player.IsSubmerged
+            SeabedRouteType = player.SeabedRouteType
         };
     }
 }
