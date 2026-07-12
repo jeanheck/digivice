@@ -1,0 +1,61 @@
+{
+    "id": "driAgentKumamon",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "0258",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0258",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "2": {
+            "location": "023C",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "023C",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "3": {
+            "location": "0258",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0258",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": [
+                {
+                    "id": "kumamonDDNA"
+                }
+            ]
+        }
+    }
+}

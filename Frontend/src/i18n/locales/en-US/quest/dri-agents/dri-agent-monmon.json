@@ -1,0 +1,35 @@
+{
+  "driAgentMonmon": {
+    "title": "Monmon - DRI Yang (60 ~ 90)",
+    "description": "Add Monmon to your Digimon party",
+    "steps": {
+      "1": {
+        "description": "Look for Dri Yang in Mobius Desert",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Yang"
+          }
+        }
+      },
+      "2": {
+        "description": "Defeat Armormon in battle to receive Monmon's DDNA",
+        "locations": {
+          "0": {
+            "locationTarget": "Armormon"
+          }
+        }
+      },
+      "3": {
+        "description": "Deliver Monmon's DNA to DRI Yang",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Yang"
+          }
+        },
+        "requisites": {
+          "monmonDDNA": "Monmon's DDNA"
+        }
+      }
+    }
+  }
+}

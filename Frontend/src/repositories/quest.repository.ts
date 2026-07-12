@@ -5,6 +5,8 @@ import MuramasaJson from "@/database/quest/legendary-weapons/muramasa.json";
 import DriAgentGuilmonJson from "@/database/quest/dri-agents/dri-agent-guilmon.json";
 import DriAgentAgumonJson from "@/database/quest/dri-agents/dri-agent-agumon.json";
 import DriAgentVeemonJson from "@/database/quest/dri-agents/dri-agent-veemon.json";
+import DriAgentKumamonJson from "@/database/quest/dri-agents/dri-agent-kumamon.json";
+import DriAgentMonmonJson from "@/database/quest/dri-agents/dri-agent-monmon.json";
 import TreeBootsJson from "@/database/quest/side-quest/tree-boots.json";
 import FishingPoleJson from "@/database/quest/side-quest/fishing-pole.json";
 import FolderBagJson from "@/database/quest/side-quest/folder-bag.json";
@@ -15,6 +17,8 @@ import type { MuramasaTable } from "@/repositories/tables/quest/legendary-weapon
 import type { DriAgentGuilmonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-guilmon.table";
 import type { DriAgentAgumonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-agumon.table";
 import type { DriAgentVeemonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-veemon.table";
+import type { DriAgentKumamonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-kumamon.table";
+import type { DriAgentMonmonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-monmon.table";
 import type { TreeBootsTable } from "@/repositories/tables/quest/side-quest/tree-boots.table";
 import type { FishingPoleTable } from "@/repositories/tables/quest/side-quest/fishing-pole.table";
 import type { FolderBagTable } from "@/repositories/tables/quest/side-quest/folder-bag.table";
@@ -28,6 +32,8 @@ export class QuestRepository {
     private static readonly driAgentGuilmonTable = DriAgentGuilmonJson as DriAgentGuilmonTable;
     private static readonly driAgentAgumonTable = DriAgentAgumonJson as DriAgentAgumonTable;
     private static readonly driAgentVeemonTable = DriAgentVeemonJson as DriAgentVeemonTable;
+    private static readonly driAgentKumamonTable = DriAgentKumamonJson as DriAgentKumamonTable;
+    private static readonly driAgentMonmonTable = DriAgentMonmonJson as DriAgentMonmonTable;
     private static readonly treeBootsTable = TreeBootsJson as TreeBootsTable;
     private static readonly fishingPoleTable = FishingPoleJson as FishingPoleTable;
     private static readonly folderBagTable = FolderBagJson as FolderBagTable;
@@ -42,6 +48,12 @@ export class QuestRepository {
         return [this.eternallyTable, this.invincibleTable, this.muramasaTable];
     }
     public static getDriAgentsRaw(): QuestRaw[] {
-        return [this.driAgentGuilmonTable, this.driAgentAgumonTable, this.driAgentVeemonTable];
+        return [
+            this.driAgentGuilmonTable,
+            this.driAgentAgumonTable,
+            this.driAgentVeemonTable,
+            this.driAgentKumamonTable,
+            this.driAgentMonmonTable
+        ];
     }
 }

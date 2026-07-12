@@ -1,0 +1,35 @@
+{
+  "driAgentKumamon": {
+    "title": "Kumamon - DRI Yuji (60 ~ 90)",
+    "description": "Adicione Kumamon ao seu grupo de Digimons",
+    "steps": {
+      "1": {
+        "description": "Procure pelo DRI Yuji no Deserto Mobius",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Yuji"
+          }
+        }
+      },
+      "2": {
+        "description": "Vença GrapLeomon em batalha para receber o DDNA do Kumamon",
+        "locations": {
+          "0": {
+            "locationTarget": "GrapLeomon"
+          }
+        }
+      },
+      "3": {
+        "description": "Entregue o DDNA do Kumamon para DRI Yuji",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Yuji"
+          }
+        },
+        "requisites": {
+          "kumamonDDNA": "DDNA de Kumamon"
+        }
+      }
+    }
+  }
+}

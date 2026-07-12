@@ -41,7 +41,7 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
 
         Assert.NotNull(journalResource);
         Assert.Equal("mainQuest", journalResource.MainQuest.Id);
-        Assert.Equal(43, journalResource.MainQuest.Steps.Count);
+        Assert.Equal(61, journalResource.MainQuest.Steps.Count);
         Assert.Equal(0x80, journalResource.MainQuest.Steps[0].Value);
         Assert.Equal(3, journalResource.SideQuests.Count);
         Assert.Equal("folderBag", journalResource.SideQuests[0].Id);
@@ -56,13 +56,19 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0x01, journalResource.LegendaryWeapons[0].Steps[0].Value);
         Assert.Equal(0, journalResource.LegendaryWeapons[1].Steps[0].Value);
         Assert.Equal(0, journalResource.LegendaryWeapons[2].Steps[0].Value);
-        Assert.Equal(2, journalResource.DriAgents.Count);
+        Assert.Equal(5, journalResource.DriAgents.Count);
         Assert.Equal("driAgentGuilmon", journalResource.DriAgents[0].Id);
         Assert.Equal("driAgentAgumon", journalResource.DriAgents[1].Id);
+        Assert.Equal("driAgentVeemon", journalResource.DriAgents[2].Id);
+        Assert.Equal("driAgentKumamon", journalResource.DriAgents[3].Id);
+        Assert.Equal("driAgentMonmon", journalResource.DriAgents[4].Id);
         Assert.Equal(0x02, journalResource.DriAgents[0].Steps[0].Value);
         Assert.Equal(0, journalResource.DriAgents[0].Steps[1].Value);
         Assert.Equal(0, journalResource.DriAgents[1].Steps[0].Value);
-        Assert.Equal(4, journalResource.Auctions.Count);
+        Assert.Equal(0, journalResource.DriAgents[2].Steps[0].Value);
+        Assert.Equal(0, journalResource.DriAgents[3].Steps[0].Value);
+        Assert.Equal(0, journalResource.DriAgents[4].Steps[0].Value);
+        Assert.Equal(5, journalResource.Auctions.Count);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x00);
     }

@@ -24,6 +24,8 @@ import muramasa from "./quest/legendary-weapons/muramasa.json";
 import driAgentGuilmon from "./quest/dri-agents/dri-agent-guilmon.json";
 import driAgentAgumon from "./quest/dri-agents/dri-agent-agumon.json";
 import driAgentVeemon from "./quest/dri-agents/dri-agent-veemon.json";
+import driAgentKumamon from "./quest/dri-agents/dri-agent-kumamon.json";
+import driAgentMonmon from "./quest/dri-agents/dri-agent-monmon.json";
 import player from "./player.json";
 import party from "./party.json";
 import connection from "./connection.json";
@@ -56,6 +58,8 @@ export default {
   ...driAgentGuilmon,
   ...driAgentAgumon,
   ...driAgentVeemon,
+  ...driAgentKumamon,
+  ...driAgentMonmon,
   ...player,
   ...party,
   ...connection,

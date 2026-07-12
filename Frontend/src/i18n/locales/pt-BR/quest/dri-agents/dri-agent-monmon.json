@@ -1,0 +1,35 @@
+{
+  "driAgentMonmon": {
+    "title": "Monmon - DRI Yang (60 ~ 90)",
+    "description": "Adicione Monmon ao seu grupo de Digimons",
+    "steps": {
+      "1": {
+        "description": "Procure pelo DRI Yang no Deserto Mobius",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Yang"
+          }
+        }
+      },
+      "2": {
+        "description": "Vença Armormon em batalha para receber o DDNA do Monmon",
+        "locations": {
+          "0": {
+            "locationTarget": "Armormon"
+          }
+        }
+      },
+      "3": {
+        "description": "Entregue o DDNA do Monmon para DRI Yang",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Yang"
+          }
+        },
+        "requisites": {
+          "monmonDDNA": "DDNA de Monmon"
+        }
+      }
+    }
+  }
+}

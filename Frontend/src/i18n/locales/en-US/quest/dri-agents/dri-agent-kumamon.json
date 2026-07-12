@@ -1,0 +1,35 @@
+{
+  "driAgentKumamon": {
+    "title": "Kumamon - DRI Yuji (60 ~ 90)",
+    "description": "Add Kumamon to your Digimon party",
+    "steps": {
+      "1": {
+        "description": "Look for Dri Yuji in Mobius Desert",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Yuji"
+          }
+        }
+      },
+      "2": {
+        "description": "Defeat GrapLeomon in battle to receive Kumamon's DDNA",
+        "locations": {
+          "0": {
+            "locationTarget": "GrapLeomon"
+          }
+        }
+      },
+      "3": {
+        "description": "Deliver Kumamon's DNA to DRI Yuji",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Yuji"
+          }
+        },
+        "requisites": {
+          "kumamonDDNA": "Kumamon's DDNA"
+        }
+      }
+    }
+  }
+}
