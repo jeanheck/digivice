@@ -834,14 +834,14 @@
             "loadedLevel": 35
         },
         {
-            "id": "thunderGemini",
-            "learnLevel": 25,
-            "loadedLevel": 75
-        },
-        {
             "id": "iceBlow",
             "learnLevel": 15,
             "loadedLevel": 45
+        },
+        {
+            "id": "thunderGemini",
+            "learnLevel": 25,
+            "loadedLevel": 75
         },
         {
             "id": "iceShower",
