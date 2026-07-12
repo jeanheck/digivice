@@ -3,5 +3,5 @@ export interface PlayerDTO {
     bits?: number;
     location?: string; // Corresponde ao MapId no backend
     seabedRoute?: number;
-    isSubmerged?: boolean;
+    seabedRouteType?: number;
 }

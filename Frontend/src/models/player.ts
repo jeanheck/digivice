@@ -3,5 +3,5 @@ export interface Player {
     bits: number;
     location: string;
     seabedRoute: number;
-    isSubmerged: boolean;
+    seabedRouteType: number;
 }

@@ -15,8 +15,8 @@ export class PlayerSyncer {
         if (newPlayerDto.seabedRoute !== undefined) {
             previousPlayer.seabedRoute = newPlayerDto.seabedRoute;
         }
-        if (newPlayerDto.isSubmerged !== undefined) {
-            previousPlayer.isSubmerged = newPlayerDto.isSubmerged;
+        if (newPlayerDto.seabedRouteType !== undefined) {
+            previousPlayer.seabedRouteType = newPlayerDto.seabedRouteType;
         }
     }
 }

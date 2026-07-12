@@ -23,12 +23,12 @@ const locationImage = computed(() => {
   return ImageCatalog.getMapImageUrl(locationViewModel.value?.image ?? null);
 });
 
-const isSubmerged = computed(() => {
-  return store.currentState?.player?.isSubmerged ?? false;
-});
-
 const seabedRoute = computed(() => {
   return store.currentState?.player?.seabedRoute ?? 0;
+});
+
+const seabedRouteType = computed(() => {
+  return store.currentState?.player?.seabedRouteType ?? 0;
 });
 
 const locationId = computed(() => {
@@ -72,8 +72,9 @@ const closeEnemyModal = () => {
         <Location :location="locationViewModel" />
         <Enemies :location="locationViewModel" @open-enemy-modal="openEnemyModal" />
         <Seabed
-          v-if="isSubmerged"
+          v-if="seabedRoute !== 0"
           :seabed-route="seabedRoute"
+          :seabed-route-type="seabedRouteType"
           :location-id="locationId"
         />
       </div>

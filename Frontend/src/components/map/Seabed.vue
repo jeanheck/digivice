@@ -8,6 +8,7 @@ import { SeabedPresenter } from "@/presenters/map/seabed.presenter";
 
 const props = defineProps<{
   seabedRoute: number;
+  seabedRouteType: number;
   locationId: string | null;
 }>();
 

@@ -8,7 +8,7 @@ export class PlayerConverter {
             bits: playerDto.bits,
             location: playerDto.location,
             seabedRoute: playerDto.seabedRoute,
-            isSubmerged: playerDto.isSubmerged
+            seabedRouteType: playerDto.seabedRouteType
         };
     }
 }
