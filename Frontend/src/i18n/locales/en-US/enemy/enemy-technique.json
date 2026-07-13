@@ -36,6 +36,6 @@
         "flameSphere": "Flame Sphere (Magic-Fire)",
         "berserkSword": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
         "heartBreakAttack": "Heart Break Attack (Magic, Lowers Enemy Strength)",
-        "autoRecover": "Auto Recover (Heal a small portion of HP every turn or every few turns)"
+        "autoRecover": "Auto Recover (Heal a small portion of HP every turn)"
     }
 }

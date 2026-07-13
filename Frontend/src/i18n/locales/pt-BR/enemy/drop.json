@@ -32,7 +32,7 @@
         "binderCrest": "Crista Binder",
         "wisdomChip": "Chip Sabedoria",
         "goggles": "Goggles",
-        "armorChip": "Armor Chip",
+        "armorChip": "Chip Armadura",
         "mpChip": "Chip MP",
         "drillHorn": "Drill Horn",
         "recoverCrest": "Recover Crest",
@@ -72,7 +72,7 @@
         "overLoad": "Over Load",
         "boostChip": "Boost Chip",
         "boltPower2": "Bolt Power 2",
-        "runnerShoes": "Runner Shoes",
+        "runnerShoes": "Sandalha Maratona",
         "mpProxy": "MP Proxy",
         "trainChip3": "Train Chip 3",
         "trainChip1": "Train Chip 1",
@@ -83,6 +83,7 @@
         "mpMegaProxy": "MP Mega Proxy",
         "trainChipV": "Train Chip V",
         "icePowerS": "Ice Power S",
-        "variousBooster": "Various Booster"
+        "variousBooster": "Various Booster",
+        "rustyGlove": "Luva Enferrujada"
     }
 }

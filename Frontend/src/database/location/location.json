@@ -110,7 +110,7 @@
     "dock": false
   },
   "021C": {
-    "image": "Command Room",
+    "image": "Control Room",
     "enemies": [
       "16"
     ],

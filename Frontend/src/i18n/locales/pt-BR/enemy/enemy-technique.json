@@ -15,7 +15,7 @@
         "thunderGemini": "Trovão Gêmeo (Mágica, Trovão)",
         "speedUp": "Velocidade Acima (Aumenta velocidade)",
         "magicMissile": "Míssil Mágico(Mágica, Máquina)",
-        "paralyzeShock": "Paralyze Shock (Magic, Chance of Freeze)",
+        "paralyzeShock": "Choque Poderoso (Magic, Chance de Paralisar)",
         "twinMissile": "Míssel Gêmeo (Mágica, Máquina)",
         "lovelyCharm": "Lovely Charm (Decreases Enemy Strength)",
         "confuseNebula": "Confuse Nebula (Chance of Confusion)",
@@ -36,6 +36,6 @@
         "flameSphere": "Flame Sphere (Mágica, Fogo)",
         "berserkSword": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
         "heartBreakAttack": "Ataque da Paixão (Mágica, Diminui a força)",
-        "autoRecover": "Auto Recuperação (Recupere uma pequena quantidade de HP a cada turno ou a cada poucos turnos)"
+        "autoRecover": "Auto Recuperação (Recupera uma pequena quantidade de HP a cada turno)"
     }
 }

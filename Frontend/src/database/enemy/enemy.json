@@ -210,7 +210,7 @@
         "exp": 340,
         "bits": 1000,
         "boss": true,
-        "dropId": "recoverCrest",
+        "dropId": "rustyGlove",
         "regularAttackId": "machineElement",
         "techniqueId": "autoRecover"
     },
