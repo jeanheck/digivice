@@ -13,6 +13,7 @@ public class PlayerAssemblerTests
             NameInBytes = [0x0E, 0x28],
             Bits = 1500,
             MapId = 255,
+            PreviousMapId = 0x023E,
             SeabedRoute = 0x08,
             SeabedRouteType = 0x01
         };
@@ -23,6 +24,7 @@ public class PlayerAssemblerTests
         Assert.Equal("Aa", result.Name);
         Assert.Equal(1500, result.Bits);
         Assert.Equal("00FF", result.MapId);
+        Assert.Equal("023E", result.PreviousMapId);
         Assert.Equal((byte)0x08, result.SeabedRoute);
         Assert.Equal((byte)0x01, result.SeabedRouteType);
     }
@@ -35,6 +37,7 @@ public class PlayerAssemblerTests
             NameInBytes = null,
             Bits = null,
             MapId = null,
+            PreviousMapId = null,
             SeabedRoute = null,
             SeabedRouteType = null
         };
@@ -45,6 +48,7 @@ public class PlayerAssemblerTests
         Assert.Equal(string.Empty, result.Name);
         Assert.Equal(0, result.Bits);
         Assert.Equal(string.Empty, result.MapId);
+        Assert.Equal(string.Empty, result.PreviousMapId);
         Assert.Equal((byte)0, result.SeabedRoute);
         Assert.Equal((byte)0, result.SeabedRouteType);
     }

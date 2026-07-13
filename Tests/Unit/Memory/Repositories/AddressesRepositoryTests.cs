@@ -37,6 +37,7 @@ public class AddressesRepositoryTests : IDisposable
             Name = 0x00048D88,
             Bits = 0x00048DA0,
             MapId = 0x0004B3F8,
+            PreviousMapId = 0x0004B400,
             SeabedRoute = 0x00048D78,
             SeabedRouteType = 0x00048D7A
         };
@@ -52,6 +53,7 @@ public class AddressesRepositoryTests : IDisposable
         Assert.Equal(0x00048D88, result.Name);
         Assert.Equal(0x00048DA0, result.Bits);
         Assert.Equal(0x0004B3F8, result.MapId);
+        Assert.Equal(0x0004B400, result.PreviousMapId);
         Assert.Equal(0x00048D78, result.SeabedRoute);
         Assert.Equal(0x00048D7A, result.SeabedRouteType);
     }

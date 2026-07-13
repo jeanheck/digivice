@@ -16,8 +16,9 @@ each investigation. Append new entries; do not remove without strong evidence.
 | 0x00048D88 | Player name buffer | PlayerAddresses.json |
 | 0x00048DA0 | Player bits (money etc.) | PlayerAddresses.json — **volatile** |
 | 0x0004B3F8 | MapId | PlayerAddresses.json — changes on map transition |
+| 0x0004B400 | PreviousMapId | PlayerAddresses.json — map just left on each transition |
 | 0x00048D78 | SeabedRoute | PlayerAddresses.json — corridor / dock pair; set on dive |
-| 0x00048D7A | IsSubmerged | PlayerAddresses.json — `0x01` underwater |
+| 0x00048D7A | SeabedRouteType | PlayerAddresses.json — `0x01` underwater (was IsSubmerged in investigation notes) |
 
 See also **Map / location** for seabed routing fields (including investigation-only mirrors).
 
@@ -26,11 +27,11 @@ See also **Map / location** for seabed routing fields (including investigation-o
 | Address | Field | Source |
 |---------|-------|--------|
 | 0x0004B3F8 | Current MapId | PlayerAddresses.json |
-| 0x0004B400 | PreviousMapId (rolling) | seabed-routing investigation — map just left on each transition |
+| 0x0004B400 | PreviousMapId (rolling) | PlayerAddresses.json — map just left on each transition |
 | 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
 | 0x00048D68 | PreviousMapId mirror (player block) | seabed-routing investigation — mirrors `0x4B400` |
 | 0x00048D78 | SeabedRoute (corridor / dock pair) | PlayerAddresses.json — set on dive, persists underwater; same from either entry |
-| 0x00048D7A | IsSubmerged (`0x01` = underwater) | PlayerAddresses.json |
+| 0x00048D7A | SeabedRouteType (`0x01` = underwater) | PlayerAddresses.json |
 | 0x0000E2E0 | Player facing / direction (0–3) | map-subzones — discarded as area index; all forward-facing snaps = 1 |
 | 0x0004DE30 | Zone resource pointer (suspected) | map-subzones — PSX `0x801Fxxxx`; companions `0x4DE34`/`38` fixed |
 | 0x00048D82 | Room / sub-area byte (suspected) | map-subzones — volatile; not stable named-area enum |
@@ -141,7 +142,7 @@ Diffs here are expected after battles; usually not quest flags.
 | Legendary weapon | 0x4B38E | Sequential power-of-two bit |
 | DRI agent | 0x4B38C, 0x4B3B7, 0x4A7xx | Per-agent bit on shared bytes |
 | Map change | 0x4B3F8 (MapId) | Byte value change |
-| Map / seabed routing | 0x4B3F8, 0x4B400, 0x48D78, 0x48D7A | MapId + SeabedRoute / IsSubmerged on dive; see seabed-routing-investigation.md |
+| Map / seabed routing | 0x4B3F8, 0x4B400, 0x48D78, 0x48D7A | MapId + PreviousMapId + SeabedRoute / SeabedRouteType on dive; see seabed-routing-investigation.md |
 | Map subzones / encounters | 0x0E2E0, 0x4DE30, 0x48D82 + Makisha grids | Same MapId, different encounter pools; see map-subzones-investigation.md |
 | Digimon stats | ~0x494xxx | Multi-byte numeric deltas |
 | Common item possession | ~0x48ECx | Often 0x00 ↔ 0x01 |

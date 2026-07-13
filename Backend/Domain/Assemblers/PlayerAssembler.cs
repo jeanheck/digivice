@@ -15,6 +15,7 @@ namespace Backend.Domain.Assemblers
                 Name = playerName,
                 Bits = resource.Bits ?? 0,
                 MapId = resource.MapId?.ToString("X4") ?? string.Empty,
+                PreviousMapId = resource.PreviousMapId?.ToString("X4") ?? string.Empty,
                 SeabedRoute = resource.SeabedRoute ?? 0,
                 SeabedRouteType = resource.SeabedRouteType ?? 0
             };

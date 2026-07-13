@@ -18,6 +18,7 @@ public class PlayerLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadInt32(0x00048DA0)).Returns(15000);
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048D88, 10)).Returns(nameBytes);
         memoryReaderMock.Setup(m => m.ReadInt16(0x0004B3F8)).Returns((short)4);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x0004B400)).Returns((short)0x023E);
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048D78, 1)).Returns([(byte)0x08]);
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048D7A, 1)).Returns([(byte)0x01]);
 
@@ -30,6 +31,7 @@ public class PlayerLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(15000, playerResource.Bits);
         Assert.Equal(nameBytes, playerResource.NameInBytes);
         Assert.Equal((short)4, playerResource.MapId);
+        Assert.Equal((short)0x023E, playerResource.PreviousMapId);
         Assert.Equal((byte)0x08, playerResource.SeabedRoute);
         Assert.Equal((byte)0x01, playerResource.SeabedRouteType);
     }

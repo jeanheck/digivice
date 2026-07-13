@@ -7,6 +7,7 @@ export class PlayerConverter {
             name: playerDto.name,
             bits: playerDto.bits,
             location: playerDto.location,
+            previousMapId: playerDto.previousMapId,
             seabedRoute: playerDto.seabedRoute,
             seabedRouteType: playerDto.seabedRouteType
         };

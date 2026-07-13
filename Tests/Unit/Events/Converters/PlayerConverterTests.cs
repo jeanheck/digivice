@@ -13,6 +13,7 @@ public class PlayerConverterTests
             Name = "Agumon",
             Bits = 12345,
             MapId = "00AF",
+            PreviousMapId = "023E",
             SeabedRoute = 0x08,
             SeabedRouteType = 0x01
         };
@@ -25,6 +26,8 @@ public class PlayerConverterTests
         Assert.Equal(12345, dto.Bits.Value);
         Assert.True(dto.Location.HasValue);
         Assert.Equal("00AF", dto.Location.Value);
+        Assert.True(dto.PreviousMapId.HasValue);
+        Assert.Equal("023E", dto.PreviousMapId.Value);
         Assert.True(dto.SeabedRoute.HasValue);
         Assert.Equal((byte)0x08, dto.SeabedRoute.Value);
         Assert.True(dto.SeabedRouteType.HasValue);

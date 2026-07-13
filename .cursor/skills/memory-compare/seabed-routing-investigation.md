@@ -182,21 +182,25 @@ map IDs directly.
 
 ### Done (backend Player pipeline)
 
-- `SeabedRoute` (`0x48D78`) and `IsSubmerged` (`0x48D7A`) are in
-  `PlayerAddresses.json`, read by `PlayerReader`, assembled on `Player`, and
-  emitted via `PlayerChanged` (`PlayerDTO`).
+- `SeabedRoute` (`0x48D78`) and `SeabedRouteType` (`0x48D7A`, formerly
+  documented as IsSubmerged) are in `PlayerAddresses.json`, read by
+  `PlayerReader`, assembled on `Player`, and emitted via `PlayerChanged`
+  (`PlayerDTO`).
+- `PreviousMapId` (`0x4B400`) is in `PlayerAddresses.json` — same shape as
+  `MapId` (Int16 → hex `X4` string) through the Player pipeline and frontend
+  syncer (`previousMapId`).
 
 ### Still open
 
-When `MapId` is a seabed ID (`02Ex`) and `IsSubmerged`:
+When `MapId` is a seabed ID (`02Ex`) and submerged (`SeabedRouteType == 1`):
 
 1. Use `SeabedRoute` + a **corridor table** (static) to resolve dock pair /
    reachable exits — table not built yet; do not assume a single “forward”
    exit from the route byte alone.
-2. On the **first** underwater segment only, `0x4B400` equals the surface
-   entry map (useful to know *which end* you entered from) — not yet in
-   `PlayerAddresses.json`.
-3. Frontend syncer / store for the new `PlayerDTO` fields.
+2. On the **first** underwater segment only, `PreviousMapId` equals the
+   surface entry map (useful to know *which end* you entered from) — wired;
+   UI / route logic may still need to consume it.
+3. Broader frontend use of seabed fields beyond Map/Seabed panels if needed.
 
 ---
 
@@ -206,8 +210,8 @@ When `MapId` is a seabed ID (`02Ex`) and `IsSubmerged`:
       Divermon's ↔ Duel both ways)
 - [x] `0x48D78` confirmed as corridor identity (direction-independent)
 - [x] Retrofed to `memory-regions.md` and `known-patterns.md`
-- [x] Integrated in `PlayerAddresses.json` / backend (`SeabedRoute`, `IsSubmerged`)
-- [ ] Frontend consumes `SeabedRoute` / `IsSubmerged`
-- [ ] `PreviousMapId` (`0x4B400`) in backend
+- [x] Integrated in `PlayerAddresses.json` / backend (`SeabedRoute`, `SeabedRouteType`)
+- [x] Frontend syncer/store for `SeabedRoute` / `SeabedRouteType`
+- [x] `PreviousMapId` (`0x4B400`) in backend + frontend syncer
 - [ ] Route table complete for all dive points
 - [ ] Reverse test for Suzaku City ↔ Suzaku UG Lake (`0x07`)

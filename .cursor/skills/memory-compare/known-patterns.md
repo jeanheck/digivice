@@ -201,7 +201,10 @@ identify which route or exit applies.
 
 Full method and evidence: [seabed-routing-investigation.md](seabed-routing-investigation.md).
 
-### Rolling PreviousMapId — `0x4B400` (confirmed)
+### Rolling PreviousMapId — `0x4B400` (confirmed, in PlayerAddresses)
+
+Wired as `PreviousMapId` on the Player pipeline (`PlayerChanged`) — same type
+as `MapId` (`ReadInt16` → domain/DTO string `X4`). Frontend: `previousMapId`.
 
 On every map transition, `0x4B400` receives the map the player **just left**:
 
@@ -212,8 +215,8 @@ On every map transition, `0x4B400` receives the map the player **just left**:
 Useful as route hint **only on the first underwater segment**. On shared later
 segments, `0x4B400` is identical across routes.
 
-`0x48D68` mirrors `0x4B400` in the player block. `0x4B410` mirrors current
-`MapId` (`0x4B3F8`).
+`0x48D68` mirrors `0x4B400` in the player block (not in JSON). `0x4B410`
+mirrors current `MapId` (`0x4B3F8`).
 
 ### SeabedRoute — `0x48D78` (confirmed, in PlayerAddresses)
 

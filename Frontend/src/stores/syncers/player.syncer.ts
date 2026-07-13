@@ -12,6 +12,9 @@ export class PlayerSyncer {
         if (newPlayerDto.location !== undefined) {
             previousPlayer.location = newPlayerDto.location;
         }
+        if (newPlayerDto.previousMapId !== undefined) {
+            previousPlayer.previousMapId = newPlayerDto.previousMapId;
+        }
         if (newPlayerDto.seabedRoute !== undefined) {
             previousPlayer.seabedRoute = newPlayerDto.seabedRoute;
         }

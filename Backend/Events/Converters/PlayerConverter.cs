@@ -12,6 +12,7 @@ public static class PlayerConverter
             Name = player.Name,
             Bits = player.Bits,
             Location = player.MapId,
+            PreviousMapId = player.PreviousMapId,
             SeabedRoute = player.SeabedRoute,
             SeabedRouteType = player.SeabedRouteType
         };

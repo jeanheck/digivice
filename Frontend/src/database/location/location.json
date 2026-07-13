@@ -280,8 +280,21 @@
   "0225": {
     "image": "Protocol Forest",
     "enemies": [
-      "81",
-      "82"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "81",
+          "82"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 27,
+        "ids": [
+          "81",
+          "82",
+          "94"
+        ]
+      }
     ],
     "dock": false
   },

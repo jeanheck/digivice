@@ -16,6 +16,9 @@ public record class PlayerDTO : IDTO
     public Optional<string> Location { get; init; } = Optional<string>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<string> PreviousMapId { get; init; } = Optional<string>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<byte> SeabedRoute { get; init; } = Optional<byte>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
