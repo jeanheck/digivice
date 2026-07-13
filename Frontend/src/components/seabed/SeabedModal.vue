@@ -57,6 +57,7 @@ const dockViewModel = computed(() => {
     selectedLocationId.value,
     store.currentState?.journal?.mainQuest ?? null,
     store.currentState?.player?.seabedRoute ?? 0,
+    store.currentState?.player?.previousMapId ?? "",
   );
 });
 

@@ -10,6 +10,9 @@ import {
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 export class MapPresenter {
+  private static readonly asukaSewersLocationId = "021B";
+  private static readonly undergroundPathLocationId = "020B";
+
   private static readonly seabedLocationIds: ReadonlySet<string> = new Set([
     "02E0",
     "02E1",
@@ -41,18 +44,30 @@ export class MapPresenter {
     return matchingPhase.ids;
   }
 
+  private static isAsukaSewersSafeZone(locationId: string, previousMapId: string): boolean {
+    return locationId === MapPresenter.asukaSewersLocationId
+      && previousMapId === MapPresenter.undergroundPathLocationId;
+  }
+
   public static getLocationById(
     locationId: string,
     mainQuest: Quest | null,
     seabedRoute: number = 0,
+    previousMapId: string = "",
   ): LocationViewModel {
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const enemyIds = MapPresenter.isSeabedLocation(locationId)
-      ? MapPresenter.resolveSeabedEnemyIds(seabedRoute)
-      : MapPresenter.resolveEnemyIds(
-          locationRaw.enemies,
-          QuestHelper.getLastCompletedMainQuestStep(mainQuest),
-        );
+    let enemyIds: string[];
+
+    if (MapPresenter.isAsukaSewersSafeZone(locationId, previousMapId)) {
+      enemyIds = [];
+    } else if (MapPresenter.isSeabedLocation(locationId)) {
+      enemyIds = MapPresenter.resolveSeabedEnemyIds(seabedRoute);
+    } else {
+      enemyIds = MapPresenter.resolveEnemyIds(
+        locationRaw.enemies,
+        QuestHelper.getLastCompletedMainQuestStep(mainQuest),
+      );
+    }
 
     return LocationConverter.convert(locationId, locationRaw, enemyIds);
   }
