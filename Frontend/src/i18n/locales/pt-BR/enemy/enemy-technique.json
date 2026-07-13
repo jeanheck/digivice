@@ -16,7 +16,7 @@
         "speedUp": "Velocidade Acima (Aumenta velocidade)",
         "magicMissile": "Míssil Mágico(Mágica, Máquina)",
         "paralyzeShock": "Paralyze Shock (Magic, Chance of Freeze)",
-        "twinMissile": "Twin Missile (Magic-Machine)",
+        "twinMissile": "Míssel Gêmeo (Mágica, Máquina)",
         "lovelyCharm": "Lovely Charm (Decreases Enemy Strength)",
         "confuseNebula": "Confuse Nebula (Chance of Confusion)",
         "darkMatter": "Dark Matter (Mágica, Trevas)",
@@ -35,6 +35,7 @@
         "darknessChaos": "Darkness Chaos (Mágica, Trevas)",
         "flameSphere": "Flame Sphere (Mágica, Fogo)",
         "berserkSword": "Berserk Sword (Physical, Hits Twice), Soul Charge (Powers up the next blow)",
-        "heartBreakAttack": "Ataque da Paixão (Mágica, Diminui a força)"
+        "heartBreakAttack": "Ataque da Paixão (Mágica, Diminui a força)",
+        "autoRecover": "Auto Recuperação (Recupere uma pequena quantidade de HP a cada turno ou a cada poucos turnos)"
     }
 }

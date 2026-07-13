@@ -111,7 +111,9 @@
   },
   "021C": {
     "image": "Command Room",
-    "enemies": [],
+    "enemies": [
+      "16"
+    ],
     "dock": false
   },
   "020A": {
@@ -477,12 +479,25 @@
   "023A": {
     "image": "Jungle Grave",
     "enemies": [
-      "75",
-      "90",
-      "91",
-      "92",
-      "128",
-      "184"
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "90",
+          "91",
+          "128",
+          "184"
+        ]
+      },
+      {
+        "lastMainQuestStepDone": 25,
+        "ids": [
+          "75",
+          "90",
+          "91",
+          "92",
+          "184"
+        ]
+      }
     ],
     "dock": false
   },
