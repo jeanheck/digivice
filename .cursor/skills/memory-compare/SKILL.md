@@ -84,6 +84,7 @@ All quest-like trackers live under `Backend/Memory/Definitions/Quests/`:
 | DRI agents | `Quests/DriAgents/` + [dri-agent-hunt.md](dri-agent-hunt.md) | 3 pairs: talk / boss / deliver; see hunt order below |
 | Player | `PlayerAddresses.json` (`Bits`, `MapId`, `Name`, `SeabedRoute`, `IsSubmerged`) | MapId byte change on transition; seabed fields on dive/emerge |
 | Map / seabed | `PlayerAddresses.json` (`SeabedRoute`, `IsSubmerged`) + [seabed-routing-investigation.md](seabed-routing-investigation.md) | MapId change; `0x48D78` / `0x48D7A` on dive |
+| Map subzones / encounters | [map-subzones-investigation.md](map-subzones-investigation.md) | Same MapId, different encounter regions; dump `0x0E2E0` / `0x4DE30` / `0x48D82` |
 | Party | `PartyAddresses.json` (slots `0x48DA4+`) | Slot ID bytes |
 | Digimon stats | `Parties/DigimonStatusAddresses.json` (offsets) | Multi-byte counters at `~0x494xxx` |
 | Common items | `Auctions/*.txt` | Often `0x48ECx`, may clear on sell |
@@ -173,4 +174,6 @@ Doc: `Tools/MemoryScanner/README.md`. Value sizes: 1=byte, 2=Int16, 4=Int32.
 - [dri-agent-hunt.md](dri-agent-hunt.md) — DRI snapshot convention and hunt order
 - [investigation-template.md](investigation-template.md) — post-confirmation doc
 - [seabed-routing-investigation.md](seabed-routing-investigation.md) — SeabedRoute, IsSubmerged, PreviousMapId
+- [map-subzones-investigation.md](map-subzones-investigation.md) — same-MapId encounter regions, Makisha grids
 - Sibling skill: `.cursor/skills/dri-agent-integrate/` — end-to-end DRI wiring after addresses confirmed
+- Sibling skill: `.cursor/skills/map-subzone-investigate/` — continue subzone investigation

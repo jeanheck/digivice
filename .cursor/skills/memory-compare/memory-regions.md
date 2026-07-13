@@ -31,8 +31,15 @@ See also **Map / location** for seabed routing fields (including investigation-o
 | 0x00048D68 | PreviousMapId mirror (player block) | seabed-routing investigation — mirrors `0x4B400` |
 | 0x00048D78 | SeabedRoute (corridor / dock pair) | PlayerAddresses.json — set on dive, persists underwater; same from either entry |
 | 0x00048D7A | IsSubmerged (`0x01` = underwater) | PlayerAddresses.json |
+| 0x0000E2E0 | Player facing / direction (0–3) | map-subzones — discarded as area index; all forward-facing snaps = 1 |
+| 0x0004DE30 | Zone resource pointer (suspected) | map-subzones — PSX `0x801Fxxxx`; companions `0x4DE34`/`38` fixed |
+| 0x00048D82 | Room / sub-area byte (suspected) | map-subzones — volatile; not stable named-area enum |
+| 0x00048D6D | Player tile X (u16) | map-subzones — use with Makisha grids |
+| 0x00048D71 | Player tile Y (u16) | map-subzones — use with Makisha grids |
+| 0x00048D6C – 0x00048D84 | Spawn / transition block (i32 coords noisy) | seabed-routing investigation |
 
-Details: [seabed-routing-investigation.md](seabed-routing-investigation.md).
+Details: [seabed-routing-investigation.md](seabed-routing-investigation.md),
+[map-subzones-investigation.md](map-subzones-investigation.md).
 
 ## Party
 
@@ -135,6 +142,7 @@ Diffs here are expected after battles; usually not quest flags.
 | DRI agent | 0x4B38C, 0x4B3B7, 0x4A7xx | Per-agent bit on shared bytes |
 | Map change | 0x4B3F8 (MapId) | Byte value change |
 | Map / seabed routing | 0x4B3F8, 0x4B400, 0x48D78, 0x48D7A | MapId + SeabedRoute / IsSubmerged on dive; see seabed-routing-investigation.md |
+| Map subzones / encounters | 0x0E2E0, 0x4DE30, 0x48D82 + Makisha grids | Same MapId, different encounter pools; see map-subzones-investigation.md |
 | Digimon stats | ~0x494xxx | Multi-byte numeric deltas |
 | Common item possession | ~0x48ECx | Often 0x00 ↔ 0x01 |
 | Auction | 0x4B370, 0x4B38A | Bit flags, story window |

@@ -251,6 +251,30 @@ for Duel Island → Divermon's Lake).
 
 ---
 
+## Map subzones / encounter regions (suspected)
+
+Same `MapId` can host multiple disconnected encounter pools (Plug Cape,
+Asuka Sewers safe vs danger, Jungle Grave, Shell Beach, Protocol Forest).
+
+**Not** a main-quest “hostile bit” on MapId — Asuka safe/danger had identical
+`0x4B370`–`0x4B3F0` and same MapId `0x021B`.
+
+Static model (Makisha / dmw3-util): per-stage `grids` +
+`stage_encounter_areas` (≤5 areas × 8 teams) → `enemy_parties` → global
+`encounters`. Folder `WSTAG345.PRO` = PRO index; Plug Cape `stage_id` =
+**544 (`0x0220`)**.
+
+| Address | Status | Notes |
+|---------|--------|-------|
+| `0x0000E2E0` | suspected area index (0–3) | Changes on Plug/Jungle/Shell/Protocol; **not** Asuka safe↔danger (both 1) |
+| `0x0004DE30` | suspected zone resource ptr | Changes with sub-area; `0x4DE34`/`38` globally fixed |
+| `0x00048D82` | suspected room/sub-id | Changes every pair; **also** within same named Plug Cape area at boundary points — not a stable enum |
+
+Full evidence, snapshot matrix, Makisha notes, next steps:
+[map-subzones-investigation.md](map-subzones-investigation.md).
+
+---
+
 ## Validation checklist
 
 - **Permanent progress**: reload save — flag persists
