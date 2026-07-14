@@ -446,11 +446,11 @@
     },
     "207": {
       "name": "Metal Horn",
-      "note": null
+      "note": "Horn for head-butts."
     },
     "208": {
       "name": "Drill Horn",
-      "note": null
+      "note": "Reinforced with a drill shape."
     },
     "209": {
       "name": "Kabuteri Horn",
@@ -458,23 +458,23 @@
     },
     "210": {
       "name": "Shock Horn",
-      "note": null
+      "note": "Horn that paralyzes the body."
     },
     "211": {
       "name": "Dramon Horn",
-      "note": null
+      "note": "Legendary horn with Dramon power."
     },
     "212": {
       "name": "Scissor Horn",
-      "note": null
+      "note": "Flesh cutting, brutal horn."
     },
     "213": {
       "name": "Trihorn",
-      "note": null
+      "note": "Three horns from head to the nose."
     },
     "214": {
       "name": "Glorious Horn",
-      "note": null
+      "note": "Mythical horn from a sacred beast."
     },
     "215": {
       "name": "Bandanna",
@@ -490,7 +490,7 @@
     },
     "218": {
       "name": "School Cap",
-      "note": null
+      "note": "Looks smarter when worn."
     },
     "219": {
       "name": "Wool Cap",
@@ -498,27 +498,27 @@
     },
     "220": {
       "name": "Kung Fu Cap",
-      "note": null
+      "note": "Cap for combat."
     },
     "221": {
       "name": "Yin Yang Hat",
-      "note": null
+      "note": "Diviner's hat from ancient times."
     },
     "222": {
       "name": "Sniper Goggle",
-      "note": null
+      "note": "Legendary sniping goggles."
     },
     "223": {
       "name": "Night Vision",
-      "note": null
+      "note": "Can see well in the dark."
     },
     "224": {
       "name": "Beret",
-      "note": null
+      "note": "Hat that makes you smarter."
     },
     "225": {
       "name": "Red Cap",
-      "note": null
+      "note": "Increases your natural magic."
     },
     "226": {
       "name": "Ribbon",
@@ -534,7 +534,7 @@
     },
     "229": {
       "name": "Mythril Crown",
-      "note": null
+      "note": "Crown made from magical metal."
     },
     "230": {
       "name": "Magical Crown",
@@ -542,23 +542,23 @@
     },
     "231": {
       "name": "Shaman Mask",
-      "note": ""
+      "note": "Mask used in a cursed ritual."
     },
     "232": {
       "name": "Divine Crown",
-      "note": null
+      "note": "Crown with a divine light."
     },
     "233": {
       "name": "Angel Ring",
-      "note": null
+      "note": "Ring floating above the head."
     },
     "234": {
       "name": "Royal Crown",
-      "note": null
+      "note": "A historic royal crown."
     },
     "235": {
       "name": "Goddess Crown",
-      "note": null
+      "note": "Mythical crown worn by a goddess."
     },
     "236": {
       "name": "Hide Helmet",
@@ -582,35 +582,35 @@
     },
     "241": {
       "name": "Kulon Helmet",
-      "note": null
+      "note": "Sturdy and light alloy helmet."
     },
     "242": {
       "name": "Wild Helmet",
-      "note": null
+      "note": "Legendary combat helmet."
     },
     "243": {
       "name": "Ronin Helmet",
-      "note": null
+      "note": "Legendary ronin helmet."
     },
     "244": {
       "name": "Brave Helmet",
-      "note": null
+      "note": "Engraved with crest of courage."
     },
     "245": {
       "name": "Hazard Helmet",
-      "note": null
+      "note": "Legendary helmet of the wild."
     },
     "246": {
       "name": "D-Tama Helmet",
-      "note": null
+      "note": "Made from Digitama shell."
     },
     "247": {
       "name": "Matrix Helmet",
-      "note": null
+      "note": "Analyze enemy attacks and evade."
     },
     "248": {
       "name": "Mugen Helmet",
-      "note": null
+      "note": "Made from Machinedramon's head."
     },
     "249": {
       "name": "Leather Coat",
@@ -914,7 +914,7 @@
     },
     "1130": {
       "name": "Knight Helmet",
-      "note": null
+      "note": "Efficient helmet for knights."
     },
     "1149": {
       "name": "Binder Crest",
