@@ -3,7 +3,7 @@
     "title": "Auctions",
     "cardIdleTitle": "No auction now",
     "cardIdleSubtitle": "Maybe later...",
-    "cardActiveTitle": "An auction is happening!",
+    "cardActiveTitle": "Auction available!",
     "cardActiveSubtitle": "Click for more details!",
     "modalTitle": "Auctions",
     "currentIdleTitle": "No auction at Cargo Tower",

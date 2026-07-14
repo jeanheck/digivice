@@ -104,8 +104,13 @@
     "enemies": [],
     "dock": false
   },
-  "0215": {
+  "0217": {
     "image": "Admin Center 2F",
+    "enemies": [],
+    "dock": false
+  },
+  "0218": {
+    "image": "Master Room",
     "enemies": [],
     "dock": false
   },
@@ -489,7 +494,7 @@
         ]
       },
       {
-        "lastMainQuestStepDone": 25,
+        "lastMainQuestStepDone": 24,
         "ids": [
           "75",
           "90",
