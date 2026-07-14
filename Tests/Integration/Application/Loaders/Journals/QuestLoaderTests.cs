@@ -139,8 +139,8 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
 
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(It.IsAny<long>(), 1)).Returns([0]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38C, 1)).Returns([(byte)0xE3]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B7, 1)).Returns([(byte)0x8C]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38C, 1)).Returns([(byte)0xFB]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B7, 1)).Returns([(byte)0xEC]);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B8, 1)).Returns([(byte)0x03]);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DD2, 1)).Returns([(byte)1]);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004A7E0, 1)).Returns([(byte)0x08]);
@@ -152,6 +152,10 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00049870, 1)).Returns([(byte)0x04]);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048F18, 1)).Returns([(byte)1]);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00049C4C, 1)).Returns([(byte)0x05]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DC3, 1)).Returns([(byte)1]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00049494, 1)).Returns([(byte)0x03]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DD6, 1)).Returns([(byte)1]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004ABBC, 1)).Returns([(byte)0x09]);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -161,7 +165,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var driAgents = questLoader.LoadDriAgents();
 
         Assert.NotNull(driAgents);
-        Assert.Equal(5, driAgents.Count);
+        Assert.Equal(7, driAgents.Count);
 
         var guilmon = driAgents[0];
         Assert.Equal("driAgentGuilmon", guilmon.Id);
@@ -217,5 +221,27 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Single(monmon.Steps[2].Requisites);
         Assert.Equal("monmonDDNA", monmon.Steps[2].Requisites[0].Id);
         Assert.Equal(1, monmon.Steps[2].Requisites[0].Value);
+
+        var kotemon = driAgents[5];
+        Assert.Equal("driAgentKotemon", kotemon.Id);
+        Assert.Empty(kotemon.Requisites);
+        Assert.Equal(3, kotemon.Steps.Count);
+        Assert.Equal(0x10, kotemon.Steps[0].Value);
+        Assert.Equal(0x40, kotemon.Steps[1].Value);
+        Assert.Equal(0x03, kotemon.Steps[2].Value);
+        Assert.Single(kotemon.Steps[2].Requisites);
+        Assert.Equal("kotemonDDNA", kotemon.Steps[2].Requisites[0].Id);
+        Assert.Equal(1, kotemon.Steps[2].Requisites[0].Value);
+
+        var renamon = driAgents[6];
+        Assert.Equal("driAgentRenamon", renamon.Id);
+        Assert.Empty(renamon.Requisites);
+        Assert.Equal(3, renamon.Steps.Count);
+        Assert.Equal(0x08, renamon.Steps[0].Value);
+        Assert.Equal(0x20, renamon.Steps[1].Value);
+        Assert.Equal(0x09, renamon.Steps[2].Value);
+        Assert.Single(renamon.Steps[2].Requisites);
+        Assert.Equal("renamonDDNA", renamon.Steps[2].Requisites[0].Id);
+        Assert.Equal(1, renamon.Steps[2].Requisites[0].Value);
     }
 }

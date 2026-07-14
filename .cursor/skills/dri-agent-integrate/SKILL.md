@@ -51,7 +51,7 @@ Does not invent domain types. Category `DriAgents` is already on Journal.
 Append new agents at the end of `GetAllDriAgents()` and `getDriAgentsRaw()`
 unless the user specifies another UI order. Current order:
 
-Guilmon → Agumon → Veemon → Kumamon → Monmon → *(new)*
+Guilmon → Agumon → Veemon → Kumamon → Monmon → Kotemon → Renamon → *(new)*
 
 ## Related skills
 

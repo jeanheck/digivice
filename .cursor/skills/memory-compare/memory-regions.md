@@ -68,19 +68,23 @@ Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`
 
 | Address | Purpose | Source |
 |---------|---------|--------|
-| 0x0004B38C | Step 1 — talk to agent (per-agent bit) | Agumon `0x01`, Guilmon `0x02`, Kumamon `0x20`, Monmon `0x40`, Veemon `0x80` |
-| 0x0004B3B7 | Step 2 — defeat target | Agumon `0x04`, Guilmon `0x08`, Monmon `0x80` |
+| 0x0004B38C | Step 1 — talk to agent (per-agent bit) | Agumon `0x01`, Guilmon `0x02`, Renamon `0x08`, Kotemon `0x10`, Kumamon `0x20`, Monmon `0x40`, Veemon `0x80` |
+| 0x0004B3B7 | Step 2 — defeat target | Agumon `0x04`, Guilmon `0x08`, Renamon `0x20`, Kotemon `0x40`, Monmon `0x80` |
 | 0x0004B3B8 | Step 2 — defeat target | Kumamon `0x01`, Veemon `0x02` |
 | 0x00048DD2 | Guilmon DNA — important item possession | Guilmon step 2 (persists after delivery) |
 | 0x00048DB6 | Agumon DNA — important item possession | Agumon step 2 (persists after delivery) |
+| 0x00048DC3 | Kotemon DNA — important item possession | Kotemon step 2 |
 | 0x00048DD3 | Veemon DNA — important item possession | Veemon step 2 |
+| 0x00048DD6 | Renamon DNA — important item possession | Renamon step 2 |
 | 0x00048F3B | Kumamon DNA — important item possession | Kumamon step 2 |
 | 0x00048F18 | Monmon DNA — important item possession | Monmon step 2 |
 | 0x0004A7E0 | Guilmon step 3 — deliver DNA | Guilmon `0x08` |
 | 0x0004A028 | Agumon step 3 — deliver DNA | Agumon `0x06` |
 | 0x0004A404 | Veemon step 3 — deliver DNA | Veemon `0x07` |
+| 0x00049494 | Kotemon step 3 — deliver DNA | Kotemon `0x03` |
 | 0x00049870 | Kumamon step 3 — deliver DNA | Kumamon `0x04` |
 | 0x00049C4C | Monmon step 3 — deliver DNA | Monmon `0x05` |
+| 0x0004ABBC | Renamon step 3 — deliver DNA | Renamon `0x09` |
 
 | Agent | Status | Notes |
 |-------|--------|-------|
@@ -89,9 +93,12 @@ Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`
 | Veemon | Mapped | `VeemonAddresses.json` |
 | Kumamon | Mapped | `KumamonAddresses.json` |
 | Monmon | Mapped | `MonmonAddresses.json` |
+| Kotemon | Mapped | `KotemonAddresses.json` |
+| Renamon | Mapped | `RenamonAddresses.json` |
 
 Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`,
-`investigation_guilmon/`, `kumamon_*.bin`, `monmon_*.bin`.
+`investigation_guilmon/`, `kumamon_*.bin`, `monmon_*.bin`, `kotemon_*.bin`,
+`renamon_*.bin`.
 
 ## Inventory / items
 
@@ -102,7 +109,9 @@ Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`,
 | 0x00048EC9 | Divine Barrier — current possession | DivineBarrierAddresses.txt |
 | 0x00048DD2 | Guilmon DNA — important item (permanent after obtain) | DriAgents/Guilmon investigation |
 | 0x00048DB6 | Agumon DNA — important item (permanent after obtain) | DriAgents/Agumon investigation |
+| 0x00048DC3 | Kotemon DNA — important item (permanent after obtain) | DriAgents/Kotemon investigation |
 | 0x00048DD3 | Veemon DNA — important item (permanent after obtain) | DriAgents/Veemon |
+| 0x00048DD6 | Renamon DNA — important item (permanent after obtain) | DriAgents/Renamon investigation |
 | 0x00048F3B | Kumamon DNA — important item (permanent after obtain) | DriAgents/Kumamon investigation |
 | 0x00048F18 | Monmon DNA — important item (permanent after obtain) | DriAgents/Monmon investigation |
 

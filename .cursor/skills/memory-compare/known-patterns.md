@@ -80,6 +80,8 @@ Byte **0x4B38C** — one bit per agent, sequential OR:
 |-------|---------|----------|
 | Agumon | `0x01` | `0x02 → 0x03` after talk (Guilmon bit already set) |
 | Guilmon | `0x02` | `0x00 → 0x02` after talk |
+| Renamon | `0x08` | `0x00 → 0x08` after talk |
+| Kotemon | `0x10` | `0x08 → 0x18` after talk (Renamon bit already set) |
 | Kumamon | `0x20` | `0x03 → 0x23` after talk |
 | Monmon | `0x40` | `0x23 → 0x63` after talk |
 | Veemon | `0x80` | confirmed in Definitions |
@@ -92,6 +94,8 @@ Byte **0x4B3B7** — one bit per agent (main quest also uses `0x01`, `0x02` on s
 |-------|---------|----------|
 | Agumon | `0x04` | `0x0B → 0x0F` after defeat |
 | Guilmon | `0x08` | `0x03 → 0x0B` after Wargrowlmon |
+| Renamon | `0x20` | `0x03 → 0x23` after Taomon |
+| Kotemon | `0x40` | `0x23 → 0x63` after Kyukimon |
 | Monmon | `0x80` | `0x0F → 0x8F` after Armormon |
 
 Byte **0x4B3B8** (adjacent):
@@ -121,6 +125,8 @@ Snapshots: `Tools/MemoryScanner/Snapshots/investigation_guilmon/`
 | Veemon | `0x4A404` | `0x07` | confirmed in Definitions |
 | Kumamon | `0x49870` | `0x04` | `0x00 → 0x04` after delivery |
 | Monmon | `0x49C4C` | `0x05` | `0x00 → 0x05` after delivery |
+| Kotemon | `0x49494` | `0x03` | `0x00 → 0x03` after delivery |
+| Renamon | `0x4ABBC` | `0x09` | `0x00 → 0x09` after delivery |
 
 ### Agumon (`DriAgentAgumon`)
 
@@ -163,6 +169,28 @@ Snapshots: `Tools/MemoryScanner/Snapshots/kumamon_*.bin`
 | 3 | Deliver DNA to agent | `0x49C4C` | `0x05` | confirmed |
 
 Snapshots: `Tools/MemoryScanner/Snapshots/monmon_*.bin`
+
+### Kotemon (`DriAgentKotemon`)
+
+| Step | Event (gameplay) | Address | BitMask | Status |
+|------|------------------|---------|---------|--------|
+| 1 | Talk to DRI agent | `0x4B38C` | `0x10` | confirmed |
+| 2 | Defeat Kyukimon + DNA | `0x4B3B7` | `0x40` | confirmed |
+| 2 | DNA possession (requisite) | `0x48DC3` | raw `!= 0` | confirmed |
+| 3 | Deliver DNA to agent | `0x49494` | `0x03` | confirmed |
+
+Snapshots: `Tools/MemoryScanner/Snapshots/kotemon_*.bin`
+
+### Renamon (`DriAgentRenamon`)
+
+| Step | Event (gameplay) | Address | BitMask | Status |
+|------|------------------|---------|---------|--------|
+| 1 | Talk to DRI agent | `0x4B38C` | `0x08` | confirmed |
+| 2 | Defeat Taomon + DNA | `0x4B3B7` | `0x20` | confirmed |
+| 2 | DNA possession (requisite) | `0x48DD6` | raw `!= 0` | confirmed |
+| 3 | Deliver DNA to agent | `0x4ABBC` | `0x09` | confirmed |
+
+Snapshots: `Tools/MemoryScanner/Snapshots/renamon_*.bin`
 
 ---
 
