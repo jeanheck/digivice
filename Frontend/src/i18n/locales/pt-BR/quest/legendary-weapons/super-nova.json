@@ -1,0 +1,16 @@
+{
+  "superNova": {
+    "title": "Super Nova",
+    "description": "Obtenha a Arma Lendária Super Nova",
+    "steps": {
+      "1": {
+        "description": "Derrote Datamon para receber a Luva Enferrujada",
+        "locations": {
+          "0": {
+            "locationTarget": "Datamon"
+          }
+        }
+      }
+    }
+  }
+}

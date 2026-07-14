@@ -1,0 +1,16 @@
+{
+  "punishment": {
+    "title": "Punishment",
+    "description": "Obtain the Legendary Weapon Punishment",
+    "steps": {
+      "1": {
+        "description": "Defeat HiAndromon to receive the Rusty Rifle",
+        "locations": {
+          "0": {
+            "locationTarget": "HiAndromon"
+          }
+        }
+      }
+    }
+  }
+}

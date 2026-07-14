@@ -21,6 +21,8 @@ import treeBoots from "./quest/side-quest/tree-boots.json";
 import eternally from "./quest/legendary-weapons/eternally.json";
 import invincible from "./quest/legendary-weapons/invincible.json";
 import muramasa from "./quest/legendary-weapons/muramasa.json";
+import superNova from "./quest/legendary-weapons/super-nova.json";
+import punishment from "./quest/legendary-weapons/punishment.json";
 import driAgentGuilmon from "./quest/dri-agents/dri-agent-guilmon.json";
 import driAgentAgumon from "./quest/dri-agents/dri-agent-agumon.json";
 import driAgentVeemon from "./quest/dri-agents/dri-agent-veemon.json";
@@ -57,6 +59,8 @@ export default {
   ...eternally,
   ...invincible,
   ...muramasa,
+  ...superNova,
+  ...punishment,
   ...driAgentGuilmon,
   ...driAgentAgumon,
   ...driAgentVeemon,

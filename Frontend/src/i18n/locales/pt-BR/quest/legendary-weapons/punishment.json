@@ -1,0 +1,16 @@
+{
+  "punishment": {
+    "title": "Punição",
+    "description": "Obtenha a Arma Lendária Punição",
+    "steps": {
+      "1": {
+        "description": "Derrote HiAndromon para receber o Rifle Enferrujado",
+        "locations": {
+          "0": {
+            "locationTarget": "HiAndromon"
+          }
+        }
+      }
+    }
+  }
+}

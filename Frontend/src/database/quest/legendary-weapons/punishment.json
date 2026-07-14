@@ -1,0 +1,23 @@
+{
+    "id": "punishment",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "0252",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0252",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        }
+    }
+}

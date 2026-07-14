@@ -1,0 +1,16 @@
+{
+  "superNova": {
+    "title": "Super Nova",
+    "description": "Obtain the Legendary Weapon Super Nova",
+    "steps": {
+      "1": {
+        "description": "Defeat Datamon to receive the Rusty Glove",
+        "locations": {
+          "0": {
+            "locationTarget": "Datamon"
+          }
+        }
+      }
+    }
+  }
+}
