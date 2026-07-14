@@ -11,6 +11,7 @@
     "speed": "Velocidade",
     "speed-explanation": "Determina a ordem dos turnos na batalha e aumenta a chance de evasão contra ataques e técnicas físicas.",
     "charisma": "Carisma",
+    "charisma-explanation": "Determina quando certos eventos dentro do jogo podem ser realizados, como duelos contra outros treinadores.",
     "fire": "Fogo",
     "fire-explanation": "Aumenta a resistência contra técnicas do elemento Fogo e a chance de acerto crítico para técnicas desse elemento. Treinar resistência a Fogo também aumenta o MP máximo.",
     "water": "Água",

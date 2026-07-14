@@ -11,6 +11,7 @@
     "speed": "Speed",
     "speed-explanation": "Determines the turn order in battle and increases the chance of evading physical attacks and techniques.",
     "charisma": "Charisma",
+    "charisma-explanation": "Determines when certain in-game events can take place, such as battles against other trainers.",
     "fire": "Fire",
     "fire-explanation": "Increases resistance against Fire-element techniques and the critical hit rate for techniques of that element. Training Fire resistance also increases maximum MP.",
     "water": "Water",
