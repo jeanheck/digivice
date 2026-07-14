@@ -49,13 +49,17 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("fishingPole", journalResource.SideQuests[2].Id);
         Assert.Equal(1, journalResource.SideQuests[0].Steps[0].Value);
         Assert.Equal(0x04, journalResource.SideQuests[1].Steps[0].Value);
-        Assert.Equal(3, journalResource.LegendaryWeapons.Count);
+        Assert.Equal(5, journalResource.LegendaryWeapons.Count);
         Assert.Equal("eternally", journalResource.LegendaryWeapons[0].Id);
         Assert.Equal("invincible", journalResource.LegendaryWeapons[1].Id);
         Assert.Equal("muramasa", journalResource.LegendaryWeapons[2].Id);
+        Assert.Equal("superNova", journalResource.LegendaryWeapons[3].Id);
+        Assert.Equal("punishment", journalResource.LegendaryWeapons[4].Id);
         Assert.Equal(0x01, journalResource.LegendaryWeapons[0].Steps[0].Value);
         Assert.Equal(0, journalResource.LegendaryWeapons[1].Steps[0].Value);
         Assert.Equal(0, journalResource.LegendaryWeapons[2].Steps[0].Value);
+        Assert.Equal(0, journalResource.LegendaryWeapons[3].Steps[0].Value);
+        Assert.Equal(0, journalResource.LegendaryWeapons[4].Steps[0].Value);
         Assert.Equal(7, journalResource.DriAgents.Count);
         Assert.Equal("driAgentGuilmon", journalResource.DriAgents[0].Id);
         Assert.Equal("driAgentAgumon", journalResource.DriAgents[1].Id);

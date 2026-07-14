@@ -98,7 +98,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
 
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(It.IsAny<long>(), 1)).Returns([0]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38E, 1)).Returns([(byte)0x07]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38E, 1)).Returns([(byte)0x1F]);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -108,7 +108,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var legendaryWeapons = questLoader.LoadLegendaryWeapons();
 
         Assert.NotNull(legendaryWeapons);
-        Assert.Equal(3, legendaryWeapons.Count);
+        Assert.Equal(5, legendaryWeapons.Count);
 
         var eternally = legendaryWeapons[0];
         Assert.Equal("eternally", eternally.Id);
@@ -130,6 +130,20 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Single(muramasa.Steps);
         Assert.Equal(1, muramasa.Steps[0].Number);
         Assert.Equal(0x04, muramasa.Steps[0].Value);
+
+        var superNova = legendaryWeapons[3];
+        Assert.Equal("superNova", superNova.Id);
+        Assert.Empty(superNova.Requisites);
+        Assert.Single(superNova.Steps);
+        Assert.Equal(1, superNova.Steps[0].Number);
+        Assert.Equal(0x08, superNova.Steps[0].Value);
+
+        var punishment = legendaryWeapons[4];
+        Assert.Equal("punishment", punishment.Id);
+        Assert.Empty(punishment.Requisites);
+        Assert.Single(punishment.Steps);
+        Assert.Equal(1, punishment.Steps[0].Number);
+        Assert.Equal(0x10, punishment.Steps[0].Value);
     }
 
     [Fact]

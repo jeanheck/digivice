@@ -19,6 +19,11 @@ Maintained by quest-pattern-backend skill. Append entries; do not remove without
 - `invincible` — `Quests/LegendaryWeapons/InvincibleAddresses.json` (`0x4B38E` `0x02`)
 - `muramasa` — `Quests/LegendaryWeapons/MuramasaAddresses.json` (`0x4B38E` `0x04`)
 
+### Legendary weapons (2026-07-14)
+
+- `superNova` — `Quests/LegendaryWeapons/SuperNovaAddresses.json` (`0x4B38E` `0x08`)
+- `punishment` — `Quests/LegendaryWeapons/PunishmentAddresses.json` (`0x4B38E` `0x10`)
+
 ### DRI agents (2026-06-06)
 
 - `driAgentGuilmon` — `Quests/DriAgents/GuilmonAddresses.json` (3 steps + `guilmonDDNA` requisite)

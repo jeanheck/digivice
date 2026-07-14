@@ -19,6 +19,8 @@ namespace Backend.Memory.Repositories
         private QuestAddresses? legendaryWeaponEternally;
         private QuestAddresses? legendaryWeaponInvincible;
         private QuestAddresses? legendaryWeaponMuramasa;
+        private QuestAddresses? legendaryWeaponSuperNova;
+        private QuestAddresses? legendaryWeaponPunishment;
         private QuestAddresses? driAgentGuilmon;
         private QuestAddresses? driAgentAgumon;
         private QuestAddresses? driAgentVeemon;
@@ -84,7 +86,9 @@ namespace Backend.Memory.Repositories
         [
             GetLegendaryWeaponEternally(),
             GetLegendaryWeaponInvincible(),
-            GetLegendaryWeaponMuramasa()
+            GetLegendaryWeaponMuramasa(),
+            GetLegendaryWeaponSuperNova(),
+            GetLegendaryWeaponPunishment()
         ];
 
         private QuestAddresses GetLegendaryWeaponEternally() =>
@@ -95,6 +99,12 @@ namespace Backend.Memory.Repositories
 
         private QuestAddresses GetLegendaryWeaponMuramasa() =>
             LoadAndCache(ref legendaryWeaponMuramasa, "Quests/LegendaryWeapons/MuramasaAddresses.json");
+
+        private QuestAddresses GetLegendaryWeaponSuperNova() =>
+            LoadAndCache(ref legendaryWeaponSuperNova, "Quests/LegendaryWeapons/SuperNovaAddresses.json");
+
+        private QuestAddresses GetLegendaryWeaponPunishment() =>
+            LoadAndCache(ref legendaryWeaponPunishment, "Quests/LegendaryWeapons/PunishmentAddresses.json");
 
         public List<QuestAddresses> GetAllDriAgents() =>
         [

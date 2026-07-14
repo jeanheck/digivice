@@ -1,0 +1,10 @@
+{
+    "Id": "superNova",
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x0004B38E",
+            "BitMasks": ["0x08"]
+        }
+    ]
+}

@@ -8,11 +8,11 @@ Incrementally maintained by the memory-compare skill. Mark `(confirmed)` or
 ## Sequential bits on one address (confirmed)
 
 Legendary weapons share **0x0004B38E** with power-of-two masks:
-`0x01` (Old Wand) → `0x02` (Old Claw) → `0x04` (Rusty Katana) → …
+`0x01` (Eternally) → `0x02` (Invincible) → `0x04` (Muramasa) → `0x08` (Super Nova) → `0x10` (Punishment).
 
-When prior bits are set: expect `0x03 → 0x07 (+0x04)`.
+When prior bits are set: expect `0x03 → 0x07 (+0x04)`, `0x02 → 0x0A (+0x08)`, `0x0A → 0x1A (+0x10)`.
 
-JSON: `Quests/LegendaryWeapons/*Addresses.json` — singular `BitMask` per step.
+JSON: `Quests/LegendaryWeapons/*Addresses.json` — `BitMasks` array per step.
 
 ---
 
