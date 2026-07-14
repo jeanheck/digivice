@@ -39,3 +39,7 @@ Maintained by quest-pattern-backend skill. Append entries; do not remove without
 
 - `driAgentKotemon` — `Quests/DriAgents/KotemonAddresses.json` (3 steps + `kotemonDDNA` requisite)
 - `driAgentRenamon` — `Quests/DriAgents/RenamonAddresses.json` (3 steps + `renamonDDNA` requisite)
+
+### DRI agents (2026-07-14)
+
+- `driAgentPatamon` — `Quests/DriAgents/PatamonAddresses.json` (3 steps + `patamonDDNA` requisite)

@@ -11,6 +11,7 @@ import DriAgentKumamonJson from "@/database/quest/dri-agents/dri-agent-kumamon.j
 import DriAgentMonmonJson from "@/database/quest/dri-agents/dri-agent-monmon.json";
 import DriAgentKotemonJson from "@/database/quest/dri-agents/dri-agent-kotemon.json";
 import DriAgentRenamonJson from "@/database/quest/dri-agents/dri-agent-renamon.json";
+import DriAgentPatamonJson from "@/database/quest/dri-agents/dri-agent-patamon.json";
 import TreeBootsJson from "@/database/quest/side-quest/tree-boots.json";
 import FishingPoleJson from "@/database/quest/side-quest/fishing-pole.json";
 import FolderBagJson from "@/database/quest/side-quest/folder-bag.json";
@@ -27,6 +28,7 @@ import type { DriAgentKumamonTable } from "@/repositories/tables/quest/dri-agent
 import type { DriAgentMonmonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-monmon.table";
 import type { DriAgentKotemonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-kotemon.table";
 import type { DriAgentRenamonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-renamon.table";
+import type { DriAgentPatamonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-patamon.table";
 import type { TreeBootsTable } from "@/repositories/tables/quest/side-quest/tree-boots.table";
 import type { FishingPoleTable } from "@/repositories/tables/quest/side-quest/fishing-pole.table";
 import type { FolderBagTable } from "@/repositories/tables/quest/side-quest/folder-bag.table";
@@ -46,6 +48,7 @@ export class QuestRepository {
     private static readonly driAgentMonmonTable = DriAgentMonmonJson as DriAgentMonmonTable;
     private static readonly driAgentKotemonTable = DriAgentKotemonJson as DriAgentKotemonTable;
     private static readonly driAgentRenamonTable = DriAgentRenamonJson as DriAgentRenamonTable;
+    private static readonly driAgentPatamonTable = DriAgentPatamonJson as DriAgentPatamonTable;
     private static readonly treeBootsTable = TreeBootsJson as TreeBootsTable;
     private static readonly fishingPoleTable = FishingPoleJson as FishingPoleTable;
     private static readonly folderBagTable = FolderBagJson as FolderBagTable;
@@ -73,7 +76,8 @@ export class QuestRepository {
             this.driAgentKumamonTable,
             this.driAgentMonmonTable,
             this.driAgentKotemonTable,
-            this.driAgentRenamonTable
+            this.driAgentRenamonTable,
+            this.driAgentPatamonTable
         ];
     }
 }

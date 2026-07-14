@@ -1,0 +1,35 @@
+{
+  "driAgentPatamon": {
+    "title": "Patamon - DRI Kazuki (45 ~ 60)",
+    "description": "Add Patamon to your Digimon party",
+    "steps": {
+      "1": {
+        "description": "Look for DRI Kazuki in Central Park",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Kazuki"
+          }
+        }
+      },
+      "2": {
+        "description": "Defeat MagnaAngemon in battle to receive Patamon's DDNA",
+        "locations": {
+          "0": {
+            "locationTarget": "MagnaAngemon"
+          }
+        }
+      },
+      "3": {
+        "description": "Deliver Patamon's DNA to DRI Kazuki",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Kazuki"
+          }
+        },
+        "requisites": {
+          "patamonDDNA": "Patamon's DDNA"
+        }
+      }
+    }
+  }
+}

@@ -46,6 +46,10 @@ Maintained by quest-pattern-frontend skill. Append entries; do not remove withou
 - `driAgentKotemon`
 - `driAgentRenamon`
 
+### DRI agents (2026-07-14)
+
+- `driAgentPatamon` — coords provisórias (`021D` / `0247` / 50,50)
+
 ## Palette notes
 
 - `cyan` — side quests

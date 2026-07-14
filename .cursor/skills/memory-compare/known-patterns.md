@@ -80,6 +80,7 @@ Byte **0x4B38C** — one bit per agent, sequential OR:
 |-------|---------|----------|
 | Agumon | `0x01` | `0x02 → 0x03` after talk (Guilmon bit already set) |
 | Guilmon | `0x02` | `0x00 → 0x02` after talk |
+| Patamon | `0x04` | `0x00 → 0x04` after talk |
 | Renamon | `0x08` | `0x00 → 0x08` after talk |
 | Kotemon | `0x10` | `0x08 → 0x18` after talk (Renamon bit already set) |
 | Kumamon | `0x20` | `0x03 → 0x23` after talk |
@@ -94,6 +95,7 @@ Byte **0x4B3B7** — one bit per agent (main quest also uses `0x01`, `0x02` on s
 |-------|---------|----------|
 | Agumon | `0x04` | `0x0B → 0x0F` after defeat |
 | Guilmon | `0x08` | `0x03 → 0x0B` after Wargrowlmon |
+| Patamon | `0x10` | `0x03 → 0x13` after MagnaAngemon |
 | Renamon | `0x20` | `0x03 → 0x23` after Taomon |
 | Kotemon | `0x40` | `0x23 → 0x63` after Kyukimon |
 | Monmon | `0x80` | `0x0F → 0x8F` after Armormon |
@@ -127,6 +129,7 @@ Snapshots: `Tools/MemoryScanner/Snapshots/investigation_guilmon/`
 | Monmon | `0x49C4C` | `0x05` | `0x00 → 0x05` after delivery |
 | Kotemon | `0x49494` | `0x03` | `0x00 → 0x03` after delivery |
 | Renamon | `0x4ABBC` | `0x09` | `0x00 → 0x09` after delivery |
+| Patamon | `0x4AF98` | `0x0A` | `0x00 → 0x0A` after delivery |
 
 ### Agumon (`DriAgentAgumon`)
 
@@ -191,6 +194,17 @@ Snapshots: `Tools/MemoryScanner/Snapshots/kotemon_*.bin`
 | 3 | Deliver DNA to agent | `0x4ABBC` | `0x09` | confirmed |
 
 Snapshots: `Tools/MemoryScanner/Snapshots/renamon_*.bin`
+
+### Patamon (`DriAgentPatamon`)
+
+| Step | Event (gameplay) | Address | BitMask | Status |
+|------|------------------|---------|---------|--------|
+| 1 | Talk to DRI agent | `0x4B38C` | `0x04` | confirmed |
+| 2 | Defeat MagnaAngemon + DNA | `0x4B3B7` | `0x10` | confirmed |
+| 2 | DNA possession (requisite) | `0x48DD7` | raw `!= 0` | confirmed |
+| 3 | Deliver DNA to agent | `0x4AF98` | `0x0A` | confirmed |
+
+Snapshots: `Tools/MemoryScanner/Snapshots/patamon_*.bin`
 
 ---
 

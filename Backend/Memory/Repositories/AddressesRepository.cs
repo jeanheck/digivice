@@ -28,6 +28,7 @@ namespace Backend.Memory.Repositories
         private QuestAddresses? driAgentMonmon;
         private QuestAddresses? driAgentKotemon;
         private QuestAddresses? driAgentRenamon;
+        private QuestAddresses? driAgentPatamon;
         private AuctionAddresses? auctionAddresses;
 
         private T LoadAndCache<T>(ref T? cacheField, string fileName) where T : class, new()
@@ -114,7 +115,8 @@ namespace Backend.Memory.Repositories
             GetDriAgentKumamon(),
             GetDriAgentMonmon(),
             GetDriAgentKotemon(),
-            GetDriAgentRenamon()
+            GetDriAgentRenamon(),
+            GetDriAgentPatamon()
         ];
 
         private QuestAddresses GetDriAgentGuilmon() =>
@@ -137,6 +139,9 @@ namespace Backend.Memory.Repositories
 
         private QuestAddresses GetDriAgentRenamon() =>
             LoadAndCache(ref driAgentRenamon, "Quests/DriAgents/RenamonAddresses.json");
+
+        private QuestAddresses GetDriAgentPatamon() =>
+            LoadAndCache(ref driAgentPatamon, "Quests/DriAgents/PatamonAddresses.json");
 
         public AuctionAddresses GetAuctionAddresses() =>
             LoadAndCache(ref auctionAddresses, "AuctionAddresses.json");

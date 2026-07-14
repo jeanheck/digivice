@@ -1,0 +1,26 @@
+{
+    "Id": "driAgentPatamon",
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x0004B38C",
+            "BitMasks": ["0x04"]
+        },
+        {
+            "Number": 2,
+            "Address": "0x0004B3B7",
+            "BitMasks": ["0x10"]
+        },
+        {
+            "Number": 3,
+            "Address": "0x0004AF98",
+            "BitMasks": ["0x0A"],
+            "Requisites": [
+                {
+                    "Id": "patamonDDNA",
+                    "Address": "0x00048DD7"
+                }
+            ]
+        }
+    ]
+}

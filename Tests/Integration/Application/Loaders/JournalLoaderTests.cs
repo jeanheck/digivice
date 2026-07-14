@@ -60,7 +60,7 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0, journalResource.LegendaryWeapons[2].Steps[0].Value);
         Assert.Equal(0, journalResource.LegendaryWeapons[3].Steps[0].Value);
         Assert.Equal(0, journalResource.LegendaryWeapons[4].Steps[0].Value);
-        Assert.Equal(7, journalResource.DriAgents.Count);
+        Assert.Equal(8, journalResource.DriAgents.Count);
         Assert.Equal("driAgentGuilmon", journalResource.DriAgents[0].Id);
         Assert.Equal("driAgentAgumon", journalResource.DriAgents[1].Id);
         Assert.Equal("driAgentVeemon", journalResource.DriAgents[2].Id);
@@ -68,6 +68,7 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("driAgentMonmon", journalResource.DriAgents[4].Id);
         Assert.Equal("driAgentKotemon", journalResource.DriAgents[5].Id);
         Assert.Equal("driAgentRenamon", journalResource.DriAgents[6].Id);
+        Assert.Equal("driAgentPatamon", journalResource.DriAgents[7].Id);
         Assert.Equal(0x02, journalResource.DriAgents[0].Steps[0].Value);
         Assert.Equal(0, journalResource.DriAgents[0].Steps[1].Value);
         Assert.Equal(0, journalResource.DriAgents[1].Steps[0].Value);
@@ -76,6 +77,7 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0, journalResource.DriAgents[4].Steps[0].Value);
         Assert.Equal(0, journalResource.DriAgents[5].Steps[0].Value);
         Assert.Equal(0, journalResource.DriAgents[6].Steps[0].Value);
+        Assert.Equal(0, journalResource.DriAgents[7].Steps[0].Value);
         Assert.Equal(5, journalResource.Auctions.Count);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x00);

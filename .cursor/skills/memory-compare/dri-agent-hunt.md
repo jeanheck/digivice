@@ -38,7 +38,7 @@ Always discard encounter cache **`0x4B824`–`0x4BB00`** (and typical spawn/faci
 |---------|-------|--------|
 | `0x01` | Agumon | confirmed |
 | `0x02` | Guilmon | confirmed |
-| `0x04` | — | **suspected** free (next agents) |
+| `0x04` | Patamon | confirmed |
 | `0x08` | Renamon | confirmed |
 | `0x10` | Kotemon | confirmed |
 | `0x20` | Kumamon | confirmed |
@@ -54,8 +54,8 @@ Do **not** assign free bits without a compare — only confirm from diffs.
 When comparing, dump these bytes across the timeline:
 
 - `0x4B38C`, `0x4B3B7`, `0x4B3B8`
-- Known DNA: `0x48DB6`, `0x48DC3`, `0x48DD2`, `0x48DD3`, `0x48DD6`, `0x48F18`, `0x48F3B`
-- Known step3: `0x4A028`, `0x4A7E0`, `0x4A404`, `0x49494`, `0x49870`, `0x49C4C`, `0x4ABBC`
+- Known DNA: `0x48DB6`, `0x48DC3`, `0x48DD2`, `0x48DD3`, `0x48DD6`, `0x48DD7`, `0x48F18`, `0x48F3B`
+- Known step3: `0x4A028`, `0x4A7E0`, `0x4A404`, `0x49494`, `0x49870`, `0x49C4C`, `0x4ABBC`, `0x4AF98`
 
 Unchanged known slots are expected when that agent is already complete on the save.
 

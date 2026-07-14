@@ -68,14 +68,15 @@ Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`
 
 | Address | Purpose | Source |
 |---------|---------|--------|
-| 0x0004B38C | Step 1 — talk to agent (per-agent bit) | Agumon `0x01`, Guilmon `0x02`, Renamon `0x08`, Kotemon `0x10`, Kumamon `0x20`, Monmon `0x40`, Veemon `0x80` |
-| 0x0004B3B7 | Step 2 — defeat target | Agumon `0x04`, Guilmon `0x08`, Renamon `0x20`, Kotemon `0x40`, Monmon `0x80` |
+| 0x0004B38C | Step 1 — talk to agent (per-agent bit) | Agumon `0x01`, Guilmon `0x02`, Patamon `0x04`, Renamon `0x08`, Kotemon `0x10`, Kumamon `0x20`, Monmon `0x40`, Veemon `0x80` |
+| 0x0004B3B7 | Step 2 — defeat target | Agumon `0x04`, Guilmon `0x08`, Patamon `0x10`, Renamon `0x20`, Kotemon `0x40`, Monmon `0x80` |
 | 0x0004B3B8 | Step 2 — defeat target | Kumamon `0x01`, Veemon `0x02` |
 | 0x00048DD2 | Guilmon DNA — important item possession | Guilmon step 2 (persists after delivery) |
 | 0x00048DB6 | Agumon DNA — important item possession | Agumon step 2 (persists after delivery) |
 | 0x00048DC3 | Kotemon DNA — important item possession | Kotemon step 2 |
 | 0x00048DD3 | Veemon DNA — important item possession | Veemon step 2 |
 | 0x00048DD6 | Renamon DNA — important item possession | Renamon step 2 |
+| 0x00048DD7 | Patamon DNA — important item possession | Patamon step 2 |
 | 0x00048F3B | Kumamon DNA — important item possession | Kumamon step 2 |
 | 0x00048F18 | Monmon DNA — important item possession | Monmon step 2 |
 | 0x0004A7E0 | Guilmon step 3 — deliver DNA | Guilmon `0x08` |
@@ -85,6 +86,7 @@ Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`
 | 0x00049870 | Kumamon step 3 — deliver DNA | Kumamon `0x04` |
 | 0x00049C4C | Monmon step 3 — deliver DNA | Monmon `0x05` |
 | 0x0004ABBC | Renamon step 3 — deliver DNA | Renamon `0x09` |
+| 0x0004AF98 | Patamon step 3 — deliver DNA | Patamon `0x0A` |
 
 | Agent | Status | Notes |
 |-------|--------|-------|
@@ -95,10 +97,11 @@ Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`
 | Monmon | Mapped | `MonmonAddresses.json` |
 | Kotemon | Mapped | `KotemonAddresses.json` |
 | Renamon | Mapped | `RenamonAddresses.json` |
+| Patamon | Mapped | `PatamonAddresses.json` |
 
 Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`,
 `investigation_guilmon/`, `kumamon_*.bin`, `monmon_*.bin`, `kotemon_*.bin`,
-`renamon_*.bin`.
+`renamon_*.bin`, `patamon_*.bin`.
 
 ## Inventory / items
 
