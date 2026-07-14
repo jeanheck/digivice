@@ -1,0 +1,61 @@
+{
+    "id": "driAgentRenamon",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "021D",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "021D",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "2": {
+            "location": "024A",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024A",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "3": {
+            "location": "021D",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "021D",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": [
+                {
+                    "id": "renamonDDNA"
+                }
+            ]
+        }
+    }
+}

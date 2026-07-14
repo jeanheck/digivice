@@ -1,0 +1,61 @@
+{
+    "id": "driAgentKotemon",
+    "requisites": [],
+    "steps": {
+        "1": {
+            "location": "0258",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0258",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "2": {
+            "location": "0241",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0241",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "3": {
+            "location": "0258",
+            "coordinates": {
+                "x": 50,
+                "y": 50
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0258",
+                    "coordinates": {
+                        "x": 50,
+                        "y": 50
+                    }
+                }
+            ],
+            "requisites": [
+                {
+                    "id": "kotemonDDNA"
+                }
+            ]
+        }
+    }
+}

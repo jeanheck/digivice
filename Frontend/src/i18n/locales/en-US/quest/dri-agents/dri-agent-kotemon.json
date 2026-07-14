@@ -1,0 +1,35 @@
+{
+  "driAgentKotemon": {
+    "title": "Kotemon - DRI Ken (60 ~ 90)",
+    "description": "Add Kotemon to your Digimon party",
+    "steps": {
+      "1": {
+        "description": "Look for Dri Ken in Mobius Desert",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Ken"
+          }
+        }
+      },
+      "2": {
+        "description": "Defeat Kyukimon in battle to receive Kotemon's DDNA",
+        "locations": {
+          "0": {
+            "locationTarget": "Kyukimon"
+          }
+        }
+      },
+      "3": {
+        "description": "Deliver Kotemon's DNA to DRI Ken",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Ken"
+          }
+        },
+        "requisites": {
+          "kotemonDDNA": "Kotemon's DDNA"
+        }
+      }
+    }
+  }
+}

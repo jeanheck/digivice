@@ -36,6 +36,11 @@ Maintained by quest-pattern-frontend skill. Append entries; do not remove withou
 - `driAgentKumamon`
 - `driAgentMonmon`
 
+### DRI agents (2026-07-13)
+
+- `driAgentKotemon`
+- `driAgentRenamon`
+
 ## Palette notes
 
 - `cyan` — side quests

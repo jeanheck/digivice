@@ -26,6 +26,8 @@ import driAgentAgumon from "./quest/dri-agents/dri-agent-agumon.json";
 import driAgentVeemon from "./quest/dri-agents/dri-agent-veemon.json";
 import driAgentKumamon from "./quest/dri-agents/dri-agent-kumamon.json";
 import driAgentMonmon from "./quest/dri-agents/dri-agent-monmon.json";
+import driAgentKotemon from "./quest/dri-agents/dri-agent-kotemon.json";
+import driAgentRenamon from "./quest/dri-agents/dri-agent-renamon.json";
 import player from "./player.json";
 import party from "./party.json";
 import connection from "./connection.json";
@@ -60,6 +62,8 @@ export default {
   ...driAgentVeemon,
   ...driAgentKumamon,
   ...driAgentMonmon,
+  ...driAgentKotemon,
+  ...driAgentRenamon,
   ...player,
   ...party,
   ...connection,
