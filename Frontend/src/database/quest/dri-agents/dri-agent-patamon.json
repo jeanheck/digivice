@@ -5,15 +5,15 @@
         "1": {
             "location": "021D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 50.5,
+                "y": 50.5
             },
             "zoomedLocations": [
                 {
                     "location": "021D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 43,
+                        "y": 74.5
                     }
                 }
             ],
@@ -22,15 +22,15 @@
         "2": {
             "location": "0247",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 31,
+                "y": 69.5
             },
             "zoomedLocations": [
                 {
                     "location": "0247",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 91,
+                        "y": 74
                     }
                 }
             ],
@@ -39,15 +39,15 @@
         "3": {
             "location": "021D",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 50.5,
+                "y": 50.5
             },
             "zoomedLocations": [
                 {
                     "location": "021D",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 43,
+                        "y": 74.5
                     }
                 }
             ],
