@@ -626,7 +626,7 @@
     },
     "252": {
       "name": "Rubber Suit",
-      "note": null
+      "note": "Suit resistant to thunder."
     },
     "253": {
       "name": "Dark Cloak",
@@ -634,31 +634,31 @@
     },
     "254": {
       "name": "Down Jacket",
-      "note": null
+      "note": "Jacket for arctic weather."
     },
     "256": {
       "name": "Sniper Suit",
-      "note": null
+      "note": "Legendary sniping suit."
     },
     "257": {
       "name": "Yin Yang Suit",
-      "note": null
+      "note": "Diviner's suit from ancient times."
     },
     "258": {
       "name": "Wild Suit",
-      "note": null
+      "note": "Legendary combat suit."
     },
     "259": {
       "name": "Body Armor",
-      "note": null
+      "note": "Resist machine attacks."
     },
     "260": {
       "name": "Mirage Robe",
-      "note": null
+      "note": "Bewitch enemies and evade attacks."
     },
     "261": {
       "name": "King’s Mantle",
-      "note": null
+      "note": "Wearing it gives a king's dignity."
     },
     "262": {
       "name": "Leather Mail",
@@ -674,7 +674,7 @@
     },
     "265": {
       "name": "Digitama Mail",
-      "note": null
+      "note": "Plastered with Digitama shells."
     },
     "266": {
       "name": "Dark Armor",
@@ -682,23 +682,23 @@
     },
     "267": {
       "name": "Kulon Armor",
-      "note": null
+      "note": "Light and sturdy alloyerd armor."
     },
     "268": {
       "name": "Dramon Armor",
-      "note": null
+      "note": "Legendary armor with Dramon power."
     },
     "269": {
       "name": "Ronin Armor",
-      "note": null
+      "note": "Legendary ronin armor."
     },
     "270": {
       "name": "Hazard Armor",
-      "note": null
+      "note": "Legendary armor of the wild."
     },
     "271": {
       "name": "Brave Armor",
-      "note": null
+      "note": "Engraved with crest of courage."
     },
     "272": {
       "name": "Armadura Cilíndrica",
@@ -706,11 +706,11 @@
     },
     "273": {
       "name": "Misty Armor",
-      "note": null
+      "note": "Makes the wearer harder to detect."
     },
     "274": {
       "name": "Crimson Mail",
-      "note": null
+      "note": "Flaming red armor."
     },
     "275": {
       "name": "Buckler",
@@ -906,11 +906,11 @@
     },
     "1102": {
       "name": "Beam Armor",
-      "note": null
+      "note": "Shining, decorative armor."
     },
     "1107": {
       "name": "Divine Robe",
-      "note": null
+      "note": "Robe with a divine light."
     },
     "1130": {
       "name": "Knight Helmet",
