@@ -5759,30 +5759,5 @@
             "6",
             "7"
         ]
-    },
-    "1001": {
-        "type": "unknown",
-        "attributes": [],
-        "equipableDigimon": []
-    },
-    "1019": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 116
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 50
-            }
-        ],
-        "equipableDigimon": [
-            "3",
-            "4",
-            "5"
-        ]
     }
 }
