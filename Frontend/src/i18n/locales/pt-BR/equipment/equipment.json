@@ -1004,9 +1004,41 @@
       "name": "Poder Vento S",
       "note": "Adiciona vento forte aos ataques."
     },
+    "351": {
+      "name": "Poder Raio 1",
+      "note": "Adiciona trovão fraco aos ataques."
+    },
+    "352": {
+      "name": "Poder Raio 2",
+      "note": "Adiciona trovão aos ataques."
+    },
+    "353": {
+      "name": "Poder Raio S",
+      "note": "Adiciona trovão forte aos ataques."
+    },
+    "354": {
+      "name": "Poder Metal 1",
+      "note": "Adiciona metal fraco aos ataques."
+    },
+    "355": {
+      "name": "Poder Metal 2",
+      "note": "Adiciona metal aos ataques."
+    },
+    "356": {
+      "name": "Poder Metal S",
+      "note": "Adiciona metal forte aos ataques."
+    },
     "357": {
       "name": "Poder Trevas 1",
       "note": "Adiciona escuridão fraca aos ataques."
+    },
+    "358": {
+      "name": "Poder Trevas 2",
+      "note": "Adiciona escuridão aos ataques."
+    },
+    "359": {
+      "name": "Poder Trevas S",
+      "note": "Adiciona forte escuridão aos ataques."
     },
     "1001": {
       "name": "Vazio",
@@ -1039,38 +1071,6 @@
     "1107": {
       "name": "Capa Divina",
       "note": "Manto com uma luz Divina."
-    },
-    "1151": {
-      "name": "Poder Raio 1",
-      "note": "Adiciona trovão fraco aos ataques."
-    },
-    "1152": {
-      "name": "Poder Raio 2",
-      "note": "Adiciona trovão aos ataques."
-    },
-    "1153": {
-      "name": "Poder Raio S",
-      "note": "Adiciona trovão forte aos ataques."
-    },
-    "1156": {
-      "name": "Poder Trevas 2",
-      "note": "Adiciona escuridão aos ataques."
-    },
-    "1157": {
-      "name": "Poder Trevas S",
-      "note": "Adiciona forte escuridão aos ataques."
-    },
-    "1169": {
-      "name": "Poder Metal 1",
-      "note": "Adiciona metal fraco aos ataques."
-    },
-    "1170": {
-      "name": "Poder Metal 2",
-      "note": "Adiciona metal aos ataques."
-    },
-    "1171": {
-      "name": "Poder Metal S",
-      "note": "Adiciona metal forte aos ataques."
     },
     "1999": {
       "name": "Defesa Yin Yang",

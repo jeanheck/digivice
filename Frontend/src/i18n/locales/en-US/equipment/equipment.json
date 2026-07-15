@@ -1004,9 +1004,41 @@
       "name": "Wind Power S",
       "note": "Add strong wind to attacks."
     },
+    "351": {
+      "name": "Bolt Power 1",
+      "note": "Add weak thunder to attacks."
+    },
+    "352": {
+      "name": "Bolt Power 2",
+      "note": "Add thunder to attacks."
+    },
+    "353": {
+      "name": "Bolt Power S",
+      "note": "Add strong thunder to attacks."
+    },
+    "354": {
+      "name": "Metal Power 1",
+      "note": "Add weak machine to attacks."
+    },
+    "355": {
+      "name": "Metal Power 2",
+      "note": "Add machine to attacks."
+    },
+    "356": {
+      "name": "Metal Power S",
+      "note": "Add strong machine to attacks."
+    },
     "357": {
       "name": "Dark Power 1",
       "note": "Add weak dark to attacks."
+    },
+    "358": {
+      "name": "Dark Power 2",
+      "note": "Add dark to attacks."
+    },
+    "359": {
+      "name": "Dark Power S",
+      "note": "Add strong dark to attacks."
     },
     "1001": {
       "name": "Empty",
@@ -1043,38 +1075,6 @@
     "1107": {
       "name": "Divine Robe",
       "note": "Robe with a divine light."
-    },
-    "1151": {
-      "name": "Bolt Power 1",
-      "note": "Add weak thunder to attacks."
-    },
-    "1152": {
-      "name": "Bolt Power 2",
-      "note": "Add thunder to attacks."
-    },
-    "1153": {
-      "name": "Bolt Power S",
-      "note": "Add strong thunder to attacks."
-    },
-    "1156": {
-      "name": "Dark Power 2",
-      "note": "Add dark to attacks."
-    },
-    "1157": {
-      "name": "Dark Power S",
-      "note": "Add strong dark to attacks."
-    },
-    "1169": {
-      "name": "Metal Power 1",
-      "note": "Add weak machine to attacks."
-    },
-    "1170": {
-      "name": "Metal Power 2",
-      "note": "Add machine to attacks."
-    },
-    "1171": {
-      "name": "Metal Power S",
-      "note": "Add strong machine to attacks."
     }
   }
 }
