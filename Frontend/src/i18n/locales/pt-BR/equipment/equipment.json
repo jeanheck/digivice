@@ -901,7 +901,7 @@
       "note": null
     },
     "1100": {
-      "name": "Yin Yang Ward",
+      "name": "Yin Yang Wand",
       "note": null
     },
     "1102": {
@@ -1055,6 +1055,10 @@
     "1188": {
       "name": "Wind Power S",
       "note": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
+    },
+    "1999": {
+      "name": "Yin Yang Ward",
+      "note": "Diviner's ward from ancient times."
     }
   }
 }

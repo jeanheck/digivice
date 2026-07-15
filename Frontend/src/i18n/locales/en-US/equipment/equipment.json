@@ -10,11 +10,11 @@
     },
     "94": {
       "name": "Crimson Blade",
-      "note": "Recovers a fraction of the damage as HP"
+      "note": "Drains the HP of and opponent."
     },
     "95": {
       "name": "Mighty Blade",
-      "note": null
+      "note": "A sharp single-edged sword."
     },
     "96": {
       "name": "Shiratorimaru",
@@ -22,23 +22,23 @@
     },
     "97": {
       "name": "Shine Blade",
-      "note": null
+      "note": "Sword with a shining blade."
     },
     "98": {
       "name": "Ronin Blade",
-      "note": null
+      "note": "Legendary samurai sword."
     },
     "99": {
       "name": "Onimaru",
-      "note": null
+      "note": "Said to cut off an ogre's arm."
     },
     "100": {
       "name": "Tenjinmaru",
-      "note": null
+      "note": "The highest rank katana."
     },
     "101": {
       "name": "Fuujin Blade",
-      "note": null
+      "note": "Phantom single-edged sword."
     },
     "102": {
       "name": "Rusty Katana",
@@ -46,15 +46,15 @@
     },
     "103": {
       "name": "Kotetsu",
-      "note": null
+      "note": "Katana forged by a master."
     },
     "104": {
       "name": "Masamune",
-      "note": null
+      "note": "Legendary katana."
     },
     "105": {
       "name": "Muramasa",
-      "note": null
+      "note": "Revived mythical phantom sword."
     },
     "106": {
       "name": "Leather Glove",
@@ -74,47 +74,47 @@
     },
     "111": {
       "name": "Tiger Glove",
-      "note": null
+      "note": "Attack like a hunting tiger."
     },
     "112": {
       "name": "Wild Glove",
-      "note": null
+      "note": "Legendary combat weapon."
     },
     "113": {
       "name": "Kaiser Fist",
-      "note": null
+      "note": "Highest rank gloves."
     },
     "114": {
       "name": "Tempest Arm",
-      "note": null
+      "note": "Punch with lightning speed."
     },
     "115": {
       "name": "Raijin Fist",
-      "note": null
+      "note": "Mythical gloves."
     },
     "116": {
       "name": "Rusty Glove",
-      "note": null
+      "note": "Rusted and not effective."
     },
     "117": {
       "name": "Zodiac",
-      "note": null
+      "note": "Charged with power of the beasts."
     },
     "118": {
       "name": "Prominence",
-      "note": null
+      "note": "Gloves that chooses its user."
     },
     "119": {
       "name": "Super Nova",
-      "note": null
+      "note": "Phantom gloves that glows."
     },
     "120": {
       "name": "Handgun",
-      "note": null
+      "note": "An easy to use small gun."
     },
     "121": {
       "name": "Machinegun",
-      "note": null
+      "note": "One-handed automatic weapon."
     },
     "122": {
       "name": "Shotgun",
@@ -122,47 +122,47 @@
     },
     "123": {
       "name": "Psycho Blaster",
-      "note": null
+      "note": "Launches energy bombs."
     },
     "124": {
       "name": "Sniper Cannon",
-      "note": null
+      "note": "Legendary weapon for sniping."
     },
     "125": {
       "name": "Cluster Cannon",
-      "note": null
+      "note": "Launch bundle of bombs."
     },
     "126": {
       "name": "Laser Cannon",
-      "note": null
+      "note": "Shoots heat rays."
     },
     "127": {
       "name": "Suijin Cannon",
-      "note": null
+      "note": "Mythical cannon."
     },
     "128": {
       "name": "Rusty Rifle",
-      "note": null
+      "note": "Priceless, but cannot be used."
     },
     "129": {
       "name": "Justice",
-      "note": null
+      "note": "Custom revived rifle."
     },
     "130": {
       "name": "Judgment",
-      "note": null
+      "note": "High skill custom rifle."
     },
     "131": {
       "name": "Punishment",
-      "note": null
+      "note": "Ultimate full custom rifle."
     },
     "132": {
       "name": "Wooden Rod",
-      "note": null
+      "note": "Rod made from oak."
     },
     "133": {
       "name": "Magician Rod",
-      "note": null
+      "note": "A magician's rod."
     },
     "134": {
       "name": "Bone Rod",
@@ -170,7 +170,7 @@
     },
     "135": {
       "name": "Misty Rod",
-      "note": null
+      "note": "A hermit's rod."
     },
     "137": {
       "name": "Yin Yang Rod",
@@ -178,15 +178,15 @@
     },
     "138": {
       "name": "Khakkhara",
-      "note": null
+      "note": "Said to be used to ward off evil."
     },
     "139": {
       "name": "Crystal Rod",
-      "note": null
+      "note": "Crystal rod with magical powers."
     },
     "140": {
       "name": "Millenium",
-      "note": null
+      "note": "Power to rule a country."
     },
     "141": {
       "name": "Old Wand",
@@ -194,23 +194,23 @@
     },
     "142": {
       "name": "Twinkle",
-      "note": null
+      "note": "Rod that emits mysterious lights."
     },
     "143": {
       "name": "Immaculate",
-      "note": null
+      "note": "Rod purified with divine powers."
     },
     "144": {
       "name": "Eternally",
-      "note": null
+      "note": "Mythical rod with infinite powers."
     },
     "145": {
       "name": "Wolf Fang",
-      "note": null
+      "note": "Weapon made from a beast's fang."
     },
     "146": {
       "name": "Ghost Fang",
-      "note": null
+      "note": "Weapon made from a ogre's fang."
     },
     "147": {
       "name": "Cerberus Fang",
@@ -222,19 +222,19 @@
     },
     "149": {
       "name": "Hazard Fang",
-      "note": null
+      "note": "Legendary fang of the wild."
     },
     "150": {
       "name": "Saber Fang",
-      "note": null
+      "note": "Equipped arm aims for weak point."
     },
     "151": {
       "name": "Venom Fang",
-      "note": "Small chance of inflicting poison on enemy Digimon"
+      "note": "Poisons the wound."
     },
     "152": {
       "name": "Belial Fang",
-      "note": null
+      "note": "Mystical fang dropped by a demon."
     },
     "153": {
       "name": "Old Claw",
@@ -242,15 +242,15 @@
     },
     "154": {
       "name": "Vanquish",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
+      "note": "Claw that knock-outs an opponent."
     },
     "155": {
       "name": "Destruction",
-      "note": "Very small chance of knocking out enemy Digimon"
+      "note": "One blow will dismember the enemy."
     },
     "156": {
       "name": "Invincible",
-      "note": null
+      "note": "Mythical claw of the Beast King."
     },
     "157": {
       "name": "Dagger",
@@ -266,7 +266,7 @@
     },
     "160": {
       "name": "Shamshir",
-      "note": null
+      "note": "Persian scimitar."
     },
     "161": {
       "name": "Wing Sword",
@@ -274,15 +274,15 @@
     },
     "164": {
       "name": "Excalibur",
-      "note": "Deals extra damage to Evil-species Digimon"
+      "note": "Divine sword that destroys evil."
     },
     "165": {
       "name": "Grey Sword",
-      "note": null
+      "note": "Part of a DNA digivolved Digimon."
     },
     "166": {
       "name": "Fenrir Sword",
-      "note": "Small chance of inflicting freeze on enemy Digimon"
+      "note": "Demonic sword that ices the enemy."
     },
     "167": {
       "name": "Bamboo Spear",
@@ -298,7 +298,7 @@
     },
     "170": {
       "name": "Partisan",
-      "note": null
+      "note": "Large spearhead with huge damage."
     },
     "171": {
       "name": "Divine Lance",
@@ -306,27 +306,27 @@
     },
     "172": {
       "name": "Trent",
-      "note": "Deals extra damage to Fish-species Digimon"
+      "note": "Huge damage to underwater enemies."
     },
     "173": {
       "name": "Vampire Lance",
-      "note": "Recovers a fraction of the damage as HP"
+      "note": "Drains the HP of the opponent."
     },
     "175": {
       "name": "Orochi Spear",
-      "note": null
+      "note": "Spear that destroyed Orochi."
     },
     "176": {
       "name": "Claymore",
-      "note": null
+      "note": "Wide two-handed sword."
     },
     "174": {
       "name": "Royal Spear",
-      "note": null
+      "note": "Divine lance for Royal Knights."
     },
     "177": {
       "name": "Chain Saw",
-      "note": null
+      "note": "Wield with two-hands and chop."
     },
     "178": {
       "name": "Zweihander",
@@ -334,27 +334,27 @@
     },
     "179": {
       "name": "Flamberge",
-      "note": null
+      "note": "Beautiful two-handed sword."
     },
     "180": {
       "name": "Rock Breaker",
-      "note": null
+      "note": "Highest ranking two-handed sword."
     },
     "181": {
       "name": "Atlas Buster",
-      "note": null
+      "note": "Killed the legendary giant."
     },
     "182": {
       "name": "Gulf Sword",
-      "note": null
+      "note": "Large scimitar from Persia."
     },
     "183": {
       "name": "Halberd",
-      "note": null
+      "note": "Long hilt to attack effieciently."
     },
     "184": {
       "name": "Naginata",
-      "note": null
+      "note": "Regular, two-handed weapon."
     },
     "185": {
       "name": "Berdys",
@@ -362,19 +362,19 @@
     },
     "186": {
       "name": "Soul Chopper",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
+      "note": "Sickle that destroys the soul."
     },
     "187": {
       "name": "Ryuuzanmaru",
-      "note": null
+      "note": "Destroys the enemy armor and all."
     },
     "188": {
       "name": "Gaea Halberd",
-      "note": null
+      "note": "Can defend and still attack."
     },
     "189": {
       "name": "Omega Halberd",
-      "note": null
+      "note": "Mythical most powerful halberd."
     },
     "190": {
       "name": "Long Bow",
@@ -390,35 +390,35 @@
     },
     "193": {
       "name": "Angel Bow",
-      "note": "Deals extra damage to Evil-species Digimon"
+      "note": "Angelic bow against evil Digimon."
     },
     "194": {
       "name": "Raven Bow",
-      "note": "Small chance of inflicting confusion on enemy Digimon"
+      "note": "Raven's curse confuses the enemy."
     },
     "195": {
       "name": "Lightning Bow",
-      "note": null
+      "note": "High power bow with rapid-fire."
     },
     "196": {
       "name": "Seraphic Bow",
-      "note": null
+      "note": "The highest angel's divine bow."
     },
     "197": {
       "name": "Garuru Cannon",
-      "note": null
+      "note": "Part of a DNA digivolved Digimon."
     },
     "198": {
       "name": "Positron Cannon",
-      "note": null
+      "note": "Forbidden weapon."
     },
     "199": {
       "name": "Mini Guard",
-      "note": null
+      "note": "Small defensive weapon to attack."
     },
     "200": {
       "name": "Pulse Guard",
-      "note": null
+      "note": "Defensive weapon to attack."
     },
     "201": {
       "name": "Metal Guard",
@@ -426,23 +426,23 @@
     },
     "202": {
       "name": "Mighty Guard",
-      "note": null
+      "note": "Efficient and adept for attacks."
     },
     "203": {
       "name": "Dramon Guard",
-      "note": null
+      "note": "Legendary Dramon power charge."
     },
     "204": {
       "name": "Mach Guard",
-      "note": null
+      "note": "Fast rotating for attacks."
     },
     "205": {
       "name": "Mega Guard",
-      "note": null
+      "note": "Powerful \"Guard\" that is a weapon."
     },
     "206": {
       "name": "Deus Guard",
-      "note": null
+      "note": "Divine charge that destroys enemy."
     },
     "207": {
       "name": "Metal Horn",
@@ -730,31 +730,31 @@
     },
     "281": {
       "name": "Divine Barrier",
-      "note": "Barrier with a divine right."
+      "note": "Barrier with divine light."
     },
     "282": {
       "name": "Sniper Shield",
-      "note": null
+      "note": "Legendary sniping barricade."
     },
     "284": {
       "name": "Ronin Shield",
-      "note": null
+      "note": "Legendary ronin's shield."
     },
     "288": {
       "name": "Dramon Shield",
-      "note": null
+      "note": "Legendary Dramon power shield."
     },
     "289": {
       "name": "Beam Shield",
-      "note": null
+      "note": "Decorative, shiny shield."
     },
     "290": {
       "name": "High Security",
-      "note": "Prevents OHKOs"
+      "note": "Shield that protects life."
     },
     "291": {
       "name": "Apocalypse",
-      "note": null
+      "note": "Legendary divine shield."
     },
     "292": {
       "name": "Power Gem",
@@ -848,6 +848,14 @@
       "name": "Ice Power 1",
       "note": "Add weak ice to attacks."
     },
+    "3451": {
+      "name": "Ice Power 2",
+      "note": "Add ice to attacks."
+    },
+    "3452": {
+      "name": "Ice Power S",
+      "note": "Add strong ice to attacks."
+    },
     "348": {
       "name": "Wind Power 1",
       "note": "Add weak wind to attacks."
@@ -862,47 +870,51 @@
     },
     "1007": {
       "name": "Brave Shield",
-      "note": null
+      "note": "Engraved with crest of courage."
     },
     "1008": {
       "name": "Brave Sword",
-      "note": null
+      "note": "Engraved with crest of courage."
     },
     "1015": {
       "name": "Divine Rod",
-      "note": null
+      "note": "Rod with a divine light."
     },
     "1019": {
       "name": "Evil Fang",
-      "note": null
+      "note": "Equipped arm attacks like a tiger."
     },
     "1032": {
       "name": "Hazard Shield",
-      "note": null
+      "note": "Legendary shield of the wild."
     },
     "1040": {
       "name": "Knight Shield",
-      "note": null
+      "note": "Efficient shield of a knight."
     },
     "1042": {
       "name": "Kulon Shield",
-      "note": null
+      "note": "Sturdy and light alloy shield."
     },
     "1043": {
       "name": "Kulon Sword",
-      "note": null
+      "note": "Made from an alloy and powerful."
     },
     "1059": {
       "name": "Needle Glove",
-      "note": null
+      "note": "Gloves reinforced with thorns."
     },
     "1096": {
       "name": "Wild Shield",
-      "note": null
+      "note": "Legendary combat epaulet."
     },
     "1100": {
+      "name": "Yin Yang Wand",
+      "note": "Diviner's wand from ancient times."
+    },
+    "1999": {
       "name": "Yin Yang Ward",
-      "note": null
+      "note": "Diviner's ward from ancient times."
     },
     "1102": {
       "name": "Beam Armor",
@@ -918,143 +930,167 @@
     },
     "1149": {
       "name": "Binder Crest",
-      "note": "Reduces the chances of a wild Digimon escaping from battle"
+      "note": "Enemies escape less often."
     },
     "1150": {
       "name": "BIT Adapter",
-      "note": "The equipped Digimon receives additional BIT every battle"
+      "note": "Gain more BIT in battles."
     },
     "1151": {
       "name": "Bolt Power 1",
-      "note": "Adds a small amount of Lightning damage to the equipped Digimon’s basic attacks"
+      "note": "Add weak thunder to attacks."
     },
     "1152": {
       "name": "Bolt Power 2",
-      "note": "Adds a medium amount of Lightning damage to the equipped Digimon’s basic attacks"
+      "note": "Add thunder to attacks."
     },
     "1153": {
       "name": "Bolt Power S",
-      "note": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks"
+      "note": "Add strong thunder to attacks."
     },
     "1156": {
       "name": "Dark Power 2",
-      "note": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks"
+      "note": "Add dark to attacks."
     },
     "1157": {
       "name": "Dark Power S",
-      "note": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
+      "note": "Add strong dark to attacks."
     },
     "1159": {
       "name": "Dance Wing",
-      "note": "Significantly increases the equipped Digimon’s chances of evading an attack"
+      "note": "Evade better."
     },
     "1160": {
       "name": "EXP Adapter",
-      "note": "The equipped Digimon receives additional EXP every battle"
+      "note": "Gain more EXP in battles."
     },
     "1161": {
       "name": "Fire Power 2",
-      "note": "Adds a medium amount of Fire damage to the equipped Digimon’s basic attacks"
+      "note": "Add fire to attacks."
     },
     "1162": {
       "name": "Fire Power S",
-      "note": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks"
+      "note": "Add strong fire to attacks."
     },
     "1163": {
       "name": "Glasses",
-      "note": "Slightly increases the equipped Digimon’s accuracy"
+      "note": "Aim gets a little better."
     },
     "1164": {
       "name": "Goggles",
-      "note": "Significantly increases the equipped Digimon’s accuracy"
+      "note": "Aim gets better."
     },
     "1165": {
       "name": "HP Proxy",
-      "note": "Slightly decreases the damage received by the equipped Digimon"
+      "note": "Decrease damage by little."
     },
     "1166": {
       "name": "HP Mega Proxy",
-      "note": "Significantly decreases the damage received by the equipped Digimon"
+      "note": "Decrease damage."
     },
     "1167": {
       "name": "Hack Sticker",
-      "note": "Slightly increases the equipped Digimon’s chances of stealing an item"
+      "note": "Steal a little easier."
     },
     "1168": {
       "name": "Hack System",
-      "note": "Significantly increases the equipped Digimon’s chances of stealing an item"
+      "note": "Steal easier."
     },
     "1169": {
       "name": "Metal Power 1",
-      "note": "Adds a small amount of Machine damage to the equipped Digimon’s basic attacks"
+      "note": "Add weak machine to attacks."
     },
     "1170": {
       "name": "Metal Power 2",
-      "note": "Adds a medium amount of Machine damage to the equipped Digimon’s basic attacks"
+      "note": "Add machine to attacks."
     },
     "1171": {
       "name": "Metal Power S",
-      "note": "Adds a large amount of Machine damage to the equipped Digimon’s basic attacks"
+      "note": "Add strong machine to attacks."
     },
     "1172": {
       "name": "MP Proxy",
-      "note": "Slightly decreases the MP usage of the equipped Digimon"
+      "note": "Use little less MP for techniques."
     },
     "1173": {
       "name": "MP Mega Proxy",
-      "note": "Significantly decreases the MP usage of the equipped Digimon"
+      "note": "Use less MP for techniques."
     },
     "1174": {
       "name": "Multi Crest",
-      "note": "Allows the attacking Digimon to hit three times, but also lowers the damage of each individual hit"
+      "note": "Can attack twice."
     },
     "1175": {
       "name": "Over Clocked",
-      "note": "Slightly increases the equipped Digimon’s Blast Gauge gains"
+      "note": "Little easier to increase blast gauge."
     },
     "1176": {
       "name": "Over Load",
-      "note": "Significantly increases the equipped Digimon’s Blast Gauge gains"
+      "note": "Easier to increase blast gauge."
     },
     "1177": {
       "name": "Power Brace",
-      "note": "Significantly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+      "note": "Training is much easier."
     },
     "1178": {
-      "name": "Recovery Crest",
-      "note": "Recovers a small amount of HP for the equipped Digimon every turn"
+      "name": "Recover Crest",
+      "note": "HP is healed slowly."
     },
     "1179": {
       "name": "Runner Sandals",
-      "note": "Slightly increases the equipped Digimon’s chances of running away from battle"
+      "note": "Escape a little easier."
     },
     "1180": {
       "name": "Runner Shoes",
-      "note": "Significantly increases the equipped Digimon’s chances of running away from battle"
+      "note": "Escape easier."
     },
     "1181": {
       "name": "Search Crest",
-      "note": "Increases the equipped Digimon’s critical hit rate"
+      "note": "Increase critical attacks."
     },
     "1182": {
       "name": "Training Book",
-      "note": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+      "note": "Training is a little easier."
     },
     "1184": {
       "name": "Water Power 2",
-      "note": "Adds a medium amount of Water damage to the equipped Digimon’s basic attacks"
+      "note": "Add water to attacks."
     },
     "1185": {
       "name": "Water Power S",
-      "note": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks"
+      "note": "Add strong water to attacks."
     },
     "1187": {
       "name": "Wind Power 2",
-      "note": "Adds a medium amount of Wind damage to the equipped Digimon’s basic attacks"
+      "note": "Add wind to attacks."
     },
     "1188": {
       "name": "Wind Power S",
-      "note": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
+      "note": "Add strong wind to attacks."
+    },
+    "1189": {
+      "name": "Power Ring",
+      "note": "Increase attack power greatly."
+    },
+    "1190": {
+      "name": "Guard Ring",
+      "note": "Increase defense greatly."
+    },
+    "1191": {
+      "name": "Spirit Ring",
+      "note": "Increase spirit greatly."
+    },
+    "1192": {
+      "name": "Wisdom Ring",
+      "note": "Increase wisdom greatly."
+    },
+    "1193": {
+      "name": "Boost Ring",
+      "note": "Increase speed greatly."
+    },
+    "1194": {
+      "name": "Charisma Ring",
+      "note": "Very trendy ring."
     }
   }
 }
