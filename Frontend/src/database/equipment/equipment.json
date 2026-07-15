@@ -4060,6 +4060,24 @@
             "0"
         ]
     },
+    "287": {
+        "type": "shield",
+        "attributes": [
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 28
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 45
+            }
+        ],
+        "equipableDigimon": [
+            "5"
+        ]
+    },
     "288": {
         "type": "shield",
         "attributes": [
@@ -4755,24 +4773,6 @@
         "equipableDigimon": [
             "3",
             "4",
-            "5"
-        ]
-    },
-    "1032": {
-        "type": "shield",
-        "attributes": [
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 28
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 45
-            }
-        ],
-        "equipableDigimon": [
             "5"
         ]
     },

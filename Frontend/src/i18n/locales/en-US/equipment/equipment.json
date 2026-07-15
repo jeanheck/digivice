@@ -740,6 +740,10 @@
       "name": "Ronin Shield",
       "note": "Legendary ronin's shield."
     },
+    "287": {
+      "name": "Hazard Shield",
+      "note": "Legendary shield of the wild."
+    },
     "288": {
       "name": "Dramon Shield",
       "note": "Legendary Dramon power shield."
@@ -883,10 +887,6 @@
     "1019": {
       "name": "Evil Fang",
       "note": "Equipped arm attacks like a tiger."
-    },
-    "1032": {
-      "name": "Hazard Shield",
-      "note": "Legendary shield of the wild."
     },
     "1040": {
       "name": "Knight Shield",

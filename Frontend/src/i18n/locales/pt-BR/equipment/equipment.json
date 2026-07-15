@@ -740,6 +740,10 @@
       "name": "Escudo Ronin",
       "note": "Escudo do lendário Ronin."
     },
+    "287": {
+      "name": "Escudo Hazard",
+      "note": "Escudo lendário selvagem."
+    },
     "288": {
       "name": "Escudo Dramon",
       "note": "Escudo Dramon de poder lendário."
@@ -874,10 +878,6 @@
     },
     "1019": {
       "name": "Presa Maligna",
-      "note": null
-    },
-    "1032": {
-      "name": "Escudo Hazard",
       "note": null
     },
     "1040": {
