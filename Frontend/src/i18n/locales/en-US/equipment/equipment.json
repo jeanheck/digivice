@@ -176,6 +176,10 @@
       "name": "Misty Rod",
       "note": "A hermit's rod."
     },
+    "136": {
+      "name": "Divine Rod",
+      "note": "Rod with a divine light."
+    },
     "137": {
       "name": "Yin Yang Wand",
       "note": "Diviner's wand from ancient times."
@@ -275,6 +279,14 @@
     "161": {
       "name": "Wing Sword",
       "note": "Easy to wield for fast attacks."
+    },
+    "162": {
+      "name": "Kulon Sword",
+      "note": "Made from an alloy and powerful."
+    },
+    "163": {
+      "name": "Brave Sword",
+      "note": "Engraved with crest of courage."
     },
     "164": {
       "name": "Excalibur",
@@ -640,6 +652,10 @@
       "name": "Down Jacket",
       "note": "Jacket for arctic weather."
     },
+    "255": {
+      "name": "Divine Robe",
+      "note": "Robe with a divine light."
+    },
     "256": {
       "name": "Sniper Suit",
       "note": "Legendary sniping suit."
@@ -728,9 +744,17 @@
       "name": "Iron Shield",
       "note": "Sturdy shield made with iron."
     },
+    "278": {
+      "name": "Knight Shield",
+      "note": "Efficient shield of a knight."
+    },
     "279": {
       "name": "Guard Barrier",
       "note": "A barrier with a wide range."
+    },
+    "280": {
+      "name": "Kulon Shield",
+      "note": "Sturdy and light alloy shield."
     },
     "281": {
       "name": "Divine Barrier",
@@ -740,6 +764,10 @@
       "name": "Sniper Shield",
       "note": "Legendary sniping barricade."
     },
+    "283": {
+      "name": "Yin Yang Ward",
+      "note": "Diviner's ward from ancient times."
+    },
     "284": {
       "name": "Ronin Shield",
       "note": "Legendary ronin's shield."
@@ -747,6 +775,10 @@
     "285": {
       "name": "Wild Shield",
       "note": "Legendary combat epaulet."
+    },
+    "286": {
+      "name": "Brave Shield",
+      "note": "Engraved with crest of courage."
     },
     "287": {
       "name": "Hazard Shield",
@@ -1043,38 +1075,6 @@
     "1001": {
       "name": "Empty",
       "note": null
-    },
-    "1007": {
-      "name": "Brave Shield",
-      "note": "Engraved with crest of courage."
-    },
-    "1008": {
-      "name": "Brave Sword",
-      "note": "Engraved with crest of courage."
-    },
-    "1015": {
-      "name": "Divine Rod",
-      "note": "Rod with a divine light."
-    },
-    "1040": {
-      "name": "Knight Shield",
-      "note": "Efficient shield of a knight."
-    },
-    "1042": {
-      "name": "Kulon Shield",
-      "note": "Sturdy and light alloy shield."
-    },
-    "1043": {
-      "name": "Kulon Sword",
-      "note": "Made from an alloy and powerful."
-    },
-    "1999": {
-      "name": "Yin Yang Ward",
-      "note": "Diviner's ward from ancient times."
-    },
-    "1107": {
-      "name": "Divine Robe",
-      "note": "Robe with a divine light."
     }
   }
 }

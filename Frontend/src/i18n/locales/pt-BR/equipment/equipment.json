@@ -176,6 +176,10 @@
       "name": "Cajado Nebuloso",
       "note": "O cajado de um eremita."
     },
+    "136": {
+      "name": "Cajado Divino",
+      "note": "Cajado com uma luz Divina."
+    },
     "137": {
       "name": "Bastão Yin Yang",
       "note": "Bastão Divino de tempos antigos."
@@ -275,6 +279,14 @@
     "161": {
       "name": "Espada Alada",
       "note": "Fácil de empunhar ataques rápidos."
+    },
+    "162": {
+      "name": "Espada Kulon",
+      "note": "Feito de uma fusão de materiais."
+    },
+    "163": {
+      "name": "Espada Coragem",
+      "note": "Gravado com crista de coragem."
     },
     "164": {
       "name": "Escalibur",
@@ -640,6 +652,10 @@
       "name": "Jaqueta",
       "note": "Jaqueta para o clima ártico."
     },
+    "255": {
+      "name": "Capa Divina",
+      "note": "Manto com uma luz Divina."
+    },
     "256": {
       "name": "Terno Sniper",
       "note": "Terno lendário."
@@ -728,9 +744,17 @@
       "name": "Escudo de Ferro",
       "note": "Escudo robusto feito com ferro."
     },
+    "278": {
+      "name": "Escudo Cavaleiro",
+      "note": "Eficiente escudo de um cavaleiro."
+    },
     "279": {
       "name": "Barreira Proteção",
       "note": "Uma barreira com um amplo alcance."
+    },
+    "280": {
+      "name": "Escudo Kulon",
+      "note": "Escudo feito com fusão de metais."
     },
     "281": {
       "name": "Escudo Divino",
@@ -740,6 +764,10 @@
       "name": "Escudo Sniper",
       "note": "Barricada lendário."
     },
+    "283": {
+      "name": "Defesa Yin Yang",
+      "note": "Guarda Divina dos tempos antigos."
+    },
     "284": {
       "name": "Escudo Ronin",
       "note": "Escudo do lendário Ronin."
@@ -747,6 +775,10 @@
     "285": {
       "name": "Escudo Selvagem",
       "note": "Dragona de combate lendária."
+    },
+    "286": {
+      "name": "Escudo da Coragem",
+      "note": "Gravado com crista da coragem."
     },
     "287": {
       "name": "Escudo Hazard",
@@ -1043,38 +1075,6 @@
     "1001": {
       "name": "Vazio",
       "note": null
-    },
-    "1007": {
-      "name": "Escudo da Coragem",
-      "note": "Gravado com crista da coragem."
-    },
-    "1008": {
-      "name": "Espada Coragem",
-      "note": "Gravado com crista de coragem."
-    },
-    "1015": {
-      "name": "Cajado Divino",
-      "note": "Cajado com uma luz Divina."
-    },
-    "1040": {
-      "name": "Escudo Cavaleiro",
-      "note": "Eficiente escudo de um cavaleiro."
-    },
-    "1042": {
-      "name": "Escudo Kulon",
-      "note": "Escudo feito com fusão de metais."
-    },
-    "1043": {
-      "name": "Espada Kulon",
-      "note": "Feito de uma fusão de materiais."
-    },
-    "1107": {
-      "name": "Capa Divina",
-      "note": "Manto com uma luz Divina."
-    },
-    "1999": {
-      "name": "Defesa Yin Yang",
-      "note": "Guarda Divina dos tempos antigos."
     }
   }
 }
