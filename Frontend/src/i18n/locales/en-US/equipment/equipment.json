@@ -173,8 +173,8 @@
       "note": "A hermit's rod."
     },
     "137": {
-      "name": "Yin Yang Rod",
-      "note": null
+      "name": "Yin Yang Wand",
+      "note": "Diviner's wand from ancient times."
     },
     "138": {
       "name": "Khakkhara",
@@ -217,8 +217,8 @@
       "note": "Drains HP from the wound."
     },
     "148": {
-      "name": "Presa Maligna",
-      "note": null
+      "name": "Evil Fang",
+      "note": "Equipped arm attacks like a tiger."
     },
     "149": {
       "name": "Hazard Fang",
@@ -573,8 +573,8 @@
       "note": "Sturdy helmet made from iron."
     },
     "239": {
-      "name": "Warrior Helmet",
-      "note": null
+      "name": "Knight Helmet",
+      "note": "Efficient helmet for knights."
     },
     "240": {
       "name": "Wing Helmet",
@@ -701,8 +701,8 @@
       "note": "Engraved with crest of courage."
     },
     "272": {
-      "name": "Armadura Cilíndrica",
-      "note": null
+      "name": "Beam Armor",
+      "note": "Shining, decorative armor."
     },
     "273": {
       "name": "Misty Armor",
@@ -884,10 +884,6 @@
       "name": "Divine Rod",
       "note": "Rod with a divine light."
     },
-    "1019": {
-      "name": "Evil Fang",
-      "note": "Equipped arm attacks like a tiger."
-    },
     "1040": {
       "name": "Knight Shield",
       "note": "Efficient shield of a knight."
@@ -908,25 +904,13 @@
       "name": "Wild Shield",
       "note": "Legendary combat epaulet."
     },
-    "1100": {
-      "name": "Yin Yang Wand",
-      "note": "Diviner's wand from ancient times."
-    },
     "1999": {
       "name": "Yin Yang Ward",
       "note": "Diviner's ward from ancient times."
     },
-    "1102": {
-      "name": "Beam Armor",
-      "note": "Shining, decorative armor."
-    },
     "1107": {
       "name": "Divine Robe",
       "note": "Robe with a divine light."
-    },
-    "1130": {
-      "name": "Knight Helmet",
-      "note": "Efficient helmet for knights."
     },
     "1149": {
       "name": "Binder Crest",

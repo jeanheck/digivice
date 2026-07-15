@@ -762,7 +762,7 @@
     },
     "292": {
       "name": "Gema - Poder",
-      "note": "Aumenta o poder."
+      "note": "Aumenta a força."
     },
     "294": {
       "name": "Gema - Defesa",
@@ -865,200 +865,216 @@
       "note": null
     },
     "1007": {
-      "name": "Escudo Bravo",
-      "note": null
+      "name": "Escudo da Coragem",
+      "note": "Gravado com crista da coragem."
     },
     "1008": {
-      "name": "Espada Brava",
-      "note": null
+      "name": "Espada Coragem",
+      "note": "Gravado com crista de coragem."
     },
     "1015": {
       "name": "Cajado Divino",
-      "note": null
-    },
-    "1019": {
-      "name": "Presa Maligna",
-      "note": null
+      "note": "Cajado com uma luz Divina."
     },
     "1040": {
-      "name": "Escudo de Cavaleiro",
-      "note": null
+      "name": "Escudo Cavaleiro",
+      "note": "Eficiente escudo de um cavaleiro."
     },
     "1042": {
-      "name": "Kulon Shield",
-      "note": null
+      "name": "Escudo Kulon",
+      "note": "Escudo feito com fusão de metais."
     },
     "1043": {
-      "name": "Kulon Sword",
-      "note": null
+      "name": "Espada Kulon",
+      "note": "Feito de uma fusão de materiais."
     },
     "1059": {
-      "name": "Needle Glove",
-      "note": null
+      "name": "Luva de Espinho",
+      "note": "Luvas reforçadas com espinho."
     },
     "1096": {
-      "name": "Wild Shield",
-      "note": null
-    },
-    "1100": {
-      "name": "Yin Yang Wand",
-      "note": null
-    },
-    "1102": {
-      "name": "Beam Armor",
-      "note": null
+      "name": "Escudo Selvagem",
+      "note": "Dragona de combate lendária."
     },
     "1107": {
-      "name": "Divine Robe",
-      "note": null
-    },
-    "1130": {
-      "name": "Knight Helmet",
-      "note": null
+      "name": "Capa Divina",
+      "note": "Manto com uma luz Divina."
     },
     "1149": {
-      "name": "Binder Crest",
-      "note": "Reduz as chances de um Digimon selvagem fugir da batalha"
+      "name": "Crista Binder",
+      "note": "Inimigos escapam com menos frequência."
     },
     "1150": {
-      "name": "BIT Adapter",
-      "note": "O Digimon equipado recebe BIT adicional a cada batalha"
+      "name": "Adaptador BIT",
+      "note": "Permite ganhar mais BIT em batalhas."
     },
     "1151": {
-      "name": "Bolt Power 1",
-      "note": "Adds a small amount of Lightning damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Raio 1",
+      "note": "Adiciona trovão fraco aos ataques."
     },
     "1152": {
-      "name": "Bolt Power 2",
-      "note": "Adds a medium amount of Lightning damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Raio 2",
+      "note": "Adiciona trovão aos ataques."
     },
     "1153": {
-      "name": "Bolt Power S",
-      "note": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Raio S",
+      "note": "Adiciona trovão forte aos ataques."
     },
     "1156": {
-      "name": "Dark Power 2",
-      "note": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Trevas 2",
+      "note": "Adiciona escuridão aos ataques."
     },
     "1157": {
-      "name": "Dark Power S",
-      "note": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Trevas S",
+      "note": "Adiciona forte escuridão aos ataques."
     },
     "1159": {
-      "name": "Dance Wing",
-      "note": "Significantly increases the equipped Digimon’s chances of evading an attack"
+      "name": "Asa de Dança",
+      "note": "Desvia com mais facilidade."
     },
     "1160": {
-      "name": "EXP Adapter",
-      "note": "O Digimon equipado recebe EXP adicional a cada batalha"
+      "name": "Adaptador EXP",
+      "note": "Permite ganhar mais EXP em batalhas."
     },
     "1161": {
-      "name": "Fire Power 2",
-      "note": "Adds a medium amount of Fire damage to the equipped Digimon’s basic attacks"
+      "name": "Poder de Fogo 2",
+      "note": "Adiciona fogo aos ataques."
     },
     "1162": {
-      "name": "Fire Power S",
-      "note": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks"
+      "name": "Poder de Fogo S",
+      "note": "Adiciona fogo forte aos ataques."
     },
     "1163": {
-      "name": "Glasses",
-      "note": "Slightly increases the equipped Digimon’s accuracy"
+      "name": "Óculos",
+      "note": "Melhora um pouco o alvo."
     },
     "1164": {
-      "name": "Goggles",
-      "note": "Significantly increases the equipped Digimon’s accuracy"
+      "name": "Óculos Protetor",
+      "note": "Melhora o alvo."
     },
     "1165": {
       "name": "HP Proxy",
-      "note": "Diminui levemente o dano recebido pelo Digimon equipado"
+      "note": "Diminui um pouco do dano levado."
     },
     "1166": {
-      "name": "HP Mega Proxy",
-      "note": "Diminui significativamente o dano recebido pelo Digimon equipado"
+      "name": "Mega HP Proxy",
+      "note": "Diminui o dano."
     },
     "1167": {
-      "name": "Hack Sticker",
-      "note": "Slightly increases the equipped Digimon’s chances of stealing an item"
+      "name": "Adesivo Hack",
+      "note": "Rouba com um pouco mais de facilidade."
     },
     "1168": {
-      "name": "Hack System",
-      "note": "Significantly increases the equipped Digimon’s chances of stealing an item"
+      "name": "Sistema Hack",
+      "note": "Rouba com mais facilidade."
     },
     "1169": {
-      "name": "Metal Power 1",
-      "note": "Adds a small amount of Machine damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Metal 1",
+      "note": "Adiciona metal fraco aos ataques."
     },
     "1170": {
-      "name": "Metal Power 2",
-      "note": "Adds a medium amount of Machine damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Metal 2",
+      "note": "Adiciona metal aos ataques."
     },
     "1171": {
-      "name": "Metal Power S",
-      "note": "Adds a large amount of Machine damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Metal S",
+      "note": "Adiciona metal forte aos ataques."
     },
     "1172": {
       "name": "MP Proxy",
-      "note": "Diminui levemente o uso de MP do Digimon equipado"
+      "note": "Necessita um pouco menos de MP para uso de técnicas."
     },
     "1173": {
-      "name": "MP Mega Proxy",
-      "note": "Diminui significativamente o uso de MP do Digimon equipado"
+      "name": "Mega MP Proxy",
+      "note": "Necessita menos de MP para uso de técnicas."
     },
     "1174": {
-      "name": "Multi Crest",
-      "note": "Permite que o Digimon atacante acerte três vezes, mas reduz o dano de cada golpe individual"
+      "name": "Multi Crista",
+      "note": "Pode atacar duas vezes."
     },
     "1175": {
-      "name": "Over Clocked",
-      "note": "Slightly increases the equipped Digimon’s Blast Gauge gains"
+      "name": "Carga excessiva",
+      "note": "Aumenta o medidor de explosão com um pouco mais de facilidade."
     },
     "1176": {
-      "name": "Over Load",
-      "note": "Significantly increases the equipped Digimon’s Blast Gauge gains"
+      "name": "Sobre Carga",
+      "note": "Aumenta o medidor de explosão com mais facilidade."
     },
     "1177": {
-      "name": "Power Brace",
-      "note": "Significantly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+      "name": "Braçadeira Poder",
+      "note": "Treinamento fica muito fácil."
     },
     "1178": {
-      "name": "Recovery Crest",
-      "note": "Recupera uma pequena quantidade de HP do Digimon equipado a cada turno"
+      "name": "Crista Recuperar",
+      "note": "HP é curada lentamente."
     },
     "1179": {
-      "name": "Runner Sandals",
-      "note": "Slightly increases the equipped Digimon’s chances of running away from battle"
+      "name": "Sandalha Maratona",
+      "note": "Escapa com um pouco mais de facilidade."
     },
     "1180": {
-      "name": "Runner Shoes",
-      "note": "Significantly increases the equipped Digimon’s chances of running away from battle"
+      "name": "Tênis de Corrida",
+      "note": "Escapa com mais facilidade."
     },
     "1181": {
-      "name": "Search Crest",
-      "note": "Increases the equipped Digimon’s critical hit rate"
+      "name": "Procura Crista",
+      "note": "Aumenta a chance de ataques críticos."
     },
     "1182": {
-      "name": "Training Book",
-      "note": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
+      "name": "Livro Treinamento",
+      "note": "Treinamento fica um pouco mais fácil."
     },
     "1184": {
-      "name": "Water Power 2",
-      "note": "Adds a medium amount of Water damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Aquático 2",
+      "note": "Adiciona água aos ataques."
     },
     "1185": {
-      "name": "Water Power S",
-      "note": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Aquático S",
+      "note": "Adiciona água forte aos ataques."
+    },
+    "3451": {
+      "name": "Poder Gelo 2",
+      "note": "Adiciona gelo aos ataques."
+    },
+    "3452": {
+      "name": "Poder Gelo S",
+      "note": "Adiciona gelo forte aos ataques."
     },
     "1187": {
-      "name": "Wind Power 2",
-      "note": "Adds a medium amount of Wind damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Vento 2",
+      "note": "Adiciona vento aos ataques."
     },
     "1188": {
-      "name": "Wind Power S",
-      "note": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
+      "name": "Poder Vento S",
+      "note": "Adiciona vento forte aos ataques."
     },
     "1999": {
-      "name": "Yin Yang Ward",
-      "note": "Diviner's ward from ancient times."
+      "name": "Defesa Yin Yang",
+      "note": "Guarda Divina dos tempos antigos."
+    },
+    "1189": {
+      "name": "Anel - Poder",
+      "note": "Aumenta muito o poder de ataque."
+    },
+    "1190": {
+      "name": "Anel - Defesa",
+      "note": "Aumenta muito a defesa."
+    },
+    "1191": {
+      "name": "Anel - Espírito",
+      "note": "Aumenta muito o espírito."
+    },
+    "1192": {
+      "name": "Anel - Sabedoria",
+      "note": "Aumenta muito a sabedoria."
+    },
+    "1193": {
+      "name": "Anel - Impulso",
+      "note": "Aumenta muito a velocidade."
+    },
+    "1194": {
+      "name": "Anel - Carisma",
+      "note": "Anel super da moda."
     }
   }
 }
