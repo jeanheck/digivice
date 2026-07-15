@@ -912,25 +912,97 @@
       "name": "Adesivo Hack",
       "note": "Rouba com um pouco mais de facilidade."
     },
+    "328": {
+      "name": "Sistema Hack",
+      "note": "Rouba com mais facilidade."
+    },
+    "329": {
+      "name": "Carga Excessiva",
+      "note": "Aumenta o medidor de explosão com um pouco mais de facilidade."
+    },
+    "330": {
+      "name": "Sobre Carga",
+      "note": "Aumenta o medidor de explosão com mais facilidade."
+    },
+    "331": {
+      "name": "Óculos",
+      "note": "Melhora um pouco o alvo."
+    },
+    "332": {
+      "name": "Óculos Protetor",
+      "note": "Melhora o alvo."
+    },
     "333": {
       "name": "Pena de Dança",
       "note": "Desvia com um pouco mais de facilidade."
+    },
+    "334": {
+      "name": "Asa de Dança",
+      "note": "Desvia com mais facilidade."
+    },
+    "335": {
+      "name": "Sandalha Maratona",
+      "note": "Escapa com um pouco mais de facilidade."
+    },
+    "336": {
+      "name": "Tênis de Corrida",
+      "note": "Escapa com mais facilidade."
+    },
+    "337": {
+      "name": "Livro Treinamento",
+      "note": "Treinamento fica um pouco mais fácil."
+    },
+    "338": {
+      "name": "Braçadeira Poder",
+      "note": "Treinamento fica muito fácil."
     },
     "339": {
       "name": "Poder de Fogo 1",
       "note": "Adiciona fogo fraco aos ataques."
     },
+    "340": {
+      "name": "Poder de Fogo 2",
+      "note": "Adiciona fogo aos ataques."
+    },
+    "341": {
+      "name": "Poder de Fogo S",
+      "note": "Adiciona fogo forte aos ataques."
+    },
     "342": {
       "name": "Poder Aquático 1",
       "note": "Adiciona água fraca aos ataques."
+    },
+    "343": {
+      "name": "Poder Aquático 2",
+      "note": "Adiciona água aos ataques."
+    },
+    "344": {
+      "name": "Poder Aquático S",
+      "note": "Adiciona água forte aos ataques."
     },
     "345": {
       "name": "Poder Gelo 1",
       "note": "Adiciona gelo fraco aos ataques."
     },
+    "346": {
+      "name": "Poder Gelo 2",
+      "note": "Adiciona gelo aos ataques."
+    },
+    "347": {
+      "name": "Poder Gelo S",
+      "note": "Adiciona gelo forte aos ataques."
+    },
     "348": {
       "name": "Poder Vento 1",
       "note": "Adiciona vento fraco aos ataques."
+    },
+    "349": {
+      "name": "Poder Vento 2",
+      "note": "Adiciona vento aos ataques."
+    },
+    "350": {
+      "name": "Poder Vento S",
+      "note": "Adiciona vento forte aos ataques."
     },
     "357": {
       "name": "Poder Trevas 1",
@@ -988,30 +1060,6 @@
       "name": "Poder Trevas S",
       "note": "Adiciona forte escuridão aos ataques."
     },
-    "1159": {
-      "name": "Asa de Dança",
-      "note": "Desvia com mais facilidade."
-    },
-    "1161": {
-      "name": "Poder de Fogo 2",
-      "note": "Adiciona fogo aos ataques."
-    },
-    "1162": {
-      "name": "Poder de Fogo S",
-      "note": "Adiciona fogo forte aos ataques."
-    },
-    "1163": {
-      "name": "Óculos",
-      "note": "Melhora um pouco o alvo."
-    },
-    "1164": {
-      "name": "Óculos Protetor",
-      "note": "Melhora o alvo."
-    },
-    "1168": {
-      "name": "Sistema Hack",
-      "note": "Rouba com mais facilidade."
-    },
     "1169": {
       "name": "Poder Metal 1",
       "note": "Adiciona metal fraco aos ataques."
@@ -1023,54 +1071,6 @@
     "1171": {
       "name": "Poder Metal S",
       "note": "Adiciona metal forte aos ataques."
-    },
-    "1175": {
-      "name": "Carga excessiva",
-      "note": "Aumenta o medidor de explosão com um pouco mais de facilidade."
-    },
-    "1176": {
-      "name": "Sobre Carga",
-      "note": "Aumenta o medidor de explosão com mais facilidade."
-    },
-    "1177": {
-      "name": "Braçadeira Poder",
-      "note": "Treinamento fica muito fácil."
-    },
-    "1179": {
-      "name": "Sandalha Maratona",
-      "note": "Escapa com um pouco mais de facilidade."
-    },
-    "1180": {
-      "name": "Tênis de Corrida",
-      "note": "Escapa com mais facilidade."
-    },
-    "1182": {
-      "name": "Livro Treinamento",
-      "note": "Treinamento fica um pouco mais fácil."
-    },
-    "1184": {
-      "name": "Poder Aquático 2",
-      "note": "Adiciona água aos ataques."
-    },
-    "1185": {
-      "name": "Poder Aquático S",
-      "note": "Adiciona água forte aos ataques."
-    },
-    "3451": {
-      "name": "Poder Gelo 2",
-      "note": "Adiciona gelo aos ataques."
-    },
-    "3452": {
-      "name": "Poder Gelo S",
-      "note": "Adiciona gelo forte aos ataques."
-    },
-    "1187": {
-      "name": "Poder Vento 2",
-      "note": "Adiciona vento aos ataques."
-    },
-    "1188": {
-      "name": "Poder Vento S",
-      "note": "Adiciona vento forte aos ataques."
     },
     "1999": {
       "name": "Defesa Yin Yang",

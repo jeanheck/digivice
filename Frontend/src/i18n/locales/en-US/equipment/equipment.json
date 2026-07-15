@@ -912,33 +912,97 @@
       "name": "Hack Sticker",
       "note": "Steal a little easier."
     },
+    "328": {
+      "name": "Hack System",
+      "note": "Steal easier."
+    },
+    "329": {
+      "name": "Over Clocked",
+      "note": "Little easier to increase blast gauge."
+    },
+    "330": {
+      "name": "Over Load",
+      "note": "Easier to increase blast gauge."
+    },
+    "331": {
+      "name": "Glasses",
+      "note": "Aim gets a little better."
+    },
+    "332": {
+      "name": "Goggles",
+      "note": "Aim gets better."
+    },
     "333": {
       "name": "Dance Feather",
       "note": "Evade a little better."
+    },
+    "334": {
+      "name": "Dance Wing",
+      "note": "Evade better."
+    },
+    "335": {
+      "name": "Runner Sandals",
+      "note": "Escape a little easier."
+    },
+    "336": {
+      "name": "Runner Shoes",
+      "note": "Escape easier."
+    },
+    "337": {
+      "name": "Training Book",
+      "note": "Training is a little easier."
+    },
+    "338": {
+      "name": "Power Brace",
+      "note": "Training is much easier."
     },
     "339": {
       "name": "Fire Power 1",
       "note": "Add weak fire to attacks."
     },
+    "340": {
+      "name": "Fire Power 2",
+      "note": "Add fire to attacks."
+    },
+    "341": {
+      "name": "Fire Power S",
+      "note": "Add strong fire to attacks."
+    },
     "342": {
       "name": "Water Power 1",
       "note": "Add weak water to attacks."
+    },
+    "343": {
+      "name": "Water Power 2",
+      "note": "Add water to attacks."
+    },
+    "344": {
+      "name": "Water Power S",
+      "note": "Add strong water to attacks."
     },
     "345": {
       "name": "Ice Power 1",
       "note": "Add weak ice to attacks."
     },
-    "3451": {
+    "346": {
       "name": "Ice Power 2",
       "note": "Add ice to attacks."
     },
-    "3452": {
+    "347": {
       "name": "Ice Power S",
       "note": "Add strong ice to attacks."
     },
     "348": {
       "name": "Wind Power 1",
       "note": "Add weak wind to attacks."
+    },
+    "349": {
+      "name": "Wind Power 2",
+      "note": "Add wind to attacks."
+    },
+    "350": {
+      "name": "Wind Power S",
+      "note": "Add strong wind to attacks."
     },
     "357": {
       "name": "Dark Power 1",
@@ -1000,30 +1064,6 @@
       "name": "Dark Power S",
       "note": "Add strong dark to attacks."
     },
-    "1159": {
-      "name": "Dance Wing",
-      "note": "Evade better."
-    },
-    "1161": {
-      "name": "Fire Power 2",
-      "note": "Add fire to attacks."
-    },
-    "1162": {
-      "name": "Fire Power S",
-      "note": "Add strong fire to attacks."
-    },
-    "1163": {
-      "name": "Glasses",
-      "note": "Aim gets a little better."
-    },
-    "1164": {
-      "name": "Goggles",
-      "note": "Aim gets better."
-    },
-    "1168": {
-      "name": "Hack System",
-      "note": "Steal easier."
-    },
     "1169": {
       "name": "Metal Power 1",
       "note": "Add weak machine to attacks."
@@ -1035,46 +1075,6 @@
     "1171": {
       "name": "Metal Power S",
       "note": "Add strong machine to attacks."
-    },
-    "1175": {
-      "name": "Over Clocked",
-      "note": "Little easier to increase blast gauge."
-    },
-    "1176": {
-      "name": "Over Load",
-      "note": "Easier to increase blast gauge."
-    },
-    "1177": {
-      "name": "Power Brace",
-      "note": "Training is much easier."
-    },
-    "1179": {
-      "name": "Runner Sandals",
-      "note": "Escape a little easier."
-    },
-    "1180": {
-      "name": "Runner Shoes",
-      "note": "Escape easier."
-    },
-    "1182": {
-      "name": "Training Book",
-      "note": "Training is a little easier."
-    },
-    "1184": {
-      "name": "Water Power 2",
-      "note": "Add water to attacks."
-    },
-    "1185": {
-      "name": "Water Power S",
-      "note": "Add strong water to attacks."
-    },
-    "1187": {
-      "name": "Wind Power 2",
-      "note": "Add wind to attacks."
-    },
-    "1188": {
-      "name": "Wind Power S",
-      "note": "Add strong wind to attacks."
     }
   }
 }
