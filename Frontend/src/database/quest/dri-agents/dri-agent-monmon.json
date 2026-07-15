@@ -3,17 +3,17 @@
     "requisites": [],
     "steps": {
         "1": {
-            "location": "0259",
+            "location": "0258",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 21,
+                "y": 82
             },
             "zoomedLocations": [
                 {
-                    "location": "0259",
+                    "location": "0258",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 36.5,
+                        "y": 35
                     }
                 }
             ],
@@ -22,32 +22,32 @@
         "2": {
             "location": "0228",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 76.5,
+                "y": 24.5
             },
             "zoomedLocations": [
                 {
                     "location": "0228",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 14,
+                        "y": 90
                     }
                 }
             ],
             "requisites": []
         },
         "3": {
-            "location": "0259",
+            "location": "0258",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 21,
+                "y": 82
             },
             "zoomedLocations": [
                 {
-                    "location": "0259",
+                    "location": "0258",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 36.5,
+                        "y": 35
                     }
                 }
             ],
