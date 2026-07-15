@@ -68,6 +68,10 @@
       "name": "Iron Glove",
       "note": "Bandage reinforced with metal."
     },
+    "109": {
+      "name": "Needle Glove",
+      "note": "Gloves reinforced with thorns."
+    },
     "110": {
       "name": "Power Arm",
       "note": "Arm gloves that inflicts damage."
@@ -740,6 +744,10 @@
       "name": "Ronin Shield",
       "note": "Legendary ronin's shield."
     },
+    "285": {
+      "name": "Wild Shield",
+      "note": "Legendary combat epaulet."
+    },
     "287": {
       "name": "Hazard Shield",
       "note": "Legendary shield of the wild."
@@ -764,25 +772,49 @@
       "name": "Power Gem",
       "note": "Increse attack power."
     },
+    "293": {
+      "name": "Power Ring",
+      "note": "Increase attack power greatly."
+    },
     "294": {
       "name": "Guard Gem",
       "note": "Increase defense."
+    },
+    "295": {
+      "name": "Guard Ring",
+      "note": "Increase defense greatly."
     },
     "296": {
       "name": "Spirit Gem",
       "note": "Increase spirit."
     },
+    "297": {
+      "name": "Spirit Ring",
+      "note": "Increase spirit greatly."
+    },
     "298": {
       "name": "Wisdom Gem",
       "note": "Increase wisdom."
+    },
+    "299": {
+      "name": "Wisdom Ring",
+      "note": "Increase wisdom greatly."
     },
     "300": {
       "name": "Boost Gem",
       "note": "Increase speed."
     },
+    "301": {
+      "name": "Boost Ring",
+      "note": "Increase speed greatly."
+    },
     "302": {
       "name": "Charisma Gem",
       "note": "Trendy ring."
+    },
+    "303": {
+      "name": "Charisma Ring",
+      "note": "Very trendy ring."
     },
     "304": {
       "name": "Flame Ring",
@@ -832,9 +864,53 @@
       "name": "Prayer Ring",
       "note": "More resistant to KO."
     },
+    "316": {
+      "name": "Multi Crest",
+      "note": "Can attack twice."
+    },
+    "317": {
+      "name": "Search Crest",
+      "note": "Increase critical attacks."
+    },
     "318": {
       "name": "Counter Crest",
       "note": "Automatically retaliate."
+    },
+    "319": {
+      "name": "Binder Crest",
+      "note": "Enemies escape less often."
+    },
+    "320": {
+      "name": "Recover Crest",
+      "note": "HP is healed slowly."
+    },
+    "321": {
+      "name": "EXP Adapter",
+      "note": "Gain more EXP in battles."
+    },
+    "322": {
+      "name": "BIT Adapter",
+      "note": "Gain more BIT in battles."
+    },
+    "323": {
+      "name": "MP Proxy",
+      "note": "Use little less MP for techniques."
+    },
+    "324": {
+      "name": "MP Mega Proxy",
+      "note": "Use less MP for techniques."
+    },
+    "325": {
+      "name": "HP Proxy",
+      "note": "Decrease damage by little."
+    },
+    "326": {
+      "name": "HP Mega Proxy",
+      "note": "Decrease damage."
+    },
+    "327": {
+      "name": "Hack Sticker",
+      "note": "Steal a little easier."
     },
     "333": {
       "name": "Dance Feather",
@@ -896,14 +972,6 @@
       "name": "Kulon Sword",
       "note": "Made from an alloy and powerful."
     },
-    "1059": {
-      "name": "Needle Glove",
-      "note": "Gloves reinforced with thorns."
-    },
-    "1096": {
-      "name": "Wild Shield",
-      "note": "Legendary combat epaulet."
-    },
     "1999": {
       "name": "Yin Yang Ward",
       "note": "Diviner's ward from ancient times."
@@ -911,14 +979,6 @@
     "1107": {
       "name": "Divine Robe",
       "note": "Robe with a divine light."
-    },
-    "1149": {
-      "name": "Binder Crest",
-      "note": "Enemies escape less often."
-    },
-    "1150": {
-      "name": "BIT Adapter",
-      "note": "Gain more BIT in battles."
     },
     "1151": {
       "name": "Bolt Power 1",
@@ -944,10 +1004,6 @@
       "name": "Dance Wing",
       "note": "Evade better."
     },
-    "1160": {
-      "name": "EXP Adapter",
-      "note": "Gain more EXP in battles."
-    },
     "1161": {
       "name": "Fire Power 2",
       "note": "Add fire to attacks."
@@ -963,18 +1019,6 @@
     "1164": {
       "name": "Goggles",
       "note": "Aim gets better."
-    },
-    "1165": {
-      "name": "HP Proxy",
-      "note": "Decrease damage by little."
-    },
-    "1166": {
-      "name": "HP Mega Proxy",
-      "note": "Decrease damage."
-    },
-    "1167": {
-      "name": "Hack Sticker",
-      "note": "Steal a little easier."
     },
     "1168": {
       "name": "Hack System",
@@ -992,18 +1036,6 @@
       "name": "Metal Power S",
       "note": "Add strong machine to attacks."
     },
-    "1172": {
-      "name": "MP Proxy",
-      "note": "Use little less MP for techniques."
-    },
-    "1173": {
-      "name": "MP Mega Proxy",
-      "note": "Use less MP for techniques."
-    },
-    "1174": {
-      "name": "Multi Crest",
-      "note": "Can attack twice."
-    },
     "1175": {
       "name": "Over Clocked",
       "note": "Little easier to increase blast gauge."
@@ -1016,10 +1048,6 @@
       "name": "Power Brace",
       "note": "Training is much easier."
     },
-    "1178": {
-      "name": "Recover Crest",
-      "note": "HP is healed slowly."
-    },
     "1179": {
       "name": "Runner Sandals",
       "note": "Escape a little easier."
@@ -1027,10 +1055,6 @@
     "1180": {
       "name": "Runner Shoes",
       "note": "Escape easier."
-    },
-    "1181": {
-      "name": "Search Crest",
-      "note": "Increase critical attacks."
     },
     "1182": {
       "name": "Training Book",
@@ -1051,30 +1075,6 @@
     "1188": {
       "name": "Wind Power S",
       "note": "Add strong wind to attacks."
-    },
-    "1189": {
-      "name": "Power Ring",
-      "note": "Increase attack power greatly."
-    },
-    "1190": {
-      "name": "Guard Ring",
-      "note": "Increase defense greatly."
-    },
-    "1191": {
-      "name": "Spirit Ring",
-      "note": "Increase spirit greatly."
-    },
-    "1192": {
-      "name": "Wisdom Ring",
-      "note": "Increase wisdom greatly."
-    },
-    "1193": {
-      "name": "Boost Ring",
-      "note": "Increase speed greatly."
-    },
-    "1194": {
-      "name": "Charisma Ring",
-      "note": "Very trendy ring."
     }
   }
 }

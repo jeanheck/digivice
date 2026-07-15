@@ -320,6 +320,24 @@
             "1"
         ]
     },
+    "109": {
+        "type": "weaponSingleHanded",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 68
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 31
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
     "110": {
         "type": "weaponSingleHanded",
         "attributes": [
@@ -4060,6 +4078,24 @@
             "0"
         ]
     },
+    "285": {
+        "type": "shield",
+        "attributes": [
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 29
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 45
+            }
+        ],
+        "equipableDigimon": [
+            "1"
+        ]
+    },
     "287": {
         "type": "shield",
         "attributes": [
@@ -4193,6 +4229,31 @@
             "7"
         ]
     },
+    "293": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "strength",
+                "type": "+",
+                "value": 20
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 5
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
     "294": {
         "type": "accessory",
         "attributes": [
@@ -4205,6 +4266,31 @@
                 "attribute": "charisma",
                 "type": "+",
                 "value": 2
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "295": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "defense",
+                "type": "+",
+                "value": 20
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 5
             }
         ],
         "equipableDigimon": [
@@ -4243,6 +4329,31 @@
             "7"
         ]
     },
+    "297": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "spirit",
+                "type": "+",
+                "value": 20
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 5
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
     "298": {
         "type": "accessory",
         "attributes": [
@@ -4255,6 +4366,31 @@
                 "attribute": "charisma",
                 "type": "+",
                 "value": 2
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "299": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "wisdom",
+                "type": "+",
+                "value": 20
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 5
             }
         ],
         "equipableDigimon": [
@@ -4293,6 +4429,31 @@
             "7"
         ]
     },
+    "301": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "speed",
+                "type": "+",
+                "value": 20
+            },
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 5
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
     "302": {
         "type": "accessory",
         "attributes": [
@@ -4300,6 +4461,26 @@
                 "attribute": "charisma",
                 "type": "+",
                 "value": 20
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "303": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 30
             }
         ],
         "equipableDigimon": [
@@ -4588,9 +4769,205 @@
             "7"
         ]
     },
+    "316": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 5
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "317": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 4
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
     "318": {
         "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 3
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "319": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 3
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "320": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 4
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "321": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 2
+            }
+        ],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "322": {
+        "type": "accessory",
         "attributes": [],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "323": {
+        "type": "accessory",
+        "attributes": [],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "324": {
+        "type": "accessory",
+        "attributes": [],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "325": {
+        "type": "accessory",
+        "attributes": [],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "326": {
+        "type": "accessory",
+        "attributes": [],
+        "equipableDigimon": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
+    },
+    "327": {
+        "type": "accessory",
+        "attributes": [
+            {
+                "attribute": "charisma",
+                "type": "+",
+                "value": 2
+            }
+        ],
         "equipableDigimon": [
             "0",
             "1",
@@ -4841,42 +5218,6 @@
             "0"
         ]
     },
-    "1059": {
-        "type": "weaponSingleHanded",
-        "attributes": [
-            {
-                "attribute": "strength",
-                "type": "+",
-                "value": 68
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 31
-            }
-        ],
-        "equipableDigimon": [
-            "1"
-        ]
-    },
-    "1096": {
-        "type": "shield",
-        "attributes": [
-            {
-                "attribute": "defense",
-                "type": "+",
-                "value": 29
-            },
-            {
-                "attribute": "charisma",
-                "type": "+",
-                "value": 45
-            }
-        ],
-        "equipableDigimon": [
-            "1"
-        ]
-    },
     "1107": {
         "type": "bodyArmor",
         "attributes": [
@@ -4892,34 +5233,6 @@
             }
         ],
         "equipableDigimon": [
-            "7"
-        ]
-    },
-    "1149": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
-    "1150": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
             "7"
         ]
     },
@@ -5007,20 +5320,6 @@
             "7"
         ]
     },
-    "1160": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
     "1161": {
         "type": "accessory",
         "attributes": [],
@@ -5064,48 +5363,6 @@
         ]
     },
     "1164": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
-    "1165": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
-    "1166": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
-    "1167": {
         "type": "accessory",
         "attributes": [],
         "equipableDigimon": [
@@ -5175,48 +5432,6 @@
             "7"
         ]
     },
-    "1172": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
-    "1173": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
-    "1174": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
     "1175": {
         "type": "accessory",
         "attributes": [],
@@ -5259,20 +5474,6 @@
             "7"
         ]
     },
-    "1178": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
     "1179": {
         "type": "accessory",
         "attributes": [],
@@ -5288,20 +5489,6 @@
         ]
     },
     "1180": {
-        "type": "accessory",
-        "attributes": [],
-        "equipableDigimon": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"
-        ]
-    },
-    "1181": {
         "type": "accessory",
         "attributes": [],
         "equipableDigimon": [

@@ -68,6 +68,10 @@
       "name": "Luva de Ferro",
       "note": "Bandagem reforçada com metal."
     },
+    "109": {
+      "name": "Luva de Espinho",
+      "note": "Luvas reforçadas com espinho."
+    },
     "110": {
       "name": "Braço Potente",
       "note": "Luvas de braço que causam dano."
@@ -740,6 +744,10 @@
       "name": "Escudo Ronin",
       "note": "Escudo do lendário Ronin."
     },
+    "285": {
+      "name": "Escudo Selvagem",
+      "note": "Dragona de combate lendária."
+    },
     "287": {
       "name": "Escudo Hazard",
       "note": "Escudo lendário selvagem."
@@ -764,25 +772,49 @@
       "name": "Gema - Poder",
       "note": "Aumenta a força."
     },
+    "293": {
+      "name": "Anel - Poder",
+      "note": "Aumenta muito o poder de ataque."
+    },
     "294": {
       "name": "Gema - Defesa",
       "note": "Aumenta a defesa."
+    },
+    "295": {
+      "name": "Anel - Defesa",
+      "note": "Aumenta muito a defesa."
     },
     "296": {
       "name": "Gema - Espírito",
       "note": "Aumenta o espírito."
     },
+    "297": {
+      "name": "Anel - Espírito",
+      "note": "Aumenta muito o espírito."
+    },
     "298": {
       "name": "Gema - Sabedoria",
       "note": "Aumenta a sabedoria."
+    },
+    "299": {
+      "name": "Anel - Sabedoria",
+      "note": "Aumenta muito a sabedoria."
     },
     "300": {
       "name": "Gema - Impulso",
       "note": "Aumenta a velocidade."
     },
+    "301": {
+      "name": "Anel - Impulso",
+      "note": "Aumenta muito a velocidade."
+    },
     "302": {
       "name": "Gema - Carisma",
       "note": "Anel da moda."
+    },
+    "303": {
+      "name": "Anel - Carisma",
+      "note": "Anel super da moda."
     },
     "304": {
       "name": "Anel de Fogo",
@@ -832,9 +864,53 @@
       "name": "Anel Oração",
       "note": "Mais resistente à nocaute."
     },
+    "316": {
+      "name": "Multi Crista",
+      "note": "Pode atacar duas vezes."
+    },
+    "317": {
+      "name": "Procura Crista",
+      "note": "Aumenta a chance de ataques críticos."
+    },
     "318": {
       "name": "Contra Crista",
       "note": "Retalia automaticamente."
+    },
+    "319": {
+      "name": "Crista Binder",
+      "note": "Inimigos escapam com menos frequência."
+    },
+    "320": {
+      "name": "Crista Recuperar",
+      "note": "HP é curada lentamente."
+    },
+    "321": {
+      "name": "Adaptador EXP",
+      "note": "Permite ganhar mais EXP em batalhas."
+    },
+    "322": {
+      "name": "Adaptador BIT",
+      "note": "Permite ganhar mais BIT em batalhas."
+    },
+    "323": {
+      "name": "MP Proxy",
+      "note": "Necessita um pouco menos de MP para uso de técnicas."
+    },
+    "324": {
+      "name": "Mega MP Proxy",
+      "note": "Necessita menos de MP para uso de técnicas."
+    },
+    "325": {
+      "name": "HP Proxy",
+      "note": "Diminui um pouco do dano levado."
+    },
+    "326": {
+      "name": "Mega HP Proxy",
+      "note": "Diminui o dano."
+    },
+    "327": {
+      "name": "Adesivo Hack",
+      "note": "Rouba com um pouco mais de facilidade."
     },
     "333": {
       "name": "Pena de Dança",
@@ -888,25 +964,9 @@
       "name": "Espada Kulon",
       "note": "Feito de uma fusão de materiais."
     },
-    "1059": {
-      "name": "Luva de Espinho",
-      "note": "Luvas reforçadas com espinho."
-    },
-    "1096": {
-      "name": "Escudo Selvagem",
-      "note": "Dragona de combate lendária."
-    },
     "1107": {
       "name": "Capa Divina",
       "note": "Manto com uma luz Divina."
-    },
-    "1149": {
-      "name": "Crista Binder",
-      "note": "Inimigos escapam com menos frequência."
-    },
-    "1150": {
-      "name": "Adaptador BIT",
-      "note": "Permite ganhar mais BIT em batalhas."
     },
     "1151": {
       "name": "Poder Raio 1",
@@ -932,10 +992,6 @@
       "name": "Asa de Dança",
       "note": "Desvia com mais facilidade."
     },
-    "1160": {
-      "name": "Adaptador EXP",
-      "note": "Permite ganhar mais EXP em batalhas."
-    },
     "1161": {
       "name": "Poder de Fogo 2",
       "note": "Adiciona fogo aos ataques."
@@ -951,18 +1007,6 @@
     "1164": {
       "name": "Óculos Protetor",
       "note": "Melhora o alvo."
-    },
-    "1165": {
-      "name": "HP Proxy",
-      "note": "Diminui um pouco do dano levado."
-    },
-    "1166": {
-      "name": "Mega HP Proxy",
-      "note": "Diminui o dano."
-    },
-    "1167": {
-      "name": "Adesivo Hack",
-      "note": "Rouba com um pouco mais de facilidade."
     },
     "1168": {
       "name": "Sistema Hack",
@@ -980,18 +1024,6 @@
       "name": "Poder Metal S",
       "note": "Adiciona metal forte aos ataques."
     },
-    "1172": {
-      "name": "MP Proxy",
-      "note": "Necessita um pouco menos de MP para uso de técnicas."
-    },
-    "1173": {
-      "name": "Mega MP Proxy",
-      "note": "Necessita menos de MP para uso de técnicas."
-    },
-    "1174": {
-      "name": "Multi Crista",
-      "note": "Pode atacar duas vezes."
-    },
     "1175": {
       "name": "Carga excessiva",
       "note": "Aumenta o medidor de explosão com um pouco mais de facilidade."
@@ -1004,10 +1036,6 @@
       "name": "Braçadeira Poder",
       "note": "Treinamento fica muito fácil."
     },
-    "1178": {
-      "name": "Crista Recuperar",
-      "note": "HP é curada lentamente."
-    },
     "1179": {
       "name": "Sandalha Maratona",
       "note": "Escapa com um pouco mais de facilidade."
@@ -1015,10 +1043,6 @@
     "1180": {
       "name": "Tênis de Corrida",
       "note": "Escapa com mais facilidade."
-    },
-    "1181": {
-      "name": "Procura Crista",
-      "note": "Aumenta a chance de ataques críticos."
     },
     "1182": {
       "name": "Livro Treinamento",
@@ -1051,30 +1075,6 @@
     "1999": {
       "name": "Defesa Yin Yang",
       "note": "Guarda Divina dos tempos antigos."
-    },
-    "1189": {
-      "name": "Anel - Poder",
-      "note": "Aumenta muito o poder de ataque."
-    },
-    "1190": {
-      "name": "Anel - Defesa",
-      "note": "Aumenta muito a defesa."
-    },
-    "1191": {
-      "name": "Anel - Espírito",
-      "note": "Aumenta muito o espírito."
-    },
-    "1192": {
-      "name": "Anel - Sabedoria",
-      "note": "Aumenta muito a sabedoria."
-    },
-    "1193": {
-      "name": "Anel - Impulso",
-      "note": "Aumenta muito a velocidade."
-    },
-    "1194": {
-      "name": "Anel - Carisma",
-      "note": "Anel super da moda."
     }
   }
 }
