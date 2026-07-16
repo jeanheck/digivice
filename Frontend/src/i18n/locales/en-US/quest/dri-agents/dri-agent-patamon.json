@@ -2,6 +2,9 @@
   "driAgentPatamon": {
     "title": "Patamon (DRI Kazuki) (45 ~ 60)",
     "description": "Add Patamon to your Digimon party",
+    "requisites": {
+      "submarimon": "Have the Digi-Egg of Sincerity"
+    },
     "steps": {
       "1": {
         "description": "Look for DRI Kazuki in Central Park",

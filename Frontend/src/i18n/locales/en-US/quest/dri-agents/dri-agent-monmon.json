@@ -2,6 +2,9 @@
   "driAgentMonmon": {
     "title": "Monmon (DRI Yang) (60 ~ 90)",
     "description": "Add Monmon to your Digimon party",
+    "requisites": {
+      "submarimon": "Have the Digi-Egg of Sincerity"
+    },
     "steps": {
       "1": {
         "description": "Look for Dri Yang in Mobius Desert",

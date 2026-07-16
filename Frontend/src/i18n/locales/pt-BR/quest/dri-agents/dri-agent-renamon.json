@@ -2,6 +2,9 @@
   "driAgentRenamon": {
     "title": "Renamon (DRI Michael) (45 ~ 60)",
     "description": "Adicione Renamon ao seu grupo de Digimons",
+    "requisites": {
+      "submarimon": "Possuir o Digi-Ovo da Sinceridade"
+    },
     "steps": {
       "1": {
         "description": "Procure pelo DRI Michael no Central Park",

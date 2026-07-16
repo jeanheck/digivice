@@ -2,6 +2,9 @@
   "driAgentMonmon": {
     "title": "Monmon (DRI Yang) (60 ~ 90)",
     "description": "Adicione Monmon ao seu grupo de Digimons",
+    "requisites": {
+      "submarimon": "Possuir o Digi-Ovo da Sinceridade"
+    },
     "steps": {
       "1": {
         "description": "Procure pelo DRI Yang no Deserto Mobius",

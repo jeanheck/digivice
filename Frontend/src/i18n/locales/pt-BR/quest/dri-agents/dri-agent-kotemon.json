@@ -2,6 +2,9 @@
   "driAgentKotemon": {
     "title": "Kotemon (DRI Ken) (60 ~ 90)",
     "description": "Adicione Kotemon ao seu grupo de Digimons",
+    "requisites": {
+      "submarimon": "Possuir o Digi-Ovo da Sinceridade"
+    },
     "steps": {
       "1": {
         "description": "Procure pelo DRI Ken no Deserto Mobius",

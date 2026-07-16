@@ -1,6 +1,10 @@
 {
     "id": "driAgentRenamon",
-    "requisites": [],
+    "requisites": [
+        {
+            "id": "submarimon"
+        }
+    ],
     "steps": {
         "1": {
             "location": "021D",

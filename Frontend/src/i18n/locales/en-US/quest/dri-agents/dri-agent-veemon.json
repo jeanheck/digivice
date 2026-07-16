@@ -2,6 +2,9 @@
   "driAgentVeemon": {
     "title": "Veemon (DRI Bob) (1 ~ 30)",
     "description": "Add Veemon to your Digimon party",
+    "requisites": {
+      "byakkoLeader": "Have the Byakko Badge"
+    },
     "steps": {
       "1": {
         "description": "Look for Dri Bob in Protocol Ruins",

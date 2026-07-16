@@ -2,6 +2,9 @@
   "driAgentRenamon": {
     "title": "Renamon (DRI Michael) (45 ~ 60)",
     "description": "Add Renamon to your Digimon party",
+    "requisites": {
+      "submarimon": "Have the Digi-Egg of Sincerity"
+    },
     "steps": {
       "1": {
         "description": "Look for Dri Michael in Central Park",

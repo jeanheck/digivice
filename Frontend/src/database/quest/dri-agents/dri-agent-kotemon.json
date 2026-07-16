@@ -1,6 +1,10 @@
 {
     "id": "driAgentKotemon",
-    "requisites": [],
+    "requisites": [
+        {
+            "id": "submarimon"
+        }
+    ],
     "steps": {
         "1": {
             "location": "0258",

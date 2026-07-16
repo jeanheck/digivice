@@ -2,6 +2,9 @@
   "driAgentKumamon": {
     "title": "Kumamon (DRI Yuji) (60 ~ 90)",
     "description": "Add Kumamon to your Digimon party",
+    "requisites": {
+      "submarimon": "Have the Digi-Egg of Sincerity"
+    },
     "steps": {
       "1": {
         "description": "Look for Dri Yuji in Mobius Desert",

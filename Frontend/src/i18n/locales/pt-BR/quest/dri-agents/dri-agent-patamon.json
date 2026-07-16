@@ -2,6 +2,9 @@
   "driAgentPatamon": {
     "title": "Patamon (DRI Kazuki) (45 ~ 60)",
     "description": "Adicione Patamon ao seu grupo de Digimons",
+    "requisites": {
+      "submarimon": "Possuir o Digi-Ovo da Sinceridade"
+    },
     "steps": {
       "1": {
         "description": "Procure pelo DRI Kazuki no Central Park",

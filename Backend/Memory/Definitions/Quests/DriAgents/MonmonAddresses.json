@@ -1,5 +1,11 @@
 {
     "Id": "driAgentMonmon",
+    "Requisites": [
+        {
+            "Id": "submarimon",
+            "Address": "0x00048DC0"
+        }
+    ],
     "Steps": [
         {
             "Number": 1,

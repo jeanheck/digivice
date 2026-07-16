@@ -2,6 +2,9 @@
   "driAgentVeemon": {
     "title": "Veemon (DRI Bob) (1 ~ 30)",
     "description": "Adicione Veemon ao seu grupo de Digimons",
+    "requisites": {
+      "byakkoLeader": "Obter a Insígnia Byakko"
+    },
     "steps": {
       "1": {
         "description": "Procure pelo DRI Bob em Ruínas Protocolo",

@@ -1,6 +1,10 @@
 {
     "id": "driAgentVeemon",
-    "requisites": [],
+    "requisites": [
+        {
+            "id": "byakkoLeader"
+        }
+    ],
     "steps": {
         "1": {
             "location": "0226",
