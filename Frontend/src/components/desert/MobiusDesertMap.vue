@@ -21,6 +21,7 @@ function hasBottomConnection(areaIndex: number): boolean {
         :key="areaIndex"
         :has-right-connection="hasRightConnection(areaIndex - 1)"
         :has-bottom-connection="hasBottomConnection(areaIndex - 1)"
+        :label="areaIndex === 1 ? 'Deserto Barulhento (Sul)' : null"
       />
     </div>
   </div>
