@@ -89,15 +89,20 @@ const doneIconClass = computed(() => {
 });
 
 const onClick = () => {
+  if (props.quest.isUnavailable) {
+    return;
+  }
+
   emit("click", props.quest.id);
 };
 </script>
 
 <template>
   <div
-    class="p-2 rounded border cursor-pointer transition-all duration-200 group relative overflow-hidden"
+    class="p-2 rounded border transition-all duration-200 group relative overflow-hidden"
     :class="[
       cardClass,
+      quest.isUnavailable ? 'cursor-default' : 'cursor-pointer',
       isMainDisplayMode ? 'transition-colors' : '',
     ]"
     @click="onClick"
@@ -116,7 +121,7 @@ const onClick = () => {
       </span>
 
       <span v-if="quest.isDone" :class="doneIconClass">✔</span>
-      <span v-else-if="!isMainDisplayMode && quest.isUnavailable" class="text-xs shrink-0 ml-2 text-gray-500">—</span>
+      <span v-else-if="!isMainDisplayMode && quest.isUnavailable" class="text-xs shrink-0 ml-2">🚫</span>
       <span v-else-if="!isMainDisplayMode && quest.isLocked" class="text-xs shrink-0 ml-2">🔒</span>
       <span v-else-if="!isMainDisplayMode && quest.isNew" class="text-xs shrink-0 ml-2">❕</span>
     </div>

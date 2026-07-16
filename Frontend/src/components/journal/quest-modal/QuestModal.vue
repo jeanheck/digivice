@@ -118,15 +118,6 @@ watch(currentStepNumber, (nextCurrentStepNumber, previousCurrentStepNumber) => {
 
     <div class="flex min-h-0 flex-1 flex-col gap-6 overflow-hidden p-4 lg:flex-row">
       <div class="flex min-w-0 flex-1 flex-col gap-4 overflow-y-auto custom-scroll lg:flex-[1.4] lg:pr-2">
-        <div
-          v-if="questViewModel!.isUnavailable"
-          class="bg-[#000a1a] p-3 rounded border border-gray-700/50 shadow-inner"
-        >
-          <p class="text-gray-400 text-sm leading-relaxed font-medium">
-            {{ $t("journal.questUnavailableStarter") }}
-          </p>
-        </div>
-
         <div class="bg-[#000a1a] p-3 rounded border border-blue-900/50 shadow-inner">
           <p class="text-gray-300 text-sm leading-relaxed font-medium">
             {{ $t(`${questViewModel!.id}.description`) }}
