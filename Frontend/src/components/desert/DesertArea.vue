@@ -6,14 +6,14 @@ defineProps<{
 </script>
 
 <template>
-  <div class="relative w-[10px] h-[10px] bg-white border border-black">
+  <div class="relative w-15 h-15 bg-amber-600 border border-amber-300">
     <span
       v-if="hasRightConnection"
-      class="absolute left-full top-1/2 h-px w-[10px] -translate-y-1/2 bg-black"
+      class="absolute left-full top-1/2 h-px w-15 -translate-y-1/2 border-amber-300"
     />
     <span
       v-if="hasBottomConnection"
-      class="absolute left-1/2 top-full h-[10px] w-px -translate-x-1/2 bg-black"
+      class="absolute left-1/2 top-full h-15 w-px -translate-x-1/2 border-amber-300"
     />
   </div>
 </template>

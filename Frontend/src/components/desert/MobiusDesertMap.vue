@@ -15,7 +15,7 @@ function hasBottomConnection(areaIndex: number): boolean {
 
 <template>
   <div class="flex h-full w-full items-center justify-center">
-    <div class="grid grid-cols-6 gap-[10px]">
+    <div class="grid grid-cols-6 gap-8.75">
       <DesertArea
         v-for="areaIndex in DESERT_AREA_COUNT"
         :key="areaIndex"
