@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import DesertArea from "@/components/desert/DesertArea.vue";
 import { DESERT_AREAS, DESERT_GRID_SIZE } from "@/constants/desert.constant";
+import type { DesertAreaType } from "@/constants/desert.constant";
 
 const desertAreas = DESERT_AREAS.flat();
 
@@ -10,6 +11,22 @@ function hasRightConnection(areaIndex: number): boolean {
 
 function hasBottomConnection(areaIndex: number): boolean {
   return areaIndex < desertAreas.length - DESERT_GRID_SIZE;
+}
+
+function getRightNeighborType(areaIndex: number): DesertAreaType | null {
+  if (!hasRightConnection(areaIndex)) {
+    return null;
+  }
+
+  return desertAreas[areaIndex + 1]?.type ?? null;
+}
+
+function getBottomNeighborType(areaIndex: number): DesertAreaType | null {
+  if (!hasBottomConnection(areaIndex)) {
+    return null;
+  }
+
+  return desertAreas[areaIndex + DESERT_GRID_SIZE]?.type ?? null;
 }
 </script>
 
@@ -23,6 +40,9 @@ function hasBottomConnection(areaIndex: number): boolean {
         :has-bottom-connection="hasBottomConnection(areaIndex)"
         :label="desertArea.label"
         :type="desertArea.type"
+        :note="desertArea.note ?? ''"
+        :right-neighbor-type="getRightNeighborType(areaIndex)"
+        :bottom-neighbor-type="getBottomNeighborType(areaIndex)"
       />
     </div>
   </div>
