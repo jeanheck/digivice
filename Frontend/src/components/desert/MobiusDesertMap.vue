@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import DesertArea from "@/components/desert/DesertArea.vue";
+import { DESERT_AREAS, DESERT_GRID_SIZE } from "@/constants/desert.constant";
 
-const GRID_SIZE = 6;
-const DESERT_AREA_COUNT = GRID_SIZE * GRID_SIZE;
+const desertAreas = DESERT_AREAS.flat();
 
 function hasRightConnection(areaIndex: number): boolean {
-  return (areaIndex + 1) % GRID_SIZE !== 0;
+  return (areaIndex + 1) % DESERT_GRID_SIZE !== 0;
 }
 
 function hasBottomConnection(areaIndex: number): boolean {
-  return areaIndex < DESERT_AREA_COUNT - GRID_SIZE;
+  return areaIndex < desertAreas.length - DESERT_GRID_SIZE;
 }
 </script>
 
@@ -17,11 +17,12 @@ function hasBottomConnection(areaIndex: number): boolean {
   <div class="flex h-full w-full items-center justify-center">
     <div class="grid grid-cols-6 gap-8.75">
       <DesertArea
-        v-for="areaIndex in DESERT_AREA_COUNT"
+        v-for="(desertArea, areaIndex) in desertAreas"
         :key="areaIndex"
-        :has-right-connection="hasRightConnection(areaIndex - 1)"
-        :has-bottom-connection="hasBottomConnection(areaIndex - 1)"
-        :label="areaIndex === 1 ? 'Deserto Barulhento (Sul)' : null"
+        :has-right-connection="hasRightConnection(areaIndex)"
+        :has-bottom-connection="hasBottomConnection(areaIndex)"
+        :label="desertArea.label"
+        :type="desertArea.type"
       />
     </div>
   </div>

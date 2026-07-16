@@ -1,14 +1,30 @@
 <script setup lang="ts">
-defineProps<{
+import { computed } from "vue";
+import type { DesertAreaType } from "@/constants/desert.constant";
+
+const props = defineProps<{
   hasRightConnection: boolean;
   hasBottomConnection: boolean;
-  label?: string | null;
+  label: string;
+  type: DesertAreaType;
 }>();
+
+const backgroundClassByType: Record<DesertAreaType, string> = {
+  noiseDesert: "bg-green-300",
+  mirageTower: "bg-cyan-300",
+  normal: "bg-[#e0db8e]",
+  border: "bg-gray-400",
+};
+
+const backgroundClass = computed(() => {
+  return backgroundClassByType[props.type];
+});
 </script>
 
 <template>
   <div
-    class="relative flex w-16 h-16 items-center justify-center bg-[#e0db8e]"
+    class="relative flex w-16 h-16 items-center justify-center"
+    :class="backgroundClass"
   >
     <span
       v-if="label"
