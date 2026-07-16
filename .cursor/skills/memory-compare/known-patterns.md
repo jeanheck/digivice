@@ -278,13 +278,21 @@ Wired as `SeabedRoute` on the Player backend pipeline (`PlayerChanged`).
 
 Table incomplete — more dive points not yet mapped.
 
-### IsSubmerged — `0x48D7A` (confirmed, in PlayerAddresses)
+### IsSubmerged / SeabedRouteType — `0x48D7A` (confirmed, in PlayerAddresses)
 
-Wired as `IsSubmerged` on the Player backend pipeline (`PlayerChanged`).
-Domain `bool` from byte `== 0x01`.
+Wired as `SeabedRouteType` on the Player backend pipeline (`PlayerChanged`).
 
-`0x01` for the entire underwater session; `0x00` on surface. Indicates
-submerged state, not which route.
+**Seabed:** `0x01` for the entire underwater session; `0x00` on surface.
+Indicates submerged state, not which route. (Investigation notes formerly
+called this `IsSubmerged`.)
+
+**Mobius Desert (confirmed):** same byte holds cell-pair index **`0x01`–`0x08`**.
+Each value is shared by exactly two cells (`0258` + `0259`). Combined with
+`MapId` uniquely identifies all 16 maze cells. See
+[mobius-desert-investigation.md](mobius-desert-investigation.md).
+
+Do not treat `SeabedRouteType == 1` as “underwater only” — Mobius uses `1` as
+a valid pair id when `MapId` is `0258`/`0259`.
 
 ### How it was found
 
@@ -293,6 +301,15 @@ different surface entries through the same seabed corridor, (4) surface emerge,
 (5) reverse direction on the same dock pair. Cross-route diff on step 3
 isolated `0x48D78`; step 5 showed `D78` is corridor identity (still `0x08`
 for Duel Island → Divermon's Lake).
+
+### Mobius Desert cell-pair — `0x48D7A` (confirmed)
+
+Same address as `SeabedRouteType`. Sixteen snapshots
+(`Snapshots/{A–D}{1–4}.bin`): `MapId` only `0258`/`0259`; `0x48D78` stuck at
+`0x01`; `0x48D7A` alone matches the 8 horizontal MapId-twin pairs. Exhaustive
+RAM scan found no other byte with that topology.
+
+Identity: `(MapId, 0x48D7A)` with `D7A ∈ 1..8`.
 
 ---
 
