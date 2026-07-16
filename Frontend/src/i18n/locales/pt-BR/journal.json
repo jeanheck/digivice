@@ -6,6 +6,7 @@
     "driAgents": "Agentes DRI",
     "noSideQuests": "Nenhuma Missão Secundária Ativa",
     "questCompleted": "Missão concluída",
+    "questUnavailableStarter": "Obtido no pack inicial",
     "prerequisites": "Pré-requisitos",
     "missionSteps": "Passos da Missão",
     "clickStep": "CLIQUE EM UM PASSO DA MISSÃO PARA CARREGAR DADOS GEOGRÁFICOS",

@@ -6,6 +6,7 @@
     "driAgents": "DRI Agents",
     "noSideQuests": "No Side Quests Active",
     "questCompleted": "Quest completed",
+    "questUnavailableStarter": "Owned on starter pack",
     "prerequisites": "Prerequisites",
     "missionSteps": "Mission Steps",
     "clickStep": "CLICK A MISSION STEP TO BOOT GEOGRAPHIC DATA",
