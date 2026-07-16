@@ -11,9 +11,22 @@ const props = defineProps<{
   note?: string;
   rightNeighborType: DesertAreaType | null;
   bottomNeighborType: DesertAreaType | null;
+  clickable: boolean;
+}>();
+
+const emit = defineEmits<{
+  (e: "click"): void;
 }>();
 
 const { t } = useI18n();
+
+function onClick(): void {
+  if (!props.clickable) {
+    return;
+  }
+
+  emit("click");
+}
 
 const backgroundClassByType: Record<DesertAreaType, string> = {
   noiseDesert: "bg-green-300",
@@ -26,7 +39,7 @@ const textClassByType: Record<DesertAreaType, string> = {
   noiseDesert: "text-[11px] text-blue-800",
   mirageTower: "text-[11px] text-blue-800",
   normal: "text-[20px] text-blue-800",
-  border: "text-[20px] text-white",
+  border: "text-[20px] text-gray-500",
 };
 
 const translationKeyByType: Partial<Record<DesertAreaType, string>> = {
@@ -82,7 +95,8 @@ const bottomConnectionClass = computed(() => {
 <template>
   <div
     class="relative flex w-16 h-16 items-center justify-center"
-    :class="backgroundClass"
+    :class="[backgroundClass, clickable ? 'cursor-pointer hover:brightness-110' : '']"
+    @click="onClick"
   >
     <span
       v-if="displayLabel"

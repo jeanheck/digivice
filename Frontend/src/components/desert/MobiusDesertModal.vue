@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import MobiusDesertMap from "@/components/desert/MobiusDesertMap.vue";
 import MobiusDesertArea from "@/components/desert/MobiusDesertArea.vue";
+import type { DesertAreaType } from "@/constants/desert.constant";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -15,6 +16,21 @@ const emit = defineEmits<{
 const isModalOpen = computed(() => {
   return props.isOpen;
 });
+
+const selectedAreaType = ref<DesertAreaType | null>(null);
+
+watch(
+  () => props.isOpen,
+  (isOpen) => {
+    if (isOpen) {
+      selectedAreaType.value = null;
+    }
+  }
+);
+
+function onSelectArea(areaType: DesertAreaType): void {
+  selectedAreaType.value = areaType;
+}
 
 function closeModal(): void {
   emit("close");
@@ -37,10 +53,10 @@ function closeModal(): void {
 
     <div class="flex flex-1 min-h-0 h-full w-full">
       <div class="h-full min-h-0 w-1/2">
-        <MobiusDesertMap />
+        <MobiusDesertMap @select-area="onSelectArea" />
       </div>
       <div class="h-full min-h-0 w-1/2">
-        <MobiusDesertArea />
+        <MobiusDesertArea :selected-area-type="selectedAreaType" />
       </div>
     </div>
   </Modal>

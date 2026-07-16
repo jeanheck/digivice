@@ -3,7 +3,23 @@ import DesertArea from "@/components/desert/DesertArea.vue";
 import { DESERT_AREAS, DESERT_GRID_SIZE } from "@/constants/desert.constant";
 import type { DesertAreaType } from "@/constants/desert.constant";
 
+const emit = defineEmits<{
+  "select-area": [areaType: DesertAreaType];
+}>();
+
 const desertAreas = DESERT_AREAS.flat();
+
+function isClickable(areaType: DesertAreaType): boolean {
+  return areaType === "noiseDesert" || areaType === "mirageTower";
+}
+
+function onAreaClick(areaType: DesertAreaType): void {
+  if (!isClickable(areaType)) {
+    return;
+  }
+
+  emit("select-area", areaType);
+}
 
 function hasRightConnection(areaIndex: number): boolean {
   return (areaIndex + 1) % DESERT_GRID_SIZE !== 0;
@@ -43,6 +59,8 @@ function getBottomNeighborType(areaIndex: number): DesertAreaType | null {
         :note="desertArea.note ?? ''"
         :right-neighbor-type="getRightNeighborType(areaIndex)"
         :bottom-neighbor-type="getBottomNeighborType(areaIndex)"
+        :clickable="isClickable(desertArea.type)"
+        @click="onAreaClick(desertArea.type)"
       />
     </div>
   </div>
