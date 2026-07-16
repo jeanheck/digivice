@@ -2,6 +2,12 @@
     "id": "driAgentVeemon",
     "requisites": [
         {
+            "id": "partyLevel",
+            "type": "partyLevelRange",
+            "min": 1,
+            "max": 30
+        },
+        {
             "id": "byakkoLeader"
         }
     ],

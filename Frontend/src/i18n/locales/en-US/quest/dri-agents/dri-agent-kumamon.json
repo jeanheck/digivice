@@ -1,8 +1,9 @@
 {
   "driAgentKumamon": {
-    "title": "Kumamon (DRI Yuji) (60 ~ 90)",
+    "title": "Kumamon (DRI Yuji)",
     "description": "Add Kumamon to your Digimon party",
     "requisites": {
+      "partyLevel": "Have a party level between 60 and 90",
       "submarimon": "Have the Digi-Egg of Sincerity"
     },
     "steps": {

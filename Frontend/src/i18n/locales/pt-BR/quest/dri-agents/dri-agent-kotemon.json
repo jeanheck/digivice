@@ -1,8 +1,9 @@
 {
   "driAgentKotemon": {
-    "title": "Kotemon (DRI Ken) (60 ~ 90)",
+    "title": "Kotemon (DRI Ken)",
     "description": "Adicione Kotemon ao seu grupo de Digimons",
     "requisites": {
+      "partyLevel": "Ter o nível do grupo entre 60 e 90",
       "submarimon": "Possuir o Digi-Ovo da Sinceridade"
     },
     "steps": {

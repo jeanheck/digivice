@@ -2,6 +2,12 @@
     "id": "driAgentKumamon",
     "requisites": [
         {
+            "id": "partyLevel",
+            "type": "partyLevelRange",
+            "min": 60,
+            "max": 90
+        },
+        {
             "id": "submarimon"
         }
     ],

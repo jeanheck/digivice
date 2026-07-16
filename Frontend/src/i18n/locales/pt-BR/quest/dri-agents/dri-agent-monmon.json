@@ -1,8 +1,9 @@
 {
   "driAgentMonmon": {
-    "title": "Monmon (DRI Yang) (60 ~ 90)",
+    "title": "Monmon (DRI Yang)",
     "description": "Adicione Monmon ao seu grupo de Digimons",
     "requisites": {
+      "partyLevel": "Ter o nível do grupo entre 60 e 90",
       "submarimon": "Possuir o Digi-Ovo da Sinceridade"
     },
     "steps": {

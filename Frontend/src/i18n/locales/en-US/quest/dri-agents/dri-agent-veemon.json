@@ -1,8 +1,9 @@
 {
   "driAgentVeemon": {
-    "title": "Veemon (DRI Bob) (1 ~ 30)",
+    "title": "Veemon (DRI Bob)",
     "description": "Add Veemon to your Digimon party",
     "requisites": {
+      "partyLevel": "Have a party level between 1 and 30",
       "byakkoLeader": "Have the Byakko Badge"
     },
     "steps": {

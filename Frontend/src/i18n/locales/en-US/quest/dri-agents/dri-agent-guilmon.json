@@ -1,7 +1,10 @@
 {
   "driAgentGuilmon": {
-    "title": "Guilmon (DRI Jimmy) (30 ~ 45)",
+    "title": "Guilmon (DRI Jimmy)",
     "description": "Add Guilmon to your Digimon party",
+    "requisites": {
+      "partyLevel": "Have a party level between 30 and 45"
+    },
     "steps": {
       "1": {
         "description": "Look for Dri Jimmy in Seiryu City",

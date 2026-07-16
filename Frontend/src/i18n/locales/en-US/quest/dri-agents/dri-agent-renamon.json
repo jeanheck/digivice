@@ -1,8 +1,9 @@
 {
   "driAgentRenamon": {
-    "title": "Renamon (DRI Michael) (45 ~ 60)",
+    "title": "Renamon (DRI Michael)",
     "description": "Add Renamon to your Digimon party",
     "requisites": {
+      "partyLevel": "Have a party level between 45 and 60",
       "submarimon": "Have the Digi-Egg of Sincerity"
     },
     "steps": {

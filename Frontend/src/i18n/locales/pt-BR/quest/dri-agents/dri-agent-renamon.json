@@ -1,8 +1,9 @@
 {
   "driAgentRenamon": {
-    "title": "Renamon (DRI Michael) (45 ~ 60)",
+    "title": "Renamon (DRI Michael)",
     "description": "Adicione Renamon ao seu grupo de Digimons",
     "requisites": {
+      "partyLevel": "Ter o nível do grupo entre 45 e 60",
       "submarimon": "Possuir o Digi-Ovo da Sinceridade"
     },
     "steps": {

@@ -1,8 +1,9 @@
 {
   "driAgentMonmon": {
-    "title": "Monmon (DRI Yang) (60 ~ 90)",
+    "title": "Monmon (DRI Yang)",
     "description": "Add Monmon to your Digimon party",
     "requisites": {
+      "partyLevel": "Have a party level between 60 and 90",
       "submarimon": "Have the Digi-Egg of Sincerity"
     },
     "steps": {

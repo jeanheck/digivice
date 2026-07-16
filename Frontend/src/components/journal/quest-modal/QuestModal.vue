@@ -5,6 +5,7 @@ import StepPanel from "./StepPanel.vue";
 import Steps from "./Steps.vue";
 import Requisites from "./Requisites.vue";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
+import { FooterPresenter } from "@/presenters/footer.presenter";
 import { QuestModalPresenter } from "@/presenters/journal/quest-modal.presenter.ts";
 import { useGameStore } from "@/stores/use-game-store";
 
@@ -29,7 +30,9 @@ const questViewModel = computed(() => {
     return null;
   }
 
-  return QuestModalPresenter.getQuestViewModel(journal, props.questId);
+  const digimonSlots = store.currentState?.party?.slots ?? [];
+  const partyLevel = FooterPresenter.getPartyLevel(digimonSlots);
+  return QuestModalPresenter.getQuestViewModel(journal, props.questId, partyLevel);
 });
 
 const isModalOpen = computed(() => {

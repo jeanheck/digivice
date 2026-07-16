@@ -1,7 +1,10 @@
 {
   "driAgentAgumon": {
-    "title": "Agumon (DRI Johann) (30 ~ 45)",
+    "title": "Agumon (DRI Johann)",
     "description": "Add Agumon to your Digimon party",
+    "requisites": {
+      "partyLevel": "Have a party level between 30 and 45"
+    },
     "steps": {
       "1": {
         "description": "Look for Dri Johann in Tyranno Valley",

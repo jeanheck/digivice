@@ -2,6 +2,12 @@
     "id": "driAgentPatamon",
     "requisites": [
         {
+            "id": "partyLevel",
+            "type": "partyLevelRange",
+            "min": 45,
+            "max": 60
+        },
+        {
             "id": "submarimon"
         }
     ],

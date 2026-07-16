@@ -1,7 +1,10 @@
 {
   "driAgentAgumon": {
-    "title": "Agumon (DRI Johann) (30 ~ 45)",
+    "title": "Agumon (DRI Johann)",
     "description": "Adicione Agumon ao seu grupo de Digimons",
+    "requisites": {
+      "partyLevel": "Ter o nível do grupo entre 30 e 45"
+    },
     "steps": {
       "1": {
         "description": "Procure pelo DRI Johann no Vale Tyranno",

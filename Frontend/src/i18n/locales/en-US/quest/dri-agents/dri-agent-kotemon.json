@@ -1,8 +1,9 @@
 {
   "driAgentKotemon": {
-    "title": "Kotemon (DRI Ken) (60 ~ 90)",
+    "title": "Kotemon (DRI Ken)",
     "description": "Add Kotemon to your Digimon party",
     "requisites": {
+      "partyLevel": "Have a party level between 60 and 90",
       "submarimon": "Have the Digi-Egg of Sincerity"
     },
     "steps": {

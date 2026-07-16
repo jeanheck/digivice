@@ -1,8 +1,9 @@
 {
   "driAgentVeemon": {
-    "title": "Veemon (DRI Bob) (1 ~ 30)",
+    "title": "Veemon (DRI Bob)",
     "description": "Adicione Veemon ao seu grupo de Digimons",
     "requisites": {
+      "partyLevel": "Ter o nível do grupo entre 1 e 30",
       "byakkoLeader": "Obter a Insígnia Byakko"
     },
     "steps": {
