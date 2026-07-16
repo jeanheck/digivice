@@ -3,7 +3,8 @@
     "Requisites": [
         {
             "Id": "submarimon",
-            "Address": "0x00048DC0"
+            "Address": "0x00048DC0",
+            "BitMasks": ["0x01"]
         }
     ],
     "Steps": [

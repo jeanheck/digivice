@@ -9,5 +9,8 @@ namespace Backend.Memory.Addresses.Journals.Quests
 
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long Address { get; set; }
+
+        [JsonConverter(typeof(HexStringListToLongListConverter))]
+        public List<long> BitMasks { get; set; } = [];
     }
 }

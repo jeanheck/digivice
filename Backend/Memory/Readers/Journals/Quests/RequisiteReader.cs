@@ -11,8 +11,32 @@ namespace Backend.Memory.Readers.Journals.Quests
             return new RequisiteResource
             {
                 Id = addresses.Id,
-                Value = FlagByteHelper.Read(memoryReader, addresses.Address)
+                Value = ReadValue(addresses.Address, addresses.BitMasks)
             };
+        }
+
+        private byte ReadValue(long address, List<long> bitMasks)
+        {
+            if (bitMasks.Count == 0)
+            {
+                return FlagByteHelper.Read(memoryReader, address);
+            }
+
+            if (bitMasks.Count == 1)
+            {
+                return FlagByteHelper.Read(memoryReader, address, bitMasks[0]);
+            }
+
+            byte rawValue = FlagByteHelper.Read(memoryReader, address);
+            foreach (long bitMask in bitMasks)
+            {
+                if ((rawValue & bitMask) == 0)
+                {
+                    return 0;
+                }
+            }
+
+            return (byte)(rawValue & bitMasks[0]);
         }
     }
 }

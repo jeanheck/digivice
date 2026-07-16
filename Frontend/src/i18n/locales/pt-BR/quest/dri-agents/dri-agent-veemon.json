@@ -30,7 +30,7 @@
           }
         },
         "requisites": {
-          "guilmonDDNA": "DDNA de Veemon"
+          "veemonDDNA": "DDNA de Veemon"
         }
       }
     }
