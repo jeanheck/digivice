@@ -2,7 +2,9 @@
 import { computed, ref } from "vue";
 import LanguageSelector from "@/components/footer/LanguageSelector.vue";
 import DocksButton from "@/components/footer/DocksButton.vue";
+import MobiusDesertButton from "@/components/footer/MobiusDesertButton.vue";
 import SeabedModal from "@/components/seabed/SeabedModal.vue";
+import MobiusDesertModal from "@/components/desert/MobiusDesertModal.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useI18n } from "vue-i18n";
@@ -36,6 +38,7 @@ const locationViewModel = computed(() => {
 });
 
 const isSeabedModalOpen = ref(false);
+const isMobiusDesertModalOpen = ref(false);
 
 function onDocksClick(): void {
   isSeabedModalOpen.value = true;
@@ -43,6 +46,14 @@ function onDocksClick(): void {
 
 function closeSeabedModal(): void {
   isSeabedModalOpen.value = false;
+}
+
+function onMobiusDesertClick(): void {
+  isMobiusDesertModalOpen.value = true;
+}
+
+function closeMobiusDesertModal(): void {
+  isMobiusDesertModalOpen.value = false;
 }
 
 const tooltipPosition = useTooltipPosition(300);
@@ -63,6 +74,22 @@ const moveDocksTooltip = (event: MouseEvent) => {
 };
 
 const hideDocksTooltip = () => {
+  hide();
+  isTitleOnlyTooltip.value = false;
+};
+
+const showMobiusDesertTooltip = (event: MouseEvent) => {
+  isTitleOnlyTooltip.value = true;
+  tooltipTitle.value = t("map.mobiusDesert");
+  tooltipText.value = "";
+  showAt(event, { maxWidth: 300, placement: "above", align: "left" });
+};
+
+const moveMobiusDesertTooltip = (event: MouseEvent) => {
+  move(event, "above");
+};
+
+const hideMobiusDesertTooltip = () => {
   hide();
   isTitleOnlyTooltip.value = false;
 };
@@ -112,12 +139,12 @@ const groupPartyLevel = computed(() => {
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('player.tamer') }}:</span>
       <span class="text-yellow-400 drop-shadow">{{ playerName }}</span>
     </div>
-    
+
     <div class="font-bold text-ms flex items-baseline">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase">{{ $t('player.bits') }}:</span>
       <span class="text-white">{{ playerBits }}</span>
     </div>
-    
+
     <div class="font-bold text-ms flex items-baseline cursor-help"
       @mouseenter="showGroupCharismaTooltip"
       @mousemove="moveGroupCharismaTooltip"
@@ -142,12 +169,18 @@ const groupPartyLevel = computed(() => {
           @move-tooltip="moveDocksTooltip"
           @hide-tooltip="hideDocksTooltip"
         />
+        <MobiusDesertButton
+          @click="onMobiusDesertClick"
+          @show-tooltip="showMobiusDesertTooltip"
+          @move-tooltip="moveMobiusDesertTooltip"
+          @hide-tooltip="hideMobiusDesertTooltip"
+        />
       </div>
 
       <div class="flex items-center gap-3 border-r border-blue-900 pr-4 mr-2">
         <LanguageSelector />
       </div>
-      
+
       <div class="flex items-center gap-2">
         <span class="w-3 h-3 rounded-full" :class="isConnected ? 'bg-green-500' : 'bg-red-500'"></span>
       </div>
@@ -158,6 +191,11 @@ const groupPartyLevel = computed(() => {
     :is-open="isSeabedModalOpen"
     :location="locationViewModel"
     @close="closeSeabedModal"
+  />
+
+  <MobiusDesertModal 
+    :is-open="isMobiusDesertModalOpen" 
+    @close="closeMobiusDesertModal" 
   />
 
   <Tooltip
