@@ -1,11 +1,13 @@
 {
   "location": {
+    "0500": "Choose your initial pack",
     "1000": "In Menu",
     "1300": "Card Shop",
     "1400": "Reward Screen",
     "0C01": "Saving game",
     "0A00": "In Training",
     "0D00": "Dr. Kadomatsu / Piximon",
+    "0E03": "Cutscene",
     "0F00": "In Store",
     "0600": "In battle",
     "0200": "Asuka City",
@@ -95,6 +97,9 @@
     "025E": "Byakko Dome",
     "025F": "Storage Room",
     "0260": "Underground Cave",
+    "02D7": "Street Corner",
+    "02D8": "Online Center",
+    "02D9": "Chamber Room",
     "02E0": "Seabed",
     "02E1": "Seabed",
     "02E2": "Seabed",

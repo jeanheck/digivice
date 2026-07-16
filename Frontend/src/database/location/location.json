@@ -1,4 +1,9 @@
 {
+  "0500":{
+    "image": "Initial Pack Screen",
+    "enemies": [],
+    "dock": false
+  },
   "1000": {
     "image": "In Menu Screen",
     "enemies": [],
@@ -26,6 +31,11 @@
   },
   "0D00": {
     "image": "Kadomatsu Piximon Screen",
+    "enemies": [],
+    "dock": false
+  },
+  "0E03": {
+    "image": "Cutscene",
     "enemies": [],
     "dock": false
   },
@@ -746,6 +756,21 @@
   },
   "0260": {
     "image": "Underground Cave",
+    "enemies": [],
+    "dock": false
+  },
+  "02D7": {
+    "image": "Corner Street",
+    "enemies": [],
+    "dock": false
+  },
+  "02D8": {
+    "image": "Online Center",
+    "enemies": [],
+    "dock": false
+  },
+  "02D9": {
+    "image": "Chamber Room",
     "enemies": [],
     "dock": false
   },

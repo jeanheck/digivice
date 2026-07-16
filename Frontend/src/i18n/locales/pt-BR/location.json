@@ -1,11 +1,13 @@
 {
   "location": {
+    "0500": "Escolha seu pacote inicial",
     "1000": "No Menu",
     "1300": "Loja de Cartas",
     "1400": "Tela de recompensas",
     "0C01": "Salvando o jogo",
     "0A00": "Em Treinamento",
     "0D00": "Dr. Kadomatsu / Piximon",
+    "0E03": "Cutscene",
     "0F00": "Na Loja",
     "0600": "Em batalha",
     "0200": "Cidade Asuka",
@@ -95,6 +97,9 @@
     "025E": "Cúpula Byakko",
     "025F": "Sala de Armazenamento",
     "0260": "Caverna Subterrânea",
+    "02D7": "Rua Corner",
+    "02D8": "Centro Online",
+    "02D9": "Câmara",
     "02E0": "Solo Oceânico",
     "02E1": "Solo Oceânico",
     "02E2": "Solo Oceânico",
