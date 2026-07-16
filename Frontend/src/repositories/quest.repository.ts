@@ -70,14 +70,14 @@ export class QuestRepository {
     }
     public static getDriAgentsRaw(): QuestRaw[] {
         return [
-            this.driAgentGuilmonTable,
             this.driAgentAgumonTable,
-            this.driAgentVeemonTable,
+            this.driAgentGuilmonTable,
+            this.driAgentPatamonTable,
+            this.driAgentRenamonTable,
+            this.driAgentKotemonTable,
             this.driAgentKumamonTable,
             this.driAgentMonmonTable,
-            this.driAgentKotemonTable,
-            this.driAgentRenamonTable,
-            this.driAgentPatamonTable
+            this.driAgentVeemonTable
         ];
     }
 }
