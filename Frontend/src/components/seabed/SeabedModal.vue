@@ -74,7 +74,7 @@ const closeModal = () => {
   <Modal
     :is-open="isModalOpen"
     max-width="max-w-[1300px]"
-    max-height="h-[650px] max-h-[620px]"
+    max-height="h-[650px] max-h-[650px]"
     panel-class="w-[1300px]"
     @close="closeModal"
   >
