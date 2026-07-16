@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import type { DesertAreaType } from "@/constants/desert.constant";
+import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
 
 const props = defineProps<{
   hasRightConnection: boolean;
   hasBottomConnection: boolean;
   label: string;
-  type: DesertAreaType;
+  type: DesertAreaTypeViewModel;
   note?: string;
-  rightNeighborType: DesertAreaType | null;
-  bottomNeighborType: DesertAreaType | null;
+  rightNeighborType: DesertAreaTypeViewModel | null;
+  bottomNeighborType: DesertAreaTypeViewModel | null;
   clickable: boolean;
 }>();
 
@@ -28,28 +28,28 @@ function onClick(): void {
   emit("click");
 }
 
-const backgroundClassByType: Record<DesertAreaType, string> = {
+const backgroundClassByType: Record<DesertAreaTypeViewModel, string> = {
   noiseDesert: "bg-green-300",
   mirageTower: "bg-cyan-300",
   normal: "bg-[#e0db8e]",
   border: "bg-gray-700",
 };
 
-const textClassByType: Record<DesertAreaType, string> = {
+const textClassByType: Record<DesertAreaTypeViewModel, string> = {
   noiseDesert: "text-[11px] text-blue-800",
   mirageTower: "text-[11px] text-blue-800",
   normal: "text-[20px] text-blue-800",
   border: "text-[20px] text-gray-500",
 };
 
-const translationKeyByType: Partial<Record<DesertAreaType, string>> = {
+const translationKeyByType: Partial<Record<DesertAreaTypeViewModel, string>> = {
   noiseDesert: "location.0257",
   mirageTower: "location.025A",
 };
 
 function resolveConnectionColorClass(
-  sourceType: DesertAreaType,
-  targetType: DesertAreaType | null
+  sourceType: DesertAreaTypeViewModel,
+  targetType: DesertAreaTypeViewModel | null
 ): string {
   if (sourceType === "border" || targetType === "border") {
     return "bg-gray-500";

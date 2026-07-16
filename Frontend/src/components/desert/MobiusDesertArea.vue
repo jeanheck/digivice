@@ -4,16 +4,16 @@ import Dock from "@/components/seabed/Dock.vue";
 import noiseDesertMapUrl from "@/assets/maps/Noise Desert.webp";
 import mirageTowerMapUrl from "@/assets/maps/Mirage Tower.webp";
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
-import type { DesertAreaType } from "@/constants/desert.constant";
+import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
 import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/seabed-map-frame";
 
 const props = defineProps<{
-  selectedAreaType: DesertAreaType | null;
+  selectedAreaType: DesertAreaTypeViewModel | null;
 }>();
 
 const coordinates: CoordinatesViewModel | null = null;
 
-const imageUrlByAreaType: Partial<Record<DesertAreaType, string>> = {
+const imageUrlByAreaType: Partial<Record<DesertAreaTypeViewModel, string>> = {
   noiseDesert: noiseDesertMapUrl,
   mirageTower: mirageTowerMapUrl,
 };

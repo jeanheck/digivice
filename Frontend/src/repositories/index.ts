@@ -7,3 +7,4 @@ export { LocationRepository } from "./location.repository";
 export { DockRepository } from "./dock.repository";
 export { SeabedDirectionsRepository as SeabedDirectionRepository } from "./seabed-direction.repository";
 export { SeabedRoutesRepository } from "./seabed-routes.repository";
+export { DesertAreasRepository } from "./desert-areas.repository";

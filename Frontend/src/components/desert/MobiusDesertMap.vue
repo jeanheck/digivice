@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import DesertArea from "@/components/desert/DesertArea.vue";
-import { DESERT_AREAS, DESERT_GRID_SIZE } from "@/constants/desert.constant";
-import type { DesertAreaType } from "@/constants/desert.constant";
+import { DesertPresenter } from "@/presenters/desert/desert.presenter";
+import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
 
 const emit = defineEmits<{
-  "select-area": [areaType: DesertAreaType];
+  "select-area": [areaType: DesertAreaTypeViewModel];
 }>();
 
-const desertAreas = DESERT_AREAS.flat();
+const desertAreasViewModel = DesertPresenter.getAreas();
+const desertAreas = desertAreasViewModel.areas.flat();
+const desertGridSize = desertAreasViewModel.gridSize;
 
-function isClickable(areaType: DesertAreaType): boolean {
+function isClickable(areaType: DesertAreaTypeViewModel): boolean {
   return areaType === "noiseDesert" || areaType === "mirageTower";
 }
 
-function onAreaClick(areaType: DesertAreaType): void {
+function onAreaClick(areaType: DesertAreaTypeViewModel): void {
   if (!isClickable(areaType)) {
     return;
   }
@@ -22,14 +24,14 @@ function onAreaClick(areaType: DesertAreaType): void {
 }
 
 function hasRightConnection(areaIndex: number): boolean {
-  return (areaIndex + 1) % DESERT_GRID_SIZE !== 0;
+  return (areaIndex + 1) % desertGridSize !== 0;
 }
 
 function hasBottomConnection(areaIndex: number): boolean {
-  return areaIndex < desertAreas.length - DESERT_GRID_SIZE;
+  return areaIndex < desertAreas.length - desertGridSize;
 }
 
-function getRightNeighborType(areaIndex: number): DesertAreaType | null {
+function getRightNeighborType(areaIndex: number): DesertAreaTypeViewModel | null {
   if (!hasRightConnection(areaIndex)) {
     return null;
   }
@@ -37,12 +39,12 @@ function getRightNeighborType(areaIndex: number): DesertAreaType | null {
   return desertAreas[areaIndex + 1]?.type ?? null;
 }
 
-function getBottomNeighborType(areaIndex: number): DesertAreaType | null {
+function getBottomNeighborType(areaIndex: number): DesertAreaTypeViewModel | null {
   if (!hasBottomConnection(areaIndex)) {
     return null;
   }
 
-  return desertAreas[areaIndex + DESERT_GRID_SIZE]?.type ?? null;
+  return desertAreas[areaIndex + desertGridSize]?.type ?? null;
 }
 </script>
 
