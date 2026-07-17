@@ -49,6 +49,41 @@ namespace Backend.Memory.Repositories
             return cacheField;
         }
 
+        private QuestAddresses GetDriAgentGuilmon() =>
+            LoadAndCache(ref driAgentGuilmon, "Quests/DriAgents/DriAgentGuilmonAddresses.json");
+        private QuestAddresses GetDriAgentAgumon() =>
+            LoadAndCache(ref driAgentAgumon, "Quests/DriAgents/DriAgentAgumonAddresses.json");
+        private QuestAddresses GetDriAgentVeemon() =>
+            LoadAndCache(ref driAgentVeemon, "Quests/DriAgents/DriAgentVeemonAddresses.json");
+        private QuestAddresses GetDriAgentKumamon() =>
+            LoadAndCache(ref driAgentKumamon, "Quests/DriAgents/DriAgentKumamonAddresses.json");
+        private QuestAddresses GetDriAgentMonmon() =>
+            LoadAndCache(ref driAgentMonmon, "Quests/DriAgents/DriAgentMonmonAddresses.json");
+        private QuestAddresses GetDriAgentKotemon() =>
+            LoadAndCache(ref driAgentKotemon, "Quests/DriAgents/DriAgentKotemonAddresses.json");
+        private QuestAddresses GetDriAgentRenamon() =>
+            LoadAndCache(ref driAgentRenamon, "Quests/DriAgents/DriAgentRenamonAddresses.json");
+        private QuestAddresses GetDriAgentPatamon() =>
+            LoadAndCache(ref driAgentPatamon, "Quests/DriAgents/DriAgentPatamonAddresses.json");
+
+        private QuestAddresses GetSideQuestFolderBag() =>
+            LoadAndCache(ref sideQuestFolderBag, "Quests/SideQuests/FolderBagAddresses.json");
+        private QuestAddresses GetSideQuestTreeBoots() =>
+            LoadAndCache(ref sideQuestTreeBoots, "Quests/SideQuests/TreeBootsAddresses.json");
+        private QuestAddresses GetSideQuestFishingPole() =>
+            LoadAndCache(ref sideQuestFishingPole, "Quests/SideQuests/FishingPoleAddresses.json");
+
+        private QuestAddresses GetLegendaryWeaponEternally() =>
+            LoadAndCache(ref legendaryWeaponEternally, "Quests/LegendaryWeapons/EternallyAddresses.json");
+        private QuestAddresses GetLegendaryWeaponInvincible() =>
+            LoadAndCache(ref legendaryWeaponInvincible, "Quests/LegendaryWeapons/InvincibleAddresses.json");
+        private QuestAddresses GetLegendaryWeaponMuramasa() =>
+            LoadAndCache(ref legendaryWeaponMuramasa, "Quests/LegendaryWeapons/MuramasaAddresses.json");
+        private QuestAddresses GetLegendaryWeaponSuperNova() =>
+            LoadAndCache(ref legendaryWeaponSuperNova, "Quests/LegendaryWeapons/SuperNovaAddresses.json");
+        private QuestAddresses GetLegendaryWeaponPunishment() =>
+            LoadAndCache(ref legendaryWeaponPunishment, "Quests/LegendaryWeapons/PunishmentAddresses.json");
+
         public PlayerAddresses GetPlayerAddresses() =>
             LoadAndCache(ref playerAddresses, "PlayerAddresses.json");
 
@@ -74,15 +109,6 @@ namespace Backend.Memory.Repositories
             GetSideQuestFishingPole()
         ];
 
-        private QuestAddresses GetSideQuestFolderBag() =>
-            LoadAndCache(ref sideQuestFolderBag, "Quests/SideQuests/FolderBagAddresses.json");
-
-        private QuestAddresses GetSideQuestTreeBoots() =>
-            LoadAndCache(ref sideQuestTreeBoots, "Quests/SideQuests/TreeBootsAddresses.json");
-
-        private QuestAddresses GetSideQuestFishingPole() =>
-            LoadAndCache(ref sideQuestFishingPole, "Quests/SideQuests/FishingPoleAddresses.json");
-
         public List<QuestAddresses> GetAllLegendaryWeapons() =>
         [
             GetLegendaryWeaponEternally(),
@@ -91,21 +117,6 @@ namespace Backend.Memory.Repositories
             GetLegendaryWeaponSuperNova(),
             GetLegendaryWeaponPunishment()
         ];
-
-        private QuestAddresses GetLegendaryWeaponEternally() =>
-            LoadAndCache(ref legendaryWeaponEternally, "Quests/LegendaryWeapons/EternallyAddresses.json");
-
-        private QuestAddresses GetLegendaryWeaponInvincible() =>
-            LoadAndCache(ref legendaryWeaponInvincible, "Quests/LegendaryWeapons/InvincibleAddresses.json");
-
-        private QuestAddresses GetLegendaryWeaponMuramasa() =>
-            LoadAndCache(ref legendaryWeaponMuramasa, "Quests/LegendaryWeapons/MuramasaAddresses.json");
-
-        private QuestAddresses GetLegendaryWeaponSuperNova() =>
-            LoadAndCache(ref legendaryWeaponSuperNova, "Quests/LegendaryWeapons/SuperNovaAddresses.json");
-
-        private QuestAddresses GetLegendaryWeaponPunishment() =>
-            LoadAndCache(ref legendaryWeaponPunishment, "Quests/LegendaryWeapons/PunishmentAddresses.json");
 
         public List<QuestAddresses> GetAllDriAgents() =>
         [
@@ -118,30 +129,6 @@ namespace Backend.Memory.Repositories
             GetDriAgentRenamon(),
             GetDriAgentPatamon()
         ];
-
-        private QuestAddresses GetDriAgentGuilmon() =>
-            LoadAndCache(ref driAgentGuilmon, "Quests/DriAgents/GuilmonAddresses.json");
-
-        private QuestAddresses GetDriAgentAgumon() =>
-            LoadAndCache(ref driAgentAgumon, "Quests/DriAgents/AgumonAddresses.json");
-
-        private QuestAddresses GetDriAgentVeemon() =>
-            LoadAndCache(ref driAgentVeemon, "Quests/DriAgents/VeemonAddresses.json");
-
-        private QuestAddresses GetDriAgentKumamon() =>
-            LoadAndCache(ref driAgentKumamon, "Quests/DriAgents/KumamonAddresses.json");
-
-        private QuestAddresses GetDriAgentMonmon() =>
-            LoadAndCache(ref driAgentMonmon, "Quests/DriAgents/MonmonAddresses.json");
-
-        private QuestAddresses GetDriAgentKotemon() =>
-            LoadAndCache(ref driAgentKotemon, "Quests/DriAgents/KotemonAddresses.json");
-
-        private QuestAddresses GetDriAgentRenamon() =>
-            LoadAndCache(ref driAgentRenamon, "Quests/DriAgents/RenamonAddresses.json");
-
-        private QuestAddresses GetDriAgentPatamon() =>
-            LoadAndCache(ref driAgentPatamon, "Quests/DriAgents/PatamonAddresses.json");
 
         public AuctionAddresses GetAuctionAddresses() =>
             LoadAndCache(ref auctionAddresses, "AuctionAddresses.json");

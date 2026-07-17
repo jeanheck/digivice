@@ -91,14 +91,14 @@ Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`
 
 | Agent | Status | Notes |
 |-------|--------|-------|
-| Agumon | Mapped | `AgumonAddresses.json` |
-| Guilmon | Mapped | `GuilmonAddresses.json` |
-| Veemon | Mapped | `VeemonAddresses.json` |
-| Kumamon | Mapped | `KumamonAddresses.json` |
-| Monmon | Mapped | `MonmonAddresses.json` |
-| Kotemon | Mapped | `KotemonAddresses.json` |
-| Renamon | Mapped | `RenamonAddresses.json` |
-| Patamon | Mapped | `PatamonAddresses.json` |
+| Agumon | Mapped | `DriAgentAgumonAddresses.json` |
+| Guilmon | Mapped | `DriAgentGuilmonAddresses.json` |
+| Veemon | Mapped | `DriAgentVeemonAddresses.json` |
+| Kumamon | Mapped | `DriAgentKumamonAddresses.json` |
+| Monmon | Mapped | `DriAgentMonmonAddresses.json` |
+| Kotemon | Mapped | `DriAgentKotemonAddresses.json` |
+| Renamon | Mapped | `DriAgentRenamonAddresses.json` |
+| Patamon | Mapped | `DriAgentPatamonAddresses.json` |
 
 Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`,
 `investigation_guilmon/`, `kumamon_*.bin`, `monmon_*.bin`, `kotemon_*.bin`,

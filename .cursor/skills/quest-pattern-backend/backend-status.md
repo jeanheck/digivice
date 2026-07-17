@@ -26,20 +26,20 @@ Maintained by quest-pattern-backend skill. Append entries; do not remove without
 
 ### DRI agents (2026-06-06)
 
-- `driAgentGuilmon` — `Quests/DriAgents/GuilmonAddresses.json` (3 steps + `guilmonDDNA` requisite)
-- `driAgentAgumon` — `Quests/DriAgents/AgumonAddresses.json` (3 steps + `agumonDDNA` requisite)
-- `driAgentVeemon` — `Quests/DriAgents/VeemonAddresses.json` (3 steps + `veemonDDNA` requisite)
+- `driAgentGuilmon` — `Quests/DriAgents/DriAgentGuilmonAddresses.json` (3 steps + `guilmonDDNA` requisite)
+- `driAgentAgumon` — `Quests/DriAgents/DriAgentAgumonAddresses.json` (3 steps + `agumonDDNA` requisite)
+- `driAgentVeemon` — `Quests/DriAgents/DriAgentVeemonAddresses.json` (3 steps + `veemonDDNA` requisite)
 
 ### DRI agents (2026-07-12)
 
-- `driAgentKumamon` — `Quests/DriAgents/KumamonAddresses.json` (3 steps + `kumamonDDNA` requisite)
-- `driAgentMonmon` — `Quests/DriAgents/MonmonAddresses.json` (3 steps + `monmonDDNA` requisite)
+- `driAgentKumamon` — `Quests/DriAgents/DriAgentKumamonAddresses.json` (3 steps + `kumamonDDNA` requisite)
+- `driAgentMonmon` — `Quests/DriAgents/DriAgentMonmonAddresses.json` (3 steps + `monmonDDNA` requisite)
 
 ### DRI agents (2026-07-13)
 
-- `driAgentKotemon` — `Quests/DriAgents/KotemonAddresses.json` (3 steps + `kotemonDDNA` requisite)
-- `driAgentRenamon` — `Quests/DriAgents/RenamonAddresses.json` (3 steps + `renamonDDNA` requisite)
+- `driAgentKotemon` — `Quests/DriAgents/DriAgentKotemonAddresses.json` (3 steps + `kotemonDDNA` requisite)
+- `driAgentRenamon` — `Quests/DriAgents/DriAgentRenamonAddresses.json` (3 steps + `renamonDDNA` requisite)
 
 ### DRI agents (2026-07-14)
 
-- `driAgentPatamon` — `Quests/DriAgents/PatamonAddresses.json` (3 steps + `patamonDDNA` requisite)
+- `driAgentPatamon` — `Quests/DriAgents/DriAgentPatamonAddresses.json` (3 steps + `patamonDDNA` requisite)
