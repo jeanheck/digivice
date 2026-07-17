@@ -11,6 +11,9 @@
         "description": "Look for Dri Bob in Protocol Ruins",
         "locations": {
           "0": {
+            "locationTarget": "Protocol Ruins"
+          },
+          "1": {
             "locationTarget": "DRI Bob"
           }
         }
@@ -27,6 +30,9 @@
         "description": "Deliver Veemon's DNA to DRI Bob",
         "locations": {
           "0": {
+            "locationTarget": "Protocol Ruins"
+          },
+          "1": {
             "locationTarget": "DRI Bob"
           }
         },

@@ -11,6 +11,9 @@
         "description": "Procure pelo DRI Bob em Ruínas Protocolo",
         "locations": {
           "0": {
+            "locationTarget": "Ruínas Protocolo"
+          },
+          "1": {
             "locationTarget": "DRI Bob"
           }
         }
@@ -27,6 +30,9 @@
         "description": "Entregue o DDNA do Veemon para DRI Bob",
         "locations": {
           "0": {
+            "locationTarget": "Ruínas Protocolo"
+          },
+          "1": {
             "locationTarget": "DRI Bob"
           }
         },
