@@ -18,7 +18,7 @@ public class AuctionLoaderTests : LoaderIntegrationTestBase
         var auctionReader = new AuctionReader(memoryReaderMock.Object);
         var auctionLoader = new AuctionLoader(addressesRepository, auctionReader);
 
-        var auctionsResource = auctionLoader.Load();
+        var auctionsResource = auctionLoader.LoadAuctions();
 
         Assert.Equal(5, auctionsResource.Auctions.Count);
         Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);

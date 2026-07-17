@@ -8,18 +8,14 @@ using Xunit;
 public class AuctionReaderTests
 {
     [Fact]
-    public void Read_ShouldExtractParticipationPerAuction_FromSharedByte()
+    public void Read_ShouldExtractParticipationPerAuction_FromEntryAddressAndBitMask()
     {
-        var addresses = new AuctionAddresses
+        var addresses = new Dictionary<string, AuctionAddresses>
         {
-            Address = 0x0004B38A,
-            Auctions = new Dictionary<string, AuctionEntryAddresses>
-            {
-                ["divineBarrier"] = new() { BitMask = 0x01 },
-                ["hazardShield"] = new() { BitMask = 0x02 },
-                ["sniperShield"] = new() { BitMask = 0x04 },
-                ["dramonShield"] = new() { BitMask = 0x08 },
-            },
+            ["divineBarrier"] = new() { Address = 0x0004B38A, BitMask = 0x01 },
+            ["hazardShield"] = new() { Address = 0x0004B38A, BitMask = 0x02 },
+            ["sniperShield"] = new() { Address = 0x0004B38A, BitMask = 0x04 },
+            ["dramonShield"] = new() { Address = 0x0004B38A, BitMask = 0x08 },
         };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
@@ -34,19 +30,15 @@ public class AuctionReaderTests
         Assert.Equal(0x00, GetValue(result, "hazardShield"));
         Assert.Equal(0x04, GetValue(result, "sniperShield"));
         Assert.Equal(0x00, GetValue(result, "dramonShield"));
-        memoryReaderMock.Verify(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1), Times.Once);
+        memoryReaderMock.Verify(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1), Times.Exactly(4));
     }
 
     [Fact]
     public void Read_ShouldReturnZeroParticipation_WhenMemoryReaderReturnsZero()
     {
-        var addresses = new AuctionAddresses
+        var addresses = new Dictionary<string, AuctionAddresses>
         {
-            Address = 0x0004B38A,
-            Auctions = new Dictionary<string, AuctionEntryAddresses>
-            {
-                ["divineBarrier"] = new() { BitMask = 0x01 },
-            },
+            ["divineBarrier"] = new() { Address = 0x0004B38A, BitMask = 0x01 },
         };
 
         var memoryReaderMock = new Mock<IMemoryReader>();

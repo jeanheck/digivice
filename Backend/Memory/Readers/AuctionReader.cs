@@ -6,21 +6,12 @@ namespace Backend.Memory.Readers
 {
     public class AuctionReader(IMemoryReader memoryReader) : IAuctionReader
     {
-        public AuctionsResource Read(AuctionAddresses addresses)
+        public AuctionResource Read(KeyValuePair<string, AuctionAddresses> AuctionAddresses)
         {
-            byte rawValue = FlagByteHelper.Read(memoryReader, addresses.Address);
-
-            var auctionResources = addresses.Auctions.Select(auctionEntry => {
-                return new AuctionResource
-                {
-                    Id = auctionEntry.Key,
-                    Value = (byte)(rawValue & auctionEntry.Value.BitMask),
-                };
-            }).ToList();
-
-            return new AuctionsResource
+            return new AuctionResource
             {
-                Auctions = auctionResources,
+                Id = AuctionAddresses.Key,
+                Value = FlagByteHelper.Read(memoryReader, AuctionAddresses.Value.Address, AuctionAddresses.Value.BitMask),
             };
         }
     }

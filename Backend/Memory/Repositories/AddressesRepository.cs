@@ -29,7 +29,7 @@ namespace Backend.Memory.Repositories
         private QuestAddresses? driAgentKotemon;
         private QuestAddresses? driAgentRenamon;
         private QuestAddresses? driAgentPatamon;
-        private AuctionAddresses? auctionAddresses;
+        private Dictionary<string, AuctionAddresses>? auctionAddresses;
 
         private T LoadAndCache<T>(ref T? cacheField, string fileName) where T : class, new()
         {
@@ -130,7 +130,7 @@ namespace Backend.Memory.Repositories
             GetDriAgentPatamon()
         ];
 
-        public AuctionAddresses GetAuctionAddresses() =>
+        public Dictionary<string, AuctionAddresses> GetAuctionAddresses() =>
             LoadAndCache(ref auctionAddresses, "AuctionAddresses.json");
     }
 }

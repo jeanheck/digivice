@@ -4,6 +4,6 @@ namespace Backend.Application.Loaders
 {
     public interface IAuctionLoader
     {
-        AuctionsResource Load();
+        List<AuctionResource> LoadAuctions();
     }
 }
