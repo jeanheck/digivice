@@ -8,51 +8,60 @@ using Xunit;
 public class AuctionReaderTests
 {
     [Fact]
-    public void Read_ShouldExtractParticipationPerAuction_FromEntryAddressAndBitMask()
+    public void Read_ShouldExtractParticipation_FromEntryAddressAndBitMask()
     {
-        var addresses = new Dictionary<string, AuctionAddresses>
-        {
-            ["divineBarrier"] = new() { Address = 0x0004B38A, BitMask = 0x01 },
-            ["hazardShield"] = new() { Address = 0x0004B38A, BitMask = 0x02 },
-            ["sniperShield"] = new() { Address = 0x0004B38A, BitMask = 0x04 },
-            ["dramonShield"] = new() { Address = 0x0004B38A, BitMask = 0x08 },
-        };
+        var auctionEntry = new KeyValuePair<string, AuctionAddresses>(
+            "divineBarrier",
+            new AuctionAddresses { Address = 0x0004B38A, BitMask = 0x01 }
+        );
 
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x05]);
 
         var reader = new AuctionReader(memoryReaderMock.Object);
 
-        var result = reader.Read(addresses);
+        var result = reader.Read(auctionEntry);
 
-        Assert.Equal(4, result.Auctions.Count);
-        Assert.Equal(0x01, GetValue(result, "divineBarrier"));
-        Assert.Equal(0x00, GetValue(result, "hazardShield"));
-        Assert.Equal(0x04, GetValue(result, "sniperShield"));
-        Assert.Equal(0x00, GetValue(result, "dramonShield"));
-        memoryReaderMock.Verify(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1), Times.Exactly(4));
+        Assert.Equal("divineBarrier", result.Id);
+        Assert.Equal(0x01, result.Value);
+        memoryReaderMock.Verify(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1), Times.Once);
+    }
+
+    [Fact]
+    public void Read_ShouldReturnZeroParticipation_WhenBitMaskIsNotSet()
+    {
+        var auctionEntry = new KeyValuePair<string, AuctionAddresses>(
+            "hazardShield",
+            new AuctionAddresses { Address = 0x0004B38A, BitMask = 0x02 }
+        );
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x05]);
+
+        var reader = new AuctionReader(memoryReaderMock.Object);
+
+        var result = reader.Read(auctionEntry);
+
+        Assert.Equal("hazardShield", result.Id);
+        Assert.Equal(0x00, result.Value);
     }
 
     [Fact]
     public void Read_ShouldReturnZeroParticipation_WhenMemoryReaderReturnsZero()
     {
-        var addresses = new Dictionary<string, AuctionAddresses>
-        {
-            ["divineBarrier"] = new() { Address = 0x0004B38A, BitMask = 0x01 },
-        };
+        var auctionEntry = new KeyValuePair<string, AuctionAddresses>(
+            "divineBarrier",
+            new AuctionAddresses { Address = 0x0004B38A, BitMask = 0x01 }
+        );
 
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x00]);
 
         var reader = new AuctionReader(memoryReaderMock.Object);
 
-        var result = reader.Read(addresses);
+        var result = reader.Read(auctionEntry);
 
-        Assert.Equal(0x00, Assert.Single(result.Auctions).Value);
-    }
-
-    private static byte GetValue(Backend.Memory.Resources.AuctionsResource resource, string auctionId)
-    {
-        return resource.Auctions.Single(auction => auction.Id == auctionId).Value;
+        Assert.Equal("divineBarrier", result.Id);
+        Assert.Equal(0x00, result.Value);
     }
 }

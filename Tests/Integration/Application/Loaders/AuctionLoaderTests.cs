@@ -18,13 +18,13 @@ public class AuctionLoaderTests : LoaderIntegrationTestBase
         var auctionReader = new AuctionReader(memoryReaderMock.Object);
         var auctionLoader = new AuctionLoader(addressesRepository, auctionReader);
 
-        var auctionsResource = auctionLoader.LoadAuctions();
+        var auctions = auctionLoader.LoadAuctions();
 
-        Assert.Equal(5, auctionsResource.Auctions.Count);
-        Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
-        Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x02);
-        Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "sniperShield" && auction.Value == 0x00);
-        Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "dramonShield" && auction.Value == 0x00);
-        Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "yinYangWand" && auction.Value == 0x00);
+        Assert.Equal(5, auctions.Count);
+        Assert.Contains(auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
+        Assert.Contains(auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x02);
+        Assert.Contains(auctions, auction => auction.Id == "sniperShield" && auction.Value == 0x00);
+        Assert.Contains(auctions, auction => auction.Id == "dramonShield" && auction.Value == 0x00);
+        Assert.Contains(auctions, auction => auction.Id == "yinYangWand" && auction.Value == 0x00);
     }
 }
