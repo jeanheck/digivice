@@ -11,6 +11,12 @@
         "description": "Look for Dri Yuji in Mobius Desert",
         "locations": {
           "0": {
+            "locationTarget": "Mobius Desert (A2)"
+          },
+          "1": {
+            "locationTarget": "Mobius Desert (B2)"
+          },
+          "2": {
             "locationTarget": "DRI Yuji"
           }
         }
@@ -36,6 +42,12 @@
         "description": "Deliver Kumamon's DNA to DRI Yuji",
         "locations": {
           "0": {
+            "locationTarget": "Mobius Desert (A2)"
+          },
+          "1": {
+            "locationTarget": "Mobius Desert (B2)"
+          },
+          "2": {
             "locationTarget": "DRI Yuji"
           }
         },

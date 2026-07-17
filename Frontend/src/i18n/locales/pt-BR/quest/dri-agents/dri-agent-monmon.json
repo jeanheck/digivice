@@ -11,16 +11,16 @@
         "description": "Procure pelo DRI Yang no Deserto Mobius",
         "locations": {
           "0": {
-            "locationTarget": "Mobius Desert (A4)"
+            "locationTarget": "Deserto Mobius (A4)"
           },
           "1": {
-            "locationTarget": "Mobius Desert (B4)"
+            "locationTarget": "Deserto Mobius (B4)"
           },
           "2": {
-            "locationTarget": "Mobius Desert (C4)"
+            "locationTarget": "Deserto Mobius (C4)"
           },
           "3": {
-            "locationTarget": "Mobius Desert (D4)"
+            "locationTarget": "Deserto Mobius (D4)"
           },
           "4": {
             "locationTarget": "DRI Yang"
@@ -48,16 +48,16 @@
         "description": "Entregue o DDNA do Monmon para DRI Yang",
         "locations": {
           "0": {
-            "locationTarget": "Mobius Desert (A4)"
+            "locationTarget": "Deserto Mobius (A4)"
           },
           "1": {
-            "locationTarget": "Mobius Desert (B4)"
+            "locationTarget": "Deserto Mobius (B4)"
           },
           "2": {
-            "locationTarget": "Mobius Desert (C4)"
+            "locationTarget": "Deserto Mobius (C4)"
           },
           "3": {
-            "locationTarget": "Mobius Desert (D4)"
+            "locationTarget": "Deserto Mobius (D4)"
           },
           "4": {
             "locationTarget": "DRI Yang"

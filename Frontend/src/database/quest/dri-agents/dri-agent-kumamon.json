@@ -22,6 +22,20 @@
                 {
                     "location": "0258",
                     "coordinates": {
+                        "x": 22,
+                        "y": 22
+                    }
+                },
+                {
+                    "location": "0259",
+                    "coordinates": {
+                        "x": 20,
+                        "y": 75
+                    }
+                },
+                {
+                    "location": "0258",
+                    "coordinates": {
                         "x": 69,
                         "y": 51
                     }
@@ -74,6 +88,20 @@
                 "y": 82
             },
             "zoomedLocations": [
+                {
+                    "location": "0258",
+                    "coordinates": {
+                        "x": 22,
+                        "y": 22
+                    }
+                },
+                {
+                    "location": "0259",
+                    "coordinates": {
+                        "x": 20,
+                        "y": 75
+                    }
+                },
                 {
                     "location": "0258",
                     "coordinates": {
