@@ -3,7 +3,7 @@ import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import MobiusDesertMap from "@/components/desert/MobiusDesertMap.vue";
 import MobiusDesertArea from "@/components/desert/MobiusDesertArea.vue";
-import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
+import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -17,19 +17,19 @@ const isModalOpen = computed(() => {
   return props.isOpen;
 });
 
-const selectedAreaType = ref<DesertAreaTypeViewModel | null>(null);
+const selectedArea = ref<DesertAreaViewModel | null>(null);
 
 watch(
   () => props.isOpen,
   (isOpen) => {
     if (isOpen) {
-      selectedAreaType.value = null;
+      selectedArea.value = null;
     }
   }
 );
 
-function onSelectArea(areaType: DesertAreaTypeViewModel): void {
-  selectedAreaType.value = areaType;
+function onSelectArea(area: DesertAreaViewModel): void {
+  selectedArea.value = area;
 }
 
 function closeModal(): void {
@@ -56,7 +56,7 @@ function closeModal(): void {
         <MobiusDesertMap @select-area="onSelectArea" />
       </div>
       <div class="h-full min-h-0 w-1/2">
-        <MobiusDesertArea :selected-area-type="selectedAreaType" />
+        <MobiusDesertArea :selected-area="selectedArea" />
       </div>
     </div>
   </Modal>

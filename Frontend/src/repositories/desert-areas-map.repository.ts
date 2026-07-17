@@ -5,6 +5,18 @@ import type { DesertAreasMapTable } from "./tables/desert/desert-areas-map.table
 export class DesertAreasMapRepository {
   private static readonly desertAreasMapTable = DesertAreasMapJson as DesertAreasMapTable;
 
+  public static findByLabel(label: string): { locationId: string; cell: DesertAreaMapCellRaw } | null {
+    for (const [locationId, cells] of Object.entries(this.desertAreasMapTable)) {
+      const cell = Object.values(cells).find((candidateCell) => candidateCell.label === label);
+
+      if (cell !== undefined) {
+        return { locationId, cell };
+      }
+    }
+
+    return null;
+  }
+
   public static getCell(locationId: string, routeTypeKey: string): DesertAreaMapCellRaw | null {
     return this.desertAreasMapTable[locationId]?.[routeTypeKey] ?? null;
   }

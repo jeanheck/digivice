@@ -5,7 +5,11 @@
             "north": "noiseDesertS",
             "east": "A4",
             "south": "B3",
-            "west": "A2"
+            "west": "A2",
+            "coordinates": {
+                "x": 41,
+                "y": 67
+            }
         },
         "2": {
             "label": "A1",
@@ -26,7 +30,11 @@
             "north": "A2",
             "east": "B3",
             "south": "C2",
-            "west": "B1"
+            "west": "B1",
+            "coordinates": {
+                "x": 69,
+                "y": 51
+            }
         },
         "5": {
             "label": "C3",
@@ -47,7 +55,11 @@
             "north": "C4",
             "east": "D1",
             "south": "A4",
-            "west": "D3"
+            "west": "D3",
+            "coordinates": {
+                "x": 36.5,
+                "y": 35
+            }
         },
         "8": {
             "label": "D2",

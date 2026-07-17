@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import DesertArea from "@/components/desert/DesertArea.vue";
 import { DesertPresenter } from "@/presenters/desert/desert.presenter";
+import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
 
 const emit = defineEmits<{
-  "select-area": [areaType: DesertAreaTypeViewModel];
+  "select-area": [area: DesertAreaViewModel];
 }>();
 
 const desertAreasViewModel = DesertPresenter.getAreas();
@@ -12,15 +13,15 @@ const desertAreas = desertAreasViewModel.areas.flat();
 const desertGridSize = desertAreasViewModel.gridSize;
 
 function isClickable(areaType: DesertAreaTypeViewModel): boolean {
-  return areaType === "noiseDesertS" || areaType === "mirageTower";
+  return areaType !== "border";
 }
 
-function onAreaClick(areaType: DesertAreaTypeViewModel): void {
-  if (!isClickable(areaType)) {
+function onAreaClick(area: DesertAreaViewModel): void {
+  if (!isClickable(area.type)) {
     return;
   }
 
-  emit("select-area", areaType);
+  emit("select-area", area);
 }
 
 function hasRightConnection(areaIndex: number): boolean {
@@ -62,7 +63,7 @@ function getBottomNeighborType(areaIndex: number): DesertAreaTypeViewModel | nul
         :right-neighbor-type="getRightNeighborType(areaIndex)"
         :bottom-neighbor-type="getBottomNeighborType(areaIndex)"
         :clickable="isClickable(desertArea.type)"
-        @click="onAreaClick(desertArea.type)"
+        @click="onAreaClick(desertArea)"
       />
     </div>
   </div>

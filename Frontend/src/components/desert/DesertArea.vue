@@ -32,19 +32,19 @@ const backgroundClassByType: Record<DesertAreaTypeViewModel, string> = {
   noiseDesertS: "bg-green-300",
   mirageTower: "bg-cyan-300",
   normal: "bg-[#e0db8e]",
-  border: "bg-gray-700",
+  border: "bg-gray-700"
 };
 
 const textClassByType: Record<DesertAreaTypeViewModel, string> = {
   noiseDesertS: "text-[11px] text-blue-800",
   mirageTower: "text-[11px] text-blue-800",
   normal: "text-[20px] text-blue-800",
-  border: "text-[20px] text-gray-500",
+  border: "text-[20px] text-gray-500"
 };
 
 const translationKeyByType: Partial<Record<DesertAreaTypeViewModel, string>> = {
   noiseDesertS: "location.0257",
-  mirageTower: "location.025A",
+  mirageTower: "location.025A"
 };
 
 function resolveConnectionColorClass(
@@ -95,7 +95,7 @@ const bottomConnectionClass = computed(() => {
 <template>
   <div
     class="relative flex w-16 h-16 items-center justify-center"
-    :class="[backgroundClass, clickable ? 'cursor-pointer hover:brightness-110' : '']"
+    :class="[backgroundClass, clickable ? 'cursor-pointer hover:brightness-110' : 'cursor-default']"
     @click="onClick"
   >
     <span
