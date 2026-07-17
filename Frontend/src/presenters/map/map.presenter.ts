@@ -24,6 +24,11 @@ export class MapPresenter {
     "02E7",
   ]);
 
+  private static readonly mobiusDesertLocationIds: ReadonlySet<string> = new Set([
+    "0258",
+    "0259",
+  ]);
+
   private static resolveEnemyIds(enemies: LocationEnemiesRaw, lastCompletedMainQuestStep: number): string[] {
     if (!isLocationEnemyPhaseList(enemies)) {
       return enemies;
@@ -78,6 +83,14 @@ export class MapPresenter {
     }
 
     return MapPresenter.seabedLocationIds.has(locationId);
+  }
+
+  public static isMobiusDesertLocation(locationId: string | null): boolean {
+    if (locationId === null) {
+      return false;
+    }
+
+    return MapPresenter.mobiusDesertLocationIds.has(locationId);
   }
 
   private static resolveSeabedEnemyIds(seabedRoute: number): string[] {

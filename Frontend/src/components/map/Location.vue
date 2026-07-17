@@ -5,11 +5,16 @@ import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel
 
 const props = defineProps<{
   location: LocationViewModel | null;
+  titleOverride?: string | null;
 }>();
 
 const { t } = useI18n();
 
 const locationName = computed(() => {
+  if (props.titleOverride) {
+    return props.titleOverride;
+  }
+
   return props.location?.id ? t(`location.${props.location.id}`) : t("map.unknownZone");
 });
 </script>
