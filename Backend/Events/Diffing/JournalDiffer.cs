@@ -1,4 +1,5 @@
 using Backend.Domain.Models;
+using Backend.Domain.Models.Journals;
 using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.Diffing.Journals;
@@ -30,51 +31,19 @@ public static class JournalDiffer
             dto = dto with { MainQuest = mainQuestDelta };
         }
 
-        var sideQuestsDelta = new List<QuestDTO>();
-        foreach (var sideQuestNewState in newJournal.SideQuests)
-        {
-            var sideQuestPreviousState = previousJournal.SideQuests.FirstOrDefault(q => q.Id == sideQuestNewState.Id);
-            var sideQuestDelta = QuestDiffer.Diff(sideQuestPreviousState, sideQuestNewState);
-            if (sideQuestDelta != null)
-            {
-                sideQuestsDelta.Add(sideQuestDelta);
-            }
-        }
-
+        var sideQuestsDelta = GenerateQuestsDtos(newJournal.SideQuests, previousJournal.SideQuests);
         if (sideQuestsDelta.Count > 0)
         {
             dto = dto with { SideQuests = sideQuestsDelta };
         }
 
-        var legendaryWeaponsDelta = new List<QuestDTO>();
-        foreach (var legendaryWeaponNewState in newJournal.LegendaryWeapons)
-        {
-            var legendaryWeaponPreviousState = previousJournal.LegendaryWeapons
-                .FirstOrDefault(quest => quest.Id == legendaryWeaponNewState.Id);
-            var legendaryWeaponDelta = QuestDiffer.Diff(legendaryWeaponPreviousState, legendaryWeaponNewState);
-            if (legendaryWeaponDelta != null)
-            {
-                legendaryWeaponsDelta.Add(legendaryWeaponDelta);
-            }
-        }
-
+        var legendaryWeaponsDelta = GenerateQuestsDtos(newJournal.LegendaryWeapons, previousJournal.LegendaryWeapons);
         if (legendaryWeaponsDelta.Count > 0)
         {
             dto = dto with { LegendaryWeapons = legendaryWeaponsDelta };
         }
 
-        var driAgentsDelta = new List<QuestDTO>();
-        foreach (var driAgentNewState in newJournal.DriAgents)
-        {
-            var driAgentPreviousState = previousJournal.DriAgents
-                .FirstOrDefault(quest => quest.Id == driAgentNewState.Id);
-            var driAgentDelta = QuestDiffer.Diff(driAgentPreviousState, driAgentNewState);
-            if (driAgentDelta != null)
-            {
-                driAgentsDelta.Add(driAgentDelta);
-            }
-        }
-
+        var driAgentsDelta = GenerateQuestsDtos(newJournal.DriAgents, previousJournal.DriAgents);
         if (driAgentsDelta.Count > 0)
         {
             dto = dto with { DriAgents = driAgentsDelta };
@@ -97,5 +66,21 @@ public static class JournalDiffer
         }
 
         return dto;
+    }
+
+    private static List<QuestDTO> GenerateQuestsDtos(List<Quest> newJournalQuests, List<Quest> previousJournalQuests)
+    {
+        var deltas = new List<QuestDTO>();
+        foreach (var quest in newJournalQuests)
+        {
+            var sideQuestPreviousState = previousJournalQuests.FirstOrDefault(q => q.Id == quest.Id);
+            var sideQuestDelta = QuestDiffer.Diff(sideQuestPreviousState, quest);
+            if (sideQuestDelta != null)
+            {
+                deltas.Add(sideQuestDelta);
+            }
+        }
+
+        return deltas;
     }
 }
