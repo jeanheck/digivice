@@ -11,6 +11,18 @@
         "description": "Look for Dri Yang in Mobius Desert",
         "locations": {
           "0": {
+            "locationTarget": "Mobius Desert (A4)"
+          },
+          "1": {
+            "locationTarget": "Mobius Desert (B4)"
+          },
+          "2": {
+            "locationTarget": "Mobius Desert (C4)"
+          },
+          "3": {
+            "locationTarget": "Mobius Desert (D4)"
+          },
+          "4": {
             "locationTarget": "DRI Yang"
           }
         }
@@ -19,6 +31,15 @@
         "description": "Defeat Armormon in battle to receive Monmon's DDNA",
         "locations": {
           "0": {
+            "locationTarget": "Seabed"
+          },
+          "1": {
+            "locationTarget": "Seabed"
+          },
+          "2": {
+            "locationTarget": "Duel Island"
+          },
+          "3": {
             "locationTarget": "Armormon"
           }
         }
@@ -27,6 +48,18 @@
         "description": "Deliver Monmon's DNA to DRI Yang",
         "locations": {
           "0": {
+            "locationTarget": "Mobius Desert (A4)"
+          },
+          "1": {
+            "locationTarget": "Mobius Desert (B4)"
+          },
+          "2": {
+            "locationTarget": "Mobius Desert (C4)"
+          },
+          "3": {
+            "locationTarget": "Mobius Desert (D4)"
+          },
+          "4": {
             "locationTarget": "DRI Yang"
           }
         },
