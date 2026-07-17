@@ -7,6 +7,9 @@
         "description": "Derrote HiAndromon para receber o Rifle Enferrujado",
         "locations": {
           "0": {
+            "locationTarget": "Sala de Operações"
+          },
+          "1": {
             "locationTarget": "HiAndromon"
           }
         }

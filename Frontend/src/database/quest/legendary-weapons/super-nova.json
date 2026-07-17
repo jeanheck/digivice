@@ -3,17 +3,45 @@
     "requisites": [],
     "steps": {
         "1": {
-            "location": "021C",
+            "location": "0202",
             "coordinates": {
-                "x": 50,
-                "y": 50
+                "x": 51,
+                "y": 44
             },
             "zoomedLocations": [
                 {
+                    "location": "0202",
+                    "coordinates": {
+                        "x": 75,
+                        "y": 77.5
+                    }
+                },
+                {
+                    "location": "02E1",
+                    "coordinates": {
+                        "x": 85.5,
+                        "y": 43
+                    }
+                },
+                {
+                    "location": "02E0",
+                    "coordinates": {
+                        "x": 75,
+                        "y": 40
+                    }
+                },
+                {
+                    "location": "021B",
+                    "coordinates": {
+                        "x": 89,
+                        "y": 80
+                    }
+                },
+                {
                     "location": "021C",
                     "coordinates": {
-                        "x": 50,
-                        "y": 50
+                        "x": 69,
+                        "y": 49
                     }
                 }
             ],

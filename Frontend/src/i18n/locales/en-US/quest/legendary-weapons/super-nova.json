@@ -7,6 +7,18 @@
         "description": "Defeat Datamon to receive the Rusty Glove",
         "locations": {
           "0": {
+            "locationTarget": "Seabed"
+          },
+          "1": {
+            "locationTarget": "Seabed"
+          },
+          "2": {
+            "locationTarget": "Asuka Sewers"
+          },
+          "3": {
+            "locationTarget": "Control Room"
+          },
+          "4": {
             "locationTarget": "Datamon"
           }
         }
