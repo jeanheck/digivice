@@ -30,7 +30,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(mainQuest);
         Assert.Equal("mainQuest", mainQuest.Id);
         Assert.Empty(mainQuest.Requisites);
-        Assert.Equal(43, mainQuest.Steps.Count);
+        Assert.Equal(61, mainQuest.Steps.Count);
         Assert.Equal(1, mainQuest.Steps[0].Number);
         Assert.Equal(0x80, mainQuest.Steps[0].Value);
         Assert.Equal(2, mainQuest.Steps[1].Number);
@@ -207,7 +207,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
 
         var veemon = driAgents[2];
         Assert.Equal("driAgentVeemon", veemon.Id);
-        Assert.Empty(veemon.Requisites);
+        Assert.Single(veemon.Requisites);
+        Assert.Equal("byakkoLeader", veemon.Requisites[0].Id);
+        Assert.Equal(0, veemon.Requisites[0].Value);
         Assert.Equal(3, veemon.Steps.Count);
         Assert.Equal(0x80, veemon.Steps[0].Value);
         Assert.Equal(0x02, veemon.Steps[1].Value);
@@ -218,7 +220,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
 
         var kumamon = driAgents[3];
         Assert.Equal("driAgentKumamon", kumamon.Id);
-        Assert.Empty(kumamon.Requisites);
+        Assert.Single(kumamon.Requisites);
+        Assert.Equal("submarimon", kumamon.Requisites[0].Id);
+        Assert.Equal(0, kumamon.Requisites[0].Value);
         Assert.Equal(3, kumamon.Steps.Count);
         Assert.Equal(0x20, kumamon.Steps[0].Value);
         Assert.Equal(0x01, kumamon.Steps[1].Value);
@@ -229,7 +233,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
 
         var monmon = driAgents[4];
         Assert.Equal("driAgentMonmon", monmon.Id);
-        Assert.Empty(monmon.Requisites);
+        Assert.Single(monmon.Requisites);
+        Assert.Equal("submarimon", monmon.Requisites[0].Id);
+        Assert.Equal(0, monmon.Requisites[0].Value);
         Assert.Equal(3, monmon.Steps.Count);
         Assert.Equal(0x40, monmon.Steps[0].Value);
         Assert.Equal(0x80, monmon.Steps[1].Value);
@@ -240,7 +246,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
 
         var kotemon = driAgents[5];
         Assert.Equal("driAgentKotemon", kotemon.Id);
-        Assert.Empty(kotemon.Requisites);
+        Assert.Single(kotemon.Requisites);
+        Assert.Equal("submarimon", kotemon.Requisites[0].Id);
+        Assert.Equal(0, kotemon.Requisites[0].Value);
         Assert.Equal(3, kotemon.Steps.Count);
         Assert.Equal(0x10, kotemon.Steps[0].Value);
         Assert.Equal(0x40, kotemon.Steps[1].Value);
@@ -251,7 +259,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
 
         var renamon = driAgents[6];
         Assert.Equal("driAgentRenamon", renamon.Id);
-        Assert.Empty(renamon.Requisites);
+        Assert.Single(renamon.Requisites);
+        Assert.Equal("submarimon", renamon.Requisites[0].Id);
+        Assert.Equal(0, renamon.Requisites[0].Value);
         Assert.Equal(3, renamon.Steps.Count);
         Assert.Equal(0x08, renamon.Steps[0].Value);
         Assert.Equal(0x20, renamon.Steps[1].Value);
@@ -262,7 +272,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
 
         var patamon = driAgents[7];
         Assert.Equal("driAgentPatamon", patamon.Id);
-        Assert.Empty(patamon.Requisites);
+        Assert.Single(patamon.Requisites);
+        Assert.Equal("submarimon", patamon.Requisites[0].Id);
+        Assert.Equal(0, patamon.Requisites[0].Value);
         Assert.Equal(3, patamon.Steps.Count);
         Assert.Equal(0x04, patamon.Steps[0].Value);
         Assert.Equal(0x10, patamon.Steps[1].Value);

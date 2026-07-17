@@ -20,10 +20,11 @@ public class AuctionLoaderTests : LoaderIntegrationTestBase
 
         var auctionsResource = auctionLoader.Load();
 
-        Assert.Equal(4, auctionsResource.Auctions.Count);
+        Assert.Equal(5, auctionsResource.Auctions.Count);
         Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
         Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x02);
         Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "sniperShield" && auction.Value == 0x00);
         Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "dramonShield" && auction.Value == 0x00);
+        Assert.Contains(auctionsResource.Auctions, auction => auction.Id == "yinYangWand" && auction.Value == 0x00);
     }
 }

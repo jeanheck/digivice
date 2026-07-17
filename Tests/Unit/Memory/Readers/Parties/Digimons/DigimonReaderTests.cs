@@ -53,7 +53,7 @@ public class DigimonReaderTests
     public void Read_ShouldCorrectlyMapDigimonFields_WhenBlockIsFullyLoaded()
     {
         // Arrange
-        var address = new DigimonAddress { Id = 1, Address = 0x800100 };
+        var address = new DigimonAddress { Id = 1, Address = 0x800100, BlastGaugeAddress = BlastGaugeAddress };
 
         var statusAddresses = new DigimonStatusAddresses
         {
@@ -173,7 +173,7 @@ public class DigimonReaderTests
     public void Read_ShouldUseZeroActiveDigievolutionId_WhenMemoryReaderReturnsZero()
     {
         // Arrange
-        var address = new DigimonAddress { Id = 1, Address = 0x800100 };
+        var address = new DigimonAddress { Id = 1, Address = 0x800100, BlastGaugeAddress = BlastGaugeAddress };
         var statusAddresses = new DigimonStatusAddresses
         {
             Experience = 10,
@@ -221,7 +221,7 @@ public class DigimonReaderTests
     public void Read_ShouldMapEvolutionSlotsAndResources_WhenSlotsArePresent()
     {
         // Arrange
-        var address = new DigimonAddress { Id = 1, Address = 0x800100 };
+        var address = new DigimonAddress { Id = 1, Address = 0x800100, BlastGaugeAddress = BlastGaugeAddress };
         var slotAddress1 = new SlotAddresses { Index = 0, Address = 300 };
         var slotAddress2 = new SlotAddresses { Index = 1, Address = 304 };
 
