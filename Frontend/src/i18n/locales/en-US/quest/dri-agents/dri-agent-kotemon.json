@@ -19,6 +19,15 @@
         "description": "Defeat Kyukimon in battle to receive Kotemon's DDNA",
         "locations": {
           "0": {
+            "locationTarget": "Seabed"
+          },
+          "1": {
+            "locationTarget": "Seabed"
+          },
+          "2": {
+            "locationTarget": "Suzaku UG Lake"
+          },
+          "3": {
             "locationTarget": "Kyukimon"
           }
         }

@@ -19,6 +19,15 @@
         "description": "Vença Kyukimon em batalha para receber o DDNA do Kotemon",
         "locations": {
           "0": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "1": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "2": {
+            "locationTarget": "Lago Subterrâneo Suzaku"
+          },
+          "3": {
             "locationTarget": "Kyukimon"
           }
         }
