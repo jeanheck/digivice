@@ -1,0 +1,118 @@
+{
+    "0258": {
+        "1": {
+            "label": "A3",
+            "north": "noiseDesertS",
+            "east": "A4",
+            "south": "B3",
+            "west": "A2"
+        },
+        "2": {
+            "label": "A1",
+            "north": "D1",
+            "east": "A2",
+            "south": "B1",
+            "west": "A4"
+        },
+        "3": {
+            "label": "B4",
+            "north": "A4",
+            "east": "B1",
+            "south": "C4",
+            "west": "B3"
+        },
+        "4": {
+            "label": "B2",
+            "north": "A2",
+            "east": "B3",
+            "south": "C2",
+            "west": "B1"
+        },
+        "5": {
+            "label": "C3",
+            "north": "B3",
+            "east": "C4",
+            "south": "D3",
+            "west": "C2"
+        },
+        "6": {
+            "label": "C1",
+            "north": "B1",
+            "east": "C2",
+            "south": "D1",
+            "west": "mirageTower"
+        },
+        "7": {
+            "label": "D4",
+            "north": "C4",
+            "east": "D1",
+            "south": "A4",
+            "west": "D3"
+        },
+        "8": {
+            "label": "D2",
+            "north": "C2",
+            "east": "D3",
+            "south": "A2",
+            "west": "D1"
+        }
+    },
+    "0259": {
+        "1": {
+            "label": "A4",
+            "north": "D4",
+            "east": "A1",
+            "south": "B4",
+            "west": "A3"
+        },
+        "2": {
+            "label": "A2",
+            "north": "D2",
+            "east": "A3",
+            "south": "B2",
+            "west": "A1"
+        },
+        "3": {
+            "label": "B3",
+            "north": "A3",
+            "east": "B4",
+            "south": "C3",
+            "west": "B2"
+        },
+        "4": {
+            "label": "B1",
+            "north": "A1",
+            "east": "B2",
+            "south": "C1",
+            "west": "B4"
+        },
+        "5": {
+            "label": "C4",
+            "north": "B4",
+            "east": "C1",
+            "south": "D4",
+            "west": "C3"
+        },
+        "6": {
+            "label": "C2",
+            "north": "B2",
+            "east": "C3",
+            "south": "D2",
+            "west": "C1"
+        },
+        "7": {
+            "label": "D3",
+            "north": "C3",
+            "east": "D4",
+            "south": "A3",
+            "west": "D2"
+        },
+        "8": {
+            "label": "D1",
+            "north": "C1",
+            "east": "D2",
+            "south": "A1",
+            "west": "D4"
+        }
+    }
+}

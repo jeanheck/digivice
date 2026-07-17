@@ -29,21 +29,21 @@ function onClick(): void {
 }
 
 const backgroundClassByType: Record<DesertAreaTypeViewModel, string> = {
-  noiseDesert: "bg-green-300",
+  noiseDesertS: "bg-green-300",
   mirageTower: "bg-cyan-300",
   normal: "bg-[#e0db8e]",
   border: "bg-gray-700",
 };
 
 const textClassByType: Record<DesertAreaTypeViewModel, string> = {
-  noiseDesert: "text-[11px] text-blue-800",
+  noiseDesertS: "text-[11px] text-blue-800",
   mirageTower: "text-[11px] text-blue-800",
   normal: "text-[20px] text-blue-800",
   border: "text-[20px] text-gray-500",
 };
 
 const translationKeyByType: Partial<Record<DesertAreaTypeViewModel, string>> = {
-  noiseDesert: "location.0257",
+  noiseDesertS: "location.0257",
   mirageTower: "location.025A",
 };
 
@@ -55,7 +55,7 @@ function resolveConnectionColorClass(
     return "bg-gray-500";
   }
 
-  if (sourceType === "noiseDesert" || targetType === "noiseDesert") {
+  if (sourceType === "noiseDesertS" || targetType === "noiseDesertS") {
     return "bg-green-500";
   }
 

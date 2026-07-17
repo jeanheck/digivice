@@ -1,1 +1,1 @@
-﻿export type DesertAreaTypeRaw = "noiseDesert" | "mirageTower" | "normal" | "border";
+﻿export type DesertAreaTypeRaw = "noiseDesertS" | "mirageTower" | "normal" | "border";

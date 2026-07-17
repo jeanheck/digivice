@@ -12,7 +12,7 @@ const desertAreas = desertAreasViewModel.areas.flat();
 const desertGridSize = desertAreasViewModel.gridSize;
 
 function isClickable(areaType: DesertAreaTypeViewModel): boolean {
-  return areaType === "noiseDesert" || areaType === "mirageTower";
+  return areaType === "noiseDesertS" || areaType === "mirageTower";
 }
 
 function onAreaClick(areaType: DesertAreaTypeViewModel): void {

@@ -5,7 +5,7 @@
       { "label": "D4", "type": "border" },
       { "label": "D1", "type": "border" },
       { "label": "D2", "type": "border" },
-      { "label": "noiseDesert", "type": "noiseDesert" },
+      { "label": "noiseDesertS", "type": "noiseDesertS" },
       { "label": "D4", "type": "border" },
       { "label": "D1", "type": "border" }
     ],

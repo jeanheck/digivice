@@ -1,1 +1,1 @@
-﻿export type DesertAreaTypeViewModel = "noiseDesert" | "mirageTower" | "normal" | "border";
+﻿export type DesertAreaTypeViewModel = "noiseDesertS" | "mirageTower" | "normal" | "border";

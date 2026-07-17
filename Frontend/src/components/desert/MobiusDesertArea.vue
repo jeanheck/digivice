@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Dock from "@/components/seabed/Dock.vue";
-import noiseDesertMapUrl from "@/assets/maps/Noise Desert.webp";
+import noiseDesertSMapUrl from "@/assets/maps/Noise Desert S.webp";
 import mirageTowerMapUrl from "@/assets/maps/Mirage Tower.webp";
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
@@ -14,7 +14,7 @@ const props = defineProps<{
 const coordinates: CoordinatesViewModel | null = null;
 
 const imageUrlByAreaType: Partial<Record<DesertAreaTypeViewModel, string>> = {
-  noiseDesert: noiseDesertMapUrl,
+  noiseDesertS: noiseDesertSMapUrl,
   mirageTower: mirageTowerMapUrl,
 };
 
