@@ -19,6 +19,15 @@
         "description": "Vença GrapLeomon em batalha para receber o DDNA do Kumamon",
         "locations": {
           "0": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "1": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "2": {
+            "locationTarget": "Selva de Éter"
+          },
+          "3": {
             "locationTarget": "GrapLeomon"
           }
         }

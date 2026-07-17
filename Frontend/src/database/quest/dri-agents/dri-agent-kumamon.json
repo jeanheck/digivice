@@ -37,6 +37,27 @@
             },
             "zoomedLocations": [
                 {
+                    "location": "023B",
+                    "coordinates": {
+                        "x": 45,
+                        "y": 33
+                    }
+                },
+                {
+                    "location": "02E5",
+                    "coordinates": {
+                        "x": 13,
+                        "y": 63
+                    }
+                },
+                {
+                    "location": "02E2",
+                    "coordinates": {
+                        "x": 17.5,
+                        "y": 61
+                    }
+                },
+                {
                     "location": "023C",
                     "coordinates": {
                         "x": 21,

@@ -19,6 +19,15 @@
         "description": "Defeat GrapLeomon in battle to receive Kumamon's DDNA",
         "locations": {
           "0": {
+            "locationTarget": "Seabed"
+          },
+          "1": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "2": {
+            "locationTarget": "Ether Jungle"
+          },
+          "3": {
             "locationTarget": "GrapLeomon"
           }
         }
