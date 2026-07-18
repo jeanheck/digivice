@@ -4,9 +4,11 @@ import Modal from "@/components/modal/Modal.vue";
 import MobiusDesertMap from "@/components/desert/MobiusDesertMap.vue";
 import MobiusDesertArea from "@/components/desert/MobiusDesertArea.vue";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
+import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
   isOpen: boolean;
+  location: LocationViewModel | null;
 }>();
 
 const emit = defineEmits<{
@@ -25,7 +27,7 @@ watch(
     if (isOpen) {
       selectedArea.value = null;
     }
-  }
+  },
 );
 
 function onSelectArea(area: DesertAreaViewModel): void {

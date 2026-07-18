@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import MobiusDesertModal from "@/components/desert/MobiusDesertModal.vue";
+import SeabedModal from "@/components/seabed/SeabedModal.vue";
 import { MapPresenter } from "@/presenters/map/map.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 
@@ -11,7 +11,7 @@ const emit = defineEmits<{
 }>();
 
 const store = useGameStore();
-const isMobiusDesertModalOpen = ref(false);
+const isSeabedModalOpen = ref(false);
 
 const locationViewModel = computed(() => {
   const locationId = store.currentState?.player?.location ?? null;
@@ -26,11 +26,11 @@ const locationViewModel = computed(() => {
 });
 
 function onClick(): void {
-  isMobiusDesertModalOpen.value = true;
+  isSeabedModalOpen.value = true;
 }
 
-function closeMobiusDesertModal(): void {
-  isMobiusDesertModalOpen.value = false;
+function closeSeabedModal(): void {
+  isSeabedModalOpen.value = false;
 }
 
 function onMouseEnter(event: MouseEvent): void {
@@ -55,12 +55,12 @@ function onMouseLeave(): void {
     @mousemove="onMouseMove"
     @mouseleave="onMouseLeave"
   >
-    🌵
+    ⚓
   </button>
 
-  <MobiusDesertModal
-    :is-open="isMobiusDesertModalOpen"
+  <SeabedModal
+    :is-open="isSeabedModalOpen"
     :location="locationViewModel"
-    @close="closeMobiusDesertModal"
+    @close="closeSeabedModal"
   />
 </template>
