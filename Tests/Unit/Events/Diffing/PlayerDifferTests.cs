@@ -8,8 +8,8 @@ public class PlayerDifferTests
     [Fact]
     public void Diff_ShouldReturnEmptyDTO_WhenNoChanges()
     {
-        var previousPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", PreviousMapId = "023E", SeabedRoute = 0x08, SeabedRouteType = 0x01 };
-        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", PreviousMapId = "023E", SeabedRoute = 0x08, SeabedRouteType = 0x01 };
+        var previousPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", PreviousMapId = "023E", SeabedRoute = 0x08, MapVariant = 0x01 };
+        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", PreviousMapId = "023E", SeabedRoute = 0x08, MapVariant = 0x01 };
 
         var result = PlayerDiffer.Diff(previousPlayer, newPlayer);
 
@@ -19,13 +19,13 @@ public class PlayerDifferTests
         Assert.False(result.Location.HasValue);
         Assert.False(result.PreviousMapId.HasValue);
         Assert.False(result.SeabedRoute.HasValue);
-        Assert.False(result.SeabedRouteType.HasValue);
+        Assert.False(result.MapVariant.HasValue);
     }
 
     [Fact]
     public void Diff_ShouldReturnFullDTO_WhenPreviousPlayerIsNull()
     {
-        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", PreviousMapId = "023E", SeabedRoute = 0x08, SeabedRouteType = 0x01 };
+        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", PreviousMapId = "023E", SeabedRoute = 0x08, MapVariant = 0x01 };
 
         var result = PlayerDiffer.Diff(null, newPlayer);
 
@@ -40,8 +40,8 @@ public class PlayerDifferTests
         Assert.Equal("023E", result.PreviousMapId.Value);
         Assert.True(result.SeabedRoute.HasValue);
         Assert.Equal((byte)0x08, result.SeabedRoute.Value);
-        Assert.True(result.SeabedRouteType.HasValue);
-        Assert.Equal((byte)0x01, result.SeabedRouteType.Value);
+        Assert.True(result.MapVariant.HasValue);
+        Assert.Equal((byte)0x01, result.MapVariant.Value);
     }
 
     [Fact]
@@ -59,7 +59,7 @@ public class PlayerDifferTests
         Assert.False(result.Location.HasValue);
         Assert.False(result.PreviousMapId.HasValue);
         Assert.False(result.SeabedRoute.HasValue);
-        Assert.False(result.SeabedRouteType.HasValue);
+        Assert.False(result.MapVariant.HasValue);
     }
 
     [Fact]
@@ -77,7 +77,7 @@ public class PlayerDifferTests
         Assert.Equal("0002", result.Location.Value);
         Assert.False(result.PreviousMapId.HasValue);
         Assert.False(result.SeabedRoute.HasValue);
-        Assert.False(result.SeabedRouteType.HasValue);
+        Assert.False(result.MapVariant.HasValue);
     }
 
     [Fact]
@@ -93,7 +93,7 @@ public class PlayerDifferTests
         Assert.False(result.Bits.HasValue);
         Assert.False(result.Location.HasValue);
         Assert.False(result.SeabedRoute.HasValue);
-        Assert.False(result.SeabedRouteType.HasValue);
+        Assert.False(result.MapVariant.HasValue);
     }
 
     [Fact]
@@ -115,29 +115,29 @@ public class PlayerDifferTests
     [Fact]
     public void Diff_ShouldReturnSeabedRouteDelta_WhenOnlySeabedRouteChanged()
     {
-        var previousPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", SeabedRoute = 0x00, SeabedRouteType = 0x00 };
-        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", SeabedRoute = 0x08, SeabedRouteType = 0x00 };
+        var previousPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", SeabedRoute = 0x00, MapVariant = 0x00 };
+        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", SeabedRoute = 0x08, MapVariant = 0x00 };
 
         var result = PlayerDiffer.Diff(previousPlayer, newPlayer);
 
         Assert.True(result.SeabedRoute.HasValue);
         Assert.Equal((byte)0x08, result.SeabedRoute.Value);
-        Assert.False(result.SeabedRouteType.HasValue);
+        Assert.False(result.MapVariant.HasValue);
         Assert.False(result.Bits.HasValue);
         Assert.False(result.Location.HasValue);
         Assert.False(result.PreviousMapId.HasValue);
     }
 
     [Fact]
-    public void Diff_ShouldReturnSeabedRouteTypeDelta_WhenOnlySeabedRouteTypeChanged()
+    public void Diff_ShouldReturnMapVariantDelta_WhenOnlyMapVariantChanged()
     {
-        var previousPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", SeabedRoute = 0x08, SeabedRouteType = 0x00 };
-        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", SeabedRoute = 0x08, SeabedRouteType = 0x01 };
+        var previousPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", SeabedRoute = 0x08, MapVariant = 0x00 };
+        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "0001", SeabedRoute = 0x08, MapVariant = 0x01 };
 
         var result = PlayerDiffer.Diff(previousPlayer, newPlayer);
 
-        Assert.True(result.SeabedRouteType.HasValue);
-        Assert.Equal((byte)0x01, result.SeabedRouteType.Value);
+        Assert.True(result.MapVariant.HasValue);
+        Assert.Equal((byte)0x01, result.MapVariant.Value);
         Assert.False(result.SeabedRoute.HasValue);
         Assert.False(result.Bits.HasValue);
         Assert.False(result.Location.HasValue);
@@ -145,10 +145,10 @@ public class PlayerDifferTests
     }
 
     [Fact]
-    public void Diff_ShouldReturnBothSeabedDeltas_WhenSeabedRouteAndSeabedRouteTypeChanged()
+    public void Diff_ShouldReturnBothSeabedDeltas_WhenSeabedRouteAndMapVariantChanged()
     {
-        var previousPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "023E", SeabedRoute = 0x00, SeabedRouteType = 0x00 };
-        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "02E2", SeabedRoute = 0x08, SeabedRouteType = 0x01 };
+        var previousPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "023E", SeabedRoute = 0x00, MapVariant = 0x00 };
+        var newPlayer = new Player { Name = "Taichi", Bits = 100, MapId = "02E2", SeabedRoute = 0x08, MapVariant = 0x01 };
 
         var result = PlayerDiffer.Diff(previousPlayer, newPlayer);
 
@@ -156,7 +156,7 @@ public class PlayerDifferTests
         Assert.Equal("02E2", result.Location.Value);
         Assert.True(result.SeabedRoute.HasValue);
         Assert.Equal((byte)0x08, result.SeabedRoute.Value);
-        Assert.True(result.SeabedRouteType.HasValue);
-        Assert.Equal((byte)0x01, result.SeabedRouteType.Value);
+        Assert.True(result.MapVariant.HasValue);
+        Assert.Equal((byte)0x01, result.MapVariant.Value);
     }
 }

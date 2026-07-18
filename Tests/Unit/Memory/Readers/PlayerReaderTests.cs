@@ -19,7 +19,7 @@ public class PlayerReaderTests
             MapId = 0x3000,
             PreviousMapId = 0x3500,
             SeabedRoute = 0x4000,
-            SeabedRouteType = 0x5000
+            MapVariant = 0x5000
         };
 
         var nameBytes = new byte[] { 65, 103, 117, 109, 111, 110, 0, 0, 0, 0 }; // "Agumon"
@@ -44,6 +44,6 @@ public class PlayerReaderTests
         Assert.Equal((short)4, result.MapId);
         Assert.Equal((short)0x023E, result.PreviousMapId);
         Assert.Equal((byte)0x08, result.SeabedRoute);
-        Assert.Equal((byte)0x01, result.SeabedRouteType);
+        Assert.Equal((byte)0x01, result.MapVariant);
     }
 }

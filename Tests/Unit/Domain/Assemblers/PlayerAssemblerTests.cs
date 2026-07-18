@@ -15,7 +15,7 @@ public class PlayerAssemblerTests
             MapId = 255,
             PreviousMapId = 0x023E,
             SeabedRoute = 0x08,
-            SeabedRouteType = 0x01
+            MapVariant = 0x01
         };
 
         var result = PlayerAssembler.Assemble(resource);
@@ -26,7 +26,7 @@ public class PlayerAssemblerTests
         Assert.Equal("00FF", result.MapId);
         Assert.Equal("023E", result.PreviousMapId);
         Assert.Equal((byte)0x08, result.SeabedRoute);
-        Assert.Equal((byte)0x01, result.SeabedRouteType);
+        Assert.Equal((byte)0x01, result.MapVariant);
     }
 
     [Fact]
@@ -39,7 +39,7 @@ public class PlayerAssemblerTests
             MapId = null,
             PreviousMapId = null,
             SeabedRoute = null,
-            SeabedRouteType = null
+            MapVariant = null
         };
 
         var result = PlayerAssembler.Assemble(resource);
@@ -50,11 +50,11 @@ public class PlayerAssemblerTests
         Assert.Equal(string.Empty, result.MapId);
         Assert.Equal(string.Empty, result.PreviousMapId);
         Assert.Equal((byte)0, result.SeabedRoute);
-        Assert.Equal((byte)0, result.SeabedRouteType);
+        Assert.Equal((byte)0, result.MapVariant);
     }
 
     [Fact]
-    public void Assemble_ShouldPassThroughSeabedRouteType_WhenByteIsZero()
+    public void Assemble_ShouldPassThroughMapVariant_WhenByteIsZero()
     {
         var resource = new PlayerResource
         {
@@ -62,12 +62,12 @@ public class PlayerAssemblerTests
             Bits = 0,
             MapId = 0,
             SeabedRoute = 0x07,
-            SeabedRouteType = 0x00
+            MapVariant = 0x00
         };
 
         var result = PlayerAssembler.Assemble(resource);
 
         Assert.Equal((byte)0x07, result.SeabedRoute);
-        Assert.Equal((byte)0x00, result.SeabedRouteType);
+        Assert.Equal((byte)0x00, result.MapVariant);
     }
 }

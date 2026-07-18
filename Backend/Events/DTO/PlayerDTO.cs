@@ -22,5 +22,5 @@ public record class PlayerDTO : IDTO
     public Optional<byte> SeabedRoute { get; init; } = Optional<byte>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<byte> SeabedRouteType { get; init; } = Optional<byte>.Empty;
+    public Optional<byte> MapVariant { get; init; } = Optional<byte>.Empty;
 }

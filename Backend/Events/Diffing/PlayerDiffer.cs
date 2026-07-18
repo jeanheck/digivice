@@ -35,9 +35,9 @@ public static class PlayerDiffer
         {
             dto = dto with { SeabedRoute = newPlayer.SeabedRoute };
         }
-        if (newPlayer.SeabedRouteType != previousPlayer.SeabedRouteType)
+        if (newPlayer.MapVariant != previousPlayer.MapVariant)
         {
-            dto = dto with { SeabedRouteType = newPlayer.SeabedRouteType };
+            dto = dto with { MapVariant = newPlayer.MapVariant };
         }
 
         return dto;

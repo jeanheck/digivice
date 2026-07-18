@@ -33,7 +33,7 @@ public class PlayerLoaderTests : LoaderIntegrationTestBase
         Assert.Equal((short)4, playerResource.MapId);
         Assert.Equal((short)0x023E, playerResource.PreviousMapId);
         Assert.Equal((byte)0x08, playerResource.SeabedRoute);
-        Assert.Equal((byte)0x01, playerResource.SeabedRouteType);
+        Assert.Equal((byte)0x01, playerResource.MapVariant);
     }
 
     [Fact]

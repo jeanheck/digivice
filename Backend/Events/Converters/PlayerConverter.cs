@@ -14,7 +14,7 @@ public static class PlayerConverter
             Location = player.MapId,
             PreviousMapId = player.PreviousMapId,
             SeabedRoute = player.SeabedRoute,
-            SeabedRouteType = player.SeabedRouteType
+            MapVariant = player.MapVariant
         };
     }
 }

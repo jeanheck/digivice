@@ -39,7 +39,7 @@ public class AddressesRepositoryTests : IDisposable
             MapId = 0x0004B3F8,
             PreviousMapId = 0x0004B400,
             SeabedRoute = 0x00048D78,
-            SeabedRouteType = 0x00048D7A
+            MapVariant = 0x00048D7A
         };
         var json = JsonSerializer.Serialize(fakePlayer);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "PlayerAddresses.json"), json);
@@ -55,7 +55,7 @@ public class AddressesRepositoryTests : IDisposable
         Assert.Equal(0x0004B3F8, result.MapId);
         Assert.Equal(0x0004B400, result.PreviousMapId);
         Assert.Equal(0x00048D78, result.SeabedRoute);
-        Assert.Equal(0x00048D7A, result.SeabedRouteType);
+        Assert.Equal(0x00048D7A, result.MapVariant);
     }
 
     [Fact]

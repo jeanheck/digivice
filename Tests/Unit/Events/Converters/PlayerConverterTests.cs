@@ -15,7 +15,7 @@ public class PlayerConverterTests
             MapId = "00AF",
             PreviousMapId = "023E",
             SeabedRoute = 0x08,
-            SeabedRouteType = 0x01
+            MapVariant = 0x01
         };
 
         var dto = PlayerConverter.ToDTO(player);
@@ -30,7 +30,7 @@ public class PlayerConverterTests
         Assert.Equal("023E", dto.PreviousMapId.Value);
         Assert.True(dto.SeabedRoute.HasValue);
         Assert.Equal((byte)0x08, dto.SeabedRoute.Value);
-        Assert.True(dto.SeabedRouteType.HasValue);
-        Assert.Equal((byte)0x01, dto.SeabedRouteType.Value);
+        Assert.True(dto.MapVariant.HasValue);
+        Assert.Equal((byte)0x01, dto.MapVariant.Value);
     }
 }

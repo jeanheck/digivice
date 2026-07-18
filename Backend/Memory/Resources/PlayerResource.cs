@@ -7,6 +7,6 @@ namespace Backend.Memory.Resources
         public short? MapId { get; set; }
         public short? PreviousMapId { get; set; }
         public byte? SeabedRoute { get; set; }
-        public byte? SeabedRouteType { get; set; }
+        public byte? MapVariant { get; set; }
     }
 }

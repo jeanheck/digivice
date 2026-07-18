@@ -17,7 +17,7 @@ namespace Backend.Domain.Assemblers
                 MapId = resource.MapId?.ToString("X4") ?? string.Empty,
                 PreviousMapId = resource.PreviousMapId?.ToString("X4") ?? string.Empty,
                 SeabedRoute = resource.SeabedRoute ?? 0,
-                SeabedRouteType = resource.SeabedRouteType ?? 0
+                MapVariant = resource.MapVariant ?? 0
             };
         }
     }

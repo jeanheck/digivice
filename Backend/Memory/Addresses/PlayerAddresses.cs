@@ -18,6 +18,6 @@ namespace Backend.Memory.Addresses
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long SeabedRoute { get; set; }
         [JsonConverter(typeof(HexStringToLongConverter))]
-        public long SeabedRouteType { get; set; }
+        public long MapVariant { get; set; }
     }
 }
