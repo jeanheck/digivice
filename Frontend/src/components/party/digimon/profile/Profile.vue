@@ -9,7 +9,6 @@ import TrainingPoints from "@/components/party/digimon/profile/TrainingPoints.vu
 import DigievolutionsButton from "@/components/party/digimon/profile/DigievolutionsButton.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import type { Digimon } from "@/models/party/digimon/digimon.ts";
-import { ProgressBarConstant } from "@/constants/progress-bar.constant";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { useI18n } from "vue-i18n";
@@ -27,8 +26,8 @@ const { t } = useI18n();
 const { show, x, y, showAt, move, hide } = useTooltipPosition(350);
 const tooltipTitle = ref("");
 
-function onShowTooltip(event: MouseEvent, variant: string): void {
-  tooltipTitle.value = t(`digimon.${variant}`);
+function onShowTooltip(event: MouseEvent, value: string): void {
+  tooltipTitle.value = value;
   showAt(event);
 }
 
@@ -63,7 +62,7 @@ const digimonName = computed(() => {
         <DigievolutionsButton
           class="col-start-1 row-start-4"
           @open-digievolutions="onOpenDigievolutions"
-          @show-tooltip="onShowTooltip($event, 'digievolutions')"
+          @show-tooltip="onShowTooltip($event, t(`digimon.digievolutions`))"
           @move-tooltip="onMoveTooltip"
           @hide-tooltip="onHideTooltip"
         />
@@ -71,7 +70,7 @@ const digimonName = computed(() => {
         <TrainingPoints
           class="col-start-1 row-start-5"
           :tp="digimon.tp"
-          @show-tooltip="onShowTooltip($event, 'tp')"
+          @show-tooltip="onShowTooltip($event, t(`digimon.tp`))"
           @move-tooltip="onMoveTooltip"
           @hide-tooltip="onHideTooltip"
         />
@@ -90,7 +89,7 @@ const digimonName = computed(() => {
             :digimon-id="digimonId"
             :level="digimon.level"
             :experience="digimon.experience"
-            @show-tooltip="onShowTooltip($event, ProgressBarConstant.experience)"
+            @show-tooltip="onShowTooltip($event, t(`digimon.experience`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
@@ -101,7 +100,7 @@ const digimonName = computed(() => {
           <HpProgressBar
             :current-hp="digimon.vitals.currentHP"
             :max-hp="digimon.vitals.maxHP"
-            @show-tooltip="onShowTooltip($event, ProgressBarConstant.hp)"
+            @show-tooltip="onShowTooltip($event, t(`digimon.hp`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
@@ -111,7 +110,7 @@ const digimonName = computed(() => {
           <MpProgressBar
             :current-mp="digimon.vitals.currentMP"
             :max-mp="digimon.vitals.maxMP"
-            @show-tooltip="onShowTooltip($event, ProgressBarConstant.mp)"
+            @show-tooltip="onShowTooltip($event, t(`digimon.mp`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
@@ -120,7 +119,7 @@ const digimonName = computed(() => {
         <div class="col-start-2 row-start-5 min-w-0 h-6">
           <BlastGaugeProgressBar
             :blast-gauge="digimon.blastGauge"
-            @show-tooltip="onShowTooltip($event, ProgressBarConstant.blastGauge)"
+            @show-tooltip="onShowTooltip($event, t(`digimon.blastGauge`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
