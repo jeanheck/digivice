@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import DigievolutionDvxpSegments from "@/components/party/digimon/digievolutions/DigievolutionDvxpSegments.vue";
+import DigievolutionDvxp from "@/components/party/digimon/digievolutions/DigievolutionDvxp.vue";
 import { DigievolutionPresenter } from "@/presenters/digievolution/digievolution.presenter";
 import type { DigievolutionResumedViewModel } from "@/viewmodels/digievolution/digievolution-resumed.viewmodel";
 
@@ -84,7 +84,7 @@ function openTechniques(): void {
       </div>
 
       <div class="w-full shrink-0 px-4 pt-0.5">
-        <DigievolutionDvxpSegments
+        <DigievolutionDvxp
           :is-active-digievolution="isActiveDigievolution"
           :dvxp="digievolutionDvxp ?? 0"
         />

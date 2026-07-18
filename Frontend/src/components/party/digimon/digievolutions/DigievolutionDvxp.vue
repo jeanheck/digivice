@@ -1,18 +1,16 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { DigievolutionDvxpSegmentsPresenter } from "@/presenters/digievolution/digievolution-dvxp-segments.presenter";
+import { DigievolutionDvxpPresenter } from "@/presenters/digievolution/digievolution-dvxp.presenter";
 
 const props = defineProps<{
   isActiveDigievolution: boolean;
   dvxp: number;
 }>();
 
-const segmentCount = 10;
-
-const filledSegmentCount = computed(() => {
-  return DigievolutionDvxpSegmentsPresenter.getFilledSegmentCount(props.dvxp);
+const dvxp = computed(() => {
+  return DigievolutionDvxpPresenter.getCalculatedDvxp(props.dvxp);
 });
-function getSegmentClass(isFilled: boolean): string {
+function getDvxpClass(isFilled: boolean): string {
   if (props.isActiveDigievolution) {
     if (isFilled) {
       return "bg-yellow-400";
@@ -32,10 +30,10 @@ function getSegmentClass(isFilled: boolean): string {
 <template>
   <div class="flex w-full gap-1 h-1" role="presentation">
     <div
-      v-for="segmentIndex in segmentCount"
-      :key="segmentIndex"
+      v-for="i in DigievolutionDvxpPresenter.MAX_DVXP_BY_LEVEL"
+      :key="i"
       class="flex-1 min-w-0 transition-colors duration-500"
-      :class="getSegmentClass(segmentIndex <= filledSegmentCount)"
+      :class="getDvxpClass(i <= dvxp)"
     ></div>
   </div>
 </template>
