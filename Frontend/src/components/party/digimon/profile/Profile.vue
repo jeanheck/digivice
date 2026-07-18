@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import ProgressBar from "@/components/party/digimon/profile/ProgressBar.vue";
+import BlastGaugeProgressBar from "@/components/party/digimon/profile/progress-bar/BlastGaugeProgressBar.vue";
+import ExperienceProgressBar from "@/components/party/digimon/profile/progress-bar/ExperienceProgressBar.vue";
+import HpProgressBar from "@/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
+import MpProgressBar from "@/components/party/digimon/profile/progress-bar/MpProgressBar.vue";
 import Icon from "@/components/party/digimon/profile/Icon.vue";
 import TrainingPoints from "@/components/party/digimon/profile/TrainingPoints.vue";
 import DigievolutionsButton from "@/components/party/digimon/profile/DigievolutionsButton.vue";
@@ -44,26 +47,6 @@ function onOpenDigievolutions(): void {
 const digimonName = computed(() => {
   return ProfilePresenter.getNameById(props.digimonId);
 });
-
-const experienceToReachNextLevel = computed(() => {
-  return ProfilePresenter.getRequiredExperienceForNextLevel(props.digimonId, props.digimon.level);
-});
-
-const experiencePercentageToReachNextLevel = computed(() => {
-  return ProfilePresenter.calculateProgressPercentageForNextLevel(props.digimonId, props.digimon.level, props.digimon.experience);
-});
-
-const hpPercentage = computed(() => {
-  return ProfilePresenter.getHpPercentage(props.digimon.vitals.currentHP, props.digimon.vitals.maxHP);
-});
-
-const mpPercentage = computed(() => {
-  return ProfilePresenter.getMpPercentage(props.digimon.vitals.currentMP, props.digimon.vitals.maxMP);
-});
-
-const blastGaugePercentage = computed(() => {
-  return ProfilePresenter.getBlastGaugePercentage(props.digimon.blastGauge);
-});
 </script>
 
 <template>
@@ -94,18 +77,19 @@ const blastGaugePercentage = computed(() => {
         />
 
         <div class="col-start-2 row-start-1 flex justify-between items-baseline min-w-0">
-          <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">{{ digimonName }}</h2>
+          <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">
+            {{ digimonName }}
+          </h2>
           <span class="text-[0.6rem] font-medium text-yellow-400 shrink-0 leading-none">
             Nv {{ digimon.level }}
           </span>
         </div>
 
         <div class="col-start-2 row-start-2 min-w-0 flex flex-col">
-          <ProgressBar
-            :variant="ProgressBarConstant.experience"
-            :current-value="digimon.experience"
-            :max-value="experienceToReachNextLevel"
-            :percentage="experiencePercentageToReachNextLevel"
+          <ExperienceProgressBar
+            :digimon-id="digimonId"
+            :level="digimon.level"
+            :experience="digimon.experience"
             @show-tooltip="onShowTooltip($event, ProgressBarConstant.experience)"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
@@ -114,11 +98,9 @@ const blastGaugePercentage = computed(() => {
         </div>
 
         <div class="col-start-2 row-start-3 min-w-0 h-6">
-          <ProgressBar
-            :variant="ProgressBarConstant.hp"
-            :current-value="digimon.vitals.currentHP"
-            :max-value="digimon.vitals.maxHP"
-            :percentage="hpPercentage"
+          <HpProgressBar
+            :current-hp="digimon.vitals.currentHP"
+            :max-hp="digimon.vitals.maxHP"
             @show-tooltip="onShowTooltip($event, ProgressBarConstant.hp)"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
@@ -126,11 +108,9 @@ const blastGaugePercentage = computed(() => {
         </div>
 
         <div class="col-start-2 row-start-4 min-w-0 h-6">
-          <ProgressBar
-            :variant="ProgressBarConstant.mp"
-            :current-value="digimon.vitals.currentMP"
-            :max-value="digimon.vitals.maxMP"
-            :percentage="mpPercentage"
+          <MpProgressBar
+            :current-mp="digimon.vitals.currentMP"
+            :max-mp="digimon.vitals.maxMP"
             @show-tooltip="onShowTooltip($event, ProgressBarConstant.mp)"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
@@ -138,11 +118,8 @@ const blastGaugePercentage = computed(() => {
         </div>
 
         <div class="col-start-2 row-start-5 min-w-0 h-6">
-          <ProgressBar
-            :variant="ProgressBarConstant.blastGauge"
-            :current-value="digimon.blastGauge"
-            :max-value="1000"
-            :percentage="blastGaugePercentage"
+          <BlastGaugeProgressBar
+            :blast-gauge="digimon.blastGauge"
             @show-tooltip="onShowTooltip($event, ProgressBarConstant.blastGauge)"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
