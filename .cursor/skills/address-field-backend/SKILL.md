@@ -63,7 +63,7 @@ Match an existing field of the same RAM shape:
 | Pattern | Read | Resource | Domain / Assembler | DTO |
 |---------|------|----------|--------------------|-----|
 | Map id (Int16 → hex string) | `ReadInt16` | `short?` | `string` via `.ToString("X4")` | `Optional<string>` — e.g. `MapId`, `PreviousMapId` |
-| Byte flag / route | `ReadBytes(addr, 1)[0]` | `byte?` | `byte` (`?? 0`) | `Optional<byte>` — e.g. `SeabedRoute`, `SeabedRouteType` |
+| Byte flag / route | `ReadBytes(addr, 1)[0]` | `byte?` | `byte` (`?? 0`) | `Optional<byte>` — e.g. `SeabedRoute`, `MapVariant` |
 | Int32 (money, etc.) | `ReadInt32` | `int?` | `int` (`?? 0`) | `Optional<int>` — e.g. `Bits` |
 | Nested Digimon offset | base + status offset | as above | as above | Digimon DTO field |
 

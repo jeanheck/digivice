@@ -1,7 +1,7 @@
 # Mobius Desert cell routing — memory investigation
 
 Domain: map / location  
-Status: confirmed — cell-pair discriminator at `0x48D7A` (same address as `SeabedRouteType`)  
+Status: confirmed — cell-pair discriminator at `0x48D7A` (`MapVariant`, formerly SeabedRouteType)  
 Related: [seabed-routing-investigation.md](seabed-routing-investigation.md), [known-patterns.md](known-patterns.md), [memory-regions.md](memory-regions.md)
 
 ---
@@ -30,7 +30,7 @@ logical cell. Naming assumes **letter = row (A–D)**, **number = column (1–4)
 ## Investigation method
 
 1. Dump known map/player fields across all 16 snapshots (`MapId`,
-   `PreviousMapId`, `SeabedRoute` / `SeabedRouteType`, tile X/Y).
+   `PreviousMapId`, `SeabedRoute` / `MapVariant`, tile X/Y).
 2. Exhaustive RAM scan for bytes that match an 8-pair pattern (same value on
    two cells that share a MapId flip).
 3. Verify that `(MapId, candidate)` is unique for all 16 cells.
@@ -53,13 +53,13 @@ logical cell. Naming assumes **letter = row (A–D)**, **number = column (1–4)
 
 | Address | Field (existing JSON name) | Type | Behavior in Mobius |
 |---------|----------------------------|------|--------------------|
-| `0x00048D7A` | `SeabedRouteType` | u8 | Values **`0x01`–`0x08`**. Each value is shared by **exactly two** cells that form a MapId pair (`0258` + `0259`). |
+| `0x00048D7A` | `MapVariant` | u8 | Values **`0x01`–`0x08`**. Each value is shared by **exactly two** cells that form a MapId pair (`0258` + `0259`). |
 | `0x00048D78` | `SeabedRoute` | u8 | **Constant `0x01`** on all 16 snapshots. Not the per-cell discriminator here. |
 
 **Identity rule (confirmed):**
 
 ```
-MobiusCell = (MapId ∈ {0258, 0259}, SeabedRouteType ∈ 1..8)
+MobiusCell = (MapId ∈ {0258, 0259}, MapVariant ∈ 1..8)
 ```
 
 All 16 combinations appear exactly once across the snapshot set.
@@ -73,7 +73,7 @@ This is the Seabed pattern with roles partly swapped:
 
 `0x48D7A` is therefore **overloaded**: binary submerged flag underwater, or
 Mobius cell-pair index `1..8` in the desert. Product code that treats
-`SeabedRouteType == 1` as “underwater only” will mis-read Mobius.
+`MapVariant == 1` as “underwater only” will mis-read Mobius.
 
 ---
 
@@ -156,21 +156,21 @@ other byte encodes the same 8-pair Mobius topology.
 
 ## Product implications (not integrated yet)
 
-- Backend already reads `0x48D7A` as `SeabedRouteType`. No new address needed for
-  the discriminator — but naming/semantics must broaden beyond seabed.
-- Frontend location resolve for Mobius should key on **`mapId` + `seabedRouteType`**
-  (or a renamed field), similar to Seabed’s `route + mapId + routeType`.
+- Backend already reads `0x48D7A` as `MapVariant`. No new address needed for
+  the discriminator.
+- Frontend location resolve for Mobius should key on **`mapId` + `mapVariant`**,
+  similar to Seabed’s `route + mapId + mapVariant`.
 - Static table: 16 entries `(0258|0259, 1..8)` → logical cell / exits / labels.
-- Do **not** treat `seabedRouteType === 1` as “underwater” without also checking
+- Do **not** treat `mapVariant === 1` as “underwater” without also checking
   MapId (Mobius uses `1` as a valid cell-pair id).
 
 Suggested guard sketch:
 
 ```text
 if MapId in {0258, 0259}:
-    mobiusCell = (MapId, SeabedRouteType)   // SeabedRouteType ∈ 1..8
+    mobiusCell = (MapId, MapVariant)   // MapVariant ∈ 1..8
 elif SeabedRoute != 0:
-    seabedCorridor = SeabedRoute            // SeabedRouteType 0/1 submerged
+    seabedCorridor = SeabedRoute            // MapVariant 0/1 submerged
 ```
 
 ---

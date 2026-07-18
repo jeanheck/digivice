@@ -119,7 +119,7 @@ if (newPlayerDto.previousMapId !== undefined) {
 |-------------|----------|------|
 | `location` (from `MapId`) | `location` | `string` |
 | `seabedRoute` | `seabedRoute` | `number` |
-| `seabedRouteType` | `seabedRouteType` | `number` |
+| `mapVariant` | `mapVariant` | `number` |
 | `previousMapId` | `previousMapId` | `string` |
 
 Files to mirror when adding another Player field:

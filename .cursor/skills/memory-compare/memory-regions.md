@@ -18,7 +18,7 @@ each investigation. Append new entries; do not remove without strong evidence.
 | 0x0004B3F8 | MapId | PlayerAddresses.json — changes on map transition |
 | 0x0004B400 | PreviousMapId | PlayerAddresses.json — map just left on each transition |
 | 0x00048D78 | SeabedRoute | PlayerAddresses.json — seabed corridor / dock pair; **Mobius: constant `0x01`** (not cell id) |
-| 0x00048D7A | SeabedRouteType | PlayerAddresses.json — seabed: `0x01` underwater; **Mobius: cell-pair `0x01`–`0x08`** (with MapId `0258`/`0259`) |
+| 0x00048D7A | MapVariant | PlayerAddresses.json — seabed: `0x01` underwater; **Mobius: cell-pair `0x01`–`0x08`** (with MapId `0258`/`0259`) |
 
 See also **Map / location** for seabed routing fields (including investigation-only mirrors).
 
@@ -31,7 +31,7 @@ See also **Map / location** for seabed routing fields (including investigation-o
 | 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
 | 0x00048D68 | PreviousMapId mirror (player block) | seabed-routing investigation — mirrors `0x4B400` |
 | 0x00048D78 | SeabedRoute (corridor / dock pair) | PlayerAddresses.json — set on dive, persists underwater; same from either entry; Mobius always `0x01` |
-| 0x00048D7A | SeabedRouteType / Mobius cell-pair | PlayerAddresses.json — seabed submerged `0`/`1`; Mobius pair index `1`–`8` (see mobius-desert-investigation.md) |
+| 0x00048D7A | MapVariant / Mobius cell-pair | PlayerAddresses.json — seabed submerged `0`/`1`; Mobius pair index `1`–`8` (see mobius-desert-investigation.md) |
 | 0x0000E2E0 | Player facing / direction (0–3) | map-subzones — discarded as area index; all forward-facing snaps = 1 |
 | 0x0004DE30 | Zone resource pointer (suspected) | map-subzones — PSX `0x801Fxxxx`; companions `0x4DE34`/`38` fixed |
 | 0x00048D82 | Room / sub-area byte (suspected) | map-subzones — volatile; not stable named-area enum |
@@ -155,7 +155,7 @@ Diffs here are expected after battles; usually not quest flags.
 | Legendary weapon | 0x4B38E | Sequential power-of-two bit |
 | DRI agent | 0x4B38C, 0x4B3B7, 0x4A7xx | Per-agent bit on shared bytes |
 | Map change | 0x4B3F8 (MapId) | Byte value change |
-| Map / seabed routing | 0x4B3F8, 0x4B400, 0x48D78, 0x48D7A | MapId + PreviousMapId + SeabedRoute / SeabedRouteType on dive; see seabed-routing-investigation.md |
+| Map / seabed routing | 0x4B3F8, 0x4B400, 0x48D78, 0x48D7A | MapId + PreviousMapId + SeabedRoute / MapVariant on dive; see seabed-routing-investigation.md |
 | Map / Mobius Desert | 0x4B3F8, 0x48D7A (0x48D78=0x01) | MapId 0258/0259 + cell-pair 1–8 at D7A; see mobius-desert-investigation.md |
 | Map subzones / encounters | 0x0E2E0, 0x4DE30, 0x48D82 + Makisha grids | Same MapId, different encounter pools; see map-subzones-investigation.md |
 | Digimon stats | ~0x494xxx | Multi-byte numeric deltas |

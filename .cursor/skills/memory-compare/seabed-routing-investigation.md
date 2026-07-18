@@ -182,8 +182,8 @@ map IDs directly.
 
 ### Done (backend Player pipeline)
 
-- `SeabedRoute` (`0x48D78`) and `SeabedRouteType` (`0x48D7A`, formerly
-  documented as IsSubmerged) are in `PlayerAddresses.json`, read by
+- `SeabedRoute` (`0x48D78`) and `MapVariant` (`0x48D7A`, formerly
+  SeabedRouteType, formerly documented as IsSubmerged) are in `PlayerAddresses.json`, read by
   `PlayerReader`, assembled on `Player`, and emitted via `PlayerChanged`
   (`PlayerDTO`).
 - `PreviousMapId` (`0x4B400`) is in `PlayerAddresses.json` — same shape as
@@ -192,7 +192,7 @@ map IDs directly.
 
 ### Still open
 
-When `MapId` is a seabed ID (`02Ex`) and submerged (`SeabedRouteType == 1`):
+When `MapId` is a seabed ID (`02Ex`) and submerged (`MapVariant == 1`):
 
 1. Use `SeabedRoute` + a **corridor table** (static) to resolve dock pair /
    reachable exits — table not built yet; do not assume a single “forward”
@@ -210,8 +210,8 @@ When `MapId` is a seabed ID (`02Ex`) and submerged (`SeabedRouteType == 1`):
       Divermon's ↔ Duel both ways)
 - [x] `0x48D78` confirmed as corridor identity (direction-independent)
 - [x] Retrofed to `memory-regions.md` and `known-patterns.md`
-- [x] Integrated in `PlayerAddresses.json` / backend (`SeabedRoute`, `SeabedRouteType`)
-- [x] Frontend syncer/store for `SeabedRoute` / `SeabedRouteType`
+- [x] Integrated in `PlayerAddresses.json` / backend (`SeabedRoute`, `MapVariant`)
+- [x] Frontend syncer/store for `SeabedRoute` / `MapVariant`
 - [x] `PreviousMapId` (`0x4B400`) in backend + frontend syncer
 - [ ] Route table complete for all dive points
 - [ ] Reverse test for Suzaku City ↔ Suzaku UG Lake (`0x07`)
