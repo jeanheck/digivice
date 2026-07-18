@@ -8,7 +8,7 @@ import { SeabedPresenter } from "@/presenters/map/seabed.presenter";
 
 const props = defineProps<{
   seabedRoute: number;
-  seabedRouteType: number;
+  mapVariant: number;
   locationId: string | null;
 }>();
 
@@ -19,7 +19,7 @@ const routeLocation = computed(() => {
     return null;
   }
 
-  return SeabedPresenter.getRouteLocation(props.seabedRoute, props.locationId, props.seabedRouteType);
+  return SeabedPresenter.getRouteLocation(props.seabedRoute, props.locationId, props.mapVariant);
 });
 
 const emerge = computed(() => {

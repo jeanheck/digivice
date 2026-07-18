@@ -37,8 +37,8 @@ const seabedRoute = computed(() => {
   return store.currentState?.player?.seabedRoute ?? 0;
 });
 
-const seabedRouteType = computed(() => {
-  return store.currentState?.player?.seabedRouteType ?? 0;
+const mapVariant = computed(() => {
+  return store.currentState?.player?.mapVariant ?? 0;
 });
 
 const locationId = computed(() => {
@@ -58,7 +58,7 @@ const mobiusDesertCell = computed(() => {
     return null;
   }
 
-  return MobiusDesertPresenter.getCell(locationId.value, seabedRouteType.value);
+  return MobiusDesertPresenter.getCell(locationId.value, mapVariant.value);
 });
 
 const locationTitleOverride = computed(() => {
@@ -144,7 +144,7 @@ const closeEnemyModal = () => {
         <Seabed
           v-if="isSeabed"
           :seabed-route="seabedRoute"
-          :seabed-route-type="seabedRouteType"
+          :map-variant="mapVariant"
           :location-id="locationId"
         />
       </div>

@@ -4,5 +4,5 @@ export interface Player {
     location: string;
     previousMapId: string;
     seabedRoute: number;
-    seabedRouteType: number;
+    mapVariant: number;
 }

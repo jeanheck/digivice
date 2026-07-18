@@ -16,12 +16,12 @@ export class MobiusDesertPresenter {
     };
   }
 
-  public static getCell(locationId: string, seabedRouteType: number): DesertAreaMapCellViewModel | null {
-    if (seabedRouteType <= 0) {
+  public static getCell(locationId: string, mapVariant: number): DesertAreaMapCellViewModel | null {
+    if (mapVariant <= 0) {
       return null;
     }
 
-    const cellRaw = DesertAreasMapRepository.getCell(locationId, String(seabedRouteType));
+    const cellRaw = DesertAreasMapRepository.getCell(locationId, String(mapVariant));
 
     if (cellRaw === null) {
       return null;

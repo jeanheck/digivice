@@ -9,7 +9,7 @@ export class PlayerConverter {
             location: playerDto.location,
             previousMapId: playerDto.previousMapId,
             seabedRoute: playerDto.seabedRoute,
-            seabedRouteType: playerDto.seabedRouteType
+            mapVariant: playerDto.mapVariant
         };
     }
 }

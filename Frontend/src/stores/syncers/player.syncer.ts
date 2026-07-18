@@ -18,8 +18,8 @@ export class PlayerSyncer {
         if (newPlayerDto.seabedRoute !== undefined) {
             previousPlayer.seabedRoute = newPlayerDto.seabedRoute;
         }
-        if (newPlayerDto.seabedRouteType !== undefined) {
-            previousPlayer.seabedRouteType = newPlayerDto.seabedRouteType;
+        if (newPlayerDto.mapVariant !== undefined) {
+            previousPlayer.mapVariant = newPlayerDto.mapVariant;
         }
     }
 }

@@ -17,7 +17,7 @@ export class DesertAreasMapRepository {
     return null;
   }
 
-  public static getCell(locationId: string, routeTypeKey: string): DesertAreaMapCellRaw | null {
-    return this.desertAreasMapTable[locationId]?.[routeTypeKey] ?? null;
+  public static getCell(locationId: string, mapVariantKey: string): DesertAreaMapCellRaw | null {
+    return this.desertAreasMapTable[locationId]?.[mapVariantKey] ?? null;
   }
 }

@@ -4,5 +4,5 @@ export interface PlayerDTO {
     location?: string; // Corresponde ao MapId no backend
     previousMapId?: string;
     seabedRoute?: number;
-    seabedRouteType?: number;
+    mapVariant?: number;
 }
