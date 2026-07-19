@@ -1,6 +1,6 @@
 import type { AuctionStatusConstant } from "@/constants/auction-status.constant";
 
-export interface AuctionListItemViewModel {
+export interface AuctionViewModel {
     id: string;
     equipmentId: number;
     status: AuctionStatusConstant;

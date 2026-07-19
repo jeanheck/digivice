@@ -9,13 +9,13 @@ const store = useGameStore();
 
 const currentAuction = computed(() => {
   const journal = store.currentState?.journal ?? null;
-  return AuctionCurrentPresenter.getAuctionCurrentViewModel(journal);
+  return AuctionCurrentPresenter.getAuctionCurrent(journal);
 });
 </script>
 
 <template>
   <AuctionCurrentAvailable
-    v-if="currentAuction.isActive"
+    v-if="currentAuction?.isActive"
     :current-auction="currentAuction"
   />
   <AuctionCurrentUnavailable v-else />

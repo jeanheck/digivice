@@ -4,16 +4,16 @@ import { AuctionConverter } from "@/presenters/converter/auction.converter";
 import { AuctionRepository } from "@/repositories/auction.repository";
 import type { AuctionStepsRaw } from "@/repositories/tables/raws/auction/auction-steps.raw";
 import { QuestService } from "@/services/quest.service";
-import type { AuctionListItemViewModel } from "@/viewmodels/auction/auction-list-item.viewmodel";
+import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 export class AuctionService {
-    public static getAuctionAvailableNow(journal: Journal | null): AuctionListItemViewModel | null {
+    public static getAuctionAvailableNow(journal: Journal | null): AuctionViewModel | null {
         return this.getAuctions(journal).find((auctionListItemViewModel) => {
             return auctionListItemViewModel.status === AuctionStatusConstant.availableNow;
         }) ?? null;
     }
 
-    public static getAuctions(journal: Journal | null): AuctionListItemViewModel[] {
+    public static getAuctions(journal: Journal | null): AuctionViewModel[] {
         const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(journal?.mainQuest ?? null);
 
         return AuctionRepository.getAuctions().map((auctionRaw) => {
