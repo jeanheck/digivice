@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import AuctionAvailableNow from "@/components/journal/AuctionAvailableNow.vue";
-import NoAuctionAvailableNow from "@/components/journal/NoAuctionAvailableNow.vue";
 import AuctionModal from "@/components/journal/auction-modal/AuctionModal.vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { AuctionCardPresenter } from "@/presenters/auction/auction-card.presenter";
+import AuctionCardAvailable from "./AuctionCardAvailable.vue";
+import AuctionCardUnavailable from "./AuctionCardUnavailable.vue";
 
 const store = useGameStore();
 
@@ -30,11 +30,11 @@ const closeAuctionModal = () => {
 <template>
   <div>
     <div @click="openAuctionModal">
-      <AuctionAvailableNow
+      <AuctionCardAvailable
         v-if="auctionAvailableNow"
         :auction="auctionAvailableNow"
       />
-      <NoAuctionAvailableNow v-else />
+      <AuctionCardUnavailable v-else />
     </div>
 
     <AuctionModal
