@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import MobiusDesertModal from "@/components/desert/MobiusDesertModal.vue";
-import { MapPresenter } from "@/presenters/map/map.presenter";
-import { LocationService } from "@/services/location.service";
+import { MobiusDesertButtonPresenter } from "@/presenters/footer/mobius-desert-button.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 
 const emit = defineEmits<{
@@ -23,9 +22,13 @@ const locationViewModel = computed(() => {
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
   const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
-  const enemyIds = LocationService.getEnemies(locationId, mainQuest, seabedRoute, previousMapId);
 
-  return MapPresenter.getLocationById(locationId, enemyIds);
+  return MobiusDesertButtonPresenter.getLocation(
+    locationId,
+    mainQuest,
+    seabedRoute,
+    previousMapId,
+  );
 });
 
 function onClick(): void {

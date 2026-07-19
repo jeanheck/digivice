@@ -1,14 +1,26 @@
+import type { Quest } from "@/models";
 import { LocationConverter } from "@/presenters/converter/location.converter";
 import { LocationRepository } from "@/repositories/location.repository";
+import { LocationService } from "@/services/location.service";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 export class MapPresenter {
   private static readonly mobiusDesertLocationIds: ReadonlySet<string> = new Set(["0258", "0259"]);
 
-  public static getLocationById(locationId: string, enemyIds: string[]): LocationViewModel {
+  public static getLocation(
+    locationId: string,
+    mainQuest: Quest | null,
+    seabedRoute: number = 0,
+    previousMapId: string = "",
+  ): LocationViewModel {
     const locationRaw = LocationRepository.getLocationById(locationId);
+    const enemyIds = LocationService.getEnemies(locationId, mainQuest, seabedRoute, previousMapId);
 
     return LocationConverter.convert(locationId, locationRaw, enemyIds);
+  }
+
+  public static isSeabedLocation(locationId: string | null): boolean {
+    return LocationService.isSeabedLocation(locationId);
   }
 
   public static isMobiusDesertLocation(locationId: string | null): boolean {

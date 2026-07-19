@@ -14,7 +14,6 @@ import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 import { MobiusDesertPresenter } from "@/presenters/map/mobius-desert.presenter";
 import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import { LocationService } from "@/services/location.service";
 
 const store = useGameStore();
 const { t } = useI18n();
@@ -28,9 +27,8 @@ const locationViewModel = computed(() => {
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
   const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
-  const enemyIds = LocationService.getEnemies(locationId, mainQuest, seabedRoute, previousMapId);
 
-  return MapPresenter.getLocationById(locationId, enemyIds);
+  return MapPresenter.getLocation(locationId, mainQuest, seabedRoute, previousMapId);
 });
 
 const locationImage = computed(() => {
@@ -50,7 +48,7 @@ const locationId = computed(() => {
 });
 
 const isSeabed = computed(() => {
-  return LocationService.isSeabedLocation(locationId.value);
+  return MapPresenter.isSeabedLocation(locationId.value);
 });
 
 const isMobiusDesert = computed(() => {

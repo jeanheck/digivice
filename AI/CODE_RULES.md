@@ -79,18 +79,24 @@ Fluxo alvo para dados estáticos (JSON, tabelas locais). A migração dos presen
 
 | Camada | Responsabilidade |
 |--------|------------------|
+| **Component** | Consome estado reativo da Pinia e chama presenters para casos de uso, cálculos e dados de apresentação. Não chama services, repositories nem converters diretamente. |
+| **Service** (`services/`) | Concentra regras de domínio reutilizáveis e pode orquestrar repositories/helpers. Não conhece Vue, componentes, presenters nem monta ViewModel de tela. |
 | **Repository** | Acesso aos dados estáticos. Retorna exclusivamente tipos **Raw** (ex.: `EnemyRaw`, `LocationRaw`). |
 | **Converter** (`presenters/converter/`) | Transformação **pura** e stateless: `Raw` → `ViewModel`. Não chama repository, não conhece componente nem regra de tela. |
-| **Presenter** | Orquestra o caso de uso da UI: chama repository(s), repassa o Raw ao converter quando necessário, agrega listas, aplica regras de tela (ex.: retornar `[]` quando não há dado). **Não monta ViewModel inline** quando existir transformação — delega ao converter. |
+| **Presenter** | Orquestra o caso de uso da UI: chama service(s), repository(s), helper(s) e converter(s), agrega listas e aplica regras de tela (ex.: retornar `[]` quando não há dado). **Não monta ViewModel inline** quando existir transformação — delega ao converter. |
 | **ViewModel** | Contrato exposto ao componente. Tipos em arquivos `{nome}.viewmodel.ts` (kebab-case), um tipo por arquivo. |
 
 #### Fluxo padrão
 
 ```
-Component → Presenter → Repository → Raw
-                ↓
-            Converter → ViewModel
+Component → Presenter → Service → Repository → Raw
+                │                       │
+                └──────→ Converter ←────┘
+                           ↓
+                       ViewModel
 ```
+
+O caminho pelo service é usado quando existe regra de domínio reutilizável. Em casos simples, o presenter pode acessar repository/helper/converter diretamente. Componentes podem consumir a Pinia diretamente para reatividade, mas toda lógica de domínio ou acesso a dados fora da store deve entrar pelo presenter.
 
 Referências atuais de pass-through explícito (Raw estruturalmente equivalente ao ViewModel): `map.presenter.ts`, `enemy-modal.presenter.ts`.
 
@@ -111,6 +117,8 @@ O converter pode receber parâmetros além do Raw quando o ViewModel depende de 
 - **Converter** que chama repository ou contém lógica de orquestração de tela.
 - **Presenter** que monta ViewModel inline quando a transformação justifica um converter.
 - **Repository** que retorna ViewModel ou monta dados para apresentação.
+- **Component** que importa ou chama service, repository ou converter diretamente.
+- **Service** que chama presenter, conhece componente/Vue ou monta ViewModel de tela.
 
 ### Helpers (regras reutilizáveis para presenters)
 
