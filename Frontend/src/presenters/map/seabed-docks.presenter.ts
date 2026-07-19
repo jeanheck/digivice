@@ -4,7 +4,7 @@ import { SeabedDirectionsRepository } from "@/repositories/seabed-direction.repo
 import type { SeabedDirectionViewModel } from "@/viewmodels/dock/seabed-direction.viewmodel";
 
 export class SeabedDocksPresenter {
-  public static getAsukaMapImageUrl(): string | null {
+  public static getAsukaImageUrl(): string | null {
     return ImageCatalog.getMapImageUrl("Asuka");
   }
 

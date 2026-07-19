@@ -12,7 +12,7 @@ const emit = defineEmits<{
 }>();
 
 const imageUrl = computed(() => {
-  return SeabedDocksPresenter.getAsukaMapImageUrl();
+  return SeabedDocksPresenter.getAsukaImageUrl();
 });
 
 const routes = SeabedDocksPresenter.getRoutes();
