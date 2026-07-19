@@ -2,6 +2,7 @@
 import { computed, ref } from "vue";
 import MobiusDesertModal from "@/components/desert/MobiusDesertModal.vue";
 import { MapPresenter } from "@/presenters/map/map.presenter";
+import { LocationService } from "@/services/location.service";
 import { useGameStore } from "@/stores/use-game-store";
 
 const emit = defineEmits<{
@@ -22,7 +23,9 @@ const locationViewModel = computed(() => {
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
   const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
-  return MapPresenter.getLocationById(locationId, mainQuest, seabedRoute, previousMapId);
+  const enemyIds = LocationService.getEnemies(locationId, mainQuest, seabedRoute, previousMapId);
+
+  return MapPresenter.getLocationById(locationId, enemyIds);
 });
 
 function onClick(): void {

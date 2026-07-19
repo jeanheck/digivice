@@ -14,6 +14,7 @@ import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 import { MobiusDesertPresenter } from "@/presenters/map/mobius-desert.presenter";
 import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import { LocationService } from "@/services/location.service";
 
 const store = useGameStore();
 const { t } = useI18n();
@@ -23,10 +24,13 @@ const locationViewModel = computed(() => {
   if (locationId === null) {
     return null;
   }
+
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
   const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
-  return MapPresenter.getLocationById(locationId, mainQuest, seabedRoute, previousMapId);
+  const enemyIds = LocationService.getEnemies(locationId, mainQuest, seabedRoute, previousMapId);
+
+  return MapPresenter.getLocationById(locationId, enemyIds);
 });
 
 const locationImage = computed(() => {
@@ -46,7 +50,7 @@ const locationId = computed(() => {
 });
 
 const isSeabed = computed(() => {
-  return MapPresenter.isSeabedLocation(locationId.value);
+  return LocationService.isSeabedLocation(locationId.value);
 });
 
 const isMobiusDesert = computed(() => {
@@ -122,10 +126,18 @@ const closeEnemyModal = () => {
       :style="{ backgroundImage: `url(${locationImage})` }"
     />
 
-    <div class="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-[#00aaff]/60 pointer-events-none" />
-    <div class="absolute top-1 right-1 w-3 h-3 border-t-2 border-r-2 border-[#00aaff]/60 pointer-events-none" />
-    <div class="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-[#00aaff]/60 pointer-events-none" />
-    <div class="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-[#00aaff]/60 pointer-events-none" />
+    <div
+      class="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-[#00aaff]/60 pointer-events-none"
+    />
+    <div
+      class="absolute top-1 right-1 w-3 h-3 border-t-2 border-r-2 border-[#00aaff]/60 pointer-events-none"
+    />
+    <div
+      class="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-[#00aaff]/60 pointer-events-none"
+    />
+    <div
+      class="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-[#00aaff]/60 pointer-events-none"
+    />
 
     <template v-if="isMobiusDesert">
       <DesertExitWest :name="westExitName" />
@@ -152,10 +164,6 @@ const closeEnemyModal = () => {
       <div v-if="!isMobiusDesert" class="flex-1 min-h-0" />
     </div>
 
-    <EnemyModal
-      :is-open="isEnemyModalOpen"
-      :enemy-id="selectedEnemyId"
-      @close="closeEnemyModal"
-    />
+    <EnemyModal :is-open="isEnemyModalOpen" :enemy-id="selectedEnemyId" @close="closeEnemyModal" />
   </aside>
 </template>
