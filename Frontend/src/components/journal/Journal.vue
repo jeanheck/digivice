@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 import JournalQuestsSection from "@/components/journal/JournalQuestsSection.vue";
 import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
-import AuctionCard from "@/components/journal/AuctionCard.vue";
+import AuctionCard from "@/components/journal/auction-card/AuctionCard.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { JournalPresenter } from "@/presenters/journal/journal.presenter";

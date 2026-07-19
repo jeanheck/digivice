@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import AuctionCurrentAvailable from "@/components/journal/auction-modal/AuctionCurrentAvailable.vue";
-import AuctionCurrentUnavailable from "@/components/journal/auction-modal/AuctionCurrentUnavailable.vue";
+import AuctionCurrentAvailable from "@/components/journal/auction-modal/auction-current/AuctionCurrentAvailable.vue";
+import AuctionCurrentUnavailable from "@/components/journal/auction-modal/auction-current/AuctionCurrentUnavailable.vue";
 import { AuctionCurrentPresenter } from "@/presenters/auction/auction-current.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 

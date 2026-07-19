@@ -3,8 +3,8 @@ import { computed } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import type { Journal } from "@/models";
 import { AuctionModalPresenter } from "@/presenters/auction/auction-modal.presenter";
-import Auction from "./Auction.vue";
-import AuctionCurrent from "./AuctionCurrent.vue";
+import Auction from "./auction/Auction.vue";
+import AuctionCurrent from "./auction-current/AuctionCurrent.vue";
 
 const props = defineProps<{
   isOpen: boolean;
