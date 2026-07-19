@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
-import { SeabedDocksPresenter } from "@/presenters/map/seabed-docks.presenter";
-import type { DockLabelPosition } from "@/repositories/tables/raws/seabed/seabed-direction-dock.raw";
+import { computed, ref } from "vue";
+import SeabedDockLabel from "@/components/seabed/SeabedDockLabel.vue";
+import SeabedDockMarker from "@/components/seabed/SeabedDockMarker.vue";
+import SeabedRouteLines from "@/components/seabed/SeabedRouteLines.vue";
 import {
   SEABED_MAP_FRAME_MAX_HEIGHT_PX,
   SEABED_MAP_FRAME_WIDTH_PX,
 } from "@/components/seabed/seabed-map-frame";
+import { useSeabedMapFrame } from "@/composables/use-seabed-map-frame";
+import { SeabedDocksPresenter } from "@/presenters/map/seabed-docks.presenter";
 
 const emit = defineEmits<{
   "select-dock": [locationId: string];
@@ -19,33 +22,7 @@ const routes = SeabedDocksPresenter.getRoutes();
 
 const hoveredRouteId = ref<string | null>(null);
 
-const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
-
-const mapImageFrameStyle = computed(() => {
-  if (imageNaturalSize.value === null) {
-    return {
-      width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
-      minHeight: `${Math.round(SEABED_MAP_FRAME_WIDTH_PX * 0.75)}px`,
-    };
-  }
-
-  const displayHeight = Math.round(
-    SEABED_MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width)
-  );
-
-  return {
-    width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
-    height: `${displayHeight}px`,
-  };
-});
-
-function onDockClick(locationId: string, dockType: string): void {
-  if (dockType !== "normal") {
-    return;
-  }
-
-  emit("select-dock", locationId);
-}
+const { mapImageFrameStyle, onImageLoad } = useSeabedMapFrame(imageUrl);
 
 function onRouteEnter(routeId: string): void {
   hoveredRouteId.value = routeId;
@@ -59,41 +36,9 @@ function isRouteHovered(routeId: string): boolean {
   return hoveredRouteId.value === routeId;
 }
 
-function getLabelPlacementClasses(labelPlacement: DockLabelPosition): string {
-  if (labelPlacement === "below") {
-    return "top-full mt-1 left-1/2 -translate-x-1/2";
-  }
-
-  if (labelPlacement === "left") {
-    return "right-full mr-1 top-1/2 -translate-y-1/2";
-  }
-
-  if (labelPlacement === "right") {
-    return "left-full ml-1 top-1/2 -translate-y-1/2";
-  }
-
-  return "bottom-full mb-1 left-1/2 -translate-x-1/2";
+function onSelectDock(locationId: string): void {
+  emit("select-dock", locationId);
 }
-
-const onImageLoad = (event: Event) => {
-  const imageElement = event.target as HTMLImageElement;
-
-  if (imageElement.naturalWidth === 0) {
-    return;
-  }
-
-  imageNaturalSize.value = {
-    width: imageElement.naturalWidth,
-    height: imageElement.naturalHeight,
-  };
-};
-
-watch(
-  imageUrl,
-  () => {
-    imageNaturalSize.value = null;
-  }
-);
 </script>
 
 <template>
@@ -113,67 +58,27 @@ watch(
         @load="onImageLoad"
       />
 
-      <svg
-        class="absolute inset-0 w-full h-full z-9"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <template
-          v-for="route in routes"
-          :key="route.id"
-        >
-          <template
-            v-for="segmentIndex in route.docks.length - 1"
-            :key="`${route.id}-${segmentIndex}`"
-          >
-            <line
-              :x1="route.docks[segmentIndex - 1].x"
-              :y1="route.docks[segmentIndex - 1].y"
-              :x2="route.docks[segmentIndex].x"
-              :y2="route.docks[segmentIndex].y"
-              stroke="transparent"
-              stroke-width="3"
-              pointer-events="stroke"
-              cursor="help"
-              @mouseenter="onRouteEnter(route.id)"
-              @mouseleave="onRouteLeave"
-            />
-            <line
-              :x1="route.docks[segmentIndex - 1].x"
-              :y1="route.docks[segmentIndex - 1].y"
-              :x2="route.docks[segmentIndex].x"
-              :y2="route.docks[segmentIndex].y"
-              :stroke="isRouteHovered(route.id) ? '#67e8f9' : '#06b6d4'"
-              :stroke-opacity="isRouteHovered(route.id) ? 1 : 0.5"
-              :stroke-width="isRouteHovered(route.id) ? 1 : 0.9"
-              pointer-events="none"
-            />
-          </template>
-        </template>
-      </svg>
+      <SeabedRouteLines
+        :routes="routes"
+        :hovered-route-id="hoveredRouteId"
+        @route-enter="onRouteEnter"
+        @route-leave="onRouteLeave"
+      />
 
       <template
         v-for="route in routes"
         :key="route.id"
       >
-        <div
+        <SeabedDockMarker
           v-for="dock in route.docks"
           :key="dock.location"
-          class="absolute z-10 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
-          :class="dock.type === 'dead-end' ? 'w-3 h-3' : 'w-7 h-7'"
-          :style="{ left: dock.x + '%', top: dock.y + '%' }"
-          @mouseenter="onRouteEnter(route.id)"
-          @mouseleave="onRouteLeave"
-          @click="onDockClick(dock.location, dock.type)"
-        >
-          <div
-            class="rounded-full w-full h-full transition-all"
-            :class="[
-              dock.type === 'dead-end' ? 'cursor-help' : 'cursor-pointer',
-              isRouteHovered(route.id) ? 'bg-cyan-300' : 'bg-cyan-500/50',
-            ]"
-          />
-        </div>
+          :dock="dock"
+          :route-id="route.id"
+          :is-hovered="isRouteHovered(route.id)"
+          @select-dock="onSelectDock"
+          @route-enter="onRouteEnter"
+          @route-leave="onRouteLeave"
+        />
       </template>
 
       <div class="absolute inset-0 z-20 pointer-events-none">
@@ -182,20 +87,11 @@ watch(
           :key="`label-${route.id}`"
         >
           <template v-if="isRouteHovered(route.id)">
-            <div
+            <SeabedDockLabel
               v-for="dock in route.docks"
               :key="`label-${dock.location}`"
-              class="absolute -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
-              :class="dock.type === 'dead-end' ? 'w-3 h-3' : 'w-7 h-7'"
-              :style="{ left: dock.x + '%', top: dock.y + '%' }"
-            >
-              <div
-                class="absolute w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center shadow-[0_0_10px_rgba(0,0,0,0.5)] leading-tight text-[10px] px-2 py-0.5"
-                :class="getLabelPlacementClasses(dock.labelPlacement)"
-              >
-                {{ $t(`location.${dock.location}`) }}
-              </div>
-            </div>
+              :dock="dock"
+            />
           </template>
         </template>
       </div>
