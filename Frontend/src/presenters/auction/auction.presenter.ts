@@ -10,16 +10,16 @@ import { AuctionStatusConstant } from "@/constants/auction-status.constant";
 
 export class AuctionPresenter {
 	public static getAuctionCardViewModel(journal: Journal | null): AuctionCardViewModel {
-		const activeAuctionListItem = this.getActiveAuctionViewModel(journal);
+		const auctionAvailableNow = this.getAuctionAvailableNow(journal);
 
 		return AuctionConverter.convertCard(
-			activeAuctionListItem !== null,
-			activeAuctionListItem?.equipmentId ?? null,
+			auctionAvailableNow !== null,
+			auctionAvailableNow?.equipmentId ?? null,
 		);
 	}
 
 	public static getAuctionCurrentViewModel(journal: Journal | null): AuctionCurrentViewModel {
-		const activeAuctionListItem = this.getActiveAuctionViewModel(journal);
+		const activeAuctionListItem = this.getAuctionAvailableNow(journal);
 
 		if (activeAuctionListItem === null) {
 			return AuctionConverter.convertCurrent(null);
@@ -29,7 +29,7 @@ export class AuctionPresenter {
 		return AuctionConverter.convertCurrent(activeAuctionRaw);
 	}
 
-	private static getActiveAuctionViewModel(journal: Journal | null): AuctionViewModel | null {
+	private static getAuctionAvailableNow(journal: Journal | null): AuctionViewModel | null {
 		return this.getAuctions(journal).find((auctionListItemViewModel) => {
 			return auctionListItemViewModel.status === AuctionStatusConstant.availableNow;
 		}) ?? null;
