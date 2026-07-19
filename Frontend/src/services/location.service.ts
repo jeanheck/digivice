@@ -1,8 +1,8 @@
 import type { Quest } from "@/models";
-import { QuestHelper } from "@/presenters/helper/quest.helper";
 import { LocationRepository } from "@/repositories/location.repository";
 import { SeabedRoutesRepository } from "@/repositories/seabed-routes.repository";
 import { isLocationEnemyPhaseList } from "@/repositories/tables/raws/location/location.raw";
+import { QuestService } from "@/services/quest.service";
 
 export class LocationService {
   private static readonly ASUKA_SEWERS_LOCATION_ID = "021B";
@@ -49,7 +49,7 @@ export class LocationService {
       return this.getSeabedEnemies(seabedRoute);
     }
 
-    return this.getEnemies(locationId, QuestHelper.getLastCompletedMainQuestStep(mainQuest));
+    return this.getEnemies(locationId, QuestService.getLastCompletedMainQuestStep(mainQuest));
   }
 
   public static isSeabed(locationId: string | null): boolean {

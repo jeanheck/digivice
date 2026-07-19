@@ -1,8 +1,8 @@
 import { AuctionConverter } from "@/presenters/converter/auction.converter";
 import { AuctionHelper } from "@/presenters/helper/auction.helper";
-import { QuestHelper } from "@/presenters/helper/quest.helper";
 import type { Journal } from "@/models";
 import { AuctionRepository } from "@/repositories/auction.repository";
+import { QuestService } from "@/services/quest.service";
 import type { AuctionCardViewModel } from "@/viewmodels/auction/auction-card.viewmodel";
 import type { AuctionCurrentViewModel } from "@/viewmodels/auction/auction-current.viewmodel";
 import type { AuctionListItemViewModel } from "@/viewmodels/auction/auction-list-item.viewmodel";
@@ -39,7 +39,7 @@ export class AuctionPresenter {
     }
 
     private static buildAuctionListItemViewModels(journal: Journal | null): AuctionListItemViewModel[] {
-        const lastCompletedMainQuestStep = QuestHelper.getLastCompletedMainQuestStep(journal?.mainQuest ?? null);
+        const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(journal?.mainQuest ?? null);
 
         return AuctionRepository.getAllAuctionsRaw().map((auctionRaw) => {
             const auctionRuntime = journal?.auctions.find((auction) => {

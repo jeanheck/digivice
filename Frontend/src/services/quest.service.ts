@@ -1,6 +1,6 @@
 import type { Quest } from "@/models";
 
-export class QuestHelper {
+export class QuestService {
     public static getLastCompletedMainQuestStep(mainQuest: Quest | null): number {
         if (mainQuest === null) {
             return 0;
