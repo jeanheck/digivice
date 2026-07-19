@@ -6,7 +6,6 @@ import AuctionCard from "@/components/journal/AuctionCard.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { JournalPresenter } from "@/presenters/journal/journal.presenter";
-import { AuctionPresenter } from "@/presenters/auction/auction.presenter";
 
 const store = useGameStore();
 
@@ -33,11 +32,6 @@ const closeQuestModal = () => {
     activeQuestId.value = null;
   }, 300);
 };
-
-const auctionAvailableNow = computed(() => {
-  const journal = store.currentState?.journal ?? null;
-  return AuctionPresenter.getAuctionAvailableNow(journal);
-});
 </script>
 
 <template>
@@ -56,10 +50,7 @@ const auctionAvailableNow = computed(() => {
       </section>
 
       <section>
-        <AuctionCard
-          :auction-available-now="auctionAvailableNow"
-          :journal="store.currentState?.journal ?? null"
-        />
+        <AuctionCard />
       </section>
 
       <JournalQuestsSection

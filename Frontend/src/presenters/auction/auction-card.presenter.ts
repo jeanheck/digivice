@@ -7,7 +7,7 @@ import type { AuctionListItemViewModel as AuctionViewModel } from "@/viewmodels/
 import type { AuctionStepsRaw } from "@/repositories/tables/raws/auction/auction-steps.raw";
 import { AuctionStatusConstant } from "@/constants/auction-status.constant";
 
-export class AuctionPresenter {
+export class AuctionCardPresenter {
 	public static getAuctionCurrentViewModel(journal: Journal | null): AuctionCurrentViewModel {
 		const activeAuctionListItem = this.getAuctionAvailableNow(journal);
 
@@ -32,7 +32,7 @@ export class AuctionPresenter {
 			const auction = journal?.auctions.find((auction) => {
 				return auction.id === auctionRaw.id;
 			});
-			const auctionStatus = AuctionPresenter.getCalculatedAuctionStatus(
+			const auctionStatus = AuctionCardPresenter.getCalculatedAuctionStatus(
 				auctionRaw.steps,
 				lastCompletedMainQuestStep,
 				auction,

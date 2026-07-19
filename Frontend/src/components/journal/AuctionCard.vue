@@ -1,15 +1,20 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import AuctionAvailableNow from "@/components/journal/AuctionAvailableNow.vue";
 import NoAuctionAvailableNow from "@/components/journal/NoAuctionAvailableNow.vue";
 import AuctionModal from "@/components/journal/auction-modal/AuctionModal.vue";
-import type { Journal } from "@/models";
-import type { AuctionListItemViewModel } from "@/viewmodels/auction/auction-list-item.viewmodel";
+import { useGameStore } from "@/stores/use-game-store";
+import { AuctionCardPresenter } from "@/presenters/auction/auction-card.presenter";
 
-defineProps<{
-  auctionAvailableNow: AuctionListItemViewModel | null;
-  journal: Journal | null;
-}>();
+const store = useGameStore();
+
+const journal = computed(() => {
+  return store.currentState?.journal ?? null;
+});
+
+const auctionAvailableNow = computed(() => {
+  return AuctionCardPresenter.getAuctionAvailableNow(journal.value);
+});
 
 const isAuctionModalOpen = ref(false);
 
