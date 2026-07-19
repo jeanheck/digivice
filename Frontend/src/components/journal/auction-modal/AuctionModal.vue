@@ -19,8 +19,8 @@ const currentAuction = computed(() => {
   return AuctionPresenter.getAuctionCurrentViewModel(props.journal);
 });
 
-const auctionHistory = computed(() => {
-  return AuctionPresenter.getAuctionHistoryViewModels(props.journal);
+const auctions = computed(() => {
+  return AuctionPresenter.getAuctions(props.journal);
 });
 
 const closeModal = () => {
@@ -50,7 +50,7 @@ const closeModal = () => {
         </h3>
 
         <AuctionListItem
-          v-for="auction in auctionHistory"
+          v-for="auction in auctions"
           :key="auction.id"
           :auction="auction"
         />

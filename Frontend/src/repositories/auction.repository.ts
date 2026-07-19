@@ -17,7 +17,7 @@ export class AuctionRepository {
     private static readonly dramonShieldTable = DramonShieldJson as DramonShieldTable;
     private static readonly yingYangWandTable = YingYangWandJson as YinYangWandTable;
 
-    public static getAllAuctionsRaw(): AuctionRaw[] {
+    public static getAuctions(): AuctionRaw[] {
         return [
             this.divineBarrierTable,
             this.hazardShieldTable,
@@ -27,13 +27,13 @@ export class AuctionRepository {
         ];
     }
 
-    public static getAuctionById(auctionId: string): AuctionRaw {
-        const auctionRaw = this.getAllAuctionsRaw().find((auction) => {
+    public static getAuctionById(auctionId: string): AuctionRaw | null {
+        const auctionRaw = this.getAuctions().find((auction) => {
             return auction.id === auctionId;
         });
 
         if (auctionRaw === undefined) {
-            throw new Error(`Auction not found: ${auctionId}`);
+            return null;
         }
 
         return auctionRaw;
