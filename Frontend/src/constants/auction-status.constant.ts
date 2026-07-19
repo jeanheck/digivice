@@ -1,6 +1,6 @@
 export enum AuctionStatusConstant {
     notYetOccurred = "notYetOccurred",
-    availableNow = "availableNow",
+    available = "available",
     participated = "participated",
     missed = "missed",
 }

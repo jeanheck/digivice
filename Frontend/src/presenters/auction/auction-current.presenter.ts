@@ -6,13 +6,13 @@ import { AuctionCurrentConverter } from "../converter/auction-current.converter"
 
 export class AuctionCurrentPresenter {
     public static getAuctionCurrent(journal: Journal | null): AuctionCurrentViewModel | null {
-        const auctionAvailableNow = AuctionService.getAuctionAvailableNow(journal);
+        const auctionAvailable = AuctionService.getAuctionAvailable(journal);
 
-        if (auctionAvailableNow === null) {
+        if (auctionAvailable === null) {
             return null;
         }
 
-        const auctionRaw = AuctionRepository.getAuctionById(auctionAvailableNow.id);
+        const auctionRaw = AuctionRepository.getAuctionById(auctionAvailable.id);
         return AuctionCurrentConverter.convert(auctionRaw);
     }
 }

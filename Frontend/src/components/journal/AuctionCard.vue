@@ -12,8 +12,8 @@ const journal = computed(() => {
   return store.currentState?.journal ?? null;
 });
 
-const auctionAvailableNow = computed(() => {
-  return AuctionCardPresenter.getAuctionAvailableNow(journal.value);
+const auctionAvailable = computed(() => {
+  return AuctionCardPresenter.getAuctionAvailable(journal.value);
 });
 
 const isAuctionModalOpen = ref(false);
@@ -31,8 +31,8 @@ const closeAuctionModal = () => {
   <div>
     <div @click="openAuctionModal">
       <AuctionCardAvailable
-        v-if="auctionAvailableNow"
-        :auction="auctionAvailableNow"
+        v-if="auctionAvailable"
+        :auction="auctionAvailable"
       />
       <AuctionCardUnavailable v-else />
     </div>

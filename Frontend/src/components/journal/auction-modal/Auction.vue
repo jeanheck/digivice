@@ -9,8 +9,8 @@ const props = defineProps<{
 
 const { t } = useI18n();
 
-const isAvailableNow = computed(() => {
-  return props.auction.status === "availableNow";
+const isAvailable = computed(() => {
+  return props.auction.status === "available";
 });
 
 const isNotYetOccurred = computed(() => {
@@ -30,7 +30,7 @@ const isPastAuction = computed(() => {
 });
 
 const cardClass = computed(() => {
-  if (isAvailableNow.value) {
+  if (isAvailable.value) {
     return "border-cyan-400/80 bg-[#001a2a]";
   }
 
@@ -46,7 +46,7 @@ const cardClass = computed(() => {
 });
 
 const titleClass = computed(() => {
-  if (isAvailableNow.value) {
+  if (isAvailable.value) {
     return "text-cyan-300";
   }
 
@@ -62,7 +62,7 @@ const titleClass = computed(() => {
 });
 
 const timingDescriptionClass = computed(() => {
-  if (isAvailableNow.value) {
+  if (isAvailable.value) {
     return "text-cyan-200/90";
   }
 
@@ -74,7 +74,7 @@ const timingDescriptionClass = computed(() => {
 });
 
 const participationDescriptionClass = computed(() => {
-  if (isAvailableNow.value) {
+  if (isAvailable.value) {
     return "text-cyan-300/80";
   }
 
@@ -90,7 +90,7 @@ const participationDescriptionClass = computed(() => {
 });
 
 const timingDescription = computed(() => {
-  if (isAvailableNow.value) {
+  if (isAvailable.value) {
     return t("auction.historyActive.timing");
   }
 
@@ -106,7 +106,7 @@ const timingDescription = computed(() => {
 });
 
 const participationDescription = computed(() => {
-  if (isAvailableNow.value) {
+  if (isAvailable.value) {
     return t("auction.historyActive.participation");
   }
 
@@ -128,7 +128,7 @@ const participationDescription = computed(() => {
     :class="cardClass"
   >
     <div
-      v-if="isAvailableNow"
+      v-if="isAvailable"
       class="absolute inset-0 bg-cyan-500/10 pointer-events-none"
     />
 
@@ -142,7 +142,7 @@ const participationDescription = computed(() => {
         {{ $t(`equipments.${auction.equipmentId}.name`) }}
       </span>
 
-      <span v-if="isAvailableNow" class="text-xs shrink-0 ml-2 text-cyan-300">◆</span>
+      <span v-if="isAvailable" class="text-xs shrink-0 ml-2 text-cyan-300">◆</span>
       <span v-else-if="isParticipated" class="text-green-400 text-xs shrink-0 ml-2">✔</span>
       <span v-else-if="isNotYetOccurred" class="text-xs shrink-0 ml-2">🔒</span>
       <span v-else-if="isMissed" class="text-rose-400/80 text-xs shrink-0 ml-2">✕</span>
