@@ -3,7 +3,7 @@ import { AuctionStatusConstant } from "@/constants/auction-status.constant";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 import AuctionAvailable from "./AuctionAvailable.vue";
 import AuctionMissed from "./AuctionMissed.vue";
-import AuctionNotYetOccurred from "./AuctionNotYetOccurred.vue";
+import AuctionNotYetOccurred from "./auction/AuctionNotYetOccurred.vue";
 import AuctionParticipated from "./AuctionParticipated.vue";
 
 defineProps<{

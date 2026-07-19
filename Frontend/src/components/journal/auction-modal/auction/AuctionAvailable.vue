@@ -22,7 +22,7 @@ defineProps<{
       {{ $t("auction.historyActive.timing") }}
     </p>
 
-    <p class="text-[10px] leading-tight mt-1 min-h-[12px] relative z-10 text-cyan-300/80">
+    <p class="text-[10px] leading-tight mt-1 min-h-3 relative z-10 text-cyan-300/80">
       {{ $t("auction.historyActive.participation") }}
     </p>
   </div>
