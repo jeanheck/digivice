@@ -15,10 +15,6 @@ const emit = defineEmits<{
   (e: "close"): void;
 }>();
 
-const currentAuction = computed(() => {
-  return AuctionModalPresenter.getAuctionCurrentViewModel(props.journal);
-});
-
 const auctions = computed(() => {
   return AuctionModalPresenter.getAuctions(props.journal);
 });
@@ -42,7 +38,7 @@ const closeModal = () => {
     </template>
 
     <div class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 custom-scroll">
-      <AuctionCurrent :current-auction="currentAuction" />
+      <AuctionCurrent />
 
       <section class="space-y-2">
         <h3 class="text-xs font-bold uppercase tracking-wide text-gray-400 border-b border-gray-700/40 pb-1">
