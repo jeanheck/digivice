@@ -8,7 +8,7 @@ import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { useGameStore } from "@/stores/use-game-store";
-import { FooterPresenter } from "@/presenters/footer.presenter";
+import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 
 const store = useGameStore();
 const { t } = useI18n();

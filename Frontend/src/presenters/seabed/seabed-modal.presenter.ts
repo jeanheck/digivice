@@ -1,14 +1,14 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { Quest } from "@/models";
 import { DockConverter } from "@/presenters/converter/dock.converter";
+import { LocationConverter } from "@/presenters/converter/location.converter";
 import { LocationRepository } from "@/repositories";
 import { DockRepository } from "@/repositories/dock.repository";
 import { LocationService } from "@/services/location.service";
 import type { DockViewModel } from "@/viewmodels/dock/dock.viewmodel";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
-import { LocationConverter } from "../converter/location.converter";
 
-export class DocksSectionPresenter {
+export class SeabedModalPresenter {
   public static getDock(location: LocationViewModel | null): DockViewModel | null {
     if (location === null || location.dock === false) {
       return null;
@@ -36,9 +36,14 @@ export class DocksSectionPresenter {
     }
 
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const enemyIds = LocationService.getCurrentEnemies(locationId, mainQuest, seabedRoute, previousMapId);
+    const enemyIds = LocationService.getCurrentEnemies(
+      locationId,
+      mainQuest,
+      seabedRoute,
+      previousMapId,
+    );
     const location = LocationConverter.convert(locationId, locationRaw, enemyIds);
 
-    return DocksSectionPresenter.getDock(location);
+    return SeabedModalPresenter.getDock(location);
   }
 }

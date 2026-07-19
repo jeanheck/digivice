@@ -4,7 +4,7 @@ import Modal from "@/components/modal/Modal.vue";
 import asukaMapUrl from "@/assets/AsukaMap.webp";
 import Dock from "@/components/seabed/Dock.vue";
 import Docks from "@/components/seabed/Docks.vue";
-import { DocksSectionPresenter } from "@/presenters/map/docks-section.presenter";
+import { SeabedModalPresenter } from "@/presenters/seabed/seabed-modal.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/seabed-map-frame";
@@ -40,7 +40,7 @@ watch(
   () => {
     syncSelectedLocationIdFromProps();
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 watch(
@@ -49,11 +49,11 @@ watch(
     if (isOpen) {
       syncSelectedLocationIdFromProps();
     }
-  }
+  },
 );
 
 const dockViewModel = computed(() => {
-  return DocksSectionPresenter.getDockByLocationId(
+  return SeabedModalPresenter.getDockByLocationId(
     selectedLocationId.value,
     store.currentState?.journal?.mainQuest ?? null,
     store.currentState?.player?.seabedRoute ?? 0,
