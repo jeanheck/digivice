@@ -6,21 +6,12 @@ defineProps<{
   auction: AuctionListItemViewModel;
 }>();
 
-const emit = defineEmits<{
-  click: [];
-}>();
-
 const { t } = useI18n();
-
-const onClick = () => {
-  emit("click");
-};
 </script>
 
 <template>
   <div
     class="p-2 rounded border cursor-pointer transition-all duration-200 group relative overflow-hidden border-cyan-400/80 bg-[#001a2a] hover:bg-[#002a3a] hover:border-cyan-300 auction-card-active"
-    @click="onClick"
   >
     <div class="absolute inset-0 bg-cyan-500/10 pointer-events-none" />
 

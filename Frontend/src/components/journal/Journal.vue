@@ -2,10 +2,8 @@
 import { computed, ref } from "vue";
 import JournalQuestsSection from "@/components/journal/JournalQuestsSection.vue";
 import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
-import AuctionAvailableNow from "@/components/journal/AuctionAvailableNow.vue";
-import NoAuctionAvailableNow from "@/components/journal/NoAuctionAvailableNow.vue";
+import AuctionCard from "@/components/journal/AuctionCard.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
-import AuctionModal from "@/components/journal/auction-modal/AuctionModal.vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { JournalPresenter } from "@/presenters/journal/journal.presenter";
 import { AuctionPresenter } from "@/presenters/auction/auction.presenter";
@@ -40,16 +38,6 @@ const auctionAvailableNow = computed(() => {
   const journal = store.currentState?.journal ?? null;
   return AuctionPresenter.getAuctionAvailableNow(journal);
 });
-
-const isAuctionModalOpen = ref(false);
-
-const openAuctionModal = () => {
-  isAuctionModalOpen.value = true;
-};
-
-const closeAuctionModal = () => {
-  isAuctionModalOpen.value = false;
-};
 </script>
 
 <template>
@@ -68,14 +56,9 @@ const closeAuctionModal = () => {
       </section>
 
       <section>
-        <AuctionAvailableNow
-          v-if="auctionAvailableNow"
-          :auction="auctionAvailableNow"
-          @click="openAuctionModal"
-        />
-        <NoAuctionAvailableNow
-          v-else
-          @click="openAuctionModal"
+        <AuctionCard
+          :auction-available-now="auctionAvailableNow"
+          :journal="store.currentState?.journal ?? null"
         />
       </section>
 
@@ -124,11 +107,5 @@ const closeAuctionModal = () => {
     :is-open="isQuestModalOpen"
     :quest-id="activeQuestId"
     @close="closeQuestModal"
-  />
-
-  <AuctionModal
-    :is-open="isAuctionModalOpen"
-    :journal="store.currentState?.journal ?? null"
-    @close="closeAuctionModal"
   />
 </template>
