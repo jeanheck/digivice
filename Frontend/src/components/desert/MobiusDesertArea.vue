@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import Dock from "@/components/seabed/Dock.vue";
+import SeabedDock from "@/components/seabed/SeabedDock.vue";
 import noiseDesertSMapUrl from "@/assets/maps/Noise Desert S.webp";
 import mirageTowerMapUrl from "@/assets/maps/Mirage Tower.webp";
 import mobiusDesertMapUrl from "@/assets/maps/Mobius Desert.webp";
@@ -58,7 +58,7 @@ const coordinates = computed<CoordinatesViewModel | null>(() => {
 
 <template>
   <div class="flex h-full w-full items-center justify-center">
-    <Dock v-if="selectedImageUrl" :image-url="selectedImageUrl" :coordinates="coordinates" />
+    <SeabedDock v-if="selectedImageUrl" :image-url="selectedImageUrl" :coordinates="coordinates" />
     <div
       v-else
       class="flex flex-col items-center justify-center gap-3 px-8"

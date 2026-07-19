@@ -1,4 +1,3 @@
-import asukaMapUrl from "@/assets/AsukaMap.webp";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { Journal } from "@/models";
 import { QuestConverter } from "@/presenters/converter/quest.converter";
@@ -71,6 +70,11 @@ export class QuestModalPresenter {
 
     public static getWorldMapLocations(selectedStep: StepViewModel | null): ZoomedLocationMapViewModel[] {
         if (!selectedStep?.location || !selectedStep.coordinates) {
+            return [];
+        }
+
+        const asukaMapUrl = ImageCatalog.getMapImageUrl("Asuka");
+        if (asukaMapUrl === null) {
             return [];
         }
 

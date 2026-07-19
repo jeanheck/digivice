@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
-import asukaMapUrl from "@/assets/AsukaMap.webp";
-import Dock from "@/components/seabed/Dock.vue";
-import Docks from "@/components/seabed/Docks.vue";
+import SeabedDock from "@/components/seabed/SeabedDock.vue";
+import SeabedDocks from "@/components/seabed/SeabedDocks.vue";
 import { SeabedModalPresenter } from "@/presenters/seabed/seabed-modal.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
@@ -25,6 +24,10 @@ const isModalOpen = computed(() => {
 });
 
 const selectedLocationId = ref<string | null>(null);
+
+const asukaMapUrl = computed(() => {
+  return SeabedModalPresenter.getAsukaMapImageUrl();
+});
 
 function syncSelectedLocationIdFromProps(): void {
   if (props.location !== null && props.location.dock === true) {
@@ -86,8 +89,12 @@ const closeModal = () => {
 
     <div class="flex flex-1 min-h-0 h-full w-full p-4 overflow-visible items-center justify-center">
       <div class="flex gap-4 items-center min-h-0 max-h-full">
-        <Docks :image-url="asukaMapUrl" @select-dock="onSelectDock" />
-        <Dock
+        <SeabedDocks
+          v-if="asukaMapUrl"
+          :image-url="asukaMapUrl"
+          @select-dock="onSelectDock"
+        />
+        <SeabedDock
           v-if="dockViewModel?.imageUrl"
           :image-url="dockViewModel.imageUrl"
           :coordinates="dockViewModel.coordinates ?? null"
