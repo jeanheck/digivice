@@ -16,6 +16,14 @@ const emit = defineEmits<{
 const percentage = computed(() => {
   return BlastGaugeProgressBarPresenter.calculateProgressPercentage(props.blastGauge);
 });
+
+const fillExtraClass = computed(() => {
+  return BlastGaugeProgressBarPresenter.getFillEffectClass(percentage.value);
+});
+
+const trackExtraClass = computed(() => {
+  return BlastGaugeProgressBarPresenter.getTrackEffectClass(percentage.value);
+});
 </script>
 
 <template>
@@ -23,8 +31,10 @@ const percentage = computed(() => {
     :current-value="blastGauge"
     :max-value="BlastGaugeProgressBarPresenter.MAX_BLAST_GAUGE"
     :progressPercentage="percentage"
-    bar-color-class="bg-amber-200"
+    bar-color-class="bg-yellow-200"
     transition-duration-class="duration-300"
+    :fill-extra-class="fillExtraClass"
+    :track-extra-class="trackExtraClass"
     @show-tooltip="emit('showTooltip', $event)"
     @move-tooltip="emit('moveTooltip', $event)"
     @hide-tooltip="emit('hideTooltip')"

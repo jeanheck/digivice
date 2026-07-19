@@ -5,6 +5,8 @@ defineProps<{
   progressPercentage: number;
   barColorClass: string;
   transitionDurationClass: string;
+  fillExtraClass?: string;
+  trackExtraClass?: string;
 }>();
 
 const emit = defineEmits<{
@@ -17,13 +19,14 @@ const emit = defineEmits<{
 <template>
   <div
     class="relative w-full h-6 bg-[#000e3f] rounded overflow-hidden shadow-inner flex items-center justify-center border-2 border-[#00154a] cursor-help"
+    :class="trackExtraClass"
     @mouseenter="emit('showTooltip', $event)"
     @mousemove="emit('moveTooltip', $event)"
     @mouseleave="emit('hideTooltip')"
   >
     <div
       class="absolute left-0 top-0 h-full transition-all bg-opacity-90"
-      :class="[barColorClass, transitionDurationClass]"
+      :class="[barColorClass, transitionDurationClass, fillExtraClass]"
       :style="{ width: `${progressPercentage}%` }"
     ></div>
 
