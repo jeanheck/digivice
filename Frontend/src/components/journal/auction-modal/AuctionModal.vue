@@ -4,7 +4,7 @@ import Modal from "@/components/modal/Modal.vue";
 import AuctionCurrentPanel from "@/components/journal/auction-modal/AuctionCurrentPanel.vue";
 import AuctionListItem from "@/components/journal/auction-modal/AuctionListItem.vue";
 import type { Journal } from "@/models";
-import { AuctionCardPresenter } from "@/presenters/auction/auction-card.presenter";
+import { AuctionModalPresenter } from "@/presenters/auction/auction-modal.presenter";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -16,11 +16,11 @@ const emit = defineEmits<{
 }>();
 
 const currentAuction = computed(() => {
-  return AuctionCardPresenter.getAuctionCurrentViewModel(props.journal);
+  return AuctionModalPresenter.getAuctionCurrentViewModel(props.journal);
 });
 
 const auctions = computed(() => {
-  return AuctionCardPresenter.getAuctions(props.journal);
+  return AuctionModalPresenter.getAuctions(props.journal);
 });
 
 const closeModal = () => {
