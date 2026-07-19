@@ -14,13 +14,13 @@ export class MapPresenter {
     previousMapId: string = "",
   ): LocationViewModel {
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const enemyIds = LocationService.getEnemies(locationId, mainQuest, seabedRoute, previousMapId);
+    const enemyIds = LocationService.getCurrentEnemies(locationId, mainQuest, seabedRoute, previousMapId);
 
     return LocationConverter.convert(locationId, locationRaw, enemyIds);
   }
 
   public static isSeabedLocation(locationId: string | null): boolean {
-    return LocationService.isSeabedLocation(locationId);
+    return LocationService.isSeabed(locationId);
   }
 
   public static isMobiusDesertLocation(locationId: string | null): boolean {

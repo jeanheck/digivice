@@ -12,7 +12,7 @@ export class SeabedButtonPresenter {
     previousMapId: string = "",
   ): LocationViewModel {
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const enemyIds = LocationService.getEnemies(locationId, mainQuest, seabedRoute, previousMapId);
+    const enemyIds = LocationService.getCurrentEnemies(locationId, mainQuest, seabedRoute, previousMapId);
 
     return LocationConverter.convert(locationId, locationRaw, enemyIds);
   }

@@ -2,56 +2,33 @@ import type { Quest } from "@/models";
 import { QuestHelper } from "@/presenters/helper/quest.helper";
 import { LocationRepository } from "@/repositories/location.repository";
 import { SeabedRoutesRepository } from "@/repositories/seabed-routes.repository";
-import {
-  isLocationEnemyPhaseList,
-  type LocationEnemiesRaw,
-} from "@/repositories/tables/raws/location/location.raw";
+import { isLocationEnemyPhaseList } from "@/repositories/tables/raws/location/location.raw";
 
 export class LocationService {
-  private static readonly asukaSewersLocationId = "021B";
-  private static readonly undergroundPathLocationId = "020B";
-
-  private static readonly seabedLocationIds: ReadonlySet<string> = new Set([
-    "02E0",
-    "02E1",
-    "02E2",
-    "02E3",
-    "02E4",
-    "02E5",
-    "02E6",
-    "02E7",
-  ]);
+  private static readonly ASUKA_SEWERS_LOCATION_ID = "021B";
+  private static readonly UNDERGROUND_PATH_LOCATION_ID = "020B";
+  private static readonly SEABED_LOCATION_IDS: ReadonlySet<string> = new Set(["02E0", "02E1", "02E2", "02E3", "02E4", "02E5", "02E6", "02E7"]);
 
   private static isAsukaSewersSafeZone(locationId: string, previousMapId: string): boolean {
-    return (
-      locationId === this.asukaSewersLocationId && previousMapId === this.undergroundPathLocationId
-    );
+    return locationId === this.ASUKA_SEWERS_LOCATION_ID && previousMapId === this.UNDERGROUND_PATH_LOCATION_ID;
   }
+  private static getSeabedEnemies(seabedRoute: number): string[] {
+    return seabedRoute === 0 ? [] : SeabedRoutesRepository.getEnemiesByRoute(String(seabedRoute));
+  }
+  private static getEnemies(locationId: string, lastCompletedMainQuestStep: number): string[] {
+    const locationRaw = LocationRepository.getLocationById(locationId);
+    const locationEnemiesRaw = locationRaw.enemies;
 
-  private static resolveSeabedEnemyIds(seabedRoute: number): string[] {
-    if (seabedRoute === 0) {
-      return [];
+    if (!isLocationEnemyPhaseList(locationEnemiesRaw)) {
+      return locationEnemiesRaw;
     }
 
-    return SeabedRoutesRepository.getEnemiesByRoute(String(seabedRoute));
-  }
-
-  private static resolveEnemyIds(
-    enemies: LocationEnemiesRaw,
-    lastCompletedMainQuestStep: number,
-  ): string[] {
-    if (!isLocationEnemyPhaseList(enemies)) {
-      return enemies;
-    }
-
-    const sortedPhases = [...enemies].sort((firstPhase, secondPhase) => {
+    const sortedPhases = [...locationEnemiesRaw].sort((firstPhase, secondPhase) => {
       return secondPhase.lastMainQuestStepDone - firstPhase.lastMainQuestStepDone;
     });
-
     const matchingPhase = sortedPhases.find((phase) => {
       return lastCompletedMainQuestStep >= phase.lastMainQuestStepDone;
     });
-
     if (matchingPhase === undefined) {
       return [];
     }
@@ -59,33 +36,27 @@ export class LocationService {
     return matchingPhase.ids;
   }
 
-  public static getEnemies(
+  public static getCurrentEnemies(
     locationId: string,
     mainQuest: Quest | null,
     seabedRoute: number = 0,
     previousMapId: string = "",
   ): string[] {
-    const locationRaw = LocationRepository.getLocationById(locationId);
-
     if (this.isAsukaSewersSafeZone(locationId, previousMapId)) {
       return [];
     }
-
-    if (this.isSeabedLocation(locationId)) {
-      return this.resolveSeabedEnemyIds(seabedRoute);
+    if (this.isSeabed(locationId)) {
+      return this.getSeabedEnemies(seabedRoute);
     }
 
-    return this.resolveEnemyIds(
-      locationRaw.enemies,
-      QuestHelper.getLastCompletedMainQuestStep(mainQuest),
-    );
+    return this.getEnemies(locationId, QuestHelper.getLastCompletedMainQuestStep(mainQuest));
   }
 
-  public static isSeabedLocation(locationId: string | null): boolean {
+  public static isSeabed(locationId: string | null): boolean {
     if (locationId === null) {
       return false;
     }
 
-    return this.seabedLocationIds.has(locationId);
+    return this.SEABED_LOCATION_IDS.has(locationId);
   }
 }

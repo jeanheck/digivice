@@ -36,7 +36,7 @@ export class DocksSectionPresenter {
     }
 
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const enemyIds = LocationService.getEnemies(locationId, mainQuest, seabedRoute, previousMapId);
+    const enemyIds = LocationService.getCurrentEnemies(locationId, mainQuest, seabedRoute, previousMapId);
     const location = LocationConverter.convert(locationId, locationRaw, enemyIds);
 
     return DocksSectionPresenter.getDock(location);
