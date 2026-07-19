@@ -1,8 +1,13 @@
+import { ImageCatalog } from "@/catalogs/image.catalog";
 import { SeabedDirectionConverter } from "@/presenters/converter/seabed-direction.converter";
 import { SeabedDirectionsRepository } from "@/repositories/seabed-direction.repository";
 import type { SeabedDirectionViewModel } from "@/viewmodels/dock/seabed-direction.viewmodel";
 
-export class DocksPresenter {
+export class SeabedDocksPresenter {
+  public static getAsukaMapImageUrl(): string | null {
+    return ImageCatalog.getMapImageUrl("Asuka");
+  }
+
   public static getRoutes(): SeabedDirectionViewModel[] {
     const seabedDirectionsTable = SeabedDirectionsRepository.getAll();
 

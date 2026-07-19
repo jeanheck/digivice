@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import { DocksPresenter } from "@/presenters/map/docks.presenter";
+import { SeabedDocksPresenter } from "@/presenters/map/seabed-docks.presenter";
 import type { DockLabelPosition } from "@/repositories/tables/raws/seabed/seabed-direction-dock.raw";
 import {
   SEABED_MAP_FRAME_MAX_HEIGHT_PX,
   SEABED_MAP_FRAME_WIDTH_PX,
 } from "@/components/seabed/seabed-map-frame";
 
-const props = defineProps<{
-  imageUrl: string | null;
-}>();
-
 const emit = defineEmits<{
   "select-dock": [locationId: string];
 }>();
 
-const routes = DocksPresenter.getRoutes();
+const imageUrl = computed(() => {
+  return SeabedDocksPresenter.getAsukaMapImageUrl();
+});
+
+const routes = SeabedDocksPresenter.getRoutes();
 
 const hoveredRouteId = ref<string | null>(null);
 
@@ -89,7 +89,7 @@ const onImageLoad = (event: Event) => {
 };
 
 watch(
-  () => props.imageUrl,
+  imageUrl,
   () => {
     imageNaturalSize.value = null;
   }

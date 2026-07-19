@@ -25,10 +25,6 @@ const isModalOpen = computed(() => {
 
 const selectedLocationId = ref<string | null>(null);
 
-const asukaMapUrl = computed(() => {
-  return SeabedModalPresenter.getAsukaMapImageUrl();
-});
-
 function syncSelectedLocationIdFromProps(): void {
   if (props.location !== null && props.location.dock === true) {
     selectedLocationId.value = props.location.id;
@@ -89,11 +85,7 @@ const closeModal = () => {
 
     <div class="flex flex-1 min-h-0 h-full w-full p-4 overflow-visible items-center justify-center">
       <div class="flex gap-4 items-center min-h-0 max-h-full">
-        <SeabedDocks
-          v-if="asukaMapUrl"
-          :image-url="asukaMapUrl"
-          @select-dock="onSelectDock"
-        />
+        <SeabedDocks @select-dock="onSelectDock" />
         <SeabedDock
           v-if="dockViewModel?.imageUrl"
           :image-url="dockViewModel.imageUrl"
