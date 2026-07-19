@@ -2,22 +2,12 @@ import { AuctionConverter } from "@/presenters/converter/auction.converter";
 import type { Auction, Journal } from "@/models";
 import { AuctionRepository } from "@/repositories/auction.repository";
 import { QuestService } from "@/services/quest.service";
-import type { AuctionCardViewModel } from "@/viewmodels/auction/auction-card.viewmodel";
 import type { AuctionCurrentViewModel } from "@/viewmodels/auction/auction-current.viewmodel";
 import type { AuctionListItemViewModel as AuctionViewModel } from "@/viewmodels/auction/auction-list-item.viewmodel";
 import type { AuctionStepsRaw } from "@/repositories/tables/raws/auction/auction-steps.raw";
 import { AuctionStatusConstant } from "@/constants/auction-status.constant";
 
 export class AuctionPresenter {
-	public static getAuctionCardViewModel(journal: Journal | null): AuctionCardViewModel {
-		const auctionAvailableNow = this.getAuctionAvailableNow(journal);
-
-		return AuctionConverter.convertCard(
-			auctionAvailableNow !== null,
-			auctionAvailableNow?.equipmentId ?? null,
-		);
-	}
-
 	public static getAuctionCurrentViewModel(journal: Journal | null): AuctionCurrentViewModel {
 		const activeAuctionListItem = this.getAuctionAvailableNow(journal);
 
@@ -29,7 +19,7 @@ export class AuctionPresenter {
 		return AuctionConverter.convertCurrent(activeAuctionRaw);
 	}
 
-	private static getAuctionAvailableNow(journal: Journal | null): AuctionViewModel | null {
+	public static getAuctionAvailableNow(journal: Journal | null): AuctionViewModel | null {
 		return this.getAuctions(journal).find((auctionListItemViewModel) => {
 			return auctionListItemViewModel.status === AuctionStatusConstant.availableNow;
 		}) ?? null;

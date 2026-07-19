@@ -2,7 +2,8 @@
 import { computed, ref } from "vue";
 import JournalQuestsSection from "@/components/journal/JournalQuestsSection.vue";
 import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
-import AuctionCard from "@/components/journal/AuctionCard.vue";
+import AuctionAvailableNow from "@/components/journal/AuctionAvailableNow.vue";
+import NoAuctionAvailableNow from "@/components/journal/NoAuctionAvailableNow.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
 import AuctionModal from "@/components/journal/auction-modal/AuctionModal.vue";
 import { useGameStore } from "@/stores/use-game-store";
@@ -35,9 +36,9 @@ const closeQuestModal = () => {
   }, 300);
 };
 
-const auctionCardViewModel = computed(() => {
+const auctionAvailableNow = computed(() => {
   const journal = store.currentState?.journal ?? null;
-  return AuctionPresenter.getAuctionCardViewModel(journal);
+  return AuctionPresenter.getAuctionAvailableNow(journal);
 });
 
 const isAuctionModalOpen = ref(false);
@@ -67,8 +68,13 @@ const closeAuctionModal = () => {
       </section>
 
       <section>
-        <AuctionCard
-          :auction-card="auctionCardViewModel"
+        <AuctionAvailableNow
+          v-if="auctionAvailableNow"
+          :auction="auctionAvailableNow"
+          @click="openAuctionModal"
+        />
+        <NoAuctionAvailableNow
+          v-else
           @click="openAuctionModal"
         />
       </section>

@@ -1,6 +1,5 @@
 import type { AuctionStatusConstant } from "@/constants/auction-status.constant";
 import type { AuctionRaw } from "@/repositories/tables/raws/auction/auction.raw";
-import type { AuctionCardViewModel } from "@/viewmodels/auction/auction-card.viewmodel";
 import type { AuctionCurrentViewModel } from "@/viewmodels/auction/auction-current.viewmodel";
 import type { AuctionListItemViewModel } from "@/viewmodels/auction/auction-list-item.viewmodel";
 
@@ -30,13 +29,6 @@ export class AuctionConverter {
 			purchasePrice: auctionRaw.price,
 			resalePrice: auctionRaw.resale,
 			closesWhenKey: `auction.closesWhen.${auctionRaw.id}`,
-		};
-	}
-
-	public static convertCard(isActive: boolean, activeEquipmentId: number | null): AuctionCardViewModel {
-		return {
-			isActive,
-			activeEquipmentId,
 		};
 	}
 }
