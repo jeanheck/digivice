@@ -70,8 +70,8 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled"></div>
 
-    <div class="dw3-panel-content flex justify-center w-full min-w-0 p-3 sm:p-4 text-white text-xs">
-      <div class="grid grid-cols-2 gap-x-4 sm:gap-x-8 lg:gap-x-12 w-full min-w-0 max-w-xs sm:max-w-sm">
+    <div class="dw3-panel-content flex justify-center w-full min-w-0 px-3 sm:px-3 pt-1 pb-1 min-[1366px]:pt-3 min-[1366px]:pb-3 text-white text-xs">
+      <div class="grid grid-cols-2 gap-x-1 sm:gap-x-8 lg:gap-x-3 w-full min-w-0 max-w-xs sm:max-w-sm">
         <div class="flex flex-col gap-1 min-w-0">
           <Stat
             v-for="(statViewModel, key) in statsViewModel.attributes"
