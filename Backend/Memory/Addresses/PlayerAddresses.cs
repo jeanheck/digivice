@@ -5,10 +5,6 @@ namespace Backend.Memory.Addresses
 {
     public class PlayerAddresses
     {
-        public int NameBufferSize { get; set; }
-
-        [JsonConverter(typeof(HexStringToLongConverter))]
-        public long Name { get; set; }
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long Bits { get; set; }
         [JsonConverter(typeof(HexStringToLongConverter))]

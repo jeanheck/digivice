@@ -9,7 +9,6 @@ public static class PlayerConverter
     {
         return new PlayerDTO
         {
-            Name = player.Name,
             Bits = player.Bits,
             Location = player.MapId,
             PreviousMapId = player.PreviousMapId,

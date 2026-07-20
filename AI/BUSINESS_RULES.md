@@ -42,6 +42,12 @@ graph TD
 
 ## 2. Invariantes de Domínio e Regras do Jogo
 
+### 2.0. Player — Name (não rastreado)
+*   O nome do treinador **não é lido** pelo Digivice. Mantido apenas como referência para reativação futura.
+*   **Address:** `0x00048D88`
+*   **Buffer:** 10 bytes
+*   **Encoding:** charset custom do jogo — A–Z `0x0E`–`0x27`, a–z `0x28`–`0x41`, dígitos/símbolos em faixas adjacentes; termina em `0x00` ou `0xFF`. Espaço = `0x01`.
+
 ### 2.1. O Grupo (Party)
 *   **Capacidade Máxima:** No jogo, o jogador pode ter até 3 Digimons ativos em seu grupo.
 *   **Estrutura de Slots:** O objeto `Party` possui uma lista que **sempre contém exatamente 3 slots** (`DigimonSlot`), independentemente de quantos estejam ocupados.

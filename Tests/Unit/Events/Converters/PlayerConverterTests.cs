@@ -10,7 +10,6 @@ public class PlayerConverterTests
     {
         var player = new Player
         {
-            Name = "Agumon",
             Bits = 12345,
             MapId = "00AF",
             PreviousMapId = "023E",
@@ -20,8 +19,6 @@ public class PlayerConverterTests
 
         var dto = PlayerConverter.ToDTO(player);
 
-        Assert.True(dto.Name.HasValue);
-        Assert.Equal("Agumon", dto.Name.Value);
         Assert.True(dto.Bits.HasValue);
         Assert.Equal(12345, dto.Bits.Value);
         Assert.True(dto.Location.HasValue);

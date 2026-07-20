@@ -12,11 +12,9 @@ public class PlayerLoaderTests : LoaderIntegrationTestBase
     public void Load_ShouldIntegratePlayerAddressesAndReader()
     {
         var addressesRepository = CreateAddressesRepository();
-        var nameBytes = new byte[] { 65, 103, 117, 109, 111, 110, 0, 0, 0, 0 };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadInt32(0x00048DA0)).Returns(15000);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048D88, 10)).Returns(nameBytes);
         memoryReaderMock.Setup(m => m.ReadInt16(0x0004B3F8)).Returns((short)4);
         memoryReaderMock.Setup(m => m.ReadInt16(0x0004B400)).Returns((short)0x023E);
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048D78, 1)).Returns([(byte)0x08]);
@@ -29,7 +27,6 @@ public class PlayerLoaderTests : LoaderIntegrationTestBase
 
         Assert.NotNull(playerResource);
         Assert.Equal(15000, playerResource.Bits);
-        Assert.Equal(nameBytes, playerResource.NameInBytes);
         Assert.Equal((short)4, playerResource.MapId);
         Assert.Equal((short)0x023E, playerResource.PreviousMapId);
         Assert.Equal((byte)0x08, playerResource.SeabedRoute);

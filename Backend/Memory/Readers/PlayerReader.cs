@@ -10,7 +10,6 @@ namespace Backend.Memory.Readers
             return new PlayerResource
             {
                 Bits = memoryReader.ReadInt32(addresses.Bits),
-                NameInBytes = memoryReader.ReadBytes(addresses.Name, addresses.NameBufferSize),
                 MapId = memoryReader.ReadInt16(addresses.MapId),
                 PreviousMapId = memoryReader.ReadInt16(addresses.PreviousMapId),
                 SeabedRoute = memoryReader.ReadBytes(addresses.SeabedRoute, 1)[0],

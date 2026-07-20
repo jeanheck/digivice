@@ -13,10 +13,6 @@ import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 const store = useGameStore();
 const { t } = useI18n();
 
-const playerName = computed(() => {
-  return store.currentState?.player?.name ?? null;
-});
-
 const playerBits = computed(() => {
   return store.currentState?.player?.bits ?? 0;
 });
@@ -104,13 +100,6 @@ const groupPartyLevel = computed(() => {
   <footer
     class="w-full bg-[#000a2b] text-white p-2 rounded-md shadow-lg border-2 border-[#0033aa] flex items-center gap-12 px-6 relative"
   >
-    <div class="font-bold text-ms">
-      <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
-        >{{ $t("player.tamer") }}:</span
-      >
-      <span class="text-yellow-400 drop-shadow">{{ playerName }}</span>
-    </div>
-
     <div class="font-bold text-ms flex items-baseline">
       <span class="opacity-80 text-[0.7rem] mr-2 font-normal text-blue-300 tracking-wider uppercase"
         >{{ $t("player.bits") }}:</span

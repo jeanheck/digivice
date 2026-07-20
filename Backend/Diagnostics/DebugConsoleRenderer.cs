@@ -6,7 +6,6 @@ namespace Backend.Diagnostics
 {
     public class DebugConsoleRenderer
     {
-        private const int NamePadding = 10;
         private const string StatFormat = "D3";
         private const string ExpFormat = "D6";
         private const string LvlFormat = "D2";
@@ -64,7 +63,7 @@ namespace Backend.Diagnostics
 
         private void RenderPlayer(StringBuilder sb, Player player)
         {
-            sb.AppendLine($"{Cyan}PLAYER:{Reset} {player.Name.PadRight(NamePadding)} | {Yellow}BITS:{Reset} {player.Bits.ToString(BitsFormat) ?? "Unknown"}");
+            sb.AppendLine($"{Cyan}PLAYER:{Reset} {Yellow}BITS:{Reset} {player.Bits.ToString(BitsFormat) ?? "Unknown"}");
             sb.AppendLine();
         }
 

@@ -14,19 +14,14 @@ public class PlayerReaderTests
         var addresses = new PlayerAddresses
         {
             Bits = 0x1000,
-            Name = 0x2000,
-            NameBufferSize = 10,
             MapId = 0x3000,
             PreviousMapId = 0x3500,
             SeabedRoute = 0x4000,
             MapVariant = 0x5000
         };
 
-        var nameBytes = new byte[] { 65, 103, 117, 109, 111, 110, 0, 0, 0, 0 }; // "Agumon"
-
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadInt32(0x1000)).Returns(15000);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x2000, 10)).Returns(nameBytes);
         memoryReaderMock.Setup(m => m.ReadInt16(0x3000)).Returns((short)4);
         memoryReaderMock.Setup(m => m.ReadInt16(0x3500)).Returns((short)0x023E);
         memoryReaderMock.Setup(m => m.ReadBytes(0x4000, 1)).Returns([(byte)0x08]);
@@ -40,7 +35,6 @@ public class PlayerReaderTests
         // Assert
         Assert.NotNull(result);
         Assert.Equal(15000, result.Bits);
-        Assert.Equal(nameBytes, result.NameInBytes);
         Assert.Equal((short)4, result.MapId);
         Assert.Equal((short)0x023E, result.PreviousMapId);
         Assert.Equal((byte)0x08, result.SeabedRoute);

@@ -11,7 +11,7 @@ public class StateConverterTests
     {
         var state = new State
         {
-            Player = new Player { Name = "Agumon", Bits = 100, MapId = "0001" },
+            Player = new Player { Bits = 100, MapId = "0001" },
             Party = new Party { Slots = [] },
             Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] }
         };
@@ -19,8 +19,8 @@ public class StateConverterTests
         var dto = StateConverter.ToDTO(state);
 
         Assert.NotNull(dto.Player);
-        Assert.True(dto.Player.Name.HasValue);
-        Assert.Equal("Agumon", dto.Player.Name.Value);
+        Assert.True(dto.Player.Bits.HasValue);
+        Assert.Equal(100, dto.Player.Bits.Value);
 
         Assert.NotNull(dto.Party);
         Assert.True(dto.Party.Slots.HasValue);

@@ -33,8 +33,6 @@ public class AddressesRepositoryTests : IDisposable
         // Arrange
         var fakePlayer = new PlayerAddresses
         {
-            NameBufferSize = 10,
-            Name = 0x00048D88,
             Bits = 0x00048DA0,
             MapId = 0x0004B3F8,
             PreviousMapId = 0x0004B400,
@@ -49,8 +47,6 @@ public class AddressesRepositoryTests : IDisposable
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(10, result.NameBufferSize);
-        Assert.Equal(0x00048D88, result.Name);
         Assert.Equal(0x00048DA0, result.Bits);
         Assert.Equal(0x0004B3F8, result.MapId);
         Assert.Equal(0x0004B400, result.PreviousMapId);
@@ -201,7 +197,7 @@ public class AddressesRepositoryTests : IDisposable
     public void GetPlayerAddresses_ShouldCacheLoadedInstance()
     {
         // Arrange
-        var fakePlayer = new PlayerAddresses { NameBufferSize = 10 };
+        var fakePlayer = new PlayerAddresses { Bits = 0x00048DA0 };
         var json = JsonSerializer.Serialize(fakePlayer);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "PlayerAddresses.json"), json);
 
@@ -232,8 +228,8 @@ public class AddressesRepositoryTests : IDisposable
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(0, result.NameBufferSize);
-        Assert.Equal(0, result.Name);
+        Assert.Equal(0, result.Bits);
+        Assert.Equal(0, result.MapId);
     }
 
     [Fact]

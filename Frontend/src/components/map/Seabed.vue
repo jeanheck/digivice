@@ -49,7 +49,7 @@ function getLocationName(locationId: string): string {
 
 <template>
   <div v-if="hasEmerge || hasLeft || hasRight" class="w-full flex justify-center shrink-0 px-0.5">
-    <div class="map-info-panel flex flex-col gap-6">
+    <div class="map-info-panel flex flex-col gap-5">
       <div v-if="hasEmerge" class="flex items-start justify-center gap-3 w-full">
         <div
           v-for="(point, index) in emerge"
