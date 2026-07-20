@@ -50,42 +50,42 @@ const techniqueLabel = computed(() => {
       </div>
 
       <div class="w-1/2 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5">
-        <div class="flex items-center justify-between text-[11px]">
+        <div class="flex items-center justify-between text-xs">
           <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.specie") }}:</span>
           <span class="font-bold text-gray-300 capitalize">{{ $t(`species.${enemy.species}`) }}</span>
         </div>
 
-        <div class="flex items-center justify-between text-[11px]">
+        <div class="flex items-center justify-between text-xs">
           <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.level") }}:</span>
           <span class="font-bold text-gray-300">{{ enemy.level }}</span>
         </div>
 
-        <div class="flex items-center justify-between text-[11px]">
+        <div class="flex items-center justify-between text-xs">
           <span class="font-bold text-blue-500 tracking-wider uppercase">HP:</span>
           <span class="font-bold text-white">{{ enemy.hp }}</span>
         </div>
 
-        <div class="flex items-center justify-between text-[11px]">
+        <div class="flex items-center justify-between text-xs">
           <span class="font-bold text-blue-500 tracking-wider uppercase">MP:</span>
           <span class="font-bold text-white">{{ enemy.mp }}</span>
         </div>
 
-        <div class="flex items-center justify-between text-[11px]">
+        <div class="flex items-center justify-between text-xs">
           <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.baseExp") }}:</span>
           <span class="font-bold text-gray-300">{{ enemy.exp }}</span>
         </div>
 
-        <div class="flex items-center justify-between text-[11px]">
+        <div class="flex items-center justify-between text-xs">
           <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.baseBits") }}:</span>
           <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
         </div>
 
-        <div class="flex items-center justify-between text-[11px]">
+        <div class="flex items-center justify-between text-[10px]">
           <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.drop") }}:</span>
           <span class="font-bold text-gray-300">{{ dropLabel }}</span>
         </div>
 
-        <div v-if="enemy.boss" class="flex items-center justify-between text-[11px]">
+        <div v-if="enemy.boss" class="flex items-center justify-between text-[10px]">
           <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.dropRate") }}:</span>
           <span class="font-bold text-gray-300">100%</span>
         </div>

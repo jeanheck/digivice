@@ -6,7 +6,7 @@
     "cardActiveTitle": "Auction available!",
     "cardActiveSubtitle": "Click for more details!",
     "modalTitle": "Auctions",
-    "currentIdleTitle": "No auction at Cargo Tower",
+    "currentIdleTitle": "No active Auction",
     "currentIdleSubtitle": "Keep progressing through the main quest",
     "currentActiveTitle": "Now! Auction at Cargo Tower!",
     "currentActiveAcquirePrefix": "Acquire",
