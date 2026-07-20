@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import SeabedDock from "@/components/seabed/SeabedDock.vue";
+import MapDetailsFrame from "@/components/seabed/MapDetailsFrame.vue";
 import noiseDesertSMapUrl from "@/assets/maps/Noise Desert S.webp";
 import mirageTowerMapUrl from "@/assets/maps/Mirage Tower.webp";
 import mobiusDesertMapUrl from "@/assets/maps/Mobius Desert.webp";
@@ -9,7 +9,7 @@ import { MobiusDesertPresenter } from "@/presenters/map/mobius-desert.presenter"
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
-import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/seabed-map-frame";
+import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
 
 const props = defineProps<{
   selectedArea: DesertAreaViewModel | null;
@@ -58,7 +58,7 @@ const coordinates = computed<CoordinatesViewModel | null>(() => {
 
 <template>
   <div class="flex h-full w-full items-center justify-center">
-    <SeabedDock v-if="selectedImageUrl" :image-url="selectedImageUrl" :coordinates="coordinates" />
+    <MapDetailsFrame v-if="selectedImageUrl" :image-url="selectedImageUrl" :coordinates="coordinates" />
     <div
       v-else
       class="flex flex-col items-center justify-center gap-3 px-8"

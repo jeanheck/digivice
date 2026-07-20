@@ -4,7 +4,7 @@ import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmo
 import {
   SEABED_MAP_FRAME_MAX_HEIGHT_PX,
   SEABED_MAP_FRAME_WIDTH_PX,
-} from "@/components/seabed/seabed-map-frame";
+} from "@/components/seabed/map-details-frame";
 import { useSeabedMapFrame } from "@/composables/use-seabed-map-frame";
 
 const props = defineProps<{

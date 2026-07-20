@@ -6,7 +6,7 @@ import SeabedRouteLines from "@/components/seabed/SeabedRouteLines.vue";
 import {
   SEABED_MAP_FRAME_MAX_HEIGHT_PX,
   SEABED_MAP_FRAME_WIDTH_PX,
-} from "@/components/seabed/seabed-map-frame";
+} from "@/components/seabed/map-details-frame";
 import { useSeabedMapFrame } from "@/composables/use-seabed-map-frame";
 import { SeabedDocksPresenter } from "@/presenters/map/seabed-docks.presenter";
 

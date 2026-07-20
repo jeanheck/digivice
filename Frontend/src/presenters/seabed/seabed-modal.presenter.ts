@@ -9,7 +9,7 @@ import type { DockViewModel } from "@/viewmodels/dock/dock.viewmodel";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 export class SeabedModalPresenter {
-  public static getDock(location: LocationViewModel | null): DockViewModel | null {
+  private static getDock(location: LocationViewModel | null): DockViewModel | null {
     if (location === null || location.dock === false) {
       return null;
     }

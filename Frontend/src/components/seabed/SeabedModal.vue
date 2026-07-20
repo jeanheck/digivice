@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
-import SeabedDock from "@/components/seabed/SeabedDock.vue";
+import MapDetailsFrame from "@/components/seabed/MapDetailsFrame.vue";
 import SeabedDocks from "@/components/seabed/SeabedDocks.vue";
 import { SeabedModalPresenter } from "@/presenters/seabed/seabed-modal.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
-import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/seabed-map-frame";
+import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -86,7 +86,7 @@ const closeModal = () => {
     <div class="flex flex-1 min-h-0 h-full w-full p-4 overflow-visible items-center justify-center">
       <div class="flex gap-4 items-center min-h-0 max-h-full">
         <SeabedDocks @select-dock="onSelectDock" />
-        <SeabedDock
+        <MapDetailsFrame
           v-if="dockViewModel?.imageUrl"
           :image-url="dockViewModel.imageUrl"
           :coordinates="dockViewModel.coordinates ?? null"

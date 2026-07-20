@@ -1,5 +1,5 @@
 import { computed, ref, watch, type ComputedRef, type Ref } from "vue";
-import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/seabed-map-frame";
+import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
 
 export function useSeabedMapFrame(imageUrl: Ref<string | null> | ComputedRef<string | null>) {
   const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
