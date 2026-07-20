@@ -65,7 +65,7 @@ const coordinates = computed<CoordinatesViewModel | null>(() => {
       :style="{ width: `${SEABED_MAP_FRAME_WIDTH_PX}px` }"
     >
       <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
-        {{ $t("map.noDesertAreaSelected") }}
+        {{ $t("map.mobiusDesertHint") }}
       </span>
     </div>
   </div>

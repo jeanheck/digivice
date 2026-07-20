@@ -49,7 +49,7 @@ function isRouteHovered(hoveredRouteId: string | null, routeId: string): boolean
           :y2="segment.to.y"
           :stroke="isRouteHovered(hoveredRouteId, route.id) ? '#67e8f9' : '#06b6d4'"
           :stroke-opacity="isRouteHovered(hoveredRouteId, route.id) ? 1 : 0.5"
-          :stroke-width="isRouteHovered(hoveredRouteId, route.id) ? 1 : 0.9"
+          :stroke-width="isRouteHovered(hoveredRouteId, route.id) ? 1.3 : 1.1"
           pointer-events="none"
         />
       </template>
