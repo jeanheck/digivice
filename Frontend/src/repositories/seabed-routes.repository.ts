@@ -1,11 +1,11 @@
 import SeabedRoutesJson from "@/database/seabed/seabed-route.json";
 import type { SeabedRouteLocationRaw } from "./tables/raws/seabed/seabed-route-location.raw";
-import type { SeabedRoutesTable } from "./tables/seabed/seabed-routes.table";
+import type { SeabedRouteTable } from "./tables/seabed/seabed-route.table";
 
 export class SeabedRoutesRepository {
-  private static readonly seabedRoutesTable = SeabedRoutesJson as SeabedRoutesTable;
+  private static readonly seabedRoutesTable = SeabedRoutesJson as SeabedRouteTable;
 
-  public static getAll(): SeabedRoutesTable {
+  public static getAll(): SeabedRouteTable {
     return this.seabedRoutesTable;
   }
 

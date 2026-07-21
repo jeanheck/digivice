@@ -1,5 +1,5 @@
 import DesertAreasMapJson from "@/database/mobius-desert/mobius-desert-areas-map.json";
-import type { DesertAreaMapCellRaw } from "./tables/raws/desert/desert-area-map-cell.raw";
+import type { DesertAreaMapCellRaw } from "./tables/raws/mobius-desert/desert-area-map-cell.raw";
 import type { DesertAreasMapTable } from "./tables/desert/desert-areas-map.table";
 
 export class MobiusDesertAreasMapRepository {
