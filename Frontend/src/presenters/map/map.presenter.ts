@@ -1,3 +1,5 @@
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import { LocationRegionConstant } from "@/constants/location-region.constant";
 import type { Quest } from "@/models";
 import { LocationConverter } from "@/presenters/converter/location.converter";
 import { LocationRepository } from "@/repositories/location.repository";
@@ -17,6 +19,19 @@ export class MapPresenter {
     const enemyIds = LocationService.getCurrentEnemies(locationId, mainQuest, seabedRoute, previousMapId);
 
     return LocationConverter.convert(locationId, locationRaw, enemyIds);
+  }
+
+  public static getRegion(locationId: string | null): LocationRegionConstant {
+    return LocationService.getRegion(locationId);
+  }
+
+  public static getMapImageUrl(locationId: string | null): string | null {
+    if (locationId === null) {
+      return null;
+    }
+
+    const locationRaw = LocationRepository.getLocationById(locationId);
+    return ImageCatalog.getMapImageUrl(locationRaw.image);
   }
 
   public static isSeabedLocation(locationId: string | null): boolean {

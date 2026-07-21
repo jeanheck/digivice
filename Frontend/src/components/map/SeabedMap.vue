@@ -1,26 +1,46 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import Location from "./Location.vue";
 import Enemies from "./Enemies.vue";
 import Seabed from "./Seabed.vue";
-import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
-
-defineProps<{
-  location: LocationViewModel | null;
-  seabedRoute: number;
-  mapVariant: number;
-  locationId: string | null;
-}>();
+import { useGameStore } from "@/stores/use-game-store";
+import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
 }>();
+
+const store = useGameStore();
+
+const locationId = computed(() => {
+  return store.currentState?.player?.location ?? null;
+});
+
+const seabedRoute = computed(() => {
+  return store.currentState?.player?.seabedRoute ?? 0;
+});
+
+const mapVariant = computed(() => {
+  return store.currentState?.player?.mapVariant ?? 0;
+});
+
+const locationViewModel = computed(() => {
+  if (locationId.value === null) {
+    return null;
+  }
+
+  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
+  const previousMapId = store.currentState?.player?.previousMapId ?? "";
+
+  return MapPresenter.getLocation(locationId.value, mainQuest, seabedRoute.value, previousMapId);
+});
 </script>
 
 <template>
   <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1">
     <div class="flex flex-col items-center gap-2 shrink-0">
-      <Location :location="location" />
-      <Enemies :location="location" @open-enemy-modal="emit('open-enemy-modal', $event)" />
+      <Location :location="locationViewModel" />
+      <Enemies :location="locationViewModel" @open-enemy-modal="emit('open-enemy-modal', $event)" />
       <Seabed
         :seabed-route="seabedRoute"
         :map-variant="mapVariant"

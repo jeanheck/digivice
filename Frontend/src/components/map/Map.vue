@@ -7,41 +7,19 @@ import { computed, ref } from "vue";
 import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
-import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 
 const store = useGameStore();
-
-const locationViewModel = computed(() => {
-  const locationId = store.currentState?.player?.location ?? null;
-  if (locationId === null) {
-    return null;
-  }
-
-  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
-  const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
-  const previousMapId = store.currentState?.player?.previousMapId ?? "";
-
-  return MapPresenter.getLocation(locationId, mainQuest, seabedRoute, previousMapId);
-});
-
-const locationImage = computed(() => {
-  return ImageCatalog.getMapImageUrl(locationViewModel.value?.image ?? null);
-});
-
-const seabedRoute = computed(() => {
-  return store.currentState?.player?.seabedRoute ?? 0;
-});
-
-const mapVariant = computed(() => {
-  return store.currentState?.player?.mapVariant ?? 0;
-});
 
 const locationId = computed(() => {
   return store.currentState?.player?.location ?? null;
 });
 
 const locationRegion = computed(() => {
-  return locationViewModel.value?.region ?? LocationRegionConstant.asukaServer;
+  return MapPresenter.getRegion(locationId.value);
+});
+
+const locationImage = computed(() => {
+  return MapPresenter.getMapImageUrl(locationId.value);
 });
 
 const isEnemyModalOpen = ref(false);
@@ -86,22 +64,14 @@ const closeEnemyModal = () => {
 
     <SeabedMap
       v-if="locationRegion === LocationRegionConstant.seabed"
-      :location="locationViewModel"
-      :seabed-route="seabedRoute"
-      :map-variant="mapVariant"
-      :location-id="locationId"
       @open-enemy-modal="openEnemyModal"
     />
     <MobiusDesertMap
       v-else-if="locationRegion === LocationRegionConstant.mobiusDesert"
-      :location="locationViewModel"
-      :location-id="locationId"
-      :map-variant="mapVariant"
       @open-enemy-modal="openEnemyModal"
     />
     <AsukaServerMap
       v-else
-      :location="locationViewModel"
       @open-enemy-modal="openEnemyModal"
     />
 

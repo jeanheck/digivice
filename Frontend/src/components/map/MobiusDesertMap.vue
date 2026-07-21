@@ -7,36 +7,51 @@ import DesertExitWest from "./desert/DesertExitWest.vue";
 import DesertExitNorth from "./desert/DesertExitNorth.vue";
 import DesertExitEast from "./desert/DesertExitEast.vue";
 import DesertExitSouth from "./desert/DesertExitSouth.vue";
+import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
-import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
-
-const props = defineProps<{
-  location: LocationViewModel | null;
-  locationId: string | null;
-  mapVariant: number;
-}>();
 
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
 }>();
 
+const store = useGameStore();
 const { t } = useI18n();
 
-const mobiusDesertCell = computed(() => {
-  if (props.locationId === null) {
+const locationId = computed(() => {
+  return store.currentState?.player?.location ?? null;
+});
+
+const mapVariant = computed(() => {
+  return store.currentState?.player?.mapVariant ?? 0;
+});
+
+const locationViewModel = computed(() => {
+  if (locationId.value === null) {
     return null;
   }
 
-  return MapPresenter.getCell(props.locationId, props.mapVariant);
+  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
+  const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
+  const previousMapId = store.currentState?.player?.previousMapId ?? "";
+
+  return MapPresenter.getLocation(locationId.value, mainQuest, seabedRoute, previousMapId);
+});
+
+const mobiusDesertCell = computed(() => {
+  if (locationId.value === null) {
+    return null;
+  }
+
+  return MapPresenter.getCell(locationId.value, mapVariant.value);
 });
 
 const locationTitleOverride = computed(() => {
-  if (mobiusDesertCell.value === null || props.locationId === null) {
+  if (mobiusDesertCell.value === null || locationId.value === null) {
     return null;
   }
 
-  return `${t(`location.${props.locationId}`)} (${mobiusDesertCell.value.label})`;
+  return `${t(`location.${locationId.value}`)} (${mobiusDesertCell.value.label})`;
 });
 
 function resolveNeighborDisplayName(neighbor: string): string {
@@ -74,8 +89,8 @@ const southExitName = computed(() => {
 
   <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1 justify-center">
     <div class="flex flex-col items-center gap-2 shrink-0">
-      <Location :location="location" :title-override="locationTitleOverride" />
-      <Enemies :location="location" @open-enemy-modal="emit('open-enemy-modal', $event)" />
+      <Location :location="locationViewModel" :title-override="locationTitleOverride" />
+      <Enemies :location="locationViewModel" @open-enemy-modal="emit('open-enemy-modal', $event)" />
     </div>
   </div>
 </template>
