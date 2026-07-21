@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MobiusDesertArea from "@/components/mobius-desert-modal/mobius-desert-area/MobiusDesertArea.vue";
+import MobiusDesertArea from "@/components/mobius-desert-modal/MobiusDesertArea.vue";
 import { MobiusDesertAreasPresenter } from "@/presenters/mobius-desert-modal/mobius-desert-areas.presenter";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
