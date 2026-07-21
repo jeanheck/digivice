@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
-import MobiusDesertMap from "@/components/mobius-desert-modal/MobiusDesertMap.vue";
-import MobiusDesertArea from "@/components/mobius-desert-modal/MobiusDesertArea.vue";
+import MobiusDesertAreas from "@/components/mobius-desert-modal/MobiusDesertAreas.vue";
+import MobiusDesertAreaDetails from "@/components/mobius-desert-modal/MobiusDesertAreaDetails.vue";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
@@ -55,10 +55,10 @@ function closeModal(): void {
 
     <div class="flex flex-1 min-h-0 h-full w-full">
       <div class="h-full min-h-0 w-1/2">
-        <MobiusDesertMap @select-area="onSelectArea" />
+        <MobiusDesertAreas @select-area="onSelectArea" />
       </div>
       <div class="h-full min-h-0 w-1/2">
-        <MobiusDesertArea :selected-area="selectedArea" />
+        <MobiusDesertAreaDetails :selected-area="selectedArea" />
       </div>
     </div>
   </Modal>
