@@ -3,7 +3,7 @@ import { computed } from "vue";
 import Location from "./Location.vue";
 import Enemies from "./Enemies.vue";
 import { useGameStore } from "@/stores/use-game-store";
-import { MapPresenter } from "@/presenters/map/map.presenter.ts";
+import { AsukaServerMapPresenter } from "@/presenters/map/asuka-server-map.presenter.ts";
 
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
@@ -21,7 +21,7 @@ const locationViewModel = computed(() => {
   const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
 
-  return MapPresenter.getLocation(locationId, mainQuest, seabedRoute, previousMapId);
+  return AsukaServerMapPresenter.getLocation(locationId, mainQuest, seabedRoute, previousMapId);
 });
 </script>
 

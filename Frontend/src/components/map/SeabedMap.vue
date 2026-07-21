@@ -4,7 +4,7 @@ import Location from "./Location.vue";
 import Enemies from "./Enemies.vue";
 import Seabed from "./Seabed.vue";
 import { useGameStore } from "@/stores/use-game-store";
-import { MapPresenter } from "@/presenters/map/map.presenter.ts";
+import { SeabedMapPresenter } from "@/presenters/map/seabed-map.presenter.ts";
 
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
@@ -32,7 +32,7 @@ const locationViewModel = computed(() => {
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
 
-  return MapPresenter.getLocation(locationId.value, mainQuest, seabedRoute.value, previousMapId);
+  return SeabedMapPresenter.getLocation(locationId.value, mainQuest, seabedRoute.value, previousMapId);
 });
 </script>
 

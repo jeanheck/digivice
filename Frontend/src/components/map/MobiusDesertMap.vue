@@ -8,7 +8,7 @@ import DesertExitNorth from "./desert/DesertExitNorth.vue";
 import DesertExitEast from "./desert/DesertExitEast.vue";
 import DesertExitSouth from "./desert/DesertExitSouth.vue";
 import { useGameStore } from "@/stores/use-game-store";
-import { MapPresenter } from "@/presenters/map/map.presenter.ts";
+import { MobiusDesertMapPresenter } from "@/presenters/map/mobius-desert-map.presenter.ts";
 import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
 
 const emit = defineEmits<{
@@ -35,7 +35,7 @@ const locationViewModel = computed(() => {
   const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
 
-  return MapPresenter.getLocation(locationId.value, mainQuest, seabedRoute, previousMapId);
+  return MobiusDesertMapPresenter.getLocation(locationId.value, mainQuest, seabedRoute, previousMapId);
 });
 
 const mobiusDesertCell = computed(() => {
@@ -43,7 +43,7 @@ const mobiusDesertCell = computed(() => {
     return null;
   }
 
-  return MapPresenter.getCell(locationId.value, mapVariant.value);
+  return MobiusDesertMapPresenter.getCell(locationId.value, mapVariant.value);
 });
 
 const locationTitleOverride = computed(() => {
