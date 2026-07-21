@@ -38,12 +38,20 @@ export class LocationService {
     return matchingPhase.ids;
   }
 
-  public static getRegion(locationId: string | null): LocationRegionConstant {
-    if (locationId === null) {
+  public static getRegionByLocationId(id: string | null): LocationRegionConstant {
+    if (id === null) {
       return LocationRegionConstant.asukaServer;
     }
 
-    return LocationRepository.getLocationById(locationId).region ?? LocationRegionConstant.asukaServer;
+    return LocationRepository.getLocationById(id).region ?? LocationRegionConstant.asukaServer;
+  }
+
+  public static getLocationImageNameByLocationId(id: string | null): string | null {
+    if (id === null) {
+      return null;
+    }
+
+    return LocationRepository.getLocationById(id).imageName;
   }
 
   public static getCurrentEnemies(
@@ -63,6 +71,6 @@ export class LocationService {
   }
 
   public static isSeabed(locationId: string | null): boolean {
-    return this.getRegion(locationId) === LocationRegionConstant.seabed;
+    return this.getRegionByLocationId(locationId) === LocationRegionConstant.seabed;
   }
 }

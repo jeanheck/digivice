@@ -25,7 +25,7 @@ export class MobiusDesertAreaDetailsPresenter {
 
       return {
         locationId: null,
-        imageUrl: ImageCatalog.getMapImageUrl(imageName),
+        imageUrl: ImageCatalog.getLocationImageUrl(imageName),
         coordinates: null,
       };
     }
@@ -44,7 +44,7 @@ export class MobiusDesertAreaDetailsPresenter {
 
     return {
       locationId: areaRaw.locationId,
-      imageUrl: ImageCatalog.getMapImageUrl(imageName),
+      imageUrl: ImageCatalog.getLocationImageUrl(imageName),
       coordinates: areaRaw.cell.coordinates ?? null,
     };
   }

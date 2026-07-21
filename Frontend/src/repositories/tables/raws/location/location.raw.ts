@@ -8,7 +8,7 @@ export interface LocationEnemyPhaseRaw {
 export type LocationEnemiesRaw = string[] | LocationEnemyPhaseRaw[];
 
 export interface LocationRaw {
-  image: string;
+  imageName: string;
   enemies: LocationEnemiesRaw;
   region?: LocationRegionConstant;
   dock?: boolean;

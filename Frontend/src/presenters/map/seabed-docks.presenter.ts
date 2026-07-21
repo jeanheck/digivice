@@ -5,7 +5,7 @@ import type { SeabedDirectionViewModel } from "@/viewmodels/dock/seabed-directio
 
 export class SeabedDocksPresenter {
   public static getAsukaImageUrl(): string | null {
-    return ImageCatalog.getMapImageUrl("Asuka");
+    return ImageCatalog.getLocationImageUrl("Asuka");
   }
 
   public static getRoutes(): SeabedDirectionViewModel[] {

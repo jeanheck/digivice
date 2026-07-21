@@ -21,25 +21,12 @@ export class MapPresenter {
     return LocationConverter.convert(locationId, locationRaw, enemyIds);
   }
 
-  public static getRegion(locationId: string | null): LocationRegionConstant {
-    return LocationService.getRegion(locationId);
+  public static getRegionByLocationId(id: string | null): LocationRegionConstant {
+    return LocationService.getRegionByLocationId(id);
   }
 
-  public static getMapImageUrl(locationId: string | null): string | null {
-    if (locationId === null) {
-      return null;
-    }
-
-    const locationRaw = LocationRepository.getLocationById(locationId);
-    return ImageCatalog.getMapImageUrl(locationRaw.image);
-  }
-
-  public static isSeabedLocation(locationId: string | null): boolean {
-    return LocationService.isSeabed(locationId);
-  }
-
-  public static isMobiusDesertLocation(locationId: string | null): boolean {
-    return MobiusDesertService.isMobiusDesertLocation(locationId);
+  public static getLocationImageUrlByLocationId(id: string | null): string | null {
+    return ImageCatalog.getLocationImageUrl(LocationService.getLocationImageNameByLocationId(id));
   }
 
   public static getCell(locationId: string, mapVariant: number): DesertAreaMapCellViewModel | null {

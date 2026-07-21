@@ -73,7 +73,7 @@ export class QuestModalPresenter {
             return [];
         }
 
-        const asukaMapUrl = ImageCatalog.getMapImageUrl("Asuka");
+        const asukaMapUrl = ImageCatalog.getLocationImageUrl("Asuka");
         if (asukaMapUrl === null) {
             return [];
         }
@@ -110,6 +110,6 @@ export class QuestModalPresenter {
         }
 
         const locationRaw = LocationRepository.getLocationById(locationId);
-        return ImageCatalog.getMapImageUrl(locationRaw.image);
+        return ImageCatalog.getLocationImageUrl(locationRaw.imageName);
     }
 }

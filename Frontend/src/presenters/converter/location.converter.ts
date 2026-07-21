@@ -10,7 +10,7 @@ export class LocationConverter {
   ): LocationViewModel {
     return {
       id: locationId,
-      image: locationRaw.image,
+      image: locationRaw.imageName,
       enemies: resolvedEnemyIds,
       region: locationRaw.region ?? LocationRegionConstant.asukaServer,
       dock: locationRaw.dock === true,

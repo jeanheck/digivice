@@ -15,11 +15,11 @@ const locationId = computed(() => {
 });
 
 const locationRegion = computed(() => {
-  return MapPresenter.getRegion(locationId.value);
+  return MapPresenter.getRegionByLocationId(locationId.value);
 });
 
 const locationImage = computed(() => {
-  return MapPresenter.getMapImageUrl(locationId.value);
+  return MapPresenter.getLocationImageUrlByLocationId(locationId.value);
 });
 
 const isEnemyModalOpen = ref(false);

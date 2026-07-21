@@ -20,7 +20,7 @@ export class SeabedModalPresenter {
       return null;
     }
 
-    const imageUrl = ImageCatalog.getMapImageUrl(location.image);
+    const imageUrl = ImageCatalog.getLocationImageUrl(location.image);
 
     return DockConverter.convert(dockRaw, imageUrl);
   }

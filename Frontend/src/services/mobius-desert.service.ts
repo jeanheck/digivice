@@ -5,7 +5,7 @@ import type { DesertAreaMapCellViewModel } from "@/viewmodels/desert/desert-area
 
 export class MobiusDesertService {
   public static isMobiusDesertLocation(locationId: string | null): boolean {
-    return LocationService.getRegion(locationId) === LocationRegionConstant.mobiusDesert;
+    return LocationService.getRegionByLocationId(locationId) === LocationRegionConstant.mobiusDesert;
   }
 
   public static getCell(locationId: string, mapVariant: number): DesertAreaMapCellViewModel | null {
