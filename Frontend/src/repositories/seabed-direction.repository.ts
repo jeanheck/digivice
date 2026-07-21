@@ -1,4 +1,4 @@
-import SeabedDirectionsJson from "@/database/seabed/seabed-directions.json";
+import SeabedDirectionsJson from "@/database/seabed/seabed-direction.json";
 import type { SeabedDirectionTable } from "./tables/seabed/seabed-direction.table";
 
 export class SeabedDirectionsRepository {

@@ -3,7 +3,7 @@ import type { Quest } from "@/models";
 import { DockConverter } from "@/presenters/converter/dock.converter";
 import { LocationConverter } from "@/presenters/converter/location.converter";
 import { LocationRepository } from "@/repositories";
-import { DockRepository } from "@/repositories/dock.repository";
+import { SeabedDockRepository } from "@/repositories/seabed-dock.repository";
 import { LocationService } from "@/services/location.service";
 import type { DockViewModel } from "@/viewmodels/dock/dock.viewmodel";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
@@ -14,7 +14,7 @@ export class SeabedModalPresenter {
       return null;
     }
 
-    const dockRaw = DockRepository.getDockByLocationId(location.id);
+    const dockRaw = SeabedDockRepository.getDockByLocationId(location.id);
 
     if (dockRaw === null) {
       return null;
