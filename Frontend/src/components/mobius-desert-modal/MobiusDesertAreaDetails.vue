@@ -1,58 +1,24 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import MapDetailsFrame from "@/components/map-details-frame/MapDetailsFrame.vue";
-import noiseDesertSMapUrl from "@/assets/maps/Noise Desert S.webp";
-import mirageTowerMapUrl from "@/assets/maps/Mirage Tower.webp";
-import mobiusDesertMapUrl from "@/assets/maps/Mobius Desert.webp";
-import mobiusDesertSecondMapUrl from "@/assets/maps/Mobius Desert 2.webp";
 import { MobiusDesertPresenter } from "@/presenters/map/mobius-desert.presenter";
-import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
-import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
 import { MAP_FRAME_WIDTH_PX } from "@/components/map-details-frame/map-details-frame";
 
 const props = defineProps<{
   selectedArea: DesertAreaViewModel | null;
 }>();
 
-const imageUrlByAreaType: Partial<Record<DesertAreaTypeViewModel, string>> = {
-  noiseDesertS: noiseDesertSMapUrl,
-  mirageTower: mirageTowerMapUrl
-};
-
-const imageUrlByLocationId: Record<string, string> = {
-  "0258": mobiusDesertMapUrl,
-  "0259": mobiusDesertSecondMapUrl
-};
-
-const selectedAreaDetails = computed(() => {
-  if (props.selectedArea?.type !== "normal") {
-    return null;
-  }
-
-  return MobiusDesertPresenter.getAreaDetails(props.selectedArea.label);
+const areaDetails = computed(() => {
+  return MobiusDesertPresenter.getAreaDetails(props.selectedArea);
 });
 
 const selectedImageUrl = computed(() => {
-  if (props.selectedArea === null) {
-    return null;
-  }
-
-  if (props.selectedArea.type !== "normal") {
-    return imageUrlByAreaType[props.selectedArea.type] ?? null;
-  }
-
-  const locationId = selectedAreaDetails.value?.locationId;
-
-  if (locationId === undefined) {
-    return null;
-  }
-
-  return imageUrlByLocationId[locationId] ?? null;
+  return areaDetails.value?.imageUrl ?? null;
 });
 
-const coordinates = computed<CoordinatesViewModel | null>(() => {
-  return selectedAreaDetails.value?.coordinates ?? null;
+const coordinates = computed(() => {
+  return areaDetails.value?.coordinates ?? null;
 });
 </script>
 
