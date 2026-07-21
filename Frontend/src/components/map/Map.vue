@@ -11,7 +11,6 @@ import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
-import { MobiusDesertPresenter } from "@/presenters/map/mobius-desert.presenter";
 import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 
@@ -60,7 +59,7 @@ const mobiusDesertCell = computed(() => {
     return null;
   }
 
-  return MobiusDesertPresenter.getCell(locationId.value, mapVariant.value);
+  return MapPresenter.getCell(locationId.value, mapVariant.value);
 });
 
 const locationTitleOverride = computed(() => {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import MobiusDesertArea from "@/components/mobius-desert-modal/mobius-desert-area/MobiusDesertArea.vue";
-import { DesertPresenter } from "@/presenters/desert/desert.presenter";
+import { MobiusDesertAreasPresenter } from "@/presenters/mobius-desert-modal/mobius-desert-areas.presenter";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
 
@@ -8,7 +8,7 @@ const emit = defineEmits<{
   "select-area": [area: DesertAreaViewModel];
 }>();
 
-const desertAreasViewModel = DesertPresenter.getAreas();
+const desertAreasViewModel = MobiusDesertAreasPresenter.getAreas();
 const desertAreas = desertAreasViewModel.areas.flat();
 const desertGridSize = desertAreasViewModel.gridSize;
 

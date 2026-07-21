@@ -1,7 +1,9 @@
 import type { Quest } from "@/models";
 import { LocationConverter } from "@/presenters/converter/location.converter";
+import { DesertAreasMapRepository } from "@/repositories/desert-areas-map.repository";
 import { LocationRepository } from "@/repositories/location.repository";
 import { LocationService } from "@/services/location.service";
+import type { DesertAreaMapCellViewModel } from "@/viewmodels/desert/desert-area-map-cell.viewmodel";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 export class MapPresenter {
@@ -29,5 +31,19 @@ export class MapPresenter {
     }
 
     return MapPresenter.mobiusDesertLocationIds.has(locationId);
+  }
+
+  public static getCell(locationId: string, mapVariant: number): DesertAreaMapCellViewModel | null {
+    if (mapVariant <= 0) {
+      return null;
+    }
+
+    const cellRaw = DesertAreasMapRepository.getCell(locationId, String(mapVariant));
+
+    if (cellRaw === null) {
+      return null;
+    }
+
+    return cellRaw as DesertAreaMapCellViewModel;
   }
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import MapDetailsFrame from "@/components/map-details-frame/MapDetailsFrame.vue";
-import { MobiusDesertPresenter } from "@/presenters/map/mobius-desert.presenter";
+import { MobiusDesertAreaDetailsPresenter } from "@/presenters/mobius-desert-modal/mobius-desert-area-details.presenter";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import { MAP_FRAME_WIDTH_PX } from "@/components/map-details-frame/map-details-frame";
 
@@ -10,7 +10,7 @@ const props = defineProps<{
 }>();
 
 const areaDetails = computed(() => {
-  return MobiusDesertPresenter.getAreaDetails(props.selectedArea);
+  return MobiusDesertAreaDetailsPresenter.getAreaDetails(props.selectedArea);
 });
 
 const selectedImageUrl = computed(() => {

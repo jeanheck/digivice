@@ -3,7 +3,7 @@ import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import MapDetailsFrame from "@/components/map-details-frame/MapDetailsFrame.vue";
 import SeabedDocks from "@/components/seabed-modal/SeabedDocks.vue";
-import { SeabedModalPresenter } from "@/presenters/seabed/seabed-modal.presenter";
+import { SeabedModalPresenter } from "@/presenters/seabed-modal/seabed-modal.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 import { MAP_FRAME_WIDTH_PX } from "@/components/map-details-frame/map-details-frame";
