@@ -4,6 +4,7 @@ import SeabedMap from "./SeabedMap.vue";
 import MobiusDesertMap from "./MobiusDesertMap.vue";
 import EnemyModal from "@/components/map/enemy-modal/EnemyModal.vue";
 import { computed, ref } from "vue";
+import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
@@ -39,12 +40,8 @@ const locationId = computed(() => {
   return store.currentState?.player?.location ?? null;
 });
 
-const isSeabed = computed(() => {
-  return MapPresenter.isSeabedLocation(locationId.value);
-});
-
-const isMobiusDesert = computed(() => {
-  return MapPresenter.isMobiusDesertLocation(locationId.value);
+const locationRegion = computed(() => {
+  return locationViewModel.value?.region ?? LocationRegionConstant.asukaServer;
 });
 
 const isEnemyModalOpen = ref(false);
@@ -88,7 +85,7 @@ const closeEnemyModal = () => {
     />
 
     <SeabedMap
-      v-if="isSeabed"
+      v-if="locationRegion === LocationRegionConstant.seabed"
       :location="locationViewModel"
       :seabed-route="seabedRoute"
       :map-variant="mapVariant"
@@ -96,7 +93,7 @@ const closeEnemyModal = () => {
       @open-enemy-modal="openEnemyModal"
     />
     <MobiusDesertMap
-      v-else-if="isMobiusDesert"
+      v-else-if="locationRegion === LocationRegionConstant.mobiusDesert"
       :location="locationViewModel"
       :location-id="locationId"
       :map-variant="mapVariant"

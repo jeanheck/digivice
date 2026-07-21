@@ -1,3 +1,4 @@
+import { LocationRegionConstant } from "@/constants/location-region.constant";
 import type { LocationRaw } from "@/repositories/tables/raws/location/location.raw";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
@@ -11,7 +12,8 @@ export class LocationConverter {
       id: locationId,
       image: locationRaw.image,
       enemies: resolvedEnemyIds,
-      dock: locationRaw.dock,
+      region: locationRaw.region ?? LocationRegionConstant.asukaServer,
+      dock: locationRaw.dock === true,
     };
   }
 }

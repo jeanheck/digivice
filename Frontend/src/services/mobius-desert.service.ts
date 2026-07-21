@@ -1,15 +1,11 @@
+import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { MobiusDesertAreasMapRepository } from "@/repositories/mobius-desert-areas-map.repository";
+import { LocationService } from "@/services/location.service";
 import type { DesertAreaMapCellViewModel } from "@/viewmodels/desert/desert-area-map-cell.viewmodel";
 
 export class MobiusDesertService {
-  private static readonly mobiusDesertLocationIds: ReadonlySet<string> = new Set(["0258", "0259"]);
-
   public static isMobiusDesertLocation(locationId: string | null): boolean {
-    if (locationId === null) {
-      return false;
-    }
-
-    return MobiusDesertService.mobiusDesertLocationIds.has(locationId);
+    return LocationService.getRegion(locationId) === LocationRegionConstant.mobiusDesert;
   }
 
   public static getCell(locationId: string, mapVariant: number): DesertAreaMapCellViewModel | null {

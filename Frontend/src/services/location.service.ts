@@ -1,3 +1,4 @@
+import { LocationRegionConstant } from "@/constants/location-region.constant";
 import type { Quest } from "@/models";
 import { LocationRepository } from "@/repositories/location.repository";
 import { SeabedRoutesRepository } from "@/repositories/seabed-routes.repository";
@@ -7,14 +8,15 @@ import { QuestService } from "@/services/quest.service";
 export class LocationService {
   private static readonly ASUKA_SEWERS_LOCATION_ID = "021B";
   private static readonly UNDERGROUND_PATH_LOCATION_ID = "020B";
-  private static readonly SEABED_LOCATION_IDS: ReadonlySet<string> = new Set(["02E0", "02E1", "02E2", "02E3", "02E4", "02E5", "02E6", "02E7"]);
 
   private static isAsukaSewersSafeZone(locationId: string, previousMapId: string): boolean {
     return locationId === this.ASUKA_SEWERS_LOCATION_ID && previousMapId === this.UNDERGROUND_PATH_LOCATION_ID;
   }
+
   private static getSeabedEnemies(seabedRoute: number): string[] {
     return seabedRoute === 0 ? [] : SeabedRoutesRepository.getEnemiesByRoute(String(seabedRoute));
   }
+
   private static getEnemies(locationId: string, lastCompletedMainQuestStep: number): string[] {
     const locationRaw = LocationRepository.getLocationById(locationId);
     const locationEnemiesRaw = locationRaw.enemies;
@@ -36,6 +38,14 @@ export class LocationService {
     return matchingPhase.ids;
   }
 
+  public static getRegion(locationId: string | null): LocationRegionConstant {
+    if (locationId === null) {
+      return LocationRegionConstant.asukaServer;
+    }
+
+    return LocationRepository.getLocationById(locationId).region ?? LocationRegionConstant.asukaServer;
+  }
+
   public static getCurrentEnemies(
     locationId: string,
     mainQuest: Quest | null,
@@ -53,10 +63,6 @@ export class LocationService {
   }
 
   public static isSeabed(locationId: string | null): boolean {
-    if (locationId === null) {
-      return false;
-    }
-
-    return this.SEABED_LOCATION_IDS.has(locationId);
+    return this.getRegion(locationId) === LocationRegionConstant.seabed;
   }
 }
