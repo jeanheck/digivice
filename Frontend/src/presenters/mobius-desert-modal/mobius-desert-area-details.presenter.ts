@@ -1,5 +1,5 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import { DesertAreasMapRepository } from "@/repositories/desert-areas-map.repository";
+import { MobiusDesertAreasMapRepository } from "@/repositories/mobius-desert-areas-map.repository";
 import type { DesertAreaDetailsViewModel } from "@/viewmodels/desert/desert-area-details.viewmodel";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
@@ -34,7 +34,7 @@ export class MobiusDesertAreaDetailsPresenter {
       return null;
     }
 
-    const areaRaw = DesertAreasMapRepository.findByLabel(area.label);
+    const areaRaw = MobiusDesertAreasMapRepository.findByLabel(area.label);
 
     if (areaRaw === null) {
       return null;

@@ -1,8 +1,8 @@
-import DesertAreasMapJson from "@/database/desert/desert-areas-map.json";
+import DesertAreasMapJson from "@/database/mobius-desert/mobius-desert-areas-map.json";
 import type { DesertAreaMapCellRaw } from "./tables/raws/desert/desert-area-map-cell.raw";
 import type { DesertAreasMapTable } from "./tables/desert/desert-areas-map.table";
 
-export class DesertAreasMapRepository {
+export class MobiusDesertAreasMapRepository {
   private static readonly desertAreasMapTable = DesertAreasMapJson as DesertAreasMapTable;
 
   public static findByLabel(label: string): { locationId: string; cell: DesertAreaMapCellRaw } | null {

@@ -1,6 +1,6 @@
 import type { Quest } from "@/models";
 import { LocationConverter } from "@/presenters/converter/location.converter";
-import { DesertAreasMapRepository } from "@/repositories/desert-areas-map.repository";
+import { MobiusDesertAreasMapRepository } from "@/repositories/mobius-desert-areas-map.repository";
 import { LocationRepository } from "@/repositories/location.repository";
 import { LocationService } from "@/services/location.service";
 import type { DesertAreaMapCellViewModel } from "@/viewmodels/desert/desert-area-map-cell.viewmodel";
@@ -38,7 +38,7 @@ export class MapPresenter {
       return null;
     }
 
-    const cellRaw = DesertAreasMapRepository.getCell(locationId, String(mapVariant));
+    const cellRaw = MobiusDesertAreasMapRepository.getCell(locationId, String(mapVariant));
 
     if (cellRaw === null) {
       return null;

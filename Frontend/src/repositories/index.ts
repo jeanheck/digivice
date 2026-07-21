@@ -7,5 +7,5 @@ export { LocationRepository } from "./location.repository";
 export { SeabedDockRepository as DockRepository } from "./seabed-dock.repository";
 export { SeabedDirectionsRepository as SeabedDirectionRepository } from "./seabed-direction.repository";
 export { SeabedRoutesRepository } from "./seabed-routes.repository";
-export { DesertAreasRepository } from "./desert-areas.repository";
-export { DesertAreasMapRepository } from "./desert-areas-map.repository";
+export { MobiusDesertAreasRepository as DesertAreasRepository } from "./mobius-desert-areas.repository";
+export { MobiusDesertAreasMapRepository as DesertAreasMapRepository } from "./mobius-desert-areas-map.repository";
