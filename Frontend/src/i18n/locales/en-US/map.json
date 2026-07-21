@@ -3,6 +3,7 @@
     "map": "Map",
     "enemies": "Enemies",
     "docks": "Docks",
+    "dock": "Dock",
     "seabed": "Seabed",
     "seabedRoutes": "Seabed",
     "mobiusDesert": "Mobius Desert",

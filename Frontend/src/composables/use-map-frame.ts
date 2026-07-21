@@ -1,22 +1,22 @@
 import { computed, ref, watch, type ComputedRef, type Ref } from "vue";
-import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
+import { MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
 
-export function useSeabedMapFrame(imageUrl: Ref<string | null> | ComputedRef<string | null>) {
+export function useMapFrame(imageUrl: Ref<string | null> | ComputedRef<string | null>) {
   const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
 
   const displayHeight = computed(() => {
     if (imageNaturalSize.value === null) {
-      return Math.round(SEABED_MAP_FRAME_WIDTH_PX * 0.75);
+      return Math.round(MAP_FRAME_WIDTH_PX * 0.75);
     }
 
     return Math.round(
-      SEABED_MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width)
+      MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width)
     );
   });
 
   const mapImageFrameStyle = computed(() => {
     return {
-      width: `${SEABED_MAP_FRAME_WIDTH_PX}px`,
+      width: `${MAP_FRAME_WIDTH_PX}px`,
       height: `${displayHeight.value}px`,
     };
   });

@@ -9,7 +9,7 @@ import { MobiusDesertPresenter } from "@/presenters/map/mobius-desert.presenter"
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
-import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
+import { MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
 
 const props = defineProps<{
   selectedArea: DesertAreaViewModel | null;
@@ -62,7 +62,7 @@ const coordinates = computed<CoordinatesViewModel | null>(() => {
     <div
       v-else
       class="flex flex-col items-center justify-center gap-3 px-8"
-      :style="{ width: `${SEABED_MAP_FRAME_WIDTH_PX}px` }"
+      :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
     >
       <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
         {{ $t("map.mobiusDesertHint") }}

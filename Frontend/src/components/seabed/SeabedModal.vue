@@ -6,7 +6,7 @@ import SeabedDocks from "@/components/seabed/SeabedDocks.vue";
 import { SeabedModalPresenter } from "@/presenters/seabed/seabed-modal.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
-import { SEABED_MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
+import { MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -90,11 +90,12 @@ const closeModal = () => {
           v-if="dockViewModel?.imageUrl"
           :image-url="dockViewModel.imageUrl"
           :coordinates="dockViewModel.coordinates ?? null"
+          :pin-label="$t('map.dock')"
         />
         <div
           v-else
           class="flex flex-col items-center justify-center gap-3 px-8"
-          :style="{ width: `${SEABED_MAP_FRAME_WIDTH_PX}px` }"
+          :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
         >
           <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
             {{ $t("map.noDock") }}
