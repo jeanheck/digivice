@@ -1,4 +1,4 @@
-export interface DesertAreaMapCellRaw {
+export interface MobiusDesertAreaMapCellRaw {
   label: string;
   north: string;
   east: string;

@@ -1,11 +1,11 @@
 import DesertAreasMapJson from "@/database/mobius-desert/mobius-desert-areas-map.json";
-import type { DesertAreaMapCellRaw } from "./tables/raws/mobius-desert/desert-area-map-cell.raw";
-import type { DesertAreasMapTable } from "./tables/desert/desert-areas-map.table";
+import type { MobiusDesertAreaMapCellRaw } from "./tables/raws/mobius-desert/mobius-desert-area-map-cell.raw";
+import type { MobiusDesertAreasMapTable } from "./tables/desert/mobius-desert-areas-map.table";
 
 export class MobiusDesertAreasMapRepository {
-  private static readonly desertAreasMapTable = DesertAreasMapJson as DesertAreasMapTable;
+  private static readonly desertAreasMapTable = DesertAreasMapJson as MobiusDesertAreasMapTable;
 
-  public static findByLabel(label: string): { locationId: string; cell: DesertAreaMapCellRaw } | null {
+  public static findByLabel(label: string): { locationId: string; cell: MobiusDesertAreaMapCellRaw } | null {
     for (const [locationId, cells] of Object.entries(this.desertAreasMapTable)) {
       const cell = Object.values(cells).find((candidateCell) => candidateCell.label === label);
 
@@ -17,7 +17,7 @@ export class MobiusDesertAreasMapRepository {
     return null;
   }
 
-  public static getCell(locationId: string, mapVariantKey: string): DesertAreaMapCellRaw | null {
+  public static getCell(locationId: string, mapVariantKey: string): MobiusDesertAreaMapCellRaw | null {
     return this.desertAreasMapTable[locationId]?.[mapVariantKey] ?? null;
   }
 }
