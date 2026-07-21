@@ -42,11 +42,11 @@ const mapLabelHorizontalAnchorClass = computed(() => {
   }
 
   if (coordinateX <= MAP_LABEL_LEFT_EDGE_THRESHOLD_PERCENT) {
-    return "left-1/2 translate-x-0";
+    return "left-1/2 translate-x-0 ml-3";
   }
 
   if (coordinateX >= MAP_LABEL_RIGHT_EDGE_THRESHOLD_PERCENT) {
-    return "left-1/2 -translate-x-full";
+    return "left-1/2 -translate-x-full -mr-3";
   }
 
   return "left-1/2 -translate-x-1/2";
@@ -56,10 +56,10 @@ const mapLabelVerticalAnchorClass = computed(() => {
   const coordinateY = props.coordinates?.y;
 
   if (coordinateY !== undefined && coordinateY < 25) {
-    return "top-6.25";
+    return "top-10";
   }
 
-  return "bottom-6.25";
+  return "bottom-10";
 });
 </script>
 
