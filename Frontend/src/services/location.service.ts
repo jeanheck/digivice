@@ -54,20 +54,29 @@ export class LocationService {
     return LocationRepository.getLocationById(id).imageName;
   }
 
+  public static getAsukaServerEnemies(
+    locationId: string,
+    mainQuest: Quest | null,
+    previousMapId: string = "",
+  ): string[] {
+    if (this.isAsukaSewersSafeZone(locationId, previousMapId)) {
+      return [];
+    }
+
+    return this.getEnemies(locationId, QuestService.getLastCompletedMainQuestStep(mainQuest));
+  }
+
   public static getCurrentEnemies(
     locationId: string,
     mainQuest: Quest | null,
     seabedRoute: number = 0,
     previousMapId: string = "",
   ): string[] {
-    if (this.isAsukaSewersSafeZone(locationId, previousMapId)) {
-      return [];
-    }
     if (this.isSeabed(locationId)) {
       return this.getSeabedEnemies(seabedRoute);
     }
 
-    return this.getEnemies(locationId, QuestService.getLastCompletedMainQuestStep(mainQuest));
+    return this.getAsukaServerEnemies(locationId, mainQuest, previousMapId);
   }
 
   public static isSeabed(locationId: string | null): boolean {

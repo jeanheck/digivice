@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter.ts";
-import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
-  location: LocationViewModel | null;
+  enemyIds: string[];
 }>();
 
 const emit = defineEmits<{
@@ -12,7 +11,7 @@ const emit = defineEmits<{
 }>();
 
 const resumedEnemies = computed(() => {
-  return MapEnemiesPresenter.getResumedEnemiesByIds(props.location?.enemies ?? []);
+  return MapEnemiesPresenter.getResumedEnemiesByIds(props.enemyIds);
 });
 
 const hasEnemies = computed(() => resumedEnemies.value.length > 0);

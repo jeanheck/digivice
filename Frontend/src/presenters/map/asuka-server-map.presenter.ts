@@ -1,19 +1,17 @@
 import type { Quest } from "@/models";
-import { LocationConverter } from "@/presenters/converter/location.converter";
-import { LocationRepository } from "@/repositories/location.repository";
+import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
 import { LocationService } from "@/services/location.service";
-import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
+import type { AsukaServerMapViewModel } from "@/viewmodels/map/asuka-server-map.viewmodel";
 
 export class AsukaServerMapPresenter {
-  public static getLocation(
+  public static getViewModel(
     locationId: string,
     mainQuest: Quest | null,
-    seabedRoute: number = 0,
     previousMapId: string = "",
-  ): LocationViewModel {
-    const locationRaw = LocationRepository.getLocationById(locationId);
-    const enemyIds = LocationService.getCurrentEnemies(locationId, mainQuest, seabedRoute, previousMapId);
-
-    return LocationConverter.convert(locationId, locationRaw, enemyIds);
+  ): AsukaServerMapViewModel {
+    return AsukaServerMapConverter.convert(
+      locationId, 
+      LocationService.getAsukaServerEnemies(locationId, mainQuest, previousMapId)
+    );
   }
 }

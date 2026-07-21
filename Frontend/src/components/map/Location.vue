@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
-  location: LocationViewModel | null;
+  locationId: string | null;
   titleOverride?: string | null;
 }>();
 
@@ -15,7 +14,7 @@ const locationName = computed(() => {
     return props.titleOverride;
   }
 
-  return props.location?.id ? t(`location.${props.location.id}`) : t("map.unknownZone");
+  return props.locationId ? t(`location.${props.locationId}`) : t("map.unknownZone");
 });
 </script>
 
