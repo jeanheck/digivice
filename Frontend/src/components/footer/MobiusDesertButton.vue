@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import MobiusDesertModal from "@/components/desert/MobiusDesertModal.vue";
+import MobiusDesertModal from "@/components/mobius-desert-modal/MobiusDesertModal.vue";
 import { MobiusDesertButtonPresenter } from "@/presenters/footer/mobius-desert-button.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 

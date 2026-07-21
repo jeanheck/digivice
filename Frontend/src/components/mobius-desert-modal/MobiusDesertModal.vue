@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
-import MobiusDesertMap from "@/components/desert/MobiusDesertMap.vue";
-import MobiusDesertArea from "@/components/desert/MobiusDesertArea.vue";
+import MobiusDesertMap from "@/components/mobius-desert-modal/MobiusDesertMap.vue";
+import MobiusDesertArea from "@/components/mobius-desert-modal/MobiusDesertArea.vue";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 

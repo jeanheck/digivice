@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import SeabedModal from "@/components/seabed/SeabedModal.vue";
+import SeabedModal from "@/components/seabed-modal/SeabedModal.vue";
 import { SeabedButtonPresenter } from "@/presenters/footer/seabed-button.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 

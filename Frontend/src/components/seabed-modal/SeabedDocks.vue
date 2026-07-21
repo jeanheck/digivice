@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import SeabedDockLabel from "@/components/seabed/SeabedDockLabel.vue";
-import SeabedDockMarker from "@/components/seabed/SeabedDockMarker.vue";
-import SeabedRouteLines from "@/components/seabed/SeabedRouteLines.vue";
+import SeabedDockLabel from "@/components/seabed-modal/SeabedDockLabel.vue";
+import SeabedDockMarker from "@/components/seabed-modal/SeabedDockMarker.vue";
+import SeabedRouteLines from "@/components/seabed-modal/SeabedRouteLines.vue";
 import {
   MAP_FRAME_MAX_HEIGHT_PX,
   MAP_FRAME_WIDTH_PX,
-} from "@/components/seabed/map-details-frame";
+} from "@/components/map-details-frame/map-details-frame";
 import { useMapFrame } from "@/composables/use-map-frame";
 import { SeabedDocksPresenter } from "@/presenters/map/seabed-docks.presenter";
 

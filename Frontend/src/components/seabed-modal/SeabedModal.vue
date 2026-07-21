@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
-import MapDetailsFrame from "@/components/seabed/MapDetailsFrame.vue";
-import SeabedDocks from "@/components/seabed/SeabedDocks.vue";
+import MapDetailsFrame from "@/components/map-details-frame/MapDetailsFrame.vue";
+import SeabedDocks from "@/components/seabed-modal/SeabedDocks.vue";
 import { SeabedModalPresenter } from "@/presenters/seabed/seabed-modal.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
-import { MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
+import { MAP_FRAME_WIDTH_PX } from "@/components/map-details-frame/map-details-frame";
 
 const props = defineProps<{
   isOpen: boolean;

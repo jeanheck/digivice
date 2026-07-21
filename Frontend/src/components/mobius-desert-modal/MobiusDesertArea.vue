@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import MapDetailsFrame from "@/components/seabed/MapDetailsFrame.vue";
+import MapDetailsFrame from "@/components/map-details-frame/MapDetailsFrame.vue";
 import noiseDesertSMapUrl from "@/assets/maps/Noise Desert S.webp";
 import mirageTowerMapUrl from "@/assets/maps/Mirage Tower.webp";
 import mobiusDesertMapUrl from "@/assets/maps/Mobius Desert.webp";
@@ -9,7 +9,7 @@ import { MobiusDesertPresenter } from "@/presenters/map/mobius-desert.presenter"
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
-import { MAP_FRAME_WIDTH_PX } from "@/components/seabed/map-details-frame";
+import { MAP_FRAME_WIDTH_PX } from "@/components/map-details-frame/map-details-frame";
 
 const props = defineProps<{
   selectedArea: DesertAreaViewModel | null;
