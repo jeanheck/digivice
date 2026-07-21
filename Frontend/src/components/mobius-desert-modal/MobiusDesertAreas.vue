@@ -1,8 +1,15 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import MobiusDesertArea from "@/components/mobius-desert-modal/MobiusDesertArea.vue";
 import { MobiusDesertAreasPresenter } from "@/presenters/mobius-desert-modal/mobius-desert-areas.presenter";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
+import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
+
+const props = defineProps<{
+  location: LocationViewModel | null;
+  mapVariant: number;
+}>();
 
 const emit = defineEmits<{
   "select-area": [area: DesertAreaViewModel];
@@ -12,8 +19,23 @@ const desertAreasViewModel = MobiusDesertAreasPresenter.getAreas();
 const desertAreas = desertAreasViewModel.areas.flat();
 const desertGridSize = desertAreasViewModel.gridSize;
 
+const currentAreaLabel = computed(() => {
+  return MobiusDesertAreasPresenter.getCurrentAreaLabel(
+    props.location?.id ?? null,
+    props.mapVariant,
+  );
+});
+
 function isClickable(areaType: DesertAreaTypeViewModel): boolean {
   return areaType !== "border";
+}
+
+function isPlayerLocation(area: DesertAreaViewModel): boolean {
+  if (currentAreaLabel.value === null) {
+    return false;
+  }
+
+  return area.type === "normal" && area.label === currentAreaLabel.value;
 }
 
 function onAreaClick(area: DesertAreaViewModel): void {
@@ -63,6 +85,7 @@ function getBottomNeighborType(areaIndex: number): DesertAreaTypeViewModel | nul
         :right-neighbor-type="getRightNeighborType(areaIndex)"
         :bottom-neighbor-type="getBottomNeighborType(areaIndex)"
         :clickable="isClickable(desertArea.type)"
+        :is-player-location="isPlayerLocation(desertArea)"
         @click="onAreaClick(desertArea)"
       />
     </div>

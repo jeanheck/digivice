@@ -9,6 +9,7 @@ import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel
 const props = defineProps<{
   isOpen: boolean;
   location: LocationViewModel | null;
+  mapVariant: number;
 }>();
 
 const emit = defineEmits<{
@@ -55,7 +56,11 @@ function closeModal(): void {
 
     <div class="flex flex-1 min-h-0 h-full w-full">
       <div class="h-full min-h-0 w-1/2">
-        <MobiusDesertAreas @select-area="onSelectArea" />
+        <MobiusDesertAreas
+          :location="location"
+          :map-variant="mapVariant"
+          @select-area="onSelectArea"
+        />
       </div>
       <div class="h-full min-h-0 w-1/2">
         <MobiusDesertAreaDetails :selected-area="selectedArea" />

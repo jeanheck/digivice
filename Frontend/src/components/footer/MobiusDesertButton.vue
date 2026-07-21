@@ -31,6 +31,10 @@ const locationViewModel = computed(() => {
   );
 });
 
+const mapVariant = computed(() => {
+  return store.currentState?.player?.mapVariant ?? 0;
+});
+
 function onClick(): void {
   isMobiusDesertModalOpen.value = true;
 }
@@ -67,6 +71,7 @@ function onMouseLeave(): void {
   <MobiusDesertModal
     :is-open="isMobiusDesertModalOpen"
     :location="locationViewModel"
+    :map-variant="mapVariant"
     @close="closeMobiusDesertModal"
   />
 </template>

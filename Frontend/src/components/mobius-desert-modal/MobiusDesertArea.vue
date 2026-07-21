@@ -12,6 +12,7 @@ const props = defineProps<{
   rightNeighborType: DesertAreaTypeViewModel | null;
   bottomNeighborType: DesertAreaTypeViewModel | null;
   clickable: boolean;
+  isPlayerLocation: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -67,10 +68,18 @@ function getConnectionColorClasse(
 }
 
 const backgroundClass = computed(() => {
+  if (props.isPlayerLocation) {
+    return "bg-rose-200";
+  }
+
   return backgroundClassByType[props.type];
 });
 
 const textClass = computed(() => {
+  if (props.isPlayerLocation) {
+    return "text-[20px] text-rose-400";
+  }
+
   return textClassByType[props.type];
 });
 
