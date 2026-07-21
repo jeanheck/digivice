@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
 import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
 
 const props = defineProps<{
@@ -43,10 +44,7 @@ const textClassByType: Record<DesertAreaTypeViewModel, string> = {
   border: "text-[20px] text-gray-500",
 };
 
-const translationKeyByType: Partial<Record<DesertAreaTypeViewModel, string>> = {
-  noiseDesertS: "location.0257",
-  mirageTower: "location.025A",
-};
+const translatedLabelKeys = new Set(["noiseDesertS", "mirageTower"]);
 
 function getConnectionColorClasse(
   sourceType: DesertAreaTypeViewModel,
@@ -80,16 +78,21 @@ const textClass = computed(() => {
     return "text-[20px] text-rose-400";
   }
 
+  if (props.type === "border" && translatedLabelKeys.has(props.label)) {
+    return "text-[11px] text-gray-500";
+  }
+
   return textClassByType[props.type];
 });
 
 const displayLabel = computed(() => {
-  const translationKey = translationKeyByType[props.type];
-  if (translationKey === undefined) {
-    return props.label;
+  const neighborName = DesertNeighborHelper.resolveNeighborName(props.label);
+
+  if (neighborName.kind === "i18n") {
+    return t(neighborName.key);
   }
 
-  return t(translationKey);
+  return neighborName.value;
 });
 
 const rightConnectionClass = computed(() => {

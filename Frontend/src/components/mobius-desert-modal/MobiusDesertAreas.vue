@@ -46,28 +46,46 @@ function onAreaClick(area: DesertAreaViewModel): void {
   emit("select-area", area);
 }
 
+function getRightNeighbor(areaIndex: number): DesertAreaViewModel | null {
+  if ((areaIndex + 1) % desertGridSize === 0) {
+    return null;
+  }
+
+  return desertAreas[areaIndex + 1] ?? null;
+}
+
+function getBottomNeighbor(areaIndex: number): DesertAreaViewModel | null {
+  if (areaIndex >= desertAreas.length - desertGridSize) {
+    return null;
+  }
+
+  return desertAreas[areaIndex + desertGridSize] ?? null;
+}
+
 function hasRightConnection(areaIndex: number): boolean {
-  return (areaIndex + 1) % desertGridSize !== 0;
+  const source = desertAreas[areaIndex];
+  if (source === undefined) {
+    return false;
+  }
+
+  return MobiusDesertAreasPresenter.shouldDrawRightConnection(source, getRightNeighbor(areaIndex));
 }
 
 function hasBottomConnection(areaIndex: number): boolean {
-  return areaIndex < desertAreas.length - desertGridSize;
+  const source = desertAreas[areaIndex];
+  if (source === undefined) {
+    return false;
+  }
+
+  return MobiusDesertAreasPresenter.shouldDrawBottomConnection(source, getBottomNeighbor(areaIndex));
 }
 
 function getRightNeighborType(areaIndex: number): DesertAreaTypeViewModel | null {
-  if (!hasRightConnection(areaIndex)) {
-    return null;
-  }
-
-  return desertAreas[areaIndex + 1]?.type ?? null;
+  return getRightNeighbor(areaIndex)?.type ?? null;
 }
 
 function getBottomNeighborType(areaIndex: number): DesertAreaTypeViewModel | null {
-  if (!hasBottomConnection(areaIndex)) {
-    return null;
-  }
-
-  return desertAreas[areaIndex + desertGridSize]?.type ?? null;
+  return getBottomNeighbor(areaIndex)?.type ?? null;
 }
 </script>
 

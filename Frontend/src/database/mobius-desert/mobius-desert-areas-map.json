@@ -13,7 +13,7 @@
         },
         "2": {
             "label": "A1",
-            "north": "D1",
+            "north": "noiseDesertS",
             "east": "A2",
             "south": "B1",
             "west": "A4"
@@ -72,14 +72,14 @@
     "0259": {
         "1": {
             "label": "A4",
-            "north": "D4",
+            "north": "noiseDesertS",
             "east": "A1",
             "south": "B4",
             "west": "A3"
         },
         "2": {
             "label": "A2",
-            "north": "D2",
+            "north": "noiseDesertS",
             "east": "A3",
             "south": "B2",
             "west": "A1"

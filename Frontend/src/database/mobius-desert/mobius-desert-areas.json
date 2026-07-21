@@ -2,12 +2,12 @@
   "gridSize": 6,
   "areas": [
     [
-      { "label": "D4", "type": "border" },
-      { "label": "D1", "type": "border" },
-      { "label": "D2", "type": "border" },
+      { "label": "noiseDesertS", "type": "border" },
+      { "label": "noiseDesertS", "type": "border" },
+      { "label": "noiseDesertS", "type": "border" },
       { "label": "noiseDesertS", "type": "noiseDesertS" },
-      { "label": "D4", "type": "border" },
-      { "label": "D1", "type": "border" }
+      { "label": "noiseDesertS", "type": "border" },
+      { "label": "noiseDesertS", "type": "border" }
     ],
     [
       { "label": "A4", "type": "border" },
