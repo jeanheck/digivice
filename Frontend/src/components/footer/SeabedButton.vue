@@ -19,10 +19,9 @@ const locationViewModel = computed(() => {
     return null;
   }
 
-  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
   const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
 
-  return SeabedButtonPresenter.getLocation(locationId, mainQuest, seabedRoute);
+  return SeabedButtonPresenter.getLocation(locationId, seabedRoute);
 });
 
 function onClick(): void {

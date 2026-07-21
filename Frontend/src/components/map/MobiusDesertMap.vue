@@ -32,9 +32,8 @@ const locationViewModel = computed(() => {
   }
 
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
-  const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
 
-  return MobiusDesertMapPresenter.getLocation(locationId.value, mainQuest, seabedRoute);
+  return MobiusDesertMapPresenter.getLocation(locationId.value, mainQuest);
 });
 
 const mobiusDesertCell = computed(() => {

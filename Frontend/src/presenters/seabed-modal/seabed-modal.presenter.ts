@@ -1,5 +1,4 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import type { Quest } from "@/models";
 import { DockConverter } from "@/presenters/converter/dock.converter";
 import { LocationConverter } from "@/presenters/converter/location.converter";
 import { LocationRepository } from "@/repositories";
@@ -27,7 +26,6 @@ export class SeabedModalPresenter {
 
   public static getDockByLocationId(
     locationId: string | null,
-    mainQuest: Quest | null,
     seabedRoute: number = 0,
   ): DockViewModel | null {
     if (locationId === null) {
@@ -35,11 +33,7 @@ export class SeabedModalPresenter {
     }
 
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const enemyIds = LocationService.getCurrentEnemies(
-      locationId,
-      mainQuest,
-      seabedRoute,
-    );
+    const enemyIds = LocationService.getSeabedEnemies(seabedRoute);
     const location = LocationConverter.convert(locationId, locationRaw, enemyIds);
 
     return SeabedModalPresenter.getDock(location);

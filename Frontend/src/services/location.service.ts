@@ -1,12 +1,10 @@
 import { LocationRegionConstant } from "@/constants/location-region.constant";
-import type { Quest } from "@/models";
 import { LocationRepository } from "@/repositories/location.repository";
 import { SeabedRoutesRepository } from "@/repositories/seabed-routes.repository";
 import { isLocationEnemyPhaseList } from "@/repositories/tables/raws/location/location.raw";
-import { QuestService } from "@/services/quest.service";
 
 export class LocationService {
-  private static getSeabedEnemies(seabedRoute: number): string[] {
+  public static getSeabedEnemies(seabedRoute: number): string[] {
     return seabedRoute === 0 ? [] : SeabedRoutesRepository.getEnemiesByRoute(String(seabedRoute));
   }
 
@@ -45,18 +43,6 @@ export class LocationService {
     }
 
     return LocationRepository.getLocationById(id).imageName;
-  }
-
-  public static getCurrentEnemies(
-    locationId: string,
-    mainQuest: Quest | null,
-    seabedRoute: number = 0,
-  ): string[] {
-    if (this.isSeabed(locationId)) {
-      return this.getSeabedEnemies(seabedRoute);
-    }
-
-    return this.getEnemies(locationId, QuestService.getLastCompletedMainQuestStep(mainQuest));
   }
 
   public static isSeabed(locationId: string | null): boolean {

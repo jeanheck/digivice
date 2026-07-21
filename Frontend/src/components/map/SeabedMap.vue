@@ -29,9 +29,7 @@ const locationViewModel = computed(() => {
     return null;
   }
 
-  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
-
-  return SeabedMapPresenter.getLocation(locationId.value, mainQuest, seabedRoute.value);
+  return SeabedMapPresenter.getLocation(locationId.value, seabedRoute.value);
 });
 </script>
 
