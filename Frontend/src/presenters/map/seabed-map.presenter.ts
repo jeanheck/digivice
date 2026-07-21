@@ -9,10 +9,9 @@ export class SeabedMapPresenter {
     locationId: string,
     mainQuest: Quest | null,
     seabedRoute: number = 0,
-    previousMapId: string = "",
   ): LocationViewModel {
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const enemyIds = LocationService.getCurrentEnemies(locationId, mainQuest, seabedRoute, previousMapId);
+    const enemyIds = LocationService.getCurrentEnemies(locationId, mainQuest, seabedRoute);
 
     return LocationConverter.convert(locationId, locationRaw, enemyIds);
   }

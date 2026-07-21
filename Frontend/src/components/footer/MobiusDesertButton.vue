@@ -21,13 +21,11 @@ const locationViewModel = computed(() => {
 
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
   const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
-  const previousMapId = store.currentState?.player?.previousMapId ?? "";
 
   return MobiusDesertButtonPresenter.getLocation(
     locationId,
     mainQuest,
     seabedRoute,
-    previousMapId,
   );
 });
 

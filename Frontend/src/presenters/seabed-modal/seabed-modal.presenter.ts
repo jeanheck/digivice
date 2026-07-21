@@ -29,7 +29,6 @@ export class SeabedModalPresenter {
     locationId: string | null,
     mainQuest: Quest | null,
     seabedRoute: number = 0,
-    previousMapId: string = "",
   ): DockViewModel | null {
     if (locationId === null) {
       return null;
@@ -40,7 +39,6 @@ export class SeabedModalPresenter {
       locationId,
       mainQuest,
       seabedRoute,
-      previousMapId,
     );
     const location = LocationConverter.convert(locationId, locationRaw, enemyIds);
 

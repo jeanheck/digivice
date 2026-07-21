@@ -30,9 +30,8 @@ const locationViewModel = computed(() => {
   }
 
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
-  const previousMapId = store.currentState?.player?.previousMapId ?? "";
 
-  return SeabedMapPresenter.getLocation(locationId.value, mainQuest, seabedRoute.value, previousMapId);
+  return SeabedMapPresenter.getLocation(locationId.value, mainQuest, seabedRoute.value);
 });
 </script>
 
