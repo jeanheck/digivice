@@ -1,21 +1,14 @@
 <script setup lang="ts">
-import Location from "./Location.vue";
-import Enemies from "./Enemies.vue";
-import Seabed from "./Seabed.vue";
-import DesertExitWest from "./desert/DesertExitWest.vue";
-import DesertExitNorth from "./desert/DesertExitNorth.vue";
-import DesertExitEast from "./desert/DesertExitEast.vue";
-import DesertExitSouth from "./desert/DesertExitSouth.vue";
+import AsukaServerMap from "./AsukaServerMap.vue";
+import SeabedMap from "./SeabedMap.vue";
+import MobiusDesertMap from "./MobiusDesertMap.vue";
 import EnemyModal from "@/components/map/enemy-modal/EnemyModal.vue";
 import { computed, ref } from "vue";
-import { useI18n } from "vue-i18n";
 import { useGameStore } from "@/stores/use-game-store";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
-import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 
 const store = useGameStore();
-const { t } = useI18n();
 
 const locationViewModel = computed(() => {
   const locationId = store.currentState?.player?.location ?? null;
@@ -52,48 +45,6 @@ const isSeabed = computed(() => {
 
 const isMobiusDesert = computed(() => {
   return MapPresenter.isMobiusDesertLocation(locationId.value);
-});
-
-const mobiusDesertCell = computed(() => {
-  if (!isMobiusDesert.value || locationId.value === null) {
-    return null;
-  }
-
-  return MapPresenter.getCell(locationId.value, mapVariant.value);
-});
-
-const locationTitleOverride = computed(() => {
-  if (mobiusDesertCell.value === null || locationId.value === null) {
-    return null;
-  }
-
-  return `${t(`location.${locationId.value}`)} (${mobiusDesertCell.value.label})`;
-});
-
-function resolveNeighborDisplayName(neighbor: string): string {
-  const neighborName = DesertNeighborHelper.resolveNeighborName(neighbor);
-
-  if (neighborName.kind === "i18n") {
-    return t(neighborName.key);
-  }
-
-  return neighborName.value;
-}
-
-const westExitName = computed(() => {
-  return mobiusDesertCell.value ? resolveNeighborDisplayName(mobiusDesertCell.value.west) : null;
-});
-
-const northExitName = computed(() => {
-  return mobiusDesertCell.value ? resolveNeighborDisplayName(mobiusDesertCell.value.north) : null;
-});
-
-const eastExitName = computed(() => {
-  return mobiusDesertCell.value ? resolveNeighborDisplayName(mobiusDesertCell.value.east) : null;
-});
-
-const southExitName = computed(() => {
-  return mobiusDesertCell.value ? resolveNeighborDisplayName(mobiusDesertCell.value.south) : null;
 });
 
 const isEnemyModalOpen = ref(false);
@@ -136,30 +87,26 @@ const closeEnemyModal = () => {
       class="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-[#00aaff]/60 pointer-events-none"
     />
 
-    <template v-if="isMobiusDesert">
-      <DesertExitWest :name="westExitName" />
-      <DesertExitNorth :name="northExitName" />
-      <DesertExitEast :name="eastExitName" />
-      <DesertExitSouth :name="southExitName" />
-    </template>
-
-    <div
-      class="relative z-10 flex flex-col flex-1 min-h-0 pt-1"
-      :class="{ 'justify-center': isMobiusDesert }"
-    >
-      <div class="flex flex-col items-center gap-2 shrink-0">
-        <Location :location="locationViewModel" :title-override="locationTitleOverride" />
-        <Enemies :location="locationViewModel" @open-enemy-modal="openEnemyModal" />
-        <Seabed
-          v-if="isSeabed"
-          :seabed-route="seabedRoute"
-          :map-variant="mapVariant"
-          :location-id="locationId"
-        />
-      </div>
-
-      <div v-if="!isMobiusDesert" class="flex-1 min-h-0" />
-    </div>
+    <SeabedMap
+      v-if="isSeabed"
+      :location="locationViewModel"
+      :seabed-route="seabedRoute"
+      :map-variant="mapVariant"
+      :location-id="locationId"
+      @open-enemy-modal="openEnemyModal"
+    />
+    <MobiusDesertMap
+      v-else-if="isMobiusDesert"
+      :location="locationViewModel"
+      :location-id="locationId"
+      :map-variant="mapVariant"
+      @open-enemy-modal="openEnemyModal"
+    />
+    <AsukaServerMap
+      v-else
+      :location="locationViewModel"
+      @open-enemy-modal="openEnemyModal"
+    />
 
     <EnemyModal :is-open="isEnemyModalOpen" :enemy-id="selectedEnemyId" @close="closeEnemyModal" />
   </aside>
