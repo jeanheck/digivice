@@ -1,13 +1,13 @@
-import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import { LocationRegionConstant } from "@/constants/location-region.constant";
-import { LocationService } from "@/services/location.service";
+import { MapConverter } from "@/presenters/converter/map.converter";
+import { LocationRepository } from "@/repositories/location.repository";
+import type { MapViewModel } from "@/viewmodels/map/map.viewmodel";
 
 export class MapPresenter {
-  public static getRegionByLocationId(id: string | null): LocationRegionConstant {
-    return LocationService.getRegionByLocationId(id);
-  }
+  public static getByLocationId(id: string | null): MapViewModel {
+    if (id === null) {
+      return MapConverter.convert(null);
+    }
 
-  public static getLocationImageUrlByLocationId(id: string | null): string | null {
-    return ImageCatalog.getLocationImageUrl(LocationService.getLocationImageNameByLocationId(id));
+    return MapConverter.convert(LocationRepository.getLocationById(id));
   }
 }

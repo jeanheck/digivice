@@ -14,12 +14,8 @@ const locationId = computed(() => {
   return store.currentState?.player?.location ?? null;
 });
 
-const locationRegion = computed(() => {
-  return MapPresenter.getRegionByLocationId(locationId.value);
-});
-
-const locationImage = computed(() => {
-  return MapPresenter.getLocationImageUrlByLocationId(locationId.value);
+const mapViewModel = computed(() => {
+  return MapPresenter.getByLocationId(locationId.value);
 });
 
 const isEnemyModalOpen = ref(false);
@@ -40,13 +36,13 @@ const closeEnemyModal = () => {
   <aside class="dw3-aside flex-1 min-h-0 pt-1.5! pb-1.5! relative overflow-hidden">
     <div
       class="absolute inset-0 bg-black bg-opacity-60"
-      :class="{ 'bg-grid-pattern': !locationImage }"
+      :class="{ 'bg-grid-pattern': !mapViewModel.locationImageUrl }"
     />
 
     <div
-      v-if="locationImage"
+      v-if="mapViewModel.locationImageUrl"
       class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-lighten pointer-events-none"
-      :style="{ backgroundImage: `url(${locationImage})` }"
+      :style="{ backgroundImage: `url(${mapViewModel.locationImageUrl})` }"
     />
 
     <div
@@ -63,11 +59,11 @@ const closeEnemyModal = () => {
     />
 
     <SeabedMap
-      v-if="locationRegion === LocationRegionConstant.seabed"
+      v-if="mapViewModel.locationRegion === LocationRegionConstant.seabed"
       @open-enemy-modal="openEnemyModal"
     />
     <MobiusDesertMap
-      v-else-if="locationRegion === LocationRegionConstant.mobiusDesert"
+      v-else-if="mapViewModel.locationRegion === LocationRegionConstant.mobiusDesert"
       @open-enemy-modal="openEnemyModal"
     />
     <AsukaServerMap
