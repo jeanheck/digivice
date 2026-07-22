@@ -12,7 +12,7 @@ export class MobiusDesertMapPresenter {
     );
   }
 
-  public static getCell(locationId: string, mapVariant: number): DesertAreaMapCellViewModel | null {
-    return MobiusDesertService.getCell(locationId, mapVariant);
+  public static getMobiusDesertArea(locationId: string, mapVariant: number): DesertAreaMapCellViewModel | null {
+    return MobiusDesertService.getMobiusDesertArea(locationId, mapVariant);
   }
 }

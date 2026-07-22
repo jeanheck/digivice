@@ -41,7 +41,7 @@ const mobiusDesertCell = computed(() => {
     return null;
   }
 
-  return MobiusDesertMapPresenter.getCell(locationId.value, mapVariant.value);
+  return MobiusDesertMapPresenter.getMobiusDesertArea(locationId.value, mapVariant.value);
 });
 
 const locationTitleOverride = computed(() => {

@@ -17,7 +17,7 @@ export class MobiusDesertAreasMapRepository {
     return null;
   }
 
-  public static getCell(locationId: string, mapVariantKey: string): MobiusDesertAreaMapCellRaw | null {
+  public static getMobiusDesertArea(locationId: string, mapVariantKey: string): MobiusDesertAreaMapCellRaw | null {
     return this.desertAreasMapTable[locationId]?.[mapVariantKey] ?? null;
   }
 }

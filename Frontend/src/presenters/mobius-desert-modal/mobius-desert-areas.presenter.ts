@@ -13,7 +13,7 @@ export class MobiusDesertAreasPresenter {
       return null;
     }
 
-    const cell = MobiusDesertService.getCell(locationId, mapVariant);
+    const cell = MobiusDesertService.getMobiusDesertArea(locationId, mapVariant);
 
     if (cell === null) {
       return null;
