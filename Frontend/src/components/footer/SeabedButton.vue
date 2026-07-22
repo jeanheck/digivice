@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import SeabedModal from "@/components/seabed-modal/SeabedModal.vue";
-import { SeabedButtonPresenter } from "@/presenters/footer/seabed-button.presenter";
-import { useGameStore } from "@/stores/use-game-store";
 
 const emit = defineEmits<{
   (e: "show-tooltip", event: MouseEvent): void;
@@ -10,19 +8,7 @@ const emit = defineEmits<{
   (e: "hide-tooltip"): void;
 }>();
 
-const store = useGameStore();
 const isSeabedModalOpen = ref(false);
-
-const locationViewModel = computed(() => {
-  const locationId = store.currentState?.player?.location ?? null;
-  if (locationId === null) {
-    return null;
-  }
-
-  const seabedRoute = store.currentState?.player?.seabedRoute ?? 0;
-
-  return SeabedButtonPresenter.getLocation(locationId, seabedRoute);
-});
 
 function onClick(): void {
   isSeabedModalOpen.value = true;
@@ -59,7 +45,6 @@ function onMouseLeave(): void {
 
   <SeabedModal
     :is-open="isSeabedModalOpen"
-    :location="locationViewModel"
     @close="closeSeabedModal"
   />
 </template>

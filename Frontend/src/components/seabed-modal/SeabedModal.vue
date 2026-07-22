@@ -5,12 +5,10 @@ import MapDetailsFrame from "@/components/map-details-frame/MapDetailsFrame.vue"
 import SeabedDocks from "@/components/seabed-modal/SeabedDocks.vue";
 import { SeabedModalPresenter } from "@/presenters/seabed-modal/seabed-modal.presenter";
 import { useGameStore } from "@/stores/use-game-store";
-import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 import { MAP_FRAME_WIDTH_PX } from "@/components/map-details-frame/map-details-frame";
 
 const props = defineProps<{
   isOpen: boolean;
-  location: LocationViewModel | null;
 }>();
 
 const emit = defineEmits<{
@@ -25,37 +23,23 @@ const isModalOpen = computed(() => {
 
 const selectedLocationId = ref<string | null>(null);
 
-function syncSelectedLocationIdFromProps(): void {
-  if (props.location !== null && props.location.dock === true) {
-    selectedLocationId.value = props.location.id;
-    return;
-  }
-
-  selectedLocationId.value = null;
+function syncSelectedLocationIdFromPlayer(): void {
+  const playerLocationId = store.currentState?.player?.location ?? null;
+  selectedLocationId.value = SeabedModalPresenter.getInitialSelectedLocationId(playerLocationId);
 }
-
-watch(
-  () => props.location,
-  () => {
-    syncSelectedLocationIdFromProps();
-  },
-  { immediate: true },
-);
 
 watch(
   () => props.isOpen,
   (isOpen) => {
     if (isOpen) {
-      syncSelectedLocationIdFromProps();
+      syncSelectedLocationIdFromPlayer();
     }
   },
+  { immediate: true },
 );
 
 const dockViewModel = computed(() => {
-  return SeabedModalPresenter.getSeabedModalViewModelByLocationId(
-    selectedLocationId.value,
-    store.currentState?.player?.seabedRoute ?? 0,
-  );
+  return SeabedModalPresenter.getViewModel(selectedLocationId.value);
 });
 
 function onSelectDock(locationId: string): void {
