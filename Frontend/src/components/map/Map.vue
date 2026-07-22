@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AsukaServerMap from "./AsukaServerMap.vue";
-import SeabedMap from "./SeabedMap.vue";
-import MobiusDesertMap from "./MobiusDesertMap.vue";
+import AsukaServerMap from "./asuka-server-map/AsukaServerMap.vue";
+import SeabedMap from "./seabed-map/SeabedMap.vue";
+import MobiusDesertMap from "./mobius-desert-map/MobiusDesertMap.vue";
 import EnemyModal from "@/components/map/enemy-modal/EnemyModal.vue";
 import { computed, ref } from "vue";
 import { LocationRegionConstant } from "@/constants/location-region.constant";

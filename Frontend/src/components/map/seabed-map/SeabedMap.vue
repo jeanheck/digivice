@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import Location from "./Location.vue";
+import Location from "../Location.vue";
 import Enemies from "@/components/map/Enemies.vue";
 import Seabed from "./Seabed.vue";
 import { useGameStore } from "@/stores/use-game-store";

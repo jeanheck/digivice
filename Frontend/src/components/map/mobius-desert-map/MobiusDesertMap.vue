@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import Location from "./Location.vue";
-import Enemies from "./Enemies.vue";
+import Location from "../Location.vue";
+import Enemies from "../Enemies.vue";
 import DesertExitWest from "./DesertExitWest.vue";
 import DesertExitNorth from "./DesertExitNorth.vue";
 import DesertExitEast from "./DesertExitEast.vue";

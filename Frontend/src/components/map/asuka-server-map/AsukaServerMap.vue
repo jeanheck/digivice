@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import Location from "./Location.vue";
-import Enemies from "./Enemies.vue";
+import Location from "../Location.vue";
+import Enemies from "../Enemies.vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { AsukaServerMapPresenter } from "@/presenters/map/asuka-server-map.presenter.ts";
 
