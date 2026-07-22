@@ -1,7 +1,7 @@
 import type { SeabedDirectionRaw } from "@/repositories/tables/raws/seabed/seabed-direction.raw";
-import type { SeabedDirectionDockViewModel } from "@/viewmodels/dock/seabed-route-dock.viewmodel";
-import type { SeabedDirectionRouteSegmentViewModel } from "@/viewmodels/dock/seabed-direction-route-segment.viewmodel";
-import type { SeabedDirectionViewModel } from "@/viewmodels/dock/seabed-direction.viewmodel";
+import type { SeabedDirectionDockViewModel } from "@/viewmodels/seabed-modal/seabed-route-dock.viewmodel";
+import type { SeabedDirectionRouteSegmentViewModel } from "@/viewmodels/seabed-modal/seabed-direction-route-segment.viewmodel";
+import type { SeabedDirectionViewModel } from "@/viewmodels/seabed-modal/seabed-direction.viewmodel";
 
 export class SeabedDirectionConverter {
   public static convert(routeId: string, seabedDirectionRaw: SeabedDirectionRaw): SeabedDirectionViewModel {

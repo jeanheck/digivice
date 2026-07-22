@@ -1,8 +1,8 @@
 import type { DockRaw } from "@/repositories/tables/raws/seabed/dock.raw";
-import type { DockViewModel } from "@/viewmodels/dock/dock.viewmodel";
+import type { SeabedModalViewModel } from "@/viewmodels/seabed-modal/seabed-modal.viewmodel";
 
-export class DockConverter {
-  public static convert(dockRaw: DockRaw, imageUrl: string | null): DockViewModel {
+export class SeabedModalConverter {
+  public static convert(dockRaw: DockRaw, imageUrl: string | null): SeabedModalViewModel {
     return {
       imageUrl,
       coordinates: {

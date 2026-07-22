@@ -1,33 +1,33 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import { DockConverter } from "@/presenters/converter/dock.converter";
+import { SeabedModalConverter } from "@/presenters/converter/dock.converter";
 import { LocationConverter } from "@/presenters/converter/location.converter";
 import { LocationRepository } from "@/repositories";
 import { SeabedDockRepository } from "@/repositories/seabed-dock.repository";
 import { LocationService } from "@/services/location.service";
-import type { DockViewModel } from "@/viewmodels/dock/dock.viewmodel";
+import type { SeabedModalViewModel } from "@/viewmodels/seabed-modal/seabed-modal.viewmodel";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 export class SeabedModalPresenter {
-  private static getDock(location: LocationViewModel | null): DockViewModel | null {
+  private static getDock(location: LocationViewModel | null): SeabedModalViewModel | null {
     if (location === null || location.dock === false) {
       return null;
     }
 
-    const dockRaw = SeabedDockRepository.getDockByLocationId(location.id);
+    const seabedDockRaw = SeabedDockRepository.getDockByLocationId(location.id);
 
-    if (dockRaw === null) {
+    if (seabedDockRaw === null) {
       return null;
     }
 
     const imageUrl = ImageCatalog.getLocationImageUrl(location.image);
 
-    return DockConverter.convert(dockRaw, imageUrl);
+    return SeabedModalConverter.convert(seabedDockRaw, imageUrl);
   }
 
-  public static getDockByLocationId(
+  public static getSeabedModalViewModelByLocationId(
     locationId: string | null,
     seabedRoute: number = 0,
-  ): DockViewModel | null {
+  ): SeabedModalViewModel | null {
     if (locationId === null) {
       return null;
     }

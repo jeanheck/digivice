@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { DockLabelPosition } from "@/repositories/tables/raws/seabed/seabed-direction-dock.raw";
-import type { SeabedDirectionDockViewModel } from "@/viewmodels/dock/seabed-route-dock.viewmodel";
+import type { SeabedDirectionDockViewModel } from "@/viewmodels/seabed-modal/seabed-route-dock.viewmodel";
 
 defineProps<{
   dock: SeabedDirectionDockViewModel;

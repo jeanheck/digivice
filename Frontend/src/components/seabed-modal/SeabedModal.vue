@@ -52,7 +52,7 @@ watch(
 );
 
 const dockViewModel = computed(() => {
-  return SeabedModalPresenter.getDockByLocationId(
+  return SeabedModalPresenter.getSeabedModalViewModelByLocationId(
     selectedLocationId.value,
     store.currentState?.player?.seabedRoute ?? 0,
   );

@@ -1,6 +1,6 @@
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 
-export interface DockViewModel {
+export interface SeabedModalViewModel {
   imageUrl: string | null;
   coordinates: CoordinatesViewModel;
 }

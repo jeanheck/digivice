@@ -1,7 +1,7 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { SeabedDirectionConverter } from "@/presenters/converter/seabed-direction.converter";
 import { SeabedDirectionsRepository } from "@/repositories/seabed-direction.repository";
-import type { SeabedDirectionViewModel } from "@/viewmodels/dock/seabed-direction.viewmodel";
+import type { SeabedDirectionViewModel } from "@/viewmodels/seabed-modal/seabed-direction.viewmodel";
 
 export class SeabedDocksPresenter {
   public static getAsukaImageUrl(): string | null {
