@@ -38,7 +38,7 @@ watch(
   { immediate: true },
 );
 
-const dockViewModel = computed(() => {
+const seabedModalViewModel = computed(() => {
   return SeabedModalPresenter.getViewModel(selectedLocationId.value);
 });
 
@@ -69,9 +69,9 @@ const closeModal = () => {
       <div class="flex gap-4 items-center min-h-0 max-h-full">
         <SeabedDocks @select-dock="onSelectDock" />
         <MapDetailsFrame
-          v-if="dockViewModel?.imageUrl"
-          :image-url="dockViewModel.imageUrl"
-          :coordinates="dockViewModel.coordinates ?? null"
+          v-if="seabedModalViewModel?.imageUrl"
+          :image-url="seabedModalViewModel.imageUrl"
+          :coordinates="seabedModalViewModel.coordinates ?? null"
           :pin-label="$t('map.dock')"
         />
         <div
