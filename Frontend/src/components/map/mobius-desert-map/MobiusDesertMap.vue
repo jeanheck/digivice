@@ -36,7 +36,7 @@ const enemyIds = computed(() => {
   return MobiusDesertMapPresenter.getEnemyIds(locationId.value, mainQuest);
 });
 
-const mobiusDesertCell = computed(() => {
+const mobiusDesertArea = computed(() => {
   if (locationId.value === null) {
     return null;
   }
@@ -45,11 +45,11 @@ const mobiusDesertCell = computed(() => {
 });
 
 const locationTitleOverride = computed(() => {
-  if (mobiusDesertCell.value === null || locationId.value === null) {
+  if (mobiusDesertArea.value === null || locationId.value === null) {
     return null;
   }
 
-  return `${t(`location.${locationId.value}`)} (${mobiusDesertCell.value.label})`;
+  return `${t(`location.${locationId.value}`)} (${mobiusDesertArea.value.label})`;
 });
 
 function resolveNeighborDisplayName(neighbor: string): string {
@@ -63,19 +63,19 @@ function resolveNeighborDisplayName(neighbor: string): string {
 }
 
 const westExitName = computed(() => {
-  return mobiusDesertCell.value ? resolveNeighborDisplayName(mobiusDesertCell.value.west) : null;
+  return mobiusDesertArea.value ? resolveNeighborDisplayName(mobiusDesertArea.value.west) : null;
 });
 
 const northExitName = computed(() => {
-  return mobiusDesertCell.value ? resolveNeighborDisplayName(mobiusDesertCell.value.north) : null;
+  return mobiusDesertArea.value ? resolveNeighborDisplayName(mobiusDesertArea.value.north) : null;
 });
 
 const eastExitName = computed(() => {
-  return mobiusDesertCell.value ? resolveNeighborDisplayName(mobiusDesertCell.value.east) : null;
+  return mobiusDesertArea.value ? resolveNeighborDisplayName(mobiusDesertArea.value.east) : null;
 });
 
 const southExitName = computed(() => {
-  return mobiusDesertCell.value ? resolveNeighborDisplayName(mobiusDesertCell.value.south) : null;
+  return mobiusDesertArea.value ? resolveNeighborDisplayName(mobiusDesertArea.value.south) : null;
 });
 </script>
 
