@@ -3,10 +3,10 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import Location from "./Location.vue";
 import Enemies from "./Enemies.vue";
-import DesertExitWest from "./desert/DesertExitWest.vue";
-import DesertExitNorth from "./desert/DesertExitNorth.vue";
-import DesertExitEast from "./desert/DesertExitEast.vue";
-import DesertExitSouth from "./desert/DesertExitSouth.vue";
+import DesertExitWest from "./DesertExitWest.vue";
+import DesertExitNorth from "./DesertExitNorth.vue";
+import DesertExitEast from "./DesertExitEast.vue";
+import DesertExitSouth from "./DesertExitSouth.vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { MobiusDesertMapPresenter } from "@/presenters/map/mobius-desert-map.presenter.ts";
 import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
@@ -26,14 +26,14 @@ const mapVariant = computed(() => {
   return store.currentState?.player?.mapVariant ?? 0;
 });
 
-const locationViewModel = computed(() => {
+const enemyIds = computed(() => {
   if (locationId.value === null) {
-    return null;
+    return [];
   }
 
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
 
-  return MobiusDesertMapPresenter.getLocation(locationId.value, mainQuest);
+  return MobiusDesertMapPresenter.getEnemyIds(locationId.value, mainQuest);
 });
 
 const mobiusDesertCell = computed(() => {
@@ -87,9 +87,9 @@ const southExitName = computed(() => {
 
   <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1 justify-center">
     <div class="flex flex-col items-center gap-2 shrink-0">
-      <Location :location-id="locationViewModel?.id ?? null" :title-override="locationTitleOverride" />
+      <Location :location-id="locationId" :title-override="locationTitleOverride" />
       <Enemies
-        :enemy-ids="locationViewModel?.enemies ?? []"
+        :enemy-ids="enemyIds"
         @open-enemy-modal="emit('open-enemy-modal', $event)"
       />
     </div>
