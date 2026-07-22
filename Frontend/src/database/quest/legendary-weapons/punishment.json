@@ -1,6 +1,10 @@
 {
     "id": "punishment",
-    "requisites": [],
+    "requisites": [
+        {
+            "id": "numemon"
+        }
+    ],
     "steps": {
         "1": {
             "location": "024D",

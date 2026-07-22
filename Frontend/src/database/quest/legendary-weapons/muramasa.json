@@ -1,6 +1,10 @@
 {
     "id": "muramasa",
-    "requisites": [],
+    "requisites": [
+        {
+            "id": "smellHerb"
+        }
+    ],
     "steps": {
         "1": {
             "location": "023C",

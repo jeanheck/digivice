@@ -1,6 +1,10 @@
 {
     "id": "invincible",
-    "requisites": [],
+    "requisites": [
+        {
+            "id": "seiryuLeader"
+        }
+    ],
     "steps": {
         "1": {
             "location": "022B",
