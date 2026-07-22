@@ -2,6 +2,9 @@
   "invincible": {
     "title": "Invincible",
     "description": "Obtain the Legendary Weapon Invincible",
+    "requisites": {
+      "seiryuLeader": "Talk to Seiryu Leader on Protocol Ruins"
+    },
     "steps": {
       "1": {
         "description": "Defeat MasterTyrannomon to receive the Old Claw",

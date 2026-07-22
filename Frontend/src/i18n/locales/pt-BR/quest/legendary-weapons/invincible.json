@@ -2,6 +2,9 @@
   "invincible": {
     "title": "Invencível",
     "description": "Obtenha a Arma Lendária Invincible",
+    "requisites": {
+      "seiryuLeader": "Fale com Líder Seiryu nas Ruínas Protocolo"
+    },
     "steps": {
       "1": {
         "description": "Derrote MasterTyrannomon para receber a Garra Antiga",

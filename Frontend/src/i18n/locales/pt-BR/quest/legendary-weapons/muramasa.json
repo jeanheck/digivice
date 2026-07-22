@@ -2,6 +2,9 @@
   "muramasa": {
     "title": "Muramasa",
     "description": "Obtenha a Arma Lendária Muramasa",
+    "requisites": {
+      "smellHerb": "Use a Erva Fedida para tirar Zanbamon da Selva Sepultura"
+    },
     "steps": {
       "1": {
         "description": "Derrote Zanbamon para receber a Katana Oxidada",

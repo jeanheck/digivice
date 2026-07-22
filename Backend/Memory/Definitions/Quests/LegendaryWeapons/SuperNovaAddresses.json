@@ -1,5 +1,14 @@
 {
     "Id": "superNova",
+    "Requisites": [
+        {
+            "Id": "submarimon",
+            "Address": "0x00048DC0",
+            "BitMasks": [
+                "0x01"
+            ]
+        }
+    ],
     "Steps": [
         {
             "Number": 1,

@@ -2,6 +2,9 @@
   "superNova": {
     "title": "Super Nova",
     "description": "Obtenha a Arma Lendária Super Nova",
+    "requisites": {
+      "submarimon": "Encontre o Digi-Ovo da Sinceridade"
+    },
     "steps": {
       "1": {
         "description": "Derrote Datamon para receber a Luva Enferrujada",

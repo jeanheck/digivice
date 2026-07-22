@@ -2,6 +2,9 @@
   "punishment": {
     "title": "Punição",
     "description": "Obtenha a Arma Lendária Punição",
+    "requisites": {
+      "numemon": "Vá para o centro da fábrica para procurar pelo Numemon"
+    },
     "steps": {
       "1": {
         "description": "Derrote HiAndromon para receber o Rifle Enferrujado",

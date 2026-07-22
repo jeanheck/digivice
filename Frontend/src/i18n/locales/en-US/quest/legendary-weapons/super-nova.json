@@ -2,6 +2,9 @@
   "superNova": {
     "title": "Super Nova",
     "description": "Obtain the Legendary Weapon Super Nova",
+    "requisites": {
+      "submarimon": "Find the Digi-Egg of Sincerity"
+    },
     "steps": {
       "1": {
         "description": "Defeat Datamon to receive the Rusty Glove",
