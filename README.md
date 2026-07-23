@@ -67,3 +67,4 @@ To build this, I used public that from the game that is available along many lin
 - **Digimon World 3 (PS1 Gameplay Português PT-BR)**: [Dash Games](https://www.youtube.com/watch?v=rW8wxZceOjI&list=PLZDYs951OahD_TT4QUByvOEBTRJE-amAi)
 - **DRI locations**: [NeoSeeker](https://www.neoseeker.com/forums/3546/t1102277-dri-locations/)
 - **Digimon World 3 - Mobius Desert Map**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/565-mobius-desert-map)
+- **Digivolution Experience Points (DVEXP)**: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/47657837)
