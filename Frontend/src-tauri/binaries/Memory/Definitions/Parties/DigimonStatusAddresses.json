@@ -1,6 +1,7 @@
 {
     "Experience": "0x18",
     "Level": "0x1C",
+    "TP": "0x1E",
     "Vitals": {
         "CurrentHP": "0x20",
         "MaxHP": "0x22",
