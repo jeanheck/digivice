@@ -61,7 +61,7 @@ const closeModal = () => {
   >
     <template #header>
       <h2 class="text-white font-bold tracking-widest drop-shadow whitespace-nowrap shrink-0">
-        {{ $t("map.seabedRoutes") }}
+        {{ $t("map.seabed") }}
       </h2>
     </template>
 
