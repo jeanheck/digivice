@@ -6,6 +6,11 @@
     "equipableBy": "Equipable by",
     "allDigimon": "All Digimon",
     "level": "Level",
+    "experience": "Experience",
+    "hp": "HP",
+    "mp": "MP",
+    "blastGauge": "Blast Gauge",
+    "tp": "Training Points",
     "equipmentSlot": {
       "head": "Head",
       "body": "Body",

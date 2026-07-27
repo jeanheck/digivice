@@ -118,7 +118,6 @@ public class StateEventFactoryTests
         {
             Player = new Player
             {
-                Name = "Agumon",
                 Bits = 100,
                 MapId = "0001"
             },

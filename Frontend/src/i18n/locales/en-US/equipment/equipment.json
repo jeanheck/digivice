@@ -10,11 +10,11 @@
     },
     "94": {
       "name": "Crimson Blade",
-      "note": "Recovers a fraction of the damage as HP"
+      "note": "Drains the HP of and opponent."
     },
     "95": {
       "name": "Mighty Blade",
-      "note": null
+      "note": "A sharp single-edged sword."
     },
     "96": {
       "name": "Shiratorimaru",
@@ -22,23 +22,23 @@
     },
     "97": {
       "name": "Shine Blade",
-      "note": null
+      "note": "Sword with a shining blade."
     },
     "98": {
       "name": "Ronin Blade",
-      "note": null
+      "note": "Legendary samurai sword."
     },
     "99": {
       "name": "Onimaru",
-      "note": null
+      "note": "Said to cut off an ogre's arm."
     },
     "100": {
       "name": "Tenjinmaru",
-      "note": null
+      "note": "The highest rank katana."
     },
     "101": {
       "name": "Fuujin Blade",
-      "note": null
+      "note": "Phantom single-edged sword."
     },
     "102": {
       "name": "Rusty Katana",
@@ -46,15 +46,15 @@
     },
     "103": {
       "name": "Kotetsu",
-      "note": null
+      "note": "Katana forged by a master."
     },
     "104": {
       "name": "Masamune",
-      "note": null
+      "note": "Legendary katana."
     },
     "105": {
       "name": "Muramasa",
-      "note": null
+      "note": "Revived mythical phantom sword."
     },
     "106": {
       "name": "Leather Glove",
@@ -68,53 +68,57 @@
       "name": "Iron Glove",
       "note": "Bandage reinforced with metal."
     },
+    "109": {
+      "name": "Needle Glove",
+      "note": "Gloves reinforced with thorns."
+    },
     "110": {
       "name": "Power Arm",
       "note": "Arm gloves that inflicts damage."
     },
     "111": {
       "name": "Tiger Glove",
-      "note": null
+      "note": "Attack like a hunting tiger."
     },
     "112": {
       "name": "Wild Glove",
-      "note": null
+      "note": "Legendary combat weapon."
     },
     "113": {
       "name": "Kaiser Fist",
-      "note": null
+      "note": "Highest rank gloves."
     },
     "114": {
       "name": "Tempest Arm",
-      "note": null
+      "note": "Punch with lightning speed."
     },
     "115": {
       "name": "Raijin Fist",
-      "note": null
+      "note": "Mythical gloves."
     },
     "116": {
       "name": "Rusty Glove",
-      "note": null
+      "note": "Rusted and not effective."
     },
     "117": {
       "name": "Zodiac",
-      "note": null
+      "note": "Charged with power of the beasts."
     },
     "118": {
       "name": "Prominence",
-      "note": null
+      "note": "Gloves that chooses its user."
     },
     "119": {
       "name": "Super Nova",
-      "note": null
+      "note": "Phantom gloves that glows."
     },
     "120": {
       "name": "Handgun",
-      "note": null
+      "note": "An easy to use small gun."
     },
     "121": {
       "name": "Machinegun",
-      "note": null
+      "note": "One-handed automatic weapon."
     },
     "122": {
       "name": "Shotgun",
@@ -122,47 +126,47 @@
     },
     "123": {
       "name": "Psycho Blaster",
-      "note": null
+      "note": "Launches energy bombs."
     },
     "124": {
       "name": "Sniper Cannon",
-      "note": null
+      "note": "Legendary weapon for sniping."
     },
     "125": {
       "name": "Cluster Cannon",
-      "note": null
+      "note": "Launch bundle of bombs."
     },
     "126": {
       "name": "Laser Cannon",
-      "note": null
+      "note": "Shoots heat rays."
     },
     "127": {
       "name": "Suijin Cannon",
-      "note": null
+      "note": "Mythical cannon."
     },
     "128": {
       "name": "Rusty Rifle",
-      "note": null
+      "note": "Priceless, but cannot be used."
     },
     "129": {
       "name": "Justice",
-      "note": null
+      "note": "Custom revived rifle."
     },
     "130": {
       "name": "Judgment",
-      "note": null
+      "note": "High skill custom rifle."
     },
     "131": {
       "name": "Punishment",
-      "note": null
+      "note": "Ultimate full custom rifle."
     },
     "132": {
       "name": "Wooden Rod",
-      "note": null
+      "note": "Rod made from oak."
     },
     "133": {
       "name": "Magician Rod",
-      "note": null
+      "note": "A magician's rod."
     },
     "134": {
       "name": "Bone Rod",
@@ -170,23 +174,27 @@
     },
     "135": {
       "name": "Misty Rod",
-      "note": null
+      "note": "A hermit's rod."
+    },
+    "136": {
+      "name": "Divine Rod",
+      "note": "Rod with a divine light."
     },
     "137": {
-      "name": "Yin Yang Rod",
-      "note": null
+      "name": "Yin Yang Wand",
+      "note": "Diviner's wand from ancient times."
     },
     "138": {
       "name": "Khakkhara",
-      "note": null
+      "note": "Said to be used to ward off evil."
     },
     "139": {
       "name": "Crystal Rod",
-      "note": null
+      "note": "Crystal rod with magical powers."
     },
     "140": {
       "name": "Millenium",
-      "note": null
+      "note": "Power to rule a country."
     },
     "141": {
       "name": "Old Wand",
@@ -194,47 +202,47 @@
     },
     "142": {
       "name": "Twinkle",
-      "note": null
+      "note": "Rod that emits mysterious lights."
     },
     "143": {
       "name": "Immaculate",
-      "note": null
+      "note": "Rod purified with divine powers."
     },
     "144": {
       "name": "Eternally",
-      "note": null
+      "note": "Mythical rod with infinite powers."
     },
     "145": {
       "name": "Wolf Fang",
-      "note": null
+      "note": "Weapon made from a beast's fang."
     },
     "146": {
       "name": "Ghost Fang",
-      "note": null
+      "note": "Weapon made from a ogre's fang."
     },
     "147": {
       "name": "Cerberus Fang",
       "note": "Drains HP from the wound."
     },
     "148": {
-      "name": "Presa Maligna",
-      "note": null
+      "name": "Evil Fang",
+      "note": "Equipped arm attacks like a tiger."
     },
     "149": {
       "name": "Hazard Fang",
-      "note": null
+      "note": "Legendary fang of the wild."
     },
     "150": {
       "name": "Saber Fang",
-      "note": null
+      "note": "Equipped arm aims for weak point."
     },
     "151": {
       "name": "Venom Fang",
-      "note": "Small chance of inflicting poison on enemy Digimon"
+      "note": "Poisons the wound."
     },
     "152": {
       "name": "Belial Fang",
-      "note": null
+      "note": "Mystical fang dropped by a demon."
     },
     "153": {
       "name": "Old Claw",
@@ -242,15 +250,15 @@
     },
     "154": {
       "name": "Vanquish",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
+      "note": "Claw that knock-outs an opponent."
     },
     "155": {
       "name": "Destruction",
-      "note": "Very small chance of knocking out enemy Digimon"
+      "note": "One blow will dismember the enemy."
     },
     "156": {
       "name": "Invincible",
-      "note": null
+      "note": "Mythical claw of the Beast King."
     },
     "157": {
       "name": "Dagger",
@@ -266,23 +274,31 @@
     },
     "160": {
       "name": "Shamshir",
-      "note": null
+      "note": "Persian scimitar."
     },
     "161": {
       "name": "Wing Sword",
       "note": "Easy to wield for fast attacks."
     },
+    "162": {
+      "name": "Kulon Sword",
+      "note": "Made from an alloy and powerful."
+    },
+    "163": {
+      "name": "Brave Sword",
+      "note": "Engraved with crest of courage."
+    },
     "164": {
       "name": "Excalibur",
-      "note": "Deals extra damage to Evil-species Digimon"
+      "note": "Divine sword that destroys evil."
     },
     "165": {
       "name": "Grey Sword",
-      "note": null
+      "note": "Part of a DNA digivolved Digimon."
     },
     "166": {
       "name": "Fenrir Sword",
-      "note": "Small chance of inflicting freeze on enemy Digimon"
+      "note": "Demonic sword that ices the enemy."
     },
     "167": {
       "name": "Bamboo Spear",
@@ -298,7 +314,7 @@
     },
     "170": {
       "name": "Partisan",
-      "note": null
+      "note": "Large spearhead with huge damage."
     },
     "171": {
       "name": "Divine Lance",
@@ -306,27 +322,27 @@
     },
     "172": {
       "name": "Trent",
-      "note": "Deals extra damage to Fish-species Digimon"
+      "note": "Huge damage to underwater enemies."
     },
     "173": {
       "name": "Vampire Lance",
-      "note": "Recovers a fraction of the damage as HP"
+      "note": "Drains the HP of the opponent."
     },
     "175": {
       "name": "Orochi Spear",
-      "note": null
+      "note": "Spear that destroyed Orochi."
     },
     "176": {
       "name": "Claymore",
-      "note": null
+      "note": "Wide two-handed sword."
     },
     "174": {
       "name": "Royal Spear",
-      "note": null
+      "note": "Divine lance for Royal Knights."
     },
     "177": {
       "name": "Chain Saw",
-      "note": null
+      "note": "Wield with two-hands and chop."
     },
     "178": {
       "name": "Zweihander",
@@ -334,27 +350,27 @@
     },
     "179": {
       "name": "Flamberge",
-      "note": null
+      "note": "Beautiful two-handed sword."
     },
     "180": {
       "name": "Rock Breaker",
-      "note": null
+      "note": "Highest ranking two-handed sword."
     },
     "181": {
       "name": "Atlas Buster",
-      "note": null
+      "note": "Killed the legendary giant."
     },
     "182": {
       "name": "Gulf Sword",
-      "note": null
+      "note": "Large scimitar from Persia."
     },
     "183": {
       "name": "Halberd",
-      "note": null
+      "note": "Long hilt to attack effieciently."
     },
     "184": {
       "name": "Naginata",
-      "note": null
+      "note": "Regular, two-handed weapon."
     },
     "185": {
       "name": "Berdys",
@@ -362,19 +378,19 @@
     },
     "186": {
       "name": "Soul Chopper",
-      "note": "Very small chance of OHKO’ing enemy Digimon"
+      "note": "Sickle that destroys the soul."
     },
     "187": {
       "name": "Ryuuzanmaru",
-      "note": null
+      "note": "Destroys the enemy armor and all."
     },
     "188": {
       "name": "Gaea Halberd",
-      "note": null
+      "note": "Can defend and still attack."
     },
     "189": {
       "name": "Omega Halberd",
-      "note": null
+      "note": "Mythical most powerful halberd."
     },
     "190": {
       "name": "Long Bow",
@@ -390,35 +406,35 @@
     },
     "193": {
       "name": "Angel Bow",
-      "note": "Deals extra damage to Evil-species Digimon"
+      "note": "Angelic bow against evil Digimon."
     },
     "194": {
       "name": "Raven Bow",
-      "note": "Small chance of inflicting confusion on enemy Digimon"
+      "note": "Raven's curse confuses the enemy."
     },
     "195": {
       "name": "Lightning Bow",
-      "note": null
+      "note": "High power bow with rapid-fire."
     },
     "196": {
       "name": "Seraphic Bow",
-      "note": null
+      "note": "The highest angel's divine bow."
     },
     "197": {
       "name": "Garuru Cannon",
-      "note": null
+      "note": "Part of a DNA digivolved Digimon."
     },
     "198": {
       "name": "Positron Cannon",
-      "note": null
+      "note": "Forbidden weapon."
     },
     "199": {
       "name": "Mini Guard",
-      "note": null
+      "note": "Small defensive weapon to attack."
     },
     "200": {
       "name": "Pulse Guard",
-      "note": null
+      "note": "Defensive weapon to attack."
     },
     "201": {
       "name": "Metal Guard",
@@ -426,27 +442,31 @@
     },
     "202": {
       "name": "Mighty Guard",
-      "note": null
+      "note": "Efficient and adept for attacks."
+    },
+    "203": {
+      "name": "Dramon Guard",
+      "note": "Legendary Dramon power charge."
     },
     "204": {
       "name": "Mach Guard",
-      "note": null
+      "note": "Fast rotating for attacks."
     },
     "205": {
       "name": "Mega Guard",
-      "note": null
+      "note": "Powerful \"Guard\" that is a weapon."
     },
     "206": {
       "name": "Deus Guard",
-      "note": null
+      "note": "Divine charge that destroys enemy."
     },
     "207": {
       "name": "Metal Horn",
-      "note": null
+      "note": "Horn for head-butts."
     },
     "208": {
       "name": "Drill Horn",
-      "note": null
+      "note": "Reinforced with a drill shape."
     },
     "209": {
       "name": "Kabuteri Horn",
@@ -454,19 +474,23 @@
     },
     "210": {
       "name": "Shock Horn",
-      "note": null
+      "note": "Horn that paralyzes the body."
+    },
+    "211": {
+      "name": "Dramon Horn",
+      "note": "Legendary horn with Dramon power."
     },
     "212": {
       "name": "Scissor Horn",
-      "note": null
+      "note": "Flesh cutting, brutal horn."
     },
     "213": {
       "name": "Trihorn",
-      "note": null
+      "note": "Three horns from head to the nose."
     },
     "214": {
       "name": "Glorious Horn",
-      "note": null
+      "note": "Mythical horn from a sacred beast."
     },
     "215": {
       "name": "Bandanna",
@@ -482,7 +506,7 @@
     },
     "218": {
       "name": "School Cap",
-      "note": null
+      "note": "Looks smarter when worn."
     },
     "219": {
       "name": "Wool Cap",
@@ -490,27 +514,27 @@
     },
     "220": {
       "name": "Kung Fu Cap",
-      "note": null
+      "note": "Cap for combat."
     },
     "221": {
       "name": "Yin Yang Hat",
-      "note": null
+      "note": "Diviner's hat from ancient times."
     },
     "222": {
       "name": "Sniper Goggle",
-      "note": null
+      "note": "Legendary sniping goggles."
     },
     "223": {
       "name": "Night Vision",
-      "note": null
+      "note": "Can see well in the dark."
     },
     "224": {
       "name": "Beret",
-      "note": null
+      "note": "Hat that makes you smarter."
     },
     "225": {
       "name": "Red Cap",
-      "note": null
+      "note": "Increases your natural magic."
     },
     "226": {
       "name": "Ribbon",
@@ -526,7 +550,7 @@
     },
     "229": {
       "name": "Mythril Crown",
-      "note": null
+      "note": "Crown made from magical metal."
     },
     "230": {
       "name": "Magical Crown",
@@ -534,23 +558,23 @@
     },
     "231": {
       "name": "Shaman Mask",
-      "note": ""
+      "note": "Mask used in a cursed ritual."
     },
     "232": {
       "name": "Divine Crown",
-      "note": null
+      "note": "Crown with a divine light."
     },
     "233": {
       "name": "Angel Ring",
-      "note": null
+      "note": "Ring floating above the head."
     },
     "234": {
       "name": "Royal Crown",
-      "note": null
+      "note": "A historic royal crown."
     },
     "235": {
       "name": "Goddess Crown",
-      "note": null
+      "note": "Mythical crown worn by a goddess."
     },
     "236": {
       "name": "Hide Helmet",
@@ -565,8 +589,8 @@
       "note": "Sturdy helmet made from iron."
     },
     "239": {
-      "name": "Warrior Helmet",
-      "note": null
+      "name": "Knight Helmet",
+      "note": "Efficient helmet for knights."
     },
     "240": {
       "name": "Wing Helmet",
@@ -574,35 +598,35 @@
     },
     "241": {
       "name": "Kulon Helmet",
-      "note": null
+      "note": "Sturdy and light alloy helmet."
     },
     "242": {
       "name": "Wild Helmet",
-      "note": null
+      "note": "Legendary combat helmet."
     },
     "243": {
       "name": "Ronin Helmet",
-      "note": null
+      "note": "Legendary ronin helmet."
     },
     "244": {
       "name": "Brave Helmet",
-      "note": null
+      "note": "Engraved with crest of courage."
     },
     "245": {
       "name": "Hazard Helmet",
-      "note": null
+      "note": "Legendary helmet of the wild."
     },
     "246": {
       "name": "D-Tama Helmet",
-      "note": null
+      "note": "Made from Digitama shell."
     },
     "247": {
       "name": "Matrix Helmet",
-      "note": null
+      "note": "Analyze enemy attacks and evade."
     },
     "248": {
       "name": "Mugen Helmet",
-      "note": null
+      "note": "Made from Machinedramon's head."
     },
     "249": {
       "name": "Leather Coat",
@@ -618,7 +642,7 @@
     },
     "252": {
       "name": "Rubber Suit",
-      "note": null
+      "note": "Suit resistant to thunder."
     },
     "253": {
       "name": "Dark Cloak",
@@ -626,31 +650,35 @@
     },
     "254": {
       "name": "Down Jacket",
-      "note": null
+      "note": "Jacket for arctic weather."
+    },
+    "255": {
+      "name": "Divine Robe",
+      "note": "Robe with a divine light."
     },
     "256": {
       "name": "Sniper Suit",
-      "note": null
+      "note": "Legendary sniping suit."
     },
     "257": {
       "name": "Yin Yang Suit",
-      "note": null
+      "note": "Diviner's suit from ancient times."
     },
     "258": {
       "name": "Wild Suit",
-      "note": null
+      "note": "Legendary combat suit."
     },
     "259": {
       "name": "Body Armor",
-      "note": null
+      "note": "Resist machine attacks."
     },
     "260": {
       "name": "Mirage Robe",
-      "note": null
+      "note": "Bewitch enemies and evade attacks."
     },
     "261": {
       "name": "King’s Mantle",
-      "note": null
+      "note": "Wearing it gives a king's dignity."
     },
     "262": {
       "name": "Leather Mail",
@@ -666,7 +694,7 @@
     },
     "265": {
       "name": "Digitama Mail",
-      "note": null
+      "note": "Plastered with Digitama shells."
     },
     "266": {
       "name": "Dark Armor",
@@ -674,31 +702,35 @@
     },
     "267": {
       "name": "Kulon Armor",
-      "note": null
+      "note": "Light and sturdy alloyerd armor."
+    },
+    "268": {
+      "name": "Dramon Armor",
+      "note": "Legendary armor with Dramon power."
     },
     "269": {
       "name": "Ronin Armor",
-      "note": null
+      "note": "Legendary ronin armor."
     },
     "270": {
       "name": "Hazard Armor",
-      "note": null
+      "note": "Legendary armor of the wild."
     },
     "271": {
       "name": "Brave Armor",
-      "note": null
+      "note": "Engraved with crest of courage."
     },
     "272": {
-      "name": "Armadura Cilíndrica",
-      "note": null
+      "name": "Beam Armor",
+      "note": "Shining, decorative armor."
     },
     "273": {
       "name": "Misty Armor",
-      "note": null
+      "note": "Makes the wearer harder to detect."
     },
     "274": {
       "name": "Crimson Mail",
-      "note": null
+      "note": "Flaming red armor."
     },
     "275": {
       "name": "Buckler",
@@ -712,57 +744,109 @@
       "name": "Iron Shield",
       "note": "Sturdy shield made with iron."
     },
+    "278": {
+      "name": "Knight Shield",
+      "note": "Efficient shield of a knight."
+    },
     "279": {
       "name": "Guard Barrier",
       "note": "A barrier with a wide range."
     },
+    "280": {
+      "name": "Kulon Shield",
+      "note": "Sturdy and light alloy shield."
+    },
     "281": {
       "name": "Divine Barrier",
-      "note": "Barrier with a divine right."
+      "note": "Barrier with divine light."
     },
     "282": {
       "name": "Sniper Shield",
-      "note": null
+      "note": "Legendary sniping barricade."
+    },
+    "283": {
+      "name": "Yin Yang Ward",
+      "note": "Diviner's ward from ancient times."
     },
     "284": {
       "name": "Ronin Shield",
-      "note": null
+      "note": "Legendary ronin's shield."
+    },
+    "285": {
+      "name": "Wild Shield",
+      "note": "Legendary combat epaulet."
+    },
+    "286": {
+      "name": "Brave Shield",
+      "note": "Engraved with crest of courage."
+    },
+    "287": {
+      "name": "Hazard Shield",
+      "note": "Legendary shield of the wild."
+    },
+    "288": {
+      "name": "Dramon Shield",
+      "note": "Legendary Dramon power shield."
     },
     "289": {
       "name": "Beam Shield",
-      "note": null
+      "note": "Decorative, shiny shield."
     },
     "290": {
       "name": "High Security",
-      "note": "Prevents OHKOs"
+      "note": "Shield that protects life."
     },
     "291": {
       "name": "Apocalypse",
-      "note": null
+      "note": "Legendary divine shield."
     },
     "292": {
       "name": "Power Gem",
       "note": "Increse attack power."
     },
+    "293": {
+      "name": "Power Ring",
+      "note": "Increase attack power greatly."
+    },
     "294": {
       "name": "Guard Gem",
       "note": "Increase defense."
+    },
+    "295": {
+      "name": "Guard Ring",
+      "note": "Increase defense greatly."
     },
     "296": {
       "name": "Spirit Gem",
       "note": "Increase spirit."
     },
+    "297": {
+      "name": "Spirit Ring",
+      "note": "Increase spirit greatly."
+    },
     "298": {
       "name": "Wisdom Gem",
       "note": "Increase wisdom."
+    },
+    "299": {
+      "name": "Wisdom Ring",
+      "note": "Increase wisdom greatly."
     },
     "300": {
       "name": "Boost Gem",
       "note": "Increase speed."
     },
+    "301": {
+      "name": "Boost Ring",
+      "note": "Increase speed greatly."
+    },
     "302": {
       "name": "Charisma Gem",
       "note": "Trendy ring."
+    },
+    "303": {
+      "name": "Charisma Ring",
+      "note": "Very trendy ring."
     },
     "304": {
       "name": "Flame Ring",
@@ -812,249 +896,181 @@
       "name": "Prayer Ring",
       "note": "More resistant to KO."
     },
+    "316": {
+      "name": "Multi Crest",
+      "note": "Can attack twice."
+    },
+    "317": {
+      "name": "Search Crest",
+      "note": "Increase critical attacks."
+    },
     "318": {
       "name": "Counter Crest",
       "note": "Automatically retaliate."
+    },
+    "319": {
+      "name": "Binder Crest",
+      "note": "Enemies escape less often."
+    },
+    "320": {
+      "name": "Recover Crest",
+      "note": "HP is healed slowly."
+    },
+    "321": {
+      "name": "EXP Adapter",
+      "note": "Gain more EXP in battles."
+    },
+    "322": {
+      "name": "BIT Adapter",
+      "note": "Gain more BIT in battles."
+    },
+    "323": {
+      "name": "MP Proxy",
+      "note": "Use little less MP for techniques."
+    },
+    "324": {
+      "name": "MP Mega Proxy",
+      "note": "Use less MP for techniques."
+    },
+    "325": {
+      "name": "HP Proxy",
+      "note": "Decrease damage by little."
+    },
+    "326": {
+      "name": "HP Mega Proxy",
+      "note": "Decrease damage."
+    },
+    "327": {
+      "name": "Hack Sticker",
+      "note": "Steal a little easier."
+    },
+    "328": {
+      "name": "Hack System",
+      "note": "Steal easier."
+    },
+    "329": {
+      "name": "Over Clocked",
+      "note": "Little easier to increase blast gauge."
+    },
+    "330": {
+      "name": "Over Load",
+      "note": "Easier to increase blast gauge."
+    },
+    "331": {
+      "name": "Glasses",
+      "note": "Aim gets a little better."
+    },
+    "332": {
+      "name": "Goggles",
+      "note": "Aim gets better."
     },
     "333": {
       "name": "Dance Feather",
       "note": "Evade a little better."
     },
+    "334": {
+      "name": "Dance Wing",
+      "note": "Evade better."
+    },
+    "335": {
+      "name": "Runner Sandals",
+      "note": "Escape a little easier."
+    },
+    "336": {
+      "name": "Runner Shoes",
+      "note": "Escape easier."
+    },
+    "337": {
+      "name": "Training Book",
+      "note": "Training is a little easier."
+    },
+    "338": {
+      "name": "Power Brace",
+      "note": "Training is much easier."
+    },
     "339": {
       "name": "Fire Power 1",
       "note": "Add weak fire to attacks."
+    },
+    "340": {
+      "name": "Fire Power 2",
+      "note": "Add fire to attacks."
+    },
+    "341": {
+      "name": "Fire Power S",
+      "note": "Add strong fire to attacks."
     },
     "342": {
       "name": "Water Power 1",
       "note": "Add weak water to attacks."
     },
+    "343": {
+      "name": "Water Power 2",
+      "note": "Add water to attacks."
+    },
+    "344": {
+      "name": "Water Power S",
+      "note": "Add strong water to attacks."
+    },
     "345": {
       "name": "Ice Power 1",
       "note": "Add weak ice to attacks."
+    },
+    "346": {
+      "name": "Ice Power 2",
+      "note": "Add ice to attacks."
+    },
+    "347": {
+      "name": "Ice Power S",
+      "note": "Add strong ice to attacks."
     },
     "348": {
       "name": "Wind Power 1",
       "note": "Add weak wind to attacks."
     },
+    "349": {
+      "name": "Wind Power 2",
+      "note": "Add wind to attacks."
+    },
+    "350": {
+      "name": "Wind Power S",
+      "note": "Add strong wind to attacks."
+    },
+    "351": {
+      "name": "Bolt Power 1",
+      "note": "Add weak thunder to attacks."
+    },
+    "352": {
+      "name": "Bolt Power 2",
+      "note": "Add thunder to attacks."
+    },
+    "353": {
+      "name": "Bolt Power S",
+      "note": "Add strong thunder to attacks."
+    },
+    "354": {
+      "name": "Metal Power 1",
+      "note": "Add weak machine to attacks."
+    },
+    "355": {
+      "name": "Metal Power 2",
+      "note": "Add machine to attacks."
+    },
+    "356": {
+      "name": "Metal Power S",
+      "note": "Add strong machine to attacks."
+    },
     "357": {
       "name": "Dark Power 1",
       "note": "Add weak dark to attacks."
     },
-    "1001": {
-      "name": "Empty",
-      "note": null
-    },
-    "1007": {
-      "name": "Brave Shield",
-      "note": null
-    },
-    "1008": {
-      "name": "Brave Sword",
-      "note": null
-    },
-    "1015": {
-      "name": "Divine Rod",
-      "note": null
-    },
-    "1016": {
-      "name": "Dramon Guard",
-      "note": null
-    },
-    "1017": {
-      "name": "Dramon Shield",
-      "note": null
-    },
-    "1019": {
-      "name": "Evil Fang",
-      "note": null
-    },
-    "1032": {
-      "name": "Hazard Shield",
-      "note": null
-    },
-    "1040": {
-      "name": "Knight Shield",
-      "note": null
-    },
-    "1042": {
-      "name": "Kulon Shield",
-      "note": null
-    },
-    "1043": {
-      "name": "Kulon Sword",
-      "note": null
-    },
-    "1059": {
-      "name": "Needle Glove",
-      "note": null
-    },
-    "1096": {
-      "name": "Wild Shield",
-      "note": null
-    },
-    "1100": {
-      "name": "Yin Yang Ward",
-      "note": null
-    },
-    "1102": {
-      "name": "Beam Armor",
-      "note": null
-    },
-    "1107": {
-      "name": "Divine Robe",
-      "note": null
-    },
-    "1109": {
-      "name": "Dramon Armor",
-      "note": null
-    },
-    "1125": {
-      "name": "Dramon Horn",
-      "note": null
-    },
-    "1130": {
-      "name": "Knight Helmet",
-      "note": null
-    },
-    "1149": {
-      "name": "Binder Crest",
-      "note": "Reduces the chances of a wild Digimon escaping from battle"
-    },
-    "1150": {
-      "name": "BIT Adapter",
-      "note": "The equipped Digimon receives additional BIT every battle"
-    },
-    "1151": {
-      "name": "Bolt Power 1",
-      "note": "Adds a small amount of Lightning damage to the equipped Digimon’s basic attacks"
-    },
-    "1152": {
-      "name": "Bolt Power 2",
-      "note": "Adds a medium amount of Lightning damage to the equipped Digimon’s basic attacks"
-    },
-    "1153": {
-      "name": "Bolt Power S",
-      "note": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks"
-    },
-    "1156": {
+    "358": {
       "name": "Dark Power 2",
-      "note": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks"
+      "note": "Add dark to attacks."
     },
-    "1157": {
+    "359": {
       "name": "Dark Power S",
-      "note": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
-    },
-    "1159": {
-      "name": "Dance Wing",
-      "note": "Significantly increases the equipped Digimon’s chances of evading an attack"
-    },
-    "1160": {
-      "name": "EXP Adapter",
-      "note": "The equipped Digimon receives additional EXP every battle"
-    },
-    "1161": {
-      "name": "Fire Power 2",
-      "note": "Adds a medium amount of Fire damage to the equipped Digimon’s basic attacks"
-    },
-    "1162": {
-      "name": "Fire Power S",
-      "note": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks"
-    },
-    "1163": {
-      "name": "Glasses",
-      "note": "Slightly increases the equipped Digimon’s accuracy"
-    },
-    "1164": {
-      "name": "Goggles",
-      "note": "Significantly increases the equipped Digimon’s accuracy"
-    },
-    "1165": {
-      "name": "HP Proxy",
-      "note": "Slightly decreases the damage received by the equipped Digimon"
-    },
-    "1166": {
-      "name": "HP Mega Proxy",
-      "note": "Significantly decreases the damage received by the equipped Digimon"
-    },
-    "1167": {
-      "name": "Hack Sticker",
-      "note": "Slightly increases the equipped Digimon’s chances of stealing an item"
-    },
-    "1168": {
-      "name": "Hack System",
-      "note": "Significantly increases the equipped Digimon’s chances of stealing an item"
-    },
-    "1169": {
-      "name": "Metal Power 1",
-      "note": "Adds a small amount of Machine damage to the equipped Digimon’s basic attacks"
-    },
-    "1170": {
-      "name": "Metal Power 2",
-      "note": "Adds a medium amount of Machine damage to the equipped Digimon’s basic attacks"
-    },
-    "1171": {
-      "name": "Metal Power S",
-      "note": "Adds a large amount of Machine damage to the equipped Digimon’s basic attacks"
-    },
-    "1172": {
-      "name": "MP Proxy",
-      "note": "Slightly decreases the MP usage of the equipped Digimon"
-    },
-    "1173": {
-      "name": "MP Mega Proxy",
-      "note": "Significantly decreases the MP usage of the equipped Digimon"
-    },
-    "1174": {
-      "name": "Multi Crest",
-      "note": "Allows the attacking Digimon to hit three times, but also lowers the damage of each individual hit"
-    },
-    "1175": {
-      "name": "Over Clocked",
-      "note": "Slightly increases the equipped Digimon’s Blast Gauge gains"
-    },
-    "1176": {
-      "name": "Over Load",
-      "note": "Significantly increases the equipped Digimon’s Blast Gauge gains"
-    },
-    "1177": {
-      "name": "Power Brace",
-      "note": "Significantly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
-    },
-    "1178": {
-      "name": "Recovery Crest",
-      "note": "Recovers a small amount of HP for the equipped Digimon every turn"
-    },
-    "1179": {
-      "name": "Runner Sandals",
-      "note": "Slightly increases the equipped Digimon’s chances of running away from battle"
-    },
-    "1180": {
-      "name": "Runner Shoes",
-      "note": "Significantly increases the equipped Digimon’s chances of running away from battle"
-    },
-    "1181": {
-      "name": "Search Crest",
-      "note": "Increases the equipped Digimon’s critical hit rate"
-    },
-    "1182": {
-      "name": "Training Book",
-      "note": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
-    },
-    "1184": {
-      "name": "Water Power 2",
-      "note": "Adds a medium amount of Water damage to the equipped Digimon’s basic attacks"
-    },
-    "1185": {
-      "name": "Water Power S",
-      "note": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks"
-    },
-    "1187": {
-      "name": "Wind Power 2",
-      "note": "Adds a medium amount of Wind damage to the equipped Digimon’s basic attacks"
-    },
-    "1188": {
-      "name": "Wind Power S",
-      "note": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
+      "note": "Add strong dark to attacks."
     }
   }
 }

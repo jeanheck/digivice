@@ -4,8 +4,10 @@ import type { Digimon } from "@/models";
 import Modal from "@/components/modal/Modal.vue";
 import Tree from "./tree/Tree.vue";
 import DigievolutionTechniques from "@/components/party/digimon/digievolution-techniques/DigievolutionTechniques.vue";
-import SearchBar from "./SearchBar.vue";
+import SearchBar from "@/components/search/SearchBar.vue";
 import { DigievolutionsModalPresenter } from "@/presenters/digievolution/digievolutions-modal.presenter.ts";
+import { useI18n } from "vue-i18n";
+import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -16,6 +18,8 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "close"): void;
 }>();
+
+const { t } = useI18n();
 
 const isModalOpen = computed(() => {
   return props.isOpen;
@@ -41,7 +45,28 @@ const handleSelectDigievolutionById = (digievolutionId: number) => {
   selectedDigievolutionId.value = digievolutionId;
 };
 
+const handleSearchSelect = (id: string) => {
+  handleSelectDigievolutionById(Number(id));
+};
+
 const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
+
+const searchItems = computed((): SearchItemViewModel[] => {
+  return allDigievolutions.map((digievolution) => {
+    return {
+      id: String(digievolution.id),
+      name: digievolution.name,
+    };
+  });
+});
+
+const selectedSearchId = computed(() => {
+  if (selectedDigievolutionId.value === undefined) {
+    return undefined;
+  }
+
+  return String(selectedDigievolutionId.value);
+});
 </script>
 
 <template>
@@ -59,15 +84,17 @@ const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
         </h2>
 
         <SearchBar
-          :all-digievolutions="allDigievolutions"
-          :selected-digievolution-id="selectedDigievolutionId"
-          @select-digievolution-id="handleSelectDigievolutionById"
+          :items="searchItems"
+          :selected-id="selectedSearchId"
+          :placeholder="t('digievolution.searchDigimon')"
+          :no-results-label="t('digievolution.searchNoResults')"
+          @select="handleSearchSelect"
         />
       </div>
     </template>
 
     <div class="flex flex-1 overflow-hidden min-h-0">
-      <div class="w-[75%] h-full border-r border-[#0055ff]/30 relative">
+      <div class="w-[75%] min-w-0 h-full border-r border-[#0055ff]/30 relative">
         <Tree
           :digimon-name="digimonName"
           :digimon="digimon"
@@ -77,7 +104,7 @@ const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();
         />
       </div>
 
-      <div class="w-[25%] h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col">
+      <div class="w-[25%] min-w-100 h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col">
         <div v-if="selectedDigievolutionId !== undefined" class="flex-1 flex flex-col p-1">
           <DigievolutionTechniques
             :digimon-id="digimonId"

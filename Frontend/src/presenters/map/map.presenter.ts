@@ -1,39 +1,13 @@
-import { LocationConverter } from "@/presenters/converter/location.converter";
-import { QuestHelper } from "@/presenters/helper/quest.helper";
-import type { Quest } from "@/models";
+import { MapConverter } from "@/presenters/converter/map.converter";
 import { LocationRepository } from "@/repositories/location.repository";
-import {
-    isLocationEnemyPhaseList,
-    type LocationEnemiesRaw,
-} from "@/repositories/tables/raws/location/location.raw";
-import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
+import type { MapViewModel } from "@/viewmodels/map/map.viewmodel";
 
 export class MapPresenter {
-  public static getLocationById(locationId: string, mainQuest: Quest | null): LocationViewModel {
-    const locationRaw = LocationRepository.getLocationById(locationId);
-    const lastCompletedMainQuestStep = QuestHelper.getLastCompletedMainQuestStep(mainQuest);
-    const enemyIds = MapPresenter.resolveEnemyIds(locationRaw.enemies, lastCompletedMainQuestStep);
-
-    return LocationConverter.convert(locationId, locationRaw, enemyIds);
-  }
-
-  private static resolveEnemyIds(enemies: LocationEnemiesRaw, lastCompletedMainQuestStep: number): string[] {
-    if (!isLocationEnemyPhaseList(enemies)) {
-      return enemies;
+  public static getByLocationId(id: string | null): MapViewModel {
+    if (id === null) {
+      return MapConverter.convert(null);
     }
 
-    const sortedPhases = [...enemies].sort((firstPhase, secondPhase) => {
-      return secondPhase.lastMainQuestStepDone - firstPhase.lastMainQuestStepDone;
-    });
-
-    const matchingPhase = sortedPhases.find((phase) => {
-      return lastCompletedMainQuestStep >= phase.lastMainQuestStepDone;
-    });
-
-    if (matchingPhase === undefined) {
-      return [];
-    }
-
-    return matchingPhase.ids;
+    return MapConverter.convert(LocationRepository.getLocationById(id));
   }
 }

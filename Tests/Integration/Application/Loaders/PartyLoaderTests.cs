@@ -70,6 +70,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         // ActiveDigievolution no offset -4 -> Active ID 5
         memoryReaderMock.Setup(m => m.ReadInt16(0x00049878 - 4))
             .Returns(5);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x00042B76))
+            .Returns((short)0);
 
         // 3. Arrange - Instanciação da árvore de dependências reais (Pipeline Completo)
         var digievolutionSlotReader = new DigievolutionSlotReader();
@@ -194,6 +196,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         
         memoryReaderMock.Setup(m => m.ReadInt16(0x00049C54 - 4))
             .Returns(2); // Active Evolution ID 2
+        memoryReaderMock.Setup(m => m.ReadInt16(0x00042B78))
+            .Returns((short)0);
 
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
@@ -299,6 +303,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
             .Returns(fakeMemoryBlock);
         memoryReaderMock.Setup(m => m.ReadInt16(0x00049878 - 4))
             .Returns(5);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x00042B76))
+            .Returns((short)0);
 
         var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
 

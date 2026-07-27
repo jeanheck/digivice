@@ -21,7 +21,7 @@ const equipmentSlots = computed(() => {
   });
 });
 
-const tooltipPlacement = "below" as const;
+const tooltipPlacement = "above" as const;
 const tooltipPosition = useTooltipPosition(300);
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 const selectedEquipment = ref<EquipmentViewModel | null>(null);
@@ -46,7 +46,7 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled"></div>
 
-    <div class="dw3-panel-content w-full flex flex-col pt-2 p-3 text-white text-xs">
+    <div class="dw3-panel-content w-full flex flex-col p-2 min-[1366px]:p-3 text-white text-xs">
       <Equipment
         v-for="equipmentSlot in equipmentSlots"
         :key="equipmentSlot.slotKey"
@@ -63,7 +63,7 @@ const moveTooltip = (event: MouseEvent) => {
       :x="tooltipX"
       :y="tooltipY"
       :equipment="selectedEquipment"
-      placement="below"
+      :placement="tooltipPlacement"
     />
   </div>
 </template>

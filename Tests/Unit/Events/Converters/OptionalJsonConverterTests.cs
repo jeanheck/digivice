@@ -32,7 +32,6 @@ public class OptionalJsonConverterTests
     {
         var dto = new PlayerDTO
         {
-            Name = "Agumon",
             Bits = 123,
             Location = "00AF"
         };
@@ -41,7 +40,6 @@ public class OptionalJsonConverterTests
         using var document = JsonDocument.Parse(json);
         var root = document.RootElement;
 
-        Assert.Equal("Agumon", root.GetProperty("Name").GetString());
         Assert.Equal(123, root.GetProperty("Bits").GetInt32());
         Assert.Equal("00AF", root.GetProperty("Location").GetString());
     }

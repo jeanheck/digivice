@@ -2,12 +2,10 @@
 import { computed, ref } from "vue";
 import JournalQuestsSection from "@/components/journal/JournalQuestsSection.vue";
 import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
-import AuctionCard from "@/components/journal/AuctionCard.vue";
+import AuctionCard from "@/components/journal/auction-card/AuctionCard.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
-import AuctionModal from "@/components/journal/auction-modal/AuctionModal.vue";
 import { useGameStore } from "@/stores/use-game-store";
 import { JournalPresenter } from "@/presenters/journal/journal.presenter";
-import { AuctionPresenter } from "@/presenters/auction/auction.presenter";
 
 const store = useGameStore();
 
@@ -16,7 +14,8 @@ const journalViewModel = computed(() => {
   if (journal === null || journal === undefined) {
     return null;
   }
-  return JournalPresenter.getJournalViewModel(journal);
+  const digimonSlots = store.currentState?.party?.slots ?? [];
+  return JournalPresenter.getJournalViewModel(journal, digimonSlots);
 });
 
 const activeQuestId = ref<string | null>(null);
@@ -33,21 +32,6 @@ const closeQuestModal = () => {
     activeQuestId.value = null;
   }, 300);
 };
-
-const auctionCardViewModel = computed(() => {
-  const journal = store.currentState?.journal ?? null;
-  return AuctionPresenter.getAuctionCardViewModel(journal);
-});
-
-const isAuctionModalOpen = ref(false);
-
-const openAuctionModal = () => {
-  isAuctionModalOpen.value = true;
-};
-
-const closeAuctionModal = () => {
-  isAuctionModalOpen.value = false;
-};
 </script>
 
 <template>
@@ -55,11 +39,7 @@ const closeAuctionModal = () => {
     v-if="journalViewModel"
     class="dw3-aside flex-1 min-h-0"
   >
-    <div class="dw3-aside-header">
-      <h3 class="dw3-aside-title shadow-text">{{ $t("journal.title") }}</h3>
-    </div>
-
-    <div class="flex-1 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
+    <div class="flex-1 min-h-0 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
       <section>
         <JournalQuestCard
           v-if="journalViewModel.mainQuest"
@@ -70,10 +50,7 @@ const closeAuctionModal = () => {
       </section>
 
       <section>
-        <AuctionCard
-          :auction-card="auctionCardViewModel"
-          @click="openAuctionModal"
-        />
+        <AuctionCard />
       </section>
 
       <JournalQuestsSection
@@ -121,11 +98,5 @@ const closeAuctionModal = () => {
     :is-open="isQuestModalOpen"
     :quest-id="activeQuestId"
     @close="closeQuestModal"
-  />
-
-  <AuctionModal
-    :is-open="isAuctionModalOpen"
-    :journal="store.currentState?.journal ?? null"
-    @close="closeAuctionModal"
   />
 </template>

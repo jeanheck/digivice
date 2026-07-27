@@ -1,4 +1,3 @@
-import asukaMapUrl from "@/assets/AsukaMap.webp";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { Journal } from "@/models";
 import { QuestConverter } from "@/presenters/converter/quest.converter";
@@ -10,14 +9,21 @@ import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
 
 export class QuestModalPresenter {
-    public static getQuestViewModel(journal: Journal, questId: string): QuestViewModel | null {
+    public static getQuestViewModel(
+        journal: Journal,
+        questId: string,
+        partyLevel: number
+    ): QuestViewModel | null {
         const mainQuestRaw = QuestRepository.getMainQuestRaw();
         if (mainQuestRaw.id === questId) {
             if (journal.mainQuest === null) {
                 return null;
             }
 
-            return QuestConverter.convert(mainQuestRaw, journal.mainQuest, { calculateNewStatus: false });
+            return QuestConverter.convert(mainQuestRaw, journal.mainQuest, {
+                calculateNewStatus: false,
+                partyLevel,
+            });
         }
 
         const sideQuestRaw = QuestRepository.getSideQuestsRaw().find((raw) => raw.id === questId);
@@ -27,7 +33,10 @@ export class QuestModalPresenter {
                 return null;
             }
 
-            return QuestConverter.convert(sideQuestRaw, sideQuest, { calculateNewStatus: true });
+            return QuestConverter.convert(sideQuestRaw, sideQuest, {
+                calculateNewStatus: true,
+                partyLevel,
+            });
         }
 
         const legendaryWeaponRaw = QuestRepository.getLegendaryWeaponsRaw().find((raw) => raw.id === questId);
@@ -37,7 +46,10 @@ export class QuestModalPresenter {
                 return null;
             }
 
-            return QuestConverter.convert(legendaryWeaponRaw, legendaryWeapon, { calculateNewStatus: true });
+            return QuestConverter.convert(legendaryWeaponRaw, legendaryWeapon, {
+                calculateNewStatus: true,
+                partyLevel,
+            });
         }
 
         const driAgentRaw = QuestRepository.getDriAgentsRaw().find((raw) => raw.id === questId);
@@ -47,7 +59,10 @@ export class QuestModalPresenter {
                 return null;
             }
 
-            return QuestConverter.convert(driAgentRaw, driAgent, { calculateNewStatus: true });
+            return QuestConverter.convert(driAgentRaw, driAgent, {
+                calculateNewStatus: true,
+                partyLevel,
+            });
         }
 
         return null;
@@ -55,6 +70,11 @@ export class QuestModalPresenter {
 
     public static getWorldMapLocations(selectedStep: StepViewModel | null): ZoomedLocationMapViewModel[] {
         if (!selectedStep?.location || !selectedStep.coordinates) {
+            return [];
+        }
+
+        const asukaMapUrl = ImageCatalog.getLocationImageUrl("Asuka");
+        if (asukaMapUrl === null) {
             return [];
         }
 
@@ -90,6 +110,6 @@ export class QuestModalPresenter {
         }
 
         const locationRaw = LocationRepository.getLocationById(locationId);
-        return ImageCatalog.getMapImageUrl(locationRaw.image);
+        return ImageCatalog.getLocationImageUrl(locationRaw.imageName);
     }
 }

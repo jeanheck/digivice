@@ -3,11 +3,11 @@ namespace Tests.Memory.Repositories;
 using System;
 using System.IO;
 using System.Text.Json;
-using Xunit;
-using Backend.Memory.Repositories;
 using Backend.Memory.Addresses;
-using Backend.Memory.Addresses.Parties;
 using Backend.Memory.Addresses.Journals;
+using Backend.Memory.Addresses.Parties;
+using Backend.Memory.Repositories;
+using Xunit;
 
 public class AddressesRepositoryTests : IDisposable
 {
@@ -33,10 +33,11 @@ public class AddressesRepositoryTests : IDisposable
         // Arrange
         var fakePlayer = new PlayerAddresses
         {
-            NameBufferSize = 10,
-            Name = 0x00048D88,
             Bits = 0x00048DA0,
-            MapId = 0x0004B3F8
+            MapId = 0x0004B3F8,
+            PreviousMapId = 0x0004B400,
+            SeabedRoute = 0x00048D78,
+            MapVariant = 0x00048D7A
         };
         var json = JsonSerializer.Serialize(fakePlayer);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "PlayerAddresses.json"), json);
@@ -46,10 +47,11 @@ public class AddressesRepositoryTests : IDisposable
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(10, result.NameBufferSize);
-        Assert.Equal(0x00048D88, result.Name);
         Assert.Equal(0x00048DA0, result.Bits);
         Assert.Equal(0x0004B3F8, result.MapId);
+        Assert.Equal(0x0004B400, result.PreviousMapId);
+        Assert.Equal(0x00048D78, result.SeabedRoute);
+        Assert.Equal(0x00048D7A, result.MapVariant);
     }
 
     [Fact]
@@ -96,8 +98,8 @@ public class AddressesRepositoryTests : IDisposable
         var fakeDigimons = new DigimonsAddresses
         {
             Digimons = [
-                new DigimonAddress { Id = 1, Name = "Agumon", Address = 0x800100 },
-                new DigimonAddress { Id = 2, Name = "Gabumon", Address = 0x800200 }
+                new DigimonAddress { Id = 1, Name = "Agumon", Address = 0x800100, BlastGaugeAddress = 0x00042B76 },
+                new DigimonAddress { Id = 2, Name = "Gabumon", Address = 0x800200, BlastGaugeAddress = 0x00042B78 }
             ]
         };
         var json = JsonSerializer.Serialize(fakeDigimons);
@@ -111,6 +113,8 @@ public class AddressesRepositoryTests : IDisposable
         Assert.Equal(2, result.Digimons.Count);
         Assert.Equal("Agumon", result.Digimons[0].Name);
         Assert.Equal(0x800100, result.Digimons[0].Address);
+        Assert.Equal(0x00042B76, result.Digimons[0].BlastGaugeAddress);
+        Assert.Equal(0x00042B78, result.Digimons[1].BlastGaugeAddress);
     }
 
     [Fact]
@@ -193,7 +197,7 @@ public class AddressesRepositoryTests : IDisposable
     public void GetPlayerAddresses_ShouldCacheLoadedInstance()
     {
         // Arrange
-        var fakePlayer = new PlayerAddresses { NameBufferSize = 10 };
+        var fakePlayer = new PlayerAddresses { Bits = 0x00048DA0 };
         var json = JsonSerializer.Serialize(fakePlayer);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "PlayerAddresses.json"), json);
 
@@ -224,8 +228,8 @@ public class AddressesRepositoryTests : IDisposable
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(0, result.NameBufferSize);
-        Assert.Equal(0, result.Name);
+        Assert.Equal(0, result.Bits);
+        Assert.Equal(0, result.MapId);
     }
 
     [Fact]

@@ -34,7 +34,7 @@ const toggle = () => {
       :class="[palette.sectionBorderClass, palette.sectionHeaderHoverClass]"
       @click="toggle"
     >
-      <h4 class="text-xs font-bold uppercase tracking-wide" :class="palette.sectionTitleClass">
+      <h4 class="text-xs font-bold tracking-wide" :class="palette.sectionTitleClass">
         {{ title }}
       </h4>
       <span

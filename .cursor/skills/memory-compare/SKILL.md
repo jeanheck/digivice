@@ -81,12 +81,35 @@ All quest-like trackers live under `Backend/Memory/Definitions/Quests/`:
 | Main quest | `Quests/MainQuestAddresses.json` | Bit flip in `0x4B3xx` |
 | Side quests | `Quests/SideQuests/` | Bit flip or raw byte |
 | Legendary weapons | `Quests/LegendaryWeapons/` | Sequential bit on `0x4B38E` |
-| DRI agents | `Quests/DriAgents/` | TBD — see known-patterns.md |
-| Player | `PlayerAddresses.json` (`Bits`, `MapId`, `Name`) | MapId byte change on transition |
+| DRI agents | `Quests/DriAgents/` + [dri-agent-hunt.md](dri-agent-hunt.md) | 3 pairs: talk / boss / deliver; see hunt order below |
+| Player | `PlayerAddresses.json` (`Bits`, `MapId`, `PreviousMapId`, `Name`, `SeabedRoute`, `MapVariant`) | MapId / PreviousMapId on transition; seabed fields on dive/emerge |
+| Map / seabed | `PlayerAddresses.json` (`SeabedRoute`, `MapVariant`, `PreviousMapId`) + [seabed-routing-investigation.md](seabed-routing-investigation.md) | MapId change; `0x48D78` / `0x48D7A` / `0x4B400` on dive |
+| Map / Mobius Desert | `MapVariant` @ `0x48D7A` + MapId `0258`/`0259` + [mobius-desert-investigation.md](mobius-desert-investigation.md) | Same two MapIds for 16 cells; `D7A` = pair `1..8` |
+| Map subzones / encounters | [map-subzones-investigation.md](map-subzones-investigation.md) | Same MapId, different encounter regions; dump `0x0E2E0` / `0x4DE30` / `0x48D82` |
 | Party | `PartyAddresses.json` (slots `0x48DA4+`) | Slot ID bytes |
 | Digimon stats | `Parties/DigimonStatusAddresses.json` (offsets) | Multi-byte counters at `~0x494xxx` |
 | Common items | `Auctions/*.txt` | Often `0x48ECx`, may clear on sell |
 | Auctions | `Auctions/*.txt` | `0x4B370`, `0x4B38A` region |
+
+## DRI agent investigation
+
+When the domain is a DRI agent quest, follow [dri-agent-hunt.md](dri-agent-hunt.md).
+Confirmed per-agent tables: [known-patterns.md](known-patterns.md) (DRI agents section).
+
+**Snapshots (six files):** `{rookie}_before/after_dri_agent`,
+`{rookie}_before/after_{boss}`, `{rookie}_before/after_gives_dna_to_agent`
+under `Tools/MemoryScanner/Snapshots/`.
+
+**Hunt order:**
+
+1. Talk → new bit on shared **`0x4B38C`**
+2. Boss → new bit on **`0x4B3B7`** or **`0x4B3B8`**
+3. DNA → `0x00 → 0x01` in **`~0x48DBx`** or **`~0x48Fxx`**
+4. Deliver → per-agent byte in **`~0x4Axxx`** or **`~0x49xxx`**
+
+Filter encounter cache `0x4B824`–`0x4BB00`. Suggest JSON under
+`Quests/DriAgents/{Name}Addresses.json`. For end-to-end wiring after
+confirmation, point the user to skill `dri-agent-integrate`.
 
 ## Output template
 
@@ -122,7 +145,7 @@ After each investigation, update skill reference files **without being asked**:
 
 **[known-patterns.md](known-patterns.md)**
 - New recurring pattern (confirmed, not guessed)
-- Fill in DRI agent sections when Agumon/Guilmon addresses are confirmed
+- Fill in DRI agent sections when a new agent’s addresses are confirmed
 - Mark entries `(confirmed)` vs `(suspected)` when uncertain
 
 Rules:
@@ -132,14 +155,27 @@ Rules:
 
 ## MemoryScanner (suggest only — do not run)
 
+Doc: `Tools/MemoryScanner/README.md`. Value sizes: 1=byte, 2=Int16, 4=Int32.
+
 | Command | When to suggest |
 |---------|-----------------|
+| `compare f1 f2 [--region quest]` | Quest flags (byte, bit analysis) |
+| `chain-match f1 f2 ... --values v1,v2,... --size 4` | Counter with known values per snapshot (blast gauge, EXP) |
+| `compare-changed f1 f2 newVal --size N [--old-val prev]` | Value changed to X (optionally from A) |
+| `compare-delta f1 f2 delta --size N` | Known increment between two snapshots |
+| `intersect-changed f1 f2 f3 [--size 1]` | Reversibility (buy → sell, enter → leave) |
+| `search-value file val --size N [--region NAME]` | Find all addresses holding a value |
 | `analyze-pair before after` | Main quest may be involved |
 | `dump file.bin 0xADDR 32` | Inspect bytes around candidate |
-| `intersect-changed f1 f2 f3` | Reversibility (buy → sell, enter → leave) |
 
 ## Additional resources
 
 - [memory-regions.md](memory-regions.md) — RAM map, noise, anchors
-- [known-patterns.md](known-patterns.md) — confirmed patterns, DRI placeholders
+- [known-patterns.md](known-patterns.md) — confirmed patterns, DRI agent tables
+- [dri-agent-hunt.md](dri-agent-hunt.md) — DRI snapshot convention and hunt order
 - [investigation-template.md](investigation-template.md) — post-confirmation doc
+- [seabed-routing-investigation.md](seabed-routing-investigation.md) — SeabedRoute, MapVariant, PreviousMapId
+- [mobius-desert-investigation.md](mobius-desert-investigation.md) — Mobius 4×4 cell id via MapId + `0x48D7A`
+- [map-subzones-investigation.md](map-subzones-investigation.md) — same-MapId encounter regions, Makisha grids
+- Sibling skill: `.cursor/skills/dri-agent-integrate/` — end-to-end DRI wiring after addresses confirmed
+- Sibling skill: `.cursor/skills/map-subzone-investigate/` — continue subzone investigation

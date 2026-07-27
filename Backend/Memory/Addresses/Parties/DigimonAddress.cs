@@ -9,5 +9,7 @@ namespace Backend.Memory.Addresses.Parties
         public int Id { get; set; }
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long Address { get; set; }
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long BlastGaugeAddress { get; set; }
     }
 }

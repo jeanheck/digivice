@@ -9,9 +9,11 @@ public static class PlayerConverter
     {
         return new PlayerDTO
         {
-            Name = player.Name,
             Bits = player.Bits,
-            Location = player.MapId
+            Location = player.MapId,
+            PreviousMapId = player.PreviousMapId,
+            SeabedRoute = player.SeabedRoute,
+            MapVariant = player.MapVariant
         };
     }
 }

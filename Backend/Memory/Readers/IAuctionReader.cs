@@ -5,6 +5,6 @@ namespace Backend.Memory.Readers
 {
     public interface IAuctionReader
     {
-        AuctionsResource Read(AuctionAddresses addresses);
+        AuctionResource Read(KeyValuePair<string, AuctionAddresses> auction);
     }
 }

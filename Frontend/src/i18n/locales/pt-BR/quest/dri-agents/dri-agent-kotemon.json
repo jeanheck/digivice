@@ -1,0 +1,48 @@
+{
+  "driAgentKotemon": {
+    "title": "Kotemon (DRI Ken)",
+    "description": "Adicione Kotemon ao seu grupo de Digimons",
+    "requisites": {
+      "partyLevel": "Ter o nível do grupo entre 60 e 90",
+      "submarimon": "Possuir o Digi-Ovo da Sinceridade"
+    },
+    "steps": {
+      "1": {
+        "description": "Procure pelo DRI Ken no Deserto Mobius",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Ken"
+          }
+        }
+      },
+      "2": {
+        "description": "Vença Kyukimon em batalha para receber o DDNA do Kotemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "1": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "2": {
+            "locationTarget": "Lago Subterrâneo Suzaku"
+          },
+          "3": {
+            "locationTarget": "Kyukimon"
+          }
+        }
+      },
+      "3": {
+        "description": "Entregue o DDNA do Kotemon para DRI Ken",
+        "locations": {
+          "0": {
+            "locationTarget": "DRI Ken"
+          }
+        },
+        "requisites": {
+          "kotemonDDNA": "DDNA de Kotemon"
+        }
+      }
+    }
+  }
+}

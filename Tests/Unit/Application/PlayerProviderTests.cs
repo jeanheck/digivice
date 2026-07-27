@@ -13,7 +13,6 @@ public class PlayerProviderTests
     {
         var playerResource = new PlayerResource
         {
-            NameInBytes = "Agumon"u8.ToArray(),
             Bits = 250,
             MapId = 1
         };
@@ -33,33 +32,10 @@ public class PlayerProviderTests
     }
 
     [Fact]
-    public void Get_ShouldHandleNullNameInBytes()
-    {
-        var playerResource = new PlayerResource
-        {
-            NameInBytes = null,
-            Bits = 100,
-            MapId = 5
-        };
-
-        var playerLoaderMock = new Mock<IPlayerLoader>();
-        playerLoaderMock.Setup(loader => loader.Load()).Returns(playerResource);
-
-        var provider = new PlayerProvider(playerLoaderMock.Object);
-
-        var result = provider.Get();
-
-        Assert.NotNull(result);
-        Assert.Equal(100, result.Bits);
-        playerLoaderMock.Verify(loader => loader.Load(), Times.Once);
-    }
-
-    [Fact]
     public void Get_ShouldHandleNullBits()
     {
         var playerResource = new PlayerResource
         {
-            NameInBytes = "Agumon"u8.ToArray(),
             Bits = null,
             MapId = 2
         };
@@ -81,7 +57,6 @@ public class PlayerProviderTests
     {
         var playerResource = new PlayerResource
         {
-            NameInBytes = "Agumon"u8.ToArray(),
             Bits = 150,
             MapId = null
         };

@@ -1,6 +1,6 @@
 {
     "id": "sniperShield",
-    "equipmentId": "1083",
+    "equipmentId": "282",
     "steps": {
         "startsWhenComplete": 28,
         "endsWhenComplete": 34

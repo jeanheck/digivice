@@ -17,6 +17,7 @@ const emit = defineEmits<{
 
 const QUEST_CARD_VARIANT_CLASSES: Record<QuestCardVariant, string> = {
   locked: "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70",
+  unavailable: "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70",
   done: "border-green-800/50 bg-green-900/20 hover:bg-green-900/40",
   new: "border-white/60 bg-[#001a2a] hover:bg-[#002a3a] hover:border-white",
   active: "border-[#0033aa]/0 bg-[#001122] hover:bg-[#002244] hover:border-[#0055ff]",
@@ -49,7 +50,7 @@ const titleClass = computed(() => {
     return "text-yellow-300 group-hover:text-yellow-400";
   }
 
-  if (props.quest.isLocked) {
+  if (props.quest.isLocked || props.quest.isUnavailable) {
     return "text-gray-500";
   }
 
@@ -88,15 +89,20 @@ const doneIconClass = computed(() => {
 });
 
 const onClick = () => {
+  if (props.quest.isUnavailable) {
+    return;
+  }
+
   emit("click", props.quest.id);
 };
 </script>
 
 <template>
   <div
-    class="p-2 rounded border cursor-pointer transition-all duration-200 group relative overflow-hidden"
+    class="p-2 rounded border transition-all duration-200 group relative overflow-hidden"
     :class="[
       cardClass,
+      quest.isUnavailable ? 'cursor-default' : 'cursor-pointer',
       isMainDisplayMode ? 'transition-colors' : '',
     ]"
     @click="onClick"
@@ -115,16 +121,20 @@ const onClick = () => {
       </span>
 
       <span v-if="quest.isDone" :class="doneIconClass">✔</span>
+      <span v-else-if="!isMainDisplayMode && quest.isUnavailable" class="text-xs shrink-0 ml-2">🚫</span>
       <span v-else-if="!isMainDisplayMode && quest.isLocked" class="text-xs shrink-0 ml-2">🔒</span>
       <span v-else-if="!isMainDisplayMode && quest.isNew" class="text-xs shrink-0 ml-2">❕</span>
     </div>
 
     <p
       class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10"
-      :class="{ 'opacity-50': !isMainDisplayMode && (quest.isDone || quest.isLocked) }"
+      :class="{ 'opacity-50': !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable) }"
     >
       <template v-if="quest.isDone">
         {{ $t("journal.questCompleted") }}
+      </template>
+      <template v-else-if="!isMainDisplayMode && quest.isUnavailable">
+        {{ $t("journal.questUnavailableStarter") }}
       </template>
       <template v-else-if="!isMainDisplayMode && quest.isLocked">
         {{ $t(`${quest.id}.description`) }}

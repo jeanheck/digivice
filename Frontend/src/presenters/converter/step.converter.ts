@@ -4,7 +4,12 @@ import type { StepRaw } from "@/repositories/tables/raws/quest/step.raw";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 
 export class StepConverter {
-    public static convert(stepNumber: string, stepRaw: StepRaw, steps: Step[]): StepViewModel {
+    public static convert(
+        stepNumber: string,
+        stepRaw: StepRaw,
+        steps: Step[],
+        partyLevel: number
+    ): StepViewModel {
         const step = steps.find((stepEntry) => {
             return stepEntry.number.toString() === stepNumber;
         })!;
@@ -12,7 +17,7 @@ export class StepConverter {
         return {
             number: stepNumber,
             requisites: stepRaw.requisites.map((requisiteRaw) => {
-                return RequisiteConverter.convert(requisiteRaw, step.requisites);
+                return RequisiteConverter.convert(requisiteRaw, step.requisites, partyLevel);
             }),
             isDone: steps.some((stepEntry) => {
                 return stepEntry.number.toString() === stepNumber && stepEntry.isDone;

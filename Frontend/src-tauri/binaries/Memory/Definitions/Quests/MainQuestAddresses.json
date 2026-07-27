@@ -308,6 +308,124 @@
             "BitMasks": [
                 "0x01"
             ]
+        },
+        {
+            "Number": 44,
+            "Address": "0x0004B3DF",
+            "BitMasks": [
+                "0x10"
+            ]
+        },
+        {
+            "Number": 45,
+            "Address": "0x0004B3E1",
+            "BitMasks": [
+                "0x40"
+            ]
+        },
+        {
+            "Number": 46,
+            "Address": "0x0004B3AC",
+            "BitMasks": [
+                "0x08"
+            ]
+        },
+        {
+            "Number": 47,
+            "Address": "0x0004B3E2",
+            "BitMasks": [
+                "0x01"
+            ]
+        },
+        {
+            "Number": 48,
+            "Address": "0x0004B3E5",
+            "BitMasks": [
+                "0x40"
+            ]
+        },
+        {
+            "Number": 49,
+            "Address": "0x0004B3E5",
+            "BitMasks": [
+                "0x10"
+            ]
+        },
+        {
+            "Number": 50,
+            "Address": "0x0004B3E2",
+            "BitMasks": [
+                "0x02"
+            ]
+        },
+        {
+            "Number": 51,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x08"
+            ]
+        },
+        {
+            "Number": 52,
+            "Address": "0x00048DDF",
+            "BitMasks": []
+        },
+        {
+            "Number": 53,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x10"
+            ]
+        },
+        {
+            "Number": 54,
+            "Address": "0x00048DE3",
+            "BitMasks": []
+        },
+        {
+            "Number": 55,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x20"
+            ]
+        },
+        {
+            "Number": 56,
+            "Address": "0x00048DE0",
+            "BitMasks": []
+        },
+        {
+            "Number": 57,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x40"
+            ]
+        },
+        {
+            "Number": 58,
+            "Address": "0x00048DE1",
+            "BitMasks": []
+        },
+        {
+            "Number": 59,
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x80"
+            ]
+        },
+        {
+            "Number": 60,
+            "Address": "0x0004B3E5",
+            "BitMasks": [
+                "0x01"
+            ]
+        },
+        {
+            "Number": 61,
+            "Address": "0x0004B3CA",
+            "BitMasks": [
+                "0x20"
+            ]
         }
     ]
 }

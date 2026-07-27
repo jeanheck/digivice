@@ -61,7 +61,7 @@ function resolveAssetUrl(
 }
 
 export class ImageCatalog {
-  public static getMapImageUrl(imageName: string | null): string | null {
+  public static getLocationImageUrl(imageName: string | null): string | null {
     return resolveAssetUrl(
       mapModules,
       MAP_ASSET_CONFIG.pathSuffix,

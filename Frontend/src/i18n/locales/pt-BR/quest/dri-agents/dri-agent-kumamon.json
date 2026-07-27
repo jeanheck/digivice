@@ -1,0 +1,60 @@
+{
+  "driAgentKumamon": {
+    "title": "Kumamon (DRI Yuji)",
+    "description": "Adicione Kumamon ao seu grupo de Digimons",
+    "requisites": {
+      "partyLevel": "Ter o nível do grupo entre 60 e 90",
+      "submarimon": "Possuir o Digi-Ovo da Sinceridade"
+    },
+    "steps": {
+      "1": {
+        "description": "Procure pelo DRI Yuji no Deserto Mobius",
+        "locations": {
+          "0": {
+            "locationTarget": "Deserto Mobius (A2)"
+          },
+          "1": {
+            "locationTarget": "Deserto Mobius (B2)"
+          },
+          "2": {
+            "locationTarget": "DRI Yuji"
+          }
+        }
+      },
+      "2": {
+        "description": "Vença GrapLeomon em batalha para receber o DDNA do Kumamon",
+        "locations": {
+          "0": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "1": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "2": {
+            "locationTarget": "Selva de Éter"
+          },
+          "3": {
+            "locationTarget": "GrapLeomon"
+          }
+        }
+      },
+      "3": {
+        "description": "Entregue o DDNA do Kumamon para DRI Yuji",
+        "locations": {
+          "0": {
+            "locationTarget": "Deserto Mobius (A2)"
+          },
+          "1": {
+            "locationTarget": "Deserto Mobius (B2)"
+          },
+          "2": {
+            "locationTarget": "DRI Yuji"
+          }
+        },
+        "requisites": {
+          "kumamonDDNA": "DDNA de Kumamon"
+        }
+      }
+    }
+  }
+}

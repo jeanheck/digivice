@@ -1,6 +1,6 @@
 {
     "id": "dramonShield",
-    "equipmentId": "1017",
+    "equipmentId": "288",
     "steps": {
         "startsWhenComplete": 36,
         "endsWhenComplete": 42

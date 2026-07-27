@@ -24,5 +24,8 @@ export enum Constant {
     magical = "magical",
     heal = "heal",
     support = "support",
-    field = "field"
+    field = "field",
+    topLeft = "topLeft",
+    top = "top",
+    topRight = "topRight"
 }

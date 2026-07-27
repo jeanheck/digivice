@@ -123,8 +123,8 @@
         "dvxp": 32,
         "exp": 325,
         "bits": 500,
-        "boss": false,
-        "dropId": null,
+        "boss": true,
+        "dropId": "rustyRifle",
         "regularAttackId": "machineElement",
         "techniqueId": "atomicRay"
     },
@@ -166,10 +166,53 @@
         "dvxp": 32,
         "exp": 320,
         "bits": 740,
-        "boss": false,
+        "boss": true,
         "dropId": null,
-        "regularAttackId": "noElement",
-        "techniqueId": "none"
+        "regularAttackId": "darkElement",
+        "techniqueId": "heartBreakAttack"
+    },
+    "16": {
+        "name": "Datamon",
+        "level": 34,
+        "hp": 1872,
+        "mp": 9999,
+        "species": "machine",
+        "rate": 0,
+        "strength": 390,
+        "defense": 390,
+        "spirit": 462,
+        "wisdom": 390,
+        "speed": 390,
+        "fire": 106,
+        "water": 60,
+        "ice": 325,
+        "wind": 106,
+        "thunder": 60,
+        "machine": 325,
+        "dark": 106,
+        "canPoison": true,
+        "poison": 99,
+        "canParalyze": false,
+        "paralyze": 0,
+        "canConfuse": false,
+        "confuse": 0,
+        "canSleep": false,
+        "sleep": 0,
+        "canKO": false,
+        "ko": 0,
+        "canDrain": true,
+        "canSteal": true,
+        "strDown": "No",
+        "defDown": "No",
+        "spdDown": "No",
+        "canEscape": false,
+        "dvxp": 34,
+        "exp": 340,
+        "bits": 1000,
+        "boss": true,
+        "dropId": "rustyGlove",
+        "regularAttackId": "machineElement",
+        "techniqueId": "autoRecover"
     },
     "20": {
         "name": "Zanbamon",
@@ -5117,7 +5160,7 @@
         "techniqueId": "none"
     },
     "184": {
-        "name": "Yanmamon (green)",
+        "name": "Yanmamon(Green)",
         "level": 8,
         "hp": 312,
         "mp": 9999,
@@ -5160,7 +5203,7 @@
         "techniqueId": "none"
     },
     "185": {
-        "name": "Dokugumon (brown)",
+        "name": "Dokugumon(Brown)",
         "level": 21,
         "hp": 624,
         "mp": 9999,
@@ -5199,11 +5242,11 @@
         "bits": 210,
         "boss": false,
         "dropId": "spiderWeb",
-        "regularAttackId": "noElement",
+        "regularAttackId": "noElementChanceOfPoison",
         "techniqueId": "none"
     },
     "186": {
-        "name": "Goburimon (red)",
+        "name": "Goburimon(Red)",
         "level": 22,
         "hp": 648,
         "mp": 9999,
@@ -5332,7 +5375,7 @@
         "techniqueId": "none"
     },
     "189": {
-        "name": "Woodmon (green)",
+        "name": "Woodmon(Green)",
         "level": 19,
         "hp": 576,
         "mp": 9999,
@@ -5418,7 +5461,7 @@
         "techniqueId": "none"
     },
     "191": {
-        "name": "Airdramon (gold)",
+        "name": "Airdramon(Gold)",
         "level": 21,
         "hp": 624,
         "mp": 9999,
@@ -5504,7 +5547,7 @@
         "techniqueId": "none"
     },
     "193": {
-        "name": "Kokatorimon (brown)",
+        "name": "Kokatorimon(Brown)",
         "level": 22,
         "hp": 648,
         "mp": 9999,
@@ -5891,7 +5934,7 @@
         "techniqueId": "none"
     },
     "202": {
-        "name": "Numemon (blue)",
+        "name": "Numemon(Blue)",
         "level": 31,
         "hp": 864,
         "mp": 9999,

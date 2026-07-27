@@ -1,0 +1,31 @@
+{
+  "superNova": {
+    "title": "Super Nova",
+    "description": "Obtenha a Arma Lendária Super Nova",
+    "requisites": {
+      "submarimon": "Encontre o Digi-Ovo da Sinceridade"
+    },
+    "steps": {
+      "1": {
+        "description": "Derrote Datamon para receber a Luva Enferrujada",
+        "locations": {
+          "0": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "1": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "2": {
+            "locationTarget": "Esgotos Asuka"
+          },
+          "3": {
+            "locationTarget": "Sala de Comando"
+          },
+          "4": {
+            "locationTarget": "Datamon"
+          }
+        }
+      }
+    }
+  }
+}

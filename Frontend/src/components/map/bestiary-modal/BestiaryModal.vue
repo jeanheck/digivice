@@ -1,0 +1,149 @@
+<script setup lang="ts">
+import { computed, ref, watch } from "vue";
+import Modal from "@/components/modal/Modal.vue";
+import Tooltip from "@/components/tooltip/Tooltip.vue";
+import BestiaryProfile from "@/components/map/bestiary-modal/BestiaryProfile.vue";
+import BestiaryAttributes from "@/components/map/bestiary-modal/BestiaryAttributes.vue";
+import BestiaryElements from "@/components/map/bestiary-modal/BestiaryElements.vue";
+import BestiaryConditions from "@/components/map/bestiary-modal/BestiaryConditions.vue";
+import SearchBar from "@/components/search/SearchBar.vue";
+import { useI18n } from "vue-i18n";
+import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import { BestiaryModalPresenter } from "@/presenters/map/bestiary-modal.presenter";
+
+const props = defineProps<{
+  isOpen: boolean;
+  enemyId: string | null;
+}>();
+
+const emit = defineEmits<{
+  (e: "close"): void;
+}>();
+
+const { t } = useI18n();
+
+const selectedEnemyId = ref<string | null>(null);
+
+const isModalOpen = computed(() => {
+  return props.isOpen && selectedEnemyId.value !== null;
+});
+
+const handleClose = () => {
+  emit("close");
+};
+
+const handleSearchSelect = (id: string) => {
+  selectedEnemyId.value = id;
+};
+
+const allSearchItems = BestiaryModalPresenter.getAllSearchItems();
+
+const enemy = computed(() => {
+  return BestiaryModalPresenter.getEnemyById(selectedEnemyId.value!);
+});
+
+const tooltipPlacement = "below" as const;
+const tooltipPosition = useTooltipPosition(250);
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
+const tooltipTitle = ref("");
+
+const showEnemyStatKeyTooltip = (event: MouseEvent, statKey: string) => {
+  tooltipTitle.value = t(`stat.${statKey}`);
+  showAt(event, { maxWidth: 250, placement: tooltipPlacement });
+};
+
+const showEnemyConditionTooltip = (event: MouseEvent, tooltipKey: string) => {
+  tooltipTitle.value = t(tooltipKey);
+  showAt(event, { maxWidth: 250, placement: tooltipPlacement });
+};
+
+const hideEnemyStatTooltip = () => {
+  hide();
+};
+
+const moveEnemyStatTooltip = (event: MouseEvent) => {
+  move(event, tooltipPlacement);
+};
+
+watch(
+  () => props.isOpen,
+  (open) => {
+    if (open) {
+      selectedEnemyId.value = props.enemyId;
+      return;
+    }
+
+    hide();
+    selectedEnemyId.value = null;
+  }
+);
+
+const enemyImageUrl = computed(() => {
+  if (selectedEnemyId.value === null) {
+    return null;
+  }
+  return ImageCatalog.getEnemyIconUrl(enemy.value.name);
+});
+</script>
+
+<template>
+  <Modal
+    :is-open="isModalOpen"
+    max-width="max-w-[1200px]"
+    panel-class="w-[1200px]"
+    @close="handleClose"
+  >
+    <template #header>
+      <div class="flex items-center gap-6 flex-1 min-w-0">
+        <h2 class="text-white font-bold tracking-widest drop-shadow flex items-center gap-2 whitespace-nowrap shrink-0">
+          {{ $t("enemy.bestiary") }}
+        </h2>
+
+        <SearchBar
+          :items="allSearchItems"
+          :selected-id="selectedEnemyId ?? undefined"
+          :placeholder="t('enemy.searchPlaceholder')"
+          :no-results-label="t('enemy.searchNoResults')"
+          @select="handleSearchSelect"
+        />
+      </div>
+    </template>
+
+    <div class="p-4 flex flex-col sm:flex-row gap-4 max-h-[70vh] overflow-y-auto custom-scroll">
+      <BestiaryProfile :enemy="enemy" :enemy-image-url="enemyImageUrl" />
+
+      <div class="flex-1">
+        <div class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start">
+          <BestiaryAttributes
+            :attributes="enemy.attributes"
+            @show-stat-key-tooltip="showEnemyStatKeyTooltip"
+            @move-stat-tooltip="moveEnemyStatTooltip"
+            @hide-stat-tooltip="hideEnemyStatTooltip"
+          />
+          <BestiaryElements
+            :elements="enemy.elements"
+            @show-stat-key-tooltip="showEnemyStatKeyTooltip"
+            @move-stat-tooltip="moveEnemyStatTooltip"
+            @hide-stat-tooltip="hideEnemyStatTooltip"
+          />
+          <BestiaryConditions
+            :conditions="enemy.conditions"
+            @show-condition-tooltip="showEnemyConditionTooltip"
+            @move-stat-tooltip="moveEnemyStatTooltip"
+            @hide-stat-tooltip="hideEnemyStatTooltip"
+          />
+        </div>
+      </div>
+    </div>
+  </Modal>
+
+  <Tooltip
+    :show="tooltipShow"
+    :x="tooltipX"
+    :y="tooltipY"
+    :title="tooltipTitle"
+    :max-width="400"
+    placement="below"
+  />
+</template>

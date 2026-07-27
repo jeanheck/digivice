@@ -1,0 +1,31 @@
+{
+  "superNova": {
+    "title": "Super Nova",
+    "description": "Obtain the Legendary Weapon Super Nova",
+    "requisites": {
+      "submarimon": "Find the Digi-Egg of Sincerity"
+    },
+    "steps": {
+      "1": {
+        "description": "Defeat Datamon to receive the Rusty Glove",
+        "locations": {
+          "0": {
+            "locationTarget": "Seabed"
+          },
+          "1": {
+            "locationTarget": "Seabed"
+          },
+          "2": {
+            "locationTarget": "Asuka Sewers"
+          },
+          "3": {
+            "locationTarget": "Control Room"
+          },
+          "4": {
+            "locationTarget": "Datamon"
+          }
+        }
+      }
+    }
+  }
+}

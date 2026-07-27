@@ -1,7 +1,8 @@
 # RAM Regions
 
-PS1 save RAM: **2 MiB** snapshot. MemoryScanner `compare` focuses on
-**0x00048000 – 0x0004D000** by default.
+PS1 save RAM: **2 MiB** snapshot (`0x0`–`0x1FFFFF`). MemoryScanner `compare` defaults to
+**quest** region (`0x48000`–`0x4D000`); typed commands default to **full** RAM.
+Use `--size 4` for Int32 counters (blast gauge, EXP, Bits).
 
 This file is **incrementally maintained** by the memory-compare skill after
 each investigation. Append new entries; do not remove without strong evidence.
@@ -15,6 +16,32 @@ each investigation. Append new entries; do not remove without strong evidence.
 | 0x00048D88 | Player name buffer | PlayerAddresses.json |
 | 0x00048DA0 | Player bits (money etc.) | PlayerAddresses.json — **volatile** |
 | 0x0004B3F8 | MapId | PlayerAddresses.json — changes on map transition |
+| 0x0004B400 | PreviousMapId | PlayerAddresses.json — map just left on each transition |
+| 0x00048D78 | SeabedRoute | PlayerAddresses.json — seabed corridor / dock pair; **Mobius: constant `0x01`** (not cell id) |
+| 0x00048D7A | MapVariant | PlayerAddresses.json — seabed: `0x01` underwater; **Mobius: cell-pair `0x01`–`0x08`** (with MapId `0258`/`0259`) |
+
+See also **Map / location** for seabed routing fields (including investigation-only mirrors).
+
+## Map / location
+
+| Address | Field | Source |
+|---------|-------|--------|
+| 0x0004B3F8 | Current MapId | PlayerAddresses.json |
+| 0x0004B400 | PreviousMapId (rolling) | PlayerAddresses.json — map just left on each transition |
+| 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
+| 0x00048D68 | PreviousMapId mirror (player block) | seabed-routing investigation — mirrors `0x4B400` |
+| 0x00048D78 | SeabedRoute (corridor / dock pair) | PlayerAddresses.json — set on dive, persists underwater; same from either entry; Mobius always `0x01` |
+| 0x00048D7A | MapVariant / Mobius cell-pair | PlayerAddresses.json — seabed submerged `0`/`1`; Mobius pair index `1`–`8` (see mobius-desert-investigation.md) |
+| 0x0000E2E0 | Player facing / direction (0–3) | map-subzones — discarded as area index; all forward-facing snaps = 1 |
+| 0x0004DE30 | Zone resource pointer (suspected) | map-subzones — PSX `0x801Fxxxx`; companions `0x4DE34`/`38` fixed |
+| 0x00048D82 | Room / sub-area byte (suspected) | map-subzones — volatile; not stable named-area enum |
+| 0x00048D6D | Player tile X (u16) | map-subzones — use with Makisha grids |
+| 0x00048D71 | Player tile Y (u16) | map-subzones — use with Makisha grids |
+| 0x00048D6C – 0x00048D84 | Spawn / transition block (i32 coords noisy) | seabed-routing investigation |
+
+Details: [seabed-routing-investigation.md](seabed-routing-investigation.md),
+[mobius-desert-investigation.md](mobius-desert-investigation.md),
+[map-subzones-investigation.md](map-subzones-investigation.md).
 
 ## Party
 
@@ -32,7 +59,7 @@ Definitions root: `Backend/Memory/Definitions/Quests/`
 |-----------------|---------|--------|
 | 0x0004B370 | Main quest + auction story window | `Quests/MainQuestAddresses.json`, DivineBarrierAddresses.txt |
 | 0x0004B38A | Auction instance consumed | DivineBarrierAddresses.txt |
-| 0x0004B38E | Legendary weapons | `Quests/LegendaryWeapons/` — Eternally 0x01, Invincible 0x02, Muramasa 0x04 |
+| 0x0004B38E | Legendary weapons | `Quests/LegendaryWeapons/` — Eternally 0x01, Invincible 0x02, Muramasa 0x04, Super Nova 0x08, Punishment 0x10 |
 | 0x0004B3B6 – 0x0004B3FF | Main quest steps | `Quests/MainQuestAddresses.json` |
 | 0x00048F3x – 0x00048F4x | Side quest flags | `Quests/SideQuests/*.json` |
 
@@ -42,20 +69,40 @@ Definitions: `Backend/Memory/Definitions/Quests/DriAgents/`
 
 | Address | Purpose | Source |
 |---------|---------|--------|
-| 0x0004B38C | Step 1 — talk to agent (per-agent bit) | Guilmon `0x02`, Agumon `0x01` |
-| 0x0004B3B7 | Step 2 — defeat target (per-agent bit) | Guilmon `0x08`, Agumon `0x04` |
+| 0x0004B38C | Step 1 — talk to agent (per-agent bit) | Agumon `0x01`, Guilmon `0x02`, Patamon `0x04`, Renamon `0x08`, Kotemon `0x10`, Kumamon `0x20`, Monmon `0x40`, Veemon `0x80` |
+| 0x0004B3B7 | Step 2 — defeat target | Agumon `0x04`, Guilmon `0x08`, Patamon `0x10`, Renamon `0x20`, Kotemon `0x40`, Monmon `0x80` |
+| 0x0004B3B8 | Step 2 — defeat target | Kumamon `0x01`, Veemon `0x02` |
 | 0x00048DD2 | Guilmon DNA — important item possession | Guilmon step 2 (persists after delivery) |
 | 0x00048DB6 | Agumon DNA — important item possession | Agumon step 2 (persists after delivery) |
+| 0x00048DC3 | Kotemon DNA — important item possession | Kotemon step 2 |
+| 0x00048DD3 | Veemon DNA — important item possession | Veemon step 2 |
+| 0x00048DD6 | Renamon DNA — important item possession | Renamon step 2 |
+| 0x00048DD7 | Patamon DNA — important item possession | Patamon step 2 |
+| 0x00048F3B | Kumamon DNA — important item possession | Kumamon step 2 |
+| 0x00048F18 | Monmon DNA — important item possession | Monmon step 2 |
 | 0x0004A7E0 | Guilmon step 3 — deliver DNA | Guilmon `0x08` |
 | 0x0004A028 | Agumon step 3 — deliver DNA | Agumon `0x06` |
+| 0x0004A404 | Veemon step 3 — deliver DNA | Veemon `0x07` |
+| 0x00049494 | Kotemon step 3 — deliver DNA | Kotemon `0x03` |
+| 0x00049870 | Kumamon step 3 — deliver DNA | Kumamon `0x04` |
+| 0x00049C4C | Monmon step 3 — deliver DNA | Monmon `0x05` |
+| 0x0004ABBC | Renamon step 3 — deliver DNA | Renamon `0x09` |
+| 0x0004AF98 | Patamon step 3 — deliver DNA | Patamon `0x0A` |
 
 | Agent | Status | Notes |
 |-------|--------|-------|
-| Agumon | Mapped | `AgumonAddresses.json` |
-| Guilmon | Mapped | `GuilmonAddresses.json` |
+| Agumon | Mapped | `DriAgentAgumonAddresses.json` |
+| Guilmon | Mapped | `DriAgentGuilmonAddresses.json` |
+| Veemon | Mapped | `DriAgentVeemonAddresses.json` |
+| Kumamon | Mapped | `DriAgentKumamonAddresses.json` |
+| Monmon | Mapped | `DriAgentMonmonAddresses.json` |
+| Kotemon | Mapped | `DriAgentKotemonAddresses.json` |
+| Renamon | Mapped | `DriAgentRenamonAddresses.json` |
+| Patamon | Mapped | `DriAgentPatamonAddresses.json` |
 
 Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`,
-`investigation_guilmon/`.
+`investigation_guilmon/`, `kumamon_*.bin`, `monmon_*.bin`, `kotemon_*.bin`,
+`renamon_*.bin`, `patamon_*.bin`.
 
 ## Inventory / items
 
@@ -66,6 +113,11 @@ Snapshots: `Tools/MemoryScanner/Snapshots/investigation_agumon/`,
 | 0x00048EC9 | Divine Barrier — current possession | DivineBarrierAddresses.txt |
 | 0x00048DD2 | Guilmon DNA — important item (permanent after obtain) | DriAgents/Guilmon investigation |
 | 0x00048DB6 | Agumon DNA — important item (permanent after obtain) | DriAgents/Agumon investigation |
+| 0x00048DC3 | Kotemon DNA — important item (permanent after obtain) | DriAgents/Kotemon investigation |
+| 0x00048DD3 | Veemon DNA — important item (permanent after obtain) | DriAgents/Veemon |
+| 0x00048DD6 | Renamon DNA — important item (permanent after obtain) | DriAgents/Renamon investigation |
+| 0x00048F3B | Kumamon DNA — important item (permanent after obtain) | DriAgents/Kumamon investigation |
+| 0x00048F18 | Monmon DNA — important item (permanent after obtain) | DriAgents/Monmon investigation |
 
 Common items: possession may **clear on sell** — not the same as permanent
 progress flags. Important items (DRI DNA) may persist after quest hand-in.
@@ -75,6 +127,7 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 | Range | Purpose | Notes |
 |-------|---------|-------|
 | ~0x000494xxx | Digimon stat blocks | Battle noise — level, HP, EXP changes |
+| `0x00042B74` + `2 × rookieId` | Blast gauge (Int32, 0–1000, per Digimon) | Confirmed — see known-patterns.md |
 | Offsets | See DigimonStatusAddresses.json | Relative to each digimon base |
 
 Diffs here are expected after battles; usually not quest flags.
@@ -87,6 +140,8 @@ Diffs here are expected after battles; usually not quest flags.
 |-------|---------|--------|
 | 0x0004B824 – 0x0004BB00 | Encounter cache (session pointers) | Program.cs analyze-pair |
 | 0x00044xxx | Coordinates / animations | MemoryScanner compare filter |
+| 0x00048D6C – 0x00048D84 | Player spawn / facing on map transition | seabed-routing investigation |
+| 0x0004B618 – 0x0004B653 | Entity pointer table (map load) | seabed-routing investigation |
 | 0x00048DA0 | Player bits — money/spend | DivineBarrierAddresses.txt |
 | ASCII runs (0x20, 0x73…) | Dialog/text buffers | Muramasa investigation |
 
@@ -100,6 +155,9 @@ Diffs here are expected after battles; usually not quest flags.
 | Legendary weapon | 0x4B38E | Sequential power-of-two bit |
 | DRI agent | 0x4B38C, 0x4B3B7, 0x4A7xx | Per-agent bit on shared bytes |
 | Map change | 0x4B3F8 (MapId) | Byte value change |
+| Map / seabed routing | 0x4B3F8, 0x4B400, 0x48D78, 0x48D7A | MapId + PreviousMapId + SeabedRoute / MapVariant on dive; see seabed-routing-investigation.md |
+| Map / Mobius Desert | 0x4B3F8, 0x48D7A (0x48D78=0x01) | MapId 0258/0259 + cell-pair 1–8 at D7A; see mobius-desert-investigation.md |
+| Map subzones / encounters | 0x0E2E0, 0x4DE30, 0x48D82 + Makisha grids | Same MapId, different encounter pools; see map-subzones-investigation.md |
 | Digimon stats | ~0x494xxx | Multi-byte numeric deltas |
 | Common item possession | ~0x48ECx | Often 0x00 ↔ 0x01 |
 | Auction | 0x4B370, 0x4B38A | Bit flags, story window |

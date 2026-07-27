@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import DigievolutionDvxpSegments from "@/components/party/digimon/digievolutions/DigievolutionDvxpSegments.vue";
+import DigievolutionDvxp from "@/components/party/digimon/digievolutions/DigievolutionDvxp.vue";
 import { DigievolutionPresenter } from "@/presenters/digievolution/digievolution.presenter";
 import type { DigievolutionResumedViewModel } from "@/viewmodels/digievolution/digievolution-resumed.viewmodel";
 
@@ -51,7 +51,7 @@ function openTechniques(): void {
 
     <template v-if="isEmpty">
       <div class="dw3-panel-content flex flex-1 flex-col w-full py-1">
-        <div class="flex flex-1 items-center w-full min-h-0 px-4 font-bold text-sm tracking-wider text-white/80 shadow-text cursor-default">
+        <div class="flex flex-1 items-center w-full min-h-0 px-4 font-bold text-xs 2xl:text-sm tracking-wider text-white/80 shadow-text cursor-default">
           {{ $t("digimon.states.empty") }}
         </div>
 
@@ -66,7 +66,7 @@ function openTechniques(): void {
     >
       <div class="flex flex-1 items-center w-full min-h-0">
         <div
-          class="flex-1 min-w-0 px-4 font-bold text-sm tracking-wider truncate leading-none"
+          class="flex-1 min-w-0 px-4 font-bold text-xs 2xl:text-sm tracking-wider truncate leading-none"
           :class="isActiveDigievolution ? 'text-dw3-gold shadow-text-dark' : 'shadow-text'"
         >
           {{ digievolutionName }}
@@ -74,7 +74,7 @@ function openTechniques(): void {
 
         <div class="w-0.5 shrink-0 self-stretch bg-[#0077ff] -skew-x-30"></div>
 
-        <div class="w-11.25 shrink-0 flex items-center justify-center pl-2 font-bold text-sm mr-2">
+        <div class="w-11.25 shrink-0 flex items-center justify-center pl-2 font-bold text-xs 2xl:text-sm mr-2">
           <span
             :class="isActiveDigievolution ? 'text-dw3-gold shadow-text-dark' : 'shadow-text'"
           >
@@ -84,7 +84,7 @@ function openTechniques(): void {
       </div>
 
       <div class="w-full shrink-0 px-4 pt-0.5">
-        <DigievolutionDvxpSegments
+        <DigievolutionDvxp
           :is-active-digievolution="isActiveDigievolution"
           :dvxp="digievolutionDvxp ?? 0"
         />

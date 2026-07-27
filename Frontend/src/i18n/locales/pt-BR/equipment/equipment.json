@@ -68,6 +68,10 @@
       "name": "Luva de Ferro",
       "note": "Bandagem reforçada com metal."
     },
+    "109": {
+      "name": "Luva de Espinho",
+      "note": "Luvas reforçadas com espinho."
+    },
     "110": {
       "name": "Braço Potente",
       "note": "Luvas de braço que causam dano."
@@ -172,6 +176,10 @@
       "name": "Cajado Nebuloso",
       "note": "O cajado de um eremita."
     },
+    "136": {
+      "name": "Cajado Divino",
+      "note": "Cajado com uma luz Divina."
+    },
     "137": {
       "name": "Bastão Yin Yang",
       "note": "Bastão Divino de tempos antigos."
@@ -271,6 +279,14 @@
     "161": {
       "name": "Espada Alada",
       "note": "Fácil de empunhar ataques rápidos."
+    },
+    "162": {
+      "name": "Espada Kulon",
+      "note": "Feito de uma fusão de materiais."
+    },
+    "163": {
+      "name": "Espada Coragem",
+      "note": "Gravado com crista de coragem."
     },
     "164": {
       "name": "Escalibur",
@@ -428,6 +444,10 @@
       "name": "Protetor Potente",
       "note": "Eficiênte e adepto de ataques."
     },
+    "203": {
+      "name": "Protetor Dramon",
+      "note": "Carga de poder lendária do Dramon."
+    },
     "204": {
       "name": "Protetor Mach",
       "note": "Rotação rápida para ataques."
@@ -455,6 +475,10 @@
     "210": {
       "name": "Chifre Elétrico",
       "note": "Chifre que paralisa o corpo."
+    },
+    "211": {
+      "name": "Chifre Dramon",
+      "note": "Chifre lendário com poder de Dramon."
     },
     "212": {
       "name": "Chifre Afiado",
@@ -628,6 +652,10 @@
       "name": "Jaqueta",
       "note": "Jaqueta para o clima ártico."
     },
+    "255": {
+      "name": "Capa Divina",
+      "note": "Manto com uma luz Divina."
+    },
     "256": {
       "name": "Terno Sniper",
       "note": "Terno lendário."
@@ -676,6 +704,10 @@
       "name": "Armadura Kulon",
       "note": "Armadura robusta e resistente."
     },
+    "268": {
+      "name": "Armadura Dramon",
+      "note": "Armadura lendária com o poder de Dramon."
+    },
     "269": {
       "name": "Armadura Ronin",
       "note": "Armadura Ronin lendária."
@@ -712,9 +744,17 @@
       "name": "Escudo de Ferro",
       "note": "Escudo robusto feito com ferro."
     },
+    "278": {
+      "name": "Escudo Cavaleiro",
+      "note": "Eficiente escudo de um cavaleiro."
+    },
     "279": {
       "name": "Barreira Proteção",
       "note": "Uma barreira com um amplo alcance."
+    },
+    "280": {
+      "name": "Escudo Kulon",
+      "note": "Escudo feito com fusão de metais."
     },
     "281": {
       "name": "Escudo Divino",
@@ -724,9 +764,29 @@
       "name": "Escudo Sniper",
       "note": "Barricada lendário."
     },
+    "283": {
+      "name": "Defesa Yin Yang",
+      "note": "Guarda Divina dos tempos antigos."
+    },
     "284": {
       "name": "Escudo Ronin",
       "note": "Escudo do lendário Ronin."
+    },
+    "285": {
+      "name": "Escudo Selvagem",
+      "note": "Dragona de combate lendária."
+    },
+    "286": {
+      "name": "Escudo da Coragem",
+      "note": "Gravado com crista da coragem."
+    },
+    "287": {
+      "name": "Escudo Hazard",
+      "note": "Escudo lendário selvagem."
+    },
+    "288": {
+      "name": "Escudo Dramon",
+      "note": "Escudo Dramon de poder lendário."
     },
     "289": {
       "name": "Escudo Cilíndrico",
@@ -742,27 +802,51 @@
     },
     "292": {
       "name": "Gema - Poder",
-      "note": "Aumenta o poder."
+      "note": "Aumenta a força."
+    },
+    "293": {
+      "name": "Anel - Poder",
+      "note": "Aumenta muito o poder de ataque."
     },
     "294": {
       "name": "Gema - Defesa",
       "note": "Aumenta a defesa."
     },
+    "295": {
+      "name": "Anel - Defesa",
+      "note": "Aumenta muito a defesa."
+    },
     "296": {
       "name": "Gema - Espírito",
       "note": "Aumenta o espírito."
+    },
+    "297": {
+      "name": "Anel - Espírito",
+      "note": "Aumenta muito o espírito."
     },
     "298": {
       "name": "Gema - Sabedoria",
       "note": "Aumenta a sabedoria."
     },
+    "299": {
+      "name": "Anel - Sabedoria",
+      "note": "Aumenta muito a sabedoria."
+    },
     "300": {
       "name": "Gema - Impulso",
       "note": "Aumenta a velocidade."
     },
+    "301": {
+      "name": "Anel - Impulso",
+      "note": "Aumenta muito a velocidade."
+    },
     "302": {
       "name": "Gema - Carisma",
       "note": "Anel da moda."
+    },
+    "303": {
+      "name": "Anel - Carisma",
+      "note": "Anel super da moda."
     },
     "304": {
       "name": "Anel de Fogo",
@@ -812,249 +896,181 @@
       "name": "Anel Oração",
       "note": "Mais resistente à nocaute."
     },
+    "316": {
+      "name": "Multi Crista",
+      "note": "Pode atacar duas vezes."
+    },
+    "317": {
+      "name": "Procura Crista",
+      "note": "Aumenta a chance de ataques críticos."
+    },
     "318": {
       "name": "Contra Crista",
       "note": "Retalia automaticamente."
+    },
+    "319": {
+      "name": "Crista Binder",
+      "note": "Inimigos escapam com menos frequência."
+    },
+    "320": {
+      "name": "Crista Recuperar",
+      "note": "HP é curada lentamente."
+    },
+    "321": {
+      "name": "Adaptador EXP",
+      "note": "Permite ganhar mais EXP em batalhas."
+    },
+    "322": {
+      "name": "Adaptador BIT",
+      "note": "Permite ganhar mais BIT em batalhas."
+    },
+    "323": {
+      "name": "MP Proxy",
+      "note": "Necessita um pouco menos de MP para uso de técnicas."
+    },
+    "324": {
+      "name": "Mega MP Proxy",
+      "note": "Necessita menos de MP para uso de técnicas."
+    },
+    "325": {
+      "name": "HP Proxy",
+      "note": "Diminui um pouco do dano levado."
+    },
+    "326": {
+      "name": "Mega HP Proxy",
+      "note": "Diminui o dano."
+    },
+    "327": {
+      "name": "Adesivo Hack",
+      "note": "Rouba com um pouco mais de facilidade."
+    },
+    "328": {
+      "name": "Sistema Hack",
+      "note": "Rouba com mais facilidade."
+    },
+    "329": {
+      "name": "Carga Excessiva",
+      "note": "Aumenta o medidor de explosão com um pouco mais de facilidade."
+    },
+    "330": {
+      "name": "Sobre Carga",
+      "note": "Aumenta o medidor de explosão com mais facilidade."
+    },
+    "331": {
+      "name": "Óculos",
+      "note": "Melhora um pouco o alvo."
+    },
+    "332": {
+      "name": "Óculos Protetor",
+      "note": "Melhora o alvo."
     },
     "333": {
       "name": "Pena de Dança",
       "note": "Desvia com um pouco mais de facilidade."
     },
+    "334": {
+      "name": "Asa de Dança",
+      "note": "Desvia com mais facilidade."
+    },
+    "335": {
+      "name": "Sandalha Maratona",
+      "note": "Escapa com um pouco mais de facilidade."
+    },
+    "336": {
+      "name": "Tênis de Corrida",
+      "note": "Escapa com mais facilidade."
+    },
+    "337": {
+      "name": "Livro Treinamento",
+      "note": "Treinamento fica um pouco mais fácil."
+    },
+    "338": {
+      "name": "Braçadeira Poder",
+      "note": "Treinamento fica muito fácil."
+    },
     "339": {
       "name": "Poder de Fogo 1",
       "note": "Adiciona fogo fraco aos ataques."
+    },
+    "340": {
+      "name": "Poder de Fogo 2",
+      "note": "Adiciona fogo aos ataques."
+    },
+    "341": {
+      "name": "Poder de Fogo S",
+      "note": "Adiciona fogo forte aos ataques."
     },
     "342": {
       "name": "Poder Aquático 1",
       "note": "Adiciona água fraca aos ataques."
     },
+    "343": {
+      "name": "Poder Aquático 2",
+      "note": "Adiciona água aos ataques."
+    },
+    "344": {
+      "name": "Poder Aquático S",
+      "note": "Adiciona água forte aos ataques."
+    },
     "345": {
       "name": "Poder Gelo 1",
       "note": "Adiciona gelo fraco aos ataques."
+    },
+    "346": {
+      "name": "Poder Gelo 2",
+      "note": "Adiciona gelo aos ataques."
+    },
+    "347": {
+      "name": "Poder Gelo S",
+      "note": "Adiciona gelo forte aos ataques."
     },
     "348": {
       "name": "Poder Vento 1",
       "note": "Adiciona vento fraco aos ataques."
     },
+    "349": {
+      "name": "Poder Vento 2",
+      "note": "Adiciona vento aos ataques."
+    },
+    "350": {
+      "name": "Poder Vento S",
+      "note": "Adiciona vento forte aos ataques."
+    },
+    "351": {
+      "name": "Poder Raio 1",
+      "note": "Adiciona trovão fraco aos ataques."
+    },
+    "352": {
+      "name": "Poder Raio 2",
+      "note": "Adiciona trovão aos ataques."
+    },
+    "353": {
+      "name": "Poder Raio S",
+      "note": "Adiciona trovão forte aos ataques."
+    },
+    "354": {
+      "name": "Poder Metal 1",
+      "note": "Adiciona metal fraco aos ataques."
+    },
+    "355": {
+      "name": "Poder Metal 2",
+      "note": "Adiciona metal aos ataques."
+    },
+    "356": {
+      "name": "Poder Metal S",
+      "note": "Adiciona metal forte aos ataques."
+    },
     "357": {
       "name": "Poder Trevas 1",
       "note": "Adiciona escuridão fraca aos ataques."
     },
-    "1001": {
-      "name": "Vazio",
-      "note": null
+    "358": {
+      "name": "Poder Trevas 2",
+      "note": "Adiciona escuridão aos ataques."
     },
-    "1007": {
-      "name": "Escudo Bravo",
-      "note": null
-    },
-    "1008": {
-      "name": "Espada Brava",
-      "note": null
-    },
-    "1015": {
-      "name": "Cajado Divino",
-      "note": null
-    },
-    "1016": {
-      "name": "Guarda Dramon",
-      "note": null
-    },
-    "1017": {
-      "name": "Escudo Dramon",
-      "note": null
-    },
-    "1019": {
-      "name": "Presa Maligna",
-      "note": null
-    },
-    "1032": {
-      "name": "Escudo Hazard",
-      "note": null
-    },
-    "1040": {
-      "name": "Escudo de Cavaleiro",
-      "note": null
-    },
-    "1042": {
-      "name": "Kulon Shield",
-      "note": null
-    },
-    "1043": {
-      "name": "Kulon Sword",
-      "note": null
-    },
-    "1059": {
-      "name": "Needle Glove",
-      "note": null
-    },
-    "1096": {
-      "name": "Wild Shield",
-      "note": null
-    },
-    "1100": {
-      "name": "Yin Yang Ward",
-      "note": null
-    },
-    "1102": {
-      "name": "Beam Armor",
-      "note": null
-    },
-    "1107": {
-      "name": "Divine Robe",
-      "note": null
-    },
-    "1109": {
-      "name": "Dramon Armor",
-      "note": null
-    },
-    "1125": {
-      "name": "Dramon Horn",
-      "note": null
-    },
-    "1130": {
-      "name": "Knight Helmet",
-      "note": null
-    },
-    "1149": {
-      "name": "Binder Crest",
-      "note": "Reduz as chances de um Digimon selvagem fugir da batalha"
-    },
-    "1150": {
-      "name": "BIT Adapter",
-      "note": "O Digimon equipado recebe BIT adicional a cada batalha"
-    },
-    "1151": {
-      "name": "Bolt Power 1",
-      "note": "Adds a small amount of Lightning damage to the equipped Digimon’s basic attacks"
-    },
-    "1152": {
-      "name": "Bolt Power 2",
-      "note": "Adds a medium amount of Lightning damage to the equipped Digimon’s basic attacks"
-    },
-    "1153": {
-      "name": "Bolt Power S",
-      "note": "Adds a large amount of Lightning damage to the equipped Digimon’s basic attacks"
-    },
-    "1156": {
-      "name": "Dark Power 2",
-      "note": "Adds a medium amount of Dark damage to the equipped Digimon’s basic attacks"
-    },
-    "1157": {
-      "name": "Dark Power S",
-      "note": "Adds a large amount of Dark damage to the equipped Digimon’s basic attacks"
-    },
-    "1159": {
-      "name": "Dance Wing",
-      "note": "Significantly increases the equipped Digimon’s chances of evading an attack"
-    },
-    "1160": {
-      "name": "EXP Adapter",
-      "note": "O Digimon equipado recebe EXP adicional a cada batalha"
-    },
-    "1161": {
-      "name": "Fire Power 2",
-      "note": "Adds a medium amount of Fire damage to the equipped Digimon’s basic attacks"
-    },
-    "1162": {
-      "name": "Fire Power S",
-      "note": "Adds a large amount of Fire damage to the equipped Digimon’s basic attacks"
-    },
-    "1163": {
-      "name": "Glasses",
-      "note": "Slightly increases the equipped Digimon’s accuracy"
-    },
-    "1164": {
-      "name": "Goggles",
-      "note": "Significantly increases the equipped Digimon’s accuracy"
-    },
-    "1165": {
-      "name": "HP Proxy",
-      "note": "Diminui levemente o dano recebido pelo Digimon equipado"
-    },
-    "1166": {
-      "name": "HP Mega Proxy",
-      "note": "Diminui significativamente o dano recebido pelo Digimon equipado"
-    },
-    "1167": {
-      "name": "Hack Sticker",
-      "note": "Slightly increases the equipped Digimon’s chances of stealing an item"
-    },
-    "1168": {
-      "name": "Hack System",
-      "note": "Significantly increases the equipped Digimon’s chances of stealing an item"
-    },
-    "1169": {
-      "name": "Metal Power 1",
-      "note": "Adds a small amount of Machine damage to the equipped Digimon’s basic attacks"
-    },
-    "1170": {
-      "name": "Metal Power 2",
-      "note": "Adds a medium amount of Machine damage to the equipped Digimon’s basic attacks"
-    },
-    "1171": {
-      "name": "Metal Power S",
-      "note": "Adds a large amount of Machine damage to the equipped Digimon’s basic attacks"
-    },
-    "1172": {
-      "name": "MP Proxy",
-      "note": "Diminui levemente o uso de MP do Digimon equipado"
-    },
-    "1173": {
-      "name": "MP Mega Proxy",
-      "note": "Diminui significativamente o uso de MP do Digimon equipado"
-    },
-    "1174": {
-      "name": "Multi Crest",
-      "note": "Permite que o Digimon atacante acerte três vezes, mas reduz o dano de cada golpe individual"
-    },
-    "1175": {
-      "name": "Over Clocked",
-      "note": "Slightly increases the equipped Digimon’s Blast Gauge gains"
-    },
-    "1176": {
-      "name": "Over Load",
-      "note": "Significantly increases the equipped Digimon’s Blast Gauge gains"
-    },
-    "1177": {
-      "name": "Power Brace",
-      "note": "Significantly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
-    },
-    "1178": {
-      "name": "Recovery Crest",
-      "note": "Recupera uma pequena quantidade de HP do Digimon equipado a cada turno"
-    },
-    "1179": {
-      "name": "Runner Sandals",
-      "note": "Slightly increases the equipped Digimon’s chances of running away from battle"
-    },
-    "1180": {
-      "name": "Runner Shoes",
-      "note": "Significantly increases the equipped Digimon’s chances of running away from battle"
-    },
-    "1181": {
-      "name": "Search Crest",
-      "note": "Increases the equipped Digimon’s critical hit rate"
-    },
-    "1182": {
-      "name": "Training Book",
-      "note": "Slightly improves the equipped Digimon’s chances of successfully completing a training course at the gym"
-    },
-    "1184": {
-      "name": "Water Power 2",
-      "note": "Adds a medium amount of Water damage to the equipped Digimon’s basic attacks"
-    },
-    "1185": {
-      "name": "Water Power S",
-      "note": "Adds a large amount of Water damage to the equipped Digimon’s basic attacks"
-    },
-    "1187": {
-      "name": "Wind Power 2",
-      "note": "Adds a medium amount of Wind damage to the equipped Digimon’s basic attacks"
-    },
-    "1188": {
-      "name": "Wind Power S",
-      "note": "Adds a large amount of Wind damage to the equipped Digimon’s basic attacks"
+    "359": {
+      "name": "Poder Trevas S",
+      "note": "Adiciona forte escuridão aos ataques."
     }
   }
 }

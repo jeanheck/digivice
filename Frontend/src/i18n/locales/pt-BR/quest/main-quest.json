@@ -442,6 +442,180 @@
             "locationTarget": "Digi-Ovo da Sinceridade"
           }
         }
+      },
+      "44": {
+        "description": "Vá em direção à Cidade Byakko",
+        "locations": {
+          "0": {
+            "locationTarget": "Numemon"
+          }
+        }
+      },
+      "45": {
+        "description": "Desafie o Líder Byakko na Cidade Byakko",
+        "locations": {
+          "0": {
+            "locationTarget": "Cúpula Byakko"
+          },
+          "1": {
+            "locationTarget": "Líder Byakko"
+          }
+        }
+      },
+      "46": {
+        "description": "Procure alguém para te ajudar a sair da Caverna Subterrânea",
+        "locations": {
+          "0": {
+            "locationTarget": "Cidadão Byakko"
+          }
+        }
+      },
+      "47": {
+        "description": "Busque uma maneira de sair da Caverna Subterrânea",
+        "locations": {
+          "0": {
+            "locationTarget": "Saída"
+          }
+        }
+      },
+      "48": {
+        "description": "Desafie o verdadeiro Líder Byakko na Torre Miragem",
+        "locations": {
+          "0": {
+            "locationTarget": "Salão Miragem"
+          },
+          "1": {
+            "locationTarget": "Quarto Miragem"
+          },
+          "2": {
+            "locationTarget": "Líder Byakko"
+          }
+        }
+      },
+      "49": {
+        "description": "Entre na Fábrica Dum Dum",
+        "locations": {
+          "0": {
+            "locationTarget": "Entre na fábrica"
+          }
+        }
+      },
+      "50": {
+        "description": "Persiga o Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Numemon"
+          }
+        }
+      },
+      "51": {
+        "description": "Entre na Sala de Tubulação 01",
+        "locations": {
+          "0": {
+            "locationTarget": "Sala de Tubulação 01"
+          }
+        }
+      },
+      "52": {
+        "description": "Abra a caixa dentro da Sala de Tubulação 01",
+        "locations": {
+          "0": {
+            "locationTarget": "Sala de Tubulação 01"
+          },
+          "1": {
+            "locationTarget": "Caixa"
+          }
+        }
+      },
+      "53": {
+        "description": "Continue perseguindo o Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Numemon"
+          }
+        }
+      },
+      "54": {
+        "description": "Abra a caixa dentro da Sala de Tubulação 04",
+        "locations": {
+          "0": {
+            "locationTarget": "Sala de Tubulação 04"
+          },
+          "1": {
+            "locationTarget": "Caixa"
+          }
+        }
+      },
+      "55": {
+        "description": "Não desista! Vá atrás do Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Numemon"
+          }
+        }
+      },
+      "56": {
+        "description": "Abra a caixa dentro da Sala de Tubulação 02",
+        "locations": {
+          "0": {
+            "locationTarget": "Sala de Tubulação 02"
+          },
+          "1": {
+            "locationTarget": "Caixa"
+          }
+        }
+      },
+      "57": {
+        "description": "Ele não cansa nunca? Siga Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Numemon"
+          }
+        }
+      },
+      "58": {
+        "description": "Abra a caixa dentro da Sala de Tubulação 03",
+        "locations": {
+          "0": {
+            "locationTarget": "Sala de Tubulação 03"
+          },
+          "1": {
+            "locationTarget": "Caixa"
+          }
+        }
+      },
+      "59": {
+        "description": "Vá para o centro da fábrica para procurar pelo Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Numemon"
+          }
+        }
+      },
+      "60": {
+        "description": "Peça informações sobre o Numemon ao HiAndromon dentro da Sala de Operações",
+        "locations": {
+          "0": {
+            "locationTarget": "Sala de Operações"
+          },
+          "1": {
+            "locationTarget": "HiAndromon"
+          }
+        }
+      },
+      "61": {
+        "description": "Siga para os Esgotos atrás de Numemon",
+        "locations": {
+          "0": {
+            "locationTarget": "Escadas Secretas"
+          },
+          "1": {
+            "locationTarget": "Esgotos"
+          },
+          "2": {
+            "locationTarget": "Numemon"
+          }
+        }
       }
     }
   }

@@ -12,7 +12,7 @@ const filledSlots = computed(() => {
 </script>
 
 <template>
-  <div class="flex-3 grid grid-cols-3 gap-4">
+  <div class="h-full min-h-0 grid grid-cols-3 gap-4">
     <Digimon
       v-for="digimonSlot in filledSlots"
       :key="digimonSlot.index"

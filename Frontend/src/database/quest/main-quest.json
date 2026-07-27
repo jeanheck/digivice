@@ -822,7 +822,7 @@
                     }
                 },
                 {
-                    "location": "0215",
+                    "location": "0217",
                     "coordinates": {
                         "x": 62.5,
                         "y": 34.5
@@ -949,6 +949,382 @@
                     "coordinates": {
                         "x": 25,
                         "y": 71
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "44": {
+            "location": "0248",
+            "coordinates": {
+                "x": 21.5,
+                "y": 72
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0248",
+                    "coordinates": {
+                        "x": 15,
+                        "y": 26
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "45": {
+            "location": "025D",
+            "coordinates": {
+                "x": 18.5,
+                "y": 59
+            },
+            "zoomedLocations": [
+                {
+                    "location": "025D",
+                    "coordinates": {
+                        "x": 75,
+                        "y": 12
+                    }
+                },
+                {
+                    "location": "025E",
+                    "coordinates": {
+                        "x": 40,
+                        "y": 26.5
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "46": {
+            "location": "025D",
+            "coordinates": {
+                "x": 18.5,
+                "y": 59
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0260",
+                    "coordinates": {
+                        "x": 31,
+                        "y": 21
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "47": {
+            "location": "025D",
+            "coordinates": {
+                "x": 18.5,
+                "y": 59
+            },
+            "zoomedLocations": [
+                {
+                    "location": "0260",
+                    "coordinates": {
+                        "x": 91,
+                        "y": 45
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "48": {
+            "location": "025A",
+            "coordinates": {
+                "x": 12.5,
+                "y": 84.5
+            },
+            "zoomedLocations": [
+                {
+                    "location": "025A",
+                    "coordinates": {
+                        "x": 66,
+                        "y": 32
+                    }
+                },
+                {
+                    "location": "025B",
+                    "coordinates": {
+                        "x": 40,
+                        "y": 16
+                    }
+                },
+                {
+                    "location": "025C",
+                    "coordinates": {
+                        "x": 65.5,
+                        "y": 19.5
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "49": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 7,
+                        "y": 89
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "50": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 35.5,
+                        "y": 60
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "51": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 62.5,
+                        "y": 75
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "52": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 62.5,
+                        "y": 75
+                    }
+                },
+                {
+                    "location": "024E",
+                    "coordinates": {
+                        "x": 59,
+                        "y": 61
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "53": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 45.5,
+                        "y": 28.5
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "54": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 57,
+                        "y": 19
+                    }
+                },
+                {
+                    "location": "024E",
+                    "coordinates": {
+                        "x": 59,
+                        "y": 61
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "55": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 76,
+                        "y": 59.5
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "56": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 91,
+                        "y": 60
+                    }
+                },
+                {
+                    "location": "024E",
+                    "coordinates": {
+                        "x": 59,
+                        "y": 61
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "57": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 86,
+                        "y": 41
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "58": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 75,
+                        "y": 35
+                    }
+                },
+                {
+                    "location": "024E",
+                    "coordinates": {
+                        "x": 59,
+                        "y": 61
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "59": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 45.5,
+                        "y": 41
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "60": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 78,
+                        "y": 19.5
+                    }
+                },
+                {
+                    "location": "0252",
+                    "coordinates": {
+                        "x": 73,
+                        "y": 23
+                    }
+                }
+            ],
+            "requisites": []
+        },
+        "61": {
+            "location": "024D",
+            "coordinates": {
+                "x": 18,
+                "y": 38
+            },
+            "zoomedLocations": [
+                {
+                    "location": "024D",
+                    "coordinates": {
+                        "x": 8,
+                        "y": 46
+                    }
+                },
+                {
+                    "location": "0253",
+                    "coordinates": {
+                        "x": 18,
+                        "y": 73.5
+                    }
+                },
+                {
+                    "location": "0254",
+                    "coordinates": {
+                        "x": 48.5,
+                        "y": 41.5
                     }
                 }
             ],

@@ -1,0 +1,72 @@
+{
+  "driAgentMonmon": {
+    "title": "Monmon (DRI Yang)",
+    "description": "Adicione Monmon ao seu grupo de Digimons",
+    "requisites": {
+      "partyLevel": "Ter o nível do grupo entre 60 e 90",
+      "submarimon": "Possuir o Digi-Ovo da Sinceridade"
+    },
+    "steps": {
+      "1": {
+        "description": "Procure pelo DRI Yang no Deserto Mobius",
+        "locations": {
+          "0": {
+            "locationTarget": "Deserto Mobius (A4)"
+          },
+          "1": {
+            "locationTarget": "Deserto Mobius (B4)"
+          },
+          "2": {
+            "locationTarget": "Deserto Mobius (C4)"
+          },
+          "3": {
+            "locationTarget": "Deserto Mobius (D4)"
+          },
+          "4": {
+            "locationTarget": "DRI Yang"
+          }
+        }
+      },
+      "2": {
+        "description": "Vença Armormon em batalha para receber o DDNA do Monmon",
+        "locations": {
+          "0": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "1": {
+            "locationTarget": "Solo Oceânico"
+          },
+          "2": {
+            "locationTarget": "Ilha de Duelos"
+          },
+          "3": {
+            "locationTarget": "Armormon"
+          }
+        }
+      },
+      "3": {
+        "description": "Entregue o DDNA do Monmon para DRI Yang",
+        "locations": {
+          "0": {
+            "locationTarget": "Deserto Mobius (A4)"
+          },
+          "1": {
+            "locationTarget": "Deserto Mobius (B4)"
+          },
+          "2": {
+            "locationTarget": "Deserto Mobius (C4)"
+          },
+          "3": {
+            "locationTarget": "Deserto Mobius (D4)"
+          },
+          "4": {
+            "locationTarget": "DRI Yang"
+          }
+        },
+        "requisites": {
+          "monmonDDNA": "DDNA de Monmon"
+        }
+      }
+    }
+  }
+}

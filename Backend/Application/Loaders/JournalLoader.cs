@@ -1,5 +1,5 @@
-using Backend.Memory.Resources;
 using Backend.Application.Loaders.Journals;
+using Backend.Memory.Resources;
 
 namespace Backend.Application.Loaders
 {
@@ -13,7 +13,7 @@ namespace Backend.Application.Loaders
                 SideQuests = questLoader.LoadSideQuests(),
                 LegendaryWeapons = questLoader.LoadLegendaryWeapons(),
                 DriAgents = questLoader.LoadDriAgents(),
-                Auctions = auctionLoader.Load().Auctions,
+                Auctions = auctionLoader.LoadAuctions(),
             };
         }
     }

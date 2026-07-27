@@ -1,6 +1,13 @@
 {
     "id": "driAgentGuilmon",
-    "requisites": [],
+    "requisites": [
+        {
+            "id": "partyLevel",
+            "type": "partyLevelRange",
+            "min": 30,
+            "max": 45
+        }
+    ],
     "steps": {
         "1": {
             "location": "022E",

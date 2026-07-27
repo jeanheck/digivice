@@ -1,8 +1,12 @@
 {
   "enemy": {
+    "bestiary": "Bestiário",
+    "searchPlaceholder": "Digite o nome de um inimigo...",
+    "searchNoResults": "Nenhum inimigo encontrado",
     "level": "Nível",
     "specie": "Espécie",
-    "possibleDrop": "Possíveis Drops",
+    "drop": "Drop",
+    "dropRate": "Taxa de drop",
     "baseExp": "EXP",
     "baseBits": "BITS",
     "combatActions": "Ações",

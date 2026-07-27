@@ -3,8 +3,9 @@ name: quest-pattern-backend
 description: >-
   Integrates quest-pattern memory trackers into the Digivice backend — main
   quest, side quests, legendary weapons, DRI agents. Use when the user asks to
-  integrate *Addresses.json into the backend, wire journal loaders, or connect
-  confirmed memory addresses after memory-compare investigation.
+  integrate *Addresses.json into the backend, add another DRI agent, wire
+  journal loaders, or connect confirmed memory addresses after memory-compare
+  investigation.
 ---
 
 # Quest Pattern — Backend Integration
@@ -52,7 +53,7 @@ Quests/
 | Main quest | `Quests/MainQuestAddresses.json` | `MainQuest` | Already wired |
 | Side quests | `Quests/SideQuests/` | `SideQuests` | FolderBag, TreeBoots, FishingPole |
 | Legendary weapons | `Quests/LegendaryWeapons/` | `LegendaryWeapons` *(create on first item)* | Side quests pattern |
-| DRI agents | `Quests/DriAgents/` | `DriAgents` *(create on first item)* | Side quests pattern |
+| DRI agents | `Quests/DriAgents/` | `DriAgents` | Already wired — add agents via checklist below |
 
 ## JSON schema note
 
@@ -71,6 +72,40 @@ Not multiline unless the array has many entries.
 Fix PascalCase or other casing when integrating.
 
 `Id` must match the quest id used across backend and (later) frontend.
+
+---
+
+## Add DRI agent (category already wired)
+
+Use this when adding **another** DRI agent (e.g. Kotemon, Patamon, Renamon).
+Journal `DriAgents` slot, loaders, assemblers, and differs already exist —
+**SKIP** integration checklist steps 3–6.
+
+Reference implementations: `driAgentKumamon` / `driAgentMonmon` (2026-07-12),
+or any file under `Quests/DriAgents/`.
+
+### Checklist
+
+- [ ] Create `Backend/Memory/Definitions/Quests/DriAgents/{Name}Addresses.json`
+  - `Id`: `driAgent{Rookie}` (camelCase)
+  - 3 steps; step 3 `Requisites` with `{rookie}DDNA` + DNA address
+  - `BitMasks` on one line when single mask; mirror Veemon/Kumamon shape
+- [ ] `AddressesRepository.cs`:
+  - Cached field `driAgent{Rookie}`
+  - Private `GetDriAgent{Rookie}()` → `Quests/DriAgents/{Name}Addresses.json`
+  - Append to `GetAllDriAgents()` list (UI/journal order)
+- [ ] **SKIP** `IAddressesRepository` (only `GetAllDriAgents()` is public)
+- [ ] **SKIP** `QuestLoader` / `JournalLoader` / assemblers / differs / DTOs
+- [ ] Tests:
+  - `QuestLoaderTests.LoadDriAgents_*` — `Count++`; mock new addresses; assert
+    Id, step values, requisite id/value
+  - `JournalLoaderTests` — `DriAgents.Count` and id order
+- [ ] Retrofeed [backend-status.md](backend-status.md) — append new `driAgent*` id
+- [ ] Retrofeed `.cursor/skills/memory-compare/known-patterns.md` and
+  `memory-regions.md` if this agent’s addresses were just confirmed
+
+**Stop.** Do not touch frontend. For end-to-end (backend + frontend), use skill
+`dri-agent-integrate`.
 
 ---
 
@@ -221,4 +256,5 @@ New *Addresses.json ready?
 - File map and pipeline diagram: [backend-pipeline.md](backend-pipeline.md)
 - Integration status: [backend-status.md](backend-status.md)
 - Prior skill: `.cursor/skills/memory-compare/`
+- End-to-end DRI: `.cursor/skills/dri-agent-integrate/`
 - Code rules: `AI/CODE_RULES.md` (Backend + Tests sections)

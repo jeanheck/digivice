@@ -52,7 +52,7 @@ public class GameLoopServiceTests
         _gameStateStore = new GameStateStore();
         _debugConsoleRenderer = new DebugConsoleRenderer();
 
-        var player = new Player { Name = "Agumon", Bits = 123, MapId = "0001" };
+        var player = new Player { Bits = 123, MapId = "0001" };
         var party = new Party { Slots = [] };
         var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };
         _playerProviderMock.Setup(p => p.Get()).Returns(player);
@@ -289,7 +289,7 @@ public class GameLoopServiceTests
     {
         _gameStateStore.UpdateState(new State
         {
-            Player = new Player { Name = "Agumon", Bits = 123, MapId = "0001" }
+            Player = new Player { Bits = 123, MapId = "0001" }
         });
         _duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
             .Returns(ConnectionAttemptResult.Success());

@@ -10,8 +10,8 @@ public class PlayerEventFactoryTests
     [Fact]
     public void Create_ShouldReturnNoEvents_WhenPlayerHasNoChanges()
     {
-        var previousState = CreateState(new Player { Name = "Agumon", Bits = 100, MapId = "0001" });
-        var newState = CreateState(new Player { Name = "Agumon", Bits = 100, MapId = "0001" });
+        var previousState = CreateState(new Player { Bits = 100, MapId = "0001" });
+        var newState = CreateState(new Player { Bits = 100, MapId = "0001" });
 
         var result = PlayerEventFactory.Create(previousState, newState);
 
@@ -21,8 +21,8 @@ public class PlayerEventFactoryTests
     [Fact]
     public void Create_ShouldReturnPlayerChangedEvent_WhenPlayerChanges()
     {
-        var previousState = CreateState(new Player { Name = "Agumon", Bits = 100, MapId = "0001" });
-        var newState = CreateState(new Player { Name = "Agumon", Bits = 200, MapId = "0001" });
+        var previousState = CreateState(new Player { Bits = 100, MapId = "0001" });
+        var newState = CreateState(new Player { Bits = 200, MapId = "0001" });
 
         var result = PlayerEventFactory.Create(previousState, newState).ToList();
 

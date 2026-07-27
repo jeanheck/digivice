@@ -2,6 +2,9 @@
   "muramasa": {
     "title": "Muramasa",
     "description": "Obtain the Legendary Weapon Muramasa",
+    "requisites": {
+      "smellHerb": "Use the Smell Herb to lure Zanbamon out of the Jungle Grave"
+    },
     "steps": {
       "1": {
         "description": "Defeat Zanbamon to receive the Rusty Katana",

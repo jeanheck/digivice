@@ -1,0 +1,45 @@
+{
+  "driAgentVeemon": {
+    "title": "Veemon (DRI Bob)",
+    "description": "Add Veemon to your Digimon party",
+    "requisites": {
+      "partyLevel": "Have a party level between 1 and 30",
+      "byakkoLeader": "Have the Byakko Badge"
+    },
+    "steps": {
+      "1": {
+        "description": "Look for Dri Bob in Protocol Ruins",
+        "locations": {
+          "0": {
+            "locationTarget": "Protocol Ruins"
+          },
+          "1": {
+            "locationTarget": "DRI Bob"
+          }
+        }
+      },
+      "2": {
+        "description": "Defeat Paildramon in battle to receive Veemon's DDNA",
+        "locations": {
+          "0": {
+            "locationTarget": "Paildramon"
+          }
+        }
+      },
+      "3": {
+        "description": "Deliver Veemon's DNA to DRI Bob",
+        "locations": {
+          "0": {
+            "locationTarget": "Protocol Ruins"
+          },
+          "1": {
+            "locationTarget": "DRI Bob"
+          }
+        },
+        "requisites": {
+          "veemonDDNA": "Veemon's DDNA"
+        }
+      }
+    }
+  }
+}

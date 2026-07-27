@@ -1,0 +1,19 @@
+{
+    "Id": "punishment",
+    "Requisites": [
+        {
+            "Id": "numemon",
+            "Address": "0x0004B3E4",
+            "BitMasks": [
+                "0x80"
+            ]
+        }
+    ],
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x0004B38E",
+            "BitMasks": ["0x10"]
+        }
+    ]
+}

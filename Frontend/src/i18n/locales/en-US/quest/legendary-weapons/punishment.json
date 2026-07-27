@@ -1,0 +1,22 @@
+{
+  "punishment": {
+    "title": "Punishment",
+    "description": "Obtain the Legendary Weapon Punishment",
+    "requisites": {
+      "numemon": "Go to the center of the factory to look for Numemon"
+    },
+    "steps": {
+      "1": {
+        "description": "Defeat HiAndromon to receive the Rusty Rifle",
+        "locations": {
+          "0": {
+            "locationTarget": "Operation Room"
+          },
+          "1": {
+            "locationTarget": "HiAndromon"
+          }
+        }
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@ using Xunit;
 
 public class DigimonReaderTests
 {
+    private const long BlastGaugeAddress = 0x42B76;
     private static void WriteInt16(byte[] block, int offset, short value)
     {
         var bytes = BitConverter.GetBytes(value);
@@ -52,16 +53,17 @@ public class DigimonReaderTests
     public void Read_ShouldCorrectlyMapDigimonFields_WhenBlockIsFullyLoaded()
     {
         // Arrange
-        var address = new DigimonAddress { Id = 1, Address = 0x800100 };
+        var address = new DigimonAddress { Id = 1, Address = 0x800100, BlastGaugeAddress = BlastGaugeAddress };
 
         var statusAddresses = new DigimonStatusAddresses
         {
             Experience = 10,
             Level = 14,
-            Vitals = new VitalsAddresses { CurrentHP = 16, MaxHP = 18, CurrentMP = 20, MaxMP = 22 },
-            Attributes = new AttributesAddresses { Strength = 24, Defense = 26, Spirit = 28, Wisdow = 30, Speed = 32, Charisma = 34 },
-            Resistances = new ResistancesAddresses { Fire = 36, Water = 38, Ice = 40, Wind = 42, Thunder = 44, Machine = 46, Dark = 48 },
-            Equipaments = new EquipmentsAddresses { Head = 50, Body = 52, Right = 54, Left = 56, Accessory1 = 58, Accessory2 = 60 },
+            TP = 16,
+            Vitals = new VitalsAddresses { CurrentHP = 18, MaxHP = 20, CurrentMP = 22, MaxMP = 24 },
+            Attributes = new AttributesAddresses { Strength = 26, Defense = 28, Spirit = 30, Wisdow = 32, Speed = 34, Charisma = 36 },
+            Resistances = new ResistancesAddresses { Fire = 38, Water = 40, Ice = 42, Wind = 44, Thunder = 46, Machine = 48, Dark = 50 },
+            Equipaments = new EquipmentsAddresses { Head = 52, Body = 54, Right = 56, Left = 58, Accessory1 = 60, Accessory2 = 62 },
             Digievolutions = new DigievolutionsAddresses
             {
                 ActiveDigievolution = 200,
@@ -72,41 +74,43 @@ public class DigimonReaderTests
         var block = new byte[1500];
         WriteInt32(block, 10, 85000); // Experience
         WriteInt16(block, 14, 45);    // Level
+        WriteInt16(block, 16, 32);    // TP
 
         // Vitals
-        WriteInt16(block, 16, 500);   // CurrentHP
-        WriteInt16(block, 18, 1000);  // MaxHP
-        WriteInt16(block, 20, 200);   // CurrentMP
-        WriteInt16(block, 22, 400);   // MaxMP
+        WriteInt16(block, 18, 500);   // CurrentHP
+        WriteInt16(block, 20, 1000);  // MaxHP
+        WriteInt16(block, 22, 200);   // CurrentMP
+        WriteInt16(block, 24, 400);   // MaxMP
 
         // Attributes
-        WriteInt16(block, 24, 80);    // Strength
-        WriteInt16(block, 26, 75);    // Defense
-        WriteInt16(block, 28, 60);    // Spirit
-        WriteInt16(block, 30, 95);    // Wisdom
-        WriteInt16(block, 32, 110);   // Speed
-        WriteInt16(block, 34, 40);    // Charisma
+        WriteInt16(block, 26, 80);    // Strength
+        WriteInt16(block, 28, 75);    // Defense
+        WriteInt16(block, 30, 60);    // Spirit
+        WriteInt16(block, 32, 95);    // Wisdom
+        WriteInt16(block, 34, 110);   // Speed
+        WriteInt16(block, 36, 40);    // Charisma
 
         // Resistances
-        WriteInt16(block, 36, 10);    // Fire
-        WriteInt16(block, 38, 20);    // Water
-        WriteInt16(block, 40, 30);    // Ice
-        WriteInt16(block, 42, 40);    // Wind
-        WriteInt16(block, 44, 50);    // Thunder
-        WriteInt16(block, 46, 60);    // Machine
-        WriteInt16(block, 48, 70);    // Dark
+        WriteInt16(block, 38, 10);    // Fire
+        WriteInt16(block, 40, 20);    // Water
+        WriteInt16(block, 42, 30);    // Ice
+        WriteInt16(block, 44, 40);    // Wind
+        WriteInt16(block, 46, 50);    // Thunder
+        WriteInt16(block, 48, 60);    // Machine
+        WriteInt16(block, 50, 70);    // Dark
 
         // Equipments
-        WriteInt16(block, 50, 101);   // Head
-        WriteInt16(block, 52, 102);   // Body
-        WriteInt16(block, 54, 103);   // Right
-        WriteInt16(block, 56, 104);   // Left
-        WriteInt16(block, 58, 105);   // Accessory1
-        WriteInt16(block, 60, 106);   // Accessory2
+        WriteInt16(block, 52, 101);   // Head
+        WriteInt16(block, 54, 102);   // Body
+        WriteInt16(block, 56, 103);   // Right
+        WriteInt16(block, 58, 104);   // Left
+        WriteInt16(block, 60, 105);   // Accessory1
+        WriteInt16(block, 62, 106);   // Accessory2
 
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
         memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)3); // ActiveDigievolutionId
+        memoryReaderMock.Setup(m => m.ReadInt16(BlastGaugeAddress)).Returns((short)750);
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
@@ -130,6 +134,8 @@ public class DigimonReaderTests
         Assert.Equal(3, result.ActiveDigievolutionId);
         Assert.Equal(85000, result.Experience);
         Assert.Equal(45, result.Level);
+        Assert.Equal(32, result.TP);
+        Assert.Equal(750, result.BlastGauge);
 
         // Vitals
         Assert.Equal(500, result.Vitals.CurrentHP);
@@ -167,7 +173,7 @@ public class DigimonReaderTests
     public void Read_ShouldUseZeroActiveDigievolutionId_WhenMemoryReaderReturnsZero()
     {
         // Arrange
-        var address = new DigimonAddress { Id = 1, Address = 0x800100 };
+        var address = new DigimonAddress { Id = 1, Address = 0x800100, BlastGaugeAddress = BlastGaugeAddress };
         var statusAddresses = new DigimonStatusAddresses
         {
             Experience = 10,
@@ -187,6 +193,7 @@ public class DigimonReaderTests
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
         memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)0);
+        memoryReaderMock.Setup(m => m.ReadInt16(BlastGaugeAddress)).Returns((short)0);
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
@@ -214,7 +221,7 @@ public class DigimonReaderTests
     public void Read_ShouldMapEvolutionSlotsAndResources_WhenSlotsArePresent()
     {
         // Arrange
-        var address = new DigimonAddress { Id = 1, Address = 0x800100 };
+        var address = new DigimonAddress { Id = 1, Address = 0x800100, BlastGaugeAddress = BlastGaugeAddress };
         var slotAddress1 = new SlotAddresses { Index = 0, Address = 300 };
         var slotAddress2 = new SlotAddresses { Index = 1, Address = 304 };
 
@@ -237,6 +244,7 @@ public class DigimonReaderTests
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
         memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)5);
+        memoryReaderMock.Setup(m => m.ReadInt16(BlastGaugeAddress)).Returns((short)200);
 
         var slotResource1 = new DigievolutionSlotResource { Index = 0, DigievolutionId = 12 };
         var slotResource2 = new DigievolutionSlotResource { Index = 1, DigievolutionId = 15 };
