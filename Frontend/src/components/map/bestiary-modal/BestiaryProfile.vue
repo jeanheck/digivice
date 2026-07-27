@@ -85,7 +85,7 @@ const techniqueLabel = computed(() => {
           <span class="font-bold text-gray-300">{{ dropLabel }}</span>
         </div>
 
-        <div v-if="enemy.boss" class="flex items-center justify-between text-[10px]">
+        <div v-if="enemy.boss && enemy.dropId" class="flex items-center justify-between text-[10px]">
           <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.dropRate") }}:</span>
           <span class="font-bold text-gray-300">100%</span>
         </div>

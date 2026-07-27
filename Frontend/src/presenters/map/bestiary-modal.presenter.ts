@@ -4,7 +4,7 @@ import { SearchItemConverter } from "@/presenters/converter/search-item.converte
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
-export class EnemyModalPresenter {
+export class BestiaryModalPresenter {
   public static getEnemyById(enemyId: string): EnemyViewModel {
     const enemyRaw = EnemyRepository.getEnemyById(enemyId);
     return EnemyConverter.convert(enemyRaw);

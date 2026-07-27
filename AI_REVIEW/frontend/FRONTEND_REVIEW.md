@@ -353,7 +353,7 @@ Arquivos com hex hardcoded (amostra priorizada para migração de tema / limpeza
 | `Map.vue` | Cantos HUD `#00aaff` |
 | `SearchBar.vue` | Vários blues de input/panel |
 | `JournalQuestCard.vue` | Mapa status→hex inline |
-| `EnemyModal.vue` / `EnemyProfile.vue` | `#000a1a` |
+| `BestiaryModal.vue` / `BestiaryProfile.vue` | `#000a1a` |
 | `QuestModal.vue` / `StepPanel.vue` | `#000a1a` / vermelho escuro |
 | `Modal.vue` / `Tooltip.vue` | Fundos/bordas próprios |
 | `Footer.vue` / `Digimon.vue` / `Profile.vue` | Chrome party/footer |

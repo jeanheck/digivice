@@ -1,7 +1,7 @@
 {
     "enemyTechniques": {
         "necromist": "Névoa da Morte (Físico, Chance de Envenenamento)",
-        "madPump": "Mad Pump (Físico, Água)",
+        "madPump": "Bomba Louca (Físico, Água)",
         "masterFire": "Fogo Mestre (Fogo)",
         "atomicRay": "Raio Atômico (Mágica, Máquina, Chance de nocaute)",
         "none": "Nenhum",

@@ -16,7 +16,7 @@ const resumedEnemies = computed(() => {
 
 const hasEnemies = computed(() => resumedEnemies.value.length > 0);
 
-const openEnemyModal = (enemyId: string) => {
+const openBestiaryModal = (enemyId: string) => {
   emit("open-enemy-modal", enemyId);
 };
 </script>
@@ -34,7 +34,7 @@ const openEnemyModal = (enemyId: string) => {
           type="button"
           class="font-bold text-[10px] 2xl:text-xs tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
           :class="enemy.boss ? 'text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]' : 'text-[#bc3737] hover:text-[#c76060] drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'"
-          @click="openEnemyModal(enemy.id)"
+          @click="openBestiaryModal(enemy.id)"
         >
           {{ enemy.name }}
         </button>

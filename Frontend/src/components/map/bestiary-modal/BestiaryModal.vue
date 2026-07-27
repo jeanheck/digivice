@@ -2,15 +2,15 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import EnemyProfile from "@/components/map/enemy-modal/EnemyProfile.vue";
-import EnemyAttributes from "@/components/map/enemy-modal/EnemyAttributes.vue";
-import EnemyElements from "@/components/map/enemy-modal/EnemyElements.vue";
-import EnemyConditions from "@/components/map/enemy-modal/EnemyConditions.vue";
+import BestiaryProfile from "@/components/map/bestiary-modal/BestiaryProfile.vue";
+import BestiaryAttributes from "@/components/map/bestiary-modal/BestiaryAttributes.vue";
+import BestiaryElements from "@/components/map/bestiary-modal/BestiaryElements.vue";
+import BestiaryConditions from "@/components/map/bestiary-modal/BestiaryConditions.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import { EnemyModalPresenter } from "@/presenters/map/enemy-modal.presenter.ts";
+import { BestiaryModalPresenter } from "@/presenters/map/bestiary-modal.presenter";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -37,10 +37,10 @@ const handleSearchSelect = (id: string) => {
   selectedEnemyId.value = id;
 };
 
-const allSearchItems = EnemyModalPresenter.getAllSearchItems();
+const allSearchItems = BestiaryModalPresenter.getAllSearchItems();
 
 const enemy = computed(() => {
-  return EnemyModalPresenter.getEnemyById(selectedEnemyId.value!);
+  return BestiaryModalPresenter.getEnemyById(selectedEnemyId.value!);
 });
 
 const tooltipPlacement = "below" as const;
@@ -111,23 +111,23 @@ const enemyImageUrl = computed(() => {
     </template>
 
     <div class="p-4 flex flex-col sm:flex-row gap-4 max-h-[70vh] overflow-y-auto custom-scroll">
-      <EnemyProfile :enemy="enemy" :enemy-image-url="enemyImageUrl" />
+      <BestiaryProfile :enemy="enemy" :enemy-image-url="enemyImageUrl" />
 
       <div class="flex-1">
         <div class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start">
-          <EnemyAttributes
+          <BestiaryAttributes
             :attributes="enemy.attributes"
             @show-stat-key-tooltip="showEnemyStatKeyTooltip"
             @move-stat-tooltip="moveEnemyStatTooltip"
             @hide-stat-tooltip="hideEnemyStatTooltip"
           />
-          <EnemyElements
+          <BestiaryElements
             :elements="enemy.elements"
             @show-stat-key-tooltip="showEnemyStatKeyTooltip"
             @move-stat-tooltip="moveEnemyStatTooltip"
             @hide-stat-tooltip="hideEnemyStatTooltip"
           />
-          <EnemyConditions
+          <BestiaryConditions
             :conditions="enemy.conditions"
             @show-condition-tooltip="showEnemyConditionTooltip"
             @move-stat-tooltip="moveEnemyStatTooltip"

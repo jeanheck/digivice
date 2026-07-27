@@ -197,7 +197,7 @@ Referência: `Frontend/src/components/modal/Modal.vue`.
 | Camada | Arquivo | Responsabilidade |
 |--------|---------|------------------|
 | Casca visual | `components/modal/Modal.vue` | Teleport, overlay (`z-100`), ESC, clique fora, animações, hex pattern, header com `IconClose`, barra de footer, scroll `custom-scroll` via `:deep`. |
-| Conteúdo | Modais de domínio (`EnemyModal.vue`, `QuestDetailsModal.vue`, etc.) | Slots `#header` e corpo; lógica e apresentação do domínio. |
+| Conteúdo | Modais de domínio (`BestiaryModal.vue`, `QuestDetailsModal.vue`, etc.) | Slots `#header` e corpo; lógica e apresentação do domínio. |
 
 #### Fluxo no modal de domínio
 
