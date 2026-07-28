@@ -1,72 +1,100 @@
-# Digivice (for Digimon World 2003)
+# **Digivice** - *Your Digimon World 2003 second screen*
 
-A companion app that reads memory from Digimon World 2003 game running in Duckstation and displays real-time data in a beautiful frontend. It was developed to be your "second screen" while playing the game, showing all the data without you need to access any menu (imagine the second screen from Nintendo 3DS).
+![GitHub downloads](https://img.shields.io/github/downloads/jeanheck/digivice-backend/total)
 
-Digivice will show to you many information that the game didn't, and others that the game did (but in a easist way), like:
- * The EXP each of your Digimon's need to reach the next level;
- * The enemies that you can find on each map;
- * A journal with the main quests and sidequests, that uppdates according you proceed on the quests;
- * All the digievolutions and the requirements to achieve them for each different Digimon;
- * And more!
+Digimon World 2003 hides a lot behind menus and guesswork. Digivice is a second screen for that world: while you play on Duckstation, it shows the live state of your party, the map, your digievolutions, and how far you are in the story — the way a Nintendo 3DS companion screen might have felt, if the PS1 era had one.
 
-It does it by reading the PS1 memory shared by Duckstation, calculating what they meaning, and showing real time information on your screen. Every time you level up your digimon, they status increase, you equip a new weapon, or you unlock a new digievolution. Everything will be shown on the Digivice in a easist way comparing with the original game.
+- See the EXP each of your Digimons needs to reach the next level
+- Discover enemies you can meet on each map
+- Have a journal for main quests and sidequests that automatically tracks your progress as you advance
+- See digievolution trees and requirements for every Digimon in your party
+- Get warned whenever an Auction is happening
+- Have tools to help you move around in the Seabed or Mobius Desert
+- And more — the details the game makes hard to see, kept beside the game itself
+
+It reads the PS1 memory Duckstation shares and updates in real time as you play.
+
+It's the companion you wished you had when you first walked through Asuka Server.
+
+[![Digivice 2.0 (Latest major release)](https://img.youtube.com/vi/a_r7qz0TodQ/hqdefault.jpg)](https://www.youtube.com/watch?v=a_r7qz0TodQ)
 
 ## The current state
 
-**At this moment, the Digivice is prepared to support ONLY UNTIL the second part of the game, the South Sector of Asuka Server**. The main quest, for example, will only contain the steps until this part. The enemies on the maps are only configured correctly until this sector. <br >
-When you reach the next sector, many features will still work, but many will be missing. I will update the Digivice with the information of the next areas in the next updates.
+**Right now, Digivice only fully supports the game up to the West Sector of Asuka Server** (the Third part of the story). The main quest, map enemies, and related data are only complete through this sector.
+
+Past that point, many features will still work, but others will be missing. I'll fill in the next areas in future updates.
+
+## Roadmap
+
+More Digivice is on the way. Here's a preview of what's planned next — details and timing may change as development continues.
+
+### 3.5 — Card battles & the world around them
+
+Digimon World 2003's card game, finally with a second screen to match.
+
+- **TCG tools** — support for the in-game card game, right inside Digivice
+- **Richer battle data** — deeper insight into Digimon vs Digimon fights
+- **Trainer finder** — locate trainers ready to battle with cards or with their Digimon
+- **And more** — smaller quality-of-life wins along the way
+
+### 4.0 — The story catches up to Asuka City
+
+A major step forward for anyone playing through the main quest.
+
+- **Main quest through A.o.A** — journal and tracking mapped up to the A.o.A battle in Asuka City
+- **DVEXP bars that make sense** — fixed to reflect each digievolution's Tier correctly
+- **And more** — the next layer of polish once the South Sector ceiling is gone
 
 ## Before you continue
 
-**This only supports the game Digimon World 2003. It will not work on Digimon World 3.**<br />
+**This only supports Digimon World 2003. It will not work on Digimon World 3.**
 
-All the game information used here was taken from many different sources that I found on web (see the Reference Data Credits below). So, as I could have free access to them to do this project, if you are reading this, feel free to get any data that you find here that you think that could be usefull for you develop your things.<br /><br />
-Lastly, but no less importantly, I do not own any legal rights to the game, nor to the Digimon work itself. Even the name "Digivice" it's something from the Digimon context. **All copyrights belong to the respective game developers and the copyright holders of Digimon**. This is just a study project, in which I'm combining a learning experience with a game that marked my childhood.
+Game data here comes from public sources on the web (see Reference Data Credits below). You're free to reuse any of it in your own projects.
 
-# Requirements
+I don't own any rights to the game or to Digimon. Even the name "Digivice" comes from that universe. **All copyrights belong to their respective owners.** This is a study project — learning combined with a game that marked my childhood.
 
-**Plataform**: Windows. The Digivice was a .exe software that you will run on your PC.<br />
-**Emulator**: **Must be Duckstation**. In the future, I will try to make it available for others emulators.
+## Requirements
+
+**Platform:** Windows. Digivice is an `.exe` you run on your PC.  
+**Emulator:** **Must be Duckstation.** Support for other emulators may come later.
 
 ## How to use
 
-* Configure your Duckstation emulator at the point that you can run a game;
-* Go to the Duckstation Settings > Advanced > On "Interface Settings", mark the option check the option "Show Debug Menu";
-* A new menu named "Debugging" will appear on the left. Click on it;
-* Find the option "Export Memory Shared" and check it;
-* Download the latest version Digivice (see the Releases tab). I recommend you to extract the ZIP content to a new folder;
-* Run the Digimon World 2003 on your emulador;
-* Advance on the game until you have your Digimon party running with you on the map (when the game send you to the Digimon Lab if you are creating a new game).
-* While the game was running, double-click the "digivice.exe".
-* Allow Windows to run the "digivice.exe" if it asks for permission.
-* If everything was right, the Digivice window will open working correctly.
+1. Set up Duckstation so you can run a game.
+2. Go to **Settings → Advanced → Interface Settings** and enable **Show Debug Menu**.
+3. A **Debugging** menu will appear. Open it.
+4. Enable **Export Memory Shared**.
+5. Download the latest Digivice from the **Releases** tab and extract the ZIP into its own folder.
+6. Start Digimon World 2003 in Duckstation.
+7. Play until your Digimon party is with you on the map (on a new game, after you're sent to the Digimon Lab).
+8. With the game running, double-click `digivice.exe`.
+9. Allow Windows to run it if prompted.
+10. If everything is set up correctly, the Digivice window should open and work.
 
 ## Reference Data Credits
 
-To build this, I used public that from the game that is available along many links around the web. Below you can see the original sources, if you want.
-Nothing that I develop would be possible without those people that grinded all those information in the past. So, thanks for all of them.
+This project uses public game data from sources across the web. The originals are listed below if you want to explore them.
 
-- **EXP Tables for Digimon**: Data extracted from GameFAQs thread by user Mehdi. [Link here](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/64473556)
-- **Digivolving Requirements**: Data extracted from GameFAQs Digimon World 3 FAQ by Med Jai. [Link here](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/72629)
-- **Digimon World 3 Enemies List**: [Fandom Wiki](https://digimon.fandom.com/wiki/Digimon_World_3/Enemy)
-- **Digimon World 3 Detailed Enemy Stats**: [GameFAQs Guide](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/66315)
-- **DMW3 Tools**: Special thanks to [markisha64/dmw3-tools](https://github.com/markisha64/dmw3-tools) for providing the tools and internal data structures used to cross-reference game mechanics.
-- **Pixelarticons**: [Pixelarticons](https://pixelarticons.com/)
-- **Weather Icons**: [Erik Flowers](https://erikflowers.github.io/weather-icons/)
-- **Digimon World 3 Attributes Mechanics**: [StrategyWiki](https://stratswiki.com/digimon-world-3/game-mechanics/attributes/)
-- **Digimon World 3 Weapons & Shields**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/weapons-shields/)
-- **Digimon World 3 Body Gear**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/body-gear/)
-- **Digimon World 3 Head Gear**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/head-gear/)
-- **Digimon World 3 Accessories**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/accessories/)
-- **Digimon World 3 Stat Discussion**: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/45368300)
-- **GameShark Codes for Digimon World 2003 (PAL VERSION)**: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/80568401)
-- **Digimon World 3 Stat Calculation**: Data for internal stat calculations. [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/62602581)
-- **ENTENDA AS FRAQUEZAS E TOLERÂNCIAS NO DIGIMON WORLD 3**: [Battle Dice](https://www.youtube.com/watch?v=6UbWt7AyHMI)
-- **Digimon World 3 – Item List**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/24593)
-- **Digimon World 3 – FAQ (European)**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/21889)
-- **Digimon World 3 – Guides and FAQs**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/16028-underground-seabed-map)
-- **Digimon World 3 – Detonado Completo (Guia Passo a Passo)**: [revolutionarena](https://revolutionarena.com/pt-br/digimon-world-3-detonado-completo-guia-passo-a-passo/)
-- **Digimon World 3 (PS1 Gameplay Português PT-BR)**: [Dash Games](https://www.youtube.com/watch?v=rW8wxZceOjI&list=PLZDYs951OahD_TT4QUByvOEBTRJE-amAi)
-- **DRI locations**: [NeoSeeker](https://www.neoseeker.com/forums/3546/t1102277-dri-locations/)
-- **Digimon World 3 - Mobius Desert Map**: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/565-mobius-desert-map)
-- **Digivolution Experience Points (DVEXP)**: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/47657837)
+None of this would have been possible without the people who dug up and shared that information. Thank you all.
+
+- **Experience levels** *by Mehdi*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/64473556)
+- **Digimon World 3 – Digivolution Guide** *by dudeice997*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/72629)
+- **Digimon World 3/Enemy**: [DigimonWiki](https://digimon.fandom.com/wiki/Digimon_World_3/Enemy)
+- **Digimon World 3 – Bestiary** *by TheFulgorah*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/66315)
+- **dmw3-tools** *by markisha64* [GitHub](https://github.com/markisha64/dmw3-tools)
+- **Attributes**: [StratsWiki](https://stratswiki.com/digimon-world-3/game-mechanics/attributes/)
+- **All Weapons & Shields**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/weapons-shields/)
+- **Body Gear**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/body-gear/)
+- **Head Gear**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/head-gear/)
+- **Accessories**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/accessories/)
+- **GameShark Codes for Digimon World 2003 (PAL VERSION)** *by Iamhim*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/80568401)
+- **Digimon World 2003 PAL VERSION GAMESHARK CODES (CONVERTED)** *by splakappa*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/62602581)
+- **ENTENDA AS FRAQUEZAS E TOLERÂNCIAS NO DIGIMON WORLD 3** *by Battle Dice*: [YouTube](https://www.youtube.com/watch?v=6UbWt7AyHMI)
+- **Digimon World 3 – Item List** *by Med_Jai*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/24593)
+- **Digimon World 3 – FAQ (European)** *by Mykas0*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/21889)
+- **Digimon World 3 – Guides and FAQs** *by nick1n*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/16028-underground-seabed-map)
+- **Digimon World 3 – Detonado Completo (Guia Passo a Passo)** *by Markus Norat*: [revolutionarena](https://revolutionarena.com/pt-br/digimon-world-3-detonado-completo-guia-passo-a-passo/)
+- **Digimon World 3 (PS1 Gameplay Português PT-BR)** *by DashGames*: [YouTube](https://www.youtube.com/watch?v=rW8wxZceOjI&list=PLZDYs951OahD_TT4QUByvOEBTRJE-amAi)
+- **DRI locations** *by rentz14*: [NeoSeeker](https://www.neoseeker.com/forums/3546/t1102277-dri-locations/)
+- **Digimon World 3 – Guides and FAQs** *by HRahman*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/565-mobius-desert-map)
+- **Digivolution Experience Points (DVEXP)** *by Rob01m*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/47657837)
