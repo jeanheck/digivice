@@ -103,6 +103,8 @@ None of this would have been possible without the people who dug up and shared t
 
 Below are the links to where the Digimon images were taken from, as well as the names of the users who posted the respective images (some of them ara Bandai Official Arts).
 
+### Enemies
+
 - **Airdramon(Gold)** *by ElissabethHaser* [Deviant Art](https://www.deviantart.com/elissabethhaser/art/Airdramon-Gold-World-3-1001557156)
 - **Airdramon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Airdramon/Galeria?file=Airdramon_b.jpg)
 - **Andromon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Andromon/Galeria?file=Andromon_b.jpg)
@@ -164,3 +166,48 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Yanmamon(Green)** *by me (using the Yanmamon image as base, only changing the colors to green tones)*
 - **Yanmamon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Yanmamon?file=Yanmamon_b.jpg)
 - **Zanbamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Zanbamon?file=Zanbamon_b.jpg)
+
+### Digievolutions
+
+- **Angemon** *by G-SANtos* [Digimon Wiki](https://digimon.fandom.com/wiki/Angemon?file=Angemon_b.jpg)
+- **Angewomon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Angewomon/Galeria?file=Angewomon_b.jpg)
+- **Armormon** *by Chimera-gui* [Digimon Wiki](https://digimon.fandom.com/wiki/Armormon?file=Armormon_b.jpg)
+- **Beelzemon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Beelzemon?file=Beelzemon+b.jpg)
+- **BK WarGreymon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/BlackWarGreymon?file=BlackWarGreymon_b.jpg)
+- **Cannondramon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Cannondramon/Galeria?file=Cannondramon_b.jpg)
+- **Devimon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Devimon?file=Devimon+b.jpg)
+- **Diaboromon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Diablomon?file=Diablomon_b.jpg)
+- **Digitamamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Digitamamon?file=Digitamamon_b.jpg)
+- **Dinohumon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Dinohumon?file=Dinohumon_b.jpg)
+- **ExVeemon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/ExVeemon?file=ExVeemon_b.jpg)
+- **Gallantmon** *by Lanate* [Digimon Wiki](https://digimon.fandom.com/wiki/Gallantmon?file=Gallantmon+b.jpg)
+- **GranKuwagamon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/GranKuwagamon?file=GranKuwagamon_b.jpg)
+- **GrapLeomon** *by Alfius* [Digimon Wiki](https://digimon.fandom.com/wiki/GrapLeomon?file=GrapLeomon_b.jpg)
+- **Greymon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Greymon?file=Greymon_b.jpg)
+- **Grizzlymon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Grizzlymon?file=Grizzlymon_b.jpg)
+- **Growlmon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Growlmon?file=Growlmon_b.jpg)
+- **Guardiangemon** *by Magnaillusion CM* [NeoSeeker](https://digimon.neoseeker.com/wiki/File:Slashangemon.jpg)
+- **Hookmon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Hookmon?file=Hookmon_b.jpg)
+- **Imperialdramon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Imperialdramon:_Dragon_Mode?file=Imperialdramon_Dragon_Mode_b.jpg)
+- **Imperialdramon-F** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Imperialdramon:_Fighter_Mode?file=Imperialdramon_Fighter_Mode_b.jpg)
+- **Imperialdramon-P** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Imperialdramon:_Paladin_Mode?file=Imperialdramon_Paladin_Mode_b.jpg)
+- **Kabuterimon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Kabuterimon?file=Kabuterimon_b.jpg)
+- **Kyubimon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Kyubimon?file=Kyubimon_b.jpg)
+- **Kyukimon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Kyukimon?file=Kyukimon_b.jpg)
+- **MaloMyotismon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/MaloMyotismon?file=MaloMyotismon_b.jpg)
+- **Marsmon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Marsmon?file=Marsmon_b.jpg)
+- **MetalGarurumon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/MetalGarurumon?file=MetalGarurumon_b.jpg)
+- **MetalGreymon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/MetalGreymon_(Vaccine)?file=MetalGreymon_%28Vaccine%29_b.jpg)
+- **MetalMamemon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/MetalMamemon?file=MetalMamemon_b.jpg)
+- **Myotismon** *by G-SANtos* [Digimon Wiki](https://digimon.fandom.com/wiki/Myotismon?file=Myotismon_b.jpg)
+- **Omnimon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Omnimon?file=Omnimon_b.jpg)
+- **Paildramon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Paildramon?file=Paildramon_b.jpg)
+- **Phoenixmon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Phoenixmon?file=Phoenixmon_b.jpg)
+- **Rosemon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Rosemon?file=Rosemon_b.jpg)
+- **Sakuyamon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Sakuyamon?file=Sakuyamon_b.jpg)
+- **Seraphimon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Seraphimon?file=Seraphimon_b.jpg)
+- **SkullGreymon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/SkullGreymon?file=SkullGreymon_b.jpg)
+- **Stingmon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Stingmon?file=Stingmon_b.jpg)
+- **Taomon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Taomon?file=Taomon_b.jpg)
+- **WarGreymon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/WarGreymon?file=WarGreymon_b.jpg)
+- **WarGrowlmon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/WarGrowlmon?file=WarGrowlmon_b.jpg)
