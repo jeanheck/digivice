@@ -71,6 +71,17 @@ I don't own any rights to the game or to Digimon. Even the name "Digivice" comes
 9. Allow Windows to run it if prompted.
 10. If everything is set up correctly, the Digivice window should open and work.
 
+## Streaming and recording (OBS)
+
+Digivice works fine as an OBS source, but a couple of Windows quirks trip most people up on their first try.
+
+1. **Open Digivice before you add the source.** OBS only lists windows that are open and *not minimized*. If Digivice is minimized when you create the **Window Capture** source, it simply won't be in the dropdown — there's no error, it's just missing. Restore the window, then reopen the dropdown.
+2. **Don't minimize it during the stream.** Windows stops drawing minimized windows, so the capture freezes on the last frame or goes black. Move Digivice to a second monitor or leave it behind another window instead.
+3. **If the capture is black, change the capture method.** In the source properties, set **Capture Method** to **Windows 10 (1903 and up)**. Digivice's interface is GPU-accelerated, and the older BitBlt method can't read it.
+4. **Set Window Match Priority** to **Match title, otherwise find window of same executable**, so the source reconnects on its own the next time you open Digivice.
+
+**Game Capture will not work** with Digivice, since it hooks Direct3D/OpenGL directly. Use **Window Capture** or **Display Capture**.
+
 ## Reference data credits
 
 This project uses public game data from sources across the web. The originals are listed below if you want to explore them.
