@@ -16,7 +16,7 @@ It reads the PS1 memory Duckstation shares and updates in real time as you play.
 
 It's the companion you wished you had when you first walked through Asuka Server.
 
-[![Digivice 2.0 (Latest major release)](https://img.youtube.com/vi/a_r7qz0TodQ/hqdefault.jpg)](https://www.youtube.com/watch?v=a_r7qz0TodQ)
+[![Digivice 3.0.0 (Latest major release)](https://img.youtube.com/vi/a_r7qz0TodQ/hqdefault.jpg)](https://www.youtube.com/watch?v=a_r7qz0TodQ)
 
 ## The current state
 
