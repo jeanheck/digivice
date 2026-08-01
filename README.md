@@ -12,16 +12,15 @@ Digimon World 2003 hides a lot behind menus and guesswork. Digivice is a second 
 - Have tools to help you move around in the Seabed or Mobius Desert
 - And more — the details the game makes hard to see, kept beside the game itself
 
-It reads the PS1 memory Duckstation shares and updates in real time as you play.
-
 It's the companion you wished you had when you first walked through Asuka Server.
+
+You can see more in the video below:
 
 [![Digivice 3.0.0 (Latest major release)](https://img.youtube.com/vi/a_r7qz0TodQ/hqdefault.jpg)](https://www.youtube.com/watch?v=a_r7qz0TodQ)
 
 ## The current state
 
-**Right now, Digivice only fully supports the game up to the West Sector of Asuka Server** (the Third part of the story). The main quest, map enemies, and related data are only complete through this sector.
-
+**Right now, Digivice only fully supports the game up to the West Sector of Asuka Server** (the Third part of the story). The main quest, map enemies, and related data are only complete through this sector.<br>
 Past that point, many features will still work, but others will be missing. I'll fill in the next areas in future updates.
 
 ## Roadmap
@@ -47,10 +46,8 @@ A major step forward for anyone playing through the main quest.
 
 ## Before you continue
 
-**This only supports Digimon World 2003. It will not work on Digimon World 3.**
-
-Game data here comes from public sources on the web (see Reference Data Credits below). You're free to reuse any of it in your own projects.
-
+**This only supports Digimon World 2003. It will not work on Digimon World 3.**<br>
+Game data here comes from public sources on the web (see Reference Data Credits below). You're free to reuse any of it in your own projects.<br>
 I don't own any rights to the game or to Digimon. Even the name "Digivice" comes from that universe. **All copyrights belong to their respective owners.** This is a study project — learning combined with a game that marked my childhood.
 
 ## Requirements
