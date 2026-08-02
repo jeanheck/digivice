@@ -196,8 +196,8 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 | Typos na camada Memory | ~~`Wisdow` / `Equipaments`~~ → `Wisdom` / `Equipments` alinhados ao Domain (**feito**) |
 | Arquivo ≠ tipo | ~~`AuctionEntryAddresses.cs`~~ → `AuctionAddresses.cs` (**feito**) |
 | Pasta vazia | ~~`Domain/Shared/`~~ — já inexistente (**feito**) |
-| `Event.Payload` como `object` | Perde tipagem; consumers fazem cast |
-| `IDTO` marker vazio | Só constraint genérica; sem contrato real |
+| `Event.Payload` como `object` | ~~`object`~~ → `IDTO` + `DtoRuntimeTypeJsonConverter` (serializa tipo runtime; evita `payload: {}`) (**feito**) |
+| `IDTO` marker vazio | Continua marker/`where T : IDTO`; tipagem do envelope fechada via `Event.Payload : IDTO` |
 | Equals/GetHashCode manuais em records com `List<T>` | Necessário e bem feito; risco se um model novo esquecer (diff silencioso) |
 
 ### 5.4. Cheiros e bugs de qualidade
@@ -369,6 +369,7 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | P2-1 | Collection expressions Converters/Diffing | Differs/`StateEventFactory`: `List<T> = []`; Converters: `.ToList()` mantido (`Optional<List<T>>`) |
 | P2-3 | Unificar logging `ILogger<T>` | `GameLoopService`, `MemoryReader`, `DuckstationConnector`; converters/block reader + Program ficam com Serilog estático |
 | P2-9 | Typos Memory `Wisdow` / `Equipaments` | `Wisdom` / `Equipments` em Addresses, Resources, JSON e testes; Assembler sem bridge de typo |
+| P2-6 | `Event.Payload` tipado / `IDTO` | `Payload` como `IDTO` + `DtoRuntimeTypeJsonConverter` (preserva JSON SignalR do tipo runtime) |
 
 ### 11.2 Adiado
 
@@ -388,10 +389,9 @@ Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `Allow
 
 | # | ID | Achado | Esforço relativo |
 |---|----|--------|------------------|
-| 1 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
-| 2 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
-| 3 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
-| 4 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
+| 1 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
+| 2 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
+| 3 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
 
 ---
 
@@ -428,7 +428,7 @@ Assemblers/Loaders ok com collection expressions. Differs/`StateEventFactory`: `
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 4.)
+O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 3.)
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
@@ -442,7 +442,7 @@ Após a triagem, Information em Development, Warnings no fail-soft, `Features:De
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (`Event.Payload` tipado / `IDTO`).
+Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (helper anti-boilerplate nos Differs).
 
 Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
@@ -472,4 +472,4 @@ Camadas de implementação Windows acopladas por design: `WindowsProcessProvider
 
 ---
 
-*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (`Event.Payload` tipado / `IDTO`). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (helper anti-boilerplate nos Differs). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
