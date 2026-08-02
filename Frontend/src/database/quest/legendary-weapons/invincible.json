@@ -1,27 +1,27 @@
 {
-    "id": "invincible",
-    "requisites": [
-        {
-            "id": "seiryuLeader"
-        }
-    ],
-    "steps": {
-        "1": {
-            "location": "022B",
-            "coordinates": {
-                "x": 90.5,
-                "y": 38.5
-            },
-            "zoomedLocations": [
-                {
-                    "location": "022B",
-                    "coordinates": {
-                        "x": 73,
-                        "y": 22
-                    }
-                }
-            ],
-            "requisites": []
-        }
+  "id": "invincible",
+  "requisites": [
+    {
+      "id": "seiryuLeader"
     }
+  ],
+  "steps": {
+    "1": {
+      "location": "022B",
+      "coordinates": {
+        "x": 90.5,
+        "y": 38.5
+      },
+      "zoomedLocations": [
+        {
+          "location": "022B",
+          "coordinates": {
+            "x": 73,
+            "y": 22
+          }
+        }
+      ],
+      "requisites": []
+    }
+  }
 }

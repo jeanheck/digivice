@@ -25,12 +25,7 @@ const closeModal = () => {
 </script>
 
 <template>
-  <Modal
-    :is-open="isOpen"
-    max-width="max-w-lg"
-    max-height="h-[85vh] max-h-200"
-    @close="closeModal"
-  >
+  <Modal :is-open="isOpen" max-width="max-w-lg" max-height="h-[85vh] max-h-200" @close="closeModal">
     <template #header>
       <h2 class="text-white font-bold tracking-widest drop-shadow">
         {{ $t("auction.modalTitle") }}
@@ -41,15 +36,13 @@ const closeModal = () => {
       <AuctionCurrent />
 
       <section class="space-y-2">
-        <h3 class="text-xs font-bold uppercase tracking-wide text-gray-400 border-b border-gray-700/40 pb-1">
+        <h3
+          class="text-xs font-bold uppercase tracking-wide text-gray-400 border-b border-gray-700/40 pb-1"
+        >
           {{ $t("auction.historySubtitle") }}
         </h3>
 
-        <Auction
-          v-for="auction in auctions"
-          :key="auction.id"
-          :auction="auction"
-        />
+        <Auction v-for="auction in auctions" :key="auction.id" :auction="auction" />
       </section>
     </div>
   </Modal>

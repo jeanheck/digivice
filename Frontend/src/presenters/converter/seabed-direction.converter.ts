@@ -4,7 +4,10 @@ import type { SeabedDirectionRouteSegmentViewModel } from "@/viewmodels/seabed-m
 import type { SeabedDirectionViewModel } from "@/viewmodels/seabed-modal/seabed-direction.viewmodel";
 
 export class SeabedDirectionConverter {
-  public static convert(routeId: string, seabedDirectionRaw: SeabedDirectionRaw): SeabedDirectionViewModel {
+  public static convert(
+    routeId: string,
+    seabedDirectionRaw: SeabedDirectionRaw,
+  ): SeabedDirectionViewModel {
     const docks: SeabedDirectionDockViewModel[] = seabedDirectionRaw.docks.map((dockRaw) => {
       return {
         location: dockRaw.location,
@@ -23,7 +26,7 @@ export class SeabedDirectionConverter {
   }
 
   private static buildSegments(
-    docks: SeabedDirectionDockViewModel[]
+    docks: SeabedDirectionDockViewModel[],
   ): SeabedDirectionRouteSegmentViewModel[] {
     const segments: SeabedDirectionRouteSegmentViewModel[] = [];
 

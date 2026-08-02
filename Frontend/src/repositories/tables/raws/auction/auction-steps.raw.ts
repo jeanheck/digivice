@@ -1,4 +1,4 @@
 export interface AuctionStepsRaw {
-    startsWhenComplete: number;
-    endsWhenComplete: number;
+  startsWhenComplete: number;
+  endsWhenComplete: number;
 }

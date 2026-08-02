@@ -1,10 +1,10 @@
 {
-    "id": "sniperShield",
-    "equipmentId": "282",
-    "steps": {
-        "startsWhenComplete": 28,
-        "endsWhenComplete": 34
-    },
-    "price": 1600,
-    "resale": 11000
+  "id": "sniperShield",
+  "equipmentId": "282",
+  "steps": {
+    "startsWhenComplete": 28,
+    "endsWhenComplete": 34
+  },
+  "price": 1600,
+  "resale": 11000
 }

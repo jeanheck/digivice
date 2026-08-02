@@ -27,13 +27,19 @@ const scrollSelectedNodeIntoView = (digievolutionId: number) => {
     return;
   }
 
-  const nodeElement = container.querySelector(`[data-node-id="${digievolutionId}"]`) as HTMLElement | null;
+  const nodeElement = container.querySelector(
+    `[data-node-id="${digievolutionId}"]`,
+  ) as HTMLElement | null;
   if (!nodeElement) {
     return;
   }
 
   const elementTopInContainer = (element: HTMLElement) => {
-    return element.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
+    return (
+      element.getBoundingClientRect().top -
+      container.getBoundingClientRect().top +
+      container.scrollTop
+    );
   };
 
   const nodeTop = elementTopInContainer(nodeElement);
@@ -52,9 +58,10 @@ const scrollSelectedNodeIntoView = (digievolutionId: number) => {
   const familyRow = nodeElement.closest(".family-row");
   if (familyRow) {
     const nextSibling = familyRow.nextElementSibling;
-    const familySeparator = nextSibling instanceof HTMLElement && nextSibling.classList.contains("family-separator")
-      ? nextSibling
-      : null;
+    const familySeparator =
+      nextSibling instanceof HTMLElement && nextSibling.classList.contains("family-separator")
+        ? nextSibling
+        : null;
 
     if (familySeparator) {
       const separatorBottom = elementTopInContainer(familySeparator) + familySeparator.offsetHeight;
@@ -65,7 +72,10 @@ const scrollSelectedNodeIntoView = (digievolutionId: number) => {
     }
   }
 
-  targetScrollTop = Math.max(0, Math.min(targetScrollTop, container.scrollHeight - container.clientHeight));
+  targetScrollTop = Math.max(
+    0,
+    Math.min(targetScrollTop, container.scrollHeight - container.clientHeight),
+  );
 
   if (Math.abs(targetScrollTop - container.scrollTop) < 1) {
     return;
@@ -74,15 +84,18 @@ const scrollSelectedNodeIntoView = (digievolutionId: number) => {
   container.scrollTo({ top: targetScrollTop, behavior: "smooth" });
 };
 
-watch(() => props.selectedDigievolutionId, (digievolutionId) => {
-  if (digievolutionId === undefined) {
-    return;
-  }
+watch(
+  () => props.selectedDigievolutionId,
+  (digievolutionId) => {
+    if (digievolutionId === undefined) {
+      return;
+    }
 
-  nextTick(() => {
-    scrollSelectedNodeIntoView(digievolutionId);
-  });
-});
+    nextTick(() => {
+      scrollSelectedNodeIntoView(digievolutionId);
+    });
+  },
+);
 
 const hasBranching = (family: FamilyViewModel): boolean => {
   return family.nodesBeforeFork.length > 0 && family.branchs.length > 1;

@@ -1,6 +1,5 @@
-
 export class DigievolutionsConverter {
-    /*public static convert(digievolutions: DigievolutionSlotDTO[] | null): DigievolutionSlot[] {
+  /*public static convert(digievolutions: DigievolutionSlotDTO[] | null): DigievolutionSlot[] {
         const result: DigievolutionSlot[] = Array.from({ length: 8 }, (_, i) => ({
             index: i,
             digievolutionId: 0,

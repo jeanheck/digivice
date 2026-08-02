@@ -14,12 +14,11 @@ export class EquipmentRepository {
       const equipmentRaw = this.equipmentTable[equipmentId];
       return equipmentRaw
         ? equipmentRaw
-        : {
+        : ({
             type: "Unknown Equipment",
             attributes: [],
             equipableDigimon: [],
-          } as EquipmentRaw;
-        ;
+          } as EquipmentRaw);
     });
   }
 }

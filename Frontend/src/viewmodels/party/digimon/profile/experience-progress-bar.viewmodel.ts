@@ -1,4 +1,4 @@
 export interface ExperienceProgressBarViewModel {
-    maxValue: number;
-    percentage: number;
+  maxValue: number;
+  percentage: number;
 }

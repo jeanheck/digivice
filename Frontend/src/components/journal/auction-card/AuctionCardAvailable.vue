@@ -16,7 +16,9 @@ const { t } = useI18n();
     <div class="absolute inset-0 bg-cyan-500/10 pointer-events-none" />
 
     <div class="flex items-center justify-between mb-1 relative z-10">
-      <span class="font-bold truncate transition-colors text-xs text-cyan-300 group-hover:text-cyan-200">
+      <span
+        class="font-bold truncate transition-colors text-xs text-cyan-300 group-hover:text-cyan-200"
+      >
         {{ t("auction.cardActiveTitle") }}
       </span>
 

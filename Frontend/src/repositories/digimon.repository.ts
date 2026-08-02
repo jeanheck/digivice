@@ -8,20 +8,24 @@ import type { DigimonDigievolutionRaw } from "./tables/raws/digimon/digimon-digi
 import type { DigimonDigievolutionRequirementRaw } from "./tables/raws/digimon/digimon-digievolution-requirement.raw";
 
 export class DigimonRepository {
-    private static readonly digimonNameTable = DigimonNameJson as DigimonNameTable;
-    private static readonly digimonExperienceTable = DigimonExperienceJson as DigimonExperienceTable;
-    private static readonly digimonDigievolutionTable = DigimonDigievolutionJson as DigimonDigievolutionTable;
+  private static readonly digimonNameTable = DigimonNameJson as DigimonNameTable;
+  private static readonly digimonExperienceTable = DigimonExperienceJson as DigimonExperienceTable;
+  private static readonly digimonDigievolutionTable =
+    DigimonDigievolutionJson as DigimonDigievolutionTable;
 
-    public static getRequiredExperienceForLevel(id: number, level: number): number {
-        return this.digimonExperienceTable[id]![String(level)]!;
-    }
-    public static getNameById(id: number): string {
-        return this.digimonNameTable[id]!;
-    }
-    public static getDigievolutionsById(id: number): DigimonDigievolutionRaw {
-        return this.digimonDigievolutionTable[id]!;
-    }
-    public static getDigievolutionRequirements(digimonId: number, digievolutionId: number): DigimonDigievolutionRequirementRaw[] {
-        return this.digimonDigievolutionTable[digimonId]![String(digievolutionId)]!;
-    }
+  public static getRequiredExperienceForLevel(id: number, level: number): number {
+    return this.digimonExperienceTable[id]![String(level)]!;
+  }
+  public static getNameById(id: number): string {
+    return this.digimonNameTable[id]!;
+  }
+  public static getDigievolutionsById(id: number): DigimonDigievolutionRaw {
+    return this.digimonDigievolutionTable[id]!;
+  }
+  public static getDigievolutionRequirements(
+    digimonId: number,
+    digievolutionId: number,
+  ): DigimonDigievolutionRequirementRaw[] {
+    return this.digimonDigievolutionTable[digimonId]![String(digievolutionId)]!;
+  }
 }

@@ -17,11 +17,7 @@ const emit = defineEmits<{
 
 <template>
   <div class="family-row custom-scroll">
-    <div
-      v-for="(branch, branchIndex) in branchs"
-      :key="branchIndex"
-      class="branch-row"
-    >
+    <div v-for="(branch, branchIndex) in branchs" :key="branchIndex" class="branch-row">
       <Branch
         :nodes="branch"
         :digimon="digimon"

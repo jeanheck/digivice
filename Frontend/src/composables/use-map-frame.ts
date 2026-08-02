@@ -10,7 +10,7 @@ export function useMapFrame(imageUrl: Ref<string | null> | ComputedRef<string | 
     }
 
     return Math.round(
-      MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width)
+      MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width),
     );
   });
 

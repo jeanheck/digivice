@@ -2,8 +2,8 @@
 import { computed, inject } from "vue";
 import type { QuestCardVariant, QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import {
-    getJournalSectionPalette,
-    journalSectionPaletteKey,
+  getJournalSectionPalette,
+  journalSectionPaletteKey,
 } from "@/components/journal/journal-section-palette";
 
 const props = defineProps<{
@@ -113,22 +113,23 @@ const onClick = () => {
     />
 
     <div class="flex items-center justify-between mb-1 relative z-10">
-      <span
-        class="font-bold truncate transition-colors"
-        :class="[titleSizeClass, titleClass]"
-      >
+      <span class="font-bold truncate transition-colors" :class="[titleSizeClass, titleClass]">
         {{ $t(`${quest.id}.title`) }}
       </span>
 
       <span v-if="quest.isDone" :class="doneIconClass">✔</span>
-      <span v-else-if="!isMainDisplayMode && quest.isUnavailable" class="text-xs shrink-0 ml-2">🚫</span>
+      <span v-else-if="!isMainDisplayMode && quest.isUnavailable" class="text-xs shrink-0 ml-2"
+        >🚫</span
+      >
       <span v-else-if="!isMainDisplayMode && quest.isLocked" class="text-xs shrink-0 ml-2">🔒</span>
       <span v-else-if="!isMainDisplayMode && quest.isNew" class="text-xs shrink-0 ml-2">❕</span>
     </div>
 
     <p
       class="text-gray-400 text-[10px] leading-tight line-clamp-1 relative z-10"
-      :class="{ 'opacity-50': !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable) }"
+      :class="{
+        'opacity-50': !isMainDisplayMode && (quest.isDone || quest.isLocked || quest.isUnavailable),
+      }"
     >
       <template v-if="quest.isDone">
         {{ $t("journal.questCompleted") }}

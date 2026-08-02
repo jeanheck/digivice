@@ -11,31 +11,31 @@ import type { YinYangWandTable } from "@/repositories/tables/auction/yin-yang-wa
 import type { AuctionRaw } from "@/repositories/tables/raws/auction/auction.raw";
 
 export class AuctionRepository {
-    private static readonly divineBarrierTable = DivineBarrierJson as DivineBarrierTable;
-    private static readonly hazardShieldTable = HazardShieldJson as HazardShieldTable;
-    private static readonly sniperShieldTable = SniperShieldJson as SniperShieldTable;
-    private static readonly dramonShieldTable = DramonShieldJson as DramonShieldTable;
-    private static readonly yingYangWandTable = YingYangWandJson as YinYangWandTable;
+  private static readonly divineBarrierTable = DivineBarrierJson as DivineBarrierTable;
+  private static readonly hazardShieldTable = HazardShieldJson as HazardShieldTable;
+  private static readonly sniperShieldTable = SniperShieldJson as SniperShieldTable;
+  private static readonly dramonShieldTable = DramonShieldJson as DramonShieldTable;
+  private static readonly yingYangWandTable = YingYangWandJson as YinYangWandTable;
 
-    public static getAuctions(): AuctionRaw[] {
-        return [
-            this.divineBarrierTable,
-            this.hazardShieldTable,
-            this.sniperShieldTable,
-            this.dramonShieldTable,
-            this.yingYangWandTable,
-        ];
+  public static getAuctions(): AuctionRaw[] {
+    return [
+      this.divineBarrierTable,
+      this.hazardShieldTable,
+      this.sniperShieldTable,
+      this.dramonShieldTable,
+      this.yingYangWandTable,
+    ];
+  }
+
+  public static getAuctionById(auctionId: string): AuctionRaw | null {
+    const auctionRaw = this.getAuctions().find((auction) => {
+      return auction.id === auctionId;
+    });
+
+    if (auctionRaw === undefined) {
+      return null;
     }
 
-    public static getAuctionById(auctionId: string): AuctionRaw | null {
-        const auctionRaw = this.getAuctions().find((auction) => {
-            return auction.id === auctionId;
-        });
-
-        if (auctionRaw === undefined) {
-            return null;
-        }
-
-        return auctionRaw;
-    }
+    return auctionRaw;
+  }
 }

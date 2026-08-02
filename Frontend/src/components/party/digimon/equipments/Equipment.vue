@@ -40,17 +40,21 @@ function onMouseEnter(event: MouseEvent): void {
 
 <template>
   <div
-    :class="['flex items-center py-1 border-b border-[#0033aa] last:border-0',
-             isEquipped ? 'cursor-help' : '']"
+    :class="[
+      'flex items-center py-1 border-b border-[#0033aa] last:border-0',
+      isEquipped ? 'cursor-help' : '',
+    ]"
     @mouseenter="onMouseEnter"
     @mousemove="(event) => emit('moveTooltip', event)"
     @mouseleave="emit('hideTooltip')"
   >
     <span
       class="w-full truncate shadow-text font-bold text-center"
-      :class="isEquipped
-        ? 'text-[10px] min-[1366px]:text-xs tracking-widest text-[#0077ff]'
-        : 'text-gray-400 text-[10px] min-[1366px]:text-xs'"
+      :class="
+        isEquipped
+          ? 'text-[10px] min-[1366px]:text-xs tracking-widest text-[#0077ff]'
+          : 'text-gray-400 text-[10px] min-[1366px]:text-xs'
+      "
     >
       {{ displayText }}
     </span>

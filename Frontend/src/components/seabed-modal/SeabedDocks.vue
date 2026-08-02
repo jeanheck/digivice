@@ -65,10 +65,7 @@ function onSelectDock(locationId: string): void {
         @route-leave="onRouteLeave"
       />
 
-      <template
-        v-for="route in routes"
-        :key="route.id"
-      >
+      <template v-for="route in routes" :key="route.id">
         <SeabedDockMarker
           v-for="dock in route.docks"
           :key="dock.location"
@@ -82,10 +79,7 @@ function onSelectDock(locationId: string): void {
       </template>
 
       <div class="absolute inset-0 z-20 pointer-events-none">
-        <template
-          v-for="route in routes"
-          :key="`label-${route.id}`"
-        >
+        <template v-for="route in routes" :key="`label-${route.id}`">
           <template v-if="isRouteHovered(route.id)">
             <SeabedDockLabel
               v-for="dock in route.docks"

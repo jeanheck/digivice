@@ -43,8 +43,5 @@ function onMouseLeave(): void {
     ⚓
   </button>
 
-  <SeabedModal
-    :is-open="isSeabedModalOpen"
-    @close="closeSeabedModal"
-  />
+  <SeabedModal :is-open="isSeabedModalOpen" @close="closeSeabedModal" />
 </template>

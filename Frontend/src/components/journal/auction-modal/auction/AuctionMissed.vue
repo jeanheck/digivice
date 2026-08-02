@@ -7,7 +7,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="p-3 rounded border relative overflow-hidden border-rose-900/40 bg-[#1a0a0f] opacity-70">
+  <div
+    class="p-3 rounded border relative overflow-hidden border-rose-900/40 bg-[#1a0a0f] opacity-70"
+  >
     <div class="flex items-center justify-between mb-1 relative z-10">
       <span class="font-bold text-xs truncate text-rose-300/80">
         {{ $t(`equipments.${auction.equipmentId}.name`) }}

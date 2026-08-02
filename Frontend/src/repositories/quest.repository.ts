@@ -35,49 +35,49 @@ import type { FolderBagTable } from "@/repositories/tables/quest/side-quest/fold
 import type { QuestRaw } from "@/repositories/tables/raws/quest/quest.raw";
 
 export class QuestRepository {
-    private static readonly mainQuestTable = MainQuestJson as MainQuestTable;
-    private static readonly eternallyTable = EternallyJson as EternallyTable;
-    private static readonly invincibleTable = InvincibleJson as InvincibleTable;
-    private static readonly muramasaTable = MuramasaJson as MuramasaTable;
-    private static readonly superNovaTable = SuperNovaJson as SuperNovaTable;
-    private static readonly punishmentTable = PunishmentJson as PunishmentTable;
-    private static readonly driAgentGuilmonTable = DriAgentGuilmonJson as DriAgentGuilmonTable;
-    private static readonly driAgentAgumonTable = DriAgentAgumonJson as DriAgentAgumonTable;
-    private static readonly driAgentVeemonTable = DriAgentVeemonJson as DriAgentVeemonTable;
-    private static readonly driAgentKumamonTable = DriAgentKumamonJson as DriAgentKumamonTable;
-    private static readonly driAgentMonmonTable = DriAgentMonmonJson as DriAgentMonmonTable;
-    private static readonly driAgentKotemonTable = DriAgentKotemonJson as DriAgentKotemonTable;
-    private static readonly driAgentRenamonTable = DriAgentRenamonJson as DriAgentRenamonTable;
-    private static readonly driAgentPatamonTable = DriAgentPatamonJson as DriAgentPatamonTable;
-    private static readonly treeBootsTable = TreeBootsJson as TreeBootsTable;
-    private static readonly fishingPoleTable = FishingPoleJson as FishingPoleTable;
-    private static readonly folderBagTable = FolderBagJson as FolderBagTable;
+  private static readonly mainQuestTable = MainQuestJson as MainQuestTable;
+  private static readonly eternallyTable = EternallyJson as EternallyTable;
+  private static readonly invincibleTable = InvincibleJson as InvincibleTable;
+  private static readonly muramasaTable = MuramasaJson as MuramasaTable;
+  private static readonly superNovaTable = SuperNovaJson as SuperNovaTable;
+  private static readonly punishmentTable = PunishmentJson as PunishmentTable;
+  private static readonly driAgentGuilmonTable = DriAgentGuilmonJson as DriAgentGuilmonTable;
+  private static readonly driAgentAgumonTable = DriAgentAgumonJson as DriAgentAgumonTable;
+  private static readonly driAgentVeemonTable = DriAgentVeemonJson as DriAgentVeemonTable;
+  private static readonly driAgentKumamonTable = DriAgentKumamonJson as DriAgentKumamonTable;
+  private static readonly driAgentMonmonTable = DriAgentMonmonJson as DriAgentMonmonTable;
+  private static readonly driAgentKotemonTable = DriAgentKotemonJson as DriAgentKotemonTable;
+  private static readonly driAgentRenamonTable = DriAgentRenamonJson as DriAgentRenamonTable;
+  private static readonly driAgentPatamonTable = DriAgentPatamonJson as DriAgentPatamonTable;
+  private static readonly treeBootsTable = TreeBootsJson as TreeBootsTable;
+  private static readonly fishingPoleTable = FishingPoleJson as FishingPoleTable;
+  private static readonly folderBagTable = FolderBagJson as FolderBagTable;
 
-    public static getMainQuestRaw(): QuestRaw {
-        return this.mainQuestTable;
-    }
-    public static getSideQuestsRaw(): QuestRaw[] {
-        return [this.folderBagTable, this.fishingPoleTable, this.treeBootsTable];
-    }
-    public static getLegendaryWeaponsRaw(): QuestRaw[] {
-        return [
-            this.eternallyTable,
-            this.invincibleTable,
-            this.muramasaTable,
-            this.superNovaTable,
-            this.punishmentTable
-        ];
-    }
-    public static getDriAgentsRaw(): QuestRaw[] {
-        return [
-            this.driAgentAgumonTable,
-            this.driAgentGuilmonTable,
-            this.driAgentPatamonTable,
-            this.driAgentRenamonTable,
-            this.driAgentKotemonTable,
-            this.driAgentKumamonTable,
-            this.driAgentMonmonTable,
-            this.driAgentVeemonTable
-        ];
-    }
+  public static getMainQuestRaw(): QuestRaw {
+    return this.mainQuestTable;
+  }
+  public static getSideQuestsRaw(): QuestRaw[] {
+    return [this.folderBagTable, this.fishingPoleTable, this.treeBootsTable];
+  }
+  public static getLegendaryWeaponsRaw(): QuestRaw[] {
+    return [
+      this.eternallyTable,
+      this.invincibleTable,
+      this.muramasaTable,
+      this.superNovaTable,
+      this.punishmentTable,
+    ];
+  }
+  public static getDriAgentsRaw(): QuestRaw[] {
+    return [
+      this.driAgentAgumonTable,
+      this.driAgentGuilmonTable,
+      this.driAgentPatamonTable,
+      this.driAgentRenamonTable,
+      this.driAgentKotemonTable,
+      this.driAgentKumamonTable,
+      this.driAgentMonmonTable,
+      this.driAgentVeemonTable,
+    ];
+  }
 }

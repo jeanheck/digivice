@@ -14,7 +14,9 @@ export interface LocationRaw {
   dock?: boolean;
 }
 
-export function isLocationEnemyPhaseList(enemies: LocationEnemiesRaw): enemies is LocationEnemyPhaseRaw[] {
+export function isLocationEnemyPhaseList(
+  enemies: LocationEnemiesRaw,
+): enemies is LocationEnemyPhaseRaw[] {
   if (enemies.length === 0) {
     return false;
   }

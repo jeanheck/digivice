@@ -1,4 +1,4 @@
 export interface Vital {
-    current: number;
-    max: number;
+  current: number;
+  max: number;
 }

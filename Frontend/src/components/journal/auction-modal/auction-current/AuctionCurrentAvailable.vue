@@ -27,7 +27,9 @@ const closesWhenText = computed(() => {
 </script>
 
 <template>
-  <div class="p-4 rounded border relative overflow-hidden shrink-0 border-cyan-400/80 bg-[#001a2a] auction-card-active">
+  <div
+    class="p-4 rounded border relative overflow-hidden shrink-0 border-cyan-400/80 bg-[#001a2a] auction-card-active"
+  >
     <div class="absolute inset-0 bg-cyan-500/10 pointer-events-none" />
 
     <div class="relative z-10 space-y-2">
@@ -36,15 +38,10 @@ const closesWhenText = computed(() => {
           {{ $t("auction.currentActiveTitle") }}
         </h3>
 
-        <span class="text-xs shrink-0 text-cyan-300 animate-auction-pulse">
-          ◆
-        </span>
+        <span class="text-xs shrink-0 text-cyan-300 animate-auction-pulse"> ◆ </span>
       </div>
 
-      <p
-        v-if="equipmentName !== null"
-        class="text-[11px] leading-relaxed"
-      >
+      <p v-if="equipmentName !== null" class="text-[11px] leading-relaxed">
         <span class="text-white">{{ $t("auction.currentActiveAcquirePrefix") }}</span>
         <span class="text-cyan-300">&nbsp;{{ equipmentName }}</span>
         <span class="text-white">!</span>
@@ -66,10 +63,7 @@ const closesWhenText = computed(() => {
         </p>
       </div>
 
-      <div
-        v-if="closesWhenText !== null"
-        class="pt-2 border-t border-cyan-400/20"
-      >
+      <div v-if="closesWhenText !== null" class="pt-2 border-t border-cyan-400/20">
         <p class="text-[10px] leading-relaxed">
           <span class="text-white">{{ $t("auction.closesWhenLabel") }}</span>
           <span class="text-cyan-200/80">&nbsp;{{ closesWhenText }}</span>

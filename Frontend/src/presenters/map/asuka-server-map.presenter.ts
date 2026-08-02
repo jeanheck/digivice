@@ -9,7 +9,10 @@ export class AsukaServerMapPresenter {
   private static readonly UNDERGROUND_PATH_LOCATION_ID = "020B";
 
   private static isAsukaSewersSafeZone(locationId: string, previousMapId: string): boolean {
-    return locationId === this.ASUKA_SEWERS_LOCATION_ID && previousMapId === this.UNDERGROUND_PATH_LOCATION_ID;
+    return (
+      locationId === this.ASUKA_SEWERS_LOCATION_ID &&
+      previousMapId === this.UNDERGROUND_PATH_LOCATION_ID
+    );
   }
 
   public static getViewModel(

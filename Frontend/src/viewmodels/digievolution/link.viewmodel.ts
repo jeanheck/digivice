@@ -1,4 +1,4 @@
 export interface LinkViewModel {
-    id: number;
-    name: string;
+  id: number;
+  name: string;
 }

@@ -21,7 +21,9 @@ const locationName = computed(() => {
 <template>
   <div class="w-full flex justify-center shrink-0">
     <div class="map-info-panel-fit text-center">
-      <h4 class="text-xs sm:text-sm font-bold text-white tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight">
+      <h4
+        class="text-xs sm:text-sm font-bold text-white tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight"
+      >
         {{ locationName }}
       </h4>
     </div>

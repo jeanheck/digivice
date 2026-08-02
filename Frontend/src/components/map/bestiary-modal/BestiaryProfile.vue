@@ -38,8 +38,12 @@ const techniqueLabel = computed(() => {
 <template>
   <div class="flex flex-col gap-4 flex-1">
     <div class="flex gap-4">
-      <div class="w-1/2 aspect-square self-start shrink-0 bg-[#000a1a] border border-blue-900/50 rounded flex items-center justify-center shadow-inner relative group overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-linear-to-br from-blue-500/20 to-transparent pointer-events-none"></div>
+      <div
+        class="w-1/2 aspect-square self-start shrink-0 bg-[#000a1a] border border-blue-900/50 rounded flex items-center justify-center shadow-inner relative group overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 opacity-10 bg-linear-to-br from-blue-500/20 to-transparent pointer-events-none"
+        ></div>
         <img
           v-if="enemyImageUrl"
           :src="enemyImageUrl"
@@ -49,14 +53,22 @@ const techniqueLabel = computed(() => {
         <div v-else class="text-4xl opacity-30 select-none">❓</div>
       </div>
 
-      <div class="w-1/2 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5">
+      <div
+        class="w-1/2 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5"
+      >
         <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.specie") }}:</span>
-          <span class="font-bold text-gray-300 capitalize">{{ $t(`species.${enemy.species}`) }}</span>
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.specie") }}:</span
+          >
+          <span class="font-bold text-gray-300 capitalize">{{
+            $t(`species.${enemy.species}`)
+          }}</span>
         </div>
 
         <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.level") }}:</span>
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.level") }}:</span
+          >
           <span class="font-bold text-gray-300">{{ enemy.level }}</span>
         </div>
 
@@ -71,22 +83,33 @@ const techniqueLabel = computed(() => {
         </div>
 
         <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.baseExp") }}:</span>
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.baseExp") }}:</span
+          >
           <span class="font-bold text-gray-300">{{ enemy.exp }}</span>
         </div>
 
         <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.baseBits") }}:</span>
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.baseBits") }}:</span
+          >
           <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
         </div>
 
         <div class="flex items-center justify-between text-[10px]">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.drop") }}:</span>
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.drop") }}:</span
+          >
           <span class="font-bold text-gray-300">{{ dropLabel }}</span>
         </div>
 
-        <div v-if="enemy.boss && enemy.dropId" class="flex items-center justify-between text-[10px]">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">{{ $t("enemy.dropRate") }}:</span>
+        <div
+          v-if="enemy.boss && enemy.dropId"
+          class="flex items-center justify-between text-[10px]"
+        >
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.dropRate") }}:</span
+          >
           <span class="font-bold text-gray-300">100%</span>
         </div>
       </div>
@@ -95,14 +118,18 @@ const techniqueLabel = computed(() => {
     <div class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm h-full">
       <div class="flex flex-col gap-5">
         <div class="flex flex-col gap-1.5">
-          <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{ $t("enemy.regularAttack") }}</span>
+          <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{
+            $t("enemy.regularAttack")
+          }}</span>
           <span class="text-gray-200 text-xs">
             {{ regularAttackLabel }}
           </span>
         </div>
 
         <div class="flex flex-col gap-1.5">
-          <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{ $t("enemy.technique") }}</span>
+          <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{
+            $t("enemy.technique")
+          }}</span>
           <span class="text-gray-200 text-xs">
             {{ techniqueLabel }}
           </span>

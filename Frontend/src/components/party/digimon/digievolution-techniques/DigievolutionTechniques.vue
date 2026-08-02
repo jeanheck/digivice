@@ -32,8 +32,12 @@ const evolutionAvatarUrl = computed(() => {
 
 <template>
   <div class="flex flex-col h-full bg-[#0c0d1b] rounded overflow-hidden relative">
-    <div class="relative flex-none pt-4 px-4 pb-2 flex flex-col items-center justify-center bg-linear-to-b from-[#00051a] to-transparent shrink-0">
-      <div class="relative w-full h-32 bg-linear-to-r from-cyan-950/40 to-[#001533] rounded-lg border border-cyan-800/50 shadow-inner overflow-hidden group">
+    <div
+      class="relative flex-none pt-4 px-4 pb-2 flex flex-col items-center justify-center bg-linear-to-b from-[#00051a] to-transparent shrink-0"
+    >
+      <div
+        class="relative w-full h-32 bg-linear-to-r from-cyan-950/40 to-[#001533] rounded-lg border border-cyan-800/50 shadow-inner overflow-hidden group"
+      >
         <img
           v-if="evolutionAvatarUrl"
           :src="evolutionAvatarUrl"
@@ -41,7 +45,9 @@ const evolutionAvatarUrl = computed(() => {
           :alt="viewModel.evolutionName"
         />
 
-        <h2 class="absolute top-3 left-4 text-lg sm:text-xl font-bold text-white tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10">
+        <h2
+          class="absolute top-3 left-4 text-lg sm:text-xl font-bold text-white tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] z-10"
+        >
           {{ viewModel.evolutionName }}
         </h2>
       </div>
@@ -49,10 +55,7 @@ const evolutionAvatarUrl = computed(() => {
 
     <div class="px-4 pb-4 pt-2 flex-1 flex flex-col gap-4 overflow-y-auto custom-scroll">
       <div v-if="showTreeSections && viewModel.requirementDigievolutions.length" class="shrink-0">
-        <SectionTitle
-          icon="🧬"
-          :label="$t('digievolution.requirementDigievolutions')"
-        />
+        <SectionTitle icon="🧬" :label="$t('digievolution.requirementDigievolutions')" />
         <Links
           :digievolution-links="viewModel.requirementDigievolutions"
           @select-digievolution-id="$emit('select-digievolution-id', $event)"
@@ -60,10 +63,7 @@ const evolutionAvatarUrl = computed(() => {
       </div>
 
       <div class="flex flex-col">
-        <SectionTitle
-          icon="⚔️"
-          :label="$t('digievolution.techniques')"
-        />
+        <SectionTitle icon="⚔️" :label="$t('digievolution.techniques')" />
 
         <div class="flex flex-col gap-1 pr-1">
           <Technique
@@ -82,10 +82,7 @@ const evolutionAvatarUrl = computed(() => {
       </div>
 
       <div v-if="showTreeSections && viewModel.derivativeDigievolutions.length" class="shrink-0">
-        <SectionTitle
-          icon="🧬"
-          :label="$t('digievolution.nextDigievolutions')"
-        />
+        <SectionTitle icon="🧬" :label="$t('digievolution.nextDigievolutions')" />
         <Links
           :digievolution-links="viewModel.derivativeDigievolutions"
           @select-digievolution-id="$emit('select-digievolution-id', $event)"

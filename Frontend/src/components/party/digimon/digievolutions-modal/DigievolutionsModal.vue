@@ -35,11 +35,14 @@ const digimonName = computed(() => {
 
 const selectedDigievolutionId = ref<number | undefined>(undefined);
 
-watch(() => props.isOpen, (open) => {
-  if (open && props.digimon) {
-    selectedDigievolutionId.value = undefined;
-  }
-});
+watch(
+  () => props.isOpen,
+  (open) => {
+    if (open && props.digimon) {
+      selectedDigievolutionId.value = undefined;
+    }
+  },
+);
 
 const handleSelectDigievolutionById = (digievolutionId: number) => {
   selectedDigievolutionId.value = digievolutionId;
@@ -79,7 +82,9 @@ const selectedSearchId = computed(() => {
   >
     <template #header>
       <div class="flex items-center gap-6 flex-1 min-w-0">
-        <h2 class="text-white font-bold tracking-widest drop-shadow flex items-center gap-2 whitespace-nowrap shrink-0">
+        <h2
+          class="text-white font-bold tracking-widest drop-shadow flex items-center gap-2 whitespace-nowrap shrink-0"
+        >
           {{ $t("digievolution.title", { name: digimonName }) }}
         </h2>
 
@@ -104,7 +109,9 @@ const selectedSearchId = computed(() => {
         />
       </div>
 
-      <div class="w-[25%] min-w-100 h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col">
+      <div
+        class="w-[25%] min-w-100 h-full bg-[#000a1a]/60 overflow-y-auto custom-scroll flex flex-col"
+      >
         <div v-if="selectedDigievolutionId !== undefined" class="flex-1 flex flex-col p-1">
           <DigievolutionTechniques
             :digimon-id="digimonId"

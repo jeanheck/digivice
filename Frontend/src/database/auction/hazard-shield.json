@@ -1,10 +1,10 @@
 {
-    "id": "hazardShield",
-    "equipmentId": "287",
-    "steps": {
-        "startsWhenComplete": 15,
-        "endsWhenComplete": 23
-    },
-    "price": 800,
-    "resale": 11000
+  "id": "hazardShield",
+  "equipmentId": "287",
+  "steps": {
+    "startsWhenComplete": 15,
+    "endsWhenComplete": 23
+  },
+  "price": 800,
+  "resale": 11000
 }

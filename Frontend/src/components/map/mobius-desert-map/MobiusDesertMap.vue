@@ -88,10 +88,7 @@ const southExitName = computed(() => {
   <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1 justify-center">
     <div class="flex flex-col items-center gap-2 shrink-0">
       <Location :location-id="locationId" :title-override="locationTitleOverride" />
-      <Enemies
-        :enemy-ids="enemyIds"
-        @open-enemy-modal="emit('open-enemy-modal', $event)"
-      />
+      <Enemies :enemy-ids="enemyIds" @open-enemy-modal="emit('open-enemy-modal', $event)" />
     </div>
   </div>
 </template>

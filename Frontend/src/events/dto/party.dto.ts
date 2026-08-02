@@ -1,5 +1,5 @@
-import type { DigimonSlotDTO } from './parties/digimon-slot.dto';
+import type { DigimonSlotDTO } from "./parties/digimon-slot.dto";
 
 export interface PartyDTO {
-    slots?: DigimonSlotDTO[];
+  slots?: DigimonSlotDTO[];
 }

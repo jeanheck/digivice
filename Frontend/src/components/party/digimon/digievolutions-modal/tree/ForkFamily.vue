@@ -35,11 +35,7 @@ const emit = defineEmits<{
       </div>
 
       <div class="branch-suffixes">
-        <div
-          v-for="(branch, branchIndex) in branchs"
-          :key="branchIndex"
-          class="branch-row"
-        >
+        <div v-for="(branch, branchIndex) in branchs" :key="branchIndex" class="branch-row">
           <Branch
             :nodes="branch"
             :digimon="digimon"

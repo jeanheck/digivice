@@ -58,11 +58,12 @@ const closeBestiaryModal = () => {
       v-else-if="mapViewModel.locationRegion === LocationRegionConstant.mobiusDesert"
       @open-enemy-modal="openBestiaryModal"
     />
-    <AsukaServerMap
-      v-else
-      @open-enemy-modal="openBestiaryModal"
-    />
+    <AsukaServerMap v-else @open-enemy-modal="openBestiaryModal" />
 
-    <BestiaryModal :is-open="isBestiaryModalOpen" :enemy-id="selectedEnemyId" @close="closeBestiaryModal" />
+    <BestiaryModal
+      :is-open="isBestiaryModalOpen"
+      :enemy-id="selectedEnemyId"
+      @close="closeBestiaryModal"
+    />
   </aside>
 </template>

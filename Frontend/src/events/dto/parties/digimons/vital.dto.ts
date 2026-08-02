@@ -1,4 +1,4 @@
 export interface VitalDTO {
-    current?: number;
-    max?: number;
+  current?: number;
+  max?: number;
 }

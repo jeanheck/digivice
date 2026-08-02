@@ -76,7 +76,7 @@ watch(
 
     hide();
     selectedEnemyId.value = null;
-  }
+  },
 );
 
 const enemyImageUrl = computed(() => {
@@ -96,7 +96,9 @@ const enemyImageUrl = computed(() => {
   >
     <template #header>
       <div class="flex items-center gap-6 flex-1 min-w-0">
-        <h2 class="text-white font-bold tracking-widest drop-shadow flex items-center gap-2 whitespace-nowrap shrink-0">
+        <h2
+          class="text-white font-bold tracking-widest drop-shadow flex items-center gap-2 whitespace-nowrap shrink-0"
+        >
           {{ $t("enemy.bestiary") }}
         </h2>
 
@@ -114,7 +116,9 @@ const enemyImageUrl = computed(() => {
       <BestiaryProfile :enemy="enemy" :enemy-image-url="enemyImageUrl" />
 
       <div class="flex-1">
-        <div class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start">
+        <div
+          class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start"
+        >
           <BestiaryAttributes
             :attributes="enemy.attributes"
             @show-stat-key-tooltip="showEnemyStatKeyTooltip"

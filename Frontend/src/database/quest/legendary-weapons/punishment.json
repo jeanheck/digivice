@@ -1,34 +1,34 @@
 {
-    "id": "punishment",
-    "requisites": [
-        {
-            "id": "numemon"
-        }
-    ],
-    "steps": {
-        "1": {
-            "location": "024D",
-            "coordinates": {
-                "x": 18.5,
-                "y": 38
-            },
-            "zoomedLocations": [
-                {
-                    "location": "024D",
-                    "coordinates": {
-                        "x": 78,
-                        "y": 20
-                    }
-                },
-                {
-                    "location": "0252",
-                    "coordinates": {
-                        "x": 73,
-                        "y": 22
-                    }
-                }
-            ],
-            "requisites": []
-        }
+  "id": "punishment",
+  "requisites": [
+    {
+      "id": "numemon"
     }
+  ],
+  "steps": {
+    "1": {
+      "location": "024D",
+      "coordinates": {
+        "x": 18.5,
+        "y": 38
+      },
+      "zoomedLocations": [
+        {
+          "location": "024D",
+          "coordinates": {
+            "x": 78,
+            "y": 20
+          }
+        },
+        {
+          "location": "0252",
+          "coordinates": {
+            "x": 73,
+            "y": 22
+          }
+        }
+      ],
+      "requisites": []
+    }
+  }
 }

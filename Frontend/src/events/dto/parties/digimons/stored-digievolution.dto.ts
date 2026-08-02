@@ -1,4 +1,4 @@
 export interface StoredDigievolutionDTO {
-    digievolutionId?: number;
-    level?: number;
+  digievolutionId?: number;
+  level?: number;
 }

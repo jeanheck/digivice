@@ -102,9 +102,7 @@
   },
   "021C": {
     "imageName": "Control Room",
-    "enemies": [
-      "16"
-    ]
+    "enemies": ["16"]
   },
   "020A": {
     "imageName": "Asuka City - Inn 1F",
@@ -132,17 +130,11 @@
   },
   "021B": {
     "imageName": "Asuka Sewers",
-    "enemies": [
-      "122",
-      "123"
-    ]
+    "enemies": ["122", "123"]
   },
   "021D": {
     "imageName": "Central Park",
-    "enemies": [
-      "71",
-      "72"
-    ],
+    "enemies": ["71", "72"],
     "dock": true
   },
   "021E": {
@@ -150,17 +142,11 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "71",
-          "72"
-        ]
+        "ids": ["71", "72"]
       },
       {
         "lastMainQuestStepDone": 27,
-        "ids": [
-          "72",
-          "85"
-        ]
+        "ids": ["72", "85"]
       }
     ]
   },
@@ -169,19 +155,11 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "74",
-          "76",
-          "77"
-        ]
+        "ids": ["74", "76", "77"]
       },
       {
         "lastMainQuestStepDone": 27,
-        "ids": [
-          "76",
-          "77",
-          "96"
-        ]
+        "ids": ["76", "77", "96"]
       }
     ],
     "dock": true
@@ -191,21 +169,11 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "76",
-          "77",
-          "88",
-          "91"
-        ]
+        "ids": ["76", "77", "88", "91"]
       },
       {
         "lastMainQuestStepDone": 27,
-        "ids": [
-          "76",
-          "77",
-          "96",
-          "107"
-        ]
+        "ids": ["76", "77", "96", "107"]
       }
     ],
     "dock": true
@@ -215,19 +183,11 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "71",
-          "76",
-          "78"
-        ]
+        "ids": ["71", "76", "78"]
       },
       {
         "lastMainQuestStepDone": 27,
-        "ids": [
-          "76",
-          "78",
-          "85"
-        ]
+        "ids": ["76", "78", "85"]
       }
     ]
   },
@@ -236,19 +196,11 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "71",
-          "76",
-          "78"
-        ]
+        "ids": ["71", "76", "78"]
       },
       {
         "lastMainQuestStepDone": 27,
-        "ids": [
-          "78",
-          "94",
-          "82"
-        ]
+        "ids": ["78", "94", "82"]
       }
     ]
   },
@@ -265,18 +217,11 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "81",
-          "82"
-        ]
+        "ids": ["81", "82"]
       },
       {
         "lastMainQuestStepDone": 27,
-        "ids": [
-          "81",
-          "82",
-          "94"
-        ]
+        "ids": ["81", "82", "94"]
       }
     ]
   },
@@ -285,19 +230,11 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "1",
-          "82",
-          "84"
-        ]
+        "ids": ["1", "82", "84"]
       },
       {
         "lastMainQuestStepDone": 27,
-        "ids": [
-          "1",
-          "84",
-          "83"
-        ]
+        "ids": ["1", "84", "83"]
       }
     ]
   },
@@ -306,17 +243,11 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "73",
-          "76"
-        ]
+        "ids": ["73", "76"]
       },
       {
         "lastMainQuestStepDone": 27,
-        "ids": [
-          "73",
-          "103"
-        ]
+        "ids": ["73", "103"]
       }
     ],
     "dock": true
@@ -328,10 +259,7 @@
   },
   "0229": {
     "imageName": "Wind Prairie",
-    "enemies": [
-      "79",
-      "80"
-    ]
+    "enemies": ["79", "80"]
   },
   "0230": {
     "imageName": "Seiryu Tower",
@@ -346,30 +274,18 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "74",
-          "77",
-          "86"
-        ]
+        "ids": ["74", "77", "86"]
       },
       {
         "lastMainQuestStepDone": 27,
-        "ids": [
-          "74",
-          "182"
-        ]
+        "ids": ["74", "182"]
       }
     ],
     "dock": true
   },
   "022B": {
     "imageName": "Tyranno Valley",
-    "enemies": [
-      "2",
-      "87",
-      "88",
-      "89"
-    ]
+    "enemies": ["2", "87", "88", "89"]
   },
   "022C": {
     "imageName": "East Station",
@@ -377,9 +293,7 @@
   },
   "022D": {
     "imageName": "Deeper Crevice",
-    "enemies": [
-      "21"
-    ]
+    "enemies": ["21"]
   },
   "022E": {
     "imageName": "Seiryu City",
@@ -395,27 +309,16 @@
   },
   "0233": {
     "imageName": "Bulk Swamp",
-    "enemies": [
-      "90",
-      "91",
-      "184"
-    ]
+    "enemies": ["90", "91", "184"]
   },
   "0234": {
     "imageName": "Bulk Bridge",
-    "enemies": [
-      "90",
-      "91",
-      "184"
-    ],
+    "enemies": ["90", "91", "184"],
     "dock": true
   },
   "0235": {
     "imageName": "Bios Swamp",
-    "enemies": [
-      "91",
-      "103"
-    ]
+    "enemies": ["91", "103"]
   },
   "0236": {
     "imageName": "Reliability Spot",
@@ -423,11 +326,7 @@
   },
   "0237": {
     "imageName": "Tranquil Swamp",
-    "enemies": [
-      "90",
-      "91",
-      "184"
-    ]
+    "enemies": ["90", "91", "184"]
   },
   "0238": {
     "imageName": "Swamp Inn",
@@ -442,47 +341,26 @@
     "enemies": [
       {
         "lastMainQuestStepDone": 0,
-        "ids": [
-          "90",
-          "91",
-          "128",
-          "184"
-        ]
+        "ids": ["90", "91", "128", "184"]
       },
       {
         "lastMainQuestStepDone": 24,
-        "ids": [
-          "75",
-          "90",
-          "91",
-          "92",
-          "184"
-        ]
+        "ids": ["75", "90", "91", "92", "184"]
       }
     ]
   },
   "023B": {
     "imageName": "Phoenix Bay",
-    "enemies": [
-      "86",
-      "95",
-      "182"
-    ],
+    "enemies": ["86", "95", "182"],
     "dock": true
   },
   "023C": {
     "imageName": "Ether Jungle",
-    "enemies": [
-      "95",
-      "182",
-      "189"
-    ]
+    "enemies": ["95", "182", "189"]
   },
   "023D": {
     "imageName": "South Cape",
-    "enemies": [
-      "96"
-    ],
+    "enemies": ["96"],
     "dock": true
   },
   "023E": {
@@ -500,123 +378,73 @@
   },
   "0241": {
     "imageName": "Suzaku UG Lake",
-    "enemies": [
-      "102"
-    ]
+    "enemies": ["102"]
   },
   "0242": {
     "imageName": "Jungle Shrine",
-    "enemies": [
-      "202"
-    ]
+    "enemies": ["202"]
   },
   "0243": {
     "imageName": "Catacomb",
-    "enemies": [
-      "20",
-      "128"
-    ]
+    "enemies": ["20", "128"]
   },
   "0247": {
     "imageName": "South Badland",
-    "enemies": [
-      "105",
-      "106"
-    ],
+    "enemies": ["105", "106"],
     "dock": true
   },
   "0248": {
     "imageName": "Noise Desert",
-    "enemies": [
-      "191",
-      "185"
-    ]
+    "enemies": ["191", "185"]
   },
   "0249": {
     "imageName": "Pelche Oasis",
-    "enemies": [
-      "185",
-      "191"
-    ]
+    "enemies": ["185", "191"]
   },
   "024A": {
     "imageName": "North Badland W",
-    "enemies": [
-      "104",
-      "107",
-      "186"
-    ]
+    "enemies": ["104", "107", "186"]
   },
   "024B": {
     "imageName": "North Badland E",
-    "enemies": [
-      "105",
-      "106"
-    ],
+    "enemies": ["105", "106"],
     "dock": true
   },
   "024C": {
     "imageName": "Bullet Valley",
-    "enemies": [
-      "104",
-      "107",
-      "186"
-    ]
+    "enemies": ["104", "107", "186"]
   },
   "024D": {
     "imageName": "Dum Dum Factory",
-    "enemies": [
-      "114",
-      "115",
-      "116",
-      "117"
-    ]
+    "enemies": ["114", "115", "116", "117"]
   },
   "024E": {
     "imageName": "Duct Room",
-    "enemies": [
-      "112"
-    ]
+    "enemies": ["112"]
   },
   "024F": {
     "imageName": "Duct Room",
-    "enemies": [
-      "112"
-    ]
+    "enemies": ["112"]
   },
   "0250": {
     "imageName": "Duct Room",
-    "enemies": [
-      "112"
-    ]
+    "enemies": ["112"]
   },
   "0251": {
     "imageName": "Duct Room",
-    "enemies": [
-      "112"
-    ]
+    "enemies": ["112"]
   },
   "0252": {
     "imageName": "Operation Room",
-    "enemies": [
-      "14",
-      "117"
-    ]
+    "enemies": ["14", "117"]
   },
   "0253": {
     "imageName": "Secret Stairs",
-    "enemies": [
-      "112",
-      "117"
-    ]
+    "enemies": ["112", "117"]
   },
   "0254": {
     "imageName": "Sewers",
-    "enemies": [
-      "15",
-      "118",
-      "119"
-    ]
+    "enemies": ["15", "118", "119"]
   },
   "0255": {
     "imageName": "Secret Room",
@@ -624,34 +452,21 @@
   },
   "0257": {
     "imageName": "Noise Desert S",
-    "enemies": [
-      "193"
-    ]
+    "enemies": ["193"]
   },
   "0258": {
     "imageName": "Mobius Desert",
-    "enemies": [
-      "110",
-      "111",
-      "193"
-    ],
+    "enemies": ["110", "111", "193"],
     "region": "mobiusDesert"
   },
   "0259": {
     "imageName": "Mobius Desert 2",
-    "enemies": [
-      "110",
-      "111",
-      "193"
-    ],
+    "enemies": ["110", "111", "193"],
     "region": "mobiusDesert"
   },
   "025A": {
     "imageName": "Mirage Tower",
-    "enemies": [
-      "110",
-      "193"
-    ]
+    "enemies": ["110", "193"]
   },
   "025B": {
     "imageName": "Mirage Hall",

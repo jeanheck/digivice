@@ -14,9 +14,6 @@ const currentAuction = computed(() => {
 </script>
 
 <template>
-  <AuctionCurrentAvailable
-    v-if="currentAuction?.isActive"
-    :current-auction="currentAuction"
-  />
+  <AuctionCurrentAvailable v-if="currentAuction?.isActive" :current-auction="currentAuction" />
   <AuctionCurrentUnavailable v-else />
 </template>

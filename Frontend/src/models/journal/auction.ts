@@ -1,4 +1,4 @@
 export interface Auction {
-    id: string;
-    hasParticipated: boolean;
+  id: string;
+  hasParticipated: boolean;
 }

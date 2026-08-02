@@ -15,7 +15,9 @@ const IMAGE_NAME_BY_LOCATION_ID: Record<string, string> = {
 };
 
 export class MobiusDesertAreaDetailsPresenter {
-  public static getAreaDetails(area: DesertAreaViewModel | null): DesertAreaDetailsViewModel | null {
+  public static getAreaDetails(
+    area: DesertAreaViewModel | null,
+  ): DesertAreaDetailsViewModel | null {
     if (area === null) {
       return null;
     }

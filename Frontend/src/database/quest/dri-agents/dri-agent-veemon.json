@@ -1,85 +1,85 @@
 {
-    "id": "driAgentVeemon",
-    "requisites": [
-        {
-            "id": "partyLevel",
-            "type": "partyLevelRange",
-            "min": 1,
-            "max": 30
-        },
-        {
-            "id": "byakkoLeader"
-        }
-    ],
-    "steps": {
-        "1": {
-            "location": "0225",
-            "coordinates": {
-                "x": 69.5,
-                "y": 37.5
-            },
-            "zoomedLocations": [
-                {
-                    "location": "0225",
-                    "coordinates": {
-                        "x": 93,
-                        "y": 12
-                    }
-                },
-                {
-                    "location": "0226",
-                    "coordinates": {
-                        "x": 23,
-                        "y": 27
-                    }
-                }
-            ],
-            "requisites": []
-        },
-        "2": {
-            "location": "0234",
-            "coordinates": {
-                "x": 79,
-                "y": 73
-            },
-            "zoomedLocations": [
-                {
-                    "location": "0234",
-                    "coordinates": {
-                        "x": 17,
-                        "y": 26
-                    }
-                }
-            ],
-            "requisites": []
-        },
-        "3": {
-            "location": "0225",
-            "coordinates": {
-                "x": 69.5,
-                "y": 37.5
-            },
-            "zoomedLocations": [
-                {
-                    "location": "0225",
-                    "coordinates": {
-                        "x": 93,
-                        "y": 12
-                    }
-                },
-                {
-                    "location": "0226",
-                    "coordinates": {
-                        "x": 23,
-                        "y": 27
-                    }
-                }
-            ],
-            "requisites": [
-                {
-                    "id": "veemonDDNA"
-                }
-            ]
-        }
+  "id": "driAgentVeemon",
+  "requisites": [
+    {
+      "id": "partyLevel",
+      "type": "partyLevelRange",
+      "min": 1,
+      "max": 30
+    },
+    {
+      "id": "byakkoLeader"
     }
+  ],
+  "steps": {
+    "1": {
+      "location": "0225",
+      "coordinates": {
+        "x": 69.5,
+        "y": 37.5
+      },
+      "zoomedLocations": [
+        {
+          "location": "0225",
+          "coordinates": {
+            "x": 93,
+            "y": 12
+          }
+        },
+        {
+          "location": "0226",
+          "coordinates": {
+            "x": 23,
+            "y": 27
+          }
+        }
+      ],
+      "requisites": []
+    },
+    "2": {
+      "location": "0234",
+      "coordinates": {
+        "x": 79,
+        "y": 73
+      },
+      "zoomedLocations": [
+        {
+          "location": "0234",
+          "coordinates": {
+            "x": 17,
+            "y": 26
+          }
+        }
+      ],
+      "requisites": []
+    },
+    "3": {
+      "location": "0225",
+      "coordinates": {
+        "x": 69.5,
+        "y": 37.5
+      },
+      "zoomedLocations": [
+        {
+          "location": "0225",
+          "coordinates": {
+            "x": 93,
+            "y": 12
+          }
+        },
+        {
+          "location": "0226",
+          "coordinates": {
+            "x": 23,
+            "y": 27
+          }
+        }
+      ],
+      "requisites": [
+        {
+          "id": "veemonDDNA"
+        }
+      ]
+    }
+  }
 }

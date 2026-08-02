@@ -23,9 +23,11 @@ const selectedItemName = computed(() => {
     return "";
   }
 
-  return props.items.find((item) => {
-    return item.id === props.selectedId;
-  })?.name ?? "";
+  return (
+    props.items.find((item) => {
+      return item.id === props.selectedId;
+    })?.name ?? ""
+  );
 });
 
 const filteredItems = computed(() => {
@@ -52,11 +54,14 @@ const inputValue = computed({
   },
 });
 
-watch(() => props.selectedId, () => {
-  searchQuery.value = "";
-  showDropdown.value = false;
-  isFocused.value = false;
-});
+watch(
+  () => props.selectedId,
+  () => {
+    searchQuery.value = "";
+    showDropdown.value = false;
+    isFocused.value = false;
+  },
+);
 
 const handleFocus = () => {
   isFocused.value = true;
@@ -101,10 +106,7 @@ const handleSearchSelect = (id: string) => {
           {{ item.name }}
         </div>
       </template>
-      <p
-        v-else
-        class="px-3 py-2 text-xs text-[#00aaff]/50 italic"
-      >
+      <p v-else class="px-3 py-2 text-xs text-[#00aaff]/50 italic">
         {{ noResultsLabel }}
       </p>
     </div>

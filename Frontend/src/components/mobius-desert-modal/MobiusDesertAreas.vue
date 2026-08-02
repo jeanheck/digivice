@@ -77,7 +77,10 @@ function hasBottomConnection(areaIndex: number): boolean {
     return false;
   }
 
-  return MobiusDesertAreasPresenter.shouldDrawBottomConnection(source, getBottomNeighbor(areaIndex));
+  return MobiusDesertAreasPresenter.shouldDrawBottomConnection(
+    source,
+    getBottomNeighbor(areaIndex),
+  );
 }
 
 function getRightNeighborType(areaIndex: number): DesertAreaTypeViewModel | null {

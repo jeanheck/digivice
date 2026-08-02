@@ -9,13 +9,13 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: #000030;
-  background-image: url('./assets/bg-pattern.svg');
+  background-image: url("./assets/bg-pattern.svg");
   background-size: 256px 256px;
   background-repeat: repeat;
   /* Animação rolando a textura do background suavemente e infinitamente */
   animation: slideBackground 6s linear infinite;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   image-rendering: pixelated;
 }
 
@@ -106,13 +106,13 @@ body {
 .text-outline-black {
   text-shadow:
     -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .shadow-text-dark {
-  filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8));
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.8));
 }
 
 .text-dw3-gold {
@@ -127,7 +127,9 @@ body {
   height: 100%;
   background-color: #000e3f;
   border-radius: 0.375rem;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
   border: 2px solid #0033aa;
   padding: 0.75rem;
   padding-top: 0;
@@ -458,7 +460,9 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .map-info-panel.map-info-panel-action:hover {
@@ -468,7 +472,9 @@ body {
 
 .map-info-panel-fit.map-info-panel-action {
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .map-info-panel-fit.map-info-panel-action:hover {

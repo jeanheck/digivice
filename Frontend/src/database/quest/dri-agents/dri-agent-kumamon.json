@@ -1,120 +1,120 @@
 {
-    "id": "driAgentKumamon",
-    "requisites": [
-        {
-            "id": "partyLevel",
-            "type": "partyLevelRange",
-            "min": 60,
-            "max": 90
-        },
-        {
-            "id": "submarimon"
-        }
-    ],
-    "steps": {
-        "1": {
-            "location": "0258",
-            "coordinates": {
-                "x": 21,
-                "y": 82
-            },
-            "zoomedLocations": [
-                {
-                    "location": "0258",
-                    "coordinates": {
-                        "x": 22,
-                        "y": 22
-                    }
-                },
-                {
-                    "location": "0259",
-                    "coordinates": {
-                        "x": 20,
-                        "y": 75
-                    }
-                },
-                {
-                    "location": "0258",
-                    "coordinates": {
-                        "x": 69,
-                        "y": 51
-                    }
-                }
-            ],
-            "requisites": []
-        },
-        "2": {
-            "location": "023C",
-            "coordinates": {
-                "x": 52,
-                "y": 82
-            },
-            "zoomedLocations": [
-                {
-                    "location": "023B",
-                    "coordinates": {
-                        "x": 45,
-                        "y": 33
-                    }
-                },
-                {
-                    "location": "02E5",
-                    "coordinates": {
-                        "x": 13,
-                        "y": 63
-                    }
-                },
-                {
-                    "location": "02E2",
-                    "coordinates": {
-                        "x": 17.5,
-                        "y": 61
-                    }
-                },
-                {
-                    "location": "023C",
-                    "coordinates": {
-                        "x": 21,
-                        "y": 60
-                    }
-                }
-            ],
-            "requisites": []
-        },
-        "3": {
-            "location": "0258",
-            "coordinates": {
-                "x": 21,
-                "y": 82
-            },
-            "zoomedLocations": [
-                {
-                    "location": "0258",
-                    "coordinates": {
-                        "x": 22,
-                        "y": 22
-                    }
-                },
-                {
-                    "location": "0259",
-                    "coordinates": {
-                        "x": 20,
-                        "y": 75
-                    }
-                },
-                {
-                    "location": "0258",
-                    "coordinates": {
-                        "x": 69,
-                        "y": 51
-                    }
-                }
-            ],
-            "requisites": [
-                {
-                    "id": "kumamonDDNA"
-                }
-            ]
-        }
+  "id": "driAgentKumamon",
+  "requisites": [
+    {
+      "id": "partyLevel",
+      "type": "partyLevelRange",
+      "min": 60,
+      "max": 90
+    },
+    {
+      "id": "submarimon"
     }
+  ],
+  "steps": {
+    "1": {
+      "location": "0258",
+      "coordinates": {
+        "x": 21,
+        "y": 82
+      },
+      "zoomedLocations": [
+        {
+          "location": "0258",
+          "coordinates": {
+            "x": 22,
+            "y": 22
+          }
+        },
+        {
+          "location": "0259",
+          "coordinates": {
+            "x": 20,
+            "y": 75
+          }
+        },
+        {
+          "location": "0258",
+          "coordinates": {
+            "x": 69,
+            "y": 51
+          }
+        }
+      ],
+      "requisites": []
+    },
+    "2": {
+      "location": "023C",
+      "coordinates": {
+        "x": 52,
+        "y": 82
+      },
+      "zoomedLocations": [
+        {
+          "location": "023B",
+          "coordinates": {
+            "x": 45,
+            "y": 33
+          }
+        },
+        {
+          "location": "02E5",
+          "coordinates": {
+            "x": 13,
+            "y": 63
+          }
+        },
+        {
+          "location": "02E2",
+          "coordinates": {
+            "x": 17.5,
+            "y": 61
+          }
+        },
+        {
+          "location": "023C",
+          "coordinates": {
+            "x": 21,
+            "y": 60
+          }
+        }
+      ],
+      "requisites": []
+    },
+    "3": {
+      "location": "0258",
+      "coordinates": {
+        "x": 21,
+        "y": 82
+      },
+      "zoomedLocations": [
+        {
+          "location": "0258",
+          "coordinates": {
+            "x": 22,
+            "y": 22
+          }
+        },
+        {
+          "location": "0259",
+          "coordinates": {
+            "x": 20,
+            "y": 75
+          }
+        },
+        {
+          "location": "0258",
+          "coordinates": {
+            "x": 69,
+            "y": 51
+          }
+        }
+      ],
+      "requisites": [
+        {
+          "id": "kumamonDDNA"
+        }
+      ]
+    }
+  }
 }

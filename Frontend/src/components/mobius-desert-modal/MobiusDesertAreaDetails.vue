@@ -24,11 +24,12 @@ const coordinates = computed(() => {
 
 <template>
   <div class="flex h-full w-full items-center justify-center">
-    <MapDetailsFrame 
-      v-if="selectedImageUrl" 
-      :image-url="selectedImageUrl" 
+    <MapDetailsFrame
+      v-if="selectedImageUrl"
+      :image-url="selectedImageUrl"
       :coordinates="coordinates"
-      :pin-label="selectedArea?.note ?? null"/>
+      :pin-label="selectedArea?.note ?? null"
+    />
     <div
       v-else
       class="flex flex-col items-center justify-center gap-3 px-8"

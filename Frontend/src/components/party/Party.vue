@@ -13,10 +13,6 @@ const filledSlots = computed(() => {
 
 <template>
   <div class="h-full min-h-0 grid grid-cols-3 gap-4">
-    <Digimon
-      v-for="digimonSlot in filledSlots"
-      :key="digimonSlot.index"
-      :slot="digimonSlot"
-    />
+    <Digimon v-for="digimonSlot in filledSlots" :key="digimonSlot.index" :slot="digimonSlot" />
   </div>
 </template>

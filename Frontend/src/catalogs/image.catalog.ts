@@ -50,7 +50,7 @@ function resolveAssetUrl(
   modules: Record<string, string>,
   pathSuffix: string,
   extension: string,
-  fileName: string | null
+  fileName: string | null,
 ): string | null {
   if (!fileName || fileName.trim() === "") {
     return null;
@@ -66,7 +66,7 @@ export class ImageCatalog {
       mapModules,
       MAP_ASSET_CONFIG.pathSuffix,
       MAP_ASSET_CONFIG.extension,
-      imageName
+      imageName,
     );
   }
 
@@ -75,7 +75,7 @@ export class ImageCatalog {
       digimonIconModules,
       DIGIMON_ICON_ASSET_CONFIG.pathSuffix,
       DIGIMON_ICON_ASSET_CONFIG.extension,
-      digimonName
+      digimonName,
     );
   }
 
@@ -84,7 +84,7 @@ export class ImageCatalog {
       enemyIconModules,
       ENEMY_ICON_ASSET_CONFIG.pathSuffix,
       ENEMY_ICON_ASSET_CONFIG.extension,
-      enemyName
+      enemyName,
     );
   }
 
@@ -93,7 +93,7 @@ export class ImageCatalog {
       digievolutionIconModules,
       DIGIEVOLUTION_ICON_ASSET_CONFIG.pathSuffix,
       DIGIEVOLUTION_ICON_ASSET_CONFIG.extension,
-      digievolutionName
+      digievolutionName,
     );
   }
 }

@@ -72,12 +72,7 @@ const mapLabelVerticalAnchorClass = computed(() => {
       class="relative overflow-hidden flex items-center justify-center"
       :style="mapImageFrameStyle"
     >
-      <img
-        :key="imageUrl"
-        :src="imageUrl"
-        class="block w-full h-full"
-        @load="onImageLoad"
-      />
+      <img :key="imageUrl" :src="imageUrl" class="block w-full h-full" @load="onImageLoad" />
 
       <div
         v-if="coordinates"

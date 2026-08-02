@@ -30,17 +30,10 @@ const closeAuctionModal = () => {
 <template>
   <div>
     <div @click="openAuctionModal">
-      <AuctionCardAvailable
-        v-if="auctionAvailable"
-        :auction="auctionAvailable"
-      />
+      <AuctionCardAvailable v-if="auctionAvailable" :auction="auctionAvailable" />
       <AuctionCardUnavailable v-else />
     </div>
 
-    <AuctionModal
-      :is-open="isAuctionModalOpen"
-      :journal="journal"
-      @close="closeAuctionModal"
-    />
+    <AuctionModal :is-open="isAuctionModalOpen" :journal="journal" @close="closeAuctionModal" />
   </div>
 </template>

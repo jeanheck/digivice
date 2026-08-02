@@ -6,50 +6,50 @@ import { useI18n } from "vue-i18n";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 const props = withDefaults(
-    defineProps<{
-        show: boolean;
-        x: number;
-        y: number;
-        equipment: EquipmentViewModel | null;
-        maxWidth?: number;
-        placement?: TooltipPlacement;
-    }>(),
-    {
-        maxWidth: 300,
-        placement: "below",
-    }
+  defineProps<{
+    show: boolean;
+    x: number;
+    y: number;
+    equipment: EquipmentViewModel | null;
+    maxWidth?: number;
+    placement?: TooltipPlacement;
+  }>(),
+  {
+    maxWidth: 300,
+    placement: "below",
+  },
 );
 
 const { t } = useI18n();
 
 const equipmentName = computed(() => {
-    if (!props.equipment?.id) {
-        return "";
-    }
+  if (!props.equipment?.id) {
+    return "";
+  }
 
-    return t(`equipments.${props.equipment.id}.name`);
+  return t(`equipments.${props.equipment.id}.name`);
 });
 
 const equipmentType = computed(() => {
-    if (!props.equipment) {
-        return "";
-    }
+  if (!props.equipment) {
+    return "";
+  }
 
-    return t(`equipmentType.${props.equipment.type}`);
+  return t(`equipmentType.${props.equipment.type}`);
 });
 
 const equipmentNote = computed(() => {
-    if (!props.equipment?.id) {
-        return "";
-    }
+  if (!props.equipment?.id) {
+    return "";
+  }
 
-    const note = t(`equipments.${props.equipment.id}.note`);
+  const note = t(`equipments.${props.equipment.id}.note`);
 
-    if (!note || note === `equipments.${props.equipment.id}.note`) {
-        return "";
-    }
+  if (!note || note === `equipments.${props.equipment.id}.note`) {
+    return "";
+  }
 
-    return note;
+  return note;
 });
 </script>
 
@@ -70,10 +70,7 @@ const equipmentNote = computed(() => {
         {{ equipmentType }}
       </div>
 
-      <div
-        v-if="equipment.attributes.length > 0"
-        class="flex flex-col gap-0.5 mb-1"
-      >
+      <div v-if="equipment.attributes.length > 0" class="flex flex-col gap-0.5 mb-1">
         <div
           v-for="attribute in equipment.attributes"
           :key="attribute.attribute"
@@ -90,13 +87,17 @@ const equipmentNote = computed(() => {
       </div>
 
       <div class="mt-1 pt-1 border-t border-[#0033aa]/50 flex flex-col gap-1 text-center">
-        <span class="text-gray-400 text-[9px] uppercase tracking-widest leading-none">{{ $t("digimon.equipableBy") }}</span>
+        <span class="text-gray-400 text-[9px] uppercase tracking-widest leading-none">{{
+          $t("digimon.equipableBy")
+        }}</span>
         <span class="text-gray-200 text-[11px] leading-tight">
           <template v-if="equipment.equipableDigimonIds.length === 0">
             {{ $t("digimon.states.none") }}
           </template>
           <template v-else-if="equipment.equipableDigimonIds.length === 8">
-            <span class="text-purple-300 font-bold uppercase tracking-wider text-[10px]">{{ $t("digimon.allDigimon") }}</span>
+            <span class="text-purple-300 font-bold uppercase tracking-wider text-[10px]">{{
+              $t("digimon.allDigimon")
+            }}</span>
           </template>
           <template v-else>
             {{ equipment.equipableDigimonNames.join(", ") }}

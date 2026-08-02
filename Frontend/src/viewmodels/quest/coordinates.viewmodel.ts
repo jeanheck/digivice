@@ -1,5 +1,4 @@
-export interface CoordinatesViewModel
-{
-    x: number;
-    y: number;
+export interface CoordinatesViewModel {
+  x: number;
+  y: number;
 }

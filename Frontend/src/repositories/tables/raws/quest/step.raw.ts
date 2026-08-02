@@ -3,8 +3,8 @@ import type { RequisiteRaw } from "./requisite.raw";
 import type { ZoomedLocationRaw } from "./zoomed-location.raw";
 
 export interface StepRaw {
-    requisites: RequisiteRaw[];
-    location: string;
-    coordinates: CoordinatesRaw;
-    zoomedLocations: ZoomedLocationRaw[];
+  requisites: RequisiteRaw[];
+  location: string;
+  coordinates: CoordinatesRaw;
+  zoomedLocations: ZoomedLocationRaw[];
 }
