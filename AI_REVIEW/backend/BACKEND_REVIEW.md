@@ -1,6 +1,7 @@
 # Digivice — Backend Review
 
-> **Data:** 22 de julho de 2026  
+> **Data da análise original:** 22 de julho de 2026  
+> **Última atualização:** agosto 2026 (pós-triagem dos 5 tópicos do sumário)  
 > **Escopo:** apenas `Backend/` (e cobertura cruzada com `Tests/` e `AI/*.md` como balizadores)  
 > **Referências de “certo/errado”:** `AI/CODE_RULES.md`, `AI/BUSINESS_RULES.md`  
 > **Métricas aproximadas:** ~207 arquivos `.cs` no Backend (~4.4k LOC), ~95 arquivos de teste (~6.3k LOC, ~277 Fact/Theory), 22 JSONs de definição de memória
@@ -13,15 +14,24 @@ O Backend do Digivice é um serviço ASP.NET Core (.NET 10) **local, Windows-onl
 
 A arquitetura é **clara, previsível e altamente consistente**: fatias verticais repetem o mesmo pipeline (`Addresses → Reader → Resource → Assembler → Model → Converter/Differ → DTO → Event`). O investimento em testes é acima da média para o tamanho do código. As regras de estilo do `CODE_RULES.md` estão bem aplicadas no código recente (Assemblers, Loaders, Providers, Infrastructure).
 
-Os principais riscos e dívidas não estão em “código caótico”, e sim em:
+### Status da triagem (agosto 2026)
 
-1. **Operabilidade** — Serilog com `MinimumLevel.Warning()` engole todos os `Log.Information` de startup/conexão (config morta em `appsettings.json`).
-2. **Filosofia “confiar na RAM”** — a maior parte das invariantes de negócio do `BUSINESS_RULES.md` não é validada no Backend; só o pareamento de slots da Party e o cascade da main quest sanitizam dados.
-3. **Concorrência implícita** — `GameStateStore` é mutado pelo game loop e lido pelo Hub SignalR **sem sincronização**.
-4. **CORS frouxo** — `origin.Contains("tauri")` + credentials; risco baixo no uso local, mas padrão inseguro se o bind mudar.
-5. **Fail-soft silencioso** — `MemoryBlockReader` e converters de hex retornam `0` em erro, mascarando typos em `*Addresses.json`.
+Os cinco riscos do sumário original foram revisados:
 
-**Nota geral sugerida: B+ / 8.0** — arquitetura sólida e bem testada, com gaps pontuais de observabilidade, thread-safety e alinhamento explícito com algumas regras de negócio.
+**Feito**
+- **Operabilidade** — Serilog lê `appsettings` (`Warning` em produção / sidecar; `Information` em Development via `appsettings.Development.json` + `launchSettings`).
+- **Cascade da main quest** — `NormalizeMainQuestProgression` documentado em `AI/BUSINESS_RULES.md` §2.3.
+- **CORS** — allowlist explícita (`Uri.TryCreate` + `IsLoopback` + origins Tauri), sem `Contains("tauri")`.
+- **Fail-soft** — `Log.Warning` nos fallbacks de `MemoryBlockReader` e converters hex; continua retornando `0` (sem throw).
+
+**Adiado (baixa prioridade / redesign futuro)**
+- **Concorrência** — race Hub × `GameStateStore`; sintomas sobretudo em connect/reconnect (F5). Redesign da conexão previsto depois.
+- **“Confiar na RAM” / invariantes fortes** — Party ≥1 e Digievolution filled→empty: Backend permanece espelho; pré-load do jogo pode gerar estados estranhos. Doc B/F/G e guards no servidor não priorizados agora.
+- **Party tipada com tamanho 3** — contagem já vem de `PartyAddresses.json` (3 slots); ROI baixo.
+
+O backlog restante (higiene / evolução) está em **§11.3**, ordenado do mais fácil ao mais difícil.
+
+**Nota geral sugerida: B+ / 8.0** — arquitetura sólida e bem testada; ops/CORS/fail-soft melhoraram após a triagem; gaps restantes são sobretudo estilo, boilerplate e decisões de produto adiadas.
 
 ---
 
@@ -97,12 +107,12 @@ Cada entidade (Player, Digimon, Quest, Auction…) segue o mesmo “stack” de 
 | Assemblers → State → Diff → SignalR | ✅ | Pipeline completo |
 | Party: pairing ocupado/vazio | ✅ | `PartyLoader` garante ambos null ou ambos preenchidos |
 | Party: exatamente 3 slots | ⚠️ | Implícito via `PartyAddresses.json`; sem assert |
-| Party: ≥1 slot ocupado | ❌ | Aceito all-empty; teste de integração prova isso |
+| Party: ≥1 slot ocupado | ❌ (adiado) | Aceito all-empty de propósito (espelho / pré-load); ver §11.2 |
 | `digimonId` no slot, não no Digimon | ✅ | Modelo correto |
-| Digievolution: proibido filled→empty | ❌ | Pass-through da RAM; sem guard histórico |
+| Digievolution: proibido filled→empty | ❌ (adiado) | Pass-through da RAM; sem guard; ver §11.2 |
 | Level 1–99 (sem clamp) | ✅ | Correto *não* clampar (doc diz que é redundante) |
 | Blast por Digimon | ✅ | Endereços +2 por rookie; model no Digimon |
-| Journal: só `Value` dinâmico | ⚠️ | Quase; ver cascade da main quest |
+| Journal: só `Value` dinâmico | ⚠️ | Quase; cascade da main quest documentado |
 | Journal: set fixo / InitialState / sem flag de conclusão | ✅ | |
 | Player name não rastreado | ✅ | `0x00048D88` ausente do Backend |
 
@@ -112,15 +122,15 @@ Cada entidade (Player, Digimon, Quest, Auction…) segue o mesmo “stack” de 
 
 `PartyAssembler` mapeia 1:1 o que veio do JSON/resource. Não há validação de `Count == 3`. A invariante “≥1 ocupado” **não é tratada como erro crítico** no Backend: `PartyLoaderTests.Load_ShouldReturnAllEmptySlots_WhenAllSlotsAreEmpty` documenta all-empty como comportamento esperado, e `DebugConsoleRenderer` até renderiza “No Digimons detected…”.
 
-**Insight:** o Backend trata Party como espelho tolerante da RAM + normalização de pairing; as regras mais duras do doc estão mais no nível “contrato esperado do jogo + frontend”, não como asserts de domínio no servidor.
+**Insight:** o Backend trata Party como espelho tolerante da RAM + normalização de pairing; as regras mais duras do doc estão mais no nível “contrato esperado do jogo + frontend”, não como asserts de domínio no servidor. **Decisão (ago/2026):** não endurecer no Backend agora — pré-load do jogo / F5; ver §11.2.
 
 #### Digievolution filled → empty
 
 `DigievolutionSlotReader` define vazio como `digievolutionId <= 0`. O Differ emite delta se o ID mudou — inclusive para `null`. Não há comparação com o estado anterior no assembler/loader para rejeitar “esvaziamento”.
 
-**Risco prático:** save-state, frame intermediário ou glitch de leitura poderia empurrar filled→empty ao frontend. A regra de negócio assume que a gameplay nunca faz isso; o Backend não defende.
+**Risco prático:** save-state, frame intermediário ou glitch de leitura poderia empurrar filled→empty ao frontend. A regra de negócio assume que a gameplay nunca faz isso; o Backend não defende. **Decisão (ago/2026):** adiado — permanece pass-through; ver §11.2.
 
-#### `NormalizeMainQuestProgression` — desvio consciente e não documentado
+#### `NormalizeMainQuestProgression` — desvio consciente (**documentado**)
 
 Em `JournalAssembler`:
 
@@ -131,9 +141,7 @@ Em `JournalAssembler`:
 - Só na **main quest** (side/legendary/DRI não recebem).
 - **Muta** `Step.Value` depois da montagem — não é pass-through puro da RAM.
 - Tem testes dedicados (`JournalAssemblerTests`).
-- **Não aparece** em `BUSINESS_RULES.md`.
-
-**Avaliação:** parece compensação de quirk real da memória do jogo (steps “pulados” na RAM). É regra de negócio *de fato*, mas está só no código. Recomendação: documentar no `BUSINESS_RULES.md` e deixar explícito por que side quests não usam o mesmo cascade.
+- **Documentado** em `AI/BUSINESS_RULES.md` §2.3 (cascade + escopo só main quest).
 
 #### Blast — doc vs código
 
@@ -194,26 +202,20 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 
 ### 5.4. Cheiros e bugs de qualidade
 
-#### Logging Information morto (alto impacto operacional)
+#### Logging via appsettings (**feito** na triagem)
 
-`Program.cs` configura Serilog com `MinimumLevel.Warning()` e `UseSerilog()` **sem** `ReadFrom.Configuration`. Resultado:
+Serilog usa `ReadFrom.Configuration`: default `Warning` em `appsettings.json`; `Information` em Development (`appsettings.Development.json` + `launchSettings`). Sidecar/produção permanece quieto; lifecycle Info aparece no `dotnet run` em Dev.
 
-- `appsettings.json` → `"Default": "Information"` **não afeta** o Serilog.
-- Mensagens como “Initializing…”, “SignalR Hub available…”, “Connected to DuckStation!”, “Starting GameLoopService…” **nunca aparecem**.
-- Só Warning/Error/Fatal (e poucos caminhos) são visíveis.
-
-Isso parece regressão de configuração (há vestígios históricos de logs em `Backend/logs/`).
-
-#### `MemoryBlockReader` fail-soft vs `MemoryReader` fail-loud
+#### `MemoryBlockReader` fail-soft vs `MemoryReader` fail-loud (**Warnings feitos**)
 
 - `MemoryReader`: exceção → `MemoryReadException` → game loop limpa sessão.
-- `MemoryBlockReader`: offset inválido / catch genérico → **retorna 0**.
+- `MemoryBlockReader`: offset inválido / catch → **retorna 0** e agora emite `Log.Warning`.
 
-Leituras de Digimon/status (bloco pré-lido) podem corromper stats para zero **sem** derrubar a conexão — difíceis de diagnosticar.
+Comportamento de valor inalterado (espelho tolerante); diagnóstico melhorou.
 
-#### Converters JSON de endereço
+#### Converters JSON de endereço (**Warnings feitos**)
 
-`HexStringToLongConverter`, `HexOrIntStringToIntConverter`, `HexStringListToLongListConverter` engolem input malformado (`0` / skip). Typo em `*Addresses.json` ≠ crash; = tracker errado em silêncio.
+`HexStringToLongConverter`, `HexOrIntStringToIntConverter`, `HexStringListToLongListConverter` ainda fazem fallback `0` / skip em input malformado ou vazio, mas o `catch` de parse inválido loga `Warning`. Typo em `*Addresses.json` ≠ crash; = tracker errado **com** trilha no log.
 
 #### `Features:Debugging: true` no appsettings “de produção”
 
@@ -237,21 +239,16 @@ Contexto: ferramenta **single-user, loopback**. O risco absoluto é baixo; os pa
 
 | # | Achado | Severidade (contexto local) | Severidade (se bind público) |
 |---|--------|----------------------------|------------------------------|
-| 1 | CORS: `origin.Contains("tauri")` + `AllowCredentials` | Baixa | Alta |
+| 1 | CORS substring `"tauri"` (**corrigido** → allowlist) | — | — |
 | 2 | Hub sem autenticação (`/gamehub` aberto) | Aceitável no loopback | Alta |
-| 3 | `new Uri(origin)` sem try/catch no callback CORS | Baixa (preflight 500) | Baixa |
+| 3 | `new Uri(origin)` sem try/catch (**mitigado** com `TryCreate`) | — | — |
 | 4 | HTTP sem TLS em `127.0.0.1:5000` | OK para local | N/A se permanecer loopback |
 | 5 | MMF `duckstation_{pid}` sem validação de conteúdo | Inerente ao propósito | — |
 | 6 | `AllowedHosts: "*"` | Irrelevante no loopback | Revisar se expandir |
 
-### 6.2. Comentário sobre CORS
+### 6.2. Comentário sobre CORS (**feito**)
 
-```csharp
-policy.SetIsOriginAllowed(origin =>
-    new Uri(origin).IsLoopback || origin.Contains("tauri"))
-```
-
-Qualquer origem cujo string contenha `"tauri"` passa. Combinado com credentials, é o padrão clássico de misconfig. Para desktop Tauri, preferir allowlist explícita de origins conhecidos (`tauri://localhost`, `http://tauri.localhost`, etc.) em vez de substring.
+Política atual: `Uri.TryCreate` + `IsLoopback` + `HashSet` de origins Tauri (`http://tauri.localhost`, `https://tauri.localhost`, `tauri://localhost`) + `AllowCredentials` para SignalR. Hub aberto e `AllowedHosts: "*"` seguem aceitos enquanto o bind for loopback.
 
 ### 6.3. Superfície de memória
 
@@ -260,6 +257,8 @@ Ler MMF do DuckStation é o core do produto. Não há elevação especial além 
 ---
 
 ## 7. Concorrência e estado compartilhado
+
+> **Status (ago/2026): adiado** — ver §11.2. Sintomas palpáveis sobretudo em connect/reconnect; redesign da conexão previsto no futuro.
 
 ### 7.1. `GameStateStore` sem sincronização
 
@@ -291,14 +290,14 @@ A regra de Readers/Converters sem estado mutável **é seguida** e ajuda thread-
 
 | Aspecto | Avaliação |
 |---------|-----------|
-| Serilog presente | Sim, mas nível mínimo demasiado alto |
+| Serilog presente | Sim — config por ambiente (Warning prod / Information Dev) |
 | Correlation / structured fields | Parcial (templates bons em alguns Error) |
 | Métricas | Ausentes (ok para o escopo) |
 | Debug console | Útil; gated por feature + `!Console.IsOutputRedirected` |
 | Erros de conexão tipados | Bom — `EmulatorConnectionErrorCodes` cobrem Config/Process/Mapping/Connection/MemoryRead/StateCompose |
-| Falhas soft de bloco/hex | **Sem log** — buraco de diagnóstico |
+| Falhas soft de bloco/hex | **Warning** no fallback (triagem); valor ainda `0` |
 
-**Recomendação prioritária:** alinhar Serilog com `appsettings` (ou baixar mínimo para Information em Development) e logar (Warning) quando converters/block reader caírem no fallback `0`.
+**Pós-triagem:** ops + fail-soft logging feitos. Próximos gaps de observabilidade são menores (unificar `ILogger<T>`, `Features:Debugging` Dev/Release) — ver backlog §11.3.
 
 ---
 
@@ -350,49 +349,49 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 
 ---
 
-## 11. Achados priorizados
+## 11. Achados — status pós-triagem
 
-### P0 — Corrigir cedo (impacto alto / esforço baixo)
+### 11.1 Feito
 
-| ID | Achado | Onde |
-|----|--------|------|
-| P0-1 | Serilog engole Information; appsettings Logging morto | `Program.cs` |
-| P0-2 | Documentar (ou generalizar) `NormalizeMainQuestProgression` no BUSINESS_RULES | `JournalAssembler` + `AI/BUSINESS_RULES.md` |
+| ID original | Achado | Resolução |
+|-------------|--------|-----------|
+| P0-1 | Serilog / appsettings | `ReadFrom.Configuration`; Warning prod, Information Dev |
+| P0-2 | Documentar `NormalizeMainQuestProgression` | `AI/BUSINESS_RULES.md` §2.3 |
+| P1-2 | CORS substring `"tauri"` | Allowlist + `IsLoopback` + `TryCreate` |
+| P1-3 | Fail-soft silencioso | `Log.Warning` em block reader e converters hex (sem throw) |
 
-### P1 — Importante
+### 11.2 Adiado
 
-| ID | Achado | Onde |
-|----|--------|------|
-| P1-1 | Race Hub × GameLoop no `GameStateStore` | `GameStateStore`, `GameHub`, `ConnectionEventFactory` |
-| P1-2 | CORS substring `"tauri"` + credentials | `Program.cs` |
-| P1-3 | `MemoryBlockReader` / hex converters silenciosos | Memory readers/converters |
-| P1-4 | Invariante Party ≥1 ocupado: decidir se Backend valida ou doc relaxa | `PartyLoader` / BUSINESS_RULES / testes |
-| P1-5 | Digievolution filled→empty: guard, log, ou documentar “frontend only” | Differ / BUSINESS_RULES |
+| ID original | Item | Motivo |
+|-------------|------|--------|
+| P1-1 | Race Hub × GameLoop no `GameStateStore` | Sintomas sobretudo em connect/reconnect (F5); redesign de conexão previsto |
+| P1-4 | Party ≥1 ocupado (assert ou doc) | Pré-load tolerado; Backend permanece espelho |
+| P1-5 | Digievolution filled→empty (guard/doc) | Mesma filosofia; sem guard agora |
+| P3-5 | Assert / tipar `Slots.Count == 3` | JSON já fixa 3 slots; ROI baixo |
+| P3-4 | Backpressure / await no `SafeDispatch` | Irrelevante com 1 cliente; junto com redesign de conexão |
 
-### P2 — Qualidade / higiene
+Governança B/F/G no `BUSINESS_RULES` (§13.1) fica opcional e ligada a este bloco adiado.
 
-| ID | Achado |
-|----|--------|
-| P2-1 | Retrofit collection expressions em Converters/Diffing |
-| P2-2 | Interfaces para `QuestLoader`/`DigimonLoader` (ou documentar exceção) |
-| P2-3 | Unificar logging em `ILogger<T>` |
-| P2-4 | Ordem de membros em `EventDispatcherService`; remover `_firstRender` |
-| P2-5 | Split `OptionalJsonConverter` / Factory |
-| P2-6 | `Event` tipado / `Payload` como `IDTO` |
-| P2-7 | Exit code ≠ 0 em fatal startup |
-| P2-8 | `Features:Debugging` default consciente (Dev vs Release) |
-| P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain |
-| P2-10 | Remover pasta `Domain/Shared` vazia; alinhar nome arquivo Auction |
+### 11.3 Backlog restante (fácil → difícil)
 
-### P3 — Evolução / nice-to-have
+Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `AllowedHosts: "*"` seguem aceitos enquanto o bind for loopback.
 
-| ID | Achado |
-|----|--------|
-| P3-1 | Descoberta automática de quest JSONs no repository |
-| P3-2 | Helper anti-boilerplate nos Differs |
-| P3-3 | `Optional<T> : IEquatable<Optional<T>>` no hot path |
-| P3-4 | Backpressure / await no dispatch SignalR |
-| P3-5 | Assert `Slots.Count == 3` no assembler/loader |
+| # | ID | Achado | Esforço relativo |
+|---|----|--------|------------------|
+| 1 | P2-10 | Remover pasta `Domain/Shared` vazia; alinhar nome arquivo Auction | Trivial |
+| 2 | — | Dead code: `Bits.ToString(...) ?? "Unknown"` em `DebugConsoleRenderer` | Trivial |
+| 3 | P2-7 | `Environment.ExitCode ≠ 0` em fatal no startup | Trivial |
+| 4 | P2-4 | Ordem de membros em `EventDispatcherService`; remover `_firstRender` | Baixo |
+| 5 | P2-5 | Split `OptionalJsonConverter` / Factory (um tipo por arquivo) | Baixo |
+| 6 | P2-8 | `Features:Debugging` default consciente (Dev vs Release) | Baixo |
+| 7 | P2-2 | Interfaces para `QuestLoader` / `DigimonLoader` (ou documentar exceção) | Baixo–médio |
+| 8 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
+| 9 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
+| 10 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
+| 11 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
+| 12 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
+| 13 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
+| 14 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
 
 ---
 
@@ -415,40 +414,37 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 
 A doc de negócio descreve invariantes fortes; o código **prioriza fidelidade à RAM** com poucas normalizações. Isso não é necessariamente errado para um memory tracker — mas há **desalinhamento documental**: o MD soa prescritivo (“erro crítico”), o Backend soa descritivo (“o que a memória disse”).
 
-**Sugestão de governança:** marcar no `BUSINESS_RULES.md` quais invariantes são:
+**Sugestão de governança (adiada):** marcar no `BUSINESS_RULES.md` quais invariantes são:
 
 - **(B)** enforced no Backend  
 - **(F)** enforced só no Frontend  
 - **(G)** garantidas pelo jogo / assumidas  
 
+Triagem ago/2026: não priorizar guards nem reescrita ampla da doc agora; ver §11.2.
+
 ### 13.2. Consistência geracional do código
 
-Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita.
+Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 itens 4 e 8.)
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção.
+O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 14.)
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
-Para app desktop local, hub aberto + HTTP loopback é razoável. O CORS com substring é o único ponto que eu trataria como bug mesmo no contexto atual (esforço baixo, benefício claro).
+Para app desktop local, hub aberto + HTTP loopback é razoável. O CORS com substring foi o ponto tratado como bug no contexto atual — **corrigido** na triagem (allowlist).
 
-### 13.5. Observabilidade é o elo fraco relativo
+### 13.5. Observabilidade
 
-A qualidade do código e dos testes está à frente da qualidade do “o que eu vejo quando algo falha de forma soft”. Information silenciado + zeros silenciosos = debugging humano mais caro do que deveria.
+Após a triagem, Information em Development e Warnings no fail-soft fecharam o buraco principal. Elo fraco relativo menor; restos: unificar `ILogger<T>` e default de `Features:Debugging` (backlog §11.3).
 
 ---
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-1. **Corrigir Serilog** — `MinimumLevel.Information()` ou `ReadFrom.Configuration(builder.Configuration)`; validar que “Connected to DuckStation!” volta ao console.
-2. **Documentar cascade da main quest** no `BUSINESS_RULES.md` (e Blast Int16).
-3. **Endurecer CORS** com allowlist explícita.
-4. **Proteger `GameStateStore`** (lock ou snapshot).
-5. **Decidir política de invariantes Party/Digievolution** (assert+log vs doc “Frontend only”).
-6. **Logar fallbacks** de `MemoryBlockReader`/hex converters (pelo menos em Debug/Warning).
-7. **Passada de estilo** em Converters/Diffing (collection expressions + member order + `_`).
-8. **Refator incremental** do `AddressesRepository` se o número de quests continuar crescendo.
+Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (pasta `Domain/Shared` + nome arquivo Auction).
+
+Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
 ---
 
@@ -457,14 +453,14 @@ A qualidade do código e dos testes está à frente da qualidade do “o que eu 
 | Dimensão | Nota | Comentário curto |
 |----------|------|------------------|
 | Arquitetura / fluxo | 9.0 | Clara, alinhada ao BUSINESS_RULES §1 |
-| Regras de negócio | 7.0 | Core ok; gaps em Party≥1 e Digievolution; cascade undoc |
+| Regras de negócio | 7.5 | Core ok; cascade documentado; Party≥1 / Digievolution adiados como espelho |
 | Qualidade / CODE_RULES | 8.5 | Excelente no novo; retrofit pendente em Diff/Convert |
-| Segurança | 7.5 | Ok local; CORS e hub aberto são os pontos |
-| Concorrência | 6.5 | Race no store; dispatch fire-and-forget |
-| Observabilidade | 5.5 | Information morto; fail-soft sem log |
+| Segurança | 8.0 | Ok local; CORS allowlist feito; hub aberto aceitável no loopback |
+| Concorrência | 6.5 | Race no store adiada; dispatch fire-and-forget |
+| Observabilidade | 7.5 | Serilog por ambiente + Warnings fail-soft |
 | Testes | 8.5 | Amplos e bons; alguns gaps de corner/segurança |
 | Manutenibilidade | 8.0 | Padrão vertical ótimo; repository/diff boilerplate |
-| **Geral Backend** | **8.0 / B+** | Base sólida; priorizar ops + invariantes documentadas |
+| **Geral Backend** | **8.0 / B+** | Base sólida; próximos passos = higiene do backlog §11.3 |
 
 ---
 
@@ -476,4 +472,4 @@ Camadas de implementação Windows acopladas por design: `WindowsProcessProvider
 
 ---
 
-*Fim da review do Backend. Próximo passo natural (fora deste documento): review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1. Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
