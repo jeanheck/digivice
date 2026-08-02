@@ -170,7 +170,7 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 | Regra | Nota | Situação |
 |-------|------|----------|
 | Construtores primários | A | Quase 100%; exceção justificável em `MemoryReadException` |
-| Um tipo por arquivo | A | Única quebra: `OptionalJsonConverter` + Factory no mesmo arquivo |
+| Um tipo por arquivo | A | `OptionalJsonConverter` / Factory separados (**feito**) |
 | Collection expressions `[ ]` / `[..]` | C+ | Assemblers/Loaders ok; Converters/Diffing ainda usam `.ToList()` / `new List<>()` |
 | Usings limpos | A | Spot-check limpo |
 | Readers/Converters stateless | A | Sem estado mutável de instância |
@@ -183,7 +183,7 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 
 1. ~~`DebugConsoleRenderer.cs` — `private bool _firstRender`~~ (**feito** → `FirstRender`).
 2. ~~`EventDispatcherService.cs` — método privado após públicos~~ (**feito**).
-3. **`OptionalJsonConverter.cs`** — dois tipos no mesmo arquivo.
+3. ~~`OptionalJsonConverter.cs` — dois tipos no mesmo arquivo~~ (**feito** → `OptionalJsonConverterFactory.cs`).
 4. **`AddressesRepository.cs`** — `private readonly string dataDirectory = dataDirectory;` redundante com primary ctor (cheiro adjacente à regra 6).
 5. **Converters/Diffing legados** — `JournalConverter`, `DigimonConverter`, `QuestConverter`, `PartyConverter`, `StepConverter`, `JournalDiffer`, `DigimonDiffer`, `PartyDiffer`, `QuestDiffer`, `StepDiffer`, `StateEventFactory` ainda com `.ToList()` / `new List<T>()`.
 
@@ -217,9 +217,9 @@ Comportamento de valor inalterado (espelho tolerante); diagnóstico melhorou.
 
 `HexStringToLongConverter`, `HexOrIntStringToIntConverter`, `HexStringListToLongListConverter` ainda fazem fallback `0` / skip em input malformado ou vazio, mas o `catch` de parse inválido loga `Warning`. Typo em `*Addresses.json` ≠ crash; = tracker errado **com** trilha no log.
 
-#### `Features:Debugging: true` no appsettings “de produção”
+#### `Features:Debugging` Dev vs Release (**feito**)
 
-Se o backend for lançado como sidecar com console, o dashboard ANSI roda por padrão. Pode ser intencional para o produto desktop; vale ter profile Dev/Prod ou default `false` com override local.
+`appsettings.json` → `Debugging: false` (sidecar/prod). `appsettings.Development.json` → `true` (monitor ANSI no `dotnet run` / IDE).
 
 #### Exit code em falha fatal (**feito**)
 
@@ -297,7 +297,7 @@ A regra de Readers/Converters sem estado mutável **é seguida** e ajuda thread-
 | Erros de conexão tipados | Bom — `EmulatorConnectionErrorCodes` cobrem Config/Process/Mapping/Connection/MemoryRead/StateCompose |
 | Falhas soft de bloco/hex | **Warning** no fallback (triagem); valor ainda `0` |
 
-**Pós-triagem:** ops + fail-soft logging feitos. Próximos gaps de observabilidade são menores (unificar `ILogger<T>`, `Features:Debugging` Dev/Release) — ver backlog §11.3.
+**Pós-triagem:** ops + fail-soft logging + `Features:Debugging` por ambiente feitos. Próximos gaps menores de observabilidade: unificar `ILogger<T>` — ver backlog §11.3.
 
 ---
 
@@ -363,6 +363,8 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | — | Dead code `Bits.ToString ?? "Unknown"` | Removido em `DebugConsoleRenderer` |
 | P2-7 | Exit code em fatal startup | `Environment.ExitCode = 1` no catch de `Program.cs` |
 | P2-4 | Ordem de membros + `_firstRender` | `SafeDispatch` antes dos públicos; `FirstRender` sem `_` |
+| P2-5 | Split OptionalJsonConverter / Factory | `OptionalJsonConverterFactory.cs` separado |
+| P2-8 | `Features:Debugging` Dev vs Release | `false` em appsettings; `true` em Development |
 
 ### 11.2 Adiado
 
@@ -382,16 +384,14 @@ Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `Allow
 
 | # | ID | Achado | Esforço relativo |
 |---|----|--------|------------------|
-| 1 | P2-5 | Split `OptionalJsonConverter` / Factory (um tipo por arquivo) | Baixo |
-| 2 | P2-8 | `Features:Debugging` default consciente (Dev vs Release) | Baixo |
-| 3 | P2-2 | Interfaces para `QuestLoader` / `DigimonLoader` (ou documentar exceção) | Baixo–médio |
-| 4 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
-| 5 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
-| 6 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
-| 7 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
-| 8 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
-| 9 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
-| 10 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
+| 1 | P2-2 | Interfaces para `QuestLoader` / `DigimonLoader` (ou documentar exceção) | Baixo–médio |
+| 2 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
+| 3 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
+| 4 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
+| 5 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
+| 6 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
+| 7 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
+| 8 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
 
 ---
 
@@ -424,11 +424,11 @@ Triagem ago/2026: não priorizar guards nem reescrita ampla da doc agora; ver §
 
 ### 13.2. Consistência geracional do código
 
-Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 item 4.)
+Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 item 2.)
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 10.)
+O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 8.)
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
@@ -436,13 +436,13 @@ Para app desktop local, hub aberto + HTTP loopback é razoável. O CORS com subs
 
 ### 13.5. Observabilidade
 
-Após a triagem, Information em Development e Warnings no fail-soft fecharam o buraco principal. Elo fraco relativo menor; restos: unificar `ILogger<T>` e default de `Features:Debugging` (backlog §11.3).
+Após a triagem, Information em Development, Warnings no fail-soft e `Features:Debugging` por ambiente fecharam o buraco principal de observabilidade. Resto: unificar `ILogger<T>` (backlog §11.3).
 
 ---
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (split `OptionalJsonConverter` / Factory).
+Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (interfaces `QuestLoader` / `DigimonLoader`).
 
 Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
@@ -472,4 +472,4 @@ Camadas de implementação Windows acopladas por design: `WindowsProcessProvider
 
 ---
 
-*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (split OptionalJsonConverter). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (IQuestLoader/IDigimonLoader). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*

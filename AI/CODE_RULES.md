@@ -236,3 +236,9 @@ Referência: `Frontend/src/components/modal/Modal.vue`.
 Estas regras aplicam-se ao **Backend** (projeto `Tests/`). O Frontend não possui testes automatizados — ver regra *Sem testes no Frontend* acima.
 
 1. **Dupla Verificação de Corner Cases**: Sempre ao finalizar a implementação de testes de unidade para qualquer classe, método ou função, faça uma dupla verificação minuciosa buscando por caminhos alternativos, fallbacks, cenários de concorrência/nulos, exceptions de I/O de infraestrutura e corner cases no código-fonte original, adicionando testes focados especificamente para cobrir essas fronteiras e manter a robustez do software.
+2. **Um arquivo de produção ↔ um arquivo de testes**: Cada tipo/arquivo de produção sob teste de unidade deve ter seu próprio arquivo de testes, espelhando o nome (ex.: `OptionalJsonConverterFactory.cs` → `OptionalJsonConverterFactoryTests.cs`) na pasta/namespace correspondente em `Tests/`. A regra vale para **código novo e refactors**; retrofit do legado é sob demanda.
+
+   **Exceções aceitas** (não forçar split nesses casos):
+   - Testes de **integração** que cobrem um fluxo/pipeline inteiro (vários tipos).
+   - Suites que validam **contrato transversal** (ex.: registro DI, round-trip JSON de um DTO que exercita vários converters indiretamente).
+   - Helpers / `TheoryData` compartilhados sem tipo de produção dedicado.
