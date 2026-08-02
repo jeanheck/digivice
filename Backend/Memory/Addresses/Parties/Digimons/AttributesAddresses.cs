@@ -12,7 +12,7 @@ namespace Backend.Memory.Addresses.Parties.Digimons
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Spirit { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Wisdow { get; set; }
+        public int Wisdom { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Speed { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]

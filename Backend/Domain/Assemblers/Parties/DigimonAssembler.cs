@@ -36,7 +36,7 @@ namespace Backend.Domain.Assemblers.Parties
                     Strength = resource.Attributes.Strength,
                     Defense = resource.Attributes.Defense,
                     Spirit = resource.Attributes.Spirit,
-                    Wisdom = resource.Attributes.Wisdow,
+                    Wisdom = resource.Attributes.Wisdom,
                     Speed = resource.Attributes.Speed,
                     Charisma = resource.Attributes.Charisma
                 },

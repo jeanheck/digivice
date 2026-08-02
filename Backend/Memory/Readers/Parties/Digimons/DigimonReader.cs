@@ -63,7 +63,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
                     Strength = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Strength),
                     Defense = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Defense),
                     Spirit = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Spirit),
-                    Wisdow = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Wisdow),
+                    Wisdom = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Wisdom),
                     Speed = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Speed),
                     Charisma = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Charisma)
                 },
@@ -79,12 +79,12 @@ namespace Backend.Memory.Readers.Parties.Digimons
                 },
                 Equipments = new EquipmentsResource
                 {
-                    Head = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Head),
-                    Body = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Body),
-                    Right = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Right),
-                    Left = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Left),
-                    Accessory1 = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Accessory1),
-                    Accessory2 = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipaments.Accessory2)
+                    Head = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipments.Head),
+                    Body = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipments.Body),
+                    Right = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipments.Right),
+                    Left = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipments.Left),
+                    Accessory1 = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipments.Accessory1),
+                    Accessory2 = memoryBlockReader.ReadInt16(digimonStatusAddresses.Equipments.Accessory2)
                 },
                 Digievolutions = digievolutionsSlots,
                 StoredDigievolutions = storedDigievolutionReader.Read(

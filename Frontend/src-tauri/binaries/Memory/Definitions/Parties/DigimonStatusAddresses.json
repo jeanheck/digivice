@@ -12,7 +12,7 @@
         "Strength": "0x28",
         "Defense": "0x2A",
         "Spirit": "0x2C",
-        "Wisdow": "0x2E",
+        "Wisdom": "0x2E",
         "Speed": "0x30",
         "Charisma": "0x32"
     },
@@ -25,7 +25,7 @@
         "Machine": "0x3E",
         "Dark": "0x40"
     },
-    "Equipaments": {
+    "Equipments": {
         "Head": "0x3C0",
         "Body": "0x3C2",
         "Right": "0x3C4",

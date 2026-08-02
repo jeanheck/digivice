@@ -16,7 +16,7 @@ namespace Backend.Memory.Addresses.Parties
         public VitalAddresses MP { get; set; } = new();
         public AttributesAddresses Attributes { get; set; } = new();
         public ResistancesAddresses Resistances { get; set; } = new();
-        public EquipmentsAddresses Equipaments { get; set; } = new();
+        public EquipmentsAddresses Equipments { get; set; } = new();
         public DigievolutionsAddresses Digievolutions { get; set; } = new();
 
         public void Deconstruct(
@@ -27,7 +27,7 @@ namespace Backend.Memory.Addresses.Parties
             out VitalAddresses mp,
             out AttributesAddresses attributes,
             out ResistancesAddresses resistances,
-            out EquipmentsAddresses equipaments,
+            out EquipmentsAddresses equipments,
             out DigievolutionsAddresses digievolutions)
         {
             experience = Experience;
@@ -37,7 +37,7 @@ namespace Backend.Memory.Addresses.Parties
             mp = MP;
             attributes = Attributes;
             resistances = Resistances;
-            equipaments = Equipaments;
+            equipments = Equipments;
             digievolutions = Digievolutions;
         }
     }

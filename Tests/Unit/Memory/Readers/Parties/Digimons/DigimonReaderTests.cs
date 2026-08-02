@@ -62,9 +62,9 @@ public class DigimonReaderTests
             TP = 16,
             HP = new VitalAddresses { Current = 18, Max = 20 },
             MP = new VitalAddresses { Current = 22, Max = 24 },
-            Attributes = new AttributesAddresses { Strength = 26, Defense = 28, Spirit = 30, Wisdow = 32, Speed = 34, Charisma = 36 },
+            Attributes = new AttributesAddresses { Strength = 26, Defense = 28, Spirit = 30, Wisdom = 32, Speed = 34, Charisma = 36 },
             Resistances = new ResistancesAddresses { Fire = 38, Water = 40, Ice = 42, Wind = 44, Thunder = 46, Machine = 48, Dark = 50 },
-            Equipaments = new EquipmentsAddresses { Head = 52, Body = 54, Right = 56, Left = 58, Accessory1 = 60, Accessory2 = 62 },
+            Equipments = new EquipmentsAddresses { Head = 52, Body = 54, Right = 56, Left = 58, Accessory1 = 60, Accessory2 = 62 },
             Digievolutions = new DigievolutionsAddresses
             {
                 ActiveDigievolution = 200,
@@ -148,7 +148,7 @@ public class DigimonReaderTests
         Assert.Equal(80, result.Attributes.Strength);
         Assert.Equal(75, result.Attributes.Defense);
         Assert.Equal(60, result.Attributes.Spirit);
-        Assert.Equal(95, result.Attributes.Wisdow);
+        Assert.Equal(95, result.Attributes.Wisdom);
         Assert.Equal(110, result.Attributes.Speed);
         Assert.Equal(40, result.Attributes.Charisma);
 
@@ -183,7 +183,7 @@ public class DigimonReaderTests
             MP = new VitalAddresses(),
             Attributes = new AttributesAddresses(),
             Resistances = new ResistancesAddresses(),
-            Equipaments = new EquipmentsAddresses(),
+            Equipments = new EquipmentsAddresses(),
             Digievolutions = new DigievolutionsAddresses
             {
                 ActiveDigievolution = 200,
@@ -235,7 +235,7 @@ public class DigimonReaderTests
             MP = new VitalAddresses(),
             Attributes = new AttributesAddresses(),
             Resistances = new ResistancesAddresses(),
-            Equipaments = new EquipmentsAddresses(),
+            Equipments = new EquipmentsAddresses(),
             Digievolutions = new DigievolutionsAddresses
             {
                 ActiveDigievolution = 200,

@@ -76,7 +76,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(80, digimonResource.Attributes.Strength);
         Assert.Equal(75, digimonResource.Attributes.Defense);
         Assert.Equal(60, digimonResource.Attributes.Spirit);
-        Assert.Equal(95, digimonResource.Attributes.Wisdow);
+        Assert.Equal(95, digimonResource.Attributes.Wisdom);
         Assert.Equal(110, digimonResource.Attributes.Speed);
         Assert.Equal(40, digimonResource.Attributes.Charisma);
         Assert.Equal(10, digimonResource.Resistances.Fire);
