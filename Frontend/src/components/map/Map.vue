@@ -45,18 +45,10 @@ const closeBestiaryModal = () => {
       :style="{ backgroundImage: `url(${mapViewModel.locationImageUrl})` }"
     />
 
-    <div
-      class="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-[#00aaff]/60 pointer-events-none"
-    />
-    <div
-      class="absolute top-1 right-1 w-3 h-3 border-t-2 border-r-2 border-[#00aaff]/60 pointer-events-none"
-    />
-    <div
-      class="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-[#00aaff]/60 pointer-events-none"
-    />
-    <div
-      class="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-[#00aaff]/60 pointer-events-none"
-    />
+    <div class="dw3-scan-corner top-left" />
+    <div class="dw3-scan-corner top-right" />
+    <div class="dw3-scan-corner bottom-left" />
+    <div class="dw3-scan-corner bottom-right" />
 
     <SeabedMap
       v-if="mapViewModel.locationRegion === LocationRegionConstant.seabed"

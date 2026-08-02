@@ -35,6 +35,44 @@ body {
   clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
 }
 
+.dw3-scan-corner {
+  position: absolute;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-color: rgb(0 170 255 / 0.6);
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+
+.dw3-scan-corner.top-left {
+  top: 0.25rem;
+  left: 0.25rem;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.dw3-scan-corner.top-right {
+  top: 0.25rem;
+  right: 0.25rem;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.dw3-scan-corner.bottom-left {
+  bottom: 0.25rem;
+  left: 0.25rem;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.dw3-scan-corner.bottom-right {
+  bottom: 0.25rem;
+  right: 0.25rem;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
 .dw3-panel {
   position: relative;
   overflow: hidden;

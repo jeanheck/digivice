@@ -415,7 +415,7 @@ Arquivos com hex hardcoded (amostra priorizada para migração de tema / limpeza
 
 | ID | Achado |
 |----|--------|
-| P0-1 | Bundlar bandeiras (remover CDN) *(adiado)* |
+| P0-1 | Bundlar bandeiras (remover CDN) *(feito)* |
 | P0-2 | i18n do label de level (`Nv` → chave) *(feito)* |
 
 ### P1 — Pré-requisitos do tema por mapa + qualidade
@@ -446,9 +446,9 @@ Arquivos com hex hardcoded (amostra priorizada para migração de tema / limpeza
 | ID | Achado |
 |----|--------|
 | P3-1 | Helper de tooltips no Footer *(adiado)* |
-| P3-2 | Classe/componente para cantos do Map *(adiado)* |
+| P3-2 | Classe/componente para cantos do Map *(feito)* |
 | P3-3 | Runtime validation leve na borda SignalR *(adiado)* |
-| P3-4 | Unificar naming do barrel de repositories *(adiado)* |
+| P3-4 | Unificar naming do barrel de repositories *(feito)* |
 | P3-5 | Documentar 512 vs 600 map widths *(feito)* |
 
 ---

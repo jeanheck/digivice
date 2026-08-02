@@ -1,11 +1,11 @@
 export { AuctionRepository } from "./auction.repository";
-export { EquipmentRepository } from './equipment.repository';
+export { EquipmentRepository } from "./equipment.repository";
 export { DigimonRepository } from "./digimon.repository";
 export { DigievolutionRepository } from "./digievolution.repository";
-export { QuestRepository as JournalRepository } from "./quest.repository";
+export { QuestRepository } from "./quest.repository";
 export { LocationRepository } from "./location.repository";
-export { SeabedDockRepository as DockRepository } from "./seabed-dock.repository";
-export { SeabedDirectionsRepository as SeabedDirectionRepository } from "./seabed-direction.repository";
+export { SeabedDockRepository } from "./seabed-dock.repository";
+export { SeabedDirectionsRepository } from "./seabed-direction.repository";
 export { SeabedRoutesRepository } from "./seabed-routes.repository";
-export { MobiusDesertAreasRepository as DesertAreasRepository } from "./mobius-desert-areas.repository";
-export { MobiusDesertAreasMapRepository as DesertAreasMapRepository } from "./mobius-desert-areas-map.repository";
+export { MobiusDesertAreasRepository } from "./mobius-desert-areas.repository";
+export { MobiusDesertAreasMapRepository } from "./mobius-desert-areas-map.repository";

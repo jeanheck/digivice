@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
+import usFlag from "@/assets/icons/flags/us.png";
+import usFlag2x from "@/assets/icons/flags/us@2x.png";
+import brFlag from "@/assets/icons/flags/br.png";
+import brFlag2x from "@/assets/icons/flags/br@2x.png";
 
 const { locale } = useI18n();
 
@@ -17,7 +21,7 @@ const setLocale = (newLocale: string) => {
       :class="{ 'grayscale-0 ring-2 ring-orange-500 ring-offset-1 ring-offset-[#000a2b]': locale === 'en-US' }"
       title="English"
     >
-      <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" width="20" alt="US" class="block">
+      <img :src="usFlag" :srcset="`${usFlag2x} 2x`" width="20" alt="US" class="block">
     </button>
     <button
       @click="setLocale('pt-BR')"
@@ -25,7 +29,7 @@ const setLocale = (newLocale: string) => {
       :class="{ 'grayscale-0 ring-2 ring-orange-500 ring-offset-1 ring-offset-[#000a2b]': locale === 'pt-BR' }"
       title="Português"
     >
-      <img src="https://flagcdn.com/w20/br.png" srcset="https://flagcdn.com/w40/br.png 2x" width="20" alt="BR" class="block">
+      <img :src="brFlag" :srcset="`${brFlag2x} 2x`" width="20" alt="BR" class="block">
     </button>
   </div>
 </template>
