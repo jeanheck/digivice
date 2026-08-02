@@ -199,6 +199,7 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 | `Event.Payload` como `object` | ~~`object`~~ → `IDTO` + `DtoRuntimeTypeJsonConverter` (serializa tipo runtime; evita `payload: {}`) (**feito**) |
 | `IDTO` marker vazio | Continua marker/`where T : IDTO`; tipagem do envelope fechada via `Event.Payload : IDTO` |
 | Equals/GetHashCode manuais em records com `List<T>` | Necessário e bem feito; risco se um model novo esquecer (diff silencioso) |
+| `Optional<T>` sem `IEquatable` | ~~implícito via struct~~ → `IEquatable<Optional<T>>` + `==`/`!=` (**feito**) |
 
 ### 5.4. Cheiros e bugs de qualidade
 
@@ -338,7 +339,7 @@ Infraestrutura (MemoryReader, DuckstationConnector, AddressesRepository, hex con
 ### 10.2. O que escala mal / dívida
 
 1. **`AddressesRepository` monolítico** — um campo privado + getter por JSON de quest/DRI/weapon. Adicionar agente = editar DI-facing repository com ~10 linhas boilerplate. Candidato a descoberta por pasta (`Directory.EnumerateFiles`) com convenção de path, mantendo cache.
-2. **Boilerplate Differ** — `DigimonDiffer` é o arquivo mais longo do Events; padrão `bool xChanged` + `dto with { }` se repete. Geração parcial ou helper `SetIfChanged` reduziria ruído (sem mudar comportamento).
+2. ~~**Boilerplate Differ**~~ — padrão `if` + `dto with { }` **mantido de propósito** (legibilidade > DRY); P3-2 retirado do backlog (ago/2026).
 3. **Equals manual em records com listas** — correto, mas frágil; um helper compartilhado ou collections imutáveis (`EquatableList` / `ImmutableArray`) reduziria risco de esquecimento.
 4. ~~**Typos Memory vs Domain**~~ — `Wisdom` / `Equipments` alinhados (**feito**).
 5. **Dois idiomas de logging** — serviços DI principais com `ILogger<T>` (**feito**); Serilog estático permanece em converters/block reader/`Program`.
@@ -370,6 +371,7 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | P2-3 | Unificar logging `ILogger<T>` | `GameLoopService`, `MemoryReader`, `DuckstationConnector`; converters/block reader + Program ficam com Serilog estático |
 | P2-9 | Typos Memory `Wisdow` / `Equipaments` | `Wisdom` / `Equipments` em Addresses, Resources, JSON e testes; Assembler sem bridge de typo |
 | P2-6 | `Event.Payload` tipado / `IDTO` | `Payload` como `IDTO` + `DtoRuntimeTypeJsonConverter` (preserva JSON SignalR do tipo runtime) |
+| P3-3 | `Optional<T> : IEquatable` | `Equals`/`GetHashCode`/`==`/`!=`; Empty ≠ valor default presente |
 
 ### 11.2 Adiado
 
@@ -380,6 +382,7 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | P1-5 | Digievolution filled→empty (guard/doc) | Mesma filosofia; sem guard agora |
 | P3-5 | Assert / tipar `Slots.Count == 3` | JSON já fixa 3 slots; ROI baixo |
 | P3-4 | Backpressure / await no `SafeDispatch` | Irrelevante com 1 cliente; junto com redesign de conexão |
+| P3-2 | Helper anti-boilerplate nos Differs | Preferência de produto: `if` + `with` explícitos são mais legíveis; DRY rejeitado |
 
 Governança B/F/G no `BUSINESS_RULES` (§13.1) fica opcional e ligada a este bloco adiado.
 
@@ -389,9 +392,7 @@ Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `Allow
 
 | # | ID | Achado | Esforço relativo |
 |---|----|--------|------------------|
-| 1 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
-| 2 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
-| 3 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
+| 1 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
 
 ---
 
@@ -428,7 +429,7 @@ Assemblers/Loaders ok com collection expressions. Differs/`StateEventFactory`: `
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 3.)
+O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 1.)
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
@@ -442,7 +443,7 @@ Após a triagem, Information em Development, Warnings no fail-soft, `Features:De
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (helper anti-boilerplate nos Differs).
+Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (descoberta automática de quest JSONs no `AddressesRepository`).
 
 Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
@@ -472,4 +473,4 @@ Camadas de implementação Windows acopladas por design: `WindowsProcessProvider
 
 ---
 
-*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (helper anti-boilerplate nos Differs). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (descoberta automática de quest JSONs no `AddressesRepository`). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
