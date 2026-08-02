@@ -22,6 +22,6 @@ defineProps<{
       {{ $t("auction.historyTiming.upcoming") }}
     </p>
 
-    <p class="text-[10px] leading-tight mt-1 min-h-[12px] relative z-10 invisible">&nbsp;</p>
+    <p class="text-[10px] leading-tight mt-1 min-h-3 relative z-10 invisible">&nbsp;</p>
   </div>
 </template>
