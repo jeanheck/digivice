@@ -3,7 +3,7 @@ using Backend.Memory.Resources;
 
 namespace Backend.Application.Loaders
 {
-    public class JournalLoader(QuestLoader questLoader, IAuctionLoader auctionLoader) : IJournalLoader
+    public class JournalLoader(IQuestLoader questLoader, IAuctionLoader auctionLoader) : IJournalLoader
     {
         public JournalResource Load()
         {

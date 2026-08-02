@@ -46,10 +46,10 @@ namespace Backend.Infrastructure
 
             services.AddSingleton<IPlayerLoader, PlayerLoader>();
             services.AddSingleton<IAuctionLoader, AuctionLoader>();
-            services.AddSingleton<QuestLoader>();
+            services.AddSingleton<IQuestLoader, QuestLoader>();
             services.AddSingleton<IJournalLoader, JournalLoader>();
             services.AddSingleton<IPartyLoader, PartyLoader>();
-            services.AddSingleton<DigimonLoader>();
+            services.AddSingleton<IDigimonLoader, DigimonLoader>();
 
             services.AddSingleton<IPlayerProvider, PlayerProvider>();
             services.AddSingleton<IPartyProvider, PartyProvider>();

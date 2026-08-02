@@ -6,7 +6,7 @@ namespace Backend.Application.Loaders.Journals
 {
     public class QuestLoader(
         IAddressesRepository addressesRepository,
-        IQuestReader questReader)
+        IQuestReader questReader) : IQuestLoader
     {
         public QuestResource LoadMainQuest()
         {

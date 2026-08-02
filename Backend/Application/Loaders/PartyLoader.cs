@@ -8,7 +8,8 @@ namespace Backend.Application.Loaders
     public class PartyLoader(
         IAddressesRepository addressesRepository,
         IPartyReader partyReader,
-        DigimonLoader digimonLoader) : IPartyLoader
+        IDigimonLoader digimonLoader) : IPartyLoader
+
     {
         public PartyResource Load()
         {

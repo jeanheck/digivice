@@ -191,7 +191,7 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 
 | Outlier | Detalhe |
 |---------|---------|
-| `QuestLoader` / `DigimonLoader` sem interface | Demais loaders têm `I*Loader`; estes são registrados como concreto |
+| `QuestLoader` / `DigimonLoader` sem interface | ~~exceção~~ → `IQuestLoader` / `IDigimonLoader` (**feito**) |
 | Logging híbrido | `ILogger<T>` em alguns serviços; `Serilog.Log` estático em `GameLoopService`, `MemoryReader`, `DuckstationConnector` |
 | Typos na camada Memory | `Wisdow` / `Equipaments` nos Addresses/Resources/JSON; Domain corrige (`Wisdom`, `Equipments`) no Assembler — fronteira OK, mas confunde busca/refator |
 | Arquivo ≠ tipo | ~~`AuctionEntryAddresses.cs`~~ → `AuctionAddresses.cs` (**feito**) |
@@ -365,6 +365,7 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | P2-4 | Ordem de membros + `_firstRender` | `SafeDispatch` antes dos públicos; `FirstRender` sem `_` |
 | P2-5 | Split OptionalJsonConverter / Factory | `OptionalJsonConverterFactory.cs` separado |
 | P2-8 | `Features:Debugging` Dev vs Release | `false` em appsettings; `true` em Development |
+| P2-2 | Interfaces QuestLoader / DigimonLoader | `IQuestLoader` / `IDigimonLoader` + DI |
 
 ### 11.2 Adiado
 
@@ -384,14 +385,13 @@ Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `Allow
 
 | # | ID | Achado | Esforço relativo |
 |---|----|--------|------------------|
-| 1 | P2-2 | Interfaces para `QuestLoader` / `DigimonLoader` (ou documentar exceção) | Baixo–médio |
-| 2 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
-| 3 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
-| 4 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
-| 5 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
-| 6 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
-| 7 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
-| 8 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
+| 1 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
+| 2 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
+| 3 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
+| 4 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
+| 5 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
+| 6 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
+| 7 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
 
 ---
 
@@ -424,11 +424,11 @@ Triagem ago/2026: não priorizar guards nem reescrita ampla da doc agora; ver §
 
 ### 13.2. Consistência geracional do código
 
-Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 item 2.)
+Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 item 1.)
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 8.)
+O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 7.)
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
@@ -442,7 +442,7 @@ Após a triagem, Information em Development, Warnings no fail-soft e `Features:D
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (interfaces `QuestLoader` / `DigimonLoader`).
+Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (collection expressions em Converters/Diffing).
 
 Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
@@ -466,10 +466,10 @@ Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievo
 
 ## 16. Apêndice — inventário rápido de interfaces
 
-28 interfaces públicas; quase todas com implementação 1:1. Exceções de registro DI sem interface: `QuestLoader`, `DigimonLoader`. Marker: `IDTO`.
+28 interfaces públicas (+ `IQuestLoader` / `IDigimonLoader`); quase todas com implementação 1:1. Marker: `IDTO`.
 
 Camadas de implementação Windows acopladas por design: `WindowsProcessProvider`, `WindowsMemoryProvider`, `WindowsMemoryAccessor` — adequado ao escopo DuckStation/Windows; abstrações (`IProcessService`, `IMemoryProvider`) já existem se um dia houver outro host.
 
 ---
 
-*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (IQuestLoader/IDigimonLoader). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (collection expressions). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*

@@ -6,7 +6,7 @@ namespace Backend.Application.Loaders.Parties
 {
     public class DigimonLoader(
         IAddressesRepository addressesRepository,
-        IDigimonReader digimonReader)
+        IDigimonReader digimonReader) : IDigimonLoader
     {
         public DigimonResource? Load(int digimonId)
         {
