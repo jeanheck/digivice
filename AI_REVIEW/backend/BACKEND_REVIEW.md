@@ -174,15 +174,15 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 | Collection expressions `[ ]` / `[..]` | C+ | Assemblers/Loaders ok; Converters/Diffing ainda usam `.ToList()` / `new List<>()` |
 | Usings limpos | A | Spot-check limpo |
 | Readers/Converters stateless | A | Sem estado mutável de instância |
-| Sem prefixo `_` | A- | 1 violação: `_firstRender` em `DebugConsoleRenderer` |
+| Sem prefixo `_` | A | `_firstRender` → `FirstRender` (**feito**) |
 | `new();` | A | Sem violações |
-| Ordem de membros (privados → públicos) | B+ | Violação clara em `EventDispatcherService` (`SafeDispatch` depois dos públicos) |
+| Ordem de membros (privados → públicos) | A | `SafeDispatch` reordenado (**feito**) |
 | Tests: corner cases | A- | Infra bem coberta; gap pequeno em fallback de hex list |
 
 ### 5.2. Violações concretas (estilo)
 
-1. **`DebugConsoleRenderer.cs`** — `private bool _firstRender` (underline).
-2. **`EventDispatcherService.cs`** — método privado após públicos.
+1. ~~`DebugConsoleRenderer.cs` — `private bool _firstRender`~~ (**feito** → `FirstRender`).
+2. ~~`EventDispatcherService.cs` — método privado após públicos~~ (**feito**).
 3. **`OptionalJsonConverter.cs`** — dois tipos no mesmo arquivo.
 4. **`AddressesRepository.cs`** — `private readonly string dataDirectory = dataDirectory;` redundante com primary ctor (cheiro adjacente à regra 6).
 5. **Converters/Diffing legados** — `JournalConverter`, `DigimonConverter`, `QuestConverter`, `PartyConverter`, `StepConverter`, `JournalDiffer`, `DigimonDiffer`, `PartyDiffer`, `QuestDiffer`, `StepDiffer`, `StateEventFactory` ainda com `.ToList()` / `new List<T>()`.
@@ -221,13 +221,13 @@ Comportamento de valor inalterado (espelho tolerante); diagnóstico melhorou.
 
 Se o backend for lançado como sidecar com console, o dashboard ANSI roda por padrão. Pode ser intencional para o produto desktop; vale ter profile Dev/Prod ou default `false` com override local.
 
-#### Exit code em falha fatal
+#### Exit code em falha fatal (**feito**)
 
-`Program.cs` catch top-level loga `Fatal` mas não seta `Environment.ExitCode` → supervisor pode achar sucesso.
+`Program.cs` catch top-level seta `Environment.ExitCode = 1` após `Log.Fatal`, para o sidecar Tauri detectar crash (`code != 0`).
 
-#### Dead code
+#### Dead code (**feito**)
 
-`player.Bits.ToString(...) ?? "Unknown"` em `DebugConsoleRenderer` — `int.ToString` nunca é null.
+~~`player.Bits.ToString(...) ?? "Unknown"`~~ — `?? "Unknown"` removido; `Bits` é `int` e `ToString` nunca é null.
 
 ---
 
@@ -360,6 +360,9 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | P1-2 | CORS substring `"tauri"` | Allowlist + `IsLoopback` + `TryCreate` |
 | P1-3 | Fail-soft silencioso | `Log.Warning` em block reader e converters hex (sem throw) |
 | P2-10 | Pasta `Domain/Shared` + arquivo Auction | Shared já inexistente; `AuctionEntryAddresses.cs` → `AuctionAddresses.cs` |
+| — | Dead code `Bits.ToString ?? "Unknown"` | Removido em `DebugConsoleRenderer` |
+| P2-7 | Exit code em fatal startup | `Environment.ExitCode = 1` no catch de `Program.cs` |
+| P2-4 | Ordem de membros + `_firstRender` | `SafeDispatch` antes dos públicos; `FirstRender` sem `_` |
 
 ### 11.2 Adiado
 
@@ -379,19 +382,16 @@ Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `Allow
 
 | # | ID | Achado | Esforço relativo |
 |---|----|--------|------------------|
-| 1 | — | Dead code: `Bits.ToString(...) ?? "Unknown"` em `DebugConsoleRenderer` | Trivial |
-| 2 | P2-7 | `Environment.ExitCode ≠ 0` em fatal no startup | Trivial |
-| 3 | P2-4 | Ordem de membros em `EventDispatcherService`; remover `_firstRender` | Baixo |
-| 4 | P2-5 | Split `OptionalJsonConverter` / Factory (um tipo por arquivo) | Baixo |
-| 5 | P2-8 | `Features:Debugging` default consciente (Dev vs Release) | Baixo |
-| 6 | P2-2 | Interfaces para `QuestLoader` / `DigimonLoader` (ou documentar exceção) | Baixo–médio |
-| 7 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
-| 8 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
-| 9 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
-| 10 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
-| 11 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
-| 12 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
-| 13 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
+| 1 | P2-5 | Split `OptionalJsonConverter` / Factory (um tipo por arquivo) | Baixo |
+| 2 | P2-8 | `Features:Debugging` default consciente (Dev vs Release) | Baixo |
+| 3 | P2-2 | Interfaces para `QuestLoader` / `DigimonLoader` (ou documentar exceção) | Baixo–médio |
+| 4 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
+| 5 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
+| 6 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
+| 7 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
+| 8 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
+| 9 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
+| 10 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
 
 ---
 
@@ -424,11 +424,11 @@ Triagem ago/2026: não priorizar guards nem reescrita ampla da doc agora; ver §
 
 ### 13.2. Consistência geracional do código
 
-Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 itens 3 e 7.)
+Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 item 4.)
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 13.)
+O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 10.)
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
@@ -442,7 +442,7 @@ Após a triagem, Information em Development e Warnings no fail-soft fecharam o b
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (dead code `Bits.ToString` no `DebugConsoleRenderer`).
+Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (split `OptionalJsonConverter` / Factory).
 
 Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
@@ -472,4 +472,4 @@ Camadas de implementação Windows acopladas por design: `WindowsProcessProvider
 
 ---
 
-*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (dead code Bits). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (split OptionalJsonConverter). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*

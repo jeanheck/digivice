@@ -12,6 +12,19 @@ public class EventDispatcherService(
     ILogger<EventDispatcherService> logger,
     IGameStateStore gameStateStore) : IEventDispatcherService
 {
+    private void SafeDispatch(Event ev, IClientProxy? target = null)
+    {
+        target ??= hubContext.Clients.All;
+        _ = target.SendAsync(ev.Type.ToString(), ev)
+            .ContinueWith(t =>
+            {
+                if (t.IsFaulted)
+                {
+                    logger.LogError(t.Exception, "Error dispatching event {Type}", ev.Type);
+                }
+            });
+    }
+
     public void DispatchInitialStateToClient(string connectionId)
     {
         var target = hubContext.Clients.Client(connectionId);
@@ -41,18 +54,5 @@ public class EventDispatcherService(
         {
             SafeDispatch(ev);
         }
-    }
-
-    private void SafeDispatch(Event ev, IClientProxy? target = null)
-    {
-        target ??= hubContext.Clients.All;
-        _ = target.SendAsync(ev.Type.ToString(), ev)
-            .ContinueWith(t =>
-            {
-                if (t.IsFaulted)
-                {
-                    logger.LogError(t.Exception, "Error dispatching event {Type}", ev.Type);
-                }
-            });
     }
 }

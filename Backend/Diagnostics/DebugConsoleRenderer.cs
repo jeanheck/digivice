@@ -19,16 +19,16 @@ namespace Backend.Diagnostics
         private const string Red = "\x1b[31m";
         private const string Blue = "\x1b[34m";
         private const string Gray = "\x1b[90m";
-        private bool _firstRender = true;
+        private bool FirstRender = true;
 
         public void Render(State? state)
         {
             var sb = new StringBuilder();
 
-            if (_firstRender)
+            if (FirstRender)
             {
                 Console.Clear();
-                _firstRender = false;
+                FirstRender = false;
             }
 
             // Stabilize cursor instead of clearing repeatedly
@@ -63,7 +63,7 @@ namespace Backend.Diagnostics
 
         private void RenderPlayer(StringBuilder sb, Player player)
         {
-            sb.AppendLine($"{Cyan}PLAYER:{Reset} {Yellow}BITS:{Reset} {player.Bits.ToString(BitsFormat) ?? "Unknown"}");
+            sb.AppendLine($"{Cyan}PLAYER:{Reset} {Yellow}BITS:{Reset} {player.Bits.ToString(BitsFormat)}");
             sb.AppendLine();
         }
 
