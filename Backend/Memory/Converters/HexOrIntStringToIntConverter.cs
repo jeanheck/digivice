@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Serilog;
 
 namespace Backend.Memory.Converters
 {
@@ -30,6 +31,7 @@ namespace Backend.Memory.Converters
             }
             catch
             {
+                Log.Warning("HexOrIntStringToIntConverter failed to parse value '{Value}', falling back to 0", str);
                 return 0;
             }
         }

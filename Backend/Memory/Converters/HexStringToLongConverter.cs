@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Serilog;
 
 namespace Backend.Memory.Converters
 {
@@ -18,9 +19,10 @@ namespace Backend.Memory.Converters
                 }
                 return long.Parse(str);
             }
-            catch 
-            { 
-                return 0; 
+            catch
+            {
+                Log.Warning("HexStringToLongConverter failed to parse value '{Value}', falling back to 0", str);
+                return 0;
             }
         }
 
