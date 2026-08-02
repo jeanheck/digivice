@@ -432,14 +432,14 @@ Arquivos com hex hardcoded (amostra priorizada para migração de tema / limpeza
 
 | ID | Achado |
 |----|--------|
-| P2-1 | `npm run format` nos arquivos com aspas simples *(adiado)* |
+| P2-1 | `npm run format` nos arquivos com aspas simples *(feito)* |
 | P2-2 | Aposentar `Constant` god-enum *(adiado)* |
 | P2-3 | Remover `vue-router` e scaffolding Vitest (ou documentar exceção) *(feito)* |
 | P2-4 | `SeabedDockLabel` não importar Raw *(feito)* |
 | P2-5 | Extrair bloco duplicado MapDetailsFrame/SeabedDocks/ZoomedLocationMap *(adiado)* |
 | P2-6 | Preferir `dw3-aside`/`dw3-panel` em Footer/Digimon *(adiado)* |
 | P2-7 | Tokenizar `.map-info-panel*` ou migrar para Tailwind *(adiado)* |
-| P2-8 | Normalizar syncer digievolution para `!== undefined` *(adiado)* |
+| P2-8 | Normalizar syncer digievolution para `!== undefined` *(feito)* |
 
 ### P3
 

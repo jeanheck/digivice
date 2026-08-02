@@ -11,13 +11,18 @@ export class DigievolutionSlotSyncer {
     const newId = newDigievolutionSlotDto.digievolutionId;
     const newDigievolution = newDigievolutionSlotDto.digievolution;
 
-    if (newId != undefined && newDigievolution != undefined) {
+    // Filled → empty is forbidden; null from the DTO is a no-op (do not clear the slot).
+    if (newId === null || newDigievolution === null) {
+      return;
+    }
+
+    if (newId !== undefined && newDigievolution !== undefined) {
       previousDigievolutionSlot.digievolutionId = newId;
       previousDigievolutionSlot.digievolution = DigievolutionConverter.convert(newDigievolution);
       return;
     }
 
-    if (newDigievolution != undefined) {
+    if (newDigievolution !== undefined) {
       const previousDigievolution = previousDigievolutionSlot.digievolution;
       if (previousDigievolution) {
         DigievolutionSyncer.sync(previousDigievolution, newDigievolution);
