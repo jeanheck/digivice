@@ -31,7 +31,8 @@ public class DigimonAssemblerTests
             TP = 15,
             BlastGauge = 600,
             ActiveDigievolutionId = 12,
-            Vitals = new VitalsResource { CurrentHP = 100, MaxHP = 120, CurrentMP = 50, MaxMP = 60 },
+            HP = new VitalResource { Current = 100, Max = 120 },
+            MP = new VitalResource { Current = 50, Max = 60 },
             Attributes = new AttributesResource { Strength = 10, Defense = 11, Spirit = 12, Wisdow = 13, Speed = 14, Charisma = 15 },
             Resistances = new ResistancesResource { Fire = 1, Water = 2, Ice = 3, Wind = 4, Thunder = 5, Machine = 6, Dark = 7 },
             Equipments = new EquipmentsResource { Head = 101, Body = 102, Right = 103, Left = 104, Accessory1 = 105, Accessory2 = 106 },
@@ -53,11 +54,11 @@ public class DigimonAssemblerTests
         Assert.Equal(600, result.BlastGauge);
         Assert.Equal(12, result.ActiveDigievolutionId);
 
-        // Vitals
-        Assert.Equal(100, result.Vitals.CurrentHP);
-        Assert.Equal(120, result.Vitals.MaxHP);
-        Assert.Equal(50, result.Vitals.CurrentMP);
-        Assert.Equal(60, result.Vitals.MaxMP);
+        // HP / MP
+        Assert.Equal(100, result.HP.Current);
+        Assert.Equal(120, result.HP.Max);
+        Assert.Equal(50, result.MP.Current);
+        Assert.Equal(60, result.MP.Max);
 
         // Attributes
         Assert.Equal(10, result.Attributes.Strength);
@@ -93,7 +94,8 @@ public class DigimonAssemblerTests
             Experience = 100,
             Level = 1,
             TP = 0,
-            Vitals = new VitalsResource(),
+            HP = new VitalResource(),
+            MP = new VitalResource(),
             Attributes = new AttributesResource(),
             Resistances = new ResistancesResource(),
             Equipments = new EquipmentsResource(),

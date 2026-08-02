@@ -8,7 +8,8 @@ namespace Backend.Memory.Resources.Parties
         public int Level { get; set; }
         public int TP { get; set; }
         public int BlastGauge { get; set; }
-        public VitalsResource Vitals { get; set; } = new();
+        public VitalResource HP { get; set; } = new();
+        public VitalResource MP { get; set; } = new();
         public AttributesResource Attributes { get; set; } = new();
         public ResistancesResource Resistances { get; set; } = new();
         public EquipmentsResource Equipments { get; set; } = new();

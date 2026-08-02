@@ -21,12 +21,15 @@ namespace Backend.Domain.Assemblers.Parties
                 Level = resource.Level,
                 TP = resource.TP,
                 BlastGauge = resource.BlastGauge,
-                Vitals = new Vitals
+                HP = new Vital
                 {
-                    CurrentHP = resource.Vitals.CurrentHP,
-                    MaxHP = resource.Vitals.MaxHP,
-                    CurrentMP = resource.Vitals.CurrentMP,
-                    MaxMP = resource.Vitals.MaxMP
+                    Current = resource.HP.Current,
+                    Max = resource.HP.Max
+                },
+                MP = new Vital
+                {
+                    Current = resource.MP.Current,
+                    Max = resource.MP.Max
                 },
                 Attributes = new Attributes
                 {

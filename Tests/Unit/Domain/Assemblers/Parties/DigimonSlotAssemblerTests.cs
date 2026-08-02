@@ -17,7 +17,8 @@ public class DigimonSlotAssemblerTests
             {
                 Experience = 200,
                 Level = 5,
-                Vitals = new VitalsResource(),
+                HP = new VitalResource(),
+                MP = new VitalResource(),
                 Attributes = new AttributesResource(),
                 Resistances = new ResistancesResource(),
                 Equipments = new EquipmentsResource(),

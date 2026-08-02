@@ -16,7 +16,8 @@ public class DigimonSlotConverterTests
             Digimon = new Digimon
             {
                 Level = 30,
-                Vitals = new Vitals(),
+                HP = new Vital(),
+                MP = new Vital(),
                 Attributes = new Attributes(),
                 Resistances = new Resistances(),
                 Equipments = new Equipments(),

@@ -8,7 +8,8 @@ namespace Backend.Domain.Models.Parties
         public int TP { get; set; }
         public int BlastGauge { get; set; }
         public int Experience { get; set; }
-        public Vitals Vitals { get; set; } = new();
+        public Vital HP { get; set; } = new();
+        public Vital MP { get; set; } = new();
         public Attributes Attributes { get; set; } = new();
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
@@ -24,7 +25,8 @@ namespace Backend.Domain.Models.Parties
                    TP == other.TP &&
                    BlastGauge == other.BlastGauge &&
                    Experience == other.Experience &&
-                   Vitals.Equals(other.Vitals) &&
+                   HP.Equals(other.HP) &&
+                   MP.Equals(other.MP) &&
                    Attributes.Equals(other.Attributes) &&
                    Resistances.Equals(other.Resistances) &&
                    Equipments.Equals(other.Equipments) &&
@@ -40,7 +42,8 @@ namespace Backend.Domain.Models.Parties
             hash.Add(TP);
             hash.Add(BlastGauge);
             hash.Add(Experience);
-            hash.Add(Vitals);
+            hash.Add(HP);
+            hash.Add(MP);
             hash.Add(Attributes);
             hash.Add(Resistances);
             hash.Add(Equipments);

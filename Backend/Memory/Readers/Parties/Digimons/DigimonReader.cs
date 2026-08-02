@@ -48,12 +48,15 @@ namespace Backend.Memory.Readers.Parties.Digimons
                 Level = memoryBlockReader.ReadInt16(digimonStatusAddresses.Level),
                 TP = memoryBlockReader.ReadInt16(digimonStatusAddresses.TP),
                 BlastGauge = memoryReader.ReadInt16(digimonAddress.BlastGaugeAddress),
-                Vitals = new VitalsResource
+                HP = new VitalResource
                 {
-                    CurrentHP = memoryBlockReader.ReadInt16(digimonStatusAddresses.Vitals.CurrentHP),
-                    MaxHP = memoryBlockReader.ReadInt16(digimonStatusAddresses.Vitals.MaxHP),
-                    CurrentMP = memoryBlockReader.ReadInt16(digimonStatusAddresses.Vitals.CurrentMP),
-                    MaxMP = memoryBlockReader.ReadInt16(digimonStatusAddresses.Vitals.MaxMP)
+                    Current = memoryBlockReader.ReadInt16(digimonStatusAddresses.HP.Current),
+                    Max = memoryBlockReader.ReadInt16(digimonStatusAddresses.HP.Max)
+                },
+                MP = new VitalResource
+                {
+                    Current = memoryBlockReader.ReadInt16(digimonStatusAddresses.MP.Current),
+                    Max = memoryBlockReader.ReadInt16(digimonStatusAddresses.MP.Max)
                 },
                 Attributes = new AttributesResource
                 {

@@ -88,18 +88,19 @@ namespace Backend.Diagnostics
         private void RenderDigimon(StringBuilder sb, DigimonSlot slot)
         {
             var digimon = slot.Digimon!;
-            var vitals = digimon.Vitals;
+            var hp = digimon.HP;
+            var mp = digimon.MP;
             sb.AppendLine($"{Yellow}Slot {slot.Index} (ID: {slot.DigimonId}):{Reset} [Lv.{digimon.Level.ToString(LvlFormat)}] [TP:{digimon.TP.ToString(StatFormat)}] [EXP:{digimon.Experience.ToString(ExpFormat)}]");
 
             // HP Bar
             sb.Append("   HP: ");
-            AppendProgressBar(sb, vitals.CurrentHP, vitals.MaxHP, GetHpColor(vitals.CurrentHP, vitals.MaxHP));
-            sb.AppendLine($" {vitals.CurrentHP.ToString(StatFormat)}/{vitals.MaxHP.ToString(StatFormat)}");
+            AppendProgressBar(sb, hp.Current, hp.Max, GetHpColor(hp.Current, hp.Max));
+            sb.AppendLine($" {hp.Current.ToString(StatFormat)}/{hp.Max.ToString(StatFormat)}");
 
             // MP Bar
             sb.Append("   MP: ");
-            AppendProgressBar(sb, vitals.CurrentMP, vitals.MaxMP, Blue);
-            sb.AppendLine($" {vitals.CurrentMP.ToString(StatFormat)}/{vitals.MaxMP.ToString(StatFormat)}");
+            AppendProgressBar(sb, mp.Current, mp.Max, Blue);
+            sb.AppendLine($" {mp.Current.ToString(StatFormat)}/{mp.Max.ToString(StatFormat)}");
 
             // Attributes
             var attributes = digimon.Attributes;

@@ -60,7 +60,8 @@ public class DigimonReaderTests
             Experience = 10,
             Level = 14,
             TP = 16,
-            Vitals = new VitalsAddresses { CurrentHP = 18, MaxHP = 20, CurrentMP = 22, MaxMP = 24 },
+            HP = new VitalAddresses { Current = 18, Max = 20 },
+            MP = new VitalAddresses { Current = 22, Max = 24 },
             Attributes = new AttributesAddresses { Strength = 26, Defense = 28, Spirit = 30, Wisdow = 32, Speed = 34, Charisma = 36 },
             Resistances = new ResistancesAddresses { Fire = 38, Water = 40, Ice = 42, Wind = 44, Thunder = 46, Machine = 48, Dark = 50 },
             Equipaments = new EquipmentsAddresses { Head = 52, Body = 54, Right = 56, Left = 58, Accessory1 = 60, Accessory2 = 62 },
@@ -76,11 +77,11 @@ public class DigimonReaderTests
         WriteInt16(block, 14, 45);    // Level
         WriteInt16(block, 16, 32);    // TP
 
-        // Vitals
-        WriteInt16(block, 18, 500);   // CurrentHP
-        WriteInt16(block, 20, 1000);  // MaxHP
-        WriteInt16(block, 22, 200);   // CurrentMP
-        WriteInt16(block, 24, 400);   // MaxMP
+        // HP / MP
+        WriteInt16(block, 18, 500);   // HP Current
+        WriteInt16(block, 20, 1000);  // HP Max
+        WriteInt16(block, 22, 200);   // MP Current
+        WriteInt16(block, 24, 400);   // MP Max
 
         // Attributes
         WriteInt16(block, 26, 80);    // Strength
@@ -137,11 +138,11 @@ public class DigimonReaderTests
         Assert.Equal(32, result.TP);
         Assert.Equal(750, result.BlastGauge);
 
-        // Vitals
-        Assert.Equal(500, result.Vitals.CurrentHP);
-        Assert.Equal(1000, result.Vitals.MaxHP);
-        Assert.Equal(200, result.Vitals.CurrentMP);
-        Assert.Equal(400, result.Vitals.MaxMP);
+        // HP / MP
+        Assert.Equal(500, result.HP.Current);
+        Assert.Equal(1000, result.HP.Max);
+        Assert.Equal(200, result.MP.Current);
+        Assert.Equal(400, result.MP.Max);
 
         // Attributes
         Assert.Equal(80, result.Attributes.Strength);
@@ -178,7 +179,8 @@ public class DigimonReaderTests
         {
             Experience = 10,
             Level = 14,
-            Vitals = new VitalsAddresses(),
+            HP = new VitalAddresses(),
+            MP = new VitalAddresses(),
             Attributes = new AttributesAddresses(),
             Resistances = new ResistancesAddresses(),
             Equipaments = new EquipmentsAddresses(),
@@ -229,7 +231,8 @@ public class DigimonReaderTests
         {
             Experience = 10,
             Level = 14,
-            Vitals = new VitalsAddresses(),
+            HP = new VitalAddresses(),
+            MP = new VitalAddresses(),
             Attributes = new AttributesAddresses(),
             Resistances = new ResistancesAddresses(),
             Equipaments = new EquipmentsAddresses(),

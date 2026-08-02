@@ -20,7 +20,10 @@ public record class DigimonDTO : IDTO
     public Optional<int> Experience { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<VitalsDTO> Vitals { get; init; } = Optional<VitalsDTO>.Empty;
+    public Optional<VitalDTO> HP { get; init; } = Optional<VitalDTO>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<VitalDTO> MP { get; init; } = Optional<VitalDTO>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<AttributesDTO> Attributes { get; init; } = Optional<AttributesDTO>.Empty;

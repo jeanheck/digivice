@@ -12,7 +12,8 @@ namespace Backend.Memory.Addresses.Parties
         public int Level { get; set; }
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int TP { get; set; }
-        public VitalsAddresses Vitals { get; set; } = new();
+        public VitalAddresses HP { get; set; } = new();
+        public VitalAddresses MP { get; set; } = new();
         public AttributesAddresses Attributes { get; set; } = new();
         public ResistancesAddresses Resistances { get; set; } = new();
         public EquipmentsAddresses Equipaments { get; set; } = new();
@@ -22,7 +23,8 @@ namespace Backend.Memory.Addresses.Parties
             out int experience,
             out int level,
             out int tp,
-            out VitalsAddresses vitals,
+            out VitalAddresses hp,
+            out VitalAddresses mp,
             out AttributesAddresses attributes,
             out ResistancesAddresses resistances,
             out EquipmentsAddresses equipaments,
@@ -31,7 +33,8 @@ namespace Backend.Memory.Addresses.Parties
             experience = Experience;
             level = Level;
             tp = TP;
-            vitals = Vitals;
+            hp = HP;
+            mp = MP;
             attributes = Attributes;
             resistances = Resistances;
             equipaments = Equipaments;

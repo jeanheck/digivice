@@ -21,7 +21,8 @@ public class PartyAssemblerTests
                     {
                         Experience = 100,
                         Level = 2,
-                        Vitals = new VitalsResource(),
+                        HP = new VitalResource(),
+                        MP = new VitalResource(),
                         Attributes = new AttributesResource(),
                         Resistances = new ResistancesResource(),
                         Equipments = new EquipmentsResource(),

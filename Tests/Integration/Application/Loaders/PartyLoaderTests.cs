@@ -42,10 +42,10 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         // Level (Int16) no offset 0x1C (28) -> Level 12
         BitConverter.GetBytes((short)12).CopyTo(fakeMemoryBlock, 28);
 
-        // CurrentHP (Int16) no offset 0x20 (32) -> 450 HP
+        // HP Current (Int16) no offset 0x20 (32) -> 450 HP
         BitConverter.GetBytes((short)450).CopyTo(fakeMemoryBlock, 32);
 
-        // MaxHP (Int16) no offset 0x22 (34) -> 500 HP
+        // HP Max (Int16) no offset 0x22 (34) -> 500 HP
         BitConverter.GetBytes((short)500).CopyTo(fakeMemoryBlock, 34);
 
         // Strength (Int16) no offset 0x28 (40) -> Strength 42
@@ -101,8 +101,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(5, kumamon.ActiveDigievolutionId);
         Assert.Equal(1500, kumamon.Experience);
         Assert.Equal(12, kumamon.Level);
-        Assert.Equal(450, kumamon.Vitals.CurrentHP);
-        Assert.Equal(500, kumamon.Vitals.MaxHP);
+        Assert.Equal(450, kumamon.HP.Current);
+        Assert.Equal(500, kumamon.HP.Max);
         Assert.Equal(42, kumamon.Attributes.Strength);
 
         // Validar que a árvore evolutiva de Kumamon integrou perfeitamente

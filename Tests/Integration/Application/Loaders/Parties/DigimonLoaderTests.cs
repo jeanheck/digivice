@@ -69,10 +69,10 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(85000, digimonResource.Experience);
         Assert.Equal(45, digimonResource.Level);
         Assert.Equal(400, digimonResource.BlastGauge);
-        Assert.Equal(500, digimonResource.Vitals.CurrentHP);
-        Assert.Equal(1000, digimonResource.Vitals.MaxHP);
-        Assert.Equal(200, digimonResource.Vitals.CurrentMP);
-        Assert.Equal(400, digimonResource.Vitals.MaxMP);
+        Assert.Equal(500, digimonResource.HP.Current);
+        Assert.Equal(1000, digimonResource.HP.Max);
+        Assert.Equal(200, digimonResource.MP.Current);
+        Assert.Equal(400, digimonResource.MP.Max);
         Assert.Equal(80, digimonResource.Attributes.Strength);
         Assert.Equal(75, digimonResource.Attributes.Defense);
         Assert.Equal(60, digimonResource.Attributes.Spirit);

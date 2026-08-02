@@ -36,7 +36,7 @@ public class DigimonDifferTests
         var previous = CreateBaseDigimon();
         var newObj = CreateBaseDigimon();
         newObj.Level = 26;
-        newObj.Vitals.CurrentHP = 150;
+        newObj.HP.Current = 150;
 
         var result = DigimonDiffer.Diff(previous, newObj);
 
@@ -44,10 +44,11 @@ public class DigimonDifferTests
         Assert.True(result.Level.HasValue);
         Assert.Equal(26, result.Level.Value);
         Assert.False(result.Experience.HasValue);
-        Assert.True(result.Vitals.HasValue);
-        Assert.NotNull(result.Vitals.Value);
-        Assert.True(result.Vitals.Value.CurrentHP.HasValue);
-        Assert.Equal(150, result.Vitals.Value.CurrentHP.Value);
+        Assert.True(result.HP.HasValue);
+        Assert.NotNull(result.HP.Value);
+        Assert.True(result.HP.Value.Current.HasValue);
+        Assert.Equal(150, result.HP.Value.Current.Value);
+        Assert.False(result.MP.HasValue);
     }
 
     [Fact]
@@ -115,7 +116,8 @@ public class DigimonDifferTests
             BlastGauge = 100,
             Experience = 1000,
             ActiveDigievolutionId = 3,
-            Vitals = new Vitals { CurrentHP = 100, MaxHP = 100, CurrentMP = 50, MaxMP = 50 },
+            HP = new Vital { Current = 100, Max = 100 },
+            MP = new Vital { Current = 50, Max = 50 },
             Attributes = new Attributes { Strength = 5, Defense = 5, Spirit = 5, Wisdom = 5, Speed = 5, Charisma = 5 },
             Resistances = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
             Equipments = new Equipments { Head = 0, Body = 0, Right = 0, Left = 0, Accessory1 = 0, Accessory2 = 0 },
