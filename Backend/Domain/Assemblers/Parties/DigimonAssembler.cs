@@ -20,7 +20,7 @@ namespace Backend.Domain.Assemblers.Parties
                 Experience = resource.Experience,
                 Level = resource.Level,
                 TP = resource.TP,
-                BlastGauge = resource.BlastGauge,
+                Blast = resource.Blast,
                 HP = new Vital
                 {
                     Current = resource.HP.Current,

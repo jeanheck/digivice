@@ -29,7 +29,7 @@ public class DigimonAssemblerTests
             Experience = 5000,
             Level = 30,
             TP = 15,
-            BlastGauge = 600,
+            Blast = 600,
             ActiveDigievolutionId = 12,
             HP = new VitalResource { Current = 100, Max = 120 },
             MP = new VitalResource { Current = 50, Max = 60 },
@@ -51,7 +51,7 @@ public class DigimonAssemblerTests
         Assert.Equal(5000, result.Experience);
         Assert.Equal(30, result.Level);
         Assert.Equal(15, result.TP);
-        Assert.Equal(600, result.BlastGauge);
+        Assert.Equal(600, result.Blast);
         Assert.Equal(12, result.ActiveDigievolutionId);
 
         // HP / MP

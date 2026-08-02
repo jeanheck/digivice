@@ -136,7 +136,7 @@ public class DigimonReaderTests
         Assert.Equal(85000, result.Experience);
         Assert.Equal(45, result.Level);
         Assert.Equal(32, result.TP);
-        Assert.Equal(750, result.BlastGauge);
+        Assert.Equal(750, result.Blast);
 
         // HP / MP
         Assert.Equal(500, result.HP.Current);

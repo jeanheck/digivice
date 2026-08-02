@@ -68,7 +68,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(5, digimonResource.ActiveDigievolutionId);
         Assert.Equal(85000, digimonResource.Experience);
         Assert.Equal(45, digimonResource.Level);
-        Assert.Equal(400, digimonResource.BlastGauge);
+        Assert.Equal(400, digimonResource.Blast);
         Assert.Equal(500, digimonResource.HP.Current);
         Assert.Equal(1000, digimonResource.HP.Max);
         Assert.Equal(200, digimonResource.MP.Current);
@@ -122,7 +122,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(7, digimonResource.ActiveDigievolutionId);
         Assert.Equal(12000, digimonResource.Experience);
         Assert.Equal(18, digimonResource.Level);
-        Assert.Equal(999, digimonResource.BlastGauge);
+        Assert.Equal(999, digimonResource.Blast);
     }
 
     [Fact]

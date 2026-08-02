@@ -7,7 +7,7 @@ namespace Backend.Memory.Resources.Parties
         public int Experience { get; set; }
         public int Level { get; set; }
         public int TP { get; set; }
-        public int BlastGauge { get; set; }
+        public int Blast { get; set; }
         public VitalResource HP { get; set; } = new();
         public VitalResource MP { get; set; } = new();
         public AttributesResource Attributes { get; set; } = new();

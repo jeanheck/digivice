@@ -6,7 +6,7 @@ namespace Backend.Domain.Models.Parties
     {
         public int Level { get; set; }
         public int TP { get; set; }
-        public int BlastGauge { get; set; }
+        public int Blast { get; set; }
         public int Experience { get; set; }
         public Vital HP { get; set; } = new();
         public Vital MP { get; set; } = new();
@@ -23,7 +23,7 @@ namespace Backend.Domain.Models.Parties
 
             return Level == other.Level &&
                    TP == other.TP &&
-                   BlastGauge == other.BlastGauge &&
+                   Blast == other.Blast &&
                    Experience == other.Experience &&
                    HP.Equals(other.HP) &&
                    MP.Equals(other.MP) &&
@@ -40,7 +40,7 @@ namespace Backend.Domain.Models.Parties
             var hash = new HashCode();
             hash.Add(Level);
             hash.Add(TP);
-            hash.Add(BlastGauge);
+            hash.Add(Blast);
             hash.Add(Experience);
             hash.Add(HP);
             hash.Add(MP);

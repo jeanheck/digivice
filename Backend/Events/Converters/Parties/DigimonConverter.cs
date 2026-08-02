@@ -11,7 +11,7 @@ public static class DigimonConverter
     {
         Level = digimon.Level,
         TP = digimon.TP,
-        BlastGauge = digimon.BlastGauge,
+        Blast = digimon.Blast,
         Experience = digimon.Experience,
         HP = VitalConverter.ToDTO(digimon.HP),
         MP = VitalConverter.ToDTO(digimon.MP),
