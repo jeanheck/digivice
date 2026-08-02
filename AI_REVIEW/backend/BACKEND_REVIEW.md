@@ -101,7 +101,7 @@ Cada entidade (Player, Digimon, Quest, Auction…) segue o mesmo “stack” de 
 | `digimonId` no slot, não no Digimon | ✅ | Modelo correto |
 | Digievolution: proibido filled→empty | ❌ | Pass-through da RAM; sem guard histórico |
 | Level 1–99 (sem clamp) | ✅ | Correto *não* clampar (doc diz que é redundante) |
-| Blast gauge por Digimon | ✅ | Endereços +2 por rookie; model no Digimon |
+| Blast por Digimon | ✅ | Endereços +2 por rookie; model no Digimon |
 | Journal: só `Value` dinâmico | ⚠️ | Quase; ver cascade da main quest |
 | Journal: set fixo / InitialState / sem flag de conclusão | ✅ | |
 | Player name não rastreado | ✅ | `0x00048D88` ausente do Backend |
@@ -135,9 +135,9 @@ Em `JournalAssembler`:
 
 **Avaliação:** parece compensação de quirk real da memória do jogo (steps “pulados” na RAM). É regra de negócio *de fato*, mas está só no código. Recomendação: documentar no `BUSINESS_RULES.md` e deixar explícito por que side quests não usam o mesmo cascade.
 
-#### Blast gauge — doc vs código
+#### Blast — doc vs código
 
-`BUSINESS_RULES` cita `Int32 LE`; o código usa `ReadInt16` e o stride dos endereços é de 2 bytes (`0x42B74`, `76`, `78`…). O código é **autoconsistente**; o doc parece desatualizado. Preferir corrigir o MD.
+`BUSINESS_RULES` e o código usam `ReadInt16` com stride de 2 bytes (`0x42B74`, `76`, `78`…). Manter o MD alinhado ao `Blast` / `BlastAddress` do Digimon.
 
 #### Auction no Journal
 
@@ -151,7 +151,7 @@ Sanitização ativa só em:
 2. **JournalAssembler** — cascade da main quest.
 3. **DigimonAssembler** — `ActiveDigievolutionId` `0`/`0xFFFF` → `0`.
 
-Todo o resto (level, vitals, blast, digievolution empty/filled, contagem de slots) é **pass-through**. Isso é coerente com a orientação da doc para level, mas **diverge** do tom de “inconsistência crítica” usado para Party/Digievolution.
+Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots) é **pass-through**. Isso é coerente com a orientação da doc para level, mas **diverge** do tom de “inconsistência crítica” usado para Party/Digievolution.
 
 ---
 
@@ -442,7 +442,7 @@ A qualidade do código e dos testes está à frente da qualidade do “o que eu 
 ## 14. Recomendações práticas (ordem sugerida)
 
 1. **Corrigir Serilog** — `MinimumLevel.Information()` ou `ReadFrom.Configuration(builder.Configuration)`; validar que “Connected to DuckStation!” volta ao console.
-2. **Documentar cascade da main quest** no `BUSINESS_RULES.md` (e Blast gauge Int16).
+2. **Documentar cascade da main quest** no `BUSINESS_RULES.md` (e Blast Int16).
 3. **Endurecer CORS** com allowlist explícita.
 4. **Proteger `GameStateStore`** (lock ou snapshot).
 5. **Decidir política de invariantes Party/Digievolution** (assert+log vs doc “Frontend only”).

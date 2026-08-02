@@ -85,7 +85,7 @@ and type `long` (absolute) or the nested offset convention already used by
 that Addresses class.
 
 Nested Digimon-style offsets stay relative hex strings inside objects
-(`"Vitals": { "CurrentHP": "0x20" }`) — mirror an adjacent field in the same
+(`"HP": { "Current": "0x20", "Max": "0x22" }`) — mirror an adjacent field in the same
 JSON object.
 
 ---
