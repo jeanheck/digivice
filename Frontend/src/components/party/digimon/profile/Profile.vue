@@ -80,7 +80,7 @@ const digimonName = computed(() => {
             {{ digimonName }}
           </h2>
           <span class="text-[0.6rem] font-medium text-yellow-400 shrink-0 leading-none">
-            Nv {{ digimon.level }}
+            {{ t("digimon.lv") }} {{ digimon.level }}
           </span>
         </div>
 

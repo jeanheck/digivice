@@ -1,4 +1,7 @@
-/** Canonical map render width — keep in sync when calibrating quest coordinates. */
+/**
+ * Canonical width for quest pin / zoomed-location map rendering.
+ * Quest JSON coordinates are calibrated against this size (not MAP_FRAME_WIDTH_PX = 600).
+ */
 export const MAP_DISPLAY_WIDTH_PX = 512;
 
 /** Left padding (24px) + stable scrollbar gutter (~16px) around the fixed-width map. */

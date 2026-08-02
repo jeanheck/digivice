@@ -415,41 +415,41 @@ Arquivos com hex hardcoded (amostra priorizada para migração de tema / limpeza
 
 | ID | Achado |
 |----|--------|
-| P0-1 | Bundlar bandeiras (remover CDN) |
-| P0-2 | i18n do label de level (`Nv` → chave) |
+| P0-1 | Bundlar bandeiras (remover CDN) *(adiado)* |
+| P0-2 | i18n do label de level (`Nv` → chave) *(feito)* |
 
 ### P1 — Pré-requisitos do tema por mapa + qualidade
 
 | ID | Achado |
 |----|--------|
-| P1-1 | Introduzir design tokens + `@theme` + reescrever `dw3-*` com `var(--)` |
-| P1-2 | Canonicalizar hex duplicados → tokens |
-| P1-3 | Composable `useDigiviceTheme` + `data-theme` no `App.vue` (após P1-1) |
-| P1-4 | Remover `<style scoped>` do `LanguageSelector` (Tailwind) |
-| P1-5 | Documentar no CODE_RULES: tokens obrigatórios; proibir novos hex de chrome |
+| P1-1 | Introduzir design tokens + `@theme` + reescrever `dw3-*` com `var(--)` *(adiado)* |
+| P1-2 | Canonicalizar hex duplicados → tokens *(adiado)* |
+| P1-3 | Composable `useDigiviceTheme` + `data-theme` no `App.vue` (após P1-1) *(adiado)* |
+| P1-4 | Remover `<style scoped>` do `LanguageSelector` (Tailwind) *(feito)* |
+| P1-5 | Documentar no CODE_RULES: tokens obrigatórios; proibir novos hex de chrome *(adiado)* |
 
 ### P2
 
 | ID | Achado |
 |----|--------|
-| P2-1 | `npm run format` nos arquivos com aspas simples |
-| P2-2 | Aposentar `Constant` god-enum |
-| P2-3 | Remover `vue-router` e scaffolding Vitest (ou documentar exceção) |
-| P2-4 | `SeabedDockLabel` não importar Raw |
-| P2-5 | Extrair bloco duplicado MapDetailsFrame/SeabedDocks/ZoomedLocationMap |
-| P2-6 | Preferir `dw3-aside`/`dw3-panel` em Footer/Digimon |
-| P2-7 | Tokenizar `.map-info-panel*` ou migrar para Tailwind |
-| P2-8 | Normalizar syncer digievolution para `!== undefined` |
+| P2-1 | `npm run format` nos arquivos com aspas simples *(adiado)* |
+| P2-2 | Aposentar `Constant` god-enum *(adiado)* |
+| P2-3 | Remover `vue-router` e scaffolding Vitest (ou documentar exceção) *(feito)* |
+| P2-4 | `SeabedDockLabel` não importar Raw *(feito)* |
+| P2-5 | Extrair bloco duplicado MapDetailsFrame/SeabedDocks/ZoomedLocationMap *(adiado)* |
+| P2-6 | Preferir `dw3-aside`/`dw3-panel` em Footer/Digimon *(adiado)* |
+| P2-7 | Tokenizar `.map-info-panel*` ou migrar para Tailwind *(adiado)* |
+| P2-8 | Normalizar syncer digievolution para `!== undefined` *(adiado)* |
 
 ### P3
 
 | ID | Achado |
 |----|--------|
-| P3-1 | Helper de tooltips no Footer |
-| P3-2 | Classe/componente para cantos do Map |
-| P3-3 | Runtime validation leve na borda SignalR |
-| P3-4 | Unificar naming do barrel de repositories |
-| P3-5 | Documentar 512 vs 600 map widths |
+| P3-1 | Helper de tooltips no Footer *(adiado)* |
+| P3-2 | Classe/componente para cantos do Map *(adiado)* |
+| P3-3 | Runtime validation leve na borda SignalR *(adiado)* |
+| P3-4 | Unificar naming do barrel de repositories *(adiado)* |
+| P3-5 | Documentar 512 vs 600 map widths *(feito)* |
 
 ---
 
