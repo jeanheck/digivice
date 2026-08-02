@@ -16,6 +16,7 @@ using Backend.Events.States;
 using Backend.Infrastructure.Duckstation;
 using Backend.Memory;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
 
@@ -39,7 +40,8 @@ public class GameLoopServiceTests
             _eventDispatcherServiceMock.Object,
             _gameStateStore,
             _debugConsoleRenderer,
-            _configuration);
+            _configuration,
+            NullLogger<GameLoopService>.Instance);
     }
 
     public GameLoopServiceTests()

@@ -4,6 +4,7 @@ using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
 
@@ -19,7 +20,8 @@ public class DuckstationConnectorTests
             duckstationSession,
             processServiceMock.Object,
             memoryProviderMock.Object,
-            configurationMock.Object);
+            configurationMock.Object,
+            NullLogger<DuckstationConnector>.Instance);
     }
 
     private static Mock<IConfiguration> CreateConfigurationMock(string emulatorProcessName)

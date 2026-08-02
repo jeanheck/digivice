@@ -5,6 +5,7 @@ using Backend.Infrastructure.Memory;
 using Backend.Memory;
 using Backend.Memory.Readers;
 using Backend.Memory.Readers.Helpers;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
 
@@ -67,7 +68,7 @@ public class FlagByteHelperTests
         accessorMock.Setup(accessor => accessor.ReadArray(0x800100, It.IsAny<byte[]>(), 0, 1))
             .Callback<long, byte[], int, int>((address, buffer, index, count) => { buffer[0] = 90; });
 
-        var memoryReader = new MemoryReader(duckstationSession);
+        var memoryReader = new MemoryReader(duckstationSession, NullLogger<MemoryReader>.Instance);
 
         var result = FlagByteHelper.Read(memoryReader, 0x800100, 15);
 

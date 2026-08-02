@@ -1,10 +1,11 @@
 using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
-using Serilog;
 
 namespace Backend.Memory.Readers
 {
-    public class MemoryReader(IDuckstationSession duckstationSession) : IMemoryReader
+    public class MemoryReader(
+        IDuckstationSession duckstationSession,
+        ILogger<MemoryReader> logger) : IMemoryReader
     {
         private IMemoryAccessor GetConnectedAccessor(long address)
         {
@@ -31,7 +32,7 @@ namespace Backend.Memory.Readers
             }
             catch (Exception ex)
             {
-                Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
+                logger.LogError("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
                 throw new MemoryReadException(address, $"Failed to read memory at 0x{address:X}.", ex);
             }
         }
@@ -58,7 +59,7 @@ namespace Backend.Memory.Readers
             }
             catch (Exception ex)
             {
-                Log.Error("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
+                logger.LogError("Failed to read memory at 0x{Address:X}: {Msg}", address, ex.Message);
                 throw new MemoryReadException(address, $"Failed to read memory at 0x{address:X}.", ex);
             }
         }

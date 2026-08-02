@@ -192,7 +192,7 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 | Outlier | Detalhe |
 |---------|---------|
 | `QuestLoader` / `DigimonLoader` sem interface | ~~exceção~~ → `IQuestLoader` / `IDigimonLoader` (**feito**) |
-| Logging híbrido | `ILogger<T>` em alguns serviços; `Serilog.Log` estático em `GameLoopService`, `MemoryReader`, `DuckstationConnector` |
+| Logging híbrido | Serviços DI usam `ILogger<T>` (**feito** em GameLoop/MemoryReader/Duckstation); hex converters + `MemoryBlockReader` + `Program` mantêm `Serilog.Log` (stateless/bootstrap) |
 | Typos na camada Memory | `Wisdow` / `Equipaments` nos Addresses/Resources/JSON; Domain corrige (`Wisdom`, `Equipments`) no Assembler — fronteira OK, mas confunde busca/refator |
 | Arquivo ≠ tipo | ~~`AuctionEntryAddresses.cs`~~ → `AuctionAddresses.cs` (**feito**) |
 | Pasta vazia | ~~`Domain/Shared/`~~ — já inexistente (**feito**) |
@@ -297,7 +297,7 @@ A regra de Readers/Converters sem estado mutável **é seguida** e ajuda thread-
 | Erros de conexão tipados | Bom — `EmulatorConnectionErrorCodes` cobrem Config/Process/Mapping/Connection/MemoryRead/StateCompose |
 | Falhas soft de bloco/hex | **Warning** no fallback (triagem); valor ainda `0` |
 
-**Pós-triagem:** ops + fail-soft logging + `Features:Debugging` por ambiente feitos. Próximos gaps menores de observabilidade: unificar `ILogger<T>` — ver backlog §11.3.
+**Pós-triagem:** ops + fail-soft + `Features:Debugging` + `ILogger<T>` nos serviços DI principais. Converters/block reader seguem com Serilog estático de propósito.
 
 ---
 
@@ -367,6 +367,7 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | P2-8 | `Features:Debugging` Dev vs Release | `false` em appsettings; `true` em Development |
 | P2-2 | Interfaces QuestLoader / DigimonLoader | `IQuestLoader` / `IDigimonLoader` + DI |
 | P2-1 | Collection expressions Converters/Diffing | Differs/`StateEventFactory`: `List<T> = []`; Converters: `.ToList()` mantido (`Optional<List<T>>`) |
+| P2-3 | Unificar logging `ILogger<T>` | `GameLoopService`, `MemoryReader`, `DuckstationConnector`; converters/block reader + Program ficam com Serilog estático |
 
 ### 11.2 Adiado
 
@@ -386,12 +387,11 @@ Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `Allow
 
 | # | ID | Achado | Esforço relativo |
 |---|----|--------|------------------|
-| 1 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
-| 2 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
-| 3 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
-| 4 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
-| 5 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
-| 6 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
+| 1 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
+| 2 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
+| 3 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
+| 4 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
+| 5 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
 
 ---
 
@@ -428,7 +428,7 @@ Assemblers/Loaders ok com collection expressions. Differs/`StateEventFactory`: `
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 6.)
+O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 5.)
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
@@ -436,13 +436,13 @@ Para app desktop local, hub aberto + HTTP loopback é razoável. O CORS com subs
 
 ### 13.5. Observabilidade
 
-Após a triagem, Information em Development, Warnings no fail-soft e `Features:Debugging` por ambiente fecharam o buraco principal de observabilidade. Resto: unificar `ILogger<T>` (backlog §11.3).
+Após a triagem, Information em Development, Warnings no fail-soft, `Features:Debugging` por ambiente e `ILogger<T>` nos serviços DI principais fecharam o buraco principal de observabilidade. Serilog estático permanece em converters/`MemoryBlockReader`/`Program` (exceção consciente).
 
 ---
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (unificar logging em `ILogger<T>`).
+Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (typos Memory `Wisdow` / `Equipaments`).
 
 Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
@@ -472,4 +472,4 @@ Camadas de implementação Windows acopladas por design: `WindowsProcessProvider
 
 ---
 
-*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (ILogger unification). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (typos Wisdow/Equipaments). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*

@@ -5,6 +5,7 @@ using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Memory;
 using Backend.Memory.Readers;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
 
@@ -16,14 +17,14 @@ public class MemoryReaderTests
         var accessorMock = new Mock<IMemoryAccessor>();
         duckstationSession.SetAccessor(accessorMock.Object);
 
-        return (duckstationSession, accessorMock, new MemoryReader(duckstationSession));
+        return (duckstationSession, accessorMock, new MemoryReader(duckstationSession, NullLogger<MemoryReader>.Instance));
     }
 
     [Fact]
     public void ReadInt32_ShouldThrowMemoryReadException_WhenDisconnected()
     {
         var duckstationSession = new DuckstationSession();
-        var reader = new MemoryReader(duckstationSession);
+        var reader = new MemoryReader(duckstationSession, NullLogger<MemoryReader>.Instance);
 
         var exception = Assert.Throws<MemoryReadException>(() => reader.ReadInt32(0x800100));
 
@@ -77,7 +78,7 @@ public class MemoryReaderTests
     public void ReadInt16_ShouldThrowMemoryReadException_WhenDisconnected()
     {
         var duckstationSession = new DuckstationSession();
-        var reader = new MemoryReader(duckstationSession);
+        var reader = new MemoryReader(duckstationSession, NullLogger<MemoryReader>.Instance);
 
         Assert.Throws<MemoryReadException>(() => reader.ReadInt16(0x800100));
     }
@@ -109,7 +110,7 @@ public class MemoryReaderTests
     public void ReadBytes_ShouldThrowMemoryReadException_WhenDisconnected()
     {
         var duckstationSession = new DuckstationSession();
-        var reader = new MemoryReader(duckstationSession);
+        var reader = new MemoryReader(duckstationSession, NullLogger<MemoryReader>.Instance);
 
         Assert.Throws<MemoryReadException>(() => reader.ReadBytes(0x800100, 3));
     }

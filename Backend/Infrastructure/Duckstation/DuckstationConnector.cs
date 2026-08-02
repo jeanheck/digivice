@@ -1,6 +1,5 @@
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
-using Serilog;
 
 namespace Backend.Infrastructure.Duckstation;
 
@@ -8,7 +7,8 @@ public sealed class DuckstationConnector(
     DuckstationSession duckstationSession,
     IProcessService processService,
     IMemoryProvider memoryProvider,
-    IConfiguration configuration) : IDuckstationConnector
+    IConfiguration configuration,
+    ILogger<DuckstationConnector> logger) : IDuckstationConnector
 {
     private readonly string? EmulatorProcessName = configuration.GetValue<string>("EmulatorProcessName");
     private int? ConnectedProcessId { get; set; }
@@ -30,7 +30,7 @@ public sealed class DuckstationConnector(
         {
             if (string.IsNullOrEmpty(EmulatorProcessName))
             {
-                Log.Error("EmulatorProcessName not found in appsettings.json");
+                logger.LogError("EmulatorProcessName not found in appsettings.json");
                 return ConnectionAttemptResult.Failure(EmulatorConnectionErrorCodes.ConfigMissing);
             }
 
@@ -38,7 +38,7 @@ public sealed class DuckstationConnector(
 
             if (processId == null)
             {
-                Log.Debug("Duckstation process not found for {ProcessName}", EmulatorProcessName);
+                logger.LogDebug("Duckstation process not found for {ProcessName}", EmulatorProcessName);
                 return ConnectionAttemptResult.Failure(EmulatorConnectionErrorCodes.ProcessNotFound);
             }
 
@@ -47,18 +47,18 @@ public sealed class DuckstationConnector(
 
             if (memoryAccessor == null)
             {
-                Log.Debug("Duckstation memory mapping not found: {MapName}", duckstationMapName);
+                logger.LogDebug("Duckstation memory mapping not found: {MapName}", duckstationMapName);
                 return ConnectionAttemptResult.Failure(EmulatorConnectionErrorCodes.MappingNotFound);
             }
 
             duckstationSession.SetAccessor(memoryAccessor);
             ConnectedProcessId = processId;
-            Log.Information("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
+            logger.LogInformation("Connected to DuckStation! Mapping found: {MapName}", duckstationMapName);
             return ConnectionAttemptResult.Success();
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Failed to connect to DuckStation");
+            logger.LogError(ex, "Failed to connect to DuckStation");
             return ConnectionAttemptResult.Failure(EmulatorConnectionErrorCodes.ConnectionFailed, ex.Message);
         }
     }
