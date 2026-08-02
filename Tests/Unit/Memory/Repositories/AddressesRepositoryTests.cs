@@ -184,9 +184,47 @@ public class AddressesRepositoryTests : IDisposable
         // Assert
         Assert.NotNull(result);
         Assert.Equal(3, result.Count);
-        Assert.Equal("FolderBag", result[0].Id);
-        Assert.Equal("TreeBoots", result[1].Id);
-        Assert.Equal("FishingPole", result[2].Id);
+        Assert.Contains(result, quest => quest.Id == "FolderBag");
+        Assert.Contains(result, quest => quest.Id == "TreeBoots");
+        Assert.Contains(result, quest => quest.Id == "FishingPole");
+    }
+
+    [Fact]
+    public void GetAllSideQuests_ShouldCacheLoadedList()
+    {
+        File.WriteAllText(
+            Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "FolderBagAddresses.json"),
+            JsonSerializer.Serialize(new QuestAddresses { Id = "FolderBag" }));
+
+        var firstResult = repository.GetAllSideQuests();
+        var secondResult = repository.GetAllSideQuests();
+
+        Assert.Same(firstResult, secondResult);
+    }
+
+    [Fact]
+    public void GetAllSideQuests_ShouldLoadOnlyExistingFiles()
+    {
+        File.WriteAllText(
+            Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "FolderBagAddresses.json"),
+            JsonSerializer.Serialize(new QuestAddresses { Id = "FolderBag" }));
+        File.WriteAllText(
+            Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "TreeBootsAddresses.json"),
+            JsonSerializer.Serialize(new QuestAddresses { Id = "TreeBoots" }));
+
+        var result = repository.GetAllSideQuests();
+
+        Assert.Equal(2, result.Count);
+        Assert.Contains(result, quest => quest.Id == "FolderBag");
+        Assert.Contains(result, quest => quest.Id == "TreeBoots");
+    }
+
+    [Fact]
+    public void GetAllSideQuests_ShouldThrowDirectoryNotFoundException_WhenFolderIsMissing()
+    {
+        Directory.Delete(Path.Combine(tempDirectoryPath, "Quests", "SideQuests"), recursive: true);
+
+        Assert.Throws<DirectoryNotFoundException>(() => repository.GetAllSideQuests());
     }
 
     [Fact]
@@ -226,21 +264,6 @@ public class AddressesRepositoryTests : IDisposable
         Assert.NotNull(result);
         Assert.Equal(0, result.Bits);
         Assert.Equal(0, result.MapId);
-    }
-
-    [Fact]
-    public void GetAllSideQuests_ShouldThrowFileNotFoundException_WhenAnySideQuestFileIsMissing()
-    {
-        // Arrange (Escrevemos apenas duas das três side quests esperadas)
-        var side1 = new QuestAddresses { Id = "FolderBag" };
-        var side2 = new QuestAddresses { Id = "TreeBoots" };
-
-        File.WriteAllText(Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "FolderBagAddresses.json"), JsonSerializer.Serialize(side1));
-        File.WriteAllText(Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "TreeBootsAddresses.json"), JsonSerializer.Serialize(side2));
-        // Omitimos FishingPoleAddresses.json de propósito
-
-        // Act & Assert
-        Assert.Throws<FileNotFoundException>(() => repository.GetAllSideQuests());
     }
 
     public void Dispose()

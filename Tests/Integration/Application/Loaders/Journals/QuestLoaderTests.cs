@@ -61,14 +61,12 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(sideQuests);
         Assert.Equal(3, sideQuests.Count);
 
-        var folderBag = sideQuests[0];
-        Assert.Equal("folderBag", folderBag.Id);
+        var folderBag = Assert.Single(sideQuests, quest => quest.Id == "folderBag");
         Assert.Empty(folderBag.Requisites);
         Assert.Single(folderBag.Steps);
         Assert.Equal(1, folderBag.Steps[0].Value);
 
-        var treeBoots = sideQuests[1];
-        Assert.Equal("treeBoots", treeBoots.Id);
+        var treeBoots = Assert.Single(sideQuests, quest => quest.Id == "treeBoots");
         Assert.Single(treeBoots.Requisites);
         Assert.Equal("FolderBag", treeBoots.Requisites[0].Id);
         Assert.Equal(1, treeBoots.Requisites[0].Value);
@@ -77,8 +75,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0xA0, treeBoots.Steps[3].Value);
         Assert.Equal(0x80, treeBoots.Steps[4].Value);
 
-        var fishingPole = sideQuests[2];
-        Assert.Equal("fishingPole", fishingPole.Id);
+        var fishingPole = Assert.Single(sideQuests, quest => quest.Id == "fishingPole");
         Assert.Single(fishingPole.Requisites);
         Assert.Equal(3, fishingPole.Steps.Count);
         Assert.Equal(3, fishingPole.Steps[2].Requisites.Count);
@@ -110,37 +107,40 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(legendaryWeapons);
         Assert.Equal(5, legendaryWeapons.Count);
 
-        var eternally = legendaryWeapons[0];
-        Assert.Equal("eternally", eternally.Id);
+        var eternally = Assert.Single(legendaryWeapons, quest => quest.Id == "eternally");
         Assert.Empty(eternally.Requisites);
         Assert.Single(eternally.Steps);
         Assert.Equal(1, eternally.Steps[0].Number);
         Assert.Equal(0x01, eternally.Steps[0].Value);
 
-        var invincible = legendaryWeapons[1];
-        Assert.Equal("invincible", invincible.Id);
-        Assert.Empty(invincible.Requisites);
+        var invincible = Assert.Single(legendaryWeapons, quest => quest.Id == "invincible");
+        Assert.Single(invincible.Requisites);
+        Assert.Equal("seiryuLeader", invincible.Requisites[0].Id);
+        Assert.Equal(0, invincible.Requisites[0].Value);
         Assert.Single(invincible.Steps);
         Assert.Equal(1, invincible.Steps[0].Number);
         Assert.Equal(0x02, invincible.Steps[0].Value);
 
-        var muramasa = legendaryWeapons[2];
-        Assert.Equal("muramasa", muramasa.Id);
-        Assert.Empty(muramasa.Requisites);
+        var muramasa = Assert.Single(legendaryWeapons, quest => quest.Id == "muramasa");
+        Assert.Single(muramasa.Requisites);
+        Assert.Equal("smellHerb", muramasa.Requisites[0].Id);
+        Assert.Equal(0, muramasa.Requisites[0].Value);
         Assert.Single(muramasa.Steps);
         Assert.Equal(1, muramasa.Steps[0].Number);
         Assert.Equal(0x04, muramasa.Steps[0].Value);
 
-        var superNova = legendaryWeapons[3];
-        Assert.Equal("superNova", superNova.Id);
-        Assert.Empty(superNova.Requisites);
+        var superNova = Assert.Single(legendaryWeapons, quest => quest.Id == "superNova");
+        Assert.Single(superNova.Requisites);
+        Assert.Equal("submarimon", superNova.Requisites[0].Id);
+        Assert.Equal(0, superNova.Requisites[0].Value);
         Assert.Single(superNova.Steps);
         Assert.Equal(1, superNova.Steps[0].Number);
         Assert.Equal(0x08, superNova.Steps[0].Value);
 
-        var punishment = legendaryWeapons[4];
-        Assert.Equal("punishment", punishment.Id);
-        Assert.Empty(punishment.Requisites);
+        var punishment = Assert.Single(legendaryWeapons, quest => quest.Id == "punishment");
+        Assert.Single(punishment.Requisites);
+        Assert.Equal("numemon", punishment.Requisites[0].Id);
+        Assert.Equal(0, punishment.Requisites[0].Value);
         Assert.Single(punishment.Steps);
         Assert.Equal(1, punishment.Steps[0].Number);
         Assert.Equal(0x10, punishment.Steps[0].Value);
@@ -183,8 +183,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(driAgents);
         Assert.Equal(8, driAgents.Count);
 
-        var guilmon = driAgents[0];
-        Assert.Equal("driAgentGuilmon", guilmon.Id);
+        var guilmon = Assert.Single(driAgents, quest => quest.Id == "driAgentGuilmon");
         Assert.Empty(guilmon.Requisites);
         Assert.Equal(3, guilmon.Steps.Count);
         Assert.Equal(0x02, guilmon.Steps[0].Value);
@@ -194,8 +193,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("guilmonDDNA", guilmon.Steps[2].Requisites[0].Id);
         Assert.Equal(1, guilmon.Steps[2].Requisites[0].Value);
 
-        var agumon = driAgents[1];
-        Assert.Equal("driAgentAgumon", agumon.Id);
+        var agumon = Assert.Single(driAgents, quest => quest.Id == "driAgentAgumon");
         Assert.Empty(agumon.Requisites);
         Assert.Equal(3, agumon.Steps.Count);
         Assert.Equal(0x01, agumon.Steps[0].Value);
@@ -205,8 +203,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("agumonDDNA", agumon.Steps[2].Requisites[0].Id);
         Assert.Equal(1, agumon.Steps[2].Requisites[0].Value);
 
-        var veemon = driAgents[2];
-        Assert.Equal("driAgentVeemon", veemon.Id);
+        var veemon = Assert.Single(driAgents, quest => quest.Id == "driAgentVeemon");
         Assert.Single(veemon.Requisites);
         Assert.Equal("byakkoLeader", veemon.Requisites[0].Id);
         Assert.Equal(0, veemon.Requisites[0].Value);
@@ -218,8 +215,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("veemonDDNA", veemon.Steps[2].Requisites[0].Id);
         Assert.Equal(1, veemon.Steps[2].Requisites[0].Value);
 
-        var kumamon = driAgents[3];
-        Assert.Equal("driAgentKumamon", kumamon.Id);
+        var kumamon = Assert.Single(driAgents, quest => quest.Id == "driAgentKumamon");
         Assert.Single(kumamon.Requisites);
         Assert.Equal("submarimon", kumamon.Requisites[0].Id);
         Assert.Equal(0, kumamon.Requisites[0].Value);
@@ -231,8 +227,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("kumamonDDNA", kumamon.Steps[2].Requisites[0].Id);
         Assert.Equal(1, kumamon.Steps[2].Requisites[0].Value);
 
-        var monmon = driAgents[4];
-        Assert.Equal("driAgentMonmon", monmon.Id);
+        var monmon = Assert.Single(driAgents, quest => quest.Id == "driAgentMonmon");
         Assert.Single(monmon.Requisites);
         Assert.Equal("submarimon", monmon.Requisites[0].Id);
         Assert.Equal(0, monmon.Requisites[0].Value);
@@ -244,8 +239,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("monmonDDNA", monmon.Steps[2].Requisites[0].Id);
         Assert.Equal(1, monmon.Steps[2].Requisites[0].Value);
 
-        var kotemon = driAgents[5];
-        Assert.Equal("driAgentKotemon", kotemon.Id);
+        var kotemon = Assert.Single(driAgents, quest => quest.Id == "driAgentKotemon");
         Assert.Single(kotemon.Requisites);
         Assert.Equal("submarimon", kotemon.Requisites[0].Id);
         Assert.Equal(0, kotemon.Requisites[0].Value);
@@ -257,8 +251,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("kotemonDDNA", kotemon.Steps[2].Requisites[0].Id);
         Assert.Equal(1, kotemon.Steps[2].Requisites[0].Value);
 
-        var renamon = driAgents[6];
-        Assert.Equal("driAgentRenamon", renamon.Id);
+        var renamon = Assert.Single(driAgents, quest => quest.Id == "driAgentRenamon");
         Assert.Single(renamon.Requisites);
         Assert.Equal("submarimon", renamon.Requisites[0].Id);
         Assert.Equal(0, renamon.Requisites[0].Value);
@@ -270,8 +263,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("renamonDDNA", renamon.Steps[2].Requisites[0].Id);
         Assert.Equal(1, renamon.Steps[2].Requisites[0].Value);
 
-        var patamon = driAgents[7];
-        Assert.Equal("driAgentPatamon", patamon.Id);
+        var patamon = Assert.Single(driAgents, quest => quest.Id == "driAgentPatamon");
         Assert.Single(patamon.Requisites);
         Assert.Equal("submarimon", patamon.Requisites[0].Id);
         Assert.Equal(0, patamon.Requisites[0].Value);

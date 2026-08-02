@@ -45,7 +45,7 @@
 
 ## First item in new category
 
-When `LegendaryWeapons` or `DriAgents` is not yet on `Journal`, mirror the
-`SideQuests` slot across all layers listed in SKILL.md step 3 before registering
-individual `*Addresses.json` files under `Quests/LegendaryWeapons/` or
-`Quests/DriAgents/`.
+When adding a tracker in an existing category, drop `{Name}Addresses.json` in
+the folder — `AddressesRepository` auto-discovers `*.json`. For a **new**
+journal category, add `GetAll…()` + folder wiring (see SKILL.md step 2b) before
+placing files under `Quests/{Category}/`.

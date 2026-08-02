@@ -29,7 +29,7 @@ Os cinco riscos do sumário original foram revisados:
 - **“Confiar na RAM” / invariantes fortes** — Party ≥1 e Digievolution filled→empty: Backend permanece espelho; pré-load do jogo pode gerar estados estranhos. Doc B/F/G e guards no servidor não priorizados agora.
 - **Party tipada com tamanho 3** — contagem já vem de `PartyAddresses.json` (3 slots); ROI baixo.
 
-O backlog restante (higiene / evolução) está em **§11.3**, ordenado do mais fácil ao mais difícil.
+O backlog de higiene (**§11.3**) foi esgotado na triagem; adiados de produto/conexão ficam em **§11.2**.
 
 **Nota geral sugerida: B+ / 8.0** — arquitetura sólida e bem testada; ops/CORS/fail-soft melhoraram após a triagem; gaps restantes são sobretudo estilo, boilerplate e decisões de produto adiadas.
 
@@ -184,7 +184,7 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 1. ~~`DebugConsoleRenderer.cs` — `private bool _firstRender`~~ (**feito** → `FirstRender`).
 2. ~~`EventDispatcherService.cs` — método privado após públicos~~ (**feito**).
 3. ~~`OptionalJsonConverter.cs` — dois tipos no mesmo arquivo~~ (**feito** → `OptionalJsonConverterFactory.cs`).
-4. **`AddressesRepository.cs`** — `private readonly string dataDirectory = dataDirectory;` redundante com primary ctor (cheiro adjacente à regra 6).
+4. ~~`AddressesRepository.cs` — campo `dataDirectory` redundante~~ (**feito** com primary ctor puro + discovery).
 5. ~~Converters/Diffing — `new List<T>()`~~ (**feito** nos Differs/`StateEventFactory` via `List<T> x = []`). Converters **mantêm** `.ToList()` ao atribuir em `Optional<List<T>>` — collection expression exigiria cast `(List<T>)[.. ]`, pior que `.ToList()`.
 
 ### 5.3. Outliers de padrão de projeto (além do CODE_RULES)
@@ -338,7 +338,7 @@ Infraestrutura (MemoryReader, DuckstationConnector, AddressesRepository, hex con
 
 ### 10.2. O que escala mal / dívida
 
-1. **`AddressesRepository` monolítico** — um campo privado + getter por JSON de quest/DRI/weapon. Adicionar agente = editar DI-facing repository com ~10 linhas boilerplate. Candidato a descoberta por pasta (`Directory.EnumerateFiles`) com convenção de path, mantendo cache.
+1. ~~**`AddressesRepository` monolítico**~~ — Side/Legendary/DRI via descoberta de `*.json` na pasta (**feito**). Player/Party/Digimon/Auction/MainQuest seguem arquivo único.
 2. ~~**Boilerplate Differ**~~ — padrão `if` + `dto with { }` **mantido de propósito** (legibilidade > DRY); P3-2 retirado do backlog (ago/2026).
 3. **Equals manual em records com listas** — correto, mas frágil; um helper compartilhado ou collections imutáveis (`EquatableList` / `ImmutableArray`) reduziria risco de esquecimento.
 4. ~~**Typos Memory vs Domain**~~ — `Wisdom` / `Equipments` alinhados (**feito**).
@@ -372,6 +372,7 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | P2-9 | Typos Memory `Wisdow` / `Equipaments` | `Wisdom` / `Equipments` em Addresses, Resources, JSON e testes; Assembler sem bridge de typo |
 | P2-6 | `Event.Payload` tipado / `IDTO` | `Payload` como `IDTO` + `DtoRuntimeTypeJsonConverter` (preserva JSON SignalR do tipo runtime) |
 | P3-3 | `Optional<T> : IEquatable` | `Equals`/`GetHashCode`/`==`/`!=`; Empty ≠ valor default presente |
+| P3-1 | Descoberta automática de quest JSONs | `LoadAllQuestAddressesFromFolder` para Side/Legendary/DRI; cache por lista |
 
 ### 11.2 Adiado
 
@@ -388,11 +389,7 @@ Governança B/F/G no `BUSINESS_RULES` (§13.1) fica opcional e ligada a este blo
 
 ### 11.3 Backlog restante (fácil → difícil)
 
-Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `AllowedHosts: "*"` seguem aceitos enquanto o bind for loopback.
-
-| # | ID | Achado | Esforço relativo |
-|---|----|--------|------------------|
-| 1 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
+Nenhum item aberto na fila de higiene. Itens de conexão / invariantes Party–Digievolution permanecem em **§11.2**.
 
 ---
 
@@ -429,7 +426,7 @@ Assemblers/Loaders ok com collection expressions. Differs/`StateEventFactory`: `
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 1.)
+O sucesso dos DRI agents/legendary weapons veio com custo de pasta + skills; o `AddressesRepository` agora descobre `*.json` nas pastas de categoria (**P3-1 feito**).
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
@@ -443,7 +440,7 @@ Após a triagem, Information em Development, Warnings no fail-soft, `Features:De
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (descoberta automática de quest JSONs no `AddressesRepository`).
+Backlog de higiene **§11.3** concluído. Próximos temas relevantes estão em **§11.2** (conexão / invariantes adiados).
 
 Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
@@ -460,8 +457,8 @@ Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievo
 | Concorrência | 6.5 | Race no store adiada; dispatch fire-and-forget |
 | Observabilidade | 7.5 | Serilog por ambiente + Warnings fail-soft |
 | Testes | 8.5 | Amplos e bons; alguns gaps de corner/segurança |
-| Manutenibilidade | 8.0 | Padrão vertical ótimo; repository/diff boilerplate |
-| **Geral Backend** | **8.0 / B+** | Base sólida; próximos passos = higiene do backlog §11.3 |
+| Manutenibilidade | 8.5 | Padrão vertical ótimo; discovery de quests no repository |
+| **Geral Backend** | **8.0 / B+** | Base sólida; higiene §11.3 concluída; adiados em §11.2 |
 
 ---
 
@@ -473,4 +470,4 @@ Camadas de implementação Windows acopladas por design: `WindowsProcessProvider
 
 ---
 
-*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (descoberta automática de quest JSONs no `AddressesRepository`). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Backlog §11.3 concluído; adiados em §11.2. Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
