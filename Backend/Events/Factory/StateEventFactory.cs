@@ -19,7 +19,7 @@ public static class StateEventFactory
             return [new Event(EventType.InitialState, StateConverter.ToDTO(newState))];
         }
 
-        var events = new List<Event>();
+        List<Event> events = [];
 
         events.AddRange(PlayerEventFactory.Create(previousState, newState));
         events.AddRange(PartyEventFactory.Create(previousState, newState));

@@ -21,7 +21,7 @@ public static class StepDiffer
 
         bool valueChanged = previousStep.Value != newStep.Value;
 
-        var requisitesDelta = new List<RequisiteDTO>();
+        List<RequisiteDTO> requisitesDelta = [];
         foreach (var newRequisite in newStep.Requisites)
         {
             var previousRequisite = previousStep.Requisites.FirstOrDefault(r => r.Id == newRequisite.Id);

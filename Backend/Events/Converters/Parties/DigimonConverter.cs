@@ -1,6 +1,5 @@
 using Backend.Domain.Models.Parties;
 using Backend.Events.DTO.Parties;
-
 using Backend.Events.Converters.Parties.Digimons;
 
 namespace Backend.Events.Converters.Parties;

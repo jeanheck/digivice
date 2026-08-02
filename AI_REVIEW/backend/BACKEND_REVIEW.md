@@ -171,7 +171,7 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 |-------|------|----------|
 | Construtores primários | A | Quase 100%; exceção justificável em `MemoryReadException` |
 | Um tipo por arquivo | A | `OptionalJsonConverter` / Factory separados (**feito**) |
-| Collection expressions `[ ]` / `[..]` | C+ | Assemblers/Loaders ok; Converters/Diffing ainda usam `.ToList()` / `new List<>()` |
+| Collection expressions `[ ]` / `[..]` | A- | Differs/`StateEventFactory` com `List<T> = []`; Converters mantêm `.ToList()` por `Optional<List<T>>` (**feito**) |
 | Usings limpos | A | Spot-check limpo |
 | Readers/Converters stateless | A | Sem estado mutável de instância |
 | Sem prefixo `_` | A | `_firstRender` → `FirstRender` (**feito**) |
@@ -185,7 +185,7 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 2. ~~`EventDispatcherService.cs` — método privado após públicos~~ (**feito**).
 3. ~~`OptionalJsonConverter.cs` — dois tipos no mesmo arquivo~~ (**feito** → `OptionalJsonConverterFactory.cs`).
 4. **`AddressesRepository.cs`** — `private readonly string dataDirectory = dataDirectory;` redundante com primary ctor (cheiro adjacente à regra 6).
-5. **Converters/Diffing legados** — `JournalConverter`, `DigimonConverter`, `QuestConverter`, `PartyConverter`, `StepConverter`, `JournalDiffer`, `DigimonDiffer`, `PartyDiffer`, `QuestDiffer`, `StepDiffer`, `StateEventFactory` ainda com `.ToList()` / `new List<T>()`.
+5. ~~Converters/Diffing — `new List<T>()`~~ (**feito** nos Differs/`StateEventFactory` via `List<T> x = []`). Converters **mantêm** `.ToList()` ao atribuir em `Optional<List<T>>` — collection expression exigiria cast `(List<T>)[.. ]`, pior que `.ToList()`.
 
 ### 5.3. Outliers de padrão de projeto (além do CODE_RULES)
 
@@ -366,6 +366,7 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | P2-5 | Split OptionalJsonConverter / Factory | `OptionalJsonConverterFactory.cs` separado |
 | P2-8 | `Features:Debugging` Dev vs Release | `false` em appsettings; `true` em Development |
 | P2-2 | Interfaces QuestLoader / DigimonLoader | `IQuestLoader` / `IDigimonLoader` + DI |
+| P2-1 | Collection expressions Converters/Diffing | Differs/`StateEventFactory`: `List<T> = []`; Converters: `.ToList()` mantido (`Optional<List<T>>`) |
 
 ### 11.2 Adiado
 
@@ -385,13 +386,12 @@ Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `Allow
 
 | # | ID | Achado | Esforço relativo |
 |---|----|--------|------------------|
-| 1 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
-| 2 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
-| 3 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
-| 4 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
-| 5 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
-| 6 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
-| 7 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
+| 1 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
+| 2 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
+| 3 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
+| 4 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
+| 5 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
+| 6 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
 
 ---
 
@@ -424,11 +424,11 @@ Triagem ago/2026: não priorizar guards nem reescrita ampla da doc agora; ver §
 
 ### 13.2. Consistência geracional do código
 
-Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 item 1.)
+Assemblers/Loaders ok com collection expressions. Differs/`StateEventFactory`: `List<T> x = []` (**feito**). Converters: `.ToList()` permanece ao popular `Optional<List<T>>` (cast `(List<T>)[.. ]` rejeitado como pior estilo).
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 7.)
+O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 6.)
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
@@ -442,7 +442,7 @@ Após a triagem, Information em Development, Warnings no fail-soft e `Features:D
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (collection expressions em Converters/Diffing).
+Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (unificar logging em `ILogger<T>`).
 
 Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
@@ -472,4 +472,4 @@ Camadas de implementação Windows acopladas por design: `WindowsProcessProvider
 
 ---
 
-*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (collection expressions). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (ILogger unification). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*

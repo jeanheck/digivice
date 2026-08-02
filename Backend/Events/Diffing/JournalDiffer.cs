@@ -49,7 +49,7 @@ public static class JournalDiffer
             dto = dto with { DriAgents = driAgentsDelta };
         }
 
-        var auctionsDelta = new List<AuctionDTO>();
+        List<AuctionDTO> auctionsDelta = [];
         foreach (var newAuction in newJournal.Auctions)
         {
             var previousAuction = previousJournal.Auctions.FirstOrDefault(auction => auction.Id == newAuction.Id);
@@ -70,7 +70,7 @@ public static class JournalDiffer
 
     private static List<QuestDTO> GenerateQuestsDtos(List<Quest> newJournalQuests, List<Quest> previousJournalQuests)
     {
-        var deltas = new List<QuestDTO>();
+        List<QuestDTO> deltas = [];
         foreach (var quest in newJournalQuests)
         {
             var sideQuestPreviousState = previousJournalQuests.FirstOrDefault(q => q.Id == quest.Id);

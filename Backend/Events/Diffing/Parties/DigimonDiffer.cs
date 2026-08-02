@@ -32,7 +32,7 @@ public static class DigimonDiffer
         var resistancesDelta = ResistancesDiffer.Diff(previousDigimon.Resistances, newDigimon.Resistances);
         var equipmentsDelta = EquipmentsDiffer.Diff(previousDigimon.Equipments, newDigimon.Equipments);
 
-        var digievolutionsDelta = new List<DigievolutionSlotDTO>();
+        List<DigievolutionSlotDTO> digievolutionsDelta = [];
         foreach (var newDigievolutionSlot in newDigimon.Digievolutions)
         {
             var previousDigievolutionSlot = previousDigimon.Digievolutions
@@ -44,7 +44,7 @@ public static class DigimonDiffer
             }
         }
 
-        var storedDigievolutionsDelta = new List<StoredDigievolutionDTO>();
+        List<StoredDigievolutionDTO> storedDigievolutionsDelta = [];
         foreach (var newStoredDigievolution in newDigimon.StoredDigievolutions)
         {
             var previousStoredDigievolution = previousDigimon.StoredDigievolutions
