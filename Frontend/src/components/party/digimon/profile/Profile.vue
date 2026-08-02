@@ -98,8 +98,7 @@ const digimonName = computed(() => {
 
         <div class="col-start-2 row-start-3 min-w-0 h-6">
           <HpProgressBar
-            :current-hp="digimon.hp.current"
-            :max-hp="digimon.hp.max"
+            :hp="digimon.hp"
             @show-tooltip="onShowTooltip($event, t(`digimon.hp`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
@@ -108,8 +107,7 @@ const digimonName = computed(() => {
 
         <div class="col-start-2 row-start-4 min-w-0 h-6">
           <MpProgressBar
-            :current-mp="digimon.mp.current"
-            :max-mp="digimon.mp.max"
+            :mp="digimon.mp"
             @show-tooltip="onShowTooltip($event, t(`digimon.mp`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"

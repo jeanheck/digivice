@@ -2,10 +2,10 @@
 import { computed } from "vue";
 import ProgressBar from "@/components/party/digimon/profile/progress-bar/ProgressBar.vue";
 import { HpProgressBarPresenter } from "@/presenters/party/digimon/profile/progress-bar/hp-progress-bar.presenter";
+import type { Vital } from "@/models";
 
 const props = defineProps<{
-  currentHp: number;
-  maxHp: number;
+  hp: Vital;
 }>();
 
 const emit = defineEmits<{
@@ -15,7 +15,7 @@ const emit = defineEmits<{
 }>();
 
 const progressPercentage = computed(() => {
-  return HpProgressBarPresenter.getCalculatedProgressPercentage(props.currentHp, props.maxHp);
+  return HpProgressBarPresenter.getCalculatedProgressPercentage(props.hp.current, props.hp.max);
 });
 
 const barColorClass = computed(() => {
@@ -25,8 +25,8 @@ const barColorClass = computed(() => {
 
 <template>
   <ProgressBar
-    :current-value="currentHp"
-    :max-value="maxHp"
+    :current-value="hp.current"
+    :max-value="hp.max"
     :progress-percentage="progressPercentage"
     :bar-color-class="barColorClass"
     transition-duration-class="duration-300"
