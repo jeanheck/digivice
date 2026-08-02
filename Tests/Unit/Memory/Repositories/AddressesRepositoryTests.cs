@@ -95,12 +95,10 @@ public class AddressesRepositoryTests : IDisposable
     public void GetDigimonsAddresses_ShouldLoadAndDeserializeCorrectly()
     {
         // Arrange
-        var fakeDigimons = new DigimonsAddresses
+        var fakeDigimons = new Dictionary<int, DigimonAddress>
         {
-            Digimons = [
-                new DigimonAddress { Id = 1, Name = "Agumon", Address = 0x800100, BlastGaugeAddress = 0x00042B76 },
-                new DigimonAddress { Id = 2, Name = "Gabumon", Address = 0x800200, BlastGaugeAddress = 0x00042B78 }
-            ]
+            [1] = new DigimonAddress { Name = "Agumon", MemoryBlockAddress = 0x800100, BlastAddress = 0x00042B76 },
+            [2] = new DigimonAddress { Name = "Gabumon", MemoryBlockAddress = 0x800200, BlastAddress = 0x00042B78 }
         };
         var json = JsonSerializer.Serialize(fakeDigimons);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "Parties", "DigimonsAddresses.json"), json);
@@ -110,22 +108,20 @@ public class AddressesRepositoryTests : IDisposable
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(2, result.Digimons.Count);
-        Assert.Equal("Agumon", result.Digimons[0].Name);
-        Assert.Equal(0x800100, result.Digimons[0].Address);
-        Assert.Equal(0x00042B76, result.Digimons[0].BlastGaugeAddress);
-        Assert.Equal(0x00042B78, result.Digimons[1].BlastGaugeAddress);
+        Assert.Equal(2, result.Count);
+        Assert.Equal("Agumon", result[1].Name);
+        Assert.Equal(0x800100, result[1].MemoryBlockAddress);
+        Assert.Equal(0x00042B76, result[1].BlastAddress);
+        Assert.Equal(0x00042B78, result[2].BlastAddress);
     }
 
     [Fact]
     public void GetDigimonAddressById_ShouldReturnCorrectAddress_WhenIdExists()
     {
         // Arrange
-        var fakeDigimons = new DigimonsAddresses
+        var fakeDigimons = new Dictionary<int, DigimonAddress>
         {
-            Digimons = [
-                new DigimonAddress { Id = 3, Name = "Patamon", Address = 0x800300 }
-            ]
+            [3] = new DigimonAddress { Name = "Patamon", MemoryBlockAddress = 0x800300 }
         };
         var json = JsonSerializer.Serialize(fakeDigimons);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "Parties", "DigimonsAddresses.json"), json);
@@ -136,14 +132,14 @@ public class AddressesRepositoryTests : IDisposable
         // Assert
         Assert.NotNull(result);
         Assert.Equal("Patamon", result!.Name);
-        Assert.Equal(0x800300, result.Address);
+        Assert.Equal(0x800300, result.MemoryBlockAddress);
     }
 
     [Fact]
     public void GetDigimonAddressById_ShouldReturnNull_WhenIdDoesNotExist()
     {
         // Arrange
-        var fakeDigimons = new DigimonsAddresses { Digimons = [] };
+        var fakeDigimons = new Dictionary<int, DigimonAddress>();
         var json = JsonSerializer.Serialize(fakeDigimons);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "Parties", "DigimonsAddresses.json"), json);
 

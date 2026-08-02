@@ -215,7 +215,7 @@ Not a single global bar. With 3 Digimons in party, each keeps its own value even
 out of battle (no HUD display, but values persist per slot).
 
 **Formula:** `address = 0x00042B74 + (2 × rookieId)` — Int32 LE, range 0–1000.
-`rookieId` matches `DigimonsAddresses.json` (`Id` 0–7).
+`rookieId` matches the numeric key in `DigimonsAddresses.json` (0–7).
 
 | Address | Digimon | Rookie `Id` | Evidence |
 |---------|---------|-------------|----------|

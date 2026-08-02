@@ -14,7 +14,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
 
         public DigimonResource? Read(DigimonAddress digimonAddress, DigimonStatusAddresses digimonStatusAddresses)
         {
-            var memoryBlock = memoryReader.ReadBytes(digimonAddress.Address, DigimonMemoryBlockSize);
+            var memoryBlock = memoryReader.ReadBytes(digimonAddress.MemoryBlockAddress, DigimonMemoryBlockSize);
 
             if (memoryBlock.Length < DigimonMemoryBlockSize)
             {
@@ -39,7 +39,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
                 }
             }
 
-            var activeDigievolutionId = memoryReader.ReadInt16(digimonAddress.Address + digimonStatusAddresses.Digievolutions.ActiveDigievolution);
+            var activeDigievolutionId = memoryReader.ReadInt16(digimonAddress.MemoryBlockAddress + digimonStatusAddresses.Digievolutions.ActiveDigievolution);
 
             return new DigimonResource
             {
@@ -47,7 +47,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
                 Experience = memoryBlockReader.ReadInt32(digimonStatusAddresses.Experience),
                 Level = memoryBlockReader.ReadInt16(digimonStatusAddresses.Level),
                 TP = memoryBlockReader.ReadInt16(digimonStatusAddresses.TP),
-                BlastGauge = memoryReader.ReadInt16(digimonAddress.BlastGaugeAddress),
+                BlastGauge = memoryReader.ReadInt16(digimonAddress.BlastAddress),
                 HP = new VitalResource
                 {
                     Current = memoryBlockReader.ReadInt16(digimonStatusAddresses.HP.Current),

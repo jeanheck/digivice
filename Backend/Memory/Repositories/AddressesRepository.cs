@@ -11,7 +11,7 @@ namespace Backend.Memory.Repositories
         private PlayerAddresses? playerAddresses;
         private PartyAddresses? partyAddresses;
         private DigimonStatusAddresses? digimonStatusAddresses;
-        private DigimonsAddresses? digimonAddresses;
+        private Dictionary<int, DigimonAddress>? digimonAddresses;
         private QuestAddresses? mainQuestAddresses;
         private QuestAddresses? sideQuestFolderBag;
         private QuestAddresses? sideQuestTreeBoots;
@@ -93,11 +93,13 @@ namespace Backend.Memory.Repositories
         public DigimonStatusAddresses GetDigimonStatusAddresses() =>
             LoadAndCache(ref digimonStatusAddresses, "Parties/DigimonStatusAddresses.json");
 
-        public DigimonsAddresses GetDigimonsAddresses() =>
+        public Dictionary<int, DigimonAddress> GetDigimonsAddresses() =>
             LoadAndCache(ref digimonAddresses, "Parties/DigimonsAddresses.json");
 
         public DigimonAddress? GetDigimonAddressById(int id) =>
-            GetDigimonsAddresses().Digimons.FirstOrDefault(d => d.Id == id);
+            GetDigimonsAddresses().TryGetValue(id, out var digimonAddress)
+                ? digimonAddress
+                : null;
 
         public QuestAddresses GetMainQuest() =>
             LoadAndCache(ref mainQuestAddresses, "Quests/MainQuestAddresses.json");
