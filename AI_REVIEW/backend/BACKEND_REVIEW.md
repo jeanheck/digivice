@@ -194,8 +194,8 @@ Todo o resto (level, HP/MP, blast, digievolution empty/filled, contagem de slots
 | `QuestLoader` / `DigimonLoader` sem interface | Demais loaders têm `I*Loader`; estes são registrados como concreto |
 | Logging híbrido | `ILogger<T>` em alguns serviços; `Serilog.Log` estático em `GameLoopService`, `MemoryReader`, `DuckstationConnector` |
 | Typos na camada Memory | `Wisdow` / `Equipaments` nos Addresses/Resources/JSON; Domain corrige (`Wisdom`, `Equipments`) no Assembler — fronteira OK, mas confunde busca/refator |
-| Arquivo ≠ tipo | `AuctionEntryAddresses.cs` declara `AuctionAddresses` |
-| Pasta vazia | `Domain/Shared/` |
+| Arquivo ≠ tipo | ~~`AuctionEntryAddresses.cs`~~ → `AuctionAddresses.cs` (**feito**) |
+| Pasta vazia | ~~`Domain/Shared/`~~ — já inexistente (**feito**) |
 | `Event.Payload` como `object` | Perde tipagem; consumers fazem cast |
 | `IDTO` marker vazio | Só constraint genérica; sem contrato real |
 | Equals/GetHashCode manuais em records com `List<T>` | Necessário e bem feito; risco se um model novo esquecer (diff silencioso) |
@@ -359,6 +359,7 @@ Só Serilog (+ AspNetCore/Console). Superfície mínima — positivo para um sid
 | P0-2 | Documentar `NormalizeMainQuestProgression` | `AI/BUSINESS_RULES.md` §2.3 |
 | P1-2 | CORS substring `"tauri"` | Allowlist + `IsLoopback` + `TryCreate` |
 | P1-3 | Fail-soft silencioso | `Log.Warning` em block reader e converters hex (sem throw) |
+| P2-10 | Pasta `Domain/Shared` + arquivo Auction | Shared já inexistente; `AuctionEntryAddresses.cs` → `AuctionAddresses.cs` |
 
 ### 11.2 Adiado
 
@@ -378,20 +379,19 @@ Ordem sugerida para a próxima onda de higiene / evolução. Hub aberto e `Allow
 
 | # | ID | Achado | Esforço relativo |
 |---|----|--------|------------------|
-| 1 | P2-10 | Remover pasta `Domain/Shared` vazia; alinhar nome arquivo Auction | Trivial |
-| 2 | — | Dead code: `Bits.ToString(...) ?? "Unknown"` em `DebugConsoleRenderer` | Trivial |
-| 3 | P2-7 | `Environment.ExitCode ≠ 0` em fatal no startup | Trivial |
-| 4 | P2-4 | Ordem de membros em `EventDispatcherService`; remover `_firstRender` | Baixo |
-| 5 | P2-5 | Split `OptionalJsonConverter` / Factory (um tipo por arquivo) | Baixo |
-| 6 | P2-8 | `Features:Debugging` default consciente (Dev vs Release) | Baixo |
-| 7 | P2-2 | Interfaces para `QuestLoader` / `DigimonLoader` (ou documentar exceção) | Baixo–médio |
-| 8 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
-| 9 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
-| 10 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
-| 11 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
-| 12 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
-| 13 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
-| 14 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
+| 1 | — | Dead code: `Bits.ToString(...) ?? "Unknown"` em `DebugConsoleRenderer` | Trivial |
+| 2 | P2-7 | `Environment.ExitCode ≠ 0` em fatal no startup | Trivial |
+| 3 | P2-4 | Ordem de membros em `EventDispatcherService`; remover `_firstRender` | Baixo |
+| 4 | P2-5 | Split `OptionalJsonConverter` / Factory (um tipo por arquivo) | Baixo |
+| 5 | P2-8 | `Features:Debugging` default consciente (Dev vs Release) | Baixo |
+| 6 | P2-2 | Interfaces para `QuestLoader` / `DigimonLoader` (ou documentar exceção) | Baixo–médio |
+| 7 | P2-1 | Collection expressions em Converters/Diffing | Médio (vários arquivos) |
+| 8 | P2-3 | Unificar logging em `ILogger<T>` | Médio |
+| 9 | P2-9 | Renomear typos Memory (`Wisdow`, `Equipaments`) alinhando Domain | Médio (JSON + Memory + testes) |
+| 10 | P2-6 | `Event.Payload` tipado / `IDTO` | Médio–alto |
+| 11 | P3-2 | Helper anti-boilerplate nos Differs | Alto |
+| 12 | P3-3 | `Optional<T> : IEquatable<Optional<T>>` | Alto (hot path / cuidado) |
+| 13 | P3-1 | Descoberta automática de quest JSONs no `AddressesRepository` | Alto |
 
 ---
 
@@ -424,11 +424,11 @@ Triagem ago/2026: não priorizar guards nem reescrita ampla da doc agora; ver §
 
 ### 13.2. Consistência geracional do código
 
-Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 itens 4 e 8.)
+Assemblers/Loaders parecem “pós-CODE_RULES”; Converters/Diffing “pré-regra de collection expressions”. O padrão do projeto é bom — falta uma passada de retrofit, não uma reescrita. (Backlog §11.3 itens 3 e 7.)
 
 ### 13.3. Extensão de quests via repository hardcoded
 
-O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 14.)
+O sucesso dos DRI agents/legendary weapons veio com custo: cada JSON novo toca `AddressesRepository` + (às vezes) loaders. Skills mitigam, mas a estrutura pede descoberta por convenção. (Backlog §11.3 item 13.)
 
 ### 13.4. Segurança “adequada ao produto” ≠ “padrão seguro genérico”
 
@@ -442,7 +442,7 @@ Após a triagem, Information em Development e Warnings no fail-soft fecharam o b
 
 ## 14. Recomendações práticas (ordem sugerida)
 
-Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (pasta `Domain/Shared` + nome arquivo Auction).
+Seguir o backlog **§11.3** (fácil → difícil). Próximo passo natural da triagem: **item 1** (dead code `Bits.ToString` no `DebugConsoleRenderer`).
 
 Itens de conexão (`GameStateStore`, `SafeDispatch`) e invariantes Party/Digievolution: **não** entram nesta fila — ver §11.2.
 
@@ -472,4 +472,4 @@ Camadas de implementação Windows acopladas por design: `WindowsProcessProvider
 
 ---
 
-*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1. Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
+*Fim da review do Backend (análise jul/2026; status atualizado ago/2026). Próximo passo natural do backlog: §11.3 item 1 (dead code Bits). Review espelhada do Frontend em `AI_REVIEW/frontend/`.*
