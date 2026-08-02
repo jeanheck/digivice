@@ -12,7 +12,9 @@
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "tauri:dev": "powershell -ExecutionPolicy Bypass -File ../Tauri/run-tauri.ps1 dev",
+    "tauri:build": "powershell -ExecutionPolicy Bypass -File ../Tauri/run-tauri.ps1 build"
   },
   "dependencies": {
     "@microsoft/signalr": "^10.0.0",

@@ -1,7 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$FrontendPath = Split-Path -Parent $PSScriptRoot
-$TauriPath = Join-Path $FrontendPath "src-tauri"
+$TauriPath = Split-Path -Parent $PSScriptRoot
 $SourcePath = Join-Path $TauriPath "binaries"
 $ReleasePath = Join-Path $TauriPath "target\release"
 
