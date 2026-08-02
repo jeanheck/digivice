@@ -337,7 +337,7 @@ body {
   animation: auction-icon-pulse 1.6s ease-in-out infinite;
 }
 
-@keyframes blast-gauge-pulse {
+@keyframes blast-pulse {
   0%,
   100% {
     filter: brightness(1.05) saturate(1.15);
@@ -350,7 +350,7 @@ body {
   }
 }
 
-@keyframes blast-gauge-track-pulse {
+@keyframes blast-track-pulse {
   0%,
   100% {
     box-shadow: 0 0 6px 1px rgba(250, 204, 21, 0.4);
@@ -363,24 +363,24 @@ body {
   }
 }
 
-.blast-gauge-fill-mid {
+.blast-fill-mid {
   opacity: 1;
   filter: brightness(1.1) saturate(1.2);
   background-color: #fef08a;
 }
 
-.blast-gauge-fill-high {
+.blast-fill-high {
   opacity: 1;
-  animation: blast-gauge-pulse 0.9s ease-in-out infinite;
+  animation: blast-pulse 0.9s ease-in-out infinite;
 }
 
-.blast-gauge-track-mid {
+.blast-track-mid {
   box-shadow: 0 0 8px 2px rgba(250, 204, 21, 0.45);
   border-color: #fde047;
 }
 
-.blast-gauge-track-high {
-  animation: blast-gauge-track-pulse 0.9s ease-in-out infinite;
+.blast-track-high {
+  animation: blast-track-pulse 0.9s ease-in-out infinite;
 }
 
 .bg-grid-pattern {

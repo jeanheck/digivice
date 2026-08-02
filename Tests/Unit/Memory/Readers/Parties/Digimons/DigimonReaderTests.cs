@@ -11,7 +11,7 @@ using Xunit;
 
 public class DigimonReaderTests
 {
-    private const long BlastGaugeAddress = 0x42B76;
+    private const long BlastAddress = 0x42B76;
     private static void WriteInt16(byte[] block, int offset, short value)
     {
         var bytes = BitConverter.GetBytes(value);
@@ -53,7 +53,7 @@ public class DigimonReaderTests
     public void Read_ShouldCorrectlyMapDigimonFields_WhenBlockIsFullyLoaded()
     {
         // Arrange
-        var address = new DigimonAddress { MemoryBlockAddress = 0x800100, BlastAddress = BlastGaugeAddress };
+        var address = new DigimonAddress { MemoryBlockAddress = 0x800100, BlastAddress = BlastAddress };
 
         var statusAddresses = new DigimonStatusAddresses
         {
@@ -111,7 +111,7 @@ public class DigimonReaderTests
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
         memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)3); // ActiveDigievolutionId
-        memoryReaderMock.Setup(m => m.ReadInt16(BlastGaugeAddress)).Returns((short)750);
+        memoryReaderMock.Setup(m => m.ReadInt16(BlastAddress)).Returns((short)750);
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
@@ -174,7 +174,7 @@ public class DigimonReaderTests
     public void Read_ShouldUseZeroActiveDigievolutionId_WhenMemoryReaderReturnsZero()
     {
         // Arrange
-        var address = new DigimonAddress { MemoryBlockAddress = 0x800100, BlastAddress = BlastGaugeAddress };
+        var address = new DigimonAddress { MemoryBlockAddress = 0x800100, BlastAddress = BlastAddress };
         var statusAddresses = new DigimonStatusAddresses
         {
             Experience = 10,
@@ -195,7 +195,7 @@ public class DigimonReaderTests
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
         memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)0);
-        memoryReaderMock.Setup(m => m.ReadInt16(BlastGaugeAddress)).Returns((short)0);
+        memoryReaderMock.Setup(m => m.ReadInt16(BlastAddress)).Returns((short)0);
 
         var slotReaderMock = new Mock<IDigievolutionSlotReader>();
         var evolutionReaderMock = new Mock<IDigievolutionReader>();
@@ -223,7 +223,7 @@ public class DigimonReaderTests
     public void Read_ShouldMapEvolutionSlotsAndResources_WhenSlotsArePresent()
     {
         // Arrange
-        var address = new DigimonAddress { MemoryBlockAddress = 0x800100, BlastAddress = BlastGaugeAddress };
+        var address = new DigimonAddress { MemoryBlockAddress = 0x800100, BlastAddress = BlastAddress };
         var slotAddress1 = new SlotAddresses { Index = 0, Address = 300 };
         var slotAddress2 = new SlotAddresses { Index = 1, Address = 304 };
 
@@ -247,7 +247,7 @@ public class DigimonReaderTests
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(block);
         memoryReaderMock.Setup(m => m.ReadInt16(0x800100 + 200)).Returns((short)5);
-        memoryReaderMock.Setup(m => m.ReadInt16(BlastGaugeAddress)).Returns((short)200);
+        memoryReaderMock.Setup(m => m.ReadInt16(BlastAddress)).Returns((short)200);
 
         var slotResource1 = new DigievolutionSlotResource { Index = 0, DigievolutionId = 12 };
         var slotResource2 = new DigievolutionSlotResource { Index = 1, DigievolutionId = 15 };

@@ -9,7 +9,7 @@
     "experience": "Experience",
     "hp": "HP",
     "mp": "MP",
-    "blastGauge": "Blast Gauge",
+    "blast": "Blast",
     "tp": "Training Points",
     "equipmentSlot": {
       "head": "Head",

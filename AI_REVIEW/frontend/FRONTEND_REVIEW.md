@@ -325,8 +325,8 @@ Estes padrões **não** são bons candidatos a “jogar tudo no class string do 
 | Digievolution tree (`.connector*`, `.fork-*`, `::before`/`::after`) | 123–250 | Pseudo-elementos, gradientes de linha, posicionamento percentual — Tailwind sozinho fica ilegível |
 | `.custom-scroll::-webkit-scrollbar*` | 252–269 | Pseudo-elementos de scrollbar (WebKit) — CSS only |
 | Vue transitions `.fade-*`, `.modal-fade-*` | 271–290 | Convenção de nomes do `<Transition>` |
-| `@keyframes` modal / auction / blast-gauge | 292–384 | Animações nomeadas referenciadas por classes curtas |
-| Classes de animação (`.auction-card-active`, `.blast-gauge-fill-high`, …) | 332–384 | Couplings com keyframes |
+| `@keyframes` modal / auction / blast | 292–384 | Animações nomeadas referenciadas por classes curtas |
+| Classes de animação (`.auction-card-active`, `.blast-fill-high`, …) | 332–384 | Couplings com keyframes |
 
 **Regra prática:** keyframes, pseudo-elementos complexos, clip-path de marca e scrollbar = CSS global OK.
 

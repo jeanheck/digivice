@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import BlastGaugeProgressBar from "@/components/party/digimon/profile/progress-bar/BlastGaugeProgressBar.vue";
+import BlastProgressBar from "@/components/party/digimon/profile/progress-bar/BlastProgressBar.vue";
 import ExperienceProgressBar from "@/components/party/digimon/profile/progress-bar/ExperienceProgressBar.vue";
 import HpProgressBar from "@/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
 import MpProgressBar from "@/components/party/digimon/profile/progress-bar/MpProgressBar.vue";
@@ -115,9 +115,9 @@ const digimonName = computed(() => {
         </div>
 
         <div class="col-start-2 row-start-5 min-w-0 h-6">
-          <BlastGaugeProgressBar
-            :blast-gauge="digimon.blast"
-            @show-tooltip="onShowTooltip($event, t(`digimon.blastGauge`))"
+          <BlastProgressBar
+            :blast="digimon.blast"
+            @show-tooltip="onShowTooltip($event, t(`digimon.blast`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />
