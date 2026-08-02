@@ -3,9 +3,8 @@ using Backend.Infrastructure;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Warning()
     .WriteTo.Console()
-    .CreateLogger();
+    .CreateBootstrapLogger();
 
 try
 {
@@ -21,8 +20,8 @@ try
         ContentRootPath = basePath
     });
 
-    // Use Serilog for all framework logging
-    builder.Host.UseSerilog();
+    builder.Host.UseSerilog((context, services, configuration) =>
+        configuration.ReadFrom.Configuration(context.Configuration));
 
     // Register backend services modularly
     builder.Services.AddBackendServices(basePath);

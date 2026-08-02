@@ -93,6 +93,7 @@ if (slot.digimonId === null || slot.digimon === null) {
 ### 2.3. Diário de Missões (Journal)
 *   **Origem dos Dados:** A estrutura das missões (passos, nomes, etc.) é estática e carregada a partir de arquivos JSON.
 *   **Leitura de Memória:** O backend lê apenas as propriedades dinâmicas `Value` de cada `Step` e `Requisite`.
+*   **Cascade da Main Quest:** Após montar a missão principal a partir da RAM, o backend aplica uma normalização de progressão (`NormalizeMainQuestProgression`): se um step posterior tem `Value > 0` e um step anterior ainda está `0`, esse anterior é forçado para `1` (percorrendo os steps de trás para frente). Isso compensa um quirk da memória do jogo em que steps intermediários podem permanecer `0` mesmo com progresso posterior já marcado. **Escopo:** somente a Main Quest. Side quests, legendary weapons e DRI agents são pass-through puro dos `Value` lidos — não aplicar o mesmo cascade sem decisão explícita de produto. O frontend pode, portanto, ver `Value` coerentes na main quest que não batem byte a byte com a RAM em steps antigos.
 *   **Ciclo de Vida do Journal:**
     *   Todas as missões (principais e secundárias) e seus respectivos passos são enviados no `InitialState`.
     *   Missões **nunca são adicionadas ou removidas dinamicamente** do journal durante a execução da aplicação.
