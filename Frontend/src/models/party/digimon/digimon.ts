@@ -8,7 +8,7 @@ import type { StoredDigievolution } from './stored-digievolution';
 export interface Digimon {
     level: number;
     tp: number;
-    blastGauge: number;
+    blast: number;
     experience: number;
     hp: Vital;
     mp: Vital;

@@ -116,7 +116,7 @@ const digimonName = computed(() => {
 
         <div class="col-start-2 row-start-5 min-w-0 h-6">
           <BlastGaugeProgressBar
-            :blast-gauge="digimon.blastGauge"
+            :blast-gauge="digimon.blast"
             @show-tooltip="onShowTooltip($event, t(`digimon.blastGauge`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"

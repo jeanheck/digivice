@@ -12,7 +12,7 @@ export class DigimonConverter {
         return {
             level: digimonDto.level ?? 1,
             tp: digimonDto.tp ?? 0,
-            blastGauge: digimonDto.blastGauge ?? 0,
+            blast: digimonDto.blast ?? 0,
             experience: digimonDto.experience ?? 0,
             activeDigievolutionId: digimonDto.activeDigievolutionId ?? null,
             hp: VitalConverter.convert(digimonDto.hp ?? null),
