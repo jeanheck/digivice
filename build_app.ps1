@@ -30,7 +30,12 @@ function Copy-SidecarRuntimeAssets {
 
     New-Item -ItemType Directory -Force -Path $DestinationDirectory | Out-Null
     Copy-Item -Path $appsettingsSource -Destination (Join-Path $DestinationDirectory "appsettings.json") -Force
-    Copy-Item -Path $memorySource -Destination (Join-Path $DestinationDirectory "Memory") -Recurse -Force
+
+    $memoryDest = Join-Path $DestinationDirectory "Memory"
+    if (Test-Path $memoryDest) {
+        Remove-Item -Recurse -Force $memoryDest
+    }
+    Copy-Item -Path $memorySource -Destination $memoryDest -Recurse -Force
 }
 
 # 2. Compilar o Backend
