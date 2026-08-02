@@ -1,4 +1,4 @@
-import type { Vitals } from './vitals';
+import type { Vital } from './vital';
 import type { Attributes } from './attributes';
 import type { Resistances } from './resistances';
 import type { Equipments } from './equipments';
@@ -10,7 +10,8 @@ export interface Digimon {
     tp: number;
     blastGauge: number;
     experience: number;
-    vitals: Vitals;
+    hp: Vital;
+    mp: Vital;
     attributes: Attributes;
     resistances: Resistances;
     equipments: Equipments;

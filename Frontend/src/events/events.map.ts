@@ -12,7 +12,7 @@ export type { StepDTO } from './dto/journals/quests/step.dto';
 
 export type { DigimonDTO } from './dto/parties/digimon.dto';
 export type { DigimonSlotDTO } from './dto/parties/digimon-slot.dto';
-export type { VitalsDTO } from './dto/parties/digimons/vitals.dto';
+export type { VitalDTO } from './dto/parties/digimons/vital.dto';
 export type { AttributesDTO } from './dto/parties/digimons/attributes.dto';
 export type { ResistancesDTO } from './dto/parties/digimons/resistances.dto';
 export type { EquipmentsDTO } from './dto/parties/digimons/equipments.dto';

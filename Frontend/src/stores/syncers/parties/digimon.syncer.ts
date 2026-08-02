@@ -1,6 +1,6 @@
 import type { Digimon } from '../../../models';
 import type { DigimonDTO } from '../../../events/dto/parties/digimon.dto';
-import { VitalsSyncer } from './digimons/vitals.syncer';
+import { VitalSyncer } from './digimons/vital.syncer';
 
 import { AttributesSyncer } from './digimons/attributes.syncer';
 import { ResistancesSyncer } from './digimons/resistances.syncer';
@@ -26,8 +26,11 @@ export class DigimonSyncer {
         if (newDigimonDto.activeDigievolutionId !== undefined) {
             previousDigimon.activeDigievolutionId = newDigimonDto.activeDigievolutionId;
         }
-        if (newDigimonDto.vitals) {
-            VitalsSyncer.sync(previousDigimon.vitals, newDigimonDto.vitals);
+        if (newDigimonDto.hp) {
+            VitalSyncer.sync(previousDigimon.hp, newDigimonDto.hp);
+        }
+        if (newDigimonDto.mp) {
+            VitalSyncer.sync(previousDigimon.mp, newDigimonDto.mp);
         }
         if (newDigimonDto.equipments) {
             EquipmentsSyncer.sync(previousDigimon.equipments, newDigimonDto.equipments);

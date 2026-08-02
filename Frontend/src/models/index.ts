@@ -14,5 +14,5 @@ export * from './journal/requisite';
 export * from './party/digimon/resistances';
 export * from './state';
 export * from './journal/step';
-export * from './party/digimon/vitals';
+export * from './party/digimon/vital';
 

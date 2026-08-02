@@ -1,4 +1,4 @@
-import type { VitalsDTO } from './digimons/vitals.dto';
+import type { VitalDTO } from './digimons/vital.dto';
 import type { AttributesDTO } from './digimons/attributes.dto';
 import type { ResistancesDTO } from './digimons/resistances.dto';
 import type { EquipmentsDTO } from './digimons/equipments.dto';
@@ -10,7 +10,8 @@ export interface DigimonDTO {
     tp?: number;
     blastGauge?: number;
     experience?: number;
-    vitals?: VitalsDTO;
+    hp?: VitalDTO;
+    mp?: VitalDTO;
     attributes?: AttributesDTO;
     resistances?: ResistancesDTO;
     equipments?: EquipmentsDTO;
