@@ -2,12 +2,15 @@
     "Experience": "0x18",
     "Level": "0x1C",
     "TP": "0x1E",
-    "Vitals": {
-        "CurrentHP": "0x20",
-        "MaxHP": "0x22",
-        "CurrentMP": "0x24",
-        "MaxMP": "0x26"
+    "HP": {
+        "Current": "0x20",
+        "Max": "0x22"
     },
+    "MP": {
+        "Current": "0x24",
+        "Max": "0x26"
+    },
+
     "Attributes": {
         "Strength": "0x28",
         "Defense": "0x2A",

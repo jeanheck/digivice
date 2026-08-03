@@ -1,14 +1,23 @@
 {
-  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "$schema": "../Frontend/node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "digivice",
   "version": "0.1.0",
   "identifier": "com.digivice.app",
   "build": {
-    "frontendDist": "../dist",
+    "frontendDist": "../Frontend/dist",
     "devUrl": "http://localhost:5173",
-    "beforeDevCommand": "npm run dev",
-    "beforeBuildCommand": "npm run build",
-    "beforeBundleCommand": "powershell -ExecutionPolicy Bypass -File scripts/copy-sidecar-runtime.ps1"
+    "beforeDevCommand": {
+      "script": "npm run dev",
+      "cwd": "../Frontend"
+    },
+    "beforeBuildCommand": {
+      "script": "npm run build",
+      "cwd": "../Frontend"
+    },
+    "beforeBundleCommand": {
+      "script": "powershell -ExecutionPolicy Bypass -File ../Tauri/scripts/copy-sidecar-runtime.ps1",
+      "cwd": "../Frontend"
+    }
   },
   "app": {
     "windows": [

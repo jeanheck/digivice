@@ -1,6 +1,7 @@
 using Backend.Events.Hubs;
 using Backend.Infrastructure;
 using Serilog;
+using Serilog.Settings.Configuration;
 
 HashSet<string> allowedOrigins = new(StringComparer.OrdinalIgnoreCase)
 {
@@ -27,8 +28,11 @@ try
         ContentRootPath = basePath
     });
 
+    var serilogReaderOptions = new ConfigurationReaderOptions(
+        typeof(ConsoleLoggerConfigurationExtensions).Assembly);
+
     builder.Host.UseSerilog((context, services, configuration) =>
-        configuration.ReadFrom.Configuration(context.Configuration));
+        configuration.ReadFrom.Configuration(context.Configuration, serilogReaderOptions));
 
     // Register backend services modularly
     builder.Services.AddBackendServices(basePath);

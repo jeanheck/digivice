@@ -1,0 +1,42 @@
+{
+    "0": {
+        "Name": "Kotemon",
+        "MemoryBlockAddress": "0x0004949C",
+        "BlastAddress": "0x00042B74"
+    },
+    "1": {
+        "Name": "Kumamon",
+        "MemoryBlockAddress": "0x00049878",
+        "BlastAddress": "0x00042B76"
+    },
+    "2": {
+        "Name": "Monmon",
+        "MemoryBlockAddress": "0x00049C54",
+        "BlastAddress": "0x00042B78"
+    },
+    "3": {
+        "Name": "Agumon",
+        "MemoryBlockAddress": "0x0004A030",
+        "BlastAddress": "0x00042B7A"
+    },
+    "4": {
+        "Name": "Veemon",
+        "MemoryBlockAddress": "0x0004A40C",
+        "BlastAddress": "0x00042B7C"
+    },
+    "5": {
+        "Name": "Guilmon",
+        "MemoryBlockAddress": "0x0004A7E8",
+        "BlastAddress": "0x00042B7E"
+    },
+    "6": {
+        "Name": "Renamon",
+        "MemoryBlockAddress": "0x0004ABC4",
+        "BlastAddress": "0x00042B80"
+    },
+    "7": {
+        "Name": "Patamon",
+        "MemoryBlockAddress": "0x0004AFA0",
+        "BlastAddress": "0x00042B82"
+    }
+}

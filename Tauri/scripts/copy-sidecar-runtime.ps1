@@ -1,7 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$FrontendPath = Split-Path -Parent $PSScriptRoot
-$TauriPath = Join-Path $FrontendPath "src-tauri"
+$TauriPath = Split-Path -Parent $PSScriptRoot
 $SourcePath = Join-Path $TauriPath "binaries"
 $ReleasePath = Join-Path $TauriPath "target\release"
 
@@ -24,7 +23,12 @@ function Copy-SidecarRuntimeAssets {
 
     New-Item -ItemType Directory -Force -Path $DestinationDirectory | Out-Null
     Copy-Item -Path $appsettingsSource -Destination (Join-Path $DestinationDirectory "appsettings.json") -Force
-    Copy-Item -Path $memorySource -Destination (Join-Path $DestinationDirectory "Memory") -Recurse -Force
+
+    $memoryDest = Join-Path $DestinationDirectory "Memory"
+    if (Test-Path $memoryDest) {
+        Remove-Item -Recurse -Force $memoryDest
+    }
+    Copy-Item -Path $memorySource -Destination $memoryDest -Recurse -Force
 
     Write-Host "Sidecar runtime assets copied to $DestinationDirectory" -ForegroundColor Cyan
 }
