@@ -1,0 +1,45 @@
+---
+description: Regras de domínio Digivice — arquitetura SignalR, party, journal, digievolutions
+alwaysApply: true
+---
+
+# Digivice — Business Rules
+
+Fonte humana: `AI/BUSINESS_RULES.md`. Tracker de memória para Digimon World 2003 no Duckstation.
+
+## Arquitetura e fluxo de dados
+
+Pipeline: Duckstation (RAM 1000ms) → MemoryReader/MemoryBlockReader → Assemblers → State → StateEventFactory (diffs) → DTOs/eventos SignalR → Frontend converters → Syncers → Pinia → Vue.
+
+- **Game loop:** `GameLoopService` a cada 1000ms.
+- **Diffs:** só propriedades que mudaram entram nos DTOs; despacho via SignalR (`EventDispatcher`).
+- **InitialState:** DTO completo do State na conexão (`StateConverter` → Pinia).
+- **Incremental:** eventos posteriores trazem só alterações; Syncers mutam de forma cirúrgica.
+- **Regra de ouro do Syncer:** valor `undefined` (não enviado) → **não mutar**.
+- **SSOT:** componentes consomem `useGameStore` diretamente; sem controllers intermediários.
+
+## Player — Name
+
+Nome do treinador **não é lido** pelo Digivice (referência futura apenas).
+
+## Party
+
+- Máximo 3 Digimons; lista de slots **sempre** com exatamente 3 `DigimonSlot`.
+- Sempre pelo menos 1 slot ocupado.
+- Slot ocupado: `digimonId` e `digimon` ambos não-nulos. Slot vazio: ambos nulos. Um nulo e outro preenchido = inconsistência.
+- `digimonId` fica no slot; `Digimon` carrega só estado dinâmico da RAM. Dados estáticos (nome, EXP curve, digievolutions) vêm de presenters/repositórios via `digimonId`.
+- UI (`App.vue`): estado chega com 3 slots; renderizar **apenas** slots ocupados.
+
+## Digimon e Digievolutions
+
+- Slot de digievolução: vazio ou preenchido. Válido: vazio→preenchido e preenchido(X)→preenchido(Y). **Proibido:** preenchido→vazio.
+- UI “empty” = slot que **nunca** foi preenchido (ex.: id inválido/`0`), não um slot que “perdeu” evolução.
+- Técnicas por `digievolutionId` em JSON estático; assinatura = maior `learnLevel`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
+- Level máximo **99** (invariante 1–99). Não aplicar clamp defensivo no frontend.
+- Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE.
+
+## Journal
+
+- Estrutura das missões em JSON estático; backend lê só `Value` de Step/Requisite.
+- **Cascade Main Quest apenas** (`NormalizeMainQuestProgression`): step posterior `> 0` força anteriores `0` → `1`. Side quests / legendary / DRI = pass-through puro.
+- Todas as missões vêm no InitialState; **nunca** add/remove em runtime. Conclusão é calculada no frontend (todos steps/requisitos satisfeitos); não há flag de “missão concluída” do backend.

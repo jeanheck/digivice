@@ -1,0 +1,23 @@
+---
+description: Convenções Backend C# Digivice — primary constructors, usings, ordem de membros
+globs: Backend/**/*.cs
+alwaysApply: false
+---
+
+# Digivice — Backend
+
+Fonte: `AI/CODE_RULES.md` (seção Backend).
+
+1. **Construtores primários** (C# 12+) sempre que possível.
+2. **Arquivos individuais** por classe (responsabilidade única).
+3. **Collection expressions** (`[ ]`); prefira `[.. collection]` a `.ToList()` / `.ToArray()` / `new List<T>(collection)` para spreads/conversões de `IEnumerable`.
+4. **Usings:** ao editar um arquivo, remova `using` não utilizados.
+5. **Readers e Converters stateless:** sem estado mutável; dados entram, dados tratados saem. Estado fica em `GameStateStore` ou orquestradores.
+6. **Sem prefixo `_`:** evite underline em campos/variáveis; prefira propriedades readonly PascalCase para DI / parâmetros de primary constructor.
+7. **Inicialização:** prefira `new();` a `new Object();` quando possível.
+8. **Ordem dos membros:**
+   1. Campos e propriedades privadas
+   2. Métodos privados
+   3. Métodos públicos / `protected`
+
+   Não intercalar públicos e privados — privados acima, públicos/protected abaixo.

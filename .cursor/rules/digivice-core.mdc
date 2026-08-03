@@ -1,0 +1,20 @@
+---
+description: Diretrizes gerais Digivice — tom, foco, aprovação de planos, naming
+alwaysApply: true
+---
+
+# Digivice — Core
+
+Fonte humana espelhada: `AI/CODE_RULES.md` e `AI/BUSINESS_RULES.md`.
+
+## Diretrizes primárias
+
+1. **Respostas objetivas**: concisas e diretas. Detalhe só se o usuário pedir.
+2. **Foque na tarefa**: não espalhe impacto sem necessidade; o usuário orienta o fluxo.
+3. **Aprovação de planos**: não execute planos de implementação antes de aprovação explícita. Mudanças mínimas podem ir direto; planos solicitados aguardam revisão.
+
+## Diretrizes gerais
+
+1. **Nomenclatura**: não abrevie variáveis; prefira nomes explícitos.
+2. **Condicionais**: sempre use `{ }` em `if`, mesmo com uma linha.
+3. **Comentários**: evite quando o código é autoexplicativo; se necessário, em inglês.

@@ -1,0 +1,86 @@
+---
+description: Convenções Frontend Vue/TS Digivice — converters, estilos DW3, presenters, tooltips, modais
+globs: Frontend/**/*
+alwaysApply: false
+---
+
+# Digivice — Frontend
+
+Fonte: `AI/CODE_RULES.md` (seção Frontend).
+
+## Convenções básicas
+
+1. Sempre `;` no fim das instruções.
+2. **Converters:** classe `{AlgumaCoisa}Converter`; arquivo `{alguma-coisa}.converter.ts`; API pública estática `convert`. Dois contextos:
+   - `events/converters/` — DTO (SignalR) → Model (Pinia)
+   - `presenters/converter/` — Raw → ViewModel (dados estáticos)
+3. **DTOs:** tipo PascalCase (`PlayerDTO`); arquivo kebab + `.dto.ts`. Pastas de eventos em kebab-case (`journals/`, `quests/`).
+4. **ViewModels:** um tipo por arquivo; `{nome}.viewmodel.ts`.
+5. Importações com `@/` (ex.: `@/models/`).
+6. Prefira aspas duplas `"` em strings.
+7. **Sem testes no Frontend** (Vitest, `*.spec.ts`, `__tests__`), salvo pedido explícito.
+
+## Coerência visual e estilos
+
+Priorize `Frontend/src/style.css` e componentes similares do mesmo contexto (aparência DW3).
+
+- Fonte única: **Press Start 2P** (global no `body`). Não introduzir fontes alternativas.
+- Antes de estilizar: checar utilitários em `style.css` → componente similar → só então CSS/Tailwind novo.
+
+Classes DW3 principais: `dw3-beveled`, `dw3-panel` (+ border/inner/content), `dw3-aside` (+ header/title), `shadow-text` / `shadow-text-dark`, `text-dw3-gold`, `custom-scroll`, `bg-grid-pattern`.
+
+- Prefira `dw3-*` a remontar bordas/cores manualmente.
+- Destaque dourado: `text-dw3-gold shadow-text-dark`.
+- Tokens de cor já usados: `#000a2b`, `#000e3f`, `#0033aa`, `#0077ff`, `#00aaff`.
+- Evite `<style scoped>` para padrões compartilháveis — extraia para `style.css`.
+
+**Proibido:** inventar paleta/tipografia/moldura sem checar referência; duplicar blocos longos que já têm utilitário global; scoped copiado de outro componente.
+
+## Dados estáticos (Repository, Presenter, Converter, ViewModel)
+
+| Camada | Responsabilidade |
+|--------|------------------|
+| Component | Pinia + presenters. Não chama service/repository/converter. |
+| Service | Domínio reutilizável; orquestra repositories/helpers. Sem Vue/presenters/ViewModel de tela. |
+| Repository | Dados estáticos → tipos **Raw** apenas. |
+| Converter (`presenters/converter/`) | Puro Raw → ViewModel. Sem repository/tela. |
+| Presenter | Orquestra service/repo/helper/converter; regras de tela. Não monta ViewModel inline se houver transformação. |
+| ViewModel | Contrato da UI; um tipo por arquivo `.viewmodel.ts`. |
+
+Fluxo: `Component → Presenter → Service → Repository → Raw` e `Presenter → Converter → ViewModel`. Service opcional em casos simples.
+
+Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem converter). Converter quando houver transformação/projeção. Raw e ViewModel continuam tipos distintos.
+
+**Proibido:** converter com repository/orquestração; presenter montando ViewModel inline quando cabe converter; repository retornando ViewModel; component chamando service/repo/converter; service conhecendo Vue/presenter.
+
+## Helpers (`presenters/helper/`)
+
+- Classe `{AlgumaCoisa}Helper`; arquivo `{alguma-coisa}.helper.ts`; métodos estáticos/puros.
+- Regras reutilizadas por mais de um presenter; sem repository/ViewModel/componente.
+- Referência: `EquipmentsHelper`.
+
+**Proibido:** helper com repository/ViewModel; regras de domínio no repository; duplicar a mesma regra em vários presenters.
+
+## Tooltips
+
+Referência: `DigimonEquipments.vue`. Camadas:
+
+- `use-tooltip-position.ts` — posição/visibilidade (`show`, `x`, `y`, placement, flip). Sem conteúdo.
+- `Tooltip.vue` — casca visual + slot; props `show`/`x`/`y`/`title`/…; sem mouse.
+- Wrappers (`EquipmentTooltip`, `DefaultTooltip`, …) — conteúdo; sem `useTooltipPosition` interno.
+
+No **pai**: um `useTooltipPosition`; conteúdo em refs; handlers `mouseenter`/`mousemove`/`mouseleave`; filhos emitem eventos com `MouseEvent`.
+
+Escolha: só título → `Tooltip` direto; título+texto → `DefaultTooltip`; equipamento → `EquipmentTooltip`; breakdown → `DigimonTooltip`.
+
+**Proibido:** tooltip inline (Teleport + clientX/Y manual); composable dentro do wrapper; API imperativa `defineExpose` no wrapper.
+
+## Modais
+
+Referência: `components/modal/Modal.vue`.
+
+- Casca: Teleport, overlay, ESC, clique fora, animações, header com `IconClose`, `custom-scroll`.
+- Domínio: slots `#header` + corpo; `@close` para o pai; `isModalOpen` combina `isOpen` + dado mínimo.
+- Título no `#header`: `text-white`, **sem** `uppercase`.
+
+**Proibido:** modal inline duplicando `Modal.vue`; Escape/`IconClose` custom no filho; imports relativos longos quando `@/` resolve.
