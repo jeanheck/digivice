@@ -12,6 +12,9 @@ namespace Backend.Memory.Readers.Parties
             return new InCombat
             {
                 Id = memoryReader.ReadInt16(slotBase + addresses.Id),
+                Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes
+                    ? conditionBytes[0]
+                    : 0,
                 HP = new VitalResource
                 {
                     Max = memoryReader.ReadInt16(slotBase + addresses.HP.Max),

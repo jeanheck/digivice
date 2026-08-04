@@ -30,12 +30,16 @@ namespace Backend.Application.Loaders
                     }
                     else
                     {
-                        // Override with In Combat data when a combat is happening
                         var inCombatData = inCombatReader.ReadSlot(inCombatAddresses, slotResource.Index - 1);
                         if (inCombatData.IsInCombat)
                         {
                             digimonResource.HP = inCombatData.HP;
                             digimonResource.MP = inCombatData.MP;
+                            digimonResource.Condition = inCombatData.Condition;
+                        }
+                        else
+                        {
+                            digimonResource.Condition = 0;
                         }
 
                         slotResource.DigimonResource = digimonResource;

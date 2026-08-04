@@ -410,6 +410,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(500, digimon.HP.Max);
         Assert.Equal(200, digimon.MP.Current);
         Assert.Equal(300, digimon.MP.Max);
+        Assert.Equal(0, digimon.Condition);
     }
 
     [Fact]
@@ -437,6 +438,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x08)).Returns((short)1400);
         memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x0A)).Returns((short)1140);
         memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x0C)).Returns((short)900);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x000A4470 + 0x1C, 1)).Returns([0x04]);
 
         var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
         var partyResource = partyLoader.Load();
@@ -447,6 +449,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(1850, digimon.HP.Max);
         Assert.Equal(900, digimon.MP.Current);
         Assert.Equal(1140, digimon.MP.Max);
+        Assert.Equal(0x04, digimon.Condition);
     }
 
     private static PartyLoader CreatePartyLoader(

@@ -107,6 +107,21 @@ public class DigimonDifferTests
         Assert.False(result.Level.HasValue);
     }
 
+    [Fact]
+    public void Diff_ShouldReturnConditionDelta_WhenOnlyConditionChanges()
+    {
+        var previous = CreateBaseDigimon();
+        var newObj = CreateBaseDigimon();
+        newObj.Condition = 0x04;
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.True(result.Condition.HasValue);
+        Assert.Equal(0x04, result.Condition.Value);
+        Assert.False(result.Level.HasValue);
+    }
+
     private static Digimon CreateBaseDigimon()
     {
         return new Digimon

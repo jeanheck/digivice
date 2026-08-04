@@ -17,6 +17,9 @@ public record class DigimonDTO : IDTO
     public Optional<int> Blast { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<int> Condition { get; init; } = Optional<int>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<int> Experience { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

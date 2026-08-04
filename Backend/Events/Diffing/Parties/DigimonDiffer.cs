@@ -24,6 +24,7 @@ public static class DigimonDiffer
         bool levelChanged = previousDigimon.Level != newDigimon.Level;
         bool tpChanged = previousDigimon.TP != newDigimon.TP;
         bool blastChanged = previousDigimon.Blast != newDigimon.Blast;
+        bool conditionChanged = previousDigimon.Condition != newDigimon.Condition;
         bool experienceChanged = previousDigimon.Experience != newDigimon.Experience;
         bool activeDigievolutionIdChanged = previousDigimon.ActiveDigievolutionId != newDigimon.ActiveDigievolutionId;
         var hpDelta = VitalDiffer.Diff(previousDigimon.HP, newDigimon.HP);
@@ -61,6 +62,7 @@ public static class DigimonDiffer
         bool hasAnyChanges = levelChanged ||
                              tpChanged ||
                              blastChanged ||
+                             conditionChanged ||
                              experienceChanged ||
                              activeDigievolutionIdChanged ||
                              hpDelta != null ||
@@ -88,6 +90,10 @@ public static class DigimonDiffer
         if (blastChanged)
         {
             dto = dto with { Blast = newDigimon.Blast };
+        }
+        if (conditionChanged)
+        {
+            dto = dto with { Condition = newDigimon.Condition };
         }
         if (experienceChanged)
         {

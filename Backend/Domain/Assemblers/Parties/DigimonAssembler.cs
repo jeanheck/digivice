@@ -21,6 +21,7 @@ namespace Backend.Domain.Assemblers.Parties
                 Level = resource.Level,
                 TP = resource.TP,
                 Blast = resource.Blast,
+                Condition = resource.Condition,
                 HP = new Vital
                 {
                     Current = resource.HP.Current,
