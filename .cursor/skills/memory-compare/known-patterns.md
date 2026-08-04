@@ -316,7 +316,7 @@ Ally battle slot offset **`+0x1C`** (byte). Guilmon party slot 0 → `0xA448C`.
 Only the active Guilmon slot changed; other ally slots stayed 0.
 Looks like a **bitfield** (poison bit0, confuse bit2) or enum powers-of-two.
 Secondary noise on confuse snap: `+0x1F` `0x00→0x50` (unknown — timer?).
-Wired as Digimon `Condition` (`byte`) via `InCombatAddresses.Condition` / PartyLoader when `IsInCombat`.
+Wired as Digimon `Condition` (`byte`) via `DigimonInCombatAddresses.Condition` / PartyLoader when `IsInCombat`.
 
 ---
 

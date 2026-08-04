@@ -1,8 +1,8 @@
 using Backend.Memory.Resources.Parties.Digimons;
 
-namespace Backend.Memory.Readers.Parties
+namespace Backend.Memory.Resources.Parties
 {
-    public class InCombat
+    public class DigimonInCombatResource
     {
         public int Id { get; set; }
         public int Condition { get; set; }

@@ -1,15 +1,16 @@
 using Backend.Memory.Addresses.Parties;
+using Backend.Memory.Resources.Parties;
 using Backend.Memory.Resources.Parties.Digimons;
 
 namespace Backend.Memory.Readers.Parties
 {
-    public class InCombatReader(IMemoryReader memoryReader) : IInCombatReader
+    public class DigimonInCombatReader(IMemoryReader memoryReader) : IDigimonInCombatReader
     {
-        public InCombat ReadSlot(InCombatAddresses addresses, int zeroBasedPartySlotIndex)
+        public DigimonInCombatResource Read(DigimonInCombatAddresses addresses, int zeroBasedPartySlotIndex)
         {
             var slotBase = addresses.AllySlotBase + (zeroBasedPartySlotIndex * addresses.SlotStride);
 
-            return new InCombat
+            return new DigimonInCombatResource
             {
                 Id = memoryReader.ReadInt16(slotBase + addresses.Id),
                 Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes

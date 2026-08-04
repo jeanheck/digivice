@@ -10,13 +10,13 @@ namespace Backend.Application.Loaders
         IAddressesRepository addressesRepository,
         IPartyReader partyReader,
         IDigimonLoader digimonLoader,
-        IInCombatReader inCombatReader) : IPartyLoader
+        IDigimonInCombatReader digimonInCombatReader) : IPartyLoader
     {
         public PartyResource Load()
         {
             var partyAddresses = addressesRepository.GetPartyAddresses();
             var partyResource = partyReader.Read(partyAddresses);
-            var inCombatAddresses = addressesRepository.GetInCombatAddresses();
+            var digimonInCombatAddresses = addressesRepository.GetDigimonInCombatAddresses();
 
             foreach (var slotResource in partyResource.SlotsResource)
             {
@@ -30,16 +30,12 @@ namespace Backend.Application.Loaders
                     }
                     else
                     {
-                        var inCombatData = inCombatReader.ReadSlot(inCombatAddresses, slotResource.Index - 1);
-                        if (inCombatData.IsInCombat)
+                        var digimonInCombatResource = digimonInCombatReader.Read(digimonInCombatAddresses, slotResource.Index - 1);
+                        if (digimonInCombatResource.IsInCombat)
                         {
-                            digimonResource.HP = inCombatData.HP;
-                            digimonResource.MP = inCombatData.MP;
-                            digimonResource.Condition = inCombatData.Condition;
-                        }
-                        else
-                        {
-                            digimonResource.Condition = 0;
+                            digimonResource.HP = digimonInCombatResource.HP;
+                            digimonResource.MP = digimonInCombatResource.MP;
+                            digimonResource.Condition = digimonInCombatResource.Condition;
                         }
 
                         slotResource.DigimonResource = digimonResource;

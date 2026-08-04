@@ -60,7 +60,7 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IDigievolutionReader>());
         Assert.NotNull(provider.GetRequiredService<IDigievolutionSlotReader>());
         Assert.NotNull(provider.GetRequiredService<IPartyReader>());
-        Assert.NotNull(provider.GetRequiredService<IInCombatReader>());
+        Assert.NotNull(provider.GetRequiredService<IDigimonInCombatReader>());
         Assert.NotNull(provider.GetRequiredService<IRequisiteReader>());
         Assert.NotNull(provider.GetRequiredService<IStepReader>());
         Assert.NotNull(provider.GetRequiredService<IPlayerReader>());
