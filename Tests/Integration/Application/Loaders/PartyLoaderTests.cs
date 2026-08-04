@@ -82,12 +82,12 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var partyReader = new PartyReader(digimonSlotReader);
 
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var digimonInCombatReader = new DigimonInCombatReader(memoryReaderMock.Object);
+        var digimonInCombatLoader = new DigimonInCombatLoader(addressesRepository, new DigimonInCombatReader(memoryReaderMock.Object));
         var partyLoader = new PartyLoader(
             addressesRepository,
             partyReader,
             digimonLoader,
-            digimonInCombatReader);
+            digimonInCombatLoader);
 
         // 4. Act - Execução do Loader integrado
         var partyResource = partyLoader.Load();
@@ -169,12 +169,12 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var partyReader = new PartyReader(digimonSlotReader);
 
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var digimonInCombatReader = new DigimonInCombatReader(memoryReaderMock.Object);
+        var digimonInCombatLoader = new DigimonInCombatLoader(addressesRepository, new DigimonInCombatReader(memoryReaderMock.Object));
         var partyLoader = new PartyLoader(
             addressesRepository,
             partyReader,
             digimonLoader,
-            digimonInCombatReader);
+            digimonInCombatLoader);
 
         Assert.Throws<Backend.Memory.MemoryReadException>(() => partyLoader.Load());
     }
@@ -217,12 +217,12 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var partyReader = new PartyReader(digimonSlotReader);
 
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var digimonInCombatReader = new DigimonInCombatReader(memoryReaderMock.Object);
+        var digimonInCombatLoader = new DigimonInCombatLoader(addressesRepository, new DigimonInCombatReader(memoryReaderMock.Object));
         var partyLoader = new PartyLoader(
             addressesRepository,
             partyReader,
             digimonLoader,
-            digimonInCombatReader);
+            digimonInCombatLoader);
 
         // 2. Act
         var partyResource = partyLoader.Load();
@@ -352,12 +352,12 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var partyReader = new PartyReader(digimonSlotReader);
 
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var digimonInCombatReader = new DigimonInCombatReader(memoryReaderMock.Object);
+        var digimonInCombatLoader = new DigimonInCombatLoader(addressesRepository, new DigimonInCombatReader(memoryReaderMock.Object));
         var partyLoader = new PartyLoader(
             addressesRepository,
             partyReader,
             digimonLoader,
-            digimonInCombatReader);
+            digimonInCombatLoader);
 
         // 2. Act
         var partyResource = partyLoader.Load();
@@ -463,11 +463,11 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digimonSlotReader = new DigimonSlotReader(memoryReader);
         var partyReader = new PartyReader(digimonSlotReader);
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var digimonInCombatReader = new DigimonInCombatReader(memoryReader);
+        var digimonInCombatLoader = new DigimonInCombatLoader(addressesRepository, new DigimonInCombatReader(memoryReader));
         return new PartyLoader(
             addressesRepository,
             partyReader,
             digimonLoader,
-            digimonInCombatReader);
+            digimonInCombatLoader);
     }
 }

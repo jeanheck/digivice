@@ -51,6 +51,7 @@ namespace Backend.Infrastructure
             services.AddSingleton<IJournalLoader, JournalLoader>();
             services.AddSingleton<IPartyLoader, PartyLoader>();
             services.AddSingleton<IDigimonLoader, DigimonLoader>();
+            services.AddSingleton<IDigimonInCombatLoader, DigimonInCombatLoader>();
 
             services.AddSingleton<IPlayerProvider, PlayerProvider>();
             services.AddSingleton<IPartyProvider, PartyProvider>();

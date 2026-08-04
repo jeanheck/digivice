@@ -1,6 +1,5 @@
 using Backend.Application.Loaders.Parties;
 using Backend.Memory.Readers;
-using Backend.Memory.Readers.Parties;
 using Backend.Memory.Repositories;
 using Backend.Memory.Resources;
 
@@ -10,13 +9,12 @@ namespace Backend.Application.Loaders
         IAddressesRepository addressesRepository,
         IPartyReader partyReader,
         IDigimonLoader digimonLoader,
-        IDigimonInCombatReader digimonInCombatReader) : IPartyLoader
+        IDigimonInCombatLoader digimonInCombatLoader) : IPartyLoader
     {
         public PartyResource Load()
         {
             var partyAddresses = addressesRepository.GetPartyAddresses();
             var partyResource = partyReader.Read(partyAddresses);
-            var digimonInCombatAddresses = addressesRepository.GetDigimonInCombatAddresses();
 
             foreach (var slotResource in partyResource.SlotsResource)
             {
@@ -30,7 +28,7 @@ namespace Backend.Application.Loaders
                     }
                     else
                     {
-                        var digimonInCombatResource = digimonInCombatReader.Read(digimonInCombatAddresses, slotResource.Index - 1);
+                        var digimonInCombatResource = digimonInCombatLoader.Load(slotResource.Index - 1);
                         if (digimonInCombatResource.IsInCombat)
                         {
                             digimonResource.HP = digimonInCombatResource.HP;

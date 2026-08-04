@@ -71,6 +71,7 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IJournalLoader>());
         Assert.NotNull(provider.GetRequiredService<IPartyLoader>());
         Assert.NotNull(provider.GetRequiredService<IDigimonLoader>());
+        Assert.NotNull(provider.GetRequiredService<IDigimonInCombatLoader>());
 
         Assert.NotNull(provider.GetRequiredService<IPlayerProvider>());
         Assert.NotNull(provider.GetRequiredService<IPartyProvider>());
