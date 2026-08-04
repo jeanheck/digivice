@@ -304,6 +304,20 @@ Tapirmon earlier matched the same `0xA45C2` layout when that block held the enem
 
 Debuffs still unknown (no status applied in these snaps).
 
+### Status / debuff byte (suspected → stronger)
+
+Ally battle slot offset **`+0x1C`** (byte). Guilmon party slot 0 → `0xA448C`.
+
+| Snap pair | Normal | Debuff | Value @ `+0x1C` |
+|-----------|--------|--------|-----------------|
+| `guilmon-normal` / `guilmon-poison` | 0 | Poison | **`0x01`** |
+| `guilmon-gekomon-normal` / `guilmon-gekomon-confuse` | 0 | Confuse | **`0x04`** |
+
+Only the active Guilmon slot changed; other ally slots stayed 0.
+Looks like a **bitfield** (poison bit0, confuse bit2) or enum powers-of-two.
+Secondary noise on confuse snap: `+0x1F` `0x00→0x50` (unknown — timer?).
+Needs more statuses (paralyze, sleep, …) and multi-debuff snaps.
+
 ---
 
 ## Seabed underwater routing (confirmed)
