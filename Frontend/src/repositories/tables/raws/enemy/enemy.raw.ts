@@ -2,7 +2,6 @@ export interface EnemyRaw {
   name: string;
   level: number;
   hp: number;
-  mp: number;
   species: string;
   rate: number;
   strength: number;

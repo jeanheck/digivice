@@ -78,11 +78,6 @@ const techniqueLabel = computed(() => {
         </div>
 
         <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">MP:</span>
-          <span class="font-bold text-white">{{ enemy.mp }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs">
           <span class="font-bold text-blue-500 tracking-wider uppercase"
             >{{ $t("enemy.baseExp") }}:</span
           >

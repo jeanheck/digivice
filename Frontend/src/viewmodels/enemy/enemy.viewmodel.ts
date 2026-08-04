@@ -2,7 +2,6 @@ export interface EnemyViewModel {
   name: string;
   level: number;
   hp: number;
-  mp: number;
   species: string;
   rate: number;
   attributes: {

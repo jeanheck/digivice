@@ -7,7 +7,6 @@ export class EnemyConverter {
       name: enemyRaw.name,
       level: enemyRaw.level,
       hp: enemyRaw.hp,
-      mp: enemyRaw.mp,
       species: enemyRaw.species,
       rate: enemyRaw.rate,
       attributes: {
