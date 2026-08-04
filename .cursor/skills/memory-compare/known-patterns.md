@@ -236,6 +236,76 @@ will not find these (addresses are below quest region `0x48000`).
 
 ---
 
+## Combat live HP/MP / enemy stats (confirmed HP)
+
+Snapshots:
+- Tapirmon scout: `in-combat.bin` / `out-combat.bin`
+- Mammothmon turn chain: `out-combat-west-1` → `in-combat-west-1..4` → `out-combat-west-2`
+
+**Persistent party HP does not update mid-combat** — Kotemon `0x494BC`
+(Current) stayed 1850 through all `in-west-*`, then became 1400 only on
+`out-combat-west-2` (post-battle sync).
+
+### Battle HP/MP slot table @ `0xA4470` (stride `0x20`) — HP confirmed
+
+Layout per slot (Int16 LE) — **note: Max then Current** (inverted vs
+`DigimonStatusAddresses` persistent `Current`/`Max`):
+
+| Offset | Field | Evidence |
+|--------|-------|----------|
+| +0x00 | unit id / digievo token | Kotemon 386; enemy Tapirmon 206 / Mammothmon 212 |
+| +0x06 | **HP Max** | Kotemon stayed 1850 while damaged; Mammothmon stayed 672 |
+| +0x08 | **HP Current** | Kotemon `1850→1400`; Mammothmon `672→432→192→0` (`chain-match`) |
+| +0x0A / +0x0C | MP (cur/max order TBD) | no MP spend in these fights |
+
+| Slot | Base | Role |
+|------|------|------|
+| 0 | `0xA4470` | Ally party slot 0 — live HP Current @ `0xA4478` |
+| 1 | `0xA4490` | Ally party slot 1 — live HP Current @ `0xA4498` |
+| 2 | `0xA44B0` | Ally party slot 2 — live HP Current @ `0xA44B8` |
+| 3 | `0xA44D0` | Enemy — live HP Current @ `0xA44D8` |
+
+**Slots are fixed by party position, not by who is front/active.**
+Switch snaps (`in-combat-kotemon` / `patamon` / `renamon`, same Kunemon fight):
+Kotemon HP stayed at slot0 (`0xA4478`), Patamon at slot1, Renamon at slot2
+across all three — only the active marker moved.
+
+| Address | Role | Evidence |
+|---------|------|----------|
+| `0xA4468` | Active ally slot index (0/1/2) | `0→1→2` when switching Kotemon→Patamon→Renamon |
+| `0xA4558` | Active unit id | `386→234→375` (Dinohumon→Angewomon→Taomon) |
+
+Pre-battle (`out-combat-west-1`): table zeroed. Post-battle (`out-west-2`) may
+still hold last values briefly (enemy current 0, ally current 1400).
+
+HUD mirrors (discard for logic): `0xE1408`/`0xE140C`/`0xE1410` track ally
+current HP; `0xE141C`/`0xE1420`/`0xE1424` track enemy current HP.
+
+### Strip near Blast @ `0x42B28` — NOT live current HP
+
+| Address | Notes |
+|---------|-------|
+| `0x42B28` | battle-related counter/flag (1 or 3 in fights seen) |
+| `0x42B34` | same enemy token as `0xA44D0` |
+| `0x42B38` | enemy level (Mammothmon 23) |
+| `0x42B3A` | enemy **max/initial** HP only — stayed 672 while `0xA44D8` dropped |
+| `0x42B3C` | enemy MP |
+
+### Enemy base attrs (static audit)
+
+`enemy.json` Mammothmon `350,280,260,280,190` + resists `60,101,270,270,101,101,60`
+matched in combat at:
+
+- `0xA45C2` when that block is bound to the enemy (swaps with ally block
+  `0xA4582` across turns — **not a fixed enemy-only address**)
+- `0xB97B0` — stable for all four `in-west` turns (better audit anchor)
+
+Tapirmon earlier matched the same `0xA45C2` layout when that block held the enemy.
+
+Debuffs still unknown (no status applied in these snaps).
+
+---
+
 ## Seabed underwater routing (confirmed)
 
 Seabed maps (`02Ex`) are **shared** across surface routes. `MapId` alone cannot

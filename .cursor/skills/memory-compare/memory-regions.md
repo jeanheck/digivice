@@ -126,8 +126,15 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 
 | Range | Purpose | Notes |
 |-------|---------|-------|
-| ~0x000494xxx | Digimon stat blocks | Battle noise — level, HP, EXP changes |
-| `0x00042B74` + `2 × rookieId` | Blast gauge (Int32, 0–1000, per Digimon) | Confirmed — see known-patterns.md |
+| ~0x000494xxx | Digimon stat blocks (persistent / post-battle) | HP Current syncs **after** combat only — see DigimonStatusAddresses.json |
+| `0x00042B74` + `2 × rookieId` | Blast gauge (Int16, 0–1000, per Digimon) | Confirmed — see known-patterns.md; updates in combat |
+| `0x00042B28` – `0x00042B3E` | Enemy battle strip (near Blast) | Level / token / **max** HP+MP — does **not** track current HP damage |
+| `0x000A4470` + `n × 0x20` | Battle HP/MP slot table | **Confirmed** live HP: +0x06 Max, +0x08 Current; slots fixed by party order (not active front); enemy @ slot3 |
+| `0x000A4468` | Active ally slot index | 0/1/2 — switches with front Digimon (`in-combat-kotemon/patamon/renamon`) |
+| `0x000A4558` | Active unit id | Tracks front digievo/token while HP stays in fixed slots |
+| `0x000A4580` / `0x000A45C0` | Combatant attr blocks (swappable) | Level+attrs; which unit is in which block changes per turn |
+| `0x000B97B0` | Enemy base attrs copy | Stable Mammothmon attrs across west in-combat snaps (audit) |
+| `0x000E1408` / `0x000E141C` | HUD HP mirrors | Track current HP; discard for authoritative state |
 | Offsets | See DigimonStatusAddresses.json | Relative to each digimon base |
 
 Diffs here are expected after battles; usually not quest flags.
