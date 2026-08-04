@@ -1,5 +1,5 @@
 ---
-description: Convenções Backend C# Digivice — primary constructors, usings, ordem de membros
+description: Convenções Backend C# Digivice — primary constructors, camadas de memória, usings
 globs: Backend/**/*.cs
 alwaysApply: false
 ---
@@ -21,3 +21,7 @@ Fonte: `AI/CODE_RULES.md` (seção Backend).
    3. Métodos públicos / `protected`
 
    Não intercalar públicos e privados — privados acima, públicos/protected abaixo.
+9. **Camadas de leitura de memória:** Addresses (offsets) → Loader (`Get*Addresses` + orquestra) → Reader (RAM → Resource) → Resource → Assembler (Resource → Domain).
+   - Campo em entidade existente → estender tipos existentes.
+   - Conceito de leitura novo → `{Entity}Addresses` / `Reader` / `Resource` / **`Loader`**; consumidores usam Loaders, não Readers.
+   - Naming: `{Entity}Addresses`, `{Entity}Reader`, `{Entity}Resource`, `{Entity}Loader`.

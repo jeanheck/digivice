@@ -9,6 +9,7 @@ export interface Digimon {
   level: number;
   tp: number;
   blast: number;
+  condition: number;
   experience: number;
   hp: Vital;
   mp: Vital;

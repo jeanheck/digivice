@@ -11,8 +11,9 @@
 graph TD
     subgraph Backend [Backend - C# .NET]
         A[Emulador Duckstation] -->|Leitura de RAM 1000ms| B(MemoryReader / MemoryBlockReader)
-        B -->|Dados Brutos| C(Assemblers)
-        C -->|Instanciação| D(State)
+        B --> L[Loaders]
+        L -->|Addresses via Repository + Readers| R[Resources]
+        R -->|Assemblers| D[State]
         D -->|State Atual + Anterior| E(StateEventFactory / Diffs)
         E -->|Apenas Alterações| F(DTOs e Eventos SignalR)
     end
@@ -26,9 +27,13 @@ graph TD
     end
 ```
 
+### Pipeline de memória (Backend)
+
+Cadeia canônica até o domínio: **Addresses** (offsets JSON/C#) → **Loader** (resolve addresses + orquestra) → **Reader** (lê RAM → Resource) → **Resource** (resultado tipado) → **Assembler** (Resource → domínio no `State`). Detalhe de responsabilidades e naming: `AI/CODE_RULES.md` (Backend, item *Camadas de leitura de memória*).
+
 ### O Loop de Jogo (Game Loop)
 *   **Frequência:** A cada `1000ms` (1 segundo), a classe `GameLoopService` executa um loop de varredura de memória (dentro de uma instrução `while`).
-*   **Montagem do Estado:** Os leitores de memória extraem bytes brutos que são processados por classes `Assembler` para higienizar e estruturar os dados em entidades, culminando na criação de um objeto unificado chamado `State`.
+*   **Montagem do Estado:** Loaders resolvem `*Addresses`, Readers extraem dados da RAM em `*Resource`, e Assemblers higienizam/estruturam isso em entidades de domínio, culminando no objeto unificado `State`.
 *   **Cálculo de Diferenças (Diffs):** O `StateEventFactory` compara o `State` atual com o anterior através de mecanismos de *Diff*. Ele identifica quais propriedades específicas mudaram e encapsula apenas as alterações em DTOs.
 *   **Despacho de Eventos:** Todos os eventos de mudança (ex: `PlayerChanged`, `PartyChanged`) são despachados simultaneamente através do `EventDispatcher` utilizando **SignalR**.
 

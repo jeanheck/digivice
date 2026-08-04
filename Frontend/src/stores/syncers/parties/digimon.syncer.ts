@@ -20,6 +20,9 @@ export class DigimonSyncer {
     if (newDigimonDto.blast !== undefined) {
       previousDigimon.blast = newDigimonDto.blast;
     }
+    if (newDigimonDto.condition !== undefined) {
+      previousDigimon.condition = newDigimonDto.condition;
+    }
     if (newDigimonDto.experience !== undefined) {
       previousDigimon.experience = newDigimonDto.experience;
     }

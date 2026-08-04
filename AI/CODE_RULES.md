@@ -230,6 +230,22 @@ Referência: `Frontend/src/components/modal/Modal.vue`.
    3. Métodos públicos ou `protected` (API exposta pela classe, incluindo overrides).
 
    Não intercale métodos públicos e privados — agrupe todos os privados acima de todos os públicos/protected.
+9. **Camadas de leitura de memória (Addresses → Loader → Reader → Resource → Assembler)**: Ao criar ou estender rastreamento de RAM, respeite a cadeia e as responsabilidades:
+
+   | Camada | Pasta | Responsabilidade |
+   |--------|-------|------------------|
+   | **Addresses** | `Memory/Addresses/` + `Memory/Definitions/*Addresses.json` | Só offsets/layout; sem I/O de RAM. |
+   | **Reader** | `Memory/Readers/` | Stateless: Addresses in → `*Resource` out (via `IMemoryReader`). |
+   | **Resource** | `Memory/Resources/` | Modelo tipado do que foi lido; sem regra de domínio. |
+   | **Loader** | `Application/Loaders/` | Resolve `Get*Addresses()` no `AddressesRepository` e chama o Reader; orquestra composição entre loaders. |
+   | **Assembler** | `Domain/Assemblers/` | `Resource` → modelo de domínio no `State`. |
+
+   **Decisão de tipos:**
+   - Campo novo em entidade existente → estender Addresses / Reader / Resource / Assembler / Differ / DTO **já existentes** (não criar pipeline paralelo por um scalar).
+   - Conceito de leitura novo (ex.: Digimon in-combat) → criar `{Entity}Addresses`, `{Entity}Reader`, `{Entity}Resource` e **`{Entity}Loader`**. Consumidores orquestram **Loaders**, não Readers nem `Get*Addresses()` diretamente.
+   - Naming: `{Entity}Addresses`, `{Entity}Reader`, `{Entity}Resource`, `{Entity}Loader`.
+
+   Referências vivas: `PlayerLoader`, `DigimonLoader`, `DigimonInCombatLoader`, `PartyLoader`.
 
 ## Tests (Backend): regras relacionadas aos testes
 

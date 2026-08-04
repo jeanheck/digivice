@@ -1,5 +1,8 @@
 # Quest Pattern — Backend Pipeline
 
+Canonical memory layers (Addresses → Loader → Reader → Resource → Assembler):
+see `AI/CODE_RULES.md` (Backend). This file is the journal-specific data flow.
+
 ## Data flow
 
 ```

@@ -9,8 +9,9 @@ Fonte humana: `AI/BUSINESS_RULES.md`. Tracker de memória para Digimon World 200
 
 ## Arquitetura e fluxo de dados
 
-Pipeline: Duckstation (RAM 1000ms) → MemoryReader/MemoryBlockReader → Assemblers → State → StateEventFactory (diffs) → DTOs/eventos SignalR → Frontend converters → Syncers → Pinia → Vue.
+Pipeline: Duckstation (RAM 1000ms) → MemoryReader → Loaders (Addresses + Readers → Resources) → Assemblers → State → StateEventFactory (diffs) → DTOs/eventos SignalR → Frontend converters → Syncers → Pinia → Vue.
 
+- **Camadas de memória:** Addresses → Loader → Reader → Resource → Assembler (detalhe em `AI/CODE_RULES.md` Backend).
 - **Game loop:** `GameLoopService` a cada 1000ms.
 - **Diffs:** só propriedades que mudaram entram nos DTOs; despacho via SignalR (`EventDispatcher`).
 - **InitialState:** DTO completo do State na conexão (`StateConverter` → Pinia).

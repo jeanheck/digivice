@@ -12,6 +12,10 @@ description: >-
 
 # Address Field — Backend Integration
 
+Canonical memory layers (Addresses → Loader → Reader → Resource → Assembler):
+see `AI/CODE_RULES.md` (Backend). This skill is the **how-to** for adding a field
+to an **existing** entity pipeline.
+
 Wire a **new field** (or update an existing one) from an `*Addresses.json`
 definition through the backend pipeline up to **event generation** (DTO +
 Differ). Stops before SignalR / frontend.
@@ -37,7 +41,7 @@ has one.
 |-------|-----------------|
 | JSON | Existing `*Addresses.json` |
 | Addresses C# | Matching `*Addresses.cs` (+ nested address objects if needed) |
-| Reader / Resource / Domain / Assembler | Same entity types |
+| Loader / Reader / Resource / Domain / Assembler | Same entity types |
 | Events | Same `*DTO`, `*Converter`, `*Differ` |
 
 Create new types only when introducing a **brand-new entity** (rare — ask
@@ -45,15 +49,15 @@ user first).
 
 ## Entity pipeline map
 
-| Entity | Definitions | Addresses C# | Reader | Resource | Domain | Differ / DTO | Event |
-|--------|-------------|--------------|--------|----------|--------|--------------|-------|
-| Player | `PlayerAddresses.json` | `PlayerAddresses.cs` | `PlayerReader` | `PlayerResource` | `Player` | `PlayerDiffer` / `PlayerDTO` | `PlayerChanged` |
-| Digimon | `Parties/DigimonStatusAddresses.json` (+ slot bases in `DigimonsAddresses.json`) | `DigimonStatusAddresses` / `DigimonAddress` | `DigimonReader` | `DigimonResource` | `Digimon` | `DigimonDiffer` / `DigimonDTO` | `PartyChanged` |
-| Party | `PartyAddresses.json` | `PartyAddresses` | `PartyReader` | `PartyResource` | `Party` | party differs / DTOs | `PartyChanged` |
-| Auction | `AuctionAddresses.json` | `AuctionAddresses` | `AuctionReader` | auction resources | `Auction` | `AuctionDiffer` / `AuctionDTO` | auction events |
+| Entity | Definitions | Addresses C# | Loader | Reader | Resource | Domain | Differ / DTO | Event |
+|--------|-------------|--------------|--------|--------|----------|--------|--------------|-------|
+| Player | `PlayerAddresses.json` | `PlayerAddresses.cs` | `PlayerLoader` | `PlayerReader` | `PlayerResource` | `Player` | `PlayerDiffer` / `PlayerDTO` | `PlayerChanged` |
+| Digimon | `Parties/DigimonStatusAddresses.json` (+ slot bases in `DigimonsAddresses.json`) | `DigimonStatusAddresses` / `DigimonAddress` | `DigimonLoader` | `DigimonReader` | `DigimonResource` | `Digimon` | `DigimonDiffer` / `DigimonDTO` | `PartyChanged` |
+| Party | `PartyAddresses.json` | `PartyAddresses` | `PartyLoader` | `PartyReader` | `PartyResource` | `Party` | party differs / DTOs | `PartyChanged` |
+| Auction | `AuctionAddresses.json` | `AuctionAddresses` | `AuctionLoader` | `AuctionReader` | auction resources | `Auction` | `AuctionDiffer` / `AuctionDTO` | auction events |
 
 Paths root: `Backend/Memory/Definitions/`, `Backend/Memory/Addresses/`,
-`Backend/Memory/Readers/`, `Backend/Memory/Resources/`,
+`Backend/Application/Loaders/`, `Backend/Memory/Readers/`, `Backend/Memory/Resources/`,
 `Backend/Domain/`, `Backend/Events/`.
 
 ## Type reference (live examples)

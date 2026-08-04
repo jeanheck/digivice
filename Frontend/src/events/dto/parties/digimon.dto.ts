@@ -9,6 +9,7 @@ export interface DigimonDTO {
   level?: number;
   tp?: number;
   blast?: number;
+  condition?: number;
   experience?: number;
   hp?: VitalDTO;
   mp?: VitalDTO;
