@@ -7,5 +7,7 @@ namespace Backend.Memory.Readers.Parties
         public int Id { get; set; }
         public VitalResource HP { get; set; } = new();
         public VitalResource MP { get; set; } = new();
+
+        public bool IsInCombat => Id != 0;
     }
 }
