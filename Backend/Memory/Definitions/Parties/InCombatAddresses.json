@@ -1,0 +1,13 @@
+{
+    "AllySlotBase": "0x000A4470",
+    "AllySlotStride": "0x20",
+    "Id": "0x00",
+    "HP": {
+        "Max": "0x06",
+        "Current": "0x08"
+    },
+    "MP": {
+        "Max": "0x0A",
+        "Current": "0x0C"
+    }
+}
