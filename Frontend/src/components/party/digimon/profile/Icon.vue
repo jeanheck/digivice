@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
+import type { DigimonConditionConstant } from "@/constants/digimon-condition.constant";
 
 const props = defineProps<{
   digimonName: string;
+  condition: DigimonConditionConstant;
 }>();
 const digimonIconUrl = computed(() => {
-  return ImageCatalog.getDigimonIconUrl(props.digimonName);
+  return ImageCatalog.getDigimonIconUrl(props.digimonName + props.condition);
 });
 </script>
 

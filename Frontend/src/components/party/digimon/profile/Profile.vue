@@ -46,6 +46,10 @@ function onOpenDigievolutions(): void {
 const digimonName = computed(() => {
   return ProfilePresenter.getNameById(props.digimonId);
 });
+
+const calculatedCondition = computed(() => {
+  return ProfilePresenter.getCalculatedCondition(props.digimon.condition, props.digimon.hp);
+});
 </script>
 
 <template>
@@ -56,7 +60,11 @@ const digimonName = computed(() => {
     <div class="dw3-panel-content p-2">
       <div class="grid grid-cols-[auto_1fr] grid-rows-[auto_1fr_auto_auto_auto] gap-x-2 gap-y-1">
         <div class="col-start-1 row-start-1 row-span-3 w-20">
-          <Icon :digimon-name="digimonName" class="w-full aspect-square" />
+          <Icon
+            :digimon-name="digimonName"
+            :condition="calculatedCondition"
+            class="w-full aspect-square"
+          />
         </div>
 
         <DigievolutionsButton
