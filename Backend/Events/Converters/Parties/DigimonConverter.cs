@@ -14,7 +14,7 @@ public static class DigimonConverter
         Experience = digimon.Experience,
         HP = VitalConverter.ToDTO(digimon.HP),
         MP = VitalConverter.ToDTO(digimon.MP),
-        InCombat = DigimonInCombatConverter.ToDTO(digimon.InCombat),
+        InCombat = InCombatConverter.ToDTO(digimon.InCombat),
         Attributes = AttributesConverter.ToDTO(digimon.Attributes),
         Resistances = ResistancesConverter.ToDTO(digimon.Resistances),
         Equipments = EquipmentsConverter.ToDTO(digimon.Equipments),

@@ -33,7 +33,7 @@ public class DigimonAssemblerTests
             ActiveDigievolutionId = 12,
             HP = new VitalResource { Current = 100, Max = 120 },
             MP = new VitalResource { Current = 50, Max = 60 },
-            InCombat = new DigimonInCombatResource
+            InCombat = new InCombatResource
             {
                 Condition = 0x04,
                 HP = new VitalResource { Current = 80, Max = 120 },

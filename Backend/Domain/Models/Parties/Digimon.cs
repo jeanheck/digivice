@@ -10,7 +10,7 @@ namespace Backend.Domain.Models.Parties
         public int Experience { get; set; }
         public Vital HP { get; set; } = new();
         public Vital MP { get; set; } = new();
-        public DigimonInCombat InCombat { get; set; } = new();
+        public InCombat InCombat { get; set; } = new();
         public Attributes Attributes { get; set; } = new();
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();

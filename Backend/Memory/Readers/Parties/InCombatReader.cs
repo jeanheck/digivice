@@ -4,13 +4,13 @@ using Backend.Memory.Resources.Parties.Digimons;
 
 namespace Backend.Memory.Readers.Parties
 {
-    public class DigimonInCombatReader(IMemoryReader memoryReader) : IDigimonInCombatReader
+    public class InCombatReader(IMemoryReader memoryReader) : IInCombatReader
     {
-        public DigimonInCombatResource Read(DigimonInCombatAddresses addresses, int zeroBasedPartySlotIndex)
+        public InCombatResource Read(InCombatAddresses addresses, int zeroBasedPartySlotIndex)
         {
             var slotBase = addresses.AllySlotBase + (zeroBasedPartySlotIndex * addresses.SlotStride);
 
-            return new DigimonInCombatResource
+            return new InCombatResource
             {
                 Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes
                     ? conditionBytes[0]

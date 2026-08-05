@@ -134,7 +134,7 @@ public class DigimonDifferTests
             ActiveDigievolutionId = 3,
             HP = new Vital { Current = 100, Max = 100 },
             MP = new Vital { Current = 50, Max = 50 },
-            InCombat = new DigimonInCombat
+            InCombat = new InCombat
             {
                 Condition = 0,
                 HP = new Vital { Current = 0, Max = 0 },

@@ -245,7 +245,7 @@ Referência: `Frontend/src/components/modal/Modal.vue`.
    - Conceito de leitura novo (ex.: Digimon in-combat) → criar `{Entity}Addresses`, `{Entity}Reader`, `{Entity}Resource` e **`{Entity}Loader`**. Consumidores orquestram **Loaders**, não Readers nem `Get*Addresses()` diretamente.
    - Naming: `{Entity}Addresses`, `{Entity}Reader`, `{Entity}Resource`, `{Entity}Loader`.
 
-   Referências vivas: `PlayerLoader`, `DigimonLoader`, `DigimonInCombatLoader`, `PartyLoader`.
+   Referências vivas: `PlayerLoader`, `DigimonLoader`, `PartyLoader`.
 
 ## Tests (Backend): regras relacionadas aos testes
 

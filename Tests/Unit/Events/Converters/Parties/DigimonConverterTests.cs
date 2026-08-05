@@ -18,7 +18,7 @@ public class DigimonConverterTests
             ActiveDigievolutionId = 5,
             HP = new Vital { Current = 101, Max = 202 },
             MP = new Vital { Current = 33, Max = 44 },
-            InCombat = new DigimonInCombat
+            InCombat = new InCombat
             {
                 Condition = 0x04,
                 HP = new Vital { Current = 90, Max = 202 },

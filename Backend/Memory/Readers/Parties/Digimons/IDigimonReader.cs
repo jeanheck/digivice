@@ -8,7 +8,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
         DigimonResource? Read(
             DigimonAddress digimonAddress,
             DigimonStatusAddresses digimonStatusAddresses,
-            DigimonInCombatAddresses digimonInCombatAddresses,
+            InCombatAddresses inCombatAddresses,
             int zeroBasedPartySlotIndex);
     }
 }

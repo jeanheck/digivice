@@ -77,7 +77,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new DigimonInCombatReader(memoryReaderMock.Object));
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReaderMock.Object));
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -162,7 +162,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new DigimonInCombatReader(memoryReaderMock.Object));
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReaderMock.Object));
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -208,7 +208,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new DigimonInCombatReader(memoryReaderMock.Object));
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReaderMock.Object));
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -341,7 +341,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new DigimonInCombatReader(memoryReaderMock.Object));
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReaderMock.Object));
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -416,7 +416,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new DigimonInCombatReader(memoryReader));
+        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReader));
         var digimonSlotReader = new DigimonSlotReader(memoryReader);
         var partyReader = new PartyReader(digimonSlotReader);
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);

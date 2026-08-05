@@ -2,7 +2,7 @@ using Backend.Memory.Resources.Parties.Digimons;
 
 namespace Backend.Memory.Resources.Parties
 {
-    public class DigimonInCombatResource
+    public class InCombatResource
     {
         public int Condition { get; set; }
         public VitalResource HP { get; set; } = new();

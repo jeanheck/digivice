@@ -60,7 +60,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonInCombatReader = new DigimonInCombatReader(memoryReaderMock.Object);
+        var digimonInCombatReader = new InCombatReader(memoryReaderMock.Object);
         var digimonReader = new DigimonReader(
             memoryReaderMock.Object,
             digievolutionSlotReader,
@@ -182,7 +182,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonInCombatReader = new DigimonInCombatReader(memoryReader);
+        var digimonInCombatReader = new InCombatReader(memoryReader);
         var digimonReader = new DigimonReader(
             memoryReader,
             digievolutionSlotReader,

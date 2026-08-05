@@ -31,7 +31,7 @@ namespace Backend.Domain.Assemblers.Parties
                     Current = resource.MP.Current,
                     Max = resource.MP.Max
                 },
-                InCombat = new DigimonInCombat
+                InCombat = new InCombat
                 {
                     Condition = resource.InCombat.Condition,
                     HP = new Vital

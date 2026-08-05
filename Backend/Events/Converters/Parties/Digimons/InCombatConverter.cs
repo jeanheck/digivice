@@ -3,9 +3,9 @@ using Backend.Events.DTO.Parties.Digimons;
 
 namespace Backend.Events.Converters.Parties.Digimons;
 
-public static class DigimonInCombatConverter
+public static class InCombatConverter
 {
-    public static DigimonInCombatDTO ToDTO(DigimonInCombat digimonInCombat) => new()
+    public static InCombatDTO ToDTO(InCombat digimonInCombat) => new()
     {
         Condition = digimonInCombat.Condition,
         HP = VitalConverter.ToDTO(digimonInCombat.HP),
