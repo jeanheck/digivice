@@ -7,6 +7,9 @@ namespace Backend.Memory.Addresses.Parties
     public class DigimonInCombatAddresses
     {
         [JsonConverter(typeof(HexStringToLongConverter))]
+        public long MapId { get; set; }
+
+        [JsonConverter(typeof(HexStringToLongConverter))]
         public long AllySlotBase { get; set; }
 
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]

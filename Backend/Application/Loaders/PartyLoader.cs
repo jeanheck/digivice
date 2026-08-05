@@ -35,6 +35,11 @@ namespace Backend.Application.Loaders
                             digimonResource.MP = digimonInCombatResource.MP;
                             digimonResource.Condition = digimonInCombatResource.Condition;
                         }
+                        else
+                        {
+                            // We must to return Condition to 0 when Digimon get out of combat
+                            digimonResource.Condition = 0;
+                        }
 
                         slotResource.DigimonResource = digimonResource;
                     }

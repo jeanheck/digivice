@@ -376,7 +376,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
-    public void Load_ShouldUsePersistentHpAndMp_WhenInCombatSlotIdIsZero()
+    public void Load_ShouldUsePersistentHpAndMp_WhenMapIdIsNotCombatMap()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
@@ -395,11 +395,13 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadInt16(0x00049878 - 4)).Returns(5);
         memoryReaderMock.Setup(m => m.ReadInt16(0x00042B76)).Returns((short)0);
 
-        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470)).Returns((short)0);
-        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x06)).Returns((short)999);
-        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x08)).Returns((short)888);
-        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x0A)).Returns((short)777);
-        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x0C)).Returns((short)666);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x0004B3F8)).Returns((short)0x0100);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470)).Returns((short)386);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x06)).Returns((short)1850);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x08)).Returns((short)1400);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x0A)).Returns((short)1140);
+        memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x0C)).Returns((short)900);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x000A4470 + 0x1C, 1)).Returns([0x04]);
 
         var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
         var partyResource = partyLoader.Load();
@@ -414,7 +416,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
-    public void Load_ShouldUseInCombatHpAndMp_WhenInCombatSlotIdIsPresent()
+    public void Load_ShouldUseInCombatHpAndMp_WhenCombatMapAndHpMaxIsPresent()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
@@ -433,6 +435,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadInt16(0x00049878 - 4)).Returns(5);
         memoryReaderMock.Setup(m => m.ReadInt16(0x00042B76)).Returns((short)0);
 
+        memoryReaderMock.Setup(m => m.ReadInt16(0x0004B3F8)).Returns((short)0x0600);
         memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470)).Returns((short)386);
         memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x06)).Returns((short)1850);
         memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x08)).Returns((short)1400);

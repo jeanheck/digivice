@@ -12,6 +12,7 @@ namespace Backend.Memory.Readers.Parties
 
             return new DigimonInCombatResource
             {
+                MapId = memoryReader.ReadInt16(addresses.MapId),
                 Id = memoryReader.ReadInt16(slotBase + addresses.Id),
                 Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes
                     ? conditionBytes[0]
