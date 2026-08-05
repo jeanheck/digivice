@@ -4,7 +4,9 @@ using System;
 using Backend.Memory.Addresses.Parties;
 using Backend.Memory.Addresses.Parties.Digimons;
 using Backend.Memory.Readers;
+using Backend.Memory.Readers.Parties;
 using Backend.Memory.Readers.Parties.Digimons;
+using Backend.Memory.Resources.Parties;
 using Backend.Memory.Resources.Parties.Digimons;
 using Moq;
 using Xunit;
@@ -41,10 +43,11 @@ public class DigimonReaderTests
             memoryReaderMock.Object,
             slotReaderMock.Object,
             evolutionReaderMock.Object,
-            storedDigievolutionReaderMock.Object
+            storedDigievolutionReaderMock.Object,
+            CreateDigimonInCombatReaderMock().Object
         );
 
-        var result = reader.Read(address, statusAddresses);
+        var result = reader.Read(address, statusAddresses, new DigimonInCombatAddresses(), 0);
 
         Assert.Null(result);
     }
@@ -124,11 +127,12 @@ public class DigimonReaderTests
             memoryReaderMock.Object,
             slotReaderMock.Object,
             evolutionReaderMock.Object,
-            storedDigievolutionReaderMock.Object
+            storedDigievolutionReaderMock.Object,
+            CreateDigimonInCombatReaderMock().Object
         );
 
         // Act
-        var result = reader.Read(address, statusAddresses);
+        var result = reader.Read(address, statusAddresses, new DigimonInCombatAddresses(), 0);
 
         // Assert
         Assert.NotNull(result);
@@ -208,11 +212,12 @@ public class DigimonReaderTests
             memoryReaderMock.Object,
             slotReaderMock.Object,
             evolutionReaderMock.Object,
-            storedDigievolutionReaderMock.Object
+            storedDigievolutionReaderMock.Object,
+            CreateDigimonInCombatReaderMock().Object
         );
 
         // Act
-        var result = reader.Read(address, statusAddresses);
+        var result = reader.Read(address, statusAddresses, new DigimonInCombatAddresses(), 0);
 
         // Assert
         Assert.NotNull(result);
@@ -279,11 +284,12 @@ public class DigimonReaderTests
             memoryReaderMock.Object,
             slotReaderMock.Object,
             evolutionReaderMock.Object,
-            storedDigievolutionReaderMock.Object
+            storedDigievolutionReaderMock.Object,
+            CreateDigimonInCombatReaderMock().Object
         );
 
         // Act
-        var result = reader.Read(address, statusAddresses);
+        var result = reader.Read(address, statusAddresses, new DigimonInCombatAddresses(), 0);
 
         // Assert
         Assert.NotNull(result);
@@ -295,5 +301,14 @@ public class DigimonReaderTests
         Assert.Equal(3, result.StoredDigievolutions.Count);
         Assert.Equal(99, result.StoredDigievolutions[2].DigievolutionId);
         Assert.Equal(5, result.StoredDigievolutions[2].Level);
+    }
+
+    private static Mock<IDigimonInCombatReader> CreateDigimonInCombatReaderMock()
+    {
+        var digimonInCombatReaderMock = new Mock<IDigimonInCombatReader>();
+        digimonInCombatReaderMock
+            .Setup(r => r.Read(It.IsAny<DigimonInCombatAddresses>(), It.IsAny<int>()))
+            .Returns(new DigimonInCombatResource());
+        return digimonInCombatReaderMock;
     }
 }

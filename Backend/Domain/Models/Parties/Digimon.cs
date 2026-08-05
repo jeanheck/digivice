@@ -7,10 +7,10 @@ namespace Backend.Domain.Models.Parties
         public int Level { get; set; }
         public int TP { get; set; }
         public int Blast { get; set; }
-        public int Condition { get; set; }
         public int Experience { get; set; }
         public Vital HP { get; set; } = new();
         public Vital MP { get; set; } = new();
+        public DigimonInCombat InCombat { get; set; } = new();
         public Attributes Attributes { get; set; } = new();
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
@@ -25,10 +25,10 @@ namespace Backend.Domain.Models.Parties
             return Level == other.Level &&
                    TP == other.TP &&
                    Blast == other.Blast &&
-                   Condition == other.Condition &&
                    Experience == other.Experience &&
                    HP.Equals(other.HP) &&
                    MP.Equals(other.MP) &&
+                   InCombat.Equals(other.InCombat) &&
                    Attributes.Equals(other.Attributes) &&
                    Resistances.Equals(other.Resistances) &&
                    Equipments.Equals(other.Equipments) &&
@@ -43,10 +43,10 @@ namespace Backend.Domain.Models.Parties
             hash.Add(Level);
             hash.Add(TP);
             hash.Add(Blast);
-            hash.Add(Condition);
             hash.Add(Experience);
             hash.Add(HP);
             hash.Add(MP);
+            hash.Add(InCombat);
             hash.Add(Attributes);
             hash.Add(Resistances);
             hash.Add(Equipments);

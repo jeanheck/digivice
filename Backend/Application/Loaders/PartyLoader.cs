@@ -8,8 +8,7 @@ namespace Backend.Application.Loaders
     public class PartyLoader(
         IAddressesRepository addressesRepository,
         IPartyReader partyReader,
-        IDigimonLoader digimonLoader,
-        IDigimonInCombatLoader digimonInCombatLoader) : IPartyLoader
+        IDigimonLoader digimonLoader) : IPartyLoader
     {
         public PartyResource Load()
         {
@@ -20,7 +19,7 @@ namespace Backend.Application.Loaders
             {
                 if (slotResource.DigimonId is not null && slotResource.DigimonId != partyAddresses.EmptySlotId)
                 {
-                    var digimonResource = digimonLoader.Load(slotResource.DigimonId.Value);
+                    var digimonResource = digimonLoader.Load(slotResource.DigimonId.Value, slotResource.Index - 1);
                     if (digimonResource is null)
                     {
                         slotResource.DigimonId = null;
@@ -28,19 +27,6 @@ namespace Backend.Application.Loaders
                     }
                     else
                     {
-                        var digimonInCombatResource = digimonInCombatLoader.Load(slotResource.Index - 1);
-                        if (digimonInCombatResource.IsInCombat)
-                        {
-                            digimonResource.HP = digimonInCombatResource.HP;
-                            digimonResource.MP = digimonInCombatResource.MP;
-                            digimonResource.Condition = digimonInCombatResource.Condition;
-                        }
-                        else
-                        {
-                            // We must to return Condition to 0 when Digimon get out of combat
-                            digimonResource.Condition = 0;
-                        }
-
                         slotResource.DigimonResource = digimonResource;
                     }
                 }

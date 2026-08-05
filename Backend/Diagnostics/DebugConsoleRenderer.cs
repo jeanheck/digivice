@@ -102,7 +102,8 @@ namespace Backend.Diagnostics
             AppendProgressBar(sb, mp.Current, mp.Max, Blue);
             sb.AppendLine($" {mp.Current.ToString(StatFormat)}/{mp.Max.ToString(StatFormat)}");
 
-            sb.AppendLine($"   Condition: {digimon.Condition}");
+            var inCombat = digimon.InCombat;
+            sb.AppendLine($"   InCombat Condition: {inCombat.Condition} | HP: {inCombat.HP.Current.ToString(StatFormat)}/{inCombat.HP.Max.ToString(StatFormat)} | MP: {inCombat.MP.Current.ToString(StatFormat)}/{inCombat.MP.Max.ToString(StatFormat)}");
 
             // Attributes
             var attributes = digimon.Attributes;

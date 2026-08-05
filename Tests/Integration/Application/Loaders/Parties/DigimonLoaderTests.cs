@@ -2,6 +2,7 @@ namespace Tests.Integration.Application.Loaders.Parties;
 
 using Backend.Application.Loaders.Parties;
 using Backend.Memory.Readers;
+using Backend.Memory.Readers.Parties;
 using Backend.Memory.Readers.Parties.Digimons;
 using Moq;
 using Tests.Integration.Application.Loaders;
@@ -59,10 +60,16 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader);
+        var digimonInCombatReader = new DigimonInCombatReader(memoryReaderMock.Object);
+        var digimonReader = new DigimonReader(
+            memoryReaderMock.Object,
+            digievolutionSlotReader,
+            digievolutionReader,
+            storedDigievolutionReader,
+            digimonInCombatReader);
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
 
-        var digimonResource = digimonLoader.Load(1);
+        var digimonResource = digimonLoader.Load(1, 0);
 
         Assert.NotNull(digimonResource);
         Assert.Equal(5, digimonResource.ActiveDigievolutionId);
@@ -116,7 +123,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
 
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
-        var digimonResource = digimonLoader.Load(7);
+        var digimonResource = digimonLoader.Load(7, 0);
 
         Assert.NotNull(digimonResource);
         Assert.Equal(7, digimonResource.ActiveDigievolutionId);
@@ -136,7 +143,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
 
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
-        Assert.Throws<Backend.Memory.MemoryReadException>(() => digimonLoader.Load(1));
+        Assert.Throws<Backend.Memory.MemoryReadException>(() => digimonLoader.Load(1, 0));
     }
 
     [Fact]
@@ -150,7 +157,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
 
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
-        var digimonResource = digimonLoader.Load(1);
+        var digimonResource = digimonLoader.Load(1, 0);
 
         Assert.Null(digimonResource);
     }
@@ -162,7 +169,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var memoryReaderMock = new Mock<IMemoryReader>();
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
-        var digimonResource = digimonLoader.Load(99);
+        var digimonResource = digimonLoader.Load(99, 0);
 
         Assert.Null(digimonResource);
         memoryReaderMock.Verify(m => m.ReadBytes(It.IsAny<long>(), It.IsAny<int>()), Times.Never);
@@ -175,7 +182,13 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader);
+        var digimonInCombatReader = new DigimonInCombatReader(memoryReader);
+        var digimonReader = new DigimonReader(
+            memoryReader,
+            digievolutionSlotReader,
+            digievolutionReader,
+            storedDigievolutionReader,
+            digimonInCombatReader);
         return new DigimonLoader(addressesRepository, digimonReader);
     }
 }

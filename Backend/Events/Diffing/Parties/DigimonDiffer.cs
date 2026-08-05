@@ -24,11 +24,11 @@ public static class DigimonDiffer
         bool levelChanged = previousDigimon.Level != newDigimon.Level;
         bool tpChanged = previousDigimon.TP != newDigimon.TP;
         bool blastChanged = previousDigimon.Blast != newDigimon.Blast;
-        bool conditionChanged = previousDigimon.Condition != newDigimon.Condition;
         bool experienceChanged = previousDigimon.Experience != newDigimon.Experience;
         bool activeDigievolutionIdChanged = previousDigimon.ActiveDigievolutionId != newDigimon.ActiveDigievolutionId;
         var hpDelta = VitalDiffer.Diff(previousDigimon.HP, newDigimon.HP);
         var mpDelta = VitalDiffer.Diff(previousDigimon.MP, newDigimon.MP);
+        var inCombatDelta = DigimonInCombatDiffer.Diff(previousDigimon.InCombat, newDigimon.InCombat);
         var attributesDelta = AttributesDiffer.Diff(previousDigimon.Attributes, newDigimon.Attributes);
         var resistancesDelta = ResistancesDiffer.Diff(previousDigimon.Resistances, newDigimon.Resistances);
         var equipmentsDelta = EquipmentsDiffer.Diff(previousDigimon.Equipments, newDigimon.Equipments);
@@ -62,11 +62,11 @@ public static class DigimonDiffer
         bool hasAnyChanges = levelChanged ||
                              tpChanged ||
                              blastChanged ||
-                             conditionChanged ||
                              experienceChanged ||
                              activeDigievolutionIdChanged ||
                              hpDelta != null ||
                              mpDelta != null ||
+                             inCombatDelta != null ||
                              attributesDelta != null ||
                              resistancesDelta != null ||
                              equipmentsDelta != null ||
@@ -91,10 +91,6 @@ public static class DigimonDiffer
         {
             dto = dto with { Blast = newDigimon.Blast };
         }
-        if (conditionChanged)
-        {
-            dto = dto with { Condition = newDigimon.Condition };
-        }
         if (experienceChanged)
         {
             dto = dto with { Experience = newDigimon.Experience };
@@ -110,6 +106,10 @@ public static class DigimonDiffer
         if (mpDelta != null)
         {
             dto = dto with { MP = mpDelta };
+        }
+        if (inCombatDelta != null)
+        {
+            dto = dto with { InCombat = inCombatDelta };
         }
         if (attributesDelta != null)
         {

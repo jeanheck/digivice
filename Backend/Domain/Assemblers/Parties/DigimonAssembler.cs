@@ -21,7 +21,6 @@ namespace Backend.Domain.Assemblers.Parties
                 Level = resource.Level,
                 TP = resource.TP,
                 Blast = resource.Blast,
-                Condition = resource.Condition,
                 HP = new Vital
                 {
                     Current = resource.HP.Current,
@@ -31,6 +30,20 @@ namespace Backend.Domain.Assemblers.Parties
                 {
                     Current = resource.MP.Current,
                     Max = resource.MP.Max
+                },
+                InCombat = new DigimonInCombat
+                {
+                    Condition = resource.InCombat.Condition,
+                    HP = new Vital
+                    {
+                        Current = resource.InCombat.HP.Current,
+                        Max = resource.InCombat.HP.Max
+                    },
+                    MP = new Vital
+                    {
+                        Current = resource.InCombat.MP.Current,
+                        Max = resource.InCombat.MP.Max
+                    }
                 },
                 Attributes = new Attributes
                 {

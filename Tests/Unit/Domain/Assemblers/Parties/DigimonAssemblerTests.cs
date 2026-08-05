@@ -33,6 +33,12 @@ public class DigimonAssemblerTests
             ActiveDigievolutionId = 12,
             HP = new VitalResource { Current = 100, Max = 120 },
             MP = new VitalResource { Current = 50, Max = 60 },
+            InCombat = new DigimonInCombatResource
+            {
+                Condition = 0x04,
+                HP = new VitalResource { Current = 80, Max = 120 },
+                MP = new VitalResource { Current = 40, Max = 60 }
+            },
             Attributes = new AttributesResource { Strength = 10, Defense = 11, Spirit = 12, Wisdom = 13, Speed = 14, Charisma = 15 },
             Resistances = new ResistancesResource { Fire = 1, Water = 2, Ice = 3, Wind = 4, Thunder = 5, Machine = 6, Dark = 7 },
             Equipments = new EquipmentsResource { Head = 101, Body = 102, Right = 103, Left = 104, Accessory1 = 105, Accessory2 = 106 },
@@ -59,6 +65,12 @@ public class DigimonAssemblerTests
         Assert.Equal(120, result.HP.Max);
         Assert.Equal(50, result.MP.Current);
         Assert.Equal(60, result.MP.Max);
+
+        Assert.Equal(0x04, result.InCombat.Condition);
+        Assert.Equal(80, result.InCombat.HP.Current);
+        Assert.Equal(120, result.InCombat.HP.Max);
+        Assert.Equal(40, result.InCombat.MP.Current);
+        Assert.Equal(60, result.InCombat.MP.Max);
 
         // Attributes
         Assert.Equal(10, result.Attributes.Strength);

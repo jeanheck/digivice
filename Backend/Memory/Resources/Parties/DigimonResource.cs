@@ -8,9 +8,9 @@ namespace Backend.Memory.Resources.Parties
         public int Level { get; set; }
         public int TP { get; set; }
         public int Blast { get; set; }
-        public int Condition { get; set; }
         public VitalResource HP { get; set; } = new();
         public VitalResource MP { get; set; } = new();
+        public DigimonInCombatResource InCombat { get; set; } = new();
         public AttributesResource Attributes { get; set; } = new();
         public ResistancesResource Resistances { get; set; } = new();
         public EquipmentsResource Equipments { get; set; } = new();

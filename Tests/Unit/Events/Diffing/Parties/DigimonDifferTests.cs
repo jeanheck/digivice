@@ -108,17 +108,18 @@ public class DigimonDifferTests
     }
 
     [Fact]
-    public void Diff_ShouldReturnConditionDelta_WhenOnlyConditionChanges()
+    public void Diff_ShouldReturnInCombatConditionDelta_WhenOnlyInCombatConditionChanges()
     {
         var previous = CreateBaseDigimon();
         var newObj = CreateBaseDigimon();
-        newObj.Condition = 0x04;
+        newObj.InCombat.Condition = 0x04;
 
         var result = DigimonDiffer.Diff(previous, newObj);
 
         Assert.NotNull(result);
-        Assert.True(result.Condition.HasValue);
-        Assert.Equal(0x04, result.Condition.Value);
+        Assert.True(result.InCombat.HasValue);
+        Assert.True(result.InCombat.Value!.Condition.HasValue);
+        Assert.Equal(0x04, result.InCombat.Value.Condition.Value);
         Assert.False(result.Level.HasValue);
     }
 
@@ -133,6 +134,12 @@ public class DigimonDifferTests
             ActiveDigievolutionId = 3,
             HP = new Vital { Current = 100, Max = 100 },
             MP = new Vital { Current = 50, Max = 50 },
+            InCombat = new DigimonInCombat
+            {
+                Condition = 0,
+                HP = new Vital { Current = 0, Max = 0 },
+                MP = new Vital { Current = 0, Max = 0 }
+            },
             Attributes = new Attributes { Strength = 5, Defense = 5, Spirit = 5, Wisdom = 5, Speed = 5, Charisma = 5 },
             Resistances = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
             Equipments = new Equipments { Head = 0, Body = 0, Right = 0, Left = 0, Accessory1 = 0, Accessory2 = 0 },
