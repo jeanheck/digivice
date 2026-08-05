@@ -1,6 +1,7 @@
 import type { Digimon } from "../../../models";
 import type { DigimonDTO } from "../../../events/dto/parties/digimon.dto";
 import { VitalSyncer } from "./digimons/vital.syncer";
+import { InCombatSyncer } from "./digimons/in-combat.syncer";
 
 import { AttributesSyncer } from "./digimons/attributes.syncer";
 import { ResistancesSyncer } from "./digimons/resistances.syncer";
@@ -20,9 +21,6 @@ export class DigimonSyncer {
     if (newDigimonDto.blast !== undefined) {
       previousDigimon.blast = newDigimonDto.blast;
     }
-    if (newDigimonDto.condition !== undefined) {
-      previousDigimon.condition = newDigimonDto.condition;
-    }
     if (newDigimonDto.experience !== undefined) {
       previousDigimon.experience = newDigimonDto.experience;
     }
@@ -34,6 +32,9 @@ export class DigimonSyncer {
     }
     if (newDigimonDto.mp) {
       VitalSyncer.sync(previousDigimon.mp, newDigimonDto.mp);
+    }
+    if (newDigimonDto.inCombat) {
+      InCombatSyncer.sync(previousDigimon.inCombat, newDigimonDto.inCombat);
     }
     if (newDigimonDto.equipments) {
       EquipmentsSyncer.sync(previousDigimon.equipments, newDigimonDto.equipments);

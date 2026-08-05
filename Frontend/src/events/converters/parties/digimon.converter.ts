@@ -1,6 +1,7 @@
 import type { Digimon } from "@/models";
 import type { DigimonDTO } from "@/events/dto/parties/digimon.dto";
 import { VitalConverter } from "./digimons/vital.converter";
+import { InCombatConverter } from "./digimons/in-combat.converter";
 import { AttributesConverter } from "./digimons/attributes.converter";
 import { ResistancesConverter } from "./digimons/resistances.converter";
 import { EquipmentsConverter } from "./digimons/equipments.converter";
@@ -13,11 +14,11 @@ export class DigimonConverter {
       level: digimonDto.level ?? 1,
       tp: digimonDto.tp ?? 0,
       blast: digimonDto.blast ?? 0,
-      condition: digimonDto.condition ?? 0,
       experience: digimonDto.experience ?? 0,
       activeDigievolutionId: digimonDto.activeDigievolutionId ?? null,
       hp: VitalConverter.convert(digimonDto.hp ?? null),
       mp: VitalConverter.convert(digimonDto.mp ?? null),
+      inCombat: InCombatConverter.convert(digimonDto.inCombat ?? null),
       attributes: AttributesConverter.convert(digimonDto.attributes ?? null),
       resistances: ResistancesConverter.convert(digimonDto.resistances ?? null),
       equipments: EquipmentsConverter.convert(digimonDto.equipments ?? null),
