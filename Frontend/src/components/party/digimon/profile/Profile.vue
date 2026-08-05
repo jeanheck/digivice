@@ -11,6 +11,7 @@ import Tooltip from "@/components/tooltip/Tooltip.vue";
 import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
+import { useGameStore } from "@/stores/use-game-store";
 import { useI18n } from "vue-i18n";
 
 const props = defineProps<{
@@ -22,6 +23,7 @@ const emit = defineEmits<{
   openDigievolutions: [];
 }>();
 
+const store = useGameStore();
 const { t } = useI18n();
 const { show, x, y, showAt, move, hide } = useTooltipPosition(350);
 const tooltipTitle = ref("");
@@ -47,8 +49,28 @@ const digimonName = computed(() => {
   return ProfilePresenter.getNameById(props.digimonId);
 });
 
+const location = computed(() => {
+  return store.currentState?.player?.location ?? null;
+});
+
+const isInCombat = computed(() => {
+  return ProfilePresenter.isInCombat(location.value, props.digimon.inCombat);
+});
+
+const hp = computed(() => {
+  return ProfilePresenter.getHp(props.digimon, isInCombat.value);
+});
+
+const mp = computed(() => {
+  return ProfilePresenter.getMp(props.digimon, isInCombat.value);
+});
+
+const condition = computed(() => {
+  return ProfilePresenter.getCondition(props.digimon, isInCombat.value);
+});
+
 const calculatedCondition = computed(() => {
-  return ProfilePresenter.getCalculatedCondition(props.digimon.condition, props.digimon.hp);
+  return ProfilePresenter.getCalculatedCondition(condition.value, hp.value);
 });
 </script>
 
@@ -106,7 +128,7 @@ const calculatedCondition = computed(() => {
 
         <div class="col-start-2 row-start-3 min-w-0 h-6">
           <HpProgressBar
-            :hp="digimon.hp"
+            :hp="hp"
             @show-tooltip="onShowTooltip($event, t(`digimon.hp`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
@@ -115,7 +137,7 @@ const calculatedCondition = computed(() => {
 
         <div class="col-start-2 row-start-4 min-w-0 h-6">
           <MpProgressBar
-            :mp="digimon.mp"
+            :mp="mp"
             @show-tooltip="onShowTooltip($event, t(`digimon.mp`))"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
