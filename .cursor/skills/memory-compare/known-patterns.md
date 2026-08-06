@@ -236,7 +236,7 @@ will not find these (addresses are below quest region `0x48000`).
 
 ---
 
-## Combat live HP/MP / enemy stats (confirmed HP)
+## Combat live HP/MP / attrs / enemy stats (confirmed)
 
 Snapshots:
 - Tapirmon scout: `in-combat.bin` / `out-combat.bin`
@@ -256,7 +256,7 @@ Layout per slot (Int16 LE) — **note: Max then Current** (inverted vs
 | +0x00 | unit id / digievo token | Kotemon 386; enemy Tapirmon 206 / Mammothmon 212 |
 | +0x06 | **HP Max** | Kotemon stayed 1850 while damaged; Mammothmon stayed 672 |
 | +0x08 | **HP Current** | Kotemon `1850→1400`; Mammothmon `672→432→192→0` (`chain-match`) |
-| +0x0A / +0x0C | MP (cur/max order TBD) | no MP spend in these fights |
+| +0x0A / +0x0C | **MP Max / MP Current** | Confirmed Max-then-Current (same as HP). `dinohumon-buffed`: MP `1140→1098` after skill |
 
 | Slot | Base | Role |
 |------|------|------|
@@ -274,6 +274,7 @@ across all three — only the active marker moved.
 |---------|------|----------|
 | `0xA4468` | Active ally slot index (0/1/2) | `0→1→2` when switching Kotemon→Patamon→Renamon |
 | `0xA4558` | Active unit id | `386→234→375` (Dinohumon→Angewomon→Taomon) |
+| slot `+0x10` | STR buff delta? | `dinohumon-buffed`: ally slot0 `0xA4480` `0→252` (= combat STR gain); only RAM Int16 `0→252` |
 
 Pre-battle (`out-combat-west-1`): table zeroed. Post-battle (`out-west-2`) may
 still hold last values briefly (enemy current 0, ally current 1400).
@@ -291,18 +292,155 @@ current HP; `0xE141C`/`0xE1420`/`0xE1424` track enemy current HP.
 | `0x42B3A` | enemy **max/initial** HP only — stayed 672 while `0xA44D8` dropped |
 | `0x42B3C` | enemy MP |
 
-### Enemy base attrs (static audit)
+### Combatant attributes / resistances @ `0xA4580` / `0xA45C0` (confirmed layout)
 
-`enemy.json` Mammothmon `350,280,260,280,190` + resists `60,101,270,270,101,101,60`
-matched in combat at:
+Two combatant blocks, **stride `0x40`**, Int16 LE. Hold **live battle**
+Level + 5 attrs + 7 elemental resists (+ status-resist tail). Used by **both**
+the engaged ally Digimon and the enemy — **contents swap** between the two
+bases across turns/actions (not a fixed ally-only / enemy-only address).
 
-- `0xA45C2` when that block is bound to the enemy (swaps with ally block
-  `0xA4582` across turns — **not a fixed enemy-only address**)
-- `0xB97B0` — stable for all four `in-west` turns (better audit anchor)
+| Offset | Field | Notes |
+|--------|-------|-------|
+| +0x00 | Level | Matches battle level (e.g. Mammothmon 23, Kunemon 1) |
+| +0x02 | Strength | |
+| +0x04 | Defense | |
+| +0x06 | Spirit | |
+| +0x08 | Wisdom | |
+| +0x0A | Speed | |
+| +0x0C | Fire | |
+| +0x0E | Water | |
+| +0x10 | Ice | |
+| +0x12 | Wind | |
+| +0x14 | Thunder | |
+| +0x16 | Machine | |
+| +0x18 | Dark | |
+| +0x1A | status resist 0 | Matches `enemy.json` poison (Mammothmon 0, Gekomon 99) |
+| +0x1C | status resist 1 | paralyze |
+| +0x1E | status resist 2 | confuse |
+| +0x20 | status resist 3 | sleep |
+| +0x22 | status resist 4 | KO-related (enemy.json `canKO` companion value) |
+| +0x24 | **species / family flags?** | Int16; see species note below |
+| +0x26… | unused / zero in snaps seen | |
 
-Tapirmon earlier matched the same `0xA45C2` layout when that block held the enemy.
+**No Charisma** in this block (persistent `DigimonStatusAddresses` still has Cha
+at +0x32; combat block jumps Speed → Fire).
 
-Debuffs still unknown (no status applied in these snaps).
+**Species candidate @ `+0x24` (flags):** same value across three `dino` enemies
+(`triceramon.bin` / `tyrannomon.bin` / `tuskmon.bin` → all **512 / `0x200`**),
+and consistent across more families:
+
+| Species (`enemy.json`) | Examples | `+0x24` |
+|------------------------|----------|---------|
+| dino | Triceramon, Tyrannomon, Tuskmon | **512 (`0x200`)** |
+| mammal | Tapirmon, Mammothmon | **1536 (`0x600`)** |
+| insect | Kunemon, **Kuwagamon, Yanmamon** | **2048 (`0x800`)** |
+| fish | Gekomon, **Shellmon** | **2560 (`0xA00`)** |
+| dragon | **Seadramon** | **2816 (`0xB00`)** |
+| bird | **Kiwimon** (`kabuterimon-3`) | **1792 (`0x700`)** |
+| plant | **Vegiemon** (`kabuterimon-2`) | **2304 (`0x900`)** |
+| (ally Digimon) | see note below | **not a single constant** |
+
+**Ally Digimon `+0x24` is species too — not a fixed “player” marker.**  
+Dinohumon (front) repeatedly showed **256 (`0x100`)**. Kabuterimon front
+(`kabuterimon-1..3.bin`, digievo token `19`, Renamon line) showed **2048
+(`0x800`)** in all three snaps — same code as wild **insect** enemies — while
+the enemy half was Tapirmon mammal / Vegiemon plant / Kiwimon bird. So ally
+flags track the Digimon’s family (at least insect), and `0x100` is specific
+to whatever Dinohumon/that form maps to, not “any ally”.
+
+Snaps `shellmon` / `seadramon` / `kuwagamon` / `yanmamon.bin` (2026-08-05): insects
+match; Shellmon matches fish. Seadramon is **`dragon` in enemy.json** (not fish)
+and introduced **`0xB00`**. Earlier `N × 0x200` guess is incomplete. Need
+evil/machine/ghoul/rare/etc. before treating as a full enum. Status-resist tails
+still differ per enemy; do not confuse with species.
+
+| Base | Role |
+|------|------|
+| `0xA4580` | Combatant A (ally **or** enemy depending on snap) |
+| `0xA45C0` | Combatant B (the other side) |
+
+**Evidence (enemy.json exact match):**
+
+| Snap | `0xA4580` | `0xA45C0` |
+|------|-----------|----------|
+| `in-combat-west-1` | Ally Dinohumon (lv22, STR 674…) | Mammothmon 350/280/260/280/190 |
+| `in-combat-west-2` | Mammothmon | Ally Dinohumon |
+| `in-combat-west-3/4` | Ally Dinohumon | Mammothmon |
+| `in-combat.bin` | Ally | Tapirmon 42/50/40/50/48 |
+| `in-combat-kotemon` | Ally | Kunemon 50/42/40/50/48 |
+| `in-combat-patamon` | Kunemon | Ally Angewomon (STR 329…) |
+| `in-combat-renamon` | Ally Taomon (same 329… as Patamon front) | Kunemon |
+| `in-combat-guilmon-gekomon-normal` | Ally Guilmon line | Gekomon 130/130/138/162/104 |
+
+**Identification (for future readers):** do **not** assume `0xA4580` = active
+unit (`0xA4558`). Counterexamples: `west-3/4` have `activeId` = enemy while
+ally still sits at `0xA4580`; `patamon` has ally active but Kunemon at
+`0xA4580`. Reliable approach: match one block’s attrs/resists to
+`enemy.json` (or the enemy catalog copy below) using enemy slot id
+`0xA44D0`; the other block is the engaged ally.
+
+**Not attacker/defender slots either** — tested with named turn snaps
+(`dinohumon|goburimon-attacking-*`, `stingmon|tuskmon-attacking-*`).
+Filename = whose action turn it was:
+
+| Snap | Attacker (name) | `0xA4580` | `0xA45C0` |
+|------|-----------------|-----------|-----------|
+| `dinohumon-attacking-1` | Dinohumon | Dinohumon | Goburimon(Red) |
+| `goburimon-attacking-1` | Goburimon | Goburimon(Red) | Dinohumon |
+| `dinohumon-attacking-2` | Dinohumon | Goburimon(Red) | Dinohumon |
+| `stingmon-attacking-1` | Stingmon | Tuskmon | Stingmon |
+| `stingmon-attacking-2` | Stingmon | Stingmon | Tuskmon |
+| `stingmon-attacking-3` | Stingmon | Tuskmon | Stingmon |
+
+Same attacker label appears with **both** arrangements → neither base is
+“always attacker” or “always defender”. Goburimon in those snaps matches
+`enemy.json` **Goburimon(Red)** (`405,270,212,230,216`), not base Goburimon.
+
+**Party coverage:** only the **engaged** ally appears in this pair. Bench
+party members keep HP in `0xA4470+n×0x20` but have **no** per-slot combat
+attr block in these snaps — switching front Digimon replaces the ally half
+of the pair (`kotemon`/`patamon`/`renamon`).
+
+**vs persistent DigimonStatus (~`0x4949C` for Kotemon in west snaps):** combat
+attrs ≠ persistent (e.g. STR 674 vs 352). Combat values look like
+digievolution + gear baked in; persistent block does not mid-fight update
+(same story as HP).
+
+**Attr buff/debuff:** **confirmed for Strength** — snaps `dinohumon-normal` /
+`dinohumon-buffed` (vs Tapirmon `206`):
+
+| Field | Normal (ally half) | Buffed (ally half) |
+|-------|--------------------|--------------------|
+| Strength | **674** | **926** (+252) |
+| DEF / SPI / WIS / SPD | unchanged | unchanged |
+| Elemental + status resists | unchanged | unchanged |
+| Enemy half (Tapirmon) | unchanged | unchanged |
+| Persistent DigimonStatus (~`0x4949C`) | STR 352 etc. | **identical** (buff did not write through) |
+
+Blocks still **swapped** bases between the two snaps (ally was at `0xA4580`
+then at `0xA45C0`); identify by fingerprint, then compare. Ally battle slot
+`+0x10` (`0xA4480`) went `0→252` (same delta) — possible STR buff accumulator
+on the HP/MP slot row; needs more buff types to generalize. MP Current spent
+`1140→1098` (−42) on the skill.
+
+### Enemy catalog attr copy (variable address; id → attrs +0x0E)
+
+Besides the swappable pair, enemy base attrs+resists also appear in a
+**heap-like catalog** record: `enemyId` (Int16) then attrs start **`+0x0E`**
+later (no Level prefix — starts at Strength). Address is **not fixed**:
+
+| Fight | enemyId @ | attrs @ | Match |
+|-------|-----------|---------|-------|
+| Mammothmon west | `0xB97A2` | `0xB97B0` | stable across `in-west-1..4` |
+| Kunemon | `0x15A5EC` | `0x15A5FA` | `in-combat-kotemon` |
+| Tapirmon | `0xFBDAE` | `0xFBDBC` | `in-combat.bin` |
+| Gekomon | `0x10CC6E` | `0x10CC7C` | `guilmon-gekomon-normal` |
+| enemy 166 | `0xC3800` | `0xC380E` | `guilmon-normal` |
+
+`0xB97B0` alone is **not** a universal enemy-attrs absolute — only correct
+when that catalog slot is bound (garbage in Kunemon/Tapirmon snaps). Prefer
+the swappable blocks for combat UI; catalog is a good **audit** / identity
+helper.
 
 ### Status / debuff byte (suspected → stronger)
 
