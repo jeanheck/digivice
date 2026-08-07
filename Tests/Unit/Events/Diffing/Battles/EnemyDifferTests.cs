@@ -46,7 +46,6 @@ public class EnemyDifferTests
         Assert.False(result.Strength.HasValue);
         Assert.False(result.Defense.HasValue);
         Assert.False(result.HP.HasValue);
-        Assert.False(result.MP.HasValue);
     }
 
     private static Enemy CreateBaseEnemy()
@@ -58,8 +57,7 @@ public class EnemyDifferTests
             Strength = 0,
             Defense = 0,
             Speed = 0,
-            HP = new Vital { Current = 672, Max = 672 },
-            MP = new Vital { Current = 336, Max = 336 }
+            HP = new Vital { Current = 672, Max = 672 }
         };
     }
 }

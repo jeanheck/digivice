@@ -13,7 +13,6 @@ public static class EnemyConverter
         Strength = enemy.Strength,
         Defense = enemy.Defense,
         Speed = enemy.Speed,
-        HP = VitalConverter.ToDTO(enemy.HP),
-        MP = VitalConverter.ToDTO(enemy.MP)
+        HP = VitalConverter.ToDTO(enemy.HP)
     };
 }

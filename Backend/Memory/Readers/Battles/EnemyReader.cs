@@ -23,11 +23,6 @@ namespace Backend.Memory.Readers.Battles
                 {
                     Max = memoryReader.ReadInt16(slotBase + addresses.HP.Max),
                     Current = memoryReader.ReadInt16(slotBase + addresses.HP.Current)
-                },
-                MP = new VitalResource
-                {
-                    Max = memoryReader.ReadInt16(slotBase + addresses.MP.Max),
-                    Current = memoryReader.ReadInt16(slotBase + addresses.MP.Current)
                 }
             };
         }

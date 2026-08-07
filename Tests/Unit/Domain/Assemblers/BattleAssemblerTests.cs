@@ -19,8 +19,7 @@ public class BattleAssemblerTests
                 Strength = 0,
                 Defense = 0,
                 Speed = 84,
-                HP = new VitalResource { Current = 600, Max = 672 },
-                MP = new VitalResource { Current = 288, Max = 336 }
+                HP = new VitalResource { Current = 600, Max = 672 }
             }
         };
 
@@ -31,7 +30,5 @@ public class BattleAssemblerTests
         Assert.Equal(84, result.Enemy.Speed);
         Assert.Equal(600, result.Enemy.HP.Current);
         Assert.Equal(672, result.Enemy.HP.Max);
-        Assert.Equal(288, result.Enemy.MP.Current);
-        Assert.Equal(336, result.Enemy.MP.Max);
     }
 }

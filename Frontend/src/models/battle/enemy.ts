@@ -7,5 +7,4 @@ export interface Enemy {
   defense: number;
   speed: number;
   hp: Vital;
-  mp: Vital;
 }

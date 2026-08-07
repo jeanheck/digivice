@@ -24,7 +24,4 @@ public record class EnemyDTO : IDTO
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<VitalDTO> HP { get; init; } = Optional<VitalDTO>.Empty;
-
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<VitalDTO> MP { get; init; } = Optional<VitalDTO>.Empty;
 }

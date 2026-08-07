@@ -18,8 +18,6 @@ public class BattleLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadInt16(enemySlotBase + 0x00)).Returns((short)122);
         memoryReaderMock.Setup(m => m.ReadInt16(enemySlotBase + 0x06)).Returns((short)672);
         memoryReaderMock.Setup(m => m.ReadInt16(enemySlotBase + 0x08)).Returns((short)600);
-        memoryReaderMock.Setup(m => m.ReadInt16(enemySlotBase + 0x0A)).Returns((short)336);
-        memoryReaderMock.Setup(m => m.ReadInt16(enemySlotBase + 0x0C)).Returns((short)288);
         memoryReaderMock.Setup(m => m.ReadInt16(enemySlotBase + 0x10)).Returns((short)0);
         memoryReaderMock.Setup(m => m.ReadInt16(enemySlotBase + 0x12)).Returns((short)0);
         memoryReaderMock.Setup(m => m.ReadInt16(enemySlotBase + 0x14)).Returns((short)84);
@@ -33,7 +31,5 @@ public class BattleLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(84, resource.Enemy.Speed);
         Assert.Equal(600, resource.Enemy.HP.Current);
         Assert.Equal(672, resource.Enemy.HP.Max);
-        Assert.Equal(288, resource.Enemy.MP.Current);
-        Assert.Equal(336, resource.Enemy.MP.Max);
     }
 }

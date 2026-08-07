@@ -8,9 +8,5 @@
     "HP": {
         "Max": "0x06",
         "Current": "0x08"
-    },
-    "MP": {
-        "Max": "0x0A",
-        "Current": "0x0C"
     }
 }

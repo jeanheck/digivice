@@ -7,5 +7,4 @@ export interface EnemyDTO {
   defense?: number;
   speed?: number;
   hp?: VitalDTO;
-  mp?: VitalDTO;
 }

@@ -10,6 +10,5 @@ namespace Backend.Domain.Models.Battles
         public int Defense { get; set; }
         public int Speed { get; set; }
         public Vital HP { get; set; } = new();
-        public Vital MP { get; set; } = new();
     }
 }

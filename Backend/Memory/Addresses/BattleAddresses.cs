@@ -25,7 +25,5 @@ namespace Backend.Memory.Addresses
         public int Speed { get; set; }
 
         public VitalAddresses HP { get; set; } = new();
-
-        public VitalAddresses MP { get; set; } = new();
     }
 }

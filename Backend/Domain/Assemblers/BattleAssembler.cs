@@ -22,11 +22,6 @@ namespace Backend.Domain.Assemblers
                     {
                         Current = resource.Enemy.HP.Current,
                         Max = resource.Enemy.HP.Max
-                    },
-                    MP = new Vital
-                    {
-                        Current = resource.Enemy.MP.Current,
-                        Max = resource.Enemy.MP.Max
                     }
                 }
             };

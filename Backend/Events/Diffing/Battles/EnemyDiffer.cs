@@ -26,10 +26,9 @@ public static class EnemyDiffer
         bool defenseChanged = previousEnemy.Defense != newEnemy.Defense;
         bool speedChanged = previousEnemy.Speed != newEnemy.Speed;
         var hpDelta = VitalDiffer.Diff(previousEnemy.HP, newEnemy.HP);
-        var mpDelta = VitalDiffer.Diff(previousEnemy.MP, newEnemy.MP);
 
         if (!idChanged && !conditionChanged && !strengthChanged && !defenseChanged && !speedChanged
-            && hpDelta == null && mpDelta == null)
+            && hpDelta == null)
         {
             return null;
         }
@@ -58,10 +57,6 @@ public static class EnemyDiffer
         if (hpDelta != null)
         {
             dto = dto with { HP = hpDelta };
-        }
-        if (mpDelta != null)
-        {
-            dto = dto with { MP = mpDelta };
         }
 
         return dto;

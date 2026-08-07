@@ -22,8 +22,5 @@ export class EnemySyncer {
     if (newEnemyDto.hp) {
       VitalSyncer.sync(previousEnemy.hp, newEnemyDto.hp);
     }
-    if (newEnemyDto.mp) {
-      VitalSyncer.sync(previousEnemy.mp, newEnemyDto.mp);
-    }
   }
 }

@@ -11,7 +11,6 @@ export class EnemyConverter {
       defense: newEnemyDto?.defense ?? 0,
       speed: newEnemyDto?.speed ?? 0,
       hp: VitalConverter.convert(newEnemyDto?.hp ?? null),
-      mp: VitalConverter.convert(newEnemyDto?.mp ?? null),
     };
   }
 }
