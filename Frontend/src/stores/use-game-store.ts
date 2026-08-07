@@ -5,10 +5,12 @@ import type { EmulatorConnectionStatus } from "../models/emulator-connection-sta
 import type * as Events from "../events/events.map";
 import { PlayerConverter } from "../events/converters/player.converter";
 import { PartyConverter } from "../events/converters/party.converter";
+import { BattleConverter } from "../events/converters/battle.converter";
 import { JournalConverter } from "../events/converters/journal.converter";
 import { PlayerSyncer } from "./syncers/player.syncer";
 import { JournalSyncer } from "./syncers/journal.syncer";
 import { PartySyncer } from "./syncers/party.syncer";
+import { BattleSyncer } from "./syncers/battle.syncer";
 
 export const useGameStore = defineStore("game", () => {
   const isConnectedWithBackend = ref(false);
@@ -78,6 +80,7 @@ export const useGameStore = defineStore("game", () => {
     currentState.value = {
       player: state.player ? PlayerConverter.convert(state.player) : null,
       party: state.party ? PartyConverter.convert(state.party) : null,
+      battle: state.battle ? BattleConverter.convert(state.battle) : null,
       journal: state.journal ? JournalConverter.convert(state.journal) : null,
     };
   }
@@ -109,6 +112,15 @@ export const useGameStore = defineStore("game", () => {
     PartySyncer.sync(previousParty, newPartyDto);
   }
 
+  function syncBattle(newBattleDto: Events.BattleDTO | null): void {
+    const previousBattle = currentState.value?.battle;
+    if (!previousBattle || !newBattleDto) {
+      return;
+    }
+
+    BattleSyncer.sync(previousBattle, newBattleDto);
+  }
+
   return {
     isConnected,
     isConnectedWithBackend,
@@ -124,6 +136,7 @@ export const useGameStore = defineStore("game", () => {
     setInitialState,
     syncPlayer,
     syncParty,
+    syncBattle,
     syncJournal,
   };
 });

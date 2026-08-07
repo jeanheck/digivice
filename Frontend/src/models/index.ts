@@ -10,6 +10,8 @@ export * from "./party/digimon/in-combat";
 export * from "./journal/journal";
 export * from "./party/party";
 export * from "./player";
+export * from "./battle";
+export * from "./battle/enemy";
 export * from "./journal/quest";
 export * from "./journal/requisite";
 export * from "./party/digimon/resistances";

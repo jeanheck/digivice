@@ -2,6 +2,8 @@
 export type { PlayerDTO } from "./dto/player.dto";
 export type { ConnectionDTO, EmulatorConnectionStatusChangedDTO } from "./dto/connection.dto";
 export type { PartyDTO } from "./dto/party.dto";
+export type { BattleDTO } from "./dto/battle.dto";
+export type { EnemyDTO } from "./dto/battles/enemy.dto";
 export type { JournalDTO } from "./dto/journal.dto";
 export type { StateDTO } from "./dto/state.dto";
 
@@ -25,6 +27,7 @@ import type { EmulatorConnectionStatusChangedDTO } from "./dto/connection.dto";
 import type { StateDTO } from "./dto/state.dto";
 import type { PlayerDTO } from "./dto/player.dto";
 import type { PartyDTO } from "./dto/party.dto";
+import type { BattleDTO } from "./dto/battle.dto";
 import type { JournalDTO } from "./dto/journal.dto";
 
 // Mapeamento Estrito dos Eventos do SignalR e do Cliente
@@ -33,6 +36,7 @@ export interface EventsMap {
   InitialState: StateDTO;
   PlayerChanged: PlayerDTO;
   PartyChanged: PartyDTO;
+  BattleChanged: BattleDTO;
   JournalChanged: JournalDTO;
   HubConnectionStatusChanged: {
     isConnected: boolean;
