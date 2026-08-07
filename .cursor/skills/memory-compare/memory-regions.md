@@ -129,10 +129,11 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 | ~0x000494xxx | Digimon stat blocks (persistent / post-battle) | HP Current syncs **after** combat only — see DigimonStatusAddresses.json |
 | `0x00042B74` + `2 × rookieId` | Blast gauge (Int16, 0–1000, per Digimon) | Confirmed — see known-patterns.md; updates in combat |
 | `0x00042B28` – `0x00042B3E` | Enemy battle strip (near Blast) | Level / token / **max** HP+MP — does **not** track current HP damage |
-| `0x000A4470` + `n × 0x20` | Battle HP/MP slot table | **Confirmed** live HP/MP + Condition @ +0x1C; allies via `Parties/InCombatAddresses.json` |
+| `0x000A4470` + `n × 0x20` | Battle HP/MP slot table | **Confirmed** live HP/MP + Condition @ +0x1C; attr buff deltas STR/DEF/SPD @ +0x10/+0x12/+0x14. Allies via `Parties/InCombatAddresses.json` |
 | `0x000A4468` | Active ally slot index | 0/1/2 — switches with front Digimon (`in-combat-kotemon/patamon/renamon`) |
 | `0x000A4558` | Active unit id | Tracks front digievo/token while HP stays in fixed slots |
-| `0x000A4580` / `0x000A45C0` | Combatant attr/resist blocks (stride `0x40`) | **Confirmed** layout: Level, STR/DEF/SPI/WIS/SPD, 7 elemental resists, status-resist tail. Ally↔enemy **swap** which base holds whom — identify by matching enemy.json / slot id `0xA44D0`. No Charisma. Not per party slot (engaged pair only). |
+| `0x000A4580` / `0x000A45C0` | Combatant attr/resist blocks (stride `0x40`) | **Confirmed** layout: Level, STR/DEF/SPI/WIS/SPD, 7 elemental resists, status-resist tail. Ally↔enemy **swap** which base holds whom — identify by matching enemy.json / slot id `0xA44D0`. No Charisma. Not per party slot (engaged pair only). Field skills do **not** rewrite these resists. |
+| `0x000A4414`…`0xA442A` / `0xA4530`…`0xA4532` | Field skill state (suspected) | Shared `A4414=16`, `A4530=6`; `A441C` only two ids so far (Thunder=5, Fire/Ice/Dark=4). Not per-element; see known-patterns.md |
 | Enemy catalog (variable) | Enemy base attrs copy | `enemyId` then attrs at **+0x0E** (e.g. Mammothmon `0xB97A2`→`0xB97B0`); address moves per fight — audit helper, not a fixed absolute |
 | `0x000E1408` / `0x000E141C` | HUD HP mirrors | Track current HP; discard for authoritative state |
 | Offsets | See DigimonStatusAddresses.json | Relative to each digimon base (persistent; mid-combat attrs differ from `0xA4580` pair) |

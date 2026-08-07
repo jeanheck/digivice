@@ -274,7 +274,9 @@ across all three — only the active marker moved.
 |---------|------|----------|
 | `0xA4468` | Active ally slot index (0/1/2) | `0→1→2` when switching Kotemon→Patamon→Renamon |
 | `0xA4558` | Active unit id | `386→234→375` (Dinohumon→Angewomon→Taomon) |
-| slot `+0x10` | STR buff delta? | `dinohumon-buffed`: ally slot0 `0xA4480` `0→252` (= combat STR gain); only RAM Int16 `0→252` |
+| slot `+0x10` | **STR buff delta** | Ally: `dinohumon-buffed` `0xA4480` `0→252` (= combat STR gain) |
+| slot `+0x12` | **DEF buff delta** | Ally: `growlmon-normal`→`def-up` `0xA4482` `0→185` (= combat DEF `494→679`) |
+| slot `+0x14` | **SPD buff delta** | Enemy: `hagurumon-1`→`2` `0xA44E4` `0→84` (= combat SPD `336→420`) |
 
 Pre-battle (`out-combat-west-1`): table zeroed. Post-battle (`out-west-2`) may
 still hold last values briefly (enemy current 0, ally current 1400).
@@ -419,9 +421,103 @@ digievolution + gear baked in; persistent block does not mid-fight update
 
 Blocks still **swapped** bases between the two snaps (ally was at `0xA4580`
 then at `0xA45C0`); identify by fingerprint, then compare. Ally battle slot
-`+0x10` (`0xA4480`) went `0→252` (same delta) — possible STR buff accumulator
-on the HP/MP slot row; needs more buff types to generalize. MP Current spent
-`1140→1098` (−42) on the skill.
+`+0x10` (`0xA4480`) went `0→252` (same delta) — STR buff accumulator on the
+fixed HP/MP slot row. MP Current spent `1140→1098` (−42) on the skill.
+
+**SPD buff — confirmed (enemy):** `hagurumon-1` → `hagurumon-2` (Velocidade
+Acima). Hagurumon fingerprint L23 / STR 420 / Machine 270:
+
+| Field | Before | After |
+|-------|--------|-------|
+| Combat SPD (matched across swap) | **336** | **420** (+84) |
+| Other combat attrs/resists | unchanged | unchanged |
+| Ally combat half | unchanged | unchanged |
+| Enemy slot `+0x14` (`0xA44E4`) | **0** | **84** |
+| Enemy slot `+0x10` (STR delta) | 0 | 0 |
+| Enemy MP Current (`+0x0C`) | 336 | 288 (−48 skill cost) |
+
+So live SPD is rewritten in the swappable combat block **and** mirrored as a
+delta on the **fixed** enemy slot at `+0x14`.
+
+**DEF buff — confirmed (ally):** `growlmon-normal` → `growlmon-def-up`.
+Growlmon fingerprint L99 / STR 659 / SPD 632:
+
+| Field | Before | After |
+|-------|--------|-------|
+| Combat DEF (matched across swap) | **494** | **679** (+185) |
+| Other combat attrs/resists | unchanged | unchanged |
+| Enemy combat half | unchanged | unchanged |
+| Ally0 slot `+0x12` (`0xA4482`) | **0** | **185** |
+| Ally0 `+0x10` / `+0x14` (STR/SPD deltas) | 0 | 0 |
+| Ally0 MP Current (`+0x0C`) | 5566 | 5524 (−42 skill cost) |
+
+**Fixed-slot attr buff deltas (confirmed trio), Int16 LE per battle slot:**
+
+| Offset | Field |
+|--------|-------|
+| `+0x10` | STR delta |
+| `+0x12` | DEF delta |
+| `+0x14` | SPD delta |
+
+Same offsets on ally slots `0xA4470+n×0x20` and enemy `0xA44D0`.
+
+### Field skill (element strengthen / weaken) — **not** in combat attr Int16s
+
+Pairs:
+
+| Pair | Skill (claimed effect) |
+|------|------------------------|
+| `taomon-without-field` / `taomon-with-field` | strengthen Thunder, weaken Machine |
+| `sakuyamon-without-field` / `sakuyamon-with-field` | strengthen Ice, weaken Wind |
+| `bkwargreymon-without-field` / `bkwargreymon-with-field` | strengthen Fire, weaken Ice |
+| `MaloMyotismon-without-field` / `MaloMyotismon-with-field` | claimed strengthen Dark, weaken Thunder |
+
+Match combatants by fingerprint across the `0xA4580`/`0xA45C0` swap
+(pairs swap bases again).
+
+| Region | Result |
+|--------|--------|
+| Combatant attrs/resists (`0xA4580` / `0xA45C0`) | **No change** to claimed elements (or any mapped attr/resist) for the same combatant |
+| Fixed slot STR delta `+0x10` | Still **0** (unlike Strength buff) |
+| Ally slot MP | Skill cost (−100) |
+| Enemy slot `+0x04` | often `0→1` (turn/state noise) |
+
+Field effects do **not** rewrite live elemental resist Int16s. Prefer a
+**global field state** near the battle table.
+
+**Candidates** (zero → nonzero while field-active cluster present; near `0xA4470`):
+
+| Address | Taomon (Thunder) | Sakuya (Ice) | BKW (Fire) | Malo (Dark?) | Reading |
+|---------|------------------|--------------|------------|--------------|---------|
+| `0xA4414` | 16 | 16 | 16 | 16 | Shared constant — **not** an element bitmask |
+| `0xA4418` | 221 | 220 | 221 | 220 | Near-identical — timer / instance noise? |
+| `0xA441C` | **5** | **4** | **4** | **4** | Only **two** observed ids. Thunder alone is 5; Fire/Ice/Dark all write **4** |
+| `0xA442A` | 1 | 1 | 1 | 1 | Active flag |
+| `0xA4424` | 1 | 0 | 0 | 0 | Optional / timing |
+| `0xA4530` | 6 | 6 | 6 | 6 | Shared field-category / mode id? |
+| `0xA4532` | **102** | **127** | **127** | **127** | Tracks with `A441C` (5→102, 4→127) — duration / potency class? |
+
+Healthy “field on” snaps set **both** the `0xA4414…A442A` cluster **and**
+`0xA4530`/`0xA4532` together.
+
+**`0xA441C` is not a per-element field enum.** Fire↑Ice↓ (BKW) and Ice↑Wind↓
+(Sakuya) produce **byte-identical** field clusters (`4` / `127`). Either:
+
+1. persisted RAM only stores a coarse mode (4 vs 5), and the actual
+   strengthen/weaken pair is looked up from the technique id at cast/damage
+   time (not kept in this cluster), or
+2. several Campo skills incorrectly share one effect row (see Dark below).
+
+No other Int16 near `0xA4400–0xA4560` discriminates Fire vs Ice. One-off
+`0xA3868` `0→2` on BKW only (Ice index?) — **not** written by Sakuya/Taomon;
+treat as fight-specific noise until reproduced.
+
+**MaloMyotismon / Campo Sombrio:** structurally clean (full cluster + MP −100) but
+matches Ice/Fire (`A441C=4`). Player also sees **“campo desapareceu”** after
+the skill (unlike Taomon/Sakuya/BKW). Likely bug — do **not** map `4` to Dark.
+
+**Still open:** Water / Wind / Machine fields; second discriminator outside the
+battle neighborhood; damage-time technique id.
 
 ### Enemy catalog attr copy (variable address; id → attrs +0x0E)
 
