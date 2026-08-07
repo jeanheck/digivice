@@ -10,6 +10,7 @@ using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Memory.Readers;
+using Backend.Memory.Readers.Battles;
 using Backend.Memory.Readers.Journals;
 using Backend.Memory.Readers.Journals.Quests;
 using Backend.Memory.Readers.Parties;
@@ -39,6 +40,7 @@ namespace Backend.Infrastructure
             services.AddSingleton<IDigievolutionSlotReader, DigievolutionSlotReader>();
             services.AddSingleton<IPartyReader, PartyReader>();
             services.AddSingleton<IInCombatReader, InCombatReader>();
+            services.AddSingleton<IEnemyReader, EnemyReader>();
             services.AddSingleton<IRequisiteReader, RequisiteReader>();
             services.AddSingleton<IStepReader, StepReader>();
             services.AddSingleton<IPlayerReader, PlayerReader>();
@@ -51,9 +53,11 @@ namespace Backend.Infrastructure
             services.AddSingleton<IJournalLoader, JournalLoader>();
             services.AddSingleton<IPartyLoader, PartyLoader>();
             services.AddSingleton<IDigimonLoader, DigimonLoader>();
+            services.AddSingleton<IBattleLoader, BattleLoader>();
 
             services.AddSingleton<IPlayerProvider, PlayerProvider>();
             services.AddSingleton<IPartyProvider, PartyProvider>();
+            services.AddSingleton<IBattleProvider, BattleProvider>();
             services.AddSingleton<IJournalProvider, JournalProvider>();
 
             services.AddSingleton<StateComposer>();

@@ -24,6 +24,7 @@ public class StateEventFactoryTests
         var dto = Assert.IsType<StateDTO>(result[0].Payload);
         Assert.NotNull(dto.Player);
         Assert.NotNull(dto.Party);
+        Assert.NotNull(dto.Battle);
         Assert.NotNull(dto.Journal);
     }
 
@@ -67,6 +68,20 @@ public class StateEventFactoryTests
     }
 
     [Fact]
+    public void Create_ShouldReturnBattleChangedEvent_WhenOnlyBattleChanges()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.Battle.Enemy.Speed = 84;
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.BattleChanged, ev.Type);
+        Assert.IsType<BattleDTO>(ev.Payload);
+    }
+
+    [Fact]
     public void Create_ShouldReturnJournalChangedEvent_WhenOnlyJournalChanges()
     {
         var previousState = CreateBaseState();
@@ -101,15 +116,17 @@ public class StateEventFactoryTests
         var newState = CreateBaseState();
         newState.Player.Bits = 999;
         newState.Party.Slots[0].Digimon!.Level = 22;
+        newState.Battle.Enemy.Speed = 84;
         newState.Journal.MainQuest.Steps[0].Value = 1;
         newState.Journal.Auctions[0].Value = 0x01;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
-        Assert.Equal(3, result.Count);
+        Assert.Equal(4, result.Count);
         Assert.Equal(EventType.PlayerChanged, result[0].Type);
         Assert.Equal(EventType.PartyChanged, result[1].Type);
-        Assert.Equal(EventType.JournalChanged, result[2].Type);
+        Assert.Equal(EventType.BattleChanged, result[2].Type);
+        Assert.Equal(EventType.JournalChanged, result[3].Type);
     }
 
     private static State CreateBaseState()
@@ -133,6 +150,7 @@ public class StateEventFactoryTests
                     }
                 ]
             },
+            Battle = new Battle(),
             Journal = new Journal
             {
                 MainQuest = new Quest

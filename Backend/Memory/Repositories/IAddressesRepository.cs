@@ -10,6 +10,7 @@ namespace Backend.Memory.Repositories
         PartyAddresses GetPartyAddresses();
         DigimonStatusAddresses GetDigimonStatusAddresses();
         InCombatAddresses GetInCombatAddresses();
+        BattleAddresses GetBattleAddresses();
         Dictionary<int, DigimonAddress> GetDigimonsAddresses();
         DigimonAddress? GetDigimonAddressById(int id);
         QuestAddresses GetMainQuest();

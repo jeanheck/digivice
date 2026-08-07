@@ -10,8 +10,9 @@ public static class StateConverter
         return new StateDTO
         {
             Player = state.Player != null ? PlayerConverter.ToDTO(state.Player) : null,
-            Journal = state.Journal != null ? JournalConverter.ToDTO(state.Journal) : null,
             Party = state.Party != null ? PartyConverter.ToDTO(state.Party) : null,
+            Battle = state.Battle != null ? BattleConverter.ToDTO(state.Battle) : null,
+            Journal = state.Journal != null ? JournalConverter.ToDTO(state.Journal) : null,
         };
     }
 }

@@ -7,12 +7,13 @@ using Backend.Events.Converters;
 public class StateConverterTests
 {
     [Fact]
-    public void ToDTO_ShouldMapPlayerPartyAndJournal()
+    public void ToDTO_ShouldMapPlayerPartyBattleAndJournal()
     {
         var state = new State
         {
             Player = new Player { Bits = 100, MapId = "0001" },
             Party = new Party { Slots = [] },
+            Battle = new Battle(),
             Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] }
         };
 
@@ -26,6 +27,10 @@ public class StateConverterTests
         Assert.True(dto.Party.Slots.HasValue);
         Assert.Empty(dto.Party.Slots.Value!);
 
+        Assert.NotNull(dto.Battle);
+        Assert.True(dto.Battle.Enemy.HasValue);
+        Assert.Equal(0, dto.Battle.Enemy.Value!.Id.Value);
+
         Assert.NotNull(dto.Journal);
         Assert.True(dto.Journal.MainQuest.HasValue);
         Assert.Equal("MainQuest", dto.Journal.MainQuest.Value!.Id);
@@ -38,6 +43,7 @@ public class StateConverterTests
         {
             Player = null!,
             Party = null!,
+            Battle = null!,
             Journal = null!
         };
 
@@ -45,6 +51,7 @@ public class StateConverterTests
 
         Assert.Null(dto.Player);
         Assert.Null(dto.Party);
+        Assert.Null(dto.Battle);
         Assert.Null(dto.Journal);
     }
 }

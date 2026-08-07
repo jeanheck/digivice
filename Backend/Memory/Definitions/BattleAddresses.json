@@ -1,0 +1,16 @@
+{
+    "EnemySlotBase": "0x000A44D0",
+    "Id": "0x00",
+    "Condition": "0x1C",
+    "Strength": "0x10",
+    "Defense": "0x12",
+    "Speed": "0x14",
+    "HP": {
+        "Max": "0x06",
+        "Current": "0x08"
+    },
+    "MP": {
+        "Max": "0x0A",
+        "Current": "0x0C"
+    }
+}

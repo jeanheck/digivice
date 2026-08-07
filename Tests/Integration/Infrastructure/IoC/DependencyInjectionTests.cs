@@ -15,6 +15,7 @@ using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Memory.Readers;
+using Backend.Memory.Readers.Battles;
 using Backend.Memory.Readers.Journals;
 using Backend.Memory.Readers.Journals.Quests;
 using Backend.Memory.Readers.Parties;
@@ -61,6 +62,7 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IDigievolutionSlotReader>());
         Assert.NotNull(provider.GetRequiredService<IPartyReader>());
         Assert.NotNull(provider.GetRequiredService<IInCombatReader>());
+        Assert.NotNull(provider.GetRequiredService<IEnemyReader>());
         Assert.NotNull(provider.GetRequiredService<IRequisiteReader>());
         Assert.NotNull(provider.GetRequiredService<IStepReader>());
         Assert.NotNull(provider.GetRequiredService<IPlayerReader>());
@@ -71,9 +73,11 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IJournalLoader>());
         Assert.NotNull(provider.GetRequiredService<IPartyLoader>());
         Assert.NotNull(provider.GetRequiredService<IDigimonLoader>());
+        Assert.NotNull(provider.GetRequiredService<IBattleLoader>());
 
         Assert.NotNull(provider.GetRequiredService<IPlayerProvider>());
         Assert.NotNull(provider.GetRequiredService<IPartyProvider>());
+        Assert.NotNull(provider.GetRequiredService<IBattleProvider>());
         Assert.NotNull(provider.GetRequiredService<IJournalProvider>());
 
         Assert.NotNull(provider.GetRequiredService<StateComposer>());

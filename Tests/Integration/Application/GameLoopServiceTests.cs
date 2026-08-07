@@ -25,6 +25,7 @@ public class GameLoopServiceTests
     private readonly Mock<IDuckstationConnector> _duckstationConnectorMock;
     private readonly Mock<IPlayerProvider> _playerProviderMock;
     private readonly Mock<IPartyProvider> _partyProviderMock;
+    private readonly Mock<IBattleProvider> _battleProviderMock;
     private readonly Mock<IJournalProvider> _journalProviderMock;
     private readonly Mock<IEventDispatcherService> _eventDispatcherServiceMock;
     private readonly GameStateStore _gameStateStore;
@@ -49,6 +50,7 @@ public class GameLoopServiceTests
         _duckstationConnectorMock = new Mock<IDuckstationConnector>();
         _playerProviderMock = new Mock<IPlayerProvider>();
         _partyProviderMock = new Mock<IPartyProvider>();
+        _battleProviderMock = new Mock<IBattleProvider>();
         _journalProviderMock = new Mock<IJournalProvider>();
         _eventDispatcherServiceMock = new Mock<IEventDispatcherService>();
         _gameStateStore = new GameStateStore();
@@ -59,11 +61,13 @@ public class GameLoopServiceTests
         var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };
         _playerProviderMock.Setup(p => p.Get()).Returns(player);
         _partyProviderMock.Setup(p => p.Get()).Returns(party);
+        _battleProviderMock.Setup(p => p.Get()).Returns(new Battle());
         _journalProviderMock.Setup(p => p.Get()).Returns(journal);
 
         _stateComposer = new StateComposer(
             _playerProviderMock.Object,
             _partyProviderMock.Object,
+            _battleProviderMock.Object,
             _journalProviderMock.Object);
 
         var inMemorySettings = new Dictionary<string, string?> {
@@ -301,6 +305,7 @@ public class GameLoopServiceTests
         var stateComposer = new StateComposer(
             throwingPlayerProviderMock.Object,
             _partyProviderMock.Object,
+            _battleProviderMock.Object,
             _journalProviderMock.Object);
 
         var service = CreateGameLoopService(stateComposer);

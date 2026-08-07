@@ -461,7 +461,8 @@ wired on ally party slots via `Parties/InCombatAddresses.json` (`Strength` /
 | `+0x12` | DEF delta |
 | `+0x14` | SPD delta |
 
-Same offsets on enemy `0xA44D0` (not in Digivice party pipeline yet).
+Same offsets on enemy `0xA44D0` — wired as top-level `State.Battle.Enemy` via
+`BattleAddresses.json` (`BattleChanged` / InitialState).
 
 ### Field skill (element strengthen / weaken) — **not** in combat attr Int16s
 

@@ -6,5 +6,6 @@ public enum EventType
     EmulatorConnectionStatusChanged,
     PlayerChanged,
     PartyChanged,
+    BattleChanged,
     JournalChanged
 }
