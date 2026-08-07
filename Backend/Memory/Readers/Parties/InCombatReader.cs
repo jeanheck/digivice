@@ -15,6 +15,9 @@ namespace Backend.Memory.Readers.Parties
                 Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes
                     ? conditionBytes[0]
                     : 0,
+                Strength = memoryReader.ReadInt16(slotBase + addresses.Strength),
+                Defense = memoryReader.ReadInt16(slotBase + addresses.Defense),
+                Speed = memoryReader.ReadInt16(slotBase + addresses.Speed),
                 HP = new VitalResource
                 {
                     Max = memoryReader.ReadInt16(slotBase + addresses.HP.Max),

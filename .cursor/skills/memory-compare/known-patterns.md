@@ -274,9 +274,9 @@ across all three — only the active marker moved.
 |---------|------|----------|
 | `0xA4468` | Active ally slot index (0/1/2) | `0→1→2` when switching Kotemon→Patamon→Renamon |
 | `0xA4558` | Active unit id | `386→234→375` (Dinohumon→Angewomon→Taomon) |
-| slot `+0x10` | **STR buff delta** | Ally: `dinohumon-buffed` `0xA4480` `0→252` (= combat STR gain) |
-| slot `+0x12` | **DEF buff delta** | Ally: `growlmon-normal`→`def-up` `0xA4482` `0→185` (= combat DEF `494→679`) |
-| slot `+0x14` | **SPD buff delta** | Enemy: `hagurumon-1`→`2` `0xA44E4` `0→84` (= combat SPD `336→420`) |
+| slot `+0x10` | **STR buff delta** | Ally: `dinohumon-buffed` `0xA4480` `0→252` (= combat STR gain). Wired as `InCombat.Strength` in `InCombatAddresses.json` |
+| slot `+0x12` | **DEF buff delta** | Ally: `growlmon-normal`→`def-up` `0xA4482` `0→185` (= combat DEF `494→679`). Wired as `InCombat.Defense` |
+| slot `+0x14` | **SPD buff delta** | Enemy: `hagurumon-1`→`2` `0xA44E4` `0→84` (= combat SPD `336→420`). Ally offset same; party wired as `InCombat.Speed` |
 
 Pre-battle (`out-combat-west-1`): table zeroed. Post-battle (`out-west-2`) may
 still hold last values briefly (enemy current 0, ally current 1400).
@@ -451,7 +451,9 @@ Growlmon fingerprint L99 / STR 659 / SPD 632:
 | Ally0 `+0x10` / `+0x14` (STR/SPD deltas) | 0 | 0 |
 | Ally0 MP Current (`+0x0C`) | 5566 | 5524 (−42 skill cost) |
 
-**Fixed-slot attr buff deltas (confirmed trio), Int16 LE per battle slot:**
+**Fixed-slot attr buff deltas (confirmed trio), Int16 LE per battle slot** —
+wired on ally party slots via `Parties/InCombatAddresses.json` (`Strength` /
+`Defense` / `Speed` → Digimon `InCombat`):
 
 | Offset | Field |
 |--------|-------|
@@ -459,7 +461,7 @@ Growlmon fingerprint L99 / STR 659 / SPD 632:
 | `+0x12` | DEF delta |
 | `+0x14` | SPD delta |
 
-Same offsets on ally slots `0xA4470+n×0x20` and enemy `0xA44D0`.
+Same offsets on enemy `0xA44D0` (not in Digivice party pipeline yet).
 
 ### Field skill (element strengthen / weaken) — **not** in combat attr Int16s
 

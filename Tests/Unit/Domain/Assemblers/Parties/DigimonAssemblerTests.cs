@@ -36,6 +36,9 @@ public class DigimonAssemblerTests
             InCombat = new InCombatResource
             {
                 Condition = 0x04,
+                Strength = 25,
+                Defense = 185,
+                Speed = 84,
                 HP = new VitalResource { Current = 80, Max = 120 },
                 MP = new VitalResource { Current = 40, Max = 60 }
             },
@@ -71,6 +74,9 @@ public class DigimonAssemblerTests
         Assert.Equal(120, result.InCombat.HP.Max);
         Assert.Equal(40, result.InCombat.MP.Current);
         Assert.Equal(60, result.InCombat.MP.Max);
+        Assert.Equal(25, result.InCombat.Strength);
+        Assert.Equal(185, result.InCombat.Defense);
+        Assert.Equal(84, result.InCombat.Speed);
 
         // Attributes
         Assert.Equal(10, result.Attributes.Strength);

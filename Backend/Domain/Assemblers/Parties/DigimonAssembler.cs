@@ -34,6 +34,9 @@ namespace Backend.Domain.Assemblers.Parties
                 InCombat = new InCombat
                 {
                     Condition = resource.InCombat.Condition,
+                    Strength = resource.InCombat.Strength,
+                    Defense = resource.InCombat.Defense,
+                    Speed = resource.InCombat.Speed,
                     HP = new Vital
                     {
                         Current = resource.InCombat.HP.Current,

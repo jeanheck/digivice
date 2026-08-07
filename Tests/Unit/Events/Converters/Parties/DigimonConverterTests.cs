@@ -21,6 +21,9 @@ public class DigimonConverterTests
             InCombat = new InCombat
             {
                 Condition = 0x04,
+                Strength = 252,
+                Defense = 185,
+                Speed = 84,
                 HP = new Vital { Current = 90, Max = 202 },
                 MP = new Vital { Current = 20, Max = 44 }
             },
@@ -55,6 +58,9 @@ public class DigimonConverterTests
         Assert.Equal(33, dto.MP.Value!.Current.Value);
         Assert.Equal(44, dto.MP.Value.Max.Value);
         Assert.Equal(0x04, dto.InCombat.Value!.Condition.Value);
+        Assert.Equal(252, dto.InCombat.Value.Strength.Value);
+        Assert.Equal(185, dto.InCombat.Value.Defense.Value);
+        Assert.Equal(84, dto.InCombat.Value.Speed.Value);
         Assert.Equal(90, dto.InCombat.Value.HP.Value!.Current.Value);
         Assert.Equal(202, dto.InCombat.Value.HP.Value.Max.Value);
         Assert.Equal(20, dto.InCombat.Value.MP.Value!.Current.Value);

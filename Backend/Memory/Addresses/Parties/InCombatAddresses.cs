@@ -15,6 +15,15 @@ namespace Backend.Memory.Addresses.Parties
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Condition { get; set; }
 
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Strength { get; set; }
+
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Defense { get; set; }
+
+        [JsonConverter(typeof(HexOrIntStringToIntConverter))]
+        public int Speed { get; set; }
+
         public VitalAddresses HP { get; set; } = new();
 
         public VitalAddresses MP { get; set; } = new();

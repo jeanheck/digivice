@@ -10,6 +10,15 @@ public record class InCombatDTO : IDTO
     public Optional<int> Condition { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<int> Strength { get; init; } = Optional<int>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<int> Defense { get; init; } = Optional<int>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<int> Speed { get; init; } = Optional<int>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<VitalDTO> HP { get; init; } = Optional<VitalDTO>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

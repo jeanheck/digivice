@@ -20,10 +20,13 @@ public static class InCombatDiffer
         }
 
         bool conditionChanged = previousInCombat.Condition != newInCombat.Condition;
+        bool strengthChanged = previousInCombat.Strength != newInCombat.Strength;
+        bool defenseChanged = previousInCombat.Defense != newInCombat.Defense;
+        bool speedChanged = previousInCombat.Speed != newInCombat.Speed;
         var hpDelta = VitalDiffer.Diff(previousInCombat.HP, newInCombat.HP);
         var mpDelta = VitalDiffer.Diff(previousInCombat.MP, newInCombat.MP);
 
-        if (!conditionChanged && hpDelta == null && mpDelta == null)
+        if (!conditionChanged && !strengthChanged && !defenseChanged && !speedChanged && hpDelta == null && mpDelta == null)
         {
             return null;
         }
@@ -32,6 +35,18 @@ public static class InCombatDiffer
         if (conditionChanged)
         {
             dto = dto with { Condition = newInCombat.Condition };
+        }
+        if (strengthChanged)
+        {
+            dto = dto with { Strength = newInCombat.Strength };
+        }
+        if (defenseChanged)
+        {
+            dto = dto with { Defense = newInCombat.Defense };
+        }
+        if (speedChanged)
+        {
+            dto = dto with { Speed = newInCombat.Speed };
         }
         if (hpDelta != null)
         {

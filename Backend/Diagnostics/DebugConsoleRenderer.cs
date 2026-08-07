@@ -103,7 +103,7 @@ namespace Backend.Diagnostics
             sb.AppendLine($" {mp.Current.ToString(StatFormat)}/{mp.Max.ToString(StatFormat)}");
 
             var inCombat = digimon.InCombat;
-            sb.AppendLine($"   InCombat Condition: {inCombat.Condition} | HP: {inCombat.HP.Current.ToString(StatFormat)}/{inCombat.HP.Max.ToString(StatFormat)} | MP: {inCombat.MP.Current.ToString(StatFormat)}/{inCombat.MP.Max.ToString(StatFormat)}");
+            sb.AppendLine($"   InCombat Condition: {inCombat.Condition} | HP: {inCombat.HP.Current.ToString(StatFormat)}/{inCombat.HP.Max.ToString(StatFormat)} | MP: {inCombat.MP.Current.ToString(StatFormat)}/{inCombat.MP.Max.ToString(StatFormat)} | Atk:{inCombat.Strength.ToString(StatFormat)} Def:{inCombat.Defense.ToString(StatFormat)} Spd:{inCombat.Speed.ToString(StatFormat)}");
 
             // Attributes
             var attributes = digimon.Attributes;
