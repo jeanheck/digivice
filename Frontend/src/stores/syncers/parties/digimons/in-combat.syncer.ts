@@ -7,6 +7,15 @@ export class InCombatSyncer {
     if (newInCombatDto.condition !== undefined) {
       previousInCombat.condition = newInCombatDto.condition;
     }
+    if (newInCombatDto.strength !== undefined) {
+      previousInCombat.strength = newInCombatDto.strength;
+    }
+    if (newInCombatDto.defense !== undefined) {
+      previousInCombat.defense = newInCombatDto.defense;
+    }
+    if (newInCombatDto.speed !== undefined) {
+      previousInCombat.speed = newInCombatDto.speed;
+    }
     if (newInCombatDto.hp) {
       VitalSyncer.sync(previousInCombat.hp, newInCombatDto.hp);
     }

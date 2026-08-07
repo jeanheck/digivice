@@ -6,6 +6,9 @@ export class InCombatConverter {
   public static convert(newInCombatDto: InCombatDTO | null): InCombat {
     return {
       condition: newInCombatDto?.condition ?? 0,
+      strength: newInCombatDto?.strength ?? 0,
+      defense: newInCombatDto?.defense ?? 0,
+      speed: newInCombatDto?.speed ?? 0,
       hp: VitalConverter.convert(newInCombatDto?.hp ?? null),
       mp: VitalConverter.convert(newInCombatDto?.mp ?? null),
     };
