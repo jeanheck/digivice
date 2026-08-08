@@ -341,7 +341,7 @@
     "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 32
   },
   "72": {
     "name": "Tapirmon",
@@ -384,7 +384,7 @@
     "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 206
   },
   "73": {
     "name": "Crabmon",
@@ -986,7 +986,7 @@
     "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 222
   },
   "87": {
     "name": "Tyrannomon",
@@ -1201,7 +1201,7 @@
     "dropId": "waterChip",
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 49
   },
   "92": {
     "name": "Bakemon",
@@ -6966,7 +6966,7 @@
     "memoryId": 0
   },
   "515": {
-    "name": "Cardmon (T1)",
+    "name": "Cardmon",
     "level": 7,
     "hp": 288,
     "species": "rare",
@@ -7006,10 +7006,10 @@
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 457
   },
   "516": {
-    "name": "Cardmon (A1)",
+    "name": "Cardmon",
     "level": 12,
     "hp": 408,
     "species": "fish",
@@ -7049,7 +7049,7 @@
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 458
   },
   "517": {
     "name": "Cardmon (T2)",

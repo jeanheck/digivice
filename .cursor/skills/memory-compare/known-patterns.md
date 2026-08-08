@@ -321,40 +321,33 @@ bases across turns/actions (not a fixed ally-only / enemy-only address).
 | +0x1E | status resist 2 | confuse |
 | +0x20 | status resist 3 | sleep |
 | +0x22 | status resist 4 | KO-related (enemy.json `canKO` companion value) |
-| +0x24 | **species / family flags?** | Int16; see species note below |
+| +0x24 | Species / family | Int16 `N×0x100` — table in species section below |
 | +0x26… | unused / zero in snaps seen | |
 
 **No Charisma** in this block (persistent `DigimonStatusAddresses` still has Cha
 at +0x32; combat block jumps Speed → Fire).
 
-**Species candidate @ `+0x24` (flags):** same value across three `dino` enemies
-(`triceramon.bin` / `tyrannomon.bin` / `tuskmon.bin` → all **512 / `0x200`**),
-and consistent across more families:
+**Species @ `+0x24` (Int16, high-byte family id `N×0x100`) — confirmed so far:**
 
-| Species (`enemy.json`) | Examples | `+0x24` |
-|------------------------|----------|---------|
-| dino | Triceramon, Tyrannomon, Tuskmon | **512 (`0x200`)** |
-| mammal | Tapirmon, Mammothmon | **1536 (`0x600`)** |
-| insect | Kunemon, **Kuwagamon, Yanmamon** | **2048 (`0x800`)** |
-| fish | Gekomon, **Shellmon** | **2560 (`0xA00`)** |
-| dragon | **Seadramon** | **2816 (`0xB00`)** |
-| bird | **Kiwimon** (`kabuterimon-3`) | **1792 (`0x700`)** |
-| plant | **Vegiemon** (`kabuterimon-2`) | **2304 (`0x900`)** |
-| (ally Digimon) | see note below | **not a single constant** |
+| `+0x24` | Decimal | `enemy.json` label | Examples (confirmed) | Notes |
+|---------|---------|--------------------|----------------------|-------|
+| `0x100` | 256 | *(TBD — JSON often `rare`)* | Dinohumon (ally), Cardmon tree (`515` / memoryId `457`) | Real code, not zero/undefined; human label still open |
+| `0x200` | 512 | `dino` | Triceramon, Tyrannomon, Tuskmon | |
+| `0x600` | 1536 | `mammal` | Tapirmon, Mammothmon | |
+| `0x700` | 1792 | `bird` | Kiwimon (`kabuterimon-3`) | |
+| `0x800` | 2048 | `insect` | Kunemon, Kuwagamon, Yanmamon; ally Kabuterimon | |
+| `0x900` | 2304 | `plant` | Vegiemon (`kabuterimon-2`), Woodmon | |
+| `0xA00` | 2560 | `fish` | Gekomon, Shellmon, Coelamon, Cardmon aquatic (`516` / memoryId `458`) | |
+| `0xB00` | 2816 | `dragon` | Seadramon | Label follows `enemy.json`; not fish despite aquatic theming |
+
+**Still unmapped in memory:** `evil`, `machine`, `ghoul`, and a definitive name for `0x100` (vs placeholder `rare`). Fill rows as more in-combat snaps arrive.
 
 **Ally Digimon `+0x24` is species too — not a fixed “player” marker.**  
-Dinohumon (front) repeatedly showed **256 (`0x100`)**. Kabuterimon front
-(`kabuterimon-1..3.bin`, digievo token `19`, Renamon line) showed **2048
-(`0x800`)** in all three snaps — same code as wild **insect** enemies — while
-the enemy half was Tapirmon mammal / Vegiemon plant / Kiwimon bird. So ally
-flags track the Digimon’s family (at least insect), and `0x100` is specific
-to whatever Dinohumon/that form maps to, not “any ally”.
+Same table applies to the engaged ally half of `0xA4580`/`0xA45C0` (e.g. Dinohumon
+`0x100`, Kabuterimon `0x800`). Status-resist tails still differ per combatant;
+do not confuse with species.
 
-Snaps `shellmon` / `seadramon` / `kuwagamon` / `yanmamon.bin` (2026-08-05): insects
-match; Shellmon matches fish. Seadramon is **`dragon` in enemy.json** (not fish)
-and introduced **`0xB00`**. Earlier `N × 0x200` guess is incomplete. Need
-evil/machine/ghoul/rare/etc. before treating as a full enum. Status-resist tails
-still differ per enemy; do not confuse with species.
+Earlier `N × 0x200` guess is incomplete — use the table above.
 
 | Base | Role |
 |------|------|
