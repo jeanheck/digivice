@@ -39,7 +39,8 @@
     "boss": true,
     "dropId": "oldWand",
     "regularAttackId": "noElement",
-    "techniqueId": "necromist"
+    "techniqueId": "necromist",
+    "memoryId": 0
   },
   "2": {
     "name": "MasterTyrannomon",
@@ -81,7 +82,8 @@
     "boss": true,
     "dropId": "oldClaw",
     "regularAttackId": "noElement",
-    "techniqueId": "masterFire"
+    "techniqueId": "masterFire",
+    "memoryId": 0
   },
   "14": {
     "name": "HiAndromon",
@@ -123,7 +125,8 @@
     "boss": true,
     "dropId": "rustyRifle",
     "regularAttackId": "machineElement",
-    "techniqueId": "atomicRay"
+    "techniqueId": "atomicRay",
+    "memoryId": 0
   },
   "15": {
     "name": "WaruMonzaemon",
@@ -165,7 +168,8 @@
     "boss": true,
     "dropId": null,
     "regularAttackId": "darkElement",
-    "techniqueId": "heartBreakAttack"
+    "techniqueId": "heartBreakAttack",
+    "memoryId": 0
   },
   "16": {
     "name": "Datamon",
@@ -207,7 +211,8 @@
     "boss": true,
     "dropId": "rustyGlove",
     "regularAttackId": "machineElement",
-    "techniqueId": "autoRecover"
+    "techniqueId": "autoRecover",
+    "memoryId": 0
   },
   "20": {
     "name": "Zanbamon",
@@ -249,7 +254,8 @@
     "boss": true,
     "dropId": "rustyKatana",
     "regularAttackId": null,
-    "techniqueId": null
+    "techniqueId": null,
+    "memoryId": 0
   },
   "21": {
     "name": "Bulbmon",
@@ -291,7 +297,8 @@
     "boss": true,
     "dropId": null,
     "regularAttackId": "machineElement",
-    "techniqueId": "madPump"
+    "techniqueId": "madPump",
+    "memoryId": 0
   },
   "71": {
     "name": "Kunemon",
@@ -333,7 +340,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "72": {
     "name": "Tapirmon",
@@ -375,7 +383,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "73": {
     "name": "Crabmon",
@@ -417,7 +426,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "74": {
     "name": "Gizamon",
@@ -459,7 +469,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "75": {
     "name": "DemiDevimon",
@@ -501,7 +512,8 @@
     "boss": false,
     "dropId": "darkPower1",
     "regularAttackId": "noElement",
-    "techniqueId": "energySuck"
+    "techniqueId": "energySuck",
+    "memoryId": 0
   },
   "76": {
     "name": "Betamon",
@@ -543,7 +555,8 @@
     "boss": false,
     "dropId": "powerCharge",
     "regularAttackId": "thunderElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "77": {
     "name": "Vegiemon",
@@ -585,7 +598,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "78": {
     "name": "Kuwagamon",
@@ -627,7 +641,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "79": {
     "name": "Yanmamon",
@@ -669,7 +684,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "80": {
     "name": "Kiwimon",
@@ -711,7 +727,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "81": {
     "name": "Dokugumon",
@@ -753,7 +770,8 @@
     "boss": false,
     "dropId": "spiderWeb",
     "regularAttackId": "noElementChanceOfPoison",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "82": {
     "name": "Goburimon",
@@ -795,7 +813,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "83": {
     "name": "Baronmon",
@@ -837,7 +856,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "84": {
     "name": "Minotarumon",
@@ -879,7 +899,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "85": {
     "name": "Flymon",
@@ -921,7 +942,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "86": {
     "name": "Woodmon",
@@ -963,7 +985,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "87": {
     "name": "Tyrannomon",
@@ -1005,7 +1028,8 @@
     "boss": false,
     "dropId": "firePower1",
     "regularAttackId": "fireElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "88": {
     "name": "Triceramon",
@@ -1047,7 +1071,8 @@
     "boss": false,
     "dropId": "tntBall",
     "regularAttackId": "fireElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "89": {
     "name": "Airdramon",
@@ -1089,7 +1114,8 @@
     "boss": false,
     "dropId": "fireChip",
     "regularAttackId": "noElement",
-    "techniqueId": "airBlast"
+    "techniqueId": "airBlast",
+    "memoryId": 0
   },
   "90": {
     "name": "Gekomon",
@@ -1131,7 +1157,8 @@
     "boss": false,
     "dropId": "icePower1",
     "regularAttackId": "noElement",
-    "techniqueId": "confuseGas"
+    "techniqueId": "confuseGas",
+    "memoryId": 0
   },
   "91": {
     "name": "Coelamon",
@@ -1173,7 +1200,8 @@
     "boss": false,
     "dropId": "waterChip",
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "92": {
     "name": "Bakemon",
@@ -1215,7 +1243,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "93": {
     "name": "Phantomon",
@@ -1257,7 +1286,8 @@
     "boss": false,
     "dropId": "ghostFang",
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "94": {
     "name": "Kokatorimon",
@@ -1299,7 +1329,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "95": {
     "name": "Apemon",
@@ -1341,7 +1372,8 @@
     "boss": false,
     "dropId": "windPower1",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "96": {
     "name": "Shellmon",
@@ -1383,7 +1415,8 @@
     "boss": false,
     "dropId": "waterChip",
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "97": {
     "name": "Tortomon",
@@ -1425,7 +1458,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "divineRain"
+    "techniqueId": "divineRain",
+    "memoryId": 0
   },
   "98": {
     "name": "Dolphmon",
@@ -1467,7 +1501,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "divineRain"
+    "techniqueId": "divineRain",
+    "memoryId": 0
   },
   "99": {
     "name": "Gesomon",
@@ -1509,7 +1544,8 @@
     "boss": false,
     "dropId": "runnerSandal",
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "100": {
     "name": "Octomon",
@@ -1551,7 +1587,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "101": {
     "name": "Divermon",
@@ -1593,7 +1630,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "102": {
     "name": "ShogunGekomon",
@@ -1635,7 +1673,8 @@
     "boss": false,
     "dropId": "chaosWave",
     "regularAttackId": "noElement",
-    "techniqueId": "confuseGas"
+    "techniqueId": "confuseGas",
+    "memoryId": 0
   },
   "103": {
     "name": "Seadramon",
@@ -1677,7 +1716,8 @@
     "boss": false,
     "dropId": "waterPower1",
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "104": {
     "name": "Mammothmon",
@@ -1719,7 +1759,8 @@
     "boss": false,
     "dropId": "hpProxy",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "105": {
     "name": "Etemon",
@@ -1761,7 +1802,8 @@
     "boss": false,
     "dropId": "superCharge",
     "regularAttackId": "noElement",
-    "techniqueId": "smallHeal"
+    "techniqueId": "smallHeal",
+    "memoryId": 0
   },
   "106": {
     "name": "Ogremon",
@@ -1803,7 +1845,8 @@
     "boss": false,
     "dropId": "powerChip",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "107": {
     "name": "Tuskmon",
@@ -1845,7 +1888,8 @@
     "boss": false,
     "dropId": "counterCrest",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "108": {
     "name": "Rockmon",
@@ -1887,7 +1931,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "doubleGuard"
+    "techniqueId": "doubleGuard",
+    "memoryId": 0
   },
   "109": {
     "name": "Quetzalmon",
@@ -1929,7 +1974,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "110": {
     "name": "Vademon",
@@ -1971,7 +2017,8 @@
     "boss": false,
     "dropId": "boltPower1",
     "regularAttackId": "thunderElementChanceOfSleep",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "111": {
     "name": "Maildramon",
@@ -2013,7 +2060,8 @@
     "boss": false,
     "dropId": "thunderChip",
     "regularAttackId": "noElement",
-    "techniqueId": "thunderbolt"
+    "techniqueId": "thunderbolt",
+    "memoryId": 0
   },
   "112": {
     "name": "Mamemon",
@@ -2055,7 +2103,8 @@
     "boss": false,
     "dropId": "searchCrest",
     "regularAttackId": "machineElementChanceOfFreeze",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "113": {
     "name": "Guardromon (blue)",
@@ -2097,7 +2146,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "114": {
     "name": "Thundermon",
@@ -2139,7 +2189,8 @@
     "boss": false,
     "dropId": "pulseGuard",
     "regularAttackId": "thunderElement",
-    "techniqueId": "thunderGemini"
+    "techniqueId": "thunderGemini",
+    "memoryId": 0
   },
   "115": {
     "name": "Hagurumon",
@@ -2181,7 +2232,8 @@
     "boss": false,
     "dropId": "metalPower1",
     "regularAttackId": "machineElement",
-    "techniqueId": "speedUp"
+    "techniqueId": "speedUp",
+    "memoryId": 0
   },
   "116": {
     "name": "Clockmon",
@@ -2223,7 +2275,8 @@
     "boss": false,
     "dropId": "multiCrest",
     "regularAttackId": "noElement",
-    "techniqueId": "magicMissile"
+    "techniqueId": "magicMissile",
+    "memoryId": 0
   },
   "117": {
     "name": "Andromon",
@@ -2265,7 +2318,8 @@
     "boss": false,
     "dropId": "machinegun",
     "regularAttackId": "thunderElementChanceOfFreeze",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "118": {
     "name": "Numemon",
@@ -2307,7 +2361,8 @@
     "boss": false,
     "dropId": "binderCrest",
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "119": {
     "name": "Sukamon",
@@ -2349,7 +2404,8 @@
     "boss": false,
     "dropId": "wisdomChip",
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "120": {
     "name": "Garbagemon",
@@ -2391,7 +2447,8 @@
     "boss": false,
     "dropId": "goggles",
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "121": {
     "name": "Roachmon",
@@ -2433,7 +2490,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "122": {
     "name": "Raremon",
@@ -2475,7 +2533,8 @@
     "boss": false,
     "dropId": "armorChip",
     "regularAttackId": "noElement",
-    "techniqueId": "paralyzeShock"
+    "techniqueId": "paralyzeShock",
+    "memoryId": 0
   },
   "123": {
     "name": "Cyclonemon",
@@ -2517,7 +2576,8 @@
     "boss": false,
     "dropId": "wisdomChip",
     "regularAttackId": "noElement",
-    "techniqueId": "twinMissile"
+    "techniqueId": "twinMissile",
+    "memoryId": 0
   },
   "124": {
     "name": "Megadramon",
@@ -2559,7 +2619,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "machineElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "125": {
     "name": "Monzaemon",
@@ -2601,7 +2662,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "lovelyCharm"
+    "techniqueId": "lovelyCharm",
+    "memoryId": 0
   },
   "126": {
     "name": "Tankmon",
@@ -2643,7 +2705,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "machineElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "127": {
     "name": "Nanimon",
@@ -2685,7 +2748,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "128": {
     "name": "Musyamon",
@@ -2727,7 +2791,8 @@
     "boss": false,
     "dropId": "mpChip",
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "129": {
     "name": "Kurisarimon",
@@ -2769,7 +2834,8 @@
     "boss": false,
     "dropId": "drillHorn",
     "regularAttackId": "noElement",
-    "techniqueId": "confuseNebula"
+    "techniqueId": "confuseNebula",
+    "memoryId": 0
   },
   "130": {
     "name": "Snimon",
@@ -2811,7 +2877,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "131": {
     "name": "Blossomon",
@@ -2853,7 +2920,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "132": {
     "name": "Cherrymon",
@@ -2895,7 +2963,8 @@
     "boss": false,
     "dropId": "recoverCrest",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "133": {
     "name": "Gargoylemon",
@@ -2937,7 +3006,8 @@
     "boss": false,
     "dropId": "darkPower2",
     "regularAttackId": "noElement",
-    "techniqueId": "darkMatter"
+    "techniqueId": "darkMatter",
+    "memoryId": 0
   },
   "134": {
     "name": "Mummymon",
@@ -2979,7 +3049,8 @@
     "boss": false,
     "dropId": "mindChip",
     "regularAttackId": "noElement",
-    "techniqueId": "darkFear"
+    "techniqueId": "darkFear",
+    "memoryId": 0
   },
   "135": {
     "name": "Arukenimon",
@@ -3021,7 +3092,8 @@
     "boss": false,
     "dropId": "charmGas",
     "regularAttackId": "noElementChanceOfPoison",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "136": {
     "name": "Okuwamon",
@@ -3063,7 +3135,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "137": {
     "name": "MetalTyrannomon",
@@ -3105,7 +3178,8 @@
     "boss": false,
     "dropId": "metalChip",
     "regularAttackId": "machineElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "138": {
     "name": "Deltamon",
@@ -3147,7 +3221,8 @@
     "boss": false,
     "dropId": "windPower2",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "139": {
     "name": "Whamon",
@@ -3189,7 +3264,8 @@
     "boss": false,
     "dropId": "crimsonCable",
     "regularAttackId": "noElement",
-    "techniqueId": "hardRain"
+    "techniqueId": "hardRain",
+    "memoryId": 0
   },
   "140": {
     "name": "MarineDevimon",
@@ -3231,7 +3307,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "waterElementHitsTwice",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "141": {
     "name": "Dragomon",
@@ -3273,7 +3350,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "142": {
     "name": "MegaSeadramon",
@@ -3315,7 +3393,8 @@
     "boss": false,
     "dropId": "thunderChip",
     "regularAttackId": "thunderElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "143": {
     "name": "Ebidramon",
@@ -3357,7 +3436,8 @@
     "boss": false,
     "dropId": "waterPower2",
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "144": {
     "name": "Vilemon",
@@ -3399,7 +3479,8 @@
     "boss": false,
     "dropId": "devilChip",
     "regularAttackId": "fireElement",
-    "techniqueId": "darkFear"
+    "techniqueId": "darkFear",
+    "memoryId": 0
   },
   "145": {
     "name": "SkullSatamon",
@@ -3441,7 +3522,8 @@
     "boss": false,
     "dropId": "hackSticker",
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "146": {
     "name": "Brachiomon",
@@ -3483,7 +3565,8 @@
     "boss": false,
     "dropId": "ultraCharge",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "147": {
     "name": "Drimogemon",
@@ -3525,7 +3608,8 @@
     "boss": false,
     "dropId": "drillHorn",
     "regularAttackId": "machineElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "148": {
     "name": "Flarerizamon",
@@ -3567,7 +3651,8 @@
     "boss": false,
     "dropId": "firePower2",
     "regularAttackId": "fireElement",
-    "techniqueId": "flameBall"
+    "techniqueId": "flameBall",
+    "memoryId": 0
   },
   "149": {
     "name": "Meramon",
@@ -3609,7 +3694,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "fireElement",
-    "techniqueId": "flameLance"
+    "techniqueId": "flameLance",
+    "memoryId": 0
   },
   "150": {
     "name": "Mojyamon",
@@ -3651,7 +3737,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "iceBlow"
+    "techniqueId": "iceBlow",
+    "memoryId": 0
   },
   "151": {
     "name": "Frigimon",
@@ -3693,7 +3780,8 @@
     "boss": false,
     "dropId": "iceChip",
     "regularAttackId": "iceElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "152": {
     "name": "Icemon",
@@ -3735,7 +3823,8 @@
     "boss": false,
     "dropId": "icePower2",
     "regularAttackId": "iceElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "153": {
     "name": "Giromon",
@@ -3777,7 +3866,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "machineElementCounterPhysical",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "154": {
     "name": "Vikemon",
@@ -3819,7 +3909,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "iceElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "155": {
     "name": "Lynxmon",
@@ -3861,7 +3952,8 @@
     "boss": false,
     "dropId": "firePowerS",
     "regularAttackId": "fireElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "156": {
     "name": "SkullMeramon",
@@ -3903,7 +3995,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "flameBreath"
+    "techniqueId": "flameBreath",
+    "memoryId": 0
   },
   "157": {
     "name": "Devidramon",
@@ -3945,7 +4038,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "darkElemental"
+    "techniqueId": "darkElemental",
+    "memoryId": 0
   },
   "158": {
     "name": "Chimeramon",
@@ -3987,7 +4081,8 @@
     "boss": false,
     "dropId": "devilChip",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "159": {
     "name": "Pukumon",
@@ -4029,7 +4124,8 @@
     "boss": false,
     "dropId": "crimsonCable",
     "regularAttackId": "machineElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "160": {
     "name": "MetalSeadramon",
@@ -4071,7 +4167,8 @@
     "boss": false,
     "dropId": "crimsonCable",
     "regularAttackId": "noElement",
-    "techniqueId": "godBombard"
+    "techniqueId": "godBombard",
+    "memoryId": 0
   },
   "161": {
     "name": "Tylomon",
@@ -4113,7 +4210,8 @@
     "boss": false,
     "dropId": "crimsonCable",
     "regularAttackId": "waterElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "162": {
     "name": "Scorpiomon",
@@ -4155,7 +4253,8 @@
     "boss": false,
     "dropId": "crimsonCable",
     "regularAttackId": "noElement",
-    "techniqueId": "grandWave"
+    "techniqueId": "grandWave",
+    "memoryId": 0
   },
   "163": {
     "name": "Antylamon",
@@ -4197,7 +4296,8 @@
     "boss": false,
     "dropId": "windChip",
     "regularAttackId": "noElement",
-    "techniqueId": "darkElemental"
+    "techniqueId": "darkElemental",
+    "memoryId": 0
   },
   "164": {
     "name": "H-Kabuterimon",
@@ -4239,7 +4339,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "165": {
     "name": "Puppetmon",
@@ -4281,7 +4382,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "machineElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "166": {
     "name": "SkullMammothmon",
@@ -4323,7 +4425,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "167": {
     "name": "Valkyriemon",
@@ -4365,7 +4468,8 @@
     "boss": false,
     "dropId": "danceWing",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "168": {
     "name": "LadyDevimon",
@@ -4407,7 +4511,8 @@
     "boss": false,
     "dropId": "charmGas",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "169": {
     "name": "MetalEtemon",
@@ -4449,7 +4554,8 @@
     "boss": false,
     "dropId": "maxCharge",
     "regularAttackId": "noElement",
-    "techniqueId": "megaHeal"
+    "techniqueId": "megaHeal",
+    "memoryId": 0
   },
   "170": {
     "name": "KingEtemon",
@@ -4491,7 +4597,8 @@
     "boss": false,
     "dropId": "charismaChip",
     "regularAttackId": "noElement",
-    "techniqueId": "fullHeal"
+    "techniqueId": "fullHeal",
+    "memoryId": 0
   },
   "171": {
     "name": "Gryphonmon",
@@ -4533,7 +4640,8 @@
     "boss": false,
     "dropId": "windPowerS",
     "regularAttackId": "noElement",
-    "techniqueId": "slyphStorm"
+    "techniqueId": "slyphStorm",
+    "memoryId": 0
   },
   "172": {
     "name": "Infermon",
@@ -4575,7 +4683,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "darknessChaos"
+    "techniqueId": "darknessChaos",
+    "memoryId": 0
   },
   "173": {
     "name": "Shadramon",
@@ -4617,7 +4726,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "fireElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "174": {
     "name": "Boltmon",
@@ -4659,7 +4769,8 @@
     "boss": false,
     "dropId": "powerBrace",
     "regularAttackId": "thunderElementCounterPhysical",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "175": {
     "name": "Piedmon",
@@ -4701,7 +4812,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "176": {
     "name": "Machinedramon",
@@ -4743,7 +4855,8 @@
     "boss": false,
     "dropId": "metalPowerS",
     "regularAttackId": "machineElementHitsTwice",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "177": {
     "name": "VenomMyotismon",
@@ -4785,7 +4898,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "darknessChaos"
+    "techniqueId": "darknessChaos",
+    "memoryId": 0
   },
   "178": {
     "name": "Apokarimon",
@@ -4827,7 +4941,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "darknessChaos"
+    "techniqueId": "darknessChaos",
+    "memoryId": 0
   },
   "179": {
     "name": "Ghoulmon",
@@ -4869,7 +4984,8 @@
     "boss": false,
     "dropId": "darkPowerS",
     "regularAttackId": "noElement",
-    "techniqueId": "darknessChaos"
+    "techniqueId": "darknessChaos",
+    "memoryId": 0
   },
   "180": {
     "name": "Creepymon",
@@ -4911,7 +5027,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "fireElement",
-    "techniqueId": "darknessChaos"
+    "techniqueId": "darknessChaos",
+    "memoryId": 0
   },
   "181": {
     "name": "Armageddemon",
@@ -4953,7 +5070,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "darkElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "182": {
     "name": "RedVegiemon",
@@ -4995,7 +5113,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "183": {
     "name": "Kuwagamon (green)",
@@ -5037,7 +5156,8 @@
     "boss": false,
     "dropId": "chainSaw",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "184": {
     "name": "Yanmamon(Green)",
@@ -5079,7 +5199,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "185": {
     "name": "Dokugumon(Brown)",
@@ -5121,7 +5242,8 @@
     "boss": false,
     "dropId": "spiderWeb",
     "regularAttackId": "noElementChanceOfPoison",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "186": {
     "name": "Goburimon(Red)",
@@ -5163,7 +5285,8 @@
     "boss": false,
     "dropId": "naginata",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "187": {
     "name": "Minotarumon (blue)",
@@ -5205,7 +5328,8 @@
     "boss": false,
     "dropId": "metalPower2",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "188": {
     "name": "Flymon (pink)",
@@ -5247,7 +5371,8 @@
     "boss": false,
     "dropId": "glasses",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "189": {
     "name": "Woodmon(Green)",
@@ -5289,7 +5414,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "190": {
     "name": "Triceramon (red)",
@@ -5331,7 +5457,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "191": {
     "name": "Airdramon(Gold)",
@@ -5373,7 +5500,8 @@
     "boss": false,
     "dropId": "magicianRod",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "192": {
     "name": "Phantomon (blue)",
@@ -5415,7 +5543,8 @@
     "boss": false,
     "dropId": "hpChip",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "193": {
     "name": "Kokatorimon(Brown)",
@@ -5457,7 +5586,8 @@
     "boss": false,
     "dropId": "overClocked",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "194": {
     "name": "Tortomon (blue)",
@@ -5499,7 +5629,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "195": {
     "name": "ShogunGekomon (blue)",
@@ -5541,7 +5672,8 @@
     "boss": false,
     "dropId": "chaosWave",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "196": {
     "name": "Seadramon (brown)",
@@ -5583,7 +5715,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "197": {
     "name": "Mammothmon (silver)",
@@ -5625,7 +5758,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "198": {
     "name": "Fugamon",
@@ -5667,7 +5801,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "199": {
     "name": "Vademon (red)",
@@ -5709,7 +5844,8 @@
     "boss": false,
     "dropId": "cursedPuppet",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "200": {
     "name": "Maildramon (black)",
@@ -5751,7 +5887,8 @@
     "boss": false,
     "dropId": "boltPowerS",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "201": {
     "name": "Guardromon (white)",
@@ -5793,7 +5930,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "202": {
     "name": "Numemon(Blue)",
@@ -5835,7 +5973,8 @@
     "boss": false,
     "dropId": "danceFeather",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "203": {
     "name": "Numemon (brown)",
@@ -5877,7 +6016,8 @@
     "boss": false,
     "dropId": "trainingBook",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "204": {
     "name": "Numemon (aqua)",
@@ -5919,7 +6059,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "205": {
     "name": "Numemon (red)",
@@ -5961,7 +6102,8 @@
     "boss": false,
     "dropId": "overLoad",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "206": {
     "name": "Numemon (white)",
@@ -6003,7 +6145,8 @@
     "boss": false,
     "dropId": "boostChip",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "207": {
     "name": "Raremon (pink)",
@@ -6045,7 +6188,8 @@
     "boss": false,
     "dropId": "boltPower2",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "208": {
     "name": "Cyclonemon (pink)",
@@ -6087,7 +6231,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "209": {
     "name": "Tankmon (blue)",
@@ -6129,7 +6274,8 @@
     "boss": false,
     "dropId": "runnerShoes",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "210": {
     "name": "Musyamon (green)",
@@ -6171,7 +6317,8 @@
     "boss": false,
     "dropId": "mpProxy",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "211": {
     "name": "Kurisarimon (pink)",
@@ -6213,7 +6360,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "212": {
     "name": "Snimon (brown)",
@@ -6255,7 +6403,8 @@
     "boss": false,
     "dropId": "trainChip3",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "213": {
     "name": "Blossomon (pink)",
@@ -6297,7 +6446,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "214": {
     "name": "Cherrymon (red)",
@@ -6339,7 +6489,8 @@
     "boss": false,
     "dropId": "trainChip1",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "215": {
     "name": "Whamon (blue)",
@@ -6381,7 +6532,8 @@
     "boss": false,
     "dropId": "hpMegaProxy",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "216": {
     "name": "MegaSeadramon (gold)",
@@ -6423,7 +6575,8 @@
     "boss": false,
     "dropId": "waterPowerS",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "217": {
     "name": "Ebidramon (pink)",
@@ -6465,7 +6618,8 @@
     "boss": false,
     "dropId": "trainChip2",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "218": {
     "name": "Vilemon (purple)",
@@ -6507,7 +6661,8 @@
     "boss": false,
     "dropId": "hackSystem",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "219": {
     "name": "Drimogemon (brown)",
@@ -6549,7 +6704,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "220": {
     "name": "BlueMeramon",
@@ -6591,7 +6747,8 @@
     "boss": false,
     "dropId": "mpMegaProxy",
     "regularAttackId": "fireElement",
-    "techniqueId": "flameSphere"
+    "techniqueId": "flameSphere",
+    "memoryId": 0
   },
   "221": {
     "name": "Vikemon (blue)",
@@ -6633,7 +6790,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "222": {
     "name": "MetalSeadramon (black)",
@@ -6675,7 +6833,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "223": {
     "name": "Scorpiomon (black)",
@@ -6717,7 +6876,8 @@
     "boss": false,
     "dropId": "trainChipV",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "224": {
     "name": "Antylamon (white)",
@@ -6759,7 +6919,8 @@
     "boss": false,
     "dropId": "icePowerS",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "247": {
     "name": "Knightmon",
@@ -6801,7 +6962,8 @@
     "boss": false,
     "dropId": null,
     "regularAttackId": "noElement",
-    "techniqueId": "berserkSword"
+    "techniqueId": "berserkSword",
+    "memoryId": 0
   },
   "515": {
     "name": "Cardmon (T1)",
@@ -6843,7 +7005,8 @@
     "boss": false,
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "516": {
     "name": "Cardmon (A1)",
@@ -6885,7 +7048,8 @@
     "boss": false,
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "517": {
     "name": "Cardmon (T2)",
@@ -6927,7 +7091,8 @@
     "boss": false,
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "518": {
     "name": "Cardmon (A2)",
@@ -6969,7 +7134,8 @@
     "boss": false,
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "519": {
     "name": "Cardmon (T3)",
@@ -7011,7 +7177,8 @@
     "boss": false,
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "520": {
     "name": "Cardmon (A3)",
@@ -7053,7 +7220,8 @@
     "boss": false,
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "521": {
     "name": "Cardmon (T4)",
@@ -7095,7 +7263,8 @@
     "boss": false,
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   },
   "522": {
     "name": "Cardmon (A4)",
@@ -7137,6 +7306,7 @@
     "boss": false,
     "dropId": "variousBooster",
     "regularAttackId": "noElement",
-    "techniqueId": "none"
+    "techniqueId": "none",
+    "memoryId": 0
   }
 }
