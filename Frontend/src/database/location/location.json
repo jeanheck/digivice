@@ -254,8 +254,8 @@
         ]
       }
     ],
-    "fishing": [],
-    "kickingTrees": [],
+    "fishing": ["91", "516"],
+    "kickingTrees": ["86", "515"],
     "dock": true
   },
   "0220": {
@@ -280,8 +280,8 @@
         ]
       }
     ],
-    "fishing": [],
-    "kickingTrees": [],
+    "fishing": ["91", "516"],
+    "kickingTrees": ["86", "515"],
     "dock": true
   },
   "0221": {

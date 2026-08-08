@@ -556,7 +556,7 @@
     "dropId": "powerCharge",
     "regularAttackId": "thunderElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 4
   },
   "77": {
     "name": "Vegiemon",
@@ -599,7 +599,7 @@
     "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 25
   },
   "78": {
     "name": "Kuwagamon",
@@ -1416,7 +1416,7 @@
     "dropId": "waterChip",
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 35
   },
   "97": {
     "name": "Tortomon",
@@ -1889,7 +1889,7 @@
     "dropId": "counterCrest",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 136
   },
   "108": {
     "name": "Rockmon",
@@ -7003,7 +7003,7 @@
     "exp": 35,
     "bits": 70,
     "boss": false,
-    "dropId": "variousBooster",
+    "dropId": "1bBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 457
@@ -7046,7 +7046,7 @@
     "exp": 60,
     "bits": 120,
     "boss": false,
-    "dropId": "variousBooster",
+    "dropId": "1bBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 458
