@@ -766,6 +766,7 @@
     "imageName": "Operation Room",
     "enemies": [
       "14",
+      "112",
       "117"
     ],
     "fishing": [],
