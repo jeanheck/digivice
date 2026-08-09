@@ -293,6 +293,35 @@ current HP; `0xE141C`/`0xE1420`/`0xE1424` track enemy current HP.
 | `0x42B38` | enemy level (Mammothmon 23) |
 | `0x42B3A` | enemy **max/initial** HP only — stayed 672 while `0xA44D8` dropped |
 | `0x42B3C` | enemy MP |
+| `0x42B6C` | **drop item Val** (Int16, live battle) — see **Enemy drops (variable)** below |
+
+### Enemy drops (variable) — open design (2026-08-09)
+
+Combat RAM exposes the **current** drop as item Val @ `0x42B6C` (GameFAQs
+item Val; e.g. Booster 1b=`0x0177`, 2b=`0x0178`). Confirmed with Cardmon fish
+(`memoryId` `458`): east vs south snaps differed **only** at this Int16 for the
+booster pair.
+
+**Two cases the static `dropId: string` model does not cover:**
+
+1. **Same enemy, different locations → different drops**  
+   Example: Cardmon fishing — Central Park / east → Booster 1b; Bulk Bridge /
+   south → Booster 2b. Same `memoryId` and combat stats; drop depends on where
+   the encounter was rolled.
+
+2. **Same enemy, same location → more than one possible drop**  
+   Observed: one enemy on one map can still yield **up to two** distinct drops
+   across encounters (not location-keyed). Exact pool / rates TBD.
+
+**Interim frontend data (pending product decision):** for enemies with multiple
+possible drops, `enemy.json` may store a **list** on the drop field (no
+location binding yet). That will likely break `EnemyRaw` / UI until those
+layers accept `string | string[]` (or a richer shape). Do not treat the list as
+final SSOT for location-aware drops — revisit when wiring bestiary UI and/or
+live `0x42B6C` reads.
+
+**Sources:** GameFAQs Patch Code Generation Guide (item Val); Card Battle FAQ
+(Cardmon booster-by-sector notes).
 
 ### Combatant attributes / resistances @ `0xA4580` / `0xA45C0` (confirmed layout)
 

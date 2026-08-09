@@ -231,8 +231,8 @@
         ]
       }
     ],
-    "fishing": [],
-    "kickingTrees": []
+    "fishing": ["91", "516"],
+    "kickingTrees": ["86", "515"]
   },
   "021F": {
     "imageName": "Shell Beach",
@@ -304,8 +304,8 @@
         ]
       }
     ],
-    "fishing": [],
-    "kickingTrees": []
+    "fishing": ["91", "516"],
+    "kickingTrees": ["86", "515"]
   },
   "0222": {
     "imageName": "East Wire Forest",
@@ -328,7 +328,7 @@
       }
     ],
     "fishing": [],
-    "kickingTrees": []
+    "kickingTrees": ["86", "515"]
   },
   "0223": {
     "imageName": "Forest Inn",
@@ -405,8 +405,8 @@
         ]
       }
     ],
-    "fishing": [],
-    "kickingTrees": [],
+    "fishing": ["101", "516"],
+    "kickingTrees": ["86", "515"],
     "dock": true
   },
   "0228": {
@@ -423,7 +423,7 @@
       "80"
     ],
     "fishing": [],
-    "kickingTrees": []
+    "kickingTrees": ["86", "515"]
   },
   "0230": {
     "imageName": "Seiryu Tower",
@@ -456,8 +456,8 @@
         ]
       }
     ],
-    "fishing": [],
-    "kickingTrees": [],
+    "fishing": ["103", "516"],
+    "kickingTrees": ["184", "515"],
     "dock": true
   },
   "022B": {
@@ -511,7 +511,7 @@
       "184"
     ],
     "fishing": [],
-    "kickingTrees": []
+    "kickingTrees": ["184", "517"]
   },
   "0234": {
     "imageName": "Bulk Bridge",
@@ -520,7 +520,7 @@
       "91",
       "184"
     ],
-    "fishing": [],
+    "fishing": ["103", "516"],
     "kickingTrees": [],
     "dock": true
   },
@@ -530,8 +530,8 @@
       "91",
       "103"
     ],
-    "fishing": [],
-    "kickingTrees": []
+    "fishing": ["103", "516"],
+    "kickingTrees": ["184", "517"]
   },
   "0236": {
     "imageName": "Reliability Spot",
@@ -546,8 +546,8 @@
       "91",
       "184"
     ],
-    "fishing": [],
-    "kickingTrees": []
+    "fishing": ["103", "516"],
+    "kickingTrees": ["184", "517"]
   },
   "0238": {
     "imageName": "Swamp Inn",
@@ -584,8 +584,8 @@
         ]
       }
     ],
-    "fishing": [],
-    "kickingTrees": []
+    "fishing": ["103", "516"],
+    "kickingTrees": ["85", "184", "517"]
   },
   "023B": {
     "imageName": "Phoenix Bay",
@@ -594,8 +594,8 @@
       "95",
       "182"
     ],
-    "fishing": [],
-    "kickingTrees": [],
+    "fishing": ["103", "516"],
+    "kickingTrees": ["85", "184", "517"],
     "dock": true
   },
   "023C": {
@@ -605,15 +605,15 @@
       "182",
       "189"
     ],
-    "fishing": [],
-    "kickingTrees": []
+    "fishing": ["96", "516"],
+    "kickingTrees": ["189", "517"]
   },
   "023D": {
     "imageName": "South Cape",
     "enemies": [
       "96"
     ],
-    "fishing": [],
+    "fishing": ["96", "516"],
     "kickingTrees": [],
     "dock": true
   },
@@ -667,7 +667,7 @@
       "105",
       "106"
     ],
-    "fishing": [],
+    "fishing": ["98", "518"],
     "kickingTrees": [],
     "dock": true
   },
@@ -686,7 +686,7 @@
       "185",
       "191"
     ],
-    "fishing": [],
+    "fishing": ["98", "518"],
     "kickingTrees": []
   },
   "024A": {
@@ -697,7 +697,7 @@
       "186"
     ],
     "fishing": [],
-    "kickingTrees": []
+    "kickingTrees": ["193", "517"]
   },
   "024B": {
     "imageName": "North Badland E",
@@ -705,7 +705,7 @@
       "105",
       "106"
     ],
-    "fishing": [],
+    "fishing": ["98", "518"],
     "kickingTrees": [],
     "dock": true
   },
@@ -717,7 +717,7 @@
       "186"
     ],
     "fishing": [],
-    "kickingTrees": []
+    "kickingTrees": ["193", "517"]
   },
   "024D": {
     "imageName": "Dum Dum Factory",

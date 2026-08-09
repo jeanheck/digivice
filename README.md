@@ -99,6 +99,8 @@ None of this would have been possible without the people who dug up and shared t
 - **Digimon World 2003 PAL VERSION GAMESHARK CODES (CONVERTED)** *by splakappa*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/62602581)
 - **ENTENDA AS FRAQUEZAS E TOLERÂNCIAS NO DIGIMON WORLD 3** *by Battle Dice*: [YouTube](https://www.youtube.com/watch?v=6UbWt7AyHMI)
 - **Digimon World 3 – Item List** *by Med_Jai*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/24593)
+- **Digimon World 3 – Patch Code Generation Guide** *by LupusArgentum*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/41102)
+- **Digimon World 3 – Card Battle FAQ** *by CatastrophieX*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/18275)
 - **Digimon World 3 – FAQ (European)** *by Mykas0*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/21889)
 - **Digimon World 3 – Guides and FAQs** *by nick1n*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/16028-underground-seabed-map)
 - **Digimon World 3 – Detonado Completo (Guia Passo a Passo)** *by Markus Norat*: [revolutionarena](https://revolutionarena.com/pt-br/digimon-world-3-detonado-completo-guia-passo-a-passo/)

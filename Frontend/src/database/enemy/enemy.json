@@ -7046,13 +7046,13 @@
     "exp": 60,
     "bits": 120,
     "boss": false,
-    "dropId": "1bBooster",
+    "dropId": ["1bBooster", "2bBooster"],
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 458
   },
   "517": {
-    "name": "Cardmon (T2)",
+    "name": "Cardmon",
     "level": 17,
     "hp": 528,
     "species": "rare",
@@ -7089,13 +7089,13 @@
     "exp": 85,
     "bits": 170,
     "boss": false,
-    "dropId": "variousBooster",
+    "dropId": ["4bBooster", "r02Booster"],
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 459
   },
   "518": {
-    "name": "Cardmon (A2)",
+    "name": "Cardmon",
     "level": 27,
     "hp": 768,
     "species": "fish",
@@ -7132,10 +7132,10 @@
     "exp": 135,
     "bits": 270,
     "boss": false,
-    "dropId": "variousBooster",
+    "dropId": "5bBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 460
   },
   "519": {
     "name": "Cardmon (T3)",
