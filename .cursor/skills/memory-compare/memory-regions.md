@@ -129,7 +129,7 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 | ~0x000494xxx | Digimon stat blocks (persistent / post-battle) | HP Current syncs **after** combat only — see DigimonStatusAddresses.json |
 | `0x00042B74` + `2 × rookieId` | Blast gauge (Int16, 0–1000, per Digimon) | Confirmed — see known-patterns.md; updates in combat |
 | `0x00042B28` – `0x00042B3E` | Enemy battle strip (near Blast) | Level / token / **max** HP+MP — does **not** track current HP damage |
-| `0x000A4470` + `n × 0x20` | Battle HP/MP slot table | **Confirmed** live HP/MP + Condition @ +0x1C; attr buff deltas STR/DEF/SPD @ +0x10/+0x12/+0x14 — allies in `Parties/InCombatAddresses.json`; enemy slot `0xA44D0` in `BattleAddresses.json` |
+| `0x000A4470` + `n × 0x20` | Battle HP/MP slot table | **Confirmed** live HP/MP + Condition @ +0x1C; attr buff deltas STR/DEF/SPD @ +0x10/+0x12/+0x14 — allies in `Parties/InCombatAddresses.json`; enemy slots start `0xA44D0` (also `0xA44F0`, `0xA4510` for NPC multi-enemy parties — each has own memoryId+HP) in `BattleAddresses.json` |
 | `0x000A4468` | Active ally slot index | 0/1/2 — switches with front Digimon (`in-combat-kotemon/patamon/renamon`) |
 | `0x000A4558` | Active unit id | Tracks front digievo/token while HP stays in fixed slots |
 | `0x000A4580` / `0x000A45C0` | Combatant attr/resist blocks (stride `0x40`) | **Confirmed** layout: Level, STR/DEF/SPI/WIS/SPD, 7 elemental resists, status-resist tail, **species @ +0x24**. Ally↔enemy **swap** which base holds whom — identify by matching enemy.json / slot id `0xA44D0`. No Charisma. Not per party slot (engaged pair only). Field skills do **not** rewrite these resists. Species code table: known-patterns.md |

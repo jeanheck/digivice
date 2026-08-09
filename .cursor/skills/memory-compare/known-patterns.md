@@ -331,16 +331,23 @@ at +0x32; combat block jumps Speed → Fire).
 
 | `+0x24` | Decimal | `enemy.json` label | Examples (confirmed) | Notes |
 |---------|---------|--------------------|----------------------|-------|
-| `0x100` | 256 | *(TBD — JSON often `rare`)* | Dinohumon (ally), Cardmon tree (`515` / memoryId `457`) | Real code, not zero/undefined; human label still open |
+| `0x100` | 256 | *(TBD — JSON often `rare`)* | Dinohumon (ally), Cardmon tree (`515` / memoryId `457`), Baronmon, Numemon | Real code, not zero/undefined; human label still open |
 | `0x200` | 512 | `dino` | Triceramon, Tyrannomon, Tuskmon | |
-| `0x600` | 1536 | `mammal` | Tapirmon, Mammothmon | |
+| `0x300` | 768 | `evil` | DemiDevimon | Confirmed 2026-08-09 batch |
+| `0x400` | 1024 | `ghoul` | Bakemon, Raremon | Confirmed 2026-08-09 batch |
+| `0x500` | 1280 | `machine` | Andromon, Hagurumon, Mamemon, Datamon, Bulbmon, Thundermon, Maildramon, HiAndromon | Confirmed 2026-08-09 batch |
+| `0x600` | 1536 | `mammal` | Tapirmon, Mammothmon, Betamon, Apemon | |
 | `0x700` | 1792 | `bird` | Kiwimon (`kabuterimon-3`) | |
 | `0x800` | 2048 | `insect` | Kunemon, Kuwagamon, Yanmamon; ally Kabuterimon | |
 | `0x900` | 2304 | `plant` | Vegiemon (`kabuterimon-2`), Woodmon | |
 | `0xA00` | 2560 | `fish` | Gekomon, Shellmon, Coelamon, Cardmon aquatic (`516` / memoryId `458`) | |
-| `0xB00` | 2816 | `dragon` | Seadramon | Label follows `enemy.json`; not fish despite aquatic theming |
+| `0xB00` | 2816 | `dragon` | Seadramon, Airdramon | Label follows `enemy.json`; not fish despite aquatic theming |
 
-**Still unmapped in memory:** `evil`, `machine`, `ghoul`, and a definitive name for `0x100` (vs placeholder `rare`). Fill rows as more in-combat snaps arrive.
+**Still unmapped:** definitive name for `0x100` (vs placeholder `rare`).
+
+**NPC multi-enemy battle slots (confirmed 2026-08-09):** enemies for one NPC fight
+occupy `0xA44D0`, `0xA44F0`, `0xA4510` (stride `0x20`) — each with its own
+`memoryId` + HP. Do not treat `0xA44D0` alone as a shared party id.
 
 **Ally Digimon `+0x24` is species too — not a fixed “player” marker.**  
 Same table applies to the engaged ally half of `0xA4580`/`0xA45C0` (e.g. Dinohumon
