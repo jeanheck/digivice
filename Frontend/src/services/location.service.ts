@@ -10,7 +10,7 @@ export class LocationService {
 
   public static getEnemies(locationId: string, lastCompletedMainQuestStep: number): string[] {
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const locationEnemiesRaw = locationRaw.enemies;
+    const locationEnemiesRaw = locationRaw.enemies ?? [];
 
     if (!isLocationEnemyPhaseList(locationEnemiesRaw)) {
       return locationEnemiesRaw;

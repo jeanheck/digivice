@@ -8,7 +8,6 @@ export class LocationRepository {
   public static getLocationById(id: string): LocationRaw {
     return (
       this.locationTable[id] ?? {
-        enemies: [],
         imageName: "",
       }
     );

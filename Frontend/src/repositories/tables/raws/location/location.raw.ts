@@ -9,9 +9,9 @@ export type LocationEnemiesRaw = string[] | LocationEnemyPhaseRaw[];
 
 export interface LocationRaw {
   imageName: string;
-  enemies: LocationEnemiesRaw;
-  fishing: string[];
-  kickingTrees: string[];
+  enemies?: LocationEnemiesRaw;
+  fishing?: string[];
+  kickingTrees?: string[];
   region?: LocationRegionConstant;
   dock?: boolean;
 }

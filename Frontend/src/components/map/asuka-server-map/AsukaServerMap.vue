@@ -11,7 +11,7 @@ const emit = defineEmits<{
 
 const store = useGameStore();
 
-const mapViewModel = computed(() => {
+const asukaServerMapViewModel = computed(() => {
   const locationId = store.currentState?.player?.location ?? null;
   if (locationId === null) {
     return null;
@@ -27,9 +27,9 @@ const mapViewModel = computed(() => {
 <template>
   <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1">
     <div class="flex flex-col items-center gap-2 shrink-0">
-      <Location :location-id="mapViewModel?.locationId ?? null" />
+      <Location :location-id="asukaServerMapViewModel?.locationId ?? null" />
       <Enemies
-        :enemy-ids="mapViewModel?.enemies ?? []"
+        :enemy-ids="asukaServerMapViewModel?.enemies ?? []"
         @open-enemy-modal="emit('open-enemy-modal', $event)"
       />
     </div>
