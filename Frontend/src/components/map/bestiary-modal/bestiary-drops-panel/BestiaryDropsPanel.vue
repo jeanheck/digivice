@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
-import type { DropRaw } from "@/repositories/tables/raws/enemy/drop.raw";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = defineProps<{
@@ -15,21 +14,22 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
+const resolveDropIds = (enemy: EnemyViewModel): string[] => {
+  if (enemy.dropsByLocation !== undefined) {
+    const flattenedDropIds = Object.values(enemy.dropsByLocation).flat();
+    return [...new Set(flattenedDropIds)];
+  }
+
+  return enemy.drops ?? [];
+};
+
 const dropIds = computed(() => {
-  const drop = props.enemy.drop;
-  if (drop === undefined || drop === "variousBooster") {
+  const ids = resolveDropIds(props.enemy);
+  if (ids.length === 1 && ids[0] === "variousBooster") {
     return [] as string[];
   }
 
-  if (typeof drop === "string") {
-    return [drop];
-  }
-
-  const flattenedDropIds = drop.flatMap((sectorDrop: DropRaw) => {
-    return sectorDrop.sectorDrops;
-  });
-
-  return [...new Set(flattenedDropIds)];
+  return ids;
 });
 
 const selectedDropId = ref<string | null>(null);

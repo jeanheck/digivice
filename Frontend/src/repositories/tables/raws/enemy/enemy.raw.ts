@@ -1,4 +1,4 @@
-import type { DropRaw } from "./drop.raw";
+import type { EnemyLocationRaw } from "./enemy-location.raw";
 
 export interface EnemyRaw {
   name: string;
@@ -37,7 +37,9 @@ export interface EnemyRaw {
   dvxp: number;
   exp: number;
   bits: number;
-  drop?: string | DropRaw[];
+  drops?: string[];
+  locations?: EnemyLocationRaw[];
+  dropsByLocation?: Record<string, string[]>;
   regularAttackId: string | null;
   techniqueId: string | null;
   boss?: boolean;

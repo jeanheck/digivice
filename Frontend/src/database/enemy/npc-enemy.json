@@ -40,7 +40,9 @@
       "regularAttackId": "machineElementChanceOfFreeze",
       "techniqueId": "none",
       "memoryId": 13,
-      "drop": "searchCrest"
+      "drops": [
+        "searchCrest"
+      ]
     },
     "208": {
       "name": "Tortomon",
@@ -123,7 +125,9 @@
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 400,
-      "drop": "glasses"
+      "drops": [
+        "glasses"
+      ]
     }
   },
   "fakeByakkoLeader": {
@@ -167,7 +171,9 @@
       "regularAttackId": "darkElement",
       "techniqueId": "none",
       "memoryId": 11,
-      "drop": "binderCrest"
+      "drops": [
+        "binderCrest"
+      ]
     }
   },
   "genji": {
@@ -336,7 +342,9 @@
       "regularAttackId": "fireElement",
       "techniqueId": "none",
       "memoryId": 203,
-      "drop": "tntBall"
+      "drops": [
+        "tntBall"
+      ]
     }
   },
   "seiryuLeader": {
@@ -380,7 +388,9 @@
       "regularAttackId": "fireElement",
       "techniqueId": "none",
       "memoryId": 8,
-      "drop": "firePower1"
+      "drops": [
+        "firePower1"
+      ]
     },
     "172": {
       "name": "Minotarumon",
@@ -463,7 +473,9 @@
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 207,
-      "drop": "windPower1"
+      "drops": [
+        "windPower1"
+      ]
     }
   },
   "soldier": {
@@ -632,7 +644,9 @@
       "regularAttackId": "noElement",
       "techniqueId": "confuseGas",
       "memoryId": 119,
-      "drop": "chaosWave"
+      "drops": [
+        "chaosWave"
+      ]
     },
     "222": {
       "name": "Woodmon",

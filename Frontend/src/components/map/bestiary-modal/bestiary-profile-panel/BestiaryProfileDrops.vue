@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import type { DropRaw } from "@/repositories/tables/raws/enemy/drop.raw";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = defineProps<{
@@ -14,30 +13,41 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
+const resolveDropIds = (enemy: EnemyViewModel): string[] => {
+  if (enemy.dropsByLocation !== undefined) {
+    const flattenedDropIds = Object.values(enemy.dropsByLocation).flat();
+    return [...new Set(flattenedDropIds)];
+  }
+
+  return enemy.drops ?? [];
+};
+
+const dropIds = computed(() => {
+  return resolveDropIds(props.enemy);
+});
+
 const isDropInteractive = computed(() => {
-  const drop = props.enemy.drop;
-  return drop !== undefined && drop !== "variousBooster";
+  const ids = dropIds.value;
+  if (ids.length === 0) {
+    return false;
+  }
+
+  if (ids.length === 1 && ids[0] === "variousBooster") {
+    return false;
+  }
+
+  return true;
 });
 
 const dropItems = computed(() => {
-  const drop = props.enemy.drop;
-  if (drop === undefined) {
+  const ids = dropIds.value;
+  if (ids.length === 0) {
     return [{ id: "none", label: t("drops.none") }];
   }
 
-  const guaranteedSuffix =
-    props.enemy.boss && drop !== undefined ? ` ${t("enemy.guaranteedDropSuffix")}` : "";
+  const guaranteedSuffix = props.enemy.boss ? ` ${t("enemy.guaranteedDropSuffix")}` : "";
 
-  if (typeof drop === "string") {
-    return [{ id: drop, label: `${t(`drops.${drop}`)}${guaranteedSuffix}` }];
-  }
-
-  const dropIds = drop.flatMap((sectorDrop: DropRaw) => {
-    return sectorDrop.sectorDrops;
-  });
-  const uniqueDropIds = [...new Set(dropIds)];
-
-  return uniqueDropIds.map((dropId) => {
+  return ids.map((dropId) => {
     return {
       id: dropId,
       label: `${t(`drops.${dropId}`)}${guaranteedSuffix}`,
