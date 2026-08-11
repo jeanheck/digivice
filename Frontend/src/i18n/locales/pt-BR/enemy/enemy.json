@@ -19,6 +19,8 @@
     "technique": "Técnica",
     "attr": "Atributos",
     "elem": "Elementos",
-    "status": "Resistências"
+    "status": "Resistências",
+    "locations": "Localizações",
+    "dropsByLocation": "Drops por localização"
   }
 }

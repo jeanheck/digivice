@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import BestiaryProfile from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfile.vue";
 import BestiaryProfileAttributes from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileAttributes.vue";
 import BestiaryProfileElements from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileElements.vue";
 import BestiaryProfileConditions from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileConditions.vue";
+import BestiaryProfileLocations from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileLocations.vue";
+import BestiaryProfileDropsLocations from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileDropsLocations.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
-defineProps<{
+const props = defineProps<{
   enemy: EnemyViewModel;
   enemyImageUrl: string | null;
 }>();
@@ -33,6 +36,15 @@ const forwardMoveStatTooltip = (event: MouseEvent): void => {
 const forwardHideStatTooltip = (): void => {
   emit("hide-stat-tooltip");
 };
+
+const showEncounterInfo = computed(() => {
+  const hasLocations = (props.enemy.locations?.length ?? 0) > 0;
+  const dropsByLocation = props.enemy.dropsByLocation;
+  const hasDropsByLocation =
+    dropsByLocation !== undefined && Object.keys(dropsByLocation).length > 0;
+
+  return hasLocations || hasDropsByLocation;
+});
 </script>
 
 <template>
@@ -43,9 +55,10 @@ const forwardHideStatTooltip = (): void => {
       @open-drops="emit('open-drops', $event)"
     />
 
-    <div class="flex-1">
+    <div class="flex-1 flex flex-col gap-4 min-h-0">
       <div
-        class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start"
+        class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 items-start"
+        :class="showEncounterInfo ? 'shrink-0' : 'flex-1 min-h-0'"
       >
         <BestiaryProfileAttributes
           :attributes="enemy.attributes"
@@ -65,6 +78,16 @@ const forwardHideStatTooltip = (): void => {
           @move-stat-tooltip="forwardMoveStatTooltip"
           @hide-stat-tooltip="forwardHideStatTooltip"
         />
+      </div>
+
+      <div
+        v-if="showEncounterInfo"
+        class="flex-1 min-h-24 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm"
+      >
+        <div class="flex flex-row gap-6">
+          <BestiaryProfileLocations :enemy="enemy" />
+          <BestiaryProfileDropsLocations :enemy="enemy" />
+        </div>
       </div>
     </div>
   </div>

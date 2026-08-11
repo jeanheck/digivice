@@ -94,7 +94,9 @@ const techniqueLabel = computed(() => {
       </div>
     </div>
 
-    <div class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm h-full">
+    <div
+      class="flex-1 min-h-32 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm"
+    >
       <div class="flex flex-col gap-5">
         <div class="flex flex-col gap-1.5">
           <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{
