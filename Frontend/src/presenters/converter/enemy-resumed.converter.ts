@@ -10,7 +10,7 @@ export class EnemyResumedConverter {
     return {
       id: enemyId,
       name: enemyRaw.name,
-      boss: enemyRaw.boss,
+      boss: enemyRaw.boss === true,
       walk: origins.walk,
       fishing: origins.fishing,
       kickingTrees: origins.kickingTrees,

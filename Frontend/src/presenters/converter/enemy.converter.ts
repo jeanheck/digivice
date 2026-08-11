@@ -65,7 +65,7 @@ export class EnemyConverter {
       drop: enemyRaw.drop,
       regularAttackId: enemyRaw.regularAttackId,
       techniqueId: enemyRaw.techniqueId,
-      boss: enemyRaw.boss,
+      boss: enemyRaw.boss === true,
     };
   }
 }

@@ -37,7 +37,6 @@
       "dvxp": 25,
       "exp": 125,
       "bits": 250,
-      "boss": false,
       "regularAttackId": "machineElementChanceOfFreeze",
       "techniqueId": "none",
       "memoryId": 13,
@@ -80,7 +79,6 @@
       "dvxp": 29,
       "exp": 145,
       "bits": 290,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "divineRain",
       "memoryId": 208
@@ -122,7 +120,6 @@
       "dvxp": 33,
       "exp": 165,
       "bits": 330,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 400,
@@ -167,7 +164,6 @@
       "dvxp": 25,
       "exp": 124,
       "bits": 300,
-      "boss": false,
       "regularAttackId": "darkElement",
       "techniqueId": "none",
       "memoryId": 11,
@@ -212,7 +208,6 @@
       "dvxp": 2,
       "exp": 11,
       "bits": 20,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 51
@@ -256,7 +251,6 @@
       "dvxp": 1,
       "exp": 6,
       "bits": 10,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 32
@@ -298,7 +292,6 @@
       "dvxp": 2,
       "exp": 11,
       "bits": 20,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 51
@@ -340,7 +333,6 @@
       "dvxp": 6,
       "exp": 30,
       "bits": 60,
-      "boss": false,
       "regularAttackId": "fireElement",
       "techniqueId": "none",
       "memoryId": 203,
@@ -385,7 +377,6 @@
       "dvxp": 6,
       "exp": 31,
       "bits": 60,
-      "boss": false,
       "regularAttackId": "fireElement",
       "techniqueId": "none",
       "memoryId": 8,
@@ -428,7 +419,6 @@
       "dvxp": 5,
       "exp": 27,
       "bits": 55,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 172
@@ -470,7 +460,6 @@
       "dvxp": 10,
       "exp": 50,
       "bits": 190,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 207,
@@ -515,7 +504,6 @@
       "dvxp": 29,
       "exp": 145,
       "bits": 320,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "lovelyCharm",
       "memoryId": 14
@@ -557,7 +545,6 @@
       "dvxp": 29,
       "exp": 146,
       "bits": 280,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 53
@@ -601,7 +588,6 @@
       "dvxp": 9,
       "exp": 45,
       "bits": 90,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 77
@@ -643,7 +629,6 @@
       "dvxp": 20,
       "exp": 101,
       "bits": 490,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "confuseGas",
       "memoryId": 119,
@@ -686,7 +671,6 @@
       "dvxp": 5,
       "exp": 25,
       "bits": 50,
-      "boss": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
       "memoryId": 222

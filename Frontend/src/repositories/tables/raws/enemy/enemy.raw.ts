@@ -40,6 +40,6 @@ export interface EnemyRaw {
   drop?: string | DropRaw[];
   regularAttackId: string | null;
   techniqueId: string | null;
-  boss: boolean;
+  boss?: boolean;
   memoryId: number;
 }
