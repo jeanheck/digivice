@@ -108,7 +108,8 @@ const enemyImageUrl = computed(() => {
   <Modal
     :is-open="isModalOpen"
     max-width="max-w-[1200px]"
-    panel-class="w-[1200px]"
+    max-height="h-[540px]"
+    panel-class="w-[1200px] h-[540px]"
     @close="handleClose"
   >
     <template #header>

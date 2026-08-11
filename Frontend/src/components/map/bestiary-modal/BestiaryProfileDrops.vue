@@ -18,14 +18,14 @@ const hasDrop = computed(() => {
   return props.enemy.drop !== undefined;
 });
 
-const dropLabel = computed(() => {
+const dropLabels = computed(() => {
   const drop = props.enemy.drop;
   if (drop === undefined) {
-    return t("drops.none");
+    return [t("drops.none")];
   }
 
   if (typeof drop === "string") {
-    return t(`drops.${drop}`);
+    return [t(`drops.${drop}`)];
   }
 
   const dropIds = drop.flatMap((sectorDrop: DropRaw) => {
@@ -33,11 +33,9 @@ const dropLabel = computed(() => {
   });
   const uniqueDropIds = [...new Set(dropIds)];
 
-  return uniqueDropIds
-    .map((dropId) => {
-      return t(`drops.${dropId}`);
-    })
-    .join(", ");
+  return uniqueDropIds.map((dropId) => {
+    return t(`drops.${dropId}`);
+  });
 });
 
 const showGuaranteedDropNote = computed(() => {
@@ -73,9 +71,15 @@ const handleDropClick = (): void => {
     </h4>
 
     <div class="flex-1 min-h-0 flex items-center justify-center">
-      <span class="font-bold text-gray-300 text-xs 2xl:text-sm text-center">
-        {{ dropLabel }}
-      </span>
+      <div class="flex flex-col items-center gap-0.5">
+        <span
+          v-for="label in dropLabels"
+          :key="label"
+          class="font-bold text-gray-300 text-xs 2xl:text-sm text-center"
+        >
+          {{ label }}
+        </span>
+      </div>
     </div>
 
     <p

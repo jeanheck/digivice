@@ -36,7 +36,7 @@ const forwardHideStatTooltip = (): void => {
 </script>
 
 <template>
-  <div class="p-4 flex flex-col sm:flex-row gap-4 max-h-[70vh] overflow-y-auto custom-scroll">
+  <div class="p-4 flex flex-col sm:flex-row gap-4 h-full min-h-0 overflow-y-auto custom-scroll">
     <BestiaryProfile
       :enemy="enemy"
       :enemy-image-url="enemyImageUrl"
