@@ -2,10 +2,8 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import BestiaryProfile from "@/components/map/bestiary-modal/BestiaryProfile.vue";
-import BestiaryAttributes from "@/components/map/bestiary-modal/BestiaryAttributes.vue";
-import BestiaryElements from "@/components/map/bestiary-modal/BestiaryElements.vue";
-import BestiaryConditions from "@/components/map/bestiary-modal/BestiaryConditions.vue";
+import BestiaryInformation from "@/components/map/bestiary-modal/BestiaryInformation.vue";
+import BestiaryDropsInformation from "@/components/map/bestiary-modal/BestiaryDropsInformation.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -23,7 +21,10 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
+type BestiaryView = "information" | "drops";
+
 const selectedEnemyId = ref<string | null>(null);
+const view = ref<BestiaryView>("information");
 
 const isModalOpen = computed(() => {
   return props.isOpen && selectedEnemyId.value !== null;
@@ -35,6 +36,16 @@ const handleClose = () => {
 
 const handleSearchSelect = (id: string) => {
   selectedEnemyId.value = id;
+  view.value = "information";
+};
+
+const openDropsView = () => {
+  hide();
+  view.value = "drops";
+};
+
+const backToInformationView = () => {
+  view.value = "information";
 };
 
 const allSearchItems = BestiaryModalPresenter.getAllSearchItems();
@@ -71,13 +82,19 @@ watch(
   (open) => {
     if (open) {
       selectedEnemyId.value = props.enemyId;
+      view.value = "information";
       return;
     }
 
     hide();
     selectedEnemyId.value = null;
+    view.value = "information";
   },
 );
+
+watch(selectedEnemyId, () => {
+  view.value = "information";
+});
 
 const enemyImageUrl = computed(() => {
   if (selectedEnemyId.value === null) {
@@ -112,34 +129,17 @@ const enemyImageUrl = computed(() => {
       </div>
     </template>
 
-    <div class="p-4 flex flex-col sm:flex-row gap-4 max-h-[70vh] overflow-y-auto custom-scroll">
-      <BestiaryProfile :enemy="enemy" :enemy-image-url="enemyImageUrl" />
-
-      <div class="flex-1">
-        <div
-          class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start"
-        >
-          <BestiaryAttributes
-            :attributes="enemy.attributes"
-            @show-stat-key-tooltip="showEnemyStatKeyTooltip"
-            @move-stat-tooltip="moveEnemyStatTooltip"
-            @hide-stat-tooltip="hideEnemyStatTooltip"
-          />
-          <BestiaryElements
-            :elements="enemy.elements"
-            @show-stat-key-tooltip="showEnemyStatKeyTooltip"
-            @move-stat-tooltip="moveEnemyStatTooltip"
-            @hide-stat-tooltip="hideEnemyStatTooltip"
-          />
-          <BestiaryConditions
-            :conditions="enemy.conditions"
-            @show-condition-tooltip="showEnemyConditionTooltip"
-            @move-stat-tooltip="moveEnemyStatTooltip"
-            @hide-stat-tooltip="hideEnemyStatTooltip"
-          />
-        </div>
-      </div>
-    </div>
+    <BestiaryInformation
+      v-if="view === 'information'"
+      :enemy="enemy"
+      :enemy-image-url="enemyImageUrl"
+      @open-drops="openDropsView"
+      @show-stat-key-tooltip="showEnemyStatKeyTooltip"
+      @show-condition-tooltip="showEnemyConditionTooltip"
+      @move-stat-tooltip="moveEnemyStatTooltip"
+      @hide-stat-tooltip="hideEnemyStatTooltip"
+    />
+    <BestiaryDropsInformation v-else @back="backToInformationView" />
   </Modal>
 
   <Tooltip

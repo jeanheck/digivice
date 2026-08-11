@@ -9,6 +9,10 @@ const props = defineProps<{
   enemyImageUrl: string | null;
 }>();
 
+const emit = defineEmits<{
+  (e: "open-drops"): void;
+}>();
+
 const { t } = useI18n();
 
 const regularAttackLabel = computed(() => {
@@ -86,7 +90,7 @@ const techniqueLabel = computed(() => {
           </div>
         </div>
 
-        <BestiaryProfileDrops :enemy="enemy" />
+        <BestiaryProfileDrops :enemy="enemy" @open-drops="emit('open-drops')" />
       </div>
     </div>
 

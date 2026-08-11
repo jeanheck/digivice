@@ -8,17 +8,17 @@ const props = defineProps<{
   enemy: EnemyViewModel;
 }>();
 
+const emit = defineEmits<{
+  (e: "open-drops"): void;
+}>();
+
 const { t } = useI18n();
 
 const hasDrop = computed(() => {
   return props.enemy.drop !== undefined;
 });
 
-const isSectorDropList = computed(() => {
-  return Array.isArray(props.enemy.drop);
-});
-
-const stringDropLabel = computed(() => {
+const dropLabel = computed(() => {
   const drop = props.enemy.drop;
   if (drop === undefined) {
     return t("drops.none");
@@ -28,23 +28,16 @@ const stringDropLabel = computed(() => {
     return t(`drops.${drop}`);
   }
 
-  return "";
-});
-
-const sectorDropEntries = computed(() => {
-  const drop = props.enemy.drop;
-  if (!Array.isArray(drop)) {
-    return [] as Array<{ sectorLabel: string; itemLabels: string[] }>;
-  }
-
-  return drop.map((sectorDrop: DropRaw) => {
-    return {
-      sectorLabel: t(`sectors.${sectorDrop.sector}`),
-      itemLabels: sectorDrop.sectorDrops.map((dropId) => {
-        return t(`drops.${dropId}`);
-      }),
-    };
+  const dropIds = drop.flatMap((sectorDrop: DropRaw) => {
+    return sectorDrop.sectorDrops;
   });
+  const uniqueDropIds = [...new Set(dropIds)];
+
+  return uniqueDropIds
+    .map((dropId) => {
+      return t(`drops.${dropId}`);
+    })
+    .join(", ");
 });
 
 const showGuaranteedDropNote = computed(() => {
@@ -52,7 +45,11 @@ const showGuaranteedDropNote = computed(() => {
 });
 
 const handleDropClick = (): void => {
-  // Reserved for future drop detail interaction.
+  if (!hasDrop.value) {
+    return;
+  }
+
+  emit("open-drops");
 };
 </script>
 
@@ -66,8 +63,8 @@ const handleDropClick = (): void => {
     "
     :role="hasDrop ? 'button' : undefined"
     :tabindex="hasDrop ? 0 : undefined"
-    @click="hasDrop ? handleDropClick() : undefined"
-    @keydown.enter="hasDrop ? handleDropClick() : undefined"
+    @click="handleDropClick"
+    @keydown.enter="handleDropClick"
   >
     <h4
       class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center shrink-0"
@@ -76,25 +73,8 @@ const handleDropClick = (): void => {
     </h4>
 
     <div class="flex-1 min-h-0 flex items-center justify-center">
-      <div
-        v-if="isSectorDropList"
-        class="flex flex-col gap-2 text-center text-[10px] 2xl:text-xs"
-      >
-        <div v-for="(entry, index) in sectorDropEntries" :key="index" class="flex flex-col gap-0.5">
-          <span class="font-bold text-blue-400 tracking-wider uppercase">{{
-            entry.sectorLabel
-          }}</span>
-          <span
-            v-for="itemLabel in entry.itemLabels"
-            :key="itemLabel"
-            class="font-bold text-gray-300"
-          >
-            {{ itemLabel }}
-          </span>
-        </div>
-      </div>
-      <span v-else class="font-bold text-gray-300 text-xs 2xl:text-sm text-center">
-        {{ stringDropLabel }}
+      <span class="font-bold text-gray-300 text-xs 2xl:text-sm text-center">
+        {{ dropLabel }}
       </span>
     </div>
 
