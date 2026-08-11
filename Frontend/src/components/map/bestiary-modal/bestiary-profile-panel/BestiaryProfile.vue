@@ -10,7 +10,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "open-drops"): void;
+  (e: "open-drops", dropId: string): void;
 }>();
 
 const { t } = useI18n();
@@ -90,7 +90,7 @@ const techniqueLabel = computed(() => {
           </div>
         </div>
 
-        <BestiaryProfileDrops :enemy="enemy" @open-drops="emit('open-drops')" />
+        <BestiaryProfileDrops :enemy="enemy" @open-drops="emit('open-drops', $event)" />
       </div>
     </div>
 

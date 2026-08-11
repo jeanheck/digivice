@@ -6,6 +6,7 @@ import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = defineProps<{
   enemy: EnemyViewModel;
+  initialDropId: string | null;
 }>();
 
 const emit = defineEmits<{
@@ -34,8 +35,13 @@ const dropIds = computed(() => {
 const selectedDropId = ref<string | null>(null);
 
 watch(
-  dropIds,
-  (ids) => {
+  [dropIds, () => props.initialDropId],
+  ([ids, initialDropId]) => {
+    if (initialDropId !== null && ids.includes(initialDropId)) {
+      selectedDropId.value = initialDropId;
+      return;
+    }
+
     selectedDropId.value = ids[0] ?? null;
   },
   { immediate: true },

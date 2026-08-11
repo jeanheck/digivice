@@ -24,6 +24,7 @@ const { t } = useI18n();
 type BestiaryView = "profile" | "drops";
 
 const selectedEnemyId = ref<string | null>(null);
+const selectedDropId = ref<string | null>(null);
 const view = ref<BestiaryView>("profile");
 
 const isModalOpen = computed(() => {
@@ -36,15 +37,18 @@ const handleClose = () => {
 
 const handleSearchSelect = (id: string) => {
   selectedEnemyId.value = id;
+  selectedDropId.value = null;
   view.value = "profile";
 };
 
-const openDropsView = () => {
+const openDropsView = (dropId: string) => {
   hide();
+  selectedDropId.value = dropId;
   view.value = "drops";
 };
 
 const backToProfileView = () => {
+  selectedDropId.value = null;
   view.value = "profile";
 };
 
@@ -82,17 +86,20 @@ watch(
   (open) => {
     if (open) {
       selectedEnemyId.value = props.enemyId;
+      selectedDropId.value = null;
       view.value = "profile";
       return;
     }
 
     hide();
     selectedEnemyId.value = null;
+    selectedDropId.value = null;
     view.value = "profile";
   },
 );
 
 watch(selectedEnemyId, () => {
+  selectedDropId.value = null;
   view.value = "profile";
 });
 
@@ -140,7 +147,12 @@ const enemyImageUrl = computed(() => {
       @move-stat-tooltip="moveEnemyStatTooltip"
       @hide-stat-tooltip="hideEnemyStatTooltip"
     />
-    <BestiaryDropsPanel v-else :enemy="enemy" @back="backToProfileView" />
+    <BestiaryDropsPanel
+      v-else
+      :enemy="enemy"
+      :initial-drop-id="selectedDropId"
+      @back="backToProfileView"
+    />
   </Modal>
 
   <Tooltip
