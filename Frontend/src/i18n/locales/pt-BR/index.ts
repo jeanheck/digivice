@@ -11,6 +11,7 @@ import digimon from "./digimon.json";
 import stat from "./stat.json";
 import equipments from "./equipment/equipment.json";
 import equipmentType from "./equipment/equipment-type.json";
+import consumableItems from "./consumable-item/consumable-item.json";
 import location from "./location.json";
 import technique from "./digievolution/technique.json";
 import digivolution from "./digievolution/digievolution.json";
@@ -51,6 +52,7 @@ export default {
   ...stat,
   ...equipments,
   ...equipmentType,
+  ...consumableItems,
   ...location,
   ...technique,
   ...digivolution,

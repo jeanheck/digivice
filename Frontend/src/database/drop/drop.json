@@ -28,36 +28,36 @@
     "type": "equipment"
   },
   "chaosWave": {
-    "id": null,
-    "type": null
+    "id": 425,
+    "type": "consumableItem"
   },
   "charismaChip": {
     "id": 402,
     "type": "consumableItem"
   },
   "charmGas": {
-    "id": null,
-    "type": null
+    "id": 426,
+    "type": "consumableItem"
   },
   "counterCrest": {
     "id": 318,
     "type": "equipment"
   },
   "crimsonCable": {
-    "id": null,
-    "type": null
+    "id": 427,
+    "type": "consumableItem"
   },
   "cursedPuppet": {
-    "id": null,
-    "type": null
+    "id": 428,
+    "type": "consumableItem"
   },
   "danceFeather": {
-    "id": null,
-    "type": null
+    "id": 333,
+    "type": "equipment"
   },
   "danceWing": {
-    "id": null,
-    "type": null
+    "id": 334,
+    "type": "equipment"
   },
   "darkPower1": {
     "id": 357,
@@ -112,20 +112,20 @@
     "type": "equipment"
   },
   "hackSystem": {
-    "id": null,
-    "type": null
+    "id": 328,
+    "type": "equipment"
   },
   "hpChip": {
     "id": 405,
     "type": "consumableItem"
   },
   "hpMegaProxy": {
-    "id": null,
-    "type": null
+    "id": 326,
+    "type": "equipment"
   },
   "hpProxy": {
-    "id": null,
-    "type": null
+    "id": 325,
+    "type": "equipment"
   },
   "iceChip": {
     "id": 406,
@@ -180,12 +180,12 @@
     "type": "consumableItem"
   },
   "mpMegaProxy": {
-    "id": null,
-    "type": null
+    "id": 324,
+    "type": "equipment"
   },
   "mpProxy": {
-    "id": null,
-    "type": null
+    "id": 323,
+    "type": "equipment"
   },
   "multiCrest": {
     "id": 316,

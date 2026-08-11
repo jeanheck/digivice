@@ -1,0 +1,120 @@
+{
+  "consumableItems": {
+    "400": {
+      "name": "Armor Chip",
+      "note": ""
+    },
+    "401": {
+      "name": "Boost Chip",
+      "note": ""
+    },
+    "402": {
+      "name": "Charisma Chip",
+      "note": ""
+    },
+    "403": {
+      "name": "Devil Chip",
+      "note": ""
+    },
+    "404": {
+      "name": "Fire Chip",
+      "note": ""
+    },
+    "405": {
+      "name": "HP Chip",
+      "note": ""
+    },
+    "406": {
+      "name": "Ice Chip",
+      "note": ""
+    },
+    "407": {
+      "name": "Max Charge",
+      "note": ""
+    },
+    "408": {
+      "name": "Metal Chip",
+      "note": ""
+    },
+    "409": {
+      "name": "Mind Chip",
+      "note": ""
+    },
+    "410": {
+      "name": "MP Chip",
+      "note": ""
+    },
+    "411": {
+      "name": "Power Charge",
+      "note": ""
+    },
+    "412": {
+      "name": "Power Chip",
+      "note": ""
+    },
+    "413": {
+      "name": "Spider Web",
+      "note": ""
+    },
+    "414": {
+      "name": "Super Charge",
+      "note": ""
+    },
+    "415": {
+      "name": "Thunder Chip",
+      "note": ""
+    },
+    "416": {
+      "name": "TNT Ball",
+      "note": ""
+    },
+    "417": {
+      "name": "Train Chip 1",
+      "note": ""
+    },
+    "418": {
+      "name": "Train Chip 2",
+      "note": ""
+    },
+    "419": {
+      "name": "Train Chip 3",
+      "note": ""
+    },
+    "420": {
+      "name": "Train Chip V",
+      "note": ""
+    },
+    "421": {
+      "name": "Ultra Charge",
+      "note": ""
+    },
+    "422": {
+      "name": "Water Chip",
+      "note": ""
+    },
+    "423": {
+      "name": "Wind Chip",
+      "note": ""
+    },
+    "424": {
+      "name": "Wisdom Chip",
+      "note": ""
+    },
+    "425": {
+      "name": "Chaos Wave",
+      "note": ""
+    },
+    "426": {
+      "name": "Charm Gas",
+      "note": ""
+    },
+    "427": {
+      "name": "Crimson Cable",
+      "note": ""
+    },
+    "428": {
+      "name": "Cursed Puppet",
+      "note": ""
+    }
+  }
+}

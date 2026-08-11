@@ -21,7 +21,8 @@
     "resaleValue": 0
   },
   "407": {
-    "resaleValue": 0
+    "resaleValue": 0,
+    "soldInStore": true
   },
   "408": {
     "resaleValue": 0
@@ -33,7 +34,8 @@
     "resaleValue": 0
   },
   "411": {
-    "resaleValue": 0
+    "resaleValue": 0,
+    "soldInStore": true
   },
   "412": {
     "resaleValue": 0
@@ -42,7 +44,8 @@
     "resaleValue": 0
   },
   "414": {
-    "resaleValue": 0
+    "resaleValue": 0,
+    "soldInStore": true
   },
   "415": {
     "resaleValue": 0
@@ -63,7 +66,8 @@
     "resaleValue": 0
   },
   "421": {
-    "resaleValue": 0
+    "resaleValue": 0,
+    "soldInStore": true
   },
   "422": {
     "resaleValue": 0
@@ -72,6 +76,18 @@
     "resaleValue": 0
   },
   "424": {
+    "resaleValue": 0
+  },
+  "425": {
+    "resaleValue": 0
+  },
+  "426": {
+    "resaleValue": 0
+  },
+  "427": {
+    "resaleValue": 0
+  },
+  "428": {
     "resaleValue": 0
   }
 }

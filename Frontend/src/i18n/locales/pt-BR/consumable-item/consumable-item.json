@@ -1,0 +1,120 @@
+{
+  "consumableItems": {
+    "400": {
+      "name": "Chip Armadura",
+      "note": ""
+    },
+    "401": {
+      "name": "Boost Chip",
+      "note": ""
+    },
+    "402": {
+      "name": "Charisma Chip",
+      "note": ""
+    },
+    "403": {
+      "name": "Devil Chip",
+      "note": ""
+    },
+    "404": {
+      "name": "Chip Fogo",
+      "note": ""
+    },
+    "405": {
+      "name": "HP Chip",
+      "note": ""
+    },
+    "406": {
+      "name": "Ice Chip",
+      "note": ""
+    },
+    "407": {
+      "name": "Max Charge",
+      "note": ""
+    },
+    "408": {
+      "name": "Metal Chip",
+      "note": ""
+    },
+    "409": {
+      "name": "Mind Chip",
+      "note": ""
+    },
+    "410": {
+      "name": "Chip MP",
+      "note": ""
+    },
+    "411": {
+      "name": "Carga Energia",
+      "note": ""
+    },
+    "412": {
+      "name": "Chip Poder",
+      "note": ""
+    },
+    "413": {
+      "name": "Teia de Aranha",
+      "note": ""
+    },
+    "414": {
+      "name": "Super Carga",
+      "note": ""
+    },
+    "415": {
+      "name": "Chip Elétrico",
+      "note": ""
+    },
+    "416": {
+      "name": "Bola TNT",
+      "note": ""
+    },
+    "417": {
+      "name": "Train Chip 1",
+      "note": ""
+    },
+    "418": {
+      "name": "Train Chip 2",
+      "note": ""
+    },
+    "419": {
+      "name": "Train Chip 3",
+      "note": ""
+    },
+    "420": {
+      "name": "Train Chip V",
+      "note": ""
+    },
+    "421": {
+      "name": "Ultra Charge",
+      "note": ""
+    },
+    "422": {
+      "name": "Chip Aquático",
+      "note": ""
+    },
+    "423": {
+      "name": "Wind Chip",
+      "note": ""
+    },
+    "424": {
+      "name": "Chip Sabedoria",
+      "note": ""
+    },
+    "425": {
+      "name": "Onda Caos",
+      "note": ""
+    },
+    "426": {
+      "name": "Charm Gas",
+      "note": ""
+    },
+    "427": {
+      "name": "Crimson Cable",
+      "note": ""
+    },
+    "428": {
+      "name": "Cursed Puppet",
+      "note": ""
+    }
+  }
+}
