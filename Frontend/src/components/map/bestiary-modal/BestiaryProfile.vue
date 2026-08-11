@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
+import BestiaryProfileDrops from "@/components/map/bestiary-modal/BestiaryProfileDrops.vue";
 
 const props = defineProps<{
   enemy: EnemyViewModel;
@@ -9,19 +10,6 @@ const props = defineProps<{
 }>();
 
 const { t } = useI18n();
-
-const dropLabel = computed(() => {
-  const drop = props.enemy.drop;
-  if (drop === undefined) {
-    return t("drops.none");
-  }
-
-  if (typeof drop === "string") {
-    return t(`drops.${drop}`);
-  }
-
-  return t("drops.variousBooster");
-});
 
 const regularAttackLabel = computed(() => {
   if (!props.enemy.regularAttackId) {
@@ -42,9 +30,9 @@ const techniqueLabel = computed(() => {
 
 <template>
   <div class="flex flex-col gap-4 flex-1">
-    <div class="flex gap-4">
+    <div class="flex gap-4 h-72 shrink-0">
       <div
-        class="w-1/2 aspect-square self-start shrink-0 bg-[#000a1a] border border-blue-900/50 rounded flex items-center justify-center shadow-inner relative group overflow-hidden"
+        class="w-1/2 h-full shrink-0 bg-[#000a1a] border border-blue-900/50 rounded flex items-center justify-center shadow-inner relative group overflow-hidden"
       >
         <div
           class="absolute inset-0 opacity-10 bg-linear-to-br from-blue-500/20 to-transparent pointer-events-none"
@@ -58,60 +46,47 @@ const techniqueLabel = computed(() => {
         <div v-else class="text-4xl opacity-30 select-none">❓</div>
       </div>
 
-      <div
-        class="w-1/2 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5"
-      >
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.specie") }}:</span
-          >
-          <span class="font-bold text-gray-300 capitalize">{{
-            $t(`species.${enemy.species}`)
-          }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.level") }}:</span
-          >
-          <span class="font-bold text-gray-300">{{ enemy.level }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">HP:</span>
-          <span class="font-bold text-white">{{ enemy.hp }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.baseExp") }}:</span
-          >
-          <span class="font-bold text-gray-300">{{ enemy.exp }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.baseBits") }}:</span
-          >
-          <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-[10px]">
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.drop") }}:</span
-          >
-          <span class="font-bold text-gray-300">{{ dropLabel }}</span>
-        </div>
-
+      <div class="w-1/2 h-full flex flex-col gap-4 min-h-0">
         <div
-          v-if="enemy.boss && enemy.drop"
-          class="flex items-center justify-between text-[10px]"
+          class="shrink-0 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5"
         >
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.dropRate") }}:</span
-          >
-          <span class="font-bold text-gray-300">100%</span>
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-blue-500 tracking-wider uppercase"
+              >{{ $t("enemy.specie") }}:</span
+            >
+            <span class="font-bold text-gray-300 capitalize">{{
+              $t(`species.${enemy.species}`)
+            }}</span>
+          </div>
+
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-blue-500 tracking-wider uppercase"
+              >{{ $t("enemy.level") }}:</span
+            >
+            <span class="font-bold text-gray-300">{{ enemy.level }}</span>
+          </div>
+
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-blue-500 tracking-wider uppercase">HP:</span>
+            <span class="font-bold text-white">{{ enemy.hp }}</span>
+          </div>
+
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-blue-500 tracking-wider uppercase"
+              >{{ $t("enemy.baseExp") }}:</span
+            >
+            <span class="font-bold text-gray-300">{{ enemy.exp }}</span>
+          </div>
+
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-blue-500 tracking-wider uppercase"
+              >{{ $t("enemy.baseBits") }}:</span
+            >
+            <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
+          </div>
         </div>
+
+        <BestiaryProfileDrops :enemy="enemy" />
       </div>
     </div>
 
