@@ -1,26 +1,26 @@
 {
   "armorChip": {
-    "id": null,
+    "id": 400,
     "type": "consumableItem"
   },
   "binderCrest": {
-    "id": null,
+    "id": 319,
     "type": "equipment"
   },
   "boltPower1": {
-    "id": null,
+    "id": 351,
     "type": "equipment"
   },
   "boltPower2": {
-    "id": null,
+    "id": 352,
     "type": "equipment"
   },
   "boltPowerS": {
-    "id": null,
+    "id": 353,
     "type": "equipment"
   },
   "boostChip": {
-    "id": null,
+    "id": 401,
     "type": "consumableItem"
   },
   "chainSaw": {
@@ -32,7 +32,7 @@
     "type": null
   },
   "charismaChip": {
-    "id": null,
+    "id": 402,
     "type": "consumableItem"
   },
   "charmGas": {
@@ -40,7 +40,7 @@
     "type": null
   },
   "counterCrest": {
-    "id": null,
+    "id": 318,
     "type": "equipment"
   },
   "crimsonCable": {
@@ -60,19 +60,19 @@
     "type": null
   },
   "darkPower1": {
-    "id": null,
+    "id": 357,
     "type": "equipment"
   },
   "darkPower2": {
-    "id": null,
+    "id": 358,
     "type": "equipment"
   },
   "darkPowerS": {
-    "id": null,
+    "id": 359,
     "type": "equipment"
   },
   "devilChip": {
-    "id": null,
+    "id": 403,
     "type": "consumableItem"
   },
   "drillHorn": {
@@ -80,19 +80,19 @@
     "type": "equipment"
   },
   "fireChip": {
-    "id": null,
+    "id": 404,
     "type": "consumableItem"
   },
   "firePower1": {
-    "id": null,
+    "id": 339,
     "type": "equipment"
   },
   "firePower2": {
-    "id": null,
+    "id": 340,
     "type": "equipment"
   },
   "firePowerS": {
-    "id": null,
+    "id": 341,
     "type": "equipment"
   },
   "ghostFang": {
@@ -116,7 +116,7 @@
     "type": null
   },
   "hpChip": {
-    "id": null,
+    "id": 405,
     "type": "consumableItem"
   },
   "hpMegaProxy": {
@@ -128,55 +128,55 @@
     "type": null
   },
   "iceChip": {
-    "id": null,
+    "id": 406,
     "type": "consumableItem"
   },
   "icePower1": {
-    "id": null,
+    "id": 345,
     "type": "equipment"
   },
   "icePower2": {
-    "id": null,
+    "id": 346,
     "type": "equipment"
   },
   "icePowerS": {
-    "id": null,
+    "id": 347,
     "type": "equipment"
   },
   "machinegun": {
-    "id": null,
+    "id": 121,
     "type": "equipment"
   },
   "magicianRod": {
-    "id": null,
+    "id": 133,
     "type": "equipment"
   },
   "maxCharge": {
-    "id": null,
+    "id": 407,
     "type": "consumableItem"
   },
   "metalChip": {
-    "id": null,
+    "id": 408,
     "type": "consumableItem"
   },
   "metalPower1": {
-    "id": null,
+    "id": 354,
     "type": "equipment"
   },
   "metalPower2": {
-    "id": null,
+    "id": 355,
     "type": "equipment"
   },
   "metalPowerS": {
-    "id": null,
+    "id": 356,
     "type": "equipment"
   },
   "mindChip": {
-    "id": null,
+    "id": 409,
     "type": "consumableItem"
   },
   "mpChip": {
-    "id": null,
+    "id": 410,
     "type": "consumableItem"
   },
   "mpMegaProxy": {
@@ -188,19 +188,19 @@
     "type": null
   },
   "multiCrest": {
-    "id": null,
+    "id": 316,
     "type": "equipment"
   },
   "naginata": {
-    "id": null,
+    "id": 184,
     "type": "equipment"
   },
   "oldClaw": {
-    "id": null,
+    "id": 153,
     "type": "equipment"
   },
   "oldWand": {
-    "id": null,
+    "id": 141,
     "type": "equipment"
   },
   "overClocked": {
@@ -216,11 +216,11 @@
     "type": "equipment"
   },
   "powerCharge": {
-    "id": null,
+    "id": 411,
     "type": "consumableItem"
   },
   "powerChip": {
-    "id": null,
+    "id": 412,
     "type": "consumableItem"
   },
   "pulseGuard": {
@@ -228,7 +228,7 @@
     "type": "equipment"
   },
   "recoverCrest": {
-    "id": null,
+    "id": 320,
     "type": "equipment"
   },
   "runnerSandal": {
@@ -240,51 +240,51 @@
     "type": "equipment"
   },
   "rustyGlove": {
-    "id": null,
+    "id": 116,
     "type": "equipment"
   },
   "rustyKatana": {
-    "id": null,
+    "id": 102,
     "type": "equipment"
   },
   "rustyRifle": {
-    "id": null,
+    "id": 128,
     "type": "equipment"
   },
   "searchCrest": {
-    "id": null,
+    "id": 317,
     "type": "equipment"
   },
   "spiderWeb": {
-    "id": null,
+    "id": 413,
     "type": "consumableItem"
   },
   "superCharge": {
-    "id": null,
+    "id": 414,
     "type": "consumableItem"
   },
   "thunderChip": {
-    "id": null,
+    "id": 415,
     "type": "consumableItem"
   },
   "tntBall": {
-    "id": null,
+    "id": 416,
     "type": "consumableItem"
   },
   "trainChip1": {
-    "id": null,
+    "id": 417,
     "type": "consumableItem"
   },
   "trainChip2": {
-    "id": null,
+    "id": 418,
     "type": "consumableItem"
   },
   "trainChip3": {
-    "id": null,
+    "id": 419,
     "type": "consumableItem"
   },
   "trainChipV": {
-    "id": null,
+    "id": 420,
     "type": "consumableItem"
   },
   "trainingBook": {
@@ -292,43 +292,43 @@
     "type": "equipment"
   },
   "ultraCharge": {
-    "id": null,
+    "id": 421,
     "type": "consumableItem"
   },
   "waterChip": {
-    "id": null,
+    "id": 422,
     "type": "consumableItem"
   },
   "waterPower1": {
-    "id": null,
+    "id": 342,
     "type": "equipment"
   },
   "waterPower2": {
-    "id": null,
+    "id": 343,
     "type": "equipment"
   },
   "waterPowerS": {
-    "id": null,
+    "id": 344,
     "type": "equipment"
   },
   "windChip": {
-    "id": null,
+    "id": 423,
     "type": "consumableItem"
   },
   "windPower1": {
-    "id": null,
+    "id": 348,
     "type": "equipment"
   },
   "windPower2": {
-    "id": null,
+    "id": 349,
     "type": "equipment"
   },
   "windPowerS": {
-    "id": null,
+    "id": 350,
     "type": "equipment"
   },
   "wisdomChip": {
-    "id": null,
+    "id": 424,
     "type": "consumableItem"
   }
 }
