@@ -62,7 +62,7 @@ export class EnemyConverter {
       dvxp: enemyRaw.dvxp,
       exp: enemyRaw.exp,
       bits: enemyRaw.bits,
-      dropId: enemyRaw.dropId,
+      drop: enemyRaw.drop,
       regularAttackId: enemyRaw.regularAttackId,
       techniqueId: enemyRaw.techniqueId,
       boss: enemyRaw.boss,

@@ -1,3 +1,5 @@
+import type { DropRaw } from "./drop.raw";
+
 export interface EnemyRaw {
   name: string;
   level: number;
@@ -35,7 +37,7 @@ export interface EnemyRaw {
   dvxp: number;
   exp: number;
   bits: number;
-  dropId: string | null;
+  drop?: string | DropRaw[];
   regularAttackId: string | null;
   techniqueId: string | null;
   boss: boolean;

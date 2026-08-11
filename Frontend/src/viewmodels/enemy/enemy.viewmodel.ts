@@ -1,3 +1,5 @@
+import type { DropRaw } from "@/repositories/tables/raws/enemy/drop.raw";
+
 export interface EnemyViewModel {
   name: string;
   level: number;
@@ -57,7 +59,7 @@ export interface EnemyViewModel {
   dvxp: number;
   exp: number;
   bits: number;
-  dropId: string | null;
+  drop?: string | DropRaw[];
   regularAttackId: string | null;
   techniqueId: string | null;
   boss: boolean;

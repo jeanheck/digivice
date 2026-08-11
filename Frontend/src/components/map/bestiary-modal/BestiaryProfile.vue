@@ -11,11 +11,16 @@ const props = defineProps<{
 const { t } = useI18n();
 
 const dropLabel = computed(() => {
-  if (!props.enemy.dropId) {
+  const drop = props.enemy.drop;
+  if (drop === undefined) {
     return t("drops.none");
   }
 
-  return t(`drops.${props.enemy.dropId}`);
+  if (typeof drop === "string") {
+    return t(`drops.${drop}`);
+  }
+
+  return t("drops.variousBooster");
 });
 
 const regularAttackLabel = computed(() => {
@@ -99,7 +104,7 @@ const techniqueLabel = computed(() => {
         </div>
 
         <div
-          v-if="enemy.boss && enemy.dropId"
+          v-if="enemy.boss && enemy.drop"
           class="flex items-center justify-between text-[10px]"
         >
           <span class="font-bold text-blue-500 tracking-wider uppercase"

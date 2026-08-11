@@ -37,10 +37,10 @@
     "exp": 120,
     "bits": 240,
     "boss": true,
-    "dropId": "oldWand",
     "regularAttackId": "noElement",
     "techniqueId": "necromist",
-    "memoryId": 358
+    "memoryId": 358,
+    "drop": "oldWand"
   },
   "2": {
     "name": "MasterTyrannomon",
@@ -80,10 +80,10 @@
     "exp": 140,
     "bits": 280,
     "boss": true,
-    "dropId": "oldClaw",
     "regularAttackId": "noElement",
     "techniqueId": "masterFire",
-    "memoryId": 124
+    "memoryId": 124,
+    "drop": "oldClaw"
   },
   "14": {
     "name": "HiAndromon",
@@ -123,10 +123,10 @@
     "exp": 325,
     "bits": 500,
     "boss": true,
-    "dropId": "rustyRifle",
     "regularAttackId": "machineElement",
     "techniqueId": "atomicRay",
-    "memoryId": 356
+    "memoryId": 356,
+    "drop": "rustyRifle"
   },
   "15": {
     "name": "WaruMonzaemon",
@@ -166,7 +166,6 @@
     "exp": 320,
     "bits": 740,
     "boss": true,
-    "dropId": null,
     "regularAttackId": "darkElement",
     "techniqueId": "heartBreakAttack",
     "memoryId": 70
@@ -209,10 +208,10 @@
     "exp": 340,
     "bits": 1000,
     "boss": true,
-    "dropId": "rustyGlove",
     "regularAttackId": "machineElement",
     "techniqueId": "autoRecover",
-    "memoryId": 141
+    "memoryId": 141,
+    "drop": "rustyGlove"
   },
   "20": {
     "name": "Zanbamon",
@@ -252,10 +251,10 @@
     "exp": 380,
     "bits": 800,
     "boss": true,
-    "dropId": "rustyKatana",
     "regularAttackId": null,
     "techniqueId": null,
-    "memoryId": 337
+    "memoryId": 337,
+    "drop": "rustyKatana"
   },
   "21": {
     "name": "Bulbmon",
@@ -295,7 +294,6 @@
     "exp": 0,
     "bits": 0,
     "boss": true,
-    "dropId": null,
     "regularAttackId": "machineElement",
     "techniqueId": "madPump",
     "memoryId": 436
@@ -338,7 +336,6 @@
     "exp": 6,
     "bits": 10,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 32
@@ -381,7 +378,6 @@
     "exp": 5,
     "bits": 20,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 206
@@ -424,7 +420,6 @@
     "exp": 17,
     "bits": 30,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 197
@@ -467,7 +462,6 @@
     "exp": 19,
     "bits": 40,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 132
@@ -510,10 +504,10 @@
     "exp": 39,
     "bits": 80,
     "boss": false,
-    "dropId": "darkPower1",
     "regularAttackId": "noElement",
     "techniqueId": "energySuck",
-    "memoryId": 217
+    "memoryId": 217,
+    "drop": "darkPower1"
   },
   "76": {
     "name": "Betamon",
@@ -553,10 +547,10 @@
     "exp": 10,
     "bits": 25,
     "boss": false,
-    "dropId": "powerCharge",
     "regularAttackId": "thunderElement",
     "techniqueId": "none",
-    "memoryId": 4
+    "memoryId": 4,
+    "drop": "powerCharge"
   },
   "77": {
     "name": "Vegiemon",
@@ -596,7 +590,6 @@
     "exp": 20,
     "bits": 40,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 25
@@ -639,7 +632,6 @@
     "exp": 11,
     "bits": 20,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 51
@@ -682,7 +674,6 @@
     "exp": 16,
     "bits": 30,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 67
@@ -725,7 +716,6 @@
     "exp": 15,
     "bits": 35,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 198
@@ -768,10 +758,10 @@
     "exp": 21,
     "bits": 40,
     "boss": false,
-    "dropId": "spiderWeb",
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
-    "memoryId": 166
+    "memoryId": 166,
+    "drop": "spiderWeb"
   },
   "82": {
     "name": "Goburimon",
@@ -811,7 +801,6 @@
     "exp": 22,
     "bits": 45,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 80
@@ -854,7 +843,6 @@
     "exp": 80,
     "bits": 160,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 277
@@ -897,7 +885,6 @@
     "exp": 27,
     "bits": 55,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 172
@@ -940,7 +927,6 @@
     "exp": 66,
     "bits": 130,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 137
@@ -983,7 +969,6 @@
     "exp": 25,
     "bits": 50,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 222
@@ -1026,10 +1011,10 @@
     "exp": 31,
     "bits": 60,
     "boss": false,
-    "dropId": "firePower1",
     "regularAttackId": "fireElement",
     "techniqueId": "none",
-    "memoryId": 8
+    "memoryId": 8,
+    "drop": "firePower1"
   },
   "88": {
     "name": "Triceramon",
@@ -1069,10 +1054,10 @@
     "exp": 30,
     "bits": 60,
     "boss": false,
-    "dropId": "tntBall",
     "regularAttackId": "fireElement",
     "techniqueId": "none",
-    "memoryId": 203
+    "memoryId": 203,
+    "drop": "tntBall"
   },
   "89": {
     "name": "Airdramon",
@@ -1112,10 +1097,10 @@
     "exp": 29,
     "bits": 70,
     "boss": false,
-    "dropId": "fireChip",
     "regularAttackId": "noElement",
     "techniqueId": "airBlast",
-    "memoryId": 7
+    "memoryId": 7,
+    "drop": "fireChip"
   },
   "90": {
     "name": "Gekomon",
@@ -1155,10 +1140,10 @@
     "exp": 41,
     "bits": 85,
     "boss": false,
-    "dropId": "icePower1",
     "regularAttackId": "noElement",
     "techniqueId": "confuseGas",
-    "memoryId": 110
+    "memoryId": 110,
+    "drop": "icePower1"
   },
   "91": {
     "name": "Coelamon",
@@ -1198,10 +1183,10 @@
     "exp": 40,
     "bits": 80,
     "boss": false,
-    "dropId": "waterChip",
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 49
+    "memoryId": 49,
+    "drop": "waterChip"
   },
   "92": {
     "name": "Bakemon",
@@ -1241,7 +1226,6 @@
     "exp": 46,
     "bits": 90,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 37
@@ -1284,10 +1268,10 @@
     "exp": 154,
     "bits": 310,
     "boss": false,
-    "dropId": "ghostFang",
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "ghostFang"
   },
   "94": {
     "name": "Kokatorimon",
@@ -1327,7 +1311,6 @@
     "exp": 96,
     "bits": 160,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 50
@@ -1370,10 +1353,10 @@
     "exp": 50,
     "bits": 190,
     "boss": false,
-    "dropId": "windPower1",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 207
+    "memoryId": 207,
+    "drop": "windPower1"
   },
   "96": {
     "name": "Shellmon",
@@ -1413,10 +1396,10 @@
     "exp": 91,
     "bits": 180,
     "boss": false,
-    "dropId": "waterChip",
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 35
+    "memoryId": 35,
+    "drop": "waterChip"
   },
   "97": {
     "name": "Tortomon",
@@ -1456,7 +1439,6 @@
     "exp": 145,
     "bits": 290,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "divineRain",
     "memoryId": 208
@@ -1499,7 +1481,6 @@
     "exp": 98,
     "bits": 200,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "divineRain",
     "memoryId": 210
@@ -1542,10 +1523,10 @@
     "exp": 136,
     "bits": 240,
     "boss": false,
-    "dropId": "runnerSandal",
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 220
+    "memoryId": 220,
+    "drop": "runnerSandal"
   },
   "100": {
     "name": "Octomon",
@@ -1585,7 +1566,6 @@
     "exp": 200,
     "bits": 400,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -1628,7 +1608,6 @@
     "exp": 118,
     "bits": 200,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 241
@@ -1671,10 +1650,10 @@
     "exp": 101,
     "bits": 490,
     "boss": false,
-    "dropId": "chaosWave",
     "regularAttackId": "noElement",
     "techniqueId": "confuseGas",
-    "memoryId": 119
+    "memoryId": 119,
+    "drop": "chaosWave"
   },
   "103": {
     "name": "Seadramon",
@@ -1714,10 +1693,10 @@
     "exp": 58,
     "bits": 120,
     "boss": false,
-    "dropId": "waterPower1",
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 10
+    "memoryId": 10,
+    "drop": "waterPower1"
   },
   "104": {
     "name": "Mammothmon",
@@ -1757,10 +1736,10 @@
     "exp": 116,
     "bits": 220,
     "boss": false,
-    "dropId": "hpProxy",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 212
+    "memoryId": 212,
+    "drop": "hpProxy"
   },
   "105": {
     "name": "Etemon",
@@ -1800,10 +1779,10 @@
     "exp": 100,
     "bits": 205,
     "boss": false,
-    "dropId": "superCharge",
     "regularAttackId": "noElement",
     "techniqueId": "smallHeal",
-    "memoryId": 42
+    "memoryId": 42,
+    "drop": "superCharge"
   },
   "106": {
     "name": "Ogremon",
@@ -1843,10 +1822,10 @@
     "exp": 102,
     "bits": 200,
     "boss": false,
-    "dropId": "powerChip",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 34
+    "memoryId": 34,
+    "drop": "powerChip"
   },
   "107": {
     "name": "Tuskmon",
@@ -1886,10 +1865,10 @@
     "exp": 112,
     "bits": 200,
     "boss": false,
-    "dropId": "counterCrest",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 136
+    "memoryId": 136,
+    "drop": "counterCrest"
   },
   "108": {
     "name": "Rockmon",
@@ -1929,7 +1908,6 @@
     "exp": 220,
     "bits": 400,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "doubleGuard",
     "memoryId": 0
@@ -1972,7 +1950,6 @@
     "exp": 223,
     "bits": 440,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -2015,10 +1992,10 @@
     "exp": 109,
     "bits": 220,
     "boss": false,
-    "dropId": "boltPower1",
     "regularAttackId": "thunderElementChanceOfSleep",
     "techniqueId": "none",
-    "memoryId": 28
+    "memoryId": 28,
+    "drop": "boltPower1"
   },
   "111": {
     "name": "Maildramon",
@@ -2058,10 +2035,10 @@
     "exp": 110,
     "bits": 225,
     "boss": false,
-    "dropId": "thunderChip",
     "regularAttackId": "noElement",
     "techniqueId": "thunderbolt",
-    "memoryId": 334
+    "memoryId": 334,
+    "drop": "thunderChip"
   },
   "112": {
     "name": "Mamemon",
@@ -2101,10 +2078,10 @@
     "exp": 125,
     "bits": 250,
     "boss": false,
-    "dropId": "searchCrest",
     "regularAttackId": "machineElementChanceOfFreeze",
     "techniqueId": "none",
-    "memoryId": 13
+    "memoryId": 13,
+    "drop": "searchCrest"
   },
   "113": {
     "name": "Guardromon (blue)",
@@ -2144,7 +2121,6 @@
     "exp": 147,
     "bits": 290,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -2187,10 +2163,10 @@
     "exp": 115,
     "bits": 235,
     "boss": false,
-    "dropId": "pulseGuard",
     "regularAttackId": "thunderElement",
     "techniqueId": "thunderGemini",
-    "memoryId": 176
+    "memoryId": 176,
+    "drop": "pulseGuard"
   },
   "115": {
     "name": "Hagurumon",
@@ -2230,10 +2206,10 @@
     "exp": 117,
     "bits": 230,
     "boss": false,
-    "dropId": "metalPower1",
     "regularAttackId": "machineElement",
     "techniqueId": "speedUp",
-    "memoryId": 122
+    "memoryId": 122,
+    "drop": "metalPower1"
   },
   "116": {
     "name": "Clockmon",
@@ -2273,10 +2249,10 @@
     "exp": 123,
     "bits": 250,
     "boss": false,
-    "dropId": "multiCrest",
     "regularAttackId": "noElement",
     "techniqueId": "magicMissile",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "multiCrest"
   },
   "117": {
     "name": "Andromon",
@@ -2316,10 +2292,10 @@
     "exp": 120,
     "bits": 200,
     "boss": false,
-    "dropId": "machinegun",
     "regularAttackId": "thunderElementChanceOfFreeze",
     "techniqueId": "none",
-    "memoryId": 40
+    "memoryId": 40,
+    "drop": "machinegun"
   },
   "118": {
     "name": "Numemon",
@@ -2359,10 +2335,10 @@
     "exp": 124,
     "bits": 300,
     "boss": false,
-    "dropId": "binderCrest",
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 11
+    "memoryId": 11,
+    "drop": "binderCrest"
   },
   "119": {
     "name": "Sukamon",
@@ -2402,10 +2378,10 @@
     "exp": 129,
     "bits": 190,
     "boss": false,
-    "dropId": "wisdomChip",
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 39
+    "memoryId": 39,
+    "drop": "wisdomChip"
   },
   "120": {
     "name": "Garbagemon",
@@ -2445,10 +2421,10 @@
     "exp": 235,
     "bits": 470,
     "boss": false,
-    "dropId": "goggles",
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "goggles"
   },
   "121": {
     "name": "Roachmon",
@@ -2488,7 +2464,6 @@
     "exp": 234,
     "bits": 100,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -2531,10 +2506,10 @@
     "exp": 135,
     "bits": 270,
     "boss": false,
-    "dropId": "armorChip",
     "regularAttackId": "noElement",
     "techniqueId": "paralyzeShock",
-    "memoryId": 139
+    "memoryId": 139,
+    "drop": "armorChip"
   },
   "123": {
     "name": "Cyclonemon",
@@ -2574,10 +2549,10 @@
     "exp": 134,
     "bits": 270,
     "boss": false,
-    "dropId": "wisdomChip",
     "regularAttackId": "noElement",
     "techniqueId": "twinMissile",
-    "memoryId": 134
+    "memoryId": 134,
+    "drop": "wisdomChip"
   },
   "124": {
     "name": "Megadramon",
@@ -2617,7 +2592,6 @@
     "exp": 233,
     "bits": 450,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -2660,7 +2634,6 @@
     "exp": 145,
     "bits": 320,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "lovelyCharm",
     "memoryId": 14
@@ -2703,7 +2676,6 @@
     "exp": 152,
     "bits": 300,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -2746,7 +2718,6 @@
     "exp": 146,
     "bits": 280,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 53
@@ -2789,10 +2760,10 @@
     "exp": 155,
     "bits": 330,
     "boss": false,
-    "dropId": "mpChip",
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 173
+    "memoryId": 173,
+    "drop": "mpChip"
   },
   "129": {
     "name": "Kurisarimon",
@@ -2832,10 +2803,10 @@
     "exp": 225,
     "bits": 770,
     "boss": false,
-    "dropId": "drillHorn",
     "regularAttackId": "noElement",
     "techniqueId": "confuseNebula",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "drillHorn"
   },
   "130": {
     "name": "Snimon",
@@ -2875,7 +2846,6 @@
     "exp": 215,
     "bits": 420,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -2918,7 +2888,6 @@
     "exp": 168,
     "bits": 340,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -2961,10 +2930,10 @@
     "exp": 189,
     "bits": 380,
     "boss": false,
-    "dropId": "recoverCrest",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "recoverCrest"
   },
   "133": {
     "name": "Gargoylemon",
@@ -3004,10 +2973,10 @@
     "exp": 176,
     "bits": 350,
     "boss": false,
-    "dropId": "darkPower2",
     "regularAttackId": "noElement",
     "techniqueId": "darkMatter",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "darkPower2"
   },
   "134": {
     "name": "Mummymon",
@@ -3047,10 +3016,10 @@
     "exp": 175,
     "bits": 400,
     "boss": false,
-    "dropId": "mindChip",
     "regularAttackId": "noElement",
     "techniqueId": "darkFear",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "mindChip"
   },
   "135": {
     "name": "Arukenimon",
@@ -3090,10 +3059,10 @@
     "exp": 225,
     "bits": 450,
     "boss": false,
-    "dropId": "charmGas",
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "charmGas"
   },
   "136": {
     "name": "Okuwamon",
@@ -3133,7 +3102,6 @@
     "exp": 172,
     "bits": 320,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -3176,10 +3144,10 @@
     "exp": 183,
     "bits": 400,
     "boss": false,
-    "dropId": "metalChip",
     "regularAttackId": "machineElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "metalChip"
   },
   "138": {
     "name": "Deltamon",
@@ -3219,10 +3187,10 @@
     "exp": 179,
     "bits": 360,
     "boss": false,
-    "dropId": "windPower2",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "windPower2"
   },
   "139": {
     "name": "Whamon",
@@ -3262,10 +3230,10 @@
     "exp": 225,
     "bits": 420,
     "boss": false,
-    "dropId": "crimsonCable",
     "regularAttackId": "noElement",
     "techniqueId": "hardRain",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "crimsonCable"
   },
   "140": {
     "name": "MarineDevimon",
@@ -3305,7 +3273,6 @@
     "exp": 185,
     "bits": 370,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "waterElementHitsTwice",
     "techniqueId": "none",
     "memoryId": 0
@@ -3348,7 +3315,6 @@
     "exp": 221,
     "bits": 440,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -3391,10 +3357,10 @@
     "exp": 174,
     "bits": 350,
     "boss": false,
-    "dropId": "thunderChip",
     "regularAttackId": "thunderElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "thunderChip"
   },
   "143": {
     "name": "Ebidramon",
@@ -3434,10 +3400,10 @@
     "exp": 170,
     "bits": 340,
     "boss": false,
-    "dropId": "waterPower2",
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "waterPower2"
   },
   "144": {
     "name": "Vilemon",
@@ -3477,10 +3443,10 @@
     "exp": 180,
     "bits": 360,
     "boss": false,
-    "dropId": "devilChip",
     "regularAttackId": "fireElement",
     "techniqueId": "darkFear",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "devilChip"
   },
   "145": {
     "name": "SkullSatamon",
@@ -3520,10 +3486,10 @@
     "exp": 196,
     "bits": 390,
     "boss": false,
-    "dropId": "hackSticker",
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "hackSticker"
   },
   "146": {
     "name": "Brachiomon",
@@ -3563,10 +3529,10 @@
     "exp": 180,
     "bits": 360,
     "boss": false,
-    "dropId": "ultraCharge",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "ultraCharge"
   },
   "147": {
     "name": "Drimogemon",
@@ -3606,10 +3572,10 @@
     "exp": 205,
     "bits": 450,
     "boss": false,
-    "dropId": "drillHorn",
     "regularAttackId": "machineElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "drillHorn"
   },
   "148": {
     "name": "Flarerizamon",
@@ -3649,10 +3615,10 @@
     "exp": 204,
     "bits": 400,
     "boss": false,
-    "dropId": "firePower2",
     "regularAttackId": "fireElement",
     "techniqueId": "flameBall",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "firePower2"
   },
   "149": {
     "name": "Meramon",
@@ -3692,7 +3658,6 @@
     "exp": 205,
     "bits": 410,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "fireElement",
     "techniqueId": "flameLance",
     "memoryId": 0
@@ -3735,7 +3700,6 @@
     "exp": 205,
     "bits": 420,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "iceBlow",
     "memoryId": 0
@@ -3778,10 +3742,10 @@
     "exp": 206,
     "bits": 420,
     "boss": false,
-    "dropId": "iceChip",
     "regularAttackId": "iceElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "iceChip"
   },
   "152": {
     "name": "Icemon",
@@ -3821,10 +3785,10 @@
     "exp": 215,
     "bits": 420,
     "boss": false,
-    "dropId": "icePower2",
     "regularAttackId": "iceElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "icePower2"
   },
   "153": {
     "name": "Giromon",
@@ -3864,7 +3828,6 @@
     "exp": 230,
     "bits": 460,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "machineElementCounterPhysical",
     "techniqueId": "none",
     "memoryId": 0
@@ -3907,7 +3870,6 @@
     "exp": 218,
     "bits": 430,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "iceElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -3950,10 +3912,10 @@
     "exp": 244,
     "bits": 490,
     "boss": false,
-    "dropId": "firePowerS",
     "regularAttackId": "fireElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "firePowerS"
   },
   "156": {
     "name": "SkullMeramon",
@@ -3993,7 +3955,6 @@
     "exp": 217,
     "bits": 430,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "flameBreath",
     "memoryId": 0
@@ -4036,7 +3997,6 @@
     "exp": 214,
     "bits": 390,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "darkElemental",
     "memoryId": 0
@@ -4079,10 +4039,10 @@
     "exp": 223,
     "bits": 420,
     "boss": false,
-    "dropId": "devilChip",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "devilChip"
   },
   "159": {
     "name": "Pukumon",
@@ -4122,10 +4082,10 @@
     "exp": 221,
     "bits": 470,
     "boss": false,
-    "dropId": "crimsonCable",
     "regularAttackId": "machineElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "crimsonCable"
   },
   "160": {
     "name": "MetalSeadramon",
@@ -4165,10 +4125,10 @@
     "exp": 223,
     "bits": 460,
     "boss": false,
-    "dropId": "crimsonCable",
     "regularAttackId": "noElement",
     "techniqueId": "godBombard",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "crimsonCable"
   },
   "161": {
     "name": "Tylomon",
@@ -4208,10 +4168,10 @@
     "exp": 215,
     "bits": 430,
     "boss": false,
-    "dropId": "crimsonCable",
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "crimsonCable"
   },
   "162": {
     "name": "Scorpiomon",
@@ -4251,10 +4211,10 @@
     "exp": 216,
     "bits": 480,
     "boss": false,
-    "dropId": "crimsonCable",
     "regularAttackId": "noElement",
     "techniqueId": "grandWave",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "crimsonCable"
   },
   "163": {
     "name": "Antylamon",
@@ -4294,10 +4254,10 @@
     "exp": 220,
     "bits": 450,
     "boss": false,
-    "dropId": "windChip",
     "regularAttackId": "noElement",
     "techniqueId": "darkElemental",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "windChip"
   },
   "164": {
     "name": "H-Kabuterimon",
@@ -4337,7 +4297,6 @@
     "exp": 222,
     "bits": 610,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -4380,7 +4339,6 @@
     "exp": 273,
     "bits": 520,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -4423,7 +4381,6 @@
     "exp": 247,
     "bits": 490,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -4466,10 +4423,10 @@
     "exp": 225,
     "bits": 460,
     "boss": false,
-    "dropId": "danceWing",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "danceWing"
   },
   "168": {
     "name": "LadyDevimon",
@@ -4509,10 +4466,10 @@
     "exp": 224,
     "bits": 440,
     "boss": false,
-    "dropId": "charmGas",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "charmGas"
   },
   "169": {
     "name": "MetalEtemon",
@@ -4552,10 +4509,10 @@
     "exp": 222,
     "bits": 460,
     "boss": false,
-    "dropId": "maxCharge",
     "regularAttackId": "noElement",
     "techniqueId": "megaHeal",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "maxCharge"
   },
   "170": {
     "name": "KingEtemon",
@@ -4595,10 +4552,10 @@
     "exp": 226,
     "bits": 500,
     "boss": false,
-    "dropId": "charismaChip",
     "regularAttackId": "noElement",
     "techniqueId": "fullHeal",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "charismaChip"
   },
   "171": {
     "name": "Gryphonmon",
@@ -4638,10 +4595,10 @@
     "exp": 227,
     "bits": 440,
     "boss": false,
-    "dropId": "windPowerS",
     "regularAttackId": "noElement",
     "techniqueId": "slyphStorm",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "windPowerS"
   },
   "172": {
     "name": "Infermon",
@@ -4681,7 +4638,6 @@
     "exp": 276,
     "bits": 530,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
     "memoryId": 0
@@ -4724,7 +4680,6 @@
     "exp": 235,
     "bits": 440,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -4767,10 +4722,10 @@
     "exp": 243,
     "bits": 500,
     "boss": false,
-    "dropId": "powerBrace",
     "regularAttackId": "thunderElementCounterPhysical",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "powerBrace"
   },
   "175": {
     "name": "Piedmon",
@@ -4810,7 +4765,6 @@
     "exp": 280,
     "bits": 560,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -4853,10 +4807,10 @@
     "exp": 235,
     "bits": 500,
     "boss": false,
-    "dropId": "metalPowerS",
     "regularAttackId": "machineElementHitsTwice",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "metalPowerS"
   },
   "177": {
     "name": "VenomMyotismon",
@@ -4896,7 +4850,6 @@
     "exp": 277,
     "bits": 530,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
     "memoryId": 0
@@ -4939,7 +4892,6 @@
     "exp": 282,
     "bits": 550,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
     "memoryId": 0
@@ -4982,10 +4934,10 @@
     "exp": 246,
     "bits": 490,
     "boss": false,
-    "dropId": "darkPowerS",
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "darkPowerS"
   },
   "180": {
     "name": "Creepymon",
@@ -5025,7 +4977,6 @@
     "exp": 277,
     "bits": 540,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "fireElement",
     "techniqueId": "darknessChaos",
     "memoryId": 0
@@ -5068,7 +5019,6 @@
     "exp": 279,
     "bits": 600,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -5111,7 +5061,6 @@
     "exp": 45,
     "bits": 90,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 77
@@ -5154,10 +5103,10 @@
     "exp": 150,
     "bits": 290,
     "boss": false,
-    "dropId": "chainSaw",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "chainSaw"
   },
   "184": {
     "name": "Yanmamon(Green)",
@@ -5197,7 +5146,6 @@
     "exp": 40,
     "bits": 80,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 396
@@ -5240,10 +5188,10 @@
     "exp": 105,
     "bits": 210,
     "boss": false,
-    "dropId": "spiderWeb",
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
-    "memoryId": 397
+    "memoryId": 397,
+    "drop": "spiderWeb"
   },
   "186": {
     "name": "Goburimon(Red)",
@@ -5283,10 +5231,10 @@
     "exp": 112,
     "bits": 220,
     "boss": false,
-    "dropId": "naginata",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 398
+    "memoryId": 398,
+    "drop": "naginata"
   },
   "187": {
     "name": "Minotarumon (blue)",
@@ -5326,10 +5274,10 @@
     "exp": 167,
     "bits": 350,
     "boss": false,
-    "dropId": "metalPower2",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "metalPower2"
   },
   "188": {
     "name": "Flymon (pink)",
@@ -5369,10 +5317,10 @@
     "exp": 165,
     "bits": 330,
     "boss": false,
-    "dropId": "glasses",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 400
+    "memoryId": 400,
+    "drop": "glasses"
   },
   "189": {
     "name": "Woodmon(Green)",
@@ -5412,7 +5360,6 @@
     "exp": 76,
     "bits": 190,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -5455,7 +5402,6 @@
     "exp": 205,
     "bits": 400,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -5498,10 +5444,10 @@
     "exp": 104,
     "bits": 215,
     "boss": false,
-    "dropId": "magicianRod",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 403
+    "memoryId": 403,
+    "drop": "magicianRod"
   },
   "192": {
     "name": "Phantomon (blue)",
@@ -5541,10 +5487,10 @@
     "exp": 186,
     "bits": 370,
     "boss": false,
-    "dropId": "hpChip",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "hpChip"
   },
   "193": {
     "name": "Kokatorimon(Brown)",
@@ -5584,10 +5530,10 @@
     "exp": 158,
     "bits": 300,
     "boss": false,
-    "dropId": "overClocked",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 405
+    "memoryId": 405,
+    "drop": "overClocked"
   },
   "194": {
     "name": "Tortomon (blue)",
@@ -5627,7 +5573,6 @@
     "exp": 180,
     "bits": 360,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -5670,10 +5615,10 @@
     "exp": 184,
     "bits": 370,
     "boss": false,
-    "dropId": "chaosWave",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "chaosWave"
   },
   "196": {
     "name": "Seadramon (brown)",
@@ -5713,7 +5658,6 @@
     "exp": 175,
     "bits": 350,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -5756,7 +5700,6 @@
     "exp": 236,
     "bits": 460,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -5799,7 +5742,6 @@
     "exp": 210,
     "bits": 430,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -5842,10 +5784,10 @@
     "exp": 232,
     "bits": 460,
     "boss": false,
-    "dropId": "cursedPuppet",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "cursedPuppet"
   },
   "200": {
     "name": "Maildramon (black)",
@@ -5885,10 +5827,10 @@
     "exp": 242,
     "bits": 480,
     "boss": false,
-    "dropId": "boltPowerS",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "boltPowerS"
   },
   "201": {
     "name": "Guardromon (white)",
@@ -5928,7 +5870,6 @@
     "exp": 231,
     "bits": 460,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -5971,10 +5912,10 @@
     "exp": 222,
     "bits": 660,
     "boss": false,
-    "dropId": "danceFeather",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 413
+    "memoryId": 413,
+    "drop": "danceFeather"
   },
   "203": {
     "name": "Numemon (brown)",
@@ -6014,10 +5955,10 @@
     "exp": 299,
     "bits": 770,
     "boss": false,
-    "dropId": "trainingBook",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "trainingBook"
   },
   "204": {
     "name": "Numemon (aqua)",
@@ -6057,7 +5998,6 @@
     "exp": 344,
     "bits": 880,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -6100,10 +6040,10 @@
     "exp": 366,
     "bits": 990,
     "boss": false,
-    "dropId": "overLoad",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "overLoad"
   },
   "206": {
     "name": "Numemon (white)",
@@ -6143,10 +6083,10 @@
     "exp": 399,
     "bits": 1110,
     "boss": false,
-    "dropId": "boostChip",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "boostChip"
   },
   "207": {
     "name": "Raremon (pink)",
@@ -6186,10 +6126,10 @@
     "exp": 201,
     "bits": 400,
     "boss": false,
-    "dropId": "boltPower2",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "boltPower2"
   },
   "208": {
     "name": "Cyclonemon (pink)",
@@ -6229,7 +6169,6 @@
     "exp": 215,
     "bits": 430,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -6272,10 +6211,10 @@
     "exp": 227,
     "bits": 470,
     "boss": false,
-    "dropId": "runnerShoes",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "runnerShoes"
   },
   "210": {
     "name": "Musyamon (green)",
@@ -6315,10 +6254,10 @@
     "exp": 160,
     "bits": 330,
     "boss": false,
-    "dropId": "mpProxy",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "mpProxy"
   },
   "211": {
     "name": "Kurisarimon (pink)",
@@ -6358,7 +6297,6 @@
     "exp": 250,
     "bits": 800,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -6401,10 +6339,10 @@
     "exp": 241,
     "bits": 480,
     "boss": false,
-    "dropId": "trainChip3",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "trainChip3"
   },
   "213": {
     "name": "Blossomon (pink)",
@@ -6444,7 +6382,6 @@
     "exp": 179,
     "bits": 360,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -6487,10 +6424,10 @@
     "exp": 203,
     "bits": 410,
     "boss": false,
-    "dropId": "trainChip1",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "trainChip1"
   },
   "215": {
     "name": "Whamon (blue)",
@@ -6530,10 +6467,10 @@
     "exp": 235,
     "bits": 420,
     "boss": false,
-    "dropId": "hpMegaProxy",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "hpMegaProxy"
   },
   "216": {
     "name": "MegaSeadramon (gold)",
@@ -6573,10 +6510,10 @@
     "exp": 221,
     "bits": 450,
     "boss": false,
-    "dropId": "waterPowerS",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "waterPowerS"
   },
   "217": {
     "name": "Ebidramon (pink)",
@@ -6616,10 +6553,10 @@
     "exp": 240,
     "bits": 480,
     "boss": false,
-    "dropId": "trainChip2",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "trainChip2"
   },
   "218": {
     "name": "Vilemon (purple)",
@@ -6659,10 +6596,10 @@
     "exp": 239,
     "bits": 480,
     "boss": false,
-    "dropId": "hackSystem",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "hackSystem"
   },
   "219": {
     "name": "Drimogemon (brown)",
@@ -6702,7 +6639,6 @@
     "exp": 220,
     "bits": 500,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -6745,10 +6681,10 @@
     "exp": 243,
     "bits": 480,
     "boss": false,
-    "dropId": "mpMegaProxy",
     "regularAttackId": "fireElement",
     "techniqueId": "flameSphere",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "mpMegaProxy"
   },
   "221": {
     "name": "Vikemon (blue)",
@@ -6788,7 +6724,6 @@
     "exp": 236,
     "bits": 460,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -6831,7 +6766,6 @@
     "exp": 271,
     "bits": 550,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0
@@ -6874,10 +6808,10 @@
     "exp": 272,
     "bits": 510,
     "boss": false,
-    "dropId": "trainChipV",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "trainChipV"
   },
   "224": {
     "name": "Antylamon (white)",
@@ -6917,10 +6851,10 @@
     "exp": 245,
     "bits": 490,
     "boss": false,
-    "dropId": "icePowerS",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "icePowerS"
   },
   "247": {
     "name": "Knightmon",
@@ -6960,7 +6894,6 @@
     "exp": 530,
     "bits": 1060,
     "boss": false,
-    "dropId": null,
     "regularAttackId": "noElement",
     "techniqueId": "berserkSword",
     "memoryId": 0
@@ -7003,10 +6936,17 @@
     "exp": 35,
     "bits": 70,
     "boss": false,
-    "dropId": "1bBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 457
+    "memoryId": 457,
+    "drop": [
+      {
+        "sector": "east",
+        "sectorDrops": [
+          "1bBooster"
+        ]
+      }
+    ]
   },
   "516": {
     "name": "Cardmon(B)",
@@ -7046,10 +6986,23 @@
     "exp": 60,
     "bits": 120,
     "boss": false,
-    "dropId": ["1bBooster", "2bBooster"],
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 458
+    "memoryId": 458,
+    "drop": [
+      {
+        "sector": "east",
+        "sectorDrops": [
+          "1bBooster"
+        ]
+      },
+      {
+        "sector": "south",
+        "sectorDrops": [
+          "2bBooster"
+        ]
+      }
+    ]
   },
   "517": {
     "name": "Cardmon(C)",
@@ -7089,10 +7042,25 @@
     "exp": 85,
     "bits": 170,
     "boss": false,
-    "dropId": ["4bBooster", "r02Booster"],
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 459
+    "memoryId": 459,
+    "drop": [
+      {
+        "sector": "south",
+        "sectorDrops": [
+          "4bBooster",
+          "r02Booster"
+        ]
+      },
+      {
+        "sector": "west",
+        "sectorDrops": [
+          "4bBooster",
+          "r02Booster"
+        ]
+      }
+    ]
   },
   "518": {
     "name": "Cardmon(D)",
@@ -7132,10 +7100,17 @@
     "exp": 135,
     "bits": 270,
     "boss": false,
-    "dropId": "5bBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 460
+    "memoryId": 460,
+    "drop": [
+      {
+        "sector": "west",
+        "sectorDrops": [
+          "5bBooster"
+        ]
+      }
+    ]
   },
   "519": {
     "name": "Cardmon (T3)",
@@ -7175,10 +7150,10 @@
     "exp": 185,
     "bits": 370,
     "boss": false,
-    "dropId": "variousBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "variousBooster"
   },
   "520": {
     "name": "Cardmon (A3)",
@@ -7218,10 +7193,10 @@
     "exp": 210,
     "bits": 420,
     "boss": false,
-    "dropId": "variousBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "variousBooster"
   },
   "521": {
     "name": "Cardmon (T4)",
@@ -7261,10 +7236,10 @@
     "exp": 235,
     "bits": 470,
     "boss": false,
-    "dropId": "variousBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "variousBooster"
   },
   "522": {
     "name": "Cardmon (A4)",
@@ -7304,9 +7279,9 @@
     "exp": 235,
     "bits": 470,
     "boss": false,
-    "dropId": "variousBooster",
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "drop": "variousBooster"
   }
 }
