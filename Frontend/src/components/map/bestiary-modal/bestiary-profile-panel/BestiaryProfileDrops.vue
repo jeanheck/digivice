@@ -65,12 +65,12 @@ const handleDropClick = (dropId: string): void => {
     </h4>
 
     <div class="absolute inset-0 flex items-center justify-center px-4">
-      <div class="flex flex-col items-center gap-0.5">
+      <div class="flex flex-col items-center gap-1">
         <template v-for="item in dropItems" :key="item.id">
           <button
             v-if="isDropInteractive"
             type="button"
-            class="font-bold text-gray-300 text-xs 2xl:text-sm text-center cursor-pointer transition-colors hover:text-blue-300"
+            class="font-bold text-gray-300 text-xs 2xl:text-sm text-center cursor-pointer transition-colors hover:text-amber-300"
             @click="handleDropClick(item.id)"
           >
             {{ item.label }}
