@@ -1,0 +1,334 @@
+{
+  "armorChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "binderCrest": {
+    "id": null,
+    "type": "equipment"
+  },
+  "boltPower1": {
+    "id": null,
+    "type": "equipment"
+  },
+  "boltPower2": {
+    "id": null,
+    "type": "equipment"
+  },
+  "boltPowerS": {
+    "id": null,
+    "type": "equipment"
+  },
+  "boostChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "chainSaw": {
+    "id": 177,
+    "type": "equipment"
+  },
+  "chaosWave": {
+    "id": null,
+    "type": null
+  },
+  "charismaChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "charmGas": {
+    "id": null,
+    "type": null
+  },
+  "counterCrest": {
+    "id": null,
+    "type": "equipment"
+  },
+  "crimsonCable": {
+    "id": null,
+    "type": null
+  },
+  "cursedPuppet": {
+    "id": null,
+    "type": null
+  },
+  "danceFeather": {
+    "id": null,
+    "type": null
+  },
+  "danceWing": {
+    "id": null,
+    "type": null
+  },
+  "darkPower1": {
+    "id": null,
+    "type": "equipment"
+  },
+  "darkPower2": {
+    "id": null,
+    "type": "equipment"
+  },
+  "darkPowerS": {
+    "id": null,
+    "type": "equipment"
+  },
+  "devilChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "drillHorn": {
+    "id": 208,
+    "type": "equipment"
+  },
+  "fireChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "firePower1": {
+    "id": null,
+    "type": "equipment"
+  },
+  "firePower2": {
+    "id": null,
+    "type": "equipment"
+  },
+  "firePowerS": {
+    "id": null,
+    "type": "equipment"
+  },
+  "ghostFang": {
+    "id": 146,
+    "type": "equipment"
+  },
+  "glasses": {
+    "id": 331,
+    "type": "equipment"
+  },
+  "goggles": {
+    "id": 332,
+    "type": "equipment"
+  },
+  "hackSticker": {
+    "id": 327,
+    "type": "equipment"
+  },
+  "hackSystem": {
+    "id": null,
+    "type": null
+  },
+  "hpChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "hpMegaProxy": {
+    "id": null,
+    "type": null
+  },
+  "hpProxy": {
+    "id": null,
+    "type": null
+  },
+  "iceChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "icePower1": {
+    "id": null,
+    "type": "equipment"
+  },
+  "icePower2": {
+    "id": null,
+    "type": "equipment"
+  },
+  "icePowerS": {
+    "id": null,
+    "type": "equipment"
+  },
+  "machinegun": {
+    "id": null,
+    "type": "equipment"
+  },
+  "magicianRod": {
+    "id": null,
+    "type": "equipment"
+  },
+  "maxCharge": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "metalChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "metalPower1": {
+    "id": null,
+    "type": "equipment"
+  },
+  "metalPower2": {
+    "id": null,
+    "type": "equipment"
+  },
+  "metalPowerS": {
+    "id": null,
+    "type": "equipment"
+  },
+  "mindChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "mpChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "mpMegaProxy": {
+    "id": null,
+    "type": null
+  },
+  "mpProxy": {
+    "id": null,
+    "type": null
+  },
+  "multiCrest": {
+    "id": null,
+    "type": "equipment"
+  },
+  "naginata": {
+    "id": null,
+    "type": "equipment"
+  },
+  "oldClaw": {
+    "id": null,
+    "type": "equipment"
+  },
+  "oldWand": {
+    "id": null,
+    "type": "equipment"
+  },
+  "overClocked": {
+    "id": 329,
+    "type": "equipment"
+  },
+  "overLoad": {
+    "id": 330,
+    "type": "equipment"
+  },
+  "powerBrace": {
+    "id": 338,
+    "type": "equipment"
+  },
+  "powerCharge": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "powerChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "pulseGuard": {
+    "id": 200,
+    "type": "equipment"
+  },
+  "recoverCrest": {
+    "id": null,
+    "type": "equipment"
+  },
+  "runnerSandal": {
+    "id": 335,
+    "type": "equipment"
+  },
+  "runnerShoes": {
+    "id": 336,
+    "type": "equipment"
+  },
+  "rustyGlove": {
+    "id": null,
+    "type": "equipment"
+  },
+  "rustyKatana": {
+    "id": null,
+    "type": "equipment"
+  },
+  "rustyRifle": {
+    "id": null,
+    "type": "equipment"
+  },
+  "searchCrest": {
+    "id": null,
+    "type": "equipment"
+  },
+  "spiderWeb": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "superCharge": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "thunderChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "tntBall": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "trainChip1": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "trainChip2": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "trainChip3": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "trainChipV": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "trainingBook": {
+    "id": 337,
+    "type": "equipment"
+  },
+  "ultraCharge": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "waterChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "waterPower1": {
+    "id": null,
+    "type": "equipment"
+  },
+  "waterPower2": {
+    "id": null,
+    "type": "equipment"
+  },
+  "waterPowerS": {
+    "id": null,
+    "type": "equipment"
+  },
+  "windChip": {
+    "id": null,
+    "type": "consumableItem"
+  },
+  "windPower1": {
+    "id": null,
+    "type": "equipment"
+  },
+  "windPower2": {
+    "id": null,
+    "type": "equipment"
+  },
+  "windPowerS": {
+    "id": null,
+    "type": "equipment"
+  },
+  "wisdomChip": {
+    "id": null,
+    "type": "consumableItem"
+  }
+}
