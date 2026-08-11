@@ -29,6 +29,14 @@ export class LocationService {
     return matchingPhase.ids;
   }
 
+  public static getFishing(locationId: string): string[] {
+    return LocationRepository.getLocationById(locationId).fishing ?? [];
+  }
+
+  public static getKickingTrees(locationId: string): string[] {
+    return LocationRepository.getLocationById(locationId).kickingTrees ?? [];
+  }
+
   public static getRegionByLocationId(id: string | null): LocationRegionConstant {
     if (id === null) {
       return LocationRegionConstant.asukaServer;

@@ -6966,7 +6966,7 @@
     "memoryId": 0
   },
   "515": {
-    "name": "Cardmon",
+    "name": "Cardmon(A)",
     "level": 7,
     "hp": 288,
     "species": "rare",
@@ -7009,7 +7009,7 @@
     "memoryId": 457
   },
   "516": {
-    "name": "Cardmon",
+    "name": "Cardmon(B)",
     "level": 12,
     "hp": 408,
     "species": "fish",
@@ -7052,7 +7052,7 @@
     "memoryId": 458
   },
   "517": {
-    "name": "Cardmon",
+    "name": "Cardmon(C)",
     "level": 17,
     "hp": 528,
     "species": "rare",
@@ -7095,7 +7095,7 @@
     "memoryId": 459
   },
   "518": {
-    "name": "Cardmon",
+    "name": "Cardmon(D)",
     "level": 27,
     "hp": 768,
     "species": "fish",

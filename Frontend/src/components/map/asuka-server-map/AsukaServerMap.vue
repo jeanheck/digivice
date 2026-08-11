@@ -30,6 +30,8 @@ const asukaServerMapViewModel = computed(() => {
       <Location :location-id="asukaServerMapViewModel?.locationId ?? null" />
       <Enemies
         :enemy-ids="asukaServerMapViewModel?.enemies ?? []"
+        :fishing-ids="asukaServerMapViewModel?.fishing ?? []"
+        :kicking-trees-ids="asukaServerMapViewModel?.kickingTrees ?? []"
         @open-enemy-modal="emit('open-enemy-modal', $event)"
       />
     </div>

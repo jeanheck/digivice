@@ -20,8 +20,11 @@ export class AsukaServerMapPresenter {
     mainQuest: Quest | null,
     previousMapId: string = "",
   ): AsukaServerMapViewModel {
+    const fishingIds = LocationService.getFishing(locationId);
+    const kickingTreesIds = LocationService.getKickingTrees(locationId);
+
     if (this.isAsukaSewersSafeZone(locationId, previousMapId)) {
-      return AsukaServerMapConverter.convert(locationId, []);
+      return AsukaServerMapConverter.convert(locationId, [], fishingIds, kickingTreesIds);
     }
 
     const enemyIds = LocationService.getEnemies(
@@ -29,6 +32,6 @@ export class AsukaServerMapPresenter {
       QuestService.getLastCompletedMainQuestStep(mainQuest),
     );
 
-    return AsukaServerMapConverter.convert(locationId, enemyIds);
+    return AsukaServerMapConverter.convert(locationId, enemyIds, fishingIds, kickingTreesIds);
   }
 }
