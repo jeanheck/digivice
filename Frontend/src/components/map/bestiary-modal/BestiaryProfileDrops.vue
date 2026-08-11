@@ -14,8 +14,9 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-const hasDrop = computed(() => {
-  return props.enemy.drop !== undefined;
+const isDropInteractive = computed(() => {
+  const drop = props.enemy.drop;
+  return drop !== undefined && drop !== "variousBooster";
 });
 
 const dropLabels = computed(() => {
@@ -39,11 +40,11 @@ const dropLabels = computed(() => {
 });
 
 const showGuaranteedDropNote = computed(() => {
-  return props.enemy.boss && hasDrop.value;
+  return props.enemy.boss && props.enemy.drop !== undefined;
 });
 
 const handleDropClick = (): void => {
-  if (!hasDrop.value) {
+  if (!isDropInteractive.value) {
     return;
   }
 
@@ -55,12 +56,12 @@ const handleDropClick = (): void => {
   <div
     class="flex-1 min-h-0 overflow-hidden bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col"
     :class="
-      hasDrop
+      isDropInteractive
         ? 'cursor-pointer transition-colors hover:border-blue-500/50 hover:bg-[#00122a]'
         : ''
     "
-    :role="hasDrop ? 'button' : undefined"
-    :tabindex="hasDrop ? 0 : undefined"
+    :role="isDropInteractive ? 'button' : undefined"
+    :tabindex="isDropInteractive ? 0 : undefined"
     @click="handleDropClick"
     @keydown.enter="handleDropClick"
   >

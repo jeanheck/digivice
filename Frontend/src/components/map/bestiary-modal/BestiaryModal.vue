@@ -3,7 +3,7 @@ import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import BestiaryInformation from "@/components/map/bestiary-modal/BestiaryInformation.vue";
-import BestiaryDropsInformation from "@/components/map/bestiary-modal/BestiaryDropsInformation.vue";
+import BestiaryDropsInformation from "@/components/map/bestiary-modal/bestiary-drops-information/BestiaryDropsInformation.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -140,7 +140,7 @@ const enemyImageUrl = computed(() => {
       @move-stat-tooltip="moveEnemyStatTooltip"
       @hide-stat-tooltip="hideEnemyStatTooltip"
     />
-    <BestiaryDropsInformation v-else @back="backToInformationView" />
+    <BestiaryDropsInformation v-else :enemy="enemy" @back="backToInformationView" />
   </Modal>
 
   <Tooltip
