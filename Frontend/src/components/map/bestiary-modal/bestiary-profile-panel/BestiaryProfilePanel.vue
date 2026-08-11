@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import BestiaryProfile from "@/components/map/bestiary-modal/BestiaryProfile.vue";
-import BestiaryAttributes from "@/components/map/bestiary-modal/BestiaryAttributes.vue";
-import BestiaryElements from "@/components/map/bestiary-modal/BestiaryElements.vue";
-import BestiaryConditions from "@/components/map/bestiary-modal/BestiaryConditions.vue";
+import BestiaryProfile from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfile.vue";
+import BestiaryProfileAttributes from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileAttributes.vue";
+import BestiaryProfileElements from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileElements.vue";
+import BestiaryProfileConditions from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileConditions.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 defineProps<{
@@ -47,19 +47,19 @@ const forwardHideStatTooltip = (): void => {
       <div
         class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 h-full items-start"
       >
-        <BestiaryAttributes
+        <BestiaryProfileAttributes
           :attributes="enemy.attributes"
           @show-stat-key-tooltip="forwardStatKeyTooltip"
           @move-stat-tooltip="forwardMoveStatTooltip"
           @hide-stat-tooltip="forwardHideStatTooltip"
         />
-        <BestiaryElements
+        <BestiaryProfileElements
           :elements="enemy.elements"
           @show-stat-key-tooltip="forwardStatKeyTooltip"
           @move-stat-tooltip="forwardMoveStatTooltip"
           @hide-stat-tooltip="forwardHideStatTooltip"
         />
-        <BestiaryConditions
+        <BestiaryProfileConditions
           :conditions="enemy.conditions"
           @show-condition-tooltip="forwardConditionTooltip"
           @move-stat-tooltip="forwardMoveStatTooltip"

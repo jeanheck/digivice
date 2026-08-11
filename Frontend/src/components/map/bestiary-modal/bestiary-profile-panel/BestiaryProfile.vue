@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
-import BestiaryProfileDrops from "@/components/map/bestiary-modal/BestiaryProfileDrops.vue";
+import BestiaryProfileDrops from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileDrops.vue";
 
 const props = defineProps<{
   enemy: EnemyViewModel;

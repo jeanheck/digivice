@@ -25,8 +25,11 @@ const dropLabels = computed(() => {
     return [t("drops.none")];
   }
 
+  const guaranteedSuffix =
+    props.enemy.boss && drop !== undefined ? ` ${t("enemy.guaranteedDropSuffix")}` : "";
+
   if (typeof drop === "string") {
-    return [t(`drops.${drop}`)];
+    return [`${t(`drops.${drop}`)}${guaranteedSuffix}`];
   }
 
   const dropIds = drop.flatMap((sectorDrop: DropRaw) => {
@@ -35,12 +38,8 @@ const dropLabels = computed(() => {
   const uniqueDropIds = [...new Set(dropIds)];
 
   return uniqueDropIds.map((dropId) => {
-    return t(`drops.${dropId}`);
+    return `${t(`drops.${dropId}`)}${guaranteedSuffix}`;
   });
-});
-
-const showGuaranteedDropNote = computed(() => {
-  return props.enemy.boss && props.enemy.drop !== undefined;
 });
 
 const handleDropClick = (): void => {
@@ -54,7 +53,7 @@ const handleDropClick = (): void => {
 
 <template>
   <div
-    class="flex-1 min-h-0 overflow-hidden bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col"
+    class="relative flex-1 min-h-0 overflow-hidden bg-[#000a1a] border border-blue-900/50 rounded shadow-inner"
     :class="
       isDropInteractive
         ? 'cursor-pointer transition-colors hover:border-blue-500/50 hover:bg-[#00122a]'
@@ -66,12 +65,12 @@ const handleDropClick = (): void => {
     @keydown.enter="handleDropClick"
   >
     <h4
-      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center shrink-0"
+      class="absolute top-4 left-0 right-0 z-10 text-[10px] uppercase font-bold tracking-widest text-blue-500 text-center pointer-events-none"
     >
       {{ $t("enemy.drops") }}
     </h4>
 
-    <div class="flex-1 min-h-0 flex items-center justify-center">
+    <div class="absolute inset-0 flex items-center justify-center px-4">
       <div class="flex flex-col items-center gap-0.5">
         <span
           v-for="label in dropLabels"
@@ -84,10 +83,10 @@ const handleDropClick = (): void => {
     </div>
 
     <p
-      v-if="showGuaranteedDropNote"
-      class="shrink-0 mt-2 text-[9px] text-gray-500 text-center italic"
+      v-if="isDropInteractive"
+      class="absolute bottom-1 left-0 right-0 flex w-full justify-center text-[9px] text-gray-500 pointer-events-none"
     >
-      {{ $t("enemy.guaranteedDrop") }}
+      {{ $t("enemy.viewDropDetails") }}
     </p>
   </div>
 </template>

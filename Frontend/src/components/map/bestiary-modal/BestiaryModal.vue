@@ -2,8 +2,8 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import BestiaryInformation from "@/components/map/bestiary-modal/BestiaryInformation.vue";
-import BestiaryDropsInformation from "@/components/map/bestiary-modal/bestiary-drops-information/BestiaryDropsInformation.vue";
+import BestiaryProfilePanel from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfilePanel.vue";
+import BestiaryDropsPanel from "@/components/map/bestiary-modal/bestiary-drops-panel/BestiaryDropsPanel.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -21,10 +21,10 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-type BestiaryView = "information" | "drops";
+type BestiaryView = "profile" | "drops";
 
 const selectedEnemyId = ref<string | null>(null);
-const view = ref<BestiaryView>("information");
+const view = ref<BestiaryView>("profile");
 
 const isModalOpen = computed(() => {
   return props.isOpen && selectedEnemyId.value !== null;
@@ -36,7 +36,7 @@ const handleClose = () => {
 
 const handleSearchSelect = (id: string) => {
   selectedEnemyId.value = id;
-  view.value = "information";
+  view.value = "profile";
 };
 
 const openDropsView = () => {
@@ -44,8 +44,8 @@ const openDropsView = () => {
   view.value = "drops";
 };
 
-const backToInformationView = () => {
-  view.value = "information";
+const backToProfileView = () => {
+  view.value = "profile";
 };
 
 const allSearchItems = BestiaryModalPresenter.getAllSearchItems();
@@ -82,18 +82,18 @@ watch(
   (open) => {
     if (open) {
       selectedEnemyId.value = props.enemyId;
-      view.value = "information";
+      view.value = "profile";
       return;
     }
 
     hide();
     selectedEnemyId.value = null;
-    view.value = "information";
+    view.value = "profile";
   },
 );
 
 watch(selectedEnemyId, () => {
-  view.value = "information";
+  view.value = "profile";
 });
 
 const enemyImageUrl = computed(() => {
@@ -130,8 +130,8 @@ const enemyImageUrl = computed(() => {
       </div>
     </template>
 
-    <BestiaryInformation
-      v-if="view === 'information'"
+    <BestiaryProfilePanel
+      v-if="view === 'profile'"
       :enemy="enemy"
       :enemy-image-url="enemyImageUrl"
       @open-drops="openDropsView"
@@ -140,7 +140,7 @@ const enemyImageUrl = computed(() => {
       @move-stat-tooltip="moveEnemyStatTooltip"
       @hide-stat-tooltip="hideEnemyStatTooltip"
     />
-    <BestiaryDropsInformation v-else :enemy="enemy" @back="backToInformationView" />
+    <BestiaryDropsPanel v-else :enemy="enemy" @back="backToProfileView" />
   </Modal>
 
   <Tooltip
