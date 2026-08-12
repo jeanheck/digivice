@@ -1,4 +1,7 @@
 {
+  "0500": {
+    "imageName": "Initial Pack Screen"
+  },
   "1000": {
     "imageName": "In Menu Screen"
   },
@@ -7,9 +10,6 @@
   },
   "1400": {
     "imageName": "Reward Screen"
-  },
-  "0500": {
-    "imageName": "Initial Pack Screen"
   },
   "0C01": {
     "imageName": "Saving Screen"

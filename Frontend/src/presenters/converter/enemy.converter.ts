@@ -64,7 +64,6 @@ export class EnemyConverter {
       bits: enemyRaw.bits,
       drops: enemyRaw.drops,
       locations: enemyRaw.locations,
-      dropsByLocation: enemyRaw.dropsByLocation,
       regularAttackId: enemyRaw.regularAttackId,
       techniqueId: enemyRaw.techniqueId,
       boss: enemyRaw.boss === true,

@@ -41,7 +41,9 @@
       "techniqueId": "none",
       "memoryId": 13,
       "drops": [
-        "searchCrest"
+        {
+          "id": "searchCrest"
+        }
       ]
     },
     "208": {
@@ -126,7 +128,9 @@
       "techniqueId": "none",
       "memoryId": 400,
       "drops": [
-        "glasses"
+        {
+          "id": "glasses"
+        }
       ]
     }
   },
@@ -172,7 +176,9 @@
       "techniqueId": "none",
       "memoryId": 11,
       "drops": [
-        "binderCrest"
+        {
+          "id": "binderCrest"
+        }
       ]
     }
   },
@@ -343,7 +349,9 @@
       "techniqueId": "none",
       "memoryId": 203,
       "drops": [
-        "tntBall"
+        {
+          "id": "tntBall"
+        }
       ]
     }
   },
@@ -389,7 +397,9 @@
       "techniqueId": "none",
       "memoryId": 8,
       "drops": [
-        "firePower1"
+        {
+          "id": "firePower1"
+        }
       ]
     },
     "172": {
@@ -474,7 +484,9 @@
       "techniqueId": "none",
       "memoryId": 207,
       "drops": [
-        "windPower1"
+        {
+          "id": "windPower1"
+        }
       ]
     }
   },
@@ -645,7 +657,9 @@
       "techniqueId": "confuseGas",
       "memoryId": 119,
       "drops": [
-        "chaosWave"
+        {
+          "id": "chaosWave"
+        }
       ]
     },
     "222": {

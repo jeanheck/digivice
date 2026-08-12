@@ -8,8 +8,7 @@
     "drop": "Drop",
     "drops": "Drops",
     "dropRate": "Taxa de drop",
-    "guaranteedDropSuffix": "(drop garantido)",
-    "viewDropDetails": "Clique para ver detalhes",
+    "sectorOnly": "Apenas setor {sector}",
     "back": "Voltar",
     "dropDetails": "Detalhes do drop",
     "baseExp": "EXP",
@@ -20,7 +19,6 @@
     "attr": "Atributos",
     "elem": "Elementos",
     "status": "Resistências",
-    "locations": "Localizações",
-    "dropsByLocation": "Drops por localização"
+    "locations": "Localizações"
   }
 }

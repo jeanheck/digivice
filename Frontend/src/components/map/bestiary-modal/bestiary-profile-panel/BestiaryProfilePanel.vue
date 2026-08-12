@@ -5,7 +5,6 @@ import BestiaryProfileAttributes from "@/components/map/bestiary-modal/bestiary-
 import BestiaryProfileElements from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileElements.vue";
 import BestiaryProfileConditions from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileConditions.vue";
 import BestiaryProfileLocations from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileLocations.vue";
-import BestiaryProfileDropsLocations from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileDropsLocations.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = defineProps<{
@@ -38,12 +37,7 @@ const forwardHideStatTooltip = (): void => {
 };
 
 const showEncounterInfo = computed(() => {
-  const hasLocations = (props.enemy.locations?.length ?? 0) > 0;
-  const dropsByLocation = props.enemy.dropsByLocation;
-  const hasDropsByLocation =
-    dropsByLocation !== undefined && Object.keys(dropsByLocation).length > 0;
-
-  return hasLocations || hasDropsByLocation;
+  return (props.enemy.locations?.length ?? 0) > 0;
 });
 </script>
 
@@ -86,7 +80,6 @@ const showEncounterInfo = computed(() => {
       >
         <div class="flex flex-row gap-6">
           <BestiaryProfileLocations :enemy="enemy" />
-          <BestiaryProfileDropsLocations :enemy="enemy" />
         </div>
       </div>
     </div>

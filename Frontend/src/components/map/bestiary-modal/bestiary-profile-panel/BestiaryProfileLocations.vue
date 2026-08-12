@@ -13,7 +13,7 @@ const hasLocations = computed(() => {
   return (props.enemy.locations?.length ?? 0) > 0;
 });
 
-const locationsLabel = computed(() => {
+const locationLabels = computed(() => {
   const locations = props.enemy.locations ?? [];
   const uniqueLocationIds: string[] = [];
 
@@ -23,11 +23,9 @@ const locationsLabel = computed(() => {
     }
   }
 
-  return uniqueLocationIds
-    .map((locationId) => {
-      return t(`location.${locationId}`);
-    })
-    .join(", ");
+  return uniqueLocationIds.map((locationId) => {
+    return t(`location.${locationId}`);
+  });
 });
 </script>
 
@@ -36,8 +34,14 @@ const locationsLabel = computed(() => {
     <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">
       {{ $t("enemy.locations") }}
     </span>
-    <span class="text-gray-200 text-xs leading-tight">
-      {{ locationsLabel }}
-    </span>
+    <div class="flex flex-col gap-1">
+      <span
+        v-for="label in locationLabels"
+        :key="label"
+        class="text-gray-200 text-[10px] leading-tight"
+      >
+        {{ label }}
+      </span>
+    </div>
   </div>
 </template>

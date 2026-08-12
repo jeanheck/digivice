@@ -41,7 +41,9 @@
     "techniqueId": "necromist",
     "memoryId": 358,
     "drops": [
-      "oldWand"
+      {
+        "id": "oldWand"
+      }
     ]
   },
   "2": {
@@ -86,7 +88,9 @@
     "techniqueId": "masterFire",
     "memoryId": 124,
     "drops": [
-      "oldClaw"
+      {
+        "id": "oldClaw"
+      }
     ]
   },
   "14": {
@@ -131,7 +135,9 @@
     "techniqueId": "atomicRay",
     "memoryId": 356,
     "drops": [
-      "rustyRifle"
+      {
+        "id": "rustyRifle"
+      }
     ]
   },
   "15": {
@@ -218,7 +224,9 @@
     "techniqueId": "autoRecover",
     "memoryId": 141,
     "drops": [
-      "rustyGlove"
+      {
+        "id": "rustyGlove"
+      }
     ]
   },
   "20": {
@@ -263,7 +271,9 @@
     "techniqueId": null,
     "memoryId": 337,
     "drops": [
-      "rustyKatana"
+      {
+        "id": "rustyKatana"
+      }
     ]
   },
   "21": {
@@ -513,7 +523,9 @@
     "techniqueId": "energySuck",
     "memoryId": 217,
     "drops": [
-      "darkPower1"
+      {
+        "id": "darkPower1"
+      }
     ]
   },
   "76": {
@@ -557,7 +569,9 @@
     "techniqueId": "none",
     "memoryId": 4,
     "drops": [
-      "powerCharge"
+      {
+        "id": "powerCharge"
+      }
     ]
   },
   "77": {
@@ -765,7 +779,9 @@
     "techniqueId": "none",
     "memoryId": 166,
     "drops": [
-      "spiderWeb"
+      {
+        "id": "spiderWeb"
+      }
     ]
   },
   "82": {
@@ -1014,7 +1030,9 @@
     "techniqueId": "none",
     "memoryId": 8,
     "drops": [
-      "firePower1"
+      {
+        "id": "firePower1"
+      }
     ]
   },
   "88": {
@@ -1058,7 +1076,9 @@
     "techniqueId": "none",
     "memoryId": 203,
     "drops": [
-      "tntBall"
+      {
+        "id": "tntBall"
+      }
     ]
   },
   "89": {
@@ -1102,7 +1122,9 @@
     "techniqueId": "airBlast",
     "memoryId": 7,
     "drops": [
-      "fireChip"
+      {
+        "id": "fireChip"
+      }
     ]
   },
   "90": {
@@ -1146,7 +1168,9 @@
     "techniqueId": "confuseGas",
     "memoryId": 110,
     "drops": [
-      "icePower1"
+      {
+        "id": "icePower1"
+      }
     ]
   },
   "91": {
@@ -1190,7 +1214,9 @@
     "techniqueId": "none",
     "memoryId": 49,
     "drops": [
-      "waterChip"
+      {
+        "id": "waterChip"
+      }
     ]
   },
   "92": {
@@ -1275,7 +1301,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "ghostFang"
+      {
+        "id": "ghostFang"
+      }
     ]
   },
   "94": {
@@ -1360,7 +1388,9 @@
     "techniqueId": "none",
     "memoryId": 207,
     "drops": [
-      "windPower1"
+      {
+        "id": "windPower1"
+      }
     ]
   },
   "96": {
@@ -1404,7 +1434,9 @@
     "techniqueId": "none",
     "memoryId": 35,
     "drops": [
-      "waterChip"
+      {
+        "id": "waterChip"
+      }
     ]
   },
   "97": {
@@ -1530,7 +1562,9 @@
     "techniqueId": "none",
     "memoryId": 220,
     "drops": [
-      "runnerSandal"
+      {
+        "id": "runnerSandal"
+      }
     ]
   },
   "100": {
@@ -1656,7 +1690,9 @@
     "techniqueId": "confuseGas",
     "memoryId": 119,
     "drops": [
-      "chaosWave"
+      {
+        "id": "chaosWave"
+      }
     ]
   },
   "103": {
@@ -1700,7 +1736,9 @@
     "techniqueId": "none",
     "memoryId": 10,
     "drops": [
-      "waterPower1"
+      {
+        "id": "waterPower1"
+      }
     ]
   },
   "104": {
@@ -1744,7 +1782,9 @@
     "techniqueId": "none",
     "memoryId": 212,
     "drops": [
-      "hpProxy"
+      {
+        "id": "hpProxy"
+      }
     ]
   },
   "105": {
@@ -1788,7 +1828,9 @@
     "techniqueId": "smallHeal",
     "memoryId": 42,
     "drops": [
-      "superCharge"
+      {
+        "id": "superCharge"
+      }
     ]
   },
   "106": {
@@ -1832,7 +1874,9 @@
     "techniqueId": "none",
     "memoryId": 34,
     "drops": [
-      "powerChip"
+      {
+        "id": "powerChip"
+      }
     ]
   },
   "107": {
@@ -1876,7 +1920,19 @@
     "techniqueId": "none",
     "memoryId": 136,
     "drops": [
-      "counterCrest"
+      {
+        "id": "counterCrest"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": "27"
+      },
+      {
+        "locationId": "024A",
+        "lastMainQuestStepDone": "0"
+      }
     ]
   },
   "108": {
@@ -2002,7 +2058,9 @@
     "techniqueId": "none",
     "memoryId": 28,
     "drops": [
-      "boltPower1"
+      {
+        "id": "boltPower1"
+      }
     ]
   },
   "111": {
@@ -2046,7 +2104,9 @@
     "techniqueId": "thunderbolt",
     "memoryId": 334,
     "drops": [
-      "thunderChip"
+      {
+        "id": "thunderChip"
+      }
     ]
   },
   "112": {
@@ -2090,7 +2150,9 @@
     "techniqueId": "none",
     "memoryId": 13,
     "drops": [
-      "searchCrest"
+      {
+        "id": "searchCrest"
+      }
     ]
   },
   "113": {
@@ -2175,7 +2237,9 @@
     "techniqueId": "thunderGemini",
     "memoryId": 176,
     "drops": [
-      "pulseGuard"
+      {
+        "id": "pulseGuard"
+      }
     ]
   },
   "115": {
@@ -2219,7 +2283,9 @@
     "techniqueId": "speedUp",
     "memoryId": 122,
     "drops": [
-      "metalPower1"
+      {
+        "id": "metalPower1"
+      }
     ]
   },
   "116": {
@@ -2263,7 +2329,9 @@
     "techniqueId": "magicMissile",
     "memoryId": 0,
     "drops": [
-      "multiCrest"
+      {
+        "id": "multiCrest"
+      }
     ]
   },
   "117": {
@@ -2307,7 +2375,9 @@
     "techniqueId": "none",
     "memoryId": 40,
     "drops": [
-      "machinegun"
+      {
+        "id": "machinegun"
+      }
     ]
   },
   "118": {
@@ -2351,7 +2421,9 @@
     "techniqueId": "none",
     "memoryId": 11,
     "drops": [
-      "binderCrest"
+      {
+        "id": "binderCrest"
+      }
     ]
   },
   "119": {
@@ -2395,7 +2467,9 @@
     "techniqueId": "none",
     "memoryId": 39,
     "drops": [
-      "wisdomChip"
+      {
+        "id": "wisdomChip"
+      }
     ]
   },
   "120": {
@@ -2439,7 +2513,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "goggles"
+      {
+        "id": "goggles"
+      }
     ]
   },
   "121": {
@@ -2524,7 +2600,9 @@
     "techniqueId": "paralyzeShock",
     "memoryId": 139,
     "drops": [
-      "armorChip"
+      {
+        "id": "armorChip"
+      }
     ]
   },
   "123": {
@@ -2568,7 +2646,9 @@
     "techniqueId": "twinMissile",
     "memoryId": 134,
     "drops": [
-      "wisdomChip"
+      {
+        "id": "wisdomChip"
+      }
     ]
   },
   "124": {
@@ -2776,7 +2856,9 @@
     "techniqueId": "none",
     "memoryId": 173,
     "drops": [
-      "mpChip"
+      {
+        "id": "mpChip"
+      }
     ]
   },
   "129": {
@@ -2820,7 +2902,9 @@
     "techniqueId": "confuseNebula",
     "memoryId": 0,
     "drops": [
-      "drillHorn"
+      {
+        "id": "drillHorn"
+      }
     ]
   },
   "130": {
@@ -2946,7 +3030,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "recoverCrest"
+      {
+        "id": "recoverCrest"
+      }
     ]
   },
   "133": {
@@ -2990,7 +3076,9 @@
     "techniqueId": "darkMatter",
     "memoryId": 0,
     "drops": [
-      "darkPower2"
+      {
+        "id": "darkPower2"
+      }
     ]
   },
   "134": {
@@ -3034,7 +3122,9 @@
     "techniqueId": "darkFear",
     "memoryId": 0,
     "drops": [
-      "mindChip"
+      {
+        "id": "mindChip"
+      }
     ]
   },
   "135": {
@@ -3078,7 +3168,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "charmGas"
+      {
+        "id": "charmGas"
+      }
     ]
   },
   "136": {
@@ -3163,7 +3255,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "metalChip"
+      {
+        "id": "metalChip"
+      }
     ]
   },
   "138": {
@@ -3207,7 +3301,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "windPower2"
+      {
+        "id": "windPower2"
+      }
     ]
   },
   "139": {
@@ -3251,7 +3347,9 @@
     "techniqueId": "hardRain",
     "memoryId": 0,
     "drops": [
-      "crimsonCable"
+      {
+        "id": "crimsonCable"
+      }
     ]
   },
   "140": {
@@ -3377,7 +3475,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "thunderChip"
+      {
+        "id": "thunderChip"
+      }
     ]
   },
   "143": {
@@ -3421,7 +3521,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "waterPower2"
+      {
+        "id": "waterPower2"
+      }
     ]
   },
   "144": {
@@ -3465,7 +3567,9 @@
     "techniqueId": "darkFear",
     "memoryId": 0,
     "drops": [
-      "devilChip"
+      {
+        "id": "devilChip"
+      }
     ]
   },
   "145": {
@@ -3509,7 +3613,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "hackSticker"
+      {
+        "id": "hackSticker"
+      }
     ]
   },
   "146": {
@@ -3553,7 +3659,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "ultraCharge"
+      {
+        "id": "ultraCharge"
+      }
     ]
   },
   "147": {
@@ -3597,7 +3705,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "drillHorn"
+      {
+        "id": "drillHorn"
+      }
     ]
   },
   "148": {
@@ -3641,7 +3751,9 @@
     "techniqueId": "flameBall",
     "memoryId": 0,
     "drops": [
-      "firePower2"
+      {
+        "id": "firePower2"
+      }
     ]
   },
   "149": {
@@ -3767,7 +3879,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "iceChip"
+      {
+        "id": "iceChip"
+      }
     ]
   },
   "152": {
@@ -3811,7 +3925,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "icePower2"
+      {
+        "id": "icePower2"
+      }
     ]
   },
   "153": {
@@ -3937,7 +4053,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "firePowerS"
+      {
+        "id": "firePowerS"
+      }
     ]
   },
   "156": {
@@ -4063,7 +4181,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "devilChip"
+      {
+        "id": "devilChip"
+      }
     ]
   },
   "159": {
@@ -4107,7 +4227,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "crimsonCable"
+      {
+        "id": "crimsonCable"
+      }
     ]
   },
   "160": {
@@ -4151,7 +4273,9 @@
     "techniqueId": "godBombard",
     "memoryId": 0,
     "drops": [
-      "crimsonCable"
+      {
+        "id": "crimsonCable"
+      }
     ]
   },
   "161": {
@@ -4195,7 +4319,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "crimsonCable"
+      {
+        "id": "crimsonCable"
+      }
     ]
   },
   "162": {
@@ -4239,7 +4365,9 @@
     "techniqueId": "grandWave",
     "memoryId": 0,
     "drops": [
-      "crimsonCable"
+      {
+        "id": "crimsonCable"
+      }
     ]
   },
   "163": {
@@ -4283,7 +4411,9 @@
     "techniqueId": "darkElemental",
     "memoryId": 0,
     "drops": [
-      "windChip"
+      {
+        "id": "windChip"
+      }
     ]
   },
   "164": {
@@ -4450,7 +4580,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "danceWing"
+      {
+        "id": "danceWing"
+      }
     ]
   },
   "168": {
@@ -4494,7 +4626,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "charmGas"
+      {
+        "id": "charmGas"
+      }
     ]
   },
   "169": {
@@ -4538,7 +4672,9 @@
     "techniqueId": "megaHeal",
     "memoryId": 0,
     "drops": [
-      "maxCharge"
+      {
+        "id": "maxCharge"
+      }
     ]
   },
   "170": {
@@ -4582,7 +4718,9 @@
     "techniqueId": "fullHeal",
     "memoryId": 0,
     "drops": [
-      "charismaChip"
+      {
+        "id": "charismaChip"
+      }
     ]
   },
   "171": {
@@ -4626,7 +4764,9 @@
     "techniqueId": "slyphStorm",
     "memoryId": 0,
     "drops": [
-      "windPowerS"
+      {
+        "id": "windPowerS"
+      }
     ]
   },
   "172": {
@@ -4752,7 +4892,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "powerBrace"
+      {
+        "id": "powerBrace"
+      }
     ]
   },
   "175": {
@@ -4837,7 +4979,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "metalPowerS"
+      {
+        "id": "metalPowerS"
+      }
     ]
   },
   "177": {
@@ -4963,7 +5107,9 @@
     "techniqueId": "darknessChaos",
     "memoryId": 0,
     "drops": [
-      "darkPowerS"
+      {
+        "id": "darkPowerS"
+      }
     ]
   },
   "180": {
@@ -5130,7 +5276,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "chainSaw"
+      {
+        "id": "chainSaw"
+      }
     ]
   },
   "184": {
@@ -5215,7 +5363,9 @@
     "techniqueId": "none",
     "memoryId": 397,
     "drops": [
-      "spiderWeb"
+      {
+        "id": "spiderWeb"
+      }
     ]
   },
   "186": {
@@ -5259,7 +5409,9 @@
     "techniqueId": "none",
     "memoryId": 398,
     "drops": [
-      "naginata"
+      {
+        "id": "naginata"
+      }
     ]
   },
   "187": {
@@ -5303,7 +5455,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "metalPower2"
+      {
+        "id": "metalPower2"
+      }
     ]
   },
   "188": {
@@ -5347,7 +5501,9 @@
     "techniqueId": "none",
     "memoryId": 400,
     "drops": [
-      "glasses"
+      {
+        "id": "glasses"
+      }
     ]
   },
   "189": {
@@ -5473,7 +5629,9 @@
     "techniqueId": "none",
     "memoryId": 403,
     "drops": [
-      "magicianRod"
+      {
+        "id": "magicianRod"
+      }
     ]
   },
   "192": {
@@ -5517,7 +5675,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "hpChip"
+      {
+        "id": "hpChip"
+      }
     ]
   },
   "193": {
@@ -5561,7 +5721,9 @@
     "techniqueId": "none",
     "memoryId": 405,
     "drops": [
-      "overClocked"
+      {
+        "id": "overClocked"
+      }
     ]
   },
   "194": {
@@ -5646,7 +5808,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "chaosWave"
+      {
+        "id": "chaosWave"
+      }
     ]
   },
   "196": {
@@ -5813,7 +5977,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "cursedPuppet"
+      {
+        "id": "cursedPuppet"
+      }
     ]
   },
   "200": {
@@ -5857,7 +6023,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "boltPowerS"
+      {
+        "id": "boltPowerS"
+      }
     ]
   },
   "201": {
@@ -5942,7 +6110,9 @@
     "techniqueId": "none",
     "memoryId": 413,
     "drops": [
-      "danceFeather"
+      {
+        "id": "danceFeather"
+      }
     ]
   },
   "203": {
@@ -5986,7 +6156,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "trainingBook"
+      {
+        "id": "trainingBook"
+      }
     ]
   },
   "204": {
@@ -6071,7 +6243,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "overLoad"
+      {
+        "id": "overLoad"
+      }
     ]
   },
   "206": {
@@ -6115,7 +6289,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "boostChip"
+      {
+        "id": "boostChip"
+      }
     ]
   },
   "207": {
@@ -6159,7 +6335,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "boltPower2"
+      {
+        "id": "boltPower2"
+      }
     ]
   },
   "208": {
@@ -6244,7 +6422,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "runnerShoes"
+      {
+        "id": "runnerShoes"
+      }
     ]
   },
   "210": {
@@ -6288,7 +6468,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "mpProxy"
+      {
+        "id": "mpProxy"
+      }
     ]
   },
   "211": {
@@ -6373,7 +6555,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "trainChip3"
+      {
+        "id": "trainChip3"
+      }
     ]
   },
   "213": {
@@ -6458,7 +6642,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "trainChip1"
+      {
+        "id": "trainChip1"
+      }
     ]
   },
   "215": {
@@ -6502,7 +6688,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "hpMegaProxy"
+      {
+        "id": "hpMegaProxy"
+      }
     ]
   },
   "216": {
@@ -6546,7 +6734,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "waterPowerS"
+      {
+        "id": "waterPowerS"
+      }
     ]
   },
   "217": {
@@ -6590,7 +6780,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "trainChip2"
+      {
+        "id": "trainChip2"
+      }
     ]
   },
   "218": {
@@ -6634,7 +6826,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "hackSystem"
+      {
+        "id": "hackSystem"
+      }
     ]
   },
   "219": {
@@ -6719,7 +6913,9 @@
     "techniqueId": "flameSphere",
     "memoryId": 0,
     "drops": [
-      "mpMegaProxy"
+      {
+        "id": "mpMegaProxy"
+      }
     ]
   },
   "221": {
@@ -6845,7 +7041,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "trainChipV"
+      {
+        "id": "trainChipV"
+      }
     ]
   },
   "224": {
@@ -6889,7 +7087,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "icePowerS"
+      {
+        "id": "icePowerS"
+      }
     ]
   },
   "247": {
@@ -6973,11 +7173,12 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 457,
-    "dropsByLocation": {
-      "east": [
-        "1bBooster"
-      ]
-    }
+    "drops": [
+      {
+        "id": "1bBooster",
+        "sectorOnly": "east"
+      }
+    ]
   },
   "516": {
     "name": "Cardmon(B)",
@@ -7019,14 +7220,16 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 458,
-    "dropsByLocation": {
-      "east": [
-        "1bBooster"
-      ],
-      "south": [
-        "2bBooster"
-      ]
-    }
+    "drops": [
+      {
+        "id": "1bBooster",
+        "sectorOnly": "east"
+      },
+      {
+        "id": "2bBooster",
+        "sectorOnly": "south"
+      }
+    ]
   },
   "517": {
     "name": "Cardmon(C)",
@@ -7068,16 +7271,14 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 459,
-    "dropsByLocation": {
-      "south": [
-        "4bBooster",
-        "r02Booster"
-      ],
-      "west": [
-        "4bBooster",
-        "r02Booster"
-      ]
-    }
+    "drops": [
+      {
+        "id": "4bBooster"
+      },
+      {
+        "id": "r02Booster"
+      }
+    ]
   },
   "518": {
     "name": "Cardmon(D)",
@@ -7119,11 +7320,12 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 460,
-    "dropsByLocation": {
-      "west": [
-        "5bBooster"
-      ]
-    }
+    "drops": [
+      {
+        "id": "5bBooster",
+        "sectorOnly": "west"
+      }
+    ]
   },
   "519": {
     "name": "Cardmon (T3)",
@@ -7166,7 +7368,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "variousBooster"
+      {
+        "id": "variousBooster"
+      }
     ]
   },
   "520": {
@@ -7210,7 +7414,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "variousBooster"
+      {
+        "id": "variousBooster"
+      }
     ]
   },
   "521": {
@@ -7254,7 +7460,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "variousBooster"
+      {
+        "id": "variousBooster"
+      }
     ]
   },
   "522": {
@@ -7298,7 +7506,9 @@
     "techniqueId": "none",
     "memoryId": 0,
     "drops": [
-      "variousBooster"
+      {
+        "id": "variousBooster"
+      }
     ]
   }
 }

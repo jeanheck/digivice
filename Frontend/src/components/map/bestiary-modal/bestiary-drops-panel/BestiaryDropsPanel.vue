@@ -14,17 +14,8 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-const resolveDropIds = (enemy: EnemyViewModel): string[] => {
-  if (enemy.dropsByLocation !== undefined) {
-    const flattenedDropIds = Object.values(enemy.dropsByLocation).flat();
-    return [...new Set(flattenedDropIds)];
-  }
-
-  return enemy.drops ?? [];
-};
-
 const dropIds = computed(() => {
-  const ids = resolveDropIds(props.enemy);
+  const ids = [...new Set((props.enemy.drops ?? []).map((drop) => drop.id))];
   if (ids.length === 1 && ids[0] === "variousBooster") {
     return [] as string[];
   }

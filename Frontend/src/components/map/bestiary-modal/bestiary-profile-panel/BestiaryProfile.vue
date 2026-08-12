@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
-import BestiaryProfileDrops from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileDrops.vue";
+import type { EnemyDropRaw } from "@/repositories/tables/raws/enemy/enemy-drop.raw";
 
 const props = defineProps<{
   enemy: EnemyViewModel;
@@ -30,6 +30,38 @@ const techniqueLabel = computed(() => {
 
   return t(`enemyTechniques.${props.enemy.techniqueId}`);
 });
+
+const enemyDrops = computed(() => {
+  return props.enemy.drops ?? [];
+});
+
+const isVariousBoosterOnly = computed(() => {
+  return enemyDrops.value.length === 1 && enemyDrops.value[0].id === "variousBooster";
+});
+
+const hasInteractiveDrops = computed(() => {
+  return enemyDrops.value.length > 0 && !isVariousBoosterOnly.value;
+});
+
+const dropFallbackLabel = computed(() => {
+  if (isVariousBoosterOnly.value) {
+    return t("drops.variousBooster");
+  }
+
+  return t("drops.none");
+});
+
+const sectorOnlyLabel = (sectorOnly: string): string => {
+  return t("enemy.sectorOnly", { sector: t(`sectors.${sectorOnly}`) });
+};
+
+const handleDropClick = (drop: EnemyDropRaw): void => {
+  if (drop.id === "variousBooster") {
+    return;
+  }
+
+  emit("open-drops", drop.id);
+};
 </script>
 
 <template>
@@ -50,47 +82,72 @@ const techniqueLabel = computed(() => {
         <div v-else class="text-4xl opacity-30 select-none">❓</div>
       </div>
 
-      <div class="w-1/2 h-full flex flex-col gap-4 min-h-0">
-        <div
-          class="shrink-0 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5"
-        >
-          <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-blue-500 tracking-wider uppercase"
-              >{{ $t("enemy.specie") }}:</span
-            >
-            <span class="font-bold text-gray-300 capitalize">{{
-              $t(`species.${enemy.species}`)
-            }}</span>
-          </div>
-
-          <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-blue-500 tracking-wider uppercase"
-              >{{ $t("enemy.level") }}:</span
-            >
-            <span class="font-bold text-gray-300">{{ enemy.level }}</span>
-          </div>
-
-          <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-blue-500 tracking-wider uppercase">HP:</span>
-            <span class="font-bold text-white">{{ enemy.hp }}</span>
-          </div>
-
-          <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-blue-500 tracking-wider uppercase"
-              >{{ $t("enemy.baseExp") }}:</span
-            >
-            <span class="font-bold text-gray-300">{{ enemy.exp }}</span>
-          </div>
-
-          <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-blue-500 tracking-wider uppercase"
-              >{{ $t("enemy.baseBits") }}:</span
-            >
-            <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
-          </div>
+      <div
+        class="w-1/2 h-full bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5 min-h-0"
+      >
+        <div class="flex items-center justify-between text-xs">
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.specie") }}:</span
+          >
+          <span class="font-bold text-gray-300 capitalize">{{
+            $t(`species.${enemy.species}`)
+          }}</span>
         </div>
 
-        <BestiaryProfileDrops :enemy="enemy" @open-drops="emit('open-drops', $event)" />
+        <div class="flex items-center justify-between text-xs">
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.level") }}:</span
+          >
+          <span class="font-bold text-gray-300">{{ enemy.level }}</span>
+        </div>
+
+        <div class="flex items-center justify-between text-xs">
+          <span class="font-bold text-blue-500 tracking-wider uppercase">HP:</span>
+          <span class="font-bold text-white">{{ enemy.hp }}</span>
+        </div>
+
+        <div class="flex items-center justify-between text-xs">
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.baseExp") }}:</span
+          >
+          <span class="font-bold text-gray-300">{{ enemy.exp }}</span>
+        </div>
+
+        <div class="flex items-center justify-between text-xs">
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ $t("enemy.baseBits") }}:</span
+          >
+          <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
+        </div>
+
+        <div class="flex items-start justify-between text-xs gap-2 min-h-0">
+          <span class="font-bold text-blue-500 tracking-wider uppercase shrink-0"
+            >{{ $t("enemy.drops") }}:</span
+          >
+          <div class="flex flex-col items-end gap-1 min-w-0">
+            <span v-if="!hasInteractiveDrops" class="font-bold text-gray-300">
+              {{ dropFallbackLabel }}
+            </span>
+            <template v-else>
+              <button
+                v-for="drop in enemyDrops"
+                :key="`${drop.id}-${drop.sectorOnly ?? ''}`"
+                type="button"
+                class="w-full text-right px-2.5 rounded text-[10px] 2xl:text-xs font-bold tracking-wide transition-colors cursor-pointer text-gray-300 hover:bg-blue-900/20 border border-transparent hover:border-blue-500/40"
+                :class="drop.sectorOnly ? 'py-2' : 'py-1.5'"
+                @click="handleDropClick(drop)"
+              >
+                <span class="block">{{ $t(`drops.${drop.id}`) }}</span>
+                <span
+                  v-if="drop.sectorOnly"
+                  class="block text-[9px] font-normal text-gray-300 leading-tight"
+                >
+                  {{ sectorOnlyLabel(drop.sectorOnly) }}
+                </span>
+              </button>
+            </template>
+          </div>
+        </div>
       </div>
     </div>
 

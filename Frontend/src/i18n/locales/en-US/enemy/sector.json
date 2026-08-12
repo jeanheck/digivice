@@ -2,6 +2,7 @@
   "sectors": {
     "east": "East",
     "south": "South",
-    "west": "West"
+    "west": "West",
+    "north": "North"
   }
 }
