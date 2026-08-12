@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
+import BestiaryProfileImage from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileImage.vue";
+import BestiaryProfileResume from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileResume.vue";
+import BestiaryProfileTechniques from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileTechniques.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
-import type { EnemyDropRaw } from "@/repositories/tables/raws/enemy/enemy-drop.raw";
 
-const props = defineProps<{
+defineProps<{
   enemy: EnemyViewModel;
   enemyImageUrl: string | null;
 }>();
@@ -12,177 +12,23 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "open-drops", dropId: string): void;
 }>();
-
-const { t } = useI18n();
-
-const regularAttackLabel = computed(() => {
-  if (!props.enemy.regularAttackId) {
-    return "";
-  }
-
-  return t(`regularAttacks.${props.enemy.regularAttackId}`);
-});
-
-const techniqueLabel = computed(() => {
-  if (!props.enemy.techniqueId) {
-    return "";
-  }
-
-  return t(`enemyTechniques.${props.enemy.techniqueId}`);
-});
-
-const enemyDrops = computed(() => {
-  return props.enemy.drops ?? [];
-});
-
-const isVariousBoosterOnly = computed(() => {
-  return enemyDrops.value.length === 1 && enemyDrops.value[0].id === "variousBooster";
-});
-
-const hasInteractiveDrops = computed(() => {
-  return enemyDrops.value.length > 0 && !isVariousBoosterOnly.value;
-});
-
-const dropSectionLabel = computed(() => {
-  if (hasInteractiveDrops.value && enemyDrops.value.length > 1) {
-    return t("enemy.drops");
-  }
-
-  return t("enemy.drop");
-});
-
-const dropFallbackLabel = computed(() => {
-  if (isVariousBoosterOnly.value) {
-    return t("drops.variousBooster");
-  }
-
-  return t("drops.none");
-});
-
-const sectorOnlyLabel = (sectorOnly: string): string => {
-  return t("enemy.sectorOnly", { sector: t(`sectors.${sectorOnly}`) });
-};
-
-const handleDropClick = (drop: EnemyDropRaw): void => {
-  if (drop.id === "variousBooster") {
-    return;
-  }
-
-  emit("open-drops", drop.id);
-};
 </script>
 
 <template>
   <div class="flex flex-col gap-4 flex-1">
     <div class="flex gap-4 h-72 shrink-0">
-      <div
-        class="w-1/2 h-full shrink-0 bg-[#000a1a] border border-blue-900/50 rounded flex items-center justify-center shadow-inner relative overflow-hidden"
-      >
-        <div
-          class="absolute inset-0 opacity-10 bg-linear-to-br from-blue-500/20 to-transparent pointer-events-none"
-        ></div>
-        <img
-          v-if="enemyImageUrl"
-          :src="enemyImageUrl"
-          class="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(0,170,255,0.4)]"
-          :alt="enemy.name"
-        />
-        <div v-else class="text-4xl opacity-30 select-none">❓</div>
-      </div>
-
-      <div
-        class="w-1/2 h-full bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col justify-start gap-2.5 min-h-0"
-      >
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.specie") }}:</span
-          >
-          <span class="font-bold text-gray-300 capitalize">{{
-            $t(`species.${enemy.species}`)
-          }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.level") }}:</span
-          >
-          <span class="font-bold text-gray-300">{{ enemy.level }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">HP:</span>
-          <span class="font-bold text-white">{{ enemy.hp }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.baseExp") }}:</span
-          >
-          <span class="font-bold text-gray-300">{{ enemy.exp }}</span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ $t("enemy.baseBits") }}:</span
-          >
-          <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
-        </div>
-
-        <div
-          v-if="!hasInteractiveDrops"
-          class="flex items-center justify-between text-xs"
-        >
-          <span class="font-bold text-blue-500 tracking-wider uppercase"
-            >{{ dropSectionLabel }}:</span
-          >
-          <span class="font-bold text-gray-300">{{ dropFallbackLabel }}</span>
-        </div>
-        <div v-else class="flex flex-col gap-1 min-h-0 text-xs">
-          <span class="font-bold text-blue-500 tracking-wider uppercase">{{
-            dropSectionLabel
-          }}</span>
-          <button
-            v-for="drop in enemyDrops"
-            :key="`${drop.id}-${drop.sectorOnly ?? ''}`"
-            type="button"
-            class="w-full text-left px-2.5 rounded text-[10px] 2xl:text-xs font-bold tracking-wide transition-colors cursor-pointer bg-amber-900/40 text-amber-300 border border-amber-300"
-            :class="drop.sectorOnly ? 'py-2' : 'py-1.5'"
-            @click="handleDropClick(drop)"
-          >
-            <span class="block">{{ $t(`drops.${drop.id}`) }}</span>
-            <span
-              v-if="drop.sectorOnly"
-              class="block text-[9px] font-normal text-gray-300 leading-tight"
-            >
-              {{ sectorOnlyLabel(drop.sectorOnly) }}
-            </span>
-          </button>
-        </div>
-      </div>
+      <BestiaryProfileImage
+        class="w-1/2 shrink-0"
+        :enemy-image-url="enemyImageUrl"
+        :enemy-name="enemy.name"
+      />
+      <BestiaryProfileResume
+        class="w-1/2"
+        :enemy="enemy"
+        @open-drops="emit('open-drops', $event)"
+      />
     </div>
 
-    <div
-      class="flex-1 min-h-32 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm"
-    >
-      <div class="flex flex-col gap-5">
-        <div class="flex flex-col gap-1.5">
-          <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{
-            $t("enemy.regularAttack")
-          }}</span>
-          <span class="text-gray-200 text-xs">
-            {{ regularAttackLabel }}
-          </span>
-        </div>
-
-        <div class="flex flex-col gap-1.5">
-          <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">{{
-            $t("enemy.technique")
-          }}</span>
-          <span class="text-gray-200 text-xs">
-            {{ techniqueLabel }}
-          </span>
-        </div>
-      </div>
-    </div>
+    <BestiaryProfileTechniques :enemy="enemy" />
   </div>
 </template>
