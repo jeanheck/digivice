@@ -44,6 +44,13 @@
       {
         "id": "oldWand"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0226",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "2": {
@@ -90,6 +97,13 @@
     "drops": [
       {
         "id": "oldClaw"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "022B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -138,6 +152,13 @@
       {
         "id": "rustyRifle"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0252",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "15": {
@@ -180,7 +201,14 @@
     "boss": true,
     "regularAttackId": "darkElement",
     "techniqueId": "heartBreakAttack",
-    "memoryId": 70
+    "memoryId": 70,
+    "locations": [
+      {
+        "locationId": "0254",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
+    ]
   },
   "16": {
     "name": "Datamon",
@@ -226,6 +254,13 @@
     "drops": [
       {
         "id": "rustyGlove"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "021C",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -274,6 +309,13 @@
       {
         "id": "rustyKatana"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0243",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "21": {
@@ -316,7 +358,14 @@
     "boss": true,
     "regularAttackId": "machineElement",
     "techniqueId": "madPump",
-    "memoryId": 436
+    "memoryId": 436,
+    "locations": [
+      {
+        "locationId": "022D",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
+    ]
   },
   "71": {
     "name": "Kunemon",
@@ -357,7 +406,29 @@
     "bits": 10,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 32
+    "memoryId": 32,
+    "locations": [
+      {
+        "locationId": "021D",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "021E",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0221",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0222",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
+    ]
   },
   "72": {
     "name": "Tapirmon",
@@ -398,7 +469,24 @@
     "bits": 20,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 206
+    "memoryId": 206,
+    "locations": [
+      {
+        "locationId": "021D",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "021E",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "021E",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      }
+    ]
   },
   "73": {
     "name": "Crabmon",
@@ -439,7 +527,19 @@
     "bits": 30,
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 197
+    "memoryId": 197,
+    "locations": [
+      {
+        "locationId": "0227",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0227",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      }
+    ]
   },
   "74": {
     "name": "Gizamon",
@@ -480,7 +580,24 @@
     "bits": 40,
     "regularAttackId": "waterElement",
     "techniqueId": "none",
-    "memoryId": 132
+    "memoryId": 132,
+    "locations": [
+      {
+        "locationId": "021F",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "022A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "022A",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      }
+    ]
   },
   "75": {
     "name": "DemiDevimon",
@@ -525,6 +642,13 @@
     "drops": [
       {
         "id": "darkPower1"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 24,
+        "source": "enemies"
       }
     ]
   },
@@ -572,6 +696,48 @@
       {
         "id": "powerCharge"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "021F",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "021F",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0221",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0221",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0222",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0227",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "77": {
@@ -613,7 +779,34 @@
     "bits": 40,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 25
+    "memoryId": 25,
+    "locations": [
+      {
+        "locationId": "021F",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "021F",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "022A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
+    ]
   },
   "78": {
     "name": "Kuwagamon",
@@ -654,7 +847,29 @@
     "bits": 20,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 51
+    "memoryId": 51,
+    "locations": [
+      {
+        "locationId": "0221",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0221",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0222",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0222",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      }
+    ]
   },
   "79": {
     "name": "Yanmamon",
@@ -695,7 +910,14 @@
     "bits": 30,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 67
+    "memoryId": 67,
+    "locations": [
+      {
+        "locationId": "0229",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
+    ]
   },
   "80": {
     "name": "Kiwimon",
@@ -736,7 +958,14 @@
     "bits": 35,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 198
+    "memoryId": 198,
+    "locations": [
+      {
+        "locationId": "0229",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
+    ]
   },
   "81": {
     "name": "Dokugumon",
@@ -782,6 +1011,18 @@
       {
         "id": "spiderWeb"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0225",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0225",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      }
     ]
   },
   "82": {
@@ -823,7 +1064,29 @@
     "bits": 45,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 80
+    "memoryId": 80,
+    "locations": [
+      {
+        "locationId": "0222",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0225",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0225",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0226",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
+    ]
   },
   "83": {
     "name": "Baronmon",
@@ -864,7 +1127,14 @@
     "bits": 160,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 277
+    "memoryId": 277,
+    "locations": [
+      {
+        "locationId": "0226",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      }
+    ]
   },
   "84": {
     "name": "Minotarumon",
@@ -905,7 +1175,19 @@
     "bits": 55,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 172
+    "memoryId": 172,
+    "locations": [
+      {
+        "locationId": "0226",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0226",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      }
+    ]
   },
   "85": {
     "name": "Flymon",
@@ -946,7 +1228,29 @@
     "bits": 130,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 137
+    "memoryId": 137,
+    "locations": [
+      {
+        "locationId": "021E",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0221",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "023B",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      }
+    ]
   },
   "86": {
     "name": "Woodmon",
@@ -987,7 +1291,59 @@
     "bits": 50,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 222
+    "memoryId": 222,
+    "locations": [
+      {
+        "locationId": "021D",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "021E",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "021F",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "0221",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "0222",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "0227",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "0229",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "022A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
+    ]
   },
   "87": {
     "name": "Tyrannomon",
@@ -1032,6 +1388,13 @@
     "drops": [
       {
         "id": "firePower1"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "022B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -1079,6 +1442,18 @@
       {
         "id": "tntBall"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "022B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "89": {
@@ -1124,6 +1499,13 @@
     "drops": [
       {
         "id": "fireChip"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "022B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -1171,6 +1553,33 @@
       {
         "id": "icePower1"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0233",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0234",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0237",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 24,
+        "source": "enemies"
+      }
     ]
   },
   "91": {
@@ -1217,6 +1626,68 @@
       {
         "id": "waterChip"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "021D",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "021E",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "021F",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "0221",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "0233",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0234",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0235",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0237",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 24,
+        "source": "enemies"
+      }
     ]
   },
   "92": {
@@ -1258,7 +1729,14 @@
     "bits": 90,
     "regularAttackId": "darkElement",
     "techniqueId": "none",
-    "memoryId": 37
+    "memoryId": 37,
+    "locations": [
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 24,
+        "source": "enemies"
+      }
+    ]
   },
   "93": {
     "name": "Phantomon",
@@ -1345,7 +1823,19 @@
     "bits": 160,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 50
+    "memoryId": 50,
+    "locations": [
+      {
+        "locationId": "0222",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0225",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      }
+    ]
   },
   "95": {
     "name": "Apemon",
@@ -1390,6 +1880,18 @@
     "drops": [
       {
         "id": "windPower1"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "023B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023C",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -1436,6 +1938,33 @@
     "drops": [
       {
         "id": "waterChip"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "021F",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0220",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023C",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "023D",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023D",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
       }
     ]
   },
@@ -1519,7 +2048,24 @@
     "bits": 200,
     "regularAttackId": "noElement",
     "techniqueId": "divineRain",
-    "memoryId": 210
+    "memoryId": 210,
+    "locations": [
+      {
+        "locationId": "0247",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "0249",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "024B",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      }
+    ]
   },
   "99": {
     "name": "Gesomon",
@@ -1647,7 +2193,14 @@
     "bits": 200,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 241
+    "memoryId": 241,
+    "locations": [
+      {
+        "locationId": "0227",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      }
+    ]
   },
   "102": {
     "name": "ShogunGekomon",
@@ -1692,6 +2245,13 @@
     "drops": [
       {
         "id": "chaosWave"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "0241",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -1739,6 +2299,48 @@
       {
         "id": "waterPower1"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0227",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "022A",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "0234",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "0235",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0235",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "0237",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      },
+      {
+        "locationId": "023B",
+        "lastMainQuestStepDone": 0,
+        "source": "fishing"
+      }
     ]
   },
   "104": {
@@ -1784,6 +2386,18 @@
     "drops": [
       {
         "id": "hpProxy"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "024A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "024C",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -1831,6 +2445,18 @@
       {
         "id": "superCharge"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0247",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "024B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "106": {
@@ -1876,6 +2502,18 @@
     "drops": [
       {
         "id": "powerChip"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "0247",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "024B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -1927,11 +2565,18 @@
     "locations": [
       {
         "locationId": "0220",
-        "lastMainQuestStepDone": "27"
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
       },
       {
         "locationId": "024A",
-        "lastMainQuestStepDone": "0"
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "024C",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -2061,6 +2706,23 @@
       {
         "id": "boltPower1"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0258",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0259",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "025A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "111": {
@@ -2107,6 +2769,18 @@
       {
         "id": "thunderChip"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0258",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0259",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "112": {
@@ -2152,6 +2826,38 @@
     "drops": [
       {
         "id": "searchCrest"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "024E",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "024F",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0250",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0251",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0252",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0253",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -2240,6 +2946,13 @@
       {
         "id": "pulseGuard"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "024D",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "115": {
@@ -2285,6 +2998,13 @@
     "drops": [
       {
         "id": "metalPower1"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "024D",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -2332,6 +3052,13 @@
       {
         "id": "multiCrest"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "024D",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "117": {
@@ -2377,6 +3104,23 @@
     "drops": [
       {
         "id": "machinegun"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "024D",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0252",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0253",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -2424,6 +3168,13 @@
       {
         "id": "binderCrest"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "0254",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "119": {
@@ -2469,6 +3220,13 @@
     "drops": [
       {
         "id": "wisdomChip"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "0254",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -2603,6 +3361,13 @@
       {
         "id": "armorChip"
       }
+    ],
+    "locations": [
+      {
+        "locationId": "021B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
     ]
   },
   "123": {
@@ -2648,6 +3413,13 @@
     "drops": [
       {
         "id": "wisdomChip"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "021B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -2858,6 +3630,18 @@
     "drops": [
       {
         "id": "mpChip"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0243",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -5233,7 +6017,24 @@
     "bits": 90,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 77
+    "memoryId": 77,
+    "locations": [
+      {
+        "locationId": "022A",
+        "lastMainQuestStepDone": 27,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023B",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023C",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      }
+    ]
   },
   "183": {
     "name": "Kuwagamon (green)",
@@ -5320,7 +6121,64 @@
     "bits": 80,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 396
+    "memoryId": 396,
+    "locations": [
+      {
+        "locationId": "022A",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "0233",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0233",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "0234",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0235",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "0237",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0237",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 24,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "023B",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      }
+    ]
   },
   "185": {
     "name": "Dokugumon(Brown)",
@@ -5365,6 +6223,18 @@
     "drops": [
       {
         "id": "spiderWeb"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "0248",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0249",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -5411,6 +6281,18 @@
     "drops": [
       {
         "id": "naginata"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "024A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "024C",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -5545,7 +6427,19 @@
     "bits": 190,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0
+    "memoryId": 0,
+    "locations": [
+      {
+        "locationId": "023C",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "023C",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      }
+    ]
   },
   "190": {
     "name": "Triceramon (red)",
@@ -5631,6 +6525,18 @@
     "drops": [
       {
         "id": "magicianRod"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "0248",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0249",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -5723,6 +6629,38 @@
     "drops": [
       {
         "id": "overClocked"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "024A",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "024C",
+        "lastMainQuestStepDone": 0,
+        "source": "kickingTrees"
+      },
+      {
+        "locationId": "0257",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0258",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "0259",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
+      },
+      {
+        "locationId": "025A",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },
@@ -6112,6 +7050,13 @@
     "drops": [
       {
         "id": "danceFeather"
+      }
+    ],
+    "locations": [
+      {
+        "locationId": "0242",
+        "lastMainQuestStepDone": 0,
+        "source": "enemies"
       }
     ]
   },

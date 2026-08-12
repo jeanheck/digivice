@@ -15,6 +15,7 @@ defineProps<{
 
 const emit = defineEmits<{
   (e: "open-drops", dropId: string): void;
+  (e: "open-locations"): void;
   (e: "show-stat-key-tooltip", event: MouseEvent, statKey: string): void;
   (e: "show-condition-tooltip", event: MouseEvent, tooltipKey: string): void;
   (e: "move-stat-tooltip", event: MouseEvent): void;
@@ -48,7 +49,11 @@ const forwardHideStatTooltip = (): void => {
         :enemy-image-url="enemyImageUrl"
         :enemy-name="enemy.name"
       />
-      <BestiaryProfileResume class="w-1/2" :enemy="enemy" />
+      <BestiaryProfileResume
+        class="w-1/2"
+        :enemy="enemy"
+        @open-locations="emit('open-locations')"
+      />
     </div>
 
     <div

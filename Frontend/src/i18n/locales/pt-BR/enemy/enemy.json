@@ -19,6 +19,13 @@
     "attr": "Atributos",
     "elem": "Elementos",
     "status": "Resistências",
-    "foundIn": "Encontrado em"
+    "foundIn": "Encontrado em",
+    "locations": "Localizações",
+    "locationSource": {
+      "enemies": "Andando",
+      "fishing": "Pesca",
+      "kickingTrees": "Árvore"
+    },
+    "locationStep": "A partir do step {step} da main quest"
   }
 }

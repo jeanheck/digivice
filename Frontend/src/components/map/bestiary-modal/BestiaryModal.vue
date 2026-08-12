@@ -4,6 +4,7 @@ import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import BestiaryProfilePanel from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfilePanel.vue";
 import BestiaryDropsPanel from "@/components/map/bestiary-modal/bestiary-drops-panel/BestiaryDropsPanel.vue";
+import BestiaryLocationsPanel from "@/components/map/bestiary-modal/bestiary-locations-panel/BestiaryLocationsPanel.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -21,7 +22,7 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-type BestiaryView = "profile" | "drops";
+type BestiaryView = "profile" | "drops" | "locations";
 
 const selectedEnemyId = ref<string | null>(null);
 const selectedDropId = ref<string | null>(null);
@@ -45,6 +46,11 @@ const openDropsView = (dropId: string) => {
   hide();
   selectedDropId.value = dropId;
   view.value = "drops";
+};
+
+const openLocationsView = () => {
+  hide();
+  view.value = "locations";
 };
 
 const backToProfileView = () => {
@@ -142,15 +148,21 @@ const enemyImageUrl = computed(() => {
       :enemy="enemy"
       :enemy-image-url="enemyImageUrl"
       @open-drops="openDropsView"
+      @open-locations="openLocationsView"
       @show-stat-key-tooltip="showEnemyStatKeyTooltip"
       @show-condition-tooltip="showEnemyConditionTooltip"
       @move-stat-tooltip="moveEnemyStatTooltip"
       @hide-stat-tooltip="hideEnemyStatTooltip"
     />
     <BestiaryDropsPanel
-      v-else
+      v-else-if="view === 'drops'"
       :enemy="enemy"
       :initial-drop-id="selectedDropId"
+      @back="backToProfileView"
+    />
+    <BestiaryLocationsPanel
+      v-else
+      :enemy="enemy"
       @back="backToProfileView"
     />
   </Modal>

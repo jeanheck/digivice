@@ -1,27 +1,17 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { useI18n } from "vue-i18n";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = defineProps<{
   enemy: EnemyViewModel;
 }>();
 
-const { t } = useI18n();
+const emit = defineEmits<{
+  (e: "open-locations"): void;
+}>();
 
-const locationLabels = computed(() => {
-  const locations = props.enemy.locations ?? [];
-  const uniqueLocationIds: string[] = [];
-
-  for (const location of locations) {
-    if (!uniqueLocationIds.includes(location.locationId)) {
-      uniqueLocationIds.push(location.locationId);
-    }
-  }
-
-  return uniqueLocationIds.map((locationId) => {
-    return t(`location.${locationId}`);
-  });
+const hasLocations = computed(() => {
+  return (props.enemy.locations?.length ?? 0) > 0;
 });
 </script>
 
@@ -64,19 +54,20 @@ const locationLabels = computed(() => {
       <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
     </div>
 
-    <div class="border-t border-blue-900/50 pt-2.5 flex flex-col gap-1 min-h-0 text-xs">
+    <div
+      v-if="hasLocations"
+      class="border-t border-blue-900/50 pt-2.5 flex flex-col gap-1.5 min-h-0 text-xs"
+    >
       <span class="font-bold text-blue-500 tracking-wider uppercase">{{
         $t("enemy.foundIn")
-      }}:</span>
-      <div class="flex flex-col gap-1 min-h-0 overflow-y-auto custom-scroll">
-        <span
-          v-for="label in locationLabels"
-          :key="label"
-          class="font-bold text-gray-300"
-        >
-          {{ label }}
-        </span>
-      </div>
+      }}</span>
+      <button
+        type="button"
+        class="self-start px-2.5 py-1.5 rounded text-[10px] font-bold uppercase tracking-widest text-blue-300 border border-blue-700/60 bg-blue-950/40 hover:bg-blue-900/40 transition-colors cursor-pointer"
+        @click="emit('open-locations')"
+      >
+        {{ $t("enemy.locations") }}
+      </button>
     </div>
   </div>
 </template>

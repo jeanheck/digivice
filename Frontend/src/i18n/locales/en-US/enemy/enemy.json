@@ -19,6 +19,13 @@
     "attr": "Attributes",
     "elem": "Resistances",
     "status": "Conditions",
-    "foundIn": "Found in"
+    "foundIn": "Found in",
+    "locations": "Locations",
+    "locationSource": {
+      "enemies": "Walk",
+      "fishing": "Fishing",
+      "kickingTrees": "Kicking tree"
+    },
+    "locationStep": "From main quest step {step}"
   }
 }
