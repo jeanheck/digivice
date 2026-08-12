@@ -9,10 +9,6 @@ const props = defineProps<{
 
 const { t } = useI18n();
 
-const hasLocations = computed(() => {
-  return (props.enemy.locations?.length ?? 0) > 0;
-});
-
 const locationLabels = computed(() => {
   const locations = props.enemy.locations ?? [];
   const uniqueLocationIds: string[] = [];
@@ -30,7 +26,9 @@ const locationLabels = computed(() => {
 </script>
 
 <template>
-  <div v-if="hasLocations" class="flex-1 min-w-0 flex flex-col gap-1.5">
+  <div
+    class="h-full min-h-32 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm flex flex-col gap-1.5 min-w-0"
+  >
     <span class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">
       {{ $t("enemy.locations") }}
     </span>

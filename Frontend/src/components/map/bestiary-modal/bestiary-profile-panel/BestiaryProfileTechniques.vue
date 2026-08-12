@@ -28,7 +28,7 @@ const techniqueLabel = computed(() => {
 
 <template>
   <div
-    class="flex-1 min-h-32 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm"
+    class="h-full min-h-32 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm"
   >
     <div class="flex flex-col gap-5">
       <div class="flex flex-col gap-1.5">

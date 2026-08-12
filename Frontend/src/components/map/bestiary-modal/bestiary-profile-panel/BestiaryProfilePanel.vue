@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import BestiaryProfile from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfile.vue";
+import BestiaryProfileImage from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileImage.vue";
+import BestiaryProfileResume from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileResume.vue";
+import BestiaryProfileTechniques from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileTechniques.vue";
 import BestiaryProfileAttributes from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileAttributes.vue";
 import BestiaryProfileElements from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileElements.vue";
 import BestiaryProfileConditions from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileConditions.vue";
 import BestiaryProfileLocations from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileLocations.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
-const props = defineProps<{
+defineProps<{
   enemy: EnemyViewModel;
   enemyImageUrl: string | null;
 }>();
@@ -35,53 +36,49 @@ const forwardMoveStatTooltip = (event: MouseEvent): void => {
 const forwardHideStatTooltip = (): void => {
   emit("hide-stat-tooltip");
 };
-
-const showEncounterInfo = computed(() => {
-  return (props.enemy.locations?.length ?? 0) > 0;
-});
 </script>
 
 <template>
-  <div class="p-4 flex flex-col sm:flex-row gap-4 h-full min-h-0 overflow-y-auto custom-scroll">
-    <BestiaryProfile
-      :enemy="enemy"
-      :enemy-image-url="enemyImageUrl"
-      @open-drops="emit('open-drops', $event)"
-    />
-
-    <div class="flex-1 flex flex-col gap-4 min-h-0">
-      <div
-        class="bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 items-start"
-        :class="showEncounterInfo ? 'shrink-0' : 'flex-1 min-h-0'"
-      >
-        <BestiaryProfileAttributes
-          :attributes="enemy.attributes"
-          @show-stat-key-tooltip="forwardStatKeyTooltip"
-          @move-stat-tooltip="forwardMoveStatTooltip"
-          @hide-stat-tooltip="forwardHideStatTooltip"
-        />
-        <BestiaryProfileElements
-          :elements="enemy.elements"
-          @show-stat-key-tooltip="forwardStatKeyTooltip"
-          @move-stat-tooltip="forwardMoveStatTooltip"
-          @hide-stat-tooltip="forwardHideStatTooltip"
-        />
-        <BestiaryProfileConditions
-          :conditions="enemy.conditions"
-          @show-condition-tooltip="forwardConditionTooltip"
-          @move-stat-tooltip="forwardMoveStatTooltip"
-          @hide-stat-tooltip="forwardHideStatTooltip"
-        />
-      </div>
-
-      <div
-        v-if="showEncounterInfo"
-        class="flex-1 min-h-24 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm"
-      >
-        <div class="flex flex-row gap-6">
-          <BestiaryProfileLocations :enemy="enemy" />
-        </div>
-      </div>
+  <div
+    class="p-4 grid grid-cols-2 grid-rows-[19rem_1fr] gap-4 h-full min-h-0 overflow-y-auto custom-scroll"
+  >
+    <div class="flex gap-4 h-full min-h-0">
+      <BestiaryProfileImage
+        class="w-1/2 shrink-0"
+        :enemy-image-url="enemyImageUrl"
+        :enemy-name="enemy.name"
+      />
+      <BestiaryProfileResume
+        class="w-1/2"
+        :enemy="enemy"
+        @open-drops="emit('open-drops', $event)"
+      />
     </div>
+
+    <div
+      class="h-full min-h-0 overflow-y-auto custom-scroll bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 items-start"
+    >
+      <BestiaryProfileAttributes
+        :attributes="enemy.attributes"
+        @show-stat-key-tooltip="forwardStatKeyTooltip"
+        @move-stat-tooltip="forwardMoveStatTooltip"
+        @hide-stat-tooltip="forwardHideStatTooltip"
+      />
+      <BestiaryProfileElements
+        :elements="enemy.elements"
+        @show-stat-key-tooltip="forwardStatKeyTooltip"
+        @move-stat-tooltip="forwardMoveStatTooltip"
+        @hide-stat-tooltip="forwardHideStatTooltip"
+      />
+      <BestiaryProfileConditions
+        :conditions="enemy.conditions"
+        @show-condition-tooltip="forwardConditionTooltip"
+        @move-stat-tooltip="forwardMoveStatTooltip"
+        @hide-stat-tooltip="forwardHideStatTooltip"
+      />
+    </div>
+
+    <BestiaryProfileTechniques :enemy="enemy" />
+    <BestiaryProfileLocations :enemy="enemy" />
   </div>
 </template>
