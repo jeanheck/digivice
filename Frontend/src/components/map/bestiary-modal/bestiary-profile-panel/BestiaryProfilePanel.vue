@@ -5,7 +5,7 @@ import BestiaryProfileTechniques from "@/components/map/bestiary-modal/bestiary-
 import BestiaryProfileAttributes from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileAttributes.vue";
 import BestiaryProfileElements from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileElements.vue";
 import BestiaryProfileConditions from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileConditions.vue";
-import BestiaryProfileLocations from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileLocations.vue";
+import BestiaryProfileDrops from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileDrops.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 defineProps<{
@@ -48,11 +48,7 @@ const forwardHideStatTooltip = (): void => {
         :enemy-image-url="enemyImageUrl"
         :enemy-name="enemy.name"
       />
-      <BestiaryProfileResume
-        class="w-1/2"
-        :enemy="enemy"
-        @open-drops="emit('open-drops', $event)"
-      />
+      <BestiaryProfileResume class="w-1/2" :enemy="enemy" />
     </div>
 
     <div
@@ -79,6 +75,6 @@ const forwardHideStatTooltip = (): void => {
     </div>
 
     <BestiaryProfileTechniques :enemy="enemy" />
-    <BestiaryProfileLocations :enemy="enemy" />
+    <BestiaryProfileDrops :enemy="enemy" @open-drops="emit('open-drops', $event)" />
   </div>
 </template>

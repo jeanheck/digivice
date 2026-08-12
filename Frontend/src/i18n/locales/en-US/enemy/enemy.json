@@ -14,11 +14,11 @@
     "baseExp": "EXP",
     "baseBits": "BITS",
     "combatActions": "Actions",
-    "regularAttack": "Regular Attack",
+    "regularAttack": "Attack",
     "technique": "Technique",
     "attr": "Attributes",
     "elem": "Resistances",
     "status": "Conditions",
-    "locations": "Locations"
+    "foundIn": "Found in"
   }
 }

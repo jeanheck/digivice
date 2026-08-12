@@ -1,0 +1,90 @@
+<script setup lang="ts">
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
+import type { EnemyDropRaw } from "@/repositories/tables/raws/enemy/enemy-drop.raw";
+
+const props = defineProps<{
+  enemy: EnemyViewModel;
+}>();
+
+const emit = defineEmits<{
+  (e: "open-drops", dropId: string): void;
+}>();
+
+const { t } = useI18n();
+
+const enemyDrops = computed(() => {
+  return props.enemy.drops ?? [];
+});
+
+const isVariousBoosterOnly = computed(() => {
+  return enemyDrops.value.length === 1 && enemyDrops.value[0].id === "variousBooster";
+});
+
+const hasInteractiveDrops = computed(() => {
+  return enemyDrops.value.length > 0 && !isVariousBoosterOnly.value;
+});
+
+const dropSectionLabel = computed(() => {
+  if (hasInteractiveDrops.value && enemyDrops.value.length > 1) {
+    return t("enemy.drops");
+  }
+
+  return t("enemy.drop");
+});
+
+const dropFallbackLabel = computed(() => {
+  if (isVariousBoosterOnly.value) {
+    return t("drops.variousBooster");
+  }
+
+  return t("drops.none");
+});
+
+const sectorOnlyLabel = (sectorOnly: string): string => {
+  return t("enemy.sectorOnly", { sector: t(`sectors.${sectorOnly}`) });
+};
+
+const handleDropClick = (drop: EnemyDropRaw): void => {
+  if (drop.id === "variousBooster") {
+    return;
+  }
+
+  emit("open-drops", drop.id);
+};
+</script>
+
+<template>
+  <div
+    class="h-full min-h-32 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner text-sm flex flex-col min-w-0"
+  >
+    <h4
+      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-1 w-full"
+    >
+      {{ dropSectionLabel }}
+    </h4>
+
+    <span v-if="!hasInteractiveDrops" class="text-gray-200 text-xs">
+      {{ dropFallbackLabel }}
+    </span>
+    <div v-else class="flex flex-wrap gap-2 justify-start">
+      <button
+        v-for="drop in enemyDrops"
+        :key="`${drop.id}-${drop.sectorOnly ?? ''}`"
+        type="button"
+        class="text-left px-2.5 rounded text-[10px] 2xl:text-xs font-bold tracking-wide transition-colors cursor-pointer bg-amber-900/40 text-amber-300 border border-amber-300"
+        :class="drop.sectorOnly ? 'py-2' : 'py-1.5'"
+        @click="handleDropClick(drop)"
+      >
+        <span class="block">{{ $t(`drops.${drop.id}`) }}</span>
+        <span
+          v-if="drop.sectorOnly"
+          class="block text-[9px] font-normal text-gray-300 leading-tight"
+        >
+          {{ sectorOnlyLabel(drop.sectorOnly) }}
+        </span>
+      </button>
+    </div>
+  </div>
+</template>
