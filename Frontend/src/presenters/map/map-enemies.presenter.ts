@@ -8,26 +8,26 @@ export class MapEnemiesPresenter {
   }
 
   public static getResumedEnemiesByEncounterSources(
-    walkIds: string[],
+    walkingIds: string[],
     fishingIds: string[],
-    kickingTreesIds: string[],
+    kickingTreeIds: string[],
   ): EnemyResumedViewModel[] {
     const originsByEnemyId = new Map<
       string,
-      { walk: boolean; fishing: boolean; kickingTrees: boolean }
+      { walking: boolean; fishing: boolean; kickingTree: boolean }
     >();
     const orderedEnemyIds: string[] = [];
 
     const registerOrigin = (
       enemyId: string,
-      originKey: "walk" | "fishing" | "kickingTrees",
+      originKey: "walking" | "fishing" | "kickingTree",
     ): void => {
       const existingOrigins = originsByEnemyId.get(enemyId);
       if (existingOrigins === undefined) {
         originsByEnemyId.set(enemyId, {
-          walk: originKey === "walk",
+          walking: originKey === "walking",
           fishing: originKey === "fishing",
-          kickingTrees: originKey === "kickingTrees",
+          kickingTree: originKey === "kickingTree",
         });
         orderedEnemyIds.push(enemyId);
         return;
@@ -36,14 +36,14 @@ export class MapEnemiesPresenter {
       existingOrigins[originKey] = true;
     };
 
-    for (const enemyId of walkIds) {
-      registerOrigin(enemyId, "walk");
+    for (const enemyId of walkingIds) {
+      registerOrigin(enemyId, "walking");
     }
     for (const enemyId of fishingIds) {
       registerOrigin(enemyId, "fishing");
     }
-    for (const enemyId of kickingTreesIds) {
-      registerOrigin(enemyId, "kickingTrees");
+    for (const enemyId of kickingTreeIds) {
+      registerOrigin(enemyId, "kickingTree");
     }
 
     return orderedEnemyIds.map((enemyId) => {

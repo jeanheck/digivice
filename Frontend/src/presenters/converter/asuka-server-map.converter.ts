@@ -5,13 +5,13 @@ export class AsukaServerMapConverter {
     locationId: string,
     enemyIds: string[],
     fishingIds: string[],
-    kickingTreesIds: string[],
+    kickingTreeIds: string[],
   ): AsukaServerMapViewModel {
     return {
       locationId,
       enemies: enemyIds,
       fishing: fishingIds,
-      kickingTrees: kickingTreesIds,
+      kickingTree: kickingTreeIds,
     };
   }
 }

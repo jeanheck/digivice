@@ -2,7 +2,7 @@ export interface EnemyResumedViewModel {
   id: string;
   name: string;
   boss: boolean;
-  walk: boolean;
+  walking: boolean;
   fishing: boolean;
-  kickingTrees: boolean;
+  kickingTree: boolean;
 }

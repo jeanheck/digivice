@@ -49,7 +49,12 @@
       {
         "locationId": "0226",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
+      },
+      {
+        "locationId": "0226",
+        "lastMainQuestStepDone": 27,
+        "source": "walking"
       }
     ]
   },
@@ -103,7 +108,7 @@
       {
         "locationId": "022B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -157,7 +162,7 @@
       {
         "locationId": "0252",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -206,7 +211,7 @@
       {
         "locationId": "0254",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -260,7 +265,7 @@
       {
         "locationId": "021C",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -314,7 +319,7 @@
       {
         "locationId": "0243",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -363,7 +368,7 @@
       {
         "locationId": "022D",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -411,22 +416,22 @@
       {
         "locationId": "021D",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "021E",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0221",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0222",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -474,17 +479,17 @@
       {
         "locationId": "021D",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "021E",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "021E",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -532,12 +537,12 @@
       {
         "locationId": "0227",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0227",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -585,17 +590,17 @@
       {
         "locationId": "021F",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "022A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "022A",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -648,7 +653,7 @@
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 24,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -701,42 +706,42 @@
       {
         "locationId": "021F",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "021F",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0221",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0221",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0222",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0227",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -784,27 +789,27 @@
       {
         "locationId": "021F",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "021F",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "022A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -852,22 +857,22 @@
       {
         "locationId": "0221",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0221",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0222",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0222",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -915,7 +920,7 @@
       {
         "locationId": "0229",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -963,7 +968,7 @@
       {
         "locationId": "0229",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1016,12 +1021,12 @@
       {
         "locationId": "0225",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0225",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1069,22 +1074,22 @@
       {
         "locationId": "0222",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0225",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0225",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0226",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1132,7 +1137,7 @@
       {
         "locationId": "0226",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1180,12 +1185,12 @@
       {
         "locationId": "0226",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0226",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1233,22 +1238,22 @@
       {
         "locationId": "021E",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0221",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "023B",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       }
     ]
   },
@@ -1296,52 +1301,52 @@
       {
         "locationId": "021D",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "021E",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "021F",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "0221",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "0222",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "0227",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "0229",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "022A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1394,7 +1399,7 @@
       {
         "locationId": "022B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1447,12 +1452,12 @@
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "022B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1505,7 +1510,7 @@
       {
         "locationId": "022B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1558,27 +1563,27 @@
       {
         "locationId": "0233",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0234",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0237",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 24,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1646,12 +1651,12 @@
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "fishing"
       },
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 0,
-        "source": "fishing"
+        "source": "walking"
       },
       {
         "locationId": "0221",
@@ -1661,32 +1666,32 @@
       {
         "locationId": "0233",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0234",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0235",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0237",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 24,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1734,7 +1739,7 @@
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 24,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1828,12 +1833,12 @@
       {
         "locationId": "0222",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0225",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1886,12 +1891,12 @@
       {
         "locationId": "023B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023C",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -1944,12 +1949,12 @@
       {
         "locationId": "021F",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023C",
@@ -1959,12 +1964,12 @@
       {
         "locationId": "023D",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "fishing"
       },
       {
         "locationId": "023D",
         "lastMainQuestStepDone": 0,
-        "source": "fishing"
+        "source": "walking"
       }
     ]
   },
@@ -2251,7 +2256,7 @@
       {
         "locationId": "0241",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -2304,7 +2309,7 @@
       {
         "locationId": "0227",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "022A",
@@ -2319,12 +2324,12 @@
       {
         "locationId": "0235",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "fishing"
       },
       {
         "locationId": "0235",
         "lastMainQuestStepDone": 0,
-        "source": "fishing"
+        "source": "walking"
       },
       {
         "locationId": "0237",
@@ -2392,12 +2397,12 @@
       {
         "locationId": "024A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "024C",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -2450,12 +2455,12 @@
       {
         "locationId": "0247",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "024B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -2508,12 +2513,12 @@
       {
         "locationId": "0247",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "024B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -2566,17 +2571,17 @@
       {
         "locationId": "0220",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "024A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "024C",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -2711,17 +2716,17 @@
       {
         "locationId": "0258",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0259",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "025A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -2774,12 +2779,12 @@
       {
         "locationId": "0258",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0259",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -2832,32 +2837,32 @@
       {
         "locationId": "024E",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "024F",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0250",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0251",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0252",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0253",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -2951,7 +2956,7 @@
       {
         "locationId": "024D",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -3004,7 +3009,7 @@
       {
         "locationId": "024D",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -3057,7 +3062,7 @@
       {
         "locationId": "024D",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -3110,17 +3115,17 @@
       {
         "locationId": "024D",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0252",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0253",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -3173,7 +3178,7 @@
       {
         "locationId": "0254",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -3226,7 +3231,7 @@
       {
         "locationId": "0254",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -3366,7 +3371,7 @@
       {
         "locationId": "021B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -3419,7 +3424,7 @@
       {
         "locationId": "021B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -3636,12 +3641,12 @@
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0243",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -6022,17 +6027,17 @@
       {
         "locationId": "022A",
         "lastMainQuestStepDone": 27,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023B",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "023C",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -6126,57 +6131,57 @@
       {
         "locationId": "022A",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "0233",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "kickingTree"
       },
       {
         "locationId": "0233",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "walking"
       },
       {
         "locationId": "0234",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0235",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "0237",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "kickingTree"
       },
       {
         "locationId": "0237",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "walking"
       },
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "kickingTree"
+      },
+      {
+        "locationId": "023A",
+        "lastMainQuestStepDone": 0,
+        "source": "walking"
       },
       {
         "locationId": "023A",
         "lastMainQuestStepDone": 24,
-        "source": "enemies"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "walking"
       },
       {
         "locationId": "023B",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       }
     ]
   },
@@ -6229,12 +6234,12 @@
       {
         "locationId": "0248",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0249",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -6287,12 +6292,12 @@
       {
         "locationId": "024A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "024C",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -6432,12 +6437,12 @@
       {
         "locationId": "023C",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "kickingTree"
       },
       {
         "locationId": "023C",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "walking"
       }
     ]
   },
@@ -6531,12 +6536,12 @@
       {
         "locationId": "0248",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0249",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -6635,32 +6640,32 @@
       {
         "locationId": "024A",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "024C",
         "lastMainQuestStepDone": 0,
-        "source": "kickingTrees"
+        "source": "kickingTree"
       },
       {
         "locationId": "0257",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0258",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "0259",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       },
       {
         "locationId": "025A",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },
@@ -7056,7 +7061,7 @@
       {
         "locationId": "0242",
         "lastMainQuestStepDone": 0,
-        "source": "enemies"
+        "source": "walking"
       }
     ]
   },

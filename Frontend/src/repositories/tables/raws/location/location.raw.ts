@@ -5,24 +5,28 @@ export interface LocationEnemyPhaseRaw {
   ids: string[];
 }
 
-export type LocationEnemiesRaw = string[] | LocationEnemyPhaseRaw[];
+export type LocationWalkingEnemiesRaw = string[] | LocationEnemyPhaseRaw[];
+
+export interface LocationEnemiesRaw {
+  walking?: LocationWalkingEnemiesRaw;
+  fishing?: string[];
+  kickingTree?: string[];
+}
 
 export interface LocationRaw {
   imageName: string;
   enemies?: LocationEnemiesRaw;
-  fishing?: string[];
-  kickingTrees?: string[];
   region?: LocationRegionConstant;
   dock?: boolean;
 }
 
 export function isLocationEnemyPhaseList(
-  enemies: LocationEnemiesRaw,
-): enemies is LocationEnemyPhaseRaw[] {
-  if (enemies.length === 0) {
+  walkingEnemies: LocationWalkingEnemiesRaw,
+): walkingEnemies is LocationEnemyPhaseRaw[] {
+  if (walkingEnemies.length === 0) {
     return false;
   }
 
-  const firstEntry = enemies[0];
+  const firstEntry = walkingEnemies[0];
   return typeof firstEntry === "object" && firstEntry !== null && "ids" in firstEntry;
 }

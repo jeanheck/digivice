@@ -10,13 +10,13 @@ export class LocationService {
 
   public static getEnemies(locationId: string, lastCompletedMainQuestStep: number): string[] {
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const locationEnemiesRaw = locationRaw.enemies ?? [];
+    const walkingEnemiesRaw = locationRaw.enemies?.walking ?? [];
 
-    if (!isLocationEnemyPhaseList(locationEnemiesRaw)) {
-      return locationEnemiesRaw;
+    if (!isLocationEnemyPhaseList(walkingEnemiesRaw)) {
+      return walkingEnemiesRaw;
     }
 
-    const sortedPhases = [...locationEnemiesRaw].sort((firstPhase, secondPhase) => {
+    const sortedPhases = [...walkingEnemiesRaw].sort((firstPhase, secondPhase) => {
       return secondPhase.lastMainQuestStepDone - firstPhase.lastMainQuestStepDone;
     });
     const matchingPhase = sortedPhases.find((phase) => {
@@ -30,11 +30,11 @@ export class LocationService {
   }
 
   public static getFishing(locationId: string): string[] {
-    return LocationRepository.getLocationById(locationId).fishing ?? [];
+    return LocationRepository.getLocationById(locationId).enemies?.fishing ?? [];
   }
 
-  public static getKickingTrees(locationId: string): string[] {
-    return LocationRepository.getLocationById(locationId).kickingTrees ?? [];
+  public static getKickingTree(locationId: string): string[] {
+    return LocationRepository.getLocationById(locationId).enemies?.kickingTree ?? [];
   }
 
   public static getRegionByLocationId(id: string | null): LocationRegionConstant {

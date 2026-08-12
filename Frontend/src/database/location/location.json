@@ -1,4 +1,13 @@
 {
+  "1000": {
+    "imageName": "In Menu Screen"
+  },
+  "1300": {
+    "imageName": "Card Shop Screen"
+  },
+  "1400": {
+    "imageName": "Reward Screen"
+  },
   "0001": {
     "imageName": "East Sector"
   },
@@ -13,15 +22,6 @@
   },
   "0500": {
     "imageName": "Initial Pack Screen"
-  },
-  "1000": {
-    "imageName": "In Menu Screen"
-  },
-  "1300": {
-    "imageName": "Card Shop Screen"
-  },
-  "1400": {
-    "imageName": "Reward Screen"
   },
   "0C01": {
     "imageName": "Saving Screen"
@@ -89,9 +89,11 @@
   },
   "021C": {
     "imageName": "Control Room",
-    "enemies": [
-      "16"
-    ]
+    "enemies": {
+      "walking": [
+        "16"
+      ]
+    }
   },
   "020A": {
     "imageName": "Asuka City - Inn 1F"
@@ -113,169 +115,183 @@
   },
   "021B": {
     "imageName": "Asuka Sewers",
-    "enemies": [
-      "122",
-      "123"
-    ]
+    "enemies": {
+      "walking": [
+        "122",
+        "123"
+      ]
+    }
   },
   "021D": {
     "imageName": "Central Park",
-    "enemies": [
-      "71",
-      "72"
-    ],
-    "fishing": [
-      "91",
-      "516"
-    ],
-    "kickingTrees": [
-      "86",
-      "515"
-    ],
+    "enemies": {
+      "walking": [
+        "71",
+        "72"
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
     "dock": true
   },
   "021E": {
     "imageName": "Wire Forest Entrance",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "71",
-          "72"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 27,
-        "ids": [
-          "72",
-          "85"
-        ]
-      }
-    ],
-    "fishing": [
-      "91",
-      "516"
-    ],
-    "kickingTrees": [
-      "86",
-      "515"
-    ]
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "71",
+            "72"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "72",
+            "85"
+          ]
+        }
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    }
   },
   "021F": {
     "imageName": "Shell Beach",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "74",
-          "76",
-          "77"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 27,
-        "ids": [
-          "76",
-          "77",
-          "96"
-        ]
-      }
-    ],
-    "fishing": [
-      "91",
-      "516"
-    ],
-    "kickingTrees": [
-      "86",
-      "515"
-    ],
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "74",
+            "76",
+            "77"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "76",
+            "77",
+            "96"
+          ]
+        }
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
     "dock": true
   },
   "0220": {
     "imageName": "Plug Cape",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "76",
-          "77",
-          "88",
-          "91"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 27,
-        "ids": [
-          "76",
-          "77",
-          "96",
-          "107"
-        ]
-      }
-    ],
-    "fishing": [
-      "91",
-      "516"
-    ],
-    "kickingTrees": [
-      "86",
-      "515"
-    ],
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "76",
+            "77",
+            "88",
+            "91"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "76",
+            "77",
+            "96",
+            "107"
+          ]
+        }
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
     "dock": true
   },
   "0221": {
     "imageName": "West Wire Forest",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "71",
-          "76",
-          "78"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 27,
-        "ids": [
-          "76",
-          "78",
-          "85"
-        ]
-      }
-    ],
-    "fishing": [
-      "91",
-      "516"
-    ],
-    "kickingTrees": [
-      "86",
-      "515"
-    ]
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "71",
+            "76",
+            "78"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "76",
+            "78",
+            "85"
+          ]
+        }
+      ],
+      "fishing": [
+        "91",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    }
   },
   "0222": {
     "imageName": "East Wire Forest",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "71",
-          "76",
-          "78"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 27,
-        "ids": [
-          "78",
-          "94",
-          "82"
-        ]
-      }
-    ],
-    "kickingTrees": [
-      "86",
-      "515"
-    ]
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "71",
+            "76",
+            "78"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "78",
+            "94",
+            "82"
+          ]
+        }
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    }
   },
   "0223": {
     "imageName": "Forest Inn"
@@ -285,71 +301,77 @@
   },
   "0225": {
     "imageName": "Protocol Forest",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "81",
-          "82"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 27,
-        "ids": [
-          "81",
-          "82",
-          "94"
-        ]
-      }
-    ]
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "81",
+            "82"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "81",
+            "82",
+            "94"
+          ]
+        }
+      ]
+    }
   },
   "0226": {
     "imageName": "Protocol Ruins",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "1",
-          "82",
-          "84"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 27,
-        "ids": [
-          "1",
-          "84",
-          "83"
-        ]
-      }
-    ]
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "1",
+            "82",
+            "84"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "1",
+            "84",
+            "83"
+          ]
+        }
+      ]
+    }
   },
   "0227": {
     "imageName": "Divermons Lake",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "73",
-          "76"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 27,
-        "ids": [
-          "73",
-          "103"
-        ]
-      }
-    ],
-    "fishing": [
-      "101",
-      "516"
-    ],
-    "kickingTrees": [
-      "86",
-      "515"
-    ],
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "73",
+            "76"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "73",
+            "103"
+          ]
+        }
+      ],
+      "fishing": [
+        "101",
+        "516"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    },
     "dock": true
   },
   "0228": {
@@ -358,14 +380,16 @@
   },
   "0229": {
     "imageName": "Wind Prairie",
-    "enemies": [
-      "79",
-      "80"
-    ],
-    "kickingTrees": [
-      "86",
-      "515"
-    ]
+    "enemies": {
+      "walking": [
+        "79",
+        "80"
+      ],
+      "kickingTree": [
+        "86",
+        "515"
+      ]
+    }
   },
   "0230": {
     "imageName": "Seiryu Tower"
@@ -375,50 +399,56 @@
   },
   "022A": {
     "imageName": "Kicking Forest",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "74",
-          "77",
-          "86"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 27,
-        "ids": [
-          "74",
-          "182"
-        ]
-      }
-    ],
-    "fishing": [
-      "103",
-      "516"
-    ],
-    "kickingTrees": [
-      "184",
-      "515"
-    ],
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "74",
+            "77",
+            "86"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 27,
+          "ids": [
+            "74",
+            "182"
+          ]
+        }
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "184",
+        "515"
+      ]
+    },
     "dock": true
   },
   "022B": {
     "imageName": "Tyranno Valley",
-    "enemies": [
-      "2",
-      "87",
-      "88",
-      "89"
-    ]
+    "enemies": {
+      "walking": [
+        "2",
+        "87",
+        "88",
+        "89"
+      ]
+    }
   },
   "022C": {
     "imageName": "East Station"
   },
   "022D": {
     "imageName": "Deeper Crevice",
-    "enemies": [
-      "21"
-    ]
+    "enemies": {
+      "walking": [
+        "21"
+      ]
+    }
   },
   "022E": {
     "imageName": "Seiryu City"
@@ -431,62 +461,70 @@
   },
   "0233": {
     "imageName": "Bulk Swamp",
-    "enemies": [
-      "90",
-      "91",
-      "184"
-    ],
-    "kickingTrees": [
-      "184",
-      "517"
-    ]
+    "enemies": {
+      "walking": [
+        "90",
+        "91",
+        "184"
+      ],
+      "kickingTree": [
+        "184",
+        "517"
+      ]
+    }
   },
   "0234": {
     "imageName": "Bulk Bridge",
-    "enemies": [
-      "90",
-      "91",
-      "184"
-    ],
-    "fishing": [
-      "103",
-      "516"
-    ],
+    "enemies": {
+      "walking": [
+        "90",
+        "91",
+        "184"
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ]
+    },
     "dock": true
   },
   "0235": {
     "imageName": "Bios Swamp",
-    "enemies": [
-      "91",
-      "103"
-    ],
-    "fishing": [
-      "103",
-      "516"
-    ],
-    "kickingTrees": [
-      "184",
-      "517"
-    ]
+    "enemies": {
+      "walking": [
+        "91",
+        "103"
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "184",
+        "517"
+      ]
+    }
   },
   "0236": {
     "imageName": "Reliability Spot"
   },
   "0237": {
     "imageName": "Tranquil Swamp",
-    "enemies": [
-      "90",
-      "91",
-      "184"
-    ],
-    "fishing": [
-      "103",
-      "516"
-    ],
-    "kickingTrees": [
-      "184",
-      "517"
-    ]
+    "enemies": {
+      "walking": [
+        "90",
+        "91",
+        "184"
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "184",
+        "517"
+      ]
+    }
   },
   "0238": {
     "imageName": "Swamp Inn"
@@ -496,80 +534,88 @@
   },
   "023A": {
     "imageName": "Jungle Grave",
-    "enemies": [
-      {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "90",
-          "91",
-          "128",
-          "184"
-        ]
-      },
-      {
-        "lastMainQuestStepDone": 24,
-        "ids": [
-          "75",
-          "90",
-          "91",
-          "92",
-          "184"
-        ]
-      }
-    ],
-    "fishing": [
-      "103",
-      "516"
-    ],
-    "kickingTrees": [
-      "85",
-      "184",
-      "517"
-    ]
+    "enemies": {
+      "walking": [
+        {
+          "lastMainQuestStepDone": 0,
+          "ids": [
+            "90",
+            "91",
+            "128",
+            "184"
+          ]
+        },
+        {
+          "lastMainQuestStepDone": 24,
+          "ids": [
+            "75",
+            "90",
+            "91",
+            "92",
+            "184"
+          ]
+        }
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "85",
+        "184",
+        "517"
+      ]
+    }
   },
   "023B": {
     "imageName": "Phoenix Bay",
-    "enemies": [
-      "86",
-      "95",
-      "182"
-    ],
-    "fishing": [
-      "103",
-      "516"
-    ],
-    "kickingTrees": [
-      "85",
-      "184",
-      "517"
-    ],
+    "enemies": {
+      "walking": [
+        "86",
+        "95",
+        "182"
+      ],
+      "fishing": [
+        "103",
+        "516"
+      ],
+      "kickingTree": [
+        "85",
+        "184",
+        "517"
+      ]
+    },
     "dock": true
   },
   "023C": {
     "imageName": "Ether Jungle",
-    "enemies": [
-      "95",
-      "182",
-      "189"
-    ],
-    "fishing": [
-      "96",
-      "516"
-    ],
-    "kickingTrees": [
-      "189",
-      "517"
-    ]
+    "enemies": {
+      "walking": [
+        "95",
+        "182",
+        "189"
+      ],
+      "fishing": [
+        "96",
+        "516"
+      ],
+      "kickingTree": [
+        "189",
+        "517"
+      ]
+    }
   },
   "023D": {
     "imageName": "South Cape",
-    "enemies": [
-      "96"
-    ],
-    "fishing": [
-      "96",
-      "516"
-    ],
+    "enemies": {
+      "walking": [
+        "96"
+      ],
+      "fishing": [
+        "96",
+        "516"
+      ]
+    },
     "dock": true
   },
   "023E": {
@@ -584,178 +630,220 @@
   },
   "0241": {
     "imageName": "Suzaku UG Lake",
-    "enemies": [
-      "102"
-    ]
+    "enemies": {
+      "walking": [
+        "102"
+      ]
+    }
   },
   "0242": {
     "imageName": "Jungle Shrine",
-    "enemies": [
-      "202"
-    ]
+    "enemies": {
+      "walking": [
+        "202"
+      ]
+    }
   },
   "0243": {
     "imageName": "Catacomb",
-    "enemies": [
-      "20",
-      "128"
-    ]
+    "enemies": {
+      "walking": [
+        "20",
+        "128"
+      ]
+    }
   },
   "0247": {
     "imageName": "South Badland",
-    "enemies": [
-      "105",
-      "106"
-    ],
-    "fishing": [
-      "98",
-      "518"
-    ],
+    "enemies": {
+      "walking": [
+        "105",
+        "106"
+      ],
+      "fishing": [
+        "98",
+        "518"
+      ]
+    },
     "dock": true
   },
   "0248": {
     "imageName": "Noise Desert",
-    "enemies": [
-      "191",
-      "185"
-    ]
+    "enemies": {
+      "walking": [
+        "191",
+        "185"
+      ]
+    }
   },
   "0249": {
     "imageName": "Pelche Oasis",
-    "enemies": [
-      "185",
-      "191"
-    ],
-    "fishing": [
-      "98",
-      "518"
-    ]
+    "enemies": {
+      "walking": [
+        "185",
+        "191"
+      ],
+      "fishing": [
+        "98",
+        "518"
+      ]
+    }
   },
   "024A": {
     "imageName": "North Badland W",
-    "enemies": [
-      "104",
-      "107",
-      "186"
-    ],
-    "kickingTrees": [
-      "193",
-      "517"
-    ]
+    "enemies": {
+      "walking": [
+        "104",
+        "107",
+        "186"
+      ],
+      "kickingTree": [
+        "193",
+        "517"
+      ]
+    }
   },
   "024B": {
     "imageName": "North Badland E",
-    "enemies": [
-      "105",
-      "106"
-    ],
-    "fishing": [
-      "98",
-      "518"
-    ],
+    "enemies": {
+      "walking": [
+        "105",
+        "106"
+      ],
+      "fishing": [
+        "98",
+        "518"
+      ]
+    },
     "dock": true
   },
   "024C": {
     "imageName": "Bullet Valley",
-    "enemies": [
-      "104",
-      "107",
-      "186"
-    ],
-    "kickingTrees": [
-      "193",
-      "517"
-    ]
+    "enemies": {
+      "walking": [
+        "104",
+        "107",
+        "186"
+      ],
+      "kickingTree": [
+        "193",
+        "517"
+      ]
+    }
   },
   "024D": {
     "imageName": "Dum Dum Factory",
-    "enemies": [
-      "114",
-      "115",
-      "116",
-      "117"
-    ]
+    "enemies": {
+      "walking": [
+        "114",
+        "115",
+        "116",
+        "117"
+      ]
+    }
   },
   "024E": {
     "imageName": "Duct Room",
-    "enemies": [
-      "112"
-    ]
+    "enemies": {
+      "walking": [
+        "112"
+      ]
+    }
   },
   "024F": {
     "imageName": "Duct Room",
-    "enemies": [
-      "112"
-    ]
+    "enemies": {
+      "walking": [
+        "112"
+      ]
+    }
   },
   "0250": {
     "imageName": "Duct Room",
-    "enemies": [
-      "112"
-    ]
+    "enemies": {
+      "walking": [
+        "112"
+      ]
+    }
   },
   "0251": {
     "imageName": "Duct Room",
-    "enemies": [
-      "112"
-    ]
+    "enemies": {
+      "walking": [
+        "112"
+      ]
+    }
   },
   "0252": {
     "imageName": "Operation Room",
-    "enemies": [
-      "14",
-      "112",
-      "117"
-    ]
+    "enemies": {
+      "walking": [
+        "14",
+        "112",
+        "117"
+      ]
+    }
   },
   "0253": {
     "imageName": "Secret Stairs",
-    "enemies": [
-      "112",
-      "117"
-    ]
+    "enemies": {
+      "walking": [
+        "112",
+        "117"
+      ]
+    }
   },
   "0254": {
     "imageName": "Sewers",
-    "enemies": [
-      "15",
-      "118",
-      "119"
-    ]
+    "enemies": {
+      "walking": [
+        "15",
+        "118",
+        "119"
+      ]
+    }
   },
   "0255": {
     "imageName": "Secret Room"
   },
   "0257": {
     "imageName": "Noise Desert S",
-    "enemies": [
-      "193"
-    ]
+    "enemies": {
+      "walking": [
+        "193"
+      ]
+    }
   },
   "0258": {
     "imageName": "Mobius Desert",
-    "enemies": [
-      "110",
-      "111",
-      "193"
-    ],
+    "enemies": {
+      "walking": [
+        "110",
+        "111",
+        "193"
+      ]
+    },
     "region": "mobiusDesert"
   },
   "0259": {
     "imageName": "Mobius Desert 2",
-    "enemies": [
-      "110",
-      "111",
-      "193"
-    ],
+    "enemies": {
+      "walking": [
+        "110",
+        "111",
+        "193"
+      ]
+    },
     "region": "mobiusDesert"
   },
   "025A": {
     "imageName": "Mirage Tower",
-    "enemies": [
-      "110",
-      "193"
-    ]
+    "enemies": {
+      "walking": [
+        "110",
+        "193"
+      ]
+    }
   },
   "025B": {
     "imageName": "Mirage Hall"

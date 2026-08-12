@@ -22,9 +22,9 @@
     "foundIn": "Encontrado em",
     "locations": "Localizações",
     "locationSource": {
-      "enemies": "Andando",
+      "walking": "Andando",
       "fishing": "Pesca",
-      "kickingTrees": "Árvore"
+      "kickingTree": "Árvore"
     },
     "locationStep": "A partir do step {step} da main quest"
   }

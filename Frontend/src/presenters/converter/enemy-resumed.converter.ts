@@ -5,15 +5,15 @@ export class EnemyResumedConverter {
   public static convert(
     enemyId: string,
     enemyRaw: EnemyRaw,
-    origins: { walk: boolean; fishing: boolean; kickingTrees: boolean },
+    origins: { walking: boolean; fishing: boolean; kickingTree: boolean },
   ): EnemyResumedViewModel {
     return {
       id: enemyId,
       name: enemyRaw.name,
       boss: enemyRaw.boss === true,
-      walk: origins.walk,
+      walking: origins.walking,
       fishing: origins.fishing,
-      kickingTrees: origins.kickingTrees,
+      kickingTree: origins.kickingTree,
     };
   }
 }

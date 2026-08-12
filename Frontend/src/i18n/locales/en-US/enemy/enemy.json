@@ -22,9 +22,9 @@
     "foundIn": "Found in",
     "locations": "Locations",
     "locationSource": {
-      "enemies": "Walk",
+      "walking": "Walk",
       "fishing": "Fishing",
-      "kickingTrees": "Kicking tree"
+      "kickingTree": "Kicking tree"
     },
     "locationStep": "From main quest step {step}"
   }
