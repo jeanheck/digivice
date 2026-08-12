@@ -43,6 +43,14 @@ const hasInteractiveDrops = computed(() => {
   return enemyDrops.value.length > 0 && !isVariousBoosterOnly.value;
 });
 
+const dropSectionLabel = computed(() => {
+  if (hasInteractiveDrops.value && enemyDrops.value.length > 1) {
+    return t("enemy.drops");
+  }
+
+  return t("enemy.drop");
+});
+
 const dropFallbackLabel = computed(() => {
   if (isVariousBoosterOnly.value) {
     return t("drops.variousBooster");
@@ -120,33 +128,35 @@ const handleDropClick = (drop: EnemyDropRaw): void => {
           <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
         </div>
 
-        <div class="flex items-start justify-between text-xs gap-2 min-h-0">
-          <span class="font-bold text-blue-500 tracking-wider uppercase shrink-0"
-            >{{ $t("enemy.drops") }}:</span
+        <div
+          v-if="!hasInteractiveDrops"
+          class="flex items-center justify-between text-xs"
+        >
+          <span class="font-bold text-blue-500 tracking-wider uppercase"
+            >{{ dropSectionLabel }}:</span
           >
-          <div class="flex flex-col items-end gap-1 min-w-0">
-            <span v-if="!hasInteractiveDrops" class="font-bold text-gray-300">
-              {{ dropFallbackLabel }}
+          <span class="font-bold text-gray-300">{{ dropFallbackLabel }}</span>
+        </div>
+        <div v-else class="flex flex-col gap-1 min-h-0 text-xs">
+          <span class="font-bold text-blue-500 tracking-wider uppercase">{{
+            dropSectionLabel
+          }}</span>
+          <button
+            v-for="drop in enemyDrops"
+            :key="`${drop.id}-${drop.sectorOnly ?? ''}`"
+            type="button"
+            class="w-full text-left px-2.5 rounded text-[10px] 2xl:text-xs font-bold tracking-wide transition-colors cursor-pointer bg-amber-900/40 text-amber-300 border border-amber-300"
+            :class="drop.sectorOnly ? 'py-2' : 'py-1.5'"
+            @click="handleDropClick(drop)"
+          >
+            <span class="block">{{ $t(`drops.${drop.id}`) }}</span>
+            <span
+              v-if="drop.sectorOnly"
+              class="block text-[9px] font-normal text-gray-300 leading-tight"
+            >
+              {{ sectorOnlyLabel(drop.sectorOnly) }}
             </span>
-            <template v-else>
-              <button
-                v-for="drop in enemyDrops"
-                :key="`${drop.id}-${drop.sectorOnly ?? ''}`"
-                type="button"
-                class="w-full text-right px-2.5 rounded text-[10px] 2xl:text-xs font-bold tracking-wide transition-colors cursor-pointer text-gray-300 hover:bg-blue-900/20 border border-transparent hover:border-blue-500/40"
-                :class="drop.sectorOnly ? 'py-2' : 'py-1.5'"
-                @click="handleDropClick(drop)"
-              >
-                <span class="block">{{ $t(`drops.${drop.id}`) }}</span>
-                <span
-                  v-if="drop.sectorOnly"
-                  class="block text-[9px] font-normal text-gray-300 leading-tight"
-                >
-                  {{ sectorOnlyLabel(drop.sectorOnly) }}
-                </span>
-              </button>
-            </template>
-          </div>
+          </button>
         </div>
       </div>
     </div>

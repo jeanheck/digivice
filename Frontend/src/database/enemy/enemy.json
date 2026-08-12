@@ -7177,6 +7177,12 @@
       {
         "id": "1bBooster",
         "sectorOnly": "east"
+      },
+      {
+        "id": "3bBooster"
+      },
+      {
+        "id": "r01Booster"
       }
     ]
   },
