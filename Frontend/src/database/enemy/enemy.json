@@ -7176,7 +7176,7 @@
     "drops": [
       {
         "id": "1bBooster",
-        "sectorOnly": "east"
+        "locationOnly": "0001"
       },
       {
         "id": "3bBooster"
@@ -7232,11 +7232,11 @@
     "drops": [
       {
         "id": "1bBooster",
-        "sectorOnly": "east"
+        "locationOnly": "0001"
       },
       {
         "id": "2bBooster",
-        "sectorOnly": "south"
+        "locationOnly": "0002"
       }
     ]
   },
@@ -7332,7 +7332,7 @@
     "drops": [
       {
         "id": "5bBooster",
-        "sectorOnly": "west"
+        "locationOnly": "0003"
       }
     ]
   },

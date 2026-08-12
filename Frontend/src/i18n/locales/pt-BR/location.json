@@ -1,5 +1,9 @@
 {
   "location": {
+    "0001": "Setor Leste",
+    "0002": "Setor Sul",
+    "0003": "Setor Oeste",
+    "0004": "Setor Norte",
     "0500": "Escolha seu pacote inicial",
     "1000": "No Menu",
     "1300": "Loja de Cartas",

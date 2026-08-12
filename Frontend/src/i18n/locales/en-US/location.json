@@ -1,5 +1,9 @@
 {
   "location": {
+    "0001": "East Sector",
+    "0002": "South Sector",
+    "0003": "West Sector",
+    "0004": "North Sector",
     "0500": "Choose your initial pack",
     "1000": "In Menu",
     "1300": "Card Shop",

@@ -8,7 +8,7 @@
     "drop": "Drop",
     "drops": "Drops",
     "dropRate": "Taxa de drop",
-    "sectorOnly": "Apenas setor {sector}",
+    "locationOnly": "Apenas {location}",
     "back": "Voltar",
     "dropDetails": "Detalhes do drop",
     "baseExp": "EXP",

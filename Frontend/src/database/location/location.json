@@ -1,4 +1,16 @@
 {
+  "0001": {
+    "imageName": "East Sector"
+  },
+  "0002": {
+    "imageName": "South Sector"
+  },
+  "0003": {
+    "imageName": "West Sector"
+  },
+  "0004": {
+    "imageName": "North Sector"
+  },
   "0500": {
     "imageName": "Initial Pack Screen"
   },

@@ -42,8 +42,8 @@ const dropFallbackLabel = computed(() => {
   return t("drops.none");
 });
 
-const sectorOnlyLabel = (sectorOnly: string): string => {
-  return t("enemy.sectorOnly", { sector: t(`sectors.${sectorOnly}`) });
+const locationOnlyLabel = (locationOnly: string): string => {
+  return t("enemy.locationOnly", { location: t(`location.${locationOnly}`) });
 };
 
 const handleDropClick = (drop: EnemyDropRaw): void => {
@@ -71,18 +71,14 @@ const handleDropClick = (drop: EnemyDropRaw): void => {
     <div v-else class="flex flex-wrap gap-2 justify-start">
       <button
         v-for="drop in enemyDrops"
-        :key="`${drop.id}-${drop.sectorOnly ?? ''}`"
+        :key="`${drop.id}-${drop.locationOnly ?? ''}`"
         type="button"
-        class="text-left px-2.5 rounded text-[10px] 2xl:text-xs font-bold tracking-wide transition-colors cursor-pointer bg-amber-900/40 text-amber-300 border border-amber-300"
-        :class="drop.sectorOnly ? 'py-2' : 'py-1.5'"
+        class="text-left px-2.5 py-2 rounded text-[9px] 2xl:text-[11px] font-bold tracking-wide transition-colors cursor-pointer bg-amber-900/40 text-amber-300 border border-amber-300"
         @click="handleDropClick(drop)"
       >
         <span class="block">{{ $t(`drops.${drop.id}`) }}</span>
-        <span
-          v-if="drop.sectorOnly"
-          class="block text-[9px] font-normal text-gray-300 leading-tight"
-        >
-          {{ sectorOnlyLabel(drop.sectorOnly) }}
+        <span class="block min-h-3 text-[9px] font-normal text-gray-300 leading-tight">
+          {{ drop.locationOnly ? locationOnlyLabel(drop.locationOnly) : "" }}
         </span>
       </button>
     </div>

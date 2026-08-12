@@ -64,7 +64,7 @@ const locationLabels = computed(() => {
       <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
     </div>
 
-    <div class="flex flex-col gap-1 min-h-0 text-xs">
+    <div class="border-t border-blue-900/50 pt-2.5 flex flex-col gap-1 min-h-0 text-xs">
       <span class="font-bold text-blue-500 tracking-wider uppercase">{{
         $t("enemy.foundIn")
       }}:</span>
