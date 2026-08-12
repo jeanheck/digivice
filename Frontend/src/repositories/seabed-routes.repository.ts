@@ -17,6 +17,6 @@ export class SeabedRoutesRepository {
   }
 
   public static getEnemiesByRoute(routeId: string): string[] {
-    return this.seabedRoutesTable[routeId]?.enemies ?? [];
+    return this.seabedRoutesTable[routeId]?.enemies?.walking ?? [];
   }
 }
