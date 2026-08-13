@@ -8308,6 +8308,14 @@
       {
         "id": "r01Booster"
       }
+    ],
+    "locations": [
+      {
+        "id": "0001",
+        "sources": [
+          "kickingTree"
+        ]
+      }
     ]
   },
   "516": {
@@ -8362,6 +8370,20 @@
       {
         "id": "r01Booster"
       }
+    ],
+    "locations": [
+      {
+        "id": "0001",
+        "sources": [
+          "fishing"
+        ]
+      },
+      {
+        "id": "0002",
+        "sources": [
+          "fishing"
+        ]
+      }
     ]
   },
   "517": {
@@ -8411,6 +8433,20 @@
       {
         "id": "r02Booster"
       }
+    ],
+    "locations": [
+      {
+        "id": "0002",
+        "sources": [
+          "kickingTree"
+        ]
+      },
+      {
+        "id": "0003",
+        "sources": [
+          "kickingTree"
+        ]
+      }
     ]
   },
   "518": {
@@ -8457,6 +8493,14 @@
       {
         "id": "5bBooster",
         "locationOnly": "0003"
+      }
+    ],
+    "locations": [
+      {
+        "id": "0003",
+        "sources": [
+          "fishing"
+        ]
       }
     ]
   },

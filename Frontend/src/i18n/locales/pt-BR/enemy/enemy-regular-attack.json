@@ -1,6 +1,6 @@
 {
   "regularAttacks": {
-    "noElement": "Sem Elemento",
+    "noElement": "Físico, sem elemento",
     "machineElement": "Elemento Máquina",
     "waterElement": "Elemento Água",
     "noElementChanceOfPoison": "Sem Elemento (Chance de Envenenamento)",

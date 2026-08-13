@@ -139,7 +139,7 @@ const sourceEmoji = (source: EnemyLocationSource): string => {
                 class="text-[12px] 2xl:text-[14px] leading-none"
                 :aria-label="t(`enemy.locationSource.${source}`)"
               >
-                {{ sourceEmoji(source) }}
+                <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">{{ sourceEmoji(source) }}</span>
               </span>
             </span>
           </button>

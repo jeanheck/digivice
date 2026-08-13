@@ -1,6 +1,6 @@
 {
   "regularAttacks": {
-    "noElement": "No Element",
+    "noElement": "Physical, no element",
     "machineElement": "Machine Element",
     "waterElement": "Water Element",
     "thunderElemental": "Thunder Elemental",
