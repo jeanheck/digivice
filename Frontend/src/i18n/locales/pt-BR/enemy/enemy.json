@@ -23,6 +23,7 @@
     "locations": "Localizações",
     "locationSource": {
       "walking": "Andando",
+      "boss": "Boss",
       "fishing": "Pesca",
       "kickingTree": "Árvore"
     },

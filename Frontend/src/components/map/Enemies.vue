@@ -5,10 +5,12 @@ import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter.ts";
 const props = withDefaults(
   defineProps<{
     enemyIds: string[];
+    bossIds?: string[];
     fishingIds?: string[];
     kickingTreeIds?: string[];
   }>(),
   {
+    bossIds: () => [],
     fishingIds: () => [],
     kickingTreeIds: () => [],
   },
@@ -21,12 +23,15 @@ const emit = defineEmits<{
 const resumedEnemies = computed(() => {
   return MapEnemiesPresenter.getResumedEnemiesByEncounterSources(
     props.enemyIds,
+    props.bossIds,
     props.fishingIds,
     props.kickingTreeIds,
   );
 });
 
-const hasWalkingEnemies = computed(() => props.enemyIds.length > 0);
+const hasMapThreatEnemies = computed(() => {
+  return props.enemyIds.length > 0 || props.bossIds.length > 0;
+});
 
 const openBestiaryModal = (enemyId: string) => {
   emit("open-enemy-modal", enemyId);
@@ -36,7 +41,7 @@ const openBestiaryModal = (enemyId: string) => {
 <template>
   <div class="w-full flex justify-center shrink-0 px-0.5">
     <div class="map-info-panel flex flex-col justify-center items-center">
-      <div v-if="!hasWalkingEnemies" class="text-[10px] 2xl:text-xs text-[#00aaff] opacity-50 italic">
+      <div v-if="!hasMapThreatEnemies" class="text-[10px] 2xl:text-xs text-[#00aaff] opacity-50 italic">
         {{ $t("map.safeZone") }}
       </div>
       <div v-else class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">

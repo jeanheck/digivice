@@ -4,11 +4,12 @@ import type { EnemyResumedViewModel } from "@/viewmodels/enemy/enemy-resumed.vie
 
 export class MapEnemiesPresenter {
   public static getResumedEnemiesByIds(enemyIds: string[]): EnemyResumedViewModel[] {
-    return this.getResumedEnemiesByEncounterSources(enemyIds, [], []);
+    return this.getResumedEnemiesByEncounterSources(enemyIds, [], [], []);
   }
 
   public static getResumedEnemiesByEncounterSources(
     walkingIds: string[],
+    bossIds: string[],
     fishingIds: string[],
     kickingTreeIds: string[],
   ): EnemyResumedViewModel[] {
@@ -18,24 +19,30 @@ export class MapEnemiesPresenter {
     >();
     const orderedEnemyIds: string[] = [];
 
+    const ensureEnemy = (enemyId: string): void => {
+      if (originsByEnemyId.has(enemyId)) {
+        return;
+      }
+
+      originsByEnemyId.set(enemyId, {
+        walking: false,
+        fishing: false,
+        kickingTree: false,
+      });
+      orderedEnemyIds.push(enemyId);
+    };
+
     const registerOrigin = (
       enemyId: string,
       originKey: "walking" | "fishing" | "kickingTree",
     ): void => {
-      const existingOrigins = originsByEnemyId.get(enemyId);
-      if (existingOrigins === undefined) {
-        originsByEnemyId.set(enemyId, {
-          walking: originKey === "walking",
-          fishing: originKey === "fishing",
-          kickingTree: originKey === "kickingTree",
-        });
-        orderedEnemyIds.push(enemyId);
-        return;
-      }
-
-      existingOrigins[originKey] = true;
+      ensureEnemy(enemyId);
+      originsByEnemyId.get(enemyId)![originKey] = true;
     };
 
+    for (const enemyId of bossIds) {
+      ensureEnemy(enemyId);
+    }
     for (const enemyId of walkingIds) {
       registerOrigin(enemyId, "walking");
     }

@@ -51,14 +51,7 @@
       "0": {
         "0226": {
           "sources": [
-            "walking"
-          ]
-        }
-      },
-      "27": {
-        "0226": {
-          "sources": [
-            "walking"
+            "boss"
           ]
         }
       }
@@ -116,7 +109,7 @@
       "0": {
         "022B": {
           "sources": [
-            "walking"
+            "boss"
           ]
         }
       }
@@ -174,7 +167,7 @@
       "0": {
         "0252": {
           "sources": [
-            "walking"
+            "boss"
           ]
         }
       }
@@ -225,7 +218,7 @@
       "0": {
         "0254": {
           "sources": [
-            "walking"
+            "boss"
           ]
         }
       }
@@ -283,7 +276,7 @@
       "0": {
         "021C": {
           "sources": [
-            "walking"
+            "boss"
           ]
         }
       }
@@ -341,7 +334,7 @@
       "0": {
         "0243": {
           "sources": [
-            "walking"
+            "boss"
           ]
         }
       }
@@ -392,7 +385,7 @@
       "0": {
         "022D": {
           "sources": [
-            "walking"
+            "boss"
           ]
         }
       }

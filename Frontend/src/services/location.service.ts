@@ -29,6 +29,10 @@ export class LocationService {
     return matchingPhase.ids;
   }
 
+  public static getBoss(locationId: string): string[] {
+    return LocationRepository.getLocationById(locationId).enemies?.boss ?? [];
+  }
+
   public static getFishing(locationId: string): string[] {
     return LocationRepository.getLocationById(locationId).enemies?.fishing ?? [];
   }

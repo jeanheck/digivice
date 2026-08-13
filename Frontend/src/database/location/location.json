@@ -90,7 +90,7 @@
   "021C": {
     "imageName": "Control Room",
     "enemies": {
-      "walking": [
+      "boss": [
         "16"
       ]
     }
@@ -328,7 +328,6 @@
         {
           "lastMainQuestStepDone": 0,
           "ids": [
-            "1",
             "82",
             "84"
           ]
@@ -336,11 +335,13 @@
         {
           "lastMainQuestStepDone": 27,
           "ids": [
-            "1",
             "84",
             "83"
           ]
         }
+      ],
+      "boss": [
+        "1"
       ]
     }
   },
@@ -432,10 +433,12 @@
     "imageName": "Tyranno Valley",
     "enemies": {
       "walking": [
-        "2",
         "87",
         "88",
         "89"
+      ],
+      "boss": [
+        "2"
       ]
     }
   },
@@ -445,7 +448,7 @@
   "022D": {
     "imageName": "Deeper Crevice",
     "enemies": {
-      "walking": [
+      "boss": [
         "21"
       ]
     }
@@ -648,8 +651,10 @@
     "imageName": "Catacomb",
     "enemies": {
       "walking": [
-        "20",
         "128"
+      ],
+      "boss": [
+        "20"
       ]
     }
   },
@@ -778,9 +783,11 @@
     "imageName": "Operation Room",
     "enemies": {
       "walking": [
-        "14",
         "112",
         "117"
+      ],
+      "boss": [
+        "14"
       ]
     }
   },
@@ -797,9 +804,11 @@
     "imageName": "Sewers",
     "enemies": {
       "walking": [
-        "15",
         "118",
         "119"
+      ],
+      "boss": [
+        "15"
       ]
     }
   },

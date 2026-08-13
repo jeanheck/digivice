@@ -1,4 +1,4 @@
-export type EnemyLocationSource = "walking" | "fishing" | "kickingTree";
+export type EnemyLocationSource = "walking" | "boss" | "fishing" | "kickingTree";
 
 export interface EnemyLocationEntryRaw {
   sources: EnemyLocationSource[];

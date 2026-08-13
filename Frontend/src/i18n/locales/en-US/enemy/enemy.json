@@ -23,6 +23,7 @@
     "locations": "Locations",
     "locationSource": {
       "walking": "Walk",
+      "boss": "Boss",
       "fishing": "Fishing",
       "kickingTree": "Kicking tree"
     },

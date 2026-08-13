@@ -6,10 +6,13 @@ import type { DesertAreaMapCellViewModel } from "@/viewmodels/desert/desert-area
 
 export class MobiusDesertMapPresenter {
   public static getEnemyIds(locationId: string, mainQuest: Quest | null): string[] {
-    return LocationService.getEnemies(
+    const walkingIds = LocationService.getEnemies(
       locationId,
       QuestService.getLastCompletedMainQuestStep(mainQuest),
     );
+    const bossIds = LocationService.getBoss(locationId);
+
+    return [...bossIds, ...walkingIds];
   }
 
   public static getMobiusDesertArea(

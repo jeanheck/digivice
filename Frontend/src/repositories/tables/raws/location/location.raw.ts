@@ -9,6 +9,7 @@ export type LocationWalkingEnemiesRaw = string[] | LocationEnemyPhaseRaw[];
 
 export interface LocationEnemiesRaw {
   walking?: LocationWalkingEnemiesRaw;
+  boss?: string[];
   fishing?: string[];
   kickingTree?: string[];
 }
