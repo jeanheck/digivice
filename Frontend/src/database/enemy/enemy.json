@@ -40,23 +40,29 @@
     "regularAttackId": "noElement",
     "techniqueId": "necromist",
     "memoryId": 358,
-    "drops": [
-      {
-        "id": "oldWand"
-      }
-    ],
-    "locations": [
-      {
-        "locationId": "0226",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "drops": {
+      "0": [
+        {
+          "id": "oldWand"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0226": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "0226",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+      "27": {
+        "0226": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "2": {
     "name": "MasterTyrannomon",
@@ -99,18 +105,22 @@
     "regularAttackId": "noElement",
     "techniqueId": "masterFire",
     "memoryId": 124,
-    "drops": [
-      {
-        "id": "oldClaw"
+    "drops": {
+      "0": [
+        {
+          "id": "oldClaw"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "022B": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "022B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "14": {
     "name": "HiAndromon",
@@ -153,18 +163,22 @@
     "regularAttackId": "machineElement",
     "techniqueId": "atomicRay",
     "memoryId": 356,
-    "drops": [
-      {
-        "id": "rustyRifle"
+    "drops": {
+      "0": [
+        {
+          "id": "rustyRifle"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0252": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0252",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "15": {
     "name": "WaruMonzaemon",
@@ -207,13 +221,15 @@
     "regularAttackId": "darkElement",
     "techniqueId": "heartBreakAttack",
     "memoryId": 70,
-    "locations": [
-      {
-        "locationId": "0254",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "0254": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "16": {
     "name": "Datamon",
@@ -256,18 +272,22 @@
     "regularAttackId": "machineElement",
     "techniqueId": "autoRecover",
     "memoryId": 141,
-    "drops": [
-      {
-        "id": "rustyGlove"
+    "drops": {
+      "0": [
+        {
+          "id": "rustyGlove"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "021C": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "021C",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "20": {
     "name": "Zanbamon",
@@ -310,18 +330,22 @@
     "regularAttackId": null,
     "techniqueId": null,
     "memoryId": 337,
-    "drops": [
-      {
-        "id": "rustyKatana"
+    "drops": {
+      "0": [
+        {
+          "id": "rustyKatana"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0243": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0243",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "21": {
     "name": "Bulbmon",
@@ -364,13 +388,15 @@
     "regularAttackId": "machineElement",
     "techniqueId": "madPump",
     "memoryId": 436,
-    "locations": [
-      {
-        "locationId": "022D",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "022D": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "71": {
     "name": "Kunemon",
@@ -412,28 +438,30 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 32,
-    "locations": [
-      {
-        "locationId": "021D",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "021E",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0221",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0222",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "021D": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "021E": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0221": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0222": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "72": {
     "name": "Tapirmon",
@@ -475,23 +503,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 206,
-    "locations": [
-      {
-        "locationId": "021D",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "021D": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "021E": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "021E",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "021E",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+      "27": {
+        "021E": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "73": {
     "name": "Crabmon",
@@ -533,18 +565,22 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 197,
-    "locations": [
-      {
-        "locationId": "0227",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "0227": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "0227",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+      "27": {
+        "0227": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "74": {
     "name": "Gizamon",
@@ -586,23 +622,27 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 132,
-    "locations": [
-      {
-        "locationId": "021F",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "021F": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "022A": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "022A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "022A",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+      "27": {
+        "022A": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "75": {
     "name": "DemiDevimon",
@@ -644,18 +684,22 @@
     "regularAttackId": "noElement",
     "techniqueId": "energySuck",
     "memoryId": 217,
-    "drops": [
-      {
-        "id": "darkPower1"
+    "drops": {
+      "0": [
+        {
+          "id": "darkPower1"
+        }
+      ]
+    },
+    "locations": {
+      "24": {
+        "023A": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 24,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "76": {
     "name": "Betamon",
@@ -697,53 +741,59 @@
     "regularAttackId": "thunderElement",
     "techniqueId": "none",
     "memoryId": 4,
-    "drops": [
-      {
-        "id": "powerCharge"
+    "drops": {
+      "0": [
+        {
+          "id": "powerCharge"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "021F": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0220": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0221": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0222": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0227": {
+          "sources": [
+            "walking"
+          ]
+        }
+      },
+      "27": {
+        "021F": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0220": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0221": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "021F",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "021F",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "0221",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0221",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "0222",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0227",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "77": {
     "name": "Vegiemon",
@@ -785,33 +835,37 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 25,
-    "locations": [
-      {
-        "locationId": "021F",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "021F": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0220": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "022A": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "021F",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "022A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+      "27": {
+        "021F": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0220": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "78": {
     "name": "Kuwagamon",
@@ -853,28 +907,32 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 51,
-    "locations": [
-      {
-        "locationId": "0221",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "0221": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0222": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "0221",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "0222",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0222",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+      "27": {
+        "0221": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0222": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "79": {
     "name": "Yanmamon",
@@ -916,13 +974,15 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 67,
-    "locations": [
-      {
-        "locationId": "0229",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "0229": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "80": {
     "name": "Kiwimon",
@@ -964,13 +1024,15 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 198,
-    "locations": [
-      {
-        "locationId": "0229",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "0229": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "81": {
     "name": "Dokugumon",
@@ -1012,23 +1074,29 @@
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
     "memoryId": 166,
-    "drops": [
-      {
-        "id": "spiderWeb"
-      }
-    ],
-    "locations": [
-      {
-        "locationId": "0225",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "drops": {
+      "0": [
+        {
+          "id": "spiderWeb"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0225": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "0225",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+      "27": {
+        "0225": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "82": {
     "name": "Goburimon",
@@ -1070,28 +1138,32 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 80,
-    "locations": [
-      {
-        "locationId": "0222",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "0225": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0226": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "0225",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0225",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "0226",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+      "27": {
+        "0222": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0225": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "83": {
     "name": "Baronmon",
@@ -1133,13 +1205,15 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 277,
-    "locations": [
-      {
-        "locationId": "0226",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+    "locations": {
+      "27": {
+        "0226": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "84": {
     "name": "Minotarumon",
@@ -1181,18 +1255,22 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 172,
-    "locations": [
-      {
-        "locationId": "0226",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "0226": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "0226",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+      "27": {
+        "0226": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "85": {
     "name": "Flymon",
@@ -1234,28 +1312,32 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 137,
-    "locations": [
-      {
-        "locationId": "021E",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "023A": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "023B": {
+          "sources": [
+            "kickingTree"
+          ]
+        }
       },
-      {
-        "locationId": "0221",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "023B",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
+      "27": {
+        "021E": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0221": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "86": {
     "name": "Woodmon",
@@ -1297,58 +1379,60 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 222,
-    "locations": [
-      {
-        "locationId": "021D",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "021E",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "021F",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "0221",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "0222",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "0227",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "0229",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "022A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "023B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "021D": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "021E": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "021F": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "0220": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "0221": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "0222": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "0227": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "0229": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "022A": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "023B": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "87": {
     "name": "Tyrannomon",
@@ -1390,18 +1474,22 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 8,
-    "drops": [
-      {
-        "id": "firePower1"
+    "drops": {
+      "0": [
+        {
+          "id": "firePower1"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "022B": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "022B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "88": {
     "name": "Triceramon",
@@ -1443,23 +1531,27 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 203,
-    "drops": [
-      {
-        "id": "tntBall"
+    "drops": {
+      "0": [
+        {
+          "id": "tntBall"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0220": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "022B": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "022B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "89": {
     "name": "Airdramon",
@@ -1501,18 +1593,22 @@
     "regularAttackId": "noElement",
     "techniqueId": "airBlast",
     "memoryId": 7,
-    "drops": [
-      {
-        "id": "fireChip"
+    "drops": {
+      "0": [
+        {
+          "id": "fireChip"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "022B": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "022B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "90": {
     "name": "Gekomon",
@@ -1554,38 +1650,44 @@
     "regularAttackId": "noElement",
     "techniqueId": "confuseGas",
     "memoryId": 110,
-    "drops": [
-      {
-        "id": "icePower1"
+    "drops": {
+      "0": [
+        {
+          "id": "icePower1"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0233": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0234": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0237": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "023A": {
+          "sources": [
+            "walking"
+          ]
+        }
+      },
+      "24": {
+        "023A": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0233",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0234",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0237",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 24,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "91": {
     "name": "Coelamon",
@@ -1627,73 +1729,75 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 49,
-    "drops": [
-      {
-        "id": "waterChip"
+    "drops": {
+      "0": [
+        {
+          "id": "waterChip"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "021D": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "021E": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "021F": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "0220": {
+          "sources": [
+            "walking",
+            "fishing"
+          ]
+        },
+        "0221": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "0233": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0234": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0235": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0237": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "023A": {
+          "sources": [
+            "walking"
+          ]
+        }
+      },
+      "24": {
+        "023A": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "021D",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "021E",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "021F",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0221",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "0233",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0234",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0235",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0237",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 24,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "92": {
     "name": "Bakemon",
@@ -1735,13 +1839,15 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 37,
-    "locations": [
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 24,
-        "source": "walking"
+    "locations": {
+      "24": {
+        "023A": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "93": {
     "name": "Phantomon",
@@ -1783,11 +1889,13 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "ghostFang"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "ghostFang"
+        }
+      ]
+    }
   },
   "94": {
     "name": "Kokatorimon",
@@ -1829,18 +1937,20 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 50,
-    "locations": [
-      {
-        "locationId": "0222",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "0225",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+    "locations": {
+      "27": {
+        "0222": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0225": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "95": {
     "name": "Apemon",
@@ -1882,23 +1992,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 207,
-    "drops": [
-      {
-        "id": "windPower1"
+    "drops": {
+      "0": [
+        {
+          "id": "windPower1"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "023B": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "023C": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "023B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "023C",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "96": {
     "name": "Shellmon",
@@ -1940,38 +2054,40 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 35,
-    "drops": [
-      {
-        "id": "waterChip"
+    "drops": {
+      "0": [
+        {
+          "id": "waterChip"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "023C": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "023D": {
+          "sources": [
+            "walking",
+            "fishing"
+          ]
+        }
+      },
+      "27": {
+        "021F": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0220": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "021F",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "023C",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "023D",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "023D",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "97": {
     "name": "Tortomon",
@@ -2054,23 +2170,25 @@
     "regularAttackId": "noElement",
     "techniqueId": "divineRain",
     "memoryId": 210,
-    "locations": [
-      {
-        "locationId": "0247",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "0249",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "024B",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
+    "locations": {
+      "0": {
+        "0247": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "0249": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "024B": {
+          "sources": [
+            "fishing"
+          ]
+        }
       }
-    ]
+    }
   },
   "99": {
     "name": "Gesomon",
@@ -2112,11 +2230,13 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 220,
-    "drops": [
-      {
-        "id": "runnerSandal"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "runnerSandal"
+        }
+      ]
+    }
   },
   "100": {
     "name": "Octomon",
@@ -2199,13 +2319,15 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 241,
-    "locations": [
-      {
-        "locationId": "0227",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
+    "locations": {
+      "0": {
+        "0227": {
+          "sources": [
+            "fishing"
+          ]
+        }
       }
-    ]
+    }
   },
   "102": {
     "name": "ShogunGekomon",
@@ -2247,18 +2369,22 @@
     "regularAttackId": "noElement",
     "techniqueId": "confuseGas",
     "memoryId": 119,
-    "drops": [
-      {
-        "id": "chaosWave"
+    "drops": {
+      "0": [
+        {
+          "id": "chaosWave"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0241": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0241",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "103": {
     "name": "Seadramon",
@@ -2300,53 +2426,55 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 10,
-    "drops": [
-      {
-        "id": "waterPower1"
+    "drops": {
+      "0": [
+        {
+          "id": "waterPower1"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "022A": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "0234": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "0235": {
+          "sources": [
+            "walking",
+            "fishing"
+          ]
+        },
+        "0237": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "023A": {
+          "sources": [
+            "fishing"
+          ]
+        },
+        "023B": {
+          "sources": [
+            "fishing"
+          ]
+        }
+      },
+      "27": {
+        "0227": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0227",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
-      },
-      {
-        "locationId": "022A",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "0234",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "0235",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "0235",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0237",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      },
-      {
-        "locationId": "023B",
-        "lastMainQuestStepDone": 0,
-        "source": "fishing"
-      }
-    ]
+    }
   },
   "104": {
     "name": "Mammothmon",
@@ -2388,23 +2516,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 212,
-    "drops": [
-      {
-        "id": "hpProxy"
+    "drops": {
+      "0": [
+        {
+          "id": "hpProxy"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "024A": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "024C": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "024A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "024C",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "105": {
     "name": "Etemon",
@@ -2446,23 +2578,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "smallHeal",
     "memoryId": 42,
-    "drops": [
-      {
-        "id": "superCharge"
+    "drops": {
+      "0": [
+        {
+          "id": "superCharge"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0247": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "024B": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0247",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "024B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "106": {
     "name": "Ogremon",
@@ -2504,23 +2640,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 34,
-    "drops": [
-      {
-        "id": "powerChip"
+    "drops": {
+      "0": [
+        {
+          "id": "powerChip"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0247": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "024B": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0247",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "024B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "107": {
     "name": "Tuskmon",
@@ -2562,28 +2702,34 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 136,
-    "drops": [
-      {
-        "id": "counterCrest"
-      }
-    ],
-    "locations": [
-      {
-        "locationId": "0220",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+    "drops": {
+      "0": [
+        {
+          "id": "counterCrest"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "024A": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "024C": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "024A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "024C",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+      "27": {
+        "0220": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "108": {
     "name": "Rockmon",
@@ -2707,28 +2853,32 @@
     "regularAttackId": "thunderElementChanceOfSleep",
     "techniqueId": "none",
     "memoryId": 28,
-    "drops": [
-      {
-        "id": "boltPower1"
+    "drops": {
+      "0": [
+        {
+          "id": "boltPower1"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0258": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0259": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "025A": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0258",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0259",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "025A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "111": {
     "name": "Maildramon",
@@ -2770,23 +2920,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "thunderbolt",
     "memoryId": 334,
-    "drops": [
-      {
-        "id": "thunderChip"
+    "drops": {
+      "0": [
+        {
+          "id": "thunderChip"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0258": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0259": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0258",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0259",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "112": {
     "name": "Mamemon",
@@ -2828,43 +2982,47 @@
     "regularAttackId": "machineElementChanceOfFreeze",
     "techniqueId": "none",
     "memoryId": 13,
-    "drops": [
-      {
-        "id": "searchCrest"
+    "drops": {
+      "0": [
+        {
+          "id": "searchCrest"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "024E": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "024F": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0250": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0251": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0252": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0253": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "024E",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "024F",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0250",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0251",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0252",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0253",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "113": {
     "name": "Guardromon (blue)",
@@ -2947,18 +3105,22 @@
     "regularAttackId": "thunderElement",
     "techniqueId": "thunderGemini",
     "memoryId": 176,
-    "drops": [
-      {
-        "id": "pulseGuard"
+    "drops": {
+      "0": [
+        {
+          "id": "pulseGuard"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "024D": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "024D",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "115": {
     "name": "Hagurumon",
@@ -3000,18 +3162,22 @@
     "regularAttackId": "machineElement",
     "techniqueId": "speedUp",
     "memoryId": 122,
-    "drops": [
-      {
-        "id": "metalPower1"
+    "drops": {
+      "0": [
+        {
+          "id": "metalPower1"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "024D": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "024D",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "116": {
     "name": "Clockmon",
@@ -3053,18 +3219,22 @@
     "regularAttackId": "noElement",
     "techniqueId": "magicMissile",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "multiCrest"
+    "drops": {
+      "0": [
+        {
+          "id": "multiCrest"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "024D": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "024D",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "117": {
     "name": "Andromon",
@@ -3106,28 +3276,32 @@
     "regularAttackId": "thunderElementChanceOfFreeze",
     "techniqueId": "none",
     "memoryId": 40,
-    "drops": [
-      {
-        "id": "machinegun"
+    "drops": {
+      "0": [
+        {
+          "id": "machinegun"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "024D": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0252": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0253": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "024D",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0252",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0253",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "118": {
     "name": "Numemon",
@@ -3169,18 +3343,22 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 11,
-    "drops": [
-      {
-        "id": "binderCrest"
+    "drops": {
+      "0": [
+        {
+          "id": "binderCrest"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0254": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0254",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "119": {
     "name": "Sukamon",
@@ -3222,18 +3400,22 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 39,
-    "drops": [
-      {
-        "id": "wisdomChip"
+    "drops": {
+      "0": [
+        {
+          "id": "wisdomChip"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0254": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0254",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "120": {
     "name": "Garbagemon",
@@ -3275,11 +3457,13 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "goggles"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "goggles"
+        }
+      ]
+    }
   },
   "121": {
     "name": "Roachmon",
@@ -3362,18 +3546,22 @@
     "regularAttackId": "noElement",
     "techniqueId": "paralyzeShock",
     "memoryId": 139,
-    "drops": [
-      {
-        "id": "armorChip"
+    "drops": {
+      "0": [
+        {
+          "id": "armorChip"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "021B": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "021B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "123": {
     "name": "Cyclonemon",
@@ -3415,18 +3603,22 @@
     "regularAttackId": "noElement",
     "techniqueId": "twinMissile",
     "memoryId": 134,
-    "drops": [
-      {
-        "id": "wisdomChip"
+    "drops": {
+      "0": [
+        {
+          "id": "wisdomChip"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "021B": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "021B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "124": {
     "name": "Megadramon",
@@ -3632,23 +3824,27 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 173,
-    "drops": [
-      {
-        "id": "mpChip"
+    "drops": {
+      "0": [
+        {
+          "id": "mpChip"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "023A": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0243": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0243",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "129": {
     "name": "Kurisarimon",
@@ -3690,11 +3886,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "confuseNebula",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "drillHorn"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "drillHorn"
+        }
+      ]
+    }
   },
   "130": {
     "name": "Snimon",
@@ -3818,11 +4016,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "recoverCrest"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "recoverCrest"
+        }
+      ]
+    }
   },
   "133": {
     "name": "Gargoylemon",
@@ -3864,11 +4064,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "darkMatter",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "darkPower2"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "darkPower2"
+        }
+      ]
+    }
   },
   "134": {
     "name": "Mummymon",
@@ -3910,11 +4112,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "darkFear",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "mindChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "mindChip"
+        }
+      ]
+    }
   },
   "135": {
     "name": "Arukenimon",
@@ -3956,11 +4160,13 @@
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "charmGas"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "charmGas"
+        }
+      ]
+    }
   },
   "136": {
     "name": "Okuwamon",
@@ -4043,11 +4249,13 @@
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "metalChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "metalChip"
+        }
+      ]
+    }
   },
   "138": {
     "name": "Deltamon",
@@ -4089,11 +4297,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "windPower2"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "windPower2"
+        }
+      ]
+    }
   },
   "139": {
     "name": "Whamon",
@@ -4135,11 +4345,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "hardRain",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "crimsonCable"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "crimsonCable"
+        }
+      ]
+    }
   },
   "140": {
     "name": "MarineDevimon",
@@ -4263,11 +4475,13 @@
     "regularAttackId": "thunderElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "thunderChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "thunderChip"
+        }
+      ]
+    }
   },
   "143": {
     "name": "Ebidramon",
@@ -4309,11 +4523,13 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "waterPower2"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "waterPower2"
+        }
+      ]
+    }
   },
   "144": {
     "name": "Vilemon",
@@ -4355,11 +4571,13 @@
     "regularAttackId": "fireElement",
     "techniqueId": "darkFear",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "devilChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "devilChip"
+        }
+      ]
+    }
   },
   "145": {
     "name": "SkullSatamon",
@@ -4401,11 +4619,13 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "hackSticker"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "hackSticker"
+        }
+      ]
+    }
   },
   "146": {
     "name": "Brachiomon",
@@ -4447,11 +4667,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "ultraCharge"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "ultraCharge"
+        }
+      ]
+    }
   },
   "147": {
     "name": "Drimogemon",
@@ -4493,11 +4715,13 @@
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "drillHorn"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "drillHorn"
+        }
+      ]
+    }
   },
   "148": {
     "name": "Flarerizamon",
@@ -4539,11 +4763,13 @@
     "regularAttackId": "fireElement",
     "techniqueId": "flameBall",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "firePower2"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "firePower2"
+        }
+      ]
+    }
   },
   "149": {
     "name": "Meramon",
@@ -4667,11 +4893,13 @@
     "regularAttackId": "iceElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "iceChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "iceChip"
+        }
+      ]
+    }
   },
   "152": {
     "name": "Icemon",
@@ -4713,11 +4941,13 @@
     "regularAttackId": "iceElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "icePower2"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "icePower2"
+        }
+      ]
+    }
   },
   "153": {
     "name": "Giromon",
@@ -4841,11 +5071,13 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "firePowerS"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "firePowerS"
+        }
+      ]
+    }
   },
   "156": {
     "name": "SkullMeramon",
@@ -4969,11 +5201,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "devilChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "devilChip"
+        }
+      ]
+    }
   },
   "159": {
     "name": "Pukumon",
@@ -5015,11 +5249,13 @@
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "crimsonCable"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "crimsonCable"
+        }
+      ]
+    }
   },
   "160": {
     "name": "MetalSeadramon",
@@ -5061,11 +5297,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "godBombard",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "crimsonCable"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "crimsonCable"
+        }
+      ]
+    }
   },
   "161": {
     "name": "Tylomon",
@@ -5107,11 +5345,13 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "crimsonCable"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "crimsonCable"
+        }
+      ]
+    }
   },
   "162": {
     "name": "Scorpiomon",
@@ -5153,11 +5393,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "grandWave",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "crimsonCable"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "crimsonCable"
+        }
+      ]
+    }
   },
   "163": {
     "name": "Antylamon",
@@ -5199,11 +5441,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "darkElemental",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "windChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "windChip"
+        }
+      ]
+    }
   },
   "164": {
     "name": "H-Kabuterimon",
@@ -5368,11 +5612,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "danceWing"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "danceWing"
+        }
+      ]
+    }
   },
   "168": {
     "name": "LadyDevimon",
@@ -5414,11 +5660,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "charmGas"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "charmGas"
+        }
+      ]
+    }
   },
   "169": {
     "name": "MetalEtemon",
@@ -5460,11 +5708,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "megaHeal",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "maxCharge"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "maxCharge"
+        }
+      ]
+    }
   },
   "170": {
     "name": "KingEtemon",
@@ -5506,11 +5756,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "fullHeal",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "charismaChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "charismaChip"
+        }
+      ]
+    }
   },
   "171": {
     "name": "Gryphonmon",
@@ -5552,11 +5804,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "slyphStorm",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "windPowerS"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "windPowerS"
+        }
+      ]
+    }
   },
   "172": {
     "name": "Infermon",
@@ -5680,11 +5934,13 @@
     "regularAttackId": "thunderElementCounterPhysical",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "powerBrace"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "powerBrace"
+        }
+      ]
+    }
   },
   "175": {
     "name": "Piedmon",
@@ -5767,11 +6023,13 @@
     "regularAttackId": "machineElementHitsTwice",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "metalPowerS"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "metalPowerS"
+        }
+      ]
+    }
   },
   "177": {
     "name": "VenomMyotismon",
@@ -5895,11 +6153,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "darkPowerS"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "darkPowerS"
+        }
+      ]
+    }
   },
   "180": {
     "name": "Creepymon",
@@ -6023,23 +6283,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 77,
-    "locations": [
-      {
-        "locationId": "022A",
-        "lastMainQuestStepDone": 27,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "023B": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "023C": {
+          "sources": [
+            "walking"
+          ]
+        }
       },
-      {
-        "locationId": "023B",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "023C",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+      "27": {
+        "022A": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "183": {
     "name": "Kuwagamon (green)",
@@ -6081,11 +6345,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "chainSaw"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "chainSaw"
+        }
+      ]
+    }
   },
   "184": {
     "name": "Yanmamon(Green)",
@@ -6127,63 +6393,55 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 396,
-    "locations": [
-      {
-        "locationId": "022A",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
+    "locations": {
+      "0": {
+        "022A": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "0233": {
+          "sources": [
+            "walking",
+            "kickingTree"
+          ]
+        },
+        "0234": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0235": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "0237": {
+          "sources": [
+            "walking",
+            "kickingTree"
+          ]
+        },
+        "023A": {
+          "sources": [
+            "walking",
+            "kickingTree"
+          ]
+        },
+        "023B": {
+          "sources": [
+            "kickingTree"
+          ]
+        }
       },
-      {
-        "locationId": "0233",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "0233",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0234",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0235",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "0237",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "0237",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "023A",
-        "lastMainQuestStepDone": 24,
-        "source": "walking"
-      },
-      {
-        "locationId": "023B",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
+      "24": {
+        "023A": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ]
+    }
   },
   "185": {
     "name": "Dokugumon(Brown)",
@@ -6225,23 +6483,27 @@
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
     "memoryId": 397,
-    "drops": [
-      {
-        "id": "spiderWeb"
+    "drops": {
+      "0": [
+        {
+          "id": "spiderWeb"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0248": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0249": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0248",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0249",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "186": {
     "name": "Goburimon(Red)",
@@ -6283,23 +6545,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 398,
-    "drops": [
-      {
-        "id": "naginata"
+    "drops": {
+      "0": [
+        {
+          "id": "naginata"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "024A": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "024C": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "024A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "024C",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "187": {
     "name": "Minotarumon (blue)",
@@ -6341,11 +6607,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "metalPower2"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "metalPower2"
+        }
+      ]
+    }
   },
   "188": {
     "name": "Flymon (pink)",
@@ -6387,11 +6655,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 400,
-    "drops": [
-      {
-        "id": "glasses"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "glasses"
+        }
+      ]
+    }
   },
   "189": {
     "name": "Woodmon(Green)",
@@ -6433,18 +6703,16 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "locations": [
-      {
-        "locationId": "023C",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "023C",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
+    "locations": {
+      "0": {
+        "023C": {
+          "sources": [
+            "walking",
+            "kickingTree"
+          ]
+        }
       }
-    ]
+    }
   },
   "190": {
     "name": "Triceramon (red)",
@@ -6527,23 +6795,27 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 403,
-    "drops": [
-      {
-        "id": "magicianRod"
+    "drops": {
+      "0": [
+        {
+          "id": "magicianRod"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0248": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0249": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0248",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0249",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "192": {
     "name": "Phantomon (blue)",
@@ -6585,11 +6857,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "hpChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "hpChip"
+        }
+      ]
+    }
   },
   "193": {
     "name": "Kokatorimon(Brown)",
@@ -6631,43 +6905,47 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 405,
-    "drops": [
-      {
-        "id": "overClocked"
+    "drops": {
+      "0": [
+        {
+          "id": "overClocked"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "024A": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "024C": {
+          "sources": [
+            "kickingTree"
+          ]
+        },
+        "0257": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0258": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "0259": {
+          "sources": [
+            "walking"
+          ]
+        },
+        "025A": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "024A",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "024C",
-        "lastMainQuestStepDone": 0,
-        "source": "kickingTree"
-      },
-      {
-        "locationId": "0257",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0258",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "0259",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      },
-      {
-        "locationId": "025A",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "194": {
     "name": "Tortomon (blue)",
@@ -6750,11 +7028,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "chaosWave"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "chaosWave"
+        }
+      ]
+    }
   },
   "196": {
     "name": "Seadramon (brown)",
@@ -6919,11 +7199,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "cursedPuppet"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "cursedPuppet"
+        }
+      ]
+    }
   },
   "200": {
     "name": "Maildramon (black)",
@@ -6965,11 +7247,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "boltPowerS"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "boltPowerS"
+        }
+      ]
+    }
   },
   "201": {
     "name": "Guardromon (white)",
@@ -7052,18 +7336,22 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 413,
-    "drops": [
-      {
-        "id": "danceFeather"
+    "drops": {
+      "0": [
+        {
+          "id": "danceFeather"
+        }
+      ]
+    },
+    "locations": {
+      "0": {
+        "0242": {
+          "sources": [
+            "walking"
+          ]
+        }
       }
-    ],
-    "locations": [
-      {
-        "locationId": "0242",
-        "lastMainQuestStepDone": 0,
-        "source": "walking"
-      }
-    ]
+    }
   },
   "203": {
     "name": "Numemon (brown)",
@@ -7105,11 +7393,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "trainingBook"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "trainingBook"
+        }
+      ]
+    }
   },
   "204": {
     "name": "Numemon (aqua)",
@@ -7192,11 +7482,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "overLoad"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "overLoad"
+        }
+      ]
+    }
   },
   "206": {
     "name": "Numemon (white)",
@@ -7238,11 +7530,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "boostChip"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "boostChip"
+        }
+      ]
+    }
   },
   "207": {
     "name": "Raremon (pink)",
@@ -7284,11 +7578,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "boltPower2"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "boltPower2"
+        }
+      ]
+    }
   },
   "208": {
     "name": "Cyclonemon (pink)",
@@ -7371,11 +7667,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "runnerShoes"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "runnerShoes"
+        }
+      ]
+    }
   },
   "210": {
     "name": "Musyamon (green)",
@@ -7417,11 +7715,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "mpProxy"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "mpProxy"
+        }
+      ]
+    }
   },
   "211": {
     "name": "Kurisarimon (pink)",
@@ -7504,11 +7804,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "trainChip3"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "trainChip3"
+        }
+      ]
+    }
   },
   "213": {
     "name": "Blossomon (pink)",
@@ -7591,11 +7893,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "trainChip1"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "trainChip1"
+        }
+      ]
+    }
   },
   "215": {
     "name": "Whamon (blue)",
@@ -7637,11 +7941,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "hpMegaProxy"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "hpMegaProxy"
+        }
+      ]
+    }
   },
   "216": {
     "name": "MegaSeadramon (gold)",
@@ -7683,11 +7989,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "waterPowerS"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "waterPowerS"
+        }
+      ]
+    }
   },
   "217": {
     "name": "Ebidramon (pink)",
@@ -7729,11 +8037,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "trainChip2"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "trainChip2"
+        }
+      ]
+    }
   },
   "218": {
     "name": "Vilemon (purple)",
@@ -7775,11 +8085,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "hackSystem"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "hackSystem"
+        }
+      ]
+    }
   },
   "219": {
     "name": "Drimogemon (brown)",
@@ -7862,11 +8174,13 @@
     "regularAttackId": "fireElement",
     "techniqueId": "flameSphere",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "mpMegaProxy"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "mpMegaProxy"
+        }
+      ]
+    }
   },
   "221": {
     "name": "Vikemon (blue)",
@@ -7990,11 +8304,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "trainChipV"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "trainChipV"
+        }
+      ]
+    }
   },
   "224": {
     "name": "Antylamon (white)",
@@ -8036,11 +8352,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "icePowerS"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "icePowerS"
+        }
+      ]
+    }
   },
   "247": {
     "name": "Knightmon",
@@ -8123,21 +8441,20 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 457,
-    "drops": [
-      {
-        "id": "1bBooster",
-        "locationOnly": "0001"
-      },
-      {
-        "id": "3bBooster"
-      },
-      {
-        "id": "r01Booster"
-      },
-      {
-        "id": "r02Booster"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "1bBooster"
+        },
+        {
+          "id": "3bBooster",
+          "locationOnly": "022A"
+        },
+        {
+          "id": "r01Booster"
+        }
+      ]
+    }
   },
   "516": {
     "name": "Cardmon(B)",
@@ -8179,16 +8496,21 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 458,
-    "drops": [
-      {
-        "id": "1bBooster",
-        "locationOnly": "0001"
-      },
-      {
-        "id": "2bBooster",
-        "locationOnly": "0002"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "1bBooster",
+          "locationOnly": "0001"
+        },
+        {
+          "id": "2bBooster",
+          "locationOnly": "0002"
+        },
+        {
+          "id": "r01Booster"
+        }
+      ]
+    }
   },
   "517": {
     "name": "Cardmon(C)",
@@ -8230,14 +8552,16 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 459,
-    "drops": [
-      {
-        "id": "4bBooster"
-      },
-      {
-        "id": "r02Booster"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "4bBooster"
+        },
+        {
+          "id": "r02Booster"
+        }
+      ]
+    }
   },
   "518": {
     "name": "Cardmon(D)",
@@ -8279,12 +8603,14 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 460,
-    "drops": [
-      {
-        "id": "5bBooster",
-        "locationOnly": "0003"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "5bBooster",
+          "locationOnly": "0003"
+        }
+      ]
+    }
   },
   "519": {
     "name": "Cardmon (T3)",
@@ -8326,11 +8652,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "variousBooster"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "variousBooster"
+        }
+      ]
+    }
   },
   "520": {
     "name": "Cardmon (A3)",
@@ -8372,11 +8700,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "variousBooster"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "variousBooster"
+        }
+      ]
+    }
   },
   "521": {
     "name": "Cardmon (T4)",
@@ -8418,11 +8748,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "variousBooster"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "variousBooster"
+        }
+      ]
+    }
   },
   "522": {
     "name": "Cardmon (A4)",
@@ -8464,10 +8796,12 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": [
-      {
-        "id": "variousBooster"
-      }
-    ]
+    "drops": {
+      "0": [
+        {
+          "id": "variousBooster"
+        }
+      ]
+    }
   }
 }

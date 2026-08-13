@@ -3,8 +3,14 @@ import { computed, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { LocationRepository } from "@/repositories/location.repository";
-import type { EnemyLocationRaw } from "@/repositories/tables/raws/enemy/enemy-location.raw";
+import type { EnemyLocationSource } from "@/repositories/tables/raws/enemy/enemy-location.raw";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
+
+interface LocationListEntry {
+  step: string;
+  locationId: string;
+  sources: EnemyLocationSource[];
+}
 
 const props = defineProps<{
   enemy: EnemyViewModel;
@@ -16,22 +22,35 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-const locationEntries = computed(() => {
-  return [...(props.enemy.locations ?? [])].sort((first, second) => {
-    if (first.locationId !== second.locationId) {
-      return first.locationId.localeCompare(second.locationId);
-    }
+const locationEntries = computed((): LocationListEntry[] => {
+  const locationsByStep = props.enemy.locations;
+  if (locationsByStep === undefined) {
+    return [];
+  }
 
-    if (first.source !== second.source) {
-      return first.source.localeCompare(second.source);
-    }
-
-    return first.lastMainQuestStepDone - second.lastMainQuestStepDone;
+  const entries: LocationListEntry[] = [];
+  const sortedSteps = Object.keys(locationsByStep).sort((firstStep, secondStep) => {
+    return Number(firstStep) - Number(secondStep);
   });
+
+  for (const step of sortedSteps) {
+    const locationsAtStep = locationsByStep[step] ?? {};
+    const sortedLocationIds = Object.keys(locationsAtStep).sort();
+
+    for (const locationId of sortedLocationIds) {
+      entries.push({
+        step,
+        locationId,
+        sources: locationsAtStep[locationId].sources,
+      });
+    }
+  }
+
+  return entries;
 });
 
-const entryKey = (entry: EnemyLocationRaw): string => {
-  return `${entry.locationId}-${entry.source}-${entry.lastMainQuestStepDone}`;
+const entryKey = (entry: LocationListEntry): string => {
+  return `${entry.step}-${entry.locationId}`;
 };
 
 const selectedKey = ref<string | null>(null);
@@ -72,7 +91,7 @@ const selectedLocationImageUrl = computed(() => {
   return ImageCatalog.getLocationImageUrl(locationRaw.imageName);
 });
 
-const selectEntry = (entry: EnemyLocationRaw): void => {
+const selectEntry = (entry: LocationListEntry): void => {
   selectedKey.value = entryKey(entry);
 };
 </script>
@@ -119,17 +138,17 @@ const selectEntry = (entry: EnemyLocationRaw): void => {
           </span>
           <span class="mt-1 flex flex-wrap items-center gap-1.5">
             <span
+              v-for="source in entry.sources"
+              :key="`${entryKey(entry)}-${source}`"
               class="inline-block px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-amber-900/40 text-amber-300 border border-amber-700/50"
             >
-              {{ t(`enemy.locationSource.${entry.source}`) }}
+              {{ t(`enemy.locationSource.${source}`) }}
             </span>
             <span
-              v-if="entry.lastMainQuestStepDone > 0"
+              v-if="Number(entry.step) > 0"
               class="text-[9px] font-normal text-gray-400"
             >
-              {{
-                t("enemy.locationStep", { step: entry.lastMainQuestStepDone })
-              }}
+              {{ t("enemy.locationStep", { step: entry.step }) }}
             </span>
           </span>
         </button>

@@ -11,7 +11,12 @@ const emit = defineEmits<{
 }>();
 
 const hasLocations = computed(() => {
-  return (props.enemy.locations?.length ?? 0) > 0;
+  const locationsByStep = props.enemy.locations;
+  if (locationsByStep === undefined) {
+    return false;
+  }
+
+  return Object.keys(locationsByStep).length > 0;
 });
 </script>
 

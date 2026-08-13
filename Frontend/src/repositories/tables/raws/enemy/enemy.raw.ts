@@ -1,5 +1,5 @@
-import type { EnemyDropRaw } from "./enemy-drop.raw";
-import type { EnemyLocationRaw } from "./enemy-location.raw";
+import type { EnemyDropsByStepRaw } from "./enemy-drop.raw";
+import type { EnemyLocationsByStepRaw } from "./enemy-location.raw";
 
 export interface EnemyRaw {
   name: string;
@@ -38,8 +38,8 @@ export interface EnemyRaw {
   dvxp: number;
   exp: number;
   bits: number;
-  drops?: EnemyDropRaw[];
-  locations?: EnemyLocationRaw[];
+  drops?: EnemyDropsByStepRaw;
+  locations?: EnemyLocationsByStepRaw;
   regularAttackId: string | null;
   techniqueId: string | null;
   boss?: boolean;
