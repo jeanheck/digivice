@@ -15,14 +15,7 @@ const emit = defineEmits<{
 const { t } = useI18n();
 
 const enemyDrops = computed((): EnemyDropRaw[] => {
-  const dropsByStep = props.enemy.drops;
-  if (dropsByStep === undefined) {
-    return [];
-  }
-
-  return Object.keys(dropsByStep)
-    .sort((firstStep, secondStep) => Number(firstStep) - Number(secondStep))
-    .flatMap((step) => dropsByStep[step] ?? []);
+  return props.enemy.drops ?? [];
 });
 
 const isVariousBoosterOnly = computed(() => {

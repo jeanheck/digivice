@@ -40,13 +40,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "necromist",
     "memoryId": 358,
-    "drops": {
-      "0": [
-        {
-          "id": "oldWand"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "oldWand"
+      }
+    ],
     "locations": {
       "0": {
         "0226": {
@@ -98,15 +96,13 @@
     "regularAttackId": "noElement",
     "techniqueId": "masterFire",
     "memoryId": 124,
-    "drops": {
-      "0": [
-        {
-          "id": "oldClaw"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "oldClaw"
+      }
+    ],
     "locations": {
-      "0": {
+      "3": {
         "022B": {
           "sources": [
             "boss"
@@ -156,15 +152,13 @@
     "regularAttackId": "machineElement",
     "techniqueId": "atomicRay",
     "memoryId": 356,
-    "drops": {
-      "0": [
-        {
-          "id": "rustyRifle"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "rustyRifle"
+      }
+    ],
     "locations": {
-      "0": {
+      "60": {
         "0252": {
           "sources": [
             "boss"
@@ -215,7 +209,7 @@
     "techniqueId": "heartBreakAttack",
     "memoryId": 70,
     "locations": {
-      "0": {
+      "61": {
         "0254": {
           "sources": [
             "boss"
@@ -265,15 +259,13 @@
     "regularAttackId": "machineElement",
     "techniqueId": "autoRecover",
     "memoryId": 141,
-    "drops": {
-      "0": [
-        {
-          "id": "rustyGlove"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "rustyGlove"
+      }
+    ],
     "locations": {
-      "0": {
+      "43": {
         "021C": {
           "sources": [
             "boss"
@@ -323,13 +315,11 @@
     "regularAttackId": null,
     "techniqueId": null,
     "memoryId": 337,
-    "drops": {
-      "0": [
-        {
-          "id": "rustyKatana"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "rustyKatana"
+      }
+    ],
     "locations": {
       "0": {
         "0243": {
@@ -677,13 +667,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "energySuck",
     "memoryId": 217,
-    "drops": {
-      "0": [
-        {
-          "id": "darkPower1"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "darkPower1"
+      }
+    ],
     "locations": {
       "24": {
         "023A": {
@@ -734,13 +722,11 @@
     "regularAttackId": "thunderElement",
     "techniqueId": "none",
     "memoryId": 4,
-    "drops": {
-      "0": [
-        {
-          "id": "powerCharge"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "powerCharge"
+      }
+    ],
     "locations": {
       "0": {
         "021F": {
@@ -1067,13 +1053,11 @@
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
     "memoryId": 166,
-    "drops": {
-      "0": [
-        {
-          "id": "spiderWeb"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "spiderWeb"
+      }
+    ],
     "locations": {
       "0": {
         "0225": {
@@ -1467,13 +1451,11 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 8,
-    "drops": {
-      "0": [
-        {
-          "id": "firePower1"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "firePower1"
+      }
+    ],
     "locations": {
       "0": {
         "022B": {
@@ -1524,13 +1506,11 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 203,
-    "drops": {
-      "0": [
-        {
-          "id": "tntBall"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "tntBall"
+      }
+    ],
     "locations": {
       "0": {
         "0220": {
@@ -1586,13 +1566,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "airBlast",
     "memoryId": 7,
-    "drops": {
-      "0": [
-        {
-          "id": "fireChip"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "fireChip"
+      }
+    ],
     "locations": {
       "0": {
         "022B": {
@@ -1643,13 +1621,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "confuseGas",
     "memoryId": 110,
-    "drops": {
-      "0": [
-        {
-          "id": "icePower1"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "icePower1"
+      }
+    ],
     "locations": {
       "0": {
         "0233": {
@@ -1722,13 +1698,11 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 49,
-    "drops": {
-      "0": [
-        {
-          "id": "waterChip"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "waterChip"
+      }
+    ],
     "locations": {
       "0": {
         "021D": {
@@ -1882,13 +1856,11 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "ghostFang"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "ghostFang"
+      }
+    ]
   },
   "94": {
     "name": "Kokatorimon",
@@ -1985,13 +1957,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 207,
-    "drops": {
-      "0": [
-        {
-          "id": "windPower1"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "windPower1"
+      }
+    ],
     "locations": {
       "0": {
         "023B": {
@@ -2047,13 +2017,11 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 35,
-    "drops": {
-      "0": [
-        {
-          "id": "waterChip"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "waterChip"
+      }
+    ],
     "locations": {
       "0": {
         "023C": {
@@ -2223,13 +2191,11 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 220,
-    "drops": {
-      "0": [
-        {
-          "id": "runnerSandal"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "runnerSandal"
+      }
+    ]
   },
   "100": {
     "name": "Octomon",
@@ -2362,13 +2328,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "confuseGas",
     "memoryId": 119,
-    "drops": {
-      "0": [
-        {
-          "id": "chaosWave"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "chaosWave"
+      }
+    ],
     "locations": {
       "0": {
         "0241": {
@@ -2419,13 +2383,11 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 10,
-    "drops": {
-      "0": [
-        {
-          "id": "waterPower1"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "waterPower1"
+      }
+    ],
     "locations": {
       "0": {
         "022A": {
@@ -2509,13 +2471,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 212,
-    "drops": {
-      "0": [
-        {
-          "id": "hpProxy"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "hpProxy"
+      }
+    ],
     "locations": {
       "0": {
         "024A": {
@@ -2571,13 +2531,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "smallHeal",
     "memoryId": 42,
-    "drops": {
-      "0": [
-        {
-          "id": "superCharge"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "superCharge"
+      }
+    ],
     "locations": {
       "0": {
         "0247": {
@@ -2633,13 +2591,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 34,
-    "drops": {
-      "0": [
-        {
-          "id": "powerChip"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "powerChip"
+      }
+    ],
     "locations": {
       "0": {
         "0247": {
@@ -2695,13 +2651,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 136,
-    "drops": {
-      "0": [
-        {
-          "id": "counterCrest"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "counterCrest"
+      }
+    ],
     "locations": {
       "0": {
         "024A": {
@@ -2846,13 +2800,11 @@
     "regularAttackId": "thunderElementChanceOfSleep",
     "techniqueId": "none",
     "memoryId": 28,
-    "drops": {
-      "0": [
-        {
-          "id": "boltPower1"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "boltPower1"
+      }
+    ],
     "locations": {
       "0": {
         "0258": {
@@ -2913,13 +2865,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "thunderbolt",
     "memoryId": 334,
-    "drops": {
-      "0": [
-        {
-          "id": "thunderChip"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "thunderChip"
+      }
+    ],
     "locations": {
       "0": {
         "0258": {
@@ -2975,13 +2925,11 @@
     "regularAttackId": "machineElementChanceOfFreeze",
     "techniqueId": "none",
     "memoryId": 13,
-    "drops": {
-      "0": [
-        {
-          "id": "searchCrest"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "searchCrest"
+      }
+    ],
     "locations": {
       "0": {
         "024E": {
@@ -3098,13 +3046,11 @@
     "regularAttackId": "thunderElement",
     "techniqueId": "thunderGemini",
     "memoryId": 176,
-    "drops": {
-      "0": [
-        {
-          "id": "pulseGuard"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "pulseGuard"
+      }
+    ],
     "locations": {
       "0": {
         "024D": {
@@ -3155,13 +3101,11 @@
     "regularAttackId": "machineElement",
     "techniqueId": "speedUp",
     "memoryId": 122,
-    "drops": {
-      "0": [
-        {
-          "id": "metalPower1"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "metalPower1"
+      }
+    ],
     "locations": {
       "0": {
         "024D": {
@@ -3212,13 +3156,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "magicMissile",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "multiCrest"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "multiCrest"
+      }
+    ],
     "locations": {
       "0": {
         "024D": {
@@ -3269,13 +3211,11 @@
     "regularAttackId": "thunderElementChanceOfFreeze",
     "techniqueId": "none",
     "memoryId": 40,
-    "drops": {
-      "0": [
-        {
-          "id": "machinegun"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "machinegun"
+      }
+    ],
     "locations": {
       "0": {
         "024D": {
@@ -3336,13 +3276,11 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 11,
-    "drops": {
-      "0": [
-        {
-          "id": "binderCrest"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "binderCrest"
+      }
+    ],
     "locations": {
       "0": {
         "0254": {
@@ -3393,13 +3331,11 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 39,
-    "drops": {
-      "0": [
-        {
-          "id": "wisdomChip"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "wisdomChip"
+      }
+    ],
     "locations": {
       "0": {
         "0254": {
@@ -3450,13 +3386,11 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "goggles"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "goggles"
+      }
+    ]
   },
   "121": {
     "name": "Roachmon",
@@ -3539,13 +3473,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "paralyzeShock",
     "memoryId": 139,
-    "drops": {
-      "0": [
-        {
-          "id": "armorChip"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "armorChip"
+      }
+    ],
     "locations": {
       "0": {
         "021B": {
@@ -3596,13 +3528,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "twinMissile",
     "memoryId": 134,
-    "drops": {
-      "0": [
-        {
-          "id": "wisdomChip"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "wisdomChip"
+      }
+    ],
     "locations": {
       "0": {
         "021B": {
@@ -3817,13 +3747,11 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 173,
-    "drops": {
-      "0": [
-        {
-          "id": "mpChip"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "mpChip"
+      }
+    ],
     "locations": {
       "0": {
         "023A": {
@@ -3879,13 +3807,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "confuseNebula",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "drillHorn"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "drillHorn"
+      }
+    ]
   },
   "130": {
     "name": "Snimon",
@@ -4009,13 +3935,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "recoverCrest"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "recoverCrest"
+      }
+    ]
   },
   "133": {
     "name": "Gargoylemon",
@@ -4057,13 +3981,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "darkMatter",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "darkPower2"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "darkPower2"
+      }
+    ]
   },
   "134": {
     "name": "Mummymon",
@@ -4105,13 +4027,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "darkFear",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "mindChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "mindChip"
+      }
+    ]
   },
   "135": {
     "name": "Arukenimon",
@@ -4153,13 +4073,11 @@
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "charmGas"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "charmGas"
+      }
+    ]
   },
   "136": {
     "name": "Okuwamon",
@@ -4242,13 +4160,11 @@
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "metalChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "metalChip"
+      }
+    ]
   },
   "138": {
     "name": "Deltamon",
@@ -4290,13 +4206,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "windPower2"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "windPower2"
+      }
+    ]
   },
   "139": {
     "name": "Whamon",
@@ -4338,13 +4252,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "hardRain",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "crimsonCable"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "crimsonCable"
+      }
+    ]
   },
   "140": {
     "name": "MarineDevimon",
@@ -4468,13 +4380,11 @@
     "regularAttackId": "thunderElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "thunderChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "thunderChip"
+      }
+    ]
   },
   "143": {
     "name": "Ebidramon",
@@ -4516,13 +4426,11 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "waterPower2"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "waterPower2"
+      }
+    ]
   },
   "144": {
     "name": "Vilemon",
@@ -4564,13 +4472,11 @@
     "regularAttackId": "fireElement",
     "techniqueId": "darkFear",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "devilChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "devilChip"
+      }
+    ]
   },
   "145": {
     "name": "SkullSatamon",
@@ -4612,13 +4518,11 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "hackSticker"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "hackSticker"
+      }
+    ]
   },
   "146": {
     "name": "Brachiomon",
@@ -4660,13 +4564,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "ultraCharge"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "ultraCharge"
+      }
+    ]
   },
   "147": {
     "name": "Drimogemon",
@@ -4708,13 +4610,11 @@
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "drillHorn"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "drillHorn"
+      }
+    ]
   },
   "148": {
     "name": "Flarerizamon",
@@ -4756,13 +4656,11 @@
     "regularAttackId": "fireElement",
     "techniqueId": "flameBall",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "firePower2"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "firePower2"
+      }
+    ]
   },
   "149": {
     "name": "Meramon",
@@ -4886,13 +4784,11 @@
     "regularAttackId": "iceElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "iceChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "iceChip"
+      }
+    ]
   },
   "152": {
     "name": "Icemon",
@@ -4934,13 +4830,11 @@
     "regularAttackId": "iceElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "icePower2"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "icePower2"
+      }
+    ]
   },
   "153": {
     "name": "Giromon",
@@ -5064,13 +4958,11 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "firePowerS"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "firePowerS"
+      }
+    ]
   },
   "156": {
     "name": "SkullMeramon",
@@ -5194,13 +5086,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "devilChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "devilChip"
+      }
+    ]
   },
   "159": {
     "name": "Pukumon",
@@ -5242,13 +5132,11 @@
     "regularAttackId": "machineElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "crimsonCable"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "crimsonCable"
+      }
+    ]
   },
   "160": {
     "name": "MetalSeadramon",
@@ -5290,13 +5178,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "godBombard",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "crimsonCable"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "crimsonCable"
+      }
+    ]
   },
   "161": {
     "name": "Tylomon",
@@ -5338,13 +5224,11 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "crimsonCable"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "crimsonCable"
+      }
+    ]
   },
   "162": {
     "name": "Scorpiomon",
@@ -5386,13 +5270,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "grandWave",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "crimsonCable"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "crimsonCable"
+      }
+    ]
   },
   "163": {
     "name": "Antylamon",
@@ -5434,13 +5316,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "darkElemental",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "windChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "windChip"
+      }
+    ]
   },
   "164": {
     "name": "H-Kabuterimon",
@@ -5605,13 +5485,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "danceWing"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "danceWing"
+      }
+    ]
   },
   "168": {
     "name": "LadyDevimon",
@@ -5653,13 +5531,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "charmGas"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "charmGas"
+      }
+    ]
   },
   "169": {
     "name": "MetalEtemon",
@@ -5701,13 +5577,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "megaHeal",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "maxCharge"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "maxCharge"
+      }
+    ]
   },
   "170": {
     "name": "KingEtemon",
@@ -5749,13 +5623,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "fullHeal",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "charismaChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "charismaChip"
+      }
+    ]
   },
   "171": {
     "name": "Gryphonmon",
@@ -5797,13 +5669,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "slyphStorm",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "windPowerS"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "windPowerS"
+      }
+    ]
   },
   "172": {
     "name": "Infermon",
@@ -5927,13 +5797,11 @@
     "regularAttackId": "thunderElementCounterPhysical",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "powerBrace"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "powerBrace"
+      }
+    ]
   },
   "175": {
     "name": "Piedmon",
@@ -6016,13 +5884,11 @@
     "regularAttackId": "machineElementHitsTwice",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "metalPowerS"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "metalPowerS"
+      }
+    ]
   },
   "177": {
     "name": "VenomMyotismon",
@@ -6146,13 +6012,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "darknessChaos",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "darkPowerS"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "darkPowerS"
+      }
+    ]
   },
   "180": {
     "name": "Creepymon",
@@ -6338,13 +6202,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "chainSaw"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "chainSaw"
+      }
+    ]
   },
   "184": {
     "name": "Yanmamon(Green)",
@@ -6476,13 +6338,11 @@
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
     "memoryId": 397,
-    "drops": {
-      "0": [
-        {
-          "id": "spiderWeb"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "spiderWeb"
+      }
+    ],
     "locations": {
       "0": {
         "0248": {
@@ -6538,13 +6398,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 398,
-    "drops": {
-      "0": [
-        {
-          "id": "naginata"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "naginata"
+      }
+    ],
     "locations": {
       "0": {
         "024A": {
@@ -6600,13 +6458,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "metalPower2"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "metalPower2"
+      }
+    ]
   },
   "188": {
     "name": "Flymon (pink)",
@@ -6648,13 +6504,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 400,
-    "drops": {
-      "0": [
-        {
-          "id": "glasses"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "glasses"
+      }
+    ]
   },
   "189": {
     "name": "Woodmon(Green)",
@@ -6788,13 +6642,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 403,
-    "drops": {
-      "0": [
-        {
-          "id": "magicianRod"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "magicianRod"
+      }
+    ],
     "locations": {
       "0": {
         "0248": {
@@ -6850,13 +6702,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "hpChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "hpChip"
+      }
+    ]
   },
   "193": {
     "name": "Kokatorimon(Brown)",
@@ -6898,13 +6748,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 405,
-    "drops": {
-      "0": [
-        {
-          "id": "overClocked"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "overClocked"
+      }
+    ],
     "locations": {
       "0": {
         "024A": {
@@ -7021,13 +6869,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "chaosWave"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "chaosWave"
+      }
+    ]
   },
   "196": {
     "name": "Seadramon (brown)",
@@ -7192,13 +7038,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "cursedPuppet"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "cursedPuppet"
+      }
+    ]
   },
   "200": {
     "name": "Maildramon (black)",
@@ -7240,13 +7084,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "boltPowerS"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "boltPowerS"
+      }
+    ]
   },
   "201": {
     "name": "Guardromon (white)",
@@ -7329,13 +7171,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 413,
-    "drops": {
-      "0": [
-        {
-          "id": "danceFeather"
-        }
-      ]
-    },
+    "drops": [
+      {
+        "id": "danceFeather"
+      }
+    ],
     "locations": {
       "0": {
         "0242": {
@@ -7386,13 +7226,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "trainingBook"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "trainingBook"
+      }
+    ]
   },
   "204": {
     "name": "Numemon (aqua)",
@@ -7475,13 +7313,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "overLoad"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "overLoad"
+      }
+    ]
   },
   "206": {
     "name": "Numemon (white)",
@@ -7523,13 +7359,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "boostChip"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "boostChip"
+      }
+    ]
   },
   "207": {
     "name": "Raremon (pink)",
@@ -7571,13 +7405,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "boltPower2"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "boltPower2"
+      }
+    ]
   },
   "208": {
     "name": "Cyclonemon (pink)",
@@ -7660,13 +7492,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "runnerShoes"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "runnerShoes"
+      }
+    ]
   },
   "210": {
     "name": "Musyamon (green)",
@@ -7708,13 +7538,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "mpProxy"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "mpProxy"
+      }
+    ]
   },
   "211": {
     "name": "Kurisarimon (pink)",
@@ -7797,13 +7625,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "trainChip3"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "trainChip3"
+      }
+    ]
   },
   "213": {
     "name": "Blossomon (pink)",
@@ -7886,13 +7712,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "trainChip1"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "trainChip1"
+      }
+    ]
   },
   "215": {
     "name": "Whamon (blue)",
@@ -7934,13 +7758,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "hpMegaProxy"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "hpMegaProxy"
+      }
+    ]
   },
   "216": {
     "name": "MegaSeadramon (gold)",
@@ -7982,13 +7804,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "waterPowerS"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "waterPowerS"
+      }
+    ]
   },
   "217": {
     "name": "Ebidramon (pink)",
@@ -8030,13 +7850,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "trainChip2"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "trainChip2"
+      }
+    ]
   },
   "218": {
     "name": "Vilemon (purple)",
@@ -8078,13 +7896,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "hackSystem"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "hackSystem"
+      }
+    ]
   },
   "219": {
     "name": "Drimogemon (brown)",
@@ -8167,13 +7983,11 @@
     "regularAttackId": "fireElement",
     "techniqueId": "flameSphere",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "mpMegaProxy"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "mpMegaProxy"
+      }
+    ]
   },
   "221": {
     "name": "Vikemon (blue)",
@@ -8297,13 +8111,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "trainChipV"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "trainChipV"
+      }
+    ]
   },
   "224": {
     "name": "Antylamon (white)",
@@ -8345,13 +8157,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "icePowerS"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "icePowerS"
+      }
+    ]
   },
   "247": {
     "name": "Knightmon",
@@ -8434,20 +8244,18 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 457,
-    "drops": {
-      "0": [
-        {
-          "id": "1bBooster"
-        },
-        {
-          "id": "3bBooster",
-          "locationOnly": "022A"
-        },
-        {
-          "id": "r01Booster"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "1bBooster"
+      },
+      {
+        "id": "3bBooster",
+        "locationOnly": "022A"
+      },
+      {
+        "id": "r01Booster"
+      }
+    ]
   },
   "516": {
     "name": "Cardmon(B)",
@@ -8489,21 +8297,19 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 458,
-    "drops": {
-      "0": [
-        {
-          "id": "1bBooster",
-          "locationOnly": "0001"
-        },
-        {
-          "id": "2bBooster",
-          "locationOnly": "0002"
-        },
-        {
-          "id": "r01Booster"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "1bBooster",
+        "locationOnly": "0001"
+      },
+      {
+        "id": "2bBooster",
+        "locationOnly": "0002"
+      },
+      {
+        "id": "r01Booster"
+      }
+    ]
   },
   "517": {
     "name": "Cardmon(C)",
@@ -8545,16 +8351,14 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 459,
-    "drops": {
-      "0": [
-        {
-          "id": "4bBooster"
-        },
-        {
-          "id": "r02Booster"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "4bBooster"
+      },
+      {
+        "id": "r02Booster"
+      }
+    ]
   },
   "518": {
     "name": "Cardmon(D)",
@@ -8596,14 +8400,12 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 460,
-    "drops": {
-      "0": [
-        {
-          "id": "5bBooster",
-          "locationOnly": "0003"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "5bBooster",
+        "locationOnly": "0003"
+      }
+    ]
   },
   "519": {
     "name": "Cardmon (T3)",
@@ -8645,13 +8447,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "variousBooster"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "variousBooster"
+      }
+    ]
   },
   "520": {
     "name": "Cardmon (A3)",
@@ -8693,13 +8493,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "variousBooster"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "variousBooster"
+      }
+    ]
   },
   "521": {
     "name": "Cardmon (T4)",
@@ -8741,13 +8539,11 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "variousBooster"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "variousBooster"
+      }
+    ]
   },
   "522": {
     "name": "Cardmon (A4)",
@@ -8789,12 +8585,10 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "drops": {
-      "0": [
-        {
-          "id": "variousBooster"
-        }
-      ]
-    }
+    "drops": [
+      {
+        "id": "variousBooster"
+      }
+    ]
   }
 }

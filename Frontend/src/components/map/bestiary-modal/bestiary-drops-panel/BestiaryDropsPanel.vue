@@ -15,13 +15,7 @@ const emit = defineEmits<{
 const { t } = useI18n();
 
 const dropIds = computed(() => {
-  const dropsByStep = props.enemy.drops;
-  if (dropsByStep === undefined) {
-    return [] as string[];
-  }
-
-  const flattenedDrops = Object.values(dropsByStep).flat();
-  const ids = [...new Set(flattenedDrops.map((drop) => drop.id))];
+  const ids = [...new Set((props.enemy.drops ?? []).map((drop) => drop.id))];
   if (ids.length === 1 && ids[0] === "variousBooster") {
     return [] as string[];
   }

@@ -1,4 +1,4 @@
-import type { EnemyDropsByStepRaw } from "@/repositories/tables/raws/enemy/enemy-drop.raw";
+import type { EnemyDropRaw } from "@/repositories/tables/raws/enemy/enemy-drop.raw";
 import type { EnemyLocationsByStepRaw } from "@/repositories/tables/raws/enemy/enemy-location.raw";
 
 export interface EnemyViewModel {
@@ -60,7 +60,7 @@ export interface EnemyViewModel {
   dvxp: number;
   exp: number;
   bits: number;
-  drops?: EnemyDropsByStepRaw;
+  drops?: EnemyDropRaw[];
   locations?: EnemyLocationsByStepRaw;
   regularAttackId: string | null;
   techniqueId: string | null;
