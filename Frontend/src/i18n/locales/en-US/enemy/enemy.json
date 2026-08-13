@@ -20,6 +20,7 @@
     "elem": "Resistances",
     "status": "Conditions",
     "foundIn": "Found in",
+    "whereToFind": "Where to find this Digimon",
     "locations": "Locations",
     "locationSource": {
       "walking": "Walk",

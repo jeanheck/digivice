@@ -1,10 +1,20 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed, nextTick, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { LocationRepository } from "@/repositories/location.repository";
-import type { EnemyLocationRaw } from "@/repositories/tables/raws/enemy/enemy-location.raw";
+import type {
+  EnemyLocationRaw,
+  EnemyLocationSource,
+} from "@/repositories/tables/raws/enemy/enemy-location.raw";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
+
+const LOCATION_SOURCE_EMOJI: Record<EnemyLocationSource, string> = {
+  walking: "🏃‍➡️",
+  fishing: "🎣",
+  kickingTree: "🌴",
+  boss: "☠️",
+};
 
 const props = defineProps<{
   enemy: EnemyViewModel;
@@ -16,6 +26,8 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
+const chipElementsById = ref<Record<string, HTMLElement | null>>({});
+
 const locationEntries = computed((): EnemyLocationRaw[] => {
   return [...(props.enemy.locations ?? [])].sort((first, second) => {
     return first.id.localeCompare(second.id);
@@ -23,6 +35,34 @@ const locationEntries = computed((): EnemyLocationRaw[] => {
 });
 
 const selectedId = ref<string | null>(null);
+
+const setChipElementRef = (locationId: string, element: unknown): void => {
+  if (element instanceof HTMLElement) {
+    chipElementsById.value[locationId] = element;
+    return;
+  }
+
+  delete chipElementsById.value[locationId];
+};
+
+const scrollSelectedChipIntoCenter = async (): Promise<void> => {
+  await nextTick();
+
+  if (selectedId.value === null) {
+    return;
+  }
+
+  const chipElement = chipElementsById.value[selectedId.value];
+  if (chipElement === undefined || chipElement === null) {
+    return;
+  }
+
+  chipElement.scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+    block: "nearest",
+  });
+};
 
 watch(
   locationEntries,
@@ -43,12 +83,20 @@ watch(
   { immediate: true },
 );
 
+watch(selectedId, () => {
+  void scrollSelectedChipIntoCenter();
+});
+
 const selectedEntry = computed(() => {
   return (
     locationEntries.value.find((entry) => {
       return entry.id === selectedId.value;
     }) ?? null
   );
+});
+
+const asukaMapImageUrl = computed(() => {
+  return ImageCatalog.getLocationImageUrl("Asuka");
 });
 
 const selectedLocationImageUrl = computed(() => {
@@ -63,11 +111,15 @@ const selectedLocationImageUrl = computed(() => {
 const selectEntry = (entry: EnemyLocationRaw): void => {
   selectedId.value = entry.id;
 };
+
+const sourceEmoji = (source: EnemyLocationSource): string => {
+  return LOCATION_SOURCE_EMOJI[source];
+};
 </script>
 
 <template>
   <div class="p-4 flex flex-col gap-3 h-full min-h-0 overflow-hidden">
-    <div class="relative flex shrink-0 items-center min-h-6">
+    <div class="flex shrink-0 items-center gap-3 min-h-6 min-w-0">
       <button
         type="button"
         class="shrink-0 inline-flex items-center gap-1 text-[10px] 2xl:text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-blue-300 transition-colors cursor-pointer"
@@ -77,44 +129,47 @@ const selectEntry = (entry: EnemyLocationRaw): void => {
         {{ $t("enemy.back") }}
       </button>
 
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <h3
-          class="text-[10px] 2xl:text-xs font-bold uppercase tracking-widest text-blue-500"
-        >
-          {{ $t("enemy.locations") }}
-        </h3>
+      <div class="locations-chips-scroll flex-1 min-w-0 overflow-x-auto">
+        <div class="flex items-center gap-2 w-max pr-1 pb-1">
+          <button
+            v-for="entry in locationEntries"
+            :key="entry.id"
+            :ref="(element) => setChipElementRef(entry.id, element)"
+            type="button"
+            class="shrink-0 text-left px-2.5 py-1.5 rounded border transition-colors cursor-pointer"
+            :class="
+              selectedId === entry.id
+                ? 'bg-blue-900/40 border-[#0033aa] text-blue-100'
+                : 'border-transparent text-white hover:bg-blue-900/20'
+            "
+            @click="selectEntry(entry)"
+          >
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wide whitespace-nowrap">
+              <span>{{ t(`location.${entry.id}`) }}</span>
+              <span
+                v-for="source in entry.sources"
+                :key="`${entry.id}-${source}`"
+                class="text-[12px] 2xl:text-[14px] leading-none"
+                :aria-label="t(`enemy.locationSource.${source}`)"
+              >
+                {{ sourceEmoji(source) }}
+              </span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
 
-    <div class="flex-1 min-h-0 grid grid-cols-[minmax(14rem,18rem)_1fr] gap-4">
+    <div class="flex-1 min-h-0 grid grid-cols-2 gap-4">
       <div
-        class="min-h-0 overflow-y-auto custom-scroll bg-[#000a1a] border border-blue-900/50 rounded p-2 shadow-inner flex flex-col gap-1.5"
+        class="min-h-0 bg-[#000a1a] border border-blue-900/50 rounded p-3 shadow-inner flex items-center justify-center overflow-hidden"
       >
-        <button
-          v-for="entry in locationEntries"
-          :key="entry.id"
-          type="button"
-          class="w-full text-left px-2.5 py-2 rounded border transition-colors cursor-pointer"
-          :class="
-            selectedId === entry.id
-              ? 'bg-blue-900/40 border-blue-400 text-blue-100'
-              : 'border-transparent text-gray-300 hover:bg-blue-900/20'
-          "
-          @click="selectEntry(entry)"
-        >
-          <span class="block text-[11px] font-bold tracking-wide">
-            {{ t(`location.${entry.id}`) }}
-          </span>
-          <span class="mt-1 flex flex-wrap items-center gap-1.5">
-            <span
-              v-for="source in entry.sources"
-              :key="`${entry.id}-${source}`"
-              class="inline-block px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-amber-900/40 text-amber-300 border border-amber-700/50"
-            >
-              {{ t(`enemy.locationSource.${source}`) }}
-            </span>
-          </span>
-        </button>
+        <img
+          v-if="asukaMapImageUrl"
+          :src="asukaMapImageUrl"
+          alt="Asuka"
+          class="max-w-full max-h-full object-contain"
+        />
       </div>
 
       <div
@@ -133,3 +188,23 @@ const selectEntry = (entry: EnemyLocationRaw): void => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.locations-chips-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.locations-chips-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.locations-chips-scroll::-webkit-scrollbar-thumb {
+  background: #0033aa;
+  border-radius: 4px;
+}
+
+.locations-chips-scroll::-webkit-scrollbar-thumb:hover {
+  background: #0077ff;
+}
+</style>

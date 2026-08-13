@@ -56,17 +56,14 @@ const hasLocations = computed(() => {
 
     <div
       v-if="hasLocations"
-      class="border-t border-blue-900/50 pt-2.5 flex flex-col gap-1.5 min-h-0 text-xs"
+      class="border-t border-blue-900/50 pt-2.5 flex flex-col min-h-0 text-xs"
     >
-      <span class="font-bold text-blue-500 tracking-wider uppercase">{{
-        $t("enemy.foundIn")
-      }}</span>
       <button
         type="button"
-        class="self-start px-2.5 py-1.5 rounded text-[10px] font-bold uppercase tracking-widest text-blue-300 border border-blue-700/60 bg-blue-950/40 hover:bg-blue-900/40 transition-colors cursor-pointer"
+        class="w-full px-2.5 py-1.5 rounded text-[10px] font-bold uppercase tracking-widest text-blue-300 border border-blue-700/60 bg-blue-950/40 hover:bg-blue-900/40 transition-colors cursor-pointer"
         @click="emit('open-locations')"
       >
-        {{ $t("enemy.locations") }}
+        {{ $t("enemy.whereToFind") }}
       </button>
     </div>
   </div>
