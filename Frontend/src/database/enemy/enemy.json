@@ -2377,27 +2377,21 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "27"
       },
       {
         "id": "022A",
         "sources": [
           "fishing"
-        ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        ]
       },
       {
         "id": "0234",
         "sources": [
           "fishing"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "14"
       },
       {
         "id": "0235",
@@ -2405,36 +2399,28 @@
           "walking",
           "fishing"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "14"
       },
       {
         "id": "0237",
         "sources": [
           "fishing"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "14"
       },
       {
         "id": "023A",
         "sources": [
           "fishing"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "14"
       },
       {
         "id": "023B",
         "sources": [
           "fishing"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "24"
       }
     ]
   },
@@ -2489,18 +2475,14 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "024C",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -2555,18 +2537,14 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "024B",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -2621,18 +2599,14 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "024B",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -2687,27 +2661,22 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "27"
       },
       {
         "id": "024A",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "024C",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -2844,27 +2813,21 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0259",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "025A",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -2919,18 +2882,14 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0259",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -2985,54 +2944,42 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "024F",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0250",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0251",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0252",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0253",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -3128,9 +3075,7 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -3185,9 +3130,7 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -3242,9 +3185,7 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -3299,27 +3240,21 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0252",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0253",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "60"
       }
     ]
   },
@@ -3374,9 +3309,7 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "61"
       }
     ]
   },
@@ -3431,9 +3364,7 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "61"
       }
     ]
   },
@@ -3575,9 +3506,7 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -3632,9 +3561,7 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -3853,18 +3780,18 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "24",
+        "accessibleWhen": "14"
       },
       {
         "id": "0243",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "startWhenLastMainQuestStepDone": "24",
+        "finishWhenLastMainQuestStepDone": "999",
+        "accessibleWhen": "24"
       }
     ]
   },
@@ -6247,32 +6174,27 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "27"
       },
       {
         "id": "023B",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "24"
       },
       {
         "id": "023C",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "24"
       }
     ]
   },
   "183": {
-    "name": "Kuwagamon (green)",
+    "name": "Kuwagamon(Green)",
     "level": 30,
     "hp": 840,
     "species": "insect",
@@ -6362,10 +6284,7 @@
         "id": "022A",
         "sources": [
           "kickingTree"
-        ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        ]
       },
       {
         "id": "0233",
@@ -6373,27 +6292,21 @@
           "walking",
           "kickingTree"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "14"
       },
       {
         "id": "0234",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "14"
       },
       {
         "id": "0235",
         "sources": [
           "kickingTree"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "14"
       },
       {
         "id": "0237",
@@ -6401,9 +6314,7 @@
           "walking",
           "kickingTree"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "14"
       },
       {
         "id": "023A",
@@ -6411,18 +6322,14 @@
           "walking",
           "kickingTree"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "14"
       },
       {
         "id": "023B",
         "sources": [
           "kickingTree"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "24"
       }
     ]
   },
@@ -6477,18 +6384,14 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0249",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
@@ -6543,23 +6446,19 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "024C",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
   "187": {
-    "name": "Minotarumon (blue)",
+    "name": "Minotarumon(Blue)",
     "level": 33,
     "hp": 608,
     "species": "mammal",
@@ -6605,7 +6504,7 @@
     ]
   },
   "188": {
-    "name": "Flymon (pink)",
+    "name": "Flymon(Pink)",
     "level": 33,
     "hp": 912,
     "species": "insect",
@@ -6697,14 +6596,12 @@
           "walking",
           "kickingTree"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "24"
       }
     ]
   },
   "190": {
-    "name": "Triceramon (red)",
+    "name": "Triceramon(Red)",
     "level": 41,
     "hp": 1656,
     "species": "dino",
@@ -6795,23 +6692,19 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0249",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
   "192": {
-    "name": "Phantomon (blue)",
+    "name": "Phantomon(Blue)",
     "level": 37,
     "hp": 1008,
     "species": "ghoul",
@@ -6916,50 +6809,40 @@
         "sources": [
           "kickingTree"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0257",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0258",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "0259",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       },
       {
         "id": "025A",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "43"
       }
     ]
   },
   "194": {
-    "name": "Tortomon (blue)",
+    "name": "Tortomon(Blue)",
     "level": 36,
     "hp": 984,
     "species": "fish",
@@ -7000,7 +6883,7 @@
     "memoryId": 0
   },
   "195": {
-    "name": "ShogunGekomon (blue)",
+    "name": "ShogunGekomon(Blue)",
     "level": 37,
     "hp": 1008,
     "species": "fish",
@@ -7046,7 +6929,7 @@
     ]
   },
   "196": {
-    "name": "Seadramon (brown)",
+    "name": "Seadramon(Brown)",
     "level": 35,
     "hp": 960,
     "species": "dragon",
@@ -7087,7 +6970,7 @@
     "memoryId": 0
   },
   "197": {
-    "name": "Mammothmon (silver)",
+    "name": "Mammothmon(Silver)",
     "level": 47,
     "hp": 1248,
     "species": "mammal",
@@ -7169,7 +7052,7 @@
     "memoryId": 0
   },
   "199": {
-    "name": "Vademon (red)",
+    "name": "Vademon(Red)",
     "level": 46,
     "hp": 1224,
     "species": "rare",
@@ -7215,7 +7098,7 @@
     ]
   },
   "200": {
-    "name": "Maildramon (black)",
+    "name": "Maildramon(Black)",
     "level": 48,
     "hp": 1272,
     "species": "machine",
@@ -7261,7 +7144,7 @@
     ]
   },
   "201": {
-    "name": "Guardromon (white)",
+    "name": "Guardromon(White)",
     "level": 46,
     "hp": 1224,
     "species": "machine",
@@ -7352,14 +7235,12 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        "accessibleWhen": "24"
       }
     ]
   },
   "203": {
-    "name": "Numemon (brown)",
+    "name": "Numemon(Brown)",
     "level": 39,
     "hp": 1056,
     "species": "rare",
@@ -7405,7 +7286,7 @@
     ]
   },
   "204": {
-    "name": "Numemon (aqua)",
+    "name": "Numemon(Aqua)",
     "level": 43,
     "hp": 1152,
     "species": "rare",
@@ -7446,7 +7327,7 @@
     "memoryId": 0
   },
   "205": {
-    "name": "Numemon (red)",
+    "name": "Numemon(Red)",
     "level": 43,
     "hp": 1152,
     "species": "rare",
@@ -7492,7 +7373,7 @@
     ]
   },
   "206": {
-    "name": "Numemon (white)",
+    "name": "Numemon(White)",
     "level": 44,
     "hp": 1176,
     "species": "rare",
@@ -7538,7 +7419,7 @@
     ]
   },
   "207": {
-    "name": "Raremon (pink)",
+    "name": "Raremon(Pink)",
     "level": 40,
     "hp": 1080,
     "species": "ghoul",
@@ -7584,7 +7465,7 @@
     ]
   },
   "208": {
-    "name": "Cyclonemon (pink)",
+    "name": "Cyclonemon(Pink)",
     "level": 43,
     "hp": 1152,
     "species": "rare",
@@ -7625,7 +7506,7 @@
     "memoryId": 0
   },
   "209": {
-    "name": "Tankmon (blue)",
+    "name": "Tankmon(Blue)",
     "level": 45,
     "hp": 1200,
     "species": "machine",
@@ -7671,7 +7552,7 @@
     ]
   },
   "210": {
-    "name": "Musyamon (green)",
+    "name": "Musyamon(Green)",
     "level": 32,
     "hp": 888,
     "species": "rare",
@@ -7717,7 +7598,7 @@
     ]
   },
   "211": {
-    "name": "Kurisarimon (pink)",
+    "name": "Kurisarimon(Pink)",
     "level": 40,
     "hp": 1080,
     "species": "insect",
@@ -7758,7 +7639,7 @@
     "memoryId": 0
   },
   "212": {
-    "name": "Snimon (brown)",
+    "name": "Snimon(Brown)",
     "level": 48,
     "hp": 1272,
     "species": "insect",
@@ -7804,7 +7685,7 @@
     ]
   },
   "213": {
-    "name": "Blossomon (pink)",
+    "name": "Blossomon(Pink)",
     "level": 36,
     "hp": 984,
     "species": "plant",
@@ -7845,7 +7726,7 @@
     "memoryId": 0
   },
   "214": {
-    "name": "Cherrymon (red)",
+    "name": "Cherrymon(Red)",
     "level": 41,
     "hp": 1104,
     "species": "plant",
@@ -7891,7 +7772,7 @@
     ]
   },
   "215": {
-    "name": "Whamon (blue)",
+    "name": "Whamon(Blue)",
     "level": 47,
     "hp": 1872,
     "species": "fish",
@@ -7937,7 +7818,7 @@
     ]
   },
   "216": {
-    "name": "MegaSeadramon (gold)",
+    "name": "MegaSeadramon(Gold)",
     "level": 44,
     "hp": 1176,
     "species": "dragon",
@@ -7983,7 +7864,7 @@
     ]
   },
   "217": {
-    "name": "Ebidramon (pink)",
+    "name": "Ebidramon(Pink)",
     "level": 48,
     "hp": 1272,
     "species": "fish",
@@ -8029,7 +7910,7 @@
     ]
   },
   "218": {
-    "name": "Vilemon (purple)",
+    "name": "Vilemon(Purple)",
     "level": 48,
     "hp": 1272,
     "species": "evil",
@@ -8075,7 +7956,7 @@
     ]
   },
   "219": {
-    "name": "Drimogemon (brown)",
+    "name": "Drimogemon(Brown)",
     "level": 44,
     "hp": 1176,
     "species": "machine",
@@ -8162,7 +8043,7 @@
     ]
   },
   "221": {
-    "name": "Vikemon (blue)",
+    "name": "Vikemon(Blue)",
     "level": 47,
     "hp": 1872,
     "species": "mammal",
@@ -8203,7 +8084,7 @@
     "memoryId": 0
   },
   "222": {
-    "name": "MetalSeadramon (black)",
+    "name": "MetalSeadramon(Black)",
     "level": 54,
     "hp": 1416,
     "species": "dragon",
@@ -8244,7 +8125,7 @@
     "memoryId": 0
   },
   "223": {
-    "name": "Scorpiomon (black)",
+    "name": "Scorpiomon(Black)",
     "level": 54,
     "hp": 1416,
     "species": "fish",
@@ -8290,7 +8171,7 @@
     ]
   },
   "224": {
-    "name": "Antylamon (white)",
+    "name": "Antylamon(White)",
     "level": 49,
     "hp": 1296,
     "species": "mammal",
@@ -8580,7 +8461,7 @@
     ]
   },
   "519": {
-    "name": "Cardmon (T3)",
+    "name": "Cardmon(E)",
     "level": 37,
     "hp": 1008,
     "species": "rare",
@@ -8626,7 +8507,7 @@
     ]
   },
   "520": {
-    "name": "Cardmon (A3)",
+    "name": "Cardmon(F)",
     "level": 42,
     "hp": 1128,
     "species": "fish",
@@ -8672,7 +8553,7 @@
     ]
   },
   "521": {
-    "name": "Cardmon (T4)",
+    "name": "Cardmon(G)",
     "level": 47,
     "hp": 1248,
     "species": "rare",
@@ -8718,7 +8599,7 @@
     ]
   },
   "522": {
-    "name": "Cardmon (A4)",
+    "name": "Cardmon(H)",
     "level": 47,
     "hp": 1248,
     "species": "fish",
