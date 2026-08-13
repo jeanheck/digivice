@@ -1,7 +1,9 @@
 export type EnemyLocationSource = "walking" | "boss" | "fishing" | "kickingTree";
 
-export interface EnemyLocationEntryRaw {
+export interface EnemyLocationRaw {
+  id: string;
   sources: EnemyLocationSource[];
+  startWhenLastMainQuestStepDone?: string;
+  finishWhenLastMainQuestStepDone?: string;
+  accessibleWhen?: string;
 }
-
-export type EnemyLocationsByStepRaw = Record<string, Record<string, EnemyLocationEntryRaw>>;

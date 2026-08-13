@@ -45,15 +45,17 @@
         "id": "oldWand"
       }
     ],
-    "locations": {
-      "0": {
-        "0226": {
-          "sources": [
-            "boss"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0226",
+        "sources": [
+          "boss"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "2": {
     "name": "MasterTyrannomon",
@@ -101,15 +103,17 @@
         "id": "oldClaw"
       }
     ],
-    "locations": {
-      "3": {
-        "022B": {
-          "sources": [
-            "boss"
-          ]
-        }
+    "locations": [
+      {
+        "id": "022B",
+        "sources": [
+          "boss"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "14": {
     "name": "HiAndromon",
@@ -157,15 +161,17 @@
         "id": "rustyRifle"
       }
     ],
-    "locations": {
-      "60": {
-        "0252": {
-          "sources": [
-            "boss"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0252",
+        "sources": [
+          "boss"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "15": {
     "name": "WaruMonzaemon",
@@ -208,15 +214,17 @@
     "regularAttackId": "darkElement",
     "techniqueId": "heartBreakAttack",
     "memoryId": 70,
-    "locations": {
-      "61": {
-        "0254": {
-          "sources": [
-            "boss"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0254",
+        "sources": [
+          "boss"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "16": {
     "name": "Datamon",
@@ -264,15 +272,17 @@
         "id": "rustyGlove"
       }
     ],
-    "locations": {
-      "43": {
-        "021C": {
-          "sources": [
-            "boss"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021C",
+        "sources": [
+          "boss"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "20": {
     "name": "Zanbamon",
@@ -320,15 +330,17 @@
         "id": "rustyKatana"
       }
     ],
-    "locations": {
-      "0": {
-        "0243": {
-          "sources": [
-            "boss"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0243",
+        "sources": [
+          "boss"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "21": {
     "name": "Bulbmon",
@@ -371,15 +383,17 @@
     "regularAttackId": "machineElement",
     "techniqueId": "madPump",
     "memoryId": 436,
-    "locations": {
-      "0": {
-        "022D": {
-          "sources": [
-            "boss"
-          ]
-        }
+    "locations": [
+      {
+        "id": "022D",
+        "sources": [
+          "boss"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "71": {
     "name": "Kunemon",
@@ -421,30 +435,39 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 32,
-    "locations": {
-      "0": {
-        "021D": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "021E": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0221": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0222": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021D",
+        "sources": [
+          "walking"
+        ]
+      },
+      {
+        "id": "021E",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "27",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0221",
+        "sources": [
+          "walking"
+        ],
+        "firstMainQuestStepDone": "0",
+        "lastMainQuestStepDone": "27"
+      },
+      {
+        "id": "0222",
+        "sources": [
+          "walking"
+        ],
+        "firstMainQuestStepDone": "0",
+        "lastMainQuestStepDone": "27"
       }
-    }
+    ]
   },
   "72": {
     "name": "Tapirmon",
@@ -486,27 +509,26 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 206,
-    "locations": {
-      "0": {
-        "021D": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "021E": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021D",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "021E": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "021E",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "73": {
     "name": "Crabmon",
@@ -548,22 +570,17 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 197,
-    "locations": {
-      "0": {
-        "0227": {
-          "sources": [
-            "walking"
-          ]
-        }
-      },
-      "27": {
-        "0227": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0227",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "74": {
     "name": "Gizamon",
@@ -605,27 +622,26 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 132,
-    "locations": {
-      "0": {
-        "021F": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "022A": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021F",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "022A": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "022A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "75": {
     "name": "DemiDevimon",
@@ -672,15 +688,17 @@
         "id": "darkPower1"
       }
     ],
-    "locations": {
-      "24": {
-        "023A": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "023A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "76": {
     "name": "Betamon",
@@ -727,52 +745,53 @@
         "id": "powerCharge"
       }
     ],
-    "locations": {
-      "0": {
-        "021F": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0220": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0221": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0222": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0227": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021F",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "021F": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0220": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0221": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "0220",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0221",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0222",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0227",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "77": {
     "name": "Vegiemon",
@@ -814,37 +833,35 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 25,
-    "locations": {
-      "0": {
-        "021F": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0220": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "022A": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021F",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "021F": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0220": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "0220",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "022A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "78": {
     "name": "Kuwagamon",
@@ -886,32 +903,26 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 51,
-    "locations": {
-      "0": {
-        "0221": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0222": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0221",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "0221": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0222": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "0222",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "79": {
     "name": "Yanmamon",
@@ -953,15 +964,17 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 67,
-    "locations": {
-      "0": {
-        "0229": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0229",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "80": {
     "name": "Kiwimon",
@@ -1003,15 +1016,17 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 198,
-    "locations": {
-      "0": {
-        "0229": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0229",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "81": {
     "name": "Dokugumon",
@@ -1058,22 +1073,17 @@
         "id": "spiderWeb"
       }
     ],
-    "locations": {
-      "0": {
-        "0225": {
-          "sources": [
-            "walking"
-          ]
-        }
-      },
-      "27": {
-        "0225": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0225",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "82": {
     "name": "Goburimon",
@@ -1115,32 +1125,35 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 80,
-    "locations": {
-      "0": {
-        "0225": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0226": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0222",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "0222": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0225": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "0225",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0226",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "83": {
     "name": "Baronmon",
@@ -1182,15 +1195,17 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 277,
-    "locations": {
-      "27": {
-        "0226": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0226",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "84": {
     "name": "Minotarumon",
@@ -1232,22 +1247,17 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 172,
-    "locations": {
-      "0": {
-        "0226": {
-          "sources": [
-            "walking"
-          ]
-        }
-      },
-      "27": {
-        "0226": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0226",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "85": {
     "name": "Flymon",
@@ -1289,32 +1299,44 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 137,
-    "locations": {
-      "0": {
-        "023A": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "023B": {
-          "sources": [
-            "kickingTree"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021E",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "021E": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0221": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "0221",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023A",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023B",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "86": {
     "name": "Woodmon",
@@ -1356,60 +1378,98 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 222,
-    "locations": {
-      "0": {
-        "021D": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "021E": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "021F": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "0220": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "0221": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "0222": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "0227": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "0229": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "022A": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "023B": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021D",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "021E",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "021F",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0220",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0221",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0222",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0227",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0229",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "022A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "87": {
     "name": "Tyrannomon",
@@ -1456,15 +1516,17 @@
         "id": "firePower1"
       }
     ],
-    "locations": {
-      "0": {
-        "022B": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "022B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "88": {
     "name": "Triceramon",
@@ -1511,20 +1573,26 @@
         "id": "tntBall"
       }
     ],
-    "locations": {
-      "0": {
-        "0220": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "022B": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0220",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "022B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "89": {
     "name": "Airdramon",
@@ -1571,15 +1639,17 @@
         "id": "fireChip"
       }
     ],
-    "locations": {
-      "0": {
-        "022B": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "022B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "90": {
     "name": "Gekomon",
@@ -1626,37 +1696,44 @@
         "id": "icePower1"
       }
     ],
-    "locations": {
-      "0": {
-        "0233": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0234": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0237": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "023A": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0233",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "24": {
-        "023A": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "0234",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0237",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "91": {
     "name": "Coelamon",
@@ -1703,68 +1780,99 @@
         "id": "waterChip"
       }
     ],
-    "locations": {
-      "0": {
-        "021D": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "021E": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "021F": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "0220": {
-          "sources": [
-            "walking",
-            "fishing"
-          ]
-        },
-        "0221": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "0233": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0234": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0235": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0237": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "023A": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021D",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "24": {
-        "023A": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "021E",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "021F",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0220",
+        "sources": [
+          "walking",
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0221",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0233",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0234",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0235",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0237",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "92": {
     "name": "Bakemon",
@@ -1806,15 +1914,17 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 37,
-    "locations": {
-      "24": {
-        "023A": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "023A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "93": {
     "name": "Phantomon",
@@ -1902,20 +2012,26 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 50,
-    "locations": {
-      "27": {
-        "0222": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0225": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0222",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0225",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "95": {
     "name": "Apemon",
@@ -1962,20 +2078,26 @@
         "id": "windPower1"
       }
     ],
-    "locations": {
-      "0": {
-        "023B": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "023C": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "023B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023C",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "96": {
     "name": "Shellmon",
@@ -2022,33 +2144,45 @@
         "id": "waterChip"
       }
     ],
-    "locations": {
-      "0": {
-        "023C": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "023D": {
-          "sources": [
-            "walking",
-            "fishing"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021F",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "021F": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0220": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "0220",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023C",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023D",
+        "sources": [
+          "walking",
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "97": {
     "name": "Tortomon",
@@ -2131,25 +2265,35 @@
     "regularAttackId": "noElement",
     "techniqueId": "divineRain",
     "memoryId": 210,
-    "locations": {
-      "0": {
-        "0247": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "0249": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "024B": {
-          "sources": [
-            "fishing"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0247",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0249",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "024B",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "99": {
     "name": "Gesomon",
@@ -2278,15 +2422,17 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 241,
-    "locations": {
-      "0": {
-        "0227": {
-          "sources": [
-            "fishing"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0227",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "102": {
     "name": "ShogunGekomon",
@@ -2333,15 +2479,17 @@
         "id": "chaosWave"
       }
     ],
-    "locations": {
-      "0": {
-        "0241": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0241",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "103": {
     "name": "Seadramon",
@@ -2388,48 +2536,72 @@
         "id": "waterPower1"
       }
     ],
-    "locations": {
-      "0": {
-        "022A": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "0234": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "0235": {
-          "sources": [
-            "walking",
-            "fishing"
-          ]
-        },
-        "0237": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "023A": {
-          "sources": [
-            "fishing"
-          ]
-        },
-        "023B": {
-          "sources": [
-            "fishing"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0227",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "0227": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "022A",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0234",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0235",
+        "sources": [
+          "walking",
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0237",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023A",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023B",
+        "sources": [
+          "fishing"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "104": {
     "name": "Mammothmon",
@@ -2476,20 +2648,26 @@
         "id": "hpProxy"
       }
     ],
-    "locations": {
-      "0": {
-        "024A": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "024C": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "024A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "024C",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "105": {
     "name": "Etemon",
@@ -2536,20 +2714,26 @@
         "id": "superCharge"
       }
     ],
-    "locations": {
-      "0": {
-        "0247": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "024B": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0247",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "024B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "106": {
     "name": "Ogremon",
@@ -2596,20 +2780,26 @@
         "id": "powerChip"
       }
     ],
-    "locations": {
-      "0": {
-        "0247": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "024B": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0247",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "024B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "107": {
     "name": "Tuskmon",
@@ -2656,27 +2846,35 @@
         "id": "counterCrest"
       }
     ],
-    "locations": {
-      "0": {
-        "024A": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "024C": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0220",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "0220": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "024A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "024C",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "108": {
     "name": "Rockmon",
@@ -2805,25 +3003,35 @@
         "id": "boltPower1"
       }
     ],
-    "locations": {
-      "0": {
-        "0258": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0259": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "025A": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0258",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0259",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "025A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "111": {
     "name": "Maildramon",
@@ -2870,20 +3078,26 @@
         "id": "thunderChip"
       }
     ],
-    "locations": {
-      "0": {
-        "0258": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0259": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0258",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0259",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "112": {
     "name": "Mamemon",
@@ -2930,40 +3144,62 @@
         "id": "searchCrest"
       }
     ],
-    "locations": {
-      "0": {
-        "024E": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "024F": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0250": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0251": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0252": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0253": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "024E",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "024F",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0250",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0251",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0252",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0253",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "113": {
     "name": "Guardromon (blue)",
@@ -3051,15 +3287,17 @@
         "id": "pulseGuard"
       }
     ],
-    "locations": {
-      "0": {
-        "024D": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "024D",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "115": {
     "name": "Hagurumon",
@@ -3106,15 +3344,17 @@
         "id": "metalPower1"
       }
     ],
-    "locations": {
-      "0": {
-        "024D": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "024D",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "116": {
     "name": "Clockmon",
@@ -3161,15 +3401,17 @@
         "id": "multiCrest"
       }
     ],
-    "locations": {
-      "0": {
-        "024D": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "024D",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "117": {
     "name": "Andromon",
@@ -3216,25 +3458,35 @@
         "id": "machinegun"
       }
     ],
-    "locations": {
-      "0": {
-        "024D": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0252": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0253": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "024D",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0252",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0253",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "118": {
     "name": "Numemon",
@@ -3281,15 +3533,17 @@
         "id": "binderCrest"
       }
     ],
-    "locations": {
-      "0": {
-        "0254": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0254",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "119": {
     "name": "Sukamon",
@@ -3336,15 +3590,17 @@
         "id": "wisdomChip"
       }
     ],
-    "locations": {
-      "0": {
-        "0254": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0254",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "120": {
     "name": "Garbagemon",
@@ -3478,15 +3734,17 @@
         "id": "armorChip"
       }
     ],
-    "locations": {
-      "0": {
-        "021B": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "123": {
     "name": "Cyclonemon",
@@ -3533,15 +3791,17 @@
         "id": "wisdomChip"
       }
     ],
-    "locations": {
-      "0": {
-        "021B": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "021B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "124": {
     "name": "Megadramon",
@@ -3752,20 +4012,26 @@
         "id": "mpChip"
       }
     ],
-    "locations": {
-      "0": {
-        "023A": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0243": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "023A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0243",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "129": {
     "name": "Kurisarimon",
@@ -6140,27 +6406,35 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 77,
-    "locations": {
-      "0": {
-        "023B": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "023C": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "022A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "27": {
-        "022A": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "023B",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023C",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "183": {
     "name": "Kuwagamon (green)",
@@ -6248,55 +6522,74 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 396,
-    "locations": {
-      "0": {
-        "022A": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "0233": {
-          "sources": [
-            "walking",
-            "kickingTree"
-          ]
-        },
-        "0234": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0235": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "0237": {
-          "sources": [
-            "walking",
-            "kickingTree"
-          ]
-        },
-        "023A": {
-          "sources": [
-            "walking",
-            "kickingTree"
-          ]
-        },
-        "023B": {
-          "sources": [
-            "kickingTree"
-          ]
-        }
+    "locations": [
+      {
+        "id": "022A",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       },
-      "24": {
-        "023A": {
-          "sources": [
-            "walking"
-          ]
-        }
+      {
+        "id": "0233",
+        "sources": [
+          "walking",
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0234",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0235",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0237",
+        "sources": [
+          "walking",
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023A",
+        "sources": [
+          "walking",
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "023B",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "185": {
     "name": "Dokugumon(Brown)",
@@ -6343,20 +6636,26 @@
         "id": "spiderWeb"
       }
     ],
-    "locations": {
-      "0": {
-        "0248": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0249": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0248",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0249",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "186": {
     "name": "Goburimon(Red)",
@@ -6403,20 +6702,26 @@
         "id": "naginata"
       }
     ],
-    "locations": {
-      "0": {
-        "024A": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "024C": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "024A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "024C",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "187": {
     "name": "Minotarumon (blue)",
@@ -6550,16 +6855,18 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "locations": {
-      "0": {
-        "023C": {
-          "sources": [
-            "walking",
-            "kickingTree"
-          ]
-        }
+    "locations": [
+      {
+        "id": "023C",
+        "sources": [
+          "walking",
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "190": {
     "name": "Triceramon (red)",
@@ -6647,20 +6954,26 @@
         "id": "magicianRod"
       }
     ],
-    "locations": {
-      "0": {
-        "0248": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0249": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0248",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0249",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "192": {
     "name": "Phantomon (blue)",
@@ -6753,40 +7066,62 @@
         "id": "overClocked"
       }
     ],
-    "locations": {
-      "0": {
-        "024A": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "024C": {
-          "sources": [
-            "kickingTree"
-          ]
-        },
-        "0257": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0258": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "0259": {
-          "sources": [
-            "walking"
-          ]
-        },
-        "025A": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "024A",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "024C",
+        "sources": [
+          "kickingTree"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0257",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0258",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "0259",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
+      },
+      {
+        "id": "025A",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "194": {
     "name": "Tortomon (blue)",
@@ -7176,15 +7511,17 @@
         "id": "danceFeather"
       }
     ],
-    "locations": {
-      "0": {
-        "0242": {
-          "sources": [
-            "walking"
-          ]
-        }
+    "locations": [
+      {
+        "id": "0242",
+        "sources": [
+          "walking"
+        ],
+        "startWhenLastMainQuestStepDone": "",
+        "finishWhenLastMainQuestStepDone": "",
+        "accessibleWhen": ""
       }
-    }
+    ]
   },
   "203": {
     "name": "Numemon (brown)",

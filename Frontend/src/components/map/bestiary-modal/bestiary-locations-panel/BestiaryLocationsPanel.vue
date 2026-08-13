@@ -3,14 +3,8 @@ import { computed, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { LocationRepository } from "@/repositories/location.repository";
-import type { EnemyLocationSource } from "@/repositories/tables/raws/enemy/enemy-location.raw";
+import type { EnemyLocationRaw } from "@/repositories/tables/raws/enemy/enemy-location.raw";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
-
-interface LocationListEntry {
-  step: string;
-  locationId: string;
-  sources: EnemyLocationSource[];
-}
 
 const props = defineProps<{
   enemy: EnemyViewModel;
@@ -22,53 +16,28 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-const locationEntries = computed((): LocationListEntry[] => {
-  const locationsByStep = props.enemy.locations;
-  if (locationsByStep === undefined) {
-    return [];
-  }
-
-  const entries: LocationListEntry[] = [];
-  const sortedSteps = Object.keys(locationsByStep).sort((firstStep, secondStep) => {
-    return Number(firstStep) - Number(secondStep);
+const locationEntries = computed((): EnemyLocationRaw[] => {
+  return [...(props.enemy.locations ?? [])].sort((first, second) => {
+    return first.id.localeCompare(second.id);
   });
-
-  for (const step of sortedSteps) {
-    const locationsAtStep = locationsByStep[step] ?? {};
-    const sortedLocationIds = Object.keys(locationsAtStep).sort();
-
-    for (const locationId of sortedLocationIds) {
-      entries.push({
-        step,
-        locationId,
-        sources: locationsAtStep[locationId].sources,
-      });
-    }
-  }
-
-  return entries;
 });
 
-const entryKey = (entry: LocationListEntry): string => {
-  return `${entry.step}-${entry.locationId}`;
-};
-
-const selectedKey = ref<string | null>(null);
+const selectedId = ref<string | null>(null);
 
 watch(
   locationEntries,
   (entries) => {
     if (entries.length === 0) {
-      selectedKey.value = null;
+      selectedId.value = null;
       return;
     }
 
     const stillSelected = entries.some((entry) => {
-      return entryKey(entry) === selectedKey.value;
+      return entry.id === selectedId.value;
     });
 
     if (!stillSelected) {
-      selectedKey.value = entryKey(entries[0]);
+      selectedId.value = entries[0].id;
     }
   },
   { immediate: true },
@@ -77,7 +46,7 @@ watch(
 const selectedEntry = computed(() => {
   return (
     locationEntries.value.find((entry) => {
-      return entryKey(entry) === selectedKey.value;
+      return entry.id === selectedId.value;
     }) ?? null
   );
 });
@@ -87,12 +56,12 @@ const selectedLocationImageUrl = computed(() => {
     return null;
   }
 
-  const locationRaw = LocationRepository.getLocationById(selectedEntry.value.locationId);
+  const locationRaw = LocationRepository.getLocationById(selectedEntry.value.id);
   return ImageCatalog.getLocationImageUrl(locationRaw.imageName);
 });
 
-const selectEntry = (entry: LocationListEntry): void => {
-  selectedKey.value = entryKey(entry);
+const selectEntry = (entry: EnemyLocationRaw): void => {
+  selectedId.value = entry.id;
 };
 </script>
 
@@ -123,32 +92,26 @@ const selectEntry = (entry: LocationListEntry): void => {
       >
         <button
           v-for="entry in locationEntries"
-          :key="entryKey(entry)"
+          :key="entry.id"
           type="button"
           class="w-full text-left px-2.5 py-2 rounded border transition-colors cursor-pointer"
           :class="
-            selectedKey === entryKey(entry)
+            selectedId === entry.id
               ? 'bg-blue-900/40 border-blue-400 text-blue-100'
               : 'border-transparent text-gray-300 hover:bg-blue-900/20'
           "
           @click="selectEntry(entry)"
         >
           <span class="block text-[11px] font-bold tracking-wide">
-            {{ t(`location.${entry.locationId}`) }}
+            {{ t(`location.${entry.id}`) }}
           </span>
           <span class="mt-1 flex flex-wrap items-center gap-1.5">
             <span
               v-for="source in entry.sources"
-              :key="`${entryKey(entry)}-${source}`"
+              :key="`${entry.id}-${source}`"
               class="inline-block px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-amber-900/40 text-amber-300 border border-amber-700/50"
             >
               {{ t(`enemy.locationSource.${source}`) }}
-            </span>
-            <span
-              v-if="Number(entry.step) > 0"
-              class="text-[9px] font-normal text-gray-400"
-            >
-              {{ t("enemy.locationStep", { step: entry.step }) }}
             </span>
           </span>
         </button>
@@ -160,19 +123,11 @@ const selectEntry = (entry: LocationListEntry): void => {
         <img
           v-if="selectedLocationImageUrl"
           :src="selectedLocationImageUrl"
-          :alt="
-            selectedEntry
-              ? t(`location.${selectedEntry.locationId}`)
-              : ''
-          "
+          :alt="selectedEntry ? t(`location.${selectedEntry.id}`) : ''"
           class="max-w-full max-h-full object-contain"
         />
         <span v-else class="text-xs text-gray-500 font-bold tracking-wide">
-          {{
-            selectedEntry
-              ? t(`location.${selectedEntry.locationId}`)
-              : ""
-          }}
+          {{ selectedEntry ? t(`location.${selectedEntry.id}`) : "" }}
         </span>
       </div>
     </div>
