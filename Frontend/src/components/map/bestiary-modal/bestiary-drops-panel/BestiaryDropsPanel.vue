@@ -8,10 +8,6 @@ const props = defineProps<{
   initialDropId: string | null;
 }>();
 
-const emit = defineEmits<{
-  (e: "back"): void;
-}>();
-
 const { t } = useI18n();
 
 const dropIds = computed(() => {
@@ -51,15 +47,6 @@ const dropListItems = computed(() => {
 <template>
   <div class="p-4 flex flex-col gap-3 h-full min-h-0 overflow-hidden">
     <div class="relative flex shrink-0 items-center min-h-6">
-      <button
-        type="button"
-        class="shrink-0 inline-flex items-center gap-1 text-[10px] 2xl:text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-blue-300 transition-colors cursor-pointer"
-        @click="emit('back')"
-      >
-        <span class="text-[1.2rem] -translate-y-1" aria-hidden="true">⬅️</span>
-        {{ $t("enemy.back") }}
-      </button>
-
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div class="flex items-center justify-center gap-2 pointer-events-auto">
           <button

@@ -32,6 +32,14 @@ const isModalOpen = computed(() => {
   return props.isOpen && selectedEnemyId.value !== null;
 });
 
+const modalTitle = computed(() => {
+  return t(`enemy.modalTitle.${view.value}`);
+});
+
+const isProfileView = computed(() => {
+  return view.value === "profile";
+});
+
 const handleClose = () => {
   emit("close");
 };
@@ -127,11 +135,27 @@ const enemyImageUrl = computed(() => {
   >
     <template #header>
       <div class="flex items-center gap-6 flex-1 min-w-0">
-        <h2
-          class="text-white font-bold tracking-widest drop-shadow flex items-center gap-2 whitespace-nowrap shrink-0"
-        >
-          {{ $t("enemy.bestiary") }}
-        </h2>
+        <div class="flex items-center gap-2 shrink-0 min-w-0">
+          <span
+            v-if="isProfileView"
+            class="text-[1.2rem] leading-none grayscale select-none"
+            aria-hidden="true"
+          >
+            <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">🏠</span>
+          </span>
+          <button
+            v-else
+            type="button"
+            class="text-[1.2rem] leading-none text-gray-400 hover:text-blue-300 transition-colors cursor-pointer"
+            :aria-label="t('enemy.back')"
+            @click="backToProfileView"
+          >
+            <span class="inline-flex leading-none text-[1.2rem] -translate-y-0.5">⬅️</span>
+          </button>
+          <h2 class="text-white font-bold tracking-widest drop-shadow whitespace-nowrap">
+            {{ t(`enemy.bestiary`) }}
+          </h2>
+        </div>
 
         <SearchBar
           :items="allSearchItems"
@@ -158,12 +182,10 @@ const enemyImageUrl = computed(() => {
       v-else-if="view === 'drops'"
       :enemy="enemy"
       :initial-drop-id="selectedDropId"
-      @back="backToProfileView"
     />
     <BestiaryLocationsPanel
       v-else
       :enemy="enemy"
-      @back="backToProfileView"
     />
   </Modal>
 

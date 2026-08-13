@@ -1,6 +1,11 @@
 {
   "enemy": {
     "bestiary": "Bestiary",
+    "modalTitle": {
+      "profile": "Bestiary - Profile",
+      "locations": "Bestiary - Locations",
+      "drops": "Bestiary - Drops"
+    },
     "searchPlaceholder": "Type an enemy name...",
     "searchNoResults": "No enemy found",
     "level": "Level",
