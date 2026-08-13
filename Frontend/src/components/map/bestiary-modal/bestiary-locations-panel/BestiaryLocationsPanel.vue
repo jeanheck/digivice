@@ -73,7 +73,7 @@ const selectEntry = (entry: EnemyLocationRaw): void => {
         class="shrink-0 inline-flex items-center gap-1 text-[10px] 2xl:text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-blue-300 transition-colors cursor-pointer"
         @click="emit('back')"
       >
-        <span class="text-[1.2rem] -translate-y-0.5" aria-hidden="true">⬅️</span>
+        <span class="text-[1.2rem] -translate-y-1" aria-hidden="true">⬅️</span>
         {{ $t("enemy.back") }}
       </button>
 
