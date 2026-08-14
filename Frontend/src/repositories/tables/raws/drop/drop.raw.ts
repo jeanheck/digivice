@@ -1,4 +1,4 @@
-export type DropType = "equipment" | "consumableItem";
+export type DropType = "equipment" | "consumableItem" | "booster";
 
 export interface DropRaw {
   id: number;

@@ -330,5 +330,145 @@
   "wisdomChip": {
     "id": 424,
     "type": "consumableItem"
+  },
+  "1bBooster": {
+    "id": 501,
+    "type": "booster"
+  },
+  "2bBooster": {
+    "id": 502,
+    "type": "booster"
+  },
+  "3bBooster": {
+    "id": 503,
+    "type": "booster"
+  },
+  "4bBooster": {
+    "id": 504,
+    "type": "booster"
+  },
+  "5bBooster": {
+    "id": 505,
+    "type": "booster"
+  },
+  "6bBooster": {
+    "id": 506,
+    "type": "booster"
+  },
+  "7bBooster": {
+    "id": 507,
+    "type": "booster"
+  },
+  "8bBooster": {
+    "id": 508,
+    "type": "booster"
+  },
+  "9bBooster": {
+    "id": 509,
+    "type": "booster"
+  },
+  "10bBooster": {
+    "id": 510,
+    "type": "booster"
+  },
+  "11bBooster": {
+    "id": 511,
+    "type": "booster"
+  },
+  "12bBooster": {
+    "id": 512,
+    "type": "booster"
+  },
+  "13bBooster": {
+    "id": 513,
+    "type": "booster"
+  },
+  "14bBooster": {
+    "id": 514,
+    "type": "booster"
+  },
+  "15bBooster": {
+    "id": 515,
+    "type": "booster"
+  },
+  "r01Booster": {
+    "id": 516,
+    "type": "booster"
+  },
+  "r02Booster": {
+    "id": 517,
+    "type": "booster"
+  },
+  "r03Booster": {
+    "id": 518,
+    "type": "booster"
+  },
+  "r04Booster": {
+    "id": 519,
+    "type": "booster"
+  },
+  "r05Booster": {
+    "id": 520,
+    "type": "booster"
+  },
+  "1aBooster": {
+    "id": 521,
+    "type": "booster"
+  },
+  "2aBooster": {
+    "id": 522,
+    "type": "booster"
+  },
+  "3aBooster": {
+    "id": 523,
+    "type": "booster"
+  },
+  "4aBooster": {
+    "id": 524,
+    "type": "booster"
+  },
+  "5aBooster": {
+    "id": 525,
+    "type": "booster"
+  },
+  "6aBooster": {
+    "id": 526,
+    "type": "booster"
+  },
+  "7aBooster": {
+    "id": 527,
+    "type": "booster"
+  },
+  "8aBooster": {
+    "id": 528,
+    "type": "booster"
+  },
+  "9aBooster": {
+    "id": 529,
+    "type": "booster"
+  },
+  "10aBooster": {
+    "id": 530,
+    "type": "booster"
+  },
+  "11aBooster": {
+    "id": 531,
+    "type": "booster"
+  },
+  "12aBooster": {
+    "id": 532,
+    "type": "booster"
+  },
+  "13aBooster": {
+    "id": 533,
+    "type": "booster"
+  },
+  "14aBooster": {
+    "id": 534,
+    "type": "booster"
+  },
+  "15aBooster": {
+    "id": 535,
+    "type": "booster"
   }
 }
