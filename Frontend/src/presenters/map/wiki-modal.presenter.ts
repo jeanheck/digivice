@@ -18,7 +18,7 @@ export class WikiModalPresenter {
     }
 
     if (dropRaw.type === "booster") {
-      return `boosters.${dropKey}`;
+      return `boosters.${dropRaw.id}.name`;
     }
 
     if (dropRaw.type === "equipment") {
