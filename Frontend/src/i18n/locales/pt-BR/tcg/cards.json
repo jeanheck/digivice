@@ -1,0 +1,1006 @@
+{
+  "cards": {
+    "1": {
+      "name": "Sacred spear",
+      "note": "Put all non-white digimon to trash"
+    },
+    "2": {
+      "name": "Summon Angemon",
+      "note": "Bring 2 angemon to field"
+    },
+    "3": {
+      "name": "Gold Aura",
+      "note": "+10 AP & HP to all digimon"
+    },
+    "4": {
+      "name": "Protect Aura",
+      "note": "+30 HP to one digimon"
+    },
+    "5": {
+      "name": "White Power",
+      "note": "get 1 white S-energy point"
+    },
+    "6": {
+      "name": "Summon Patamon",
+      "note": "Bring patamon to field"
+    },
+    "7": {
+      "name": "Tidal Wave",
+      "note": "Return all non-blue digimon to trash"
+    },
+    "8": {
+      "name": "Control Parts",
+      "note": "control 1 of your oppnt's digimon"
+    },
+    "9": {
+      "name": "Freeze Bug",
+      "note": "Put a drawn PG card to trash"
+    },
+    "10": {
+      "name": "Eclipse Undo",
+      "note": "return 1 digimon back to its hand"
+    },
+    "11": {
+      "name": "Blue Power",
+      "note": "get 1 blue S-enery point"
+    },
+    "12": {
+      "name": "Summon Gomamon",
+      "note": "Bring gomamon to field"
+    },
+    "13": {
+      "name": "Wield Aura",
+      "note": "+50 AP & HP to all green digimon"
+    },
+    "14": {
+      "name": "Ecoly Cycle",
+      "note": "pick a card from trash"
+    },
+    "15": {
+      "name": "Green Force",
+      "note": "Get 2 green S-Energy points"
+    },
+    "16": {
+      "name": "Beast Energy",
+      "note": "+20 AP & HP to one digimon"
+    },
+    "17": {
+      "name": "Green Power",
+      "note": "get 1 green S-Energy point"
+    },
+    "18": {
+      "name": "Summon Palmon",
+      "note": "bring palmon to the filef"
+    },
+    "19": {
+      "name": "Volcanic Gatlin",
+      "note": "60 damage to all non-red digimon"
+    },
+    "20": {
+      "name": "Blazing Chaos",
+      "note": "Put all brown digimon to trash"
+    },
+    "21": {
+      "name": "Flame Gatlin",
+      "note": "15 damage to all digimon"
+    },
+    "22": {
+      "name": "Fire Cannon",
+      "note": "30 damage to an oppnt's digimon"
+    },
+    "23": {
+      "name": "Red Power",
+      "note": "Get 1 red S-Energy point"
+    },
+    "24": {
+      "name": "Summon Goburimon",
+      "note": "Bring Goburimon to field"
+    },
+    "25": {
+      "name": "Darness Gale",
+      "note": "Put all oppnt non-black cards to trash"
+    },
+    "26": {
+      "name": "Deceive cloak",
+      "note": "pick 1 card from deck"
+    },
+    "27": {
+      "name": "Chaos Virus",
+      "note": "put 1 non-black card to trash"
+    },
+    "28": {
+      "name": "Vicious Hacking",
+      "note": "pick a card from oppnt hand to trash"
+    },
+    "29": {
+      "name": "Black Power",
+      "note": "Get 1 Black S-Energy point"
+    },
+    "30": {
+      "name": "Summon Devimon",
+      "note": "Bring devimon to field"
+    },
+    "31": {
+      "name": "Delete Matrix",
+      "note": "Put all digimon to trash"
+    },
+    "32": {
+      "name": "Fortune Gate",
+      "note": "Exchange AP & HP from oppnt"
+    },
+    "33": {
+      "name": "Misery Gate",
+      "note": "Pick 3 cards from oppnt deck to trash"
+    },
+    "34": {
+      "name": "Desire Access",
+      "note": "Put all hand in trash, draw 6 cards"
+    },
+    "35": {
+      "name": "Anti",
+      "note": "power- Reduce all S-Energy to zero"
+    },
+    "36": {
+      "name": "Revival Charge",
+      "note": "Return all trashed card to deck"
+    },
+    "37": {
+      "name": "Chrono Balance",
+      "note": "Make both player have 3 cards"
+    },
+    "38": {
+      "name": "Security Hall",
+      "note": "Put 5 card from oppnt deck to trash"
+    },
+    "39": {
+      "name": "Absolute Barrier",
+      "note": "Reduce oppnt AP to zero"
+    },
+    "40": {
+      "name": "Scramble Up",
+      "note": "Bring a digimon from hand to field"
+    },
+    "41": {
+      "name": "Power Super Metal",
+      "note": "+30 AP & HP o a brown digimon"
+    },
+    "42": {
+      "name": "Charge Terminal",
+      "note": "draws 2 card from deck to hand"
+    },
+    "43": {
+      "name": "Digimon Charge",
+      "note": "Choose a DG from deck to hand"
+    },
+    "44": {
+      "name": "Program Charge",
+      "note": "Choose a PG from card to hand"
+    },
+    "45": {
+      "name": "Trade Charge",
+      "note": "draw one card, put one to trash"
+    },
+    "46": {
+      "name": "Illegal Access",
+      "note": "Put 2 cards from oppnt deck to trash"
+    },
+    "47": {
+      "name": "Break Launcher",
+      "note": "30 damage to a brown digimon"
+    },
+    "48": {
+      "name": "Cancel Wheel",
+      "note": "Put a drawn PG brown card to trash"
+    },
+    "49": {
+      "name": "Rusty Dust",
+      "note": "Put 1 brown DG from oppnt hand to trash"
+    },
+    "50": {
+      "name": "Summon Hagurumon",
+      "note": "Bring Hagurumon to field"
+    },
+    "51": {
+      "name": "White Remove",
+      "note": "Subtract 2 white S-Energy"
+    },
+    "52": {
+      "name": "Blue Remove",
+      "note": "Subtract 2 blue S-Energy"
+    },
+    "53": {
+      "name": "Green Remove",
+      "note": "Subtract 2 green S-Energy"
+    },
+    "54": {
+      "name": "Red Remove",
+      "note": "Subtract 2 red S-Energy"
+    },
+    "55": {
+      "name": "Black Remove",
+      "note": "Subtract 2 black S-Energy"
+    },
+    "56": {
+      "name": "Summon Cancel",
+      "note": "return a brown DG to hand"
+    },
+    "57": {
+      "name": "Berserk Energy",
+      "note": "+10 AP and -10 HP to a digimon"
+    },
+    "58": {
+      "name": "Disturb Gear",
+      "note": "Put a brown DG from field to trash"
+    },
+    "59": {
+      "name": "Protect Armor",
+      "note": "+10 HP to a digimon"
+    },
+    "60": {
+      "name": "Assault Armor",
+      "note": "+10 AP to a digimon"
+    },
+    "61": {
+      "name": "Imperialdramon-P"
+    },
+    "62": {
+      "name": "GuardiAngemon"
+    },
+    "63": {
+      "name": "WarGreymon"
+    },
+    "64": {
+      "name": "ImperialdramonII"
+    },
+    "65": {
+      "name": "Seraphimon"
+    },
+    "66": {
+      "name": "Magnadramon"
+    },
+    "67": {
+      "name": "Valkrymon"
+    },
+    "68": {
+      "name": "PrinceMamemon"
+    },
+    "69": {
+      "name": "RosemonII"
+    },
+    "70": {
+      "name": "PaildramonII"
+    },
+    "71": {
+      "name": "MagnaAngemon"
+    },
+    "72": {
+      "name": "Angewomon"
+    },
+    "73": {
+      "name": "Kyukimon"
+    },
+    "74": {
+      "name": "Panjyamon"
+    },
+    "75": {
+      "name": "Silphymon"
+    },
+    "76": {
+      "name": "Knightmon"
+    },
+    "77": {
+      "name": "MetalMamemon"
+    },
+    "78": {
+      "name": "Mamemon"
+    },
+    "79": {
+      "name": "Piximon"
+    },
+    "80": {
+      "name": "Dinohumon"
+    },
+    "81": {
+      "name": "Angemon"
+    },
+    "82": {
+      "name": "Stingmon"
+    },
+    "83": {
+      "name": "Gatomon"
+    },
+    "84": {
+      "name": "Piddomon"
+    },
+    "85": {
+      "name": "Apemon"
+    },
+    "86": {
+      "name": "Centarumon"
+    },
+    "87": {
+      "name": "Snimon"
+    },
+    "88": {
+      "name": "Thundermon"
+    },
+    "89": {
+      "name": "Unimon"
+    },
+    "90": {
+      "name": "ShimaUnimon"
+    },
+    "91": {
+      "name": "Ankylomon"
+    },
+    "92": {
+      "name": "Guruurmon"
+    },
+    "93": {
+      "name": "Tortomon"
+    },
+    "94": {
+      "name": "Zassomon"
+    },
+    "95": {
+      "name": "Yanmamon"
+    },
+    "96": {
+      "name": "Kotemon"
+    },
+    "97": {
+      "name": "Armadillomon"
+    },
+    "98": {
+      "name": "Psychemon"
+    },
+    "99": {
+      "name": "Elecmon"
+    },
+    "100": {
+      "name": "Patamon"
+    },
+    "101": {
+      "name": "Wormmon"
+    },
+    "102": {
+      "name": "Kunemon"
+    },
+    "103": {
+      "name": "Salamon"
+    },
+    "104": {
+      "name": "Cannondramon"
+    },
+    "105": {
+      "name": "Sakuyamon"
+    },
+    "106": {
+      "name": "Vikemon"
+    },
+    "107": {
+      "name": "MetalSeadramon"
+    },
+    "108": {
+      "name": "Pukumon"
+    },
+    "109": {
+      "name": "SuperStarmon"
+    },
+    "110": {
+      "name": "Preciomon"
+    },
+    "111": {
+      "name": "Babamon"
+    },
+    "112": {
+      "name": "MarineAngemon"
+    },
+    "113": {
+      "name": "Zudomon"
+    },
+    "114": {
+      "name": "MegaSeadramon"
+    },
+    "115": {
+      "name": "Taomon"
+    },
+    "116": {
+      "name": "Armormon"
+    },
+    "117": {
+      "name": "BlueMeramon"
+    },
+    "118": {
+      "name": "ShogunGekomon"
+    },
+    "119": {
+      "name": "Scorpiomon"
+    },
+    "120": {
+      "name": "Brachiomon"
+    },
+    "121": {
+      "name": "WaruSeadramon"
+    },
+    "122": {
+      "name": "Divermon"
+    },
+    "123": {
+      "name": "Whamon"
+    },
+    "124": {
+      "name": "Seadramon"
+    },
+    "125": {
+      "name": "Kyubimon"
+    },
+    "126": {
+      "name": "Hookmon"
+    },
+    "127": {
+      "name": "IceDevimon"
+    },
+    "128": {
+      "name": "Shellmon"
+    },
+    "129": {
+      "name": "Ikkakumon"
+    },
+    "130": {
+      "name": "Frigimon"
+    },
+    "131": {
+      "name": "Ebidramon"
+    },
+    "132": {
+      "name": "Icemon"
+    },
+    "133": {
+      "name": "Mojyamon"
+    },
+    "134": {
+      "name": "Ninjamon"
+    },
+    "135": {
+      "name": "Starmon"
+    },
+    "136": {
+      "name": "Coelamon"
+    },
+    "137": {
+      "name": "Dolphmon"
+    },
+    "138": {
+      "name": "Gekomon"
+    },
+    "139": {
+      "name": "Monmon"
+    },
+    "140": {
+      "name": "Renamon"
+    },
+    "141": {
+      "name": "Gomamon"
+    },
+    "142": {
+      "name": "SnowAgumon"
+    },
+    "143": {
+      "name": "Gizamon"
+    },
+    "144": {
+      "name": "Otamamon"
+    },
+    "145": {
+      "name": "Crabmon"
+    },
+    "146": {
+      "name": "Syakomon"
+    },
+    "147": {
+      "name": "OmnimonII"
+    },
+    "148": {
+      "name": "Marsmon"
+    },
+    "149": {
+      "name": "MetalGarurumon"
+    },
+    "150": {
+      "name": "H-Kabuterimon"
+    },
+    "151": {
+      "name": "GrandKuwagamon"
+    },
+    "152": {
+      "name": "RosemonI"
+    },
+    "153": {
+      "name": "KingEtemon"
+    },
+    "154": {
+      "name": "MetalEtemon"
+    },
+    "155": {
+      "name": "SaberLeomon"
+    },
+    "156": {
+      "name": "MegaKabuterimon"
+    },
+    "157": {
+      "name": "WereGarurumon"
+    },
+    "158": {
+      "name": "GrapLeomon"
+    },
+    "159": {
+      "name": "Okuwamon"
+    },
+    "160": {
+      "name": "Lilymon"
+    },
+    "161": {
+      "name": "Etemon"
+    },
+    "162": {
+      "name": "Triceramon"
+    },
+    "163": {
+      "name": "Cherrymon"
+    },
+    "164": {
+      "name": "Blossomon"
+    },
+    "165": {
+      "name": "Deramon"
+    },
+    "166": {
+      "name": "Leomon"
+    },
+    "167": {
+      "name": "Grizzmon"
+    },
+    "168": {
+      "name": "Kabuterimon"
+    },
+    "169": {
+      "name": "Garurumon"
+    },
+    "170": {
+      "name": "Tuskmon"
+    },
+    "171": {
+      "name": "Monochromon"
+    },
+    "172": {
+      "name": "MoriShellmon"
+    },
+    "173": {
+      "name": "Kuwagamon"
+    },
+    "174": {
+      "name": "J-Mojyamon"
+    },
+    "175": {
+      "name": "Togemon"
+    },
+    "176": {
+      "name": "Flymon"
+    },
+    "177": {
+      "name": "Saberdramon"
+    },
+    "178": {
+      "name": "Dokugumon"
+    },
+    "179": {
+      "name": "Kiwimon"
+    },
+    "180": {
+      "name": "Woodmon"
+    },
+    "181": {
+      "name": "Vegiemon"
+    },
+    "182": {
+      "name": "Kumamon"
+    },
+    "183": {
+      "name": "Gabumon"
+    },
+    "184": {
+      "name": "Tentomon"
+    },
+    "185": {
+      "name": "Palmon"
+    },
+    "186": {
+      "name": "Betamon"
+    },
+    "187": {
+      "name": "Kokuwamon"
+    },
+    "188": {
+      "name": "Floramon"
+    },
+    "189": {
+      "name": "Mushroomon"
+    },
+    "190": {
+      "name": "OmnimonI"
+    },
+    "191": {
+      "name": "Gallantmon"
+    },
+    "192": {
+      "name": "Imperialdramon-F"
+    },
+    "193": {
+      "name": "ImperialdramonI"
+    },
+    "194": {
+      "name": "MegaGargomon"
+    },
+    "195": {
+      "name": "Machinedramon"
+    },
+    "196": {
+      "name": "Phoenixmon"
+    },
+    "197": {
+      "name": "SkullMammothmon"
+    },
+    "198": {
+      "name": "Gryphonomon"
+    },
+    "199": {
+      "name": "PaildramonI"
+    },
+    "200": {
+      "name": "MetalGreymon"
+    },
+    "201": {
+      "name": "WarGrowlmon"
+    },
+    "202": {
+      "name": "Garudamon"
+    },
+    "203": {
+      "name": "Kimeramon"
+    },
+    "204": {
+      "name": "MasterTyrannomon"
+    },
+    "205": {
+      "name": "Gigadramon"
+    },
+    "206": {
+      "name": "Megadramon"
+    },
+    "207": {
+      "name": "MetalTyrannomon"
+    },
+    "208": {
+      "name": "Mammothmon"
+    },
+    "209": {
+      "name": "Greymon"
+    },
+    "210": {
+      "name": "Growlmon"
+    },
+    "211": {
+      "name": "ExVeemon"
+    },
+    "212": {
+      "name": "Veedramon"
+    },
+    "213": {
+      "name": "Airdramon"
+    },
+    "214": {
+      "name": "Ogremon"
+    },
+    "215": {
+      "name": "Minotarumon"
+    },
+    "216": {
+      "name": "Fugamon"
+    },
+    "217": {
+      "name": "Tyrannomon"
+    },
+    "218": {
+      "name": "Aquilamon"
+    },
+    "219": {
+      "name": "Meramon"
+    },
+    "220": {
+      "name": "Birdramon"
+    },
+    "221": {
+      "name": "Flarerizamon"
+    },
+    "222": {
+      "name": "RedVegiemon"
+    },
+    "223": {
+      "name": "Akatorimon"
+    },
+    "224": {
+      "name": "SandYanmamon"
+    },
+    "225": {
+      "name": "Agumon"
+    },
+    "226": {
+      "name": "Veemon"
+    },
+    "227": {
+      "name": "Guilmon"
+    },
+    "228": {
+      "name": "Hawkmon"
+    },
+    "229": {
+      "name": "Biyomon"
+    },
+    "230": {
+      "name": "Goburimon"
+    },
+    "231": {
+      "name": "Sharmamon"
+    },
+    "232": {
+      "name": "Penguinmon"
+    },
+    "233": {
+      "name": "Armageddemon"
+    },
+    "234": {
+      "name": "VenomMyotismon"
+    },
+    "235": {
+      "name": "Diaboromon"
+    },
+    "236": {
+      "name": "MaloMyotismon"
+    },
+    "237": {
+      "name": "Beelzemon"
+    },
+    "238": {
+      "name": "Apokarimon"
+    },
+    "239": {
+      "name": "Ghoulmon"
+    },
+    "240": {
+      "name": "Piedmon"
+    },
+    "241": {
+      "name": "Creeymon"
+    },
+    "242": {
+      "name": "Myotismon"
+    },
+    "243": {
+      "name": "Inferimon"
+    },
+    "244": {
+      "name": "Dragomon"
+    },
+    "245": {
+      "name": "SkullSatamon"
+    },
+    "246": {
+      "name": "SkullGreymon"
+    },
+    "247": {
+      "name": "Mummymon"
+    },
+    "248": {
+      "name": "Arukenimon"
+    },
+    "249": {
+      "name": "LadyDevimon"
+    },
+    "250": {
+      "name": "SkullMeramon"
+    },
+    "251": {
+      "name": "WaruMonzaemon"
+    },
+    "252": {
+      "name": "Devimon"
+    },
+    "253": {
+      "name": "Kurisarimon"
+    },
+    "254": {
+      "name": "Raremon"
+    },
+    "255": {
+      "name": "MarineDevimon"
+    },
+    "256": {
+      "name": "Musyamon"
+    },
+    "257": {
+      "name": "Wizardmon"
+    },
+    "258": {
+      "name": "DarkTyrannomon"
+    },
+    "259": {
+      "name": "Devidramon"
+    },
+    "260": {
+      "name": "Vilemon"
+    },
+    "261": {
+      "name": "Hyogamon"
+    },
+    "262": {
+      "name": "Darkrizamon"
+    },
+    "263": {
+      "name": "Octomon"
+    },
+    "264": {
+      "name": "Gesomon"
+    },
+    "265": {
+      "name": "Soulmon"
+    },
+    "266": {
+      "name": "Bakemon"
+    },
+    "267": {
+      "name": "Roachmon"
+    },
+    "268": {
+      "name": "DemiDevimon"
+    },
+    "269": {
+      "name": "Gazimon"
+    },
+    "270": {
+      "name": "Aruraumon"
+    },
+    "271": {
+      "name": "Tsukaimon"
+    },
+    "272": {
+      "name": "ModokiBetamon"
+    },
+    "273": {
+      "name": "Tapirmon"
+    },
+    "274": {
+      "name": "Candlemon"
+    },
+    "275": {
+      "name": "Muchomon"
+    },
+    "276": {
+      "name": "BK WarGreymon"
+    },
+    "277": {
+      "name": "BK Imperialdramon"
+    },
+    "278": {
+      "name": "BK MegaGargomon"
+    },
+    "279": {
+      "name": "BK Seraphimon"
+    },
+    "280": {
+      "name": "BK WarGrowlmon"
+    },
+    "281": {
+      "name": "BK KingNumemon"
+    },
+    "282": {
+      "name": "HiAndromon"
+    },
+    "283": {
+      "name": "Boltmon"
+    },
+    "284": {
+      "name": "Puppetmon"
+    },
+    "285": {
+      "name": "Shakkoumon"
+    },
+    "286": {
+      "name": "Andromon"
+    },
+    "287": {
+      "name": "Giromon"
+    },
+    "288": {
+      "name": "Datamon"
+    },
+    "289": {
+      "name": "ExTyrannomon"
+    },
+    "290": {
+      "name": "Monzaemon"
+    },
+    "291": {
+      "name": "Digitamamon"
+    },
+    "292": {
+      "name": "Vademon"
+    },
+    "293": {
+      "name": "Garbagemon"
+    },
+    "294": {
+      "name": "Meteormon"
+    },
+    "295": {
+      "name": "Cyclonemon"
+    },
+    "296": {
+      "name": "Rockmon"
+    },
+    "297": {
+      "name": "Deltamon"
+    },
+    "298": {
+      "name": "Guardromon"
+    },
+    "299": {
+      "name": "Tankmon"
+    },
+    "300": {
+      "name": "Clockmon"
+    },
+    "301": {
+      "name": "MudFrigimon"
+    },
+    "302": {
+      "name": "PlatinumSukamon"
+    },
+    "303": {
+      "name": "BomberNanimon"
+    },
+    "304": {
+      "name": "Drimogenmon"
+    },
+    "305": {
+      "name": "NiseDrimogenmon"
+    },
+    "306": {
+      "name": "Sukamon"
+    },
+    "307": {
+      "name": "Geremon"
+    },
+    "308": {
+      "name": "Kokatorimon"
+    },
+    "309": {
+      "name": "Numemon"
+    },
+    "310": {
+      "name": "ShellNumemon"
+    },
+    "311": {
+      "name": "ClearAgumon"
+    },
+    "312": {
+      "name": "ToyAgumon"
+    },
+    "313": {
+      "name": "Gotsumon"
+    },
+    "314": {
+      "name": "Hagurumon"
+    }
+  }
+}
