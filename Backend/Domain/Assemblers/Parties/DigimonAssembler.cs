@@ -31,21 +31,21 @@ namespace Backend.Domain.Assemblers.Parties
                     Current = resource.MP.Current,
                     Max = resource.MP.Max
                 },
-                InCombat = new InCombat
+                InBattle = new InBattle
                 {
-                    Condition = resource.InCombat.Condition,
-                    Strength = resource.InCombat.Strength,
-                    Defense = resource.InCombat.Defense,
-                    Speed = resource.InCombat.Speed,
+                    Condition = resource.InBattle.Condition,
+                    Strength = resource.InBattle.Strength,
+                    Defense = resource.InBattle.Defense,
+                    Speed = resource.InBattle.Speed,
                     HP = new Vital
                     {
-                        Current = resource.InCombat.HP.Current,
-                        Max = resource.InCombat.HP.Max
+                        Current = resource.InBattle.HP.Current,
+                        Max = resource.InBattle.HP.Max
                     },
                     MP = new Vital
                     {
-                        Current = resource.InCombat.MP.Current,
-                        Max = resource.InCombat.MP.Max
+                        Current = resource.InBattle.MP.Current,
+                        Max = resource.InBattle.MP.Max
                     }
                 },
                 Attributes = new Attributes

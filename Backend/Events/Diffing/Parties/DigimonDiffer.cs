@@ -28,7 +28,7 @@ public static class DigimonDiffer
         bool activeDigievolutionIdChanged = previousDigimon.ActiveDigievolutionId != newDigimon.ActiveDigievolutionId;
         var hpDelta = VitalDiffer.Diff(previousDigimon.HP, newDigimon.HP);
         var mpDelta = VitalDiffer.Diff(previousDigimon.MP, newDigimon.MP);
-        var inCombatDelta = InCombatDiffer.Diff(previousDigimon.InCombat, newDigimon.InCombat);
+        var inBattleDelta = InBattleDiffer.Diff(previousDigimon.InBattle, newDigimon.InBattle);
         var attributesDelta = AttributesDiffer.Diff(previousDigimon.Attributes, newDigimon.Attributes);
         var resistancesDelta = ResistancesDiffer.Diff(previousDigimon.Resistances, newDigimon.Resistances);
         var equipmentsDelta = EquipmentsDiffer.Diff(previousDigimon.Equipments, newDigimon.Equipments);
@@ -66,7 +66,7 @@ public static class DigimonDiffer
                              activeDigievolutionIdChanged ||
                              hpDelta != null ||
                              mpDelta != null ||
-                             inCombatDelta != null ||
+                             inBattleDelta != null ||
                              attributesDelta != null ||
                              resistancesDelta != null ||
                              equipmentsDelta != null ||
@@ -107,9 +107,9 @@ public static class DigimonDiffer
         {
             dto = dto with { MP = mpDelta };
         }
-        if (inCombatDelta != null)
+        if (inBattleDelta != null)
         {
-            dto = dto with { InCombat = inCombatDelta };
+            dto = dto with { InBattle = inBattleDelta };
         }
         if (attributesDelta != null)
         {

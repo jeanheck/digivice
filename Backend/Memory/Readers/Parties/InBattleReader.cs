@@ -4,13 +4,13 @@ using Backend.Memory.Resources.Parties.Digimons;
 
 namespace Backend.Memory.Readers.Parties
 {
-    public class InCombatReader(IMemoryReader memoryReader) : IInCombatReader
+    public class InBattleReader(IMemoryReader memoryReader) : IInBattleReader
     {
-        public InCombatResource Read(InCombatAddresses addresses, int zeroBasedPartySlotIndex)
+        public InBattleResource Read(InBattleAddresses addresses, int zeroBasedPartySlotIndex)
         {
             var slotBase = addresses.AllySlotBase + (zeroBasedPartySlotIndex * addresses.SlotStride);
 
-            return new InCombatResource
+            return new InBattleResource
             {
                 Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes
                     ? conditionBytes[0]

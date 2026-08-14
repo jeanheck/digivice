@@ -33,7 +33,7 @@ public class DigimonAssemblerTests
             ActiveDigievolutionId = 12,
             HP = new VitalResource { Current = 100, Max = 120 },
             MP = new VitalResource { Current = 50, Max = 60 },
-            InCombat = new InCombatResource
+            InBattle = new InBattleResource
             {
                 Condition = 0x04,
                 Strength = 25,
@@ -69,14 +69,14 @@ public class DigimonAssemblerTests
         Assert.Equal(50, result.MP.Current);
         Assert.Equal(60, result.MP.Max);
 
-        Assert.Equal(0x04, result.InCombat.Condition);
-        Assert.Equal(80, result.InCombat.HP.Current);
-        Assert.Equal(120, result.InCombat.HP.Max);
-        Assert.Equal(40, result.InCombat.MP.Current);
-        Assert.Equal(60, result.InCombat.MP.Max);
-        Assert.Equal(25, result.InCombat.Strength);
-        Assert.Equal(185, result.InCombat.Defense);
-        Assert.Equal(84, result.InCombat.Speed);
+        Assert.Equal(0x04, result.InBattle.Condition);
+        Assert.Equal(80, result.InBattle.HP.Current);
+        Assert.Equal(120, result.InBattle.HP.Max);
+        Assert.Equal(40, result.InBattle.MP.Current);
+        Assert.Equal(60, result.InBattle.MP.Max);
+        Assert.Equal(25, result.InBattle.Strength);
+        Assert.Equal(185, result.InBattle.Defense);
+        Assert.Equal(84, result.InBattle.Speed);
 
         // Attributes
         Assert.Equal(10, result.Attributes.Strength);

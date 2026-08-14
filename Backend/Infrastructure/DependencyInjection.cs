@@ -39,7 +39,7 @@ namespace Backend.Infrastructure
             services.AddSingleton<IStoredDigievolutionReader, StoredDigievolutionReader>();
             services.AddSingleton<IDigievolutionSlotReader, DigievolutionSlotReader>();
             services.AddSingleton<IPartyReader, PartyReader>();
-            services.AddSingleton<IInCombatReader, InCombatReader>();
+            services.AddSingleton<IInBattleReader, InBattleReader>();
             services.AddSingleton<IEnemyReader, EnemyReader>();
             services.AddSingleton<IRequisiteReader, RequisiteReader>();
             services.AddSingleton<IStepReader, StepReader>();

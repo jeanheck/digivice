@@ -10,7 +10,7 @@ namespace Backend.Memory.Repositories
         private PlayerAddresses? playerAddresses;
         private PartyAddresses? partyAddresses;
         private DigimonStatusAddresses? digimonStatusAddresses;
-        private InCombatAddresses? inCombatAddresses;
+        private InBattleAddresses? inBattleAddresses;
         private BattleAddresses? battleAddresses;
         private Dictionary<int, DigimonAddress>? digimonAddresses;
         private QuestAddresses? mainQuestAddresses;
@@ -73,8 +73,8 @@ namespace Backend.Memory.Repositories
         public DigimonStatusAddresses GetDigimonStatusAddresses() =>
             LoadAndCache(ref digimonStatusAddresses, "Parties/DigimonStatusAddresses.json");
 
-        public InCombatAddresses GetInCombatAddresses() =>
-            LoadAndCache(ref inCombatAddresses, "Parties/InCombatAddresses.json");
+        public InBattleAddresses GetInBattleAddresses() =>
+            LoadAndCache(ref inBattleAddresses, "Parties/InBattleAddresses.json");
 
         public BattleAddresses GetBattleAddresses() =>
             LoadAndCache(ref battleAddresses, "BattleAddresses.json");

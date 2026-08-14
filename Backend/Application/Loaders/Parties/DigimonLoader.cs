@@ -17,11 +17,11 @@ namespace Backend.Application.Loaders.Parties
             }
 
             var digimonStatusAddresses = addressesRepository.GetDigimonStatusAddresses();
-            var inCombatAddresses = addressesRepository.GetInCombatAddresses();
+            var inBattleAddresses = addressesRepository.GetInBattleAddresses();
             return digimonReader.Read(
                 digimonAddress,
                 digimonStatusAddresses,
-                inCombatAddresses,
+                inBattleAddresses,
                 zeroBasedPartySlotIndex);
         }
     }

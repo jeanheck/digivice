@@ -3,8 +3,8 @@ using Backend.Memory.Resources.Parties;
 
 namespace Backend.Memory.Readers.Parties
 {
-    public interface IInCombatReader
+    public interface IInBattleReader
     {
-        InCombatResource Read(InCombatAddresses addresses, int zeroBasedPartySlotIndex);
+        InBattleResource Read(InBattleAddresses addresses, int zeroBasedPartySlotIndex);
     }
 }

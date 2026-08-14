@@ -9,14 +9,14 @@ namespace Backend.Memory.Readers.Parties.Digimons
         IDigievolutionSlotReader digievolutionSlotReader,
         IDigievolutionReader digievolutionReader,
         IStoredDigievolutionReader storedDigievolutionReader,
-        IInCombatReader digimonInCombatReader) : IDigimonReader
+        IInBattleReader digimonInBattleReader) : IDigimonReader
     {
         private const int DigimonMemoryBlockSize = 1500;
 
         public DigimonResource? Read(
             DigimonAddress digimonAddress,
             DigimonStatusAddresses digimonStatusAddresses,
-            InCombatAddresses inCombatAddresses,
+            InBattleAddresses inBattleAddresses,
             int zeroBasedPartySlotIndex)
         {
             var memoryBlock = memoryReader.ReadBytes(digimonAddress.MemoryBlockAddress, DigimonMemoryBlockSize);
@@ -63,7 +63,7 @@ namespace Backend.Memory.Readers.Parties.Digimons
                     Current = memoryBlockReader.ReadInt16(digimonStatusAddresses.MP.Current),
                     Max = memoryBlockReader.ReadInt16(digimonStatusAddresses.MP.Max)
                 },
-                InCombat = digimonInCombatReader.Read(inCombatAddresses, zeroBasedPartySlotIndex),
+                InBattle = digimonInBattleReader.Read(inBattleAddresses, zeroBasedPartySlotIndex),
                 Attributes = new AttributesResource
                 {
                     Strength = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Strength),

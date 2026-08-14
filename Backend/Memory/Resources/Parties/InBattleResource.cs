@@ -2,7 +2,7 @@ using Backend.Memory.Resources.Parties.Digimons;
 
 namespace Backend.Memory.Resources.Parties
 {
-    public class InCombatResource
+    public class InBattleResource
     {
         public int Condition { get; set; }
         public int Strength { get; set; }

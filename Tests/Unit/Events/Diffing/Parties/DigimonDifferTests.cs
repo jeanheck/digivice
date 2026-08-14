@@ -108,18 +108,18 @@ public class DigimonDifferTests
     }
 
     [Fact]
-    public void Diff_ShouldReturnInCombatConditionDelta_WhenOnlyInCombatConditionChanges()
+    public void Diff_ShouldReturnInBattleConditionDelta_WhenOnlyInBattleConditionChanges()
     {
         var previous = CreateBaseDigimon();
         var newObj = CreateBaseDigimon();
-        newObj.InCombat.Condition = 0x04;
+        newObj.InBattle.Condition = 0x04;
 
         var result = DigimonDiffer.Diff(previous, newObj);
 
         Assert.NotNull(result);
-        Assert.True(result.InCombat.HasValue);
-        Assert.True(result.InCombat.Value!.Condition.HasValue);
-        Assert.Equal(0x04, result.InCombat.Value.Condition.Value);
+        Assert.True(result.InBattle.HasValue);
+        Assert.True(result.InBattle.Value!.Condition.HasValue);
+        Assert.Equal(0x04, result.InBattle.Value.Condition.Value);
         Assert.False(result.Level.HasValue);
     }
 
@@ -134,7 +134,7 @@ public class DigimonDifferTests
             ActiveDigievolutionId = 3,
             HP = new Vital { Current = 100, Max = 100 },
             MP = new Vital { Current = 50, Max = 50 },
-            InCombat = new InCombat
+            InBattle = new InBattle
             {
                 Condition = 0,
                 HP = new Vital { Current = 0, Max = 0 },

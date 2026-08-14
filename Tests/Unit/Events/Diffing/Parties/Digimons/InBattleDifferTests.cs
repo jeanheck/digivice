@@ -3,15 +3,15 @@ namespace Tests.Events.Diffing.Parties.Digimons;
 using Backend.Domain.Models.Parties.Digimons;
 using Backend.Events.Diffing.Parties.Digimons;
 
-public class InCombatDifferTests
+public class InBattleDifferTests
 {
     [Fact]
     public void Diff_ShouldReturnNull_WhenNoChanges()
     {
-        var previous = CreateBaseInCombat();
-        var newObj = CreateBaseInCombat();
+        var previous = CreateBaseInBattle();
+        var newObj = CreateBaseInBattle();
 
-        var result = InCombatDiffer.Diff(previous, newObj);
+        var result = InBattleDiffer.Diff(previous, newObj);
 
         Assert.Null(result);
     }
@@ -19,11 +19,11 @@ public class InCombatDifferTests
     [Fact]
     public void Diff_ShouldReturnFullDTO_WhenPreviousIsNull()
     {
-        var newObj = CreateBaseInCombat();
+        var newObj = CreateBaseInBattle();
         newObj.Condition = 0x04;
         newObj.Speed = 84;
 
-        var result = InCombatDiffer.Diff(null, newObj);
+        var result = InBattleDiffer.Diff(null, newObj);
 
         Assert.NotNull(result);
         Assert.Equal(0x04, result.Condition.Value);
@@ -36,12 +36,12 @@ public class InCombatDifferTests
     [Fact]
     public void Diff_ShouldReturnOnlyChangedFields_WhenPartialChanges()
     {
-        var previous = CreateBaseInCombat();
-        var newObj = CreateBaseInCombat();
+        var previous = CreateBaseInBattle();
+        var newObj = CreateBaseInBattle();
         newObj.Condition = 0x01;
         newObj.HP.Current = 50;
 
-        var result = InCombatDiffer.Diff(previous, newObj);
+        var result = InBattleDiffer.Diff(previous, newObj);
 
         Assert.NotNull(result);
         Assert.Equal(0x01, result.Condition.Value);
@@ -56,11 +56,11 @@ public class InCombatDifferTests
     [Fact]
     public void Diff_ShouldReturnOnlySpeed_WhenOnlySpeedChanges()
     {
-        var previous = CreateBaseInCombat();
-        var newObj = CreateBaseInCombat();
+        var previous = CreateBaseInBattle();
+        var newObj = CreateBaseInBattle();
         newObj.Speed = 84;
 
-        var result = InCombatDiffer.Diff(previous, newObj);
+        var result = InBattleDiffer.Diff(previous, newObj);
 
         Assert.NotNull(result);
         Assert.Equal(84, result.Speed.Value);
@@ -71,9 +71,9 @@ public class InCombatDifferTests
         Assert.False(result.MP.HasValue);
     }
 
-    private static InCombat CreateBaseInCombat()
+    private static InBattle CreateBaseInBattle()
     {
-        return new InCombat
+        return new InBattle
         {
             Condition = 0,
             Strength = 0,

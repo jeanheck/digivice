@@ -60,13 +60,13 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonInCombatReader = new InCombatReader(memoryReaderMock.Object);
+        var digimonInBattleReader = new InBattleReader(memoryReaderMock.Object);
         var digimonReader = new DigimonReader(
             memoryReaderMock.Object,
             digievolutionSlotReader,
             digievolutionReader,
             storedDigievolutionReader,
-            digimonInCombatReader);
+            digimonInBattleReader);
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
 
         var digimonResource = digimonLoader.Load(1, 0);
@@ -182,13 +182,13 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonInCombatReader = new InCombatReader(memoryReader);
+        var digimonInBattleReader = new InBattleReader(memoryReader);
         var digimonReader = new DigimonReader(
             memoryReader,
             digievolutionSlotReader,
             digievolutionReader,
             storedDigievolutionReader,
-            digimonInCombatReader);
+            digimonInBattleReader);
         return new DigimonLoader(addressesRepository, digimonReader);
     }
 }

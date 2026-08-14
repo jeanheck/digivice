@@ -10,7 +10,7 @@ namespace Backend.Domain.Models.Parties
         public int Experience { get; set; }
         public Vital HP { get; set; } = new();
         public Vital MP { get; set; } = new();
-        public InCombat InCombat { get; set; } = new();
+        public InBattle InBattle { get; set; } = new();
         public Attributes Attributes { get; set; } = new();
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
@@ -28,7 +28,7 @@ namespace Backend.Domain.Models.Parties
                    Experience == other.Experience &&
                    HP.Equals(other.HP) &&
                    MP.Equals(other.MP) &&
-                   InCombat.Equals(other.InCombat) &&
+                   InBattle.Equals(other.InBattle) &&
                    Attributes.Equals(other.Attributes) &&
                    Resistances.Equals(other.Resistances) &&
                    Equipments.Equals(other.Equipments) &&
@@ -46,7 +46,7 @@ namespace Backend.Domain.Models.Parties
             hash.Add(Experience);
             hash.Add(HP);
             hash.Add(MP);
-            hash.Add(InCombat);
+            hash.Add(InBattle);
             hash.Add(Attributes);
             hash.Add(Resistances);
             hash.Add(Equipments);

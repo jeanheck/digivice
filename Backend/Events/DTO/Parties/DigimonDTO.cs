@@ -26,7 +26,7 @@ public record class DigimonDTO : IDTO
     public Optional<VitalDTO> MP { get; init; } = Optional<VitalDTO>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<InCombatDTO> InCombat { get; init; } = Optional<InCombatDTO>.Empty;
+    public Optional<InBattleDTO> InBattle { get; init; } = Optional<InBattleDTO>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<AttributesDTO> Attributes { get; init; } = Optional<AttributesDTO>.Empty;

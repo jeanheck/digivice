@@ -3,12 +3,12 @@ namespace Tests.Events.Converters.Parties.Digimons;
 using Backend.Domain.Models.Parties.Digimons;
 using Backend.Events.Converters.Parties.Digimons;
 
-public class InCombatConverterTests
+public class InBattleConverterTests
 {
     [Fact]
     public void ToDTO_ShouldMapConditionVitalsAndAttributeBuffs()
     {
-        var digimonInCombat = new InCombat
+        var digimonInBattle = new InBattle
         {
             Condition = 0x04,
             Strength = 252,
@@ -18,7 +18,7 @@ public class InCombatConverterTests
             MP = new Vital { Current = 900, Max = 1140 }
         };
 
-        var dto = InCombatConverter.ToDTO(digimonInCombat);
+        var dto = InBattleConverter.ToDTO(digimonInBattle);
 
         Assert.Equal(0x04, dto.Condition.Value);
         Assert.Equal(252, dto.Strength.Value);

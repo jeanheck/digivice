@@ -77,7 +77,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReaderMock.Object));
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReaderMock.Object));
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -162,7 +162,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReaderMock.Object));
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReaderMock.Object));
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -208,7 +208,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReaderMock.Object));
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReaderMock.Object));
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -341,7 +341,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReaderMock.Object));
+        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReaderMock.Object));
         var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
         var partyReader = new PartyReader(digimonSlotReader);
 
@@ -368,7 +368,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
-    public void Load_ShouldKeepPersistentVitalsAndPopulateInCombat()
+    public void Load_ShouldKeepPersistentVitalsAndPopulateInBattle()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
@@ -405,14 +405,14 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(500, digimon.HP.Max);
         Assert.Equal(200, digimon.MP.Current);
         Assert.Equal(300, digimon.MP.Max);
-        Assert.Equal(1400, digimon.InCombat.HP.Current);
-        Assert.Equal(1850, digimon.InCombat.HP.Max);
-        Assert.Equal(900, digimon.InCombat.MP.Current);
-        Assert.Equal(1140, digimon.InCombat.MP.Max);
-        Assert.Equal(0x04, digimon.InCombat.Condition);
-        Assert.Equal(252, digimon.InCombat.Strength);
-        Assert.Equal(185, digimon.InCombat.Defense);
-        Assert.Equal(84, digimon.InCombat.Speed);
+        Assert.Equal(1400, digimon.InBattle.HP.Current);
+        Assert.Equal(1850, digimon.InBattle.HP.Max);
+        Assert.Equal(900, digimon.InBattle.MP.Current);
+        Assert.Equal(1140, digimon.InBattle.MP.Max);
+        Assert.Equal(0x04, digimon.InBattle.Condition);
+        Assert.Equal(252, digimon.InBattle.Strength);
+        Assert.Equal(185, digimon.InBattle.Defense);
+        Assert.Equal(84, digimon.InBattle.Speed);
     }
 
     private static PartyLoader CreatePartyLoader(
@@ -422,7 +422,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var digievolutionSlotReader = new DigievolutionSlotReader();
         var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InCombatReader(memoryReader));
+        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReader));
         var digimonSlotReader = new DigimonSlotReader(memoryReader);
         var partyReader = new PartyReader(digimonSlotReader);
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);

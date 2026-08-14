@@ -1,6 +1,6 @@
 namespace Backend.Domain.Models.Parties.Digimons
 {
-    public record class InCombat
+    public record class InBattle
     {
         public int Condition { get; set; }
         public int Strength { get; set; }

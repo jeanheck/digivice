@@ -18,7 +18,7 @@ public class DigimonConverterTests
             ActiveDigievolutionId = 5,
             HP = new Vital { Current = 101, Max = 202 },
             MP = new Vital { Current = 33, Max = 44 },
-            InCombat = new InCombat
+            InBattle = new InBattle
             {
                 Condition = 0x04,
                 Strength = 252,
@@ -57,14 +57,14 @@ public class DigimonConverterTests
         Assert.Equal(202, dto.HP.Value.Max.Value);
         Assert.Equal(33, dto.MP.Value!.Current.Value);
         Assert.Equal(44, dto.MP.Value.Max.Value);
-        Assert.Equal(0x04, dto.InCombat.Value!.Condition.Value);
-        Assert.Equal(252, dto.InCombat.Value.Strength.Value);
-        Assert.Equal(185, dto.InCombat.Value.Defense.Value);
-        Assert.Equal(84, dto.InCombat.Value.Speed.Value);
-        Assert.Equal(90, dto.InCombat.Value.HP.Value!.Current.Value);
-        Assert.Equal(202, dto.InCombat.Value.HP.Value.Max.Value);
-        Assert.Equal(20, dto.InCombat.Value.MP.Value!.Current.Value);
-        Assert.Equal(44, dto.InCombat.Value.MP.Value.Max.Value);
+        Assert.Equal(0x04, dto.InBattle.Value!.Condition.Value);
+        Assert.Equal(252, dto.InBattle.Value.Strength.Value);
+        Assert.Equal(185, dto.InBattle.Value.Defense.Value);
+        Assert.Equal(84, dto.InBattle.Value.Speed.Value);
+        Assert.Equal(90, dto.InBattle.Value.HP.Value!.Current.Value);
+        Assert.Equal(202, dto.InBattle.Value.HP.Value.Max.Value);
+        Assert.Equal(20, dto.InBattle.Value.MP.Value!.Current.Value);
+        Assert.Equal(44, dto.InBattle.Value.MP.Value.Max.Value);
         Assert.Equal(1, dto.Attributes.Value!.Strength.Value);
         Assert.Equal(4, dto.Attributes.Value.Wisdom.Value);
         Assert.Equal(13, dto.Resistances.Value!.Dark.Value);
