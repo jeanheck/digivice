@@ -70,7 +70,7 @@ const handleClose = () => {
 
 const allSearchItems = computed(() => {
   return WikiModalPresenter.getAllSearchItems((dropKey) => {
-    return t(`drops.${dropKey}`);
+    return t(WikiModalPresenter.getDropLabelKey(dropKey));
   });
 });
 

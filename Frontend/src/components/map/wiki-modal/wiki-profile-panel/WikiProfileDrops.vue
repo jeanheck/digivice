@@ -3,6 +3,7 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyDropRaw } from "@/repositories/tables/raws/enemy/enemy-drop.raw";
+import { WikiModalPresenter } from "@/presenters/map/wiki-modal.presenter";
 
 const props = defineProps<{
   enemy: EnemyViewModel;
@@ -41,6 +42,10 @@ const dropFallbackLabel = computed(() => {
 
   return t("drops.none");
 });
+
+const dropLabel = (dropId: string): string => {
+  return t(WikiModalPresenter.getDropLabelKey(dropId));
+};
 
 const locationOnlyLabel = (locationOnly: string): string => {
   return t("enemy.locationOnly", { location: t(`location.${locationOnly}`) });
@@ -82,7 +87,7 @@ const handleDropClick = (drop: EnemyDropRaw): void => {
         class="text-center px-2.5 py-2 rounded text-[9px] 2xl:text-[11px] font-bold tracking-wide transition-colors cursor-pointer bg-amber-900/40 hover:bg-amber-900/60 text-amber-300 border border-amber-300"
         @click="handleDropClick(drop)"
       >
-        <span class="block">{{ $t(`drops.${drop.id}`) }}</span>
+        <span class="block">{{ dropLabel(drop.id) }}</span>
         <span class="block min-h-3 text-[9px] font-normal text-gray-300 leading-tight">
           {{ drop.locationOnly ? locationOnlyLabel(drop.locationOnly) : "" }}
         </span>

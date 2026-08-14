@@ -16,7 +16,7 @@ const emit = defineEmits<{
 const { t } = useI18n();
 
 const dropLabel = computed(() => {
-  return t(`drops.${props.dropId}`);
+  return t(WikiModalPresenter.getDropLabelKey(props.dropId));
 });
 
 const dropType = computed(() => {
