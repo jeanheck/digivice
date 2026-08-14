@@ -13,8 +13,20 @@ export class WikiModalPresenter {
 
   public static getDropLabelKey(dropKey: string): string {
     const dropRaw = DropRepository.getDropByKey(dropKey);
-    if (dropRaw?.type === "booster") {
+    if (dropRaw === undefined) {
+      return `drops.${dropKey}`;
+    }
+
+    if (dropRaw.type === "booster") {
       return `boosters.${dropKey}`;
+    }
+
+    if (dropRaw.type === "equipment") {
+      return `equipments.${dropRaw.id}.name`;
+    }
+
+    if (dropRaw.type === "consumableItem") {
+      return `consumableItems.${dropRaw.id}.name`;
     }
 
     return `drops.${dropKey}`;
