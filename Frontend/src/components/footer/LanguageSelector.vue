@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import usFlag from "@/assets/icons/flags/us.png";
-import usFlag2x from "@/assets/icons/flags/us@2x.png";
-import brFlag from "@/assets/icons/flags/br.png";
-import brFlag2x from "@/assets/icons/flags/br@2x.png";
+import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 
 const { locale } = useI18n();
+
+const usFlag = ImageCatalog.getFlagIconUrls("us")!;
+const brFlag = ImageCatalog.getFlagIconUrls("br")!;
 
 const setLocale = (newLocale: string) => {
   locale.value = newLocale;
@@ -24,7 +24,7 @@ const setLocale = (newLocale: string) => {
       }"
       title="English"
     >
-      <img :src="usFlag" :srcset="`${usFlag2x} 2x`" width="20" alt="US" class="block" />
+      <img :src="usFlag.src" :srcset="`${usFlag.src2x} 2x`" width="20" alt="US" class="block" />
     </button>
     <button
       @click="setLocale('pt-BR')"
@@ -35,7 +35,7 @@ const setLocale = (newLocale: string) => {
       }"
       title="Português"
     >
-      <img :src="brFlag" :srcset="`${brFlag2x} 2x`" width="20" alt="BR" class="block" />
+      <img :src="brFlag.src" :srcset="`${brFlag.src2x} 2x`" width="20" alt="BR" class="block" />
     </button>
   </div>
 </template>
