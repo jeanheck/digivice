@@ -40,6 +40,26 @@ const isProfileView = computed(() => {
   return view.value === "profile";
 });
 
+const isLocationsView = computed(() => {
+  return view.value === "locations";
+});
+
+const modalMaxWidth = computed(() => {
+  if (isLocationsView.value) {
+    return "max-w-[1300px]";
+  }
+
+  return "max-w-450";
+});
+
+const modalPanelClass = computed(() => {
+  if (isLocationsView.value) {
+    return "w-[1300px]";
+  }
+
+  return "w-[98vw]";
+});
+
 const handleClose = () => {
   emit("close");
 };
@@ -128,9 +148,9 @@ const enemyImageUrl = computed(() => {
 <template>
   <Modal
     :is-open="isModalOpen"
-    max-width="max-w-450"
+    :max-width="modalMaxWidth"
     max-height="h-[92vh] max-h-250"
-    panel-class="w-[98vw]"
+    :panel-class="modalPanelClass"
     @close="handleClose"
   >
     <template #header>

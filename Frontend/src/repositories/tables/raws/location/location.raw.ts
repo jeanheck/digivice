@@ -1,4 +1,5 @@
 import type { LocationRegionConstant } from "@/constants/location-region.constant";
+import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 
 export interface LocationEnemyPhaseRaw {
   lastMainQuestStepDone: number;
@@ -16,6 +17,7 @@ export interface LocationEnemiesRaw {
 
 export interface LocationRaw {
   imageName: string;
+  coordinates?: CoordinatesRaw;
   enemies?: LocationEnemiesRaw;
   region?: LocationRegionConstant;
   dock?: boolean;

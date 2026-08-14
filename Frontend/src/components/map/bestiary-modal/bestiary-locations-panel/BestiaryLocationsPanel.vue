@@ -2,11 +2,13 @@
 import { computed, nextTick, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
+import MapDetailsFrame from "@/components/map-details-frame/MapDetailsFrame.vue";
 import { LocationRepository } from "@/repositories/location.repository";
 import type {
   EnemyLocationRaw,
   EnemyLocationSource,
 } from "@/repositories/tables/raws/enemy/enemy-location.raw";
+import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const LOCATION_SOURCE_EMOJI: Record<EnemyLocationSource, string> = {
@@ -104,6 +106,18 @@ const selectedLocationImageUrl = computed(() => {
   return ImageCatalog.getLocationImageUrl(locationRaw.imageName);
 });
 
+const asukaCoordinates = computed((): CoordinatesViewModel | null => {
+  if (selectedEntry.value === null) {
+    return null;
+  }
+
+  return LocationRepository.getLocationById(selectedEntry.value.id).coordinates ?? null;
+});
+
+const localCoordinates = computed((): CoordinatesViewModel | null => {
+  return selectedEntry.value?.localCoordinates ?? null;
+});
+
 const selectEntry = (entry: EnemyLocationRaw): void => {
   selectedId.value = entry.id;
 };
@@ -147,28 +161,23 @@ const sourceEmoji = (source: EnemyLocationSource): string => {
       </div>
     </div>
 
-    <div class="flex-1 min-h-0 grid grid-cols-2 gap-4">
-      <div
-        class="min-h-0 bg-[#000a1a] border border-blue-900/50 rounded p-3 shadow-inner flex items-center justify-center overflow-hidden"
-      >
-        <img
-          v-if="asukaMapImageUrl"
-          :src="asukaMapImageUrl"
-          alt="Asuka"
-          class="max-w-full max-h-full object-contain"
-        />
-      </div>
+    <div class="flex-1 min-h-0 flex gap-4 items-center justify-center overflow-hidden">
+      <MapDetailsFrame
+        v-if="asukaMapImageUrl"
+        :image-url="asukaMapImageUrl"
+        :coordinates="asukaCoordinates"
+      />
 
+      <MapDetailsFrame
+        v-if="selectedLocationImageUrl"
+        :image-url="selectedLocationImageUrl"
+        :coordinates="localCoordinates"
+      />
       <div
-        class="min-h-0 bg-[#000a1a] border border-blue-900/50 rounded p-3 shadow-inner flex items-center justify-center overflow-hidden"
+        v-else
+        class="flex items-center justify-center min-h-0 px-8"
       >
-        <img
-          v-if="selectedLocationImageUrl"
-          :src="selectedLocationImageUrl"
-          :alt="selectedEntry ? t(`location.${selectedEntry.id}`) : ''"
-          class="max-w-full max-h-full object-contain"
-        />
-        <span v-else class="text-xs text-gray-500 font-bold tracking-wide">
+        <span class="text-xs text-gray-500 font-bold tracking-wide">
           {{ selectedEntry ? t(`location.${selectedEntry.id}`) : "" }}
         </span>
       </div>
