@@ -55,6 +55,7 @@ user first).
 | Digimon | `Parties/DigimonStatusAddresses.json` (+ slot bases in `DigimonsAddresses.json`) | `DigimonStatusAddresses` / `DigimonAddress` | `DigimonLoader` | `DigimonReader` | `DigimonResource` | `Digimon` | `DigimonDiffer` / `DigimonDTO` | `PartyChanged` |
 | Party | `PartyAddresses.json` | `PartyAddresses` | `PartyLoader` | `PartyReader` | `PartyResource` | `Party` | party differs / DTOs | `PartyChanged` |
 | Auction | `AuctionAddresses.json` | `AuctionAddresses` | `AuctionLoader` | `AuctionReader` | auction resources | `Auction` | `AuctionDiffer` / `AuctionDTO` | auction events |
+| Battle / Enemy | `EnemyAddresses.json` | `EnemyAddresses` | `BattleLoader` | `EnemyReader` | `EnemyResource` | `Enemy` (via `Battle`) | `EnemyDiffer` / `EnemyDTO` (via `BattleDiffer` / `BattleDTO`) | `BattleChanged` |
 
 Paths root: `Backend/Memory/Definitions/`, `Backend/Memory/Addresses/`,
 `Backend/Application/Loaders/`, `Backend/Memory/Readers/`, `Backend/Memory/Resources/`,

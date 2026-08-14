@@ -10,7 +10,7 @@ namespace Backend.Application.Loaders
         {
             return new BattleResource
             {
-                Enemy = enemyReader.Read(addressesRepository.GetBattleAddresses())
+                Enemy = enemyReader.Read(addressesRepository.GetEnemyAddresses())
             };
         }
     }

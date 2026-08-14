@@ -274,9 +274,9 @@ across all three — only the active marker moved.
 |---------|------|----------|
 | `0xA4468` | Active ally slot index (0/1/2) | `0→1→2` when switching Kotemon→Patamon→Renamon |
 | `0xA4558` | Active unit id | `386→234→375` (Dinohumon→Angewomon→Taomon) |
-| slot `+0x10` | **STR buff delta** | Ally: `dinohumon-buffed` `0xA4480` `0→252` (= combat STR gain). Wired as `InCombat.Strength` in `InCombatAddresses.json` |
-| slot `+0x12` | **DEF buff delta** | Ally: `growlmon-normal`→`def-up` `0xA4482` `0→185` (= combat DEF `494→679`). Wired as `InCombat.Defense` |
-| slot `+0x14` | **SPD buff delta** | Enemy: `hagurumon-1`→`2` `0xA44E4` `0→84` (= combat SPD `336→420`). Ally offset same; party wired as `InCombat.Speed` |
+| slot `+0x10` | **STR buff delta** | Ally: `dinohumon-buffed` `0xA4480` `0→252` (= combat STR gain). Wired as `InBattle.Strength` in `InBattleAddresses.json` |
+| slot `+0x12` | **DEF buff delta** | Ally: `growlmon-normal`→`def-up` `0xA4482` `0→185` (= combat DEF `494→679`). Wired as `InBattle.Defense` |
+| slot `+0x14` | **SPD buff delta** | Enemy: `hagurumon-1`→`2` `0xA44E4` `0→84` (= combat SPD `336→420`). Ally offset same; party wired as `InBattle.Speed` |
 
 Pre-battle (`out-combat-west-1`): table zeroed. Post-battle (`out-west-2`) may
 still hold last values briefly (enemy current 0, ally current 1400).
@@ -481,8 +481,8 @@ Growlmon fingerprint L99 / STR 659 / SPD 632:
 | Ally0 MP Current (`+0x0C`) | 5566 | 5524 (−42 skill cost) |
 
 **Fixed-slot attr buff deltas (confirmed trio), Int16 LE per battle slot** —
-wired on ally party slots via `Parties/InCombatAddresses.json` (`Strength` /
-`Defense` / `Speed` → Digimon `InCombat`):
+wired on ally party slots via `Parties/InBattleAddresses.json` (`Strength` /
+`Defense` / `Speed` → Digimon `InBattle`):
 
 | Offset | Field |
 |--------|-------|
@@ -491,7 +491,7 @@ wired on ally party slots via `Parties/InCombatAddresses.json` (`Strength` /
 | `+0x14` | SPD delta |
 
 Same offsets on enemy `0xA44D0` — wired as top-level `State.Battle.Enemy` via
-`BattleAddresses.json` (`BattleChanged` / InitialState).
+`EnemyAddresses.json` (`BattleChanged` / InitialState).
 
 ### Field skill (element strengthen / weaken) — **not** in combat attr Int16s
 
@@ -582,7 +582,7 @@ Ally battle slot offset **`+0x1C`** (byte). Guilmon party slot 0 → `0xA448C`.
 Only the active Guilmon slot changed; other ally slots stayed 0.
 Looks like a **bitfield** (poison bit0, confuse bit2) or enum powers-of-two.
 Secondary noise on confuse snap: `+0x1F` `0x00→0x50` (unknown — timer?).
-Wired as nested Digimon `InCombat.Condition` (`byte`) via `InCombatAddresses` / `DigimonLoader`.
+Wired as nested Digimon `InBattle.Condition` (`byte`) via `InBattleAddresses` / `DigimonLoader`.
 
 ---
 

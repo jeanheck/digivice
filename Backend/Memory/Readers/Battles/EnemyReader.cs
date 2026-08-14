@@ -6,7 +6,7 @@ namespace Backend.Memory.Readers.Battles
 {
     public class EnemyReader(IMemoryReader memoryReader) : IEnemyReader
     {
-        public EnemyResource Read(BattleAddresses addresses)
+        public EnemyResource Read(EnemyAddresses addresses)
         {
             var slotBase = addresses.EnemySlotBase;
 

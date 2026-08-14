@@ -4,7 +4,7 @@ using Backend.Memory.Converters;
 
 namespace Backend.Memory.Addresses
 {
-    public class BattleAddresses
+    public class EnemyAddresses
     {
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long EnemySlotBase { get; set; }

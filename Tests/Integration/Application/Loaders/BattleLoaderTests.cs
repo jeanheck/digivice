@@ -9,7 +9,7 @@ using Xunit;
 public class BattleLoaderTests : LoaderIntegrationTestBase
 {
     [Fact]
-    public void Load_ShouldReadEnemyFromBattleAddresses()
+    public void Load_ShouldReadEnemyFromEnemyAddresses()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();

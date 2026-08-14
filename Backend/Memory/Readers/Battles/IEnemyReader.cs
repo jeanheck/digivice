@@ -5,6 +5,6 @@ namespace Backend.Memory.Readers.Battles
 {
     public interface IEnemyReader
     {
-        EnemyResource Read(BattleAddresses addresses);
+        EnemyResource Read(EnemyAddresses addresses);
     }
 }
