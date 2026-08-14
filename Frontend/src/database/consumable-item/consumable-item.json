@@ -1,93 +1,118 @@
 {
   "400": {
-    "resaleValue": 0
+    "resaleValue": 1000,
+    "soldInStore": false
   },
   "401": {
-    "resaleValue": 0
+    "resaleValue": 1950,
+    "soldInStore": false
   },
   "402": {
-    "resaleValue": 0
+    "resaleValue": 250,
+    "soldInStore": false
   },
   "403": {
-    "resaleValue": 0
+    "resaleValue": 1400,
+    "soldInStore": false
   },
   "404": {
-    "resaleValue": 0
+    "resaleValue": 1150,
+    "soldInStore": false
   },
   "405": {
-    "resaleValue": 0
+    "resaleValue": 2400,
+    "soldInStore": false
   },
   "406": {
-    "resaleValue": 0
+    "resaleValue": 1100,
+    "soldInStore": false
   },
   "407": {
-    "resaleValue": 0,
-    "soldInStore": true
+    "resaleValue": 200,
+    "soldInStore": false
   },
   "408": {
-    "resaleValue": 0
+    "resaleValue": 1300,
+    "soldInStore": false
   },
   "409": {
-    "resaleValue": 0
+    "resaleValue": 1200,
+    "soldInStore": false
   },
   "410": {
-    "resaleValue": 0
+    "resaleValue": 3000,
+    "soldInStore": false
   },
   "411": {
-    "resaleValue": 0,
+    "resaleValue": 6,
     "soldInStore": true
   },
   "412": {
-    "resaleValue": 0
+    "resaleValue": 1250,
+    "soldInStore": false
   },
   "413": {
-    "resaleValue": 0
+    "resaleValue": 80,
+    "soldInStore": false
   },
   "414": {
-    "resaleValue": 0,
+    "resaleValue": 60,
     "soldInStore": true
   },
   "415": {
-    "resaleValue": 0
+    "resaleValue": 950,
+    "soldInStore": false
   },
   "416": {
-    "resaleValue": 0
+    "resaleValue": 20,
+    "soldInStore": false
   },
   "417": {
-    "resaleValue": 0
+    "resaleValue": 400,
+    "soldInStore": false
   },
   "418": {
-    "resaleValue": 0
+    "resaleValue": 700,
+    "soldInStore": false
   },
   "419": {
-    "resaleValue": 0
+    "resaleValue": 1000,
+    "soldInStore": false
   },
   "420": {
-    "resaleValue": 0
+    "resaleValue": 1600,
+    "soldInStore": false
   },
   "421": {
-    "resaleValue": 0,
+    "resaleValue": 130,
     "soldInStore": true
   },
   "422": {
-    "resaleValue": 0
+    "resaleValue": 1100,
+    "soldInStore": false
   },
   "423": {
-    "resaleValue": 0
+    "resaleValue": 900,
+    "soldInStore": false
   },
   "424": {
-    "resaleValue": 0
+    "resaleValue": 1050,
+    "soldInStore": false
   },
   "425": {
-    "resaleValue": 0
+    "resaleValue": 100,
+    "soldInStore": false
   },
   "426": {
-    "resaleValue": 0
+    "resaleValue": 10,
+    "soldInStore": false
   },
   "427": {
-    "resaleValue": 0
+    "resaleValue": 20,
+    "soldInStore": false
   },
   "428": {
-    "resaleValue": 0
+    "resaleValue": 15,
+    "soldInStore": false
   }
 }

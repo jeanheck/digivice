@@ -2,119 +2,137 @@
   "consumableItems": {
     "400": {
       "name": "Chip Armadura",
-      "note": ""
+      "note": "Aumenta a defesa.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "401": {
-      "name": "Boost Chip",
-      "note": ""
+      "name": "Chip Velocidade",
+      "note": "Aumenta a velocidade.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "402": {
-      "name": "Charisma Chip",
-      "note": ""
+      "name": "Chip Carisma",
+      "note": "Aumenta a carisma.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "403": {
-      "name": "Devil Chip",
-      "note": ""
+      "name": "Chip Malígno",
+      "note": "Aumenta a tolerância às trevas.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "404": {
       "name": "Chip Fogo",
-      "note": ""
+      "note": "Aumenta a tolerância à fogo.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "405": {
-      "name": "HP Chip",
-      "note": ""
+      "name": "Chip HP",
+      "note": "Aumenta HP máximo.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 30."
     },
     "406": {
-      "name": "Ice Chip",
-      "note": ""
+      "name": "Chip Gelo",
+      "note": "Aumenta a tolerância ao Gelo.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "407": {
-      "name": "Max Charge",
-      "note": ""
+      "name": "Carga Máxima",
+      "note": "Cura HP no Máximo."
     },
     "408": {
-      "name": "Metal Chip",
-      "note": ""
+      "name": "Chip Mecânico",
+      "note": "Aumenta a tolerância à máquina.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "409": {
-      "name": "Mind Chip",
-      "note": ""
+      "name": "Chip Mental",
+      "note": "Aumenta o espírito.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "410": {
       "name": "Chip MP",
-      "note": ""
+      "note": "Aumenta o MP máximo.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 30."
     },
     "411": {
       "name": "Carga Energia",
-      "note": ""
+      "note": "Cura o HP em 500."
     },
     "412": {
       "name": "Chip Poder",
-      "note": ""
+      "note": "Aumenta a velocidae.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "413": {
       "name": "Teia de Aranha",
-      "note": ""
+      "note": "Dificulta os movimentos com uma teia de aranha.",
+      "additionalInformation": ""
     },
     "414": {
       "name": "Super Carga",
-      "note": ""
+      "note": "Cura o HP em 2000."
     },
     "415": {
       "name": "Chip Elétrico",
-      "note": ""
+      "note": "Aumenta a tolerância ao trovão.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "416": {
       "name": "Bola TNT",
-      "note": ""
+      "note": "Explosão causada por bloqueio de pólvora.",
+      "additionalInformation": ""
     },
     "417": {
-      "name": "Train Chip 1",
-      "note": ""
+      "name": "Chip de Treino 1",
+      "note": "Aumenta a PT em 1."
     },
     "418": {
-      "name": "Train Chip 2",
-      "note": ""
+      "name": "Chip de Treino 2",
+      "note": "Aumenta a PT em 2."
     },
     "419": {
-      "name": "Train Chip 3",
-      "note": ""
+      "name": "Chip de Treino 3",
+      "note": "Aumenta a PT em 3."
     },
     "420": {
-      "name": "Train Chip V",
-      "note": ""
+      "name": "Chip de Treino V",
+      "note": "Aumenta a PT em 5."
     },
     "421": {
-      "name": "Ultra Charge",
-      "note": ""
+      "name": "Ultra Carga",
+      "note": "Cura o HP em 5000."
     },
     "422": {
       "name": "Chip Aquático",
-      "note": ""
+      "note": "Aumenta a tolerância à água.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "423": {
-      "name": "Wind Chip",
-      "note": ""
+      "name": "Chip Vento",
+      "note": "Aumenta a tolerância ao vento.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "424": {
       "name": "Chip Sabedoria",
-      "note": ""
+      "note": "Aumenta a sabedoria.",
+      "additionalInformation": "O valor aumentado é aleatório. Varia entre 1 e 10."
     },
     "425": {
       "name": "Onda Caos",
-      "note": ""
+      "note": "Confunde um aliado ás vezes.",
+      "additionalInformation": ""
     },
     "426": {
-      "name": "Charm Gas",
-      "note": ""
+      "name": "Feitiço de Gás",
+      "note": "Diminui a defesa do inimigo."
     },
     "427": {
       "name": "Crimson Cable",
-      "note": ""
+      "note": "Absorte a HP do inimigo."
     },
     "428": {
-      "name": "Cursed Puppet",
-      "note": ""
+      "name": "Fantoche Maldito",
+      "note": "Diminui o poder de ataque e defesa do inimigo."
     }
   }
 }
