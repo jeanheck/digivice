@@ -99,7 +99,7 @@ const handleSearchSelect = (id: string) => {
       <template v-if="filteredItems.length > 0">
         <div
           v-for="item in filteredItems"
-          :key="item.id"
+          :key="`${item.kind}-${item.id}`"
           class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors border-b last:border-b-0 border-[#0055ff]/20"
           @mousedown.prevent="handleSearchSelect(item.id)"
         >

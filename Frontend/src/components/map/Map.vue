@@ -2,7 +2,7 @@
 import AsukaServerMap from "./asuka-server-map/AsukaServerMap.vue";
 import SeabedMap from "./seabed-map/SeabedMap.vue";
 import MobiusDesertMap from "./mobius-desert-map/MobiusDesertMap.vue";
-import BestiaryModal from "@/components/map/bestiary-modal/BestiaryModal.vue";
+import WikiModal from "@/components/map/wiki-modal/WikiModal.vue";
 import { computed, ref } from "vue";
 import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { useGameStore } from "@/stores/use-game-store";
@@ -18,16 +18,16 @@ const mapViewModel = computed(() => {
   return MapPresenter.getByLocationId(locationId.value);
 });
 
-const isBestiaryModalOpen = ref(false);
+const isWikiModalOpen = ref(false);
 const selectedEnemyId = ref<string | null>(null);
 
-const openBestiaryModal = (enemyId: string) => {
+const openWikiModal = (enemyId: string) => {
   selectedEnemyId.value = enemyId;
-  isBestiaryModalOpen.value = true;
+  isWikiModalOpen.value = true;
 };
 
-const closeBestiaryModal = () => {
-  isBestiaryModalOpen.value = false;
+const closeWikiModal = () => {
+  isWikiModalOpen.value = false;
   selectedEnemyId.value = null;
 };
 </script>
@@ -52,18 +52,18 @@ const closeBestiaryModal = () => {
 
     <SeabedMap
       v-if="mapViewModel.locationRegion === LocationRegionConstant.seabed"
-      @open-enemy-modal="openBestiaryModal"
+      @open-enemy-modal="openWikiModal"
     />
     <MobiusDesertMap
       v-else-if="mapViewModel.locationRegion === LocationRegionConstant.mobiusDesert"
-      @open-enemy-modal="openBestiaryModal"
+      @open-enemy-modal="openWikiModal"
     />
-    <AsukaServerMap v-else @open-enemy-modal="openBestiaryModal" />
+    <AsukaServerMap v-else @open-enemy-modal="openWikiModal" />
 
-    <BestiaryModal
-      :is-open="isBestiaryModalOpen"
+    <WikiModal
+      :is-open="isWikiModalOpen"
       :enemy-id="selectedEnemyId"
-      @close="closeBestiaryModal"
+      @close="closeWikiModal"
     />
   </aside>
 </template>

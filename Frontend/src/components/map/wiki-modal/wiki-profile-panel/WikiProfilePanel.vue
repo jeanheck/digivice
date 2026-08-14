@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import BestiaryProfileImage from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileImage.vue";
-import BestiaryProfileResume from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileResume.vue";
-import BestiaryProfileTechniques from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileTechniques.vue";
-import BestiaryProfileAttributes from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileAttributes.vue";
-import BestiaryProfileElements from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileElements.vue";
-import BestiaryProfileConditions from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileConditions.vue";
-import BestiaryProfileDrops from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfileDrops.vue";
+import WikiProfileImage from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileImage.vue";
+import WikiProfileResume from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileResume.vue";
+import WikiProfileTechniques from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileTechniques.vue";
+import WikiProfileAttributes from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileAttributes.vue";
+import WikiProfileElements from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileElements.vue";
+import WikiProfileConditions from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileConditions.vue";
+import WikiProfileDrops from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileDrops.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 defineProps<{
@@ -44,12 +44,12 @@ const forwardHideStatTooltip = (): void => {
     class="p-4 grid grid-cols-2 grid-rows-[24rem_1fr] gap-4 h-full min-h-0 overflow-y-auto custom-scroll"
   >
     <div class="flex gap-4 h-full min-h-0">
-      <BestiaryProfileImage
+      <WikiProfileImage
         class="w-1/2 shrink-0"
         :enemy-image-url="enemyImageUrl"
         :enemy-name="enemy.name"
       />
-      <BestiaryProfileResume
+      <WikiProfileResume
         class="w-1/2"
         :enemy="enemy"
         @open-locations="emit('open-locations')"
@@ -59,19 +59,19 @@ const forwardHideStatTooltip = (): void => {
     <div
       class="h-full min-h-0 overflow-y-auto custom-scroll bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 items-start"
     >
-      <BestiaryProfileAttributes
+      <WikiProfileAttributes
         :attributes="enemy.attributes"
         @show-stat-key-tooltip="forwardStatKeyTooltip"
         @move-stat-tooltip="forwardMoveStatTooltip"
         @hide-stat-tooltip="forwardHideStatTooltip"
       />
-      <BestiaryProfileElements
+      <WikiProfileElements
         :elements="enemy.elements"
         @show-stat-key-tooltip="forwardStatKeyTooltip"
         @move-stat-tooltip="forwardMoveStatTooltip"
         @hide-stat-tooltip="forwardHideStatTooltip"
       />
-      <BestiaryProfileConditions
+      <WikiProfileConditions
         :conditions="enemy.conditions"
         @show-condition-tooltip="forwardConditionTooltip"
         @move-stat-tooltip="forwardMoveStatTooltip"
@@ -79,7 +79,7 @@ const forwardHideStatTooltip = (): void => {
       />
     </div>
 
-    <BestiaryProfileTechniques :enemy="enemy" />
-    <BestiaryProfileDrops :enemy="enemy" @open-drops="emit('open-drops', $event)" />
+    <WikiProfileTechniques :enemy="enemy" />
+    <WikiProfileDrops :enemy="enemy" @open-drops="emit('open-drops', $event)" />
   </div>
 </template>

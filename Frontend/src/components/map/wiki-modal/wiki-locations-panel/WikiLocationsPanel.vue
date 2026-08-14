@@ -75,7 +75,7 @@ watch(
     });
 
     if (!stillSelected) {
-      selectedId.value = entries[0].id;
+      selectedId.value = entries[0]?.id ?? null;
     }
   },
   { immediate: true },

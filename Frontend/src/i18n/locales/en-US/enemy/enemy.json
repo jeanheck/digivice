@@ -1,13 +1,15 @@
 {
   "enemy": {
-    "bestiary": "Bestiary",
+    "wiki": "Wiki",
     "modalTitle": {
-      "profile": "Bestiary - Profile",
-      "locations": "Bestiary - Locations",
-      "drops": "Bestiary - Drops"
+      "profile": "Wiki - Profile",
+      "locations": "Wiki - Locations",
+      "drops": "Wiki - Drops"
     },
-    "searchPlaceholder": "Type an enemy name...",
-    "searchNoResults": "No enemy found",
+    "searchPlaceholder": "Type an enemy or drop name...",
+    "searchNoResults": "No results found",
+    "droppedBy": "Dropped by",
+    "droppedByNone": "No known enemies",
     "level": "Level",
     "specie": "Specie",
     "drop": "Drop",

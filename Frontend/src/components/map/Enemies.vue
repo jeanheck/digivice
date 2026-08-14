@@ -33,7 +33,7 @@ const hasMapThreatEnemies = computed(() => {
   return props.enemyIds.length > 0 || props.bossIds.length > 0;
 });
 
-const openBestiaryModal = (enemyId: string) => {
+const openWikiModal = (enemyId: string) => {
   emit("open-enemy-modal", enemyId);
 };
 </script>
@@ -55,7 +55,7 @@ const openBestiaryModal = (enemyId: string) => {
               ? 'text-amber-400 hover:text-amber-200 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]'
               : 'text-red-400 hover:text-red-200 drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]'
           "
-          @click="openBestiaryModal(enemy.id)"
+          @click="openWikiModal(enemy.id)"
         >
           <span>{{ enemy.name }}</span>
           <span v-if="enemy.walking && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">🏃‍➡️</span>

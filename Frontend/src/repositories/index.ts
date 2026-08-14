@@ -1,6 +1,8 @@
 export { AuctionRepository } from "./auction.repository";
+export { DropRepository } from "./drop.repository";
 export { EquipmentRepository } from "./equipment.repository";
 export { DigimonRepository } from "./digimon.repository";
+export { EnemyRepository } from "./enemy.repository";
 export { DigievolutionRepository } from "./digievolution.repository";
 export { QuestRepository } from "./quest.repository";
 export { LocationRepository } from "./location.repository";

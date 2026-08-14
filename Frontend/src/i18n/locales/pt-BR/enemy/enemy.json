@@ -1,13 +1,15 @@
 {
   "enemy": {
-    "bestiary": "Bestiário",
+    "wiki": "Wiki",
     "modalTitle": {
-      "profile": "Bestiário - Perfil",
-      "locations": "Bestiário - Localizações",
-      "drops": "Bestiário - Drops"
+      "profile": "Wiki - Perfil",
+      "locations": "Wiki - Localizações",
+      "drops": "Wiki - Drops"
     },
-    "searchPlaceholder": "Digite o nome de um inimigo...",
-    "searchNoResults": "Nenhum inimigo encontrado",
+    "searchPlaceholder": "Digite o nome de um inimigo ou drop...",
+    "searchNoResults": "Nenhum resultado encontrado",
+    "droppedBy": "Dropado por",
+    "droppedByNone": "Nenhum inimigo conhecido",
     "level": "Nível",
     "specie": "Espécie",
     "drop": "Drop",

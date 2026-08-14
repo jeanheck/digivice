@@ -2,14 +2,14 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import BestiaryProfilePanel from "@/components/map/bestiary-modal/bestiary-profile-panel/BestiaryProfilePanel.vue";
-import BestiaryDropsPanel from "@/components/map/bestiary-modal/bestiary-drops-panel/BestiaryDropsPanel.vue";
-import BestiaryLocationsPanel from "@/components/map/bestiary-modal/bestiary-locations-panel/BestiaryLocationsPanel.vue";
+import WikiProfilePanel from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfilePanel.vue";
+import WikiDropsPanel from "@/components/map/wiki-modal/wiki-drops-panel/WikiDropsPanel.vue";
+import WikiLocationsPanel from "@/components/map/wiki-modal/wiki-locations-panel/WikiLocationsPanel.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import { BestiaryModalPresenter } from "@/presenters/map/bestiary-modal.presenter";
+import { WikiModalPresenter } from "@/presenters/map/wiki-modal.presenter";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -22,18 +22,14 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-type BestiaryView = "profile" | "drops" | "locations";
+type WikiView = "profile" | "drops" | "locations";
 
 const selectedEnemyId = ref<string | null>(null);
 const selectedDropId = ref<string | null>(null);
-const view = ref<BestiaryView>("profile");
+const view = ref<WikiView>("profile");
 
 const isModalOpen = computed(() => {
-  return props.isOpen && selectedEnemyId.value !== null;
-});
-
-const modalTitle = computed(() => {
-  return t(`enemy.modalTitle.${view.value}`);
+  return props.isOpen && (selectedEnemyId.value !== null || selectedDropId.value !== null);
 });
 
 const isProfileView = computed(() => {
@@ -42,6 +38,14 @@ const isProfileView = computed(() => {
 
 const isLocationsView = computed(() => {
   return view.value === "locations";
+});
+
+const isDropsView = computed(() => {
+  return view.value === "drops";
+});
+
+const canBackToProfile = computed(() => {
+  return selectedEnemyId.value !== null && !isProfileView.value;
 });
 
 const modalMaxWidth = computed(() => {
@@ -64,10 +68,39 @@ const handleClose = () => {
   emit("close");
 };
 
+const allSearchItems = computed(() => {
+  return WikiModalPresenter.getAllSearchItems((dropKey) => {
+    return t(`drops.${dropKey}`);
+  });
+});
+
+const selectedSearchId = computed(() => {
+  if (isDropsView.value && selectedDropId.value !== null) {
+    return selectedDropId.value;
+  }
+
+  return selectedEnemyId.value ?? undefined;
+});
+
 const handleSearchSelect = (id: string) => {
-  selectedEnemyId.value = id;
-  selectedDropId.value = null;
-  view.value = "profile";
+  const searchItem = allSearchItems.value.find((item) => {
+    return item.id === id;
+  });
+  if (searchItem === undefined) {
+    return;
+  }
+
+  if (searchItem.kind === "enemy") {
+    selectedEnemyId.value = id;
+    selectedDropId.value = null;
+    view.value = "profile";
+    return;
+  }
+
+  if (searchItem.kind === "drop") {
+    selectedDropId.value = id;
+    view.value = "drops";
+  }
 };
 
 const openDropsView = (dropId: string) => {
@@ -82,14 +115,26 @@ const openLocationsView = () => {
 };
 
 const backToProfileView = () => {
+  if (selectedEnemyId.value === null) {
+    return;
+  }
+
   selectedDropId.value = null;
   view.value = "profile";
 };
 
-const allSearchItems = BestiaryModalPresenter.getAllSearchItems();
+const openEnemyFromDropSource = (enemyId: string) => {
+  selectedEnemyId.value = enemyId;
+  selectedDropId.value = null;
+  view.value = "profile";
+};
 
 const enemy = computed(() => {
-  return BestiaryModalPresenter.getEnemyById(selectedEnemyId.value!);
+  if (selectedEnemyId.value === null) {
+    return null;
+  }
+
+  return WikiModalPresenter.getEnemyById(selectedEnemyId.value);
 });
 
 const tooltipPlacement = "below" as const;
@@ -132,15 +177,11 @@ watch(
   },
 );
 
-watch(selectedEnemyId, () => {
-  selectedDropId.value = null;
-  view.value = "profile";
-});
-
 const enemyImageUrl = computed(() => {
-  if (selectedEnemyId.value === null) {
+  if (enemy.value === null) {
     return null;
   }
+
   return ImageCatalog.getEnemyIconUrl(enemy.value.name);
 });
 </script>
@@ -157,7 +198,7 @@ const enemyImageUrl = computed(() => {
       <div class="flex items-center gap-6 flex-1 min-w-0">
         <div class="flex items-center gap-2 shrink-0 min-w-0">
           <span
-            v-if="isProfileView"
+            v-if="isProfileView || !canBackToProfile"
             class="text-[1.2rem] leading-none grayscale select-none"
             aria-hidden="true"
           >
@@ -173,13 +214,13 @@ const enemyImageUrl = computed(() => {
             <span class="inline-flex leading-none text-[1.2rem] -translate-y-0.5">⬅️</span>
           </button>
           <h2 class="text-white font-bold tracking-widest drop-shadow whitespace-nowrap">
-            {{ t(`enemy.bestiary`) }}
+            {{ t(`enemy.wiki`) }}
           </h2>
         </div>
 
         <SearchBar
           :items="allSearchItems"
-          :selected-id="selectedEnemyId ?? undefined"
+          :selected-id="selectedSearchId"
           :placeholder="t('enemy.searchPlaceholder')"
           :no-results-label="t('enemy.searchNoResults')"
           @select="handleSearchSelect"
@@ -187,8 +228,8 @@ const enemyImageUrl = computed(() => {
       </div>
     </template>
 
-    <BestiaryProfilePanel
-      v-if="view === 'profile'"
+    <WikiProfilePanel
+      v-if="view === 'profile' && enemy !== null"
       :enemy="enemy"
       :enemy-image-url="enemyImageUrl"
       @open-drops="openDropsView"
@@ -198,13 +239,13 @@ const enemyImageUrl = computed(() => {
       @move-stat-tooltip="moveEnemyStatTooltip"
       @hide-stat-tooltip="hideEnemyStatTooltip"
     />
-    <BestiaryDropsPanel
-      v-else-if="view === 'drops'"
-      :enemy="enemy"
-      :initial-drop-id="selectedDropId"
+    <WikiDropsPanel
+      v-else-if="view === 'drops' && selectedDropId !== null"
+      :drop-id="selectedDropId"
+      @open-enemy="openEnemyFromDropSource"
     />
-    <BestiaryLocationsPanel
-      v-else
+    <WikiLocationsPanel
+      v-else-if="enemy !== null"
       :enemy="enemy"
     />
   </Modal>

@@ -19,7 +19,7 @@ const enemyDrops = computed((): EnemyDropRaw[] => {
 });
 
 const isVariousBoosterOnly = computed(() => {
-  return enemyDrops.value.length === 1 && enemyDrops.value[0].id === "variousBooster";
+  return enemyDrops.value.length === 1 && enemyDrops.value[0]?.id === "variousBooster";
 });
 
 const hasInteractiveDrops = computed(() => {
