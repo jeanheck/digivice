@@ -53,20 +53,20 @@ const location = computed(() => {
   return store.currentState?.player?.location ?? null;
 });
 
-const isInCombat = computed(() => {
-  return ProfilePresenter.isInCombat(location.value, props.digimon.inCombat);
+const isInBattle = computed(() => {
+  return ProfilePresenter.isInBattle(location.value, props.digimon.inBattle);
 });
 
 const hp = computed(() => {
-  return ProfilePresenter.getHp(props.digimon, isInCombat.value);
+  return ProfilePresenter.getHp(props.digimon, isInBattle.value);
 });
 
 const mp = computed(() => {
-  return ProfilePresenter.getMp(props.digimon, isInCombat.value);
+  return ProfilePresenter.getMp(props.digimon, isInBattle.value);
 });
 
 const condition = computed(() => {
-  return ProfilePresenter.getCondition(props.digimon, isInCombat.value);
+  return ProfilePresenter.getCondition(props.digimon, isInBattle.value);
 });
 
 const calculatedCondition = computed(() => {

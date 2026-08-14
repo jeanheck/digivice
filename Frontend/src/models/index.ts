@@ -6,7 +6,7 @@ export * from "./party/digimon-slot";
 export * from "./party/digimon/digimon";
 export * from "./party/digimon/equipments";
 export * from "./journal/auction";
-export * from "./party/digimon/in-combat";
+export * from "./party/digimon/in-battle";
 export * from "./journal/journal";
 export * from "./party/party";
 export * from "./player";

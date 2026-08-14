@@ -1,5 +1,5 @@
 import type { Vital } from "./vital";
-import type { InCombat } from "./in-combat";
+import type { InBattle } from "./in-battle";
 import type { Attributes } from "./attributes";
 import type { Resistances } from "./resistances";
 import type { Equipments } from "./equipments";
@@ -13,7 +13,7 @@ export interface Digimon {
   experience: number;
   hp: Vital;
   mp: Vital;
-  inCombat: InCombat;
+  inBattle: InBattle;
   attributes: Attributes;
   resistances: Resistances;
   equipments: Equipments;

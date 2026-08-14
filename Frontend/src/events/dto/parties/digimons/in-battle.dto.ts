@@ -1,6 +1,6 @@
 import type { VitalDTO } from "./vital.dto";
 
-export interface InCombatDTO {
+export interface InBattleDTO {
   condition?: number;
   strength?: number;
   defense?: number;

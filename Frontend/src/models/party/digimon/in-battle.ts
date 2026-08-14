@@ -1,6 +1,6 @@
 import type { Vital } from "./vital";
 
-export interface InCombat {
+export interface InBattle {
   condition: number;
   strength: number;
   defense: number;
