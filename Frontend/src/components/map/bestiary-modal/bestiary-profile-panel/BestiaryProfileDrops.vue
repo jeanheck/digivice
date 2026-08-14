@@ -65,15 +65,21 @@ const handleDropClick = (drop: EnemyDropRaw): void => {
       {{ dropSectionLabel }}
     </h4>
 
-    <span v-if="!hasInteractiveDrops" class="text-gray-200 text-xs">
+    <span
+      v-if="!hasInteractiveDrops"
+      class="flex flex-1 min-h-0 items-center justify-center text-gray-200 text-xs"
+    >
       {{ dropFallbackLabel }}
     </span>
-    <div v-else class="flex flex-wrap gap-2 justify-start">
+    <div
+      v-else
+      class="flex flex-1 min-h-0 flex-wrap content-center justify-center gap-2"
+    >
       <button
         v-for="drop in enemyDrops"
         :key="`${drop.id}-${drop.locationOnly ?? ''}`"
         type="button"
-        class="text-left px-2.5 py-2 rounded text-[9px] 2xl:text-[11px] font-bold tracking-wide transition-colors cursor-pointer bg-amber-900/40 text-amber-300 border border-amber-300"
+        class="text-center px-2.5 py-2 rounded text-[9px] 2xl:text-[11px] font-bold tracking-wide transition-colors cursor-pointer bg-amber-900/40 hover:bg-amber-900/60 text-amber-300 border border-amber-300"
         @click="handleDropClick(drop)"
       >
         <span class="block">{{ $t(`drops.${drop.id}`) }}</span>

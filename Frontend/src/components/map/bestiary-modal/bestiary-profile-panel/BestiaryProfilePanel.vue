@@ -41,7 +41,7 @@ const forwardHideStatTooltip = (): void => {
 
 <template>
   <div
-    class="p-4 grid grid-cols-2 grid-rows-[19rem_1fr] gap-4 h-full min-h-0 overflow-y-auto custom-scroll"
+    class="p-4 grid grid-cols-2 grid-rows-[24rem_1fr] gap-4 h-full min-h-0 overflow-y-auto custom-scroll"
   >
     <div class="flex gap-4 h-full min-h-0">
       <BestiaryProfileImage
