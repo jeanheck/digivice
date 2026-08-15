@@ -84,7 +84,7 @@ const handleDropClick = (drop: EnemyDropRaw): void => {
         v-for="drop in enemyDrops"
         :key="`${drop.id}-${drop.locationOnly ?? ''}`"
         type="button"
-        class="text-center px-2.5 py-2 rounded text-[9px] 2xl:text-[11px] font-bold tracking-wide transition-colors cursor-pointer bg-amber-900/40 hover:bg-amber-900/60 text-amber-300 border border-amber-300"
+        class="text-center px-2.5 py-2 rounded text-[9px] 2xl:text-[11px] font-bold tracking-wide transition-colors cursor-pointer  hover:bg-blue-900/60 text-blue-300 border border-blue-700/60 bg-blue-950/40"
         @click="handleDropClick(drop)"
       >
         <span class="block">{{ dropLabel(drop.id) }}</span>

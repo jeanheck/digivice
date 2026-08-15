@@ -100,10 +100,16 @@ const handleSearchSelect = (id: string) => {
         <div
           v-for="item in filteredItems"
           :key="`${item.kind}-${item.id}`"
-          class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors border-b last:border-b-0 border-[#0055ff]/20"
+          class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors border-b last:border-b-0 border-[#0055ff]/20 flex items-baseline gap-2"
           @mousedown.prevent="handleSearchSelect(item.id)"
         >
-          {{ item.name }}
+          <span class="leading-none">{{ item.name }}</span>
+          <span
+            v-if="item.kind"
+            class="text-[10px] leading-none text-[#00aaff]/50"
+          >
+            {{ $t(`enemy.searchKind.${item.kind}`) }}
+          </span>
         </div>
       </template>
       <p v-else class="px-3 py-2 text-xs text-[#00aaff]/50 italic">

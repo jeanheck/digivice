@@ -8,6 +8,11 @@
     },
     "searchPlaceholder": "Type an enemy, drop or card name...",
     "searchNoResults": "No results found",
+    "searchKind": {
+      "enemy": "Digimon",
+      "drop": "Drop",
+      "card": "Card"
+    },
     "droppedBy": "Dropped by",
     "droppedByNone": "No known enemies",
     "level": "Level",
