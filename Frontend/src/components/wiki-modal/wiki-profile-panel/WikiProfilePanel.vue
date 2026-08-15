@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import WikiProfileImage from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileImage.vue";
-import WikiProfileResume from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileResume.vue";
-import WikiProfileTechniques from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileTechniques.vue";
-import WikiProfileAttributes from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileAttributes.vue";
-import WikiProfileElements from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileElements.vue";
-import WikiProfileConditions from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileConditions.vue";
-import WikiProfileDrops from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfileDrops.vue";
+import WikiProfileImage from "@/components/wiki-modal/wiki-profile-panel/WikiProfileImage.vue";
+import WikiProfileResume from "@/components/wiki-modal/wiki-profile-panel/WikiProfileResume.vue";
+import WikiProfileTechniques from "@/components/wiki-modal/wiki-profile-panel/WikiProfileTechniques.vue";
+import WikiProfileAttributes from "@/components/wiki-modal/wiki-profile-panel/WikiProfileAttributes.vue";
+import WikiProfileElements from "@/components/wiki-modal/wiki-profile-panel/WikiProfileElements.vue";
+import WikiProfileConditions from "@/components/wiki-modal/wiki-profile-panel/WikiProfileConditions.vue";
+import WikiProfileDrops from "@/components/wiki-modal/wiki-profile-panel/WikiProfileDrops.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 defineProps<{

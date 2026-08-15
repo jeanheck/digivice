@@ -28,4 +28,8 @@ export enum Constant {
   topLeft = "topLeft",
   top = "top",
   topRight = "topRight",
+  walking = "walking",
+  fishing = "fishing",
+  kickingTree = "kickingTree",
+  boss = "boss",
 }

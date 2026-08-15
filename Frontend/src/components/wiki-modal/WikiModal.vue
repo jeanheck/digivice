@@ -2,9 +2,9 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import WikiProfilePanel from "@/components/map/wiki-modal/wiki-profile-panel/WikiProfilePanel.vue";
-import WikiDropsPanel from "@/components/map/wiki-modal/wiki-drops-panel/WikiDropsPanel.vue";
-import WikiLocationsPanel from "@/components/map/wiki-modal/wiki-locations-panel/WikiLocationsPanel.vue";
+import WikiProfilePanel from "@/components/wiki-modal/wiki-profile-panel/WikiProfilePanel.vue";
+import WikiDropsPanel from "@/components/wiki-modal/wiki-drops-panel/WikiDropsPanel.vue";
+import WikiLocationsPanel from "@/components/wiki-modal/wiki-locations-panel/WikiLocationsPanel.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";

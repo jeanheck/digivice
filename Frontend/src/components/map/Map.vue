@@ -2,7 +2,7 @@
 import AsukaServerMap from "./asuka-server-map/AsukaServerMap.vue";
 import SeabedMap from "./seabed-map/SeabedMap.vue";
 import MobiusDesertMap from "./mobius-desert-map/MobiusDesertMap.vue";
-import WikiModal from "@/components/map/wiki-modal/WikiModal.vue";
+import WikiModal from "@/components/wiki-modal/WikiModal.vue";
 import { computed, ref } from "vue";
 import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { useGameStore } from "@/stores/use-game-store";

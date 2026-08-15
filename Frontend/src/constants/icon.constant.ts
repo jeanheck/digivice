@@ -4,6 +4,7 @@ import { ConditionConstant } from "./stat/condition.constant";
 import type { Constant as ConstantsType } from "./constant";
 import { Constant } from "./constant";
 import { SeabedConstant } from "./seabed.constant";
+import { EnemySourceConstant } from "./enemy-source.constant";
 
 export const IconConstant: Record<ConstantsType, string> = {
   [AttributeConstant.strength]: "👊",
@@ -35,4 +36,8 @@ export const IconConstant: Record<ConstantsType, string> = {
   [SeabedConstant.topLeft]: "↖️",
   [SeabedConstant.top]: "⬆️",
   [SeabedConstant.topRight]: "↗️",
+  [EnemySourceConstant.walking]: "🏃‍➡️",
+  [EnemySourceConstant.fishing]: "🎣",
+  [EnemySourceConstant.kickingTree]: "🌴",
+  [EnemySourceConstant.boss]: "☠️",
 };
