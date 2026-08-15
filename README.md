@@ -109,6 +109,7 @@ None of this would have been possible without the people who dug up and shared t
 - **Digimon World 3 – Guides and FAQs** *by HRahman*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/565-mobius-desert-map)
 - **Digivolution Experience Points (DVEXP)** *by Rob01m*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/47657837)
 - **Consumable Items**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/consumables/)
+- **Digimon World 3 - TCG Cards Sprites** *by metaldodomon*: [The Spriters Resource](https://www.spriters-resource.com/playstation/digiworld3/)
 
 ## Digimons images credits
 
