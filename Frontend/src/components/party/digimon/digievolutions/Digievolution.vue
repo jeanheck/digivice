@@ -68,7 +68,7 @@ function openTechniques(): void {
     >
       <div class="flex flex-1 items-center w-full min-h-0">
         <div
-          class="flex-1 min-w-0 px-4 font-bold text-xs 2xl:text-sm tracking-wider truncate leading-none"
+          class="flex-1 min-w-0 px-4 font-bold text-[11px] 2xl:text-sm tracking-wider truncate leading-none"
           :class="isActiveDigievolution ? 'text-dw3-gold shadow-text-dark' : 'shadow-text'"
         >
           {{ digievolutionName }}
