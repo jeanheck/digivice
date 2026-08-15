@@ -3,6 +3,7 @@ import { computed, nextTick, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import MapDetailsFrame from "@/components/map-details-frame/MapDetailsFrame.vue";
+import { IconConstant } from "@/constants/icon.constant";
 import { LocationRepository } from "@/repositories/location.repository";
 import type {
   EnemyLocationRaw,
@@ -10,13 +11,6 @@ import type {
 } from "@/repositories/tables/raws/enemy/enemy-location.raw";
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
-
-const LOCATION_SOURCE_EMOJI: Record<EnemyLocationSource, string> = {
-  walking: "🏃‍➡️",
-  fishing: "🎣",
-  kickingTree: "🌴",
-  boss: "☠️",
-};
 
 const props = defineProps<{
   enemy: EnemyViewModel;
@@ -123,7 +117,7 @@ const selectEntry = (entry: EnemyLocationRaw): void => {
 };
 
 const sourceEmoji = (source: EnemyLocationSource): string => {
-  return LOCATION_SOURCE_EMOJI[source];
+  return IconConstant[source];
 };
 </script>
 
