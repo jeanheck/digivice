@@ -6,7 +6,7 @@
       "locations": "Wiki - Localizações",
       "drops": "Wiki - Drops"
     },
-    "searchPlaceholder": "Digite o nome de um inimigo ou drop...",
+    "searchPlaceholder": "Digite o nome de um inimigo, drop ou carta...",
     "searchNoResults": "Nenhum resultado encontrado",
     "droppedBy": "Dropado por",
     "droppedByNone": "Nenhum inimigo conhecido",
@@ -18,6 +18,9 @@
     "locationOnly": "Apenas {location}",
     "back": "Voltar",
     "dropDetails": "Detalhes do drop",
+    "cardDetails": "Detalhes da carta",
+    "obtainedFrom": "Obtido em",
+    "obtainedFromNone": "Nenhum booster conhecido",
     "baseExp": "EXP",
     "baseBits": "BITS",
     "combatActions": "Ações",

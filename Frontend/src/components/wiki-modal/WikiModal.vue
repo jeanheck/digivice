@@ -4,6 +4,7 @@ import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import WikiProfilePanel from "@/components/wiki-modal/wiki-profile-panel/WikiProfilePanel.vue";
 import WikiDropsPanel from "@/components/wiki-modal/wiki-drops-panel/WikiDropsPanel.vue";
+import WikiCardsPanel from "@/components/wiki-modal/wiki-cards-panel/WikiCardsPanel.vue";
 import WikiLocationsPanel from "@/components/wiki-modal/wiki-locations-panel/WikiLocationsPanel.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
@@ -22,14 +23,18 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-type WikiView = "profile" | "drops" | "locations";
+type WikiView = "profile" | "drops" | "cards" | "locations";
 
 const selectedEnemyId = ref<string | null>(null);
 const selectedDropId = ref<string | null>(null);
+const selectedCardId = ref<string | null>(null);
 const view = ref<WikiView>("profile");
 
 const isModalOpen = computed(() => {
-  return props.isOpen && (selectedEnemyId.value !== null || selectedDropId.value !== null);
+  return (
+    props.isOpen &&
+    (selectedEnemyId.value !== null || selectedDropId.value !== null || selectedCardId.value !== null)
+  );
 });
 
 const isProfileView = computed(() => {
@@ -44,24 +49,12 @@ const isDropsView = computed(() => {
   return view.value === "drops";
 });
 
+const isCardsView = computed(() => {
+  return view.value === "cards";
+});
+
 const canBackToProfile = computed(() => {
   return selectedEnemyId.value !== null && !isProfileView.value;
-});
-
-const modalMaxWidth = computed(() => {
-  if (isLocationsView.value) {
-    return "max-w-[1300px]";
-  }
-
-  return "max-w-450";
-});
-
-const modalPanelClass = computed(() => {
-  if (isLocationsView.value) {
-    return "w-[1300px]";
-  }
-
-  return "w-[98vw]";
 });
 
 const handleClose = () => {
@@ -69,14 +62,23 @@ const handleClose = () => {
 };
 
 const allSearchItems = computed(() => {
-  return WikiModalPresenter.getAllSearchItems((dropKey) => {
-    return t(WikiModalPresenter.getDropLabelKey(dropKey));
-  });
+  return WikiModalPresenter.getAllSearchItems(
+    (dropKey) => {
+      return t(WikiModalPresenter.getDropLabelKey(dropKey));
+    },
+    (cardId) => {
+      return t(`cards.${cardId}.name`);
+    },
+  );
 });
 
 const selectedSearchId = computed(() => {
   if (isDropsView.value && selectedDropId.value !== null) {
     return selectedDropId.value;
+  }
+
+  if (isCardsView.value && selectedCardId.value !== null) {
+    return selectedCardId.value;
   }
 
   return selectedEnemyId.value ?? undefined;
@@ -93,19 +95,29 @@ const handleSearchSelect = (id: string) => {
   if (searchItem.kind === "enemy") {
     selectedEnemyId.value = id;
     selectedDropId.value = null;
+    selectedCardId.value = null;
     view.value = "profile";
     return;
   }
 
   if (searchItem.kind === "drop") {
     selectedDropId.value = id;
+    selectedCardId.value = null;
     view.value = "drops";
+    return;
+  }
+
+  if (searchItem.kind === "card") {
+    selectedCardId.value = id;
+    selectedDropId.value = null;
+    view.value = "cards";
   }
 };
 
 const openDropsView = (dropId: string) => {
   hide();
   selectedDropId.value = dropId;
+  selectedCardId.value = null;
   view.value = "drops";
 };
 
@@ -120,12 +132,14 @@ const backToProfileView = () => {
   }
 
   selectedDropId.value = null;
+  selectedCardId.value = null;
   view.value = "profile";
 };
 
 const openEnemyFromDropSource = (enemyId: string) => {
   selectedEnemyId.value = enemyId;
   selectedDropId.value = null;
+  selectedCardId.value = null;
   view.value = "profile";
 };
 
@@ -166,6 +180,7 @@ watch(
     if (open) {
       selectedEnemyId.value = props.enemyId;
       selectedDropId.value = null;
+      selectedCardId.value = null;
       view.value = "profile";
       return;
     }
@@ -173,6 +188,7 @@ watch(
     hide();
     selectedEnemyId.value = null;
     selectedDropId.value = null;
+    selectedCardId.value = null;
     view.value = "profile";
   },
 );
@@ -189,9 +205,9 @@ const enemyImageUrl = computed(() => {
 <template>
   <Modal
     :is-open="isModalOpen"
-    :max-width="modalMaxWidth"
-    max-height="h-[92vh] max-h-250"
-    :panel-class="modalPanelClass"
+    max-width="max-w-[1300px]"
+    max-height="h-[650px] max-h-[650px]"
+    panel-class="w-[1300px]"
     @close="handleClose"
   >
     <template #header>
@@ -244,8 +260,13 @@ const enemyImageUrl = computed(() => {
       :drop-id="selectedDropId"
       @open-enemy="openEnemyFromDropSource"
     />
+    <WikiCardsPanel
+      v-else-if="view === 'cards' && selectedCardId !== null"
+      :card-id="selectedCardId"
+      @open-drop="openDropsView"
+    />
     <WikiLocationsPanel
-      v-else-if="enemy !== null"
+      v-else-if="view === 'locations' && enemy !== null"
       :enemy="enemy"
     />
   </Modal>

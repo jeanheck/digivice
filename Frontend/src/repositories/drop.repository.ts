@@ -16,4 +16,14 @@ export class DropRepository {
   public static getDropKeys(): string[] {
     return Object.keys(this.dropTable);
   }
+
+  public static getDropKeyByNumericId(numericId: number): string | undefined {
+    for (const [dropKey, dropRaw] of Object.entries(this.dropTable)) {
+      if (dropRaw.id === numericId) {
+        return dropKey;
+      }
+    }
+
+    return undefined;
+  }
 }

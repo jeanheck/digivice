@@ -6,7 +6,7 @@
       "locations": "Wiki - Locations",
       "drops": "Wiki - Drops"
     },
-    "searchPlaceholder": "Type an enemy or drop name...",
+    "searchPlaceholder": "Type an enemy, drop or card name...",
     "searchNoResults": "No results found",
     "droppedBy": "Dropped by",
     "droppedByNone": "No known enemies",
@@ -18,6 +18,9 @@
     "locationOnly": "Only {location}",
     "back": "Back",
     "dropDetails": "Drop details",
+    "cardDetails": "Card details",
+    "obtainedFrom": "Obtained from",
+    "obtainedFromNone": "No known boosters",
     "baseExp": "EXP",
     "baseBits": "BITS",
     "combatActions": "Actions",

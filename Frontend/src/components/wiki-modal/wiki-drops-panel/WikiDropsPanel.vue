@@ -15,10 +15,6 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-const dropLabel = computed(() => {
-  return t(WikiModalPresenter.getDropLabelKey(props.dropId));
-});
-
 const dropType = computed(() => {
   const dropRaw = DropRepository.getDropByKey(props.dropId);
   return dropRaw?.type ?? null;
@@ -43,10 +39,6 @@ const handleOpenEnemy = (enemyId: string): void => {
 
 <template>
   <div class="p-4 flex flex-col gap-4 h-full min-h-0 overflow-hidden">
-    <h3 class="text-amber-300 font-bold tracking-widest text-sm shrink-0">
-      {{ dropLabel }}
-    </h3>
-
     <section
       class="flex-1 w-full min-h-0 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col"
     >

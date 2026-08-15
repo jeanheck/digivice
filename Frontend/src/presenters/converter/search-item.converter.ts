@@ -17,4 +17,12 @@ export class SearchItemConverter {
       kind: "drop",
     };
   }
+
+  public static convertCard(id: string, name: string): SearchItemViewModel {
+    return {
+      id,
+      name,
+      kind: "card",
+    };
+  }
 }
