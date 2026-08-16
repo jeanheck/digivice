@@ -3,27 +3,11 @@
   "requisites": [],
   "steps": {
     "1": {
-      "location": "0225",
+      "location": "0226",
       "coordinates": {
-        "x": 69.5,
-        "y": 37.5
+        "x": 76,
+        "y": 11
       },
-      "zoomedLocations": [
-        {
-          "location": "0225",
-          "coordinates": {
-            "x": 93,
-            "y": 12
-          }
-        },
-        {
-          "location": "0226",
-          "coordinates": {
-            "x": 76,
-            "y": 11
-          }
-        }
-      ],
       "requisites": []
     }
   }

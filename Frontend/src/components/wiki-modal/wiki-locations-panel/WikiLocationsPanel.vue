@@ -105,7 +105,7 @@ const asukaCoordinates = computed((): CoordinatesViewModel | null => {
     return null;
   }
 
-  return LocationRepository.getLocationById(selectedEntry.value.id).coordinates ?? null;
+  return LocationRepository.getLocationById(selectedEntry.value.id).worldLocation ?? null;
 });
 
 const localCoordinates = computed((): CoordinatesViewModel | null => {

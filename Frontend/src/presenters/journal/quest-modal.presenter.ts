@@ -4,6 +4,7 @@ import { QuestConverter } from "@/presenters/converter/quest.converter";
 import { ZoomedLocationMapConverter } from "@/presenters/converter/zoomed-location-map.converter";
 import { LocationRepository } from "@/repositories/location.repository";
 import { QuestRepository } from "@/repositories/quest.repository";
+import { LocationService } from "@/services/location.service";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
@@ -73,7 +74,12 @@ export class QuestModalPresenter {
   public static getWorldMapLocations(
     selectedStep: StepViewModel | null,
   ): ZoomedLocationMapViewModel[] {
-    if (!selectedStep?.location || !selectedStep.coordinates) {
+    if (!selectedStep?.location) {
+      return [];
+    }
+
+    const worldLocation = LocationService.getWorldLocation(selectedStep.location);
+    if (worldLocation === undefined) {
       return [];
     }
 
@@ -85,7 +91,7 @@ export class QuestModalPresenter {
     return [
       ZoomedLocationMapConverter.convert(
         asukaMapUrl,
-        selectedStep.coordinates,
+        worldLocation,
         `location.${selectedStep.location}`,
       ),
     ];
@@ -95,15 +101,29 @@ export class QuestModalPresenter {
     selectedStep: StepViewModel | null,
     questId: string | null,
   ): ZoomedLocationMapViewModel[] {
-    if (!selectedStep?.zoomedLocations?.length || !questId) {
+    if (!selectedStep?.location || !selectedStep.coordinates || !questId) {
       return [];
     }
 
-    return selectedStep.zoomedLocations.map((zoomedLocation, locationIndex) => {
+    const composedLocations = [
+      ...selectedStep.innerLocation,
+      {
+        location: selectedStep.location,
+        coordinates: selectedStep.coordinates,
+      },
+    ];
+
+    return composedLocations.map((composedLocation, locationIndex) => {
+      const nextLocation = composedLocations[locationIndex + 1];
+      let labelKey = `${questId}.steps.${selectedStep.number}.locationTarget`;
+      if (nextLocation !== undefined) {
+        labelKey = `location.${nextLocation.location}`;
+      }
+
       return ZoomedLocationMapConverter.convert(
-        QuestModalPresenter.getLocalMapUrl(zoomedLocation.location),
-        zoomedLocation.coordinates,
-        `${questId}.steps.${selectedStep.number}.locations.${locationIndex}.locationTarget`,
+        QuestModalPresenter.getLocalMapUrl(composedLocation.location),
+        composedLocation.coordinates,
+        labelKey,
       );
     });
   }

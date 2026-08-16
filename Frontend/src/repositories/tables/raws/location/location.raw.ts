@@ -1,4 +1,5 @@
 import type { LocationRegionConstant } from "@/constants/location-region.constant";
+import type { InnerLocationRaw } from "@/repositories/tables/raws/location/inner-location.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 
 export interface LocationEnemyPhaseRaw {
@@ -17,7 +18,8 @@ export interface LocationEnemiesRaw {
 
 export interface LocationRaw {
   imageName: string;
-  coordinates?: CoordinatesRaw;
+  worldLocation?: CoordinatesRaw;
+  innerLocation?: InnerLocationRaw[];
   enemies?: LocationEnemiesRaw;
   region?: LocationRegionConstant;
   dock?: boolean;

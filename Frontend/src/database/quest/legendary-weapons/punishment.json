@@ -7,27 +7,11 @@
   ],
   "steps": {
     "1": {
-      "location": "024D",
+      "location": "0252",
       "coordinates": {
-        "x": 18.5,
-        "y": 38
+        "x": 73,
+        "y": 22
       },
-      "zoomedLocations": [
-        {
-          "location": "024D",
-          "coordinates": {
-            "x": 78,
-            "y": 20
-          }
-        },
-        {
-          "location": "0252",
-          "coordinates": {
-            "x": 73,
-            "y": 22
-          }
-        }
-      ],
       "requisites": []
     }
   }

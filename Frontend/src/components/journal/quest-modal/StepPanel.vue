@@ -29,8 +29,7 @@ defineProps<{
 
     <div
       v-else-if="
-        !selectedStep.location &&
-        (!selectedStep.zoomedLocations || selectedStep.zoomedLocations.length === 0)
+        !selectedStep.location
       "
       class="flex-1 flex flex-col items-center justify-center border border-red-900/40 bg-[#1a0000] rounded min-h-100"
     >

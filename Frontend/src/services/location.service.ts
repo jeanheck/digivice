@@ -1,7 +1,9 @@
 import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { LocationRepository } from "@/repositories/location.repository";
 import { SeabedRoutesRepository } from "@/repositories/seabed-routes.repository";
+import type { InnerLocationRaw } from "@/repositories/tables/raws/location/inner-location.raw";
 import { isLocationEnemyPhaseList } from "@/repositories/tables/raws/location/location.raw";
+import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 
 export class LocationService {
   public static getSeabedEnemies(seabedRoute: number): string[] {
@@ -59,5 +61,13 @@ export class LocationService {
 
   public static isSeabed(locationId: string | null): boolean {
     return this.getRegionByLocationId(locationId) === LocationRegionConstant.seabed;
+  }
+
+  public static getWorldLocation(locationId: string): CoordinatesRaw | undefined {
+    return LocationRepository.getLocationById(locationId).worldLocation;
+  }
+
+  public static getInnerLocation(locationId: string): InnerLocationRaw[] {
+    return LocationRepository.getLocationById(locationId).innerLocation ?? [];
   }
 }

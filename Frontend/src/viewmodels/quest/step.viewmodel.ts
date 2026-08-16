@@ -1,6 +1,6 @@
 import type { CoordinatesViewModel } from "./coordinates.viewmodel";
+import type { InnerLocationViewModel } from "./inner-location.viewmodel";
 import type { RequisiteViewModel } from "./requisite.viewmodel";
-import type { ZoomedLocationViewModel } from "./zoomed-location.viewmodel";
 
 export interface StepViewModel {
   number: string;
@@ -8,5 +8,5 @@ export interface StepViewModel {
   isDone: boolean;
   location: string;
   coordinates: CoordinatesViewModel;
-  zoomedLocations: ZoomedLocationViewModel[];
+  innerLocation: InnerLocationViewModel[];
 }

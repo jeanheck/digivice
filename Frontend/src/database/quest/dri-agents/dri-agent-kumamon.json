@@ -15,10 +15,10 @@
     "1": {
       "location": "0258",
       "coordinates": {
-        "x": 21,
-        "y": 82
+        "x": 69,
+        "y": 51
       },
-      "zoomedLocations": [
+      "innerLocation": [
         {
           "location": "0258",
           "coordinates": {
@@ -32,13 +32,6 @@
             "x": 20,
             "y": 75
           }
-        },
-        {
-          "location": "0258",
-          "coordinates": {
-            "x": 69,
-            "y": 51
-          }
         }
       ],
       "requisites": []
@@ -46,10 +39,10 @@
     "2": {
       "location": "023C",
       "coordinates": {
-        "x": 52,
-        "y": 82
+        "x": 21,
+        "y": 60
       },
-      "zoomedLocations": [
+      "innerLocation": [
         {
           "location": "023B",
           "coordinates": {
@@ -70,13 +63,6 @@
             "x": 17.5,
             "y": 61
           }
-        },
-        {
-          "location": "023C",
-          "coordinates": {
-            "x": 21,
-            "y": 60
-          }
         }
       ],
       "requisites": []
@@ -84,10 +70,10 @@
     "3": {
       "location": "0258",
       "coordinates": {
-        "x": 21,
-        "y": 82
+        "x": 69,
+        "y": 51
       },
-      "zoomedLocations": [
+      "innerLocation": [
         {
           "location": "0258",
           "coordinates": {
@@ -100,13 +86,6 @@
           "coordinates": {
             "x": 20,
             "y": 75
-          }
-        },
-        {
-          "location": "0258",
-          "coordinates": {
-            "x": 69,
-            "y": 51
           }
         }
       ],

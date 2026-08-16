@@ -5,14 +5,7 @@
     "steps": {
       "1": {
         "description": "Defeat Pharaohmon to receive the Old Wand",
-        "locations": {
-          "0": {
-            "locationTarget": "Protocol Ruins"
-          },
-          "1": {
-            "locationTarget": "Pharaohmon"
-          }
-        }
+        "locationTarget": "Pharaohmon"
       }
     }
   }

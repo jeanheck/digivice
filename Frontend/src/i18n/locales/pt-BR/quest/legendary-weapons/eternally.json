@@ -5,14 +5,7 @@
     "steps": {
       "1": {
         "description": "Derrote Pharaohmon para receber a Vara Antiga",
-        "locations": {
-          "0": {
-            "locationTarget": "Ruínas Protocolo"
-          },
-          "1": {
-            "locationTarget": "Pharaohmon"
-          }
-        }
+        "locationTarget": "Pharaohmon"
       }
     }
   }

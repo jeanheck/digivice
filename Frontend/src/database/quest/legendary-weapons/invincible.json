@@ -9,18 +9,9 @@
     "1": {
       "location": "022B",
       "coordinates": {
-        "x": 90.5,
-        "y": 38.5
+        "x": 73,
+        "y": 22
       },
-      "zoomedLocations": [
-        {
-          "location": "022B",
-          "coordinates": {
-            "x": 73,
-            "y": 22
-          }
-        }
-      ],
       "requisites": []
     }
   }

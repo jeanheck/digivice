@@ -8,32 +8,20 @@
     "steps": {
       "1": {
         "description": "Fale com Tai Kong Wong na Praia da Concha",
-        "locations": {
-          "0": {
-            "locationTarget": "Tai Kong Wong"
-          }
-        }
+        "locationTarget": "Tai Kong Wong"
       },
       "2": {
         "description": "Ajude o Divermon no Lago dos Divermons",
-        "locations": {
-          "0": {
-            "locationTarget": "Divermon"
-          }
-        }
+        "locationTarget": "Divermon"
       },
       "3": {
         "description": "Leve os itens para Tai Kong Wong na Praia da Concha para receber a Vara de Pescar",
-        "locations": {
-          "0": {
-            "locationTarget": "Tai Kong Wong"
-          }
-        },
         "requisites": {
           "bambooSpear": "Arpão de Bambu",
           "spiderWeb": "Teia de aranha",
           "redSnapper": "Pargo Vermelho"
-        }
+        },
+        "locationTarget": "Tai Kong Wong"
       }
     }
   }

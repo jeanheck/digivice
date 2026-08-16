@@ -9,51 +9,18 @@
     "steps": {
       "1": {
         "description": "Procure pelo DRI Yuji no Deserto Mobius",
-        "locations": {
-          "0": {
-            "locationTarget": "Deserto Mobius (A2)"
-          },
-          "1": {
-            "locationTarget": "Deserto Mobius (B2)"
-          },
-          "2": {
-            "locationTarget": "DRI Yuji"
-          }
-        }
+        "locationTarget": "DRI Yuji"
       },
       "2": {
         "description": "Vença GrapLeomon em batalha para receber o DDNA do Kumamon",
-        "locations": {
-          "0": {
-            "locationTarget": "Solo Oceânico"
-          },
-          "1": {
-            "locationTarget": "Solo Oceânico"
-          },
-          "2": {
-            "locationTarget": "Selva de Éter"
-          },
-          "3": {
-            "locationTarget": "GrapLeomon"
-          }
-        }
+        "locationTarget": "GrapLeomon"
       },
       "3": {
         "description": "Entregue o DDNA do Kumamon para DRI Yuji",
-        "locations": {
-          "0": {
-            "locationTarget": "Deserto Mobius (A2)"
-          },
-          "1": {
-            "locationTarget": "Deserto Mobius (B2)"
-          },
-          "2": {
-            "locationTarget": "DRI Yuji"
-          }
-        },
         "requisites": {
           "kumamonDDNA": "DDNA de Kumamon"
-        }
+        },
+        "locationTarget": "DRI Yuji"
       }
     }
   }

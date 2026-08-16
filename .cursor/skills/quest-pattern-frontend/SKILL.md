@@ -341,9 +341,16 @@ Category `driAgents` is already wired (accent `rose`). Adding another agent is
 
 **Locations (database JSON):**
 
-- Use correct `location` mapIds from `Frontend/src/database/location/location.json`
-- Coordinates: provisional `x`/`y` `50` (and matching `zoomedLocations`) until the
-  user supplies real markers — same approach as Monmon/Kumamon
+- `location` = target map id (innermost map of the pin)
+- `coordinates` = pin of the NPC/boss on that map
+- Omit `innerLocation` to inherit the path from `location.json`
+  (`worldLocation` / `innerLocation`)
+- Use `"innerLocation": []` to skip a canonical path (already inside the inner map)
+- Custom routes (desert cells, unique doors) keep hop `innerLocation` on the quest,
+  without the target pin
+- Coordinates: provisional `x`/`y` `50` until the user supplies real markers
+- i18n: one `locationTarget` per step (marker label). Intermediate maps use
+  `location.{id}`
 - Step 3 `requisites`: `[{ "id": "{rookie}DDNA" }]` matching backend
 
 **SKIP:** `Journal.vue` section, palette, syncers, converters, presenters (already
