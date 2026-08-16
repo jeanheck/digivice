@@ -1,13 +1,13 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { Journal } from "@/models";
 import { QuestConverter } from "@/presenters/converter/quest.converter";
-import { ZoomedLocationMapConverter } from "@/presenters/converter/zoomed-location-map.converter";
+import { MapFrameSlideConverter } from "@/presenters/converter/map-frame-slide.converter";
 import { LocationRepository } from "@/repositories/location.repository";
 import { QuestRepository } from "@/repositories/quest.repository";
 import { LocationService } from "@/services/location.service";
+import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
-import type { ZoomedLocationMapViewModel } from "@/viewmodels/quest/zoomed-location-map.viewmodel";
 
 export class QuestModalPresenter {
   public static getQuestViewModel(
@@ -73,7 +73,7 @@ export class QuestModalPresenter {
 
   public static getWorldMapLocations(
     selectedStep: StepViewModel | null,
-  ): ZoomedLocationMapViewModel[] {
+  ): MapFrameSlideViewModel[] {
     if (!selectedStep?.location) {
       return [];
     }
@@ -89,7 +89,7 @@ export class QuestModalPresenter {
     }
 
     return [
-      ZoomedLocationMapConverter.convert(
+      MapFrameSlideConverter.convert(
         asukaMapUrl,
         worldLocation,
         `location.${selectedStep.location}`,
@@ -100,7 +100,7 @@ export class QuestModalPresenter {
   public static getLocalMapLocations(
     selectedStep: StepViewModel | null,
     questId: string | null,
-  ): ZoomedLocationMapViewModel[] {
+  ): MapFrameSlideViewModel[] {
     if (!selectedStep?.location || !selectedStep.coordinates || !questId) {
       return [];
     }
@@ -120,7 +120,7 @@ export class QuestModalPresenter {
         labelKey = `location.${nextLocation.location}`;
       }
 
-      return ZoomedLocationMapConverter.convert(
+      return MapFrameSlideConverter.convert(
         QuestModalPresenter.getLocalMapUrl(composedLocation.location),
         composedLocation.coordinates,
         labelKey,

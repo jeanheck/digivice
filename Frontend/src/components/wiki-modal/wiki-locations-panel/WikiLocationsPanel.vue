@@ -2,13 +2,14 @@
 import { computed, nextTick, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import MapDetailsFrame from "@/components/map-details-frame/MapDetailsFrame.vue";
+import MapFrame from "@/components/map-frame/MapFrame.vue";
 import { IconConstant } from "@/constants/icon.constant";
 import { LocationRepository } from "@/repositories/location.repository";
 import type {
   EnemyLocationRaw,
   EnemyLocationSource,
 } from "@/repositories/tables/raws/enemy/enemy-location.raw";
+import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
@@ -112,6 +113,47 @@ const localCoordinates = computed((): CoordinatesViewModel | null => {
   return selectedEntry.value?.localCoordinates ?? null;
 });
 
+function buildSingleSlide(
+  imageUrl: string,
+  coordinates: CoordinatesViewModel | null,
+): MapFrameSlideViewModel[] {
+  if (coordinates === null) {
+    return [
+      {
+        imageUrl,
+        pins: [],
+      },
+    ];
+  }
+
+  return [
+    {
+      imageUrl,
+      pins: [
+        {
+          coordinates,
+        },
+      ],
+    },
+  ];
+}
+
+const asukaSlides = computed((): MapFrameSlideViewModel[] => {
+  if (asukaMapImageUrl.value === null) {
+    return [];
+  }
+
+  return buildSingleSlide(asukaMapImageUrl.value, asukaCoordinates.value);
+});
+
+const localSlides = computed((): MapFrameSlideViewModel[] => {
+  if (selectedLocationImageUrl.value === null) {
+    return [];
+  }
+
+  return buildSingleSlide(selectedLocationImageUrl.value, localCoordinates.value);
+});
+
 const selectEntry = (entry: EnemyLocationRaw): void => {
   selectedId.value = entry.id;
 };
@@ -156,17 +198,9 @@ const sourceEmoji = (source: EnemyLocationSource): string => {
     </div>
 
     <div class="flex-1 min-h-0 flex gap-4 items-center justify-center overflow-hidden">
-      <MapDetailsFrame
-        v-if="asukaMapImageUrl"
-        :image-url="asukaMapImageUrl"
-        :coordinates="asukaCoordinates"
-      />
+      <MapFrame v-if="asukaSlides.length > 0" :slides="asukaSlides" />
 
-      <MapDetailsFrame
-        v-if="selectedLocationImageUrl"
-        :image-url="selectedLocationImageUrl"
-        :coordinates="localCoordinates"
-      />
+      <MapFrame v-if="localSlides.length > 0" :slides="localSlides" />
       <div
         v-else
         class="flex items-center justify-center min-h-0 px-8"

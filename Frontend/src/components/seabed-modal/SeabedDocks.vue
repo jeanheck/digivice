@@ -6,7 +6,7 @@ import SeabedRouteLines from "@/components/seabed-modal/SeabedRouteLines.vue";
 import {
   MAP_FRAME_MAX_HEIGHT_PX,
   MAP_FRAME_WIDTH_PX,
-} from "@/components/map-details-frame/map-details-frame";
+} from "@/constants/map-display.constant";
 import { useMapFrame } from "@/composables/use-map-frame";
 import { SeabedDocksPresenter } from "@/presenters/map/seabed-docks.presenter";
 
@@ -22,7 +22,11 @@ const routes = SeabedDocksPresenter.getRoutes();
 
 const hoveredRouteId = ref<string | null>(null);
 
-const { mapImageFrameStyle, onImageLoad } = useMapFrame(imageUrl);
+const frameWidth = computed(() => {
+  return MAP_FRAME_WIDTH_PX;
+});
+
+const { mapImageFrameStyle, onImageLoad } = useMapFrame(imageUrl, frameWidth);
 
 function onRouteEnter(routeId: string): void {
   hoveredRouteId.value = routeId;

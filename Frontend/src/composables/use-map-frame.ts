@@ -1,22 +1,24 @@
 import { computed, ref, watch, type ComputedRef, type Ref } from "vue";
-import { MAP_FRAME_WIDTH_PX } from "@/components/map-details-frame/map-details-frame";
 
-export function useMapFrame(imageUrl: Ref<string | null> | ComputedRef<string | null>) {
+export function useMapFrame(
+  imageUrl: Ref<string | null> | ComputedRef<string | null>,
+  width: Ref<number> | ComputedRef<number>,
+) {
   const imageNaturalSize = ref<{ width: number; height: number } | null>(null);
 
   const displayHeight = computed(() => {
     if (imageNaturalSize.value === null) {
-      return Math.round(MAP_FRAME_WIDTH_PX * 0.75);
+      return Math.round(width.value * 0.75);
     }
 
     return Math.round(
-      MAP_FRAME_WIDTH_PX * (imageNaturalSize.value.height / imageNaturalSize.value.width),
+      width.value * (imageNaturalSize.value.height / imageNaturalSize.value.width),
     );
   });
 
   const mapImageFrameStyle = computed(() => {
     return {
-      width: `${MAP_FRAME_WIDTH_PX}px`,
+      width: `${width.value}px`,
       height: `${displayHeight.value}px`,
     };
   });
