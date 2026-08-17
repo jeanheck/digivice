@@ -62,8 +62,28 @@ export class EnemyConverter {
       dvxp: enemyRaw.dvxp,
       exp: enemyRaw.exp,
       bits: enemyRaw.bits,
-      drops: enemyRaw.drops,
-      locations: enemyRaw.locations,
+      drops: enemyRaw.drops?.map((dropRaw) => {
+        return {
+          id: dropRaw.id,
+          locationOnly: dropRaw.locationOnly,
+        };
+      }),
+      locations: enemyRaw.locations?.map((locationRaw) => {
+        return {
+          id: locationRaw.id,
+          sources: locationRaw.sources,
+          localCoordinates:
+            locationRaw.localCoordinates != null
+              ? {
+                  x: locationRaw.localCoordinates.x,
+                  y: locationRaw.localCoordinates.y,
+                }
+              : undefined,
+          startWhenLastMainQuestStepDone: locationRaw.startWhenLastMainQuestStepDone,
+          finishWhenLastMainQuestStepDone: locationRaw.finishWhenLastMainQuestStepDone,
+          accessibleWhen: locationRaw.accessibleWhen,
+        };
+      }),
       regularAttackId: enemyRaw.regularAttackId,
       techniqueId: enemyRaw.techniqueId,
       boss: enemyRaw.boss === true,

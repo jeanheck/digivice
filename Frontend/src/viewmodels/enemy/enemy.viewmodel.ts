@@ -1,5 +1,5 @@
-import type { EnemyDropRaw } from "@/repositories/tables/raws/enemy/enemy-drop.raw";
-import type { EnemyLocationRaw } from "@/repositories/tables/raws/enemy/enemy-location.raw";
+import type { EnemyDropViewModel } from "@/viewmodels/enemy/enemy-drop.viewmodel";
+import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 
 export interface EnemyViewModel {
   name: string;
@@ -60,8 +60,8 @@ export interface EnemyViewModel {
   dvxp: number;
   exp: number;
   bits: number;
-  drops?: EnemyDropRaw[];
-  locations?: EnemyLocationRaw[];
+  drops?: EnemyDropViewModel[];
+  locations?: EnemyLocationViewModel[];
   regularAttackId: string | null;
   techniqueId: string | null;
   boss: boolean;

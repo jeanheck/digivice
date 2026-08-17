@@ -13,27 +13,6 @@ const VARIOUS_BOOSTER_DROP_ID = "variousBooster";
 export class WikiModalPresenter {
   private static dropSourcesByDropId: Map<string, DropSourceViewModel[]> | null = null;
 
-  public static getDropLabelKey(dropKey: string): string {
-    const dropRaw = DropRepository.getDropByKey(dropKey);
-    if (dropRaw === undefined) {
-      return `drops.${dropKey}`;
-    }
-
-    if (dropRaw.type === "booster") {
-      return `boosters.${dropRaw.id}.name`;
-    }
-
-    if (dropRaw.type === "equipment") {
-      return `equipments.${dropRaw.id}.name`;
-    }
-
-    if (dropRaw.type === "consumableItem") {
-      return `consumableItems.${dropRaw.id}.name`;
-    }
-
-    return `drops.${dropKey}`;
-  }
-
   public static getEnemyById(enemyId: string): EnemyViewModel {
     const enemyRaw = EnemyRepository.getEnemyById(enemyId);
     return EnemyConverter.convert(enemyRaw);

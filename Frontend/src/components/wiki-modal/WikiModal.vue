@@ -11,6 +11,7 @@ import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { WikiModalPresenter } from "@/presenters/map/wiki-modal.presenter";
+import { WikiProfileDropsPresenter } from "@/presenters/map/wiki-modal/wiki-profile-drops.presenter";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -64,7 +65,7 @@ const handleClose = () => {
 const allSearchItems = computed(() => {
   return WikiModalPresenter.getAllSearchItems(
     (dropKey) => {
-      return t(WikiModalPresenter.getDropLabelKey(dropKey));
+      return t(WikiProfileDropsPresenter.getDropLabelKey(dropKey));
     },
     (cardId) => {
       return t(`cards.${cardId}.name`);

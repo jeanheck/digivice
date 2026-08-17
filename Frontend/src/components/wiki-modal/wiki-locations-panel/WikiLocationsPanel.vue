@@ -5,10 +5,8 @@ import { ImageCatalog } from "@/catalogs/image.catalog";
 import MapFrame from "@/components/map-frame/MapFrame.vue";
 import { IconConstant } from "@/constants/icon.constant";
 import { LocationRepository } from "@/repositories/location.repository";
-import type {
-  EnemyLocationRaw,
-  EnemyLocationSource,
-} from "@/repositories/tables/raws/enemy/enemy-location.raw";
+import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
+import type { EnemyLocationSourceViewModel } from "@/viewmodels/enemy/enemy-location-source.viewmodel";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
@@ -21,7 +19,7 @@ const { t } = useI18n();
 
 const chipElementsById = ref<Record<string, HTMLElement | null>>({});
 
-const locationEntries = computed((): EnemyLocationRaw[] => {
+const locationEntries = computed((): EnemyLocationViewModel[] => {
   return [...(props.enemy.locations ?? [])].sort((first, second) => {
     return first.id.localeCompare(second.id);
   });
@@ -154,11 +152,11 @@ const localSlides = computed((): MapFrameSlideViewModel[] => {
   return buildSingleSlide(selectedLocationImageUrl.value, localCoordinates.value);
 });
 
-const selectEntry = (entry: EnemyLocationRaw): void => {
+const selectEntry = (entry: EnemyLocationViewModel): void => {
   selectedId.value = entry.id;
 };
 
-const sourceEmoji = (source: EnemyLocationSource): string => {
+const sourceEmoji = (source: EnemyLocationSourceViewModel): string => {
   return IconConstant[source];
 };
 </script>
