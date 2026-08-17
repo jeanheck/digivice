@@ -4,15 +4,10 @@ import { EnemyRepository } from "@/repositories/enemy.repository";
 import { EnemyConverter } from "@/presenters/converter/enemy.converter";
 import { SearchItemConverter } from "@/presenters/converter/search-item.converter";
 import type { CardBoosterSourceViewModel } from "@/viewmodels/card/card-booster-source.viewmodel";
-import type { DropSourceViewModel } from "@/viewmodels/drop/drop-source.viewmodel";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
-const VARIOUS_BOOSTER_DROP_ID = "variousBooster";
-
 export class WikiModalPresenter {
-  private static dropSourcesByDropId: Map<string, DropSourceViewModel[]> | null = null;
-
   public static getEnemyById(enemyId: string): EnemyViewModel {
     const enemyRaw = EnemyRepository.getEnemyById(enemyId);
     return EnemyConverter.convert(enemyRaw);
@@ -47,10 +42,6 @@ export class WikiModalPresenter {
     ];
   }
 
-  public static getDropSources(dropId: string): DropSourceViewModel[] {
-    return this.getDropSourcesByDropId().get(dropId) ?? [];
-  }
-
   public static getCardBoosterSources(cardId: string): CardBoosterSourceViewModel[] {
     const cardRaw = CardRepository.getCardById(cardId);
     if (cardRaw === undefined) {
@@ -72,32 +63,5 @@ export class WikiModalPresenter {
     }
 
     return sources;
-  }
-
-  private static getDropSourcesByDropId(): Map<string, DropSourceViewModel[]> {
-    if (this.dropSourcesByDropId !== null) {
-      return this.dropSourcesByDropId;
-    }
-
-    const dropSourcesByDropId = new Map<string, DropSourceViewModel[]>();
-
-    for (const [enemyId, enemyRaw] of Object.entries(EnemyRepository.getEnemyTable())) {
-      for (const drop of enemyRaw.drops ?? []) {
-        if (drop.id === VARIOUS_BOOSTER_DROP_ID) {
-          continue;
-        }
-
-        const existingSources = dropSourcesByDropId.get(drop.id) ?? [];
-        existingSources.push({
-          enemyId,
-          enemyName: enemyRaw.name,
-          locationOnly: drop.locationOnly,
-        });
-        dropSourcesByDropId.set(drop.id, existingSources);
-      }
-    }
-
-    this.dropSourcesByDropId = dropSourcesByDropId;
-    return dropSourcesByDropId;
   }
 }
