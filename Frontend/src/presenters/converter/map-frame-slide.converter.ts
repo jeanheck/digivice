@@ -4,9 +4,16 @@ import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmo
 export class MapFrameSlideConverter {
   public static convert(
     imageUrl: string | null,
-    coordinates: CoordinatesViewModel,
+    coordinates: CoordinatesViewModel | null,
     label?: string | null,
   ): MapFrameSlideViewModel {
+    if (coordinates === null) {
+      return {
+        imageUrl,
+        pins: [],
+      };
+    }
+
     return {
       imageUrl,
       pins: [
