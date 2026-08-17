@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import {
-  MAP_FRAME_DEFAULT_PIN_DOT_SIZE_PX,
-  MAP_FRAME_DEFAULT_PIN_LABEL_VERTICAL_OFFSET_PX,
-  MAP_FRAME_DEFAULT_PIN_LABEL_VERTICAL_THRESHOLD_PERCENT,
-  MAP_FRAME_DEFAULT_PIN_WRAPPER_SIZE_PX,
-  MAP_FRAME_MAX_HEIGHT_PX,
-  MAP_FRAME_WIDTH_PX,
-} from "@/constants/map-display.constant";
+import { MAP_FRAME_MAX_HEIGHT_PX, MAP_FRAME_WIDTH_PX } from "@/constants/map-display.constant";
 import { useMapFrame } from "@/composables/use-map-frame";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { MapFramePinViewModel } from "@/viewmodels/map-frame/map-frame-pin.viewmodel";
 
+const MAP_FRAME_DEFAULT_PIN_WRAPPER_SIZE_PX = 48;
+const MAP_FRAME_DEFAULT_PIN_DOT_SIZE_PX = 16;
+const MAP_FRAME_DEFAULT_PIN_LABEL_VERTICAL_OFFSET_PX = 40;
+const MAP_FRAME_DEFAULT_PIN_LABEL_VERTICAL_THRESHOLD_PERCENT = 25;
 const MAP_LABEL_LEFT_EDGE_THRESHOLD_PERCENT = 25;
 const MAP_LABEL_RIGHT_EDGE_THRESHOLD_PERCENT = 75;
 

@@ -2,19 +2,27 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import MapFrame from "@/components/map-frame/MapFrame.vue";
-import {
-  MAP_DISPLAY_WIDTH_PX,
-  MAP_FRAME_QUEST_LOCAL_PIN_DOT_SIZE_PX,
-  MAP_FRAME_QUEST_LOCAL_PIN_LABEL_VERTICAL_OFFSET_PX,
-  MAP_FRAME_QUEST_LOCAL_PIN_WRAPPER_SIZE_PX,
-  MAP_FRAME_QUEST_WORLD_PIN_DOT_SIZE_PX,
-  MAP_FRAME_QUEST_WORLD_PIN_LABEL_VERTICAL_OFFSET_PX,
-  MAP_FRAME_QUEST_WORLD_PIN_LABEL_VERTICAL_THRESHOLD_PERCENT,
-  MAP_FRAME_QUEST_WORLD_PIN_WRAPPER_SIZE_PX,
-  MAP_PANEL_MIN_WIDTH_PX,
-} from "@/constants/map-display.constant";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
+
+/**
+ * Canonical width for quest pin / zoomed-location map rendering.
+ * Quest JSON coordinates are calibrated against this size (not MAP_FRAME_WIDTH_PX = 600).
+ */
+const MAP_DISPLAY_WIDTH_PX = 512;
+
+/** Left padding (24px) + stable scrollbar gutter (~16px) around the fixed-width map. */
+const MAP_PANEL_HORIZONTAL_GUTTER_PX = 40;
+const MAP_PANEL_MIN_WIDTH_PX = MAP_DISPLAY_WIDTH_PX + MAP_PANEL_HORIZONTAL_GUTTER_PX;
+
+const MAP_FRAME_QUEST_WORLD_PIN_WRAPPER_SIZE_PX = 32;
+const MAP_FRAME_QUEST_WORLD_PIN_DOT_SIZE_PX = 10;
+const MAP_FRAME_QUEST_WORLD_PIN_LABEL_VERTICAL_OFFSET_PX = 26;
+const MAP_FRAME_QUEST_WORLD_PIN_LABEL_VERTICAL_THRESHOLD_PERCENT = 20;
+
+const MAP_FRAME_QUEST_LOCAL_PIN_WRAPPER_SIZE_PX = 24;
+const MAP_FRAME_QUEST_LOCAL_PIN_DOT_SIZE_PX = 8;
+const MAP_FRAME_QUEST_LOCAL_PIN_LABEL_VERTICAL_OFFSET_PX = 25;
 
 const props = defineProps<{
   selectedStep: StepViewModel | null;
