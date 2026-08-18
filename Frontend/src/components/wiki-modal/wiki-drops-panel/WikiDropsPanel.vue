@@ -28,9 +28,6 @@ const handleOpenEnemy = (enemyId: string): void => {
     <section
       class="flex-1 w-full min-h-0 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col"
     >
-      <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2">
-        {{ $t("enemy.dropDetails") }}
-      </h4>
       <WikiDropConsumableItem
         v-if="dropsViewModel.dropType === 'consumableItem' && dropsViewModel.dropNumericId !== null"
         :consumable-item-id="dropsViewModel.dropNumericId"

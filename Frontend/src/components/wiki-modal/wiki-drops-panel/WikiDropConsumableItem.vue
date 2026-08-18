@@ -44,37 +44,28 @@ const additionalInformation = computed(() => {
 </script>
 
 <template>
-  <div v-if="consumableItem" class="flex flex-col gap-2 min-h-0 overflow-y-auto custom-scroll">
-    <h5 class="text-sm font-bold text-blue-200 tracking-wide">
-      {{ $t(consumableItem.nameKey) }}
-    </h5>
-
-    <div class="flex flex-col gap-1 text-xs">
-      <div class="flex justify-between gap-4">
-        <span class="text-gray-400 uppercase tracking-widest text-[10px]">
-          {{ $t("enemy.resaleValue") }}
-        </span>
-        <span class="text-cyan-300 font-bold">{{ consumableItem.resaleValue }}</span>
-      </div>
-      <div class="flex justify-between gap-4">
-        <span class="text-gray-400 uppercase tracking-widest text-[10px]">
-          {{ $t("enemy.soldInStore") }}
-        </span>
-        <span class="text-gray-200">
-          {{ consumableItem.soldInStore ? $t("enemy.soldInStoreYes") : $t("enemy.soldInStoreNo") }}
-        </span>
-      </div>
-    </div>
+  <div v-if="consumableItem" class="flex flex-col min-h-0 overflow-y-auto custom-scroll text-xs">
+    <p>
+      <span class="text-blue-500 uppercase">{{ $t("enemy.resaleValueLabel") }}: </span>
+      <span class="text-gray-100">{{ consumableItem.resaleValue }}&nbsp;</span>
+      <span class="text-blue-500 uppercase">{{ $t("player.bits") }}</span>
+    </p>
+    <p class="mt-2">
+      <span class="text-blue-500 uppercase">{{ $t("enemy.soldInStore") }}: </span>
+      <span class="text-gray-100 uppercase">
+        {{ consumableItem.soldInStore ? $t("enemy.soldInStoreYes") : $t("enemy.soldInStoreNo") }}
+      </span>
+    </p>
 
     <p
       v-if="note !== ''"
-      class="text-gray-400 text-[10px] italic leading-tight"
+      class="mt-4 text-gray-400 italic leading-tight"
     >
       {{ note }}
     </p>
     <p
       v-if="additionalInformation !== ''"
-      class="text-gray-300 text-[10px] leading-tight"
+      class="mt-4 text-violet-500 leading-tight"
     >
       {{ additionalInformation }}
     </p>
