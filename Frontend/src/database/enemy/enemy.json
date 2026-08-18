@@ -1679,7 +1679,9 @@
         "sources": [
           "walking",
           "fishing"
-        ]
+        ],
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
       },
       {
         "id": "0220",

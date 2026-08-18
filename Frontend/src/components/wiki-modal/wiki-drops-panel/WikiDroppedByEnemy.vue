@@ -33,11 +33,8 @@ const locationOnlyLabel = (locationOnly: string): string => {
       <span class="block text-xs font-bold text-blue-200 tracking-wide">
         {{ source.enemyName }}
       </span>
-      <span
-        v-if="source.locationOnly"
-        class="block text-[10px] text-gray-400"
-      >
-        {{ locationOnlyLabel(source.locationOnly) }}
+      <span class="block min-h-3 text-[10px] text-gray-400 leading-tight">
+        {{ source.locationOnly ? locationOnlyLabel(source.locationOnly) : "" }}
       </span>
     </span>
   </button>
