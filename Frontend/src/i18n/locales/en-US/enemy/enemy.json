@@ -27,6 +27,7 @@
     "soldInStore": "Sold by NPC",
     "soldInStoreYes": "Yes",
     "soldInStoreNo": "No",
+    "type": "Type",
     "cardDetails": "Card details",
     "obtainedFrom": "Obtained from",
     "obtainedFromNone": "No known boosters",
