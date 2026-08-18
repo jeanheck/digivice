@@ -3,18 +3,29 @@ import { computed, nextTick, ref, watch } from "vue";
 import MapFrame from "@/components/map-frame/MapFrame.vue";
 import WikiLocation from "@/components/wiki-modal/wiki-locations-panel/WikiLocation.vue";
 import { WikiLocationsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-locations-panel.presenter";
+import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = defineProps<{
   enemy: EnemyViewModel;
 }>();
 
+const store = useGameStore();
+
 const chipElementsById = ref<Record<string, HTMLElement | null>>({});
 
 const selectedId = ref<string | null>(null);
 
+const mainQuest = computed(() => {
+  return store.currentState?.journal?.mainQuest ?? null;
+});
+
 const locationsViewModel = computed(() => {
-  return WikiLocationsPanelPresenter.getViewModel(props.enemy.locations, selectedId.value);
+  return WikiLocationsPanelPresenter.getViewModel(
+    props.enemy.locations,
+    selectedId.value,
+    mainQuest.value,
+  );
 });
 
 const setChipElementRef = (locationId: string, component: unknown): void => {
