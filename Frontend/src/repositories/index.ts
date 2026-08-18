@@ -1,6 +1,7 @@
 export { AuctionRepository } from "./auction.repository";
 export { CardRepository } from "./card.repository";
 export { DropRepository } from "./drop.repository";
+export { ConsumableItemRepository } from "./consumable-item.repository";
 export { EquipmentRepository } from "./equipment.repository";
 export { DigimonRepository } from "./digimon.repository";
 export { EnemyRepository } from "./enemy.repository";

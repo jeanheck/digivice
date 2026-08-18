@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import WikiDropBooster from "@/components/wiki-modal/wiki-drops-panel/WikiDropBooster.vue";
+import WikiDropConsumableItem from "@/components/wiki-modal/wiki-drops-panel/WikiDropConsumableItem.vue";
+import WikiDropEquipment from "@/components/wiki-modal/wiki-drops-panel/WikiDropEquipment.vue";
 import WikiDroppedBy from "@/components/wiki-modal/wiki-drops-panel/WikiDroppedBy.vue";
 import { WikiDropsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-drops-panel.presenter";
 
@@ -28,12 +31,18 @@ const handleOpenEnemy = (enemyId: string): void => {
       <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2">
         {{ $t("enemy.dropDetails") }}
       </h4>
-      <!-- Drop detail placeholder (type-specific components later) -->
-      <p class="text-xs text-gray-400 italic">
-        <template v-if="dropsViewModel.dropType !== null">
-          {{ dropsViewModel.dropType }}
-        </template>
-      </p>
+      <WikiDropConsumableItem
+        v-if="dropsViewModel.dropType === 'consumableItem' && dropsViewModel.dropNumericId !== null"
+        :consumable-item-id="dropsViewModel.dropNumericId"
+      />
+      <WikiDropEquipment
+        v-else-if="dropsViewModel.dropType === 'equipment' && dropsViewModel.dropNumericId !== null"
+        :equipment-id="dropsViewModel.dropNumericId"
+      />
+      <WikiDropBooster
+        v-else-if="dropsViewModel.dropType === 'booster' && dropsViewModel.dropNumericId !== null"
+        :booster-id="dropsViewModel.dropNumericId"
+      />
     </section>
 
     <WikiDroppedBy :sources="dropsViewModel.sources" @open-enemy="handleOpenEnemy" />

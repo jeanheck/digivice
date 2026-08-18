@@ -16,6 +16,7 @@ export class WikiDropsPanelPresenter {
 
     return {
       dropType: dropRaw?.type ?? null,
+      dropNumericId: dropRaw?.id ?? null,
       sources: dropSources.map((dropSource) => {
         return WikiDroppedByEnemyConverter.convert(
           dropSource,
