@@ -144,6 +144,13 @@ const openEnemyFromDropSource = (enemyId: string) => {
   view.value = "profile";
 };
 
+const openCardFromBooster = (cardId: string) => {
+  hide();
+  selectedCardId.value = cardId;
+  selectedDropId.value = null;
+  view.value = "cards";
+};
+
 const enemy = computed(() => {
   if (selectedEnemyId.value === null) {
     return null;
@@ -260,6 +267,7 @@ const enemyImageUrl = computed(() => {
       v-else-if="view === 'drops' && selectedDropId !== null"
       :drop-id="selectedDropId"
       @open-enemy="openEnemyFromDropSource"
+      @open-card="openCardFromBooster"
     />
     <WikiCardsPanel
       v-else-if="view === 'cards' && selectedCardId !== null"

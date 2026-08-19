@@ -28,6 +28,7 @@
     "soldInStoreYes": "Yes",
     "soldInStoreNo": "No",
     "type": "Type",
+    "boosterCardsLabel": "Cards that can be obtained from this booster",
     "cardDetails": "Card details",
     "obtainedFrom": "Obtained from",
     "obtainedFromNone": "No known boosters",

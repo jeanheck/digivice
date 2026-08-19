@@ -12,6 +12,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "open-enemy", enemyId: string): void;
+  (e: "open-card", cardId: string): void;
 }>();
 
 const dropsViewModel = computed(() => {
@@ -20,6 +21,10 @@ const dropsViewModel = computed(() => {
 
 const handleOpenEnemy = (enemyId: string): void => {
   emit("open-enemy", enemyId);
+};
+
+const handleOpenCard = (cardId: string): void => {
+  emit("open-card", cardId);
 };
 </script>
 
@@ -39,6 +44,7 @@ const handleOpenEnemy = (enemyId: string): void => {
       <WikiDropBooster
         v-else-if="dropsViewModel.dropType === 'booster' && dropsViewModel.dropNumericId !== null"
         :booster-id="dropsViewModel.dropNumericId"
+        @open-card="handleOpenCard"
       />
     </section>
 

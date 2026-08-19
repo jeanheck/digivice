@@ -23,6 +23,11 @@ const FLAG_ASSET_CONFIG = {
   extension: "png",
 } as const;
 
+const CARD_ASSET_CONFIG = {
+  pathSuffix: "/cards/",
+  extension: "png",
+} as const;
+
 const mapModules = import.meta.glob<string>("@/assets/maps/*.webp", {
   eager: true,
   as: "url",
@@ -44,6 +49,11 @@ const digievolutionIconModules = import.meta.glob<string>("@/assets/digievolutio
 });
 
 const flagModules = import.meta.glob<string>("@/assets/flags/*.png", {
+  eager: true,
+  as: "url",
+});
+
+const cardModules = import.meta.glob<string>("@/assets/cards/*.png", {
   eager: true,
   as: "url",
 });
@@ -126,5 +136,14 @@ export class ImageCatalog {
       return null;
     }
     return { src, src2x };
+  }
+
+  public static getCardImageUrl(cardName: string | null): string | null {
+    return resolveAssetUrl(
+      cardModules,
+      CARD_ASSET_CONFIG.pathSuffix,
+      CARD_ASSET_CONFIG.extension,
+      cardName,
+    );
   }
 }
