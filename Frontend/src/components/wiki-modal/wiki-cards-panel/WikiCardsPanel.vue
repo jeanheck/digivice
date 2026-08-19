@@ -23,7 +23,10 @@ const handleOpenDrop = (dropKey: string): void => {
 
 <template>
   <div class="p-4 flex flex-col gap-4 h-full min-h-0 overflow-hidden">
-    <WikiCardDetails :note-key="cardsViewModel.noteKey" />
+    <WikiCardDetails
+      v-if="cardsViewModel.card !== null"
+      :card="cardsViewModel.card"
+    />
     <WikiCardBoosters :sources="cardsViewModel.sources" @open-drop="handleOpenDrop" />
   </div>
 </template>

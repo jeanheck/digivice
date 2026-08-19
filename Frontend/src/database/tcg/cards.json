@@ -1,318 +1,379 @@
 {
   "1000": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1001": {
     "boosters": [
       508,
       531,
       513
-    ]
+    ],
+    "type": "action"
   },
   "1002": {
     "boosters": [
       506
-    ]
+    ],
+    "type": "action"
   },
   "1003": {
     "boosters": [
       509,
       513
-    ]
+    ],
+    "type": "action"
   },
   "1004": {
     "boosters": [
       507
-    ]
+    ],
+    "type": "action"
   },
   "1005": {
     "boosters": [
       505
-    ]
+    ],
+    "type": "action"
   },
   "1006": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1007": {
     "boosters": [
       508,
       515
-    ]
+    ],
+    "type": "action"
   },
   "1008": {
     "boosters": [
       507,
       515
-    ]
+    ],
+    "type": "action"
   },
   "1009": {
     "boosters": [
       505,
       514,
       517
-    ]
+    ],
+    "type": "action"
   },
   "1010": {
     "boosters": [
       502
-    ]
+    ],
+    "type": "action"
   },
   "1011": {
     "boosters": [
       502,
       517
-    ]
+    ],
+    "type": "action"
   },
   "1012": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1013": {
     "boosters": [
       509,
       513,
       519
-    ]
+    ],
+    "type": "action"
   },
   "1014": {
     "boosters": [
       505
-    ]
+    ],
+    "type": "action"
   },
   "1015": {
     "boosters": [
       506
-    ]
+    ],
+    "type": "action"
   },
   "1016": {
     "boosters": [
       504
-    ]
+    ],
+    "type": "action"
   },
   "1017": {
     "boosters": [
       504
-    ]
+    ],
+    "type": "action"
   },
   "1018": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1019": {
     "boosters": [
       508,
       515
-    ]
+    ],
+    "type": "action"
   },
   "1020": {
     "boosters": [
       509,
       511
-    ]
+    ],
+    "type": "action"
   },
   "1021": {
     "boosters": [
       506,
       518
-    ]
+    ],
+    "type": "action"
   },
   "1022": {
     "boosters": [
       504
-    ]
+    ],
+    "type": "action"
   },
   "1023": {
     "boosters": [
       503
-    ]
+    ],
+    "type": "action"
   },
   "1024": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1025": {
     "boosters": [
       515,
       519
-    ]
+    ],
+    "type": "action"
   },
   "1026": {
     "boosters": [
       507
-    ]
+    ],
+    "type": "action"
   },
   "1027": {
     "boosters": [
       509,
       513,
       518
-    ]
+    ],
+    "type": "action"
   },
   "1028": {
     "boosters": [
       504
-    ]
+    ],
+    "type": "action"
   },
   "1029": {
     "boosters": [
       502
-    ]
+    ],
+    "type": "action"
   },
   "1030": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1031": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1032": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1033": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1034": {
-    "boosters": []
+    "boosters": [],
+    "type": "action"
   },
   "1035": {
     "boosters": [
       508,
       531,
       513
-    ]
+    ],
+    "type": "action"
   },
   "1036": {
     "boosters": [
       508,
       515
-    ]
+    ],
+    "type": "action"
   },
   "1037": {
     "boosters": [
       507
-    ]
+    ],
+    "type": "action"
   },
   "1038": {
     "boosters": [
       520
-    ]
+    ],
+    "type": "action"
   },
   "1039": {
     "boosters": [
       512,
       520
-    ]
+    ],
+    "type": "action"
   },
   "1040": {
     "boosters": [
       509,
       512,
       518
-    ]
+    ],
+    "type": "action"
   },
   "1041": {
     "boosters": [
       505
-    ]
+    ],
+    "type": "action"
   },
   "1042": {
     "boosters": [
       526
-    ]
+    ],
+    "type": "action"
   },
   "1043": {
     "boosters": [
       502
-    ]
+    ],
+    "type": "action"
   },
   "1044": {
     "boosters": [
       507
-    ]
+    ],
+    "type": "action"
   },
   "1045": {
     "boosters": [
       507
-    ]
+    ],
+    "type": "action"
   },
   "1046": {
     "boosters": [
       504,
       517
-    ]
+    ],
+    "type": "action"
   },
   "1047": {
     "boosters": [
       504
-    ]
+    ],
+    "type": "action"
   },
   "1048": {
     "boosters": [
       505,
       515,
       518
-    ]
+    ],
+    "type": "action"
   },
   "1049": {
     "boosters": [
       504
-    ]
+    ],
+    "type": "action"
   },
   "1050": {
     "boosters": [
       505
-    ]
+    ],
+    "type": "action"
   },
   "1051": {
     "boosters": [
       505
-    ]
+    ],
+    "type": "action"
   },
   "1052": {
     "boosters": [
       502
-    ]
+    ],
+    "type": "action"
   },
   "1053": {
     "boosters": [
       505
-    ]
+    ],
+    "type": "action"
   },
   "1054": {
     "boosters": [
       523,
       503
-    ]
+    ],
+    "type": "action"
   },
   "1055": {
     "boosters": [
       502,
       524
-    ]
+    ],
+    "type": "action"
   },
   "1056": {
     "boosters": [
       501
-    ]
+    ],
+    "type": "action"
   },
   "1057": {
     "boosters": [
       503,
       512
-    ]
+    ],
+    "type": "action"
   },
   "1058": {
     "boosters": [
       501
-    ]
+    ],
+    "type": "action"
   },
   "1059": {
     "boosters": [
       523,
       514
-    ]
+    ],
+    "type": "action"
   },
   "1060": {
     "boosters": [
       515,
       520
     ],
+    "type": "white",
     "points": {
       "ap": 62,
       "hp": 70
@@ -323,6 +384,7 @@
       515,
       520
     ],
+    "type": "white",
     "points": {
       "ap": 55,
       "hp": 55
@@ -333,6 +395,7 @@
       513,
       520
     ],
+    "type": "white",
     "points": {
       "ap": 52,
       "hp": 52
@@ -342,6 +405,7 @@
     "boosters": [
       520
     ],
+    "type": "white",
     "points": {
       "ap": 50,
       "hp": 55
@@ -351,6 +415,7 @@
     "boosters": [
       515
     ],
+    "type": "white",
     "points": {
       "ap": 46,
       "hp": 50
@@ -360,6 +425,7 @@
     "boosters": [
       513
     ],
+    "type": "white",
     "points": {
       "ap": 45,
       "hp": 48
@@ -369,6 +435,7 @@
     "boosters": [
       531
     ],
+    "type": "white",
     "points": {
       "ap": 42,
       "hp": 45
@@ -378,6 +445,7 @@
     "boosters": [
       514
     ],
+    "type": "white",
     "points": {
       "ap": 40,
       "hp": 42
@@ -385,6 +453,7 @@
   },
   "1068": {
     "boosters": [],
+    "type": "white",
     "points": {
       "ap": 0,
       "hp": 0
@@ -395,6 +464,7 @@
       512,
       533
     ],
+    "type": "white",
     "points": {
       "ap": 33,
       "hp": 33
@@ -407,6 +477,7 @@
       515,
       519
     ],
+    "type": "white",
     "points": {
       "ap": 31,
       "hp": 33
@@ -418,6 +489,7 @@
       513,
       519
     ],
+    "type": "white",
     "points": {
       "ap": 31,
       "hp": 33
@@ -430,6 +502,7 @@
       512,
       519
     ],
+    "type": "white",
     "points": {
       "ap": 30,
       "hp": 30
@@ -440,6 +513,7 @@
       509,
       513
     ],
+    "type": "white",
     "points": {
       "ap": 28,
       "hp": 28
@@ -450,6 +524,7 @@
       507,
       518
     ],
+    "type": "white",
     "points": {
       "ap": 26,
       "hp": 28
@@ -460,6 +535,7 @@
       511,
       532
     ],
+    "type": "white",
     "points": {
       "ap": 25,
       "hp": 27
@@ -470,6 +546,7 @@
       508,
       531
     ],
+    "type": "white",
     "points": {
       "ap": 24,
       "hp": 24
@@ -479,6 +556,7 @@
     "boosters": [
       508
     ],
+    "type": "white",
     "points": {
       "ap": 22,
       "hp": 26
@@ -488,6 +566,7 @@
     "boosters": [
       507
     ],
+    "type": "white",
     "points": {
       "ap": 20,
       "hp": 24
@@ -499,6 +578,7 @@
       511,
       517
     ],
+    "type": "white",
     "points": {
       "ap": 15,
       "hp": 15
@@ -510,6 +590,7 @@
       512,
       517
     ],
+    "type": "white",
     "points": {
       "ap": 14,
       "hp": 16
@@ -519,6 +600,7 @@
     "boosters": [
       505
     ],
+    "type": "white",
     "points": {
       "ap": 14,
       "hp": 14
@@ -529,6 +611,7 @@
       524,
       517
     ],
+    "type": "white",
     "points": {
       "ap": 13,
       "hp": 14
@@ -538,6 +621,7 @@
     "boosters": [
       502
     ],
+    "type": "white",
     "points": {
       "ap": 13,
       "hp": 13
@@ -547,6 +631,7 @@
     "boosters": [
       505
     ],
+    "type": "white",
     "points": {
       "ap": 13,
       "hp": 11
@@ -557,6 +642,7 @@
       526,
       506
     ],
+    "type": "white",
     "points": {
       "ap": 12,
       "hp": 13
@@ -566,6 +652,7 @@
     "boosters": [
       504
     ],
+    "type": "white",
     "points": {
       "ap": 12,
       "hp": 12
@@ -575,6 +662,7 @@
     "boosters": [
       506
     ],
+    "type": "white",
     "points": {
       "ap": 12,
       "hp": 10
@@ -584,6 +672,7 @@
     "boosters": [
       509
     ],
+    "type": "white",
     "points": {
       "ap": 11,
       "hp": 12
@@ -593,6 +682,7 @@
     "boosters": [
       509
     ],
+    "type": "white",
     "points": {
       "ap": 11,
       "hp": 11
@@ -603,6 +693,7 @@
       502,
       517
     ],
+    "type": "white",
     "points": {
       "ap": 10,
       "hp": 13
@@ -612,6 +703,7 @@
     "boosters": [
       504
     ],
+    "type": "white",
     "points": {
       "ap": 10,
       "hp": 10
@@ -622,6 +714,7 @@
       523,
       503
     ],
+    "type": "white",
     "points": {
       "ap": 9,
       "hp": 11
@@ -631,6 +724,7 @@
     "boosters": [
       506
     ],
+    "type": "white",
     "points": {
       "ap": 7,
       "hp": 7
@@ -641,6 +735,7 @@
       523,
       503
     ],
+    "type": "white",
     "points": {
       "ap": 6,
       "hp": 8
@@ -652,6 +747,7 @@
       503,
       506
     ],
+    "type": "white",
     "points": {
       "ap": 5,
       "hp": 5
@@ -662,6 +758,7 @@
       501,
       523
     ],
+    "type": "white",
     "points": {
       "ap": 2,
       "hp": 3
@@ -672,6 +769,7 @@
       523,
       504
     ],
+    "type": "white",
     "points": {
       "ap": 2,
       "hp": 2
@@ -682,6 +780,7 @@
       503,
       512
     ],
+    "type": "white",
     "points": {
       "ap": 2,
       "hp": 1
@@ -692,6 +791,7 @@
       501,
       507
     ],
+    "type": "white",
     "points": {
       "ap": 1,
       "hp": 4
@@ -701,6 +801,7 @@
     "boosters": [
       501
     ],
+    "type": "white",
     "points": {
       "ap": 1,
       "hp": 3
@@ -710,6 +811,7 @@
     "boosters": [
       501
     ],
+    "type": "white",
     "points": {
       "ap": 1,
       "hp": 1
@@ -719,6 +821,7 @@
     "boosters": [
       501
     ],
+    "type": "white",
     "points": {
       "ap": 0,
       "hp": 5
@@ -732,6 +835,7 @@
       519,
       520
     ],
+    "type": "blue",
     "points": {
       "ap": 55,
       "hp": 55
@@ -741,6 +845,7 @@
     "boosters": [
       513
     ],
+    "type": "blue",
     "points": {
       "ap": 50,
       "hp": 50
@@ -750,6 +855,7 @@
     "boosters": [
       513
     ],
+    "type": "blue",
     "points": {
       "ap": 45,
       "hp": 43
@@ -759,6 +865,7 @@
     "boosters": [
       515
     ],
+    "type": "blue",
     "points": {
       "ap": 42,
       "hp": 38
@@ -768,6 +875,7 @@
     "boosters": [
       512
     ],
+    "type": "blue",
     "points": {
       "ap": 40,
       "hp": 42
@@ -778,6 +886,7 @@
       512,
       533
     ],
+    "type": "blue",
     "points": {
       "ap": 39,
       "hp": 35
@@ -790,6 +899,7 @@
       513,
       519
     ],
+    "type": "blue",
     "points": {
       "ap": 35,
       "hp": 35
@@ -801,6 +911,7 @@
       532,
       515
     ],
+    "type": "blue",
     "points": {
       "ap": 35,
       "hp": 30
@@ -808,6 +919,7 @@
   },
   "1111": {
     "boosters": [],
+    "type": "blue",
     "points": {
       "ap": 10,
       "hp": 10
@@ -818,6 +930,7 @@
       507,
       519
     ],
+    "type": "blue",
     "points": {
       "ap": 34,
       "hp": 30
@@ -827,6 +940,7 @@
     "boosters": [
       512
     ],
+    "type": "blue",
     "points": {
       "ap": 32,
       "hp": 32
@@ -838,6 +952,7 @@
       512,
       519
     ],
+    "type": "blue",
     "points": {
       "ap": 32,
       "hp": 30
@@ -847,6 +962,7 @@
     "boosters": [
       508
     ],
+    "type": "blue",
     "points": {
       "ap": 30,
       "hp": 30
@@ -857,6 +973,7 @@
       532,
       512
     ],
+    "type": "blue",
     "points": {
       "ap": 27,
       "hp": 25
@@ -867,6 +984,7 @@
       532,
       512
     ],
+    "type": "blue",
     "points": {
       "ap": 24,
       "hp": 22
@@ -876,6 +994,7 @@
     "boosters": [
       512
     ],
+    "type": "blue",
     "points": {
       "ap": 24,
       "hp": 26
@@ -886,6 +1005,7 @@
       508,
       531
     ],
+    "type": "blue",
     "points": {
       "ap": 23,
       "hp": 26
@@ -895,6 +1015,7 @@
     "boosters": [
       507
     ],
+    "type": "blue",
     "points": {
       "ap": 21,
       "hp": 21
@@ -904,6 +1025,7 @@
     "boosters": [
       507
     ],
+    "type": "blue",
     "points": {
       "ap": 20,
       "hp": 15
@@ -913,6 +1035,7 @@
     "boosters": [
       508
     ],
+    "type": "blue",
     "points": {
       "ap": 18,
       "hp": 18
@@ -922,6 +1045,7 @@
     "boosters": [
       507
     ],
+    "type": "blue",
     "points": {
       "ap": 16,
       "hp": 15
@@ -932,6 +1056,7 @@
       502,
       517
     ],
+    "type": "blue",
     "points": {
       "ap": 15,
       "hp": 16
@@ -941,6 +1066,7 @@
     "boosters": [
       517
     ],
+    "type": "blue",
     "points": {
       "ap": 15,
       "hp": 15
@@ -950,6 +1076,7 @@
     "boosters": [
       508
     ],
+    "type": "blue",
     "points": {
       "ap": 14,
       "hp": 12
@@ -959,6 +1086,7 @@
     "boosters": [
       505
     ],
+    "type": "blue",
     "points": {
       "ap": 13,
       "hp": 15
@@ -969,6 +1097,7 @@
       502,
       517
     ],
+    "type": "blue",
     "points": {
       "ap": 13,
       "hp": 13
@@ -978,6 +1107,7 @@
     "boosters": [
       502
     ],
+    "type": "blue",
     "points": {
       "ap": 12,
       "hp": 13
@@ -987,6 +1117,7 @@
     "boosters": [
       508
     ],
+    "type": "blue",
     "points": {
       "ap": 12,
       "hp": 11
@@ -996,6 +1127,7 @@
     "boosters": [
       507
     ],
+    "type": "blue",
     "points": {
       "ap": 12,
       "hp": 10
@@ -1005,6 +1137,7 @@
     "boosters": [
       507
     ],
+    "type": "blue",
     "points": {
       "ap": 11,
       "hp": 12
@@ -1014,6 +1147,7 @@
     "boosters": [
       502
     ],
+    "type": "blue",
     "points": {
       "ap": 11,
       "hp": 10
@@ -1023,6 +1157,7 @@
     "boosters": [
       505
     ],
+    "type": "blue",
     "points": {
       "ap": 11,
       "hp": 9
@@ -1033,6 +1168,7 @@
       501,
       523
     ],
+    "type": "blue",
     "points": {
       "ap": 10,
       "hp": 9
@@ -1043,6 +1179,7 @@
       502,
       524
     ],
+    "type": "blue",
     "points": {
       "ap": 9,
       "hp": 7
@@ -1053,6 +1190,7 @@
       501,
       523
     ],
+    "type": "blue",
     "points": {
       "ap": 7,
       "hp": 5
@@ -1062,6 +1200,7 @@
     "boosters": [
       501
     ],
+    "type": "blue",
     "points": {
       "ap": 5,
       "hp": 5
@@ -1072,6 +1211,7 @@
       501,
       523
     ],
+    "type": "blue",
     "points": {
       "ap": 4,
       "hp": 4
@@ -1081,6 +1221,7 @@
     "boosters": [
       501
     ],
+    "type": "blue",
     "points": {
       "ap": 2,
       "hp": 3
@@ -1090,6 +1231,7 @@
     "boosters": [
       501
     ],
+    "type": "blue",
     "points": {
       "ap": 2,
       "hp": 2
@@ -1099,6 +1241,7 @@
     "boosters": [
       501
     ],
+    "type": "blue",
     "points": {
       "ap": 1,
       "hp": 1
@@ -1108,6 +1251,7 @@
     "boosters": [
       502
     ],
+    "type": "blue",
     "points": {
       "ap": 1,
       "hp": 1
@@ -1117,6 +1261,7 @@
     "boosters": [
       501
     ],
+    "type": "blue",
     "points": {
       "ap": 0,
       "hp": 3
@@ -1126,6 +1271,7 @@
     "boosters": [
       501
     ],
+    "type": "blue",
     "points": {
       "ap": 0,
       "hp": 2
@@ -1136,6 +1282,7 @@
       514,
       519
     ],
+    "type": "green",
     "points": {
       "ap": 61,
       "hp": 61
@@ -1147,6 +1294,7 @@
       511,
       520
     ],
+    "type": "green",
     "points": {
       "ap": 55,
       "hp": 55
@@ -1157,6 +1305,7 @@
       514,
       520
     ],
+    "type": "green",
     "points": {
       "ap": 51,
       "hp": 51
@@ -1166,6 +1315,7 @@
     "boosters": [
       514
     ],
+    "type": "green",
     "points": {
       "ap": 50,
       "hp": 50
@@ -1175,6 +1325,7 @@
     "boosters": [
       514
     ],
+    "type": "green",
     "points": {
       "ap": 49,
       "hp": 49
@@ -1185,6 +1336,7 @@
       510,
       514
     ],
+    "type": "green",
     "points": {
       "ap": 40,
       "hp": 40
@@ -1194,6 +1346,7 @@
     "boosters": [
       510
     ],
+    "type": "green",
     "points": {
       "ap": 38,
       "hp": 35
@@ -1203,6 +1356,7 @@
     "boosters": [
       510
     ],
+    "type": "green",
     "points": {
       "ap": 35,
       "hp": 35
@@ -1210,6 +1364,7 @@
   },
   "1154": {
     "boosters": [],
+    "type": "green",
     "points": {
       "ap": 10,
       "hp": 10
@@ -1220,6 +1375,7 @@
       511,
       533
     ],
+    "type": "green",
     "points": {
       "ap": 33,
       "hp": 36
@@ -1230,6 +1386,7 @@
       510,
       514
     ],
+    "type": "green",
     "points": {
       "ap": 32,
       "hp": 30
@@ -1239,6 +1396,7 @@
     "boosters": [
       511
     ],
+    "type": "green",
     "points": {
       "ap": 30,
       "hp": 30
@@ -1249,6 +1407,7 @@
       511,
       533
     ],
+    "type": "green",
     "points": {
       "ap": 29,
       "hp": 33
@@ -1258,6 +1417,7 @@
     "boosters": [
       506
     ],
+    "type": "green",
     "points": {
       "ap": 27,
       "hp": 25
@@ -1268,6 +1428,7 @@
       510,
       531
     ],
+    "type": "green",
     "points": {
       "ap": 25,
       "hp": 25
@@ -1278,6 +1439,7 @@
       511,
       532
     ],
+    "type": "green",
     "points": {
       "ap": 26,
       "hp": 28
@@ -1287,6 +1449,7 @@
     "boosters": [
       511
     ],
+    "type": "green",
     "points": {
       "ap": 28,
       "hp": 22
@@ -1296,6 +1459,7 @@
     "boosters": [
       506
     ],
+    "type": "green",
     "points": {
       "ap": 22,
       "hp": 20
@@ -1305,6 +1469,7 @@
     "boosters": [
       510
     ],
+    "type": "green",
     "points": {
       "ap": 21,
       "hp": 18
@@ -1315,6 +1480,7 @@
       509,
       510
     ],
+    "type": "green",
     "points": {
       "ap": 16,
       "hp": 18
@@ -1324,6 +1490,7 @@
     "boosters": [
       507
     ],
+    "type": "green",
     "points": {
       "ap": 15,
       "hp": 15
@@ -1334,6 +1501,7 @@
       504,
       517
     ],
+    "type": "green",
     "points": {
       "ap": 14,
       "hp": 16
@@ -1343,6 +1511,7 @@
     "boosters": [
       506
     ],
+    "type": "green",
     "points": {
       "ap": 14,
       "hp": 14
@@ -1352,6 +1521,7 @@
     "boosters": [
       506
     ],
+    "type": "green",
     "points": {
       "ap": 14,
       "hp": 12
@@ -1361,6 +1531,7 @@
     "boosters": [
       509
     ],
+    "type": "green",
     "points": {
       "ap": 13,
       "hp": 13
@@ -1370,6 +1541,7 @@
     "boosters": [
       509
     ],
+    "type": "green",
     "points": {
       "ap": 13,
       "hp": 15
@@ -1379,6 +1551,7 @@
     "boosters": [
       504
     ],
+    "type": "green",
     "points": {
       "ap": 13,
       "hp": 10
@@ -1388,6 +1561,7 @@
     "boosters": [
       505
     ],
+    "type": "green",
     "points": {
       "ap": 12,
       "hp": 13
@@ -1397,6 +1571,7 @@
     "boosters": [
       504
     ],
+    "type": "green",
     "points": {
       "ap": 12,
       "hp": 12
@@ -1406,6 +1581,7 @@
     "boosters": [
       509
     ],
+    "type": "green",
     "points": {
       "ap": 12,
       "hp": 11
@@ -1415,6 +1591,7 @@
     "boosters": [
       506
     ],
+    "type": "green",
     "points": {
       "ap": 11,
       "hp": 10
@@ -1425,6 +1602,7 @@
       503,
       512
     ],
+    "type": "green",
     "points": {
       "ap": 10,
       "hp": 9
@@ -1434,6 +1612,7 @@
     "boosters": [
       504
     ],
+    "type": "green",
     "points": {
       "ap": 9,
       "hp": 7
@@ -1443,6 +1622,7 @@
     "boosters": [
       506
     ],
+    "type": "green",
     "points": {
       "ap": 8,
       "hp": 8
@@ -1453,6 +1633,7 @@
       523,
       503
     ],
+    "type": "green",
     "points": {
       "ap": 7,
       "hp": 7
@@ -1463,6 +1644,7 @@
       503,
       506
     ],
+    "type": "green",
     "points": {
       "ap": 5,
       "hp": 5
@@ -1473,6 +1655,7 @@
       503,
       504
     ],
+    "type": "green",
     "points": {
       "ap": 4,
       "hp": 3
@@ -1483,6 +1666,7 @@
       503,
       505
     ],
+    "type": "green",
     "points": {
       "ap": 2,
       "hp": 3
@@ -1493,6 +1677,7 @@
       523,
       507
     ],
+    "type": "green",
     "points": {
       "ap": 2,
       "hp": 2
@@ -1502,6 +1687,7 @@
     "boosters": [
       501
     ],
+    "type": "green",
     "points": {
       "ap": 2,
       "hp": 1
@@ -1512,6 +1698,7 @@
       503,
       514
     ],
+    "type": "green",
     "points": {
       "ap": 1,
       "hp": 3
@@ -1521,6 +1708,7 @@
     "boosters": [
       501
     ],
+    "type": "green",
     "points": {
       "ap": 1,
       "hp": 1
@@ -1530,6 +1718,7 @@
     "boosters": [
       501
     ],
+    "type": "green",
     "points": {
       "ap": 0,
       "hp": 2
@@ -1540,6 +1729,7 @@
       515,
       520
     ],
+    "type": "red",
     "points": {
       "ap": 60,
       "hp": 62
@@ -1551,6 +1741,7 @@
       533,
       520
     ],
+    "type": "red",
     "points": {
       "ap": 56,
       "hp": 52
@@ -1560,6 +1751,7 @@
     "boosters": [
       514
     ],
+    "type": "red",
     "points": {
       "ap": 55,
       "hp": 55
@@ -1569,6 +1761,7 @@
     "boosters": [
       511
     ],
+    "type": "red",
     "points": {
       "ap": 53,
       "hp": 50
@@ -1578,6 +1771,7 @@
     "boosters": [
       513
     ],
+    "type": "red",
     "points": {
       "ap": 50,
       "hp": 50
@@ -1587,6 +1781,7 @@
     "boosters": [
       515
     ],
+    "type": "red",
     "points": {
       "ap": 50,
       "hp": 49
@@ -1596,6 +1791,7 @@
     "boosters": [
       514
     ],
+    "type": "red",
     "points": {
       "ap": 45,
       "hp": 43
@@ -1605,6 +1801,7 @@
     "boosters": [
       514
     ],
+    "type": "red",
     "points": {
       "ap": 44,
       "hp": 40
@@ -1612,6 +1809,7 @@
   },
   "1197": {
     "boosters": [],
+    "type": "red",
     "points": {
       "ap": 0,
       "hp": 0
@@ -1623,6 +1821,7 @@
       532,
       513
     ],
+    "type": "red",
     "points": {
       "ap": 35,
       "hp": 30
@@ -1632,6 +1831,7 @@
     "boosters": [
       511
     ],
+    "type": "red",
     "points": {
       "ap": 34,
       "hp": 32
@@ -1643,6 +1843,7 @@
       532,
       512
     ],
+    "type": "red",
     "points": {
       "ap": 33,
       "hp": 30
@@ -1654,6 +1855,7 @@
       511,
       518
     ],
+    "type": "red",
     "points": {
       "ap": 30,
       "hp": 25
@@ -1664,6 +1866,7 @@
       509,
       515
     ],
+    "type": "red",
     "points": {
       "ap": 29,
       "hp": 27
@@ -1673,6 +1876,7 @@
     "boosters": [
       510
     ],
+    "type": "red",
     "points": {
       "ap": 29,
       "hp": 26
@@ -1683,6 +1887,7 @@
       508,
       513
     ],
+    "type": "red",
     "points": {
       "ap": 28,
       "hp": 22
@@ -1692,6 +1897,7 @@
     "boosters": [
       510
     ],
+    "type": "red",
     "points": {
       "ap": 26,
       "hp": 20
@@ -1703,6 +1909,7 @@
       510,
       531
     ],
+    "type": "red",
     "points": {
       "ap": 25,
       "hp": 25
@@ -1712,6 +1919,7 @@
     "boosters": [
       506
     ],
+    "type": "red",
     "points": {
       "ap": 20,
       "hp": 18
@@ -1722,6 +1930,7 @@
       505,
       518
     ],
+    "type": "red",
     "points": {
       "ap": 20,
       "hp": 20
@@ -1732,6 +1941,7 @@
       504,
       517
     ],
+    "type": "red",
     "points": {
       "ap": 18,
       "hp": 20
@@ -1742,6 +1952,7 @@
       506,
       518
     ],
+    "type": "red",
     "points": {
       "ap": 17,
       "hp": 16
@@ -1751,6 +1962,7 @@
     "boosters": [
       504
     ],
+    "type": "red",
     "points": {
       "ap": 15,
       "hp": 16
@@ -1760,6 +1972,7 @@
     "boosters": [
       506
     ],
+    "type": "red",
     "points": {
       "ap": 15,
       "hp": 15
@@ -1769,6 +1982,7 @@
     "boosters": [
       504
     ],
+    "type": "red",
     "points": {
       "ap": 14,
       "hp": 12
@@ -1779,6 +1993,7 @@
       526,
       506
     ],
+    "type": "red",
     "points": {
       "ap": 13,
       "hp": 12
@@ -1788,6 +2003,7 @@
     "boosters": [
       505
     ],
+    "type": "red",
     "points": {
       "ap": 13,
       "hp": 11
@@ -1797,6 +2013,7 @@
     "boosters": [
       509
     ],
+    "type": "red",
     "points": {
       "ap": 12,
       "hp": 11
@@ -1807,6 +2024,7 @@
       504,
       517
     ],
+    "type": "red",
     "points": {
       "ap": 12,
       "hp": 10
@@ -1817,6 +2035,7 @@
       526,
       506
     ],
+    "type": "red",
     "points": {
       "ap": 11,
       "hp": 10
@@ -1827,6 +2046,7 @@
       504,
       517
     ],
+    "type": "red",
     "points": {
       "ap": 11,
       "hp": 9
@@ -1836,6 +2056,7 @@
     "boosters": [
       506
     ],
+    "type": "red",
     "points": {
       "ap": 10,
       "hp": 9
@@ -1845,6 +2066,7 @@
     "boosters": [
       504
     ],
+    "type": "red",
     "points": {
       "ap": 8,
       "hp": 6
@@ -1855,6 +2077,7 @@
       523,
       503
     ],
+    "type": "red",
     "points": {
       "ap": 7,
       "hp": 7
@@ -1865,6 +2088,7 @@
       523,
       504
     ],
+    "type": "red",
     "points": {
       "ap": 7,
       "hp": 6
@@ -1874,6 +2098,7 @@
     "boosters": [
       501
     ],
+    "type": "red",
     "points": {
       "ap": 5,
       "hp": 3
@@ -1884,6 +2109,7 @@
       503,
       506
     ],
+    "type": "red",
     "points": {
       "ap": 4,
       "hp": 4
@@ -1893,6 +2119,7 @@
     "boosters": [
       501
     ],
+    "type": "red",
     "points": {
       "ap": 3,
       "hp": 3
@@ -1902,6 +2129,7 @@
     "boosters": [
       501
     ],
+    "type": "red",
     "points": {
       "ap": 2,
       "hp": 3
@@ -1913,6 +2141,7 @@
       503,
       505
     ],
+    "type": "red",
     "points": {
       "ap": 2,
       "hp": 2
@@ -1923,6 +2152,7 @@
       503,
       514
     ],
+    "type": "red",
     "points": {
       "ap": 2,
       "hp": 1
@@ -1932,6 +2162,7 @@
     "boosters": [
       504
     ],
+    "type": "red",
     "points": {
       "ap": 1,
       "hp": 2
@@ -1941,6 +2172,7 @@
     "boosters": [
       503
     ],
+    "type": "red",
     "points": {
       "ap": 1,
       "hp": 1
@@ -1950,6 +2182,7 @@
     "boosters": [
       514
     ],
+    "type": "black",
     "points": {
       "ap": 65,
       "hp": 62
@@ -1959,6 +2192,7 @@
     "boosters": [
       515
     ],
+    "type": "black",
     "points": {
       "ap": 60,
       "hp": 50
@@ -1968,6 +2202,7 @@
     "boosters": [
       515
     ],
+    "type": "black",
     "points": {
       "ap": 58,
       "hp": 58
@@ -1977,6 +2212,7 @@
     "boosters": [
       514
     ],
+    "type": "black",
     "points": {
       "ap": 53,
       "hp": 53
@@ -1986,6 +2222,7 @@
     "boosters": [
       514
     ],
+    "type": "black",
     "points": {
       "ap": 51,
       "hp": 51
@@ -1995,6 +2232,7 @@
     "boosters": [
       515
     ],
+    "type": "black",
     "points": {
       "ap": 50,
       "hp": 51
@@ -2004,6 +2242,7 @@
     "boosters": [
       513
     ],
+    "type": "black",
     "points": {
       "ap": 43,
       "hp": 40
@@ -2013,6 +2252,7 @@
     "boosters": [
       514
     ],
+    "type": "black",
     "points": {
       "ap": 42,
       "hp": 40
@@ -2020,6 +2260,7 @@
   },
   "1240": {
     "boosters": [],
+    "type": "black",
     "points": {
       "ap": 10,
       "hp": 10
@@ -2029,6 +2270,7 @@
     "boosters": [
       511
     ],
+    "type": "black",
     "points": {
       "ap": 35,
       "hp": 36
@@ -2038,6 +2280,7 @@
     "boosters": [
       512
     ],
+    "type": "black",
     "points": {
       "ap": 34,
       "hp": 35
@@ -2047,6 +2290,7 @@
     "boosters": [
       513
     ],
+    "type": "black",
     "points": {
       "ap": 33,
       "hp": 33
@@ -2057,6 +2301,7 @@
       509,
       514
     ],
+    "type": "black",
     "points": {
       "ap": 32,
       "hp": 32
@@ -2067,6 +2312,7 @@
       512,
       533
     ],
+    "type": "black",
     "points": {
       "ap": 32,
       "hp": 28
@@ -2076,6 +2322,7 @@
     "boosters": [
       512
     ],
+    "type": "black",
     "points": {
       "ap": 31,
       "hp": 26
@@ -2086,6 +2333,7 @@
       511,
       533
     ],
+    "type": "black",
     "points": {
       "ap": 31,
       "hp": 31
@@ -2095,6 +2343,7 @@
     "boosters": [
       507
     ],
+    "type": "black",
     "points": {
       "ap": 30,
       "hp": 28
@@ -2104,6 +2353,7 @@
     "boosters": [
       513
     ],
+    "type": "black",
     "points": {
       "ap": 28,
       "hp": 26
@@ -2115,6 +2365,7 @@
       510,
       531
     ],
+    "type": "black",
     "points": {
       "ap": 26,
       "hp": 22
@@ -2126,6 +2377,7 @@
       511,
       520
     ],
+    "type": "black",
     "points": {
       "ap": 19,
       "hp": 18
@@ -2135,6 +2387,7 @@
     "boosters": [
       505
     ],
+    "type": "black",
     "points": {
       "ap": 16,
       "hp": 15
@@ -2144,6 +2397,7 @@
     "boosters": [
       507
     ],
+    "type": "black",
     "points": {
       "ap": 15,
       "hp": 15
@@ -2153,6 +2407,7 @@
     "boosters": [
       508
     ],
+    "type": "black",
     "points": {
       "ap": 15,
       "hp": 13
@@ -2162,6 +2417,7 @@
     "boosters": [
       510
     ],
+    "type": "black",
     "points": {
       "ap": 14,
       "hp": 12
@@ -2171,6 +2427,7 @@
     "boosters": [
       504
     ],
+    "type": "black",
     "points": {
       "ap": 13,
       "hp": 11
@@ -2180,6 +2437,7 @@
     "boosters": [
       502
     ],
+    "type": "black",
     "points": {
       "ap": 12,
       "hp": 13
@@ -2189,6 +2447,7 @@
     "boosters": [
       502
     ],
+    "type": "black",
     "points": {
       "ap": 12,
       "hp": 12
@@ -2198,6 +2457,7 @@
     "boosters": [
       507
     ],
+    "type": "black",
     "points": {
       "ap": 12,
       "hp": 11
@@ -2207,6 +2467,7 @@
     "boosters": [
       507
     ],
+    "type": "black",
     "points": {
       "ap": 12,
       "hp": 10
@@ -2217,6 +2478,7 @@
       502,
       507
     ],
+    "type": "black",
     "points": {
       "ap": 11,
       "hp": 11
@@ -2227,6 +2489,7 @@
       502,
       526
     ],
+    "type": "black",
     "points": {
       "ap": 11,
       "hp": 9
@@ -2237,6 +2500,7 @@
       501,
       523
     ],
+    "type": "black",
     "points": {
       "ap": 11,
       "hp": 8
@@ -2249,6 +2513,7 @@
       507,
       515
     ],
+    "type": "black",
     "points": {
       "ap": 10,
       "hp": 10
@@ -2258,6 +2523,7 @@
     "boosters": [
       507
     ],
+    "type": "black",
     "points": {
       "ap": 10,
       "hp": 9
@@ -2267,6 +2533,7 @@
     "boosters": [
       504
     ],
+    "type": "black",
     "points": {
       "ap": 9,
       "hp": 8
@@ -2276,6 +2543,7 @@
     "boosters": [
       501
     ],
+    "type": "black",
     "points": {
       "ap": 3,
       "hp": 3
@@ -2286,6 +2554,7 @@
       523,
       503
     ],
+    "type": "black",
     "points": {
       "ap": 2,
       "hp": 4
@@ -2295,6 +2564,7 @@
     "boosters": [
       502
     ],
+    "type": "black",
     "points": {
       "ap": 2,
       "hp": 2
@@ -2304,6 +2574,7 @@
     "boosters": [
       502
     ],
+    "type": "black",
     "points": {
       "ap": 2,
       "hp": 1
@@ -2313,6 +2584,7 @@
     "boosters": [
       503
     ],
+    "type": "black",
     "points": {
       "ap": 1,
       "hp": 2
@@ -2322,6 +2594,7 @@
     "boosters": [
       504
     ],
+    "type": "black",
     "points": {
       "ap": 1,
       "hp": 2
@@ -2331,6 +2604,7 @@
     "boosters": [
       501
     ],
+    "type": "black",
     "points": {
       "ap": 1,
       "hp": 1
@@ -2340,6 +2614,7 @@
     "boosters": [
       501
     ],
+    "type": "black",
     "points": {
       "ap": 1,
       "hp": 1
@@ -2349,6 +2624,7 @@
     "boosters": [
       515
     ],
+    "type": "brown",
     "points": {
       "ap": 60,
       "hp": 55
@@ -2358,6 +2634,7 @@
     "boosters": [
       514
     ],
+    "type": "brown",
     "points": {
       "ap": 50,
       "hp": 40
@@ -2367,6 +2644,7 @@
     "boosters": [
       515
     ],
+    "type": "brown",
     "points": {
       "ap": 47,
       "hp": 37
@@ -2376,6 +2654,7 @@
     "boosters": [
       513
     ],
+    "type": "brown",
     "points": {
       "ap": 46,
       "hp": 36
@@ -2385,6 +2664,7 @@
     "boosters": [
       511
     ],
+    "type": "brown",
     "points": {
       "ap": 45,
       "hp": 30
@@ -2396,6 +2676,7 @@
       533,
       520
     ],
+    "type": "brown",
     "points": {
       "ap": 43,
       "hp": 30
@@ -2405,6 +2686,7 @@
     "boosters": [
       512
     ],
+    "type": "brown",
     "points": {
       "ap": 42,
       "hp": 35
@@ -2414,6 +2696,7 @@
     "boosters": [
       514
     ],
+    "type": "brown",
     "points": {
       "ap": 39,
       "hp": 32
@@ -2424,6 +2707,7 @@
       510,
       532
     ],
+    "type": "brown",
     "points": {
       "ap": 36,
       "hp": 30
@@ -2434,6 +2718,7 @@
       512,
       533
     ],
+    "type": "brown",
     "points": {
       "ap": 32,
       "hp": 34
@@ -2444,6 +2729,7 @@
       511,
       532
     ],
+    "type": "brown",
     "points": {
       "ap": 31,
       "hp": 29
@@ -2454,6 +2740,7 @@
       509,
       515
     ],
+    "type": "brown",
     "points": {
       "ap": 29,
       "hp": 29
@@ -2464,6 +2751,7 @@
       511,
       533
     ],
+    "type": "brown",
     "points": {
       "ap": 28,
       "hp": 22
@@ -2473,6 +2761,7 @@
     "boosters": [
       511
     ],
+    "type": "brown",
     "points": {
       "ap": 26,
       "hp": 28
@@ -2483,6 +2772,7 @@
       508,
       531
     ],
+    "type": "brown",
     "points": {
       "ap": 25,
       "hp": 25
@@ -2492,6 +2782,7 @@
     "boosters": [
       512
     ],
+    "type": "brown",
     "points": {
       "ap": 24,
       "hp": 28
@@ -2501,6 +2792,7 @@
     "boosters": [
       513
     ],
+    "type": "brown",
     "points": {
       "ap": 24,
       "hp": 22
@@ -2510,6 +2802,7 @@
     "boosters": [
       506
     ],
+    "type": "brown",
     "points": {
       "ap": 22,
       "hp": 20
@@ -2519,6 +2812,7 @@
     "boosters": [
       506
     ],
+    "type": "brown",
     "points": {
       "ap": 21,
       "hp": 23
@@ -2528,6 +2822,7 @@
     "boosters": [
       506
     ],
+    "type": "brown",
     "points": {
       "ap": 16,
       "hp": 16
@@ -2538,6 +2833,7 @@
       509,
       510
     ],
+    "type": "brown",
     "points": {
       "ap": 15,
       "hp": 18
@@ -2548,6 +2844,7 @@
       509,
       510
     ],
+    "type": "brown",
     "points": {
       "ap": 14,
       "hp": 14
@@ -2557,6 +2854,7 @@
     "boosters": [
       504
     ],
+    "type": "brown",
     "points": {
       "ap": 13,
       "hp": 15
@@ -2567,6 +2865,7 @@
       524,
       504
     ],
+    "type": "brown",
     "points": {
       "ap": 13,
       "hp": 13
@@ -2577,6 +2876,7 @@
       524,
       505
     ],
+    "type": "brown",
     "points": {
       "ap": 12,
       "hp": 12
@@ -2586,6 +2886,7 @@
     "boosters": [
       509
     ],
+    "type": "brown",
     "points": {
       "ap": 12,
       "hp": 11
@@ -2595,6 +2896,7 @@
     "boosters": [
       509
     ],
+    "type": "brown",
     "points": {
       "ap": 12,
       "hp": 10
@@ -2604,6 +2906,7 @@
     "boosters": [
       505
     ],
+    "type": "brown",
     "points": {
       "ap": 12,
       "hp": 9
@@ -2613,6 +2916,7 @@
     "boosters": [
       506
     ],
+    "type": "brown",
     "points": {
       "ap": 11,
       "hp": 12
@@ -2622,6 +2926,7 @@
     "boosters": [
       507
     ],
+    "type": "brown",
     "points": {
       "ap": 11,
       "hp": 11
@@ -2631,6 +2936,7 @@
     "boosters": [
       505
     ],
+    "type": "brown",
     "points": {
       "ap": 11,
       "hp": 10
@@ -2640,6 +2946,7 @@
     "boosters": [
       502
     ],
+    "type": "brown",
     "points": {
       "ap": 11,
       "hp": 9
@@ -2649,6 +2956,7 @@
     "boosters": [
       507
     ],
+    "type": "brown",
     "points": {
       "ap": 10,
       "hp": 9
@@ -2658,6 +2966,7 @@
     "boosters": [
       505
     ],
+    "type": "brown",
     "points": {
       "ap": 10,
       "hp": 7
@@ -2667,6 +2976,7 @@
     "boosters": [
       505
     ],
+    "type": "brown",
     "points": {
       "ap": 9,
       "hp": 9
@@ -2676,6 +2986,7 @@
     "boosters": [
       501
     ],
+    "type": "brown",
     "points": {
       "ap": 3,
       "hp": 4
@@ -2685,6 +2996,7 @@
     "boosters": [
       501
     ],
+    "type": "brown",
     "points": {
       "ap": 3,
       "hp": 3
@@ -2695,6 +3007,7 @@
       503,
       514
     ],
+    "type": "brown",
     "points": {
       "ap": 2,
       "hp": 3
@@ -2704,6 +3017,7 @@
     "boosters": [
       502
     ],
+    "type": "brown",
     "points": {
       "ap": 1,
       "hp": 2

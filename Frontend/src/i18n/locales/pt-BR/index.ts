@@ -5,6 +5,7 @@ import conditions from "./enemy/condition.json";
 import drops from "./enemy/drop.json";
 import boosters from "./tcg/booster.json";
 import cards from "./tcg/cards.json";
+import cardType from "./tcg/card-type.json";
 import regularAttacks from "./enemy/enemy-regular-attack.json";
 import enemyTechniques from "./enemy/enemy-technique.json";
 import techniqueTypes from "./digievolution/technique-type.json";
@@ -47,6 +48,7 @@ export default {
   ...drops,
   ...boosters,
   ...cards,
+  ...cardType,
   ...regularAttacks,
   ...enemyTechniques,
   ...techniqueTypes,
