@@ -7,6 +7,7 @@ export interface BattleMapViewModel {
   isBoss: boolean;
   level: number | null;
   species: string | null;
+  speciesEmoji: string | null;
   hp: Vital;
   attributes: EnemyStatViewModel[];
   elements: EnemyStatViewModel[];

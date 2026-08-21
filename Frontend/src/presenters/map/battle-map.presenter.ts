@@ -5,7 +5,6 @@ import type { BattleMapViewModel } from "@/viewmodels/map/battle-map.viewmodel";
 
 export class BattleMapPresenter {
   private static readonly battleLocationId = "0600";
-  private static readonly mockedTitle = "MetalSeadramon(Black)";
 
   public static isInBattle(locationId: string | null): boolean {
     return locationId === this.battleLocationId;
@@ -14,11 +13,12 @@ export class BattleMapPresenter {
   public static getViewModel(memoryId: number | null, hp: Vital | null): BattleMapViewModel {
     const resolvedHp = hp ?? { current: 0, max: 0 };
     if (memoryId === null) {
-      return BattleMapConverter.convert(null, resolvedHp, this.mockedTitle);
+      return BattleMapConverter.convert(null, resolvedHp, "");
     }
 
     const enemyRaw = EnemyRepository.getEnemyByMemoryId(memoryId);
+    const title = enemyRaw?.name ?? "";
 
-    return BattleMapConverter.convert(enemyRaw, resolvedHp, this.mockedTitle);
+    return BattleMapConverter.convert(enemyRaw, resolvedHp, title);
   }
 }

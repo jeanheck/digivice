@@ -1,4 +1,8 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
+import { EnemySourceConstant } from "@/constants/enemy-source.constant";
+import { IconConstant } from "@/constants/icon.constant";
+import { toSpeciesConstant } from "@/constants/species.constant";
+import type { Constant } from "@/constants/constant";
 import type { Vital } from "@/models/party/digimon/vital";
 import { EnemyConditionConverter } from "@/presenters/converter/enemy-condition.converter";
 import { EnemyStatConverter } from "@/presenters/converter/enemy-stat.converter";
@@ -18,6 +22,7 @@ export class BattleMapConverter {
         isBoss: false,
         level: null,
         species: null,
+        speciesEmoji: null,
         hp,
         attributes: [],
         elements: [],
@@ -26,13 +31,15 @@ export class BattleMapConverter {
       };
     }
 
+    const isBoss = enemyRaw.boss === true;
     const conditions = BattleMapConverter.toConditions(enemyRaw);
 
     return {
       title,
-      isBoss: enemyRaw.boss === true,
+      isBoss,
       level: enemyRaw.level,
       species: enemyRaw.species,
+      speciesEmoji: BattleMapConverter.toSpeciesEmoji(enemyRaw.species, isBoss),
       hp,
       attributes: EnemyStatConverter.convertAttributes({
         strength: enemyRaw.strength,
@@ -53,6 +60,19 @@ export class BattleMapConverter {
       conditions: EnemyConditionConverter.convertConditions(conditions),
       enemyImageUrl: ImageCatalog.getEnemyIconUrl(enemyRaw.name),
     };
+  }
+
+  private static toSpeciesEmoji(species: string | null, isBoss: boolean): string | null {
+    if (isBoss) {
+      return IconConstant[EnemySourceConstant.boss];
+    }
+
+    const speciesConstant = toSpeciesConstant(species);
+    if (speciesConstant === null) {
+      return null;
+    }
+
+    return IconConstant[speciesConstant as Constant];
   }
 
   private static toConditions(enemyRaw: EnemyRaw): EnemyViewModel["conditions"] {

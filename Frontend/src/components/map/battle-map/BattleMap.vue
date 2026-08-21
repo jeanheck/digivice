@@ -100,27 +100,34 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
       >
         Lv.{{ battleMapViewModel.level }}
       </span>
-      <span class="font-emoji text-sm shrink-0 justify-self-center" aria-hidden="true"
-        >🪰</span
+      <span
+        v-if="battleMapViewModel.speciesEmoji"
+        class="font-emoji text-sm shrink-0 justify-self-center -translate-y-1"
+        aria-hidden="true"
+        >{{ battleMapViewModel.speciesEmoji }}</span
       >
     </div>
 
     <div
-      class="relative z-[1] flex-1 min-h-0 overflow-hidden -mx-3 -mb-1.5 w-[calc(100%+1.5rem)]"
+      class="relative z-[1] flex-1 min-h-0 overflow-visible -mx-3 -mb-1.5 w-[calc(100%+1.5rem)]"
     >
       <img
         v-if="battleMapViewModel.enemyImageUrl"
         :src="battleMapViewModel.enemyImageUrl"
         :alt="battleMapViewModel.title"
-        class="absolute top-2 left-2 z-[1] w-[35%] max-h-[45%] object-contain pointer-events-none"
+        class="absolute top-2 left-2 z-[1] w-[39.5%] max-h-[50.5%] object-contain pointer-events-none drop-shadow-[0_6px_14px_rgba(0,0,0,0.75)]"
       />
 
-      <img
+      <div
         v-if="juniorImageUrl"
-        :src="juniorImageUrl"
-        alt=""
-        class="absolute bottom-2 right-2 z-[2] w-[22%] max-h-[30%] object-contain pointer-events-none"
-      />
+        class="absolute -bottom-12 -right-6 z-[2] w-[100%] h-[110%] overflow-hidden pointer-events-none"
+      >
+        <img
+          :src="juniorImageUrl"
+          alt=""
+          class="absolute top-0 right-0 w-full max-w-none h-[260%] object-contain object-top"
+        />
+      </div>
 
       <button
         v-if="hasStats"

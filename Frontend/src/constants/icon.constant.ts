@@ -5,6 +5,7 @@ import type { Constant as ConstantsType } from "./constant";
 import { Constant } from "./constant";
 import { SeabedConstant } from "./seabed.constant";
 import { EnemySourceConstant } from "./enemy-source.constant";
+import { SpeciesConstant } from "./species.constant";
 
 export const IconConstant: Record<ConstantsType, string> = {
   [AttributeConstant.strength]: "👊",
@@ -40,4 +41,15 @@ export const IconConstant: Record<ConstantsType, string> = {
   [EnemySourceConstant.fishing]: "🎣",
   [EnemySourceConstant.kickingTree]: "🌴",
   [EnemySourceConstant.boss]: "☠️",
+  [SpeciesConstant.insect]: "🪰",
+  [SpeciesConstant.dino]: "🦕",
+  [SpeciesConstant.machine]: "🤖",
+  [SpeciesConstant.mammal]: "🐾",
+  [SpeciesConstant.fish]: "🐟",
+  [SpeciesConstant.evil]: "😈",
+  [SpeciesConstant.plant]: "🌿",
+  [SpeciesConstant.bird]: "🐦",
+  [SpeciesConstant.dragon]: "🐉",
+  [SpeciesConstant.ghoul]: "👻",
+  [SpeciesConstant.rare]: "✨",
 };
