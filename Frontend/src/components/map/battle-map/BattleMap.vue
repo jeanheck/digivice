@@ -76,9 +76,15 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
 </script>
 
 <template>
-  <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1">
+  <div class="relative z-10 flex flex-col flex-1 min-h-0">
     <div
-      class="relative z-[1] grid grid-cols-[1fr_auto_auto] gap-x-2 gap-y-2 items-center shrink-0 w-full px-2"
+      v-if="fieldImageUrl"
+      class="absolute -left-3 -right-3 -top-1.5 -bottom-1.5 z-0 bg-cover bg-center pointer-events-none"
+      :style="{ backgroundImage: `url(${fieldImageUrl})` }"
+    />
+
+    <div
+      class="relative z-[1] -mt-1.5 -mx-3 w-[calc(100%+1.5rem)] pt-1.5 pb-1 grid grid-cols-[1fr_auto_auto] gap-x-2 gap-y-2 items-center shrink-0 px-2 bg-black/80"
     >
       <h4
         class="col-span-3 text-[11px] font-bold tracking-widest leading-tight text-center min-w-0 truncate"
@@ -100,14 +106,8 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
     </div>
 
     <div
-      class="relative z-[1] top-1 flex-1 min-h-0 overflow-hidden -mx-3 -mb-1.5 w-[calc(100%+1.5rem)]"
+      class="relative z-[1] flex-1 min-h-0 overflow-hidden -mx-3 -mb-1.5 w-[calc(100%+1.5rem)]"
     >
-      <div
-        v-if="fieldImageUrl"
-        class="absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
-        :style="{ backgroundImage: `url(${fieldImageUrl})` }"
-      />
-
       <img
         v-if="battleMapViewModel.enemyImageUrl"
         :src="battleMapViewModel.enemyImageUrl"
@@ -135,7 +135,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
       <Transition name="fade">
         <div
           v-if="hasStats && isStatsOpen"
-          class="map-info-panel absolute inset-0 z-10 !max-w-none w-full !border-0 pb-8 text-white text-xs"
+          class="map-info-panel absolute inset-0 z-10 !max-w-none w-full !border-0 !rounded-none !backdrop-blur-none pb-8 text-white text-xs"
         >
           <div class="grid grid-cols-4 w-fit gap-x-2">
             <div class="flex flex-col gap-1 min-w-0">
