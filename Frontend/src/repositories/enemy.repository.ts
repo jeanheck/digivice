@@ -9,6 +9,20 @@ export class EnemyRepository {
     return this.enemyTable[enemyId]!;
   }
 
+  public static getEnemyByMemoryId(memoryId: number): EnemyRaw | null {
+    if (memoryId === 0) {
+      return null;
+    }
+
+    for (const enemyRaw of Object.values(this.enemyTable)) {
+      if (enemyRaw.memoryId === memoryId) {
+        return enemyRaw;
+      }
+    }
+
+    return null;
+  }
+
   public static getEnemyTable(): EnemyTable {
     return this.enemyTable;
   }

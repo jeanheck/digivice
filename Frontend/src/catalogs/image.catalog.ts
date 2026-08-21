@@ -28,6 +28,16 @@ const CARD_ASSET_CONFIG = {
   extension: "png",
 } as const;
 
+const BATTLE_FIELD_ASSET_CONFIG = {
+  pathSuffix: "/battle/",
+  extension: "jpg",
+} as const;
+
+const BATTLE_JUNIOR_ASSET_CONFIG = {
+  pathSuffix: "/battle/",
+  extension: "png",
+} as const;
+
 const mapModules = import.meta.glob<string>("@/assets/maps/*.webp", {
   eager: true,
   as: "url",
@@ -54,6 +64,11 @@ const flagModules = import.meta.glob<string>("@/assets/flags/*.png", {
 });
 
 const cardModules = import.meta.glob<string>("@/assets/cards/*.png", {
+  eager: true,
+  as: "url",
+});
+
+const battleModules = import.meta.glob<string>("@/assets/battle/*.{jpg,png}", {
   eager: true,
   as: "url",
 });
@@ -144,6 +159,24 @@ export class ImageCatalog {
       CARD_ASSET_CONFIG.pathSuffix,
       CARD_ASSET_CONFIG.extension,
       cardName,
+    );
+  }
+
+  public static getBattleFieldUrl(): string | null {
+    return resolveAssetUrl(
+      battleModules,
+      BATTLE_FIELD_ASSET_CONFIG.pathSuffix,
+      BATTLE_FIELD_ASSET_CONFIG.extension,
+      "field",
+    );
+  }
+
+  public static getBattleJuniorUrl(): string | null {
+    return resolveAssetUrl(
+      battleModules,
+      BATTLE_JUNIOR_ASSET_CONFIG.pathSuffix,
+      BATTLE_JUNIOR_ASSET_CONFIG.extension,
+      "junior",
     );
   }
 }

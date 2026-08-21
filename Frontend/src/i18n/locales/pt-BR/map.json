@@ -10,6 +10,8 @@
     "noDock": "ESSE MAPA NÃO POSSUI DOCA",
     "noDockHint": "USE O MAPA À ESQUERDA PARA VER ROTAS COMPLETAS OU PROCURAR DOCAS PELO MAPA",
     "unknownZone": "Zona Desconhecida",
-    "safeZone": "Zona Segura"
+    "safeZone": "Zona Segura",
+    "showDetails": "Detalhes ▲",
+    "hideDetails": "Detalhes ▼"
   }
 }
