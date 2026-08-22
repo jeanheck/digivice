@@ -8,14 +8,14 @@ import { QuestService } from "@/services/quest.service";
 import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
+import type { WikiLocationViewModel } from "@/viewmodels/wiki-modal/wiki-location.viewmodel";
 import type { WikiLocationsPanelViewModel } from "@/viewmodels/wiki-modal/wiki-locations-panel.viewmodel";
 
 export class WikiLocationsPanelPresenter {
-  public static getViewModel(
+  public static getResolvedEnemyLocations(
     locations: EnemyLocationViewModel[] | undefined,
-    selectedId: string | null,
     mainQuest: Quest | null,
-  ): WikiLocationsPanelViewModel {
+  ): WikiLocationViewModel[] {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
     const resolvedLocations = WikiLocationsPanelPresenter.resolveLocationsByMainQuestRange(
       locations ?? [],
@@ -25,36 +25,23 @@ export class WikiLocationsPanelPresenter {
       return first.id.localeCompare(second.id);
     });
 
-    const convertedLocations = sortedEnemyLocations.map((location) => {
+    return sortedEnemyLocations.map((location) => {
       return WikiLocationConverter.convert(location);
     });
+  }
 
-    const selectedEnemyLocation =
-      sortedEnemyLocations.find((location) => {
-        return location.id === selectedId;
-      }) ?? null;
-
-    let worldLocation: CoordinatesViewModel | null = null;
-    let localImageUrl: string | null = null;
-
-    if (selectedEnemyLocation !== null) {
-      const locationRaw = LocationRepository.getLocationById(selectedEnemyLocation.id);
-      worldLocation = WikiLocationsPanelPresenter.toCoordinates(locationRaw.worldLocation);
-      localImageUrl = ImageCatalog.getLocationImageUrl(locationRaw.imageName);
-    }
+  public static getLocationPanelViewModel(locationId: string): WikiLocationsPanelViewModel {
+    const locationRaw = LocationRepository.getLocationById(locationId);
+    const worldLocation = WikiLocationsPanelPresenter.toCoordinates(locationRaw.worldLocation);
+    const localImageUrl = ImageCatalog.getLocationImageUrl(locationRaw.imageName);
 
     return {
-      locations: convertedLocations,
       asukaSlides: WikiLocationsPanelPresenter.getSlides(
         ImageCatalog.getLocationImageUrl("Asuka"),
         worldLocation,
       ),
-      localSlides: WikiLocationsPanelPresenter.getSlides(
-        localImageUrl,
-        selectedEnemyLocation?.localCoordinates ?? null,
-      ),
-      selectedLocationLabelKey:
-        selectedEnemyLocation === null ? null : `location.${selectedEnemyLocation.id}`,
+      localSlides: WikiLocationsPanelPresenter.getSlides(localImageUrl, null),
+      selectedLocationLabelKey: `location.${locationId}`,
     };
   }
 

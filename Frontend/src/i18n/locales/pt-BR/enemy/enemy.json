@@ -6,12 +6,13 @@
       "locations": "Wiki - Localizações",
       "drops": "Wiki - Drops"
     },
-    "searchPlaceholder": "Digite o nome de um inimigo, drop ou carta...",
+    "searchPlaceholder": "Digite o nome de um inimigo, drop, carta ou localização...",
     "searchNoResults": "Nenhum resultado encontrado",
     "searchKind": {
       "enemy": "Digimon",
       "drop": "Drop",
-      "card": "Carta"
+      "card": "Carta",
+      "location": "Localização"
     },
     "droppedBy": "Dropado por",
     "droppedByNone": "Nenhum inimigo conhecido",

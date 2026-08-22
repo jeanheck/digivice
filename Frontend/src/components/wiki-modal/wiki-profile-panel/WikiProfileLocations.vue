@@ -20,11 +20,10 @@ const mainQuest = computed(() => {
 });
 
 const locations = computed(() => {
-  return WikiLocationsPanelPresenter.getViewModel(
+  return WikiLocationsPanelPresenter.getResolvedEnemyLocations(
     props.enemy.locations,
-    null,
     mainQuest.value,
-  ).locations;
+  );
 });
 
 const handleLocationSelect = (locationId: string): void => {

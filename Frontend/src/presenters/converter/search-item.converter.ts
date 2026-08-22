@@ -25,4 +25,12 @@ export class SearchItemConverter {
       kind: "card",
     };
   }
+
+  public static convertLocation(id: string, name: string): SearchItemViewModel {
+    return {
+      id,
+      name,
+      kind: "location",
+    };
+  }
 }

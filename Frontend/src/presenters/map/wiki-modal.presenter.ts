@@ -1,6 +1,7 @@
 import { CardRepository } from "@/repositories/card.repository";
 import { DropRepository } from "@/repositories/drop.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
+import { LocationRepository } from "@/repositories/location.repository";
 import { EnemyConverter } from "@/presenters/converter/enemy.converter";
 import { SearchItemConverter } from "@/presenters/converter/search-item.converter";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
@@ -30,14 +31,24 @@ export class WikiModalPresenter {
     });
   }
 
+  public static getLocationSearchItems(
+    translateLocationName: (locationId: string) => string,
+  ): SearchItemViewModel[] {
+    return LocationRepository.getLocationIdsWithWorldLocation().map((locationId) => {
+      return SearchItemConverter.convertLocation(locationId, translateLocationName(locationId));
+    });
+  }
+
   public static getAllSearchItems(
     translateDropName: (dropKey: string) => string,
     translateCardName: (cardId: string) => string,
+    translateLocationName: (locationId: string) => string,
   ): SearchItemViewModel[] {
     return [
       ...this.getEnemySearchItems(),
       ...this.getDropSearchItems(translateDropName),
       ...this.getCardSearchItems(translateCardName),
+      ...this.getLocationSearchItems(translateLocationName),
     ];
   }
 }

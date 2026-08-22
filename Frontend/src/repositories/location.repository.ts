@@ -12,4 +12,14 @@ export class LocationRepository {
       }
     );
   }
+
+  public static getLocationIdsWithWorldLocation(): string[] {
+    return Object.entries(this.locationTable)
+      .filter(([, locationRaw]) => {
+        return locationRaw.worldLocation !== undefined;
+      })
+      .map(([locationId]) => {
+        return locationId;
+      });
+  }
 }

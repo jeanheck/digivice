@@ -35,7 +35,10 @@ const view = ref<WikiView>("profile");
 const isModalOpen = computed(() => {
   return (
     props.isOpen &&
-    (selectedEnemyId.value !== null || selectedDropId.value !== null || selectedCardId.value !== null)
+    (selectedEnemyId.value !== null ||
+      selectedDropId.value !== null ||
+      selectedCardId.value !== null ||
+      selectedLocationId.value !== null)
   );
 });
 
@@ -71,6 +74,9 @@ const allSearchItems = computed(() => {
     (cardId) => {
       return t(`cards.${cardId}.name`);
     },
+    (locationId) => {
+      return t(`location.${locationId}`);
+    },
   );
 });
 
@@ -81,6 +87,10 @@ const selectedSearchId = computed(() => {
 
   if (isCardsView.value && selectedCardId.value !== null) {
     return selectedCardId.value;
+  }
+
+  if (isLocationsView.value && selectedLocationId.value !== null) {
+    return selectedLocationId.value;
   }
 
   return selectedEnemyId.value ?? undefined;
@@ -106,6 +116,7 @@ const handleSearchSelect = (id: string) => {
   if (searchItem.kind === "drop") {
     selectedDropId.value = id;
     selectedCardId.value = null;
+    selectedLocationId.value = null;
     view.value = "drops";
     return;
   }
@@ -113,7 +124,17 @@ const handleSearchSelect = (id: string) => {
   if (searchItem.kind === "card") {
     selectedCardId.value = id;
     selectedDropId.value = null;
+    selectedLocationId.value = null;
     view.value = "cards";
+    return;
+  }
+
+  if (searchItem.kind === "location") {
+    hide();
+    selectedLocationId.value = id;
+    selectedDropId.value = null;
+    selectedCardId.value = null;
+    view.value = "locations";
   }
 };
 
@@ -282,9 +303,8 @@ const enemyImageUrl = computed(() => {
       @open-drop="openDropsView"
     />
     <WikiLocationsPanel
-      v-else-if="view === 'locations' && enemy !== null"
-      :enemy="enemy"
-      :initial-selected-id="selectedLocationId"
+      v-else-if="view === 'locations' && selectedLocationId !== null"
+      :location-id="selectedLocationId"
     />
   </Modal>
 

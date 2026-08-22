@@ -21,11 +21,10 @@ const mainQuest = computed(() => {
 
 const hasLocations = computed(() => {
   return (
-    WikiLocationsPanelPresenter.getViewModel(
+    WikiLocationsPanelPresenter.getResolvedEnemyLocations(
       props.enemy.locations,
-      null,
       mainQuest.value,
-    ).locations.length > 0
+    ).length > 0
   );
 });
 
