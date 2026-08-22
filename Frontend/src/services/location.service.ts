@@ -43,6 +43,10 @@ export class LocationService {
     return LocationRepository.getLocationById(locationId).enemies?.kickingTree ?? [];
   }
 
+  public static getNpcIds(locationId: string): string[] {
+    return LocationRepository.getLocationById(locationId).npcs ?? [];
+  }
+
   public static getRegionByLocationId(id: string | null): LocationRegionConstant {
     if (id === null) {
       return LocationRegionConstant.asukaServer;

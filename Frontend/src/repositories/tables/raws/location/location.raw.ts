@@ -21,6 +21,7 @@ export interface LocationRaw {
   worldLocation?: CoordinatesRaw;
   innerLocation?: InnerLocationRaw[];
   enemies?: LocationEnemiesRaw;
+  npcs?: string[];
   region?: LocationRegionConstant;
   dock?: boolean;
 }

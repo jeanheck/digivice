@@ -112,6 +112,7 @@ None of this would have been possible without the people who dug up and shared t
 - **Digimon World 3 - TCG Cards Sprites** *by metaldodomon*: [The Spriters Resource](https://www.spriters-resource.com/playstation/digiworld3/)
 - **Digimon World 3 – FAQ** *by ChaosBeelzemon* [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/51616)
 - **Digimon World 3 – Guide and Walkthrough** *by mharbenedict34* [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/33794)
+- **Digimon World 2003 - Code Notes** *by Hotscrock and Dreaker* [RetroAchievements](https://retroachievements.org/codenotes.php?g=11328)
 
 ## Digimons images credits
 

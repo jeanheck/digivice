@@ -1,0 +1,27 @@
+{
+  "natsumi": {
+    "name": "Natsumi",
+    "locationId": "021D",
+    "cardBattles": [
+      {
+        "charismaRequired": {
+            "min": 60,
+            "max": 209
+        },
+        "deckId": "flyingFolder",
+        "dropId": "2aBooster"
+      }
+    ],
+    "digimonBattles": [
+      {
+        "charismaRequired": {
+            "min": 210
+        },
+        "npcPartyId": "natsumi",
+        "exp": 65,
+        "dvexp": 4,
+        "bit": 145
+      }
+    ]
+  }
+}
