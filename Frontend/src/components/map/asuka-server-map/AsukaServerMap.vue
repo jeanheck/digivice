@@ -19,9 +19,10 @@ const asukaServerMapViewModel = computed(() => {
   }
 
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
+  const sideQuests = store.currentState?.journal?.sideQuests ?? [];
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
 
-  return AsukaServerMapPresenter.getViewModel(locationId, mainQuest, previousMapId);
+  return AsukaServerMapPresenter.getViewModel(locationId, mainQuest, sideQuests, previousMapId);
 });
 </script>
 

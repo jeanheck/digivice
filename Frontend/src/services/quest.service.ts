@@ -1,4 +1,5 @@
 import type { Quest } from "@/models";
+import type { QuestRaw } from "@/repositories/tables/raws/quest/quest.raw";
 
 export class QuestService {
   public static getLastCompletedMainQuestStep(mainQuest: Quest | null): number {
@@ -19,5 +20,25 @@ export class QuestService {
         return step.number;
       }),
     );
+  }
+
+  public static isQuestCompleted(
+    quest: Quest | null | undefined,
+    questRaw: QuestRaw,
+  ): boolean {
+    if (quest === null || quest === undefined) {
+      return false;
+    }
+
+    const stepNumbers = Object.keys(questRaw.steps);
+    if (stepNumbers.length === 0) {
+      return false;
+    }
+
+    return stepNumbers.every((stepNumber) => {
+      return quest.steps.some((step) => {
+        return step.number.toString() === stepNumber && step.isDone;
+      });
+    });
   }
 }
