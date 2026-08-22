@@ -41,6 +41,7 @@
     "status": "Resistências",
     "foundIn": "Encontrado em",
     "whereToFind": "Onde encontrar esse Digimon",
+    "whereToFindLabel": "Onde encontrar",
     "locations": "Localizações",
     "locationSource": {
       "walking": "Andando",

@@ -29,6 +29,7 @@ type WikiView = "profile" | "drops" | "cards" | "locations";
 const selectedEnemyId = ref<string | null>(null);
 const selectedDropId = ref<string | null>(null);
 const selectedCardId = ref<string | null>(null);
+const selectedLocationId = ref<string | null>(null);
 const view = ref<WikiView>("profile");
 
 const isModalOpen = computed(() => {
@@ -97,6 +98,7 @@ const handleSearchSelect = (id: string) => {
     selectedEnemyId.value = id;
     selectedDropId.value = null;
     selectedCardId.value = null;
+    selectedLocationId.value = null;
     view.value = "profile";
     return;
   }
@@ -122,8 +124,9 @@ const openDropsView = (dropId: string) => {
   view.value = "drops";
 };
 
-const openLocationsView = () => {
+const openLocationsView = (locationId: string) => {
   hide();
+  selectedLocationId.value = locationId;
   view.value = "locations";
 };
 
@@ -134,6 +137,7 @@ const backToProfileView = () => {
 
   selectedDropId.value = null;
   selectedCardId.value = null;
+  selectedLocationId.value = null;
   view.value = "profile";
 };
 
@@ -141,6 +145,7 @@ const openEnemyFromDropSource = (enemyId: string) => {
   selectedEnemyId.value = enemyId;
   selectedDropId.value = null;
   selectedCardId.value = null;
+  selectedLocationId.value = null;
   view.value = "profile";
 };
 
@@ -189,6 +194,7 @@ watch(
       selectedEnemyId.value = props.enemyId;
       selectedDropId.value = null;
       selectedCardId.value = null;
+      selectedLocationId.value = null;
       view.value = "profile";
       return;
     }
@@ -197,6 +203,7 @@ watch(
     selectedEnemyId.value = null;
     selectedDropId.value = null;
     selectedCardId.value = null;
+    selectedLocationId.value = null;
     view.value = "profile";
   },
 );
@@ -277,6 +284,7 @@ const enemyImageUrl = computed(() => {
     <WikiLocationsPanel
       v-else-if="view === 'locations' && enemy !== null"
       :enemy="enemy"
+      :initial-selected-id="selectedLocationId"
     />
   </Modal>
 

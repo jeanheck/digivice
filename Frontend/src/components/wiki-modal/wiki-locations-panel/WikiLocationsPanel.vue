@@ -8,6 +8,7 @@ import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = defineProps<{
   enemy: EnemyViewModel;
+  initialSelectedId?: string | null;
 }>();
 
 const store = useGameStore();
@@ -27,6 +28,50 @@ const locationsViewModel = computed(() => {
     mainQuest.value,
   );
 });
+
+const getResolvedLocationIds = (): string[] => {
+  return WikiLocationsPanelPresenter.getViewModel(
+    props.enemy.locations,
+    null,
+    mainQuest.value,
+  ).locations.map((location) => {
+    return location.id;
+  });
+};
+
+const resolveSelectedId = (
+  resolvedLocationIds: string[],
+  preferredId: string | null | undefined,
+  currentId: string | null,
+): string | null => {
+  if (resolvedLocationIds.length === 0) {
+    return null;
+  }
+
+  if (preferredId !== null && preferredId !== undefined) {
+    if (resolvedLocationIds.includes(preferredId)) {
+      return preferredId;
+    }
+  }
+
+  if (currentId !== null && resolvedLocationIds.includes(currentId)) {
+    return currentId;
+  }
+
+  const sortedIds = [...resolvedLocationIds].sort((first, second) => {
+    return first.localeCompare(second);
+  });
+
+  return sortedIds[0] ?? null;
+};
+
+const syncSelectedId = (preferredId?: string | null): void => {
+  selectedId.value = resolveSelectedId(
+    getResolvedLocationIds(),
+    preferredId ?? props.initialSelectedId,
+    selectedId.value,
+  );
+};
 
 const setChipElementRef = (locationId: string, component: unknown): void => {
   if (
@@ -62,26 +107,22 @@ const scrollSelectedChipIntoCenter = async (): Promise<void> => {
 };
 
 watch(
-  () => props.enemy.locations,
-  (locations) => {
-    const entries = locations ?? [];
-    if (entries.length === 0) {
-      selectedId.value = null;
+  () => [props.enemy.locations, mainQuest.value] as const,
+  () => {
+    syncSelectedId();
+  },
+  { immediate: true },
+);
+
+watch(
+  () => props.initialSelectedId,
+  (initialSelectedId) => {
+    if (initialSelectedId === null || initialSelectedId === undefined) {
       return;
     }
 
-    const stillSelected = entries.some((entry) => {
-      return entry.id === selectedId.value;
-    });
-
-    if (!stillSelected) {
-      const sortedEntries = [...entries].sort((first, second) => {
-        return first.id.localeCompare(second.id);
-      });
-      selectedId.value = sortedEntries[0]?.id ?? null;
-    }
+    syncSelectedId(initialSelectedId);
   },
-  { immediate: true },
 );
 
 watch(selectedId, () => {

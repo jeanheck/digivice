@@ -15,7 +15,7 @@ defineProps<{
 
 const emit = defineEmits<{
   (e: "open-drops", dropId: string): void;
-  (e: "open-locations"): void;
+  (e: "open-locations", locationId: string): void;
   (e: "show-stat-key-tooltip", event: MouseEvent, statKey: string): void;
   (e: "show-condition-tooltip", event: MouseEvent, tooltipKey: string): void;
   (e: "move-stat-tooltip", event: MouseEvent): void;
@@ -52,7 +52,7 @@ const forwardHideStatTooltip = (): void => {
       <WikiProfileResume
         class="w-1/2"
         :enemy="enemy"
-        @open-locations="emit('open-locations')"
+        @open-locations="emit('open-locations', $event)"
       />
     </div>
 

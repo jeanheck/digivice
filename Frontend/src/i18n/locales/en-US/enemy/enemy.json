@@ -41,6 +41,7 @@
     "status": "Conditions",
     "foundIn": "Found in",
     "whereToFind": "Where to find this Digimon",
+    "whereToFindLabel": "Where to find",
     "locations": "Locations",
     "locationSource": {
       "walking": "Walk",
