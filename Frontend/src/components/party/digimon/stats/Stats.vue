@@ -42,12 +42,17 @@ const showStatIconTooltip = (event: MouseEvent, title: string, propertyKey: Cons
   showIconTooltip(event, title, t(`stat.${propertyKey}-explanation`));
 };
 
+const showTitleTooltip = (event: MouseEvent, title: string) => {
+  defaultTooltipContent.value = { title, text: "" };
+  activeVariant.value = "default";
+  showAt(event, { placement: tooltipPlacement });
+};
+
 const showMathTooltip = (
   event: MouseEvent,
   title: string,
   base: number,
   equip: number,
-  _digi: number,
   total: number,
 ) => {
   mathTooltipContent.value = { title, base, equip, total };
@@ -84,6 +89,7 @@ const moveTooltip = (event: MouseEvent) => {
             :stat="key"
             @show-icon-tooltip="showStatIconTooltip"
             @show-math-tooltip="showMathTooltip"
+            @show-title-tooltip="showTitleTooltip"
             @move-tooltip="moveTooltip"
             @hide-tooltip="hideTooltip"
           />
@@ -97,6 +103,7 @@ const moveTooltip = (event: MouseEvent) => {
             :stat="key"
             @show-icon-tooltip="showStatIconTooltip"
             @show-math-tooltip="showMathTooltip"
+            @show-title-tooltip="showTitleTooltip"
             @move-tooltip="moveTooltip"
             @hide-tooltip="hideTooltip"
           />
@@ -110,6 +117,8 @@ const moveTooltip = (event: MouseEvent) => {
       :y="tooltipY"
       :title="defaultTooltipContent.title"
       :text="defaultTooltipContent.text"
+      :min-width="defaultTooltipContent.text ? undefined : 320"
+      :max-width="defaultTooltipContent.text ? undefined : 360"
       placement="below"
     />
 

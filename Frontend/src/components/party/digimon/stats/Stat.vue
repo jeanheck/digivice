@@ -18,12 +18,16 @@ const emit = defineEmits<{
     title: string,
     base: number,
     equip: number,
-    digi: number,
     total: number,
   ): void;
+  (e: "showTitleTooltip", event: MouseEvent, title: string): void;
   (e: "moveTooltip", event: MouseEvent): void;
   (e: "hideTooltip"): void;
 }>();
+
+const digievolutionBonusLabel = computed(() => {
+  return t("digimon.digievolutionBonus");
+});
 
 const { t } = useI18n();
 
@@ -52,27 +56,30 @@ const icon = computed(() => {
       >
     </div>
 
-    <div
-      class="font-bold tracking-wide cursor-help flex items-center min-w-0 text-xs 2xl:text-base"
-      @mouseenter="
-        (event) =>
-          emit(
-            'showMathTooltip',
-            event,
-            label,
-            statViewModel.fromDigimon,
-            statViewModel.fromEquipaments,
-            statViewModel.fromDigievolution,
-            statViewModel.sumBetweenDigimonAndEquipaments,
-          )
-      "
-      @mousemove="(event) => emit('moveTooltip', event)"
-      @mouseleave="emit('hideTooltip')"
-    >
-      <span class="shadow-text">{{ statViewModel.sumBetweenDigimonAndEquipaments }}</span>
+    <div class="flex items-center gap-1 min-w-0 font-bold tracking-wide text-xs 2xl:text-base">
+      <span
+        class="min-w-[3ch] text-right tabular-nums shadow-text cursor-help"
+        @mouseenter="
+          (event) =>
+            emit(
+              'showMathTooltip',
+              event,
+              label,
+              statViewModel.fromDigimon,
+              statViewModel.fromEquipaments,
+              statViewModel.sumBetweenDigimonAndEquipaments,
+            )
+        "
+        @mousemove="(event) => emit('moveTooltip', event)"
+        @mouseleave="emit('hideTooltip')"
+        >{{ statViewModel.sumBetweenDigimonAndEquipaments }}</span
+      >
       <span
         v-if="statViewModel.fromDigievolution > 0"
-        class="ml-1 sm:ml-2 font-bold text-dw3-gold shadow-text-dark tracking-normal shrink-0"
+        class="min-w-[3ch] text-left tabular-nums font-bold text-dw3-gold shadow-text-dark tracking-normal shrink-0 cursor-help"
+        @mouseenter="(event) => emit('showTitleTooltip', event, digievolutionBonusLabel)"
+        @mousemove="(event) => emit('moveTooltip', event)"
+        @mouseleave="emit('hideTooltip')"
         >+{{ statViewModel.fromDigievolution }}</span
       >
     </div>

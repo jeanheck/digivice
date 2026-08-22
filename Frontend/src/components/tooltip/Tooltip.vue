@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, useSlots } from "vue";
 import type { TooltipHorizontalAlign, TooltipPlacement } from "@/composables/use-tooltip-position";
 
 const props = withDefaults(
@@ -9,6 +9,7 @@ const props = withDefaults(
     y: number;
     title: string;
     maxWidth?: number;
+    minWidth?: number;
     placement?: TooltipPlacement;
     horizontalAlign?: TooltipHorizontalAlign;
   }>(),
@@ -18,6 +19,12 @@ const props = withDefaults(
     horizontalAlign: "right",
   },
 );
+
+const slots = useSlots();
+
+const hasSlotContent = computed(() => {
+  return (slots.default?.() ?? []).length > 0;
+});
 
 const tooltipTransform = computed(() => {
   const translateX = props.horizontalAlign === "left" ? "-100%" : "0";
@@ -41,13 +48,14 @@ const tooltipTransform = computed(() => {
           top: `${y}px`,
           left: `${x}px`,
           maxWidth: `${maxWidth}px`,
+          minWidth: minWidth ? `${minWidth}px` : undefined,
           transform: tooltipTransform,
         }"
       >
         <div
           v-if="title"
           class="font-bold text-yellow-300 text-sm shadow-black shadow-text uppercase tracking-wider text-center whitespace-nowrap"
-          :class="{ 'border-b border-[#0066cc]/50 pb-1 mb-1': !!$slots.default }"
+          :class="{ 'border-b border-[#0066cc]/50 pb-1 mb-1': hasSlotContent }"
         >
           {{ title }}
         </div>

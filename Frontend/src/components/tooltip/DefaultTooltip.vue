@@ -10,6 +10,7 @@ withDefaults(
     title: string;
     text: string;
     maxWidth?: number;
+    minWidth?: number;
     placement?: TooltipPlacement;
   }>(),
   {
@@ -20,8 +21,19 @@ withDefaults(
 </script>
 
 <template>
-  <Tooltip :show="show" :x="x" :y="y" :title="title" :max-width="maxWidth" :placement="placement">
-    <div class="text-gray-100 text-xs leading-relaxed shadow-black shadow-text">
+  <Tooltip
+    :show="show"
+    :x="x"
+    :y="y"
+    :title="title"
+    :max-width="maxWidth"
+    :min-width="minWidth"
+    :placement="placement"
+  >
+    <div
+      v-if="text"
+      class="text-gray-100 text-xs leading-relaxed shadow-black shadow-text"
+    >
       {{ text }}
     </div>
   </Tooltip>
