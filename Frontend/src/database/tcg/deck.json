@@ -2,7 +2,54 @@
     "flyingFolder": {
         "level": 9,
         "cards": [
-            
+            { 
+                "id": "1005", 
+                "quantity": 4 
+            },
+            { 
+                "id": "1017", 
+                "quantity": 4 
+            },
+            { 
+                "id": "1056", 
+                "quantity": 2 
+            },
+            { 
+                "id": "1098", 
+                "quantity": 4 
+            },
+            { 
+                "id": "1099", 
+                "quantity": 2 
+            },
+            { 
+                "id": "1100", 
+                "quantity": 4 
+            },
+            { 
+                "id": "1102", 
+                "quantity": 2 
+            },
+            { 
+                "id": "1181", 
+                "quantity": 2 
+            },
+            { 
+                "id": "1182", 
+                "quantity": 4 
+            },
+            { 
+                "id": "1183", 
+                "quantity": 4 
+            },
+            { 
+                "id": "1186", 
+                "quantity": 4 
+            },
+            { 
+                "id": "1187", 
+                "quantity": 4 
+            }
         ]
     }
 }

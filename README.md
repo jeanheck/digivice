@@ -86,7 +86,7 @@ This project uses public game data from sources across the web. The originals ar
 None of this would have been possible without the people who dug up and shared that information. Thank you all.
 
 - **Experience levels** *by Mehdi*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/64473556)
-- **Digimon World 3 – Digivolution Guide** *by dudeice997*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/72629)
+- **Digimon World 3 – Digivolution Guide** *by icevenant*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/72629)
 - **Digimon World 3/Enemy**: [DigimonWiki](https://digimon.fandom.com/wiki/Digimon_World_3/Enemy)
 - **Digimon World 3 – Bestiary** *by TheFulgorah*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/66315)
 - **dmw3-tools** *by markisha64* [GitHub](https://github.com/markisha64/dmw3-tools)
