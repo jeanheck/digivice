@@ -16,6 +16,7 @@ import { WikiProfileDropsPresenter } from "@/presenters/map/wiki-modal/wiki-prof
 const props = defineProps<{
   isOpen: boolean;
   enemyId: string | null;
+  locationId?: string | null;
 }>();
 
 const emit = defineEmits<{
@@ -212,6 +213,15 @@ watch(
   () => props.isOpen,
   (open) => {
     if (open) {
+      if (props.locationId !== null && props.locationId !== undefined) {
+        selectedLocationId.value = props.locationId;
+        selectedEnemyId.value = null;
+        selectedDropId.value = null;
+        selectedCardId.value = null;
+        view.value = "locations";
+        return;
+      }
+
       selectedEnemyId.value = props.enemyId;
       selectedDropId.value = null;
       selectedCardId.value = null;

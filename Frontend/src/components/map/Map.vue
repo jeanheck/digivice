@@ -34,15 +34,24 @@ const backgroundImageUrl = computed(() => {
 
 const isWikiModalOpen = ref(false);
 const selectedEnemyId = ref<string | null>(null);
+const selectedWikiLocationId = ref<string | null>(null);
 
 const openWikiModal = (enemyId: string) => {
+  selectedWikiLocationId.value = null;
   selectedEnemyId.value = enemyId;
+  isWikiModalOpen.value = true;
+};
+
+const openWikiModalForLocation = (locationId: string) => {
+  selectedEnemyId.value = null;
+  selectedWikiLocationId.value = locationId;
   isWikiModalOpen.value = true;
 };
 
 const closeWikiModal = () => {
   isWikiModalOpen.value = false;
   selectedEnemyId.value = null;
+  selectedWikiLocationId.value = null;
 };
 </script>
 
@@ -68,16 +77,23 @@ const closeWikiModal = () => {
     <SeabedMap
       v-else-if="mapViewModel.locationRegion === LocationRegionConstant.seabed"
       @open-enemy-modal="openWikiModal"
+      @open-location-wiki="openWikiModalForLocation"
     />
     <MobiusDesertMap
       v-else-if="mapViewModel.locationRegion === LocationRegionConstant.mobiusDesert"
       @open-enemy-modal="openWikiModal"
+      @open-location-wiki="openWikiModalForLocation"
     />
-    <AsukaServerMap v-else @open-enemy-modal="openWikiModal" />
+    <AsukaServerMap
+      v-else
+      @open-enemy-modal="openWikiModal"
+      @open-location-wiki="openWikiModalForLocation"
+    />
 
     <WikiModal
       :is-open="isWikiModalOpen"
       :enemy-id="selectedEnemyId"
+      :location-id="selectedWikiLocationId"
       @close="closeWikiModal"
     />
   </aside>

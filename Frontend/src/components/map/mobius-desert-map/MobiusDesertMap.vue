@@ -13,6 +13,7 @@ import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper
 
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
+  (e: "open-location-wiki", locationId: string): void;
 }>();
 
 const store = useGameStore();
@@ -87,7 +88,11 @@ const southExitName = computed(() => {
 
   <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1 justify-center">
     <div class="flex flex-col items-center gap-2 shrink-0">
-      <Location :location-id="locationId" :title-override="locationTitleOverride" />
+      <Location
+        :location-id="locationId"
+        :title-override="locationTitleOverride"
+        @open-location-wiki="emit('open-location-wiki', $event)"
+      />
       <Enemies :enemy-ids="enemyIds" @open-enemy-modal="emit('open-enemy-modal', $event)" />
     </div>
   </div>

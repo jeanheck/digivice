@@ -8,6 +8,7 @@ import { SeabedMapPresenter } from "@/presenters/map/seabed-map.presenter.ts";
 
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
+  (e: "open-location-wiki", locationId: string): void;
 }>();
 
 const store = useGameStore();
@@ -32,7 +33,10 @@ const enemyIds = computed(() => {
 <template>
   <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1">
     <div class="flex flex-col items-center gap-2 shrink-0">
-      <Location :location-id="locationId" />
+      <Location
+        :location-id="locationId"
+        @open-location-wiki="emit('open-location-wiki', $event)"
+      />
       <Enemies :enemy-ids="enemyIds" @open-enemy-modal="emit('open-enemy-modal', $event)" />
       <Seabed :seabed-route="seabedRoute" :map-variant="mapVariant" :location-id="locationId" />
     </div>
