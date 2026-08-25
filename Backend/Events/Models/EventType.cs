@@ -5,6 +5,7 @@ public enum EventType
     InitialState,
     EmulatorConnectionStatusChanged,
     PlayerChanged,
+    ImportantItemsChanged,
     PartyChanged,
     BattleChanged,
     JournalChanged

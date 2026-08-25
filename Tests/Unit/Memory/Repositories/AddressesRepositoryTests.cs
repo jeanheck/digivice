@@ -55,6 +55,26 @@ public class AddressesRepositoryTests : IDisposable
     }
 
     [Fact]
+    public void GetImportantItemsAddresses_ShouldLoadAndDeserializeCorrectly()
+    {
+        var fakeImportantItems = new ImportantItemsAddresses
+        {
+            TreeBoots = 0x00048DB4,
+            FishingPole = 0x00048DB5,
+            AsukaTrophy = 0x00048DC2
+        };
+        var json = JsonSerializer.Serialize(fakeImportantItems);
+        File.WriteAllText(Path.Combine(tempDirectoryPath, "ImportantItemsAddresses.json"), json);
+
+        var result = repository.GetImportantItemsAddresses();
+
+        Assert.NotNull(result);
+        Assert.Equal(0x00048DB4, result.TreeBoots);
+        Assert.Equal(0x00048DB5, result.FishingPole);
+        Assert.Equal(0x00048DC2, result.AsukaTrophy);
+    }
+
+    [Fact]
     public void GetPartyAddresses_ShouldLoadAndDeserializeCorrectly()
     {
         // Arrange

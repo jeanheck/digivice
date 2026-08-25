@@ -44,10 +44,12 @@ namespace Backend.Infrastructure
             services.AddSingleton<IRequisiteReader, RequisiteReader>();
             services.AddSingleton<IStepReader, StepReader>();
             services.AddSingleton<IPlayerReader, PlayerReader>();
+            services.AddSingleton<IImportantItemsReader, ImportantItemsReader>();
             services.AddSingleton<IQuestReader, QuestReader>();
             services.AddSingleton<IAuctionReader, AuctionReader>();
 
             services.AddSingleton<IPlayerLoader, PlayerLoader>();
+            services.AddSingleton<IImportantItemsLoader, ImportantItemsLoader>();
             services.AddSingleton<IAuctionLoader, AuctionLoader>();
             services.AddSingleton<IQuestLoader, QuestLoader>();
             services.AddSingleton<IJournalLoader, JournalLoader>();
@@ -56,6 +58,7 @@ namespace Backend.Infrastructure
             services.AddSingleton<IBattleLoader, BattleLoader>();
 
             services.AddSingleton<IPlayerProvider, PlayerProvider>();
+            services.AddSingleton<IImportantItemsProvider, ImportantItemsProvider>();
             services.AddSingleton<IPartyProvider, PartyProvider>();
             services.AddSingleton<IBattleProvider, BattleProvider>();
             services.AddSingleton<IJournalProvider, JournalProvider>();

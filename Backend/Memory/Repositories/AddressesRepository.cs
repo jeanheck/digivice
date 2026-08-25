@@ -8,6 +8,7 @@ namespace Backend.Memory.Repositories
     public class AddressesRepository(string dataDirectory) : IAddressesRepository
     {
         private PlayerAddresses? playerAddresses;
+        private ImportantItemsAddresses? importantItemsAddresses;
         private PartyAddresses? partyAddresses;
         private DigimonStatusAddresses? digimonStatusAddresses;
         private InBattleAddresses? inBattleAddresses;
@@ -66,6 +67,9 @@ namespace Backend.Memory.Repositories
 
         public PlayerAddresses GetPlayerAddresses() =>
             LoadAndCache(ref playerAddresses, "PlayerAddresses.json");
+
+        public ImportantItemsAddresses GetImportantItemsAddresses() =>
+            LoadAndCache(ref importantItemsAddresses, "ImportantItemsAddresses.json");
 
         public PartyAddresses GetPartyAddresses() =>
             LoadAndCache(ref partyAddresses, "PartyAddresses.json");

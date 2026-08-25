@@ -7,11 +7,12 @@ using Backend.Events.Converters;
 public class StateConverterTests
 {
     [Fact]
-    public void ToDTO_ShouldMapPlayerPartyBattleAndJournal()
+    public void ToDTO_ShouldMapPlayerImportantItemsPartyBattleAndJournal()
     {
         var state = new State
         {
             Player = new Player { Bits = 100, MapId = "0001" },
+            ImportantItems = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true },
             Party = new Party { Slots = [] },
             Battle = new Battle(),
             Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] }
@@ -22,6 +23,12 @@ public class StateConverterTests
         Assert.NotNull(dto.Player);
         Assert.True(dto.Player.Bits.HasValue);
         Assert.Equal(100, dto.Player.Bits.Value);
+
+        Assert.NotNull(dto.ImportantItems);
+        Assert.True(dto.ImportantItems.TreeBoots.HasValue);
+        Assert.True(dto.ImportantItems.TreeBoots.Value);
+        Assert.True(dto.ImportantItems.FishingPole.HasValue);
+        Assert.False(dto.ImportantItems.FishingPole.Value);
 
         Assert.NotNull(dto.Party);
         Assert.True(dto.Party.Slots.HasValue);
@@ -42,6 +49,7 @@ public class StateConverterTests
         var state = new State
         {
             Player = null!,
+            ImportantItems = null!,
             Party = null!,
             Battle = null!,
             Journal = null!
@@ -50,6 +58,7 @@ public class StateConverterTests
         var dto = StateConverter.ToDTO(state);
 
         Assert.Null(dto.Player);
+        Assert.Null(dto.ImportantItems);
         Assert.Null(dto.Party);
         Assert.Null(dto.Battle);
         Assert.Null(dto.Journal);

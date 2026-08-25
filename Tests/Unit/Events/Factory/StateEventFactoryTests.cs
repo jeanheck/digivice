@@ -23,6 +23,7 @@ public class StateEventFactoryTests
 
         var dto = Assert.IsType<StateDTO>(result[0].Payload);
         Assert.NotNull(dto.Player);
+        Assert.NotNull(dto.ImportantItems);
         Assert.NotNull(dto.Party);
         Assert.NotNull(dto.Battle);
         Assert.NotNull(dto.Journal);
@@ -51,6 +52,20 @@ public class StateEventFactoryTests
         var ev = Assert.Single(result);
         Assert.Equal(EventType.PlayerChanged, ev.Type);
         Assert.IsType<PlayerDTO>(ev.Payload);
+    }
+
+    [Fact]
+    public void Create_ShouldReturnImportantItemsChangedEvent_WhenOnlyImportantItemsChange()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.ImportantItems.TreeBoots = true;
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.ImportantItemsChanged, ev.Type);
+        Assert.IsType<ImportantItemsDTO>(ev.Payload);
     }
 
     [Fact]
@@ -115,6 +130,7 @@ public class StateEventFactoryTests
         var previousState = CreateBaseState();
         var newState = CreateBaseState();
         newState.Player.Bits = 999;
+        newState.ImportantItems.AsukaTrophy = true;
         newState.Party.Slots[0].Digimon!.Level = 22;
         newState.Battle.Enemy.Speed = 84;
         newState.Journal.MainQuest.Steps[0].Value = 1;
@@ -122,11 +138,12 @@ public class StateEventFactoryTests
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
-        Assert.Equal(4, result.Count);
+        Assert.Equal(5, result.Count);
         Assert.Equal(EventType.PlayerChanged, result[0].Type);
-        Assert.Equal(EventType.PartyChanged, result[1].Type);
-        Assert.Equal(EventType.BattleChanged, result[2].Type);
-        Assert.Equal(EventType.JournalChanged, result[3].Type);
+        Assert.Equal(EventType.ImportantItemsChanged, result[1].Type);
+        Assert.Equal(EventType.PartyChanged, result[2].Type);
+        Assert.Equal(EventType.BattleChanged, result[3].Type);
+        Assert.Equal(EventType.JournalChanged, result[4].Type);
     }
 
     private static State CreateBaseState()
@@ -137,6 +154,12 @@ public class StateEventFactoryTests
             {
                 Bits = 100,
                 MapId = "0001"
+            },
+            ImportantItems = new ImportantItems
+            {
+                TreeBoots = false,
+                FishingPole = false,
+                AsukaTrophy = false
             },
             Party = new Party
             {

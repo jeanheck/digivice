@@ -24,6 +24,7 @@ public class GameLoopServiceTests
 {
     private readonly Mock<IDuckstationConnector> _duckstationConnectorMock;
     private readonly Mock<IPlayerProvider> _playerProviderMock;
+    private readonly Mock<IImportantItemsProvider> _importantItemsProviderMock;
     private readonly Mock<IPartyProvider> _partyProviderMock;
     private readonly Mock<IBattleProvider> _battleProviderMock;
     private readonly Mock<IJournalProvider> _journalProviderMock;
@@ -49,6 +50,7 @@ public class GameLoopServiceTests
     {
         _duckstationConnectorMock = new Mock<IDuckstationConnector>();
         _playerProviderMock = new Mock<IPlayerProvider>();
+        _importantItemsProviderMock = new Mock<IImportantItemsProvider>();
         _partyProviderMock = new Mock<IPartyProvider>();
         _battleProviderMock = new Mock<IBattleProvider>();
         _journalProviderMock = new Mock<IJournalProvider>();
@@ -57,15 +59,18 @@ public class GameLoopServiceTests
         _debugConsoleRenderer = new DebugConsoleRenderer();
 
         var player = new Player { Bits = 123, MapId = "0001" };
+        var importantItems = new ImportantItems();
         var party = new Party { Slots = [] };
         var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };
         _playerProviderMock.Setup(p => p.Get()).Returns(player);
+        _importantItemsProviderMock.Setup(p => p.Get()).Returns(importantItems);
         _partyProviderMock.Setup(p => p.Get()).Returns(party);
         _battleProviderMock.Setup(p => p.Get()).Returns(new Battle());
         _journalProviderMock.Setup(p => p.Get()).Returns(journal);
 
         _stateComposer = new StateComposer(
             _playerProviderMock.Object,
+            _importantItemsProviderMock.Object,
             _partyProviderMock.Object,
             _battleProviderMock.Object,
             _journalProviderMock.Object);
@@ -304,6 +309,7 @@ public class GameLoopServiceTests
         throwingPlayerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
         var stateComposer = new StateComposer(
             throwingPlayerProviderMock.Object,
+            _importantItemsProviderMock.Object,
             _partyProviderMock.Object,
             _battleProviderMock.Object,
             _journalProviderMock.Object);

@@ -66,9 +66,11 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IRequisiteReader>());
         Assert.NotNull(provider.GetRequiredService<IStepReader>());
         Assert.NotNull(provider.GetRequiredService<IPlayerReader>());
+        Assert.NotNull(provider.GetRequiredService<IImportantItemsReader>());
         Assert.NotNull(provider.GetRequiredService<IQuestReader>());
 
         Assert.NotNull(provider.GetRequiredService<IPlayerLoader>());
+        Assert.NotNull(provider.GetRequiredService<IImportantItemsLoader>());
         Assert.NotNull(provider.GetRequiredService<IQuestLoader>());
         Assert.NotNull(provider.GetRequiredService<IJournalLoader>());
         Assert.NotNull(provider.GetRequiredService<IPartyLoader>());
@@ -76,6 +78,7 @@ public class DependencyInjectionTests
         Assert.NotNull(provider.GetRequiredService<IBattleLoader>());
 
         Assert.NotNull(provider.GetRequiredService<IPlayerProvider>());
+        Assert.NotNull(provider.GetRequiredService<IImportantItemsProvider>());
         Assert.NotNull(provider.GetRequiredService<IPartyProvider>());
         Assert.NotNull(provider.GetRequiredService<IBattleProvider>());
         Assert.NotNull(provider.GetRequiredService<IJournalProvider>());

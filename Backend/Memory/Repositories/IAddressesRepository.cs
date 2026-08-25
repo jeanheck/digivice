@@ -7,6 +7,7 @@ namespace Backend.Memory.Repositories
     public interface IAddressesRepository
     {
         PlayerAddresses GetPlayerAddresses();
+        ImportantItemsAddresses GetImportantItemsAddresses();
         PartyAddresses GetPartyAddresses();
         DigimonStatusAddresses GetDigimonStatusAddresses();
         InBattleAddresses GetInBattleAddresses();
