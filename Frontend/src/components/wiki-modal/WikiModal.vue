@@ -357,6 +357,7 @@ const enemyImageUrl = computed(() => {
       :npc-id="selectedNpcId"
       @open-locations="openLocationsView"
       @open-drops="openDropsView"
+      @open-card="openCardFromBooster"
       @show-stat-key-tooltip="showEnemyStatKeyTooltip"
       @show-condition-tooltip="showEnemyConditionTooltip"
       @move-stat-tooltip="moveEnemyStatTooltip"

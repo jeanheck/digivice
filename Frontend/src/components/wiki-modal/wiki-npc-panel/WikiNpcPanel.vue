@@ -12,6 +12,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "open-locations", locationId: string): void;
   (e: "open-drops", dropId: string): void;
+  (e: "open-card", cardId: string): void;
   (e: "show-stat-key-tooltip", event: MouseEvent, statKey: string): void;
   (e: "show-condition-tooltip", event: MouseEvent, tooltipKey: string): void;
   (e: "move-stat-tooltip", event: MouseEvent): void;
@@ -121,6 +122,8 @@ const openLocation = () => {
         v-if="selectedOption?.kind === NpcBattleKindConstant.card"
         :npc-id="npcId"
         :battle-index="selectedOption.battleIndex"
+        @open-card="emit('open-card', $event)"
+        @open-drops="emit('open-drops', $event)"
       />
       <WikiNpcDigimonBattlePanel
         v-else-if="selectedOption?.kind === NpcBattleKindConstant.digimon"

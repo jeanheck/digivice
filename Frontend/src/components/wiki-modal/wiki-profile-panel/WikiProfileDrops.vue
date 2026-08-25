@@ -2,11 +2,11 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { WikiProfileDropsPresenter } from "@/presenters/map/wiki-modal/wiki-profile-drops.presenter";
-import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
+import type { EnemyDropViewModel } from "@/viewmodels/enemy/enemy-drop.viewmodel";
 import type { WikiProfileDropItemViewModel } from "@/viewmodels/wiki-modal/wiki-profile-drop-item.viewmodel";
 
 const props = defineProps<{
-  enemy: EnemyViewModel;
+  drops?: EnemyDropViewModel[];
 }>();
 
 const emit = defineEmits<{
@@ -16,7 +16,7 @@ const emit = defineEmits<{
 const { t } = useI18n();
 
 const dropsViewModel = computed(() => {
-  return WikiProfileDropsPresenter.getViewModel(props.enemy.drops);
+  return WikiProfileDropsPresenter.getViewModel(props.drops);
 });
 
 const locationOnlyLabel = (locationOnly: string): string => {

@@ -102,7 +102,7 @@ const activeMember = computed(() => {
       <div class="grid grid-cols-2 gap-3 shrink-0">
         <WikiProfileTechniques :enemy="activeMember.enemy" />
         <WikiProfileDrops
-          :enemy="activeMember.enemy"
+          :drops="activeMember.enemy.drops"
           @open-drops="emit('open-drops', $event)"
         />
       </div>

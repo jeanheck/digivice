@@ -80,6 +80,6 @@ const forwardHideStatTooltip = (): void => {
     </div>
 
     <WikiProfileTechniques :enemy="enemy" />
-    <WikiProfileDrops :enemy="enemy" @open-drops="emit('open-drops', $event)" />
+    <WikiProfileDrops :drops="enemy.drops" @open-drops="emit('open-drops', $event)" />
   </div>
 </template>
