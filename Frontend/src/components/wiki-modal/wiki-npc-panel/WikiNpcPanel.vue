@@ -83,10 +83,21 @@ const openLocation = () => {
       class="w-[20%] shrink-0 flex flex-col gap-3 p-3 border-r border-[#0055ff]/30 min-h-0 overflow-y-auto custom-scroll"
     >
       <div
-        class="aspect-square w-full flex items-center justify-center bg-[#000a1a] border border-blue-900/50 rounded text-2xl font-bold text-gray-500"
-        aria-hidden="true"
+        class="aspect-square w-full flex items-center justify-center bg-[#000a1a] border border-blue-900/50 rounded overflow-hidden"
       >
-        ?
+        <img
+          v-if="panelViewModel.imageUrl"
+          :src="panelViewModel.imageUrl"
+          :alt="panelViewModel.name"
+          class="w-full h-full object-cover"
+        />
+        <span
+          v-else
+          class="text-2xl font-bold text-gray-500"
+          aria-hidden="true"
+        >
+          ?
+        </span>
       </div>
 
       <span class="text-center text-xs font-bold text-gray-300 tracking-wide uppercase">
@@ -95,7 +106,7 @@ const openLocation = () => {
 
       <button
         type="button"
-        class="text-center text-xs font-bold text-sky-300 hover:text-sky-200 tracking-wide transition-colors cursor-pointer focus:outline-none"
+        class="w-full text-center px-2.5 py-2 rounded text-[10px] 2xl:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none text-gray-400 border border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300"
         @click="openLocation"
       >
         {{ $t(`location.${panelViewModel.locationId}`) }}
@@ -106,9 +117,11 @@ const openLocation = () => {
           v-for="option in battleOptions"
           :key="option.id"
           type="button"
-          class="text-left font-bold text-[10px] 2xl:text-xs tracking-wide transition-colors cursor-pointer focus:outline-none px-1"
+          class="w-full text-center px-2.5 py-2 rounded text-[10px] 2xl:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none border"
           :class="
-            selectedOptionId === option.id ? 'text-sky-300' : 'text-gray-400 hover:text-gray-300'
+            selectedOptionId === option.id
+              ? 'text-blue-300 border-blue-700/60 bg-blue-950/40 hover:bg-blue-900/60'
+              : 'text-gray-400 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300'
           "
           @click="selectOption(option.id)"
         >

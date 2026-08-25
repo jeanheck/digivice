@@ -14,6 +14,15 @@
       }
     },
     "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "npcPartyId": "genji#1",
+        "exp": 4,
+        "dvexp": 0,
+        "bit": 50
+      },
       "second": {
         "charismaRequired": {
           "min": 210

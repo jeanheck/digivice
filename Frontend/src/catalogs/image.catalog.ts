@@ -38,6 +38,11 @@ const BATTLE_JUNIOR_ASSET_CONFIG = {
   extension: "png",
 } as const;
 
+const NPC_ASSET_CONFIG = {
+  pathSuffix: "/npcs/",
+  extension: "png",
+} as const;
+
 const mapModules = import.meta.glob<string>("@/assets/maps/*.webp", {
   eager: true,
   as: "url",
@@ -69,6 +74,11 @@ const cardModules = import.meta.glob<string>("@/assets/cards/*.png", {
 });
 
 const battleModules = import.meta.glob<string>("@/assets/battle/*.{jpg,png}", {
+  eager: true,
+  as: "url",
+});
+
+const npcModules = import.meta.glob<string>("@/assets/npcs/*.png", {
   eager: true,
   as: "url",
 });
@@ -177,6 +187,15 @@ export class ImageCatalog {
       BATTLE_JUNIOR_ASSET_CONFIG.pathSuffix,
       BATTLE_JUNIOR_ASSET_CONFIG.extension,
       "junior",
+    );
+  }
+
+  public static getNpcImageUrl(npcId: string | null): string | null {
+    return resolveAssetUrl(
+      npcModules,
+      NPC_ASSET_CONFIG.pathSuffix,
+      NPC_ASSET_CONFIG.extension,
+      npcId,
     );
   }
 }

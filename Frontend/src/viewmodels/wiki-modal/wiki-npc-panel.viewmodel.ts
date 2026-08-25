@@ -5,5 +5,6 @@ export interface WikiNpcPanelViewModel {
   name: string;
   type: NpcTypeConstant;
   locationId: string;
+  imageUrl: string | null;
   battleOptions: WikiNpcBattleOptionViewModel[];
 }

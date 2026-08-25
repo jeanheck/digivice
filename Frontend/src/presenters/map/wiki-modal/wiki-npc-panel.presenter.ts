@@ -1,3 +1,4 @@
+import { ImageCatalog } from "@/catalogs/image.catalog";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
 import { NpcRepository } from "@/repositories/npc.repository";
 import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
@@ -68,6 +69,7 @@ export class WikiNpcPanelPresenter {
       name: npcRaw.name,
       type: npcRaw.type,
       locationId: npcRaw.locationId,
+      imageUrl: ImageCatalog.getNpcImageUrl(npcId),
       battleOptions: this.getBattleOptions(npcId),
     };
   }

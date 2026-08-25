@@ -12,17 +12,19 @@ defineProps<{
   <div
     class="h-full min-w-0 bg-[#000a1a] border border-blue-900/50 rounded p-3 shadow-inner flex flex-col gap-1.5"
   >
+    <h4
+      class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center truncate"
+    >
+      {{ enemy.name }}
+    </h4>
+
     <div class="flex-1 min-h-0 max-h-[70%] flex items-center justify-center">
       <WikiProfileImage
-        class="!h-auto w-full max-h-full aspect-square"
+        class="!h-auto w-full max-h-full aspect-square !border-0"
         :enemy-image-url="imageUrl"
         :enemy-name="enemy.name"
       />
     </div>
-
-    <p class="shrink-0 text-center text-xs font-bold text-white tracking-wide truncate my-1">
-      {{ enemy.name }}
-    </p>
 
     <div class="shrink-0 flex flex-col gap-1.5">
       <div class="flex items-center justify-between text-[10px] gap-1">

@@ -71,14 +71,14 @@ const selectMember = (memberIndex: number) => {
     >
       <button
         type="button"
-        class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] cursor-pointer"
+        class="w-7 h-7 rounded bg-black/80 border border-blue-800 flex items-center justify-center text-blue-500 hover:bg-blue-900/80 hover:border-blue-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] cursor-pointer"
         @click.prevent="showPreviousMember"
       >
         &lt;
       </button>
 
       <div
-        class="flex gap-2 px-3 py-1.5 bg-black/80 rounded border border-cyan-900/80 shadow-[0_0_10px_rgba(0,170,255,0.2)]"
+        class="flex gap-2 px-3 py-1.5 bg-black/80 rounded border border-blue-900/80 shadow-[0_0_10px_rgba(0,170,255,0.2)]"
       >
         <button
           v-for="memberIndex in memberCount"
@@ -87,8 +87,8 @@ const selectMember = (memberIndex: number) => {
           class="w-2 h-2 rounded-full transition-all cursor-pointer"
           :class="
             memberIndex - 1 === modelValue
-              ? 'bg-cyan-400 shadow-[0_0_8px_rgba(0,255,255,1)] scale-110'
-              : 'bg-cyan-900 hover:bg-cyan-600'
+              ? 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,1)] scale-110'
+              : 'bg-blue-900 hover:bg-blue-600'
           "
           @click.prevent="selectMember(memberIndex - 1)"
         />
@@ -96,7 +96,7 @@ const selectMember = (memberIndex: number) => {
 
       <button
         type="button"
-        class="w-7 h-7 rounded bg-black/80 border border-cyan-800 flex items-center justify-center text-cyan-400 hover:bg-cyan-900/80 hover:border-cyan-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] cursor-pointer"
+        class="w-7 h-7 rounded bg-black/80 border border-blue-800 flex items-center justify-center text-blue-500 hover:bg-blue-900/80 hover:border-blue-400 hover:text-white transition-all font-bold text-sm shadow-[0_0_10px_rgba(0,170,255,0.2)] cursor-pointer"
         @click.prevent="showNextMember"
       >
         &gt;
