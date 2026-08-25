@@ -37,6 +37,10 @@ const enemyIds = computed(() => {
   return MobiusDesertMapPresenter.getEnemyIds(locationId.value, mainQuest);
 });
 
+const isSafeZone = computed(() => {
+  return enemyIds.value.length === 0;
+});
+
 const mobiusDesertArea = computed(() => {
   if (locationId.value === null) {
     return null;
@@ -91,6 +95,7 @@ const southExitName = computed(() => {
       <Location
         :location-id="locationId"
         :title-override="locationTitleOverride"
+        :is-safe-zone="isSafeZone"
         @open-location-wiki="emit('open-location-wiki', $event)"
       />
       <Enemies :enemy-ids="enemyIds" @open-enemy-modal="emit('open-enemy-modal', $event)" />

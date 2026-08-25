@@ -42,18 +42,22 @@ const hasNpcs = computed(() => {
   return props.npcs.length > 0;
 });
 
+const showPanel = computed(() => {
+  return hasMapThreatEnemies.value || hasNpcs.value;
+});
+
 const openWikiModal = (enemyId: string) => {
   emit("open-enemy-modal", enemyId);
 };
 </script>
 
 <template>
-  <div class="w-full flex justify-center shrink-0 px-0.5">
+  <div v-if="showPanel" class="w-full flex justify-center shrink-0 px-0.5">
     <div class="map-info-panel flex flex-col justify-center items-center gap-1">
-      <div v-if="!hasMapThreatEnemies" class="text-[10px] 2xl:text-xs text-[#00aaff] opacity-50 italic">
-        {{ $t("map.safeZone") }}
-      </div>
-      <div v-else class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+      <div
+        v-if="hasMapThreatEnemies"
+        class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
+      >
         <button
           v-for="enemy in resumedEnemies"
           :key="enemy.id"

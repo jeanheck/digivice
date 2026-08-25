@@ -31,6 +31,17 @@ const asukaServerMapViewModel = computed(() => {
     previousMapId,
   );
 });
+
+const isSafeZone = computed(() => {
+  if (asukaServerMapViewModel.value === null) {
+    return false;
+  }
+
+  return (
+    asukaServerMapViewModel.value.enemies.length === 0 &&
+    asukaServerMapViewModel.value.boss.length === 0
+  );
+});
 </script>
 
 <template>
@@ -38,6 +49,7 @@ const asukaServerMapViewModel = computed(() => {
     <div class="flex flex-col items-center gap-2 shrink-0">
       <Location
         :location-id="asukaServerMapViewModel?.locationId ?? null"
+        :is-safe-zone="isSafeZone"
         @open-location-wiki="emit('open-location-wiki', $event)"
       />
       <Enemies

@@ -3,10 +3,17 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { LocationService } from "@/services/location.service";
 
-const props = defineProps<{
-  locationId: string | null;
-  titleOverride?: string | null;
-}>();
+const props = withDefaults(
+  defineProps<{
+    locationId: string | null;
+    titleOverride?: string | null;
+    isSafeZone?: boolean;
+  }>(),
+  {
+    titleOverride: null,
+    isSafeZone: false,
+  },
+);
 
 const emit = defineEmits<{
   (e: "open-location-wiki", locationId: string): void;
@@ -30,8 +37,14 @@ const isClickable = computed(() => {
   return LocationService.getWorldLocation(props.locationId) !== undefined;
 });
 
-const titleClass =
-  "text-xs sm:text-sm font-bold text-white tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight";
+const titleClass = computed(() => {
+  const colorClass = props.isSafeZone ? "text-sky-300" : "text-white";
+  return `text-xs sm:text-sm font-bold ${colorClass} tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight`;
+});
+
+const clickableHoverClass = computed(() => {
+  return props.isSafeZone ? "hover:text-sky-200" : "hover:text-blue-300";
+});
 
 const handleClick = () => {
   if (!isClickable.value || props.locationId === null) {
@@ -48,7 +61,7 @@ const handleClick = () => {
       <button
         v-if="isClickable"
         type="button"
-        :class="[titleClass, 'cursor-pointer hover:text-blue-300 transition-colors']"
+        :class="[titleClass, 'cursor-pointer transition-colors', clickableHoverClass]"
         @click="handleClick"
       >
         {{ locationName }}

@@ -28,6 +28,10 @@ const mapVariant = computed(() => {
 const enemyIds = computed(() => {
   return SeabedMapPresenter.getEnemyIds(seabedRoute.value);
 });
+
+const isSafeZone = computed(() => {
+  return enemyIds.value.length === 0;
+});
 </script>
 
 <template>
@@ -35,6 +39,7 @@ const enemyIds = computed(() => {
     <div class="flex flex-col items-center gap-2 shrink-0">
       <Location
         :location-id="locationId"
+        :is-safe-zone="isSafeZone"
         @open-location-wiki="emit('open-location-wiki', $event)"
       />
       <Enemies :enemy-ids="enemyIds" @open-enemy-modal="emit('open-enemy-modal', $event)" />
