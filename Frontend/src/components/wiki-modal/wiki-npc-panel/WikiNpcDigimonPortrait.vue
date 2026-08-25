@@ -10,19 +10,21 @@ defineProps<{
 
 <template>
   <div
-    class="h-full min-w-0 bg-[#000a1a] border border-blue-900/50 rounded p-2 shadow-inner flex flex-col gap-2"
+    class="h-full min-w-0 bg-[#000a1a] border border-blue-900/50 rounded p-3 shadow-inner flex flex-col gap-1.5"
   >
-    <WikiProfileImage
-      class="!h-auto w-full aspect-square shrink-0"
-      :enemy-image-url="imageUrl"
-      :enemy-name="enemy.name"
-    />
+    <div class="flex-1 min-h-0 max-h-[70%] flex items-center justify-center">
+      <WikiProfileImage
+        class="!h-auto w-full max-h-full aspect-square"
+        :enemy-image-url="imageUrl"
+        :enemy-name="enemy.name"
+      />
+    </div>
 
-    <p class="text-center text-xs font-bold text-white tracking-wide truncate">
+    <p class="shrink-0 text-center text-xs font-bold text-white tracking-wide truncate my-1">
       {{ enemy.name }}
     </p>
 
-    <div class="flex flex-col gap-1.5">
+    <div class="shrink-0 flex flex-col gap-1.5">
       <div class="flex items-center justify-between text-[10px] gap-1">
         <span class="font-bold text-blue-500 tracking-wider uppercase shrink-0">
           {{ $t("enemy.specie") }}:
