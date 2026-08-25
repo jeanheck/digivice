@@ -39,6 +39,7 @@ import player from "./player.json";
 import party from "./party.json";
 import connection from "./connection.json";
 import auction from "./auction.json";
+import npc from "./npc.json";
 
 export default {
   ...map,
@@ -82,4 +83,5 @@ export default {
   ...party,
   ...connection,
   ...auction,
+  ...npc,
 };

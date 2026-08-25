@@ -1,0 +1,10 @@
+{
+  "npc": {
+    "battle": {
+      "card": "Cards",
+      "digimon": "Digimon",
+      "cardPlaceholder": "Card battle",
+      "digimonPlaceholder": "Digimon battle"
+    }
+  }
+}
