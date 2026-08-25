@@ -4,10 +4,12 @@ import type { State } from "../models";
 import type { EmulatorConnectionStatus } from "../models/emulator-connection-status";
 import type * as Events from "../events/events.map";
 import { PlayerConverter } from "../events/converters/player.converter";
+import { ImportantItemsConverter } from "../events/converters/important-items.converter";
 import { PartyConverter } from "../events/converters/party.converter";
 import { BattleConverter } from "../events/converters/battle.converter";
 import { JournalConverter } from "../events/converters/journal.converter";
 import { PlayerSyncer } from "./syncers/player.syncer";
+import { ImportantItemsSyncer } from "./syncers/important-items.syncer";
 import { JournalSyncer } from "./syncers/journal.syncer";
 import { PartySyncer } from "./syncers/party.syncer";
 import { BattleSyncer } from "./syncers/battle.syncer";
@@ -79,6 +81,7 @@ export const useGameStore = defineStore("game", () => {
 
     currentState.value = {
       player: state.player ? PlayerConverter.convert(state.player) : null,
+      importantItems: state.importantItems ? ImportantItemsConverter.convert(state.importantItems) : null,
       party: state.party ? PartyConverter.convert(state.party) : null,
       battle: state.battle ? BattleConverter.convert(state.battle) : null,
       journal: state.journal ? JournalConverter.convert(state.journal) : null,
@@ -92,6 +95,15 @@ export const useGameStore = defineStore("game", () => {
     }
 
     PlayerSyncer.sync(previousPlayer, newPlayerDto);
+  }
+
+  function syncImportantItems(newImportantItemsDto: Events.ImportantItemsDTO | null): void {
+    const previousImportantItems = currentState.value?.importantItems;
+    if (!previousImportantItems || !newImportantItemsDto) {
+      return;
+    }
+
+    ImportantItemsSyncer.sync(previousImportantItems, newImportantItemsDto);
   }
 
   function syncJournal(newJournalDto: Events.JournalDTO | null): void {
@@ -135,6 +147,7 @@ export const useGameStore = defineStore("game", () => {
     syncEmulatorConnectionStatus,
     setInitialState,
     syncPlayer,
+    syncImportantItems,
     syncParty,
     syncBattle,
     syncJournal,

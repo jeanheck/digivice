@@ -25,6 +25,10 @@ export function initializeSignalRHandlers(): void {
     store.syncPlayer(data);
   });
 
+  signalRService.on("ImportantItemsChanged", (data) => {
+    store.syncImportantItems(data);
+  });
+
   signalRService.on("PartyChanged", (data) => {
     store.syncParty(data);
   });

@@ -1,5 +1,6 @@
 // Export everything from individual modular files in dto folder
 export type { PlayerDTO } from "./dto/player.dto";
+export type { ImportantItemsDTO } from "./dto/important-items.dto";
 export type { ConnectionDTO, EmulatorConnectionStatusChangedDTO } from "./dto/connection.dto";
 export type { PartyDTO } from "./dto/party.dto";
 export type { BattleDTO } from "./dto/battle.dto";
@@ -26,6 +27,7 @@ export type { StoredDigievolutionDTO } from "./dto/parties/digimons/stored-digie
 import type { EmulatorConnectionStatusChangedDTO } from "./dto/connection.dto";
 import type { StateDTO } from "./dto/state.dto";
 import type { PlayerDTO } from "./dto/player.dto";
+import type { ImportantItemsDTO } from "./dto/important-items.dto";
 import type { PartyDTO } from "./dto/party.dto";
 import type { BattleDTO } from "./dto/battle.dto";
 import type { JournalDTO } from "./dto/journal.dto";
@@ -35,6 +37,7 @@ export interface EventsMap {
   EmulatorConnectionStatusChanged: EmulatorConnectionStatusChangedDTO;
   InitialState: StateDTO;
   PlayerChanged: PlayerDTO;
+  ImportantItemsChanged: ImportantItemsDTO;
   PartyChanged: PartyDTO;
   BattleChanged: BattleDTO;
   JournalChanged: JournalDTO;
