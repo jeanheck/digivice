@@ -1,9 +1,13 @@
-import type { Quest } from "@/models";
+import type { DigimonSlot, Quest } from "@/models";
 import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
+import { FooterPresenter } from "@/presenters/footer/footer.presenter";
+import { NpcRepository } from "@/repositories/npc.repository";
 import { QuestRepository } from "@/repositories/quest.repository";
 import { LocationService } from "@/services/location.service";
+import { NpcService } from "@/services/npc.service";
 import { QuestService } from "@/services/quest.service";
 import type { AsukaServerMapViewModel } from "@/viewmodels/map/asuka-server-map.viewmodel";
+import type { MapNpcViewModel } from "@/viewmodels/map/map-npc.viewmodel";
 
 export class AsukaServerMapPresenter {
   private static readonly ASUKA_SEWERS_LOCATION_ID = "021B";
@@ -54,24 +58,55 @@ export class AsukaServerMapPresenter {
     return LocationService.getKickingTree(locationId);
   }
 
+  private static resolveNpcs(
+    locationId: string,
+    lastCompletedMainQuestStep: number,
+    digimonSlots: DigimonSlot[],
+  ): MapNpcViewModel[] {
+    const npcIds = LocationService.getNpcIds(locationId, lastCompletedMainQuestStep);
+    const partyCharisma = FooterPresenter.getPartyCharisma(digimonSlots);
+
+    return npcIds.flatMap((npcId) => {
+      const npcRaw = NpcRepository.getNpcById(npcId);
+      if (npcRaw === undefined) {
+        return [];
+      }
+
+      return [
+        {
+          id: npcId,
+          name: npcRaw.name,
+          hasAvailableBattle: NpcService.hasAvailableBattle(npcRaw, partyCharisma),
+        },
+      ];
+    });
+  }
+
   public static getViewModel(
     locationId: string,
     mainQuest: Quest | null,
     sideQuests: Quest[],
+    digimonSlots: DigimonSlot[],
     previousMapId: string = "",
   ): AsukaServerMapViewModel {
     const fishingIds = this.resolveFishingIds(locationId, sideQuests);
     const kickingTreeIds = this.resolveKickingTreeIds(locationId, sideQuests);
     const bossIds = LocationService.getBoss(locationId);
+    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
+    const npcs = this.resolveNpcs(locationId, lastCompletedMainQuestStep, digimonSlots);
 
     if (this.isAsukaSewersSafeZone(locationId, previousMapId)) {
-      return AsukaServerMapConverter.convert(locationId, [], bossIds, fishingIds, kickingTreeIds);
+      return AsukaServerMapConverter.convert(
+        locationId,
+        [],
+        bossIds,
+        fishingIds,
+        kickingTreeIds,
+        npcs,
+      );
     }
 
-    const enemyIds = LocationService.getEnemies(
-      locationId,
-      QuestService.getLastCompletedMainQuestStep(mainQuest),
-    );
+    const enemyIds = LocationService.getEnemies(locationId, lastCompletedMainQuestStep);
 
     return AsukaServerMapConverter.convert(
       locationId,
@@ -79,6 +114,7 @@ export class AsukaServerMapPresenter {
       bossIds,
       fishingIds,
       kickingTreeIds,
+      npcs,
     );
   }
 }

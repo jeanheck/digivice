@@ -1,4 +1,5 @@
 import type { AsukaServerMapViewModel } from "@/viewmodels/map/asuka-server-map.viewmodel";
+import type { MapNpcViewModel } from "@/viewmodels/map/map-npc.viewmodel";
 
 export class AsukaServerMapConverter {
   public static convert(
@@ -7,6 +8,7 @@ export class AsukaServerMapConverter {
     bossIds: string[],
     fishingIds: string[],
     kickingTreeIds: string[],
+    npcs: MapNpcViewModel[],
   ): AsukaServerMapViewModel {
     return {
       locationId,
@@ -14,6 +16,7 @@ export class AsukaServerMapConverter {
       boss: bossIds,
       fishing: fishingIds,
       kickingTree: kickingTreeIds,
+      npcs,
     };
   }
 }

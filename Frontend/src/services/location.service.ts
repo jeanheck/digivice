@@ -2,7 +2,10 @@ import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { LocationRepository } from "@/repositories/location.repository";
 import { SeabedRoutesRepository } from "@/repositories/seabed-routes.repository";
 import type { InnerLocationRaw } from "@/repositories/tables/raws/location/inner-location.raw";
-import { isLocationEnemyPhaseList } from "@/repositories/tables/raws/location/location.raw";
+import {
+  isLocationEnemyPhaseList,
+  type LocationWalkingEnemiesRaw,
+} from "@/repositories/tables/raws/location/location.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 
 export class LocationService {
@@ -12,23 +15,7 @@ export class LocationService {
 
   public static getEnemies(locationId: string, lastCompletedMainQuestStep: number): string[] {
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const walkingEnemiesRaw = locationRaw.enemies?.walking ?? [];
-
-    if (!isLocationEnemyPhaseList(walkingEnemiesRaw)) {
-      return walkingEnemiesRaw;
-    }
-
-    const sortedPhases = [...walkingEnemiesRaw].sort((firstPhase, secondPhase) => {
-      return secondPhase.lastMainQuestStepDone - firstPhase.lastMainQuestStepDone;
-    });
-    const matchingPhase = sortedPhases.find((phase) => {
-      return lastCompletedMainQuestStep >= phase.lastMainQuestStepDone;
-    });
-    if (matchingPhase === undefined) {
-      return [];
-    }
-
-    return matchingPhase.ids;
+    return this.resolvePhasedIds(locationRaw.enemies?.walking ?? [], lastCompletedMainQuestStep);
   }
 
   public static getBoss(locationId: string): string[] {
@@ -43,8 +30,30 @@ export class LocationService {
     return LocationRepository.getLocationById(locationId).enemies?.kickingTree ?? [];
   }
 
-  public static getNpcIds(locationId: string): string[] {
-    return LocationRepository.getLocationById(locationId).npcs ?? [];
+  public static getNpcIds(locationId: string, lastCompletedMainQuestStep: number): string[] {
+    const locationRaw = LocationRepository.getLocationById(locationId);
+    return this.resolvePhasedIds(locationRaw.npcs ?? [], lastCompletedMainQuestStep);
+  }
+
+  private static resolvePhasedIds(
+    phasedIdsRaw: LocationWalkingEnemiesRaw,
+    lastCompletedMainQuestStep: number,
+  ): string[] {
+    if (!isLocationEnemyPhaseList(phasedIdsRaw)) {
+      return phasedIdsRaw;
+    }
+
+    const sortedPhases = [...phasedIdsRaw].sort((firstPhase, secondPhase) => {
+      return secondPhase.lastMainQuestStepDone - firstPhase.lastMainQuestStepDone;
+    });
+    const matchingPhase = sortedPhases.find((phase) => {
+      return lastCompletedMainQuestStep >= phase.lastMainQuestStepDone;
+    });
+    if (matchingPhase === undefined) {
+      return [];
+    }
+
+    return matchingPhase.ids;
   }
 
   public static getRegionByLocationId(id: string | null): LocationRegionConstant {

@@ -20,9 +20,16 @@ const asukaServerMapViewModel = computed(() => {
 
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
   const sideQuests = store.currentState?.journal?.sideQuests ?? [];
+  const digimonSlots = store.currentState?.party?.slots ?? [];
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
 
-  return AsukaServerMapPresenter.getViewModel(locationId, mainQuest, sideQuests, previousMapId);
+  return AsukaServerMapPresenter.getViewModel(
+    locationId,
+    mainQuest,
+    sideQuests,
+    digimonSlots,
+    previousMapId,
+  );
 });
 </script>
 
@@ -38,6 +45,7 @@ const asukaServerMapViewModel = computed(() => {
         :boss-ids="asukaServerMapViewModel?.boss ?? []"
         :fishing-ids="asukaServerMapViewModel?.fishing ?? []"
         :kicking-tree-ids="asukaServerMapViewModel?.kickingTree ?? []"
+        :npcs="asukaServerMapViewModel?.npcs ?? []"
         @open-enemy-modal="emit('open-enemy-modal', $event)"
       />
     </div>
