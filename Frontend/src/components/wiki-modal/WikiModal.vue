@@ -355,6 +355,7 @@ const enemyImageUrl = computed(() => {
     <WikiNpcPanel
       v-else-if="view === 'npc' && selectedNpcId !== null"
       :npc-id="selectedNpcId"
+      @open-locations="openLocationsView"
     />
   </Modal>
 
