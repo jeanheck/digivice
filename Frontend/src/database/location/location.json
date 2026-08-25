@@ -46,7 +46,15 @@
     "worldLocation": {
       "x": 50.5,
       "y": 43
-    }
+    },
+    "npcs": [
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "genji"
+        ]
+      }
+    ]
   },
   "0201": {
     "imageName": "Asuka City 2",
@@ -343,6 +351,14 @@
         "515"
       ]
     },
+    "npcs": [
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "natsumi"
+        ]
+      }
+    ],
     "dock": true
   },
   "021E": {

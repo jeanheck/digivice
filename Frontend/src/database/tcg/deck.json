@@ -1,4 +1,81 @@
 {
+    "bugBugFolder": {
+        "level": 4,
+        "cards": [
+            {
+                "id": "1095",
+                "quantity": 1
+            },
+            {
+                "id": "1100",
+                "quantity": 1
+            },
+            {
+                "id": "1101",
+                "quantity": 4
+            },
+            {
+                "id": "1102",
+                "quantity": 1
+            },
+            {
+                "id": "1138",
+                "quantity": 1
+            },
+            {
+                "id": "1145",
+                "quantity": 1
+            },
+            {
+                "id": "1181",
+                "quantity": 1
+            },
+            {
+                "id": "1183",
+                "quantity": 1
+            },
+            {
+                "id": "1185",
+                "quantity": 1
+            },
+            {
+                "id": "1187",
+                "quantity": 1
+            },
+            {
+                "id": "1188",
+                "quantity": 1
+            },
+            {
+                "id": "1270",
+                "quantity": 2
+            },
+            {
+                "id": "1271",
+                "quantity": 4
+            },
+            {
+                "id": "1274",
+                "quantity": 4
+            },
+            {
+                "id": "1310",
+                "quantity": 4
+            },
+            {
+                "id": "1311",
+                "quantity": 4
+            },
+            {
+                "id": "1312",
+                "quantity": 4
+            },
+            {
+                "id": "1313",
+                "quantity": 4
+            }
+        ]
+    },
     "flyingFolder": {
         "level": 9,
         "cards": [

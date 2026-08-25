@@ -1,4 +1,29 @@
 {
+  "genji": {
+    "name": "Genji",
+    "locationId": "0200",
+    "cardBattles": [
+      {
+        "charismaRequired": {
+            "min": 60,
+            "max": 209
+        },
+        "deckId": "bugBugFolder",
+        "dropId": "1aBooster"
+      }
+    ],
+    "digimonBattles": [
+      {
+        "charismaRequired": {
+            "min": 210
+        },
+        "npcPartyId": "genji#2",
+        "exp": 63,
+        "dvexp": 6,
+        "bit": 115
+      }
+    ]
+  },
   "natsumi": {
     "name": "Natsumi",
     "locationId": "021D",
