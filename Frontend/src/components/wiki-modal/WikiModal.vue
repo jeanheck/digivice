@@ -6,6 +6,7 @@ import WikiProfilePanel from "@/components/wiki-modal/wiki-profile-panel/WikiPro
 import WikiDropsPanel from "@/components/wiki-modal/wiki-drops-panel/WikiDropsPanel.vue";
 import WikiCardsPanel from "@/components/wiki-modal/wiki-cards-panel/WikiCardsPanel.vue";
 import WikiLocationsPanel from "@/components/wiki-modal/wiki-locations-panel/WikiLocationsPanel.vue";
+import WikiNpcPanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcPanel.vue";
 import SearchBar from "@/components/search/SearchBar.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -17,6 +18,7 @@ const props = defineProps<{
   isOpen: boolean;
   enemyId: string | null;
   locationId?: string | null;
+  npcId?: string | null;
 }>();
 
 const emit = defineEmits<{
@@ -25,12 +27,13 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-type WikiView = "profile" | "drops" | "cards" | "locations";
+type WikiView = "profile" | "drops" | "cards" | "locations" | "npc";
 
 const selectedEnemyId = ref<string | null>(null);
 const selectedDropId = ref<string | null>(null);
 const selectedCardId = ref<string | null>(null);
 const selectedLocationId = ref<string | null>(null);
+const selectedNpcId = ref<string | null>(null);
 const view = ref<WikiView>("profile");
 
 const isModalOpen = computed(() => {
@@ -39,7 +42,8 @@ const isModalOpen = computed(() => {
     (selectedEnemyId.value !== null ||
       selectedDropId.value !== null ||
       selectedCardId.value !== null ||
-      selectedLocationId.value !== null)
+      selectedLocationId.value !== null ||
+      selectedNpcId.value !== null)
   );
 });
 
@@ -57,6 +61,10 @@ const isDropsView = computed(() => {
 
 const isCardsView = computed(() => {
   return view.value === "cards";
+});
+
+const isNpcView = computed(() => {
+  return view.value === "npc";
 });
 
 const canBackToProfile = computed(() => {
@@ -94,8 +102,29 @@ const selectedSearchId = computed(() => {
     return selectedLocationId.value;
   }
 
+  if (isNpcView.value && selectedNpcId.value !== null) {
+    return selectedNpcId.value;
+  }
+
   return selectedEnemyId.value ?? undefined;
 });
+
+const clearNonEnemySelections = () => {
+  selectedDropId.value = null;
+  selectedCardId.value = null;
+  selectedLocationId.value = null;
+  selectedNpcId.value = null;
+};
+
+const openNpcView = (npcId: string) => {
+  hide();
+  selectedNpcId.value = npcId;
+  selectedEnemyId.value = null;
+  selectedDropId.value = null;
+  selectedCardId.value = null;
+  selectedLocationId.value = null;
+  view.value = "npc";
+};
 
 const handleSearchSelect = (id: string) => {
   const searchItem = allSearchItems.value.find((item) => {
@@ -107,9 +136,7 @@ const handleSearchSelect = (id: string) => {
 
   if (searchItem.kind === "enemy") {
     selectedEnemyId.value = id;
-    selectedDropId.value = null;
-    selectedCardId.value = null;
-    selectedLocationId.value = null;
+    clearNonEnemySelections();
     view.value = "profile";
     return;
   }
@@ -118,6 +145,7 @@ const handleSearchSelect = (id: string) => {
     selectedDropId.value = id;
     selectedCardId.value = null;
     selectedLocationId.value = null;
+    selectedNpcId.value = null;
     view.value = "drops";
     return;
   }
@@ -126,6 +154,7 @@ const handleSearchSelect = (id: string) => {
     selectedCardId.value = id;
     selectedDropId.value = null;
     selectedLocationId.value = null;
+    selectedNpcId.value = null;
     view.value = "cards";
     return;
   }
@@ -135,7 +164,13 @@ const handleSearchSelect = (id: string) => {
     selectedLocationId.value = id;
     selectedDropId.value = null;
     selectedCardId.value = null;
+    selectedNpcId.value = null;
     view.value = "locations";
+    return;
+  }
+
+  if (WikiModalPresenter.isNpcSearchKind(searchItem.kind)) {
+    openNpcView(id);
   }
 };
 
@@ -143,12 +178,14 @@ const openDropsView = (dropId: string) => {
   hide();
   selectedDropId.value = dropId;
   selectedCardId.value = null;
+  selectedNpcId.value = null;
   view.value = "drops";
 };
 
 const openLocationsView = (locationId: string) => {
   hide();
   selectedLocationId.value = locationId;
+  selectedNpcId.value = null;
   view.value = "locations";
 };
 
@@ -157,17 +194,13 @@ const backToProfileView = () => {
     return;
   }
 
-  selectedDropId.value = null;
-  selectedCardId.value = null;
-  selectedLocationId.value = null;
+  clearNonEnemySelections();
   view.value = "profile";
 };
 
 const openEnemyFromDropSource = (enemyId: string) => {
   selectedEnemyId.value = enemyId;
-  selectedDropId.value = null;
-  selectedCardId.value = null;
-  selectedLocationId.value = null;
+  clearNonEnemySelections();
   view.value = "profile";
 };
 
@@ -175,6 +208,7 @@ const openCardFromBooster = (cardId: string) => {
   hide();
   selectedCardId.value = cardId;
   selectedDropId.value = null;
+  selectedNpcId.value = null;
   view.value = "cards";
 };
 
@@ -213,28 +247,30 @@ watch(
   () => props.isOpen,
   (open) => {
     if (open) {
+      if (props.npcId !== null && props.npcId !== undefined) {
+        openNpcView(props.npcId);
+        return;
+      }
+
       if (props.locationId !== null && props.locationId !== undefined) {
         selectedLocationId.value = props.locationId;
         selectedEnemyId.value = null;
         selectedDropId.value = null;
         selectedCardId.value = null;
+        selectedNpcId.value = null;
         view.value = "locations";
         return;
       }
 
       selectedEnemyId.value = props.enemyId;
-      selectedDropId.value = null;
-      selectedCardId.value = null;
-      selectedLocationId.value = null;
+      clearNonEnemySelections();
       view.value = "profile";
       return;
     }
 
     hide();
     selectedEnemyId.value = null;
-    selectedDropId.value = null;
-    selectedCardId.value = null;
-    selectedLocationId.value = null;
+    clearNonEnemySelections();
     view.value = "profile";
   },
 );
@@ -315,6 +351,10 @@ const enemyImageUrl = computed(() => {
     <WikiLocationsPanel
       v-else-if="view === 'locations' && selectedLocationId !== null"
       :location-id="selectedLocationId"
+    />
+    <WikiNpcPanel
+      v-else-if="view === 'npc' && selectedNpcId !== null"
+      :npc-id="selectedNpcId"
     />
   </Modal>
 

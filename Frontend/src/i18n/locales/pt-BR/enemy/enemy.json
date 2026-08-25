@@ -6,13 +6,16 @@
       "locations": "Wiki - Localizações",
       "drops": "Wiki - Drops"
     },
-    "searchPlaceholder": "Digite o nome de um inimigo, drop, carta ou localização...",
+    "searchPlaceholder": "Digite o nome de um inimigo, drop, carta, localização ou NPC...",
     "searchNoResults": "Nenhum resultado encontrado",
     "searchKind": {
       "enemy": "Digimon",
       "drop": "Drop",
       "card": "Carta",
-      "location": "Localização"
+      "location": "Localização",
+      "tamer": "Treinador",
+      "leader": "Líder",
+      "npc": "NPC"
     },
     "droppedBy": "Dropado por",
     "droppedByNone": "Nenhum inimigo conhecido",

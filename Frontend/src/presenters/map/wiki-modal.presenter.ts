@@ -2,12 +2,17 @@ import { CardRepository } from "@/repositories/card.repository";
 import { DropRepository } from "@/repositories/drop.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { LocationRepository } from "@/repositories/location.repository";
+import { NpcRepository } from "@/repositories/npc.repository";
 import { EnemyConverter } from "@/presenters/converter/enemy.converter";
 import { SearchItemConverter } from "@/presenters/converter/search-item.converter";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
-import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
+import type { SearchItemKind, SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
 export class WikiModalPresenter {
+  public static isNpcSearchKind(kind: SearchItemKind | undefined): boolean {
+    return kind === "tamer" || kind === "leader" || kind === "npc";
+  }
+
   public static getEnemyById(enemyId: string): EnemyViewModel {
     const enemyRaw = EnemyRepository.getEnemyById(enemyId);
     return EnemyConverter.convert(enemyRaw);
@@ -39,6 +44,12 @@ export class WikiModalPresenter {
     });
   }
 
+  public static getNpcSearchItems(): SearchItemViewModel[] {
+    return Object.entries(NpcRepository.getNpcTable()).map(([npcId, npcRaw]) => {
+      return SearchItemConverter.convertNpc(npcId, npcRaw);
+    });
+  }
+
   public static getAllSearchItems(
     translateDropName: (dropKey: string) => string,
     translateCardName: (cardId: string) => string,
@@ -49,6 +60,7 @@ export class WikiModalPresenter {
       ...this.getDropSearchItems(translateDropName),
       ...this.getCardSearchItems(translateCardName),
       ...this.getLocationSearchItems(translateLocationName),
+      ...this.getNpcSearchItems(),
     ];
   }
 }

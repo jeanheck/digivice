@@ -23,6 +23,7 @@ const props = withDefaults(
 
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
+  (e: "open-npc-modal", npcId: string): void;
 }>();
 
 const resumedEnemies = computed(() => {
@@ -48,6 +49,10 @@ const showPanel = computed(() => {
 
 const openWikiModal = (enemyId: string) => {
   emit("open-enemy-modal", enemyId);
+};
+
+const openNpcWikiModal = (npcId: string) => {
+  emit("open-npc-modal", npcId);
 };
 </script>
 
@@ -80,14 +85,20 @@ const openWikiModal = (enemyId: string) => {
         v-if="hasNpcs"
         class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
       >
-        <span
+        <button
           v-for="npc in npcs"
           :key="npc.id"
-          class="font-bold text-[9px] 2xl:text-xs tracking-wide"
-          :class="npc.hasAvailableBattle ? 'text-sky-300' : 'text-gray-400'"
+          type="button"
+          class="font-bold text-[9px] 2xl:text-xs tracking-wide focus:outline-none rounded px-1 cursor-pointer transition-colors"
+          :class="
+            npc.hasAvailableBattle
+              ? 'text-sky-300 hover:text-sky-200'
+              : 'text-gray-400 hover:text-gray-300'
+          "
+          @click="openNpcWikiModal(npc.id)"
         >
           {{ npc.name }}
-        </span>
+        </button>
       </div>
     </div>
   </div>

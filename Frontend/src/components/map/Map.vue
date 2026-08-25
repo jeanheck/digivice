@@ -35,16 +35,26 @@ const backgroundImageUrl = computed(() => {
 const isWikiModalOpen = ref(false);
 const selectedEnemyId = ref<string | null>(null);
 const selectedWikiLocationId = ref<string | null>(null);
+const selectedNpcId = ref<string | null>(null);
 
 const openWikiModal = (enemyId: string) => {
   selectedWikiLocationId.value = null;
+  selectedNpcId.value = null;
   selectedEnemyId.value = enemyId;
   isWikiModalOpen.value = true;
 };
 
 const openWikiModalForLocation = (locationId: string) => {
   selectedEnemyId.value = null;
+  selectedNpcId.value = null;
   selectedWikiLocationId.value = locationId;
+  isWikiModalOpen.value = true;
+};
+
+const openWikiModalForNpc = (npcId: string) => {
+  selectedEnemyId.value = null;
+  selectedWikiLocationId.value = null;
+  selectedNpcId.value = npcId;
   isWikiModalOpen.value = true;
 };
 
@@ -52,6 +62,7 @@ const closeWikiModal = () => {
   isWikiModalOpen.value = false;
   selectedEnemyId.value = null;
   selectedWikiLocationId.value = null;
+  selectedNpcId.value = null;
 };
 </script>
 
@@ -88,12 +99,14 @@ const closeWikiModal = () => {
       v-else
       @open-enemy-modal="openWikiModal"
       @open-location-wiki="openWikiModalForLocation"
+      @open-npc-modal="openWikiModalForNpc"
     />
 
     <WikiModal
       :is-open="isWikiModalOpen"
       :enemy-id="selectedEnemyId"
       :location-id="selectedWikiLocationId"
+      :npc-id="selectedNpcId"
       @close="closeWikiModal"
     />
   </aside>

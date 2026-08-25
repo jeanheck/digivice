@@ -1,6 +1,7 @@
 {
   "genji": {
     "name": "Genji",
+    "type": "tamer",
     "locationId": "0200",
     "cardBattles": [
       {
@@ -26,6 +27,7 @@
   },
   "natsumi": {
     "name": "Natsumi",
+    "type": "tamer",
     "locationId": "021D",
     "cardBattles": [
       {

@@ -8,6 +8,7 @@ import { AsukaServerMapPresenter } from "@/presenters/map/asuka-server-map.prese
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
   (e: "open-location-wiki", locationId: string): void;
+  (e: "open-npc-modal", npcId: string): void;
 }>();
 
 const store = useGameStore();
@@ -59,6 +60,7 @@ const isSafeZone = computed(() => {
         :kicking-tree-ids="asukaServerMapViewModel?.kickingTree ?? []"
         :npcs="asukaServerMapViewModel?.npcs ?? []"
         @open-enemy-modal="emit('open-enemy-modal', $event)"
+        @open-npc-modal="emit('open-npc-modal', $event)"
       />
     </div>
 
