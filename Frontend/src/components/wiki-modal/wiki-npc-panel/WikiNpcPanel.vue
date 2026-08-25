@@ -4,6 +4,8 @@ import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
 import { WikiNpcPanelPresenter } from "@/presenters/map/wiki-modal/wiki-npc-panel.presenter";
 import WikiNpcCardBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcCardBattlePanel.vue";
 import WikiNpcDigimonBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDigimonBattlePanel.vue";
+import { useGameStore } from "@/stores/use-game-store";
+import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
 
 const props = defineProps<{
   npcId: string;
@@ -19,8 +21,18 @@ const emit = defineEmits<{
   (e: "hide-stat-tooltip"): void;
 }>();
 
+const store = useGameStore();
+
+const journalNpc = computed(() => {
+  return (
+    store.currentState?.journal?.npcs.find((npc) => {
+      return npc.id === props.npcId;
+    }) ?? null
+  );
+});
+
 const panelViewModel = computed(() => {
-  return WikiNpcPanelPresenter.getPanelViewModel(props.npcId);
+  return WikiNpcPanelPresenter.getPanelViewModel(props.npcId, journalNpc.value);
 });
 
 const battleOptions = computed(() => {
@@ -51,6 +63,22 @@ const battleKindLabelKey = (kind: NpcBattleKindConstant): string => {
   }
 
   return "npc.battle.digimon";
+};
+
+const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
+  if (option.completed) {
+    if (selectedOptionId.value === option.id) {
+      return "text-gray-400 line-through decoration-green-900 border-green-700/60 bg-green-900/20 hover:bg-green-900/30";
+    }
+
+    return "text-gray-400 line-through decoration-green-900 border-green-800/30 bg-green-900/10 hover:bg-green-900/20";
+  }
+
+  if (selectedOptionId.value === option.id) {
+    return "text-blue-300 border-blue-700/60 bg-blue-950/40 hover:bg-blue-900/60";
+  }
+
+  return "text-gray-400 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300";
 };
 
 const npcTypeLabelKey = computed(() => {
@@ -118,11 +146,7 @@ const openLocation = () => {
           :key="option.id"
           type="button"
           class="w-full text-center px-2.5 py-2 rounded text-[10px] 2xl:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none border"
-          :class="
-            selectedOptionId === option.id
-              ? 'text-blue-300 border-blue-700/60 bg-blue-950/40 hover:bg-blue-900/60'
-              : 'text-gray-400 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300'
-          "
+          :class="battleOptionClass(option)"
           @click="selectOption(option.id)"
         >
           {{ $t(battleKindLabelKey(option.kind)) }} ({{ option.charismaRangeText }})

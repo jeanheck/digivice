@@ -6,4 +6,5 @@ export interface WikiNpcBattleOptionViewModel {
   battleId: string;
   charismaMin: number;
   charismaRangeText: string;
+  completed: boolean;
 }

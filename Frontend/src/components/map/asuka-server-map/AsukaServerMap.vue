@@ -23,6 +23,7 @@ const asukaServerMapViewModel = computed(() => {
   const sideQuests = store.currentState?.journal?.sideQuests ?? [];
   const digimonSlots = store.currentState?.party?.slots ?? [];
   const previousMapId = store.currentState?.player?.previousMapId ?? "";
+  const journalNpcs = store.currentState?.journal?.npcs ?? [];
 
   return AsukaServerMapPresenter.getViewModel(
     locationId,
@@ -30,6 +31,7 @@ const asukaServerMapViewModel = computed(() => {
     sideQuests,
     digimonSlots,
     previousMapId,
+    journalNpcs,
   );
 });
 

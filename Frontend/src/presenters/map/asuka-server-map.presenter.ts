@@ -1,4 +1,4 @@
-import type { DigimonSlot, Quest } from "@/models";
+import type { DigimonSlot, Npc, Quest } from "@/models";
 import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
 import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 import { NpcRepository } from "@/repositories/npc.repository";
@@ -62,6 +62,7 @@ export class AsukaServerMapPresenter {
     locationId: string,
     lastCompletedMainQuestStep: number,
     digimonSlots: DigimonSlot[],
+    journalNpcs: Npc[],
   ): MapNpcViewModel[] {
     const npcIds = LocationService.getNpcIds(locationId, lastCompletedMainQuestStep);
     const partyCharisma = FooterPresenter.getPartyCharisma(digimonSlots);
@@ -72,11 +73,20 @@ export class AsukaServerMapPresenter {
         return [];
       }
 
+      const journalNpc =
+        journalNpcs.find((npc) => {
+          return npc.id === npcId;
+        }) ?? null;
+
       return [
         {
           id: npcId,
           name: npcRaw.name,
-          hasAvailableBattle: NpcService.hasAvailableBattle(npcRaw, partyCharisma),
+          hasAvailableBattle: NpcService.hasAvailableBattle(
+            npcRaw,
+            journalNpc,
+            partyCharisma,
+          ),
         },
       ];
     });
@@ -88,12 +98,18 @@ export class AsukaServerMapPresenter {
     sideQuests: Quest[],
     digimonSlots: DigimonSlot[],
     previousMapId: string = "",
+    journalNpcs: Npc[] = [],
   ): AsukaServerMapViewModel {
     const fishingIds = this.resolveFishingIds(locationId, sideQuests);
     const kickingTreeIds = this.resolveKickingTreeIds(locationId, sideQuests);
     const bossIds = LocationService.getBoss(locationId);
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
-    const npcs = this.resolveNpcs(locationId, lastCompletedMainQuestStep, digimonSlots);
+    const npcs = this.resolveNpcs(
+      locationId,
+      lastCompletedMainQuestStep,
+      digimonSlots,
+      journalNpcs,
+    );
 
     if (this.isAsukaSewersSafeZone(locationId, previousMapId)) {
       return AsukaServerMapConverter.convert(
