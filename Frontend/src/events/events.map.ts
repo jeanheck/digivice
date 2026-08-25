@@ -9,6 +9,8 @@ export type { JournalDTO } from "./dto/journal.dto";
 export type { StateDTO } from "./dto/state.dto";
 
 export type { AuctionDTO } from "./dto/auctions/auction.dto";
+export type { NpcDTO } from "./dto/npcs/npc.dto";
+export type { NpcBattleDTO } from "./dto/npcs/npc-battle.dto";
 export type { QuestDTO } from "./dto/journals/quest.dto";
 export type { RequisiteDTO } from "./dto/journals/quests/requisite.dto";
 export type { StepDTO } from "./dto/journals/quests/step.dto";

@@ -1,6 +1,7 @@
 import type { Journal } from "../../models";
 import type * as Events from "../../events/events.map";
 import { AuctionSyncer } from "./journals/auction.syncer";
+import { NpcSyncer } from "./journals/npc.syncer";
 import { QuestSyncer } from "./journals/quest.syncer";
 
 export class JournalSyncer {
@@ -53,6 +54,18 @@ export class JournalSyncer {
 
         if (previousAuction) {
           AuctionSyncer.sync(previousAuction, newAuctionDto);
+        }
+      });
+    }
+
+    if (newJournalDto.npcs && newJournalDto.npcs.length > 0) {
+      newJournalDto.npcs.forEach((newNpcDto) => {
+        const previousNpc = previousJournal.npcs.find((npc) => {
+          return npc.id === newNpcDto.id;
+        });
+
+        if (previousNpc) {
+          NpcSyncer.sync(previousNpc, newNpcDto);
         }
       });
     }

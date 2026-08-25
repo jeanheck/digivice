@@ -6,6 +6,6 @@ export interface NpcRaw {
   name: string;
   type: NpcTypeConstant;
   locationId: string;
-  cardBattles?: NpcCardBattleRaw[];
-  digimonBattles?: NpcDigimonBattleRaw[];
+  cardBattles?: Record<string, NpcCardBattleRaw>;
+  digimonBattles?: Record<string, NpcDigimonBattleRaw>;
 }

@@ -18,8 +18,8 @@ export class NpcService {
   }
 
   public static hasAvailableBattle(npc: NpcRaw, partyCharisma: number): boolean {
-    const cardBattles = npc.cardBattles ?? [];
-    const digimonBattles = npc.digimonBattles ?? [];
+    const cardBattles = Object.values(npc.cardBattles ?? {});
+    const digimonBattles = Object.values(npc.digimonBattles ?? {});
 
     const hasAvailableCardBattle = cardBattles.some((cardBattle) => {
       return this.isCharismaInRange(partyCharisma, cardBattle.charismaRequired);

@@ -8,10 +8,10 @@ import type { WikiNpcDeckCardViewModel } from "@/viewmodels/wiki-modal/wiki-npc-
 export class WikiNpcCardBattlePresenter {
   public static getBattleViewModel(
     npcId: string,
-    battleIndex: number,
+    battleId: string,
   ): WikiNpcCardBattleViewModel | null {
     const npcRaw = NpcRepository.getNpcById(npcId);
-    const cardBattle = npcRaw?.cardBattles?.[battleIndex];
+    const cardBattle = npcRaw?.cardBattles?.[battleId];
     if (cardBattle === undefined) {
       return null;
     }

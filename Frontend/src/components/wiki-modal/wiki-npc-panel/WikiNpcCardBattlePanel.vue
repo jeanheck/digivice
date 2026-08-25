@@ -6,7 +6,7 @@ import { WikiNpcCardBattlePresenter } from "@/presenters/map/wiki-modal/wiki-npc
 
 const props = defineProps<{
   npcId: string;
-  battleIndex: number;
+  battleId: string;
 }>();
 
 const emit = defineEmits<{
@@ -15,7 +15,7 @@ const emit = defineEmits<{
 }>();
 
 const battleViewModel = computed(() => {
-  return WikiNpcCardBattlePresenter.getBattleViewModel(props.npcId, props.battleIndex);
+  return WikiNpcCardBattlePresenter.getBattleViewModel(props.npcId, props.battleId);
 });
 
 const handleSelect = (cardId: string): void => {

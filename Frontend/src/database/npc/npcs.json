@@ -3,52 +3,52 @@
     "name": "Genji",
     "type": "tamer",
     "locationId": "0200",
-    "cardBattles": [
-      {
+    "cardBattles": {
+      "first": {
         "charismaRequired": {
-            "min": 60,
-            "max": 209
+          "min": 60,
+          "max": 209
         },
         "deckId": "bugBugFolder",
         "dropId": "1aBooster"
       }
-    ],
-    "digimonBattles": [
-      {
+    },
+    "digimonBattles": {
+      "second": {
         "charismaRequired": {
-            "min": 210
+          "min": 210
         },
         "npcPartyId": "genji#2",
         "exp": 63,
         "dvexp": 6,
         "bit": 115
       }
-    ]
+    }
   },
   "natsumi": {
     "name": "Natsumi",
     "type": "tamer",
     "locationId": "021D",
-    "cardBattles": [
-      {
+    "cardBattles": {
+      "first": {
         "charismaRequired": {
-            "min": 60,
-            "max": 209
+          "min": 60,
+          "max": 209
         },
         "deckId": "flyingFolder",
         "dropId": "2aBooster"
       }
-    ],
-    "digimonBattles": [
-      {
+    },
+    "digimonBattles": {
+      "first": {
         "charismaRequired": {
-            "min": 210
+          "min": 210
         },
         "npcPartyId": "natsumi",
         "exp": 65,
         "dvexp": 4,
         "bit": 145
       }
-    ]
+    }
   }
 }

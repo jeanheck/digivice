@@ -11,7 +11,7 @@ import WikiProfileDrops from "@/components/wiki-modal/wiki-profile-panel/WikiPro
 
 const props = defineProps<{
   npcId: string;
-  battleIndex: number;
+  battleId: string;
 }>();
 
 const emit = defineEmits<{
@@ -23,7 +23,7 @@ const emit = defineEmits<{
 }>();
 
 const battleViewModel = computed(() => {
-  return WikiNpcDigimonBattlePresenter.getBattleViewModel(props.npcId, props.battleIndex);
+  return WikiNpcDigimonBattlePresenter.getBattleViewModel(props.npcId, props.battleId);
 });
 
 const currentMemberIndex = ref(0);

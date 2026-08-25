@@ -7,10 +7,10 @@ import type { WikiNpcDigimonBattleViewModel } from "@/viewmodels/wiki-modal/wiki
 export class WikiNpcDigimonBattlePresenter {
   public static getBattleViewModel(
     npcId: string,
-    battleIndex: number,
+    battleId: string,
   ): WikiNpcDigimonBattleViewModel | null {
     const npcRaw = NpcRepository.getNpcById(npcId);
-    const digimonBattle = npcRaw?.digimonBattles?.[battleIndex];
+    const digimonBattle = npcRaw?.digimonBattles?.[battleId];
     if (digimonBattle === undefined) {
       return null;
     }

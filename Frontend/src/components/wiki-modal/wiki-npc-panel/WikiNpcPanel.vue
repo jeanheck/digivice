@@ -121,14 +121,14 @@ const openLocation = () => {
       <WikiNpcCardBattlePanel
         v-if="selectedOption?.kind === NpcBattleKindConstant.card"
         :npc-id="npcId"
-        :battle-index="selectedOption.battleIndex"
+        :battle-id="selectedOption.battleId"
         @open-card="emit('open-card', $event)"
         @open-drops="emit('open-drops', $event)"
       />
       <WikiNpcDigimonBattlePanel
         v-else-if="selectedOption?.kind === NpcBattleKindConstant.digimon"
         :npc-id="npcId"
-        :battle-index="selectedOption.battleIndex"
+        :battle-id="selectedOption.battleId"
         @open-drops="emit('open-drops', $event)"
         @show-stat-key-tooltip="
           (event, statKey) => emit('show-stat-key-tooltip', event, statKey)

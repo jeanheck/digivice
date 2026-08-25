@@ -1,4 +1,5 @@
 import type { Auction } from "./auction";
+import type { Npc } from "./npc";
 import type { Quest } from "./quest";
 
 export interface Journal {
@@ -7,4 +8,5 @@ export interface Journal {
   legendaryWeapons: Quest[];
   driAgents: Quest[];
   auctions: Auction[];
+  npcs: Npc[];
 }

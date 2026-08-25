@@ -19,25 +19,27 @@ export class WikiNpcPanelPresenter {
       return [];
     }
 
-    const cardOptions = (npcRaw.cardBattles ?? []).map((cardBattle, battleIndex) => {
+    const cardOptions = Object.entries(npcRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
       return {
-        id: `${NpcBattleKindConstant.card}-${battleIndex}`,
+        id: `${NpcBattleKindConstant.card}-${battleId}`,
         kind: NpcBattleKindConstant.card,
-        battleIndex,
+        battleId,
         charismaMin: cardBattle.charismaRequired.min,
         charismaRangeText: this.formatCharismaRange(cardBattle.charismaRequired),
       };
     });
 
-    const digimonOptions = (npcRaw.digimonBattles ?? []).map((digimonBattle, battleIndex) => {
-      return {
-        id: `${NpcBattleKindConstant.digimon}-${battleIndex}`,
-        kind: NpcBattleKindConstant.digimon,
-        battleIndex,
-        charismaMin: digimonBattle.charismaRequired.min,
-        charismaRangeText: this.formatCharismaRange(digimonBattle.charismaRequired),
-      };
-    });
+    const digimonOptions = Object.entries(npcRaw.digimonBattles ?? {}).map(
+      ([battleId, digimonBattle]) => {
+        return {
+          id: `${NpcBattleKindConstant.digimon}-${battleId}`,
+          kind: NpcBattleKindConstant.digimon,
+          battleId,
+          charismaMin: digimonBattle.charismaRequired.min,
+          charismaRangeText: this.formatCharismaRange(digimonBattle.charismaRequired),
+        };
+      },
+    );
 
     return [...cardOptions, ...digimonOptions].sort((firstOption, secondOption) => {
       if (firstOption.charismaMin !== secondOption.charismaMin) {
@@ -45,7 +47,7 @@ export class WikiNpcPanelPresenter {
       }
 
       if (firstOption.kind === secondOption.kind) {
-        return firstOption.battleIndex - secondOption.battleIndex;
+        return firstOption.battleId.localeCompare(secondOption.battleId);
       }
 
       if (firstOption.kind === NpcBattleKindConstant.card) {
