@@ -3,6 +3,8 @@ import type { Npc } from "@/models";
 import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
 import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
 
+export type NpcBattleStatus = "completed" | "available" | "missingRequirements";
+
 export class NpcService {
   public static isCharismaInRange(
     partyCharisma: number,
@@ -50,6 +52,22 @@ export class NpcService {
     }
 
     return this.isCharismaInRange(partyCharisma, charismaRequired);
+  }
+
+  public static getBattleStatus(
+    completed: boolean,
+    charismaRequired: NpcCharismaRequiredRaw,
+    partyCharisma: number,
+  ): NpcBattleStatus {
+    if (completed) {
+      return "completed";
+    }
+
+    if (this.isBattleAvailable(charismaRequired, completed, partyCharisma)) {
+      return "available";
+    }
+
+    return "missingRequirements";
   }
 
   public static hasAvailableBattle(

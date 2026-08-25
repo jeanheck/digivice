@@ -4,7 +4,12 @@
       "card": "Cartas",
       "digimon": "Digimon",
       "cardPlaceholder": "Batalha de cartas",
-      "digimonPlaceholder": "Batalha de Digimon"
+      "digimonPlaceholder": "Batalha de Digimon",
+      "status": {
+        "missingCharisma": "Falta Carisma",
+        "available": "Batalha disponível",
+        "completed": "Batalha já vencida"
+      }
     }
   }
 }

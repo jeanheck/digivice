@@ -19,6 +19,7 @@ export class WikiNpcPanelPresenter {
   public static getBattleOptions(
     npcId: string,
     journalNpc: Npc | null,
+    partyCharisma: number,
   ): WikiNpcBattleOptionViewModel[] {
     const npcRaw = NpcRepository.getNpcById(npcId);
     if (npcRaw === undefined) {
@@ -26,32 +27,46 @@ export class WikiNpcPanelPresenter {
     }
 
     const cardOptions = Object.entries(npcRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
+      const completed = NpcService.isBattleCompleted(
+        journalNpc,
+        NpcBattleKindConstant.card,
+        battleId,
+      );
+
       return {
         id: `${NpcBattleKindConstant.card}-${battleId}`,
         kind: NpcBattleKindConstant.card,
         battleId,
         charismaMin: cardBattle.charismaRequired.min,
         charismaRangeText: this.formatCharismaRange(cardBattle.charismaRequired),
-        completed: NpcService.isBattleCompleted(
-          journalNpc,
-          NpcBattleKindConstant.card,
-          battleId,
+        completed,
+        status: NpcService.getBattleStatus(
+          completed,
+          cardBattle.charismaRequired,
+          partyCharisma,
         ),
       };
     });
 
     const digimonOptions = Object.entries(npcRaw.digimonBattles ?? {}).map(
       ([battleId, digimonBattle]) => {
+        const completed = NpcService.isBattleCompleted(
+          journalNpc,
+          NpcBattleKindConstant.digimon,
+          battleId,
+        );
+
         return {
           id: `${NpcBattleKindConstant.digimon}-${battleId}`,
           kind: NpcBattleKindConstant.digimon,
           battleId,
           charismaMin: digimonBattle.charismaRequired.min,
           charismaRangeText: this.formatCharismaRange(digimonBattle.charismaRequired),
-          completed: NpcService.isBattleCompleted(
-            journalNpc,
-            NpcBattleKindConstant.digimon,
-            battleId,
+          completed,
+          status: NpcService.getBattleStatus(
+            completed,
+            digimonBattle.charismaRequired,
+            partyCharisma,
           ),
         };
       },
@@ -77,6 +92,7 @@ export class WikiNpcPanelPresenter {
   public static getPanelViewModel(
     npcId: string,
     journalNpc: Npc | null,
+    partyCharisma: number,
   ): WikiNpcPanelViewModel | null {
     const npcRaw = NpcRepository.getNpcById(npcId);
     if (npcRaw === undefined) {
@@ -88,7 +104,7 @@ export class WikiNpcPanelPresenter {
       type: npcRaw.type,
       locationId: npcRaw.locationId,
       imageUrl: ImageCatalog.getNpcImageUrl(npcId),
-      battleOptions: this.getBattleOptions(npcId, journalNpc),
+      battleOptions: this.getBattleOptions(npcId, journalNpc, partyCharisma),
     };
   }
 }

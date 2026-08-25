@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
+import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 import { WikiNpcPanelPresenter } from "@/presenters/map/wiki-modal/wiki-npc-panel.presenter";
 import WikiNpcCardBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcCardBattlePanel.vue";
 import WikiNpcDigimonBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDigimonBattlePanel.vue";
@@ -31,8 +32,16 @@ const journalNpc = computed(() => {
   );
 });
 
+const partyCharisma = computed(() => {
+  return FooterPresenter.getPartyCharisma(store.currentState?.party?.slots ?? []);
+});
+
 const panelViewModel = computed(() => {
-  return WikiNpcPanelPresenter.getPanelViewModel(props.npcId, journalNpc.value);
+  return WikiNpcPanelPresenter.getPanelViewModel(
+    props.npcId,
+    journalNpc.value,
+    partyCharisma.value,
+  );
 });
 
 const battleOptions = computed(() => {
@@ -66,15 +75,25 @@ const battleKindLabelKey = (kind: NpcBattleKindConstant): string => {
 };
 
 const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
-  if (option.completed) {
-    if (selectedOptionId.value === option.id) {
-      return "text-gray-400 line-through decoration-green-900 border-green-700/60 bg-green-900/20 hover:bg-green-900/30";
+  const isSelected = selectedOptionId.value === option.id;
+
+  if (option.status === "completed") {
+    if (isSelected) {
+      return "text-green-300 line-through decoration-green-400 border-green-500/60 bg-green-500/20 hover:bg-green-500/30";
     }
 
-    return "text-gray-400 line-through decoration-green-900 border-green-800/30 bg-green-900/10 hover:bg-green-900/20";
+    return "text-green-400/80 line-through decoration-green-500 border-green-500/40 bg-green-500/10 hover:bg-green-500/20";
   }
 
-  if (selectedOptionId.value === option.id) {
+  if (option.status === "available") {
+    if (isSelected) {
+      return "text-cyan-300 border-cyan-500/60 bg-cyan-900/30 hover:bg-cyan-900/50";
+    }
+
+    return "text-cyan-300 border-cyan-700/60 bg-cyan-950/40 hover:bg-cyan-900/60";
+  }
+
+  if (isSelected) {
     return "text-blue-300 border-blue-700/60 bg-blue-950/40 hover:bg-blue-900/60";
   }
 
@@ -134,7 +153,7 @@ const openLocation = () => {
 
       <button
         type="button"
-        class="w-full text-center px-2.5 py-2 rounded text-[10px] 2xl:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none text-gray-400 border border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300"
+        class="w-full text-center px-2.5 py-2 rounded text-[10px] 2xl:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none hover:bg-blue-900/60 text-blue-300 border border-blue-700/60 bg-blue-950/40"
         @click="openLocation"
       >
         {{ $t(`location.${panelViewModel.locationId}`) }}
@@ -166,6 +185,7 @@ const openLocation = () => {
         v-else-if="selectedOption?.kind === NpcBattleKindConstant.digimon"
         :npc-id="npcId"
         :battle-id="selectedOption.battleId"
+        :battle-status="selectedOption.status"
         @open-drops="emit('open-drops', $event)"
         @show-stat-key-tooltip="
           (event, statKey) => emit('show-stat-key-tooltip', event, statKey)
