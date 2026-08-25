@@ -89,6 +89,31 @@ export class WikiNpcPanelPresenter {
     });
   }
 
+  public static getDefaultSelectedBattleOptionId(
+    options: WikiNpcBattleOptionViewModel[],
+  ): string | null {
+    if (options.length === 0) {
+      return null;
+    }
+
+    if (options.every((option) => option.completed)) {
+      return options[options.length - 1].id;
+    }
+
+    const availableOption = options.find((option) => {
+      return option.status === "available";
+    });
+    if (availableOption !== undefined) {
+      return availableOption.id;
+    }
+
+    const firstIncompleteOption = options.find((option) => {
+      return !option.completed;
+    });
+
+    return firstIncompleteOption?.id ?? options[0].id;
+  }
+
   public static getPanelViewModel(
     npcId: string,
     journalNpc: Npc | null,

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import WikiNpcBattleStatusLabel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcBattleStatusLabel.vue";
 import type { NpcBattleStatus } from "@/services/npc.service";
 
 const props = defineProps<{
@@ -17,30 +18,6 @@ const emit = defineEmits<{
 
 const showPagination = computed(() => {
   return props.memberCount > 1;
-});
-
-const battleStatusLabelKey = computed(() => {
-  if (props.battleStatus === "completed") {
-    return "npc.battle.status.completed";
-  }
-
-  if (props.battleStatus === "available") {
-    return "npc.battle.status.available";
-  }
-
-  return "npc.battle.status.missingCharisma";
-});
-
-const battleStatusClass = computed(() => {
-  if (props.battleStatus === "completed") {
-    return "text-green-400";
-  }
-
-  if (props.battleStatus === "available") {
-    return "text-cyan-400";
-  }
-
-  return "text-gray-400";
 });
 
 const showPreviousMember = () => {
@@ -129,11 +106,9 @@ const selectMember = (memberIndex: number) => {
       </button>
     </div>
 
-    <span
-      class="absolute right-0 top-1/2 -translate-y-1/2 font-bold tracking-wider uppercase text-xs whitespace-nowrap"
-      :class="battleStatusClass"
-    >
-      {{ $t(battleStatusLabelKey) }}
-    </span>
+    <WikiNpcBattleStatusLabel
+      class="absolute right-0 top-1/2 -translate-y-1/2"
+      :battle-status="battleStatus"
+    />
   </div>
 </template>

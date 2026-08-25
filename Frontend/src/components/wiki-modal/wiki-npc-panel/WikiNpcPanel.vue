@@ -53,7 +53,7 @@ const selectedOptionId = ref<string | null>(null);
 watch(
   battleOptions,
   (options) => {
-    selectedOptionId.value = options[0]?.id ?? null;
+    selectedOptionId.value = WikiNpcPanelPresenter.getDefaultSelectedBattleOptionId(options);
   },
   { immediate: true },
 );
@@ -178,6 +178,7 @@ const openLocation = () => {
         v-if="selectedOption?.kind === NpcBattleKindConstant.card"
         :npc-id="npcId"
         :battle-id="selectedOption.battleId"
+        :battle-status="selectedOption.status"
         @open-card="emit('open-card', $event)"
         @open-drops="emit('open-drops', $event)"
       />
