@@ -47,10 +47,6 @@ const isModalOpen = computed(() => {
   );
 });
 
-const isProfileView = computed(() => {
-  return view.value === "profile";
-});
-
 const isLocationsView = computed(() => {
   return view.value === "locations";
 });
@@ -65,10 +61,6 @@ const isCardsView = computed(() => {
 
 const isNpcView = computed(() => {
   return view.value === "npc";
-});
-
-const canBackToProfile = computed(() => {
-  return selectedEnemyId.value !== null && !isProfileView.value;
 });
 
 const handleClose = () => {
@@ -189,15 +181,6 @@ const openLocationsView = (locationId: string) => {
   view.value = "locations";
 };
 
-const backToProfileView = () => {
-  if (selectedEnemyId.value === null) {
-    return;
-  }
-
-  clearNonEnemySelections();
-  view.value = "profile";
-};
-
 const openEnemyFromDropSource = (enemyId: string) => {
   selectedEnemyId.value = enemyId;
   clearNonEnemySelections();
@@ -295,22 +278,6 @@ const enemyImageUrl = computed(() => {
     <template #header>
       <div class="flex items-center gap-6 flex-1 min-w-0">
         <div class="flex items-center gap-2 shrink-0 min-w-0">
-          <span
-            v-if="isProfileView || !canBackToProfile"
-            class="text-[1.2rem] leading-none grayscale select-none"
-            aria-hidden="true"
-          >
-            <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">🏠</span>
-          </span>
-          <button
-            v-else
-            type="button"
-            class="text-[1.2rem] leading-none text-gray-400 hover:text-blue-300 transition-colors cursor-pointer"
-            :aria-label="t('enemy.back')"
-            @click="backToProfileView"
-          >
-            <span class="inline-flex leading-none text-[1.2rem] -translate-y-0.5">⬅️</span>
-          </button>
           <h2 class="text-white font-bold tracking-widest drop-shadow whitespace-nowrap">
             {{ t(`enemy.wiki`) }}
           </h2>
