@@ -19,6 +19,7 @@ namespace Backend.Memory.Repositories
         private List<QuestAddresses>? legendaryWeaponAddresses;
         private List<QuestAddresses>? driAgentAddresses;
         private Dictionary<string, AuctionAddresses>? auctionAddresses;
+        private Dictionary<string, NpcAddresses>? npcAddresses;
 
         private T LoadAndCache<T>(ref T? cacheField, string fileName) where T : class, new()
         {
@@ -105,5 +106,8 @@ namespace Backend.Memory.Repositories
 
         public Dictionary<string, AuctionAddresses> GetAuctionAddresses() =>
             LoadAndCache(ref auctionAddresses, "AuctionAddresses.json");
+
+        public Dictionary<string, NpcAddresses> GetNpcAddresses() =>
+            LoadAndCache(ref npcAddresses, "NpcAddresses.json");
     }
 }

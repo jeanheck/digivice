@@ -9,6 +9,7 @@ namespace Backend.Domain.Models
         public List<Quest> LegendaryWeapons { get; set; } = [];
         public List<Quest> DriAgents { get; set; } = [];
         public List<Auction> Auctions { get; set; } = [];
+        public List<Npc> Npcs { get; set; } = [];
 
         public virtual bool Equals(Journal? other)
         {
@@ -33,7 +34,11 @@ namespace Backend.Domain.Models
                                  (Auctions != null && other.Auctions != null &&
                                   Auctions.SequenceEqual(other.Auctions));
 
-            return mainQuestEqual && sideQuestsEqual && legendaryWeaponsEqual && driAgentsEqual && auctionsEqual;
+            bool npcsEqual = (Npcs == null && other.Npcs == null) ||
+                             (Npcs != null && other.Npcs != null &&
+                              Npcs.SequenceEqual(other.Npcs));
+
+            return mainQuestEqual && sideQuestsEqual && legendaryWeaponsEqual && driAgentsEqual && auctionsEqual && npcsEqual;
         }
 
         public override int GetHashCode()
@@ -66,6 +71,13 @@ namespace Backend.Domain.Models
                 foreach (var auction in Auctions)
                 {
                     hash.Add(auction);
+                }
+            }
+            if (Npcs != null)
+            {
+                foreach (var npc in Npcs)
+                {
+                    hash.Add(npc);
                 }
             }
             return hash.ToHashCode();

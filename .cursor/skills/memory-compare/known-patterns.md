@@ -687,6 +687,26 @@ Full evidence, snapshot matrix, Makisha notes, next steps:
 
 ---
 
+## Tamer battles (suspected)
+
+Tutorial Genji digimon battle (`genji-before-first` → `genji-after-first`,
+MapId `0200`, MQ step 1 still unset):
+
+| Address | BitMask | Evidence | Notes |
+|---------|---------|----------|-------|
+| `0x0004B3DF` | `0x20` | `0x00 → 0x20` | Same byte as MQ step 44 (`0x10`); bit unused by Definitions. Strongest progress-like signal in quest region. |
+
+`analyze-pair`: no tracked main-quest bits changed. Location data already
+lists Genji with `lastMainQuestStepDone: 0`.
+
+Noise in same compare: Monmon EXP `0x49C6C` `0→4`, HP/MP drop, Bits `+0x32`,
+spawn/`PreviousMapId`, encounter cache.
+
+Already set pre-Genji (unchanged, not from this fight): `0x4B3DA=0x80`,
+`0x4B3DB=0x03`, `0x4B3AC=0x01` — possible earlier tutorial bits (unconfirmed).
+
+---
+
 ## Validation checklist
 
 - **Permanent progress**: reload save — flag persists

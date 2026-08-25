@@ -3,7 +3,7 @@ using Backend.Memory.Resources;
 
 namespace Backend.Application.Loaders
 {
-    public class JournalLoader(IQuestLoader questLoader, IAuctionLoader auctionLoader) : IJournalLoader
+    public class JournalLoader(IQuestLoader questLoader, IAuctionLoader auctionLoader, INpcLoader npcLoader) : IJournalLoader
     {
         public JournalResource Load()
         {
@@ -14,6 +14,7 @@ namespace Backend.Application.Loaders
                 LegendaryWeapons = questLoader.LoadLegendaryWeapons(),
                 DriAgents = questLoader.LoadDriAgents(),
                 Auctions = auctionLoader.LoadAuctions(),
+                Npcs = npcLoader.LoadNpcs(),
             };
         }
     }

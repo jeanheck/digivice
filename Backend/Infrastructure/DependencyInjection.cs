@@ -47,10 +47,12 @@ namespace Backend.Infrastructure
             services.AddSingleton<IImportantItemsReader, ImportantItemsReader>();
             services.AddSingleton<IQuestReader, QuestReader>();
             services.AddSingleton<IAuctionReader, AuctionReader>();
+            services.AddSingleton<INpcReader, NpcReader>();
 
             services.AddSingleton<IPlayerLoader, PlayerLoader>();
             services.AddSingleton<IImportantItemsLoader, ImportantItemsLoader>();
             services.AddSingleton<IAuctionLoader, AuctionLoader>();
+            services.AddSingleton<INpcLoader, NpcLoader>();
             services.AddSingleton<IQuestLoader, QuestLoader>();
             services.AddSingleton<IJournalLoader, JournalLoader>();
             services.AddSingleton<IPartyLoader, PartyLoader>();

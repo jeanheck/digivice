@@ -19,5 +19,6 @@ namespace Backend.Memory.Repositories
         List<QuestAddresses> GetAllLegendaryWeapons();
         List<QuestAddresses> GetAllDriAgents();
         Dictionary<string, AuctionAddresses> GetAuctionAddresses();
+        Dictionary<string, NpcAddresses> GetNpcAddresses();
     }
 }

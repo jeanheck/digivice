@@ -14,6 +14,7 @@ namespace Backend.Domain.Assemblers
             List<Quest> legendaryWeapons = [.. resource.LegendaryWeapons.Select(QuestAssembler.Assemble)];
             List<Quest> driAgents = [.. resource.DriAgents.Select(QuestAssembler.Assemble)];
             List<Auction> auctions = AuctionAssembler.Assemble(resource.Auctions);
+            List<Npc> npcs = NpcAssembler.Assemble(resource.Npcs);
 
             NormalizeMainQuestProgression(mainQuest);
 
@@ -24,6 +25,7 @@ namespace Backend.Domain.Assemblers
                 LegendaryWeapons = legendaryWeapons,
                 DriAgents = driAgents,
                 Auctions = auctions,
+                Npcs = npcs,
             };
         }
 
