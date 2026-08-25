@@ -36,6 +36,7 @@
     "obtainedFrom": "Obtained from",
     "obtainedFromNone": "No known boosters",
     "baseExp": "EXP",
+    "baseDvexp": "DVEXP",
     "baseBits": "BITS",
     "combatActions": "Actions",
     "regularAttack": "Attack",

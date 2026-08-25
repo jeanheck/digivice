@@ -11,6 +11,11 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "open-locations", locationId: string): void;
+  (e: "open-drops", dropId: string): void;
+  (e: "show-stat-key-tooltip", event: MouseEvent, statKey: string): void;
+  (e: "show-condition-tooltip", event: MouseEvent, tooltipKey: string): void;
+  (e: "move-stat-tooltip", event: MouseEvent): void;
+  (e: "hide-stat-tooltip"): void;
 }>();
 
 const panelViewModel = computed(() => {
@@ -121,6 +126,15 @@ const openLocation = () => {
         v-else-if="selectedOption?.kind === NpcBattleKindConstant.digimon"
         :npc-id="npcId"
         :battle-index="selectedOption.battleIndex"
+        @open-drops="emit('open-drops', $event)"
+        @show-stat-key-tooltip="
+          (event, statKey) => emit('show-stat-key-tooltip', event, statKey)
+        "
+        @show-condition-tooltip="
+          (event, tooltipKey) => emit('show-condition-tooltip', event, tooltipKey)
+        "
+        @move-stat-tooltip="emit('move-stat-tooltip', $event)"
+        @hide-stat-tooltip="emit('hide-stat-tooltip')"
       />
     </div>
   </div>

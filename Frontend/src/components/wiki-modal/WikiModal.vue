@@ -356,6 +356,11 @@ const enemyImageUrl = computed(() => {
       v-else-if="view === 'npc' && selectedNpcId !== null"
       :npc-id="selectedNpcId"
       @open-locations="openLocationsView"
+      @open-drops="openDropsView"
+      @show-stat-key-tooltip="showEnemyStatKeyTooltip"
+      @show-condition-tooltip="showEnemyConditionTooltip"
+      @move-stat-tooltip="moveEnemyStatTooltip"
+      @hide-stat-tooltip="hideEnemyStatTooltip"
     />
   </Modal>
 

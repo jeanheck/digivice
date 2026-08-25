@@ -5,9 +5,17 @@ import { WikiLocationsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-lo
 import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
-const props = defineProps<{
-  enemy: EnemyViewModel;
-}>();
+const props = withDefaults(
+  defineProps<{
+    enemy: EnemyViewModel;
+    showRewards?: boolean;
+    showLocations?: boolean;
+  }>(),
+  {
+    showRewards: true,
+    showLocations: true,
+  },
+);
 
 const emit = defineEmits<{
   (e: "open-locations", locationId: string): void;
@@ -20,6 +28,10 @@ const mainQuest = computed(() => {
 });
 
 const hasLocations = computed(() => {
+  if (!props.showLocations) {
+    return false;
+  }
+
   return (
     WikiLocationsPanelPresenter.getResolvedEnemyLocations(
       props.enemy.locations,
@@ -58,14 +70,20 @@ const handleOpenLocation = (locationId: string): void => {
       <span class="font-bold text-white">{{ enemy.hp }}</span>
     </div>
 
-    <div class="flex items-center justify-between text-xs shrink-0">
+    <div
+      v-if="showRewards"
+      class="flex items-center justify-between text-xs shrink-0"
+    >
       <span class="font-bold text-blue-500 tracking-wider uppercase">
         {{ $t("enemy.baseExp") }}:
       </span>
       <span class="font-bold text-gray-300">{{ enemy.exp }}</span>
     </div>
 
-    <div class="flex items-center justify-between text-xs shrink-0">
+    <div
+      v-if="showRewards"
+      class="flex items-center justify-between text-xs shrink-0"
+    >
       <span class="font-bold text-blue-500 tracking-wider uppercase"
         >{{ $t("enemy.baseBits") }}:</span
       >
