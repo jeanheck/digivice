@@ -41,8 +41,8 @@ const selectMember = (memberIndex: number) => {
 </script>
 
 <template>
-  <div class="w-full shrink-0 flex flex-col gap-2">
-    <div class="flex items-center justify-start gap-4 text-xs">
+  <div class="relative w-full shrink-0 flex items-center min-h-7">
+    <div class="z-10 flex items-center justify-start gap-4 text-xs">
       <div class="flex items-center gap-2">
         <span class="font-bold text-blue-500 tracking-wider uppercase">
           {{ $t("enemy.baseExp") }}:
@@ -67,7 +67,7 @@ const selectMember = (memberIndex: number) => {
 
     <div
       v-if="showPagination"
-      class="flex items-center justify-center gap-3"
+      class="absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-3"
     >
       <button
         type="button"
