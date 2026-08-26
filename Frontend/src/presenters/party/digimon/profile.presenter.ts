@@ -1,4 +1,5 @@
 import { DigimonConditionConstant } from "@/constants/digimon-condition.constant";
+import { ConditionConstant } from "@/constants/stat/condition.constant";
 import type { Digimon } from "@/models/party/digimon/digimon";
 import type { InBattle } from "@/models/party/digimon/in-battle";
 import type { Vital } from "@/models/party/digimon/vital";
@@ -6,6 +7,14 @@ import { DigimonRepository } from "@/repositories/digimon.repository";
 
 export class ProfilePresenter {
   private static readonly battleLocationId = "0600";
+
+  private static readonly conditionBitByStatus: ReadonlyArray<{
+    bitMask: number;
+    status: ConditionConstant;
+  }> = [
+    { bitMask: 0x01, status: ConditionConstant.poison },
+    { bitMask: 0x04, status: ConditionConstant.confuse },
+  ];
 
   public static isInBattle(location: string | null, inBattle: InBattle): boolean {
     return location === this.battleLocationId && inBattle.hp.max !== 0;
@@ -41,5 +50,27 @@ export class ProfilePresenter {
       return DigimonConditionConstant.injured;
     }
     return DigimonConditionConstant.healthy;
+  }
+
+  public static getConditionTooltipKey(condition: number, hp: Vital): string {
+    const calculatedCondition = this.getCalculatedCondition(condition, hp);
+
+    if (calculatedCondition === DigimonConditionConstant.ko) {
+      return "digimon.conditionState.ko";
+    }
+    if (calculatedCondition === DigimonConditionConstant.injured) {
+      return "digimon.conditionState.injured";
+    }
+    if (calculatedCondition === DigimonConditionConstant.healthy) {
+      return "digimon.conditionState.healthy";
+    }
+
+    for (const entry of this.conditionBitByStatus) {
+      if ((condition & entry.bitMask) !== 0) {
+        return `conditions.${entry.status}.affected`;
+      }
+    }
+
+    return "digimon.condition";
   }
 }

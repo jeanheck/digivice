@@ -2,21 +2,25 @@
   "conditions": {
     "poison": {
       "name": "Poison",
+      "affected": "Poisoned",
       "canSuffer": "Can be Poisoned",
       "vunerable": "Resistance from Poison"
     },
     "paralyze": {
       "name": "Paralyze",
+      "affected": "Paralyzed",
       "canSuffer": "Can be Paralyzed",
       "vunerable": "Resistance from Paralyze"
     },
     "confuse": {
       "name": "Confuse",
+      "affected": "Confused",
       "canSuffer": "Can be Confused",
       "vunerable": "Resistance from Confuse"
     },
     "sleep": {
       "name": "Sleep",
+      "affected": "Asleep",
       "canSuffer": "Can be Asleep",
       "vunerable": "Resistance from Sleep"
     },

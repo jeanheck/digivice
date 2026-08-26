@@ -7,6 +7,13 @@ const props = defineProps<{
   digimonName: string;
   condition: DigimonConditionConstant;
 }>();
+
+const emit = defineEmits<{
+  showTooltip: [event: MouseEvent];
+  moveTooltip: [event: MouseEvent];
+  hideTooltip: [];
+}>();
+
 const digimonIconUrl = computed(() => {
   return ImageCatalog.getDigimonIconUrl(props.digimonName + props.condition);
 });
@@ -14,7 +21,10 @@ const digimonIconUrl = computed(() => {
 
 <template>
   <div
-    class="bg-[#000e3f] rounded overflow-hidden shadow shrink-0 flex items-center justify-center border-2 border-[#00154a] relative"
+    class="bg-[#000e3f] rounded overflow-hidden shadow shrink-0 flex items-center justify-center border-2 border-[#00154a] relative cursor-help"
+    @mouseenter="emit('showTooltip', $event)"
+    @mousemove="emit('moveTooltip', $event)"
+    @mouseleave="emit('hideTooltip')"
   >
     <img
       v-if="digimonIconUrl"

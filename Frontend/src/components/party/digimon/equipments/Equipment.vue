@@ -42,7 +42,7 @@ function onMouseEnter(event: MouseEvent): void {
   <div
     :class="[
       'flex items-center py-1 border-b border-[#0033aa] last:border-0',
-      isEquipped ? 'cursor-help' : '',
+      isEquipped ? 'cursor-help' : 'cursor-default',
     ]"
     @mouseenter="onMouseEnter"
     @mousemove="(event) => emit('moveTooltip', event)"

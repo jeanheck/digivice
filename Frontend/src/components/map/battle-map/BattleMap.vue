@@ -166,10 +166,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
       />
       <span
         v-if="battleMapViewModel.level !== null"
-        class="text-[10px] font-bold text-gray-300 shrink-0 justify-self-center cursor-help"
-        @mouseenter="onShowTooltip($event, t('enemy.level'), { align: 'left' })"
-        @mousemove="onMoveTooltip"
-        @mouseleave="onHideTooltip"
+        class="text-[10px] font-bold text-gray-300 shrink-0 justify-self-center cursor-default"
       >
         {{ t("digimon.lv") }}.{{ battleMapViewModel.level }}
       </span>

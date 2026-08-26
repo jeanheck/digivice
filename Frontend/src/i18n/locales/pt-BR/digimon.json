@@ -11,6 +11,11 @@
     "experience": "Experiência",
     "hp": "HP",
     "condition": "Condição",
+    "conditionState": {
+      "healthy": "Saudável",
+      "injured": "Ferido",
+      "ko": "Nocauteado"
+    },
     "mp": "MP",
     "blast": "Blast",
     "tp": "Pontos de Treinamento",

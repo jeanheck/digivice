@@ -72,6 +72,10 @@ const condition = computed(() => {
 const calculatedCondition = computed(() => {
   return ProfilePresenter.getCalculatedCondition(condition.value, hp.value);
 });
+
+const conditionTooltipTitle = computed(() => {
+  return t(ProfilePresenter.getConditionTooltipKey(condition.value, hp.value));
+});
 </script>
 
 <template>
@@ -86,6 +90,9 @@ const calculatedCondition = computed(() => {
             :digimon-name="digimonName"
             :condition="calculatedCondition"
             class="w-full aspect-square"
+            @show-tooltip="onShowTooltip($event, conditionTooltipTitle)"
+            @move-tooltip="onMoveTooltip"
+            @hide-tooltip="onHideTooltip"
           />
         </div>
 
@@ -106,10 +113,10 @@ const calculatedCondition = computed(() => {
         />
 
         <div class="col-start-2 row-start-1 flex justify-between items-baseline min-w-0">
-          <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide">
+          <h2 class="text-sm font-bold text-white leading-none truncate pr-2 tracking-wide cursor-default">
             {{ digimonName }}
           </h2>
-          <span class="text-[0.6rem] font-medium text-yellow-400 shrink-0 leading-none">
+          <span class="text-[0.6rem] font-medium text-yellow-400 shrink-0 leading-none cursor-default">
             {{ t("digimon.lv") }} {{ digimon.level }}
           </span>
         </div>

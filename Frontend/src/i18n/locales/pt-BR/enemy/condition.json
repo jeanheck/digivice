@@ -2,21 +2,25 @@
   "conditions": {
     "poison": {
       "name": "Veneno",
+      "affected": "Envenenado",
       "canSuffer": "Pode ser Envenenado",
       "vunerable": "Resistência ao Veneno"
     },
     "paralyze": {
       "name": "Paralisia",
+      "affected": "Paralisado",
       "canSuffer": "Pode ser Paralisado",
       "vunerable": "Resistência a Paralisia"
     },
     "confuse": {
       "name": "Confusão",
+      "affected": "Confuso",
       "canSuffer": "Pode ser Confundido",
       "vunerable": "Resistência a Confusão"
     },
     "sleep": {
       "name": "Sono",
+      "affected": "Adormecido",
       "canSuffer": "Pode ser Adormecido",
       "vunerable": "Resistência a Sono"
     },
