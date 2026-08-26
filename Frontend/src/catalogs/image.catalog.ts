@@ -177,7 +177,7 @@ export class ImageCatalog {
       battleModules,
       BATTLE_FIELD_ASSET_CONFIG.pathSuffix,
       BATTLE_FIELD_ASSET_CONFIG.extension,
-      "field",
+      "Field",
     );
   }
 
@@ -186,7 +186,7 @@ export class ImageCatalog {
       battleModules,
       BATTLE_JUNIOR_ASSET_CONFIG.pathSuffix,
       BATTLE_JUNIOR_ASSET_CONFIG.extension,
-      "junior",
+      "Junior",
     );
   }
 

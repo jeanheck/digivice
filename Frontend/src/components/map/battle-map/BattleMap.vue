@@ -2,6 +2,7 @@
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
+import EnemyConditionSquare from "@/components/map/battle-map/EnemyConditionSquare.vue";
 import HpProgressBar from "@/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
 import { BattleMapPresenter } from "@/presenters/map/battle-map.presenter";
 import { useGameStore } from "@/stores/use-game-store";
@@ -15,10 +16,16 @@ const isStatsOpen = ref(false);
 const fieldImageUrl = ImageCatalog.getBattleFieldUrl();
 const juniorImageUrl = ImageCatalog.getBattleJuniorUrl();
 
-const battleMapViewModel = computed(() => {
-  const enemy = store.currentState?.battle?.enemy ?? null;
+const enemy = computed(() => {
+  return store.currentState?.battle?.enemy ?? null;
+});
 
-  return BattleMapPresenter.getViewModel(enemy?.id ?? null, enemy?.hp ?? null);
+const battleMapViewModel = computed(() => {
+  return BattleMapPresenter.getViewModel(enemy.value?.id ?? null, enemy.value?.hp ?? null);
+});
+
+const enemyCondition = computed(() => {
+  return enemy.value?.condition ?? 0;
 });
 
 const titleClass = computed(() => {
@@ -84,16 +91,17 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
     />
 
     <div
-      class="relative z-[1] -mt-1.5 -mx-3 w-[calc(100%+1.5rem)] pt-1.5 pb-1 grid grid-cols-[1fr_auto_auto] gap-x-2 gap-y-2 items-center shrink-0 px-2 bg-black/80"
+      class="relative z-[1] -mt-1.5 -mx-3 w-[calc(100%+1.5rem)] pt-1.5 pb-1 grid grid-cols-[1fr_auto_auto_auto] gap-x-2 gap-y-2 items-center shrink-0 px-2 bg-black/80"
     >
       <h4
-        class="col-span-3 text-[11px] font-bold tracking-widest leading-tight text-center min-w-0 truncate"
+        class="col-span-4 text-[11px] font-bold tracking-widest leading-tight text-center min-w-0 truncate"
         :class="titleClass"
       >
         {{ battleMapViewModel.title }}
       </h4>
 
       <HpProgressBar class="min-w-0 w-full justify-self-start" :hp="battleMapViewModel.hp" />
+      <EnemyConditionSquare :condition="enemyCondition" :hp="battleMapViewModel.hp" />
       <span
         v-if="battleMapViewModel.level !== null"
         class="text-[10px] font-bold text-gray-300 shrink-0 justify-self-center"
@@ -102,7 +110,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
       </span>
       <span
         v-if="battleMapViewModel.speciesEmoji"
-        class="font-emoji text-sm shrink-0 justify-self-center -translate-y-1"
+        class="font-emoji text-sm shrink-0 justify-self-center -translate-y-1 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)]"
         aria-hidden="true"
         >{{ battleMapViewModel.speciesEmoji }}</span
       >
@@ -144,7 +152,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
           v-if="hasStats && isStatsOpen"
           class="map-info-panel absolute inset-0 z-10 !max-w-none w-full !border-0 !rounded-none !backdrop-blur-none pb-8 text-white text-xs"
         >
-          <div class="grid grid-cols-4 w-fit gap-x-2">
+          <div class="grid grid-cols-4 w-full">
             <div class="flex flex-col gap-1 min-w-0">
               <div
                 v-for="stat in battleMapViewModel.attributes"
