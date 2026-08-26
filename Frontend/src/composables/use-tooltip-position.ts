@@ -23,16 +23,16 @@ export function useTooltipPosition(defaultMaxWidth = 250) {
     let positionX: number;
 
     if (align === "left") {
-      positionX = event.clientX - 15;
+      positionX = event.clientX - 10;
     } else {
-      positionX = event.clientX + 15;
+      positionX = event.clientX + 10;
       if (positionX + width > window.innerWidth) {
         positionX = event.clientX - width - 10;
       }
     }
 
     x.value = positionX;
-    y.value = placement === "above" ? event.clientY - 15 : event.clientY + 15;
+    y.value = placement === "above" ? event.clientY - 10 : event.clientY + 10;
   }
 
   function showAt(
