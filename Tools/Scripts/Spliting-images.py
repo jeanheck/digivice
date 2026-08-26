@@ -4,14 +4,14 @@ from PIL import Image
 
 def cortar_cartas_grid(
     caminho_imagem,
-    linhas=9,
-    colunas=7,
-    offset_x=9,  # Margem da esquerda até a 1ª carta (pixels)
-    offset_y=7,  # Margem do topo até a 1ª carta (pixels)
-    largura_carta=40,  # Largura exata de cada carta (pixels)
-    altura_carta=46,  # Altura exata de cada carta (pixels)
-    espaco_x=1,  # Espaço azul entre cartas na horizontal (pixels)
-    espaco_y=1,  # Espaço azul entre cartas na vertical (pixels)
+    linhas=14,
+    colunas=16,
+    offset_x=3,  # Margem da esquerda até a 1ª carta (pixels)
+    offset_y=3,  # Margem do topo até a 1ª carta (pixels)
+    largura_carta=19,  # Largura exata de cada carta (pixels)
+    altura_carta=30,  # Altura exata de cada carta (pixels)
+    espaco_x=5,  # Espaço azul entre cartas na horizontal (pixels)
+    espaco_y=4,  # Espaço azul entre cartas na vertical (pixels)
     pasta_saida="cartas_recortadas",
 ):
     os.makedirs(pasta_saida, exist_ok=True)
@@ -39,4 +39,4 @@ def cortar_cartas_grid(
 
 
 # Execução
-cortar_cartas_grid("cartas-acao.png")
+cortar_cartas_grid("npcs.png")

@@ -160,6 +160,17 @@
           "y": 26
         }
       }
+    ],
+    "npcs": [
+      {
+        "lastMainQuestStepDone": 0,
+        "ids": [
+          "nacky",
+          "wong",
+          "steve",
+          "gloria"
+        ]
+      }
     ]
   },
   "0212": {

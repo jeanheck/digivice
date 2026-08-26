@@ -59,5 +59,65 @@
         "bit": 145
       }
     }
+  },
+  "nacky": {
+    "name": "Nacky",
+    "type": "tamer",
+    "locationId": "0211",
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 60,
+          "max": 377
+        },
+        "deckId": "coolDigimonFolder",
+        "dropId": "1aBooster"
+      }
+    }
+  },
+  "wong": {
+    "name": "Wong",
+    "type": "tamer",
+    "locationId": "0211",
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 60,
+          "max": 377
+        },
+        "deckId": "mindFolder",
+        "dropId": "2aBooster"
+      }
+    }
+  },
+  "steve": {
+    "name": "Steve",
+    "type": "tamer",
+    "locationId": "0211",
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 60,
+          "max": 377
+        },
+        "deckId": "protectorFolder",
+        "dropId": "1aBooster"
+      }
+    }
+  },
+  "gloria": {
+    "name": "Gloria",
+    "type": "tamer",
+    "locationId": "0211",
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 60,
+          "max": 377
+        },
+        "deckId": "amazingPatamonFolder",
+        "dropId": "2aBooster"
+      }
+    }
   }
 }

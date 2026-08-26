@@ -10,6 +10,7 @@
         "available": "Batalha disponível",
         "completed": "Batalha já vencida"
       }
-    }
+    },
+    "folderBagRequirementHint": "* Possuir a Mochila de Cartas é um requisito para batalhas contra treinadores."
   }
 }

@@ -1,6 +1,10 @@
 {
   "deck": {
     "bugBugFolder": "Bug Bug Folder",
-    "flyingFolder": "Flying Folder"
+    "flyingFolder": "Flying Folder",
+    "coolDigimonFolder": "Cool Digimon Folder",
+    "mindFolder": "Mind Folder",
+    "protectorFolder": "Protector Folder",
+    "amazingPatamonFolder": "Amazing Patamon Folder"
   }
 }

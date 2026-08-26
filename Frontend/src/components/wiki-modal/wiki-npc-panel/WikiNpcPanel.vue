@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
+import { NpcTypeConstant } from "@/constants/npc-type.constant";
 import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 import { WikiNpcPanelPresenter } from "@/presenters/map/wiki-modal/wiki-npc-panel.presenter";
 import WikiNpcCardBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcCardBattlePanel.vue";
 import WikiNpcDigimonBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDigimonBattlePanel.vue";
+import { QuestRepository } from "@/repositories/quest.repository";
+import { QuestService } from "@/services/quest.service";
 import { useGameStore } from "@/stores/use-game-store";
 import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
 
@@ -108,6 +111,25 @@ const npcTypeLabelKey = computed(() => {
   return `enemy.searchKind.${panelViewModel.value.type}`;
 });
 
+const showFolderBagRequirementHint = computed(() => {
+  if (panelViewModel.value?.type !== NpcTypeConstant.tamer) {
+    return false;
+  }
+
+  const folderBagQuest = store.currentState?.journal?.sideQuests.find((quest) => {
+    return quest.id === "folderBag";
+  });
+  const folderBagRaw = QuestRepository.getSideQuestsRaw().find((questRaw) => {
+    return questRaw.id === "folderBag";
+  });
+
+  if (folderBagRaw === undefined) {
+    return false;
+  }
+
+  return !QuestService.isQuestCompleted(folderBagQuest, folderBagRaw);
+});
+
 const selectOption = (optionId: string) => {
   selectedOptionId.value = optionId;
 };
@@ -136,7 +158,7 @@ const openLocation = () => {
           v-if="panelViewModel.imageUrl"
           :src="panelViewModel.imageUrl"
           :alt="panelViewModel.name"
-          class="w-full h-full object-cover"
+          class="h-[90%] drop-shadow-[0_0_15px_rgba(0,170,255,0.2)]"
         />
         <span
           v-else
@@ -171,6 +193,13 @@ const openLocation = () => {
           {{ $t(battleKindLabelKey(option.kind)) }} ({{ option.charismaRangeText }})
         </button>
       </div>
+
+      <p
+        v-if="showFolderBagRequirementHint"
+        class="text-[10px] 2xl:text-[10px] text-red-400 leading-tight"
+      >
+        {{ $t("npc.folderBagRequirementHint") }}
+      </p>
     </aside>
 
     <div class="flex-1 min-w-0 min-h-0 flex flex-col overflow-hidden">

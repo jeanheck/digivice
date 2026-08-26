@@ -128,7 +128,7 @@ export class WikiNpcPanelPresenter {
       name: npcRaw.name,
       type: npcRaw.type,
       locationId: npcRaw.locationId,
-      imageUrl: ImageCatalog.getNpcImageUrl(npcId),
+      imageUrl: ImageCatalog.getNpcImageUrl(npcRaw.name),
       battleOptions: this.getBattleOptions(npcId, journalNpc, partyCharisma),
     };
   }

@@ -128,5 +128,77 @@
                 "quantity": 4 
             }
         ]
+    },
+    "coolDigimonFolder": {
+        "level": 5,
+        "cards": [
+            { "id": "1095", "quantity": 2 },
+            { "id": "1099", "quantity": 3 },
+            { "id": "1100", "quantity": 2 },
+            { "id": "1102", "quantity": 1 },
+            { "id": "1138", "quantity": 3 },
+            { "id": "1139", "quantity": 2 },
+            { "id": "1140", "quantity": 4 },
+            { "id": "1142", "quantity": 1 },
+            { "id": "1144", "quantity": 1 },
+            { "id": "1181", "quantity": 3 },
+            { "id": "1182", "quantity": 4 },
+            { "id": "1183", "quantity": 4 },
+            { "id": "1185", "quantity": 1 },
+            { "id": "1224", "quantity": 4 },
+            { "id": "1226", "quantity": 1 },
+            { "id": "1227", "quantity": 2 },
+            { "id": "1267", "quantity": 1 },
+            { "id": "1313", "quantity": 1 }
+        ]
+    },
+    "mindFolder": {
+        "level": 6,
+        "cards": [
+            { "id": "1011", "quantity": 1 },
+            { "id": "1017", "quantity": 1 },
+            { "id": "1023", "quantity": 3 },
+            { "id": "1029", "quantity": 1 },
+            { "id": "1049", "quantity": 1 },
+            { "id": "1052", "quantity": 4 },
+            { "id": "1056", "quantity": 4 },
+            { "id": "1057", "quantity": 4 },
+            { "id": "1058", "quantity": 4 },
+            { "id": "1059", "quantity": 4 },
+            { "id": "1224", "quantity": 4 },
+            { "id": "1225", "quantity": 3 },
+            { "id": "1226", "quantity": 3 },
+            { "id": "1313", "quantity": 3 }
+        ]
+    },
+    "protectorFolder": {
+        "level": 7,
+        "cards": [
+            { "id": "1099", "quantity": 4 },
+            { "id": "1100", "quantity": 4 },
+            { "id": "1102", "quantity": 4 },
+            { "id": "1144", "quantity": 4 },
+            { "id": "1145", "quantity": 4 },
+            { "id": "1188", "quantity": 4 },
+            { "id": "1224", "quantity": 4 },
+            { "id": "1227", "quantity": 4 },
+            { "id": "1230", "quantity": 4 },
+            { "id": "1231", "quantity": 4 }
+        ]
+    },
+    "amazingPatamonFolder": {
+        "level": 8,
+        "cards": [
+            { "id": "1095", "quantity": 4 },
+            { "id": "1096", "quantity": 4 },
+            { "id": "1097", "quantity": 4 },
+            { "id": "1098", "quantity": 4 },
+            { "id": "1099", "quantity": 4 },
+            { "id": "1100", "quantity": 4 },
+            { "id": "1101", "quantity": 4 },
+            { "id": "1102", "quantity": 4 },
+            { "id": "1139", "quantity": 4 },
+            { "id": "1224", "quantity": 4 }
+        ]
     }
 }
