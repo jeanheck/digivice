@@ -1,3 +1,5 @@
+import { resolveBattleFieldAssetName } from "@/constants/battle-field.constant";
+
 const MAP_ASSET_CONFIG = {
   pathSuffix: "/maps/",
   extension: "webp",
@@ -172,12 +174,13 @@ export class ImageCatalog {
     );
   }
 
-  public static getBattleFieldUrl(): string | null {
+  public static getBattleFieldUrl(fieldId: number): string | null {
+    const assetName = resolveBattleFieldAssetName(fieldId);
     return resolveAssetUrl(
       battleModules,
       BATTLE_FIELD_ASSET_CONFIG.pathSuffix,
       BATTLE_FIELD_ASSET_CONFIG.extension,
-      "Field",
+      assetName,
     );
   }
 

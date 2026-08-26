@@ -4,6 +4,9 @@ import { EnemySyncer } from "./battles/enemy.syncer";
 
 export class BattleSyncer {
   public static sync(previousBattle: Battle, newBattleDto: Events.BattleDTO): void {
+    if (newBattleDto.field !== undefined) {
+      previousBattle.field = newBattleDto.field;
+    }
     if (newBattleDto.enemy) {
       EnemySyncer.sync(previousBattle.enemy, newBattleDto.enemy);
     }

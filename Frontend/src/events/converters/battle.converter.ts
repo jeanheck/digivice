@@ -5,6 +5,7 @@ import { EnemyConverter } from "./battles/enemy.converter";
 export class BattleConverter {
   public static convert(battleDto: Required<BattleDTO>): Battle {
     return {
+      field: battleDto.field ?? 0,
       enemy: EnemyConverter.convert(battleDto.enemy ?? null),
     };
   }

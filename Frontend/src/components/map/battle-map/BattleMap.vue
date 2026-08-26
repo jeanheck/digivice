@@ -28,7 +28,10 @@ const tooltipTitle = ref("");
 const tooltipPlacement = ref<TooltipPlacement>("below");
 const tooltipAlign = ref<TooltipHorizontalAlign>("right");
 
-const fieldImageUrl = ImageCatalog.getBattleFieldUrl();
+const fieldImageUrl = computed(() => {
+  const fieldId = store.currentState?.battle?.field ?? 0;
+  return ImageCatalog.getBattleFieldUrl(fieldId);
+});
 const juniorImageUrl = ImageCatalog.getBattleJuniorUrl();
 
 const enemy = computed(() => {
