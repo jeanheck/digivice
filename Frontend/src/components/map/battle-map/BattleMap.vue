@@ -11,6 +11,7 @@ import {
   type TooltipPlacement,
 } from "@/composables/use-tooltip-position";
 import { BattleMapPresenter } from "@/presenters/map/battle-map.presenter";
+import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
 
@@ -40,6 +41,12 @@ const battleMapViewModel = computed(() => {
 
 const enemyCondition = computed(() => {
   return enemy.value?.condition ?? 0;
+});
+
+const conditionTooltipTitle = computed(() => {
+  return t(
+    ProfilePresenter.getConditionTooltipKey(enemyCondition.value, battleMapViewModel.value.hp),
+  );
 });
 
 const canOpenWiki = computed(() => {
@@ -160,7 +167,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
       <EnemyConditionSquare
         :condition="enemyCondition"
         :hp="battleMapViewModel.hp"
-        @show-tooltip="onShowTooltip($event, t('digimon.condition'), { align: 'left' })"
+        @show-tooltip="onShowTooltip($event, conditionTooltipTitle, { align: 'left' })"
         @move-tooltip="onMoveTooltip"
         @hide-tooltip="onHideTooltip"
       />
