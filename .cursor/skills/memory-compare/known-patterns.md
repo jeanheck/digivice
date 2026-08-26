@@ -493,63 +493,47 @@ wired on ally party slots via `Parties/InBattleAddresses.json` (`Strength` /
 Same offsets on enemy `0xA44D0` — wired as top-level `State.Battle.Enemy` via
 `EnemyAddresses.json` (`BattleChanged` / InitialState).
 
-### Field skill (element strengthen / weaken) — **not** in combat attr Int16s
+### Field skill / item (element strengthen / weaken) — **confirmed** id @ `0xA4530`
 
-Pairs:
+Live combat attrs/resists (`0xA4580` / `0xA45C0`) do **not** change when a field
+is applied. Field is a global battle state: strengthen one element **+50%**,
+weaken another **−25%** (fixed; independent of which field).
 
-| Pair | Skill (claimed effect) |
-|------|------------------------|
-| `taomon-without-field` / `taomon-with-field` | strengthen Thunder, weaken Machine |
-| `sakuyamon-without-field` / `sakuyamon-with-field` | strengthen Ice, weaken Wind |
-| `bkwargreymon-without-field` / `bkwargreymon-with-field` | strengthen Fire, weaken Ice |
-| `MaloMyotismon-without-field` / `MaloMyotismon-with-field` | claimed strengthen Dark, weaken Thunder |
+**Active field id — `0xA4530` (byte / Int16 LE, low byte):**
 
-Match combatants by fingerprint across the `0xA4580`/`0xA45C0` swap
-(pairs swap bases again).
+| Value | Field |
+|------:|-------|
+| `0` | none |
+| `2` | Fire |
+| `3` | Water |
+| `4` | Ice |
+| `5` | Wind |
+| `6` | Thunder |
+| `7` | Machine |
+| `8` | Dark |
 
-| Region | Result |
-|--------|--------|
-| Combatant attrs/resists (`0xA4580` / `0xA45C0`) | **No change** to claimed elements (or any mapped attr/resist) for the same combatant |
-| Fixed slot STR delta `+0x10` | Still **0** (unlike Strength buff) |
-| Ally slot MP | Skill cost (−100) |
-| Enemy slot `+0x04` | often `0→1` (turn/state noise) |
+(`1` unused / unseen.) Same order as combat resist list (Fire→…→Dark), with
+`0` = none and id starting at `2` for Fire.
 
-Field effects do **not** rewrite live elemental resist Int16s. Prefer a
-**global field state** near the battle table.
+**Confirmed 2026-08-26** — Plug Cape / Shellmon, same battle, item fields,
+snaps `before/after-*-field.bin`. `chain-match` on after-sequence:
 
-**Candidates** (zero → nonzero while field-active cluster present; near `0xA4470`):
+`0xA4530: 0 → 2 → 3 → 4 → 5 → 6 → 7 → 8`
 
-| Address | Taomon (Thunder) | Sakuya (Ice) | BKW (Fire) | Malo (Dark?) | Reading |
-|---------|------------------|--------------|------------|--------------|---------|
-| `0xA4414` | 16 | 16 | 16 | 16 | Shared constant — **not** an element bitmask |
-| `0xA4418` | 221 | 220 | 221 | 220 | Near-identical — timer / instance noise? |
-| `0xA441C` | **5** | **4** | **4** | **4** | Only **two** observed ids. Thunder alone is 5; Fire/Ice/Dark all write **4** |
-| `0xA442A` | 1 | 1 | 1 | 1 | Active flag |
-| `0xA4424` | 1 | 0 | 0 | 0 | Optional / timing |
-| `0xA4530` | 6 | 6 | 6 | 6 | Shared field-category / mode id? |
-| `0xA4532` | **102** | **127** | **127** | **127** | Tracks with `A441C` (5→102, 4→127) — duration / potency class? |
+(`before-fire` alone is `0`; later `before-*` keep the previous field id until
+the matching `after-*`.)
 
-Healthy “field on” snaps set **both** the `0xA4414…A442A` cluster **and**
-`0xA4530`/`0xA4532` together.
+**Companion:** `0xA4532` = `0x40` (64) while any item field is active; `0` when
+none. Not an element discriminator.
 
-**`0xA441C` is not a per-element field enum.** Fire↑Ice↓ (BKW) and Ice↑Wind↓
-(Sakuya) produce **byte-identical** field clusters (`4` / `127`). Either:
+**Cluster `0xA4414…A442A`:** still lights up when a field becomes active (e.g.
+`A4414=16`, `A442A=1`) but does **not** uniquely identify which field (Fire and
+Water item snaps share the same `A441C` until Ice). Prefer **`0xA4530`** as SSOT.
 
-1. persisted RAM only stores a coarse mode (4 vs 5), and the actual
-   strengthen/weaken pair is looked up from the technique id at cast/damage
-   time (not kept in this cluster), or
-2. several Campo skills incorrectly share one effect row (see Dark below).
-
-No other Int16 near `0xA4400–0xA4560` discriminates Fire vs Ice. One-off
-`0xA3868` `0→2` on BKW only (Ice index?) — **not** written by Sakuya/Taomon;
-treat as fight-specific noise until reproduced.
-
-**MaloMyotismon / Campo Sombrio:** structurally clean (full cluster + MP −100) but
-matches Ice/Fire (`A441C=4`). Player also sees **“campo desapareceu”** after
-the skill (unlike Taomon/Sakuya/BKW). Likely bug — do **not** map `4` to Dark.
-
-**Still open:** Water / Wind / Machine fields; second discriminator outside the
-battle neighborhood; damage-time technique id.
+**Prior skill snaps (Taomon/Sakuya/BKW/Malo)** had misread `A4530` as always `6`
+and treated `A441C` as a coarse enum — superseded by the item series above.
+Skill casts may still write different `A4418` / `A4532` (timer/potency); id
+mapping for Digimon Campo skills should match this table when re-checked.
 
 ### Enemy catalog attr copy (variable address; id → attrs +0x0E)
 
