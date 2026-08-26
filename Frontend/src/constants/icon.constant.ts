@@ -44,7 +44,7 @@ export const IconConstant: Record<ConstantsType, string> = {
   [SpeciesConstant.insect]: "🪰",
   [SpeciesConstant.dino]: "🦕",
   [SpeciesConstant.machine]: "🤖",
-  [SpeciesConstant.mammal]: "🐾",
+  [SpeciesConstant.mammal]: "🐕",
   [SpeciesConstant.fish]: "🐟",
   [SpeciesConstant.evil]: "😈",
   [SpeciesConstant.plant]: "🌿",

@@ -84,7 +84,7 @@ const closeWikiModal = () => {
     <div class="dw3-scan-corner bottom-left" />
     <div class="dw3-scan-corner bottom-right" />
 
-    <BattleMap v-if="isInBattle" />
+    <BattleMap v-if="isInBattle" @open-enemy-modal="openWikiModal" />
     <SeabedMap
       v-else-if="mapViewModel.locationRegion === LocationRegionConstant.seabed"
       @open-enemy-modal="openWikiModal"

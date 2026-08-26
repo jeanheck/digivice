@@ -4,14 +4,28 @@ import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import EnemyConditionSquare from "@/components/map/battle-map/EnemyConditionSquare.vue";
 import HpProgressBar from "@/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
+import TinyTooltip from "@/components/tooltip/TinyTooltip.vue";
+import {
+  useTooltipPosition,
+  type TooltipHorizontalAlign,
+  type TooltipPlacement,
+} from "@/composables/use-tooltip-position";
 import { BattleMapPresenter } from "@/presenters/map/battle-map.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
+
+const emit = defineEmits<{
+  (e: "open-enemy-modal", enemyId: string): void;
+}>();
 
 const store = useGameStore();
 const { t } = useI18n();
 
 const isStatsOpen = ref(false);
+const { show, x, y, showAt, move, hide } = useTooltipPosition(0);
+const tooltipTitle = ref("");
+const tooltipPlacement = ref<TooltipPlacement>("below");
+const tooltipAlign = ref<TooltipHorizontalAlign>("right");
 
 const fieldImageUrl = ImageCatalog.getBattleFieldUrl();
 const juniorImageUrl = ImageCatalog.getBattleJuniorUrl();
@@ -26,6 +40,10 @@ const battleMapViewModel = computed(() => {
 
 const enemyCondition = computed(() => {
   return enemy.value?.condition ?? 0;
+});
+
+const canOpenWiki = computed(() => {
+  return battleMapViewModel.value.enemyId !== null;
 });
 
 const titleClass = computed(() => {
@@ -57,6 +75,37 @@ const secondHalfConditions = computed(() => {
 
 function toggleStatsPanel(): void {
   isStatsOpen.value = !isStatsOpen.value;
+}
+
+function openEnemyWiki(): void {
+  const enemyId = battleMapViewModel.value.enemyId;
+  if (enemyId === null) {
+    return;
+  }
+
+  emit("open-enemy-modal", enemyId);
+}
+
+function onShowTooltip(
+  event: MouseEvent,
+  value: string,
+  options?: { placement?: TooltipPlacement; align?: TooltipHorizontalAlign },
+): void {
+  tooltipTitle.value = value;
+  tooltipPlacement.value = options?.placement ?? "below";
+  tooltipAlign.value = options?.align ?? "right";
+  showAt(event, {
+    placement: tooltipPlacement.value,
+    align: tooltipAlign.value,
+  });
+}
+
+function onMoveTooltip(event: MouseEvent): void {
+  move(event, tooltipPlacement.value);
+}
+
+function onHideTooltip(): void {
+  hide();
 }
 
 function isBooleanCondition(condition: EnemyConditionViewModel): boolean {
@@ -95,23 +144,44 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
     >
       <h4
         class="col-span-4 text-[11px] font-bold tracking-widest leading-tight text-center min-w-0 truncate"
-        :class="titleClass"
+        :class="[titleClass, canOpenWiki ? 'cursor-pointer' : '']"
+        @click="openEnemyWiki"
       >
         {{ battleMapViewModel.title }}
       </h4>
 
-      <HpProgressBar class="min-w-0 w-full justify-self-start" :hp="battleMapViewModel.hp" />
-      <EnemyConditionSquare :condition="enemyCondition" :hp="battleMapViewModel.hp" />
+      <HpProgressBar
+        class="min-w-0 w-full justify-self-start"
+        :hp="battleMapViewModel.hp"
+        @show-tooltip="onShowTooltip($event, t('digimon.hp'))"
+        @move-tooltip="onMoveTooltip"
+        @hide-tooltip="onHideTooltip"
+      />
+      <EnemyConditionSquare
+        :condition="enemyCondition"
+        :hp="battleMapViewModel.hp"
+        @show-tooltip="onShowTooltip($event, t('digimon.condition'), { align: 'left' })"
+        @move-tooltip="onMoveTooltip"
+        @hide-tooltip="onHideTooltip"
+      />
       <span
         v-if="battleMapViewModel.level !== null"
-        class="text-[10px] font-bold text-gray-300 shrink-0 justify-self-center"
+        class="text-[10px] font-bold text-gray-300 shrink-0 justify-self-center cursor-help"
+        @mouseenter="onShowTooltip($event, t('enemy.level'), { align: 'left' })"
+        @mousemove="onMoveTooltip"
+        @mouseleave="onHideTooltip"
       >
-        Lv.{{ battleMapViewModel.level }}
+        {{ t("digimon.lv") }}.{{ battleMapViewModel.level }}
       </span>
       <span
-        v-if="battleMapViewModel.speciesEmoji"
-        class="font-emoji text-sm shrink-0 justify-self-center -translate-y-1 drop-shadow-[0_0_2px_rgba(255,255,255,0.7)]"
+        v-if="battleMapViewModel.speciesEmoji && battleMapViewModel.species"
+        class="font-emoji text-[16px] shrink-0 justify-self-center -translate-y-1 cursor-help"
         aria-hidden="true"
+        @mouseenter="
+          onShowTooltip($event, t(`species.${battleMapViewModel.species}`), { align: 'left' })
+        "
+        @mousemove="onMoveTooltip"
+        @mouseleave="onHideTooltip"
         >{{ battleMapViewModel.speciesEmoji }}</span
       >
     </div>
@@ -123,7 +193,9 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         v-if="battleMapViewModel.enemyImageUrl"
         :src="battleMapViewModel.enemyImageUrl"
         :alt="battleMapViewModel.title"
-        class="absolute top-2 left-2 z-[1] w-[39.5%] max-h-[50.5%] object-contain pointer-events-none drop-shadow-[0_6px_14px_rgba(0,0,0,0.75)]"
+        class="absolute top-2 left-2 z-[1] w-[39.5%] max-h-[50.5%] object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,0.75)]"
+        :class="canOpenWiki ? 'cursor-pointer' : 'pointer-events-none'"
+        @click="openEnemyWiki"
       />
 
       <div
@@ -159,7 +231,12 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
                 :key="stat.statKey"
                 class="flex items-center gap-1.5 min-w-0"
               >
-                <div class="flex items-center w-5 shrink-0 justify-center select-none">
+                <div
+                  class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
+                  @mouseenter="onShowTooltip($event, t(`stat.${stat.statKey}`))"
+                  @mousemove="onMoveTooltip"
+                  @mouseleave="onHideTooltip"
+                >
                   <span
                     class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
                     >{{ stat.icon }}</span
@@ -179,7 +256,12 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
                 :key="stat.statKey"
                 class="flex items-center gap-1.5 min-w-0"
               >
-                <div class="flex items-center w-5 shrink-0 justify-center select-none">
+                <div
+                  class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
+                  @mouseenter="onShowTooltip($event, t(`stat.${stat.statKey}`))"
+                  @mousemove="onMoveTooltip"
+                  @mouseleave="onHideTooltip"
+                >
                   <span
                     class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
                     >{{ stat.icon }}</span
@@ -199,7 +281,14 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
                 :key="condition.conditionKey"
                 class="flex items-center gap-1.5 min-w-0"
               >
-                <div class="flex items-center w-5 shrink-0 justify-center select-none">
+                <div
+                  class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
+                  @mouseenter="
+                    onShowTooltip($event, t(`conditions.${condition.conditionKey}.name`))
+                  "
+                  @mousemove="onMoveTooltip"
+                  @mouseleave="onHideTooltip"
+                >
                   <span
                     class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
                     >{{ condition.icon }}</span
@@ -220,7 +309,16 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
                 :key="condition.conditionKey"
                 class="flex items-center gap-1.5 min-w-0"
               >
-                <div class="flex items-center w-5 shrink-0 justify-center select-none">
+                <div
+                  class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
+                  @mouseenter="
+                    onShowTooltip($event, t(`conditions.${condition.conditionKey}.name`), {
+                      align: 'left',
+                    })
+                  "
+                  @mousemove="onMoveTooltip"
+                  @mouseleave="onHideTooltip"
+                >
                   <span
                     class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
                     >{{ condition.icon }}</span
@@ -238,5 +336,15 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         </div>
       </Transition>
     </div>
+
+    <TinyTooltip
+      :show="show"
+      :x="x"
+      :y="y"
+      :title="tooltipTitle"
+      :max-width="140"
+      :placement="tooltipPlacement"
+      :horizontal-align="tooltipAlign"
+    />
   </div>
 </template>

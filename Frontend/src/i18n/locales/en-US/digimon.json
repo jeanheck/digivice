@@ -10,6 +10,7 @@
     "lv": "Lv",
     "experience": "Experience",
     "hp": "HP",
+    "condition": "Condition",
     "mp": "MP",
     "blast": "Blast",
     "tp": "Training Points",

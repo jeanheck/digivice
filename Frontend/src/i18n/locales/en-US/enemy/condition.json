@@ -1,32 +1,40 @@
 {
   "conditions": {
     "poison": {
+      "name": "Poison",
       "canSuffer": "Can be Poisoned",
       "vunerable": "Resistance from Poison"
     },
     "paralyze": {
+      "name": "Paralyze",
       "canSuffer": "Can be Paralyzed",
       "vunerable": "Resistance from Paralyze"
     },
     "confuse": {
+      "name": "Confuse",
       "canSuffer": "Can be Confused",
       "vunerable": "Resistance from Confuse"
     },
     "sleep": {
+      "name": "Sleep",
       "canSuffer": "Can be Asleep",
       "vunerable": "Resistance from Sleep"
     },
     "ko": {
+      "name": "KO",
       "canSuffer": "Can be Knocked Out",
       "vunerable": "Resistance from KO"
     },
     "drain": {
+      "name": "Drain",
       "canSuffer": "Can be Drained"
     },
     "steal": {
+      "name": "Steal",
       "canSuffer": "Can be Stealed"
     },
     "escape": {
+      "name": "Escape",
       "canSuffer": "Player can Escape"
     },
     "yes": "Yes",

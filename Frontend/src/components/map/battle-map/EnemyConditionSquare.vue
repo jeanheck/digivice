@@ -9,6 +9,12 @@ const props = defineProps<{
   hp: Vital;
 }>();
 
+const emit = defineEmits<{
+  showTooltip: [event: MouseEvent];
+  moveTooltip: [event: MouseEvent];
+  hideTooltip: [];
+}>();
+
 const conditionColorByState: Record<DigimonConditionConstant, string> = {
   [DigimonConditionConstant.healthy]: "#00B6BF",
   [DigimonConditionConstant.injured]: "#A3D956",
@@ -24,8 +30,11 @@ const backgroundColor = computed(() => {
 
 <template>
   <div
-    class="h-6 w-6 shrink-0 rounded border-2 border-[#00154a]"
+    class="h-6 w-6 shrink-0 rounded border-2 border-[#00154a] cursor-help"
     :style="{ backgroundColor }"
     aria-hidden="true"
+    @mouseenter="emit('showTooltip', $event)"
+    @mousemove="emit('moveTooltip', $event)"
+    @mouseleave="emit('hideTooltip')"
   />
 </template>

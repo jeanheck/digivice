@@ -13,12 +13,13 @@ export class BattleMapPresenter {
   public static getViewModel(memoryId: number | null, hp: Vital | null): BattleMapViewModel {
     const resolvedHp = hp ?? { current: 0, max: 0 };
     if (memoryId === null) {
-      return BattleMapConverter.convert(null, resolvedHp, "");
+      return BattleMapConverter.convert(null, resolvedHp, "", null);
     }
 
-    const enemyRaw = EnemyRepository.getEnemyByMemoryId(memoryId);
+    const enemyId = EnemyRepository.getEnemyIdByMemoryId(memoryId);
+    const enemyRaw = enemyId !== null ? EnemyRepository.getEnemyById(enemyId) : null;
     const title = enemyRaw?.name ?? "";
 
-    return BattleMapConverter.convert(enemyRaw, resolvedHp, title);
+    return BattleMapConverter.convert(enemyRaw, resolvedHp, title, enemyId);
   }
 }

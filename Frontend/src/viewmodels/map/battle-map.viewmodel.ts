@@ -3,6 +3,7 @@ import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
 
 export interface BattleMapViewModel {
+  enemyId: string | null;
   title: string;
   isBoss: boolean;
   level: number | null;

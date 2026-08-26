@@ -15,9 +15,11 @@ export class BattleMapConverter {
     enemyRaw: EnemyRaw | null,
     hp: Vital,
     title: string,
+    enemyId: string | null,
   ): BattleMapViewModel {
     if (enemyRaw === null) {
       return {
+        enemyId: null,
         title,
         isBoss: false,
         level: null,
@@ -35,6 +37,7 @@ export class BattleMapConverter {
     const conditions = BattleMapConverter.toConditions(enemyRaw);
 
     return {
+      enemyId,
       title,
       isBoss,
       level: enemyRaw.level,
