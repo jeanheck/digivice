@@ -8,6 +8,7 @@ public static class BattleConverter
 {
     public static BattleDTO ToDTO(Battle battle) => new()
     {
+        Field = battle.Field,
         Enemy = EnemyConverter.ToDTO(battle.Enemy)
     };
 }

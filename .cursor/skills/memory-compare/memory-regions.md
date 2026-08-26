@@ -135,7 +135,7 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 | `0x000A4468` | Active ally slot index | 0/1/2 — switches with front Digimon (`in-combat-kotemon/patamon/renamon`) |
 | `0x000A4558` | Active unit id | Tracks front digievo/token while HP stays in fixed slots |
 | `0x000A4580` / `0x000A45C0` | Combatant attr/resist blocks (stride `0x40`) | **Confirmed** layout: Level, STR/DEF/SPI/WIS/SPD, 7 elemental resists, status-resist tail, **species @ +0x24**. Ally↔enemy **swap** which base holds whom — identify by matching enemy.json / slot id `0xA44D0`. No Charisma. Not per party slot (engaged pair only). Field skills do **not** rewrite these resists. Species code table: known-patterns.md |
-| `0x000A4530` | Active battle **field** id (byte) | **Confirmed** — `0` none; `2` Fire … `8` Dark (+1 per element). Item series Plug Cape/Shellmon 2026-08-26. See known-patterns.md |
+| `0x000A4530` | Active battle **field** id (byte) | **Confirmed** + **integrated** in `EnemyAddresses.json` as `Field` on `Battle` — `0` none; `2` Fire … `8` Dark |
 | `0x000A4532` | Field companion (potency/timer class?) | `0` none; `0x40` while item field active (same for all elements in that series) |
 | `0x000A4414`…`0xA442A` | Field support cluster | Lights when field active; **not** per-element SSOT — prefer `0xA4530` |
 | Enemy catalog (variable) | Enemy base attrs copy | `enemyId` then attrs at **+0x0E** (e.g. Mammothmon `0xB97A2`→`0xB97B0`); address moves per fight — audit helper, not a fixed absolute |

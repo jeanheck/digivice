@@ -11,6 +11,7 @@ namespace Backend.Domain.Assemblers
         {
             return new Battle
             {
+                Field = resource.Field,
                 Enemy = new Enemy
                 {
                     Id = resource.Enemy.Id,

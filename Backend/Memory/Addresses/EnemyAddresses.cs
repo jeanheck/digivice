@@ -9,6 +9,9 @@ namespace Backend.Memory.Addresses
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long EnemySlotBase { get; set; }
 
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long Field { get; set; }
+
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
         public int Id { get; set; }
 

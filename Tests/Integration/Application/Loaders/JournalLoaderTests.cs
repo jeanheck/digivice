@@ -35,7 +35,9 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         var questLoader = new QuestLoader(addressesRepository, questReader);
         var auctionReader = new AuctionReader(memoryReaderMock.Object);
         var auctionLoader = new AuctionLoader(addressesRepository, auctionReader);
-        var journalLoader = new JournalLoader(questLoader, auctionLoader);
+        var npcReader = new NpcReader(memoryReaderMock.Object);
+        var npcLoader = new NpcLoader(addressesRepository, npcReader);
+        var journalLoader = new JournalLoader(questLoader, auctionLoader, npcLoader);
 
         var journalResource = journalLoader.Load();
 

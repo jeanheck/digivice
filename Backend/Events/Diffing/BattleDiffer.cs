@@ -21,11 +21,23 @@ public static class BattleDiffer
         }
 
         var enemyDelta = EnemyDiffer.Diff(previousBattle.Enemy, newBattle.Enemy);
-        if (enemyDelta == null)
+        bool fieldChanged = previousBattle.Field != newBattle.Field;
+
+        if (enemyDelta == null && !fieldChanged)
         {
             return new BattleDTO();
         }
 
-        return new BattleDTO { Enemy = enemyDelta };
+        var dto = new BattleDTO();
+        if (enemyDelta != null)
+        {
+            dto = dto with { Enemy = enemyDelta };
+        }
+        if (fieldChanged)
+        {
+            dto = dto with { Field = newBattle.Field };
+        }
+
+        return dto;
     }
 }
