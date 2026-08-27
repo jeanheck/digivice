@@ -337,7 +337,7 @@ const enemyImageUrl = computed(() => {
     :x="tooltipX"
     :y="tooltipY"
     :title="tooltipTitle"
-    :max-width="500"
+    :max-width="600"
     placement="below"
   />
 </template>

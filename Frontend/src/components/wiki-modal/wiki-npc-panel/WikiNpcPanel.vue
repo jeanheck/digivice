@@ -108,14 +108,6 @@ const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
   return "text-gray-400 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300";
 };
 
-const battleOptionCursorClass = (option: WikiNpcBattleOptionViewModel): string => {
-  if (option.battleTooltipKey !== null) {
-    return "cursor-help";
-  }
-
-  return "cursor-pointer";
-};
-
 const showBattleRequirementTooltip = (
   event: MouseEvent,
   option: WikiNpcBattleOptionViewModel,
@@ -210,8 +202,8 @@ const openLocation = () => {
           v-for="option in battleOptions"
           :key="option.id"
           type="button"
-          class="w-full text-center px-2.5 py-2 rounded text-[10px] font-bold tracking-wide transition-colors focus:outline-none border"
-          :class="[battleOptionClass(option), battleOptionCursorClass(option)]"
+          class="w-full text-center px-2.5 py-2 rounded text-[10px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none border"
+          :class="battleOptionClass(option)"
           @click="selectOption(option.id)"
           @mouseenter="showBattleRequirementTooltip($event, option)"
           @mousemove="emit('move-stat-tooltip', $event)"
