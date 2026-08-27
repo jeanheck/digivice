@@ -575,6 +575,24 @@ only active Guilmon slot changed. Enemy poison: ally `+0x1C` stayed 0; enemy id
 not Condition); HP current also dropped (combat damage). Confuse snap noise:
 `+0x1F` `0x00→0x50` (timer?). Wired as `InBattle.Condition` / `Enemy.Condition`.
 
+### Cardmon “curse” (suspected / incomplete — 2026-08-26)
+
+Snaps: `cardmon-cursed.bin` (message “amaldiçoado”) vs `cardmon-normal.bin`
+(later fight, start of Cardmon battle before hit). **Not** a same-fight pair —
+expect HP/turn noise.
+
+| Check | Result |
+|-------|--------|
+| Ally/enemy Condition `@ +0x1C` | **`0` in both** — curse is **not** the poison/confuse status byte (matches “no condition icon”) |
+| `0xA4530` field id | **`0` both** — not elemental Field |
+| `0xA4414…A442A` cluster | **On only in cursed** (`A4414=0x10`, `A441C=0x7A`, `A4424=1`, `A442A=1`) — same neighborhood as Campo skills, different `A441C` |
+| Digimon status region `stats` | **0 diffs** |
+| Enemy `+0x04` | `0→1` on cursed (known turn/state noise) |
+
+**Still open:** same-battle before/after curse hit; whether `A441C=0x7A` is a
+stable curse mode id or one-off timer/FX; any HUD/timer byte outside battle
+table.
+
 ---
 
 ## Seabed underwater routing (confirmed)
@@ -695,6 +713,40 @@ spawn/`PreviousMapId`, encounter cache.
 
 Already set pre-Genji (unchanged, not from this fight): `0x4B3DA=0x80`,
 `0x4B3DB=0x03`, `0x4B3AC=0x01` — possible earlier tutorial bits (unconfirmed).
+
+### Card battles (confirmed 2026-08-26; counters 2026-08-27)
+
+Early Genji/Natsumi wins looked like dedicated `0→1` bytes in
+`~0x48Exx` / `~0x48Fxx`. Later Asuka card-shop tamers (Nacky / Wong /
+Gloria / Steve) show those same addresses behave as **shared win
+counters**, not per-NPC flags:
+
+| Address | Observed chain (evening session) |
+|---------|----------------------------------|
+| `0x00048E0B` | Nacky `0→1`, Steve `1→2` (also Genji `0→1` earlier) |
+| `0x00048F19` | Natsumi `0→1`, Wong `1→2`, Gloria `2→3` |
+
+Timeline dump (`after-genji` → `after-steve`): only those two bytes in
+`0x48E00–0x48F40` hold non-zero progress. **Caveat:** `0x48E0B` was
+`1` after Natsumi then `0` again at `before-nacky` — not fully sticky
+across sessions/reloads; do not treat as a reliable Genji-only flag.
+
+**No unique sticky `0→1` per NPC** in `0x48000–0x4A000` for
+Nacky/Wong/Gloria/Steve (refined chain search). Do **not** wire those
+four into `NpcAddresses.json` with BitMask `0x01` on the shared
+counters — `value >= 2` would read as incomplete under `!= 0` / mask
+`0x01`, and multiple NPCs would share one byte.
+
+Lose vs win (Natsumi): lasting quest-region difference is still
+`0x48F19` (win=`1`, lose=`0`). Transient: `0x48ABC`. Cannot tell
+“never fought” vs “lost” from that byte alone.
+
+Snaps: `before/after-*-card-battle.bin` for genji, natsumi, nacky,
+wong, gloria, steve; `after-lose-to-natsumi`.
+
+Current `NpcAddresses.json`: Genji `0x48E0B` / Natsumi `0x48F19`
+(BitMask `0x01`) — provisional; revisit when counter/threshold reader
+or true per-NPC flags are found.
 
 ---
 

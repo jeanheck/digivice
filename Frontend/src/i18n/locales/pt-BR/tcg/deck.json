@@ -1,10 +1,10 @@
 {
   "deck": {
-    "bugBugFolder": "Bug Bug Folder",
-    "flyingFolder": "Flying Folder",
-    "coolDigimonFolder": "Cool Digimon Folder",
-    "mindFolder": "Mind Folder",
-    "protectorFolder": "Protector Folder",
-    "amazingPatamonFolder": "Amazing Patamon Folder"
+    "bugBugFolder": "Baralho Bug Bug",
+    "flyingFolder": "Baralho Voador",
+    "coolDigimonFolder": "Baralho Digimon Maroto",
+    "mindFolder": "Baralho Mental",
+    "protectorFolder": "Baralho Defensor",
+    "amazingPatamonFolder": "Baralho Extraordinário Patamon"
   }
 }

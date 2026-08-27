@@ -6,6 +6,20 @@
                 "BitMask": "0x20"
             }
         },
-        "CardBattles": {}
+        "CardBattles": {
+            "first": {
+                "Address": "0x00048E0B",
+                "BitMask": "0x01"
+            }
+        }
+    },
+    "natsumi": {
+        "DigimonBattles": {},
+        "CardBattles": {
+            "first": {
+                "Address": "0x00048F19",
+                "BitMask": "0x01"
+            }
+        }
     }
 }

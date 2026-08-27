@@ -1,6 +1,6 @@
 {
   "boosters": {
-    "501": { "name": "Booster 1B" },
+    "501": { "name": "Pacote 1b" },
     "502": { "name": "Booster 2B" },
     "503": { "name": "Booster 3B" },
     "504": { "name": "Booster 4B" },
@@ -20,8 +20,8 @@
     "518": { "name": "Booster R-03" },
     "519": { "name": "Booster R-04" },
     "520": { "name": "Booster R-05" },
-    "521": { "name": "Booster 1A" },
-    "522": { "name": "Booster 2A" },
+    "521": { "name": "Pacote 01a" },
+    "522": { "name": "Pacote 02a" },
     "523": { "name": "Booster 3A" },
     "524": { "name": "Booster 4A" },
     "525": { "name": "Booster 5A" },

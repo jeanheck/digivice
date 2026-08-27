@@ -173,3 +173,5 @@ Diffs here are expected after battles; usually not quest flags.
 | Digimon stats | ~0x494xxx | Multi-byte numeric deltas |
 | Common item possession | ~0x48ECx | Often 0x00 ↔ 0x01 |
 | Auction | 0x4B370, 0x4B38A | Bit flags, story window |
+| NPC digimon battle | 0x4B3DF (+bit) | Genji first digimon — see known-patterns.md |
+| NPC card battle | `0x48E0B`, `0x48F19` (shared counters) | Not per-NPC flags — win counters across tamer groups; see known-patterns.md; discard transient `0x48ABC` |
