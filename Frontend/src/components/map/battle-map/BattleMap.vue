@@ -221,7 +221,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         <img
           :src="juniorImageUrl"
           alt=""
-          class="absolute top-0 right-0 w-full max-w-none h-[260%] object-contain object-top"
+          class="absolute top-0 right-0 w-full max-w-none h-[260%] object-contain object-top drop-shadow-[0_6px_14px_rgba(0,0,0,1)]"
         />
       </div>
 
@@ -235,7 +235,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         {{ isStatsOpen ? t("map.hideDetails") : t("map.showDetails") }}
       </button>
 
-      <div class="absolute bottom-2 left-2 z-20 flex flex-col gap-0.5 pointer-events-none">
+      <div class="absolute bottom-2 left-2 z-[5] flex flex-col gap-0.5 pointer-events-none">
         <span
           class="text-[10px] 2xl:text-sm font-bold tracking-wide text-white text-outline-black-glow leading-tight"
         >
