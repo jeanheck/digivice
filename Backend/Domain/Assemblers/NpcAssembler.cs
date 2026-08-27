@@ -12,7 +12,6 @@ namespace Backend.Domain.Assemblers
             {
                 Id = npcResource.Id,
                 DigimonBattles = AssembleBattles(npcResource.DigimonBattles),
-                CardBattles = AssembleBattles(npcResource.CardBattles),
             })];
         }
 

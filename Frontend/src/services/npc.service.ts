@@ -1,4 +1,3 @@
-import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
 import type { Npc } from "@/models";
 import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
 import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
@@ -21,21 +20,15 @@ export class NpcService {
     return true;
   }
 
-  public static isBattleCompleted(
+  public static isDigimonBattleCompleted(
     journalNpc: Npc | null | undefined,
-    kind: NpcBattleKindConstant,
     battleId: string,
   ): boolean {
     if (journalNpc === null || journalNpc === undefined) {
       return false;
     }
 
-    const battles =
-      kind === NpcBattleKindConstant.card
-        ? journalNpc.cardBattles
-        : journalNpc.digimonBattles;
-
-    const battle = battles.find((entry) => {
+    const battle = journalNpc.digimonBattles.find((entry) => {
       return entry.id === battleId;
     });
 
@@ -75,31 +68,15 @@ export class NpcService {
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
   ): boolean {
-    const hasAvailableCardBattle = Object.entries(npc.cardBattles ?? {}).some(
-      ([battleId, cardBattle]) => {
-        const completed = this.isBattleCompleted(
-          journalNpc,
-          NpcBattleKindConstant.card,
-          battleId,
-        );
-
-        return this.isBattleAvailable(
-          cardBattle.charismaRequired,
-          completed,
-          partyCharisma,
-        );
-      },
-    );
+    const hasAvailableCardBattle = Object.values(npc.cardBattles ?? {}).some((cardBattle) => {
+      return this.isCharismaInRange(partyCharisma, cardBattle.charismaRequired);
+    });
     if (hasAvailableCardBattle) {
       return true;
     }
 
     return Object.entries(npc.digimonBattles ?? {}).some(([battleId, digimonBattle]) => {
-      const completed = this.isBattleCompleted(
-        journalNpc,
-        NpcBattleKindConstant.digimon,
-        battleId,
-      );
+      const completed = this.isDigimonBattleCompleted(journalNpc, battleId);
 
       return this.isBattleAvailable(
         digimonBattle.charismaRequired,

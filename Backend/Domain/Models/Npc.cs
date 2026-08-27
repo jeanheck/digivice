@@ -6,7 +6,6 @@ namespace Backend.Domain.Models
     {
         public string Id { get; set; } = string.Empty;
         public List<NpcBattle> DigimonBattles { get; set; } = [];
-        public List<NpcBattle> CardBattles { get; set; } = [];
 
         public virtual bool Equals(Npc? other)
         {
@@ -19,11 +18,7 @@ namespace Backend.Domain.Models
                 (DigimonBattles != null && other.DigimonBattles != null &&
                  DigimonBattles.SequenceEqual(other.DigimonBattles));
 
-            bool cardBattlesEqual = (CardBattles == null && other.CardBattles == null) ||
-                (CardBattles != null && other.CardBattles != null &&
-                 CardBattles.SequenceEqual(other.CardBattles));
-
-            return Id == other.Id && digimonBattlesEqual && cardBattlesEqual;
+            return Id == other.Id && digimonBattlesEqual;
         }
 
         public override int GetHashCode()
@@ -35,13 +30,6 @@ namespace Backend.Domain.Models
                 foreach (var digimonBattle in DigimonBattles)
                 {
                     hash.Add(digimonBattle);
-                }
-            }
-            if (CardBattles != null)
-            {
-                foreach (var cardBattle in CardBattles)
-                {
-                    hash.Add(cardBattle);
                 }
             }
             return hash.ToHashCode();

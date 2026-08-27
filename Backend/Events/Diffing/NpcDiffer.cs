@@ -31,31 +31,15 @@ public static class NpcDiffer
             }
         }
 
-        List<NpcBattleDTO> cardBattlesDelta = [];
-        foreach (var newBattle in newNpc.CardBattles)
-        {
-            var previousBattle = previousNpc.CardBattles.FirstOrDefault(battle => battle.Id == newBattle.Id);
-            var battleDelta = NpcBattleDiffer.Diff(previousBattle, newBattle);
-            if (battleDelta != null)
-            {
-                cardBattlesDelta.Add(battleDelta);
-            }
-        }
-
-        if (digimonBattlesDelta.Count == 0 && cardBattlesDelta.Count == 0)
+        if (digimonBattlesDelta.Count == 0)
         {
             return null;
         }
 
-        var dto = new NpcDTO { Id = newNpc.Id };
-        if (digimonBattlesDelta.Count > 0)
+        return new NpcDTO
         {
-            dto = dto with { DigimonBattles = digimonBattlesDelta };
-        }
-        if (cardBattlesDelta.Count > 0)
-        {
-            dto = dto with { CardBattles = cardBattlesDelta };
-        }
-        return dto;
+            Id = newNpc.Id,
+            DigimonBattles = digimonBattlesDelta,
+        };
     }
 }

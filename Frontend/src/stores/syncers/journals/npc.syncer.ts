@@ -15,18 +15,6 @@ export class NpcSyncer {
         }
       });
     }
-
-    if (newNpcDto.cardBattles !== undefined) {
-      newNpcDto.cardBattles.forEach((newBattleDto) => {
-        const previousBattle = previousNpc.cardBattles.find((battle) => {
-          return battle.id === newBattleDto.id;
-        });
-
-        if (previousBattle) {
-          this.syncBattle(previousBattle, newBattleDto);
-        }
-      });
-    }
   }
 
   private static syncBattle(previousBattle: NpcBattle, newBattleDto: NpcBattleDTO): void {

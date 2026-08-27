@@ -757,8 +757,9 @@ Snaps: `before/after-*-card-battle.bin` for genji, natsumi, nacky,
 wong, gloria, steve; `after-lose-to-natsumi`;
 `before/after-defeat-gloria-first.bin`.
 
-Current `NpcAddresses.json`: Genji `0x48E0B` / Natsumi `0x48F19`
-(BitMask `0x01`) — provisional; wrong model for multi-tamer groups.
+Current `NpcAddresses.json`: wire **DigimonBattles** only (e.g. Genji `0x4B3DF`,
+Natsumi `0x4B39A`). Card battles are **not** tracked in journal RAM — wiki uses
+static `npcs.json` + charisma range only.
 
 **Second pass (2026-08-27):** re-scanned all card-win snaps for
 per-tamer sticky flags. Quest band `0x48000–0x4C000`: no identity byte

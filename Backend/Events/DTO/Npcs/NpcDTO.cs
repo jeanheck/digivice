@@ -10,7 +10,4 @@ public record class NpcDTO : IDTO
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<List<NpcBattleDTO>> DigimonBattles { get; init; } = Optional<List<NpcBattleDTO>>.Empty;
-
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<List<NpcBattleDTO>> CardBattles { get; init; } = Optional<List<NpcBattleDTO>>.Empty;
 }

@@ -1,25 +1,18 @@
-{
-    "genji": {
-        "DigimonBattles": {
-            "first": {
-                "Address": "0x0004B3DF",
-                "BitMask": "0x20"
-            }
-        },
-        "CardBattles": {
-            "first": {
-                "Address": "0x00048E0B",
-                "BitMask": "0x01"
-            }
-        }
-    },
-    "natsumi": {
-        "DigimonBattles": {
-            "first": {
-                "Address": "0x0004B39A",
-                "BitMask": "0x02"
-            }
-        },
-        "CardBattles": {}
-    }
-}
+{
+    "genji": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B3DF",
+                "BitMask": "0x20"
+            }
+        }
+    },
+    "natsumi": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x02"
+            }
+        }
+    }
+}

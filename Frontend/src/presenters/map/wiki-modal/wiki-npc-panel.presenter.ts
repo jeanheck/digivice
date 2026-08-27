@@ -27,21 +27,15 @@ export class WikiNpcPanelPresenter {
     }
 
     const cardOptions = Object.entries(npcRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
-      const completed = NpcService.isBattleCompleted(
-        journalNpc,
-        NpcBattleKindConstant.card,
-        battleId,
-      );
-
       return {
         id: `${NpcBattleKindConstant.card}-${battleId}`,
         kind: NpcBattleKindConstant.card,
         battleId,
         charismaMin: cardBattle.charismaRequired.min,
         charismaRangeText: this.formatCharismaRange(cardBattle.charismaRequired),
-        completed,
+        completed: false,
         status: NpcService.getBattleStatus(
-          completed,
+          false,
           cardBattle.charismaRequired,
           partyCharisma,
         ),
@@ -50,11 +44,7 @@ export class WikiNpcPanelPresenter {
 
     const digimonOptions = Object.entries(npcRaw.digimonBattles ?? {}).map(
       ([battleId, digimonBattle]) => {
-        const completed = NpcService.isBattleCompleted(
-          journalNpc,
-          NpcBattleKindConstant.digimon,
-          battleId,
-        );
+        const completed = NpcService.isDigimonBattleCompleted(journalNpc, battleId);
 
         return {
           id: `${NpcBattleKindConstant.digimon}-${battleId}`,
@@ -97,7 +87,12 @@ export class WikiNpcPanelPresenter {
     }
 
     if (options.every((option) => option.completed)) {
-      return options[options.length - 1].id;
+      const lastOption = options[options.length - 1];
+      if (lastOption === undefined) {
+        return null;
+      }
+
+      return lastOption.id;
     }
 
     const availableOption = options.find((option) => {
@@ -111,7 +106,8 @@ export class WikiNpcPanelPresenter {
       return !option.completed;
     });
 
-    return firstIncompleteOption?.id ?? options[0].id;
+    const firstOption = options[0];
+    return firstIncompleteOption?.id ?? firstOption?.id ?? null;
   }
 
   public static getPanelViewModel(

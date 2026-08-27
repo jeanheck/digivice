@@ -9,9 +9,6 @@ export class NpcConverter {
       digimonBattles: (npcDto.digimonBattles ?? []).map((battleDto) => {
         return this.convertBattle(battleDto);
       }),
-      cardBattles: (npcDto.cardBattles ?? []).map((battleDto) => {
-        return this.convertBattle(battleDto);
-      }),
     };
   }
 

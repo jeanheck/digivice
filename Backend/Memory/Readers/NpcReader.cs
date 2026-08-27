@@ -12,7 +12,6 @@ namespace Backend.Memory.Readers
             {
                 Id = npcAddresses.Key,
                 DigimonBattles = ReadBattles(npcAddresses.Value.DigimonBattles),
-                CardBattles = ReadBattles(npcAddresses.Value.CardBattles),
             };
         }
 

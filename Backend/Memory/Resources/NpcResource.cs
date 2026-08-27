@@ -4,6 +4,5 @@ namespace Backend.Memory.Resources
     {
         public string Id { get; set; } = string.Empty;
         public List<NpcBattleResource> DigimonBattles { get; set; } = [];
-        public List<NpcBattleResource> CardBattles { get; set; } = [];
     }
 }

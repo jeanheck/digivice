@@ -12,7 +12,6 @@ public static class NpcConverter
         {
             Id = npc.Id,
             DigimonBattles = npc.DigimonBattles.Select(ToBattleDTO).ToList(),
-            CardBattles = npc.CardBattles.Select(ToBattleDTO).ToList(),
         };
     }
 
