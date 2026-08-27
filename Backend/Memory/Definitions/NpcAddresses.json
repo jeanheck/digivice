@@ -14,12 +14,12 @@
         }
     },
     "natsumi": {
-        "DigimonBattles": {},
-        "CardBattles": {
+        "DigimonBattles": {
             "first": {
-                "Address": "0x00048F19",
-                "BitMask": "0x01"
+                "Address": "0x0004B39A",
+                "BitMask": "0x02"
             }
-        }
+        },
+        "CardBattles": {}
     }
 }

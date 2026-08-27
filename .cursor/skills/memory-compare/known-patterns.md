@@ -716,37 +716,94 @@ Already set pre-Genji (unchanged, not from this fight): `0x4B3DA=0x80`,
 
 ### Card battles (confirmed 2026-08-26; counters 2026-08-27)
 
-Early Genji/Natsumi wins looked like dedicated `0→1` bytes in
-`~0x48Exx` / `~0x48Fxx`. Later Asuka card-shop tamers (Nacky / Wong /
-Gloria / Steve) show those same addresses behave as **shared win
-counters**, not per-NPC flags:
+Asuka card-shop / tutorial card wins share **win counters**, not per-NPC
+flags. Order of opponents does **not** matter for the stored value — only
+how many wins in that counter’s group.
 
-| Address | Observed chain (evening session) |
-|---------|----------------------------------|
-| `0x00048E0B` | Nacky `0→1`, Steve `1→2` (also Genji `0→1` earlier) |
-| `0x00048F19` | Natsumi `0→1`, Wong `1→2`, Gloria `2→3` |
+| Address | Group (observed) | Behavior |
+|---------|------------------|----------|
+| `0x00048F19` | Natsumi, Wong, Gloria | Increments `+1` per win |
+| `0x00048E0B` | Nacky, Steve (also Genji earlier) | Increments `+1` per win |
 
-Timeline dump (`after-genji` → `after-steve`): only those two bytes in
-`0x48E00–0x48F40` hold non-zero progress. **Caveat:** `0x48E0B` was
-`1` after Natsumi then `0` again at `before-nacky` — not fully sticky
-across sessions/reloads; do not treat as a reliable Genji-only flag.
+**Order-independence proof (2026-08-27):** Gloria fought **first** with
+`0x48F19 = 0` → after win `0x48F19 = 1` (not `3`). Snaps:
+`before/after-defeat-gloria-first.bin`. `0x48E0B` stayed `0`.
+
+Earlier evening chain (order coincidental with counter values):
+
+| Address | Chain |
+|---------|-------|
+| `0x48F19` | Natsumi `0→1`, Wong `1→2`, Gloria `2→3` |
+| `0x48E0B` | Nacky `0→1`, Steve `1→2` (Genji `0→1` earlier) |
+
+**Caveat:** `0x48E0B` was `1` after Natsumi then `0` at `before-nacky` —
+not fully sticky across sessions/reloads.
 
 **No unique sticky `0→1` per NPC** in `0x48000–0x4A000` for
-Nacky/Wong/Gloria/Steve (refined chain search). Do **not** wire those
-four into `NpcAddresses.json` with BitMask `0x01` on the shared
-counters — `value >= 2` would read as incomplete under `!= 0` / mask
-`0x01`, and multiple NPCs would share one byte.
+Nacky/Wong/Gloria/Steve. Do **not** wire multiple NPCs with BitMask
+`0x01` on these counters — cannot express per-tamer identity; need
+group membership + threshold (`value >= N` is still wrong for
+unordered fights) or true per-NPC flags elsewhere.
+
+Implication for Digivice: a shared counter alone **cannot** mark which
+specific tamers are done when fight order is free — only “how many wins
+in this group.”
 
 Lose vs win (Natsumi): lasting quest-region difference is still
 `0x48F19` (win=`1`, lose=`0`). Transient: `0x48ABC`. Cannot tell
 “never fought” vs “lost” from that byte alone.
 
 Snaps: `before/after-*-card-battle.bin` for genji, natsumi, nacky,
-wong, gloria, steve; `after-lose-to-natsumi`.
+wong, gloria, steve; `after-lose-to-natsumi`;
+`before/after-defeat-gloria-first.bin`.
 
 Current `NpcAddresses.json`: Genji `0x48E0B` / Natsumi `0x48F19`
-(BitMask `0x01`) — provisional; revisit when counter/threshold reader
-or true per-NPC flags are found.
+(BitMask `0x01`) — provisional; wrong model for multi-tamer groups.
+
+**Second pass (2026-08-27):** re-scanned all card-win snaps for
+per-tamer sticky flags. Quest band `0x48000–0x4C000`: no identity byte
+beyond the two counters (Gloria-first vs Natsumi both leave `0x48F19=1`
+with no matching per-NPC quest delta). `0x4B3xx` digimon-battle bitfield
+region: no card-win bits. Same-on-all-wins only map/session churn
+(`0x48D6C–0x48D84`, `0x4BBAC`). `0x44xxx` / `0x7Fxxx` hits look like
+card-UI / volatile — e.g. `0x44B71` / `0x44D8B` flip across multiple
+tamers and clear on some fights. **No usable per-NPC completion address
+found.**
+
+**Natsumi digimon (confirmed 2026-08-27):** `0x0004B39A` BitMask `0x02`
+(`0→2` on win; sticky through later card). Matches script
+`BattledTamer#1`. See [natsumi-map-scripts.md](natsumi-map-scripts.md).
+
+**Natsumi card:** no duel flag in those snaps — only booster `0x48F19`.
+Map script does not SET a bit on `CardBattle#5`.
+
+**Lose control (2026-08-27):** `before/after-lose.bin` (Natsumi card lose;
+digimon flag `0x4B39A` still `0` on that save). Confirmations:
+- `0x48F19` stays `0` on lose (win-only booster).
+- Flag band `0x4B390–0x4B3E8` identical before/after — **no** sticky card bit.
+- Quest-ish diffs only noise (`0x4B401`, `0x4BBAC/AD`); `0x4DE40`/`0x4DE44`
+  `0→1` on lose were already `1` in the win-before snap (session/battle
+  markers, not rematch lock).
+- Win∩lose sticky same-value `0→N` outside booster: UI/volatile only
+  (`0x44C81`, `0x5CD08–0x5CD0B`) — not quest progress.
+**Verdict:** rematch lock is **not** a sticky RAM flag in these pairs;
+script Logic#2 has no completion gate — blocked rematch is likely CHA
+band / dialogue branch, not a missing Digivice address.
+
+**Full card process chain (2026-08-27, CHA 124 constant):**
+`antes-falar` → `depois-falar-primeira-vez` → `pos-batalha fala1` →
+`pos-batalha fala2` → `duelo+dialogo fim` → `intro ensino medio de novo`.
+Win (`0x48F19` `0→1` at post-battle fala1). Digimon bit stays `0`.
+- Session markers `0x4DE40`/`0x4DE44`: `0→1` on first talk, **clear at intro
+  re-talk** — not rematch lock.
+- Transient `0x48ABE` `0→3` during post-battle lines, clears when dialogue ends.
+- Sticky quest-ish 0→final: booster; `0x48ABC` `0→1` (set on first talk, still
+  set when intro loops — cannot alone explain lock, since card already started
+  with it set); `0x4B40C` `1→0` on first talk (stays 0); EXP/map noise.
+- `0x4B300–0x4B500`: only `0x4B401` / `0x4B40C` change — **no** new BattledTamer-style bit.
+- Intro-loop snap vs post-dialogue-done: **no** new quest progress bit (lock
+  already present before the second talk, if it exists at all).
+
 
 ---
 
