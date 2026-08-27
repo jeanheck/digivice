@@ -47,7 +47,7 @@ const handleSelect = (): void => {
         ❓
       </div>
       <span
-        class="absolute bottom-[-3px] left-full ml-[-6px] px-0.5 leading-none text-[9px] font-bold text-cyan-300 bg-black/85 border border-cyan-800/80 rounded-sm"
+        class="absolute bottom-[-3px] left-full ml-[-6px] px-0.5 leading-none text-[10px] font-bold text-cyan-300 bg-black/85 border border-cyan-800/80 rounded-sm"
       >
         ×{{ card.quantity }}
       </span>
