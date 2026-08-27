@@ -207,7 +207,6 @@ const openLocation = () => {
         v-if="selectedOption?.kind === NpcBattleKindConstant.card"
         :npc-id="npcId"
         :battle-id="selectedOption.battleId"
-        :battle-status="selectedOption.status"
         @open-card="emit('open-card', $event)"
         @open-drops="emit('open-drops', $event)"
       />
@@ -215,7 +214,6 @@ const openLocation = () => {
         v-else-if="selectedOption?.kind === NpcBattleKindConstant.digimon"
         :npc-id="npcId"
         :battle-id="selectedOption.battleId"
-        :battle-status="selectedOption.status"
         @open-drops="emit('open-drops', $event)"
         @show-stat-key-tooltip="
           (event, statKey) => emit('show-stat-key-tooltip', event, statKey)

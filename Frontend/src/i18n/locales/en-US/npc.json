@@ -4,12 +4,7 @@
       "card": "Cards",
       "digimon": "Digimon",
       "cardPlaceholder": "Card battle",
-      "digimonPlaceholder": "Digimon battle",
-      "status": {
-        "missingCharisma": "Missing Charisma",
-        "available": "Battle available",
-        "completed": "Battle already won"
-      }
+      "digimonPlaceholder": "Digimon battle"
     },
     "folderBagRequirementHint": "* Owning the Folder Bag is a requirement for battles against tamers."
   }

@@ -8,12 +8,10 @@ import WikiProfileElements from "@/components/wiki-modal/wiki-profile-panel/Wiki
 import WikiProfileConditions from "@/components/wiki-modal/wiki-profile-panel/WikiProfileConditions.vue";
 import WikiProfileTechniques from "@/components/wiki-modal/wiki-profile-panel/WikiProfileTechniques.vue";
 import WikiProfileDrops from "@/components/wiki-modal/wiki-profile-panel/WikiProfileDrops.vue";
-import type { NpcBattleStatus } from "@/services/npc.service";
 
 const props = defineProps<{
   npcId: string;
   battleId: string;
-  battleStatus: NpcBattleStatus;
 }>();
 
 const emit = defineEmits<{
@@ -58,7 +56,6 @@ const activeMember = computed(() => {
       :dvexp="battleViewModel.dvexp"
       :bits="battleViewModel.bits"
       :member-count="battleViewModel.partyMemberCount"
-      :battle-status="battleStatus"
     />
 
     <div
