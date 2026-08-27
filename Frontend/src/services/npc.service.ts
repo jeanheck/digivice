@@ -1,4 +1,5 @@
 import type { ImportantItems, Npc } from "@/models";
+import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
 import type { NpcCardBattleRaw } from "@/repositories/tables/raws/npc/npc-card-battle.raw";
 import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
 import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
@@ -163,33 +164,52 @@ export class NpcService {
     return "missingRequirements";
   }
 
-  public static hasAvailableBattle(
+  public static getAvailableBattleKind(
     npc: NpcRaw,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
-  ): boolean {
+  ): NpcBattleKindConstant | null {
+    const hasAvailableDigimonBattle = Object.entries(npc.digimonBattles ?? {}).some(
+      ([battleId, digimonBattle]) => {
+        const completed = this.isDigimonBattleCompleted(journalNpc, battleId);
+        if (completed) {
+          return false;
+        }
+
+        return this.areBattleRequirementsMet(
+          digimonBattle.charismaRequired,
+          digimonBattle.trophyRequired,
+          partyCharisma,
+          importantItems,
+        );
+      },
+    );
+
+    if (hasAvailableDigimonBattle) {
+      return NpcBattleKindConstant.digimon;
+    }
+
     const activeCardBattleIds = this.resolveActiveCardBattleIds(
       npc.cardBattles,
       partyCharisma,
       importantItems,
     );
     if (activeCardBattleIds.size > 0) {
-      return true;
+      return NpcBattleKindConstant.card;
     }
 
-    return Object.entries(npc.digimonBattles ?? {}).some(([battleId, digimonBattle]) => {
-      const completed = this.isDigimonBattleCompleted(journalNpc, battleId);
-      if (completed) {
-        return false;
-      }
+    return null;
+  }
 
-      return this.areBattleRequirementsMet(
-        digimonBattle.charismaRequired,
-        digimonBattle.trophyRequired,
-        partyCharisma,
-        importantItems,
-      );
-    });
+  public static hasAvailableBattle(
+    npc: NpcRaw,
+    journalNpc: Npc | null | undefined,
+    partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
+  ): boolean {
+    return (
+      this.getAvailableBattleKind(npc, journalNpc, partyCharisma, importantItems) !== null
+    );
   }
 }

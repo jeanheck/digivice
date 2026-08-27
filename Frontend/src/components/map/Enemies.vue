@@ -2,6 +2,8 @@
 import { computed } from "vue";
 import { IconConstant } from "@/constants/icon.constant";
 import { EnemySourceConstant } from "@/constants/enemy-source.constant";
+import { NpcBattleIconConstant } from "@/constants/npc-battle-icon.constant";
+import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
 import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter.ts";
 import type { MapNpcViewModel } from "@/viewmodels/map/map-npc.viewmodel";
 
@@ -89,7 +91,7 @@ const openNpcWikiModal = (npcId: string) => {
           v-for="npc in npcs"
           :key="npc.id"
           type="button"
-          class="font-bold text-[9px] 2xl:text-xs tracking-wide focus:outline-none rounded px-1 cursor-pointer transition-colors"
+          class="font-bold text-[9px] 2xl:text-xs tracking-wide focus:outline-none rounded px-1 cursor-pointer transition-colors flex items-center justify-center"
           :class="
             npc.hasAvailableBattle
               ? 'text-sky-300 hover:text-sky-200'
@@ -97,7 +99,17 @@ const openNpcWikiModal = (npcId: string) => {
           "
           @click="openNpcWikiModal(npc.id)"
         >
-          {{ npc.name }}
+          <span>{{ npc.name }}</span>
+          <span
+            v-if="npc.availableBattleKind === NpcBattleKindConstant.card"
+            class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5 font-emoji filter-[sepia(1)_saturate(5)_hue-rotate(165deg)_brightness(1.05)] drop-shadow-[0_0_3px_rgba(34,211,238,0.7)]"
+            aria-hidden="true"
+          >{{ NpcBattleIconConstant[NpcBattleKindConstant.card] }}</span>
+          <span
+            v-if="npc.availableBattleKind === NpcBattleKindConstant.digimon"
+            class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5 font-emoji"
+            aria-hidden="true"
+          >{{ NpcBattleIconConstant[NpcBattleKindConstant.digimon] }}</span>
         </button>
       </div>
     </div>

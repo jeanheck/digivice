@@ -79,16 +79,19 @@ export class AsukaServerMapPresenter {
           return npc.id === npcId;
         }) ?? null;
 
+      const availableBattleKind = NpcService.getAvailableBattleKind(
+        npcRaw,
+        journalNpc,
+        partyCharisma,
+        importantItems,
+      );
+
       return [
         {
           id: npcId,
           name: npcRaw.name,
-          hasAvailableBattle: NpcService.hasAvailableBattle(
-            npcRaw,
-            journalNpc,
-            partyCharisma,
-            importantItems,
-          ),
+          hasAvailableBattle: availableBattleKind !== null,
+          availableBattleKind,
         },
       ];
     });
