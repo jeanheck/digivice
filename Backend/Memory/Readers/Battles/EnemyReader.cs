@@ -8,8 +8,48 @@ namespace Backend.Memory.Readers.Battles
     {
         public EnemyResource Read(EnemyAddresses addresses)
         {
-            var slotBase = addresses.EnemySlotBase;
+            var slotIndex = ResolveActiveSlotIndex(addresses);
+            var slotBase = addresses.EnemySlotBase + (slotIndex * addresses.SlotStride);
 
+            return ReadSlot(slotBase, addresses);
+        }
+
+        private int ResolveActiveSlotIndex(EnemyAddresses addresses)
+        {
+            var activeUnitId = memoryReader.ReadInt16(addresses.ActiveUnitId);
+
+            for (var slotIndex = 0; slotIndex < addresses.SlotCount; slotIndex++)
+            {
+                var slotBase = addresses.EnemySlotBase + (slotIndex * addresses.SlotStride);
+                var slotId = memoryReader.ReadInt16(slotBase + addresses.Id);
+
+                if (slotId == activeUnitId && slotId != 0)
+                {
+                    var currentHp = memoryReader.ReadInt16(slotBase + addresses.HP.Current);
+                    if (currentHp > 0)
+                    {
+                        return slotIndex;
+                    }
+                }
+            }
+
+            for (var slotIndex = 0; slotIndex < addresses.SlotCount; slotIndex++)
+            {
+                var slotBase = addresses.EnemySlotBase + (slotIndex * addresses.SlotStride);
+                var slotId = memoryReader.ReadInt16(slotBase + addresses.Id);
+                var currentHp = memoryReader.ReadInt16(slotBase + addresses.HP.Current);
+
+                if (slotId != 0 && currentHp > 0)
+                {
+                    return slotIndex;
+                }
+            }
+
+            return 0;
+        }
+
+        private EnemyResource ReadSlot(long slotBase, EnemyAddresses addresses)
+        {
             return new EnemyResource
             {
                 Id = memoryReader.ReadInt16(slotBase + addresses.Id),

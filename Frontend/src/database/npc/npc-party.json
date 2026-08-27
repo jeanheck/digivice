@@ -771,7 +771,12 @@
       "canEscape": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
-      "memoryId": 4
+      "memoryId": 4,
+      "drops": [
+        {
+          "id": "powerCharge"
+        }
+      ]
     },
     "77": {
       "name": "Vegiemon",

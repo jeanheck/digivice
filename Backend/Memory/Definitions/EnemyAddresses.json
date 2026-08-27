@@ -1,5 +1,8 @@
 {
     "EnemySlotBase": "0x000A44D0",
+    "SlotStride": "0x20",
+    "SlotCount": "3",
+    "ActiveUnitId": "0x000A4558",
     "Field": "0x000A4530",
     "Id": "0x00",
     "Condition": "0x1C",

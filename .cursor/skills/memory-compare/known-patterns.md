@@ -378,6 +378,15 @@ at +0x32; combat block jumps Speed → Fire).
 occupy `0xA44D0`, `0xA44F0`, `0xA4510` (stride `0x20`) — each with its own
 `memoryId` + HP. Do not treat `0xA44D0` alone as a shared party id.
 
+**Active enemy slot resolution (integrated 2026-08-27):** `EnemyReader` picks
+which of the three enemy slots to expose as `State.Battle.Enemy`:
+
+1. Match `ActiveUnitId` @ `0xA4558` to a slot id with `HP.Current > 0`.
+2. Else first slot with `id != 0` and `HP.Current > 0`.
+3. Else slot 0 (wild single-enemy fallback).
+
+Wired in `EnemyAddresses.json` as `SlotStride`, `SlotCount`, `ActiveUnitId`.
+
 **Ally Digimon `+0x24` is species too — not a fixed “player” marker.**  
 Same table applies to the engaged ally half of `0xA4580`/`0xA45C0` (e.g. Dinohumon
 `0x100`, Kabuterimon `0x800`). Status-resist tails still differ per combatant;
