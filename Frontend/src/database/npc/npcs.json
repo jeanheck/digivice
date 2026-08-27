@@ -44,7 +44,15 @@
           "min": 60,
           "max": 209
         },
-        "deckId": "flyingFolder",
+        "deckId": "flyingFolder1",
+        "dropId": "2aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 60
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "flyingFolder2",
         "dropId": "2aBooster"
       }
     },

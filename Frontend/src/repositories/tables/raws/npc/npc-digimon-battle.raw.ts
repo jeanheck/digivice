@@ -1,4 +1,5 @@
 import type { NpcCharismaRequiredRaw } from "./npc-charisma-required.raw";
+import type { NpcTrophyRequiredRaw } from "./npc-trophy-required.raw";
 
 export interface NpcDigimonBattleRaw {
   charismaRequired: NpcCharismaRequiredRaw;
@@ -6,5 +7,5 @@ export interface NpcDigimonBattleRaw {
   exp: number;
   dvexp: number;
   bit: number;
-  asukaTrophyRequired?: boolean;
+  trophyRequired?: NpcTrophyRequiredRaw;
 }

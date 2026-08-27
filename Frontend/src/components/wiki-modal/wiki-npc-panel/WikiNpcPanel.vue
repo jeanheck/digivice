@@ -186,11 +186,16 @@ const openLocation = () => {
           v-for="option in battleOptions"
           :key="option.id"
           type="button"
-          class="w-full text-center px-2.5 py-2 rounded text-[10px] 2xl:text-[12px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none border"
+          class="w-full text-center px-2.5 py-2 rounded text-[10px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none border"
           :class="battleOptionClass(option)"
           @click="selectOption(option.id)"
         >
-          {{ $t(battleKindLabelKey(option.kind)) }} ({{ option.charismaRangeText }})
+          <span class="inline-flex items-center justify-center gap-1">
+            <span>
+              {{ $t(battleKindLabelKey(option.kind)) }} ({{ option.charismaRangeText }})
+            </span>
+            <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">🏆</span>
+          </span>
         </button>
       </div>
 

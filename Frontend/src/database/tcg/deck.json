@@ -76,7 +76,7 @@
             }
         ]
     },
-    "flyingFolder": {
+    "flyingFolder1": {
         "level": 9,
         "cards": [
             { 
@@ -126,6 +126,67 @@
             { 
                 "id": "1187", 
                 "quantity": 4 
+            }
+        ]
+    },
+    "flyingFolder2": {
+        "level": 9,
+        "cards": [
+            {
+                "id": "1002",
+                "quantity": 1
+            },
+            {
+                "id": "1015",
+                "quantity": 4
+            },
+            {
+                "id": "1045",
+                "quantity": 1
+            },
+            {
+                "id": "1083",
+                "quantity": 4
+            },
+            {
+                "id": "1166",
+                "quantity": 3
+            },
+            {
+                "id": "1168",
+                "quantity": 2
+            },
+            {
+                "id": "1176",
+                "quantity": 4
+            },
+            {
+                "id": "1178",
+                "quantity": 4
+            },
+            {
+                "id": "1212",
+                "quantity": 4
+            },
+            {
+                "id": "1219",
+                "quantity": 2
+            },
+            {
+                "id": "1222",
+                "quantity": 2
+            },
+            {
+                "id": "1227",
+                "quantity": 1
+            },
+            {
+                "id": "1228",
+                "quantity": 4
+            },
+            {
+                "id": "1307",
+                "quantity": 4
             }
         ]
     },
