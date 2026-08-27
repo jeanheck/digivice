@@ -1,8 +1,14 @@
-import type { Npc } from "@/models";
+import type { ImportantItems, Npc } from "@/models";
 import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
 import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
+import type { NpcTrophyRequiredRaw } from "@/repositories/tables/raws/npc/npc-trophy-required.raw";
 
 export type NpcBattleStatus = "completed" | "available" | "missingRequirements";
+
+const MISSING_CHARISMA_TOOLTIP_KEY = "npc.battle.requirement.missingCharisma";
+const MISSING_ASUKA_TROPHY_TOOLTIP_KEY = "npc.battle.requirement.missingAsukaTrophy";
+const MISSING_CHARISMA_AND_ASUKA_TROPHY_TOOLTIP_KEY =
+  "npc.battle.requirement.missingCharismaAndAsukaTrophy";
 
 export class NpcService {
   public static isCharismaInRange(
@@ -20,6 +26,58 @@ export class NpcService {
     return true;
   }
 
+  public static isTrophyRequirementMet(
+    trophyRequired: NpcTrophyRequiredRaw | undefined,
+    importantItems: ImportantItems | null | undefined,
+  ): boolean {
+    if (trophyRequired === undefined) {
+      return true;
+    }
+
+    if (trophyRequired === "asukaTrophy") {
+      return importantItems?.asukaTrophy === true;
+    }
+
+    return false;
+  }
+
+  public static areBattleRequirementsMet(
+    charismaRequired: NpcCharismaRequiredRaw,
+    trophyRequired: NpcTrophyRequiredRaw | undefined,
+    partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
+  ): boolean {
+    if (!this.isCharismaInRange(partyCharisma, charismaRequired)) {
+      return false;
+    }
+
+    return this.isTrophyRequirementMet(trophyRequired, importantItems);
+  }
+
+  public static getMissingRequirementTooltipKey(
+    charismaRequired: NpcCharismaRequiredRaw,
+    trophyRequired: NpcTrophyRequiredRaw | undefined,
+    partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
+  ): string | null {
+    const charismaMet = this.isCharismaInRange(partyCharisma, charismaRequired);
+    const trophyMet = this.isTrophyRequirementMet(trophyRequired, importantItems);
+
+    if (charismaMet && trophyMet) {
+      return null;
+    }
+
+    if (!charismaMet && !trophyMet) {
+      return MISSING_CHARISMA_AND_ASUKA_TROPHY_TOOLTIP_KEY;
+    }
+
+    if (!charismaMet) {
+      return MISSING_CHARISMA_TOOLTIP_KEY;
+    }
+
+    return MISSING_ASUKA_TROPHY_TOOLTIP_KEY;
+  }
+
   public static isDigimonBattleCompleted(
     journalNpc: Npc | null | undefined,
     battleId: string,
@@ -35,28 +93,15 @@ export class NpcService {
     return battle?.completed ?? false;
   }
 
-  public static isBattleAvailable(
-    charismaRequired: NpcCharismaRequiredRaw,
-    completed: boolean,
-    partyCharisma: number,
-  ): boolean {
-    if (completed) {
-      return false;
-    }
-
-    return this.isCharismaInRange(partyCharisma, charismaRequired);
-  }
-
   public static getBattleStatus(
     completed: boolean,
-    charismaRequired: NpcCharismaRequiredRaw,
-    partyCharisma: number,
+    requirementsMet: boolean,
   ): NpcBattleStatus {
     if (completed) {
       return "completed";
     }
 
-    if (this.isBattleAvailable(charismaRequired, completed, partyCharisma)) {
+    if (requirementsMet) {
       return "available";
     }
 
@@ -67,9 +112,15 @@ export class NpcService {
     npc: NpcRaw,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
   ): boolean {
     const hasAvailableCardBattle = Object.values(npc.cardBattles ?? {}).some((cardBattle) => {
-      return this.isCharismaInRange(partyCharisma, cardBattle.charismaRequired);
+      return this.areBattleRequirementsMet(
+        cardBattle.charismaRequired,
+        cardBattle.trophyRequired,
+        partyCharisma,
+        importantItems,
+      );
     });
     if (hasAvailableCardBattle) {
       return true;
@@ -77,11 +128,15 @@ export class NpcService {
 
     return Object.entries(npc.digimonBattles ?? {}).some(([battleId, digimonBattle]) => {
       const completed = this.isDigimonBattleCompleted(journalNpc, battleId);
+      if (completed) {
+        return false;
+      }
 
-      return this.isBattleAvailable(
+      return this.areBattleRequirementsMet(
         digimonBattle.charismaRequired,
-        completed,
+        digimonBattle.trophyRequired,
         partyCharisma,
+        importantItems,
       );
     });
   }

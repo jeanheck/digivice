@@ -39,11 +39,16 @@ const partyCharisma = computed(() => {
   return FooterPresenter.getPartyCharisma(store.currentState?.party?.slots ?? []);
 });
 
+const importantItems = computed(() => {
+  return store.currentState?.importantItems ?? null;
+});
+
 const panelViewModel = computed(() => {
   return WikiNpcPanelPresenter.getPanelViewModel(
     props.npcId,
     journalNpc.value,
     partyCharisma.value,
+    importantItems.value,
   );
 });
 
@@ -88,7 +93,7 @@ const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
     return "text-green-400/80 line-through decoration-green-500 border-green-500/40 bg-green-500/10 hover:bg-green-500/20";
   }
 
-  if (option.status === "available") {
+  if (option.requirementsMet) {
     if (isSelected) {
       return "text-cyan-300 border-cyan-500/60 bg-cyan-900/30 hover:bg-cyan-900/50";
     }
@@ -97,10 +102,33 @@ const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
   }
 
   if (isSelected) {
-    return "text-blue-300 border-blue-700/60 bg-blue-950/40 hover:bg-blue-900/60";
+    return "text-gray-300 border-gray-600/60 bg-gray-900/40 hover:bg-gray-800/60";
   }
 
   return "text-gray-400 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300";
+};
+
+const battleOptionCursorClass = (option: WikiNpcBattleOptionViewModel): string => {
+  if (option.status === "completed" || option.requirementsMet) {
+    return "cursor-pointer";
+  }
+
+  return "cursor-help";
+};
+
+const showBattleRequirementTooltip = (
+  event: MouseEvent,
+  option: WikiNpcBattleOptionViewModel,
+): void => {
+  if (
+    option.status === "completed" ||
+    option.requirementsMet ||
+    option.missingRequirementTooltipKey === null
+  ) {
+    return;
+  }
+
+  emit("show-condition-tooltip", event, option.missingRequirementTooltipKey);
 };
 
 const npcTypeLabelKey = computed(() => {
@@ -186,15 +214,24 @@ const openLocation = () => {
           v-for="option in battleOptions"
           :key="option.id"
           type="button"
-          class="w-full text-center px-2.5 py-2 rounded text-[10px] font-bold tracking-wide transition-colors cursor-pointer focus:outline-none border"
-          :class="battleOptionClass(option)"
+          class="w-full text-center px-2.5 py-2 rounded text-[10px] font-bold tracking-wide transition-colors focus:outline-none border"
+          :class="[battleOptionClass(option), battleOptionCursorClass(option)]"
           @click="selectOption(option.id)"
+          @mouseenter="showBattleRequirementTooltip($event, option)"
+          @mousemove="emit('move-stat-tooltip', $event)"
+          @mouseleave="emit('hide-stat-tooltip')"
         >
           <span class="inline-flex items-center justify-center gap-1">
             <span>
               {{ $t(battleKindLabelKey(option.kind)) }} ({{ option.charismaRangeText }})
             </span>
-            <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">🏆</span>
+            <span
+              v-if="option.showAsukaTrophyEmoji"
+              class="inline-flex leading-none text-[1.2rem] -translate-y-1"
+              :class="{ grayscale: !option.asukaTrophyOwned }"
+            >
+              🏆
+            </span>
           </span>
         </button>
       </div>

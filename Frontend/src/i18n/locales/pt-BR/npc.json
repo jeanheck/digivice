@@ -4,7 +4,12 @@
       "card": "Cartas",
       "digimon": "Digimon",
       "cardPlaceholder": "Batalha de cartas",
-      "digimonPlaceholder": "Batalha de Digimon"
+      "digimonPlaceholder": "Batalha de Digimon",
+      "requirement": {
+        "missingCharisma": "Carisma insuficiente ou fora da faixa",
+        "missingAsukaTrophy": "Falta Asuka Trophy",
+        "missingCharismaAndAsukaTrophy": "Carisma insuficiente ou fora da faixa; Falta Asuka Trophy"
+      }
     },
     "folderBagRequirementHint": "* Possuir a Mochila de Cartas é um requisito para batalhas contra treinadores."
   }

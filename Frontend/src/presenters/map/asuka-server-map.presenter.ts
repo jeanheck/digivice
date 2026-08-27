@@ -1,4 +1,4 @@
-import type { DigimonSlot, Npc, Quest } from "@/models";
+import type { DigimonSlot, ImportantItems, Npc, Quest } from "@/models";
 import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
 import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 import { NpcRepository } from "@/repositories/npc.repository";
@@ -63,6 +63,7 @@ export class AsukaServerMapPresenter {
     lastCompletedMainQuestStep: number,
     digimonSlots: DigimonSlot[],
     journalNpcs: Npc[],
+    importantItems: ImportantItems | null | undefined,
   ): MapNpcViewModel[] {
     const npcIds = LocationService.getNpcIds(locationId, lastCompletedMainQuestStep);
     const partyCharisma = FooterPresenter.getPartyCharisma(digimonSlots);
@@ -86,6 +87,7 @@ export class AsukaServerMapPresenter {
             npcRaw,
             journalNpc,
             partyCharisma,
+            importantItems,
           ),
         },
       ];
@@ -99,6 +101,7 @@ export class AsukaServerMapPresenter {
     digimonSlots: DigimonSlot[],
     previousMapId: string = "",
     journalNpcs: Npc[] = [],
+    importantItems: ImportantItems | null | undefined = null,
   ): AsukaServerMapViewModel {
     const fishingIds = this.resolveFishingIds(locationId, sideQuests);
     const kickingTreeIds = this.resolveKickingTreeIds(locationId, sideQuests);
@@ -109,6 +112,7 @@ export class AsukaServerMapPresenter {
       lastCompletedMainQuestStep,
       digimonSlots,
       journalNpcs,
+      importantItems,
     );
 
     if (this.isAsukaSewersSafeZone(locationId, previousMapId)) {

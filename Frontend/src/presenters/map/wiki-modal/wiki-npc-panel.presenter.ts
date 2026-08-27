@@ -1,8 +1,9 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
-import type { Npc } from "@/models";
+import type { ImportantItems, Npc } from "@/models";
 import { NpcRepository } from "@/repositories/npc.repository";
 import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
+import type { NpcTrophyRequiredRaw } from "@/repositories/tables/raws/npc/npc-trophy-required.raw";
 import { NpcService } from "@/services/npc.service";
 import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
 import type { WikiNpcPanelViewModel } from "@/viewmodels/wiki-modal/wiki-npc-panel.viewmodel";
@@ -16,10 +17,48 @@ export class WikiNpcPanelPresenter {
     return `${charismaRequired.min}+`;
   }
 
+  private static buildBattleOption(
+    kind: NpcBattleKindConstant,
+    battleId: string,
+    charismaRequired: NpcCharismaRequiredRaw,
+    trophyRequired: NpcTrophyRequiredRaw | undefined,
+    completed: boolean,
+    partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
+  ): WikiNpcBattleOptionViewModel {
+    const requirementsMet = NpcService.areBattleRequirementsMet(
+      charismaRequired,
+      trophyRequired,
+      partyCharisma,
+      importantItems,
+    );
+
+    return {
+      id: `${kind}-${battleId}`,
+      kind,
+      battleId,
+      charismaMin: charismaRequired.min,
+      charismaRangeText: this.formatCharismaRange(charismaRequired),
+      completed,
+      status: NpcService.getBattleStatus(completed, requirementsMet),
+      trophyRequired,
+      requirementsMet,
+      missingRequirementTooltipKey: NpcService.getMissingRequirementTooltipKey(
+        charismaRequired,
+        trophyRequired,
+        partyCharisma,
+        importantItems,
+      ),
+      showAsukaTrophyEmoji: trophyRequired === "asukaTrophy",
+      asukaTrophyOwned: importantItems?.asukaTrophy === true,
+    };
+  }
+
   public static getBattleOptions(
     npcId: string,
     journalNpc: Npc | null,
     partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
   ): WikiNpcBattleOptionViewModel[] {
     const npcRaw = NpcRepository.getNpcById(npcId);
     if (npcRaw === undefined) {
@@ -27,38 +66,30 @@ export class WikiNpcPanelPresenter {
     }
 
     const cardOptions = Object.entries(npcRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
-      return {
-        id: `${NpcBattleKindConstant.card}-${battleId}`,
-        kind: NpcBattleKindConstant.card,
+      return this.buildBattleOption(
+        NpcBattleKindConstant.card,
         battleId,
-        charismaMin: cardBattle.charismaRequired.min,
-        charismaRangeText: this.formatCharismaRange(cardBattle.charismaRequired),
-        completed: false,
-        status: NpcService.getBattleStatus(
-          false,
-          cardBattle.charismaRequired,
-          partyCharisma,
-        ),
-      };
+        cardBattle.charismaRequired,
+        cardBattle.trophyRequired,
+        false,
+        partyCharisma,
+        importantItems,
+      );
     });
 
     const digimonOptions = Object.entries(npcRaw.digimonBattles ?? {}).map(
       ([battleId, digimonBattle]) => {
         const completed = NpcService.isDigimonBattleCompleted(journalNpc, battleId);
 
-        return {
-          id: `${NpcBattleKindConstant.digimon}-${battleId}`,
-          kind: NpcBattleKindConstant.digimon,
+        return this.buildBattleOption(
+          NpcBattleKindConstant.digimon,
           battleId,
-          charismaMin: digimonBattle.charismaRequired.min,
-          charismaRangeText: this.formatCharismaRange(digimonBattle.charismaRequired),
+          digimonBattle.charismaRequired,
+          digimonBattle.trophyRequired,
           completed,
-          status: NpcService.getBattleStatus(
-            completed,
-            digimonBattle.charismaRequired,
-            partyCharisma,
-          ),
-        };
+          partyCharisma,
+          importantItems,
+        );
       },
     );
 
@@ -114,6 +145,7 @@ export class WikiNpcPanelPresenter {
     npcId: string,
     journalNpc: Npc | null,
     partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
   ): WikiNpcPanelViewModel | null {
     const npcRaw = NpcRepository.getNpcById(npcId);
     if (npcRaw === undefined) {
@@ -125,7 +157,7 @@ export class WikiNpcPanelPresenter {
       type: npcRaw.type,
       locationId: npcRaw.locationId,
       imageUrl: ImageCatalog.getNpcImageUrl(npcRaw.name),
-      battleOptions: this.getBattleOptions(npcId, journalNpc, partyCharisma),
+      battleOptions: this.getBattleOptions(npcId, journalNpc, partyCharisma, importantItems),
     };
   }
 }
