@@ -10,6 +10,7 @@ import {
   type TooltipHorizontalAlign,
   type TooltipPlacement,
 } from "@/composables/use-tooltip-position";
+import { BattleFieldPresenter } from "@/presenters/map/battle-field.presenter";
 import { BattleMapPresenter } from "@/presenters/map/battle-map.presenter";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useGameStore } from "@/stores/use-game-store";
@@ -33,6 +34,14 @@ const fieldImageUrl = computed(() => {
   return ImageCatalog.getBattleFieldUrl(fieldId);
 });
 const juniorImageUrl = ImageCatalog.getBattleJuniorUrl();
+
+const battleFieldId = computed(() => {
+  return store.currentState?.battle?.field ?? 0;
+});
+
+const fieldLabels = computed(() => {
+  return BattleFieldPresenter.getLabels(battleFieldId.value, t);
+});
 
 const enemy = computed(() => {
   return store.currentState?.battle?.enemy ?? null;
@@ -200,7 +209,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         v-if="battleMapViewModel.enemyImageUrl"
         :src="battleMapViewModel.enemyImageUrl"
         :alt="battleMapViewModel.title"
-        class="absolute top-2 left-2 z-[1] w-[39.5%] max-h-[50.5%] object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,0.75)]"
+        class="absolute top-2 left-2 z-[1] w-[50%] max-h-[65%] object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,1)]"
         :class="canOpenWiki ? 'cursor-pointer' : 'pointer-events-none'"
         @click="openEnemyWiki"
       />
@@ -225,6 +234,26 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
       >
         {{ isStatsOpen ? t("map.hideDetails") : t("map.showDetails") }}
       </button>
+
+      <div class="absolute bottom-2 left-2 z-20 flex flex-col gap-0.5 pointer-events-none">
+        <span
+          class="text-[10px] 2xl:text-sm font-bold tracking-wide text-white text-outline-black-glow leading-tight"
+        >
+          {{ fieldLabels.title }}
+        </span>
+        <span
+          v-if="fieldLabels.strengthenLabel"
+          class="text-[10px] 2xl:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow leading-tight"
+        >
+          {{ fieldLabels.strengthenLabel }}
+        </span>
+        <span
+          v-if="fieldLabels.weakenLabel"
+          class="text-[10px] 2xl:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow leading-tight"
+        >
+          {{ fieldLabels.weakenLabel }}
+        </span>
+      </div>
 
       <Transition name="fade">
         <div

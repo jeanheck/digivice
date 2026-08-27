@@ -1,0 +1,30 @@
+{
+  "fire": {
+    "strengthens": "fire",
+    "weakens": "ice"
+  },
+  "water": {
+    "strengthens": "water",
+    "weakens": "fire"
+  },
+  "ice": {
+    "strengthens": "ice",
+    "weakens": "wind"
+  },
+  "wind": {
+    "strengthens": "wind",
+    "weakens": "water"
+  },
+  "thunder": {
+    "strengthens": "thunder",
+    "weakens": "machine"
+  },
+  "machine": {
+    "strengthens": "machine",
+    "weakens": "dark"
+  },
+  "dark": {
+    "strengthens": "dark",
+    "weakens": "thunder"
+  }
+}

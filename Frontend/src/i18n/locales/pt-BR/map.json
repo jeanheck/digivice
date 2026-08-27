@@ -11,6 +11,9 @@
     "noDockHint": "USE O MAPA À ESQUERDA PARA VER ROTAS COMPLETAS OU PROCURAR DOCAS PELO MAPA",
     "unknownZone": "Zona Desconhecida",
     "showDetails": "Detalhes ▲",
-    "hideDetails": "Detalhes ▼"
+    "hideDetails": "Detalhes ▼",
+    "fieldNeutral": "Neutro",
+    "fieldStrengthen": "{element} +50%",
+    "fieldWeaken": "{element} -25%"
   }
 }
