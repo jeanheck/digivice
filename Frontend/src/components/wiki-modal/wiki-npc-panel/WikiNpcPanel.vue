@@ -93,7 +93,7 @@ const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
     return "text-green-400/80 line-through decoration-green-500 border-green-500/40 bg-green-500/10 hover:bg-green-500/20";
   }
 
-  if (option.requirementsMet) {
+  if (option.status === "available") {
     if (isSelected) {
       return "text-cyan-300 border-cyan-500/60 bg-cyan-900/30 hover:bg-cyan-900/50";
     }
@@ -109,26 +109,22 @@ const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
 };
 
 const battleOptionCursorClass = (option: WikiNpcBattleOptionViewModel): string => {
-  if (option.status === "completed" || option.requirementsMet) {
-    return "cursor-pointer";
+  if (option.battleTooltipKey !== null) {
+    return "cursor-help";
   }
 
-  return "cursor-help";
+  return "cursor-pointer";
 };
 
 const showBattleRequirementTooltip = (
   event: MouseEvent,
   option: WikiNpcBattleOptionViewModel,
 ): void => {
-  if (
-    option.status === "completed" ||
-    option.requirementsMet ||
-    option.missingRequirementTooltipKey === null
-  ) {
+  if (option.battleTooltipKey === null) {
     return;
   }
 
-  emit("show-condition-tooltip", event, option.missingRequirementTooltipKey);
+  emit("show-condition-tooltip", event, option.battleTooltipKey);
 };
 
 const npcTypeLabelKey = computed(() => {

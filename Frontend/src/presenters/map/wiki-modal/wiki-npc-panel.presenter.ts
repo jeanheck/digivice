@@ -4,7 +4,10 @@ import type { ImportantItems, Npc } from "@/models";
 import { NpcRepository } from "@/repositories/npc.repository";
 import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
 import type { NpcTrophyRequiredRaw } from "@/repositories/tables/raws/npc/npc-trophy-required.raw";
-import { NpcService } from "@/services/npc.service";
+import {
+  NpcService,
+  UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY,
+} from "@/services/npc.service";
 import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
 import type { WikiNpcPanelViewModel } from "@/viewmodels/wiki-modal/wiki-npc-panel.viewmodel";
 
@@ -17,7 +20,7 @@ export class WikiNpcPanelPresenter {
     return `${charismaRequired.min}+`;
   }
 
-  private static buildBattleOption(
+  private static buildBattleOptionBase(
     kind: NpcBattleKindConstant,
     battleId: string,
     charismaRequired: NpcCharismaRequiredRaw,
@@ -40,18 +43,60 @@ export class WikiNpcPanelPresenter {
       charismaMin: charismaRequired.min,
       charismaRangeText: this.formatCharismaRange(charismaRequired),
       completed,
-      status: NpcService.getBattleStatus(completed, requirementsMet),
+      status: NpcService.getBattleStatus(completed, false),
       trophyRequired,
       requirementsMet,
+      isActive: false,
+      isSuperseded: false,
       missingRequirementTooltipKey: NpcService.getMissingRequirementTooltipKey(
         charismaRequired,
         trophyRequired,
         partyCharisma,
         importantItems,
       ),
+      supersededTooltipKey: null,
+      battleTooltipKey: null,
       showAsukaTrophyEmoji: trophyRequired === "asukaTrophy",
       asukaTrophyOwned: importantItems?.asukaTrophy === true,
     };
+  }
+
+  private static finalizeBattleTooltip(option: WikiNpcBattleOptionViewModel): void {
+    option.battleTooltipKey = NpcService.getBattleTooltipKey({
+      status: option.status,
+      isSuperseded: option.isSuperseded,
+      missingRequirementTooltipKey: option.missingRequirementTooltipKey,
+    });
+  }
+
+  private static applyDigimonActivation(option: WikiNpcBattleOptionViewModel): void {
+    const isActive = option.requirementsMet && !option.completed;
+    option.isActive = isActive;
+    option.isSuperseded = false;
+    option.supersededTooltipKey = null;
+    option.status = NpcService.getBattleStatus(option.completed, isActive);
+    this.finalizeBattleTooltip(option);
+  }
+
+  private static applyCardActivation(
+    option: WikiNpcBattleOptionViewModel,
+    activeCardBattleIds: Set<string>,
+    importantItems: ImportantItems | null | undefined,
+  ): void {
+    const isActive = activeCardBattleIds.has(option.battleId);
+    const activeBattleId = [...activeCardBattleIds][0];
+    const isLowerTierThanActive =
+      activeBattleId !== undefined && option.battleId.localeCompare(activeBattleId) < 0;
+    const isSuperseded =
+      !isActive &&
+      (option.requirementsMet ||
+        (importantItems?.asukaTrophy === true && isLowerTierThanActive));
+
+    option.isActive = isActive;
+    option.isSuperseded = isSuperseded;
+    option.supersededTooltipKey = isSuperseded ? UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY : null;
+    option.status = NpcService.getBattleStatus(false, isActive);
+    this.finalizeBattleTooltip(option);
   }
 
   public static getBattleOptions(
@@ -65,8 +110,14 @@ export class WikiNpcPanelPresenter {
       return [];
     }
 
+    const activeCardBattleIds = NpcService.resolveActiveCardBattleIds(
+      npcRaw.cardBattles,
+      partyCharisma,
+      importantItems,
+    );
+
     const cardOptions = Object.entries(npcRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
-      return this.buildBattleOption(
+      const option = this.buildBattleOptionBase(
         NpcBattleKindConstant.card,
         battleId,
         cardBattle.charismaRequired,
@@ -75,13 +126,15 @@ export class WikiNpcPanelPresenter {
         partyCharisma,
         importantItems,
       );
+      this.applyCardActivation(option, activeCardBattleIds, importantItems);
+
+      return option;
     });
 
     const digimonOptions = Object.entries(npcRaw.digimonBattles ?? {}).map(
       ([battleId, digimonBattle]) => {
         const completed = NpcService.isDigimonBattleCompleted(journalNpc, battleId);
-
-        return this.buildBattleOption(
+        const option = this.buildBattleOptionBase(
           NpcBattleKindConstant.digimon,
           battleId,
           digimonBattle.charismaRequired,
@@ -90,6 +143,9 @@ export class WikiNpcPanelPresenter {
           partyCharisma,
           importantItems,
         );
+        this.applyDigimonActivation(option);
+
+        return option;
       },
     );
 
@@ -126,11 +182,34 @@ export class WikiNpcPanelPresenter {
       return lastOption.id;
     }
 
-    const availableOption = options.find((option) => {
+    const digimonOptions = options
+      .filter((option) => {
+        return option.kind === NpcBattleKindConstant.digimon;
+      })
+      .sort((firstOption, secondOption) => {
+        return firstOption.battleId.localeCompare(secondOption.battleId);
+      });
+
+    const firstAvailableDigimonOption = digimonOptions.find((option) => {
       return option.status === "available";
     });
-    if (availableOption !== undefined) {
-      return availableOption.id;
+    if (firstAvailableDigimonOption !== undefined) {
+      return firstAvailableDigimonOption.id;
+    }
+
+    const cardOptions = options
+      .filter((option) => {
+        return option.kind === NpcBattleKindConstant.card;
+      })
+      .sort((firstOption, secondOption) => {
+        return firstOption.battleId.localeCompare(secondOption.battleId);
+      });
+
+    const availableCardOptions = cardOptions.filter((option) => {
+      return option.status === "available";
+    });
+    if (availableCardOptions.length > 0) {
+      return availableCardOptions[availableCardOptions.length - 1]?.id ?? null;
     }
 
     const firstIncompleteOption = options.find((option) => {

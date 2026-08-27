@@ -1,14 +1,19 @@
 import type { ImportantItems, Npc } from "@/models";
+import type { NpcCardBattleRaw } from "@/repositories/tables/raws/npc/npc-card-battle.raw";
 import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
 import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
 import type { NpcTrophyRequiredRaw } from "@/repositories/tables/raws/npc/npc-trophy-required.raw";
 
 export type NpcBattleStatus = "completed" | "available" | "missingRequirements";
 
-const MISSING_CHARISMA_TOOLTIP_KEY = "npc.battle.requirement.missingCharisma";
-const MISSING_ASUKA_TROPHY_TOOLTIP_KEY = "npc.battle.requirement.missingAsukaTrophy";
-const MISSING_CHARISMA_AND_ASUKA_TROPHY_TOOLTIP_KEY =
+export const MISSING_CHARISMA_TOOLTIP_KEY = "npc.battle.requirement.missingCharisma";
+export const MISSING_ASUKA_TROPHY_TOOLTIP_KEY = "npc.battle.requirement.missingAsukaTrophy";
+export const MISSING_CHARISMA_AND_ASUKA_TROPHY_TOOLTIP_KEY =
   "npc.battle.requirement.missingCharismaAndAsukaTrophy";
+export const UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY =
+  "npc.battle.requirement.unavailableAfterAsukaTrophy";
+export const AVAILABLE_BATTLE_TOOLTIP_KEY = "npc.battle.requirement.available";
+export const ALREADY_WON_BATTLE_TOOLTIP_KEY = "npc.battle.requirement.alreadyWon";
 
 export class NpcService {
   public static isCharismaInRange(
@@ -78,6 +83,39 @@ export class NpcService {
     return MISSING_ASUKA_TROPHY_TOOLTIP_KEY;
   }
 
+  public static resolveActiveCardBattleIds(
+    cardBattles: Record<string, NpcCardBattleRaw> | undefined,
+    partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
+  ): Set<string> {
+    const sortedCardBattles = Object.entries(cardBattles ?? {}).sort(
+      ([firstBattleId], [secondBattleId]) => {
+        return firstBattleId.localeCompare(secondBattleId);
+      },
+    );
+
+    let activeBattleId: string | null = null;
+
+    for (const [battleId, cardBattle] of sortedCardBattles) {
+      if (
+        this.areBattleRequirementsMet(
+          cardBattle.charismaRequired,
+          cardBattle.trophyRequired,
+          partyCharisma,
+          importantItems,
+        )
+      ) {
+        activeBattleId = battleId;
+      }
+    }
+
+    if (activeBattleId === null) {
+      return new Set();
+    }
+
+    return new Set([activeBattleId]);
+  }
+
   public static isDigimonBattleCompleted(
     journalNpc: Npc | null | undefined,
     battleId: string,
@@ -93,15 +131,32 @@ export class NpcService {
     return battle?.completed ?? false;
   }
 
-  public static getBattleStatus(
-    completed: boolean,
-    requirementsMet: boolean,
-  ): NpcBattleStatus {
+  public static getBattleTooltipKey(params: {
+    status: NpcBattleStatus;
+    isSuperseded: boolean;
+    missingRequirementTooltipKey: string | null;
+  }): string | null {
+    if (params.status === "completed") {
+      return ALREADY_WON_BATTLE_TOOLTIP_KEY;
+    }
+
+    if (params.status === "available") {
+      return AVAILABLE_BATTLE_TOOLTIP_KEY;
+    }
+
+    if (params.isSuperseded) {
+      return UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY;
+    }
+
+    return params.missingRequirementTooltipKey;
+  }
+
+  public static getBattleStatus(completed: boolean, isActive: boolean): NpcBattleStatus {
     if (completed) {
       return "completed";
     }
 
-    if (requirementsMet) {
+    if (isActive) {
       return "available";
     }
 
@@ -114,15 +169,12 @@ export class NpcService {
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): boolean {
-    const hasAvailableCardBattle = Object.values(npc.cardBattles ?? {}).some((cardBattle) => {
-      return this.areBattleRequirementsMet(
-        cardBattle.charismaRequired,
-        cardBattle.trophyRequired,
-        partyCharisma,
-        importantItems,
-      );
-    });
-    if (hasAvailableCardBattle) {
+    const activeCardBattleIds = this.resolveActiveCardBattleIds(
+      npc.cardBattles,
+      partyCharisma,
+      importantItems,
+    );
+    if (activeCardBattleIds.size > 0) {
       return true;
     }
 

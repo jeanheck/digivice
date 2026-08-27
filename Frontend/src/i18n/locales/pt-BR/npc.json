@@ -8,7 +8,10 @@
       "requirement": {
         "missingCharisma": "Carisma insuficiente ou fora da faixa",
         "missingAsukaTrophy": "Falta Asuka Trophy",
-        "missingCharismaAndAsukaTrophy": "Carisma insuficiente ou fora da faixa; Falta Asuka Trophy"
+        "missingCharismaAndAsukaTrophy": "Carisma insuficiente ou fora da faixa; Falta Asuka Trophy",
+        "unavailableAfterAsukaTrophy": "Indisponível após Asuka Trophy",
+        "available": "Batalha disponível",
+        "alreadyWon": "Você já venceu essa batalha"
       }
     },
     "folderBagRequirementHint": "* Possuir a Mochila de Cartas é um requisito para batalhas contra treinadores."

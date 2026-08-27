@@ -12,7 +12,11 @@ export interface WikiNpcBattleOptionViewModel {
   status: NpcBattleStatus;
   trophyRequired?: NpcTrophyRequiredRaw;
   requirementsMet: boolean;
+  isActive: boolean;
+  isSuperseded: boolean;
   missingRequirementTooltipKey: string | null;
+  supersededTooltipKey: string | null;
+  battleTooltipKey: string | null;
   showAsukaTrophyEmoji: boolean;
   asukaTrophyOwned: boolean;
 }

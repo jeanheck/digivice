@@ -8,7 +8,10 @@
       "requirement": {
         "missingCharisma": "Insufficient charisma or out of range",
         "missingAsukaTrophy": "Missing Asuka Trophy",
-        "missingCharismaAndAsukaTrophy": "Insufficient charisma or out of range; Missing Asuka Trophy"
+        "missingCharismaAndAsukaTrophy": "Insufficient charisma or out of range; Missing Asuka Trophy",
+        "unavailableAfterAsukaTrophy": "Unavailable after Asuka Trophy",
+        "available": "Battle available",
+        "alreadyWon": "You already won this battle"
       }
     },
     "folderBagRequirementHint": "* Owning the Folder Bag is a requirement for battles against tamers."
