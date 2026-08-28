@@ -19,6 +19,7 @@ const emit = defineEmits<{
     base: number,
     equip: number,
     total: number,
+    battleDelta: number,
   ): void;
   (e: "showTitleTooltip", event: MouseEvent, title: string): void;
   (e: "moveTooltip", event: MouseEvent): void;
@@ -40,6 +41,26 @@ const statKey = computed(() => props.stat as Constant);
 const icon = computed(() => {
   return IconConstant[statKey.value];
 });
+
+const battleDelta = computed(() => {
+  return props.statViewModel.fromBattle ?? 0;
+});
+
+const displayValue = computed(() => {
+  return props.statViewModel.sumBetweenDigimonAndEquipaments + battleDelta.value;
+});
+
+const valueColorClass = computed(() => {
+  if (battleDelta.value > 0) {
+    return "text-green-400";
+  }
+
+  if (battleDelta.value < 0) {
+    return "text-red-400";
+  }
+
+  return "";
+});
 </script>
 
 <template>
@@ -59,6 +80,7 @@ const icon = computed(() => {
     <div class="flex items-center gap-1 min-w-0 font-bold tracking-wide text-xs 2xl:text-base">
       <span
         class="min-w-[3ch] text-right tabular-nums shadow-text cursor-help"
+        :class="valueColorClass"
         @mouseenter="
           (event) =>
             emit(
@@ -67,12 +89,13 @@ const icon = computed(() => {
               label,
               statViewModel.fromDigimon,
               statViewModel.fromEquipaments,
-              statViewModel.sumBetweenDigimonAndEquipaments,
+              displayValue,
+              battleDelta,
             )
         "
         @mousemove="(event) => emit('moveTooltip', event)"
         @mouseleave="emit('hideTooltip')"
-        >{{ statViewModel.sumBetweenDigimonAndEquipaments }}</span
+        >{{ displayValue }}</span
       >
       <span
         v-if="statViewModel.fromDigievolution > 0"

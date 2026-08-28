@@ -22,7 +22,7 @@ type TooltipVariant = "none" | "default" | "math";
 const activeVariant = ref<TooltipVariant>("none");
 
 const defaultTooltipContent = ref({ title: "", text: "" });
-const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0 });
+const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0, battleDelta: 0 });
 
 const statsViewModel = computed(() => {
   return StatsPresenter.getStatsViewModel(props.digimon);
@@ -54,8 +54,9 @@ const showMathTooltip = (
   base: number,
   equip: number,
   total: number,
+  battleDelta: number,
 ) => {
-  mathTooltipContent.value = { title, base, equip, total };
+  mathTooltipContent.value = { title, base, equip, total, battleDelta };
   activeVariant.value = "math";
   showAt(event, { placement: tooltipPlacement });
 };
@@ -130,6 +131,7 @@ const moveTooltip = (event: MouseEvent) => {
       :base="mathTooltipContent.base"
       :equip="mathTooltipContent.equip"
       :total="mathTooltipContent.total"
+      :battle-delta="mathTooltipContent.battleDelta"
       placement="below"
     />
   </div>

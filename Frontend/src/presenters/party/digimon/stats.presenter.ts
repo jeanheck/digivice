@@ -12,6 +12,7 @@ import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
+import type { AttributesViewModel } from "@/viewmodels/digimon/attributes.viewmodel";
 import type { DigimonStatsViewModel } from "@/viewmodels/digimon/digimon-stats.viewmodel";
 import type { DigievolutionViewModel } from "@/viewmodels/digievolution/digievolution.viewmodel";
 
@@ -26,18 +27,31 @@ export class StatsPresenter {
       (equipmentId) => EquipmentRepository.getEquipmentById(equipmentId).type,
     );
     const rawEquipments = EquipmentRepository.getEquipmentsByIds(equipmentIds);
+    const attributes = AttributesConverter.convert(
+      digimon.attributes,
+      activeDigievolution?.attributes ?? null,
+      this.getAttributesEquipmentBonuses(rawEquipments),
+    );
 
     return {
-      attributes: AttributesConverter.convert(
-        digimon.attributes,
-        activeDigievolution?.attributes ?? null,
-        this.getAttributesEquipmentBonuses(rawEquipments),
-      ),
+      attributes: this.applyBattleDeltas(attributes, digimon.inBattle),
       resistances: ResistancesConverter.convert(
         digimon.resistances,
         activeDigievolution?.resistances ?? null,
         this.getResistancesEquipmentBonuses(rawEquipments),
       ),
+    };
+  }
+
+  private static applyBattleDeltas(
+    attributes: AttributesViewModel,
+    inBattle: Digimon["inBattle"],
+  ): AttributesViewModel {
+    return {
+      ...attributes,
+      strength: { ...attributes.strength, fromBattle: inBattle.strength },
+      defense: { ...attributes.defense, fromBattle: inBattle.defense },
+      speed: { ...attributes.speed, fromBattle: inBattle.speed },
     };
   }
 
