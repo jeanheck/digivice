@@ -16,18 +16,21 @@ public class StateComposerTests
         var importantItems = new ImportantItems { TreeBoots = true };
         var party = new Party { Slots = [] };
         var battle = new Battle();
+        var cardBattle = new CardBattle { OpponentId = 0 };
         var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };
 
         var playerProviderMock = new Mock<IPlayerProvider>();
         var importantItemsProviderMock = new Mock<IImportantItemsProvider>();
         var partyProviderMock = new Mock<IPartyProvider>();
         var battleProviderMock = new Mock<IBattleProvider>();
+        var cardBattleProviderMock = new Mock<ICardBattleProvider>();
         var journalProviderMock = new Mock<IJournalProvider>();
 
         playerProviderMock.Setup(p => p.Get()).Returns(player);
         importantItemsProviderMock.Setup(p => p.Get()).Returns(importantItems);
         partyProviderMock.Setup(p => p.Get()).Returns(party);
         battleProviderMock.Setup(p => p.Get()).Returns(battle);
+        cardBattleProviderMock.Setup(p => p.Get()).Returns(cardBattle);
         journalProviderMock.Setup(p => p.Get()).Returns(journal);
 
         var composer = new StateComposer(
@@ -35,6 +38,7 @@ public class StateComposerTests
             importantItemsProviderMock.Object,
             partyProviderMock.Object,
             battleProviderMock.Object,
+            cardBattleProviderMock.Object,
             journalProviderMock.Object);
 
         var state = composer.Compose();
@@ -43,11 +47,13 @@ public class StateComposerTests
         Assert.Same(importantItems, state.ImportantItems);
         Assert.Same(party, state.Party);
         Assert.Same(battle, state.Battle);
+        Assert.Same(cardBattle, state.CardBattle);
         Assert.Same(journal, state.Journal);
         playerProviderMock.Verify(p => p.Get(), Times.Once);
         importantItemsProviderMock.Verify(p => p.Get(), Times.Once);
         partyProviderMock.Verify(p => p.Get(), Times.Once);
         battleProviderMock.Verify(p => p.Get(), Times.Once);
+        cardBattleProviderMock.Verify(p => p.Get(), Times.Once);
         journalProviderMock.Verify(p => p.Get(), Times.Once);
     }
 }

@@ -13,6 +13,7 @@ public static class StateConverter
             ImportantItems = state.ImportantItems != null ? ImportantItemsConverter.ToDTO(state.ImportantItems) : null,
             Party = state.Party != null ? PartyConverter.ToDTO(state.Party) : null,
             Battle = state.Battle != null ? BattleConverter.ToDTO(state.Battle) : null,
+            CardBattle = state.CardBattle != null ? CardBattleConverter.ToDTO(state.CardBattle) : null,
             Journal = state.Journal != null ? JournalConverter.ToDTO(state.Journal) : null,
         };
     }

@@ -6,6 +6,7 @@ namespace Backend.Domain.Models
         public ImportantItems ImportantItems { get; set; } = new();
         public Party Party { get; set; } = new();
         public Battle Battle { get; set; } = new();
+        public CardBattle CardBattle { get; set; } = new();
         public Journal Journal { get; set; } = new();
     }
 }

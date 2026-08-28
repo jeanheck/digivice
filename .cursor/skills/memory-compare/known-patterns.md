@@ -821,6 +821,50 @@ Win (`0x48F19` `0→1` at post-battle fala1). Digimon bit stays `0`.
 - Intro-loop snap vs post-dialogue-done: **no** new quest progress bit (lock
   already present before the second talk, if it exists at all).
 
+---
+
+## Card battle screen (suspected)
+
+Snapshots: `card-battle-genji.bin`, `card-battle-natsumi.bin` vs digimon-battle
+pairs `kuwagamon-genji.bin`, `betamon-natsumi.bin`.
+
+### MapId (confirmed)
+
+- **`0x4B3F8`** (Int16): `0x0700` while in card battle UI (same pattern as
+  `0x0600` digimon battle).
+
+### PreviousMapId (confirmed)
+
+- **`0x4B400`** / mirror **`0x4B410`**: world MapId before entering card battle
+  (Genji snap `0x0200`, Natsumi snap `0x021D`). Useful when only one card-battle
+  NPC exists on that map; **not** enough alone on Yellow Cruiser (`0x0211` × 4 NPCs).
+
+### Opponent id on card battle entry (confirmed)
+
+On transition **`0x0600 → 0x0700`** (card battle screen), **`0x4B404`** (Int32) holds a
+**unique opponent id** per tamer. **`0`** outside card battle (`0x0600` digimon battle).
+
+Snapshots: `card-battle-{genji,natsumi,nacky,wong,steve,gloria}.bin` vs
+`kuwagamon-genji.bin`, `betamon-natsumi.bin`.
+
+| `0x4B404` | Digivice `npcId` | `PreviousMapId` |
+|-----------|------------------|-----------------|
+| `1` | genji | `0x0200` |
+| `3` | nacky | `0x0211` |
+| `5` | wong | `0x0211` |
+| `7` | steve | `0x0211` |
+| `9` | gloria | `0x0211` |
+| `11` | natsumi | `0x021D` |
+
+**Secondary field `0x4B420` (Int32):** `0` (Genji only) or `35` (all other card battles
+in this series). Not needed to distinguish Yellow Cruiser NPCs.
+
+**CardBattleMap / backend wiring:** read `CardBattle.OpponentId` from state (address in
+`CardBattleAddresses.json`), map via static table above.
+`PreviousMapId` alone is insufficient on `0x0211` (four NPCs share it).
+
+Card catalog ids (e.g. `1095`, `1005`) were **not** found as Int16 in `0x40000–0x50000`.
+RetroAchievements **`0xABD9D`** = deck level (Genji `4`) or heap noise — prefer **`0x4B404`**.
 
 ---
 

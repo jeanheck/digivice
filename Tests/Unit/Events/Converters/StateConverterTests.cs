@@ -15,6 +15,7 @@ public class StateConverterTests
             ImportantItems = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true },
             Party = new Party { Slots = [] },
             Battle = new Battle(),
+            CardBattle = new CardBattle { OpponentId = 0 },
             Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] }
         };
 
@@ -38,6 +39,10 @@ public class StateConverterTests
         Assert.True(dto.Battle.Enemy.HasValue);
         Assert.Equal(0, dto.Battle.Enemy.Value!.Id.Value);
 
+        Assert.NotNull(dto.CardBattle);
+        Assert.True(dto.CardBattle.OpponentId.HasValue);
+        Assert.Equal(0, dto.CardBattle.OpponentId.Value);
+
         Assert.NotNull(dto.Journal);
         Assert.True(dto.Journal.MainQuest.HasValue);
         Assert.Equal("MainQuest", dto.Journal.MainQuest.Value!.Id);
@@ -52,6 +57,7 @@ public class StateConverterTests
             ImportantItems = null!,
             Party = null!,
             Battle = null!,
+            CardBattle = null!,
             Journal = null!
         };
 
@@ -61,6 +67,7 @@ public class StateConverterTests
         Assert.Null(dto.ImportantItems);
         Assert.Null(dto.Party);
         Assert.Null(dto.Battle);
+        Assert.Null(dto.CardBattle);
         Assert.Null(dto.Journal);
     }
 }

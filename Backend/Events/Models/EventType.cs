@@ -8,5 +8,6 @@ public enum EventType
     ImportantItemsChanged,
     PartyChanged,
     BattleChanged,
+    CardBattleChanged,
     JournalChanged
 }

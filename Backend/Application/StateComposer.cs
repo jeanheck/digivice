@@ -8,6 +8,7 @@ namespace Backend.Application
         IImportantItemsProvider importantItemsProvider,
         IPartyProvider partyProvider,
         IBattleProvider battleProvider,
+        ICardBattleProvider cardBattleProvider,
         IJournalProvider journalProvider)
     {
         public State Compose()
@@ -18,6 +19,7 @@ namespace Backend.Application
                 ImportantItems = importantItemsProvider.Get(),
                 Party = partyProvider.Get(),
                 Battle = battleProvider.Get(),
+                CardBattle = cardBattleProvider.Get(),
                 Journal = journalProvider.Get(),
             };
         }

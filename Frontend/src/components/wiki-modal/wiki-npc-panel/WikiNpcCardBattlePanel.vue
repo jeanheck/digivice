@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 import WikiNpcDeckCard from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDeckCard.vue";
 import WikiProfileDrops from "@/components/wiki-modal/wiki-profile-panel/WikiProfileDrops.vue";
 import { WikiNpcCardBattlePresenter } from "@/presenters/map/wiki-modal/wiki-npc-card-battle.presenter";
+
+const { t } = useI18n();
 
 const props = defineProps<{
   npcId: string;
@@ -18,6 +21,15 @@ const battleViewModel = computed(() => {
   return WikiNpcCardBattlePresenter.getBattleViewModel(props.npcId, props.battleId);
 });
 
+const deckTitle = computed(() => {
+  const battle = battleViewModel.value;
+  if (battle === null) {
+    return "";
+  }
+
+  return `(${t("digimon.lv")} ${battle.level}) ${t(battle.nameKey)}`;
+});
+
 const handleSelect = (cardId: string): void => {
   emit("open-card", cardId);
 };
@@ -29,7 +41,7 @@ const handleSelect = (cardId: string): void => {
     class="flex flex-col flex-1 min-h-0 overflow-hidden text-xs text-center gap-4 p-3"
   >
     <p class="shrink-0 text-blue-500 uppercase font-bold text-center">
-      {{ $t(battleViewModel.nameKey) }}
+      {{ deckTitle }}
     </p>
 
     <div class="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scroll">

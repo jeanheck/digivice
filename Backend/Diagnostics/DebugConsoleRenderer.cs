@@ -46,6 +46,7 @@ namespace Backend.Diagnostics
             RenderPlayer(sb, state.Player);
             RenderParty(sb, state.Party);
             RenderBattle(sb, state.Battle);
+            RenderCardBattle(sb, state.CardBattle);
 
             sb.AppendLine($"{Gray}-------------------------------------------------{Reset}");
             sb.AppendLine($"\nMonitoring... (Press 'Ctrl + C' to exit)");
@@ -94,6 +95,11 @@ namespace Backend.Diagnostics
                 $"{Cyan}BATTLE ENEMY:{Reset} GroupId:{enemy.GroupId} | Id:{enemy.Id} | Condition:{enemy.Condition} | " +
                 $"HP:{enemy.HP.Current.ToString(StatFormat)}/{enemy.HP.Max.ToString(StatFormat)} | " +
                 $"AtkΔ:{enemy.Strength.ToString(StatFormat)} DefΔ:{enemy.Defense.ToString(StatFormat)} SpdΔ:{enemy.Speed.ToString(StatFormat)}");
+        }
+
+        private void RenderCardBattle(StringBuilder sb, CardBattle cardBattle)
+        {
+            sb.AppendLine($"{Cyan}CARD BATTLE:{Reset} OpponentId:{cardBattle.OpponentId}");
         }
 
         private void RenderDigimon(StringBuilder sb, DigimonSlot slot)

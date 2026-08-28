@@ -41,6 +41,9 @@
   "0600": {
     "imageName": "In Battle Screen"
   },
+  "0700": {
+    "imageName": "In Card Battle Screen"
+  },
   "0200": {
     "imageName": "Asuka City",
     "worldLocation": {

@@ -27,6 +27,7 @@ public class GameLoopServiceTests
     private readonly Mock<IImportantItemsProvider> _importantItemsProviderMock;
     private readonly Mock<IPartyProvider> _partyProviderMock;
     private readonly Mock<IBattleProvider> _battleProviderMock;
+    private readonly Mock<ICardBattleProvider> _cardBattleProviderMock;
     private readonly Mock<IJournalProvider> _journalProviderMock;
     private readonly Mock<IEventDispatcherService> _eventDispatcherServiceMock;
     private readonly GameStateStore _gameStateStore;
@@ -53,6 +54,7 @@ public class GameLoopServiceTests
         _importantItemsProviderMock = new Mock<IImportantItemsProvider>();
         _partyProviderMock = new Mock<IPartyProvider>();
         _battleProviderMock = new Mock<IBattleProvider>();
+        _cardBattleProviderMock = new Mock<ICardBattleProvider>();
         _journalProviderMock = new Mock<IJournalProvider>();
         _eventDispatcherServiceMock = new Mock<IEventDispatcherService>();
         _gameStateStore = new GameStateStore();
@@ -66,6 +68,7 @@ public class GameLoopServiceTests
         _importantItemsProviderMock.Setup(p => p.Get()).Returns(importantItems);
         _partyProviderMock.Setup(p => p.Get()).Returns(party);
         _battleProviderMock.Setup(p => p.Get()).Returns(new Battle());
+        _cardBattleProviderMock.Setup(p => p.Get()).Returns(new CardBattle());
         _journalProviderMock.Setup(p => p.Get()).Returns(journal);
 
         _stateComposer = new StateComposer(
@@ -73,6 +76,7 @@ public class GameLoopServiceTests
             _importantItemsProviderMock.Object,
             _partyProviderMock.Object,
             _battleProviderMock.Object,
+            _cardBattleProviderMock.Object,
             _journalProviderMock.Object);
 
         var inMemorySettings = new Dictionary<string, string?> {
@@ -312,6 +316,7 @@ public class GameLoopServiceTests
             _importantItemsProviderMock.Object,
             _partyProviderMock.Object,
             _battleProviderMock.Object,
+            _cardBattleProviderMock.Object,
             _journalProviderMock.Object);
 
         var service = CreateGameLoopService(stateComposer);

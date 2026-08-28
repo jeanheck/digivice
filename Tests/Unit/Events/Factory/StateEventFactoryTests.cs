@@ -26,6 +26,7 @@ public class StateEventFactoryTests
         Assert.NotNull(dto.ImportantItems);
         Assert.NotNull(dto.Party);
         Assert.NotNull(dto.Battle);
+        Assert.NotNull(dto.CardBattle);
         Assert.NotNull(dto.Journal);
     }
 
@@ -97,6 +98,20 @@ public class StateEventFactoryTests
     }
 
     [Fact]
+    public void Create_ShouldReturnCardBattleChangedEvent_WhenOnlyCardBattleChanges()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.CardBattle.OpponentId = 11;
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.CardBattleChanged, ev.Type);
+        Assert.IsType<CardBattleDTO>(ev.Payload);
+    }
+
+    [Fact]
     public void Create_ShouldReturnJournalChangedEvent_WhenOnlyJournalChanges()
     {
         var previousState = CreateBaseState();
@@ -133,17 +148,19 @@ public class StateEventFactoryTests
         newState.ImportantItems.AsukaTrophy = true;
         newState.Party.Slots[0].Digimon!.Level = 22;
         newState.Battle.Enemy.Speed = 84;
+        newState.CardBattle.OpponentId = 11;
         newState.Journal.MainQuest.Steps[0].Value = 1;
         newState.Journal.Auctions[0].Value = 0x01;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
-        Assert.Equal(5, result.Count);
+        Assert.Equal(6, result.Count);
         Assert.Equal(EventType.PlayerChanged, result[0].Type);
         Assert.Equal(EventType.ImportantItemsChanged, result[1].Type);
         Assert.Equal(EventType.PartyChanged, result[2].Type);
         Assert.Equal(EventType.BattleChanged, result[3].Type);
-        Assert.Equal(EventType.JournalChanged, result[4].Type);
+        Assert.Equal(EventType.CardBattleChanged, result[4].Type);
+        Assert.Equal(EventType.JournalChanged, result[5].Type);
     }
 
     private static State CreateBaseState()
@@ -174,6 +191,7 @@ public class StateEventFactoryTests
                 ]
             },
             Battle = new Battle(),
+            CardBattle = new CardBattle(),
             Journal = new Journal
             {
                 MainQuest = new Quest
