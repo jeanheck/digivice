@@ -57,9 +57,9 @@ export interface EnemyViewModel {
   strDown: string;
   defDown: string;
   spdDown: string;
-  dvxp: number;
-  exp: number;
-  bits: number;
+  dvxp?: number;
+  exp?: number;
+  bits?: number;
   drops?: EnemyDropViewModel[];
   locations?: EnemyLocationViewModel[];
   regularAttackId: string | null;

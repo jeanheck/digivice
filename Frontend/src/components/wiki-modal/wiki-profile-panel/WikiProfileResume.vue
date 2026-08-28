@@ -40,6 +40,14 @@ const hasLocations = computed(() => {
   );
 });
 
+const showBaseExp = computed(() => {
+  return props.showRewards && props.enemy.exp !== undefined;
+});
+
+const showBaseBits = computed(() => {
+  return props.showRewards && props.enemy.bits !== undefined;
+});
+
 const handleOpenLocation = (locationId: string): void => {
   emit("open-locations", locationId);
 };
@@ -71,7 +79,7 @@ const handleOpenLocation = (locationId: string): void => {
     </div>
 
     <div
-      v-if="showRewards"
+      v-if="showBaseExp"
       class="flex items-center justify-between text-xs shrink-0"
     >
       <span class="font-bold text-blue-500 tracking-wider uppercase">
@@ -81,7 +89,7 @@ const handleOpenLocation = (locationId: string): void => {
     </div>
 
     <div
-      v-if="showRewards"
+      v-if="showBaseBits"
       class="flex items-center justify-between text-xs shrink-0"
     >
       <span class="font-bold text-blue-500 tracking-wider uppercase"

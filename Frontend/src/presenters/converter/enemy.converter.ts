@@ -3,7 +3,7 @@ import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 export class EnemyConverter {
   public static convert(enemyRaw: EnemyRaw): EnemyViewModel {
-    return {
+    const enemyViewModel: EnemyViewModel = {
       name: enemyRaw.name,
       level: enemyRaw.level,
       hp: enemyRaw.hp,
@@ -59,16 +59,30 @@ export class EnemyConverter {
       strDown: enemyRaw.strDown,
       defDown: enemyRaw.defDown,
       spdDown: enemyRaw.spdDown,
-      dvxp: enemyRaw.dvxp,
-      exp: enemyRaw.exp,
-      bits: enemyRaw.bits,
-      drops: enemyRaw.drops?.map((dropRaw) => {
+      regularAttackId: enemyRaw.regularAttackId,
+      techniqueId: enemyRaw.techniqueId,
+      boss: enemyRaw.boss === true,
+    };
+
+    if (enemyRaw.dvxp !== undefined) {
+      enemyViewModel.dvxp = enemyRaw.dvxp;
+    }
+    if (enemyRaw.exp !== undefined) {
+      enemyViewModel.exp = enemyRaw.exp;
+    }
+    if (enemyRaw.bits !== undefined) {
+      enemyViewModel.bits = enemyRaw.bits;
+    }
+    if (enemyRaw.drops !== undefined) {
+      enemyViewModel.drops = enemyRaw.drops.map((dropRaw) => {
         return {
           id: dropRaw.id,
           locationOnly: dropRaw.locationOnly,
         };
-      }),
-      locations: enemyRaw.locations?.map((locationRaw) => {
+      });
+    }
+    if (enemyRaw.locations !== undefined) {
+      enemyViewModel.locations = enemyRaw.locations.map((locationRaw) => {
         return {
           id: locationRaw.id,
           sources: locationRaw.sources,
@@ -83,10 +97,9 @@ export class EnemyConverter {
           finishWhenLastMainQuestStepDone: locationRaw.finishWhenLastMainQuestStepDone,
           accessibleWhen: locationRaw.accessibleWhen,
         };
-      }),
-      regularAttackId: enemyRaw.regularAttackId,
-      techniqueId: enemyRaw.techniqueId,
-      boss: enemyRaw.boss === true,
-    };
+      });
+    }
+
+    return enemyViewModel;
   }
 }
