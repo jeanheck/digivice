@@ -23,6 +23,20 @@ export class EnemyRepository {
     return null;
   }
 
+  public static getEnemyByMemoryIdAndGroupId(memoryId: number, groupId: number): EnemyRaw | null {
+    if (memoryId === 0) {
+      return null;
+    }
+
+    for (const enemyRaw of Object.values(this.enemyTable)) {
+      if (enemyRaw.memoryId === memoryId && enemyRaw.groupId === groupId) {
+        return enemyRaw;
+      }
+    }
+
+    return this.getEnemyByMemoryId(memoryId);
+  }
+
   public static getEnemyIdByMemoryId(memoryId: number): string | null {
     if (memoryId === 0) {
       return null;

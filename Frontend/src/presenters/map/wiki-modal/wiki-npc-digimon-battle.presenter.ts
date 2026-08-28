@@ -1,6 +1,6 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import { NpcPartyDigimonConverter } from "@/presenters/converter/npc-party-digimon.converter";
-import { NpcPartyRepository } from "@/repositories/npc-party.repository";
+import { EnemyConverter } from "@/presenters/converter/enemy.converter";
+import { EnemyRepository } from "@/repositories/enemy.repository";
 import { NpcRepository } from "@/repositories/npc.repository";
 import type { WikiNpcDigimonBattleViewModel } from "@/viewmodels/wiki-modal/wiki-npc-digimon-battle.viewmodel";
 
@@ -15,19 +15,25 @@ export class WikiNpcDigimonBattlePresenter {
       return null;
     }
 
-    const partyRaw = NpcPartyRepository.getPartyById(digimonBattle.groupId);
-    const members =
-      partyRaw === undefined
-        ? []
-        : Object.entries(partyRaw).map(([memberId, partyDigimonRaw]) => {
-            const enemy = NpcPartyDigimonConverter.convert(partyDigimonRaw);
+    const members = digimonBattle.party.flatMap((partyMember) => {
+      const enemyRaw = EnemyRepository.getEnemyByMemoryIdAndGroupId(
+        partyMember.enemyId,
+        partyMember.groupId,
+      );
+      if (enemyRaw === null) {
+        return [];
+      }
 
-            return {
-              id: memberId,
-              enemy,
-              imageUrl: ImageCatalog.getEnemyIconUrl(enemy.name),
-            };
-          });
+      const enemy = EnemyConverter.convert(enemyRaw);
+
+      return [
+        {
+          id: String(partyMember.enemyId),
+          enemy,
+          imageUrl: ImageCatalog.getEnemyIconUrl(enemy.name),
+        },
+      ];
+    });
 
     return {
       exp: digimonBattle.exp,
