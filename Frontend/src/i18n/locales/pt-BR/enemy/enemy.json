@@ -54,7 +54,6 @@
       "kickingTree": "Árvore"
     },
     "locationStep": "A partir do step {step} da main quest",
-    "buff": "Buff",
-    "debuff": "Debuff"
+    "techniques": "Técnicas"
   }
 }

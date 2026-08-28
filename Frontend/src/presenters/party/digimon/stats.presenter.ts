@@ -9,6 +9,7 @@ import {
   type ResistancesEquipmentBonuses,
 } from "@/presenters/converter/resistances.converter";
 import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
+import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
@@ -17,7 +18,8 @@ import type { DigimonStatsViewModel } from "@/viewmodels/digimon/digimon-stats.v
 import type { DigievolutionViewModel } from "@/viewmodels/digievolution/digievolution.viewmodel";
 
 export class StatsPresenter {
-  public static getStatsViewModel(digimon: Digimon): DigimonStatsViewModel {
+  public static getStatsViewModel(digimon: Digimon, location: string | null): DigimonStatsViewModel {
+    const isInBattle = ProfilePresenter.isInBattle(location, digimon.inBattle);
     const activeDigievolution =
       digimon.activeDigievolutionId !== null && digimon.activeDigievolutionId !== 0
         ? this.getDigievolutionById(digimon.activeDigievolutionId)
@@ -34,7 +36,7 @@ export class StatsPresenter {
     );
 
     return {
-      attributes: this.applyBattleDeltas(attributes, digimon.inBattle),
+      attributes: this.applyBattleDeltas(attributes, digimon.inBattle, isInBattle),
       resistances: ResistancesConverter.convert(
         digimon.resistances,
         activeDigievolution?.resistances ?? null,
@@ -46,12 +48,13 @@ export class StatsPresenter {
   private static applyBattleDeltas(
     attributes: AttributesViewModel,
     inBattle: Digimon["inBattle"],
+    isInBattle: boolean,
   ): AttributesViewModel {
     return {
       ...attributes,
-      strength: { ...attributes.strength, fromBattle: inBattle.strength },
-      defense: { ...attributes.defense, fromBattle: inBattle.defense },
-      speed: { ...attributes.speed, fromBattle: inBattle.speed },
+      strength: { ...attributes.strength, fromBattle: isInBattle ? inBattle.strength : 0 },
+      defense: { ...attributes.defense, fromBattle: isInBattle ? inBattle.defense : 0 },
+      speed: { ...attributes.speed, fromBattle: isInBattle ? inBattle.speed : 0 },
     };
   }
 

@@ -45,14 +45,6 @@ const modifierColorClass = computed(() => {
 
   return "text-red-400";
 });
-
-const modifierLabel = computed(() => {
-  if (isBuff.value) {
-    return t("enemy.buff");
-  }
-
-  return t("enemy.debuff");
-});
 </script>
 
 <template>
@@ -81,7 +73,7 @@ const modifierLabel = computed(() => {
           <span class="text-[#0077ff] font-bold">{{ t("digimon.equipments") }}</span>
         </div>
         <div v-if="hasBattleDelta" class="flex justify-between text-xs items-center">
-          <span class="font-bold" :class="modifierColorClass">{{ modifierLabel }}</span>
+          <span class="font-bold" :class="modifierColorClass">{{ t("enemy.techniques") }}</span>
         </div>
       </div>
     </div>
