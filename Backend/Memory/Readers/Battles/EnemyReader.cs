@@ -25,11 +25,7 @@ namespace Backend.Memory.Readers.Battles
 
                 if (slotId == activeUnitId && slotId != 0)
                 {
-                    var currentHp = memoryReader.ReadInt16(slotBase + addresses.HP.Current);
-                    if (currentHp > 0)
-                    {
-                        return slotIndex;
-                    }
+                    return slotIndex;
                 }
             }
 
@@ -40,6 +36,17 @@ namespace Backend.Memory.Readers.Battles
                 var currentHp = memoryReader.ReadInt16(slotBase + addresses.HP.Current);
 
                 if (slotId != 0 && currentHp > 0)
+                {
+                    return slotIndex;
+                }
+            }
+
+            for (var slotIndex = addresses.SlotCount - 1; slotIndex >= 0; slotIndex--)
+            {
+                var slotBase = addresses.EnemySlotBase + (slotIndex * addresses.SlotStride);
+                var slotId = memoryReader.ReadInt16(slotBase + addresses.Id);
+
+                if (slotId != 0)
                 {
                     return slotIndex;
                 }

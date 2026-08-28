@@ -381,9 +381,11 @@ occupy `0xA44D0`, `0xA44F0`, `0xA4510` (stride `0x20`) — each with its own
 **Active enemy slot resolution (integrated 2026-08-27):** `EnemyReader` picks
 which of the three enemy slots to expose as `State.Battle.Enemy`:
 
-1. Match `ActiveUnitId` @ `0xA4558` to a slot id with `HP.Current > 0`.
-2. Else first slot with `id != 0` and `HP.Current > 0`.
-3. Else slot 0 (wild single-enemy fallback).
+1. Match `ActiveUnitId` @ `0xA4558` to a slot id (`id != 0`) — **no HP gate**
+   (stay on KO'd front enemy until id changes).
+2. Else first slot with `id != 0` and `HP.Current > 0` (player turn / ally active).
+3. Else highest-index slot with `id != 0` (all KO — stay on last defeated).
+4. Else slot 0 (empty battle fallback).
 
 Wired in `EnemyAddresses.json` as `SlotStride`, `SlotCount`, `ActiveUnitId`.
 
