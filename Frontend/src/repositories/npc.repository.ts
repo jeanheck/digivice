@@ -16,4 +16,18 @@ export class NpcRepository {
   public static getNpcIds(): string[] {
     return Object.keys(this.npcTable);
   }
+
+  public static getNpcIdByOpponentId(opponentId: number): string | null {
+    if (opponentId === 0) {
+      return null;
+    }
+
+    for (const [npcId, npcRaw] of Object.entries(this.npcTable)) {
+      if (npcRaw.opponentId === opponentId) {
+        return npcId;
+      }
+    }
+
+    return null;
+  }
 }
