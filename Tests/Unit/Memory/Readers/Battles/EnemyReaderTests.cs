@@ -11,6 +11,7 @@ public class EnemyReaderTests
 {
     private const long EnemySlotBase = 0x000A44D0;
     private const long ActiveUnitIdAddress = 0x000A4558;
+    private const long GroupIdAddress = 0x00042B2C;
     private const int SlotStride = 0x20;
 
     [Fact]
@@ -29,11 +30,13 @@ public class EnemyReaderTests
             condition: 0x01,
             speed: 84);
         memoryReaderMock.Setup(m => m.ReadInt16(ActiveUnitIdAddress)).Returns((short)122);
+        memoryReaderMock.Setup(m => m.ReadInt16(GroupIdAddress)).Returns((short)201);
 
         var reader = new EnemyReader(memoryReaderMock.Object);
         var result = reader.Read(addresses);
 
         Assert.Equal(122, result.Id);
+        Assert.Equal(201, result.GroupId);
         Assert.Equal(600, result.HP.Current);
         Assert.Equal(672, result.HP.Max);
         Assert.Equal(0x01, result.Condition);
@@ -206,7 +209,9 @@ public class EnemyReaderTests
 
     private static Mock<IMemoryReader> CreateMemoryReaderMock()
     {
-        return new Mock<IMemoryReader>();
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(m => m.ReadInt16(GroupIdAddress)).Returns((short)0);
+        return memoryReaderMock;
     }
 
     private static EnemyAddresses CreateAddresses()
@@ -217,6 +222,7 @@ public class EnemyReaderTests
             SlotStride = SlotStride,
             SlotCount = 3,
             ActiveUnitId = ActiveUnitIdAddress,
+            GroupId = GroupIdAddress,
             Id = 0x00,
             Condition = 0x1C,
             Strength = 0x10,

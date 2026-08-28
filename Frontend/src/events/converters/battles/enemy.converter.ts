@@ -6,6 +6,7 @@ export class EnemyConverter {
   public static convert(newEnemyDto: EnemyDTO | null): Enemy {
     return {
       id: newEnemyDto?.id ?? 0,
+      groupId: newEnemyDto?.groupId ?? 0,
       condition: newEnemyDto?.condition ?? 0,
       strength: newEnemyDto?.strength ?? 0,
       defense: newEnemyDto?.defense ?? 0,

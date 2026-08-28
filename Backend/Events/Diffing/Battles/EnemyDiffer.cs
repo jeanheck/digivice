@@ -21,13 +21,14 @@ public static class EnemyDiffer
         }
 
         bool idChanged = previousEnemy.Id != newEnemy.Id;
+        bool groupIdChanged = previousEnemy.GroupId != newEnemy.GroupId;
         bool conditionChanged = previousEnemy.Condition != newEnemy.Condition;
         bool strengthChanged = previousEnemy.Strength != newEnemy.Strength;
         bool defenseChanged = previousEnemy.Defense != newEnemy.Defense;
         bool speedChanged = previousEnemy.Speed != newEnemy.Speed;
         var hpDelta = VitalDiffer.Diff(previousEnemy.HP, newEnemy.HP);
 
-        if (!idChanged && !conditionChanged && !strengthChanged && !defenseChanged && !speedChanged
+        if (!idChanged && !groupIdChanged && !conditionChanged && !strengthChanged && !defenseChanged && !speedChanged
             && hpDelta == null)
         {
             return null;
@@ -37,6 +38,10 @@ public static class EnemyDiffer
         if (idChanged)
         {
             dto = dto with { Id = newEnemy.Id };
+        }
+        if (groupIdChanged)
+        {
+            dto = dto with { GroupId = newEnemy.GroupId };
         }
         if (conditionChanged)
         {

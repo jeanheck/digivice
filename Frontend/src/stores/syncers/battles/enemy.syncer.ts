@@ -7,6 +7,9 @@ export class EnemySyncer {
     if (newEnemyDto.id !== undefined) {
       previousEnemy.id = newEnemyDto.id;
     }
+    if (newEnemyDto.groupId !== undefined) {
+      previousEnemy.groupId = newEnemyDto.groupId;
+    }
     if (newEnemyDto.condition !== undefined) {
       previousEnemy.condition = newEnemyDto.condition;
     }

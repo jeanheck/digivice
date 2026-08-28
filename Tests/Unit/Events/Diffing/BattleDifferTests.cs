@@ -16,7 +16,6 @@ public class BattleDifferTests
         var result = BattleDiffer.Diff(previous, newBattle);
 
         Assert.False(result.Field.HasValue);
-        Assert.False(result.GroupId.HasValue);
         Assert.False(result.Enemy.HasValue);
     }
 
@@ -30,10 +29,9 @@ public class BattleDifferTests
 
         Assert.True(result.Field.HasValue);
         Assert.Equal((byte)0x02, result.Field.Value);
-        Assert.True(result.GroupId.HasValue);
-        Assert.Equal((short)201, result.GroupId.Value);
         Assert.True(result.Enemy.HasValue);
         Assert.Equal(122, result.Enemy.Value!.Id.Value);
+        Assert.Equal(201, result.Enemy.Value!.GroupId.Value);
     }
 
     [Fact]
@@ -47,21 +45,6 @@ public class BattleDifferTests
 
         Assert.True(result.Field.HasValue);
         Assert.Equal((byte)0x03, result.Field.Value);
-        Assert.False(result.Enemy.HasValue);
-    }
-
-    [Fact]
-    public void Diff_ShouldReturnGroupIdDelta_WhenOnlyGroupIdChanged()
-    {
-        var previous = CreateBaseBattle();
-        var newBattle = CreateBaseBattle();
-        newBattle.GroupId = 272;
-
-        var result = BattleDiffer.Diff(previous, newBattle);
-
-        Assert.False(result.Field.HasValue);
-        Assert.True(result.GroupId.HasValue);
-        Assert.Equal((short)272, result.GroupId.Value);
         Assert.False(result.Enemy.HasValue);
     }
 
@@ -86,10 +69,10 @@ public class BattleDifferTests
         return new Battle
         {
             Field = 0x00,
-            GroupId = 201,
             Enemy = new Enemy
             {
                 Id = 122,
+                GroupId = 201,
                 Condition = 0x01,
                 Strength = 0,
                 Defense = 0,

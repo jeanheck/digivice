@@ -11,7 +11,7 @@ namespace Backend.Memory.Readers.Battles
             var slotIndex = ResolveActiveSlotIndex(addresses);
             var slotBase = addresses.EnemySlotBase + (slotIndex * addresses.SlotStride);
 
-            return ReadSlot(slotBase, addresses);
+            return ReadSlot(slotBase, addresses, memoryReader.ReadInt16(addresses.GroupId));
         }
 
         private int ResolveActiveSlotIndex(EnemyAddresses addresses)
@@ -55,11 +55,12 @@ namespace Backend.Memory.Readers.Battles
             return 0;
         }
 
-        private EnemyResource ReadSlot(long slotBase, EnemyAddresses addresses)
+        private EnemyResource ReadSlot(long slotBase, EnemyAddresses addresses, short groupId)
         {
             return new EnemyResource
             {
                 Id = memoryReader.ReadInt16(slotBase + addresses.Id),
+                GroupId = groupId,
                 Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes
                     ? conditionBytes[0]
                     : 0,

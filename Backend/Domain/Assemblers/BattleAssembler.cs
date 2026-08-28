@@ -12,10 +12,10 @@ namespace Backend.Domain.Assemblers
             return new Battle
             {
                 Field = resource.Field,
-                GroupId = resource.GroupId,
                 Enemy = new Enemy
                 {
                     Id = resource.Enemy.Id,
+                    GroupId = resource.Enemy.GroupId,
                     Condition = resource.Enemy.Condition,
                     Strength = resource.Enemy.Strength,
                     Defense = resource.Enemy.Defense,

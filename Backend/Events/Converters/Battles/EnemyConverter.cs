@@ -9,6 +9,7 @@ public static class EnemyConverter
     public static EnemyDTO ToDTO(Enemy enemy) => new()
     {
         Id = enemy.Id,
+        GroupId = enemy.GroupId,
         Condition = enemy.Condition,
         Strength = enemy.Strength,
         Defense = enemy.Defense,

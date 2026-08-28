@@ -42,10 +42,26 @@ public class EnemyDifferTests
         Assert.NotNull(result);
         Assert.Equal(84, result.Speed.Value);
         Assert.False(result.Id.HasValue);
+        Assert.False(result.GroupId.HasValue);
         Assert.False(result.Condition.HasValue);
         Assert.False(result.Strength.HasValue);
         Assert.False(result.Defense.HasValue);
         Assert.False(result.HP.HasValue);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnGroupIdDelta_WhenOnlyGroupIdChanges()
+    {
+        var previous = CreateBaseEnemy();
+        var newEnemy = CreateBaseEnemy();
+        newEnemy.GroupId = 272;
+
+        var result = EnemyDiffer.Diff(previous, newEnemy);
+
+        Assert.NotNull(result);
+        Assert.Equal(272, result.GroupId.Value);
+        Assert.False(result.Id.HasValue);
+        Assert.False(result.Speed.HasValue);
     }
 
     private static Enemy CreateBaseEnemy()
@@ -53,6 +69,7 @@ public class EnemyDifferTests
         return new Enemy
         {
             Id = 0,
+            GroupId = 201,
             Condition = 0,
             Strength = 0,
             Defense = 0,

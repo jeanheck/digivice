@@ -13,10 +13,10 @@ public class BattleConverterTests
         var battle = new Battle
         {
             Field = 0x02,
-            GroupId = 201,
             Enemy = new Enemy
             {
                 Id = 122,
+                GroupId = 201,
                 Condition = 0x01,
                 Strength = 0,
                 Defense = 0,
@@ -29,9 +29,8 @@ public class BattleConverterTests
 
         Assert.True(dto.Field.HasValue);
         Assert.Equal((byte)0x02, dto.Field.Value);
-        Assert.True(dto.GroupId.HasValue);
-        Assert.Equal((short)201, dto.GroupId.Value);
         Assert.True(dto.Enemy.HasValue);
+        Assert.Equal(201, dto.Enemy.Value!.GroupId.Value);
         Assert.Equal(122, dto.Enemy.Value!.Id.Value);
     }
 }

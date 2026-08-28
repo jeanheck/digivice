@@ -91,7 +91,7 @@ namespace Backend.Diagnostics
             var enemy = battle.Enemy;
             sb.AppendLine();
             sb.AppendLine(
-                $"{Cyan}BATTLE ENEMY:{Reset} GroupId:{battle.GroupId} | Id:{enemy.Id} | Condition:{enemy.Condition} | " +
+                $"{Cyan}BATTLE ENEMY:{Reset} GroupId:{enemy.GroupId} | Id:{enemy.Id} | Condition:{enemy.Condition} | " +
                 $"HP:{enemy.HP.Current.ToString(StatFormat)}/{enemy.HP.Max.ToString(StatFormat)} | " +
                 $"AtkΔ:{enemy.Strength.ToString(StatFormat)} DefΔ:{enemy.Defense.ToString(StatFormat)} SpdΔ:{enemy.Speed.ToString(StatFormat)}");
         }

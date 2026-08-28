@@ -5,6 +5,7 @@ namespace Backend.Domain.Models.Battles
     public record class Enemy
     {
         public int Id { get; set; }
+        public int GroupId { get; set; }
         public int Condition { get; set; }
         public int Strength { get; set; }
         public int Defense { get; set; }
