@@ -6,6 +6,7 @@ export class BattleConverter {
   public static convert(battleDto: Required<BattleDTO>): Battle {
     return {
       field: battleDto.field ?? 0,
+      groupId: battleDto.groupId ?? 0,
       enemy: EnemyConverter.convert(battleDto.enemy ?? null),
     };
   }

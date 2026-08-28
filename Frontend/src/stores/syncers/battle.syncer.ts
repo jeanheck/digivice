@@ -7,6 +7,9 @@ export class BattleSyncer {
     if (newBattleDto.field !== undefined) {
       previousBattle.field = newBattleDto.field;
     }
+    if (newBattleDto.groupId !== undefined) {
+      previousBattle.groupId = newBattleDto.groupId;
+    }
     if (newBattleDto.enemy) {
       EnemySyncer.sync(previousBattle.enemy, newBattleDto.enemy);
     }
