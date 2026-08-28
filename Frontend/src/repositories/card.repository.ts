@@ -1,19 +1,19 @@
 import CardsJson from "@/database/tcg/cards.json";
-import type { CardsTable } from "@/repositories/tables/tcg/cards.table";
+import type { CardTable } from "@/repositories/tables/tcg/card.table";
 import type { CardRaw } from "@/repositories/tables/raws/tcg/card.raw";
 
 export class CardRepository {
-  private static readonly cardsTable = CardsJson as CardsTable;
+  private static readonly cardTable = CardsJson as CardTable;
 
   public static getCardById(cardId: string): CardRaw | undefined {
-    return this.cardsTable[cardId];
+    return this.cardTable[cardId];
   }
 
-  public static getCardsTable(): CardsTable {
-    return this.cardsTable;
+  public static getCardTable(): CardTable {
+    return this.cardTable;
   }
 
   public static getCardIds(): string[] {
-    return Object.keys(this.cardsTable);
+    return Object.keys(this.cardTable);
   }
 }

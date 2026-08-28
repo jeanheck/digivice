@@ -1,15 +1,15 @@
 import DeckJson from "@/database/tcg/deck.json";
-import type { DecksTable } from "@/repositories/tables/tcg/decks.table";
+import type { DeckTable } from "@/repositories/tables/tcg/deck.table";
 import type { DeckRaw } from "@/repositories/tables/raws/tcg/deck.raw";
 
 export class DeckRepository {
-  private static readonly decksTable = DeckJson as DecksTable;
+  private static readonly deckTable = DeckJson as DeckTable;
 
   public static getDeckById(deckId: string): DeckRaw | undefined {
-    return this.decksTable[deckId];
+    return this.deckTable[deckId];
   }
 
-  public static getDeckTable(): DecksTable {
-    return this.decksTable;
+  public static getDeckTable(): DeckTable {
+    return this.deckTable;
   }
 }
