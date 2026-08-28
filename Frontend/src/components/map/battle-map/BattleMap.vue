@@ -2,6 +2,7 @@
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
+import EnemyBuffStatsTooltip from "@/components/map/battle-map/EnemyBuffStatsTooltip.vue";
 import EnemyConditionSquare from "@/components/map/battle-map/EnemyConditionSquare.vue";
 import HpProgressBar from "@/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
 import TinyTooltip from "@/components/tooltip/TinyTooltip.vue";
@@ -15,6 +16,11 @@ import { BattleMapPresenter } from "@/presenters/map/battle-map.presenter";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
+import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
+
+type TooltipVariant = "none" | "tiny" | "buff";
+
+const BATTLE_DELTA_STAT_KEYS = new Set(["strength", "defense", "speed"]);
 
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
@@ -24,8 +30,10 @@ const store = useGameStore();
 const { t } = useI18n();
 
 const isStatsOpen = ref(false);
-const { show, x, y, showAt, move, hide } = useTooltipPosition(0);
+const activeVariant = ref<TooltipVariant>("none");
+const { x, y, showAt, move, hide } = useTooltipPosition(0);
 const tooltipTitle = ref("");
+const buffTooltipContent = ref({ title: "", base: 0, delta: 0, total: 0 });
 const tooltipPlacement = ref<TooltipPlacement>("below");
 const tooltipAlign = ref<TooltipHorizontalAlign>("right");
 
@@ -48,7 +56,7 @@ const enemy = computed(() => {
 });
 
 const battleMapViewModel = computed(() => {
-  return BattleMapPresenter.getViewModel(enemy.value?.id ?? null, enemy.value?.hp ?? null);
+  return BattleMapPresenter.getViewModel(enemy.value);
 });
 
 const enemyCondition = computed(() => {
@@ -113,10 +121,49 @@ function onShowTooltip(
   tooltipTitle.value = value;
   tooltipPlacement.value = options?.placement ?? "below";
   tooltipAlign.value = options?.align ?? "right";
+  activeVariant.value = "tiny";
   showAt(event, {
     placement: tooltipPlacement.value,
     align: tooltipAlign.value,
   });
+}
+
+function showBuffTooltip(event: MouseEvent, stat: EnemyStatViewModel): void {
+  buffTooltipContent.value = {
+    title: t(`stat.${stat.statKey}`),
+    base: stat.baseValue ?? stat.value,
+    delta: stat.delta ?? 0,
+    total: stat.value,
+  };
+  activeVariant.value = "buff";
+  showAt(event, {
+    placement: tooltipPlacement.value,
+    align: tooltipAlign.value,
+  });
+}
+
+function onStatValueMouseEnter(event: MouseEvent, stat: EnemyStatViewModel): void {
+  if (!hasBattleDelta(stat)) {
+    return;
+  }
+
+  showBuffTooltip(event, stat);
+}
+
+function onStatValueMouseMove(event: MouseEvent, stat: EnemyStatViewModel): void {
+  if (!hasBattleDelta(stat)) {
+    return;
+  }
+
+  onMoveTooltip(event);
+}
+
+function onStatValueMouseLeave(stat: EnemyStatViewModel): void {
+  if (!hasBattleDelta(stat)) {
+    return;
+  }
+
+  onHideTooltip();
 }
 
 function onMoveTooltip(event: MouseEvent): void {
@@ -124,7 +171,26 @@ function onMoveTooltip(event: MouseEvent): void {
 }
 
 function onHideTooltip(): void {
+  activeVariant.value = "none";
   hide();
+}
+
+function hasBattleDelta(stat: EnemyStatViewModel): boolean {
+  return BATTLE_DELTA_STAT_KEYS.has(stat.statKey) && (stat.delta ?? 0) !== 0;
+}
+
+function getStatValueColorClass(stat: EnemyStatViewModel): string {
+  const delta = stat.delta ?? 0;
+
+  if (delta > 0) {
+    return "text-green-400";
+  }
+
+  if (delta < 0) {
+    return "text-red-400";
+  }
+
+  return "";
 }
 
 function isBooleanCondition(condition: EnemyConditionViewModel): boolean {
@@ -281,7 +347,17 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
                 <div
                   class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
                 >
-                  <span class="shadow-text">{{ stat.value }}</span>
+                  <span
+                    class="shadow-text tabular-nums"
+                    :class="[
+                      getStatValueColorClass(stat),
+                      hasBattleDelta(stat) ? 'cursor-help' : 'cursor-default',
+                    ]"
+                    @mouseenter="onStatValueMouseEnter($event, stat)"
+                    @mousemove="onStatValueMouseMove($event, stat)"
+                    @mouseleave="onStatValueMouseLeave(stat)"
+                    >{{ stat.value }}</span
+                  >
                 </div>
               </div>
             </div>
@@ -306,7 +382,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
                 <div
                   class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
                 >
-                  <span class="shadow-text">{{ stat.value }}</span>
+                  <span class="shadow-text cursor-default">{{ stat.value }}</span>
                 </div>
               </div>
             </div>
@@ -334,7 +410,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
                   class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
                   :class="getConditionColorClass(condition)"
                 >
-                  <span class="shadow-text">{{ getConditionValue(condition) }}</span>
+                  <span class="shadow-text cursor-default">{{ getConditionValue(condition) }}</span>
                 </div>
               </div>
             </div>
@@ -364,7 +440,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
                   class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
                   :class="getConditionColorClass(condition)"
                 >
-                  <span class="shadow-text">{{ getConditionValue(condition) }}</span>
+                  <span class="shadow-text cursor-default">{{ getConditionValue(condition) }}</span>
                 </div>
               </div>
             </div>
@@ -374,13 +450,24 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
     </div>
 
     <TinyTooltip
-      :show="show"
+      :show="activeVariant === 'tiny'"
       :x="x"
       :y="y"
       :title="tooltipTitle"
       :max-width="140"
       :placement="tooltipPlacement"
       :horizontal-align="tooltipAlign"
+    />
+
+    <EnemyBuffStatsTooltip
+      :show="activeVariant === 'buff'"
+      :x="x"
+      :y="y"
+      :title="buffTooltipContent.title"
+      :base="buffTooltipContent.base"
+      :delta="buffTooltipContent.delta"
+      :total="buffTooltipContent.total"
+      :placement="tooltipPlacement"
     />
   </div>
 </template>

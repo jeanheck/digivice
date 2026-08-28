@@ -51,6 +51,20 @@ export class EnemyRepository {
     return null;
   }
 
+  public static getEnemyIdByMemoryIdAndGroupId(memoryId: number, groupId: number): string | null {
+    if (memoryId === 0) {
+      return null;
+    }
+
+    for (const [enemyId, enemyRaw] of Object.entries(this.enemyTable)) {
+      if (enemyRaw.memoryId === memoryId && enemyRaw.groupId === groupId) {
+        return enemyId;
+      }
+    }
+
+    return this.getEnemyIdByMemoryId(memoryId);
+  }
+
   public static getEnemyTable(): EnemyTable {
     return this.enemyTable;
   }

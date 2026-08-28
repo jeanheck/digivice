@@ -8,7 +8,14 @@ import { EnemyConditionConverter } from "@/presenters/converter/enemy-condition.
 import { EnemyStatConverter } from "@/presenters/converter/enemy-stat.converter";
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
+import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
 import type { BattleMapViewModel } from "@/viewmodels/map/battle-map.viewmodel";
+
+export interface BattleEnemyDeltas {
+  strength: number;
+  defense: number;
+  speed: number;
+}
 
 export class BattleMapConverter {
   public static convert(
@@ -16,6 +23,7 @@ export class BattleMapConverter {
     hp: Vital,
     title: string,
     enemyId: string | null,
+    battleDeltas?: BattleEnemyDeltas,
   ): BattleMapViewModel {
     if (enemyRaw === null) {
       return {
@@ -44,13 +52,16 @@ export class BattleMapConverter {
       species: enemyRaw.species,
       speciesEmoji: BattleMapConverter.toSpeciesEmoji(enemyRaw.species, isBoss),
       hp,
-      attributes: EnemyStatConverter.convertAttributes({
-        strength: enemyRaw.strength,
-        defense: enemyRaw.defense,
-        spirit: enemyRaw.spirit,
-        wisdom: enemyRaw.wisdom,
-        speed: enemyRaw.speed,
-      }),
+      attributes: BattleMapConverter.applyBattleDeltas(
+        EnemyStatConverter.convertAttributes({
+          strength: enemyRaw.strength,
+          defense: enemyRaw.defense,
+          spirit: enemyRaw.spirit,
+          wisdom: enemyRaw.wisdom,
+          speed: enemyRaw.speed,
+        }),
+        battleDeltas,
+      ),
       elements: EnemyStatConverter.convertElements({
         fire: enemyRaw.fire,
         water: enemyRaw.water,
@@ -63,6 +74,37 @@ export class BattleMapConverter {
       conditions: EnemyConditionConverter.convertConditions(conditions),
       enemyImageUrl: ImageCatalog.getEnemyIconUrl(enemyRaw.name),
     };
+  }
+
+  private static applyBattleDeltas(
+    attributes: EnemyStatViewModel[],
+    battleDeltas?: BattleEnemyDeltas,
+  ): EnemyStatViewModel[] {
+    if (battleDeltas === undefined) {
+      return attributes;
+    }
+
+    const deltaByStatKey: Record<string, number> = {
+      strength: battleDeltas.strength,
+      defense: battleDeltas.defense,
+      speed: battleDeltas.speed,
+    };
+
+    return attributes.map((stat) => {
+      const delta = deltaByStatKey[stat.statKey];
+      if (delta === undefined) {
+        return stat;
+      }
+
+      const baseValue = stat.value;
+
+      return {
+        ...stat,
+        baseValue,
+        delta,
+        value: baseValue + delta,
+      };
+    });
   }
 
   private static toSpeciesEmoji(species: string | null, isBoss: boolean): string | null {

@@ -53,6 +53,8 @@
       "fishing": "Pesca",
       "kickingTree": "Árvore"
     },
-    "locationStep": "A partir do step {step} da main quest"
+    "locationStep": "A partir do step {step} da main quest",
+    "buff": "Buff",
+    "debuff": "Debuff"
   }
 }
