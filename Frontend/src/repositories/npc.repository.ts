@@ -1,19 +1,19 @@
-import NpcsJson from "@/database/npc/npcs.json";
-import type { NpcsTable } from "@/repositories/tables/npc/npcs.table";
+import NpcJson from "@/database/npc/npc.json";
+import type { NpcTable } from "@/repositories/tables/npc/npc.table";
 import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
 
 export class NpcRepository {
-  private static readonly npcsTable = NpcsJson as NpcsTable;
+  private static readonly npcTable = NpcJson as NpcTable;
 
   public static getNpcById(npcId: string): NpcRaw | undefined {
-    return this.npcsTable[npcId];
+    return this.npcTable[npcId];
   }
 
-  public static getNpcTable(): NpcsTable {
-    return this.npcsTable;
+  public static getNpcTable(): NpcTable {
+    return this.npcTable;
   }
 
   public static getNpcIds(): string[] {
-    return Object.keys(this.npcsTable);
+    return Object.keys(this.npcTable);
   }
 }

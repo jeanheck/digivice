@@ -1,10 +1,10 @@
-import FieldsJson from "@/database/fields/fields.json";
+import FieldJson from "@/database/fields/field.json";
 import { resolveBattleFieldElement } from "@/constants/battle-field.constant";
 import type { FieldTable } from "@/repositories/tables/field/field.table";
 import type { FieldRaw } from "@/repositories/tables/raws/field/field.raw";
 
 export class FieldRepository {
-  private static readonly fieldTable = FieldsJson as FieldTable;
+  private static readonly fieldTable = FieldJson as FieldTable;
 
   public static getFieldTable(): FieldTable {
     return this.fieldTable;

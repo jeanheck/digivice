@@ -15,7 +15,7 @@ export class WikiNpcDigimonBattlePresenter {
       return null;
     }
 
-    const partyRaw = NpcPartyRepository.getPartyById(digimonBattle.npcPartyId);
+    const partyRaw = NpcPartyRepository.getPartyById(digimonBattle.groupId);
     const members =
       partyRaw === undefined
         ? []

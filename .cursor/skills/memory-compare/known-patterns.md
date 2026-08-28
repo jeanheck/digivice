@@ -771,7 +771,7 @@ wong, gloria, steve; `after-lose-to-natsumi`;
 
 Current `NpcAddresses.json`: wire **DigimonBattles** only (e.g. Genji `0x4B3DF`,
 Natsumi `0x4B39A`). Card battles are **not** tracked in journal RAM — wiki uses
-static `npcs.json` + charisma range only.
+static `npc.json` + charisma range only.
 
 **Second pass (2026-08-27):** re-scanned all card-win snaps for
 per-tamer sticky flags. Quest band `0x48000–0x4C000`: no identity byte

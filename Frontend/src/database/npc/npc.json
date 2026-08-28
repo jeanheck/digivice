@@ -18,7 +18,7 @@
         "charismaRequired": {
           "min": 1
         },
-        "npcPartyId": "genji#1",
+        "groupId": "genji#1",
         "exp": 4,
         "dvexp": 0,
         "bit": 50
@@ -27,7 +27,7 @@
         "charismaRequired": {
           "min": 210
         },
-        "npcPartyId": "genji#2",
+        "groupId": "genji#2",
         "exp": 63,
         "dvexp": 6,
         "bit": 115
@@ -61,7 +61,7 @@
         "charismaRequired": {
           "min": 210
         },
-        "npcPartyId": "natsumi",
+        "groupId": "natsumi",
         "exp": 65,
         "dvexp": 4,
         "bit": 145

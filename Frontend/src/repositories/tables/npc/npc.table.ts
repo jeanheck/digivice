@@ -1,3 +1,3 @@
 import type { NpcRaw } from "../raws/npc/npc.raw";
 
-export type NpcsTable = Record<string, NpcRaw>;
+export type NpcTable = Record<string, NpcRaw>;
