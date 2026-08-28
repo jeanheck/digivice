@@ -102,10 +102,10 @@ const battleOptionClass = (option: WikiNpcBattleOptionViewModel): string => {
   }
 
   if (isSelected) {
-    return "text-gray-300 border-gray-600/60 bg-gray-900/40 hover:bg-gray-800/60";
+    return "text-gray-200 border-gray-500 bg-gray-800 hover:bg-gray-800";
   }
 
-  return "text-gray-400 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300";
+  return "text-gray-500 border-gray-700/60 bg-gray-950/40 hover:bg-gray-900/60 hover:text-gray-300";
 };
 
 const showBattleRequirementTooltip = (
