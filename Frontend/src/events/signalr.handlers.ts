@@ -37,6 +37,10 @@ export function initializeSignalRHandlers(): void {
     store.syncBattle(data);
   });
 
+  signalRService.on("CardBattleChanged", (data) => {
+    store.syncCardBattle(data);
+  });
+
   signalRService.on("JournalChanged", (data) => {
     store.syncJournal(data);
   });

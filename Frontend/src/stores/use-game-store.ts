@@ -7,12 +7,14 @@ import { PlayerConverter } from "../events/converters/player.converter";
 import { ImportantItemsConverter } from "../events/converters/important-items.converter";
 import { PartyConverter } from "../events/converters/party.converter";
 import { BattleConverter } from "../events/converters/battle.converter";
+import { CardBattleConverter } from "../events/converters/card-battle.converter";
 import { JournalConverter } from "../events/converters/journal.converter";
 import { PlayerSyncer } from "./syncers/player.syncer";
 import { ImportantItemsSyncer } from "./syncers/important-items.syncer";
 import { JournalSyncer } from "./syncers/journal.syncer";
 import { PartySyncer } from "./syncers/party.syncer";
 import { BattleSyncer } from "./syncers/battle.syncer";
+import { CardBattleSyncer } from "./syncers/card-battle.syncer";
 
 export const useGameStore = defineStore("game", () => {
   const isConnectedWithBackend = ref(false);
@@ -84,6 +86,7 @@ export const useGameStore = defineStore("game", () => {
       importantItems: state.importantItems ? ImportantItemsConverter.convert(state.importantItems) : null,
       party: state.party ? PartyConverter.convert(state.party) : null,
       battle: state.battle ? BattleConverter.convert(state.battle) : null,
+      cardBattle: state.cardBattle ? CardBattleConverter.convert(state.cardBattle) : null,
       journal: state.journal ? JournalConverter.convert(state.journal) : null,
     };
   }
@@ -133,6 +136,15 @@ export const useGameStore = defineStore("game", () => {
     BattleSyncer.sync(previousBattle, newBattleDto);
   }
 
+  function syncCardBattle(newCardBattleDto: Events.CardBattleDTO | null): void {
+    const previousCardBattle = currentState.value?.cardBattle;
+    if (!previousCardBattle || !newCardBattleDto) {
+      return;
+    }
+
+    CardBattleSyncer.sync(previousCardBattle, newCardBattleDto);
+  }
+
   return {
     isConnected,
     isConnectedWithBackend,
@@ -150,6 +162,7 @@ export const useGameStore = defineStore("game", () => {
     syncImportantItems,
     syncParty,
     syncBattle,
+    syncCardBattle,
     syncJournal,
   };
 });

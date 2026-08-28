@@ -15,6 +15,7 @@ export * from "./player";
 export * from "./important-items";
 export * from "./battle";
 export * from "./battle/enemy";
+export * from "./card-battle";
 export * from "./journal/quest";
 export * from "./journal/requisite";
 export * from "./party/digimon/resistances";
