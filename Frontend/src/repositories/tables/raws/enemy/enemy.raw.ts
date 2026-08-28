@@ -44,4 +44,5 @@ export interface EnemyRaw {
   techniqueId: string | null;
   boss?: boolean;
   memoryId: number;
+  groupId: number | null;
 }

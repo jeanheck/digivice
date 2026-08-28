@@ -1,5 +1,5 @@
 {
-  "genji#1": {
+  "200": {
     "51": {
       "name": "Kuwagamon",
       "level": 1,
@@ -39,7 +39,7 @@
       "memoryId": 51
     }
   },
-  "genji#2": {
+  "272": {
     "78": {
       "name": "Kuwagamon",
       "level": 5,
@@ -734,7 +734,7 @@
       "memoryId": 222
     }
   },
-  "natsumi": {
+  "201": {
     "76": {
       "name": "Betamon",
       "level": 4,

@@ -18,7 +18,7 @@
         "charismaRequired": {
           "min": 1
         },
-        "groupId": "genji#1",
+        "groupId": "200",
         "exp": 4,
         "dvexp": 0,
         "bit": 50
@@ -27,7 +27,7 @@
         "charismaRequired": {
           "min": 210
         },
-        "groupId": "genji#2",
+        "groupId": "272",
         "exp": 63,
         "dvexp": 6,
         "bit": 115
@@ -61,7 +61,7 @@
         "charismaRequired": {
           "min": 210
         },
-        "groupId": "natsumi",
+        "groupId": "201",
         "exp": 65,
         "dvexp": 4,
         "bit": 145
