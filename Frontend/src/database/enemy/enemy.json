@@ -6234,7 +6234,7 @@
     "bits": 290,
     "regularAttackId": "noElement",
     "techniqueId": "none",
-    "memoryId": 0,
+    "memoryId": 395,
     "drops": [
       {
         "id": "chainSaw"

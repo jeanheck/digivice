@@ -114,7 +114,7 @@
       "canEscape": false,
       "regularAttackId": "noElement",
       "techniqueId": "none",
-      "memoryId": 0
+      "memoryId": 395
     }
   },
   "byakkoLeader": {
@@ -794,7 +794,7 @@
       "ice": 91,
       "wind": 175,
       "thunder": 91,
-      "machine": 90,
+      "machine": 60,
       "dark": 91,
       "canPoison": true,
       "poison": 0,
