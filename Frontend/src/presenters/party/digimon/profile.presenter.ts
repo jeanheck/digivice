@@ -13,7 +13,9 @@ export class ProfilePresenter {
     status: ConditionConstant;
   }> = [
     { bitMask: 0x01, status: ConditionConstant.poison },
+    { bitMask: 0x02, status: ConditionConstant.paralyze },
     { bitMask: 0x04, status: ConditionConstant.confuse },
+    { bitMask: 0x08, status: ConditionConstant.sleep },
   ];
 
   public static isInBattle(location: string | null, inBattle: InBattle): boolean {

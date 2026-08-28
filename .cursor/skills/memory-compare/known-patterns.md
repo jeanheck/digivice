@@ -578,14 +578,18 @@ Battle HP/MP slot offset **`+0x1C`** (byte) — same layout for ally and enemy.
 | Snap pair | Side | Normal | Debuff | Value @ `+0x1C` |
 |-----------|------|--------|--------|-----------------|
 | `guilmon-normal` / `guilmon-poison` | ally | 0 | Poison | **`0x01`** |
+| `new-condition` (ally slot0 `0xA448C`) | ally | 0 | Paralyze / in-game “Freeze” | **`0x02`** |
+| `sleep-condition` (ally slot0 `0xA448C`, Dinohumon `386`) | ally | 0 | Sleep | **`0x08`** |
 | `guilmon-gekomon-normal` / `guilmon-gekomon-confuse` | ally | 0 | Confuse | **`0x04`** |
 | `redGoburimon-without-poison` / `redGoburimon-with-poison` | enemy | 0 | Poison | **`0x01`** @ `0xA44EC` |
 
-Bitfield (poison bit0, confuse bit2) or enum powers-of-two. Ally poison/confuse:
-only active Guilmon slot changed. Enemy poison: ally `+0x1C` stayed 0; enemy id
-`0x018E` stable. Secondary on enemy poison pair: `+0x04` `0x00→0x01` (unknown —
-not Condition); HP current also dropped (combat damage). Confuse snap noise:
-`+0x1F` `0x00→0x50` (timer?). Wired as `InBattle.Condition` / `Enemy.Condition`.
+Bitfield powers-of-two: poison `0x01`, paralyze `0x02`, confuse `0x04`, sleep `0x08`.
+Ally poison/confuse/paralyze/sleep: only active slot changed. Enemy poison: ally
+`+0x1C` stayed 0; enemy id `0x018E` stable. Secondary on enemy poison pair:
+`+0x04` `0x00→0x01` (unknown — not Condition); HP current also dropped (combat
+damage). Confuse snap noise: `+0x1F` `0x00→0x50` (timer?); paralyze snap
+`+0x1D` `0x60` on `new-condition` (timer?). Wired as `InBattle.Condition` /
+`Enemy.Condition`. Digivice tooltip: `ProfilePresenter.conditionBitByStatus`.
 
 ### Cardmon “curse” (suspected / incomplete — 2026-08-26)
 
