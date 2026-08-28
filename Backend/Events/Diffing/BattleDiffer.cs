@@ -22,8 +22,9 @@ public static class BattleDiffer
 
         var enemyDelta = EnemyDiffer.Diff(previousBattle.Enemy, newBattle.Enemy);
         bool fieldChanged = previousBattle.Field != newBattle.Field;
+        bool groupIdChanged = previousBattle.GroupId != newBattle.GroupId;
 
-        if (enemyDelta == null && !fieldChanged)
+        if (enemyDelta == null && !fieldChanged && !groupIdChanged)
         {
             return new BattleDTO();
         }
@@ -36,6 +37,10 @@ public static class BattleDiffer
         if (fieldChanged)
         {
             dto = dto with { Field = newBattle.Field };
+        }
+        if (groupIdChanged)
+        {
+            dto = dto with { GroupId = newBattle.GroupId };
         }
 
         return dto;

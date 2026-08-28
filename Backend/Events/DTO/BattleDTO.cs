@@ -11,5 +11,8 @@ public record class BattleDTO : IDTO
     public Optional<byte> Field { get; init; } = Optional<byte>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<short> GroupId { get; init; } = Optional<short>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<EnemyDTO> Enemy { get; init; } = Optional<EnemyDTO>.Empty;
 }

@@ -10,6 +10,7 @@ public class BattleLoaderTests : LoaderIntegrationTestBase
 {
     private const long EnemySlotBase = 0x000A44D0;
     private const long ActiveUnitIdAddress = 0x000A4558;
+    private const long GroupIdAddress = 0x00042B2C;
     private const int SlotStride = 0x20;
 
     [Fact]
@@ -30,11 +31,13 @@ public class BattleLoaderTests : LoaderIntegrationTestBase
             speed: 84);
         memoryReaderMock.Setup(m => m.ReadInt16(ActiveUnitIdAddress)).Returns((short)122);
         memoryReaderMock.Setup(m => m.ReadBytes(0x000A4530, 1)).Returns([0x02]);
+        memoryReaderMock.Setup(m => m.ReadInt16(GroupIdAddress)).Returns((short)201);
 
         var loader = new BattleLoader(addressesRepository, new EnemyReader(memoryReaderMock.Object), memoryReaderMock.Object);
         var resource = loader.Load();
 
         Assert.Equal(0x02, resource.Field);
+        Assert.Equal(201, resource.GroupId);
         Assert.Equal(122, resource.Enemy.Id);
         Assert.Equal(0x01, resource.Enemy.Condition);
         Assert.Equal(84, resource.Enemy.Speed);
@@ -67,6 +70,7 @@ public class BattleLoaderTests : LoaderIntegrationTestBase
         SetupEmptyEnemySlot(memoryReaderMock, slotIndex: 2);
         memoryReaderMock.Setup(m => m.ReadInt16(ActiveUnitIdAddress)).Returns((short)386);
         memoryReaderMock.Setup(m => m.ReadBytes(0x000A4530, 1)).Returns([0x02]);
+        memoryReaderMock.Setup(m => m.ReadInt16(GroupIdAddress)).Returns((short)272);
 
         var loader = new BattleLoader(addressesRepository, new EnemyReader(memoryReaderMock.Object), memoryReaderMock.Object);
         var resource = loader.Load();

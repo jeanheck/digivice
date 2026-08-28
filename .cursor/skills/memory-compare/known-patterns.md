@@ -288,7 +288,8 @@ current HP; `0xE141C`/`0xE1420`/`0xE1424` track enemy current HP.
 
 | Address | Notes |
 |---------|-------|
-| `0x42B28` | battle-related counter/flag (1 or 3 in fights seen) |
+| `0x42B28` | battle-related counter/flag (1 Natsumi, 20 Genji, varies wild) |
+| `0x42B2C` | **`GroupId`** (Int16 LE) — encounter group template id (site: "Group F-201"). Natsumi **201**, Genji **272**, wild 39–43. Stable across multi-enemy NPC fights. Wired in `EnemyAddresses.json` → `Battle.GroupId` / `BattleChanged` |
 | `0x42B34` | same enemy token as `0xA44D0` |
 | `0x42B38` | enemy level (Mammothmon 23) |
 | `0x42B3A` | enemy **max/initial** HP only — stayed 672 while `0xA44D8` dropped |

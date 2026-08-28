@@ -19,6 +19,7 @@ namespace Backend.Application.Loaders
                 Field = memoryReader.ReadBytes(addresses.Field, 1) is { Length: > 0 } fieldBytes
                     ? fieldBytes[0]
                     : (byte)0,
+                GroupId = memoryReader.ReadInt16(addresses.GroupId),
                 Enemy = enemyReader.Read(addresses)
             };
         }

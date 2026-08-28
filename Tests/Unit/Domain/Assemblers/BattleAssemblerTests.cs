@@ -13,6 +13,7 @@ public class BattleAssemblerTests
         var resource = new BattleResource
         {
             Field = 0x02,
+            GroupId = 201,
             Enemy = new EnemyResource
             {
                 Id = 122,
@@ -27,6 +28,7 @@ public class BattleAssemblerTests
         var result = BattleAssembler.Assemble(resource);
 
         Assert.Equal(0x02, result.Field);
+        Assert.Equal(201, result.GroupId);
         Assert.Equal(122, result.Enemy.Id);
         Assert.Equal(0x01, result.Enemy.Condition);
         Assert.Equal(84, result.Enemy.Speed);
