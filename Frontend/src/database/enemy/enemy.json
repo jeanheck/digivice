@@ -40,7 +40,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "necromist",
     "memoryId": 358,
-    "groupId": null,
+    "groupId": 1,
     "drops": [
       {
         "id": "oldWand"
@@ -96,7 +96,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "masterFire",
     "memoryId": 124,
-    "groupId": null,
+    "groupId": 2,
     "drops": [
       {
         "id": "oldClaw"
@@ -152,7 +152,7 @@
     "regularAttackId": "machineElement",
     "techniqueId": "atomicRay",
     "memoryId": 356,
-    "groupId": null,
+    "groupId": 7,
     "drops": [
       {
         "id": "rustyRifle"
@@ -209,7 +209,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "heartBreakAttack",
     "memoryId": 70,
-    "groupId": null,
+    "groupId": 8,
     "locations": [
       {
         "id": "0254",
@@ -261,7 +261,7 @@
     "regularAttackId": "machineElement",
     "techniqueId": "autoRecover",
     "memoryId": 141,
-    "groupId": null,
+    "groupId": 9,
     "drops": [
       {
         "id": "rustyGlove"
@@ -318,7 +318,7 @@
     "regularAttackId": null,
     "techniqueId": null,
     "memoryId": 337,
-    "groupId": null,
+    "groupId": 11,
     "drops": [
       {
         "id": "rustyKatana"
@@ -425,7 +425,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 32,
-    "groupId": null,
+    "groupId": 34,
     "locations": [
       {
         "id": "021D",
@@ -499,7 +499,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 206,
-    "groupId": null,
+    "groupId": 35,
     "locations": [
       {
         "id": "021D",
@@ -557,7 +557,7 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 197,
-    "groupId": null,
+    "groupId": 36,
     "locations": [
       {
         "id": "0227",
@@ -607,7 +607,7 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 132,
-    "groupId": null,
+    "groupId": 37,
     "locations": [
       {
         "id": "021F",
@@ -665,7 +665,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "energySuck",
     "memoryId": 217,
-    "groupId": null,
+    "groupId": 38,
     "drops": [
       {
         "id": "darkPower1"
@@ -723,7 +723,7 @@
     "regularAttackId": "thunderElement",
     "techniqueId": "none",
     "memoryId": 4,
-    "groupId": null,
+    "groupId": 39,
     "drops": [
       {
         "id": "powerCharge"
@@ -806,7 +806,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 25,
-    "groupId": null,
+    "groupId": 40,
     "locations": [
       {
         "id": "021F",
@@ -870,7 +870,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 51,
-    "groupId": null,
+    "groupId": 41,
     "locations": [
       {
         "id": "0221",
@@ -926,7 +926,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 67,
-    "groupId": null,
+    "groupId": 42,
     "locations": [
       {
         "id": "0229",
@@ -976,7 +976,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 198,
-    "groupId": null,
+    "groupId": 43,
     "locations": [
       {
         "id": "0229",
@@ -1026,7 +1026,7 @@
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
     "memoryId": 166,
-    "groupId": null,
+    "groupId": 44,
     "drops": [
       {
         "id": "spiderWeb"
@@ -1081,7 +1081,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 80,
-    "groupId": null,
+    "groupId": 45,
     "locations": [
       {
         "id": "0222",
@@ -1147,7 +1147,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 277,
-    "groupId": null,
+    "groupId": 46,
     "locations": [
       {
         "id": "0226",
@@ -1199,7 +1199,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 172,
-    "groupId": null,
+    "groupId": 47,
     "locations": [
       {
         "id": "0226",
@@ -1249,7 +1249,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 137,
-    "groupId": null,
+    "groupId": 48,
     "locations": [
       {
         "id": "021E",
@@ -1323,7 +1323,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 222,
-    "groupId": null,
+    "groupId": 49,
     "locations": [
       {
         "id": "021D",
@@ -1430,7 +1430,7 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 8,
-    "groupId": null,
+    "groupId": 50,
     "drops": [
       {
         "id": "firePower1"
@@ -1485,7 +1485,7 @@
     "regularAttackId": "fireElement",
     "techniqueId": "none",
     "memoryId": 203,
-    "groupId": null,
+    "groupId": 51,
     "drops": [
       {
         "id": "tntBall"
@@ -1549,7 +1549,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "airBlast",
     "memoryId": 7,
-    "groupId": null,
+    "groupId": 52,
     "drops": [
       {
         "id": "fireChip"
@@ -1604,7 +1604,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "confuseGas",
     "memoryId": 110,
-    "groupId": null,
+    "groupId": 53,
     "drops": [
       {
         "id": "icePower1"
@@ -1677,7 +1677,7 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 49,
-    "groupId": null,
+    "groupId": 54,
     "drops": [
       {
         "id": "waterChip"
@@ -1802,7 +1802,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 37,
-    "groupId": null,
+    "groupId": 55,
     "locations": [
       {
         "id": "023A",
@@ -1902,7 +1902,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 50,
-    "groupId": null,
+    "groupId": 57,
     "locations": [
       {
         "id": "0222",
@@ -2025,7 +2025,7 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 35,
-    "groupId": null,
+    "groupId": 59,
     "drops": [
       {
         "id": "waterChip"
@@ -2105,7 +2105,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "divineRain",
     "memoryId": 208,
-    "groupId": null
+    "groupId": 60
   },
   "98": {
     "name": "Dolphmon",
@@ -2147,7 +2147,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "divineRain",
     "memoryId": 210,
-    "groupId": null,
+    "groupId": 61,
     "locations": [
       {
         "id": "0247",
@@ -2212,7 +2212,7 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 220,
-    "groupId": null,
+    "groupId": 62,
     "drops": [
       {
         "id": "runnerSandal"
@@ -2301,7 +2301,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 241,
-    "groupId": null,
+    "groupId": 64,
     "locations": [
       {
         "id": "0227",
@@ -2351,7 +2351,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "confuseGas",
     "memoryId": 119,
-    "groupId": null,
+    "groupId": 65,
     "drops": [
       {
         "id": "chaosWave"
@@ -2407,7 +2407,7 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 10,
-    "groupId": null,
+    "groupId": 66,
     "drops": [
       {
         "id": "waterPower1"
@@ -2506,7 +2506,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 212,
-    "groupId": null,
+    "groupId": 67,
     "drops": [
       {
         "id": "hpProxy"
@@ -2569,7 +2569,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "smallHeal",
     "memoryId": 42,
-    "groupId": null,
+    "groupId": 68,
     "drops": [
       {
         "id": "superCharge"
@@ -2632,7 +2632,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 34,
-    "groupId": null,
+    "groupId": 69,
     "drops": [
       {
         "id": "powerChip"
@@ -2695,7 +2695,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 136,
-    "groupId": null,
+    "groupId": 70,
     "drops": [
       {
         "id": "counterCrest"
@@ -2850,7 +2850,7 @@
     "regularAttackId": "thunderElementChanceOfSleep",
     "techniqueId": "none",
     "memoryId": 28,
-    "groupId": null,
+    "groupId": 73,
     "drops": [
       {
         "id": "boltPower1"
@@ -2920,7 +2920,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "thunderbolt",
     "memoryId": 334,
-    "groupId": null,
+    "groupId": 74,
     "drops": [
       {
         "id": "thunderChip"
@@ -2983,7 +2983,7 @@
     "regularAttackId": "machineElementChanceOfFreeze",
     "techniqueId": "none",
     "memoryId": 13,
-    "groupId": null,
+    "groupId": 75,
     "drops": [
       {
         "id": "searchCrest"
@@ -3035,7 +3035,7 @@
     ]
   },
   "113": {
-    "name": "Guardromon (blue)",
+    "name": "Guardromon(Blue)",
     "level": 29,
     "hp": 816,
     "species": "machine",
@@ -3116,7 +3116,7 @@
     "regularAttackId": "thunderElement",
     "techniqueId": "thunderGemini",
     "memoryId": 176,
-    "groupId": null,
+    "groupId": 77,
     "drops": [
       {
         "id": "pulseGuard"
@@ -3172,7 +3172,7 @@
     "regularAttackId": "machineElement",
     "techniqueId": "speedUp",
     "memoryId": 122,
-    "groupId": null,
+    "groupId": 78,
     "drops": [
       {
         "id": "metalPower1"
@@ -3228,7 +3228,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "magicMissile",
     "memoryId": 0,
-    "groupId": null,
+    "groupId": 79,
     "drops": [
       {
         "id": "multiCrest"
@@ -3284,7 +3284,7 @@
     "regularAttackId": "thunderElementChanceOfFreeze",
     "techniqueId": "none",
     "memoryId": 40,
-    "groupId": null,
+    "groupId": 80,
     "drops": [
       {
         "id": "machinegun"
@@ -3354,7 +3354,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 11,
-    "groupId": null,
+    "groupId": 81,
     "drops": [
       {
         "id": "binderCrest"
@@ -3410,7 +3410,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 39,
-    "groupId": null,
+    "groupId": 82,
     "drops": [
       {
         "id": "wisdomChip"
@@ -3555,7 +3555,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "paralyzeShock",
     "memoryId": 139,
-    "groupId": null,
+    "groupId": 85,
     "drops": [
       {
         "id": "armorChip"
@@ -3611,7 +3611,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "twinMissile",
     "memoryId": 134,
-    "groupId": null,
+    "groupId": 86,
     "drops": [
       {
         "id": "wisdomChip"
@@ -3709,7 +3709,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "lovelyCharm",
     "memoryId": 14,
-    "groupId": null
+    "groupId": 88
   },
   "126": {
     "name": "Tankmon",
@@ -3835,7 +3835,7 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 173,
-    "groupId": null,
+    "groupId": 91,
     "drops": [
       {
         "id": "mpChip"
@@ -6288,7 +6288,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 77,
-    "groupId": null,
+    "groupId": 145,
     "locations": [
       {
         "id": "022A",
@@ -6401,7 +6401,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 396,
-    "groupId": null,
+    "groupId": 147,
     "locations": [
       {
         "id": "022A",
@@ -6496,7 +6496,7 @@
     "regularAttackId": "noElementChanceOfPoison",
     "techniqueId": "none",
     "memoryId": 397,
-    "groupId": null,
+    "groupId": 148,
     "drops": [
       {
         "id": "spiderWeb"
@@ -6559,7 +6559,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 398,
-    "groupId": null,
+    "groupId": 149,
     "drops": [
       {
         "id": "naginata"
@@ -6716,7 +6716,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "groupId": null,
+    "groupId": 152,
     "locations": [
       {
         "id": "023C",
@@ -6810,7 +6810,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 403,
-    "groupId": null,
+    "groupId": 154,
     "drops": [
       {
         "id": "magicianRod"
@@ -6920,7 +6920,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 405,
-    "groupId": null,
+    "groupId": 156,
     "drops": [
       {
         "id": "overClocked"
@@ -7364,7 +7364,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 413,
-    "groupId": null,
+    "groupId": 165,
     "drops": [
       {
         "id": "danceFeather"
@@ -9098,5 +9098,469 @@
     "techniqueId": "none",
     "memoryId": 198,
     "groupId": 201
+  },
+  "529": {
+    "name": "Minotarumon",
+    "level": 9,
+    "hp": 504,
+    "species": "mammal",
+    "rate": 0,
+    "strength": 206,
+    "defense": 171,
+    "spirit": 93,
+    "wisdom": 116,
+    "speed": 93,
+    "fire": 60,
+    "water": 92,
+    "ice": 92,
+    "wind": 180,
+    "thunder": 92,
+    "machine": 92,
+    "dark": 92,
+    "canPoison": true,
+    "poison": 50,
+    "canParalyze": true,
+    "paralyze": 50,
+    "canConfuse": true,
+    "confuse": 0,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "noElement",
+    "techniqueId": "none",
+    "memoryId": 172,
+    "groupId": 3
+  },
+  "530": {
+    "name": "Tyrannomon",
+    "level": 11,
+    "hp": 576,
+    "species": "dino",
+    "rate": 128,
+    "strength": 158,
+    "defense": 198,
+    "spirit": 161,
+    "wisdom": 135,
+    "speed": 107,
+    "fire": 185,
+    "water": 92,
+    "ice": 60,
+    "wind": 92,
+    "thunder": 92,
+    "machine": 92,
+    "dark": 92,
+    "canPoison": true,
+    "poison": 99,
+    "canParalyze": true,
+    "paralyze": 50,
+    "canConfuse": true,
+    "confuse": 50,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "fireElement",
+    "techniqueId": "none",
+    "memoryId": 8,
+    "drops": [
+      {
+        "id": "firePower1"
+      }
+    ],
+    "groupId": 3
+  },
+  "531": {
+    "name": "Apemon",
+    "level": 14,
+    "hp": 684,
+    "species": "mammal",
+    "rate": 128,
+    "strength": 160,
+    "defense": 160,
+    "spirit": 162,
+    "wisdom": 187,
+    "speed": 225,
+    "fire": 60,
+    "water": 94,
+    "ice": 205,
+    "wind": 205,
+    "thunder": 94,
+    "machine": 94,
+    "dark": 60,
+    "canPoison": true,
+    "poison": 50,
+    "canParalyze": true,
+    "paralyze": 50,
+    "canConfuse": true,
+    "confuse": 50,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "noElement",
+    "techniqueId": "none",
+    "memoryId": 207,
+    "drops": [
+      {
+        "id": "windPower1"
+      }
+    ],
+    "groupId": 3
+  },
+  "532": {
+    "name": "Woodmon",
+    "level": 12,
+    "hp": 612,
+    "species": "plant",
+    "rate": 0,
+    "strength": 168,
+    "defense": 168,
+    "spirit": 135,
+    "wisdom": 168,
+    "speed": 135,
+    "fire": 60,
+    "water": 180,
+    "ice": 92,
+    "wind": 180,
+    "thunder": 92,
+    "machine": 60,
+    "dark": 92,
+    "canPoison": true,
+    "poison": 0,
+    "canParalyze": true,
+    "paralyze": 50,
+    "canConfuse": true,
+    "confuse": 50,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "noElement",
+    "techniqueId": "none",
+    "memoryId": 222,
+    "groupId": 4
+  },
+  "533": {
+    "name": "RedVegiemon",
+    "level": 14,
+    "hp": 684,
+    "species": "plant",
+    "rate": 0,
+    "strength": 192,
+    "defense": 192,
+    "spirit": 165,
+    "wisdom": 192,
+    "speed": 192,
+    "fire": 60,
+    "water": 200,
+    "ice": 94,
+    "wind": 200,
+    "thunder": 94,
+    "machine": 60,
+    "dark": 94,
+    "canPoison": true,
+    "poison": 99,
+    "canParalyze": true,
+    "paralyze": 99,
+    "canConfuse": true,
+    "confuse": 99,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "noElement",
+    "techniqueId": "none",
+    "memoryId": 77,
+    "groupId": 4
+  },
+  "534": {
+    "name": "ShogunGekomon",
+    "level": 20,
+    "hp": 792,
+    "species": "fish",
+    "rate": 128,
+    "strength": 250,
+    "defense": 250,
+    "spirit": 288,
+    "wisdom": 312,
+    "speed": 200,
+    "fire": 99,
+    "water": 255,
+    "ice": 60,
+    "wind": 99,
+    "thunder": 60,
+    "machine": 99,
+    "dark": 99,
+    "canPoison": true,
+    "poison": 99,
+    "canParalyze": true,
+    "paralyze": 50,
+    "canConfuse": true,
+    "confuse": 0,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "noElement",
+    "techniqueId": "confuseGas",
+    "memoryId": 119,
+    "drops": [
+      {
+        "id": "chaosWave"
+      }
+    ],
+    "groupId": 4
+  },
+  "535": {
+    "name": "Numemon",
+    "level": 27,
+    "hp": 768,
+    "species": "rare",
+    "rate": 64,
+    "strength": 318,
+    "defense": 398,
+    "spirit": 252,
+    "wisdom": 270,
+    "speed": 255,
+    "fire": 102,
+    "water": 102,
+    "ice": 102,
+    "wind": 102,
+    "thunder": 102,
+    "machine": 102,
+    "dark": 280,
+    "canPoison": true,
+    "poison": 99,
+    "canParalyze": true,
+    "paralyze": 99,
+    "canConfuse": true,
+    "confuse": 99,
+    "canSleep": true,
+    "sleep": 0,
+    "canKO": true,
+    "ko": 0,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "darkElement",
+    "techniqueId": "none",
+    "memoryId": 11,
+    "drops": [
+      {
+        "id": "binderCrest"
+      }
+    ],
+    "groupId": 5
+  },
+  "536": {
+    "name": "Numemon",
+    "level": 27,
+    "hp": 768,
+    "species": "rare",
+    "rate": 64,
+    "strength": 318,
+    "defense": 398,
+    "spirit": 252,
+    "wisdom": 270,
+    "speed": 255,
+    "fire": 102,
+    "water": 102,
+    "ice": 102,
+    "wind": 102,
+    "thunder": 102,
+    "machine": 102,
+    "dark": 280,
+    "canPoison": true,
+    "poison": 99,
+    "canParalyze": true,
+    "paralyze": 99,
+    "canConfuse": true,
+    "confuse": 99,
+    "canSleep": true,
+    "sleep": 0,
+    "canKO": true,
+    "ko": 0,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "darkElement",
+    "techniqueId": "none",
+    "memoryId": 11,
+    "drops": [
+      {
+        "id": "binderCrest"
+      }
+    ],
+    "groupId": 5
+  },
+  "537": {
+    "name": "Mamemon",
+    "level": 25,
+    "hp": 1088,
+    "species": "machine",
+    "rate": 64,
+    "strength": 300,
+    "defense": 450,
+    "spirit": 280,
+    "wisdom": 300,
+    "speed": 240,
+    "fire": 102,
+    "water": 60,
+    "ice": 280,
+    "wind": 102,
+    "thunder": 60,
+    "machine": 280,
+    "dark": 102,
+    "canPoison": true,
+    "poison": 99,
+    "canParalyze": true,
+    "paralyze": 0,
+    "canConfuse": true,
+    "confuse": 50,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "machineElementChanceOfFreeze",
+    "techniqueId": "none",
+    "memoryId": 13,
+    "drops": [
+      {
+        "id": "searchCrest"
+      }
+    ],
+    "groupId": 6
+  },
+  "538": {
+    "name": "Tortomon",
+    "level": 29,
+    "hp": 1224,
+    "species": "fish",
+    "rate": 0,
+    "strength": 340,
+    "defense": 425,
+    "spirit": 400,
+    "wisdom": 340,
+    "speed": 231,
+    "fire": 300,
+    "water": 300,
+    "ice": 60,
+    "wind": 104,
+    "thunder": 60,
+    "machine": 104,
+    "dark": 104,
+    "canPoison": true,
+    "poison": 99,
+    "canParalyze": true,
+    "paralyze": 50,
+    "canConfuse": true,
+    "confuse": 50,
+    "canSleep": true,
+    "sleep": 0,
+    "canKO": true,
+    "ko": 50,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "noElement",
+    "techniqueId": "divineRain",
+    "memoryId": 208,
+    "groupId": 6
+  },
+  "539": {
+    "name": "Flymon(Pink)",
+    "level": 29,
+    "hp": 1224,
+    "species": "insect",
+    "rate": 128,
+    "strength": 332,
+    "defense": 282,
+    "spirit": 315,
+    "wisdom": 332,
+    "speed": 332,
+    "fire": 106,
+    "water": 106,
+    "ice": 106,
+    "wind": 60,
+    "thunder": 320,
+    "machine": 106,
+    "dark": 320,
+    "canPoison": true,
+    "poison": 99,
+    "canParalyze": true,
+    "paralyze": 50,
+    "canConfuse": true,
+    "confuse": 50,
+    "canSleep": true,
+    "sleep": 50,
+    "canKO": true,
+    "ko": 0,
+    "canDrain": true,
+    "canSteal": true,
+    "strDown": "Yes",
+    "defDown": "Yes",
+    "spdDown": "Yes",
+    "canEscape": true,
+    "regularAttackId": "noElement",
+    "techniqueId": "none",
+    "memoryId": 400,
+    "drops": [
+      {
+        "id": "glasses"
+      }
+    ],
+    "groupId": 6
   }
 }
