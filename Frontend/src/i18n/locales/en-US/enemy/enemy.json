@@ -34,6 +34,8 @@
     "boosterCardsLabel": "Cards that can be obtained from this booster",
     "obtainedFrom": "Obtained from",
     "obtainedFromNone": "No known boosters",
+    "purchasableAt": "Purchasable at",
+    "purchasableAtNone": "Not sold in any known shop",
     "baseExp": "EXP",
     "baseDvexp": "DVEXP",
     "baseBits": "BITS",

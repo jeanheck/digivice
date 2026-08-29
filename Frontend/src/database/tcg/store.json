@@ -1,0 +1,65 @@
+{
+  "asYellowCruiser": {
+    "locationId": "0211",
+    "phases": [
+      {
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26",
+        "inventory": [
+          { "cardId": "1064", "price": 10000 },
+          { "cardId": "1234", "price": 13000 },
+          { "cardId": "1276", "price": 10000 },
+          { "cardId": "1193", "price": 10000 },
+          { "cardId": "1203", "price": 5600 },
+          { "cardId": "1058", "price": 1000 }
+        ]
+      },
+      {
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999",
+        "inventory": [
+          { "cardId": "1009", "price": 2200 },
+          { "cardId": "1209", "price": 2200 },
+          { "cardId": "1079", "price": 2200 },
+          { "cardId": "1167", "price": 2200 },
+          { "cardId": "1029", "price": 4000 },
+          { "cardId": "1058", "price": 1000 }
+        ]
+      }
+    ]
+  },
+  "seiryuCardShop": {
+    "locationId": "022E",
+    "phases": [
+      {
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999",
+        "inventory": [
+          { "cardId": "1095", "price": 500 },
+          { "cardId": "1225", "price": 500 },
+          { "cardId": "1139", "price": 500 },
+          { "cardId": "1184", "price": 500 },
+          { "cardId": "1264", "price": 500 },
+          { "cardId": "1258", "price": 1000 }
+        ]
+      }
+    ]
+  },
+  "suzakuCardShop": {
+    "locationId": "023E",
+    "phases": [
+      {
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999",
+        "inventory": [
+          { "cardId": "1095", "price": 500 },
+          { "cardId": "1009", "price": 2200 },
+          { "cardId": "1209", "price": 2200 },
+          { "cardId": "1079", "price": 2200 },
+          { "cardId": "1167", "price": 2200 },
+          { "cardId": "1029", "price": 4000 }
+        ]
+      }
+    ]
+  }
+}

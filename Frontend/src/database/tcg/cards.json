@@ -60,6 +60,10 @@
       514,
       517
     ],
+    "stores": [
+      "asYellowCruiser",
+      "suzakuCardShop"
+    ],
     "type": "action"
   },
   "1010": {
@@ -182,6 +186,10 @@
   "1029": {
     "boosters": [
       502
+    ],
+    "stores": [
+      "asYellowCruiser",
+      "suzakuCardShop"
     ],
     "type": "action"
   },
@@ -359,6 +367,9 @@
     "boosters": [
       501
     ],
+    "stores": [
+      "asYellowCruiser"
+    ],
     "type": "action"
   },
   "1059": {
@@ -414,6 +425,9 @@
   "1064": {
     "boosters": [
       515
+    ],
+    "stores": [
+      "asYellowCruiser"
     ],
     "type": "white",
     "points": {
@@ -577,6 +591,10 @@
       505,
       511,
       517
+    ],
+    "stores": [
+      "asYellowCruiser",
+      "suzakuCardShop"
     ],
     "type": "white",
     "points": {
@@ -746,6 +764,10 @@
       523,
       503,
       506
+    ],
+    "stores": [
+      "seiryuCardShop",
+      "suzakuCardShop"
     ],
     "type": "white",
     "points": {
@@ -1211,6 +1233,9 @@
       501,
       523
     ],
+    "stores": [
+      "seiryuCardShop"
+    ],
     "type": "blue",
     "points": {
       "ap": 4,
@@ -1501,6 +1526,10 @@
       504,
       517
     ],
+    "stores": [
+      "asYellowCruiser",
+      "suzakuCardShop"
+    ],
     "type": "green",
     "points": {
       "ap": 14,
@@ -1677,6 +1706,9 @@
       523,
       507
     ],
+    "stores": [
+      "seiryuCardShop"
+    ],
     "type": "green",
     "points": {
       "ap": 2,
@@ -1770,6 +1802,9 @@
   "1193": {
     "boosters": [
       513
+    ],
+    "stores": [
+      "asYellowCruiser"
     ],
     "type": "red",
     "points": {
@@ -1876,6 +1911,9 @@
     "boosters": [
       510
     ],
+    "stores": [
+      "asYellowCruiser"
+    ],
     "type": "red",
     "points": {
       "ap": 29,
@@ -1940,6 +1978,10 @@
     "boosters": [
       504,
       517
+    ],
+    "stores": [
+      "asYellowCruiser",
+      "suzakuCardShop"
     ],
     "type": "red",
     "points": {
@@ -2109,6 +2151,9 @@
       503,
       506
     ],
+    "stores": [
+      "seiryuCardShop"
+    ],
     "type": "red",
     "points": {
       "ap": 4,
@@ -2201,6 +2246,9 @@
   "1234": {
     "boosters": [
       515
+    ],
+    "stores": [
+      "asYellowCruiser"
     ],
     "type": "black",
     "points": {
@@ -2447,6 +2495,9 @@
     "boosters": [
       502
     ],
+    "stores": [
+      "seiryuCardShop"
+    ],
     "type": "black",
     "points": {
       "ap": 12,
@@ -2512,6 +2563,9 @@
       503,
       507,
       515
+    ],
+    "stores": [
+      "seiryuCardShop"
     ],
     "type": "black",
     "points": {
@@ -2633,6 +2687,9 @@
   "1276": {
     "boosters": [
       514
+    ],
+    "stores": [
+      "asYellowCruiser"
     ],
     "type": "brown",
     "points": {

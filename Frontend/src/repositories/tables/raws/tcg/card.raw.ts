@@ -7,6 +7,7 @@ export interface CardPointsRaw {
 
 export interface CardRaw {
   boosters: number[];
+  stores?: string[];
   type: CardType;
   points?: CardPointsRaw;
 }

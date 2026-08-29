@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import WikiCardBoosters from "@/components/wiki-modal/wiki-cards-panel/WikiCardBoosters.vue";
 import WikiCardDetails from "@/components/wiki-modal/wiki-cards-panel/WikiCardDetails.vue";
+import WikiCardStores from "@/components/wiki-modal/wiki-cards-panel/WikiCardStores.vue";
 import { WikiCardsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-cards-panel.presenter";
 
 const props = defineProps<{
@@ -27,6 +28,9 @@ const handleOpenDrop = (dropKey: string): void => {
       v-if="cardsViewModel.card !== null"
       :card="cardsViewModel.card"
     />
-    <WikiCardBoosters :sources="cardsViewModel.sources" @open-drop="handleOpenDrop" />
+    <div class="flex gap-4 shrink-0 w-full">
+      <WikiCardBoosters :sources="cardsViewModel.sources" @open-drop="handleOpenDrop" />
+      <WikiCardStores :stores="cardsViewModel.stores" />
+    </div>
   </div>
 </template>
