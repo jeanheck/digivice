@@ -4,6 +4,7 @@ import WikiCardBoosters from "@/components/wiki-modal/wiki-cards-panel/WikiCardB
 import WikiCardDetails from "@/components/wiki-modal/wiki-cards-panel/WikiCardDetails.vue";
 import WikiCardStores from "@/components/wiki-modal/wiki-cards-panel/WikiCardStores.vue";
 import { WikiCardsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-cards-panel.presenter";
+import { useGameStore } from "@/stores/use-game-store";
 
 const props = defineProps<{
   cardId: string;
@@ -13,8 +14,14 @@ const emit = defineEmits<{
   (e: "open-drop", dropKey: string): void;
 }>();
 
+const store = useGameStore();
+
+const mainQuest = computed(() => {
+  return store.currentState?.journal?.mainQuest ?? null;
+});
+
 const cardsViewModel = computed(() => {
-  return WikiCardsPanelPresenter.getViewModel(props.cardId);
+  return WikiCardsPanelPresenter.getViewModel(props.cardId, mainQuest.value);
 });
 
 const handleOpenDrop = (dropKey: string): void => {

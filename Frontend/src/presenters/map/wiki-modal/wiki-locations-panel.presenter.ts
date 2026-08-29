@@ -2,6 +2,7 @@ import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { Quest } from "@/models";
 import { MapFrameSlideConverter } from "@/presenters/converter/map-frame-slide.converter";
 import { WikiLocationConverter } from "@/presenters/converter/wiki-location.converter";
+import { MainQuestRangeHelper } from "@/presenters/helper/main-quest-range.helper";
 import { LocationRepository } from "@/repositories/location.repository";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 import { QuestService } from "@/services/quest.service";
@@ -118,8 +119,8 @@ export class WikiLocationsPanelPresenter {
 
     const sortedByStart = [...locationsInRange].sort((first, second) => {
       return (
-        WikiLocationsPanelPresenter.parseStart(first.startWhenLastMainQuestStepDone) -
-        WikiLocationsPanelPresenter.parseStart(second.startWhenLastMainQuestStepDone)
+        MainQuestRangeHelper.parseStart(first.startWhenLastMainQuestStepDone) -
+        MainQuestRangeHelper.parseStart(second.startWhenLastMainQuestStepDone)
       );
     });
 
@@ -130,35 +131,10 @@ export class WikiLocationsPanelPresenter {
     location: EnemyLocationViewModel,
     lastCompletedMainQuestStep: number,
   ): boolean {
-    const start = WikiLocationsPanelPresenter.parseStart(location.startWhenLastMainQuestStepDone);
-    const finish = WikiLocationsPanelPresenter.parseFinish(location.finishWhenLastMainQuestStepDone);
-
-    return lastCompletedMainQuestStep >= start && lastCompletedMainQuestStep <= finish;
-  }
-
-  private static parseStart(value: string | undefined): number {
-    if (value === undefined || value === "") {
-      return 0;
-    }
-
-    const parsedValue = Number(value);
-    if (Number.isNaN(parsedValue)) {
-      return 0;
-    }
-
-    return parsedValue;
-  }
-
-  private static parseFinish(value: string | undefined): number {
-    if (value === undefined || value === "") {
-      return Number.POSITIVE_INFINITY;
-    }
-
-    const parsedValue = Number(value);
-    if (Number.isNaN(parsedValue)) {
-      return Number.POSITIVE_INFINITY;
-    }
-
-    return parsedValue;
+    return MainQuestRangeHelper.isInMainQuestRange(
+      location.startWhenLastMainQuestStepDone,
+      location.finishWhenLastMainQuestStepDone,
+      lastCompletedMainQuestStep,
+    );
   }
 }

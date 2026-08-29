@@ -5,9 +5,15 @@ export interface CardPointsRaw {
   hp: number;
 }
 
+export interface CardStoreRaw {
+  storeId: string;
+  startWhenLastMainQuestStepDone: string;
+  finishWhenLastMainQuestStepDone: string;
+}
+
 export interface CardRaw {
   boosters: number[];
-  stores?: string[];
+  stores?: CardStoreRaw[];
   type: CardType;
   points?: CardPointsRaw;
 }

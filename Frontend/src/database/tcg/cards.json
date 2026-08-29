@@ -61,8 +61,16 @@
       517
     ],
     "stores": [
-      "asYellowCruiser",
-      "suzakuCardShop"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "storeId": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "action"
   },
@@ -188,8 +196,16 @@
       502
     ],
     "stores": [
-      "asYellowCruiser",
-      "suzakuCardShop"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "storeId": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "action"
   },
@@ -368,7 +384,16 @@
       501
     ],
     "stores": [
-      "asYellowCruiser"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      },
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "action"
   },
@@ -427,7 +452,11 @@
       515
     ],
     "stores": [
-      "asYellowCruiser"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
     ],
     "type": "white",
     "points": {
@@ -593,8 +622,16 @@
       517
     ],
     "stores": [
-      "asYellowCruiser",
-      "suzakuCardShop"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "storeId": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "white",
     "points": {
@@ -766,8 +803,16 @@
       506
     ],
     "stores": [
-      "seiryuCardShop",
-      "suzakuCardShop"
+      {
+        "storeId": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "storeId": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "white",
     "points": {
@@ -1234,7 +1279,11 @@
       523
     ],
     "stores": [
-      "seiryuCardShop"
+      {
+        "storeId": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "blue",
     "points": {
@@ -1527,8 +1576,16 @@
       517
     ],
     "stores": [
-      "asYellowCruiser",
-      "suzakuCardShop"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "storeId": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "green",
     "points": {
@@ -1707,7 +1764,11 @@
       507
     ],
     "stores": [
-      "seiryuCardShop"
+      {
+        "storeId": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "green",
     "points": {
@@ -1804,7 +1865,11 @@
       513
     ],
     "stores": [
-      "asYellowCruiser"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
     ],
     "type": "red",
     "points": {
@@ -1912,7 +1977,11 @@
       510
     ],
     "stores": [
-      "asYellowCruiser"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
     ],
     "type": "red",
     "points": {
@@ -1980,8 +2049,16 @@
       517
     ],
     "stores": [
-      "asYellowCruiser",
-      "suzakuCardShop"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "storeId": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "red",
     "points": {
@@ -2152,7 +2229,11 @@
       506
     ],
     "stores": [
-      "seiryuCardShop"
+      {
+        "storeId": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "red",
     "points": {
@@ -2248,7 +2329,11 @@
       515
     ],
     "stores": [
-      "asYellowCruiser"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
     ],
     "type": "black",
     "points": {
@@ -2496,7 +2581,11 @@
       502
     ],
     "stores": [
-      "seiryuCardShop"
+      {
+        "storeId": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "black",
     "points": {
@@ -2565,7 +2654,11 @@
       515
     ],
     "stores": [
-      "seiryuCardShop"
+      {
+        "storeId": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
     ],
     "type": "black",
     "points": {
@@ -2689,7 +2782,11 @@
       514
     ],
     "stores": [
-      "asYellowCruiser"
+      {
+        "storeId": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
     ],
     "type": "brown",
     "points": {
