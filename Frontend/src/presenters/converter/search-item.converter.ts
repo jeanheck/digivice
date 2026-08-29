@@ -35,6 +35,14 @@ export class SearchItemConverter {
     };
   }
 
+  public static convertStore(id: string, name: string): SearchItemViewModel {
+    return {
+      id,
+      name,
+      kind: "store",
+    };
+  }
+
   public static convertNpc(id: string, npcRaw: NpcRaw): SearchItemViewModel {
     return {
       id,

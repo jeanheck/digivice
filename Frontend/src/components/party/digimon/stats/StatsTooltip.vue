@@ -19,7 +19,7 @@ const props = withDefaults(
   }>(),
   {
     battleDelta: 0,
-    maxWidth: 250,
+    maxWidth: 280,
     placement: "below",
   },
 );
@@ -49,7 +49,7 @@ const modifierColorClass = computed(() => {
 
 <template>
   <Tooltip :show="show" :x="x" :y="y" :title="title" :max-width="maxWidth" :placement="placement">
-    <div class="flex flex-col w-full min-w-42.5">
+    <div class="flex flex-col w-full min-w-50">
       <div
         class="text-white text-base font-bold text-center mb-2 tracking-wider shadow-text whitespace-nowrap"
       >

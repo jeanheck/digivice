@@ -13,6 +13,7 @@
       "drop": "Drop",
       "card": "Card",
       "location": "Location",
+      "store": "Shop",
       "tamer": "Tamer",
       "leader": "Leader",
       "npc": "NPC"
@@ -32,6 +33,10 @@
     "soldInStoreNo": "No",
     "type": "Type",
     "boosterCardsLabel": "Cards that can be obtained from this booster",
+    "storeCardsLabel": "Cards that can be purchased at this shop",
+    "locatedIn": "Located in",
+    "locatedInNone": "No known location",
+    "priceLabel": "Price",
     "obtainedFrom": "Obtained from",
     "obtainedFromNone": "No known boosters",
     "purchasableAt": "Purchasable at",

@@ -13,6 +13,7 @@
       "drop": "Drop",
       "card": "Carta",
       "location": "Localização",
+      "store": "Loja",
       "tamer": "Treinador",
       "leader": "Líder",
       "npc": "NPC"
@@ -32,6 +33,10 @@
     "soldInStoreNo": "Não",
     "type": "Tipo",
     "boosterCardsLabel": "Cartas que podem ser obtidas nesse booster",
+    "storeCardsLabel": "Cartas que podem ser compradas nessa loja",
+    "locatedIn": "Localizado em",
+    "locatedInNone": "Nenhuma localização conhecida",
+    "priceLabel": "Preço",
     "obtainedFrom": "Obtido em",
     "obtainedFromNone": "Nenhum booster conhecido",
     "purchasableAt": "Comprável em",

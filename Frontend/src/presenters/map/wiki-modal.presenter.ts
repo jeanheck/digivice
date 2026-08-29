@@ -3,6 +3,7 @@ import { DropRepository } from "@/repositories/drop.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { LocationRepository } from "@/repositories/location.repository";
 import { NpcRepository } from "@/repositories/npc.repository";
+import { StoreRepository } from "@/repositories/store.repository";
 import { EnemyConverter } from "@/presenters/converter/enemy.converter";
 import { SearchItemConverter } from "@/presenters/converter/search-item.converter";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
@@ -44,6 +45,12 @@ export class WikiModalPresenter {
     });
   }
 
+  public static getStoreSearchItems(translateStoreName: (storeId: string) => string): SearchItemViewModel[] {
+    return StoreRepository.getStoreIds().map((storeId) => {
+      return SearchItemConverter.convertStore(storeId, translateStoreName(storeId));
+    });
+  }
+
   public static getNpcSearchItems(): SearchItemViewModel[] {
     return Object.entries(NpcRepository.getNpcTable()).map(([npcId, npcRaw]) => {
       return SearchItemConverter.convertNpc(npcId, npcRaw);
@@ -54,12 +61,14 @@ export class WikiModalPresenter {
     translateDropName: (dropKey: string) => string,
     translateCardName: (cardId: string) => string,
     translateLocationName: (locationId: string) => string,
+    translateStoreName: (storeId: string) => string,
   ): SearchItemViewModel[] {
     return [
       ...this.getEnemySearchItems(),
       ...this.getDropSearchItems(translateDropName),
       ...this.getCardSearchItems(translateCardName),
       ...this.getLocationSearchItems(translateLocationName),
+      ...this.getStoreSearchItems(translateStoreName),
       ...this.getNpcSearchItems(),
     ];
   }

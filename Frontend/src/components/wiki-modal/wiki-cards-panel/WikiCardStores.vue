@@ -5,6 +5,14 @@ import type { WikiCardStoreViewModel } from "@/viewmodels/wiki-modal/wiki-card-s
 defineProps<{
   stores: WikiCardStoreViewModel[];
 }>();
+
+const emit = defineEmits<{
+  (e: "open-store", storeId: string): void;
+}>();
+
+const handleSelect = (storeId: string): void => {
+  emit("open-store", storeId);
+};
 </script>
 
 <template>
@@ -29,6 +37,7 @@ defineProps<{
         v-for="store in stores"
         :key="store.storeId"
         :store="store"
+        @select="handleSelect"
       />
     </div>
   </section>

@@ -12,6 +12,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "open-drop", dropKey: string): void;
+  (e: "open-store", storeId: string): void;
 }>();
 
 const store = useGameStore();
@@ -27,6 +28,10 @@ const cardsViewModel = computed(() => {
 const handleOpenDrop = (dropKey: string): void => {
   emit("open-drop", dropKey);
 };
+
+const handleOpenStore = (storeId: string): void => {
+  emit("open-store", storeId);
+};
 </script>
 
 <template>
@@ -37,7 +42,7 @@ const handleOpenDrop = (dropKey: string): void => {
     />
     <div class="flex gap-4 shrink-0 w-full">
       <WikiCardBoosters :sources="cardsViewModel.sources" @open-drop="handleOpenDrop" />
-      <WikiCardStores :stores="cardsViewModel.stores" />
+      <WikiCardStores :stores="cardsViewModel.stores" @open-store="handleOpenStore" />
     </div>
   </div>
 </template>
