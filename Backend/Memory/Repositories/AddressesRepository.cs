@@ -18,6 +18,7 @@ namespace Backend.Memory.Repositories
         private List<QuestAddresses>? sideQuestAddresses;
         private List<QuestAddresses>? legendaryWeaponAddresses;
         private List<QuestAddresses>? driAgentAddresses;
+        private List<QuestAddresses>? duelIslandAddresses;
         private Dictionary<string, AuctionAddresses>? auctionAddresses;
         private Dictionary<string, NpcAddresses>? npcAddresses;
         private CardBattleAddresses? cardBattleAddresses;
@@ -104,6 +105,9 @@ namespace Backend.Memory.Repositories
 
         public List<QuestAddresses> GetAllDriAgents() =>
             LoadAllQuestAddressesFromFolder(ref driAgentAddresses, "Quests/DriAgents");
+
+        public List<QuestAddresses> GetAllDuelIsland() =>
+            LoadAllQuestAddressesFromFolder(ref duelIslandAddresses, "Quests/DuelIsland");
 
         public Dictionary<string, AuctionAddresses> GetAuctionAddresses() =>
             LoadAndCache(ref auctionAddresses, "AuctionAddresses.json");

@@ -908,6 +908,10 @@ Survives map leave mid-run (user-tested). `0x4B3B2` shares byte with MQ step 26
 
 First-run trophy: `0x48DC2` (Asuka Trophy, important item — not a booster).
 
+**Backend integrated (2026-08-30):** `Quests/DuelIsland/AsukaTrophyAddresses.json`
+— `Id` `asukaTrophy`, 6 steps (round flags + trophy), normalize in
+`JournalAssembler.NormalizeDuelIslandProgression`.
+
 Discard: encounter cache `0x4B824+`, entity table `0x4B618+`, spawn block
 `0x48D6C–0x48D84`.
 

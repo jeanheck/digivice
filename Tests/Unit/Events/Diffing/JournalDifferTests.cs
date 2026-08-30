@@ -220,6 +220,56 @@ public class JournalDifferTests
     }
 
     [Fact]
+    public void Diff_ShouldReturnDelta_WhenDuelIslandChanged()
+    {
+        var previous = new Journal
+        {
+            MainQuest = new Quest { Id = "1" },
+            SideQuests = [],
+            LegendaryWeapons = [],
+            DriAgents = [],
+            DuelIsland = [
+                new Quest
+                {
+                    Id = "asukaTrophy",
+                    Requisites = [],
+                    Steps = [new Step { Number = 1, Value = 0 }]
+                }
+            ]
+        };
+        var newObj = new Journal
+        {
+            MainQuest = new Quest { Id = "1" },
+            SideQuests = [],
+            LegendaryWeapons = [],
+            DriAgents = [],
+            DuelIsland = [
+                new Quest
+                {
+                    Id = "asukaTrophy",
+                    Requisites = [],
+                    Steps = [new Step { Number = 1, Value = 1 }]
+                }
+            ]
+        };
+
+        var result = JournalDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.False(result.MainQuest.HasValue);
+        Assert.False(result.SideQuests.HasValue);
+        Assert.False(result.LegendaryWeapons.HasValue);
+        Assert.False(result.DriAgents.HasValue);
+        Assert.True(result.DuelIsland.HasValue);
+
+        var duelIsland = result.DuelIsland.Value!;
+        Assert.Single(duelIsland);
+        Assert.Equal("asukaTrophy", duelIsland[0].Id);
+        Assert.True(duelIsland[0].Steps.HasValue);
+        Assert.Equal((byte)1, duelIsland[0].Steps.Value![0].Value.Value);
+    }
+
+    [Fact]
     public void Diff_ShouldReturnDelta_WhenAuctionsChanged()
     {
         var previous = new Journal

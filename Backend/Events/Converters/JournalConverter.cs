@@ -14,6 +14,7 @@ public static class JournalConverter
             SideQuests = journal.SideQuests.Select(QuestConverter.ToDTO).ToList(),
             LegendaryWeapons = journal.LegendaryWeapons.Select(QuestConverter.ToDTO).ToList(),
             DriAgents = journal.DriAgents.Select(QuestConverter.ToDTO).ToList(),
+            DuelIsland = journal.DuelIsland.Select(QuestConverter.ToDTO).ToList(),
             Auctions = journal.Auctions.Select(AuctionConverter.ToDTO).ToList(),
             Npcs = journal.Npcs.Select(NpcConverter.ToDTO).ToList(),
         };

@@ -27,5 +27,10 @@ namespace Backend.Application.Loaders.Journals
         {
             return [.. addressesRepository.GetAllDriAgents().Select(questReader.Read)];
         }
+
+        public List<QuestResource> LoadDuelIsland()
+        {
+            return [.. addressesRepository.GetAllDuelIsland().Select(questReader.Read)];
+        }
     }
 }

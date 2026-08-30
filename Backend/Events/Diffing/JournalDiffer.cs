@@ -50,6 +50,12 @@ public static class JournalDiffer
             dto = dto with { DriAgents = driAgentsDelta };
         }
 
+        var duelIslandDelta = GenerateQuestsDtos(newJournal.DuelIsland, previousJournal.DuelIsland);
+        if (duelIslandDelta.Count > 0)
+        {
+            dto = dto with { DuelIsland = duelIslandDelta };
+        }
+
         List<AuctionDTO> auctionsDelta = [];
         foreach (var newAuction in newJournal.Auctions)
         {

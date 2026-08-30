@@ -8,6 +8,7 @@ namespace Backend.Domain.Models
         public List<Quest> SideQuests { get; set; } = [];
         public List<Quest> LegendaryWeapons { get; set; } = [];
         public List<Quest> DriAgents { get; set; } = [];
+        public List<Quest> DuelIsland { get; set; } = [];
         public List<Auction> Auctions { get; set; } = [];
         public List<Npc> Npcs { get; set; } = [];
 
@@ -30,6 +31,10 @@ namespace Backend.Domain.Models
                                   (DriAgents != null && other.DriAgents != null &&
                                    DriAgents.SequenceEqual(other.DriAgents));
 
+            bool duelIslandEqual = (DuelIsland == null && other.DuelIsland == null) ||
+                                   (DuelIsland != null && other.DuelIsland != null &&
+                                    DuelIsland.SequenceEqual(other.DuelIsland));
+
             bool auctionsEqual = (Auctions == null && other.Auctions == null) ||
                                  (Auctions != null && other.Auctions != null &&
                                   Auctions.SequenceEqual(other.Auctions));
@@ -38,7 +43,7 @@ namespace Backend.Domain.Models
                              (Npcs != null && other.Npcs != null &&
                               Npcs.SequenceEqual(other.Npcs));
 
-            return mainQuestEqual && sideQuestsEqual && legendaryWeaponsEqual && driAgentsEqual && auctionsEqual && npcsEqual;
+            return mainQuestEqual && sideQuestsEqual && legendaryWeaponsEqual && driAgentsEqual && duelIslandEqual && auctionsEqual && npcsEqual;
         }
 
         public override int GetHashCode()
@@ -64,6 +69,13 @@ namespace Backend.Domain.Models
                 foreach (var driAgent in DriAgents)
                 {
                     hash.Add(driAgent);
+                }
+            }
+            if (DuelIsland != null)
+            {
+                foreach (var duelIslandQuest in DuelIsland)
+                {
+                    hash.Add(duelIslandQuest);
                 }
             }
             if (Auctions != null)

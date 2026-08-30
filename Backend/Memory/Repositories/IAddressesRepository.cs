@@ -18,6 +18,7 @@ namespace Backend.Memory.Repositories
         List<QuestAddresses> GetAllSideQuests();
         List<QuestAddresses> GetAllLegendaryWeapons();
         List<QuestAddresses> GetAllDriAgents();
+        List<QuestAddresses> GetAllDuelIsland();
         Dictionary<string, AuctionAddresses> GetAuctionAddresses();
         Dictionary<string, NpcAddresses> GetNpcAddresses();
         CardBattleAddresses GetCardBattleAddresses();

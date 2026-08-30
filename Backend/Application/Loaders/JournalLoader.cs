@@ -13,6 +13,7 @@ namespace Backend.Application.Loaders
                 SideQuests = questLoader.LoadSideQuests(),
                 LegendaryWeapons = questLoader.LoadLegendaryWeapons(),
                 DriAgents = questLoader.LoadDriAgents(),
+                DuelIsland = questLoader.LoadDuelIsland(),
                 Auctions = auctionLoader.LoadAuctions(),
                 Npcs = npcLoader.LoadNpcs(),
             };

@@ -8,5 +8,6 @@ namespace Backend.Application.Loaders.Journals
         List<QuestResource> LoadSideQuests();
         List<QuestResource> LoadLegendaryWeapons();
         List<QuestResource> LoadDriAgents();
+        List<QuestResource> LoadDuelIsland();
     }
 }

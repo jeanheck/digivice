@@ -275,4 +275,34 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal("patamonDDNA", patamon.Steps[2].Requisites[0].Id);
         Assert.Equal(1, patamon.Steps[2].Requisites[0].Value);
     }
+
+    [Fact]
+    public void LoadDuelIsland_ShouldIntegrateAsukaTrophyAddressesAndReaderPipeline()
+    {
+        var addressesRepository = CreateAddressesRepository();
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(It.IsAny<long>(), 1)).Returns([0]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B2, 1)).Returns([(byte)0xCF]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B3, 1)).Returns([(byte)0x0F]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DC2, 1)).Returns([(byte)0x01]);
+
+        var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
+        var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
+        var questReader = new QuestReader(requisiteReader, stepReader);
+        var questLoader = new QuestLoader(addressesRepository, questReader);
+
+        var duelIsland = questLoader.LoadDuelIsland();
+
+        Assert.NotNull(duelIsland);
+        var asukaTrophy = Assert.Single(duelIsland, quest => quest.Id == "asukaTrophy");
+        Assert.Empty(asukaTrophy.Requisites);
+        Assert.Equal(6, asukaTrophy.Steps.Count);
+        Assert.Equal(0x80, asukaTrophy.Steps[0].Value);
+        Assert.Equal(0x01, asukaTrophy.Steps[1].Value);
+        Assert.Equal(0x02, asukaTrophy.Steps[2].Value);
+        Assert.Equal(0x04, asukaTrophy.Steps[3].Value);
+        Assert.Equal(0x08, asukaTrophy.Steps[4].Value);
+        Assert.Equal(1, asukaTrophy.Steps[5].Value);
+    }
 }
