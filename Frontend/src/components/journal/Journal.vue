@@ -50,7 +50,7 @@ const closeQuestModal = () => {
         <AuctionCard />
       </section>
 
-      <JournalQuestsSection :title="$t('journal.sideQuests')" accent-color="teal">
+      <JournalQuestsSection :title="$t('journal.sideQuests')" accent-color="emerald">
         <JournalQuestCard
           v-for="sideQuest in journalViewModel.sideQuests"
           :key="sideQuest.id"
@@ -60,7 +60,7 @@ const closeQuestModal = () => {
         />
       </JournalQuestsSection>
 
-      <JournalQuestsSection :title="$t('journal.legendaryWeapons')" accent-color="cyan">
+      <JournalQuestsSection :title="$t('journal.legendaryWeapons')" accent-color="teal">
         <JournalQuestCard
           v-for="legendaryWeapon in journalViewModel.legendaryWeapons"
           :key="legendaryWeapon.id"
@@ -70,11 +70,21 @@ const closeQuestModal = () => {
         />
       </JournalQuestsSection>
 
-      <JournalQuestsSection :title="$t('journal.driAgents')" accent-color="sky">
+      <JournalQuestsSection :title="$t('journal.driAgents')" accent-color="cyan">
         <JournalQuestCard
           v-for="driAgent in journalViewModel.driAgents"
           :key="driAgent.id"
           :quest="driAgent"
+          display-mode="side"
+          @click="openQuestModal"
+        />
+      </JournalQuestsSection>
+
+      <JournalQuestsSection :title="$t('journal.duelIsland')" accent-color="sky">
+        <JournalQuestCard
+          v-for="duelIslandQuest in journalViewModel.duelIsland"
+          :key="duelIslandQuest.id"
+          :quest="duelIslandQuest"
           display-mode="side"
           @click="openQuestModal"
         />

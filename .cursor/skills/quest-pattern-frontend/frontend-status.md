@@ -7,9 +7,10 @@ Maintained by quest-pattern-frontend skill. Append entries; do not remove withou
 | Category | Wired on Journal | Accent | Reference quest |
 |----------|------------------|--------|-----------------|
 | Main quest | Yes | Yellow (hardcoded) | mainQuest |
-| Side quests | Yes | `cyan` | folderBag |
-| Legendary weapons | Yes | `purple` | eternally |
-| DRI agents | Yes | `rose` | driAgentGuilmon |
+| Side quests | Yes | `emerald` | folderBag |
+| Legendary weapons | Yes | `teal` | eternally |
+| DRI agents | Yes | `cyan` | driAgentGuilmon |
+| Duel Island | Yes | `sky` | asukaTrophy |
 
 ## Quests registered (static JSON + i18n)
 
@@ -50,8 +51,13 @@ Maintained by quest-pattern-frontend skill. Append entries; do not remove withou
 
 - `driAgentPatamon` — coords provisórias (`021D` / `0247` / 50,50)
 
+### Duel Island (2026-08-30)
+
+- `asukaTrophy` — coords provisórias (`0228` / 50,50)
+
 ## Palette notes
 
-- `cyan` — side quests
-- `purple` — legendary weapons
-- `rose` — DRI agents (`red` removed from palette)
+- `emerald` — side quests
+- `teal` — legendary weapons
+- `cyan` — DRI agents
+- `sky` — Duel Island

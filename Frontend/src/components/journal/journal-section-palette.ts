@@ -1,6 +1,6 @@
 import type { ComputedRef, InjectionKey } from "vue";
 
-export type JournalSectionAccentColor = "cyan" | "teal" | "sky";
+export type JournalSectionAccentColor = "emerald" | "teal" | "cyan" | "sky";
 
 export interface JournalSectionPalette {
   sectionTitleClass: string;
@@ -13,6 +13,15 @@ export interface JournalSectionPalette {
 }
 
 const JOURNAL_SECTION_PALETTES: Record<JournalSectionAccentColor, JournalSectionPalette> = {
+  emerald: {
+    sectionTitleClass: "text-emerald-400",
+    sectionBorderClass: "border-emerald-800",
+    sectionChevronClass: "text-emerald-400",
+    sectionHeaderHoverClass: "hover:bg-emerald-900/30",
+    stepNumberClass: "text-emerald-600",
+    questTitleClass: "text-emerald-400",
+    questTitleHoverClass: "group-hover:text-emerald-400",
+  },
   cyan: {
     sectionTitleClass: "text-cyan-400",
     sectionBorderClass: "border-cyan-800",

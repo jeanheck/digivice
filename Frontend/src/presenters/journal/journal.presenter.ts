@@ -35,11 +35,18 @@ export class JournalPresenter {
       )
       .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
 
+    const duelIslandViewModels = QuestRepository.getDuelIslandRaw()
+      .map((duelIslandQuestRaw) =>
+        QuestModalPresenter.getQuestViewModel(journal, duelIslandQuestRaw.id, partyLevel),
+      )
+      .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
+
     return {
       mainQuest: mainQuestViewModel,
       sideQuests: sideQuestsViewModels,
       legendaryWeapons: legendaryWeaponsViewModels,
       driAgents: driAgentsViewModels,
+      duelIsland: duelIslandViewModels,
     };
   }
 }

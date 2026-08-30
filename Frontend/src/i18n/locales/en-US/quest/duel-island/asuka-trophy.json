@@ -1,0 +1,32 @@
+{
+  "asukaTrophy": {
+    "title": "Asuka Trophy",
+    "description": "Defeat all card duelists on Duel Island and win the Asuka Trophy",
+    "steps": {
+      "1": {
+        "description": "Defeat the first duelist",
+        "locationTarget": "Duel Island — Opponent 1"
+      },
+      "2": {
+        "description": "Defeat the second duelist",
+        "locationTarget": "Duel Island — Opponent 2"
+      },
+      "3": {
+        "description": "Defeat the third duelist",
+        "locationTarget": "Duel Island — Opponent 3"
+      },
+      "4": {
+        "description": "Defeat the fourth duelist",
+        "locationTarget": "Duel Island — Opponent 4"
+      },
+      "5": {
+        "description": "Defeat the fifth duelist",
+        "locationTarget": "Duel Island — Opponent 5"
+      },
+      "6": {
+        "description": "Defeat the final duelist and obtain the Asuka Trophy",
+        "locationTarget": "Duel Island — Final Opponent"
+      }
+    }
+  }
+}

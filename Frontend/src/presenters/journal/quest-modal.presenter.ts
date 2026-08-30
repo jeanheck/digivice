@@ -68,6 +68,19 @@ export class QuestModalPresenter {
       });
     }
 
+    const duelIslandQuestRaw = QuestRepository.getDuelIslandRaw().find((raw) => raw.id === questId);
+    if (duelIslandQuestRaw !== undefined) {
+      const duelIslandQuest = journal.duelIsland.find((quest) => quest.id === questId);
+      if (duelIslandQuest === undefined) {
+        return null;
+      }
+
+      return QuestConverter.convert(duelIslandQuestRaw, duelIslandQuest, {
+        calculateNewStatus: true,
+        partyLevel,
+      });
+    }
+
     return null;
   }
 

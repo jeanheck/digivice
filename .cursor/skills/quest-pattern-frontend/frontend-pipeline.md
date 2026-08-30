@@ -60,22 +60,25 @@ currentState.journal
 | Repository | `getSideQuestsRaw()` |
 | Presenter | `journal.presenter.ts` side-quest map |
 | Modal resolve | `quest-modal.presenter.ts` side-quest branch |
-| UI section | `JournalQuestsSection` + `accent-color="cyan"` |
+| UI section | `JournalQuestsSection` + `accent-color="emerald"` |
 
-## Planned category accents
+## Category accents (live)
 
 | Category | Accent |
 |----------|--------|
-| Side quests | `cyan` (live) |
-| Legendary weapons | `purple` |
-| DRI agents | `rose` |
+| Side quests | `emerald` |
+| Legendary weapons | `teal` |
+| DRI agents | `cyan` |
+| Duel Island | `sky` |
 
 ## Aside section order
 
 1. Main quest (inline yellow section)
-2. Side quests
-3. Legendary weapons
-4. DRI agents
+2. Auction
+3. Side quests
+4. Legendary weapons
+5. DRI agents
+6. Duel Island
 
 ## Section invariant
 

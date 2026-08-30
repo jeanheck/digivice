@@ -5,4 +5,5 @@ export interface JournalViewModel {
   sideQuests: QuestViewModel[];
   legendaryWeapons: QuestViewModel[];
   driAgents: QuestViewModel[];
+  duelIsland: QuestViewModel[];
 }

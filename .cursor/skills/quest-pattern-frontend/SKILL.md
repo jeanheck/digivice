@@ -51,11 +51,12 @@ Use the decision helper at the end to pick A or B.
 | Category | `Journal` property | Static JSON folder | Section accent | i18n section key |
 |----------|-------------------|--------------------|----------------|------------------|
 | Main quest | `mainQuest` (single) | `database/quest/main-quest.json` | Yellow (hardcoded in `Journal.vue`) | `journal.mainQuest` |
-| Side quests | `sideQuests` | `database/quest/side-quest/` | `cyan` | `journal.sideQuests` |
-| Legendary weapons | `legendaryWeapons` | `database/quest/legendary-weapons/` | `purple` | `journal.legendaryWeapons` |
-| DRI agents | `driAgents` | `database/quest/dri-agents/` | `rose` | `journal.driAgents` |
+| Side quests | `sideQuests` | `database/quest/side-quest/` | `emerald` | `journal.sideQuests` |
+| Legendary weapons | `legendaryWeapons` | `database/quest/legendary-weapons/` | `teal` | `journal.legendaryWeapons` |
+| DRI agents | `driAgents` | `database/quest/dri-agents/` | `cyan` | `journal.driAgents` |
+| Duel Island | `duelIsland` | `database/quest/duel-island/` | `sky` | `journal.duelIsland` |
 
-**Aside section order (fixed):** Main → Side → Legendary → DRI.
+**Aside section order (fixed):** Main → Side → Legendary → DRI → Duel Island.
 
 All new collapsible sections use `JournalQuestsSection` with
 `defaultExpanded: false` (starts closed, same as side quests today).
@@ -86,17 +87,18 @@ Before implementing, if the user **did not** specify the section accent color,
 | Status | Color |
 |--------|-------|
 | Occupied — not selectable | `yellow` (main quest, hardcoded) |
-| Occupied — not selectable | `cyan` (side quests) |
-| Reserved | `purple` (legendary weapons) |
-| Reserved | `rose` (DRI agents; replaces unused `red` in palette) |
+| Occupied | `emerald` (side quests) |
+| Occupied | `teal` (legendary weapons) |
+| Occupied | `cyan` (DRI agents) |
+| Occupied | `sky` (Duel Island) |
 
 Rules:
 
-1. Color must be a **standard Tailwind palette name** (e.g. `purple`, `rose`,
-   `emerald`). If the user picks a name that is not a Tailwind color, ask them
+1. Color must be a **standard Tailwind palette name** (e.g. `emerald`, `teal`,
+   `cyan`, `sky`). If the user picks a name that is not a Tailwind color, ask them
    to choose another.
-2. New accent must differ from **cyan** and **yellow**.
-3. Add the color to `journal-section-palette.ts` by **copying the cyan/red
+2. New accent must differ from **yellow** (main quest) and from other section accents.
+3. Add the color to `journal-section-palette.ts` by **copying the teal
    token pattern** — only the color name changes (`text-{color}-400`,
    `border-{color}-800`, `hover:bg-{color}-900/30`, etc.).
 4. Extend `JournalSectionAccentColor` with the new literal.
@@ -108,7 +110,8 @@ Frontend/src/database/quest/
 ├── main-quest.json
 ├── side-quest/
 ├── legendary-weapons/
-└── dri-agents/
+├── dri-agents/
+└── duel-island/
 ```
 
 **Ids:** always **camelCase** in JSON (`muramasa`, `driAgentGuilmon`). Must
@@ -250,7 +253,7 @@ File: `i18n/locales/{en-US,pt-BR}/journal.json`
 - [ ] `InitialState` shows cards in new section when expanded
 - [ ] Step/requisite change in emulator updates card + modal
 - [ ] Modal opens for quests in new section (`QuestModalPresenter` finds id)
-- [ ] Accent color distinct from cyan (side) and yellow (main)
+- [ ] Accent color distinct from other section accents and yellow (main)
 
 ---
 
@@ -317,7 +320,7 @@ Append quest id under the category in [frontend-status.md](frontend-status.md).
 
 ### DRI agents (Workflow B specialization)
 
-Category `driAgents` is already wired (accent `rose`). Adding another agent is
+Category `driAgents` is already wired (accent `cyan`). Adding another agent is
 **only** static data + repository + i18n. Reference: `dri-agent-kumamon` /
 `dri-agent-monmon`.
 
