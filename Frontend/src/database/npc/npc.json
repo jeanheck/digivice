@@ -10,7 +10,15 @@
           "min": 60,
           "max": 209
         },
-        "deckId": "bugBugFolder",
+        "deckId": "bugBugFolder1",
+        "dropId": "1aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 60
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "bugBugFolder2",
         "dropId": "1aBooster"
       }
     },
@@ -108,7 +116,14 @@
           "min": 60,
           "max": 377
         },
-        "deckId": "coolDigimonFolder",
+        "deckId": "coolDigimonFolder1",
+        "dropId": "1aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "deckId": "coolDigimonFolder2",
         "dropId": "1aBooster"
       }
     }
@@ -124,7 +139,14 @@
           "min": 60,
           "max": 377
         },
-        "deckId": "mindFolder",
+        "deckId": "mindFolder1",
+        "dropId": "2aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "deckId": "mindFolder2",
         "dropId": "2aBooster"
       }
     }
@@ -140,7 +162,14 @@
           "min": 60,
           "max": 377
         },
-        "deckId": "protectorFolder",
+        "deckId": "protectorFolder1",
+        "dropId": "1aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "deckId": "protectorFolder2",
         "dropId": "1aBooster"
       }
     }
@@ -156,7 +185,14 @@
           "min": 60,
           "max": 377
         },
-        "deckId": "amazingPatamonFolder",
+        "deckId": "amazingPatamonFolder1",
+        "dropId": "2aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "deckId": "amazingPatamonFolder2",
         "dropId": "2aBooster"
       }
     }
@@ -457,6 +493,7 @@
         "charismaRequired": {
           "min": 1
         },
+        "trophyRequired": "asukaTrophy",
         "party": [
           {
             "enemyId": 49,

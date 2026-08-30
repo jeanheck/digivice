@@ -1,5 +1,5 @@
 {
-    "bugBugFolder": {
+    "bugBugFolder1": {
         "level": 4,
         "cards": [
             { "id": "1095", "quantity": 1 },
@@ -20,6 +20,26 @@
             { "id": "1311", "quantity": 4 },
             { "id": "1312", "quantity": 4 },
             { "id": "1313", "quantity": 4 }
+        ]
+    },
+    "bugBugFolder2": {
+        "level": 4,
+        "cards": [
+            { "id": "1017", "quantity": 2 },
+            { "id": "1042", "quantity": 1 },
+            { "id": "1043", "quantity": 2 },
+            { "id": "1059", "quantity": 4 },
+            { "id": "1081", "quantity": 3 },
+            { "id": "1094", "quantity": 4 },
+            { "id": "1101", "quantity": 3 },
+            { "id": "1167", "quantity": 2 },
+            { "id": "1172", "quantity": 2 },
+            { "id": "1175", "quantity": 3 },
+            { "id": "1177", "quantity": 4 },
+            { "id": "1183", "quantity": 3 },
+            { "id": "1184", "quantity": 1 },
+            { "id": "1223", "quantity": 4 },
+            { "id": "1266", "quantity": 2 }
         ]
     },
     "flyingFolder1": {
@@ -58,7 +78,7 @@
             { "id": "1307", "quantity": 4 }
         ]
     },
-    "coolDigimonFolder": {
+    "coolDigimonFolder1": {
         "level": 5,
         "cards": [
             { "id": "1095", "quantity": 2 },
@@ -81,7 +101,23 @@
             { "id": "1313", "quantity": 1 }
         ]
     },
-    "mindFolder": {
+    "coolDigimonFolder2": {
+        "level": 5,
+        "cards": [
+            { "id": "1061", "quantity": 1 },
+            { "id": "1072", "quantity": 4 },
+            { "id": "1081", "quantity": 4 },
+            { "id": "1095", "quantity": 4 },
+            { "id": "1099", "quantity": 3 },
+            { "id": "1114", "quantity": 4 },
+            { "id": "1139", "quantity": 4 },
+            { "id": "1157", "quantity": 4 },
+            { "id": "1165", "quantity": 4 },
+            { "id": "1168", "quantity": 4 },
+            { "id": "1181", "quantity": 4 }
+        ]
+    },
+    "mindFolder1": {
         "level": 6,
         "cards": [
             { "id": "1011", "quantity": 1 },
@@ -100,7 +136,24 @@
             { "id": "1313", "quantity": 3 }
         ]
     },
-    "protectorFolder": {
+    "mindFolder2": {
+        "level": 6,
+        "cards": [
+            { "id": "1001", "quantity": 4 },
+            { "id": "1002", "quantity": 4 },
+            { "id": "1003", "quantity": 4 },
+            { "id": "1008", "quantity": 4 },
+            { "id": "1015", "quantity": 4 },
+            { "id": "1019", "quantity": 2 },
+            { "id": "1020", "quantity": 2 },
+            { "id": "1021", "quantity": 4 },
+            { "id": "1029", "quantity": 4 },
+            { "id": "1039", "quantity": 2 },
+            { "id": "1040", "quantity": 4 },
+            { "id": "1281", "quantity": 2 }
+        ]
+    },
+    "protectorFolder1": {
         "level": 7,
         "cards": [
             { "id": "1099", "quantity": 4 },
@@ -115,7 +168,29 @@
             { "id": "1231", "quantity": 4 }
         ]
     },
-    "amazingPatamonFolder": {
+    "protectorFolder2": {
+        "level": 7,
+        "cards": [
+            { "id": "1003", "quantity": 4 },
+            { "id": "1022", "quantity": 2 },
+            { "id": "1040", "quantity": 4 },
+            { "id": "1058", "quantity": 4 },
+            { "id": "1202", "quantity": 2 },
+            { "id": "1205", "quantity": 2 },
+            { "id": "1216", "quantity": 2 },
+            { "id": "1217", "quantity": 2 },
+            { "id": "1218", "quantity": 2 },
+            { "id": "1219", "quantity": 2 },
+            { "id": "1221", "quantity": 2 },
+            { "id": "1284", "quantity": 2 },
+            { "id": "1288", "quantity": 2 },
+            { "id": "1290", "quantity": 2 },
+            { "id": "1295", "quantity": 2 },
+            { "id": "1297", "quantity": 2 },
+            { "id": "1300", "quantity": 2 }
+        ]
+    },
+    "amazingPatamonFolder1": {
         "level": 8,
         "cards": [
             { "id": "1095", "quantity": 4 },
@@ -128,6 +203,26 @@
             { "id": "1102", "quantity": 4 },
             { "id": "1139", "quantity": 4 },
             { "id": "1224", "quantity": 4 }
+        ]
+    },
+    "amazingPatamonFolder2": {
+        "level": 8,
+        "cards": [
+            { "id": "1001", "quantity": 2 },
+            { "id": "1002", "quantity": 4 },
+            { "id": "1004", "quantity": 4 },
+            { "id": "1005", "quantity": 4 },
+            { "id": "1008", "quantity": 2 },
+            { "id": "1039", "quantity": 1 },
+            { "id": "1041", "quantity": 4 },
+            { "id": "1061", "quantity": 1 },
+            { "id": "1064", "quantity": 1 },
+            { "id": "1070", "quantity": 2 },
+            { "id": "1071", "quantity": 4 },
+            { "id": "1080", "quantity": 4 },
+            { "id": "1082", "quantity": 2 },
+            { "id": "1099", "quantity": 4 },
+            { "id": "1111", "quantity": 1 }
         ]
     },
     "motherNatureFolder1": {

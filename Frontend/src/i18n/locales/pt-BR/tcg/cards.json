@@ -21,8 +21,8 @@
       "note": "get 1 white S-energy point"
     },
     "1005": {
-      "name": "Summon Patamon",
-      "note": "Bring patamon to field"
+      "name": "Invocar Patamon",
+      "note": "Invoca o Patamon para o campo de batalha."
     },
     "1006": {
       "name": "Tidal Wave",
@@ -45,8 +45,8 @@
       "note": "get 1 blue S-enery point"
     },
     "1011": {
-      "name": "Summon Gomamon",
-      "note": "Bring gomamon to field"
+      "name": "Invocar Gomamon",
+      "note": "Invoca o Gomamon para o campo de batalha."
     },
     "1012": {
       "name": "Wield Aura",
@@ -69,20 +69,20 @@
       "note": "get 1 green S-Energy point"
     },
     "1017": {
-      "name": "Summon Palmon",
-      "note": "bring palmon to the filef"
+      "name": "Invocar Palmon",
+      "note": "Invoca o Palmon para o campo de batalha."
     },
     "1018": {
       "name": "Volcanic Gatlin",
       "note": "60 damage to all non-red digimon"
     },
     "1019": {
-      "name": "Blazing Chaos",
-      "note": "Put all brown digimon to trash"
+      "name": "Caos Ardente",
+      "note": "Joga todos os Digimons de Energia-S Marrom na lixeira."
     },
     "1020": {
-      "name": "Flame Gatlin",
-      "note": "15 damage to all digimon"
+      "name": "Chama Gatlin",
+      "note": "Infringe 15 pontos de dano em todos os Digimons."
     },
     "1021": {
       "name": "Fire Cannon",
@@ -93,8 +93,8 @@
       "note": "Get 1 red S-Energy point"
     },
     "1023": {
-      "name": "Summon Goburimon",
-      "note": "Bring Goburimon to field"
+      "name": "Invocar Goburimon",
+      "note": "Invoca Goburimon para o campo de batalha"
     },
     "1024": {
       "name": "Darness Gale",
@@ -117,8 +117,8 @@
       "note": "Get 1 Black S-Energy point"
     },
     "1029": {
-      "name": "Summon Devimon",
-      "note": "Bring devimon to field"
+      "name": "Invocar Devimon",
+      "note": "Invoca Devimon para o campo de batalha."
     },
     "1030": {
       "name": "Delete Matrix",
@@ -157,12 +157,12 @@
       "note": "Reduce oppnt AP to zero"
     },
     "1039": {
-      "name": "Scramble Up",
-      "note": "Bring a digimon from hand to field"
+      "name": "Misturar",
+      "note": "Invoca um Digimon da mão para o campo."
     },
     "1040": {
-      "name": "Power Super Metal",
-      "note": "+30 AP & HP o a brown digimon"
+      "name": "Super Poder Metal",
+      "note": "Adiciona +30 de AP e HP em um Digimon Marrom."
     },
     "1041": {
       "name": "Charge Terminal",
@@ -177,8 +177,8 @@
       "note": "Choose a PG from card to hand"
     },
     "1044": {
-      "name": "Trade Charge",
-      "note": "draw one card, put one to trash"
+      "name": "Terminal de Troca",
+      "note": "Saque uma carta do baralho e descarte uma da sua mão."
     },
     "1045": {
       "name": "Illegal Access",
@@ -197,8 +197,8 @@
       "note": "Put 1 brown DG from oppnt hand to trash"
     },
     "1049": {
-      "name": "Summon Hagurumon",
-      "note": "Bring Hagurumon to field"
+      "name": "Invocar Hagurumon",
+      "note": "Invoca 2 Hagurumon para o campo de batalha."
     },
     "1050": {
       "name": "White Remove",
@@ -233,12 +233,12 @@
       "note": "Put a brown DG from field to trash"
     },
     "1058": {
-      "name": "Protect Armor",
-      "note": "+10 HP to a digimon"
+      "name": "Armadura Protetor",
+      "note": "Adiciona +10 de HP ao Digimon."
     },
     "1059": {
-      "name": "Assault Armor",
-      "note": "+10 AP to a digimon"
+      "name": "Armadura Assalto",
+      "note": "Adiciona +10 de AP ao Digimon."
     },
     "1060": {
       "name": "Imperialdramon-P"
