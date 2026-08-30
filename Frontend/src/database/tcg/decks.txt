@@ -1,0 +1,676 @@
+LV10: Mother Nature Folder (#1)
+4x Green Remove
+4x Disturb Gear
+4x Protect Armor
+4x Assault Armor
+4x Yanmamon
+4x Wormmon
+4x Kunemon
+4x Tentomon
+4x Betamon
+4x Kokuwamon
+
+LV10: Mother Nature Folder (#2)
+4x Wield Aura
+4x Ecoly Cycle
+4x Green Force
+4x Beast Energy
+4x Charge Terminal
+4x Green Remove
+1x Marsmon
+1x MetalGarurumon
+1x H-Kabuterimon
+4x GranKuwagamon
+1x RosemonI
+1x Grizzmon
+1x Kabuterimon
+1x Garurumon
+1x Togemon
+1x Kumamon
+1x Gabumon
+1x Tentomon
+1x Palmon
+
+LV11: Vermin Folder (#1)
+4x Yanmamon
+4x Kunemon
+4x Dokugumon
+4x Tentomon
+4x Kokuwamon
+4x Floramon
+4x SandYanmamon
+4x Gizamon
+4x Aruraumon
+4x ModokiBetamon
+
+LV11: Vermin Folder (#2)
+2x Gold Aura
+2x Beast Energy
+2x Fire Cannon
+2x Chaos Virus
+1x Power Super Metal
+3x Cancel Wheel
+2x Stingmon
+2x Snimon
+2x Yanmamon
+2x Blossomon
+2x Monochromon
+2x Kuwagamon
+2x Flymon
+2x Dokugumon
+2x Kurisarimon
+2x Octomon
+4x Roachmon
+2x BomberNanimon
+2x ShellNumemon
+
+LV12: Ogre Ogre Folder (#1)
+4x Mushroomon
+4x Akatorimon
+4x SandYanmamon
+4x Veemon
+4x Biyomon
+4x Goburimon
+4x Sharmamon
+4x Penguinmon
+4x Gazimon
+4x Gotsumon
+
+LV12: Ogre Ogre Folder (#2)
+2x Fire Cannon
+2x Summon Goburimon
+2x Digimon Charge
+2x Break Launcher
+4x Berserk Energy
+2x Apemon
+2x Hookmon
+2x Leomon
+4x Ogremon
+4x Minotarumon
+4x Fugamon
+4x Meramon
+2x Sharmamon
+4x Hyogamon
+
+LV13: Water Animal Folder (#1)
+4x Summon Gomamon
+4x Blue Remove
+4x Coelamon
+4x Gekomon
+4x Gomamon
+4x SnowAgumon
+4x Gizamon
+4x Otamamon
+4x Crabmon
+4x Syakomon
+
+LV13: Water Animal Folder (#2)
+1x Gold Aura
+3x Freeze Bug
+4x Blue Power
+3x Summon Gomamon
+1x Beast Energy
+4x WaruSeadramon
+4x Divermon
+2x Seadramon
+2x Hookmon
+2x Shellmon
+4x Ikkakumon
+2x Ebidramon
+2x Coelamon
+2x Dolphmon
+2x Octomon
+2x Gesomon
+
+LV14: Novice Program Folder (#1)
+4x Summon Gomamon
+4x Summon Palmon
+4x Summon Goburimon
+2x Blue Remove
+2x Green Remove
+2x Red Remove
+2x Black Remove
+4x Summon Cancel
+4x Berserk Energy
+4x Disturb Gear
+4x Protect Armor
+4x Assault Armor
+
+LV14: Novice Program Folder (#2)
+2x Chaos Virus
+2x Vicious Hacking
+1x Chrono Balance
+4x Security Hall
+1x Power Super Metal
+2x Charge Terminal
+1x program Charge
+3x Illegal Access
+4x Cancel Wheel
+4x Rust Dust
+1x White Remove
+1x Red Remove
+1x Black Remove
+2x Summon Cancel
+2x Berserk Energy
+2x Disturb Gear
+1x Giromon
+1x garbagemon
+1x Meteormon
+4x MudFrigimon
+
+LV15: Bug Catcher Folder (#1)
+4x White Remove
+4x Assault Armor
+4x Yanmamon
+4x Wormmon
+4x Kunemon
+4x Kuwagamon
+4x Dokugumon
+4x Tentomon
+4x Kokuwamon
+4x SandYanmamon
+
+LV15: Bug Catcher Folder (#2)
+4x Gold Aura
+2x Protect Aura
+1x White Power
+1x Green Force
+4x Beast Energy
+2x Silphymon
+2x Piximon
+4x Stingmon
+4x Yanmamon
+4x Kunemon
+2x Blossomon
+4x Kuwagamon
+4x Flymon
+2x Dokugumon
+
+LV16: Veteran Tamer Folder (#1)
+4x Berserk Energy
+4x Disturb Gear
+4x Protect Armor
+4x Coelamon
+4x Dolphmon
+4x Gekomon
+4x Syakomon
+4x Kokatorimon
+4x Gotsumon
+4x Hagurumon
+
+LV16: Veteran Tamer Folder (#2)
+4x Tidal Wave
+4x Control Parts
+4x Freeze Bug
+4x Eclipse Undo
+3x Blue Power
+4x Charge Terminal
+4x Blue Remove
+2x Cannondramon
+2x Sakuyamon
+2x Vikemon
+2x Kyubimon
+1x Hookmon
+1x Ikkakumon
+1x Monmon
+1x Renamon
+1x Gomamon
+
+LV17: Vegetarian Folder (#1)
+4x Green Remove
+4x Black Remove
+4x Disturb Gear
+4x Zassomon
+4x Vegiemon
+4x Palmon
+4x Floramon
+4x Mushroomon
+4x RedVegiemon
+4x Aruraumon
+
+LV17: Vegetarian Folder (#2)
+3x Green Force
+2x Summon Palmon
+3x Chaos Virus
+2x Vicious Hacking
+2x Security Hall
+1x Charge Terminal
+2x Illegal Access
+2x Blue Remove
+2x Green Remove
+2x Red Remove
+3x Summon Cancel
+1x Zassomon
+2x Lillymon
+4x Blossomon
+2x Togemon
+4x Vegiemon
+2x Mushroomon
+1x RedVegiemon
+
+LV18: Dinosaur Folder (#1)
+4x Tortomon
+4x Psychemon
+4x Gabumon
+4x Flarerizamon
+4x Agumon
+4x Veemon
+4x Guilmon
+4x Devidramon
+4x ClearAgumon
+4x ToyAgumon
+
+LV18: Dinosaur Folder (#2)
+2x Freeze Bug
+4x Beast Energy
+4x Fire Cannon
+2x Digimon Charge
+1x Trade Charge
+2x Break Launcher
+1x Rusty Dust
+2x Assault Armor
+2x Dinohumon
+2x Brachiomon
+2x Tuskmon
+2x Monochromon
+2x Megadramon
+2x Greymon
+2x Tyrannomon
+4x Agumon
+2x DarkTyrannomon
+2x Devidramon
+
+LV19: Brown Folder (#1)
+4x Summon Cancel
+4x Berserk Energy
+4x Protect Armor
+4x Assault Armor
+4x Tankmon
+4x Clockmon
+4x ClearAgumon
+4x ToyAgumon
+4x Gotsumon
+4x Hagurumon
+
+LV19: Brown Folder (#2)
+4x Power Super Metal
+3x Charge Terminal
+2x Trade Charge
+2x Rusty Dust
+3x Giromon
+2x Monzaemon
+3x Garbagemon
+2x Rockmon
+3x Guardromon
+3x Tankmon
+3x Clockmon
+2x MudFrigimon
+2x BomberNanimon
+3x Sukamon
+3x Hagurumon
+
+LV20: Occult Folder (#1)
+4x Black Remove
+4x Summon Cancel
+4x Berserk Energy
+4x Disturb Gear
+4x Devidramon
+4x Soulmon
+4x Bakemon
+4x DemiDevimon
+4x Tsukaimon
+4x Candlemon
+
+LV20: Occult Folder (#2)
+3x Chaos Virus
+3x Vicious Hacking
+2x Charge Terminal
+2x Cancel Wheel
+3x LadyDevimon
+3x Devimon
+4x Raremon
+3x MarineDevimon
+3x Musyamon
+4x Vilemon
+3x Soulmon
+3x Bakemon
+4x DemiDevimon
+
+LV21: Burning Folder (#1)
+4x Summon Goburimon
+4x Break Launcher
+4x Berserk Energy
+4x Disturb Gear
+4x Assault Armor
+2x Birdramon
+4x Akatorimon
+2x SandYanmamon
+4x Agumon
+4x Guilmon
+4x Hawkmon
+
+LV21: Burning Folder (#2)
+4x Volcanic Cannon
+4x Flame Gatlin
+4x Fire Cannon
+4x Red Power
+4x Charge Terminal
+4x Red Remove
+2x Omnimon I
+1x Gallantmon
+2x Imperialdramon-F
+3x Greymon
+2x Growlmon
+2x ExVeemon
+1x Agumon
+1x Veemon
+1x Guilmon
+
+LV22: Asuka White Master (#1)
+4x Summon Patamon
+4x Protect Armor
+4x Angemon
+4x Gatomon
+4x Ankylomon
+4x Tortomon
+4x Kotemon
+4x Patamon
+4x Kunemon
+4x Salamon
+
+LV22: Asuka White Master (#1)
+1x Sacred Spear
+4x Summon Angemon
+3x Gold Aura
+2x Protect Aura
+4x White Power
+3x Freeze Bug
+1x Desire Access
+1x Scramble Up
+2x Charge Terminal
+3x Program Charge
+3x Seraphimon
+3x Magnadramon
+1x PrinceMamemon
+1x MagnaAngemon
+3x Angewomon
+1x Silphymon
+2x Dinohumon
+2x Gatomon
+
+LV23: Blue Folder (#1)
+4x Summon Gomamon
+4x Blue Remove
+4x Protect Armor
+4x Ikkakumon
+4x Coelamon
+4x Dolphmon
+4x Gekomon
+2x Gomamon
+4x Crabmon
+2x Syakomon
+4x Gesomon
+
+LV23: Blue Folder (#2)
+1x Gold Aura
+2x Protect Aura
+1x Blue Power
+2x Summon Gomamon
+2x Flame Gatlin
+1x Charge Terminal
+4x Zudomon
+4x WaruSeadramon
+4x Divermon
+4x Seadramon
+4x Ebidramon
+4x Coelamon
+4x Gomamon
+3x Crabmon
+
+LV24: Asuka Black Master (#1)
+4x Summon Devimon
+4x Black Remove
+4x Wizardmon
+4x Devidramon
+4x Gesomon
+4x DemiDevimon
+4x Gazimon
+4x Aruraumon
+4x Tsukaimon
+4x Candlemon
+
+LV24: Asuka Black Master (#2)
+3x Freeze Bug
+1x Darkness Gale
+2x Deceive Cloak
+4x Chaos Virus
+2x Vicious Hacking
+4x Black Power
+3x Summon Devimon
+1x Desire Access
+1x Scramble Up
+2x Charge Terminal
+1x Armageddemon
+1x VenomMyotismon
+1x Diaboromon
+2x MaloMyotismon
+1x Apokarimon
+1x Myotismon
+1x Infermon
+1x Dragomon
+1x SkullSatamon
+1x Mummymon
+1x Arukenimon
+1x WaruMonzaemon
+2x Kurisarimon
+2x Raremon
+
+LV25: Poison Folder (#1)
+4x Digimon Charge
+4x Break Launcher
+4x Berserk Energy
+4x Dokugumon
+4x DarkTyrannomon
+4x Bakemon
+4x Roachmon
+4x Aruraumon
+4x Sukamon
+4x Numemon
+
+LV25: Poison Folder (#2)
+2x Green Force
+2x Vicious Hacking
+2x Black Power
+2x Power Super Metal
+2x Digimon Charge
+2x Illegal Access
+4x IceDevimon
+4x Blossomon
+2x MoriShellmon
+4x LadyDevimon
+4x Raremon
+2x Vilemon
+2x Roachmon
+2x Garbagemon
+2x PlatinumSukamon
+2x NiseDrimogemon
+
+LV26: Asuka Green Master (#1)
+4x Beast Energy
+4x Summon Palmon
+4x Grizzmon
+4x Kabuterimon
+4x Kuwagamon
+4x Togemon
+4x Kumamon
+4x Tentomon
+4x Palmon
+4x Kokuwamon
+
+LV26: Asuka Green Master (#2)
+4x Freeze Bug
+2x Wield Aura
+1x Ecoly Cycle
+4x Green Force
+3x Beast Energy
+2x Green Power
+1x Desire Access
+3x Charge Terminal
+2x Program Charge
+1x Rusty Dust
+2x H-Kabuterimon
+2x GranKuwagamon
+1x RosemonI
+3x MegaKabuterimon
+3x Okuwamon
+2x Triceramon
+2x Kabuterimon
+2x Garurumon
+
+LV27: Program Maniac Folder (#1)
+4x Summon Patamon
+4x Digimon Charge
+4x Program Charge
+4x Summon Hagurumon
+4x Protect Armor
+4x Assault Armor
+2x Dinohumon
+2x Angemon
+2x Stingmon
+2x gatomon
+4x Centarumon
+2x Kotemon
+2x Patamon
+
+LV27: Program Maniac Folder (#2)
+4x Sacred Spear
+4x Summon Angemon
+4x Gold Aura
+4x Protect Aura
+4x White Power
+2x Charge Terminal
+4x White Remove
+1x Imperialdramon-P
+1x GuardiAngemon
+1x WarGreymon
+2x PrinceMamemon
+1x Dinohumon
+1x Stingmon
+1x Thundermon
+2x Kotemon
+2x Patamon
+2x Wormmon
+
+LV28: Asuka Red Master (#1)
+4x Fire Cannon
+4x Summon Goburimon
+4x Greymon
+4x Growlmon
+4x Veedramon
+4x Meramon
+4x Flarerizamon
+4x Hawkmon
+4x Biyomon
+4x Sharmamon
+
+LV28: Asuka Red Master (#2)
+4x Freeze Bug
+2x Volcanic Cannon
+1x Blazing Chaos
+3x Fire Cannon
+4x Red Power
+2x Deceive Cloak
+1x Desire Access
+1x Anti-Power
+1x Scramble Up
+3x Charge Terminal
+1x Digimon Charge
+1x Program Charge
+2x MegaGargomon
+2x Machinedramon
+2x Phoenixmon
+1x Paildramon I
+3x MetalGreymon
+3x WarGrowlmon
+1x Greymon
+2x Growlmon
+
+LV29: Asuka Blue Master (#1)
+3x Eclipse Undo
+4x Summon Gomamon
+1x Sakuyamon
+4x Kyubimon
+4x Hookmon
+4x Shellmon
+4x Ikkakumon
+4x Frigimon
+4x Monmon
+4x Renamon
+4x Gomamon
+
+LV29: Asuka Blue Master (#2)
+2x Tidal Wave
+4x Control Parts
+4x Freeze Bug
+2x Enclipse Undo
+3x Blue Power
+1x Misery Gate
+1x Desire Access
+2x Scramble Up
+2x Charge Terminal
+2x Digimon Charge
+2x Program Charge
+1x MetalSeadramon
+1x Preciomon
+1x Babamon
+3x Zudomon
+3x Taomon
+3x Armormon
+3x Whamon
+
+LV30: Asuka Duel King (#1)
+2x Blue Power
+2x Summon Devimon
+2x Charge Terminal
+4x Break Launcher
+4x Cancel Wheel
+2x Rusty Dust
+2x Summon Hagurumon
+2x Berserk Energy
+2x Protect Armor
+2x Assault Armor
+2x Dinohumon
+2x Divermon
+2x Hookmon
+2x Grizzmon
+2x Greymon
+2x Devimon
+2x Guardromon
+2x BomberNanimon
+
+LV30: Asuka Duel King (#2)
+4x Gold Aura
+3x Freeze Bug
+4x Blue Power
+2x Beast Energy
+1x Summon Palmon
+1x Blazing Chaos
+1x Fire Cannon
+1x Red Power
+1x Darkness Gale
+1x Deceive Cloak
+1x Black Power
+2x Desire Access
+1x Absolute Barrier
+1x Scramble Up
+2x Charge Terminal
+2x Program Charge
+1x Sakuyamon
+1x MarineAngemon
+4x Divermon
+1x Omnimon II
+1x SaberLeomon
+1x Garurumon
+1x Gallantmon
+1x MegaGargomon
+1x Beelzemon
