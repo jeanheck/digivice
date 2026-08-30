@@ -207,5 +207,768 @@
         "bit": 1250
       }
     }
+  },
+  "catherine": {
+    "name": "Catherine",
+    "type": "tamer",
+    "locationId": "0221",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "verminFolder1",
+        "dropId": "3aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 492
+        },
+        "deckId": "verminFolder2",
+        "dropId": "3aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 32,
+            "groupId": 203
+          },
+          {
+            "enemyId": 32,
+            "groupId": 203
+          },
+          {
+            "enemyId": 166,
+            "groupId": 203
+          }
+        ],
+        "exp": 65,
+        "dvexp": 4,
+        "bit": 145
+      }
+    }
+  },
+  "lucia": {
+    "name": "Lucia",
+    "type": "tamer",
+    "locationId": "0222",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "ogreOgreFolder1",
+        "dropId": "3aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 492
+        },
+        "deckId": "ogreOgreFolder2",
+        "dropId": "3aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 32,
+            "groupId": 204
+          },
+          {
+            "enemyId": 32,
+            "groupId": 204
+          }
+        ],
+        "exp": 79,
+        "dvexp": 7,
+        "bit": 155
+      }
+    }
+  },
+  "robert": {
+    "name": "Robert",
+    "type": "tamer",
+    "locationId": "0222",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "waterAnimalFolder1",
+        "dropId": "4aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 492
+        },
+        "deckId": "waterAnimalFolder2",
+        "dropId": "4aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 197,
+            "groupId": 205
+          },
+          {
+            "enemyId": 132,
+            "groupId": 205
+          },
+          {
+            "enemyId": 110,
+            "groupId": 205
+          }
+        ],
+        "exp": 103,
+        "dvexp": 6,
+        "bit": 200
+      }
+    }
+  },
+  "akiba": {
+    "name": "Akiba",
+    "type": "tamer",
+    "locationId": "0229",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "noviceProgramFolder1",
+        "dropId": "3aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 492
+        },
+        "deckId": "noviceProgramFolder2",
+        "dropId": "3aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 206,
+            "groupId": 206
+          }
+        ],
+        "exp": 45,
+        "dvexp": 9,
+        "bit": 180
+      }
+    }
+  },
+  "chris": {
+    "name": "Chris",
+    "type": "tamer",
+    "locationId": "022E",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "bugCatcherFolder1",
+        "dropId": "3aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 492
+        },
+        "deckId": "bugCatcherFolder2",
+        "dropId": "3aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 51,
+            "groupId": 209
+          },
+          {
+            "enemyId": 137,
+            "groupId": 209
+          },
+          {
+            "enemyId": 396,
+            "groupId": 209
+          }
+        ],
+        "exp": 109,
+        "dvexp": 7,
+        "bit": 210
+      }
+    }
+  },
+  "bob": {
+    "name": "Bob",
+    "type": "tamer",
+    "locationId": "022A",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "deckId": "veteranTamerFolder1",
+        "dropId": "5aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 2277
+        },
+        "deckId": "veteranTamerFolder2",
+        "dropId": "5aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "party": [
+          {
+            "enemyId": 49,
+            "groupId": 207
+          },
+          {
+            "enemyId": 50,
+            "groupId": 207
+          },
+          {
+            "enemyId": 7,
+            "groupId": 207
+          }
+        ],
+        "exp": 737,
+        "dvexp": 43,
+        "bit": 1475
+      }
+    }
+  },
+  "tomomi": {
+    "name": "Tomomi",
+    "type": "tamer",
+    "locationId": "022C",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "vegetarianFolder1",
+        "dropId": "4aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 492
+        },
+        "deckId": "vegetarianFolder2",
+        "dropId": "4aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 4,
+            "groupId": 208
+          },
+          {
+            "enemyId": 198,
+            "groupId": 208
+          },
+          {
+            "enemyId": 77,
+            "groupId": 208
+          }
+        ],
+        "exp": 100,
+        "dvexp": 6,
+        "bit": 225
+      }
+    }
+  },
+  "andy": {
+    "name": "Andy",
+    "type": "tamer",
+    "locationId": "0232",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "dinosaurFolder1",
+        "dropId": "4aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 630
+        },
+        "deckId": "dinosaurFolder2",
+        "dropId": "4aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 203,
+            "groupId": 210
+          },
+          {
+            "enemyId": 136,
+            "groupId": 210
+          }
+        ],
+        "exp": 101,
+        "dvexp": 10,
+        "bit": 190
+      }
+    }
+  },
+  "george": {
+    "name": "George",
+    "type": "tamer",
+    "locationId": "0233",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "brownFolder1",
+        "dropId": "5aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 630
+        },
+        "deckId": "brownFolder2",
+        "dropId": "5aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 28,
+            "groupId": 211
+          },
+          {
+            "enemyId": 176,
+            "groupId": 211
+          }
+        ],
+        "exp": 105,
+        "dvexp": 10,
+        "bit": 210
+      }
+    }
+  },
+  "meiLin": {
+    "name": "Mei Lin",
+    "type": "tamer",
+    "locationId": "0234",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "occultFolder1",
+        "dropId": "5aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 630
+        },
+        "deckId": "occultFolder2",
+        "dropId": "5aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 217,
+            "groupId": 212
+          },
+          {
+            "enemyId": 37,
+            "groupId": 212
+          }
+        ],
+        "exp": 100,
+        "dvexp": 10,
+        "bit": 200
+      }
+    }
+  },
+  "alice": {
+    "name": "Alice",
+    "type": "tamer",
+    "locationId": "023E",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "poisonFolder1",
+        "dropId": "7aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 630
+        },
+        "deckId": "poisonFolder2",
+        "dropId": "7aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 32,
+            "groupId": 215
+          },
+          {
+            "enemyId": 166,
+            "groupId": 215
+          },
+          {
+            "enemyId": 166,
+            "groupId": 215
+          }
+        ],
+        "exp": 158,
+        "dvexp": 9,
+        "bit": 290
+      }
+    }
+  },
+  "gordon": {
+    "name": "Gordon",
+    "type": "tamer",
+    "locationId": "023D",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "blueFolder1",
+        "dropId": "6aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 630
+        },
+        "deckId": "blueFolder2",
+        "dropId": "6aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 197,
+            "groupId": 214
+          },
+          {
+            "enemyId": 132,
+            "groupId": 214
+          },
+          {
+            "enemyId": 110,
+            "groupId": 214
+          }
+        ],
+        "exp": 269,
+        "dvexp": 17,
+        "bit": 530
+      }
+    }
+  },
+  "jessica": {
+    "name": "Jessica",
+    "type": "tamer",
+    "locationId": "0237",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "deckId": "burningFolder1",
+        "dropId": "6aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 2277
+        },
+        "deckId": "burningFolder2",
+        "dropId": "6aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 10,
+            "groupId": 213
+          },
+          {
+            "enemyId": 50,
+            "groupId": 213
+          },
+          {
+            "enemyId": 35,
+            "groupId": 213
+          }
+        ],
+        "exp": 700,
+        "dvexp": 40,
+        "bit": 1305
+      }
+    }
+  },
+  "nakano": {
+    "name": "Nakano",
+    "type": "tamer",
+    "locationId": "025A",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "deckId": "programManiacFolder1",
+        "dropId": "9aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 2277
+        },
+        "deckId": "programManiacFolder2",
+        "dropId": "9aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 206,
+            "groupId": 216
+          }
+        ],
+        "exp": 205,
+        "dvexp": 41,
+        "bit": 820
+      }
+    }
+  },
+  "divermon1": {
+    "name": "Divermon",
+    "type": "npc",
+    "locationId": "0228",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaWhiteMaster1",
+        "dropId": "5aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaWhiteMaster2",
+        "dropId": "5aBooster"
+      }
+    }
+  },
+  "divermon2": {
+    "name": "Divermon",
+    "type": "npc",
+    "locationId": "0228",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaBlackMaster1",
+        "dropId": "6aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaBlackMaster2",
+        "dropId": "6aBooster"
+      }
+    }
+  },
+  "divermon3": {
+    "name": "Divermon",
+    "type": "npc",
+    "locationId": "0228",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaGreenMaster1",
+        "dropId": "7aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaGreenMaster2",
+        "dropId": "7aBooster"
+      }
+    }
+  },
+  "divermon4": {
+    "name": "Divermon",
+    "type": "npc",
+    "locationId": "0228",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaRedMaster1",
+        "dropId": "8aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaRedMaster2",
+        "dropId": "8aBooster"
+      }
+    }
+  },
+  "divermon5": {
+    "name": "Divermon",
+    "type": "npc",
+    "locationId": "0228",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaBlueMaster1",
+        "dropId": "r01Booster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaBlueMaster2",
+        "dropId": "r01Booster"
+      }
+    }
+  },
+  "kingDivermon": {
+    "name": "King Divermon",
+    "type": "npc",
+    "locationId": "0228",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaDuelKing1",
+        "dropId": "r02Booster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaDuelKing2",
+        "dropId": "r02Booster"
+      }
+    }
   }
 }
