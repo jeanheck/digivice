@@ -160,5 +160,52 @@
         "dropId": "2aBooster"
       }
     }
+  },
+  "mitch": {
+    "name": "Mitch",
+    "type": "tamer",
+    "locationId": "021E",
+    "opponentId": 999,
+    "cardBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1218
+        },
+        "deckId": "motherNatureFolder1",
+        "dropId": "4aBooster"
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 2277
+        },
+        "deckId": "motherNatureFolder2",
+        "dropId": "4aBooster"
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 67,
+            "groupId": 202
+          },
+          {
+            "enemyId": 51,
+            "groupId": 202
+          },
+          {
+            "enemyId": 137,
+            "groupId": 202
+          }
+        ],
+        "exp": 661,
+        "dvexp": 41,
+        "bit": 1250
+      }
+    }
   }
 }
