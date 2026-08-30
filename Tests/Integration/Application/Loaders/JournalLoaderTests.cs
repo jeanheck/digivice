@@ -28,6 +28,9 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048DB6, 1)).Returns([(byte)0]);
         memoryReaderMock.Setup(m => m.ReadBytes(0x0004A028, 1)).Returns([(byte)0x00]);
         memoryReaderMock.Setup(m => m.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x01]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B3DF, 1)).Returns([(byte)0x20]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B39A, 1)).Returns([(byte)0x7B]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B39B, 1)).Returns([(byte)0x03]);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -84,5 +87,14 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(5, journalResource.Auctions.Count);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x00);
+        Assert.Equal(8, journalResource.Npcs.Count);
+        var genji = Assert.Single(journalResource.Npcs, npc => npc.Id == "genji");
+        Assert.Equal(0x20, genji.DigimonBattles.Single(battle => battle.Id == "first").Value);
+        Assert.Equal(0x01, genji.DigimonBattles.Single(battle => battle.Id == "second").Value);
+        Assert.Equal(0x02, Assert.Single(journalResource.Npcs, npc => npc.Id == "natsumi").DigimonBattles[0].Value);
+        Assert.Equal(0x08, Assert.Single(journalResource.Npcs, npc => npc.Id == "catherine").DigimonBattles[0].Value);
+        Assert.Equal(0x20, Assert.Single(journalResource.Npcs, npc => npc.Id == "robert").DigimonBattles[0].Value);
+        Assert.Equal(0x02, Assert.Single(journalResource.Npcs, npc => npc.Id == "chris").DigimonBattles[0].Value);
+        Assert.Equal(0x01, Assert.Single(journalResource.Npcs, npc => npc.Id == "tomomi").DigimonBattles[0].Value);
     }
 }

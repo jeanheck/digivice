@@ -791,6 +791,36 @@ found.**
 (`0→2` on win; sticky through later card). Matches script
 `BattledTamer#1`. See [natsumi-map-scripts.md](natsumi-map-scripts.md).
 
+**BattledTamer bitfield `0x4B39A+` (confirmed 2026-08-30):** tamers after
+Genji tutorial share one sticky bitfield. For `N = groupId − 200` and
+`N ≥ 1`: address `0x4B39A + (N ÷ 8)`, BitMask `1 << (N mod 8)`. Genji
+first stays isolated at `0x4B3DF` / `0x20` (`BattledTamer#0`). Snaps:
+`before/after-{catherine,lucia,robert,akiba,chris,tomomi}.bin`,
+`before/after-genji-second.bin`.
+
+| NPC | groupId | N | Address | BitMask |
+|-----|---------|---|---------|---------|
+| Genji (1st) | 200 | 0 | `0x4B3DF` | `0x20` |
+| Natsumi | 201 | 1 | `0x4B39A` | `0x02` |
+| Mitch | 202 | 2 | `0x4B39A` | `0x04` | *(inferred; bit absent in Chris `before`)* |
+| Catherine | 203 | 3 | `0x4B39A` | `0x08` |
+| Lucia | 204 | 4 | `0x4B39A` | `0x10` |
+| Robert | 205 | 5 | `0x4B39A` | `0x20` |
+| Akiba | 206 | 6 | `0x4B39A` | `0x40` |
+| Bob | 207 | 7 | `0x4B39A` | `0x80` | *(inferred)* |
+| Tomomi | 208 | 8 | `0x4B39B` | `0x01` |
+| Chris | 209 | 9 | `0x4B39B` | `0x02` |
+
+**Genji (2nd digimon):** `0x4B39A` / `0x01` (`0x02→0x03` in
+`genji-second` snaps; `0x4B3DF` unchanged). `groupId` 272 — does not
+follow `groupId − 200`; treat as special rematch bit until script index
+confirmed.
+
+**Backend integrated (2026-08-30):** confirmed tamers wired in
+[`NpcAddresses.json`](Backend/Memory/Definitions/NpcAddresses.json) —
+`genji` (first+second), `natsumi`, `catherine`, `lucia`, `robert`,
+`akiba`, `chris`, `tomomi`. Mitch/Bob and later tamers still pending.
+
 **Natsumi card:** no duel flag in those snaps — only booster `0x48F19`.
 Map script does not SET a bit on `CardBattle#5`.
 
