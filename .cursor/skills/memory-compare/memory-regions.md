@@ -180,3 +180,5 @@ Diffs here are expected after battles; usually not quest flags.
 | Auction | 0x4B370, 0x4B38A | Bit flags, story window |
 | NPC digimon battle | 0x4B3DF (+bit) | Genji first digimon — see known-patterns.md |
 | NPC card battle | `0x48E0B`, `0x48F19` (shared counters) | Not per-NPC flags — win counters across tamer groups; see known-patterns.md; discard transient `0x48ABC` |
+| Duel Island gauntlet (round progress) | `0x4B3B2` bit `0x80`, `0x4B3B3` bits `0x01`–`0x08` | NPC gates for current run; reset after final — duel-island snaps 2026-08-30 |
+| Duel Island booster rewards | `0x48F1C`–`0x48F1F`, `0x48F36`, `0x48F37` | Booster qty `0→1` on win (RA: 05a–08a, R-01, R-02) — **not** quest steps |

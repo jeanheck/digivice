@@ -375,7 +375,7 @@
     "regularAttackId": "machineElement",
     "techniqueId": "madPump",
     "memoryId": 436,
-    "groupId": null,
+    "groupId": 315,
     "locations": [
       {
         "id": "022D",
@@ -1962,7 +1962,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 207,
-    "groupId": null,
+    "groupId": 58,
     "drops": [
       {
         "id": "windPower1"

@@ -868,6 +868,51 @@ RetroAchievements **`0xABD9D`** = deck level (Genji `4`) or heap noise — prefe
 
 ---
 
+## Duel Island card gauntlet (confirmed 2026-08-30)
+
+Snapshots: `before/after-duel-island-opponent-{1..5,final}.bin`.
+
+Unlike overworld card tamers (no per-NPC sticky flag), the Duel Island
+gauntlet **does** persist round progress. Booster qty bytes in the same
+compares are **rewards**, not steps (same trap as `0x48F19` / Natsumi).
+
+### Booster rewards on win (not quest progress)
+
+RA addresses — qty `0→1` on win:
+
+| Opponent | Booster | Address |
+|----------|---------|---------|
+| 1 | 05a | `0x48F1C` |
+| 2 | 06a | `0x48F1D` |
+| 3 | 07a | `0x48F1E` |
+| 4 | 08a | `0x48F1F` |
+| 5 | R-01 | `0x48F36` |
+| Final | R-02 | `0x48F37` |
+
+Opp2 snap also shows `0x48F1C` `1→0` while `0x48F1D` `0→1` — booster band,
+not gate progress.
+
+### Round state (NPC path blocking; resets after final)
+
+| Opponent | Address | BitMask | Evidence |
+|----------|---------|---------|----------|
+| 1 | `0x4B3B2` | `0x80` | `0x4F→0xCF` after opp1; clears `0xCF→0x4F` after final |
+| 2 | `0x4B3B3` | `0x01` | `0x00→0x01` |
+| 3 | `0x4B3B3` | `0x02` | `0x01→0x03` |
+| 4 | `0x4B3B3` | `0x04` | `0x03→0x07` |
+| 5 | `0x4B3B3` | `0x08` | `0x07→0x0F` |
+| Final | — | — | `0x4B3B3` `0x0F→0x00` + `0x4B3B2` loses `0x80` (new round) |
+
+Survives map leave mid-run (user-tested). `0x4B3B2` shares byte with MQ step 26
+(`0x04`) — different bits.
+
+First-run trophy: `0x48DC2` (Asuka Trophy, important item — not a booster).
+
+Discard: encounter cache `0x4B824+`, entity table `0x4B618+`, spawn block
+`0x48D6C–0x48D84`.
+
+---
+
 ## Validation checklist
 
 - **Permanent progress**: reload save — flag persists
