@@ -24,6 +24,11 @@ export class JournalConverter {
             QuestConverter.convert(questDto as Required<QuestDTO>),
           )
         : [],
+      duelIsland: journalDto.duelIsland
+        ? journalDto.duelIsland.map((questDto) =>
+            QuestConverter.convert(questDto as Required<QuestDTO>),
+          )
+        : [],
       auctions: journalDto.auctions
         ? journalDto.auctions.map((auctionDto) => AuctionConverter.convert(auctionDto))
         : [],

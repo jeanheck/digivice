@@ -7,6 +7,7 @@ export interface JournalDTO {
   sideQuests?: QuestDTO[];
   legendaryWeapons?: QuestDTO[];
   driAgents?: QuestDTO[];
+  duelIsland?: QuestDTO[];
   auctions?: AuctionDTO[];
   npcs?: NpcDTO[];
 }

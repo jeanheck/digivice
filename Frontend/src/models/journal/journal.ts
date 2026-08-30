@@ -7,6 +7,7 @@ export interface Journal {
   sideQuests: Quest[];
   legendaryWeapons: Quest[];
   driAgents: Quest[];
+  duelIsland: Quest[];
   auctions: Auction[];
   npcs: Npc[];
 }

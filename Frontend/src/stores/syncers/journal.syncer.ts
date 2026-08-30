@@ -46,6 +46,18 @@ export class JournalSyncer {
       });
     }
 
+    if (newJournalDto.duelIsland && newJournalDto.duelIsland.length > 0) {
+      newJournalDto.duelIsland.forEach((newDuelIslandQuestDto) => {
+        const previousDuelIslandQuest = previousJournal.duelIsland.find((quest) => {
+          return quest.id === newDuelIslandQuestDto.id;
+        });
+
+        if (previousDuelIslandQuest) {
+          QuestSyncer.sync(previousDuelIslandQuest, newDuelIslandQuestDto);
+        }
+      });
+    }
+
     if (newJournalDto.auctions && newJournalDto.auctions.length > 0) {
       newJournalDto.auctions.forEach((newAuctionDto) => {
         const previousAuction = previousJournal.auctions.find((auction) => {
