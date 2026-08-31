@@ -91,6 +91,9 @@ const allSearchItems = computed(() => {
     (tamerId) => {
       return t(`tamers.${tamerId}.name`);
     },
+    (duelIslandId) => {
+      return t(`duelIsland.${duelIslandId}.name`);
+    },
   );
 });
 

@@ -2,7 +2,7 @@ import type { ImportantItems, Npc } from "@/models";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
 import type { TamerCardBattleRaw } from "@/repositories/tables/raws/tamer/tamer-card-battle.raw";
 import type { TamerCharismaRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-charisma-required.raw";
-import type { TamerRaw } from "@/repositories/tables/raws/tamer/tamer.raw";
+import type { NpcBattleOpponentRaw } from "@/presenters/helper/npc-battle-opponent.helper";
 import type { TamerTrophyRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-trophy-required.raw";
 
 export type NpcBattleStatus = "completed" | "available" | "missingRequirements";
@@ -165,7 +165,7 @@ export class NpcService {
   }
 
   public static getAvailableBattleKind(
-    tamer: TamerRaw,
+    tamer: NpcBattleOpponentRaw,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
@@ -203,7 +203,7 @@ export class NpcService {
   }
 
   public static hasAvailableBattle(
-    tamer: TamerRaw,
+    tamer: NpcBattleOpponentRaw,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,

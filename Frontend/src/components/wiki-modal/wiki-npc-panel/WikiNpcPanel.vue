@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
-import { NpcTypeConstant } from "@/constants/npc-type.constant";
 import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 import { WikiNpcPanelPresenter } from "@/presenters/map/wiki-modal/wiki-npc-panel.presenter";
 import WikiNpcCardBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcCardBattlePanel.vue";
@@ -126,11 +125,11 @@ const npcTypeLabelKey = computed(() => {
     return "";
   }
 
-  return `enemy.searchKind.${panelViewModel.value.type}`;
+  return `enemy.searchKind.${panelViewModel.value.searchKind}`;
 });
 
 const showFolderBagRequirementHint = computed(() => {
-  if (panelViewModel.value?.type !== NpcTypeConstant.tamer) {
+  if (panelViewModel.value?.searchKind !== "tamer") {
     return false;
   }
 

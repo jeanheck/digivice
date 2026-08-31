@@ -1,6 +1,5 @@
 {
   "genji": {
-    "type": "tamer",
     "locationId": "0200",
     "opponentId": 1,
     "cardBattles": {
@@ -58,7 +57,6 @@
     "imageName": "genji"
   },
   "natsumi": {
-    "type": "tamer",
     "locationId": "021D",
     "opponentId": 11,
     "cardBattles": {
@@ -106,7 +104,6 @@
     "imageName": "Natsumi"
   },
   "nacky": {
-    "type": "tamer",
     "locationId": "0211",
     "opponentId": 3,
     "cardBattles": {
@@ -129,7 +126,6 @@
     "imageName": "Nacky"
   },
   "wong": {
-    "type": "tamer",
     "locationId": "0211",
     "opponentId": 5,
     "cardBattles": {
@@ -152,7 +148,6 @@
     "imageName": "Wong"
   },
   "steve": {
-    "type": "tamer",
     "locationId": "0211",
     "opponentId": 7,
     "cardBattles": {
@@ -175,7 +170,6 @@
     "imageName": "Steve"
   },
   "gloria": {
-    "type": "tamer",
     "locationId": "0211",
     "opponentId": 9,
     "cardBattles": {
@@ -198,7 +192,6 @@
     "imageName": "Gloria"
   },
   "mitch": {
-    "type": "tamer",
     "locationId": "021E",
     "opponentId": 999,
     "cardBattles": {
@@ -244,7 +237,6 @@
     }
   },
   "catherine": {
-    "type": "tamer",
     "locationId": "0221",
     "opponentId": 999,
     "cardBattles": {
@@ -290,7 +282,6 @@
     }
   },
   "lucia": {
-    "type": "tamer",
     "locationId": "0222",
     "opponentId": 999,
     "cardBattles": {
@@ -332,7 +323,6 @@
     }
   },
   "robert": {
-    "type": "tamer",
     "locationId": "0222",
     "opponentId": 999,
     "cardBattles": {
@@ -378,7 +368,6 @@
     }
   },
   "akiba": {
-    "type": "tamer",
     "locationId": "0229",
     "opponentId": 999,
     "cardBattles": {
@@ -416,7 +405,6 @@
     }
   },
   "chris": {
-    "type": "tamer",
     "locationId": "022E",
     "opponentId": 999,
     "cardBattles": {
@@ -462,7 +450,6 @@
     }
   },
   "bob": {
-    "type": "tamer",
     "locationId": "022A",
     "opponentId": 999,
     "cardBattles": {
@@ -508,7 +495,6 @@
     }
   },
   "tomomi": {
-    "type": "tamer",
     "locationId": "022C",
     "opponentId": 999,
     "cardBattles": {
@@ -554,7 +540,6 @@
     }
   },
   "andy": {
-    "type": "tamer",
     "locationId": "0232",
     "opponentId": 999,
     "cardBattles": {
@@ -596,7 +581,6 @@
     }
   },
   "george": {
-    "type": "tamer",
     "locationId": "0233",
     "opponentId": 999,
     "cardBattles": {
@@ -638,7 +622,6 @@
     }
   },
   "meiLin": {
-    "type": "tamer",
     "locationId": "0234",
     "opponentId": 999,
     "cardBattles": {
@@ -680,7 +663,6 @@
     }
   },
   "alice": {
-    "type": "tamer",
     "locationId": "023E",
     "opponentId": 999,
     "cardBattles": {
@@ -726,7 +708,6 @@
     }
   },
   "gordon": {
-    "type": "tamer",
     "locationId": "023D",
     "opponentId": 999,
     "cardBattles": {
@@ -772,7 +753,6 @@
     }
   },
   "jessica": {
-    "type": "tamer",
     "locationId": "0237",
     "opponentId": 999,
     "cardBattles": {
@@ -818,7 +798,6 @@
     }
   },
   "nakano": {
-    "type": "tamer",
     "locationId": "025A",
     "opponentId": 999,
     "cardBattles": {
@@ -852,138 +831,6 @@
         "exp": 205,
         "dvexp": 41,
         "bit": 820
-      }
-    }
-  },
-  "divermon1": {
-    "type": "npc",
-    "locationId": "0228",
-    "opponentId": 999,
-    "cardBattles": {
-      "first": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "deckId": "asukaWhiteMaster1",
-        "dropId": "5aBooster"
-      },
-      "second": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "trophyRequired": "asukaTrophy",
-        "deckId": "asukaWhiteMaster2",
-        "dropId": "5aBooster"
-      }
-    }
-  },
-  "divermon2": {
-    "type": "npc",
-    "locationId": "0228",
-    "opponentId": 999,
-    "cardBattles": {
-      "first": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "deckId": "asukaBlackMaster1",
-        "dropId": "6aBooster"
-      },
-      "second": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "trophyRequired": "asukaTrophy",
-        "deckId": "asukaBlackMaster2",
-        "dropId": "6aBooster"
-      }
-    }
-  },
-  "divermon3": {
-    "type": "npc",
-    "locationId": "0228",
-    "opponentId": 999,
-    "cardBattles": {
-      "first": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "deckId": "asukaGreenMaster1",
-        "dropId": "7aBooster"
-      },
-      "second": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "trophyRequired": "asukaTrophy",
-        "deckId": "asukaGreenMaster2",
-        "dropId": "7aBooster"
-      }
-    }
-  },
-  "divermon4": {
-    "type": "npc",
-    "locationId": "0228",
-    "opponentId": 999,
-    "cardBattles": {
-      "first": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "deckId": "asukaRedMaster1",
-        "dropId": "8aBooster"
-      },
-      "second": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "trophyRequired": "asukaTrophy",
-        "deckId": "asukaRedMaster2",
-        "dropId": "8aBooster"
-      }
-    }
-  },
-  "divermon5": {
-    "type": "npc",
-    "locationId": "0228",
-    "opponentId": 999,
-    "cardBattles": {
-      "first": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "deckId": "asukaBlueMaster1",
-        "dropId": "r01Booster"
-      },
-      "second": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "trophyRequired": "asukaTrophy",
-        "deckId": "asukaBlueMaster2",
-        "dropId": "r01Booster"
-      }
-    }
-  },
-  "kingDivermon": {
-    "type": "npc",
-    "locationId": "0228",
-    "opponentId": 999,
-    "cardBattles": {
-      "first": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "deckId": "asukaDuelKing1",
-        "dropId": "r02Booster"
-      },
-      "second": {
-        "charismaRequired": {
-          "min": 1
-        },
-        "trophyRequired": "asukaTrophy",
-        "deckId": "asukaDuelKing2",
-        "dropId": "r02Booster"
       }
     }
   }

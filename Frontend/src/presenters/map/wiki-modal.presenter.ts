@@ -2,6 +2,7 @@ import { CardRepository } from "@/repositories/card.repository";
 import { DropRepository } from "@/repositories/drop.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { LocationRepository } from "@/repositories/location.repository";
+import { DuelIslandRepository } from "@/repositories/duel-island.repository";
 import { TamerRepository } from "@/repositories/tamer.repository";
 import { StoreRepository } from "@/repositories/store.repository";
 import { EnemyConverter } from "@/presenters/converter/enemy.converter";
@@ -54,8 +55,19 @@ export class WikiModalPresenter {
   public static getTamerSearchItems(
     translateTamerName: (tamerId: string) => string,
   ): SearchItemViewModel[] {
-    return Object.entries(TamerRepository.getTamerTable()).map(([tamerId, tamerRaw]) => {
-      return SearchItemConverter.convertTamer(tamerId, translateTamerName(tamerId), tamerRaw);
+    return Object.entries(TamerRepository.getTamerTable()).map(([tamerId]) => {
+      return SearchItemConverter.convertTamer(tamerId, translateTamerName(tamerId));
+    });
+  }
+
+  public static getDuelIslandSearchItems(
+    translateDuelIslandName: (duelIslandId: string) => string,
+  ): SearchItemViewModel[] {
+    return Object.entries(DuelIslandRepository.getDuelIslandTable()).map(([duelIslandId]) => {
+      return SearchItemConverter.convertDuelIsland(
+        duelIslandId,
+        translateDuelIslandName(duelIslandId),
+      );
     });
   }
 
@@ -65,6 +77,7 @@ export class WikiModalPresenter {
     translateLocationName: (locationId: string) => string,
     translateStoreName: (storeId: string) => string,
     translateTamerName: (tamerId: string) => string,
+    translateDuelIslandName: (duelIslandId: string) => string,
   ): SearchItemViewModel[] {
     return [
       ...this.getEnemySearchItems(),
@@ -73,6 +86,7 @@ export class WikiModalPresenter {
       ...this.getLocationSearchItems(translateLocationName),
       ...this.getStoreSearchItems(translateStoreName),
       ...this.getTamerSearchItems(translateTamerName),
+      ...this.getDuelIslandSearchItems(translateDuelIslandName),
     ];
   }
 }

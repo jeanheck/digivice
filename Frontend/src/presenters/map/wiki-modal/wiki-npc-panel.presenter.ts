@@ -1,7 +1,7 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
 import type { ImportantItems, Npc } from "@/models";
-import { TamerRepository } from "@/repositories/tamer.repository";
+import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import type { TamerCharismaRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-charisma-required.raw";
 import type { TamerTrophyRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-trophy-required.raw";
 import {
@@ -105,18 +105,18 @@ export class WikiNpcPanelPresenter {
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): WikiNpcBattleOptionViewModel[] {
-    const tamerRaw = TamerRepository.getTamerById(npcId);
-    if (tamerRaw === undefined) {
+    const opponentRaw = NpcBattleOpponentHelper.getById(npcId);
+    if (opponentRaw === undefined) {
       return [];
     }
 
     const activeCardBattleIds = NpcService.resolveActiveCardBattleIds(
-      tamerRaw.cardBattles,
+      opponentRaw.cardBattles,
       partyCharisma,
       importantItems,
     );
 
-    const cardOptions = Object.entries(tamerRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
+    const cardOptions = Object.entries(opponentRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
       const option = this.buildBattleOptionBase(
         NpcBattleKindConstant.card,
         battleId,
@@ -131,7 +131,7 @@ export class WikiNpcPanelPresenter {
       return option;
     });
 
-    const digimonOptions = Object.entries(tamerRaw.digimonBattles ?? {}).map(
+    const digimonOptions = Object.entries(opponentRaw.digimonBattles ?? {}).map(
       ([battleId, digimonBattle]) => {
         const completed = NpcService.isDigimonBattleCompleted(journalNpc, battleId);
         const option = this.buildBattleOptionBase(
@@ -226,16 +226,18 @@ export class WikiNpcPanelPresenter {
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): WikiNpcPanelViewModel | null {
-    const tamerRaw = TamerRepository.getTamerById(npcId);
-    if (tamerRaw === undefined) {
+    const opponentRaw = NpcBattleOpponentHelper.getById(npcId);
+    const nameKey = NpcBattleOpponentHelper.getNameKey(npcId);
+    const searchKind = NpcBattleOpponentHelper.getSearchKind(npcId);
+    if (opponentRaw === undefined || nameKey === null || searchKind === null) {
       return null;
     }
 
     return {
-      nameKey: `tamers.${npcId}.name`,
-      type: tamerRaw.type,
-      locationId: tamerRaw.locationId,
-      imageUrl: ImageCatalog.getTamerImageUrl(tamerRaw.imageName ?? null),
+      nameKey,
+      searchKind,
+      locationId: opponentRaw.locationId,
+      imageUrl: ImageCatalog.getTamerImageUrl(opponentRaw.imageName ?? null),
       battleOptions: this.getBattleOptions(npcId, journalNpc, partyCharisma, importantItems),
     };
   }

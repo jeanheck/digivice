@@ -1,7 +1,7 @@
 import type { DigimonSlot, ImportantItems, Npc, Quest } from "@/models";
 import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
 import { FooterPresenter } from "@/presenters/footer/footer.presenter";
-import { TamerRepository } from "@/repositories/tamer.repository";
+import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import { QuestRepository } from "@/repositories/quest.repository";
 import { LocationService } from "@/services/location.service";
 import { NpcService } from "@/services/npc.service";
@@ -69,8 +69,9 @@ export class AsukaServerMapPresenter {
     const partyCharisma = FooterPresenter.getPartyCharisma(digimonSlots);
 
     return npcIds.flatMap((npcId) => {
-      const tamerRaw = TamerRepository.getTamerById(npcId);
-      if (tamerRaw === undefined) {
+      const opponentRaw = NpcBattleOpponentHelper.getById(npcId);
+      const nameKey = NpcBattleOpponentHelper.getNameKey(npcId);
+      if (opponentRaw === undefined || nameKey === null) {
         return [];
       }
 
@@ -80,7 +81,7 @@ export class AsukaServerMapPresenter {
         }) ?? null;
 
       const availableBattleKind = NpcService.getAvailableBattleKind(
-        tamerRaw,
+        opponentRaw,
         journalNpc,
         partyCharisma,
         importantItems,
@@ -89,7 +90,7 @@ export class AsukaServerMapPresenter {
       return [
         {
           id: npcId,
-          nameKey: `tamers.${npcId}.name`,
+          nameKey,
           hasAvailableBattle: availableBattleKind !== null,
           availableBattleKind,
         },

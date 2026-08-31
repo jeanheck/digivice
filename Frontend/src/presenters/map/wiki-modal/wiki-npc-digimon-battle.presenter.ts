@@ -1,7 +1,7 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { EnemyConverter } from "@/presenters/converter/enemy.converter";
 import { EnemyRepository } from "@/repositories/enemy.repository";
-import { TamerRepository } from "@/repositories/tamer.repository";
+import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import type { WikiNpcDigimonBattleViewModel } from "@/viewmodels/wiki-modal/wiki-npc-digimon-battle.viewmodel";
 
 export class WikiNpcDigimonBattlePresenter {
@@ -9,8 +9,8 @@ export class WikiNpcDigimonBattlePresenter {
     npcId: string,
     battleId: string,
   ): WikiNpcDigimonBattleViewModel | null {
-    const tamerRaw = TamerRepository.getTamerById(npcId);
-    const digimonBattle = tamerRaw?.digimonBattles?.[battleId];
+    const opponentRaw = NpcBattleOpponentHelper.getById(npcId);
+    const digimonBattle = opponentRaw?.digimonBattles?.[battleId];
     if (digimonBattle === undefined) {
       return null;
     }

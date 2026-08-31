@@ -1,7 +1,7 @@
 import { WikiNpcDeckCardConverter } from "@/presenters/converter/wiki-npc-deck-card.converter";
 import { CardRepository } from "@/repositories/card.repository";
 import { DeckRepository } from "@/repositories/deck.repository";
-import { TamerRepository } from "@/repositories/tamer.repository";
+import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import type { WikiNpcCardBattleViewModel } from "@/viewmodels/wiki-modal/wiki-npc-card-battle.viewmodel";
 import type { WikiNpcDeckCardViewModel } from "@/viewmodels/wiki-modal/wiki-npc-deck-card.viewmodel";
 
@@ -10,8 +10,8 @@ export class WikiNpcCardBattlePresenter {
     npcId: string,
     battleId: string,
   ): WikiNpcCardBattleViewModel | null {
-    const tamerRaw = TamerRepository.getTamerById(npcId);
-    const cardBattle = tamerRaw?.cardBattles?.[battleId];
+    const opponentRaw = NpcBattleOpponentHelper.getById(npcId);
+    const cardBattle = opponentRaw?.cardBattles?.[battleId];
     if (cardBattle === undefined) {
       return null;
     }
