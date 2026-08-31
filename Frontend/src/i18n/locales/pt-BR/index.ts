@@ -43,6 +43,7 @@ import party from "./party.json";
 import connection from "./connection.json";
 import auction from "./auction.json";
 import npc from "./npc.json";
+import tamer from "./tamer.json";
 
 export default {
   ...map,
@@ -90,4 +91,5 @@ export default {
   ...connection,
   ...auction,
   ...npc,
+  ...tamer,
 };

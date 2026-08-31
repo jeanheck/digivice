@@ -1,9 +1,9 @@
 import type { ImportantItems, Npc } from "@/models";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
-import type { NpcCardBattleRaw } from "@/repositories/tables/raws/npc/npc-card-battle.raw";
-import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
-import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
-import type { NpcTrophyRequiredRaw } from "@/repositories/tables/raws/npc/npc-trophy-required.raw";
+import type { TamerCardBattleRaw } from "@/repositories/tables/raws/tamer/tamer-card-battle.raw";
+import type { TamerCharismaRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-charisma-required.raw";
+import type { TamerRaw } from "@/repositories/tables/raws/tamer/tamer.raw";
+import type { TamerTrophyRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-trophy-required.raw";
 
 export type NpcBattleStatus = "completed" | "available" | "missingRequirements";
 
@@ -19,7 +19,7 @@ export const ALREADY_WON_BATTLE_TOOLTIP_KEY = "npc.battle.requirement.alreadyWon
 export class NpcService {
   public static isCharismaInRange(
     partyCharisma: number,
-    charismaRequired: NpcCharismaRequiredRaw,
+    charismaRequired: TamerCharismaRequiredRaw,
   ): boolean {
     if (partyCharisma < charismaRequired.min) {
       return false;
@@ -33,7 +33,7 @@ export class NpcService {
   }
 
   public static isTrophyRequirementMet(
-    trophyRequired: NpcTrophyRequiredRaw | undefined,
+    trophyRequired: TamerTrophyRequiredRaw | undefined,
     importantItems: ImportantItems | null | undefined,
   ): boolean {
     if (trophyRequired === undefined) {
@@ -48,8 +48,8 @@ export class NpcService {
   }
 
   public static areBattleRequirementsMet(
-    charismaRequired: NpcCharismaRequiredRaw,
-    trophyRequired: NpcTrophyRequiredRaw | undefined,
+    charismaRequired: TamerCharismaRequiredRaw,
+    trophyRequired: TamerTrophyRequiredRaw | undefined,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): boolean {
@@ -61,8 +61,8 @@ export class NpcService {
   }
 
   public static getMissingRequirementTooltipKey(
-    charismaRequired: NpcCharismaRequiredRaw,
-    trophyRequired: NpcTrophyRequiredRaw | undefined,
+    charismaRequired: TamerCharismaRequiredRaw,
+    trophyRequired: TamerTrophyRequiredRaw | undefined,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): string | null {
@@ -85,7 +85,7 @@ export class NpcService {
   }
 
   public static resolveActiveCardBattleIds(
-    cardBattles: Record<string, NpcCardBattleRaw> | undefined,
+    cardBattles: Record<string, TamerCardBattleRaw> | undefined,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): Set<string> {
@@ -165,12 +165,12 @@ export class NpcService {
   }
 
   public static getAvailableBattleKind(
-    npc: NpcRaw,
+    tamer: TamerRaw,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): NpcBattleKindConstant | null {
-    const hasAvailableDigimonBattle = Object.entries(npc.digimonBattles ?? {}).some(
+    const hasAvailableDigimonBattle = Object.entries(tamer.digimonBattles ?? {}).some(
       ([battleId, digimonBattle]) => {
         const completed = this.isDigimonBattleCompleted(journalNpc, battleId);
         if (completed) {
@@ -191,7 +191,7 @@ export class NpcService {
     }
 
     const activeCardBattleIds = this.resolveActiveCardBattleIds(
-      npc.cardBattles,
+      tamer.cardBattles,
       partyCharisma,
       importantItems,
     );
@@ -203,13 +203,13 @@ export class NpcService {
   }
 
   public static hasAvailableBattle(
-    npc: NpcRaw,
+    tamer: TamerRaw,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): boolean {
     return (
-      this.getAvailableBattleKind(npc, journalNpc, partyCharisma, importantItems) !== null
+      this.getAvailableBattleKind(tamer, journalNpc, partyCharisma, importantItems) !== null
     );
   }
 }

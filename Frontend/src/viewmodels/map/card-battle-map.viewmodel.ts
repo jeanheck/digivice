@@ -1,5 +1,5 @@
 export interface CardBattleMapViewModel {
   npcId: string | null;
-  title: string;
+  titleKey: string | null;
   backgroundImageUrl: string | null;
 }

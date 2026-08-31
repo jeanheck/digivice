@@ -9,6 +9,7 @@ import WikiNpcDigimonBattlePanel from "@/components/wiki-modal/wiki-npc-panel/Wi
 import { QuestRepository } from "@/repositories/quest.repository";
 import { QuestService } from "@/services/quest.service";
 import { useGameStore } from "@/stores/use-game-store";
+import { useI18n } from "vue-i18n";
 import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
 
 const props = defineProps<{
@@ -26,6 +27,7 @@ const emit = defineEmits<{
 }>();
 
 const store = useGameStore();
+const { t } = useI18n();
 
 const journalNpc = computed(() => {
   return (
@@ -173,7 +175,7 @@ const openLocation = () => {
         <img
           v-if="panelViewModel.imageUrl"
           :src="panelViewModel.imageUrl"
-          :alt="panelViewModel.name"
+          :alt="t(panelViewModel.nameKey)"
           class="h-[90%] drop-shadow-[0_0_15px_rgba(0,170,255,0.2)]"
         />
         <span

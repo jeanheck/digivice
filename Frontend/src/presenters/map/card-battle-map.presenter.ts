@@ -1,5 +1,5 @@
 import { MapPresenter } from "@/presenters/map/map.presenter";
-import { NpcRepository } from "@/repositories/npc.repository";
+import { TamerRepository } from "@/repositories/tamer.repository";
 import type { CardBattleMapViewModel } from "@/viewmodels/map/card-battle-map.viewmodel";
 
 export class CardBattleMapPresenter {
@@ -10,13 +10,12 @@ export class CardBattleMapPresenter {
   }
 
   public static getViewModel(opponentId: number): CardBattleMapViewModel {
-    const npcId = NpcRepository.getNpcIdByOpponentId(opponentId);
-    const npcRaw = npcId !== null ? NpcRepository.getNpcById(npcId) : undefined;
+    const tamerId = TamerRepository.getTamerIdByOpponentId(opponentId);
     const backgroundImageUrl = MapPresenter.getByLocationId(this.cardBattleLocationId).locationImageUrl;
 
     return {
-      npcId,
-      title: npcRaw?.name ?? "",
+      npcId: tamerId,
+      titleKey: tamerId !== null ? `tamers.${tamerId}.name` : null,
       backgroundImageUrl,
     };
   }

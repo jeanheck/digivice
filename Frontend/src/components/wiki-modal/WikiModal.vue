@@ -88,6 +88,9 @@ const allSearchItems = computed(() => {
     (storeId) => {
       return t(`stores.${storeId}.name`);
     },
+    (tamerId) => {
+      return t(`tamers.${tamerId}.name`);
+    },
   );
 });
 

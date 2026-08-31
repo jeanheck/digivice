@@ -99,7 +99,7 @@ const openNpcWikiModal = (npcId: string) => {
           "
           @click="openNpcWikiModal(npc.id)"
         >
-          <span>{{ npc.name }}</span>
+          <span>{{ $t(npc.nameKey) }}</span>
           <span
             v-if="npc.availableBattleKind === NpcBattleKindConstant.card"
             class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5 font-emoji filter-[sepia(1)_saturate(5)_hue-rotate(165deg)_brightness(1.05)] drop-shadow-[0_0_3px_rgba(34,211,238,0.7)]"

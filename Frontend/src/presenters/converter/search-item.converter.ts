@@ -1,5 +1,5 @@
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
-import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
+import type { TamerRaw } from "@/repositories/tables/raws/tamer/tamer.raw";
 import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
 export class SearchItemConverter {
@@ -43,11 +43,15 @@ export class SearchItemConverter {
     };
   }
 
-  public static convertNpc(id: string, npcRaw: NpcRaw): SearchItemViewModel {
+  public static convertTamer(
+    id: string,
+    translatedName: string,
+    tamerRaw: TamerRaw,
+  ): SearchItemViewModel {
     return {
       id,
-      name: npcRaw.name,
-      kind: npcRaw.type,
+      name: translatedName,
+      kind: tamerRaw.type,
     };
   }
 }

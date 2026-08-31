@@ -1,6 +1,5 @@
 {
   "genji": {
-    "name": "Genji",
     "type": "tamer",
     "locationId": "0200",
     "opponentId": 1,
@@ -55,10 +54,10 @@
         "dvexp": 6,
         "bit": 115
       }
-    }
+    },
+    "imageName": "genji"
   },
   "natsumi": {
-    "name": "Natsumi",
     "type": "tamer",
     "locationId": "021D",
     "opponentId": 11,
@@ -103,10 +102,10 @@
         "dvexp": 4,
         "bit": 145
       }
-    }
+    },
+    "imageName": "Natsumi"
   },
   "nacky": {
-    "name": "Nacky",
     "type": "tamer",
     "locationId": "0211",
     "opponentId": 3,
@@ -126,10 +125,10 @@
         "deckId": "coolDigimonFolder2",
         "dropId": "1aBooster"
       }
-    }
+    },
+    "imageName": "Nacky"
   },
   "wong": {
-    "name": "Wong",
     "type": "tamer",
     "locationId": "0211",
     "opponentId": 5,
@@ -149,10 +148,10 @@
         "deckId": "mindFolder2",
         "dropId": "2aBooster"
       }
-    }
+    },
+    "imageName": "Wong"
   },
   "steve": {
-    "name": "Steve",
     "type": "tamer",
     "locationId": "0211",
     "opponentId": 7,
@@ -172,10 +171,10 @@
         "deckId": "protectorFolder2",
         "dropId": "1aBooster"
       }
-    }
+    },
+    "imageName": "Steve"
   },
   "gloria": {
-    "name": "Gloria",
     "type": "tamer",
     "locationId": "0211",
     "opponentId": 9,
@@ -195,10 +194,10 @@
         "deckId": "amazingPatamonFolder2",
         "dropId": "2aBooster"
       }
-    }
+    },
+    "imageName": "Gloria"
   },
   "mitch": {
-    "name": "Mitch",
     "type": "tamer",
     "locationId": "021E",
     "opponentId": 999,
@@ -245,7 +244,6 @@
     }
   },
   "catherine": {
-    "name": "Catherine",
     "type": "tamer",
     "locationId": "0221",
     "opponentId": 999,
@@ -292,7 +290,6 @@
     }
   },
   "lucia": {
-    "name": "Lucia",
     "type": "tamer",
     "locationId": "0222",
     "opponentId": 999,
@@ -335,7 +332,6 @@
     }
   },
   "robert": {
-    "name": "Robert",
     "type": "tamer",
     "locationId": "0222",
     "opponentId": 999,
@@ -382,7 +378,6 @@
     }
   },
   "akiba": {
-    "name": "Akiba",
     "type": "tamer",
     "locationId": "0229",
     "opponentId": 999,
@@ -421,7 +416,6 @@
     }
   },
   "chris": {
-    "name": "Chris",
     "type": "tamer",
     "locationId": "022E",
     "opponentId": 999,
@@ -468,7 +462,6 @@
     }
   },
   "bob": {
-    "name": "Bob",
     "type": "tamer",
     "locationId": "022A",
     "opponentId": 999,
@@ -515,7 +508,6 @@
     }
   },
   "tomomi": {
-    "name": "Tomomi",
     "type": "tamer",
     "locationId": "022C",
     "opponentId": 999,
@@ -562,7 +554,6 @@
     }
   },
   "andy": {
-    "name": "Andy",
     "type": "tamer",
     "locationId": "0232",
     "opponentId": 999,
@@ -605,7 +596,6 @@
     }
   },
   "george": {
-    "name": "George",
     "type": "tamer",
     "locationId": "0233",
     "opponentId": 999,
@@ -648,7 +638,6 @@
     }
   },
   "meiLin": {
-    "name": "Mei Lin",
     "type": "tamer",
     "locationId": "0234",
     "opponentId": 999,
@@ -691,7 +680,6 @@
     }
   },
   "alice": {
-    "name": "Alice",
     "type": "tamer",
     "locationId": "023E",
     "opponentId": 999,
@@ -738,7 +726,6 @@
     }
   },
   "gordon": {
-    "name": "Gordon",
     "type": "tamer",
     "locationId": "023D",
     "opponentId": 999,
@@ -785,7 +772,6 @@
     }
   },
   "jessica": {
-    "name": "Jessica",
     "type": "tamer",
     "locationId": "0237",
     "opponentId": 999,
@@ -832,7 +818,6 @@
     }
   },
   "nakano": {
-    "name": "Nakano",
     "type": "tamer",
     "locationId": "025A",
     "opponentId": 999,
@@ -871,7 +856,6 @@
     }
   },
   "divermon1": {
-    "name": "Divermon",
     "type": "npc",
     "locationId": "0228",
     "opponentId": 999,
@@ -894,7 +878,6 @@
     }
   },
   "divermon2": {
-    "name": "Divermon",
     "type": "npc",
     "locationId": "0228",
     "opponentId": 999,
@@ -917,7 +900,6 @@
     }
   },
   "divermon3": {
-    "name": "Divermon",
     "type": "npc",
     "locationId": "0228",
     "opponentId": 999,
@@ -940,7 +922,6 @@
     }
   },
   "divermon4": {
-    "name": "Divermon",
     "type": "npc",
     "locationId": "0228",
     "opponentId": 999,
@@ -963,7 +944,6 @@
     }
   },
   "divermon5": {
-    "name": "Divermon",
     "type": "npc",
     "locationId": "0228",
     "opponentId": 999,
@@ -986,7 +966,6 @@
     }
   },
   "kingDivermon": {
-    "name": "King Divermon",
     "type": "npc",
     "locationId": "0228",
     "opponentId": 999,

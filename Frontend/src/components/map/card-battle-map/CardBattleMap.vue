@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 import { CardBattleMapPresenter } from "@/presenters/map/card-battle-map.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 
@@ -8,6 +9,7 @@ const emit = defineEmits<{
 }>();
 
 const store = useGameStore();
+const { t } = useI18n();
 
 const cardBattleMapViewModel = computed(() => {
   const opponentId = store.currentState?.cardBattle?.opponentId ?? 0;
@@ -43,10 +45,10 @@ function openNpcWiki(): void {
           :class="[titleClass, 'cursor-pointer transition-colors hover:text-blue-300']"
           @click="openNpcWiki"
         >
-          {{ cardBattleMapViewModel.title }}
+          {{ cardBattleMapViewModel.titleKey !== null ? t(cardBattleMapViewModel.titleKey) : "" }}
         </button>
         <h4 v-else :class="titleClass">
-          {{ cardBattleMapViewModel.title }}
+          {{ cardBattleMapViewModel.titleKey !== null ? t(cardBattleMapViewModel.titleKey) : "" }}
         </h4>
       </div>
     </div>

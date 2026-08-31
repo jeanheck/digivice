@@ -193,12 +193,12 @@ export class ImageCatalog {
     );
   }
 
-  public static getNpcImageUrl(npcId: string | null): string | null {
+  public static getTamerImageUrl(imageName: string | null | undefined): string | null {
     return resolveAssetUrl(
       npcModules,
       NPC_ASSET_CONFIG.pathSuffix,
       NPC_ASSET_CONFIG.extension,
-      npcId,
+      imageName ?? null,
     );
   }
 }

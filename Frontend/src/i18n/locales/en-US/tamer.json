@@ -1,0 +1,85 @@
+{
+  "tamers": {
+    "genji": {
+      "name": "Genji"
+    },
+    "natsumi": {
+      "name": "Natsumi"
+    },
+    "nacky": {
+      "name": "Nacky"
+    },
+    "wong": {
+      "name": "Wong"
+    },
+    "steve": {
+      "name": "Steve"
+    },
+    "gloria": {
+      "name": "Gloria"
+    },
+    "mitch": {
+      "name": "Mitch"
+    },
+    "catherine": {
+      "name": "Catherine"
+    },
+    "lucia": {
+      "name": "Lucia"
+    },
+    "robert": {
+      "name": "Robert"
+    },
+    "akiba": {
+      "name": "Akiba"
+    },
+    "chris": {
+      "name": "Chris"
+    },
+    "bob": {
+      "name": "Bob"
+    },
+    "tomomi": {
+      "name": "Tomomi"
+    },
+    "andy": {
+      "name": "Andy"
+    },
+    "george": {
+      "name": "George"
+    },
+    "meiLin": {
+      "name": "Mei Lin"
+    },
+    "alice": {
+      "name": "Alice"
+    },
+    "gordon": {
+      "name": "Gordon"
+    },
+    "jessica": {
+      "name": "Jessica"
+    },
+    "nakano": {
+      "name": "Nakano"
+    },
+    "divermon1": {
+      "name": "Divermon"
+    },
+    "divermon2": {
+      "name": "Divermon"
+    },
+    "divermon3": {
+      "name": "Divermon"
+    },
+    "divermon4": {
+      "name": "Divermon"
+    },
+    "divermon5": {
+      "name": "Divermon"
+    },
+    "kingDivermon": {
+      "name": "King Divermon"
+    }
+  }
+}

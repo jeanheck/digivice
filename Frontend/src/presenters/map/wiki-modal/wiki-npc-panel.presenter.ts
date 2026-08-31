@@ -1,9 +1,9 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
 import type { ImportantItems, Npc } from "@/models";
-import { NpcRepository } from "@/repositories/npc.repository";
-import type { NpcCharismaRequiredRaw } from "@/repositories/tables/raws/npc/npc-charisma-required.raw";
-import type { NpcTrophyRequiredRaw } from "@/repositories/tables/raws/npc/npc-trophy-required.raw";
+import { TamerRepository } from "@/repositories/tamer.repository";
+import type { TamerCharismaRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-charisma-required.raw";
+import type { TamerTrophyRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-trophy-required.raw";
 import {
   NpcService,
   UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY,
@@ -12,7 +12,7 @@ import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-
 import type { WikiNpcPanelViewModel } from "@/viewmodels/wiki-modal/wiki-npc-panel.viewmodel";
 
 export class WikiNpcPanelPresenter {
-  public static formatCharismaRange(charismaRequired: NpcCharismaRequiredRaw): string {
+  public static formatCharismaRange(charismaRequired: TamerCharismaRequiredRaw): string {
     if (charismaRequired.max !== undefined) {
       return `${charismaRequired.min}~${charismaRequired.max}`;
     }
@@ -23,8 +23,8 @@ export class WikiNpcPanelPresenter {
   private static buildBattleOptionBase(
     kind: NpcBattleKindConstant,
     battleId: string,
-    charismaRequired: NpcCharismaRequiredRaw,
-    trophyRequired: NpcTrophyRequiredRaw | undefined,
+    charismaRequired: TamerCharismaRequiredRaw,
+    trophyRequired: TamerTrophyRequiredRaw | undefined,
     completed: boolean,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
@@ -105,18 +105,18 @@ export class WikiNpcPanelPresenter {
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): WikiNpcBattleOptionViewModel[] {
-    const npcRaw = NpcRepository.getNpcById(npcId);
-    if (npcRaw === undefined) {
+    const tamerRaw = TamerRepository.getTamerById(npcId);
+    if (tamerRaw === undefined) {
       return [];
     }
 
     const activeCardBattleIds = NpcService.resolveActiveCardBattleIds(
-      npcRaw.cardBattles,
+      tamerRaw.cardBattles,
       partyCharisma,
       importantItems,
     );
 
-    const cardOptions = Object.entries(npcRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
+    const cardOptions = Object.entries(tamerRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
       const option = this.buildBattleOptionBase(
         NpcBattleKindConstant.card,
         battleId,
@@ -131,7 +131,7 @@ export class WikiNpcPanelPresenter {
       return option;
     });
 
-    const digimonOptions = Object.entries(npcRaw.digimonBattles ?? {}).map(
+    const digimonOptions = Object.entries(tamerRaw.digimonBattles ?? {}).map(
       ([battleId, digimonBattle]) => {
         const completed = NpcService.isDigimonBattleCompleted(journalNpc, battleId);
         const option = this.buildBattleOptionBase(
@@ -226,16 +226,16 @@ export class WikiNpcPanelPresenter {
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): WikiNpcPanelViewModel | null {
-    const npcRaw = NpcRepository.getNpcById(npcId);
-    if (npcRaw === undefined) {
+    const tamerRaw = TamerRepository.getTamerById(npcId);
+    if (tamerRaw === undefined) {
       return null;
     }
 
     return {
-      name: npcRaw.name,
-      type: npcRaw.type,
-      locationId: npcRaw.locationId,
-      imageUrl: ImageCatalog.getNpcImageUrl(npcRaw.name),
+      nameKey: `tamers.${npcId}.name`,
+      type: tamerRaw.type,
+      locationId: tamerRaw.locationId,
+      imageUrl: ImageCatalog.getTamerImageUrl(tamerRaw.imageName ?? null),
       battleOptions: this.getBattleOptions(npcId, journalNpc, partyCharisma, importantItems),
     };
   }
