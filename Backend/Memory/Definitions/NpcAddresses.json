@@ -1,139 +1,70 @@
 {
-
     "genji": {
-
         "DigimonBattles": {
-
             "first": {
-
                 "Address": "0x0004B3DF",
-
                 "BitMask": "0x20"
-
             },
-
             "second": {
-
                 "Address": "0x0004B39A",
-
                 "BitMask": "0x01"
-
             }
-
         }
-
     },
-
     "natsumi": {
-
         "DigimonBattles": {
-
             "first": {
-
                 "Address": "0x0004B39A",
-
                 "BitMask": "0x02"
-
             }
-
         }
-
     },
-
     "catherine": {
-
         "DigimonBattles": {
-
             "first": {
-
                 "Address": "0x0004B39A",
-
                 "BitMask": "0x08"
-
             }
-
         }
-
     },
-
     "lucia": {
-
         "DigimonBattles": {
-
             "first": {
-
                 "Address": "0x0004B39A",
-
                 "BitMask": "0x10"
-
             }
-
         }
-
     },
-
     "robert": {
-
         "DigimonBattles": {
-
             "first": {
-
                 "Address": "0x0004B39A",
-
                 "BitMask": "0x20"
-
             }
-
         }
-
     },
-
     "akiba": {
-
         "DigimonBattles": {
-
             "first": {
-
                 "Address": "0x0004B39A",
-
                 "BitMask": "0x40"
-
             }
-
         }
-
     },
-
     "chris": {
-
         "DigimonBattles": {
-
             "first": {
-
                 "Address": "0x0004B39B",
-
                 "BitMask": "0x02"
-
             }
-
         }
-
     },
-
     "tomomi": {
-
         "DigimonBattles": {
-
             "first": {
-
                 "Address": "0x0004B39B",
-
                 "BitMask": "0x01"
-
             }
-
         }
-
     }
-
 }
