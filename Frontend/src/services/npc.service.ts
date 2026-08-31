@@ -1,8 +1,12 @@
 import type { ImportantItems, Npc } from "@/models";
-import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
+import { NpcBattleKindConstant, STORY_NPC_DIGIMON_BATTLE_ID } from "@/constants/npc-battle-kind.constant";
+import type {
+  NpcBattleOpponent,
+  NpcBattleOpponentRaw,
+} from "@/presenters/helper/npc-battle-opponent.helper";
 import type { TamerCardBattleRaw } from "@/repositories/tables/raws/tamer/tamer-card-battle.raw";
 import type { TamerCharismaRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-charisma-required.raw";
-import type { NpcBattleOpponentRaw } from "@/presenters/helper/npc-battle-opponent.helper";
+import type { NpcMainQuestStepDoneRaw } from "@/repositories/tables/raws/npc/npc-main-quest-step-done.raw";
 import type { TamerTrophyRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-trophy-required.raw";
 
 export type NpcBattleStatus = "completed" | "available" | "missingRequirements";
@@ -17,6 +21,28 @@ export const AVAILABLE_BATTLE_TOOLTIP_KEY = "npc.battle.requirement.available";
 export const ALREADY_WON_BATTLE_TOOLTIP_KEY = "npc.battle.requirement.alreadyWon";
 
 export class NpcService {
+  public static isVisibleOnMapByMainQuestStep(
+    lastCompletedMainQuestStep: number,
+    mainQuestStepDone?: NpcMainQuestStepDoneRaw,
+  ): boolean {
+    if (mainQuestStepDone === undefined) {
+      return true;
+    }
+
+    if (lastCompletedMainQuestStep < mainQuestStepDone.min) {
+      return false;
+    }
+
+    if (
+      mainQuestStepDone.max !== undefined &&
+      lastCompletedMainQuestStep >= mainQuestStepDone.max
+    ) {
+      return false;
+    }
+
+    return true;
+  }
+
   public static isCharismaInRange(
     partyCharisma: number,
     charismaRequired: TamerCharismaRequiredRaw,
@@ -165,6 +191,43 @@ export class NpcService {
   }
 
   public static getAvailableBattleKind(
+    opponent: NpcBattleOpponentRaw,
+    journalNpc: Npc | null | undefined,
+    partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
+  ): NpcBattleKindConstant | null {
+    return this.getAvailableBattleKindFromTamerOrDuelIsland(
+      opponent,
+      journalNpc,
+      partyCharisma,
+      importantItems,
+    );
+  }
+
+  public static getAvailableBattleKindForOpponent(
+    opponent: NpcBattleOpponent,
+    journalNpc: Npc | null | undefined,
+    partyCharisma: number,
+    importantItems: ImportantItems | null | undefined,
+  ): NpcBattleKindConstant | null {
+    if (opponent.source === "npc") {
+      const completed = this.isDigimonBattleCompleted(journalNpc, STORY_NPC_DIGIMON_BATTLE_ID);
+      if (completed) {
+        return null;
+      }
+
+      return NpcBattleKindConstant.digimon;
+    }
+
+    return this.getAvailableBattleKindFromTamerOrDuelIsland(
+      opponent.raw,
+      journalNpc,
+      partyCharisma,
+      importantItems,
+    );
+  }
+
+  private static getAvailableBattleKindFromTamerOrDuelIsland(
     tamer: NpcBattleOpponentRaw,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
@@ -203,13 +266,18 @@ export class NpcService {
   }
 
   public static hasAvailableBattle(
-    tamer: NpcBattleOpponentRaw,
+    opponent: NpcBattleOpponent,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): boolean {
     return (
-      this.getAvailableBattleKind(tamer, journalNpc, partyCharisma, importantItems) !== null
+      this.getAvailableBattleKindForOpponent(
+        opponent,
+        journalNpc,
+        partyCharisma,
+        importantItems,
+      ) !== null
     );
   }
 }

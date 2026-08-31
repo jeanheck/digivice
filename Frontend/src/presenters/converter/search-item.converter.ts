@@ -57,4 +57,16 @@ export class SearchItemConverter {
       kind: "npc",
     };
   }
+
+  public static convertStoryNpc(
+    id: string,
+    translatedName: string,
+    kind: "leader" | "npc",
+  ): SearchItemViewModel {
+    return {
+      id,
+      name: translatedName,
+      kind,
+    };
+  }
 }

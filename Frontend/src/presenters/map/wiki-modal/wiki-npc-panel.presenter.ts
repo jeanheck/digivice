@@ -1,5 +1,8 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
+import {
+  NpcBattleKindConstant,
+  STORY_NPC_DIGIMON_BATTLE_ID,
+} from "@/constants/npc-battle-kind.constant";
 import type { ImportantItems, Npc } from "@/models";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import type { TamerCharismaRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-charisma-required.raw";
@@ -99,16 +102,49 @@ export class WikiNpcPanelPresenter {
     this.finalizeBattleTooltip(option);
   }
 
+  private static buildStoryNpcBattleOption(
+    journalNpc: Npc | null,
+    battleId: string,
+  ): WikiNpcBattleOptionViewModel {
+    const completed = NpcService.isDigimonBattleCompleted(journalNpc, battleId);
+    const option: WikiNpcBattleOptionViewModel = {
+      id: `${NpcBattleKindConstant.digimon}-${battleId}`,
+      kind: NpcBattleKindConstant.digimon,
+      battleId,
+      charismaMin: 0,
+      charismaRangeText: "",
+      completed,
+      status: NpcService.getBattleStatus(completed, false),
+      requirementsMet: true,
+      isActive: false,
+      isSuperseded: false,
+      missingRequirementTooltipKey: null,
+      supersededTooltipKey: null,
+      battleTooltipKey: null,
+      showAsukaTrophyEmoji: false,
+      asukaTrophyOwned: false,
+    };
+    this.applyDigimonActivation(option);
+
+    return option;
+  }
+
   public static getBattleOptions(
     npcId: string,
     journalNpc: Npc | null,
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): WikiNpcBattleOptionViewModel[] {
-    const opponentRaw = NpcBattleOpponentHelper.getById(npcId);
-    if (opponentRaw === undefined) {
+    const opponent = NpcBattleOpponentHelper.resolveById(npcId);
+    if (opponent === undefined) {
       return [];
     }
+
+    if (opponent.source === "npc") {
+      return [this.buildStoryNpcBattleOption(journalNpc, STORY_NPC_DIGIMON_BATTLE_ID)];
+    }
+
+    const opponentRaw = opponent.raw;
 
     const activeCardBattleIds = NpcService.resolveActiveCardBattleIds(
       opponentRaw.cardBattles,
@@ -226,18 +262,18 @@ export class WikiNpcPanelPresenter {
     partyCharisma: number,
     importantItems: ImportantItems | null | undefined,
   ): WikiNpcPanelViewModel | null {
-    const opponentRaw = NpcBattleOpponentHelper.getById(npcId);
+    const opponent = NpcBattleOpponentHelper.resolveById(npcId);
     const nameKey = NpcBattleOpponentHelper.getNameKey(npcId);
     const searchKind = NpcBattleOpponentHelper.getSearchKind(npcId);
-    if (opponentRaw === undefined || nameKey === null || searchKind === null) {
+    if (opponent === undefined || nameKey === null || searchKind === null) {
       return null;
     }
 
     return {
       nameKey,
       searchKind,
-      locationId: opponentRaw.locationId,
-      imageUrl: ImageCatalog.getTamerImageUrl(opponentRaw.imageName ?? null),
+      locationId: opponent.raw.locationId,
+      imageUrl: ImageCatalog.getTamerImageUrl(opponent.raw.imageName ?? null),
       battleOptions: this.getBattleOptions(npcId, journalNpc, partyCharisma, importantItems),
     };
   }

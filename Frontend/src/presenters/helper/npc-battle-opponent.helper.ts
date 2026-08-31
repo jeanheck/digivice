@@ -1,20 +1,46 @@
 import { DuelIslandRepository } from "@/repositories/duel-island.repository";
+import { NpcRepository } from "@/repositories/npc.repository";
 import { TamerRepository } from "@/repositories/tamer.repository";
 import type { DuelIslandRaw } from "@/repositories/tables/raws/duel-island/duel-island.raw";
+import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
 import type { TamerRaw } from "@/repositories/tables/raws/tamer/tamer.raw";
+
+export type NpcBattleOpponent =
+  | { source: "tamer"; raw: TamerRaw }
+  | { source: "duelIsland"; raw: DuelIslandRaw }
+  | { source: "npc"; raw: NpcRaw };
 
 export type NpcBattleOpponentRaw = TamerRaw | DuelIslandRaw;
 
-export type NpcBattleOpponentSearchKind = "tamer" | "npc";
+export type NpcBattleOpponentSearchKind = "tamer" | "leader" | "npc";
 
 export class NpcBattleOpponentHelper {
-  public static getById(opponentId: string): NpcBattleOpponentRaw | undefined {
+  public static resolveById(opponentId: string): NpcBattleOpponent | undefined {
     const tamerRaw = TamerRepository.getTamerById(opponentId);
     if (tamerRaw !== undefined) {
-      return tamerRaw;
+      return { source: "tamer", raw: tamerRaw };
     }
 
-    return DuelIslandRepository.getDuelIslandById(opponentId);
+    const duelIslandRaw = DuelIslandRepository.getDuelIslandById(opponentId);
+    if (duelIslandRaw !== undefined) {
+      return { source: "duelIsland", raw: duelIslandRaw };
+    }
+
+    const npcRaw = NpcRepository.getNpcById(opponentId);
+    if (npcRaw !== undefined) {
+      return { source: "npc", raw: npcRaw };
+    }
+
+    return undefined;
+  }
+
+  public static getById(opponentId: string): NpcBattleOpponentRaw | undefined {
+    const opponent = this.resolveById(opponentId);
+    if (opponent === undefined || opponent.source === "npc") {
+      return undefined;
+    }
+
+    return opponent.raw;
   }
 
   public static getNameKey(opponentId: string): string | null {
@@ -26,19 +52,28 @@ export class NpcBattleOpponentHelper {
       return `duelIsland.${opponentId}.name`;
     }
 
+    if (NpcRepository.getNpcById(opponentId) !== undefined) {
+      return `npcs.${opponentId}.name`;
+    }
+
     return null;
   }
 
   public static getSearchKind(opponentId: string): NpcBattleOpponentSearchKind | null {
-    if (TamerRepository.getTamerById(opponentId) !== undefined) {
+    const opponent = this.resolveById(opponentId);
+    if (opponent === undefined) {
+      return null;
+    }
+
+    if (opponent.source === "tamer") {
       return "tamer";
     }
 
-    if (DuelIslandRepository.getDuelIslandById(opponentId) !== undefined) {
+    if (opponent.source === "duelIsland") {
       return "npc";
     }
 
-    return null;
+    return opponent.raw.type;
   }
 
   public static getIdByOpponentId(opponentId: number): string | null {

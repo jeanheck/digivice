@@ -2,6 +2,7 @@ import { CardRepository } from "@/repositories/card.repository";
 import { DropRepository } from "@/repositories/drop.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { LocationRepository } from "@/repositories/location.repository";
+import { NpcRepository } from "@/repositories/npc.repository";
 import { DuelIslandRepository } from "@/repositories/duel-island.repository";
 import { TamerRepository } from "@/repositories/tamer.repository";
 import { StoreRepository } from "@/repositories/store.repository";
@@ -71,6 +72,14 @@ export class WikiModalPresenter {
     });
   }
 
+  public static getStoryNpcSearchItems(
+    translateNpcName: (npcId: string) => string,
+  ): SearchItemViewModel[] {
+    return Object.entries(NpcRepository.getNpcTable()).map(([npcId, npcRaw]) => {
+      return SearchItemConverter.convertStoryNpc(npcId, translateNpcName(npcId), npcRaw.type);
+    });
+  }
+
   public static getAllSearchItems(
     translateDropName: (dropKey: string) => string,
     translateCardName: (cardId: string) => string,
@@ -78,6 +87,7 @@ export class WikiModalPresenter {
     translateStoreName: (storeId: string) => string,
     translateTamerName: (tamerId: string) => string,
     translateDuelIslandName: (duelIslandId: string) => string,
+    translateNpcName: (npcId: string) => string,
   ): SearchItemViewModel[] {
     return [
       ...this.getEnemySearchItems(),
@@ -87,6 +97,7 @@ export class WikiModalPresenter {
       ...this.getStoreSearchItems(translateStoreName),
       ...this.getTamerSearchItems(translateTamerName),
       ...this.getDuelIslandSearchItems(translateDuelIslandName),
+      ...this.getStoryNpcSearchItems(translateNpcName),
     ];
   }
 }

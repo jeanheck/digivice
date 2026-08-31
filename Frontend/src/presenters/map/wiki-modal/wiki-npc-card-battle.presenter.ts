@@ -10,8 +10,12 @@ export class WikiNpcCardBattlePresenter {
     npcId: string,
     battleId: string,
   ): WikiNpcCardBattleViewModel | null {
-    const opponentRaw = NpcBattleOpponentHelper.getById(npcId);
-    const cardBattle = opponentRaw?.cardBattles?.[battleId];
+    const opponent = NpcBattleOpponentHelper.resolveById(npcId);
+    if (opponent === undefined || opponent.source === "npc") {
+      return null;
+    }
+
+    const cardBattle = opponent.raw.cardBattles?.[battleId];
     if (cardBattle === undefined) {
       return null;
     }

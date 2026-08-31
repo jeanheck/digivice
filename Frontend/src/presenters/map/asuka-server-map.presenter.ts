@@ -2,6 +2,7 @@ import type { DigimonSlot, ImportantItems, Npc, Quest } from "@/models";
 import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
 import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
+import { NpcRepository } from "@/repositories/npc.repository";
 import { QuestRepository } from "@/repositories/quest.repository";
 import { LocationService } from "@/services/location.service";
 import { NpcService } from "@/services/npc.service";
@@ -65,13 +66,26 @@ export class AsukaServerMapPresenter {
     journalNpcs: Npc[],
     importantItems: ImportantItems | null | undefined,
   ): MapNpcViewModel[] {
-    const npcIds = LocationService.getNpcIds(locationId, lastCompletedMainQuestStep);
+    const locationNpcIds = LocationService.getNpcIds(locationId, lastCompletedMainQuestStep);
+    const storyNpcIds = NpcRepository.getNpcIdsByLocationId(locationId);
+    const npcIds = [...new Set([...locationNpcIds, ...storyNpcIds])];
     const partyCharisma = FooterPresenter.getPartyCharisma(digimonSlots);
 
     return npcIds.flatMap((npcId) => {
-      const opponentRaw = NpcBattleOpponentHelper.getById(npcId);
+      const storyNpcRaw = NpcRepository.getNpcById(npcId);
+      if (
+        storyNpcRaw !== undefined &&
+        !NpcService.isVisibleOnMapByMainQuestStep(
+          lastCompletedMainQuestStep,
+          storyNpcRaw.mainQuestStepDone,
+        )
+      ) {
+        return [];
+      }
+
+      const opponent = NpcBattleOpponentHelper.resolveById(npcId);
       const nameKey = NpcBattleOpponentHelper.getNameKey(npcId);
-      if (opponentRaw === undefined || nameKey === null) {
+      if (opponent === undefined || nameKey === null) {
         return [];
       }
 
@@ -80,8 +94,8 @@ export class AsukaServerMapPresenter {
           return npc.id === npcId;
         }) ?? null;
 
-      const availableBattleKind = NpcService.getAvailableBattleKind(
-        opponentRaw,
+      const availableBattleKind = NpcService.getAvailableBattleKindForOpponent(
+        opponent,
         journalNpc,
         partyCharisma,
         importantItems,

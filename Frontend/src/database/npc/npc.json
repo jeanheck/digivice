@@ -1,1 +1,141 @@
-{}
+{
+  "seiryuLeader": {
+    "type": "leader",
+    "locationId": "022E",
+    "imageName": "Seiryu Leader",
+    "mainQuestStepDone": {
+      "min": 3
+    },
+    "party": [
+      {
+        "enemyId": 172,
+        "groupId": 3
+      },
+      {
+        "enemyId": 8,
+        "groupId": 3
+      },
+      {
+        "enemyId": 207,
+        "groupId": 3
+      }
+    ],
+    "exp": 176,
+    "dvexp": 11,
+    "bit": 475
+  },
+  "keith": {
+    "type": "npc",
+    "locationId": "0202",
+    "imageName": "Keith",
+    "mainQuestStepDone": {
+      "min": 6,
+      "max": 7
+    },
+    "party": [
+      {
+        "enemyId": 203,
+        "groupId": 263
+      },
+      {
+        "enemyId": 51,
+        "groupId": 263
+      },
+      {
+        "enemyId": 32,
+        "groupId": 263
+      }
+    ],
+    "exp": 4,
+    "dvexp": 0,
+    "bit": 50
+  },
+  "suzakuLeader": {
+    "type": "leader",
+    "locationId": "0240",
+    "imageName": "Suzaku Leader",
+    "party": [
+      {
+        "enemyId": 222,
+        "groupId": 4
+      },
+      {
+        "enemyId": 77,
+        "groupId": 4
+      },
+      {
+        "enemyId": 119,
+        "groupId": 4
+      }
+    ],
+    "exp": 216,
+    "dvexp": 14,
+    "bit": 675
+  },
+  "fakeByakkoLeader": {
+    "type": "npc",
+    "locationId": "025E",
+    "imageName": "Fake Byakko Leader",
+    "mainQuestStepDone": {
+      "min": 45,
+      "max": 46
+    },
+    "party": [
+      {
+        "enemyId": 11,
+        "groupId": 5
+      },
+      {
+        "enemyId": 11,
+        "groupId": 5
+      }
+    ],
+    "exp": 268,
+    "dvexp": 27,
+    "bit": 645
+  },
+  "byakkoLeader": {
+    "type": "leader",
+    "locationId": "025C",
+    "imageName": "Byakko Leader",
+    "party": [
+      {
+        "enemyId": 400,
+        "groupId": 6
+      },
+      {
+        "enemyId": 208,
+        "groupId": 6
+      },
+      {
+        "enemyId": 13,
+        "groupId": 6
+      }
+    ],
+    "exp": 435,
+    "dvexp": 29,
+    "bit": 870
+  },
+  "aoaAttacker": {
+    "type": "npc",
+    "locationId": "0255",
+    "imageName": "A.o.A Attacker",
+    "mainQuestStepDone": {
+      "min": 60,
+      "max": 61
+    },
+    "party": [
+      {
+        "enemyId": 14,
+        "groupId": 188
+      },
+      {
+        "enemyId": 53,
+        "groupId": 188
+      }
+    ],
+    "exp": 291,
+    "dvexp": 29,
+    "bit": 600
+  }
+}

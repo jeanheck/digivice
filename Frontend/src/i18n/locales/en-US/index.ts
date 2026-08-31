@@ -45,6 +45,7 @@ import auction from "./auction.json";
 import npc from "./npc.json";
 import tamer from "./tamer.json";
 import duelIsland from "./duel-island.json";
+import npcs from "./npcs.json";
 
 export default {
   ...map,
@@ -94,4 +95,5 @@ export default {
   ...npc,
   ...tamer,
   ...duelIsland,
+  ...npcs,
 };

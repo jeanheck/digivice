@@ -94,6 +94,9 @@ const allSearchItems = computed(() => {
     (duelIslandId) => {
       return t(`duelIsland.${duelIslandId}.name`);
     },
+    (npcId) => {
+      return t(`npcs.${npcId}.name`);
+    },
   );
 });
 
