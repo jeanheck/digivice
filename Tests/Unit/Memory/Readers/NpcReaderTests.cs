@@ -113,6 +113,32 @@ public class NpcReaderTests
     }
 
     [Fact]
+    public void Read_ShouldRead48DbxByte_WhenBattleUses0x48DB9()
+    {
+        var npcEntry = new KeyValuePair<string, NpcAddresses>(
+            "seiryuLeader",
+            new NpcAddresses
+            {
+                DigimonBattles = new Dictionary<string, NpcBattleAddresses>
+                {
+                    ["first"] = new NpcBattleAddresses { Address = 0x00048DB9, BitMask = 0x01 },
+                },
+            }
+        );
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DB9, 1)).Returns([(byte)0x01]);
+
+        var reader = new NpcReader(memoryReaderMock.Object);
+
+        var result = reader.Read(npcEntry);
+
+        var battle = Assert.Single(result.DigimonBattles);
+        Assert.Equal(0x01, battle.Value);
+        memoryReaderMock.Verify(memoryReader => memoryReader.ReadBytes(0x00048DB9, 1), Times.Once);
+    }
+
+    [Fact]
     public void Read_ShouldReadMultipleBattles_ForSameNpc()
     {
         var npcEntry = new KeyValuePair<string, NpcAddresses>(
