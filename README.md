@@ -182,6 +182,11 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Yanmamon(Green)** *by me (using the Yanmamon image as base, only changing the colors to green tones)*
 - **Yanmamon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Yanmamon?file=Yanmamon_b.jpg)
 - **Zanbamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Zanbamon?file=Zanbamon_b.jpg)
+- **Flymon(Pink)** *by Digital Monsters Almanac* [Digital Monsters Almanac](http://dma.wtw-x.net/dexfly2.shtml)
+- **Monzaemon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Monzaemon?file=Monzaemon_b.jpg)
+- **Nanimon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Nanimon?file=Nanimon_b.jpg)
+- **Cardmon(A)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Cardmon_C1?file=Cardmon_C1_%28World_3%29.jpg)
+- **Cardmon(B)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Cardmon_C2?file=Cardmon_C2_%28World_3%29.jpg)
 
 ### Digievolutions
 
