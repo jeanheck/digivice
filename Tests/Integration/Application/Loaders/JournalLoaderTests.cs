@@ -29,8 +29,9 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadBytes(0x0004A028, 1)).Returns([(byte)0x00]);
         memoryReaderMock.Setup(m => m.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x01]);
         memoryReaderMock.Setup(m => m.ReadBytes(0x0004B3DF, 1)).Returns([(byte)0x20]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B39A, 1)).Returns([(byte)0x7B]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B39B, 1)).Returns([(byte)0x03]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B39A, 1)).Returns([(byte)0xFF]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B39B, 1)).Returns([(byte)0xFF]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B39C, 1)).Returns([(byte)0x01]);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -87,7 +88,7 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(5, journalResource.Auctions.Count);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x00);
-        Assert.Equal(8, journalResource.Npcs.Count);
+        Assert.Equal(17, journalResource.Npcs.Count);
         var genji = Assert.Single(journalResource.Npcs, npc => npc.Id == "genji");
         Assert.Equal(0x20, genji.DigimonBattles.Single(battle => battle.Id == "first").Value);
         Assert.Equal(0x01, genji.DigimonBattles.Single(battle => battle.Id == "second").Value);
@@ -96,5 +97,14 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0x20, Assert.Single(journalResource.Npcs, npc => npc.Id == "robert").DigimonBattles[0].Value);
         Assert.Equal(0x02, Assert.Single(journalResource.Npcs, npc => npc.Id == "chris").DigimonBattles[0].Value);
         Assert.Equal(0x01, Assert.Single(journalResource.Npcs, npc => npc.Id == "tomomi").DigimonBattles[0].Value);
+        Assert.Equal(0x04, Assert.Single(journalResource.Npcs, npc => npc.Id == "mitch").DigimonBattles[0].Value);
+        Assert.Equal(0x80, Assert.Single(journalResource.Npcs, npc => npc.Id == "bob").DigimonBattles[0].Value);
+        Assert.Equal(0x04, Assert.Single(journalResource.Npcs, npc => npc.Id == "andy").DigimonBattles[0].Value);
+        Assert.Equal(0x08, Assert.Single(journalResource.Npcs, npc => npc.Id == "george").DigimonBattles[0].Value);
+        Assert.Equal(0x10, Assert.Single(journalResource.Npcs, npc => npc.Id == "meiLin").DigimonBattles[0].Value);
+        Assert.Equal(0x20, Assert.Single(journalResource.Npcs, npc => npc.Id == "jessica").DigimonBattles[0].Value);
+        Assert.Equal(0x40, Assert.Single(journalResource.Npcs, npc => npc.Id == "gordon").DigimonBattles[0].Value);
+        Assert.Equal(0x80, Assert.Single(journalResource.Npcs, npc => npc.Id == "alice").DigimonBattles[0].Value);
+        Assert.Equal(0x01, Assert.Single(journalResource.Npcs, npc => npc.Id == "nakano").DigimonBattles[0].Value);
     }
 }

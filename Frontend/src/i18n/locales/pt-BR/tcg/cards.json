@@ -17,8 +17,8 @@
       "note": "+30 HP to one digimon"
     },
     "1004": {
-      "name": "White Power",
-      "note": "get 1 white S-energy point"
+      "name": "Poder Branco",
+      "note": "Adiciona 1 ponto em sua Energia-S Branca."
     },
     "1005": {
       "name": "Invocar Patamon",
@@ -37,12 +37,12 @@
       "note": "Put a drawn PG card to trash"
     },
     "1009": {
-      "name": "Eclipse Undo",
-      "note": "return 1 digimon back to its hand"
+      "name": "Desfazer Eclipse",
+      "note": "Devolve 1 Digimon de volta para a mão do dono."
     },
     "1010": {
-      "name": "Blue Power",
-      "note": "get 1 blue S-enery point"
+      "name": "Poder Azul",
+      "note": "Adiciona 1 ponto em sua Energia-S Azul."
     },
     "1011": {
       "name": "Invocar Gomamon",
@@ -57,8 +57,8 @@
       "note": "pick a card from trash"
     },
     "1014": {
-      "name": "Green Force",
-      "note": "Get 2 green S-Energy points"
+      "name": "Energia Verde",
+      "note": "Adiciona 2 pontos em sua Energia-S Verde."
     },
     "1015": {
       "name": "Beast Energy",
@@ -113,8 +113,8 @@
       "note": "pick a card from oppnt hand to trash"
     },
     "1028": {
-      "name": "Black Power",
-      "note": "Get 1 Black S-Energy point"
+      "name": "Poder Preto",
+      "note": "Adiciona 1 ponto em sua Energia-S Preta."
     },
     "1029": {
       "name": "Invocar Devimon",
@@ -201,24 +201,24 @@
       "note": "Invoca 2 Hagurumon para o campo de batalha."
     },
     "1050": {
-      "name": "White Remove",
-      "note": "Subtract 2 white S-Energy"
+      "name": "Remover Branco",
+      "note": "Diminui 2 pontos de Energia-S Branca do oponente."
     },
     "1051": {
-      "name": "Blue Remove",
-      "note": "Subtract 2 blue S-Energy"
+      "name": "Remover Azul",
+      "note": "Diminui 2 pontos de Energia-S Azul do oponente."
     },
     "1052": {
-      "name": "Green Remove",
-      "note": "Subtract 2 green S-Energy"
+      "name": "Remover Verde",
+      "note": "Diminui 2 pontos de Energia-S Verde do oponente."
     },
     "1053": {
-      "name": "Red Remove",
-      "note": "Subtract 2 red S-Energy"
+      "name": "Remover Vermelho",
+      "note": "Diminui 2 pontos de Energia-S Vermelha do oponente."
     },
     "1054": {
-      "name": "Black Remove",
-      "note": "Subtract 2 black S-Energy"
+      "name": "Remover Preto",
+      "note": "Diminui 2 pontos de Energia-S Preta do oponente."
     },
     "1055": {
       "name": "Summon Cancel",

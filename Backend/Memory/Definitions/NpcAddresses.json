@@ -66,5 +66,77 @@
                 "BitMask": "0x01"
             }
         }
+    },
+    "mitch": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x04"
+            }
+        }
+    },
+    "bob": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x80"
+            }
+        }
+    },
+    "andy": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x04"
+            }
+        }
+    },
+    "george": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x08"
+            }
+        }
+    },
+    "meiLin": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x10"
+            }
+        }
+    },
+    "jessica": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x20"
+            }
+        }
+    },
+    "gordon": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x40"
+            }
+        }
+    },
+    "alice": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x80"
+            }
+        }
+    },
+    "nakano": {
+        "DigimonBattles": {
+            "first": {
+                "Address": "0x0004B39C",
+                "BitMask": "0x01"
+            }
+        }
     }
 }
