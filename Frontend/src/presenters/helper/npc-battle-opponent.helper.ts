@@ -1,6 +1,7 @@
 import { DuelIslandRepository } from "@/repositories/duel-island.repository";
 import { NpcRepository } from "@/repositories/npc.repository";
 import { TamerRepository } from "@/repositories/tamer.repository";
+import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { DuelIslandRaw } from "@/repositories/tables/raws/duel-island/duel-island.raw";
 import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
 import type { TamerRaw } from "@/repositories/tables/raws/tamer/tamer.raw";
@@ -74,6 +75,19 @@ export class NpcBattleOpponentHelper {
     }
 
     return opponent.raw.type;
+  }
+
+  public static getImageUrl(opponentId: string): string | null {
+    const opponent = this.resolveById(opponentId);
+    if (opponent === undefined) {
+      return null;
+    }
+
+    if (opponent.source === "npc") {
+      return ImageCatalog.getNpcImageUrl(opponent.raw.imageName ?? null);
+    }
+
+    return ImageCatalog.getTamerImageUrl(opponent.raw.imageName ?? null);
   }
 
   public static getIdByOpponentId(opponentId: number): string | null {

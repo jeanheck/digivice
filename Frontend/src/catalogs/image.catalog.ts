@@ -45,6 +45,11 @@ const NPC_ASSET_CONFIG = {
   extension: "png",
 } as const;
 
+const TAMER_ASSET_CONFIG = {
+  pathSuffix: "/tamers/",
+  extension: "png",
+} as const;
+
 const mapModules = import.meta.glob<string>("@/assets/maps/*.webp", {
   eager: true,
   as: "url",
@@ -85,6 +90,11 @@ const npcModules = import.meta.glob<string>("@/assets/npcs/*.png", {
   as: "url",
 });
 
+const tamerModules = import.meta.glob<string>("@/assets/tamers/*.png", {
+  eager: true,
+  as: "url",
+});
+
 function lookupInGlob(modules: Record<string, string>, pathSuffix: string): string | null {
   const normalizedSuffix = pathSuffix.replace(/\\/g, "/");
   const entry = Object.entries(modules).find(([key]) => {
@@ -99,12 +109,38 @@ function resolveAssetUrl(
   extension: string,
   fileName: string | null,
 ): string | null {
-  if (!fileName || fileName.trim() === "") {
+  if (fileName === null || fileName.trim() === "") {
     return null;
   }
 
   const fullPathSuffix = `${pathSuffix}${fileName}.${extension}`;
   return lookupInGlob(modules, fullPathSuffix);
+}
+
+function resolveAssetUrlWithNameVariants(
+  modules: Record<string, string>,
+  pathSuffix: string,
+  extension: string,
+  fileName: string | null | undefined,
+): string | null {
+  if (fileName === null || fileName === undefined || fileName.trim() === "") {
+    return null;
+  }
+
+  const nameVariants = [fileName];
+  const capitalizedName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
+  if (capitalizedName !== fileName) {
+    nameVariants.push(capitalizedName);
+  }
+
+  for (const nameVariant of nameVariants) {
+    const resolvedUrl = resolveAssetUrl(modules, pathSuffix, extension, nameVariant);
+    if (resolvedUrl !== null) {
+      return resolvedUrl;
+    }
+  }
+
+  return null;
 }
 
 export class ImageCatalog {
@@ -194,11 +230,20 @@ export class ImageCatalog {
   }
 
   public static getTamerImageUrl(imageName: string | null | undefined): string | null {
-    return resolveAssetUrl(
+    return resolveAssetUrlWithNameVariants(
+      tamerModules,
+      TAMER_ASSET_CONFIG.pathSuffix,
+      TAMER_ASSET_CONFIG.extension,
+      imageName,
+    );
+  }
+
+  public static getNpcImageUrl(imageName: string | null | undefined): string | null {
+    return resolveAssetUrlWithNameVariants(
       npcModules,
       NPC_ASSET_CONFIG.pathSuffix,
       NPC_ASSET_CONFIG.extension,
-      imageName ?? null,
+      imageName,
     );
   }
 }

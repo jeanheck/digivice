@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onUnmounted, ref, watch, type Ref } from "vue";
 import MapFrame from "@/components/map-frame/MapFrame.vue";
+import WikiLocalMap from "@/components/wiki-modal/wiki-locations-panel/WikiLocalMap.vue";
 import WikiLocationEncounters from "@/components/wiki-modal/wiki-locations-panel/WikiLocationEncounters.vue";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { MAP_FRAME_WIDTH_PX } from "@/constants/map-display.constant";
@@ -14,6 +15,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "open-enemy", enemyId: string): void;
+  (e: "open-npc", npcId: string): void;
 }>();
 
 const store = useGameStore();
@@ -131,6 +133,10 @@ const localMapWidth = computed(() => {
 const handleOpenEnemy = (enemyId: string): void => {
   emit("open-enemy", enemyId);
 };
+
+const handleOpenNpc = (npcId: string): void => {
+  emit("open-npc", npcId);
+};
 </script>
 
 <template>
@@ -165,10 +171,11 @@ const handleOpenEnemy = (enemyId: string): void => {
         class="h-full min-h-0 shrink-0 flex flex-col justify-center items-center"
         :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
       >
-        <MapFrame
-          :slides="locationsViewModel.localSlides"
+        <WikiLocalMap
+          :image-url="localImageUrl"
           :width="localMapWidth"
-          :max-height="null"
+          :markers="locationsViewModel.mapMarkers"
+          @open-npc="handleOpenNpc"
         />
       </div>
       <div

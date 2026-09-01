@@ -1,4 +1,3 @@
-import { ImageCatalog } from "@/catalogs/image.catalog";
 import {
   NpcBattleKindConstant,
   STORY_NPC_DIGIMON_BATTLE_ID,
@@ -282,7 +281,7 @@ export class WikiNpcPanelPresenter {
       nameKey,
       searchKind,
       locationId: opponent.raw.locationId,
-      imageUrl: ImageCatalog.getTamerImageUrl(opponent.raw.imageName ?? null),
+      imageUrl: NpcBattleOpponentHelper.getImageUrl(npcId),
       battleOptions: this.getBattleOptions(npcId, journalNpc, partyCharisma, importantItems),
     };
   }

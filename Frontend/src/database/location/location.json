@@ -52,7 +52,12 @@
     },
     "tamers": [
       {
-        "id": "genji"
+        "id": "genji",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -98,7 +103,12 @@
         "mainQuestStepDone": {
           "min": 6,
           "max": 7
-        }
+        },
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ],
     "dock": true
@@ -172,16 +182,36 @@
     ],
     "tamers": [
       {
-        "id": "nacky"
+        "id": "nacky",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       },
       {
-        "id": "wong"
+        "id": "wong",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       },
       {
-        "id": "steve"
+        "id": "steve",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       },
       {
-        "id": "gloria"
+        "id": "gloria",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -376,7 +406,12 @@
     },
     "tamers": [
       {
-        "id": "natsumi"
+        "id": "natsumi",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ],
     "dock": true
@@ -415,7 +450,12 @@
     },
     "tamers": [
       {
-        "id": "mitch"
+        "id": "mitch",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -529,7 +569,12 @@
     },
     "tamers": [
       {
-        "id": "catherine"
+        "id": "catherine",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -565,10 +610,20 @@
     },
     "tamers": [
       {
-        "id": "lucia"
+        "id": "lucia",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       },
       {
-        "id": "robert"
+        "id": "robert",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -700,22 +755,52 @@
     },
     "duelIsland": [
       {
-        "id": "divermon1"
+        "id": "divermon1",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       },
       {
-        "id": "divermon2"
+        "id": "divermon2",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       },
       {
-        "id": "divermon3"
+        "id": "divermon3",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       },
       {
-        "id": "divermon4"
+        "id": "divermon4",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       },
       {
-        "id": "divermon5"
+        "id": "divermon5",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       },
       {
-        "id": "kingDivermon"
+        "id": "kingDivermon",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ],
     "dock": true
@@ -738,7 +823,12 @@
     },
     "tamers": [
       {
-        "id": "akiba"
+        "id": "akiba",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -796,7 +886,12 @@
     },
     "tamers": [
       {
-        "id": "bob"
+        "id": "bob",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ],
     "dock": true
@@ -826,7 +921,12 @@
     },
     "tamers": [
       {
-        "id": "tomomi"
+        "id": "tomomi",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -849,12 +949,22 @@
         "id": "seiryuLeader",
         "mainQuestStepDone": {
           "min": 3
-        }
+        },
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ],
     "tamers": [
       {
-        "id": "chris"
+        "id": "chris",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -878,7 +988,12 @@
     "imageName": "South Station",
     "tamers": [
       {
-        "id": "andy"
+        "id": "andy",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -901,7 +1016,12 @@
     },
     "tamers": [
       {
-        "id": "george"
+        "id": "george",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -924,7 +1044,12 @@
     },
     "tamers": [
       {
-        "id": "meiLin"
+        "id": "meiLin",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ],
     "dock": true
@@ -976,7 +1101,12 @@
     },
     "tamers": [
       {
-        "id": "jessica"
+        "id": "jessica",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -1092,7 +1222,12 @@
     },
     "tamers": [
       {
-        "id": "gordon"
+        "id": "gordon",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ],
     "dock": true
@@ -1105,7 +1240,12 @@
     },
     "tamers": [
       {
-        "id": "alice"
+        "id": "alice",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ],
     "dock": true
@@ -1130,7 +1270,12 @@
     ],
     "npcs": [
       {
-        "id": "suzakuLeader"
+        "id": "suzakuLeader",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -1423,7 +1568,12 @@
     "imageName": "Secret Room",
     "npcs": [
       {
-        "id": "aoaAttacker"
+        "id": "aoaAttacker",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -1479,7 +1629,12 @@
     },
     "tamers": [
       {
-        "id": "nakano"
+        "id": "nakano",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -1510,7 +1665,12 @@
     ],
     "npcs": [
       {
-        "id": "byakkoLeader"
+        "id": "byakkoLeader",
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
@@ -1542,7 +1702,12 @@
         "mainQuestStepDone": {
           "min": 45,
           "max": 46
-        }
+        },
+        "coordinates": {
+          "x": 50,
+          "y": 50
+        },
+        "labelPlacement": "below"
       }
     ]
   },
