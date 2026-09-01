@@ -8,20 +8,21 @@ public class ImportantItemsDifferTests
     [Fact]
     public void Diff_ShouldReturnEmptyDTO_WhenNoChanges()
     {
-        var previous = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true };
-        var current = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true };
+        var previous = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true, SunTrophy = false };
+        var current = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true, SunTrophy = false };
 
         var result = ImportantItemsDiffer.Diff(previous, current);
 
         Assert.False(result.TreeBoots.HasValue);
         Assert.False(result.FishingPole.HasValue);
         Assert.False(result.AsukaTrophy.HasValue);
+        Assert.False(result.SunTrophy.HasValue);
     }
 
     [Fact]
     public void Diff_ShouldReturnFullDTO_WhenPreviousIsNull()
     {
-        var current = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true };
+        var current = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true, SunTrophy = true };
 
         var result = ImportantItemsDiffer.Diff(null, current);
 
@@ -31,6 +32,8 @@ public class ImportantItemsDifferTests
         Assert.False(result.FishingPole.Value);
         Assert.True(result.AsukaTrophy.HasValue);
         Assert.True(result.AsukaTrophy.Value);
+        Assert.True(result.SunTrophy.HasValue);
+        Assert.True(result.SunTrophy.Value);
     }
 
     [Fact]

@@ -9,7 +9,6 @@ import type { TamerCharismaRequiredRaw } from "@/repositories/tables/raws/tamer/
 import type { TamerTrophyRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-trophy-required.raw";
 import {
   NpcService,
-  UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY,
 } from "@/services/npc.service";
 import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
 import type { WikiNpcPanelViewModel } from "@/viewmodels/wiki-modal/wiki-npc-panel.viewmodel";
@@ -59,8 +58,8 @@ export class WikiNpcPanelPresenter {
       ),
       supersededTooltipKey: null,
       battleTooltipKey: null,
-      showAsukaTrophyEmoji: trophyRequired === "asukaTrophy",
-      asukaTrophyOwned: importantItems?.asukaTrophy === true,
+      showTrophyEmoji: trophyRequired !== undefined,
+      trophyOwned: NpcService.isTrophyOwned(trophyRequired, importantItems),
     };
   }
 
@@ -69,6 +68,7 @@ export class WikiNpcPanelPresenter {
       status: option.status,
       isSuperseded: option.isSuperseded,
       missingRequirementTooltipKey: option.missingRequirementTooltipKey,
+      supersededTooltipKey: option.supersededTooltipKey,
     });
   }
 
@@ -85,19 +85,23 @@ export class WikiNpcPanelPresenter {
     option: WikiNpcBattleOptionViewModel,
     activeCardBattleIds: Set<string>,
     importantItems: ImportantItems | null | undefined,
+    activeTrophyRequired: TamerTrophyRequiredRaw | undefined,
   ): void {
     const isActive = activeCardBattleIds.has(option.battleId);
     const activeBattleId = [...activeCardBattleIds][0];
     const isLowerTierThanActive =
       activeBattleId !== undefined && option.battleId.localeCompare(activeBattleId) < 0;
+    const hasRematchTrophy =
+      importantItems?.asukaTrophy === true || importantItems?.sunTrophy === true;
     const isSuperseded =
       !isActive &&
-      (option.requirementsMet ||
-        (importantItems?.asukaTrophy === true && isLowerTierThanActive));
+      (option.requirementsMet || (hasRematchTrophy && isLowerTierThanActive));
 
     option.isActive = isActive;
     option.isSuperseded = isSuperseded;
-    option.supersededTooltipKey = isSuperseded ? UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY : null;
+    option.supersededTooltipKey = isSuperseded
+      ? NpcService.getUnavailableAfterTrophyTooltipKey(activeTrophyRequired)
+      : null;
     option.status = NpcService.getBattleStatus(false, isActive);
     this.finalizeBattleTooltip(option);
   }
@@ -121,8 +125,8 @@ export class WikiNpcPanelPresenter {
       missingRequirementTooltipKey: null,
       supersededTooltipKey: null,
       battleTooltipKey: null,
-      showAsukaTrophyEmoji: false,
-      asukaTrophyOwned: false,
+      showTrophyEmoji: false,
+      trophyOwned: false,
     };
     this.applyDigimonActivation(option);
 
@@ -151,6 +155,11 @@ export class WikiNpcPanelPresenter {
       partyCharisma,
       importantItems,
     );
+    const activeBattleId = [...activeCardBattleIds][0];
+    const activeTrophyRequired =
+      activeBattleId !== undefined
+        ? opponentRaw.cardBattles?.[activeBattleId]?.trophyRequired
+        : undefined;
 
     const cardOptions = Object.entries(opponentRaw.cardBattles ?? {}).map(([battleId, cardBattle]) => {
       const option = this.buildBattleOptionBase(
@@ -162,7 +171,7 @@ export class WikiNpcPanelPresenter {
         partyCharisma,
         importantItems,
       );
-      this.applyCardActivation(option, activeCardBattleIds, importantItems);
+      this.applyCardActivation(option, activeCardBattleIds, importantItems, activeTrophyRequired);
 
       return option;
     });

@@ -8,8 +8,11 @@
       "requirement": {
         "missingCharisma": "Carisma insuficiente ou fora da faixa",
         "missingAsukaTrophy": "Falta Asuka Trophy",
+        "missingSunTrophy": "Falta Sun Trophy",
         "missingCharismaAndAsukaTrophy": "Carisma insuficiente ou fora da faixa; Falta Asuka Trophy",
+        "missingCharismaAndSunTrophy": "Carisma insuficiente ou fora da faixa; Falta Sun Trophy",
         "unavailableAfterAsukaTrophy": "Indisponível após Asuka Trophy",
+        "unavailableAfterSunTrophy": "Indisponível após Sun Trophy",
         "available": "Batalha disponível",
         "alreadyWon": "Você já venceu essa batalha"
       }

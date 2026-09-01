@@ -17,6 +17,7 @@ public class ImportantItemsLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048DB4, 1)).Returns([(byte)0x01]);
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048DB5, 1)).Returns([(byte)0x00]);
         memoryReaderMock.Setup(m => m.ReadBytes(0x00048DC2, 1)).Returns([(byte)0x01]);
+        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DC4, 1)).Returns([(byte)0x00]);
 
         var importantItemsReader = new ImportantItemsReader(memoryReaderMock.Object);
         var importantItemsLoader = new ImportantItemsLoader(addressesRepository, importantItemsReader);
@@ -27,6 +28,7 @@ public class ImportantItemsLoaderTests : LoaderIntegrationTestBase
         Assert.Equal((byte)0x01, resource.TreeBoots);
         Assert.Equal((byte)0x00, resource.FishingPole);
         Assert.Equal((byte)0x01, resource.AsukaTrophy);
+        Assert.Equal((byte)0x00, resource.SunTrophy);
     }
 
     [Fact]

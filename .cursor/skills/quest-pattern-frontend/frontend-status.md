@@ -55,6 +55,10 @@ Maintained by quest-pattern-frontend skill. Append entries; do not remove withou
 
 - `asukaTrophy` — coords provisórias (`0228` / 50,50)
 
+### Duel Island (2026-08-31)
+
+- `sunTrophy` — coords provisórias (`0228` / 50,50); requisite `asukaTrophy`
+
 ## Palette notes
 
 - `emerald` — side quests

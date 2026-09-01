@@ -13,10 +13,15 @@ export type NpcBattleStatus = "completed" | "available" | "missingRequirements";
 
 export const MISSING_CHARISMA_TOOLTIP_KEY = "npc.battle.requirement.missingCharisma";
 export const MISSING_ASUKA_TROPHY_TOOLTIP_KEY = "npc.battle.requirement.missingAsukaTrophy";
+export const MISSING_SUN_TROPHY_TOOLTIP_KEY = "npc.battle.requirement.missingSunTrophy";
 export const MISSING_CHARISMA_AND_ASUKA_TROPHY_TOOLTIP_KEY =
   "npc.battle.requirement.missingCharismaAndAsukaTrophy";
+export const MISSING_CHARISMA_AND_SUN_TROPHY_TOOLTIP_KEY =
+  "npc.battle.requirement.missingCharismaAndSunTrophy";
 export const UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY =
   "npc.battle.requirement.unavailableAfterAsukaTrophy";
+export const UNAVAILABLE_AFTER_SUN_TROPHY_TOOLTIP_KEY =
+  "npc.battle.requirement.unavailableAfterSunTrophy";
 export const AVAILABLE_BATTLE_TOOLTIP_KEY = "npc.battle.requirement.available";
 export const ALREADY_WON_BATTLE_TOOLTIP_KEY = "npc.battle.requirement.alreadyWon";
 
@@ -70,7 +75,52 @@ export class NpcService {
       return importantItems?.asukaTrophy === true;
     }
 
+    if (trophyRequired === "sunTrophy") {
+      return importantItems?.sunTrophy === true;
+    }
+
     return false;
+  }
+
+  private static getMissingTrophyTooltipKey(
+    trophyRequired: TamerTrophyRequiredRaw | undefined,
+  ): string | null {
+    if (trophyRequired === "asukaTrophy") {
+      return MISSING_ASUKA_TROPHY_TOOLTIP_KEY;
+    }
+
+    if (trophyRequired === "sunTrophy") {
+      return MISSING_SUN_TROPHY_TOOLTIP_KEY;
+    }
+
+    return null;
+  }
+
+  private static getMissingCharismaAndTrophyTooltipKey(
+    trophyRequired: TamerTrophyRequiredRaw | undefined,
+  ): string {
+    if (trophyRequired === "sunTrophy") {
+      return MISSING_CHARISMA_AND_SUN_TROPHY_TOOLTIP_KEY;
+    }
+
+    return MISSING_CHARISMA_AND_ASUKA_TROPHY_TOOLTIP_KEY;
+  }
+
+  public static getUnavailableAfterTrophyTooltipKey(
+    trophyRequired: TamerTrophyRequiredRaw | undefined,
+  ): string {
+    if (trophyRequired === "sunTrophy") {
+      return UNAVAILABLE_AFTER_SUN_TROPHY_TOOLTIP_KEY;
+    }
+
+    return UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY;
+  }
+
+  public static isTrophyOwned(
+    trophyRequired: TamerTrophyRequiredRaw | undefined,
+    importantItems: ImportantItems | null | undefined,
+  ): boolean {
+    return this.isTrophyRequirementMet(trophyRequired, importantItems);
   }
 
   public static areBattleRequirementsMet(
@@ -100,14 +150,14 @@ export class NpcService {
     }
 
     if (!charismaMet && !trophyMet) {
-      return MISSING_CHARISMA_AND_ASUKA_TROPHY_TOOLTIP_KEY;
+      return this.getMissingCharismaAndTrophyTooltipKey(trophyRequired);
     }
 
     if (!charismaMet) {
       return MISSING_CHARISMA_TOOLTIP_KEY;
     }
 
-    return MISSING_ASUKA_TROPHY_TOOLTIP_KEY;
+    return this.getMissingTrophyTooltipKey(trophyRequired);
   }
 
   public static resolveActiveCardBattleIds(
@@ -162,6 +212,7 @@ export class NpcService {
     status: NpcBattleStatus;
     isSuperseded: boolean;
     missingRequirementTooltipKey: string | null;
+    supersededTooltipKey: string | null;
   }): string | null {
     if (params.status === "completed") {
       return ALREADY_WON_BATTLE_TOOLTIP_KEY;
@@ -172,7 +223,7 @@ export class NpcService {
     }
 
     if (params.isSuperseded) {
-      return UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY;
+      return params.supersededTooltipKey ?? UNAVAILABLE_AFTER_ASUKA_TROPHY_TOOLTIP_KEY;
     }
 
     return params.missingRequirementTooltipKey;

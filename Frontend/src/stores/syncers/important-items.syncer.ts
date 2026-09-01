@@ -12,5 +12,8 @@ export class ImportantItemsSyncer {
     if (newImportantItemsDto.asukaTrophy !== undefined) {
       previousImportantItems.asukaTrophy = newImportantItemsDto.asukaTrophy;
     }
+    if (newImportantItemsDto.sunTrophy !== undefined) {
+      previousImportantItems.sunTrophy = newImportantItemsDto.sunTrophy;
+    }
   }
 }

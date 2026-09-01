@@ -15,7 +15,8 @@ public class ImportantItemsProviderTests
         {
             TreeBoots = 0x01,
             FishingPole = 0x00,
-            AsukaTrophy = 0x02
+            AsukaTrophy = 0x02,
+            SunTrophy = 0x00
         };
 
         var loaderMock = new Mock<IImportantItemsLoader>();
@@ -30,6 +31,7 @@ public class ImportantItemsProviderTests
         Assert.True(result.TreeBoots);
         Assert.False(result.FishingPole);
         Assert.True(result.AsukaTrophy);
+        Assert.False(result.SunTrophy);
         loaderMock.Verify(loader => loader.Load(), Times.Once);
     }
 
@@ -40,7 +42,8 @@ public class ImportantItemsProviderTests
         {
             TreeBoots = null,
             FishingPole = null,
-            AsukaTrophy = null
+            AsukaTrophy = null,
+            SunTrophy = null
         };
 
         var loaderMock = new Mock<IImportantItemsLoader>();
@@ -53,6 +56,7 @@ public class ImportantItemsProviderTests
         Assert.False(result.TreeBoots);
         Assert.False(result.FishingPole);
         Assert.False(result.AsukaTrophy);
+        Assert.False(result.SunTrophy);
         loaderMock.Verify(loader => loader.Load(), Times.Once);
     }
 }

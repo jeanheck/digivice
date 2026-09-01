@@ -32,6 +32,10 @@ public static class ImportantItemsDiffer
         {
             dto = dto with { AsukaTrophy = newImportantItems.AsukaTrophy };
         }
+        if (newImportantItems.SunTrophy != previousImportantItems.SunTrophy)
+        {
+            dto = dto with { SunTrophy = newImportantItems.SunTrophy };
+        }
 
         return dto;
     }

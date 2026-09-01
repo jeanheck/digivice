@@ -286,6 +286,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B2, 1)).Returns([(byte)0xCF]);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B3, 1)).Returns([(byte)0x0F]);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DC2, 1)).Returns([(byte)0x01]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DC4, 1)).Returns([(byte)0x01]);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -295,6 +296,8 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var duelIsland = questLoader.LoadDuelIsland();
 
         Assert.NotNull(duelIsland);
+        Assert.Equal(2, duelIsland.Count);
+
         var asukaTrophy = Assert.Single(duelIsland, quest => quest.Id == "asukaTrophy");
         Assert.Empty(asukaTrophy.Requisites);
         Assert.Equal(6, asukaTrophy.Steps.Count);
@@ -304,5 +307,17 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0x04, asukaTrophy.Steps[3].Value);
         Assert.Equal(0x08, asukaTrophy.Steps[4].Value);
         Assert.Equal(1, asukaTrophy.Steps[5].Value);
+
+        var sunTrophy = Assert.Single(duelIsland, quest => quest.Id == "sunTrophy");
+        Assert.Single(sunTrophy.Requisites);
+        Assert.Equal("asukaTrophy", sunTrophy.Requisites[0].Id);
+        Assert.Equal(1, sunTrophy.Requisites[0].Value);
+        Assert.Equal(6, sunTrophy.Steps.Count);
+        Assert.Equal(0x80, sunTrophy.Steps[0].Value);
+        Assert.Equal(0x01, sunTrophy.Steps[1].Value);
+        Assert.Equal(0x02, sunTrophy.Steps[2].Value);
+        Assert.Equal(0x04, sunTrophy.Steps[3].Value);
+        Assert.Equal(0x08, sunTrophy.Steps[4].Value);
+        Assert.Equal(1, sunTrophy.Steps[5].Value);
     }
 }

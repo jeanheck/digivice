@@ -1,0 +1,32 @@
+{
+  "sunTrophy": {
+    "title": "Sun Trophy",
+    "description": "Derrote todos os duelistas de cartas novamente na Ilha de Duelos e ganhe o Sun Trophy",
+    "steps": {
+      "1": {
+        "description": "Derrote o primeiro duelista",
+        "locationTarget": "Ilha de Duelos — Oponente 1"
+      },
+      "2": {
+        "description": "Derrote o segundo duelista",
+        "locationTarget": "Ilha de Duelos — Oponente 2"
+      },
+      "3": {
+        "description": "Derrote o terceiro duelista",
+        "locationTarget": "Ilha de Duelos — Oponente 3"
+      },
+      "4": {
+        "description": "Derrote o quarto duelista",
+        "locationTarget": "Ilha de Duelos — Oponente 4"
+      },
+      "5": {
+        "description": "Derrote o quinto duelista",
+        "locationTarget": "Ilha de Duelos — Oponente 5"
+      },
+      "6": {
+        "description": "Derrote o duelista final e obtenha o Sun Trophy",
+        "locationTarget": "Ilha de Duelos — Oponente Final"
+      }
+    }
+  }
+}

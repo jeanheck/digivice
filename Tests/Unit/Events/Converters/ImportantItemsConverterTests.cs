@@ -12,7 +12,8 @@ public class ImportantItemsConverterTests
         {
             TreeBoots = true,
             FishingPole = false,
-            AsukaTrophy = true
+            AsukaTrophy = true,
+            SunTrophy = false
         };
 
         var dto = ImportantItemsConverter.ToDTO(importantItems);
@@ -23,5 +24,7 @@ public class ImportantItemsConverterTests
         Assert.False(dto.FishingPole.Value);
         Assert.True(dto.AsukaTrophy.HasValue);
         Assert.True(dto.AsukaTrophy.Value);
+        Assert.True(dto.SunTrophy.HasValue);
+        Assert.False(dto.SunTrophy.Value);
     }
 }

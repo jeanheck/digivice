@@ -12,7 +12,8 @@ public class ImportantItemsAssemblerTests
         {
             TreeBoots = 0x01,
             FishingPole = 0x02,
-            AsukaTrophy = 0xFF
+            AsukaTrophy = 0xFF,
+            SunTrophy = 0x01
         };
 
         var result = ImportantItemsAssembler.Assemble(resource);
@@ -20,6 +21,7 @@ public class ImportantItemsAssemblerTests
         Assert.True(result.TreeBoots);
         Assert.True(result.FishingPole);
         Assert.True(result.AsukaTrophy);
+        Assert.True(result.SunTrophy);
     }
 
     [Fact]
@@ -29,7 +31,8 @@ public class ImportantItemsAssemblerTests
         {
             TreeBoots = 0x00,
             FishingPole = null,
-            AsukaTrophy = 0x00
+            AsukaTrophy = 0x00,
+            SunTrophy = null
         };
 
         var result = ImportantItemsAssembler.Assemble(resource);
@@ -37,5 +40,6 @@ public class ImportantItemsAssemblerTests
         Assert.False(result.TreeBoots);
         Assert.False(result.FishingPole);
         Assert.False(result.AsukaTrophy);
+        Assert.False(result.SunTrophy);
     }
 }

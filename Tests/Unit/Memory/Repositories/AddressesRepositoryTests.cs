@@ -61,7 +61,8 @@ public class AddressesRepositoryTests : IDisposable
         {
             TreeBoots = 0x00048DB4,
             FishingPole = 0x00048DB5,
-            AsukaTrophy = 0x00048DC2
+            AsukaTrophy = 0x00048DC2,
+            SunTrophy = 0x00048DC4
         };
         var json = JsonSerializer.Serialize(fakeImportantItems);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "ImportantItemsAddresses.json"), json);
@@ -72,6 +73,7 @@ public class AddressesRepositoryTests : IDisposable
         Assert.Equal(0x00048DB4, result.TreeBoots);
         Assert.Equal(0x00048DB5, result.FishingPole);
         Assert.Equal(0x00048DC2, result.AsukaTrophy);
+        Assert.Equal(0x00048DC4, result.SunTrophy);
     }
 
     [Fact]

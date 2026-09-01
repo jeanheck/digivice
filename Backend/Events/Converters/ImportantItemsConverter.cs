@@ -11,7 +11,8 @@ public static class ImportantItemsConverter
         {
             TreeBoots = importantItems.TreeBoots,
             FishingPole = importantItems.FishingPole,
-            AsukaTrophy = importantItems.AsukaTrophy
+            AsukaTrophy = importantItems.AsukaTrophy,
+            SunTrophy = importantItems.SunTrophy
         };
     }
 }

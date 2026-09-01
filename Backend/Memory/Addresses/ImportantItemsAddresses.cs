@@ -13,5 +13,8 @@ namespace Backend.Memory.Addresses
 
         [JsonConverter(typeof(HexStringToLongConverter))]
         public long AsukaTrophy { get; set; }
+
+        [JsonConverter(typeof(HexStringToLongConverter))]
+        public long SunTrophy { get; set; }
     }
 }

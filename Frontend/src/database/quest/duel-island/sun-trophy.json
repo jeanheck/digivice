@@ -1,0 +1,40 @@
+{
+  "id": "sunTrophy",
+  "requisites": [
+    {
+      "id": "asukaTrophy"
+    }
+  ],
+  "steps": {
+    "1": {
+      "location": "0228",
+      "coordinates": { "x": 50, "y": 50 },
+      "requisites": []
+    },
+    "2": {
+      "location": "0228",
+      "coordinates": { "x": 50, "y": 50 },
+      "requisites": []
+    },
+    "3": {
+      "location": "0228",
+      "coordinates": { "x": 50, "y": 50 },
+      "requisites": []
+    },
+    "4": {
+      "location": "0228",
+      "coordinates": { "x": 50, "y": 50 },
+      "requisites": []
+    },
+    "5": {
+      "location": "0228",
+      "coordinates": { "x": 50, "y": 50 },
+      "requisites": []
+    },
+    "6": {
+      "location": "0228",
+      "coordinates": { "x": 50, "y": 50 },
+      "requisites": []
+    }
+  }
+}

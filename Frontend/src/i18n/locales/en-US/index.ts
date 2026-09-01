@@ -38,6 +38,7 @@ import driAgentKotemon from "./quest/dri-agents/dri-agent-kotemon.json";
 import driAgentRenamon from "./quest/dri-agents/dri-agent-renamon.json";
 import driAgentPatamon from "./quest/dri-agents/dri-agent-patamon.json";
 import asukaTrophy from "./quest/duel-island/asuka-trophy.json";
+import sunTrophy from "./quest/duel-island/sun-trophy.json";
 import player from "./player.json";
 import party from "./party.json";
 import connection from "./connection.json";
@@ -88,6 +89,7 @@ export default {
   ...driAgentRenamon,
   ...driAgentPatamon,
   ...asukaTrophy,
+  ...sunTrophy,
   ...player,
   ...party,
   ...connection,

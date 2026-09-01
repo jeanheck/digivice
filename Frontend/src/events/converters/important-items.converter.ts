@@ -7,6 +7,7 @@ export class ImportantItemsConverter {
       treeBoots: importantItemsDto.treeBoots,
       fishingPole: importantItemsDto.fishingPole,
       asukaTrophy: importantItemsDto.asukaTrophy,
+      sunTrophy: importantItemsDto.sunTrophy,
     };
   }
 }

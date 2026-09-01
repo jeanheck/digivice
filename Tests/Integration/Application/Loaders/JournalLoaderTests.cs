@@ -90,7 +90,9 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(0, Assert.Single(journalResource.DriAgents, quest => quest.Id == "driAgentKotemon").Steps[0].Value);
         Assert.Equal(0, Assert.Single(journalResource.DriAgents, quest => quest.Id == "driAgentRenamon").Steps[0].Value);
         Assert.Equal(0, Assert.Single(journalResource.DriAgents, quest => quest.Id == "driAgentPatamon").Steps[0].Value);
+        Assert.Equal(2, journalResource.DuelIsland.Count);
         Assert.Single(journalResource.DuelIsland, quest => quest.Id == "asukaTrophy");
+        Assert.Single(journalResource.DuelIsland, quest => quest.Id == "sunTrophy");
         Assert.Equal(5, journalResource.Auctions.Count);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
         Assert.Contains(journalResource.Auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x00);

@@ -17,6 +17,6 @@ export interface WikiNpcBattleOptionViewModel {
   missingRequirementTooltipKey: string | null;
   supersededTooltipKey: string | null;
   battleTooltipKey: string | null;
-  showAsukaTrophyEmoji: boolean;
-  asukaTrophyOwned: boolean;
+  showTrophyEmoji: boolean;
+  trophyOwned: boolean;
 }

@@ -14,4 +14,7 @@ public record class ImportantItemsDTO : IDTO
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<bool> AsukaTrophy { get; init; } = Optional<bool>.Empty;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Optional<bool> SunTrophy { get; init; } = Optional<bool>.Empty;
 }

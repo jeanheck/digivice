@@ -5,16 +5,16 @@
       "note": "Put all non-white digimon to trash"
     },
     "1001": {
-      "name": "Summon Angemon",
-      "note": "Bring 2 angemon to field"
+      "name": "Invocar Angemon",
+      "note": "Invoca 2 Angemon para o campo de batalha."
     },
     "1002": {
-      "name": "Gold Aura",
-      "note": "+10 AP & HP to all digimon"
+      "name": "Aura Dourada",
+      "note": "Adiciona +10 de AP e HP a todos os Digimons"
     },
     "1003": {
-      "name": "Protect Aura",
-      "note": "+30 HP to one digimon"
+      "name": "Aura Protetora",
+      "note": "Aumenta o HP de um Digimon em +30."
     },
     "1004": {
       "name": "Poder Branco",
@@ -133,8 +133,8 @@
       "note": "Pick 3 cards from oppnt deck to trash"
     },
     "1033": {
-      "name": "Desire Access",
-      "note": "Put all hand in trash, draw 6 cards"
+      "name": "Desejo Acessível",
+      "note": "Descarta as cartas da mão e retira 6 cartas do baralho."
     },
     "1034": {
       "name": "Anti",
@@ -165,16 +165,16 @@
       "note": "Adiciona +30 de AP e HP em um Digimon Marrom."
     },
     "1041": {
-      "name": "Charge Terminal",
-      "note": "draws 2 card from deck to hand"
+      "name": "Terminal de Carga",
+      "note": "Saca 2 cartas do baralho para a sua mão."
     },
     "1042": {
       "name": "Digimon Charge",
       "note": "Choose a DG from deck to hand"
     },
     "1043": {
-      "name": "Program Charge",
-      "note": "Choose a PG from card to hand"
+      "name": "Carga Programa",
+      "note": "Escolha uma Carta Programa do Baralho para sua mão."
     },
     "1044": {
       "name": "Terminal de Troca",
