@@ -56,6 +56,16 @@ namespace Backend.Domain.Assemblers
                 return;
             }
 
+            if (!AreQuestRequisitesMet(quest))
+            {
+                foreach (Step step in quest.Steps)
+                {
+                    step.Value = 0;
+                }
+
+                return;
+            }
+
             Step trophyStep = quest.Steps[^1];
             if (trophyStep.Value == 0)
             {
@@ -69,6 +79,11 @@ namespace Backend.Domain.Assemblers
                     quest.Steps[i].Value = 1;
                 }
             }
+        }
+
+        private static bool AreQuestRequisitesMet(Quest quest)
+        {
+            return quest.Requisites.All(requisite => requisite.Value > 0);
         }
     }
 }
