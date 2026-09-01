@@ -19,7 +19,7 @@ const cardName = computed(() => {
 });
 
 const cardImageUrl = computed(() => {
-  return ImageCatalog.getCardImageUrl(cardName.value);
+  return ImageCatalog.getCardImageUrl(props.card.imageName);
 });
 
 const cardNote = computed(() => {

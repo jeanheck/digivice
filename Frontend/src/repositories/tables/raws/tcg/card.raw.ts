@@ -12,6 +12,7 @@ export interface CardStoreRaw {
 }
 
 export interface CardRaw {
+  imageName: string;
   boosters: number[];
   stores?: CardStoreRaw[];
   type: CardType;
