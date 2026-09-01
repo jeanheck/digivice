@@ -376,6 +376,7 @@ const enemyImageUrl = computed(() => {
     <WikiLocationsPanel
       v-else-if="view === 'locations' && selectedLocationId !== null"
       :location-id="selectedLocationId"
+      @open-enemy="openEnemyFromDropSource"
     />
     <WikiNpcPanel
       v-else-if="view === 'npc' && selectedNpcId !== null"
