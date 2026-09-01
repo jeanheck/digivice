@@ -50,12 +50,9 @@
       "x": 50.5,
       "y": 43
     },
-    "npcs": [
+    "tamers": [
       {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "genji"
-        ]
+        "id": "genji"
       }
     ]
   },
@@ -95,6 +92,15 @@
       "x": 50.5,
       "y": 43
     },
+    "npcs": [
+      {
+        "id": "keith",
+        "mainQuestStepDone": {
+          "min": 6,
+          "max": 7
+        }
+      }
+    ],
     "dock": true
   },
   "0203": {
@@ -164,15 +170,18 @@
         }
       }
     ],
-    "npcs": [
+    "tamers": [
       {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "nacky",
-          "wong",
-          "steve",
-          "gloria"
-        ]
+        "id": "nacky"
+      },
+      {
+        "id": "wong"
+      },
+      {
+        "id": "steve"
+      },
+      {
+        "id": "gloria"
       }
     ]
   },
@@ -365,12 +374,9 @@
         "515"
       ]
     },
-    "npcs": [
+    "tamers": [
       {
-        "lastMainQuestStepDone": 0,
-        "ids": [
-          "natsumi"
-        ]
+        "id": "natsumi"
       }
     ],
     "dock": true
@@ -406,7 +412,12 @@
         "86",
         "515"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "mitch"
+      }
+    ]
   },
   "021F": {
     "imageName": "Shell Beach",
@@ -515,7 +526,12 @@
         "86",
         "515"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "catherine"
+      }
+    ]
   },
   "0222": {
     "imageName": "East Wire Forest",
@@ -546,7 +562,15 @@
         "86",
         "515"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "lucia"
+      },
+      {
+        "id": "robert"
+      }
+    ]
   },
   "0223": {
     "imageName": "Forest Inn",
@@ -674,6 +698,26 @@
       "x": 76.5,
       "y": 24
     },
+    "duelIsland": [
+      {
+        "id": "divermon1"
+      },
+      {
+        "id": "divermon2"
+      },
+      {
+        "id": "divermon3"
+      },
+      {
+        "id": "divermon4"
+      },
+      {
+        "id": "divermon5"
+      },
+      {
+        "id": "kingDivermon"
+      }
+    ],
     "dock": true
   },
   "0229": {
@@ -691,7 +735,12 @@
         "86",
         "515"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "akiba"
+      }
+    ]
   },
   "0230": {
     "imageName": "Seiryu Tower",
@@ -745,6 +794,11 @@
         "515"
       ]
     },
+    "tamers": [
+      {
+        "id": "bob"
+      }
+    ],
     "dock": true
   },
   "022B": {
@@ -769,7 +823,12 @@
     "worldLocation": {
       "x": 88,
       "y": 53
-    }
+    },
+    "tamers": [
+      {
+        "id": "tomomi"
+      }
+    ]
   },
   "022D": {
     "imageName": "Deeper Crevice",
@@ -784,7 +843,20 @@
     "worldLocation": {
       "x": 81,
       "y": 43
-    }
+    },
+    "npcs": [
+      {
+        "id": "seiryuLeader",
+        "mainQuestStepDone": {
+          "min": 3
+        }
+      }
+    ],
+    "tamers": [
+      {
+        "id": "chris"
+      }
+    ]
   },
   "022F": {
     "imageName": "Zephyr Tower",
@@ -803,7 +875,12 @@
     ]
   },
   "0232": {
-    "imageName": "South Station"
+    "imageName": "South Station",
+    "tamers": [
+      {
+        "id": "andy"
+      }
+    ]
   },
   "0233": {
     "imageName": "Bulk Swamp",
@@ -821,7 +898,12 @@
         "184",
         "517"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "george"
+      }
+    ]
   },
   "0234": {
     "imageName": "Bulk Bridge",
@@ -840,6 +922,11 @@
         "516"
       ]
     },
+    "tamers": [
+      {
+        "id": "meiLin"
+      }
+    ],
     "dock": true
   },
   "0235": {
@@ -886,7 +973,12 @@
         "184",
         "517"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "jessica"
+      }
+    ]
   },
   "0238": {
     "imageName": "Swamp Inn",
@@ -998,6 +1090,11 @@
         "516"
       ]
     },
+    "tamers": [
+      {
+        "id": "gordon"
+      }
+    ],
     "dock": true
   },
   "023E": {
@@ -1006,6 +1103,11 @@
       "x": 60.5,
       "y": 77
     },
+    "tamers": [
+      {
+        "id": "alice"
+      }
+    ],
     "dock": true
   },
   "023F": {
@@ -1024,6 +1126,11 @@
           "x": 42,
           "y": 12
         }
+      }
+    ],
+    "npcs": [
+      {
+        "id": "suzakuLeader"
       }
     ]
   },
@@ -1313,7 +1420,12 @@
     }
   },
   "0255": {
-    "imageName": "Secret Room"
+    "imageName": "Secret Room",
+    "npcs": [
+      {
+        "id": "aoaAttacker"
+      }
+    ]
   },
   "0257": {
     "imageName": "Noise Desert S",
@@ -1364,7 +1476,12 @@
         "110",
         "193"
       ]
-    }
+    },
+    "tamers": [
+      {
+        "id": "nakano"
+      }
+    ]
   },
   "025B": {
     "imageName": "Mirage Hall"
@@ -1390,6 +1507,11 @@
           "y": 16
         }
       }
+    ],
+    "npcs": [
+      {
+        "id": "byakkoLeader"
+      }
     ]
   },
   "025D": {
@@ -1411,6 +1533,15 @@
         "coordinates": {
           "x": 75,
           "y": 12
+        }
+      }
+    ],
+    "npcs": [
+      {
+        "id": "fakeByakkoLeader",
+        "mainQuestStepDone": {
+          "min": 45,
+          "max": 46
         }
       }
     ]
