@@ -671,32 +671,9 @@
   "0228": {
     "imageName": "Duel Island",
     "worldLocation": {
-      "x": 74.5,
-      "y": 47
+      "x": 76.5,
+      "y": 24
     },
-    "innerLocation": [
-      {
-        "location": "0227",
-        "coordinates": {
-          "x": 45,
-          "y": 50
-        }
-      },
-      {
-        "location": "02E2",
-        "coordinates": {
-          "x": 87,
-          "y": 42
-        }
-      },
-      {
-        "location": "02E0",
-        "coordinates": {
-          "x": 75,
-          "y": 40
-        }
-      }
-    ],
     "dock": true
   },
   "0229": {

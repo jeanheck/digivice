@@ -1,31 +1,31 @@
 {
   "asukaTrophy": {
     "title": "Asuka Trophy",
-    "description": "Defeat all card duelists on Duel Island and win the Asuka Trophy",
+    "description": "Defeat all Divermons on Duel Island and win the Asuka Trophy",
     "steps": {
       "1": {
-        "description": "Defeat the first duelist",
-        "locationTarget": "Duel Island — Opponent 1"
+        "description": "Defeat the first Divermon",
+        "locationTarget": "Divermon"
       },
       "2": {
-        "description": "Defeat the second duelist",
-        "locationTarget": "Duel Island — Opponent 2"
+        "description": "Defeat the second Divermon",
+        "locationTarget": "Divermon"
       },
       "3": {
-        "description": "Defeat the third duelist",
-        "locationTarget": "Duel Island — Opponent 3"
+        "description": "Defeat the third Divermon",
+        "locationTarget": "Divermon"
       },
       "4": {
-        "description": "Defeat the fourth duelist",
-        "locationTarget": "Duel Island — Opponent 4"
+        "description": "Defeat the fourth Divermon",
+        "locationTarget": "Divermon"
       },
       "5": {
-        "description": "Defeat the fifth duelist",
-        "locationTarget": "Duel Island — Opponent 5"
+        "description": "Defeat the fifth Divermon",
+        "locationTarget": "Divermon"
       },
       "6": {
-        "description": "Defeat the final duelist and obtain the Asuka Trophy",
-        "locationTarget": "Duel Island — Final Opponent"
+        "description": "Defeat the KingDivermon",
+        "locationTarget": "KingDivermon"
       }
     }
   }
