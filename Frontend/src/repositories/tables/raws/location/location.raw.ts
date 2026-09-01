@@ -1,5 +1,8 @@
 import type { LocationRegionConstant } from "@/constants/location-region.constant";
 import type { InnerLocationRaw } from "@/repositories/tables/raws/location/inner-location.raw";
+import type { LocationDuelIslandRaw } from "@/repositories/tables/raws/location/location-duel-island.raw";
+import type { LocationNpcRaw } from "@/repositories/tables/raws/location/location-npc.raw";
+import type { LocationTamerRaw } from "@/repositories/tables/raws/location/location-tamer.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 
 export interface LocationEnemyPhaseRaw {
@@ -21,7 +24,9 @@ export interface LocationRaw {
   worldLocation?: CoordinatesRaw;
   innerLocation?: InnerLocationRaw[];
   enemies?: LocationEnemiesRaw;
-  npcs?: LocationWalkingEnemiesRaw;
+  npcs?: LocationNpcRaw[];
+  tamers?: LocationTamerRaw[];
+  duelIsland?: LocationDuelIslandRaw[];
   region?: LocationRegionConstant;
   dock?: boolean;
 }

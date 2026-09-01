@@ -2,7 +2,6 @@ import type { DigimonSlot, ImportantItems, Npc, Quest } from "@/models";
 import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
 import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
-import { NpcRepository } from "@/repositories/npc.repository";
 import { QuestRepository } from "@/repositories/quest.repository";
 import { LocationService } from "@/services/location.service";
 import { NpcService } from "@/services/npc.service";
@@ -66,32 +65,22 @@ export class AsukaServerMapPresenter {
     journalNpcs: Npc[],
     importantItems: ImportantItems | null | undefined,
   ): MapNpcViewModel[] {
-    const locationNpcIds = LocationService.getNpcIds(locationId, lastCompletedMainQuestStep);
-    const storyNpcIds = NpcRepository.getNpcIdsByLocationId(locationId);
-    const npcIds = [...new Set([...locationNpcIds, ...storyNpcIds])];
+    const opponentIds = LocationService.getMapOpponentIds(
+      locationId,
+      lastCompletedMainQuestStep,
+    );
     const partyCharisma = FooterPresenter.getPartyCharisma(digimonSlots);
 
-    return npcIds.flatMap((npcId) => {
-      const storyNpcRaw = NpcRepository.getNpcById(npcId);
-      if (
-        storyNpcRaw !== undefined &&
-        !NpcService.isVisibleOnMapByMainQuestStep(
-          lastCompletedMainQuestStep,
-          storyNpcRaw.mainQuestStepDone,
-        )
-      ) {
-        return [];
-      }
-
-      const opponent = NpcBattleOpponentHelper.resolveById(npcId);
-      const nameKey = NpcBattleOpponentHelper.getNameKey(npcId);
+    return opponentIds.flatMap((opponentId) => {
+      const opponent = NpcBattleOpponentHelper.resolveById(opponentId);
+      const nameKey = NpcBattleOpponentHelper.getNameKey(opponentId);
       if (opponent === undefined || nameKey === null) {
         return [];
       }
 
       const journalNpc =
         journalNpcs.find((npc) => {
-          return npc.id === npcId;
+          return npc.id === opponentId;
         }) ?? null;
 
       const availableBattleKind = NpcService.getAvailableBattleKindForOpponent(
@@ -103,7 +92,7 @@ export class AsukaServerMapPresenter {
 
       return [
         {
-          id: npcId,
+          id: opponentId,
           nameKey,
           hasAvailableBattle: availableBattleKind !== null,
           availableBattleKind,

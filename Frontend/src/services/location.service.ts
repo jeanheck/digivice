@@ -1,5 +1,8 @@
 import { LocationRegionConstant } from "@/constants/location-region.constant";
+import { LocationDuelIslandRepository } from "@/repositories/location-duel-island.repository";
+import { LocationNpcRepository } from "@/repositories/location-npc.repository";
 import { LocationRepository } from "@/repositories/location.repository";
+import { LocationTamerRepository } from "@/repositories/location-tamer.repository";
 import { SeabedRoutesRepository } from "@/repositories/seabed-routes.repository";
 import type { InnerLocationRaw } from "@/repositories/tables/raws/location/inner-location.raw";
 import {
@@ -30,9 +33,18 @@ export class LocationService {
     return LocationRepository.getLocationById(locationId).enemies?.kickingTree ?? [];
   }
 
-  public static getNpcIds(locationId: string, lastCompletedMainQuestStep: number): string[] {
-    const locationRaw = LocationRepository.getLocationById(locationId);
-    return this.resolvePhasedIds(locationRaw.npcs ?? [], lastCompletedMainQuestStep);
+  public static getMapOpponentIds(
+    locationId: string,
+    lastCompletedMainQuestStep: number,
+  ): string[] {
+    const npcIds = LocationNpcRepository.getIdsByLocationId(
+      locationId,
+      lastCompletedMainQuestStep,
+    );
+    const tamerIds = LocationTamerRepository.getIdsByLocationId(locationId);
+    const duelIslandIds = LocationDuelIslandRepository.getIdsByLocationId(locationId);
+
+    return [...new Set([...npcIds, ...tamerIds, ...duelIslandIds])];
   }
 
   private static resolvePhasedIds(
