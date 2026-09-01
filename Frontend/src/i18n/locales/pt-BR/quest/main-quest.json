@@ -1,7 +1,7 @@
 {
   "mainQuest": {
     "title": "Missão Principal",
-    "description": "Torne-se o maior treinador do Mundo Digital!",
+    "description": "Torne-se o maior domador(a) do Mundo Digital!",
     "steps": {
       "1": {
         "description": "Procure pelo Líder Seiryu na Cidade Seiryu",
@@ -120,8 +120,8 @@
         "locationTarget": "Mestre John"
       },
       "30": {
-        "description": "Procure pelo casal de treinadores perto do El Dorado",
-        "locationTarget": "Casal de treinadores"
+        "description": "Procure pelo casal de domadores perto do El Dorado",
+        "locationTarget": "Casal de domadores"
       },
       "31": {
         "description": "Vá para onde você viu Etemon pela última vez",
