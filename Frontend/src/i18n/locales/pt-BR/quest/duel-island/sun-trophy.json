@@ -1,31 +1,31 @@
 {
   "sunTrophy": {
-    "title": "Sun Trophy",
-    "description": "Derrote todos os duelistas de cartas novamente na Ilha de Duelos e ganhe o Sun Trophy",
+    "title": "Troféu Sun",
+    "description": "Derrote todos os Divermons novamente na Ilha de Duelos e ganhe o Troféu Sun",
     "steps": {
       "1": {
-        "description": "Derrote o primeiro duelista",
-        "locationTarget": "Ilha de Duelos — Oponente 1"
+        "description": "Derrote o primeiro Divermon",
+        "locationTarget": "Divermon"
       },
       "2": {
-        "description": "Derrote o segundo duelista",
-        "locationTarget": "Ilha de Duelos — Oponente 2"
+        "description": "Derrote o segundo Divermon",
+        "locationTarget": "Divermon"
       },
       "3": {
-        "description": "Derrote o terceiro duelista",
-        "locationTarget": "Ilha de Duelos — Oponente 3"
+        "description": "Derrote o terceiro Divermon",
+        "locationTarget": "Divermon"
       },
       "4": {
-        "description": "Derrote o quarto duelista",
-        "locationTarget": "Ilha de Duelos — Oponente 4"
+        "description": "Derrote o quarto Divermon",
+        "locationTarget": "Divermon"
       },
       "5": {
-        "description": "Derrote o quinto duelista",
-        "locationTarget": "Ilha de Duelos — Oponente 5"
+        "description": "Derrote o quinto Divermon",
+        "locationTarget": "Divermon"
       },
       "6": {
-        "description": "Derrote o duelista final e obtenha o Sun Trophy",
-        "locationTarget": "Ilha de Duelos — Oponente Final"
+        "description": "Derrote o KingDivermon",
+        "locationTarget": "KingDivermon"
       }
     }
   }
