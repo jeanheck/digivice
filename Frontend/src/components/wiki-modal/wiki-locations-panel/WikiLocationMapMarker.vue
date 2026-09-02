@@ -34,7 +34,7 @@ const handleSelect = (): void => {
 <template>
   <button
     type="button"
-    class="absolute z-10 -translate-x-1/2 -translate-y-1/2 flex gap-1 cursor-pointer focus:outline-none"
+    class="group absolute z-10 -translate-x-1/2 -translate-y-1/2 flex gap-1 cursor-pointer focus:outline-none"
     :class="layoutClass"
     :style="{
       left: marker.coordinates.x + '%',
@@ -46,7 +46,7 @@ const handleSelect = (): void => {
       v-if="marker.imageUrl"
       :src="marker.imageUrl"
       :alt="t(marker.nameKey)"
-      class="w-8 h-8 object-contain rendering-pixelated shrink-0"
+      class="w-8 h-8 object-contain rendering-pixelated shrink-0 transition-all duration-150 drop-shadow-[0_2px_3px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.85)] group-hover:scale-105"
     />
     <span
       class="w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center text-[9px] px-2 py-0.5 leading-tight shadow-[0_0_10px_rgba(0,0,0,0.5)]"

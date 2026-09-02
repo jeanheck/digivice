@@ -54,8 +54,8 @@
       {
         "id": "genji",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 84,
+          "y": 30
         },
         "labelPlacement": "below"
       }
@@ -408,8 +408,8 @@
       {
         "id": "natsumi",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 65,
+          "y": 60
         },
         "labelPlacement": "below"
       }
@@ -452,8 +452,8 @@
       {
         "id": "mitch",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 76,
+          "y": 32
         },
         "labelPlacement": "below"
       }
@@ -571,8 +571,8 @@
       {
         "id": "catherine",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 15,
+          "y": 40
         },
         "labelPlacement": "below"
       }
@@ -612,16 +612,16 @@
       {
         "id": "lucia",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 54,
+          "y": 26
         },
         "labelPlacement": "below"
       },
       {
         "id": "robert",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 72,
+          "y": 38
         },
         "labelPlacement": "below"
       }
@@ -825,8 +825,8 @@
       {
         "id": "akiba",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 28,
+          "y": 46
         },
         "labelPlacement": "below"
       }
@@ -888,8 +888,8 @@
       {
         "id": "bob",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 92,
+          "y": 84
         },
         "labelPlacement": "below"
       }
@@ -923,8 +923,8 @@
       {
         "id": "tomomi",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 62,
+          "y": 28
         },
         "labelPlacement": "below"
       }
@@ -951,8 +951,8 @@
           "min": 3
         },
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 29,
+          "y": 29
         },
         "labelPlacement": "below"
       }
@@ -961,8 +961,8 @@
       {
         "id": "chris",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 35,
+          "y": 62
         },
         "labelPlacement": "below"
       }
@@ -990,7 +990,7 @@
       {
         "id": "andy",
         "coordinates": {
-          "x": 50,
+          "x": 25,
           "y": 50
         },
         "labelPlacement": "below"
@@ -1018,8 +1018,8 @@
       {
         "id": "george",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 78,
+          "y": 74
         },
         "labelPlacement": "below"
       }
@@ -1046,8 +1046,8 @@
       {
         "id": "meiLin",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 75,
+          "y": 20
         },
         "labelPlacement": "below"
       }
@@ -1103,8 +1103,8 @@
       {
         "id": "jessica",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 47.5,
+          "y": 31.5
         },
         "labelPlacement": "below"
       }
@@ -1224,8 +1224,8 @@
       {
         "id": "gordon",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 46,
+          "y": 61
         },
         "labelPlacement": "below"
       }
@@ -1242,8 +1242,8 @@
       {
         "id": "alice",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 29,
+          "y": 63
         },
         "labelPlacement": "below"
       }
@@ -1272,8 +1272,8 @@
       {
         "id": "suzakuLeader",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 56,
+          "y": 38
         },
         "labelPlacement": "below"
       }
@@ -1626,20 +1626,20 @@
         "110",
         "193"
       ]
-    },
+    }
+  },
+  "025B": {
+    "imageName": "Mirage Hall",
     "tamers": [
       {
         "id": "nakano",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 53,
+          "y": 69
         },
         "labelPlacement": "below"
       }
     ]
-  },
-  "025B": {
-    "imageName": "Mirage Hall"
   },
   "025C": {
     "imageName": "Mirage Room",
@@ -1667,8 +1667,8 @@
       {
         "id": "byakkoLeader",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 66,
+          "y": 19
         },
         "labelPlacement": "below"
       }

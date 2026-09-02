@@ -234,7 +234,8 @@
         "dvexp": 41,
         "bit": 1250
       }
-    }
+    },
+    "imageName": "Mitch"
   },
   "catherine": {
     "locationId": "0221",
@@ -279,7 +280,8 @@
         "dvexp": 4,
         "bit": 145
       }
-    }
+    },
+    "imageName": "Catherine"
   },
   "lucia": {
     "locationId": "0222",
@@ -320,7 +322,8 @@
         "dvexp": 7,
         "bit": 155
       }
-    }
+    },
+    "imageName": "Lucia"
   },
   "robert": {
     "locationId": "0222",
@@ -365,7 +368,8 @@
         "dvexp": 6,
         "bit": 200
       }
-    }
+    },
+    "imageName": "Robert"
   },
   "akiba": {
     "locationId": "0229",
@@ -402,7 +406,8 @@
         "dvexp": 9,
         "bit": 180
       }
-    }
+    },
+    "imageName": "Akiba"
   },
   "chris": {
     "locationId": "022E",
@@ -447,7 +452,8 @@
         "dvexp": 7,
         "bit": 210
       }
-    }
+    },
+    "imageName": "Chris"
   },
   "bob": {
     "locationId": "022A",
@@ -492,7 +498,8 @@
         "dvexp": 43,
         "bit": 1475
       }
-    }
+    },
+    "imageName": "Bob"
   },
   "tomomi": {
     "locationId": "022C",
@@ -537,7 +544,8 @@
         "dvexp": 6,
         "bit": 225
       }
-    }
+    },
+    "imageName": "Tomomi"
   },
   "andy": {
     "locationId": "0232",
@@ -578,7 +586,8 @@
         "dvexp": 10,
         "bit": 190
       }
-    }
+    },
+    "imageName": "Andy"
   },
   "george": {
     "locationId": "0233",
@@ -619,7 +628,8 @@
         "dvexp": 10,
         "bit": 210
       }
-    }
+    },
+    "imageName": "George"
   },
   "meiLin": {
     "locationId": "0234",
@@ -660,7 +670,8 @@
         "dvexp": 10,
         "bit": 200
       }
-    }
+    },
+    "imageName": "Mei Lin"
   },
   "alice": {
     "locationId": "023E",
@@ -705,7 +716,8 @@
         "dvexp": 9,
         "bit": 290
       }
-    }
+    },
+    "imageName": "Alice"
   },
   "gordon": {
     "locationId": "023D",
@@ -750,7 +762,8 @@
         "dvexp": 17,
         "bit": 530
       }
-    }
+    },
+    "imageName": "Gordon"
   },
   "jessica": {
     "locationId": "0237",
@@ -795,10 +808,11 @@
         "dvexp": 40,
         "bit": 1305
       }
-    }
+    },
+    "imageName": "Jessica"
   },
   "nakano": {
-    "locationId": "025A",
+    "locationId": "025B",
     "opponentId": 999,
     "cardBattles": {
       "first": {
@@ -832,6 +846,7 @@
         "dvexp": 41,
         "bit": 820
       }
-    }
+    },
+    "imageName": "Nakano"
   }
 }
