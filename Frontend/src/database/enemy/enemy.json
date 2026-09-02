@@ -164,7 +164,9 @@
         "sources": [
           "boss"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -216,7 +218,9 @@
         "sources": [
           "boss"
         ],
-        "accessibleWhen": "60"
+        "mainQuestStepDone": {
+          "min": 60
+        }
       }
     ]
   },
@@ -273,7 +277,9 @@
         "sources": [
           "boss"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -330,7 +336,9 @@
         "sources": [
           "boss"
         ],
-        "accessibleWhen": "25"
+        "mainQuestStepDone": {
+          "min": 25
+        }
       }
     ]
   },
@@ -438,8 +446,10 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       },
       {
         "id": "0221",
@@ -614,8 +624,10 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       },
       {
         "id": "022A",
@@ -677,9 +689,9 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "24",
-        "finishWhenLastMainQuestStepDone": "999",
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       }
     ]
   },
@@ -753,16 +765,20 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       },
       {
         "id": "0227",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       }
     ]
   },
@@ -825,8 +841,10 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       }
     ]
   },
@@ -1088,8 +1106,9 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       },
       {
         "id": "0225",
@@ -1102,8 +1121,10 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       }
     ]
   },
@@ -1154,8 +1175,9 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       }
     ]
   },
@@ -1256,30 +1278,36 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       },
       {
         "id": "0221",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       },
       {
         "id": "023A",
         "sources": [
           "kickingTree"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "023B",
         "sources": [
           "kickingTree"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       }
     ]
   },
@@ -1378,15 +1406,19 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       },
       {
         "id": "023B",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       }
     ]
   },
@@ -1497,9 +1529,10 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27",
-        "accessibleWhen": ""
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       },
       {
         "id": "022B",
@@ -1708,16 +1741,19 @@
           "walking",
           "fishing"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "26"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 26
+        }
       },
       {
         "id": "0220",
         "sources": [
           "fishing"
         ],
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       },
       {
         "id": "0221",
@@ -1730,35 +1766,45 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0234",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0235",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0237",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "023A",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       }
     ]
   },
@@ -1809,9 +1855,9 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "24",
-        "finishWhenLastMainQuestStepDone": "999",
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       }
     ]
   },
@@ -1909,16 +1955,18 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       },
       {
         "id": "0225",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       }
     ]
   },
@@ -1974,14 +2022,18 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       },
       {
         "id": "023C",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       }
     ]
   },
@@ -2037,23 +2089,27 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       },
       {
         "id": "0220",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       },
       {
         "id": "023C",
         "sources": [
           "fishing"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       },
       {
         "id": "023D",
@@ -2061,7 +2117,9 @@
           "walking",
           "fishing"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       }
     ]
   },
@@ -2154,21 +2212,27 @@
         "sources": [
           "fishing"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0249",
         "sources": [
           "fishing"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "024B",
         "sources": [
           "fishing"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -2363,7 +2427,9 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "27"
+        "mainQuestStepDone": {
+          "min": 27
+        }
       }
     ]
   },
@@ -2419,8 +2485,10 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       },
       {
         "id": "022A",
@@ -2433,7 +2501,9 @@
         "sources": [
           "fishing"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0235",
@@ -2441,28 +2511,36 @@
           "walking",
           "fishing"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0237",
         "sources": [
           "fishing"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "023A",
         "sources": [
           "fishing"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "023B",
         "sources": [
           "fishing"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       }
     ]
   },
@@ -2518,14 +2596,18 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "024C",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -2581,14 +2663,18 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "024B",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -2644,14 +2730,18 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "024B",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -2707,22 +2797,28 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       },
       {
         "id": "024A",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "024C",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -2862,21 +2958,27 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0259",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "025A",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -2932,14 +3034,18 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0259",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -2995,42 +3101,54 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "024F",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0250",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0251",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0252",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0253",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -3128,7 +3246,9 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -3184,7 +3304,9 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -3240,7 +3362,9 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -3296,21 +3420,27 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0252",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0253",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "60"
+        "mainQuestStepDone": {
+          "min": 60
+        }
       }
     ]
   },
@@ -3366,7 +3496,9 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "61"
+        "mainQuestStepDone": {
+          "min": 61
+        }
       }
     ]
   },
@@ -3422,7 +3554,9 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "61"
+        "mainQuestStepDone": {
+          "min": 61
+        }
       }
     ]
   },
@@ -3567,7 +3701,9 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -3623,7 +3759,9 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -3847,18 +3985,19 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "24",
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14,
+          "max": 24
+        }
       },
       {
         "id": "0243",
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "24",
-        "finishWhenLastMainQuestStepDone": "999",
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       }
     ]
   },
@@ -6295,22 +6434,28 @@
         "sources": [
           "walking"
         ],
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       },
       {
         "id": "023B",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       },
       {
         "id": "023C",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       }
     ]
   },
@@ -6415,21 +6560,27 @@
           "walking",
           "kickingTree"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0234",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0235",
         "sources": [
           "kickingTree"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0237",
@@ -6437,7 +6588,9 @@
           "walking",
           "kickingTree"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "023A",
@@ -6445,14 +6598,18 @@
           "walking",
           "kickingTree"
         ],
-        "accessibleWhen": "14"
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "023B",
         "sources": [
           "kickingTree"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       }
     ]
   },
@@ -6508,14 +6665,18 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0249",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -6571,14 +6732,18 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "024C",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -6724,7 +6889,9 @@
           "walking",
           "kickingTree"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       }
     ]
   },
@@ -6822,14 +6989,18 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0249",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -6931,45 +7102,52 @@
         "id": "024A",
         "sources": [
           "kickingTree"
-        ],
-        "startWhenLastMainQuestStepDone": "",
-        "finishWhenLastMainQuestStepDone": "",
-        "accessibleWhen": ""
+        ]
       },
       {
         "id": "024C",
         "sources": [
           "kickingTree"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0257",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0258",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "0259",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "025A",
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "43"
+        "mainQuestStepDone": {
+          "min": 43
+        }
       }
     ]
   },
@@ -7376,7 +7554,9 @@
         "sources": [
           "walking"
         ],
-        "accessibleWhen": "24"
+        "mainQuestStepDone": {
+          "min": 24
+        }
       }
     ]
   },
