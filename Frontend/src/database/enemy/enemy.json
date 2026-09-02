@@ -456,16 +456,20 @@
         "sources": [
           "walking"
         ],
-        "firstMainQuestStepDone": "0",
-        "lastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       },
       {
         "id": "0222",
         "sources": [
           "walking"
         ],
-        "firstMainQuestStepDone": "0",
-        "lastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       }
     ]
   },
@@ -522,8 +526,10 @@
         "sources": [
           "walking"
         ],
-        "firstMainQuestStepDone": "0",
-        "lastMainQuestStepDone": "27"
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        }
       }
     ]
   },
@@ -1743,7 +1749,7 @@
         ],
         "mainQuestStepDone": {
           "min": 0,
-          "max": 26
+          "max": 27
         }
       },
       {
@@ -2798,8 +2804,7 @@
           "walking"
         ],
         "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+          "min": 27
         }
       },
       {

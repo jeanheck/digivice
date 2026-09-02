@@ -93,9 +93,7 @@ export class EnemyConverter {
                   y: locationRaw.localCoordinates.y,
                 }
               : undefined,
-          startWhenLastMainQuestStepDone: locationRaw.startWhenLastMainQuestStepDone,
-          finishWhenLastMainQuestStepDone: locationRaw.finishWhenLastMainQuestStepDone,
-          accessibleWhen: locationRaw.accessibleWhen,
+          mainQuestStepDone: locationRaw.mainQuestStepDone,
         };
       });
     }

@@ -3,7 +3,6 @@ import type { Quest } from "@/models";
 import { MapFrameSlideConverter } from "@/presenters/converter/map-frame-slide.converter";
 import { WikiLocationConverter } from "@/presenters/converter/wiki-location.converter";
 import { LocationEncounterHelper } from "@/presenters/helper/location-encounter.helper";
-import { MainQuestRangeHelper } from "@/presenters/helper/main-quest-range.helper";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { LocationRepository } from "@/repositories/location.repository";
@@ -31,10 +30,12 @@ export class WikiLocationsPanelPresenter {
     mainQuest: Quest | null,
   ): WikiLocationViewModel[] {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
-    const resolvedLocations = WikiLocationsPanelPresenter.resolveLocationsByMainQuestRange(
-      locations ?? [],
-      lastCompletedMainQuestStep,
-    );
+    const resolvedLocations = (locations ?? []).filter((location) => {
+      return NpcService.isVisibleOnMapByMainQuestStep(
+        lastCompletedMainQuestStep,
+        location.mainQuestStepDone,
+      );
+    });
     const sortedEnemyLocations = [...resolvedLocations].sort((first, second) => {
       return first.id.localeCompare(second.id);
     });
@@ -213,73 +214,5 @@ export class WikiLocationsPanelPresenter {
     }
 
     return [MapFrameSlideConverter.convert(imageUrl, coordinates)];
-  }
-
-  private static resolveLocationsByMainQuestRange(
-    locations: EnemyLocationViewModel[],
-    lastCompletedMainQuestStep: number,
-  ): EnemyLocationViewModel[] {
-    const locationsById = new Map<string, EnemyLocationViewModel[]>();
-
-    for (const location of locations) {
-      const existingLocations = locationsById.get(location.id) ?? [];
-      existingLocations.push(location);
-      locationsById.set(location.id, existingLocations);
-    }
-
-    const resolvedLocations: EnemyLocationViewModel[] = [];
-
-    for (const groupedLocations of locationsById.values()) {
-      if (groupedLocations.length === 1) {
-        const uniqueLocation = groupedLocations[0];
-        if (uniqueLocation !== undefined) {
-          resolvedLocations.push(uniqueLocation);
-        }
-        continue;
-      }
-
-      const matchingLocation = WikiLocationsPanelPresenter.pickLocationInMainQuestRange(
-        groupedLocations,
-        lastCompletedMainQuestStep,
-      );
-      if (matchingLocation !== null) {
-        resolvedLocations.push(matchingLocation);
-      }
-    }
-
-    return resolvedLocations;
-  }
-
-  private static pickLocationInMainQuestRange(
-    locations: EnemyLocationViewModel[],
-    lastCompletedMainQuestStep: number,
-  ): EnemyLocationViewModel | null {
-    const locationsInRange = locations.filter((location) => {
-      return WikiLocationsPanelPresenter.isInMainQuestRange(location, lastCompletedMainQuestStep);
-    });
-
-    if (locationsInRange.length === 0) {
-      return null;
-    }
-
-    const sortedByStart = [...locationsInRange].sort((first, second) => {
-      return (
-        MainQuestRangeHelper.parseStart(first.startWhenLastMainQuestStepDone) -
-        MainQuestRangeHelper.parseStart(second.startWhenLastMainQuestStepDone)
-      );
-    });
-
-    return sortedByStart[0] ?? null;
-  }
-
-  private static isInMainQuestRange(
-    location: EnemyLocationViewModel,
-    lastCompletedMainQuestStep: number,
-  ): boolean {
-    return MainQuestRangeHelper.isInMainQuestRange(
-      location.startWhenLastMainQuestStepDone,
-      location.finishWhenLastMainQuestStepDone,
-      lastCompletedMainQuestStep,
-    );
   }
 }
