@@ -65,4 +65,6 @@ export interface EnemyViewModel {
   regularAttackId: string | null;
   techniqueId: string | null;
   boss: boolean;
+  tamerId?: string;
+  npcId?: string;
 }

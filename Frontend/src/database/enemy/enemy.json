@@ -9250,7 +9250,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 51,
-    "groupId": 200
+    "groupId": 200,
+    "tamerId": "genji"
   },
   "524": {
     "name": "Kuwagamon",
@@ -9289,7 +9290,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 51,
-    "groupId": 272
+    "groupId": 272,
+    "tamerId": "genji"
   },
   "525": {
     "name": "Kuwagamon(Green)",
@@ -9328,7 +9330,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 395,
-    "groupId": 272
+    "groupId": 272,
+    "tamerId": "genji"
   },
   "526": {
     "name": "Betamon",
@@ -9372,7 +9375,8 @@
       {
         "id": "powerCharge"
       }
-    ]
+    ],
+    "tamerId": "natsumi"
   },
   "527": {
     "name": "Vegiemon",
@@ -9411,7 +9415,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 25,
-    "groupId": 201
+    "groupId": 201,
+    "tamerId": "natsumi"
   },
   "528": {
     "name": "Kiwimon",
@@ -9450,7 +9455,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 198,
-    "groupId": 201
+    "groupId": 201,
+    "tamerId": "natsumi"
   },
   "529": {
     "name": "Minotarumon",
@@ -9489,7 +9495,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 172,
-    "groupId": 3
+    "groupId": 3,
+    "npcId": "seiryuLeader"
   },
   "530": {
     "name": "Tyrannomon",
@@ -9533,7 +9540,8 @@
         "id": "firePower1"
       }
     ],
-    "groupId": 3
+    "groupId": 3,
+    "npcId": "seiryuLeader"
   },
   "531": {
     "name": "Apemon",
@@ -9577,7 +9585,8 @@
         "id": "windPower1"
       }
     ],
-    "groupId": 3
+    "groupId": 3,
+    "npcId": "seiryuLeader"
   },
   "532": {
     "name": "Woodmon",
@@ -9616,7 +9625,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 222,
-    "groupId": 4
+    "groupId": 4,
+    "npcId": "suzakuLeader"
   },
   "533": {
     "name": "RedVegiemon",
@@ -9655,7 +9665,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 77,
-    "groupId": 4
+    "groupId": 4,
+    "npcId": "suzakuLeader"
   },
   "534": {
     "name": "ShogunGekomon",
@@ -9699,7 +9710,8 @@
         "id": "chaosWave"
       }
     ],
-    "groupId": 4
+    "groupId": 4,
+    "npcId": "suzakuLeader"
   },
   "535": {
     "name": "Numemon",
@@ -9743,7 +9755,8 @@
         "id": "binderCrest"
       }
     ],
-    "groupId": 5
+    "groupId": 5,
+    "npcId": "fakeByakkoLeader"
   },
   "536": {
     "name": "Numemon",
@@ -9831,7 +9844,8 @@
         "id": "searchCrest"
       }
     ],
-    "groupId": 6
+    "groupId": 6,
+    "npcId": "byakkoLeader"
   },
   "538": {
     "name": "Tortomon",
@@ -9870,7 +9884,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "divineRain",
     "memoryId": 208,
-    "groupId": 6
+    "groupId": 6,
+    "npcId": "byakkoLeader"
   },
   "539": {
     "name": "Flymon(Pink)",
@@ -9914,7 +9929,8 @@
         "id": "glasses"
       }
     ],
-    "groupId": 6
+    "groupId": 6,
+    "npcId": "byakkoLeader"
   },
   "540": {
     "name": "Yanmamon",
@@ -9953,7 +9969,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 67,
-    "groupId": 202
+    "groupId": 202,
+    "tamerId": "mitch"
   },
   "541": {
     "name": "Kuwagamon",
@@ -10031,7 +10048,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 137,
-    "groupId": 202
+    "groupId": 202,
+    "tamerId": "mitch"
   },
   "543": {
     "name": "Kunemon",
@@ -10070,7 +10088,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 32,
-    "groupId": 203
+    "groupId": 203,
+    "tamerId": "catherine"
   },
   "544": {
     "name": "Kunemon",
@@ -10153,7 +10172,8 @@
       {
         "id": "spiderWeb"
       }
-    ]
+    ],
+    "tamerId": "catherine"
   },
   "546": {
     "name": "Goburimon",
@@ -10275,7 +10295,8 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 197,
-    "groupId": 205
+    "groupId": 205,
+    "tamerId": "robert"
   },
   "549": {
     "name": "Gizamon",
@@ -10314,7 +10335,8 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 132,
-    "groupId": 205
+    "groupId": 205,
+    "tamerId": "robert"
   },
   "550": {
     "name": "Gekomon",
@@ -10358,7 +10380,8 @@
       {
         "id": "icePower1"
       }
-    ]
+    ],
+    "tamerId": "robert"
   },
   "551": {
     "name": "Tapirmon",
@@ -10397,7 +10420,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 206,
-    "groupId": 206
+    "groupId": 206,
+    "tamerId": "akiba"
   },
   "552": {
     "name": "Kuwagamon",
@@ -10436,7 +10460,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 51,
-    "groupId": 209
+    "groupId": 209,
+    "tamerId": "chris"
   },
   "553": {
     "name": "Flymon",
@@ -10475,7 +10500,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 137,
-    "groupId": 209
+    "groupId": 209,
+    "tamerId": "chris"
   },
   "554": {
     "name": "Yanmamon(Green)",
@@ -10514,7 +10540,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 396,
-    "groupId": 209
+    "groupId": 209,
+    "tamerId": "chris"
   },
   "555": {
     "name": "Coelamon",
@@ -10558,7 +10585,8 @@
       {
         "id": "waterChip"
       }
-    ]
+    ],
+    "tamerId": "bob"
   },
   "556": {
     "name": "Kokatorimon",
@@ -10597,7 +10625,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 50,
-    "groupId": 207
+    "groupId": 207,
+    "tamerId": "bob"
   },
   "557": {
     "name": "Airdramon",
@@ -10641,7 +10670,8 @@
       {
         "id": "fireChip"
       }
-    ]
+    ],
+    "tamerId": "bob"
   },
   "558": {
     "name": "Betamon",
@@ -10685,7 +10715,8 @@
       {
         "id": "powerCharge"
       }
-    ]
+    ],
+    "tamerId": "tomomi"
   },
   "559": {
     "name": "Kiwimon",
@@ -10724,7 +10755,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 198,
-    "groupId": 208
+    "groupId": 208,
+    "tamerId": "tomomi"
   },
   "560": {
     "name": "RedVegiemon",
@@ -10763,7 +10795,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 77,
-    "groupId": 208
+    "groupId": 208,
+    "tamerId": "tomomi"
   },
   "561": {
     "name": "Triceramon",
@@ -10807,7 +10840,8 @@
       {
         "id": "tntBall"
       }
-    ]
+    ],
+    "tamerId": "andy"
   },
   "562": {
     "name": "Tuskmon",
@@ -10851,7 +10885,8 @@
       {
         "id": "counterCrest"
       }
-    ]
+    ],
+    "tamerId": "andy"
   },
   "563": {
     "name": "Vademon",
@@ -10895,7 +10930,8 @@
       {
         "id": "boltPower1"
       }
-    ]
+    ],
+    "tamerId": "george"
   },
   "564": {
     "name": "Thundermon",
@@ -10939,7 +10975,8 @@
       {
         "id": "pulseGuard"
       }
-    ]
+    ],
+    "tamerId": "george"
   },
   "565": {
     "name": "DemiDevimon",
@@ -10983,7 +11020,8 @@
       {
         "id": "darkPower1"
       }
-    ]
+    ],
+    "tamerId": "meiLin"
   },
   "566": {
     "name": "Bakemon",
@@ -11022,7 +11060,8 @@
     "regularAttackId": "darkElement",
     "techniqueId": "none",
     "memoryId": 37,
-    "groupId": 212
+    "groupId": 212,
+    "tamerId": "meiLin"
   },
   "567": {
     "name": "Kunemon",
@@ -11061,7 +11100,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 32,
-    "groupId": 215
+    "groupId": 215,
+    "tamerId": "alice"
   },
   "568": {
     "name": "Dokugumon",
@@ -11105,7 +11145,8 @@
       {
         "id": "spiderWeb"
       }
-    ]
+    ],
+    "tamerId": "alice"
   },
   "569": {
     "name": "Dokugumon",
@@ -11188,7 +11229,8 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 197,
-    "groupId": 214
+    "groupId": 214,
+    "tamerId": "gordon"
   },
   "571": {
     "name": "Gizamon",
@@ -11227,7 +11269,8 @@
     "regularAttackId": "waterElement",
     "techniqueId": "none",
     "memoryId": 132,
-    "groupId": 214
+    "groupId": 214,
+    "tamerId": "gordon"
   },
   "572": {
     "name": "Gekomon",
@@ -11271,7 +11314,8 @@
       {
         "id": "icePower1"
       }
-    ]
+    ],
+    "tamerId": "gordon"
   },
   "573": {
     "name": "Seadramon",
@@ -11315,7 +11359,8 @@
       {
         "id": "waterPower1"
       }
-    ]
+    ],
+    "tamerId": "jessica"
   },
   "574": {
     "name": "Kokatorimon",
@@ -11354,7 +11399,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 50,
-    "groupId": 213
+    "groupId": 213,
+    "tamerId": "jessica"
   },
   "575": {
     "name": "Shellmon",
@@ -11398,7 +11444,8 @@
       {
         "id": "waterChip"
       }
-    ]
+    ],
+    "tamerId": "jessica"
   },
   "576": {
     "name": "Tapirmon",
@@ -11437,7 +11484,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 206,
-    "groupId": 216
+    "groupId": 216,
+    "tamerId": "nakano"
   },
   "577": {
     "name": "Triceramon",
@@ -11481,7 +11529,8 @@
       {
         "id": "tntBall"
       }
-    ]
+    ],
+    "npcId": "keith"
   },
   "578": {
     "name": "Kuwagamon",
@@ -11520,7 +11569,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 51,
-    "groupId": 263
+    "groupId": 263,
+    "npcId": "keith"
   },
   "579": {
     "name": "Kunemon",
@@ -11559,7 +11609,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 32,
-    "groupId": 263
+    "groupId": 263,
+    "npcId": "keith"
   },
   "580": {
     "name": "Monzaemon",
@@ -11598,7 +11649,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "lovelyCharm",
     "memoryId": 14,
-    "groupId": 188
+    "groupId": 188,
+    "npcId": "aoaAttacker"
   },
   "581": {
     "name": "Nanimon",
@@ -11637,6 +11689,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 53,
-    "groupId": 188
+    "groupId": 188,
+    "npcId": "aoaAttacker"
   }
 }

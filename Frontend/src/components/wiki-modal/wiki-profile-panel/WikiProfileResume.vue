@@ -27,17 +27,15 @@ const mainQuest = computed(() => {
   return store.currentState?.journal?.mainQuest ?? null;
 });
 
-const hasLocations = computed(() => {
-  if (!props.showLocations) {
-    return false;
-  }
-
-  return (
-    WikiLocationsPanelPresenter.getResolvedEnemyLocations(
-      props.enemy.locations,
-      mainQuest.value,
-    ).length > 0
+const resolvedLocations = computed(() => {
+  return WikiLocationsPanelPresenter.getResolvedEnemyLocations(
+    props.enemy.locations,
+    mainQuest.value,
   );
+});
+
+const hasResolvedLocations = computed(() => {
+  return resolvedLocations.value.length > 0;
 });
 
 const showBaseExp = computed(() => {
@@ -99,20 +97,29 @@ const handleOpenLocation = (locationId: string): void => {
     </div>
 
     <div
-      v-if="hasLocations"
+      v-if="showLocations"
       class="border-t border-blue-900/50 pt-2.5 flex flex-col flex-1 min-h-0 gap-1.5 text-xs"
     >
       <span
+        v-if="hasResolvedLocations"
         class="text-center font-bold text-blue-500 tracking-wider uppercase shrink-0"
       >
         {{ $t("enemy.whereToFindLabel") }}
       </span>
 
       <WikiProfileLocations
+        v-if="hasResolvedLocations"
         class="flex-1 min-h-0"
         :enemy="enemy"
         @open-location="handleOpenLocation"
       />
+
+      <p
+        v-else
+        class="text-[12px] 2xl:text-[12px] text-red-400 leading-tight text-center flex-1 flex items-center justify-center"
+      >
+        {{ $t("enemy.unavailableAtMomentHint") }}
+      </p>
     </div>
   </div>
 </template>

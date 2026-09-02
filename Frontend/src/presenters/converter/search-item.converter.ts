@@ -1,13 +1,46 @@
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
 import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
+export interface EnemySearchItemLabels {
+  translateTamerName: (tamerId: string) => string;
+  translateNpcName: (npcId: string) => string;
+}
+
 export class SearchItemConverter {
-  public static convertEnemy(id: string, enemyRaw: EnemyRaw): SearchItemViewModel {
-    return {
+  public static convertEnemy(
+    id: string,
+    enemyRaw: EnemyRaw,
+    labels: EnemySearchItemLabels,
+  ): SearchItemViewModel {
+    const searchItem: SearchItemViewModel = {
       id,
       name: enemyRaw.name,
       kind: "enemy",
     };
+
+    if (enemyRaw.boss === true) {
+      searchItem.kindLabelKey = "enemy.searchContext.boss";
+      return searchItem;
+    }
+
+    if (enemyRaw.tamerId !== undefined) {
+      searchItem.kindLabelKey = "enemy.searchContext.tamer";
+      searchItem.kindLabelParams = {
+        name: labels.translateTamerName(enemyRaw.tamerId),
+      };
+      return searchItem;
+    }
+
+    if (enemyRaw.npcId !== undefined) {
+      searchItem.kindLabelKey = "enemy.searchContext.npc";
+      searchItem.kindLabelParams = {
+        name: labels.translateNpcName(enemyRaw.npcId),
+      };
+      return searchItem;
+    }
+
+    searchItem.kindLabelKey = "enemy.searchContext.wild";
+    return searchItem;
   }
 
   public static convertDrop(id: string, name: string): SearchItemViewModel {

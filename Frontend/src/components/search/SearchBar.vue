@@ -105,10 +105,14 @@ const handleSearchSelect = (id: string) => {
         >
           <span class="leading-none">{{ item.name }}</span>
           <span
-            v-if="item.kind"
+            v-if="item.kindLabelKey !== undefined || item.kind"
             class="text-[10px] leading-none text-[#00aaff]/50"
           >
-            {{ $t(`enemy.searchKind.${item.kind}`) }}
+            {{
+              item.kindLabelKey !== undefined
+                ? $t(item.kindLabelKey, item.kindLabelParams)
+                : $t(`enemy.searchKind.${item.kind}`)
+            }}
           </span>
         </div>
       </template>

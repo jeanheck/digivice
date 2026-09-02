@@ -53,6 +53,13 @@
     "foundIn": "Encontrado em",
     "whereToFind": "Onde encontrar esse Digimon",
     "whereToFindLabel": "Onde encontrar",
+    "searchContext": {
+      "wild": "Digimon selvagem",
+      "boss": "Chefe",
+      "tamer": "Digimon de domador(a) {name}",
+      "npc": "Digimon de {name}"
+    },
+    "unavailableAtMomentHint": "Inacessível nesse momento da história",
     "locations": "Localizações",
     "locationSource": {
       "walking": "Andando",
