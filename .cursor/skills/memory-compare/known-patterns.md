@@ -830,6 +830,16 @@ confirmed.
 `akiba`, `chris`, `tomomi`, `mitch`, `bob`, `andy`, `george`, `meiLin`,
 `jessica`, `gordon`, `alice`, `nakano`.
 
+**A.o.A Attacker digimon battle (suspected 2026-09-02):**
+`before/after-aoa-attacker.bin` (Secret Room `0255`, MQ steps 60–61
+already complete). Current `NpcAddresses.json` entry `0x4B3CA` / `0x20`
+matches **MainQuest step 61** only — byte `0xBF` in **both** snaps (bit
+already set pre-fight; **no flip on win**). Best sticky quest-band delta:
+`0x4B3E5` bit `0x08` (`0x53→0x5B`, single-bit add; same byte as MQ
+steps 48/49/60 on other bits). Secondary: `0x48E29` `0→1` (unmapped;
+lower confidence — reward/session?). Needs lose control + fresh-save
+validation before wiring.
+
 **Natsumi card:** no duel flag in those snaps — only booster `0x48F19`.
 Map script does not SET a bit on `CardBattle#5`.
 
