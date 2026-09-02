@@ -5,13 +5,16 @@ import { WikiLocationConverter } from "@/presenters/converter/wiki-location.conv
 import { LocationEncounterHelper } from "@/presenters/helper/location-encounter.helper";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import { EnemyRepository } from "@/repositories/enemy.repository";
+import { LocationBossRepository } from "@/repositories/location-boss.repository";
 import { LocationRepository } from "@/repositories/location.repository";
+import type { LocationBossRaw } from "@/repositories/tables/raws/location/location-boss.raw";
 import type { LocationDuelIslandRaw } from "@/repositories/tables/raws/location/location-duel-island.raw";
 import type { LocationMapLabelPlacementRaw } from "@/repositories/tables/raws/location/location-map-label-placement.raw";
 import type { LocationNpcRaw } from "@/repositories/tables/raws/location/location-npc.raw";
 import type { LocationTamerRaw } from "@/repositories/tables/raws/location/location-tamer.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 import { NpcService } from "@/services/npc.service";
+import { LocationService } from "@/services/location.service";
 import { QuestService } from "@/services/quest.service";
 import type { EnemyLocationSourceViewModel } from "@/viewmodels/enemy/enemy-location-source.viewmodel";
 import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
@@ -110,6 +113,13 @@ export class WikiLocationsPanelPresenter {
       }
     }
 
+    for (const locationBoss of LocationBossRepository.getByLocationId(locationId)) {
+      const marker = WikiLocationsPanelPresenter.toBossMapMarker(locationBoss);
+      if (marker !== null) {
+        markers.push(marker);
+      }
+    }
+
     return markers.sort((first, second) => {
       return first.id.localeCompare(second.id);
     });
@@ -129,8 +139,26 @@ export class WikiLocationsPanelPresenter {
 
     return {
       id: entry.id,
+      kind: "npc",
       nameKey,
       imageUrl: NpcBattleOpponentHelper.getImageUrl(entry.id),
+      coordinates: WikiLocationsPanelPresenter.toCoordinates(entry.coordinates)!,
+      labelPlacement: WikiLocationsPanelPresenter.toLabelPlacement(entry.labelPlacement),
+    };
+  }
+
+  private static toBossMapMarker(entry: LocationBossRaw): WikiLocationMapMarkerViewModel | null {
+    if (entry.coordinates === undefined) {
+      return null;
+    }
+
+    const enemyRaw = EnemyRepository.getEnemyById(entry.id);
+
+    return {
+      id: entry.id,
+      kind: "boss",
+      name: enemyRaw.name,
+      imageUrl: ImageCatalog.getBossImageUrl(enemyRaw.name),
       coordinates: WikiLocationsPanelPresenter.toCoordinates(entry.coordinates)!,
       labelPlacement: WikiLocationsPanelPresenter.toLabelPlacement(entry.labelPlacement),
     };
@@ -166,7 +194,20 @@ export class WikiLocationsPanelPresenter {
       kickingTree: LocationEncounterHelper.resolveKickingTreeIds(locationId, sideQuests),
     };
 
-    return encounterSources.flatMap((source) => {
+    const bossIds = LocationService.getBoss(locationId);
+    const bossLine: WikiLocationEncounterLineViewModel[] =
+      bossIds.length === 0
+        ? []
+        : [
+            {
+              source: "boss",
+              enemies: bossIds.map((enemyId) => {
+                return WikiLocationsPanelPresenter.toEncounterEnemy(enemyId);
+              }),
+            },
+          ];
+
+    const encounterLines = encounterSources.flatMap((source) => {
       const enemyIds = enemyIdsBySource[source];
       if (enemyIds.length === 0) {
         return [];
@@ -181,6 +222,8 @@ export class WikiLocationsPanelPresenter {
         },
       ];
     });
+
+    return [...bossLine, ...encounterLines];
   }
 
   private static toEncounterEnemy(enemyId: string): WikiLocationEncounterEnemyViewModel {

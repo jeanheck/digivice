@@ -55,6 +55,11 @@ const DUEL_ISLAND_ASSET_CONFIG = {
   extension: "png",
 } as const;
 
+const BOSS_ASSET_CONFIG = {
+  pathSuffix: "/bosses/",
+  extension: "png",
+} as const;
+
 const mapModules = import.meta.glob<string>("@/assets/maps/*.webp", {
   eager: true,
   as: "url",
@@ -101,6 +106,11 @@ const tamerModules = import.meta.glob<string>("@/assets/tamers/*.png", {
 });
 
 const duelIslandModules = import.meta.glob<string>("@/assets/duel-island/*.png", {
+  eager: true,
+  as: "url",
+});
+
+const bossModules = import.meta.glob<string>("@/assets/bosses/*.png", {
   eager: true,
   as: "url",
 });
@@ -262,6 +272,15 @@ export class ImageCatalog {
       duelIslandModules,
       DUEL_ISLAND_ASSET_CONFIG.pathSuffix,
       DUEL_ISLAND_ASSET_CONFIG.extension,
+      imageName,
+    );
+  }
+
+  public static getBossImageUrl(imageName: string | null | undefined): string | null {
+    return resolveAssetUrlWithNameVariants(
+      bossModules,
+      BOSS_ASSET_CONFIG.pathSuffix,
+      BOSS_ASSET_CONFIG.extension,
       imageName,
     );
   }

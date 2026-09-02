@@ -12,6 +12,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "open-npc", npcId: string): void;
+  (e: "open-enemy", enemyId: string): void;
 }>();
 
 const imageUrl = computed(() => {
@@ -30,8 +31,13 @@ const frameStyle = computed(() => {
   };
 });
 
-const handleOpenNpc = (npcId: string): void => {
-  emit("open-npc", npcId);
+const handleMarkerSelect = (marker: WikiLocationMapMarkerViewModel): void => {
+  if (marker.kind === "boss") {
+    emit("open-enemy", marker.id);
+    return;
+  }
+
+  emit("open-npc", marker.id);
 };
 </script>
 
@@ -50,9 +56,9 @@ const handleOpenNpc = (npcId: string): void => {
 
       <WikiLocationMapMarker
         v-for="marker in markers"
-        :key="marker.id"
+        :key="`${marker.kind}-${marker.id}`"
         :marker="marker"
-        @select="handleOpenNpc(marker.id)"
+        @select="handleMarkerSelect(marker)"
       />
     </div>
   </div>

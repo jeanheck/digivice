@@ -26,6 +26,18 @@ const layoutClass = computed(() => {
   }
 });
 
+const markerLabel = computed(() => {
+  if (props.marker.kind === "boss") {
+    return props.marker.name ?? "";
+  }
+
+  if (props.marker.nameKey === undefined) {
+    return "";
+  }
+
+  return t(props.marker.nameKey);
+});
+
 const handleSelect = (): void => {
   emit("select");
 };
@@ -45,13 +57,13 @@ const handleSelect = (): void => {
     <img
       v-if="marker.imageUrl"
       :src="marker.imageUrl"
-      :alt="t(marker.nameKey)"
+      :alt="markerLabel"
       class="w-8 h-8 object-contain rendering-pixelated shrink-0 transition-all duration-150 drop-shadow-[0_2px_3px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.85)] group-hover:scale-105"
     />
     <span
       class="w-max whitespace-nowrap text-cyan-100 drop-shadow bg-cyan-950/95 rounded border border-cyan-700/80 text-center text-[9px] px-2 py-0.5 leading-tight shadow-[0_0_10px_rgba(0,0,0,0.5)]"
     >
-      {{ t(marker.nameKey) }}
+      {{ markerLabel }}
     </span>
   </button>
 </template>

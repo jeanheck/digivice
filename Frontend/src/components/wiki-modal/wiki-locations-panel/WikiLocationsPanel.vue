@@ -175,6 +175,7 @@ const handleOpenNpc = (npcId: string): void => {
           :image-url="localImageUrl"
           :width="localMapWidth"
           :markers="locationsViewModel.mapMarkers"
+          @open-enemy="handleOpenEnemy"
           @open-npc="handleOpenNpc"
         />
       </div>

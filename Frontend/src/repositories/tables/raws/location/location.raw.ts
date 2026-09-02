@@ -1,5 +1,6 @@
 import type { LocationRegionConstant } from "@/constants/location-region.constant";
 import type { InnerLocationRaw } from "@/repositories/tables/raws/location/inner-location.raw";
+import type { LocationBossRaw } from "@/repositories/tables/raws/location/location-boss.raw";
 import type { LocationDuelIslandRaw } from "@/repositories/tables/raws/location/location-duel-island.raw";
 import type { LocationNpcRaw } from "@/repositories/tables/raws/location/location-npc.raw";
 import type { LocationTamerRaw } from "@/repositories/tables/raws/location/location-tamer.raw";
@@ -14,7 +15,7 @@ export type LocationWalkingEnemiesRaw = string[] | LocationEnemyPhaseRaw[];
 
 export interface LocationEnemiesRaw {
   walking?: LocationWalkingEnemiesRaw;
-  boss?: string[];
+  boss?: LocationBossRaw[];
   fishing?: string[];
   kickingTree?: string[];
 }

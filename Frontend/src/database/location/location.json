@@ -288,7 +288,7 @@
         {
           "id": "16",
           "coordinates": {
-            "x": 50,
+            "x": 69,
             "y": 50
           },
           "labelPlacement": "below"
@@ -719,8 +719,8 @@
         {
           "id": "1",
           "coordinates": {
-            "x": 50,
-            "y": 50
+            "x": 76,
+            "y": 12
           },
           "labelPlacement": "below"
         }
@@ -926,8 +926,8 @@
         {
           "id": "2",
           "coordinates": {
-            "x": 50,
-            "y": 50
+            "x": 72,
+            "y": 24
           },
           "labelPlacement": "below"
         }
@@ -1380,8 +1380,8 @@
         {
           "id": "20",
           "coordinates": {
-            "x": 50,
-            "y": 50
+            "x": 75,
+            "y": 23
           },
           "labelPlacement": "below"
         }
@@ -1553,8 +1553,8 @@
         {
           "id": "14",
           "coordinates": {
-            "x": 50,
-            "y": 50
+            "x": 72,
+            "y": 23
           },
           "labelPlacement": "below"
         }

@@ -1,4 +1,5 @@
 import { LocationRegionConstant } from "@/constants/location-region.constant";
+import { LocationBossRepository } from "@/repositories/location-boss.repository";
 import { LocationDuelIslandRepository } from "@/repositories/location-duel-island.repository";
 import { LocationNpcRepository } from "@/repositories/location-npc.repository";
 import { LocationRepository } from "@/repositories/location.repository";
@@ -22,7 +23,7 @@ export class LocationService {
   }
 
   public static getBoss(locationId: string): string[] {
-    return LocationRepository.getLocationById(locationId).enemies?.boss ?? [];
+    return LocationBossRepository.getIdsByLocationId(locationId);
   }
 
   public static getFishing(locationId: string): string[] {

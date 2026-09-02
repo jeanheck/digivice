@@ -78,6 +78,11 @@ const openNpcWikiModal = (npcId: string) => {
           @click="openWikiModal(enemy.id)"
         >
           <span>{{ enemy.name }}</span>
+          <span
+            v-if="enemy.boss"
+            class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5"
+            aria-hidden="true"
+          >{{ IconConstant[EnemySourceConstant.boss] }}</span>
           <span v-if="enemy.walking && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">{{ IconConstant[EnemySourceConstant.walking] }}</span>
           <span v-if="enemy.fishing && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">{{ IconConstant[EnemySourceConstant.fishing] }}</span>
           <span v-if="enemy.kickingTree && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">{{ IconConstant[EnemySourceConstant.kickingTree] }}</span>
