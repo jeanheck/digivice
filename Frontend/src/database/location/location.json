@@ -285,7 +285,14 @@
     ],
     "enemies": {
       "boss": [
-        "16"
+        {
+          "id": "16",
+          "coordinates": {
+            "x": 50,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
       ]
     }
   },
@@ -709,7 +716,14 @@
         }
       ],
       "boss": [
-        "1"
+        {
+          "id": "1",
+          "coordinates": {
+            "x": 50,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
       ]
     }
   },
@@ -757,50 +771,50 @@
       {
         "id": "divermon1",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 48,
+          "y": 43
         },
-        "labelPlacement": "below"
+        "labelPlacement": "right"
       },
       {
         "id": "divermon2",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 31,
+          "y": 39
         },
-        "labelPlacement": "below"
+        "labelPlacement": "above"
       },
       {
         "id": "divermon3",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 20,
+          "y": 43
         },
         "labelPlacement": "below"
       },
       {
         "id": "divermon4",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 23,
+          "y": 28
         },
-        "labelPlacement": "below"
+        "labelPlacement": "above"
       },
       {
         "id": "divermon5",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 27,
+          "y": 20
         },
-        "labelPlacement": "below"
+        "labelPlacement": "right"
       },
       {
         "id": "kingDivermon",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 12.5,
+          "y": 11
         },
-        "labelPlacement": "below"
+        "labelPlacement": "above"
       }
     ],
     "dock": true
@@ -909,7 +923,14 @@
         "89"
       ],
       "boss": [
-        "2"
+        {
+          "id": "2",
+          "coordinates": {
+            "x": 50,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
       ]
     }
   },
@@ -934,7 +955,14 @@
     "imageName": "Deeper Crevice",
     "enemies": {
       "boss": [
-        "21"
+        {
+          "id": "21",
+          "coordinates": {
+            "x": 50,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
       ]
     }
   },
@@ -1349,7 +1377,14 @@
         "128"
       ],
       "boss": [
-        "20"
+        {
+          "id": "20",
+          "coordinates": {
+            "x": 50,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
       ]
     }
   },
@@ -1515,7 +1550,14 @@
         "117"
       ],
       "boss": [
-        "14"
+        {
+          "id": "14",
+          "coordinates": {
+            "x": 50,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
       ]
     }
   },
@@ -1560,7 +1602,14 @@
         "119"
       ],
       "boss": [
-        "15"
+        {
+          "id": "15",
+          "coordinates": {
+            "x": 50,
+            "y": 50
+          },
+          "labelPlacement": "below"
+        }
       ]
     }
   },

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
+import { SearchItemSortHelper } from "@/presenters/helper/search-item-sort.helper";
 import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
 const props = defineProps<{
@@ -36,9 +37,11 @@ const filteredItems = computed(() => {
     return [];
   }
 
-  return props.items.filter((item) => {
-    return item.name.toLowerCase().includes(query);
-  });
+  return SearchItemSortHelper.sort(
+    props.items.filter((item) => {
+      return item.name.toLowerCase().includes(query);
+    }),
+  );
 });
 
 const inputValue = computed({

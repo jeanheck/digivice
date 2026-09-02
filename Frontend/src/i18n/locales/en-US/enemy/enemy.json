@@ -54,10 +54,10 @@
     "whereToFind": "Where to find this Digimon",
     "whereToFindLabel": "Where to find",
     "searchContext": {
-      "wild": "Wild Digimon",
-      "boss": "Boss",
-      "tamer": "Tamer Digimon {name}",
-      "npc": "{name}'s Digimon"
+      "wild": "(Wild Digimon Lv {level})",
+      "boss": "(Boss Lv {level})",
+      "tamer": "(Tamer Digimon {name} Lv {level})",
+      "npc": "({name}'s Digimon Lv {level})"
     },
     "unavailableAtMomentHint": "Unavailable at this point in the story",
     "locations": "Locations",

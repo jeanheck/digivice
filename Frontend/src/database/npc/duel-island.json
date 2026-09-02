@@ -18,7 +18,8 @@
         "deckId": "asukaWhiteMaster2",
         "dropId": "5aBooster"
       }
-    }
+    },
+    "imageName": "Divermon"
   },
   "divermon2": {
     "locationId": "0228",
@@ -39,7 +40,8 @@
         "deckId": "asukaBlackMaster2",
         "dropId": "6aBooster"
       }
-    }
+    },
+    "imageName": "Divermon"
   },
   "divermon3": {
     "locationId": "0228",
@@ -60,7 +62,8 @@
         "deckId": "asukaGreenMaster2",
         "dropId": "7aBooster"
       }
-    }
+    },
+    "imageName": "Divermon"
   },
   "divermon4": {
     "locationId": "0228",
@@ -81,7 +84,8 @@
         "deckId": "asukaRedMaster2",
         "dropId": "8aBooster"
       }
-    }
+    },
+    "imageName": "Divermon"
   },
   "divermon5": {
     "locationId": "0228",
@@ -102,7 +106,8 @@
         "deckId": "asukaBlueMaster2",
         "dropId": "r01Booster"
       }
-    }
+    },
+    "imageName": "Divermon"
   },
   "kingDivermon": {
     "locationId": "0228",
@@ -123,6 +128,7 @@
         "deckId": "asukaDuelKing2",
         "dropId": "r02Booster"
       }
-    }
+    },
+    "imageName": "kingDivermon"
   }
 }

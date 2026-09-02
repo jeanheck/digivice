@@ -17,9 +17,11 @@ export class SearchItemConverter {
       name: enemyRaw.name,
       kind: "enemy",
     };
+    const levelLabel = String(enemyRaw.level);
 
     if (enemyRaw.boss === true) {
       searchItem.kindLabelKey = "enemy.searchContext.boss";
+      searchItem.kindLabelParams = { level: levelLabel };
       return searchItem;
     }
 
@@ -27,6 +29,7 @@ export class SearchItemConverter {
       searchItem.kindLabelKey = "enemy.searchContext.tamer";
       searchItem.kindLabelParams = {
         name: labels.translateTamerName(enemyRaw.tamerId),
+        level: levelLabel,
       };
       return searchItem;
     }
@@ -35,11 +38,13 @@ export class SearchItemConverter {
       searchItem.kindLabelKey = "enemy.searchContext.npc";
       searchItem.kindLabelParams = {
         name: labels.translateNpcName(enemyRaw.npcId),
+        level: levelLabel,
       };
       return searchItem;
     }
 
     searchItem.kindLabelKey = "enemy.searchContext.wild";
+    searchItem.kindLabelParams = { level: levelLabel };
     return searchItem;
   }
 

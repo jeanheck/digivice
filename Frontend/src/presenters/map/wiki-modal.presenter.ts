@@ -7,6 +7,10 @@ import { DuelIslandRepository } from "@/repositories/duel-island.repository";
 import { TamerRepository } from "@/repositories/tamer.repository";
 import { StoreRepository } from "@/repositories/store.repository";
 import { EnemyConverter } from "@/presenters/converter/enemy.converter";
+import {
+  NpcBattleFromEnemyHelper,
+  type NpcBattleFromEnemyContext,
+} from "@/presenters/helper/npc-battle-from-enemy.helper";
 import { SearchItemConverter } from "@/presenters/converter/search-item.converter";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { SearchItemKind, SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
@@ -19,6 +23,12 @@ export class WikiModalPresenter {
   public static getEnemyById(enemyId: string): EnemyViewModel {
     const enemyRaw = EnemyRepository.getEnemyById(enemyId);
     return EnemyConverter.convert(enemyRaw);
+  }
+
+  public static resolveNpcBattleFromEnemyId(
+    enemyId: string,
+  ): NpcBattleFromEnemyContext | null {
+    return NpcBattleFromEnemyHelper.resolve(enemyId);
   }
 
   public static getEnemySearchItems(

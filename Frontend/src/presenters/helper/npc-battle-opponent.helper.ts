@@ -87,6 +87,10 @@ export class NpcBattleOpponentHelper {
       return ImageCatalog.getNpcImageUrl(opponent.raw.imageName ?? null);
     }
 
+    if (opponent.source === "duelIsland") {
+      return ImageCatalog.getDuelIslandImageUrl(opponent.raw.imageName ?? null);
+    }
+
     return ImageCatalog.getTamerImageUrl(opponent.raw.imageName ?? null);
   }
 

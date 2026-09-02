@@ -35,6 +35,7 @@ const selectedDropId = ref<string | null>(null);
 const selectedCardId = ref<string | null>(null);
 const selectedLocationId = ref<string | null>(null);
 const selectedNpcId = ref<string | null>(null);
+const initialNpcBattleOptionId = ref<string | null>(null);
 const selectedStoreId = ref<string | null>(null);
 const view = ref<WikiView>("profile");
 
@@ -132,9 +133,10 @@ const clearNonEnemySelections = () => {
   selectedStoreId.value = null;
 };
 
-const openNpcView = (npcId: string) => {
+const openNpcView = (npcId: string, battleOptionId?: string | null) => {
   hide();
   selectedNpcId.value = npcId;
+  initialNpcBattleOptionId.value = battleOptionId ?? null;
   selectedEnemyId.value = null;
   selectedDropId.value = null;
   selectedCardId.value = null;
@@ -152,6 +154,12 @@ const handleSearchSelect = (id: string) => {
   }
 
   if (searchItem.kind === "enemy") {
+    const npcContext = WikiModalPresenter.resolveNpcBattleFromEnemyId(id);
+    if (npcContext !== null) {
+      openNpcView(npcContext.npcId, npcContext.battleOptionId);
+      return;
+    }
+
     selectedEnemyId.value = id;
     clearNonEnemySelections();
     view.value = "profile";
@@ -304,6 +312,7 @@ watch(
 
     hide();
     selectedEnemyId.value = null;
+    initialNpcBattleOptionId.value = null;
     clearNonEnemySelections();
     view.value = "profile";
   },
@@ -382,6 +391,7 @@ const enemyImageUrl = computed(() => {
     <WikiNpcPanel
       v-else-if="view === 'npc' && selectedNpcId !== null"
       :npc-id="selectedNpcId"
+      :initial-battle-option-id="initialNpcBattleOptionId"
       @open-locations="openLocationsView"
       @open-drops="openDropsView"
       @open-card="openCardFromBooster"

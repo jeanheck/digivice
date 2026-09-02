@@ -13,6 +13,7 @@ import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-
 
 const props = defineProps<{
   npcId: string;
+  initialBattleOptionId?: string | null;
 }>();
 
 const emit = defineEmits<{
@@ -59,10 +60,26 @@ const battleOptions = computed(() => {
 
 const selectedOptionId = ref<string | null>(null);
 
+const resolveSelectedBattleOptionId = (
+  options: WikiNpcBattleOptionViewModel[],
+): string | null => {
+  if (
+    props.initialBattleOptionId !== undefined &&
+    props.initialBattleOptionId !== null &&
+    options.some((option) => {
+      return option.id === props.initialBattleOptionId;
+    })
+  ) {
+    return props.initialBattleOptionId;
+  }
+
+  return WikiNpcPanelPresenter.getDefaultSelectedBattleOptionId(options);
+};
+
 watch(
-  battleOptions,
-  (options) => {
-    selectedOptionId.value = WikiNpcPanelPresenter.getDefaultSelectedBattleOptionId(options);
+  [battleOptions, () => props.initialBattleOptionId],
+  ([options]) => {
+    selectedOptionId.value = resolveSelectedBattleOptionId(options);
   },
   { immediate: true },
 );

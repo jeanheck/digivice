@@ -10009,7 +10009,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 202,
-    "groupId": 202
+    "groupId": 202,
+    "tamerId": "mitch"
   },
   "542": {
     "name": "Flymon",
