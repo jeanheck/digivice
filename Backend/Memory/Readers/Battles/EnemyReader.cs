@@ -29,6 +29,19 @@ namespace Backend.Memory.Readers.Battles
                 }
             }
 
+            var activeEnemySlotIndex = memoryReader.ReadInt16(addresses.ActiveEnemySlotIndex);
+
+            if (activeEnemySlotIndex >= 0 && activeEnemySlotIndex < addresses.SlotCount)
+            {
+                var activeSlotBase = addresses.EnemySlotBase + (activeEnemySlotIndex * addresses.SlotStride);
+                var activeSlotId = memoryReader.ReadInt16(activeSlotBase + addresses.Id);
+
+                if (activeSlotId != 0)
+                {
+                    return activeEnemySlotIndex;
+                }
+            }
+
             for (var slotIndex = 0; slotIndex < addresses.SlotCount; slotIndex++)
             {
                 var slotBase = addresses.EnemySlotBase + (slotIndex * addresses.SlotStride);

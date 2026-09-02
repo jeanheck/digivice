@@ -19,6 +19,9 @@ namespace Backend.Memory.Addresses
         public long ActiveUnitId { get; set; }
 
         [JsonConverter(typeof(HexStringToLongConverter))]
+        public long ActiveEnemySlotIndex { get; set; }
+
+        [JsonConverter(typeof(HexStringToLongConverter))]
         public long Field { get; set; }
 
         [JsonConverter(typeof(HexStringToLongConverter))]

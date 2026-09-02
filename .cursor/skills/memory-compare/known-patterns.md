@@ -273,7 +273,8 @@ across all three — only the active marker moved.
 | Address | Role | Evidence |
 |---------|------|----------|
 | `0xA4468` | Active ally slot index (0/1/2) | `0→1→2` when switching Kotemon→Patamon→Renamon |
-| `0xA4558` | Active unit id | `386→234→375` (Dinohumon→Angewomon→Taomon) |
+| `0xA446C` | Active **enemy** slot index (0/1/2) | **Confirmed** Gordon tamer snaps: `gordon-crabmon` `0`, `gordon-gizamon` `1`, `gordon-suposed-to-be-gekomon` `2` — mirrors ally `@0xA4468`; required when multiple enemy slots alive and `0xA4558` holds ally id |
+| `0xA4558` | Active unit id | `386→234→375` (Dinohumon→Angewomon→Taomon); Gordon: `386→132→386` — can be **ally** memoryId while enemy front changes |
 | slot `+0x10` | **STR buff delta** | Ally: `dinohumon-buffed` `0xA4480` `0→252` (= combat STR gain). Wired as `InBattle.Strength` in `InBattleAddresses.json` |
 | slot `+0x12` | **DEF buff delta** | Ally: `growlmon-normal`→`def-up` `0xA4482` `0→185` (= combat DEF `494→679`). Wired as `InBattle.Defense` |
 | slot `+0x14` | **SPD buff delta** | Enemy: `hagurumon-1`→`2` `0xA44E4` `0→84` (= combat SPD `336→420`). Ally offset same; party wired as `InBattle.Speed` |
@@ -384,11 +385,16 @@ which of the three enemy slots to expose as `State.Battle.Enemy`:
 
 1. Match `ActiveUnitId` @ `0xA4558` to a slot id (`id != 0`) — **no HP gate**
    (stay on KO'd front enemy until id changes).
-2. Else first slot with `id != 0` and `HP.Current > 0` (player turn / ally active).
-3. Else highest-index slot with `id != 0` (all KO — stay on last defeated).
-4. Else slot 0 (empty battle fallback).
+2. Else read `ActiveEnemySlotIndex` @ `0xA446C`; if index valid and slot `id != 0`.
+3. Else first slot with `id != 0` and `HP.Current > 0`.
+4. Else highest-index slot with `id != 0` (all KO — stay on last defeated).
+5. Else slot 0 (empty battle fallback).
 
-Wired in `EnemyAddresses.json` as `SlotStride`, `SlotCount`, `ActiveUnitId`.
+Wired in `EnemyAddresses.json` as `SlotStride`, `SlotCount`, `ActiveUnitId`, `ActiveEnemySlotIndex`.
+
+**Bug (confirmed 2026-09-02, fixed):** step 2 (first live slot) failed when tamer
+switches front while prior Digimons stay alive. Fix: `ActiveEnemySlotIndex` @
+`0xA446C` as step 2 when step 1 misses.
 
 **Ally Digimon `+0x24` is species too — not a fixed “player” marker.**  
 Same table applies to the engaged ally half of `0xA4580`/`0xA45C0` (e.g. Dinohumon

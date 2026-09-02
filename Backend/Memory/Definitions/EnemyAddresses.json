@@ -3,6 +3,7 @@
     "SlotStride": "0x20",
     "SlotCount": "3",
     "ActiveUnitId": "0x000A4558",
+    "ActiveEnemySlotIndex": "0x000A446C",
     "Field": "0x000A4530",
     "GroupId": "0x00042B2C",
     "Id": "0x00",

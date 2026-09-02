@@ -11,6 +11,7 @@ public class EnemyReaderTests
 {
     private const long EnemySlotBase = 0x000A44D0;
     private const long ActiveUnitIdAddress = 0x000A4558;
+    private const long ActiveEnemySlotIndexAddress = 0x000A446C;
     private const long GroupIdAddress = 0x00042B2C;
     private const int SlotStride = 0x20;
 
@@ -207,10 +208,51 @@ public class EnemyReaderTests
         Assert.Equal(0, result.HP.Current);
     }
 
+    [Fact]
+    public void Read_ShouldReadThirdSlot_WhenActiveEnemySlotIndexPointsToFrontAndPriorEnemiesAreAlive()
+    {
+        var addresses = CreateAddresses();
+        var memoryReaderMock = CreateMemoryReaderMock();
+        SetupEnemySlot(
+            memoryReaderMock,
+            slotIndex: 0,
+            id: 197,
+            maxHp: 528,
+            currentHp: 0,
+            condition: 0,
+            speed: 0);
+        SetupEnemySlot(
+            memoryReaderMock,
+            slotIndex: 1,
+            id: 132,
+            maxHp: 528,
+            currentHp: 222,
+            condition: 0,
+            speed: 0);
+        SetupEnemySlot(
+            memoryReaderMock,
+            slotIndex: 2,
+            id: 110,
+            maxHp: 552,
+            currentHp: 552,
+            condition: 0,
+            speed: 0);
+        memoryReaderMock.Setup(m => m.ReadInt16(ActiveUnitIdAddress)).Returns((short)386);
+        memoryReaderMock.Setup(m => m.ReadInt16(ActiveEnemySlotIndexAddress)).Returns((short)2);
+
+        var reader = new EnemyReader(memoryReaderMock.Object);
+        var result = reader.Read(addresses);
+
+        Assert.Equal(110, result.Id);
+        Assert.Equal(552, result.HP.Current);
+        Assert.Equal(552, result.HP.Max);
+    }
+
     private static Mock<IMemoryReader> CreateMemoryReaderMock()
     {
         var memoryReaderMock = new Mock<IMemoryReader>();
         memoryReaderMock.Setup(m => m.ReadInt16(GroupIdAddress)).Returns((short)0);
+        memoryReaderMock.Setup(m => m.ReadInt16(ActiveEnemySlotIndexAddress)).Returns((short)-1);
         return memoryReaderMock;
     }
 
@@ -222,6 +264,7 @@ public class EnemyReaderTests
             SlotStride = SlotStride,
             SlotCount = 3,
             ActiveUnitId = ActiveUnitIdAddress,
+            ActiveEnemySlotIndex = ActiveEnemySlotIndexAddress,
             GroupId = GroupIdAddress,
             Id = 0x00,
             Condition = 0x1C,

@@ -10,6 +10,7 @@ public class BattleLoaderTests : LoaderIntegrationTestBase
 {
     private const long EnemySlotBase = 0x000A44D0;
     private const long ActiveUnitIdAddress = 0x000A4558;
+    private const long ActiveEnemySlotIndexAddress = 0x000A446C;
     private const int SlotStride = 0x20;
 
     [Fact]
@@ -66,6 +67,7 @@ public class BattleLoaderTests : LoaderIntegrationTestBase
             speed: 90);
         SetupEmptyEnemySlot(memoryReaderMock, slotIndex: 2);
         memoryReaderMock.Setup(m => m.ReadInt16(ActiveUnitIdAddress)).Returns((short)386);
+        memoryReaderMock.Setup(m => m.ReadInt16(ActiveEnemySlotIndexAddress)).Returns((short)-1);
         memoryReaderMock.Setup(m => m.ReadBytes(0x000A4530, 1)).Returns([0x02]);
 
         var loader = new BattleLoader(addressesRepository, new EnemyReader(memoryReaderMock.Object), memoryReaderMock.Object);
