@@ -8575,59 +8575,11 @@
     "drops": [
       {
         "id": "1bBooster",
-        "locationOnly": "021D"
-      },
-      {
-        "id": "1bBooster",
-        "locationOnly": "021E"
-      },
-      {
-        "id": "1bBooster",
-        "locationOnly": "021F"
-      },
-      {
-        "id": "1bBooster",
-        "locationOnly": "0220"
-      },
-      {
-        "id": "1bBooster",
-        "locationOnly": "0221"
-      },
-      {
-        "id": "1bBooster",
-        "locationOnly": "0227"
-      },
-      {
-        "id": "1bBooster",
-        "locationOnly": "022A"
+        "locationOnly": "0001"
       },
       {
         "id": "2bBooster",
-        "locationOnly": "0234"
-      },
-      {
-        "id": "2bBooster",
-        "locationOnly": "0235"
-      },
-      {
-        "id": "2bBooster",
-        "locationOnly": "0237"
-      },
-      {
-        "id": "2bBooster",
-        "locationOnly": "023A"
-      },
-      {
-        "id": "2bBooster",
-        "locationOnly": "023B"
-      },
-      {
-        "id": "2bBooster",
-        "locationOnly": "023C"
-      },
-      {
-        "id": "2bBooster",
-        "locationOnly": "023D"
+        "locationOnly": "0002"
       },
       {
         "id": "r01Booster"
@@ -8864,15 +8816,7 @@
     "drops": [
       {
         "id": "5bBooster",
-        "locationOnly": "0247"
-      },
-      {
-        "id": "5bBooster",
-        "locationOnly": "0249"
-      },
-      {
-        "id": "5bBooster",
-        "locationOnly": "024B"
+        "locationOnly": "0003"
       }
     ],
     "locations": [
