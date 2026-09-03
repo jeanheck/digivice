@@ -1,17 +1,23 @@
 <script setup lang="ts">
-import WikiDroppedByEnemy from "@/components/wiki-modal/wiki-drops-panel/WikiDroppedByEnemy.vue";
-import type { WikiDroppedByEnemyViewModel } from "@/viewmodels/wiki-modal/wiki-dropped-by-enemy.viewmodel";
+import WikiDroppedBySource from "@/components/wiki-modal/wiki-drops-panel/WikiDroppedBySource.vue";
+import type { DropSourceKind } from "@/viewmodels/drop/drop-source.viewmodel";
+import type { WikiDroppedBySourceViewModel } from "@/viewmodels/wiki-modal/wiki-dropped-by-source.viewmodel";
 
 defineProps<{
-  sources: WikiDroppedByEnemyViewModel[];
+  sources: WikiDroppedBySourceViewModel[];
+  sectionLabelKey: string;
+  emptyLabelKey: string;
 }>();
 
 const emit = defineEmits<{
-  (e: "open-enemy", enemyId: string): void;
+  (e: "open-source", payload: { kind: DropSourceKind; sourceId: string }): void;
 }>();
 
-const handleSelect = (enemyId: string): void => {
-  emit("open-enemy", enemyId);
+const handleSelect = (source: WikiDroppedBySourceViewModel): void => {
+  emit("open-source", {
+    kind: source.kind,
+    sourceId: source.sourceId,
+  });
 };
 </script>
 
@@ -20,24 +26,24 @@ const handleSelect = (enemyId: string): void => {
     class="shrink-0 w-full bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner"
   >
     <h4 class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-3">
-      {{ $t("enemy.droppedBy") }}
+      {{ $t(sectionLabelKey) }}
     </h4>
 
     <p
       v-if="sources.length === 0"
       class="text-xs text-gray-400 italic"
     >
-      {{ $t("enemy.droppedByNone") }}
+      {{ $t(emptyLabelKey) }}
     </p>
     <div
       v-else
       class="flex flex-wrap gap-2"
     >
-      <WikiDroppedByEnemy
+      <WikiDroppedBySource
         v-for="source in sources"
-        :key="`${source.enemyId}-${source.locationOnly ?? ''}`"
+        :key="`${source.kind}-${source.sourceId}-${source.locationId ?? ''}`"
         :source="source"
-        @select="handleSelect(source.enemyId)"
+        @select="handleSelect(source)"
       />
     </div>
   </section>

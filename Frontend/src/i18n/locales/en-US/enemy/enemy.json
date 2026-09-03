@@ -39,6 +39,7 @@
     "priceLabel": "Price",
     "obtainedFrom": "Obtained from",
     "obtainedFromNone": "No known boosters",
+    "dropSourcesNone": "No known sources",
     "purchasableAt": "Purchasable at",
     "purchasableAtNone": "Not sold in any known shop",
     "baseExp": "EXP",

@@ -5,13 +5,14 @@ import WikiDropConsumableItem from "@/components/wiki-modal/wiki-drops-panel/Wik
 import WikiDropEquipment from "@/components/wiki-modal/wiki-drops-panel/WikiDropEquipment.vue";
 import WikiDroppedBy from "@/components/wiki-modal/wiki-drops-panel/WikiDroppedBy.vue";
 import { WikiDropsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-drops-panel.presenter";
+import type { DropSourceKind } from "@/viewmodels/drop/drop-source.viewmodel";
 
 const props = defineProps<{
   dropId: string;
 }>();
 
 const emit = defineEmits<{
-  (e: "open-enemy", enemyId: string): void;
+  (e: "open-source", payload: { kind: DropSourceKind; sourceId: string }): void;
   (e: "open-card", cardId: string): void;
 }>();
 
@@ -19,8 +20,8 @@ const dropsViewModel = computed(() => {
   return WikiDropsPanelPresenter.getViewModel(props.dropId);
 });
 
-const handleOpenEnemy = (enemyId: string): void => {
-  emit("open-enemy", enemyId);
+const handleOpenSource = (payload: { kind: DropSourceKind; sourceId: string }): void => {
+  emit("open-source", payload);
 };
 
 const handleOpenCard = (cardId: string): void => {
@@ -48,6 +49,11 @@ const handleOpenCard = (cardId: string): void => {
       />
     </section>
 
-    <WikiDroppedBy :sources="dropsViewModel.sources" @open-enemy="handleOpenEnemy" />
+    <WikiDroppedBy
+      :sources="dropsViewModel.sources"
+      :section-label-key="dropsViewModel.sourcesSectionLabelKey"
+      :empty-label-key="dropsViewModel.sourcesEmptyLabelKey"
+      @open-source="handleOpenSource"
+    />
   </div>
 </template>

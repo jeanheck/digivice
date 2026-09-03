@@ -1,39 +1,109 @@
 {
   "boosters": {
-    "501": { "name": "Pacote 1b" },
-    "502": { "name": "Booster 2B" },
-    "503": { "name": "Booster 3B" },
-    "504": { "name": "Booster 4B" },
-    "505": { "name": "Booster 5B" },
-    "506": { "name": "Booster 6B" },
-    "507": { "name": "Booster 7B" },
-    "508": { "name": "Booster 8B" },
-    "509": { "name": "Booster 9B" },
-    "510": { "name": "Booster 10B" },
-    "511": { "name": "Booster 11B" },
-    "512": { "name": "Booster 12B" },
-    "513": { "name": "Booster 13B" },
-    "514": { "name": "Booster 14B" },
-    "515": { "name": "Booster 15B" },
-    "516": { "name": "Booster R-01" },
-    "517": { "name": "Booster R-02" },
-    "518": { "name": "Booster R-03" },
-    "519": { "name": "Booster R-04" },
-    "520": { "name": "Booster R-05" },
-    "521": { "name": "Pacote 01a" },
-    "522": { "name": "Pacote 02a" },
-    "523": { "name": "Booster 3A" },
-    "524": { "name": "Booster 4A" },
-    "525": { "name": "Booster 5A" },
-    "526": { "name": "Booster 6A" },
-    "527": { "name": "Booster 7A" },
-    "528": { "name": "Booster 8A" },
-    "529": { "name": "Booster 9A" },
-    "530": { "name": "Booster 10A" },
-    "531": { "name": "Booster 11A" },
-    "532": { "name": "Booster 12A" },
-    "533": { "name": "Booster 13A" },
-    "534": { "name": "Booster 14A" },
-    "535": { "name": "Booster 15A" }
+    "501": {
+      "name": "Pacote 1b"
+    },
+    "502": {
+      "name": "Pacote 2B"
+    },
+    "503": {
+      "name": "Pacote 3B"
+    },
+    "504": {
+      "name": "Pacote 4B"
+    },
+    "505": {
+      "name": "Pacote 5B"
+    },
+    "506": {
+      "name": "Pacote 6B"
+    },
+    "507": {
+      "name": "Pacote 7B"
+    },
+    "508": {
+      "name": "Pacote 8B"
+    },
+    "509": {
+      "name": "Pacote 9B"
+    },
+    "510": {
+      "name": "Pacote 10B"
+    },
+    "511": {
+      "name": "Pacote 11B"
+    },
+    "512": {
+      "name": "Pacote 12B"
+    },
+    "513": {
+      "name": "Pacote 13B"
+    },
+    "514": {
+      "name": "Pacote 14B"
+    },
+    "515": {
+      "name": "Pacote 15B"
+    },
+    "516": {
+      "name": "Pacote R-01"
+    },
+    "517": {
+      "name": "Pacote R-02"
+    },
+    "518": {
+      "name": "Pacote R-03"
+    },
+    "519": {
+      "name": "Pacote R-04"
+    },
+    "520": {
+      "name": "Pacote R-05"
+    },
+    "521": {
+      "name": "Pacote 01a"
+    },
+    "522": {
+      "name": "Pacote 02a"
+    },
+    "523": {
+      "name": "Pacote 3A"
+    },
+    "524": {
+      "name": "Pacote 4A"
+    },
+    "525": {
+      "name": "Pacote 5A"
+    },
+    "526": {
+      "name": "Pacote 6A"
+    },
+    "527": {
+      "name": "Pacote 7A"
+    },
+    "528": {
+      "name": "Pacote 8A"
+    },
+    "529": {
+      "name": "Pacote 9A"
+    },
+    "530": {
+      "name": "Pacote 10A"
+    },
+    "531": {
+      "name": "Pacote 11A"
+    },
+    "532": {
+      "name": "Pacote 12A"
+    },
+    "533": {
+      "name": "Pacote 13A"
+    },
+    "534": {
+      "name": "Pacote 14A"
+    },
+    "535": {
+      "name": "Pacote 15A"
+    }
   }
 }

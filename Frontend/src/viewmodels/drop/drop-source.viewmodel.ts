@@ -1,5 +1,9 @@
+export type DropSourceKind = "enemy" | "tamer" | "duelIsland";
+
 export interface DropSourceViewModel {
-  enemyId: string;
-  enemyName: string;
-  locationOnly?: string;
+  kind: DropSourceKind;
+  sourceId: string;
+  labelKey?: string;
+  label?: string;
+  locationId?: string;
 }

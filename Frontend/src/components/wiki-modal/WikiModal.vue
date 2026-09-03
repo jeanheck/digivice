@@ -14,6 +14,7 @@ import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { WikiModalPresenter } from "@/presenters/map/wiki-modal.presenter";
 import { WikiProfileDropsPresenter } from "@/presenters/map/wiki-modal/wiki-profile-drops.presenter";
+import type { DropSourceKind } from "@/viewmodels/drop/drop-source.viewmodel";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -244,6 +245,15 @@ const openEnemyFromDropSource = (enemyId: string) => {
   view.value = "profile";
 };
 
+const openDropSource = (payload: { kind: DropSourceKind; sourceId: string }) => {
+  if (payload.kind === "enemy") {
+    openEnemyFromDropSource(payload.sourceId);
+    return;
+  }
+
+  openNpcView(payload.sourceId);
+};
+
 const openCardFromBooster = (cardId: string) => {
   hide();
   selectedCardId.value = cardId;
@@ -367,7 +377,7 @@ const enemyImageUrl = computed(() => {
     <WikiDropsPanel
       v-else-if="view === 'drops' && selectedDropId !== null"
       :drop-id="selectedDropId"
-      @open-enemy="openEnemyFromDropSource"
+      @open-source="openDropSource"
       @open-card="openCardFromBooster"
     />
     <WikiCardsPanel

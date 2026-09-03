@@ -1,0 +1,71 @@
+booster 2b
+
+Ankylomon         
+Aruraumon
+Blue Power
+DarkTyrannomon
+Devidramon
+Digimon Charge
+Dolphmon
+Frigimon
+Geremon
+Green Remove
+Hagurumon
+Hookmon
+Ikkakumon
+Kyubimon
+Ninjamon
+Octomon
+Otamamon
+Piddomon
+Program Charge
+Summon Cancel
+Summon Devimon
+Summon Gomamon
+Tsukaimon
+
+booster 3b
+
+Summon Goburimon
+Black Remove
+Disturb Gear
+Assault Armor
+Tortomon
+Yanmamon
+Kotemon
+Elecmon
+Dokugumon
+Vegiemon
+Kumamon
+Gabumon
+Tentomon
+Palmon
+Kokuwamon
+Akatorimon
+Veemon
+Biyomon
+Goburimon
+Penguinmon
+Soulmon
+Gazimon
+ModokiBetamon
+Gotsumon
+
+booster r-01
+
+Agumon           
+Biyomon           
+Gabumon           
+Gomamon           
+Guilmon           
+Hawkmon           
+Kotemon           
+Kumamon           
+Monmon            
+Palmon            
+Patamon           
+Renamon           
+Tentomon          
+Veemon            
+Wormmon          
+

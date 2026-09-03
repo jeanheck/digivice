@@ -184,32 +184,42 @@
       {
         "id": "nacky",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 44,
+          "y": 60
         },
-        "labelPlacement": "below"
+        "labelPlacement": "right"
       },
       {
         "id": "wong",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 33,
+          "y": 67
         },
         "labelPlacement": "below"
       },
       {
         "id": "steve",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 32,
+          "y": 48
         },
-        "labelPlacement": "below"
+        "labelPlacement": "above"
       },
       {
         "id": "gloria",
         "coordinates": {
-          "x": 50,
-          "y": 50
+          "x": 20,
+          "y": 57
+        },
+        "labelPlacement": "left"
+      }
+    ],
+    "stores": [
+      {
+        "id": "asYellowCruiser",
+        "coordinates": {
+          "x": 20,
+          "y": 57
         },
         "labelPlacement": "below"
       }

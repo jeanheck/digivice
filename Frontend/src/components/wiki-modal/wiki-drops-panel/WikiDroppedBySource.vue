@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import type { WikiDroppedByEnemyViewModel } from "@/viewmodels/wiki-modal/wiki-dropped-by-enemy.viewmodel";
+import type { WikiDroppedBySourceViewModel } from "@/viewmodels/wiki-modal/wiki-dropped-by-source.viewmodel";
 
-defineProps<{
-  source: WikiDroppedByEnemyViewModel;
+const props = defineProps<{
+  source: WikiDroppedBySourceViewModel;
 }>();
 
 defineEmits<{
@@ -12,8 +13,16 @@ defineEmits<{
 
 const { t } = useI18n();
 
-const locationOnlyLabel = (locationOnly: string): string => {
-  return t("enemy.locationOnly", { location: t(`location.${locationOnly}`) });
+const displayName = computed(() => {
+  if (props.source.labelKey !== undefined) {
+    return t(props.source.labelKey);
+  }
+
+  return props.source.label ?? "";
+});
+
+const locationLabel = (locationId: string): string => {
+  return t("enemy.locationOnly", { location: t(`location.${locationId}`) });
 };
 </script>
 
@@ -26,15 +35,15 @@ const locationOnlyLabel = (locationOnly: string): string => {
     <img
       v-if="source.iconUrl"
       :src="source.iconUrl"
-      :alt="source.enemyName"
+      :alt="displayName"
       class="w-8 h-8 object-contain rendering-pixelated"
     />
     <span class="min-w-0">
       <span class="block text-xs font-bold text-blue-200 tracking-wide">
-        {{ source.enemyName }}
+        {{ displayName }}
       </span>
       <span class="block min-h-3 text-[10px] text-gray-400 leading-tight">
-        {{ source.locationOnly ? locationOnlyLabel(source.locationOnly) : "" }}
+        {{ source.kind === "enemy" && source.locationId ? locationLabel(source.locationId) : "" }}
       </span>
     </span>
   </button>

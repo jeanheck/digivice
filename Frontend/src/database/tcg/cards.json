@@ -16,7 +16,8 @@
   "1002": {
     "imageName": "Gold Aura",
     "boosters": [
-      506
+      506,
+      528
     ],
     "type": "action"
   },
@@ -31,14 +32,16 @@
   "1004": {
     "imageName": "White Power",
     "boosters": [
-      507
+      507,
+      528
     ],
     "type": "action"
   },
   "1005": {
     "imageName": "Summon Patamon",
     "boosters": [
-      505
+      505,
+      526
     ],
     "type": "action"
   },
@@ -68,7 +71,8 @@
     "boosters": [
       505,
       514,
-      517
+      517,
+      526
     ],
     "stores": [
       {
@@ -87,7 +91,8 @@
   "1010": {
     "imageName": "Blue Power",
     "boosters": [
-      502
+      502,
+      526
     ],
     "type": "action"
   },
@@ -95,7 +100,8 @@
     "imageName": "Summon Gomamon",
     "boosters": [
       502,
-      517
+      517,
+      525
     ],
     "type": "action"
   },
@@ -116,28 +122,32 @@
   "1014": {
     "imageName": "Green Force",
     "boosters": [
-      505
+      505,
+      527
     ],
     "type": "action"
   },
   "1015": {
     "imageName": "Beast Energy",
     "boosters": [
-      506
+      506,
+      528
     ],
     "type": "action"
   },
   "1016": {
     "imageName": "Green Power",
     "boosters": [
-      504
+      504,
+      526
     ],
     "type": "action"
   },
   "1017": {
     "imageName": "Summon Palmon",
     "boosters": [
-      504
+      504,
+      525
     ],
     "type": "action"
   },
@@ -158,7 +168,8 @@
     "imageName": "Flame Gatlin",
     "boosters": [
       509,
-      511
+      511,
+      529
     ],
     "type": "action"
   },
@@ -166,21 +177,24 @@
     "imageName": "Fire Cannon",
     "boosters": [
       506,
-      518
+      518,
+      528
     ],
     "type": "action"
   },
   "1022": {
     "imageName": "Red Power",
     "boosters": [
-      504
+      504,
+      527
     ],
     "type": "action"
   },
   "1023": {
     "imageName": "Summon Goburimon",
     "boosters": [
-      503
+      503,
+      524
     ],
     "type": "action"
   },
@@ -200,7 +214,8 @@
   "1026": {
     "imageName": "Chaos Virus",
     "boosters": [
-      507
+      507,
+      529
     ],
     "type": "action"
   },
@@ -209,21 +224,24 @@
     "boosters": [
       509,
       513,
-      518
+      518,
+      529
     ],
     "type": "action"
   },
   "1028": {
     "imageName": "Black Power",
     "boosters": [
-      504
+      504,
+      527
     ],
     "type": "action"
   },
   "1029": {
     "imageName": "Summon Devimon",
     "boosters": [
-      502
+      502,
+      525
     ],
     "stores": [
       {
@@ -284,7 +302,8 @@
   "1037": {
     "imageName": "Security Hall",
     "boosters": [
-      507
+      507,
+      528
     ],
     "type": "action"
   },
@@ -308,20 +327,23 @@
     "boosters": [
       509,
       512,
-      518
+      518,
+      529
     ],
     "type": "action"
   },
   "1041": {
     "imageName": "Charge Terminal",
     "boosters": [
-      505
+      505,
+      527
     ],
     "type": "action"
   },
   "1042": {
     "imageName": "Digimon Charge",
     "boosters": [
+      502,
       526
     ],
     "type": "action"
@@ -329,21 +351,25 @@
   "1043": {
     "imageName": "Program Charge",
     "boosters": [
-      502
+      502,
+      517,
+      525
     ],
     "type": "action"
   },
   "1044": {
     "imageName": "Trade Charge",
     "boosters": [
-      507
+      507,
+      529
     ],
     "type": "action"
   },
   "1045": {
     "imageName": "Illegal Access",
     "boosters": [
-      507
+      507,
+      528
     ],
     "type": "action"
   },
@@ -351,14 +377,16 @@
     "imageName": "Break Launcher",
     "boosters": [
       504,
-      517
+      517,
+      524
     ],
     "type": "action"
   },
   "1047": {
     "imageName": "Cancel Wheel",
     "boosters": [
-      504
+      504,
+      527
     ],
     "type": "action"
   },
@@ -367,42 +395,48 @@
     "boosters": [
       505,
       515,
-      518
+      518,
+      527
     ],
     "type": "action"
   },
   "1049": {
     "imageName": "Summon Hagurumon",
     "boosters": [
-      504
+      504,
+      526
     ],
     "type": "action"
   },
   "1050": {
     "imageName": "White Remove",
     "boosters": [
-      505
+      505,
+      524
     ],
     "type": "action"
   },
   "1051": {
     "imageName": "Blue Remove",
     "boosters": [
-      505
+      505,
+      524
     ],
     "type": "action"
   },
   "1052": {
     "imageName": "Green Remove",
     "boosters": [
-      502
+      502,
+      522
     ],
     "type": "action"
   },
   "1053": {
     "imageName": "Red Remove",
     "boosters": [
-      505
+      505,
+      525
     ],
     "type": "action"
   },
@@ -425,7 +459,8 @@
   "1056": {
     "imageName": "Berserk Energy",
     "boosters": [
-      501
+      501,
+      521
     ],
     "type": "action"
   },
@@ -433,14 +468,17 @@
     "imageName": "Disturb Gear",
     "boosters": [
       503,
-      512
+      512,
+      521
     ],
     "type": "action"
   },
   "1058": {
     "imageName": "Protect Armor",
     "boosters": [
-      501
+      501,
+      522,
+      523
     ],
     "stores": [
       {
@@ -459,8 +497,9 @@
   "1059": {
     "imageName": "Assault Armor",
     "boosters": [
-      523,
-      514
+      503,
+      514,
+      523
     ],
     "type": "action"
   },
@@ -640,7 +679,8 @@
     "imageName": "Silphymon",
     "boosters": [
       507,
-      518
+      518,
+      529
     ],
     "type": "white",
     "points": {
@@ -686,7 +726,8 @@
   "1078": {
     "imageName": "Piximon",
     "boosters": [
-      507
+      507,
+      529
     ],
     "type": "white",
     "points": {
@@ -699,7 +740,8 @@
     "boosters": [
       505,
       511,
-      517
+      517,
+      526
     ],
     "stores": [
       {
@@ -724,7 +766,8 @@
     "boosters": [
       505,
       512,
-      517
+      517,
+      525
     ],
     "type": "white",
     "points": {
@@ -735,7 +778,8 @@
   "1081": {
     "imageName": "Stingmon",
     "boosters": [
-      505
+      505,
+      527
     ],
     "type": "white",
     "points": {
@@ -758,7 +802,8 @@
   "1083": {
     "imageName": "Piddomon",
     "boosters": [
-      502
+      502,
+      526
     ],
     "type": "white",
     "points": {
@@ -769,7 +814,8 @@
   "1084": {
     "imageName": "Apemon",
     "boosters": [
-      505
+      505,
+      525
     ],
     "type": "white",
     "points": {
@@ -792,7 +838,8 @@
   "1086": {
     "imageName": "Snimon",
     "boosters": [
-      504
+      504,
+      524
     ],
     "type": "white",
     "points": {
@@ -803,7 +850,8 @@
   "1087": {
     "imageName": "Thundermon",
     "boosters": [
-      506
+      506,
+      528
     ],
     "type": "white",
     "points": {
@@ -814,7 +862,8 @@
   "1088": {
     "imageName": "Unimon",
     "boosters": [
-      509
+      509,
+      529
     ],
     "type": "white",
     "points": {
@@ -825,7 +874,8 @@
   "1089": {
     "imageName": "ShimaUnimon",
     "boosters": [
-      509
+      509,
+      528
     ],
     "type": "white",
     "points": {
@@ -837,7 +887,8 @@
     "imageName": "Ankylomon",
     "boosters": [
       502,
-      517
+      517,
+      524
     ],
     "type": "white",
     "points": {
@@ -848,7 +899,8 @@
   "1091": {
     "imageName": "Guruurmon",
     "boosters": [
-      504
+      504,
+      526
     ],
     "type": "white",
     "points": {
@@ -871,7 +923,8 @@
   "1093": {
     "imageName": "Zassomon",
     "boosters": [
-      506
+      506,
+      524
     ],
     "type": "white",
     "points": {
@@ -894,9 +947,10 @@
   "1095": {
     "imageName": "Kotemon",
     "boosters": [
-      523,
       503,
-      506
+      506,
+      516,
+      523
     ],
     "stores": [
       {
@@ -944,7 +998,8 @@
     "imageName": "Elecmon",
     "boosters": [
       503,
-      512
+      512,
+      521
     ],
     "type": "white",
     "points": {
@@ -956,7 +1011,9 @@
     "imageName": "Patamon",
     "boosters": [
       501,
-      507
+      507,
+      516,
+      522
     ],
     "type": "white",
     "points": {
@@ -967,7 +1024,9 @@
   "1100": {
     "imageName": "Wormmon",
     "boosters": [
-      501
+      501,
+      516,
+      521
     ],
     "type": "white",
     "points": {
@@ -978,7 +1037,8 @@
   "1101": {
     "imageName": "Kunemon",
     "boosters": [
-      501
+      501,
+      522
     ],
     "type": "white",
     "points": {
@@ -989,7 +1049,8 @@
   "1102": {
     "imageName": "Salamon",
     "boosters": [
-      501
+      501,
+      521
     ],
     "type": "white",
     "points": {
@@ -1201,7 +1262,8 @@
   "1120": {
     "imageName": "WaruSeadramon",
     "boosters": [
-      507
+      507,
+      529
     ],
     "type": "blue",
     "points": {
@@ -1212,7 +1274,8 @@
   "1121": {
     "imageName": "Divermon",
     "boosters": [
-      507
+      507,
+      528
     ],
     "type": "blue",
     "points": {
@@ -1234,7 +1297,8 @@
   "1123": {
     "imageName": "Seadramon",
     "boosters": [
-      507
+      507,
+      528
     ],
     "type": "blue",
     "points": {
@@ -1246,7 +1310,8 @@
     "imageName": "Kyubimon",
     "boosters": [
       502,
-      517
+      517,
+      526
     ],
     "type": "blue",
     "points": {
@@ -1257,7 +1322,9 @@
   "1125": {
     "imageName": "Hookmon",
     "boosters": [
-      517
+      502,
+      517,
+      525
     ],
     "type": "blue",
     "points": {
@@ -1279,7 +1346,8 @@
   "1127": {
     "imageName": "Shellmon",
     "boosters": [
-      505
+      505,
+      527
     ],
     "type": "blue",
     "points": {
@@ -1291,7 +1359,8 @@
     "imageName": "Ikkakumon",
     "boosters": [
       502,
-      517
+      517,
+      524
     ],
     "type": "blue",
     "points": {
@@ -1302,7 +1371,8 @@
   "1129": {
     "imageName": "Frigimon",
     "boosters": [
-      502
+      502,
+      524
     ],
     "type": "blue",
     "points": {
@@ -1324,7 +1394,8 @@
   "1131": {
     "imageName": "Icemon",
     "boosters": [
-      507
+      507,
+      528
     ],
     "type": "blue",
     "points": {
@@ -1335,7 +1406,8 @@
   "1132": {
     "imageName": "Mojyamon",
     "boosters": [
-      507
+      507,
+      529
     ],
     "type": "blue",
     "points": {
@@ -1346,7 +1418,8 @@
   "1133": {
     "imageName": "Ninjamon",
     "boosters": [
-      502
+      502,
+      525
     ],
     "type": "blue",
     "points": {
@@ -1357,7 +1430,8 @@
   "1134": {
     "imageName": "Starmon",
     "boosters": [
-      505
+      505,
+      527
     ],
     "type": "blue",
     "points": {
@@ -1393,7 +1467,8 @@
     "imageName": "Gekomon",
     "boosters": [
       501,
-      523
+      523,
+      521
     ],
     "type": "blue",
     "points": {
@@ -1404,7 +1479,9 @@
   "1138": {
     "imageName": "Monmon",
     "boosters": [
-      501
+      501,
+      516,
+      521
     ],
     "type": "blue",
     "points": {
@@ -1416,6 +1493,7 @@
     "imageName": "Renamon",
     "boosters": [
       501,
+      516,
       523
     ],
     "stores": [
@@ -1434,7 +1512,9 @@
   "1140": {
     "imageName": "Gomamon",
     "boosters": [
-      501
+      501,
+      516,
+      522
     ],
     "type": "blue",
     "points": {
@@ -1445,7 +1525,8 @@
   "1141": {
     "imageName": "SnowAgumon",
     "boosters": [
-      501
+      501,
+      522
     ],
     "type": "blue",
     "points": {
@@ -1456,7 +1537,9 @@
   "1142": {
     "imageName": "Gizamon",
     "boosters": [
-      501
+      501,
+      522,
+      523
     ],
     "type": "blue",
     "points": {
@@ -1467,7 +1550,8 @@
   "1143": {
     "imageName": "Otamamon",
     "boosters": [
-      502
+      502,
+      521
     ],
     "type": "blue",
     "points": {
@@ -1478,7 +1562,8 @@
   "1144": {
     "imageName": "Crabmon",
     "boosters": [
-      501
+      501,
+      522
     ],
     "type": "blue",
     "points": {
@@ -1489,7 +1574,8 @@
   "1145": {
     "imageName": "Syakomon",
     "boosters": [
-      501
+      501,
+      521
     ],
     "type": "blue",
     "points": {
@@ -1695,7 +1781,8 @@
   "1163": {
     "imageName": "Blossomon",
     "boosters": [
-      506
+      506,
+      529
     ],
     "type": "green",
     "points": {
@@ -1729,7 +1816,8 @@
   "1166": {
     "imageName": "Grizzmon",
     "boosters": [
-      507
+      507,
+      527
     ],
     "type": "green",
     "points": {
@@ -1741,7 +1829,8 @@
     "imageName": "Kabuterimon",
     "boosters": [
       504,
-      517
+      517,
+      526
     ],
     "stores": [
       {
@@ -1764,7 +1853,8 @@
   "1168": {
     "imageName": "Garurumon",
     "boosters": [
-      506
+      506,
+      528
     ],
     "type": "green",
     "points": {
@@ -1775,7 +1865,8 @@
   "1169": {
     "imageName": "Tuskmon",
     "boosters": [
-      506
+      506,
+      527
     ],
     "type": "green",
     "points": {
@@ -1786,7 +1877,8 @@
   "1170": {
     "imageName": "Monochromon",
     "boosters": [
-      509
+      509,
+      529
     ],
     "type": "green",
     "points": {
@@ -1797,7 +1889,8 @@
   "1171": {
     "imageName": "MoriShellmon",
     "boosters": [
-      509
+      509,
+      529
     ],
     "type": "green",
     "points": {
@@ -1808,7 +1901,8 @@
   "1172": {
     "imageName": "Kuwagamon",
     "boosters": [
-      504
+      504,
+      524
     ],
     "type": "green",
     "points": {
@@ -1819,7 +1913,8 @@
   "1173": {
     "imageName": "J-Mojyamon",
     "boosters": [
-      505
+      505,
+      525
     ],
     "type": "green",
     "points": {
@@ -1830,7 +1925,9 @@
   "1174": {
     "imageName": "Togemon",
     "boosters": [
-      504
+      504,
+      517,
+      525
     ],
     "type": "green",
     "points": {
@@ -1841,7 +1938,8 @@
   "1175": {
     "imageName": "Flymon",
     "boosters": [
-      509
+      509,
+      529
     ],
     "type": "green",
     "points": {
@@ -1852,7 +1950,8 @@
   "1176": {
     "imageName": "Saberdramon",
     "boosters": [
-      506
+      506,
+      527
     ],
     "type": "green",
     "points": {
@@ -1864,7 +1963,8 @@
     "imageName": "Dokugumon",
     "boosters": [
       503,
-      512
+      512,
+      523
     ],
     "type": "green",
     "points": {
@@ -1875,7 +1975,8 @@
   "1178": {
     "imageName": "Kiwimon",
     "boosters": [
-      504
+      504,
+      524
     ],
     "type": "green",
     "points": {
@@ -1886,7 +1987,8 @@
   "1179": {
     "imageName": "Woodmon",
     "boosters": [
-      506
+      506,
+      524
     ],
     "type": "green",
     "points": {
@@ -1910,7 +2012,9 @@
     "imageName": "Kumamon",
     "boosters": [
       503,
-      506
+      506,
+      516,
+      522
     ],
     "type": "green",
     "points": {
@@ -1922,7 +2026,8 @@
     "imageName": "Gabumon",
     "boosters": [
       503,
-      504
+      504,
+      516
     ],
     "type": "green",
     "points": {
@@ -1934,7 +2039,9 @@
     "imageName": "Tentomon",
     "boosters": [
       503,
-      505
+      505,
+      516,
+      521
     ],
     "type": "green",
     "points": {
@@ -1945,8 +2052,10 @@
   "1184": {
     "imageName": "Palmon",
     "boosters": [
-      523,
-      507
+      503,
+      507,
+      516,
+      523
     ],
     "stores": [
       {
@@ -1964,7 +2073,8 @@
   "1185": {
     "imageName": "Betamon",
     "boosters": [
-      501
+      501,
+      521
     ],
     "type": "green",
     "points": {
@@ -1976,7 +2086,8 @@
     "imageName": "Kokuwamon",
     "boosters": [
       503,
-      514
+      514,
+      522
     ],
     "type": "green",
     "points": {
@@ -1998,7 +2109,8 @@
   "1188": {
     "imageName": "Mushroomon",
     "boosters": [
-      501
+      501,
+      521
     ],
     "type": "green",
     "points": {
@@ -2155,7 +2267,8 @@
     "boosters": [
       509,
       511,
-      518
+      518,
+      529
     ],
     "type": "red",
     "points": {
@@ -2232,7 +2345,8 @@
   "1207": {
     "imageName": "Mammothmon",
     "boosters": [
-      506
+      506,
+      528
     ],
     "type": "red",
     "points": {
@@ -2244,7 +2358,8 @@
     "imageName": "Greymon",
     "boosters": [
       505,
-      518
+      518,
+      527
     ],
     "type": "red",
     "points": {
@@ -2256,7 +2371,8 @@
     "imageName": "Growlmon",
     "boosters": [
       504,
-      517
+      517,
+      526
     ],
     "stores": [
       {
@@ -2280,7 +2396,8 @@
     "imageName": "ExVeemon",
     "boosters": [
       506,
-      518
+      518,
+      528
     ],
     "type": "red",
     "points": {
@@ -2291,7 +2408,8 @@
   "1211": {
     "imageName": "Veedramon",
     "boosters": [
-      504
+      504,
+      526
     ],
     "type": "red",
     "points": {
@@ -2302,7 +2420,8 @@
   "1212": {
     "imageName": "Airdramon",
     "boosters": [
-      506
+      506,
+      528
     ],
     "type": "red",
     "points": {
@@ -2313,7 +2432,8 @@
   "1213": {
     "imageName": "Ogremon",
     "boosters": [
-      504
+      504,
+      527
     ],
     "type": "red",
     "points": {
@@ -2336,7 +2456,8 @@
   "1215": {
     "imageName": "Fugamon",
     "boosters": [
-      505
+      505,
+      525
     ],
     "type": "red",
     "points": {
@@ -2347,7 +2468,8 @@
   "1216": {
     "imageName": "Tyrannomon",
     "boosters": [
-      509
+      509,
+      529
     ],
     "type": "red",
     "points": {
@@ -2359,7 +2481,8 @@
     "imageName": "Aquilamon",
     "boosters": [
       504,
-      517
+      517,
+      525
     ],
     "type": "red",
     "points": {
@@ -2383,7 +2506,8 @@
     "imageName": "Birdramon",
     "boosters": [
       504,
-      517
+      517,
+      524
     ],
     "type": "red",
     "points": {
@@ -2394,7 +2518,8 @@
   "1220": {
     "imageName": "Flarerizamon",
     "boosters": [
-      506
+      506,
+      525
     ],
     "type": "red",
     "points": {
@@ -2405,7 +2530,8 @@
   "1221": {
     "imageName": "RedVegiemon",
     "boosters": [
-      504
+      504,
+      524
     ],
     "type": "red",
     "points": {
@@ -2440,7 +2566,9 @@
   "1224": {
     "imageName": "Agumon",
     "boosters": [
-      501
+      501,
+      516,
+      521
     ],
     "type": "red",
     "points": {
@@ -2452,7 +2580,9 @@
     "imageName": "Veemon",
     "boosters": [
       503,
-      506
+      506,
+      516,
+      523
     ],
     "stores": [
       {
@@ -2470,7 +2600,9 @@
   "1226": {
     "imageName": "Guilmon",
     "boosters": [
-      501
+      501,
+      516,
+      522
     ],
     "type": "red",
     "points": {
@@ -2481,7 +2613,8 @@
   "1227": {
     "imageName": "Hawkmon",
     "boosters": [
-      501
+      501,
+      516
     ],
     "type": "red",
     "points": {
@@ -2492,9 +2625,10 @@
   "1228": {
     "imageName": "Biyomon",
     "boosters": [
-      523,
       503,
-      505
+      505,
+      516,
+      523
     ],
     "type": "red",
     "points": {
@@ -2506,7 +2640,8 @@
     "imageName": "Goburimon",
     "boosters": [
       503,
-      514
+      514,
+      521
     ],
     "type": "red",
     "points": {
@@ -2517,7 +2652,8 @@
   "1230": {
     "imageName": "Sharmamon",
     "boosters": [
-      504
+      504,
+      522
     ],
     "type": "red",
     "points": {
@@ -2528,7 +2664,8 @@
   "1231": {
     "imageName": "Penguinmon",
     "boosters": [
-      503
+      503,
+      521
     ],
     "type": "red",
     "points": {
@@ -2760,7 +2897,8 @@
     "boosters": [
       505,
       511,
-      520
+      520,
+      527
     ],
     "type": "black",
     "points": {
@@ -2771,7 +2909,8 @@
   "1252": {
     "imageName": "Kurisarimon",
     "boosters": [
-      505
+      505,
+      527
     ],
     "type": "black",
     "points": {
@@ -2782,7 +2921,8 @@
   "1253": {
     "imageName": "Raremon",
     "boosters": [
-      507
+      507,
+      528
     ],
     "type": "black",
     "points": {
@@ -2815,7 +2955,8 @@
   "1256": {
     "imageName": "Wizardmon",
     "boosters": [
-      504
+      504,
+      525
     ],
     "type": "black",
     "points": {
@@ -2826,7 +2967,8 @@
   "1257": {
     "imageName": "DarkTyrannomon",
     "boosters": [
-      502
+      502,
+      526
     ],
     "type": "black",
     "points": {
@@ -2837,7 +2979,8 @@
   "1258": {
     "imageName": "Devidramon",
     "boosters": [
-      502
+      502,
+      524
     ],
     "stores": [
       {
@@ -2855,7 +2998,8 @@
   "1259": {
     "imageName": "Vilemon",
     "boosters": [
-      507
+      507,
+      529
     ],
     "type": "black",
     "points": {
@@ -2866,7 +3010,8 @@
   "1260": {
     "imageName": "Hyogamon",
     "boosters": [
-      507
+      507,
+      528
     ],
     "type": "black",
     "points": {
@@ -2878,7 +3023,8 @@
     "imageName": "Darkrizamon",
     "boosters": [
       502,
-      507
+      507,
+      527
     ],
     "type": "black",
     "points": {
@@ -2934,7 +3080,9 @@
   "1265": {
     "imageName": "Bakemon",
     "boosters": [
-      507
+      507,
+      522,
+      525
     ],
     "type": "black",
     "points": {
@@ -2945,7 +3093,8 @@
   "1266": {
     "imageName": "Roachmon",
     "boosters": [
-      504
+      504,
+      525
     ],
     "type": "black",
     "points": {
@@ -2956,7 +3105,8 @@
   "1267": {
     "imageName": "DemiDevimon",
     "boosters": [
-      501
+      501,
+      522
     ],
     "type": "black",
     "points": {
@@ -2979,7 +3129,8 @@
   "1269": {
     "imageName": "Aruraumon",
     "boosters": [
-      502
+      502,
+      522
     ],
     "type": "black",
     "points": {
@@ -2990,7 +3141,8 @@
   "1270": {
     "imageName": "Tsukaimon",
     "boosters": [
-      502
+      502,
+      521
     ],
     "type": "black",
     "points": {
@@ -3001,7 +3153,8 @@
   "1271": {
     "imageName": "ModokiBetamon",
     "boosters": [
-      503
+      503,
+      521
     ],
     "type": "black",
     "points": {
@@ -3012,7 +3165,8 @@
   "1272": {
     "imageName": "Tapirmon",
     "boosters": [
-      504
+      504,
+      522
     ],
     "type": "black",
     "points": {
@@ -3023,7 +3177,8 @@
   "1273": {
     "imageName": "Candlemon",
     "boosters": [
-      501
+      501,
+      522
     ],
     "type": "black",
     "points": {
@@ -3034,7 +3189,8 @@
   "1274": {
     "imageName": "Muchomon",
     "boosters": [
-      501
+      501,
+      521
     ],
     "type": "black",
     "points": {
@@ -3247,7 +3403,8 @@
   "1292": {
     "imageName": "Garbagemon",
     "boosters": [
-      506
+      506,
+      529
     ],
     "type": "brown",
     "points": {
@@ -3258,7 +3415,8 @@
   "1293": {
     "imageName": "Meteormon",
     "boosters": [
-      506
+      506,
+      529
     ],
     "type": "brown",
     "points": {
@@ -3269,7 +3427,9 @@
   "1294": {
     "imageName": "Cyclonemon",
     "boosters": [
-      506
+      506,
+      523,
+      528
     ],
     "type": "brown",
     "points": {
@@ -3304,7 +3464,8 @@
   "1297": {
     "imageName": "Guardromon",
     "boosters": [
-      504
+      504,
+      527
     ],
     "type": "brown",
     "points": {
@@ -3339,7 +3500,8 @@
   "1300": {
     "imageName": "MudFrigimon",
     "boosters": [
-      509
+      509,
+      529
     ],
     "type": "brown",
     "points": {
@@ -3350,7 +3512,8 @@
   "1301": {
     "imageName": "PlatinumSukamon",
     "boosters": [
-      509
+      509,
+      528
     ],
     "type": "brown",
     "points": {
@@ -3361,7 +3524,8 @@
   "1302": {
     "imageName": "BomberNanimon",
     "boosters": [
-      505
+      505,
+      527
     ],
     "type": "brown",
     "points": {
@@ -3372,7 +3536,8 @@
   "1303": {
     "imageName": "Drimogenmon",
     "boosters": [
-      506
+      506,
+      528
     ],
     "type": "brown",
     "points": {
@@ -3383,7 +3548,8 @@
   "1304": {
     "imageName": "NiseDrimogenmon",
     "boosters": [
-      507
+      507,
+      527
     ],
     "type": "brown",
     "points": {
@@ -3394,7 +3560,8 @@
   "1305": {
     "imageName": "Sukamon",
     "boosters": [
-      505
+      505,
+      526
     ],
     "type": "brown",
     "points": {
@@ -3405,7 +3572,8 @@
   "1306": {
     "imageName": "Geremon",
     "boosters": [
-      502
+      502,
+      526
     ],
     "type": "brown",
     "points": {
@@ -3416,7 +3584,8 @@
   "1307": {
     "imageName": "Kokatorimon",
     "boosters": [
-      507
+      507,
+      525
     ],
     "type": "brown",
     "points": {
@@ -3427,7 +3596,8 @@
   "1308": {
     "imageName": "Numemon",
     "boosters": [
-      505
+      505,
+      525
     ],
     "type": "brown",
     "points": {
@@ -3438,7 +3608,8 @@
   "1309": {
     "imageName": "ShellNumemon",
     "boosters": [
-      505
+      505,
+      525
     ],
     "type": "brown",
     "points": {
@@ -3449,7 +3620,8 @@
   "1310": {
     "imageName": "ClearAgumon",
     "boosters": [
-      501
+      501,
+      521
     ],
     "type": "brown",
     "points": {
@@ -3460,7 +3632,8 @@
   "1311": {
     "imageName": "ToyAgumon",
     "boosters": [
-      501
+      501,
+      521
     ],
     "type": "brown",
     "points": {
@@ -3472,7 +3645,8 @@
     "imageName": "Gotsumon",
     "boosters": [
       503,
-      514
+      514,
+      522
     ],
     "type": "brown",
     "points": {
@@ -3483,7 +3657,8 @@
   "1313": {
     "imageName": "Hagurumon",
     "boosters": [
-      502
+      502,
+      522
     ],
     "type": "brown",
     "points": {
