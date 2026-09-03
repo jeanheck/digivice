@@ -10,6 +10,7 @@ export { QuestRepository } from "./quest.repository";
 export { LocationRepository } from "./location.repository";
 export { LocationNpcRepository } from "./location-npc.repository";
 export { LocationTamerRepository } from "./location-tamer.repository";
+export { LocationStoreRepository } from "./location-store.repository";
 export { LocationBossRepository } from "./location-boss.repository";
 export { LocationDuelIslandRepository } from "./location-duel-island.repository";
 export { SeabedDockRepository } from "./seabed-dock.repository";

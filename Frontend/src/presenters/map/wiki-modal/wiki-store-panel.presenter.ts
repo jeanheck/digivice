@@ -1,9 +1,9 @@
 import { WikiStoreCardConverter } from "@/presenters/converter/wiki-store-card.converter";
-import { MainQuestRangeHelper } from "@/presenters/helper/main-quest-range.helper";
 import type { Quest } from "@/models";
 import { CardRepository } from "@/repositories/card.repository";
 import { StoreRepository } from "@/repositories/store.repository";
 import type { StoreInventoryItemRaw, StorePhaseRaw } from "@/repositories/tables/raws/tcg/store.raw";
+import { NpcService } from "@/services/npc.service";
 import { QuestService } from "@/services/quest.service";
 import type { WikiStoreCardViewModel } from "@/viewmodels/wiki-modal/wiki-store-card.viewmodel";
 import type { WikiStorePanelViewModel } from "@/viewmodels/wiki-modal/wiki-store-panel.viewmodel";
@@ -34,10 +34,9 @@ export class WikiStorePanelPresenter {
     const inventory: StoreInventoryItemRaw[] = [];
 
     for (const phase of phases) {
-      const isInRange = MainQuestRangeHelper.isInMainQuestRange(
-        phase.startWhenLastMainQuestStepDone,
-        phase.finishWhenLastMainQuestStepDone,
+      const isInRange = NpcService.isVisibleOnMapByMainQuestStep(
         lastCompletedMainQuestStep,
+        phase.mainQuestStepDone,
       );
       if (!isInRange) {
         continue;

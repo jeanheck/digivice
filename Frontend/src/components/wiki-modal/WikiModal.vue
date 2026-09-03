@@ -397,6 +397,7 @@ const enemyImageUrl = computed(() => {
       :location-id="selectedLocationId"
       @open-enemy="openEnemyFromDropSource"
       @open-npc="openNpcView"
+      @open-store="openStoresView"
     />
     <WikiNpcPanel
       v-else-if="view === 'npc' && selectedNpcId !== null"

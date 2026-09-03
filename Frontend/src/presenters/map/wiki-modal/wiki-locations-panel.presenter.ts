@@ -7,10 +7,13 @@ import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { LocationBossRepository } from "@/repositories/location-boss.repository";
 import { LocationRepository } from "@/repositories/location.repository";
+import { LocationStoreRepository } from "@/repositories/location-store.repository";
+import { StoreRepository } from "@/repositories/store.repository";
 import type { LocationBossRaw } from "@/repositories/tables/raws/location/location-boss.raw";
 import type { LocationDuelIslandRaw } from "@/repositories/tables/raws/location/location-duel-island.raw";
 import type { LocationMapLabelPlacementRaw } from "@/repositories/tables/raws/location/location-map-label-placement.raw";
 import type { LocationNpcRaw } from "@/repositories/tables/raws/location/location-npc.raw";
+import type { LocationStoreRaw } from "@/repositories/tables/raws/location/location-store.raw";
 import type { LocationTamerRaw } from "@/repositories/tables/raws/location/location-tamer.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 import { NpcService } from "@/services/npc.service";
@@ -120,6 +123,13 @@ export class WikiLocationsPanelPresenter {
       }
     }
 
+    for (const locationStore of LocationStoreRepository.getByLocationId(locationId)) {
+      const marker = WikiLocationsPanelPresenter.toStoreMapMarker(locationStore);
+      if (marker !== null) {
+        markers.push(marker);
+      }
+    }
+
     return markers.sort((first, second) => {
       return first.id.localeCompare(second.id);
     });
@@ -159,6 +169,26 @@ export class WikiLocationsPanelPresenter {
       kind: "boss",
       name: enemyRaw.name,
       imageUrl: ImageCatalog.getBossImageUrl(enemyRaw.name),
+      coordinates: WikiLocationsPanelPresenter.toCoordinates(entry.coordinates)!,
+      labelPlacement: WikiLocationsPanelPresenter.toLabelPlacement(entry.labelPlacement),
+    };
+  }
+
+  private static toStoreMapMarker(entry: LocationStoreRaw): WikiLocationMapMarkerViewModel | null {
+    if (entry.coordinates === undefined) {
+      return null;
+    }
+
+    const storeRaw = StoreRepository.getStoreById(entry.id);
+    if (storeRaw === undefined) {
+      return null;
+    }
+
+    return {
+      id: entry.id,
+      kind: "store",
+      nameKey: `stores.${entry.id}.name`,
+      imageUrl: ImageCatalog.getStoreImageUrl(storeRaw.imageName),
       coordinates: WikiLocationsPanelPresenter.toCoordinates(entry.coordinates)!,
       labelPlacement: WikiLocationsPanelPresenter.toLabelPlacement(entry.labelPlacement),
     };

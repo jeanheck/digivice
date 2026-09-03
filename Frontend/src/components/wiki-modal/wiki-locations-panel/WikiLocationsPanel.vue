@@ -16,6 +16,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "open-enemy", enemyId: string): void;
   (e: "open-npc", npcId: string): void;
+  (e: "open-store", storeId: string): void;
 }>();
 
 const store = useGameStore();
@@ -137,6 +138,10 @@ const handleOpenEnemy = (enemyId: string): void => {
 const handleOpenNpc = (npcId: string): void => {
   emit("open-npc", npcId);
 };
+
+const handleOpenStore = (storeId: string): void => {
+  emit("open-store", storeId);
+};
 </script>
 
 <template>
@@ -177,6 +182,7 @@ const handleOpenNpc = (npcId: string): void => {
           :markers="locationsViewModel.mapMarkers"
           @open-enemy="handleOpenEnemy"
           @open-npc="handleOpenNpc"
+          @open-store="handleOpenStore"
         />
       </div>
       <div

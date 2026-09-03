@@ -2,7 +2,7 @@ import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmo
 
 export type WikiLocationMapLabelPlacementViewModel = "above" | "below" | "left" | "right";
 
-export type WikiLocationMapMarkerKindViewModel = "npc" | "boss";
+export type WikiLocationMapMarkerKindViewModel = "npc" | "boss" | "store";
 
 export interface WikiLocationMapMarkerViewModel {
   id: string;

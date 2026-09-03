@@ -60,6 +60,11 @@ const BOSS_ASSET_CONFIG = {
   extension: "png",
 } as const;
 
+const STORE_ASSET_CONFIG = {
+  pathSuffix: "/stores/",
+  extension: "png",
+} as const;
+
 const mapModules = import.meta.glob<string>("@/assets/maps/*.webp", {
   eager: true,
   as: "url",
@@ -111,6 +116,11 @@ const duelIslandModules = import.meta.glob<string>("@/assets/duel-island/*.png",
 });
 
 const bossModules = import.meta.glob<string>("@/assets/bosses/*.png", {
+  eager: true,
+  as: "url",
+});
+
+const storeModules = import.meta.glob<string>("@/assets/stores/*.png", {
   eager: true,
   as: "url",
 });
@@ -281,6 +291,15 @@ export class ImageCatalog {
       bossModules,
       BOSS_ASSET_CONFIG.pathSuffix,
       BOSS_ASSET_CONFIG.extension,
+      imageName,
+    );
+  }
+
+  public static getStoreImageUrl(imageName: string | null | undefined): string | null {
+    return resolveAssetUrlWithNameVariants(
+      storeModules,
+      STORE_ASSET_CONFIG.pathSuffix,
+      STORE_ASSET_CONFIG.extension,
       imageName,
     );
   }

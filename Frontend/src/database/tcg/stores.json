@@ -4,8 +4,10 @@
     "imageName": "Divermon",
     "phases": [
       {
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "26",
+        "mainQuestStepDone": {
+          "min": 0,
+          "max": 27
+        },
         "inventory": [
           {
             "cardId": "1064",
@@ -34,8 +36,9 @@
         ]
       },
       {
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999",
+        "mainQuestStepDone": {
+          "min": 27
+        },
         "inventory": [
           {
             "cardId": "1009",
@@ -70,8 +73,9 @@
     "imageName": "Divermon",
     "phases": [
       {
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999",
+        "mainQuestStepDone": {
+          "min": 0
+        },
         "inventory": [
           {
             "cardId": "1095",
@@ -106,8 +110,9 @@
     "imageName": "Divermon",
     "phases": [
       {
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999",
+        "mainQuestStepDone": {
+          "min": 0
+        },
         "inventory": [
           {
             "cardId": "1095",
