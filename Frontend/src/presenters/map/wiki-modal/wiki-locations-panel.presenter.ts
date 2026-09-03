@@ -17,7 +17,6 @@ import type { LocationStoreRaw } from "@/repositories/tables/raws/location/locat
 import type { LocationTamerRaw } from "@/repositories/tables/raws/location/location-tamer.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 import { NpcService } from "@/services/npc.service";
-import { LocationService } from "@/services/location.service";
 import { QuestService } from "@/services/quest.service";
 import type { EnemyLocationSourceViewModel } from "@/viewmodels/enemy/enemy-location-source.viewmodel";
 import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
@@ -224,19 +223,6 @@ export class WikiLocationsPanelPresenter {
       kickingTree: LocationEncounterHelper.resolveKickingTreeIds(locationId, sideQuests),
     };
 
-    const bossIds = LocationService.getBoss(locationId);
-    const bossLine: WikiLocationEncounterLineViewModel[] =
-      bossIds.length === 0
-        ? []
-        : [
-            {
-              source: "boss",
-              enemies: bossIds.map((enemyId) => {
-                return WikiLocationsPanelPresenter.toEncounterEnemy(enemyId);
-              }),
-            },
-          ];
-
     const encounterLines = encounterSources.flatMap((source) => {
       const enemyIds = enemyIdsBySource[source];
       if (enemyIds.length === 0) {
@@ -253,7 +239,7 @@ export class WikiLocationsPanelPresenter {
       ];
     });
 
-    return [...bossLine, ...encounterLines];
+    return encounterLines;
   }
 
   private static toEncounterEnemy(enemyId: string): WikiLocationEncounterEnemyViewModel {
