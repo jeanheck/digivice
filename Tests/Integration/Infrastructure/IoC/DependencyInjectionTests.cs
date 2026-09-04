@@ -12,17 +12,12 @@ using Backend.Infrastructure;
 using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
-using Backend.Memory.Readers;
-using Backend.Memory.Readers.Battles;
-using Backend.Memory.Readers.Journals;
-using Backend.Memory.Readers.Journals.Quests;
-using Backend.Memory.Readers.Parties;
-using Backend.Memory.Readers.Parties.Digimons;
 using Backend.Memory.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Xunit;
+using Backend.Memory.Readers.Interfaces;
 
 public class DependencyInjectionTests
 {

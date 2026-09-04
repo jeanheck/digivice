@@ -8,6 +8,7 @@ using Backend.Memory.Readers.Helpers;
 using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
+using Backend.Memory.Readers.Interfaces;
 
 public class FlagByteHelperTests
 {

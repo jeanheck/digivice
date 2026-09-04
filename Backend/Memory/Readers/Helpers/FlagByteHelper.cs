@@ -1,3 +1,5 @@
+using Backend.Memory.Readers.Interfaces;
+
 namespace Backend.Memory.Readers.Helpers;
 
 public static class FlagByteHelper

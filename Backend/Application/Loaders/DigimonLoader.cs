@@ -1,7 +1,7 @@
 using Backend.Application.Loaders.Interfaces;
-using Backend.Memory.Readers.Parties.Digimons;
 using Backend.Memory.Repositories;
 using Backend.Memory.Resources.Parties;
+using Backend.Memory.Readers.Interfaces;
 
 namespace Backend.Application.Loaders
 {

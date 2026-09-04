@@ -2,9 +2,9 @@ namespace Tests.Integration.Application.Loaders;
 
 using Backend.Application.Loaders;
 using Backend.Memory.Readers;
-using Backend.Memory.Readers.Battles;
 using Moq;
 using Xunit;
+using Backend.Memory.Readers.Interfaces;
 
 public class DigimonBattleLoaderTests : LoaderIntegrationTestBase
 {

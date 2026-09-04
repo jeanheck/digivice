@@ -1,5 +1,6 @@
 using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
+using Backend.Memory.Readers.Interfaces;
 
 namespace Backend.Memory.Readers
 {

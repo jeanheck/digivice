@@ -4,6 +4,7 @@ using Xunit;
 using Moq;
 using Backend.Memory.Readers;
 using Backend.Memory.Addresses;
+using Backend.Memory.Readers.Interfaces;
 
 public class ImportantItemsReaderTests
 {

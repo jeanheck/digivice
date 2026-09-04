@@ -1,5 +1,6 @@
 using Backend.Memory.Addresses;
 using Backend.Memory.Resources;
+using Backend.Memory.Readers.Interfaces;
 
 namespace Backend.Memory.Readers
 {

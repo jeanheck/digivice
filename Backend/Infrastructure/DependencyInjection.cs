@@ -10,12 +10,8 @@ using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Memory.Readers;
-using Backend.Memory.Readers.Battles;
-using Backend.Memory.Readers.Journals;
-using Backend.Memory.Readers.Journals.Quests;
-using Backend.Memory.Readers.Parties;
-using Backend.Memory.Readers.Parties.Digimons;
 using Backend.Memory.Repositories;
+using Backend.Memory.Readers.Interfaces;
 
 namespace Backend.Infrastructure
 {

@@ -5,8 +5,7 @@ using Xunit;
 using Moq;
 using Backend.Application.Loaders;
 using Backend.Memory.Readers;
-using Backend.Memory.Readers.Parties;
-using Backend.Memory.Readers.Parties.Digimons;
+using Backend.Memory.Readers.Interfaces;
 
 public class PartyLoaderTests : LoaderIntegrationTestBase
 {

@@ -1,7 +1,7 @@
 using Backend.Application.Loaders.Interfaces;
 using Backend.Memory.Repositories;
-using Backend.Memory.Readers.Journals;
 using Backend.Memory.Resources.Journals;
+using Backend.Memory.Readers.Interfaces;
 
 namespace Backend.Application.Loaders
 {

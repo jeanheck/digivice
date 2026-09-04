@@ -5,6 +5,7 @@ using Backend.Memory;
 using Backend.Memory.Readers;
 using Moq;
 using Xunit;
+using Backend.Memory.Readers.Interfaces;
 
 public class PlayerLoaderTests : LoaderIntegrationTestBase
 {
