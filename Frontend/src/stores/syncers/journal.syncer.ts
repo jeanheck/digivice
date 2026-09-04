@@ -1,6 +1,5 @@
 import type { Journal } from "../../models";
 import type * as Events from "../../events/events.map";
-import { NpcSyncer } from "./journals/npc.syncer";
 import { QuestSyncer } from "./journals/quest.syncer";
 
 export class JournalSyncer {
@@ -53,18 +52,6 @@ export class JournalSyncer {
 
         if (previousDuelIslandQuest) {
           QuestSyncer.sync(previousDuelIslandQuest, newDuelIslandQuestDto);
-        }
-      });
-    }
-
-    if (newJournalDto.npcs && newJournalDto.npcs.length > 0) {
-      newJournalDto.npcs.forEach((newNpcDto) => {
-        const previousNpc = previousJournal.npcs.find((npc) => {
-          return npc.id === newNpcDto.id;
-        });
-
-        if (previousNpc) {
-          NpcSyncer.sync(previousNpc, newNpcDto);
         }
       });
     }

@@ -17,6 +17,7 @@ public class StateConverterTests
             DigimonBattle = new DigimonBattle(),
             CardBattle = new CardBattle { OpponentId = 0 },
             Auctions = new Auctions { DivineBarrier = true },
+            Npcs = new Npcs(),
             Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] }
         };
 
@@ -48,6 +49,9 @@ public class StateConverterTests
         Assert.True(dto.Auctions.DivineBarrier.HasValue);
         Assert.True(dto.Auctions.DivineBarrier.Value);
 
+        Assert.NotNull(dto.Npcs);
+        Assert.True(dto.Npcs.Genji.HasValue);
+
         Assert.NotNull(dto.Journal);
         Assert.True(dto.Journal.MainQuest.HasValue);
         Assert.Equal("MainQuest", dto.Journal.MainQuest.Value!.Id);
@@ -64,6 +68,7 @@ public class StateConverterTests
             DigimonBattle = null!,
             CardBattle = null!,
             Auctions = null!,
+            Npcs = null!,
             Journal = null!
         };
 
@@ -75,6 +80,7 @@ public class StateConverterTests
         Assert.Null(dto.DigimonBattle);
         Assert.Null(dto.CardBattle);
         Assert.Null(dto.Auctions);
+        Assert.Null(dto.Npcs);
         Assert.Null(dto.Journal);
     }
 }

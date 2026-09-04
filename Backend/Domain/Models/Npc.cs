@@ -1,11 +1,8 @@
-using Backend.Domain.Models.Npcs;
-
 namespace Backend.Domain.Models
 {
     public record class Npc
     {
-        public string Id { get; set; } = string.Empty;
-        public List<NpcBattle> DigimonBattles { get; set; } = [];
+        public List<NpcBattle> Battles { get; set; } = [];
 
         public virtual bool Equals(Npc? other)
         {
@@ -14,22 +11,21 @@ namespace Backend.Domain.Models
                 return false;
             }
 
-            bool digimonBattlesEqual = (DigimonBattles == null && other.DigimonBattles == null) ||
-                (DigimonBattles != null && other.DigimonBattles != null &&
-                 DigimonBattles.SequenceEqual(other.DigimonBattles));
+            bool battlesEqual = (Battles == null && other.Battles == null) ||
+                (Battles != null && other.Battles != null &&
+                 Battles.SequenceEqual(other.Battles));
 
-            return Id == other.Id && digimonBattlesEqual;
+            return battlesEqual;
         }
 
         public override int GetHashCode()
         {
             var hash = new HashCode();
-            hash.Add(Id);
-            if (DigimonBattles != null)
+            if (Battles != null)
             {
-                foreach (var digimonBattle in DigimonBattles)
+                foreach (var battle in Battles)
                 {
-                    hash.Add(digimonBattle);
+                    hash.Add(battle);
                 }
             }
             return hash.ToHashCode();

@@ -1,4 +1,3 @@
-import type { Npc } from "./npc";
 import type { Quest } from "./quest";
 
 export interface Journal {
@@ -7,5 +6,4 @@ export interface Journal {
   legendaryWeapons: Quest[];
   driAgents: Quest[];
   duelIsland: Quest[];
-  npcs: Npc[];
 }

@@ -8,6 +8,7 @@ namespace Backend.Domain.Models
         public DigimonBattle DigimonBattle { get; set; } = new();
         public CardBattle CardBattle { get; set; } = new();
         public Auctions Auctions { get; set; } = new();
+        public Npcs Npcs { get; set; } = new();
         public Journal Journal { get; set; } = new();
     }
 }

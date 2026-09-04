@@ -7,6 +7,7 @@ export type { DigimonBattleDTO } from "./dto/digimon-battle.dto";
 export type { CardBattleDTO } from "./dto/card-battle.dto";
 export type { EnemyDTO } from "./dto/battles/enemy.dto";
 export type { AuctionsDTO } from "./dto/auctions.dto";
+export type { NpcsDTO } from "./dto/npcs.dto";
 export type { JournalDTO } from "./dto/journal.dto";
 export type { StateDTO } from "./dto/state.dto";
 
@@ -35,6 +36,7 @@ import type { PartyDTO } from "./dto/party.dto";
 import type { DigimonBattleDTO } from "./dto/digimon-battle.dto";
 import type { CardBattleDTO } from "./dto/card-battle.dto";
 import type { AuctionsDTO } from "./dto/auctions.dto";
+import type { NpcsDTO } from "./dto/npcs.dto";
 import type { JournalDTO } from "./dto/journal.dto";
 
 // Mapeamento Estrito dos Eventos do SignalR e do Cliente
@@ -47,6 +49,7 @@ export interface EventsMap {
   DigimonBattleChanged: DigimonBattleDTO;
   CardBattleChanged: CardBattleDTO;
   AuctionsChanged: AuctionsDTO;
+  NpcsChanged: NpcsDTO;
   JournalChanged: JournalDTO;
   HubConnectionStatusChanged: {
     isConnected: boolean;

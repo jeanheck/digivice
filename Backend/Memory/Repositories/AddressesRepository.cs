@@ -21,7 +21,7 @@ namespace Backend.Memory.Repositories
         private List<QuestAddresses>? driAgentAddresses;
         private List<QuestAddresses>? duelIslandAddresses;
         private AuctionsAddresses? auctionsAddresses;
-        private Dictionary<string, NpcAddresses>? npcAddresses;
+        private NpcsAddresses? npcsAddresses;
         private CardBattleAddresses? cardBattleAddresses;
 
         private T LoadAndCache<T>(ref T? cacheField, string fileName) where T : class, new()
@@ -116,8 +116,8 @@ namespace Backend.Memory.Repositories
         public AuctionsAddresses GetAuctionsAddresses() =>
             LoadAndCache(ref auctionsAddresses, "AuctionAddresses.json");
 
-        public Dictionary<string, NpcAddresses> GetNpcAddresses() =>
-            LoadAndCache(ref npcAddresses, "NpcAddresses.json");
+        public NpcsAddresses GetNpcsAddresses() =>
+            LoadAndCache(ref npcsAddresses, "NpcAddresses.json");
 
         public CardBattleAddresses GetCardBattleAddresses() =>
             LoadAndCache(ref cardBattleAddresses, "CardBattleAddresses.json");

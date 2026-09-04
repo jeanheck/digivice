@@ -1,9 +1,9 @@
-using Backend.Domain.Models.Npcs;
+using Backend.Domain.Models;
 using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.DTO.Npcs;
 
-namespace Backend.Events.Diffing.Npcs;
+namespace Backend.Events.Diffing;
 
 public static class NpcBattleDiffer
 {
@@ -16,7 +16,7 @@ public static class NpcBattleDiffer
 
         if (previousBattle == null)
         {
-            return NpcConverter.ToBattleDTO(newBattle);
+            return NpcsConverter.ToBattleDTO(newBattle);
         }
 
         if (previousBattle.Value == newBattle.Value)

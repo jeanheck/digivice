@@ -30,11 +30,12 @@ const store = useGameStore();
 const { t } = useI18n();
 
 const journalNpc = computed(() => {
-  return (
-    store.currentState?.journal?.npcs.find((npc) => {
-      return npc.id === props.npcId;
-    }) ?? null
-  );
+  const npcs = store.currentState?.npcs;
+  if (npcs === null || npcs === undefined) {
+    return null;
+  }
+
+  return npcs[props.npcId as keyof typeof npcs] ?? null;
 });
 
 const partyCharisma = computed(() => {

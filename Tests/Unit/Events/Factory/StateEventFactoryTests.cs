@@ -28,6 +28,7 @@ public class StateEventFactoryTests
         Assert.NotNull(dto.DigimonBattle);
         Assert.NotNull(dto.CardBattle);
         Assert.NotNull(dto.Auctions);
+        Assert.NotNull(dto.Npcs);
         Assert.NotNull(dto.Journal);
     }
 
@@ -127,6 +128,20 @@ public class StateEventFactoryTests
     }
 
     [Fact]
+    public void Create_ShouldReturnNpcsChangedEvent_WhenOnlyNpcsChange()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.Npcs.Genji.Battles = [new NpcBattle { Id = "first", Value = 0x20 }];
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.NpcsChanged, ev.Type);
+        Assert.IsType<NpcsDTO>(ev.Payload);
+    }
+
+    [Fact]
     public void Create_ShouldReturnAuctionsChangedEvent_WhenOnlyAuctionsChange()
     {
         var previousState = CreateBaseState();
@@ -151,18 +166,20 @@ public class StateEventFactoryTests
         newState.DigimonBattle.Enemy.Speed = 84;
         newState.CardBattle.OpponentId = 11;
         newState.Auctions.DivineBarrier = true;
+        newState.Npcs.Genji.Battles = [new NpcBattle { Id = "first", Value = 0x20 }];
         newState.Journal.MainQuest.Steps[0].Value = 1;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
-        Assert.Equal(7, result.Count);
+        Assert.Equal(8, result.Count);
         Assert.Equal(EventType.PlayerChanged, result[0].Type);
         Assert.Equal(EventType.ImportantItemsChanged, result[1].Type);
         Assert.Equal(EventType.PartyChanged, result[2].Type);
         Assert.Equal(EventType.DigimonBattleChanged, result[3].Type);
         Assert.Equal(EventType.CardBattleChanged, result[4].Type);
         Assert.Equal(EventType.AuctionsChanged, result[5].Type);
-        Assert.Equal(EventType.JournalChanged, result[6].Type);
+        Assert.Equal(EventType.NpcsChanged, result[6].Type);
+        Assert.Equal(EventType.JournalChanged, result[7].Type);
     }
 
     private static State CreateBaseState()
@@ -195,6 +212,7 @@ public class StateEventFactoryTests
             DigimonBattle = new DigimonBattle(),
             CardBattle = new CardBattle(),
             Auctions = new Auctions(),
+            Npcs = new Npcs(),
             Journal = new Journal
             {
                 MainQuest = new Quest

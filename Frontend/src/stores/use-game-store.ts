@@ -9,6 +9,7 @@ import { PartyConverter } from "../events/converters/party.converter";
 import { DigimonBattleConverter } from "../events/converters/digimon-battle.converter";
 import { CardBattleConverter } from "../events/converters/card-battle.converter";
 import { AuctionsConverter } from "../events/converters/auctions.converter";
+import { NpcsConverter } from "../events/converters/npcs.converter";
 import { JournalConverter } from "../events/converters/journal.converter";
 import { PlayerSyncer } from "./syncers/player.syncer";
 import { ImportantItemsSyncer } from "./syncers/important-items.syncer";
@@ -17,6 +18,7 @@ import { PartySyncer } from "./syncers/party.syncer";
 import { DigimonBattleSyncer } from "./syncers/digimon-battle.syncer";
 import { CardBattleSyncer } from "./syncers/card-battle.syncer";
 import { AuctionsSyncer } from "./syncers/auctions.syncer";
+import { NpcsSyncer } from "./syncers/npcs.syncer";
 
 export const useGameStore = defineStore("game", () => {
   const isConnectedWithBackend = ref(false);
@@ -90,6 +92,7 @@ export const useGameStore = defineStore("game", () => {
       digimonBattle: state.digimonBattle ? DigimonBattleConverter.convert(state.digimonBattle) : null,
       cardBattle: state.cardBattle ? CardBattleConverter.convert(state.cardBattle) : null,
       auctions: state.auctions ? AuctionsConverter.convert(state.auctions) : null,
+      npcs: state.npcs ? NpcsConverter.convert(state.npcs) : null,
       journal: state.journal ? JournalConverter.convert(state.journal) : null,
     };
   }
@@ -157,6 +160,15 @@ export const useGameStore = defineStore("game", () => {
     AuctionsSyncer.sync(previousAuctions, newAuctionsDto);
   }
 
+  function syncNpcs(newNpcsDto: Events.NpcsDTO | null): void {
+    const previousNpcs = currentState.value?.npcs;
+    if (!previousNpcs || !newNpcsDto) {
+      return;
+    }
+
+    NpcsSyncer.sync(previousNpcs, newNpcsDto);
+  }
+
   return {
     isConnected,
     isConnectedWithBackend,
@@ -176,6 +188,7 @@ export const useGameStore = defineStore("game", () => {
     syncDigimonBattle,
     syncCardBattle,
     syncAuctions,
+    syncNpcs,
     syncJournal,
   };
 });

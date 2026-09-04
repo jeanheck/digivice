@@ -45,6 +45,10 @@ export function initializeSignalRHandlers(): void {
     store.syncAuctions(data);
   });
 
+  signalRService.on("NpcsChanged", (data) => {
+    store.syncNpcs(data);
+  });
+
   signalRService.on("JournalChanged", (data) => {
     store.syncJournal(data);
   });

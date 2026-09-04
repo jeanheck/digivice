@@ -15,7 +15,6 @@ namespace Backend.Domain.Assemblers
             List<Quest> legendaryWeapons = [.. resource.LegendaryWeapons.Select(QuestAssembler.Assemble)];
             List<Quest> driAgents = [.. resource.DriAgents.Select(QuestAssembler.Assemble)];
             List<Quest> duelIsland = [.. resource.DuelIsland.Select(QuestAssembler.Assemble)];
-            List<Npc> npcs = NpcAssembler.Assemble(resource.Npcs);
 
             NormalizeMainQuestProgression(mainQuest);
             foreach (Quest duelIslandQuest in duelIsland)
@@ -30,7 +29,6 @@ namespace Backend.Domain.Assemblers
                 LegendaryWeapons = legendaryWeapons,
                 DriAgents = driAgents,
                 DuelIsland = duelIsland,
-                Npcs = npcs,
             };
         }
 

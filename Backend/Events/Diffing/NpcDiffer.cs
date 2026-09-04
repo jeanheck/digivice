@@ -1,7 +1,6 @@
 using Backend.Domain.Models;
 using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
-using Backend.Events.Diffing.Npcs;
 using Backend.Events.DTO.Npcs;
 
 namespace Backend.Events.Diffing;
@@ -17,29 +16,28 @@ public static class NpcDiffer
 
         if (previousNpc == null)
         {
-            return NpcConverter.ToDTO(newNpc);
+            return NpcsConverter.ToNpcDTO(newNpc);
         }
 
-        List<NpcBattleDTO> digimonBattlesDelta = [];
-        foreach (var newBattle in newNpc.DigimonBattles)
+        List<NpcBattleDTO> battlesDelta = [];
+        foreach (var newBattle in newNpc.Battles)
         {
-            var previousBattle = previousNpc.DigimonBattles.FirstOrDefault(battle => battle.Id == newBattle.Id);
+            var previousBattle = previousNpc.Battles.FirstOrDefault(battle => battle.Id == newBattle.Id);
             var battleDelta = NpcBattleDiffer.Diff(previousBattle, newBattle);
             if (battleDelta != null)
             {
-                digimonBattlesDelta.Add(battleDelta);
+                battlesDelta.Add(battleDelta);
             }
         }
 
-        if (digimonBattlesDelta.Count == 0)
+        if (battlesDelta.Count == 0)
         {
             return null;
         }
 
         return new NpcDTO
         {
-            Id = newNpc.Id,
-            DigimonBattles = digimonBattlesDelta,
+            Battles = battlesDelta,
         };
     }
 }

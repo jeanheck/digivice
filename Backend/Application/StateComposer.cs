@@ -10,6 +10,7 @@ namespace Backend.Application
         IDigimonBattleProvider digimonBattleProvider,
         ICardBattleProvider cardBattleProvider,
         IAuctionsProvider auctionsProvider,
+        INpcsProvider npcsProvider,
         IJournalProvider journalProvider)
     {
         public State Compose()
@@ -22,6 +23,7 @@ namespace Backend.Application
                 DigimonBattle = digimonBattleProvider.Get(),
                 CardBattle = cardBattleProvider.Get(),
                 Auctions = auctionsProvider.Get(),
+                Npcs = npcsProvider.Get(),
                 Journal = journalProvider.Get(),
             };
         }

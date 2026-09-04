@@ -10,5 +10,6 @@ public record StateDTO : IDTO
     public DigimonBattleDTO? DigimonBattle { get; init; }
     public CardBattleDTO? CardBattle { get; init; }
     public AuctionsDTO? Auctions { get; init; }
+    public NpcsDTO? Npcs { get; init; }
     public JournalDTO? Journal { get; init; }
 }

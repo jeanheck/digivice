@@ -2,8 +2,8 @@ using Backend.Memory.Resources;
 
 namespace Backend.Application.Loaders
 {
-    public interface INpcLoader
+    public interface INpcsLoader
     {
-        List<NpcResource> LoadNpcs();
+        NpcsResource Load();
     }
 }

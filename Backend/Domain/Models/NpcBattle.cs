@@ -1,4 +1,4 @@
-namespace Backend.Domain.Models.Npcs
+namespace Backend.Domain.Models
 {
     public record class NpcBattle
     {

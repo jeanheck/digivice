@@ -21,7 +21,7 @@ namespace Backend.Memory.Repositories
         List<QuestAddresses> GetAllDriAgents();
         List<QuestAddresses> GetAllDuelIsland();
         AuctionsAddresses GetAuctionsAddresses();
-        Dictionary<string, NpcAddresses> GetNpcAddresses();
+        NpcsAddresses GetNpcsAddresses();
         CardBattleAddresses GetCardBattleAddresses();
     }
 }

@@ -3,8 +3,8 @@ using Backend.Memory.Resources;
 
 namespace Backend.Memory.Readers
 {
-    public interface INpcReader
+    public interface INpcsReader
     {
-        NpcResource Read(KeyValuePair<string, NpcAddresses> npcAddresses);
+        NpcsResource Read(NpcsAddresses addresses);
     }
 }

@@ -201,7 +201,7 @@ export class NpcService {
       return false;
     }
 
-    const battle = journalNpc.digimonBattles.find((entry) => {
+    const battle = journalNpc.battles.find((entry) => {
       return entry.id === battleId;
     });
 

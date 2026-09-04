@@ -3,6 +3,7 @@ import type { Party } from "./party/party";
 import type { DigimonBattle } from "./digimon-battle";
 import type { CardBattle } from "./card-battle";
 import type { Auctions } from "./auctions";
+import type { Npcs } from "./npcs";
 import type { Journal } from "./journal/journal";
 import type { Player } from "./player";
 
@@ -13,5 +14,6 @@ export interface State {
   digimonBattle: DigimonBattle | null;
   cardBattle: CardBattle | null;
   auctions: Auctions | null;
+  npcs: Npcs | null;
   journal: Journal | null;
 }

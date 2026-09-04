@@ -1,13 +1,12 @@
-namespace Tests.Events.Diffing.Npcs;
+namespace Tests.Events.Diffing;
 
-using Backend.Domain.Models.Npcs;
-using Backend.Events.Diffing.Npcs;
-using Xunit;
+using Backend.Domain.Models;
+using Backend.Events.Diffing;
 
 public class NpcBattleDifferTests
 {
     [Fact]
-    public void Diff_ShouldReturnNull_WhenValueIsUnchanged()
+    public void Diff_ShouldReturnNull_WhenBattlesAreEqual()
     {
         var previousBattle = new NpcBattle { Id = "first", Value = 0x10 };
         var newBattle = new NpcBattle { Id = "first", Value = 0x10 };
@@ -26,12 +25,11 @@ public class NpcBattleDifferTests
 
         Assert.NotNull(result);
         Assert.Equal("first", result.Id);
-        Assert.True(result.Value.HasValue);
         Assert.Equal(0x08, result.Value.Value);
     }
 
     [Fact]
-    public void Diff_ShouldReturnValueDelta_WhenBattleIsCompleted()
+    public void Diff_ShouldReturnValueDelta_WhenValueChanged()
     {
         var previousBattle = new NpcBattle { Id = "first", Value = 0x00 };
         var newBattle = new NpcBattle { Id = "first", Value = 0x10 };
@@ -40,7 +38,6 @@ public class NpcBattleDifferTests
 
         Assert.NotNull(result);
         Assert.Equal("first", result.Id);
-        Assert.True(result.Value.HasValue);
         Assert.Equal(0x10, result.Value.Value);
     }
 }

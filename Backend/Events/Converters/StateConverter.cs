@@ -15,6 +15,7 @@ public static class StateConverter
             DigimonBattle = state.DigimonBattle != null ? DigimonBattleConverter.ToDTO(state.DigimonBattle) : null,
             CardBattle = state.CardBattle != null ? CardBattleConverter.ToDTO(state.CardBattle) : null,
             Auctions = state.Auctions != null ? AuctionsConverter.ToDTO(state.Auctions) : null,
+            Npcs = state.Npcs != null ? NpcsConverter.ToDTO(state.Npcs) : null,
             Journal = state.Journal != null ? JournalConverter.ToDTO(state.Journal) : null,
         };
     }

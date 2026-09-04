@@ -29,6 +29,7 @@ public class GameLoopServiceTests
     private readonly Mock<IDigimonBattleProvider> _digimonBattleProviderMock;
     private readonly Mock<ICardBattleProvider> _cardBattleProviderMock;
     private readonly Mock<IAuctionsProvider> _auctionsProviderMock;
+    private readonly Mock<INpcsProvider> _npcsProviderMock;
     private readonly Mock<IJournalProvider> _journalProviderMock;
     private readonly Mock<IEventDispatcherService> _eventDispatcherServiceMock;
     private readonly GameStateStore _gameStateStore;
@@ -57,6 +58,7 @@ public class GameLoopServiceTests
         _digimonBattleProviderMock = new Mock<IDigimonBattleProvider>();
         _cardBattleProviderMock = new Mock<ICardBattleProvider>();
         _auctionsProviderMock = new Mock<IAuctionsProvider>();
+        _npcsProviderMock = new Mock<INpcsProvider>();
         _journalProviderMock = new Mock<IJournalProvider>();
         _eventDispatcherServiceMock = new Mock<IEventDispatcherService>();
         _gameStateStore = new GameStateStore();
@@ -72,6 +74,7 @@ public class GameLoopServiceTests
         _digimonBattleProviderMock.Setup(p => p.Get()).Returns(new DigimonBattle());
         _cardBattleProviderMock.Setup(p => p.Get()).Returns(new CardBattle());
         _auctionsProviderMock.Setup(p => p.Get()).Returns(new Auctions());
+        _npcsProviderMock.Setup(p => p.Get()).Returns(new Npcs());
         _journalProviderMock.Setup(p => p.Get()).Returns(journal);
 
         _stateComposer = new StateComposer(
@@ -81,6 +84,7 @@ public class GameLoopServiceTests
             _digimonBattleProviderMock.Object,
             _cardBattleProviderMock.Object,
             _auctionsProviderMock.Object,
+            _npcsProviderMock.Object,
             _journalProviderMock.Object);
 
         var inMemorySettings = new Dictionary<string, string?> {
@@ -322,6 +326,7 @@ public class GameLoopServiceTests
             _digimonBattleProviderMock.Object,
             _cardBattleProviderMock.Object,
             _auctionsProviderMock.Object,
+            _npcsProviderMock.Object,
             _journalProviderMock.Object);
 
         var service = CreateGameLoopService(stateComposer);

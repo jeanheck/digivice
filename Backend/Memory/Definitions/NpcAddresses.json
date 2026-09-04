@@ -1,6 +1,6 @@
 {
-    "genji": {
-        "DigimonBattles": {
+    "Genji": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B3DF",
                 "BitMask": "0x20"
@@ -11,176 +11,176 @@
             }
         }
     },
-    "natsumi": {
-        "DigimonBattles": {
+    "Natsumi": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39A",
                 "BitMask": "0x02"
             }
         }
     },
-    "catherine": {
-        "DigimonBattles": {
+    "Catherine": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39A",
                 "BitMask": "0x08"
             }
         }
     },
-    "lucia": {
-        "DigimonBattles": {
+    "Lucia": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39A",
                 "BitMask": "0x10"
             }
         }
     },
-    "robert": {
-        "DigimonBattles": {
+    "Robert": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39A",
                 "BitMask": "0x20"
             }
         }
     },
-    "akiba": {
-        "DigimonBattles": {
+    "Akiba": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39A",
                 "BitMask": "0x40"
             }
         }
     },
-    "chris": {
-        "DigimonBattles": {
+    "Chris": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39B",
                 "BitMask": "0x02"
             }
         }
     },
-    "tomomi": {
-        "DigimonBattles": {
+    "Tomomi": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39B",
                 "BitMask": "0x01"
             }
         }
     },
-    "mitch": {
-        "DigimonBattles": {
+    "Mitch": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39A",
                 "BitMask": "0x04"
             }
         }
     },
-    "bob": {
-        "DigimonBattles": {
+    "Bob": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39A",
                 "BitMask": "0x80"
             }
         }
     },
-    "andy": {
-        "DigimonBattles": {
+    "Andy": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39B",
                 "BitMask": "0x04"
             }
         }
     },
-    "george": {
-        "DigimonBattles": {
+    "George": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39B",
                 "BitMask": "0x08"
             }
         }
     },
-    "meiLin": {
-        "DigimonBattles": {
+    "MeiLin": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39B",
                 "BitMask": "0x10"
             }
         }
     },
-    "jessica": {
-        "DigimonBattles": {
+    "Jessica": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39B",
                 "BitMask": "0x20"
             }
         }
     },
-    "gordon": {
-        "DigimonBattles": {
+    "Gordon": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39B",
                 "BitMask": "0x40"
             }
         }
     },
-    "alice": {
-        "DigimonBattles": {
+    "Alice": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39B",
                 "BitMask": "0x80"
             }
         }
     },
-    "nakano": {
-        "DigimonBattles": {
+    "Nakano": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B39C",
                 "BitMask": "0x01"
             }
         }
     },
-    "seiryuLeader": {
-        "DigimonBattles": {
+    "SeiryuLeader": {
+        "Battles": {
             "first": {
                 "Address": "0x00048DB9",
                 "BitMask": "0x01"
             }
         }
     },
-    "keith": {
-        "DigimonBattles": {
+    "Keith": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B3E0",
                 "BitMask": "0x40"
             }
         }
     },
-    "suzakuLeader": {
-        "DigimonBattles": {
+    "SuzakuLeader": {
+        "Battles": {
             "first": {
                 "Address": "0x00048DBA",
                 "BitMask": "0x01"
             }
         }
     },
-    "fakeByakkoLeader": {
-        "DigimonBattles": {
+    "FakeByakkoLeader": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B3E1",
                 "BitMask": "0x40"
             }
         }
     },
-    "byakkoLeader": {
-        "DigimonBattles": {
+    "ByakkoLeader": {
+        "Battles": {
             "first": {
                 "Address": "0x00048DBB",
                 "BitMask": "0x01"
             }
         }
     },
-    "aoaAttacker": {
-        "DigimonBattles": {
+    "AoaAttacker": {
+        "Battles": {
             "first": {
                 "Address": "0x0004B3E5",
                 "BitMask": "0x08"
