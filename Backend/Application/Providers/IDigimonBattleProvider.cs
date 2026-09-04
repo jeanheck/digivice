@@ -2,8 +2,8 @@ using Backend.Domain.Models;
 
 namespace Backend.Application.Providers
 {
-    public interface IBattleProvider
+    public interface IDigimonBattleProvider
     {
-        Battle Get();
+        DigimonBattle Get();
     }
 }

@@ -5,11 +5,11 @@ using Backend.Memory.Resources;
 
 namespace Backend.Domain.Assemblers
 {
-    public static class BattleAssembler
+    public static class DigimonBattleAssembler
     {
-        public static Battle Assemble(BattleResource resource)
+        public static DigimonBattle Assemble(DigimonBattleResource resource)
         {
-            return new Battle
+            return new DigimonBattle
             {
                 Field = resource.Field,
                 Enemy = new Enemy

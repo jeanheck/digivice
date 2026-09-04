@@ -2,8 +2,8 @@ using Backend.Memory.Resources;
 
 namespace Backend.Application.Loaders
 {
-    public interface IBattleLoader
+    public interface IDigimonBattleLoader
     {
-        BattleResource Load();
+        DigimonBattleResource Load();
     }
 }

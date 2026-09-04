@@ -3,7 +3,7 @@ export type { PlayerDTO } from "./dto/player.dto";
 export type { ImportantItemsDTO } from "./dto/important-items.dto";
 export type { ConnectionDTO, EmulatorConnectionStatusChangedDTO } from "./dto/connection.dto";
 export type { PartyDTO } from "./dto/party.dto";
-export type { BattleDTO } from "./dto/battle.dto";
+export type { DigimonBattleDTO } from "./dto/digimon-battle.dto";
 export type { CardBattleDTO } from "./dto/card-battle.dto";
 export type { EnemyDTO } from "./dto/battles/enemy.dto";
 export type { JournalDTO } from "./dto/journal.dto";
@@ -32,7 +32,7 @@ import type { StateDTO } from "./dto/state.dto";
 import type { PlayerDTO } from "./dto/player.dto";
 import type { ImportantItemsDTO } from "./dto/important-items.dto";
 import type { PartyDTO } from "./dto/party.dto";
-import type { BattleDTO } from "./dto/battle.dto";
+import type { DigimonBattleDTO } from "./dto/digimon-battle.dto";
 import type { CardBattleDTO } from "./dto/card-battle.dto";
 import type { JournalDTO } from "./dto/journal.dto";
 
@@ -43,7 +43,7 @@ export interface EventsMap {
   PlayerChanged: PlayerDTO;
   ImportantItemsChanged: ImportantItemsDTO;
   PartyChanged: PartyDTO;
-  BattleChanged: BattleDTO;
+  DigimonBattleChanged: DigimonBattleDTO;
   CardBattleChanged: CardBattleDTO;
   JournalChanged: JournalDTO;
   HubConnectionStatusChanged: {

@@ -22,9 +22,6 @@ namespace Backend.Memory.Addresses
         public long ActiveEnemySlotIndex { get; set; }
 
         [JsonConverter(typeof(HexStringToLongConverter))]
-        public long Field { get; set; }
-
-        [JsonConverter(typeof(HexStringToLongConverter))]
         public long GroupId { get; set; }
 
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]

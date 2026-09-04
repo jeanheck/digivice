@@ -7,7 +7,7 @@ namespace Backend.Application
         IPlayerProvider playerProvider,
         IImportantItemsProvider importantItemsProvider,
         IPartyProvider partyProvider,
-        IBattleProvider battleProvider,
+        IDigimonBattleProvider digimonBattleProvider,
         ICardBattleProvider cardBattleProvider,
         IJournalProvider journalProvider)
     {
@@ -18,7 +18,7 @@ namespace Backend.Application
                 Player = playerProvider.Get(),
                 ImportantItems = importantItemsProvider.Get(),
                 Party = partyProvider.Get(),
-                Battle = battleProvider.Get(),
+                DigimonBattle = digimonBattleProvider.Get(),
                 CardBattle = cardBattleProvider.Get(),
                 Journal = journalProvider.Get(),
             };

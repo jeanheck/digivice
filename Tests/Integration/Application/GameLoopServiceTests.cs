@@ -26,7 +26,7 @@ public class GameLoopServiceTests
     private readonly Mock<IPlayerProvider> _playerProviderMock;
     private readonly Mock<IImportantItemsProvider> _importantItemsProviderMock;
     private readonly Mock<IPartyProvider> _partyProviderMock;
-    private readonly Mock<IBattleProvider> _battleProviderMock;
+    private readonly Mock<IDigimonBattleProvider> _digimonBattleProviderMock;
     private readonly Mock<ICardBattleProvider> _cardBattleProviderMock;
     private readonly Mock<IJournalProvider> _journalProviderMock;
     private readonly Mock<IEventDispatcherService> _eventDispatcherServiceMock;
@@ -53,7 +53,7 @@ public class GameLoopServiceTests
         _playerProviderMock = new Mock<IPlayerProvider>();
         _importantItemsProviderMock = new Mock<IImportantItemsProvider>();
         _partyProviderMock = new Mock<IPartyProvider>();
-        _battleProviderMock = new Mock<IBattleProvider>();
+        _digimonBattleProviderMock = new Mock<IDigimonBattleProvider>();
         _cardBattleProviderMock = new Mock<ICardBattleProvider>();
         _journalProviderMock = new Mock<IJournalProvider>();
         _eventDispatcherServiceMock = new Mock<IEventDispatcherService>();
@@ -67,7 +67,7 @@ public class GameLoopServiceTests
         _playerProviderMock.Setup(p => p.Get()).Returns(player);
         _importantItemsProviderMock.Setup(p => p.Get()).Returns(importantItems);
         _partyProviderMock.Setup(p => p.Get()).Returns(party);
-        _battleProviderMock.Setup(p => p.Get()).Returns(new Battle());
+        _digimonBattleProviderMock.Setup(p => p.Get()).Returns(new DigimonBattle());
         _cardBattleProviderMock.Setup(p => p.Get()).Returns(new CardBattle());
         _journalProviderMock.Setup(p => p.Get()).Returns(journal);
 
@@ -75,7 +75,7 @@ public class GameLoopServiceTests
             _playerProviderMock.Object,
             _importantItemsProviderMock.Object,
             _partyProviderMock.Object,
-            _battleProviderMock.Object,
+            _digimonBattleProviderMock.Object,
             _cardBattleProviderMock.Object,
             _journalProviderMock.Object);
 
@@ -315,7 +315,7 @@ public class GameLoopServiceTests
             throwingPlayerProviderMock.Object,
             _importantItemsProviderMock.Object,
             _partyProviderMock.Object,
-            _battleProviderMock.Object,
+            _digimonBattleProviderMock.Object,
             _cardBattleProviderMock.Object,
             _journalProviderMock.Object);
 

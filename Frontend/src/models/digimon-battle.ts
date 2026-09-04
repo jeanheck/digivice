@@ -1,6 +1,6 @@
 import type { Enemy } from "./battle/enemy";
 
-export interface Battle {
+export interface DigimonBattle {
   field: number;
   enemy: Enemy;
 }

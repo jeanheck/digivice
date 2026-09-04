@@ -33,8 +33,8 @@ export function initializeSignalRHandlers(): void {
     store.syncParty(data);
   });
 
-  signalRService.on("BattleChanged", (data) => {
-    store.syncBattle(data);
+  signalRService.on("DigimonBattleChanged", (data) => {
+    store.syncDigimonBattle(data);
   });
 
   signalRService.on("CardBattleChanged", (data) => {

@@ -13,7 +13,7 @@ export * from "./journal/npc-battle";
 export * from "./party/party";
 export * from "./player";
 export * from "./important-items";
-export * from "./battle";
+export * from "./digimon-battle";
 export * from "./battle/enemy";
 export * from "./card-battle";
 export * from "./journal/quest";

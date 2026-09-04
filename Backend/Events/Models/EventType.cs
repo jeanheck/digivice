@@ -7,7 +7,7 @@ public enum EventType
     PlayerChanged,
     ImportantItemsChanged,
     PartyChanged,
-    BattleChanged,
+    DigimonBattleChanged,
     CardBattleChanged,
     JournalChanged
 }

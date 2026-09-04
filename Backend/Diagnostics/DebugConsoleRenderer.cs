@@ -45,7 +45,7 @@ namespace Backend.Diagnostics
 
             RenderPlayer(sb, state.Player);
             RenderParty(sb, state.Party);
-            RenderBattle(sb, state.Battle);
+            RenderDigimonBattle(sb, state.DigimonBattle);
             RenderCardBattle(sb, state.CardBattle);
 
             sb.AppendLine($"{Gray}-------------------------------------------------{Reset}");
@@ -87,9 +87,9 @@ namespace Backend.Diagnostics
             }
         }
 
-        private void RenderBattle(StringBuilder sb, Battle battle)
+        private void RenderDigimonBattle(StringBuilder sb, DigimonBattle digimonBattle)
         {
-            var enemy = battle.Enemy;
+            var enemy = digimonBattle.Enemy;
             sb.AppendLine();
             sb.AppendLine(
                 $"{Cyan}BATTLE ENEMY:{Reset} GroupId:{enemy.GroupId} | Id:{enemy.Id} | Condition:{enemy.Condition} | " +

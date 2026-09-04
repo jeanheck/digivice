@@ -25,7 +25,7 @@ public class StateEventFactoryTests
         Assert.NotNull(dto.Player);
         Assert.NotNull(dto.ImportantItems);
         Assert.NotNull(dto.Party);
-        Assert.NotNull(dto.Battle);
+        Assert.NotNull(dto.DigimonBattle);
         Assert.NotNull(dto.CardBattle);
         Assert.NotNull(dto.Journal);
     }
@@ -84,17 +84,17 @@ public class StateEventFactoryTests
     }
 
     [Fact]
-    public void Create_ShouldReturnBattleChangedEvent_WhenOnlyBattleChanges()
+    public void Create_ShouldReturnDigimonBattleChangedEvent_WhenOnlyDigimonBattleChanges()
     {
         var previousState = CreateBaseState();
         var newState = CreateBaseState();
-        newState.Battle.Enemy.Speed = 84;
+        newState.DigimonBattle.Enemy.Speed = 84;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
         var ev = Assert.Single(result);
-        Assert.Equal(EventType.BattleChanged, ev.Type);
-        Assert.IsType<BattleDTO>(ev.Payload);
+        Assert.Equal(EventType.DigimonBattleChanged, ev.Type);
+        Assert.IsType<DigimonBattleDTO>(ev.Payload);
     }
 
     [Fact]
@@ -147,7 +147,7 @@ public class StateEventFactoryTests
         newState.Player.Bits = 999;
         newState.ImportantItems.AsukaTrophy = true;
         newState.Party.Slots[0].Digimon!.Level = 22;
-        newState.Battle.Enemy.Speed = 84;
+        newState.DigimonBattle.Enemy.Speed = 84;
         newState.CardBattle.OpponentId = 11;
         newState.Journal.MainQuest.Steps[0].Value = 1;
         newState.Journal.Auctions[0].Value = 0x01;
@@ -158,7 +158,7 @@ public class StateEventFactoryTests
         Assert.Equal(EventType.PlayerChanged, result[0].Type);
         Assert.Equal(EventType.ImportantItemsChanged, result[1].Type);
         Assert.Equal(EventType.PartyChanged, result[2].Type);
-        Assert.Equal(EventType.BattleChanged, result[3].Type);
+        Assert.Equal(EventType.DigimonBattleChanged, result[3].Type);
         Assert.Equal(EventType.CardBattleChanged, result[4].Type);
         Assert.Equal(EventType.JournalChanged, result[5].Type);
     }
@@ -190,7 +190,7 @@ public class StateEventFactoryTests
                     }
                 ]
             },
-            Battle = new Battle(),
+            DigimonBattle = new DigimonBattle(),
             CardBattle = new CardBattle(),
             Journal = new Journal
             {

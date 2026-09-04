@@ -6,14 +6,14 @@ import type * as Events from "../events/events.map";
 import { PlayerConverter } from "../events/converters/player.converter";
 import { ImportantItemsConverter } from "../events/converters/important-items.converter";
 import { PartyConverter } from "../events/converters/party.converter";
-import { BattleConverter } from "../events/converters/battle.converter";
+import { DigimonBattleConverter } from "../events/converters/digimon-battle.converter";
 import { CardBattleConverter } from "../events/converters/card-battle.converter";
 import { JournalConverter } from "../events/converters/journal.converter";
 import { PlayerSyncer } from "./syncers/player.syncer";
 import { ImportantItemsSyncer } from "./syncers/important-items.syncer";
 import { JournalSyncer } from "./syncers/journal.syncer";
 import { PartySyncer } from "./syncers/party.syncer";
-import { BattleSyncer } from "./syncers/battle.syncer";
+import { DigimonBattleSyncer } from "./syncers/digimon-battle.syncer";
 import { CardBattleSyncer } from "./syncers/card-battle.syncer";
 
 export const useGameStore = defineStore("game", () => {
@@ -85,7 +85,7 @@ export const useGameStore = defineStore("game", () => {
       player: state.player ? PlayerConverter.convert(state.player) : null,
       importantItems: state.importantItems ? ImportantItemsConverter.convert(state.importantItems) : null,
       party: state.party ? PartyConverter.convert(state.party) : null,
-      battle: state.battle ? BattleConverter.convert(state.battle) : null,
+      digimonBattle: state.digimonBattle ? DigimonBattleConverter.convert(state.digimonBattle) : null,
       cardBattle: state.cardBattle ? CardBattleConverter.convert(state.cardBattle) : null,
       journal: state.journal ? JournalConverter.convert(state.journal) : null,
     };
@@ -127,13 +127,13 @@ export const useGameStore = defineStore("game", () => {
     PartySyncer.sync(previousParty, newPartyDto);
   }
 
-  function syncBattle(newBattleDto: Events.BattleDTO | null): void {
-    const previousBattle = currentState.value?.battle;
-    if (!previousBattle || !newBattleDto) {
+  function syncDigimonBattle(newDigimonBattleDto: Events.DigimonBattleDTO | null): void {
+    const previousDigimonBattle = currentState.value?.digimonBattle;
+    if (!previousDigimonBattle || !newDigimonBattleDto) {
       return;
     }
 
-    BattleSyncer.sync(previousBattle, newBattleDto);
+    DigimonBattleSyncer.sync(previousDigimonBattle, newDigimonBattleDto);
   }
 
   function syncCardBattle(newCardBattleDto: Events.CardBattleDTO | null): void {
@@ -161,7 +161,7 @@ export const useGameStore = defineStore("game", () => {
     syncPlayer,
     syncImportantItems,
     syncParty,
-    syncBattle,
+    syncDigimonBattle,
     syncCardBattle,
     syncJournal,
   };

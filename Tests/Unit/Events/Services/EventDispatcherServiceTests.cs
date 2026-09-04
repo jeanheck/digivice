@@ -312,7 +312,7 @@ public class EventDispatcherServiceTests
 
         var loggerMock = new Mock<ILogger<EventDispatcherService>>();
 
-        var state = new State { Player = null!, Party = null!, Battle = null!, Journal = null! }; // Entidades internas nulas
+        var state = new State { Player = null!, Party = null!, DigimonBattle = null!, Journal = null! }; // Entidades internas nulas
         var gameStateStoreMock = new Mock<IGameStateStore>();
         gameStateStoreMock.Setup(g => g.CurrentState).Returns(state);
 

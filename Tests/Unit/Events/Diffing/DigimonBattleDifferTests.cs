@@ -5,15 +5,15 @@ using Backend.Domain.Models.Battles;
 using Backend.Domain.Models.Parties.Digimons;
 using Backend.Events.Diffing;
 
-public class BattleDifferTests
+public class DigimonBattleDifferTests
 {
     [Fact]
     public void Diff_ShouldReturnEmptyDTO_WhenNoChanges()
     {
-        var previous = CreateBaseBattle();
-        var newBattle = CreateBaseBattle();
+        var previous = CreateBaseDigimonBattle();
+        var newDigimonBattle = CreateBaseDigimonBattle();
 
-        var result = BattleDiffer.Diff(previous, newBattle);
+        var result = DigimonBattleDiffer.Diff(previous, newDigimonBattle);
 
         Assert.False(result.Field.HasValue);
         Assert.False(result.Enemy.HasValue);
@@ -22,10 +22,10 @@ public class BattleDifferTests
     [Fact]
     public void Diff_ShouldReturnFullDTO_WhenPreviousIsNull()
     {
-        var newBattle = CreateBaseBattle();
-        newBattle.Field = 0x02;
+        var newDigimonBattle = CreateBaseDigimonBattle();
+        newDigimonBattle.Field = 0x02;
 
-        var result = BattleDiffer.Diff(null, newBattle);
+        var result = DigimonBattleDiffer.Diff(null, newDigimonBattle);
 
         Assert.True(result.Field.HasValue);
         Assert.Equal((byte)0x02, result.Field.Value);
@@ -37,11 +37,11 @@ public class BattleDifferTests
     [Fact]
     public void Diff_ShouldReturnFieldDelta_WhenOnlyFieldChanged()
     {
-        var previous = CreateBaseBattle();
-        var newBattle = CreateBaseBattle();
-        newBattle.Field = 0x03;
+        var previous = CreateBaseDigimonBattle();
+        var newDigimonBattle = CreateBaseDigimonBattle();
+        newDigimonBattle.Field = 0x03;
 
-        var result = BattleDiffer.Diff(previous, newBattle);
+        var result = DigimonBattleDiffer.Diff(previous, newDigimonBattle);
 
         Assert.True(result.Field.HasValue);
         Assert.Equal((byte)0x03, result.Field.Value);
@@ -51,12 +51,12 @@ public class BattleDifferTests
     [Fact]
     public void Diff_ShouldReturnBothDeltas_WhenFieldAndEnemyChanged()
     {
-        var previous = CreateBaseBattle();
-        var newBattle = CreateBaseBattle();
-        newBattle.Field = 0x04;
-        newBattle.Enemy.Speed = 90;
+        var previous = CreateBaseDigimonBattle();
+        var newDigimonBattle = CreateBaseDigimonBattle();
+        newDigimonBattle.Field = 0x04;
+        newDigimonBattle.Enemy.Speed = 90;
 
-        var result = BattleDiffer.Diff(previous, newBattle);
+        var result = DigimonBattleDiffer.Diff(previous, newDigimonBattle);
 
         Assert.True(result.Field.HasValue);
         Assert.Equal((byte)0x04, result.Field.Value);
@@ -64,9 +64,9 @@ public class BattleDifferTests
         Assert.Equal(90, result.Enemy.Value!.Speed.Value);
     }
 
-    private static Battle CreateBaseBattle()
+    private static DigimonBattle CreateBaseDigimonBattle()
     {
-        return new Battle
+        return new DigimonBattle
         {
             Field = 0x00,
             Enemy = new Enemy

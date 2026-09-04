@@ -5,12 +5,12 @@ using Backend.Memory.Resources;
 using Backend.Memory.Resources.Battles;
 using Backend.Memory.Resources.Parties.Digimons;
 
-public class BattleAssemblerTests
+public class DigimonBattleAssemblerTests
 {
     [Fact]
     public void Assemble_ShouldMapEnemyFields()
     {
-        var resource = new BattleResource
+        var resource = new DigimonBattleResource
         {
             Field = 0x02,
             Enemy = new EnemyResource
@@ -25,7 +25,7 @@ public class BattleAssemblerTests
             }
         };
 
-        var result = BattleAssembler.Assemble(resource);
+        var result = DigimonBattleAssembler.Assemble(resource);
 
         Assert.Equal(0x02, result.Field);
         Assert.Equal(201, result.Enemy.GroupId);

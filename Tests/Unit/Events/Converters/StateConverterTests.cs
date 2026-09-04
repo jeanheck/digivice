@@ -7,14 +7,14 @@ using Backend.Events.Converters;
 public class StateConverterTests
 {
     [Fact]
-    public void ToDTO_ShouldMapPlayerImportantItemsPartyBattleAndJournal()
+    public void ToDTO_ShouldMapPlayerImportantItemsPartyDigimonBattleAndJournal()
     {
         var state = new State
         {
             Player = new Player { Bits = 100, MapId = "0001" },
             ImportantItems = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true },
             Party = new Party { Slots = [] },
-            Battle = new Battle(),
+            DigimonBattle = new DigimonBattle(),
             CardBattle = new CardBattle { OpponentId = 0 },
             Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] }
         };
@@ -35,9 +35,9 @@ public class StateConverterTests
         Assert.True(dto.Party.Slots.HasValue);
         Assert.Empty(dto.Party.Slots.Value!);
 
-        Assert.NotNull(dto.Battle);
-        Assert.True(dto.Battle.Enemy.HasValue);
-        Assert.Equal(0, dto.Battle.Enemy.Value!.Id.Value);
+        Assert.NotNull(dto.DigimonBattle);
+        Assert.True(dto.DigimonBattle.Enemy.HasValue);
+        Assert.Equal(0, dto.DigimonBattle.Enemy.Value!.Id.Value);
 
         Assert.NotNull(dto.CardBattle);
         Assert.True(dto.CardBattle.OpponentId.HasValue);
@@ -56,7 +56,7 @@ public class StateConverterTests
             Player = null!,
             ImportantItems = null!,
             Party = null!,
-            Battle = null!,
+            DigimonBattle = null!,
             CardBattle = null!,
             Journal = null!
         };
@@ -66,7 +66,7 @@ public class StateConverterTests
         Assert.Null(dto.Player);
         Assert.Null(dto.ImportantItems);
         Assert.Null(dto.Party);
-        Assert.Null(dto.Battle);
+        Assert.Null(dto.DigimonBattle);
         Assert.Null(dto.CardBattle);
         Assert.Null(dto.Journal);
     }

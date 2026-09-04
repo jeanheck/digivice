@@ -12,7 +12,7 @@ public static class StateConverter
             Player = state.Player != null ? PlayerConverter.ToDTO(state.Player) : null,
             ImportantItems = state.ImportantItems != null ? ImportantItemsConverter.ToDTO(state.ImportantItems) : null,
             Party = state.Party != null ? PartyConverter.ToDTO(state.Party) : null,
-            Battle = state.Battle != null ? BattleConverter.ToDTO(state.Battle) : null,
+            DigimonBattle = state.DigimonBattle != null ? DigimonBattleConverter.ToDTO(state.DigimonBattle) : null,
             CardBattle = state.CardBattle != null ? CardBattleConverter.ToDTO(state.CardBattle) : null,
             Journal = state.Journal != null ? JournalConverter.ToDTO(state.Journal) : null,
         };

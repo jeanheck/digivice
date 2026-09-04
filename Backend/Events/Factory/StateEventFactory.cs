@@ -24,7 +24,7 @@ public static class StateEventFactory
         events.AddRange(PlayerEventFactory.Create(previousState, newState));
         events.AddRange(ImportantItemsEventFactory.Create(previousState, newState));
         events.AddRange(PartyEventFactory.Create(previousState, newState));
-        events.AddRange(BattleEventFactory.Create(previousState, newState));
+        events.AddRange(DigimonBattleEventFactory.Create(previousState, newState));
         events.AddRange(CardBattleEventFactory.Create(previousState, newState));
         events.AddRange(JournalEventFactory.Create(previousState, newState));
 

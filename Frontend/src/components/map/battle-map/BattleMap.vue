@@ -38,13 +38,13 @@ const tooltipPlacement = ref<TooltipPlacement>("below");
 const tooltipAlign = ref<TooltipHorizontalAlign>("right");
 
 const fieldImageUrl = computed(() => {
-  const fieldId = store.currentState?.battle?.field ?? 0;
+  const fieldId = store.currentState?.digimonBattle?.field ?? 0;
   return ImageCatalog.getBattleFieldUrl(fieldId);
 });
 const juniorImageUrl = ImageCatalog.getBattleJuniorUrl();
 
 const battleFieldId = computed(() => {
-  return store.currentState?.battle?.field ?? 0;
+  return store.currentState?.digimonBattle?.field ?? 0;
 });
 
 const fieldLabels = computed(() => {
@@ -52,7 +52,7 @@ const fieldLabels = computed(() => {
 });
 
 const enemy = computed(() => {
-  return store.currentState?.battle?.enemy ?? null;
+  return store.currentState?.digimonBattle?.enemy ?? null;
 });
 
 const battleMapViewModel = computed(() => {

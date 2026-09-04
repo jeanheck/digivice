@@ -5,12 +5,12 @@ using Backend.Domain.Models.Battles;
 using Backend.Domain.Models.Parties.Digimons;
 using Backend.Events.Converters;
 
-public class BattleConverterTests
+public class DigimonBattleConverterTests
 {
     [Fact]
-    public void ToDTO_ShouldMapAllBattleFields()
+    public void ToDTO_ShouldMapAllDigimonBattleFields()
     {
-        var battle = new Battle
+        var digimonBattle = new DigimonBattle
         {
             Field = 0x02,
             Enemy = new Enemy
@@ -25,7 +25,7 @@ public class BattleConverterTests
             }
         };
 
-        var dto = BattleConverter.ToDTO(battle);
+        var dto = DigimonBattleConverter.ToDTO(digimonBattle);
 
         Assert.True(dto.Field.HasValue);
         Assert.Equal((byte)0x02, dto.Field.Value);

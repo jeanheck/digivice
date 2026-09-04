@@ -6,7 +6,7 @@ using Backend.Memory.Readers.Battles;
 using Moq;
 using Xunit;
 
-public class BattleLoaderTests : LoaderIntegrationTestBase
+public class DigimonBattleLoaderTests : LoaderIntegrationTestBase
 {
     private const long EnemySlotBase = 0x000A44D0;
     private const long ActiveUnitIdAddress = 0x000A4558;
@@ -32,7 +32,10 @@ public class BattleLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadInt16(ActiveUnitIdAddress)).Returns((short)122);
         memoryReaderMock.Setup(m => m.ReadBytes(0x000A4530, 1)).Returns([0x02]);
 
-        var loader = new BattleLoader(addressesRepository, new EnemyReader(memoryReaderMock.Object), memoryReaderMock.Object);
+        var digimonBattleReader = new DigimonBattleReader(
+            memoryReaderMock.Object,
+            new EnemyReader(memoryReaderMock.Object));
+        var loader = new DigimonBattleLoader(addressesRepository, digimonBattleReader);
         var resource = loader.Load();
 
         Assert.Equal(0x02, resource.Field);
@@ -70,7 +73,10 @@ public class BattleLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadInt16(ActiveEnemySlotIndexAddress)).Returns((short)-1);
         memoryReaderMock.Setup(m => m.ReadBytes(0x000A4530, 1)).Returns([0x02]);
 
-        var loader = new BattleLoader(addressesRepository, new EnemyReader(memoryReaderMock.Object), memoryReaderMock.Object);
+        var digimonBattleReader = new DigimonBattleReader(
+            memoryReaderMock.Object,
+            new EnemyReader(memoryReaderMock.Object));
+        var loader = new DigimonBattleLoader(addressesRepository, digimonBattleReader);
         var resource = loader.Load();
 
         Assert.Equal(200, resource.Enemy.Id);

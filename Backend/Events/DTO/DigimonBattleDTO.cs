@@ -5,7 +5,7 @@ using Backend.Events.DTO.Shared;
 
 namespace Backend.Events.DTO;
 
-public record class BattleDTO : IDTO
+public record class DigimonBattleDTO : IDTO
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public Optional<byte> Field { get; init; } = Optional<byte>.Empty;

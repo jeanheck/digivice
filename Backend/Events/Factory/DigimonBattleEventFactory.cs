@@ -5,15 +5,15 @@ using Backend.Events.Models;
 
 namespace Backend.Events.Factory;
 
-public static class BattleEventFactory
+public static class DigimonBattleEventFactory
 {
     public static IEnumerable<Event> Create(State previousState, State newState)
     {
-        var dto = BattleDiffer.Diff(previousState.Battle, newState.Battle);
+        var dto = DigimonBattleDiffer.Diff(previousState.DigimonBattle, newState.DigimonBattle);
 
         if (dto.IsNotEmpty())
         {
-            return [new Event(EventType.BattleChanged, dto)];
+            return [new Event(EventType.DigimonBattleChanged, dto)];
         }
 
         return [];
