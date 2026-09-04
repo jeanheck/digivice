@@ -1,7 +1,7 @@
 namespace Tests.Application;
 
 using Backend.Application;
-using Backend.Application.Providers;
+using Backend.Application.Providers.Interfaces;
 using Backend.Domain.Models;
 using Backend.Domain.Models.Journals;
 using Moq;

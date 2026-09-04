@@ -1,5 +1,5 @@
 using Backend.Domain.Models;
-using Backend.Application.Providers;
+using Backend.Application.Providers.Interfaces;
 
 namespace Backend.Application
 {

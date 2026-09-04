@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using Backend.Application;
 using Backend.Application.Loaders.Interfaces;
-using Backend.Application.Providers;
+using Backend.Application.Providers.Interfaces;
 using Backend.Diagnostics;
 using Backend.Events.Services;
 using Backend.Events.States;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Backend.Application;
-using Backend.Application.Providers;
+using Backend.Application.Providers.Interfaces;
 using Backend.Diagnostics;
 using Backend.Domain.Models;
 using Backend.Domain.Models.Journals;
