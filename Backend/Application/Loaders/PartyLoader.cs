@@ -1,4 +1,4 @@
-using Backend.Application.Loaders.Parties;
+using Backend.Application.Loaders.Interfaces;
 using Backend.Memory.Readers;
 using Backend.Memory.Repositories;
 using Backend.Memory.Resources;

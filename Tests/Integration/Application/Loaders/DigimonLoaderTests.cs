@@ -1,11 +1,10 @@
-namespace Tests.Integration.Application.Loaders.Parties;
+namespace Tests.Integration.Application.Loaders;
 
-using Backend.Application.Loaders.Parties;
+using Backend.Application.Loaders;
 using Backend.Memory.Readers;
 using Backend.Memory.Readers.Parties;
 using Backend.Memory.Readers.Parties.Digimons;
 using Moq;
-using Tests.Integration.Application.Loaders;
 using Xunit;
 
 public class DigimonLoaderTests : LoaderIntegrationTestBase

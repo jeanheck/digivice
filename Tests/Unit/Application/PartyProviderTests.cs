@@ -1,6 +1,6 @@
 namespace Tests.Application;
 
-using Backend.Application.Loaders;
+using Backend.Application.Loaders.Interfaces;
 using Backend.Application.Providers;
 using Backend.Domain.Models;
 using Backend.Memory.Resources;

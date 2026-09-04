@@ -1,6 +1,6 @@
 using Backend.Memory.Resources.Parties;
 
-namespace Backend.Application.Loaders.Parties
+namespace Backend.Application.Loaders.Interfaces
 {
     public interface IDigimonLoader
     {

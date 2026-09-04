@@ -1,7 +1,6 @@
 using Backend.Application;
 using Backend.Application.Loaders;
-using Backend.Application.Loaders.Journals;
-using Backend.Application.Loaders.Parties;
+using Backend.Application.Loaders.Interfaces;
 using Backend.Application.Providers;
 using Backend.Diagnostics;
 using Backend.Events.Services;

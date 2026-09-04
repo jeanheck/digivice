@@ -1,4 +1,4 @@
-using Backend.Application.Loaders;
+using Backend.Application.Loaders.Interfaces;
 using Backend.Domain.Assemblers;
 using Backend.Domain.Models;
 

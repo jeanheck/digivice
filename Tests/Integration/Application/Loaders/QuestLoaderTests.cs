@@ -1,11 +1,10 @@
-namespace Tests.Integration.Application.Loaders.Journals;
+namespace Tests.Integration.Application.Loaders;
 
-using Backend.Application.Loaders.Journals;
+using Backend.Application.Loaders;
 using Backend.Memory.Readers;
 using Backend.Memory.Readers.Journals;
 using Backend.Memory.Readers.Journals.Quests;
 using Moq;
-using Tests.Integration.Application.Loaders;
 using Xunit;
 
 public class QuestLoaderTests : LoaderIntegrationTestBase

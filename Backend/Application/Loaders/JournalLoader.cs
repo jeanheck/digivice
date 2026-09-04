@@ -1,4 +1,4 @@
-using Backend.Application.Loaders.Journals;
+using Backend.Application.Loaders.Interfaces;
 using Backend.Memory.Resources;
 
 namespace Backend.Application.Loaders

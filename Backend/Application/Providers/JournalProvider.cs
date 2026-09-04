@@ -1,6 +1,6 @@
 using Backend.Domain.Models;
 using Backend.Domain.Assemblers;
-using Backend.Application.Loaders;
+using Backend.Application.Loaders.Interfaces;
 
 namespace Backend.Application.Providers
 {

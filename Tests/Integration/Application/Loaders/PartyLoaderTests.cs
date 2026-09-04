@@ -4,7 +4,6 @@ using System;
 using Xunit;
 using Moq;
 using Backend.Application.Loaders;
-using Backend.Application.Loaders.Parties;
 using Backend.Memory.Readers;
 using Backend.Memory.Readers.Parties;
 using Backend.Memory.Readers.Parties.Digimons;

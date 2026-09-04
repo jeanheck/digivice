@@ -1,6 +1,6 @@
 using Backend.Memory.Resources.Journals;
 
-namespace Backend.Application.Loaders.Journals
+namespace Backend.Application.Loaders.Interfaces
 {
     public interface IQuestLoader
     {
