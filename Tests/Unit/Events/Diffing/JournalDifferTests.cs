@@ -268,41 +268,4 @@ public class JournalDifferTests
         Assert.True(duelIsland[0].Steps.HasValue);
         Assert.Equal((byte)1, duelIsland[0].Steps.Value![0].Value.Value);
     }
-
-    [Fact]
-    public void Diff_ShouldReturnDelta_WhenAuctionsChanged()
-    {
-        var previous = new Journal
-        {
-            MainQuest = new Quest { Id = "1" },
-            SideQuests = [],
-            Auctions =
-            [
-                new Auction { Id = "divineBarrier", Value = 0x00 },
-                new Auction { Id = "hazardShield", Value = 0x00 },
-            ],
-        };
-        var newObj = new Journal
-        {
-            MainQuest = new Quest { Id = "1" },
-            SideQuests = [],
-            Auctions =
-            [
-                new Auction { Id = "divineBarrier", Value = 0x01 },
-                new Auction { Id = "hazardShield", Value = 0x00 },
-            ],
-        };
-
-        var result = JournalDiffer.Diff(previous, newObj);
-
-        Assert.NotNull(result);
-        Assert.False(result.MainQuest.HasValue);
-        Assert.True(result.Auctions.HasValue);
-
-        var auctions = result.Auctions.Value!;
-        var delta = Assert.Single(auctions);
-        Assert.Equal("divineBarrier", delta.Id);
-        Assert.True(delta.Value.HasValue);
-        Assert.Equal(0x01, delta.Value.Value);
-    }
 }

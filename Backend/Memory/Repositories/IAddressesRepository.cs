@@ -20,7 +20,7 @@ namespace Backend.Memory.Repositories
         List<QuestAddresses> GetAllLegendaryWeapons();
         List<QuestAddresses> GetAllDriAgents();
         List<QuestAddresses> GetAllDuelIsland();
-        Dictionary<string, AuctionAddresses> GetAuctionAddresses();
+        AuctionsAddresses GetAuctionsAddresses();
         Dictionary<string, NpcAddresses> GetNpcAddresses();
         CardBattleAddresses GetCardBattleAddresses();
     }

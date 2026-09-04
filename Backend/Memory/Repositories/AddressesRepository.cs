@@ -20,7 +20,7 @@ namespace Backend.Memory.Repositories
         private List<QuestAddresses>? legendaryWeaponAddresses;
         private List<QuestAddresses>? driAgentAddresses;
         private List<QuestAddresses>? duelIslandAddresses;
-        private Dictionary<string, AuctionAddresses>? auctionAddresses;
+        private AuctionsAddresses? auctionsAddresses;
         private Dictionary<string, NpcAddresses>? npcAddresses;
         private CardBattleAddresses? cardBattleAddresses;
 
@@ -113,8 +113,8 @@ namespace Backend.Memory.Repositories
         public List<QuestAddresses> GetAllDuelIsland() =>
             LoadAllQuestAddressesFromFolder(ref duelIslandAddresses, "Quests/DuelIsland");
 
-        public Dictionary<string, AuctionAddresses> GetAuctionAddresses() =>
-            LoadAndCache(ref auctionAddresses, "AuctionAddresses.json");
+        public AuctionsAddresses GetAuctionsAddresses() =>
+            LoadAndCache(ref auctionsAddresses, "AuctionAddresses.json");
 
         public Dictionary<string, NpcAddresses> GetNpcAddresses() =>
             LoadAndCache(ref npcAddresses, "NpcAddresses.json");

@@ -20,17 +20,16 @@ namespace Backend.Memory.Readers.Parties.Digimons
             int zeroBasedPartySlotIndex)
         {
             var memoryBlock = memoryReader.ReadBytes(digimonAddress.MemoryBlockAddress, DigimonMemoryBlockSize);
-
             if (memoryBlock.Length < DigimonMemoryBlockSize)
             {
                 return null;
             }
 
             var memoryBlockReader = new MemoryBlockReader(memoryBlock);
-
             var digievolutionsSlots = digimonStatusAddresses.Digievolutions.Slots
                 .Select(slot => digievolutionSlotReader.Read(memoryBlockReader, slot))
                 .ToList();
+
             foreach (var digievolutionSlot in digievolutionsSlots)
             {
                 if (digievolutionSlot.DigievolutionId is not null)

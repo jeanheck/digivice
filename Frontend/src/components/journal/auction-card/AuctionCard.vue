@@ -8,12 +8,16 @@ import AuctionCardUnavailable from "./AuctionCardUnavailable.vue";
 
 const store = useGameStore();
 
+const auctions = computed(() => {
+  return store.currentState?.auctions ?? null;
+});
+
 const journal = computed(() => {
   return store.currentState?.journal ?? null;
 });
 
 const auctionAvailable = computed(() => {
-  return AuctionCardPresenter.getAuctionAvailable(journal.value);
+  return AuctionCardPresenter.getAuctionAvailable(auctions.value, journal.value);
 });
 
 const isAuctionModalOpen = ref(false);
@@ -34,6 +38,11 @@ const closeAuctionModal = () => {
       <AuctionCardUnavailable v-else />
     </div>
 
-    <AuctionModal :is-open="isAuctionModalOpen" :journal="journal" @close="closeAuctionModal" />
+    <AuctionModal
+      :is-open="isAuctionModalOpen"
+      :auctions="auctions"
+      :journal="journal"
+      @close="closeAuctionModal"
+    />
   </div>
 </template>

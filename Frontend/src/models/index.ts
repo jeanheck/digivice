@@ -5,7 +5,7 @@ export * from "./party/digimon/stored-digievolution";
 export * from "./party/digimon-slot";
 export * from "./party/digimon/digimon";
 export * from "./party/digimon/equipments";
-export * from "./journal/auction";
+export * from "./auctions";
 export * from "./party/digimon/in-battle";
 export * from "./journal/journal";
 export * from "./journal/npc";

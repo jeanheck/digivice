@@ -17,6 +17,7 @@ public class StateComposerTests
         var party = new Party { Slots = [] };
         var digimonBattle = new DigimonBattle();
         var cardBattle = new CardBattle { OpponentId = 0 };
+        var auctions = new Auctions { DivineBarrier = true };
         var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };
 
         var playerProviderMock = new Mock<IPlayerProvider>();
@@ -24,6 +25,7 @@ public class StateComposerTests
         var partyProviderMock = new Mock<IPartyProvider>();
         var digimonBattleProviderMock = new Mock<IDigimonBattleProvider>();
         var cardBattleProviderMock = new Mock<ICardBattleProvider>();
+        var auctionsProviderMock = new Mock<IAuctionsProvider>();
         var journalProviderMock = new Mock<IJournalProvider>();
 
         playerProviderMock.Setup(p => p.Get()).Returns(player);
@@ -31,6 +33,7 @@ public class StateComposerTests
         partyProviderMock.Setup(p => p.Get()).Returns(party);
         digimonBattleProviderMock.Setup(p => p.Get()).Returns(digimonBattle);
         cardBattleProviderMock.Setup(p => p.Get()).Returns(cardBattle);
+        auctionsProviderMock.Setup(p => p.Get()).Returns(auctions);
         journalProviderMock.Setup(p => p.Get()).Returns(journal);
 
         var composer = new StateComposer(
@@ -39,6 +42,7 @@ public class StateComposerTests
             partyProviderMock.Object,
             digimonBattleProviderMock.Object,
             cardBattleProviderMock.Object,
+            auctionsProviderMock.Object,
             journalProviderMock.Object);
 
         var state = composer.Compose();
@@ -48,12 +52,14 @@ public class StateComposerTests
         Assert.Same(party, state.Party);
         Assert.Same(digimonBattle, state.DigimonBattle);
         Assert.Same(cardBattle, state.CardBattle);
+        Assert.Same(auctions, state.Auctions);
         Assert.Same(journal, state.Journal);
         playerProviderMock.Verify(p => p.Get(), Times.Once);
         importantItemsProviderMock.Verify(p => p.Get(), Times.Once);
         partyProviderMock.Verify(p => p.Get(), Times.Once);
         digimonBattleProviderMock.Verify(p => p.Get(), Times.Once);
         cardBattleProviderMock.Verify(p => p.Get(), Times.Once);
+        auctionsProviderMock.Verify(p => p.Get(), Times.Once);
         journalProviderMock.Verify(p => p.Get(), Times.Once);
     }
 }

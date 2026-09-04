@@ -3,8 +3,8 @@ using Backend.Memory.Resources;
 
 namespace Backend.Memory.Readers
 {
-    public interface IAuctionReader
+    public interface IAuctionsReader
     {
-        AuctionResource Read(KeyValuePair<string, AuctionAddresses> auction);
+        AuctionsResource Read(AuctionsAddresses addresses);
     }
 }

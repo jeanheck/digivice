@@ -8,8 +8,9 @@ import { useGameStore } from "@/stores/use-game-store";
 const store = useGameStore();
 
 const currentAuction = computed(() => {
+  const auctions = store.currentState?.auctions ?? null;
   const journal = store.currentState?.journal ?? null;
-  return AuctionCurrentPresenter.getAuctionCurrent(journal);
+  return AuctionCurrentPresenter.getAuctionCurrent(auctions, journal);
 });
 </script>
 

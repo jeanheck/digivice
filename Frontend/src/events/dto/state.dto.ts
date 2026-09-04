@@ -3,6 +3,7 @@ import type { ImportantItemsDTO } from "./important-items.dto";
 import type { PartyDTO } from "./party.dto";
 import type { DigimonBattleDTO } from "./digimon-battle.dto";
 import type { CardBattleDTO } from "./card-battle.dto";
+import type { AuctionsDTO } from "./auctions.dto";
 import type { JournalDTO } from "./journal.dto";
 
 export interface StateDTO {
@@ -11,5 +12,6 @@ export interface StateDTO {
   party: Required<PartyDTO> | null;
   digimonBattle: Required<DigimonBattleDTO> | null;
   cardBattle: Required<CardBattleDTO> | null;
+  auctions: Required<AuctionsDTO> | null;
   journal: Required<JournalDTO> | null;
 }

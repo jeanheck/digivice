@@ -4,7 +4,6 @@ using Backend.Events.Converters;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.Diffing.Journals;
 using Backend.Events.DTO;
-using Backend.Events.DTO.Auctions;
 using Backend.Events.DTO.Journals;
 using Backend.Events.DTO.Npcs;
 
@@ -54,22 +53,6 @@ public static class JournalDiffer
         if (duelIslandDelta.Count > 0)
         {
             dto = dto with { DuelIsland = duelIslandDelta };
-        }
-
-        List<AuctionDTO> auctionsDelta = [];
-        foreach (var newAuction in newJournal.Auctions)
-        {
-            var previousAuction = previousJournal.Auctions.FirstOrDefault(auction => auction.Id == newAuction.Id);
-            var auctionDelta = AuctionDiffer.Diff(previousAuction, newAuction);
-            if (auctionDelta != null)
-            {
-                auctionsDelta.Add(auctionDelta);
-            }
-        }
-
-        if (auctionsDelta.Count > 0)
-        {
-            dto = dto with { Auctions = auctionsDelta };
         }
 
         List<NpcDTO> npcsDelta = [];

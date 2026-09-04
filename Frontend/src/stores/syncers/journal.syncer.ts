@@ -1,6 +1,5 @@
 import type { Journal } from "../../models";
 import type * as Events from "../../events/events.map";
-import { AuctionSyncer } from "./journals/auction.syncer";
 import { NpcSyncer } from "./journals/npc.syncer";
 import { QuestSyncer } from "./journals/quest.syncer";
 
@@ -54,18 +53,6 @@ export class JournalSyncer {
 
         if (previousDuelIslandQuest) {
           QuestSyncer.sync(previousDuelIslandQuest, newDuelIslandQuestDto);
-        }
-      });
-    }
-
-    if (newJournalDto.auctions && newJournalDto.auctions.length > 0) {
-      newJournalDto.auctions.forEach((newAuctionDto) => {
-        const previousAuction = previousJournal.auctions.find((auction) => {
-          return auction.id === newAuctionDto.id;
-        });
-
-        if (previousAuction) {
-          AuctionSyncer.sync(previousAuction, newAuctionDto);
         }
       });
     }

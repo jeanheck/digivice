@@ -1,7 +1,6 @@
 import type { JournalDTO } from "../dto/journal.dto";
 import type { QuestDTO } from "../dto/journals/quest.dto";
 import type { Journal } from "../../models";
-import { AuctionConverter } from "./auctions/auction.converter";
 import { NpcConverter } from "./npcs/npc.converter";
 import { QuestConverter } from "./journals/quest.converter";
 
@@ -28,9 +27,6 @@ export class JournalConverter {
         ? journalDto.duelIsland.map((questDto) =>
             QuestConverter.convert(questDto as Required<QuestDTO>),
           )
-        : [],
-      auctions: journalDto.auctions
-        ? journalDto.auctions.map((auctionDto) => AuctionConverter.convert(auctionDto))
         : [],
       npcs: journalDto.npcs
         ? journalDto.npcs.map((npcDto) => NpcConverter.convert(npcDto))

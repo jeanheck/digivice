@@ -16,6 +16,7 @@ public class StateConverterTests
             Party = new Party { Slots = [] },
             DigimonBattle = new DigimonBattle(),
             CardBattle = new CardBattle { OpponentId = 0 },
+            Auctions = new Auctions { DivineBarrier = true },
             Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] }
         };
 
@@ -43,6 +44,10 @@ public class StateConverterTests
         Assert.True(dto.CardBattle.OpponentId.HasValue);
         Assert.Equal(0, dto.CardBattle.OpponentId.Value);
 
+        Assert.NotNull(dto.Auctions);
+        Assert.True(dto.Auctions.DivineBarrier.HasValue);
+        Assert.True(dto.Auctions.DivineBarrier.Value);
+
         Assert.NotNull(dto.Journal);
         Assert.True(dto.Journal.MainQuest.HasValue);
         Assert.Equal("MainQuest", dto.Journal.MainQuest.Value!.Id);
@@ -58,6 +63,7 @@ public class StateConverterTests
             Party = null!,
             DigimonBattle = null!,
             CardBattle = null!,
+            Auctions = null!,
             Journal = null!
         };
 
@@ -68,6 +74,7 @@ public class StateConverterTests
         Assert.Null(dto.Party);
         Assert.Null(dto.DigimonBattle);
         Assert.Null(dto.CardBattle);
+        Assert.Null(dto.Auctions);
         Assert.Null(dto.Journal);
     }
 }

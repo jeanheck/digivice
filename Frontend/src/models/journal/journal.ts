@@ -1,4 +1,3 @@
-import type { Auction } from "./auction";
 import type { Npc } from "./npc";
 import type { Quest } from "./quest";
 
@@ -8,6 +7,5 @@ export interface Journal {
   legendaryWeapons: Quest[];
   driAgents: Quest[];
   duelIsland: Quest[];
-  auctions: Auction[];
   npcs: Npc[];
 }

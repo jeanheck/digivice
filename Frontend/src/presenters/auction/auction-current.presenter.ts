@@ -1,12 +1,15 @@
-import type { Journal } from "@/models";
+import type { Auctions, Journal } from "@/models";
 import { AuctionRepository } from "@/repositories/auction.repository";
 import { AuctionService } from "@/services/auction.service";
 import type { AuctionCurrentViewModel } from "@/viewmodels/auction/auction-current.viewmodel";
 import { AuctionCurrentConverter } from "../converter/auction-current.converter";
 
 export class AuctionCurrentPresenter {
-  public static getAuctionCurrent(journal: Journal | null): AuctionCurrentViewModel | null {
-    const auctionAvailable = AuctionService.getAuctionAvailable(journal);
+  public static getAuctionCurrent(
+    auctions: Auctions | null,
+    journal: Journal | null,
+  ): AuctionCurrentViewModel | null {
+    const auctionAvailable = AuctionService.getAuctionAvailable(auctions, journal);
 
     if (auctionAvailable === null) {
       return null;

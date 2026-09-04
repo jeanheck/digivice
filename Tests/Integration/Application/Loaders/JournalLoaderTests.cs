@@ -43,11 +43,9 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
         var questReader = new QuestReader(requisiteReader, stepReader);
         var questLoader = new QuestLoader(addressesRepository, questReader);
-        var auctionReader = new AuctionReader(memoryReaderMock.Object);
-        var auctionLoader = new AuctionLoader(addressesRepository, auctionReader);
         var npcReader = new NpcReader(memoryReaderMock.Object);
         var npcLoader = new NpcLoader(addressesRepository, npcReader);
-        var journalLoader = new JournalLoader(questLoader, auctionLoader, npcLoader);
+        var journalLoader = new JournalLoader(questLoader, npcLoader);
 
         var journalResource = journalLoader.Load();
 
@@ -93,9 +91,6 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(2, journalResource.DuelIsland.Count);
         Assert.Single(journalResource.DuelIsland, quest => quest.Id == "asukaTrophy");
         Assert.Single(journalResource.DuelIsland, quest => quest.Id == "sunTrophy");
-        Assert.Equal(5, journalResource.Auctions.Count);
-        Assert.Contains(journalResource.Auctions, auction => auction.Id == "divineBarrier" && auction.Value == 0x01);
-        Assert.Contains(journalResource.Auctions, auction => auction.Id == "hazardShield" && auction.Value == 0x00);
         Assert.Equal(23, journalResource.Npcs.Count);
         var genji = Assert.Single(journalResource.Npcs, npc => npc.Id == "genji");
         Assert.Equal(0x20, genji.DigimonBattles.Single(battle => battle.Id == "first").Value);

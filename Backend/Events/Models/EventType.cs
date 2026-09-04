@@ -9,5 +9,6 @@ public enum EventType
     PartyChanged,
     DigimonBattleChanged,
     CardBattleChanged,
+    AuctionsChanged,
     JournalChanged
 }

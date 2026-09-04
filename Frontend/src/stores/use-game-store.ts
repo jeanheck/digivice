@@ -8,6 +8,7 @@ import { ImportantItemsConverter } from "../events/converters/important-items.co
 import { PartyConverter } from "../events/converters/party.converter";
 import { DigimonBattleConverter } from "../events/converters/digimon-battle.converter";
 import { CardBattleConverter } from "../events/converters/card-battle.converter";
+import { AuctionsConverter } from "../events/converters/auctions.converter";
 import { JournalConverter } from "../events/converters/journal.converter";
 import { PlayerSyncer } from "./syncers/player.syncer";
 import { ImportantItemsSyncer } from "./syncers/important-items.syncer";
@@ -15,6 +16,7 @@ import { JournalSyncer } from "./syncers/journal.syncer";
 import { PartySyncer } from "./syncers/party.syncer";
 import { DigimonBattleSyncer } from "./syncers/digimon-battle.syncer";
 import { CardBattleSyncer } from "./syncers/card-battle.syncer";
+import { AuctionsSyncer } from "./syncers/auctions.syncer";
 
 export const useGameStore = defineStore("game", () => {
   const isConnectedWithBackend = ref(false);
@@ -87,6 +89,7 @@ export const useGameStore = defineStore("game", () => {
       party: state.party ? PartyConverter.convert(state.party) : null,
       digimonBattle: state.digimonBattle ? DigimonBattleConverter.convert(state.digimonBattle) : null,
       cardBattle: state.cardBattle ? CardBattleConverter.convert(state.cardBattle) : null,
+      auctions: state.auctions ? AuctionsConverter.convert(state.auctions) : null,
       journal: state.journal ? JournalConverter.convert(state.journal) : null,
     };
   }
@@ -145,6 +148,15 @@ export const useGameStore = defineStore("game", () => {
     CardBattleSyncer.sync(previousCardBattle, newCardBattleDto);
   }
 
+  function syncAuctions(newAuctionsDto: Events.AuctionsDTO | null): void {
+    const previousAuctions = currentState.value?.auctions;
+    if (!previousAuctions || !newAuctionsDto) {
+      return;
+    }
+
+    AuctionsSyncer.sync(previousAuctions, newAuctionsDto);
+  }
+
   return {
     isConnected,
     isConnectedWithBackend,
@@ -163,6 +175,7 @@ export const useGameStore = defineStore("game", () => {
     syncParty,
     syncDigimonBattle,
     syncCardBattle,
+    syncAuctions,
     syncJournal,
   };
 });

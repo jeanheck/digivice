@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Modal from "@/components/modal/Modal.vue";
-import type { Journal } from "@/models";
+import type { Auctions, Journal } from "@/models";
 import { AuctionModalPresenter } from "@/presenters/auction/auction-modal.presenter";
 import Auction from "./auction/Auction.vue";
 import AuctionCurrent from "./auction-current/AuctionCurrent.vue";
 
 const props = defineProps<{
   isOpen: boolean;
+  auctions: Auctions | null;
   journal: Journal | null;
 }>();
 
@@ -15,8 +16,8 @@ const emit = defineEmits<{
   (e: "close"): void;
 }>();
 
-const auctions = computed(() => {
-  return AuctionModalPresenter.getAuctions(props.journal);
+const auctionList = computed(() => {
+  return AuctionModalPresenter.getAuctions(props.auctions, props.journal);
 });
 
 const closeModal = () => {
@@ -42,7 +43,7 @@ const closeModal = () => {
           {{ $t("auction.historySubtitle") }}
         </h3>
 
-        <Auction v-for="auction in auctions" :key="auction.id" :auction="auction" />
+        <Auction v-for="auction in auctionList" :key="auction.id" :auction="auction" />
       </section>
     </div>
   </Modal>
