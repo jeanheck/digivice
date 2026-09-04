@@ -8,13 +8,28 @@ namespace Backend.Memory.Readers.Battles
     {
         public EnemyResource Read(EnemyAddresses addresses)
         {
-            var slotIndex = ResolveActiveSlotIndex(addresses);
+            var slotIndex = ResolveActiveEnemySlotIndex(addresses);
             var slotBase = addresses.EnemySlotBase + (slotIndex * addresses.SlotStride);
 
-            return ReadSlot(slotBase, addresses);
+            return new EnemyResource
+            {
+                Id = memoryReader.ReadInt16(slotBase + addresses.Id),
+                GroupId = memoryReader.ReadInt16(addresses.GroupId),
+                Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes
+                    ? conditionBytes[0]
+                    : 0,
+                Strength = memoryReader.ReadInt16(slotBase + addresses.Strength),
+                Defense = memoryReader.ReadInt16(slotBase + addresses.Defense),
+                Speed = memoryReader.ReadInt16(slotBase + addresses.Speed),
+                HP = new VitalResource
+                {
+                    Max = memoryReader.ReadInt16(slotBase + addresses.HP.Max),
+                    Current = memoryReader.ReadInt16(slotBase + addresses.HP.Current)
+                }
+            };
         }
 
-        private int ResolveActiveSlotIndex(EnemyAddresses addresses)
+        private int ResolveActiveEnemySlotIndex(EnemyAddresses addresses)
         {
             var activeUnitId = memoryReader.ReadInt16(addresses.ActiveUnitId);
 
@@ -66,26 +81,6 @@ namespace Backend.Memory.Readers.Battles
             }
 
             return 0;
-        }
-
-        private EnemyResource ReadSlot(long slotBase, EnemyAddresses addresses)
-        {
-            return new EnemyResource
-            {
-                Id = memoryReader.ReadInt16(slotBase + addresses.Id),
-                GroupId = memoryReader.ReadInt16(addresses.GroupId),
-                Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes
-                    ? conditionBytes[0]
-                    : 0,
-                Strength = memoryReader.ReadInt16(slotBase + addresses.Strength),
-                Defense = memoryReader.ReadInt16(slotBase + addresses.Defense),
-                Speed = memoryReader.ReadInt16(slotBase + addresses.Speed),
-                HP = new VitalResource
-                {
-                    Max = memoryReader.ReadInt16(slotBase + addresses.HP.Max),
-                    Current = memoryReader.ReadInt16(slotBase + addresses.HP.Current)
-                }
-            };
         }
     }
 }
