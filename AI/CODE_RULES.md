@@ -120,6 +120,16 @@ O converter pode receber parâmetros além do Raw quando o ViewModel depende de 
 - **Component** que importa ou chama service, repository ou converter diretamente.
 - **Service** que chama presenter, conhece componente/Vue ou monta ViewModel de tela.
 
+### Extensions (builtins aumentados)
+
+Pasta: `src/extensions/`. Módulos side-effect que estendem builtins do TypeScript/JavaScript (ex.: `Math`) via declaration merging + atribuição no objeto global.
+
+#### Convenção
+
+- **Arquivo:** `{alvo}.extensions.ts` (ex.: `math.extensions.ts`).
+- Importar **uma vez** no bootstrap (`main.ts`); call sites usam a API nativa aumentada (`Math.sum`, `Math.calculatePercentage`) sem import local.
+- Não substituem helpers de domínio (ex.: `EquipmentsHelper`).
+
 ### Helpers (regras reutilizáveis para presenters)
 
 Pasta: `presenters/helper/`. Helpers concentram lógica de domínio ou de apresentação **reutilizada por mais de um presenter**, sem acesso a dados nem montagem de ViewModel.

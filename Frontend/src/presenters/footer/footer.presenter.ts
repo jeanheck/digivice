@@ -1,7 +1,6 @@
 import { type Digimon, type DigimonSlot } from "@/models";
 import { Constant } from "@/constants/constant";
 import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
-import { MathHelper } from "@/presenters/helper/math.helper";
 import { StatCapHelper } from "@/presenters/helper/stat-cap.helper";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 
@@ -13,7 +12,7 @@ export class FooterPresenter {
   public static getPartyCharisma(digimonSlots: DigimonSlot[]): number {
     const digimons = this.getDigimons(digimonSlots);
 
-    return MathHelper.sum(
+    return Math.sum(
       digimons.map((digimon) => {
         const equipmentIds = EquipmentsHelper.getBonusCalculationEquipmentIds(
           digimon.equipments,
@@ -33,7 +32,7 @@ export class FooterPresenter {
   public static getPartyLevel(digimonSlots: DigimonSlot[]): number {
     const digimons = this.getDigimons(digimonSlots);
 
-    return MathHelper.sum(
+    return Math.sum(
       digimons.map((digimon) => {
         return digimon.level;
       }),

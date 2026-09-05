@@ -2,8 +2,6 @@ import { EquipmentConstant, EQUIPMENT_SLOT_KEYS } from "@/constants/equipment.co
 import type { Equipments } from "@/models";
 import { Constant } from "@/constants/constant";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
-import { MathHelper } from "@/presenters/helper/math.helper";
-
 const WEAPON_TWO_HANDED_TYPE = "weaponTwoHanded";
 
 export class EquipmentsHelper {
@@ -54,7 +52,7 @@ export class EquipmentsHelper {
       .flatMap((rawEquipment) => rawEquipment.attributes)
       .filter((attribute) => attribute.attribute.toLowerCase() === lowerCaseType);
 
-    return MathHelper.sum(
+    return Math.sum(
       attributesRaw.map((attribute) => {
         return Number(`${attribute.type}${attribute.value}`);
       }),

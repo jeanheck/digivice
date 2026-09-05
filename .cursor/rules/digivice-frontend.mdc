@@ -53,6 +53,12 @@ Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem conv
 
 **Proibido:** converter com repository/orquestração; presenter montando ViewModel inline quando cabe converter; repository retornando ViewModel; component chamando service/repo/converter; service conhecendo Vue/presenter.
 
+## Extensions (`src/extensions/`)
+
+- Arquivo `{alvo}.extensions.ts` (ex.: `math.extensions.ts`); side-effect com declaration merging + atribuição no builtin.
+- Importar uma vez em `main.ts`; call sites usam a API aumentada sem import local.
+- Não substituem helpers de domínio (ex.: `EquipmentsHelper`).
+
 ## Helpers (`presenters/helper/`)
 
 - Classe `{AlgumaCoisa}Helper`; arquivo `{alguma-coisa}.helper.ts`; métodos estáticos/puros.

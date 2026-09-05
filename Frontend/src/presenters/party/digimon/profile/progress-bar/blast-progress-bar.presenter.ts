@@ -1,10 +1,8 @@
-import { MathHelper } from "@/presenters/helper/math.helper";
-
 export class BlastProgressBarPresenter {
   public static readonly MAX_BLAST = 1000;
 
   public static calculateProgressPercentage(blast: number): number {
-    return MathHelper.calculatePercentage(blast, this.MAX_BLAST);
+    return Math.calculatePercentage(blast, this.MAX_BLAST);
   }
 
   public static getFillEffectClass(progressPercentage: number): string {

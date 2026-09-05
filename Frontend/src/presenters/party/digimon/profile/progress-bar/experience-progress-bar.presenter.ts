@@ -1,4 +1,3 @@
-import { MathHelper } from "@/presenters/helper/math.helper";
 import { DigimonRepository } from "@/repositories/digimon.repository";
 import type { ExperienceProgressBarViewModel } from "@/viewmodels/party/digimon/profile/experience-progress-bar.viewmodel";
 
@@ -31,7 +30,7 @@ export class ExperienceProgressBarPresenter {
 
     return {
       maxValue: requiredExperienceForNextLevel,
-      percentage: MathHelper.calculatePercentage(progressInThisLevel, totalRequiredInThisLevel),
+      percentage: Math.calculatePercentage(progressInThisLevel, totalRequiredInThisLevel),
     };
   }
 }
