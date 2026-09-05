@@ -62,7 +62,7 @@ Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem conv
 ## Helpers (`src/helpers/`)
 
 - Classe `{AlgumaCoisa}Helper`; arquivo `{alguma-coisa}.helper.ts`; métodos estáticos/puros.
-- Pasta canônica: `src/helpers/` (ex.: `PartyHelper`). Legados em `presenters/helper/` até migração.
+- Pasta canônica: `src/helpers/` (ex.: `PartyHelper`, `StatHelper`, `EquipmentsHelper`). Legados em `presenters/helper/` até migração.
 - Regras reutilizadas por mais de um presenter; sem ViewModel/componente.
 - Preferir não chamar repository em helper novo.
 

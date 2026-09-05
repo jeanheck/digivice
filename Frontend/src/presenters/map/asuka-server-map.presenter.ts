@@ -1,10 +1,10 @@
 import type { DigimonSlot, ImportantItems, Npc, Npcs, Quest } from "@/models";
 import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
-import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 import { LocationEncounterHelper } from "@/presenters/helper/location-encounter.helper";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import { LocationService } from "@/services/location.service";
 import { NpcService } from "@/services/npc.service";
+import { PartyService } from "@/services/party.service";
 import { QuestService } from "@/services/quest.service";
 import type { AsukaServerMapViewModel } from "@/viewmodels/map/asuka-server-map.viewmodel";
 import type { MapNpcViewModel } from "@/viewmodels/map/map-npc.viewmodel";
@@ -21,7 +21,7 @@ export class AsukaServerMapPresenter {
       locationId,
       lastCompletedMainQuestStep,
     );
-    const partyCharisma = FooterPresenter.getPartyCharisma(digimonSlots);
+    const partyCharisma = PartyService.getCharisma({ slots: digimonSlots });
 
     return opponentIds.flatMap((opponentId) => {
       const opponent = NpcBattleOpponentHelper.resolveById(opponentId);

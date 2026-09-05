@@ -8,7 +8,7 @@ import {
   ResistancesConverter,
   type ResistancesEquipmentBonuses,
 } from "@/presenters/converter/resistances.converter";
-import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
+import { EquipmentsHelper } from "@/helpers/equipments.helper";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import { EquipmentRepository } from "@/repositories/equipment.repository";

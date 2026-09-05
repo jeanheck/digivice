@@ -149,7 +149,7 @@ Helpers concentram lógica de domínio ou de apresentação **reutilizada por ma
 | **Helper** | Regras reutilizáveis sobre models de domínio (ex.: nível da party, extrair IDs de slots). Preferir não chamar repository; não monta ViewModel nem conhece componente. |
 | **Presenter** | Orquestra helper + repository + converter conforme o caso de uso da tela. |
 
-Referência nova: `PartyHelper` (`getLevel`). Referência legada: `EquipmentsHelper` (`getEquipmentIds`).
+Referência: `PartyHelper` (`getLevel`), `StatHelper` (`calculateStat`), `EquipmentsHelper` (`calculateBonus`) em `src/helpers/`.
 
 #### Proibido em código novo ou refatorado (helpers)
 

@@ -2,17 +2,22 @@ import {
   NpcBattleKindConstant,
   STORY_NPC_DIGIMON_BATTLE_ID,
 } from "@/constants/npc-battle-kind.constant";
-import type { ImportantItems, Npc } from "@/models";
+import type { ImportantItems, Npc, Party } from "@/models";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import type { TamerCharismaRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-charisma-required.raw";
 import type { TamerTrophyRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-trophy-required.raw";
 import {
   NpcService,
 } from "@/services/npc.service";
+import { PartyService } from "@/services/party.service";
 import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
 import type { WikiNpcPanelViewModel } from "@/viewmodels/wiki-modal/wiki-npc-panel.viewmodel";
 
 export class WikiNpcPanelPresenter {
+  public static getPartyCharisma(party: Party): number {
+    return PartyService.getCharisma(party);
+  }
+
   public static formatCharismaRange(charismaRequired: TamerCharismaRequiredRaw): string {
     if (charismaRequired.max !== undefined) {
       return `${charismaRequired.min}~${charismaRequired.max}`;

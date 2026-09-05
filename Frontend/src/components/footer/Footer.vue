@@ -88,7 +88,7 @@ const hideGroupLevelTooltip = () => {
 };
 
 const groupCharisma = computed(() => {
-  return FooterPresenter.getPartyCharisma(store.currentState?.party?.slots ?? []);
+  return FooterPresenter.getPartyCharisma(store.currentState?.party ?? { slots: [] });
 });
 
 const groupPartyLevel = computed(() => {

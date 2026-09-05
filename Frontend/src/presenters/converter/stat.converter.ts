@@ -1,4 +1,4 @@
-import { StatCapHelper } from "@/presenters/helper/stat-cap.helper";
+import { StatHelper } from "@/helpers/stat.helper";
 import type { StatViewModel } from "@/viewmodels/digimon/stat.viewmodel";
 
 export class StatConverter {
@@ -11,7 +11,7 @@ export class StatConverter {
       fromDigimon,
       fromEquipaments,
       fromDigievolution,
-      sumBetweenDigimonAndEquipaments: StatCapHelper.capBasePlusEquip(fromDigimon, fromEquipaments),
+      sumBetweenDigimonAndEquipaments: StatHelper.calculateStat(fromDigimon, fromEquipaments),
     };
   }
 }

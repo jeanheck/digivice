@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
-import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 import { WikiNpcPanelPresenter } from "@/presenters/map/wiki-modal/wiki-npc-panel.presenter";
 import WikiNpcCardBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcCardBattlePanel.vue";
 import WikiNpcDigimonBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDigimonBattlePanel.vue";
@@ -39,7 +38,7 @@ const journalNpc = computed(() => {
 });
 
 const partyCharisma = computed(() => {
-  return FooterPresenter.getPartyCharisma(store.currentState?.party?.slots ?? []);
+  return WikiNpcPanelPresenter.getPartyCharisma(store.currentState?.party ?? { slots: [] });
 });
 
 const importantItems = computed(() => {

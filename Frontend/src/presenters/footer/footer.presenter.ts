@@ -1,34 +1,13 @@
-import { type Digimon, type DigimonSlot, type Party } from "@/models";
-import { Constant } from "@/constants/constant";
+import type { Party } from "@/models";
 import { PartyHelper } from "@/helpers/party.helper";
-import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
-import { StatCapHelper } from "@/presenters/helper/stat-cap.helper";
-import { EquipmentRepository } from "@/repositories/equipment.repository";
-import { EquipmentService } from "@/services/equipment.service";
+import { PartyService } from "@/services/party.service";
 
 export class FooterPresenter {
-  private static getDigimons(slots: DigimonSlot[]): Digimon[] {
-    return slots.map((slot) => slot.digimon).filter((digimon) => digimon !== null);
-  }
-
   public static getPartyLevel(party: Party): number {
     return PartyHelper.getLevel(party);
   }
 
-  public static getPartyCharisma(digimonSlots: DigimonSlot[]): number {
-    const digimons = this.getDigimons(digimonSlots);
-
-    return Math.sum(
-      digimons.map((digimon) => {
-        const equipmentIds = EquipmentService.getEquipmentIds(digimon.equipments);
-        const equipmentsRaws = EquipmentRepository.getEquipmentsByIds(equipmentIds);
-        const charismaEquipmentBonus = EquipmentsHelper.calculateBonus(
-          Constant.charisma,
-          equipmentsRaws,
-        );
-
-        return StatCapHelper.capBasePlusEquip(digimon.attributes.charisma, charismaEquipmentBonus);
-      }),
-    );
+  public static getPartyCharisma(party: Party): number {
+    return PartyService.getCharisma(party);
   }
 }
