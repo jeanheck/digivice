@@ -5,17 +5,6 @@ import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipmen
 const WEAPON_TWO_HANDED_TYPE = "weaponTwoHanded";
 
 export class EquipmentsHelper {
-  public static getEquipmentIds(equipments: Equipments): number[] {
-    return [
-      equipments.head,
-      equipments.body,
-      equipments.right,
-      equipments.left,
-      equipments.accessory1,
-      equipments.accessory2,
-    ].filter((id): id is number => id !== null && id !== undefined && id !== 0);
-  }
-
   public static getBonusCalculationEquipmentIds(
     equipments: Equipments,
     resolveEquipmentType: (equipmentId: number) => string,

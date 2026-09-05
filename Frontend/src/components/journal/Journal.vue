@@ -14,8 +14,8 @@ const journalViewModel = computed(() => {
   if (journal === null || journal === undefined) {
     return null;
   }
-  const digimonSlots = store.currentState?.party?.slots ?? [];
-  return JournalPresenter.getJournalViewModel(journal, digimonSlots);
+  const party = store.currentState?.party ?? { slots: [] };
+  return JournalPresenter.getJournalViewModel(journal, party);
 });
 
 const activeQuestId = ref<string | null>(null);

@@ -130,9 +130,11 @@ Pasta: `src/extensions/`. Módulos side-effect que estendem builtins do TypeScri
 - Importar **uma vez** no bootstrap (`main.ts`); call sites usam a API nativa aumentada (`Math.sum`, `Math.calculatePercentage`) sem import local.
 - Não substituem helpers de domínio (ex.: `EquipmentsHelper`).
 
-### Helpers (regras reutilizáveis para presenters)
+### Helpers (regras reutilizáveis)
 
-Pasta: `presenters/helper/`. Helpers concentram lógica de domínio ou de apresentação **reutilizada por mais de um presenter**, sem acesso a dados nem montagem de ViewModel.
+Pasta canônica nova: `src/helpers/`. Helpers legados ainda existem em `presenters/helper/` até migração gradual.
+
+Helpers concentram lógica de domínio ou de apresentação **reutilizada por mais de um presenter**, sem montagem de ViewModel.
 
 #### Convenção
 
@@ -144,16 +146,18 @@ Pasta: `presenters/helper/`. Helpers concentram lógica de domínio ou de aprese
 
 | Camada | Responsabilidade |
 |--------|------------------|
-| **Helper** | Regras reutilizáveis sobre models de domínio (ex.: extrair IDs de slots, deduplicar). Não chama repository, converter nem conhece componente. |
+| **Helper** | Regras reutilizáveis sobre models de domínio (ex.: nível da party, extrair IDs de slots). Preferir não chamar repository; não monta ViewModel nem conhece componente. |
 | **Presenter** | Orquestra helper + repository + converter conforme o caso de uso da tela. |
 
-Referência: `EquipmentsHelper` (`getEquipmentIds`, `getUniqueEquipmentIds`).
+Referência nova: `PartyHelper` (`getLevel`). Referência legada: `EquipmentsHelper` (`getEquipmentIds`).
 
 #### Proibido em código novo ou refatorado (helpers)
 
-- **Helper** que chama repository ou monta ViewModel.
+- **Helper** que monta ViewModel.
 - **Repository** com regras de domínio (extração de IDs, deduplicação, filtros de negócio).
 - Duplicar a mesma regra em vários presenters quando um helper resolve.
+- Código novo: preferir `src/helpers/` em vez de `presenters/helper/`.
+- **Componentes** não importam helpers — só presenters (`Component → Presenter → Helper`).
 
 ### Tooltips (fluxo padrão do Frontend)
 

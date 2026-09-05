@@ -1,43 +1,38 @@
-import type { DigimonSlot, Journal } from "@/models";
-import { FooterPresenter } from "@/presenters/footer/footer.presenter";
+import type { Journal, Party } from "@/models";
 import { QuestModalPresenter } from "@/presenters/journal/quest-modal.presenter";
 import { QuestRepository } from "@/repositories/quest.repository";
 import type { JournalViewModel } from "@/viewmodels/quest/journal.viewmodel";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 
 export class JournalPresenter {
-  public static getJournalViewModel(
-    journal: Journal,
-    digimonSlots: DigimonSlot[],
-  ): JournalViewModel {
-    const partyLevel = FooterPresenter.getPartyLevel(digimonSlots);
+  public static getJournalViewModel(journal: Journal, party: Party): JournalViewModel {
     const mainQuestRaw = QuestRepository.getMainQuestRaw();
     const mainQuestViewModel =
       journal.mainQuest === null
         ? null
-        : QuestModalPresenter.getQuestViewModel(journal, mainQuestRaw.id, partyLevel);
+        : QuestModalPresenter.getQuestViewModel(journal, mainQuestRaw.id, party);
 
     const sideQuestsViewModels = QuestRepository.getSideQuestsRaw()
       .map((sideQuestRaw) =>
-        QuestModalPresenter.getQuestViewModel(journal, sideQuestRaw.id, partyLevel),
+        QuestModalPresenter.getQuestViewModel(journal, sideQuestRaw.id, party),
       )
       .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
 
     const legendaryWeaponsViewModels = QuestRepository.getLegendaryWeaponsRaw()
       .map((legendaryWeaponRaw) =>
-        QuestModalPresenter.getQuestViewModel(journal, legendaryWeaponRaw.id, partyLevel),
+        QuestModalPresenter.getQuestViewModel(journal, legendaryWeaponRaw.id, party),
       )
       .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
 
     const driAgentsViewModels = QuestRepository.getDriAgentsRaw()
       .map((driAgentRaw) =>
-        QuestModalPresenter.getQuestViewModel(journal, driAgentRaw.id, partyLevel),
+        QuestModalPresenter.getQuestViewModel(journal, driAgentRaw.id, party),
       )
       .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
 
     const duelIslandViewModels = QuestRepository.getDuelIslandRaw()
       .map((duelIslandQuestRaw) =>
-        QuestModalPresenter.getQuestViewModel(journal, duelIslandQuestRaw.id, partyLevel),
+        QuestModalPresenter.getQuestViewModel(journal, duelIslandQuestRaw.id, party),
       )
       .filter((questViewModel): questViewModel is QuestViewModel => questViewModel !== null);
 

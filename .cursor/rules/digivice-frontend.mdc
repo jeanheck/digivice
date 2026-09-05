@@ -59,13 +59,14 @@ Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem conv
 - Importar uma vez em `main.ts`; call sites usam a API aumentada sem import local.
 - Não substituem helpers de domínio (ex.: `EquipmentsHelper`).
 
-## Helpers (`presenters/helper/`)
+## Helpers (`src/helpers/`)
 
 - Classe `{AlgumaCoisa}Helper`; arquivo `{alguma-coisa}.helper.ts`; métodos estáticos/puros.
-- Regras reutilizadas por mais de um presenter; sem repository/ViewModel/componente.
-- Referência: `EquipmentsHelper`.
+- Pasta canônica: `src/helpers/` (ex.: `PartyHelper`). Legados em `presenters/helper/` até migração.
+- Regras reutilizadas por mais de um presenter; sem ViewModel/componente.
+- Preferir não chamar repository em helper novo.
 
-**Proibido:** helper com repository/ViewModel; regras de domínio no repository; duplicar a mesma regra em vários presenters.
+**Proibido:** helper que monta ViewModel; regras de domínio no repository; duplicar a mesma regra em vários presenters; código novo em `presenters/helper/`; componentes importando helpers (`Component → Presenter → Helper`).
 
 ## Tooltips
 

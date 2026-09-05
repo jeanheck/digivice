@@ -1,5 +1,6 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import type { Journal } from "@/models";
+import type { Journal, Party } from "@/models";
+import { PartyHelper } from "@/helpers/party.helper";
 import { QuestConverter } from "@/presenters/converter/quest.converter";
 import { MapFrameSlideConverter } from "@/presenters/converter/map-frame-slide.converter";
 import { LocationRepository } from "@/repositories/location.repository";
@@ -13,8 +14,9 @@ export class QuestModalPresenter {
   public static getQuestViewModel(
     journal: Journal,
     questId: string,
-    partyLevel: number,
+    party: Party,
   ): QuestViewModel | null {
+    const partyLevel = PartyHelper.getLevel(party);
     const mainQuestRaw = QuestRepository.getMainQuestRaw();
     if (mainQuestRaw.id === questId) {
       if (journal.mainQuest === null) {

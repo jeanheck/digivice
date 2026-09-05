@@ -92,7 +92,7 @@ const groupCharisma = computed(() => {
 });
 
 const groupPartyLevel = computed(() => {
-  return FooterPresenter.getPartyLevel(store.currentState?.party?.slots ?? []);
+  return FooterPresenter.getPartyLevel(store.currentState?.party ?? { slots: [] });
 });
 </script>
 
