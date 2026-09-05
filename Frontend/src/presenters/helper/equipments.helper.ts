@@ -13,9 +13,7 @@ export class EquipmentsHelper {
     const leftEquipmentId = equipments.left;
     const shouldSkipLeftHandMirror =
       rightEquipmentId !== null &&
-      rightEquipmentId !== 0 &&
       leftEquipmentId !== null &&
-      leftEquipmentId !== 0 &&
       rightEquipmentId === leftEquipmentId &&
       resolveEquipmentType(rightEquipmentId) === TWO_HANDED_WEAPON_TYPE;
 
@@ -28,7 +26,7 @@ export class EquipmentsHelper {
     })
       .map((slotKey) => equipments[slotKey])
       .filter((equipmentId): equipmentId is number => {
-        return equipmentId !== null && equipmentId !== undefined && equipmentId !== 0;
+        return equipmentId !== null;
       });
   }
 
