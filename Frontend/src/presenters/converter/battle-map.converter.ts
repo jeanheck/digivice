@@ -72,7 +72,7 @@ export class BattleMapConverter {
         dark: enemyRaw.dark,
       }),
       conditions: EnemyConditionConverter.convertConditions(conditions),
-      enemyImageUrl: ImageCatalog.getEnemyIconUrl(enemyRaw.name),
+      enemyImageUrl: ImageCatalog.getEnemyImageUrl(enemyRaw.name),
     };
   }
 

@@ -7,7 +7,7 @@ export class WikiDroppedBySourceConverter {
   public static convert(dropSource: DropSourceViewModel): WikiDroppedBySourceViewModel {
     const iconUrl =
       dropSource.kind === "enemy"
-        ? ImageCatalog.getEnemyIconUrl(dropSource.label ?? "")
+        ? ImageCatalog.getEnemyImageUrl(dropSource.label ?? "")
         : NpcBattleOpponentHelper.getImageUrl(dropSource.sourceId);
 
     return {

@@ -15,7 +15,7 @@ const emit = defineEmits<{
 }>();
 
 const digimonIconUrl = computed(() => {
-  return ImageCatalog.getDigimonIconUrl(props.digimonName + props.condition);
+  return ImageCatalog.getDigimonImageUrl(props.digimonName + props.condition);
 });
 </script>
 

@@ -26,7 +26,7 @@ const viewModel = computed(() => {
 });
 
 const evolutionAvatarUrl = computed(() => {
-  return ImageCatalog.getDigievolutionIconUrl(viewModel.value.evolutionName);
+  return ImageCatalog.getDigievolutionImageUrl(viewModel.value.evolutionName);
 });
 </script>
 

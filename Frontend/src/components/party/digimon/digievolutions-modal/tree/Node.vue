@@ -29,7 +29,7 @@ const isReqMet = (requirement: RequirementViewModel) => {
 };
 
 const nodeAvatarUrl = computed(() => {
-  return ImageCatalog.getDigievolutionIconUrl(props.node.name);
+  return ImageCatalog.getDigievolutionImageUrl(props.node.name);
 });
 </script>
 

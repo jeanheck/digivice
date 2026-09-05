@@ -183,7 +183,7 @@ export class ImageCatalog {
     );
   }
 
-  public static getDigimonIconUrl(digimonName: string | null): string | null {
+  public static getDigimonImageUrl(digimonName: string | null): string | null {
     return resolveAssetUrl(
       digimonIconModules,
       DIGIMON_ICON_ASSET_CONFIG.pathSuffix,
@@ -192,7 +192,7 @@ export class ImageCatalog {
     );
   }
 
-  public static getEnemyIconUrl(enemyName: string | null): string | null {
+  public static getEnemyImageUrl(enemyName: string | null): string | null {
     return resolveAssetUrl(
       enemyIconModules,
       ENEMY_ICON_ASSET_CONFIG.pathSuffix,
@@ -201,34 +201,13 @@ export class ImageCatalog {
     );
   }
 
-  public static getDigievolutionIconUrl(digievolutionName: string | null): string | null {
+  public static getDigievolutionImageUrl(digievolutionName: string | null): string | null {
     return resolveAssetUrl(
       digievolutionIconModules,
       DIGIEVOLUTION_ICON_ASSET_CONFIG.pathSuffix,
       DIGIEVOLUTION_ICON_ASSET_CONFIG.extension,
       digievolutionName,
     );
-  }
-
-  public static getFlagIconUrls(
-    flagCode: string | null,
-  ): { src: string; src2x: string } | null {
-    const src = resolveAssetUrl(
-      flagModules,
-      FLAG_ASSET_CONFIG.pathSuffix,
-      FLAG_ASSET_CONFIG.extension,
-      flagCode,
-    );
-    const src2x = resolveAssetUrl(
-      flagModules,
-      FLAG_ASSET_CONFIG.pathSuffix,
-      FLAG_ASSET_CONFIG.extension,
-      flagCode ? `${flagCode}@2x` : null,
-    );
-    if (!src || !src2x) {
-      return null;
-    }
-    return { src, src2x };
   }
 
   public static getCardImageUrl(cardName: string | null): string | null {
@@ -240,7 +219,7 @@ export class ImageCatalog {
     );
   }
 
-  public static getBattleFieldUrl(fieldId: number): string | null {
+  public static getBattleFieldImageUrl(fieldId: number): string | null {
     const assetName = resolveBattleFieldAssetName(fieldId);
     return resolveAssetUrl(
       battleModules,
@@ -250,7 +229,7 @@ export class ImageCatalog {
     );
   }
 
-  public static getBattleJuniorUrl(): string | null {
+  public static getJuniorImageUrl(): string | null {
     return resolveAssetUrl(
       battleModules,
       BATTLE_JUNIOR_ASSET_CONFIG.pathSuffix,
@@ -302,5 +281,26 @@ export class ImageCatalog {
       STORE_ASSET_CONFIG.extension,
       imageName,
     );
+  }
+
+  public static getFlagIconUrls(
+    flagCode: string | null,
+  ): { src: string; src2x: string } | null {
+    const src = resolveAssetUrl(
+      flagModules,
+      FLAG_ASSET_CONFIG.pathSuffix,
+      FLAG_ASSET_CONFIG.extension,
+      flagCode,
+    );
+    const src2x = resolveAssetUrl(
+      flagModules,
+      FLAG_ASSET_CONFIG.pathSuffix,
+      FLAG_ASSET_CONFIG.extension,
+      flagCode ? `${flagCode}@2x` : null,
+    );
+    if (!src || !src2x) {
+      return null;
+    }
+    return { src, src2x };
   }
 }

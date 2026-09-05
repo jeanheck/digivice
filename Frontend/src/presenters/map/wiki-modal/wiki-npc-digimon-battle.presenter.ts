@@ -22,7 +22,7 @@ export class WikiNpcDigimonBattlePresenter {
         {
           id: String(partyMember.enemyId),
           enemy,
-          imageUrl: ImageCatalog.getEnemyIconUrl(enemy.name),
+          imageUrl: ImageCatalog.getEnemyImageUrl(enemy.name),
         },
       ];
     });

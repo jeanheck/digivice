@@ -39,9 +39,9 @@ const tooltipAlign = ref<TooltipHorizontalAlign>("right");
 
 const fieldImageUrl = computed(() => {
   const fieldId = store.currentState?.digimonBattle?.field ?? 0;
-  return ImageCatalog.getBattleFieldUrl(fieldId);
+  return ImageCatalog.getBattleFieldImageUrl(fieldId);
 });
-const juniorImageUrl = ImageCatalog.getBattleJuniorUrl();
+const juniorImageUrl = ImageCatalog.getJuniorImageUrl();
 
 const battleFieldId = computed(() => {
   return store.currentState?.digimonBattle?.field ?? 0;

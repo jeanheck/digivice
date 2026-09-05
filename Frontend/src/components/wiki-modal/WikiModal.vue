@@ -333,7 +333,7 @@ const enemyImageUrl = computed(() => {
     return null;
   }
 
-  return ImageCatalog.getEnemyIconUrl(enemy.value.name);
+  return ImageCatalog.getEnemyImageUrl(enemy.value.name);
 });
 </script>
 
