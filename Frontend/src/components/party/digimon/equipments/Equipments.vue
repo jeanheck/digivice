@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { EQUIPMENT_SLOT_KEYS } from "@/constants/equipment.constant.ts";
 import type { Equipments } from "@/models";
 import Equipment from "./Equipment.vue";
 import EquipmentsTooltip from "./EquipmentsTooltip.vue";
@@ -12,13 +11,8 @@ const props = defineProps<{
   equipments: Equipments;
 }>();
 
-const equipmentSlots = computed(() => {
-  return EQUIPMENT_SLOT_KEYS.map((slotKey) => {
-    return {
-      slotKey,
-      equipment: EquipmentsPresenter.getEquipmentBySlot(props.equipments, slotKey),
-    };
-  });
+const equipmentsViewModel = computed(() => {
+  return EquipmentsPresenter.getEquipmentsViewModel(props.equipments);
 });
 
 const tooltipPlacement = "above" as const;
@@ -48,10 +42,9 @@ const moveTooltip = (event: MouseEvent) => {
 
     <div class="dw3-panel-content w-full flex flex-col p-2 min-[1366px]:p-3 text-white text-xs">
       <Equipment
-        v-for="equipmentSlot in equipmentSlots"
+        v-for="equipmentSlot in equipmentsViewModel"
         :key="equipmentSlot.slotKey"
-        :slot-key="equipmentSlot.slotKey"
-        :equipment="equipmentSlot.equipment"
+        :equipment-slot="equipmentSlot"
         @show-tooltip="showTooltip"
         @move-tooltip="moveTooltip"
         @hide-tooltip="hideTooltip"

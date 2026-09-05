@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { EquipmentConstant } from "@/constants/equipment.constant";
 import { useI18n } from "vue-i18n";
+import type { EquipmentSlotViewModel } from "@/viewmodels/digimon/equipment-slot.viewmodel";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 import { computed } from "vue";
 
 const props = defineProps<{
-  slotKey: EquipmentConstant;
-  equipment: EquipmentViewModel | null;
+  equipmentSlot: EquipmentSlotViewModel;
 }>();
 
 const { t } = useI18n();
@@ -18,23 +17,23 @@ const emit = defineEmits<{
 }>();
 
 const isEquipped = computed(() => {
-  return props.equipment?.id != null;
+  return props.equipmentSlot.equipment?.id != null;
 });
 
 const displayText = computed(() => {
   if (isEquipped.value) {
-    return t(`equipments.${props.equipment!.id}.name`);
+    return t(`equipments.${props.equipmentSlot.equipment!.id}.name`);
   }
 
-  return t(`digimon.equipmentSlot.${props.slotKey}`);
+  return t(`digimon.equipmentSlot.${props.equipmentSlot.slotKey}`);
 });
 
 function onMouseEnter(event: MouseEvent): void {
-  if (!isEquipped.value || props.equipment === null) {
+  if (!isEquipped.value || props.equipmentSlot.equipment === null) {
     return;
   }
 
-  emit("showTooltip", event, props.equipment);
+  emit("showTooltip", event, props.equipmentSlot.equipment);
 }
 </script>
 

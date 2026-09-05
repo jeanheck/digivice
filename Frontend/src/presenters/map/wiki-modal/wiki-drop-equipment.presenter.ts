@@ -6,13 +6,9 @@ import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmode
 export class WikiDropEquipmentPresenter {
   public static getViewModel(equipmentId: number): EquipmentViewModel {
     const equipmentRaw = EquipmentRepository.getEquipmentById(equipmentId);
-    const equipmentViewModel = EquipmentConverter.convert(equipmentId, equipmentRaw);
-
-    return {
-      ...equipmentViewModel,
-      equipableDigimonNames: equipmentViewModel.equipableDigimonIds.map((digimonId) => {
-        return DigimonRepository.getNameById(digimonId);
-      }),
-    };
+    const equipableDigimonNames = equipmentRaw.equipableDigimon.map((digimonId) => {
+      return DigimonRepository.getNameById(Number(digimonId));
+    })
+    return EquipmentConverter.convert(equipmentId, equipableDigimonNames, equipmentRaw);
   }
 }
