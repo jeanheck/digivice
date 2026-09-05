@@ -1,47 +1,18 @@
-import { EquipmentConstant, EQUIPMENT_SLOT_KEYS } from "@/constants/equipment.constant";
-import type { Equipments } from "@/models";
 import { Constant } from "@/constants/constant";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
-const TWO_HANDED_WEAPON_TYPE = "twoHandedWeapon";
 
 export class EquipmentsHelper {
-  public static getBonusCalculationEquipmentIds(
-    equipments: Equipments,
-    resolveEquipmentType: (equipmentId: number) => string,
-  ): number[] {
-    const rightEquipmentId = equipments.right;
-    const leftEquipmentId = equipments.left;
-    const shouldSkipLeftHandMirror =
-      rightEquipmentId !== null &&
-      leftEquipmentId !== null &&
-      rightEquipmentId === leftEquipmentId &&
-      resolveEquipmentType(rightEquipmentId) === TWO_HANDED_WEAPON_TYPE;
-
-    return EQUIPMENT_SLOT_KEYS.filter((slotKey) => {
-      if (shouldSkipLeftHandMirror && slotKey === EquipmentConstant.left) {
-        return false;
-      }
-
-      return true;
-    })
-      .map((slotKey) => equipments[slotKey])
-      .filter((equipmentId): equipmentId is number => {
-        return equipmentId !== null;
-      });
-  }
-
-  public static calculateBonusFromEquipaments(
+  public static calculateBonus(
     stat: Constant,
-    rawEquipments: EquipmentRaw[],
+    equipmentsRaws: EquipmentRaw[],
   ): number {
-    const lowerCaseType = stat.toLowerCase();
-    const attributesRaw = rawEquipments
-      .flatMap((rawEquipment) => rawEquipment.attributes)
-      .filter((attribute) => attribute.attribute.toLowerCase() === lowerCaseType);
+    const equipmentAttributeRaws = equipmentsRaws
+      .flatMap((equipmentRaw) => equipmentRaw.attributes)
+      .filter((equipmentAttributeRaw) => equipmentAttributeRaw.attribute === stat);
 
     return Math.sum(
-      attributesRaw.map((attribute) => {
-        return Number(`${attribute.type}${attribute.value}`);
+      equipmentAttributeRaws.map((equipmentAttributeRaw) => {
+        return Number(`${equipmentAttributeRaw.type}${equipmentAttributeRaw.value}`);
       }),
     );
   }

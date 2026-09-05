@@ -4,6 +4,7 @@ import { PartyHelper } from "@/helpers/party.helper";
 import { EquipmentsHelper } from "@/presenters/helper/equipments.helper";
 import { StatCapHelper } from "@/presenters/helper/stat-cap.helper";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
+import { EquipmentService } from "@/services/equipment.service";
 
 export class FooterPresenter {
   private static getDigimons(slots: DigimonSlot[]): Digimon[] {
@@ -19,17 +20,14 @@ export class FooterPresenter {
 
     return Math.sum(
       digimons.map((digimon) => {
-        const equipmentIds = EquipmentsHelper.getBonusCalculationEquipmentIds(
-          digimon.equipments,
-          (equipmentId) => EquipmentRepository.getEquipmentById(equipmentId).type,
-        );
-        const rawEquipments = EquipmentRepository.getEquipmentsByIds(equipmentIds);
-        const charismaEquipBonus = EquipmentsHelper.calculateBonusFromEquipaments(
+        const equipmentIds = EquipmentService.getEquipmentIds(digimon.equipments);
+        const equipmentsRaws = EquipmentRepository.getEquipmentsByIds(equipmentIds);
+        const charismaEquipmentBonus = EquipmentsHelper.calculateBonus(
           Constant.charisma,
-          rawEquipments,
+          equipmentsRaws,
         );
 
-        return StatCapHelper.capBasePlusEquip(digimon.attributes.charisma, charismaEquipBonus);
+        return StatCapHelper.capBasePlusEquip(digimon.attributes.charisma, charismaEquipmentBonus);
       }),
     );
   }
