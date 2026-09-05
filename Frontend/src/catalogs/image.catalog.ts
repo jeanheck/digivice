@@ -133,21 +133,7 @@ function lookupInGlob(modules: Record<string, string>, pathSuffix: string): stri
   return entry?.[1] ?? null;
 }
 
-function resolveAssetUrl(
-  modules: Record<string, string>,
-  pathSuffix: string,
-  extension: string,
-  fileName: string | null,
-): string | null {
-  if (fileName === null || fileName.trim() === "") {
-    return null;
-  }
-
-  const fullPathSuffix = `${pathSuffix}${fileName}.${extension}`;
-  return lookupInGlob(modules, fullPathSuffix);
-}
-
-function resolveAssetUrlWithNameVariants(
+function getImageUrl(
   modules: Record<string, string>,
   pathSuffix: string,
   extension: string,
@@ -157,25 +143,13 @@ function resolveAssetUrlWithNameVariants(
     return null;
   }
 
-  const nameVariants = [fileName];
-  const capitalizedName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
-  if (capitalizedName !== fileName) {
-    nameVariants.push(capitalizedName);
-  }
-
-  for (const nameVariant of nameVariants) {
-    const resolvedUrl = resolveAssetUrl(modules, pathSuffix, extension, nameVariant);
-    if (resolvedUrl !== null) {
-      return resolvedUrl;
-    }
-  }
-
-  return null;
+  const fullPathSuffix = `${pathSuffix}${fileName}.${extension}`;
+  return lookupInGlob(modules, fullPathSuffix);
 }
 
 export class ImageCatalog {
   public static getLocationImageUrl(imageName: string | null): string | null {
-    return resolveAssetUrl(
+    return getImageUrl(
       mapModules,
       MAP_ASSET_CONFIG.pathSuffix,
       MAP_ASSET_CONFIG.extension,
@@ -184,7 +158,7 @@ export class ImageCatalog {
   }
 
   public static getDigimonImageUrl(digimonName: string | null): string | null {
-    return resolveAssetUrl(
+    return getImageUrl(
       digimonIconModules,
       DIGIMON_ICON_ASSET_CONFIG.pathSuffix,
       DIGIMON_ICON_ASSET_CONFIG.extension,
@@ -193,7 +167,7 @@ export class ImageCatalog {
   }
 
   public static getEnemyImageUrl(enemyName: string | null): string | null {
-    return resolveAssetUrl(
+    return getImageUrl(
       enemyIconModules,
       ENEMY_ICON_ASSET_CONFIG.pathSuffix,
       ENEMY_ICON_ASSET_CONFIG.extension,
@@ -202,7 +176,7 @@ export class ImageCatalog {
   }
 
   public static getDigievolutionImageUrl(digievolutionName: string | null): string | null {
-    return resolveAssetUrl(
+    return getImageUrl(
       digievolutionIconModules,
       DIGIEVOLUTION_ICON_ASSET_CONFIG.pathSuffix,
       DIGIEVOLUTION_ICON_ASSET_CONFIG.extension,
@@ -211,7 +185,7 @@ export class ImageCatalog {
   }
 
   public static getCardImageUrl(cardName: string | null): string | null {
-    return resolveAssetUrl(
+    return getImageUrl(
       cardModules,
       CARD_ASSET_CONFIG.pathSuffix,
       CARD_ASSET_CONFIG.extension,
@@ -221,7 +195,7 @@ export class ImageCatalog {
 
   public static getBattleFieldImageUrl(fieldId: number): string | null {
     const assetName = resolveBattleFieldAssetName(fieldId);
-    return resolveAssetUrl(
+    return getImageUrl(
       battleModules,
       BATTLE_FIELD_ASSET_CONFIG.pathSuffix,
       BATTLE_FIELD_ASSET_CONFIG.extension,
@@ -230,7 +204,7 @@ export class ImageCatalog {
   }
 
   public static getJuniorImageUrl(): string | null {
-    return resolveAssetUrl(
+    return getImageUrl(
       battleModules,
       BATTLE_JUNIOR_ASSET_CONFIG.pathSuffix,
       BATTLE_JUNIOR_ASSET_CONFIG.extension,
@@ -239,7 +213,7 @@ export class ImageCatalog {
   }
 
   public static getTamerImageUrl(imageName: string | null | undefined): string | null {
-    return resolveAssetUrlWithNameVariants(
+    return getImageUrl(
       tamerModules,
       TAMER_ASSET_CONFIG.pathSuffix,
       TAMER_ASSET_CONFIG.extension,
@@ -248,7 +222,7 @@ export class ImageCatalog {
   }
 
   public static getNpcImageUrl(imageName: string | null | undefined): string | null {
-    return resolveAssetUrlWithNameVariants(
+    return getImageUrl(
       npcModules,
       NPC_ASSET_CONFIG.pathSuffix,
       NPC_ASSET_CONFIG.extension,
@@ -257,7 +231,7 @@ export class ImageCatalog {
   }
 
   public static getDuelIslandImageUrl(imageName: string | null | undefined): string | null {
-    return resolveAssetUrlWithNameVariants(
+    return getImageUrl(
       duelIslandModules,
       DUEL_ISLAND_ASSET_CONFIG.pathSuffix,
       DUEL_ISLAND_ASSET_CONFIG.extension,
@@ -266,7 +240,7 @@ export class ImageCatalog {
   }
 
   public static getBossImageUrl(imageName: string | null | undefined): string | null {
-    return resolveAssetUrlWithNameVariants(
+    return getImageUrl(
       bossModules,
       BOSS_ASSET_CONFIG.pathSuffix,
       BOSS_ASSET_CONFIG.extension,
@@ -275,7 +249,7 @@ export class ImageCatalog {
   }
 
   public static getStoreImageUrl(imageName: string | null | undefined): string | null {
-    return resolveAssetUrlWithNameVariants(
+    return getImageUrl(
       storeModules,
       STORE_ASSET_CONFIG.pathSuffix,
       STORE_ASSET_CONFIG.extension,
@@ -286,13 +260,13 @@ export class ImageCatalog {
   public static getFlagIconUrls(
     flagCode: string | null,
   ): { src: string; src2x: string } | null {
-    const src = resolveAssetUrl(
+    const src = getImageUrl(
       flagModules,
       FLAG_ASSET_CONFIG.pathSuffix,
       FLAG_ASSET_CONFIG.extension,
       flagCode,
     );
-    const src2x = resolveAssetUrl(
+    const src2x = getImageUrl(
       flagModules,
       FLAG_ASSET_CONFIG.pathSuffix,
       FLAG_ASSET_CONFIG.extension,

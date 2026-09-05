@@ -130,6 +130,12 @@ Pasta: `src/extensions/`. Módulos side-effect que estendem builtins do TypeScri
 - Importar **uma vez** no bootstrap (`main.ts`); call sites usam a API nativa aumentada (`Math.sum`, `Math.calculatePercentage`) sem import local.
 - Não substituem helpers de domínio (ex.: `EquipmentsHelper`).
 
+### Assets e `imageName`
+
+- Todo `imageName` em JSON estático deve **começar com letra maiúscula** e coincidir exatamente com o nome do arquivo em `Frontend/src/assets/` (sem extensão).
+- Nomes usados como chave de asset da mesma forma (ex.: boss via `enemyRaw.name` → `ImageCatalog.getBossImageUrl`) seguem a mesma regra.
+- `ImageCatalog` faz lookup exato (`getImageUrl`); **não** normaliza casing.
+
 ### Helpers (regras reutilizáveis)
 
 Pasta canônica nova: `src/helpers/`. Helpers legados ainda existem em `presenters/helper/` até migração gradual.

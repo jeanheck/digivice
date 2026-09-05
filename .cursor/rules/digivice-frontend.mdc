@@ -59,6 +59,12 @@ Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem conv
 - Importar uma vez em `main.ts`; call sites usam a API aumentada sem import local.
 - Não substituem helpers de domínio (ex.: `EquipmentsHelper`).
 
+## Assets / `imageName`
+
+- `imageName` em JSON estático começa com letra maiúscula e bate exatamente com o arquivo em `src/assets/` (sem extensão).
+- Nomes usados como chave de asset (ex.: boss via `enemyRaw.name`) seguem a mesma regra.
+- `ImageCatalog` faz lookup exato (`getImageUrl`); não normaliza casing.
+
 ## Helpers (`src/helpers/`)
 
 - Classe `{AlgumaCoisa}Helper`; arquivo `{alguma-coisa}.helper.ts`; métodos estáticos/puros.
