@@ -2,7 +2,7 @@ import { EquipmentConstant, EQUIPMENT_SLOT_KEYS } from "@/constants/equipment.co
 import type { Equipments } from "@/models";
 import { Constant } from "@/constants/constant";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
-const WEAPON_TWO_HANDED_TYPE = "weaponTwoHanded";
+const TWO_HANDED_WEAPON_TYPE = "twoHandedWeapon";
 
 export class EquipmentsHelper {
   public static getBonusCalculationEquipmentIds(
@@ -17,7 +17,7 @@ export class EquipmentsHelper {
       leftEquipmentId !== null &&
       leftEquipmentId !== 0 &&
       rightEquipmentId === leftEquipmentId &&
-      resolveEquipmentType(rightEquipmentId) === WEAPON_TWO_HANDED_TYPE;
+      resolveEquipmentType(rightEquipmentId) === TWO_HANDED_WEAPON_TYPE;
 
     return EQUIPMENT_SLOT_KEYS.filter((slotKey) => {
       if (shouldSkipLeftHandMirror && slotKey === EquipmentConstant.left) {

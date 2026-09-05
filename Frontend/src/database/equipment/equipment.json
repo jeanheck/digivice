@@ -1,6 +1,6 @@
 {
   "92": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -13,10 +13,12 @@
         "value": 15
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "93": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -29,10 +31,12 @@
         "value": 20
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "94": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -45,10 +49,12 @@
         "value": 26
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "95": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -61,10 +67,12 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "96": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -77,10 +85,12 @@
         "value": 41
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "97": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -98,10 +108,12 @@
         "value": 51
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "98": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -114,10 +126,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "99": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -130,10 +144,12 @@
         "value": 54
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "100": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -146,10 +162,12 @@
         "value": 56
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "101": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -167,10 +185,12 @@
         "value": 58
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "102": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -183,10 +203,12 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "103": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -199,10 +221,12 @@
         "value": 40
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "104": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -215,10 +239,12 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "105": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -231,10 +257,12 @@
         "value": 60
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "106": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -247,10 +275,12 @@
         "value": 15
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "107": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -263,10 +293,12 @@
         "value": 18
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "108": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -284,10 +316,12 @@
         "value": 25
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "109": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -300,10 +334,12 @@
         "value": 31
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "110": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -321,10 +357,12 @@
         "value": 40
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "111": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -337,10 +375,12 @@
         "value": 52
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "112": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -358,10 +398,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "113": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -374,10 +416,12 @@
         "value": 54
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "114": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -395,10 +439,12 @@
         "value": 56
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "115": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -411,10 +457,12 @@
         "value": 58
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "116": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -427,10 +475,12 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "117": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -443,10 +493,12 @@
         "value": 40
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "118": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -459,10 +511,12 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "119": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -475,10 +529,12 @@
         "value": 60
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "120": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -491,10 +547,12 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "121": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -507,10 +565,12 @@
         "value": 35
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "122": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -523,10 +583,12 @@
         "value": 39
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "123": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -544,10 +606,12 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "124": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -560,10 +624,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "125": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -576,10 +642,12 @@
         "value": 54
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "126": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -592,10 +660,12 @@
         "value": 56
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "127": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -608,10 +678,12 @@
         "value": 58
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "128": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -624,10 +696,12 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "129": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -640,10 +714,12 @@
         "value": 40
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "130": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -656,10 +732,12 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "131": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -672,10 +750,12 @@
         "value": 60
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "132": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -693,10 +773,13 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "133": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -714,10 +797,13 @@
         "value": 37
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "134": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -735,10 +821,13 @@
         "value": 39
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "135": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -756,10 +845,13 @@
         "value": 51
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "136": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -777,10 +869,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["7"]
+    "equipableDigimon": [
+      "7"
+    ]
   },
   "137": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -798,10 +892,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["6"]
+    "equipableDigimon": [
+      "6"
+    ]
   },
   "138": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -819,10 +915,13 @@
         "value": 54
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "139": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -840,10 +939,13 @@
         "value": 56
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "140": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -861,10 +963,13 @@
         "value": 58
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "141": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -882,10 +987,13 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "142": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -903,10 +1011,13 @@
         "value": 40
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "143": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -924,10 +1035,13 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "144": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -945,10 +1059,13 @@
         "value": 60
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "145": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -961,10 +1078,14 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "146": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -977,10 +1098,14 @@
         "value": 34
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "147": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -993,10 +1118,14 @@
         "value": 43
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "148": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1009,10 +1138,14 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "149": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1025,10 +1158,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["5"]
+    "equipableDigimon": [
+      "5"
+    ]
   },
   "150": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1041,10 +1176,14 @@
         "value": 54
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "151": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1057,10 +1196,14 @@
         "value": 56
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "152": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1073,10 +1216,14 @@
         "value": 58
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "153": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1089,10 +1236,14 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "154": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1105,10 +1256,14 @@
         "value": 40
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "155": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1121,10 +1276,14 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "156": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1137,10 +1296,14 @@
         "value": 60
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "157": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1153,10 +1316,19 @@
         "value": 15
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "158": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1169,10 +1341,19 @@
         "value": 22
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "159": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1185,10 +1366,12 @@
         "value": 25
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "160": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1201,10 +1384,15 @@
         "value": 33
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "161": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1227,10 +1415,15 @@
         "value": 42
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "162": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1243,10 +1436,12 @@
         "value": 49
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "163": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1259,10 +1454,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["3"]
+    "equipableDigimon": [
+      "3"
+    ]
   },
   "164": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1275,10 +1472,15 @@
         "value": 54
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "165": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1291,10 +1493,15 @@
         "value": 56
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "166": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1312,10 +1519,12 @@
         "value": 58
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "167": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1328,10 +1537,13 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "168": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1344,10 +1556,13 @@
         "value": 16
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "169": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1360,10 +1575,13 @@
         "value": 23
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "170": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1376,10 +1594,13 @@
         "value": 25
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "171": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1392,10 +1613,13 @@
         "value": 34
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "172": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1408,10 +1632,13 @@
         "value": 44
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "173": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1424,10 +1651,13 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "174": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1440,10 +1670,14 @@
         "value": 52
       }
     ],
-    "equipableDigimon": ["5", "6", "7"]
+    "equipableDigimon": [
+      "5",
+      "6",
+      "7"
+    ]
   },
   "175": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1456,10 +1690,13 @@
         "value": 54
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "176": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1477,10 +1714,15 @@
         "value": 60
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "177": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1498,10 +1740,15 @@
         "value": 72
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "178": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1519,10 +1766,15 @@
         "value": 90
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "179": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1540,10 +1792,15 @@
         "value": 104
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "180": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1561,10 +1818,15 @@
         "value": 108
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "181": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1582,10 +1844,15 @@
         "value": 112
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "182": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1603,10 +1870,15 @@
         "value": 116
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "183": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1624,10 +1896,13 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["2", "6"]
+    "equipableDigimon": [
+      "2",
+      "6"
+    ]
   },
   "184": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1645,10 +1920,13 @@
         "value": 58
       }
     ],
-    "equipableDigimon": ["2", "6"]
+    "equipableDigimon": [
+      "2",
+      "6"
+    ]
   },
   "185": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1666,10 +1944,13 @@
         "value": 70
       }
     ],
-    "equipableDigimon": ["2", "6"]
+    "equipableDigimon": [
+      "2",
+      "6"
+    ]
   },
   "186": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1687,10 +1968,13 @@
         "value": 96
       }
     ],
-    "equipableDigimon": ["2", "6"]
+    "equipableDigimon": [
+      "2",
+      "6"
+    ]
   },
   "187": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1708,10 +1992,13 @@
         "value": 100
       }
     ],
-    "equipableDigimon": ["2", "6"]
+    "equipableDigimon": [
+      "2",
+      "6"
+    ]
   },
   "188": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1729,10 +2016,13 @@
         "value": 104
       }
     ],
-    "equipableDigimon": ["2", "6"]
+    "equipableDigimon": [
+      "2",
+      "6"
+    ]
   },
   "189": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1750,10 +2040,13 @@
         "value": 108
       }
     ],
-    "equipableDigimon": ["2", "6"]
+    "equipableDigimon": [
+      "2",
+      "6"
+    ]
   },
   "190": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1766,10 +2059,12 @@
         "value": 20
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "191": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1782,10 +2077,12 @@
         "value": 38
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "192": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1798,10 +2095,12 @@
         "value": 40
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "193": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1814,10 +2113,12 @@
         "value": 52
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "194": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1830,10 +2131,12 @@
         "value": 72
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "195": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1851,10 +2154,12 @@
         "value": 90
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "196": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1867,10 +2172,12 @@
         "value": 100
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "197": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1883,10 +2190,12 @@
         "value": 104
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "198": {
-    "type": "weaponTwoHanded",
+    "type": "twoHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1899,10 +2208,12 @@
         "value": 108
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "199": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1920,10 +2231,15 @@
         "value": 25
       }
     ],
-    "equipableDigimon": ["3", "4", "5", "7"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ]
   },
   "200": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1941,10 +2257,15 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["3", "4", "5", "7"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ]
   },
   "201": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1962,10 +2283,15 @@
         "value": 35
       }
     ],
-    "equipableDigimon": ["3", "4", "5", "7"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ]
   },
   "202": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -1983,10 +2309,14 @@
         "value": 44
       }
     ],
-    "equipableDigimon": ["3", "4", "7"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "7"
+    ]
   },
   "203": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -2004,10 +2334,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["4"]
+    "equipableDigimon": [
+      "4"
+    ]
   },
   "204": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -2025,10 +2357,15 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["3", "4", "5", "7"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ]
   },
   "205": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -2046,10 +2383,15 @@
         "value": 52
       }
     ],
-    "equipableDigimon": ["3", "4", "5", "7"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ]
   },
   "206": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "strength",
@@ -2067,7 +2409,12 @@
         "value": 54
       }
     ],
-    "equipableDigimon": ["3", "4", "5", "7"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ]
   },
   "207": {
     "type": "headArmor",
@@ -2093,7 +2440,11 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "208": {
     "type": "headArmor",
@@ -2119,7 +2470,11 @@
         "value": 37
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "209": {
     "type": "headArmor",
@@ -2145,7 +2500,11 @@
         "value": 41
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "210": {
     "type": "headArmor",
@@ -2171,7 +2530,11 @@
         "value": 49
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "211": {
     "type": "headArmor",
@@ -2192,7 +2555,9 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["4"]
+    "equipableDigimon": [
+      "4"
+    ]
   },
   "212": {
     "type": "headArmor",
@@ -2218,7 +2583,11 @@
         "value": 54
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "213": {
     "type": "headArmor",
@@ -2244,7 +2613,11 @@
         "value": 49
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "214": {
     "type": "headArmor",
@@ -2265,7 +2638,11 @@
         "value": 58
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "215": {
     "type": "headArmor",
@@ -2281,7 +2658,16 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "216": {
     "type": "headArmor",
@@ -2297,7 +2683,16 @@
         "value": 16
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "217": {
     "type": "headArmor",
@@ -2313,7 +2708,16 @@
         "value": 20
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "218": {
     "type": "headArmor",
@@ -2334,7 +2738,16 @@
         "value": 24
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "219": {
     "type": "headArmor",
@@ -2355,7 +2768,16 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "220": {
     "type": "headArmor",
@@ -2376,7 +2798,16 @@
         "value": 34
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "221": {
     "type": "headArmor",
@@ -2397,7 +2828,9 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["6"]
+    "equipableDigimon": [
+      "6"
+    ]
   },
   "222": {
     "type": "headArmor",
@@ -2413,7 +2846,9 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "223": {
     "type": "headArmor",
@@ -2429,7 +2864,10 @@
         "value": 40
       }
     ],
-    "equipableDigimon": ["1", "2"]
+    "equipableDigimon": [
+      "1",
+      "2"
+    ]
   },
   "224": {
     "type": "headArmor",
@@ -2450,7 +2888,12 @@
         "value": 46
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "225": {
     "type": "headArmor",
@@ -2471,7 +2914,12 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "226": {
     "type": "headArmor",
@@ -2487,7 +2935,16 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "227": {
     "type": "headArmor",
@@ -2503,7 +2960,16 @@
         "value": 15
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "228": {
     "type": "headArmor",
@@ -2524,7 +2990,12 @@
         "value": 18
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "229": {
     "type": "headArmor",
@@ -2540,7 +3011,10 @@
         "value": 27
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "230": {
     "type": "headArmor",
@@ -2556,7 +3030,10 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "231": {
     "type": "headArmor",
@@ -2572,7 +3049,12 @@
         "value": 36
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "232": {
     "type": "headArmor",
@@ -2588,7 +3070,9 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["7"]
+    "equipableDigimon": [
+      "7"
+    ]
   },
   "233": {
     "type": "headArmor",
@@ -2604,7 +3088,10 @@
         "value": 40
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "234": {
     "type": "headArmor",
@@ -2620,7 +3107,12 @@
         "value": 46
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "235": {
     "type": "headArmor",
@@ -2636,7 +3128,10 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["6", "7"]
+    "equipableDigimon": [
+      "6",
+      "7"
+    ]
   },
   "236": {
     "type": "headArmor",
@@ -2652,7 +3147,16 @@
         "value": 15
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "237": {
     "type": "headArmor",
@@ -2668,7 +3172,16 @@
         "value": 20
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "238": {
     "type": "headArmor",
@@ -2689,7 +3202,12 @@
         "value": 25
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "239": {
     "type": "headArmor",
@@ -2705,7 +3223,11 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["3", "4", "5"]
+    "equipableDigimon": [
+      "3",
+      "4",
+      "5"
+    ]
   },
   "240": {
     "type": "headArmor",
@@ -2726,7 +3248,14 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "241": {
     "type": "headArmor",
@@ -2747,7 +3276,12 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "242": {
     "type": "headArmor",
@@ -2763,7 +3297,9 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "243": {
     "type": "headArmor",
@@ -2779,7 +3315,9 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "244": {
     "type": "headArmor",
@@ -2795,7 +3333,9 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["3"]
+    "equipableDigimon": [
+      "3"
+    ]
   },
   "245": {
     "type": "headArmor",
@@ -2811,7 +3351,9 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["5"]
+    "equipableDigimon": [
+      "5"
+    ]
   },
   "246": {
     "type": "headArmor",
@@ -2827,7 +3369,14 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "247": {
     "type": "headArmor",
@@ -2843,7 +3392,12 @@
         "value": 52
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "248": {
     "type": "headArmor",
@@ -2859,7 +3413,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "249": {
     "type": "bodyArmor",
@@ -2875,7 +3434,16 @@
         "value": 15
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "250": {
     "type": "bodyArmor",
@@ -2891,7 +3459,12 @@
         "value": 19
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "6"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "6"
+    ]
   },
   "251": {
     "type": "bodyArmor",
@@ -2912,7 +3485,12 @@
         "value": 26
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "252": {
     "type": "bodyArmor",
@@ -2933,7 +3511,12 @@
         "value": 8
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "6"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "6"
+    ]
   },
   "253": {
     "type": "bodyArmor",
@@ -2954,7 +3537,15 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ]
   },
   "254": {
     "type": "bodyArmor",
@@ -2975,7 +3566,12 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "255": {
     "type": "bodyArmor",
@@ -2991,7 +3587,9 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["7"]
+    "equipableDigimon": [
+      "7"
+    ]
   },
   "256": {
     "type": "bodyArmor",
@@ -3007,7 +3605,9 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "257": {
     "type": "bodyArmor",
@@ -3023,7 +3623,9 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["6"]
+    "equipableDigimon": [
+      "6"
+    ]
   },
   "258": {
     "type": "bodyArmor",
@@ -3039,7 +3641,9 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "259": {
     "type": "bodyArmor",
@@ -3060,7 +3664,12 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "260": {
     "type": "bodyArmor",
@@ -3076,7 +3685,12 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "261": {
     "type": "bodyArmor",
@@ -3092,7 +3706,12 @@
         "value": 55
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "262": {
     "type": "bodyArmor",
@@ -3108,7 +3727,16 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "263": {
     "type": "bodyArmor",
@@ -3124,7 +3752,16 @@
         "value": 15
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "264": {
     "type": "bodyArmor",
@@ -3145,7 +3782,12 @@
         "value": 20
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "265": {
     "type": "bodyArmor",
@@ -3161,7 +3803,16 @@
         "value": 24
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "266": {
     "type": "bodyArmor",
@@ -3182,7 +3833,13 @@
         "value": 7
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5", "7"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5",
+      "7"
+    ]
   },
   "267": {
     "type": "bodyArmor",
@@ -3203,7 +3860,12 @@
         "value": 8
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "268": {
     "type": "bodyArmor",
@@ -3219,7 +3881,9 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["4"]
+    "equipableDigimon": [
+      "4"
+    ]
   },
   "269": {
     "type": "bodyArmor",
@@ -3235,7 +3899,9 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "270": {
     "type": "bodyArmor",
@@ -3251,7 +3917,9 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["5"]
+    "equipableDigimon": [
+      "5"
+    ]
   },
   "271": {
     "type": "bodyArmor",
@@ -3267,7 +3935,9 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["3"]
+    "equipableDigimon": [
+      "3"
+    ]
   },
   "272": {
     "type": "bodyArmor",
@@ -3288,7 +3958,9 @@
         "value": 42
       }
     ],
-    "equipableDigimon": ["5"]
+    "equipableDigimon": [
+      "5"
+    ]
   },
   "273": {
     "type": "bodyArmor",
@@ -3304,7 +3976,12 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "274": {
     "type": "bodyArmor",
@@ -3320,7 +3997,12 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "275": {
     "type": "shield",
@@ -3336,7 +4018,16 @@
         "value": 10
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "276": {
     "type": "shield",
@@ -3352,7 +4043,16 @@
         "value": 15
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "277": {
     "type": "shield",
@@ -3373,7 +4073,12 @@
         "value": 20
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "278": {
     "type": "shield",
@@ -3389,7 +4094,12 @@
         "value": 25
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "279": {
     "type": "shield",
@@ -3405,7 +4115,12 @@
         "value": 28
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "280": {
     "type": "shield",
@@ -3426,7 +4141,12 @@
         "value": 7
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "281": {
     "type": "shield",
@@ -3442,10 +4162,12 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["7"]
+    "equipableDigimon": [
+      "7"
+    ]
   },
   "282": {
-    "type": "weaponSingleHanded",
+    "type": "oneHandedWeapon",
     "attributes": [
       {
         "attribute": "defense",
@@ -3458,7 +4180,9 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["2"]
+    "equipableDigimon": [
+      "2"
+    ]
   },
   "283": {
     "type": "shield",
@@ -3479,7 +4203,9 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["6"]
+    "equipableDigimon": [
+      "6"
+    ]
   },
   "284": {
     "type": "shield",
@@ -3495,7 +4221,9 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["0"]
+    "equipableDigimon": [
+      "0"
+    ]
   },
   "285": {
     "type": "shield",
@@ -3511,7 +4239,9 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["1"]
+    "equipableDigimon": [
+      "1"
+    ]
   },
   "286": {
     "type": "shield",
@@ -3527,7 +4257,9 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["3"]
+    "equipableDigimon": [
+      "3"
+    ]
   },
   "287": {
     "type": "shield",
@@ -3543,7 +4275,9 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["5"]
+    "equipableDigimon": [
+      "5"
+    ]
   },
   "288": {
     "type": "shield",
@@ -3559,7 +4293,9 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["4"]
+    "equipableDigimon": [
+      "4"
+    ]
   },
   "289": {
     "type": "shield",
@@ -3580,7 +4316,16 @@
         "value": 42
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "290": {
     "type": "shield",
@@ -3596,7 +4341,12 @@
         "value": 45
       }
     ],
-    "equipableDigimon": ["1", "2", "6", "7"]
+    "equipableDigimon": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ]
   },
   "291": {
     "type": "shield",
@@ -3612,7 +4362,12 @@
         "value": 50
       }
     ],
-    "equipableDigimon": ["0", "3", "4", "5"]
+    "equipableDigimon": [
+      "0",
+      "3",
+      "4",
+      "5"
+    ]
   },
   "292": {
     "type": "accessory",
@@ -3628,7 +4383,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "293": {
     "type": "accessory",
@@ -3644,7 +4408,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "294": {
     "type": "accessory",
@@ -3660,7 +4433,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "295": {
     "type": "accessory",
@@ -3676,7 +4458,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "296": {
     "type": "accessory",
@@ -3692,7 +4483,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "297": {
     "type": "accessory",
@@ -3708,7 +4508,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "298": {
     "type": "accessory",
@@ -3724,7 +4533,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "299": {
     "type": "accessory",
@@ -3740,7 +4558,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "300": {
     "type": "accessory",
@@ -3756,7 +4583,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "301": {
     "type": "accessory",
@@ -3772,7 +4608,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "302": {
     "type": "accessory",
@@ -3783,7 +4628,16 @@
         "value": 20
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "303": {
     "type": "accessory",
@@ -3794,7 +4648,16 @@
         "value": 30
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "304": {
     "type": "accessory",
@@ -3810,7 +4673,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "305": {
     "type": "accessory",
@@ -3826,7 +4698,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "306": {
     "type": "accessory",
@@ -3842,7 +4723,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "307": {
     "type": "accessory",
@@ -3858,7 +4748,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "308": {
     "type": "accessory",
@@ -3874,7 +4773,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "309": {
     "type": "accessory",
@@ -3890,7 +4798,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "310": {
     "type": "accessory",
@@ -3906,7 +4823,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "311": {
     "type": "accessory",
@@ -3917,7 +4843,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "312": {
     "type": "accessory",
@@ -3928,7 +4863,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "313": {
     "type": "accessory",
@@ -3939,7 +4883,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "314": {
     "type": "accessory",
@@ -3950,7 +4903,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "315": {
     "type": "accessory",
@@ -3961,7 +4923,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "316": {
     "type": "accessory",
@@ -3972,7 +4943,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "317": {
     "type": "accessory",
@@ -3983,7 +4963,16 @@
         "value": 4
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "318": {
     "type": "accessory",
@@ -3994,7 +4983,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "319": {
     "type": "accessory",
@@ -4005,7 +5003,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "320": {
     "type": "accessory",
@@ -4016,7 +5023,16 @@
         "value": 4
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "321": {
     "type": "accessory",
@@ -4027,32 +5043,86 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "322": {
     "type": "accessory",
     "attributes": [],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "323": {
     "type": "accessory",
     "attributes": [],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "324": {
     "type": "accessory",
     "attributes": [],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "325": {
     "type": "accessory",
     "attributes": [],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "326": {
     "type": "accessory",
     "attributes": [],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "327": {
     "type": "accessory",
@@ -4063,7 +5133,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "328": {
     "type": "accessory",
@@ -4074,7 +5153,16 @@
         "value": 4
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "329": {
     "type": "accessory",
@@ -4085,7 +5173,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "330": {
     "type": "accessory",
@@ -4096,7 +5193,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "331": {
     "type": "accessory",
@@ -4107,7 +5213,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "332": {
     "type": "accessory",
@@ -4118,12 +5233,30 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "333": {
     "type": "accessory",
     "attributes": [],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "334": {
     "type": "accessory",
@@ -4134,12 +5267,30 @@
         "value": 1
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "335": {
     "type": "accessory",
     "attributes": [],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "336": {
     "type": "accessory",
@@ -4150,17 +5301,44 @@
         "value": 1
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "337": {
     "type": "accessory",
     "attributes": [],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "338": {
     "type": "accessory",
     "attributes": [],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "339": {
     "type": "accessory",
@@ -4171,7 +5349,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "340": {
     "type": "accessory",
@@ -4182,7 +5369,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "341": {
     "type": "accessory",
@@ -4193,7 +5389,16 @@
         "value": 7
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "342": {
     "type": "accessory",
@@ -4204,7 +5409,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "343": {
     "type": "accessory",
@@ -4215,7 +5429,16 @@
         "value": 4
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "344": {
     "type": "accessory",
@@ -4226,7 +5449,16 @@
         "value": 6
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "345": {
     "type": "accessory",
@@ -4237,7 +5469,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "346": {
     "type": "accessory",
@@ -4248,7 +5489,16 @@
         "value": 4
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "347": {
     "type": "accessory",
@@ -4259,7 +5509,16 @@
         "value": 6
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "348": {
     "type": "accessory",
@@ -4270,7 +5529,16 @@
         "value": 2
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "349": {
     "type": "accessory",
@@ -4281,7 +5549,16 @@
         "value": 4
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "350": {
     "type": "accessory",
@@ -4292,7 +5569,16 @@
         "value": 6
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "351": {
     "type": "accessory",
@@ -4303,7 +5589,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "352": {
     "type": "accessory",
@@ -4314,7 +5609,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "353": {
     "type": "accessory",
@@ -4325,7 +5629,16 @@
         "value": 7
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "354": {
     "type": "accessory",
@@ -4336,7 +5649,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "355": {
     "type": "accessory",
@@ -4347,7 +5669,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "356": {
     "type": "accessory",
@@ -4358,7 +5689,16 @@
         "value": 7
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "357": {
     "type": "accessory",
@@ -4369,7 +5709,16 @@
         "value": 3
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "358": {
     "type": "accessory",
@@ -4380,7 +5729,16 @@
         "value": 5
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   },
   "359": {
     "type": "accessory",
@@ -4391,6 +5749,15 @@
         "value": 7
       }
     ],
-    "equipableDigimon": ["0", "1", "2", "3", "4", "5", "6", "7"]
+    "equipableDigimon": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ]
   }
 }
