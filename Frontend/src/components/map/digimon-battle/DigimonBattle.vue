@@ -82,18 +82,6 @@ const hasStats = computed(() => {
   );
 });
 
-const firstHalfConditions = computed(() => {
-  const conditions = digimonBattleViewModel.value.conditions;
-  const mid = Math.ceil(conditions.length / 2);
-  return conditions.slice(0, mid);
-});
-
-const secondHalfConditions = computed(() => {
-  const conditions = digimonBattleViewModel.value.conditions;
-  const mid = Math.ceil(conditions.length / 2);
-  return conditions.slice(mid);
-});
-
 function openEnemyWiki(): void {
   const enemyId = digimonBattleViewModel.value.enemyId;
   if (enemyId === null) {
@@ -122,6 +110,16 @@ function onShowStatTooltip(event: MouseEvent, stat: EnemyStatViewModel): void {
   onShowTooltip(event, t(`stat.${stat.statKey}`));
 }
 
+function onShowConditionTooltip(
+  event: MouseEvent,
+  condition: EnemyConditionViewModel,
+  align?: TooltipHorizontalAlign,
+): void {
+  onShowTooltip(event, t(`conditions.${condition.conditionKey}.name`), {
+    align: align ?? "right",
+  });
+}
+
 function onShowBuffTooltip(event: MouseEvent, stat: EnemyStatViewModel): void {
   buffTooltipContent.value = {
     title: t(`stat.${stat.statKey}`),
@@ -143,28 +141,6 @@ function onMoveTooltip(event: MouseEvent): void {
 function onHideTooltip(): void {
   activeVariant.value = "none";
   hide();
-}
-
-function isBooleanCondition(condition: EnemyConditionViewModel): boolean {
-  return !("value" in condition);
-}
-
-function getConditionValue(condition: EnemyConditionViewModel): string {
-  if (isBooleanCondition(condition)) {
-    return condition.can ? t("conditions.yes") : t("conditions.no");
-  }
-
-  return condition.value && Number(condition.value) >= 0
-    ? `${condition.value}%`
-    : t("conditions.no");
-}
-
-function getConditionColorClass(condition: EnemyConditionViewModel): string {
-  if (isBooleanCondition(condition)) {
-    return condition.can ? "text-green-400" : "text-red-400";
-  }
-
-  return condition.can ? "text-white" : "text-red-400";
 }
 </script>
 
@@ -229,6 +205,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
       <DigimonBattleStats
         :attributes="digimonBattleViewModel.attributes"
         :elements="digimonBattleViewModel.elements"
+        :conditions="digimonBattleViewModel.conditions"
         :enabled="hasStats"
         @show-tooltip="onShowStatTooltip"
         @move-tooltip="onMoveTooltip"
@@ -236,63 +213,8 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         @show-buff-tooltip="onShowBuffTooltip"
         @move-buff-tooltip="onMoveTooltip"
         @hide-buff-tooltip="onHideTooltip"
-      >
-        <div class="flex flex-col gap-1 min-w-0">
-          <div
-            v-for="condition in firstHalfConditions"
-            :key="condition.conditionKey"
-            class="flex items-center gap-1.5 min-w-0"
-          >
-            <div
-              class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
-              @mouseenter="onShowTooltip($event, t(`conditions.${condition.conditionKey}.name`))"
-              @mousemove="onMoveTooltip"
-              @mouseleave="onHideTooltip"
-            >
-              <span
-                class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
-                >{{ condition.icon }}</span
-              >
-            </div>
-            <div
-              class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
-              :class="getConditionColorClass(condition)"
-            >
-              <span class="shadow-text cursor-default">{{ getConditionValue(condition) }}</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-1 min-w-0">
-          <div
-            v-for="condition in secondHalfConditions"
-            :key="condition.conditionKey"
-            class="flex items-center gap-1.5 min-w-0"
-          >
-            <div
-              class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
-              @mouseenter="
-                onShowTooltip($event, t(`conditions.${condition.conditionKey}.name`), {
-                  align: 'left',
-                })
-              "
-              @mousemove="onMoveTooltip"
-              @mouseleave="onHideTooltip"
-            >
-              <span
-                class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
-                >{{ condition.icon }}</span
-              >
-            </div>
-            <div
-              class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
-              :class="getConditionColorClass(condition)"
-            >
-              <span class="shadow-text cursor-default">{{ getConditionValue(condition) }}</span>
-            </div>
-          </div>
-        </div>
-      </DigimonBattleStats>
+        @show-condition-tooltip="onShowConditionTooltip"
+      />
     </div>
 
     <TinyTooltip

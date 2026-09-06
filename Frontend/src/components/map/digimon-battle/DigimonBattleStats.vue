@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import DigimonBattleCondition from "@/components/map/digimon-battle/DigimonBattleCondition.vue";
 import DigimonBattleStat from "@/components/map/digimon-battle/DigimonBattleStat.vue";
+import type { TooltipHorizontalAlign } from "@/composables/use-tooltip-position";
+import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
 
-defineProps<{
+const props = defineProps<{
   attributes: EnemyStatViewModel[];
   elements: EnemyStatViewModel[];
+  conditions: EnemyConditionViewModel[];
   enabled: boolean;
 }>();
 
@@ -17,10 +21,25 @@ const emit = defineEmits<{
   showBuffTooltip: [event: MouseEvent, stat: EnemyStatViewModel];
   moveBuffTooltip: [event: MouseEvent];
   hideBuffTooltip: [];
+  showConditionTooltip: [
+    event: MouseEvent,
+    condition: EnemyConditionViewModel,
+    align?: TooltipHorizontalAlign,
+  ];
 }>();
 
 const { t } = useI18n();
 const isStatsOpen = ref(false);
+
+const firstHalfConditions = computed(() => {
+  const mid = Math.ceil(props.conditions.length / 2);
+  return props.conditions.slice(0, mid);
+});
+
+const secondHalfConditions = computed(() => {
+  const mid = Math.ceil(props.conditions.length / 2);
+  return props.conditions.slice(mid);
+});
 
 function toggleStatsPanel(): void {
   isStatsOpen.value = !isStatsOpen.value;
@@ -72,7 +91,27 @@ function toggleStatsPanel(): void {
           />
         </div>
 
-        <slot />
+        <div class="flex flex-col gap-1 min-w-0">
+          <DigimonBattleCondition
+            v-for="condition in firstHalfConditions"
+            :key="condition.conditionKey"
+            :condition="condition"
+            @show-tooltip="emit('showConditionTooltip', $event, condition)"
+            @move-tooltip="emit('moveTooltip', $event)"
+            @hide-tooltip="emit('hideTooltip')"
+          />
+        </div>
+
+        <div class="flex flex-col gap-1 min-w-0">
+          <DigimonBattleCondition
+            v-for="condition in secondHalfConditions"
+            :key="condition.conditionKey"
+            :condition="condition"
+            @show-tooltip="emit('showConditionTooltip', $event, condition, 'left')"
+            @move-tooltip="emit('moveTooltip', $event)"
+            @hide-tooltip="emit('hideTooltip')"
+          />
+        </div>
       </div>
     </div>
   </Transition>
