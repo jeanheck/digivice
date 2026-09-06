@@ -12,6 +12,7 @@ import regularAttacks from "./enemy/enemy-regular-attack.json";
 import enemyTechniques from "./enemy/enemy-technique.json";
 import techniqueTypes from "./digievolution/technique-type.json";
 import digimon from "./digimon.json";
+import digimonBattle from "./digimon-battle.json";
 import digimonBattleField from "./digimon-battle-field.json";
 import stat from "./stat.json";
 import equipments from "./equipment/equipment.json";
@@ -64,6 +65,7 @@ export default {
   ...enemyTechniques,
   ...techniqueTypes,
   ...digimon,
+  ...digimonBattle,
   ...digimonBattleField,
   ...stat,
   ...equipments,

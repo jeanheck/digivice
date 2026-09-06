@@ -8,6 +8,7 @@ import DigimonBattleEnemySpecie from "@/components/map/digimon-battle/DigimonBat
 import DigimonBattleEnemyStatus from "@/components/map/digimon-battle/DigimonBattleEnemyStatus.vue";
 import DigimonBattleField from "@/components/map/digimon-battle/DigimonBattleField.vue";
 import DigimonBattleJunior from "@/components/map/digimon-battle/DigimonBattleJunior.vue";
+import DigimonBattleStats from "@/components/map/digimon-battle/DigimonBattleStats.vue";
 import EnemyBuffStatsTooltip from "@/components/map/digimon-battle/EnemyBuffStatsTooltip.vue";
 import HpProgressBar from "@/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
 import TinyTooltip from "@/components/tooltip/TinyTooltip.vue";
@@ -24,8 +25,6 @@ import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel
 
 type TooltipVariant = "none" | "tiny" | "buff";
 
-const BATTLE_DELTA_STAT_KEYS = new Set(["strength", "defense", "speed"]);
-
 const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
 }>();
@@ -33,7 +32,6 @@ const emit = defineEmits<{
 const store = useGameStore();
 const { t } = useI18n();
 
-const isStatsOpen = ref(false);
 const activeVariant = ref<TooltipVariant>("none");
 const { x, y, showAt, move, hide } = useTooltipPosition(0);
 const tooltipTitle = ref("");
@@ -96,10 +94,6 @@ const secondHalfConditions = computed(() => {
   return conditions.slice(mid);
 });
 
-function toggleStatsPanel(): void {
-  isStatsOpen.value = !isStatsOpen.value;
-}
-
 function openEnemyWiki(): void {
   const enemyId = digimonBattleViewModel.value.enemyId;
   if (enemyId === null) {
@@ -124,7 +118,11 @@ function onShowTooltip(
   });
 }
 
-function showBuffTooltip(event: MouseEvent, stat: EnemyStatViewModel): void {
+function onShowStatTooltip(event: MouseEvent, stat: EnemyStatViewModel): void {
+  onShowTooltip(event, t(`stat.${stat.statKey}`));
+}
+
+function onShowBuffTooltip(event: MouseEvent, stat: EnemyStatViewModel): void {
   buffTooltipContent.value = {
     title: t(`stat.${stat.statKey}`),
     base: stat.baseValue ?? stat.value,
@@ -138,30 +136,6 @@ function showBuffTooltip(event: MouseEvent, stat: EnemyStatViewModel): void {
   });
 }
 
-function onStatValueMouseEnter(event: MouseEvent, stat: EnemyStatViewModel): void {
-  if (!hasBattleDelta(stat)) {
-    return;
-  }
-
-  showBuffTooltip(event, stat);
-}
-
-function onStatValueMouseMove(event: MouseEvent, stat: EnemyStatViewModel): void {
-  if (!hasBattleDelta(stat)) {
-    return;
-  }
-
-  onMoveTooltip(event);
-}
-
-function onStatValueMouseLeave(stat: EnemyStatViewModel): void {
-  if (!hasBattleDelta(stat)) {
-    return;
-  }
-
-  onHideTooltip();
-}
-
 function onMoveTooltip(event: MouseEvent): void {
   move(event, tooltipPlacement.value);
 }
@@ -169,24 +143,6 @@ function onMoveTooltip(event: MouseEvent): void {
 function onHideTooltip(): void {
   activeVariant.value = "none";
   hide();
-}
-
-function hasBattleDelta(stat: EnemyStatViewModel): boolean {
-  return BATTLE_DELTA_STAT_KEYS.has(stat.statKey) && (stat.delta ?? 0) !== 0;
-}
-
-function getStatValueColorClass(stat: EnemyStatViewModel): string {
-  const delta = stat.delta ?? 0;
-
-  if (delta > 0) {
-    return "text-green-400";
-  }
-
-  if (delta < 0) {
-    return "text-red-400";
-  }
-
-  return "";
 }
 
 function isBooleanCondition(condition: EnemyConditionViewModel): boolean {
@@ -246,7 +202,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         @hide-tooltip="onHideTooltip"
       />
       <DigimonBattleEnemyLevel :level="digimonBattleViewModel.level" />
-      <DigimonBattleEnemySpecie 
+      <DigimonBattleEnemySpecie
         :species-emoji="digimonBattleViewModel.speciesEmoji"
         @show-tooltip="
           onShowTooltip($event, t(`species.${digimonBattleViewModel.species}`), { align: 'left' })
@@ -262,151 +218,81 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
       <DigimonBattleEnemyImage
         v-if="digimonBattleViewModel.enemyImageUrl"
         :image-url="digimonBattleViewModel.enemyImageUrl"
-        :alt="digimonBattleViewModel.title"
         :clickable="canOpenWiki"
         @click="openEnemyWiki"
       />
 
       <DigimonBattleJunior />
 
-      <button
-        v-if="hasStats"
-        type="button"
-        class="absolute bottom-2 right-2 z-20 cursor-pointer rounded bg-black/80 border border-blue-800 px-2 py-1 flex items-center justify-center text-blue-500 hover:bg-blue-900/80 hover:border-blue-500 hover:text-blue-400 transition-all font-bold text-[9px] tracking-wide shadow-[0_0_10px_rgba(0,170,255,0.2)]"
-        :aria-expanded="isStatsOpen"
-        @click="toggleStatsPanel"
-      >
-        {{ isStatsOpen ? t("map.hideDetails") : t("map.showDetails") }}
-      </button>
-
       <DigimonBattleField :battle-field-id="battleFieldId" />
 
-      <Transition name="fade">
-        <div
-          v-if="hasStats && isStatsOpen"
-          class="map-info-panel absolute inset-0 z-10 max-w-none! w-full border-0! rounded-none! backdrop-blur-none! pb-8 text-white text-xs"
-        >
-          <div class="grid grid-cols-4 w-full">
-            <div class="flex flex-col gap-1 min-w-0">
-              <div
-                v-for="stat in digimonBattleViewModel.attributes"
-                :key="stat.statKey"
-                class="flex items-center gap-1.5 min-w-0"
+      <DigimonBattleStats
+        :attributes="digimonBattleViewModel.attributes"
+        :elements="digimonBattleViewModel.elements"
+        :enabled="hasStats"
+        @show-tooltip="onShowStatTooltip"
+        @move-tooltip="onMoveTooltip"
+        @hide-tooltip="onHideTooltip"
+        @show-buff-tooltip="onShowBuffTooltip"
+        @move-buff-tooltip="onMoveTooltip"
+        @hide-buff-tooltip="onHideTooltip"
+      >
+        <div class="flex flex-col gap-1 min-w-0">
+          <div
+            v-for="condition in firstHalfConditions"
+            :key="condition.conditionKey"
+            class="flex items-center gap-1.5 min-w-0"
+          >
+            <div
+              class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
+              @mouseenter="onShowTooltip($event, t(`conditions.${condition.conditionKey}.name`))"
+              @mousemove="onMoveTooltip"
+              @mouseleave="onHideTooltip"
+            >
+              <span
+                class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
+                >{{ condition.icon }}</span
               >
-                <div
-                  class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
-                  @mouseenter="onShowTooltip($event, t(`stat.${stat.statKey}`))"
-                  @mousemove="onMoveTooltip"
-                  @mouseleave="onHideTooltip"
-                >
-                  <span
-                    class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
-                    >{{ stat.icon }}</span
-                  >
-                </div>
-                <div
-                  class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
-                >
-                  <span
-                    class="shadow-text tabular-nums"
-                    :class="[
-                      getStatValueColorClass(stat),
-                      hasBattleDelta(stat) ? 'cursor-help' : 'cursor-default',
-                    ]"
-                    @mouseenter="onStatValueMouseEnter($event, stat)"
-                    @mousemove="onStatValueMouseMove($event, stat)"
-                    @mouseleave="onStatValueMouseLeave(stat)"
-                    >{{ stat.value }}</span
-                  >
-                </div>
-              </div>
             </div>
-
-            <div class="flex flex-col gap-1 min-w-0">
-              <div
-                v-for="stat in digimonBattleViewModel.elements"
-                :key="stat.statKey"
-                class="flex items-center gap-1.5 min-w-0"
-              >
-                <div
-                  class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
-                  @mouseenter="onShowTooltip($event, t(`stat.${stat.statKey}`))"
-                  @mousemove="onMoveTooltip"
-                  @mouseleave="onHideTooltip"
-                >
-                  <span
-                    class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
-                    >{{ stat.icon }}</span
-                  >
-                </div>
-                <div
-                  class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
-                >
-                  <span class="shadow-text cursor-default">{{ stat.value }}</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex flex-col gap-1 min-w-0">
-              <div
-                v-for="condition in firstHalfConditions"
-                :key="condition.conditionKey"
-                class="flex items-center gap-1.5 min-w-0"
-              >
-                <div
-                  class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
-                  @mouseenter="
-                    onShowTooltip($event, t(`conditions.${condition.conditionKey}.name`))
-                  "
-                  @mousemove="onMoveTooltip"
-                  @mouseleave="onHideTooltip"
-                >
-                  <span
-                    class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
-                    >{{ condition.icon }}</span
-                  >
-                </div>
-                <div
-                  class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
-                  :class="getConditionColorClass(condition)"
-                >
-                  <span class="shadow-text cursor-default">{{ getConditionValue(condition) }}</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex flex-col gap-1 min-w-0">
-              <div
-                v-for="condition in secondHalfConditions"
-                :key="condition.conditionKey"
-                class="flex items-center gap-1.5 min-w-0"
-              >
-                <div
-                  class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
-                  @mouseenter="
-                    onShowTooltip($event, t(`conditions.${condition.conditionKey}.name`), {
-                      align: 'left',
-                    })
-                  "
-                  @mousemove="onMoveTooltip"
-                  @mouseleave="onHideTooltip"
-                >
-                  <span
-                    class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
-                    >{{ condition.icon }}</span
-                  >
-                </div>
-                <div
-                  class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
-                  :class="getConditionColorClass(condition)"
-                >
-                  <span class="shadow-text cursor-default">{{ getConditionValue(condition) }}</span>
-                </div>
-              </div>
+            <div
+              class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
+              :class="getConditionColorClass(condition)"
+            >
+              <span class="shadow-text cursor-default">{{ getConditionValue(condition) }}</span>
             </div>
           </div>
         </div>
-      </Transition>
+
+        <div class="flex flex-col gap-1 min-w-0">
+          <div
+            v-for="condition in secondHalfConditions"
+            :key="condition.conditionKey"
+            class="flex items-center gap-1.5 min-w-0"
+          >
+            <div
+              class="flex items-center w-5 shrink-0 justify-center select-none cursor-help"
+              @mouseenter="
+                onShowTooltip($event, t(`conditions.${condition.conditionKey}.name`), {
+                  align: 'left',
+                })
+              "
+              @mousemove="onMoveTooltip"
+              @mouseleave="onHideTooltip"
+            >
+              <span
+                class="text-sm 2xl:text-base font-emoji drop-shadow-[0_0_2px_rgba(255,255,255,0.7)] -translate-y-1"
+                >{{ condition.icon }}</span
+              >
+            </div>
+            <div
+              class="font-bold tracking-wide flex items-center min-w-0 text-[10px] 2xl:text-base"
+              :class="getConditionColorClass(condition)"
+            >
+              <span class="shadow-text cursor-default">{{ getConditionValue(condition) }}</span>
+            </div>
+          </div>
+        </div>
+      </DigimonBattleStats>
     </div>
 
     <TinyTooltip
