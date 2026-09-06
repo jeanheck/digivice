@@ -8,11 +8,10 @@ import {
   ResistancesConverter,
   type ResistancesEquipmentBonuses,
 } from "@/presenters/converter/resistances.converter";
-import { DigimonBattleHelper } from "@/helpers/digimon-battle.helper";
-import { EquipmentsHelper } from "@/helpers/equipments.helper";
+import { DigimonBattleService } from "@/services/digimon-battle.service";
+import { EquipmentService } from "@/services/equipment.service";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
-import { EquipmentService } from "@/services/equipment.service";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
 import type { AttributesViewModel } from "@/viewmodels/digimon/attributes.viewmodel";
 import type { DigimonStatsViewModel } from "@/viewmodels/digimon/digimon-stats.viewmodel";
@@ -20,7 +19,7 @@ import type { DigievolutionViewModel } from "@/viewmodels/digievolution/digievol
 
 export class StatsPresenter {
   public static getStatsViewModel(digimon: Digimon, location: string | null): DigimonStatsViewModel {
-    const isInBattle = DigimonBattleHelper.isInBattle(location, digimon.inBattle);
+    const isInBattle = DigimonBattleService.isInBattle(location, digimon.inBattle);
     const activeDigievolution =
       digimon.activeDigievolutionId !== null && digimon.activeDigievolutionId !== 0
         ? this.getDigievolutionById(digimon.activeDigievolutionId)
@@ -60,12 +59,12 @@ export class StatsPresenter {
     rawEquipments: EquipmentRaw[],
   ): AttributesEquipmentBonuses {
     return {
-      strength: EquipmentsHelper.calculateBonus(Constant.strength, rawEquipments),
-      defense: EquipmentsHelper.calculateBonus(Constant.defense, rawEquipments),
-      spirit: EquipmentsHelper.calculateBonus(Constant.spirit, rawEquipments),
-      wisdom: EquipmentsHelper.calculateBonus(Constant.wisdom, rawEquipments),
-      speed: EquipmentsHelper.calculateBonus(Constant.speed, rawEquipments),
-      charisma: EquipmentsHelper.calculateBonus(Constant.charisma, rawEquipments),
+      strength: EquipmentService.calculateBonus(Constant.strength, rawEquipments),
+      defense: EquipmentService.calculateBonus(Constant.defense, rawEquipments),
+      spirit: EquipmentService.calculateBonus(Constant.spirit, rawEquipments),
+      wisdom: EquipmentService.calculateBonus(Constant.wisdom, rawEquipments),
+      speed: EquipmentService.calculateBonus(Constant.speed, rawEquipments),
+      charisma: EquipmentService.calculateBonus(Constant.charisma, rawEquipments),
     };
   }
 
@@ -73,13 +72,13 @@ export class StatsPresenter {
     rawEquipments: EquipmentRaw[],
   ): ResistancesEquipmentBonuses {
     return {
-      fire: EquipmentsHelper.calculateBonus(Constant.fire, rawEquipments),
-      water: EquipmentsHelper.calculateBonus(Constant.water, rawEquipments),
-      ice: EquipmentsHelper.calculateBonus(Constant.ice, rawEquipments),
-      wind: EquipmentsHelper.calculateBonus(Constant.wind, rawEquipments),
-      thunder: EquipmentsHelper.calculateBonus(Constant.thunder, rawEquipments),
-      machine: EquipmentsHelper.calculateBonus(Constant.machine, rawEquipments),
-      dark: EquipmentsHelper.calculateBonus(Constant.dark, rawEquipments),
+      fire: EquipmentService.calculateBonus(Constant.fire, rawEquipments),
+      water: EquipmentService.calculateBonus(Constant.water, rawEquipments),
+      ice: EquipmentService.calculateBonus(Constant.ice, rawEquipments),
+      wind: EquipmentService.calculateBonus(Constant.wind, rawEquipments),
+      thunder: EquipmentService.calculateBonus(Constant.thunder, rawEquipments),
+      machine: EquipmentService.calculateBonus(Constant.machine, rawEquipments),
+      dark: EquipmentService.calculateBonus(Constant.dark, rawEquipments),
     };
   }
 

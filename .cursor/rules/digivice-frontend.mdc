@@ -41,10 +41,10 @@ Classes DW3 principais: `dw3-beveled`, `dw3-panel` (+ border/inner/content), `dw
 | Camada | Responsabilidade |
 |--------|------------------|
 | Component | Pinia + presenters. Não chama service/repository/converter. |
-| Service | Domínio reutilizável; orquestra repositories/helpers. Sem Vue/presenters/ViewModel de tela. |
+| Service | Domínio reutilizável; pode orquestrar repositories. Sem Vue/presenters/ViewModel de tela. |
 | Repository | Dados estáticos → tipos **Raw** apenas. |
 | Converter (`presenters/converter/`) | Puro Raw → ViewModel. Sem repository/tela. |
-| Presenter | Orquestra service/repo/helper/converter; regras de tela. Não monta ViewModel inline se houver transformação. |
+| Presenter | Orquestra service/repo/converter; regras de tela. Não monta ViewModel inline se houver transformação. |
 | ViewModel | Contrato da UI; um tipo por arquivo `.viewmodel.ts`. |
 
 Fluxo: `Component → Presenter → Service → Repository → Raw` e `Presenter → Converter → ViewModel`. Service opcional em casos simples.
@@ -57,7 +57,7 @@ Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem conv
 
 - Arquivo `{alvo}.extensions.ts` (ex.: `math.extensions.ts`); side-effect com declaration merging + atribuição no builtin.
 - Importar uma vez em `main.ts`; call sites usam a API aumentada sem import local.
-- Não substituem helpers de domínio (ex.: `EquipmentsHelper`).
+- Não substituem services de domínio (ex.: `EquipmentService`, `PartyService`).
 
 ## Assets / `imageName`
 
@@ -65,14 +65,15 @@ Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem conv
 - Nomes usados como chave de asset (ex.: boss via `enemyRaw.name`) seguem a mesma regra.
 - `ImageCatalog` faz lookup exato (`getImageUrl`); não normaliza casing.
 
-## Helpers (`src/helpers/`)
+## Services (`src/services/`)
 
-- Classe `{AlgumaCoisa}Helper`; arquivo `{alguma-coisa}.helper.ts`; métodos estáticos/puros.
-- Pasta canônica: `src/helpers/` (ex.: `PartyHelper`, `StatHelper`, `EquipmentsHelper`). Legados em `presenters/helper/` até migração.
-- Regras reutilizadas por mais de um presenter; sem ViewModel/componente.
-- Preferir não chamar repository em helper novo.
+- Classe `{AlgumaCoisa}Service`; arquivo `{alguma-coisa}.service.ts`; métodos estáticos.
+- Reuso entre presenters → Service (existente ou novo). Pode chamar repository; sem ViewModel/Vue.
+- Fluxo: `Component → Presenter → Service`. Componentes não importam services.
+- Legado em `presenters/helper/` até migração; não criar helpers novos.
+- Referência: `PartyService`, `EquipmentService`, `StatService`, `DigimonBattleService`.
 
-**Proibido:** helper que monta ViewModel; regras de domínio no repository; duplicar a mesma regra em vários presenters; código novo em `presenters/helper/`; componentes importando helpers (`Component → Presenter → Helper`).
+**Proibido:** duplicar regra em vários presenters; código novo em `presenters/helper/` ou `src/helpers/`; componentes importando services; service montando ViewModel de tela.
 
 ## Tooltips
 

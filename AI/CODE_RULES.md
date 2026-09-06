@@ -80,10 +80,10 @@ Fluxo alvo para dados estáticos (JSON, tabelas locais). A migração dos presen
 | Camada | Responsabilidade |
 |--------|------------------|
 | **Component** | Consome estado reativo da Pinia e chama presenters para casos de uso, cálculos e dados de apresentação. Não chama services, repositories nem converters diretamente. |
-| **Service** (`services/`) | Concentra regras de domínio reutilizáveis e pode orquestrar repositories/helpers. Não conhece Vue, componentes, presenters nem monta ViewModel de tela. |
+| **Service** (`services/`) | Concentra regras de domínio reutilizáveis por mais de um presenter; pode orquestrar repositories. Não conhece Vue, componentes, presenters nem monta ViewModel de tela. |
 | **Repository** | Acesso aos dados estáticos. Retorna exclusivamente tipos **Raw** (ex.: `EnemyRaw`, `LocationRaw`). |
 | **Converter** (`presenters/converter/`) | Transformação **pura** e stateless: `Raw` → `ViewModel`. Não chama repository, não conhece componente nem regra de tela. |
-| **Presenter** | Orquestra o caso de uso da UI: chama service(s), repository(s), helper(s) e converter(s), agrega listas e aplica regras de tela (ex.: retornar `[]` quando não há dado). **Não monta ViewModel inline** quando existir transformação — delega ao converter. |
+| **Presenter** | Orquestra o caso de uso da UI: chama service(s), repository(s) e converter(s), agrega listas e aplica regras de tela (ex.: retornar `[]` quando não há dado). **Não monta ViewModel inline** quando existir transformação — delega ao converter. |
 | **ViewModel** | Contrato exposto ao componente. Tipos em arquivos `{nome}.viewmodel.ts` (kebab-case), um tipo por arquivo. |
 
 #### Fluxo padrão
@@ -96,7 +96,7 @@ Component → Presenter → Service → Repository → Raw
                        ViewModel
 ```
 
-O caminho pelo service é usado quando existe regra de domínio reutilizável. Em casos simples, o presenter pode acessar repository/helper/converter diretamente. Componentes podem consumir a Pinia diretamente para reatividade, mas toda lógica de domínio ou acesso a dados fora da store deve entrar pelo presenter.
+O caminho pelo service é usado quando existe regra de domínio reutilizável. Em casos simples, o presenter pode acessar repository/converter diretamente. Componentes podem consumir a Pinia diretamente para reatividade, mas toda lógica de domínio ou acesso a dados fora da store deve entrar pelo presenter.
 
 Referências atuais de pass-through explícito (Raw estruturalmente equivalente ao ViewModel): `map.presenter.ts`, `enemy-modal.presenter.ts`.
 
@@ -128,7 +128,7 @@ Pasta: `src/extensions/`. Módulos side-effect que estendem builtins do TypeScri
 
 - **Arquivo:** `{alvo}.extensions.ts` (ex.: `math.extensions.ts`).
 - Importar **uma vez** no bootstrap (`main.ts`); call sites usam a API nativa aumentada (`Math.sum`, `Math.calculatePercentage`) sem import local.
-- Não substituem helpers de domínio (ex.: `EquipmentsHelper`).
+- Não substituem services de domínio (ex.: `EquipmentService`, `PartyService`).
 
 ### Assets e `imageName`
 
@@ -136,34 +136,22 @@ Pasta: `src/extensions/`. Módulos side-effect que estendem builtins do TypeScri
 - Nomes usados como chave de asset da mesma forma (ex.: boss via `enemyRaw.name` → `ImageCatalog.getBossImageUrl`) seguem a mesma regra.
 - `ImageCatalog` faz lookup exato (`getImageUrl`); **não** normaliza casing.
 
-### Helpers (regras reutilizáveis)
+### Services (regras reutilizáveis)
 
-Pasta canônica nova: `src/helpers/`. Helpers legados ainda existem em `presenters/helper/` até migração gradual.
+Pasta: `src/services/`. Código de domínio ou de apresentação **reutilizado por mais de um presenter** vive em Service (existente ou novo). Métodos estáticos, sem Vue/ViewModel de tela. Pode chamar repository.
 
-Helpers concentram lógica de domínio ou de apresentação **reutilizada por mais de um presenter**, sem montagem de ViewModel.
+Fluxo: `Component → Presenter → Service`. Componentes **não** importam services.
 
-#### Convenção
+Legado em `presenters/helper/` permanece até migração gradual para services — **não** criar helpers novos.
 
-- **Classe:** `{AlgumaCoisa}Helper` (PascalCase).
-- **Arquivo:** `{alguma-coisa}.helper.ts` (kebab-case com sufixo `.helper.ts`).
-- **Métodos:** estáticos, stateless, funções puras (dados entram, dados saem).
+Referência: `PartyService` (`getLevel`, `getCharisma`), `EquipmentService` (`getEquipmentIds`, `calculateBonus`), `StatService` (`calculateStat`), `DigimonBattleService` (`isInBattle`).
 
-#### Responsabilidade
+#### Proibido em código novo ou refatorado (services / reuso)
 
-| Camada | Responsabilidade |
-|--------|------------------|
-| **Helper** | Regras reutilizáveis sobre models de domínio (ex.: nível da party, extrair IDs de slots). Preferir não chamar repository; não monta ViewModel nem conhece componente. |
-| **Presenter** | Orquestra helper + repository + converter conforme o caso de uso da tela. |
-
-Referência: `PartyHelper` (`getLevel`), `StatHelper` (`calculateStat`), `EquipmentsHelper` (`calculateBonus`) em `src/helpers/`.
-
-#### Proibido em código novo ou refatorado (helpers)
-
-- **Helper** que monta ViewModel.
-- **Repository** com regras de domínio (extração de IDs, deduplicação, filtros de negócio).
-- Duplicar a mesma regra em vários presenters quando um helper resolve.
-- Código novo: preferir `src/helpers/` em vez de `presenters/helper/`.
-- **Componentes** não importam helpers — só presenters (`Component → Presenter → Helper`).
+- Duplicar a mesma regra em vários presenters quando um service resolve.
+- Código novo em `presenters/helper/` ou `src/helpers/`.
+- **Componentes** importando services (ou helpers legados).
+- **Service** que monta ViewModel de tela ou conhece Vue/presenter.
 
 ### Tooltips (fluxo padrão do Frontend)
 

@@ -1,10 +1,10 @@
 import { DigimonConditionConstant } from "@/constants/digimon-condition.constant";
 import { ConditionConstant } from "@/constants/stat/condition.constant";
-import { DigimonBattleHelper } from "@/helpers/digimon-battle.helper";
 import type { Digimon } from "@/models/party/digimon/digimon";
 import type { InBattle } from "@/models/party/digimon/in-battle";
 import type { Vital } from "@/models/party/digimon/vital";
 import { DigimonRepository } from "@/repositories/digimon.repository";
+import { DigimonBattleService } from "@/services/digimon-battle.service";
 
 export class ProfilePresenter {
   private static readonly conditionBitByStatus: ReadonlyArray<{
@@ -18,7 +18,7 @@ export class ProfilePresenter {
   ];
 
   public static isInBattle(location: string | null, inBattle: InBattle): boolean {
-    return DigimonBattleHelper.isInBattle(location, inBattle);
+    return DigimonBattleService.isInBattle(location, inBattle);
   }
 
   public static getHp(digimon: Digimon, isInBattle: boolean): Vital {

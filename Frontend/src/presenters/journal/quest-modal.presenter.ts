@@ -1,11 +1,11 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { Journal, Party } from "@/models";
-import { PartyHelper } from "@/helpers/party.helper";
 import { QuestConverter } from "@/presenters/converter/quest.converter";
 import { MapFrameSlideConverter } from "@/presenters/converter/map-frame-slide.converter";
 import { LocationRepository } from "@/repositories/location.repository";
 import { QuestRepository } from "@/repositories/quest.repository";
 import { LocationService } from "@/services/location.service";
+import { PartyService } from "@/services/party.service";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
@@ -16,7 +16,7 @@ export class QuestModalPresenter {
     questId: string,
     party: Party,
   ): QuestViewModel | null {
-    const partyLevel = PartyHelper.getLevel(party);
+    const partyLevel = PartyService.getLevel(party);
     const mainQuestRaw = QuestRepository.getMainQuestRaw();
     if (mainQuestRaw.id === questId) {
       if (journal.mainQuest === null) {
