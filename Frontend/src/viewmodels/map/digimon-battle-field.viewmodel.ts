@@ -1,5 +1,5 @@
 export interface DigimonBattleFieldViewModel {
-  title: string;
+  type: string;
   strengthen: string | null;
   weaken: string | null;
 }

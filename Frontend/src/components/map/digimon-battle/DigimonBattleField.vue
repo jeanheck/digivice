@@ -10,7 +10,7 @@ const props = defineProps<{
 const { t } = useI18n();
 
 const digimonBattleFieldViewModel = computed(() => {
-  return DigimonBattleFieldPresenter.getDigimonBattleFieldViewModel(props.battleFieldId, t);
+  return DigimonBattleFieldPresenter.getDigimonBattleFieldViewModel(props.battleFieldId);
 });
 </script>
 
@@ -19,19 +19,27 @@ const digimonBattleFieldViewModel = computed(() => {
     <span
       class="text-[10px] 2xl:text-sm font-bold tracking-wide text-white text-outline-black-glow leading-tight"
     >
-      {{ digimonBattleFieldViewModel.title }}
+      {{ t(digimonBattleFieldViewModel.type) }}
     </span>
     <span
       v-if="digimonBattleFieldViewModel.strengthen"
       class="text-[10px] 2xl:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow leading-tight"
     >
-      {{ digimonBattleFieldViewModel.strengthen }}
+      {{
+        t("map.fieldStrengthen", {
+          element: t(`stat.${digimonBattleFieldViewModel.strengthen}`),
+        })
+      }}
     </span>
     <span
       v-if="digimonBattleFieldViewModel.weaken"
       class="text-[10px] 2xl:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow leading-tight"
     >
-      {{ digimonBattleFieldViewModel.weaken }}
+      {{
+        t("map.fieldWeaken", {
+          element: t(`stat.${digimonBattleFieldViewModel.weaken}`),
+        })
+      }}
     </span>
   </div>
 </template>

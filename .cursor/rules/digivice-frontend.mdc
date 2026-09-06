@@ -51,7 +51,9 @@ Fluxo: `Component → (seu) Presenter → Service → Repository → Raw` e `Pre
 
 Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem converter). Converter quando houver transformação/projeção. Raw e ViewModel continuam tipos distintos.
 
-**Proibido:** converter com repository/orquestração; presenter montando ViewModel inline quando cabe converter; repository retornando ViewModel; component chamando service/repo/converter ou presenter alheio; service conhecendo Vue/presenter.
+**i18n:** Presenter/converter devolvem chaves (`*Key`) e dados crus para interpolação — não recebem `ComposerTranslation`/`t` e não traduzem. `t` / `useI18n` só no componente. Ref.: `CardBattleViewModel.titleKey`, `DigimonBattleFieldViewModel`.
+
+**Proibido:** converter com repository/orquestração; presenter montando ViewModel inline quando cabe converter; presenter/converter traduzindo ou importando `vue-i18n`; repository retornando ViewModel; component chamando service/repo/converter ou presenter alheio; service conhecendo Vue/presenter.
 
 ## Extensions (`src/extensions/`)
 

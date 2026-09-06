@@ -1,43 +1,35 @@
-import type { ComposerTranslation } from "vue-i18n";
 import { resolveBattleFieldElement, resolveFieldTechniqueKey } from "@/constants/battle-field.constant";
 import { FieldRepository } from "@/repositories/field.repository";
 import type { DigimonBattleFieldViewModel } from "@/viewmodels/map/digimon-battle-field.viewmodel";
 
 export class DigimonBattleFieldPresenter {
-  public static getDigimonBattleFieldViewModel(
-    fieldId: number,
-    translate: ComposerTranslation,
-  ): DigimonBattleFieldViewModel {
+  public static getDigimonBattleFieldViewModel(fieldId: number): DigimonBattleFieldViewModel {
     if (fieldId === 0) {
-      return this.getNeutralDigimonBattleField(translate);
+      return this.getNeutralDigimonBattleField();
     }
 
     const fieldRaw = FieldRepository.getByFieldId(fieldId);
     if (fieldRaw === null) {
-      return this.getNeutralDigimonBattleField(translate);
+      return this.getNeutralDigimonBattleField();
     }
 
     const element = resolveBattleFieldElement(fieldId);
     if (element === null) {
-      return this.getNeutralDigimonBattleField(translate);
+      return this.getNeutralDigimonBattleField();
     }
 
     const techniqueKey = resolveFieldTechniqueKey(element);
 
     return {
-      title: translate(`technique.${techniqueKey}.name`),
-      strengthen: translate("map.fieldStrengthen", {
-        element: translate(`stat.${fieldRaw.strengthens}`),
-      }),
-      weaken: translate("map.fieldWeaken", {
-        element: translate(`stat.${fieldRaw.weakens}`),
-      }),
+      type: `technique.${techniqueKey}.name`,
+      strengthen: fieldRaw.strengthens,
+      weaken: fieldRaw.weakens,
     };
   }
 
-  private static getNeutralDigimonBattleField(translate: ComposerTranslation): DigimonBattleFieldViewModel {
+  private static getNeutralDigimonBattleField(): DigimonBattleFieldViewModel {
     return {
-      title: translate("map.fieldNeutral"),
+      type: "map.fieldNeutral",
       strengthen: null,
       weaken: null,
     };

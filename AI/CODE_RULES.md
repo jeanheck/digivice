@@ -114,10 +114,15 @@ Criar converter em `presenters/converter/` quando houver **qualquer transformaç
 
 O converter pode receber parâmetros além do Raw quando o ViewModel depende de contexto externo ao objeto (ex.: `enemyId` + `EnemyRaw` → `EnemyResumedViewModel`).
 
+#### i18n (tradução)
+
+Presenter e converter devolvem **chaves i18n** (`*Key`, ex.: `titleKey`) e dados crus necessários à interpolação — **não** recebem `ComposerTranslation` / `t` e **não** traduzem. A chamada a `t` / `useI18n` acontece **somente no componente** (template ou computed de UI). Referência: `CardBattleViewModel.titleKey` + `t(...)` em `CardBattle.vue`; `DigimonBattleFieldViewModel` + `DigimonBattleField.vue`.
+
 #### Proibido em código novo ou refatorado (dados estáticos)
 
 - **Converter** que chama repository ou contém lógica de orquestração de tela.
 - **Presenter** que monta ViewModel inline quando a transformação justifica um converter.
+- **Presenter** ou **converter** que traduz strings ou importa `vue-i18n`.
 - **Repository** que retorna ViewModel ou monta dados para apresentação.
 - **Component** que importa ou chama service, repository, converter, ou **presenter de outra feature**.
 - **Service** que chama presenter, conhece componente/Vue ou monta ViewModel de tela.
