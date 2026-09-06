@@ -70,7 +70,7 @@ const condition = computed(() => {
 });
 
 const calculatedCondition = computed(() => {
-  return ProfilePresenter.getCalculatedCondition(condition.value, hp.value);
+  return ProfilePresenter.getStatus(condition.value, hp.value);
 });
 
 const conditionTooltipTitle = computed(() => {

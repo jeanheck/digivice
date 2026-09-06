@@ -28,7 +28,7 @@ export class DigimonBattleConverter {
     if (enemyRaw === null) {
       return {
         enemyId: null,
-        title,
+        enemyName: title,
         isBoss: false,
         level: null,
         species: null,
@@ -46,7 +46,7 @@ export class DigimonBattleConverter {
 
     return {
       enemyId,
-      title,
+      enemyName: title,
       isBoss,
       level: enemyRaw.level,
       species: enemyRaw.species,

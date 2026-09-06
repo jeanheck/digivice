@@ -4,7 +4,7 @@ import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel
 
 export interface DigimonBattleViewModel {
   enemyId: string | null;
-  title: string;
+  enemyName: string;
   isBoss: boolean;
   level: number | null;
   species: string | null;

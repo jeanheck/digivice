@@ -5,6 +5,7 @@ import type { InBattle } from "@/models/party/digimon/in-battle";
 import type { Vital } from "@/models/party/digimon/vital";
 import { DigimonRepository } from "@/repositories/digimon.repository";
 import { DigimonBattleService } from "@/services/digimon-battle.service";
+import { DigimonService } from "@/services/digimon.service";
 
 export class ProfilePresenter {
   private static readonly conditionBitByStatus: ReadonlyArray<{
@@ -37,32 +38,20 @@ export class ProfilePresenter {
     return DigimonRepository.getNameById(id);
   }
 
-  public static getCalculatedCondition(
-    condition: number,
-    hp: Vital,
-  ): DigimonConditionConstant {
-    if (hp.current === 0) {
-      return DigimonConditionConstant.ko;
-    }
-    if (condition !== 0) {
-      return DigimonConditionConstant.condition;
-    }
-    if (hp.current < hp.max) {
-      return DigimonConditionConstant.injured;
-    }
-    return DigimonConditionConstant.healthy;
+  public static getStatus(condition: number, hp: Vital): DigimonConditionConstant {
+    return DigimonService.getStatus(condition, hp);
   }
 
   public static getConditionTooltipKey(condition: number, hp: Vital): string {
-    const calculatedCondition = this.getCalculatedCondition(condition, hp);
+    const status = DigimonService.getStatus(condition, hp);
 
-    if (calculatedCondition === DigimonConditionConstant.ko) {
+    if (status === DigimonConditionConstant.ko) {
       return "digimon.conditionState.ko";
     }
-    if (calculatedCondition === DigimonConditionConstant.injured) {
+    if (status === DigimonConditionConstant.injured) {
       return "digimon.conditionState.injured";
     }
-    if (calculatedCondition === DigimonConditionConstant.healthy) {
+    if (status === DigimonConditionConstant.healthy) {
       return "digimon.conditionState.healthy";
     }
 

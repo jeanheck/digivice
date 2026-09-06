@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { DigimonConditionConstant } from "@/constants/digimon-condition.constant";
 import type { Vital } from "@/models/party/digimon/vital";
-import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
+import { DigimonBattleEnemyStatusPresenter } from "@/presenters/map/digimon-battle-enemy-status.presenter";
 
 const props = defineProps<{
   condition: number;
@@ -23,8 +23,8 @@ const conditionColorByState: Record<DigimonConditionConstant, string> = {
 };
 
 const backgroundColor = computed(() => {
-  const calculatedCondition = ProfilePresenter.getCalculatedCondition(props.condition, props.hp);
-  return conditionColorByState[calculatedCondition];
+  const status = DigimonBattleEnemyStatusPresenter.getStatus(props.condition, props.hp);
+  return conditionColorByState[status];
 });
 </script>
 

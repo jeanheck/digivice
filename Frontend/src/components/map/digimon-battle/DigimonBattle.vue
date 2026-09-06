@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import { ImageCatalog } from "@/catalogs/image.catalog";
 import DigimonBattleEnemyImage from "@/components/map/digimon-battle/DigimonBattleEnemyImage.vue";
 import DigimonBattleEnemyLevel from "@/components/map/digimon-battle/DigimonBattleEnemyLevel.vue";
 import DigimonBattleEnemySpecie from "@/components/map/digimon-battle/DigimonBattleEnemySpecie.vue";
 import DigimonBattleEnemyStatus from "@/components/map/digimon-battle/DigimonBattleEnemyStatus.vue";
 import DigimonBattleField from "@/components/map/digimon-battle/DigimonBattleField.vue";
+import DigimonBattleFieldImage from "@/components/map/digimon-battle/DigimonBattleFieldImage.vue";
 import DigimonBattleJunior from "@/components/map/digimon-battle/DigimonBattleJunior.vue";
 import DigimonBattleStats from "@/components/map/digimon-battle/DigimonBattleStats.vue";
 import EnemyBuffStatsTooltip from "@/components/map/digimon-battle/EnemyBuffStatsTooltip.vue";
@@ -42,8 +42,6 @@ const tooltipAlign = ref<TooltipHorizontalAlign>("right");
 const battleFieldId = computed(() => {
   return store.currentState?.digimonBattle?.field ?? 0;
 });
-
-const fieldImageUrl = computed(() => ImageCatalog.getDigimonBattleFieldImageUrl(battleFieldId.value));
 
 const enemy = computed(() => {
   return store.currentState?.digimonBattle?.enemy ?? null;
@@ -146,11 +144,7 @@ function onHideTooltip(): void {
 
 <template>
   <div class="relative z-10 flex flex-col flex-1 min-h-0">
-    <div
-      v-if="fieldImageUrl"
-      class="absolute -left-3 -right-3 -top-1.5 -bottom-1.5 z-0 bg-cover bg-center pointer-events-none"
-      :style="{ backgroundImage: `url(${fieldImageUrl})` }"
-    />
+    <DigimonBattleFieldImage :battle-field-id="battleFieldId" />
 
     <div
       class="relative z-1 -mt-1.5 -mx-3 w-[calc(100%+1.5rem)] pt-1.5 pb-1 grid grid-cols-[1fr_auto_auto_auto] gap-x-2 gap-y-2 items-center shrink-0 px-2 bg-black/80"
@@ -160,7 +154,7 @@ function onHideTooltip(): void {
         :class="[titleClass, canOpenWiki ? 'cursor-pointer' : '']"
         @click="openEnemyWiki"
       >
-        {{ digimonBattleViewModel.title }}
+        {{ digimonBattleViewModel.enemyName }}
       </h4>
 
       <HpProgressBar
