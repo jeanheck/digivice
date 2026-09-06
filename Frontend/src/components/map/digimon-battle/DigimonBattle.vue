@@ -2,6 +2,7 @@
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
+import DigimonBattleField from "@/components/map/digimon-battle/DigimonBattleField.vue";
 import EnemyBuffStatsTooltip from "@/components/map/digimon-battle/EnemyBuffStatsTooltip.vue";
 import EnemyConditionSquare from "@/components/map/digimon-battle/EnemyConditionSquare.vue";
 import HpProgressBar from "@/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
@@ -11,7 +12,6 @@ import {
   type TooltipHorizontalAlign,
   type TooltipPlacement,
 } from "@/composables/use-tooltip-position";
-import { BattleFieldPresenter } from "@/presenters/map/battle-field.presenter";
 import { DigimonBattlePresenter } from "@/presenters/map/digimon-battle.presenter";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useGameStore } from "@/stores/use-game-store";
@@ -37,19 +37,12 @@ const buffTooltipContent = ref({ title: "", base: 0, delta: 0, total: 0 });
 const tooltipPlacement = ref<TooltipPlacement>("below");
 const tooltipAlign = ref<TooltipHorizontalAlign>("right");
 
-const fieldImageUrl = computed(() => {
-  const fieldId = store.currentState?.digimonBattle?.field ?? 0;
-  return ImageCatalog.getBattleFieldImageUrl(fieldId);
-});
-const juniorImageUrl = ImageCatalog.getJuniorImageUrl();
-
 const battleFieldId = computed(() => {
   return store.currentState?.digimonBattle?.field ?? 0;
 });
 
-const fieldLabels = computed(() => {
-  return BattleFieldPresenter.getLabels(battleFieldId.value, t);
-});
+const fieldImageUrl = computed(() => ImageCatalog.getDigimonBattleFieldImageUrl(battleFieldId.value));
+const juniorImageUrl = ImageCatalog.getJuniorImageUrl();
 
 const enemy = computed(() => {
   return store.currentState?.digimonBattle?.enemy ?? null;
@@ -225,7 +218,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
     />
 
     <div
-      class="relative z-[1] -mt-1.5 -mx-3 w-[calc(100%+1.5rem)] pt-1.5 pb-1 grid grid-cols-[1fr_auto_auto_auto] gap-x-2 gap-y-2 items-center shrink-0 px-2 bg-black/80"
+      class="relative z-1 -mt-1.5 -mx-3 w-[calc(100%+1.5rem)] pt-1.5 pb-1 grid grid-cols-[1fr_auto_auto_auto] gap-x-2 gap-y-2 items-center shrink-0 px-2 bg-black/80"
     >
       <h4
         class="col-span-4 text-[11px] font-bold tracking-widest leading-tight text-center min-w-0 truncate"
@@ -269,20 +262,20 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
     </div>
 
     <div
-      class="relative z-[1] flex-1 min-h-0 overflow-visible -mx-3 -mb-1.5 w-[calc(100%+1.5rem)]"
+      class="relative z-1 flex-1 min-h-0 overflow-visible -mx-3 -mb-1.5 w-[calc(100%+1.5rem)]"
     >
       <img
         v-if="digimonBattleViewModel.enemyImageUrl"
         :src="digimonBattleViewModel.enemyImageUrl"
         :alt="digimonBattleViewModel.title"
-        class="absolute top-2 left-2 z-[1] w-[50%] max-h-[65%] object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,1)]"
+        class="absolute top-2 left-2 z-1 w-[50%] max-h-[65%] object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,1)]"
         :class="canOpenWiki ? 'cursor-pointer' : 'pointer-events-none'"
         @click="openEnemyWiki"
       />
 
       <div
         v-if="juniorImageUrl"
-        class="absolute -bottom-12 -right-6 z-[2] w-[100%] h-[110%] overflow-hidden pointer-events-none"
+        class="absolute -bottom-12 -right-6 z-2 w-full h-[110%] overflow-hidden pointer-events-none"
       >
         <img
           :src="juniorImageUrl"
@@ -301,30 +294,12 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         {{ isStatsOpen ? t("map.hideDetails") : t("map.showDetails") }}
       </button>
 
-      <div class="absolute bottom-2 left-2 z-[5] flex flex-col gap-0.5 pointer-events-none">
-        <span
-          class="text-[10px] 2xl:text-sm font-bold tracking-wide text-white text-outline-black-glow leading-tight"
-        >
-          {{ fieldLabels.title }}
-        </span>
-        <span
-          v-if="fieldLabels.strengthenLabel"
-          class="text-[10px] 2xl:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow leading-tight"
-        >
-          {{ fieldLabels.strengthenLabel }}
-        </span>
-        <span
-          v-if="fieldLabels.weakenLabel"
-          class="text-[10px] 2xl:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow leading-tight"
-        >
-          {{ fieldLabels.weakenLabel }}
-        </span>
-      </div>
+      <DigimonBattleField :battle-field-id="battleFieldId" />
 
       <Transition name="fade">
         <div
           v-if="hasStats && isStatsOpen"
-          class="map-info-panel absolute inset-0 z-10 !max-w-none w-full !border-0 !rounded-none !backdrop-blur-none pb-8 text-white text-xs"
+          class="map-info-panel absolute inset-0 z-10 max-w-none! w-full border-0! rounded-none! backdrop-blur-none! pb-8 text-white text-xs"
         >
           <div class="grid grid-cols-4 w-full">
             <div class="flex flex-col gap-1 min-w-0">

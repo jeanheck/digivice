@@ -1,45 +1,45 @@
 import type { ComposerTranslation } from "vue-i18n";
 import { resolveBattleFieldElement, resolveFieldTechniqueKey } from "@/constants/battle-field.constant";
 import { FieldRepository } from "@/repositories/field.repository";
-import type { BattleFieldLabelsViewModel } from "@/viewmodels/map/battle-field-labels.viewmodel";
+import type { DigimonBattleFieldViewModel } from "@/viewmodels/map/digimon-battle-field.viewmodel";
 
-export class BattleFieldPresenter {
-  public static getLabels(
+export class DigimonBattleFieldPresenter {
+  public static getDigimonBattleFieldViewModel(
     fieldId: number,
     translate: ComposerTranslation,
-  ): BattleFieldLabelsViewModel {
+  ): DigimonBattleFieldViewModel {
     if (fieldId === 0) {
-      return this.createNeutralLabels(translate);
+      return this.getNeutralDigimonBattleField(translate);
     }
 
     const fieldRaw = FieldRepository.getByFieldId(fieldId);
     if (fieldRaw === null) {
-      return this.createNeutralLabels(translate);
+      return this.getNeutralDigimonBattleField(translate);
     }
 
     const element = resolveBattleFieldElement(fieldId);
     if (element === null) {
-      return this.createNeutralLabels(translate);
+      return this.getNeutralDigimonBattleField(translate);
     }
 
     const techniqueKey = resolveFieldTechniqueKey(element);
 
     return {
       title: translate(`technique.${techniqueKey}.name`),
-      strengthenLabel: translate("map.fieldStrengthen", {
+      strengthen: translate("map.fieldStrengthen", {
         element: translate(`stat.${fieldRaw.strengthens}`),
       }),
-      weakenLabel: translate("map.fieldWeaken", {
+      weaken: translate("map.fieldWeaken", {
         element: translate(`stat.${fieldRaw.weakens}`),
       }),
     };
   }
 
-  private static createNeutralLabels(translate: ComposerTranslation): BattleFieldLabelsViewModel {
+  private static getNeutralDigimonBattleField(translate: ComposerTranslation): DigimonBattleFieldViewModel {
     return {
       title: translate("map.fieldNeutral"),
-      strengthenLabel: null,
-      weakenLabel: null,
+      strengthen: null,
+      weaken: null,
     };
   }
 }

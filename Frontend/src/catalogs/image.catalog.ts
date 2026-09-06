@@ -193,7 +193,7 @@ export class ImageCatalog {
     );
   }
 
-  public static getBattleFieldImageUrl(fieldId: number): string | null {
+  public static getDigimonBattleFieldImageUrl(fieldId: number): string | null {
     const assetName = resolveBattleFieldAssetName(fieldId);
     return getImageUrl(
       battleModules,
