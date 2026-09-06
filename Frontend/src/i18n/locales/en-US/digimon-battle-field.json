@@ -7,6 +7,8 @@
     "wind": "Wind Field",
     "thunder": "Thunder Field",
     "machine": "Metal Field",
-    "dark": "Dark Field"
+    "dark": "Dark Field",
+    "strengthen": "{element} +50%",
+    "weaken": "{element} -25%"
   }
 }

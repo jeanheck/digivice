@@ -3,27 +3,19 @@ import type { DigimonBattleFieldViewModel } from "@/viewmodels/map/digimon-battl
 
 export class DigimonBattleFieldPresenter {
   public static getDigimonBattleFieldViewModel(fieldId: number): DigimonBattleFieldViewModel {
-    if (fieldId === 0) {
-      return this.getNeutralDigimonBattleField();
-    }
-
-    const fieldRaw = DigimonBattleFieldRepository.getByFieldId(fieldId);
+    const fieldRaw = DigimonBattleFieldRepository.getFieldById(fieldId);
     if (fieldRaw === null) {
-      return this.getNeutralDigimonBattleField();
+      return {
+        type: "neutral",
+        strengthen: null,
+        weaken: null,
+      };
     }
 
     return {
       type: fieldRaw.type,
       strengthen: fieldRaw.strengthens,
       weaken: fieldRaw.weakens,
-    };
-  }
-
-  private static getNeutralDigimonBattleField(): DigimonBattleFieldViewModel {
-    return {
-      type: "neutral",
-      strengthen: null,
-      weaken: null,
     };
   }
 }

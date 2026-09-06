@@ -5,7 +5,7 @@ import type { DigimonBattleFieldRaw } from "@/repositories/tables/raws/digimon-b
 export class DigimonBattleFieldRepository {
   private static readonly digimonBattleFieldTable = DigimonBattleFieldJson as DigimonBattleFieldTable;
 
-  public static getByFieldId(fieldId: number): DigimonBattleFieldRaw | null {
+  public static getFieldById(fieldId: number): DigimonBattleFieldRaw | null {
     return this.digimonBattleFieldTable[fieldId] ?? null;
   }
 }

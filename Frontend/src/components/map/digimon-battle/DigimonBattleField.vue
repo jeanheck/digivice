@@ -25,21 +25,13 @@ const digimonBattleFieldViewModel = computed(() => {
       v-if="digimonBattleFieldViewModel.strengthen"
       class="text-[10px] 2xl:text-sm font-bold tracking-wide text-green-400 text-outline-black-glow leading-tight"
     >
-      {{
-        t("map.fieldStrengthen", {
-          element: t(`stat.${digimonBattleFieldViewModel.strengthen}`),
-        })
-      }}
+      {{ t("digimonBattleField.strengthen", { element: t(`stat.${digimonBattleFieldViewModel.strengthen}`) }) }}
     </span>
     <span
       v-if="digimonBattleFieldViewModel.weaken"
       class="text-[10px] 2xl:text-sm font-bold tracking-wide text-red-400 text-outline-black-glow leading-tight"
     >
-      {{
-        t("map.fieldWeaken", {
-          element: t(`stat.${digimonBattleFieldViewModel.weaken}`),
-        })
-      }}
+      {{ t("digimonBattleField.weaken", { element: t(`stat.${digimonBattleFieldViewModel.weaken}`) }) }}
     </span>
   </div>
 </template>

@@ -11,8 +11,6 @@
     "noDockHint": "USE THE MAP ON THE LEFT TO SEE FULL ROUTES OR LOOK FOR DOCKS ON THE MAP",
     "unknownZone": "Unknown Zone",
     "showDetails": "Details ▲",
-    "hideDetails": "Details ▼",
-    "fieldStrengthen": "{element} +50%",
-    "fieldWeaken": "{element} -25%"
+    "hideDetails": "Details ▼"
   }
 }

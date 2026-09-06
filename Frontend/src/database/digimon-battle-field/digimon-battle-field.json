@@ -1,4 +1,9 @@
 {
+  "0": {
+    "type": "neutral",
+    "strengthens": null,
+    "weakens": null
+  },
   "2": {
     "type": "fire",
     "strengthens": "fire",
