@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { DigimonConditionConstant } from "@/constants/digimon-condition.constant";
-import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import type { Vital } from "@/models/party/digimon/vital";
+import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 
 const props = defineProps<{
   condition: number;

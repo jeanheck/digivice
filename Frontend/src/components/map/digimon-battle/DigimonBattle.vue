@@ -2,9 +2,13 @@
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
+import DigimonBattleEnemyImage from "@/components/map/digimon-battle/DigimonBattleEnemyImage.vue";
+import DigimonBattleEnemyLevel from "@/components/map/digimon-battle/DigimonBattleEnemyLevel.vue";
+import DigimonBattleEnemySpecie from "@/components/map/digimon-battle/DigimonBattleEnemySpecie.vue";
+import DigimonBattleEnemyStatus from "@/components/map/digimon-battle/DigimonBattleEnemyStatus.vue";
 import DigimonBattleField from "@/components/map/digimon-battle/DigimonBattleField.vue";
+import DigimonBattleJunior from "@/components/map/digimon-battle/DigimonBattleJunior.vue";
 import EnemyBuffStatsTooltip from "@/components/map/digimon-battle/EnemyBuffStatsTooltip.vue";
-import EnemyConditionSquare from "@/components/map/digimon-battle/EnemyConditionSquare.vue";
 import HpProgressBar from "@/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
 import TinyTooltip from "@/components/tooltip/TinyTooltip.vue";
 import {
@@ -42,7 +46,6 @@ const battleFieldId = computed(() => {
 });
 
 const fieldImageUrl = computed(() => ImageCatalog.getDigimonBattleFieldImageUrl(battleFieldId.value));
-const juniorImageUrl = ImageCatalog.getJuniorImageUrl();
 
 const enemy = computed(() => {
   return store.currentState?.digimonBattle?.enemy ?? null;
@@ -235,54 +238,36 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         @move-tooltip="onMoveTooltip"
         @hide-tooltip="onHideTooltip"
       />
-      <EnemyConditionSquare
+      <DigimonBattleEnemyStatus
         :condition="enemyCondition"
         :hp="digimonBattleViewModel.hp"
         @show-tooltip="onShowTooltip($event, conditionTooltipTitle, { align: 'left' })"
         @move-tooltip="onMoveTooltip"
         @hide-tooltip="onHideTooltip"
       />
-      <span
-        v-if="digimonBattleViewModel.level !== null"
-        class="text-[10px] font-bold text-gray-300 shrink-0 justify-self-center cursor-default"
-      >
-        {{ t("digimon.lv") }}.{{ digimonBattleViewModel.level }}
-      </span>
-      <span
-        v-if="digimonBattleViewModel.speciesEmoji && digimonBattleViewModel.species"
-        class="font-emoji text-[16px] shrink-0 justify-self-center -translate-y-1 cursor-help"
-        aria-hidden="true"
-        @mouseenter="
+      <DigimonBattleEnemyLevel :level="digimonBattleViewModel.level" />
+      <DigimonBattleEnemySpecie 
+        :species-emoji="digimonBattleViewModel.speciesEmoji"
+        @show-tooltip="
           onShowTooltip($event, t(`species.${digimonBattleViewModel.species}`), { align: 'left' })
         "
-        @mousemove="onMoveTooltip"
-        @mouseleave="onHideTooltip"
-        >{{ digimonBattleViewModel.speciesEmoji }}</span
-      >
+        @move-tooltip="onMoveTooltip"
+        @hide-tooltip="onHideTooltip"
+      />
     </div>
 
     <div
       class="relative z-1 flex-1 min-h-0 overflow-visible -mx-3 -mb-1.5 w-[calc(100%+1.5rem)]"
     >
-      <img
+      <DigimonBattleEnemyImage
         v-if="digimonBattleViewModel.enemyImageUrl"
-        :src="digimonBattleViewModel.enemyImageUrl"
+        :image-url="digimonBattleViewModel.enemyImageUrl"
         :alt="digimonBattleViewModel.title"
-        class="absolute top-2 left-2 z-1 w-[50%] max-h-[65%] object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,1)]"
-        :class="canOpenWiki ? 'cursor-pointer' : 'pointer-events-none'"
+        :clickable="canOpenWiki"
         @click="openEnemyWiki"
       />
 
-      <div
-        v-if="juniorImageUrl"
-        class="absolute -bottom-12 -right-6 z-2 w-full h-[110%] overflow-hidden pointer-events-none"
-      >
-        <img
-          :src="juniorImageUrl"
-          alt=""
-          class="absolute top-0 right-0 w-full max-w-none h-[260%] object-contain object-top drop-shadow-[0_6px_14px_rgba(0,0,0,1)]"
-        />
-      </div>
+      <DigimonBattleJunior />
 
       <button
         v-if="hasStats"
