@@ -40,18 +40,18 @@ Classes DW3 principais: `dw3-beveled`, `dw3-panel` (+ border/inner/content), `dw
 
 | Camada | Responsabilidade |
 |--------|------------------|
-| Component | Pinia + presenters. Não chama service/repository/converter. |
+| Component | Pinia + **apenas o presenter da sua tela**. Não chama service/repository/converter nem presenters de outras features. |
 | Service | Domínio reutilizável; pode orquestrar repositories. Sem Vue/presenters/ViewModel de tela. |
 | Repository | Dados estáticos → tipos **Raw** apenas. |
 | Converter (`presenters/converter/`) | Puro Raw → ViewModel. Sem repository/tela. |
 | Presenter | Orquestra service/repo/converter; regras de tela. Não monta ViewModel inline se houver transformação. |
 | ViewModel | Contrato da UI; um tipo por arquivo `.viewmodel.ts`. |
 
-Fluxo: `Component → Presenter → Service → Repository → Raw` e `Presenter → Converter → ViewModel`. Service opcional em casos simples.
+Fluxo: `Component → (seu) Presenter → Service → Repository → Raw` e `Presenter → Converter → ViewModel`. Service opcional em casos simples. Precisar de lógica de outro presenter → extrair para Service antes de compartilhar.
 
 Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem converter). Converter quando houver transformação/projeção. Raw e ViewModel continuam tipos distintos.
 
-**Proibido:** converter com repository/orquestração; presenter montando ViewModel inline quando cabe converter; repository retornando ViewModel; component chamando service/repo/converter; service conhecendo Vue/presenter.
+**Proibido:** converter com repository/orquestração; presenter montando ViewModel inline quando cabe converter; repository retornando ViewModel; component chamando service/repo/converter ou presenter alheio; service conhecendo Vue/presenter.
 
 ## Extensions (`src/extensions/`)
 

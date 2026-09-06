@@ -2,16 +2,12 @@ import { MapPresenter } from "@/presenters/map/map.presenter";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import type { CardBattleMapViewModel } from "@/viewmodels/map/card-battle-map.viewmodel";
 
+const CARD_BATTLE_LOCATION_ID = "0700";
+
 export class CardBattleMapPresenter {
-  private static readonly cardBattleLocationId = "0700";
-
-  public static isInCardBattle(locationId: string | null): boolean {
-    return locationId === this.cardBattleLocationId;
-  }
-
   public static getViewModel(opponentId: number): CardBattleMapViewModel {
     const npcId = NpcBattleOpponentHelper.getIdByOpponentId(opponentId);
-    const backgroundImageUrl = MapPresenter.getByLocationId(this.cardBattleLocationId).locationImageUrl;
+    const backgroundImageUrl = MapPresenter.getByLocationId(CARD_BATTLE_LOCATION_ID).locationImageUrl;
 
     return {
       npcId,

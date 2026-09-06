@@ -79,7 +79,7 @@ Fluxo alvo para dados estáticos (JSON, tabelas locais). A migração dos presen
 
 | Camada | Responsabilidade |
 |--------|------------------|
-| **Component** | Consome estado reativo da Pinia e chama presenters para casos de uso, cálculos e dados de apresentação. Não chama services, repositories nem converters diretamente. |
+| **Component** | Consome estado reativo da Pinia e chama **apenas o presenter da sua tela** para casos de uso, cálculos e dados de apresentação. Não chama services, repositories, converters nem presenters de outras features. |
 | **Service** (`services/`) | Concentra regras de domínio reutilizáveis por mais de um presenter; pode orquestrar repositories. Não conhece Vue, componentes, presenters nem monta ViewModel de tela. |
 | **Repository** | Acesso aos dados estáticos. Retorna exclusivamente tipos **Raw** (ex.: `EnemyRaw`, `LocationRaw`). |
 | **Converter** (`presenters/converter/`) | Transformação **pura** e stateless: `Raw` → `ViewModel`. Não chama repository, não conhece componente nem regra de tela. |
@@ -89,12 +89,14 @@ Fluxo alvo para dados estáticos (JSON, tabelas locais). A migração dos presen
 #### Fluxo padrão
 
 ```
-Component → Presenter → Service → Repository → Raw
-                │                       │
-                └──────→ Converter ←────┘
-                           ↓
-                       ViewModel
+Component → (seu) Presenter → Service → Repository → Raw
+                    │                       │
+                    └──────→ Converter ←────┘
+                               ↓
+                           ViewModel
 ```
+
+Cada componente chama **somente o presenter da sua feature** (ex.: `Map.vue` → `MapPresenter`; `BattleMap.vue` → `BattleMapPresenter`). Se a lógica útil está em outro presenter, **extrair para um Service** (ou reutilizar um existente) antes de compartilhar — presenters compartilham via Service, não via o Vue chamando presenters alheios.
 
 O caminho pelo service é usado quando existe regra de domínio reutilizável. Em casos simples, o presenter pode acessar repository/converter diretamente. Componentes podem consumir a Pinia diretamente para reatividade, mas toda lógica de domínio ou acesso a dados fora da store deve entrar pelo presenter.
 
@@ -117,7 +119,7 @@ O converter pode receber parâmetros além do Raw quando o ViewModel depende de 
 - **Converter** que chama repository ou contém lógica de orquestração de tela.
 - **Presenter** que monta ViewModel inline quando a transformação justifica um converter.
 - **Repository** que retorna ViewModel ou monta dados para apresentação.
-- **Component** que importa ou chama service, repository ou converter diretamente.
+- **Component** que importa ou chama service, repository, converter, ou **presenter de outra feature**.
 - **Service** que chama presenter, conhece componente/Vue ou monta ViewModel de tela.
 
 ### Extensions (builtins aumentados)

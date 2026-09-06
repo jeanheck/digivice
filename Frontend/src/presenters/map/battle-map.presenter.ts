@@ -4,12 +4,6 @@ import { EnemyRepository } from "@/repositories/enemy.repository";
 import type { BattleMapViewModel } from "@/viewmodels/map/battle-map.viewmodel";
 
 export class BattleMapPresenter {
-  private static readonly battleLocationId = "0600";
-
-  public static isInBattle(locationId: string | null): boolean {
-    return locationId === this.battleLocationId;
-  }
-
   public static getViewModel(enemy: Enemy | null): BattleMapViewModel {
     const resolvedHp = enemy?.hp ?? { current: 0, max: 0 };
 

@@ -8,8 +8,6 @@ import WikiModal from "@/components/wiki-modal/WikiModal.vue";
 import { computed, ref } from "vue";
 import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { useGameStore } from "@/stores/use-game-store";
-import { BattleMapPresenter } from "@/presenters/map/battle-map.presenter";
-import { CardBattleMapPresenter } from "@/presenters/map/card-battle-map.presenter";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 
 const store = useGameStore();
@@ -23,11 +21,11 @@ const mapViewModel = computed(() => {
 });
 
 const isInBattle = computed(() => {
-  return BattleMapPresenter.isInBattle(locationId.value);
+  return MapPresenter.isInBattle(locationId.value);
 });
 
 const isInCardBattle = computed(() => {
-  return CardBattleMapPresenter.isInCardBattle(locationId.value);
+  return MapPresenter.isInCardBattle(locationId.value);
 });
 
 const backgroundImageUrl = computed(() => {

@@ -11,7 +11,7 @@ const props = defineProps<{
   equipments: Equipments;
 }>();
 
-const equipmentsViewModel = computed(() => {
+const equipmentsSlotViewModel = computed(() => {
   return EquipmentsPresenter.getEquipmentsViewModel(props.equipments);
 });
 
@@ -42,7 +42,7 @@ const moveTooltip = (event: MouseEvent) => {
 
     <div class="dw3-panel-content w-full flex flex-col p-2 min-[1366px]:p-3 text-white text-xs">
       <Equipment
-        v-for="equipmentSlot in equipmentsViewModel"
+        v-for="equipmentSlot in equipmentsSlotViewModel"
         :key="equipmentSlot.slotKey"
         :equipment-slot="equipmentSlot"
         @show-tooltip="showTooltip"
