@@ -9,7 +9,7 @@ import { EnemyStatConverter } from "@/presenters/converter/enemy-stat.converter"
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
-import type { BattleMapViewModel } from "@/viewmodels/map/battle-map.viewmodel";
+import type { DigimonBattleViewModel } from "@/viewmodels/map/digimon-battle.viewmodel";
 
 export interface BattleEnemyDeltas {
   strength: number;
@@ -17,14 +17,14 @@ export interface BattleEnemyDeltas {
   speed: number;
 }
 
-export class BattleMapConverter {
+export class DigimonBattleConverter {
   public static convert(
     enemyRaw: EnemyRaw | null,
     hp: Vital,
     title: string,
     enemyId: string | null,
     battleDeltas?: BattleEnemyDeltas,
-  ): BattleMapViewModel {
+  ): DigimonBattleViewModel {
     if (enemyRaw === null) {
       return {
         enemyId: null,
@@ -42,7 +42,7 @@ export class BattleMapConverter {
     }
 
     const isBoss = enemyRaw.boss === true;
-    const conditions = BattleMapConverter.toConditions(enemyRaw);
+    const conditions = DigimonBattleConverter.toConditions(enemyRaw);
 
     return {
       enemyId,
@@ -50,9 +50,9 @@ export class BattleMapConverter {
       isBoss,
       level: enemyRaw.level,
       species: enemyRaw.species,
-      speciesEmoji: BattleMapConverter.toSpeciesEmoji(enemyRaw.species, isBoss),
+      speciesEmoji: DigimonBattleConverter.toSpeciesEmoji(enemyRaw.species, isBoss),
       hp,
-      attributes: BattleMapConverter.applyBattleDeltas(
+      attributes: DigimonBattleConverter.applyBattleDeltas(
         EnemyStatConverter.convertAttributes({
           strength: enemyRaw.strength,
           defense: enemyRaw.defense,

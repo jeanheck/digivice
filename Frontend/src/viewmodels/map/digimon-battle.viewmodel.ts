@@ -2,7 +2,7 @@ import type { Vital } from "@/models/party/digimon/vital";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
 
-export interface BattleMapViewModel {
+export interface DigimonBattleViewModel {
   enemyId: string | null;
   title: string;
   isBoss: boolean;

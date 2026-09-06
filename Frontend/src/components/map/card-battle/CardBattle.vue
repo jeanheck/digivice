@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { CardBattleMapPresenter } from "@/presenters/map/card-battle-map.presenter";
+import { CardBattlePresenter } from "@/presenters/map/card-battle.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 
 const emit = defineEmits<{
@@ -11,16 +11,16 @@ const emit = defineEmits<{
 const store = useGameStore();
 const { t } = useI18n();
 
-const cardBattleMapViewModel = computed(() => {
+const cardBattleViewModel = computed(() => {
   const opponentId = store.currentState?.cardBattle?.opponentId ?? 0;
-  return CardBattleMapPresenter.getViewModel(opponentId);
+  return CardBattlePresenter.getViewModel(opponentId);
 });
 
 const titleClass =
   "text-xs sm:text-sm font-bold text-white tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight";
 
 function openNpcWiki(): void {
-  const npcId = cardBattleMapViewModel.value.npcId;
+  const npcId = cardBattleViewModel.value.npcId;
   if (npcId === null) {
     return;
   }
@@ -32,27 +32,27 @@ function openNpcWiki(): void {
 <template>
   <div class="relative z-10 flex flex-col flex-1 min-h-0 pt-1">
     <div
-      v-if="cardBattleMapViewModel.backgroundImageUrl"
+      v-if="cardBattleViewModel.backgroundImageUrl"
       class="absolute -left-3 -right-3 -top-1.5 -bottom-1.5 z-0 bg-cover bg-center pointer-events-none"
-      :style="{ backgroundImage: `url(${cardBattleMapViewModel.backgroundImageUrl})` }"
+      :style="{ backgroundImage: `url(${cardBattleViewModel.backgroundImageUrl})` }"
     />
 
-    <div class="relative z-[1] w-full flex justify-center shrink-0">
+    <div class="relative z-1 w-full flex justify-center shrink-0">
       <div class="map-info-panel-fit text-center">
         <button
-          v-if="cardBattleMapViewModel.npcId !== null"
+          v-if="cardBattleViewModel.npcId !== null"
           type="button"
           :class="[titleClass, 'cursor-pointer transition-colors hover:text-blue-300']"
           @click="openNpcWiki"
         >
-          {{ cardBattleMapViewModel.titleKey !== null ? t(cardBattleMapViewModel.titleKey) : "" }}
+          {{ cardBattleViewModel.titleKey !== null ? t(cardBattleViewModel.titleKey) : "" }}
         </button>
         <h4 v-else :class="titleClass">
-          {{ cardBattleMapViewModel.titleKey !== null ? t(cardBattleMapViewModel.titleKey) : "" }}
+          {{ cardBattleViewModel.titleKey !== null ? t(cardBattleViewModel.titleKey) : "" }}
         </h4>
       </div>
     </div>
 
-    <div class="relative z-[1] flex-1 min-h-0" />
+    <div class="relative z-1 flex-1 min-h-0" />
   </div>
 </template>

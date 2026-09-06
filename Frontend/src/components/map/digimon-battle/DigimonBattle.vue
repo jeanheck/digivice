@@ -2,8 +2,8 @@
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import EnemyBuffStatsTooltip from "@/components/map/battle-map/EnemyBuffStatsTooltip.vue";
-import EnemyConditionSquare from "@/components/map/battle-map/EnemyConditionSquare.vue";
+import EnemyBuffStatsTooltip from "@/components/map/digimon-battle/EnemyBuffStatsTooltip.vue";
+import EnemyConditionSquare from "@/components/map/digimon-battle/EnemyConditionSquare.vue";
 import HpProgressBar from "@/components/party/digimon/profile/progress-bar/HpProgressBar.vue";
 import TinyTooltip from "@/components/tooltip/TinyTooltip.vue";
 import {
@@ -12,7 +12,7 @@ import {
   type TooltipPlacement,
 } from "@/composables/use-tooltip-position";
 import { BattleFieldPresenter } from "@/presenters/map/battle-field.presenter";
-import { BattleMapPresenter } from "@/presenters/map/battle-map.presenter";
+import { DigimonBattlePresenter } from "@/presenters/map/digimon-battle.presenter";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
@@ -55,8 +55,8 @@ const enemy = computed(() => {
   return store.currentState?.digimonBattle?.enemy ?? null;
 });
 
-const battleMapViewModel = computed(() => {
-  return BattleMapPresenter.getViewModel(enemy.value);
+const digimonBattleViewModel = computed(() => {
+  return DigimonBattlePresenter.getViewModel(enemy.value);
 });
 
 const enemyCondition = computed(() => {
@@ -65,16 +65,16 @@ const enemyCondition = computed(() => {
 
 const conditionTooltipTitle = computed(() => {
   return t(
-    ProfilePresenter.getConditionTooltipKey(enemyCondition.value, battleMapViewModel.value.hp),
+    ProfilePresenter.getConditionTooltipKey(enemyCondition.value, digimonBattleViewModel.value.hp),
   );
 });
 
 const canOpenWiki = computed(() => {
-  return battleMapViewModel.value.enemyId !== null;
+  return digimonBattleViewModel.value.enemyId !== null;
 });
 
 const titleClass = computed(() => {
-  if (battleMapViewModel.value.isBoss) {
+  if (digimonBattleViewModel.value.isBoss) {
     return "text-amber-400 drop-shadow-[0_0_5px_rgba(255,191,0,0.8)]";
   }
 
@@ -83,19 +83,19 @@ const titleClass = computed(() => {
 
 const hasStats = computed(() => {
   return (
-    battleMapViewModel.value.attributes.length > 0 ||
-    battleMapViewModel.value.conditions.length > 0
+    digimonBattleViewModel.value.attributes.length > 0 ||
+    digimonBattleViewModel.value.conditions.length > 0
   );
 });
 
 const firstHalfConditions = computed(() => {
-  const conditions = battleMapViewModel.value.conditions;
+  const conditions = digimonBattleViewModel.value.conditions;
   const mid = Math.ceil(conditions.length / 2);
   return conditions.slice(0, mid);
 });
 
 const secondHalfConditions = computed(() => {
-  const conditions = battleMapViewModel.value.conditions;
+  const conditions = digimonBattleViewModel.value.conditions;
   const mid = Math.ceil(conditions.length / 2);
   return conditions.slice(mid);
 });
@@ -105,7 +105,7 @@ function toggleStatsPanel(): void {
 }
 
 function openEnemyWiki(): void {
-  const enemyId = battleMapViewModel.value.enemyId;
+  const enemyId = digimonBattleViewModel.value.enemyId;
   if (enemyId === null) {
     return;
   }
@@ -232,39 +232,39 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
         :class="[titleClass, canOpenWiki ? 'cursor-pointer' : '']"
         @click="openEnemyWiki"
       >
-        {{ battleMapViewModel.title }}
+        {{ digimonBattleViewModel.title }}
       </h4>
 
       <HpProgressBar
         class="min-w-0 w-full justify-self-start"
-        :hp="battleMapViewModel.hp"
+        :hp="digimonBattleViewModel.hp"
         @show-tooltip="onShowTooltip($event, t('digimon.hp'))"
         @move-tooltip="onMoveTooltip"
         @hide-tooltip="onHideTooltip"
       />
       <EnemyConditionSquare
         :condition="enemyCondition"
-        :hp="battleMapViewModel.hp"
+        :hp="digimonBattleViewModel.hp"
         @show-tooltip="onShowTooltip($event, conditionTooltipTitle, { align: 'left' })"
         @move-tooltip="onMoveTooltip"
         @hide-tooltip="onHideTooltip"
       />
       <span
-        v-if="battleMapViewModel.level !== null"
+        v-if="digimonBattleViewModel.level !== null"
         class="text-[10px] font-bold text-gray-300 shrink-0 justify-self-center cursor-default"
       >
-        {{ t("digimon.lv") }}.{{ battleMapViewModel.level }}
+        {{ t("digimon.lv") }}.{{ digimonBattleViewModel.level }}
       </span>
       <span
-        v-if="battleMapViewModel.speciesEmoji && battleMapViewModel.species"
+        v-if="digimonBattleViewModel.speciesEmoji && digimonBattleViewModel.species"
         class="font-emoji text-[16px] shrink-0 justify-self-center -translate-y-1 cursor-help"
         aria-hidden="true"
         @mouseenter="
-          onShowTooltip($event, t(`species.${battleMapViewModel.species}`), { align: 'left' })
+          onShowTooltip($event, t(`species.${digimonBattleViewModel.species}`), { align: 'left' })
         "
         @mousemove="onMoveTooltip"
         @mouseleave="onHideTooltip"
-        >{{ battleMapViewModel.speciesEmoji }}</span
+        >{{ digimonBattleViewModel.speciesEmoji }}</span
       >
     </div>
 
@@ -272,9 +272,9 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
       class="relative z-[1] flex-1 min-h-0 overflow-visible -mx-3 -mb-1.5 w-[calc(100%+1.5rem)]"
     >
       <img
-        v-if="battleMapViewModel.enemyImageUrl"
-        :src="battleMapViewModel.enemyImageUrl"
-        :alt="battleMapViewModel.title"
+        v-if="digimonBattleViewModel.enemyImageUrl"
+        :src="digimonBattleViewModel.enemyImageUrl"
+        :alt="digimonBattleViewModel.title"
         class="absolute top-2 left-2 z-[1] w-[50%] max-h-[65%] object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,1)]"
         :class="canOpenWiki ? 'cursor-pointer' : 'pointer-events-none'"
         @click="openEnemyWiki"
@@ -329,7 +329,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
           <div class="grid grid-cols-4 w-full">
             <div class="flex flex-col gap-1 min-w-0">
               <div
-                v-for="stat in battleMapViewModel.attributes"
+                v-for="stat in digimonBattleViewModel.attributes"
                 :key="stat.statKey"
                 class="flex items-center gap-1.5 min-w-0"
               >
@@ -364,7 +364,7 @@ function getConditionColorClass(condition: EnemyConditionViewModel): string {
 
             <div class="flex flex-col gap-1 min-w-0">
               <div
-                v-for="stat in battleMapViewModel.elements"
+                v-for="stat in digimonBattleViewModel.elements"
                 :key="stat.statKey"
                 class="flex items-center gap-1.5 min-w-0"
               >

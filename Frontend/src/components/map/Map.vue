@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AsukaServerMap from "./asuka-server-map/AsukaServerMap.vue";
-import BattleMap from "./battle-map/BattleMap.vue";
-import CardBattleMap from "./card-battle-map/CardBattleMap.vue";
+import DigimonBattle from "./digimon-battle/DigimonBattle.vue";
+import CardBattle from "./card-battle/CardBattle.vue";
 import SeabedMap from "./seabed-map/SeabedMap.vue";
 import MobiusDesertMap from "./mobius-desert-map/MobiusDesertMap.vue";
 import WikiModal from "@/components/wiki-modal/WikiModal.vue";
@@ -88,8 +88,8 @@ const closeWikiModal = () => {
     <div class="dw3-scan-corner bottom-left" />
     <div class="dw3-scan-corner bottom-right" />
 
-    <BattleMap v-if="isInBattle" @open-enemy-modal="openWikiModal" />
-    <CardBattleMap
+    <DigimonBattle v-if="isInBattle" @open-enemy-modal="openWikiModal" />
+    <CardBattle
       v-else-if="isInCardBattle"
       @open-npc-modal="openWikiModalForNpc"
     />
