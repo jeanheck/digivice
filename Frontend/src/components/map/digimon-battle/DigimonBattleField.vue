@@ -19,7 +19,7 @@ const digimonBattleFieldViewModel = computed(() => {
     <span
       class="text-[10px] 2xl:text-sm font-bold tracking-wide text-white text-outline-black-glow leading-tight"
     >
-      {{ t(digimonBattleFieldViewModel.type) }}
+      {{ t(`digimonBattleField.${digimonBattleFieldViewModel.type}`) }}
     </span>
     <span
       v-if="digimonBattleFieldViewModel.strengthen"

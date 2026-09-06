@@ -1,5 +1,4 @@
-import { resolveBattleFieldElement } from "@/constants/battle-field.constant";
-import { FieldRepository } from "@/repositories/field.repository";
+import { DigimonBattleFieldRepository } from "@/repositories/digimon-battle-field.repository";
 import type { DigimonBattleFieldViewModel } from "@/viewmodels/map/digimon-battle-field.viewmodel";
 
 export class DigimonBattleFieldPresenter {
@@ -8,18 +7,13 @@ export class DigimonBattleFieldPresenter {
       return this.getNeutralDigimonBattleField();
     }
 
-    const fieldRaw = FieldRepository.getByFieldId(fieldId);
+    const fieldRaw = DigimonBattleFieldRepository.getByFieldId(fieldId);
     if (fieldRaw === null) {
       return this.getNeutralDigimonBattleField();
     }
 
-    const element = resolveBattleFieldElement(fieldId);
-    if (element === null) {
-      return this.getNeutralDigimonBattleField();
-    }
-
     return {
-      type: `digimonBattleField.${element}`,
+      type: fieldRaw.type,
       strengthen: fieldRaw.strengthens,
       weaken: fieldRaw.weakens,
     };
@@ -27,7 +21,7 @@ export class DigimonBattleFieldPresenter {
 
   private static getNeutralDigimonBattleField(): DigimonBattleFieldViewModel {
     return {
-      type: "digimonBattleField.neutral",
+      type: "neutral",
       strengthen: null,
       weaken: null,
     };

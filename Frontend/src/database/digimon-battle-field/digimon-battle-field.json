@@ -1,29 +1,36 @@
 {
-  "fire": {
+  "2": {
+    "type": "fire",
     "strengthens": "fire",
     "weakens": "ice"
   },
-  "water": {
+  "3": {
+    "type": "water",
     "strengthens": "water",
     "weakens": "fire"
   },
-  "ice": {
+  "4": {
+    "type": "ice",
     "strengthens": "ice",
     "weakens": "wind"
   },
-  "wind": {
+  "5": {
+    "type": "wind",
     "strengthens": "wind",
     "weakens": "water"
   },
-  "thunder": {
+  "6": {
+    "type": "thunder",
     "strengthens": "thunder",
     "weakens": "machine"
   },
-  "machine": {
+  "7": {
+    "type": "machine",
     "strengthens": "machine",
     "weakens": "dark"
   },
-  "dark": {
+  "8": {
+    "type": "dark",
     "strengthens": "dark",
     "weakens": "thunder"
   }
