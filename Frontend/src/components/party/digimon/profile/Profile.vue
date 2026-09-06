@@ -46,7 +46,7 @@ function onOpenDigievolutions(): void {
 }
 
 const digimonName = computed(() => {
-  return ProfilePresenter.getNameById(props.digimonId);
+  return ProfilePresenter.getName(props.digimonId);
 });
 
 const location = computed(() => {

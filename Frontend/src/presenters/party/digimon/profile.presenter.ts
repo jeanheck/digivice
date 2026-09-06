@@ -34,7 +34,7 @@ export class ProfilePresenter {
     return isInBattle ? digimon.inBattle.condition : 0;
   }
 
-  public static getNameById(id: number): string {
+  public static getName(id: number): string {
     return DigimonRepository.getNameById(id);
   }
 
