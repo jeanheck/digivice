@@ -589,13 +589,15 @@ Battle HP/MP slot offset **`+0x1C`** (byte) — same layout for ally and enemy.
 | `guilmon-gekomon-normal` / `guilmon-gekomon-confuse` | ally | 0 | Confuse | **`0x04`** |
 | `redGoburimon-without-poison` / `redGoburimon-with-poison` | enemy | 0 | Poison | **`0x01`** @ `0xA44EC` |
 
-Bitfield powers-of-two: poison `0x01`, paralyze `0x02`, confuse `0x04`, sleep `0x08`.
-Ally poison/confuse/paralyze/sleep: only active slot changed. Enemy poison: ally
-`+0x1C` stayed 0; enemy id `0x018E` stable. Secondary on enemy poison pair:
-`+0x04` `0x00→0x01` (unknown — not Condition); HP current also dropped (combat
-damage). Confuse snap noise: `+0x1F` `0x00→0x50` (timer?); paralyze snap
+Exclusive status-ailment byte (one value at a time — a new ailment **overwrites**
+the byte; values are not combined): poison `0x01`, paralyze `0x02`, confuse `0x04`,
+sleep `0x08`. Ally poison/confuse/paralyze/sleep: only active slot changed. Enemy
+poison: ally `+0x1C` stayed 0; enemy id `0x018E` stable. Secondary on enemy poison
+pair: `+0x04` `0x00→0x01` (unknown — not Condition); HP current also dropped
+(combat damage). Confuse snap noise: `+0x1F` `0x00→0x50` (timer?); paralyze snap
 `+0x1D` `0x60` on `new-condition` (timer?). Wired as `InBattle.Condition` /
-`Enemy.Condition`. Digivice tooltip: `ProfilePresenter.conditionBitByStatus`.
+`Enemy.Condition`. Digivice tooltip map: `resolveStatusAilment` in
+`digimon-status-ailment.constant.ts`.
 
 ### Cardmon “curse” (suspected / incomplete — 2026-08-26)
 

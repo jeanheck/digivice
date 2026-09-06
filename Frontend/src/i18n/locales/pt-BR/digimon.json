@@ -11,10 +11,11 @@
     "experience": "Experiência",
     "hp": "HP",
     "condition": "Condição",
-    "conditionState": {
+    "status": {
       "healthy": "Saudável",
       "injured": "Ferido",
-      "ko": "Nocauteado"
+      "knockedOut": "Nocauteado",
+      "debuffed": "Debuffado"
     },
     "mp": "MP",
     "blast": "Medidor de Explosão",

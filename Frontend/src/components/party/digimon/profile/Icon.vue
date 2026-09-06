@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
-import type { DigimonConditionConstant } from "@/constants/digimon-condition.constant";
+import type { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 
 const props = defineProps<{
   digimonName: string;
-  condition: DigimonConditionConstant;
+  condition: DigimonStatusConstant;
 }>();
 
 const emit = defineEmits<{

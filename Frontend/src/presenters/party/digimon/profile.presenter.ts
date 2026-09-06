@@ -1,5 +1,5 @@
-import { DigimonConditionConstant } from "@/constants/digimon-condition.constant";
-import { ConditionConstant } from "@/constants/stat/condition.constant";
+import { resolveStatusAilment } from "@/constants/digimon-status-ailment.constant";
+import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Digimon } from "@/models/party/digimon/digimon";
 import type { InBattle } from "@/models/party/digimon/in-battle";
 import type { Vital } from "@/models/party/digimon/vital";
@@ -8,16 +8,6 @@ import { DigimonBattleService } from "@/services/digimon-battle.service";
 import { DigimonService } from "@/services/digimon.service";
 
 export class ProfilePresenter {
-  private static readonly conditionBitByStatus: ReadonlyArray<{
-    bitMask: number;
-    status: ConditionConstant;
-  }> = [
-    { bitMask: 0x01, status: ConditionConstant.poison },
-    { bitMask: 0x02, status: ConditionConstant.paralyze },
-    { bitMask: 0x04, status: ConditionConstant.confuse },
-    { bitMask: 0x08, status: ConditionConstant.sleep },
-  ];
-
   public static isInBattle(location: string | null, inBattle: InBattle): boolean {
     return DigimonBattleService.isInBattle(location, inBattle);
   }
@@ -38,27 +28,26 @@ export class ProfilePresenter {
     return DigimonRepository.getNameById(id);
   }
 
-  public static getStatus(condition: number, hp: Vital): DigimonConditionConstant {
+  public static getStatus(condition: number, hp: Vital): DigimonStatusConstant {
     return DigimonService.getStatus(condition, hp);
   }
 
   public static getConditionTooltipKey(condition: number, hp: Vital): string {
     const status = DigimonService.getStatus(condition, hp);
 
-    if (status === DigimonConditionConstant.ko) {
-      return "digimon.conditionState.ko";
+    if (status === DigimonStatusConstant.knockedOut) {
+      return "digimon.status.knockedOut";
     }
-    if (status === DigimonConditionConstant.injured) {
-      return "digimon.conditionState.injured";
+    if (status === DigimonStatusConstant.injured) {
+      return "digimon.status.injured";
     }
-    if (status === DigimonConditionConstant.healthy) {
-      return "digimon.conditionState.healthy";
+    if (status === DigimonStatusConstant.healthy) {
+      return "digimon.status.healthy";
     }
 
-    for (const entry of this.conditionBitByStatus) {
-      if ((condition & entry.bitMask) !== 0) {
-        return `conditions.${entry.status}.affected`;
-      }
+    const statusAilment = resolveStatusAilment(condition);
+    if (statusAilment !== null) {
+      return `conditions.${statusAilment}.affected`;
     }
 
     return "digimon.condition";

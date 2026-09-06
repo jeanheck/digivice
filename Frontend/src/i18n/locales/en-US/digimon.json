@@ -11,10 +11,11 @@
     "experience": "Experience",
     "hp": "HP",
     "condition": "Condition",
-    "conditionState": {
+    "status": {
       "healthy": "Healthy",
       "injured": "Injured",
-      "ko": "K.O."
+      "knockedOut": "Knocked Out",
+      "debuffed": "Debuffed"
     },
     "mp": "MP",
     "blast": "Blast",
