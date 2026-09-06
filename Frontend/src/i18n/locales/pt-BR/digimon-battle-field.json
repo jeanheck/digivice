@@ -1,0 +1,12 @@
+{
+  "digimonBattleField": {
+    "neutral": "Campo Neutro",
+    "fire": "Campo de Fogo",
+    "water": "Campo Aquático",
+    "ice": "Campo de Gelo",
+    "wind": "Campo de Vento",
+    "thunder": "Campo Elétrico",
+    "machine": "Campo Mecânico",
+    "dark": "Campo Sombrio"
+  }
+}

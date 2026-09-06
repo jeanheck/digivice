@@ -12,7 +12,6 @@
     "unknownZone": "Zona Desconhecida",
     "showDetails": "Detalhes ▲",
     "hideDetails": "Detalhes ▼",
-    "fieldNeutral": "Campo Neutro",
     "fieldStrengthen": "{element} +50%",
     "fieldWeaken": "{element} -25%"
   }

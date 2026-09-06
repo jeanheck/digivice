@@ -1,0 +1,12 @@
+{
+  "digimonBattleField": {
+    "neutral": "Neutral Field",
+    "fire": "Fire Field",
+    "water": "Water Field",
+    "ice": "Ice Field",
+    "wind": "Wind Field",
+    "thunder": "Thunder Field",
+    "machine": "Metal Field",
+    "dark": "Dark Field"
+  }
+}

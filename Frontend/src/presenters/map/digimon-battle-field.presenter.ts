@@ -1,4 +1,4 @@
-import { resolveBattleFieldElement, resolveFieldTechniqueKey } from "@/constants/battle-field.constant";
+import { resolveBattleFieldElement } from "@/constants/battle-field.constant";
 import { FieldRepository } from "@/repositories/field.repository";
 import type { DigimonBattleFieldViewModel } from "@/viewmodels/map/digimon-battle-field.viewmodel";
 
@@ -18,10 +18,8 @@ export class DigimonBattleFieldPresenter {
       return this.getNeutralDigimonBattleField();
     }
 
-    const techniqueKey = resolveFieldTechniqueKey(element);
-
     return {
-      type: `technique.${techniqueKey}.name`,
+      type: `digimonBattleField.${element}`,
       strengthen: fieldRaw.strengthens,
       weaken: fieldRaw.weakens,
     };
@@ -29,7 +27,7 @@ export class DigimonBattleFieldPresenter {
 
   private static getNeutralDigimonBattleField(): DigimonBattleFieldViewModel {
     return {
-      type: "map.fieldNeutral",
+      type: "digimonBattleField.neutral",
       strengthen: null,
       weaken: null,
     };
