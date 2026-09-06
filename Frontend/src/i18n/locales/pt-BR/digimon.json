@@ -17,6 +17,20 @@
       "knockedOut": "Nocauteado",
       "debuffed": "Debuffado"
     },
+    "debuff": {
+      "poison": {
+        "affected": "Envenenado"
+      },
+      "paralyze": {
+        "affected": "Paralisado"
+      },
+      "confuse": {
+        "affected": "Confuso"
+      },
+      "sleep": {
+        "affected": "Adormecido"
+      }
+    },
     "mp": "MP",
     "blast": "Medidor de Explosão",
     "tp": "Pontos de Treinamento",

@@ -17,6 +17,20 @@
       "knockedOut": "Knocked Out",
       "debuffed": "Debuffed"
     },
+    "debuff": {
+      "poison": {
+        "affected": "Poisoned"
+      },
+      "paralyze": {
+        "affected": "Paralyzed"
+      },
+      "confuse": {
+        "affected": "Confused"
+      },
+      "sleep": {
+        "affected": "Asleep"
+      }
+    },
     "mp": "MP",
     "blast": "Blast",
     "tp": "Training Points",

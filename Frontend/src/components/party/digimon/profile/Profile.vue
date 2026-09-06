@@ -8,6 +8,8 @@ import Icon from "@/components/party/digimon/profile/Icon.vue";
 import TrainingPoints from "@/components/party/digimon/profile/TrainingPoints.vue";
 import DigievolutionsButton from "@/components/party/digimon/profile/DigievolutionsButton.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
+import { DigimonDebuffConstant } from "@/constants/digimon-debuff.constant";
+import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
@@ -69,12 +71,24 @@ const condition = computed(() => {
   return ProfilePresenter.getCondition(props.digimon, isInBattle.value);
 });
 
-const calculatedCondition = computed(() => {
+const digimonStatus = computed(() => {
   return ProfilePresenter.getStatus(condition.value, hp.value);
 });
 
-const conditionTooltipTitle = computed(() => {
-  return t(ProfilePresenter.getConditionTooltipKey(condition.value, hp.value));
+const digimonStatusTooltip = computed(() => {
+  const status = digimonStatus.value;
+
+  if (status === DigimonStatusConstant.knockedOut) {
+    return t("digimon.status.knockedOut");
+  }
+  if (status === DigimonStatusConstant.injured) {
+    return t("digimon.status.injured");
+  }
+  if (status === DigimonStatusConstant.healthy) {
+    return t("digimon.status.healthy");
+  }
+
+  return t(`digimon.debuff.${DigimonDebuffConstant[condition.value]}.affected`);
 });
 </script>
 
@@ -88,9 +102,9 @@ const conditionTooltipTitle = computed(() => {
         <div class="col-start-1 row-start-1 row-span-3 w-20">
           <Icon
             :digimon-name="digimonName"
-            :condition="calculatedCondition"
+            :condition="digimonStatus"
             class="w-full aspect-square"
-            @show-tooltip="onShowTooltip($event, conditionTooltipTitle)"
+            @show-tooltip="onShowTooltip($event, digimonStatusTooltip)"
             @move-tooltip="onMoveTooltip"
             @hide-tooltip="onHideTooltip"
           />

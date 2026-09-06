@@ -17,8 +17,10 @@ import {
   type TooltipHorizontalAlign,
   type TooltipPlacement,
 } from "@/composables/use-tooltip-position";
+import { DigimonDebuffConstant } from "@/constants/digimon-debuff.constant";
+import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
+import { DigimonBattleEnemyStatusPresenter } from "@/presenters/map/digimon-battle-enemy-status.presenter";
 import { DigimonBattlePresenter } from "@/presenters/map/digimon-battle.presenter";
-import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
@@ -56,9 +58,22 @@ const enemyCondition = computed(() => {
 });
 
 const conditionTooltipTitle = computed(() => {
-  return t(
-    ProfilePresenter.getConditionTooltipKey(enemyCondition.value, digimonBattleViewModel.value.hp),
+  const status = DigimonBattleEnemyStatusPresenter.getStatus(
+    enemyCondition.value,
+    digimonBattleViewModel.value.hp,
   );
+
+  if (status === DigimonStatusConstant.knockedOut) {
+    return t("digimon.status.knockedOut");
+  }
+  if (status === DigimonStatusConstant.injured) {
+    return t("digimon.status.injured");
+  }
+  if (status === DigimonStatusConstant.healthy) {
+    return t("digimon.status.healthy");
+  }
+
+  return t(`digimon.debuff.${DigimonDebuffConstant[enemyCondition.value]}.affected`);
 });
 
 const canOpenWiki = computed(() => {

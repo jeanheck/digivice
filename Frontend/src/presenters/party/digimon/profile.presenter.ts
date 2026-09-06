@@ -1,4 +1,3 @@
-import { resolveStatusAilment } from "@/constants/digimon-status-ailment.constant";
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Digimon } from "@/models/party/digimon/digimon";
 import type { InBattle } from "@/models/party/digimon/in-battle";
@@ -30,26 +29,5 @@ export class ProfilePresenter {
 
   public static getStatus(condition: number, hp: Vital): DigimonStatusConstant {
     return DigimonService.getStatus(condition, hp);
-  }
-
-  public static getConditionTooltipKey(condition: number, hp: Vital): string {
-    const status = DigimonService.getStatus(condition, hp);
-
-    if (status === DigimonStatusConstant.knockedOut) {
-      return "digimon.status.knockedOut";
-    }
-    if (status === DigimonStatusConstant.injured) {
-      return "digimon.status.injured";
-    }
-    if (status === DigimonStatusConstant.healthy) {
-      return "digimon.status.healthy";
-    }
-
-    const statusAilment = resolveStatusAilment(condition);
-    if (statusAilment !== null) {
-      return `conditions.${statusAilment}.affected`;
-    }
-
-    return "digimon.condition";
   }
 }

@@ -596,8 +596,8 @@ poison: ally `+0x1C` stayed 0; enemy id `0x018E` stable. Secondary on enemy pois
 pair: `+0x04` `0x00→0x01` (unknown — not Condition); HP current also dropped
 (combat damage). Confuse snap noise: `+0x1F` `0x00→0x50` (timer?); paralyze snap
 `+0x1D` `0x60` on `new-condition` (timer?). Wired as `InBattle.Condition` /
-`Enemy.Condition`. Digivice tooltip map: `resolveStatusAilment` in
-`digimon-status-ailment.constant.ts`.
+`Enemy.Condition`. Digivice tooltip map: `DigimonDebuffConstant` reverse lookup
+(`digimon-debuff.constant.ts`).
 
 ### Cardmon “curse” (suspected / incomplete — 2026-08-26)
 
