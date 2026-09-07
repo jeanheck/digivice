@@ -7,10 +7,7 @@ import { QuestService } from "@/services/quest.service";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 export class AuctionService {
-  public static getAuctionAvailable(
-    auctions: Auctions | null,
-    mainQuest: Quest | null,
-  ): AuctionViewModel | null {
+  public static getAuctionAvailable(auctions: Auctions | null, mainQuest: Quest | null): AuctionViewModel | null {
     return (
       this.getAuctions(auctions, mainQuest).find((auctionListItemViewModel) => {
         return auctionListItemViewModel.status === AuctionStatusConstant.available;
