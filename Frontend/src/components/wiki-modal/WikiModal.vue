@@ -126,24 +126,60 @@ const selectedSearchId = computed(() => {
   return selectedEnemyId.value ?? undefined;
 });
 
-const clearNonEnemySelections = () => {
+const tooltipPlacement = "below" as const;
+const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = useTooltipPosition(250);
+const tooltipTitle = ref("");
+
+function clearSelection(): void {
+  selectedEnemyId.value = null;
   selectedDropId.value = null;
   selectedCardId.value = null;
   selectedLocationId.value = null;
   selectedNpcId.value = null;
   selectedStoreId.value = null;
-};
+  initialNpcBattleOptionId.value = null;
+}
+
+function navigateTo(
+  nextView: WikiView,
+  id: string,
+  options?: { battleOptionId?: string | null },
+): void {
+  hide();
+  clearSelection();
+  view.value = nextView;
+
+  if (nextView === "profile") {
+    selectedEnemyId.value = id;
+    return;
+  }
+
+  if (nextView === "drops") {
+    selectedDropId.value = id;
+    return;
+  }
+
+  if (nextView === "cards") {
+    selectedCardId.value = id;
+    return;
+  }
+
+  if (nextView === "locations") {
+    selectedLocationId.value = id;
+    return;
+  }
+
+  if (nextView === "stores") {
+    selectedStoreId.value = id;
+    return;
+  }
+
+  selectedNpcId.value = id;
+  initialNpcBattleOptionId.value = options?.battleOptionId ?? null;
+}
 
 const openNpcView = (npcId: string, battleOptionId?: string | null) => {
-  hide();
-  selectedNpcId.value = npcId;
-  initialNpcBattleOptionId.value = battleOptionId ?? null;
-  selectedEnemyId.value = null;
-  selectedDropId.value = null;
-  selectedCardId.value = null;
-  selectedLocationId.value = null;
-  selectedStoreId.value = null;
-  view.value = "npc";
+  navigateTo("npc", npcId, { battleOptionId });
 };
 
 const handleSearchSelect = (id: string) => {
@@ -161,51 +197,27 @@ const handleSearchSelect = (id: string) => {
       return;
     }
 
-    selectedEnemyId.value = id;
-    clearNonEnemySelections();
-    view.value = "profile";
+    navigateTo("profile", id);
     return;
   }
 
   if (searchItem.kind === "drop") {
-    selectedDropId.value = id;
-    selectedCardId.value = null;
-    selectedLocationId.value = null;
-    selectedNpcId.value = null;
-    selectedStoreId.value = null;
-    view.value = "drops";
+    navigateTo("drops", id);
     return;
   }
 
   if (searchItem.kind === "card") {
-    selectedCardId.value = id;
-    selectedDropId.value = null;
-    selectedLocationId.value = null;
-    selectedNpcId.value = null;
-    selectedStoreId.value = null;
-    view.value = "cards";
+    navigateTo("cards", id);
     return;
   }
 
   if (searchItem.kind === "location") {
-    hide();
-    selectedLocationId.value = id;
-    selectedDropId.value = null;
-    selectedCardId.value = null;
-    selectedNpcId.value = null;
-    selectedStoreId.value = null;
-    view.value = "locations";
+    navigateTo("locations", id);
     return;
   }
 
   if (searchItem.kind === "store") {
-    hide();
-    selectedStoreId.value = id;
-    selectedDropId.value = null;
-    selectedCardId.value = null;
-    selectedLocationId.value = null;
-    selectedNpcId.value = null;
-    view.value = "stores";
+    navigateTo("stores", id);
     return;
   }
 
@@ -215,34 +227,19 @@ const handleSearchSelect = (id: string) => {
 };
 
 const openDropsView = (dropId: string) => {
-  hide();
-  selectedDropId.value = dropId;
-  selectedCardId.value = null;
-  selectedNpcId.value = null;
-  selectedStoreId.value = null;
-  view.value = "drops";
+  navigateTo("drops", dropId);
 };
 
 const openLocationsView = (locationId: string) => {
-  hide();
-  selectedLocationId.value = locationId;
-  selectedNpcId.value = null;
-  view.value = "locations";
+  navigateTo("locations", locationId);
 };
 
 const openStoresView = (storeId: string) => {
-  hide();
-  selectedStoreId.value = storeId;
-  selectedCardId.value = null;
-  selectedDropId.value = null;
-  selectedNpcId.value = null;
-  view.value = "stores";
+  navigateTo("stores", storeId);
 };
 
 const openEnemyFromDropSource = (enemyId: string) => {
-  selectedEnemyId.value = enemyId;
-  clearNonEnemySelections();
-  view.value = "profile";
+  navigateTo("profile", enemyId);
 };
 
 const openDropSource = (payload: { kind: DropSourceKind; sourceId: string }) => {
@@ -255,12 +252,7 @@ const openDropSource = (payload: { kind: DropSourceKind; sourceId: string }) => 
 };
 
 const openCardFromBooster = (cardId: string) => {
-  hide();
-  selectedCardId.value = cardId;
-  selectedDropId.value = null;
-  selectedNpcId.value = null;
-  selectedStoreId.value = null;
-  view.value = "cards";
+  navigateTo("cards", cardId);
 };
 
 const enemy = computed(() => {
@@ -270,11 +262,6 @@ const enemy = computed(() => {
 
   return WikiModalPresenter.getEnemyById(selectedEnemyId.value);
 });
-
-const tooltipPlacement = "below" as const;
-const tooltipPosition = useTooltipPosition(250);
-const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
-const tooltipTitle = ref("");
 
 const showEnemyStatKeyTooltip = (event: MouseEvent, statKey: string) => {
   tooltipTitle.value = t(`stat.${statKey}`);
@@ -304,26 +291,19 @@ watch(
       }
 
       if (props.locationId !== null && props.locationId !== undefined) {
-        selectedLocationId.value = props.locationId;
-        selectedEnemyId.value = null;
-        selectedDropId.value = null;
-        selectedCardId.value = null;
-        selectedNpcId.value = null;
-        selectedStoreId.value = null;
-        view.value = "locations";
+        navigateTo("locations", props.locationId);
         return;
       }
 
-      selectedEnemyId.value = props.enemyId;
-      clearNonEnemySelections();
-      view.value = "profile";
+      if (props.enemyId !== null) {
+        navigateTo("profile", props.enemyId);
+      }
+
       return;
     }
 
     hide();
-    selectedEnemyId.value = null;
-    initialNpcBattleOptionId.value = null;
-    clearNonEnemySelections();
+    clearSelection();
     view.value = "profile";
   },
 );

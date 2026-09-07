@@ -11,7 +11,6 @@ const juniorImageUrl = ImageCatalog.getJuniorImageUrl();
   >
     <img
       :src="juniorImageUrl"
-      alt=""
       class="absolute top-0 right-0 w-full max-w-none h-[260%] object-contain object-top drop-shadow-[0_6px_14px_rgba(0,0,0,1)]"
     />
   </div>
