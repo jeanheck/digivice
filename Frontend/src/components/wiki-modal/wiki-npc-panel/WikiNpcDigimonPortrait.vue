@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WikiProfileImage from "@/components/wiki-modal/wiki-profile-panel/WikiProfileImage.vue";
+import WikiEnemyImage from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyImage.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 defineProps<{
@@ -19,7 +19,7 @@ defineProps<{
     </h4>
 
     <div class="flex-1 min-h-0 max-h-[70%] flex items-center justify-center">
-      <WikiProfileImage
+      <WikiEnemyImage
         class="!h-auto w-full max-h-full aspect-square !border-0"
         :enemy-image-url="imageUrl"
         :enemy-name="enemy.name"

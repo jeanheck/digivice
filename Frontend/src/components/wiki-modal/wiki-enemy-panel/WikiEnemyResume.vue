@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import WikiProfileLocations from "@/components/wiki-modal/wiki-profile-panel/WikiProfileLocations.vue";
+import WikiEnemyLocations from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyLocations.vue";
 import { WikiLocationsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-locations-panel.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
@@ -107,7 +107,7 @@ const handleOpenLocation = (locationId: string): void => {
         {{ $t("enemy.whereToFindLabel") }}
       </span>
 
-      <WikiProfileLocations
+      <WikiEnemyLocations
         v-if="hasResolvedLocations"
         class="flex-1 min-h-0"
         :enemy="enemy"

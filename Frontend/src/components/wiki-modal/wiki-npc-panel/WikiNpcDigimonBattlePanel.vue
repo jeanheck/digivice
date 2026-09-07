@@ -3,11 +3,11 @@ import { computed, ref, watch } from "vue";
 import { WikiNpcDigimonBattlePresenter } from "@/presenters/map/wiki-modal/wiki-npc-digimon-battle.presenter";
 import WikiNpcDigimonBattleRewards from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDigimonBattleRewards.vue";
 import WikiNpcDigimonPortrait from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDigimonPortrait.vue";
-import WikiProfileAttributes from "@/components/wiki-modal/wiki-profile-panel/WikiProfileAttributes.vue";
-import WikiProfileElements from "@/components/wiki-modal/wiki-profile-panel/WikiProfileElements.vue";
-import WikiProfileConditions from "@/components/wiki-modal/wiki-profile-panel/WikiProfileConditions.vue";
-import WikiProfileTechniques from "@/components/wiki-modal/wiki-profile-panel/WikiProfileTechniques.vue";
-import WikiProfileDrops from "@/components/wiki-modal/wiki-profile-panel/WikiProfileDrops.vue";
+import WikiEnemyAttributes from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyAttributes.vue";
+import WikiEnemyElements from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyElements.vue";
+import WikiEnemyConditions from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyConditions.vue";
+import WikiEnemyTechniques from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyTechniques.vue";
+import WikiEnemyDrops from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyDrops.vue";
 
 const props = defineProps<{
   npcId: string;
@@ -72,7 +72,7 @@ const activeMember = computed(() => {
         <div
           class="w-[70%] min-w-0 h-full bg-[#000a1a] border border-blue-900/50 rounded p-2 shadow-inner flex flex-row justify-around gap-2 items-start overflow-y-auto custom-scroll"
         >
-          <WikiProfileAttributes
+          <WikiEnemyAttributes
             :attributes="activeMember.enemy.attributes"
             @show-stat-key-tooltip="
               (event, statKey) => emit('show-stat-key-tooltip', event, statKey)
@@ -80,7 +80,7 @@ const activeMember = computed(() => {
             @move-stat-tooltip="emit('move-stat-tooltip', $event)"
             @hide-stat-tooltip="emit('hide-stat-tooltip')"
           />
-          <WikiProfileElements
+          <WikiEnemyElements
             :elements="activeMember.enemy.elements"
             @show-stat-key-tooltip="
               (event, statKey) => emit('show-stat-key-tooltip', event, statKey)
@@ -88,7 +88,7 @@ const activeMember = computed(() => {
             @move-stat-tooltip="emit('move-stat-tooltip', $event)"
             @hide-stat-tooltip="emit('hide-stat-tooltip')"
           />
-          <WikiProfileConditions
+          <WikiEnemyConditions
             :conditions="activeMember.enemy.conditions"
             @show-condition-tooltip="
               (event, tooltipKey) => emit('show-condition-tooltip', event, tooltipKey)
@@ -100,8 +100,8 @@ const activeMember = computed(() => {
       </div>
 
       <div class="grid grid-cols-2 gap-3 shrink-0">
-        <WikiProfileTechniques :enemy="activeMember.enemy" />
-        <WikiProfileDrops
+        <WikiEnemyTechniques :enemy="activeMember.enemy" />
+        <WikiEnemyDrops
           :drops="activeMember.enemy.drops"
           @open-drops="emit('open-drops', $event)"
         />

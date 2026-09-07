@@ -8,7 +8,7 @@ import { LocationConverter } from "../converter/location.converter";
 export class MobiusDesertButtonPresenter {
   public static getLocation(locationId: string, mainQuest: Quest | null): LocationViewModel {
     const locationRaw = LocationRepository.getLocationById(locationId);
-    const walkingIds = LocationService.getEnemies(
+    const walkingIds = LocationService.getWalkingEnemies(
       locationId,
       QuestService.getLastCompletedMainQuestStep(mainQuest),
     );

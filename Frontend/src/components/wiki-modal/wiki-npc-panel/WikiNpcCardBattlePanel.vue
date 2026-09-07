@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import WikiNpcDeckCard from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDeckCard.vue";
-import WikiProfileDrops from "@/components/wiki-modal/wiki-profile-panel/WikiProfileDrops.vue";
+import WikiEnemyDrops from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyDrops.vue";
 import { WikiNpcCardBattlePresenter } from "@/presenters/map/wiki-modal/wiki-npc-card-battle.presenter";
 
 const { t } = useI18n();
@@ -55,7 +55,7 @@ const handleSelect = (cardId: string): void => {
       </div>
     </div>
 
-    <WikiProfileDrops
+    <WikiEnemyDrops
       class="!h-auto max-h-[20%] shrink-0"
       :drops="battleViewModel.drops"
       @open-drops="emit('open-drops', $event)"

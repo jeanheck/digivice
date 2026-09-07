@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import WikiProfileImage from "@/components/wiki-modal/wiki-profile-panel/WikiProfileImage.vue";
-import WikiProfileResume from "@/components/wiki-modal/wiki-profile-panel/WikiProfileResume.vue";
-import WikiProfileTechniques from "@/components/wiki-modal/wiki-profile-panel/WikiProfileTechniques.vue";
-import WikiProfileAttributes from "@/components/wiki-modal/wiki-profile-panel/WikiProfileAttributes.vue";
-import WikiProfileElements from "@/components/wiki-modal/wiki-profile-panel/WikiProfileElements.vue";
-import WikiProfileConditions from "@/components/wiki-modal/wiki-profile-panel/WikiProfileConditions.vue";
-import WikiProfileDrops from "@/components/wiki-modal/wiki-profile-panel/WikiProfileDrops.vue";
+import WikiEnemyImage from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyImage.vue";
+import WikiEnemyResume from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyResume.vue";
+import WikiEnemyTechniques from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyTechniques.vue";
+import WikiEnemyAttributes from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyAttributes.vue";
+import WikiEnemyElements from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyElements.vue";
+import WikiEnemyConditions from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyConditions.vue";
+import WikiEnemyDrops from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyDrops.vue";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 defineProps<{
@@ -44,12 +44,12 @@ const forwardHideStatTooltip = (): void => {
     class="p-4 grid grid-cols-2 grid-rows-[24rem_1fr] gap-4 h-full min-h-0 overflow-y-auto custom-scroll"
   >
     <div class="flex gap-4 h-full min-h-0">
-      <WikiProfileImage
+      <WikiEnemyImage
         class="w-1/2 shrink-0"
         :enemy-image-url="enemyImageUrl"
         :enemy-name="enemy.name"
       />
-      <WikiProfileResume
+      <WikiEnemyResume
         class="w-1/2"
         :enemy="enemy"
         @open-locations="emit('open-locations', $event)"
@@ -59,19 +59,19 @@ const forwardHideStatTooltip = (): void => {
     <div
       class="h-full min-h-0 overflow-y-auto custom-scroll bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-row justify-around gap-6 items-start"
     >
-      <WikiProfileAttributes
+      <WikiEnemyAttributes
         :attributes="enemy.attributes"
         @show-stat-key-tooltip="forwardStatKeyTooltip"
         @move-stat-tooltip="forwardMoveStatTooltip"
         @hide-stat-tooltip="forwardHideStatTooltip"
       />
-      <WikiProfileElements
+      <WikiEnemyElements
         :elements="enemy.elements"
         @show-stat-key-tooltip="forwardStatKeyTooltip"
         @move-stat-tooltip="forwardMoveStatTooltip"
         @hide-stat-tooltip="forwardHideStatTooltip"
       />
-      <WikiProfileConditions
+      <WikiEnemyConditions
         :conditions="enemy.conditions"
         @show-condition-tooltip="forwardConditionTooltip"
         @move-stat-tooltip="forwardMoveStatTooltip"
@@ -79,7 +79,7 @@ const forwardHideStatTooltip = (): void => {
       />
     </div>
 
-    <WikiProfileTechniques :enemy="enemy" />
-    <WikiProfileDrops :drops="enemy.drops" @open-drops="emit('open-drops', $event)" />
+    <WikiEnemyTechniques :enemy="enemy" />
+    <WikiEnemyDrops :drops="enemy.drops" @open-drops="emit('open-drops', $event)" />
   </div>
 </template>

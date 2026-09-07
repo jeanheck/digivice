@@ -2,7 +2,7 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import WikiEnemyPanel from "@/components/wiki-modal/wiki-profile-panel/WikiEnemyPanel.vue";
+import WikiEnemyPanel from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyPanel.vue";
 import WikiDropsPanel from "@/components/wiki-modal/wiki-drops-panel/WikiDropsPanel.vue";
 import WikiCardsPanel from "@/components/wiki-modal/wiki-cards-panel/WikiCardsPanel.vue";
 import WikiLocationsPanel from "@/components/wiki-modal/wiki-locations-panel/WikiLocationsPanel.vue";

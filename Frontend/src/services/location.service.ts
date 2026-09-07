@@ -17,7 +17,7 @@ export class LocationService {
     return seabedRoute === 0 ? [] : SeabedRoutesRepository.getEnemiesByRoute(String(seabedRoute));
   }
 
-  public static getEnemies(locationId: string, lastCompletedMainQuestStep: number): string[] {
+  public static getWalkingEnemies(locationId: string, lastCompletedMainQuestStep: number): string[] {
     const locationRaw = LocationRepository.getLocationById(locationId);
     return this.resolvePhasedIds(locationRaw.enemies?.walking ?? [], lastCompletedMainQuestStep);
   }
@@ -26,11 +26,11 @@ export class LocationService {
     return LocationBossRepository.getIdsByLocationId(locationId);
   }
 
-  public static getFishing(locationId: string): string[] {
+  public static getFishingEnemies(locationId: string): string[] {
     return LocationRepository.getLocationById(locationId).enemies?.fishing ?? [];
   }
 
-  public static getKickingTree(locationId: string): string[] {
+  public static getKickingTreeEnemies(locationId: string): string[] {
     return LocationRepository.getLocationById(locationId).enemies?.kickingTree ?? [];
   }
 

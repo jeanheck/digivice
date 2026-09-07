@@ -26,7 +26,7 @@ export class LocationEncounterHelper {
     }
 
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
-    return LocationService.getEnemies(locationId, lastCompletedMainQuestStep);
+    return LocationService.getWalkingEnemies(locationId, lastCompletedMainQuestStep);
   }
 
   public static resolveFishingIds(locationId: string, sideQuests: Quest[]): string[] {
@@ -44,7 +44,7 @@ export class LocationEncounterHelper {
       return [];
     }
 
-    return LocationService.getFishing(locationId);
+    return LocationService.getFishingEnemies(locationId);
   }
 
   public static resolveKickingTreeIds(locationId: string, sideQuests: Quest[]): string[] {
@@ -62,6 +62,6 @@ export class LocationEncounterHelper {
       return [];
     }
 
-    return LocationService.getKickingTree(locationId);
+    return LocationService.getKickingTreeEnemies(locationId);
   }
 }
