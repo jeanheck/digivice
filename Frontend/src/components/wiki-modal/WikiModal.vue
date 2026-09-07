@@ -2,7 +2,7 @@
 import { computed, ref, watch } from "vue";
 import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import WikiProfilePanel from "@/components/wiki-modal/wiki-profile-panel/WikiProfilePanel.vue";
+import WikiEnemyPanel from "@/components/wiki-modal/wiki-profile-panel/WikiEnemyPanel.vue";
 import WikiDropsPanel from "@/components/wiki-modal/wiki-drops-panel/WikiDropsPanel.vue";
 import WikiCardsPanel from "@/components/wiki-modal/wiki-cards-panel/WikiCardsPanel.vue";
 import WikiLocationsPanel from "@/components/wiki-modal/wiki-locations-panel/WikiLocationsPanel.vue";
@@ -29,7 +29,7 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-type WikiView = "profile" | "drops" | "cards" | "locations" | "npc" | "stores";
+type WikiView = "enemy" | "drops" | "cards" | "locations" | "npc" | "stores";
 
 const selectedEnemyId = ref<string | null>(null);
 const selectedDropId = ref<string | null>(null);
@@ -38,7 +38,7 @@ const selectedLocationId = ref<string | null>(null);
 const selectedNpcId = ref<string | null>(null);
 const initialNpcBattleOptionId = ref<string | null>(null);
 const selectedStoreId = ref<string | null>(null);
-const view = ref<WikiView>("profile");
+const view = ref<WikiView>("enemy");
 
 const isModalOpen = computed(() => {
   return (
@@ -149,7 +149,7 @@ function navigateTo(
   clearSelection();
   view.value = nextView;
 
-  if (nextView === "profile") {
+  if (nextView === "enemy") {
     selectedEnemyId.value = id;
     return;
   }
@@ -174,8 +174,10 @@ function navigateTo(
     return;
   }
 
-  selectedNpcId.value = id;
-  initialNpcBattleOptionId.value = options?.battleOptionId ?? null;
+  if (nextView === "npc") {
+    selectedNpcId.value = id;
+    initialNpcBattleOptionId.value = options?.battleOptionId ?? null;
+  }
 }
 
 const openNpcView = (npcId: string, battleOptionId?: string | null) => {
@@ -197,7 +199,7 @@ const handleSearchSelect = (id: string) => {
       return;
     }
 
-    navigateTo("profile", id);
+    navigateTo("enemy", id);
     return;
   }
 
@@ -239,7 +241,7 @@ const openStoresView = (storeId: string) => {
 };
 
 const openEnemyFromDropSource = (enemyId: string) => {
-  navigateTo("profile", enemyId);
+  navigateTo("enemy", enemyId);
 };
 
 const openDropSource = (payload: { kind: DropSourceKind; sourceId: string }) => {
@@ -296,7 +298,7 @@ watch(
       }
 
       if (props.enemyId !== null) {
-        navigateTo("profile", props.enemyId);
+        navigateTo("enemy", props.enemyId);
       }
 
       return;
@@ -304,7 +306,7 @@ watch(
 
     hide();
     clearSelection();
-    view.value = "profile";
+    view.value = "enemy";
   },
 );
 
@@ -343,8 +345,8 @@ const enemyImageUrl = computed(() => {
       </div>
     </template>
 
-    <WikiProfilePanel
-      v-if="view === 'profile' && enemy !== null"
+    <WikiEnemyPanel
+      v-if="view === 'enemy' && enemy !== null"
       :enemy="enemy"
       :enemy-image-url="enemyImageUrl"
       @open-drops="openDropsView"
