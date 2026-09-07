@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import WikiCardBoosters from "@/components/wiki-modal/wiki-cards-panel/WikiCardBoosters.vue";
-import WikiCardDetails from "@/components/wiki-modal/wiki-cards-panel/WikiCardDetails.vue";
-import WikiCardStores from "@/components/wiki-modal/wiki-cards-panel/WikiCardStores.vue";
-import { WikiCardsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-cards-panel.presenter";
+import WikiCardBoosters from "@/components/wiki-modal/wiki-card-panel/WikiCardBoosters.vue";
+import WikiCardDetails from "@/components/wiki-modal/wiki-card-panel/WikiCardDetails.vue";
+import WikiCardStores from "@/components/wiki-modal/wiki-card-panel/WikiCardStores.vue";
+import { WikiCardPanelPresenter } from "@/presenters/map/wiki-modal/wiki-card-panel.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 
 const props = defineProps<{
@@ -21,8 +21,8 @@ const mainQuest = computed(() => {
   return store.currentState?.journal?.mainQuest ?? null;
 });
 
-const cardsViewModel = computed(() => {
-  return WikiCardsPanelPresenter.getViewModel(props.cardId, mainQuest.value);
+const cardViewModel = computed(() => {
+  return WikiCardPanelPresenter.getViewModel(props.cardId, mainQuest.value);
 });
 
 const handleOpenDrop = (dropKey: string): void => {
@@ -37,12 +37,12 @@ const handleOpenStore = (storeId: string): void => {
 <template>
   <div class="p-4 flex flex-col gap-4 h-full min-h-0 overflow-hidden">
     <WikiCardDetails
-      v-if="cardsViewModel.card !== null"
-      :card="cardsViewModel.card"
+      v-if="cardViewModel.card !== null"
+      :card="cardViewModel.card"
     />
     <div class="flex gap-4 shrink-0 w-full">
-      <WikiCardBoosters :sources="cardsViewModel.sources" @open-drop="handleOpenDrop" />
-      <WikiCardStores :stores="cardsViewModel.stores" @open-store="handleOpenStore" />
+      <WikiCardBoosters :boosters="cardViewModel.boosters" @open-drop="handleOpenDrop" />
+      <WikiCardStores :stores="cardViewModel.stores" @open-store="handleOpenStore" />
     </div>
   </div>
 </template>

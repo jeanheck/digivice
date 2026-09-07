@@ -4,7 +4,7 @@ import Modal from "@/components/modal/Modal.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
 import WikiEnemyPanel from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyPanel.vue";
 import WikiDropsPanel from "@/components/wiki-modal/wiki-drops-panel/WikiDropsPanel.vue";
-import WikiCardsPanel from "@/components/wiki-modal/wiki-cards-panel/WikiCardsPanel.vue";
+import WikiCardPanel from "@/components/wiki-modal/wiki-card-panel/WikiCardPanel.vue";
 import WikiLocationsPanel from "@/components/wiki-modal/wiki-locations-panel/WikiLocationsPanel.vue";
 import WikiNpcPanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcPanel.vue";
 import WikiStorePanel from "@/components/wiki-modal/wiki-stores-panel/WikiStorePanel.vue";
@@ -362,7 +362,7 @@ const enemyImageUrl = computed(() => {
       @open-source="openDropSource"
       @open-card="openCardFromBooster"
     />
-    <WikiCardsPanel
+    <WikiCardPanel
       v-else-if="view === 'cards' && selectedCardId !== null"
       :card-id="selectedCardId"
       @open-drop="openDropsView"

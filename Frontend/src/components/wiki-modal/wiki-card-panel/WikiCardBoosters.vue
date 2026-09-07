@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import WikiCardBooster from "@/components/wiki-modal/wiki-cards-panel/WikiCardBooster.vue";
+import WikiCardBooster from "@/components/wiki-modal/wiki-card-panel/WikiCardBooster.vue";
 import type { WikiCardBoosterViewModel } from "@/viewmodels/wiki-modal/wiki-card-booster.viewmodel";
 
 defineProps<{
-  sources: WikiCardBoosterViewModel[];
+  boosters: WikiCardBoosterViewModel[];
 }>();
 
 const emit = defineEmits<{
@@ -24,7 +24,7 @@ const handleSelect = (dropKey: string): void => {
     </h4>
 
     <p
-      v-if="sources.length === 0"
+      v-if="boosters.length === 0"
       class="text-xs text-gray-400 italic"
     >
       {{ $t("enemy.obtainedFromNone") }}
@@ -34,10 +34,10 @@ const handleSelect = (dropKey: string): void => {
       class="flex flex-wrap gap-2"
     >
       <WikiCardBooster
-        v-for="source in sources"
-        :key="source.dropKey"
-        :booster="source"
-        @select="handleSelect(source.dropKey)"
+        v-for="booster in boosters"
+        :key="booster.dropKey"
+        :booster="booster"
+        @select="handleSelect(booster.dropKey)"
       />
     </div>
   </section>

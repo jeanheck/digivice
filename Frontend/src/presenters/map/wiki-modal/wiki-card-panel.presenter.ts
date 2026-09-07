@@ -9,25 +9,25 @@ import type { CardStoreRaw } from "@/repositories/tables/raws/tcg/card.raw";
 import { QuestService } from "@/services/quest.service";
 import type { CardBoosterSourceViewModel } from "@/viewmodels/card/card-booster-source.viewmodel";
 import type { WikiCardStoreViewModel } from "@/viewmodels/wiki-modal/wiki-card-store.viewmodel";
-import type { WikiCardsPanelViewModel } from "@/viewmodels/wiki-modal/wiki-cards-panel.viewmodel";
+import type { WikiCardPanelViewModel } from "@/viewmodels/wiki-modal/wiki-card-panel.viewmodel";
 
-export class WikiCardsPanelPresenter {
-  public static getViewModel(cardId: string, mainQuest: Quest | null): WikiCardsPanelViewModel {
+export class WikiCardPanelPresenter {
+  public static getViewModel(cardId: string, mainQuest: Quest | null): WikiCardPanelViewModel {
     const cardRaw = CardRepository.getCardById(cardId);
     if (cardRaw === undefined) {
       return {
         card: null,
-        sources: [],
+        boosters: [],
         stores: [],
       };
     }
 
     return {
       card: WikiCardDetailsConverter.convert(cardId, cardRaw),
-      sources: WikiCardsPanelPresenter.getCardBoosterSources(cardRaw.boosters).map((source) => {
-        return WikiCardBoosterConverter.convert(source);
+      boosters: WikiCardPanelPresenter.getCardBoosters(cardRaw.boosters).map((booster) => {
+        return WikiCardBoosterConverter.convert(booster);
       }),
-      stores: WikiCardsPanelPresenter.getCardStores(cardRaw.stores, mainQuest),
+      stores: WikiCardPanelPresenter.getCardStores(cardRaw.stores, mainQuest),
     };
   }
 
@@ -65,8 +65,8 @@ export class WikiCardsPanelPresenter {
     return result;
   }
 
-  private static getCardBoosterSources(boosterIds: number[]): CardBoosterSourceViewModel[] {
-    const sources: CardBoosterSourceViewModel[] = [];
+  private static getCardBoosters(boosterIds: number[]): CardBoosterSourceViewModel[] {
+    const boosters: CardBoosterSourceViewModel[] = [];
 
     for (const boosterId of boosterIds) {
       const dropKey = DropRepository.getDropKeyByNumericId(boosterId);
@@ -74,12 +74,12 @@ export class WikiCardsPanelPresenter {
         continue;
       }
 
-      sources.push({
+      boosters.push({
         dropKey,
         boosterId,
       });
     }
 
-    return sources;
+    return boosters;
   }
 }

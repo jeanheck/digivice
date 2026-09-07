@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WikiCardStore from "@/components/wiki-modal/wiki-cards-panel/WikiCardStore.vue";
+import WikiCardStore from "@/components/wiki-modal/wiki-card-panel/WikiCardStore.vue";
 import type { WikiCardStoreViewModel } from "@/viewmodels/wiki-modal/wiki-card-store.viewmodel";
 
 defineProps<{
