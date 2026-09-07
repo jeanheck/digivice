@@ -1,7 +1,7 @@
 import type { CardRaw } from "@/repositories/tables/raws/tcg/card.raw";
 import type { CardViewModel } from "@/viewmodels/card/card.viewmodel";
 
-export class WikiCardDetailsConverter {
+export class CardConverter {
   public static convert(cardId: string, cardRaw: CardRaw): CardViewModel {
     return {
       imageName: cardRaw.imageName,

@@ -1,5 +1,5 @@
-import { WikiCardBoosterConverter } from "@/presenters/converter/wiki-card-booster.converter";
-import { WikiCardDetailsConverter } from "@/presenters/converter/wiki-card-details.converter";
+import { BoosterConverter } from "@/presenters/converter/booster.converter";
+import { CardConverter } from "@/presenters/converter/card.converter";
 import { WikiCardStoreConverter } from "@/presenters/converter/wiki-card-store.converter";
 import { MainQuestRangeHelper } from "@/presenters/helper/main-quest-range.helper";
 import type { Quest } from "@/models";
@@ -18,16 +18,16 @@ export class WikiCardPanelPresenter {
       return {
         card: null,
         boosters: [],
-        stores: [],
+        cardShops: [],
       };
     }
 
     return {
-      card: WikiCardDetailsConverter.convert(cardId, cardRaw),
-      boosters: WikiCardPanelPresenter.getCardBoosters(cardRaw.boosters).map((booster) => {
-        return WikiCardBoosterConverter.convert(booster);
+      card: CardConverter.convert(cardId, cardRaw),
+      boosters: this.getCardBoosters(cardRaw.boosters).map((booster) => {
+        return BoosterConverter.convert(booster);
       }),
-      stores: WikiCardPanelPresenter.getCardStores(cardRaw.stores, mainQuest),
+      cardShops: this.getCardStores(cardRaw.stores, mainQuest),
     };
   }
 

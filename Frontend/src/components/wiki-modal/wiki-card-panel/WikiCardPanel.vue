@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import WikiCardBoosters from "@/components/wiki-modal/wiki-card-panel/WikiCardBoosters.vue";
 import WikiCardDetails from "@/components/wiki-modal/wiki-card-panel/WikiCardDetails.vue";
-import WikiCardStores from "@/components/wiki-modal/wiki-card-panel/WikiCardStores.vue";
+import WikiCardShops from "@/components/wiki-modal/wiki-card-panel/WikiCardShops.vue";
 import { WikiCardPanelPresenter } from "@/presenters/map/wiki-modal/wiki-card-panel.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 
@@ -42,7 +42,7 @@ const handleOpenStore = (storeId: string): void => {
     />
     <div class="flex gap-4 shrink-0 w-full">
       <WikiCardBoosters :boosters="wikiCardPanelViewModel.boosters" @open-drop="handleOpenDrop" />
-      <WikiCardStores :stores="wikiCardPanelViewModel.stores" @open-store="handleOpenStore" />
+      <WikiCardShops :stores="wikiCardPanelViewModel.cardShops" @open-store="handleOpenStore" />
     </div>
   </div>
 </template>
