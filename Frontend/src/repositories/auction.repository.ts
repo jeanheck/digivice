@@ -1,41 +1,22 @@
-import DivineBarrierJson from "@/database/auction/divine-barrier.json";
-import HazardShieldJson from "@/database/auction/hazard-shield.json";
-import SniperShieldJson from "@/database/auction/sniper-shield.json";
-import DramonShieldJson from "@/database/auction/dramon-shield.json";
-import YingYangWandJson from "@/database/auction/yin-yang-wand.json";
-import type { DivineBarrierTable } from "@/repositories/tables/auction/divine-barrier.table";
-import type { HazardShieldTable } from "@/repositories/tables/auction/hazard-shield.table";
-import type { SniperShieldTable } from "@/repositories/tables/auction/sniper-shield.table";
-import type { DramonShieldTable } from "@/repositories/tables/auction/dramon-shield.table";
-import type { YinYangWandTable } from "@/repositories/tables/auction/yin-yang-wand.table";
+import AuctionsJson from "@/database/auction/auctions.json";
+import type { AuctionTable } from "@/repositories/tables/auction/auction.table";
 import type { AuctionRaw } from "@/repositories/tables/raws/auction/auction.raw";
 
 export class AuctionRepository {
-  private static readonly divineBarrierTable = DivineBarrierJson as DivineBarrierTable;
-  private static readonly hazardShieldTable = HazardShieldJson as HazardShieldTable;
-  private static readonly sniperShieldTable = SniperShieldJson as SniperShieldTable;
-  private static readonly dramonShieldTable = DramonShieldJson as DramonShieldTable;
-  private static readonly yingYangWandTable = YingYangWandJson as YinYangWandTable;
+  private static readonly auctionTable = AuctionsJson as AuctionTable;
 
   public static getAuctions(): AuctionRaw[] {
-    return [
-      this.divineBarrierTable,
-      this.hazardShieldTable,
-      this.sniperShieldTable,
-      this.dramonShieldTable,
-      this.yingYangWandTable,
-    ];
+    return Object.entries(this.auctionTable).map(([id, entry]) => {
+      return { ...entry, id };
+    });
   }
 
   public static getAuctionById(auctionId: string): AuctionRaw | null {
-    const auctionRaw = this.getAuctions().find((auction) => {
-      return auction.id === auctionId;
-    });
-
-    if (auctionRaw === undefined) {
+    const entry = this.auctionTable[auctionId];
+    if (entry === undefined) {
       return null;
     }
 
-    return auctionRaw;
+    return { ...entry, id: auctionId };
   }
 }
