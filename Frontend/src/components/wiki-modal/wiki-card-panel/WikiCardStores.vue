@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import WikiCardStore from "@/components/wiki-modal/wiki-card-panel/WikiCardStore.vue";
-import type { WikiCardStoreViewModel } from "@/viewmodels/wiki-modal/wiki-card-store.viewmodel";
+import type { CardShopViewModel } from "@/viewmodels/card/card-shop.viewmodel";
 
 defineProps<{
-  stores: WikiCardStoreViewModel[];
+  stores: CardShopViewModel[];
 }>();
 
 const emit = defineEmits<{

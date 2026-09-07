@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import WikiCardBooster from "@/components/wiki-modal/wiki-card-panel/WikiCardBooster.vue";
-import type { WikiCardBoosterViewModel } from "@/viewmodels/wiki-modal/wiki-card-booster.viewmodel";
+import type { BoosterViewModel } from "@/viewmodels/card/booster.viewmodel";
 
 defineProps<{
-  boosters: WikiCardBoosterViewModel[];
+  boosters: BoosterViewModel[];
 }>();
 
 const emit = defineEmits<{

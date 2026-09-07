@@ -1,9 +1,9 @@
-import type { WikiCardBoosterViewModel } from "@/viewmodels/wiki-modal/wiki-card-booster.viewmodel";
-import type { WikiCardDetailsViewModel } from "@/viewmodels/wiki-modal/wiki-card-details.viewmodel";
-import type { WikiCardStoreViewModel } from "@/viewmodels/wiki-modal/wiki-card-store.viewmodel";
+import type { BoosterViewModel } from "@/viewmodels/card/booster.viewmodel";
+import type { CardViewModel } from "@/viewmodels/card/card.viewmodel";
+import type { CardShopViewModel } from "@/viewmodels/card/card-shop.viewmodel";
 
 export interface WikiCardPanelViewModel {
-  card: WikiCardDetailsViewModel | null;
-  boosters: WikiCardBoosterViewModel[];
-  stores: WikiCardStoreViewModel[];
+  card: CardViewModel | null;
+  boosters: BoosterViewModel[];
+  stores: CardShopViewModel[];
 }

@@ -21,7 +21,7 @@ const mainQuest = computed(() => {
   return store.currentState?.journal?.mainQuest ?? null;
 });
 
-const cardViewModel = computed(() => {
+const wikiCardPanelViewModel = computed(() => {
   return WikiCardPanelPresenter.getViewModel(props.cardId, mainQuest.value);
 });
 
@@ -37,12 +37,12 @@ const handleOpenStore = (storeId: string): void => {
 <template>
   <div class="p-4 flex flex-col gap-4 h-full min-h-0 overflow-hidden">
     <WikiCardDetails
-      v-if="cardViewModel.card !== null"
-      :card="cardViewModel.card"
+      v-if="wikiCardPanelViewModel.card !== null"
+      :card="wikiCardPanelViewModel.card"
     />
     <div class="flex gap-4 shrink-0 w-full">
-      <WikiCardBoosters :boosters="cardViewModel.boosters" @open-drop="handleOpenDrop" />
-      <WikiCardStores :stores="cardViewModel.stores" @open-store="handleOpenStore" />
+      <WikiCardBoosters :boosters="wikiCardPanelViewModel.boosters" @open-drop="handleOpenDrop" />
+      <WikiCardStores :stores="wikiCardPanelViewModel.stores" @open-store="handleOpenStore" />
     </div>
   </div>
 </template>

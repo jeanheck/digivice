@@ -8,7 +8,7 @@ import { DropRepository } from "@/repositories/drop.repository";
 import type { CardStoreRaw } from "@/repositories/tables/raws/tcg/card.raw";
 import { QuestService } from "@/services/quest.service";
 import type { CardBoosterSourceViewModel } from "@/viewmodels/card/card-booster-source.viewmodel";
-import type { WikiCardStoreViewModel } from "@/viewmodels/wiki-modal/wiki-card-store.viewmodel";
+import type { CardShopViewModel } from "@/viewmodels/card/card-shop.viewmodel";
 import type { WikiCardPanelViewModel } from "@/viewmodels/wiki-modal/wiki-card-panel.viewmodel";
 
 export class WikiCardPanelPresenter {
@@ -34,10 +34,10 @@ export class WikiCardPanelPresenter {
   private static getCardStores(
     stores: CardStoreRaw[] | undefined,
     mainQuest: Quest | null,
-  ): WikiCardStoreViewModel[] {
+  ): CardShopViewModel[] {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
     const activeStoreIds = new Set<string>();
-    const result: WikiCardStoreViewModel[] = [];
+    const result: CardShopViewModel[] = [];
 
     for (const store of stores ?? []) {
       if (activeStoreIds.has(store.storeId)) {

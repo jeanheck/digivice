@@ -1,6 +1,6 @@
 import type { CardType } from "@/repositories/tables/raws/tcg/card.raw";
 
-export interface WikiCardDetailsViewModel {
+export interface CardViewModel {
   imageName: string;
   nameKey: string;
   noteKey: string;

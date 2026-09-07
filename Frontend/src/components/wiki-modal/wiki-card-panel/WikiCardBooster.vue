@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { WikiCardBoosterViewModel } from "@/viewmodels/wiki-modal/wiki-card-booster.viewmodel";
+import type { BoosterViewModel } from "@/viewmodels/card/booster.viewmodel";
 
 defineProps<{
-  booster: WikiCardBoosterViewModel;
+  booster: BoosterViewModel;
 }>();
 
 defineEmits<{

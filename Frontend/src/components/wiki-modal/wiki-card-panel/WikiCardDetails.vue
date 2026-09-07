@@ -2,10 +2,10 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import type { WikiCardDetailsViewModel } from "@/viewmodels/wiki-modal/wiki-card-details.viewmodel";
+import type { CardViewModel } from "@/viewmodels/card/card.viewmodel";
 
 const props = defineProps<{
-  card: WikiCardDetailsViewModel;
+  card: CardViewModel;
 }>();
 
 const { t, te } = useI18n();
