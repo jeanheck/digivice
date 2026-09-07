@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { WikiProfileDropsPresenter } from "@/presenters/map/wiki-modal/wiki-profile-drops.presenter";
-import type { EnemyDropViewModel } from "@/viewmodels/enemy/enemy-drop.viewmodel";
-import type { WikiProfileDropItemViewModel } from "@/viewmodels/wiki-modal/wiki-profile-drop-item.viewmodel";
+import { WikiEnemyDropsPresenter } from "@/presenters/map/wiki-modal/wiki-enemy-drops.presenter";
+import type { WikiEnemyDropViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drop.viewmodel";
+import type { WikiEnemyDropItemViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drop-item.viewmodel";
 
 const props = defineProps<{
-  drops?: EnemyDropViewModel[];
+  drops?: WikiEnemyDropViewModel[];
 }>();
 
 const emit = defineEmits<{
@@ -16,14 +16,14 @@ const emit = defineEmits<{
 const { t } = useI18n();
 
 const dropsViewModel = computed(() => {
-  return WikiProfileDropsPresenter.getViewModel(props.drops);
+  return WikiEnemyDropsPresenter.getViewModel(props.drops);
 });
 
 const locationOnlyLabel = (locationOnly: string): string => {
   return t("enemy.locationOnly", { location: t(`location.${locationOnly}`) });
 };
 
-const handleDropClick = (drop: WikiProfileDropItemViewModel): void => {
+const handleDropClick = (drop: WikiEnemyDropItemViewModel): void => {
   if (!drop.isClickable) {
     return;
   }

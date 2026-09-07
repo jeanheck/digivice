@@ -13,7 +13,7 @@ import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { WikiModalPresenter } from "@/presenters/map/wiki-modal.presenter";
-import { WikiProfileDropsPresenter } from "@/presenters/map/wiki-modal/wiki-profile-drops.presenter";
+import { WikiEnemyDropsPresenter } from "@/presenters/map/wiki-modal/wiki-enemy-drops.presenter";
 import type { DropSourceKind } from "@/viewmodels/drop/drop-source.viewmodel";
 
 const props = defineProps<{
@@ -79,7 +79,7 @@ const handleClose = () => {
 const allSearchItems = computed(() => {
   return WikiModalPresenter.getAllSearchItems(
     (dropKey) => {
-      return t(WikiProfileDropsPresenter.getDropLabelKey(dropKey));
+      return t(WikiEnemyDropsPresenter.getDropLabelKey(dropKey));
     },
     (cardId) => {
       return t(`cards.${cardId}.name`);

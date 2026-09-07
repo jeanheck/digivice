@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { EnemyConditionsPresenter } from "@/presenters/map/enemy-modal/enemy-conditions.presenter";
+import { WikiEnemyConditionsPresenter } from "@/presenters/map/wiki-modal/wiki-enemy-conditions.presenter";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
 import { useI18n } from "vue-i18n";
@@ -18,7 +18,7 @@ const emit = defineEmits<{
 }>();
 
 const conditions = computed(() => {
-  return EnemyConditionsPresenter.getConditions(props.conditions);
+  return WikiEnemyConditionsPresenter.getConditions(props.conditions);
 });
 
 function isBooleanCondition(condition: EnemyConditionViewModel): boolean {

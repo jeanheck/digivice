@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { EnemyAttributesPresenter } from "@/presenters/map/enemy-modal/enemy-attributes.presenter";
+import { WikiEnemyAttributesPresenter } from "@/presenters/map/wiki-modal/wiki-enemy-attributes.presenter";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = defineProps<{
@@ -14,7 +14,7 @@ const emit = defineEmits<{
 }>();
 
 const stats = computed(() => {
-  return EnemyAttributesPresenter.getStats(props.attributes);
+  return WikiEnemyAttributesPresenter.getStats(props.attributes);
 });
 </script>
 

@@ -1,4 +1,4 @@
-import type { EnemyDropViewModel } from "@/viewmodels/enemy/enemy-drop.viewmodel";
+import type { WikiEnemyDropViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drop.viewmodel";
 import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 
 export interface EnemyViewModel {
@@ -60,7 +60,7 @@ export interface EnemyViewModel {
   dvxp?: number;
   exp?: number;
   bits?: number;
-  drops?: EnemyDropViewModel[];
+  drops?: WikiEnemyDropViewModel[];
   locations?: EnemyLocationViewModel[];
   regularAttackId: string | null;
   techniqueId: string | null;

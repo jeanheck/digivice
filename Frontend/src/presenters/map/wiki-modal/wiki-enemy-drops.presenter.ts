@@ -1,11 +1,11 @@
 import { DropRepository } from "@/repositories/drop.repository";
-import { WikiProfileDropItemConverter } from "@/presenters/converter/wiki-profile-drop-item.converter";
-import type { EnemyDropViewModel } from "@/viewmodels/enemy/enemy-drop.viewmodel";
-import type { WikiProfileDropsViewModel } from "@/viewmodels/wiki-modal/wiki-profile-drops.viewmodel";
+import { WikiEnemyDropItemConverter } from "@/presenters/converter/wiki-enemy-drop-item.converter";
+import type { WikiEnemyDropViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drop.viewmodel";
+import type { WikiEnemyDropsViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drops.viewmodel";
 
 const VARIOUS_BOOSTER_DROP_ID = "variousBooster";
 
-export class WikiProfileDropsPresenter {
+export class WikiEnemyDropsPresenter {
   public static getDropLabelKey(dropKey: string): string {
     const dropRaw = DropRepository.getDropByKey(dropKey);
     if (dropRaw === undefined) {
@@ -27,9 +27,9 @@ export class WikiProfileDropsPresenter {
     return `drops.${dropKey}`;
   }
 
-  public static getViewModel(drops?: EnemyDropViewModel[]): WikiProfileDropsViewModel {
+  public static getViewModel(drops?: WikiEnemyDropViewModel[]): WikiEnemyDropsViewModel {
     const dropItems = (drops ?? []).map((drop) => {
-      return WikiProfileDropItemConverter.convert(drop, this.getDropLabelKey(drop.id));
+      return WikiEnemyDropItemConverter.convert(drop, this.getDropLabelKey(drop.id));
     });
 
     const isVariousBoosterOnly =
