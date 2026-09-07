@@ -19,7 +19,6 @@ import {
 } from "@/composables/use-tooltip-position";
 import { DigimonDebuffConstant } from "@/constants/digimon-debuff.constant";
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
-import { DigimonBattleEnemyStatusPresenter } from "@/presenters/map/digimon-battle-enemy-status.presenter";
 import { DigimonBattlePresenter } from "@/presenters/map/digimon-battle.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
@@ -57,8 +56,8 @@ const enemyCondition = computed(() => {
   return enemy.value?.condition ?? 0;
 });
 
-const conditionTooltipTitle = computed(() => {
-  const status = DigimonBattleEnemyStatusPresenter.getStatus(
+const digimonStatusTooltip = computed(() => {
+  const status = DigimonBattlePresenter.getStatus(
     enemyCondition.value,
     digimonBattleViewModel.value.hp,
   );
@@ -86,13 +85,6 @@ const titleClass = computed(() => {
   }
 
   return "text-red-400 drop-shadow-[0_0_2px_rgba(158,55,55,0.8)]";
-});
-
-const hasStats = computed(() => {
-  return (
-    digimonBattleViewModel.value.attributes.length > 0 ||
-    digimonBattleViewModel.value.conditions.length > 0
-  );
 });
 
 function openEnemyWiki(): void {
@@ -182,7 +174,7 @@ function onHideTooltip(): void {
       <DigimonBattleEnemyStatus
         :condition="enemyCondition"
         :hp="digimonBattleViewModel.hp"
-        @show-tooltip="onShowTooltip($event, conditionTooltipTitle, { align: 'left' })"
+        @show-tooltip="onShowTooltip($event, digimonStatusTooltip, { align: 'left' })"
         @move-tooltip="onMoveTooltip"
         @hide-tooltip="onHideTooltip"
       />
@@ -215,7 +207,6 @@ function onHideTooltip(): void {
         :attributes="digimonBattleViewModel.attributes"
         :elements="digimonBattleViewModel.elements"
         :conditions="digimonBattleViewModel.conditions"
-        :enabled="hasStats"
         @show-tooltip="onShowStatTooltip"
         @move-tooltip="onMoveTooltip"
         @hide-tooltip="onHideTooltip"

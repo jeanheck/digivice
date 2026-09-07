@@ -11,7 +11,6 @@ const props = defineProps<{
   attributes: EnemyStatViewModel[];
   elements: EnemyStatViewModel[];
   conditions: EnemyConditionViewModel[];
-  enabled: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -48,7 +47,6 @@ function toggleStatsPanel(): void {
 
 <template>
   <button
-    v-if="enabled"
     type="button"
     class="absolute bottom-2 right-2 z-20 cursor-pointer rounded bg-black/80 border border-blue-800 px-2 py-1 flex items-center justify-center text-blue-500 hover:bg-blue-900/80 hover:border-blue-500 hover:text-blue-400 transition-all font-bold text-[9px] tracking-wide shadow-[0_0_10px_rgba(0,170,255,0.2)]"
     :aria-expanded="isStatsOpen"
@@ -59,7 +57,7 @@ function toggleStatsPanel(): void {
 
   <Transition name="fade">
     <div
-      v-if="enabled && isStatsOpen"
+      v-if="isStatsOpen"
       class="map-info-panel absolute inset-0 z-10 max-w-none! w-full border-0! rounded-none! backdrop-blur-none! pb-8 text-white text-xs"
     >
       <div class="grid grid-cols-4 w-full">

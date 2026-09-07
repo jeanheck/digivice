@@ -1,9 +1,16 @@
+import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Enemy } from "@/models/battle/enemy";
+import type { Vital } from "@/models/party/digimon/vital";
 import { DigimonBattleConverter } from "@/presenters/converter/digimon-battle.converter";
 import { EnemyRepository } from "@/repositories/enemy.repository";
+import { DigimonService } from "@/services/digimon.service";
 import type { DigimonBattleViewModel } from "@/viewmodels/map/digimon-battle.viewmodel";
 
 export class DigimonBattlePresenter {
+  public static getStatus(condition: number, hp: Vital): DigimonStatusConstant {
+    return DigimonService.getStatus(condition, hp);
+  }
+
   public static getViewModel(enemy: Enemy | null): DigimonBattleViewModel {
     const resolvedHp = enemy?.hp ?? { current: 0, max: 0 };
 
