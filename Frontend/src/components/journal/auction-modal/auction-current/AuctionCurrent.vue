@@ -9,8 +9,8 @@ const store = useGameStore();
 
 const currentAuction = computed(() => {
   const auctions = store.currentState?.auctions ?? null;
-  const journal = store.currentState?.journal ?? null;
-  return AuctionCurrentPresenter.getAuctionCurrent(auctions, journal);
+  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
+  return AuctionCurrentPresenter.getAuctionCurrent(auctions, mainQuest);
 });
 </script>
 

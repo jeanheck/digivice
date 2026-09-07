@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Modal from "@/components/modal/Modal.vue";
-import type { Auctions, Journal } from "@/models";
+import type { Auctions, Quest } from "@/models";
 import { AuctionModalPresenter } from "@/presenters/auction/auction-modal.presenter";
 import Auction from "./auction/Auction.vue";
 import AuctionCurrent from "./auction-current/AuctionCurrent.vue";
@@ -9,7 +9,7 @@ import AuctionCurrent from "./auction-current/AuctionCurrent.vue";
 const props = defineProps<{
   isOpen: boolean;
   auctions: Auctions | null;
-  journal: Journal | null;
+  mainQuest: Quest | null;
 }>();
 
 const emit = defineEmits<{
@@ -17,7 +17,7 @@ const emit = defineEmits<{
 }>();
 
 const auctionList = computed(() => {
-  return AuctionModalPresenter.getAuctions(props.auctions, props.journal);
+  return AuctionModalPresenter.getAuctions(props.auctions, props.mainQuest);
 });
 
 const closeModal = () => {

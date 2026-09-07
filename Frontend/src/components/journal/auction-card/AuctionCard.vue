@@ -12,12 +12,12 @@ const auctions = computed(() => {
   return store.currentState?.auctions ?? null;
 });
 
-const journal = computed(() => {
-  return store.currentState?.journal ?? null;
+const mainQuest = computed(() => {
+  return store.currentState?.journal?.mainQuest ?? null;
 });
 
 const auctionAvailable = computed(() => {
-  return AuctionCardPresenter.getAuctionAvailable(auctions.value, journal.value);
+  return AuctionCardPresenter.getAuctionAvailable(auctions.value, mainQuest.value);
 });
 
 const isAuctionModalOpen = ref(false);
@@ -41,7 +41,7 @@ const closeAuctionModal = () => {
     <AuctionModal
       :is-open="isAuctionModalOpen"
       :auctions="auctions"
-      :journal="journal"
+      :main-quest="mainQuest"
       @close="closeAuctionModal"
     />
   </div>

@@ -6,17 +6,14 @@ export class AuctionRepository {
   private static readonly auctionTable = AuctionsJson as AuctionTable;
 
   public static getAuctions(): AuctionRaw[] {
-    return Object.entries(this.auctionTable).map(([id, entry]) => {
-      return { ...entry, id };
-    });
+    return this.auctionTable;
   }
 
   public static getAuctionById(auctionId: string): AuctionRaw | null {
-    const entry = this.auctionTable[auctionId];
-    if (entry === undefined) {
-      return null;
-    }
-
-    return { ...entry, id: auctionId };
+    return (
+      this.auctionTable.find((auction) => {
+        return auction.id === auctionId;
+      }) ?? null
+    );
   }
 }

@@ -1,5 +1,6 @@
-{
-  "divineBarrier": {
+[
+  {
+    "id": "divineBarrier",
     "equipmentId": "281",
     "steps": {
       "startsWhenComplete": 4,
@@ -8,7 +9,8 @@
     "price": 800,
     "resale": 11000
   },
-  "hazardShield": {
+  {
+    "id": "hazardShield",
     "equipmentId": "287",
     "steps": {
       "startsWhenComplete": 15,
@@ -17,7 +19,8 @@
     "price": 800,
     "resale": 11000
   },
-  "sniperShield": {
+  {
+    "id": "sniperShield",
     "equipmentId": "282",
     "steps": {
       "startsWhenComplete": 28,
@@ -26,7 +29,8 @@
     "price": 1600,
     "resale": 11000
   },
-  "dramonShield": {
+  {
+    "id": "dramonShield",
     "equipmentId": "288",
     "steps": {
       "startsWhenComplete": 36,
@@ -35,7 +39,8 @@
     "price": 1600,
     "resale": 11000
   },
-  "yinYangWand": {
+  {
+    "id": "yinYangWand",
     "equipmentId": "137",
     "steps": {
       "startsWhenComplete": 47,
@@ -44,4 +49,4 @@
     "price": 2700,
     "resale": 30000
   }
-}
+]

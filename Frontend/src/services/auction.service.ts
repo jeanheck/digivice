@@ -1,5 +1,5 @@
 import { AuctionStatusConstant } from "@/constants/auction-status.constant";
-import type { Auctions, Journal } from "@/models";
+import type { Auctions, Quest } from "@/models";
 import { AuctionConverter } from "@/presenters/converter/auction.converter";
 import { AuctionRepository } from "@/repositories/auction.repository";
 import type { AuctionStepsRaw } from "@/repositories/tables/raws/auction/auction-steps.raw";
@@ -9,19 +9,17 @@ import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 export class AuctionService {
   public static getAuctionAvailable(
     auctions: Auctions | null,
-    journal: Journal | null,
+    mainQuest: Quest | null,
   ): AuctionViewModel | null {
     return (
-      this.getAuctions(auctions, journal).find((auctionListItemViewModel) => {
+      this.getAuctions(auctions, mainQuest).find((auctionListItemViewModel) => {
         return auctionListItemViewModel.status === AuctionStatusConstant.available;
       }) ?? null
     );
   }
 
-  public static getAuctions(auctions: Auctions | null, journal: Journal | null): AuctionViewModel[] {
-    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(
-      journal?.mainQuest ?? null,
-    );
+  public static getAuctions(auctions: Auctions | null, mainQuest: Quest | null): AuctionViewModel[] {
+    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
 
     return AuctionRepository.getAuctions().map((auctionRaw) => {
       const hasParticipated = auctions?.[auctionRaw.id as keyof Auctions] ?? false;

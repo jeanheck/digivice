@@ -1,4 +1,4 @@
-import type { Auctions, Journal } from "@/models";
+import type { Auctions, Quest } from "@/models";
 import { AuctionRepository } from "@/repositories/auction.repository";
 import { AuctionService } from "@/services/auction.service";
 import type { AuctionCurrentViewModel } from "@/viewmodels/auction/auction-current.viewmodel";
@@ -7,9 +7,9 @@ import { AuctionCurrentConverter } from "../converter/auction-current.converter"
 export class AuctionCurrentPresenter {
   public static getAuctionCurrent(
     auctions: Auctions | null,
-    journal: Journal | null,
+    mainQuest: Quest | null,
   ): AuctionCurrentViewModel | null {
-    const auctionAvailable = AuctionService.getAuctionAvailable(auctions, journal);
+    const auctionAvailable = AuctionService.getAuctionAvailable(auctions, mainQuest);
 
     if (auctionAvailable === null) {
       return null;

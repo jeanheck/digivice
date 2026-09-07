@@ -1,3 +1,3 @@
-import type { AuctionEntryRaw } from "../raws/auction/auction-entry.raw";
+import type { AuctionRaw } from "../raws/auction/auction.raw";
 
-export type AuctionTable = Record<string, AuctionEntryRaw>;
+export type AuctionTable = AuctionRaw[];

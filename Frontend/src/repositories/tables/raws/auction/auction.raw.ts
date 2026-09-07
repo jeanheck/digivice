@@ -1,5 +1,9 @@
-import type { AuctionEntryRaw } from "./auction-entry.raw";
+import type { AuctionStepsRaw } from "./auction-steps.raw";
 
-export type AuctionRaw = AuctionEntryRaw & {
+export interface AuctionRaw {
   id: string;
-};
+  equipmentId: string;
+  steps: AuctionStepsRaw;
+  price: number;
+  resale: number;
+}
