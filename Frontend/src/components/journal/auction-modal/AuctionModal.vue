@@ -4,7 +4,7 @@ import Modal from "@/components/modal/Modal.vue";
 import type { Auctions, Quest } from "@/models";
 import { AuctionModalPresenter } from "@/presenters/auction/auction-modal.presenter";
 import Auction from "./auction/Auction.vue";
-import AuctionCurrent from "./auction-current/AuctionCurrent.vue";
+import CurrentAuction from "./current-auction/CurrentAuction.vue";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -34,7 +34,7 @@ const closeModal = () => {
     </template>
 
     <div class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-4 custom-scroll">
-      <AuctionCurrent />
+      <CurrentAuction />
 
       <section class="space-y-2">
         <h3
