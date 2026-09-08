@@ -8,12 +8,4 @@ export class AuctionRepository {
   public static getAuctions(): AuctionRaw[] {
     return this.auctionTable;
   }
-
-  public static getAuctionById(auctionId: string): AuctionRaw | null {
-    return (
-      this.auctionTable.find((auction) => {
-        return auction.id === auctionId;
-      }) ?? null
-    );
-  }
 }

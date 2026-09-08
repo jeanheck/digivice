@@ -1,28 +1,20 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import type { AuctionCurrentViewModel } from "@/viewmodels/auction/auction-current.viewmodel";
+import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 const props = defineProps<{
-  currentAuction: AuctionCurrentViewModel;
+  auction: AuctionViewModel;
 }>();
 
 const { t } = useI18n();
 
 const equipmentName = computed(() => {
-  if (props.currentAuction.equipmentId === null) {
-    return null;
-  }
-
-  return t(`equipments.${props.currentAuction.equipmentId}.name`);
+  return t(`equipments.${props.auction.equipmentId}.name`);
 });
 
 const closesWhenText = computed(() => {
-  if (props.currentAuction.closesWhenKey === null) {
-    return null;
-  }
-
-  return t(props.currentAuction.closesWhenKey);
+  return t(`auction.closesWhen.${props.auction.id}`);
 });
 </script>
 
@@ -41,29 +33,26 @@ const closesWhenText = computed(() => {
         <span class="text-xs shrink-0 text-cyan-300 animate-auction-pulse"> ◆ </span>
       </div>
 
-      <p v-if="equipmentName !== null" class="text-[11px] leading-relaxed">
+      <p class="text-[11px] leading-relaxed">
         <span class="text-white">{{ $t("auction.currentActiveAcquirePrefix") }}</span>
         <span class="text-cyan-300">&nbsp;{{ equipmentName }}</span>
         <span class="text-white">!</span>
       </p>
 
-      <div
-        v-if="currentAuction.purchasePrice !== null && currentAuction.resalePrice !== null"
-        class="flex flex-wrap gap-x-4 gap-y-1 pt-1"
-      >
+      <div class="flex flex-wrap gap-x-4 gap-y-1 pt-1">
         <p class="text-[10px]">
           <span class="text-white">{{ $t("auction.purchasePriceLabel") }} </span>
-          <span class="text-cyan-300">&nbsp;{{ currentAuction.purchasePrice }}&nbsp;</span>
+          <span class="text-cyan-300">&nbsp;{{ auction.price }}&nbsp;</span>
           <span class="text-white"> {{ $t("auction.bitsLabel") }}&nbsp;-</span>
         </p>
         <p class="text-[10px]">
           <span class="text-white">{{ $t("auction.resalePriceLabel") }} </span>
-          <span class="text-cyan-300">&nbsp;{{ currentAuction.resalePrice }}&nbsp;</span>
+          <span class="text-cyan-300">&nbsp;{{ auction.resale }}&nbsp;</span>
           <span class="text-white"> {{ $t("auction.bitsLabel") }}</span>
         </p>
       </div>
 
-      <div v-if="closesWhenText !== null" class="pt-2 border-t border-cyan-400/20">
+      <div class="pt-2 border-t border-cyan-400/20">
         <p class="text-[10px] leading-relaxed">
           <span class="text-white">{{ $t("auction.closesWhenLabel") }}</span>
           <span class="text-cyan-200/80">&nbsp;{{ closesWhenText }}</span>

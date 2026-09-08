@@ -8,6 +8,8 @@ export class AuctionConverter {
       id: auctionRaw.id,
       equipmentId: Number(auctionRaw.equipmentId),
       status,
+      price: auctionRaw.price,
+      resale: auctionRaw.resale,
     };
   }
 }

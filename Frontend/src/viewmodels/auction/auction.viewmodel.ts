@@ -4,4 +4,6 @@ export interface AuctionViewModel {
   id: string;
   equipmentId: number;
   status: AuctionStatusConstant;
+  price: number;
+  resale: number;
 }
