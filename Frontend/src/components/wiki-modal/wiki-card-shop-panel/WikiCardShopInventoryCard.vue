@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { ImageCatalog } from "@/catalogs/image.catalog";
+import { CardRepository } from "@/repositories/card.repository";
 import type { WikiCardShopInventoryCardViewModel } from "@/viewmodels/wiki-modal/wiki-card-shop-inventory-card.viewmodel";
 
 const props = defineProps<{
@@ -15,11 +16,12 @@ const emit = defineEmits<{
 const { t } = useI18n();
 
 const cardName = computed(() => {
-  return t(props.card.nameKey);
+  return t(`cards.${props.card.cardId}.name`);
 });
 
 const cardImageUrl = computed(() => {
-  return ImageCatalog.getCardImageUrl(props.card.imageName);
+  const cardRaw = CardRepository.getCardById(props.card.cardId);
+  return ImageCatalog.getCardImageUrl(cardRaw?.imageName);
 });
 
 const handleSelect = (): void => {
