@@ -50,7 +50,7 @@ const displayValue = computed(() => {
   return props.statViewModel.sumBetweenDigimonAndEquipaments + battleDelta.value;
 });
 
-const valueColorClass = computed(() => {
+const buffOrDebuffClass = computed(() => {
   if (battleDelta.value > 0) {
     return "text-green-400";
   }
@@ -80,7 +80,7 @@ const valueColorClass = computed(() => {
     <div class="flex items-center gap-1 min-w-0 font-bold tracking-wide text-xs 2xl:text-base">
       <span
         class="min-w-[3ch] text-right tabular-nums shadow-text cursor-help"
-        :class="valueColorClass"
+        :class="buffOrDebuffClass"
         @mouseenter="
           (event) =>
             emit(

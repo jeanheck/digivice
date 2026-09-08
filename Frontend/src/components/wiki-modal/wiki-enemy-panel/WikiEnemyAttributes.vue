@@ -23,7 +23,7 @@ const stats = computed(() => {
     <h4
       class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-2 border-b border-blue-900/30 pb-1 w-full text-center"
     >
-      {{ $t("enemy.attr") }}
+      {{ $t("enemy.attributes") }}
     </h4>
     <div
       v-for="stat in stats"
