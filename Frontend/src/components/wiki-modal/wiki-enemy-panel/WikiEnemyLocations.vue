@@ -1,30 +1,14 @@
 <script setup lang="ts">
-import { computed } from "vue";
 import WikiLocation from "@/components/wiki-modal/wiki-locations-panel/WikiLocation.vue";
-import { WikiLocationsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-locations-panel.presenter";
-import { useGameStore } from "@/stores/use-game-store";
-import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
+import type { WikiLocationViewModel } from "@/viewmodels/wiki-modal/wiki-location.viewmodel";
 
-const props = defineProps<{
-  enemy: EnemyViewModel;
+defineProps<{
+  locations: WikiLocationViewModel[];
 }>();
 
 const emit = defineEmits<{
   (e: "open-location", locationId: string): void;
 }>();
-
-const store = useGameStore();
-
-const mainQuest = computed(() => {
-  return store.currentState?.journal?.mainQuest ?? null;
-});
-
-const locations = computed(() => {
-  return WikiLocationsPanelPresenter.getResolvedEnemyLocations(
-    props.enemy.locations,
-    mainQuest.value,
-  );
-});
 
 const handleLocationSelect = (locationId: string): void => {
   emit("open-location", locationId);

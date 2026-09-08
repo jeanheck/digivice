@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import WikiEnemyLocations from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyLocations.vue";
-import { WikiLocationsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-locations-panel.presenter";
+import { WikiEnemyResumePresenter } from "@/presenters/map/wiki-modal/wiki-enemy-resume.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
@@ -28,7 +28,7 @@ const mainQuest = computed(() => {
 });
 
 const resolvedLocations = computed(() => {
-  return WikiLocationsPanelPresenter.getResolvedEnemyLocations(
+  return WikiEnemyResumePresenter.getResolvedEnemyLocations(
     props.enemy.locations,
     mainQuest.value,
   );
@@ -110,7 +110,7 @@ const handleOpenLocation = (locationId: string): void => {
       <WikiEnemyLocations
         v-if="hasResolvedLocations"
         class="flex-1 min-h-0"
-        :enemy="enemy"
+        :locations="resolvedLocations"
         @open-location="handleOpenLocation"
       />
 

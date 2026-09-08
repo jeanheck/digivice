@@ -1,7 +1,6 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { Quest } from "@/models";
 import { MapFrameSlideConverter } from "@/presenters/converter/map-frame-slide.converter";
-import { WikiLocationConverter } from "@/presenters/converter/wiki-location.converter";
 import { LocationEncounterHelper } from "@/presenters/helper/location-encounter.helper";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import { EnemyRepository } from "@/repositories/enemy.repository";
@@ -19,37 +18,15 @@ import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinate
 import { NpcService } from "@/services/npc.service";
 import { QuestService } from "@/services/quest.service";
 import type { EnemyLocationSourceViewModel } from "@/viewmodels/enemy/enemy-location-source.viewmodel";
-import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { WikiLocationEncounterEnemyViewModel } from "@/viewmodels/wiki-modal/wiki-location-encounter-enemy.viewmodel";
 import type { WikiLocationEncounterLineViewModel } from "@/viewmodels/wiki-modal/wiki-location-encounter-line.viewmodel";
 import type { WikiLocationMapLabelPlacementViewModel } from "@/viewmodels/wiki-modal/wiki-location-map-marker.viewmodel";
 import type { WikiLocationMapMarkerViewModel } from "@/viewmodels/wiki-modal/wiki-location-map-marker.viewmodel";
-import type { WikiLocationViewModel } from "@/viewmodels/wiki-modal/wiki-location.viewmodel";
 import type { WikiLocationsPanelViewModel } from "@/viewmodels/wiki-modal/wiki-locations-panel.viewmodel";
 
 export class WikiLocationsPanelPresenter {
-  public static getResolvedEnemyLocations(
-    locations: EnemyLocationViewModel[] | undefined,
-    mainQuest: Quest | null,
-  ): WikiLocationViewModel[] {
-    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
-    const resolvedLocations = (locations ?? []).filter((location) => {
-      return NpcService.isVisibleOnMapByMainQuestStep(
-        lastCompletedMainQuestStep,
-        location.mainQuestStepDone,
-      );
-    });
-    const sortedEnemyLocations = [...resolvedLocations].sort((first, second) => {
-      return first.id.localeCompare(second.id);
-    });
-
-    return sortedEnemyLocations.map((location) => {
-      return WikiLocationConverter.convert(location);
-    });
-  }
-
   public static getLocationPanelViewModel(
     locationId: string,
     mainQuest: Quest | null,
