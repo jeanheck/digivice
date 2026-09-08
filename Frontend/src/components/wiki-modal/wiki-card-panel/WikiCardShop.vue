@@ -22,7 +22,7 @@ const handleSelect = (cardShopId: string): void => {
   >
     <span class="min-w-0">
       <span class="block text-xs font-bold text-blue-200 tracking-wide">
-        {{ $t(cardShop.labelKey) }}
+        {{ $t(`cardShops.${cardShop.id}.name`) }}
       </span>
     </span>
   </button>

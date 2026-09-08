@@ -3,10 +3,10 @@ import { computed } from "vue";
 import WikiCardShop from "@/components/wiki-modal/wiki-card-panel/WikiCardShop.vue";
 import { WikiCardShopsPresenter } from "@/presenters/map/wiki-modal/wiki-card-shops.presenter";
 import type { Quest } from "@/models";
-import type { CardShopSourceViewModel } from "@/viewmodels/card/card-shop-source.viewmodel";
+import type { CardShopViewModel } from "@/viewmodels/card/card-shop.viewmodel";
 
 const props = defineProps<{
-  cardShops: CardShopSourceViewModel[];
+  cardShops: CardShopViewModel[];
   mainQuest: Quest | null;
 }>();
 
@@ -15,7 +15,7 @@ const emit = defineEmits<{
 }>();
 
 const shops = computed(() => {
-  return WikiCardShopsPresenter.getViewModel(props.cardShops, props.mainQuest);
+  return WikiCardShopsPresenter.getCardShopsAccordingMainQuest(props.cardShops, props.mainQuest);
 });
 
 const handleSelect = (cardShopId: string): void => {

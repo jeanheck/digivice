@@ -1,4 +1,5 @@
 export interface CardShopViewModel {
   id: string;
-  labelKey: string;
+  startWhenLastMainQuestStepDone: string;
+  finishWhenLastMainQuestStepDone: string;
 }
