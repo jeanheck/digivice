@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { WikiEnemyDropsPresenter } from "@/presenters/map/wiki-modal/wiki-enemy-drops.presenter";
 import type { EnemyDropViewModel } from "@/viewmodels/enemy/enemy-drop.viewmodel";
-import type { WikiEnemyDropItemViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drop-item.viewmodel";
+import type { WikiEnemyDropViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drop.viewmodel";
 
 const props = defineProps<{
   drops?: EnemyDropViewModel[];
@@ -31,7 +31,7 @@ const locationOnlyLabel = (locationOnly: string): string => {
   return t("enemy.locationOnly", { location: t(`location.${locationOnly}`) });
 };
 
-const handleDropClick = (drop: WikiEnemyDropItemViewModel): void => {
+const handleDropClick = (drop: WikiEnemyDropViewModel): void => {
   emit("open-drops", drop.id);
 };
 </script>
