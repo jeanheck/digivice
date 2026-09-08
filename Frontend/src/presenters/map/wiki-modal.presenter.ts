@@ -16,6 +16,7 @@ import {
 import { SearchItemConverter } from "@/presenters/converter/search-item.converter";
 import { DropService } from "@/services/drop.service";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 import type { SearchItemKind, SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
 export class WikiModalPresenter {
@@ -23,7 +24,7 @@ export class WikiModalPresenter {
     return kind === "tamer" || kind === "leader" || kind === "npc";
   }
 
-  public static isDropSearchKind(kind: SearchItemKind | undefined): boolean {
+  public static isDropSearchKind(kind: SearchItemKind | undefined): kind is DropType {
     return kind === "equipment" || kind === "consumableItem" || kind === "booster";
   }
 
