@@ -1,4 +1,4 @@
 export interface EnemyDropViewModel {
-  id: string;
+  dropId: number;
   locationOnly?: string;
 }

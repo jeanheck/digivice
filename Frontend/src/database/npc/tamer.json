@@ -9,7 +9,7 @@
           "max": 209
         },
         "deckId": "bugBugFolder1",
-        "dropId": "1aBooster"
+        "dropId": 521
       },
       "second": {
         "charismaRequired": {
@@ -17,7 +17,7 @@
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "bugBugFolder2",
-        "dropId": "1aBooster"
+        "dropId": 521
       }
     },
     "digimonBattles": {
@@ -66,7 +66,7 @@
           "max": 209
         },
         "deckId": "flyingFolder1",
-        "dropId": "2aBooster"
+        "dropId": 522
       },
       "second": {
         "charismaRequired": {
@@ -74,7 +74,7 @@
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "flyingFolder2",
-        "dropId": "2aBooster"
+        "dropId": 522
       }
     },
     "digimonBattles": {
@@ -113,14 +113,14 @@
           "max": 377
         },
         "deckId": "coolDigimonFolder1",
-        "dropId": "1aBooster"
+        "dropId": 521
       },
       "second": {
         "charismaRequired": {
           "min": 378
         },
         "deckId": "coolDigimonFolder2",
-        "dropId": "1aBooster"
+        "dropId": 521
       }
     },
     "imageName": "Nacky"
@@ -135,14 +135,14 @@
           "max": 377
         },
         "deckId": "mindFolder1",
-        "dropId": "2aBooster"
+        "dropId": 522
       },
       "second": {
         "charismaRequired": {
           "min": 378
         },
         "deckId": "mindFolder2",
-        "dropId": "2aBooster"
+        "dropId": 522
       }
     },
     "imageName": "Wong"
@@ -157,14 +157,14 @@
           "max": 377
         },
         "deckId": "protectorFolder1",
-        "dropId": "1aBooster"
+        "dropId": 521
       },
       "second": {
         "charismaRequired": {
           "min": 378
         },
         "deckId": "protectorFolder2",
-        "dropId": "1aBooster"
+        "dropId": 521
       }
     },
     "imageName": "Steve"
@@ -179,14 +179,14 @@
           "max": 377
         },
         "deckId": "amazingPatamonFolder1",
-        "dropId": "2aBooster"
+        "dropId": 522
       },
       "second": {
         "charismaRequired": {
           "min": 378
         },
         "deckId": "amazingPatamonFolder2",
-        "dropId": "2aBooster"
+        "dropId": 522
       }
     },
     "imageName": "Gloria"
@@ -200,14 +200,14 @@
           "min": 1218
         },
         "deckId": "motherNatureFolder1",
-        "dropId": "4aBooster"
+        "dropId": 524
       },
       "second": {
         "charismaRequired": {
           "min": 2277
         },
         "deckId": "motherNatureFolder2",
-        "dropId": "4aBooster"
+        "dropId": 524
       }
     },
     "digimonBattles": {
@@ -247,14 +247,14 @@
           "max": 284
         },
         "deckId": "verminFolder1",
-        "dropId": "3aBooster"
+        "dropId": 523
       },
       "second": {
         "charismaRequired": {
           "min": 492
         },
         "deckId": "verminFolder2",
-        "dropId": "3aBooster"
+        "dropId": 523
       }
     },
     "digimonBattles": {
@@ -293,14 +293,14 @@
           "max": 284
         },
         "deckId": "ogreOgreFolder1",
-        "dropId": "3aBooster"
+        "dropId": 523
       },
       "second": {
         "charismaRequired": {
           "min": 492
         },
         "deckId": "ogreOgreFolder2",
-        "dropId": "3aBooster"
+        "dropId": 523
       }
     },
     "digimonBattles": {
@@ -335,14 +335,14 @@
           "max": 284
         },
         "deckId": "waterAnimalFolder1",
-        "dropId": "4aBooster"
+        "dropId": 524
       },
       "second": {
         "charismaRequired": {
           "min": 492
         },
         "deckId": "waterAnimalFolder2",
-        "dropId": "4aBooster"
+        "dropId": 524
       }
     },
     "digimonBattles": {
@@ -381,14 +381,14 @@
           "max": 284
         },
         "deckId": "noviceProgramFolder1",
-        "dropId": "3aBooster"
+        "dropId": 523
       },
       "second": {
         "charismaRequired": {
           "min": 492
         },
         "deckId": "noviceProgramFolder2",
-        "dropId": "3aBooster"
+        "dropId": 523
       }
     },
     "digimonBattles": {
@@ -419,14 +419,14 @@
           "max": 284
         },
         "deckId": "bugCatcherFolder1",
-        "dropId": "3aBooster"
+        "dropId": 523
       },
       "second": {
         "charismaRequired": {
           "min": 492
         },
         "deckId": "bugCatcherFolder2",
-        "dropId": "3aBooster"
+        "dropId": 523
       }
     },
     "digimonBattles": {
@@ -464,14 +464,14 @@
           "min": 1218
         },
         "deckId": "veteranTamerFolder1",
-        "dropId": "5aBooster"
+        "dropId": 525
       },
       "second": {
         "charismaRequired": {
           "min": 2277
         },
         "deckId": "veteranTamerFolder2",
-        "dropId": "5aBooster"
+        "dropId": 525
       }
     },
     "digimonBattles": {
@@ -511,14 +511,14 @@
           "max": 284
         },
         "deckId": "vegetarianFolder1",
-        "dropId": "4aBooster"
+        "dropId": 524
       },
       "second": {
         "charismaRequired": {
           "min": 492
         },
         "deckId": "vegetarianFolder2",
-        "dropId": "4aBooster"
+        "dropId": 524
       }
     },
     "digimonBattles": {
@@ -557,14 +557,14 @@
           "max": 377
         },
         "deckId": "dinosaurFolder1",
-        "dropId": "4aBooster"
+        "dropId": 524
       },
       "second": {
         "charismaRequired": {
           "min": 630
         },
         "deckId": "dinosaurFolder2",
-        "dropId": "4aBooster"
+        "dropId": 524
       }
     },
     "digimonBattles": {
@@ -599,14 +599,14 @@
           "max": 377
         },
         "deckId": "brownFolder1",
-        "dropId": "5aBooster"
+        "dropId": 525
       },
       "second": {
         "charismaRequired": {
           "min": 630
         },
         "deckId": "brownFolder2",
-        "dropId": "5aBooster"
+        "dropId": 525
       }
     },
     "digimonBattles": {
@@ -641,14 +641,14 @@
           "max": 377
         },
         "deckId": "occultFolder1",
-        "dropId": "5aBooster"
+        "dropId": 525
       },
       "second": {
         "charismaRequired": {
           "min": 630
         },
         "deckId": "occultFolder2",
-        "dropId": "5aBooster"
+        "dropId": 525
       }
     },
     "digimonBattles": {
@@ -683,14 +683,14 @@
           "max": 377
         },
         "deckId": "poisonFolder1",
-        "dropId": "7aBooster"
+        "dropId": 527
       },
       "second": {
         "charismaRequired": {
           "min": 630
         },
         "deckId": "poisonFolder2",
-        "dropId": "7aBooster"
+        "dropId": 527
       }
     },
     "digimonBattles": {
@@ -729,14 +729,14 @@
           "max": 377
         },
         "deckId": "blueFolder1",
-        "dropId": "6aBooster"
+        "dropId": 526
       },
       "second": {
         "charismaRequired": {
           "min": 630
         },
         "deckId": "blueFolder2",
-        "dropId": "6aBooster"
+        "dropId": 526
       }
     },
     "digimonBattles": {
@@ -774,14 +774,14 @@
           "min": 1218
         },
         "deckId": "burningFolder1",
-        "dropId": "6aBooster"
+        "dropId": 526
       },
       "second": {
         "charismaRequired": {
           "min": 2277
         },
         "deckId": "burningFolder2",
-        "dropId": "6aBooster"
+        "dropId": 526
       }
     },
     "digimonBattles": {
@@ -820,14 +820,14 @@
           "min": 1218
         },
         "deckId": "programManiacFolder1",
-        "dropId": "9aBooster"
+        "dropId": 529
       },
       "second": {
         "charismaRequired": {
           "min": 2277
         },
         "deckId": "programManiacFolder2",
-        "dropId": "9aBooster"
+        "dropId": 529
       }
     },
     "digimonBattles": {

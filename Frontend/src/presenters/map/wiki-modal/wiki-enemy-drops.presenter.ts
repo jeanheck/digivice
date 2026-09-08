@@ -6,7 +6,10 @@ import type { WikiEnemyDropViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-
 export class WikiEnemyDropsPresenter {
   public static getViewModel(drops?: EnemyDropViewModel[]): WikiEnemyDropViewModel[] {
     return (drops ?? []).map((drop) => {
-      return WikiEnemyDropConverter.convert(drop, DropService.getDropTranslationKeyById(drop.id));
+      return WikiEnemyDropConverter.convert(
+        drop,
+        DropService.getDropTranslationKeyById(String(drop.dropId)),
+      );
     });
   }
 }

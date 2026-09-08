@@ -1,474 +1,356 @@
 {
-  "armorChip": {
-    "id": 400,
+  "102": {
+    "type": "equipment"
+  },
+  "116": {
+    "type": "equipment"
+  },
+  "121": {
+    "type": "equipment"
+  },
+  "128": {
+    "type": "equipment"
+  },
+  "133": {
+    "type": "equipment"
+  },
+  "141": {
+    "type": "equipment"
+  },
+  "146": {
+    "type": "equipment"
+  },
+  "153": {
+    "type": "equipment"
+  },
+  "177": {
+    "type": "equipment"
+  },
+  "184": {
+    "type": "equipment"
+  },
+  "200": {
+    "type": "equipment"
+  },
+  "208": {
+    "type": "equipment"
+  },
+  "316": {
+    "type": "equipment"
+  },
+  "317": {
+    "type": "equipment"
+  },
+  "318": {
+    "type": "equipment"
+  },
+  "319": {
+    "type": "equipment"
+  },
+  "320": {
+    "type": "equipment"
+  },
+  "323": {
+    "type": "equipment"
+  },
+  "324": {
+    "type": "equipment"
+  },
+  "325": {
+    "type": "equipment"
+  },
+  "326": {
+    "type": "equipment"
+  },
+  "327": {
+    "type": "equipment"
+  },
+  "328": {
+    "type": "equipment"
+  },
+  "329": {
+    "type": "equipment"
+  },
+  "330": {
+    "type": "equipment"
+  },
+  "331": {
+    "type": "equipment"
+  },
+  "332": {
+    "type": "equipment"
+  },
+  "333": {
+    "type": "equipment"
+  },
+  "334": {
+    "type": "equipment"
+  },
+  "335": {
+    "type": "equipment"
+  },
+  "336": {
+    "type": "equipment"
+  },
+  "337": {
+    "type": "equipment"
+  },
+  "338": {
+    "type": "equipment"
+  },
+  "339": {
+    "type": "equipment"
+  },
+  "340": {
+    "type": "equipment"
+  },
+  "341": {
+    "type": "equipment"
+  },
+  "342": {
+    "type": "equipment"
+  },
+  "343": {
+    "type": "equipment"
+  },
+  "344": {
+    "type": "equipment"
+  },
+  "345": {
+    "type": "equipment"
+  },
+  "346": {
+    "type": "equipment"
+  },
+  "347": {
+    "type": "equipment"
+  },
+  "348": {
+    "type": "equipment"
+  },
+  "349": {
+    "type": "equipment"
+  },
+  "350": {
+    "type": "equipment"
+  },
+  "351": {
+    "type": "equipment"
+  },
+  "352": {
+    "type": "equipment"
+  },
+  "353": {
+    "type": "equipment"
+  },
+  "354": {
+    "type": "equipment"
+  },
+  "355": {
+    "type": "equipment"
+  },
+  "356": {
+    "type": "equipment"
+  },
+  "357": {
+    "type": "equipment"
+  },
+  "358": {
+    "type": "equipment"
+  },
+  "359": {
+    "type": "equipment"
+  },
+  "400": {
     "type": "consumableItem"
   },
-  "binderCrest": {
-    "id": 319,
-    "type": "equipment"
-  },
-  "boltPower1": {
-    "id": 351,
-    "type": "equipment"
-  },
-  "boltPower2": {
-    "id": 352,
-    "type": "equipment"
-  },
-  "boltPowerS": {
-    "id": 353,
-    "type": "equipment"
-  },
-  "boostChip": {
-    "id": 401,
+  "401": {
     "type": "consumableItem"
   },
-  "chainSaw": {
-    "id": 177,
-    "type": "equipment"
-  },
-  "chaosWave": {
-    "id": 425,
+  "402": {
     "type": "consumableItem"
   },
-  "charismaChip": {
-    "id": 402,
+  "403": {
     "type": "consumableItem"
   },
-  "charmGas": {
-    "id": 426,
+  "404": {
     "type": "consumableItem"
   },
-  "counterCrest": {
-    "id": 318,
-    "type": "equipment"
-  },
-  "crimsonCable": {
-    "id": 427,
+  "405": {
     "type": "consumableItem"
   },
-  "cursedPuppet": {
-    "id": 428,
+  "406": {
     "type": "consumableItem"
   },
-  "danceFeather": {
-    "id": 333,
-    "type": "equipment"
-  },
-  "danceWing": {
-    "id": 334,
-    "type": "equipment"
-  },
-  "darkPower1": {
-    "id": 357,
-    "type": "equipment"
-  },
-  "darkPower2": {
-    "id": 358,
-    "type": "equipment"
-  },
-  "darkPowerS": {
-    "id": 359,
-    "type": "equipment"
-  },
-  "devilChip": {
-    "id": 403,
+  "407": {
     "type": "consumableItem"
   },
-  "drillHorn": {
-    "id": 208,
-    "type": "equipment"
-  },
-  "fireChip": {
-    "id": 404,
+  "408": {
     "type": "consumableItem"
   },
-  "firePower1": {
-    "id": 339,
-    "type": "equipment"
-  },
-  "firePower2": {
-    "id": 340,
-    "type": "equipment"
-  },
-  "firePowerS": {
-    "id": 341,
-    "type": "equipment"
-  },
-  "ghostFang": {
-    "id": 146,
-    "type": "equipment"
-  },
-  "glasses": {
-    "id": 331,
-    "type": "equipment"
-  },
-  "goggles": {
-    "id": 332,
-    "type": "equipment"
-  },
-  "hackSticker": {
-    "id": 327,
-    "type": "equipment"
-  },
-  "hackSystem": {
-    "id": 328,
-    "type": "equipment"
-  },
-  "hpChip": {
-    "id": 405,
+  "409": {
     "type": "consumableItem"
   },
-  "hpMegaProxy": {
-    "id": 326,
-    "type": "equipment"
-  },
-  "hpProxy": {
-    "id": 325,
-    "type": "equipment"
-  },
-  "iceChip": {
-    "id": 406,
+  "410": {
     "type": "consumableItem"
   },
-  "icePower1": {
-    "id": 345,
-    "type": "equipment"
-  },
-  "icePower2": {
-    "id": 346,
-    "type": "equipment"
-  },
-  "icePowerS": {
-    "id": 347,
-    "type": "equipment"
-  },
-  "machinegun": {
-    "id": 121,
-    "type": "equipment"
-  },
-  "magicianRod": {
-    "id": 133,
-    "type": "equipment"
-  },
-  "maxCharge": {
-    "id": 407,
+  "411": {
     "type": "consumableItem"
   },
-  "metalChip": {
-    "id": 408,
+  "412": {
     "type": "consumableItem"
   },
-  "metalPower1": {
-    "id": 354,
-    "type": "equipment"
-  },
-  "metalPower2": {
-    "id": 355,
-    "type": "equipment"
-  },
-  "metalPowerS": {
-    "id": 356,
-    "type": "equipment"
-  },
-  "mindChip": {
-    "id": 409,
+  "413": {
     "type": "consumableItem"
   },
-  "mpChip": {
-    "id": 410,
+  "414": {
     "type": "consumableItem"
   },
-  "mpMegaProxy": {
-    "id": 324,
-    "type": "equipment"
-  },
-  "mpProxy": {
-    "id": 323,
-    "type": "equipment"
-  },
-  "multiCrest": {
-    "id": 316,
-    "type": "equipment"
-  },
-  "naginata": {
-    "id": 184,
-    "type": "equipment"
-  },
-  "oldClaw": {
-    "id": 153,
-    "type": "equipment"
-  },
-  "oldWand": {
-    "id": 141,
-    "type": "equipment"
-  },
-  "overClocked": {
-    "id": 329,
-    "type": "equipment"
-  },
-  "overLoad": {
-    "id": 330,
-    "type": "equipment"
-  },
-  "powerBrace": {
-    "id": 338,
-    "type": "equipment"
-  },
-  "powerCharge": {
-    "id": 411,
+  "415": {
     "type": "consumableItem"
   },
-  "powerChip": {
-    "id": 412,
+  "416": {
     "type": "consumableItem"
   },
-  "pulseGuard": {
-    "id": 200,
-    "type": "equipment"
-  },
-  "recoverCrest": {
-    "id": 320,
-    "type": "equipment"
-  },
-  "runnerSandal": {
-    "id": 335,
-    "type": "equipment"
-  },
-  "runnerShoes": {
-    "id": 336,
-    "type": "equipment"
-  },
-  "rustyGlove": {
-    "id": 116,
-    "type": "equipment"
-  },
-  "rustyKatana": {
-    "id": 102,
-    "type": "equipment"
-  },
-  "rustyRifle": {
-    "id": 128,
-    "type": "equipment"
-  },
-  "searchCrest": {
-    "id": 317,
-    "type": "equipment"
-  },
-  "spiderWeb": {
-    "id": 413,
+  "417": {
     "type": "consumableItem"
   },
-  "superCharge": {
-    "id": 414,
+  "418": {
     "type": "consumableItem"
   },
-  "thunderChip": {
-    "id": 415,
+  "419": {
     "type": "consumableItem"
   },
-  "tntBall": {
-    "id": 416,
+  "420": {
     "type": "consumableItem"
   },
-  "trainChip1": {
-    "id": 417,
+  "421": {
     "type": "consumableItem"
   },
-  "trainChip2": {
-    "id": 418,
+  "422": {
     "type": "consumableItem"
   },
-  "trainChip3": {
-    "id": 419,
+  "423": {
     "type": "consumableItem"
   },
-  "trainChipV": {
-    "id": 420,
+  "424": {
     "type": "consumableItem"
   },
-  "trainingBook": {
-    "id": 337,
-    "type": "equipment"
-  },
-  "ultraCharge": {
-    "id": 421,
+  "425": {
     "type": "consumableItem"
   },
-  "waterChip": {
-    "id": 422,
+  "426": {
     "type": "consumableItem"
   },
-  "waterPower1": {
-    "id": 342,
-    "type": "equipment"
-  },
-  "waterPower2": {
-    "id": 343,
-    "type": "equipment"
-  },
-  "waterPowerS": {
-    "id": 344,
-    "type": "equipment"
-  },
-  "windChip": {
-    "id": 423,
+  "427": {
     "type": "consumableItem"
   },
-  "windPower1": {
-    "id": 348,
-    "type": "equipment"
-  },
-  "windPower2": {
-    "id": 349,
-    "type": "equipment"
-  },
-  "windPowerS": {
-    "id": 350,
-    "type": "equipment"
-  },
-  "wisdomChip": {
-    "id": 424,
+  "428": {
     "type": "consumableItem"
   },
-  "1bBooster": {
-    "id": 501,
+  "501": {
     "type": "booster"
   },
-  "2bBooster": {
-    "id": 502,
+  "502": {
     "type": "booster"
   },
-  "3bBooster": {
-    "id": 503,
+  "503": {
     "type": "booster"
   },
-  "4bBooster": {
-    "id": 504,
+  "504": {
     "type": "booster"
   },
-  "5bBooster": {
-    "id": 505,
+  "505": {
     "type": "booster"
   },
-  "6bBooster": {
-    "id": 506,
+  "506": {
     "type": "booster"
   },
-  "7bBooster": {
-    "id": 507,
+  "507": {
     "type": "booster"
   },
-  "8bBooster": {
-    "id": 508,
+  "508": {
     "type": "booster"
   },
-  "9bBooster": {
-    "id": 509,
+  "509": {
     "type": "booster"
   },
-  "10bBooster": {
-    "id": 510,
+  "510": {
     "type": "booster"
   },
-  "11bBooster": {
-    "id": 511,
+  "511": {
     "type": "booster"
   },
-  "12bBooster": {
-    "id": 512,
+  "512": {
     "type": "booster"
   },
-  "13bBooster": {
-    "id": 513,
+  "513": {
     "type": "booster"
   },
-  "14bBooster": {
-    "id": 514,
+  "514": {
     "type": "booster"
   },
-  "15bBooster": {
-    "id": 515,
+  "515": {
     "type": "booster"
   },
-  "r01Booster": {
-    "id": 516,
+  "516": {
     "type": "booster"
   },
-  "r02Booster": {
-    "id": 517,
+  "517": {
     "type": "booster"
   },
-  "r03Booster": {
-    "id": 518,
+  "518": {
     "type": "booster"
   },
-  "r04Booster": {
-    "id": 519,
+  "519": {
     "type": "booster"
   },
-  "r05Booster": {
-    "id": 520,
+  "520": {
     "type": "booster"
   },
-  "1aBooster": {
-    "id": 521,
+  "521": {
     "type": "booster"
   },
-  "2aBooster": {
-    "id": 522,
+  "522": {
     "type": "booster"
   },
-  "3aBooster": {
-    "id": 523,
+  "523": {
     "type": "booster"
   },
-  "4aBooster": {
-    "id": 524,
+  "524": {
     "type": "booster"
   },
-  "5aBooster": {
-    "id": 525,
+  "525": {
     "type": "booster"
   },
-  "6aBooster": {
-    "id": 526,
+  "526": {
     "type": "booster"
   },
-  "7aBooster": {
-    "id": 527,
+  "527": {
     "type": "booster"
   },
-  "8aBooster": {
-    "id": 528,
+  "528": {
     "type": "booster"
   },
-  "9aBooster": {
-    "id": 529,
+  "529": {
     "type": "booster"
   },
-  "10aBooster": {
-    "id": 530,
+  "530": {
     "type": "booster"
   },
-  "11aBooster": {
-    "id": 531,
+  "531": {
     "type": "booster"
   },
-  "12aBooster": {
-    "id": 532,
+  "532": {
     "type": "booster"
   },
-  "13aBooster": {
-    "id": 533,
+  "533": {
     "type": "booster"
   },
-  "14aBooster": {
-    "id": 534,
+  "534": {
     "type": "booster"
   },
-  "15aBooster": {
-    "id": 535,
+  "535": {
     "type": "booster"
   }
 }

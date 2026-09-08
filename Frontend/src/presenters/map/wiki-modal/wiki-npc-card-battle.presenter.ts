@@ -41,7 +41,7 @@ export class WikiNpcCardBattlePresenter {
       cards,
       drops: [
         {
-          id: cardBattle.dropId,
+          dropId: cardBattle.dropId,
         },
       ],
     };

@@ -69,8 +69,8 @@ export class WikiCardPanelPresenter {
     const boosters: CardBoosterSourceViewModel[] = [];
 
     for (const boosterId of boosterIds) {
-      const dropKey = DropRepository.getDropKeyByNumericId(boosterId);
-      if (dropKey === undefined) {
+      const dropKey = String(boosterId);
+      if (DropRepository.getDropByKey(dropKey) === undefined) {
         continue;
       }
 

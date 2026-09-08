@@ -8,15 +8,15 @@ export class DropService {
     }
 
     if (dropRaw.type === "booster") {
-      return `boosters.${dropRaw.id}.name`;
+      return `boosters.${dropKey}.name`;
     }
 
     if (dropRaw.type === "equipment") {
-      return `equipments.${dropRaw.id}.name`;
+      return `equipments.${dropKey}.name`;
     }
 
     if (dropRaw.type === "consumableItem") {
-      return `consumableItems.${dropRaw.id}.name`;
+      return `consumableItems.${dropKey}.name`;
     }
 
     return `drops.${dropKey}`;

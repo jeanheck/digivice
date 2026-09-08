@@ -1,4 +1,4 @@
 export interface EnemyDropRaw {
-  id: string;
+  dropId: number;
   locationOnly?: string;
 }

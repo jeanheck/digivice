@@ -13,10 +13,12 @@ export class WikiDropsPanelPresenter {
     const dropRaw = DropRepository.getDropByKey(dropId);
     const dropSources = WikiDropsPanelPresenter.getDropSourcesByDropId().get(dropId) ?? [];
     const isBooster = dropRaw?.type === "booster";
+    const dropNumericId = Number(dropId);
 
     return {
       dropType: dropRaw?.type ?? null,
-      dropNumericId: dropRaw?.id ?? null,
+      dropNumericId:
+        dropRaw !== undefined && !Number.isNaN(dropNumericId) ? dropNumericId : null,
       sources: dropSources.map((dropSource) => {
         return WikiDroppedBySourceConverter.convert(dropSource);
       }),
@@ -35,14 +37,15 @@ export class WikiDropsPanelPresenter {
 
     for (const [enemyId, enemyRaw] of Object.entries(EnemyRepository.getEnemyTable())) {
       for (const drop of enemyRaw.drops ?? []) {
-        const existingSources = dropSourcesByDropId.get(drop.id) ?? [];
+        const dropKey = String(drop.dropId);
+        const existingSources = dropSourcesByDropId.get(dropKey) ?? [];
         existingSources.push({
           kind: "enemy",
           sourceId: enemyId,
           label: enemyRaw.name,
           locationId: drop.locationOnly,
         });
-        dropSourcesByDropId.set(drop.id, existingSources);
+        dropSourcesByDropId.set(dropKey, existingSources);
       }
     }
 
@@ -51,7 +54,7 @@ export class WikiDropsPanelPresenter {
         WikiDropsPanelPresenter.addNpcDropSource(
           dropSourcesByDropId,
           npcSourceKeysByDropId,
-          cardBattle.dropId,
+          String(cardBattle.dropId),
           {
             kind: "tamer",
             sourceId: tamerId,
@@ -66,7 +69,7 @@ export class WikiDropsPanelPresenter {
         WikiDropsPanelPresenter.addNpcDropSource(
           dropSourcesByDropId,
           npcSourceKeysByDropId,
-          cardBattle.dropId,
+          String(cardBattle.dropId),
           {
             kind: "duelIsland",
             sourceId: duelIslandId,

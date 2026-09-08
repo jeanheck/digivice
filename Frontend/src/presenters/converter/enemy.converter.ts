@@ -76,7 +76,7 @@ export class EnemyConverter {
     if (enemyRaw.drops !== undefined) {
       enemyViewModel.drops = enemyRaw.drops.map((dropRaw) => {
         return {
-          id: dropRaw.id,
+          dropId: dropRaw.dropId,
           locationOnly: dropRaw.locationOnly,
         };
       });

@@ -1,5 +1,5 @@
 export interface WikiEnemyDropViewModel {
-  id: string;
+  dropId: number;
   labelKey: string;
   locationOnly?: string;
 }

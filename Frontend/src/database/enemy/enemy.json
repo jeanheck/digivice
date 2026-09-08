@@ -43,7 +43,7 @@
     "groupId": 1,
     "drops": [
       {
-        "id": "oldWand"
+        "dropId": 141
       }
     ],
     "locations": [
@@ -99,7 +99,7 @@
     "groupId": 2,
     "drops": [
       {
-        "id": "oldClaw"
+        "dropId": 153
       }
     ],
     "locations": [
@@ -155,7 +155,7 @@
     "groupId": 7,
     "drops": [
       {
-        "id": "rustyRifle"
+        "dropId": 128
       }
     ],
     "locations": [
@@ -268,7 +268,7 @@
     "groupId": 9,
     "drops": [
       {
-        "id": "rustyGlove"
+        "dropId": 116
       }
     ],
     "locations": [
@@ -327,7 +327,7 @@
     "groupId": 11,
     "drops": [
       {
-        "id": "rustyKatana"
+        "dropId": 102
       }
     ],
     "locations": [
@@ -686,7 +686,7 @@
     "groupId": 38,
     "drops": [
       {
-        "id": "darkPower1"
+        "dropId": 357
       }
     ],
     "locations": [
@@ -744,7 +744,7 @@
     "groupId": 39,
     "drops": [
       {
-        "id": "powerCharge"
+        "dropId": 411
       }
     ],
     "locations": [
@@ -1053,7 +1053,7 @@
     "groupId": 44,
     "drops": [
       {
-        "id": "spiderWeb"
+        "dropId": 413
       }
     ],
     "locations": [
@@ -1471,7 +1471,7 @@
     "groupId": 50,
     "drops": [
       {
-        "id": "firePower1"
+        "dropId": 339
       }
     ],
     "locations": [
@@ -1526,7 +1526,7 @@
     "groupId": 51,
     "drops": [
       {
-        "id": "tntBall"
+        "dropId": 416
       }
     ],
     "locations": [
@@ -1591,7 +1591,7 @@
     "groupId": 52,
     "drops": [
       {
-        "id": "fireChip"
+        "dropId": 404
       }
     ],
     "locations": [
@@ -1646,7 +1646,7 @@
     "groupId": 53,
     "drops": [
       {
-        "id": "icePower1"
+        "dropId": 345
       }
     ],
     "locations": [
@@ -1719,7 +1719,7 @@
     "groupId": 54,
     "drops": [
       {
-        "id": "waterChip"
+        "dropId": 422
       }
     ],
     "locations": [
@@ -1910,7 +1910,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "ghostFang"
+        "dropId": 146
       }
     ]
   },
@@ -2019,7 +2019,7 @@
     "groupId": 58,
     "drops": [
       {
-        "id": "windPower1"
+        "dropId": 348
       }
     ],
     "locations": [
@@ -2086,7 +2086,7 @@
     "groupId": 59,
     "drops": [
       {
-        "id": "waterChip"
+        "dropId": 422
       }
     ],
     "locations": [
@@ -2285,7 +2285,7 @@
     "groupId": 62,
     "drops": [
       {
-        "id": "runnerSandal"
+        "dropId": 335
       }
     ]
   },
@@ -2424,7 +2424,7 @@
     "groupId": 65,
     "drops": [
       {
-        "id": "chaosWave"
+        "dropId": 425
       }
     ],
     "locations": [
@@ -2482,7 +2482,7 @@
     "groupId": 66,
     "drops": [
       {
-        "id": "waterPower1"
+        "dropId": 342
       }
     ],
     "locations": [
@@ -2593,7 +2593,7 @@
     "groupId": 67,
     "drops": [
       {
-        "id": "hpProxy"
+        "dropId": 325
       }
     ],
     "locations": [
@@ -2660,7 +2660,7 @@
     "groupId": 68,
     "drops": [
       {
-        "id": "superCharge"
+        "dropId": 414
       }
     ],
     "locations": [
@@ -2727,7 +2727,7 @@
     "groupId": 69,
     "drops": [
       {
-        "id": "powerChip"
+        "dropId": 412
       }
     ],
     "locations": [
@@ -2794,7 +2794,7 @@
     "groupId": 70,
     "drops": [
       {
-        "id": "counterCrest"
+        "dropId": 318
       }
     ],
     "locations": [
@@ -2954,7 +2954,7 @@
     "groupId": 73,
     "drops": [
       {
-        "id": "boltPower1"
+        "dropId": 351
       }
     ],
     "locations": [
@@ -3030,7 +3030,7 @@
     "groupId": 74,
     "drops": [
       {
-        "id": "thunderChip"
+        "dropId": 415
       }
     ],
     "locations": [
@@ -3097,7 +3097,7 @@
     "groupId": 75,
     "drops": [
       {
-        "id": "searchCrest"
+        "dropId": 317
       }
     ],
     "locations": [
@@ -3242,7 +3242,7 @@
     "groupId": 77,
     "drops": [
       {
-        "id": "pulseGuard"
+        "dropId": 200
       }
     ],
     "locations": [
@@ -3300,7 +3300,7 @@
     "groupId": 78,
     "drops": [
       {
-        "id": "metalPower1"
+        "dropId": 354
       }
     ],
     "locations": [
@@ -3358,7 +3358,7 @@
     "groupId": 79,
     "drops": [
       {
-        "id": "multiCrest"
+        "dropId": 316
       }
     ],
     "locations": [
@@ -3416,7 +3416,7 @@
     "groupId": 80,
     "drops": [
       {
-        "id": "machinegun"
+        "dropId": 121
       }
     ],
     "locations": [
@@ -3492,7 +3492,7 @@
     "groupId": 81,
     "drops": [
       {
-        "id": "binderCrest"
+        "dropId": 319
       }
     ],
     "locations": [
@@ -3550,7 +3550,7 @@
     "groupId": 82,
     "drops": [
       {
-        "id": "wisdomChip"
+        "dropId": 424
       }
     ],
     "locations": [
@@ -3608,7 +3608,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "goggles"
+        "dropId": 332
       }
     ]
   },
@@ -3697,7 +3697,7 @@
     "groupId": 85,
     "drops": [
       {
-        "id": "armorChip"
+        "dropId": 400
       }
     ],
     "locations": [
@@ -3755,7 +3755,7 @@
     "groupId": 86,
     "drops": [
       {
-        "id": "wisdomChip"
+        "dropId": 424
       }
     ],
     "locations": [
@@ -3981,7 +3981,7 @@
     "groupId": 91,
     "drops": [
       {
-        "id": "mpChip"
+        "dropId": 410
       }
     ],
     "locations": [
@@ -4049,7 +4049,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "drillHorn"
+        "dropId": 208
       }
     ]
   },
@@ -4180,7 +4180,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "recoverCrest"
+        "dropId": 320
       }
     ]
   },
@@ -4227,7 +4227,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "darkPower2"
+        "dropId": 358
       }
     ]
   },
@@ -4274,7 +4274,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "mindChip"
+        "dropId": 409
       }
     ]
   },
@@ -4321,7 +4321,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "charmGas"
+        "dropId": 426
       }
     ]
   },
@@ -4410,7 +4410,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "metalChip"
+        "dropId": 408
       }
     ]
   },
@@ -4457,7 +4457,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "windPower2"
+        "dropId": 349
       }
     ]
   },
@@ -4504,7 +4504,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "crimsonCable"
+        "dropId": 427
       }
     ]
   },
@@ -4635,7 +4635,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "thunderChip"
+        "dropId": 415
       }
     ]
   },
@@ -4682,7 +4682,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "waterPower2"
+        "dropId": 343
       }
     ]
   },
@@ -4729,7 +4729,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "devilChip"
+        "dropId": 403
       }
     ]
   },
@@ -4776,7 +4776,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "hackSticker"
+        "dropId": 327
       }
     ]
   },
@@ -4823,7 +4823,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "ultraCharge"
+        "dropId": 421
       }
     ]
   },
@@ -4870,7 +4870,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "drillHorn"
+        "dropId": 208
       }
     ]
   },
@@ -4917,7 +4917,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "firePower2"
+        "dropId": 340
       }
     ]
   },
@@ -5048,7 +5048,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "iceChip"
+        "dropId": 406
       }
     ]
   },
@@ -5095,7 +5095,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "icePower2"
+        "dropId": 346
       }
     ]
   },
@@ -5226,7 +5226,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "firePowerS"
+        "dropId": 341
       }
     ]
   },
@@ -5357,7 +5357,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "devilChip"
+        "dropId": 403
       }
     ]
   },
@@ -5404,7 +5404,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "crimsonCable"
+        "dropId": 427
       }
     ]
   },
@@ -5451,7 +5451,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "crimsonCable"
+        "dropId": 427
       }
     ]
   },
@@ -5498,7 +5498,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "crimsonCable"
+        "dropId": 427
       }
     ]
   },
@@ -5545,7 +5545,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "crimsonCable"
+        "dropId": 427
       }
     ]
   },
@@ -5592,7 +5592,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "windChip"
+        "dropId": 423
       }
     ]
   },
@@ -5765,7 +5765,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "danceWing"
+        "dropId": 334
       }
     ]
   },
@@ -5812,7 +5812,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "charmGas"
+        "dropId": 426
       }
     ]
   },
@@ -5859,7 +5859,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "maxCharge"
+        "dropId": 407
       }
     ]
   },
@@ -5906,7 +5906,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "charismaChip"
+        "dropId": 402
       }
     ]
   },
@@ -5953,7 +5953,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "windPowerS"
+        "dropId": 350
       }
     ]
   },
@@ -6084,7 +6084,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "powerBrace"
+        "dropId": 338
       }
     ]
   },
@@ -6173,7 +6173,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "metalPowerS"
+        "dropId": 356
       }
     ]
   },
@@ -6304,7 +6304,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "darkPowerS"
+        "dropId": 359
       }
     ]
   },
@@ -6507,7 +6507,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "chainSaw"
+        "dropId": 177
       }
     ]
   },
@@ -6661,7 +6661,7 @@
     "groupId": 148,
     "drops": [
       {
-        "id": "spiderWeb"
+        "dropId": 413
       }
     ],
     "locations": [
@@ -6728,7 +6728,7 @@
     "groupId": 149,
     "drops": [
       {
-        "id": "naginata"
+        "dropId": 184
       }
     ],
     "locations": [
@@ -6795,7 +6795,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "metalPower2"
+        "dropId": 355
       }
     ]
   },
@@ -6842,7 +6842,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "glasses"
+        "dropId": 331
       }
     ]
   },
@@ -6985,7 +6985,7 @@
     "groupId": 154,
     "drops": [
       {
-        "id": "magicianRod"
+        "dropId": 133
       }
     ],
     "locations": [
@@ -7052,7 +7052,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "hpChip"
+        "dropId": 405
       }
     ]
   },
@@ -7099,7 +7099,7 @@
     "groupId": 156,
     "drops": [
       {
-        "id": "overClocked"
+        "dropId": 329
       }
     ],
     "locations": [
@@ -7241,7 +7241,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "chaosWave"
+        "dropId": 425
       }
     ]
   },
@@ -7414,7 +7414,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "cursedPuppet"
+        "dropId": 428
       }
     ]
   },
@@ -7461,7 +7461,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "boltPowerS"
+        "dropId": 353
       }
     ]
   },
@@ -7550,7 +7550,7 @@
     "groupId": 165,
     "drops": [
       {
-        "id": "danceFeather"
+        "dropId": 333
       }
     ],
     "locations": [
@@ -7608,7 +7608,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "trainingBook"
+        "dropId": 337
       }
     ]
   },
@@ -7697,7 +7697,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "overLoad"
+        "dropId": 330
       }
     ]
   },
@@ -7744,7 +7744,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "boostChip"
+        "dropId": 401
       }
     ]
   },
@@ -7791,7 +7791,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "boltPower2"
+        "dropId": 352
       }
     ]
   },
@@ -7880,7 +7880,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "runnerShoes"
+        "dropId": 336
       }
     ]
   },
@@ -7927,7 +7927,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "mpProxy"
+        "dropId": 323
       }
     ]
   },
@@ -8016,7 +8016,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "trainChip3"
+        "dropId": 419
       }
     ]
   },
@@ -8105,7 +8105,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "trainChip1"
+        "dropId": 417
       }
     ]
   },
@@ -8152,7 +8152,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "hpMegaProxy"
+        "dropId": 326
       }
     ]
   },
@@ -8199,7 +8199,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "waterPowerS"
+        "dropId": 344
       }
     ]
   },
@@ -8246,7 +8246,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "trainChip2"
+        "dropId": 418
       }
     ]
   },
@@ -8293,7 +8293,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "hackSystem"
+        "dropId": 328
       }
     ]
   },
@@ -8382,7 +8382,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "mpMegaProxy"
+        "dropId": 324
       }
     ]
   },
@@ -8513,7 +8513,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "trainChipV"
+        "dropId": 420
       }
     ]
   },
@@ -8560,7 +8560,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "icePowerS"
+        "dropId": 347
       }
     ]
   },
@@ -8649,14 +8649,14 @@
     "groupId": null,
     "drops": [
       {
-        "id": "1bBooster"
+        "dropId": 501
       },
       {
-        "id": "3bBooster",
+        "dropId": 503,
         "locationOnly": "022A"
       },
       {
-        "id": "r01Booster"
+        "dropId": 516
       }
     ],
     "locations": [
@@ -8759,15 +8759,15 @@
     "groupId": null,
     "drops": [
       {
-        "id": "1bBooster",
+        "dropId": 501,
         "locationOnly": "0001"
       },
       {
-        "id": "2bBooster",
+        "dropId": 502,
         "locationOnly": "0002"
       },
       {
-        "id": "r01Booster"
+        "dropId": 516
       }
     ],
     "locations": [
@@ -8900,10 +8900,10 @@
     "groupId": null,
     "drops": [
       {
-        "id": "4bBooster"
+        "dropId": 504
       },
       {
-        "id": "r02Booster"
+        "dropId": 517
       }
     ],
     "locations": [
@@ -9000,7 +9000,7 @@
     "groupId": null,
     "drops": [
       {
-        "id": "5bBooster",
+        "dropId": 505,
         "locationOnly": "0003"
       }
     ],
@@ -9353,7 +9353,7 @@
     "groupId": 201,
     "drops": [
       {
-        "id": "powerCharge"
+        "dropId": 411
       }
     ],
     "tamerId": "natsumi"
@@ -9517,7 +9517,7 @@
     "memoryId": 8,
     "drops": [
       {
-        "id": "firePower1"
+        "dropId": 339
       }
     ],
     "groupId": 3,
@@ -9562,7 +9562,7 @@
     "memoryId": 207,
     "drops": [
       {
-        "id": "windPower1"
+        "dropId": 348
       }
     ],
     "groupId": 3,
@@ -9687,7 +9687,7 @@
     "memoryId": 119,
     "drops": [
       {
-        "id": "chaosWave"
+        "dropId": 425
       }
     ],
     "groupId": 4,
@@ -9732,7 +9732,7 @@
     "memoryId": 11,
     "drops": [
       {
-        "id": "binderCrest"
+        "dropId": 319
       }
     ],
     "groupId": 5,
@@ -9777,7 +9777,7 @@
     "memoryId": 11,
     "drops": [
       {
-        "id": "binderCrest"
+        "dropId": 319
       }
     ],
     "groupId": 5
@@ -9821,7 +9821,7 @@
     "memoryId": 13,
     "drops": [
       {
-        "id": "searchCrest"
+        "dropId": 317
       }
     ],
     "groupId": 6,
@@ -9906,7 +9906,7 @@
     "memoryId": 400,
     "drops": [
       {
-        "id": "glasses"
+        "dropId": 331
       }
     ],
     "groupId": 6,
@@ -10151,7 +10151,7 @@
     "groupId": 203,
     "drops": [
       {
-        "id": "spiderWeb"
+        "dropId": 413
       }
     ],
     "tamerId": "catherine"
@@ -10235,7 +10235,7 @@
     "groupId": 204,
     "drops": [
       {
-        "id": "powerChip"
+        "dropId": 412
       }
     ]
   },
@@ -10359,7 +10359,7 @@
     "groupId": 205,
     "drops": [
       {
-        "id": "icePower1"
+        "dropId": 345
       }
     ],
     "tamerId": "robert"
@@ -10564,7 +10564,7 @@
     "groupId": 207,
     "drops": [
       {
-        "id": "waterChip"
+        "dropId": 422
       }
     ],
     "tamerId": "bob"
@@ -10649,7 +10649,7 @@
     "groupId": 207,
     "drops": [
       {
-        "id": "fireChip"
+        "dropId": 404
       }
     ],
     "tamerId": "bob"
@@ -10694,7 +10694,7 @@
     "groupId": 208,
     "drops": [
       {
-        "id": "powerCharge"
+        "dropId": 411
       }
     ],
     "tamerId": "tomomi"
@@ -10819,7 +10819,7 @@
     "groupId": 210,
     "drops": [
       {
-        "id": "tntBall"
+        "dropId": 416
       }
     ],
     "tamerId": "andy"
@@ -10864,7 +10864,7 @@
     "groupId": 210,
     "drops": [
       {
-        "id": "counterCrest"
+        "dropId": 318
       }
     ],
     "tamerId": "andy"
@@ -10909,7 +10909,7 @@
     "groupId": 211,
     "drops": [
       {
-        "id": "boltPower1"
+        "dropId": 351
       }
     ],
     "tamerId": "george"
@@ -10954,7 +10954,7 @@
     "groupId": 211,
     "drops": [
       {
-        "id": "pulseGuard"
+        "dropId": 200
       }
     ],
     "tamerId": "george"
@@ -10999,7 +10999,7 @@
     "groupId": 212,
     "drops": [
       {
-        "id": "darkPower1"
+        "dropId": 357
       }
     ],
     "tamerId": "meiLin"
@@ -11124,7 +11124,7 @@
     "groupId": 215,
     "drops": [
       {
-        "id": "spiderWeb"
+        "dropId": 413
       }
     ],
     "tamerId": "alice"
@@ -11169,7 +11169,7 @@
     "groupId": 215,
     "drops": [
       {
-        "id": "spiderWeb"
+        "dropId": 413
       }
     ]
   },
@@ -11293,7 +11293,7 @@
     "groupId": 214,
     "drops": [
       {
-        "id": "icePower1"
+        "dropId": 345
       }
     ],
     "tamerId": "gordon"
@@ -11338,7 +11338,7 @@
     "groupId": 213,
     "drops": [
       {
-        "id": "waterPower1"
+        "dropId": 342
       }
     ],
     "tamerId": "jessica"
@@ -11423,7 +11423,7 @@
     "groupId": 213,
     "drops": [
       {
-        "id": "waterChip"
+        "dropId": 422
       }
     ],
     "tamerId": "jessica"
@@ -11508,7 +11508,7 @@
     "groupId": 263,
     "drops": [
       {
-        "id": "tntBall"
+        "dropId": 416
       }
     ],
     "npcId": "keith"
