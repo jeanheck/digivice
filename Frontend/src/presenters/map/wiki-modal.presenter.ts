@@ -12,6 +12,7 @@ import {
   type NpcBattleFromEnemyContext,
 } from "@/presenters/helper/npc-battle-from-enemy.helper";
 import { SearchItemConverter } from "@/presenters/converter/search-item.converter";
+import { DropService } from "@/services/drop.service";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { SearchItemKind, SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
@@ -43,9 +44,12 @@ export class WikiModalPresenter {
     });
   }
 
-  public static getDropSearchItems(translateDropName: (dropKey: string) => string): SearchItemViewModel[] {
+  public static getDropSearchItems(translateDropName: (labelKey: string) => string): SearchItemViewModel[] {
     return DropRepository.getDropKeys().map((dropKey) => {
-      return SearchItemConverter.convertDrop(dropKey, translateDropName(dropKey));
+      return SearchItemConverter.convertDrop(
+        dropKey,
+        translateDropName(DropService.getDropTranslationKeyById(dropKey)),
+      );
     });
   }
 
@@ -97,7 +101,7 @@ export class WikiModalPresenter {
   }
 
   public static getAllSearchItems(
-    translateDropName: (dropKey: string) => string,
+    translateDropName: (labelKey: string) => string,
     translateCardName: (cardId: string) => string,
     translateLocationName: (locationId: string) => string,
     translateStoreName: (storeId: string) => string,

@@ -2,11 +2,11 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { WikiEnemyDropsPresenter } from "@/presenters/map/wiki-modal/wiki-enemy-drops.presenter";
-import type { WikiEnemyDropViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drop.viewmodel";
+import type { EnemyDropViewModel } from "@/viewmodels/enemy/enemy-drop.viewmodel";
 import type { WikiEnemyDropItemViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drop-item.viewmodel";
 
 const props = defineProps<{
-  drops?: WikiEnemyDropViewModel[];
+  drops?: EnemyDropViewModel[];
 }>();
 
 const emit = defineEmits<{
