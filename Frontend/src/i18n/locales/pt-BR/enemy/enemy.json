@@ -52,15 +52,14 @@
     "elements": "Elementos",
     "status": "Resistências",
     "foundIn": "Encontrado em",
-    "whereToFind": "Onde encontrar esse Digimon",
-    "whereToFindLabel": "Onde encontrar",
+    "whereToFind": "Onde encontrar",
     "searchContext": {
       "wild": "(Digimon selvagem Lv {level})",
       "boss": "(Chefe Lv {level})",
       "tamer": "(Digimon de domador(a) {name} Lv {level})",
       "npc": "(Digimon de {name} Lv {level})"
     },
-    "unavailableAtMomentHint": "Inacessível nesse momento da história",
+    "unavailableAtMoment": "Inacessível nesse momento da história",
     "locations": "Localizações",
     "locationSource": {
       "walking": "Andando",

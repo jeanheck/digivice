@@ -104,7 +104,7 @@ const handleOpenLocation = (locationId: string): void => {
         v-if="hasResolvedLocations"
         class="text-center font-bold text-blue-500 tracking-wider uppercase shrink-0"
       >
-        {{ $t("enemy.whereToFindLabel") }}
+        {{ $t("enemy.whereToFind") }}
       </span>
 
       <WikiEnemyLocations
@@ -118,7 +118,7 @@ const handleOpenLocation = (locationId: string): void => {
         v-else
         class="text-[12px] 2xl:text-[12px] text-red-400 leading-tight text-center flex-1 flex items-center justify-center"
       >
-        {{ $t("enemy.unavailableAtMomentHint") }}
+        {{ $t("enemy.unavailableAtMoment") }}
       </p>
     </div>
   </div>
