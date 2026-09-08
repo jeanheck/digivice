@@ -43,7 +43,8 @@
     "groupId": 1,
     "drops": [
       {
-        "dropId": 141
+        "dropId": 141,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -99,7 +100,8 @@
     "groupId": 2,
     "drops": [
       {
-        "dropId": 153
+        "dropId": 153,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -155,7 +157,8 @@
     "groupId": 7,
     "drops": [
       {
-        "dropId": 128
+        "dropId": 128,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -268,7 +271,8 @@
     "groupId": 9,
     "drops": [
       {
-        "dropId": 116
+        "dropId": 116,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -327,7 +331,8 @@
     "groupId": 11,
     "drops": [
       {
-        "dropId": 102
+        "dropId": 102,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -686,7 +691,8 @@
     "groupId": 38,
     "drops": [
       {
-        "dropId": 357
+        "dropId": 357,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -744,7 +750,8 @@
     "groupId": 39,
     "drops": [
       {
-        "dropId": 411
+        "dropId": 411,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -1053,7 +1060,8 @@
     "groupId": 44,
     "drops": [
       {
-        "dropId": 413
+        "dropId": 413,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -1471,7 +1479,8 @@
     "groupId": 50,
     "drops": [
       {
-        "dropId": 339
+        "dropId": 339,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -1526,7 +1535,8 @@
     "groupId": 51,
     "drops": [
       {
-        "dropId": 416
+        "dropId": 416,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -1591,7 +1601,8 @@
     "groupId": 52,
     "drops": [
       {
-        "dropId": 404
+        "dropId": 404,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -1646,7 +1657,8 @@
     "groupId": 53,
     "drops": [
       {
-        "dropId": 345
+        "dropId": 345,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -1719,7 +1731,8 @@
     "groupId": 54,
     "drops": [
       {
-        "dropId": 422
+        "dropId": 422,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -1910,7 +1923,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 146
+        "dropId": 146,
+        "type": "equipment"
       }
     ]
   },
@@ -2019,7 +2033,8 @@
     "groupId": 58,
     "drops": [
       {
-        "dropId": 348
+        "dropId": 348,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -2086,7 +2101,8 @@
     "groupId": 59,
     "drops": [
       {
-        "dropId": 422
+        "dropId": 422,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -2285,7 +2301,8 @@
     "groupId": 62,
     "drops": [
       {
-        "dropId": 335
+        "dropId": 335,
+        "type": "equipment"
       }
     ]
   },
@@ -2424,7 +2441,8 @@
     "groupId": 65,
     "drops": [
       {
-        "dropId": 425
+        "dropId": 425,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -2482,7 +2500,8 @@
     "groupId": 66,
     "drops": [
       {
-        "dropId": 342
+        "dropId": 342,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -2593,7 +2612,8 @@
     "groupId": 67,
     "drops": [
       {
-        "dropId": 325
+        "dropId": 325,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -2660,7 +2680,8 @@
     "groupId": 68,
     "drops": [
       {
-        "dropId": 414
+        "dropId": 414,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -2727,7 +2748,8 @@
     "groupId": 69,
     "drops": [
       {
-        "dropId": 412
+        "dropId": 412,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -2794,7 +2816,8 @@
     "groupId": 70,
     "drops": [
       {
-        "dropId": 318
+        "dropId": 318,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -2954,7 +2977,8 @@
     "groupId": 73,
     "drops": [
       {
-        "dropId": 351
+        "dropId": 351,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -3030,7 +3054,8 @@
     "groupId": 74,
     "drops": [
       {
-        "dropId": 415
+        "dropId": 415,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -3097,7 +3122,8 @@
     "groupId": 75,
     "drops": [
       {
-        "dropId": 317
+        "dropId": 317,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -3242,7 +3268,8 @@
     "groupId": 77,
     "drops": [
       {
-        "dropId": 200
+        "dropId": 200,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -3300,7 +3327,8 @@
     "groupId": 78,
     "drops": [
       {
-        "dropId": 354
+        "dropId": 354,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -3358,7 +3386,8 @@
     "groupId": 79,
     "drops": [
       {
-        "dropId": 316
+        "dropId": 316,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -3416,7 +3445,8 @@
     "groupId": 80,
     "drops": [
       {
-        "dropId": 121
+        "dropId": 121,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -3492,7 +3522,8 @@
     "groupId": 81,
     "drops": [
       {
-        "dropId": 319
+        "dropId": 319,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -3550,7 +3581,8 @@
     "groupId": 82,
     "drops": [
       {
-        "dropId": 424
+        "dropId": 424,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -3608,7 +3640,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 332
+        "dropId": 332,
+        "type": "equipment"
       }
     ]
   },
@@ -3697,7 +3730,8 @@
     "groupId": 85,
     "drops": [
       {
-        "dropId": 400
+        "dropId": 400,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -3755,7 +3789,8 @@
     "groupId": 86,
     "drops": [
       {
-        "dropId": 424
+        "dropId": 424,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -3981,7 +4016,8 @@
     "groupId": 91,
     "drops": [
       {
-        "dropId": 410
+        "dropId": 410,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -4049,7 +4085,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 208
+        "dropId": 208,
+        "type": "equipment"
       }
     ]
   },
@@ -4180,7 +4217,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 320
+        "dropId": 320,
+        "type": "equipment"
       }
     ]
   },
@@ -4227,7 +4265,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 358
+        "dropId": 358,
+        "type": "equipment"
       }
     ]
   },
@@ -4274,7 +4313,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 409
+        "dropId": 409,
+        "type": "consumableItem"
       }
     ]
   },
@@ -4321,7 +4361,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 426
+        "dropId": 426,
+        "type": "consumableItem"
       }
     ]
   },
@@ -4410,7 +4451,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 408
+        "dropId": 408,
+        "type": "consumableItem"
       }
     ]
   },
@@ -4457,7 +4499,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 349
+        "dropId": 349,
+        "type": "equipment"
       }
     ]
   },
@@ -4504,7 +4547,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 427
+        "dropId": 427,
+        "type": "consumableItem"
       }
     ]
   },
@@ -4635,7 +4679,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 415
+        "dropId": 415,
+        "type": "consumableItem"
       }
     ]
   },
@@ -4682,7 +4727,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 343
+        "dropId": 343,
+        "type": "equipment"
       }
     ]
   },
@@ -4729,7 +4775,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 403
+        "dropId": 403,
+        "type": "consumableItem"
       }
     ]
   },
@@ -4776,7 +4823,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 327
+        "dropId": 327,
+        "type": "equipment"
       }
     ]
   },
@@ -4823,7 +4871,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 421
+        "dropId": 421,
+        "type": "consumableItem"
       }
     ]
   },
@@ -4870,7 +4919,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 208
+        "dropId": 208,
+        "type": "equipment"
       }
     ]
   },
@@ -4917,7 +4967,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 340
+        "dropId": 340,
+        "type": "equipment"
       }
     ]
   },
@@ -5048,7 +5099,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 406
+        "dropId": 406,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5095,7 +5147,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 346
+        "dropId": 346,
+        "type": "equipment"
       }
     ]
   },
@@ -5226,7 +5279,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 341
+        "dropId": 341,
+        "type": "equipment"
       }
     ]
   },
@@ -5357,7 +5411,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 403
+        "dropId": 403,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5404,7 +5459,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 427
+        "dropId": 427,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5451,7 +5507,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 427
+        "dropId": 427,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5498,7 +5555,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 427
+        "dropId": 427,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5545,7 +5603,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 427
+        "dropId": 427,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5592,7 +5651,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 423
+        "dropId": 423,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5765,7 +5825,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 334
+        "dropId": 334,
+        "type": "equipment"
       }
     ]
   },
@@ -5812,7 +5873,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 426
+        "dropId": 426,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5859,7 +5921,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 407
+        "dropId": 407,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5906,7 +5969,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 402
+        "dropId": 402,
+        "type": "consumableItem"
       }
     ]
   },
@@ -5953,7 +6017,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 350
+        "dropId": 350,
+        "type": "equipment"
       }
     ]
   },
@@ -6084,7 +6149,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 338
+        "dropId": 338,
+        "type": "equipment"
       }
     ]
   },
@@ -6173,7 +6239,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 356
+        "dropId": 356,
+        "type": "equipment"
       }
     ]
   },
@@ -6304,7 +6371,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 359
+        "dropId": 359,
+        "type": "equipment"
       }
     ]
   },
@@ -6507,7 +6575,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 177
+        "dropId": 177,
+        "type": "equipment"
       }
     ]
   },
@@ -6661,7 +6730,8 @@
     "groupId": 148,
     "drops": [
       {
-        "dropId": 413
+        "dropId": 413,
+        "type": "consumableItem"
       }
     ],
     "locations": [
@@ -6728,7 +6798,8 @@
     "groupId": 149,
     "drops": [
       {
-        "dropId": 184
+        "dropId": 184,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -6795,7 +6866,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 355
+        "dropId": 355,
+        "type": "equipment"
       }
     ]
   },
@@ -6842,7 +6914,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 331
+        "dropId": 331,
+        "type": "equipment"
       }
     ]
   },
@@ -6985,7 +7058,8 @@
     "groupId": 154,
     "drops": [
       {
-        "dropId": 133
+        "dropId": 133,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -7052,7 +7126,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 405
+        "dropId": 405,
+        "type": "consumableItem"
       }
     ]
   },
@@ -7099,7 +7174,8 @@
     "groupId": 156,
     "drops": [
       {
-        "dropId": 329
+        "dropId": 329,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -7241,7 +7317,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 425
+        "dropId": 425,
+        "type": "consumableItem"
       }
     ]
   },
@@ -7414,7 +7491,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 428
+        "dropId": 428,
+        "type": "consumableItem"
       }
     ]
   },
@@ -7461,7 +7539,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 353
+        "dropId": 353,
+        "type": "equipment"
       }
     ]
   },
@@ -7550,7 +7629,8 @@
     "groupId": 165,
     "drops": [
       {
-        "dropId": 333
+        "dropId": 333,
+        "type": "equipment"
       }
     ],
     "locations": [
@@ -7608,7 +7688,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 337
+        "dropId": 337,
+        "type": "equipment"
       }
     ]
   },
@@ -7697,7 +7778,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 330
+        "dropId": 330,
+        "type": "equipment"
       }
     ]
   },
@@ -7744,7 +7826,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 401
+        "dropId": 401,
+        "type": "consumableItem"
       }
     ]
   },
@@ -7791,7 +7874,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 352
+        "dropId": 352,
+        "type": "equipment"
       }
     ]
   },
@@ -7880,7 +7964,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 336
+        "dropId": 336,
+        "type": "equipment"
       }
     ]
   },
@@ -7927,7 +8012,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 323
+        "dropId": 323,
+        "type": "equipment"
       }
     ]
   },
@@ -8016,7 +8102,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 419
+        "dropId": 419,
+        "type": "consumableItem"
       }
     ]
   },
@@ -8105,7 +8192,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 417
+        "dropId": 417,
+        "type": "consumableItem"
       }
     ]
   },
@@ -8152,7 +8240,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 326
+        "dropId": 326,
+        "type": "equipment"
       }
     ]
   },
@@ -8199,7 +8288,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 344
+        "dropId": 344,
+        "type": "equipment"
       }
     ]
   },
@@ -8246,7 +8336,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 418
+        "dropId": 418,
+        "type": "consumableItem"
       }
     ]
   },
@@ -8293,7 +8384,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 328
+        "dropId": 328,
+        "type": "equipment"
       }
     ]
   },
@@ -8382,7 +8474,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 324
+        "dropId": 324,
+        "type": "equipment"
       }
     ]
   },
@@ -8513,7 +8606,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 420
+        "dropId": 420,
+        "type": "consumableItem"
       }
     ]
   },
@@ -8560,7 +8654,8 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 347
+        "dropId": 347,
+        "type": "equipment"
       }
     ]
   },
@@ -8649,14 +8744,17 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 501
+        "dropId": 501,
+        "type": "booster"
       },
       {
         "dropId": 503,
+        "type": "booster",
         "locationOnly": "022A"
       },
       {
-        "dropId": 516
+        "dropId": 516,
+        "type": "booster"
       }
     ],
     "locations": [
@@ -8760,14 +8858,17 @@
     "drops": [
       {
         "dropId": 501,
+        "type": "booster",
         "locationOnly": "0001"
       },
       {
         "dropId": 502,
+        "type": "booster",
         "locationOnly": "0002"
       },
       {
-        "dropId": 516
+        "dropId": 516,
+        "type": "booster"
       }
     ],
     "locations": [
@@ -8900,10 +9001,12 @@
     "groupId": null,
     "drops": [
       {
-        "dropId": 504
+        "dropId": 504,
+        "type": "booster"
       },
       {
-        "dropId": 517
+        "dropId": 517,
+        "type": "booster"
       }
     ],
     "locations": [
@@ -9001,6 +9104,7 @@
     "drops": [
       {
         "dropId": 505,
+        "type": "booster",
         "locationOnly": "0003"
       }
     ],
@@ -9353,7 +9457,8 @@
     "groupId": 201,
     "drops": [
       {
-        "dropId": 411
+        "dropId": 411,
+        "type": "consumableItem"
       }
     ],
     "tamerId": "natsumi"
@@ -9517,7 +9622,8 @@
     "memoryId": 8,
     "drops": [
       {
-        "dropId": 339
+        "dropId": 339,
+        "type": "equipment"
       }
     ],
     "groupId": 3,
@@ -9562,7 +9668,8 @@
     "memoryId": 207,
     "drops": [
       {
-        "dropId": 348
+        "dropId": 348,
+        "type": "equipment"
       }
     ],
     "groupId": 3,
@@ -9687,7 +9794,8 @@
     "memoryId": 119,
     "drops": [
       {
-        "dropId": 425
+        "dropId": 425,
+        "type": "consumableItem"
       }
     ],
     "groupId": 4,
@@ -9732,7 +9840,8 @@
     "memoryId": 11,
     "drops": [
       {
-        "dropId": 319
+        "dropId": 319,
+        "type": "equipment"
       }
     ],
     "groupId": 5,
@@ -9777,7 +9886,8 @@
     "memoryId": 11,
     "drops": [
       {
-        "dropId": 319
+        "dropId": 319,
+        "type": "equipment"
       }
     ],
     "groupId": 5
@@ -9821,7 +9931,8 @@
     "memoryId": 13,
     "drops": [
       {
-        "dropId": 317
+        "dropId": 317,
+        "type": "equipment"
       }
     ],
     "groupId": 6,
@@ -9906,7 +10017,8 @@
     "memoryId": 400,
     "drops": [
       {
-        "dropId": 331
+        "dropId": 331,
+        "type": "equipment"
       }
     ],
     "groupId": 6,
@@ -10151,7 +10263,8 @@
     "groupId": 203,
     "drops": [
       {
-        "dropId": 413
+        "dropId": 413,
+        "type": "consumableItem"
       }
     ],
     "tamerId": "catherine"
@@ -10235,7 +10348,8 @@
     "groupId": 204,
     "drops": [
       {
-        "dropId": 412
+        "dropId": 412,
+        "type": "consumableItem"
       }
     ]
   },
@@ -10359,7 +10473,8 @@
     "groupId": 205,
     "drops": [
       {
-        "dropId": 345
+        "dropId": 345,
+        "type": "equipment"
       }
     ],
     "tamerId": "robert"
@@ -10564,7 +10679,8 @@
     "groupId": 207,
     "drops": [
       {
-        "dropId": 422
+        "dropId": 422,
+        "type": "consumableItem"
       }
     ],
     "tamerId": "bob"
@@ -10649,7 +10765,8 @@
     "groupId": 207,
     "drops": [
       {
-        "dropId": 404
+        "dropId": 404,
+        "type": "consumableItem"
       }
     ],
     "tamerId": "bob"
@@ -10694,7 +10811,8 @@
     "groupId": 208,
     "drops": [
       {
-        "dropId": 411
+        "dropId": 411,
+        "type": "consumableItem"
       }
     ],
     "tamerId": "tomomi"
@@ -10819,7 +10937,8 @@
     "groupId": 210,
     "drops": [
       {
-        "dropId": 416
+        "dropId": 416,
+        "type": "consumableItem"
       }
     ],
     "tamerId": "andy"
@@ -10864,7 +10983,8 @@
     "groupId": 210,
     "drops": [
       {
-        "dropId": 318
+        "dropId": 318,
+        "type": "equipment"
       }
     ],
     "tamerId": "andy"
@@ -10909,7 +11029,8 @@
     "groupId": 211,
     "drops": [
       {
-        "dropId": 351
+        "dropId": 351,
+        "type": "equipment"
       }
     ],
     "tamerId": "george"
@@ -10954,7 +11075,8 @@
     "groupId": 211,
     "drops": [
       {
-        "dropId": 200
+        "dropId": 200,
+        "type": "equipment"
       }
     ],
     "tamerId": "george"
@@ -10999,7 +11121,8 @@
     "groupId": 212,
     "drops": [
       {
-        "dropId": 357
+        "dropId": 357,
+        "type": "equipment"
       }
     ],
     "tamerId": "meiLin"
@@ -11124,7 +11247,8 @@
     "groupId": 215,
     "drops": [
       {
-        "dropId": 413
+        "dropId": 413,
+        "type": "consumableItem"
       }
     ],
     "tamerId": "alice"
@@ -11169,7 +11293,8 @@
     "groupId": 215,
     "drops": [
       {
-        "dropId": 413
+        "dropId": 413,
+        "type": "consumableItem"
       }
     ]
   },
@@ -11293,7 +11418,8 @@
     "groupId": 214,
     "drops": [
       {
-        "dropId": 345
+        "dropId": 345,
+        "type": "equipment"
       }
     ],
     "tamerId": "gordon"
@@ -11338,7 +11464,8 @@
     "groupId": 213,
     "drops": [
       {
-        "dropId": 342
+        "dropId": 342,
+        "type": "equipment"
       }
     ],
     "tamerId": "jessica"
@@ -11423,7 +11550,8 @@
     "groupId": 213,
     "drops": [
       {
-        "dropId": 422
+        "dropId": 422,
+        "type": "consumableItem"
       }
     ],
     "tamerId": "jessica"
@@ -11508,7 +11636,8 @@
     "groupId": 263,
     "drops": [
       {
-        "dropId": 416
+        "dropId": 416,
+        "type": "consumableItem"
       }
     ],
     "npcId": "keith"

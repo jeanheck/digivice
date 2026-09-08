@@ -1,4 +1,14 @@
-export type SearchItemKind = "enemy" | "drop" | "card" | "location" | "store" | "tamer" | "leader" | "npc";
+export type SearchItemKind =
+  | "enemy"
+  | "equipment"
+  | "consumableItem"
+  | "booster"
+  | "card"
+  | "location"
+  | "store"
+  | "tamer"
+  | "leader"
+  | "npc";
 
 export interface SearchItemViewModel {
   id: string;

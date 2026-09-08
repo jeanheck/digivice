@@ -1,24 +1,22 @@
 import { WikiDroppedBySourceConverter } from "@/presenters/converter/wiki-dropped-by-source.converter";
-import { DropRepository } from "@/repositories/drop.repository";
 import { DuelIslandRepository } from "@/repositories/duel-island.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { TamerRepository } from "@/repositories/tamer.repository";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 import type { DropSourceViewModel } from "@/viewmodels/drop/drop-source.viewmodel";
 import type { WikiDropsPanelViewModel } from "@/viewmodels/wiki-modal/wiki-drops-panel.viewmodel";
 
 export class WikiDropsPanelPresenter {
   private static dropSourcesByDropId: Map<string, DropSourceViewModel[]> | null = null;
 
-  public static getViewModel(dropId: string): WikiDropsPanelViewModel {
-    const dropRaw = DropRepository.getDropByKey(dropId);
+  public static getViewModel(dropId: string, dropType: DropType): WikiDropsPanelViewModel {
     const dropSources = WikiDropsPanelPresenter.getDropSourcesByDropId().get(dropId) ?? [];
-    const isBooster = dropRaw?.type === "booster";
+    const isBooster = dropType === "booster";
     const dropNumericId = Number(dropId);
 
     return {
-      dropType: dropRaw?.type ?? null,
-      dropNumericId:
-        dropRaw !== undefined && !Number.isNaN(dropNumericId) ? dropNumericId : null,
+      dropType,
+      dropNumericId,
       sources: dropSources.map((dropSource) => {
         return WikiDroppedBySourceConverter.convert(dropSource);
       }),

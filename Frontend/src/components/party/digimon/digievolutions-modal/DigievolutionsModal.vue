@@ -48,8 +48,8 @@ const handleSelectDigievolutionById = (digievolutionId: number) => {
   selectedDigievolutionId.value = digievolutionId;
 };
 
-const handleSearchSelect = (id: string) => {
-  handleSelectDigievolutionById(Number(id));
+const handleSearchSelect = (payload: { id: string }) => {
+  handleSelectDigievolutionById(Number(payload.id));
 };
 
 const allDigievolutions = DigievolutionsModalPresenter.getAllDigievolutions();

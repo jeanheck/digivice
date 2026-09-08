@@ -4,6 +4,7 @@ import { useI18n } from "vue-i18n";
 import WikiNpcDeckCard from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDeckCard.vue";
 import WikiEnemyDrops from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyDrops.vue";
 import { WikiNpcCardBattlePresenter } from "@/presenters/map/wiki-modal/wiki-npc-card-battle.presenter";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 
 const { t } = useI18n();
 
@@ -14,7 +15,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "open-card", cardId: string): void;
-  (e: "open-drops", dropId: string): void;
+  (e: "open-drops", payload: { dropId: string; dropType: DropType }): void;
 }>();
 
 const battleViewModel = computed(() => {

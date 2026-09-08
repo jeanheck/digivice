@@ -8,6 +8,7 @@ import WikiEnemyElements from "@/components/wiki-modal/wiki-enemy-panel/WikiEnem
 import WikiEnemyConditions from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyConditions.vue";
 import WikiEnemyTechniques from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyTechniques.vue";
 import WikiEnemyDrops from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyDrops.vue";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 
 const props = defineProps<{
   npcId: string;
@@ -15,7 +16,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "open-drops", dropId: string): void;
+  (e: "open-drops", payload: { dropId: string; dropType: DropType }): void;
   (e: "show-stat-key-tooltip", event: MouseEvent, statKey: string): void;
   (e: "show-condition-tooltip", event: MouseEvent, tooltipKey: string): void;
   (e: "move-stat-tooltip", event: MouseEvent): void;

@@ -8,7 +8,7 @@ export class WikiEnemyDropsPresenter {
     return (drops ?? []).map((drop) => {
       return WikiEnemyDropConverter.convert(
         drop,
-        DropService.getDropTranslationKeyById(String(drop.dropId)),
+        DropService.getDropTranslationKeyById(drop.dropId, drop.type),
       );
     });
   }

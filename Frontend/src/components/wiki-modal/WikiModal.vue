@@ -13,7 +13,9 @@ import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog.ts";
 import { WikiModalPresenter } from "@/presenters/map/wiki-modal.presenter";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 import type { DropSourceKind } from "@/viewmodels/drop/drop-source.viewmodel";
+import type { SearchItemKind } from "@/viewmodels/search/search-item.viewmodel";
 
 const props = defineProps<{
   isOpen: boolean;
@@ -32,6 +34,7 @@ type WikiView = "enemy" | "drops" | "cards" | "locations" | "npc" | "stores";
 
 const selectedEnemyId = ref<string | null>(null);
 const selectedDropId = ref<string | null>(null);
+const selectedDropType = ref<DropType | null>(null);
 const selectedCardId = ref<string | null>(null);
 const selectedLocationId = ref<string | null>(null);
 const selectedNpcId = ref<string | null>(null);
@@ -125,6 +128,34 @@ const selectedSearchId = computed(() => {
   return selectedEnemyId.value ?? undefined;
 });
 
+const selectedSearchKind = computed((): SearchItemKind | undefined => {
+  if (isDropsView.value && selectedDropType.value !== null) {
+    return selectedDropType.value;
+  }
+
+  if (isCardsView.value) {
+    return "card";
+  }
+
+  if (isLocationsView.value) {
+    return "location";
+  }
+
+  if (isStoresView.value) {
+    return "store";
+  }
+
+  if (isNpcView.value) {
+    return undefined;
+  }
+
+  if (selectedEnemyId.value !== null) {
+    return "enemy";
+  }
+
+  return undefined;
+});
+
 const tooltipPlacement = "below" as const;
 const { show: tooltipShow, x: tooltipX, y: tooltipY, showAt, move, hide } = useTooltipPosition(250);
 const tooltipTitle = ref("");
@@ -132,6 +163,7 @@ const tooltipTitle = ref("");
 function clearSelection(): void {
   selectedEnemyId.value = null;
   selectedDropId.value = null;
+  selectedDropType.value = null;
   selectedCardId.value = null;
   selectedLocationId.value = null;
   selectedNpcId.value = null;
@@ -142,7 +174,7 @@ function clearSelection(): void {
 function navigateTo(
   nextView: WikiView,
   id: string,
-  options?: { battleOptionId?: string | null },
+  options?: { battleOptionId?: string | null; dropType?: DropType },
 ): void {
   hide();
   clearSelection();
@@ -155,6 +187,7 @@ function navigateTo(
 
   if (nextView === "drops") {
     selectedDropId.value = id;
+    selectedDropType.value = options?.dropType ?? null;
     return;
   }
 
@@ -183,15 +216,10 @@ const openNpcView = (npcId: string, battleOptionId?: string | null) => {
   navigateTo("npc", npcId, { battleOptionId });
 };
 
-const handleSearchSelect = (id: string) => {
-  const searchItem = allSearchItems.value.find((item) => {
-    return item.id === id;
-  });
-  if (searchItem === undefined) {
-    return;
-  }
+const handleSearchSelect = (payload: { id: string; kind?: SearchItemKind }) => {
+  const { id, kind } = payload;
 
-  if (searchItem.kind === "enemy") {
+  if (kind === "enemy") {
     const npcContext = WikiModalPresenter.resolveNpcBattleFromEnemyId(id);
     if (npcContext !== null) {
       openNpcView(npcContext.npcId, npcContext.battleOptionId);
@@ -202,33 +230,33 @@ const handleSearchSelect = (id: string) => {
     return;
   }
 
-  if (searchItem.kind === "drop") {
-    navigateTo("drops", id);
+  if (WikiModalPresenter.isDropSearchKind(kind)) {
+    navigateTo("drops", id, { dropType: kind });
     return;
   }
 
-  if (searchItem.kind === "card") {
+  if (kind === "card") {
     navigateTo("cards", id);
     return;
   }
 
-  if (searchItem.kind === "location") {
+  if (kind === "location") {
     navigateTo("locations", id);
     return;
   }
 
-  if (searchItem.kind === "store") {
+  if (kind === "store") {
     navigateTo("stores", id);
     return;
   }
 
-  if (WikiModalPresenter.isNpcSearchKind(searchItem.kind)) {
+  if (WikiModalPresenter.isNpcSearchKind(kind)) {
     openNpcView(id);
   }
 };
 
-const openDropsView = (dropId: string) => {
-  navigateTo("drops", dropId);
+const openDropsView = (payload: { dropId: string; dropType: DropType }) => {
+  navigateTo("drops", payload.dropId, { dropType: payload.dropType });
 };
 
 const openLocationsView = (locationId: string) => {
@@ -337,6 +365,7 @@ const enemyImageUrl = computed(() => {
         <SearchBar
           :items="allSearchItems"
           :selected-id="selectedSearchId"
+          :selected-kind="selectedSearchKind"
           :placeholder="t('enemy.searchPlaceholder')"
           :no-results-label="t('enemy.searchNoResults')"
           @select="handleSearchSelect"
@@ -356,8 +385,9 @@ const enemyImageUrl = computed(() => {
       @hide-stat-tooltip="hideEnemyStatTooltip"
     />
     <WikiDropsPanel
-      v-else-if="view === 'drops' && selectedDropId !== null"
+      v-else-if="view === 'drops' && selectedDropId !== null && selectedDropType !== null"
       :drop-id="selectedDropId"
+      :drop-type="selectedDropType"
       @open-source="openDropSource"
       @open-card="openCardFromBooster"
     />

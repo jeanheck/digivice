@@ -10,7 +10,9 @@
     "searchNoResults": "No results found",
     "searchKind": {
       "enemy": "Digimon",
-      "drop": "Drop",
+      "equipment": "Equipment",
+      "consumableItem": "Consumable",
+      "booster": "Booster",
       "card": "Card",
       "location": "Location",
       "store": "Shop",

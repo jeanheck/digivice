@@ -48,11 +48,27 @@ export class SearchItemConverter {
     return searchItem;
   }
 
-  public static convertDrop(id: string, name: string): SearchItemViewModel {
+  public static convertEquipment(id: string, name: string): SearchItemViewModel {
     return {
       id,
       name,
-      kind: "drop",
+      kind: "equipment",
+    };
+  }
+
+  public static convertConsumableItem(id: string, name: string): SearchItemViewModel {
+    return {
+      id,
+      name,
+      kind: "consumableItem",
+    };
+  }
+
+  public static convertBooster(id: string, name: string): SearchItemViewModel {
+    return {
+      id,
+      name,
+      kind: "booster",
     };
   }
 

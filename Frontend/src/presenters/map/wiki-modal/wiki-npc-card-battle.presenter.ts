@@ -42,6 +42,7 @@ export class WikiNpcCardBattlePresenter {
       drops: [
         {
           dropId: cardBattle.boosterId,
+          type: "booster",
         },
       ],
     };

@@ -1,5 +1,7 @@
 import { CardRepository } from "@/repositories/card.repository";
-import { DropRepository } from "@/repositories/drop.repository";
+import { BoosterRepository } from "@/repositories/booster.repository";
+import { ConsumableItemRepository } from "@/repositories/consumable-item.repository";
+import { EquipmentRepository } from "@/repositories/equipment.repository";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import { LocationRepository } from "@/repositories/location.repository";
 import { NpcRepository } from "@/repositories/npc.repository";
@@ -19,6 +21,10 @@ import type { SearchItemKind, SearchItemViewModel } from "@/viewmodels/search/se
 export class WikiModalPresenter {
   public static isNpcSearchKind(kind: SearchItemKind | undefined): boolean {
     return kind === "tamer" || kind === "leader" || kind === "npc";
+  }
+
+  public static isDropSearchKind(kind: SearchItemKind | undefined): boolean {
+    return kind === "equipment" || kind === "consumableItem" || kind === "booster";
   }
 
   public static getEnemyById(enemyId: string): EnemyViewModel {
@@ -44,13 +50,31 @@ export class WikiModalPresenter {
     });
   }
 
-  public static getDropSearchItems(translateDropName: (labelKey: string) => string): SearchItemViewModel[] {
-    return DropRepository.getDropKeys().map((dropKey) => {
-      return SearchItemConverter.convertDrop(
-        dropKey,
-        translateDropName(DropService.getDropTranslationKeyById(dropKey)),
+  public static getDropSearchItems(translateLabelKey: (labelKey: string) => string): SearchItemViewModel[] {
+    const equipmentItems = EquipmentRepository.getIds().map((equipmentId) => {
+      return SearchItemConverter.convertEquipment(
+        equipmentId,
+        translateLabelKey(DropService.getDropTranslationKeyById(equipmentId, "equipment")),
       );
     });
+
+    const consumableItems = ConsumableItemRepository.getIds().map((consumableItemId) => {
+      return SearchItemConverter.convertConsumableItem(
+        consumableItemId,
+        translateLabelKey(
+          DropService.getDropTranslationKeyById(consumableItemId, "consumableItem"),
+        ),
+      );
+    });
+
+    const boosterItems = BoosterRepository.getIds().map((boosterId) => {
+      return SearchItemConverter.convertBooster(
+        boosterId,
+        translateLabelKey(DropService.getDropTranslationKeyById(boosterId, "booster")),
+      );
+    });
+
+    return [...equipmentItems, ...consumableItems, ...boosterItems];
   }
 
   public static getCardSearchItems(translateCardName: (cardId: string) => string): SearchItemViewModel[] {
@@ -101,7 +125,7 @@ export class WikiModalPresenter {
   }
 
   public static getAllSearchItems(
-    translateDropName: (labelKey: string) => string,
+    translateLabelKey: (labelKey: string) => string,
     translateCardName: (cardId: string) => string,
     translateLocationName: (locationId: string) => string,
     translateStoreName: (storeId: string) => string,
@@ -111,7 +135,7 @@ export class WikiModalPresenter {
   ): SearchItemViewModel[] {
     return [
       ...this.getEnemySearchItems(translateTamerName, translateNpcName),
-      ...this.getDropSearchItems(translateDropName),
+      ...this.getDropSearchItems(translateLabelKey),
       ...this.getCardSearchItems(translateCardName),
       ...this.getLocationSearchItems(translateLocationName),
       ...this.getStoreSearchItems(translateStoreName),

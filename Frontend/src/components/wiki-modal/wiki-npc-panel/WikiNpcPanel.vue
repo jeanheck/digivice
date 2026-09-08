@@ -9,6 +9,7 @@ import { QuestService } from "@/services/quest.service";
 import { useGameStore } from "@/stores/use-game-store";
 import { useI18n } from "vue-i18n";
 import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 
 const props = defineProps<{
   npcId: string;
@@ -17,7 +18,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "open-locations", locationId: string): void;
-  (e: "open-drops", dropId: string): void;
+  (e: "open-drops", payload: { dropId: string; dropType: DropType }): void;
   (e: "open-card", cardId: string): void;
   (e: "show-stat-key-tooltip", event: MouseEvent, statKey: string): void;
   (e: "show-condition-tooltip", event: MouseEvent, tooltipKey: string): void;

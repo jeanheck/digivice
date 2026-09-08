@@ -5,6 +5,10 @@ import type { EquipmentRaw } from "./tables/raws/equipment/equipment.raw";
 export class EquipmentRepository {
   private static readonly equipmentTable = EquipmentJson as EquipmentTable;
 
+  public static getIds(): string[] {
+    return Object.keys(this.equipmentTable);
+  }
+
   public static getEquipmentById(equipmentId: number): EquipmentRaw {
     return this.equipmentTable[equipmentId]!;
   }

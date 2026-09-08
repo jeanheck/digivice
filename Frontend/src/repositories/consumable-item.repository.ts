@@ -5,6 +5,10 @@ import type { ConsumableItemRaw } from "@/repositories/tables/raws/consumable-it
 export class ConsumableItemRepository {
   private static readonly consumableItemTable = ConsumableItemJson as ConsumableItemTable;
 
+  public static getIds(): string[] {
+    return Object.keys(this.consumableItemTable);
+  }
+
   public static getById(consumableItemId: number): ConsumableItemRaw | undefined {
     return this.consumableItemTable[String(consumableItemId)];
   }

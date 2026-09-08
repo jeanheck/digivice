@@ -5,6 +5,10 @@ import type { BoosterRaw } from "@/repositories/tables/raws/tcg/booster.raw";
 export class BoosterRepository {
   private static readonly boosterTable = BoosterJson as BoosterTable;
 
+  public static getIds(): string[] {
+    return Object.keys(this.boosterTable);
+  }
+
   public static getById(boosterId: number): BoosterRaw | undefined {
     return this.boosterTable[String(boosterId)];
   }

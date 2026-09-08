@@ -4,7 +4,7 @@ import { WikiCardStoreConverter } from "@/presenters/converter/wiki-card-store.c
 import { MainQuestRangeHelper } from "@/presenters/helper/main-quest-range.helper";
 import type { Quest } from "@/models";
 import { CardRepository } from "@/repositories/card.repository";
-import { DropRepository } from "@/repositories/drop.repository";
+import { BoosterRepository } from "@/repositories/booster.repository";
 import type { CardStoreRaw } from "@/repositories/tables/raws/tcg/card.raw";
 import { QuestService } from "@/services/quest.service";
 import type { CardBoosterSourceViewModel } from "@/viewmodels/card/card-booster-source.viewmodel";
@@ -69,13 +69,12 @@ export class WikiCardPanelPresenter {
     const boosters: CardBoosterSourceViewModel[] = [];
 
     for (const boosterId of boosterIds) {
-      const dropKey = String(boosterId);
-      if (DropRepository.getDropByKey(dropKey) === undefined) {
+      if (BoosterRepository.getById(boosterId) === undefined) {
         continue;
       }
 
       boosters.push({
-        dropKey,
+        dropKey: String(boosterId),
         boosterId,
       });
     }

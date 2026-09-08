@@ -5,13 +5,14 @@ import WikiCardDetails from "@/components/wiki-modal/wiki-card-panel/WikiCardDet
 import WikiCardShops from "@/components/wiki-modal/wiki-card-panel/WikiCardShops.vue";
 import { WikiCardPanelPresenter } from "@/presenters/map/wiki-modal/wiki-card-panel.presenter";
 import { useGameStore } from "@/stores/use-game-store";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 
 const props = defineProps<{
   cardId: string;
 }>();
 
 const emit = defineEmits<{
-  (e: "open-drop", dropKey: string): void;
+  (e: "open-drop", payload: { dropId: string; dropType: DropType }): void;
   (e: "open-store", storeId: string): void;
 }>();
 
@@ -26,7 +27,7 @@ const wikiCardPanelViewModel = computed(() => {
 });
 
 const handleOpenDrop = (dropKey: string): void => {
-  emit("open-drop", dropKey);
+  emit("open-drop", { dropId: dropKey, dropType: "booster" });
 };
 
 const handleOpenStore = (storeId: string): void => {

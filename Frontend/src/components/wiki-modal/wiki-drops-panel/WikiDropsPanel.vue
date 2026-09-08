@@ -5,10 +5,12 @@ import WikiDropConsumableItem from "@/components/wiki-modal/wiki-drops-panel/Wik
 import WikiDropEquipment from "@/components/wiki-modal/wiki-drops-panel/WikiDropEquipment.vue";
 import WikiDroppedBy from "@/components/wiki-modal/wiki-drops-panel/WikiDroppedBy.vue";
 import { WikiDropsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-drops-panel.presenter";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 import type { DropSourceKind } from "@/viewmodels/drop/drop-source.viewmodel";
 
 const props = defineProps<{
   dropId: string;
+  dropType: DropType;
 }>();
 
 const emit = defineEmits<{
@@ -17,7 +19,7 @@ const emit = defineEmits<{
 }>();
 
 const dropsViewModel = computed(() => {
-  return WikiDropsPanelPresenter.getViewModel(props.dropId);
+  return WikiDropsPanelPresenter.getViewModel(props.dropId, props.dropType);
 });
 
 const handleOpenSource = (payload: { kind: DropSourceKind; sourceId: string }): void => {
@@ -35,15 +37,15 @@ const handleOpenCard = (cardId: string): void => {
       class="flex-1 w-full min-h-0 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col"
     >
       <WikiDropConsumableItem
-        v-if="dropsViewModel.dropType === 'consumableItem' && dropsViewModel.dropNumericId !== null"
+        v-if="dropsViewModel.dropType === 'consumableItem'"
         :consumable-item-id="dropsViewModel.dropNumericId"
       />
       <WikiDropEquipment
-        v-else-if="dropsViewModel.dropType === 'equipment' && dropsViewModel.dropNumericId !== null"
+        v-else-if="dropsViewModel.dropType === 'equipment'"
         :equipment-id="dropsViewModel.dropNumericId"
       />
       <WikiDropBooster
-        v-else-if="dropsViewModel.dropType === 'booster' && dropsViewModel.dropNumericId !== null"
+        v-else-if="dropsViewModel.dropType === 'booster'"
         :booster-id="dropsViewModel.dropNumericId"
         @open-card="handleOpenCard"
       />

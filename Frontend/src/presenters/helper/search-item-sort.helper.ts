@@ -29,28 +29,36 @@ export class SearchItemSortHelper {
   }
 
   private static getOtherKindOrder(kind: SearchItemKind | undefined): number {
-    if (kind === "drop") {
+    if (kind === "equipment") {
       return 0;
     }
 
-    if (kind === "location") {
+    if (kind === "consumableItem") {
       return 1;
     }
 
-    if (kind === "store") {
+    if (kind === "booster") {
       return 2;
     }
 
-    if (kind === "tamer") {
+    if (kind === "location") {
       return 3;
     }
 
-    if (kind === "leader") {
+    if (kind === "store") {
       return 4;
     }
 
-    if (kind === "npc") {
+    if (kind === "tamer") {
       return 5;
+    }
+
+    if (kind === "leader") {
+      return 6;
+    }
+
+    if (kind === "npc") {
+      return 7;
     }
 
     return 99;

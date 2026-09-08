@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { SearchItemSortHelper } from "@/presenters/helper/search-item-sort.helper";
-import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
+import type { SearchItemKind, SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
 const props = defineProps<{
   items: SearchItemViewModel[];
   selectedId?: string;
+  selectedKind?: SearchItemKind;
   placeholder: string;
   noResultsLabel: string;
 }>();
 
 const emit = defineEmits<{
-  (e: "select", id: string): void;
+  (e: "select", payload: { id: string; kind?: SearchItemKind }): void;
 }>();
 
 const searchInput = ref<HTMLInputElement | null>(null);
@@ -26,7 +27,13 @@ const selectedItemName = computed(() => {
 
   return (
     props.items.find((item) => {
-      return item.id === props.selectedId;
+      if (item.id !== props.selectedId) {
+        return false;
+      }
+      if (props.selectedKind === undefined) {
+        return true;
+      }
+      return item.kind === props.selectedKind;
     })?.name ?? ""
   );
 });
@@ -58,7 +65,7 @@ const inputValue = computed({
 });
 
 watch(
-  () => props.selectedId,
+  () => [props.selectedId, props.selectedKind],
   () => {
     searchQuery.value = "";
     showDropdown.value = false;
@@ -78,8 +85,8 @@ const handleBlur = () => {
   searchQuery.value = "";
 };
 
-const handleSearchSelect = (id: string) => {
-  emit("select", id);
+const handleSearchSelect = (item: SearchItemViewModel) => {
+  emit("select", { id: item.id, kind: item.kind });
   searchInput.value?.blur();
 };
 </script>
@@ -104,7 +111,7 @@ const handleSearchSelect = (id: string) => {
           v-for="item in filteredItems"
           :key="`${item.kind}-${item.id}`"
           class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors border-b last:border-b-0 border-[#0055ff]/20 flex items-baseline gap-2"
-          @mousedown.prevent="handleSearchSelect(item.id)"
+          @mousedown.prevent="handleSearchSelect(item)"
         >
           <span class="leading-none">{{ item.name }}</span>
           <span
