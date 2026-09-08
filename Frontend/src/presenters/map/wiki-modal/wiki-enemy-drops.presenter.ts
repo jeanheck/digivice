@@ -3,8 +3,6 @@ import { WikiEnemyDropItemConverter } from "@/presenters/converter/wiki-enemy-dr
 import type { WikiEnemyDropViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drop.viewmodel";
 import type { WikiEnemyDropsViewModel } from "@/viewmodels/wiki-modal/wiki-enemy-drops.viewmodel";
 
-const VARIOUS_BOOSTER_DROP_ID = "variousBooster";
-
 export class WikiEnemyDropsPresenter {
   public static getDropLabelKey(dropKey: string): string {
     const dropRaw = DropRepository.getDropByKey(dropKey);
@@ -32,13 +30,11 @@ export class WikiEnemyDropsPresenter {
       return WikiEnemyDropItemConverter.convert(drop, this.getDropLabelKey(drop.id));
     });
 
-    const isVariousBoosterOnly =
-      dropItems.length === 1 && dropItems[0]?.id === VARIOUS_BOOSTER_DROP_ID;
-    const hasInteractiveDrops = dropItems.length > 0 && !isVariousBoosterOnly;
+    const hasInteractiveDrops = dropItems.length > 0;
 
     return {
       sectionLabelKey: hasInteractiveDrops && dropItems.length > 1 ? "enemy.drops" : "enemy.drop",
-      fallbackLabelKey: isVariousBoosterOnly ? "drops.variousBooster" : "drops.none",
+      fallbackLabelKey: "drops.none",
       hasInteractiveDrops,
       drops: dropItems,
     };

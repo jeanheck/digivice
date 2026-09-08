@@ -27,15 +27,15 @@ const mainQuest = computed(() => {
   return store.currentState?.journal?.mainQuest ?? null;
 });
 
-const resolvedLocations = computed(() => {
-  return WikiEnemyResumePresenter.getResolvedEnemyLocations(
+const locations = computed(() => {
+  return WikiEnemyResumePresenter.getAvailableEnemyLocations(
     props.enemy.locations,
     mainQuest.value,
   );
 });
 
-const hasResolvedLocations = computed(() => {
-  return resolvedLocations.value.length > 0;
+const hasLocations = computed(() => {
+  return locations.value.length > 0;
 });
 
 const showBaseExp = computed(() => {
@@ -101,16 +101,16 @@ const handleOpenLocation = (locationId: string): void => {
       class="border-t border-blue-900/50 pt-2.5 flex flex-col flex-1 min-h-0 gap-1.5 text-xs"
     >
       <span
-        v-if="hasResolvedLocations"
+        v-if="hasLocations"
         class="text-center font-bold text-blue-500 tracking-wider uppercase shrink-0"
       >
         {{ $t("enemy.whereToFind") }}
       </span>
 
       <WikiEnemyLocations
-        v-if="hasResolvedLocations"
+        v-if="hasLocations"
         class="flex-1 min-h-0"
-        :locations="resolvedLocations"
+        :locations="locations"
         @open-location="handleOpenLocation"
       />
 

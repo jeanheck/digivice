@@ -4,7 +4,7 @@ import { QuestService } from "@/services/quest.service";
 import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 
 export class WikiEnemyResumePresenter {
-  public static getResolvedEnemyLocations(
+  public static getAvailableEnemyLocations(
     locations: EnemyLocationViewModel[] | undefined,
     mainQuest: Quest | null,
   ): EnemyLocationViewModel[] {

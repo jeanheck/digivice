@@ -9065,12 +9065,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "groupId": null,
-    "drops": [
-      {
-        "id": "variousBooster"
-      }
-    ]
+    "groupId": null
   },
   "520": {
     "name": "Cardmon(F)",
@@ -9112,12 +9107,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "groupId": null,
-    "drops": [
-      {
-        "id": "variousBooster"
-      }
-    ]
+    "groupId": null
   },
   "521": {
     "name": "Cardmon(G)",
@@ -9159,12 +9149,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "groupId": null,
-    "drops": [
-      {
-        "id": "variousBooster"
-      }
-    ]
+    "groupId": null
   },
   "522": {
     "name": "Cardmon(H)",
@@ -9206,12 +9191,7 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 0,
-    "groupId": null,
-    "drops": [
-      {
-        "id": "variousBooster"
-      }
-    ]
+    "groupId": null
   },
   "523": {
     "name": "Kuwagamon",

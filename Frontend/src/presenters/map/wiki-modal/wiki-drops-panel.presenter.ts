@@ -6,8 +6,6 @@ import { TamerRepository } from "@/repositories/tamer.repository";
 import type { DropSourceViewModel } from "@/viewmodels/drop/drop-source.viewmodel";
 import type { WikiDropsPanelViewModel } from "@/viewmodels/wiki-modal/wiki-drops-panel.viewmodel";
 
-const VARIOUS_BOOSTER_DROP_ID = "variousBooster";
-
 export class WikiDropsPanelPresenter {
   private static dropSourcesByDropId: Map<string, DropSourceViewModel[]> | null = null;
 
@@ -37,10 +35,6 @@ export class WikiDropsPanelPresenter {
 
     for (const [enemyId, enemyRaw] of Object.entries(EnemyRepository.getEnemyTable())) {
       for (const drop of enemyRaw.drops ?? []) {
-        if (drop.id === VARIOUS_BOOSTER_DROP_ID) {
-          continue;
-        }
-
         const existingSources = dropSourcesByDropId.get(drop.id) ?? [];
         existingSources.push({
           kind: "enemy",

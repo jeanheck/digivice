@@ -24,10 +24,6 @@ const locationOnlyLabel = (locationOnly: string): string => {
 };
 
 const handleDropClick = (drop: WikiEnemyDropItemViewModel): void => {
-  if (!drop.isClickable) {
-    return;
-  }
-
   emit("open-drops", drop.id);
 };
 </script>
