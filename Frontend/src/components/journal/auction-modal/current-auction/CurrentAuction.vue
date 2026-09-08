@@ -10,7 +10,7 @@ const store = useGameStore();
 const auctionAvailable = computed(() => {
   const auctions = store.currentState?.auctions ?? null;
   const mainQuest = store.currentState?.journal?.mainQuest ?? null;
-  return CurrentAuctionPresenter.getAuctionAvailable(auctions, mainQuest);
+  return CurrentAuctionPresenter.getAvailableAuction(auctions, mainQuest);
 });
 </script>
 

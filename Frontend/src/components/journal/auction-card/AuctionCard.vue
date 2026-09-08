@@ -17,7 +17,7 @@ const mainQuest = computed(() => {
 });
 
 const auctionAvailable = computed(() => {
-  return AuctionCardPresenter.getAuctionAvailable(auctions.value, mainQuest.value);
+  return AuctionCardPresenter.getAvailableAuction(auctions.value, mainQuest.value);
 });
 
 const isAuctionModalOpen = ref(false);
