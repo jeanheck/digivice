@@ -1,14 +1,21 @@
 <script setup lang="ts">
-import WikiCardStore from "@/components/wiki-modal/wiki-card-panel/WikiCardStore.vue";
-import type { CardShopViewModel } from "@/viewmodels/card/card-shop.viewmodel";
+import { computed } from "vue";
+import WikiCardShop from "@/components/wiki-modal/wiki-card-panel/WikiCardShop.vue";
+import { WikiCardShopsPresenter } from "@/presenters/map/wiki-modal/wiki-card-shops.presenter";
+import type { Quest } from "@/models";
 
-defineProps<{
-  stores: CardShopViewModel[];
+const props = defineProps<{
+  cardId: string;
+  mainQuest: Quest | null;
 }>();
 
 const emit = defineEmits<{
   (e: "open-store", storeId: string): void;
 }>();
+
+const stores = computed(() => {
+  return WikiCardShopsPresenter.getViewModel(props.cardId, props.mainQuest);
+});
 
 const handleSelect = (storeId: string): void => {
   emit("open-store", storeId);
@@ -33,7 +40,7 @@ const handleSelect = (storeId: string): void => {
       v-else
       class="flex flex-wrap gap-2"
     >
-      <WikiCardStore
+      <WikiCardShop
         v-for="store in stores"
         :key="store.storeId"
         :store="store"

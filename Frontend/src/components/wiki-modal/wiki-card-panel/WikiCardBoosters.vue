@@ -1,14 +1,19 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import WikiCardBooster from "@/components/wiki-modal/wiki-card-panel/WikiCardBooster.vue";
-import type { BoosterViewModel } from "@/viewmodels/card/booster.viewmodel";
+import { WikiCardBoostersPresenter } from "@/presenters/map/wiki-modal/wiki-card-boosters.presenter";
 
-defineProps<{
-  boosters: BoosterViewModel[];
+const props = defineProps<{
+  cardId: string;
 }>();
 
 const emit = defineEmits<{
   (e: "open-drop", dropKey: string): void;
 }>();
+
+const boosters = computed(() => {
+  return WikiCardBoostersPresenter.getViewModel(props.cardId);
+});
 
 const handleSelect = (dropKey: string): void => {
   emit("open-drop", dropKey);
