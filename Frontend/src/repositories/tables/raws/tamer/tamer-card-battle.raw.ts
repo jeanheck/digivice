@@ -4,6 +4,6 @@ import type { TamerTrophyRequiredRaw } from "./tamer-trophy-required.raw";
 export interface TamerCardBattleRaw {
   charismaRequired: TamerCharismaRequiredRaw;
   deckId: string;
-  dropId: number;
+  boosterId: number;
   trophyRequired?: TamerTrophyRequiredRaw;
 }

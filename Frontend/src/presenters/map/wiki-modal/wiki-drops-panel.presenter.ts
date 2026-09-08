@@ -54,7 +54,7 @@ export class WikiDropsPanelPresenter {
         WikiDropsPanelPresenter.addNpcDropSource(
           dropSourcesByDropId,
           npcSourceKeysByDropId,
-          String(cardBattle.dropId),
+          String(cardBattle.boosterId),
           {
             kind: "tamer",
             sourceId: tamerId,
@@ -69,7 +69,7 @@ export class WikiDropsPanelPresenter {
         WikiDropsPanelPresenter.addNpcDropSource(
           dropSourcesByDropId,
           npcSourceKeysByDropId,
-          String(cardBattle.dropId),
+          String(cardBattle.boosterId),
           {
             kind: "duelIsland",
             sourceId: duelIslandId,

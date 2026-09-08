@@ -8,7 +8,7 @@
           "min": 1
         },
         "deckId": "asukaWhiteMaster1",
-        "dropId": 525
+        "boosterId": 525
       },
       "second": {
         "charismaRequired": {
@@ -16,7 +16,7 @@
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "asukaWhiteMaster2",
-        "dropId": 525
+        "boosterId": 525
       }
     },
     "imageName": "Divermon"
@@ -30,7 +30,7 @@
           "min": 1
         },
         "deckId": "asukaBlackMaster1",
-        "dropId": 526
+        "boosterId": 526
       },
       "second": {
         "charismaRequired": {
@@ -38,7 +38,7 @@
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "asukaBlackMaster2",
-        "dropId": 526
+        "boosterId": 526
       }
     },
     "imageName": "Divermon"
@@ -52,7 +52,7 @@
           "min": 1
         },
         "deckId": "asukaGreenMaster1",
-        "dropId": 527
+        "boosterId": 527
       },
       "second": {
         "charismaRequired": {
@@ -60,7 +60,7 @@
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "asukaGreenMaster2",
-        "dropId": 527
+        "boosterId": 527
       }
     },
     "imageName": "Divermon"
@@ -74,7 +74,7 @@
           "min": 1
         },
         "deckId": "asukaRedMaster1",
-        "dropId": 528
+        "boosterId": 528
       },
       "second": {
         "charismaRequired": {
@@ -82,7 +82,7 @@
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "asukaRedMaster2",
-        "dropId": 528
+        "boosterId": 528
       }
     },
     "imageName": "Divermon"
@@ -96,7 +96,7 @@
           "min": 1
         },
         "deckId": "asukaBlueMaster1",
-        "dropId": 516
+        "boosterId": 516
       },
       "second": {
         "charismaRequired": {
@@ -104,7 +104,7 @@
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "asukaBlueMaster2",
-        "dropId": 516
+        "boosterId": 516
       }
     },
     "imageName": "Divermon"
@@ -118,7 +118,7 @@
           "min": 1
         },
         "deckId": "asukaDuelKing1",
-        "dropId": 517
+        "boosterId": 517
       },
       "second": {
         "charismaRequired": {
@@ -126,7 +126,7 @@
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "asukaDuelKing2",
-        "dropId": 517
+        "boosterId": 517
       }
     },
     "imageName": "KingDivermon"
