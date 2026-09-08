@@ -7,7 +7,7 @@ import { QuestService } from "@/services/quest.service";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 export class AuctionService {
-  public static getAuctionAvailable(auctions: Auctions | null, mainQuest: Quest | null): AuctionViewModel | null {
+  public static getAvailableAuction(auctions: Auctions | null, mainQuest: Quest | null): AuctionViewModel | null {
     return (
       this.getAuctions(auctions, mainQuest).find((auctionListItemViewModel) => {
         return auctionListItemViewModel.status === AuctionStatusConstant.available;
@@ -38,15 +38,10 @@ export class AuctionService {
     if (hasParticipated) {
       return AuctionStatusConstant.participated;
     }
-
     if (lastCompletedStep < steps.startsWhenComplete) {
       return AuctionStatusConstant.notYetOccurred;
     }
-
-    if (
-      lastCompletedStep >= steps.startsWhenComplete &&
-      lastCompletedStep < steps.endsWhenComplete
-    ) {
+    if (lastCompletedStep >= steps.startsWhenComplete && lastCompletedStep < steps.endsWhenComplete) {
       return AuctionStatusConstant.available;
     }
 

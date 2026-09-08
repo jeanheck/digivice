@@ -7,6 +7,6 @@ export class CurrentAuctionPresenter {
     auctions: Auctions | null,
     mainQuest: Quest | null,
   ): AuctionViewModel | null {
-    return AuctionService.getAuctionAvailable(auctions, mainQuest);
+    return AuctionService.getAvailableAuction(auctions, mainQuest);
   }
 }
