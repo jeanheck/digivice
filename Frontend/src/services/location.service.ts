@@ -11,8 +11,31 @@ import {
   type LocationWalkingEnemiesRaw,
 } from "@/repositories/tables/raws/location/location.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
+import type { MainQuestStepDoneViewModel } from "@/viewmodels/quest/main-quest-step-done.viewmodel";
 
 export class LocationService {
+  public static isLocationAvailableAccordingMainQuest(
+    lastCompletedMainQuestStep: number,
+    mainQuestStepDone?: MainQuestStepDoneViewModel,
+  ): boolean {
+    if (mainQuestStepDone === undefined) {
+      return true;
+    }
+
+    if (lastCompletedMainQuestStep < mainQuestStepDone.min) {
+      return false;
+    }
+
+    if (
+      mainQuestStepDone.max !== undefined &&
+      lastCompletedMainQuestStep >= mainQuestStepDone.max
+    ) {
+      return false;
+    }
+
+    return true;
+  }
+
   public static getSeabedEnemies(seabedRoute: number): string[] {
     return seabedRoute === 0 ? [] : SeabedRoutesRepository.getEnemiesByRoute(String(seabedRoute));
   }

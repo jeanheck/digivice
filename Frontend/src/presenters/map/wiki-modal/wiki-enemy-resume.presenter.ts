@@ -1,6 +1,6 @@
 import type { Quest } from "@/models";
 import { WikiLocationConverter } from "@/presenters/converter/wiki-location.converter";
-import { NpcService } from "@/services/npc.service";
+import { LocationService } from "@/services/location.service";
 import { QuestService } from "@/services/quest.service";
 import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 import type { WikiLocationViewModel } from "@/viewmodels/wiki-modal/wiki-location.viewmodel";
@@ -12,7 +12,7 @@ export class WikiEnemyResumePresenter {
   ): WikiLocationViewModel[] {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
     const resolvedLocations = (locations ?? []).filter((location) => {
-      return NpcService.isVisibleOnMapByMainQuestStep(
+      return LocationService.isLocationAvailableAccordingMainQuest(
         lastCompletedMainQuestStep,
         location.mainQuestStepDone,
       );

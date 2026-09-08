@@ -93,7 +93,13 @@ export class EnemyConverter {
                   y: locationRaw.localCoordinates.y,
                 }
               : undefined,
-          mainQuestStepDone: locationRaw.mainQuestStepDone,
+          mainQuestStepDone:
+            locationRaw.mainQuestStepDone != null
+              ? {
+                  min: locationRaw.mainQuestStepDone.min,
+                  max: locationRaw.mainQuestStepDone.max,
+                }
+              : undefined,
         };
       });
     }
