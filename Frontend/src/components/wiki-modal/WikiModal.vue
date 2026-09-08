@@ -90,7 +90,7 @@ const allSearchItems = computed(() => {
       return t(`location.${locationId}`);
     },
     (storeId) => {
-      return t(`stores.${storeId}.name`);
+      return t(`cardShops.${storeId}.name`);
     },
     (tamerId) => {
       return t(`tamers.${tamerId}.name`);

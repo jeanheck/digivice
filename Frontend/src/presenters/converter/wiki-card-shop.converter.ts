@@ -10,7 +10,7 @@ export class WikiCardShopConverter {
 
     return {
       storeId,
-      labelKey: `stores.${storeId}.name`,
+      labelKey: `cardShops.${storeId}.name`,
     };
   }
 }
