@@ -28,7 +28,8 @@
       1274,
       1310,
       1311
-    ]
+    ],
+    "droppedBy": []
   },
   "502": {
     "cards": [
@@ -55,7 +56,8 @@
       1270,
       1306,
       1313
-    ]
+    ],
+    "droppedBy": []
   },
   "503": {
     "cards": [
@@ -83,7 +85,8 @@
       1268,
       1271,
       1312
-    ]
+    ],
+    "droppedBy": []
   },
   "504": {
     "cards": [
@@ -115,7 +118,8 @@
       1272,
       1297,
       1298
-    ]
+    ],
+    "droppedBy": []
   },
   "505": {
     "cards": [
@@ -145,37 +149,48 @@
       1308,
       1309,
       1173
-    ]
+    ],
+    "droppedBy": []
   },
   "506": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "507": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "508": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "509": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "510": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "511": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "512": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "513": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "514": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "515": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "516": {
     "cards": [
@@ -194,6 +209,12 @@
       1226,
       1227,
       1228
+    ],
+    "droppedBy": [
+      {
+        "kind": "duelIsland",
+        "id": "divermon5"
+      }
     ]
   },
   "517": {
@@ -213,16 +234,25 @@
       1209,
       1217,
       1219
+    ],
+    "droppedBy": [
+      {
+        "kind": "duelIsland",
+        "id": "kingDivermon"
+      }
     ]
   },
   "518": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "519": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "520": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "521": {
     "cards": [
@@ -246,6 +276,20 @@
       1311,
       1270,
       1100
+    ],
+    "droppedBy": [
+      {
+        "kind": "tamer",
+        "id": "genji"
+      },
+      {
+        "kind": "tamer",
+        "id": "nacky"
+      },
+      {
+        "kind": "tamer",
+        "id": "steve"
+      }
     ]
   },
   "522": {
@@ -269,6 +313,20 @@
       1230,
       1141,
       1272
+    ],
+    "droppedBy": [
+      {
+        "kind": "tamer",
+        "id": "gloria"
+      },
+      {
+        "kind": "tamer",
+        "id": "natsumi"
+      },
+      {
+        "kind": "tamer",
+        "id": "wong"
+      }
     ]
   },
   "523": {
@@ -294,6 +352,24 @@
       1225,
       1180,
       1094
+    ],
+    "droppedBy": [
+      {
+        "kind": "tamer",
+        "id": "akiba"
+      },
+      {
+        "kind": "tamer",
+        "id": "catherine"
+      },
+      {
+        "kind": "tamer",
+        "id": "chris"
+      },
+      {
+        "kind": "tamer",
+        "id": "lucia"
+      }
     ]
   },
   "524": {
@@ -318,6 +394,24 @@
       1050,
       1179,
       1093
+    ],
+    "droppedBy": [
+      {
+        "kind": "tamer",
+        "id": "andy"
+      },
+      {
+        "kind": "tamer",
+        "id": "mitch"
+      },
+      {
+        "kind": "tamer",
+        "id": "robert"
+      },
+      {
+        "kind": "tamer",
+        "id": "tomomi"
+      }
     ]
   },
   "525": {
@@ -342,6 +436,24 @@
       1017,
       1174,
       1256
+    ],
+    "droppedBy": [
+      {
+        "kind": "duelIsland",
+        "id": "divermon1"
+      },
+      {
+        "kind": "tamer",
+        "id": "bob"
+      },
+      {
+        "kind": "tamer",
+        "id": "george"
+      },
+      {
+        "kind": "tamer",
+        "id": "meiLin"
+      }
     ]
   },
   "526": {
@@ -366,6 +478,20 @@
       1049,
       1005,
       1211
+    ],
+    "droppedBy": [
+      {
+        "kind": "duelIsland",
+        "id": "divermon2"
+      },
+      {
+        "kind": "tamer",
+        "id": "gordon"
+      },
+      {
+        "kind": "tamer",
+        "id": "jessica"
+      }
     ]
   },
   "527": {
@@ -390,6 +516,16 @@
       1134,
       1081,
       1169
+    ],
+    "droppedBy": [
+      {
+        "kind": "duelIsland",
+        "id": "divermon3"
+      },
+      {
+        "kind": "tamer",
+        "id": "alice"
+      }
     ]
   },
   "528": {
@@ -414,6 +550,12 @@
       1089,
       1087,
       1004
+    ],
+    "droppedBy": [
+      {
+        "kind": "duelIsland",
+        "id": "divermon4"
+      }
     ]
   },
   "529": {
@@ -438,24 +580,36 @@
       1027,
       1259,
       1120
+    ],
+    "droppedBy": [
+      {
+        "kind": "tamer",
+        "id": "nakano"
+      }
     ]
   },
   "530": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "531": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "532": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "533": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "534": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   },
   "535": {
-    "cards": []
+    "cards": [],
+    "droppedBy": []
   }
 }
