@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { EnemySourceConstant } from "@/constants/enemy-source.constant";
+import { IconConstant } from "@/constants/icon.constant";
 import { splitLocationLabel } from "@/presenters/helper/location-label.helper";
-import type { WikiLocationViewModel } from "@/viewmodels/wiki-modal/wiki-location.viewmodel";
+import type { EnemyLocationSourceViewModel } from "@/viewmodels/enemy/enemy-location-source.viewmodel";
+import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 
 const props = withDefaults(
   defineProps<{
-    location: WikiLocationViewModel;
+    location: EnemyLocationViewModel;
     isSelected: boolean;
     variant?: "chip" | "list";
   }>(),
@@ -34,6 +37,14 @@ const locationLabelLines = computed(() => {
 const isListVariant = computed(() => {
   return props.variant === "list";
 });
+
+const getSourceIcon = (source: EnemyLocationSourceViewModel): string => {
+  return IconConstant[EnemySourceConstant[source]];
+};
+
+const getSourceAriaLabel = (source: EnemyLocationSourceViewModel): string => {
+  return t(`enemy.locationSource.${source}`);
+};
 
 defineExpose({
   rootButton,
@@ -69,11 +80,13 @@ defineExpose({
       <span class="shrink-0 self-center flex gap-0.5">
         <span
           v-for="source in location.sources"
-          :key="source.ariaLabelKey"
+          :key="source"
           class="text-[12px] 2xl:text-[14px] leading-none"
-          :aria-label="$t(source.ariaLabelKey)"
+          :aria-label="getSourceAriaLabel(source)"
         >
-          <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">{{ source.icon }}</span>
+          <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">{{
+            getSourceIcon(source)
+          }}</span>
         </span>
       </span>
     </span>
@@ -85,11 +98,13 @@ defineExpose({
       <span>{{ locationLabel }}</span>
       <span
         v-for="source in location.sources"
-        :key="source.ariaLabelKey"
+        :key="source"
         class="text-[12px] 2xl:text-[14px] leading-none"
-        :aria-label="$t(source.ariaLabelKey)"
+        :aria-label="getSourceAriaLabel(source)"
       >
-        <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">{{ source.icon }}</span>
+        <span class="inline-flex leading-none text-[1.2rem] -translate-y-1">{{
+          getSourceIcon(source)
+        }}</span>
       </span>
     </span>
   </button>

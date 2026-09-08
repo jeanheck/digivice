@@ -85,6 +85,7 @@ export class EnemyConverter {
       enemyViewModel.locations = enemyRaw.locations.map((locationRaw) => {
         return {
           id: locationRaw.id,
+          labelKey: `location.${locationRaw.id}`,
           sources: locationRaw.sources,
           localCoordinates:
             locationRaw.localCoordinates != null

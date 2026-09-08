@@ -4,6 +4,7 @@ import type { MainQuestStepDoneViewModel } from "@/viewmodels/quest/main-quest-s
 
 export interface EnemyLocationViewModel {
   id: string;
+  labelKey: string;
   sources: EnemyLocationSourceViewModel[];
   localCoordinates?: CoordinatesViewModel;
   mainQuestStepDone?: MainQuestStepDoneViewModel;

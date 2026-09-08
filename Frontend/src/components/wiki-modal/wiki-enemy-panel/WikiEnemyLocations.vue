@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import WikiLocation from "@/components/wiki-modal/wiki-locations-panel/WikiLocation.vue";
-import type { WikiLocationViewModel } from "@/viewmodels/wiki-modal/wiki-location.viewmodel";
+import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 
 defineProps<{
-  locations: WikiLocationViewModel[];
+  locations: EnemyLocationViewModel[];
 }>();
 
 const emit = defineEmits<{
