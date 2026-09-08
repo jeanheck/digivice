@@ -51,7 +51,7 @@ const equipmentNote = computed(() => {
       class="flex flex-col gap-1"
     >
       <p class="bg-[#002266]/40 px-2 py-1 rounded-sm text-blue-500 uppercase font-bold">
-        {{ $t("enemy.attr") }}
+        {{ $t("enemy.attributes") }}
       </p>
       <div class="flex flex-col gap-0.5 w-1/5 mx-auto">
         <div
