@@ -15,7 +15,6 @@ import type { LocationNpcRaw } from "@/repositories/tables/raws/location/locatio
 import type { LocationCardShopRaw } from "@/repositories/tables/raws/location/location-card-shop.raw";
 import type { LocationTamerRaw } from "@/repositories/tables/raws/location/location-tamer.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
-import { NpcService } from "@/services/npc.service";
 import { QuestService } from "@/services/quest.service";
 import type { EnemyLocationSourceViewModel } from "@/viewmodels/enemy/enemy-location-source.viewmodel";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
@@ -78,7 +77,7 @@ export class WikiLocationsPanelPresenter {
 
     for (const locationNpc of locationRaw.npcs ?? []) {
       if (
-        !NpcService.isVisibleOnMapByMainQuestStep(
+        !QuestService.isOnMainQuestRange(
           lastCompletedMainQuestStep,
           locationNpc.mainQuestStepDone,
         )

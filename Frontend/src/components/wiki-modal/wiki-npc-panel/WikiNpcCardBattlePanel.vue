@@ -57,7 +57,7 @@ const handleSelect = (cardId: string): void => {
     </div>
 
     <WikiEnemyDrops
-      class="!h-auto max-h-[20%] shrink-0"
+      class="h-auto! max-h-[20%] shrink-0"
       :drops="battleViewModel.drops"
       @open-drops="emit('open-drops', $event)"
     />

@@ -1,4 +1,5 @@
 import type { Quest } from "@/models";
+import type { NpcMainQuestStepDoneRaw } from "@/repositories/tables/raws/npc/npc-main-quest-step-done.raw";
 import type { QuestRaw } from "@/repositories/tables/raws/quest/quest.raw";
 
 export class QuestService {
@@ -20,6 +21,28 @@ export class QuestService {
         return step.number;
       }),
     );
+  }
+
+  public static isOnMainQuestRange(
+    lastCompletedMainQuestStep: number,
+    mainQuestStepDone?: NpcMainQuestStepDoneRaw,
+  ): boolean {
+    if (mainQuestStepDone === undefined) {
+      return true;
+    }
+
+    if (lastCompletedMainQuestStep < mainQuestStepDone.min) {
+      return false;
+    }
+
+    if (
+      mainQuestStepDone.max !== undefined &&
+      lastCompletedMainQuestStep >= mainQuestStepDone.max
+    ) {
+      return false;
+    }
+
+    return true;
   }
 
   public static isQuestCompleted(

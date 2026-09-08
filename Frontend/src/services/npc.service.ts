@@ -6,7 +6,6 @@ import type {
 } from "@/presenters/helper/npc-battle-opponent.helper";
 import type { TamerCardBattleRaw } from "@/repositories/tables/raws/tamer/tamer-card-battle.raw";
 import type { TamerCharismaRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-charisma-required.raw";
-import type { NpcMainQuestStepDoneRaw } from "@/repositories/tables/raws/npc/npc-main-quest-step-done.raw";
 import type { TamerTrophyRequiredRaw } from "@/repositories/tables/raws/tamer/tamer-trophy-required.raw";
 
 export type NpcBattleStatus = "completed" | "available" | "missingRequirements";
@@ -26,28 +25,6 @@ export const AVAILABLE_BATTLE_TOOLTIP_KEY = "npc.battle.requirement.available";
 export const ALREADY_WON_BATTLE_TOOLTIP_KEY = "npc.battle.requirement.alreadyWon";
 
 export class NpcService {
-  public static isVisibleOnMapByMainQuestStep(
-    lastCompletedMainQuestStep: number,
-    mainQuestStepDone?: NpcMainQuestStepDoneRaw,
-  ): boolean {
-    if (mainQuestStepDone === undefined) {
-      return true;
-    }
-
-    if (lastCompletedMainQuestStep < mainQuestStepDone.min) {
-      return false;
-    }
-
-    if (
-      mainQuestStepDone.max !== undefined &&
-      lastCompletedMainQuestStep >= mainQuestStepDone.max
-    ) {
-      return false;
-    }
-
-    return true;
-  }
-
   public static isCharismaInRange(
     partyCharisma: number,
     charismaRequired: TamerCharismaRequiredRaw,

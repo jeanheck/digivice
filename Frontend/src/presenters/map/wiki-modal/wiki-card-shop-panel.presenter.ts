@@ -6,13 +6,12 @@ import type {
   CardShopInventoryItemRaw,
   CardShopPhaseRaw,
 } from "@/repositories/tables/raws/tcg/card-shop.raw";
-import { NpcService } from "@/services/npc.service";
 import { QuestService } from "@/services/quest.service";
 import type { WikiCardShopInventoryCardViewModel } from "@/viewmodels/wiki-modal/wiki-card-shop-inventory-card.viewmodel";
-import type { WikiCardShopPanelViewModel } from "@/viewmodels/wiki-modal/wiki-card-shop-panel.viewmodel";
+import type { WikiCardShopViewModel } from "@/viewmodels/wiki-modal/wiki-card-shop.viewmodel";
 
 export class WikiCardShopPanelPresenter {
-  public static getViewModel(cardShopId: string, mainQuest: Quest | null): WikiCardShopPanelViewModel {
+  public static getViewModel(cardShopId: string, mainQuest: Quest | null): WikiCardShopViewModel {
     const cardShopRaw = CardShopRepository.getById(cardShopId);
     if (cardShopRaw === undefined) {
       return {
@@ -22,13 +21,13 @@ export class WikiCardShopPanelPresenter {
     }
 
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
-    const inventory = WikiCardShopPanelPresenter.getActiveInventory(
+    const inventory = this.getActiveInventory(
       cardShopRaw.phases,
       lastCompletedMainQuestStep,
     );
 
     return {
-      cards: WikiCardShopPanelPresenter.getInventoryCards(inventory),
+      cards: this.getInventoryCards(inventory),
       locationId: cardShopRaw.locationId,
     };
   }
@@ -40,7 +39,7 @@ export class WikiCardShopPanelPresenter {
     const inventory: CardShopInventoryItemRaw[] = [];
 
     for (const phase of phases) {
-      const isInRange = NpcService.isVisibleOnMapByMainQuestStep(
+      const isInRange = QuestService.isOnMainQuestRange(
         lastCompletedMainQuestStep,
         phase.mainQuestStepDone,
       );

@@ -1,6 +1,6 @@
 import { LocationRepository } from "@/repositories/location.repository";
 import type { LocationNpcRaw } from "@/repositories/tables/raws/location/location-npc.raw";
-import { NpcService } from "@/services/npc.service";
+import { QuestService } from "@/services/quest.service";
 
 export class LocationNpcRepository {
   public static getByLocationId(locationId: string): LocationNpcRaw[] {
@@ -13,7 +13,7 @@ export class LocationNpcRepository {
   ): string[] {
     return this.getByLocationId(locationId).flatMap((locationNpcRaw) => {
       if (
-        !NpcService.isVisibleOnMapByMainQuestStep(
+        !QuestService.isOnMainQuestRange(
           lastCompletedMainQuestStep,
           locationNpcRaw.mainQuestStepDone,
         )
