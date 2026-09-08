@@ -46,7 +46,7 @@
     "purchasableAtNone": "Nenhuma loja conhecida",
     "baseExp": "EXP",
     "baseDvexp": "DVEXP",
-    "baseBits": "BITS",
+    "bits": "BITS",
     "combatActions": "Ações",
     "regularAttack": "Ataque",
     "technique": "Técnica",

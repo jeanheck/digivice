@@ -59,7 +59,7 @@ const selectMember = (memberIndex: number) => {
 
       <div class="flex items-center gap-2">
         <span class="font-bold text-blue-500 tracking-wider uppercase">
-          {{ $t("enemy.baseBits") }}:
+          {{ $t("enemy.bits") }}:
         </span>
         <span class="font-bold text-gray-300">{{ bits }}</span>
       </div>

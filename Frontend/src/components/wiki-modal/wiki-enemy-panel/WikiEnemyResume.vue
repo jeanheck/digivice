@@ -91,7 +91,7 @@ const handleOpenLocation = (locationId: string): void => {
       class="flex items-center justify-between text-xs shrink-0"
     >
       <span class="font-bold text-blue-500 tracking-wider uppercase"
-        >{{ $t("enemy.baseBits") }}:</span
+        >{{ $t("enemy.bits") }}:</span
       >
       <span class="font-bold text-gray-300">{{ enemy.bits }}</span>
     </div>

@@ -21,7 +21,7 @@ const cardName = computed(() => {
 
 const cardImageUrl = computed(() => {
   const cardRaw = CardRepository.getCardById(props.card.cardId);
-  return ImageCatalog.getCardImageUrl(cardRaw?.imageName);
+  return ImageCatalog.getCardImageUrl(cardRaw?.imageName ?? null);
 });
 
 const handleSelect = (): void => {
@@ -45,7 +45,7 @@ const handleSelect = (): void => {
       {{ cardName }}
     </span>
     <span class="w-full shrink-0 text-[8px] font-bold text-amber-400 leading-tight text-center">
-      {{ card.price }} {{ $t("enemy.baseBits") }}
+      {{ card.price }} {{ $t("enemy.bits") }}
     </span>
   </button>
 </template>
