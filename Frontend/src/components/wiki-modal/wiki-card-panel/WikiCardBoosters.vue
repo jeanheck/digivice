@@ -4,7 +4,7 @@ import WikiCardBooster from "@/components/wiki-modal/wiki-card-panel/WikiCardBoo
 import { WikiCardBoostersPresenter } from "@/presenters/map/wiki-modal/wiki-card-boosters.presenter";
 
 const props = defineProps<{
-  cardId: string;
+  boosterIds: number[];
 }>();
 
 const emit = defineEmits<{
@@ -12,7 +12,7 @@ const emit = defineEmits<{
 }>();
 
 const boosters = computed(() => {
-  return WikiCardBoostersPresenter.getViewModel(props.cardId);
+  return WikiCardBoostersPresenter.getViewModel(props.boosterIds);
 });
 
 const handleSelect = (dropKey: string): void => {

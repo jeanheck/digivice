@@ -1,14 +1,22 @@
 import { CardConverter } from "@/presenters/converter/card.converter";
 import { CardRepository } from "@/repositories/card.repository";
-import type { CardViewModel } from "@/viewmodels/card/card.viewmodel";
+import type { WikiCardPanelViewModel } from "@/viewmodels/wiki-modal/wiki-card-panel.viewmodel";
 
 export class WikiCardPanelPresenter {
-  public static getCard(cardId: string): CardViewModel | null {
+  public static getViewModel(cardId: string): WikiCardPanelViewModel | null {
     const cardRaw = CardRepository.getCardById(cardId);
     if (cardRaw === undefined) {
       return null;
     }
 
-    return CardConverter.convert(cardId, cardRaw);
+    return {
+      card: CardConverter.convert(cardId, cardRaw),
+      boosters: cardRaw.boosters,
+      cardShops: (cardRaw.stores ?? []).map((store) => ({
+        storeId: store.storeId,
+        startWhenLastMainQuestStepDone: store.startWhenLastMainQuestStepDone,
+        finishWhenLastMainQuestStepDone: store.finishWhenLastMainQuestStepDone,
+      })),
+    };
   }
 }
