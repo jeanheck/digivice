@@ -1,118 +1,384 @@
 {
   "400": {
     "resaleValue": 1000,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "122"
+      }
+    ]
   },
   "401": {
     "resaleValue": 1950,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "206"
+      }
+    ]
   },
   "402": {
     "resaleValue": 250,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "170"
+      }
+    ]
   },
   "403": {
     "resaleValue": 1400,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "144"
+      },
+      {
+        "kind": "enemy",
+        "id": "158"
+      }
+    ]
   },
   "404": {
     "resaleValue": 1150,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "557"
+      },
+      {
+        "kind": "enemy",
+        "id": "89"
+      }
+    ]
   },
   "405": {
     "resaleValue": 2400,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "192"
+      }
+    ]
   },
   "406": {
     "resaleValue": 1100,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "151"
+      }
+    ]
   },
   "407": {
     "resaleValue": 200,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "169"
+      }
+    ]
   },
   "408": {
     "resaleValue": 1300,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "137"
+      }
+    ]
   },
   "409": {
     "resaleValue": 1200,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "134"
+      }
+    ]
   },
   "410": {
     "resaleValue": 3000,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "128"
+      }
+    ]
   },
   "411": {
     "resaleValue": 6,
-    "soldInStore": true
+    "soldInStore": true,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "526"
+      },
+      {
+        "kind": "enemy",
+        "id": "558"
+      },
+      {
+        "kind": "enemy",
+        "id": "76"
+      }
+    ]
   },
   "412": {
     "resaleValue": 1250,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "106"
+      },
+      {
+        "kind": "enemy",
+        "id": "547"
+      }
+    ]
   },
   "413": {
     "resaleValue": 80,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "185"
+      },
+      {
+        "kind": "enemy",
+        "id": "545"
+      },
+      {
+        "kind": "enemy",
+        "id": "568"
+      },
+      {
+        "kind": "enemy",
+        "id": "569"
+      },
+      {
+        "kind": "enemy",
+        "id": "81"
+      }
+    ]
   },
   "414": {
     "resaleValue": 60,
-    "soldInStore": true
+    "soldInStore": true,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "105"
+      }
+    ]
   },
   "415": {
     "resaleValue": 950,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "111"
+      },
+      {
+        "kind": "enemy",
+        "id": "142"
+      }
+    ]
   },
   "416": {
     "resaleValue": 20,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "561"
+      },
+      {
+        "kind": "enemy",
+        "id": "577"
+      },
+      {
+        "kind": "enemy",
+        "id": "88"
+      }
+    ]
   },
   "417": {
     "resaleValue": 400,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "214"
+      }
+    ]
   },
   "418": {
     "resaleValue": 700,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "217"
+      }
+    ]
   },
   "419": {
     "resaleValue": 1000,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "212"
+      }
+    ]
   },
   "420": {
     "resaleValue": 1600,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "223"
+      }
+    ]
   },
   "421": {
     "resaleValue": 130,
-    "soldInStore": true
+    "soldInStore": true,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "146"
+      }
+    ]
   },
   "422": {
     "resaleValue": 1100,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "555"
+      },
+      {
+        "kind": "enemy",
+        "id": "575"
+      },
+      {
+        "kind": "enemy",
+        "id": "91"
+      },
+      {
+        "kind": "enemy",
+        "id": "96"
+      }
+    ]
   },
   "423": {
     "resaleValue": 900,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "163"
+      }
+    ]
   },
   "424": {
     "resaleValue": 1050,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "119"
+      },
+      {
+        "kind": "enemy",
+        "id": "123"
+      }
+    ]
   },
   "425": {
     "resaleValue": 100,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "102"
+      },
+      {
+        "kind": "enemy",
+        "id": "195"
+      },
+      {
+        "kind": "enemy",
+        "id": "534"
+      }
+    ]
   },
   "426": {
     "resaleValue": 10,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "135"
+      },
+      {
+        "kind": "enemy",
+        "id": "168"
+      }
+    ]
   },
   "427": {
     "resaleValue": 20,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "139"
+      },
+      {
+        "kind": "enemy",
+        "id": "159"
+      },
+      {
+        "kind": "enemy",
+        "id": "160"
+      },
+      {
+        "kind": "enemy",
+        "id": "161"
+      },
+      {
+        "kind": "enemy",
+        "id": "162"
+      }
+    ]
   },
   "428": {
     "resaleValue": 15,
-    "soldInStore": false
+    "soldInStore": false,
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "199"
+      }
+    ]
   }
 }
