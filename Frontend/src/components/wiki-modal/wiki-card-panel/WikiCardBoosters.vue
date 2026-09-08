@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { computed } from "vue";
 import WikiCardBooster from "@/components/wiki-modal/wiki-card-panel/WikiCardBooster.vue";
-import { WikiCardBoostersPresenter } from "@/presenters/map/wiki-modal/wiki-card-boosters.presenter";
 
-const props = defineProps<{
+defineProps<{
   boosterIds: number[];
 }>();
 
@@ -11,12 +9,8 @@ const emit = defineEmits<{
   (e: "open-drop", dropKey: string): void;
 }>();
 
-const boosters = computed(() => {
-  return WikiCardBoostersPresenter.getViewModel(props.boosterIds);
-});
-
-const handleSelect = (dropKey: string): void => {
-  emit("open-drop", dropKey);
+const handleSelect = (boosterId: number): void => {
+  emit("open-drop", String(boosterId));
 };
 </script>
 
@@ -29,7 +23,7 @@ const handleSelect = (dropKey: string): void => {
     </h4>
 
     <p
-      v-if="boosters.length === 0"
+      v-if="boosterIds.length === 0"
       class="text-xs text-gray-400 italic"
     >
       {{ $t("enemy.obtainedFromNone") }}
@@ -39,10 +33,10 @@ const handleSelect = (dropKey: string): void => {
       class="flex flex-wrap gap-2"
     >
       <WikiCardBooster
-        v-for="booster in boosters"
-        :key="booster.dropKey"
-        :booster="booster"
-        @select="handleSelect(booster.dropKey)"
+        v-for="boosterId in boosterIds"
+        :key="boosterId"
+        :booster-id="boosterId"
+        @select="handleSelect(boosterId)"
       />
     </div>
   </section>

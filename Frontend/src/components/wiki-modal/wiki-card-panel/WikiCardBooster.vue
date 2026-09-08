@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type { BoosterViewModel } from "@/viewmodels/card/booster.viewmodel";
-
 defineProps<{
-  booster: BoosterViewModel;
+  boosterId: number;
 }>();
 
 defineEmits<{
@@ -18,7 +16,7 @@ defineEmits<{
   >
     <span class="min-w-0">
       <span class="block text-xs font-bold text-blue-200 tracking-wide">
-        {{ $t(booster.labelKey) }}
+        {{ $t(`boosters.${boosterId}.name`) }}
       </span>
     </span>
   </button>
