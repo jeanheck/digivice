@@ -16,7 +16,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "open-enemy", enemyId: string): void;
   (e: "open-npc", npcId: string): void;
-  (e: "open-store", storeId: string): void;
+  (e: "open-card-shop", cardShopId: string): void;
 }>();
 
 const store = useGameStore();
@@ -139,8 +139,8 @@ const handleOpenNpc = (npcId: string): void => {
   emit("open-npc", npcId);
 };
 
-const handleOpenStore = (storeId: string): void => {
-  emit("open-store", storeId);
+const handleOpenCardShop = (cardShopId: string): void => {
+  emit("open-card-shop", cardShopId);
 };
 </script>
 
@@ -182,7 +182,7 @@ const handleOpenStore = (storeId: string): void => {
           :markers="locationsViewModel.mapMarkers"
           @open-enemy="handleOpenEnemy"
           @open-npc="handleOpenNpc"
-          @open-store="handleOpenStore"
+          @open-card-shop="handleOpenCardShop"
         />
       </div>
       <div

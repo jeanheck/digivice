@@ -11,15 +11,15 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "open-store", storeId: string): void;
+  (e: "open-card-shop", cardShopId: string): void;
 }>();
 
-const stores = computed(() => {
+const shops = computed(() => {
   return WikiCardShopsPresenter.getViewModel(props.cardShops, props.mainQuest);
 });
 
-const handleSelect = (storeId: string): void => {
-  emit("open-store", storeId);
+const handleSelect = (cardShopId: string): void => {
+  emit("open-card-shop", cardShopId);
 };
 </script>
 
@@ -32,7 +32,7 @@ const handleSelect = (storeId: string): void => {
     </h4>
 
     <p
-      v-if="stores.length === 0"
+      v-if="shops.length === 0"
       class="text-xs text-gray-400 italic"
     >
       {{ $t("enemy.purchasableAtNone") }}
@@ -42,9 +42,9 @@ const handleSelect = (storeId: string): void => {
       class="flex flex-wrap gap-2"
     >
       <WikiCardShop
-        v-for="store in stores"
-        :key="store.storeId"
-        :store="store"
+        v-for="shop in shops"
+        :key="shop.id"
+        :card-shop="shop"
         @select="handleSelect"
       />
     </div>

@@ -1,17 +1,17 @@
 import type { NpcMainQuestStepDoneRaw } from "@/repositories/tables/raws/npc/npc-main-quest-step-done.raw";
 
-export interface StoreInventoryItemRaw {
+export interface CardShopInventoryItemRaw {
   cardId: string;
   price: number;
 }
 
-export interface StorePhaseRaw {
+export interface CardShopPhaseRaw {
   mainQuestStepDone: NpcMainQuestStepDoneRaw;
-  inventory: StoreInventoryItemRaw[];
+  inventory: CardShopInventoryItemRaw[];
 }
 
-export interface StoreRaw {
+export interface CardShopCatalogRaw {
   locationId: string;
   imageName?: string;
-  phases: StorePhaseRaw[];
+  phases: CardShopPhaseRaw[];
 }

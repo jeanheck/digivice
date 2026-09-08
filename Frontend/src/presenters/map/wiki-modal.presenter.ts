@@ -7,7 +7,7 @@ import { LocationRepository } from "@/repositories/location.repository";
 import { NpcRepository } from "@/repositories/npc.repository";
 import { DuelIslandRepository } from "@/repositories/duel-island.repository";
 import { TamerRepository } from "@/repositories/tamer.repository";
-import { StoreRepository } from "@/repositories/store.repository";
+import { CardShopRepository } from "@/repositories/card-shop.repository";
 import { EnemyConverter } from "@/presenters/converter/enemy.converter";
 import {
   NpcBattleFromEnemyHelper,
@@ -91,9 +91,11 @@ export class WikiModalPresenter {
     });
   }
 
-  public static getStoreSearchItems(translateStoreName: (storeId: string) => string): SearchItemViewModel[] {
-    return StoreRepository.getStoreIds().map((storeId) => {
-      return SearchItemConverter.convertStore(storeId, translateStoreName(storeId));
+  public static getCardShopSearchItems(
+    translateCardShopName: (cardShopId: string) => string,
+  ): SearchItemViewModel[] {
+    return CardShopRepository.getIds().map((cardShopId) => {
+      return SearchItemConverter.convertCardShop(cardShopId, translateCardShopName(cardShopId));
     });
   }
 
@@ -128,7 +130,7 @@ export class WikiModalPresenter {
     translateLabelKey: (labelKey: string) => string,
     translateCardName: (cardId: string) => string,
     translateLocationName: (locationId: string) => string,
-    translateStoreName: (storeId: string) => string,
+    translateCardShopName: (cardShopId: string) => string,
     translateTamerName: (tamerId: string) => string,
     translateDuelIslandName: (duelIslandId: string) => string,
     translateNpcName: (npcId: string) => string,
@@ -138,7 +140,7 @@ export class WikiModalPresenter {
       ...this.getDropSearchItems(translateLabelKey),
       ...this.getCardSearchItems(translateCardName),
       ...this.getLocationSearchItems(translateLocationName),
-      ...this.getStoreSearchItems(translateStoreName),
+      ...this.getCardShopSearchItems(translateCardShopName),
       ...this.getTamerSearchItems(translateTamerName),
       ...this.getDuelIslandSearchItems(translateDuelIslandName),
       ...this.getStoryNpcSearchItems(translateNpcName),

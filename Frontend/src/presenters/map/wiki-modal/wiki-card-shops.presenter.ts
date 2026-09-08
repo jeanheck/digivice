@@ -11,11 +11,11 @@ export class WikiCardShopsPresenter {
     mainQuest: Quest | null,
   ): CardShopViewModel[] {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
-    const activeStoreIds = new Set<string>();
+    const activeCardShopIds = new Set<string>();
     const result: CardShopViewModel[] = [];
 
     for (const shop of cardShops) {
-      if (activeStoreIds.has(shop.storeId)) {
+      if (activeCardShopIds.has(shop.id)) {
         continue;
       }
 
@@ -28,13 +28,13 @@ export class WikiCardShopsPresenter {
         continue;
       }
 
-      const storeViewModel = WikiCardShopConverter.convert(shop.storeId);
-      if (storeViewModel === null) {
+      const cardShopViewModel = WikiCardShopConverter.convert(shop.id);
+      if (cardShopViewModel === null) {
         continue;
       }
 
-      activeStoreIds.add(shop.storeId);
-      result.push(storeViewModel);
+      activeCardShopIds.add(shop.id);
+      result.push(cardShopViewModel);
     }
 
     return result;

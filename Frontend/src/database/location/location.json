@@ -214,7 +214,7 @@
         "labelPlacement": "left"
       }
     ],
-    "stores": [
+    "cardShops": [
       {
         "id": "asYellowCruiser",
         "coordinates": {

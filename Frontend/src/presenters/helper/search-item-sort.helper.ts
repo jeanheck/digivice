@@ -45,7 +45,7 @@ export class SearchItemSortHelper {
       return 3;
     }
 
-    if (kind === "store") {
+    if (kind === "cardShop") {
       return 4;
     }
 

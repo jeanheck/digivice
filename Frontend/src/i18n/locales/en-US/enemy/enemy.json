@@ -15,7 +15,7 @@
       "booster": "Booster",
       "card": "Card",
       "location": "Location",
-      "store": "Shop",
+      "cardShop": "Shop",
       "tamer": "Tamer",
       "leader": "Leader",
       "npc": "NPC"

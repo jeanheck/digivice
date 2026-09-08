@@ -74,19 +74,19 @@
       517,
       526
     ],
-    "stores": [
+    "type": "action",
+    "cardShops": [
       {
-        "storeId": "asYellowCruiser",
+        "id": "asYellowCruiser",
         "startWhenLastMainQuestStepDone": "27",
         "finishWhenLastMainQuestStepDone": "999"
       },
       {
-        "storeId": "suzakuCardShop",
+        "id": "suzakuCardShop",
         "startWhenLastMainQuestStepDone": "0",
         "finishWhenLastMainQuestStepDone": "999"
       }
-    ],
-    "type": "action"
+    ]
   },
   "1010": {
     "imageName": "Blue Power",
@@ -243,19 +243,19 @@
       502,
       525
     ],
-    "stores": [
+    "type": "action",
+    "cardShops": [
       {
-        "storeId": "asYellowCruiser",
+        "id": "asYellowCruiser",
         "startWhenLastMainQuestStepDone": "27",
         "finishWhenLastMainQuestStepDone": "999"
       },
       {
-        "storeId": "suzakuCardShop",
+        "id": "suzakuCardShop",
         "startWhenLastMainQuestStepDone": "0",
         "finishWhenLastMainQuestStepDone": "999"
       }
-    ],
-    "type": "action"
+    ]
   },
   "1030": {
     "imageName": "Delete Matrix",
@@ -480,19 +480,19 @@
       522,
       523
     ],
-    "stores": [
+    "type": "action",
+    "cardShops": [
       {
-        "storeId": "asYellowCruiser",
+        "id": "asYellowCruiser",
         "startWhenLastMainQuestStepDone": "0",
         "finishWhenLastMainQuestStepDone": "26"
       },
       {
-        "storeId": "asYellowCruiser",
+        "id": "asYellowCruiser",
         "startWhenLastMainQuestStepDone": "27",
         "finishWhenLastMainQuestStepDone": "999"
       }
-    ],
-    "type": "action"
+    ]
   },
   "1059": {
     "imageName": "Assault Armor",
@@ -555,18 +555,18 @@
     "boosters": [
       515
     ],
-    "stores": [
-      {
-        "storeId": "asYellowCruiser",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "26"
-      }
-    ],
     "type": "white",
     "points": {
       "ap": 46,
       "hp": 50
-    }
+    },
+    "cardShops": [
+      {
+        "id": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
+    ]
   },
   "1065": {
     "imageName": "Magnadramon",
@@ -743,23 +743,23 @@
       517,
       526
     ],
-    "stores": [
-      {
-        "storeId": "asYellowCruiser",
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
-      },
-      {
-        "storeId": "suzakuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      }
-    ],
     "type": "white",
     "points": {
       "ap": 15,
       "hp": 15
-    }
+    },
+    "cardShops": [
+      {
+        "id": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "id": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
+    ]
   },
   "1080": {
     "imageName": "Angemon",
@@ -952,23 +952,23 @@
       516,
       523
     ],
-    "stores": [
-      {
-        "storeId": "seiryuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      },
-      {
-        "storeId": "suzakuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      }
-    ],
     "type": "white",
     "points": {
       "ap": 5,
       "hp": 5
-    }
+    },
+    "cardShops": [
+      {
+        "id": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "id": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
+    ]
   },
   "1096": {
     "imageName": "Armadillomon",
@@ -1496,18 +1496,18 @@
       516,
       523
     ],
-    "stores": [
-      {
-        "storeId": "seiryuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      }
-    ],
     "type": "blue",
     "points": {
       "ap": 4,
       "hp": 4
-    }
+    },
+    "cardShops": [
+      {
+        "id": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
+    ]
   },
   "1140": {
     "imageName": "Gomamon",
@@ -1832,23 +1832,23 @@
       517,
       526
     ],
-    "stores": [
-      {
-        "storeId": "asYellowCruiser",
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
-      },
-      {
-        "storeId": "suzakuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      }
-    ],
     "type": "green",
     "points": {
       "ap": 14,
       "hp": 16
-    }
+    },
+    "cardShops": [
+      {
+        "id": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "id": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
+    ]
   },
   "1168": {
     "imageName": "Garurumon",
@@ -2057,18 +2057,18 @@
       516,
       523
     ],
-    "stores": [
-      {
-        "storeId": "seiryuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      }
-    ],
     "type": "green",
     "points": {
       "ap": 2,
       "hp": 2
-    }
+    },
+    "cardShops": [
+      {
+        "id": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
+    ]
   },
   "1185": {
     "imageName": "Betamon",
@@ -2170,18 +2170,18 @@
     "boosters": [
       513
     ],
-    "stores": [
-      {
-        "storeId": "asYellowCruiser",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "26"
-      }
-    ],
     "type": "red",
     "points": {
       "ap": 50,
       "hp": 50
-    }
+    },
+    "cardShops": [
+      {
+        "id": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
+    ]
   },
   "1194": {
     "imageName": "Machinedramon",
@@ -2293,18 +2293,18 @@
     "boosters": [
       510
     ],
-    "stores": [
-      {
-        "storeId": "asYellowCruiser",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "26"
-      }
-    ],
     "type": "red",
     "points": {
       "ap": 29,
       "hp": 26
-    }
+    },
+    "cardShops": [
+      {
+        "id": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
+    ]
   },
   "1204": {
     "imageName": "Gigadramon",
@@ -2374,23 +2374,23 @@
       517,
       526
     ],
-    "stores": [
-      {
-        "storeId": "asYellowCruiser",
-        "startWhenLastMainQuestStepDone": "27",
-        "finishWhenLastMainQuestStepDone": "999"
-      },
-      {
-        "storeId": "suzakuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      }
-    ],
     "type": "red",
     "points": {
       "ap": 18,
       "hp": 20
-    }
+    },
+    "cardShops": [
+      {
+        "id": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "27",
+        "finishWhenLastMainQuestStepDone": "999"
+      },
+      {
+        "id": "suzakuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
+    ]
   },
   "1210": {
     "imageName": "ExVeemon",
@@ -2584,18 +2584,18 @@
       516,
       523
     ],
-    "stores": [
-      {
-        "storeId": "seiryuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      }
-    ],
     "type": "red",
     "points": {
       "ap": 4,
       "hp": 4
-    }
+    },
+    "cardShops": [
+      {
+        "id": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
+    ]
   },
   "1226": {
     "imageName": "Guilmon",
@@ -2700,18 +2700,18 @@
     "boosters": [
       515
     ],
-    "stores": [
-      {
-        "storeId": "asYellowCruiser",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "26"
-      }
-    ],
     "type": "black",
     "points": {
       "ap": 58,
       "hp": 58
-    }
+    },
+    "cardShops": [
+      {
+        "id": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
+    ]
   },
   "1235": {
     "imageName": "MaloMyotismon",
@@ -2982,18 +2982,18 @@
       502,
       524
     ],
-    "stores": [
-      {
-        "storeId": "seiryuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      }
-    ],
     "type": "black",
     "points": {
       "ap": 12,
       "hp": 12
-    }
+    },
+    "cardShops": [
+      {
+        "id": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
+    ]
   },
   "1259": {
     "imageName": "Vilemon",
@@ -3064,18 +3064,18 @@
       507,
       515
     ],
-    "stores": [
-      {
-        "storeId": "seiryuCardShop",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "999"
-      }
-    ],
     "type": "black",
     "points": {
       "ap": 10,
       "hp": 10
-    }
+    },
+    "cardShops": [
+      {
+        "id": "seiryuCardShop",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "999"
+      }
+    ]
   },
   "1265": {
     "imageName": "Bakemon",
@@ -3214,18 +3214,18 @@
     "boosters": [
       514
     ],
-    "stores": [
-      {
-        "storeId": "asYellowCruiser",
-        "startWhenLastMainQuestStepDone": "0",
-        "finishWhenLastMainQuestStepDone": "26"
-      }
-    ],
     "type": "brown",
     "points": {
       "ap": 50,
       "hp": 40
-    }
+    },
+    "cardShops": [
+      {
+        "id": "asYellowCruiser",
+        "startWhenLastMainQuestStepDone": "0",
+        "finishWhenLastMainQuestStepDone": "26"
+      }
+    ]
   },
   "1277": {
     "imageName": "BK MegaGargomon",

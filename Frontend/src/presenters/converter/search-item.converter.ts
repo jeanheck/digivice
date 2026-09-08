@@ -88,11 +88,11 @@ export class SearchItemConverter {
     };
   }
 
-  public static convertStore(id: string, name: string): SearchItemViewModel {
+  public static convertCardShop(id: string, name: string): SearchItemViewModel {
     return {
       id,
       name,
-      kind: "store",
+      kind: "cardShop",
     };
   }
 

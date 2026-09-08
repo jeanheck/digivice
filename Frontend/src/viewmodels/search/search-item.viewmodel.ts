@@ -5,7 +5,7 @@ export type SearchItemKind =
   | "booster"
   | "card"
   | "location"
-  | "store"
+  | "cardShop"
   | "tamer"
   | "leader"
   | "npc";

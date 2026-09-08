@@ -12,10 +12,10 @@ export class WikiCardPanelPresenter {
     return {
       card: CardConverter.convert(cardId, cardRaw),
       boosters: cardRaw.boosters,
-      cardShops: (cardRaw.stores ?? []).map((store) => ({
-        storeId: store.storeId,
-        startWhenLastMainQuestStepDone: store.startWhenLastMainQuestStepDone,
-        finishWhenLastMainQuestStepDone: store.finishWhenLastMainQuestStepDone,
+      cardShops: (cardRaw.cardShops ?? []).map((shop) => ({
+        id: shop.id,
+        startWhenLastMainQuestStepDone: shop.startWhenLastMainQuestStepDone,
+        finishWhenLastMainQuestStepDone: shop.finishWhenLastMainQuestStepDone,
       })),
     };
   }

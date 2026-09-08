@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import WikiStoreCard from "@/components/wiki-modal/wiki-stores-panel/WikiStoreCard.vue";
-import type { WikiStoreCardViewModel } from "@/viewmodels/wiki-modal/wiki-store-card.viewmodel";
+import WikiCardShopInventoryCard from "@/components/wiki-modal/wiki-card-shop-panel/WikiCardShopInventoryCard.vue";
+import type { WikiCardShopInventoryCardViewModel } from "@/viewmodels/wiki-modal/wiki-card-shop-inventory-card.viewmodel";
 
 defineProps<{
-  cards: WikiStoreCardViewModel[];
+  cards: WikiCardShopInventoryCardViewModel[];
 }>();
 
 const emit = defineEmits<{
@@ -23,7 +23,7 @@ const handleSelect = (cardId: string): void => {
 
     <div class="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scroll">
       <div class="flex flex-wrap content-start justify-center gap-2 w-full">
-        <WikiStoreCard
+        <WikiCardShopInventoryCard
           v-for="card in cards"
           :key="card.cardId"
           :card="card"

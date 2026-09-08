@@ -248,7 +248,7 @@ export class ImageCatalog {
     );
   }
 
-  public static getStoreImageUrl(imageName: string | null | undefined): string | null {
+  public static getCardShopImageUrl(imageName: string | null | undefined): string | null {
     return getImageUrl(
       storeModules,
       STORE_ASSET_CONFIG.pathSuffix,

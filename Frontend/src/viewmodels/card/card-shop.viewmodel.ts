@@ -1,4 +1,4 @@
 export interface CardShopViewModel {
-  storeId: string;
+  id: string;
   labelKey: string;
 }

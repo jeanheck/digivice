@@ -13,7 +13,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: "open-npc", npcId: string): void;
   (e: "open-enemy", enemyId: string): void;
-  (e: "open-store", storeId: string): void;
+  (e: "open-card-shop", cardShopId: string): void;
 }>();
 
 const imageUrl = computed(() => {
@@ -38,8 +38,8 @@ const handleMarkerSelect = (marker: WikiLocationMapMarkerViewModel): void => {
     return;
   }
 
-  if (marker.kind === "store") {
-    emit("open-store", marker.id);
+  if (marker.kind === "cardShop") {
+    emit("open-card-shop", marker.id);
     return;
   }
 

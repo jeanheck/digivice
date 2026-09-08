@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import WikiStoreInventory from "@/components/wiki-modal/wiki-stores-panel/WikiStoreInventory.vue";
-import WikiStoreLocatedIn from "@/components/wiki-modal/wiki-stores-panel/WikiStoreLocatedIn.vue";
-import { WikiStorePanelPresenter } from "@/presenters/map/wiki-modal/wiki-store-panel.presenter";
+import WikiCardShopInventory from "@/components/wiki-modal/wiki-card-shop-panel/WikiCardShopInventory.vue";
+import WikiCardShopLocatedIn from "@/components/wiki-modal/wiki-card-shop-panel/WikiCardShopLocatedIn.vue";
+import { WikiCardShopPanelPresenter } from "@/presenters/map/wiki-modal/wiki-card-shop-panel.presenter";
 import { useGameStore } from "@/stores/use-game-store";
 
 const props = defineProps<{
-  storeId: string;
+  cardShopId: string;
 }>();
 
 const emit = defineEmits<{
@@ -20,8 +20,8 @@ const mainQuest = computed(() => {
   return store.currentState?.journal?.mainQuest ?? null;
 });
 
-const storeViewModel = computed(() => {
-  return WikiStorePanelPresenter.getViewModel(props.storeId, mainQuest.value);
+const cardShopViewModel = computed(() => {
+  return WikiCardShopPanelPresenter.getViewModel(props.cardShopId, mainQuest.value);
 });
 
 const handleOpenCard = (cardId: string): void => {
@@ -38,12 +38,12 @@ const handleOpenLocation = (locationId: string): void => {
     <section
       class="flex-1 w-full min-h-0 bg-[#000a1a] border border-blue-900/50 rounded p-4 shadow-inner flex flex-col"
     >
-      <WikiStoreInventory :cards="storeViewModel.cards" @open-card="handleOpenCard" />
+      <WikiCardShopInventory :cards="cardShopViewModel.cards" @open-card="handleOpenCard" />
     </section>
 
-    <WikiStoreLocatedIn
-      v-if="storeViewModel.locationId !== null"
-      :location-id="storeViewModel.locationId"
+    <WikiCardShopLocatedIn
+      v-if="cardShopViewModel.locationId !== null"
+      :location-id="cardShopViewModel.locationId"
       @open-location="handleOpenLocation"
     />
   </div>

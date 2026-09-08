@@ -1,16 +1,16 @@
-import { StoreRepository } from "@/repositories/store.repository";
+import { CardShopRepository } from "@/repositories/card-shop.repository";
 import type { CardShopViewModel } from "@/viewmodels/card/card-shop.viewmodel";
 
 export class WikiCardShopConverter {
-  public static convert(storeId: string): CardShopViewModel | null {
-    const storeRaw = StoreRepository.getStoreById(storeId);
-    if (storeRaw === undefined) {
+  public static convert(cardShopId: string): CardShopViewModel | null {
+    const cardShopRaw = CardShopRepository.getById(cardShopId);
+    if (cardShopRaw === undefined) {
       return null;
     }
 
     return {
-      storeId,
-      labelKey: `cardShops.${storeId}.name`,
+      id: cardShopId,
+      labelKey: `cardShops.${cardShopId}.name`,
     };
   }
 }

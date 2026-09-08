@@ -1,5 +1,5 @@
 export interface CardShopSourceViewModel {
-  storeId: string;
+  id: string;
   startWhenLastMainQuestStepDone: string;
   finishWhenLastMainQuestStepDone: string;
 }

@@ -1,4 +1,4 @@
-export interface WikiStoreCardViewModel {
+export interface WikiCardShopInventoryCardViewModel {
   cardId: string;
   imageName: string;
   nameKey: string;
