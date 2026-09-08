@@ -15,8 +15,16 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 
-const dropsViewModel = computed(() => {
+const drops = computed(() => {
   return WikiEnemyDropsPresenter.getViewModel(props.drops);
+});
+
+const sectionLabelKey = computed(() => {
+  return drops.value.length > 1 ? "enemy.drops" : "enemy.drop";
+});
+
+const hasDrops = computed(() => {
+  return drops.value.length > 0;
 });
 
 const locationOnlyLabel = (locationOnly: string): string => {
@@ -35,21 +43,21 @@ const handleDropClick = (drop: WikiEnemyDropItemViewModel): void => {
     <h4
       class="text-[10px] uppercase font-bold tracking-widest text-blue-500 mb-1 w-full"
     >
-      {{ $t(dropsViewModel.sectionLabelKey) }}
+      {{ $t(sectionLabelKey) }}
     </h4>
 
     <span
-      v-if="!dropsViewModel.hasInteractiveDrops"
+      v-if="!hasDrops"
       class="flex flex-1 min-h-0 items-center justify-center text-gray-200 text-xs"
     >
-      {{ $t(dropsViewModel.fallbackLabelKey) }}
+      {{ $t("drops.none") }}
     </span>
     <div
       v-else
       class="flex flex-1 min-h-0 flex-wrap content-center justify-center gap-2"
     >
       <button
-        v-for="drop in dropsViewModel.drops"
+        v-for="drop in drops"
         :key="`${drop.id}-${drop.locationOnly ?? ''}`"
         type="button"
         class="text-center px-2.5 py-2 rounded text-[9px] 2xl:text-[11px] font-bold tracking-wide transition-colors cursor-pointer  hover:bg-blue-900/60 text-blue-300 border border-blue-700/60 bg-blue-950/40"
