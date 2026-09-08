@@ -29,7 +29,17 @@
       1310,
       1311
     ],
-    "droppedBy": []
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "515"
+      },
+      {
+        "kind": "enemy",
+        "id": "516",
+        "locationOnly": "0001"
+      }
+    ]
   },
   "502": {
     "cards": [
@@ -57,7 +67,13 @@
       1306,
       1313
     ],
-    "droppedBy": []
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "516",
+        "locationOnly": "0002"
+      }
+    ]
   },
   "503": {
     "cards": [
@@ -86,7 +102,13 @@
       1271,
       1312
     ],
-    "droppedBy": []
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "515",
+        "locationOnly": "022A"
+      }
+    ]
   },
   "504": {
     "cards": [
@@ -119,7 +141,12 @@
       1297,
       1298
     ],
-    "droppedBy": []
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "517"
+      }
+    ]
   },
   "505": {
     "cards": [
@@ -150,47 +177,43 @@
       1309,
       1173
     ],
-    "droppedBy": []
+    "droppedBy": [
+      {
+        "kind": "enemy",
+        "id": "518",
+        "locationOnly": "0003"
+      }
+    ]
   },
   "506": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "507": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "508": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "509": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "510": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "511": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "512": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "513": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "514": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "515": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "516": {
     "cards": [
@@ -214,6 +237,14 @@
       {
         "kind": "duelIsland",
         "id": "divermon5"
+      },
+      {
+        "kind": "enemy",
+        "id": "515"
+      },
+      {
+        "kind": "enemy",
+        "id": "516"
       }
     ]
   },
@@ -239,20 +270,21 @@
       {
         "kind": "duelIsland",
         "id": "kingDivermon"
+      },
+      {
+        "kind": "enemy",
+        "id": "517"
       }
     ]
   },
   "518": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "519": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "520": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "521": {
     "cards": [
@@ -589,27 +621,21 @@
     ]
   },
   "530": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "531": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "532": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "533": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "534": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   },
   "535": {
-    "cards": [],
-    "droppedBy": []
+    "cards": []
   }
 }
