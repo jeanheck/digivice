@@ -913,7 +913,11 @@
     ]
   },
   "0231": {
-    "imageName": "Gale Tower"
+    "imageName": "Gale Tower",
+    "worldLocation": {
+      "x": 81,
+      "y": 43
+    }
   },
   "022A": {
     "imageName": "Kicking Forest",
@@ -1341,7 +1345,11 @@
     "dock": true
   },
   "023F": {
-    "imageName": "Suzaku Inn"
+    "imageName": "Suzaku Inn",
+    "worldLocation": {
+      "x": 60.5,
+      "y": 77
+    }
   },
   "0240": {
     "imageName": "Suzaku Hall",
@@ -1706,6 +1714,10 @@
   },
   "0257": {
     "imageName": "Noise Desert S",
+    "worldLocation": {
+      "x": 21.5,
+      "y": 72
+    },
     "enemies": {
       "walking": [
         "193"
