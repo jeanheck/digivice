@@ -1,8 +1,8 @@
 {
   "cards": {
     "1000": {
-      "name": "Sacred spear",
-      "note": "Put all non-white digimon to trash"
+      "name": "Lança Sagrada",
+      "note": "Coloca todos os Digimons não brancos na lixeira"
     },
     "1001": {
       "name": "Invocar Angemon",
@@ -10,7 +10,7 @@
     },
     "1002": {
       "name": "Aura Dourada",
-      "note": "Adiciona +10 de AP e HP a todos os Digimons"
+      "note": "Aumenta o AP e HP de todos os seus Digimons em +10."
     },
     "1003": {
       "name": "Aura Protetora",
@@ -25,16 +25,16 @@
       "note": "Invoca o Patamon para o campo de batalha."
     },
     "1006": {
-      "name": "Tidal Wave",
-      "note": "Return all non-blue digimon to trash"
+      "name": "Onda Tidal",
+      "note": "Retorna todos os Digimons não Azuis de volta para cada mão."
     },
     "1007": {
-      "name": "Control Parts",
-      "note": "control 1 of your oppnt's digimon"
+      "name": "Controlar Partes",
+      "note": "Escolha um dos Digimons do campo de seu oponente."
     },
     "1008": {
-      "name": "Freeze Bug",
-      "note": "Put a drawn PG card to trash"
+      "name": "Congelar",
+      "note": "Destrói 1 Carta Programa jogada pelo seu oponente."
     },
     "1009": {
       "name": "Desfazer Eclipse",
@@ -49,32 +49,32 @@
       "note": "Invoca o Gomamon para o campo de batalha."
     },
     "1012": {
-      "name": "Wield Aura",
-      "note": "+50 AP & HP to all green digimon"
+      "name": "Dominar Aura",
+      "note": "AP e HP +50 para todos os Digimons de Energia-S Verde."
     },
     "1013": {
-      "name": "Ecoly Cycle",
-      "note": "pick a card from trash"
+      "name": "Ciclo Ecológico",
+      "note": "Escolha 1 carta da lixeira para a mão. Uma vez apenas."
     },
     "1014": {
       "name": "Energia Verde",
       "note": "Adiciona 2 pontos em sua Energia-S Verde."
     },
     "1015": {
-      "name": "Beast Energy",
-      "note": "+20 AP & HP to one digimon"
+      "name": "Energia da Besta",
+      "note": "AP e HP +20 para um de seus Digimons."
     },
     "1016": {
-      "name": "Green Power",
-      "note": "get 1 green S-Energy point"
+      "name": "Poder Verde",
+      "note": "Adiciona 2 pontos em sua Energia-S Verde."
     },
     "1017": {
       "name": "Invocar Palmon",
       "note": "Invoca o Palmon para o campo de batalha."
     },
     "1018": {
-      "name": "Volcanic Gatlin",
-      "note": "60 damage to all non-red digimon"
+      "name": "Canhão Vulcânico",
+      "note": "Infringe 60 pontos de dano em Digimons não Vermelho."
     },
     "1019": {
       "name": "Caos Ardente",
@@ -85,32 +85,32 @@
       "note": "Infringe 15 pontos de dano em todos os Digimons."
     },
     "1021": {
-      "name": "Fire Cannon",
-      "note": "30 damage to an oppnt's digimon"
+      "name": "Canhão de Fogo",
+      "note": "Infringe 30 pontos de dano em um Digimon de seu oponente."
     },
     "1022": {
-      "name": "Red Power",
-      "note": "Get 1 red S-Energy point"
+      "name": "Poder Vermelho",
+      "note": "Adiciona 1 ponto em sua Energia-S Vermelha."
     },
     "1023": {
       "name": "Invocar Goburimon",
-      "note": "Invoca Goburimon para o campo de batalha"
+      "note": "Invoca Goburimon para o campo de batalha."
     },
     "1024": {
-      "name": "Darness Gale",
-      "note": "Put all oppnt non-black cards to trash"
+      "name": "Vendaval Trevas",
+      "note": "Joga todas as Cartas não pretas do oponente no lixo."
     },
     "1025": {
-      "name": "Deceive cloak",
-      "note": "pick 1 card from deck"
+      "name": "Manto Sombrio",
+      "note": "Escolha uma carta do baralho, adicione a mesma na mão."
     },
     "1026": {
-      "name": "Chaos Virus",
-      "note": "put 1 non-black card to trash"
+      "name": "Vírus",
+      "note": "Joga uma carta não preta de seu oponente no lixo."
     },
     "1027": {
-      "name": "Vicious Hacking",
-      "note": "pick a card from oppnt hand to trash"
+      "name": "Hacking Vicioso",
+      "note": "Joga uma carta da mão de seu oponente no lixo."
     },
     "1028": {
       "name": "Poder Preto",
@@ -121,40 +121,40 @@
       "note": "Invoca Devimon para o campo de batalha."
     },
     "1030": {
-      "name": "Delete Matrix",
-      "note": "Put all digimon to trash"
+      "name": "Deletar Matriz",
+      "note": "Coloca todos os Digimons na lixeira."
     },
     "1031": {
-      "name": "Fortune Gate",
-      "note": "Exchange AP & HP from oppnt"
+      "name": "Portão da Fortuna",
+      "note": "Troca o total de AP e HP de ambos os jogadores."
     },
     "1032": {
-      "name": "Misery Gate",
-      "note": "Pick 3 cards from oppnt deck to trash"
+      "name": "Portão da Miséria",
+      "note": "Escolha 3 cartas do baralho de seu adversário e descarte."
     },
     "1033": {
       "name": "Desejo Acessível",
       "note": "Descarta as cartas da mão e retira 6 cartas do baralho."
     },
     "1034": {
-      "name": "Anti",
-      "note": "power- Reduce all S-Energy to zero"
+      "name": "Anti-Poder",
+      "note": "Reduz todas as Energia-S para zero."
     },
     "1035": {
-      "name": "Revival Charge",
-      "note": "Return all trashed card to deck"
+      "name": "Taxa Restauração",
+      "note": "Retorna todas as cartas do lixo para o baralho."
     },
     "1036": {
-      "name": "Chrono Balance",
-      "note": "Make both player have 3 cards"
+      "name": "Balança Crono",
+      "note": "Faça as mãos de ambos os jogadores terem 3 cartas."
     },
     "1037": {
-      "name": "Security Hall",
-      "note": "Put 5 card from oppnt deck to trash"
+      "name": "Sala Segurança",
+      "note": "Descarta 5 cartas do baralho do oponente no lixo."
     },
     "1038": {
-      "name": "Absolute Barrier",
-      "note": "Reduce oppnt AP to zero"
+      "name": "Barreira Absoluta",
+      "note": "Reduz o AP de seu oponente para zero."
     },
     "1039": {
       "name": "Misturar",
@@ -169,8 +169,8 @@
       "note": "Saca 2 cartas do baralho para a sua mão."
     },
     "1042": {
-      "name": "Digimon Charge",
-      "note": "Choose a DG from deck to hand"
+      "name": "Carga Digimon",
+      "note": "Escolha um Digimon do baralho para adicionar a sua mão."
     },
     "1043": {
       "name": "Carga Programa",
@@ -181,20 +181,20 @@
       "note": "Saque uma carta do baralho e descarte uma da sua mão."
     },
     "1045": {
-      "name": "Illegal Access",
-      "note": "Put 2 cards from oppnt deck to trash"
+      "name": "Acesso Ilegal",
+      "note": "Joga 2 cartas do baralho do seu oponente no lixo."
     },
     "1046": {
-      "name": "Break Launcher",
-      "note": "30 damage to a brown digimon"
+      "name": "Quebrar Lançador",
+      "note": "Infringe 30 pontos de dano em 1 Digimon Marrom do oponente."
     },
     "1047": {
-      "name": "Cancel Wheel",
-      "note": "Put a drawn PG brown card to trash"
+      "name": "Cancelar",
+      "note": "Coloca a Carta Programa recentemente jogada no lixo."
     },
     "1048": {
-      "name": "Rusty Dust",
-      "note": "Put 1 brown DG from oppnt hand to trash"
+      "name": "Poeira Ferrugem",
+      "note": "Descarta 1 Digimon Marrom da mão do oponente no lixo."
     },
     "1049": {
       "name": "Invocar Hagurumon",
@@ -221,8 +221,8 @@
       "note": "Diminui 2 pontos de Energia-S Preta do oponente."
     },
     "1055": {
-      "name": "Summon Cancel",
-      "note": "return a brown DG to hand"
+      "name": "Cancelar Invocação",
+      "note": "Retorna 1 Digimon Marrom para a mão."
     },
     "1056": {
       "name": "Energia Berserk",
