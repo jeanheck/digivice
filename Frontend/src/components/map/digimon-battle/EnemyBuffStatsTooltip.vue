@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import Tooltip from "@/components/tooltip/Tooltip.vue";
+import TinyTooltip from "@/components/tooltip/TinyTooltip.vue";
 import type { TooltipPlacement } from "@/composables/use-tooltip-position";
 import { useI18n } from "vue-i18n";
 
@@ -17,7 +17,7 @@ const props = withDefaults(
     placement?: TooltipPlacement;
   }>(),
   {
-    maxWidth: 250,
+    maxWidth: 160,
     placement: "below",
   },
 );
@@ -42,13 +42,13 @@ const modifierColorClass = computed(() => {
 </script>
 
 <template>
-  <Tooltip :show="show" :x="x" :y="y" :title="title" :max-width="maxWidth" :placement="placement">
-    <div class="flex flex-col w-full min-w-42.5">
+  <TinyTooltip :show="show" :x="x" :y="y" :title="title" :max-width="maxWidth" :placement="placement">
+    <div class="flex flex-col w-full">
       <div
-        class="text-white text-base font-bold text-center mb-2 tracking-wider shadow-text whitespace-nowrap"
+        class="text-white text-[10px] font-bold text-center mb-1 tracking-wider shadow-text whitespace-nowrap"
       >
         {{ total }}
-        <span class="text-[10px] text-gray-400 tracking-normal ml-1">
+        <span class="text-[8px] text-gray-400 tracking-normal ml-1">
           (<span class="text-white">{{ base }}</span>
           <template v-if="isBuff"> + </template>
           <template v-else> − </template>
@@ -58,13 +58,13 @@ const modifierColorClass = computed(() => {
       </div>
 
       <div class="flex flex-col gap-0.5">
-        <div class="flex justify-between text-xs items-center">
+        <div class="flex justify-between text-[9px] items-center">
           <span class="text-white">{{ t("digimon.baseDigimon") }}</span>
         </div>
-        <div class="flex justify-between text-xs items-center">
+        <div class="flex justify-between text-[9px] items-center">
           <span class="font-bold" :class="modifierColorClass">{{ t("enemy.techniques") }}</span>
         </div>
       </div>
     </div>
-  </Tooltip>
+  </TinyTooltip>
 </template>

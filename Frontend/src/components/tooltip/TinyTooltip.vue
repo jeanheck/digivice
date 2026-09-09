@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, useSlots } from "vue";
 import type { TooltipHorizontalAlign, TooltipPlacement } from "@/composables/use-tooltip-position";
 
 const props = withDefaults(
@@ -19,6 +19,12 @@ const props = withDefaults(
   },
 );
 
+const slots = useSlots();
+
+const hasSlotContent = computed(() => {
+  return (slots.default?.() ?? []).length > 0;
+});
+
 const tooltipTransform = computed(() => {
   const translateX = props.horizontalAlign === "left" ? "-100%" : "0";
   const translateY = props.placement === "above" ? "-100%" : "0";
@@ -37,6 +43,7 @@ const tooltipTransform = computed(() => {
       <div
         v-if="show"
         class="fixed z-9999 pointer-events-none p-1.5 bg-[#001133ee] border-2 border-[#0066cc] rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.8)] backdrop-blur-sm w-max"
+        :class="{ 'flex flex-col gap-0.5': hasSlotContent }"
         :style="{
           top: `${y}px`,
           left: `${x}px`,
@@ -47,9 +54,12 @@ const tooltipTransform = computed(() => {
         <div
           v-if="title"
           class="font-bold text-yellow-300 text-[10px] shadow-black shadow-text uppercase tracking-wider text-center whitespace-nowrap"
+          :class="{ 'border-b border-[#0066cc]/50 pb-0.5 mb-0.5': hasSlotContent }"
         >
           {{ title }}
         </div>
+
+        <slot />
       </div>
     </Transition>
   </Teleport>
