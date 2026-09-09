@@ -912,6 +912,15 @@ Snapshots: `card-battle-{genji,natsumi,nacky,wong,steve,gloria}.bin` vs
 | `7` | steve | `0x0211` |
 | `9` | gloria | `0x0211` |
 | `11` | natsumi | `0x021D` |
+| `31` | divermon1 | Duel Island mid-battle (`0x0700`) |
+| `29` | divermon2 | Duel Island mid-battle (`0x0700`) |
+| `27` | divermon3 | Duel Island mid-battle (`0x0700`) |
+| `25` | divermon4 | Duel Island mid-battle (`0x0700`) |
+| `23` | divermon5 | Duel Island mid-battle (`0x0700`) |
+| `21` | kingDivermon | Duel Island mid-battle (`0x0700`) |
+
+Duel Island snaps (2026-09-09): `divermon{1..5}.bin`, `kingDivermon.bin` — all MapId
+`0x0700`; Int32 at `0x4B404` as above. Odd ids descending 31→21.
 
 **Secondary field `0x4B420` (Int32):** `0` (Genji only) or `35` (all other card battles
 in this series). Not needed to distinguish Yellow Cruiser NPCs.

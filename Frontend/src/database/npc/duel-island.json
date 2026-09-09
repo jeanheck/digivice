@@ -1,7 +1,7 @@
 {
   "divermon1": {
     "locationId": "0228",
-    "opponentId": 999,
+    "opponentId": 31,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -23,7 +23,7 @@
   },
   "divermon2": {
     "locationId": "0228",
-    "opponentId": 999,
+    "opponentId": 29,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -45,7 +45,7 @@
   },
   "divermon3": {
     "locationId": "0228",
-    "opponentId": 999,
+    "opponentId": 27,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -67,7 +67,7 @@
   },
   "divermon4": {
     "locationId": "0228",
-    "opponentId": 999,
+    "opponentId": 25,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -89,7 +89,7 @@
   },
   "divermon5": {
     "locationId": "0228",
-    "opponentId": 999,
+    "opponentId": 23,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -111,7 +111,7 @@
   },
   "kingDivermon": {
     "locationId": "0228",
-    "opponentId": 999,
+    "opponentId": 21,
     "cardBattles": {
       "first": {
         "charismaRequired": {

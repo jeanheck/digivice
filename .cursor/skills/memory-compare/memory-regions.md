@@ -17,7 +17,7 @@ each investigation. Append new entries; do not remove without strong evidence.
 | 0x00048DA0 | Player bits (money etc.) | PlayerAddresses.json — **volatile** |
 | 0x0004B3F8 | MapId | PlayerAddresses.json — changes on map transition; **`0x0700`** = in card battle screen |
 | 0x0004B400 | PreviousMapId | PlayerAddresses.json — map just left on each transition; during card battle holds pre-battle world MapId (e.g. `0x0200` Genji, `0x021D` Natsumi) |
-| 0x0004B404 | Card battle opponent id (Int32) | **integrated** — [`CardBattleAddresses.json`](Backend/Memory/Definitions/CardBattleAddresses.json) `OpponentId`; Genji `1`, Nacky `3`, Wong `5`, Steve `7`, Gloria `9`, Natsumi `11`; `0` outside card battle |
+| 0x0004B404 | Card battle opponent id (Int32) | **integrated** — [`CardBattleAddresses.json`](Backend/Memory/Definitions/CardBattleAddresses.json) `OpponentId`; Genji `1`, Nacky `3`, Wong `5`, Steve `7`, Gloria `9`, Natsumi `11`; Duel Island: divermon1–5 `31/29/27/25/23`, kingDivermon `21`; `0` outside card battle |
 | 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
 | 0x0004B420 | Card battle context id (Int32) | card-battle-natsumi — `0x23` (35) in card battle vs `0x03` in digimon battle; Genji card battle `0` |
 | 0x00048D78 | SeabedRoute | PlayerAddresses.json — seabed corridor / dock pair; **Mobius: constant `0x01`** (not cell id) |
@@ -31,7 +31,7 @@ See also **Map / location** for seabed routing fields (including investigation-o
 |---------|-------|--------|
 | 0x0004B3F8 | Current MapId | PlayerAddresses.json — **`0x0700`** = card battle screen |
 | 0x0004B400 | PreviousMapId (rolling) | PlayerAddresses.json — map just left on each transition; during card battle = world map before `0x0700` |
-| 0x0004B404 | Card battle opponent id (Int32) | **integrated** — [`CardBattleAddresses.json`](Backend/Memory/Definitions/CardBattleAddresses.json) `OpponentId`; Genji `1`, Nacky `3`, Wong `5`, Steve `7`, Gloria `9`, Natsumi `11`; `0` outside card battle |
+| 0x0004B404 | Card battle opponent id (Int32) | **integrated** — [`CardBattleAddresses.json`](Backend/Memory/Definitions/CardBattleAddresses.json) `OpponentId`; Genji `1`, Nacky `3`, Wong `5`, Steve `7`, Gloria `9`, Natsumi `11`; Duel Island: divermon1–5 `31/29/27/25/23`, kingDivermon `21`; `0` outside card battle |
 | 0x0004B410 | MapId mirror | seabed-routing investigation — tracks current MapId |
 | 0x0004B420 | Card battle context id (Int32) | card-battle snapshots — Natsumi `0x23` in card battle; role TBD |
 | 0x00048D68 | PreviousMapId mirror (player block) | seabed-routing investigation — mirrors `0x4B400` |
