@@ -130,19 +130,39 @@
     ]
   },
   "0204": {
-    "imageName": "Main Lobby"
+    "imageName": "Main Lobby",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "0206": {
-    "imageName": "Digimon Lab"
+    "imageName": "Digimon Lab",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "0207": {
-    "imageName": "Login Room"
+    "imageName": "Login Room",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "0208": {
-    "imageName": "Arena Front Desk"
+    "imageName": "Arena Front Desk",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "0210": {
-    "imageName": "Cargo Tower"
+    "imageName": "Cargo Tower",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "0211": {
     "imageName": "Yellow Cruiser",
@@ -226,10 +246,18 @@
     ]
   },
   "0212": {
-    "imageName": "Tunel Aquático"
+    "imageName": "Tunel Aquático",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "0213": {
-    "imageName": "El Dorado"
+    "imageName": "El Dorado",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "0214": {
     "imageName": "Admin Center 1F",
@@ -255,7 +283,11 @@
     ]
   },
   "0218": {
-    "imageName": "Master Room"
+    "imageName": "Master Room",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "021C": {
     "imageName": "Control Room",
@@ -344,10 +376,18 @@
     ]
   },
   "020D": {
-    "imageName": "Smiths Shop"
+    "imageName": "Smiths Shop",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "020E": {
-    "imageName": "Junk Shop"
+    "imageName": "Junk Shop",
+    "worldLocation": {
+      "x": 50.5,
+      "y": 43
+    }
   },
   "020F": {
     "imageName": "Lamb Chop",
@@ -1024,6 +1064,10 @@
   },
   "0232": {
     "imageName": "South Station",
+    "worldLocation": {
+      "x": 79,
+      "y": 65
+    },
     "tamers": [
       {
         "id": "andy",
@@ -1122,6 +1166,10 @@
   },
   "0237": {
     "imageName": "Tranquil Swamp",
+    "worldLocation": {
+      "x": 74,
+      "y": 77.5
+    },
     "enemies": {
       "walking": [
         "90",
@@ -1249,6 +1297,10 @@
   },
   "023D": {
     "imageName": "South Cape",
+    "worldLocation": {
+      "x": 43.5,
+      "y": 75
+    },
     "enemies": {
       "walking": [
         "96"
@@ -1354,6 +1406,10 @@
   },
   "0242": {
     "imageName": "Jungle Shrine",
+    "worldLocation": {
+      "x": 50,
+      "y": 74
+    },
     "enemies": {
       "walking": [
         "202"
@@ -1431,6 +1487,10 @@
   },
   "0249": {
     "imageName": "Pelche Oasis",
+    "worldLocation": {
+      "x": 18,
+      "y": 59
+    },
     "enemies": {
       "walking": [
         "185",
@@ -1462,6 +1522,10 @@
   },
   "024B": {
     "imageName": "North Badland E",
+    "worldLocation": {
+      "x": 34.5,
+      "y": 57
+    },
     "enemies": {
       "walking": [
         "105",
@@ -1476,6 +1540,10 @@
   },
   "024C": {
     "imageName": "Bullet Valley",
+    "worldLocation": {
+      "x": 17.5,
+      "y": 45
+    },
     "enemies": {
       "walking": [
         "104",
@@ -1689,6 +1757,10 @@
   },
   "025B": {
     "imageName": "Mirage Hall",
+    "worldLocation": {
+      "x": 12,
+      "y": 84.5
+    },
     "tamers": [
       {
         "id": "nakano",
