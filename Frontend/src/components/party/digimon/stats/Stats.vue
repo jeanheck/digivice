@@ -5,6 +5,7 @@ import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import { Constant } from "@/constants/constant.ts";
 import Stat from "./Stat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
+import Tooltip from "@/components/tooltip/Tooltip.vue";
 import StatsTooltip from "./StatsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { StatsPresenter } from "@/presenters/party/digimon/stats.presenter.ts";
@@ -20,10 +21,11 @@ const tooltipPlacement = "below" as const;
 const tooltipPosition = useTooltipPosition();
 const { x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 
-type TooltipVariant = "none" | "default" | "math";
+type TooltipVariant = "none" | "default" | "title" | "math";
 const activeVariant = ref<TooltipVariant>("none");
 
 const defaultTooltipContent = ref({ title: "", text: "" });
+const titleTooltipContent = ref("");
 const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0, battleDelta: 0 });
 
 const location = computed(() => {
@@ -49,8 +51,8 @@ const showStatIconTooltip = (event: MouseEvent, title: string, propertyKey: Cons
 };
 
 const showTitleTooltip = (event: MouseEvent, title: string) => {
-  defaultTooltipContent.value = { title, text: "" };
-  activeVariant.value = "default";
+  titleTooltipContent.value = title;
+  activeVariant.value = "title";
   showAt(event, { placement: tooltipPlacement });
 };
 
@@ -124,8 +126,15 @@ const moveTooltip = (event: MouseEvent) => {
       :y="tooltipY"
       :title="defaultTooltipContent.title"
       :text="defaultTooltipContent.text"
-      :min-width="defaultTooltipContent.text ? undefined : 320"
-      :max-width="defaultTooltipContent.text ? undefined : 360"
+      placement="below"
+    />
+
+    <Tooltip
+      :show="activeVariant === 'title'"
+      :x="tooltipX"
+      :y="tooltipY"
+      :max-width="400"
+      :title="titleTooltipContent"
       placement="below"
     />
 
