@@ -1,39 +1,109 @@
 {
   "boosters": {
-    "501": { "name": "1B Booster" },
-    "502": { "name": "2B Booster" },
-    "503": { "name": "3B Booster" },
-    "504": { "name": "4B Booster" },
-    "505": { "name": "5B Booster" },
-    "506": { "name": "6B Booster" },
-    "507": { "name": "7B Booster" },
-    "508": { "name": "8B Booster" },
-    "509": { "name": "9B Booster" },
-    "510": { "name": "10B Booster" },
-    "511": { "name": "11B Booster" },
-    "512": { "name": "12B Booster" },
-    "513": { "name": "13B Booster" },
-    "514": { "name": "14B Booster" },
-    "515": { "name": "15B Booster" },
-    "516": { "name": "R-01 Booster" },
-    "517": { "name": "R-02 Booster" },
-    "518": { "name": "R-03 Booster" },
-    "519": { "name": "R-04 Booster" },
-    "520": { "name": "R-05 Booster" },
-    "521": { "name": "1A Booster" },
-    "522": { "name": "2A Booster" },
-    "523": { "name": "3A Booster" },
-    "524": { "name": "4A Booster" },
-    "525": { "name": "5A Booster" },
-    "526": { "name": "6A Booster" },
-    "527": { "name": "7A Booster" },
-    "528": { "name": "8A Booster" },
-    "529": { "name": "9A Booster" },
-    "530": { "name": "10A Booster" },
-    "531": { "name": "11A Booster" },
-    "532": { "name": "12A Booster" },
-    "533": { "name": "13A Booster" },
-    "534": { "name": "14A Booster" },
-    "535": { "name": "15A Booster" }
+    "501": {
+      "name": "1B Booster"
+    },
+    "502": {
+      "name": "2B Booster"
+    },
+    "503": {
+      "name": "3B Booster"
+    },
+    "504": {
+      "name": "4B Booster"
+    },
+    "505": {
+      "name": "5B Booster"
+    },
+    "506": {
+      "name": "6B Booster"
+    },
+    "507": {
+      "name": "7B Booster"
+    },
+    "508": {
+      "name": "8B Booster"
+    },
+    "509": {
+      "name": "9B Booster"
+    },
+    "510": {
+      "name": "10B Booster"
+    },
+    "511": {
+      "name": "11B Booster"
+    },
+    "512": {
+      "name": "12B Booster"
+    },
+    "513": {
+      "name": "13B Booster"
+    },
+    "514": {
+      "name": "14B Booster"
+    },
+    "515": {
+      "name": "15B Booster"
+    },
+    "516": {
+      "name": "R-01 Booster"
+    },
+    "517": {
+      "name": "R-02 Booster"
+    },
+    "518": {
+      "name": "R-03 Booster"
+    },
+    "519": {
+      "name": "R-04 Booster"
+    },
+    "520": {
+      "name": "R-05 Booster"
+    },
+    "521": {
+      "name": "1A Booster"
+    },
+    "522": {
+      "name": "2A Booster"
+    },
+    "523": {
+      "name": "3A Booster"
+    },
+    "524": {
+      "name": "4A Booster"
+    },
+    "525": {
+      "name": "5A Booster"
+    },
+    "526": {
+      "name": "6A Booster"
+    },
+    "527": {
+      "name": "7A Booster"
+    },
+    "528": {
+      "name": "8A Booster"
+    },
+    "529": {
+      "name": "9A Booster"
+    },
+    "530": {
+      "name": "10A Booster"
+    },
+    "531": {
+      "name": "11A Booster"
+    },
+    "532": {
+      "name": "12A Booster"
+    },
+    "533": {
+      "name": "13A Booster"
+    },
+    "534": {
+      "name": "14A Booster"
+    },
+    "535": {
+      "name": "15A Booster"
+    }
   }
 }
