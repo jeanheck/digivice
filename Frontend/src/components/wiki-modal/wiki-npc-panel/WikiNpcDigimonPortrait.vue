@@ -20,7 +20,7 @@ defineProps<{
 
     <div class="flex-1 min-h-0 max-h-[70%] flex items-center justify-center">
       <WikiEnemyImage
-        class="!h-auto w-full max-h-full aspect-square !border-0"
+        class="h-auto! w-full max-h-full aspect-square border-0!"
         :enemy-image-url="imageUrl"
         :enemy-name="enemy.name"
       />
