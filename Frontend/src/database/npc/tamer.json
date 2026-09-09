@@ -193,7 +193,7 @@
   },
   "mitch": {
     "locationId": "021E",
-    "opponentId": 999,
+    "opponentId": 14,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -239,7 +239,7 @@
   },
   "catherine": {
     "locationId": "0221",
-    "opponentId": 999,
+    "opponentId": 16,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -285,7 +285,7 @@
   },
   "lucia": {
     "locationId": "0222",
-    "opponentId": 999,
+    "opponentId": 18,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -327,7 +327,7 @@
   },
   "robert": {
     "locationId": "0222",
-    "opponentId": 999,
+    "opponentId": 20,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -373,7 +373,7 @@
   },
   "akiba": {
     "locationId": "0229",
-    "opponentId": 999,
+    "opponentId": 34,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -411,7 +411,7 @@
   },
   "chris": {
     "locationId": "022E",
-    "opponentId": 999,
+    "opponentId": 40,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -457,7 +457,7 @@
   },
   "bob": {
     "locationId": "022A",
-    "opponentId": 999,
+    "opponentId": 36,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -503,7 +503,7 @@
   },
   "tomomi": {
     "locationId": "022C",
-    "opponentId": 999,
+    "opponentId": 38,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -549,7 +549,7 @@
   },
   "andy": {
     "locationId": "0232",
-    "opponentId": 999,
+    "opponentId": 42,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -591,7 +591,7 @@
   },
   "george": {
     "locationId": "0233",
-    "opponentId": 999,
+    "opponentId": 44,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -675,7 +675,7 @@
   },
   "alice": {
     "locationId": "023E",
-    "opponentId": 999,
+    "opponentId": 52,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -767,7 +767,7 @@
   },
   "jessica": {
     "locationId": "0237",
-    "opponentId": 999,
+    "opponentId": 48,
     "cardBattles": {
       "first": {
         "charismaRequired": {
@@ -813,7 +813,7 @@
   },
   "nakano": {
     "locationId": "025B",
-    "opponentId": 999,
+    "opponentId": 54,
     "cardBattles": {
       "first": {
         "charismaRequired": {

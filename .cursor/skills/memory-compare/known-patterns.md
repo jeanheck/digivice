@@ -918,9 +918,25 @@ Snapshots: `card-battle-{genji,natsumi,nacky,wong,steve,gloria}.bin` vs
 | `25` | divermon4 | Duel Island mid-battle (`0x0700`) |
 | `23` | divermon5 | Duel Island mid-battle (`0x0700`) |
 | `21` | kingDivermon | Duel Island mid-battle (`0x0700`) |
+| `14` | mitch | mid-battle (`0x0700`) |
+| `16` | catherine | mid-battle (`0x0700`) |
+| `18` | lucia | mid-battle (`0x0700`) |
+| `20` | robert | mid-battle (`0x0700`) |
+| `34` | akiba | mid-battle (`0x0700`) |
+| `36` | bob | mid-battle (`0x0700`) |
+| `38` | tomomi | mid-battle (`0x0700`) |
+| `40` | chris | mid-battle (`0x0700`) |
+| `42` | andy | mid-battle (`0x0700`) |
+| `44` | george | mid-battle (`0x0700`) |
+| `48` | jessica | mid-battle (`0x0700`) |
+| `52` | alice | mid-battle (`0x0700`) |
+| `54` | nakano | mid-battle (`0x0700`) |
 
 Duel Island snaps (2026-09-09): `divermon{1..5}.bin`, `kingDivermon.bin` — all MapId
 `0x0700`; Int32 at `0x4B404` as above. Odd ids descending 31→21.
+
+Tamer snaps (2026-09-09): `{name}.bin` mid-card-battle — even ids above. Still missing
+`meiLin` / `gordon` mid-battle snaps for `opponentId`.
 
 **Secondary field `0x4B420` (Int32):** `0` (Genji only) or `35` (all other card battles
 in this series). Not needed to distinguish Yellow Cruiser NPCs.
