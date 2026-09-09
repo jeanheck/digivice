@@ -9,8 +9,12 @@ export class EquipmentRepository {
     return Object.keys(this.equipmentTable);
   }
 
+  public static getById(equipmentId: number | string): EquipmentRaw | undefined {
+    return this.equipmentTable[String(equipmentId)];
+  }
+
   public static getEquipmentById(equipmentId: number): EquipmentRaw {
-    return this.equipmentTable[equipmentId]!;
+    return this.equipmentTable[String(equipmentId)]!;
   }
 
   public static getEquipmentsByIds(equipmentIds: number[]): EquipmentRaw[] {
