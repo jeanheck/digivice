@@ -42,6 +42,18 @@ const locationsViewModel = computed(() => {
   );
 });
 
+const walkingLines = computed(() => {
+  return locationsViewModel.value.encounterLines.filter((line) => {
+    return line.source === "walking";
+  });
+});
+
+const interactionLines = computed(() => {
+  return locationsViewModel.value.encounterLines.filter((line) => {
+    return line.source === "fishing" || line.source === "kickingTree";
+  });
+});
+
 const asukaImageUrl = computed(() => {
   return ImageCatalog.getLocationImageUrl("Asuka");
 });
@@ -145,21 +157,22 @@ const handleOpenCardShop = (cardShopId: string): void => {
 </script>
 
 <template>
-  <div class="p-4 flex flex-col h-full min-h-0 overflow-hidden">
+  <div class="px-4 py-2 flex flex-col h-full min-h-0 overflow-hidden">
     <div class="flex-1 min-h-0 flex gap-4 items-stretch justify-center overflow-hidden">
       <div
-        class="flex flex-col min-h-0 h-full self-stretch shrink-0"
+        class="flex flex-col gap-2 min-h-0 h-full self-stretch shrink-0"
         :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
       >
         <WikiLocationEncounters
-          class="flex-[0_0_25%] min-h-0 overflow-y-auto custom-scroll"
-          :lines="locationsViewModel.encounterLines"
+          class="flex-[0_0_10%] min-h-0 overflow-y-auto custom-scroll"
+          :lines="walkingLines"
+          empty-message-key="enemy.noEnemiesOnMap"
           @open-enemy="handleOpenEnemy"
         />
 
         <div
           ref="worldMapSlotElement"
-          class="flex-[0_0_75%] min-h-0 flex flex-col justify-end items-center"
+          class="flex-[0_0_75%] min-h-0 flex flex-col justify-center items-center"
         >
           <MapFrame
             v-if="locationsViewModel.asukaSlides.length > 0"
@@ -168,6 +181,12 @@ const handleOpenCardShop = (cardShopId: string): void => {
             :max-height="null"
           />
         </div>
+
+        <WikiLocationEncounters
+          class="flex-[0_0_10%] min-h-0 overflow-y-auto custom-scroll"
+          :lines="interactionLines"
+          @open-enemy="handleOpenEnemy"
+        />
       </div>
 
       <div

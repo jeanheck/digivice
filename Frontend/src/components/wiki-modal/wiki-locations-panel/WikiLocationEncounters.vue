@@ -4,8 +4,9 @@ import { EnemySourceConstant } from "@/constants/enemy-source.constant";
 import { IconConstant } from "@/constants/icon.constant";
 import type { WikiLocationEncounterLineViewModel } from "@/viewmodels/wiki-modal/wiki-location-encounter-line.viewmodel";
 
-defineProps<{
+const props = defineProps<{
   lines: WikiLocationEncounterLineViewModel[];
+  emptyMessageKey?: string;
 }>();
 
 const emit = defineEmits<{
@@ -33,27 +34,35 @@ const handleOpenEnemy = (enemyId: string): void => {
 
 <template>
   <div class="h-full w-full flex flex-col justify-center gap-1.5">
-    <div
-      v-for="line in lines"
-      :key="line.source"
-      class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
-    >
-      <button
-        v-for="enemy in line.enemies"
-        :key="`${line.source}-${enemy.id}`"
-        type="button"
-        class="font-bold text-[10px] 2xl:text-[13px] tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
-        :class="getEnemyButtonClass()"
-        @click="handleOpenEnemy(enemy.id)"
+    <template v-if="lines.length > 0">
+      <div
+        v-for="line in lines"
+        :key="line.source"
+        class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1"
       >
-        <span>{{ enemy.name }}</span>
-        <span
-          class="ml-0.5 text-[12px] 2xl:text-[16px]"
-          :aria-label="getSourceAriaLabel(line.source)"
+        <button
+          v-for="enemy in line.enemies"
+          :key="`${line.source}-${enemy.id}`"
+          type="button"
+          class="font-bold text-[10px] 2xl:text-[13px] tracking-wide transition-all flex items-center justify-center focus:outline-none rounded px-1 cursor-pointer"
+          :class="getEnemyButtonClass()"
+          @click="handleOpenEnemy(enemy.id)"
         >
-          <span class="inline-flex leading-none text-[1.2rem] -translate-y-0.5">{{ getSourceIcon(line.source) }}</span>
-        </span>
-      </button>
-    </div>
+          <span>{{ enemy.name }}</span>
+          <span
+            class="ml-0.5 text-[12px] 2xl:text-[16px]"
+            :aria-label="getSourceAriaLabel(line.source)"
+          >
+            <span class="inline-flex leading-none text-[1.2rem] -translate-y-0.5">{{ getSourceIcon(line.source) }}</span>
+          </span>
+        </button>
+      </div>
+    </template>
+    <span
+      v-else-if="props.emptyMessageKey"
+      class="text-center text-[12px] text-gray-500 font-bold tracking-wide"
+    >
+      {{ t(props.emptyMessageKey) }}
+    </span>
   </div>
 </template>

@@ -70,6 +70,7 @@
       "kickingTree": "Árvore"
     },
     "locationStep": "A partir do step {step} da main quest",
+    "noEnemiesOnMap": "Zona segura",
     "techniques": "Técnicas"
   }
 }
