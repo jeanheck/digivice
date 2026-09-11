@@ -23,7 +23,7 @@ export class WikiDropsPanelPresenter {
       sources: this.getDroppedByRaw(dropId, dropType).map((droppedBy) => {
         return WikiDroppedBySourceConverter.convert(this.toDropSource(droppedBy));
       }),
-      sourcesSectionLabelKey: isBooster ? "enemy.obtainedFrom" : "enemy.droppedBy",
+      sourcesSectionLabelKey: "enemy.droppedBy",
       sourcesEmptyLabelKey: isBooster ? "enemy.dropSourcesNone" : "enemy.droppedByNone",
     };
   }
