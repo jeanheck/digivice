@@ -13,7 +13,7 @@
       },
       "second": {
         "charismaRequired": {
-          "min": 60
+          "min": 378
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "bugBugFolder2",
@@ -70,7 +70,7 @@
       },
       "second": {
         "charismaRequired": {
-          "min": 60
+          "min": 378
         },
         "trophyRequired": "asukaTrophy",
         "deckId": "flyingFolder2",
@@ -206,6 +206,7 @@
         "charismaRequired": {
           "min": 2277
         },
+        "trophyRequired": "asukaTrophy",
         "deckId": "motherNatureFolder2",
         "boosterId": 524
       }
