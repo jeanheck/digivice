@@ -35,8 +35,8 @@ export class NpcBattleOpponentHelper {
     return undefined;
   }
 
-  public static getById(opponentId: string): NpcBattleOpponentRaw | undefined {
-    const opponent = this.resolveById(opponentId);
+  public static getById(id: string): NpcBattleOpponentRaw | undefined {
+    const opponent = this.resolveById(id);
     if (opponent === undefined || opponent.source === "npc") {
       return undefined;
     }
@@ -44,24 +44,24 @@ export class NpcBattleOpponentHelper {
     return opponent.raw;
   }
 
-  public static getNameKey(opponentId: string): string | null {
-    if (TamerRepository.getTamerById(opponentId) !== undefined) {
-      return `tamers.${opponentId}.name`;
+  public static getNameKey(id: string): string | null {
+    if (TamerRepository.getTamerById(id) !== undefined) {
+      return `tamers.${id}.name`;
     }
 
-    if (DuelIslandRepository.getDuelIslandById(opponentId) !== undefined) {
-      return `duelIsland.${opponentId}.name`;
+    if (DuelIslandRepository.getDuelIslandById(id) !== undefined) {
+      return `duelIsland.${id}.name`;
     }
 
-    if (NpcRepository.getNpcById(opponentId) !== undefined) {
-      return `npcs.${opponentId}.name`;
+    if (NpcRepository.getNpcById(id) !== undefined) {
+      return `npcs.${id}.name`;
     }
 
     return null;
   }
 
-  public static getSearchKind(opponentId: string): NpcBattleOpponentSearchKind | null {
-    const opponent = this.resolveById(opponentId);
+  public static getSearchKind(id: string): NpcBattleOpponentSearchKind | null {
+    const opponent = this.resolveById(id);
     if (opponent === undefined) {
       return null;
     }
@@ -77,8 +77,8 @@ export class NpcBattleOpponentHelper {
     return opponent.raw.type;
   }
 
-  public static getImageUrl(opponentId: string): string | null {
-    const opponent = this.resolveById(opponentId);
+  public static getImageUrl(id: string): string | null {
+    const opponent = this.resolveById(id);
     if (opponent === undefined) {
       return null;
     }
