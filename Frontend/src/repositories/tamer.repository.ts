@@ -17,14 +17,16 @@ export class TamerRepository {
     return Object.keys(this.tamerTable);
   }
 
-  public static getTamerIdByOpponentId(opponentId: number): string | null {
-    if (opponentId === 0) {
+  public static getTamerIdByCardBattleId(cardBattleId: number): string | null {
+    if (cardBattleId === 0) {
       return null;
     }
 
     for (const [tamerId, tamerRaw] of Object.entries(this.tamerTable)) {
-      if (tamerRaw.opponentId === opponentId) {
-        return tamerId;
+      for (const cardBattle of Object.values(tamerRaw.cardBattles ?? {})) {
+        if (cardBattle.id === cardBattleId) {
+          return tamerId;
+        }
       }
     }
 

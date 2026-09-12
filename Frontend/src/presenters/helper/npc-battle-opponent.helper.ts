@@ -16,18 +16,18 @@ export type NpcBattleOpponentRaw = TamerRaw | DuelIslandRaw;
 export type NpcBattleOpponentSearchKind = "tamer" | "leader" | "npc";
 
 export class NpcBattleOpponentHelper {
-  public static resolveById(opponentId: string): NpcBattleOpponent | undefined {
-    const tamerRaw = TamerRepository.getTamerById(opponentId);
+  public static resolveById(id: string): NpcBattleOpponent | undefined {
+    const tamerRaw = TamerRepository.getTamerById(id);
     if (tamerRaw !== undefined) {
       return { source: "tamer", raw: tamerRaw };
     }
 
-    const duelIslandRaw = DuelIslandRepository.getDuelIslandById(opponentId);
+    const duelIslandRaw = DuelIslandRepository.getDuelIslandById(id);
     if (duelIslandRaw !== undefined) {
       return { source: "duelIsland", raw: duelIslandRaw };
     }
 
-    const npcRaw = NpcRepository.getNpcById(opponentId);
+    const npcRaw = NpcRepository.getNpcById(id);
     if (npcRaw !== undefined) {
       return { source: "npc", raw: npcRaw };
     }
@@ -94,12 +94,12 @@ export class NpcBattleOpponentHelper {
     return ImageCatalog.getTamerImageUrl(opponent.raw.imageName ?? null);
   }
 
-  public static getIdByOpponentId(opponentId: number): string | null {
-    const tamerId = TamerRepository.getTamerIdByOpponentId(opponentId);
+  public static getNpcIdByCardBattleId(cardBattleId: number): string | null {
+    const tamerId = TamerRepository.getTamerIdByCardBattleId(cardBattleId);
     if (tamerId !== null) {
       return tamerId;
     }
 
-    return DuelIslandRepository.getDuelIslandIdByOpponentId(opponentId);
+    return DuelIslandRepository.getDuelIslandIdByCardBattleId(cardBattleId);
   }
 }

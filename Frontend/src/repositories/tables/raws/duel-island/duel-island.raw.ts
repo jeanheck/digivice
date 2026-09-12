@@ -4,7 +4,6 @@ import type { TamerDigimonBattleRaw } from "@/repositories/tables/raws/tamer/tam
 export interface DuelIslandRaw {
   imageName?: string | null;
   locationId: string;
-  opponentId?: number;
   cardBattles?: Record<string, TamerCardBattleRaw>;
   digimonBattles?: Record<string, TamerDigimonBattleRaw>;
 }

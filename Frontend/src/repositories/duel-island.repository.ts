@@ -17,14 +17,16 @@ export class DuelIslandRepository {
     return Object.keys(this.duelIslandTable);
   }
 
-  public static getDuelIslandIdByOpponentId(opponentId: number): string | null {
-    if (opponentId === 0) {
+  public static getDuelIslandIdByCardBattleId(cardBattleId: number): string | null {
+    if (cardBattleId === 0) {
       return null;
     }
 
     for (const [duelIslandId, duelIslandRaw] of Object.entries(this.duelIslandTable)) {
-      if (duelIslandRaw.opponentId === opponentId) {
-        return duelIslandId;
+      for (const cardBattle of Object.values(duelIslandRaw.cardBattles ?? {})) {
+        if (cardBattle.id === cardBattleId) {
+          return duelIslandId;
+        }
       }
     }
 

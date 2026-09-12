@@ -6,8 +6,8 @@ import type { CardBattleViewModel } from "@/viewmodels/map/card-battle.viewmodel
 const CARD_BATTLE_LOCATION_ID = "0700";
 
 export class CardBattlePresenter {
-  public static getViewModel(opponentId: number): CardBattleViewModel {
-    const npcId = NpcBattleOpponentHelper.getIdByOpponentId(opponentId);
+  public static getViewModel(cardBattleId: number): CardBattleViewModel {
+    const npcId = NpcBattleOpponentHelper.getNpcIdByCardBattleId(cardBattleId);
     const backgroundImageUrl = ImageCatalog.getLocationImageUrl(
       LocationService.getLocationImageNameByLocationId(CARD_BATTLE_LOCATION_ID),
     );
