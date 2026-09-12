@@ -1,9 +1,9 @@
 {
   "divermon1": {
     "locationId": "0228",
-    "opponentId": 31,
     "cardBattles": {
       "first": {
+        "id": 31,
         "charismaRequired": {
           "min": 1
         },
@@ -11,6 +11,7 @@
         "boosterId": 525
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 1
         },
@@ -23,9 +24,9 @@
   },
   "divermon2": {
     "locationId": "0228",
-    "opponentId": 29,
     "cardBattles": {
       "first": {
+        "id": 29,
         "charismaRequired": {
           "min": 1
         },
@@ -33,6 +34,7 @@
         "boosterId": 526
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 1
         },
@@ -45,9 +47,9 @@
   },
   "divermon3": {
     "locationId": "0228",
-    "opponentId": 27,
     "cardBattles": {
       "first": {
+        "id": 27,
         "charismaRequired": {
           "min": 1
         },
@@ -55,6 +57,7 @@
         "boosterId": 527
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 1
         },
@@ -67,9 +70,9 @@
   },
   "divermon4": {
     "locationId": "0228",
-    "opponentId": 25,
     "cardBattles": {
       "first": {
+        "id": 25,
         "charismaRequired": {
           "min": 1
         },
@@ -77,6 +80,7 @@
         "boosterId": 528
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 1
         },
@@ -89,9 +93,9 @@
   },
   "divermon5": {
     "locationId": "0228",
-    "opponentId": 23,
     "cardBattles": {
       "first": {
+        "id": 23,
         "charismaRequired": {
           "min": 1
         },
@@ -99,6 +103,7 @@
         "boosterId": 516
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 1
         },
@@ -111,9 +116,9 @@
   },
   "kingDivermon": {
     "locationId": "0228",
-    "opponentId": 21,
     "cardBattles": {
       "first": {
+        "id": 21,
         "charismaRequired": {
           "min": 1
         },
@@ -121,6 +126,7 @@
         "boosterId": 517
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 1
         },

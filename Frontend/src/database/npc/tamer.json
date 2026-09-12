@@ -1,9 +1,9 @@
 {
   "genji": {
     "locationId": "0200",
-    "opponentId": 1,
     "cardBattles": {
       "first": {
+        "id": 1,
         "charismaRequired": {
           "min": 60,
           "max": 209
@@ -12,6 +12,7 @@
         "boosterId": 521
       },
       "second": {
+        "id": 2,
         "charismaRequired": {
           "min": 378
         },
@@ -58,9 +59,9 @@
   },
   "natsumi": {
     "locationId": "021D",
-    "opponentId": 11,
     "cardBattles": {
       "first": {
+        "id": 11,
         "charismaRequired": {
           "min": 60,
           "max": 209
@@ -69,6 +70,7 @@
         "boosterId": 522
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 378
         },
@@ -105,9 +107,9 @@
   },
   "nacky": {
     "locationId": "0211",
-    "opponentId": 3,
     "cardBattles": {
       "first": {
+        "id": 3,
         "charismaRequired": {
           "min": 60,
           "max": 377
@@ -116,6 +118,7 @@
         "boosterId": 521
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 378
         },
@@ -127,9 +130,9 @@
   },
   "wong": {
     "locationId": "0211",
-    "opponentId": 5,
     "cardBattles": {
       "first": {
+        "id": 5,
         "charismaRequired": {
           "min": 60,
           "max": 377
@@ -138,6 +141,7 @@
         "boosterId": 522
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 378
         },
@@ -149,9 +153,9 @@
   },
   "steve": {
     "locationId": "0211",
-    "opponentId": 7,
     "cardBattles": {
       "first": {
+        "id": 7,
         "charismaRequired": {
           "min": 60,
           "max": 377
@@ -160,6 +164,7 @@
         "boosterId": 521
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 378
         },
@@ -171,9 +176,9 @@
   },
   "gloria": {
     "locationId": "0211",
-    "opponentId": 9,
     "cardBattles": {
       "first": {
+        "id": 9,
         "charismaRequired": {
           "min": 60,
           "max": 377
@@ -182,6 +187,7 @@
         "boosterId": 522
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 378
         },
@@ -193,9 +199,9 @@
   },
   "mitch": {
     "locationId": "021E",
-    "opponentId": 14,
     "cardBattles": {
       "first": {
+        "id": 14,
         "charismaRequired": {
           "min": 1218
         },
@@ -203,6 +209,7 @@
         "boosterId": 524
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 2277
         },
@@ -240,9 +247,9 @@
   },
   "catherine": {
     "locationId": "0221",
-    "opponentId": 16,
     "cardBattles": {
       "first": {
+        "id": 16,
         "charismaRequired": {
           "min": 150,
           "max": 284
@@ -251,6 +258,7 @@
         "boosterId": 523
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 492
         },
@@ -286,9 +294,9 @@
   },
   "lucia": {
     "locationId": "0222",
-    "opponentId": 18,
     "cardBattles": {
       "first": {
+        "id": 18,
         "charismaRequired": {
           "min": 150,
           "max": 284
@@ -297,6 +305,7 @@
         "boosterId": 523
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 492
         },
@@ -328,9 +337,9 @@
   },
   "robert": {
     "locationId": "0222",
-    "opponentId": 20,
     "cardBattles": {
       "first": {
+        "id": 20,
         "charismaRequired": {
           "min": 150,
           "max": 284
@@ -339,6 +348,7 @@
         "boosterId": 524
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 492
         },
@@ -374,9 +384,9 @@
   },
   "akiba": {
     "locationId": "0229",
-    "opponentId": 34,
     "cardBattles": {
       "first": {
+        "id": 34,
         "charismaRequired": {
           "min": 150,
           "max": 284
@@ -385,6 +395,7 @@
         "boosterId": 523
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 492
         },
@@ -412,9 +423,9 @@
   },
   "chris": {
     "locationId": "022E",
-    "opponentId": 40,
     "cardBattles": {
       "first": {
+        "id": 40,
         "charismaRequired": {
           "min": 150,
           "max": 284
@@ -423,6 +434,7 @@
         "boosterId": 523
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 492
         },
@@ -458,9 +470,9 @@
   },
   "bob": {
     "locationId": "022A",
-    "opponentId": 36,
     "cardBattles": {
       "first": {
+        "id": 36,
         "charismaRequired": {
           "min": 1218
         },
@@ -468,6 +480,7 @@
         "boosterId": 525
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 2277
         },
@@ -504,9 +517,9 @@
   },
   "tomomi": {
     "locationId": "022C",
-    "opponentId": 38,
     "cardBattles": {
       "first": {
+        "id": 38,
         "charismaRequired": {
           "min": 150,
           "max": 284
@@ -515,6 +528,7 @@
         "boosterId": 524
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 492
         },
@@ -550,9 +564,9 @@
   },
   "andy": {
     "locationId": "0232",
-    "opponentId": 42,
     "cardBattles": {
       "first": {
+        "id": 42,
         "charismaRequired": {
           "min": 210,
           "max": 377
@@ -561,6 +575,7 @@
         "boosterId": 524
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 630
         },
@@ -592,9 +607,9 @@
   },
   "george": {
     "locationId": "0233",
-    "opponentId": 44,
     "cardBattles": {
       "first": {
+        "id": 44,
         "charismaRequired": {
           "min": 210,
           "max": 377
@@ -603,6 +618,7 @@
         "boosterId": 525
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 630
         },
@@ -634,9 +650,9 @@
   },
   "meiLin": {
     "locationId": "0234",
-    "opponentId": 46,
     "cardBattles": {
       "first": {
+        "id": 46,
         "charismaRequired": {
           "min": 210,
           "max": 377
@@ -645,6 +661,7 @@
         "boosterId": 525
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 630
         },
@@ -676,9 +693,9 @@
   },
   "alice": {
     "locationId": "023E",
-    "opponentId": 52,
     "cardBattles": {
       "first": {
+        "id": 52,
         "charismaRequired": {
           "min": 210,
           "max": 377
@@ -687,6 +704,7 @@
         "boosterId": 527
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 630
         },
@@ -722,9 +740,9 @@
   },
   "gordon": {
     "locationId": "023D",
-    "opponentId": 50,
     "cardBattles": {
       "first": {
+        "id": 50,
         "charismaRequired": {
           "min": 210,
           "max": 377
@@ -733,6 +751,7 @@
         "boosterId": 526
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 630
         },
@@ -768,9 +787,9 @@
   },
   "jessica": {
     "locationId": "0237",
-    "opponentId": 48,
     "cardBattles": {
       "first": {
+        "id": 48,
         "charismaRequired": {
           "min": 1218
         },
@@ -778,6 +797,7 @@
         "boosterId": 526
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 2277
         },
@@ -814,9 +834,9 @@
   },
   "nakano": {
     "locationId": "025B",
-    "opponentId": 54,
     "cardBattles": {
       "first": {
+        "id": 54,
         "charismaRequired": {
           "min": 1218
         },
@@ -824,6 +844,7 @@
         "boosterId": 529
       },
       "second": {
+        "id": null,
         "charismaRequired": {
           "min": 2277
         },

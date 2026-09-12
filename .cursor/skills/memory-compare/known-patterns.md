@@ -896,71 +896,67 @@ pairs `kuwagamon-genji.bin`, `betamon-natsumi.bin`.
   (Genji snap `0x0200`, Natsumi snap `0x021D`). Useful when only one card-battle
   NPC exists on that map; **not** enough alone on Yellow Cruiser (`0x0211` × 4 NPCs).
 
-### Opponent id on card battle entry (confirmed)
+### Card battle config id (confirmed)
 
 On transition **`0x0600 → 0x0700`** (card battle screen), **`0x4B404`** (Int32) holds a
-**unique opponent id** per tamer. **`0`** outside card battle (`0x0600` digimon battle).
+**card battle config id** (which fight/deck setup), **not** a unique NPC id.
+**`0`** outside card battle (`0x0600` digimon battle).
 
-Snapshots: `card-battle-{genji,natsumi,nacky,wong,steve,gloria}.bin` vs
-`kuwagamon-genji.bin`, `betamon-natsumi.bin`.
+Backend: `CardBattle.Id` via [`CardBattleAddresses.json`](Backend/Memory/Definitions/CardBattleAddresses.json) `Id`.
+Frontend static: `cardBattles.first` / `cardBattles.second` → `id` in
+`tamer.json` / `duel-island.json` (lookup NPC by scanning those ids).
 
-| `0x4B404` | Digivice `npcId` | `PreviousMapId` |
-|-----------|------------------|-----------------|
-| `1` | genji | `0x0200` |
+**Genji (confirmed 2026-09-12):**
+| Battle | `0x4B404` / `cardBattles.*.id` | Snaps |
+|--------|-------------------------------|-------|
+| `first` (CHA 60–209) | `1` | `genji-1..8` mid-battle |
+| `second` (CHA ≥378 + Asuka Trophy) | `2` | `genji-new-1..8` mid-battle |
+
+Same MapId `0x0700` / Prev `0x0200` in both series. Other deltas first→second:
+`0x4B40C` `1→0`, `0x4B420` `0→13`. Stable across both: `0x4B408` bytes
+`01 08 00 3C` (`0x3C`=60 CHA min), `0x4B41C`=`4` (deck level suspected).
+
+**Provisional `first.id` (other NPCs — re-snap `second` TBD):**
+
+| `0x4B404` / `first.id` | Digivice `npcId` | `PreviousMapId` |
+|------------------------|------------------|-----------------|
 | `3` | nacky | `0x0211` |
 | `5` | wong | `0x0211` |
 | `7` | steve | `0x0211` |
 | `9` | gloria | `0x0211` |
 | `11` | natsumi | `0x021D` |
-| `31` | divermon1 | Duel Island mid-battle (`0x0700`) |
-| `29` | divermon2 | Duel Island mid-battle (`0x0700`) |
-| `27` | divermon3 | Duel Island mid-battle (`0x0700`) |
-| `25` | divermon4 | Duel Island mid-battle (`0x0700`) |
-| `23` | divermon5 | Duel Island mid-battle (`0x0700`) |
-| `21` | kingDivermon | Duel Island mid-battle (`0x0700`) |
-| `14` | mitch | mid-battle (`0x0700`) |
-| `16` | catherine | mid-battle (`0x0700`) |
-| `18` | lucia | mid-battle (`0x0700`) |
-| `20` | robert | mid-battle (`0x0700`) |
-| `34` | akiba | mid-battle (`0x0700`) |
-| `36` | bob | mid-battle (`0x0700`) |
-| `38` | tomomi | mid-battle (`0x0700`) |
-| `40` | chris | mid-battle (`0x0700`) |
-| `42` | andy | mid-battle (`0x0700`) |
-| `44` | george | mid-battle (`0x0700`) |
-| `46` | meiLin | mid-battle (`0x0700`) |
-| `48` | jessica | mid-battle (`0x0700`) |
-| `50` | gordon | mid-battle (`0x0700`) |
-| `52` | alice | mid-battle (`0x0700`) |
-| `54` | nakano | mid-battle (`0x0700`) |
+| `31` | divermon1 | Duel Island |
+| `29` | divermon2 | Duel Island |
+| `27` | divermon3 | Duel Island |
+| `25` | divermon4 | Duel Island |
+| `23` | divermon5 | Duel Island |
+| `21` | kingDivermon | Duel Island |
+| `14` | mitch | mid-battle |
+| `16` | catherine | mid-battle |
+| `18` | lucia | mid-battle |
+| `20` | robert | mid-battle |
+| `34` | akiba | mid-battle |
+| `36` | bob | mid-battle |
+| `38` | tomomi | mid-battle |
+| `40` | chris | mid-battle |
+| `42` | andy | mid-battle |
+| `44` | george | mid-battle |
+| `46` | meiLin | mid-battle |
+| `48` | jessica | mid-battle |
+| `50` | gordon | mid-battle |
+| `52` | alice | mid-battle |
+| `54` | nakano | mid-battle |
 
-Duel Island snaps (2026-09-09): `divermon{1..5}.bin`, `kingDivermon.bin` — all MapId
-`0x0700`; Int32 at `0x4B404` as above. Odd ids descending 31→21.
+Sources: early card-battle / Duel Island / tamer mid-battle snaps (2026-08/09).
+All non-Genji `cardBattles.second.id` are **`null`** until re-snap.
 
-Tamer snaps (2026-09-09): `{name}.bin` mid-card-battle — even ids above.
+**Secondary field `0x4B420` (Int32):** varies by fight (Genji first `0`, second `13`;
+other series often `35`). Not the config id.
 
-**Secondary field `0x4B420` (Int32):** `0` (Genji only) or `35` (all other card battles
-in this series). Not needed to distinguish Yellow Cruiser NPCs.
-
-**CardBattleMap / backend wiring:** read `CardBattle.OpponentId` from state (address in
-`CardBattleAddresses.json`), map via static table above.
 `PreviousMapId` alone is insufficient on `0x0211` (four NPCs share it).
 
 Card catalog ids (e.g. `1095`, `1005`) were **not** found as Int16 in `0x40000–0x50000`.
 RetroAchievements **`0xABD9D`** = deck level (Genji `4`) or heap noise — prefer **`0x4B404`**.
-
-**Mid-battle Genji recheck (2026-09-12):** `genji-1.bin`…`genji-8.bin` (first card
-battle). Block `0x4B3F0`–`0x4B42F` **byte-identical** across all eight; `0x4B404` =
-Int32 **`1`** the whole fight (with MapId `0x0700`, PreviousMapId `0x0200`).
-**Digivice note:** `tamer.json` Genji has `"opponentId": 2`.
-
-**Genji new series (2026-09-12):** `genji-new-1.bin`…`genji-new-8.bin` — also mid
-card battle (`0x0700` / Prev `0x0200`), block identical within series, but
-**`0x4B404` = Int32 `2`** (not `1`). So the same NPC can yield **1 or 2** at this
-address across sessions → **not a stable unique Genji id**. Other deltas vs old
-series: `0x4B40C` `1→0`, `0x4B420` `0→13`. Stable across both series: `0x4B408`
-bytes `01 08 00 3C` (`0x3C`=60 CHA min), `0x4B41C`=`4` (deck level suspected),
-Int16 `0x4B3F2`=`2`.
 
 ---
 
