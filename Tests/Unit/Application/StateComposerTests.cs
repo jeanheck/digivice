@@ -16,7 +16,7 @@ public class StateComposerTests
         var importantItems = new ImportantItems { TreeBoots = true };
         var party = new Party { Slots = [] };
         var digimonBattle = new DigimonBattle();
-        var cardBattle = new CardBattle { OpponentId = 0 };
+        var cardBattle = new CardBattle { Id = 0 };
         var auctions = new Auctions { DivineBarrier = true };
         var npcs = new Npcs { Genji = new Npc() };
         var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };

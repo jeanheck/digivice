@@ -7,16 +7,16 @@ using Xunit;
 public class CardBattleConverterTests
 {
     [Fact]
-    public void ToDTO_ShouldMapOpponentIdCorrectly()
+    public void ToDTO_ShouldMapIdCorrectly()
     {
         var cardBattle = new CardBattle
         {
-            OpponentId = 11,
+            Id = 11,
         };
 
         var dto = CardBattleConverter.ToDTO(cardBattle);
 
-        Assert.True(dto.OpponentId.HasValue);
-        Assert.Equal(11, dto.OpponentId.Value);
+        Assert.True(dto.Id.HasValue);
+        Assert.Equal(11, dto.Id.Value);
     }
 }

@@ -6,6 +6,6 @@ namespace Backend.Memory.Addresses
     public class CardBattleAddresses
     {
         [JsonConverter(typeof(HexStringToLongConverter))]
-        public long OpponentId { get; set; }
+        public long Id { get; set; }
     }
 }

@@ -9,15 +9,15 @@ using Xunit;
 public class CardBattleEventFactoryTests
 {
     [Fact]
-    public void Create_ShouldReturnCardBattleChangedEvent_WhenOpponentIdChanges()
+    public void Create_ShouldReturnCardBattleChangedEvent_WhenIdChanges()
     {
         var previousState = new State
         {
-            CardBattle = new CardBattle { OpponentId = 0 },
+            CardBattle = new CardBattle { Id = 0 },
         };
         var newState = new State
         {
-            CardBattle = new CardBattle { OpponentId = 1 },
+            CardBattle = new CardBattle { Id = 1 },
         };
 
         var result = CardBattleEventFactory.Create(previousState, newState).ToList();
@@ -25,8 +25,8 @@ public class CardBattleEventFactoryTests
         var ev = Assert.Single(result);
         Assert.Equal(EventType.CardBattleChanged, ev.Type);
         var dto = Assert.IsType<CardBattleDTO>(ev.Payload);
-        Assert.True(dto.OpponentId.HasValue);
-        Assert.Equal(1, dto.OpponentId.Value);
+        Assert.True(dto.Id.HasValue);
+        Assert.Equal(1, dto.Id.Value);
     }
 
     [Fact]
@@ -34,11 +34,11 @@ public class CardBattleEventFactoryTests
     {
         var previousState = new State
         {
-            CardBattle = new CardBattle { OpponentId = 5 },
+            CardBattle = new CardBattle { Id = 5 },
         };
         var newState = new State
         {
-            CardBattle = new CardBattle { OpponentId = 5 },
+            CardBattle = new CardBattle { Id = 5 },
         };
 
         var result = CardBattleEventFactory.Create(previousState, newState);

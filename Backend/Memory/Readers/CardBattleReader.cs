@@ -10,7 +10,7 @@ namespace Backend.Memory.Readers
         {
             return new CardBattleResource
             {
-                OpponentId = memoryReader.ReadInt32(addresses.OpponentId),
+                Id = memoryReader.ReadInt32(addresses.Id),
             };
         }
     }

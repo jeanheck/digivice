@@ -99,7 +99,7 @@ namespace Backend.Diagnostics
 
         private void RenderCardBattle(StringBuilder sb, CardBattle cardBattle)
         {
-            sb.AppendLine($"{Cyan}CARD BATTLE:{Reset} OpponentId:{cardBattle.OpponentId}");
+            sb.AppendLine($"{Cyan}CARD BATTLE:{Reset} Id:{cardBattle.Id}");
         }
 
         private void RenderDigimon(StringBuilder sb, DigimonSlot slot)

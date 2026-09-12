@@ -949,6 +949,19 @@ in this series). Not needed to distinguish Yellow Cruiser NPCs.
 Card catalog ids (e.g. `1095`, `1005`) were **not** found as Int16 in `0x40000–0x50000`.
 RetroAchievements **`0xABD9D`** = deck level (Genji `4`) or heap noise — prefer **`0x4B404`**.
 
+**Mid-battle Genji recheck (2026-09-12):** `genji-1.bin`…`genji-8.bin` (first card
+battle). Block `0x4B3F0`–`0x4B42F` **byte-identical** across all eight; `0x4B404` =
+Int32 **`1`** the whole fight (with MapId `0x0700`, PreviousMapId `0x0200`).
+**Digivice note:** `tamer.json` Genji has `"opponentId": 2`.
+
+**Genji new series (2026-09-12):** `genji-new-1.bin`…`genji-new-8.bin` — also mid
+card battle (`0x0700` / Prev `0x0200`), block identical within series, but
+**`0x4B404` = Int32 `2`** (not `1`). So the same NPC can yield **1 or 2** at this
+address across sessions → **not a stable unique Genji id**. Other deltas vs old
+series: `0x4B40C` `1→0`, `0x4B420` `0→13`. Stable across both series: `0x4B408`
+bytes `01 08 00 3C` (`0x3C`=60 CHA min), `0x4B41C`=`4` (deck level suspected),
+Int16 `0x4B3F2`=`2`.
+
 ---
 
 ## Duel Island card gauntlet (confirmed 2026-08-30)

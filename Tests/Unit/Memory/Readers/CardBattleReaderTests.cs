@@ -13,7 +13,7 @@ public class CardBattleReaderTests
     {
         var addresses = new CardBattleAddresses
         {
-            OpponentId = 0x0004B404,
+            Id = 0x0004B404,
         };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
@@ -24,6 +24,6 @@ public class CardBattleReaderTests
         var result = reader.Read(addresses);
 
         Assert.NotNull(result);
-        Assert.Equal(11, result.OpponentId);
+        Assert.Equal(11, result.Id);
     }
 }

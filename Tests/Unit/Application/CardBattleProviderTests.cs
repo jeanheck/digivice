@@ -14,7 +14,7 @@ public class CardBattleProviderTests
     {
         var cardBattleResource = new CardBattleResource
         {
-            OpponentId = 7,
+            Id = 7,
         };
 
         var cardBattleLoaderMock = new Mock<ICardBattleLoader>();
@@ -26,16 +26,16 @@ public class CardBattleProviderTests
 
         Assert.NotNull(result);
         Assert.IsType<CardBattle>(result);
-        Assert.Equal(7, result.OpponentId);
+        Assert.Equal(7, result.Id);
         cardBattleLoaderMock.Verify(loader => loader.Load(), Times.Once);
     }
 
     [Fact]
-    public void Get_ShouldHandleNullOpponentId()
+    public void Get_ShouldHandleNullId()
     {
         var cardBattleResource = new CardBattleResource
         {
-            OpponentId = null,
+            Id = null,
         };
 
         var cardBattleLoaderMock = new Mock<ICardBattleLoader>();
@@ -46,7 +46,7 @@ public class CardBattleProviderTests
         var result = provider.Get();
 
         Assert.NotNull(result);
-        Assert.Equal(0, result.OpponentId);
+        Assert.Equal(0, result.Id);
         cardBattleLoaderMock.Verify(loader => loader.Load(), Times.Once);
     }
 }

@@ -3,8 +3,8 @@ import type * as Events from "@/events/events.map";
 
 export class CardBattleSyncer {
   public static sync(previousCardBattle: CardBattle, newCardBattleDto: Events.CardBattleDTO): void {
-    if (newCardBattleDto.opponentId !== undefined) {
-      previousCardBattle.opponentId = newCardBattleDto.opponentId;
+    if (newCardBattleDto.id !== undefined) {
+      previousCardBattle.id = newCardBattleDto.id;
     }
   }
 }

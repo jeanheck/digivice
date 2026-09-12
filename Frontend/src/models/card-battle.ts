@@ -1,3 +1,3 @@
 export interface CardBattle {
-  opponentId: number;
+  id: number;
 }

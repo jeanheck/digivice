@@ -1,7 +1,7 @@
 {
   "genji": {
     "locationId": "0200",
-    "opponentId": 2,
+    "opponentId": 1,
     "cardBattles": {
       "first": {
         "charismaRequired": {

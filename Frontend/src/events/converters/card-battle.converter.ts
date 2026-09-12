@@ -4,7 +4,7 @@ import type { CardBattle } from "@/models/card-battle";
 export class CardBattleConverter {
   public static convert(cardBattleDto: Required<CardBattleDTO>): CardBattle {
     return {
-      opponentId: cardBattleDto.opponentId ?? 0,
+      id: cardBattleDto.id ?? 0,
     };
   }
 }

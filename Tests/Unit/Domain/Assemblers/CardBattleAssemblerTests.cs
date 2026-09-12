@@ -7,30 +7,30 @@ using Xunit;
 public class CardBattleAssemblerTests
 {
     [Fact]
-    public void Assemble_ShouldMapOpponentIdCorrectly_WhenResourceIsValid()
+    public void Assemble_ShouldMapIdCorrectly_WhenResourceIsValid()
     {
         var resource = new CardBattleResource
         {
-            OpponentId = 5,
+            Id = 5,
         };
 
         var result = CardBattleAssembler.Assemble(resource);
 
         Assert.NotNull(result);
-        Assert.Equal(5, result.OpponentId);
+        Assert.Equal(5, result.Id);
     }
 
     [Fact]
-    public void Assemble_ShouldFallBackToZero_WhenOpponentIdIsNull()
+    public void Assemble_ShouldFallBackToZero_WhenIdIsNull()
     {
         var resource = new CardBattleResource
         {
-            OpponentId = null,
+            Id = null,
         };
 
         var result = CardBattleAssembler.Assemble(resource);
 
         Assert.NotNull(result);
-        Assert.Equal(0, result.OpponentId);
+        Assert.Equal(0, result.Id);
     }
 }

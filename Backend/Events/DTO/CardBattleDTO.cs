@@ -7,5 +7,5 @@ namespace Backend.Events.DTO;
 public record class CardBattleDTO : IDTO
 {
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> OpponentId { get; init; } = Optional<int>.Empty;
+    public Optional<int> Id { get; init; } = Optional<int>.Empty;
 }

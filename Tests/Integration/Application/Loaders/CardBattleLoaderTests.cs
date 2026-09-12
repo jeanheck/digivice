@@ -23,7 +23,7 @@ public class CardBattleLoaderTests : LoaderIntegrationTestBase
         var cardBattleResource = cardBattleLoader.Load();
 
         Assert.NotNull(cardBattleResource);
-        Assert.Equal(11, cardBattleResource.OpponentId);
+        Assert.Equal(11, cardBattleResource.Id);
     }
 
     [Fact]

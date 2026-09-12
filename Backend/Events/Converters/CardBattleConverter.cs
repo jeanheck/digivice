@@ -7,6 +7,6 @@ public static class CardBattleConverter
 {
     public static CardBattleDTO ToDTO(CardBattle cardBattle) => new()
     {
-        OpponentId = cardBattle.OpponentId,
+        Id = cardBattle.Id,
     };
 }

@@ -19,14 +19,14 @@ public static class CardBattleDiffer
             return CardBattleConverter.ToDTO(newCardBattle);
         }
 
-        if (newCardBattle.OpponentId == previousCardBattle.OpponentId)
+        if (newCardBattle.Id == previousCardBattle.Id)
         {
             return new CardBattleDTO();
         }
 
         return new CardBattleDTO
         {
-            OpponentId = newCardBattle.OpponentId,
+            Id = newCardBattle.Id,
         };
     }
 }

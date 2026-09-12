@@ -104,7 +104,7 @@ public class StateEventFactoryTests
     {
         var previousState = CreateBaseState();
         var newState = CreateBaseState();
-        newState.CardBattle.OpponentId = 11;
+        newState.CardBattle.Id = 11;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
@@ -164,7 +164,7 @@ public class StateEventFactoryTests
         newState.ImportantItems.AsukaTrophy = true;
         newState.Party.Slots[0].Digimon!.Level = 22;
         newState.DigimonBattle.Enemy.Speed = 84;
-        newState.CardBattle.OpponentId = 11;
+        newState.CardBattle.Id = 11;
         newState.Auctions.DivineBarrier = true;
         newState.Npcs.Genji.Battles = [new NpcBattle { Id = "first", Value = 0x20 }];
         newState.Journal.MainQuest.Steps[0].Value = 1;
