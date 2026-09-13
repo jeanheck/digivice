@@ -325,6 +325,12 @@ watch(
       }
 
       if (props.enemyId !== null) {
+        const npcContext = WikiModalPresenter.resolveNpcBattleFromEnemyId(props.enemyId);
+        if (npcContext !== null) {
+          openNpcView(npcContext.npcId, npcContext.battleOptionId);
+          return;
+        }
+
         navigateTo("enemy", props.enemyId);
       }
 

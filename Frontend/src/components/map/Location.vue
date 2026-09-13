@@ -38,12 +38,12 @@ const isClickable = computed(() => {
 });
 
 const titleClass = computed(() => {
-  const colorClass = props.isSafeZone ? "text-sky-300" : "text-white";
+  const colorClass = props.isSafeZone ? "text-sky-400" : "text-gray-200";
   return `text-xs sm:text-sm font-bold ${colorClass} tracking-widest uppercase drop-shadow-[0_0_5px_rgba(0,170,255,0.8)] leading-tight`;
 });
 
 const clickableHoverClass = computed(() => {
-  return props.isSafeZone ? "hover:text-sky-200" : "hover:text-blue-300";
+  return props.isSafeZone ? "hover:text-sky-300" : "hover:text-gray-100";
 });
 
 const handleClick = () => {
