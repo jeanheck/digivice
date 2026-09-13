@@ -24,7 +24,25 @@
     "imageName": "Initial Pack Screen"
   },
   "0C01": {
-    "imageName": "Saving Screen"
+    "imageName": "Saving at Asuka Inn 1F"
+  },
+  "0C02": {
+    "imageName": "Saving at Seiryu Tower"
+  },
+  "0C03": {
+    "imageName": "Saving at Swamp Inn"
+  },
+  "0C04": {
+    "imageName": "Saving at Suzaku Inn"
+  },
+  "0C12": {
+    "imageName": "Saving at Forest Inn"
+  },
+  "0C13": {
+    "imageName": "Saving at Mirage Hall"
+  },
+  "0C14": {
+    "imageName": "Saving at Pelche Oasis"
   },
   "0A00": {
     "imageName": "In Training Screen"
