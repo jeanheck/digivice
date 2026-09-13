@@ -230,7 +230,7 @@ const openLocation = () => {
         >
           <span class="inline-flex items-center justify-center gap-1">
             <span>
-              {{ $t(battleKindLabelKey(option.kind)) }} ({{ option.charismaRangeText }})
+              {{ $t(battleKindLabelKey(option.kind)) }} {{ option.charismaRangeText }}
             </span>
             <span
               v-if="option.showTrophyEmoji"

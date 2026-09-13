@@ -20,10 +20,10 @@ export class WikiNpcPanelPresenter {
 
   public static formatCharismaRange(charismaRequired: TamerCharismaRequiredRaw): string {
     if (charismaRequired.max !== undefined) {
-      return `${charismaRequired.min}~${charismaRequired.max}`;
+      return `(${charismaRequired.min}~${charismaRequired.max})`;
     }
 
-    return `${charismaRequired.min}+`;
+    return `(${charismaRequired.min}+)`;
   }
 
   private static buildBattleOptionBase(
