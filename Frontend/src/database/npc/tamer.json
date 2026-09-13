@@ -585,6 +585,7 @@
         "charismaRequired": {
           "min": 630
         },
+        "trophyRequired": "asukaTrophy",
         "deckId": "dinosaurFolder2",
         "boosterId": 524
       }
@@ -628,6 +629,7 @@
         "charismaRequired": {
           "min": 630
         },
+        "trophyRequired": "asukaTrophy",
         "deckId": "brownFolder2",
         "boosterId": 525
       }
@@ -671,6 +673,7 @@
         "charismaRequired": {
           "min": 630
         },
+        "trophyRequired": "asukaTrophy",
         "deckId": "occultFolder2",
         "boosterId": 525
       }
@@ -714,6 +717,7 @@
         "charismaRequired": {
           "min": 630
         },
+        "trophyRequired": "asukaTrophy",
         "deckId": "poisonFolder2",
         "boosterId": 527
       }
@@ -761,6 +765,7 @@
         "charismaRequired": {
           "min": 630
         },
+        "trophyRequired": "asukaTrophy",
         "deckId": "blueFolder2",
         "boosterId": 526
       }

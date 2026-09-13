@@ -1082,6 +1082,16 @@
           "y": 51
         }
       }
+    ],
+    "cardShops": [
+      {
+        "id": "seiryuCardShop",
+        "coordinates": {
+          "x": 21,
+          "y": 40.5
+        },
+        "labelPlacement": "below"
+      }
     ]
   },
   "0232": {
@@ -1358,6 +1368,16 @@
           "y": 63
         },
         "labelPlacement": "below"
+      }
+    ],
+    "cardShops": [
+      {
+        "id": "suzakuCardShop",
+        "coordinates": {
+          "x": 68,
+          "y": 86
+        },
+        "labelPlacement": "left"
       }
     ],
     "dock": true
