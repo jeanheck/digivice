@@ -61,7 +61,7 @@
       "tamer": "(Tamer Digimon {name} Lv {level})",
       "npc": "({name}'s Digimon Lv {level})"
     },
-    "unavailableAtMoment": "Unavailable at this point in the story",
+    "unavailableAtMoment": "Unavailable or cannot be challenged at this point in the story",
     "locations": "Locations",
     "locationSource": {
       "walking": "Walk",

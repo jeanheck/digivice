@@ -109,7 +109,10 @@
         "id": "022B",
         "sources": [
           "boss"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 2
+        }
       }
     ]
   },
@@ -168,7 +171,7 @@
           "boss"
         ],
         "mainQuestStepDone": {
-          "min": 43
+          "min": 59
         }
       }
     ]
@@ -394,7 +397,10 @@
         "id": "022D",
         "sources": [
           "boss"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 13
+        }
       }
     ]
   },
@@ -702,7 +708,7 @@
           "walking"
         ],
         "mainQuestStepDone": {
-          "min": 14
+          "min": 24
         }
       }
     ]
@@ -1666,25 +1672,37 @@
         "id": "0233",
         "sources": [
           "walking"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0234",
         "sources": [
           "walking"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0237",
         "sources": [
           "walking"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "023A",
         "sources": [
           "walking"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 14
+        }
       }
     ]
   },
@@ -1875,7 +1893,7 @@
           "walking"
         ],
         "mainQuestStepDone": {
-          "min": 14
+          "min": 24
         }
       }
     ]
@@ -2452,7 +2470,7 @@
           "walking"
         ],
         "mainQuestStepDone": {
-          "min": 27
+          "min": 43
         }
       }
     ]
@@ -2511,8 +2529,7 @@
           "walking"
         ],
         "mainQuestStepDone": {
-          "min": 0,
-          "max": 27
+          "min": 27
         }
       },
       {
@@ -3178,7 +3195,7 @@
           "walking"
         ],
         "mainQuestStepDone": {
-          "min": 43
+          "min": 60
         }
       }
     ]
@@ -3533,7 +3550,7 @@
           "walking"
         ],
         "mainQuestStepDone": {
-          "min": 61
+          "min": 60
         }
       }
     ]
@@ -3592,7 +3609,7 @@
           "walking"
         ],
         "mainQuestStepDone": {
-          "min": 61
+          "min": 60
         }
       }
     ]
@@ -7183,7 +7200,10 @@
         "id": "024A",
         "sources": [
           "kickingTree"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 43
+        }
       },
       {
         "id": "024C",
