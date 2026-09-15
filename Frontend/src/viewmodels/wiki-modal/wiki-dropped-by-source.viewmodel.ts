@@ -7,4 +7,5 @@ export interface WikiDroppedBySourceViewModel {
   label?: string;
   iconUrl: string | null;
   locationId?: string;
+  tamerId?: string;
 }

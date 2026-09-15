@@ -6,4 +6,5 @@ export interface DropSourceViewModel {
   labelKey?: string;
   label?: string;
   locationId?: string;
+  tamerId?: string;
 }

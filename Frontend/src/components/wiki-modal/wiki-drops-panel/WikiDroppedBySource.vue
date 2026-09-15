@@ -24,6 +24,26 @@ const displayName = computed(() => {
 const locationLabel = (locationId: string): string => {
   return t("enemy.locationOnly", { location: t(`location.${locationId}`) });
 };
+
+const tamerLabel = (tamerId: string): string => {
+  return t("enemy.tamerOnly", { name: t(`tamers.${tamerId}.name`) });
+};
+
+const observationLabel = computed(() => {
+  if (props.source.kind !== "enemy") {
+    return "";
+  }
+
+  if (props.source.locationId !== undefined) {
+    return locationLabel(props.source.locationId);
+  }
+
+  if (props.source.tamerId !== undefined) {
+    return tamerLabel(props.source.tamerId);
+  }
+
+  return "";
+});
 </script>
 
 <template>
@@ -43,7 +63,7 @@ const locationLabel = (locationId: string): string => {
         {{ displayName }}
       </span>
       <span class="block min-h-3 text-[10px] text-gray-400 leading-tight">
-        {{ source.kind === "enemy" && source.locationId ? locationLabel(source.locationId) : "" }}
+        {{ observationLabel }}
       </span>
     </span>
   </button>

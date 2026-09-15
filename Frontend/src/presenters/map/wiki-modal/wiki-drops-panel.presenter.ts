@@ -17,12 +17,23 @@ export class WikiDropsPanelPresenter {
     const isBooster = dropType === "booster";
     const dropNumericId = Number(dropId);
 
+    const sources = this.getDroppedByRaw(dropId, dropType).map((droppedBy) => {
+      return WikiDroppedBySourceConverter.convert(this.toDropSource(droppedBy));
+    });
+
+    sources.sort((firstSource, secondSource) => {
+      const byLabel = (firstSource.label ?? "").localeCompare(secondSource.label ?? "");
+      if (byLabel !== 0) {
+        return byLabel;
+      }
+
+      return firstSource.sourceId.localeCompare(secondSource.sourceId);
+    });
+
     return {
       dropType,
       dropNumericId,
-      sources: this.getDroppedByRaw(dropId, dropType).map((droppedBy) => {
-        return WikiDroppedBySourceConverter.convert(this.toDropSource(droppedBy));
-      }),
+      sources,
       sourcesSectionLabelKey: "enemy.droppedBy",
       sourcesEmptyLabelKey: isBooster ? "enemy.dropSourcesNone" : "enemy.droppedByNone",
     };
@@ -49,6 +60,7 @@ export class WikiDropsPanelPresenter {
         sourceId: droppedBy.id,
         label: enemyRaw.name,
         locationId: droppedBy.locationOnly,
+        tamerId: enemyRaw.tamerId,
       };
     }
 

@@ -17,6 +17,7 @@ export class WikiDroppedBySourceConverter {
       label: dropSource.label,
       iconUrl,
       locationId: dropSource.locationId,
+      tamerId: dropSource.tamerId,
     };
   }
 }

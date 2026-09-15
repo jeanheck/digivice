@@ -268,6 +268,12 @@ const openCardShopsView = (cardShopId: string) => {
 };
 
 const openEnemyFromDropSource = (enemyId: string) => {
+  const npcContext = WikiModalPresenter.resolveNpcBattleFromEnemyId(enemyId);
+  if (npcContext !== null) {
+    openNpcView(npcContext.npcId, npcContext.battleOptionId);
+    return;
+  }
+
   navigateTo("enemy", enemyId);
 };
 

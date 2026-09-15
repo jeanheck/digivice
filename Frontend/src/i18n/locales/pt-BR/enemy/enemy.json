@@ -28,6 +28,7 @@
     "drops": "Drops",
     "dropRate": "Taxa de drop",
     "locationOnly": "Apenas {location}",
+    "tamerOnly": "Digimon de {name}",
     "dropDetails": "Detalhes do drop",
     "resaleValueLabel": "Valor de revenda",
     "soldInStore": "Vendido por NPC",

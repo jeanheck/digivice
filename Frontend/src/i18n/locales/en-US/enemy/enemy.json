@@ -28,6 +28,7 @@
     "drops": "Drops",
     "dropRate": "Drop rate",
     "locationOnly": "Only {location}",
+    "tamerOnly": "{name}'s Digimon",
     "dropDetails": "Drop details",
     "resaleValueLabel": "Resale value",
     "soldInStore": "Sold by NPC",
