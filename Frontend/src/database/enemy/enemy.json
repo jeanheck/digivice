@@ -8938,43 +8938,64 @@
         "id": "0234",
         "sources": [
           "fishing"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0235",
         "sources": [
           "fishing"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "0237",
         "sources": [
           "fishing"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 14
+        }
       },
       {
         "id": "023A",
         "sources": [
           "fishing"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 25
+        }
       },
       {
         "id": "023B",
         "sources": [
           "fishing"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 25
+        }
       },
       {
         "id": "023C",
         "sources": [
           "fishing"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 25
+        }
       },
       {
         "id": "023D",
         "sources": [
           "fishing"
-        ]
+        ],
+        "mainQuestStepDone": {
+          "min": 25
+        }
       }
     ]
   },
@@ -9435,7 +9456,13 @@
     "techniqueId": "none",
     "memoryId": 395,
     "groupId": 272,
-    "tamerId": "genji"
+    "tamerId": "genji",
+    "drops": [
+      {
+        "dropId": 177,
+        "type": "equipment"
+      }
+    ]
   },
   "526": {
     "name": "Betamon",
@@ -10241,7 +10268,8 @@
     "regularAttackId": "noElement",
     "techniqueId": "none",
     "memoryId": 32,
-    "groupId": 203
+    "groupId": 203,
+    "tamerId": "catherine"
   },
   "545": {
     "name": "Dokugumon",
