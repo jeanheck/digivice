@@ -11,7 +11,7 @@
         "boosterId": 525
       },
       "second": {
-        "id": null,
+        "id": 32,
         "charismaRequired": {
           "min": 1
         },
@@ -34,7 +34,7 @@
         "boosterId": 526
       },
       "second": {
-        "id": null,
+        "id": 30,
         "charismaRequired": {
           "min": 1
         },
@@ -57,7 +57,7 @@
         "boosterId": 527
       },
       "second": {
-        "id": null,
+        "id": 28,
         "charismaRequired": {
           "min": 1
         },
@@ -80,7 +80,7 @@
         "boosterId": 528
       },
       "second": {
-        "id": null,
+        "id": 26,
         "charismaRequired": {
           "min": 1
         },
@@ -103,7 +103,7 @@
         "boosterId": 516
       },
       "second": {
-        "id": null,
+        "id": 24,
         "charismaRequired": {
           "min": 1
         },
@@ -126,7 +126,7 @@
         "boosterId": 517
       },
       "second": {
-        "id": null,
+        "id": 22,
         "charismaRequired": {
           "min": 1
         },

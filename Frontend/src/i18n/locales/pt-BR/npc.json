@@ -7,12 +7,12 @@
       "digimonPlaceholder": "Batalha de Digimon",
       "requirement": {
         "missingCharisma": "Carisma insuficiente ou fora da faixa",
-        "missingAsukaTrophy": "Falta Asuka Trophy",
-        "missingSunTrophy": "Falta Sun Trophy",
-        "missingCharismaAndAsukaTrophy": "Carisma insuficiente ou fora da faixa; Falta Asuka Trophy",
-        "missingCharismaAndSunTrophy": "Carisma insuficiente ou fora da faixa; Falta Sun Trophy",
-        "unavailableAfterAsukaTrophy": "Indisponível após Asuka Trophy",
-        "unavailableAfterSunTrophy": "Indisponível após Sun Trophy",
+        "missingAsukaTrophy": "Falta Troféu Asuka",
+        "missingSunTrophy": "Falta Troféu Sun",
+        "missingCharismaAndAsukaTrophy": "Carisma insuficiente ou fora da faixa; Falta Troféu Asuka",
+        "missingCharismaAndSunTrophy": "Carisma insuficiente ou fora da faixa; Falta Troféu Sun",
+        "unavailableAfterAsukaTrophy": "Indisponível após Troféu Asuka",
+        "unavailableAfterSunTrophy": "Indisponível após Troféu Sun",
         "available": "Batalha disponível",
         "alreadyWon": "Você já venceu essa batalha"
       }
