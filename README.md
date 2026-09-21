@@ -16,7 +16,7 @@ It's the companion you wished you had when you first walked through Asuka Server
 
 You can see more in the video below:
 
-[![Digivice 3.0.0 (Latest major release)](https://img.youtube.com/vi/a_r7qz0TodQ/hqdefault.jpg)](https://www.youtube.com/watch?v=a_r7qz0TodQ)
+[![Digivice 3.5.0 (Latest major release)](https://img.youtube.com/vi/EpCRYz3puIo/hqdefault.jpg)](https://www.youtube.com/watch?v=EpCRYz3puIo)
 
 ## The current state
 
@@ -26,15 +26,6 @@ Past that point, many features will still work, but others will be missing. I'll
 ## Roadmap
 
 More Digivice is on the way. Here's a preview of what's planned next — details and timing may change as development continues.
-
-### 3.5 — Card battles & the world around them
-
-Digimon World 2003's card game, finally with a second screen to match.
-
-- **TCG tools** — support for the in-game card game, right inside Digivice
-- **Richer battle data** — deeper insight into Digimon vs Digimon fights
-- **Trainer finder** — locate trainers ready to battle with cards or with their Digimon
-- **And more** — smaller quality-of-life wins along the way
 
 ### 4.0 — The story catches up to Asuka City
 
