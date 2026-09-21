@@ -2,7 +2,6 @@ import { ImageCatalog } from "@/catalogs/image.catalog";
 import { EnemySourceConstant } from "@/constants/enemy-source.constant";
 import { IconConstant } from "@/constants/icon.constant";
 import { toSpeciesConstant } from "@/constants/species.constant";
-import type { Constant } from "@/constants/constant";
 import type { Vital } from "@/models/party/digimon/vital";
 import { EnemyConditionConverter } from "@/presenters/converter/enemy-condition.converter";
 import { EnemyStatConverter } from "@/presenters/converter/enemy-stat.converter";
@@ -117,7 +116,7 @@ export class DigimonBattleConverter {
       return null;
     }
 
-    return IconConstant[speciesConstant as Constant];
+    return IconConstant[speciesConstant];
   }
 
   private static toConditions(enemyRaw: EnemyRaw): EnemyViewModel["conditions"] {

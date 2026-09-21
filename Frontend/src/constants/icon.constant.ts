@@ -7,7 +7,7 @@ import { SeabedConstant } from "./seabed.constant";
 import { EnemySourceConstant } from "./enemy-source.constant";
 import { SpeciesConstant } from "./species.constant";
 
-export const IconConstant: Record<ConstantsType, string> = {
+export const IconConstant: Record<ConstantsType | SpeciesConstant, string> = {
   [AttributeConstant.strength]: "👊",
   [AttributeConstant.defense]: "🛡️",
   [AttributeConstant.spirit]: "🧙‍♂️",

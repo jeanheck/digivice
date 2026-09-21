@@ -120,7 +120,9 @@ const handleSearchSelect = (item: SearchItemViewModel) => {
           >
             {{
               item.kindLabelKey !== undefined
-                ? $t(item.kindLabelKey, item.kindLabelParams)
+                ? item.kindLabelParams !== undefined
+                  ? $t(item.kindLabelKey, item.kindLabelParams)
+                  : $t(item.kindLabelKey)
                 : $t(`enemy.searchKind.${item.kind}`)
             }}
           </span>
