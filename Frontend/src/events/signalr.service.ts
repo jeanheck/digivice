@@ -5,6 +5,9 @@ import { signalRLogger } from "./logger";
 import { APP_CONFIG } from "../config";
 import { formatHubConnectionError } from "./hub-connection-error";
 
+const CONNECTION_MAX_ATTEMPTS = 20;
+const CONNECTION_RETRY_DELAY_MS = 250;
+
 class SignalRService {
   private connection: signalR.HubConnection | null = null;
   // Stores handlers in a typed manner
@@ -38,28 +41,48 @@ class SignalRService {
     }
   }
 
-  public async startConnection() {
-    const hubUrl = await this.getHubUrl();
-
-    this.connection = new signalR.HubConnectionBuilder()
+  private createConnection(hubUrl: string): signalR.HubConnection {
+    const connection = new signalR.HubConnectionBuilder()
       .withUrl(hubUrl)
       .withAutomaticReconnect()
       .build();
 
+    this.connection = connection;
     this.registerInternalStatusEvents();
     this.registerBackendEvents();
+    return connection;
+  }
 
-    try {
-      await this.connection.start();
-      signalRLogger.info(`Connected to GameHub at: ${hubUrl}`);
-      this.emit("HubConnectionStatusChanged", { isConnected: true });
-    } catch (err) {
-      signalRLogger.error(`Connection Error at ${hubUrl}`, err);
-      this.emit("HubConnectionStatusChanged", {
-        isConnected: false,
-        errorMessage: formatHubConnectionError(err),
-      });
+  public async startConnection() {
+    const hubUrl = await this.getHubUrl();
+    let lastError: unknown = null;
+
+    for (let attempt = 1; attempt <= CONNECTION_MAX_ATTEMPTS; attempt++) {
+      const connection = this.createConnection(hubUrl);
+
+      try {
+        await connection.start();
+        signalRLogger.info(`Connected to GameHub at: ${hubUrl}`);
+        this.emit("HubConnectionStatusChanged", { isConnected: true });
+        return;
+      } catch (err) {
+        lastError = err;
+        signalRLogger.warn(
+          `Connection attempt ${attempt}/${CONNECTION_MAX_ATTEMPTS} failed at ${hubUrl}`,
+          err,
+        );
+
+        if (attempt < CONNECTION_MAX_ATTEMPTS) {
+          await new Promise((resolve) => setTimeout(resolve, CONNECTION_RETRY_DELAY_MS));
+        }
+      }
     }
+
+    signalRLogger.error(`Connection Error at ${hubUrl}`, lastError);
+    this.emit("HubConnectionStatusChanged", {
+      isConnected: false,
+      errorMessage: formatHubConnectionError(lastError),
+    });
   }
 
   private registerInternalStatusEvents() {
