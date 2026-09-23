@@ -10,17 +10,17 @@ export function useAppHealthyScreen() {
   return computed((): AppHealthyScreenViewModel | null => {
     if (store.backendProcessFailed) {
       return {
-        kind: "backend-crashed",
-        titleKey: "errors.backendCrashed.title",
-        hintKey: "errors.backendCrashed.hint",
+        kind: "sidecar-crashed",
+        titleKey: "errors.sidecarCrashed.title",
+        hintKey: "errors.sidecarCrashed.hint",
       };
     }
 
     if (!store.isConnectedWithBackend) {
       return {
-        kind: "backend-unreachable",
-        titleKey: "errors.backend.title",
-        hintKey: "errors.backend.hint",
+        kind: "hub-unreachable",
+        titleKey: "errors.hubUnreachable.title",
+        hintKey: "errors.hubUnreachable.hint",
         detail: store.lastHubConnectionError ?? undefined,
       };
     }

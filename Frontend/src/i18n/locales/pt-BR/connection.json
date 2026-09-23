@@ -6,27 +6,27 @@
   "errors": {
     "loading": {
       "title": "Carregando...",
-      "hint": "Aguardando o Digivice ficar pronto."
+      "hint": "Em instantes, o Digivice estará pronto para uso!"
     },
-    "backendCrashed": {
-      "title": "O motor do Digivice parou",
-      "hint": "Feche o aplicativo e abra novamente. Se o problema continuar, contate o desenvolvedor."
+    "sidecarCrashed": {
+      "title": "Opa! Parece que o Leitor de Memória não está em execução...",
+      "hint": "Seria muito gentil da sua parte se você mandasse um \"print\" dessa falha para o desenvolvedor :)"
     },
-    "backend": {
-      "title": "Não foi possível conectar ao Digivice",
-      "hint": "Verifique se o aplicativo foi iniciado corretamente e tente novamente."
+    "hubUnreachable": {
+      "title": "Opa! O Leitor de Memória está executando, mas não consegue se comunicar...",
+      "hint": "Seria muito gentil da sua parte se você mandasse um \"print\" dessa falha para o desenvolvedor :)"
     },
     "emulator": {
-      "title": "Emulador não encontrado",
-      "hint": "Abra o Duckstation, carregue o Digimon World 2003 e, em Debugging, ative Export Memory Shared.",
+      "title": "Opa! Aconteceu algum problema durante o processo de leitura de memória...",
+      "hint": "Seria muito gentil da sua parte se você mandasse um \"print\" dessa falha para o desenvolvedor :)",
       "codes": {
         "config_missing": {
           "title": "Configuração do emulador ausente",
-          "hint": "O app não encontrou EmulatorProcessName nas configurações do backend. Contate o desenvolvedor."
+          "hint": "O app não encontrou EmulatorProcessName nas configurações do backend."
         },
         "process_not_found": {
-          "title": "Emulador não encontrado",
-          "hint": "Abra o Duckstation e carregue o Digimon World 2003 antes de usar o Digivice."
+          "title": "Seu DuckStation está aberto?",
+          "hint": "O Digivice não conseguiu encontrar o emulador aberto. Verifique se o DuckStation está executando, e nas configurações de \"Depuração\", ative a opção \"Exportação de memória compartilhada\"."
         },
         "mapping_not_found": {
           "title": "Exportação de memória indisponível",

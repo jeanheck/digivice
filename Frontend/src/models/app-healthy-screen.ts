@@ -1,7 +1,7 @@
 export type AppHealthyScreenKind =
   | "loading"
-  | "backend-crashed"
-  | "backend-unreachable"
+  | "sidecar-crashed"
+  | "hub-unreachable"
   | "operational-error";
 
 export interface AppHealthyScreenViewModel {
