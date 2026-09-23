@@ -1,46 +1,44 @@
 import type { HealthDTO } from "@/events/dto/health.dto";
-import type { HealthStatus } from "@/models/health-status";
+import { HealthStatus } from "@/models/health-status";
 
 export class HealthConverter {
-  static convert(data: unknown): HealthStatus {
+  static convert(data: unknown): HealthDTO {
     if (data === null || typeof data !== "object") {
       return {
-        isHealthy: false,
+        status: HealthStatus.Loading,
         errorCode: null,
         errorDetail: null,
       };
     }
 
     const record = data as Record<string, unknown>;
-    const dto = normalizeHealthDto(record);
-
-    return {
-      isHealthy: dto.isHealthy,
-      errorCode: normalizeOptionalString(dto.errorCode),
-      errorDetail: normalizeOptionalString(dto.errorDetail),
-    };
+    return normalizeHealthDto(record);
   }
 }
 
 function normalizeHealthDto(record: Record<string, unknown>): HealthDTO {
-  const isHealthy = readBoolean(record, "isHealthy", "IsHealthy") ?? false;
+  const status = readHealthStatus(record) ?? HealthStatus.Loading;
   const errorCode = readString(record, "errorCode", "ErrorCode");
   const errorDetail = readString(record, "errorDetail", "ErrorDetail");
 
   return {
-    isHealthy,
+    status,
     errorCode,
     errorDetail,
   };
 }
 
-function readBoolean(
-  record: Record<string, unknown>,
-  camelCaseKey: string,
-  pascalCaseKey: string,
-): boolean | undefined {
-  const value = record[camelCaseKey] ?? record[pascalCaseKey];
-  return typeof value === "boolean" ? value : undefined;
+function readHealthStatus(record: Record<string, unknown>): HealthStatus | undefined {
+  const value = record.status ?? record.Status;
+  if (typeof value !== "string") {
+    return undefined;
+  }
+
+  if (value === HealthStatus.Loading || value === HealthStatus.Healthy || value === HealthStatus.Error) {
+    return value;
+  }
+
+  return undefined;
 }
 
 function readString(
@@ -50,13 +48,4 @@ function readString(
 ): string | null | undefined {
   const value = record[camelCaseKey] ?? record[pascalCaseKey];
   return typeof value === "string" ? value : undefined;
-}
-
-function normalizeOptionalString(value: string | null | undefined): string | null {
-  if (value === null || value === undefined) {
-    return null;
-  }
-
-  const trimmedValue = value.trim();
-  return trimmedValue.length > 0 ? trimmedValue : null;
 }

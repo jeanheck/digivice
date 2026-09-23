@@ -37,14 +37,14 @@ public class EventDispatcherService(
             SafeDispatch(initialEvent, target);
         }
 
-        var isHealthy = gameStateStore.IsHealthy ?? false;
+        var status = gameStateStore.Status;
         SafeDispatch(
             new Event(
                 EventType.HealthChanged,
                 new HealthDTO(
-                    isHealthy,
-                    isHealthy ? null : gameStateStore.LastErrorCode,
-                    isHealthy ? null : gameStateStore.LastErrorDetail)),
+                    status,
+                    status == HealthStatus.Error ? gameStateStore.LastErrorCode : null,
+                    status == HealthStatus.Error ? gameStateStore.LastErrorDetail : null)),
             target);
     }
 

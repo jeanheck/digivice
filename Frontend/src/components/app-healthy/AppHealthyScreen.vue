@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import type { AppBlockingErrorViewModel } from "@/models/app-blocking-error";
+import type { AppHealthyScreenViewModel } from "@/models/app-healthy-screen";
 
 const props = defineProps<{
-  error: AppBlockingErrorViewModel;
+  viewModel: AppHealthyScreenViewModel;
 }>();
 
 const { t } = useI18n();
@@ -12,8 +12,8 @@ const { t } = useI18n();
 <template>
   <div
     class="fixed inset-0 z-200 flex items-center justify-center bg-[#000030]/95 p-6"
-    role="alert"
-    aria-live="assertive"
+    :role="props.viewModel.kind === 'loading' ? 'status' : 'alert'"
+    :aria-live="props.viewModel.kind === 'loading' ? 'polite' : 'assertive'"
   >
     <div class="dw3-panel max-w-lg w-full shadow-text">
       <div class="dw3-panel-border dw3-beveled"></div>
@@ -21,18 +21,18 @@ const { t } = useI18n();
 
       <div class="dw3-panel-content flex flex-col gap-4 p-6 text-center">
         <h1 class="text-sm leading-relaxed shadow-text-dark">
-          {{ t(props.error.titleKey) }}
+          {{ t(props.viewModel.titleKey) }}
         </h1>
 
         <p class="text-[0.65rem] leading-relaxed text-blue-200 opacity-90">
-          {{ t(props.error.hintKey) }}
+          {{ t(props.viewModel.hintKey) }}
         </p>
 
         <p
-          v-if="props.error.detail"
+          v-if="props.viewModel.detail"
           class="text-[0.55rem] leading-relaxed text-blue-300/80 wrap-break-word font-mono"
         >
-          {{ props.error.detail }}
+          {{ props.viewModel.detail }}
         </p>
       </div>
     </div>

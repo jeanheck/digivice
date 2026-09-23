@@ -8,16 +8,20 @@ public static class HealthEventFactory
 {
     public static IEnumerable<Event> CreateSuccess(IGameStateStore gameStateStore)
     {
-        if (gameStateStore.IsHealthy == true)
+        var targetStatus = gameStateStore.CurrentState != null
+            ? HealthStatus.Healthy
+            : HealthStatus.Loading;
+
+        gameStateStore.LastErrorCode = null;
+        gameStateStore.LastErrorDetail = null;
+
+        if (gameStateStore.Status == targetStatus)
         {
             return [];
         }
 
-        gameStateStore.IsHealthy = true;
-        gameStateStore.LastErrorCode = null;
-        gameStateStore.LastErrorDetail = null;
-
-        return [Create(true)];
+        gameStateStore.Status = targetStatus;
+        return [Create(targetStatus)];
     }
 
     public static IEnumerable<Event> CreateError(
@@ -26,24 +30,25 @@ public static class HealthEventFactory
         string? errorDetail = null)
     {
         var shouldNotifyClients =
-            gameStateStore.IsHealthy != false
+            gameStateStore.Status != HealthStatus.Error
             || gameStateStore.CurrentState != null;
 
         gameStateStore.LastErrorCode = errorCode;
         gameStateStore.LastErrorDetail = errorDetail;
         gameStateStore.ClearState();
+        gameStateStore.Status = HealthStatus.Error;
 
         if (!shouldNotifyClients)
         {
             return [];
         }
 
-        return [Create(false, errorCode, errorDetail)];
+        return [Create(HealthStatus.Error, errorCode, errorDetail)];
     }
 
     private static Event Create(
-        bool isHealthy,
+        HealthStatus status,
         string? errorCode = null,
         string? errorDetail = null) =>
-        new(EventType.HealthChanged, new HealthDTO(isHealthy, errorCode, errorDetail));
+        new(EventType.HealthChanged, new HealthDTO(status, errorCode, errorDetail));
 }

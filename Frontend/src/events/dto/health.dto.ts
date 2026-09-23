@@ -1,5 +1,7 @@
+import { HealthStatus } from "@/models/health-status";
+
 export interface HealthDTO {
-  isHealthy: boolean;
+  status: HealthStatus;
   errorCode?: string | null;
   errorDetail?: string | null;
 }

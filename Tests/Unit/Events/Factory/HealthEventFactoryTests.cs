@@ -5,31 +5,30 @@ using Backend.Events.DTO;
 using Backend.Events.Factory;
 using Backend.Events.Models;
 using Backend.Events.States;
-using Moq;
 using Xunit;
 
 public class HealthEventFactoryTests
 {
     [Fact]
-    public void CreateSuccess_ShouldReturnNoEvents_WhenAlreadyHealthy()
-    {
-        var gameStateStoreMock = new Mock<IGameStateStore>();
-        gameStateStoreMock.Setup(store => store.IsHealthy).Returns(true);
-
-        var result = HealthEventFactory.CreateSuccess(gameStateStoreMock.Object);
-
-        Assert.Empty(result);
-        gameStateStoreMock.VerifySet(store => store.IsHealthy = It.IsAny<bool>(), Times.Never);
-    }
-
-    [Fact]
-    public void CreateSuccess_ShouldSetStateAndReturnEvent_WhenHealthy()
+    public void CreateSuccess_ShouldReturnNoEvents_WhenAlreadyLoadingWithoutState()
     {
         var gameStateStore = new GameStateStore();
 
+        var result = HealthEventFactory.CreateSuccess(gameStateStore);
+
+        Assert.Empty(result);
+        Assert.Equal(HealthStatus.Loading, gameStateStore.Status);
+    }
+
+    [Fact]
+    public void CreateSuccess_ShouldSetHealthy_WhenStateExists()
+    {
+        var gameStateStore = new GameStateStore();
+        gameStateStore.UpdateState(new State());
+
         var result = HealthEventFactory.CreateSuccess(gameStateStore).ToList();
 
-        Assert.True(gameStateStore.IsHealthy);
+        Assert.Equal(HealthStatus.Healthy, gameStateStore.Status);
         Assert.Null(gameStateStore.LastErrorCode);
         Assert.Null(gameStateStore.LastErrorDetail);
 
@@ -37,57 +36,60 @@ public class HealthEventFactoryTests
         Assert.Equal(EventType.HealthChanged, ev.Type);
 
         var dto = Assert.IsType<HealthDTO>(ev.Payload);
-        Assert.True(dto.IsHealthy);
+        Assert.Equal(HealthStatus.Healthy, dto.Status);
         Assert.Null(dto.ErrorCode);
         Assert.Null(dto.ErrorDetail);
     }
 
     [Fact]
-    public void CreateSuccess_ShouldClearErrorCodes_WhenHealthy()
+    public void CreateSuccess_ShouldTransitionFromErrorToLoading_WhenNoState()
     {
         var gameStateStore = new GameStateStore
         {
+            Status = HealthStatus.Error,
             LastErrorCode = "process_not_found",
             LastErrorDetail = "detail"
         };
 
-        HealthEventFactory.CreateSuccess(gameStateStore);
+        var result = HealthEventFactory.CreateSuccess(gameStateStore).ToList();
 
+        Assert.Equal(HealthStatus.Loading, gameStateStore.Status);
         Assert.Null(gameStateStore.LastErrorCode);
         Assert.Null(gameStateStore.LastErrorDetail);
+
+        var dto = Assert.IsType<HealthDTO>(Assert.Single(result).Payload);
+        Assert.Equal(HealthStatus.Loading, dto.Status);
     }
 
     [Fact]
-    public void CreateError_ShouldClearStateAndReturnEvent_WhenUnhealthy()
+    public void CreateError_ShouldClearStateAndReturnEvent_WhenLeavingNonError()
     {
         var gameStateStore = new GameStateStore
         {
-            IsHealthy = true
+            Status = HealthStatus.Loading
         };
 
         var result = HealthEventFactory.CreateError(gameStateStore, "process_not_found").ToList();
 
         Assert.Null(gameStateStore.CurrentState);
-        Assert.False(gameStateStore.IsHealthy);
+        Assert.Equal(HealthStatus.Error, gameStateStore.Status);
         Assert.Equal("process_not_found", gameStateStore.LastErrorCode);
 
         var ev = Assert.Single(result);
         Assert.Equal(EventType.HealthChanged, ev.Type);
 
         var dto = Assert.IsType<HealthDTO>(ev.Payload);
-        Assert.False(dto.IsHealthy);
+        Assert.Equal(HealthStatus.Error, dto.Status);
         Assert.Equal("process_not_found", dto.ErrorCode);
     }
 
     [Fact]
-    public void CreateError_ShouldReturnNoEvents_WhenStoreWasAlreadyCleared()
+    public void CreateError_ShouldReturnNoEvents_WhenStoreWasAlreadyErrorWithoutState()
     {
         var gameStateStore = new GameStateStore
         {
-            IsHealthy = true
+            Status = HealthStatus.Error
         };
-        gameStateStore.UpdateState(new State());
-        gameStateStore.ClearState();
 
         var result = HealthEventFactory.CreateError(gameStateStore, "process_not_found");
 
@@ -95,22 +97,22 @@ public class HealthEventFactoryTests
     }
 
     [Fact]
-    public void CreateError_ShouldReturnEvent_WhenAlreadyUnhealthyButStateExists()
+    public void CreateError_ShouldReturnEvent_WhenAlreadyErrorButStateExists()
     {
         var gameStateStore = new GameStateStore
         {
-            IsHealthy = false
+            Status = HealthStatus.Error
         };
         gameStateStore.UpdateState(new State());
 
         var result = HealthEventFactory.CreateError(gameStateStore, "process_not_found").ToList();
 
         Assert.Null(gameStateStore.CurrentState);
-        Assert.False(gameStateStore.IsHealthy);
+        Assert.Equal(HealthStatus.Error, gameStateStore.Status);
 
         var ev = Assert.Single(result);
         var dto = Assert.IsType<HealthDTO>(ev.Payload);
-        Assert.False(dto.IsHealthy);
+        Assert.Equal(HealthStatus.Error, dto.Status);
         Assert.Equal("process_not_found", dto.ErrorCode);
     }
 
@@ -119,7 +121,7 @@ public class HealthEventFactoryTests
     {
         var gameStateStore = new GameStateStore
         {
-            IsHealthy = true
+            Status = HealthStatus.Healthy
         };
 
         var result = HealthEventFactory.CreateError(
@@ -131,8 +133,8 @@ public class HealthEventFactoryTests
         Assert.Equal("Failed to read player data", gameStateStore.LastErrorDetail);
 
         var dto = Assert.IsType<HealthDTO>(Assert.Single(result).Payload);
+        Assert.Equal(HealthStatus.Error, dto.Status);
         Assert.Equal("memory_read_failed", dto.ErrorCode);
         Assert.Equal("Failed to read player data", dto.ErrorDetail);
     }
 }
-

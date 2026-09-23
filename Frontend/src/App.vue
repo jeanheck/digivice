@@ -3,14 +3,14 @@ import Journal from "@/components/journal/Journal.vue";
 import Map from "@/components/map/Map.vue";
 import Footer from "@/components/footer/Footer.vue";
 import Party from "@/components/party/Party.vue";
-import AppErrorScreen from "@/components/app-error/AppErrorScreen.vue";
-import { useAppBlockingError } from "@/composables/use-app-blocking-error";
+import AppHealthyScreen from "@/components/app-healthy/AppHealthyScreen.vue";
+import { useAppHealthyScreen } from "@/composables/use-app-healthy-screen";
 
-const blockingError = useAppBlockingError();
+const healthyScreen = useAppHealthyScreen();
 </script>
 
 <template>
-  <AppErrorScreen v-if="blockingError" :error="blockingError" />
+  <AppHealthyScreen v-if="healthyScreen" :view-model="healthyScreen" />
 
   <main
     v-else

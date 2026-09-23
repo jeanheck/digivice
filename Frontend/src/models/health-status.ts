@@ -1,5 +1,5 @@
-export interface HealthStatus {
-  isHealthy: boolean;
-  errorCode: string | null;
-  errorDetail: string | null;
+export enum HealthStatus {
+  Loading = "Loading",
+  Healthy = "Healthy",
+  Error = "Error",
 }

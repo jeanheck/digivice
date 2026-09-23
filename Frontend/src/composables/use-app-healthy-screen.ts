@@ -1,12 +1,13 @@
 import { computed } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
-import type { AppBlockingErrorViewModel } from "@/models/app-blocking-error";
+import { HealthStatus } from "@/models/health-status";
+import type { AppHealthyScreenViewModel } from "@/models/app-healthy-screen";
 import { EmulatorConnectionErrorHelper } from "@/events/helpers/emulator-connection-error.helper";
 
-export function useAppBlockingError() {
+export function useAppHealthyScreen() {
   const store = useGameStore();
 
-  return computed((): AppBlockingErrorViewModel | null => {
+  return computed((): AppHealthyScreenViewModel | null => {
     if (store.backendProcessFailed) {
       return {
         kind: "backend-crashed",
@@ -24,13 +25,21 @@ export function useAppBlockingError() {
       };
     }
 
-    if (!store.isHealthy) {
+    if (store.healthStatus === HealthStatus.Loading) {
+      return {
+        kind: "loading",
+        titleKey: "errors.loading.title",
+        hintKey: "errors.loading.hint",
+      };
+    }
+
+    if (store.healthStatus === HealthStatus.Error) {
       const { titleKey, hintKey } = EmulatorConnectionErrorHelper.resolveErrorKeys(
         store.lastErrorCode,
       );
 
       return {
-        kind: "emulator-not-found",
+        kind: "operational-error",
         titleKey,
         hintKey,
         detail: store.lastErrorDetail ?? undefined,

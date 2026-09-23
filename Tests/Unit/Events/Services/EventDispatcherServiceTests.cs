@@ -36,7 +36,7 @@ public class EventDispatcherServiceTests
         var loggerMock = new Mock<ILogger<EventDispatcherService>>();
         var gameStateStore = new GameStateStore
         {
-            IsHealthy = false,
+            Status = HealthStatus.Error,
             LastErrorCode = "mapping_not_found"
         };
 
@@ -52,7 +52,7 @@ public class EventDispatcherServiceTests
                 "HealthChanged",
                 It.Is<object?[]>(args =>
                     args.Length == 1
-                    && GetHealthDto(args[0]!).IsHealthy == false
+                    && GetHealthDto(args[0]!).Status == HealthStatus.Error
                     && GetHealthDto(args[0]!).ErrorCode == "mapping_not_found"),
                 It.IsAny<CancellationToken>()),
             Times.Once);
@@ -84,7 +84,7 @@ public class EventDispatcherServiceTests
 
         var gameStateStoreMock = new Mock<IGameStateStore>();
         gameStateStoreMock.Setup(g => g.CurrentState).Returns((State?)null);
-        gameStateStoreMock.Setup(g => g.IsHealthy).Returns(false);
+        gameStateStoreMock.Setup(g => g.Status).Returns(HealthStatus.Loading);
 
         var service = new EventDispatcherService(
             hubContextMock.Object,
@@ -185,8 +185,8 @@ public class EventDispatcherServiceTests
 
         var events = new List<Event>
         {
-            new(EventType.PlayerChanged, new HealthDTO(true)),
-            new(EventType.PartyChanged, new HealthDTO(true))
+            new(EventType.PlayerChanged, new HealthDTO(HealthStatus.Healthy)),
+            new(EventType.PartyChanged, new HealthDTO(HealthStatus.Healthy))
         };
 
         // Act
@@ -241,7 +241,7 @@ public class EventDispatcherServiceTests
             gameStateStoreMock.Object
         );
 
-        var singleEvent = new Event(EventType.PlayerChanged, new HealthDTO(true));
+        var singleEvent = new Event(EventType.PlayerChanged, new HealthDTO(HealthStatus.Healthy));
 
         // Act
         service.DispatchEvents(new[] { singleEvent });
@@ -337,5 +337,6 @@ public class EventDispatcherServiceTests
         );
     }
 }
+
 
 

@@ -58,7 +58,11 @@ try
     });
 
     // Register SignalR
-    builder.Services.AddSignalR();
+    builder.Services.AddSignalR().AddJsonProtocol(options =>
+    {
+        options.PayloadSerializerOptions.Converters.Add(
+            new System.Text.Json.Serialization.JsonStringEnumConverter());
+    });
 
     var app = builder.Build();
 

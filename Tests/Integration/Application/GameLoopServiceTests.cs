@@ -123,11 +123,11 @@ public class GameLoopServiceTests
 
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsHealthEvent(events, isHealthy: false, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
+                ContainsHealthEvent(events, HealthStatus.Error, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
             Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsHealthEvent(events, isHealthy: true))),
+                ContainsHealthEvent(events, HealthStatus.Healthy))),
             Times.AtLeastOnce);
     }
 
@@ -155,13 +155,13 @@ public class GameLoopServiceTests
 
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsHealthEvent(events, isHealthy: false, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
+                ContainsHealthEvent(events, HealthStatus.Error, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
             Times.AtLeastOnce);
     }
 
     private static bool ContainsHealthEvent(
         IEnumerable<Event> events,
-        bool isHealthy,
+        HealthStatus status,
         string? errorCode = null,
         string? errorDetail = null)
     {
@@ -173,7 +173,7 @@ public class GameLoopServiceTests
             }
 
             var dto = (HealthDTO)ev.Payload;
-            return dto.IsHealthy == isHealthy
+            return dto.Status == status
                 && dto.ErrorCode == errorCode
                 && dto.ErrorDetail == errorDetail;
         });
@@ -234,7 +234,7 @@ public class GameLoopServiceTests
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
                 ContainsHealthEvent(
                     events,
-                    isHealthy: false,
+                    HealthStatus.Error,
                     EmulatorConnectionErrorCodes.StateComposeFailed,
                     "RAM read error"))),
             Times.AtLeastOnce);
@@ -268,7 +268,7 @@ public class GameLoopServiceTests
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
                 events.Any(ev =>
                     ev.Type.Equals(EventType.HealthChanged)
-                    && !((HealthDTO)ev.Payload).IsHealthy
+                    && ((HealthDTO)ev.Payload).Status == HealthStatus.Error
                     && ((HealthDTO)ev.Payload).ErrorCode == EmulatorConnectionErrorCodes.StateComposeFailed))),
             Times.AtLeastOnce);
         Assert.Null(_gameStateStore.CurrentState);
@@ -301,7 +301,7 @@ public class GameLoopServiceTests
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
                 ContainsHealthEvent(
                     events,
-                    isHealthy: false,
+                    HealthStatus.Error,
                     EmulatorConnectionErrorCodes.MemoryReadFailed,
                     "Failed to read player data"))),
             Times.AtLeastOnce);
@@ -349,9 +349,10 @@ public class GameLoopServiceTests
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
                 events.Any(ev =>
                     ev.Type.Equals(EventType.HealthChanged)
-                    && !((HealthDTO)ev.Payload).IsHealthy
+                    && ((HealthDTO)ev.Payload).Status == HealthStatus.Error
                     && ((HealthDTO)ev.Payload).ErrorCode == EmulatorConnectionErrorCodes.StateComposeFailed))),
             Times.AtLeastOnce);
     }
 }
+
 

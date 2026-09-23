@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 import type { State } from "../models";
 import type * as Events from "../events/events.map";
+import { HealthStatus } from "../models/health-status";
 import { HealthConverter } from "../events/converters/health.converter";
 import { PlayerConverter } from "../events/converters/player.converter";
 import { ImportantItemsConverter } from "../events/converters/important-items.converter";
@@ -22,13 +23,13 @@ import { NpcsSyncer } from "./syncers/npcs.syncer";
 
 export const useGameStore = defineStore("game", () => {
   const isConnectedWithBackend = ref(false);
-  const isHealthy = ref(false);
+  const healthStatus = ref<HealthStatus>(HealthStatus.Loading);
   const backendProcessFailed = ref(false);
   const lastHubConnectionError = ref<string | null>(null);
   const lastErrorCode = ref<string | null>(null);
   const lastErrorDetail = ref<string | null>(null);
   const isConnected = computed(() => {
-    return isConnectedWithBackend.value && isHealthy.value;
+    return isConnectedWithBackend.value && healthStatus.value === HealthStatus.Healthy;
   });
   const currentState = ref<State | null>(null);
 
@@ -67,17 +68,23 @@ export const useGameStore = defineStore("game", () => {
 
   function syncHealth(data: Events.HealthDTO): void {
     const event = HealthConverter.convert(data);
-    isHealthy.value = event.isHealthy;
+    healthStatus.value = event.status;
 
-    if (event.isHealthy) {
+    if (event.status === HealthStatus.Healthy) {
+      lastErrorCode.value = null;
+      lastErrorDetail.value = null;
+      return;
+    }
+
+    if (event.status === HealthStatus.Loading) {
       lastErrorCode.value = null;
       lastErrorDetail.value = null;
       return;
     }
 
     clearGameState();
-    lastErrorCode.value = event.errorCode;
-    lastErrorDetail.value = event.errorDetail;
+    lastErrorCode.value = event.errorCode ?? null;
+    lastErrorDetail.value = event.errorDetail ?? null;
   }
 
   function setInitialState(state: Events.StateDTO | null): void {
@@ -173,7 +180,7 @@ export const useGameStore = defineStore("game", () => {
   return {
     isConnected,
     isConnectedWithBackend,
-    isHealthy,
+    healthStatus,
     backendProcessFailed,
     lastHubConnectionError,
     lastErrorCode,

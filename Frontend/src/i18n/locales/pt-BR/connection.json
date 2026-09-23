@@ -4,6 +4,10 @@
     "disconnected": "Desconectado"
   },
   "errors": {
+    "loading": {
+      "title": "Carregando...",
+      "hint": "Aguardando o Digivice ficar pronto."
+    },
     "backendCrashed": {
       "title": "O motor do Digivice parou",
       "hint": "Feche o aplicativo e abra novamente. Se o problema continuar, contate o desenvolvedor."

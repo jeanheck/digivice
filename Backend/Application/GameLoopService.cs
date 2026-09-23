@@ -59,6 +59,8 @@ namespace Backend.Application
                         eventDispatcherService.DispatchEvents(events);
 
                         gameStateStore.UpdateState(newState);
+                        eventDispatcherService.DispatchEvents(
+                            HealthEventFactory.CreateSuccess(gameStateStore));
 
                         if (isDebuggingEnabled && !Console.IsOutputRedirected)
                         {
