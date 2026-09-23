@@ -33,7 +33,7 @@ namespace Backend.Application
                     if (!connectionAttemptResult.IsSuccess)
                     {
                         eventDispatcherService.DispatchEvents(
-                            ConnectionEventFactory.CreateError(
+                            HealthEventFactory.CreateError(
                                 gameStateStore,
                                 connectionAttemptResult.ErrorCode!,
                                 connectionAttemptResult.ErrorDetail));
@@ -48,7 +48,7 @@ namespace Backend.Application
                     }
 
                     eventDispatcherService.DispatchEvents(
-                    ConnectionEventFactory.CreateSuccess(gameStateStore));
+                    HealthEventFactory.CreateSuccess(gameStateStore));
 
                     try
                     {
@@ -69,7 +69,7 @@ namespace Backend.Application
                     {
                         duckstationConnector.ClearSession();
                         eventDispatcherService.DispatchEvents(
-                            ConnectionEventFactory.CreateError(
+                            HealthEventFactory.CreateError(
                                 gameStateStore,
                                 EmulatorConnectionErrorCodes.MemoryReadFailed,
                                 ex.Message));
@@ -88,7 +88,7 @@ namespace Backend.Application
                         logger.LogError(ex, "Error processing game state in GameLoopService.");
                         duckstationConnector.ClearSession();
                         eventDispatcherService.DispatchEvents(
-                            ConnectionEventFactory.CreateError(
+                            HealthEventFactory.CreateError(
                                 gameStateStore,
                                 EmulatorConnectionErrorCodes.StateComposeFailed,
                                 ex.Message));

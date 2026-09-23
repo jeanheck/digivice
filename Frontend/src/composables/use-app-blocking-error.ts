@@ -24,16 +24,16 @@ export function useAppBlockingError() {
       };
     }
 
-    if (!store.isConnectedWithEmulator) {
+    if (!store.isHealthy) {
       const { titleKey, hintKey } = EmulatorConnectionErrorHelper.resolveErrorKeys(
-        store.lastEmulatorConnectionErrorCode,
+        store.lastErrorCode,
       );
 
       return {
         kind: "emulator-not-found",
         titleKey,
         hintKey,
-        detail: store.lastEmulatorConnectionErrorDetail ?? undefined,
+        detail: store.lastErrorDetail ?? undefined,
       };
     }
 

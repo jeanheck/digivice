@@ -19,16 +19,16 @@ public class GameStateStoreTests
     }
 
     [Fact]
-    public void ClearState_ShouldResetCurrentStateAndSetEmulatorConnectedToFalse()
+    public void ClearState_ShouldResetCurrentStateAndSetHealthyToFalse()
     {
         GameStateStore gameStateStore = new GameStateStore();
         State dummyState = new State();
         gameStateStore.UpdateState(dummyState);
-        gameStateStore.IsConnectedWithEmulator = true;
+        gameStateStore.IsHealthy = true;
 
         gameStateStore.ClearState();
 
         Assert.Null(gameStateStore.CurrentState);
-        Assert.False(gameStateStore.IsConnectedWithEmulator);
+        Assert.False(gameStateStore.IsHealthy);
     }
 }

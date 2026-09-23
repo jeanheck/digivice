@@ -3,7 +3,7 @@ namespace Backend.Events.Models;
 public enum EventType
 {
     InitialState,
-    EmulatorConnectionStatusChanged,
+    HealthChanged,
     PlayerChanged,
     ImportantItemsChanged,
     PartyChanged,

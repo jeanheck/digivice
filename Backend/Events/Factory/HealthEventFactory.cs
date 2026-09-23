@@ -4,18 +4,18 @@ using Backend.Events.States;
 
 namespace Backend.Events.Factory;
 
-public static class ConnectionEventFactory
+public static class HealthEventFactory
 {
     public static IEnumerable<Event> CreateSuccess(IGameStateStore gameStateStore)
     {
-        if (gameStateStore.IsConnectedWithEmulator == true)
+        if (gameStateStore.IsHealthy == true)
         {
             return [];
         }
 
-        gameStateStore.IsConnectedWithEmulator = true;
-        gameStateStore.LastEmulatorConnectionErrorCode = null;
-        gameStateStore.LastEmulatorConnectionErrorDetail = null;
+        gameStateStore.IsHealthy = true;
+        gameStateStore.LastErrorCode = null;
+        gameStateStore.LastErrorDetail = null;
 
         return [Create(true)];
     }
@@ -26,11 +26,11 @@ public static class ConnectionEventFactory
         string? errorDetail = null)
     {
         var shouldNotifyClients =
-            gameStateStore.IsConnectedWithEmulator != false
+            gameStateStore.IsHealthy != false
             || gameStateStore.CurrentState != null;
 
-        gameStateStore.LastEmulatorConnectionErrorCode = errorCode;
-        gameStateStore.LastEmulatorConnectionErrorDetail = errorDetail;
+        gameStateStore.LastErrorCode = errorCode;
+        gameStateStore.LastErrorDetail = errorDetail;
         gameStateStore.ClearState();
 
         if (!shouldNotifyClients)
@@ -42,8 +42,8 @@ public static class ConnectionEventFactory
     }
 
     private static Event Create(
-        bool isConnected,
+        bool isHealthy,
         string? errorCode = null,
         string? errorDetail = null) =>
-        new(EventType.EmulatorConnectionStatusChanged, new ConnectionDTO(isConnected, errorCode, errorDetail));
+        new(EventType.HealthChanged, new HealthDTO(isHealthy, errorCode, errorDetail));
 }

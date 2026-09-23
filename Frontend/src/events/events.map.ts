@@ -1,7 +1,7 @@
 // Export everything from individual modular files in dto folder
 export type { PlayerDTO } from "./dto/player.dto";
 export type { ImportantItemsDTO } from "./dto/important-items.dto";
-export type { ConnectionDTO, EmulatorConnectionStatusChangedDTO } from "./dto/connection.dto";
+export type { HealthDTO } from "./dto/health.dto";
 export type { PartyDTO } from "./dto/party.dto";
 export type { DigimonBattleDTO } from "./dto/digimon-battle.dto";
 export type { CardBattleDTO } from "./dto/card-battle.dto";
@@ -28,7 +28,7 @@ export type { DigievolutionSlotDTO } from "./dto/parties/digimons/digievolution-
 export type { StoredDigievolutionDTO } from "./dto/parties/digimons/stored-digievolution.dto";
 
 // Import local types to define the main Event DTO Map
-import type { EmulatorConnectionStatusChangedDTO } from "./dto/connection.dto";
+import type { HealthDTO } from "./dto/health.dto";
 import type { StateDTO } from "./dto/state.dto";
 import type { PlayerDTO } from "./dto/player.dto";
 import type { ImportantItemsDTO } from "./dto/important-items.dto";
@@ -41,7 +41,7 @@ import type { JournalDTO } from "./dto/journal.dto";
 
 // Mapeamento Estrito dos Eventos do SignalR e do Cliente
 export interface EventsMap {
-  EmulatorConnectionStatusChanged: EmulatorConnectionStatusChangedDTO;
+  HealthChanged: HealthDTO;
   InitialState: StateDTO;
   PlayerChanged: PlayerDTO;
   ImportantItemsChanged: ImportantItemsDTO;

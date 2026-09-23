@@ -1,4 +1,4 @@
-namespace Tests.Integration.Application;
+﻿namespace Tests.Integration.Application;
 
 using System;
 using System.Linq;
@@ -123,11 +123,11 @@ public class GameLoopServiceTests
 
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsConnectionEvent(events, isConnected: false, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
+                ContainsHealthEvent(events, isHealthy: false, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
             Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsConnectionEvent(events, isConnected: true))),
+                ContainsHealthEvent(events, isHealthy: true))),
             Times.AtLeastOnce);
     }
 
@@ -155,25 +155,25 @@ public class GameLoopServiceTests
 
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsConnectionEvent(events, isConnected: false, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
+                ContainsHealthEvent(events, isHealthy: false, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
             Times.AtLeastOnce);
     }
 
-    private static bool ContainsConnectionEvent(
+    private static bool ContainsHealthEvent(
         IEnumerable<Event> events,
-        bool isConnected,
+        bool isHealthy,
         string? errorCode = null,
         string? errorDetail = null)
     {
         return events.Any(ev =>
         {
-            if (!ev.Type.Equals(EventType.EmulatorConnectionStatusChanged))
+            if (!ev.Type.Equals(EventType.HealthChanged))
             {
                 return false;
             }
 
-            var dto = (ConnectionDTO)ev.Payload;
-            return dto.IsConnected == isConnected
+            var dto = (HealthDTO)ev.Payload;
+            return dto.IsHealthy == isHealthy
                 && dto.ErrorCode == errorCode
                 && dto.ErrorDetail == errorDetail;
         });
@@ -232,9 +232,9 @@ public class GameLoopServiceTests
         _duckstationConnectorMock.Verify(connector => connector.ClearSession(), Times.AtLeastOnce);
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsConnectionEvent(
+                ContainsHealthEvent(
                     events,
-                    isConnected: false,
+                    isHealthy: false,
                     EmulatorConnectionErrorCodes.StateComposeFailed,
                     "RAM read error"))),
             Times.AtLeastOnce);
@@ -267,9 +267,9 @@ public class GameLoopServiceTests
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
                 events.Any(ev =>
-                    ev.Type.Equals(EventType.EmulatorConnectionStatusChanged)
-                    && !((ConnectionDTO)ev.Payload).IsConnected
-                    && ((ConnectionDTO)ev.Payload).ErrorCode == EmulatorConnectionErrorCodes.StateComposeFailed))),
+                    ev.Type.Equals(EventType.HealthChanged)
+                    && !((HealthDTO)ev.Payload).IsHealthy
+                    && ((HealthDTO)ev.Payload).ErrorCode == EmulatorConnectionErrorCodes.StateComposeFailed))),
             Times.AtLeastOnce);
         Assert.Null(_gameStateStore.CurrentState);
     }
@@ -299,9 +299,9 @@ public class GameLoopServiceTests
 
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsConnectionEvent(
+                ContainsHealthEvent(
                     events,
-                    isConnected: false,
+                    isHealthy: false,
                     EmulatorConnectionErrorCodes.MemoryReadFailed,
                     "Failed to read player data"))),
             Times.AtLeastOnce);
@@ -348,9 +348,10 @@ public class GameLoopServiceTests
         _eventDispatcherServiceMock.Verify(
             d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
                 events.Any(ev =>
-                    ev.Type.Equals(EventType.EmulatorConnectionStatusChanged)
-                    && !((ConnectionDTO)ev.Payload).IsConnected
-                    && ((ConnectionDTO)ev.Payload).ErrorCode == EmulatorConnectionErrorCodes.StateComposeFailed))),
+                    ev.Type.Equals(EventType.HealthChanged)
+                    && !((HealthDTO)ev.Payload).IsHealthy
+                    && ((HealthDTO)ev.Payload).ErrorCode == EmulatorConnectionErrorCodes.StateComposeFailed))),
             Times.AtLeastOnce);
     }
 }
+

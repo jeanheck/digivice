@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 import type { State } from "../models";
-import type { EmulatorConnectionStatus } from "../models/emulator-connection-status";
 import type * as Events from "../events/events.map";
+import { HealthConverter } from "../events/converters/health.converter";
 import { PlayerConverter } from "../events/converters/player.converter";
 import { ImportantItemsConverter } from "../events/converters/important-items.converter";
 import { PartyConverter } from "../events/converters/party.converter";
@@ -22,13 +22,13 @@ import { NpcsSyncer } from "./syncers/npcs.syncer";
 
 export const useGameStore = defineStore("game", () => {
   const isConnectedWithBackend = ref(false);
-  const isConnectedWithEmulator = ref(false);
+  const isHealthy = ref(false);
   const backendProcessFailed = ref(false);
   const lastHubConnectionError = ref<string | null>(null);
-  const lastEmulatorConnectionErrorCode = ref<string | null>(null);
-  const lastEmulatorConnectionErrorDetail = ref<string | null>(null);
+  const lastErrorCode = ref<string | null>(null);
+  const lastErrorDetail = ref<string | null>(null);
   const isConnected = computed(() => {
-    return isConnectedWithBackend.value && isConnectedWithEmulator.value;
+    return isConnectedWithBackend.value && isHealthy.value;
   });
   const currentState = ref<State | null>(null);
 
@@ -65,18 +65,19 @@ export const useGameStore = defineStore("game", () => {
     }
   }
 
-  function syncEmulatorConnectionStatus(event: EmulatorConnectionStatus): void {
-    isConnectedWithEmulator.value = event.isConnected;
+  function syncHealth(data: Events.HealthDTO): void {
+    const event = HealthConverter.convert(data);
+    isHealthy.value = event.isHealthy;
 
-    if (event.isConnected) {
-      lastEmulatorConnectionErrorCode.value = null;
-      lastEmulatorConnectionErrorDetail.value = null;
+    if (event.isHealthy) {
+      lastErrorCode.value = null;
+      lastErrorDetail.value = null;
       return;
     }
 
     clearGameState();
-    lastEmulatorConnectionErrorCode.value = event.errorCode;
-    lastEmulatorConnectionErrorDetail.value = event.errorDetail;
+    lastErrorCode.value = event.errorCode;
+    lastErrorDetail.value = event.errorDetail;
   }
 
   function setInitialState(state: Events.StateDTO | null): void {
@@ -172,15 +173,15 @@ export const useGameStore = defineStore("game", () => {
   return {
     isConnected,
     isConnectedWithBackend,
-    isConnectedWithEmulator,
+    isHealthy,
     backendProcessFailed,
     lastHubConnectionError,
-    lastEmulatorConnectionErrorCode,
-    lastEmulatorConnectionErrorDetail,
+    lastErrorCode,
+    lastErrorDetail,
     setBackendProcessFailed,
     currentState,
     syncHubConnectionStatus,
-    syncEmulatorConnectionStatus,
+    syncHealth,
     setInitialState,
     syncPlayer,
     syncImportantItems,

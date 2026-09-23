@@ -1,34 +1,34 @@
-import type { ConnectionDTO } from "@/events/dto/connection.dto";
-import type { EmulatorConnectionStatus } from "@/models/emulator-connection-status";
+import type { HealthDTO } from "@/events/dto/health.dto";
+import type { HealthStatus } from "@/models/health-status";
 
-export class EmulatorConnectionConverter {
-  static convert(data: unknown): EmulatorConnectionStatus {
+export class HealthConverter {
+  static convert(data: unknown): HealthStatus {
     if (data === null || typeof data !== "object") {
       return {
-        isConnected: false,
+        isHealthy: false,
         errorCode: null,
         errorDetail: null,
       };
     }
 
     const record = data as Record<string, unknown>;
-    const dto = normalizeConnectionDto(record);
+    const dto = normalizeHealthDto(record);
 
     return {
-      isConnected: dto.isConnected,
+      isHealthy: dto.isHealthy,
       errorCode: normalizeOptionalString(dto.errorCode),
       errorDetail: normalizeOptionalString(dto.errorDetail),
     };
   }
 }
 
-function normalizeConnectionDto(record: Record<string, unknown>): ConnectionDTO {
-  const isConnected = readBoolean(record, "isConnected", "IsConnected") ?? false;
+function normalizeHealthDto(record: Record<string, unknown>): HealthDTO {
+  const isHealthy = readBoolean(record, "isHealthy", "IsHealthy") ?? false;
   const errorCode = readString(record, "errorCode", "ErrorCode");
   const errorDetail = readString(record, "errorDetail", "ErrorDetail");
 
   return {
-    isConnected,
+    isHealthy,
     errorCode,
     errorDetail,
   };
