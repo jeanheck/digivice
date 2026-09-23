@@ -22,7 +22,7 @@ namespace Backend.Application
         {
             logger.LogInformation("Starting GameLoopService...");
 
-            var pollingIntervalMs = configuration.GetValue<int?>("GameLoop:PollingIntervalMs") ?? 1000;
+            var pollingIntervalMs = configuration.GetValue<int?>("GameLoop:PollingIntervalMs") ?? 500;
             var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
 
             try
