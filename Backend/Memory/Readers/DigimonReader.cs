@@ -33,10 +33,10 @@ namespace Backend.Memory.Readers
 
             foreach (var digievolutionSlot in digievolutionsSlots)
             {
-                if (digievolutionSlot.DigievolutionId is not null)
+                if (digievolutionSlot.DigievolutionId > 0)
                 {
                     digievolutionSlot.DigievolutionResource = digievolutionReader
-                        .Read(memoryBlockReader, digievolutionSlot.DigievolutionId.Value, digimonStatusAddresses.Digievolutions);
+                        .Read(memoryBlockReader, digievolutionSlot.DigievolutionId, digimonStatusAddresses.Digievolutions);
                 }
                 else
                 {

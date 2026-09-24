@@ -30,7 +30,7 @@ public class DigievolutionSlotAssemblerTests
         var resource = new DigievolutionSlotResource
         {
             Index = 3,
-            DigievolutionId = null,
+            DigievolutionId = 0,
             DigievolutionResource = null
         };
 

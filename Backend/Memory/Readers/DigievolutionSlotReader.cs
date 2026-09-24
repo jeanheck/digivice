@@ -13,7 +13,7 @@ namespace Backend.Memory.Readers
             return new DigievolutionSlotResource
             {
                 Index = slotAddresses.Index,
-                DigievolutionId = digievolutionId > 0 ? digievolutionId : null
+                DigievolutionId = digievolutionId
             };
         }
     }

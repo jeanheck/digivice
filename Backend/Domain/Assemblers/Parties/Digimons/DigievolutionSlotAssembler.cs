@@ -10,7 +10,7 @@ namespace Backend.Domain.Assemblers.Parties.Digimons
             return new DigievolutionSlot
             {
                 Index = resource.Index,
-                DigievolutionId = resource.DigievolutionId,
+                DigievolutionId = resource.DigievolutionId > 0 ? resource.DigievolutionId : null,
                 Digievolution = resource.DigievolutionResource != null
                     ? DigievolutionAssembler.Assemble(resource.DigievolutionResource)
                     : null

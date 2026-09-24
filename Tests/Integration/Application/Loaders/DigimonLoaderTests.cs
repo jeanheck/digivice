@@ -102,7 +102,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(3, digimonResource.Digievolutions[0].DigievolutionResource!.Level);
         Assert.Equal(10, digimonResource.Digievolutions[1].DigievolutionId);
         Assert.Equal(1, digimonResource.Digievolutions[1].DigievolutionResource!.Level);
-        Assert.Null(digimonResource.Digievolutions[2].DigievolutionId);
+        Assert.Equal(0, digimonResource.Digievolutions[2].DigievolutionId);
         Assert.Null(digimonResource.Digievolutions[2].DigievolutionResource);
     }
 
