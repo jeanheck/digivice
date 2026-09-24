@@ -11,16 +11,16 @@ public class StepConverterTests
         var step = new Step
         {
             Number = 5,
-            Value = 6,
-            Requisites = [new Requisite { Id = "ReqA", Value = 7 }]
+            IsDone = true,
+            Requisites = [new Requisite { Id = "ReqA", IsDone = true }]
         };
 
         var dto = StepConverter.ToDTO(step);
 
         Assert.Equal(5, dto.Number);
-        Assert.Equal((byte)6, dto.Value.Value);
+        Assert.True(dto.IsDone.Value);
         var requisite = Assert.Single(dto.Requisites.Value!);
         Assert.Equal("ReqA", requisite.Id);
-        Assert.Equal((byte)7, requisite.Value.Value);
+        Assert.True(requisite.IsDone.Value);
     }
 }

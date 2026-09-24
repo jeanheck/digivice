@@ -20,7 +20,7 @@ public class QuestDifferTests
     [Fact]
     public void Diff_ShouldReturnFullDTO_WhenPreviousIsNull()
     {
-        var newObj = new Quest { Id = "12", Requisites = [], Steps = [new Step { Number = 0, Value = 1, Requisites = [] }] };
+        var newObj = new Quest { Id = "12", Requisites = [], Steps = [new Step { Number = 0, IsDone = true, Requisites = [] }] };
 
         var result = QuestDiffer.Diff(null, newObj);
 
@@ -34,8 +34,8 @@ public class QuestDifferTests
     [Fact]
     public void Diff_ShouldReturnDelta_WhenStepChanged()
     {
-        var previous = new Quest { Id = "12", Requisites = [], Steps = [new Step { Number = 0, Value = 0, Requisites = [] }] };
-        var newObj = new Quest { Id = "12", Requisites = [], Steps = [new Step { Number = 0, Value = 1, Requisites = [] }] };
+        var previous = new Quest { Id = "12", Requisites = [], Steps = [new Step { Number = 0, IsDone = false, Requisites = [] }] };
+        var newObj = new Quest { Id = "12", Requisites = [], Steps = [new Step { Number = 0, IsDone = true, Requisites = [] }] };
 
         var result = QuestDiffer.Diff(previous, newObj);
 
@@ -44,15 +44,15 @@ public class QuestDifferTests
         Assert.True(result.Steps.HasValue);
         Assert.NotNull(result.Steps.Value);
         Assert.Single(result.Steps.Value);
-        Assert.True(result.Steps.Value[0].Value.HasValue);
-        Assert.Equal((byte)1, result.Steps.Value[0].Value.Value);
+        Assert.True(result.Steps.Value[0].IsDone.HasValue);
+        Assert.True(result.Steps.Value[0].IsDone.Value);
     }
 
     [Fact]
     public void Diff_ShouldReturnDelta_WhenRequisiteChanged()
     {
-        var previous = new Quest { Id = "12", Requisites = [new Requisite { Id = "1", Value = 1 }], Steps = [] };
-        var newObj = new Quest { Id = "12", Requisites = [new Requisite { Id = "1", Value = 2 }], Steps = [] };
+        var previous = new Quest { Id = "12", Requisites = [new Requisite { Id = "1", IsDone = false }], Steps = [] };
+        var newObj = new Quest { Id = "12", Requisites = [new Requisite { Id = "1", IsDone = true }], Steps = [] };
 
         var result = QuestDiffer.Diff(previous, newObj);
 
@@ -61,24 +61,24 @@ public class QuestDifferTests
         Assert.True(result.Requisites.HasValue);
         Assert.NotNull(result.Requisites.Value);
         Assert.Single(result.Requisites.Value);
-        Assert.Equal((byte)2, result.Requisites.Value[0].Value.Value);
+        Assert.True(result.Requisites.Value[0].IsDone.Value);
         Assert.False(result.Steps.HasValue);
     }
 
     [Fact]
     public void Diff_ShouldReturnMultipleDeltas_WhenRequisiteAndStepChanged()
     {
-        var previous = new Quest 
-        { 
-            Id = "12", 
-            Requisites = [new Requisite { Id = "1", Value = 1 }], 
-            Steps = [new Step { Number = 0, Value = 0, Requisites = [] }] 
+        var previous = new Quest
+        {
+            Id = "12",
+            Requisites = [new Requisite { Id = "1", IsDone = false }],
+            Steps = [new Step { Number = 0, IsDone = false, Requisites = [] }]
         };
-        var newObj = new Quest 
-        { 
-            Id = "12", 
-            Requisites = [new Requisite { Id = "1", Value = 2 }], 
-            Steps = [new Step { Number = 0, Value = 1, Requisites = [] }] 
+        var newObj = new Quest
+        {
+            Id = "12",
+            Requisites = [new Requisite { Id = "1", IsDone = true }],
+            Steps = [new Step { Number = 0, IsDone = true, Requisites = [] }]
         };
 
         var result = QuestDiffer.Diff(previous, newObj);
@@ -88,10 +88,10 @@ public class QuestDifferTests
         Assert.True(result.Requisites.HasValue);
         Assert.NotNull(result.Requisites.Value);
         Assert.Single(result.Requisites.Value);
-        Assert.Equal((byte)2, result.Requisites.Value[0].Value.Value);
+        Assert.True(result.Requisites.Value[0].IsDone.Value);
         Assert.True(result.Steps.HasValue);
         Assert.NotNull(result.Steps.Value);
         Assert.Single(result.Steps.Value);
-        Assert.Equal((byte)1, result.Steps.Value[0].Value.Value);
+        Assert.True(result.Steps.Value[0].IsDone.Value);
     }
 }

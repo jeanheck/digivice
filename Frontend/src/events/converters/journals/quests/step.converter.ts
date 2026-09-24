@@ -6,7 +6,7 @@ export class StepConverter {
   public static convert(stepDto: StepDTO): Step {
     return {
       number: stepDto.number,
-      isDone: stepDto.value !== undefined && stepDto.value !== 0,
+      isDone: stepDto.isDone === true,
       requisites: stepDto.requisites
         ? stepDto.requisites.map((r) => RequisiteConverter.convert(r))
         : [],

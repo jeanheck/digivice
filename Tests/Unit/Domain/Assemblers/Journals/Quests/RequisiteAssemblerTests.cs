@@ -18,6 +18,6 @@ public class RequisiteAssemblerTests
 
         Assert.NotNull(result);
         Assert.Equal("5", result.Id);
-        Assert.Equal(1, result.Value);
+        Assert.True(result.IsDone);
     }
 }

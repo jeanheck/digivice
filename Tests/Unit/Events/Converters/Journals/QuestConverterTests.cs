@@ -12,14 +12,14 @@ public class QuestConverterTests
         var quest = new Quest
         {
             Id = "QuestA",
-            Requisites = [new Requisite { Id = "ReqA", Value = 1 }],
+            Requisites = [new Requisite { Id = "ReqA", IsDone = true }],
             Steps =
             [
                 new Step
                 {
                     Number = 2,
-                    Value = 3,
-                    Requisites = [new Requisite { Id = "ReqB", Value = 4 }]
+                    IsDone = true,
+                    Requisites = [new Requisite { Id = "ReqB", IsDone = true }]
                 }
             ]
         };
@@ -29,12 +29,12 @@ public class QuestConverterTests
         Assert.Equal("QuestA", dto.Id);
         var requisite = Assert.Single(dto.Requisites.Value!);
         Assert.Equal("ReqA", requisite.Id);
-        Assert.Equal((byte)1, requisite.Value.Value);
+        Assert.True(requisite.IsDone.Value);
         var step = Assert.Single(dto.Steps.Value!);
         Assert.Equal(2, step.Number);
-        Assert.Equal((byte)3, step.Value.Value);
+        Assert.True(step.IsDone.Value);
         var nestedRequisite = Assert.Single(step.Requisites.Value!);
         Assert.Equal("ReqB", nestedRequisite.Id);
-        Assert.Equal((byte)4, nestedRequisite.Value.Value);
+        Assert.True(nestedRequisite.IsDone.Value);
     }
 }

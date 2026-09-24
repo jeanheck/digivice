@@ -15,7 +15,7 @@ public class JournalConverterTests
             MainQuest = new Quest
             {
                 Id = "MainQuest",
-                Steps = [new Step { Number = 1, Value = 1 }],
+                Steps = [new Step { Number = 1, IsDone = true }],
                 Requisites = []
             },
             SideQuests =
@@ -23,7 +23,7 @@ public class JournalConverterTests
                 new Quest
                 {
                     Id = "FolderBag",
-                    Steps = [new Step { Number = 1, Value = 0 }],
+                    Steps = [new Step { Number = 1, IsDone = false }],
                     Requisites = []
                 }
             ]
@@ -35,12 +35,12 @@ public class JournalConverterTests
         Assert.Equal("MainQuest", dto.MainQuest.Value!.Id);
         Assert.True(dto.MainQuest.Value.Steps.HasValue);
         Assert.Equal(1, dto.MainQuest.Value.Steps.Value![0].Number);
-        Assert.Equal((byte)1, dto.MainQuest.Value.Steps.Value[0].Value.Value);
+        Assert.True(dto.MainQuest.Value.Steps.Value[0].IsDone.Value);
 
         Assert.True(dto.SideQuests.HasValue);
         var sideQuest = Assert.Single(dto.SideQuests.Value!);
         Assert.Equal("FolderBag", sideQuest.Id);
         Assert.True(sideQuest.Steps.HasValue);
-        Assert.Equal((byte)0, sideQuest.Steps.Value![0].Value.Value);
+        Assert.False(sideQuest.Steps.Value![0].IsDone.Value);
     }
 }

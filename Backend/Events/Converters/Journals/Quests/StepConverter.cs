@@ -8,7 +8,7 @@ public static class StepConverter
     public static StepDTO ToDTO(Step step) => new()
     {
         Number = step.Number,
-        Value = step.Value,
+        IsDone = step.IsDone,
         Requisites = step.Requisites.Select(RequisiteConverter.ToDTO).ToList()
     };
 }

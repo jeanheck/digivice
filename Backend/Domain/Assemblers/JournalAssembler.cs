@@ -34,13 +34,12 @@ namespace Backend.Domain.Assemblers
 
         private static void NormalizeMainQuestProgression(Quest mainQuest)
         {
-            // Completion cascade: If the next step is completed (> 0), 
-            // the current step must also be considered completed.
+            // Completion cascade: If the next step is done, the current step must also be done.
             for (int i = mainQuest.Steps.Count - 2; i >= 0; i--)
             {
-                if (mainQuest.Steps[i].Value == 0 && mainQuest.Steps[i + 1].Value > 0)
+                if (!mainQuest.Steps[i].IsDone && mainQuest.Steps[i + 1].IsDone)
                 {
-                    mainQuest.Steps[i].Value = 1;
+                    mainQuest.Steps[i].IsDone = true;
                 }
             }
         }
@@ -56,30 +55,30 @@ namespace Backend.Domain.Assemblers
             {
                 foreach (Step step in quest.Steps)
                 {
-                    step.Value = 0;
+                    step.IsDone = false;
                 }
 
                 return;
             }
 
             Step trophyStep = quest.Steps[^1];
-            if (trophyStep.Value == 0)
+            if (!trophyStep.IsDone)
             {
                 return;
             }
 
             for (int i = 0; i < quest.Steps.Count - 1; i++)
             {
-                if (quest.Steps[i].Value == 0)
+                if (!quest.Steps[i].IsDone)
                 {
-                    quest.Steps[i].Value = 1;
+                    quest.Steps[i].IsDone = true;
                 }
             }
         }
 
         private static bool AreQuestRequisitesMet(Quest quest)
         {
-            return quest.Requisites.All(requisite => requisite.Value > 0);
+            return quest.Requisites.All(requisite => requisite.IsDone);
         }
     }
 }

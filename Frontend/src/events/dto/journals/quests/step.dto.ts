@@ -1,7 +1,7 @@
-import type { RequisiteDTO } from "./requisite.dto";
+import type { RequisiteDTO } from "@/events/dto/journals/quests/requisite.dto";
 
 export interface StepDTO {
   number: number;
-  value?: number; // Representa o byte bruto
+  isDone?: boolean;
   requisites?: RequisiteDTO[];
 }

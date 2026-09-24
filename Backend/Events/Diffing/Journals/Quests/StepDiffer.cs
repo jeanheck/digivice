@@ -19,7 +19,7 @@ public static class StepDiffer
             return StepConverter.ToDTO(newStep);
         }
 
-        bool valueChanged = previousStep.Value != newStep.Value;
+        bool isDoneChanged = previousStep.IsDone != newStep.IsDone;
 
         List<RequisiteDTO> requisitesDelta = [];
         foreach (var newRequisite in newStep.Requisites)
@@ -32,15 +32,15 @@ public static class StepDiffer
             }
         }
 
-        if (!valueChanged && requisitesDelta.Count == 0)
+        if (!isDoneChanged && requisitesDelta.Count == 0)
         {
             return null;
         }
 
         var dto = new StepDTO { Number = newStep.Number };
-        if (valueChanged)
+        if (isDoneChanged)
         {
-            dto = dto with { Value = newStep.Value };
+            dto = dto with { IsDone = newStep.IsDone };
         }
         if (requisitesDelta.Count > 0)
         {

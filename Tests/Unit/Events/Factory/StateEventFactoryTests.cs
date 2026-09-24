@@ -118,7 +118,7 @@ public class StateEventFactoryTests
     {
         var previousState = CreateBaseState();
         var newState = CreateBaseState();
-        newState.Journal.MainQuest.Steps[0].Value = 1;
+        newState.Journal.MainQuest.Steps[0].IsDone = true;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
@@ -167,7 +167,7 @@ public class StateEventFactoryTests
         newState.CardBattle.Id = 11;
         newState.Auctions.DivineBarrier = true;
         newState.Npcs.Genji.Battles = [new NpcBattle { Id = "first", Won = true }];
-        newState.Journal.MainQuest.Steps[0].Value = 1;
+        newState.Journal.MainQuest.Steps[0].IsDone = true;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
@@ -218,7 +218,7 @@ public class StateEventFactoryTests
                 MainQuest = new Quest
                 {
                     Id = "MainQuest",
-                    Steps = [new Step { Number = 1, Value = 0 }],
+                    Steps = [new Step { Number = 1, IsDone = false }],
                     Requisites = []
                 },
                 SideQuests = [],

@@ -8,6 +8,6 @@ public static class RequisiteConverter
     public static RequisiteDTO ToDTO(Requisite requisite) => new()
     {
         Id = requisite.Id,
-        Value = requisite.Value
+        IsDone = requisite.IsDone
     };
 }

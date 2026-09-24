@@ -43,7 +43,7 @@ public class JournalDifferTests
             {
                 Id = "1",
                 Requisites = [],
-                Steps = [new Step { Number = 0, Value = 0, Requisites = [] }]
+                Steps = [new Step { Number = 0, IsDone = false, Requisites = [] }]
             },
             SideQuests = []
         };
@@ -53,7 +53,7 @@ public class JournalDifferTests
             {
                 Id = "1",
                 Requisites = [],
-                Steps = [new Step { Number = 0, Value = 1, Requisites = [] }]
+                Steps = [new Step { Number = 0, IsDone = true, Requisites = [] }]
             },
             SideQuests = []
         };
@@ -67,8 +67,8 @@ public class JournalDifferTests
         Assert.True(result.MainQuest.Value.Steps.HasValue);
         Assert.NotNull(result.MainQuest.Value.Steps.Value);
         Assert.Single(result.MainQuest.Value.Steps.Value);
-        Assert.True(result.MainQuest.Value.Steps.Value[0].Value.HasValue);
-        Assert.Equal((byte)1, result.MainQuest.Value.Steps.Value[0].Value.Value);
+        Assert.True(result.MainQuest.Value.Steps.Value[0].IsDone.HasValue);
+        Assert.True(result.MainQuest.Value.Steps.Value[0].IsDone.Value);
     }
 
     [Fact]
@@ -78,14 +78,14 @@ public class JournalDifferTests
         {
             MainQuest = new Quest { Id = "1" },
             SideQuests = [
-                new Quest { Id = "2", Requisites = [], Steps = [new Step { Number = 0, Value = 0 }] }
+                new Quest { Id = "2", Requisites = [], Steps = [new Step { Number = 0, IsDone = false }] }
             ]
         };
         var newObj = new Journal
         {
             MainQuest = new Quest { Id = "1" },
             SideQuests = [
-                new Quest { Id = "2", Requisites = [], Steps = [new Step { Number = 0, Value = 1 }] }
+                new Quest { Id = "2", Requisites = [], Steps = [new Step { Number = 0, IsDone = true }] }
             ]
         };
 
@@ -101,7 +101,7 @@ public class JournalDifferTests
         Assert.True(sideQuests[0].Steps.HasValue);
         
         var steps = sideQuests[0].Steps.Value!;
-        Assert.Equal((byte)1, steps[0].Value.Value);
+        Assert.True(steps[0].IsDone.Value);
     }
 
     [Fact]
@@ -109,16 +109,16 @@ public class JournalDifferTests
     {
         var previous = new Journal
         {
-            MainQuest = new Quest { Id = "1", Requisites = [], Steps = [new Step { Number = 0, Value = 0 }] },
+            MainQuest = new Quest { Id = "1", Requisites = [], Steps = [new Step { Number = 0, IsDone = false }] },
             SideQuests = [
-                new Quest { Id = "2", Requisites = [], Steps = [new Step { Number = 0, Value = 0 }] }
+                new Quest { Id = "2", Requisites = [], Steps = [new Step { Number = 0, IsDone = false }] }
             ]
         };
         var newObj = new Journal
         {
-            MainQuest = new Quest { Id = "1", Requisites = [], Steps = [new Step { Number = 0, Value = 1 }] },
+            MainQuest = new Quest { Id = "1", Requisites = [], Steps = [new Step { Number = 0, IsDone = true }] },
             SideQuests = [
-                new Quest { Id = "2", Requisites = [], Steps = [new Step { Number = 0, Value = 1 }] }
+                new Quest { Id = "2", Requisites = [], Steps = [new Step { Number = 0, IsDone = true }] }
             ]
         };
 
@@ -129,13 +129,13 @@ public class JournalDifferTests
         Assert.True(result.MainQuest.HasValue);
         var mainQuest = result.MainQuest.Value!;
         Assert.Equal("1", mainQuest.Id);
-        Assert.Equal((byte)1, mainQuest.Steps.Value![0].Value.Value);
+        Assert.True(mainQuest.Steps.Value![0].IsDone.Value);
 
         Assert.True(result.SideQuests.HasValue);
         var sideQuests = result.SideQuests.Value!;
         Assert.Single(sideQuests);
         Assert.Equal("2", sideQuests[0].Id);
-        Assert.Equal((byte)1, sideQuests[0].Steps.Value![0].Value.Value);
+        Assert.True(sideQuests[0].Steps.Value![0].IsDone.Value);
     }
 
     [Fact]
@@ -146,7 +146,7 @@ public class JournalDifferTests
             MainQuest = new Quest { Id = "1" },
             SideQuests = [],
             LegendaryWeapons = [
-                new Quest { Id = "eternally", Requisites = [], Steps = [new Step { Number = 1, Value = 0 }] }
+                new Quest { Id = "eternally", Requisites = [], Steps = [new Step { Number = 1, IsDone = false }] }
             ]
         };
         var newObj = new Journal
@@ -154,7 +154,7 @@ public class JournalDifferTests
             MainQuest = new Quest { Id = "1" },
             SideQuests = [],
             LegendaryWeapons = [
-                new Quest { Id = "eternally", Requisites = [], Steps = [new Step { Number = 1, Value = 1 }] }
+                new Quest { Id = "eternally", Requisites = [], Steps = [new Step { Number = 1, IsDone = true }] }
             ]
         };
 
@@ -169,7 +169,7 @@ public class JournalDifferTests
         Assert.Single(legendaryWeapons);
         Assert.Equal("eternally", legendaryWeapons[0].Id);
         Assert.True(legendaryWeapons[0].Steps.HasValue);
-        Assert.Equal((byte)1, legendaryWeapons[0].Steps.Value![0].Value.Value);
+        Assert.True(legendaryWeapons[0].Steps.Value![0].IsDone.Value);
     }
 
     [Fact]
@@ -185,7 +185,7 @@ public class JournalDifferTests
                 {
                     Id = "driAgentGuilmon",
                     Requisites = [],
-                    Steps = [new Step { Number = 1, Value = 0 }]
+                    Steps = [new Step { Number = 1, IsDone = false }]
                 }
             ]
         };
@@ -199,7 +199,7 @@ public class JournalDifferTests
                 {
                     Id = "driAgentGuilmon",
                     Requisites = [],
-                    Steps = [new Step { Number = 1, Value = 1 }]
+                    Steps = [new Step { Number = 1, IsDone = true }]
                 }
             ]
         };
@@ -216,7 +216,7 @@ public class JournalDifferTests
         Assert.Single(driAgents);
         Assert.Equal("driAgentGuilmon", driAgents[0].Id);
         Assert.True(driAgents[0].Steps.HasValue);
-        Assert.Equal((byte)1, driAgents[0].Steps.Value![0].Value.Value);
+        Assert.True(driAgents[0].Steps.Value![0].IsDone.Value);
     }
 
     [Fact]
@@ -233,7 +233,7 @@ public class JournalDifferTests
                 {
                     Id = "asukaTrophy",
                     Requisites = [],
-                    Steps = [new Step { Number = 1, Value = 0 }]
+                    Steps = [new Step { Number = 1, IsDone = false }]
                 }
             ]
         };
@@ -248,7 +248,7 @@ public class JournalDifferTests
                 {
                     Id = "asukaTrophy",
                     Requisites = [],
-                    Steps = [new Step { Number = 1, Value = 1 }]
+                    Steps = [new Step { Number = 1, IsDone = true }]
                 }
             ]
         };
@@ -266,6 +266,6 @@ public class JournalDifferTests
         Assert.Single(duelIsland);
         Assert.Equal("asukaTrophy", duelIsland[0].Id);
         Assert.True(duelIsland[0].Steps.HasValue);
-        Assert.Equal((byte)1, duelIsland[0].Steps.Value![0].Value.Value);
+        Assert.True(duelIsland[0].Steps.Value![0].IsDone.Value);
     }
 }

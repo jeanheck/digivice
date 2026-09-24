@@ -10,7 +10,7 @@ namespace Backend.Domain.Assemblers.Journals.Quests
             return new Requisite
             {
                 Id = resource.Id,
-                Value = resource.Value
+                IsDone = resource.Value != 0
             };
         }
     }

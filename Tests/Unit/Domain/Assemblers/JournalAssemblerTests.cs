@@ -29,10 +29,10 @@ public class JournalAssemblerTests
         var result = JournalAssembler.Assemble(resource);
 
         Assert.NotNull(result);
-        Assert.Equal(1, result.MainQuest.Steps[0].Value);
-        Assert.Equal(1, result.MainQuest.Steps[1].Value);
-        Assert.Equal(1, result.MainQuest.Steps[2].Value);
-        Assert.Equal(0, result.MainQuest.Steps[3].Value);
+        Assert.True(result.MainQuest.Steps[0].IsDone);
+        Assert.True(result.MainQuest.Steps[1].IsDone);
+        Assert.True(result.MainQuest.Steps[2].IsDone);
+        Assert.False(result.MainQuest.Steps[3].IsDone);
     }
 
     [Fact]
@@ -63,8 +63,8 @@ public class JournalAssemblerTests
 
         Assert.NotNull(result);
         Assert.Single(result.SideQuests);
-        Assert.Equal(0, result.SideQuests[0].Steps[0].Value);
-        Assert.Equal(1, result.SideQuests[0].Steps[1].Value);
+        Assert.False(result.SideQuests[0].Steps[0].IsDone);
+        Assert.True(result.SideQuests[0].Steps[1].IsDone);
     }
 
     [Fact]
@@ -98,12 +98,12 @@ public class JournalAssemblerTests
         var result = JournalAssembler.Assemble(resource);
 
         var asukaTrophy = Assert.Single(result.DuelIsland);
-        Assert.Equal(1, asukaTrophy.Steps[0].Value);
-        Assert.Equal(1, asukaTrophy.Steps[1].Value);
-        Assert.Equal(1, asukaTrophy.Steps[2].Value);
-        Assert.Equal(1, asukaTrophy.Steps[3].Value);
-        Assert.Equal(1, asukaTrophy.Steps[4].Value);
-        Assert.Equal(1, asukaTrophy.Steps[5].Value);
+        Assert.True(asukaTrophy.Steps[0].IsDone);
+        Assert.True(asukaTrophy.Steps[1].IsDone);
+        Assert.True(asukaTrophy.Steps[2].IsDone);
+        Assert.True(asukaTrophy.Steps[3].IsDone);
+        Assert.True(asukaTrophy.Steps[4].IsDone);
+        Assert.True(asukaTrophy.Steps[5].IsDone);
     }
 
     [Fact]
@@ -137,10 +137,10 @@ public class JournalAssemblerTests
         var result = JournalAssembler.Assemble(resource);
 
         var asukaTrophy = Assert.Single(result.DuelIsland);
-        Assert.Equal(0x80, asukaTrophy.Steps[0].Value);
-        Assert.Equal(0x01, asukaTrophy.Steps[1].Value);
-        Assert.Equal(0, asukaTrophy.Steps[2].Value);
-        Assert.Equal(0, asukaTrophy.Steps[5].Value);
+        Assert.True(asukaTrophy.Steps[0].IsDone);
+        Assert.True(asukaTrophy.Steps[1].IsDone);
+        Assert.False(asukaTrophy.Steps[2].IsDone);
+        Assert.False(asukaTrophy.Steps[5].IsDone);
     }
 
     [Fact]
@@ -176,12 +176,12 @@ public class JournalAssemblerTests
         var result = JournalAssembler.Assemble(resource);
 
         var sunTrophy = Assert.Single(result.DuelIsland);
-        Assert.Equal(1, sunTrophy.Steps[0].Value);
-        Assert.Equal(1, sunTrophy.Steps[1].Value);
-        Assert.Equal(1, sunTrophy.Steps[2].Value);
-        Assert.Equal(1, sunTrophy.Steps[3].Value);
-        Assert.Equal(1, sunTrophy.Steps[4].Value);
-        Assert.Equal(1, sunTrophy.Steps[5].Value);
+        Assert.True(sunTrophy.Steps[0].IsDone);
+        Assert.True(sunTrophy.Steps[1].IsDone);
+        Assert.True(sunTrophy.Steps[2].IsDone);
+        Assert.True(sunTrophy.Steps[3].IsDone);
+        Assert.True(sunTrophy.Steps[4].IsDone);
+        Assert.True(sunTrophy.Steps[5].IsDone);
     }
 
     [Fact]
@@ -217,12 +217,12 @@ public class JournalAssemblerTests
         var result = JournalAssembler.Assemble(resource);
 
         var sunTrophy = Assert.Single(result.DuelIsland);
-        Assert.Equal(0, sunTrophy.Steps[0].Value);
-        Assert.Equal(0, sunTrophy.Steps[1].Value);
-        Assert.Equal(0, sunTrophy.Steps[2].Value);
-        Assert.Equal(0, sunTrophy.Steps[3].Value);
-        Assert.Equal(0, sunTrophy.Steps[4].Value);
-        Assert.Equal(0, sunTrophy.Steps[5].Value);
+        Assert.False(sunTrophy.Steps[0].IsDone);
+        Assert.False(sunTrophy.Steps[1].IsDone);
+        Assert.False(sunTrophy.Steps[2].IsDone);
+        Assert.False(sunTrophy.Steps[3].IsDone);
+        Assert.False(sunTrophy.Steps[4].IsDone);
+        Assert.False(sunTrophy.Steps[5].IsDone);
     }
 
     [Fact]
@@ -258,11 +258,11 @@ public class JournalAssemblerTests
         var result = JournalAssembler.Assemble(resource);
 
         var sunTrophy = Assert.Single(result.DuelIsland);
-        Assert.Equal(0, sunTrophy.Steps[0].Value);
-        Assert.Equal(0, sunTrophy.Steps[1].Value);
-        Assert.Equal(0, sunTrophy.Steps[2].Value);
-        Assert.Equal(0, sunTrophy.Steps[3].Value);
-        Assert.Equal(0, sunTrophy.Steps[4].Value);
-        Assert.Equal(0, sunTrophy.Steps[5].Value);
+        Assert.False(sunTrophy.Steps[0].IsDone);
+        Assert.False(sunTrophy.Steps[1].IsDone);
+        Assert.False(sunTrophy.Steps[2].IsDone);
+        Assert.False(sunTrophy.Steps[3].IsDone);
+        Assert.False(sunTrophy.Steps[4].IsDone);
+        Assert.False(sunTrophy.Steps[5].IsDone);
     }
 }

@@ -106,9 +106,9 @@ public class JournalProviderTests
         Assert.NotNull(result);
         Assert.NotNull(result.MainQuest);
         Assert.Equal(3, result.MainQuest.Steps.Count);
-        Assert.Equal(1, result.MainQuest.Steps[0].Value);
-        Assert.Equal(1, result.MainQuest.Steps[1].Value);
-        Assert.Equal(1, result.MainQuest.Steps[2].Value);
+        Assert.True(result.MainQuest.Steps[0].IsDone);
+        Assert.True(result.MainQuest.Steps[1].IsDone);
+        Assert.True(result.MainQuest.Steps[2].IsDone);
         journalLoaderMock.Verify(loader => loader.Load(), Times.Once);
     }
 
@@ -143,7 +143,7 @@ public class JournalProviderTests
 
         Assert.NotNull(result);
         Assert.NotNull(result.MainQuest);
-        Assert.All(result.MainQuest.Steps, step => Assert.Equal(0, step.Value));
+        Assert.All(result.MainQuest.Steps, step => Assert.False(step.IsDone));
         journalLoaderMock.Verify(loader => loader.Load(), Times.Once);
     }
 
@@ -179,10 +179,10 @@ public class JournalProviderTests
 
         Assert.NotNull(result);
         Assert.NotNull(result.MainQuest);
-        Assert.Equal(1, result.MainQuest.Steps[0].Value);
-        Assert.Equal(1, result.MainQuest.Steps[1].Value);
-        Assert.Equal(0, result.MainQuest.Steps[2].Value);
-        Assert.Equal(0, result.MainQuest.Steps[3].Value);
+        Assert.True(result.MainQuest.Steps[0].IsDone);
+        Assert.True(result.MainQuest.Steps[1].IsDone);
+        Assert.False(result.MainQuest.Steps[2].IsDone);
+        Assert.False(result.MainQuest.Steps[3].IsDone);
         journalLoaderMock.Verify(loader => loader.Load(), Times.Once);
     }
 

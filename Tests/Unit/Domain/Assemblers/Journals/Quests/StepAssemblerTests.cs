@@ -21,7 +21,7 @@ public class StepAssemblerTests
 
         Assert.NotNull(result);
         Assert.Equal(3, result.Number);
-        Assert.Equal(1, result.Value);
+        Assert.True(result.IsDone);
         Assert.Single(result.Requisites);
         Assert.Equal("1", result.Requisites[0].Id);
     }

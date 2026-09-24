@@ -8,9 +8,9 @@ public class RequisiteConverterTests
     [Fact]
     public void ToDTO_ShouldMapAllRequisiteFields()
     {
-        var dto = RequisiteConverter.ToDTO(new Requisite { Id = "ReqA", Value = 8 });
+        var dto = RequisiteConverter.ToDTO(new Requisite { Id = "ReqA", IsDone = true });
 
         Assert.Equal("ReqA", dto.Id);
-        Assert.Equal((byte)8, dto.Value.Value);
+        Assert.True(dto.IsDone.Value);
     }
 }

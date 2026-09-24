@@ -3,7 +3,7 @@ namespace Backend.Domain.Models.Journals.Quests
     public record class Step
     {
         public int Number { get; set; }
-        public byte Value { get; set; }
+        public bool IsDone { get; set; }
         public List<Requisite> Requisites { get; set; } = [];
 
         public virtual bool Equals(Step? other)
@@ -15,7 +15,7 @@ namespace Backend.Domain.Models.Journals.Quests
                                   Requisites.SequenceEqual(other.Requisites));
 
             return Number == other.Number &&
-                   Value == other.Value &&
+                   IsDone == other.IsDone &&
                    requisitesEqual;
         }
 
@@ -23,7 +23,7 @@ namespace Backend.Domain.Models.Journals.Quests
         {
             var hash = new HashCode();
             hash.Add(Number);
-            hash.Add(Value);
+            hash.Add(IsDone);
             if (Requisites != null)
             {
                 foreach (var r in Requisites) hash.Add(r);

@@ -4,8 +4,8 @@ import { RequisiteSyncer } from "./requisite.syncer";
 
 export class StepSyncer {
   public static sync(previousStep: Step, newStepDto: StepDTO): void {
-    if (newStepDto.value !== undefined) {
-      previousStep.isDone = newStepDto.value !== 0;
+    if (newStepDto.isDone !== undefined) {
+      previousStep.isDone = newStepDto.isDone;
     }
 
     const previousRequisites = previousStep.requisites;

@@ -12,8 +12,8 @@ public class JournalEventFactoryTests
     [Fact]
     public void Create_ShouldReturnNoEvents_WhenJournalHasNoChanges()
     {
-        var previousState = CreateState(CreateJournal(0));
-        var newState = CreateState(CreateJournal(0));
+        var previousState = CreateState(CreateJournal(false));
+        var newState = CreateState(CreateJournal(false));
 
         var result = JournalEventFactory.Create(previousState, newState);
 
@@ -23,8 +23,8 @@ public class JournalEventFactoryTests
     [Fact]
     public void Create_ShouldReturnJournalChangedEvent_WhenJournalChanges()
     {
-        var previousState = CreateState(CreateJournal(0));
-        var newState = CreateState(CreateJournal(1));
+        var previousState = CreateState(CreateJournal(false));
+        var newState = CreateState(CreateJournal(true));
 
         var result = JournalEventFactory.Create(previousState, newState).ToList();
 
@@ -41,14 +41,14 @@ public class JournalEventFactoryTests
         return new State { Journal = journal };
     }
 
-    private static Journal CreateJournal(byte stepValue)
+    private static Journal CreateJournal(bool stepIsDone)
     {
         return new Journal
         {
             MainQuest = new Quest
             {
                 Id = "MainQuest",
-                Steps = [new Step { Number = 1, Value = stepValue }],
+                Steps = [new Step { Number = 1, IsDone = stepIsDone }],
                 Requisites = []
             },
             SideQuests = [],

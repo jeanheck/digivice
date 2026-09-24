@@ -13,9 +13,9 @@ public static class RequisiteDiffer
             return null;
         }
 
-        if (previousRequisite == null || previousRequisite.Value != newRequisite.Value)
+        if (previousRequisite == null || previousRequisite.IsDone != newRequisite.IsDone)
         {
-            return new RequisiteDTO { Id = newRequisite.Id, Value = newRequisite.Value };
+            return new RequisiteDTO { Id = newRequisite.Id, IsDone = newRequisite.IsDone };
         }
 
         return null;

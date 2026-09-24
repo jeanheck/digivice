@@ -10,7 +10,7 @@ namespace Backend.Domain.Assemblers.Journals.Quests
             return new Step
             {
                 Number = resource.Number,
-                Value = resource.Value,
+                IsDone = resource.Value != 0,
                 Requisites = [.. resource.Requisites.Select(RequisiteAssembler.Assemble)]
             };
         }
