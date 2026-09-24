@@ -33,4 +33,15 @@ public class DigimonBattleConverterTests
         Assert.Equal(201, dto.Enemy.Value!.GroupId.Value);
         Assert.Equal(122, dto.Enemy.Value!.Id.Value);
     }
+
+    [Fact]
+    public void ToDTO_ShouldSendExplicitNullEnemy_WhenEnemyIsNull()
+    {
+        var digimonBattle = new DigimonBattle { Field = 0x00, Enemy = null };
+
+        var dto = DigimonBattleConverter.ToDTO(digimonBattle);
+
+        Assert.True(dto.Enemy.HasValue);
+        Assert.Null(dto.Enemy.Value);
+    }
 }

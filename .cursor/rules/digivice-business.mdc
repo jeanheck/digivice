@@ -42,6 +42,12 @@ Nome do treinador **não é lido** pelo Digivice (referência futura apenas).
 - Level máximo **99** (invariante 1–99). Não aplicar clamp defensivo no frontend.
 - Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE.
 
+## Batalhas
+
+- **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null envia `enemy: null` explícito.
+- **Campo:** `Field = 0` é o campo **neutro** (valor válido, não "vazio").
+- **Card battle** (`CardBattleAssembler`): sem card battle = `Id null` (RAM `<= 0` → `null`).
+
 ## Journal
 
 - Estrutura das missões em JSON estático; backend lê `Value` (byte) na RAM e expõe `IsDone` (bool) no domínio/SignalR.

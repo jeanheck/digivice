@@ -6,7 +6,7 @@ export class DigimonBattleConverter {
   public static convert(digimonBattleDto: Required<DigimonBattleDTO>): DigimonBattle {
     return {
       field: digimonBattleDto.field ?? 0,
-      enemy: EnemyConverter.convert(digimonBattleDto.enemy ?? null),
+      enemy: digimonBattleDto.enemy ? EnemyConverter.convert(digimonBattleDto.enemy) : null,
     };
   }
 }

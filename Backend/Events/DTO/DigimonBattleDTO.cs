@@ -11,5 +11,5 @@ public record class DigimonBattleDTO : IDTO
     public Optional<byte> Field { get; init; } = Optional<byte>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<EnemyDTO> Enemy { get; init; } = Optional<EnemyDTO>.Empty;
+    public Optional<EnemyDTO?> Enemy { get; init; } = Optional<EnemyDTO?>.Empty;
 }

@@ -17,8 +17,8 @@ export class TamerRepository {
     return Object.keys(this.tamerTable);
   }
 
-  public static getTamerIdByCardBattleId(cardBattleId: number): string | null {
-    if (cardBattleId === 0) {
+  public static getTamerIdByCardBattleId(cardBattleId: number | null): string | null {
+    if (cardBattleId === null) {
       return null;
     }
 

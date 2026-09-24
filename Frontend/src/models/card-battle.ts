@@ -1,3 +1,3 @@
 export interface CardBattle {
-  id: number;
+  id: number | null;
 }

@@ -9,6 +9,6 @@ public static class DigimonBattleConverter
     public static DigimonBattleDTO ToDTO(DigimonBattle digimonBattle) => new()
     {
         Field = digimonBattle.Field,
-        Enemy = EnemyConverter.ToDTO(digimonBattle.Enemy)
+        Enemy = digimonBattle.Enemy != null ? EnemyConverter.ToDTO(digimonBattle.Enemy) : null
     };
 }

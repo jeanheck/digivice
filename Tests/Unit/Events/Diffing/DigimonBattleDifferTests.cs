@@ -54,7 +54,7 @@ public class DigimonBattleDifferTests
         var previous = CreateBaseDigimonBattle();
         var newDigimonBattle = CreateBaseDigimonBattle();
         newDigimonBattle.Field = 0x04;
-        newDigimonBattle.Enemy.Speed = 90;
+        newDigimonBattle.Enemy!.Speed = 90;
 
         var result = DigimonBattleDiffer.Diff(previous, newDigimonBattle);
 
@@ -62,6 +62,50 @@ public class DigimonBattleDifferTests
         Assert.Equal((byte)0x04, result.Field.Value);
         Assert.True(result.Enemy.HasValue);
         Assert.Equal(90, result.Enemy.Value!.Speed.Value);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnExplicitNullEnemy_WhenEnemyBecomesNull()
+    {
+        var previous = CreateBaseDigimonBattle();
+        var newDigimonBattle = CreateBaseDigimonBattle();
+        newDigimonBattle.Enemy = null;
+
+        var result = DigimonBattleDiffer.Diff(previous, newDigimonBattle);
+
+        Assert.True(result.Enemy.HasValue);
+        Assert.Null(result.Enemy.Value);
+        Assert.False(result.Field.HasValue);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnEmptyDTO_WhenEnemyStaysNull()
+    {
+        var previous = CreateBaseDigimonBattle();
+        previous.Enemy = null;
+        var newDigimonBattle = CreateBaseDigimonBattle();
+        newDigimonBattle.Enemy = null;
+
+        var result = DigimonBattleDiffer.Diff(previous, newDigimonBattle);
+
+        Assert.False(result.Enemy.HasValue);
+        Assert.False(result.Field.HasValue);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnFullEnemy_WhenEnemyAppears()
+    {
+        var previous = CreateBaseDigimonBattle();
+        previous.Enemy = null;
+        var newDigimonBattle = CreateBaseDigimonBattle();
+
+        var result = DigimonBattleDiffer.Diff(previous, newDigimonBattle);
+
+        Assert.True(result.Enemy.HasValue);
+        Assert.NotNull(result.Enemy.Value);
+        Assert.Equal(122, result.Enemy.Value.Id.Value);
+        Assert.Equal(201, result.Enemy.Value.GroupId.Value);
+        Assert.True(result.Enemy.Value.HP.HasValue);
     }
 
     private static DigimonBattle CreateBaseDigimonBattle()

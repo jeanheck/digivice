@@ -94,7 +94,7 @@ export class NpcBattleOpponentHelper {
     return ImageCatalog.getTamerImageUrl(opponent.raw.imageName ?? null);
   }
 
-  public static getNpcIdByCardBattleId(cardBattleId: number): string | null {
+  public static getNpcIdByCardBattleId(cardBattleId: number | null): string | null {
     const tamerId = TamerRepository.getTamerIdByCardBattleId(cardBattleId);
     if (tamerId !== null) {
       return tamerId;

@@ -5,6 +5,6 @@ namespace Backend.Domain.Models
     public record class DigimonBattle
     {
         public byte Field { get; set; }
-        public Enemy Enemy { get; set; } = new();
+        public Enemy? Enemy { get; set; }
     }
 }

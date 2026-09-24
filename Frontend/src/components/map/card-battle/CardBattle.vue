@@ -12,7 +12,7 @@ const store = useGameStore();
 const { t } = useI18n();
 
 const cardBattleViewModel = computed(() => {
-  const cardBattleId = store.currentState?.cardBattle?.id ?? 0;
+  const cardBattleId = store.currentState?.cardBattle?.id ?? null;
   return CardBattlePresenter.getViewModel(cardBattleId);
 });
 

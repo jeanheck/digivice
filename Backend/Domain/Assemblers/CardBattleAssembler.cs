@@ -9,7 +9,7 @@ namespace Backend.Domain.Assemblers
         {
             return new CardBattle
             {
-                Id = resource.Id ?? 0,
+                Id = resource.Id <= 0 ? null : resource.Id,
             };
         }
     }

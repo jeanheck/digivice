@@ -1,3 +1,3 @@
 export interface CardBattleDTO {
-  id?: number;
+  id?: number | null;
 }

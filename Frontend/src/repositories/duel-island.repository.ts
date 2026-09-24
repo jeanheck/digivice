@@ -17,8 +17,8 @@ export class DuelIslandRepository {
     return Object.keys(this.duelIslandTable);
   }
 
-  public static getDuelIslandIdByCardBattleId(cardBattleId: number): string | null {
-    if (cardBattleId === 0) {
+  public static getDuelIslandIdByCardBattleId(cardBattleId: number | null): string | null {
+    if (cardBattleId === null) {
       return null;
     }
 

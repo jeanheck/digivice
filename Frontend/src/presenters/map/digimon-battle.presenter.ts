@@ -14,7 +14,7 @@ export class DigimonBattlePresenter {
   public static getViewModel(enemy: Enemy | null): DigimonBattleViewModel {
     const resolvedHp = enemy?.hp ?? { current: 0, max: 0 };
 
-    if (enemy === null || enemy.id === 0) {
+    if (enemy === null) {
       return DigimonBattleConverter.convert(null, resolvedHp, "", null);
     }
 

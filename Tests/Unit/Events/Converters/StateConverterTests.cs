@@ -15,7 +15,7 @@ public class StateConverterTests
             ImportantItems = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true },
             Party = new Party { Slots = [] },
             DigimonBattle = new DigimonBattle(),
-            CardBattle = new CardBattle { Id = 0 },
+            CardBattle = new CardBattle { Id = null },
             Auctions = new Auctions { DivineBarrier = true },
             Npcs = new Npcs(),
             Journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] }
@@ -39,11 +39,11 @@ public class StateConverterTests
 
         Assert.NotNull(dto.DigimonBattle);
         Assert.True(dto.DigimonBattle.Enemy.HasValue);
-        Assert.Equal(0, dto.DigimonBattle.Enemy.Value!.Id.Value);
+        Assert.Null(dto.DigimonBattle.Enemy.Value);
 
         Assert.NotNull(dto.CardBattle);
         Assert.True(dto.CardBattle.Id.HasValue);
-        Assert.Equal(0, dto.CardBattle.Id.Value);
+        Assert.Null(dto.CardBattle.Id.Value);
 
         Assert.NotNull(dto.Auctions);
         Assert.True(dto.Auctions.DivineBarrier.HasValue);

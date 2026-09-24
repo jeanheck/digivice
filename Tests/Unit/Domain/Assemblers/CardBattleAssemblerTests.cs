@@ -20,17 +20,19 @@ public class CardBattleAssemblerTests
         Assert.Equal(5, result.Id);
     }
 
-    [Fact]
-    public void Assemble_ShouldFallBackToZero_WhenIdIsNull()
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-1)]
+    public void Assemble_ShouldReturnNullId_WhenIdIsNotPositive(int rawId)
     {
         var resource = new CardBattleResource
         {
-            Id = null,
+            Id = rawId,
         };
 
         var result = CardBattleAssembler.Assemble(resource);
 
         Assert.NotNull(result);
-        Assert.Equal(0, result.Id);
+        Assert.Null(result.Id);
     }
 }

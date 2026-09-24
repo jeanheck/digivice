@@ -108,6 +108,11 @@ if (slot.digimonId === null || slot.digimon === null) {
     *   Missões **nunca são adicionadas ou removidas dinamicamente** do journal durante a execução da aplicação.
     *   Mesmo após uma missão ser finalizada, ela continua no diário. Não há flag de conclusão ("missão concluída") vinda do backend; o frontend calcula a conclusão analisando se todos os passos/requisitos estão satisfeitos.
 
+### 2.4. Batalhas
+*   **Inimigo da batalha (`DigimonBattleAssembler`):** O `Enemy` concentra todos os dados do inimigo em combate. Se o id lido da RAM é `<= 0`, não há inimigo — e, portanto, nenhum dos demais dados é válido: o domínio expõe `Enemy = null` inteiro (nunca campos individuais nulos). Na transição objeto → null, o `DigimonBattleDiffer` envia `enemy: null` explícito; o syncer do frontend zera o inimigo e, quando um novo aparece, recria o objeto completo.
+*   **Campo da batalha:** `Field = 0` é o campo **neutro** — valor válido do jogo, não sentinela de "vazio".
+*   **Card battle (`CardBattleAssembler`):** Sem card battle ativa, `Id = null` no domínio/SignalR (RAM `<= 0` → `null`), não `0`.
+
 ---
 
 ## 3. Diretrizes de Estilo e Padronização (Frontend)

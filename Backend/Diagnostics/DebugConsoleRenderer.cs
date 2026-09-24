@@ -91,6 +91,12 @@ namespace Backend.Diagnostics
         {
             var enemy = digimonBattle.Enemy;
             sb.AppendLine();
+            if (enemy == null)
+            {
+                sb.AppendLine($"{Cyan}BATTLE ENEMY:{Reset} -");
+                return;
+            }
+
             sb.AppendLine(
                 $"{Cyan}BATTLE ENEMY:{Reset} GroupId:{enemy.GroupId} | Id:{enemy.Id} | Condition:{enemy.Condition} | " +
                 $"HP:{enemy.HP.Current.ToString(StatFormat)}/{enemy.HP.Max.ToString(StatFormat)} | " +
@@ -99,7 +105,7 @@ namespace Backend.Diagnostics
 
         private void RenderCardBattle(StringBuilder sb, CardBattle cardBattle)
         {
-            sb.AppendLine($"{Cyan}CARD BATTLE:{Reset} Id:{cardBattle.Id}");
+            sb.AppendLine($"{Cyan}CARD BATTLE:{Reset} Id:{cardBattle.Id?.ToString() ?? "-"}");
         }
 
         private void RenderDigimon(StringBuilder sb, DigimonSlot slot)

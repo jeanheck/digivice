@@ -1,6 +1,7 @@
 namespace Tests.Events.Factory;
 
 using Backend.Domain.Models;
+using Backend.Domain.Models.Battles;
 using Backend.Domain.Models.Journals;
 using Backend.Domain.Models.Journals.Quests;
 using Backend.Domain.Models.Parties;
@@ -90,7 +91,7 @@ public class StateEventFactoryTests
     {
         var previousState = CreateBaseState();
         var newState = CreateBaseState();
-        newState.DigimonBattle.Enemy.Speed = 84;
+        newState.DigimonBattle.Enemy!.Speed = 84;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
@@ -163,7 +164,7 @@ public class StateEventFactoryTests
         newState.Player.Bits = 999;
         newState.ImportantItems.AsukaTrophy = true;
         newState.Party.Slots[0].Digimon!.Level = 22;
-        newState.DigimonBattle.Enemy.Speed = 84;
+        newState.DigimonBattle.Enemy!.Speed = 84;
         newState.CardBattle.Id = 11;
         newState.Auctions.DivineBarrier = true;
         newState.Npcs.Genji.Battles = [new NpcBattle { Id = "first", Won = true }];
@@ -209,7 +210,7 @@ public class StateEventFactoryTests
                     }
                 ]
             },
-            DigimonBattle = new DigimonBattle(),
+            DigimonBattle = new DigimonBattle { Enemy = new Enemy() },
             CardBattle = new CardBattle(),
             Auctions = new Auctions(),
             Npcs = new Npcs(),

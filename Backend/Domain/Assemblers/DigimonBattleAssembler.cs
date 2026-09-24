@@ -12,7 +12,7 @@ namespace Backend.Domain.Assemblers
             return new DigimonBattle
             {
                 Field = resource.Field,
-                Enemy = new Enemy
+                Enemy = resource.Enemy.Id <= 0 ? null : new Enemy
                 {
                     Id = resource.Enemy.Id,
                     GroupId = resource.Enemy.GroupId,

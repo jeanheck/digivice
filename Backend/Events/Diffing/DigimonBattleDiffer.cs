@@ -3,6 +3,8 @@ using Backend.Events.Converters;
 using Backend.Events.Diffing.Battles;
 using Backend.Events.Diffing.Extensions;
 using Backend.Events.DTO;
+using Backend.Events.DTO.Battles;
+using Backend.Events.DTO.Shared;
 
 namespace Backend.Events.Diffing;
 
@@ -20,16 +22,16 @@ public static class DigimonBattleDiffer
             return DigimonBattleConverter.ToDTO(newDigimonBattle);
         }
 
-        var enemyDelta = EnemyDiffer.Diff(previousDigimonBattle.Enemy, newDigimonBattle.Enemy);
+        var enemyDelta = DiffEnemy(previousDigimonBattle, newDigimonBattle);
         bool fieldChanged = previousDigimonBattle.Field != newDigimonBattle.Field;
 
-        if (enemyDelta == null && !fieldChanged)
+        if (!enemyDelta.HasValue && !fieldChanged)
         {
             return new DigimonBattleDTO();
         }
 
         var dto = new DigimonBattleDTO();
-        if (enemyDelta != null)
+        if (enemyDelta.HasValue)
         {
             dto = dto with { Enemy = enemyDelta };
         }
@@ -39,5 +41,26 @@ public static class DigimonBattleDiffer
         }
 
         return dto;
+    }
+
+    private static Optional<EnemyDTO?> DiffEnemy(DigimonBattle previousDigimonBattle, DigimonBattle newDigimonBattle)
+    {
+        if (newDigimonBattle.Enemy == null)
+        {
+            if (previousDigimonBattle.Enemy == null)
+            {
+                return Optional<EnemyDTO?>.Empty;
+            }
+
+            return new Optional<EnemyDTO?>(null);
+        }
+
+        var enemyDelta = EnemyDiffer.Diff(previousDigimonBattle.Enemy, newDigimonBattle.Enemy);
+        if (enemyDelta == null)
+        {
+            return Optional<EnemyDTO?>.Empty;
+        }
+
+        return enemyDelta;
     }
 }
