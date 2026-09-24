@@ -13,8 +13,8 @@
       "hint": "It would be really kind of you to send a screenshot of this failure to the developer :)"
     },
     "hubUnreachable": {
-      "title": "Oops! The Memory Reader is running, but it can't communicate...",
-      "hint": "It would be really kind of you to send a screenshot of this failure to the developer :)"
+      "title": "Connecting to the memory reader...",
+      "hint": "(If the app gets stuck on this screen, try right-clicking and choosing \"Reload\".)"
     },
     "emulator": {
       "title": "Oops! Something went wrong during the memory reading process...",
