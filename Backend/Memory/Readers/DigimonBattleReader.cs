@@ -10,9 +10,7 @@ namespace Backend.Memory.Readers
         {
             return new DigimonBattleResource
             {
-                Field = memoryReader.ReadBytes(digimonBattleAddresses.Field, 1) is { Length: > 0 } fieldBytes
-                    ? fieldBytes[0]
-                    : (byte)0,
+                Field = memoryReader.ReadByte(digimonBattleAddresses.Field),
                 Enemy = enemyReader.Read(enemyAddresses)
             };
         }

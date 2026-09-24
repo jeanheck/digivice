@@ -13,8 +13,8 @@ namespace Backend.Memory.Readers
                 Bits = memoryReader.ReadInt32(addresses.Bits),
                 MapId = memoryReader.ReadInt16(addresses.MapId),
                 PreviousMapId = memoryReader.ReadInt16(addresses.PreviousMapId),
-                SeabedRoute = memoryReader.ReadBytes(addresses.SeabedRoute, 1)[0],
-                MapVariant = memoryReader.ReadBytes(addresses.MapVariant, 1)[0]
+                SeabedRoute = memoryReader.ReadByte(addresses.SeabedRoute),
+                MapVariant = memoryReader.ReadByte(addresses.MapVariant)
             };
         }
     }

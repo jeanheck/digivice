@@ -16,9 +16,7 @@ namespace Backend.Memory.Readers
             {
                 Id = memoryReader.ReadInt16(slotBase + addresses.Id),
                 GroupId = memoryReader.ReadInt16(addresses.GroupId),
-                Condition = memoryReader.ReadBytes(slotBase + addresses.Condition, 1) is { Length: > 0 } conditionBytes
-                    ? conditionBytes[0]
-                    : 0,
+                Condition = memoryReader.ReadByte(slotBase + addresses.Condition),
                 Strength = memoryReader.ReadInt16(slotBase + addresses.Strength),
                 Defense = memoryReader.ReadInt16(slotBase + addresses.Defense),
                 Speed = memoryReader.ReadInt16(slotBase + addresses.Speed),

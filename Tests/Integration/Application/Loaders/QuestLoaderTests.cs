@@ -14,9 +14,9 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadBytes(It.IsAny<long>(), 1)).Returns([0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B3B6, 1)).Returns([(byte)0x80]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x0004B3B7, 1)).Returns([(byte)0x01]);
+        memoryReaderMock.Setup(m => m.ReadByte(It.IsAny<long>())).Returns((byte)0);
+        memoryReaderMock.Setup(m => m.ReadByte(0x0004B3B6)).Returns((byte)0x80);
+        memoryReaderMock.Setup(m => m.ReadByte(0x0004B3B7)).Returns((byte)0x01);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -41,13 +41,13 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadBytes(It.IsAny<long>(), 1)).Returns([0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048F42, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x04B3B0, 1)).Returns([(byte)0xA4]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x048E57, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x048E09, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DB7, 1)).Returns([(byte)0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x048DB5, 1)).Returns([(byte)1]);
+        memoryReaderMock.Setup(m => m.ReadByte(It.IsAny<long>())).Returns((byte)0);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048F42)).Returns((byte)1);
+        memoryReaderMock.Setup(m => m.ReadByte(0x04B3B0)).Returns((byte)0xA4);
+        memoryReaderMock.Setup(m => m.ReadByte(0x048E57)).Returns((byte)1);
+        memoryReaderMock.Setup(m => m.ReadByte(0x048E09)).Returns((byte)1);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DB7)).Returns((byte)0);
+        memoryReaderMock.Setup(m => m.ReadByte(0x048DB5)).Returns((byte)1);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -92,8 +92,8 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(It.IsAny<long>(), 1)).Returns([0]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38E, 1)).Returns([(byte)0x1F]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(It.IsAny<long>())).Returns((byte)0);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B38E)).Returns((byte)0x1F);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -150,26 +150,26 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(It.IsAny<long>(), 1)).Returns([0]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38C, 1)).Returns([(byte)0xFF]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B7, 1)).Returns([(byte)0xFC]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B8, 1)).Returns([(byte)0x03]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DD2, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004A7E0, 1)).Returns([(byte)0x08]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DB6, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004A028, 1)).Returns([(byte)0x06]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DD3, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004A404, 1)).Returns([(byte)0x07]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048F3B, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00049870, 1)).Returns([(byte)0x04]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048F18, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00049C4C, 1)).Returns([(byte)0x05]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DC3, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00049494, 1)).Returns([(byte)0x03]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DD6, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004ABBC, 1)).Returns([(byte)0x09]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DD7, 1)).Returns([(byte)1]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004AF98, 1)).Returns([(byte)0x0A]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(It.IsAny<long>())).Returns((byte)0);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B38C)).Returns((byte)0xFF);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B3B7)).Returns((byte)0xFC);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B3B8)).Returns((byte)0x03);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048DD2)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004A7E0)).Returns((byte)0x08);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048DB6)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004A028)).Returns((byte)0x06);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048DD3)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004A404)).Returns((byte)0x07);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048F3B)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00049870)).Returns((byte)0x04);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048F18)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00049C4C)).Returns((byte)0x05);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048DC3)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00049494)).Returns((byte)0x03);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048DD6)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004ABBC)).Returns((byte)0x09);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048DD7)).Returns((byte)1);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004AF98)).Returns((byte)0x0A);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);
@@ -280,11 +280,11 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(It.IsAny<long>(), 1)).Returns([0]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B2, 1)).Returns([(byte)0xCF]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B3B3, 1)).Returns([(byte)0x0F]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DC2, 1)).Returns([(byte)0x01]);
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x00048DC4, 1)).Returns([(byte)0x01]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(It.IsAny<long>())).Returns((byte)0);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B3B2)).Returns((byte)0xCF);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B3B3)).Returns((byte)0x0F);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048DC2)).Returns((byte)0x01);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x00048DC4)).Returns((byte)0x01);
 
         var requisiteReader = new RequisiteReader(memoryReaderMock.Object);
         var stepReader = new StepReader(memoryReaderMock.Object, requisiteReader);

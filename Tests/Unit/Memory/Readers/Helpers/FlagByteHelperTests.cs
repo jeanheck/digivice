@@ -32,7 +32,7 @@ public class FlagByteHelperTests
     public void Read_ShouldReturnRawByte_WhenMaskIsNull()
     {
         var (memoryReaderMock, memoryReader) = CreateMemoryReaderMock();
-        memoryReaderMock.Setup(reader => reader.ReadBytes(0x800100, 1)).Returns([(byte)77]);
+        memoryReaderMock.Setup(reader => reader.ReadByte(0x800100)).Returns((byte)77);
 
         var result = FlagByteHelper.Read(memoryReader, 0x800100, null);
 
@@ -43,7 +43,7 @@ public class FlagByteHelperTests
     public void Read_ShouldApplyBitMask_WhenMaskIsProvided()
     {
         var (memoryReaderMock, memoryReader) = CreateMemoryReaderMock();
-        memoryReaderMock.Setup(reader => reader.ReadBytes(0x800100, 1)).Returns([(byte)90]);
+        memoryReaderMock.Setup(reader => reader.ReadByte(0x800100)).Returns((byte)90);
 
         var result = FlagByteHelper.Read(memoryReader, 0x800100, 15);
 
@@ -51,10 +51,10 @@ public class FlagByteHelperTests
     }
 
     [Fact]
-    public void Read_ShouldThrowMemoryReadException_WhenReadBytesFails()
+    public void Read_ShouldThrowMemoryReadException_WhenReadByteFails()
     {
         var (memoryReaderMock, memoryReader) = CreateMemoryReaderMock();
-        memoryReaderMock.Setup(reader => reader.ReadBytes(0x800100, 1))
+        memoryReaderMock.Setup(reader => reader.ReadByte(0x800100))
             .Throws(new MemoryReadException(0x800100, "Memory session is not connected."));
 
         Assert.Throws<MemoryReadException>(() => FlagByteHelper.Read(memoryReader, 0x800100, null));

@@ -15,10 +15,10 @@ public class ImportantItemsLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DB4, 1)).Returns([(byte)0x01]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DB5, 1)).Returns([(byte)0x00]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DC2, 1)).Returns([(byte)0x01]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DC4, 1)).Returns([(byte)0x00]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DB4)).Returns((byte)0x01);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DB5)).Returns((byte)0x00);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DC2)).Returns((byte)0x01);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DC4)).Returns((byte)0x00);
 
         var importantItemsReader = new ImportantItemsReader(memoryReaderMock.Object);
         var importantItemsLoader = new ImportantItemsLoader(addressesRepository, importantItemsReader);
@@ -38,7 +38,7 @@ public class ImportantItemsLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DB4, 1))
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DB4))
             .Throws(new MemoryReadException(0x00048DB4, "Memory session is not connected."));
 
         var importantItemsReader = new ImportantItemsReader(memoryReaderMock.Object);

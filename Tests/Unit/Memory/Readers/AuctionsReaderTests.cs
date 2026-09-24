@@ -13,7 +13,7 @@ public class AuctionsReaderTests
     {
         var addresses = CreateAddresses();
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x05]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B38A)).Returns((byte)0x05);
 
         var reader = new AuctionsReader(memoryReaderMock.Object);
         var result = reader.Read(addresses);
@@ -30,7 +30,7 @@ public class AuctionsReaderTests
     {
         var addresses = CreateAddresses();
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadBytes(0x0004B38A, 1)).Returns([(byte)0x00]);
+        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B38A)).Returns((byte)0x00);
 
         var reader = new AuctionsReader(memoryReaderMock.Object);
         var result = reader.Read(addresses);

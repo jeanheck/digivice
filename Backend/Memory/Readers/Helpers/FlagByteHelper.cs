@@ -11,7 +11,7 @@ public static class FlagByteHelper
             return 0;
         }
 
-        byte rawValue = memoryReader.ReadBytes(address, 1)[0];
+        byte rawValue = memoryReader.ReadByte(address);
         if (bitMask == null)
         {
             return rawValue;

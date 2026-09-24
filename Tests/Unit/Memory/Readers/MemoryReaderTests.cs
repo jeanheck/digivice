@@ -84,6 +84,37 @@ public class MemoryReaderTests
     }
 
     [Fact]
+    public void ReadByte_ShouldReturnByte_WhenConnectedAndAccessorSucceeds()
+    {
+        var (_, accessorMock, reader) = CreateConnectedReader();
+        accessorMock.Setup(accessor => accessor.ReadArray(0x800100, It.IsAny<byte[]>(), 0, 1))
+            .Callback<long, byte[], int, int>((address, buffer, index, count) => { buffer[0] = 0x2A; });
+
+        var result = reader.ReadByte(0x800100);
+
+        Assert.Equal(0x2A, result);
+    }
+
+    [Fact]
+    public void ReadByte_ShouldThrowMemoryReadException_WhenAccessorThrows()
+    {
+        var (_, accessorMock, reader) = CreateConnectedReader();
+        accessorMock.Setup(accessor => accessor.ReadArray(It.IsAny<long>(), It.IsAny<byte[]>(), It.IsAny<int>(), It.IsAny<int>()))
+            .Throws(new Exception("I/O error"));
+
+        Assert.Throws<MemoryReadException>(() => reader.ReadByte(0x800100));
+    }
+
+    [Fact]
+    public void ReadByte_ShouldThrowMemoryReadException_WhenDisconnected()
+    {
+        var duckstationSession = new DuckstationSession();
+        var reader = new MemoryReader(duckstationSession, NullLogger<MemoryReader>.Instance);
+
+        Assert.Throws<MemoryReadException>(() => reader.ReadByte(0x800100));
+    }
+
+    [Fact]
     public void ReadBytes_ShouldReturnBytes_WhenConnectedAndAccessorSucceeds()
     {
         var (_, accessorMock, reader) = CreateConnectedReader();

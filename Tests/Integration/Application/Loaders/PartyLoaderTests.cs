@@ -392,7 +392,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x10)).Returns((short)252);
         memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x12)).Returns((short)185);
         memoryReaderMock.Setup(m => m.ReadInt16(0x000A4470 + 0x14)).Returns((short)84);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x000A4470 + 0x1C, 1)).Returns([0x04]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x000A4470 + 0x1C)).Returns((byte)0x04);
 
         var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
         var partyResource = partyLoader.Load();

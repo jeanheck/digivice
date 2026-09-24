@@ -10,7 +10,6 @@
         "Current": "0x24",
         "Max": "0x26"
     },
-
     "Attributes": {
         "Strength": "0x28",
         "Defense": "0x2A",

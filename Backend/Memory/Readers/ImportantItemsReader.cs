@@ -10,10 +10,10 @@ namespace Backend.Memory.Readers
         {
             return new ImportantItemsResource
             {
-                TreeBoots = memoryReader.ReadBytes(addresses.TreeBoots, 1)[0],
-                FishingPole = memoryReader.ReadBytes(addresses.FishingPole, 1)[0],
-                AsukaTrophy = memoryReader.ReadBytes(addresses.AsukaTrophy, 1)[0],
-                SunTrophy = memoryReader.ReadBytes(addresses.SunTrophy, 1)[0]
+                TreeBoots = memoryReader.ReadByte(addresses.TreeBoots),
+                FishingPole = memoryReader.ReadByte(addresses.FishingPole),
+                AsukaTrophy = memoryReader.ReadByte(addresses.AsukaTrophy),
+                SunTrophy = memoryReader.ReadByte(addresses.SunTrophy)
             };
         }
     }

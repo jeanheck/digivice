@@ -44,6 +44,8 @@ namespace Backend.Memory.Readers
         public short ReadInt16(long address) =>
             ReadValue(address, accessor => accessor.ReadInt16(address));
 
+        public byte ReadByte(long address) => ReadBytes(address, 1)[0];
+
         public byte[] ReadBytes(long address, int length)
         {
             var accessor = GetConnectedAccessor(address);

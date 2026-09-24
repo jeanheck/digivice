@@ -313,6 +313,6 @@ public class EnemyReaderTests
         memoryReaderMock.Setup(m => m.ReadInt16(slotBase + 0x10)).Returns((short)0);
         memoryReaderMock.Setup(m => m.ReadInt16(slotBase + 0x12)).Returns((short)0);
         memoryReaderMock.Setup(m => m.ReadInt16(slotBase + 0x14)).Returns(speed);
-        memoryReaderMock.Setup(m => m.ReadBytes(slotBase + 0x1C, 1)).Returns([condition]);
+        memoryReaderMock.Setup(m => m.ReadByte(slotBase + 0x1C)).Returns(condition);
     }
 }
