@@ -67,12 +67,12 @@ namespace Backend.Domain.Assemblers.Parties
                 },
                 Equipments = new Equipments
                 {
-                    Head = resource.Equipments.Head,
-                    Body = resource.Equipments.Body,
-                    Right = resource.Equipments.Right,
-                    Left = resource.Equipments.Left,
-                    Accessory1 = resource.Equipments.Accessory1,
-                    Accessory2 = resource.Equipments.Accessory2
+                    Head = resource.Equipments.Head <= 0 ? null : resource.Equipments.Head,
+                    Body = resource.Equipments.Body <= 0 ? null : resource.Equipments.Body,
+                    Right = resource.Equipments.Right <= 0 ? null : resource.Equipments.Right,
+                    Left = resource.Equipments.Left <= 0 ? null : resource.Equipments.Left,
+                    Accessory1 = resource.Equipments.Accessory1 <= 0 ? null : resource.Equipments.Accessory1,
+                    Accessory2 = resource.Equipments.Accessory2 <= 0 ? null : resource.Equipments.Accessory2
                 },
                 Digievolutions = [.. resource.Digievolutions.Select(DigievolutionSlotAssembler.Assemble)],
                 StoredDigievolutions = [.. resource.StoredDigievolutions.Select(StoredDigievolutionAssembler.Assemble)],

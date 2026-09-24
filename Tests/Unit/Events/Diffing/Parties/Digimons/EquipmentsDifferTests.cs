@@ -56,4 +56,18 @@ public class EquipmentsDifferTests
         Assert.Equal(205, result.Accessory1.Value);
         Assert.False(result.Accessory2.HasValue);
     }
+
+    [Fact]
+    public void Diff_ShouldReturnExplicitNull_WhenEquipmentIsRemoved()
+    {
+        var previous = new Equipments { Head = 101, Body = 1, Right = 1, Left = 1, Accessory1 = 1, Accessory2 = 1 };
+        var newObj = new Equipments { Head = null, Body = 1, Right = 1, Left = 1, Accessory1 = 1, Accessory2 = 1 };
+
+        var result = EquipmentsDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.True(result.Head.HasValue);
+        Assert.Null(result.Head.Value);
+        Assert.False(result.Body.HasValue);
+    }
 }

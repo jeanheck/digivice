@@ -25,4 +25,16 @@ public class EquipmentsConverterTests
         Assert.Equal(5, dto.Accessory1.Value);
         Assert.Equal(6, dto.Accessory2.Value);
     }
+
+    [Fact]
+    public void ToDTO_ShouldPreserveNullEquipmentSlots()
+    {
+        var dto = EquipmentsConverter.ToDTO(new Equipments { Head = 101 });
+
+        Assert.Equal(101, dto.Head.Value);
+        Assert.True(dto.Body.HasValue);
+        Assert.Null(dto.Body.Value);
+        Assert.True(dto.Accessory2.HasValue);
+        Assert.Null(dto.Accessory2.Value);
+    }
 }

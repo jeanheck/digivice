@@ -20,6 +20,33 @@ public class DigimonAssemblerTests
         Assert.Equal(expectedId, result.ActiveDigievolutionId);
     }
 
+    [Theory]
+    [InlineData(0, null)]
+    [InlineData(-1, null)]
+    [InlineData(101, 101)]
+    public void Assemble_ShouldSanitizeEquipmentIds(int rawEquipmentId, int? expectedEquipmentId)
+    {
+        var resource = CreateBaseDigimonResource();
+        resource.Equipments = new EquipmentsResource
+        {
+            Head = rawEquipmentId,
+            Body = rawEquipmentId,
+            Right = rawEquipmentId,
+            Left = rawEquipmentId,
+            Accessory1 = rawEquipmentId,
+            Accessory2 = rawEquipmentId
+        };
+
+        var result = DigimonAssembler.Assemble(resource);
+
+        Assert.Equal(expectedEquipmentId, result.Equipments.Head);
+        Assert.Equal(expectedEquipmentId, result.Equipments.Body);
+        Assert.Equal(expectedEquipmentId, result.Equipments.Right);
+        Assert.Equal(expectedEquipmentId, result.Equipments.Left);
+        Assert.Equal(expectedEquipmentId, result.Equipments.Accessory1);
+        Assert.Equal(expectedEquipmentId, result.Equipments.Accessory2);
+    }
+
     [Fact]
     public void Assemble_ShouldMapAllSubStructuresCorrectly()
     {

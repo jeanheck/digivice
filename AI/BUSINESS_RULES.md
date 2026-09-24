@@ -80,6 +80,7 @@ if (slot.digimonId === null || slot.digimon === null) {
 ### 2.2. Digimon e Evoluções (Digievolutions)
 *   **Evoluções Ativas:** Cada `Digimon` gerencia sua própria lista de evoluções através de `DigievolutionSlot`.
 *   **Evolução ativa atual (`ActiveDigievolutionId`):** Id da digievolução em uso no momento. Ausência (“nada”) é `null` no domínio/SignalR — não `0`. No Assembler, RAM `<= 0` (inclui Int16 `-1` quando a memória tem o sentinela `0xFFFF`) vira `null`; id `> 0` passa direto.
+*   **Equipamentos:** Slot de equipamento vazio é `null` no domínio/SignalR — não `0`. No Assembler, RAM `<= 0` vira `null`; ids de equipamento válidos são sempre positivos.
 *   **Comportamento de Preenchimento:**
     *   Um slot de digievolução pode estar **vazio** (sem evolução ativa naquele índice) ou **preenchido** (`digievolutionId` e `digievolution` não nulos no frontend).
     *   Transições válidas: **vazio → preenchido** (primeira evolução naquele slot) e **preenchido (X) → preenchido (Y)** (troca de evolução no mesmo índice).

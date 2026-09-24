@@ -1,8 +1,8 @@
 export interface EquipmentsDTO {
-  head?: number;
-  body?: number;
-  right?: number;
-  left?: number;
-  accessory1?: number;
-  accessory2?: number;
+  head?: number | null;
+  body?: number | null;
+  right?: number | null;
+  left?: number | null;
+  accessory1?: number | null;
+  accessory2?: number | null;
 }
