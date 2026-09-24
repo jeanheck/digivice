@@ -86,6 +86,7 @@ if (slot.digimonId === null || slot.digimon === null) {
     *   Transições válidas: **vazio → preenchido** (primeira evolução naquele slot) e **preenchido (X) → preenchido (Y)** (troca de evolução no mesmo índice).
     *   **Proibido na gameplay:** **preenchido → vazio** — um slot que já recebeu uma digievolução **nunca** volta a ser esvaziado (`null`).
     *   Na UI, linha “empty” representa slots que **ainda nunca foram preenchidos** (ex.: `digievolutionId` inválido/vazio na leitura, tipicamente `0` na RAM → `null` no domínio), não um slot que “perdeu” uma evolução.
+*   **Level/DVXP da digievolução do slot (`DigievolutionSlotAssembler`):** o slot guarda apenas o `digievolutionId`; `Level` e `Dvxp` vêm da lista de digievoluções destravadas (`StoredDigievolutions`) pelo mesmo id. Id presente no slot mas ausente da lista → `Level = 1`, `Dvxp = 0` (digievolução ainda não treinada).
 *   **Técnicas de digievolução (catálogo estático):**
     *   A lista de técnicas por `digievolutionId` vem de JSON estático (`digievolution-technique.json`).
     *   **Técnica assinatura (*signature*):** a técnica com maior `learnLevel` na lista daquela digievolução (última aprendida na curva do JSON).
