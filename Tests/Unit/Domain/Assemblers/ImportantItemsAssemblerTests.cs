@@ -25,14 +25,14 @@ public class ImportantItemsAssemblerTests
     }
 
     [Fact]
-    public void Assemble_ShouldMapZeroAndNullToFalse()
+    public void Assemble_ShouldMapZeroToFalse()
     {
         var resource = new ImportantItemsResource
         {
             TreeBoots = 0x00,
-            FishingPole = null,
+            FishingPole = 0x00,
             AsukaTrophy = 0x00,
-            SunTrophy = null
+            SunTrophy = 0x00
         };
 
         var result = ImportantItemsAssembler.Assemble(resource);

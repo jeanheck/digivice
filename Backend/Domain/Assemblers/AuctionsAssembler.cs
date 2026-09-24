@@ -9,11 +9,11 @@ namespace Backend.Domain.Assemblers
         {
             return new Auctions
             {
-                DivineBarrier = (resource.DivineBarrier ?? 0) != 0,
-                HazardShield = (resource.HazardShield ?? 0) != 0,
-                SniperShield = (resource.SniperShield ?? 0) != 0,
-                DramonShield = (resource.DramonShield ?? 0) != 0,
-                YinYangWand = (resource.YinYangWand ?? 0) != 0
+                DivineBarrier = resource.DivineBarrier != 0,
+                HazardShield = resource.HazardShield != 0,
+                SniperShield = resource.SniperShield != 0,
+                DramonShield = resource.DramonShield != 0,
+                YinYangWand = resource.YinYangWand != 0
             };
         }
     }

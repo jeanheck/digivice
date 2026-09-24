@@ -34,29 +34,4 @@ public class ImportantItemsProviderTests
         Assert.False(result.SunTrophy);
         loaderMock.Verify(loader => loader.Load(), Times.Once);
     }
-
-    [Fact]
-    public void Get_ShouldHandleNullBytesAsFalse()
-    {
-        var resource = new ImportantItemsResource
-        {
-            TreeBoots = null,
-            FishingPole = null,
-            AsukaTrophy = null,
-            SunTrophy = null
-        };
-
-        var loaderMock = new Mock<IImportantItemsLoader>();
-        loaderMock.Setup(loader => loader.Load()).Returns(resource);
-
-        var provider = new ImportantItemsProvider(loaderMock.Object);
-
-        var result = provider.Get();
-
-        Assert.False(result.TreeBoots);
-        Assert.False(result.FishingPole);
-        Assert.False(result.AsukaTrophy);
-        Assert.False(result.SunTrophy);
-        loaderMock.Verify(loader => loader.Load(), Times.Once);
-    }
 }

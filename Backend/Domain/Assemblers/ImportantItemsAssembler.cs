@@ -9,10 +9,10 @@ namespace Backend.Domain.Assemblers
         {
             return new ImportantItems
             {
-                TreeBoots = (resource.TreeBoots ?? 0) != 0,
-                FishingPole = (resource.FishingPole ?? 0) != 0,
-                AsukaTrophy = (resource.AsukaTrophy ?? 0) != 0,
-                SunTrophy = (resource.SunTrophy ?? 0) != 0
+                TreeBoots = resource.TreeBoots != 0,
+                FishingPole = resource.FishingPole != 0,
+                AsukaTrophy = resource.AsukaTrophy != 0,
+                SunTrophy = resource.SunTrophy != 0
             };
         }
     }

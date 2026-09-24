@@ -14,7 +14,7 @@ public class AuctionsAssemblerTests
             DivineBarrier = 0x01,
             HazardShield = 0x00,
             SniperShield = 0x04,
-            DramonShield = null,
+            DramonShield = 0x00,
             YinYangWand = 0x10,
         };
 
