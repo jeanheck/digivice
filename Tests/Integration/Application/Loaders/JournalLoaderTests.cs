@@ -14,6 +14,7 @@ public class JournalLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
+        SetupReadByteBitMaskBridge(memoryReaderMock);
         memoryReaderMock.Setup(m => m.ReadByte(It.IsAny<long>())).Returns((byte)0);
         memoryReaderMock.Setup(m => m.ReadByte(0x0004B3B6)).Returns((byte)0x80);
         memoryReaderMock.Setup(m => m.ReadByte(0x00048F42)).Returns((byte)1);

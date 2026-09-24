@@ -96,6 +96,18 @@ public class MemoryReaderTests
     }
 
     [Fact]
+    public void ReadByte_ShouldApplyBitMask_WhenBitMaskIsProvided()
+    {
+        var (_, accessorMock, reader) = CreateConnectedReader();
+        accessorMock.Setup(accessor => accessor.ReadArray(0x800100, It.IsAny<byte[]>(), 0, 1))
+            .Callback<long, byte[], int, int>((address, buffer, index, count) => { buffer[0] = 90; });
+
+        var result = reader.ReadByte(0x800100, 15);
+
+        Assert.Equal(10, result);
+    }
+
+    [Fact]
     public void ReadByte_ShouldThrowMemoryReadException_WhenAccessorThrows()
     {
         var (_, accessorMock, reader) = CreateConnectedReader();
@@ -103,6 +115,16 @@ public class MemoryReaderTests
             .Throws(new Exception("I/O error"));
 
         Assert.Throws<MemoryReadException>(() => reader.ReadByte(0x800100));
+    }
+
+    [Fact]
+    public void ReadByte_WithBitMask_ShouldThrowMemoryReadException_WhenAccessorThrows()
+    {
+        var (_, accessorMock, reader) = CreateConnectedReader();
+        accessorMock.Setup(accessor => accessor.ReadArray(It.IsAny<long>(), It.IsAny<byte[]>(), It.IsAny<int>(), It.IsAny<int>()))
+            .Throws(new Exception("I/O error"));
+
+        Assert.Throws<MemoryReadException>(() => reader.ReadByte(0x800100, 0x0F));
     }
 
     [Fact]

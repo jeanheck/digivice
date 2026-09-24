@@ -60,7 +60,7 @@ public class RequisiteReaderTests
         };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadByte(0x4B3E5)).Returns((byte)0x51);
+        memoryReaderMock.Setup(m => m.ReadByte(0x4B3E5, 0x40)).Returns((byte)0x40);
 
         var reader = new RequisiteReader(memoryReaderMock.Object);
 

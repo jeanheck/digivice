@@ -13,7 +13,7 @@ public class AuctionsReaderTests
     {
         var addresses = CreateAddresses();
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B38A)).Returns((byte)0x05);
+        SetupMaskedByte(memoryReaderMock, 0x0004B38A, 0x05);
 
         var reader = new AuctionsReader(memoryReaderMock.Object);
         var result = reader.Read(addresses);
@@ -30,7 +30,7 @@ public class AuctionsReaderTests
     {
         var addresses = CreateAddresses();
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B38A)).Returns((byte)0x00);
+        SetupMaskedByte(memoryReaderMock, 0x0004B38A, 0x00);
 
         var reader = new AuctionsReader(memoryReaderMock.Object);
         var result = reader.Read(addresses);
@@ -40,6 +40,13 @@ public class AuctionsReaderTests
         Assert.Equal((byte)0x00, result.SniperShield);
         Assert.Equal((byte)0x00, result.DramonShield);
         Assert.Equal((byte)0x00, result.YinYangWand);
+    }
+
+    private static void SetupMaskedByte(Mock<IMemoryReader> memoryReaderMock, long address, byte rawValue)
+    {
+        memoryReaderMock
+            .Setup(memoryReader => memoryReader.ReadByte(address, It.IsAny<long>()))
+            .Returns((long _, long bitMask) => (byte)(rawValue & bitMask));
     }
 
     private static AuctionsAddresses CreateAddresses()

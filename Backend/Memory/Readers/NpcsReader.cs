@@ -1,5 +1,4 @@
 using Backend.Memory.Addresses;
-using Backend.Memory.Readers.Helpers;
 using Backend.Memory.Resources;
 using Backend.Memory.Readers.Interfaces;
 
@@ -50,7 +49,7 @@ namespace Backend.Memory.Readers
             return [.. battles.Select(battle => new NpcBattleResource
             {
                 Id = battle.Key,
-                Value = FlagByteHelper.Read(memoryReader, battle.Value.Address, battle.Value.BitMask),
+                Value = memoryReader.ReadByte(battle.Value.Address, battle.Value.BitMask),
             })];
         }
     }

@@ -1,5 +1,4 @@
 using Backend.Memory.Addresses;
-using Backend.Memory.Readers.Helpers;
 using Backend.Memory.Resources;
 using Backend.Memory.Readers.Interfaces;
 
@@ -11,11 +10,11 @@ namespace Backend.Memory.Readers
         {
             return new AuctionsResource
             {
-                DivineBarrier = FlagByteHelper.Read(memoryReader, addresses.DivineBarrier.Address, addresses.DivineBarrier.BitMask),
-                HazardShield = FlagByteHelper.Read(memoryReader, addresses.HazardShield.Address, addresses.HazardShield.BitMask),
-                SniperShield = FlagByteHelper.Read(memoryReader, addresses.SniperShield.Address, addresses.SniperShield.BitMask),
-                DramonShield = FlagByteHelper.Read(memoryReader, addresses.DramonShield.Address, addresses.DramonShield.BitMask),
-                YinYangWand = FlagByteHelper.Read(memoryReader, addresses.YinYangWand.Address, addresses.YinYangWand.BitMask),
+                DivineBarrier = memoryReader.ReadByte(addresses.DivineBarrier.Address, addresses.DivineBarrier.BitMask),
+                HazardShield = memoryReader.ReadByte(addresses.HazardShield.Address, addresses.HazardShield.BitMask),
+                SniperShield = memoryReader.ReadByte(addresses.SniperShield.Address, addresses.SniperShield.BitMask),
+                DramonShield = memoryReader.ReadByte(addresses.DramonShield.Address, addresses.DramonShield.BitMask),
+                YinYangWand = memoryReader.ReadByte(addresses.YinYangWand.Address, addresses.YinYangWand.BitMask),
             };
         }
     }

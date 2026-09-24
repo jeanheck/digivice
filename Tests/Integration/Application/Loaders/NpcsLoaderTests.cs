@@ -13,6 +13,7 @@ public class NpcsLoaderTests : LoaderIntegrationTestBase
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
+        SetupReadByteBitMaskBridge(memoryReaderMock);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(It.IsAny<long>())).Returns((byte)0);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B3DF)).Returns((byte)0x20);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B39A)).Returns((byte)0xFF);

@@ -3,12 +3,22 @@ namespace Tests.Integration.Application.Loaders;
 using System;
 using System.IO;
 using Backend.Memory.Repositories;
+using Backend.Memory.Readers.Interfaces;
+using Moq;
 
 public abstract class LoaderIntegrationTestBase
 {
     protected static AddressesRepository CreateAddressesRepository()
     {
         return new AddressesRepository(GetRealDefinitionsPath());
+    }
+
+    protected static void SetupReadByteBitMaskBridge(Mock<IMemoryReader> memoryReaderMock)
+    {
+        memoryReaderMock
+            .Setup(memoryReader => memoryReader.ReadByte(It.IsAny<long>(), It.IsAny<long>()))
+            .Returns((long address, long bitMask) =>
+                (byte)(memoryReaderMock.Object.ReadByte(address) & bitMask));
     }
 
     protected static void WriteInt16(byte[] block, int offset, short value)

@@ -14,6 +14,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
+        SetupReadByteBitMaskBridge(memoryReaderMock);
         memoryReaderMock.Setup(m => m.ReadByte(It.IsAny<long>())).Returns((byte)0);
         memoryReaderMock.Setup(m => m.ReadByte(0x0004B3B6)).Returns((byte)0x80);
         memoryReaderMock.Setup(m => m.ReadByte(0x0004B3B7)).Returns((byte)0x01);
@@ -41,6 +42,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
+        SetupReadByteBitMaskBridge(memoryReaderMock);
         memoryReaderMock.Setup(m => m.ReadByte(It.IsAny<long>())).Returns((byte)0);
         memoryReaderMock.Setup(m => m.ReadByte(0x00048F42)).Returns((byte)1);
         memoryReaderMock.Setup(m => m.ReadByte(0x04B3B0)).Returns((byte)0xA4);
@@ -92,6 +94,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
+        SetupReadByteBitMaskBridge(memoryReaderMock);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(It.IsAny<long>())).Returns((byte)0);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B38E)).Returns((byte)0x1F);
 
@@ -150,6 +153,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
+        SetupReadByteBitMaskBridge(memoryReaderMock);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(It.IsAny<long>())).Returns((byte)0);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B38C)).Returns((byte)0xFF);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B3B7)).Returns((byte)0xFC);
@@ -280,6 +284,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
 
         var memoryReaderMock = new Mock<IMemoryReader>();
+        SetupReadByteBitMaskBridge(memoryReaderMock);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(It.IsAny<long>())).Returns((byte)0);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B3B2)).Returns((byte)0xCF);
         memoryReaderMock.Setup(memoryReader => memoryReader.ReadByte(0x0004B3B3)).Returns((byte)0x0F);

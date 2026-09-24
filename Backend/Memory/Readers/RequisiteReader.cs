@@ -1,5 +1,4 @@
 using Backend.Memory.Addresses.Journals.Quests;
-using Backend.Memory.Readers.Helpers;
 using Backend.Memory.Resources.Journals.Quests;
 using Backend.Memory.Readers.Interfaces;
 
@@ -20,15 +19,15 @@ namespace Backend.Memory.Readers
         {
             if (bitMasks.Count == 0)
             {
-                return FlagByteHelper.Read(memoryReader, address);
+                return memoryReader.ReadByte(address);
             }
 
             if (bitMasks.Count == 1)
             {
-                return FlagByteHelper.Read(memoryReader, address, bitMasks[0]);
+                return memoryReader.ReadByte(address, bitMasks[0]);
             }
 
-            byte rawValue = FlagByteHelper.Read(memoryReader, address);
+            byte rawValue = memoryReader.ReadByte(address);
             foreach (long bitMask in bitMasks)
             {
                 if ((rawValue & bitMask) == 0)

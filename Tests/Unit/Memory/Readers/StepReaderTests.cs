@@ -25,7 +25,7 @@ public class StepReaderTests
         var expectedRequisiteResource = new RequisiteResource { Id = "Req2", Value = 5 };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadByte(0x5500)).Returns((byte)2);
+        memoryReaderMock.Setup(m => m.ReadByte(0x5500, 0x0F)).Returns((byte)2);
 
         var requisiteReaderMock = new Mock<IRequisiteReader>();
         requisiteReaderMock.Setup(r => r.Read(reqAddresses)).Returns(expectedRequisiteResource);
