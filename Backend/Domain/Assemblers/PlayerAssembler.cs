@@ -9,11 +9,11 @@ namespace Backend.Domain.Assemblers
         {
             return new Player
             {
-                Bits = resource.Bits ?? 0,
-                MapId = resource.MapId?.ToString("X4") ?? string.Empty,
-                PreviousMapId = resource.PreviousMapId?.ToString("X4") ?? string.Empty,
-                SeabedRoute = resource.SeabedRoute ?? 0,
-                MapVariant = resource.MapVariant ?? 0
+                Bits = resource.Bits,
+                MapId = resource.MapId.ToString("X4"),
+                PreviousMapId = resource.PreviousMapId.ToString("X4"),
+                SeabedRoute = resource.SeabedRoute,
+                MapVariant = resource.MapVariant
             };
         }
     }

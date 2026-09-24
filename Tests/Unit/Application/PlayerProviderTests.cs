@@ -30,46 +30,4 @@ public class PlayerProviderTests
         Assert.Equal("0001", result.MapId);
         playerLoaderMock.Verify(loader => loader.Load(), Times.Once);
     }
-
-    [Fact]
-    public void Get_ShouldHandleNullBits()
-    {
-        var playerResource = new PlayerResource
-        {
-            Bits = null,
-            MapId = 2
-        };
-
-        var playerLoaderMock = new Mock<IPlayerLoader>();
-        playerLoaderMock.Setup(loader => loader.Load()).Returns(playerResource);
-
-        var provider = new PlayerProvider(playerLoaderMock.Object);
-
-        var result = provider.Get();
-
-        Assert.NotNull(result);
-        Assert.Equal(0, result.Bits);
-        playerLoaderMock.Verify(loader => loader.Load(), Times.Once);
-    }
-
-    [Fact]
-    public void Get_ShouldHandleNullMapId()
-    {
-        var playerResource = new PlayerResource
-        {
-            Bits = 150,
-            MapId = null
-        };
-
-        var playerLoaderMock = new Mock<IPlayerLoader>();
-        playerLoaderMock.Setup(loader => loader.Load()).Returns(playerResource);
-
-        var provider = new PlayerProvider(playerLoaderMock.Object);
-
-        var result = provider.Get();
-
-        Assert.NotNull(result);
-        Assert.Equal(string.Empty, result.MapId);
-        playerLoaderMock.Verify(loader => loader.Load(), Times.Once);
-    }
 }

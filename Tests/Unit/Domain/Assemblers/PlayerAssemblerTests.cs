@@ -28,23 +28,23 @@ public class PlayerAssemblerTests
     }
 
     [Fact]
-    public void Assemble_ShouldFallBackToSafeDefaults_WhenFieldsAreNull()
+    public void Assemble_ShouldPassThroughRawValues_WhenFieldsAreZero()
     {
         var resource = new PlayerResource
         {
-            Bits = null,
-            MapId = null,
-            PreviousMapId = null,
-            SeabedRoute = null,
-            MapVariant = null
+            Bits = 0,
+            MapId = 0,
+            PreviousMapId = 0,
+            SeabedRoute = 0,
+            MapVariant = 0
         };
 
         var result = PlayerAssembler.Assemble(resource);
 
         Assert.NotNull(result);
         Assert.Equal(0, result.Bits);
-        Assert.Equal(string.Empty, result.MapId);
-        Assert.Equal(string.Empty, result.PreviousMapId);
+        Assert.Equal("0000", result.MapId);
+        Assert.Equal("0000", result.PreviousMapId);
         Assert.Equal((byte)0, result.SeabedRoute);
         Assert.Equal((byte)0, result.MapVariant);
     }
