@@ -19,5 +19,5 @@ export interface DigimonDTO {
   equipments?: EquipmentsDTO;
   digievolutions?: DigievolutionSlotDTO[];
   storedDigievolutions?: StoredDigievolutionDTO[];
-  activeDigievolutionId?: number;
+  activeDigievolutionId?: number | null;
 }

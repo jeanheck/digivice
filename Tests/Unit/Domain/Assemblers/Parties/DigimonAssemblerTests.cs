@@ -7,11 +7,10 @@ using Backend.Memory.Resources.Parties.Digimons;
 public class DigimonAssemblerTests
 {
     [Theory]
-    [InlineData(0, 0)]
-    [InlineData(-1, 0)]
-    [InlineData(0xFFFF, 0)]
+    [InlineData(0, null)]
+    [InlineData(-1, null)]
     [InlineData(5, 5)]
-    public void Assemble_ShouldSanitizeActiveDigievolutionId(int inputId, int expectedId)
+    public void Assemble_ShouldSanitizeActiveDigievolutionId(int inputId, int? expectedId)
     {
         var resource = CreateBaseDigimonResource();
         resource.ActiveDigievolutionId = inputId;

@@ -16,7 +16,7 @@ namespace Backend.Domain.Models.Parties
         public Equipments Equipments { get; set; } = new();
         public List<DigievolutionSlot> Digievolutions { get; set; } = [];
         public List<StoredDigievolution> StoredDigievolutions { get; set; } = [];
-        public int ActiveDigievolutionId { get; set; }
+        public int? ActiveDigievolutionId { get; set; }
 
         public virtual bool Equals(Digimon? other)
         {

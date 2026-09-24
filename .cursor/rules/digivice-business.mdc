@@ -34,7 +34,8 @@ Nome do treinador **não é lido** pelo Digivice (referência futura apenas).
 ## Digimon e Digievolutions
 
 - Slot de digievolução: vazio ou preenchido. Válido: vazio→preenchido e preenchido(X)→preenchido(Y). **Proibido:** preenchido→vazio.
-- UI “empty” = slot que **nunca** foi preenchido (ex.: id inválido/`0`), não um slot que “perdeu” evolução.
+- UI “empty” = slot que **nunca** foi preenchido (RAM `0` → domínio `null`), não um slot que “perdeu” evolução.
+- **ActiveDigievolutionId:** sem evolução ativa = `null` (Assembler: RAM `<= 0` → `null`; não usar `0` como “vazio” no contrato).
 - Técnicas por `digievolutionId` em JSON estático; assinatura = maior `learnLevel`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
 - Level máximo **99** (invariante 1–99). Não aplicar clamp defensivo no frontend.
 - Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE.

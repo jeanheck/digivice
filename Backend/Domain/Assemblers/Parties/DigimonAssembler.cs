@@ -7,13 +7,11 @@ namespace Backend.Domain.Assemblers.Parties
 {
     public static class DigimonAssembler
     {
-        private const int NoActiveDigievolution = 0xFFFF;
-
         public static Digimon Assemble(DigimonResource resource)
         {
-            var activeDigievolutionId = resource.ActiveDigievolutionId <= 0 || resource.ActiveDigievolutionId == NoActiveDigievolution
-                ? 0
-                : resource.ActiveDigievolutionId;
+            var activeDigievolutionId = resource.ActiveDigievolutionId <= 0
+                ? null
+                : (int?)resource.ActiveDigievolutionId;
 
             return new Digimon
             {

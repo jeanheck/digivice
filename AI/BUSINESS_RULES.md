@@ -79,11 +79,12 @@ if (slot.digimonId === null || slot.digimon === null) {
 
 ### 2.2. Digimon e Evoluções (Digievolutions)
 *   **Evoluções Ativas:** Cada `Digimon` gerencia sua própria lista de evoluções através de `DigievolutionSlot`.
+*   **Evolução ativa atual (`ActiveDigievolutionId`):** Id da digievolução em uso no momento. Ausência (“nada”) é `null` no domínio/SignalR — não `0`. No Assembler, RAM `<= 0` (inclui Int16 `-1` quando a memória tem o sentinela `0xFFFF`) vira `null`; id `> 0` passa direto.
 *   **Comportamento de Preenchimento:**
     *   Um slot de digievolução pode estar **vazio** (sem evolução ativa naquele índice) ou **preenchido** (`digievolutionId` e `digievolution` não nulos no frontend).
     *   Transições válidas: **vazio → preenchido** (primeira evolução naquele slot) e **preenchido (X) → preenchido (Y)** (troca de evolução no mesmo índice).
     *   **Proibido na gameplay:** **preenchido → vazio** — um slot que já recebeu uma digievolução **nunca** volta a ser esvaziado (`null`).
-    *   Na UI, linha “empty” representa slots que **ainda nunca foram preenchidos** (ex.: `digievolutionId` inválido/vazio na leitura, tipicamente `0`), não um slot que “perdeu” uma evolução.
+    *   Na UI, linha “empty” representa slots que **ainda nunca foram preenchidos** (ex.: `digievolutionId` inválido/vazio na leitura, tipicamente `0` na RAM → `null` no domínio), não um slot que “perdeu” uma evolução.
 *   **Técnicas de digievolução (catálogo estático):**
     *   A lista de técnicas por `digievolutionId` vem de JSON estático (`digievolution-technique.json`).
     *   **Técnica assinatura (*signature*):** a técnica com maior `learnLevel` na lista daquela digievolução (última aprendida na curva do JSON).

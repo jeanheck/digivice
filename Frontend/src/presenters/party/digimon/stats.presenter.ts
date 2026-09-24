@@ -21,7 +21,7 @@ export class StatsPresenter {
   public static getStatsViewModel(digimon: Digimon, location: string | null): DigimonStatsViewModel {
     const isInBattle = DigimonBattleService.isInBattle(location, digimon.inBattle);
     const activeDigievolution =
-      digimon.activeDigievolutionId !== null && digimon.activeDigievolutionId !== 0
+      digimon.activeDigievolutionId !== null
         ? this.getDigievolutionById(digimon.activeDigievolutionId)
         : null;
     const equipmentIds = EquipmentService.getEquipmentIds(digimon.equipments);
