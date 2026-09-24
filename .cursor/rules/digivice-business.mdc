@@ -42,5 +42,6 @@ Nome do treinador **não é lido** pelo Digivice (referência futura apenas).
 ## Journal
 
 - Estrutura das missões em JSON estático; backend lê `Value` (byte) na RAM e expõe `IsDone` (bool) no domínio/SignalR.
-- **Cascade Main Quest apenas** (`NormalizeMainQuestProgression`): step posterior `IsDone` força anteriores não feitos → `IsDone = true`. Side quests / legendary / DRI = pass-through puro.
+- **Cascade Main Quest apenas** (`MainQuestAssembler`): step posterior `IsDone` força anteriores não feitos → `IsDone = true`. Side quests / legendary / DRI = pass-through via `QuestAssembler`.
+- **Duel Island** (`DuelIslandAssembler`): requisite não metido → todos steps `IsDone = false`; troféu (último step) `IsDone` → steps anteriores `IsDone = true`.
 - Todas as missões vêm no InitialState; **nunca** add/remove em runtime. Conclusão é calculada no frontend (todos steps/requisitos satisfeitos); não há flag de “missão concluída” do backend.

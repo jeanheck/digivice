@@ -1,7 +1,5 @@
 using Backend.Domain.Assemblers.Journals;
 using Backend.Domain.Models;
-using Backend.Domain.Models.Journals;
-using Backend.Domain.Models.Journals.Quests;
 using Backend.Memory.Resources;
 
 namespace Backend.Domain.Assemblers
@@ -10,75 +8,14 @@ namespace Backend.Domain.Assemblers
     {
         public static Journal Assemble(JournalResource resource)
         {
-            var mainQuest = QuestAssembler.Assemble(resource.MainQuest);
-            List<Quest> sideQuests = [.. resource.SideQuests.Select(QuestAssembler.Assemble)];
-            List<Quest> legendaryWeapons = [.. resource.LegendaryWeapons.Select(QuestAssembler.Assemble)];
-            List<Quest> driAgents = [.. resource.DriAgents.Select(QuestAssembler.Assemble)];
-            List<Quest> duelIsland = [.. resource.DuelIsland.Select(QuestAssembler.Assemble)];
-
-            NormalizeMainQuestProgression(mainQuest);
-            foreach (Quest duelIslandQuest in duelIsland)
-            {
-                NormalizeDuelIslandProgression(duelIslandQuest);
-            }
-
             return new Journal
             {
-                MainQuest = mainQuest,
-                SideQuests = sideQuests,
-                LegendaryWeapons = legendaryWeapons,
-                DriAgents = driAgents,
-                DuelIsland = duelIsland,
+                MainQuest = MainQuestAssembler.Assemble(resource.MainQuest),
+                SideQuests = [.. resource.SideQuests.Select(QuestAssembler.Assemble)],
+                LegendaryWeapons = [.. resource.LegendaryWeapons.Select(QuestAssembler.Assemble)],
+                DriAgents = [.. resource.DriAgents.Select(QuestAssembler.Assemble)],
+                DuelIsland = [.. resource.DuelIsland.Select(DuelIslandAssembler.Assemble)],
             };
-        }
-
-        private static void NormalizeMainQuestProgression(Quest mainQuest)
-        {
-            // Completion cascade: If the next step is done, the current step must also be done.
-            for (int i = mainQuest.Steps.Count - 2; i >= 0; i--)
-            {
-                if (!mainQuest.Steps[i].IsDone && mainQuest.Steps[i + 1].IsDone)
-                {
-                    mainQuest.Steps[i].IsDone = true;
-                }
-            }
-        }
-
-        private static void NormalizeDuelIslandProgression(Quest quest)
-        {
-            if (quest.Steps.Count == 0)
-            {
-                return;
-            }
-
-            if (!AreQuestRequisitesMet(quest))
-            {
-                foreach (Step step in quest.Steps)
-                {
-                    step.IsDone = false;
-                }
-
-                return;
-            }
-
-            Step trophyStep = quest.Steps[^1];
-            if (!trophyStep.IsDone)
-            {
-                return;
-            }
-
-            for (int i = 0; i < quest.Steps.Count - 1; i++)
-            {
-                if (!quest.Steps[i].IsDone)
-                {
-                    quest.Steps[i].IsDone = true;
-                }
-            }
-        }
-
-        private static bool AreQuestRequisitesMet(Quest quest)
-        {
-            return quest.Requisites.All(requisite => requisite.IsDone);
         }
     }
 }
