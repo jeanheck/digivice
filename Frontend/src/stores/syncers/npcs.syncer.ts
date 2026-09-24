@@ -55,8 +55,8 @@ export class NpcsSyncer {
   }
 
   private static syncBattle(previousBattle: NpcBattle, newBattleDto: NpcBattleDTO): void {
-    if (newBattleDto.value !== undefined) {
-      previousBattle.completed = newBattleDto.value !== 0;
+    if (newBattleDto.won !== undefined) {
+      previousBattle.won = newBattleDto.won;
     }
   }
 }

@@ -48,7 +48,7 @@ namespace Backend.Domain.Assemblers
             return [.. battleResources.Select(battleResource => new NpcBattle
             {
                 Id = battleResource.Id,
-                Value = battleResource.Value,
+                Won = battleResource.Value != 0,
             })];
         }
     }

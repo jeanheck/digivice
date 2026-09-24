@@ -23,7 +23,7 @@ public class NpcsEventFactoryTests
     {
         var previousState = CreateState(CreateBaseNpcs());
         var newNpcs = CreateBaseNpcs();
-        newNpcs.Genji.Battles[0].Value = 0x20;
+        newNpcs.Genji.Battles[0].Won = true;
         var newState = CreateState(newNpcs);
 
         var result = NpcsEventFactory.Create(previousState, newState).ToList();
@@ -46,7 +46,7 @@ public class NpcsEventFactoryTests
         {
             Genji = new Npc
             {
-                Battles = [new NpcBattle { Id = "first", Value = 0 }],
+                Battles = [new NpcBattle { Id = "first", Won = false }],
             },
         };
     }

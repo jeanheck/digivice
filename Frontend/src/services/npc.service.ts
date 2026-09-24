@@ -182,7 +182,7 @@ export class NpcService {
       return entry.id === battleId;
     });
 
-    return battle?.completed ?? false;
+    return battle?.won ?? false;
   }
 
   public static getBattleTooltipKey(params: {

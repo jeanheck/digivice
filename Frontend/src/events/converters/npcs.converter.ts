@@ -43,7 +43,7 @@ export class NpcsConverter {
   public static convertBattle(battleDto: NpcBattleDTO): NpcBattle {
     return {
       id: battleDto.id,
-      completed: battleDto.value !== undefined && battleDto.value !== 0,
+      won: battleDto.won === true,
     };
   }
 }

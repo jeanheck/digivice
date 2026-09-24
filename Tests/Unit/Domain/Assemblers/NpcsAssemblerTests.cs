@@ -7,7 +7,7 @@ using Xunit;
 public class NpcsAssemblerTests
 {
     [Fact]
-    public void Assemble_ShouldMapBattlesFromResource()
+    public void Assemble_ShouldMapBattlesFromResourceAsWonBool()
     {
         var resource = new NpcsResource
         {
@@ -23,14 +23,19 @@ public class NpcsAssemblerTests
             {
                 Battles = [new NpcBattleResource { Id = "first", Value = 0x02 }],
             },
+            Catherine = new NpcResource
+            {
+                Battles = [new NpcBattleResource { Id = "first", Value = 0 }],
+            },
         };
 
         var result = NpcsAssembler.Assemble(resource);
 
         Assert.Equal(2, result.Genji.Battles.Count);
-        Assert.Equal(0x20, result.Genji.Battles.Single(battle => battle.Id == "first").Value);
-        Assert.Equal(0x01, result.Genji.Battles.Single(battle => battle.Id == "second").Value);
-        Assert.Equal(0x02, Assert.Single(result.Natsumi.Battles).Value);
-        Assert.Empty(result.Catherine.Battles);
+        Assert.True(result.Genji.Battles.Single(battle => battle.Id == "first").Won);
+        Assert.True(result.Genji.Battles.Single(battle => battle.Id == "second").Won);
+        Assert.True(Assert.Single(result.Natsumi.Battles).Won);
+        Assert.False(Assert.Single(result.Catherine.Battles).Won);
+        Assert.Empty(result.Lucia.Battles);
     }
 }

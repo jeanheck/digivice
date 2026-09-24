@@ -9,5 +9,5 @@ public record class NpcBattleDTO : IDTO
     public string Id { get; init; } = string.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<byte> Value { get; init; } = Optional<byte>.Empty;
+    public Optional<bool> Won { get; init; } = Optional<bool>.Empty;
 }

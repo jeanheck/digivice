@@ -19,7 +19,7 @@ public static class NpcBattleDiffer
             return NpcsConverter.ToBattleDTO(newBattle);
         }
 
-        if (previousBattle.Value == newBattle.Value)
+        if (previousBattle.Won == newBattle.Won)
         {
             return null;
         }
@@ -27,7 +27,7 @@ public static class NpcBattleDiffer
         return new NpcBattleDTO
         {
             Id = newBattle.Id,
-            Value = newBattle.Value,
+            Won = newBattle.Won,
         };
     }
 }

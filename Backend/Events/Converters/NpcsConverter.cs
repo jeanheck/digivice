@@ -49,7 +49,7 @@ public static class NpcsConverter
         return new NpcBattleDTO
         {
             Id = battle.Id,
-            Value = battle.Value,
+            Won = battle.Won,
         };
     }
 }

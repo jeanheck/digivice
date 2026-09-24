@@ -21,13 +21,13 @@ public class NpcsDifferTests
     public void Diff_ShouldReturnFullDTO_WhenPreviousIsNull()
     {
         var current = CreateBaseNpcs();
-        current.Genji.Battles[0].Value = 0x20;
+        current.Genji.Battles[0].Won = true;
 
         var result = NpcsDiffer.Diff(null, current);
 
         Assert.True(result.Genji.HasValue);
         Assert.True(result.Genji.Value!.Battles.HasValue);
-        Assert.Equal(0x20, result.Genji.Value.Battles.Value![0].Value.Value);
+        Assert.True(result.Genji.Value.Battles.Value![0].Won.Value);
         Assert.True(result.Natsumi.HasValue);
     }
 
@@ -36,14 +36,14 @@ public class NpcsDifferTests
     {
         var previous = CreateBaseNpcs();
         var current = CreateBaseNpcs();
-        current.Genji.Battles[0].Value = 0x20;
+        current.Genji.Battles[0].Won = true;
 
         var result = NpcsDiffer.Diff(previous, current);
 
         Assert.True(result.Genji.HasValue);
         Assert.True(result.Genji.Value!.Battles.HasValue);
         Assert.Equal("first", result.Genji.Value.Battles.Value![0].Id);
-        Assert.Equal(0x20, result.Genji.Value.Battles.Value[0].Value.Value);
+        Assert.True(result.Genji.Value.Battles.Value[0].Won.Value);
         Assert.False(result.Natsumi.HasValue);
     }
 
@@ -55,13 +55,13 @@ public class NpcsDifferTests
             {
                 Battles =
                 [
-                    new NpcBattle { Id = "first", Value = 0 },
-                    new NpcBattle { Id = "second", Value = 0 },
+                    new NpcBattle { Id = "first", Won = false },
+                    new NpcBattle { Id = "second", Won = false },
                 ],
             },
             Natsumi = new Npc
             {
-                Battles = [new NpcBattle { Id = "first", Value = 0 }],
+                Battles = [new NpcBattle { Id = "first", Won = false }],
             },
         };
     }

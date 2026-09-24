@@ -14,13 +14,13 @@ public class NpcsConverterTests
             {
                 Battles =
                 [
-                    new NpcBattle { Id = "first", Value = 0x20 },
-                    new NpcBattle { Id = "second", Value = 0x01 },
+                    new NpcBattle { Id = "first", Won = true },
+                    new NpcBattle { Id = "second", Won = true },
                 ],
             },
             Natsumi = new Npc
             {
-                Battles = [new NpcBattle { Id = "first", Value = 0 }],
+                Battles = [new NpcBattle { Id = "first", Won = false }],
             },
         };
 
@@ -30,8 +30,8 @@ public class NpcsConverterTests
         Assert.True(dto.Genji.Value!.Battles.HasValue);
         Assert.Equal(2, dto.Genji.Value.Battles.Value!.Count);
         Assert.Equal("first", dto.Genji.Value.Battles.Value[0].Id);
-        Assert.Equal(0x20, dto.Genji.Value.Battles.Value[0].Value.Value);
+        Assert.True(dto.Genji.Value.Battles.Value[0].Won.Value);
         Assert.True(dto.Natsumi.HasValue);
-        Assert.Equal(0, Assert.Single(dto.Natsumi.Value!.Battles.Value!).Value.Value);
+        Assert.False(Assert.Single(dto.Natsumi.Value!.Battles.Value!).Won.Value);
     }
 }

@@ -8,7 +8,7 @@ export interface WikiNpcBattleOptionViewModel {
   battleId: string;
   charismaMin: number;
   charismaRangeText: string;
-  completed: boolean;
+  won: boolean;
   status: NpcBattleStatus;
   trophyRequired?: TamerTrophyRequiredRaw;
   requirementsMet: boolean;
