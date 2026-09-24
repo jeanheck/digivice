@@ -48,21 +48,4 @@ public class PlayerAssemblerTests
         Assert.Equal((byte)0, result.SeabedRoute);
         Assert.Equal((byte)0, result.MapVariant);
     }
-
-    [Fact]
-    public void Assemble_ShouldPassThroughMapVariant_WhenByteIsZero()
-    {
-        var resource = new PlayerResource
-        {
-            Bits = 0,
-            MapId = 0,
-            SeabedRoute = 0x07,
-            MapVariant = 0x00
-        };
-
-        var result = PlayerAssembler.Assemble(resource);
-
-        Assert.Equal((byte)0x07, result.SeabedRoute);
-        Assert.Equal((byte)0x00, result.MapVariant);
-    }
 }

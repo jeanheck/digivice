@@ -1,12 +1,10 @@
 namespace Tests.Integration.Infrastructure.Memory;
 
-using System;
 using System.IO.MemoryMappedFiles;
 using System.Runtime.InteropServices;
 using Backend.Infrastructure.Memory;
 using Microsoft.Extensions.Logging;
 using Moq;
-using Xunit;
 
 public class WindowsMemoryProviderTests
 {

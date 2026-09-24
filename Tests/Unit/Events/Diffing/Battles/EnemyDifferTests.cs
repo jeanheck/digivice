@@ -19,7 +19,6 @@ public class EnemyDifferTests
     public void Diff_ShouldReturnFullDTO_WhenPreviousIsNull()
     {
         var newEnemy = CreateBaseEnemy();
-        newEnemy.Id = 122;
         newEnemy.Speed = 84;
 
         var result = EnemyDiffer.Diff(null, newEnemy);
@@ -68,7 +67,7 @@ public class EnemyDifferTests
     {
         return new Enemy
         {
-            Id = 0,
+            Id = 122,
             GroupId = 201,
             Condition = 0,
             Strength = 0,

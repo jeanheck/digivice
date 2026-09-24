@@ -2,7 +2,6 @@ namespace Tests.Events.Diffing;
 
 using Backend.Domain.Models;
 using Backend.Events.Diffing;
-using Xunit;
 
 public class CardBattleDifferTests
 {

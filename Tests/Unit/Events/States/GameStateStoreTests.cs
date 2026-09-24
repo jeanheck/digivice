@@ -1,6 +1,5 @@
 namespace Tests.Unit.Events.States;
 
-using Xunit;
 using Backend.Events.States;
 using Backend.Domain.Models;
 using Backend.Events.Models;

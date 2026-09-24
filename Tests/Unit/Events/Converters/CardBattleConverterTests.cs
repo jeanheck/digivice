@@ -2,7 +2,6 @@ namespace Tests.Events.Converters;
 
 using Backend.Domain.Models;
 using Backend.Events.Converters;
-using Xunit;
 
 public class CardBattleConverterTests
 {

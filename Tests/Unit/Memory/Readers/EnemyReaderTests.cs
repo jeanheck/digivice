@@ -4,7 +4,6 @@ using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Parties.Digimons;
 using Backend.Memory.Readers;
 using Moq;
-using Xunit;
 using Backend.Memory.Readers.Interfaces;
 
 public class EnemyReaderTests
@@ -246,6 +245,24 @@ public class EnemyReaderTests
         Assert.Equal(110, result.Id);
         Assert.Equal(552, result.HP.Current);
         Assert.Equal(552, result.HP.Max);
+    }
+
+    [Fact]
+    public void Read_ShouldReturnEnemyWithIdZero_WhenAllEnemySlotsAreEmpty()
+    {
+        var addresses = CreateAddresses();
+        var memoryReaderMock = CreateMemoryReaderMock();
+        SetupEmptyEnemySlot(memoryReaderMock, slotIndex: 0);
+        SetupEmptyEnemySlot(memoryReaderMock, slotIndex: 1);
+        SetupEmptyEnemySlot(memoryReaderMock, slotIndex: 2);
+        memoryReaderMock.Setup(m => m.ReadInt16(ActiveUnitIdAddress)).Returns((short)0);
+
+        var reader = new EnemyReader(memoryReaderMock.Object);
+        var result = reader.Read(addresses);
+
+        Assert.Equal(0, result.Id);
+        Assert.Equal(0, result.HP.Current);
+        Assert.Equal(0, result.HP.Max);
     }
 
     private static Mock<IMemoryReader> CreateMemoryReaderMock()

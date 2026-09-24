@@ -1,13 +1,10 @@
 namespace Tests.Memory.Repositories;
 
-using System;
-using System.IO;
 using System.Text.Json;
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Journals;
 using Backend.Memory.Addresses.Parties;
 using Backend.Memory.Repositories;
-using Xunit;
 
 public class AddressesRepositoryTests : IDisposable
 {
@@ -19,7 +16,6 @@ public class AddressesRepositoryTests : IDisposable
         tempDirectoryPath = Path.Combine(Path.GetTempPath(), "DigiviceTests_" + Guid.NewGuid().ToString());
         Directory.CreateDirectory(tempDirectoryPath);
 
-        // Criar estrutura de subdiretórios esperada
         Directory.CreateDirectory(Path.Combine(tempDirectoryPath, "Parties"));
         Directory.CreateDirectory(Path.Combine(tempDirectoryPath, "Quests"));
         Directory.CreateDirectory(Path.Combine(tempDirectoryPath, "Quests", "SideQuests"));
@@ -52,6 +48,36 @@ public class AddressesRepositoryTests : IDisposable
         Assert.Equal(0x0004B400, result.PreviousMapId);
         Assert.Equal(0x00048D78, result.SeabedRoute);
         Assert.Equal(0x00048D7A, result.MapVariant);
+    }
+
+    [Fact]
+    public void GetPlayerAddresses_ShouldParseHexStringAddresses()
+    {
+        File.WriteAllText(
+            Path.Combine(tempDirectoryPath, "PlayerAddresses.json"),
+            """{ "Bits": "0x00048DA0", "MapId": "0x0004B3F8", "PreviousMapId": "0x0004B400", "SeabedRoute": "0x00048D78", "MapVariant": "0x00048D7A" }""");
+
+        var result = repository.GetPlayerAddresses();
+
+        Assert.Equal(0x00048DA0, result.Bits);
+        Assert.Equal(0x0004B3F8, result.MapId);
+        Assert.Equal(0x00048D7A, result.MapVariant);
+    }
+
+    [Theory]
+    [InlineData("\"0xFF\"")]
+    [InlineData("\"255\"")]
+    [InlineData("255")]
+    public void GetPartyAddresses_ShouldParseEmptySlotIdFromHexOrDecimal(string emptySlotIdJson)
+    {
+        File.WriteAllText(
+            Path.Combine(tempDirectoryPath, "PartyAddresses.json"),
+            $$"""{ "Slots": [{ "Index": 1, "Address": "0x00048DA4" }], "EmptySlotId": {{emptySlotIdJson}} }""");
+
+        var result = repository.GetPartyAddresses();
+
+        Assert.Equal(0xFF, result.EmptySlotId);
+        Assert.Equal(0x00048DA4, Assert.Single(result.Slots).Address);
     }
 
     [Fact]
@@ -223,20 +249,22 @@ public class AddressesRepositoryTests : IDisposable
     }
 
     [Fact]
-    public void GetAllSideQuests_ShouldLoadOnlyExistingFiles()
+    public void GetAllSideQuests_ShouldOrderQuestsByFileNameAlphabetically()
     {
+        var sideQuestsPath = Path.Combine(tempDirectoryPath, "Quests", "SideQuests");
         File.WriteAllText(
-            Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "FolderBagAddresses.json"),
-            JsonSerializer.Serialize(new QuestAddresses { Id = "FolderBag" }));
-        File.WriteAllText(
-            Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "TreeBootsAddresses.json"),
+            Path.Combine(sideQuestsPath, "TreeBootsAddresses.json"),
             JsonSerializer.Serialize(new QuestAddresses { Id = "TreeBoots" }));
+        File.WriteAllText(
+            Path.Combine(sideQuestsPath, "FishingPoleAddresses.json"),
+            JsonSerializer.Serialize(new QuestAddresses { Id = "FishingPole" }));
+        File.WriteAllText(
+            Path.Combine(sideQuestsPath, "folderBagAddresses.json"),
+            JsonSerializer.Serialize(new QuestAddresses { Id = "FolderBag" }));
 
         var result = repository.GetAllSideQuests();
 
-        Assert.Equal(2, result.Count);
-        Assert.Contains(result, quest => quest.Id == "FolderBag");
-        Assert.Contains(result, quest => quest.Id == "TreeBoots");
+        Assert.Equal(["FishingPole", "FolderBag", "TreeBoots"], result.Select(quest => quest.Id));
     }
 
     [Fact]
@@ -261,7 +289,7 @@ public class AddressesRepositoryTests : IDisposable
 
         // Assert
         Assert.NotNull(firstResult);
-        Assert.Same(firstResult, secondResult); // Valida que aponta para o mesmo objeto em memória (Cache)
+        Assert.Same(firstResult, secondResult);
     }
 
     [Fact]
@@ -274,7 +302,7 @@ public class AddressesRepositoryTests : IDisposable
     [Fact]
     public void GetPlayerAddresses_ShouldReturnEmptyInstance_WhenJsonIsNull()
     {
-        // Arrange (Escrevemos "null" no arquivo JSON)
+        // Arrange
         File.WriteAllText(Path.Combine(tempDirectoryPath, "PlayerAddresses.json"), "null");
 
         // Act

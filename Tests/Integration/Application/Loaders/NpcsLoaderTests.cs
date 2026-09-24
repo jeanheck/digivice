@@ -3,7 +3,6 @@ namespace Tests.Integration.Application.Loaders;
 using Backend.Application.Loaders;
 using Backend.Memory.Readers;
 using Moq;
-using Xunit;
 using Backend.Memory.Readers.Interfaces;
 
 public class NpcsLoaderTests : LoaderIntegrationTestBase

@@ -1,76 +1,64 @@
 namespace Tests.Memory.Readers;
 
-using System;
-using Xunit;
 using Backend.Memory.Readers;
 using Backend.Memory.Addresses.Parties.Digimons;
 
 public class StoredDigievolutionReaderTests
 {
-    private static void WriteInt16(byte[] block, int offset, short value)
+    private const int UnlockedDigievolutionsStart = 0x50;
+    private const int EntryStride = 20;
+
+    private static DigievolutionsAddresses CreateAddresses(int maxUnlockedDigievolutions)
     {
-        var bytes = BitConverter.GetBytes(value);
-        Array.Copy(bytes, 0, block, offset, bytes.Length);
+        return new DigievolutionsAddresses
+        {
+            UnlockedDigievolutionsStart = UnlockedDigievolutionsStart,
+            UnlockedDigievolutionEntryStride = EntryStride,
+            MaxUnlockedDigievolutions = maxUnlockedDigievolutions,
+            Id = 0x00,
+            Level = 0x02,
+            Dvxp = 0x04
+        };
+    }
+
+    private static void WriteEntry(byte[] block, int entryIndex, short digievolutionId, short level, int dvxp)
+    {
+        var entryOffset = UnlockedDigievolutionsStart + (entryIndex * EntryStride);
+        Array.Copy(BitConverter.GetBytes(digievolutionId), 0, block, entryOffset, 2);
+        Array.Copy(BitConverter.GetBytes(level), 0, block, entryOffset + 2, 2);
+        Array.Copy(BitConverter.GetBytes(dvxp), 0, block, entryOffset + 4, 4);
     }
 
     [Fact]
     public void Read_ShouldReturnUnlockedEntries_WhenIdsAreGreaterThanZero()
     {
-        var digievolutionsAddresses = new DigievolutionsAddresses
-        {
-            UnlockedDigievolutionsStart = 10,
-            UnlockedDigievolutionEntryStride = 4,
-            MaxUnlockedDigievolutions = 4,
-            Id = 0,
-            Level = 2,
-            Dvxp = 4
-        };
+        var block = new byte[1500];
+        WriteEntry(block, 0, digievolutionId: 3, level: 15, dvxp: 70000);
+        WriteEntry(block, 1, digievolutionId: 5, level: 40, dvxp: 250);
+        WriteEntry(block, 2, digievolutionId: 8, level: 20, dvxp: 0);
 
-        var block = new byte[256];
-        WriteInt16(block, 10, 3);
-        WriteInt16(block, 12, 15);
-        WriteInt16(block, 14, 5);
-        WriteInt16(block, 16, 40);
-        WriteInt16(block, 18, 8);
-        WriteInt16(block, 20, 20);
-
-        var memoryBlockReader = new MemoryBlockReader(block);
-        var reader = new StoredDigievolutionReader();
-
-        var result = reader.Read(memoryBlockReader, digievolutionsAddresses);
+        var result = new StoredDigievolutionReader().Read(new MemoryBlockReader(block), CreateAddresses(4));
 
         Assert.Equal(3, result.Count);
         Assert.Equal(3, result[0].DigievolutionId);
         Assert.Equal(15, result[0].Level);
+        Assert.Equal(70000, result[0].Dvxp);
         Assert.Equal(5, result[1].DigievolutionId);
         Assert.Equal(40, result[1].Level);
+        Assert.Equal(250, result[1].Dvxp);
         Assert.Equal(8, result[2].DigievolutionId);
         Assert.Equal(20, result[2].Level);
+        Assert.Equal(0, result[2].Dvxp);
     }
 
     [Fact]
     public void Read_ShouldReturnEmptyList_WhenFirstEntryIsEmpty()
     {
-        var digievolutionsAddresses = new DigievolutionsAddresses
-        {
-            UnlockedDigievolutionsStart = 10,
-            UnlockedDigievolutionEntryStride = 4,
-            MaxUnlockedDigievolutions = 2,
-            Id = 0,
-            Level = 2,
-            Dvxp = 4
-        };
+        var block = new byte[1500];
+        WriteEntry(block, 0, digievolutionId: 0, level: 15, dvxp: 100);
+        WriteEntry(block, 1, digievolutionId: 99, level: 40, dvxp: 100);
 
-        var block = new byte[256];
-        WriteInt16(block, 10, 0);
-        WriteInt16(block, 12, 15);
-        WriteInt16(block, 14, 99);
-        WriteInt16(block, 16, 40);
-
-        var memoryBlockReader = new MemoryBlockReader(block);
-        var reader = new StoredDigievolutionReader();
-
-        var result = reader.Read(memoryBlockReader, digievolutionsAddresses);
+        var result = new StoredDigievolutionReader().Read(new MemoryBlockReader(block), CreateAddresses(2));
 
         Assert.Empty(result);
     }
@@ -78,62 +66,29 @@ public class StoredDigievolutionReaderTests
     [Fact]
     public void Read_ShouldStopAtFirstEmptyEntry_AndIgnoreGarbageAfterIt()
     {
-        var digievolutionsAddresses = new DigievolutionsAddresses
-        {
-            UnlockedDigievolutionsStart = 10,
-            UnlockedDigievolutionEntryStride = 4,
-            MaxUnlockedDigievolutions = 4,
-            Id = 0,
-            Level = 2,
-            Dvxp = 4
-        };
+        var block = new byte[1500];
+        WriteEntry(block, 0, digievolutionId: 3, level: 15, dvxp: 100);
+        WriteEntry(block, 1, digievolutionId: 0, level: 0, dvxp: 0);
+        WriteEntry(block, 2, digievolutionId: 240, level: 180, dvxp: 999);
 
-        var block = new byte[256];
-        WriteInt16(block, 10, 3);
-        WriteInt16(block, 12, 15);
-        WriteInt16(block, 14, 0);
-        WriteInt16(block, 16, 0);
-        WriteInt16(block, 18, 240);
-        WriteInt16(block, 20, 180);
+        var result = new StoredDigievolutionReader().Read(new MemoryBlockReader(block), CreateAddresses(4));
 
-        var memoryBlockReader = new MemoryBlockReader(block);
-        var reader = new StoredDigievolutionReader();
-
-        var result = reader.Read(memoryBlockReader, digievolutionsAddresses);
-
-        Assert.Single(result);
-        Assert.Equal(3, result[0].DigievolutionId);
-        Assert.Equal(15, result[0].Level);
+        var stored = Assert.Single(result);
+        Assert.Equal(3, stored.DigievolutionId);
+        Assert.Equal(15, stored.Level);
     }
 
     [Fact]
-    public void Read_ShouldReadDvxp_ForEachUnlockedEntry()
+    public void Read_ShouldRespectMaxUnlockedDigievolutions()
     {
-        var digievolutionsAddresses = new DigievolutionsAddresses
-        {
-            UnlockedDigievolutionsStart = 10,
-            UnlockedDigievolutionEntryStride = 20,
-            MaxUnlockedDigievolutions = 3,
-            Id = 0,
-            Level = 2,
-            Dvxp = 4
-        };
+        var block = new byte[1500];
+        WriteEntry(block, 0, digievolutionId: 3, level: 15, dvxp: 100);
+        WriteEntry(block, 1, digievolutionId: 5, level: 40, dvxp: 200);
+        WriteEntry(block, 2, digievolutionId: 8, level: 20, dvxp: 300);
 
-        var block = new byte[256];
-        WriteInt16(block, 10, 3);
-        WriteInt16(block, 12, 15);
-        Array.Copy(BitConverter.GetBytes(70000), 0, block, 14, 4);
-        WriteInt16(block, 30, 5);
-        WriteInt16(block, 32, 40);
-        Array.Copy(BitConverter.GetBytes(250), 0, block, 34, 4);
-
-        var memoryBlockReader = new MemoryBlockReader(block);
-        var reader = new StoredDigievolutionReader();
-
-        var result = reader.Read(memoryBlockReader, digievolutionsAddresses);
+        var result = new StoredDigievolutionReader().Read(new MemoryBlockReader(block), CreateAddresses(2));
 
         Assert.Equal(2, result.Count);
-        Assert.Equal(70000, result[0].Dvxp);
-        Assert.Equal(250, result[1].Dvxp);
+        Assert.Equal(5, result[1].DigievolutionId);
     }
 }

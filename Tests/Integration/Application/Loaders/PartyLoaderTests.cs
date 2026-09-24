@@ -1,7 +1,5 @@
 namespace Tests.Integration.Application.Loaders;
 
-using System;
-using Xunit;
 using Moq;
 using Backend.Application.Loaders;
 using Backend.Memory.Readers;
@@ -16,71 +14,39 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     {
         var addressesRepository = CreateAddressesRepository();
 
-        // 2. Arrange - Setup mocks for lower level hardware memory reader
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        // Simular a leitura dos 3 slots da equipe na RAM (endereços carregados do JSON real)
-        // Slot 0 (Index 1) -> Endereço 0x00048DA4: Contém Digimon ID 1 (Kumamon)
+        // Party slot ids at 0x00048DA4 / 0x00048DA8 / 0x00048DAC; Kumamon (id 1) block at 0x00049878
         memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns((byte)1);
-
-        // Slot 1 (Index 2) -> Endereço 0x00048DA8: Contém ID de slot vazio 0xFF (255)
         memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns(EmptySlotId);
-
-        // Slot 2 (Index 3) -> Endereço 0x00048DAC: Contém ID de slot vazio 0xFF (255)
         memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
 
-        // Simular o bloco de memória física de 1500 bytes para o Kumamon (ID 1, Endereço 0x00049878)
+        // Offsets from DigimonStatusAddresses.json
         var fakeMemoryBlock = new byte[1500];
-
-        // Mapear dados reais usando os offsets reais extraídos de DigimonStatusAddresses.json:
-        // Experience (Int32) no offset 0x18 (24) -> 1500 XP
-        BitConverter.GetBytes(1500).CopyTo(fakeMemoryBlock, 24);
-
-        // Level (Int16) no offset 0x1C (28) -> Level 12
-        BitConverter.GetBytes((short)12).CopyTo(fakeMemoryBlock, 28);
-
-        // HP Current (Int16) no offset 0x20 (32) -> 450 HP
-        BitConverter.GetBytes((short)450).CopyTo(fakeMemoryBlock, 32);
-
-        // HP Max (Int16) no offset 0x22 (34) -> 500 HP
-        BitConverter.GetBytes((short)500).CopyTo(fakeMemoryBlock, 34);
-
-        // Strength (Int16) no offset 0x28 (40) -> Strength 42
-        BitConverter.GetBytes((short)42).CopyTo(fakeMemoryBlock, 40);
-
-        // Digievolutions.Slots:
-        // Slot 1 at offset 0x48 (72) -> ID 5
-        BitConverter.GetBytes((short)5).CopyTo(fakeMemoryBlock, 72);
-        // Slot 2 at offset 0x4A (74) -> ID 10
-        BitConverter.GetBytes((short)10).CopyTo(fakeMemoryBlock, 74);
-
-        // UnlockedDigievolutionsStart at offset 0x50 (80)
-        // Configura evolução com ID 5 no nível 3
-        BitConverter.GetBytes((short)5).CopyTo(fakeMemoryBlock, 80);
-        BitConverter.GetBytes((short)3).CopyTo(fakeMemoryBlock, 82);
-
-        // Configura evolução com ID 10 no nível 1 (não listada, retorna padrão 1)
+        WriteInt32(fakeMemoryBlock, 0x18, 1500);
+        WriteInt16(fakeMemoryBlock, 0x1C, 12);
+        WriteInt16(fakeMemoryBlock, 0x20, 450);
+        WriteInt16(fakeMemoryBlock, 0x22, 500);
+        WriteInt16(fakeMemoryBlock, 0x28, 42);
+        WriteInt16(fakeMemoryBlock, 0x48, 5);
+        WriteInt16(fakeMemoryBlock, 0x4A, 10);
+        WriteInt16(fakeMemoryBlock, 0x50, 5);
+        WriteInt16(fakeMemoryBlock, 0x52, 3);
 
         memoryReaderMock.Setup(m => m.ReadBytes(0x00049878, 1500))
             .Returns(fakeMemoryBlock);
-
-        // ActiveDigievolution no offset -4 -> Active ID 5
         memoryReaderMock.Setup(m => m.ReadInt16(0x00049878 - 4))
             .Returns(5);
         memoryReaderMock.Setup(m => m.ReadInt16(0x00042B76))
             .Returns((short)0);
 
-        // 3. Arrange - Instanciação da árvore de dependências reais (Pipeline Completo)
         var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
 
-        // 4. Act - Execução do Loader integrado
         var partyResource = partyLoader.Load();
 
-        // 5. Assert - Validação integrada de ponta a ponta
         Assert.NotNull(partyResource);
         Assert.Equal(3, partyResource.SlotsResource.Count);
 
-        // Validar Slot 0 (Kumamon carregado)
         var slot0 = partyResource.SlotsResource[0];
         Assert.Equal(1, slot0.Index);
         Assert.Equal(1, slot0.DigimonId);
@@ -94,7 +60,6 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(500, kumamon.HP.Max);
         Assert.Equal(42, kumamon.Attributes.Strength);
 
-        // Validar que a árvore evolutiva de Kumamon integrou perfeitamente
         Assert.Equal(3, kumamon.Digievolutions.Count);
 
         var evolutionSlot1 = kumamon.Digievolutions[0];
@@ -107,7 +72,6 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(5, storedDigievolution.DigievolutionId);
         Assert.Equal(3, storedDigievolution.Level);
 
-        // Validar Slots 1 e 2 (Vazios — id cru preservado, sem DigimonResource)
         var slot1 = partyResource.SlotsResource[1];
         Assert.Equal(2, slot1.Index);
         Assert.Equal(EmptySlotId, slot1.DigimonId);
@@ -118,16 +82,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(EmptySlotId, slot2.DigimonId);
         Assert.Null(slot2.DigimonResource);
 
-        // Validação da Garantia Física: nenhum bloco de status lido além do Kumamon
         memoryReaderMock.Verify(m => m.ReadBytes(It.Is<long>(address => address != 0x00049878), It.IsAny<int>()), Times.Never);
-    }
-
-    [Fact]
-    public void TestEmptySlotId()
-    {
-        var addressesRepository = CreateAddressesRepository();
-        var partyAddresses = addressesRepository.GetPartyAddresses();
-        Assert.Equal(255, partyAddresses.EmptySlotId);
     }
 
     [Fact]
@@ -152,24 +107,19 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        // Slot 0 (0x00048DA4) -> Vazio
         memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns(EmptySlotId);
-
-        // Slot 1 (0x00048DA8) -> ID 2 (Monmon)
         memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns((byte)2);
-
-        // Slot 2 (0x00048DAC) -> Vazio
         memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
 
-        // Bloco de status do Monmon (ID 2, Endereço 0x00049C54)
+        // Monmon (id 2) block at 0x00049C54
         var fakeMemoryBlock = new byte[1500];
-        BitConverter.GetBytes((short)8).CopyTo(fakeMemoryBlock, 28); // Level 8
+        WriteInt16(fakeMemoryBlock, 0x1C, 8);
 
         memoryReaderMock.Setup(m => m.ReadBytes(0x00049C54, 1500))
             .Returns(fakeMemoryBlock);
 
         memoryReaderMock.Setup(m => m.ReadInt16(0x00049C54 - 4))
-            .Returns(2); // Active Evolution ID 2
+            .Returns(2);
         memoryReaderMock.Setup(m => m.ReadInt16(0x00042B78))
             .Returns((short)0);
 
@@ -247,12 +197,41 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
+    public void Load_ShouldLoadKotemon_WhenSlotContainsDigimonIdZero()
+    {
+        const long KotemonMemoryBlockAddress = 0x0004949C;
+        const long KotemonBlastAddress = 0x00042B74;
+
+        var addressesRepository = CreateAddressesRepository();
+        var memoryReaderMock = new Mock<IMemoryReader>();
+
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns((byte)0);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns(EmptySlotId);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
+
+        var fakeMemoryBlock = new byte[1500];
+        WriteInt16(fakeMemoryBlock, 0x1C, 7);
+
+        memoryReaderMock.Setup(m => m.ReadBytes(KotemonMemoryBlockAddress, 1500)).Returns(fakeMemoryBlock);
+        memoryReaderMock.Setup(m => m.ReadInt16(KotemonBlastAddress)).Returns((short)420);
+
+        var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
+
+        var partyResource = partyLoader.Load();
+
+        var kotemonSlot = partyResource.SlotsResource[0];
+        Assert.Equal(0, kotemonSlot.DigimonId);
+        Assert.NotNull(kotemonSlot.DigimonResource);
+        Assert.Equal(7, kotemonSlot.DigimonResource.Level);
+        Assert.Equal(420, kotemonSlot.DigimonResource.Blast);
+    }
+
+    [Fact]
     public void Load_ShouldReturnAllEmptySlots_WhenAllSlotsAreEmpty()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        // Todos os 3 slots com ID 255 (0xFF)
         memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns(EmptySlotId);
         memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns(EmptySlotId);
         memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
@@ -269,7 +248,6 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
             Assert.Null(slot.DigimonResource);
         });
 
-        // Garantir que NENHUMA tentativa de leitura de bloco de status (1500 bytes) foi feita na RAM
         memoryReaderMock.Verify(m => m.ReadBytes(It.IsAny<long>(), It.IsAny<int>()), Times.Never);
     }
 

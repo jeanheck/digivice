@@ -1,7 +1,5 @@
 namespace Tests.Integration.Application.Loaders;
 
-using System;
-using System.IO;
 using Backend.Memory.Repositories;
 using Backend.Memory.Readers.Interfaces;
 using Moq;

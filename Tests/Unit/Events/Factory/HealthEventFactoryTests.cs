@@ -5,7 +5,6 @@ using Backend.Events.DTO;
 using Backend.Events.Factory;
 using Backend.Events.Models;
 using Backend.Events.States;
-using Xunit;
 
 public class HealthEventFactoryTests
 {

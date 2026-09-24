@@ -123,6 +123,103 @@ public class DigimonDifferTests
         Assert.False(result.Level.HasValue);
     }
 
+    [Fact]
+    public void Diff_ShouldReturnExplicitNullActiveDigievolutionId_WhenDigievolutionIsDeactivated()
+    {
+        var previous = CreateBaseDigimon();
+        var newObj = CreateBaseDigimon();
+        newObj.ActiveDigievolutionId = null;
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.True(result.ActiveDigievolutionId.HasValue);
+        Assert.Null(result.ActiveDigievolutionId.Value);
+        Assert.False(result.Level.HasValue);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnActiveDigievolutionId_WhenDigievolutionIsActivated()
+    {
+        var previous = CreateBaseDigimon();
+        previous.ActiveDigievolutionId = null;
+        var newObj = CreateBaseDigimon();
+        newObj.ActiveDigievolutionId = 12;
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.True(result.ActiveDigievolutionId.HasValue);
+        Assert.Equal(12, result.ActiveDigievolutionId.Value);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnTPDelta_WhenOnlyTPChanges()
+    {
+        var previous = CreateBaseDigimon();
+        var newObj = CreateBaseDigimon();
+        newObj.TP = 9;
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.Equal(9, result.TP.Value);
+        Assert.False(result.Level.HasValue);
+        Assert.False(result.Experience.HasValue);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnNestedDeltas_WhenAttributesResistancesAndEquipmentsChange()
+    {
+        var previous = CreateBaseDigimon();
+        var newObj = CreateBaseDigimon();
+        newObj.Attributes.Strength = 6;
+        newObj.Resistances.Fire = 2;
+        newObj.Equipments.Head = 101;
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.True(result.Attributes.HasValue);
+        Assert.Equal(6, result.Attributes.Value!.Strength.Value);
+        Assert.False(result.Attributes.Value.Defense.HasValue);
+        Assert.True(result.Resistances.HasValue);
+        Assert.Equal(2, result.Resistances.Value!.Fire.Value);
+        Assert.False(result.Resistances.Value.Water.HasValue);
+        Assert.True(result.Equipments.HasValue);
+        Assert.Equal(101, result.Equipments.Value!.Head.Value);
+        Assert.False(result.Equipments.Value.Body.HasValue);
+        Assert.False(result.Level.HasValue);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnOnlyChangedDigievolutionSlot_WhenEmptySlotIsFilled()
+    {
+        var previous = CreateBaseDigimon();
+        previous.Digievolutions =
+        [
+            new DigievolutionSlot { Index = 1, DigievolutionId = 4, Digievolution = new Digievolution { Level = 5 } },
+            new DigievolutionSlot { Index = 2, DigievolutionId = null, Digievolution = null },
+            new DigievolutionSlot { Index = 3, DigievolutionId = null, Digievolution = null }
+        ];
+        var newObj = CreateBaseDigimon();
+        newObj.Digievolutions =
+        [
+            new DigievolutionSlot { Index = 1, DigievolutionId = 4, Digievolution = new Digievolution { Level = 5 } },
+            new DigievolutionSlot { Index = 2, DigievolutionId = 12, Digievolution = new Digievolution { Level = 1 } },
+            new DigievolutionSlot { Index = 3, DigievolutionId = null, Digievolution = null }
+        ];
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.True(result.Digievolutions.HasValue);
+        var slotDelta = Assert.Single(result.Digievolutions.Value!);
+        Assert.Equal(2, slotDelta.Index);
+        Assert.Equal(12, slotDelta.DigievolutionId.Value);
+        Assert.Equal(1, slotDelta.Digievolution.Value!.Level.Value);
+    }
+
     private static Digimon CreateBaseDigimon()
     {
         return new Digimon

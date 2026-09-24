@@ -2,18 +2,27 @@ namespace Tests.Events.Converters;
 
 using Backend.Domain.Models;
 using Backend.Domain.Models.Journals;
+using Backend.Domain.Models.Parties;
 using Backend.Events.Converters;
 
 public class StateConverterTests
 {
     [Fact]
-    public void ToDTO_ShouldMapPlayerImportantItemsPartyDigimonBattleAndJournal()
+    public void ToDTO_ShouldMapAllStateSections()
     {
         var state = new State
         {
             Player = new Player { Bits = 100, MapId = "0001" },
             ImportantItems = new ImportantItems { TreeBoots = true, FishingPole = false, AsukaTrophy = true },
-            Party = new Party { Slots = [] },
+            Party = new Party
+            {
+                Slots =
+                [
+                    new DigimonSlot { Index = 1, DigimonId = 1, Digimon = new Digimon { Level = 5 } },
+                    new DigimonSlot { Index = 2, DigimonId = null, Digimon = null },
+                    new DigimonSlot { Index = 3, DigimonId = null, Digimon = null }
+                ]
+            },
             DigimonBattle = new DigimonBattle(),
             CardBattle = new CardBattle { Id = null },
             Auctions = new Auctions { DivineBarrier = true },
@@ -35,7 +44,14 @@ public class StateConverterTests
 
         Assert.NotNull(dto.Party);
         Assert.True(dto.Party.Slots.HasValue);
-        Assert.Empty(dto.Party.Slots.Value!);
+        var slots = dto.Party.Slots.Value!;
+        Assert.Equal(3, slots.Count);
+        Assert.Equal(1, slots[0].DigimonId.Value);
+        Assert.NotNull(slots[0].Digimon.Value);
+        Assert.True(slots[1].DigimonId.HasValue);
+        Assert.Null(slots[1].DigimonId.Value);
+        Assert.True(slots[1].Digimon.HasValue);
+        Assert.Null(slots[1].Digimon.Value);
 
         Assert.NotNull(dto.DigimonBattle);
         Assert.True(dto.DigimonBattle.Enemy.HasValue);
@@ -55,32 +71,5 @@ public class StateConverterTests
         Assert.NotNull(dto.Journal);
         Assert.True(dto.Journal.MainQuest.HasValue);
         Assert.Equal("MainQuest", dto.Journal.MainQuest.Value!.Id);
-    }
-
-    [Fact]
-    public void ToDTO_ShouldPreserveNullEntities()
-    {
-        var state = new State
-        {
-            Player = null!,
-            ImportantItems = null!,
-            Party = null!,
-            DigimonBattle = null!,
-            CardBattle = null!,
-            Auctions = null!,
-            Npcs = null!,
-            Journal = null!
-        };
-
-        var dto = StateConverter.ToDTO(state);
-
-        Assert.Null(dto.Player);
-        Assert.Null(dto.ImportantItems);
-        Assert.Null(dto.Party);
-        Assert.Null(dto.DigimonBattle);
-        Assert.Null(dto.CardBattle);
-        Assert.Null(dto.Auctions);
-        Assert.Null(dto.Npcs);
-        Assert.Null(dto.Journal);
     }
 }

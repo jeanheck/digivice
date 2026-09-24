@@ -1,8 +1,8 @@
 namespace Tests.Domain.Assemblers;
 
 using Backend.Domain.Assemblers;
+using Backend.Domain.Models;
 using Backend.Memory.Resources;
-using Xunit;
 
 public class NpcsAssemblerTests
 {
@@ -37,5 +37,34 @@ public class NpcsAssemblerTests
         Assert.True(Assert.Single(result.Natsumi.Battles).Won);
         Assert.False(Assert.Single(result.Catherine.Battles).Won);
         Assert.Empty(result.Lucia.Battles);
+    }
+
+    [Fact]
+    public void Assemble_ShouldMapEveryNpcToItsOwnProperty()
+    {
+        var resource = new NpcsResource();
+        var resourceProperties = typeof(NpcsResource).GetProperties();
+        foreach (var property in resourceProperties)
+        {
+            property.SetValue(resource, new NpcResource
+            {
+                Battles = [new NpcBattleResource { Id = property.Name, Value = 1 }],
+            });
+        }
+
+        var result = NpcsAssembler.Assemble(resource);
+
+        var modelProperties = typeof(Npcs).GetProperties();
+        Assert.Equal(23, resourceProperties.Length);
+        Assert.Equal(
+            resourceProperties.Select(property => property.Name).Order(),
+            modelProperties.Select(property => property.Name).Order());
+        foreach (var property in modelProperties)
+        {
+            var npc = (Npc)property.GetValue(result)!;
+            var battle = Assert.Single(npc.Battles);
+            Assert.Equal(property.Name, battle.Id);
+            Assert.True(battle.Won);
+        }
     }
 }

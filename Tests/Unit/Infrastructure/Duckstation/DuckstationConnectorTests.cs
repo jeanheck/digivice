@@ -1,4 +1,4 @@
-namespace Tests.Unit.Infrastructure.Duckstation;
+namespace Tests.Infrastructure.Duckstation;
 
 using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
@@ -6,7 +6,6 @@ using Backend.Infrastructure.Processes;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
-using Xunit;
 
 public class DuckstationConnectorTests
 {

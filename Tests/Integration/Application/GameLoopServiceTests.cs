@@ -1,9 +1,5 @@
 ﻿namespace Tests.Integration.Application;
 
-using System;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Backend.Application;
 using Backend.Application.Providers.Interfaces;
 using Backend.Diagnostics;
@@ -18,80 +14,59 @@ using Backend.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
-using Xunit;
 
 public class GameLoopServiceTests
 {
-    private readonly Mock<IDuckstationConnector> _duckstationConnectorMock;
-    private readonly Mock<IPlayerProvider> _playerProviderMock;
-    private readonly Mock<IImportantItemsProvider> _importantItemsProviderMock;
-    private readonly Mock<IPartyProvider> _partyProviderMock;
-    private readonly Mock<IDigimonBattleProvider> _digimonBattleProviderMock;
-    private readonly Mock<ICardBattleProvider> _cardBattleProviderMock;
-    private readonly Mock<IAuctionsProvider> _auctionsProviderMock;
-    private readonly Mock<INpcsProvider> _npcsProviderMock;
-    private readonly Mock<IJournalProvider> _journalProviderMock;
-    private readonly Mock<IEventDispatcherService> _eventDispatcherServiceMock;
-    private readonly GameStateStore _gameStateStore;
-    private readonly DebugConsoleRenderer _debugConsoleRenderer;
-    private readonly StateComposer _stateComposer;
-    private readonly IConfiguration _configuration;
+    private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(5);
 
-    private GameLoopService CreateGameLoopService(StateComposer? stateComposer = null)
-    {
-        return new GameLoopService(
-            _duckstationConnectorMock.Object,
-            stateComposer ?? _stateComposer,
-            _eventDispatcherServiceMock.Object,
-            _gameStateStore,
-            _debugConsoleRenderer,
-            _configuration,
-            NullLogger<GameLoopService>.Instance);
-    }
+    private readonly Mock<IDuckstationConnector> duckstationConnectorMock;
+    private readonly Mock<IPlayerProvider> playerProviderMock;
+    private readonly Mock<IEventDispatcherService> eventDispatcherServiceMock;
+    private readonly GameStateStore gameStateStore;
+    private readonly StateComposer stateComposer;
+    private readonly IConfiguration configuration;
 
     public GameLoopServiceTests()
     {
-        _duckstationConnectorMock = new Mock<IDuckstationConnector>();
-        _playerProviderMock = new Mock<IPlayerProvider>();
-        _importantItemsProviderMock = new Mock<IImportantItemsProvider>();
-        _partyProviderMock = new Mock<IPartyProvider>();
-        _digimonBattleProviderMock = new Mock<IDigimonBattleProvider>();
-        _cardBattleProviderMock = new Mock<ICardBattleProvider>();
-        _auctionsProviderMock = new Mock<IAuctionsProvider>();
-        _npcsProviderMock = new Mock<INpcsProvider>();
-        _journalProviderMock = new Mock<IJournalProvider>();
-        _eventDispatcherServiceMock = new Mock<IEventDispatcherService>();
-        _gameStateStore = new GameStateStore();
-        _debugConsoleRenderer = new DebugConsoleRenderer();
+        duckstationConnectorMock = new Mock<IDuckstationConnector>();
+        playerProviderMock = new Mock<IPlayerProvider>();
+        eventDispatcherServiceMock = new Mock<IEventDispatcherService>();
+        gameStateStore = new GameStateStore();
 
-        var player = new Player { Bits = 123, MapId = "0001" };
-        var importantItems = new ImportantItems();
-        var party = new Party { Slots = [] };
-        var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };
-        _playerProviderMock.Setup(p => p.Get()).Returns(player);
-        _importantItemsProviderMock.Setup(p => p.Get()).Returns(importantItems);
-        _partyProviderMock.Setup(p => p.Get()).Returns(party);
-        _digimonBattleProviderMock.Setup(p => p.Get()).Returns(new DigimonBattle());
-        _cardBattleProviderMock.Setup(p => p.Get()).Returns(new CardBattle());
-        _auctionsProviderMock.Setup(p => p.Get()).Returns(new Auctions());
-        _npcsProviderMock.Setup(p => p.Get()).Returns(new Npcs());
-        _journalProviderMock.Setup(p => p.Get()).Returns(journal);
+        var importantItemsProviderMock = new Mock<IImportantItemsProvider>();
+        var partyProviderMock = new Mock<IPartyProvider>();
+        var digimonBattleProviderMock = new Mock<IDigimonBattleProvider>();
+        var cardBattleProviderMock = new Mock<ICardBattleProvider>();
+        var auctionsProviderMock = new Mock<IAuctionsProvider>();
+        var npcsProviderMock = new Mock<INpcsProvider>();
+        var journalProviderMock = new Mock<IJournalProvider>();
 
-        _stateComposer = new StateComposer(
-            _playerProviderMock.Object,
-            _importantItemsProviderMock.Object,
-            _partyProviderMock.Object,
-            _digimonBattleProviderMock.Object,
-            _cardBattleProviderMock.Object,
-            _auctionsProviderMock.Object,
-            _npcsProviderMock.Object,
-            _journalProviderMock.Object);
+        playerProviderMock.Setup(provider => provider.Get()).Returns(new Player { Bits = 123, MapId = "0001" });
+        importantItemsProviderMock.Setup(provider => provider.Get()).Returns(new ImportantItems());
+        partyProviderMock.Setup(provider => provider.Get()).Returns(new Party { Slots = [] });
+        digimonBattleProviderMock.Setup(provider => provider.Get()).Returns(new DigimonBattle());
+        cardBattleProviderMock.Setup(provider => provider.Get()).Returns(new CardBattle());
+        auctionsProviderMock.Setup(provider => provider.Get()).Returns(new Auctions());
+        npcsProviderMock.Setup(provider => provider.Get()).Returns(new Npcs());
+        journalProviderMock.Setup(provider => provider.Get())
+            .Returns(new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] });
 
-        var inMemorySettings = new Dictionary<string, string?> {
-            {"GameLoop:PollingIntervalMs", "1"},
-            {"Features:Debugging", "false"}
+        stateComposer = new StateComposer(
+            playerProviderMock.Object,
+            importantItemsProviderMock.Object,
+            partyProviderMock.Object,
+            digimonBattleProviderMock.Object,
+            cardBattleProviderMock.Object,
+            auctionsProviderMock.Object,
+            npcsProviderMock.Object,
+            journalProviderMock.Object);
+
+        var inMemorySettings = new Dictionary<string, string?>
+        {
+            { "GameLoop:PollingIntervalMs", "1" },
+            { "Features:Debugging", "false" }
         };
-        _configuration = new ConfigurationBuilder()
+        configuration = new ConfigurationBuilder()
             .AddInMemoryCollection(inMemorySettings)
             .Build();
     }
@@ -99,51 +74,104 @@ public class GameLoopServiceTests
     [Fact]
     public async Task ExecuteAsync_ShouldCycleConnectionOfflineThenOnline()
     {
-        _duckstationConnectorMock.SetupSequence(connector => connector.EnsureConnection())
+        duckstationConnectorMock.SetupSequence(connector => connector.EnsureConnection())
             .Returns(ConnectionAttemptResult.Failure(EmulatorConnectionErrorCodes.ProcessNotFound))
             .Returns(ConnectionAttemptResult.Failure(EmulatorConnectionErrorCodes.ProcessNotFound))
             .Returns(ConnectionAttemptResult.Success())
             .Returns(ConnectionAttemptResult.Success());
 
-        var service = CreateGameLoopService();
+        await RunServiceUntilAsync(() => WasDispatched(events => ContainsHealthEvent(events, HealthStatus.Healthy)));
 
-        using var cts = new CancellationTokenSource();
-        var serviceTask = service.StartAsync(cts.Token);
-
-        await Task.Delay(100);
-        await cts.CancelAsync();
-
-        try
-        {
-            await serviceTask;
-        }
-        catch (OperationCanceledException)
-        {
-        }
-
-        _eventDispatcherServiceMock.Verify(
-            d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsHealthEvent(events, HealthStatus.Error, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
-            Times.AtLeastOnce);
-        _eventDispatcherServiceMock.Verify(
-            d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsHealthEvent(events, HealthStatus.Healthy))),
-            Times.AtLeastOnce);
+        Assert.True(WasDispatched(events =>
+            ContainsHealthEvent(events, HealthStatus.Error, EmulatorConnectionErrorCodes.ProcessNotFound, null)));
     }
 
     [Fact]
-    public async Task ExecuteAsync_ShouldDisconnect_WhenConnectionIsNoLongerAlive()
+    public async Task ExecuteAsync_ShouldReadStateAndDispatchEvents_WhenConnected()
     {
-        _duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
-            .Returns(ConnectionAttemptResult.Failure(EmulatorConnectionErrorCodes.ProcessNotFound));
+        duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
+            .Returns(ConnectionAttemptResult.Success());
 
+        await RunServiceUntilAsync(() =>
+            gameStateStore.CurrentState != null
+            && WasDispatched(events => events.Any(dispatchedEvent => dispatchedEvent.Type.Equals(EventType.InitialState))));
+
+        playerProviderMock.Verify(provider => provider.Get(), Times.AtLeastOnce);
+        eventDispatcherServiceMock.Verify(
+            dispatcher => dispatcher.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
+                events.Any(dispatchedEvent => dispatchedEvent.Type.Equals(EventType.InitialState)))),
+            Times.Once);
+    }
+
+    [Fact]
+    public async Task ExecuteAsync_ShouldClearSessionAndPreviousState_WhenComposeThrows()
+    {
+        gameStateStore.UpdateState(new State { Player = new Player { Bits = 123, MapId = "0001" } });
+        duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
+            .Returns(ConnectionAttemptResult.Success());
+        playerProviderMock.Setup(provider => provider.Get())
+            .Throws(new InvalidOperationException("Address not found for Digimon ID 208"));
+
+        var sessionClearedWhileRunning = false;
+        await RunServiceUntilAsync(() =>
+        {
+            sessionClearedWhileRunning = WasSessionCleared();
+            return sessionClearedWhileRunning
+                && WasDispatched(events => ContainsHealthEvent(
+                    events,
+                    HealthStatus.Error,
+                    EmulatorConnectionErrorCodes.StateComposeFailed,
+                    "Address not found for Digimon ID 208"));
+        });
+
+        Assert.True(sessionClearedWhileRunning);
+        Assert.Null(gameStateStore.CurrentState);
+    }
+
+    [Fact]
+    public async Task ExecuteAsync_ShouldClearSessionAndDispatchMemoryReadFailed_WhenComposeThrowsMemoryReadException()
+    {
+        duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
+            .Returns(ConnectionAttemptResult.Success());
+        playerProviderMock.Setup(provider => provider.Get())
+            .Throws(new MemoryReadException(0x1000, "Failed to read player data"));
+
+        var sessionClearedWhileRunning = false;
+        await RunServiceUntilAsync(() =>
+        {
+            sessionClearedWhileRunning = WasSessionCleared();
+            return sessionClearedWhileRunning
+                && WasDispatched(events => ContainsHealthEvent(
+                    events,
+                    HealthStatus.Error,
+                    EmulatorConnectionErrorCodes.MemoryReadFailed,
+                    "Failed to read player data"));
+        });
+
+        Assert.True(sessionClearedWhileRunning);
+        Assert.Null(gameStateStore.CurrentState);
+    }
+
+    private GameLoopService CreateGameLoopService()
+    {
+        return new GameLoopService(
+            duckstationConnectorMock.Object,
+            stateComposer,
+            eventDispatcherServiceMock.Object,
+            gameStateStore,
+            new DebugConsoleRenderer(),
+            configuration,
+            NullLogger<GameLoopService>.Instance);
+    }
+
+    private async Task RunServiceUntilAsync(Func<bool> condition)
+    {
         var service = CreateGameLoopService();
+        using var cancellationTokenSource = new CancellationTokenSource();
+        var serviceTask = service.StartAsync(cancellationTokenSource.Token);
 
-        using var cts = new CancellationTokenSource();
-        var serviceTask = service.StartAsync(cts.Token);
-
-        await Task.Delay(50);
-        await cts.CancelAsync();
+        var conditionMet = await WaitUntilAsync(condition);
+        await cancellationTokenSource.CancelAsync();
 
         try
         {
@@ -153,10 +181,36 @@ public class GameLoopServiceTests
         {
         }
 
-        _eventDispatcherServiceMock.Verify(
-            d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsHealthEvent(events, HealthStatus.Error, EmulatorConnectionErrorCodes.ProcessNotFound, null))),
-            Times.AtLeastOnce);
+        Assert.True(conditionMet, "Condition was not met before timeout");
+    }
+
+    private static async Task<bool> WaitUntilAsync(Func<bool> condition)
+    {
+        var deadline = DateTime.UtcNow + WaitTimeout;
+        while (DateTime.UtcNow < deadline)
+        {
+            if (condition())
+            {
+                return true;
+            }
+
+            await Task.Delay(5);
+        }
+
+        return condition();
+    }
+
+    private bool WasSessionCleared()
+    {
+        return duckstationConnectorMock.Invocations
+            .Any(invocation => invocation.Method.Name == nameof(IDuckstationConnector.ClearSession));
+    }
+
+    private bool WasDispatched(Func<IEnumerable<Event>, bool> predicate)
+    {
+        return eventDispatcherServiceMock.Invocations
+            .Where(invocation => invocation.Method.Name == nameof(IEventDispatcherService.DispatchEvents))
+            .Any(invocation => predicate((IEnumerable<Event>)invocation.Arguments[0]));
     }
 
     private static bool ContainsHealthEvent(
@@ -165,194 +219,17 @@ public class GameLoopServiceTests
         string? errorCode = null,
         string? errorDetail = null)
     {
-        return events.Any(ev =>
+        return events.Any(dispatchedEvent =>
         {
-            if (!ev.Type.Equals(EventType.HealthChanged))
+            if (!dispatchedEvent.Type.Equals(EventType.HealthChanged))
             {
                 return false;
             }
 
-            var dto = (HealthDTO)ev.Payload;
-            return dto.Status == status
-                && dto.ErrorCode == errorCode
-                && dto.ErrorDetail == errorDetail;
+            var healthDTO = (HealthDTO)dispatchedEvent.Payload;
+            return healthDTO.Status == status
+                && healthDTO.ErrorCode == errorCode
+                && healthDTO.ErrorDetail == errorDetail;
         });
-    }
-
-    [Fact]
-    public async Task ExecuteAsync_ShouldReadStateAndDispatchEvents_WhenConnected()
-    {
-        _duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
-            .Returns(ConnectionAttemptResult.Success());
-
-        var service = CreateGameLoopService();
-
-        using var cts = new CancellationTokenSource();
-        var serviceTask = service.StartAsync(cts.Token);
-
-        await Task.Delay(100);
-        await cts.CancelAsync();
-
-        try
-        {
-            await serviceTask;
-        }
-        catch (OperationCanceledException)
-        {
-        }
-
-        _playerProviderMock.Verify(p => p.Get(), Times.AtLeastOnce);
-        Assert.NotNull(_gameStateStore.CurrentState);
-        _eventDispatcherServiceMock.Verify(d => d.DispatchEvents(It.IsAny<IEnumerable<Event>>()), Times.AtLeastOnce);
-    }
-
-    [Fact]
-    public async Task ExecuteAsync_ShouldHandleAbruptExceptionsAndDisconnect()
-    {
-        _duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
-            .Returns(ConnectionAttemptResult.Success());
-        _playerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
-
-        var service = CreateGameLoopService();
-
-        using var cts = new CancellationTokenSource();
-        var serviceTask = service.StartAsync(cts.Token);
-
-        await Task.Delay(50);
-        await cts.CancelAsync();
-
-        try
-        {
-            await serviceTask;
-        }
-        catch (OperationCanceledException)
-        {
-        }
-
-        _duckstationConnectorMock.Verify(connector => connector.ClearSession(), Times.AtLeastOnce);
-        _eventDispatcherServiceMock.Verify(
-            d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsHealthEvent(
-                    events,
-                    HealthStatus.Error,
-                    EmulatorConnectionErrorCodes.StateComposeFailed,
-                    "RAM read error"))),
-            Times.AtLeastOnce);
-    }
-
-    [Fact]
-    public async Task ExecuteAsync_ShouldDisconnectAndDispatchFalse_WhenComposeThrowsWhileReaderReportsConnected()
-    {
-        _duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
-            .Returns(ConnectionAttemptResult.Success());
-        _playerProviderMock.Setup(p => p.Get()).Throws(new InvalidOperationException("Address not found for Digimon ID 208"));
-
-        var service = CreateGameLoopService();
-
-        using var cts = new CancellationTokenSource();
-        var serviceTask = service.StartAsync(cts.Token);
-
-        await Task.Delay(50);
-        await cts.CancelAsync();
-
-        try
-        {
-            await serviceTask;
-        }
-        catch (OperationCanceledException)
-        {
-        }
-
-        _duckstationConnectorMock.Verify(connector => connector.ClearSession(), Times.AtLeastOnce);
-        _eventDispatcherServiceMock.Verify(
-            d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                events.Any(ev =>
-                    ev.Type.Equals(EventType.HealthChanged)
-                    && ((HealthDTO)ev.Payload).Status == HealthStatus.Error
-                    && ((HealthDTO)ev.Payload).ErrorCode == EmulatorConnectionErrorCodes.StateComposeFailed))),
-            Times.AtLeastOnce);
-        Assert.Null(_gameStateStore.CurrentState);
-    }
-
-    [Fact]
-    public async Task ExecuteAsync_ShouldDispatchMemoryReadFailed_WhenComposeThrowsMemoryReadException()
-    {
-        _duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
-            .Returns(ConnectionAttemptResult.Success());
-        _playerProviderMock.Setup(p => p.Get()).Throws(new MemoryReadException(0x1000, "Failed to read player data"));
-
-        var service = CreateGameLoopService();
-
-        using var cts = new CancellationTokenSource();
-        var serviceTask = service.StartAsync(cts.Token);
-
-        await Task.Delay(50);
-        await cts.CancelAsync();
-
-        try
-        {
-            await serviceTask;
-        }
-        catch (OperationCanceledException)
-        {
-        }
-
-        _eventDispatcherServiceMock.Verify(
-            d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                ContainsHealthEvent(
-                    events,
-                    HealthStatus.Error,
-                    EmulatorConnectionErrorCodes.MemoryReadFailed,
-                    "Failed to read player data"))),
-            Times.AtLeastOnce);
-    }
-
-    [Fact]
-    public async Task ExecuteAsync_ShouldDispatchDisconnect_WhenComposeThrows()
-    {
-        _gameStateStore.UpdateState(new State
-        {
-            Player = new Player { Bits = 123, MapId = "0001" }
-        });
-        _duckstationConnectorMock.Setup(connector => connector.EnsureConnection())
-            .Returns(ConnectionAttemptResult.Success());
-
-        var throwingPlayerProviderMock = new Mock<IPlayerProvider>();
-        throwingPlayerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
-        var stateComposer = new StateComposer(
-            throwingPlayerProviderMock.Object,
-            _importantItemsProviderMock.Object,
-            _partyProviderMock.Object,
-            _digimonBattleProviderMock.Object,
-            _cardBattleProviderMock.Object,
-            _auctionsProviderMock.Object,
-            _npcsProviderMock.Object,
-            _journalProviderMock.Object);
-
-        var service = CreateGameLoopService(stateComposer);
-
-        using var cts = new CancellationTokenSource();
-        var serviceTask = service.StartAsync(cts.Token);
-
-        await Task.Delay(50);
-        await cts.CancelAsync();
-
-        try
-        {
-            await serviceTask;
-        }
-        catch (OperationCanceledException)
-        {
-        }
-
-        _eventDispatcherServiceMock.Verify(
-            d => d.DispatchEvents(It.Is<IEnumerable<Event>>(events =>
-                events.Any(ev =>
-                    ev.Type.Equals(EventType.HealthChanged)
-                    && ((HealthDTO)ev.Payload).Status == HealthStatus.Error
-                    && ((HealthDTO)ev.Payload).ErrorCode == EmulatorConnectionErrorCodes.StateComposeFailed))),
-            Times.AtLeastOnce);
     }
 }
-
-

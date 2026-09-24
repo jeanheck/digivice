@@ -4,7 +4,6 @@ using Backend.Memory;
 using Backend.Memory.Addresses.Parties;
 using Backend.Memory.Readers;
 using Moq;
-using Xunit;
 using Backend.Memory.Readers.Interfaces;
 
 public class DigimonSlotReaderTests

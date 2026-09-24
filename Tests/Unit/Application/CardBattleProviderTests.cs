@@ -5,7 +5,6 @@ using Backend.Application.Providers;
 using Backend.Domain.Models;
 using Backend.Memory.Resources;
 using Moq;
-using Xunit;
 
 public class CardBattleProviderTests
 {

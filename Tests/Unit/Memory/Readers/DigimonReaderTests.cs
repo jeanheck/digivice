@@ -1,13 +1,11 @@
 namespace Tests.Memory.Readers;
 
-using System;
 using Backend.Memory.Addresses.Parties;
 using Backend.Memory.Addresses.Parties.Digimons;
 using Backend.Memory.Readers;
 using Backend.Memory.Resources.Parties;
 using Backend.Memory.Resources.Parties.Digimons;
 using Moq;
-using Xunit;
 using Backend.Memory.Readers.Interfaces;
 
 public class DigimonReaderTests
@@ -285,6 +283,42 @@ public class DigimonReaderTests
         Assert.Equal(1200, result.StoredDigievolutions[1].Dvxp);
         Assert.Equal(99, result.StoredDigievolutions[2].DigievolutionId);
         Assert.Equal(5, result.StoredDigievolutions[2].Level);
+    }
+
+    [Fact]
+    public void Read_ShouldPassPartySlotIndexToInBattleReader()
+    {
+        var address = new DigimonAddress { MemoryBlockAddress = 0x800100, BlastAddress = BlastAddress };
+        var statusAddresses = new DigimonStatusAddresses
+        {
+            Digievolutions = new DigievolutionsAddresses { ActiveDigievolution = 200, Slots = [] }
+        };
+        var inBattleAddresses = new InBattleAddresses();
+        var inBattleResource = new InBattleResource();
+
+        var memoryReaderMock = new Mock<IMemoryReader>();
+        memoryReaderMock.Setup(m => m.ReadBytes(0x800100, 1500)).Returns(new byte[1500]);
+
+        var storedDigievolutionReaderMock = new Mock<IStoredDigievolutionReader>();
+        storedDigievolutionReaderMock
+            .Setup(s => s.Read(It.IsAny<MemoryBlockReader>(), statusAddresses.Digievolutions))
+            .Returns([]);
+
+        var inBattleReaderMock = new Mock<IInBattleReader>();
+        inBattleReaderMock.Setup(r => r.Read(inBattleAddresses, 2)).Returns(inBattleResource);
+
+        var reader = new DigimonReader(
+            memoryReaderMock.Object,
+            new Mock<IDigievolutionSlotReader>().Object,
+            storedDigievolutionReaderMock.Object,
+            inBattleReaderMock.Object
+        );
+
+        var result = reader.Read(address, statusAddresses, inBattleAddresses, 2);
+
+        Assert.NotNull(result);
+        Assert.Same(inBattleResource, result.InBattle);
+        inBattleReaderMock.Verify(r => r.Read(inBattleAddresses, 2), Times.Once);
     }
 
     private static Mock<IInBattleReader> CreateInBattleReaderMock()

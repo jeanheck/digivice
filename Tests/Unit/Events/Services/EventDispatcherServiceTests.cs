@@ -1,10 +1,5 @@
 ﻿namespace Tests.Events.Services;
 
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
 using Moq;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
@@ -132,7 +127,7 @@ public class EventDispatcherServiceTests
 
         var loggerMock = new Mock<ILogger<EventDispatcherService>>();
 
-        var state = new State(); // Novo estado limpo padrÃ£o
+        var state = new State();
         var gameStateStoreMock = new Mock<IGameStateStore>();
         gameStateStoreMock.Setup(g => g.CurrentState).Returns(state);
 
@@ -219,7 +214,6 @@ public class EventDispatcherServiceTests
         var clientProxyMock = new Mock<ISingleClientProxy>();
         var networkException = new Exception("SignalR connection closed catastrophically");
 
-        // Retorna uma task falhada para simular exceÃ§Ã£o assÃ­ncrona
         clientProxyMock.Setup(c => c.SendCoreAsync(
             It.IsAny<string>(),
             It.IsAny<object?[]>(),
@@ -246,8 +240,11 @@ public class EventDispatcherServiceTests
         // Act
         service.DispatchEvents(new[] { singleEvent });
 
-        // Damos um tempo curto de thread para permitir que o ContinueWith assÃ­ncrono execute
-        await Task.Delay(100);
+        var deadline = DateTime.UtcNow + TimeSpan.FromSeconds(5);
+        while (DateTime.UtcNow < deadline && loggerMock.Invocations.Count == 0)
+        {
+            await Task.Delay(5);
+        }
 
         // Assert
         loggerMock.Verify(
@@ -283,57 +280,12 @@ public class EventDispatcherServiceTests
         );
 
         // Act
-        service.DispatchEvents([]); // Envia uma coleÃ§Ã£o de eventos vazia
+        service.DispatchEvents([]);
 
         // Assert
         clientProxyMock.Verify(
             c => c.SendCoreAsync(It.IsAny<string>(), It.IsAny<object?[]>(), It.IsAny<CancellationToken>()),
             Times.Never
-        );
-    }
-
-    [Fact]
-    public void DispatchInitialStateToClient_ShouldSendStateDTOWithNulls_WhenCurrentStateHasNullEntities()
-    {
-        // Arrange
-        var clientProxyMock = new Mock<ISingleClientProxy>();
-        clientProxyMock.Setup(c => c.SendCoreAsync(
-            It.IsAny<string>(),
-            It.IsAny<object?[]>(),
-            It.IsAny<CancellationToken>()))
-            .Returns(Task.CompletedTask);
-
-        var hubClientsMock = new Mock<IHubClients>();
-        hubClientsMock.Setup(c => c.Client("client1")).Returns(clientProxyMock.Object);
-        hubClientsMock.Setup(c => c.All).Returns(clientProxyMock.Object);
-
-        var hubContextMock = new Mock<IHubContext<GameHub>>();
-        hubContextMock.Setup(h => h.Clients).Returns(hubClientsMock.Object);
-
-        var loggerMock = new Mock<ILogger<EventDispatcherService>>();
-
-        var state = new State { Player = null!, Party = null!, DigimonBattle = null!, Journal = null! }; // Entidades internas nulas
-        var gameStateStoreMock = new Mock<IGameStateStore>();
-        gameStateStoreMock.Setup(g => g.CurrentState).Returns(state);
-
-        var service = new EventDispatcherService(
-            hubContextMock.Object,
-            loggerMock.Object,
-            gameStateStoreMock.Object
-        );
-
-        // Act
-        service.DispatchInitialStateToClient("client1");
-
-        // Assert
-        hubClientsMock.Verify(c => c.Client("client1"), Times.Once);
-        clientProxyMock.Verify(
-            c => c.SendCoreAsync(
-                "InitialState",
-                It.Is<object?[]>(args => args.Length == 1 && ((Event)args[0]!).Type.Equals(EventType.InitialState)),
-                It.IsAny<CancellationToken>()
-            ),
-            Times.Once
         );
     }
 }

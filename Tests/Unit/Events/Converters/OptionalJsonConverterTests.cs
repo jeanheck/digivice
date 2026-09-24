@@ -2,6 +2,7 @@ namespace Tests.Events.Converters;
 
 using System.Text.Json;
 using Backend.Events.DTO;
+using Backend.Events.DTO.Parties;
 using Backend.Events.DTO.Shared;
 
 public class OptionalJsonConverterTests
@@ -41,6 +42,32 @@ public class OptionalJsonConverterTests
 
         Assert.Equal(123, root.GetProperty("Bits").GetInt32());
         Assert.Equal("00AF", root.GetProperty("Location").GetString());
+    }
+
+    [Fact]
+    public void Serialize_ShouldWriteExplicitNull_WhenOptionalHoldsNull()
+    {
+        var dto = new DigimonBattleDTO { Enemy = null };
+
+        var json = JsonSerializer.Serialize(dto);
+        using var document = JsonDocument.Parse(json);
+
+        Assert.True(document.RootElement.TryGetProperty("Enemy", out var enemy));
+        Assert.Equal(JsonValueKind.Null, enemy.ValueKind);
+        Assert.False(document.RootElement.TryGetProperty("Field", out _));
+    }
+
+    [Fact]
+    public void Serialize_ShouldWriteZero_WhenOptionalHoldsZeroDigimonId()
+    {
+        var dto = new DigimonSlotDTO { Index = 1, DigimonId = 0 };
+
+        var json = JsonSerializer.Serialize(dto);
+        using var document = JsonDocument.Parse(json);
+
+        Assert.True(document.RootElement.TryGetProperty("DigimonId", out var digimonId));
+        Assert.Equal(0, digimonId.GetInt32());
+        Assert.False(document.RootElement.TryGetProperty("Digimon", out _));
     }
 
     [Fact]

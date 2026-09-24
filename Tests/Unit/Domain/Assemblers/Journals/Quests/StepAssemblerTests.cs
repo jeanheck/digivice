@@ -1,4 +1,4 @@
-namespace Tests.Domain.Assemblers.Journals;
+namespace Tests.Domain.Assemblers.Journals.Quests;
 
 using Backend.Domain.Assemblers.Journals.Quests;
 using Backend.Memory.Resources.Journals.Quests;
@@ -24,5 +24,16 @@ public class StepAssemblerTests
         Assert.True(result.IsDone);
         Assert.Single(result.Requisites);
         Assert.Equal("1", result.Requisites[0].Id);
+    }
+
+    [Theory]
+    [InlineData(0x00, false)]
+    [InlineData(0x01, true)]
+    [InlineData(0x80, true)]
+    public void Assemble_ShouldMapIsDoneFromNonZeroValue(byte value, bool expectedIsDone)
+    {
+        var result = StepAssembler.Assemble(new StepResource { Number = 1, Value = value, Requisites = [] });
+
+        Assert.Equal(expectedIsDone, result.IsDone);
     }
 }

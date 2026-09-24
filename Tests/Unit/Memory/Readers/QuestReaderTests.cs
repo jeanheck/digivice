@@ -1,6 +1,5 @@
 namespace Tests.Memory.Readers;
 
-using Xunit;
 using Moq;
 using Backend.Memory.Addresses.Journals;
 using Backend.Memory.Addresses.Journals.Quests;

@@ -79,6 +79,23 @@ public class DigimonSlotDifferTests
     }
 
     [Fact]
+    public void Diff_ShouldReturnFullDTO_WhenKotemonJoinsEmptySlot()
+    {
+        var previous = new DigimonSlot { Index = 2, DigimonId = null, Digimon = null };
+        var newObj = new DigimonSlot { Index = 2, DigimonId = 0, Digimon = CreateBaseDigimon() };
+
+        var result = DigimonSlotDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.Equal(2, result.Index);
+        Assert.True(result.DigimonId.HasValue);
+        Assert.Equal(0, result.DigimonId.Value);
+        Assert.True(result.Digimon.HasValue);
+        Assert.NotNull(result.Digimon.Value);
+        Assert.Equal(10, result.Digimon.Value.Level.Value);
+    }
+
+    [Fact]
     public void Diff_ShouldReturnFullDTO_WhenDigimonIdChangedToAnotherActiveId()
     {
         var previous = new DigimonSlot { Index = 1, DigimonId = 3, Digimon = CreateBaseDigimon() };

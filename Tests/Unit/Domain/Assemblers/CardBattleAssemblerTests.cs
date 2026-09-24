@@ -2,7 +2,6 @@ namespace Tests.Domain.Assemblers;
 
 using Backend.Domain.Assemblers;
 using Backend.Memory.Resources;
-using Xunit;
 
 public class CardBattleAssemblerTests
 {

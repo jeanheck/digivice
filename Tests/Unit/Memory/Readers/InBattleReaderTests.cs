@@ -4,7 +4,6 @@ using Backend.Memory.Addresses.Parties;
 using Backend.Memory.Readers;
 using Backend.Memory.Readers.Interfaces;
 using Moq;
-using Xunit;
 
 public class InBattleReaderTests
 {

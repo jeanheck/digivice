@@ -42,10 +42,12 @@ public class DigievolutionSlotAssemblerTests
         Assert.Equal(0, result.Digievolution.Dvxp);
     }
 
-    [Fact]
-    public void Assemble_ShouldReturnNullFields_WhenDigievolutionIdIsEmpty()
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-1)]
+    public void Assemble_ShouldReturnNullFields_WhenDigievolutionIdIsNotPositive(int rawDigievolutionId)
     {
-        var resource = new DigievolutionSlotResource { Index = 3, DigievolutionId = 0 };
+        var resource = new DigievolutionSlotResource { Index = 3, DigievolutionId = rawDigievolutionId };
 
         var result = DigievolutionSlotAssembler.Assemble(resource, []);
 

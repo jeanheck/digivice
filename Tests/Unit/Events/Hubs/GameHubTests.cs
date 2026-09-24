@@ -1,9 +1,7 @@
 namespace Tests.Unit.Events.Hubs;
 
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 using Moq;
-using Xunit;
 using Backend.Events.Hubs;
 using Backend.Events.Services;
 

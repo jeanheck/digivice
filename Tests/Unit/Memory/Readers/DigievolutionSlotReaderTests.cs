@@ -1,7 +1,5 @@
 namespace Tests.Memory.Readers;
 
-using System;
-using Xunit;
 using Backend.Memory.Readers;
 using Backend.Memory.Addresses.Parties;
 

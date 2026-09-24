@@ -3,7 +3,6 @@ namespace Tests.Memory.Readers;
 using Backend.Memory.Addresses;
 using Backend.Memory.Readers;
 using Moq;
-using Xunit;
 using Backend.Memory.Readers.Interfaces;
 
 public class CardBattleReaderTests

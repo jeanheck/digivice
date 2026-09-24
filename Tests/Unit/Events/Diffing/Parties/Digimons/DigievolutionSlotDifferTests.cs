@@ -45,6 +45,28 @@ public class DigievolutionSlotDifferTests
         Assert.Equal(1, result.Index);
         Assert.True(result.DigievolutionId.HasValue);
         Assert.Equal(5, result.DigievolutionId.Value);
+        Assert.True(result.Digievolution.HasValue);
+        Assert.NotNull(result.Digievolution.Value);
+        Assert.Equal(5, result.Digievolution.Value.Level.Value);
+        Assert.True(result.Digievolution.Value.Dvxp.HasValue);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnFullDTO_WhenEmptySlotIsFilled()
+    {
+        var previous = new DigievolutionSlot { Index = 2, DigievolutionId = null, Digievolution = null };
+        var newObj = new DigievolutionSlot { Index = 2, DigievolutionId = 12, Digievolution = new Digievolution { Level = 1, Dvxp = 0 } };
+
+        var result = DigievolutionSlotDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.Equal(2, result.Index);
+        Assert.True(result.DigievolutionId.HasValue);
+        Assert.Equal(12, result.DigievolutionId.Value);
+        Assert.True(result.Digievolution.HasValue);
+        Assert.NotNull(result.Digievolution.Value);
+        Assert.Equal(1, result.Digievolution.Value.Level.Value);
+        Assert.Equal(0, result.Digievolution.Value.Dvxp.Value);
     }
 
     [Fact]

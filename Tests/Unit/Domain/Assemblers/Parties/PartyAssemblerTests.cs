@@ -7,15 +7,17 @@ using Backend.Memory.Resources.Parties.Digimons;
 
 public class PartyAssemblerTests
 {
+    private const int EmptySlotId = 0xFF;
+
     [Fact]
-    public void Assemble_ShouldMapAllFieldsCorrectly()
+    public void Assemble_ShouldMapOccupiedAndEmptySlots()
     {
         var resource = new PartyResource
         {
             SlotsResource = [
                 new DigimonSlotResource
                 {
-                    Index = 0,
+                    Index = 1,
                     DigimonId = 1,
                     DigimonResource = new DigimonResource
                     {
@@ -28,15 +30,28 @@ public class PartyAssemblerTests
                         Equipments = new EquipmentsResource(),
                         Digievolutions = []
                     }
-                }
+                },
+                new DigimonSlotResource { Index = 2, DigimonId = EmptySlotId, DigimonResource = null },
+                new DigimonSlotResource { Index = 3, DigimonId = EmptySlotId, DigimonResource = null }
             ]
         };
 
         var result = PartyAssembler.Assemble(resource);
 
         Assert.NotNull(result);
-        Assert.Single(result.Slots);
-        Assert.Equal(0, result.Slots[0].Index);
+        Assert.Equal(3, result.Slots.Count);
+
+        Assert.Equal(1, result.Slots[0].Index);
         Assert.Equal(1, result.Slots[0].DigimonId);
+        Assert.NotNull(result.Slots[0].Digimon);
+        Assert.Equal(2, result.Slots[0].Digimon!.Level);
+
+        Assert.Equal(2, result.Slots[1].Index);
+        Assert.Null(result.Slots[1].DigimonId);
+        Assert.Null(result.Slots[1].Digimon);
+
+        Assert.Equal(3, result.Slots[2].Index);
+        Assert.Null(result.Slots[2].DigimonId);
+        Assert.Null(result.Slots[2].Digimon);
     }
 }

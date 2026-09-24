@@ -1,13 +1,11 @@
 namespace Tests.Memory.Readers;
 
-using System;
 using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Memory;
 using Backend.Memory.Readers;
 using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
-using Xunit;
 
 public class MemoryReaderTests
 {

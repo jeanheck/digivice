@@ -10,10 +10,10 @@ public class PartyDifferTests
     [Fact]
     public void Diff_ShouldReturnEmptyDTO_WhenNoChanges()
     {
-        var previous = new Party { Slots = [] };
-        var newObj = new Party { Slots = [] };
+        var previous = CreateParty();
+        var newParty = CreateParty();
 
-        var result = PartyDiffer.Diff(previous, newObj);
+        var result = PartyDiffer.Diff(previous, newParty);
 
         Assert.NotNull(result);
         Assert.False(result.Slots.HasValue);
@@ -22,47 +22,73 @@ public class PartyDifferTests
     [Fact]
     public void Diff_ShouldReturnFullDTO_WhenPreviousIsNull()
     {
-        var slot = new DigimonSlot { Index = 0, DigimonId = 1, Digimon = CreateBaseDigimon() };
-        var newObj = new Party { Slots = [slot] };
+        var newParty = CreateParty();
 
-        var result = PartyDiffer.Diff(null, newObj);
+        var result = PartyDiffer.Diff(null, newParty);
 
         Assert.NotNull(result);
         Assert.True(result.Slots.HasValue);
 
-
         var slots = result.Slots.Value!;
-        Assert.Single(slots);
-        Assert.Equal(0, slots[0].Index);
+        Assert.Equal(3, slots.Count);
+        Assert.Equal(1, slots[0].Index);
         Assert.True(slots[0].DigimonId.HasValue);
         Assert.Equal(1, slots[0].DigimonId.Value);
+        Assert.True(slots[1].DigimonId.HasValue);
+        Assert.Null(slots[1].DigimonId.Value);
+        Assert.True(slots[2].DigimonId.HasValue);
+        Assert.Null(slots[2].DigimonId.Value);
     }
 
     [Fact]
-    public void Diff_ShouldReturnChangedSlots_WhenSlotsChanged()
+    public void Diff_ShouldReturnOnlyChangedSlot_WhenOneSlotChanged()
     {
-        var previousSlot = new DigimonSlot { Index = 0, DigimonId = 1, Digimon = CreateBaseDigimon() };
-        var previous = new Party { Slots = [previousSlot] };
+        var previous = CreateParty();
+        var newParty = CreateParty();
+        newParty.Slots[0].Digimon!.Level = 15;
 
-        var newSlot = new DigimonSlot { Index = 0, DigimonId = 1, Digimon = CreateBaseDigimon() };
-        newSlot.Digimon.Level = 15;
-        var newObj = new Party { Slots = [newSlot] };
-
-        var result = PartyDiffer.Diff(previous, newObj);
+        var result = PartyDiffer.Diff(previous, newParty);
 
         Assert.NotNull(result);
         Assert.True(result.Slots.HasValue);
 
+        var slot = Assert.Single(result.Slots.Value!);
+        Assert.Equal(1, slot.Index);
+        Assert.True(slot.Digimon.HasValue);
 
-        var slots = result.Slots.Value!;
-        Assert.Single(slots);
-        Assert.Equal(0, slots[0].Index);
-        Assert.True(slots[0].Digimon.HasValue);
-
-
-        var digimon = slots[0].Digimon.Value!;
+        var digimon = slot.Digimon.Value!;
         Assert.True(digimon.Level.HasValue);
         Assert.Equal(15, digimon.Level.Value);
+        Assert.False(digimon.Experience.HasValue);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnJoinedSlot_WhenDigimonJoinsEmptySlot()
+    {
+        var previous = CreateParty();
+        var newParty = CreateParty();
+        newParty.Slots[1] = new DigimonSlot { Index = 2, DigimonId = 2, Digimon = CreateBaseDigimon() };
+
+        var result = PartyDiffer.Diff(previous, newParty);
+
+        var slot = Assert.Single(result.Slots.Value!);
+        Assert.Equal(2, slot.Index);
+        Assert.Equal(2, slot.DigimonId.Value);
+        Assert.True(slot.Digimon.HasValue);
+        Assert.NotNull(slot.Digimon.Value);
+    }
+
+    private static Party CreateParty()
+    {
+        return new Party
+        {
+            Slots =
+            [
+                new DigimonSlot { Index = 1, DigimonId = 1, Digimon = CreateBaseDigimon() },
+                new DigimonSlot { Index = 2, DigimonId = null, Digimon = null },
+                new DigimonSlot { Index = 3, DigimonId = null, Digimon = null }
+            ]
+        };
     }
 
     private static Digimon CreateBaseDigimon()

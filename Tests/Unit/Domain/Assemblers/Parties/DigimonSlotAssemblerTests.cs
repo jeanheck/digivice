@@ -35,6 +35,23 @@ public class DigimonSlotAssemblerTests
         Assert.Equal(5, result.Digimon.Level);
     }
 
+    [Fact]
+    public void Assemble_ShouldKeepKotemonAsOccupiedSlot_WhenDigimonIdIsZero()
+    {
+        var resource = new DigimonSlotResource
+        {
+            Index = 1,
+            DigimonId = 0,
+            DigimonResource = new DigimonResource { Level = 3 }
+        };
+
+        var result = DigimonSlotAssembler.Assemble(resource);
+
+        Assert.Equal(0, result.DigimonId);
+        Assert.NotNull(result.Digimon);
+        Assert.Equal(3, result.Digimon.Level);
+    }
+
     [Theory]
     [InlineData(0xFF)]
     [InlineData(42)]

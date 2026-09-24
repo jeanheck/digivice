@@ -1,9 +1,7 @@
 namespace Tests.Integration.Infrastructure.Processes;
 
-using System;
 using System.Diagnostics;
 using Backend.Infrastructure.Processes;
-using Xunit;
 
 public class WindowsProcessProviderTests
 {

@@ -4,7 +4,6 @@ using Backend.Events.Diffing;
 using Backend.Domain.Models;
 using Backend.Domain.Models.Journals;
 using Backend.Domain.Models.Journals.Quests;
-using Xunit;
 
 public class JournalDifferTests
 {

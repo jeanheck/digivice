@@ -207,10 +207,21 @@ public class StateEventFactoryTests
                         Index = 1,
                         DigimonId = 1,
                         Digimon = CreateBaseDigimon()
-                    }
+                    },
+                    new DigimonSlot { Index = 2, DigimonId = null, Digimon = null },
+                    new DigimonSlot { Index = 3, DigimonId = null, Digimon = null }
                 ]
             },
-            DigimonBattle = new DigimonBattle { Enemy = new Enemy() },
+            DigimonBattle = new DigimonBattle
+            {
+                Enemy = new Enemy
+                {
+                    Id = 122,
+                    GroupId = 201,
+                    Speed = 70,
+                    HP = new Vital { Current = 600, Max = 672 }
+                }
+            },
             CardBattle = new CardBattle(),
             Auctions = new Auctions(),
             Npcs = new Npcs(),
