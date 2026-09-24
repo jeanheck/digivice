@@ -11,7 +11,7 @@ namespace Backend.Memory.Readers
         {
             return new PartyResource
             {
-                SlotsResource = [.. addresses.Slots.Select(slot => slotReader.Read(slot, addresses.BytesPerSlot))]
+                SlotsResource = [.. addresses.Slots.Select(slot => slotReader.Read(slot))]
             };
         }
     }

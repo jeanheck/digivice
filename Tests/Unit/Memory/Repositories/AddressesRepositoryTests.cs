@@ -82,7 +82,6 @@ public class AddressesRepositoryTests : IDisposable
         // Arrange
         var fakeParty = new PartyAddresses
         {
-            BytesPerSlot = 256,
             EmptySlotId = 99,
             Slots = []
         };
@@ -94,7 +93,6 @@ public class AddressesRepositoryTests : IDisposable
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(256, result.BytesPerSlot);
         Assert.Equal(99, result.EmptySlotId);
     }
 

@@ -13,6 +13,5 @@
             "Address": "0x00048DAC"
         }
     ],
-    "BytesPerSlot": 4,
     "EmptySlotId": "0xFF"
 }

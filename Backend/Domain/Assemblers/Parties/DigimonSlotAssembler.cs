@@ -10,7 +10,7 @@ namespace Backend.Domain.Assemblers.Parties
             return new DigimonSlot
             {
                 Index = resource.Index,
-                DigimonId = resource.DigimonId,
+                DigimonId = resource.DigimonResource != null ? resource.DigimonId : null,
                 Digimon = resource.DigimonResource != null
                     ? DigimonAssembler.Assemble(resource.DigimonResource)
                     : null

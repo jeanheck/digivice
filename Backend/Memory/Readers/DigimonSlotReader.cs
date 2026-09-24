@@ -6,15 +6,12 @@ namespace Backend.Memory.Readers
 {
     public class DigimonSlotReader(IMemoryReader memoryReader) : IDigimonSlotReader
     {
-        public DigimonSlotResource Read(SlotAddresses addresses, int bytesPerSlot)
+        public DigimonSlotResource Read(SlotAddresses addresses)
         {
-            var bytes = memoryReader.ReadBytes(addresses.Address, bytesPerSlot);
-            int? digimonId = bytes.Length > 0 ? bytes[0] : null;
-
             return new DigimonSlotResource
             {
                 Index = addresses.Index,
-                DigimonId = digimonId
+                DigimonId = memoryReader.ReadByte(addresses.Address)
             };
         }
     }

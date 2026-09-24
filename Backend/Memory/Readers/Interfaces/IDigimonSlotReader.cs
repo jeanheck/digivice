@@ -5,6 +5,6 @@ namespace Backend.Memory.Readers.Interfaces
 {
     public interface IDigimonSlotReader
     {
-        DigimonSlotResource Read(SlotAddresses addresses, int bytesPerSlot);
+        DigimonSlotResource Read(SlotAddresses addresses);
     }
 }

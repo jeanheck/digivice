@@ -35,13 +35,15 @@ public class DigimonSlotAssemblerTests
         Assert.Equal(5, result.Digimon.Level);
     }
 
-    [Fact]
-    public void Assemble_ShouldReturnNullDigimon_WhenDigimonResourceIsNull()
+    [Theory]
+    [InlineData(0xFF)]
+    [InlineData(42)]
+    public void Assemble_ShouldReturnEmptySlot_WhenDigimonResourceIsNull(int rawDigimonId)
     {
         var resource = new DigimonSlotResource
         {
             Index = 2,
-            DigimonId = null,
+            DigimonId = rawDigimonId,
             DigimonResource = null
         };
 

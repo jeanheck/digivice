@@ -10,17 +10,16 @@ using Backend.Memory.Readers.Interfaces;
 public class DigimonSlotReaderTests
 {
     [Fact]
-    public void Read_ShouldReturnSlotWithDigimonId_WhenBytesAreRead()
+    public void Read_ShouldReturnSlotWithRawDigimonId()
     {
         var addresses = new SlotAddresses { Index = 2, Address = 0x5000 };
-        var bytes = new byte[] { 14, 0, 0, 0 };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadBytes(0x5000, 64)).Returns(bytes);
+        memoryReaderMock.Setup(m => m.ReadByte(0x5000)).Returns((byte)14);
 
         var reader = new DigimonSlotReader(memoryReaderMock.Object);
 
-        var result = reader.Read(addresses, 64);
+        var result = reader.Read(addresses);
 
         Assert.NotNull(result);
         Assert.Equal(2, result.Index);
@@ -28,20 +27,20 @@ public class DigimonSlotReaderTests
     }
 
     [Fact]
-    public void Read_ShouldReturnSlotWithNullDigimonId_WhenBytesAreEmpty()
+    public void Read_ShouldKeepEmptySlotSentinelAsRawValue()
     {
-        var addresses = new SlotAddresses { Index = 5, Address = 0x6000 };
+        var addresses = new SlotAddresses { Index = 3, Address = 0x6000 };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadBytes(0x6000, 64)).Returns([]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x6000)).Returns((byte)0xFF);
 
         var reader = new DigimonSlotReader(memoryReaderMock.Object);
 
-        var result = reader.Read(addresses, 64);
+        var result = reader.Read(addresses);
 
-        Assert.NotNull(result);
-        Assert.Equal(5, result.Index);
-        Assert.Null(result.DigimonId);
+        Assert.Equal(3, result.Index);
+        Assert.Equal(0xFF, result.DigimonId);
+        Assert.Null(result.DigimonResource);
     }
 
     [Fact]
@@ -50,11 +49,11 @@ public class DigimonSlotReaderTests
         var addresses = new SlotAddresses { Index = 5, Address = 0x6000 };
 
         var memoryReaderMock = new Mock<IMemoryReader>();
-        memoryReaderMock.Setup(m => m.ReadBytes(0x6000, 64))
+        memoryReaderMock.Setup(m => m.ReadByte(0x6000))
             .Throws(new MemoryReadException(0x6000, "Memory session is not connected."));
 
         var reader = new DigimonSlotReader(memoryReaderMock.Object);
 
-        Assert.Throws<MemoryReadException>(() => reader.Read(addresses, 64));
+        Assert.Throws<MemoryReadException>(() => reader.Read(addresses));
     }
 }

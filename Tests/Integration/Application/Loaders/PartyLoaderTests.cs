@@ -9,6 +9,8 @@ using Backend.Memory.Readers.Interfaces;
 
 public class PartyLoaderTests : LoaderIntegrationTestBase
 {
+    private const byte EmptySlotId = 0xFF;
+
     [Fact]
     public void Load_ShouldIntegratePipelineAndSkipEmptySlots()
     {
@@ -19,16 +21,13 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
 
         // Simular a leitura dos 3 slots da equipe na RAM (endereços carregados do JSON real)
         // Slot 0 (Index 1) -> Endereço 0x00048DA4: Contém Digimon ID 1 (Kumamon)
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
-            .Returns([1, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns((byte)1);
 
         // Slot 1 (Index 2) -> Endereço 0x00048DA8: Contém ID de slot vazio 0xFF (255)
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
-            .Returns([0xFF, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns(EmptySlotId);
 
         // Slot 2 (Index 3) -> Endereço 0x00048DAC: Contém ID de slot vazio 0xFF (255)
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
-            .Returns([0xFF, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
 
         // Simular o bloco de memória física de 1500 bytes para o Kumamon (ID 1, Endereço 0x00049878)
         var fakeMemoryBlock = new byte[1500];
@@ -72,18 +71,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
             .Returns((short)0);
 
         // 3. Arrange - Instanciação da árvore de dependências reais (Pipeline Completo)
-        var digievolutionSlotReader = new DigievolutionSlotReader();
-        var digievolutionReader = new DigievolutionReader();
-        var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReaderMock.Object));
-        var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
-        var partyReader = new PartyReader(digimonSlotReader);
-
-        var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var partyLoader = new PartyLoader(
-            addressesRepository,
-            partyReader,
-            digimonLoader);
+        var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
 
         // 4. Act - Execução do Loader integrado
         var partyResource = partyLoader.Load();
@@ -97,7 +85,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(1, slot0.Index);
         Assert.Equal(1, slot0.DigimonId);
         Assert.NotNull(slot0.DigimonResource);
-        
+
         var kumamon = slot0.DigimonResource;
         Assert.Equal(5, kumamon.ActiveDigievolutionId);
         Assert.Equal(1500, kumamon.Experience);
@@ -108,7 +96,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
 
         // Validar que a árvore evolutiva de Kumamon integrou perfeitamente
         Assert.Equal(3, kumamon.Digievolutions.Count);
-        
+
         var evolutionSlot1 = kumamon.Digievolutions[0];
         Assert.Equal(5, evolutionSlot1.DigievolutionId);
         Assert.NotNull(evolutionSlot1.DigievolutionResource);
@@ -119,19 +107,19 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(evolutionSlot2.DigievolutionResource);
         Assert.Equal(1, evolutionSlot2.DigievolutionResource.Level); // Não cadastrado na RAM, padrão 1
 
-        // Validar Slots 1 e 2 (Vazios — normalizados para null)
+        // Validar Slots 1 e 2 (Vazios — id cru preservado, sem DigimonResource)
         var slot1 = partyResource.SlotsResource[1];
         Assert.Equal(2, slot1.Index);
-        Assert.Null(slot1.DigimonId);
+        Assert.Equal(EmptySlotId, slot1.DigimonId);
         Assert.Null(slot1.DigimonResource);
 
         var slot2 = partyResource.SlotsResource[2];
         Assert.Equal(3, slot2.Index);
-        Assert.Null(slot2.DigimonId);
+        Assert.Equal(EmptySlotId, slot2.DigimonId);
         Assert.Null(slot2.DigimonResource);
 
-        // Validação da Garantia Física: digimonLoader nunca foi chamado para ID 255 (sem I/O binário desnecessário)
-        memoryReaderMock.Verify(m => m.ReadBytes(It.Is<int>(addr => addr != 0x00048DA4 && addr != 0x00048DA8 && addr != 0x00048DAC && addr != 0x00049878), It.IsAny<int>()), Times.Never);
+        // Validação da Garantia Física: nenhum bloco de status lido além do Kumamon
+        memoryReaderMock.Verify(m => m.ReadBytes(It.Is<long>(address => address != 0x00049878), It.IsAny<int>()), Times.Never);
     }
 
     [Fact]
@@ -143,53 +131,35 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
     }
 
     [Fact]
-    public void Load_ShouldThrowMemoryReadException_WhenSlotBytesCannotBeRead()
+    public void Load_ShouldThrowMemoryReadException_WhenSlotCannotBeRead()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4))
             .Throws(new Backend.Memory.MemoryReadException(0x00048DA4, "Memory session is not connected."));
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns((byte)2);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
 
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
-            .Returns([2, 0, 0, 0]);
-
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
-            .Returns([0xFF, 0, 0, 0]);
-
-        var digievolutionSlotReader = new DigievolutionSlotReader();
-        var digievolutionReader = new DigievolutionReader();
-        var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReaderMock.Object));
-        var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
-        var partyReader = new PartyReader(digimonSlotReader);
-
-        var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var partyLoader = new PartyLoader(
-            addressesRepository,
-            partyReader,
-            digimonLoader);
+        var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
 
         Assert.Throws<Backend.Memory.MemoryReadException>(() => partyLoader.Load());
     }
 
     [Fact]
-    public void Load_ShouldLoadParty_WhenAllSlotBytesAreReadable()
+    public void Load_ShouldLoadOnlyOccupiedSlots()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        // Slot 0 (0x00048DA4) -> bytes vazios (sem Digimon)
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
-            .Returns([]);
+        // Slot 0 (0x00048DA4) -> Vazio
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns(EmptySlotId);
 
         // Slot 1 (0x00048DA8) -> ID 2 (Monmon)
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
-            .Returns([2, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns((byte)2);
 
-        // Slot 2 (0x00048DAC) -> ID 255 (Vazio)
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
-            .Returns([0xFF, 0, 0, 0]);
+        // Slot 2 (0x00048DAC) -> Vazio
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
 
         // Bloco de status do Monmon (ID 2, Endereço 0x00049C54)
         var fakeMemoryBlock = new byte[1500];
@@ -197,111 +167,62 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
 
         memoryReaderMock.Setup(m => m.ReadBytes(0x00049C54, 1500))
             .Returns(fakeMemoryBlock);
-        
+
         memoryReaderMock.Setup(m => m.ReadInt16(0x00049C54 - 4))
             .Returns(2); // Active Evolution ID 2
         memoryReaderMock.Setup(m => m.ReadInt16(0x00042B78))
             .Returns((short)0);
 
-        var digievolutionSlotReader = new DigievolutionSlotReader();
-        var digievolutionReader = new DigievolutionReader();
-        var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReaderMock.Object));
-        var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
-        var partyReader = new PartyReader(digimonSlotReader);
+        var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
 
-        var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var partyLoader = new PartyLoader(
-            addressesRepository,
-            partyReader,
-            digimonLoader);
-
-        // 2. Act
         var partyResource = partyLoader.Load();
 
-        // 3. Assert - Deve pular o slot 0 e o slot 2 com segurança e apenas carregar o slot 1 (Monmon)
         Assert.NotNull(partyResource);
         Assert.Equal(3, partyResource.SlotsResource.Count);
 
-        // Slot 0 (ID 0) -> vazio
         var slot0 = partyResource.SlotsResource[0];
-        Assert.Null(slot0.DigimonId);
+        Assert.Equal(EmptySlotId, slot0.DigimonId);
         Assert.Null(slot0.DigimonResource);
 
-        // Slot 1 (Monmon carregado)
         var slot1 = partyResource.SlotsResource[1];
         Assert.Equal(2, slot1.DigimonId);
         Assert.NotNull(slot1.DigimonResource);
         Assert.Equal(8, slot1.DigimonResource.Level);
 
-        // Slot 2 (Vazio) -> Pulado
         var slot2 = partyResource.SlotsResource[2];
-        Assert.Null(slot2.DigimonId);
+        Assert.Equal(EmptySlotId, slot2.DigimonId);
         Assert.Null(slot2.DigimonResource);
     }
 
     [Fact]
-    public void Load_ShouldTreatUnknownDigimonIdAsEmptySlot_WhenSlotContainsUnknownDigimonId()
+    public void Load_ShouldNotLoadDigimonResource_WhenSlotContainsUnknownDigimonId()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
-            .Returns([99, 0, 0, 0]);
-
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
-            .Returns([0xFF, 0, 0, 0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
-            .Returns([0xFF, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns((byte)99);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns(EmptySlotId);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
 
         var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
 
         var partyResource = partyLoader.Load();
 
         Assert.NotNull(partyResource);
-        Assert.Null(partyResource.SlotsResource[0].DigimonId);
+        Assert.Equal(99, partyResource.SlotsResource[0].DigimonId);
         Assert.Null(partyResource.SlotsResource[0].DigimonResource);
-        memoryReaderMock.Verify(m => m.ReadBytes(It.Is<int>(addr => addr != 0x00048DA4 && addr != 0x00048DA8 && addr != 0x00048DAC), It.IsAny<int>()), Times.Never);
+        memoryReaderMock.Verify(m => m.ReadBytes(It.IsAny<long>(), It.IsAny<int>()), Times.Never);
     }
 
     [Fact]
-    public void Load_ShouldHandleEmptySlotBytesGracefully()
+    public void Load_ShouldNotLoadDigimonResource_WhenLaterSlotContainsUnknownDigimonId()
     {
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
-            .Returns([]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
-            .Returns([0xFF, 0, 0, 0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
-            .Returns([0xFF, 0, 0, 0]);
-
-        var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
-
-        var partyResource = partyLoader.Load();
-
-        Assert.NotNull(partyResource);
-        Assert.Equal(3, partyResource.SlotsResource.Count);
-        Assert.Null(partyResource.SlotsResource[0].DigimonId);
-        Assert.Null(partyResource.SlotsResource[0].DigimonResource);
-        Assert.Null(partyResource.SlotsResource[1].DigimonId);
-        Assert.Null(partyResource.SlotsResource[2].DigimonId);
-        memoryReaderMock.Verify(m => m.ReadBytes(It.Is<int>(addr => addr != 0x00048DA4 && addr != 0x00048DA8 && addr != 0x00048DAC), It.IsAny<int>()), Times.Never);
-    }
-
-    [Fact]
-    public void Load_ShouldTreatUnknownDigimonIdAsEmptySlot_WhenLaterSlotContainsUnknownDigimonId()
-    {
-        var addressesRepository = CreateAddressesRepository();
-        var memoryReaderMock = new Mock<IMemoryReader>();
-
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4))
-            .Returns([1, 0, 0, 0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4))
-            .Returns([99, 0, 0, 0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4))
-            .Returns([0xFF, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns((byte)1);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns((byte)99);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
 
         var fakeMemoryBlock = new byte[1500];
         BitConverter.GetBytes((short)12).CopyTo(fakeMemoryBlock, 28);
@@ -320,7 +241,7 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         Assert.NotNull(partyResource);
         Assert.Equal(1, partyResource.SlotsResource[0].DigimonId);
         Assert.NotNull(partyResource.SlotsResource[0].DigimonResource);
-        Assert.Null(partyResource.SlotsResource[1].DigimonId);
+        Assert.Equal(99, partyResource.SlotsResource[1].DigimonId);
         Assert.Null(partyResource.SlotsResource[1].DigimonResource);
         memoryReaderMock.Verify(m => m.ReadBytes(0x00049878, 1500), Times.Once);
     }
@@ -332,37 +253,24 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var memoryReaderMock = new Mock<IMemoryReader>();
 
         // Todos os 3 slots com ID 255 (0xFF)
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4)).Returns([0xFF, 0, 0, 0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4)).Returns([0xFF, 0, 0, 0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4)).Returns([0xFF, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns(EmptySlotId);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns(EmptySlotId);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
 
-        var digievolutionSlotReader = new DigievolutionSlotReader();
-        var digievolutionReader = new DigievolutionReader();
-        var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReaderMock.Object, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReaderMock.Object));
-        var digimonSlotReader = new DigimonSlotReader(memoryReaderMock.Object);
-        var partyReader = new PartyReader(digimonSlotReader);
+        var partyLoader = CreatePartyLoader(addressesRepository, memoryReaderMock.Object);
 
-        var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
-        var partyLoader = new PartyLoader(
-            addressesRepository,
-            partyReader,
-            digimonLoader);
-
-        // 2. Act
         var partyResource = partyLoader.Load();
 
-        // 3. Assert - Sucesso absoluto com slots vazios e zero I/O desnecessário
         Assert.NotNull(partyResource);
         Assert.Equal(3, partyResource.SlotsResource.Count);
         Assert.All(partyResource.SlotsResource, slot =>
         {
-            Assert.Null(slot.DigimonId);
+            Assert.Equal(EmptySlotId, slot.DigimonId);
             Assert.Null(slot.DigimonResource);
         });
 
         // Garantir que NENHUMA tentativa de leitura de bloco de status (1500 bytes) foi feita na RAM
-        memoryReaderMock.Verify(m => m.ReadBytes(It.Is<int>(addr => addr != 0x00048DA4 && addr != 0x00048DA8 && addr != 0x00048DAC), It.IsAny<int>()), Times.Never);
+        memoryReaderMock.Verify(m => m.ReadBytes(It.IsAny<long>(), It.IsAny<int>()), Times.Never);
     }
 
     [Fact]
@@ -371,9 +279,9 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         var addressesRepository = CreateAddressesRepository();
         var memoryReaderMock = new Mock<IMemoryReader>();
 
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA4, 4)).Returns([1, 0, 0, 0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DA8, 4)).Returns([0xFF, 0, 0, 0]);
-        memoryReaderMock.Setup(m => m.ReadBytes(0x00048DAC, 4)).Returns([0xFF, 0, 0, 0]);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA4)).Returns((byte)1);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DA8)).Returns(EmptySlotId);
+        memoryReaderMock.Setup(m => m.ReadByte(0x00048DAC)).Returns(EmptySlotId);
 
         var fakeMemoryBlock = new byte[1500];
         BitConverter.GetBytes((short)450).CopyTo(fakeMemoryBlock, 0x20);
