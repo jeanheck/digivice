@@ -72,10 +72,10 @@ public class DigimonAssemblerTests
             Resistances = new ResistancesResource { Fire = 1, Water = 2, Ice = 3, Wind = 4, Thunder = 5, Machine = 6, Dark = 7 },
             Equipments = new EquipmentsResource { Head = 101, Body = 102, Right = 103, Left = 104, Accessory1 = 105, Accessory2 = 106 },
             Digievolutions = [
-                new DigievolutionSlotResource { Index = 0, DigievolutionId = 1, DigievolutionResource = new DigievolutionResource { Level = 5, Dvxp = 200 } }
+                new DigievolutionSlotResource { Index = 0, DigievolutionId = 1 }
             ],
             StoredDigievolutions = [
-                new StoredDigievolutionResource { DigievolutionId = 1, Level = 5 },
+                new StoredDigievolutionResource { DigievolutionId = 1, Level = 5, Dvxp = 200 },
                 new StoredDigievolutionResource { DigievolutionId = 99, Level = 12 }
             ]
         };

@@ -28,7 +28,8 @@ namespace Backend.Memory.Readers
                 storedDigievolutions.Add(new StoredDigievolutionResource
                 {
                     DigievolutionId = digievolutionId,
-                    Level = memoryBlockReader.ReadInt16(offset + digievolutionsAddresses.Level)
+                    Level = memoryBlockReader.ReadInt16(offset + digievolutionsAddresses.Level),
+                    Dvxp = memoryBlockReader.ReadInt32(offset + digievolutionsAddresses.Dvxp)
                 });
             }
 

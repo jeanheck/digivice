@@ -8,7 +8,6 @@ namespace Backend.Memory.Readers
     public class DigimonReader(
         IMemoryReader memoryReader,
         IDigievolutionSlotReader digievolutionSlotReader,
-        IDigievolutionReader digievolutionReader,
         IStoredDigievolutionReader storedDigievolutionReader,
         IInBattleReader digimonInBattleReader) : IDigimonReader
     {
@@ -30,19 +29,6 @@ namespace Backend.Memory.Readers
             var digievolutionsSlots = digimonStatusAddresses.Digievolutions.Slots
                 .Select(slot => digievolutionSlotReader.Read(memoryBlockReader, slot))
                 .ToList();
-
-            foreach (var digievolutionSlot in digievolutionsSlots)
-            {
-                if (digievolutionSlot.DigievolutionId > 0)
-                {
-                    digievolutionSlot.DigievolutionResource = digievolutionReader
-                        .Read(memoryBlockReader, digievolutionSlot.DigievolutionId, digimonStatusAddresses.Digievolutions);
-                }
-                else
-                {
-                    digievolutionSlot.DigievolutionResource = null;
-                }
-            }
 
             var activeDigievolutionId = memoryReader.ReadInt16(digimonAddress.MemoryBlockAddress + digimonStatusAddresses.Digievolutions.ActiveDigievolution);
 

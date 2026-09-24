@@ -105,4 +105,35 @@ public class StoredDigievolutionReaderTests
         Assert.Equal(3, result[0].DigievolutionId);
         Assert.Equal(15, result[0].Level);
     }
+
+    [Fact]
+    public void Read_ShouldReadDvxp_ForEachUnlockedEntry()
+    {
+        var digievolutionsAddresses = new DigievolutionsAddresses
+        {
+            UnlockedDigievolutionsStart = 10,
+            UnlockedDigievolutionEntryStride = 20,
+            MaxUnlockedDigievolutions = 3,
+            Id = 0,
+            Level = 2,
+            Dvxp = 4
+        };
+
+        var block = new byte[256];
+        WriteInt16(block, 10, 3);
+        WriteInt16(block, 12, 15);
+        Array.Copy(BitConverter.GetBytes(70000), 0, block, 14, 4);
+        WriteInt16(block, 30, 5);
+        WriteInt16(block, 32, 40);
+        Array.Copy(BitConverter.GetBytes(250), 0, block, 34, 4);
+
+        var memoryBlockReader = new MemoryBlockReader(block);
+        var reader = new StoredDigievolutionReader();
+
+        var result = reader.Read(memoryBlockReader, digievolutionsAddresses);
+
+        Assert.Equal(2, result.Count);
+        Assert.Equal(70000, result[0].Dvxp);
+        Assert.Equal(250, result[1].Dvxp);
+    }
 }

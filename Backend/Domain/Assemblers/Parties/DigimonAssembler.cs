@@ -74,7 +74,8 @@ namespace Backend.Domain.Assemblers.Parties
                     Accessory1 = resource.Equipments.Accessory1 <= 0 ? null : resource.Equipments.Accessory1,
                     Accessory2 = resource.Equipments.Accessory2 <= 0 ? null : resource.Equipments.Accessory2
                 },
-                Digievolutions = [.. resource.Digievolutions.Select(DigievolutionSlotAssembler.Assemble)],
+                Digievolutions = [.. resource.Digievolutions.Select(slot =>
+                    DigievolutionSlotAssembler.Assemble(slot, resource.StoredDigievolutions))],
                 StoredDigievolutions = [.. resource.StoredDigievolutions.Select(StoredDigievolutionAssembler.Assemble)],
                 ActiveDigievolutionId = activeDigievolutionId
             };

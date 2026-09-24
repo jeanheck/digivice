@@ -56,13 +56,11 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         memoryReaderMock.Setup(m => m.ReadInt16(0x00042B76)).Returns((short)400);
 
         var digievolutionSlotReader = new DigievolutionSlotReader();
-        var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
         var digimonInBattleReader = new InBattleReader(memoryReaderMock.Object);
         var digimonReader = new DigimonReader(
             memoryReaderMock.Object,
             digievolutionSlotReader,
-            digievolutionReader,
             storedDigievolutionReader,
             digimonInBattleReader);
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
@@ -99,11 +97,11 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         Assert.Equal(106, digimonResource.Equipments.Accessory2);
         Assert.Equal(3, digimonResource.Digievolutions.Count);
         Assert.Equal(5, digimonResource.Digievolutions[0].DigievolutionId);
-        Assert.Equal(3, digimonResource.Digievolutions[0].DigievolutionResource!.Level);
         Assert.Equal(10, digimonResource.Digievolutions[1].DigievolutionId);
-        Assert.Equal(1, digimonResource.Digievolutions[1].DigievolutionResource!.Level);
         Assert.Equal(0, digimonResource.Digievolutions[2].DigievolutionId);
-        Assert.Null(digimonResource.Digievolutions[2].DigievolutionResource);
+        var storedDigievolution = Assert.Single(digimonResource.StoredDigievolutions);
+        Assert.Equal(5, storedDigievolution.DigievolutionId);
+        Assert.Equal(3, storedDigievolution.Level);
     }
 
     [Fact]
@@ -178,13 +176,11 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         IMemoryReader memoryReader)
     {
         var digievolutionSlotReader = new DigievolutionSlotReader();
-        var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
         var digimonInBattleReader = new InBattleReader(memoryReader);
         var digimonReader = new DigimonReader(
             memoryReader,
             digievolutionSlotReader,
-            digievolutionReader,
             storedDigievolutionReader,
             digimonInBattleReader);
         return new DigimonLoader(addressesRepository, digimonReader);

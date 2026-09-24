@@ -99,13 +99,13 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
 
         var evolutionSlot1 = kumamon.Digievolutions[0];
         Assert.Equal(5, evolutionSlot1.DigievolutionId);
-        Assert.NotNull(evolutionSlot1.DigievolutionResource);
-        Assert.Equal(3, evolutionSlot1.DigievolutionResource.Level); // Destravado e encontrado em 0x50
 
         var evolutionSlot2 = kumamon.Digievolutions[1];
         Assert.Equal(10, evolutionSlot2.DigievolutionId);
-        Assert.NotNull(evolutionSlot2.DigievolutionResource);
-        Assert.Equal(1, evolutionSlot2.DigievolutionResource.Level); // Não cadastrado na RAM, padrão 1
+
+        var storedDigievolution = Assert.Single(kumamon.StoredDigievolutions);
+        Assert.Equal(5, storedDigievolution.DigievolutionId);
+        Assert.Equal(3, storedDigievolution.Level);
 
         // Validar Slots 1 e 2 (Vazios — id cru preservado, sem DigimonResource)
         var slot1 = partyResource.SlotsResource[1];
@@ -326,9 +326,8 @@ public class PartyLoaderTests : LoaderIntegrationTestBase
         IMemoryReader memoryReader)
     {
         var digievolutionSlotReader = new DigievolutionSlotReader();
-        var digievolutionReader = new DigievolutionReader();
         var storedDigievolutionReader = new StoredDigievolutionReader();
-        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, digievolutionReader, storedDigievolutionReader, new InBattleReader(memoryReader));
+        var digimonReader = new DigimonReader(memoryReader, digievolutionSlotReader, storedDigievolutionReader, new InBattleReader(memoryReader));
         var digimonSlotReader = new DigimonSlotReader(memoryReader);
         var partyReader = new PartyReader(digimonSlotReader);
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
