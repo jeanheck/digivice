@@ -5,6 +5,6 @@ namespace Backend.Memory.Readers.Interfaces
 {
     public interface IInBattleReader
     {
-        InBattleResource Read(InBattleAddresses addresses, int zeroBasedPartySlotIndex);
+        InBattleResource Read(InBattleAddresses addresses, int partySlotIndex);
     }
 }

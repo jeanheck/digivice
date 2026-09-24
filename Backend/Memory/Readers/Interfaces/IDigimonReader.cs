@@ -9,6 +9,6 @@ namespace Backend.Memory.Readers.Interfaces
             DigimonAddress digimonAddress,
             DigimonStatusAddresses digimonStatusAddresses,
             InBattleAddresses inBattleAddresses,
-            int zeroBasedPartySlotIndex);
+            int partySlotIndex);
     }
 }

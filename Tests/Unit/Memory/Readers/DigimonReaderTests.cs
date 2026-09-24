@@ -46,7 +46,7 @@ public class DigimonReaderTests
             CreateInBattleReaderMock().Object
         );
 
-        var result = reader.Read(address, statusAddresses, new InBattleAddresses(), 0);
+        var result = reader.Read(address, statusAddresses, new InBattleAddresses(), 1);
 
         Assert.Null(result);
     }
@@ -131,7 +131,7 @@ public class DigimonReaderTests
         );
 
         // Act
-        var result = reader.Read(address, statusAddresses, new InBattleAddresses(), 0);
+        var result = reader.Read(address, statusAddresses, new InBattleAddresses(), 1);
 
         // Assert
         Assert.NotNull(result);
@@ -216,7 +216,7 @@ public class DigimonReaderTests
         );
 
         // Act
-        var result = reader.Read(address, statusAddresses, new InBattleAddresses(), 0);
+        var result = reader.Read(address, statusAddresses, new InBattleAddresses(), 1);
 
         // Assert
         Assert.NotNull(result);
@@ -288,7 +288,7 @@ public class DigimonReaderTests
         );
 
         // Act
-        var result = reader.Read(address, statusAddresses, new InBattleAddresses(), 0);
+        var result = reader.Read(address, statusAddresses, new InBattleAddresses(), 1);
 
         // Assert
         Assert.NotNull(result);

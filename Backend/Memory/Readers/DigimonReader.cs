@@ -18,7 +18,7 @@ namespace Backend.Memory.Readers
             DigimonAddress digimonAddress,
             DigimonStatusAddresses digimonStatusAddresses,
             InBattleAddresses inBattleAddresses,
-            int zeroBasedPartySlotIndex)
+            int partySlotIndex)
         {
             var memoryBlock = memoryReader.ReadBytes(digimonAddress.MemoryBlockAddress, DigimonMemoryBlockSize);
             if (memoryBlock.Length < DigimonMemoryBlockSize)
@@ -63,7 +63,7 @@ namespace Backend.Memory.Readers
                     Current = memoryBlockReader.ReadInt16(digimonStatusAddresses.MP.Current),
                     Max = memoryBlockReader.ReadInt16(digimonStatusAddresses.MP.Max)
                 },
-                InBattle = digimonInBattleReader.Read(inBattleAddresses, zeroBasedPartySlotIndex),
+                InBattle = digimonInBattleReader.Read(inBattleAddresses, partySlotIndex),
                 Attributes = new AttributesResource
                 {
                     Strength = memoryBlockReader.ReadInt16(digimonStatusAddresses.Attributes.Strength),

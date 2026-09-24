@@ -7,9 +7,9 @@ namespace Backend.Memory.Readers
 {
     public class InBattleReader(IMemoryReader memoryReader) : IInBattleReader
     {
-        public InBattleResource Read(InBattleAddresses addresses, int zeroBasedPartySlotIndex)
+        public InBattleResource Read(InBattleAddresses addresses, int partySlotIndex)
         {
-            var slotBase = addresses.AllySlotBase + (zeroBasedPartySlotIndex * addresses.SlotStride);
+            var slotBase = addresses.AllySlotBase + ((partySlotIndex - 1) * addresses.SlotStride);
 
             return new InBattleResource
             {

@@ -67,7 +67,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
             digimonInBattleReader);
         var digimonLoader = new DigimonLoader(addressesRepository, digimonReader);
 
-        var digimonResource = digimonLoader.Load(1, 0);
+        var digimonResource = digimonLoader.Load(1, 1);
 
         Assert.NotNull(digimonResource);
         Assert.Equal(5, digimonResource.ActiveDigievolutionId);
@@ -121,7 +121,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
 
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
-        var digimonResource = digimonLoader.Load(7, 0);
+        var digimonResource = digimonLoader.Load(7, 1);
 
         Assert.NotNull(digimonResource);
         Assert.Equal(7, digimonResource.ActiveDigievolutionId);
@@ -141,7 +141,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
 
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
-        Assert.Throws<Backend.Memory.MemoryReadException>(() => digimonLoader.Load(1, 0));
+        Assert.Throws<Backend.Memory.MemoryReadException>(() => digimonLoader.Load(1, 1));
     }
 
     [Fact]
@@ -155,7 +155,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
 
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
-        var digimonResource = digimonLoader.Load(1, 0);
+        var digimonResource = digimonLoader.Load(1, 1);
 
         Assert.Null(digimonResource);
     }
@@ -167,7 +167,7 @@ public class DigimonLoaderTests : LoaderIntegrationTestBase
         var memoryReaderMock = new Mock<IMemoryReader>();
         var digimonLoader = CreateDigimonLoader(addressesRepository, memoryReaderMock.Object);
 
-        var digimonResource = digimonLoader.Load(99, 0);
+        var digimonResource = digimonLoader.Load(99, 1);
 
         Assert.Null(digimonResource);
         memoryReaderMock.Verify(m => m.ReadBytes(It.IsAny<long>(), It.IsAny<int>()), Times.Never);

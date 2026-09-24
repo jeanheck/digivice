@@ -9,7 +9,7 @@ namespace Backend.Application.Loaders
         IAddressesRepository addressesRepository,
         IDigimonReader digimonReader) : IDigimonLoader
     {
-        public DigimonResource? Load(int digimonId, int zeroBasedPartySlotIndex)
+        public DigimonResource? Load(int digimonId, int partySlotIndex)
         {
             var digimonAddress = addressesRepository.GetDigimonAddressById(digimonId);
             if (digimonAddress is null)
@@ -23,7 +23,7 @@ namespace Backend.Application.Loaders
                 digimonAddress,
                 digimonStatusAddresses,
                 inBattleAddresses,
-                zeroBasedPartySlotIndex);
+                partySlotIndex);
         }
     }
 }

@@ -4,6 +4,6 @@ namespace Backend.Application.Loaders.Interfaces
 {
     public interface IDigimonLoader
     {
-        DigimonResource? Load(int digimonId, int zeroBasedPartySlotIndex);
+        DigimonResource? Load(int digimonId, int partySlotIndex);
     }
 }
