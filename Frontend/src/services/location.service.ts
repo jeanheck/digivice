@@ -100,10 +100,6 @@ export class LocationService {
     return LocationRepository.getLocationById(id).imageName;
   }
 
-  public static isSeabed(locationId: string): boolean {
-    return this.getRegionByLocationId(locationId) === LocationRegionConstant.seabed;
-  }
-
   public static getWorldLocation(locationId: string): CoordinatesRaw | undefined {
     return LocationRepository.getLocationById(locationId).worldLocation;
   }
