@@ -3,14 +3,15 @@ import { computed } from "vue";
 import CurrentAuctionAvailable from "@/components/journal/auction-modal/current-auction/CurrentAuctionAvailable.vue";
 import CurrentAuctionUnavailable from "@/components/journal/auction-modal/current-auction/CurrentAuctionUnavailable.vue";
 import { CurrentAuctionPresenter } from "@/presenters/auction/current-auction.presenter";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const auctionAvailable = computed(() => {
-  const auctions = store.currentState?.auctions ?? null;
-  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
-  return CurrentAuctionPresenter.getAvailableAuction(auctions, mainQuest);
+  return CurrentAuctionPresenter.getAvailableAuction(
+    gameState.value.auctions,
+    gameState.value.journal.mainQuest,
+  );
 });
 </script>
 

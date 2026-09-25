@@ -6,7 +6,7 @@ import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.v
 export class WikiEnemyResumePresenter {
   public static getAvailableEnemyLocations(
     locations: EnemyLocationViewModel[] | undefined,
-    mainQuest: Quest | null,
+    mainQuest: Quest,
   ): EnemyLocationViewModel[] {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
     const resolvedLocations = (locations ?? []).filter((location) => {

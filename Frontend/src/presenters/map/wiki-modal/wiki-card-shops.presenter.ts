@@ -6,7 +6,7 @@ import type { CardShopViewModel } from "@/viewmodels/card/card-shop.viewmodel";
 export class WikiCardShopsPresenter {
   public static getCardShopsAccordingMainQuest(
     cardShops: CardShopViewModel[],
-    mainQuest: Quest | null,
+    mainQuest: Quest,
   ): CardShopViewModel[] {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
 

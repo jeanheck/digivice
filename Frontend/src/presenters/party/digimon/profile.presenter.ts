@@ -7,7 +7,7 @@ import { DigimonService } from "@/services/digimon.service";
 import { DigimonBattleSelector } from "@/stores/selectors/digimon-battle.selector";
 
 export class ProfilePresenter {
-  public static isInBattle(location: string | null, inBattle: InBattle): boolean {
+  public static isInBattle(location: string, inBattle: InBattle): boolean {
     return DigimonBattleSelector.isInBattle(location, inBattle);
   }
 

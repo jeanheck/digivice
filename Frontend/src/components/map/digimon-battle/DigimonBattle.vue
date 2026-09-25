@@ -20,7 +20,7 @@ import {
 import { DigimonDebuffConstant } from "@/constants/digimon-debuff.constant";
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import { DigimonBattlePresenter } from "@/presenters/map/digimon-battle.presenter";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import type { EnemyConditionViewModel } from "@/viewmodels/enemy/enemy-condition.viewmodel";
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
 
@@ -30,7 +30,7 @@ const emit = defineEmits<{
   (e: "open-enemy-modal", enemyId: string): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 const { t } = useI18n();
 
 const activeVariant = ref<TooltipVariant>("none");
@@ -41,11 +41,11 @@ const tooltipPlacement = ref<TooltipPlacement>("below");
 const tooltipAlign = ref<TooltipHorizontalAlign>("right");
 
 const battleFieldId = computed(() => {
-  return store.currentState?.digimonBattle?.field ?? 0;
+  return gameState.value.digimonBattle.field;
 });
 
 const enemy = computed(() => {
-  return store.currentState?.digimonBattle?.enemy ?? null;
+  return gameState.value.digimonBattle.enemy;
 });
 
 const digimonBattleViewModel = computed(() => {

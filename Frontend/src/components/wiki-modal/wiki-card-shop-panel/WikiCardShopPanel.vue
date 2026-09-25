@@ -3,7 +3,7 @@ import { computed } from "vue";
 import WikiCardShopInventory from "@/components/wiki-modal/wiki-card-shop-panel/WikiCardShopInventory.vue";
 import WikiCardShopLocatedIn from "@/components/wiki-modal/wiki-card-shop-panel/WikiCardShopLocatedIn.vue";
 import { WikiCardShopPanelPresenter } from "@/presenters/map/wiki-modal/wiki-card-shop-panel.presenter";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 
 const props = defineProps<{
   cardShopId: string;
@@ -14,10 +14,10 @@ const emit = defineEmits<{
   (e: "open-location", locationId: string): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const mainQuest = computed(() => {
-  return store.currentState?.journal?.mainQuest ?? null;
+  return gameState.value.journal.mainQuest;
 });
 
 const cardShopViewModel = computed(() => {

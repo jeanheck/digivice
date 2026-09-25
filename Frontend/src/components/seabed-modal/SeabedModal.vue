@@ -6,7 +6,7 @@ import MapFrame from "@/components/map-frame/MapFrame.vue";
 import SeabedDocks from "@/components/seabed-modal/SeabedDocks.vue";
 import { MAP_FRAME_WIDTH_PX } from "@/constants/map-display.constant";
 import { SeabedModalPresenter } from "@/presenters/seabed-modal/seabed-modal.presenter";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 
 const props = defineProps<{
@@ -17,7 +17,7 @@ const emit = defineEmits<{
   (e: "close"): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 const { t } = useI18n();
 
 const isModalOpen = computed(() => {
@@ -27,7 +27,7 @@ const isModalOpen = computed(() => {
 const selectedLocationId = ref<string | null>(null);
 
 function syncSelectedLocationIdFromPlayer(): void {
-  const playerLocationId = store.currentState?.player?.mapId ?? null;
+  const playerLocationId = gameState.value.player.mapId;
   selectedLocationId.value = SeabedModalPresenter.getInitialSelectedLocationId(playerLocationId);
 }
 

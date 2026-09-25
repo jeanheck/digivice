@@ -7,7 +7,7 @@ import { QuestService } from "@/services/quest.service";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 export class AuctionService {
-  public static getAvailableAuction(auctions: Auctions | null, mainQuest: Quest | null): AuctionViewModel | null {
+  public static getAvailableAuction(auctions: Auctions, mainQuest: Quest): AuctionViewModel | null {
     return (
       this.getAuctions(auctions, mainQuest).find((auctionListItemViewModel) => {
         return auctionListItemViewModel.status === AuctionStatusConstant.available;
@@ -15,11 +15,11 @@ export class AuctionService {
     );
   }
 
-  public static getAuctions(auctions: Auctions | null, mainQuest: Quest | null): AuctionViewModel[] {
+  public static getAuctions(auctions: Auctions, mainQuest: Quest): AuctionViewModel[] {
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
 
     return AuctionRepository.getAuctions().map((auctionRaw) => {
-      const hasParticipated = auctions?.[auctionRaw.id as keyof Auctions] ?? false;
+      const hasParticipated = auctions[auctionRaw.id as keyof Auctions] ?? false;
       const auctionStatus = this.getCalculatedAuctionStatus(
         auctionRaw.steps,
         lastCompletedMainQuestStep,

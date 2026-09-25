@@ -9,16 +9,12 @@ import { SeabedPresenter } from "@/presenters/map/seabed.presenter";
 const props = defineProps<{
   seabedRoute: number;
   mapVariant: number;
-  locationId: string | null;
+  locationId: string;
 }>();
 
 const { t } = useI18n();
 
 const routeLocation = computed(() => {
-  if (props.locationId === null) {
-    return null;
-  }
-
   return SeabedPresenter.getRouteLocation(props.seabedRoute, props.locationId, props.mapVariant);
 });
 

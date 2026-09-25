@@ -6,7 +6,7 @@ import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel
 import { LocationConverter } from "@/presenters/converter/location.converter";
 
 export class MobiusDesertButtonPresenter {
-  public static getLocation(locationId: string, mainQuest: Quest | null): LocationViewModel {
+  public static getLocation(locationId: string, mainQuest: Quest): LocationViewModel {
     const locationRaw = LocationRepository.getLocationById(locationId);
     const walkingIds = LocationService.getWalkingEnemies(
       locationId,

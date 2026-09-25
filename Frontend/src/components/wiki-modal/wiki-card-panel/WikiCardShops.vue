@@ -7,7 +7,7 @@ import type { CardShopViewModel } from "@/viewmodels/card/card-shop.viewmodel";
 
 const props = defineProps<{
   cardShops: CardShopViewModel[];
-  mainQuest: Quest | null;
+  mainQuest: Quest;
 }>();
 
 const emit = defineEmits<{

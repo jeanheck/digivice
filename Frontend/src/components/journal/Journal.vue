@@ -4,18 +4,13 @@ import JournalQuestsSection from "@/components/journal/JournalQuestsSection.vue"
 import JournalQuestCard from "@/components/journal/JournalQuestCard.vue";
 import AuctionCard from "@/components/journal/auction-card/AuctionCard.vue";
 import QuestModal from "@/components/journal/quest-modal/QuestModal.vue";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import { JournalPresenter } from "@/presenters/journal/journal.presenter";
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const journalViewModel = computed(() => {
-  const journal = store.currentState?.journal;
-  if (journal === null || journal === undefined) {
-    return null;
-  }
-  const party = store.currentState?.party ?? { slots: [] };
-  return JournalPresenter.getJournalViewModel(journal, party);
+  return JournalPresenter.getJournalViewModel(gameState.value.journal, gameState.value.party);
 });
 
 const activeQuestId = ref<string | null>(null);
@@ -35,7 +30,7 @@ const closeQuestModal = () => {
 </script>
 
 <template>
-  <aside v-if="journalViewModel" class="dw3-aside flex-1 min-h-0">
+  <aside class="dw3-aside flex-1 min-h-0">
     <div class="flex-1 min-h-0 overflow-y-auto mt-2 pr-1 custom-scroll space-y-4">
       <section>
         <JournalQuestCard

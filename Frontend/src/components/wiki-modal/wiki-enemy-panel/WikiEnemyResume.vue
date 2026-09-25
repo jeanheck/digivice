@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import WikiEnemyLocations from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyLocations.vue";
 import { WikiEnemyResumePresenter } from "@/presenters/map/wiki-modal/wiki-enemy-resume.presenter";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 
 const props = withDefaults(
@@ -21,10 +21,10 @@ const emit = defineEmits<{
   (e: "open-locations", locationId: string): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const mainQuest = computed(() => {
-  return store.currentState?.journal?.mainQuest ?? null;
+  return gameState.value.journal.mainQuest;
 });
 
 const locations = computed(() => {

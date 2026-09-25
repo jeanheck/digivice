@@ -28,7 +28,7 @@ import type { WikiLocationsPanelViewModel } from "@/viewmodels/wiki-modal/wiki-l
 export class WikiLocationsPanelPresenter {
   public static getLocationPanelViewModel(
     locationId: string,
-    mainQuest: Quest | null,
+    mainQuest: Quest,
     sideQuests: Quest[],
     previousMapId: string,
   ): WikiLocationsPanelViewModel {
@@ -55,7 +55,7 @@ export class WikiLocationsPanelPresenter {
 
   public static getMapMarkers(
     locationId: string,
-    mainQuest: Quest | null,
+    mainQuest: Quest,
   ): WikiLocationMapMarkerViewModel[] {
     const locationRaw = LocationRepository.getLocationById(locationId);
     const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
@@ -181,7 +181,7 @@ export class WikiLocationsPanelPresenter {
 
   private static getEncounterLines(
     locationId: string,
-    mainQuest: Quest | null,
+    mainQuest: Quest,
     sideQuests: Quest[],
     previousMapId: string,
   ): WikiLocationEncounterLineViewModel[] {

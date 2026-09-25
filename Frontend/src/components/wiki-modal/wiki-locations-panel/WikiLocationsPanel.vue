@@ -7,7 +7,7 @@ import { ImageCatalog } from "@/catalogs/image.catalog";
 import { MAP_FRAME_WIDTH_PX } from "@/constants/map-display.constant";
 import { useImageNaturalAspectRatio } from "@/composables/use-image-natural-aspect-ratio";
 import { WikiLocationsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-locations-panel.presenter";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 
 const props = defineProps<{
   locationId: string;
@@ -19,18 +19,18 @@ const emit = defineEmits<{
   (e: "open-card-shop", cardShopId: string): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const mainQuest = computed(() => {
-  return store.currentState?.journal?.mainQuest ?? null;
+  return gameState.value.journal.mainQuest;
 });
 
 const sideQuests = computed(() => {
-  return store.currentState?.journal?.sideQuests ?? [];
+  return gameState.value.journal.sideQuests;
 });
 
 const previousMapId = computed(() => {
-  return store.currentState?.player?.previousMapId ?? "";
+  return gameState.value.player.previousMapId;
 });
 
 const locationsViewModel = computed(() => {

@@ -13,7 +13,7 @@ import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import { useI18n } from "vue-i18n";
 
 const props = defineProps<{
@@ -25,7 +25,7 @@ const emit = defineEmits<{
   openDigievolutions: [];
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 const { t } = useI18n();
 const { show, x, y, showAt, move, hide } = useTooltipPosition(350);
 const tooltipTitle = ref("");
@@ -52,7 +52,7 @@ const digimonName = computed(() => {
 });
 
 const location = computed(() => {
-  return store.currentState?.player?.mapId ?? null;
+  return gameState.value.player.mapId;
 });
 
 const isInBattle = computed(() => {

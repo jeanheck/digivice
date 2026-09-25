@@ -3,7 +3,7 @@ import { AuctionService } from "@/services/auction.service";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 export class AuctionModalPresenter {
-  public static getAuctions(auctions: Auctions | null, mainQuest: Quest | null): AuctionViewModel[] {
+  public static getAuctions(auctions: Auctions, mainQuest: Quest): AuctionViewModel[] {
     return AuctionService.getAuctions(auctions, mainQuest);
   }
 }

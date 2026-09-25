@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import AuctionModal from "@/components/journal/auction-modal/AuctionModal.vue";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import { AuctionCardPresenter } from "@/presenters/auction/auction-card.presenter";
 import AuctionCardAvailable from "./AuctionCardAvailable.vue";
 import AuctionCardUnavailable from "./AuctionCardUnavailable.vue";
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const auctions = computed(() => {
-  return store.currentState?.auctions ?? null;
+  return gameState.value.auctions;
 });
 
 const mainQuest = computed(() => {
-  return store.currentState?.journal?.mainQuest ?? null;
+  return gameState.value.journal.mainQuest;
 });
 
 const auctionAvailable = computed(() => {

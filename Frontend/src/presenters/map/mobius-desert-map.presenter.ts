@@ -5,7 +5,7 @@ import { QuestService } from "@/services/quest.service";
 import type { DesertAreaMapCellViewModel } from "@/viewmodels/desert/desert-area-map-cell.viewmodel";
 
 export class MobiusDesertMapPresenter {
-  public static getEnemyIds(locationId: string, mainQuest: Quest | null): string[] {
+  public static getEnemyIds(locationId: string, mainQuest: Quest): string[] {
     const walkingIds = LocationService.getWalkingEnemies(
       locationId,
       QuestService.getLastCompletedMainQuestStep(mainQuest),

@@ -6,7 +6,7 @@ import WikiNpcCardBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiN
 import WikiNpcDigimonBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDigimonBattlePanel.vue";
 import { QuestRepository } from "@/repositories/quest.repository";
 import { QuestService } from "@/services/quest.service";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import { useI18n } from "vue-i18n";
 import type { WikiNpcBattleOptionViewModel } from "@/viewmodels/wiki-modal/wiki-npc-battle-option.viewmodel";
 import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
@@ -26,24 +26,20 @@ const emit = defineEmits<{
   (e: "hide-stat-tooltip"): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 const { t } = useI18n();
 
 const journalNpc = computed(() => {
-  const npcs = store.currentState?.npcs;
-  if (npcs === null || npcs === undefined) {
-    return null;
-  }
-
+  const npcs = gameState.value.npcs;
   return npcs[props.npcId as keyof typeof npcs] ?? null;
 });
 
 const partyCharisma = computed(() => {
-  return WikiNpcPanelPresenter.getPartyCharisma(store.currentState?.party ?? { slots: [] });
+  return WikiNpcPanelPresenter.getPartyCharisma(gameState.value.party);
 });
 
 const importantItems = computed(() => {
-  return store.currentState?.importantItems ?? null;
+  return gameState.value.importantItems;
 });
 
 const panelViewModel = computed(() => {
@@ -151,7 +147,7 @@ const showFolderBagRequirementHint = computed(() => {
     return false;
   }
 
-  const folderBagQuest = store.currentState?.journal?.sideQuests.find((quest) => {
+  const folderBagQuest = gameState.value.journal.sideQuests.find((quest) => {
     return quest.id === "folderBag";
   });
   const folderBagRaw = QuestRepository.getSideQuestsRaw().find((questRaw) => {

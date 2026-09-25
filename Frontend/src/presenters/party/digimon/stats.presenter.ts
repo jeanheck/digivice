@@ -18,7 +18,7 @@ import type { DigimonStatsViewModel } from "@/viewmodels/digimon/digimon-stats.v
 import type { DigievolutionViewModel } from "@/viewmodels/digievolution/digievolution.viewmodel";
 
 export class StatsPresenter {
-  public static getStatsViewModel(digimon: Digimon, location: string | null): DigimonStatsViewModel {
+  public static getStatsViewModel(digimon: Digimon, location: string): DigimonStatsViewModel {
     const isInBattle = DigimonBattleSelector.isInBattle(location, digimon.inBattle);
     const activeDigievolution =
       digimon.activeDigievolutionId !== null

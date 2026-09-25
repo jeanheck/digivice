@@ -42,18 +42,18 @@ export class NpcService {
 
   public static isTrophyRequirementMet(
     trophyRequired: TamerTrophyRequiredRaw | undefined,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): boolean {
     if (trophyRequired === undefined) {
       return true;
     }
 
     if (trophyRequired === "asukaTrophy") {
-      return importantItems?.asukaTrophy === true;
+      return importantItems.asukaTrophy;
     }
 
     if (trophyRequired === "sunTrophy") {
-      return importantItems?.sunTrophy === true;
+      return importantItems.sunTrophy;
     }
 
     return false;
@@ -95,7 +95,7 @@ export class NpcService {
 
   public static isTrophyOwned(
     trophyRequired: TamerTrophyRequiredRaw | undefined,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): boolean {
     return this.isTrophyRequirementMet(trophyRequired, importantItems);
   }
@@ -104,7 +104,7 @@ export class NpcService {
     charismaRequired: TamerCharismaRequiredRaw,
     trophyRequired: TamerTrophyRequiredRaw | undefined,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): boolean {
     if (!this.isCharismaInRange(partyCharisma, charismaRequired)) {
       return false;
@@ -117,7 +117,7 @@ export class NpcService {
     charismaRequired: TamerCharismaRequiredRaw,
     trophyRequired: TamerTrophyRequiredRaw | undefined,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): string | null {
     const charismaMet = this.isCharismaInRange(partyCharisma, charismaRequired);
     const trophyMet = this.isTrophyRequirementMet(trophyRequired, importantItems);
@@ -140,7 +140,7 @@ export class NpcService {
   public static resolveActiveCardBattleIds(
     cardBattles: Record<string, TamerCardBattleRaw> | undefined,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): Set<string> {
     const sortedCardBattles = Object.entries(cardBattles ?? {}).sort(
       ([firstBattleId], [secondBattleId]) => {
@@ -222,7 +222,7 @@ export class NpcService {
     opponent: NpcBattleOpponentRaw,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): NpcBattleKindConstant | null {
     return this.getAvailableBattleKindFromTamerOrDuelIsland(
       opponent,
@@ -236,7 +236,7 @@ export class NpcService {
     opponent: NpcBattleOpponent,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): NpcBattleKindConstant | null {
     if (opponent.source === "npc") {
       const completed = this.isDigimonBattleCompleted(journalNpc, STORY_NPC_DIGIMON_BATTLE_ID);
@@ -259,7 +259,7 @@ export class NpcService {
     tamer: NpcBattleOpponentRaw,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): NpcBattleKindConstant | null {
     const hasAvailableDigimonBattle = Object.entries(tamer.digimonBattles ?? {}).some(
       ([battleId, digimonBattle]) => {
@@ -297,7 +297,7 @@ export class NpcService {
     opponent: NpcBattleOpponent,
     journalNpc: Npc | null | undefined,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): boolean {
     return (
       this.getAvailableBattleKindForOpponent(

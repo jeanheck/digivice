@@ -7,7 +7,7 @@ import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-ty
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
-  location: LocationViewModel | null;
+  location: LocationViewModel;
   mapVariant: number;
 }>();
 
@@ -20,10 +20,7 @@ const desertAreas = desertAreasViewModel.areas.flat();
 const desertGridSize = desertAreasViewModel.gridSize;
 
 const currentAreaLabel = computed(() => {
-  return MobiusDesertAreasPresenter.getCurrentAreaLabel(
-    props.location?.id ?? null,
-    props.mapVariant,
-  );
+  return MobiusDesertAreasPresenter.getCurrentAreaLabel(props.location.id, props.mapVariant);
 });
 
 function isClickable(areaType: DesertAreaTypeViewModel): boolean {

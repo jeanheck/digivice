@@ -7,13 +7,13 @@ import MobiusDesertMap from "./mobius-desert-map/MobiusDesertMap.vue";
 import WikiModal from "@/components/wiki-modal/WikiModal.vue";
 import { computed, ref } from "vue";
 import { LocationRegionConstant } from "@/constants/location-region.constant";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const locationId = computed(() => {
-  return store.currentState?.player?.mapId ?? null;
+  return gameState.value.player.mapId;
 });
 
 const mapViewModel = computed(() => {

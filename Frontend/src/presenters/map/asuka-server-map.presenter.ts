@@ -14,8 +14,8 @@ export class AsukaServerMapPresenter {
     locationId: string,
     lastCompletedMainQuestStep: number,
     digimonSlots: DigimonSlot[],
-    npcs: Npcs | null,
-    importantItems: ImportantItems | null | undefined,
+    npcs: Npcs,
+    importantItems: ImportantItems,
   ): MapNpcViewModel[] {
     const opponentIds = LocationService.getMapOpponentIds(
       locationId,
@@ -50,22 +50,18 @@ export class AsukaServerMapPresenter {
     });
   }
 
-  private static resolveNpc(npcs: Npcs | null, npcId: string): Npc | null {
-    if (npcs === null) {
-      return null;
-    }
-
+  private static resolveNpc(npcs: Npcs, npcId: string): Npc | null {
     return npcs[npcId as keyof Npcs] ?? null;
   }
 
   public static getViewModel(
     locationId: string,
-    mainQuest: Quest | null,
+    mainQuest: Quest,
     sideQuests: Quest[],
     digimonSlots: DigimonSlot[],
-    previousMapId: string = "",
-    npcs: Npcs | null = null,
-    importantItems: ImportantItems | null | undefined = null,
+    previousMapId: string,
+    npcs: Npcs,
+    importantItems: ImportantItems,
   ): AsukaServerMapViewModel {
     const fishingIds = LocationEncounterHelper.resolveFishingIds(locationId, sideQuests);
     const kickingTreeIds = LocationEncounterHelper.resolveKickingTreeIds(locationId, sideQuests);

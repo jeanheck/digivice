@@ -4,7 +4,7 @@ import WikiCardBoosters from "@/components/wiki-modal/wiki-card-panel/WikiCardBo
 import WikiCardDetails from "@/components/wiki-modal/wiki-card-panel/WikiCardDetails.vue";
 import WikiCardShops from "@/components/wiki-modal/wiki-card-panel/WikiCardShops.vue";
 import { WikiCardPanelPresenter } from "@/presenters/map/wiki-modal/wiki-card-panel.presenter";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
 
 const props = defineProps<{
@@ -16,10 +16,10 @@ const emit = defineEmits<{
   (e: "open-card-shop", cardShopId: string): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const mainQuest = computed(() => {
-  return store.currentState?.journal?.mainQuest ?? null;
+  return gameState.value.journal.mainQuest;
 });
 
 const viewModel = computed(() => {

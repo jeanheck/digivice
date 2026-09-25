@@ -8,7 +8,7 @@ import { QuestService } from "@/services/quest.service";
 import type { WikiCardShopViewModel } from "@/viewmodels/wiki-modal/wiki-card-shop.viewmodel";
 
 export class WikiCardShopPanelPresenter {
-  public static getViewModel(cardShopId: string, mainQuest: Quest | null): WikiCardShopViewModel {
+  public static getViewModel(cardShopId: string, mainQuest: Quest): WikiCardShopViewModel {
     const cardShopRaw = CardShopRepository.getById(cardShopId);
     if (cardShopRaw === undefined) {
       return {

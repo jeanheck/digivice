@@ -8,13 +8,15 @@ import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import { FooterPresenter } from "@/presenters/footer/footer.presenter";
 
 const store = useGameStore();
+const gameState = useGameState();
 const { t } = useI18n();
 
 const playerBits = computed(() => {
-  return store.currentState?.player?.bits ?? 0;
+  return gameState.value.player.bits;
 });
 
 const isConnected = computed(() => store.isConnected);
@@ -88,11 +90,11 @@ const hideGroupLevelTooltip = () => {
 };
 
 const groupCharisma = computed(() => {
-  return FooterPresenter.getPartyCharisma(store.currentState?.party ?? { slots: [] });
+  return FooterPresenter.getPartyCharisma(gameState.value.party);
 });
 
 const groupPartyLevel = computed(() => {
-  return FooterPresenter.getPartyLevel(store.currentState?.party ?? { slots: [] });
+  return FooterPresenter.getPartyLevel(gameState.value.party);
 });
 </script>
 

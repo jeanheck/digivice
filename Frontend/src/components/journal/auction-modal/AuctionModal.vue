@@ -8,8 +8,8 @@ import CurrentAuction from "./current-auction/CurrentAuction.vue";
 
 const props = defineProps<{
   isOpen: boolean;
-  auctions: Auctions | null;
-  mainQuest: Quest | null;
+  auctions: Auctions;
+  mainQuest: Quest;
 }>();
 
 const emit = defineEmits<{

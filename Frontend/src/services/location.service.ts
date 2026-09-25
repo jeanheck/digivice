@@ -92,23 +92,15 @@ export class LocationService {
     return matchingPhase.ids;
   }
 
-  public static getRegionByLocationId(id: string | null): LocationRegionConstant {
-    if (id === null) {
-      return LocationRegionConstant.asukaServer;
-    }
-
+  public static getRegionByLocationId(id: string): LocationRegionConstant {
     return LocationRepository.getLocationById(id).region ?? LocationRegionConstant.asukaServer;
   }
 
-  public static getLocationImageNameByLocationId(id: string | null): string | null {
-    if (id === null) {
-      return null;
-    }
-
+  public static getLocationImageNameByLocationId(id: string): string | null {
     return LocationRepository.getLocationById(id).imageName;
   }
 
-  public static isSeabed(locationId: string | null): boolean {
+  public static isSeabed(locationId: string): boolean {
     return this.getRegionByLocationId(locationId) === LocationRegionConstant.seabed;
   }
 

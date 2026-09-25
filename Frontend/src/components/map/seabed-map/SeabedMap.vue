@@ -3,7 +3,7 @@ import { computed } from "vue";
 import Location from "@/components/map/Location.vue";
 import Enemies from "@/components/map/Enemies.vue";
 import Seabed from "./Seabed.vue";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import { SeabedMapPresenter } from "@/presenters/map/seabed-map.presenter.ts";
 
 const emit = defineEmits<{
@@ -11,18 +11,18 @@ const emit = defineEmits<{
   (e: "open-location-wiki", locationId: string): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const locationId = computed(() => {
-  return store.currentState?.player?.mapId ?? null;
+  return gameState.value.player.mapId;
 });
 
 const seabedRoute = computed(() => {
-  return store.currentState?.player?.seabedRoute ?? 0;
+  return gameState.value.player.seabedRoute;
 });
 
 const mapVariant = computed(() => {
-  return store.currentState?.player?.mapVariant ?? 0;
+  return gameState.value.player.mapVariant;
 });
 
 const enemyIds = computed(() => {

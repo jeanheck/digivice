@@ -17,7 +17,7 @@ export class LocationEncounterHelper {
 
   public static resolveWalkingIds(
     locationId: string,
-    mainQuest: Quest | null,
+    mainQuest: Quest,
     previousMapId: string,
   ): string[] {
     if (this.isAsukaSewersSafeZone(locationId, previousMapId)) {

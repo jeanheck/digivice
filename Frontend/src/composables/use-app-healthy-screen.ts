@@ -46,6 +46,14 @@ export function useAppHealthyScreen() {
       };
     }
 
+    if (store.currentState === null) {
+      return {
+        kind: "loading",
+        titleKey: "errors.loading.title",
+        hintKey: "errors.loading.hint",
+      };
+    }
+
     return null;
   });
 }

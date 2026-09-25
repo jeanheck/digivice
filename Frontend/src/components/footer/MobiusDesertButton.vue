@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 import MobiusDesertModal from "@/components/mobius-desert-modal/MobiusDesertModal.vue";
 import { MobiusDesertButtonPresenter } from "@/presenters/footer/mobius-desert-button.presenter";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 
 const emit = defineEmits<{
   (e: "show-tooltip", event: MouseEvent): void;
@@ -10,22 +10,18 @@ const emit = defineEmits<{
   (e: "hide-tooltip"): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 const isMobiusDesertModalOpen = ref(false);
 
 const locationViewModel = computed(() => {
-  const locationId = store.currentState?.player?.mapId ?? null;
-  if (locationId === null) {
-    return null;
-  }
-
-  const mainQuest = store.currentState?.journal?.mainQuest ?? null;
-
-  return MobiusDesertButtonPresenter.getLocation(locationId, mainQuest);
+  return MobiusDesertButtonPresenter.getLocation(
+    gameState.value.player.mapId,
+    gameState.value.journal.mainQuest,
+  );
 });
 
 const mapVariant = computed(() => {
-  return store.currentState?.player?.mapVariant ?? 0;
+  return gameState.value.player.mapVariant;
 });
 
 function onClick(): void {

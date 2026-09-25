@@ -3,11 +3,7 @@ import type { NpcMainQuestStepDoneRaw } from "@/repositories/tables/raws/npc/npc
 import type { QuestRaw } from "@/repositories/tables/raws/quest/quest.raw";
 
 export class QuestService {
-  public static getLastCompletedMainQuestStep(mainQuest: Quest | null): number {
-    if (mainQuest === null) {
-      return 0;
-    }
-
+  public static getLastCompletedMainQuestStep(mainQuest: Quest): number {
     const completedSteps = mainQuest.steps.filter((step) => {
       return step.isDone;
     });

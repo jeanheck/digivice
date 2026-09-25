@@ -6,7 +6,7 @@ import Steps from "./Steps.vue";
 import Requisites from "./Requisites.vue";
 import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 import { QuestModalPresenter } from "@/presenters/journal/quest-modal.presenter.ts";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 
 const props = defineProps<{
   questId: string | null;
@@ -17,20 +17,18 @@ const emit = defineEmits<{
   (e: "close"): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const questViewModel = computed(() => {
   if (props.questId === null) {
     return null;
   }
 
-  const journal = store.currentState?.journal;
-  if (journal === null || journal === undefined) {
-    return null;
-  }
-
-  const party = store.currentState?.party ?? { slots: [] };
-  return QuestModalPresenter.getQuestViewModel(journal, props.questId, party);
+  return QuestModalPresenter.getQuestViewModel(
+    gameState.value.journal,
+    props.questId,
+    gameState.value.party,
+  );
 });
 
 const isModalOpen = computed(() => {

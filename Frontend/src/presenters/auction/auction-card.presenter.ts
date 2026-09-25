@@ -4,8 +4,8 @@ import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 export class AuctionCardPresenter {
   public static getAvailableAuction(
-    auctions: Auctions | null,
-    mainQuest: Quest | null,
+    auctions: Auctions,
+    mainQuest: Quest,
   ): AuctionViewModel | null {
     return AuctionService.getAvailableAuction(auctions, mainQuest);
   }

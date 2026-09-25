@@ -9,13 +9,13 @@ import Tooltip from "@/components/tooltip/Tooltip.vue";
 import StatsTooltip from "./StatsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { StatsPresenter } from "@/presenters/party/digimon/stats.presenter.ts";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 
 const props = defineProps<{
   digimon: Digimon;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 const { t } = useI18n();
 const tooltipPlacement = "below" as const;
 const tooltipPosition = useTooltipPosition();
@@ -29,7 +29,7 @@ const titleTooltipContent = ref("");
 const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0, battleDelta: 0 });
 
 const location = computed(() => {
-  return store.currentState?.player?.mapId ?? null;
+  return gameState.value.player.mapId;
 });
 
 const statsViewModel = computed(() => {

@@ -2,18 +2,17 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { CardBattlePresenter } from "@/presenters/map/card-battle.presenter";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 
 const emit = defineEmits<{
   (e: "open-npc-modal", npcId: string): void;
 }>();
 
-const store = useGameStore();
+const gameState = useGameState();
 const { t } = useI18n();
 
 const cardBattleViewModel = computed(() => {
-  const cardBattleId = store.currentState?.cardBattle?.id ?? null;
-  return CardBattlePresenter.getViewModel(cardBattleId);
+  return CardBattlePresenter.getViewModel(gameState.value.cardBattle.id);
 });
 
 const titleClass =

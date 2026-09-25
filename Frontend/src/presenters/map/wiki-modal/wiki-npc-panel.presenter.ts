@@ -33,7 +33,7 @@ export class WikiNpcPanelPresenter {
     trophyRequired: TamerTrophyRequiredRaw | undefined,
     won: boolean,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): WikiNpcBattleOptionViewModel {
     const requirementsMet = NpcService.areBattleRequirementsMet(
       charismaRequired,
@@ -88,7 +88,7 @@ export class WikiNpcPanelPresenter {
   private static applyCardActivation(
     option: WikiNpcBattleOptionViewModel,
     activeCardBattleIds: Set<string>,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
     activeTrophyRequired: TamerTrophyRequiredRaw | undefined,
   ): void {
     const isActive = activeCardBattleIds.has(option.battleId);
@@ -141,7 +141,7 @@ export class WikiNpcPanelPresenter {
     npcId: string,
     journalNpc: Npc | null,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): WikiNpcBattleOptionViewModel[] {
     const opponent = NpcBattleOpponentHelper.resolveById(npcId);
     if (opponent === undefined) {
@@ -273,7 +273,7 @@ export class WikiNpcPanelPresenter {
     npcId: string,
     journalNpc: Npc | null,
     partyCharisma: number,
-    importantItems: ImportantItems | null | undefined,
+    importantItems: ImportantItems,
   ): WikiNpcPanelViewModel | null {
     const opponent = NpcBattleOpponentHelper.resolveById(npcId);
     const nameKey = NpcBattleOpponentHelper.getNameKey(npcId);

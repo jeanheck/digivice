@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { useGameStore } from "@/stores/use-game-store";
+import { useGameState } from "@/composables/use-game-state";
 import Digimon from "@/components/party/digimon/Digimon.vue";
 import { PartyPresenter } from "@/presenters/party/party.presenter";
 
-const store = useGameStore();
+const gameState = useGameState();
 
 const filledSlots = computed(() => {
-  return PartyPresenter.getFilledSlots(store.currentState?.party?.slots);
+  return PartyPresenter.getFilledSlots(gameState.value.party.slots);
 });
 </script>
 

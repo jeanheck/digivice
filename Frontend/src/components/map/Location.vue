@@ -5,7 +5,7 @@ import { LocationService } from "@/services/location.service";
 
 const props = withDefaults(
   defineProps<{
-    locationId: string | null;
+    locationId: string;
     titleOverride?: string | null;
     isSafeZone?: boolean;
   }>(),
@@ -26,14 +26,10 @@ const locationName = computed(() => {
     return props.titleOverride;
   }
 
-  return props.locationId ? t(`location.${props.locationId}`) : t("map.unknownZone");
+  return t(`location.${props.locationId}`);
 });
 
 const isClickable = computed(() => {
-  if (props.locationId === null) {
-    return false;
-  }
-
   return LocationService.getWorldLocation(props.locationId) !== undefined;
 });
 
