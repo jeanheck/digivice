@@ -26,9 +26,9 @@ public static class DigievolutionDiffer
             dto = dto with { Level = newDigievolution.Level };
         }
 
-        if (newDigievolution.Dvxp != previousDigievolution.Dvxp)
+        if (newDigievolution.Dvexp != previousDigievolution.Dvexp)
         {
-            dto = dto with { Dvxp = newDigievolution.Dvxp };
+            dto = dto with { Dvexp = newDigievolution.Dvexp };
         }
 
         return dto;

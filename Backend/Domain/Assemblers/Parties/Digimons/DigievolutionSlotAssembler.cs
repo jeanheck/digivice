@@ -29,7 +29,7 @@ namespace Backend.Domain.Assemblers.Parties.Digimons
                 Digievolution = new Digievolution
                 {
                     Level = storedDigievolution?.Level ?? 1,
-                    Dvxp = Math.Max(0, storedDigievolution?.Dvxp ?? 0)
+                    Dvexp = Math.Max(0, storedDigievolution?.Dvexp ?? 0)
                 }
             };
         }

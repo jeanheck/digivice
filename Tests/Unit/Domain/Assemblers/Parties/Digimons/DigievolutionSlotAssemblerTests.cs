@@ -11,8 +11,8 @@ public class DigievolutionSlotAssemblerTests
         var resource = new DigievolutionSlotResource { Index = 1, DigievolutionId = 32 };
         List<StoredDigievolutionResource> storedDigievolutions =
         [
-            new() { DigievolutionId = 10, Level = 3, Dvxp = 50 },
-            new() { DigievolutionId = 32, Level = 15, Dvxp = 700 }
+            new() { DigievolutionId = 10, Level = 3, Dvexp = 50 },
+            new() { DigievolutionId = 32, Level = 15, Dvexp = 700 }
         ];
 
         var result = DigievolutionSlotAssembler.Assemble(resource, storedDigievolutions);
@@ -21,16 +21,16 @@ public class DigievolutionSlotAssemblerTests
         Assert.Equal(32, result.DigievolutionId);
         Assert.NotNull(result.Digievolution);
         Assert.Equal(15, result.Digievolution.Level);
-        Assert.Equal(700, result.Digievolution.Dvxp);
+        Assert.Equal(700, result.Digievolution.Dvexp);
     }
 
     [Fact]
-    public void Assemble_ShouldUseDefaultLevelAndDvxp_WhenIdIsNotStored()
+    public void Assemble_ShouldUseDefaultLevelAndDvexp_WhenIdIsNotStored()
     {
         var resource = new DigievolutionSlotResource { Index = 2, DigievolutionId = 32 };
         List<StoredDigievolutionResource> storedDigievolutions =
         [
-            new() { DigievolutionId = 10, Level = 3, Dvxp = 50 }
+            new() { DigievolutionId = 10, Level = 3, Dvexp = 50 }
         ];
 
         var result = DigievolutionSlotAssembler.Assemble(resource, storedDigievolutions);
@@ -39,7 +39,7 @@ public class DigievolutionSlotAssemblerTests
         Assert.Equal(32, result.DigievolutionId);
         Assert.NotNull(result.Digievolution);
         Assert.Equal(1, result.Digievolution.Level);
-        Assert.Equal(0, result.Digievolution.Dvxp);
+        Assert.Equal(0, result.Digievolution.Dvexp);
     }
 
     [Theory]
@@ -47,18 +47,18 @@ public class DigievolutionSlotAssemblerTests
     [InlineData(int.MinValue, 0)]
     [InlineData(0, 0)]
     [InlineData(1, 1)]
-    public void Assemble_ShouldClampNegativeDvxpToZero(int rawDvxp, int expectedDvxp)
+    public void Assemble_ShouldClampNegativeDvexpToZero(int rawDvexp, int expectedDvexp)
     {
         var resource = new DigievolutionSlotResource { Index = 1, DigievolutionId = 32 };
         List<StoredDigievolutionResource> storedDigievolutions =
         [
-            new() { DigievolutionId = 32, Level = 4, Dvxp = rawDvxp }
+            new() { DigievolutionId = 32, Level = 4, Dvexp = rawDvexp }
         ];
 
         var result = DigievolutionSlotAssembler.Assemble(resource, storedDigievolutions);
 
         Assert.NotNull(result.Digievolution);
-        Assert.Equal(expectedDvxp, result.Digievolution.Dvxp);
+        Assert.Equal(expectedDvexp, result.Digievolution.Dvexp);
     }
 
     [Theory]

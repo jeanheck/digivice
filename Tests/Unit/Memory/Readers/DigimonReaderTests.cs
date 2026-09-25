@@ -254,8 +254,8 @@ public class DigimonReaderTests
 
         var storedDigievolutions = new List<StoredDigievolutionResource>
         {
-            new() { DigievolutionId = 12, Level = 10, Dvxp = 500 },
-            new() { DigievolutionId = 15, Level = 25, Dvxp = 1200 },
+            new() { DigievolutionId = 12, Level = 10, Dvexp = 500 },
+            new() { DigievolutionId = 15, Level = 25, Dvexp = 1200 },
             new() { DigievolutionId = 99, Level = 5 }
         };
 
@@ -280,7 +280,7 @@ public class DigimonReaderTests
         Assert.Equal(slotResource1, result.Digievolutions[0]);
         Assert.Equal(slotResource2, result.Digievolutions[1]);
         Assert.Equal(3, result.StoredDigievolutions.Count);
-        Assert.Equal(1200, result.StoredDigievolutions[1].Dvxp);
+        Assert.Equal(1200, result.StoredDigievolutions[1].Dvexp);
         Assert.Equal(99, result.StoredDigievolutions[2].DigievolutionId);
         Assert.Equal(5, result.StoredDigievolutions[2].Level);
     }

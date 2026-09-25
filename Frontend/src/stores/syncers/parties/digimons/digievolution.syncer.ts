@@ -9,8 +9,8 @@ export class DigievolutionSyncer {
     if (digievolutionDto.level !== undefined) {
       previousDigievolution.level = digievolutionDto.level;
     }
-    if (digievolutionDto.dvxp !== undefined) {
-      previousDigievolution.dvxp = digievolutionDto.dvxp;
+    if (digievolutionDto.dvexp !== undefined) {
+      previousDigievolution.dvexp = digievolutionDto.dvexp;
     }
   }
 }

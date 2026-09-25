@@ -10,5 +10,5 @@ public record class DigievolutionDTO : IDTO
     public Optional<int> Level { get; init; } = Optional<int>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<int> Dvxp { get; init; } = Optional<int>.Empty;
+    public Optional<int> Dvexp { get; init; } = Optional<int>.Empty;
 }

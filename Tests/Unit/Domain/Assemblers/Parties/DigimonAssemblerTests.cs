@@ -75,7 +75,7 @@ public class DigimonAssemblerTests
                 new DigievolutionSlotResource { Index = 0, DigievolutionId = 1 }
             ],
             StoredDigievolutions = [
-                new StoredDigievolutionResource { DigievolutionId = 1, Level = 5, Dvxp = 200 },
+                new StoredDigievolutionResource { DigievolutionId = 1, Level = 5, Dvexp = 200 },
                 new StoredDigievolutionResource { DigievolutionId = 99, Level = 12 }
             ]
         };
@@ -124,7 +124,7 @@ public class DigimonAssemblerTests
         Assert.Single(result.Digievolutions);
         Assert.Equal(1, result.Digievolutions[0].DigievolutionId);
         Assert.Equal(5, result.Digievolutions[0].Digievolution!.Level);
-        Assert.Equal(200, result.Digievolutions[0].Digievolution!.Dvxp);
+        Assert.Equal(200, result.Digievolutions[0].Digievolution!.Dvexp);
 
         Assert.Equal(2, result.StoredDigievolutions.Count);
         Assert.Equal(99, result.StoredDigievolutions[1].DigievolutionId);

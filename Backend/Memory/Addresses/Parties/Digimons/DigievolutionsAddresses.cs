@@ -24,7 +24,7 @@ namespace Backend.Memory.Addresses.Parties.Digimons
         public int Level { get; set; }
 
         [JsonConverter(typeof(HexOrIntStringToIntConverter))]
-        public int Dvxp { get; set; }
+        public int Dvexp { get; set; }
 
         public void Deconstruct(
             out int unlockedDigievolutionsStart,

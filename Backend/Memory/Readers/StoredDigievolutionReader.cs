@@ -29,7 +29,7 @@ namespace Backend.Memory.Readers
                 {
                     DigievolutionId = digievolutionId,
                     Level = memoryBlockReader.ReadInt16(offset + digievolutionsAddresses.Level),
-                    Dvxp = memoryBlockReader.ReadInt32(offset + digievolutionsAddresses.Dvxp)
+                    Dvexp = memoryBlockReader.ReadInt32(offset + digievolutionsAddresses.Dvexp)
                 });
             }
 

@@ -75,7 +75,7 @@ public class ModelEqualityTests
             [nameof(Digimon.Attributes)] = digimon => digimon.Attributes.Strength++,
             [nameof(Digimon.Resistances)] = digimon => digimon.Resistances.Fire++,
             [nameof(Digimon.Equipments)] = digimon => digimon.Equipments.Head = null,
-            [nameof(Digimon.Digievolutions)] = digimon => digimon.Digievolutions[0].Digievolution!.Dvxp++,
+            [nameof(Digimon.Digievolutions)] = digimon => digimon.Digievolutions[0].Digievolution!.Dvexp++,
             [nameof(Digimon.StoredDigievolutions)] = digimon => digimon.StoredDigievolutions[0].Level++,
             [nameof(Digimon.ActiveDigievolutionId)] = digimon => digimon.ActiveDigievolutionId = null,
         });
@@ -96,11 +96,11 @@ public class ModelEqualityTests
     public void Digievolution_ShouldCompareEveryProperty()
     {
         AssertEveryPropertyAffectsEquality(
-            () => new Digievolution { Level = 5, Dvxp = 100 },
+            () => new Digievolution { Level = 5, Dvexp = 100 },
             new Dictionary<string, Action<Digievolution>>
             {
                 [nameof(Digievolution.Level)] = digievolution => digievolution.Level++,
-                [nameof(Digievolution.Dvxp)] = digievolution => digievolution.Dvxp++,
+                [nameof(Digievolution.Dvexp)] = digievolution => digievolution.Dvexp++,
             });
     }
 

@@ -8,6 +8,6 @@ public static class DigievolutionConverter
     public static DigievolutionDTO ToDTO(Digievolution digievolution) => new()
     {
         Level = digievolution.Level,
-        Dvxp = digievolution.Dvxp
+        Dvexp = digievolution.Dvexp
     };
 }

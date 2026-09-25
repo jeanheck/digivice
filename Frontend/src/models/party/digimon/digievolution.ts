@@ -1,4 +1,4 @@
 export interface Digievolution {
   level: number;
-  dvxp: number;
+  dvexp: number;
 }

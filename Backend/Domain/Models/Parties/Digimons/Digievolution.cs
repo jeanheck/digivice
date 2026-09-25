@@ -3,7 +3,7 @@ namespace Backend.Domain.Models.Parties.Digimons
     public record class Digievolution
     {
         public int Level { get; set; }
-        public int Dvxp { get; set; }
+        public int Dvexp { get; set; }
 
         public virtual bool Equals(Digievolution? other)
         {
@@ -13,14 +13,14 @@ namespace Backend.Domain.Models.Parties.Digimons
             }
 
             return Level == other.Level &&
-                   Dvxp == other.Dvxp;
+                   Dvexp == other.Dvexp;
         }
 
         public override int GetHashCode()
         {
             var hash = new HashCode();
             hash.Add(Level);
-            hash.Add(Dvxp);
+            hash.Add(Dvexp);
             return hash.ToHashCode();
         }
     }

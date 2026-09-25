@@ -56,6 +56,6 @@
         "MaxUnlockedDigievolutions": "60",
         "Id": "0x00",
         "Level": "0x02",
-        "Dvxp": "0x04"
+        "Dvexp": "0x04"
     }
 }
