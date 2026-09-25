@@ -16,7 +16,7 @@ It's the companion you wished you had when you first walked through Asuka Server
 
 You can see more in the video below:
 
-[![Digivice 3.5.0 (Latest major release)](https://img.youtube.com/vi/YiSux3BAHHc/hqdefault.jpg)](https://www.youtube.com/watch?v=YiSux3BAHHc)
+[![Digivice 3.5.0 (Latest major release)](https://img.youtube.com/vi/hxhppn5j9Gg/hqdefault.jpg)](https://www.youtube.com/watch?v=hxhppn5j9Gg)
 
 ## The current state
 
