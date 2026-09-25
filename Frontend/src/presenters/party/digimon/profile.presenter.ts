@@ -3,12 +3,12 @@ import type { Digimon } from "@/models/party/digimon/digimon";
 import type { InBattle } from "@/models/party/digimon/in-battle";
 import type { Vital } from "@/models/party/digimon/vital";
 import { DigimonRepository } from "@/repositories/digimon.repository";
-import { DigimonBattleService } from "@/services/digimon-battle.service";
 import { DigimonService } from "@/services/digimon.service";
+import { DigimonBattleSelector } from "@/stores/selectors/digimon-battle.selector";
 
 export class ProfilePresenter {
   public static isInBattle(location: string | null, inBattle: InBattle): boolean {
-    return DigimonBattleService.isInBattle(location, inBattle);
+    return DigimonBattleSelector.isInBattle(location, inBattle);
   }
 
   public static getHp(digimon: Digimon, isInBattle: boolean): Vital {

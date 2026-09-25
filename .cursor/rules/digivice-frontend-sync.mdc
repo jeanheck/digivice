@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Fluxo
 
-`signalr.handlers.ts` → `useGameStore` (`setInitialState` / `sync{Entity}`) → `events/converters/{entity}.converter.ts` (bootstrap completo) ou `stores/syncers/{entity}.syncer.ts` (patch incremental) → `currentState.{entity}` (model).
+`signalr.handlers.ts` → `useGameStore` (`setInitialState` / `sync{Entity}`) → `events/converters/{entity}.converter.ts` (bootstrap completo) ou `stores/syncers/{entity}.syncer.ts` (patch incremental) → `currentState.{entity}` (model) → `stores/selectors/{assunto}.selector.ts` (informação nova derivada do model).
 
 | Camada | Pasta | Convenção |
 |--------|-------|-----------|
@@ -18,6 +18,7 @@ alwaysApply: false
 | Model | `models/` (subpastas `party/`, `journal/`, `battle/`) | Propriedades obrigatórias; reexport em `models/index.ts` |
 | Syncer | `stores/syncers/` | Estático `sync(previous, dto)`; muta o model existente |
 | Store | `stores/use-game-store.ts` | Uma action `sync{Entity}` por evento; `setInitialState` chama todos os converters |
+| Selector | `stores/selectors/` | Classe `{Assunto}Selector` em `{assunto}.selector.ts`; métodos estáticos e puros; recebe model(s) ou `State`, devolve informação nova |
 
 ## Regras
 
@@ -25,4 +26,10 @@ alwaysApply: false
 - `null` explícito é valor válido (ex.: `enemy: null`, `activeDigievolutionId: null`) e deve ser aplicado.
 - Syncers só **patcham** entidades já presentes do `InitialState`; não criam listas/itens novos (missões, NPCs, slots são fixos).
 - Nomes: camelCase igual ao JSON do backend (System.Text.Json camelCase). Rename existente: domínio `MapId` → DTO/model `location`.
+- **Selectors:**
+  - Usam **apenas** dados do model (nada de repositórios, dados estáticos, i18n ou imagens — isso é presenter/service).
+  - Nunca mutam o model nem gravam o valor derivado nele (o model continua espelho fiel do DTO).
+  - Informação global que cruza entidades → `computed` no `useGameStore` chamando o selector. Informação por item → função pura chamada pelos presenters.
+  - Normalização de dado bruto da RAM (sentinela, negativo) é do backend (Assembler), não do selector.
+  - Existentes: `DigimonBattleSelector` (`isInBattle`), `DigievolutionSelector` (`getDvxpProgress`).
 - Não crie syncer/DTO paralelo para um campo novo — estenda o da entidade (skill `address-field-frontend`). Entidade nova → skill `memory-entity-frontend`.

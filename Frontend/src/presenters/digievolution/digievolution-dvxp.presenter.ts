@@ -1,11 +1,9 @@
+import { DigievolutionSelector } from "@/stores/selectors/digievolution.selector";
+
 export class DigievolutionDvxpPresenter {
-  public static readonly MAX_DVXP_BY_LEVEL = 10;
+  public static readonly MAX_DVXP_BY_LEVEL = DigievolutionSelector.DVXP_PER_LEVEL;
 
   public static getCalculatedDvxp(dvxp: number): number {
-    if (dvxp < 0) {
-      return 0;
-    }
-
-    return Math.floor(dvxp) % 10;
+    return DigievolutionSelector.getDvxpProgress(dvxp);
   }
 }

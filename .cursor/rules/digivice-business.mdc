@@ -27,9 +27,16 @@ graph TD
         handlers --> converters[events converters]
         converters --> syncers[Syncers]
         syncers --> pinia[useGameStore]
+        pinia --> selectors[Selectors]
         pinia --> components[Componentes Vue]
+        selectors --> components
     end
 ```
+
+- **Responsabilidades:**
+  - **Backend** lê a RAM e normaliza o necessário para que cada dado tenha significado próprio (sentinela → `null`, valor inválido ajustado — ex.: negativo → `0`). Não gera informação composta.
+  - **Frontend** gera informação nova a partir de dados já consistentes, em `stores/selectors/` (ex.: `isInBattle` = `mapId` + `inBattle.hp.max`; progresso de DVXP = `dvxp % 10`).
+  - Composição com dados estáticos (repositórios, equipamentos, i18n) fica em presenters/services, não em selectors.
 
 - **Game loop:** `GameLoopService` compõe o `State` via `StateComposer` a cada `GameLoop:PollingIntervalMs` (default **500ms**). Também emite `HealthChanged` (`HealthEventFactory`) para conexão com o emulador.
 - **Composição:** `StateComposer` → `I{Entity}Provider.Get()` → `{Entity}Loader` → `{Entity}Assembler`. Entidades do `State`: `Player`, `ImportantItems`, `Party`, `DigimonBattle`, `CardBattle`, `Auctions`, `Npcs`, `Journal`.
@@ -58,6 +65,7 @@ graph TD
 - Slot de digievolução: vazio ou preenchido. Válido: vazio→preenchido e preenchido(X)→preenchido(Y). **Proibido:** preenchido→vazio.
 - UI “empty” = slot que **nunca** foi preenchido (RAM `0` → domínio `null`), não um slot que “perdeu” evolução.
 - **Level/Dvxp do slot** (`DigievolutionSlotAssembler`): cruzamento por id com `StoredDigievolutions`; id ausente da lista → `Level = 1`, `Dvxp = 0`.
+- **DVXP:** valor **acumulado**, nunca zera. Cada 10 de DVXP = 1 nível, para **qualquer** digievolução (sem tabela individual). Progresso dentro do nível = `dvxp % 10` (0–9), calculado no `DigievolutionSelector`. RAM negativa → `0` no `DigievolutionSlotAssembler`.
 - **ActiveDigievolutionId:** sem evolução ativa = `null` (Assembler: RAM `<= 0`, inclusive sentinela `0xFFFF`, → `null`; não usar `0` como “vazio” no contrato).
 - **Equipamentos:** slot vazio = `null` (Assembler: RAM `<= 0` → `null`); frontend só repassa.
 - Técnicas por `digievolutionId` em JSON estático (`digievolution-technique.json`); assinatura = maior `learnLevel`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
@@ -68,6 +76,8 @@ graph TD
 
 - **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null envia `enemy: null` explícito; o syncer zera e recria o objeto completo quando um novo aparece.
 - **Campo:** `Field = 0` é o campo **neutro** (valor válido, não "vazio").
+- **Digimon em batalha** (`DigimonBattleSelector.isInBattle`): `mapId === "0600"` **e** `inBattle.hp.max !== 0` daquele Digimon. O `hp.max` é trava de carregamento: na transição o `mapId` já é `0600` mas os dados de batalha ainda podem não estar carregados.
+- **Mapa em batalha** (`MapPresenter.isInBattle`): considera **apenas** `mapId === "0600"` — intencional.
 - **Card battle** (`CardBattleAssembler`): sem card battle = `Id null` (RAM `<= 0` → `null`).
 
 ## Important items, Auctions e NPCs

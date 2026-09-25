@@ -155,6 +155,22 @@ progress flags. Important items (DRI DNA) may persist after quest hand-in.
 
 Diffs here are expected after battles; usually not quest flags.
 
+### Stored (unlocked) digievolutions — per Digimon
+
+Offsets in `DigimonStatusAddresses.json` → `Digievolutions` (`UnlockedDigievolutionsStart`, `UnlockedDigievolutionEntryStride`, `MaxUnlockedDigievolutions`), relative to each digimon base.
+
+- **Stack by unlock order:** the first unlocked digievolution takes the first entry; order differs between Digimons (not a fixed list per digievolution id).
+- Entry stride **20 bytes**, max **60** entries.
+
+| Entry offset | Size | Field |
+|--------------|------|-------|
+| `+0x00` | Int16 | Digievolution **Id** |
+| `+0x02` | Int16 | **Level** |
+| `+0x04` | Int32 | **DVXP** — cumulative, never resets; 10 DVXP = 1 level for any digievolution |
+| `+0x08`…`+0x13` | 12 bytes | Unmapped (stable in Kotemon lv 14→15 test) |
+
+- Empty entries: zeroed or garbage pattern like `7F 96 98 00` — no valid Id/Level/DVXP.
+
 ---
 
 ## Noise — discard unless specifically investigating

@@ -8,8 +8,8 @@ import {
   ResistancesConverter,
   type ResistancesEquipmentBonuses,
 } from "@/presenters/converter/resistances.converter";
-import { DigimonBattleService } from "@/services/digimon-battle.service";
 import { EquipmentService } from "@/services/equipment.service";
+import { DigimonBattleSelector } from "@/stores/selectors/digimon-battle.selector";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import type { EquipmentRaw } from "@/repositories/tables/raws/equipment/equipment.raw";
@@ -19,7 +19,7 @@ import type { DigievolutionViewModel } from "@/viewmodels/digievolution/digievol
 
 export class StatsPresenter {
   public static getStatsViewModel(digimon: Digimon, location: string | null): DigimonStatsViewModel {
-    const isInBattle = DigimonBattleService.isInBattle(location, digimon.inBattle);
+    const isInBattle = DigimonBattleSelector.isInBattle(location, digimon.inBattle);
     const activeDigievolution =
       digimon.activeDigievolutionId !== null
         ? this.getDigievolutionById(digimon.activeDigievolutionId)

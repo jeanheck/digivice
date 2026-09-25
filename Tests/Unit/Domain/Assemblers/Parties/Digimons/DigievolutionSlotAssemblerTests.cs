@@ -43,6 +43,25 @@ public class DigievolutionSlotAssemblerTests
     }
 
     [Theory]
+    [InlineData(-1, 0)]
+    [InlineData(int.MinValue, 0)]
+    [InlineData(0, 0)]
+    [InlineData(1, 1)]
+    public void Assemble_ShouldClampNegativeDvxpToZero(int rawDvxp, int expectedDvxp)
+    {
+        var resource = new DigievolutionSlotResource { Index = 1, DigievolutionId = 32 };
+        List<StoredDigievolutionResource> storedDigievolutions =
+        [
+            new() { DigievolutionId = 32, Level = 4, Dvxp = rawDvxp }
+        ];
+
+        var result = DigievolutionSlotAssembler.Assemble(resource, storedDigievolutions);
+
+        Assert.NotNull(result.Digievolution);
+        Assert.Equal(expectedDvxp, result.Digievolution.Dvxp);
+    }
+
+    [Theory]
     [InlineData(0)]
     [InlineData(-1)]
     public void Assemble_ShouldReturnNullFields_WhenDigievolutionIdIsNotPositive(int rawDigievolutionId)
