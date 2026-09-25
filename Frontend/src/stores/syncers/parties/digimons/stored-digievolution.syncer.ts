@@ -4,10 +4,10 @@ import type { StoredDigievolutionDTO } from "@/events/dto/parties/digimons/store
 export class StoredDigievolutionSyncer {
   public static sync(
     previousStoredDigievolution: StoredDigievolution,
-    storedDigievolutionDto: StoredDigievolutionDTO,
+    newStoredDigievolutionDto: StoredDigievolutionDTO,
   ): void {
-    if (storedDigievolutionDto.level !== undefined) {
-      previousStoredDigievolution.level = storedDigievolutionDto.level;
+    if (newStoredDigievolutionDto.level !== undefined) {
+      previousStoredDigievolution.level = newStoredDigievolutionDto.level;
     }
   }
 }

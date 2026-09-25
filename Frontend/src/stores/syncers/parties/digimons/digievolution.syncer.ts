@@ -4,13 +4,13 @@ import type { DigievolutionDTO } from "@/events/dto/parties/digimons/digievoluti
 export class DigievolutionSyncer {
   public static sync(
     previousDigievolution: Digievolution,
-    digievolutionDto: DigievolutionDTO,
+    newDigievolutionDto: DigievolutionDTO,
   ): void {
-    if (digievolutionDto.level !== undefined) {
-      previousDigievolution.level = digievolutionDto.level;
+    if (newDigievolutionDto.level !== undefined) {
+      previousDigievolution.level = newDigievolutionDto.level;
     }
-    if (digievolutionDto.dvexp !== undefined) {
-      previousDigievolution.dvexp = digievolutionDto.dvexp;
+    if (newDigievolutionDto.dvexp !== undefined) {
+      previousDigievolution.dvexp = newDigievolutionDto.dvexp;
     }
   }
 }

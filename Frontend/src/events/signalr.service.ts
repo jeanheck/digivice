@@ -8,19 +8,27 @@ import { formatHubConnectionError } from "./hub-connection-error";
 const CONNECTION_MAX_ATTEMPTS = 20;
 const CONNECTION_RETRY_DELAY_MS = 250;
 
+type HandlersMap = { [K in keyof EventsMap]?: ((data: EventsMap[K]) => void)[] };
+
 class SignalRService {
   private connection: signalR.HubConnection | null = null;
-  // Stores handlers in a typed manner
-  private handlers: Map<keyof EventsMap, ((data: any) => void)[]> = new Map();
+  private handlers: HandlersMap = {};
 
   /**
    * Subscribe to a SignalR event with strong typing.
+   * Can be called before or after startConnection.
    */
   public on<K extends keyof EventsMap>(eventName: K, handler: (data: EventsMap[K]) => void) {
-    if (!this.handlers.has(eventName)) {
-      this.handlers.set(eventName, []);
+    const eventHandlers: ((data: EventsMap[K]) => void)[] = this.handlers[eventName] ?? [];
+    const isFirstHandler = eventHandlers.length === 0;
+
+    eventHandlers.push(handler);
+    // TS cannot correlate the generic K on indexed writes to a mapped type.
+    this.handlers[eventName] = eventHandlers as HandlersMap[K];
+
+    if (isFirstHandler) {
+      this.bindBackendEvent(eventName);
     }
-    this.handlers.get(eventName)?.push(handler);
   }
 
   private async getHubUrl(): Promise<string> {
@@ -55,11 +63,10 @@ class SignalRService {
 
   public async startConnection() {
     const hubUrl = await this.getHubUrl();
+    const connection = this.createConnection(hubUrl);
     let lastError: unknown = null;
 
     for (let attempt = 1; attempt <= CONNECTION_MAX_ATTEMPTS; attempt++) {
-      const connection = this.createConnection(hubUrl);
-
       try {
         await connection.start();
         signalRLogger.info(`Connected to GameHub at: ${hubUrl}`);
@@ -114,28 +121,27 @@ class SignalRService {
   }
 
   private registerBackendEvents() {
-    if (!this.connection) {
-      return;
-    }
-
-    // Filter out internal client-only events from remote hub registrations
-    const backendEventNames = Array.from(this.handlers.keys()).filter(
-      (name) => name !== "HubConnectionStatusChanged",
-    );
-
-    for (const eventName of backendEventNames) {
-      this.connection.on(eventName, (eventDto: EventDTO<EventsMap[typeof eventName]>) => {
-        signalRLogger.debug(`Hub Event [${eventName}]`, eventDto);
-        this.emit(eventName, eventDto.payload);
-      });
+    const eventNames = Object.keys(this.handlers) as (keyof EventsMap)[];
+    for (const eventName of eventNames) {
+      this.bindBackendEvent(eventName);
     }
   }
 
-  private emit<K extends keyof EventsMap>(eventName: K, data: EventsMap[K]) {
-    const eventHandlers = this.handlers.get(eventName);
-    if (eventHandlers) {
-      eventHandlers.forEach((handler) => handler(data));
+  private bindBackendEvent<K extends keyof EventsMap>(eventName: K): void {
+    // HubConnectionStatusChanged is emitted locally, never by the hub.
+    if (!this.connection || eventName === "HubConnectionStatusChanged") {
+      return;
     }
+
+    this.connection.on(eventName, (eventDto: EventDTO<EventsMap[K]>) => {
+      signalRLogger.debug(`Hub Event [${eventName}]`, eventDto);
+      this.emit(eventName, eventDto.payload);
+    });
+  }
+
+  private emit<K extends keyof EventsMap>(eventName: K, data: EventsMap[K]) {
+    const eventHandlers: ((data: EventsMap[K]) => void)[] | undefined = this.handlers[eventName];
+    eventHandlers?.forEach((handler) => handler(data));
   }
 }
 

@@ -17,10 +17,8 @@ app.use(i18n);
 
 initializeTauriBackendProcessListener();
 
-// Initializes the handlers (bridge between SignalR and Pinia)
 initializeSignalRHandlers();
 
-// Initiates real-time communication with the backend.
 signalRService.startConnection();
 
 app.mount("#app");
