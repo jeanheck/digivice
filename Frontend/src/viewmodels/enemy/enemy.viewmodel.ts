@@ -57,7 +57,7 @@ export interface EnemyViewModel {
   strDown: string;
   defDown: string;
   spdDown: string;
-  dvxp?: number;
+  dvexp?: number;
   exp?: number;
   bits?: number;
   drops?: EnemyDropViewModel[];

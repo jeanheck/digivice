@@ -64,8 +64,8 @@ export class EnemyConverter {
       boss: enemyRaw.boss === true,
     };
 
-    if (enemyRaw.dvxp !== undefined) {
-      enemyViewModel.dvxp = enemyRaw.dvxp;
+    if (enemyRaw.dvexp !== undefined) {
+      enemyViewModel.dvexp = enemyRaw.dvexp;
     }
     if (enemyRaw.exp !== undefined) {
       enemyViewModel.exp = enemyRaw.exp;

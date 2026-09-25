@@ -35,7 +35,7 @@ export interface EnemyRaw {
   defDown: string;
   spdDown: string;
   canEscape: boolean;
-  dvxp?: number;
+  dvexp?: number;
   exp?: number;
   bits?: number;
   drops?: EnemyDropRaw[];
