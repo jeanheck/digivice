@@ -4,7 +4,8 @@ description: >-
   Continues Digimon World 2003 investigation of map subzones and encounter
   regions (same MapId, different enemy pools). Use when the user mentions Plug
   Cape zones, Asuka Sewers safe vs danger, Makisha grids / stage_encounter_areas,
-  0x0E2E0 / 0x4DE30 / 0x48D82, or Digivice location enemies per sub-area.
+  0x0E2E0 / 0x4DE30 / 0x48D82, player tile coordinates, or Digivice location
+  enemies per sub-area.
 ---
 
 # Map Subzone Investigate
@@ -14,9 +15,10 @@ basics from scratch — read the handoff doc first.
 
 ## Required reading (in order)
 
-1. [`.cursor/skills/memory-compare/map-subzones-investigation.md`](../memory-compare/map-subzones-investigation.md) — full evidence, snapshot matrix, Makisha model, next steps
-2. [`.cursor/skills/memory-compare/SKILL.md`](../memory-compare/SKILL.md) — compare workflow if analyzing new `.bin` diffs
-3. Optional: Makisha `dmw3-tools` `src/data.rs` + `src/pages/maps.rs` for `stage_encounter_areas` UI shape
+1. [`.cursor/docs/investigations/map-subzones-investigation.md`](../../docs/investigations/map-subzones-investigation.md) — full evidence, snapshot matrix, Makisha model, next steps
+2. [`../memory-compare/patterns/patterns-map.md`](../memory-compare/patterns/patterns-map.md) — map subzones section
+3. [`../memory-compare/SKILL.md`](../memory-compare/SKILL.md) — compare workflow if analyzing new `.bin` diffs
+4. Optional: Makisha `dmw3-tools` `src/data.rs` + `src/pages/maps.rs` for `stage_encounter_areas` UI shape
 
 ## Current stance
 
@@ -24,7 +26,7 @@ basics from scratch — read the handoff doc first.
 |-------|--------|
 | Subzones via Makisha `grids` + `stage_encounter_areas` | **Confirmed** — layer 2/3 tile values + area tables |
 | Global “hostile MapId” bit | Rejected for Asuka pair |
-| `0x0E2E0` as encounter area index − 1 | **Rejected** — facing/direction (0–3); mountain series + `_new` facing-forward |
+| `0x0E2E0` as encounter area index − 1 | **Rejected** — facing/direction (0–3) |
 | `0x4DE30` / `0x48D82` as named-area enums | Rejected — volatile / session-specific |
 | Player tile coords `@ 0x48D6D` / `0x48D71` (u16) | **Confirmed** for grid lookup |
 
@@ -32,14 +34,14 @@ basics from scratch — read the handoff doc first.
 
 1. Confirm MapId identical within the pair/group (`0x4B3F8`)
 2. Dump `0x0E2E0`, `0x4DE30` (+ `34`/`38`), `0x48D82`, X/Y `0x48D6C`/`70`, PreviousMapId
-3. Append results to [map-subzones-investigation.md](../memory-compare/map-subzones-investigation.md) and retrofeed `known-patterns.md` / `memory-regions.md` only when confirmed
+3. Append results to the investigation doc; retrofeed `patterns-map.md` / `memory-regions.md` only when confirmed
 4. Prefer correlating with Makisha **grid cell** at player position over inventing new quest-region flags
 
 ## Digivice product work
 
-Do **not** wire new Player fields or change `location.json` enemy phases until a
-discriminator is validated. Investigation-only unless the user explicitly asks
-to integrate.
+Do **not** wire new Player fields or change `location.json` enemy phases until
+a discriminator is validated. Investigation-only unless the user explicitly
+asks to integrate (then: `address-field-backend` → `address-field-frontend`).
 
 ## Cheat Engine / DuckStation
 

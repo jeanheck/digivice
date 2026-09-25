@@ -5,7 +5,7 @@ Status: **completed** (Stages 1–5 done)
 Created: 2026-08-27
 
 This file holds **investigation steps only**. Confirmed findings stay in
-`known-patterns.md` / `natsumi-map-scripts.md` / `memory-regions.md`.
+`patterns/patterns-card-battle.md` / `natsumi-map-scripts.md` / `memory-regions.md`.
 
 ## Goal
 

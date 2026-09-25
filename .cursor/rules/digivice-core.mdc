@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Digivice — Core
 
-Fonte humana espelhada: `AI/CODE_RULES.md` e `AI/BUSINESS_RULES.md`.
+`.cursor/` é a fonte única de regras, skills e agents do projeto. `AI/*.md` é apenas índice.
 
 ## Diretrizes primárias
 

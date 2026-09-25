@@ -1,102 +1,23 @@
 ---
-description: Convenções Frontend Vue/TS Digivice — converters, estilos DW3, presenters, tooltips, modais
+description: Convenções básicas Frontend Vue/TS Digivice — sintaxe, imports, naming, sem testes
 globs: Frontend/**/*
 alwaysApply: false
 ---
 
-# Digivice — Frontend
+# Digivice — Frontend (básico)
 
-Fonte: `AI/CODE_RULES.md` (seção Frontend).
+Regras especializadas por pasta:
+- `digivice-frontend-data.mdc` — presenters, services, repositories, viewmodels, extensions, assets.
+- `digivice-frontend-components.mdc` — componentes Vue, estilo DW3, tooltips, modais.
+- `digivice-frontend-sync.mdc` — events (DTO/converter), stores/syncers, models.
 
 ## Convenções básicas
 
 1. Sempre `;` no fim das instruções.
-2. **Converters:** classe `{AlgumaCoisa}Converter`; arquivo `{alguma-coisa}.converter.ts`; API pública estática `convert`. Dois contextos:
+2. Prefira aspas duplas `"` em strings.
+3. Importações com `@/` (ex.: `@/models/`) em vez de caminhos relativos longos.
+4. Arquivos kebab-case com sufixo de papel (`.converter.ts`, `.dto.ts`, `.viewmodel.ts`, `.presenter.ts`, `.service.ts`, `.repository.ts`, `.syncer.ts`, `.extensions.ts`); classes/tipos PascalCase.
+5. **Converters:** classe `{AlgumaCoisa}Converter`; arquivo `{alguma-coisa}.converter.ts`; API pública estática `convert` (helpers privados permitidos). Dois contextos, pastas distintas:
    - `events/converters/` — DTO (SignalR) → Model (Pinia)
    - `presenters/converter/` — Raw → ViewModel (dados estáticos)
-3. **DTOs:** tipo PascalCase (`PlayerDTO`); arquivo kebab + `.dto.ts`. Pastas de eventos em kebab-case (`journals/`, `quests/`).
-4. **ViewModels:** um tipo por arquivo; `{nome}.viewmodel.ts`.
-5. Importações com `@/` (ex.: `@/models/`).
-6. Prefira aspas duplas `"` em strings.
-7. **Sem testes no Frontend** (Vitest, `*.spec.ts`, `__tests__`), salvo pedido explícito.
-
-## Coerência visual e estilos
-
-Priorize `Frontend/src/style.css` e componentes similares do mesmo contexto (aparência DW3).
-
-- Fonte única: **Press Start 2P** (global no `body`). Não introduzir fontes alternativas.
-- Antes de estilizar: checar utilitários em `style.css` → componente similar → só então CSS/Tailwind novo.
-
-Classes DW3 principais: `dw3-beveled`, `dw3-panel` (+ border/inner/content), `dw3-aside` (+ header/title), `shadow-text` / `shadow-text-dark`, `text-dw3-gold`, `custom-scroll`, `bg-grid-pattern`.
-
-- Prefira `dw3-*` a remontar bordas/cores manualmente.
-- Destaque dourado: `text-dw3-gold shadow-text-dark`.
-- Tokens de cor já usados: `#000a2b`, `#000e3f`, `#0033aa`, `#0077ff`, `#00aaff`.
-- Evite `<style scoped>` para padrões compartilháveis — extraia para `style.css`.
-
-**Proibido:** inventar paleta/tipografia/moldura sem checar referência; duplicar blocos longos que já têm utilitário global; scoped copiado de outro componente.
-
-## Dados estáticos (Repository, Presenter, Converter, ViewModel)
-
-| Camada | Responsabilidade |
-|--------|------------------|
-| Component | Pinia + **apenas o presenter da sua tela**. Não chama service/repository/converter nem presenters de outras features. |
-| Service | Domínio reutilizável; pode orquestrar repositories. Sem Vue/presenters/ViewModel de tela. |
-| Repository | Dados estáticos → tipos **Raw** apenas. |
-| Converter (`presenters/converter/`) | Puro Raw → ViewModel. Sem repository/tela. |
-| Presenter | Orquestra service/repo/converter; regras de tela. Não monta ViewModel inline se houver transformação. |
-| ViewModel | Contrato da UI; um tipo por arquivo `.viewmodel.ts`. |
-
-Fluxo: `Component → (seu) Presenter → Service → Repository → Raw` e `Presenter → Converter → ViewModel`. Service opcional em casos simples. Precisar de lógica de outro presenter → extrair para Service antes de compartilhar.
-
-Raw ≈ ViewModel estruturalmente → pass-through tipado no presenter (sem converter). Converter quando houver transformação/projeção. Raw e ViewModel continuam tipos distintos.
-
-**i18n:** Presenter/converter devolvem chaves (`*Key`) e dados crus para interpolação — não recebem `ComposerTranslation`/`t` e não traduzem. `t` / `useI18n` só no componente. Ref.: `CardBattleViewModel.titleKey`, `DigimonBattleFieldViewModel`.
-
-**Proibido:** converter com repository/orquestração; presenter montando ViewModel inline quando cabe converter; presenter/converter traduzindo ou importando `vue-i18n`; repository retornando ViewModel; component chamando service/repo/converter ou presenter alheio; service conhecendo Vue/presenter.
-
-## Extensions (`src/extensions/`)
-
-- Arquivo `{alvo}.extensions.ts` (ex.: `math.extensions.ts`); side-effect com declaration merging + atribuição no builtin.
-- Importar uma vez em `main.ts`; call sites usam a API aumentada sem import local.
-- Não substituem services de domínio (ex.: `EquipmentService`, `PartyService`).
-
-## Assets / `imageName`
-
-- `imageName` em JSON estático começa com letra maiúscula e bate exatamente com o arquivo em `src/assets/` (sem extensão).
-- Nomes usados como chave de asset (ex.: boss via `enemyRaw.name`) seguem a mesma regra.
-- `ImageCatalog` faz lookup exato (`getImageUrl`); não normaliza casing.
-
-## Services (`src/services/`)
-
-- Classe `{AlgumaCoisa}Service`; arquivo `{alguma-coisa}.service.ts`; métodos estáticos.
-- Reuso entre presenters → Service (existente ou novo). Pode chamar repository; sem ViewModel/Vue.
-- Fluxo: `Component → Presenter → Service`. Componentes não importam services.
-- Legado em `presenters/helper/` até migração; não criar helpers novos.
-- Referência: `PartyService`, `EquipmentService`, `StatService`, `DigimonBattleService`.
-
-**Proibido:** duplicar regra em vários presenters; código novo em `presenters/helper/` ou `src/helpers/`; componentes importando services; service montando ViewModel de tela.
-
-## Tooltips
-
-Referência: `DigimonEquipments.vue`. Camadas:
-
-- `use-tooltip-position.ts` — posição/visibilidade (`show`, `x`, `y`, placement, flip). Sem conteúdo.
-- `Tooltip.vue` — casca visual + slot; props `show`/`x`/`y`/`title`/…; sem mouse.
-- Wrappers (`EquipmentTooltip`, `DefaultTooltip`, …) — conteúdo; sem `useTooltipPosition` interno.
-
-No **pai**: um `useTooltipPosition`; conteúdo em refs; handlers `mouseenter`/`mousemove`/`mouseleave`; filhos emitem eventos com `MouseEvent`.
-
-Escolha: só título → `Tooltip` direto; título+texto → `DefaultTooltip`; equipamento → `EquipmentTooltip`; breakdown → `DigimonTooltip`.
-
-**Proibido:** tooltip inline (Teleport + clientX/Y manual); composable dentro do wrapper; API imperativa `defineExpose` no wrapper.
-
-## Modais
-
-Referência: `components/modal/Modal.vue`.
-
-- Casca: Teleport, overlay, ESC, clique fora, animações, header com `IconClose`, `custom-scroll`.
-- Domínio: slots `#header` + corpo; `@close` para o pai; `isModalOpen` combina `isOpen` + dado mínimo.
-- Título no `#header`: `text-white`, **sem** `uppercase`.
-
-**Proibido:** modal inline duplicando `Modal.vue`; Escape/`IconClose` custom no filho; imports relativos longos quando `@/` resolve.
+6. **Sem testes no Frontend** (Vitest, `*.spec.ts`, `__tests__`): decisão intencional. Não criar, sugerir nem incluir, salvo pedido explícito.

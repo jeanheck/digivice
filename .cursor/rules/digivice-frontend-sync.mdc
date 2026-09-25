@@ -1,0 +1,28 @@
+---
+description: Frontend Digivice — sincronização SignalR (DTOs, events converters, models, syncers, Pinia store)
+globs: Frontend/src/{events,stores,models}/**
+alwaysApply: false
+---
+
+# Digivice — Frontend: sincronização de estado
+
+## Fluxo
+
+`signalr.handlers.ts` → `useGameStore` (`setInitialState` / `sync{Entity}`) → `events/converters/{entity}.converter.ts` (bootstrap completo) ou `stores/syncers/{entity}.syncer.ts` (patch incremental) → `currentState.{entity}` (model).
+
+| Camada | Pasta | Convenção |
+|--------|-------|-----------|
+| DTO | `events/dto/` (subpastas kebab: `parties/`, `journals/quests/`, `battles/`, `npcs/`) | `PlayerDTO` em `player.dto.ts`; propriedades opcionais (`field?: type`); exportado em `events/events.map.ts` |
+| Event map | `events/events.map.ts` | `EventsMap` tipa cada evento SignalR → DTO |
+| Converter | `events/converters/` | `Required<DTO>` → Model, estático `convert` |
+| Model | `models/` (subpastas `party/`, `journal/`, `battle/`) | Propriedades obrigatórias; reexport em `models/index.ts` |
+| Syncer | `stores/syncers/` | Estático `sync(previous, dto)`; muta o model existente |
+| Store | `stores/use-game-store.ts` | Uma action `sync{Entity}` por evento; `setInitialState` chama todos os converters |
+
+## Regras
+
+- **Regra de ouro:** propriedade `undefined` no DTO → **não mutar**. Sempre `if (dto.field !== undefined) { model.field = dto.field; }`.
+- `null` explícito é valor válido (ex.: `enemy: null`, `activeDigievolutionId: null`) e deve ser aplicado.
+- Syncers só **patcham** entidades já presentes do `InitialState`; não criam listas/itens novos (missões, NPCs, slots são fixos).
+- Nomes: camelCase igual ao JSON do backend (System.Text.Json camelCase). Rename existente: domínio `MapId` → DTO/model `location`.
+- Não crie syncer/DTO paralelo para um campo novo — estenda o da entidade (skill `address-field-frontend`). Entidade nova → skill `memory-entity-frontend`.

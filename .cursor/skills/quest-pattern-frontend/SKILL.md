@@ -1,400 +1,143 @@
 ---
 name: quest-pattern-frontend
 description: >-
-  Integrates journal quest sections into the Digivice frontend — SignalR
-  reception through Pinia syncers, static JSON, presenters, and Journal UI.
-  Use when the user asks to wire a new journal category (legendary weapons,
-  DRI agents), add a quest to an existing category, or register another DRI
-  agent on the frontend.
+  Integrates journal quests into the Digivice frontend — static quest JSON,
+  repository, i18n, presenters and Journal UI, plus SignalR sync when a new
+  journal category is created. Use when the user asks to add a quest to an
+  existing journal category (side quest, legendary weapon, DRI agent, Duel
+  Island) or to wire a brand-new journal category on the frontend.
 ---
 
 # Quest Pattern — Frontend Integration
 
-Wire journal quest data from **SignalR reception** through **Journal UI**.
-Stops at rendered section + working modal. Does not touch backend C#.
+Wire journal quest data from static JSON through **Journal UI**. Does not touch
+backend C#.
 
-**User responsibility:** backend already emits the new field/quest in
-`InitialState` and `JournalChanged`. Do **not** invoke or verify
-`quest-pattern-backend` — assume the user confirmed that separately.
+**User responsibility:** backend already emits the quest in `InitialState` and
+`JournalChanged`. Do **not** invoke or verify `quest-pattern-backend`.
 
 **No frontend tests** (project rule).
 
+## When NOT to use
+
+| Case | Use instead |
+|------|-------------|
+| Player / Party / Digimon field sync | `address-field-frontend` |
+| New non-journal entity in the store | `memory-entity-frontend` |
+| Backend definitions / loaders | `quest-pattern-backend` |
+
 ## Reuse rule (critical)
 
-Quest entities are shared across all journal categories. **Do not** create
-per-quest DTOs, models, syncers, or card components.
+Quest entities are shared across all categories. **Do not** create per-quest
+DTOs, models, syncers or card components.
 
 | Layer | Reuse as-is |
 |-------|-------------|
 | DTOs | `QuestDTO`, `StepDTO`, `RequisiteDTO` |
 | Models | `Quest`, `Step`, `Requisite` |
-| Events converters | `QuestConverter`, `StepConverter`, `RequisiteConverter` (`events/converters/`) |
-| Syncers | `QuestSyncer`, `StepSyncer`, `RequisiteSyncer` |
-| Presenter converters | `QuestConverter` (`presenters/converter/`) |
+| Events converters | `QuestConverter`, `StepConverter`, `RequisiteConverter` (`events/converters/journals/`) |
+| Syncers | `QuestSyncer`, `StepSyncer`, `RequisiteSyncer` (`stores/syncers/journals/`) |
+| Presenter converter | `QuestConverter` (`presenters/converter/quest.converter.ts`) |
 | UI | `JournalQuestCard`, `JournalQuestsSection`, `QuestModal` tree |
 
-Create new types/files only when adding a **new category slot** on `Journal`
-(first Legendary Weapon section, first DRI Agent section, etc.) or when
-registering **new static quest JSON** in an existing category.
-
-## Two workflows
-
-| Workflow | When | Scope |
-|----------|------|-------|
-| **A — New category slot** | First item in `legendaryWeapons`, `driAgents`, etc. | Full pipeline (DTO → UI) |
-| **B — Quest in existing category** | New quest id under side quests, legendary weapons, etc. | Static data + repository + i18n |
-
-Use the decision helper at the end to pick A or B.
-
-## Category map
-
-| Category | `Journal` property | Static JSON folder | Section accent | i18n section key |
-|----------|-------------------|--------------------|----------------|------------------|
-| Main quest | `mainQuest` (single) | `database/quest/main-quest.json` | Yellow (hardcoded in `Journal.vue`) | `journal.mainQuest` |
-| Side quests | `sideQuests` | `database/quest/side-quest/` | `emerald` | `journal.sideQuests` |
-| Legendary weapons | `legendaryWeapons` | `database/quest/legendary-weapons/` | `teal` | `journal.legendaryWeapons` |
-| DRI agents | `driAgents` | `database/quest/dri-agents/` | `cyan` | `journal.driAgents` |
-| Duel Island | `duelIsland` | `database/quest/duel-island/` | `sky` | `journal.duelIsland` |
-
-**Aside section order (fixed):** Main → Side → Legendary → DRI → Duel Island.
-
-All new collapsible sections use `JournalQuestsSection` with
-`defaultExpanded: false` (starts closed, same as side quests today).
-
-All new list sections use `display-mode="side"` and
-`calculateNewStatus: true` (locked/done/new card variants).
-
-## Section invariant (mandatory)
-
-A journal section **only exists when it has at least one quest**. An empty
-section is invalid — do not wire a category slot, `JournalQuestsSection`, or
-repository getter for a section with zero quests.
-
-| Rule | Detail |
-|------|--------|
-| Workflow A | Do not start until **at least one quest id** is ready (static JSON + backend in `InitialState`) |
-| Workflow B | Category already wired; append quest to existing non-empty section |
-| UI | No empty-state messaging — if the section renders, it always has cards |
-
-If the user asks to add a section without a quest, **stop and ask** for the
-first quest id before proceeding.
-
-## Accent color rule (mandatory)
-
-Before implementing, if the user **did not** specify the section accent color,
-**ask which Tailwind color** to use.
-
-| Status | Color |
-|--------|-------|
-| Occupied — not selectable | `yellow` (main quest, hardcoded) |
-| Occupied | `emerald` (side quests) |
-| Occupied | `teal` (legendary weapons) |
-| Occupied | `cyan` (DRI agents) |
-| Occupied | `sky` (Duel Island) |
-
-Rules:
-
-1. Color must be a **standard Tailwind palette name** (e.g. `emerald`, `teal`,
-   `cyan`, `sky`). If the user picks a name that is not a Tailwind color, ask them
-   to choose another.
-2. New accent must differ from **yellow** (main quest) and from other section accents.
-3. Add the color to `journal-section-palette.ts` by **copying the teal
-   token pattern** — only the color name changes (`text-{color}-400`,
-   `border-{color}-800`, `hover:bg-{color}-900/30`, etc.).
-4. Extend `JournalSectionAccentColor` with the new literal.
-
-## Definitions layout (static JSON)
+## Pick the workflow
 
 ```
-Frontend/src/database/quest/
-├── main-quest.json
-├── side-quest/
-├── legendary-weapons/
-├── dri-agents/
-└── duel-island/
+New quest id, category already on Journal?  → Workflow B (below)
+New property on Journal?
+  → At least one quest id ready?
+      NO  → Stop; ask for the first quest (no empty sections)
+      YES → Workflow A: workflow-new-category.md
+  → Accent color given by the user?
+      NO  → Ask (Tailwind palette name, not already used)
 ```
 
-**Ids:** always **camelCase** in JSON (`muramasa`, `driAgentGuilmon`). Must
-match backend quest id.
+## Category map (all wired)
 
-**i18n:** `i18n/locales/{en-US,pt-BR}/quest/{category}/{id}.json` — register
-imports in each locale `index.ts`. Section titles live in `journal.json`.
+| Category | `Journal` property | Static JSON folder | Accent | Repository getter |
+|----------|-------------------|--------------------|--------|-------------------|
+| Main quest | `mainQuest` (single) | `database/quest/main-quest.json` | yellow (hardcoded) | `getMainQuestRaw()` |
+| Side quests | `sideQuests` | `database/quest/side-quest/` | `emerald` | `getSideQuestsRaw()` |
+| Legendary weapons | `legendaryWeapons` | `database/quest/legendary-weapons/` | `teal` | `getLegendaryWeaponsRaw()` |
+| DRI agents | `driAgents` | `database/quest/dri-agents/` | `cyan` | `getDriAgentsRaw()` |
+| Duel Island | `duelIsland` | `database/quest/duel-island/` | `sky` | `getDuelIslandRaw()` |
 
-Quest titles/descriptions/steps use i18n. **Digimon and digievolution proper
-names stay literal** in JSON — never pass through `$t()` (see `AI/BUSINESS_RULES.md`).
+**Aside order (fixed):** Main quest → Auction card → Side → Legendary → DRI → Duel Island.
 
----
+Sections use `JournalQuestsSection` (closed by default), `display-mode="side"`
+cards and `calculateNewStatus: true` (locked/done/new variants).
 
-## Workflow A — New category slot
+## Section invariant
 
-Copy and track progress. Skip steps marked **SKIP** when the condition is met.
+A section **only exists when it has at least one quest**. No empty-state UI.
 
-### 0. Preconditions
+## Accent color rule
 
-- [ ] **At least one quest id** ready to ship with the section (see section invariant)
-- [ ] User confirmed backend emits new collection in `InitialState` / `JournalChanged`
-- [ ] Property name agreed (`legendaryWeapons`, `driAgents`, …) — camelCase, matches backend
-- [ ] Accent color confirmed (see accent color rule)
+- Must be a standard Tailwind palette name.
+- Must differ from every accent in use: yellow, `emerald`, `teal`, `cyan`, `sky`.
+- Add to `journal-section-palette.ts` by copying the `teal` entry (only the color name changes) and extend `JournalSectionAccentColor`.
 
----
+## Naming and i18n
 
-### 1. SignalR handlers *(usually SKIP)*
-
-Files: `events/signalr.handlers.ts`, `events/signalr.service.ts`, `main.ts`
-
-- [ ] `JournalChanged` → `store.syncJournal` already wired
-- [ ] `InitialState` → `store.setInitialState` already wired
-
-**SKIP** if handlers unchanged. Only verify `JournalDTO` will carry the new field.
+- Quest ids **camelCase** in JSON, matching backend. Files kebab-case (`dri-agent-patamon.json`).
+- `i18n/locales/{en-US,pt-BR}/quest/{category}/{id-kebab}.json`, registered in each locale `index.ts`. Section titles in `journal.json`.
+- Quest texts use i18n; **Digimon/digievolution names stay literal** (proper names).
 
 ---
 
-### 2. DTO
+## Workflow B — Quest in an existing category
 
-File: `events/dto/journal.dto.ts`
+### 1. Static quest data
 
-- [ ] Add `legendaryWeapons?: QuestDTO[]` (or equivalent) — mirror `sideQuests`
-
----
-
-### 3. Model
-
-File: `models/journal/journal.ts`
-
-- [ ] Add matching property (`Quest[]` for list categories)
-
----
-
-### 4. Events converter
-
-File: `events/converters/journal.converter.ts`
-
-- [ ] Map new collection with `QuestConverter.convert` — copy `sideQuests` branch
-
----
-
-### 5. Syncer
-
-File: `stores/syncers/journal.syncer.ts`
-
-- [ ] Add loop: find previous quest by `id`, call `QuestSyncer.sync` — copy side-quest loop
-
-**Sync limitation:** syncers only **patch** quests already present from
-`InitialState`. They do not add quests or bootstrap journal alone.
-
----
-
-### 6. Pinia store *(usually SKIP)*
-
-File: `stores/use-game-store.ts`
-
-- [ ] `setInitialState` / `syncJournal` already delegate to `JournalConverter` / `JournalSyncer`
-
-**SKIP** unless store actions need a new branch (rare).
-
----
-
-### 7. Static quest JSON (per quest in category)
-
-For each quest id:
-
-- [ ] `database/quest/{category}/{id-kebab}.json` — structure mirrors side-quest JSON
-- [ ] `repositories/tables/quest/{category}/{id-kebab}.table.ts` — `type XxxTable = QuestRaw`
+- [ ] `database/quest/{category}/{id-kebab}.json` — mirror a quest in the same folder
+- [ ] `repositories/tables/quest/{category}/{id-kebab}.table.ts` → `export type {Name}Table = QuestRaw`
 - [ ] `i18n/locales/en-US/quest/{category}/{id-kebab}.json`
 - [ ] `i18n/locales/pt-BR/quest/{category}/{id-kebab}.json`
-- [ ] Register both locale imports in `i18n/locales/{en-US,pt-BR}/index.ts`
-
----
-
-### 8. Repository
-
-File: `repositories/quest.repository.ts`
-
-- [ ] Import JSON + table types
-- [ ] Add `getLegendaryWeaponsRaw(): QuestRaw[]` (or equivalent)
-- [ ] Array order = **UI display order** (hardcoded, not backend order)
-
----
-
-### 9. ViewModel + presenters
-
-| File | Change |
-|------|--------|
-| `viewmodels/quest/journal.viewmodel.ts` | New collection field |
-| `presenters/journal/journal.presenter.ts` | Map repository → `QuestModalPresenter.getQuestViewModel` |
-| `presenters/journal/quest-modal.presenter.ts` | Resolve quest id from new section (after main/side checks) |
-
-Presenter converter (`presenters/converter/quest.converter.ts`): **SKIP** — pass
-`{ calculateNewStatus: true }` for list categories.
-
----
-
-### 10. UI
-
-File: `components/journal/Journal.vue`
-
-- [ ] Add `JournalQuestsSection` block in fixed order (after side quests, before DRI if applicable)
-- [ ] `accent-color` from palette; `defaultExpanded` omitted (defaults to `false`)
-- [ ] `v-for` over `journalViewModel.legendaryWeapons` (or equivalent)
-- [ ] `display-mode="side"` on each `JournalQuestCard`
-
-File: `components/journal/journal-section-palette.ts`
-
-- [ ] Add palette entry if accent not yet defined (copy cyan pattern)
-
-File: `i18n/locales/{en-US,pt-BR}/journal.json`
-
-- [ ] Section title key (e.g. `journal.legendaryWeapons`)
-
----
-
-### 11. Manual verification
-
-- [ ] `InitialState` shows cards in new section when expanded
-- [ ] Step/requisite change in emulator updates card + modal
-- [ ] Modal opens for quests in new section (`QuestModalPresenter` finds id)
-- [ ] Accent color distinct from other section accents and yellow (main)
-
----
-
-### 12. Retrofeed
-
-Update [frontend-status.md](frontend-status.md): category wired, quest ids, accent color.
-
----
-
-## Workflow B — Quest in existing category
-
-Minimal checklist when the **category slot already exists** on `Journal`.
-
-### 0. Preconditions
-
-- [ ] Category already on frontend (`sideQuests`, `legendaryWeapons`, …)
-- [ ] User confirmed backend includes new quest id in `InitialState`
-- [ ] Quest id in camelCase, matches backend
-
----
-
-### 1. Static quest JSON
-
-- [ ] `database/quest/{category}/{id-kebab}.json`
-- [ ] `repositories/tables/quest/{category}/{id-kebab}.table.ts`
-- [ ] i18n `en-US` + `pt-BR` under `quest/{category}/`
-- [ ] Register imports in both locale `index.ts` files
-
----
+- [ ] Import + spread in `i18n/locales/{en-US,pt-BR}/index.ts`
 
 ### 2. Repository
 
-File: `repositories/quest.repository.ts`
+- [ ] `repositories/quest.repository.ts` — import JSON + table type; append to the category getter in the **desired UI position** (default: end)
 
-- [ ] Import new JSON + table type
-- [ ] Append to the category array in **desired UI position**
+**SKIP:** DTO, model, events converter, syncer, `Journal.vue`, palette,
+`journal.viewmodel.ts`, `journal.presenter.ts`, `quest-modal.presenter.ts` —
+all iterate the full repository array per category.
 
-**SKIP** DTO, model, events converter, syncer, `Journal.vue` section shell,
-`journal.viewmodel.ts`, palette — category already wired.
+### 3. Quest JSON details
 
----
+- `requisites` at quest root and/or per step, ids matching backend (e.g. `sunTrophy` → `asukaTrophy`; DRI step 3 → `{rookie}DDNA`).
+- Locations: `location` = innermost target map id; `coordinates` = pin on that map.
+- Omit `innerLocation` to inherit the path from `location.json`; `"innerLocation": []` skips the canonical path; custom routes (desert cells, unique doors) keep hop `innerLocation` without the target pin.
+- Coordinates may be provisional `x`/`y` `50` until the user supplies markers — note it in the status file.
+- i18n: `title`, `description`, `steps.{n}` texts, one `locationTarget` per step (marker label), `requisites.{id}` labels.
 
-### 3. Presenters *(conditional)*
-
-- [ ] `quest-modal.presenter.ts` — **SKIP** if it already resolves any id via
-  `getXxxRaw().find(raw => raw.id === questId)` for that category
-- [ ] `journal.presenter.ts` — **SKIP** if it already maps full repository array
-
----
+Example (DRI agent, all 8 already done): title `"{Rookie} - DRI {Npc} ({levelRange})"`; steps look for agent → defeat boss for DDNA → deliver DNA.
 
 ### 4. Manual verification
 
-- [ ] New card appears after `InitialState` (section collapsed by default)
-- [ ] Memory change updates quest via `JournalChanged`
-- [ ] Modal works for new quest id
-
----
+- [ ] Card appears after `InitialState` (section collapsed by default)
+- [ ] Memory change updates the quest via `JournalChanged`
+- [ ] Modal opens for the new id
 
 ### 5. Retrofeed
 
-Append quest id under the category in [frontend-status.md](frontend-status.md).
+Append the quest id under its category in [frontend-status.md](frontend-status.md).
 
 ---
 
-### DRI agents (Workflow B specialization)
-
-Category `driAgents` is already wired (accent `cyan`). Adding another agent is
-**only** static data + repository + i18n. Reference: `dri-agent-kumamon` /
-`dri-agent-monmon`.
-
-| Create / edit | Path pattern |
-|---------------|--------------|
-| Database JSON | `Frontend/src/database/quest/dri-agents/dri-agent-{rookie}.json` |
-| Table type | `Frontend/src/repositories/tables/quest/dri-agents/dri-agent-{rookie}.table.ts` → `export type DriAgent{Rookie}Table = QuestRaw` |
-| i18n en-US | `Frontend/src/i18n/locales/en-US/quest/dri-agents/dri-agent-{rookie}.json` |
-| i18n pt-BR | `Frontend/src/i18n/locales/pt-BR/quest/dri-agents/dri-agent-{rookie}.json` |
-| Locale indexes | Import + spread in `en-US/index.ts` and `pt-BR/index.ts` |
-| Repository | `quest.repository.ts` — import JSON + type; append in `getDriAgentsRaw()` |
-
-**i18n shape:**
-
-- Root key: `driAgent{Rookie}`
-- `title`: `"{Rookie} - DRI {Npc} ({levelRange})"` (e.g. `Kumamon - DRI Yuji (60 ~ 90)`)
-- `description`: add rookie to party
-- Steps `1` / `2` / `3`: look for agent → defeat boss for DDNA → deliver DNA
-- Step 3 `requisites.{rookie}DDNA`: label for the DNA item
-- `locationTarget` strings for map markers (agent name / boss name)
-
-**Locations (database JSON):**
-
-- `location` = target map id (innermost map of the pin)
-- `coordinates` = pin of the NPC/boss on that map
-- Omit `innerLocation` to inherit the path from `location.json`
-  (`worldLocation` / `innerLocation`)
-- Use `"innerLocation": []` to skip a canonical path (already inside the inner map)
-- Custom routes (desert cells, unique doors) keep hop `innerLocation` on the quest,
-  without the target pin
-- Coordinates: provisional `x`/`y` `50` until the user supplies real markers
-- i18n: one `locationTarget` per step (marker label). Intermediate maps use
-  `location.{id}`
-- Step 3 `requisites`: `[{ "id": "{rookie}DDNA" }]` matching backend
-
-**SKIP:** `Journal.vue` section, palette, syncers, converters, presenters (already
-iterate `getDriAgentsRaw()`).
-
-**No frontend tests** (project rule).
-
-For backend + frontend together, use skill `dri-agent-integrate`.
-
----
-
-## Decision helper
-
-```
-New quest id only (category already on Journal)?
-  → Workflow B
-
-New property on Journal (first item in category)?
-  → At least one quest id ready?
-      NO  → Stop; ask for first quest (do not wire empty section)
-      YES → Workflow A
-  → Accent color specified by user?
-      NO  → Ask (Tailwind name; not cyan/yellow)
-      YES → Validate Tailwind + palette entry
-  → Backend sends collection in InitialState?
-      (user confirms — do not run backend skill)
-```
-
-## Debugging (mid-integration)
+## Debugging
 
 | Symptom | Likely cause |
-|---------|----------------|
-| Section empty after connect | Misconfiguration: `InitialState` missing collection, repository array empty, or section wired without quests (invalid) |
-| Card shows but modal empty | `QuestModalPresenter` missing branch or id mismatch |
-| Live updates ignored | `JournalChanged` delta id not in store; or `syncJournal` no-op (`journal` null) |
+|---------|--------------|
+| Card missing | Quest id not in `InitialState` (backend) or not in repository getter; ids differ in casing |
+| Card shows, modal empty | `QuestModalPresenter` id mismatch |
+| Live updates ignored | Delta id not in store; `syncJournal` no-op (`journal` null) |
 | Wrong step state | Step `number` mismatch between JSON and backend |
 | Missing translations | Locale `index.ts` import omitted |
 
 ## Additional resources
 
-- Pipeline diagram and file map: [frontend-pipeline.md](frontend-pipeline.md)
-- Integration status: [frontend-status.md](frontend-status.md)
-- Business rules: `AI/BUSINESS_RULES.md` (Journal §2.3)
-- Code rules: `AI/CODE_RULES.md` (Frontend sections)
+- New category: [workflow-new-category.md](workflow-new-category.md)
+- Pipeline and file map: [frontend-pipeline.md](frontend-pipeline.md)
+- Status: [frontend-status.md](frontend-status.md)
+- Rules: `.cursor/rules/digivice-business.mdc` (Journal), `.cursor/rules/digivice-frontend-*.mdc`

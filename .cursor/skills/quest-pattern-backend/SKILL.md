@@ -2,263 +2,176 @@
 name: quest-pattern-backend
 description: >-
   Integrates quest-pattern memory trackers into the Digivice backend — main
-  quest, side quests, legendary weapons, DRI agents. Use when the user asks to
-  integrate *Addresses.json into the backend, add another DRI agent, wire
-  journal loaders, or connect confirmed memory addresses after memory-compare
-  investigation.
+  quest, side quests, legendary weapons, DRI agents, Duel Island. Use when the
+  user asks to integrate a Quests/** *Addresses.json into the backend, add a
+  new quest to an existing journal category, create a new journal category, or
+  connect confirmed quest addresses after memory-compare investigation.
 ---
 
 # Quest Pattern — Backend Integration
 
-Wire `*Addresses.json` files into the backend pipeline up to **event
+Wire `Quests/**/*Addresses.json` into the backend pipeline up to **event
 generation** (`JournalChanged` via `StateEventFactory`). Stops before SignalR /
 frontend.
 
-**Prerequisite:** addresses confirmed and JSON file exists (see
-`memory-compare` skill). User may say: "integrate this in the backend".
+**Prerequisite:** addresses confirmed (skill `memory-compare`).
+
+## When NOT to use
+
+| Case | Use instead |
+|------|-------------|
+| Scalar field on Player / Party / Digimon / Battle / Auctions / Npcs | `address-field-backend` |
+| Brand-new non-journal entity on `State` | `memory-entity-backend` |
+| Frontend journal UI | `quest-pattern-frontend` |
 
 ## Reuse rule (critical)
 
-Each new tracker (Muramasa, Agumon step 1, Folder Bag) reuses existing quest
-types and pipelines. **Do not** create per-quest classes like `MuramasaResource`.
+Each new tracker reuses existing quest types. **Do not** create per-quest
+classes like `MuramasaResource`.
 
 | Layer | Reuse as-is |
 |-------|-------------|
-| Addresses | `QuestAddresses`, `StepAddresses` |
+| Addresses | `QuestAddresses`, `StepAddresses`, `RequisiteAddresses` |
 | Readers | `QuestReader`, `StepReader`, `RequisiteReader` |
-| Resources | `QuestResource`, `StepResource` |
-| Domain | `Quest`, `Step` |
-| Assemblers | `QuestAssembler` |
-| Events | `QuestDiffer`, `StepDiffer`, `QuestConverter`, `StepConverter`, `QuestDTO`, `StepDTO` |
+| Resources | `QuestResource`, `StepResource`, `RequisiteResource` |
+| Domain | `Quest`, `Step`, `Requisite` |
+| Assemblers | `QuestAssembler`, `StepAssembler`, `RequisiteAssembler` |
+| Events | `QuestDiffer`, `StepDiffer`, `RequisiteDiffer`, `QuestConverter`, `StepConverter`, `RequisiteConverter`, `QuestDTO`, `StepDTO`, `RequisiteDTO` |
 
-Create new types only when adding a **new category slot** on `Journal` (first
-Legendary Weapon, first DRI Agent, etc.).
-
-## Definitions layout
-
-All quest-pattern trackers live under `Backend/Memory/Definitions/Quests/`:
-
-```
-Quests/
-├── MainQuestAddresses.json
-├── SideQuests/
-├── LegendaryWeapons/
-└── DriAgents/
-```
+Create new types only when adding a **new category** on `Journal`, or a
+category-specific normalization assembler (see step 5).
 
 ## Category map
 
-| Category | Definitions folder | Journal collection | Reference implementation |
-|----------|-------------------|--------------------|--------------------------|
-| Main quest | `Quests/MainQuestAddresses.json` | `MainQuest` | Already wired |
-| Side quests | `Quests/SideQuests/` | `SideQuests` | FolderBag, TreeBoots, FishingPole |
-| Legendary weapons | `Quests/LegendaryWeapons/` | `LegendaryWeapons` *(create on first item)* | Side quests pattern |
-| DRI agents | `Quests/DriAgents/` | `DriAgents` | Already wired — add agents via checklist below |
+| Category | Definitions folder | Journal property | Assembler | Repository getter |
+|----------|-------------------|------------------|-----------|-------------------|
+| Main quest | `Quests/MainQuestAddresses.json` | `MainQuest` (single) | `MainQuestAssembler` (cascade) | `GetMainQuest()` |
+| Side quests | `Quests/SideQuests/` | `SideQuests` | `QuestAssembler` | `GetAllSideQuests()` |
+| Legendary weapons | `Quests/LegendaryWeapons/` | `LegendaryWeapons` | `QuestAssembler` | `GetAllLegendaryWeapons()` |
+| DRI agents | `Quests/DriAgents/` | `DriAgents` | `QuestAssembler` | `GetAllDriAgents()` |
+| Duel Island | `Quests/DuelIsland/` | `DuelIsland` | `DuelIslandAssembler` (normalization) | `GetAllDuelIsland()` |
 
-## JSON schema note
+All categories are wired. Current trackers: [backend-status.md](backend-status.md).
 
-`StepAddresses` expects `BitMasks` (array). If the file uses singular
-`BitMask`, normalize to `"BitMasks": ["0x04"]`. Empty array = raw byte (`!= 0`).
-
-**Formatting:** keep `BitMasks` on one line when there is a single mask:
+## JSON schema
 
 ```json
-"BitMasks": ["0x04"]
+{
+    "Id": "questId",
+    "Requisites": [
+        { "Id": "otherQuestOrItemId", "Address": "0x00048DC2" }
+    ],
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x0004B38C",
+            "BitMasks": ["0x04"],
+            "Requisites": [
+                { "Id": "itemId", "Address": "0x00048DD7", "BitMasks": ["0x01"] }
+            ]
+        }
+    ]
+}
 ```
 
-Not multiline unless the array has many entries.
-
-**Ids:** always **camelCase** in JSON (`muramasa`, `driAgentGuilmon`, `guilmonDDNA`).
-Fix PascalCase or other casing when integrating.
-
-`Id` must match the quest id used across backend and (later) frontend.
-
----
-
-## Add DRI agent (category already wired)
-
-Use this when adding **another** DRI agent (e.g. Kotemon, Patamon, Renamon).
-Journal `DriAgents` slot, loaders, assemblers, and differs already exist —
-**SKIP** integration checklist steps 3–6.
-
-Reference implementations: `driAgentKumamon` / `driAgentMonmon` (2026-07-12),
-or any file under `Quests/DriAgents/`.
-
-### Checklist
-
-- [ ] Create `Backend/Memory/Definitions/Quests/DriAgents/{Name}Addresses.json`
-  - `Id`: `driAgent{Rookie}` (camelCase)
-  - 3 steps; step 3 `Requisites` with `{rookie}DDNA` + DNA address
-  - `BitMasks` on one line when single mask; mirror Veemon/Kumamon shape
-  - Dropping the file under `Quests/DriAgents/` is enough — `AddressesRepository`
-    auto-discovers `*.json` in that folder (no C# edit)
-- [ ] **SKIP** `AddressesRepository.cs` / `IAddressesRepository`
-- [ ] **SKIP** `QuestLoader` / `JournalLoader` / assemblers / differs / DTOs
-- [ ] Tests:
-  - `QuestLoaderTests.LoadDriAgents_*` — `Count++`; mock new addresses; assert
-    Id, step values, requisite id/value (lookup by Id, not list index)
-  - `JournalLoaderTests` — `DriAgents.Count` and id presence
-- [ ] Retrofeed [backend-status.md](backend-status.md) — append new `driAgent*` id
-- [ ] Retrofeed `.cursor/skills/memory-compare/known-patterns.md` and
-  `memory-regions.md` if this agent’s addresses were just confirmed
-
-**Stop.** Do not touch frontend. For end-to-end (backend + frontend), use skill
-`dri-agent-integrate`.
+- `Requisites` exist at **two levels**: quest root (gate for the whole quest, e.g. `SunTrophyAddresses.json` → `asukaTrophy`; `DriAgentPatamonAddresses.json` → `submarimon`) and per step (e.g. DRI step 3 → `{rookie}DDNA`). Both are optional.
+- `BitMasks` (array) on steps **and** requisites. Empty = raw byte (`!= 0`). Multiple = **all** must be set. Singular `BitMask` → normalize to `"BitMasks": ["0x04"]`.
+- Single mask on one line (`"BitMasks": ["0x04"]`); multiline only for many entries.
+- **Ids in camelCase** (`muramasa`, `driAgentGuilmon`, `guilmonDDNA`). `Id` must match the frontend quest id.
+- Step `Number` sequential and unique within the quest.
 
 ---
 
-## Integration checklist
+## Workflow A — Tracker in an existing category (common case)
 
-Copy and track progress. Skip steps marked **SKIP** when the condition is met.
+`AddressesRepository` auto-discovers `*.json` in each category folder (sorted
+by file name). No C# edit needed.
 
-### 0. Preconditions
+- [ ] Create `Backend/Memory/Definitions/Quests/{Category}/{Name}Addresses.json`
+- [ ] Normalize schema (camelCase ids, `BitMasks` arrays)
+- [ ] **SKIP** `AddressesRepository`, `IAddressesRepository`, `QuestLoader`, `JournalLoader`, assemblers, differs, DTOs
+- [ ] Tests (see skill `backend-tests` for conventions):
+  - `Tests/Integration/Memory/Repositories/AddressesRepositoryDefinitionsTests.cs` — bump the category count in `RealDefinitions_ShouldLoadEveryQuestFolder`
+  - `Tests/Integration/Application/Loaders/QuestLoaderTests.cs` — `Load{Category}_*`: `Count++`, mock new addresses, assert id / step values / requisites (lookup by `Id`, not list index)
+  - `Tests/Unit/Application/Loaders/JournalLoaderTests.cs` — only if the category list shape changed (it mocks `IQuestLoader`)
+- [ ] Retrofeed [backend-status.md](backend-status.md)
 
-- [ ] `*Addresses.json` exists with `Id`, `Steps`, `Address`, bitmasks filled
-- [ ] Identify **category** (side quest / legendary weapon / DRI agent)
-- [ ] Identify **reference**: existing tracker in same category to mirror
+Example: the 8 DRI agents (`driAgentGuilmon` … `driAgentPatamon`) were all added this way — 3 steps (talk on `0x4B38C`, boss on `0x4B3B7`/`0x4B3B8`, deliver on a per-agent byte) and a `{rookie}DDNA` requisite on step 3.
 
----
-
-### 1. Definitions JSON
-
-- [ ] File in correct subfolder under `Backend/Memory/Definitions/Quests/`
-  (`SideQuests/`, `LegendaryWeapons/`, or `DriAgents/`)
-- [ ] Naming: `{Name}Addresses.json` (e.g. `Quests/LegendaryWeapons/MuramasaAddresses.json`)
-- [ ] `BitMask` → `BitMasks` array if needed (single mask: one line)
-- [ ] All `Id` fields in camelCase (quest and requisite)
-- [ ] Step `Number` values sequential and unique within the quest
-
-**SKIP** if user already created the file via memory-compare.
+**Stop.** Do not touch frontend.
 
 ---
 
-### 2. AddressesRepository
+## Workflow B — New journal category
 
-File: `Backend/Memory/Repositories/AddressesRepository.cs`
+Only when a new `Journal` property is needed. Use `DuelIsland` (latest) as the template.
 
-`GetAllSideQuests` / `GetAllLegendaryWeapons` / `GetAllDriAgents` **auto-discover**
-`*.json` under `Quests/SideQuests/`, `Quests/LegendaryWeapons/`, and
-`Quests/DriAgents/` (sorted by file name). Adding a tracker in an existing
-category = drop the JSON only.
+### 1. Definitions + repository
 
-**2a. Tracker in an existing category**
+- [ ] Folder `Backend/Memory/Definitions/Quests/{Category}/` with at least one JSON
+- [ ] `AddressesRepository.GetAll{Category}()` via `LoadAllQuestAddressesFromFolder(ref cache, "Quests/{Category}")` + cache field
+- [ ] Expose on `IAddressesRepository`
 
-- [ ] **SKIP** `AddressesRepository` — place `{Name}Addresses.json` in the
-  correct folder
-
-**2b. First tracker in a new category**
-
-- [ ] Add folder under `Quests/` and a `GetAll…()` that calls
-  `LoadAllQuestAddressesFromFolder` for that relative path
-- [ ] Expose on `IAddressesRepository` + wire `QuestLoader` / journal slot
-  (section 3)
-
-**Reference:** `GetAllDriAgents()` → `Quests/DriAgents`.
-
----
-
-### 3. Journal category slot *(conditional)*
-
-**SKIP** if `Journal` / `JournalResource` / `JournalDTO` already expose this
-category (e.g. side quests already exist).
-
-**CREATE** when first item in category (e.g. first Legendary Weapon):
-
-Mirror `SideQuests` in each file:
+### 2. Loaders
 
 | File | Change |
 |------|--------|
-| `Memory/Resources/JournalResource.cs` | `List<QuestResource> LegendaryWeapons` |
-| `Domain/Models/Journal.cs` | `List<Quest> LegendaryWeapons` + Equals/GetHashCode |
-| `Application/Loaders/JournalLoader.cs` | populate from `QuestLoader` |
-| `Application/Loaders/Journals/QuestLoader.cs` | `LoadLegendaryWeapons()` |
-| `Domain/Assemblers/JournalAssembler.cs` | assemble list via `QuestAssembler` |
-| `Events/DTO/JournalDTO.cs` | `Optional<List<QuestDTO>> LegendaryWeapons` |
+| `Application/Loaders/Interfaces/IQuestLoader.cs` | `List<QuestResource> Load{Category}()` |
+| `Application/Loaders/QuestLoader.cs` | `[.. addressesRepository.GetAll{Category}().Select(questReader.Read)]` |
+| `Memory/Resources/JournalResource.cs` | `List<QuestResource> {Category}` |
+| `Application/Loaders/JournalLoader.cs` | populate from `questLoader.Load{Category}()` |
+
+DI: **SKIP** — `QuestReader` / `QuestLoader` already registered in `Backend/Infrastructure/DependencyInjection.cs`.
+
+### 3. Domain + events
+
+| File | Change |
+|------|--------|
+| `Domain/Models/Journal.cs` | `List<Quest> {Category}` + `Equals` / `GetHashCode` |
+| `Domain/Assemblers/JournalAssembler.cs` | `[.. resource.{Category}.Select(QuestAssembler.Assemble)]` (or category assembler) |
+| `Events/DTO/JournalDTO.cs` | `Optional<List<QuestDTO>> {Category}` |
 | `Events/Converters/JournalConverter.cs` | map collection |
-| `Events/Diffing/JournalDiffer.cs` | diff loop (copy side-quest loop) |
+| `Events/Diffing/JournalDiffer.cs` | `GenerateQuestsDtos(newJournal.{Category}, previousJournal.{Category})` + `dto with { ... }` |
 
-Use side quests as the template; keep naming consistent (PascalCase property,
-plural list).
+`JournalEventFactory` / `StateEventFactory` / `JournalProvider` / `StateComposer`: **no change**.
 
----
+### 4. Tests
 
-### 4. Loaders
-
-- [ ] `QuestLoader` — method loads all addresses in category via `questReader.Read`
-- [ ] `JournalLoader` — include new collection in `JournalResource`
-
-**SKIP** reader/loader DI registration if reusing `QuestReader` / `QuestLoader`
-(already in `DependencyInjection.cs`).
+- [ ] `AddressesRepositoryDefinitionsTests` — new category count
+- [ ] `QuestLoaderTests.Load{Category}_*`
+- [ ] `Tests/Unit/Application/Loaders/JournalLoaderTests.cs` (mock the new `IQuestLoader` method)
+- [ ] `JournalAssemblerTests`, `JournalDifferTests`, `ModelEqualityTests` (Journal equality)
 
 ---
 
-### 5. Assembly → State
+## Step 5 — Normalization (conditional)
 
-- [ ] `JournalAssembler` maps new collection (if step 3 was needed)
-- [ ] Main quest cascade (`NormalizeMainQuestProgression`) — **do not** apply to side quests / LW / DRI unless explicitly requested
+Default is **pass-through** (`QuestAssembler`). Only add a normalization when
+the product explicitly asks:
 
-Pipeline: `JournalProvider` → `JournalLoader` → `JournalAssembler` → `State.Journal`
-(already wired via `StateComposer`; no change unless new provider needed — usually no).
-
----
-
-### 6. Events (end of backend scope)
-
-- [ ] `JournalDiffer` emits delta for new/changed quests in the category
-- [ ] `JournalEventFactory` — no change if `JournalDiffer` returns DTO
-- [ ] `StateEventFactory` — no change if `JournalEventFactory` already included
-
-Verify: step value change → `JournalChanged` event with nested `QuestDTO` /
-`StepDTO` delta.
-
-**Stop here.** Do not touch frontend syncers, Vue, or static JSON.
-
----
-
-### 7. Tests (backend only)
-
-**Integration** — `Tests/Integration/Application/Loaders/`:
-
-- [ ] Loader test: mock `IMemoryReader` for new addresses; assert `QuestResource` id and step values
-- [ ] If new category: extend `JournalLoaderTests` to assert collection count
-
-**Unit** — if differ logic changed:
-
-- [ ] `JournalDifferTests`: delta when step value changes in new category
-
-**Reference:** `QuestLoaderTests.LoadSideQuests_ShouldIntegrateSideQuestAddressesAndReaderPipeline`
-
-Mirror corner cases from existing tests (empty requisites, multiple bitmasks, raw byte steps).
-
----
-
-### 8. Retrofeed *(when applicable)*
-
-Update [backend-status.md](backend-status.md):
-
-- Category wired: yes/no
-- Trackers integrated: list ids
-- Extension points still open
-
-Append; do not remove entries without reason.
+- Main quest cascade lives inline in `MainQuestAssembler.Assemble` (later step done → earlier steps done). **Main quest only.**
+- Duel Island normalization lives in `DuelIslandAssembler` (requisite not met → all steps false; trophy done → earlier steps true). **Duel Island only.**
+- New normalization → new `Domain/Assemblers/Journals/{Category}Assembler.cs` wrapping `QuestAssembler.Assemble`, plus `{Category}AssemblerTests`. Never reuse another category's normalization silently.
 
 ---
 
 ## Decision helper
 
 ```
-New *Addresses.json ready?
-  → Category already on Journal?
-      NO  → Step 3 (create slot) + Steps 2, 4–7
-      YES → Steps 2, 4, 7 only (register + test)
-  → Same address byte as existing tracker?
-      → Likely new bit on same step; still valid as separate quest id
+New Quests/** JSON ready?
+  → Category already on Journal (see category map)?
+      YES → Workflow A (JSON + tests + status)
+      NO  → Workflow B (repository + loaders + domain + events + tests)
+  → Product asked for progression fix-up?
+      YES → Step 5 (category assembler)
+  → Same byte as existing tracker?
+      → Likely another bit on the same byte; still a separate quest id
 ```
 
 ## Additional resources
 
-- File map and pipeline diagram: [backend-pipeline.md](backend-pipeline.md)
+- Pipeline and file map: [backend-pipeline.md](backend-pipeline.md)
 - Integration status: [backend-status.md](backend-status.md)
-- Prior skill: `.cursor/skills/memory-compare/`
-- End-to-end DRI: `.cursor/skills/dri-agent-integrate/`
-- Code rules: `AI/CODE_RULES.md` (Backend + Tests sections)
+- Investigation: `.cursor/skills/memory-compare/`
+- Test conventions: `.cursor/skills/backend-tests/`
+- Rules: `.cursor/rules/digivice-backend.mdc`, `.cursor/rules/digivice-tests.mdc`, `.cursor/rules/digivice-business.mdc` (Journal)

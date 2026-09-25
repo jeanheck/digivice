@@ -1,0 +1,68 @@
+---
+description: Frontend Digivice — componentes Vue, estilo DW3, tooltips e modais
+globs: Frontend/src/{components,composables}/**,Frontend/src/App.vue,Frontend/src/style.css
+alwaysApply: false
+---
+
+# Digivice — Frontend: componentes
+
+Componentes consomem `useGameStore` e **apenas o presenter da sua tela** (ver `digivice-frontend-data.mdc`). Não importam services, repositories, converters nem helpers.
+
+## Coerência visual e estilos
+
+Priorize `Frontend/src/style.css` e componentes similares do mesmo contexto (aparência DW3).
+
+- Fonte única: **Press Start 2P** (global no `body`). Fundo, cor padrão e `image-rendering: pixelated` também vêm do global.
+- Antes de estilizar: checar utilitários em `style.css` → componente similar → só então Tailwind/CSS novo.
+
+| Classe | Uso |
+|--------|-----|
+| `dw3-beveled` | Chanfro nos cantos |
+| `dw3-panel` + `dw3-panel-border` + `dw3-panel-inner` + `dw3-panel-content` | Painéis com borda azul chanfrada (Profile, Stats, Equipments, Digievolutions) |
+| `dw3-aside` + `dw3-aside-header` + `dw3-aside-title` | Sidebars (Map, Journal) |
+| `shadow-text` / `shadow-text-dark` | Sombra em textos pixel |
+| `text-dw3-gold` | Destaque dourado (use com `shadow-text-dark`) |
+| `custom-scroll` | Barras de rolagem |
+| `bg-grid-pattern` | Fallback de grid (Location sem imagem) |
+
+- Tokens de cor já usados: `#000a2b`, `#000e3f`, `#0033aa`, `#0077ff`, `#00aaff`.
+- Evite `<style scoped>` para padrões compartilháveis — extraia para `style.css`.
+
+**Proibido:** inventar paleta/tipografia/moldura sem checar referência; duplicar blocos longos que já têm utilitário global (ex.: refazer borda chanfrada fora de `dw3-panel`); scoped copiado de outro componente.
+
+## Tooltips
+
+| Camada | Arquivo | Responsabilidade |
+|--------|---------|------------------|
+| Posição | `composables/use-tooltip-position.ts` | `MouseEvent` → `show`, `x`, `y`; `placement` (`above`/`below`), flip horizontal. Sem conteúdo. |
+| Casca | `components/tooltip/Tooltip.vue` | Teleport, estilo DW3, `title` opcional, slot. Props `show`/`x`/`y`/`title`/`maxWidth`/`placement`. Sem mouse. |
+| Casca compacta | `components/tooltip/TinyTooltip.vue` | Variante pequena (batalha); mesmas regras da casca. |
+| Conteúdo | `DefaultTooltip.vue`, `party/digimon/equipments/EquipmentsTooltip.vue`, `party/digimon/stats/StatsTooltip.vue`, `map/digimon-battle/EnemyBuffStatsTooltip.vue` | Montam o slot e repassam props. Sem `useTooltipPosition` interno. |
+
+Fluxo no **pai** (referências: `party/digimon/equipments/Equipments.vue`, `party/digimon/stats/Stats.vue`):
+1. Um `useTooltipPosition(maxWidthOpcional)`; desestruturar `show`, `x`, `y`, `showAt`, `move`, `hide`.
+2. Refs de conteúdo no pai (ex.: `activeVariant` + conteúdos por variante em `Stats.vue`).
+3. `mouseenter` → conteúdo + `showAt(event, { maxWidth?, placement? })`; `mousemove` → `move(event)`; `mouseleave` → `hide()`.
+4. Filhos que detectam hover emitem eventos com `MouseEvent` (`@show-tooltip`, `@move-tooltip`, `@hide-tooltip`).
+
+Escolha:
+- Só título → `Tooltip` direto com `title` e slot vazio (ex.: `digievolution-techniques/Technique.vue`).
+- Título + texto → `DefaultTooltip`.
+- Equipamento → `EquipmentsTooltip`; breakdown base + equip + total → `StatsTooltip`.
+- Vários conteúdos na mesma posição → um composable no pai + wrappers com `:show` condicional (`Stats.vue`).
+
+**Proibido:** tooltip inline (Teleport + `clientX`/`clientY` manual); composable dentro do wrapper; API imperativa (`defineExpose({ show, hide, move })`); duplicar regras de posicionamento fora do composable.
+
+## Modais
+
+Casca: `components/modal/Modal.vue` — Teleport, overlay, ESC, clique fora, animações, hex pattern, header com close, footer bar, `custom-scroll` via `:deep`. Props de layout: `maxWidth`, `maxHeight`, `panelClass`, `showHexPattern`, `showFooterBar`, `showCloseButton`.
+
+Modais de domínio: `WikiModal`, `QuestModal`, `AuctionModal`, `SeabedModal`, `MobiusDesertModal`, `DigievolutionsModal`.
+
+1. Importar `Modal` via `@/components/modal/Modal.vue`.
+2. `isModalOpen` combina `isOpen` + dado mínimo (ex.: `questViewModel !== null`).
+3. `@close` → emitir `close` para o pai.
+4. Título no `#header`: `text-white`, **sem** `uppercase`.
+5. Corpo rolável: `custom-scroll` no container interno.
+
+**Proibido:** modal inline duplicando `Modal.vue`; listener de Escape ou botão de fechar custom no filho; imports relativos longos quando `@/` resolve.

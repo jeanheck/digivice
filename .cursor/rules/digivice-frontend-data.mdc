@@ -1,0 +1,74 @@
+---
+description: Frontend Digivice — dados estáticos (Repository, Service, Presenter, Converter, ViewModel), i18n, extensions, assets
+globs: Frontend/src/{presenters,services,repositories,viewmodels,extensions,catalogs,database}/**
+alwaysApply: false
+---
+
+# Digivice — Frontend: dados estáticos
+
+Migração dos presenters existentes para este padrão é **incremental** — presenter por presenter.
+
+## Camadas (responsabilidade única)
+
+| Camada | Responsabilidade |
+|--------|------------------|
+| **Component** | Pinia + **apenas o presenter da sua tela**. Não chama service/repository/converter nem presenters de outras features. |
+| **Service** (`services/`) | Regras de domínio reutilizáveis por mais de um presenter; pode orquestrar repositories. Sem Vue/presenters/ViewModel de tela. |
+| **Repository** (`repositories/`) | Dados estáticos (`database/*.json` + tipos em `repositories/tables/`) → tipos **Raw** apenas. |
+| **Converter** (`presenters/converter/`) | Puro e stateless: Raw → ViewModel. Sem repository/regra de tela. |
+| **Presenter** (`presenters/`) | Orquestra service/repo/converter; regras de tela (ex.: `[]` quando não há dado). Não monta ViewModel inline se houver transformação. |
+| **ViewModel** (`viewmodels/`) | Contrato da UI; um tipo por arquivo `{nome}.viewmodel.ts`. |
+
+```
+Component → (seu) Presenter → Service → Repository → Raw
+                    │                       │
+                    └──────→ Converter ←────┘
+                               ↓
+                           ViewModel
+```
+
+- Cada componente chama **somente** o presenter da sua feature (ex.: `Map.vue` → `MapPresenter`). Lógica útil em outro presenter → extrair para Service antes de compartilhar.
+- Service é opcional em casos simples (presenter acessa repository/converter direto).
+
+## Raw vs ViewModel
+
+- Raw ≈ ViewModel estruturalmente → **pass-through tipado** no presenter (sem converter). Referência: `presenters/map/seabed.presenter.ts` (`as SeabedRouteLocationViewModel`).
+- Qualquer transformação/projeção (subset, derivados, enriquecimento) → converter. Referência: `enemy-resumed.converter.ts` (`enemyId` + `EnemyRaw` → `EnemyResumedViewModel`). Converter pode receber parâmetros de contexto além do Raw.
+- Raw e ViewModel continuam tipos distintos mesmo quando espelhados.
+
+## i18n
+
+Presenter/converter devolvem **chaves** (`*Key`) e dados crus para interpolação — não recebem `ComposerTranslation`/`t`, não importam `vue-i18n`. `t` / `useI18n` só no componente. Referências: `CardBattleViewModel.titleKey` (`viewmodels/map/card-battle.viewmodel.ts`) + `CardBattle.vue`; `DigimonBattleFieldViewModel` + `DigimonBattleField.vue`.
+
+Nomes de Digimons/Digievoluções são nomes próprios: literais, nunca via i18n.
+
+## Services (`src/services/`)
+
+- Classe `{AlgumaCoisa}Service`; arquivo `{alguma-coisa}.service.ts`; métodos estáticos.
+- Existentes: `AuctionService`, `DigimonService`, `DigimonBattleService`, `DropService`, `EquipmentService`, `LocationService`, `MobiusDesertService`, `NpcService`, `PartyService`, `QuestService`, `StatService`. Reutilize antes de criar.
+
+## Helpers legados
+
+`presenters/helper/` contém legado (`party-level`, `location-label`, `location-encounter`, `desert-neighbor`, `digievolution-techniques`, `main-quest-range`, `quest-progress`, `npc-battle-opponent`, `npc-battle-from-enemy`, `search-item-sort`). Permanece até migração gradual para services — **não** criar helpers novos em `presenters/helper/` nem `src/helpers/`.
+
+## Extensions (`src/extensions/`)
+
+- Arquivo `{alvo}.extensions.ts` (ex.: `math.extensions.ts`); side-effect com declaration merging + atribuição no builtin.
+- Importar uma vez em `main.ts`; call sites usam a API aumentada (`Math.sum`) sem import local.
+- Não substituem services de domínio.
+
+## Assets / `imageName`
+
+- `imageName` em JSON estático começa com letra maiúscula e bate exatamente com o arquivo em `src/assets/` (sem extensão).
+- Nomes usados como chave de asset (ex.: boss via `enemyRaw.name`) seguem a mesma regra.
+- `ImageCatalog` (`catalogs/image.catalog.ts`) faz lookup exato; não normaliza casing.
+
+## Proibido em código novo ou refatorado
+
+- Converter com repository/orquestração de tela.
+- Presenter montando ViewModel inline quando cabe converter.
+- Presenter/converter traduzindo ou importando `vue-i18n`.
+- Repository retornando ViewModel.
+- Component chamando service/repository/converter ou presenter de outra feature.
+- Service conhecendo Vue/presenter ou montando ViewModel de tela.
+- Duplicar a mesma regra em vários presenters quando um service resolve.

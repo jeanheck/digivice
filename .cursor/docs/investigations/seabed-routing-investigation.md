@@ -2,7 +2,7 @@
 
 Domain: map / location  
 Status: confirmed — `SeabedRoute` / `IsSubmerged` in `PlayerAddresses.json` + Player pipeline; frontend pending  
-Related: [known-patterns.md](known-patterns.md), [memory-regions.md](memory-regions.md)
+Related: [patterns/](../../skills/memory-compare/patterns/), [memory-regions.md](../../skills/memory-compare/memory-regions.md)
 
 ---
 
@@ -209,7 +209,7 @@ When `MapId` is a seabed ID (`02Ex`) and submerged (`MapVariant == 1`):
 - [x] Confirmed via paired compares (two full corridors; Suzaku one way,
       Divermon's ↔ Duel both ways)
 - [x] `0x48D78` confirmed as corridor identity (direction-independent)
-- [x] Retrofed to `memory-regions.md` and `known-patterns.md`
+- [x] Retrofed to `memory-regions.md` and `patterns/*.md`
 - [x] Integrated in `PlayerAddresses.json` / backend (`SeabedRoute`, `MapVariant`)
 - [x] Frontend syncer/store for `SeabedRoute` / `MapVariant`
 - [x] `PreviousMapId` (`0x4B400`) in backend + frontend syncer

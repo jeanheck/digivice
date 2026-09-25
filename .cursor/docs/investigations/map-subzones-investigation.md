@@ -362,8 +362,8 @@ grid layers at snapshot tile coords, prints `e2e0` / `de30` correlation.
 
 ## Related Digivice docs
 
-- [memory-regions.md](memory-regions.md) — RAM anchors
-- [known-patterns.md](known-patterns.md) — patterns (incl. this section)
+- [memory-regions.md](../../skills/memory-compare/memory-regions.md) — RAM anchors
+- [patterns/](../../skills/memory-compare/patterns/) — patterns (incl. this section)
 - [seabed-routing-investigation.md](seabed-routing-investigation.md) — same MapId,
   different routes (related idea, different mechanism)
 - Skill: `.cursor/skills/map-subzone-investigate/`

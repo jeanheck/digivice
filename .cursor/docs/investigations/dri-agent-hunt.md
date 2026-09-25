@@ -1,7 +1,7 @@
 # DRI Agent Hunt
 
-Reference for `memory-compare` when investigating a new DRI agent quest.
-Confirmed agent tables live in [known-patterns.md](known-patterns.md).
+**Status: closed** — all 8 DRI agents are confirmed and integrated. Kept as reference for similar 3-step NPC quests.
+Confirmed agent tables live in [patterns/](../../skills/memory-compare/patterns/).
 
 ---
 
@@ -83,4 +83,4 @@ Unchanged known slots are expected when that agent is already complete on the sa
 
 Path: `Backend/Memory/Definitions/Quests/DriAgents/{Name}Addresses.json`.
 
-After confirmation, integrate via skill `dri-agent-integrate` (or `quest-pattern-backend` then `quest-pattern-frontend`).
+After confirmation, integrate via skill `quest-pattern-backend` then `quest-pattern-frontend`.

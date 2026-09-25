@@ -4,14 +4,21 @@ Maintained by quest-pattern-backend skill. Append entries; do not remove without
 
 ## Categories on Journal
 
-| Category | Wired on Journal | Reference tracker |
-|----------|------------------|-------------------|
-| Main quest | Yes | MainQuest |
-| Side quests | Yes | FolderBag |
-| Legendary weapons | Yes | eternally |
-| DRI agents | Yes | driAgentGuilmon |
+| Category | Wired on Journal | Assembler | Reference tracker |
+|----------|------------------|-----------|-------------------|
+| Main quest | Yes | `MainQuestAssembler` | mainQuest |
+| Side quests | Yes | `QuestAssembler` | folderBag |
+| Legendary weapons | Yes | `QuestAssembler` | eternally |
+| DRI agents | Yes (8/8 rookies) | `QuestAssembler` | driAgentGuilmon |
+| Duel Island | Yes | `DuelIslandAssembler` | asukaTrophy |
 
 ## Trackers integrated
+
+### Side quests
+
+- `folderBag` — `Quests/SideQuests/FolderBagAddresses.json`
+- `fishingPole` — `Quests/SideQuests/FishingPoleAddresses.json`
+- `treeBoots` — `Quests/SideQuests/TreeBootsAddresses.json` (quest-level requisite `FolderBag` — legacy PascalCase id)
 
 ### Legendary weapons (2026-06-06)
 
@@ -42,4 +49,12 @@ Maintained by quest-pattern-backend skill. Append entries; do not remove without
 
 ### DRI agents (2026-07-14)
 
-- `driAgentPatamon` — `Quests/DriAgents/DriAgentPatamonAddresses.json` (3 steps + `patamonDDNA` requisite)
+- `driAgentPatamon` — `Quests/DriAgents/DriAgentPatamonAddresses.json` (3 steps + `patamonDDNA` requisite; quest-level requisite `submarimon`)
+
+### Duel Island (2026-08-30)
+
+- `asukaTrophy` — `Quests/DuelIsland/AsukaTrophyAddresses.json`
+
+### Duel Island (2026-08-31)
+
+- `sunTrophy` — `Quests/DuelIsland/SunTrophyAddresses.json` (quest-level requisite `asukaTrophy`; trophy step raw byte `0x48DC4`)

@@ -45,4 +45,4 @@ Path examples (quest-like trackers under `Quests/`):
 
 - [ ] Confirmed manually
 - [ ] Integrated in Definitions JSON
-- [ ] Retrofed to memory-regions.md / known-patterns.md
+- [ ] Retrofed to memory-regions.md / patterns/*.md

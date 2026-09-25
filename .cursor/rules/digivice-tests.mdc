@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Digivice — Tests (Backend)
 
-Fonte: `AI/CODE_RULES.md` (seção Tests). Aplica-se ao projeto `Tests/`. Frontend não tem testes automatizados.
+Aplica-se ao projeto `Tests/`. Frontend não tem testes automatizados. Padrões concretos (mocks, bases, onde colocar cada teste): skill `backend-tests`.
 
 1. **Corner cases:** ao finalizar testes de unidade, revisar caminhos alternativos, fallbacks, nulos/concorrência, I/O e fronteiras no código de produção; adicionar testes focados nesses casos.
 2. **Um arquivo de produção ↔ um arquivo de testes:** espelhar o nome (ex.: `OptionalJsonConverterFactory.cs` → `OptionalJsonConverterFactoryTests.cs`) na pasta/namespace correspondente em `Tests/`. Vale para código novo e refactors; retrofit legado sob demanda.

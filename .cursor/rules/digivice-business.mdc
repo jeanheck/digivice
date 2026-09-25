@@ -1,27 +1,49 @@
 ---
-description: Regras de domínio Digivice — arquitetura SignalR, party, journal, digievolutions
+description: Regras de domínio Digivice — arquitetura SignalR, party, journal, digievolutions, batalhas
 alwaysApply: true
 ---
 
 # Digivice — Business Rules
 
-Fonte humana: `AI/BUSINESS_RULES.md`. Tracker de memória para Digimon World 2003 no Duckstation.
+Tracker de memória para *Digimon World 2003* rodando no emulador *Duckstation*.
 
 ## Arquitetura e fluxo de dados
 
-Pipeline: Duckstation (RAM 500ms) → MemoryReader → Loaders (Addresses + Readers → Resources) → Assemblers → State → StateEventFactory (diffs) → DTOs/eventos SignalR → Frontend converters → Syncers → Pinia → Vue.
+```mermaid
+graph TD
+    subgraph backendSide [Backend - C# .NET]
+        emulator[Duckstation RAM] --> gameLoop[GameLoopService]
+        gameLoop --> composer[StateComposer]
+        composer --> providers[Providers]
+        providers --> loaders[Loaders]
+        loaders -->|"Addresses + Readers"| resources[Resources]
+        resources --> assemblers[Assemblers]
+        assemblers --> state[State]
+        state -->|"atual + anterior"| stateEvents[StateEventFactory]
+        stateEvents -->|"apenas alterações"| dispatcher[EventDispatcher SignalR]
+    end
+    subgraph frontendSide [Frontend - TS / Vue 3]
+        dispatcher --> handlers[signalr.handlers]
+        handlers --> converters[events converters]
+        converters --> syncers[Syncers]
+        syncers --> pinia[useGameStore]
+        pinia --> components[Componentes Vue]
+    end
+```
 
-- **Camadas de memória:** Addresses → Loader → Reader → Resource → Assembler (detalhe em `AI/CODE_RULES.md` Backend).
-- **Game loop:** `GameLoopService` a cada 500ms.
-- **Diffs:** só propriedades que mudaram entram nos DTOs; despacho via SignalR (`EventDispatcher`).
+- **Game loop:** `GameLoopService` compõe o `State` via `StateComposer` a cada `GameLoop:PollingIntervalMs` (default **500ms**). Também emite `HealthChanged` (`HealthEventFactory`) para conexão com o emulador.
+- **Composição:** `StateComposer` → `I{Entity}Provider.Get()` → `{Entity}Loader` → `{Entity}Assembler`. Entidades do `State`: `Player`, `ImportantItems`, `Party`, `DigimonBattle`, `CardBattle`, `Auctions`, `Npcs`, `Journal`.
+- **Camadas de memória:** Addresses → Loader → Reader → Resource → Assembler (detalhe em `digivice-backend.mdc`).
+- **Diffs:** `StateEventFactory` delega a `{Entity}EventFactory`; só propriedades que mudaram entram nos DTOs (`Optional<T>`). Eventos: `PlayerChanged`, `ImportantItemsChanged`, `PartyChanged`, `DigimonBattleChanged`, `CardBattleChanged`, `AuctionsChanged`, `NpcsChanged`, `JournalChanged`.
 - **InitialState:** DTO completo do State na conexão (`StateConverter` → Pinia).
 - **Incremental:** eventos posteriores trazem só alterações; Syncers mutam de forma cirúrgica.
 - **Regra de ouro do Syncer:** valor `undefined` (não enviado) → **não mutar**.
 - **SSOT:** componentes consomem `useGameStore` diretamente; sem controllers intermediários.
 
-## Player — Name
+## Player
 
-Nome do treinador **não é lido** pelo Digivice (referência futura apenas).
+- **Name não é lido** pelo Digivice (referência futura). Address `0x00048D88`, buffer 10 bytes, charset custom (A–Z `0x0E`–`0x27`, a–z `0x28`–`0x41`, espaço `0x01`, termina em `0x00`/`0xFF`).
+- `MapId` do domínio é exposto como `Location` no DTO (string hex `X4`); `PreviousMapId` idem.
 
 ## Party
 
@@ -29,28 +51,36 @@ Nome do treinador **não é lido** pelo Digivice (referência futura apenas).
 - Sempre pelo menos 1 slot ocupado.
 - Slot ocupado: `digimonId` e `digimon` ambos não-nulos. Slot vazio: ambos nulos. Um nulo e outro preenchido = inconsistência.
 - `digimonId` fica no slot; `Digimon` carrega só estado dinâmico da RAM. Dados estáticos (nome, EXP curve, digievolutions) vêm de presenters/repositórios via `digimonId`.
-- UI (`App.vue`): estado chega com 3 slots; renderizar **apenas** slots ocupados.
+- UI (`App.vue`): estado chega com 3 slots; renderizar **apenas** slots ocupados (filtro de apresentação, não omissão do modelo).
 
 ## Digimon e Digievolutions
 
 - Slot de digievolução: vazio ou preenchido. Válido: vazio→preenchido e preenchido(X)→preenchido(Y). **Proibido:** preenchido→vazio.
 - UI “empty” = slot que **nunca** foi preenchido (RAM `0` → domínio `null`), não um slot que “perdeu” evolução.
 - **Level/Dvxp do slot** (`DigievolutionSlotAssembler`): cruzamento por id com `StoredDigievolutions`; id ausente da lista → `Level = 1`, `Dvxp = 0`.
-- **ActiveDigievolutionId:** sem evolução ativa = `null` (Assembler: RAM `<= 0` → `null`; não usar `0` como “vazio” no contrato).
+- **ActiveDigievolutionId:** sem evolução ativa = `null` (Assembler: RAM `<= 0`, inclusive sentinela `0xFFFF`, → `null`; não usar `0` como “vazio” no contrato).
 - **Equipamentos:** slot vazio = `null` (Assembler: RAM `<= 0` → `null`); frontend só repassa.
-- Técnicas por `digievolutionId` em JSON estático; assinatura = maior `learnLevel`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
+- Técnicas por `digievolutionId` em JSON estático (`digievolution-technique.json`); assinatura = maior `learnLevel`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.
 - Level máximo **99** (invariante 1–99). Não aplicar clamp defensivo no frontend.
-- Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE.
+- Blast (0–1000) é **por Digimon**, não global. RAM: `0x00042B74 + (2 × rookieId)` Int16 LE (`BlastAddress` em `DigimonsAddresses.json`).
 
 ## Batalhas
 
-- **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null envia `enemy: null` explícito.
+- **Inimigo** (`DigimonBattleAssembler`): RAM `Id <= 0` → `Enemy = null` inteiro (sem id não há nenhum dado do inimigo). Transição objeto→null envia `enemy: null` explícito; o syncer zera e recria o objeto completo quando um novo aparece.
 - **Campo:** `Field = 0` é o campo **neutro** (valor válido, não "vazio").
 - **Card battle** (`CardBattleAssembler`): sem card battle = `Id null` (RAM `<= 0` → `null`).
+
+## Important items, Auctions e NPCs
+
+- **ImportantItems** (`ImportantItemsAssembler`): cada item é `bool` (RAM `!= 0` → `true`). Posse permanente, não quantidade.
+- **Auctions** (`AuctionsAssembler`): cada leilão é `bool` = instância consumida (bit em `0x4B38A`). Disponibilidade/janela é calculada no frontend a partir da main quest.
+- **Npcs** (`NpcsAssembler`): cada NPC tem lista fixa de `Battles` (`Id` + `Won`); `Won = Value != 0`. NPCs e batalhas vêm todos no InitialState; nunca add/remove em runtime.
 
 ## Journal
 
 - Estrutura das missões em JSON estático; backend lê `Value` (byte) na RAM e expõe `IsDone` (bool) no domínio/SignalR.
+- Categorias: `MainQuest`, `SideQuests`, `LegendaryWeapons`, `DriAgents`, `DuelIsland`.
 - **Cascade Main Quest apenas** (`MainQuestAssembler`): step posterior `IsDone` força anteriores não feitos → `IsDone = true`. Side quests / legendary / DRI = pass-through via `QuestAssembler`.
 - **Duel Island** (`DuelIslandAssembler`): requisite não metido → todos steps `IsDone = false`; troféu (último step) `IsDone` → steps anteriores `IsDone = true`.
+- Não aplicar normalizações de uma categoria em outra sem decisão explícita de produto.
 - Todas as missões vêm no InitialState; **nunca** add/remove em runtime. Conclusão é calculada no frontend (todos steps/requisitos satisfeitos); não há flag de “missão concluída” do backend.

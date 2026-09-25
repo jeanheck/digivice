@@ -6,22 +6,39 @@ alwaysApply: false
 
 # Digivice — Backend
 
-Fonte: `AI/CODE_RULES.md` (seção Backend).
-
 1. **Construtores primários** (C# 12+) sempre que possível.
 2. **Arquivos individuais** por classe (responsabilidade única).
 3. **Collection expressions** (`[ ]`); prefira `[.. collection]` a `.ToList()` / `.ToArray()` / `new List<T>(collection)` para spreads/conversões de `IEnumerable`.
 4. **Usings:** ao editar um arquivo, remova `using` não utilizados.
-5. **Readers e Converters stateless:** sem estado mutável; dados entram, dados tratados saem. Estado fica em `GameStateStore` ou orquestradores.
-6. **Sem prefixo `_`:** evite underline em campos/variáveis; prefira propriedades readonly PascalCase para DI / parâmetros de primary constructor.
+5. **Readers e Converters stateless:** sem estado mutável; dados entram, dados tratados saem (thread-safety e testabilidade). Estado fica em `GameStateStore` ou orquestradores.
+6. **Sem prefixo `_`:** evite underline em campos/variáveis; prefira propriedades readonly PascalCase para DI / parâmetros de primary constructor que precisem de validação.
 7. **Inicialização:** prefira `new();` a `new Object();` quando possível.
 8. **Ordem dos membros:**
    1. Campos e propriedades privadas
    2. Métodos privados
-   3. Métodos públicos / `protected`
+   3. Métodos públicos / `protected` (incluindo overrides)
 
    Não intercalar públicos e privados — privados acima, públicos/protected abaixo.
-9. **Camadas de leitura de memória:** Addresses (offsets) → Loader (`Get*Addresses` + orquestra) → Reader (RAM → Resource) → Resource → Assembler (Resource → Domain).
-   - Campo em entidade existente → estender tipos existentes.
-   - Conceito de leitura novo → `{Entity}Addresses` / `Reader` / `Resource` / **`Loader`**; consumidores usam Loaders, não Readers.
-   - Naming: `{Entity}Addresses`, `{Entity}Reader`, `{Entity}Resource`, `{Entity}Loader`.
+
+## Camadas de leitura de memória
+
+`StateComposer` → Provider → Loader → (Addresses + Reader) → Resource → Assembler → `State`.
+
+| Camada | Pasta | Responsabilidade |
+|--------|-------|------------------|
+| **Addresses** | `Memory/Addresses/` + `Memory/Definitions/**/*Addresses.json` | Só offsets/layout; sem I/O de RAM. Hex via `HexStringToLongConverter`. |
+| **Repository** | `Memory/Repositories/AddressesRepository.cs` | Carrega e cacheia JSON (`Get*Addresses()`); pastas de quests são auto-descobertas. |
+| **Reader** | `Memory/Readers/` (plano) | Stateless: Addresses in → `*Resource` out (via `IMemoryReader`). |
+| **Resource** | `Memory/Resources/` | Modelo tipado do que foi lido; sem regra de domínio. |
+| **Loader** | `Application/Loaders/` (plano) | Resolve `Get*Addresses()` e chama o Reader; orquestra composição entre loaders. |
+| **Provider** | `Application/Providers/` | `Get()` = Loader + Assembler; consumido pelo `StateComposer`. |
+| **Assembler** | `Domain/Assemblers/` (classes `static`) | `Resource` → modelo de domínio no `State`; normalizações de domínio (sentinelas → `null`, cascades). |
+
+Eventos: `Events/Converters/` (`ToDTO` completo), `Events/Diffing/` (delta `Optional<T>`), `Events/Factory/` (`{Entity}EventFactory` + `StateEventFactory`), `Events/DTO/`.
+
+**Decisão de tipos:**
+- Campo novo em entidade existente → estender Addresses / Reader / Resource / Assembler / Differ / DTO **já existentes** (skill `address-field-backend`).
+- Conceito de leitura novo → pipeline completo `{Entity}Addresses` / `Reader` / `Resource` / `Loader` / `Provider` / `Assembler` / eventos (skill `memory-entity-backend`). Consumidores orquestram **Loaders**, não Readers nem `Get*Addresses()` diretamente.
+- Tracker de quest (`Quests/**`) → skill `quest-pattern-backend`.
+
+Referências vivas: `PlayerLoader`, `DigimonLoader`, `PartyLoader`, `CardBattleLoader`, `NpcsLoader`.

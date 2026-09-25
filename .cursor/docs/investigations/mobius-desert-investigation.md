@@ -2,7 +2,7 @@
 
 Domain: map / location  
 Status: confirmed — cell-pair discriminator at `0x48D7A` (`MapVariant`, formerly SeabedRouteType)  
-Related: [seabed-routing-investigation.md](seabed-routing-investigation.md), [known-patterns.md](known-patterns.md), [memory-regions.md](memory-regions.md)
+Related: [seabed-routing-investigation.md](seabed-routing-investigation.md), [patterns/](../../skills/memory-compare/patterns/), [memory-regions.md](../../skills/memory-compare/memory-regions.md)
 
 ---
 
@@ -178,6 +178,6 @@ elif SeabedRoute != 0:
 ## Status
 
 - [x] Confirmed across all 16 Mobius snapshots
-- [x] Retrofed to memory-regions.md / known-patterns.md
+- [x] Retrofed to memory-regions.md / patterns/*.md
 - [ ] Integrated as Mobius-aware field / static cell table (pending product work)
 - [ ] Manual live check: walk A1↔A2 (D7A stable), A1→A3 (D7A changes), leave maze (D78/D7A clear?)

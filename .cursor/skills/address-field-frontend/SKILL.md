@@ -23,9 +23,9 @@ the entity change event. Do **not** invoke or verify `address-field-backend`.
 
 | Case | Use instead |
 |------|-------------|
-| Journal / quests / DRI cards / static quest JSON | `quest-pattern-frontend` |
+| Journal / quests / static quest JSON | `quest-pattern-frontend` |
 | Backend Reader / Assembler / Differ | `address-field-backend` |
-| End-to-end DRI agent | `dri-agent-integrate` |
+| New entity / new SignalR event in the store | `memory-entity-frontend` |
 
 ## Reuse rule (critical)
 
@@ -39,15 +39,25 @@ create a parallel syncer or DTO for one new scalar.
 | Events converter | `events/converters/{entity}.converter.ts` |
 | Syncer | `stores/syncers/{entity}.syncer.ts` |
 
-## Entity map (common)
+## Entity map
+
+Paths relative to `Frontend/src/`. File suffixes: `events/dto/*.dto.ts`,
+`events/converters/*.converter.ts`, `stores/syncers/*.syncer.ts`.
 
 | Entity | DTO | Model | Converter | Syncer | Store path |
 |--------|-----|-------|-----------|--------|------------|
-| Player | `events/dto/player.dto.ts` | `models/player.ts` | `events/converters/player.converter.ts` | `stores/syncers/player.syncer.ts` | `currentState.player` |
-| Digimon | party/digimon DTOs under `events/dto/` | digimon model | digimon events converter | digimon/party syncer | party slots |
-| Auction | auction DTOs | auction model | auction converter | auction syncer | auctions |
+| Player | `events/dto/player` | `models/player.ts` | `events/converters/player` | `stores/syncers/player` | `currentState.player` |
+| Party | `events/dto/party`, `parties/digimon-slot` | `models/party/party.ts`, `party/digimon-slot.ts` | `party`, `parties/digimon-slot` | `party`, `parties/digimon-slot` | `currentState.party` |
+| Digimon | `events/dto/parties/digimon` (+ `parties/digimons/*`) | `models/party/digimon/digimon.ts` (+ siblings) | `parties/digimon` (+ `parties/digimons/*`) | `parties/digimon` (+ `parties/digimons/*`) | `party.slots[n].digimon` |
+| Digimon in combat | `parties/digimons/in-battle` | `models/party/digimon/in-battle.ts` | `parties/digimons/in-battle` | `parties/digimons/in-battle` | `digimon.inBattle` |
+| Digimon battle | `digimon-battle` | `models/digimon-battle.ts` | `digimon-battle` | `digimon-battle` | `currentState.digimonBattle` |
+| Enemy | `battles/enemy` | `models/battle/enemy.ts` | `battles/enemy` | `battles/enemy` | `digimonBattle.enemy` |
+| Card battle | `card-battle` | `models/card-battle.ts` | `card-battle` | `card-battle` | `currentState.cardBattle` |
+| Important items | `important-items` | `models/important-items.ts` | `important-items` | `important-items` | `currentState.importantItems` |
+| Auctions | `auctions` | `models/auctions.ts` | `auctions` | `auctions` | `currentState.auctions` |
+| Npcs | `npcs`, `npcs/npc`, `npcs/npc-battle` | `models/npcs.ts`, `npc.ts`, `npc-battle.ts` | `npcs` | `npcs` | `currentState.npcs` |
 
-Confirm exact paths by grepping the existing field names on that entity.
+Confirm exact paths by grepping an existing field of the entity.
 
 ## Naming and types
 
@@ -124,7 +134,7 @@ if (newPlayerDto.previousMapId !== undefined) {
 
 Files to mirror when adding another Player field:
 
-1. [`Frontend/src/events/dto/player.dto.ts`](Frontend/src/events/dto/player.dto.ts)
-2. [`Frontend/src/models/player.ts`](Frontend/src/models/player.ts)
-3. [`Frontend/src/events/converters/player.converter.ts`](Frontend/src/events/converters/player.converter.ts)
-4. [`Frontend/src/stores/syncers/player.syncer.ts`](Frontend/src/stores/syncers/player.syncer.ts)
+1. [`Frontend/src/events/dto/player.dto.ts`](../../../Frontend/src/events/dto/player.dto.ts)
+2. [`Frontend/src/models/player.ts`](../../../Frontend/src/models/player.ts)
+3. [`Frontend/src/events/converters/player.converter.ts`](../../../Frontend/src/events/converters/player.converter.ts)
+4. [`Frontend/src/stores/syncers/player.syncer.ts`](../../../Frontend/src/stores/syncers/player.syncer.ts)
