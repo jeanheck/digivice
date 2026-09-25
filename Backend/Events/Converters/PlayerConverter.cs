@@ -10,7 +10,7 @@ public static class PlayerConverter
         return new PlayerDTO
         {
             Bits = player.Bits,
-            Location = player.MapId,
+            MapId = player.MapId,
             PreviousMapId = player.PreviousMapId,
             SeabedRoute = player.SeabedRoute,
             MapVariant = player.MapVariant

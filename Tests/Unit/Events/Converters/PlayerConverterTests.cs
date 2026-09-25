@@ -21,8 +21,8 @@ public class PlayerConverterTests
 
         Assert.True(dto.Bits.HasValue);
         Assert.Equal(12345, dto.Bits.Value);
-        Assert.True(dto.Location.HasValue);
-        Assert.Equal("00AF", dto.Location.Value);
+        Assert.True(dto.MapId.HasValue);
+        Assert.Equal("00AF", dto.MapId.Value);
         Assert.True(dto.PreviousMapId.HasValue);
         Assert.Equal("023E", dto.PreviousMapId.Value);
         Assert.True(dto.SeabedRoute.HasValue);

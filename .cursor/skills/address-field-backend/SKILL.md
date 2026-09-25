@@ -60,7 +60,7 @@ assemblers map directly (no `?? 0`).
 
 | Pattern | Reader | Resource | Domain / Assembler | DTO | Example |
 |---------|--------|----------|--------------------|-----|---------|
-| Map id (Int16 → hex) | `memoryReader.ReadInt16(addr)` | `short` | `string` via `.ToString("X4")` | `Optional<string>` | `Player.MapId` (DTO `Location`), `PreviousMapId` |
+| Map id (Int16 → hex) | `memoryReader.ReadInt16(addr)` | `short` | `string` via `.ToString("X4")` | `Optional<string>` | `Player.MapId`, `PreviousMapId` |
 | Byte value | `memoryReader.ReadByte(addr)` | `byte` | `byte` | `Optional<byte>` | `SeabedRoute`, `MapVariant` |
 | Bit flag → bool | `memoryReader.ReadByte(addr, bitMask)` | `byte` | `bool` (`!= 0`) | `Optional<bool>` | `Auctions.DivineBarrier` |
 | Possession byte → bool | `memoryReader.ReadByte(addr)` | `byte` | `bool` (`!= 0`) | `Optional<bool>` | `ImportantItems.TreeBoots` |
@@ -71,8 +71,7 @@ assemblers map directly (no `?? 0`).
 Sentinel rules (`<= 0` → `null`, `Field = 0` neutral, Enemy null as a whole):
 `.cursor/rules/digivice-business.mdc`.
 
-**Naming:** keep domain/DTO names equal to the JSON key unless a rename exists
-(`MapId` → DTO `Location`).
+**Naming:** keep domain/DTO names equal to the JSON key.
 
 **Mirrors:** do not add duplicate mirror addresses (e.g. `0x48D68` for
 PreviousMapId) unless the user explicitly asks.

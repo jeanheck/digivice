@@ -15,7 +15,7 @@ public class PlayerDifferTests
 
         Assert.NotNull(result);
         Assert.False(result.Bits.HasValue);
-        Assert.False(result.Location.HasValue);
+        Assert.False(result.MapId.HasValue);
         Assert.False(result.PreviousMapId.HasValue);
         Assert.False(result.SeabedRoute.HasValue);
         Assert.False(result.MapVariant.HasValue);
@@ -31,8 +31,8 @@ public class PlayerDifferTests
         Assert.NotNull(result);
         Assert.True(result.Bits.HasValue);
         Assert.Equal(100, result.Bits.Value);
-        Assert.True(result.Location.HasValue);
-        Assert.Equal("0001", result.Location.Value);
+        Assert.True(result.MapId.HasValue);
+        Assert.Equal("0001", result.MapId.Value);
         Assert.True(result.PreviousMapId.HasValue);
         Assert.Equal("023E", result.PreviousMapId.Value);
         Assert.True(result.SeabedRoute.HasValue);
@@ -52,14 +52,14 @@ public class PlayerDifferTests
         Assert.NotNull(result);
         Assert.True(result.Bits.HasValue);
         Assert.Equal(200, result.Bits.Value);
-        Assert.False(result.Location.HasValue);
+        Assert.False(result.MapId.HasValue);
         Assert.False(result.PreviousMapId.HasValue);
         Assert.False(result.SeabedRoute.HasValue);
         Assert.False(result.MapVariant.HasValue);
     }
 
     [Fact]
-    public void Diff_ShouldReturnLocationDelta_WhenOnlyMapIdChanged()
+    public void Diff_ShouldReturnMapIdDelta_WhenOnlyMapIdChanged()
     {
         var previousPlayer = new Player { Bits = 100, MapId = "0001", PreviousMapId = "023E" };
         var newPlayer = new Player { Bits = 100, MapId = "0002", PreviousMapId = "023E" };
@@ -68,8 +68,8 @@ public class PlayerDifferTests
 
         Assert.NotNull(result);
         Assert.False(result.Bits.HasValue);
-        Assert.True(result.Location.HasValue);
-        Assert.Equal("0002", result.Location.Value);
+        Assert.True(result.MapId.HasValue);
+        Assert.Equal("0002", result.MapId.Value);
         Assert.False(result.PreviousMapId.HasValue);
         Assert.False(result.SeabedRoute.HasValue);
         Assert.False(result.MapVariant.HasValue);
@@ -86,7 +86,7 @@ public class PlayerDifferTests
         Assert.True(result.PreviousMapId.HasValue);
         Assert.Equal("02E0", result.PreviousMapId.Value);
         Assert.False(result.Bits.HasValue);
-        Assert.False(result.Location.HasValue);
+        Assert.False(result.MapId.HasValue);
         Assert.False(result.SeabedRoute.HasValue);
         Assert.False(result.MapVariant.HasValue);
     }
@@ -102,8 +102,8 @@ public class PlayerDifferTests
         Assert.NotNull(result);
         Assert.True(result.Bits.HasValue);
         Assert.Equal(200, result.Bits.Value);
-        Assert.True(result.Location.HasValue);
-        Assert.Equal("0002", result.Location.Value);
+        Assert.True(result.MapId.HasValue);
+        Assert.Equal("0002", result.MapId.Value);
     }
 
     [Fact]
@@ -118,7 +118,7 @@ public class PlayerDifferTests
         Assert.Equal((byte)0x08, result.SeabedRoute.Value);
         Assert.False(result.MapVariant.HasValue);
         Assert.False(result.Bits.HasValue);
-        Assert.False(result.Location.HasValue);
+        Assert.False(result.MapId.HasValue);
         Assert.False(result.PreviousMapId.HasValue);
     }
 
@@ -134,7 +134,7 @@ public class PlayerDifferTests
         Assert.Equal((byte)0x01, result.MapVariant.Value);
         Assert.False(result.SeabedRoute.HasValue);
         Assert.False(result.Bits.HasValue);
-        Assert.False(result.Location.HasValue);
+        Assert.False(result.MapId.HasValue);
         Assert.False(result.PreviousMapId.HasValue);
     }
 
@@ -146,8 +146,8 @@ public class PlayerDifferTests
 
         var result = PlayerDiffer.Diff(previousPlayer, newPlayer);
 
-        Assert.True(result.Location.HasValue);
-        Assert.Equal("02E2", result.Location.Value);
+        Assert.True(result.MapId.HasValue);
+        Assert.Equal("02E2", result.MapId.Value);
         Assert.True(result.SeabedRoute.HasValue);
         Assert.Equal((byte)0x08, result.SeabedRoute.Value);
         Assert.True(result.MapVariant.HasValue);

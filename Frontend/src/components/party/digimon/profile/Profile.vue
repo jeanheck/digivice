@@ -52,7 +52,7 @@ const digimonName = computed(() => {
 });
 
 const location = computed(() => {
-  return store.currentState?.player?.location ?? null;
+  return store.currentState?.player?.mapId ?? null;
 });
 
 const isInBattle = computed(() => {

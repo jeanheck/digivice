@@ -15,7 +15,7 @@ public class DtoRuntimeTypeJsonConverterTests
             new PlayerDTO
             {
                 Bits = 200,
-                Location = "00AF"
+                MapId = "00AF"
             });
 
         var json = JsonSerializer.Serialize(ev);
@@ -25,7 +25,7 @@ public class DtoRuntimeTypeJsonConverterTests
         Assert.Equal(JsonValueKind.Object, payload.ValueKind);
         Assert.True(payload.EnumerateObject().Any(), "Payload must not serialize as empty object {}");
         Assert.Equal(200, payload.GetProperty("Bits").GetInt32());
-        Assert.Equal("00AF", payload.GetProperty("Location").GetString());
+        Assert.Equal("00AF", payload.GetProperty("MapId").GetString());
     }
 
     [Fact]

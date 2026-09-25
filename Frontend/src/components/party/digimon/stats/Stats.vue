@@ -29,7 +29,7 @@ const titleTooltipContent = ref("");
 const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0, battleDelta: 0 });
 
 const location = computed(() => {
-  return store.currentState?.player?.location ?? null;
+  return store.currentState?.player?.mapId ?? null;
 });
 
 const statsViewModel = computed(() => {

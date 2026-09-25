@@ -14,7 +14,7 @@ const store = useGameStore();
 const isMobiusDesertModalOpen = ref(false);
 
 const locationViewModel = computed(() => {
-  const locationId = store.currentState?.player?.location ?? null;
+  const locationId = store.currentState?.player?.mapId ?? null;
   if (locationId === null) {
     return null;
   }

@@ -33,7 +33,7 @@ public class OptionalJsonConverterTests
         var dto = new PlayerDTO
         {
             Bits = 123,
-            Location = "00AF"
+            MapId = "00AF"
         };
 
         var json = JsonSerializer.Serialize(dto);
@@ -41,7 +41,7 @@ public class OptionalJsonConverterTests
         var root = document.RootElement;
 
         Assert.Equal(123, root.GetProperty("Bits").GetInt32());
-        Assert.Equal("00AF", root.GetProperty("Location").GetString());
+        Assert.Equal("00AF", root.GetProperty("MapId").GetString());
     }
 
     [Fact]

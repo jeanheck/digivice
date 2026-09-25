@@ -1,6 +1,6 @@
 export interface Player {
   bits: number;
-  location: string;
+  mapId: string;
   previousMapId: string;
   seabedRoute: number;
   mapVariant: number;

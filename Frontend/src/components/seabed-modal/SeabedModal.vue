@@ -27,7 +27,7 @@ const isModalOpen = computed(() => {
 const selectedLocationId = ref<string | null>(null);
 
 function syncSelectedLocationIdFromPlayer(): void {
-  const playerLocationId = store.currentState?.player?.location ?? null;
+  const playerLocationId = store.currentState?.player?.mapId ?? null;
   selectedLocationId.value = SeabedModalPresenter.getInitialSelectedLocationId(playerLocationId);
 }
 

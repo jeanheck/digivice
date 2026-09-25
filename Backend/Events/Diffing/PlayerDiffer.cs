@@ -25,7 +25,7 @@ public static class PlayerDiffer
         }
         if (newPlayer.MapId != previousPlayer.MapId)
         {
-            dto = dto with { Location = newPlayer.MapId };
+            dto = dto with { MapId = newPlayer.MapId };
         }
         if (newPlayer.PreviousMapId != previousPlayer.PreviousMapId)
         {

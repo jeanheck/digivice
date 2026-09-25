@@ -20,7 +20,7 @@ const store = useGameStore();
 const { t } = useI18n();
 
 const locationId = computed(() => {
-  return store.currentState?.player?.location ?? null;
+  return store.currentState?.player?.mapId ?? null;
 });
 
 const mapVariant = computed(() => {

@@ -6,8 +6,8 @@ export class PlayerSyncer {
     if (newPlayerDto.bits !== undefined) {
       previousPlayer.bits = newPlayerDto.bits;
     }
-    if (newPlayerDto.location !== undefined) {
-      previousPlayer.location = newPlayerDto.location;
+    if (newPlayerDto.mapId !== undefined) {
+      previousPlayer.mapId = newPlayerDto.mapId;
     }
     if (newPlayerDto.previousMapId !== undefined) {
       previousPlayer.previousMapId = newPlayerDto.previousMapId;

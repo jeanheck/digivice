@@ -13,7 +13,7 @@ import { MapPresenter } from "@/presenters/map/map.presenter.ts";
 const store = useGameStore();
 
 const locationId = computed(() => {
-  return store.currentState?.player?.location ?? null;
+  return store.currentState?.player?.mapId ?? null;
 });
 
 const mapViewModel = computed(() => {

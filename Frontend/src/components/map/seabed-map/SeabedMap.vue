@@ -14,7 +14,7 @@ const emit = defineEmits<{
 const store = useGameStore();
 
 const locationId = computed(() => {
-  return store.currentState?.player?.location ?? null;
+  return store.currentState?.player?.mapId ?? null;
 });
 
 const seabedRoute = computed(() => {
