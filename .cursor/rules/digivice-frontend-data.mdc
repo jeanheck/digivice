@@ -30,6 +30,7 @@ Component → (seu) Presenter → Service → Repository → Raw
 - Cada componente chama **somente** o presenter da sua feature (ex.: `Map.vue` → `MapPresenter`). Lógica útil em outro presenter → extrair para Service antes de compartilhar.
 - Service é opcional em casos simples (presenter acessa repository/converter direto).
 - Informação derivada **apenas do estado** (model do Pinia) vem de `stores/selectors/` (ver `digivice-frontend-sync.mdc`); presenters/services consomem o selector e não reimplementam essa lógica.
+- Presenters/services/selectors recebem entidades e `mapId` não anuláveis (`Quest`, `Auctions`, `ImportantItems`, `Npcs`, `locationId: string`). `| null` apenas quando o null tem significado próprio (`enemy`, `cardBattle.id`, seleção de modal, resultado de `find`).
 
 ## Raw vs ViewModel
 

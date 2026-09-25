@@ -6,7 +6,14 @@ alwaysApply: false
 
 # Digivice — Frontend: componentes
 
-Componentes consomem `useGameStore` e **apenas o presenter da sua tela** (ver `digivice-frontend-data.mdc`). Não importam services, repositories, converters nem helpers.
+Componentes consomem o estado do jogo via `useGameState()` e **apenas o presenter da sua tela** (ver `digivice-frontend-data.mdc`). Não importam services, repositories, converters nem helpers.
+
+## Estado garantido
+
+- `useGameState()` (`composables/use-game-state.ts`) devolve o `State` não anulável: `gameState.value.player.mapId`, sem `?.` nem fallback (`?? null`, `?? 0`, `?? []`, `{ slots: [] }`).
+- `useGameStore` direto só para status de conexão/health (ex.: `isConnected` no `Footer.vue`).
+- `App.vue` só renderiza o `main` com estado: `useAppHealthyScreen` retorna `loading` quando `currentState === null`. Perda de estado desmonta a árvore; novo `InitialState` remonta do zero.
+- `useGameState` lança erro explícito se usado fora dessa árvore.
 
 ## Coerência visual e estilos
 

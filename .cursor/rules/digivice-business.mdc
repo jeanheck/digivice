@@ -42,10 +42,10 @@ graph TD
 - **Composição:** `StateComposer` → `I{Entity}Provider.Get()` → `{Entity}Loader` → `{Entity}Assembler`. Entidades do `State`: `Player`, `ImportantItems`, `Party`, `DigimonBattle`, `CardBattle`, `Auctions`, `Npcs`, `Journal`.
 - **Camadas de memória:** Addresses → Loader → Reader → Resource → Assembler (detalhe em `digivice-backend.mdc`).
 - **Diffs:** `StateEventFactory` delega a `{Entity}EventFactory`; só propriedades que mudaram entram nos DTOs (`Optional<T>`). Eventos: `PlayerChanged`, `ImportantItemsChanged`, `PartyChanged`, `DigimonBattleChanged`, `CardBattleChanged`, `AuctionsChanged`, `NpcsChanged`, `JournalChanged`.
-- **InitialState:** DTO completo do State na conexão (`StateConverter` → Pinia).
+- **InitialState:** DTO completo do State na conexão (`StateConverter` → Pinia). `StateDTO` sempre traz as 8 entidades (`required` no C#). O backend envia `InitialState` antes de `HealthChanged(Healthy)`: `Healthy` implica estado presente.
 - **Incremental:** eventos posteriores trazem só alterações; Syncers mutam de forma cirúrgica.
 - **Regra de ouro do Syncer:** valor `undefined` (não enviado) → **não mutar**.
-- **SSOT:** componentes consomem `useGameStore` diretamente; sem controllers intermediários.
+- **SSOT:** componentes consomem o estado via `useGameState()` (lê `useGameStore`); sem controllers intermediários.
 
 ## Player
 

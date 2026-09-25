@@ -115,7 +115,7 @@ if (newPlayerDto.previousMapId !== undefined) {
 
 ### 5. UI / presenters (only if user asked)
 
-- [ ] Read from `useGameStore` / computed
+- [ ] Read from `useGameState()` / computed
 - [ ] Pass into existing presenter or component
 - [ ] Reuse DW3 classes from `style.css` — no new visual language
 

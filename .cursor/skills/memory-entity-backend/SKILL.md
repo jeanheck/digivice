@@ -76,7 +76,7 @@ Paths under `Backend/`. Mirror each `CardBattle*` file.
 - [ ] `Events/Models/EventType.cs` — `{Entity}Changed`
 - [ ] `Events/Factory/{Entity}EventFactory.cs` — `dto.IsNotEmpty()` → `new Event(EventType.{Entity}Changed, dto)`
 - [ ] `Events/Factory/StateEventFactory.cs` — `events.AddRange({Entity}EventFactory.Create(...))`
-- [ ] `Events/DTO/StateDTO.cs` + `Events/Converters/StateConverter.cs` — include the entity in `InitialState`
+- [ ] `Events/DTO/StateDTO.cs` + `Events/Converters/StateConverter.cs` — include the entity in `InitialState` as a `required` non-nullable property, mapped directly (no null ternary)
 
 ### 5. Wiring
 

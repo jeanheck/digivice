@@ -27,13 +27,13 @@ Paths under `Frontend/src/`. Property name = backend JSON camelCase (`{entity}`)
 ### 1. DTO + event map
 
 - [ ] `events/dto/{entity}.dto.ts` — `export interface {Entity}DTO` with **optional** props (`field?: type`); nested DTOs in a kebab subfolder
-- [ ] `events/dto/state.dto.ts` — `{entity}: DeepRequired<{Entity}DTO> | null;`
+- [ ] `events/dto/state.dto.ts` — `{entity}: DeepRequired<{Entity}DTO>;` (never null)
 - [ ] `events/events.map.ts` — `export type { {Entity}DTO }`, import, and `{Entity}Changed: {Entity}DTO;` in `EventsMap`
 
 ### 2. Model
 
 - [ ] `models/{entity}.ts` — required props (nullable where the backend sends `null`)
-- [ ] `models/state.ts` — `{entity}: {Entity} | null;`
+- [ ] `models/state.ts` — `{entity}: {Entity};` (never null)
 - [ ] `models/index.ts` — reexport
 
 ### 3. Converter + syncer
@@ -44,13 +44,13 @@ Paths under `Frontend/src/`. Property name = backend JSON camelCase (`{entity}`)
 ### 4. Store + handler
 
 - [ ] `stores/use-game-store.ts`:
-  - `setInitialState` — `{entity}: state.{entity} ? {Entity}Converter.convert(state.{entity}) : null,`
-  - `sync{Entity}(dto)` — guard previous/dto null, call `{Entity}Syncer.sync`; add to the returned object
+  - `setInitialState` — `{entity}: {Entity}Converter.convert(state.{entity}),`
+  - `sync{Entity}(dto)` — `const state = getStateOrWarn("{Entity}Changed"); if (!state) { return; }` then `{Entity}Syncer.sync(state.{entity}, dto)`; add to the returned object
 - [ ] `events/signalr.handlers.ts` — `signalRService.on("{Entity}Changed", (data) => { store.sync{Entity}(data); });`
 
 ### 5. UI (only if asked)
 
-- [ ] Component reads `useGameStore().currentState?.{entity}` and delegates logic to its own presenter (`.cursor/rules/digivice-frontend-data.mdc`)
+- [ ] Component reads `useGameState().value.{entity}` and delegates logic to its own presenter (`.cursor/rules/digivice-frontend-data.mdc`)
 
 ### 6. Manual verification
 

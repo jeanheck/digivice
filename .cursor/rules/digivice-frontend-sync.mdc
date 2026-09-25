@@ -8,22 +8,25 @@ alwaysApply: false
 
 ## Fluxo
 
-`signalr.handlers.ts` → `useGameStore` (`setInitialState` / `sync{Entity}`) → `events/converters/{entity}.converter.ts` (bootstrap completo) ou `stores/syncers/{entity}.syncer.ts` (patch incremental) → `currentState.{entity}` (model) → `stores/selectors/{assunto}.selector.ts` (informação nova derivada do model).
+`SignalRService` (recebe `EventDTO<T>`, repassa `eventDto.payload`) → `signalr.handlers.ts` → `useGameStore` (`setInitialState` / `sync{Entity}`) → `events/converters/{entity}.converter.ts` (bootstrap completo) ou `stores/syncers/{entity}.syncer.ts` (patch incremental) → `currentState.{entity}` (model) → `stores/selectors/{assunto}.selector.ts` (informação nova derivada do model).
 
 | Camada | Pasta | Convenção |
 |--------|-------|-----------|
 | DTO | `events/dto/` (subpastas kebab: `parties/`, `journals/quests/`, `battles/`, `npcs/`) | `PlayerDTO` em `player.dto.ts`; propriedades opcionais (`field?: type`); exportado em `events/events.map.ts` |
+| Envelope | `events/dto/event.dto.ts` | `EventDTO<T> { type, timestamp, payload }`; todo evento do backend chega envelopado |
 | Event map | `events/events.map.ts` | `EventsMap` tipa cada evento SignalR → DTO |
 | Converter | `events/converters/` | `DeepRequired<DTO>` (`events/dto/deep-required.ts`) → Model, estático `convert`; repasse direto, sem `??` nem `=== true` |
 | Model | `models/` (subpastas `party/`, `journal/`, `battle/`) | Propriedades obrigatórias; reexport em `models/index.ts` |
 | Syncer | `stores/syncers/` | Estático `sync(previous, dto)`; muta o model existente |
-| Store | `stores/use-game-store.ts` | Uma action `sync{Entity}` por evento; `setInitialState` chama todos os converters |
+| Store | `stores/use-game-store.ts` | Uma action `sync{Entity}` por evento, via `getStateOrWarn("{Entity}Changed")` (evento antes do `InitialState` é descartado com `storeLogger.warn`); `setInitialState` repassa direto a todos os converters |
 | Selector | `stores/selectors/` | Classe `{Assunto}Selector` em `{assunto}.selector.ts`; métodos estáticos e puros; recebe model(s) ou `State`, devolve informação nova |
 
 ## Regras
 
 - **Regra de ouro:** propriedade `undefined` no DTO → **não mutar**. Sempre `if (dto.field !== undefined) { model.field = dto.field; }`.
 - `null` explícito é valor válido (ex.: `enemy: null`, `activeDigievolutionId: null`) e deve ser aplicado.
+- **Nulabilidade do estado:** `currentState` é o único ponto anulável (antes do `InitialState` e após desconexão/erro). As 8 entidades de `State`/`StateDTO` e `journal.mainQuest` nunca são `null`.
+- **Health:** sem converter; `HealthDTO` (`status`, `errorCode: string | null`, `errorDetail: string | null`) é usado direto em `syncHealth`.
 - **DTO completo vs delta:** os DTOs descrevem deltas (campos opcionais). Onde o backend garante o objeto completo (`InitialState` via `StateDTO`, e `ToDTO` nos differs), o tipo é `DeepRequired<DTO>` — remove `?`/`undefined` em profundidade e preserva `null` intencional. Converters **não** inventam fallback (`?? 0`, `?? 1`, `=== true`): contrato quebrado deve falhar visivelmente, não virar valor plausível.
 - **Substituição completa no syncer:** quando o syncer troca um objeto inteiro (slot vazio/Digimon trocado, digievolução trocada, digievolução guardada nova, inimigo novo), faz cast `as DeepRequired<DTO>` para o converter, com comentário curto citando a garantia do backend.
 - Syncers só **patcham** entidades já presentes do `InitialState`; não criam listas/itens novos (missões, NPCs, slots são fixos). **Exceção:** `storedDigievolutions` cresce em runtime — digievolução guardada pela primeira vez chega completa e é adicionada via `push`.
