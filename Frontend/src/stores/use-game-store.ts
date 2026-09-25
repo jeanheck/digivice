@@ -3,7 +3,7 @@ import { ref, computed } from "vue";
 import type { State } from "@/models";
 import type * as Events from "@/events/events.map";
 import { HealthStatus } from "@/models/health-status";
-import { HealthConverter } from "@/events/converters/health.converter";
+import { storeLogger } from "@/events/logger";
 import { PlayerConverter } from "@/events/converters/player.converter";
 import { ImportantItemsConverter } from "@/events/converters/important-items.converter";
 import { PartyConverter } from "@/events/converters/party.converter";
@@ -66,110 +66,119 @@ export const useGameStore = defineStore("game", () => {
     }
   }
 
-  function syncHealth(data: Events.HealthDTO): void {
-    const event = HealthConverter.convert(data);
-    healthStatus.value = event.status;
+  function syncHealth(healthDto: Events.HealthDTO): void {
+    healthStatus.value = healthDto.status;
 
-    if (event.status === HealthStatus.Healthy) {
+    if (healthDto.status === HealthStatus.Healthy) {
       lastErrorCode.value = null;
       lastErrorDetail.value = null;
       return;
     }
 
-    if (event.status === HealthStatus.Loading) {
+    if (healthDto.status === HealthStatus.Loading) {
       lastErrorCode.value = null;
       lastErrorDetail.value = null;
       return;
     }
 
     clearGameState();
-    lastErrorCode.value = event.errorCode ?? null;
-    lastErrorDetail.value = event.errorDetail ?? null;
+    lastErrorCode.value = healthDto.errorCode;
+    lastErrorDetail.value = healthDto.errorDetail;
   }
 
   function setInitialState(state: Events.StateDTO): void {
     currentState.value = {
-      player: state.player ? PlayerConverter.convert(state.player) : null,
-      importantItems: state.importantItems ? ImportantItemsConverter.convert(state.importantItems) : null,
-      party: state.party ? PartyConverter.convert(state.party) : null,
-      digimonBattle: state.digimonBattle ? DigimonBattleConverter.convert(state.digimonBattle) : null,
-      cardBattle: state.cardBattle ? CardBattleConverter.convert(state.cardBattle) : null,
-      auctions: state.auctions ? AuctionsConverter.convert(state.auctions) : null,
-      npcs: state.npcs ? NpcsConverter.convert(state.npcs) : null,
-      journal: state.journal ? JournalConverter.convert(state.journal) : null,
+      player: PlayerConverter.convert(state.player),
+      importantItems: ImportantItemsConverter.convert(state.importantItems),
+      party: PartyConverter.convert(state.party),
+      digimonBattle: DigimonBattleConverter.convert(state.digimonBattle),
+      cardBattle: CardBattleConverter.convert(state.cardBattle),
+      auctions: AuctionsConverter.convert(state.auctions),
+      npcs: NpcsConverter.convert(state.npcs),
+      journal: JournalConverter.convert(state.journal),
     };
   }
 
+  function getStateOrWarn(eventName: string): State | null {
+    const state = currentState.value;
+    if (!state) {
+      storeLogger.warn(`${eventName} ignored: InitialState not received yet.`);
+      return null;
+    }
+
+    return state;
+  }
+
   function syncPlayer(newPlayerDto: Events.PlayerDTO): void {
-    const previousPlayer = currentState.value?.player;
-    if (!previousPlayer) {
+    const state = getStateOrWarn("PlayerChanged");
+    if (!state) {
       return;
     }
 
-    PlayerSyncer.sync(previousPlayer, newPlayerDto);
+    PlayerSyncer.sync(state.player, newPlayerDto);
   }
 
   function syncImportantItems(newImportantItemsDto: Events.ImportantItemsDTO): void {
-    const previousImportantItems = currentState.value?.importantItems;
-    if (!previousImportantItems) {
+    const state = getStateOrWarn("ImportantItemsChanged");
+    if (!state) {
       return;
     }
 
-    ImportantItemsSyncer.sync(previousImportantItems, newImportantItemsDto);
+    ImportantItemsSyncer.sync(state.importantItems, newImportantItemsDto);
   }
 
   function syncJournal(newJournalDto: Events.JournalDTO): void {
-    const previousJournal = currentState.value?.journal;
-    if (!previousJournal) {
+    const state = getStateOrWarn("JournalChanged");
+    if (!state) {
       return;
     }
 
-    JournalSyncer.sync(previousJournal, newJournalDto);
+    JournalSyncer.sync(state.journal, newJournalDto);
   }
 
   function syncParty(newPartyDto: Events.PartyDTO): void {
-    const previousParty = currentState.value?.party;
-    if (!previousParty) {
+    const state = getStateOrWarn("PartyChanged");
+    if (!state) {
       return;
     }
 
-    PartySyncer.sync(previousParty, newPartyDto);
+    PartySyncer.sync(state.party, newPartyDto);
   }
 
   function syncDigimonBattle(newDigimonBattleDto: Events.DigimonBattleDTO): void {
-    const previousDigimonBattle = currentState.value?.digimonBattle;
-    if (!previousDigimonBattle) {
+    const state = getStateOrWarn("DigimonBattleChanged");
+    if (!state) {
       return;
     }
 
-    DigimonBattleSyncer.sync(previousDigimonBattle, newDigimonBattleDto);
+    DigimonBattleSyncer.sync(state.digimonBattle, newDigimonBattleDto);
   }
 
   function syncCardBattle(newCardBattleDto: Events.CardBattleDTO): void {
-    const previousCardBattle = currentState.value?.cardBattle;
-    if (!previousCardBattle) {
+    const state = getStateOrWarn("CardBattleChanged");
+    if (!state) {
       return;
     }
 
-    CardBattleSyncer.sync(previousCardBattle, newCardBattleDto);
+    CardBattleSyncer.sync(state.cardBattle, newCardBattleDto);
   }
 
   function syncAuctions(newAuctionsDto: Events.AuctionsDTO): void {
-    const previousAuctions = currentState.value?.auctions;
-    if (!previousAuctions) {
+    const state = getStateOrWarn("AuctionsChanged");
+    if (!state) {
       return;
     }
 
-    AuctionsSyncer.sync(previousAuctions, newAuctionsDto);
+    AuctionsSyncer.sync(state.auctions, newAuctionsDto);
   }
 
   function syncNpcs(newNpcsDto: Events.NpcsDTO): void {
-    const previousNpcs = currentState.value?.npcs;
-    if (!previousNpcs) {
+    const state = getStateOrWarn("NpcsChanged");
+    if (!state) {
       return;
     }
 
-    NpcsSyncer.sync(previousNpcs, newNpcsDto);
+    NpcsSyncer.sync(state.npcs, newNpcsDto);
   }
 
   return {

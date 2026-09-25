@@ -8,12 +8,12 @@ import type { Journal } from "./journal/journal";
 import type { Player } from "./player";
 
 export interface State {
-  player: Player | null;
-  importantItems: ImportantItems | null;
-  party: Party | null;
-  digimonBattle: DigimonBattle | null;
-  cardBattle: CardBattle | null;
-  auctions: Auctions | null;
-  npcs: Npcs | null;
-  journal: Journal | null;
+  player: Player;
+  importantItems: ImportantItems;
+  party: Party;
+  digimonBattle: DigimonBattle;
+  cardBattle: CardBattle;
+  auctions: Auctions;
+  npcs: Npcs;
+  journal: Journal;
 }

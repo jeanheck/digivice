@@ -9,14 +9,14 @@ public static class StateConverter
     {
         return new StateDTO
         {
-            Player = state.Player != null ? PlayerConverter.ToDTO(state.Player) : null,
-            ImportantItems = state.ImportantItems != null ? ImportantItemsConverter.ToDTO(state.ImportantItems) : null,
-            Party = state.Party != null ? PartyConverter.ToDTO(state.Party) : null,
-            DigimonBattle = state.DigimonBattle != null ? DigimonBattleConverter.ToDTO(state.DigimonBattle) : null,
-            CardBattle = state.CardBattle != null ? CardBattleConverter.ToDTO(state.CardBattle) : null,
-            Auctions = state.Auctions != null ? AuctionsConverter.ToDTO(state.Auctions) : null,
-            Npcs = state.Npcs != null ? NpcsConverter.ToDTO(state.Npcs) : null,
-            Journal = state.Journal != null ? JournalConverter.ToDTO(state.Journal) : null,
+            Player = PlayerConverter.ToDTO(state.Player),
+            ImportantItems = ImportantItemsConverter.ToDTO(state.ImportantItems),
+            Party = PartyConverter.ToDTO(state.Party),
+            DigimonBattle = DigimonBattleConverter.ToDTO(state.DigimonBattle),
+            CardBattle = CardBattleConverter.ToDTO(state.CardBattle),
+            Auctions = AuctionsConverter.ToDTO(state.Auctions),
+            Npcs = NpcsConverter.ToDTO(state.Npcs),
+            Journal = JournalConverter.ToDTO(state.Journal),
         };
     }
 }
