@@ -1,5 +1,5 @@
-import type { Journal } from "../../models";
-import type * as Events from "../../events/events.map";
+import type { Journal } from "@/models";
+import type * as Events from "@/events/events.map";
 import { QuestSyncer } from "./journals/quest.syncer";
 
 export class JournalSyncer {

@@ -1,3 +1,3 @@
-import type { DeckRaw } from "../raws/tcg/deck.raw";
+import type { DeckRaw } from "@/repositories/tables/raws/tcg/deck.raw";
 
 export type DeckTable = Record<string, DeckRaw>;

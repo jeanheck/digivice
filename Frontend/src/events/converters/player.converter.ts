@@ -1,5 +1,5 @@
-import type { PlayerDTO } from "../dto/player.dto";
-import type { Player } from "../../models";
+import type { PlayerDTO } from "@/events/dto/player.dto";
+import type { Player } from "@/models";
 
 export class PlayerConverter {
   public static convert(playerDto: Required<PlayerDTO>): Player {

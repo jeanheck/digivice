@@ -2,7 +2,7 @@
   "id": "fishingPole",
   "requisites": [
     {
-      "id": "FolderBag"
+      "id": "folderBag"
     }
   ],
   "steps": {

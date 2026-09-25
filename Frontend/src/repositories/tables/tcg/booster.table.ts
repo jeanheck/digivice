@@ -1,3 +1,3 @@
-import type { BoosterRaw } from "../raws/tcg/booster.raw";
+import type { BoosterRaw } from "@/repositories/tables/raws/tcg/booster.raw";
 
 export type BoosterTable = Record<string, BoosterRaw>;

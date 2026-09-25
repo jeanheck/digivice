@@ -1,4 +1,4 @@
-import type { RequirementViewModel } from "../digimon/requirement.viewmodel";
+import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
 
 export interface NodeViewModel {
   id: number;

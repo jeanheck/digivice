@@ -22,7 +22,7 @@ public class JournalConverterTests
             [
                 new Quest
                 {
-                    Id = "FolderBag",
+                    Id = "folderBag",
                     Steps = [new Step { Number = 1, IsDone = false }],
                     Requisites = []
                 }
@@ -39,7 +39,7 @@ public class JournalConverterTests
 
         Assert.True(dto.SideQuests.HasValue);
         var sideQuest = Assert.Single(dto.SideQuests.Value!);
-        Assert.Equal("FolderBag", sideQuest.Id);
+        Assert.Equal("folderBag", sideQuest.Id);
         Assert.True(sideQuest.Steps.HasValue);
         Assert.False(sideQuest.Steps.Value![0].IsDone.Value);
     }

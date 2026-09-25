@@ -2,7 +2,7 @@ import * as signalR from "@microsoft/signalr";
 import { invoke } from "@tauri-apps/api/core";
 import type { EventsMap } from "./events.map";
 import { signalRLogger } from "./logger";
-import { APP_CONFIG } from "../config";
+import { APP_CONFIG } from "@/config";
 import { formatHubConnectionError } from "./hub-connection-error";
 
 const CONNECTION_MAX_ATTEMPTS = 20;

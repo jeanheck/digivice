@@ -1,5 +1,5 @@
-import type { Quest } from "../../../models";
-import type { QuestDTO } from "../../../events/dto/journals/quest.dto";
+import type { Quest } from "@/models";
+import type { QuestDTO } from "@/events/dto/journals/quest.dto";
 import { RequisiteSyncer } from "./quests/requisite.syncer";
 import { StepSyncer } from "./quests/step.syncer";
 

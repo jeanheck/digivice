@@ -1,5 +1,5 @@
-import type { Digimon } from "../../../models";
-import type { DigimonDTO } from "../../../events/dto/parties/digimon.dto";
+import type { Digimon } from "@/models";
+import type { DigimonDTO } from "@/events/dto/parties/digimon.dto";
 import { VitalSyncer } from "./digimons/vital.syncer";
 import { InBattleSyncer } from "./digimons/in-battle.syncer";
 

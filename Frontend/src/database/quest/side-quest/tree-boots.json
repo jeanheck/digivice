@@ -2,7 +2,7 @@
   "id": "treeBoots",
   "requisites": [
     {
-      "id": "FolderBag"
+      "id": "folderBag"
     }
   ],
   "steps": {

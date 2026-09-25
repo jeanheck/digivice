@@ -1,5 +1,5 @@
-import type { ImportantItems } from "../../models";
-import type * as Events from "../../events/events.map";
+import type { ImportantItems } from "@/models";
+import type * as Events from "@/events/events.map";
 
 export class ImportantItemsSyncer {
   public static sync(previousImportantItems: ImportantItems, newImportantItemsDto: Events.ImportantItemsDTO): void {

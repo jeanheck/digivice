@@ -1,6 +1,6 @@
 import type { EnemyDTO } from "@/events/dto/battles/enemy.dto";
 import type { Enemy } from "@/models/battle/enemy";
-import { VitalConverter } from "../parties/digimons/vital.converter";
+import { VitalConverter } from "@/events/converters/parties/digimons/vital.converter";
 
 export class EnemyConverter {
   public static convert(newEnemyDto: EnemyDTO): Enemy {

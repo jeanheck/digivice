@@ -17,8 +17,8 @@ Maintained by quest-pattern-backend skill. Append entries; do not remove without
 ### Side quests
 
 - `folderBag` — `Quests/SideQuests/FolderBagAddresses.json`
-- `fishingPole` — `Quests/SideQuests/FishingPoleAddresses.json`
-- `treeBoots` — `Quests/SideQuests/TreeBootsAddresses.json` (quest-level requisite `FolderBag` — legacy PascalCase id)
+- `fishingPole` — `Quests/SideQuests/FishingPoleAddresses.json` (quest-level requisite `folderBag`)
+- `treeBoots` — `Quests/SideQuests/TreeBootsAddresses.json` (quest-level requisite `folderBag`)
 
 ### Legendary weapons (2026-06-06)
 

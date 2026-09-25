@@ -67,7 +67,7 @@ public class QuestLoaderTests : LoaderIntegrationTestBase
 
         var treeBoots = Assert.Single(sideQuests, quest => quest.Id == "treeBoots");
         Assert.Single(treeBoots.Requisites);
-        Assert.Equal("FolderBag", treeBoots.Requisites[0].Id);
+        Assert.Equal("folderBag", treeBoots.Requisites[0].Id);
         Assert.Equal(1, treeBoots.Requisites[0].Value);
         Assert.Equal(7, treeBoots.Steps.Count);
         Assert.Equal(0x04, treeBoots.Steps[0].Value);

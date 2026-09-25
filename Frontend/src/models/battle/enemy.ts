@@ -1,4 +1,4 @@
-import type { Vital } from "../party/digimon/vital";
+import type { Vital } from "@/models/party/digimon/vital";
 
 export interface Enemy {
   id: number;

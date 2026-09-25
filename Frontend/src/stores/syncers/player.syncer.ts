@@ -1,5 +1,5 @@
-import type { Player } from "../../models";
-import type * as Events from "../../events/events.map";
+import type { Player } from "@/models";
+import type * as Events from "@/events/events.map";
 
 export class PlayerSyncer {
   public static sync(previousPlayer: Player, newPlayerDto: Events.PlayerDTO): void {

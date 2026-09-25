@@ -1,5 +1,5 @@
-import type { Party } from "../../models";
-import type { PartyDTO } from "../../events/dto/party.dto";
+import type { Party } from "@/models";
+import type { PartyDTO } from "@/events/dto/party.dto";
 import { DigimonSlotSyncer } from "./parties/digimon-slot.syncer";
 
 export class PartySyncer {

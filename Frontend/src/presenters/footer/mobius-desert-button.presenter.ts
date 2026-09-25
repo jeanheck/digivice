@@ -3,7 +3,7 @@ import { LocationRepository } from "@/repositories";
 import { LocationService } from "@/services/location.service";
 import { QuestService } from "@/services/quest.service";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
-import { LocationConverter } from "../converter/location.converter";
+import { LocationConverter } from "@/presenters/converter/location.converter";
 
 export class MobiusDesertButtonPresenter {
   public static getLocation(locationId: string, mainQuest: Quest | null): LocationViewModel {

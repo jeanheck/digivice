@@ -2,7 +2,7 @@
     "Id": "fishingPole",
     "Requisites": [
         {
-            "Id": "FolderBag",
+            "Id": "folderBag",
             "Address": "0x00048F42"
         }
     ],

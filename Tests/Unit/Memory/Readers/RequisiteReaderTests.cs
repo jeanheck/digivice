@@ -33,7 +33,7 @@ public class RequisiteReaderTests
     {
         var addresses = new RequisiteAddresses
         {
-            Id = "FolderBag",
+            Id = "folderBag",
             Address = 0x48F42,
             BitMasks = []
         };

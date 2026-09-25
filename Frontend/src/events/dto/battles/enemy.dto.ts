@@ -1,4 +1,4 @@
-import type { VitalDTO } from "../parties/digimons/vital.dto";
+import type { VitalDTO } from "@/events/dto/parties/digimons/vital.dto";
 
 export interface EnemyDTO {
   id?: number;
