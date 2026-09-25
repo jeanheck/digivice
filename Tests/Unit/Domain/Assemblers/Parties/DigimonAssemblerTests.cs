@@ -29,10 +29,20 @@ public class DigimonAssemblerTests
             Experience = 5000,
             Level = 30,
             TP = 15,
-            BlastGauge = 600,
+            Blast = 600,
             ActiveDigievolutionId = 12,
-            Vitals = new VitalsResource { CurrentHP = 100, MaxHP = 120, CurrentMP = 50, MaxMP = 60 },
-            Attributes = new AttributesResource { Strength = 10, Defense = 11, Spirit = 12, Wisdow = 13, Speed = 14, Charisma = 15 },
+            HP = new VitalResource { Current = 100, Max = 120 },
+            MP = new VitalResource { Current = 50, Max = 60 },
+            InBattle = new InBattleResource
+            {
+                Condition = 0x04,
+                Strength = 25,
+                Defense = 185,
+                Speed = 84,
+                HP = new VitalResource { Current = 80, Max = 120 },
+                MP = new VitalResource { Current = 40, Max = 60 }
+            },
+            Attributes = new AttributesResource { Strength = 10, Defense = 11, Spirit = 12, Wisdom = 13, Speed = 14, Charisma = 15 },
             Resistances = new ResistancesResource { Fire = 1, Water = 2, Ice = 3, Wind = 4, Thunder = 5, Machine = 6, Dark = 7 },
             Equipments = new EquipmentsResource { Head = 101, Body = 102, Right = 103, Left = 104, Accessory1 = 105, Accessory2 = 106 },
             Digievolutions = [
@@ -50,14 +60,23 @@ public class DigimonAssemblerTests
         Assert.Equal(5000, result.Experience);
         Assert.Equal(30, result.Level);
         Assert.Equal(15, result.TP);
-        Assert.Equal(600, result.BlastGauge);
+        Assert.Equal(600, result.Blast);
         Assert.Equal(12, result.ActiveDigievolutionId);
 
-        // Vitals
-        Assert.Equal(100, result.Vitals.CurrentHP);
-        Assert.Equal(120, result.Vitals.MaxHP);
-        Assert.Equal(50, result.Vitals.CurrentMP);
-        Assert.Equal(60, result.Vitals.MaxMP);
+        // HP / MP
+        Assert.Equal(100, result.HP.Current);
+        Assert.Equal(120, result.HP.Max);
+        Assert.Equal(50, result.MP.Current);
+        Assert.Equal(60, result.MP.Max);
+
+        Assert.Equal(0x04, result.InBattle.Condition);
+        Assert.Equal(80, result.InBattle.HP.Current);
+        Assert.Equal(120, result.InBattle.HP.Max);
+        Assert.Equal(40, result.InBattle.MP.Current);
+        Assert.Equal(60, result.InBattle.MP.Max);
+        Assert.Equal(25, result.InBattle.Strength);
+        Assert.Equal(185, result.InBattle.Defense);
+        Assert.Equal(84, result.InBattle.Speed);
 
         // Attributes
         Assert.Equal(10, result.Attributes.Strength);
@@ -93,7 +112,8 @@ public class DigimonAssemblerTests
             Experience = 100,
             Level = 1,
             TP = 0,
-            Vitals = new VitalsResource(),
+            HP = new VitalResource(),
+            MP = new VitalResource(),
             Attributes = new AttributesResource(),
             Resistances = new ResistancesResource(),
             Equipments = new EquipmentsResource(),

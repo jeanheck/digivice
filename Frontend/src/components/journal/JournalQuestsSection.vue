@@ -1,18 +1,21 @@
 <script setup lang="ts">
 import { computed, provide, ref } from "vue";
 import {
-    getJournalSectionPalette,
-    journalSectionPaletteKey,
-    type JournalSectionAccentColor,
+  getJournalSectionPalette,
+  journalSectionPaletteKey,
+  type JournalSectionAccentColor,
 } from "@/components/journal/journal-section-palette";
 
-const props = withDefaults(defineProps<{
-  title: string;
-  accentColor: JournalSectionAccentColor;
-  defaultExpanded?: boolean;
-}>(), {
-  defaultExpanded: false,
-});
+const props = withDefaults(
+  defineProps<{
+    title: string;
+    accentColor: JournalSectionAccentColor;
+    defaultExpanded?: boolean;
+  }>(),
+  {
+    defaultExpanded: false,
+  },
+);
 
 const palette = computed(() => {
   return getJournalSectionPalette(props.accentColor);

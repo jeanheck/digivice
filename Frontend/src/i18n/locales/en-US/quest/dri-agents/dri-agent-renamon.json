@@ -9,30 +9,18 @@
     "steps": {
       "1": {
         "description": "Look for Dri Michael in Central Park",
-        "locations": {
-          "0": {
-            "locationTarget": "DRI Michael"
-          }
-        }
+        "locationTarget": "DRI Michael"
       },
       "2": {
         "description": "Defeat Taomon in battle to receive Renamon's DDNA",
-        "locations": {
-          "0": {
-            "locationTarget": "Taomon"
-          }
-        }
+        "locationTarget": "Taomon"
       },
       "3": {
         "description": "Deliver Renamon's DNA to DRI Michael",
-        "locations": {
-          "0": {
-            "locationTarget": "DRI Michael"
-          }
-        },
         "requisites": {
           "renamonDDNA": "Renamon's DDNA"
-        }
+        },
+        "locationTarget": "DRI Michael"
       }
     }
   }

@@ -1,4 +1,4 @@
 export interface StoredDigievolution {
-    digievolutionId: number;
-    level: number;
+  digievolutionId: number;
+  level: number;
 }

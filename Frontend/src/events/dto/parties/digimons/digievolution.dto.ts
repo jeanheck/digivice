@@ -1,4 +1,4 @@
 export interface DigievolutionDTO {
-    level?: number;
-    dvxp?: number;
+  level?: number;
+  dvxp?: number;
 }

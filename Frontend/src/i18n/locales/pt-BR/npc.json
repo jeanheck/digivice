@@ -1,0 +1,22 @@
+{
+  "npc": {
+    "battle": {
+      "card": "Cartas",
+      "digimon": "Digimon",
+      "cardPlaceholder": "Batalha de cartas",
+      "digimonPlaceholder": "Batalha de Digimon",
+      "requirement": {
+        "missingCharisma": "Carisma insuficiente ou fora da faixa",
+        "missingAsukaTrophy": "Falta Troféu Asuka",
+        "missingSunTrophy": "Falta Troféu Sun",
+        "missingCharismaAndAsukaTrophy": "Carisma insuficiente ou fora da faixa; Falta Troféu Asuka",
+        "missingCharismaAndSunTrophy": "Carisma insuficiente ou fora da faixa; Falta Troféu Sun",
+        "unavailableAfterAsukaTrophy": "Indisponível após Troféu Asuka",
+        "unavailableAfterSunTrophy": "Indisponível após Troféu Sun",
+        "available": "Batalha disponível",
+        "alreadyWon": "Você já venceu essa batalha"
+      }
+    },
+    "folderBagRequirementHint": "* Possuir a Mochila de Cartas é um requisito para batalhas contra domadores."
+  }
+}

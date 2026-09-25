@@ -1,7 +1,7 @@
-import type { Digievolution } from './digievolution';
+import type { Digievolution } from "./digievolution";
 
 export interface DigievolutionSlot {
-    index: number;
-    digievolutionId: number | null;
-    digievolution: Digievolution | null;
+  index: number;
+  digievolutionId: number | null;
+  digievolution: Digievolution | null;
 }

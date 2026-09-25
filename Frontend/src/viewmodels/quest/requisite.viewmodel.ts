@@ -1,5 +1,4 @@
-export interface RequisiteViewModel
-{
-    id: string;
-    isDone: boolean;
+export interface RequisiteViewModel {
+  id: string;
+  isDone: boolean;
 }

@@ -12,6 +12,8 @@ import DriAgentMonmonJson from "@/database/quest/dri-agents/dri-agent-monmon.jso
 import DriAgentKotemonJson from "@/database/quest/dri-agents/dri-agent-kotemon.json";
 import DriAgentRenamonJson from "@/database/quest/dri-agents/dri-agent-renamon.json";
 import DriAgentPatamonJson from "@/database/quest/dri-agents/dri-agent-patamon.json";
+import AsukaTrophyJson from "@/database/quest/duel-island/asuka-trophy.json";
+import SunTrophyJson from "@/database/quest/duel-island/sun-trophy.json";
 import TreeBootsJson from "@/database/quest/side-quest/tree-boots.json";
 import FishingPoleJson from "@/database/quest/side-quest/fishing-pole.json";
 import FolderBagJson from "@/database/quest/side-quest/folder-bag.json";
@@ -29,55 +31,62 @@ import type { DriAgentMonmonTable } from "@/repositories/tables/quest/dri-agents
 import type { DriAgentKotemonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-kotemon.table";
 import type { DriAgentRenamonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-renamon.table";
 import type { DriAgentPatamonTable } from "@/repositories/tables/quest/dri-agents/dri-agent-patamon.table";
+import type { AsukaTrophyTable } from "@/repositories/tables/quest/duel-island/asuka-trophy.table";
+import type { SunTrophyTable } from "@/repositories/tables/quest/duel-island/sun-trophy.table";
 import type { TreeBootsTable } from "@/repositories/tables/quest/side-quest/tree-boots.table";
 import type { FishingPoleTable } from "@/repositories/tables/quest/side-quest/fishing-pole.table";
 import type { FolderBagTable } from "@/repositories/tables/quest/side-quest/folder-bag.table";
 import type { QuestRaw } from "@/repositories/tables/raws/quest/quest.raw";
 
 export class QuestRepository {
-    private static readonly mainQuestTable = MainQuestJson as MainQuestTable;
-    private static readonly eternallyTable = EternallyJson as EternallyTable;
-    private static readonly invincibleTable = InvincibleJson as InvincibleTable;
-    private static readonly muramasaTable = MuramasaJson as MuramasaTable;
-    private static readonly superNovaTable = SuperNovaJson as SuperNovaTable;
-    private static readonly punishmentTable = PunishmentJson as PunishmentTable;
-    private static readonly driAgentGuilmonTable = DriAgentGuilmonJson as DriAgentGuilmonTable;
-    private static readonly driAgentAgumonTable = DriAgentAgumonJson as DriAgentAgumonTable;
-    private static readonly driAgentVeemonTable = DriAgentVeemonJson as DriAgentVeemonTable;
-    private static readonly driAgentKumamonTable = DriAgentKumamonJson as DriAgentKumamonTable;
-    private static readonly driAgentMonmonTable = DriAgentMonmonJson as DriAgentMonmonTable;
-    private static readonly driAgentKotemonTable = DriAgentKotemonJson as DriAgentKotemonTable;
-    private static readonly driAgentRenamonTable = DriAgentRenamonJson as DriAgentRenamonTable;
-    private static readonly driAgentPatamonTable = DriAgentPatamonJson as DriAgentPatamonTable;
-    private static readonly treeBootsTable = TreeBootsJson as TreeBootsTable;
-    private static readonly fishingPoleTable = FishingPoleJson as FishingPoleTable;
-    private static readonly folderBagTable = FolderBagJson as FolderBagTable;
+  private static readonly mainQuestTable = MainQuestJson as MainQuestTable;
+  private static readonly eternallyTable = EternallyJson as EternallyTable;
+  private static readonly invincibleTable = InvincibleJson as InvincibleTable;
+  private static readonly muramasaTable = MuramasaJson as MuramasaTable;
+  private static readonly superNovaTable = SuperNovaJson as SuperNovaTable;
+  private static readonly punishmentTable = PunishmentJson as PunishmentTable;
+  private static readonly driAgentGuilmonTable = DriAgentGuilmonJson as DriAgentGuilmonTable;
+  private static readonly driAgentAgumonTable = DriAgentAgumonJson as DriAgentAgumonTable;
+  private static readonly driAgentVeemonTable = DriAgentVeemonJson as DriAgentVeemonTable;
+  private static readonly driAgentKumamonTable = DriAgentKumamonJson as DriAgentKumamonTable;
+  private static readonly driAgentMonmonTable = DriAgentMonmonJson as DriAgentMonmonTable;
+  private static readonly driAgentKotemonTable = DriAgentKotemonJson as DriAgentKotemonTable;
+  private static readonly driAgentRenamonTable = DriAgentRenamonJson as DriAgentRenamonTable;
+  private static readonly driAgentPatamonTable = DriAgentPatamonJson as DriAgentPatamonTable;
+  private static readonly asukaTrophyTable = AsukaTrophyJson as AsukaTrophyTable;
+  private static readonly sunTrophyTable = SunTrophyJson as SunTrophyTable;
+  private static readonly treeBootsTable = TreeBootsJson as TreeBootsTable;
+  private static readonly fishingPoleTable = FishingPoleJson as FishingPoleTable;
+  private static readonly folderBagTable = FolderBagJson as FolderBagTable;
 
-    public static getMainQuestRaw(): QuestRaw {
-        return this.mainQuestTable;
-    }
-    public static getSideQuestsRaw(): QuestRaw[] {
-        return [this.folderBagTable, this.fishingPoleTable, this.treeBootsTable];
-    }
-    public static getLegendaryWeaponsRaw(): QuestRaw[] {
-        return [
-            this.eternallyTable,
-            this.invincibleTable,
-            this.muramasaTable,
-            this.superNovaTable,
-            this.punishmentTable
-        ];
-    }
-    public static getDriAgentsRaw(): QuestRaw[] {
-        return [
-            this.driAgentAgumonTable,
-            this.driAgentGuilmonTable,
-            this.driAgentPatamonTable,
-            this.driAgentRenamonTable,
-            this.driAgentKotemonTable,
-            this.driAgentKumamonTable,
-            this.driAgentMonmonTable,
-            this.driAgentVeemonTable
-        ];
-    }
+  public static getMainQuestRaw(): QuestRaw {
+    return this.mainQuestTable;
+  }
+  public static getSideQuestsRaw(): QuestRaw[] {
+    return [this.folderBagTable, this.fishingPoleTable, this.treeBootsTable];
+  }
+  public static getLegendaryWeaponsRaw(): QuestRaw[] {
+    return [
+      this.eternallyTable,
+      this.invincibleTable,
+      this.muramasaTable,
+      this.superNovaTable,
+      this.punishmentTable,
+    ];
+  }
+  public static getDriAgentsRaw(): QuestRaw[] {
+    return [
+      this.driAgentAgumonTable,
+      this.driAgentGuilmonTable,
+      this.driAgentPatamonTable,
+      this.driAgentRenamonTable,
+      this.driAgentKotemonTable,
+      this.driAgentKumamonTable,
+      this.driAgentMonmonTable,
+      this.driAgentVeemonTable,
+    ];
+  }
+  public static getDuelIslandRaw(): QuestRaw[] {
+    return [this.asukaTrophyTable, this.sunTrophyTable];
+  }
 }

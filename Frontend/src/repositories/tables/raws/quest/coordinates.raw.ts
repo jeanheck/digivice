@@ -1,4 +1,4 @@
 export interface CoordinatesRaw {
-    x: number;
-    y: number;
+  x: number;
+  y: number;
 }

@@ -1,0 +1,17 @@
+{
+    "EnemySlotBase": "0x000A44D0",
+    "SlotStride": "0x20",
+    "SlotCount": "3",
+    "ActiveUnitId": "0x000A4558",
+    "ActiveEnemySlotIndex": "0x000A446C",
+    "GroupId": "0x00042B2C",
+    "Id": "0x00",
+    "Condition": "0x1C",
+    "Strength": "0x10",
+    "Defense": "0x12",
+    "Speed": "0x14",
+    "HP": {
+        "Max": "0x06",
+        "Current": "0x08"
+    }
+}

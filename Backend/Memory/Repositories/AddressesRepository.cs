@@ -7,29 +7,22 @@ namespace Backend.Memory.Repositories
 {
     public class AddressesRepository(string dataDirectory) : IAddressesRepository
     {
-        private readonly string dataDirectory = dataDirectory;
         private PlayerAddresses? playerAddresses;
+        private ImportantItemsAddresses? importantItemsAddresses;
         private PartyAddresses? partyAddresses;
         private DigimonStatusAddresses? digimonStatusAddresses;
-        private DigimonsAddresses? digimonAddresses;
+        private InBattleAddresses? inBattleAddresses;
+        private DigimonBattleAddresses? digimonBattleAddresses;
+        private EnemyAddresses? enemyAddresses;
+        private Dictionary<int, DigimonAddress>? digimonAddresses;
         private QuestAddresses? mainQuestAddresses;
-        private QuestAddresses? sideQuestFolderBag;
-        private QuestAddresses? sideQuestTreeBoots;
-        private QuestAddresses? sideQuestFishingPole;
-        private QuestAddresses? legendaryWeaponEternally;
-        private QuestAddresses? legendaryWeaponInvincible;
-        private QuestAddresses? legendaryWeaponMuramasa;
-        private QuestAddresses? legendaryWeaponSuperNova;
-        private QuestAddresses? legendaryWeaponPunishment;
-        private QuestAddresses? driAgentGuilmon;
-        private QuestAddresses? driAgentAgumon;
-        private QuestAddresses? driAgentVeemon;
-        private QuestAddresses? driAgentKumamon;
-        private QuestAddresses? driAgentMonmon;
-        private QuestAddresses? driAgentKotemon;
-        private QuestAddresses? driAgentRenamon;
-        private QuestAddresses? driAgentPatamon;
-        private Dictionary<string, AuctionAddresses>? auctionAddresses;
+        private List<QuestAddresses>? sideQuestAddresses;
+        private List<QuestAddresses>? legendaryWeaponAddresses;
+        private List<QuestAddresses>? driAgentAddresses;
+        private List<QuestAddresses>? duelIslandAddresses;
+        private AuctionsAddresses? auctionsAddresses;
+        private NpcsAddresses? npcsAddresses;
+        private CardBattleAddresses? cardBattleAddresses;
 
         private T LoadAndCache<T>(ref T? cacheField, string fileName) where T : class, new()
         {
@@ -49,43 +42,38 @@ namespace Backend.Memory.Repositories
             return cacheField;
         }
 
-        private QuestAddresses GetDriAgentGuilmon() =>
-            LoadAndCache(ref driAgentGuilmon, "Quests/DriAgents/DriAgentGuilmonAddresses.json");
-        private QuestAddresses GetDriAgentAgumon() =>
-            LoadAndCache(ref driAgentAgumon, "Quests/DriAgents/DriAgentAgumonAddresses.json");
-        private QuestAddresses GetDriAgentVeemon() =>
-            LoadAndCache(ref driAgentVeemon, "Quests/DriAgents/DriAgentVeemonAddresses.json");
-        private QuestAddresses GetDriAgentKumamon() =>
-            LoadAndCache(ref driAgentKumamon, "Quests/DriAgents/DriAgentKumamonAddresses.json");
-        private QuestAddresses GetDriAgentMonmon() =>
-            LoadAndCache(ref driAgentMonmon, "Quests/DriAgents/DriAgentMonmonAddresses.json");
-        private QuestAddresses GetDriAgentKotemon() =>
-            LoadAndCache(ref driAgentKotemon, "Quests/DriAgents/DriAgentKotemonAddresses.json");
-        private QuestAddresses GetDriAgentRenamon() =>
-            LoadAndCache(ref driAgentRenamon, "Quests/DriAgents/DriAgentRenamonAddresses.json");
-        private QuestAddresses GetDriAgentPatamon() =>
-            LoadAndCache(ref driAgentPatamon, "Quests/DriAgents/DriAgentPatamonAddresses.json");
+        private List<QuestAddresses> LoadAllQuestAddressesFromFolder(
+            ref List<QuestAddresses>? cacheField,
+            string relativeFolder)
+        {
+            if (cacheField != null)
+            {
+                return cacheField;
+            }
 
-        private QuestAddresses GetSideQuestFolderBag() =>
-            LoadAndCache(ref sideQuestFolderBag, "Quests/SideQuests/FolderBagAddresses.json");
-        private QuestAddresses GetSideQuestTreeBoots() =>
-            LoadAndCache(ref sideQuestTreeBoots, "Quests/SideQuests/TreeBootsAddresses.json");
-        private QuestAddresses GetSideQuestFishingPole() =>
-            LoadAndCache(ref sideQuestFishingPole, "Quests/SideQuests/FishingPoleAddresses.json");
+            var folderPath = Path.Combine(dataDirectory, relativeFolder);
+            if (!Directory.Exists(folderPath))
+            {
+                throw new DirectoryNotFoundException($"Quest addresses folder not found: {folderPath}");
+            }
 
-        private QuestAddresses GetLegendaryWeaponEternally() =>
-            LoadAndCache(ref legendaryWeaponEternally, "Quests/LegendaryWeapons/EternallyAddresses.json");
-        private QuestAddresses GetLegendaryWeaponInvincible() =>
-            LoadAndCache(ref legendaryWeaponInvincible, "Quests/LegendaryWeapons/InvincibleAddresses.json");
-        private QuestAddresses GetLegendaryWeaponMuramasa() =>
-            LoadAndCache(ref legendaryWeaponMuramasa, "Quests/LegendaryWeapons/MuramasaAddresses.json");
-        private QuestAddresses GetLegendaryWeaponSuperNova() =>
-            LoadAndCache(ref legendaryWeaponSuperNova, "Quests/LegendaryWeapons/SuperNovaAddresses.json");
-        private QuestAddresses GetLegendaryWeaponPunishment() =>
-            LoadAndCache(ref legendaryWeaponPunishment, "Quests/LegendaryWeapons/PunishmentAddresses.json");
+            List<QuestAddresses> loaded = [];
+            foreach (var filePath in Directory.EnumerateFiles(folderPath, "*.json")
+                .OrderBy(Path.GetFileName, StringComparer.OrdinalIgnoreCase))
+            {
+                var json = File.ReadAllText(filePath);
+                loaded.Add(JsonSerializer.Deserialize<QuestAddresses>(json) ?? new QuestAddresses());
+            }
+
+            cacheField = loaded;
+            return cacheField;
+        }
 
         public PlayerAddresses GetPlayerAddresses() =>
             LoadAndCache(ref playerAddresses, "PlayerAddresses.json");
+
+        public ImportantItemsAddresses GetImportantItemsAddresses() =>
+            LoadAndCache(ref importantItemsAddresses, "ImportantItemsAddresses.json");
 
         public PartyAddresses GetPartyAddresses() =>
             LoadAndCache(ref partyAddresses, "PartyAddresses.json");
@@ -93,44 +81,45 @@ namespace Backend.Memory.Repositories
         public DigimonStatusAddresses GetDigimonStatusAddresses() =>
             LoadAndCache(ref digimonStatusAddresses, "Parties/DigimonStatusAddresses.json");
 
-        public DigimonsAddresses GetDigimonsAddresses() =>
+        public InBattleAddresses GetInBattleAddresses() =>
+            LoadAndCache(ref inBattleAddresses, "Parties/InBattleAddresses.json");
+
+        public DigimonBattleAddresses GetDigimonBattleAddresses() =>
+            LoadAndCache(ref digimonBattleAddresses, "Battles/DigimonBattleAddresses.json");
+
+        public EnemyAddresses GetEnemyAddresses() =>
+            LoadAndCache(ref enemyAddresses, "Battles/EnemyAddresses.json");
+
+        public Dictionary<int, DigimonAddress> GetDigimonsAddresses() =>
             LoadAndCache(ref digimonAddresses, "Parties/DigimonsAddresses.json");
 
         public DigimonAddress? GetDigimonAddressById(int id) =>
-            GetDigimonsAddresses().Digimons.FirstOrDefault(d => d.Id == id);
+            GetDigimonsAddresses().TryGetValue(id, out var digimonAddress)
+                ? digimonAddress
+                : null;
 
         public QuestAddresses GetMainQuest() =>
             LoadAndCache(ref mainQuestAddresses, "Quests/MainQuestAddresses.json");
 
         public List<QuestAddresses> GetAllSideQuests() =>
-        [
-            GetSideQuestFolderBag(),
-            GetSideQuestTreeBoots(),
-            GetSideQuestFishingPole()
-        ];
+            LoadAllQuestAddressesFromFolder(ref sideQuestAddresses, "Quests/SideQuests");
 
         public List<QuestAddresses> GetAllLegendaryWeapons() =>
-        [
-            GetLegendaryWeaponEternally(),
-            GetLegendaryWeaponInvincible(),
-            GetLegendaryWeaponMuramasa(),
-            GetLegendaryWeaponSuperNova(),
-            GetLegendaryWeaponPunishment()
-        ];
+            LoadAllQuestAddressesFromFolder(ref legendaryWeaponAddresses, "Quests/LegendaryWeapons");
 
         public List<QuestAddresses> GetAllDriAgents() =>
-        [
-            GetDriAgentGuilmon(),
-            GetDriAgentAgumon(),
-            GetDriAgentVeemon(),
-            GetDriAgentKumamon(),
-            GetDriAgentMonmon(),
-            GetDriAgentKotemon(),
-            GetDriAgentRenamon(),
-            GetDriAgentPatamon()
-        ];
+            LoadAllQuestAddressesFromFolder(ref driAgentAddresses, "Quests/DriAgents");
 
-        public Dictionary<string, AuctionAddresses> GetAuctionAddresses() =>
-            LoadAndCache(ref auctionAddresses, "AuctionAddresses.json");
+        public List<QuestAddresses> GetAllDuelIsland() =>
+            LoadAllQuestAddressesFromFolder(ref duelIslandAddresses, "Quests/DuelIsland");
+
+        public AuctionsAddresses GetAuctionsAddresses() =>
+            LoadAndCache(ref auctionsAddresses, "AuctionAddresses.json");
+
+        public NpcsAddresses GetNpcsAddresses() =>
+            LoadAndCache(ref npcsAddresses, "NpcAddresses.json");
+
+        public CardBattleAddresses GetCardBattleAddresses() =>
+            LoadAndCache(ref cardBattleAddresses, "CardBattleAddresses.json");
     }
 }

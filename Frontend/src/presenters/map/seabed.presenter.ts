@@ -5,10 +5,13 @@ export class SeabedPresenter {
   public static getRouteLocation(
     routeId: number,
     locationId: string,
-    mapVariant: number
+    mapVariant: number,
   ): SeabedRouteLocationViewModel | null {
     const locationKey = `${locationId}-${mapVariant}`;
-    const seabedRouteLocationRaw = SeabedRoutesRepository.getByRouteAndLocation(String(routeId), locationKey);
+    const seabedRouteLocationRaw = SeabedRoutesRepository.getByRouteAndLocation(
+      String(routeId),
+      locationKey,
+    );
 
     if (seabedRouteLocationRaw === null) {
       return null;

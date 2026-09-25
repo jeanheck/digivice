@@ -3,4 +3,5 @@ export interface StatViewModel {
   fromEquipaments: number;
   fromDigievolution: number;
   sumBetweenDigimonAndEquipaments: number;
+  fromBattle?: number;
 }

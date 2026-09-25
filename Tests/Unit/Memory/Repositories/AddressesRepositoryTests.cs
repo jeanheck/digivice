@@ -55,6 +55,28 @@ public class AddressesRepositoryTests : IDisposable
     }
 
     [Fact]
+    public void GetImportantItemsAddresses_ShouldLoadAndDeserializeCorrectly()
+    {
+        var fakeImportantItems = new ImportantItemsAddresses
+        {
+            TreeBoots = 0x00048DB4,
+            FishingPole = 0x00048DB5,
+            AsukaTrophy = 0x00048DC2,
+            SunTrophy = 0x00048DC4
+        };
+        var json = JsonSerializer.Serialize(fakeImportantItems);
+        File.WriteAllText(Path.Combine(tempDirectoryPath, "ImportantItemsAddresses.json"), json);
+
+        var result = repository.GetImportantItemsAddresses();
+
+        Assert.NotNull(result);
+        Assert.Equal(0x00048DB4, result.TreeBoots);
+        Assert.Equal(0x00048DB5, result.FishingPole);
+        Assert.Equal(0x00048DC2, result.AsukaTrophy);
+        Assert.Equal(0x00048DC4, result.SunTrophy);
+    }
+
+    [Fact]
     public void GetPartyAddresses_ShouldLoadAndDeserializeCorrectly()
     {
         // Arrange
@@ -95,12 +117,10 @@ public class AddressesRepositoryTests : IDisposable
     public void GetDigimonsAddresses_ShouldLoadAndDeserializeCorrectly()
     {
         // Arrange
-        var fakeDigimons = new DigimonsAddresses
+        var fakeDigimons = new Dictionary<int, DigimonAddress>
         {
-            Digimons = [
-                new DigimonAddress { Id = 1, Name = "Agumon", Address = 0x800100, BlastGaugeAddress = 0x00042B76 },
-                new DigimonAddress { Id = 2, Name = "Gabumon", Address = 0x800200, BlastGaugeAddress = 0x00042B78 }
-            ]
+            [1] = new DigimonAddress { Name = "Agumon", MemoryBlockAddress = 0x800100, BlastAddress = 0x00042B76 },
+            [2] = new DigimonAddress { Name = "Gabumon", MemoryBlockAddress = 0x800200, BlastAddress = 0x00042B78 }
         };
         var json = JsonSerializer.Serialize(fakeDigimons);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "Parties", "DigimonsAddresses.json"), json);
@@ -110,22 +130,20 @@ public class AddressesRepositoryTests : IDisposable
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(2, result.Digimons.Count);
-        Assert.Equal("Agumon", result.Digimons[0].Name);
-        Assert.Equal(0x800100, result.Digimons[0].Address);
-        Assert.Equal(0x00042B76, result.Digimons[0].BlastGaugeAddress);
-        Assert.Equal(0x00042B78, result.Digimons[1].BlastGaugeAddress);
+        Assert.Equal(2, result.Count);
+        Assert.Equal("Agumon", result[1].Name);
+        Assert.Equal(0x800100, result[1].MemoryBlockAddress);
+        Assert.Equal(0x00042B76, result[1].BlastAddress);
+        Assert.Equal(0x00042B78, result[2].BlastAddress);
     }
 
     [Fact]
     public void GetDigimonAddressById_ShouldReturnCorrectAddress_WhenIdExists()
     {
         // Arrange
-        var fakeDigimons = new DigimonsAddresses
+        var fakeDigimons = new Dictionary<int, DigimonAddress>
         {
-            Digimons = [
-                new DigimonAddress { Id = 3, Name = "Patamon", Address = 0x800300 }
-            ]
+            [3] = new DigimonAddress { Name = "Patamon", MemoryBlockAddress = 0x800300 }
         };
         var json = JsonSerializer.Serialize(fakeDigimons);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "Parties", "DigimonsAddresses.json"), json);
@@ -136,14 +154,14 @@ public class AddressesRepositoryTests : IDisposable
         // Assert
         Assert.NotNull(result);
         Assert.Equal("Patamon", result!.Name);
-        Assert.Equal(0x800300, result.Address);
+        Assert.Equal(0x800300, result.MemoryBlockAddress);
     }
 
     [Fact]
     public void GetDigimonAddressById_ShouldReturnNull_WhenIdDoesNotExist()
     {
         // Arrange
-        var fakeDigimons = new DigimonsAddresses { Digimons = [] };
+        var fakeDigimons = new Dictionary<int, DigimonAddress>();
         var json = JsonSerializer.Serialize(fakeDigimons);
         File.WriteAllText(Path.Combine(tempDirectoryPath, "Parties", "DigimonsAddresses.json"), json);
 
@@ -188,9 +206,47 @@ public class AddressesRepositoryTests : IDisposable
         // Assert
         Assert.NotNull(result);
         Assert.Equal(3, result.Count);
-        Assert.Equal("FolderBag", result[0].Id);
-        Assert.Equal("TreeBoots", result[1].Id);
-        Assert.Equal("FishingPole", result[2].Id);
+        Assert.Contains(result, quest => quest.Id == "FolderBag");
+        Assert.Contains(result, quest => quest.Id == "TreeBoots");
+        Assert.Contains(result, quest => quest.Id == "FishingPole");
+    }
+
+    [Fact]
+    public void GetAllSideQuests_ShouldCacheLoadedList()
+    {
+        File.WriteAllText(
+            Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "FolderBagAddresses.json"),
+            JsonSerializer.Serialize(new QuestAddresses { Id = "FolderBag" }));
+
+        var firstResult = repository.GetAllSideQuests();
+        var secondResult = repository.GetAllSideQuests();
+
+        Assert.Same(firstResult, secondResult);
+    }
+
+    [Fact]
+    public void GetAllSideQuests_ShouldLoadOnlyExistingFiles()
+    {
+        File.WriteAllText(
+            Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "FolderBagAddresses.json"),
+            JsonSerializer.Serialize(new QuestAddresses { Id = "FolderBag" }));
+        File.WriteAllText(
+            Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "TreeBootsAddresses.json"),
+            JsonSerializer.Serialize(new QuestAddresses { Id = "TreeBoots" }));
+
+        var result = repository.GetAllSideQuests();
+
+        Assert.Equal(2, result.Count);
+        Assert.Contains(result, quest => quest.Id == "FolderBag");
+        Assert.Contains(result, quest => quest.Id == "TreeBoots");
+    }
+
+    [Fact]
+    public void GetAllSideQuests_ShouldThrowDirectoryNotFoundException_WhenFolderIsMissing()
+    {
+        Directory.Delete(Path.Combine(tempDirectoryPath, "Quests", "SideQuests"), recursive: true);
+
+        Assert.Throws<DirectoryNotFoundException>(() => repository.GetAllSideQuests());
     }
 
     [Fact]
@@ -230,21 +286,6 @@ public class AddressesRepositoryTests : IDisposable
         Assert.NotNull(result);
         Assert.Equal(0, result.Bits);
         Assert.Equal(0, result.MapId);
-    }
-
-    [Fact]
-    public void GetAllSideQuests_ShouldThrowFileNotFoundException_WhenAnySideQuestFileIsMissing()
-    {
-        // Arrange (Escrevemos apenas duas das três side quests esperadas)
-        var side1 = new QuestAddresses { Id = "FolderBag" };
-        var side2 = new QuestAddresses { Id = "TreeBoots" };
-
-        File.WriteAllText(Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "FolderBagAddresses.json"), JsonSerializer.Serialize(side1));
-        File.WriteAllText(Path.Combine(tempDirectoryPath, "Quests", "SideQuests", "TreeBootsAddresses.json"), JsonSerializer.Serialize(side2));
-        // Omitimos FishingPoleAddresses.json de propósito
-
-        // Act & Assert
-        Assert.Throws<FileNotFoundException>(() => repository.GetAllSideQuests());
     }
 
     public void Dispose()

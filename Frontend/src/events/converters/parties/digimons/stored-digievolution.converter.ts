@@ -2,10 +2,10 @@ import type { StoredDigievolutionDTO } from "@/events/dto/parties/digimons/store
 import type { StoredDigievolution } from "@/models";
 
 export class StoredDigievolutionConverter {
-    public static convert(storedDigievolutionDto: StoredDigievolutionDTO): StoredDigievolution {
-        return {
-            digievolutionId: storedDigievolutionDto.digievolutionId ?? 0,
-            level: storedDigievolutionDto.level ?? 1
-        };
-    }
+  public static convert(storedDigievolutionDto: StoredDigievolutionDTO): StoredDigievolution {
+    return {
+      digievolutionId: storedDigievolutionDto.digievolutionId ?? 0,
+      level: storedDigievolutionDto.level ?? 1,
+    };
+  }
 }

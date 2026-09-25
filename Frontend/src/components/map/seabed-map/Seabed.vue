@@ -56,21 +56,29 @@ function getLocationName(locationId: string): string {
           :key="`${point.location}-${index}`"
           class="flex flex-1 flex-col items-center gap-0.5 min-w-0"
         >
-          <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">{{ getEmergeEmoji(point.on) }}</span>
-          <span class="text-[9px] text-cyan-100 text-center leading-tight">{{ getLocationName(point.location) }}</span>
+          <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">{{
+            getEmergeEmoji(point.on)
+          }}</span>
+          <span class="text-[9px] text-cyan-100 text-center leading-tight">{{
+            getLocationName(point.location)
+          }}</span>
         </div>
       </div>
 
       <div v-if="hasLeft" class="flex items-center gap-1.5 w-full">
         <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">⬅️</span>
         <div class="flex flex-col text-[9px] text-cyan-200 text-left leading-tight min-w-0">
-          <span v-for="(locationId, index) in leftLocations" :key="index">{{ getLocationName(locationId) }}</span>
+          <span v-for="(locationId, index) in leftLocations" :key="index">{{
+            getLocationName(locationId)
+          }}</span>
         </div>
       </div>
 
       <div v-if="hasRight" class="flex items-center justify-end gap-1.5 w-full">
         <div class="flex flex-col text-[9px] text-cyan-300 text-right leading-tight min-w-0">
-          <span v-for="(locationId, index) in rightLocations" :key="index">{{ getLocationName(locationId) }}</span>
+          <span v-for="(locationId, index) in rightLocations" :key="index">{{
+            getLocationName(locationId)
+          }}</span>
         </div>
         <span class="inline-flex leading-none text-[1.1rem] -translate-y-0.5">➡️</span>
       </div>

@@ -19,16 +19,16 @@ namespace Backend.Diagnostics
         private const string Red = "\x1b[31m";
         private const string Blue = "\x1b[34m";
         private const string Gray = "\x1b[90m";
-        private bool _firstRender = true;
+        private bool FirstRender = true;
 
         public void Render(State? state)
         {
             var sb = new StringBuilder();
 
-            if (_firstRender)
+            if (FirstRender)
             {
                 Console.Clear();
-                _firstRender = false;
+                FirstRender = false;
             }
 
             // Stabilize cursor instead of clearing repeatedly
@@ -45,6 +45,8 @@ namespace Backend.Diagnostics
 
             RenderPlayer(sb, state.Player);
             RenderParty(sb, state.Party);
+            RenderDigimonBattle(sb, state.DigimonBattle);
+            RenderCardBattle(sb, state.CardBattle);
 
             sb.AppendLine($"{Gray}-------------------------------------------------{Reset}");
             sb.AppendLine($"\nMonitoring... (Press 'Ctrl + C' to exit)");
@@ -63,7 +65,7 @@ namespace Backend.Diagnostics
 
         private void RenderPlayer(StringBuilder sb, Player player)
         {
-            sb.AppendLine($"{Cyan}PLAYER:{Reset} {Yellow}BITS:{Reset} {player.Bits.ToString(BitsFormat) ?? "Unknown"}");
+            sb.AppendLine($"{Cyan}PLAYER:{Reset} {Yellow}BITS:{Reset} {player.Bits.ToString(BitsFormat)}");
             sb.AppendLine();
         }
 
@@ -85,21 +87,40 @@ namespace Backend.Diagnostics
             }
         }
 
+        private void RenderDigimonBattle(StringBuilder sb, DigimonBattle digimonBattle)
+        {
+            var enemy = digimonBattle.Enemy;
+            sb.AppendLine();
+            sb.AppendLine(
+                $"{Cyan}BATTLE ENEMY:{Reset} GroupId:{enemy.GroupId} | Id:{enemy.Id} | Condition:{enemy.Condition} | " +
+                $"HP:{enemy.HP.Current.ToString(StatFormat)}/{enemy.HP.Max.ToString(StatFormat)} | " +
+                $"AtkΔ:{enemy.Strength.ToString(StatFormat)} DefΔ:{enemy.Defense.ToString(StatFormat)} SpdΔ:{enemy.Speed.ToString(StatFormat)}");
+        }
+
+        private void RenderCardBattle(StringBuilder sb, CardBattle cardBattle)
+        {
+            sb.AppendLine($"{Cyan}CARD BATTLE:{Reset} Id:{cardBattle.Id}");
+        }
+
         private void RenderDigimon(StringBuilder sb, DigimonSlot slot)
         {
             var digimon = slot.Digimon!;
-            var vitals = digimon.Vitals;
+            var hp = digimon.HP;
+            var mp = digimon.MP;
             sb.AppendLine($"{Yellow}Slot {slot.Index} (ID: {slot.DigimonId}):{Reset} [Lv.{digimon.Level.ToString(LvlFormat)}] [TP:{digimon.TP.ToString(StatFormat)}] [EXP:{digimon.Experience.ToString(ExpFormat)}]");
 
             // HP Bar
             sb.Append("   HP: ");
-            AppendProgressBar(sb, vitals.CurrentHP, vitals.MaxHP, GetHpColor(vitals.CurrentHP, vitals.MaxHP));
-            sb.AppendLine($" {vitals.CurrentHP.ToString(StatFormat)}/{vitals.MaxHP.ToString(StatFormat)}");
+            AppendProgressBar(sb, hp.Current, hp.Max, GetHpColor(hp.Current, hp.Max));
+            sb.AppendLine($" {hp.Current.ToString(StatFormat)}/{hp.Max.ToString(StatFormat)}");
 
             // MP Bar
             sb.Append("   MP: ");
-            AppendProgressBar(sb, vitals.CurrentMP, vitals.MaxMP, Blue);
-            sb.AppendLine($" {vitals.CurrentMP.ToString(StatFormat)}/{vitals.MaxMP.ToString(StatFormat)}");
+            AppendProgressBar(sb, mp.Current, mp.Max, Blue);
+            sb.AppendLine($" {mp.Current.ToString(StatFormat)}/{mp.Max.ToString(StatFormat)}");
+
+            var inBattle = digimon.InBattle;
+            sb.AppendLine($"   InBattle Condition: {inBattle.Condition} | HP: {inBattle.HP.Current.ToString(StatFormat)}/{inBattle.HP.Max.ToString(StatFormat)} | MP: {inBattle.MP.Current.ToString(StatFormat)}/{inBattle.MP.Max.ToString(StatFormat)} | Atk:{inBattle.Strength.ToString(StatFormat)} Def:{inBattle.Defense.ToString(StatFormat)} Spd:{inBattle.Speed.ToString(StatFormat)}");
 
             // Attributes
             var attributes = digimon.Attributes;

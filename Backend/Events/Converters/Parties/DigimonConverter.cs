@@ -1,6 +1,5 @@
 using Backend.Domain.Models.Parties;
 using Backend.Events.DTO.Parties;
-
 using Backend.Events.Converters.Parties.Digimons;
 
 namespace Backend.Events.Converters.Parties;
@@ -11,9 +10,11 @@ public static class DigimonConverter
     {
         Level = digimon.Level,
         TP = digimon.TP,
-        BlastGauge = digimon.BlastGauge,
+        Blast = digimon.Blast,
         Experience = digimon.Experience,
-        Vitals = VitalsConverter.ToDTO(digimon.Vitals),
+        HP = VitalConverter.ToDTO(digimon.HP),
+        MP = VitalConverter.ToDTO(digimon.MP),
+        InBattle = InBattleConverter.ToDTO(digimon.InBattle),
         Attributes = AttributesConverter.ToDTO(digimon.Attributes),
         Resistances = ResistancesConverter.ToDTO(digimon.Resistances),
         Equipments = EquipmentsConverter.ToDTO(digimon.Equipments),

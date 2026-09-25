@@ -1,9 +1,9 @@
-using Backend.Application.Loaders.Journals;
+using Backend.Application.Loaders.Interfaces;
 using Backend.Memory.Resources;
 
 namespace Backend.Application.Loaders
 {
-    public class JournalLoader(QuestLoader questLoader, IAuctionLoader auctionLoader) : IJournalLoader
+    public class JournalLoader(IQuestLoader questLoader) : IJournalLoader
     {
         public JournalResource Load()
         {
@@ -13,7 +13,7 @@ namespace Backend.Application.Loaders
                 SideQuests = questLoader.LoadSideQuests(),
                 LegendaryWeapons = questLoader.LoadLegendaryWeapons(),
                 DriAgents = questLoader.LoadDriAgents(),
-                Auctions = auctionLoader.LoadAuctions(),
+                DuelIsland = questLoader.LoadDuelIsland(),
             };
         }
     }

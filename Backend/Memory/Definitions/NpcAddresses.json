@@ -1,0 +1,190 @@
+{
+    "Genji": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B3DF",
+                "BitMask": "0x20"
+            },
+            "second": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x01"
+            }
+        }
+    },
+    "Natsumi": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x02"
+            }
+        }
+    },
+    "Catherine": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x08"
+            }
+        }
+    },
+    "Lucia": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x10"
+            }
+        }
+    },
+    "Robert": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x20"
+            }
+        }
+    },
+    "Akiba": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x40"
+            }
+        }
+    },
+    "Chris": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x02"
+            }
+        }
+    },
+    "Tomomi": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x01"
+            }
+        }
+    },
+    "Mitch": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x04"
+            }
+        }
+    },
+    "Bob": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39A",
+                "BitMask": "0x80"
+            }
+        }
+    },
+    "Andy": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x04"
+            }
+        }
+    },
+    "George": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x08"
+            }
+        }
+    },
+    "MeiLin": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x10"
+            }
+        }
+    },
+    "Jessica": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x20"
+            }
+        }
+    },
+    "Gordon": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x40"
+            }
+        }
+    },
+    "Alice": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39B",
+                "BitMask": "0x80"
+            }
+        }
+    },
+    "Nakano": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B39C",
+                "BitMask": "0x01"
+            }
+        }
+    },
+    "SeiryuLeader": {
+        "Battles": {
+            "first": {
+                "Address": "0x00048DB9",
+                "BitMask": "0x01"
+            }
+        }
+    },
+    "Keith": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B3E0",
+                "BitMask": "0x40"
+            }
+        }
+    },
+    "SuzakuLeader": {
+        "Battles": {
+            "first": {
+                "Address": "0x00048DBA",
+                "BitMask": "0x01"
+            }
+        }
+    },
+    "FakeByakkoLeader": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B3E1",
+                "BitMask": "0x40"
+            }
+        }
+    },
+    "ByakkoLeader": {
+        "Battles": {
+            "first": {
+                "Address": "0x00048DBB",
+                "BitMask": "0x01"
+            }
+        }
+    },
+    "AoaAttacker": {
+        "Battles": {
+            "first": {
+                "Address": "0x0004B3E5",
+                "BitMask": "0x08"
+            }
+        }
+    }
+}

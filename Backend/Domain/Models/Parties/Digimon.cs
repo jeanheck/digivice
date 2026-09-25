@@ -6,9 +6,11 @@ namespace Backend.Domain.Models.Parties
     {
         public int Level { get; set; }
         public int TP { get; set; }
-        public int BlastGauge { get; set; }
+        public int Blast { get; set; }
         public int Experience { get; set; }
-        public Vitals Vitals { get; set; } = new();
+        public Vital HP { get; set; } = new();
+        public Vital MP { get; set; } = new();
+        public InBattle InBattle { get; set; } = new();
         public Attributes Attributes { get; set; } = new();
         public Resistances Resistances { get; set; } = new();
         public Equipments Equipments { get; set; } = new();
@@ -22,9 +24,11 @@ namespace Backend.Domain.Models.Parties
 
             return Level == other.Level &&
                    TP == other.TP &&
-                   BlastGauge == other.BlastGauge &&
+                   Blast == other.Blast &&
                    Experience == other.Experience &&
-                   Vitals.Equals(other.Vitals) &&
+                   HP.Equals(other.HP) &&
+                   MP.Equals(other.MP) &&
+                   InBattle.Equals(other.InBattle) &&
                    Attributes.Equals(other.Attributes) &&
                    Resistances.Equals(other.Resistances) &&
                    Equipments.Equals(other.Equipments) &&
@@ -38,9 +42,11 @@ namespace Backend.Domain.Models.Parties
             var hash = new HashCode();
             hash.Add(Level);
             hash.Add(TP);
-            hash.Add(BlastGauge);
+            hash.Add(Blast);
             hash.Add(Experience);
-            hash.Add(Vitals);
+            hash.Add(HP);
+            hash.Add(MP);
+            hash.Add(InBattle);
             hash.Add(Attributes);
             hash.Add(Resistances);
             hash.Add(Equipments);

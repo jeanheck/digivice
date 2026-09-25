@@ -3,13 +3,21 @@ import enemy from "./enemy/enemy.json";
 import species from "./enemy/specie.json";
 import conditions from "./enemy/condition.json";
 import drops from "./enemy/drop.json";
+import boosters from "./tcg/booster.json";
+import cardShops from "./tcg/card-shops.json";
+import decks from "./tcg/deck.json";
+import cards from "./tcg/cards.json";
+import cardType from "./tcg/card-type.json";
 import regularAttacks from "./enemy/enemy-regular-attack.json";
 import enemyTechniques from "./enemy/enemy-technique.json";
 import techniqueTypes from "./digievolution/technique-type.json";
 import digimon from "./digimon.json";
+import digimonBattle from "./digimon-battle.json";
+import digimonBattleField from "./digimon-battle-field.json";
 import stat from "./stat.json";
 import equipments from "./equipment/equipment.json";
 import equipmentType from "./equipment/equipment-type.json";
+import consumableItems from "./consumable-item/consumable-item.json";
 import location from "./location.json";
 import technique from "./digievolution/technique.json";
 import digivolution from "./digievolution/digievolution.json";
@@ -31,10 +39,16 @@ import driAgentMonmon from "./quest/dri-agents/dri-agent-monmon.json";
 import driAgentKotemon from "./quest/dri-agents/dri-agent-kotemon.json";
 import driAgentRenamon from "./quest/dri-agents/dri-agent-renamon.json";
 import driAgentPatamon from "./quest/dri-agents/dri-agent-patamon.json";
+import asukaTrophy from "./quest/duel-island/asuka-trophy.json";
+import sunTrophy from "./quest/duel-island/sun-trophy.json";
 import player from "./player.json";
 import party from "./party.json";
 import connection from "./connection.json";
 import auction from "./auction.json";
+import npc from "./npc.json";
+import tamer from "./tamer.json";
+import duelIsland from "./duel-island.json";
+import npcs from "./npcs.json";
 
 export default {
   ...map,
@@ -42,13 +56,21 @@ export default {
   ...species,
   ...conditions,
   ...drops,
+  ...boosters,
+  ...cardShops,
+  ...decks,
+  ...cards,
+  ...cardType,
   ...regularAttacks,
   ...enemyTechniques,
   ...techniqueTypes,
   ...digimon,
+  ...digimonBattle,
+  ...digimonBattleField,
   ...stat,
   ...equipments,
   ...equipmentType,
+  ...consumableItems,
   ...location,
   ...technique,
   ...digivolution,
@@ -70,10 +92,14 @@ export default {
   ...driAgentKotemon,
   ...driAgentRenamon,
   ...driAgentPatamon,
+  ...asukaTrophy,
+  ...sunTrophy,
   ...player,
   ...party,
   ...connection,
   ...auction,
+  ...npc,
+  ...tamer,
+  ...duelIsland,
+  ...npcs,
 };
-
-

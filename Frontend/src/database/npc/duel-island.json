@@ -1,0 +1,140 @@
+{
+  "divermon1": {
+    "locationId": "0228",
+    "cardBattles": {
+      "first": {
+        "id": 31,
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaWhiteMaster1",
+        "boosterId": 525
+      },
+      "second": {
+        "id": 32,
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaWhiteMaster2",
+        "boosterId": 525
+      }
+    },
+    "imageName": "Divermon"
+  },
+  "divermon2": {
+    "locationId": "0228",
+    "cardBattles": {
+      "first": {
+        "id": 29,
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaBlackMaster1",
+        "boosterId": 526
+      },
+      "second": {
+        "id": 30,
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaBlackMaster2",
+        "boosterId": 526
+      }
+    },
+    "imageName": "Divermon"
+  },
+  "divermon3": {
+    "locationId": "0228",
+    "cardBattles": {
+      "first": {
+        "id": 27,
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaGreenMaster1",
+        "boosterId": 527
+      },
+      "second": {
+        "id": 28,
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaGreenMaster2",
+        "boosterId": 527
+      }
+    },
+    "imageName": "Divermon"
+  },
+  "divermon4": {
+    "locationId": "0228",
+    "cardBattles": {
+      "first": {
+        "id": 25,
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaRedMaster1",
+        "boosterId": 528
+      },
+      "second": {
+        "id": 26,
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaRedMaster2",
+        "boosterId": 528
+      }
+    },
+    "imageName": "Divermon"
+  },
+  "divermon5": {
+    "locationId": "0228",
+    "cardBattles": {
+      "first": {
+        "id": 23,
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaBlueMaster1",
+        "boosterId": 516
+      },
+      "second": {
+        "id": 24,
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaBlueMaster2",
+        "boosterId": 516
+      }
+    },
+    "imageName": "Divermon"
+  },
+  "kingDivermon": {
+    "locationId": "0228",
+    "cardBattles": {
+      "first": {
+        "id": 21,
+        "charismaRequired": {
+          "min": 1
+        },
+        "deckId": "asukaDuelKing1",
+        "boosterId": 517
+      },
+      "second": {
+        "id": 22,
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "asukaDuelKing2",
+        "boosterId": 517
+      }
+    },
+    "imageName": "KingDivermon"
+  }
+}

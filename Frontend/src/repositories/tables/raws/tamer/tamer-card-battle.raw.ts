@@ -1,0 +1,10 @@
+import type { TamerCharismaRequiredRaw } from "./tamer-charisma-required.raw";
+import type { TamerTrophyRequiredRaw } from "./tamer-trophy-required.raw";
+
+export interface TamerCardBattleRaw {
+  id: number | null;
+  charismaRequired: TamerCharismaRequiredRaw;
+  deckId: string;
+  boosterId: number;
+  trophyRequired?: TamerTrophyRequiredRaw;
+}

@@ -48,8 +48,9 @@ Does not invent domain types. Category `DriAgents` is already on Journal.
 
 ## Order in lists
 
-Append new agents at the end of `GetAllDriAgents()` and `getDriAgentsRaw()`
-unless the user specifies another UI order. Current order:
+Backend list order follows file-name discovery (not curated). **UI/journal
+order** = append at the end of `getDriAgentsRaw()` (and related frontend raw
+lists) unless the user specifies another order. Current frontend order:
 
 Guilmon → Agumon → Veemon → Kumamon → Monmon → Kotemon → Renamon → *(new, e.g. Patamon)*
 

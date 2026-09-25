@@ -17,15 +17,8 @@ function isRouteHovered(hoveredRouteId: string | null, routeId: string): boolean
 </script>
 
 <template>
-  <svg
-    class="absolute inset-0 w-full h-full z-9"
-    viewBox="0 0 100 100"
-    preserveAspectRatio="none"
-  >
-    <template
-      v-for="route in routes"
-      :key="route.id"
-    >
+  <svg class="absolute inset-0 w-full h-full z-9" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <template v-for="route in routes" :key="route.id">
       <template
         v-for="(segment, segmentIndex) in route.segments"
         :key="`${route.id}-${segmentIndex}`"

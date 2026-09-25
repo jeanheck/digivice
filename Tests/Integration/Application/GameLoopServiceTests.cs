@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Backend.Application;
-using Backend.Application.Providers;
+using Backend.Application.Providers.Interfaces;
 using Backend.Diagnostics;
 using Backend.Domain.Models;
 using Backend.Domain.Models.Journals;
@@ -16,6 +16,7 @@ using Backend.Events.States;
 using Backend.Infrastructure.Duckstation;
 using Backend.Memory;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
 
@@ -23,7 +24,12 @@ public class GameLoopServiceTests
 {
     private readonly Mock<IDuckstationConnector> _duckstationConnectorMock;
     private readonly Mock<IPlayerProvider> _playerProviderMock;
+    private readonly Mock<IImportantItemsProvider> _importantItemsProviderMock;
     private readonly Mock<IPartyProvider> _partyProviderMock;
+    private readonly Mock<IDigimonBattleProvider> _digimonBattleProviderMock;
+    private readonly Mock<ICardBattleProvider> _cardBattleProviderMock;
+    private readonly Mock<IAuctionsProvider> _auctionsProviderMock;
+    private readonly Mock<INpcsProvider> _npcsProviderMock;
     private readonly Mock<IJournalProvider> _journalProviderMock;
     private readonly Mock<IEventDispatcherService> _eventDispatcherServiceMock;
     private readonly GameStateStore _gameStateStore;
@@ -39,29 +45,46 @@ public class GameLoopServiceTests
             _eventDispatcherServiceMock.Object,
             _gameStateStore,
             _debugConsoleRenderer,
-            _configuration);
+            _configuration,
+            NullLogger<GameLoopService>.Instance);
     }
 
     public GameLoopServiceTests()
     {
         _duckstationConnectorMock = new Mock<IDuckstationConnector>();
         _playerProviderMock = new Mock<IPlayerProvider>();
+        _importantItemsProviderMock = new Mock<IImportantItemsProvider>();
         _partyProviderMock = new Mock<IPartyProvider>();
+        _digimonBattleProviderMock = new Mock<IDigimonBattleProvider>();
+        _cardBattleProviderMock = new Mock<ICardBattleProvider>();
+        _auctionsProviderMock = new Mock<IAuctionsProvider>();
+        _npcsProviderMock = new Mock<INpcsProvider>();
         _journalProviderMock = new Mock<IJournalProvider>();
         _eventDispatcherServiceMock = new Mock<IEventDispatcherService>();
         _gameStateStore = new GameStateStore();
         _debugConsoleRenderer = new DebugConsoleRenderer();
 
         var player = new Player { Bits = 123, MapId = "0001" };
+        var importantItems = new ImportantItems();
         var party = new Party { Slots = [] };
         var journal = new Journal { MainQuest = new Quest { Id = "MainQuest" }, SideQuests = [] };
         _playerProviderMock.Setup(p => p.Get()).Returns(player);
+        _importantItemsProviderMock.Setup(p => p.Get()).Returns(importantItems);
         _partyProviderMock.Setup(p => p.Get()).Returns(party);
+        _digimonBattleProviderMock.Setup(p => p.Get()).Returns(new DigimonBattle());
+        _cardBattleProviderMock.Setup(p => p.Get()).Returns(new CardBattle());
+        _auctionsProviderMock.Setup(p => p.Get()).Returns(new Auctions());
+        _npcsProviderMock.Setup(p => p.Get()).Returns(new Npcs());
         _journalProviderMock.Setup(p => p.Get()).Returns(journal);
 
         _stateComposer = new StateComposer(
             _playerProviderMock.Object,
+            _importantItemsProviderMock.Object,
             _partyProviderMock.Object,
+            _digimonBattleProviderMock.Object,
+            _cardBattleProviderMock.Object,
+            _auctionsProviderMock.Object,
+            _npcsProviderMock.Object,
             _journalProviderMock.Object);
 
         var inMemorySettings = new Dictionary<string, string?> {
@@ -298,7 +321,12 @@ public class GameLoopServiceTests
         throwingPlayerProviderMock.Setup(p => p.Get()).Throws(new Exception("RAM read error"));
         var stateComposer = new StateComposer(
             throwingPlayerProviderMock.Object,
+            _importantItemsProviderMock.Object,
             _partyProviderMock.Object,
+            _digimonBattleProviderMock.Object,
+            _cardBattleProviderMock.Object,
+            _auctionsProviderMock.Object,
+            _npcsProviderMock.Object,
             _journalProviderMock.Object);
 
         var service = CreateGameLoopService(stateComposer);

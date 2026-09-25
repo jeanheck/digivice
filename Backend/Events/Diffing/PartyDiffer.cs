@@ -23,7 +23,7 @@ public static class PartyDiffer
 
         var dto = new PartyDTO();
 
-        var digimonSlotsDelta = new List<DigimonSlotDTO>();
+        List<DigimonSlotDTO> digimonSlotsDelta = [];
         foreach (var newSlot in newParty.Slots)
         {
             var previousSlot = previousParty.Slots.FirstOrDefault(s => s.Index == newSlot.Index);

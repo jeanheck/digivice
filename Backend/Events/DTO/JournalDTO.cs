@@ -1,6 +1,5 @@
 using System.Text.Json.Serialization;
 using Backend.Events.DTO.Interfaces;
-using Backend.Events.DTO.Auctions;
 using Backend.Events.DTO.Journals;
 using Backend.Events.DTO.Shared;
 
@@ -21,5 +20,5 @@ public record class JournalDTO : IDTO
     public Optional<List<QuestDTO>> DriAgents { get; init; } = Optional<List<QuestDTO>>.Empty;
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    public Optional<List<AuctionDTO>> Auctions { get; init; } = Optional<List<AuctionDTO>>.Empty;
+    public Optional<List<QuestDTO>> DuelIsland { get; init; } = Optional<List<QuestDTO>>.Empty;
 }

@@ -25,7 +25,15 @@ const tooltipPlacement = "below" as const;
 const typeTooltipMaxWidth = 200;
 const badgeTooltipMaxWidth = 320;
 const tooltipPosition = useTooltipPosition(typeTooltipMaxWidth);
-const { show: tooltipShow, x: tooltipX, y: tooltipY, maxWidth: tooltipMaxWidth, showAt, move, hide } = tooltipPosition;
+const {
+  show: tooltipShow,
+  x: tooltipX,
+  y: tooltipY,
+  maxWidth: tooltipMaxWidth,
+  showAt,
+  move,
+  hide,
+} = tooltipPosition;
 const tooltipTitle = ref("");
 
 const showTooltip = (event: MouseEvent, title: string, maxWidth: number) => {
@@ -55,34 +63,36 @@ const icon = computed(() => {
 });
 
 const TechniqueElementColorClass: Record<string, string> = {
-    fire: "text-orange-400",
-    water: "text-blue-400",
-    ice: "text-cyan-300",
-    wind: "text-gray-300",
-    thunder: "text-yellow-300",
-    dark: "text-purple-400",
-    machine: "text-gray-400",
-    none: "text-white/60",
+  fire: "text-orange-400",
+  water: "text-blue-400",
+  ice: "text-cyan-300",
+  wind: "text-gray-300",
+  thunder: "text-yellow-300",
+  dark: "text-purple-400",
+  machine: "text-gray-400",
+  none: "text-white/60",
 };
 
 const UnlockedTechniqueElementColorClass: Record<string, string> = {
-    fire: "text-orange-300",
-    water: "text-blue-300",
-    ice: "text-cyan-200",
-    wind: "text-gray-200",
-    thunder: "text-yellow-200",
-    dark: "text-purple-300",
-    machine: "text-gray-300",
-    none: "text-white/40",
+  fire: "text-orange-300",
+  water: "text-blue-300",
+  ice: "text-cyan-200",
+  wind: "text-gray-200",
+  thunder: "text-yellow-200",
+  dark: "text-purple-300",
+  machine: "text-gray-300",
+  none: "text-white/40",
 };
 
 function getTechniqueElementColorClass(element: string): string {
-    const normalizedElement = element.toLowerCase();
-    const colorMap = props.technique.isUnlocked
-        ? UnlockedTechniqueElementColorClass
-        : TechniqueElementColorClass;
+  const normalizedElement = element.toLowerCase();
+  const colorMap = props.technique.isUnlocked
+    ? UnlockedTechniqueElementColorClass
+    : TechniqueElementColorClass;
 
-    return colorMap[normalizedElement] ?? (props.technique.isUnlocked ? "text-white/80" : "text-white/60");
+  return (
+    colorMap[normalizedElement] ?? (props.technique.isUnlocked ? "text-white/80" : "text-white/60")
+  );
 }
 </script>
 
@@ -91,7 +101,8 @@ function getTechniqueElementColorClass(element: string): string {
     class="relative rounded px-3 py-2 flex items-start gap-3 border transition-all text-xs"
     :class="{
       'bg-[#000e1f]/50 border-[#0033aa]/20 opacity-50': !technique.isUnlocked,
-      'bg-yellow-950/40 border-yellow-400/70 shadow-[0_0_10px_rgba(234,179,8,0.3)]': technique.isSignature && technique.isUnlocked,
+      'bg-yellow-950/40 border-yellow-400/70 shadow-[0_0_10px_rgba(234,179,8,0.3)]':
+        technique.isSignature && technique.isUnlocked,
       'bg-[#001a33]/80 border-[#0077ff]/55': !technique.isSignature && technique.isUnlocked,
     }"
   >
@@ -102,7 +113,9 @@ function getTechniqueElementColorClass(element: string): string {
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"
       >
-        <span class="text-orange-200 leading-none inline-flex text-[10px] translate-y-px">{{ technique.learnLevel }}</span>
+        <span class="text-orange-200 leading-none inline-flex text-[10px] translate-y-px">{{
+          technique.learnLevel
+        }}</span>
         <span class="leading-none inline-flex text-[15px] -translate-y-0.5">📜</span>
       </span>
 
@@ -113,7 +126,9 @@ function getTechniqueElementColorClass(element: string): string {
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"
       >
-        <span class="text-amber-300 leading-none inline-flex text-[10px] translate-y-px">{{ technique.loadedLevel }}</span>
+        <span class="text-amber-300 leading-none inline-flex text-[10px] translate-y-px">{{
+          technique.loadedLevel
+        }}</span>
         <span class="leading-none inline-flex text-[15px] -translate-y-0.5">🫴</span>
       </span>
 
@@ -123,7 +138,8 @@ function getTechniqueElementColorClass(element: string): string {
         @mouseenter="showBadgeTooltip($event, 'digievolution.signatureTechnique')"
         @mousemove="moveTooltip"
         @mouseleave="hideTooltip"
-      >⭐</span>
+        >⭐</span
+      >
     </div>
 
     <span
@@ -141,8 +157,12 @@ function getTechniqueElementColorClass(element: string): string {
           class="font-bold tracking-wide"
           :class="
             technique.isUnlocked
-              ? technique.isSignature ? 'text-yellow-200' : 'text-white'
-              : technique.isSignature ? 'text-yellow-300' : 'text-white'
+              ? technique.isSignature
+                ? 'text-yellow-200'
+                : 'text-white'
+              : technique.isSignature
+                ? 'text-yellow-300'
+                : 'text-white'
           "
         >
           {{ t(`technique.${technique.id}.name`) }}
@@ -153,13 +173,17 @@ function getTechniqueElementColorClass(element: string): string {
         <span :class="getTechniqueElementColorClass(technique.element)">
           {{ getElementLabel(technique.element) }}
         </span>
-        <span :class="technique.isUnlocked ? 'text-blue-300' : 'text-blue-300/70'">{{ t("digievolution.mpCost") }}: {{ technique.mp }}</span>
+        <span :class="technique.isUnlocked ? 'text-blue-300' : 'text-blue-300/70'"
+          >{{ t("digievolution.mpCost") }}: {{ technique.mp }}</span
+        >
       </div>
 
       <p
         class="text-[10px] leading-tight min-h-5.5"
         :class="technique.isUnlocked ? 'text-white/85' : 'text-white/50'"
-      >{{ t(`technique.${technique.id}.description`) }}</p>
+      >
+        {{ t(`technique.${technique.id}.description`) }}
+      </p>
     </div>
 
     <Tooltip

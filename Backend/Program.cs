@@ -1,11 +1,18 @@
 using Backend.Events.Hubs;
 using Backend.Infrastructure;
 using Serilog;
+using Serilog.Settings.Configuration;
+
+HashSet<string> allowedOrigins = new(StringComparer.OrdinalIgnoreCase)
+{
+    "http://tauri.localhost",
+    "https://tauri.localhost",
+    "tauri://localhost",
+};
 
 Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Warning()
     .WriteTo.Console()
-    .CreateLogger();
+    .CreateBootstrapLogger();
 
 try
 {
@@ -21,8 +28,11 @@ try
         ContentRootPath = basePath
     });
 
-    // Use Serilog for all framework logging
-    builder.Host.UseSerilog();
+    var serilogReaderOptions = new ConfigurationReaderOptions(
+        typeof(ConsoleLoggerConfigurationExtensions).Assembly);
+
+    builder.Host.UseSerilog((context, services, configuration) =>
+        configuration.ReadFrom.Configuration(context.Configuration, serilogReaderOptions));
 
     // Register backend services modularly
     builder.Services.AddBackendServices(basePath);
@@ -31,7 +41,16 @@ try
     {
         options.AddPolicy("AllowLocalhost", policy =>
         {
-            policy.SetIsOriginAllowed(origin => new Uri(origin).IsLoopback || origin.Contains("tauri"))
+            policy.SetIsOriginAllowed(origin =>
+                  {
+                      if (!Uri.TryCreate(origin, UriKind.Absolute, out var uri))
+                          return false;
+
+                      if (uri.IsLoopback)
+                          return true;
+
+                      return allowedOrigins.Contains(origin);
+                  })
                   .AllowAnyHeader()
                   .AllowAnyMethod()
                   .AllowCredentials(); // Required for SignalR
@@ -58,6 +77,7 @@ try
 catch (Exception ex)
 {
     Log.Fatal(ex, "Application terminated unexpectedly.");
+    Environment.ExitCode = 1;
 }
 finally
 {

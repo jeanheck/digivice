@@ -1,6 +1,7 @@
 using Backend.Domain.Assemblers.Journals;
 using Backend.Domain.Models;
 using Backend.Domain.Models.Journals;
+using Backend.Domain.Models.Journals.Quests;
 using Backend.Memory.Resources;
 
 namespace Backend.Domain.Assemblers
@@ -13,9 +14,13 @@ namespace Backend.Domain.Assemblers
             List<Quest> sideQuests = [.. resource.SideQuests.Select(QuestAssembler.Assemble)];
             List<Quest> legendaryWeapons = [.. resource.LegendaryWeapons.Select(QuestAssembler.Assemble)];
             List<Quest> driAgents = [.. resource.DriAgents.Select(QuestAssembler.Assemble)];
-            List<Auction> auctions = AuctionAssembler.Assemble(resource.Auctions);
+            List<Quest> duelIsland = [.. resource.DuelIsland.Select(QuestAssembler.Assemble)];
 
             NormalizeMainQuestProgression(mainQuest);
+            foreach (Quest duelIslandQuest in duelIsland)
+            {
+                NormalizeDuelIslandProgression(duelIslandQuest);
+            }
 
             return new Journal
             {
@@ -23,7 +28,7 @@ namespace Backend.Domain.Assemblers
                 SideQuests = sideQuests,
                 LegendaryWeapons = legendaryWeapons,
                 DriAgents = driAgents,
-                Auctions = auctions,
+                DuelIsland = duelIsland,
             };
         }
 
@@ -38,6 +43,43 @@ namespace Backend.Domain.Assemblers
                     mainQuest.Steps[i].Value = 1;
                 }
             }
+        }
+
+        private static void NormalizeDuelIslandProgression(Quest quest)
+        {
+            if (quest.Steps.Count == 0)
+            {
+                return;
+            }
+
+            if (!AreQuestRequisitesMet(quest))
+            {
+                foreach (Step step in quest.Steps)
+                {
+                    step.Value = 0;
+                }
+
+                return;
+            }
+
+            Step trophyStep = quest.Steps[^1];
+            if (trophyStep.Value == 0)
+            {
+                return;
+            }
+
+            for (int i = 0; i < quest.Steps.Count - 1; i++)
+            {
+                if (quest.Steps[i].Value == 0)
+                {
+                    quest.Steps[i].Value = 1;
+                }
+            }
+        }
+
+        private static bool AreQuestRequisitesMet(Quest quest)
+        {
+            return quest.Requisites.All(requisite => requisite.Value > 0);
         }
     }
 }

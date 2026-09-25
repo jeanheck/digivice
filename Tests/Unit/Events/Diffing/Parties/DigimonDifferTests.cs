@@ -36,7 +36,7 @@ public class DigimonDifferTests
         var previous = CreateBaseDigimon();
         var newObj = CreateBaseDigimon();
         newObj.Level = 26;
-        newObj.Vitals.CurrentHP = 150;
+        newObj.HP.Current = 150;
 
         var result = DigimonDiffer.Diff(previous, newObj);
 
@@ -44,10 +44,11 @@ public class DigimonDifferTests
         Assert.True(result.Level.HasValue);
         Assert.Equal(26, result.Level.Value);
         Assert.False(result.Experience.HasValue);
-        Assert.True(result.Vitals.HasValue);
-        Assert.NotNull(result.Vitals.Value);
-        Assert.True(result.Vitals.Value.CurrentHP.HasValue);
-        Assert.Equal(150, result.Vitals.Value.CurrentHP.Value);
+        Assert.True(result.HP.HasValue);
+        Assert.NotNull(result.HP.Value);
+        Assert.True(result.HP.Value.Current.HasValue);
+        Assert.Equal(150, result.HP.Value.Current.Value);
+        Assert.False(result.MP.HasValue);
     }
 
     [Fact]
@@ -92,17 +93,33 @@ public class DigimonDifferTests
     }
 
     [Fact]
-    public void Diff_ShouldReturnBlastGaugeDelta_WhenOnlyBlastGaugeChanges()
+    public void Diff_ShouldReturnBlastDelta_WhenOnlyBlastChanges()
     {
         var previous = CreateBaseDigimon();
         var newObj = CreateBaseDigimon();
-        newObj.BlastGauge = 500;
+        newObj.Blast = 500;
 
         var result = DigimonDiffer.Diff(previous, newObj);
 
         Assert.NotNull(result);
-        Assert.True(result.BlastGauge.HasValue);
-        Assert.Equal(500, result.BlastGauge.Value);
+        Assert.True(result.Blast.HasValue);
+        Assert.Equal(500, result.Blast.Value);
+        Assert.False(result.Level.HasValue);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnInBattleConditionDelta_WhenOnlyInBattleConditionChanges()
+    {
+        var previous = CreateBaseDigimon();
+        var newObj = CreateBaseDigimon();
+        newObj.InBattle.Condition = 0x04;
+
+        var result = DigimonDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.True(result.InBattle.HasValue);
+        Assert.True(result.InBattle.Value!.Condition.HasValue);
+        Assert.Equal(0x04, result.InBattle.Value.Condition.Value);
         Assert.False(result.Level.HasValue);
     }
 
@@ -112,10 +129,17 @@ public class DigimonDifferTests
         {
             Level = 10,
             TP = 5,
-            BlastGauge = 100,
+            Blast = 100,
             Experience = 1000,
             ActiveDigievolutionId = 3,
-            Vitals = new Vitals { CurrentHP = 100, MaxHP = 100, CurrentMP = 50, MaxMP = 50 },
+            HP = new Vital { Current = 100, Max = 100 },
+            MP = new Vital { Current = 50, Max = 50 },
+            InBattle = new InBattle
+            {
+                Condition = 0,
+                HP = new Vital { Current = 0, Max = 0 },
+                MP = new Vital { Current = 0, Max = 0 }
+            },
             Attributes = new Attributes { Strength = 5, Defense = 5, Spirit = 5, Wisdom = 5, Speed = 5, Charisma = 5 },
             Resistances = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
             Equipments = new Equipments { Head = 0, Body = 0, Right = 0, Left = 0, Accessory1 = 0, Accessory2 = 0 },

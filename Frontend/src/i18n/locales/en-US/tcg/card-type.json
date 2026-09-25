@@ -1,0 +1,10 @@
+{
+  "cardType": {
+    "white": "White",
+    "blue": "Blue",
+    "green": "Green",
+    "red": "Red",
+    "black": "Black",
+    "brown": "Brown"
+  }
+}

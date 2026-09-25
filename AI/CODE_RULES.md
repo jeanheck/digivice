@@ -79,24 +79,26 @@ Fluxo alvo para dados estáticos (JSON, tabelas locais). A migração dos presen
 
 | Camada | Responsabilidade |
 |--------|------------------|
-| **Component** | Consome estado reativo da Pinia e chama presenters para casos de uso, cálculos e dados de apresentação. Não chama services, repositories nem converters diretamente. |
-| **Service** (`services/`) | Concentra regras de domínio reutilizáveis e pode orquestrar repositories/helpers. Não conhece Vue, componentes, presenters nem monta ViewModel de tela. |
+| **Component** | Consome estado reativo da Pinia e chama **apenas o presenter da sua tela** para casos de uso, cálculos e dados de apresentação. Não chama services, repositories, converters nem presenters de outras features. |
+| **Service** (`services/`) | Concentra regras de domínio reutilizáveis por mais de um presenter; pode orquestrar repositories. Não conhece Vue, componentes, presenters nem monta ViewModel de tela. |
 | **Repository** | Acesso aos dados estáticos. Retorna exclusivamente tipos **Raw** (ex.: `EnemyRaw`, `LocationRaw`). |
 | **Converter** (`presenters/converter/`) | Transformação **pura** e stateless: `Raw` → `ViewModel`. Não chama repository, não conhece componente nem regra de tela. |
-| **Presenter** | Orquestra o caso de uso da UI: chama service(s), repository(s), helper(s) e converter(s), agrega listas e aplica regras de tela (ex.: retornar `[]` quando não há dado). **Não monta ViewModel inline** quando existir transformação — delega ao converter. |
+| **Presenter** | Orquestra o caso de uso da UI: chama service(s), repository(s) e converter(s), agrega listas e aplica regras de tela (ex.: retornar `[]` quando não há dado). **Não monta ViewModel inline** quando existir transformação — delega ao converter. |
 | **ViewModel** | Contrato exposto ao componente. Tipos em arquivos `{nome}.viewmodel.ts` (kebab-case), um tipo por arquivo. |
 
 #### Fluxo padrão
 
 ```
-Component → Presenter → Service → Repository → Raw
-                │                       │
-                └──────→ Converter ←────┘
-                           ↓
-                       ViewModel
+Component → (seu) Presenter → Service → Repository → Raw
+                    │                       │
+                    └──────→ Converter ←────┘
+                               ↓
+                           ViewModel
 ```
 
-O caminho pelo service é usado quando existe regra de domínio reutilizável. Em casos simples, o presenter pode acessar repository/helper/converter diretamente. Componentes podem consumir a Pinia diretamente para reatividade, mas toda lógica de domínio ou acesso a dados fora da store deve entrar pelo presenter.
+Cada componente chama **somente o presenter da sua feature** (ex.: `Map.vue` → `MapPresenter`; `BattleMap.vue` → `BattleMapPresenter`). Se a lógica útil está em outro presenter, **extrair para um Service** (ou reutilizar um existente) antes de compartilhar — presenters compartilham via Service, não via o Vue chamando presenters alheios.
+
+O caminho pelo service é usado quando existe regra de domínio reutilizável. Em casos simples, o presenter pode acessar repository/converter diretamente. Componentes podem consumir a Pinia diretamente para reatividade, mas toda lógica de domínio ou acesso a dados fora da store deve entrar pelo presenter.
 
 Referências atuais de pass-through explícito (Raw estruturalmente equivalente ao ViewModel): `map.presenter.ts`, `enemy-modal.presenter.ts`.
 
@@ -112,38 +114,51 @@ Criar converter em `presenters/converter/` quando houver **qualquer transformaç
 
 O converter pode receber parâmetros além do Raw quando o ViewModel depende de contexto externo ao objeto (ex.: `enemyId` + `EnemyRaw` → `EnemyResumedViewModel`).
 
+#### i18n (tradução)
+
+Presenter e converter devolvem **chaves i18n** (`*Key`, ex.: `titleKey`) e dados crus necessários à interpolação — **não** recebem `ComposerTranslation` / `t` e **não** traduzem. A chamada a `t` / `useI18n` acontece **somente no componente** (template ou computed de UI). Referência: `CardBattleViewModel.titleKey` + `t(...)` em `CardBattle.vue`; `DigimonBattleFieldViewModel` + `DigimonBattleField.vue`.
+
 #### Proibido em código novo ou refatorado (dados estáticos)
 
 - **Converter** que chama repository ou contém lógica de orquestração de tela.
 - **Presenter** que monta ViewModel inline quando a transformação justifica um converter.
+- **Presenter** ou **converter** que traduz strings ou importa `vue-i18n`.
 - **Repository** que retorna ViewModel ou monta dados para apresentação.
-- **Component** que importa ou chama service, repository ou converter diretamente.
+- **Component** que importa ou chama service, repository, converter, ou **presenter de outra feature**.
 - **Service** que chama presenter, conhece componente/Vue ou monta ViewModel de tela.
 
-### Helpers (regras reutilizáveis para presenters)
+### Extensions (builtins aumentados)
 
-Pasta: `presenters/helper/`. Helpers concentram lógica de domínio ou de apresentação **reutilizada por mais de um presenter**, sem acesso a dados nem montagem de ViewModel.
+Pasta: `src/extensions/`. Módulos side-effect que estendem builtins do TypeScript/JavaScript (ex.: `Math`) via declaration merging + atribuição no objeto global.
 
 #### Convenção
 
-- **Classe:** `{AlgumaCoisa}Helper` (PascalCase).
-- **Arquivo:** `{alguma-coisa}.helper.ts` (kebab-case com sufixo `.helper.ts`).
-- **Métodos:** estáticos, stateless, funções puras (dados entram, dados saem).
+- **Arquivo:** `{alvo}.extensions.ts` (ex.: `math.extensions.ts`).
+- Importar **uma vez** no bootstrap (`main.ts`); call sites usam a API nativa aumentada (`Math.sum`, `Math.calculatePercentage`) sem import local.
+- Não substituem services de domínio (ex.: `EquipmentService`, `PartyService`).
 
-#### Responsabilidade
+### Assets e `imageName`
 
-| Camada | Responsabilidade |
-|--------|------------------|
-| **Helper** | Regras reutilizáveis sobre models de domínio (ex.: extrair IDs de slots, deduplicar). Não chama repository, converter nem conhece componente. |
-| **Presenter** | Orquestra helper + repository + converter conforme o caso de uso da tela. |
+- Todo `imageName` em JSON estático deve **começar com letra maiúscula** e coincidir exatamente com o nome do arquivo em `Frontend/src/assets/` (sem extensão).
+- Nomes usados como chave de asset da mesma forma (ex.: boss via `enemyRaw.name` → `ImageCatalog.getBossImageUrl`) seguem a mesma regra.
+- `ImageCatalog` faz lookup exato (`getImageUrl`); **não** normaliza casing.
 
-Referência: `EquipmentsHelper` (`getEquipmentIds`, `getUniqueEquipmentIds`).
+### Services (regras reutilizáveis)
 
-#### Proibido em código novo ou refatorado (helpers)
+Pasta: `src/services/`. Código de domínio ou de apresentação **reutilizado por mais de um presenter** vive em Service (existente ou novo). Métodos estáticos, sem Vue/ViewModel de tela. Pode chamar repository.
 
-- **Helper** que chama repository ou monta ViewModel.
-- **Repository** com regras de domínio (extração de IDs, deduplicação, filtros de negócio).
-- Duplicar a mesma regra em vários presenters quando um helper resolve.
+Fluxo: `Component → Presenter → Service`. Componentes **não** importam services.
+
+Legado em `presenters/helper/` permanece até migração gradual para services — **não** criar helpers novos.
+
+Referência: `PartyService` (`getLevel`, `getCharisma`), `EquipmentService` (`getEquipmentIds`, `calculateBonus`), `StatService` (`calculateStat`), `DigimonBattleService` (`isInBattle`).
+
+#### Proibido em código novo ou refatorado (services / reuso)
+
+- Duplicar a mesma regra em vários presenters quando um service resolve.
+- Código novo em `presenters/helper/` ou `src/helpers/`.
+- **Componentes** importando services (ou helpers legados).
+- **Service** que monta ViewModel de tela ou conhece Vue/presenter.
 
 ### Tooltips (fluxo padrão do Frontend)
 
@@ -230,9 +245,31 @@ Referência: `Frontend/src/components/modal/Modal.vue`.
    3. Métodos públicos ou `protected` (API exposta pela classe, incluindo overrides).
 
    Não intercale métodos públicos e privados — agrupe todos os privados acima de todos os públicos/protected.
+9. **Camadas de leitura de memória (Addresses → Loader → Reader → Resource → Assembler)**: Ao criar ou estender rastreamento de RAM, respeite a cadeia e as responsabilidades:
+
+   | Camada | Pasta | Responsabilidade |
+   |--------|-------|------------------|
+   | **Addresses** | `Memory/Addresses/` + `Memory/Definitions/*Addresses.json` | Só offsets/layout; sem I/O de RAM. |
+   | **Reader** | `Memory/Readers/` | Stateless: Addresses in → `*Resource` out (via `IMemoryReader`). |
+   | **Resource** | `Memory/Resources/` | Modelo tipado do que foi lido; sem regra de domínio. |
+   | **Loader** | `Application/Loaders/` | Resolve `Get*Addresses()` no `AddressesRepository` e chama o Reader; orquestra composição entre loaders. |
+   | **Assembler** | `Domain/Assemblers/` | `Resource` → modelo de domínio no `State`. |
+
+   **Decisão de tipos:**
+   - Campo novo em entidade existente → estender Addresses / Reader / Resource / Assembler / Differ / DTO **já existentes** (não criar pipeline paralelo por um scalar).
+   - Conceito de leitura novo (ex.: Digimon in-combat) → criar `{Entity}Addresses`, `{Entity}Reader`, `{Entity}Resource` e **`{Entity}Loader`**. Consumidores orquestram **Loaders**, não Readers nem `Get*Addresses()` diretamente.
+   - Naming: `{Entity}Addresses`, `{Entity}Reader`, `{Entity}Resource`, `{Entity}Loader`.
+
+   Referências vivas: `PlayerLoader`, `DigimonLoader`, `PartyLoader`.
 
 ## Tests (Backend): regras relacionadas aos testes
 
 Estas regras aplicam-se ao **Backend** (projeto `Tests/`). O Frontend não possui testes automatizados — ver regra *Sem testes no Frontend* acima.
 
 1. **Dupla Verificação de Corner Cases**: Sempre ao finalizar a implementação de testes de unidade para qualquer classe, método ou função, faça uma dupla verificação minuciosa buscando por caminhos alternativos, fallbacks, cenários de concorrência/nulos, exceptions de I/O de infraestrutura e corner cases no código-fonte original, adicionando testes focados especificamente para cobrir essas fronteiras e manter a robustez do software.
+2. **Um arquivo de produção ↔ um arquivo de testes**: Cada tipo/arquivo de produção sob teste de unidade deve ter seu próprio arquivo de testes, espelhando o nome (ex.: `OptionalJsonConverterFactory.cs` → `OptionalJsonConverterFactoryTests.cs`) na pasta/namespace correspondente em `Tests/`. A regra vale para **código novo e refactors**; retrofit do legado é sob demanda.
+
+   **Exceções aceitas** (não forçar split nesses casos):
+   - Testes de **integração** que cobrem um fluxo/pipeline inteiro (vários tipos).
+   - Suites que validam **contrato transversal** (ex.: registro DI, round-trip JSON de um DTO que exercita vários converters indiretamente).
+   - Helpers / `TheoryData` compartilhados sem tipo de produção dedicado.

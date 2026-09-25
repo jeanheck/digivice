@@ -8,11 +8,7 @@
     "steps": {
       "1": {
         "description": "Defeat MasterTyrannomon to receive the Old Claw",
-        "locations": {
-          "0": {
-            "locationTarget": "MasterTyrannomon"
-          }
-        }
+        "locationTarget": "MasterTyrannomon"
       }
     }
   }

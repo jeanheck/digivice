@@ -5,6 +5,11 @@ namespace Backend.Events.DTO;
 public record StateDTO : IDTO
 {
     public PlayerDTO? Player { get; init; }
-    public JournalDTO? Journal { get; init; }
+    public ImportantItemsDTO? ImportantItems { get; init; }
     public PartyDTO? Party { get; init; }
+    public DigimonBattleDTO? DigimonBattle { get; init; }
+    public CardBattleDTO? CardBattle { get; init; }
+    public AuctionsDTO? Auctions { get; init; }
+    public NpcsDTO? Npcs { get; init; }
+    public JournalDTO? Journal { get; init; }
 }

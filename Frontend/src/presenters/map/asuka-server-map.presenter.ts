@@ -1,31 +1,96 @@
-import type { Quest } from "@/models";
+import type { DigimonSlot, ImportantItems, Npc, Npcs, Quest } from "@/models";
 import { AsukaServerMapConverter } from "@/presenters/converter/asuka-server-map.converter";
+import { LocationEncounterHelper } from "@/presenters/helper/location-encounter.helper";
+import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import { LocationService } from "@/services/location.service";
+import { NpcService } from "@/services/npc.service";
+import { PartyService } from "@/services/party.service";
 import { QuestService } from "@/services/quest.service";
 import type { AsukaServerMapViewModel } from "@/viewmodels/map/asuka-server-map.viewmodel";
+import type { MapNpcViewModel } from "@/viewmodels/map/map-npc.viewmodel";
 
 export class AsukaServerMapPresenter {
-  private static readonly ASUKA_SEWERS_LOCATION_ID = "021B";
-  private static readonly UNDERGROUND_PATH_LOCATION_ID = "020B";
+  private static resolveNpcs(
+    locationId: string,
+    lastCompletedMainQuestStep: number,
+    digimonSlots: DigimonSlot[],
+    npcs: Npcs | null,
+    importantItems: ImportantItems | null | undefined,
+  ): MapNpcViewModel[] {
+    const opponentIds = LocationService.getMapOpponentIds(
+      locationId,
+      lastCompletedMainQuestStep,
+    );
+    const partyCharisma = PartyService.getCharisma({ slots: digimonSlots });
 
-  private static isAsukaSewersSafeZone(locationId: string, previousMapId: string): boolean {
-    return locationId === this.ASUKA_SEWERS_LOCATION_ID && previousMapId === this.UNDERGROUND_PATH_LOCATION_ID;
+    return opponentIds.flatMap((opponentId) => {
+      const opponent = NpcBattleOpponentHelper.resolveById(opponentId);
+      const nameKey = NpcBattleOpponentHelper.getNameKey(opponentId);
+      if (opponent === undefined || nameKey === null) {
+        return [];
+      }
+
+      const journalNpc = this.resolveNpc(npcs, opponentId);
+
+      const availableBattleKind = NpcService.getAvailableBattleKindForOpponent(
+        opponent,
+        journalNpc,
+        partyCharisma,
+        importantItems,
+      );
+
+      return [
+        {
+          id: opponentId,
+          nameKey,
+          hasAvailableBattle: availableBattleKind !== null,
+          availableBattleKind,
+        },
+      ];
+    });
+  }
+
+  private static resolveNpc(npcs: Npcs | null, npcId: string): Npc | null {
+    if (npcs === null) {
+      return null;
+    }
+
+    return npcs[npcId as keyof Npcs] ?? null;
   }
 
   public static getViewModel(
     locationId: string,
     mainQuest: Quest | null,
+    sideQuests: Quest[],
+    digimonSlots: DigimonSlot[],
     previousMapId: string = "",
+    npcs: Npcs | null = null,
+    importantItems: ImportantItems | null | undefined = null,
   ): AsukaServerMapViewModel {
-    if (this.isAsukaSewersSafeZone(locationId, previousMapId)) {
-      return AsukaServerMapConverter.convert(locationId, []);
-    }
-
-    const enemyIds = LocationService.getEnemies(
+    const fishingIds = LocationEncounterHelper.resolveFishingIds(locationId, sideQuests);
+    const kickingTreeIds = LocationEncounterHelper.resolveKickingTreeIds(locationId, sideQuests);
+    const bossIds = LocationService.getBoss(locationId);
+    const lastCompletedMainQuestStep = QuestService.getLastCompletedMainQuestStep(mainQuest);
+    const mapNpcs = this.resolveNpcs(
       locationId,
-      QuestService.getLastCompletedMainQuestStep(mainQuest),
+      lastCompletedMainQuestStep,
+      digimonSlots,
+      npcs,
+      importantItems,
+    );
+    const enemyIds = LocationEncounterHelper.resolveWalkingIds(
+      locationId,
+      mainQuest,
+      previousMapId,
     );
 
-    return AsukaServerMapConverter.convert(locationId, enemyIds);
+    return AsukaServerMapConverter.convert(
+      locationId,
+      enemyIds,
+      bossIds,
+      fishingIds,
+      kickingTreeIds,
+      mapNpcs,
+    );
   }
 }

@@ -1,7 +1,7 @@
-import type { Requisite } from './requisite';
+import type { Requisite } from "./requisite";
 
 export interface Step {
-    number: number;
-    isDone: boolean;
-    requisites: Requisite[];
+  number: number;
+  isDone: boolean;
+  requisites: Requisite[];
 }

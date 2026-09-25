@@ -1,5 +1,5 @@
-import type { DigimonSlot } from './digimon-slot';
+import type { DigimonSlot } from "./digimon-slot";
 
 export interface Party {
-    slots: DigimonSlot[];
+  slots: DigimonSlot[];
 }

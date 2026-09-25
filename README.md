@@ -16,7 +16,7 @@ It's the companion you wished you had when you first walked through Asuka Server
 
 You can see more in the video below:
 
-[![Digivice 3.0.0 (Latest major release)](https://img.youtube.com/vi/a_r7qz0TodQ/hqdefault.jpg)](https://www.youtube.com/watch?v=a_r7qz0TodQ)
+[![Digivice 3.5.0 (Latest major release)](https://img.youtube.com/vi/YiSux3BAHHc/hqdefault.jpg)](https://www.youtube.com/watch?v=YiSux3BAHHc)
 
 ## The current state
 
@@ -26,15 +26,6 @@ Past that point, many features will still work, but others will be missing. I'll
 ## Roadmap
 
 More Digivice is on the way. Here's a preview of what's planned next — details and timing may change as development continues.
-
-### 3.5 — Card battles & the world around them
-
-Digimon World 2003's card game, finally with a second screen to match.
-
-- **TCG tools** — support for the in-game card game, right inside Digivice
-- **Richer battle data** — deeper insight into Digimon vs Digimon fights
-- **Trainer finder** — locate trainers ready to battle with cards or with their Digimon
-- **And more** — smaller quality-of-life wins along the way
 
 ### 4.0 — The story catches up to Asuka City
 
@@ -86,7 +77,7 @@ This project uses public game data from sources across the web. The originals ar
 None of this would have been possible without the people who dug up and shared that information. Thank you all.
 
 - **Experience levels** *by Mehdi*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/64473556)
-- **Digimon World 3 – Digivolution Guide** *by dudeice997*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/72629)
+- **Digimon World 3 – Digivolution Guide** *by icevenant*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/72629)
 - **Digimon World 3/Enemy**: [DigimonWiki](https://digimon.fandom.com/wiki/Digimon_World_3/Enemy)
 - **Digimon World 3 – Bestiary** *by TheFulgorah*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/66315)
 - **dmw3-tools** *by markisha64* [GitHub](https://github.com/markisha64/dmw3-tools)
@@ -99,6 +90,8 @@ None of this would have been possible without the people who dug up and shared t
 - **Digimon World 2003 PAL VERSION GAMESHARK CODES (CONVERTED)** *by splakappa*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/62602581)
 - **ENTENDA AS FRAQUEZAS E TOLERÂNCIAS NO DIGIMON WORLD 3** *by Battle Dice*: [YouTube](https://www.youtube.com/watch?v=6UbWt7AyHMI)
 - **Digimon World 3 – Item List** *by Med_Jai*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/24593)
+- **Digimon World 3 – Patch Code Generation Guide** *by LupusArgentum*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/41102)
+- **Digimon World 3 – Card Battle FAQ** *by CatastrophieX*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/18275)
 - **Digimon World 3 – FAQ (European)** *by Mykas0*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/21889)
 - **Digimon World 3 – Guides and FAQs** *by nick1n*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/16028-underground-seabed-map)
 - **Digimon World 3 – Detonado Completo (Guia Passo a Passo)** *by Markus Norat*: [revolutionarena](https://revolutionarena.com/pt-br/digimon-world-3-detonado-completo-guia-passo-a-passo/)
@@ -106,6 +99,13 @@ None of this would have been possible without the people who dug up and shared t
 - **DRI locations** *by rentz14*: [NeoSeeker](https://www.neoseeker.com/forums/3546/t1102277-dri-locations/)
 - **Digimon World 3 – Guides and FAQs** *by HRahman*: [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/map/565-mobius-desert-map)
 - **Digivolution Experience Points (DVEXP)** *by Rob01m*: [GameFAQs](https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/47657837)
+- **Consumable Items**: [StratsWiki](https://stratswiki.com/digimon-world-3/items/consumables/)
+- **Digimon World 3 - TCG Cards Sprites** *by metaldodomon*: [The Spriters Resource](https://www.spriters-resource.com/playstation/digiworld3/)
+- **Digimon World 3 – FAQ** *by ChaosBeelzemon* [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/51616)
+- **Digimon World 3 – Guide and Walkthrough** *by mharbenedict34* [GameFAQs](https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/33794)
+- **Digimon World 2003 - Code Notes** *by Hotscrock and Dreaker* [RetroAchievements](https://retroachievements.org/codenotes.php?g=11328)
+- **Digimon World 3 – Opponent's Deck List** *by SSJ2__Gohan* [GameFAQs] (https://gamefaqs.gamespot.com/ps/562323-digimon-world-3/faqs/47836)
+- **DW2003 - Booster Packs complete** *by BSkullX* [GameFAQs] (https://gamefaqs.gamespot.com/boards/562323-digimon-world-3/76545344)
 
 ## Digimons images credits
 
@@ -174,6 +174,11 @@ Below are the links to where the Digimon images were taken from, as well as the 
 - **Yanmamon(Green)** *by me (using the Yanmamon image as base, only changing the colors to green tones)*
 - **Yanmamon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Yanmamon?file=Yanmamon_b.jpg)
 - **Zanbamon** *by Kamirisu JxS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Zanbamon?file=Zanbamon_b.jpg)
+- **Flymon(Pink)** *by Digital Monsters Almanac* [Digital Monsters Almanac](http://dma.wtw-x.net/dexfly2.shtml)
+- **Monzaemon** *by ShikaSS* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Monzaemon?file=Monzaemon_b.jpg)
+- **Nanimon** *by KrytenKoro* [Digimon Wiki](https://digimon.fandom.com/wiki/Nanimon?file=Nanimon_b.jpg)
+- **Cardmon(A)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Cardmon_C1?file=Cardmon_C1_%28World_3%29.jpg)
+- **Cardmon(B)** *by Me, using the follow image as inspiration* [Digimon Wiki](https://digitalmonster.fandom.com/pt/wiki/Cardmon_C2?file=Cardmon_C2_%28World_3%29.jpg)
 
 ### Digievolutions
 

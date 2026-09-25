@@ -7,14 +7,21 @@ namespace Backend.Memory.Repositories
     public interface IAddressesRepository
     {
         PlayerAddresses GetPlayerAddresses();
+        ImportantItemsAddresses GetImportantItemsAddresses();
         PartyAddresses GetPartyAddresses();
         DigimonStatusAddresses GetDigimonStatusAddresses();
-        DigimonsAddresses GetDigimonsAddresses();
+        InBattleAddresses GetInBattleAddresses();
+        DigimonBattleAddresses GetDigimonBattleAddresses();
+        EnemyAddresses GetEnemyAddresses();
+        Dictionary<int, DigimonAddress> GetDigimonsAddresses();
         DigimonAddress? GetDigimonAddressById(int id);
         QuestAddresses GetMainQuest();
         List<QuestAddresses> GetAllSideQuests();
         List<QuestAddresses> GetAllLegendaryWeapons();
         List<QuestAddresses> GetAllDriAgents();
-        Dictionary<string, AuctionAddresses> GetAuctionAddresses();
+        List<QuestAddresses> GetAllDuelIsland();
+        AuctionsAddresses GetAuctionsAddresses();
+        NpcsAddresses GetNpcsAddresses();
+        CardBattleAddresses GetCardBattleAddresses();
     }
 }

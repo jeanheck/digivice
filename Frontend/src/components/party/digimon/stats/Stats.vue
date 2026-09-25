@@ -5,27 +5,35 @@ import type { Digimon } from "@/models/party/digimon/digimon.ts";
 import { Constant } from "@/constants/constant.ts";
 import Stat from "./Stat.vue";
 import DefaultTooltip from "@/components/tooltip/DefaultTooltip.vue";
+import Tooltip from "@/components/tooltip/Tooltip.vue";
 import StatsTooltip from "./StatsTooltip.vue";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { StatsPresenter } from "@/presenters/party/digimon/stats.presenter.ts";
+import { useGameStore } from "@/stores/use-game-store";
 
 const props = defineProps<{
   digimon: Digimon;
 }>();
 
+const store = useGameStore();
 const { t } = useI18n();
 const tooltipPlacement = "below" as const;
 const tooltipPosition = useTooltipPosition();
 const { x: tooltipX, y: tooltipY, showAt, move, hide } = tooltipPosition;
 
-type TooltipVariant = "none" | "default" | "math";
+type TooltipVariant = "none" | "default" | "title" | "math";
 const activeVariant = ref<TooltipVariant>("none");
 
 const defaultTooltipContent = ref({ title: "", text: "" });
-const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0 });
+const titleTooltipContent = ref("");
+const mathTooltipContent = ref({ title: "", base: 0, equip: 0, total: 0, battleDelta: 0 });
+
+const location = computed(() => {
+  return store.currentState?.player?.location ?? null;
+});
 
 const statsViewModel = computed(() => {
-  return StatsPresenter.getStatsViewModel(props.digimon);
+  return StatsPresenter.getStatsViewModel(props.digimon, location.value);
 });
 
 const showIconTooltip = (event: MouseEvent, title: string, text: string) => {
@@ -42,15 +50,21 @@ const showStatIconTooltip = (event: MouseEvent, title: string, propertyKey: Cons
   showIconTooltip(event, title, t(`stat.${propertyKey}-explanation`));
 };
 
+const showTitleTooltip = (event: MouseEvent, title: string) => {
+  titleTooltipContent.value = title;
+  activeVariant.value = "title";
+  showAt(event, { placement: tooltipPlacement });
+};
+
 const showMathTooltip = (
   event: MouseEvent,
   title: string,
   base: number,
   equip: number,
-  _digi: number,
-  total: number
+  total: number,
+  battleDelta: number,
 ) => {
-  mathTooltipContent.value = { title, base, equip, total };
+  mathTooltipContent.value = { title, base, equip, total, battleDelta };
   activeVariant.value = "math";
   showAt(event, { placement: tooltipPlacement });
 };
@@ -70,8 +84,12 @@ const moveTooltip = (event: MouseEvent) => {
     <div class="dw3-panel-border dw3-beveled"></div>
     <div class="dw3-panel-inner dw3-beveled"></div>
 
-    <div class="dw3-panel-content flex justify-center w-full min-w-0 px-3 sm:px-3 pt-1 pb-1 min-[1366px]:pt-3 min-[1366px]:pb-3 text-white text-xs">
-      <div class="grid grid-cols-2 gap-x-1 sm:gap-x-8 lg:gap-x-3 w-full min-w-0 max-w-xs sm:max-w-sm">
+    <div
+      class="dw3-panel-content flex justify-center w-full min-w-0 px-3 sm:px-3 pt-1 pb-1 min-[1366px]:pt-3 min-[1366px]:pb-3 text-white text-xs"
+    >
+      <div
+        class="grid grid-cols-2 gap-x-1 sm:gap-x-8 lg:gap-x-3 w-full min-w-0 max-w-xs sm:max-w-sm"
+      >
         <div class="flex flex-col gap-1 min-w-0">
           <Stat
             v-for="(statViewModel, key) in statsViewModel.attributes"
@@ -80,6 +98,7 @@ const moveTooltip = (event: MouseEvent) => {
             :stat="key"
             @show-icon-tooltip="showStatIconTooltip"
             @show-math-tooltip="showMathTooltip"
+            @show-title-tooltip="showTitleTooltip"
             @move-tooltip="moveTooltip"
             @hide-tooltip="hideTooltip"
           />
@@ -93,6 +112,7 @@ const moveTooltip = (event: MouseEvent) => {
             :stat="key"
             @show-icon-tooltip="showStatIconTooltip"
             @show-math-tooltip="showMathTooltip"
+            @show-title-tooltip="showTitleTooltip"
             @move-tooltip="moveTooltip"
             @hide-tooltip="hideTooltip"
           />
@@ -109,6 +129,15 @@ const moveTooltip = (event: MouseEvent) => {
       placement="below"
     />
 
+    <Tooltip
+      :show="activeVariant === 'title'"
+      :x="tooltipX"
+      :y="tooltipY"
+      :max-width="400"
+      :title="titleTooltipContent"
+      placement="below"
+    />
+
     <StatsTooltip
       :show="activeVariant === 'math'"
       :x="tooltipX"
@@ -117,6 +146,7 @@ const moveTooltip = (event: MouseEvent) => {
       :base="mathTooltipContent.base"
       :equip="mathTooltipContent.equip"
       :total="mathTooltipContent.total"
+      :battle-delta="mathTooltipContent.battleDelta"
       placement="below"
     />
   </div>

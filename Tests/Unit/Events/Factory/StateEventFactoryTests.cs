@@ -23,7 +23,12 @@ public class StateEventFactoryTests
 
         var dto = Assert.IsType<StateDTO>(result[0].Payload);
         Assert.NotNull(dto.Player);
+        Assert.NotNull(dto.ImportantItems);
         Assert.NotNull(dto.Party);
+        Assert.NotNull(dto.DigimonBattle);
+        Assert.NotNull(dto.CardBattle);
+        Assert.NotNull(dto.Auctions);
+        Assert.NotNull(dto.Npcs);
         Assert.NotNull(dto.Journal);
     }
 
@@ -53,6 +58,20 @@ public class StateEventFactoryTests
     }
 
     [Fact]
+    public void Create_ShouldReturnImportantItemsChangedEvent_WhenOnlyImportantItemsChange()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.ImportantItems.TreeBoots = true;
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.ImportantItemsChanged, ev.Type);
+        Assert.IsType<ImportantItemsDTO>(ev.Payload);
+    }
+
+    [Fact]
     public void Create_ShouldReturnPartyChangedEvent_WhenOnlyPartyChanges()
     {
         var previousState = CreateBaseState();
@@ -64,6 +83,34 @@ public class StateEventFactoryTests
         var ev = Assert.Single(result);
         Assert.Equal(EventType.PartyChanged, ev.Type);
         Assert.IsType<PartyDTO>(ev.Payload);
+    }
+
+    [Fact]
+    public void Create_ShouldReturnDigimonBattleChangedEvent_WhenOnlyDigimonBattleChanges()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.DigimonBattle.Enemy.Speed = 84;
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.DigimonBattleChanged, ev.Type);
+        Assert.IsType<DigimonBattleDTO>(ev.Payload);
+    }
+
+    [Fact]
+    public void Create_ShouldReturnCardBattleChangedEvent_WhenOnlyCardBattleChanges()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.CardBattle.Id = 11;
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.CardBattleChanged, ev.Type);
+        Assert.IsType<CardBattleDTO>(ev.Payload);
     }
 
     [Fact]
@@ -81,17 +128,31 @@ public class StateEventFactoryTests
     }
 
     [Fact]
-    public void Create_ShouldReturnJournalChangedEvent_WhenOnlyAuctionsChange()
+    public void Create_ShouldReturnNpcsChangedEvent_WhenOnlyNpcsChange()
     {
         var previousState = CreateBaseState();
         var newState = CreateBaseState();
-        newState.Journal.Auctions[0].Value = 0x01;
+        newState.Npcs.Genji.Battles = [new NpcBattle { Id = "first", Value = 0x20 }];
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
         var ev = Assert.Single(result);
-        Assert.Equal(EventType.JournalChanged, ev.Type);
-        Assert.IsType<JournalDTO>(ev.Payload);
+        Assert.Equal(EventType.NpcsChanged, ev.Type);
+        Assert.IsType<NpcsDTO>(ev.Payload);
+    }
+
+    [Fact]
+    public void Create_ShouldReturnAuctionsChangedEvent_WhenOnlyAuctionsChange()
+    {
+        var previousState = CreateBaseState();
+        var newState = CreateBaseState();
+        newState.Auctions.DivineBarrier = true;
+
+        var result = StateEventFactory.Create(previousState, newState).ToList();
+
+        var ev = Assert.Single(result);
+        Assert.Equal(EventType.AuctionsChanged, ev.Type);
+        Assert.IsType<AuctionsDTO>(ev.Payload);
     }
 
     [Fact]
@@ -100,16 +161,25 @@ public class StateEventFactoryTests
         var previousState = CreateBaseState();
         var newState = CreateBaseState();
         newState.Player.Bits = 999;
+        newState.ImportantItems.AsukaTrophy = true;
         newState.Party.Slots[0].Digimon!.Level = 22;
+        newState.DigimonBattle.Enemy.Speed = 84;
+        newState.CardBattle.Id = 11;
+        newState.Auctions.DivineBarrier = true;
+        newState.Npcs.Genji.Battles = [new NpcBattle { Id = "first", Value = 0x20 }];
         newState.Journal.MainQuest.Steps[0].Value = 1;
-        newState.Journal.Auctions[0].Value = 0x01;
 
         var result = StateEventFactory.Create(previousState, newState).ToList();
 
-        Assert.Equal(3, result.Count);
+        Assert.Equal(8, result.Count);
         Assert.Equal(EventType.PlayerChanged, result[0].Type);
-        Assert.Equal(EventType.PartyChanged, result[1].Type);
-        Assert.Equal(EventType.JournalChanged, result[2].Type);
+        Assert.Equal(EventType.ImportantItemsChanged, result[1].Type);
+        Assert.Equal(EventType.PartyChanged, result[2].Type);
+        Assert.Equal(EventType.DigimonBattleChanged, result[3].Type);
+        Assert.Equal(EventType.CardBattleChanged, result[4].Type);
+        Assert.Equal(EventType.AuctionsChanged, result[5].Type);
+        Assert.Equal(EventType.NpcsChanged, result[6].Type);
+        Assert.Equal(EventType.JournalChanged, result[7].Type);
     }
 
     private static State CreateBaseState()
@@ -120,6 +190,12 @@ public class StateEventFactoryTests
             {
                 Bits = 100,
                 MapId = "0001"
+            },
+            ImportantItems = new ImportantItems
+            {
+                TreeBoots = false,
+                FishingPole = false,
+                AsukaTrophy = false
             },
             Party = new Party
             {
@@ -133,6 +209,10 @@ public class StateEventFactoryTests
                     }
                 ]
             },
+            DigimonBattle = new DigimonBattle(),
+            CardBattle = new CardBattle(),
+            Auctions = new Auctions(),
+            Npcs = new Npcs(),
             Journal = new Journal
             {
                 MainQuest = new Quest
@@ -142,14 +222,6 @@ public class StateEventFactoryTests
                     Requisites = []
                 },
                 SideQuests = [],
-                Auctions =
-                [
-                    new Auction
-                    {
-                        Id = "divineBarrier",
-                        Value = 0x00,
-                    }
-                ]
             }
         };
     }
@@ -161,7 +233,8 @@ public class StateEventFactoryTests
             Level = 10,
             Experience = 1000,
             ActiveDigievolutionId = 3,
-            Vitals = new Vitals { CurrentHP = 100, MaxHP = 100, CurrentMP = 50, MaxMP = 50 },
+            HP = new Vital { Current = 100, Max = 100 },
+            MP = new Vital { Current = 50, Max = 50 },
             Attributes = new Attributes { Strength = 5, Defense = 5, Spirit = 5, Wisdom = 5, Speed = 5, Charisma = 5 },
             Resistances = new Resistances { Fire = 1, Water = 1, Ice = 1, Wind = 1, Thunder = 1, Machine = 1, Dark = 1 },
             Equipments = new Equipments { Head = 0, Body = 0, Right = 0, Left = 0, Accessory1 = 0, Accessory2 = 0 },

@@ -11,104 +11,117 @@ import type { DigievolutionTechniquesViewModel } from "@/viewmodels/digievolutio
 import type { TechniqueViewModel } from "@/viewmodels/digievolution/technique.viewmodel";
 
 export interface DigievolutionTechniquesOptions {
-    digimonId?: number;
-    digievolutionLevel?: number;
-    showTreeSections?: boolean;
+  digimonId?: number;
+  digievolutionLevel?: number;
+  showTreeSections?: boolean;
 }
 
 export class DigievolutionTechniquesPresenter {
-    public static getViewModel(
-        digievolutionId: number,
-        options: DigievolutionTechniquesOptions = {}
-    ): DigievolutionTechniquesViewModel {
-        const { digimonId, digievolutionLevel, showTreeSections = false } = options;
-        const evolutionName = DigievolutionRepository.getNameById(digievolutionId);
-        const techniques = this.getTechniquesByDigievolutionId(digievolutionId, digievolutionLevel);
+  public static getViewModel(
+    digievolutionId: number,
+    options: DigievolutionTechniquesOptions = {},
+  ): DigievolutionTechniquesViewModel {
+    const { digimonId, digievolutionLevel, showTreeSections = false } = options;
+    const evolutionName = DigievolutionRepository.getNameById(digievolutionId);
+    const techniques = this.getTechniquesByDigievolutionId(digievolutionId, digievolutionLevel);
 
-        if (!showTreeSections || digimonId === undefined) {
-            return {
-                evolutionName,
-                requirementDigievolutions: [],
-                derivativeDigievolutions: [],
-                techniques,
-            };
-        }
+    if (!showTreeSections || digimonId === undefined) {
+      return {
+        evolutionName,
+        requirementDigievolutions: [],
+        derivativeDigievolutions: [],
+        techniques,
+      };
+    }
 
-        const evolutionRequirements = DigimonRepository.getDigievolutionRequirements(digimonId, digievolutionId);
-        const digievolutionsByDigimon = DigimonRepository.getDigievolutionsById(digimonId);
+    const evolutionRequirements = DigimonRepository.getDigievolutionRequirements(
+      digimonId,
+      digievolutionId,
+    );
+    const digievolutionsByDigimon = DigimonRepository.getDigievolutionsById(digimonId);
+
+    return {
+      evolutionName,
+      requirementDigievolutions: this.getRequirementDigievolutions(evolutionRequirements),
+      derivativeDigievolutions: this.getDerivativeDigievolutions(
+        digievolutionsByDigimon,
+        digievolutionId,
+      ),
+      techniques,
+    };
+  }
+
+  private static getRequirementDigievolutions(
+    evolutionRequirements: RequirementViewModel[],
+  ): LinkViewModel[] {
+    return evolutionRequirements
+      .filter(
+        (requirement) => requirement.type === DigievolutionRequirementConstant.DigievolutionLevel,
+      )
+      .map((requirement) => {
+        const requirementDigievolutionId = requirement.digievolution!;
 
         return {
-            evolutionName,
-            requirementDigievolutions: this.getRequirementDigievolutions(evolutionRequirements),
-            derivativeDigievolutions: this.getDerivativeDigievolutions(digievolutionsByDigimon, digievolutionId),
-            techniques,
+          id: requirementDigievolutionId,
+          name: DigievolutionRepository.getNameById(requirementDigievolutionId),
         };
-    }
+      });
+  }
 
-    private static getRequirementDigievolutions(
-        evolutionRequirements: RequirementViewModel[]
-    ): LinkViewModel[] {
-        return evolutionRequirements
-            .filter((requirement) => requirement.type === DigievolutionRequirementConstant.DigievolutionLevel)
-            .map((requirement) => {
-                const requirementDigievolutionId = requirement.digievolution!;
+  private static getDerivativeDigievolutions(
+    digievolutionsByDigimon: DigimonDigievolutionViewModel,
+    digievolutionId: number,
+  ): LinkViewModel[] {
+    return Object.entries(digievolutionsByDigimon)
+      .filter(([, requirements]) => {
+        return requirements.some((requirement) => {
+          if (
+            requirement.type !== DigievolutionRequirementConstant.DigievolutionLevel ||
+            !requirement.digievolution
+          ) {
+            return false;
+          }
 
-                return {
-                    id: requirementDigievolutionId,
-                    name: DigievolutionRepository.getNameById(requirementDigievolutionId),
-                };
-            });
-    }
-
-    private static getDerivativeDigievolutions(
-        digievolutionsByDigimon: DigimonDigievolutionViewModel,
-        digievolutionId: number
-    ): LinkViewModel[] {
-        return Object.entries(digievolutionsByDigimon)
-            .filter(([, requirements]) => {
-                return requirements.some((requirement) => {
-                    if (requirement.type !== DigievolutionRequirementConstant.DigievolutionLevel || !requirement.digievolution) {
-                        return false;
-                    }
-
-                    return requirement.digievolution === digievolutionId;
-                });
-            })
-            .map(([candidateDigievolutionId]) => {
-                const id = Number(candidateDigievolutionId);
-
-                return {
-                    id,
-                    name: DigievolutionRepository.getNameById(id),
-                };
-            });
-    }
-
-    private static getTechniquesByDigievolutionId(
-        digievolutionId: number,
-        digievolutionLevel?: number
-    ): TechniqueViewModel[] {
-        const digievolutionTechniquesRaw = DigievolutionRepository.getRawDigievolutionTechniquesById(digievolutionId);
-
-        if (digievolutionTechniquesRaw.length === 0) {
-            return [];
-        }
-
-        const digievolutionTechniques = digievolutionTechniquesRaw.map((digievolutionTechniqueRaw) => {
-            return DigievolutionTechniqueConverter.convert(digievolutionTechniqueRaw);
+          return requirement.digievolution === digievolutionId;
         });
-        const signatureTechniqueId = DigievolutionTechniquesHelper.getSignatureTechniqueId(digievolutionTechniques);
+      })
+      .map(([candidateDigievolutionId]) => {
+        const id = Number(candidateDigievolutionId);
 
-        return digievolutionTechniques.map((digievolutionTechnique) => {
-            const techniqueRaw = DigievolutionRepository.getTechniqueById(digievolutionTechnique.id);
-            const isSignature = signatureTechniqueId === digievolutionTechnique.id;
+        return {
+          id,
+          name: DigievolutionRepository.getNameById(id),
+        };
+      });
+  }
 
-            return TechniqueConverter.convert(
-                digievolutionTechnique,
-                techniqueRaw,
-                isSignature,
-                digievolutionLevel
-            );
-        });
+  private static getTechniquesByDigievolutionId(
+    digievolutionId: number,
+    digievolutionLevel?: number,
+  ): TechniqueViewModel[] {
+    const digievolutionTechniquesRaw =
+      DigievolutionRepository.getRawDigievolutionTechniquesById(digievolutionId);
+
+    if (digievolutionTechniquesRaw.length === 0) {
+      return [];
     }
+
+    const digievolutionTechniques = digievolutionTechniquesRaw.map((digievolutionTechniqueRaw) => {
+      return DigievolutionTechniqueConverter.convert(digievolutionTechniqueRaw);
+    });
+    const signatureTechniqueId =
+      DigievolutionTechniquesHelper.getSignatureTechniqueId(digievolutionTechniques);
+
+    return digievolutionTechniques.map((digievolutionTechnique) => {
+      const techniqueRaw = DigievolutionRepository.getTechniqueById(digievolutionTechnique.id);
+      const isSignature = signatureTechniqueId === digievolutionTechnique.id;
+
+      return TechniqueConverter.convert(
+        digievolutionTechnique,
+        techniqueRaw,
+        isSignature,
+        digievolutionLevel,
+      );
+    });
+  }
 }

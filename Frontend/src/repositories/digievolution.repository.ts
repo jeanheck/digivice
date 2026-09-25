@@ -11,44 +11,49 @@ import type { DigievolutionTechniqueRaw } from "./tables/raws/digievolution/digi
 import type { TechniqueRaw } from "./tables/raws/digievolution/technique.raw";
 
 export class DigievolutionRepository {
-    private static readonly digievolutionTable = DigievolutionJson as DigievolutionTable;
-    private static readonly digievolutionTechniqueTable = DigievolutionTechniquesJson as DigievolutionTechniqueTable;
-    private static readonly digievolutionTreeTable = DigievolutionTreeJson as DigievolutionTreeTable;
-    private static readonly techniqueTable = TechniqueJson as TechniqueTable;
+  private static readonly digievolutionTable = DigievolutionJson as DigievolutionTable;
+  private static readonly digievolutionTechniqueTable =
+    DigievolutionTechniquesJson as DigievolutionTechniqueTable;
+  private static readonly digievolutionTreeTable = DigievolutionTreeJson as DigievolutionTreeTable;
+  private static readonly techniqueTable = TechniqueJson as TechniqueTable;
 
-    public static getNameById(id: number): string {
-        return this.digievolutionTable[String(id)]!.name;
-    }
-    public static getAllDigievolutionsNames(): string[] {
-        return Object.values(this.digievolutionTable).map((digievolution) => digievolution.name);
-    }
-    public static getAllDigievolutions(): { id: number; name: string }[] {
-        return Object.entries(this.digievolutionTable).map(([id, digievolution]) => {
-            return {
-                id: Number(id),
-                name: digievolution.name,
-            };
-        });
-    }
-    public static getIdByName(name: string): number {
-        const entry = Object.entries(this.digievolutionTable).find(([, digievolution]) => digievolution.name === name);
+  public static getNameById(id: number): string {
+    return this.digievolutionTable[String(id)]!.name;
+  }
+  public static getAllDigievolutionsNames(): string[] {
+    return Object.values(this.digievolutionTable).map((digievolution) => digievolution.name);
+  }
+  public static getAllDigievolutions(): { id: number; name: string }[] {
+    return Object.entries(this.digievolutionTable).map(([id, digievolution]) => {
+      return {
+        id: Number(id),
+        name: digievolution.name,
+      };
+    });
+  }
+  public static getIdByName(name: string): number {
+    const entry = Object.entries(this.digievolutionTable).find(
+      ([, digievolution]) => digievolution.name === name,
+    );
 
-        return Number(entry![0]);
-    }
-    public static getRawDigievolutionById(id: number): DigievolutionRaw {
-        return this.digievolutionTable[id]!;
-    }
-    public static getRawDigievolutionTechniquesById(id: number): DigievolutionTechniqueRaw[] {
-        return this.digievolutionTechniqueTable[id]!;
-    }
-    public static getRawDigievolutionTechniquesByName(digievolutionName: string): DigievolutionTechniqueRaw[] {
-        const digievolutionId = this.getIdByName(digievolutionName);
-        return this.digievolutionTechniqueTable[digievolutionId]!;
-    }
-    public static getDigievolutionTree(): DigievolutionTreeTable {
-        return this.digievolutionTreeTable;
-    }
-    public static getTechniqueById(id: string): TechniqueRaw {
-        return this.techniqueTable[id]!;
-    }
+    return Number(entry![0]);
+  }
+  public static getRawDigievolutionById(id: number): DigievolutionRaw {
+    return this.digievolutionTable[id]!;
+  }
+  public static getRawDigievolutionTechniquesById(id: number): DigievolutionTechniqueRaw[] {
+    return this.digievolutionTechniqueTable[id]!;
+  }
+  public static getRawDigievolutionTechniquesByName(
+    digievolutionName: string,
+  ): DigievolutionTechniqueRaw[] {
+    const digievolutionId = this.getIdByName(digievolutionName);
+    return this.digievolutionTechniqueTable[digievolutionId]!;
+  }
+  public static getDigievolutionTree(): DigievolutionTreeTable {
+    return this.digievolutionTreeTable;
+  }
+  public static getTechniqueById(id: string): TechniqueRaw {
+    return this.techniqueTable[id]!;
+  }
 }

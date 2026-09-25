@@ -5,15 +5,23 @@ import type { DesertAreaMapCellViewModel } from "@/viewmodels/desert/desert-area
 
 export class MobiusDesertService {
   public static isMobiusDesertLocation(locationId: string | null): boolean {
-    return LocationService.getRegionByLocationId(locationId) === LocationRegionConstant.mobiusDesert;
+    return (
+      LocationService.getRegionByLocationId(locationId) === LocationRegionConstant.mobiusDesert
+    );
   }
 
-  public static getMobiusDesertArea(locationId: string, mapVariant: number): DesertAreaMapCellViewModel | null {
+  public static getMobiusDesertArea(
+    locationId: string,
+    mapVariant: number,
+  ): DesertAreaMapCellViewModel | null {
     if (mapVariant <= 0) {
       return null;
     }
 
-    const cellRaw = MobiusDesertAreasMapRepository.getMobiusDesertArea(locationId, String(mapVariant));
+    const cellRaw = MobiusDesertAreasMapRepository.getMobiusDesertArea(
+      locationId,
+      String(mapVariant),
+    );
 
     if (cellRaw === null) {
       return null;

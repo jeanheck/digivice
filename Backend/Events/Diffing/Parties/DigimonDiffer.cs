@@ -23,15 +23,17 @@ public static class DigimonDiffer
 
         bool levelChanged = previousDigimon.Level != newDigimon.Level;
         bool tpChanged = previousDigimon.TP != newDigimon.TP;
-        bool blastGaugeChanged = previousDigimon.BlastGauge != newDigimon.BlastGauge;
+        bool blastChanged = previousDigimon.Blast != newDigimon.Blast;
         bool experienceChanged = previousDigimon.Experience != newDigimon.Experience;
         bool activeDigievolutionIdChanged = previousDigimon.ActiveDigievolutionId != newDigimon.ActiveDigievolutionId;
-        var vitalsDelta = VitalsDiffer.Diff(previousDigimon.Vitals, newDigimon.Vitals);
+        var hpDelta = VitalDiffer.Diff(previousDigimon.HP, newDigimon.HP);
+        var mpDelta = VitalDiffer.Diff(previousDigimon.MP, newDigimon.MP);
+        var inBattleDelta = InBattleDiffer.Diff(previousDigimon.InBattle, newDigimon.InBattle);
         var attributesDelta = AttributesDiffer.Diff(previousDigimon.Attributes, newDigimon.Attributes);
         var resistancesDelta = ResistancesDiffer.Diff(previousDigimon.Resistances, newDigimon.Resistances);
         var equipmentsDelta = EquipmentsDiffer.Diff(previousDigimon.Equipments, newDigimon.Equipments);
 
-        var digievolutionsDelta = new List<DigievolutionSlotDTO>();
+        List<DigievolutionSlotDTO> digievolutionsDelta = [];
         foreach (var newDigievolutionSlot in newDigimon.Digievolutions)
         {
             var previousDigievolutionSlot = previousDigimon.Digievolutions
@@ -43,7 +45,7 @@ public static class DigimonDiffer
             }
         }
 
-        var storedDigievolutionsDelta = new List<StoredDigievolutionDTO>();
+        List<StoredDigievolutionDTO> storedDigievolutionsDelta = [];
         foreach (var newStoredDigievolution in newDigimon.StoredDigievolutions)
         {
             var previousStoredDigievolution = previousDigimon.StoredDigievolutions
@@ -59,10 +61,12 @@ public static class DigimonDiffer
 
         bool hasAnyChanges = levelChanged ||
                              tpChanged ||
-                             blastGaugeChanged ||
+                             blastChanged ||
                              experienceChanged ||
                              activeDigievolutionIdChanged ||
-                             vitalsDelta != null ||
+                             hpDelta != null ||
+                             mpDelta != null ||
+                             inBattleDelta != null ||
                              attributesDelta != null ||
                              resistancesDelta != null ||
                              equipmentsDelta != null ||
@@ -83,9 +87,9 @@ public static class DigimonDiffer
         {
             dto = dto with { TP = newDigimon.TP };
         }
-        if (blastGaugeChanged)
+        if (blastChanged)
         {
-            dto = dto with { BlastGauge = newDigimon.BlastGauge };
+            dto = dto with { Blast = newDigimon.Blast };
         }
         if (experienceChanged)
         {
@@ -95,9 +99,17 @@ public static class DigimonDiffer
         {
             dto = dto with { ActiveDigievolutionId = newDigimon.ActiveDigievolutionId };
         }
-        if (vitalsDelta != null)
+        if (hpDelta != null)
         {
-            dto = dto with { Vitals = vitalsDelta };
+            dto = dto with { HP = hpDelta };
+        }
+        if (mpDelta != null)
+        {
+            dto = dto with { MP = mpDelta };
+        }
+        if (inBattleDelta != null)
+        {
+            dto = dto with { InBattle = inBattleDelta };
         }
         if (attributesDelta != null)
         {

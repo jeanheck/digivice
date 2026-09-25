@@ -5,7 +5,9 @@ import type { MobiusDesertAreasMapTable } from "./tables/desert/mobius-desert-ar
 export class MobiusDesertAreasMapRepository {
   private static readonly desertAreasMapTable = DesertAreasMapJson as MobiusDesertAreasMapTable;
 
-  public static findByLabel(label: string): { locationId: string; cell: MobiusDesertAreaMapCellRaw } | null {
+  public static findByLabel(
+    label: string,
+  ): { locationId: string; cell: MobiusDesertAreaMapCellRaw } | null {
     for (const [locationId, cells] of Object.entries(this.desertAreasMapTable)) {
       const cell = Object.values(cells).find((candidateCell) => candidateCell.label === label);
 
@@ -17,7 +19,10 @@ export class MobiusDesertAreasMapRepository {
     return null;
   }
 
-  public static getMobiusDesertArea(locationId: string, mapVariantKey: string): MobiusDesertAreaMapCellRaw | null {
+  public static getMobiusDesertArea(
+    locationId: string,
+    mapVariantKey: string,
+  ): MobiusDesertAreaMapCellRaw | null {
     return this.desertAreasMapTable[locationId]?.[mapVariantKey] ?? null;
   }
 }

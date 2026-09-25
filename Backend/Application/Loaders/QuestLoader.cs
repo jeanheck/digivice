@@ -1,0 +1,37 @@
+using Backend.Application.Loaders.Interfaces;
+using Backend.Memory.Repositories;
+using Backend.Memory.Resources.Journals;
+using Backend.Memory.Readers.Interfaces;
+
+namespace Backend.Application.Loaders
+{
+    public class QuestLoader(
+        IAddressesRepository addressesRepository,
+        IQuestReader questReader) : IQuestLoader
+    {
+        public QuestResource LoadMainQuest()
+        {
+            return questReader.Read(addressesRepository.GetMainQuest());
+        }
+
+        public List<QuestResource> LoadSideQuests()
+        {
+            return [.. addressesRepository.GetAllSideQuests().Select(questReader.Read)];
+        }
+
+        public List<QuestResource> LoadLegendaryWeapons()
+        {
+            return [.. addressesRepository.GetAllLegendaryWeapons().Select(questReader.Read)];
+        }
+
+        public List<QuestResource> LoadDriAgents()
+        {
+            return [.. addressesRepository.GetAllDriAgents().Select(questReader.Read)];
+        }
+
+        public List<QuestResource> LoadDuelIsland()
+        {
+            return [.. addressesRepository.GetAllDuelIsland().Select(questReader.Read)];
+        }
+    }
+}

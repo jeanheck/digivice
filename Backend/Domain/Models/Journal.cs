@@ -8,7 +8,7 @@ namespace Backend.Domain.Models
         public List<Quest> SideQuests { get; set; } = [];
         public List<Quest> LegendaryWeapons { get; set; } = [];
         public List<Quest> DriAgents { get; set; } = [];
-        public List<Auction> Auctions { get; set; } = [];
+        public List<Quest> DuelIsland { get; set; } = [];
 
         public virtual bool Equals(Journal? other)
         {
@@ -29,11 +29,11 @@ namespace Backend.Domain.Models
                                   (DriAgents != null && other.DriAgents != null &&
                                    DriAgents.SequenceEqual(other.DriAgents));
 
-            bool auctionsEqual = (Auctions == null && other.Auctions == null) ||
-                                 (Auctions != null && other.Auctions != null &&
-                                  Auctions.SequenceEqual(other.Auctions));
+            bool duelIslandEqual = (DuelIsland == null && other.DuelIsland == null) ||
+                                   (DuelIsland != null && other.DuelIsland != null &&
+                                    DuelIsland.SequenceEqual(other.DuelIsland));
 
-            return mainQuestEqual && sideQuestsEqual && legendaryWeaponsEqual && driAgentsEqual && auctionsEqual;
+            return mainQuestEqual && sideQuestsEqual && legendaryWeaponsEqual && driAgentsEqual && duelIslandEqual;
         }
 
         public override int GetHashCode()
@@ -61,11 +61,11 @@ namespace Backend.Domain.Models
                     hash.Add(driAgent);
                 }
             }
-            if (Auctions != null)
+            if (DuelIsland != null)
             {
-                foreach (var auction in Auctions)
+                foreach (var duelIslandQuest in DuelIsland)
                 {
-                    hash.Add(auction);
+                    hash.Add(duelIslandQuest);
                 }
             }
             return hash.ToHashCode();

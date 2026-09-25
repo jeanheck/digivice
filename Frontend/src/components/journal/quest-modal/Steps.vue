@@ -19,7 +19,9 @@ const onSelectStep = (step: StepViewModel) => {
 
 <template>
   <div class="flex flex-col gap-2">
-    <h3 class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 border-b border-blue-900/40 pb-1">
+    <h3
+      class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-1 border-b border-blue-900/40 pb-1"
+    >
       {{ $t("journal.missionSteps") }}
     </h3>
 
@@ -38,7 +40,11 @@ const onSelectStep = (step: StepViewModel) => {
     >
       <div
         class="mt-0.5 shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors shadow-inner"
-        :class="stepViewModel.isDone ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)]' : 'bg-black/50 border-gray-600'"
+        :class="
+          stepViewModel.isDone
+            ? 'bg-green-500/20 border-green-500 text-green-400 shadow-[0_0_8px_rgba(0,255,0,0.3)]'
+            : 'bg-black/50 border-gray-600'
+        "
       >
         <span v-if="stepViewModel.isDone" class="text-xs">✔</span>
       </div>
@@ -46,7 +52,11 @@ const onSelectStep = (step: StepViewModel) => {
       <div class="flex-1">
         <p
           class="text-sm leading-snug transition-colors"
-          :class="stepViewModel.isDone ? 'text-gray-400 line-through decoration-green-900' : 'text-gray-200'"
+          :class="
+            stepViewModel.isDone
+              ? 'text-gray-400 line-through decoration-green-900'
+              : 'text-gray-200'
+          "
         >
           {{ $t(`${questId}.steps.${stepViewModel.number}.description`) }}
         </p>

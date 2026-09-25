@@ -13,11 +13,11 @@ Replace `{Name}` = PascalCase rookie (`Kotemon`), `{rookie}` = lowercase
 | Action | Path |
 |--------|------|
 | CREATE | `Backend/Memory/Definitions/Quests/DriAgents/{Name}Addresses.json` |
-| EDIT | `Backend/Memory/Repositories/AddressesRepository.cs` — field, getter, `GetAllDriAgents()` |
 | EDIT | `Tests/Integration/Application/Loaders/Journals/QuestLoaderTests.cs` — `LoadDriAgents_*` |
 | EDIT | `Tests/Integration/Application/Loaders/JournalLoaderTests.cs` — count + ids |
 
-**Do not edit:** `QuestLoader`, `JournalLoader`, assemblers, differs, DTOs,
+**Do not edit:** `AddressesRepository` (auto-discovers `Quests/DriAgents/*.json`),
+`QuestLoader`, `JournalLoader`, assemblers, differs, DTOs,
 `IAddressesRepository` (unless public API changes — it should not).
 
 ---

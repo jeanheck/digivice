@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 import type { AppBlockingErrorViewModel } from "@/models/app-blocking-error";
 
 const props = defineProps<{
-    error: AppBlockingErrorViewModel;
+  error: AppBlockingErrorViewModel;
 }>();
 
 const { t } = useI18n();

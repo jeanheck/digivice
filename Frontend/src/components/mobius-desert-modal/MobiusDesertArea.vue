@@ -48,7 +48,7 @@ const translatedLabelKeys = new Set(["noiseDesertS", "mirageTower"]);
 
 function getConnectionColorClasse(
   sourceType: DesertAreaTypeViewModel,
-  targetType: DesertAreaTypeViewModel | null
+  targetType: DesertAreaTypeViewModel | null,
 ): string {
   if (sourceType === "border" || targetType === "border") {
     return "bg-gray-500";

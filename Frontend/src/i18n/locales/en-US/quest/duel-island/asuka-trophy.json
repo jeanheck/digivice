@@ -1,0 +1,32 @@
+{
+  "asukaTrophy": {
+    "title": "Asuka Trophy",
+    "description": "Defeat all Divermons on Duel Island and win the Asuka Trophy",
+    "steps": {
+      "1": {
+        "description": "Defeat the first Divermon",
+        "locationTarget": "Divermon"
+      },
+      "2": {
+        "description": "Defeat the second Divermon",
+        "locationTarget": "Divermon"
+      },
+      "3": {
+        "description": "Defeat the third Divermon",
+        "locationTarget": "Divermon"
+      },
+      "4": {
+        "description": "Defeat the fourth Divermon",
+        "locationTarget": "Divermon"
+      },
+      "5": {
+        "description": "Defeat the fifth Divermon",
+        "locationTarget": "Divermon"
+      },
+      "6": {
+        "description": "Defeat the KingDivermon",
+        "locationTarget": "KingDivermon"
+      }
+    }
+  }
+}

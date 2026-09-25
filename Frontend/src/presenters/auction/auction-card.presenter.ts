@@ -1,9 +1,12 @@
-import type { Journal } from "@/models";
+import type { Auctions, Quest } from "@/models";
 import { AuctionService } from "@/services/auction.service";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 export class AuctionCardPresenter {
-    public static getAuctionAvailable(journal: Journal | null): AuctionViewModel | null {
-        return AuctionService.getAuctionAvailable(journal);
-    }
+  public static getAvailableAuction(
+    auctions: Auctions | null,
+    mainQuest: Quest | null,
+  ): AuctionViewModel | null {
+    return AuctionService.getAvailableAuction(auctions, mainQuest);
+  }
 }

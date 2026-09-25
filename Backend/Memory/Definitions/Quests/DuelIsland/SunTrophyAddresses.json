@@ -1,0 +1,41 @@
+{
+    "Id": "sunTrophy",
+    "Requisites": [
+        {
+            "Id": "asukaTrophy",
+            "Address": "0x00048DC2"
+        }
+    ],
+    "Steps": [
+        {
+            "Number": 1,
+            "Address": "0x0004B3B2",
+            "BitMasks": ["0x80"]
+        },
+        {
+            "Number": 2,
+            "Address": "0x0004B3B3",
+            "BitMasks": ["0x01"]
+        },
+        {
+            "Number": 3,
+            "Address": "0x0004B3B3",
+            "BitMasks": ["0x02"]
+        },
+        {
+            "Number": 4,
+            "Address": "0x0004B3B3",
+            "BitMasks": ["0x04"]
+        },
+        {
+            "Number": 5,
+            "Address": "0x0004B3B3",
+            "BitMasks": ["0x08"]
+        },
+        {
+            "Number": 6,
+            "Address": "0x00048DC4",
+            "BitMasks": []
+        }
+    ]
+}

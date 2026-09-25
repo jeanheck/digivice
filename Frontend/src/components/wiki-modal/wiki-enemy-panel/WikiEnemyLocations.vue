@@ -1,0 +1,31 @@
+<script setup lang="ts">
+import WikiLocation from "@/components/wiki-modal/wiki-locations-panel/WikiLocation.vue";
+import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
+
+defineProps<{
+  locations: EnemyLocationViewModel[];
+}>();
+
+const emit = defineEmits<{
+  (e: "open-location", locationId: string): void;
+}>();
+
+const handleLocationSelect = (locationId: string): void => {
+  emit("open-location", locationId);
+};
+</script>
+
+<template>
+  <div class="flex flex-col flex-1 min-h-0">
+    <div class="flex-1 min-h-0 overflow-y-auto custom-scroll flex flex-col gap-1">
+      <WikiLocation
+        v-for="location in locations"
+        :key="location.id"
+        variant="list"
+        :location="location"
+        :is-selected="false"
+        @select="handleLocationSelect(location.id)"
+      />
+    </div>
+  </div>
+</template>

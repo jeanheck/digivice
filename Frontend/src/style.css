@@ -9,13 +9,13 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: #000030;
-  background-image: url('./assets/bg-pattern.svg');
+  background-image: url("./assets/bg-pattern.svg");
   background-size: 256px 256px;
   background-repeat: repeat;
   /* Animação rolando a textura do background suavemente e infinitamente */
   animation: slideBackground 6s linear infinite;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   image-rendering: pixelated;
 }
 
@@ -33,6 +33,44 @@ body {
 /* DW3 Global Utility Classes */
 .dw3-beveled {
   clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+}
+
+.dw3-scan-corner {
+  position: absolute;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-color: rgb(0 170 255 / 0.6);
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+
+.dw3-scan-corner.top-left {
+  top: 0.25rem;
+  left: 0.25rem;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.dw3-scan-corner.top-right {
+  top: 0.25rem;
+  right: 0.25rem;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.dw3-scan-corner.bottom-left {
+  bottom: 0.25rem;
+  left: 0.25rem;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.dw3-scan-corner.bottom-right {
+  bottom: 0.25rem;
+  right: 0.25rem;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
 }
 
 .dw3-panel {
@@ -68,13 +106,23 @@ body {
 .text-outline-black {
   text-shadow:
     -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.text-outline-black-glow {
+  text-shadow:
+    0 0 4px #000,
+    0 0 8px #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .shadow-text-dark {
-  filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.8));
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.8));
 }
 
 .text-dw3-gold {
@@ -89,7 +137,9 @@ body {
   height: 100%;
   background-color: #000e3f;
   border-radius: 0.375rem;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
   border: 2px solid #0033aa;
   padding: 0.75rem;
   padding-top: 0;
@@ -337,7 +387,7 @@ body {
   animation: auction-icon-pulse 1.6s ease-in-out infinite;
 }
 
-@keyframes blast-gauge-pulse {
+@keyframes blast-pulse {
   0%,
   100% {
     filter: brightness(1.05) saturate(1.15);
@@ -350,7 +400,7 @@ body {
   }
 }
 
-@keyframes blast-gauge-track-pulse {
+@keyframes blast-track-pulse {
   0%,
   100% {
     box-shadow: 0 0 6px 1px rgba(250, 204, 21, 0.4);
@@ -363,24 +413,24 @@ body {
   }
 }
 
-.blast-gauge-fill-mid {
+.blast-fill-mid {
   opacity: 1;
   filter: brightness(1.1) saturate(1.2);
   background-color: #fef08a;
 }
 
-.blast-gauge-fill-high {
+.blast-fill-high {
   opacity: 1;
-  animation: blast-gauge-pulse 0.9s ease-in-out infinite;
+  animation: blast-pulse 0.9s ease-in-out infinite;
 }
 
-.blast-gauge-track-mid {
+.blast-track-mid {
   box-shadow: 0 0 8px 2px rgba(250, 204, 21, 0.45);
   border-color: #fde047;
 }
 
-.blast-gauge-track-high {
-  animation: blast-gauge-track-pulse 0.9s ease-in-out infinite;
+.blast-track-high {
+  animation: blast-track-pulse 0.9s ease-in-out infinite;
 }
 
 .bg-grid-pattern {
@@ -420,7 +470,9 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .map-info-panel.map-info-panel-action:hover {
@@ -430,7 +482,9 @@ body {
 
 .map-info-panel-fit.map-info-panel-action {
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .map-info-panel-fit.map-info-panel-action:hover {

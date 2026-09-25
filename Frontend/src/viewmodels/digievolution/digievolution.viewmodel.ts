@@ -2,7 +2,7 @@ import type { DigievolutionAttributesViewModel } from "./digievolution-attribute
 import type { DigievolutionResistancesViewModel } from "./digievolution-resistances.viewmodel";
 
 export interface DigievolutionViewModel {
-    name: string;
-    attributes: DigievolutionAttributesViewModel;
-    resistances: DigievolutionResistancesViewModel;
+  name: string;
+  attributes: DigievolutionAttributesViewModel;
+  resistances: DigievolutionResistancesViewModel;
 }

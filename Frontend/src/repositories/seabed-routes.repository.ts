@@ -9,11 +9,14 @@ export class SeabedRoutesRepository {
     return this.seabedRoutesTable;
   }
 
-  public static getByRouteAndLocation(routeId: string, locationKey: string): SeabedRouteLocationRaw | null {
+  public static getByRouteAndLocation(
+    routeId: string,
+    locationKey: string,
+  ): SeabedRouteLocationRaw | null {
     return this.seabedRoutesTable[routeId]?.maps[locationKey] ?? null;
   }
 
   public static getEnemiesByRoute(routeId: string): string[] {
-    return this.seabedRoutesTable[routeId]?.enemies ?? [];
+    return this.seabedRoutesTable[routeId]?.enemies?.walking ?? [];
   }
 }

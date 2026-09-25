@@ -54,7 +54,8 @@ public class PartyEventFactoryTests
                     Digimon = new Digimon
                     {
                         Level = level,
-                        Vitals = new Vitals(),
+                        HP = new Vital(),
+                        MP = new Vital(),
                         Attributes = new Attributes(),
                         Resistances = new Resistances(),
                         Equipments = new Equipments(),

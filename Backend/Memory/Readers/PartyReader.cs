@@ -1,7 +1,7 @@
 using Backend.Memory.Addresses;
 using Backend.Memory.Resources;
+using Backend.Memory.Readers.Interfaces;
 
-using Backend.Memory.Readers.Parties;
 
 namespace Backend.Memory.Readers
 {

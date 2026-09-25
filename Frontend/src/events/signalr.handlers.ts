@@ -1,37 +1,57 @@
-import { signalRService } from './signalr.service';
-import { useGameStore } from '../stores/use-game-store';
-import { signalRLogger } from './logger';
-import { EmulatorConnectionConverter } from './converters/emulator-connection.converter';
+import { signalRService } from "./signalr.service";
+import { useGameStore } from "../stores/use-game-store";
+import { signalRLogger } from "./logger";
+import { EmulatorConnectionConverter } from "./converters/emulator-connection.converter";
 
 /**
  * Initializes the SignalR handlers to bridge incoming backend events with the Pinia store actions.
  */
 export function initializeSignalRHandlers(): void {
-    const store = useGameStore();
+  const store = useGameStore();
 
-    signalRService.on('HubConnectionStatusChanged', (data) => {
-        store.syncHubConnectionStatus(data);
-    });
+  signalRService.on("HubConnectionStatusChanged", (data) => {
+    store.syncHubConnectionStatus(data);
+  });
 
-    signalRService.on('EmulatorConnectionStatusChanged', (data) => {
-        store.syncEmulatorConnectionStatus(EmulatorConnectionConverter.convert(data));
-    });
+  signalRService.on("EmulatorConnectionStatusChanged", (data) => {
+    store.syncEmulatorConnectionStatus(EmulatorConnectionConverter.convert(data));
+  });
 
-    signalRService.on('InitialState', (data) => {
-        store.setInitialState(data);
-    });
+  signalRService.on("InitialState", (data) => {
+    store.setInitialState(data);
+  });
 
-    signalRService.on('PlayerChanged', (data) => {
-        store.syncPlayer(data);
-    });
+  signalRService.on("PlayerChanged", (data) => {
+    store.syncPlayer(data);
+  });
 
-    signalRService.on('PartyChanged', (data) => {
-        store.syncParty(data);
-    });
+  signalRService.on("ImportantItemsChanged", (data) => {
+    store.syncImportantItems(data);
+  });
 
-    signalRService.on('JournalChanged', (data) => {
-        store.syncJournal(data);
-    });
+  signalRService.on("PartyChanged", (data) => {
+    store.syncParty(data);
+  });
 
-    signalRLogger.debug('SignalR Handlers successfully initialized.');
+  signalRService.on("DigimonBattleChanged", (data) => {
+    store.syncDigimonBattle(data);
+  });
+
+  signalRService.on("CardBattleChanged", (data) => {
+    store.syncCardBattle(data);
+  });
+
+  signalRService.on("AuctionsChanged", (data) => {
+    store.syncAuctions(data);
+  });
+
+  signalRService.on("NpcsChanged", (data) => {
+    store.syncNpcs(data);
+  });
+
+  signalRService.on("JournalChanged", (data) => {
+    store.syncJournal(data);
+  });
+
+  signalRLogger.debug("SignalR Handlers successfully initialized.");
 }

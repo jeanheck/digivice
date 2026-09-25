@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import AsukaServerMap from "./asuka-server-map/AsukaServerMap.vue";
+import DigimonBattle from "./digimon-battle/DigimonBattle.vue";
+import CardBattle from "./card-battle/CardBattle.vue";
 import SeabedMap from "./seabed-map/SeabedMap.vue";
 import MobiusDesertMap from "./mobius-desert-map/MobiusDesertMap.vue";
-import BestiaryModal from "@/components/map/bestiary-modal/BestiaryModal.vue";
+import WikiModal from "@/components/wiki-modal/WikiModal.vue";
 import { computed, ref } from "vue";
 import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { useGameStore } from "@/stores/use-game-store";
@@ -18,17 +20,53 @@ const mapViewModel = computed(() => {
   return MapPresenter.getByLocationId(locationId.value);
 });
 
-const isBestiaryModalOpen = ref(false);
-const selectedEnemyId = ref<string | null>(null);
+const isInBattle = computed(() => {
+  return MapPresenter.isInBattle(locationId.value);
+});
 
-const openBestiaryModal = (enemyId: string) => {
+const isInCardBattle = computed(() => {
+  return MapPresenter.isInCardBattle(locationId.value);
+});
+
+const backgroundImageUrl = computed(() => {
+  if (isInBattle.value || isInCardBattle.value) {
+    return null;
+  }
+
+  return mapViewModel.value.locationImageUrl;
+});
+
+const isWikiModalOpen = ref(false);
+const selectedEnemyId = ref<string | null>(null);
+const selectedWikiLocationId = ref<string | null>(null);
+const selectedNpcId = ref<string | null>(null);
+
+const openWikiModal = (enemyId: string) => {
+  selectedWikiLocationId.value = null;
+  selectedNpcId.value = null;
   selectedEnemyId.value = enemyId;
-  isBestiaryModalOpen.value = true;
+  isWikiModalOpen.value = true;
 };
 
-const closeBestiaryModal = () => {
-  isBestiaryModalOpen.value = false;
+const openWikiModalForLocation = (locationId: string) => {
   selectedEnemyId.value = null;
+  selectedNpcId.value = null;
+  selectedWikiLocationId.value = locationId;
+  isWikiModalOpen.value = true;
+};
+
+const openWikiModalForNpc = (npcId: string) => {
+  selectedEnemyId.value = null;
+  selectedWikiLocationId.value = null;
+  selectedNpcId.value = npcId;
+  isWikiModalOpen.value = true;
+};
+
+const closeWikiModal = () => {
+  isWikiModalOpen.value = false;
+  selectedEnemyId.value = null;
+  selectedWikiLocationId.value = null;
+  selectedNpcId.value = null;
 };
 </script>
 
@@ -36,41 +74,48 @@ const closeBestiaryModal = () => {
   <aside class="dw3-aside flex-1 min-h-0 pt-1.5! pb-1.5! relative overflow-hidden">
     <div
       class="absolute inset-0 bg-black bg-opacity-60"
-      :class="{ 'bg-grid-pattern': !mapViewModel.locationImageUrl }"
+      :class="{ 'bg-grid-pattern': !backgroundImageUrl && !isInBattle && !isInCardBattle }"
     />
 
     <div
-      v-if="mapViewModel.locationImageUrl"
+      v-if="backgroundImageUrl"
       class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-lighten pointer-events-none"
-      :style="{ backgroundImage: `url(${mapViewModel.locationImageUrl})` }"
+      :style="{ backgroundImage: `url(${backgroundImageUrl})` }"
     />
 
-    <div
-      class="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-[#00aaff]/60 pointer-events-none"
-    />
-    <div
-      class="absolute top-1 right-1 w-3 h-3 border-t-2 border-r-2 border-[#00aaff]/60 pointer-events-none"
-    />
-    <div
-      class="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-[#00aaff]/60 pointer-events-none"
-    />
-    <div
-      class="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-[#00aaff]/60 pointer-events-none"
-    />
+    <div class="dw3-scan-corner top-left" />
+    <div class="dw3-scan-corner top-right" />
+    <div class="dw3-scan-corner bottom-left" />
+    <div class="dw3-scan-corner bottom-right" />
 
+    <DigimonBattle v-if="isInBattle" @open-enemy-modal="openWikiModal" />
+    <CardBattle
+      v-else-if="isInCardBattle"
+      @open-npc-modal="openWikiModalForNpc"
+    />
     <SeabedMap
-      v-if="mapViewModel.locationRegion === LocationRegionConstant.seabed"
-      @open-enemy-modal="openBestiaryModal"
+      v-else-if="mapViewModel.locationRegion === LocationRegionConstant.seabed"
+      @open-enemy-modal="openWikiModal"
+      @open-location-wiki="openWikiModalForLocation"
     />
     <MobiusDesertMap
       v-else-if="mapViewModel.locationRegion === LocationRegionConstant.mobiusDesert"
-      @open-enemy-modal="openBestiaryModal"
+      @open-enemy-modal="openWikiModal"
+      @open-location-wiki="openWikiModalForLocation"
     />
     <AsukaServerMap
       v-else
-      @open-enemy-modal="openBestiaryModal"
+      @open-enemy-modal="openWikiModal"
+      @open-location-wiki="openWikiModalForLocation"
+      @open-npc-modal="openWikiModalForNpc"
     />
 
-    <BestiaryModal :is-open="isBestiaryModalOpen" :enemy-id="selectedEnemyId" @close="closeBestiaryModal" />
+    <WikiModal
+      :is-open="isWikiModalOpen"
+      :enemy-id="selectedEnemyId"
+      :location-id="selectedWikiLocationId"
+      :npc-id="selectedNpcId"
+      @close="closeWikiModal"
+    />
   </aside>
 </template>

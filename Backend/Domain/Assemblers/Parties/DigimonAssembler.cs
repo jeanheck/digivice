@@ -20,20 +20,40 @@ namespace Backend.Domain.Assemblers.Parties
                 Experience = resource.Experience,
                 Level = resource.Level,
                 TP = resource.TP,
-                BlastGauge = resource.BlastGauge,
-                Vitals = new Vitals
+                Blast = resource.Blast,
+                HP = new Vital
                 {
-                    CurrentHP = resource.Vitals.CurrentHP,
-                    MaxHP = resource.Vitals.MaxHP,
-                    CurrentMP = resource.Vitals.CurrentMP,
-                    MaxMP = resource.Vitals.MaxMP
+                    Current = resource.HP.Current,
+                    Max = resource.HP.Max
+                },
+                MP = new Vital
+                {
+                    Current = resource.MP.Current,
+                    Max = resource.MP.Max
+                },
+                InBattle = new InBattle
+                {
+                    Condition = resource.InBattle.Condition,
+                    Strength = resource.InBattle.Strength,
+                    Defense = resource.InBattle.Defense,
+                    Speed = resource.InBattle.Speed,
+                    HP = new Vital
+                    {
+                        Current = resource.InBattle.HP.Current,
+                        Max = resource.InBattle.HP.Max
+                    },
+                    MP = new Vital
+                    {
+                        Current = resource.InBattle.MP.Current,
+                        Max = resource.InBattle.MP.Max
+                    }
                 },
                 Attributes = new Attributes
                 {
                     Strength = resource.Attributes.Strength,
                     Defense = resource.Attributes.Defense,
                     Spirit = resource.Attributes.Spirit,
-                    Wisdom = resource.Attributes.Wisdow,
+                    Wisdom = resource.Attributes.Wisdom,
                     Speed = resource.Attributes.Speed,
                     Charisma = resource.Attributes.Charisma
                 },

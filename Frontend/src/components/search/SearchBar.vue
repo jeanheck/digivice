@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import type { SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
+import { SearchItemSortHelper } from "@/presenters/helper/search-item-sort.helper";
+import type { SearchItemKind, SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
 const props = defineProps<{
   items: SearchItemViewModel[];
   selectedId?: string;
+  selectedKind?: SearchItemKind;
   placeholder: string;
   noResultsLabel: string;
 }>();
 
 const emit = defineEmits<{
-  (e: "select", id: string): void;
+  (e: "select", payload: { id: string; kind?: SearchItemKind }): void;
 }>();
 
 const searchInput = ref<HTMLInputElement | null>(null);
@@ -23,9 +25,17 @@ const selectedItemName = computed(() => {
     return "";
   }
 
-  return props.items.find((item) => {
-    return item.id === props.selectedId;
-  })?.name ?? "";
+  return (
+    props.items.find((item) => {
+      if (item.id !== props.selectedId) {
+        return false;
+      }
+      if (props.selectedKind === undefined) {
+        return true;
+      }
+      return item.kind === props.selectedKind;
+    })?.name ?? ""
+  );
 });
 
 const filteredItems = computed(() => {
@@ -34,9 +44,11 @@ const filteredItems = computed(() => {
     return [];
   }
 
-  return props.items.filter((item) => {
-    return item.name.toLowerCase().includes(query);
-  });
+  return SearchItemSortHelper.sort(
+    props.items.filter((item) => {
+      return item.name.toLowerCase().includes(query);
+    }),
+  );
 });
 
 const inputValue = computed({
@@ -52,11 +64,14 @@ const inputValue = computed({
   },
 });
 
-watch(() => props.selectedId, () => {
-  searchQuery.value = "";
-  showDropdown.value = false;
-  isFocused.value = false;
-});
+watch(
+  () => [props.selectedId, props.selectedKind],
+  () => {
+    searchQuery.value = "";
+    showDropdown.value = false;
+    isFocused.value = false;
+  },
+);
 
 const handleFocus = () => {
   isFocused.value = true;
@@ -70,8 +85,8 @@ const handleBlur = () => {
   searchQuery.value = "";
 };
 
-const handleSearchSelect = (id: string) => {
-  emit("select", id);
+const handleSearchSelect = (item: SearchItemViewModel) => {
+  emit("select", { id: item.id, kind: item.kind });
   searchInput.value?.blur();
 };
 </script>
@@ -94,17 +109,26 @@ const handleSearchSelect = (id: string) => {
       <template v-if="filteredItems.length > 0">
         <div
           v-for="item in filteredItems"
-          :key="item.id"
-          class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors border-b last:border-b-0 border-[#0055ff]/20"
-          @mousedown.prevent="handleSearchSelect(item.id)"
+          :key="`${item.kind}-${item.id}`"
+          class="px-3 py-1.5 text-xs text-[#00aaff] hover:bg-[#0033aa] hover:text-white cursor-pointer transition-colors border-b last:border-b-0 border-[#0055ff]/20 flex items-baseline gap-2"
+          @mousedown.prevent="handleSearchSelect(item)"
         >
-          {{ item.name }}
+          <span class="leading-none">{{ item.name }}</span>
+          <span
+            v-if="item.kindLabelKey !== undefined || item.kind"
+            class="text-[10px] leading-none text-[#00aaff]/50"
+          >
+            {{
+              item.kindLabelKey !== undefined
+                ? item.kindLabelParams !== undefined
+                  ? $t(item.kindLabelKey, item.kindLabelParams)
+                  : $t(item.kindLabelKey)
+                : $t(`enemy.searchKind.${item.kind}`)
+            }}
+          </span>
         </div>
       </template>
-      <p
-        v-else
-        class="px-3 py-2 text-xs text-[#00aaff]/50 italic"
-      >
+      <p v-else class="px-3 py-2 text-xs text-[#00aaff]/50 italic">
         {{ noResultsLabel }}
       </p>
     </div>

@@ -3,6 +3,8 @@ import type {
   SeabedDirectionDockType,
 } from "@/repositories/tables/raws/seabed/seabed-direction-dock.raw";
 
+export type { DockLabelPosition };
+
 export interface SeabedDirectionDockViewModel {
   location: string;
   x: number;

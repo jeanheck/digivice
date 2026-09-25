@@ -1,13 +1,16 @@
-import type { Digievolution } from '@/models';
-import type { DigievolutionDTO } from '@/events/dto/parties/digimons/digievolution.dto';
+import type { Digievolution } from "@/models";
+import type { DigievolutionDTO } from "@/events/dto/parties/digimons/digievolution.dto";
 
 export class DigievolutionSyncer {
-    public static sync(previousDigievolution: Digievolution, digievolutionDto: DigievolutionDTO): void {
-        if (digievolutionDto.level !== undefined) {
-            previousDigievolution.level = digievolutionDto.level;
-        }
-        if (digievolutionDto.dvxp !== undefined) {
-            previousDigievolution.dvxp = digievolutionDto.dvxp;
-        }
+  public static sync(
+    previousDigievolution: Digievolution,
+    digievolutionDto: DigievolutionDTO,
+  ): void {
+    if (digievolutionDto.level !== undefined) {
+      previousDigievolution.level = digievolutionDto.level;
     }
+    if (digievolutionDto.dvxp !== undefined) {
+      previousDigievolution.dvxp = digievolutionDto.dvxp;
+    }
+  }
 }

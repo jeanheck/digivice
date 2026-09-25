@@ -1,0 +1,22 @@
+{
+  "npcs": {
+    "seiryuLeader": {
+      "name": "Líder Seiryu"
+    },
+    "keith": {
+      "name": "Keith"
+    },
+    "suzakuLeader": {
+      "name": "Líder Suzaku"
+    },
+    "fakeByakkoLeader": {
+      "name": "Líder Byakko"
+    },
+    "byakkoLeader": {
+      "name": "Líder Byakko"
+    },
+    "aoaAttacker": {
+      "name": "Terrorista"
+    }
+  }
+}

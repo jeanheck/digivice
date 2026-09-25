@@ -22,7 +22,7 @@ public static class QuestDiffer
             return QuestConverter.ToDTO(newQuest);
         }
 
-        var requisitesDelta = new List<RequisiteDTO>();
+        List<RequisiteDTO> requisitesDelta = [];
         foreach (var newRequisite in newQuest.Requisites)
         {
             var previousRequisite = previousQuest.Requisites.FirstOrDefault(r => r.Id == newRequisite.Id);
@@ -33,7 +33,7 @@ public static class QuestDiffer
             }
         }
 
-        var stepsDelta = new List<StepDTO>();
+        List<StepDTO> stepsDelta = [];
         foreach (var newStep in newQuest.Steps)
         {
             var previousStep = previousQuest.Steps.FirstOrDefault(s => s.Number == newStep.Number);

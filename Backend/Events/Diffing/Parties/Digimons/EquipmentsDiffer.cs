@@ -7,43 +7,43 @@ namespace Backend.Events.Diffing.Parties.Digimons;
 
 public static class EquipmentsDiffer
 {
-    public static EquipmentsDTO? Diff(Equipments? previousEquipaments, Equipments newEquipaments)
+    public static EquipmentsDTO? Diff(Equipments? previousEquipments, Equipments newEquipments)
     {
-        if (newEquipaments.HasNoChanges(previousEquipaments))
+        if (newEquipments.HasNoChanges(previousEquipments))
         {
             return null;
         }
 
-        if (previousEquipaments == null)
+        if (previousEquipments == null)
         {
-            return EquipmentsConverter.ToDTO(newEquipaments);
+            return EquipmentsConverter.ToDTO(newEquipments);
         }
 
         var dto = new EquipmentsDTO();
 
-        if (newEquipaments.Head != previousEquipaments.Head)
+        if (newEquipments.Head != previousEquipments.Head)
         {
-            dto = dto with { Head = newEquipaments.Head };
+            dto = dto with { Head = newEquipments.Head };
         }
-        if (newEquipaments.Body != previousEquipaments.Body)
+        if (newEquipments.Body != previousEquipments.Body)
         {
-            dto = dto with { Body = newEquipaments.Body };
+            dto = dto with { Body = newEquipments.Body };
         }
-        if (newEquipaments.Right != previousEquipaments.Right)
+        if (newEquipments.Right != previousEquipments.Right)
         {
-            dto = dto with { Right = newEquipaments.Right };
+            dto = dto with { Right = newEquipments.Right };
         }
-        if (newEquipaments.Left != previousEquipaments.Left)
+        if (newEquipments.Left != previousEquipments.Left)
         {
-            dto = dto with { Left = newEquipaments.Left };
+            dto = dto with { Left = newEquipments.Left };
         }
-        if (newEquipaments.Accessory1 != previousEquipaments.Accessory1)
+        if (newEquipments.Accessory1 != previousEquipments.Accessory1)
         {
-            dto = dto with { Accessory1 = newEquipaments.Accessory1 };
+            dto = dto with { Accessory1 = newEquipments.Accessory1 };
         }
-        if (newEquipaments.Accessory2 != previousEquipaments.Accessory2)
+        if (newEquipments.Accessory2 != previousEquipments.Accessory2)
         {
-            dto = dto with { Accessory2 = newEquipaments.Accessory2 };
+            dto = dto with { Accessory2 = newEquipments.Accessory2 };
         }
 
         return dto;

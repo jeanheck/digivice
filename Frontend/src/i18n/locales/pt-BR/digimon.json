@@ -3,13 +3,36 @@
     "digievolutions": "Digievoluções",
     "equipments": "Equipamentos",
     "baseDigimon": "Digimon Base",
+    "digievolutionBonus": "Bônus da digievolução",
     "equipableBy": "Equipável por",
     "allDigimon": "Todos os Digimon",
     "level": "Nível",
+    "lv": "Nv",
     "experience": "Experiência",
     "hp": "HP",
+    "condition": "Condição",
+    "status": {
+      "healthy": "Saudável",
+      "injured": "Ferido",
+      "knockedOut": "Nocauteado",
+      "debuffed": "Debuffado"
+    },
+    "debuff": {
+      "poison": {
+        "affected": "Envenenado"
+      },
+      "paralyze": {
+        "affected": "Paralisado"
+      },
+      "confuse": {
+        "affected": "Confuso"
+      },
+      "sleep": {
+        "affected": "Adormecido"
+      }
+    },
     "mp": "MP",
-    "blastGauge": "Medidor de Pressão",
+    "blast": "Medidor de Explosão",
     "tp": "Pontos de Treinamento",
     "equipmentSlot": {
       "head": "Cabeça",

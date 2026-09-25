@@ -11,8 +11,9 @@
 graph TD
     subgraph Backend [Backend - C# .NET]
         A[Emulador Duckstation] -->|Leitura de RAM 1000ms| B(MemoryReader / MemoryBlockReader)
-        B -->|Dados Brutos| C(Assemblers)
-        C -->|Instanciação| D(State)
+        B --> L[Loaders]
+        L -->|Addresses via Repository + Readers| R[Resources]
+        R -->|Assemblers| D[State]
         D -->|State Atual + Anterior| E(StateEventFactory / Diffs)
         E -->|Apenas Alterações| F(DTOs e Eventos SignalR)
     end
@@ -26,9 +27,13 @@ graph TD
     end
 ```
 
+### Pipeline de memória (Backend)
+
+Cadeia canônica até o domínio: **Addresses** (offsets JSON/C#) → **Loader** (resolve addresses + orquestra) → **Reader** (lê RAM → Resource) → **Resource** (resultado tipado) → **Assembler** (Resource → domínio no `State`). Detalhe de responsabilidades e naming: `AI/CODE_RULES.md` (Backend, item *Camadas de leitura de memória*).
+
 ### O Loop de Jogo (Game Loop)
 *   **Frequência:** A cada `1000ms` (1 segundo), a classe `GameLoopService` executa um loop de varredura de memória (dentro de uma instrução `while`).
-*   **Montagem do Estado:** Os leitores de memória extraem bytes brutos que são processados por classes `Assembler` para higienizar e estruturar os dados em entidades, culminando na criação de um objeto unificado chamado `State`.
+*   **Montagem do Estado:** Loaders resolvem `*Addresses`, Readers extraem dados da RAM em `*Resource`, e Assemblers higienizam/estruturam isso em entidades de domínio, culminando no objeto unificado `State`.
 *   **Cálculo de Diferenças (Diffs):** O `StateEventFactory` compara o `State` atual com o anterior através de mecanismos de *Diff*. Ele identifica quais propriedades específicas mudaram e encapsula apenas as alterações em DTOs.
 *   **Despacho de Eventos:** Todos os eventos de mudança (ex: `PlayerChanged`, `PartyChanged`) são despachados simultaneamente através do `EventDispatcher` utilizando **SignalR**.
 
@@ -87,12 +92,13 @@ if (slot.digimonId === null || slot.digimon === null) {
 *   **Level Máximo do Digimon:** O nível máximo que um Digimon pode atingir é estritamente **99**.
     *   Como os dados lidos do emulador respeitam rigorosamente a estrutura de memória do jogo original, é uma invariante de domínio que o valor de nível estará sempre dentro do intervalo de `1` a `99`.
     *   Validações defensivas de higienização de nível (como operações `Math.min` ou `Math.max` para travar o nível entre 1 e 99 no frontend) são desnecessárias e redundantes para os cálculos de experiência.
-*   **Blast gauge (Fúria):** Cada Digimon possui sua **própria** barra de Blast (0–1000). Não existe barra global compartilhada. Com 3 Digimons na party, cada um mantém seu valor individualmente — inclusive fora de batalha, quando o jogo não exibe a barra. Endereço em RAM: `0x00042B74 + (2 × rookieId)` (Int32 LE), onde `rookieId` é o `Id` em `DigimonsAddresses.json` (0–7).
+*   **Blast (Fúria):** Cada Digimon possui sua **própria** barra de Blast (0–1000). Não existe barra global compartilhada. Com 3 Digimons na party, cada um mantém seu valor individualmente — inclusive fora de batalha, quando o jogo não exibe a barra. Endereço em RAM: `0x00042B74 + (2 × rookieId)` (Int16 LE), onde `rookieId` é a chave numérica (0–7) em `DigimonsAddresses.json` (`BlastAddress`).
 *   **Tradução de Nomes de Digimons e Digievoluções:** Os nomes de Digimons e de suas Digievoluções são **nomes próprios** (assim como nomes de pessoas). Nomes próprios **não se traduzem** e, portanto, **nunca** devem passar por funções de localização ou internacionalização (como `getLocalized(...)`). Eles devem ser exibidos de forma literal exatamente como vêm das fontes de dados.
 
 ### 2.3. Diário de Missões (Journal)
 *   **Origem dos Dados:** A estrutura das missões (passos, nomes, etc.) é estática e carregada a partir de arquivos JSON.
 *   **Leitura de Memória:** O backend lê apenas as propriedades dinâmicas `Value` de cada `Step` e `Requisite`.
+*   **Cascade da Main Quest:** Após montar a missão principal a partir da RAM, o backend aplica uma normalização de progressão (`NormalizeMainQuestProgression`): se um step posterior tem `Value > 0` e um step anterior ainda está `0`, esse anterior é forçado para `1` (percorrendo os steps de trás para frente). Isso compensa um quirk da memória do jogo em que steps intermediários podem permanecer `0` mesmo com progresso posterior já marcado. **Escopo:** somente a Main Quest. Side quests, legendary weapons e DRI agents são pass-through puro dos `Value` lidos — não aplicar o mesmo cascade sem decisão explícita de produto. O frontend pode, portanto, ver `Value` coerentes na main quest que não batem byte a byte com a RAM em steps antigos.
 *   **Ciclo de Vida do Journal:**
     *   Todas as missões (principais e secundárias) e seus respectivos passos são enviados no `InitialState`.
     *   Missões **nunca são adicionadas ou removidas dinamicamente** do journal durante a execução da aplicação.

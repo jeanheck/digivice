@@ -13,9 +13,8 @@ const i18n = createI18n({
   fallbackLocale: "en-US",
   messages: {
     "en-US": enUS,
-    "pt-BR": ptBR
-  }
+    "pt-BR": ptBR,
+  },
 });
 
 export default i18n;
-

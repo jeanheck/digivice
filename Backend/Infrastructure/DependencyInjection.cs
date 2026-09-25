@@ -1,8 +1,8 @@
 using Backend.Application;
 using Backend.Application.Loaders;
-using Backend.Application.Loaders.Journals;
-using Backend.Application.Loaders.Parties;
+using Backend.Application.Loaders.Interfaces;
 using Backend.Application.Providers;
+using Backend.Application.Providers.Interfaces;
 using Backend.Diagnostics;
 using Backend.Events.Services;
 using Backend.Events.States;
@@ -10,11 +10,8 @@ using Backend.Infrastructure.Duckstation;
 using Backend.Infrastructure.Memory;
 using Backend.Infrastructure.Processes;
 using Backend.Memory.Readers;
-using Backend.Memory.Readers.Journals;
-using Backend.Memory.Readers.Journals.Quests;
-using Backend.Memory.Readers.Parties;
-using Backend.Memory.Readers.Parties.Digimons;
 using Backend.Memory.Repositories;
+using Backend.Memory.Readers.Interfaces;
 
 namespace Backend.Infrastructure
 {
@@ -38,21 +35,36 @@ namespace Backend.Infrastructure
             services.AddSingleton<IStoredDigievolutionReader, StoredDigievolutionReader>();
             services.AddSingleton<IDigievolutionSlotReader, DigievolutionSlotReader>();
             services.AddSingleton<IPartyReader, PartyReader>();
+            services.AddSingleton<IInBattleReader, InBattleReader>();
+            services.AddSingleton<IEnemyReader, EnemyReader>();
+            services.AddSingleton<IDigimonBattleReader, DigimonBattleReader>();
             services.AddSingleton<IRequisiteReader, RequisiteReader>();
             services.AddSingleton<IStepReader, StepReader>();
             services.AddSingleton<IPlayerReader, PlayerReader>();
+            services.AddSingleton<ICardBattleReader, CardBattleReader>();
+            services.AddSingleton<IImportantItemsReader, ImportantItemsReader>();
+            services.AddSingleton<IAuctionsReader, AuctionsReader>();
             services.AddSingleton<IQuestReader, QuestReader>();
-            services.AddSingleton<IAuctionReader, AuctionReader>();
+            services.AddSingleton<INpcsReader, NpcsReader>();
 
             services.AddSingleton<IPlayerLoader, PlayerLoader>();
-            services.AddSingleton<IAuctionLoader, AuctionLoader>();
-            services.AddSingleton<QuestLoader>();
+            services.AddSingleton<IImportantItemsLoader, ImportantItemsLoader>();
+            services.AddSingleton<IAuctionsLoader, AuctionsLoader>();
+            services.AddSingleton<INpcsLoader, NpcsLoader>();
+            services.AddSingleton<IQuestLoader, QuestLoader>();
             services.AddSingleton<IJournalLoader, JournalLoader>();
             services.AddSingleton<IPartyLoader, PartyLoader>();
-            services.AddSingleton<DigimonLoader>();
+            services.AddSingleton<IDigimonLoader, DigimonLoader>();
+            services.AddSingleton<IDigimonBattleLoader, DigimonBattleLoader>();
+            services.AddSingleton<ICardBattleLoader, CardBattleLoader>();
 
             services.AddSingleton<IPlayerProvider, PlayerProvider>();
+            services.AddSingleton<IImportantItemsProvider, ImportantItemsProvider>();
             services.AddSingleton<IPartyProvider, PartyProvider>();
+            services.AddSingleton<IDigimonBattleProvider, DigimonBattleProvider>();
+            services.AddSingleton<ICardBattleProvider, CardBattleProvider>();
+            services.AddSingleton<IAuctionsProvider, AuctionsProvider>();
+            services.AddSingleton<INpcsProvider, NpcsProvider>();
             services.AddSingleton<IJournalProvider, JournalProvider>();
 
             services.AddSingleton<StateComposer>();

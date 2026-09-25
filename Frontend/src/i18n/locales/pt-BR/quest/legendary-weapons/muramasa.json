@@ -8,17 +8,7 @@
     "steps": {
       "1": {
         "description": "Derrote Zanbamon para receber a Katana Oxidada",
-        "locations": {
-          "0": {
-            "locationTarget": "Santuário da Selva"
-          },
-          "1": {
-            "locationTarget": "Catacumba"
-          },
-          "2": {
-            "locationTarget": "Zanbamon"
-          }
-        }
+        "locationTarget": "Zanbamon"
       }
     }
   }

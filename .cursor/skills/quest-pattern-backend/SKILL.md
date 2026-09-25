@@ -90,16 +90,14 @@ or any file under `Quests/DriAgents/`.
   - `Id`: `driAgent{Rookie}` (camelCase)
   - 3 steps; step 3 `Requisites` with `{rookie}DDNA` + DNA address
   - `BitMasks` on one line when single mask; mirror Veemon/Kumamon shape
-- [ ] `AddressesRepository.cs`:
-  - Cached field `driAgent{Rookie}`
-  - Private `GetDriAgent{Rookie}()` → `Quests/DriAgents/{Name}Addresses.json`
-  - Append to `GetAllDriAgents()` list (UI/journal order)
-- [ ] **SKIP** `IAddressesRepository` (only `GetAllDriAgents()` is public)
+  - Dropping the file under `Quests/DriAgents/` is enough — `AddressesRepository`
+    auto-discovers `*.json` in that folder (no C# edit)
+- [ ] **SKIP** `AddressesRepository.cs` / `IAddressesRepository`
 - [ ] **SKIP** `QuestLoader` / `JournalLoader` / assemblers / differs / DTOs
 - [ ] Tests:
   - `QuestLoaderTests.LoadDriAgents_*` — `Count++`; mock new addresses; assert
-    Id, step values, requisite id/value
-  - `JournalLoaderTests` — `DriAgents.Count` and id order
+    Id, step values, requisite id/value (lookup by Id, not list index)
+  - `JournalLoaderTests` — `DriAgents.Count` and id presence
 - [ ] Retrofeed [backend-status.md](backend-status.md) — append new `driAgent*` id
 - [ ] Retrofeed `.cursor/skills/memory-compare/known-patterns.md` and
   `memory-regions.md` if this agent’s addresses were just confirmed
@@ -137,19 +135,25 @@ Copy and track progress. Skip steps marked **SKIP** when the condition is met.
 ### 2. AddressesRepository
 
 File: `Backend/Memory/Repositories/AddressesRepository.cs`
-Interface: `IAddressesRepository.cs`
+
+`GetAllSideQuests` / `GetAllLegendaryWeapons` / `GetAllDriAgents` **auto-discover**
+`*.json` under `Quests/SideQuests/`, `Quests/LegendaryWeapons/`, and
+`Quests/DriAgents/` (sorted by file name). Adding a tracker in an existing
+category = drop the JSON only.
 
 **2a. Tracker in an existing category**
 
-- [ ] Add cached field + private loader method (mirror `GetSideQuestFolderBag`)
-- [ ] Expose via `GetXxx()` or append to `GetAllSideQuests()` / `GetAllLegendaryWeapons()`
+- [ ] **SKIP** `AddressesRepository` — place `{Name}Addresses.json` in the
+  correct folder
 
 **2b. First tracker in a new category**
 
-- [ ] Add `GetAllLegendaryWeapons()` or `GetAllDriAgents()` returning `List<QuestAddresses>`
-- [ ] Register each JSON file in that list method
+- [ ] Add folder under `Quests/` and a `GetAll…()` that calls
+  `LoadAllQuestAddressesFromFolder` for that relative path
+- [ ] Expose on `IAddressesRepository` + wire `QuestLoader` / journal slot
+  (section 3)
 
-**Reference:** `GetAllSideQuests()` + three private loaders.
+**Reference:** `GetAllDriAgents()` → `Quests/DriAgents`.
 
 ---
 

@@ -3,10 +3,10 @@ namespace Tests.Memory.Readers;
 using Xunit;
 using Moq;
 using Backend.Memory.Readers;
-using Backend.Memory.Readers.Parties;
 using Backend.Memory.Addresses;
 using Backend.Memory.Addresses.Parties;
 using Backend.Memory.Resources.Parties;
+using Backend.Memory.Readers.Interfaces;
 
 public class PartyReaderTests
 {

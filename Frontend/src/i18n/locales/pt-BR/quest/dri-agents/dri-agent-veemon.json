@@ -9,36 +9,18 @@
     "steps": {
       "1": {
         "description": "Procure pelo DRI Bob em Ruínas Protocolo",
-        "locations": {
-          "0": {
-            "locationTarget": "Ruínas Protocolo"
-          },
-          "1": {
-            "locationTarget": "DRI Bob"
-          }
-        }
+        "locationTarget": "DRI Bob"
       },
       "2": {
         "description": "Vença Paildramon em batalha para receber o DDNA do Veemon",
-        "locations": {
-          "0": {
-            "locationTarget": "Paildramon"
-          }
-        }
+        "locationTarget": "Paildramon"
       },
       "3": {
         "description": "Entregue o DDNA do Veemon para DRI Bob",
-        "locations": {
-          "0": {
-            "locationTarget": "Ruínas Protocolo"
-          },
-          "1": {
-            "locationTarget": "DRI Bob"
-          }
-        },
         "requisites": {
           "veemonDDNA": "DDNA de Veemon"
-        }
+        },
+        "locationTarget": "DRI Bob"
       }
     }
   }

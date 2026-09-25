@@ -1,5 +1,5 @@
 export enum SeabedConstant {
-    topLeft = "topLeft",
-    top = "top",
-    topRight = "topRight"
+  topLeft = "topLeft",
+  top = "top",
+  topRight = "topRight",
 }

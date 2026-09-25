@@ -1,0 +1,22 @@
+{
+  "npc": {
+    "battle": {
+      "card": "Cards",
+      "digimon": "Digimon",
+      "cardPlaceholder": "Card battle",
+      "digimonPlaceholder": "Digimon battle",
+      "requirement": {
+        "missingCharisma": "Insufficient charisma or out of range",
+        "missingAsukaTrophy": "Missing Asuka Trophy",
+        "missingSunTrophy": "Missing Sun Trophy",
+        "missingCharismaAndAsukaTrophy": "Insufficient charisma or out of range; Missing Asuka Trophy",
+        "missingCharismaAndSunTrophy": "Insufficient charisma or out of range; Missing Sun Trophy",
+        "unavailableAfterAsukaTrophy": "Unavailable after Asuka Trophy",
+        "unavailableAfterSunTrophy": "Unavailable after Sun Trophy",
+        "available": "Battle available",
+        "alreadyWon": "You already won this battle"
+      }
+    },
+    "folderBagRequirementHint": "* Owning the Folder Bag is a requirement for battles against tamers."
+  }
+}

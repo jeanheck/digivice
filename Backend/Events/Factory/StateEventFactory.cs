@@ -19,10 +19,15 @@ public static class StateEventFactory
             return [new Event(EventType.InitialState, StateConverter.ToDTO(newState))];
         }
 
-        var events = new List<Event>();
+        List<Event> events = [];
 
         events.AddRange(PlayerEventFactory.Create(previousState, newState));
+        events.AddRange(ImportantItemsEventFactory.Create(previousState, newState));
         events.AddRange(PartyEventFactory.Create(previousState, newState));
+        events.AddRange(DigimonBattleEventFactory.Create(previousState, newState));
+        events.AddRange(CardBattleEventFactory.Create(previousState, newState));
+        events.AddRange(AuctionsEventFactory.Create(previousState, newState));
+        events.AddRange(NpcsEventFactory.Create(previousState, newState));
         events.AddRange(JournalEventFactory.Create(previousState, newState));
 
         return events;

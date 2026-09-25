@@ -13,10 +13,20 @@ public class DigimonConverterTests
         {
             Level = 42,
             TP = 20,
-            BlastGauge = 850,
+            Blast = 850,
             Experience = 123456,
             ActiveDigievolutionId = 5,
-            Vitals = new Vitals { CurrentHP = 101, MaxHP = 202, CurrentMP = 33, MaxMP = 44 },
+            HP = new Vital { Current = 101, Max = 202 },
+            MP = new Vital { Current = 33, Max = 44 },
+            InBattle = new InBattle
+            {
+                Condition = 0x04,
+                Strength = 252,
+                Defense = 185,
+                Speed = 84,
+                HP = new Vital { Current = 90, Max = 202 },
+                MP = new Vital { Current = 20, Max = 44 }
+            },
             Attributes = new Attributes { Strength = 1, Defense = 2, Spirit = 3, Wisdom = 4, Speed = 5, Charisma = 6 },
             Resistances = new Resistances { Fire = 7, Water = 8, Ice = 9, Wind = 10, Thunder = 11, Machine = 12, Dark = 13 },
             Equipments = new Equipments { Head = 14, Body = 15, Right = 16, Left = 17, Accessory1 = 18, Accessory2 = 19 },
@@ -40,13 +50,21 @@ public class DigimonConverterTests
 
         Assert.Equal(42, dto.Level.Value);
         Assert.Equal(20, dto.TP.Value);
-        Assert.Equal(850, dto.BlastGauge.Value);
+        Assert.Equal(850, dto.Blast.Value);
         Assert.Equal(123456, dto.Experience.Value);
         Assert.Equal(5, dto.ActiveDigievolutionId.Value);
-        Assert.Equal(101, dto.Vitals.Value!.CurrentHP.Value);
-        Assert.Equal(202, dto.Vitals.Value.MaxHP.Value);
-        Assert.Equal(33, dto.Vitals.Value.CurrentMP.Value);
-        Assert.Equal(44, dto.Vitals.Value.MaxMP.Value);
+        Assert.Equal(101, dto.HP.Value!.Current.Value);
+        Assert.Equal(202, dto.HP.Value.Max.Value);
+        Assert.Equal(33, dto.MP.Value!.Current.Value);
+        Assert.Equal(44, dto.MP.Value.Max.Value);
+        Assert.Equal(0x04, dto.InBattle.Value!.Condition.Value);
+        Assert.Equal(252, dto.InBattle.Value.Strength.Value);
+        Assert.Equal(185, dto.InBattle.Value.Defense.Value);
+        Assert.Equal(84, dto.InBattle.Value.Speed.Value);
+        Assert.Equal(90, dto.InBattle.Value.HP.Value!.Current.Value);
+        Assert.Equal(202, dto.InBattle.Value.HP.Value.Max.Value);
+        Assert.Equal(20, dto.InBattle.Value.MP.Value!.Current.Value);
+        Assert.Equal(44, dto.InBattle.Value.MP.Value.Max.Value);
         Assert.Equal(1, dto.Attributes.Value!.Strength.Value);
         Assert.Equal(4, dto.Attributes.Value.Wisdom.Value);
         Assert.Equal(13, dto.Resistances.Value!.Dark.Value);

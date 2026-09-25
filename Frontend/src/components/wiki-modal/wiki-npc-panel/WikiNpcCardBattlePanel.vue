@@ -1,0 +1,65 @@
+<script setup lang="ts">
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+import WikiNpcDeckCard from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDeckCard.vue";
+import WikiEnemyDrops from "@/components/wiki-modal/wiki-enemy-panel/WikiEnemyDrops.vue";
+import { WikiNpcCardBattlePresenter } from "@/presenters/map/wiki-modal/wiki-npc-card-battle.presenter";
+import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
+
+const { t } = useI18n();
+
+const props = defineProps<{
+  npcId: string;
+  battleId: string;
+}>();
+
+const emit = defineEmits<{
+  (e: "open-card", cardId: string): void;
+  (e: "open-drops", payload: { dropId: string; dropType: DropType }): void;
+}>();
+
+const battleViewModel = computed(() => {
+  return WikiNpcCardBattlePresenter.getBattleViewModel(props.npcId, props.battleId);
+});
+
+const deckTitle = computed(() => {
+  const battle = battleViewModel.value;
+  if (battle === null) {
+    return "";
+  }
+
+  return `(${t("digimon.lv")} ${battle.level}) ${t(battle.nameKey)}`;
+});
+
+const handleSelect = (cardId: string): void => {
+  emit("open-card", cardId);
+};
+</script>
+
+<template>
+  <div
+    v-if="battleViewModel !== null"
+    class="flex flex-col flex-1 min-h-0 overflow-hidden text-xs text-center gap-4 p-3"
+  >
+    <p class="shrink-0 text-blue-500 uppercase font-bold text-center">
+      {{ deckTitle }}
+    </p>
+
+    <div class="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scroll">
+      <div class="flex flex-wrap content-start justify-center gap-2 w-full">
+        <WikiNpcDeckCard
+          v-for="card in battleViewModel.cards"
+          :key="card.cardId"
+          :card="card"
+          @select="handleSelect"
+        />
+      </div>
+    </div>
+
+    <WikiEnemyDrops
+      class="h-auto! max-h-[20%] shrink-0"
+      :drops="battleViewModel.drops"
+      @open-drops="emit('open-drops', $event)"
+    />
+  </div>
+</template>

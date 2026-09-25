@@ -1,0 +1,885 @@
+{
+  "genji": {
+    "locationId": "0200",
+    "cardBattles": {
+      "first": {
+        "id": 1,
+        "charismaRequired": {
+          "min": 60,
+          "max": 209
+        },
+        "deckId": "bugBugFolder1",
+        "boosterId": 521
+      },
+      "second": {
+        "id": 2,
+        "charismaRequired": {
+          "min": 378
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "bugBugFolder2",
+        "boosterId": 521
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "party": [
+          {
+            "enemyId": 51,
+            "groupId": 200
+          }
+        ],
+        "exp": 4,
+        "dvexp": 0,
+        "bit": 50
+      },
+      "second": {
+        "charismaRequired": {
+          "min": 210
+        },
+        "party": [
+          {
+            "enemyId": 51,
+            "groupId": 272
+          },
+          {
+            "enemyId": 395,
+            "groupId": 272
+          }
+        ],
+        "exp": 63,
+        "dvexp": 6,
+        "bit": 115
+      }
+    },
+    "imageName": "Genji"
+  },
+  "natsumi": {
+    "locationId": "021D",
+    "cardBattles": {
+      "first": {
+        "id": 11,
+        "charismaRequired": {
+          "min": 60,
+          "max": 209
+        },
+        "deckId": "flyingFolder1",
+        "boosterId": 522
+      },
+      "second": {
+        "id": 12,
+        "charismaRequired": {
+          "min": 378
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "flyingFolder2",
+        "boosterId": 522
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 210
+        },
+        "party": [
+          {
+            "enemyId": 4,
+            "groupId": 201
+          },
+          {
+            "enemyId": 25,
+            "groupId": 201
+          },
+          {
+            "enemyId": 198,
+            "groupId": 201
+          }
+        ],
+        "exp": 65,
+        "dvexp": 4,
+        "bit": 145
+      }
+    },
+    "imageName": "Natsumi"
+  },
+  "nacky": {
+    "locationId": "0211",
+    "cardBattles": {
+      "first": {
+        "id": 3,
+        "charismaRequired": {
+          "min": 60,
+          "max": 377
+        },
+        "deckId": "coolDigimonFolder1",
+        "boosterId": 521
+      },
+      "second": {
+        "id": 4,
+        "charismaRequired": {
+          "min": 378
+        },
+        "deckId": "coolDigimonFolder2",
+        "boosterId": 521
+      }
+    },
+    "imageName": "Nacky"
+  },
+  "wong": {
+    "locationId": "0211",
+    "cardBattles": {
+      "first": {
+        "id": 5,
+        "charismaRequired": {
+          "min": 60,
+          "max": 377
+        },
+        "deckId": "mindFolder1",
+        "boosterId": 522
+      },
+      "second": {
+        "id": 6,
+        "charismaRequired": {
+          "min": 378
+        },
+        "deckId": "mindFolder2",
+        "boosterId": 522
+      }
+    },
+    "imageName": "Wong"
+  },
+  "steve": {
+    "locationId": "0211",
+    "cardBattles": {
+      "first": {
+        "id": 7,
+        "charismaRequired": {
+          "min": 60,
+          "max": 377
+        },
+        "deckId": "protectorFolder1",
+        "boosterId": 521
+      },
+      "second": {
+        "id": 8,
+        "charismaRequired": {
+          "min": 378
+        },
+        "deckId": "protectorFolder2",
+        "boosterId": 521
+      }
+    },
+    "imageName": "Steve"
+  },
+  "gloria": {
+    "locationId": "0211",
+    "cardBattles": {
+      "first": {
+        "id": 9,
+        "charismaRequired": {
+          "min": 60,
+          "max": 377
+        },
+        "deckId": "amazingPatamonFolder1",
+        "boosterId": 522
+      },
+      "second": {
+        "id": 10,
+        "charismaRequired": {
+          "min": 378
+        },
+        "deckId": "amazingPatamonFolder2",
+        "boosterId": 522
+      }
+    },
+    "imageName": "Gloria"
+  },
+  "mitch": {
+    "locationId": "021E",
+    "cardBattles": {
+      "first": {
+        "id": 14,
+        "charismaRequired": {
+          "min": 1218
+        },
+        "deckId": "motherNatureFolder1",
+        "boosterId": 524
+      },
+      "second": {
+        "id": 13,
+        "charismaRequired": {
+          "min": 2277
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "motherNatureFolder2",
+        "boosterId": 524
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 67,
+            "groupId": 202
+          },
+          {
+            "enemyId": 51,
+            "groupId": 202
+          },
+          {
+            "enemyId": 137,
+            "groupId": 202
+          }
+        ],
+        "exp": 661,
+        "dvexp": 41,
+        "bit": 1250
+      }
+    },
+    "imageName": "Mitch"
+  },
+  "catherine": {
+    "locationId": "0221",
+    "cardBattles": {
+      "first": {
+        "id": 15,
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "verminFolder1",
+        "boosterId": 523
+      },
+      "second": {
+        "id": 16,
+        "charismaRequired": {
+          "min": 492
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "verminFolder2",
+        "boosterId": 523
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 32,
+            "groupId": 203
+          },
+          {
+            "enemyId": 32,
+            "groupId": 203
+          },
+          {
+            "enemyId": 166,
+            "groupId": 203
+          }
+        ],
+        "exp": 65,
+        "dvexp": 4,
+        "bit": 145
+      }
+    },
+    "imageName": "Catherine"
+  },
+  "lucia": {
+    "locationId": "0222",
+    "cardBattles": {
+      "first": {
+        "id": 17,
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "ogreOgreFolder1",
+        "boosterId": 523
+      },
+      "second": {
+        "id": 18,
+        "charismaRequired": {
+          "min": 492
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "ogreOgreFolder2",
+        "boosterId": 523
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 32,
+            "groupId": 204
+          },
+          {
+            "enemyId": 32,
+            "groupId": 204
+          }
+        ],
+        "exp": 79,
+        "dvexp": 7,
+        "bit": 155
+      }
+    },
+    "imageName": "Lucia"
+  },
+  "robert": {
+    "locationId": "0222",
+    "cardBattles": {
+      "first": {
+        "id": 19,
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "waterAnimalFolder1",
+        "boosterId": 524
+      },
+      "second": {
+        "id": 20,
+        "charismaRequired": {
+          "min": 492
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "waterAnimalFolder2",
+        "boosterId": 524
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 197,
+            "groupId": 205
+          },
+          {
+            "enemyId": 132,
+            "groupId": 205
+          },
+          {
+            "enemyId": 110,
+            "groupId": 205
+          }
+        ],
+        "exp": 103,
+        "dvexp": 6,
+        "bit": 200
+      }
+    },
+    "imageName": "Robert"
+  },
+  "akiba": {
+    "locationId": "0229",
+    "cardBattles": {
+      "first": {
+        "id": 33,
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "noviceProgramFolder1",
+        "boosterId": 523
+      },
+      "second": {
+        "id": 34,
+        "charismaRequired": {
+          "min": 492
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "noviceProgramFolder2",
+        "boosterId": 523
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 206,
+            "groupId": 206
+          }
+        ],
+        "exp": 45,
+        "dvexp": 9,
+        "bit": 180
+      }
+    },
+    "imageName": "Akiba"
+  },
+  "chris": {
+    "locationId": "022E",
+    "cardBattles": {
+      "first": {
+        "id": 39,
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "bugCatcherFolder1",
+        "boosterId": 523
+      },
+      "second": {
+        "id": 40,
+        "charismaRequired": {
+          "min": 492
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "bugCatcherFolder2",
+        "boosterId": 523
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 51,
+            "groupId": 209
+          },
+          {
+            "enemyId": 137,
+            "groupId": 209
+          },
+          {
+            "enemyId": 396,
+            "groupId": 209
+          }
+        ],
+        "exp": 109,
+        "dvexp": 7,
+        "bit": 210
+      }
+    },
+    "imageName": "Chris"
+  },
+  "bob": {
+    "locationId": "022A",
+    "cardBattles": {
+      "first": {
+        "id": 35,
+        "charismaRequired": {
+          "min": 1218
+        },
+        "deckId": "veteranTamerFolder1",
+        "boosterId": 525
+      },
+      "second": {
+        "id": 36,
+        "charismaRequired": {
+          "min": 2277
+        },
+        "deckId": "veteranTamerFolder2",
+        "boosterId": 525
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 49,
+            "groupId": 207
+          },
+          {
+            "enemyId": 50,
+            "groupId": 207
+          },
+          {
+            "enemyId": 7,
+            "groupId": 207
+          }
+        ],
+        "exp": 737,
+        "dvexp": 43,
+        "bit": 1475
+      }
+    },
+    "imageName": "Bob"
+  },
+  "tomomi": {
+    "locationId": "022C",
+    "cardBattles": {
+      "first": {
+        "id": 37,
+        "charismaRequired": {
+          "min": 150,
+          "max": 284
+        },
+        "deckId": "vegetarianFolder1",
+        "boosterId": 524
+      },
+      "second": {
+        "id": 38,
+        "charismaRequired": {
+          "min": 492
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "vegetarianFolder2",
+        "boosterId": 524
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 285
+        },
+        "party": [
+          {
+            "enemyId": 4,
+            "groupId": 208
+          },
+          {
+            "enemyId": 198,
+            "groupId": 208
+          },
+          {
+            "enemyId": 77,
+            "groupId": 208
+          }
+        ],
+        "exp": 100,
+        "dvexp": 6,
+        "bit": 225
+      }
+    },
+    "imageName": "Tomomi"
+  },
+  "andy": {
+    "locationId": "0232",
+    "cardBattles": {
+      "first": {
+        "id": 41,
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "dinosaurFolder1",
+        "boosterId": 524
+      },
+      "second": {
+        "id": 42,
+        "charismaRequired": {
+          "min": 630
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "dinosaurFolder2",
+        "boosterId": 524
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 203,
+            "groupId": 210
+          },
+          {
+            "enemyId": 136,
+            "groupId": 210
+          }
+        ],
+        "exp": 101,
+        "dvexp": 10,
+        "bit": 190
+      }
+    },
+    "imageName": "Andy"
+  },
+  "george": {
+    "locationId": "0233",
+    "cardBattles": {
+      "first": {
+        "id": 43,
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "brownFolder1",
+        "boosterId": 525
+      },
+      "second": {
+        "id": 44,
+        "charismaRequired": {
+          "min": 630
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "brownFolder2",
+        "boosterId": 525
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 28,
+            "groupId": 211
+          },
+          {
+            "enemyId": 176,
+            "groupId": 211
+          }
+        ],
+        "exp": 105,
+        "dvexp": 10,
+        "bit": 210
+      }
+    },
+    "imageName": "George"
+  },
+  "meiLin": {
+    "locationId": "0234",
+    "cardBattles": {
+      "first": {
+        "id": 45,
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "occultFolder1",
+        "boosterId": 525
+      },
+      "second": {
+        "id": 46,
+        "charismaRequired": {
+          "min": 630
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "occultFolder2",
+        "boosterId": 525
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 217,
+            "groupId": 212
+          },
+          {
+            "enemyId": 37,
+            "groupId": 212
+          }
+        ],
+        "exp": 100,
+        "dvexp": 10,
+        "bit": 200
+      }
+    },
+    "imageName": "Mei Lin"
+  },
+  "alice": {
+    "locationId": "023E",
+    "cardBattles": {
+      "first": {
+        "id": 51,
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "poisonFolder1",
+        "boosterId": 527
+      },
+      "second": {
+        "id": 52,
+        "charismaRequired": {
+          "min": 630
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "poisonFolder2",
+        "boosterId": 527
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 32,
+            "groupId": 215
+          },
+          {
+            "enemyId": 166,
+            "groupId": 215
+          },
+          {
+            "enemyId": 166,
+            "groupId": 215
+          }
+        ],
+        "exp": 158,
+        "dvexp": 9,
+        "bit": 290
+      }
+    },
+    "imageName": "Alice"
+  },
+  "gordon": {
+    "locationId": "023D",
+    "cardBattles": {
+      "first": {
+        "id": 49,
+        "charismaRequired": {
+          "min": 210,
+          "max": 377
+        },
+        "deckId": "blueFolder1",
+        "boosterId": 526
+      },
+      "second": {
+        "id": 50,
+        "charismaRequired": {
+          "min": 630
+        },
+        "trophyRequired": "asukaTrophy",
+        "deckId": "blueFolder2",
+        "boosterId": 526
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 378
+        },
+        "party": [
+          {
+            "enemyId": 197,
+            "groupId": 214
+          },
+          {
+            "enemyId": 132,
+            "groupId": 214
+          },
+          {
+            "enemyId": 110,
+            "groupId": 214
+          }
+        ],
+        "exp": 269,
+        "dvexp": 17,
+        "bit": 530
+      }
+    },
+    "imageName": "Gordon"
+  },
+  "jessica": {
+    "locationId": "0237",
+    "cardBattles": {
+      "first": {
+        "id": 47,
+        "charismaRequired": {
+          "min": 1218
+        },
+        "deckId": "burningFolder1",
+        "boosterId": 526
+      },
+      "second": {
+        "id": 48,
+        "charismaRequired": {
+          "min": 2277
+        },
+        "deckId": "burningFolder2",
+        "boosterId": 526
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 10,
+            "groupId": 213
+          },
+          {
+            "enemyId": 50,
+            "groupId": 213
+          },
+          {
+            "enemyId": 35,
+            "groupId": 213
+          }
+        ],
+        "exp": 700,
+        "dvexp": 40,
+        "bit": 1305
+      }
+    },
+    "imageName": "Jessica"
+  },
+  "nakano": {
+    "locationId": "025B",
+    "cardBattles": {
+      "first": {
+        "id": 53,
+        "charismaRequired": {
+          "min": 1218
+        },
+        "deckId": "programManiacFolder1",
+        "boosterId": 529
+      },
+      "second": {
+        "id": 54,
+        "charismaRequired": {
+          "min": 2277
+        },
+        "deckId": "programManiacFolder2",
+        "boosterId": 529
+      }
+    },
+    "digimonBattles": {
+      "first": {
+        "charismaRequired": {
+          "min": 1
+        },
+        "trophyRequired": "asukaTrophy",
+        "party": [
+          {
+            "enemyId": 206,
+            "groupId": 216
+          }
+        ],
+        "exp": 205,
+        "dvexp": 41,
+        "bit": 820
+      }
+    },
+    "imageName": "Nakano"
+  }
+}

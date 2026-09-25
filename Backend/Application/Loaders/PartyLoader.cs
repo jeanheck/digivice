@@ -1,14 +1,14 @@
-using Backend.Application.Loaders.Parties;
-using Backend.Memory.Readers;
+using Backend.Application.Loaders.Interfaces;
 using Backend.Memory.Repositories;
 using Backend.Memory.Resources;
+using Backend.Memory.Readers.Interfaces;
 
 namespace Backend.Application.Loaders
 {
     public class PartyLoader(
         IAddressesRepository addressesRepository,
         IPartyReader partyReader,
-        DigimonLoader digimonLoader) : IPartyLoader
+        IDigimonLoader digimonLoader) : IPartyLoader
     {
         public PartyResource Load()
         {
@@ -19,7 +19,7 @@ namespace Backend.Application.Loaders
             {
                 if (slotResource.DigimonId is not null && slotResource.DigimonId != partyAddresses.EmptySlotId)
                 {
-                    var digimonResource = digimonLoader.Load(slotResource.DigimonId.Value);
+                    var digimonResource = digimonLoader.Load(slotResource.DigimonId.Value, slotResource.Index - 1);
                     if (digimonResource is null)
                     {
                         slotResource.DigimonId = null;

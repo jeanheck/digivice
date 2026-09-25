@@ -14,12 +14,13 @@ namespace Backend.Application
         IEventDispatcherService eventDispatcherService,
         IGameStateStore gameStateStore,
         DebugConsoleRenderer debugConsoleRenderer,
-        IConfiguration configuration
+        IConfiguration configuration,
+        ILogger<GameLoopService> logger
     ) : BackgroundService
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            Serilog.Log.Information("Starting GameLoopService...");
+            logger.LogInformation("Starting GameLoopService...");
 
             var pollingIntervalMs = configuration.GetValue<int?>("GameLoop:PollingIntervalMs") ?? 1000;
             var isDebuggingEnabled = configuration.GetValue<bool>("Features:Debugging");
@@ -84,7 +85,7 @@ namespace Backend.Application
                     }
                     catch (Exception ex)
                     {
-                        Serilog.Log.Error(ex, "Error processing game state in GameLoopService.");
+                        logger.LogError(ex, "Error processing game state in GameLoopService.");
                         duckstationConnector.ClearSession();
                         eventDispatcherService.DispatchEvents(
                             ConnectionEventFactory.CreateError(
@@ -111,7 +112,7 @@ namespace Backend.Application
             finally
             {
                 duckstationConnector.ClearSession();
-                Serilog.Log.Information("GameLoopService shutting down gracefully.");
+                logger.LogInformation("GameLoopService shutting down gracefully.");
             }
         }
     }

@@ -6,9 +6,10 @@ Write-Host "Building Digivice Release (V1)" -ForegroundColor Cyan
 $RootPath = "c:\Projetos\digivice"
 $BackendPath = Join-Path $RootPath "Backend"
 $FrontendPath = Join-Path $RootPath "Frontend"
+$TauriPath = Join-Path $RootPath "Tauri"
 $OutTempPath = Join-Path $RootPath "out_temp"
-$TauriBinariesPath = Join-Path $FrontendPath "src-tauri\binaries"
-$CopySidecarRuntimeScript = Join-Path $FrontendPath "scripts\copy-sidecar-runtime.ps1"
+$TauriBinariesPath = Join-Path $TauriPath "binaries"
+$CopySidecarRuntimeScript = Join-Path $TauriPath "scripts\copy-sidecar-runtime.ps1"
 
 function Copy-SidecarRuntimeAssets {
     param(
@@ -29,7 +30,12 @@ function Copy-SidecarRuntimeAssets {
 
     New-Item -ItemType Directory -Force -Path $DestinationDirectory | Out-Null
     Copy-Item -Path $appsettingsSource -Destination (Join-Path $DestinationDirectory "appsettings.json") -Force
-    Copy-Item -Path $memorySource -Destination (Join-Path $DestinationDirectory "Memory") -Recurse -Force
+
+    $memoryDest = Join-Path $DestinationDirectory "Memory"
+    if (Test-Path $memoryDest) {
+        Remove-Item -Recurse -Force $memoryDest
+    }
+    Copy-Item -Path $memorySource -Destination $memoryDest -Recurse -Force
 }
 
 # 2. Compilar o Backend
@@ -79,6 +85,8 @@ Write-Host "`n[4/4] Building Tauri App (Frontend + Sidecar)..." -ForegroundColor
 Set-Location $FrontendPath
 # Instalamos o cli se precisar
 npm install
+$env:TAURI_APP_PATH = $TauriPath
+$env:TAURI_FRONTEND_PATH = $FrontendPath
 # beforeBundleCommand no tauri.conf.json copia appsettings + Memory para target/release antes do bundle
 npx tauri build
 
@@ -87,5 +95,5 @@ if (Test-Path $CopySidecarRuntimeScript) {
     & $CopySidecarRuntimeScript
 }
 
-Write-Host "`nBuild Completed! Check Frontend/src-tauri/target/release/" -ForegroundColor Green
+Write-Host "`nBuild Completed! Check Tauri/target/release/" -ForegroundColor Green
 Set-Location $RootPath

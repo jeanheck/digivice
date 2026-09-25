@@ -21,7 +21,8 @@ public class PartyConverterTests
                     Digimon = new Digimon
                     {
                         Level = 33,
-                        Vitals = new Vitals(),
+                        HP = new Vital(),
+                        MP = new Vital(),
                         Attributes = new Attributes(),
                         Resistances = new Resistances(),
                         Equipments = new Equipments(),
