@@ -86,7 +86,9 @@ class SignalRService {
   }
 
   private registerInternalStatusEvents() {
-    if (!this.connection) return;
+    if (!this.connection) {
+      return;
+    }
 
     this.connection.onreconnecting(() => {
       signalRLogger.warn("Reconnecting...");
@@ -112,7 +114,9 @@ class SignalRService {
   }
 
   private registerBackendEvents() {
-    if (!this.connection) return;
+    if (!this.connection) {
+      return;
+    }
 
     // Filter out internal client-only events from remote hub registrations
     const backendEventNames = Array.from(this.handlers.keys()).filter(

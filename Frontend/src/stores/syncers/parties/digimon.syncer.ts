@@ -47,26 +47,25 @@ export class DigimonSyncer {
     if (newDigimonDto.resistances) {
       ResistancesSyncer.sync(previousDigimon.resistances, newDigimonDto.resistances);
     }
-    if (newDigimonDto.digievolutions && newDigimonDto.digievolutions.length > 0) {
+    if (newDigimonDto.digievolutions) {
       newDigimonDto.digievolutions.forEach((newDigievolutionSlotDto) => {
-        if (newDigievolutionSlotDto) {
-          const previousDigievolutionSlot = previousDigimon.digievolutions.find(
-            (s) => s.index === newDigievolutionSlotDto.index,
-          );
-          if (previousDigievolutionSlot) {
-            DigievolutionSlotSyncer.sync(previousDigievolutionSlot, newDigievolutionSlotDto);
-          }
+        const previousDigievolutionSlot = previousDigimon.digievolutions.find(
+          (digievolutionSlot) => digievolutionSlot.index === newDigievolutionSlotDto.index,
+        );
+        if (previousDigievolutionSlot) {
+          DigievolutionSlotSyncer.sync(previousDigievolutionSlot, newDigievolutionSlotDto);
         }
       });
     }
-    if (newDigimonDto.storedDigievolutions && newDigimonDto.storedDigievolutions.length > 0) {
+    if (newDigimonDto.storedDigievolutions) {
       newDigimonDto.storedDigievolutions.forEach((newStoredDigievolutionDto) => {
-        if (!newStoredDigievolutionDto || newStoredDigievolutionDto.digievolutionId === undefined) {
+        if (newStoredDigievolutionDto.digievolutionId === undefined) {
           return;
         }
 
         const previousStoredDigievolution = previousDigimon.storedDigievolutions.find(
-          (stored) => stored.digievolutionId === newStoredDigievolutionDto.digievolutionId,
+          (storedDigievolution) =>
+            storedDigievolution.digievolutionId === newStoredDigievolutionDto.digievolutionId,
         );
 
         if (previousStoredDigievolution) {

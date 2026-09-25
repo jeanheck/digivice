@@ -39,7 +39,7 @@ import type { AuctionsDTO } from "./dto/auctions.dto";
 import type { NpcsDTO } from "./dto/npcs.dto";
 import type { JournalDTO } from "./dto/journal.dto";
 
-// Mapeamento Estrito dos Eventos do SignalR e do Cliente
+// Strict mapping of SignalR and client events
 export interface EventsMap {
   HealthChanged: HealthDTO;
   InitialState: StateDTO;

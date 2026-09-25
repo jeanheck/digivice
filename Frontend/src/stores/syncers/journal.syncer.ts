@@ -8,10 +8,10 @@ export class JournalSyncer {
       QuestSyncer.sync(previousJournal.mainQuest, newJournalDto.mainQuest);
     }
 
-    if (newJournalDto.sideQuests && newJournalDto.sideQuests.length > 0) {
+    if (newJournalDto.sideQuests) {
       newJournalDto.sideQuests.forEach((newSideQuestDto) => {
         const previousSideQuest = previousJournal.sideQuests.find(
-          (q) => q.id === newSideQuestDto.id,
+          (quest) => quest.id === newSideQuestDto.id,
         );
 
         if (previousSideQuest) {
@@ -20,7 +20,7 @@ export class JournalSyncer {
       });
     }
 
-    if (newJournalDto.legendaryWeapons && newJournalDto.legendaryWeapons.length > 0) {
+    if (newJournalDto.legendaryWeapons) {
       newJournalDto.legendaryWeapons.forEach((newLegendaryWeaponDto) => {
         const previousLegendaryWeapon = previousJournal.legendaryWeapons.find((quest) => {
           return quest.id === newLegendaryWeaponDto.id;
@@ -32,7 +32,7 @@ export class JournalSyncer {
       });
     }
 
-    if (newJournalDto.driAgents && newJournalDto.driAgents.length > 0) {
+    if (newJournalDto.driAgents) {
       newJournalDto.driAgents.forEach((newDriAgentDto) => {
         const previousDriAgent = previousJournal.driAgents.find((quest) => {
           return quest.id === newDriAgentDto.id;
@@ -44,7 +44,7 @@ export class JournalSyncer {
       });
     }
 
-    if (newJournalDto.duelIsland && newJournalDto.duelIsland.length > 0) {
+    if (newJournalDto.duelIsland) {
       newJournalDto.duelIsland.forEach((newDuelIslandQuestDto) => {
         const previousDuelIslandQuest = previousJournal.duelIsland.find((quest) => {
           return quest.id === newDuelIslandQuestDto.id;
