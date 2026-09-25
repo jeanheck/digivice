@@ -1,4 +1,5 @@
 import type { Digimon } from "@/models";
+import type { DeepRequired } from "@/events/dto/deep-required";
 import type { DigimonDTO } from "@/events/dto/parties/digimon.dto";
 import { VitalConverter } from "./digimons/vital.converter";
 import { InBattleConverter } from "./digimons/in-battle.converter";
@@ -9,27 +10,25 @@ import { DigievolutionSlotConverter } from "./digimons/digievolution-slot.conver
 import { StoredDigievolutionConverter } from "./digimons/stored-digievolution.converter";
 
 export class DigimonConverter {
-  public static convert(digimonDto: DigimonDTO): Digimon {
+  public static convert(digimonDto: DeepRequired<DigimonDTO>): Digimon {
     return {
-      level: digimonDto.level ?? 1,
-      tp: digimonDto.tp ?? 0,
-      blast: digimonDto.blast ?? 0,
-      experience: digimonDto.experience ?? 0,
-      activeDigievolutionId: digimonDto.activeDigievolutionId ?? null,
-      hp: VitalConverter.convert(digimonDto.hp ?? null),
-      mp: VitalConverter.convert(digimonDto.mp ?? null),
-      inBattle: InBattleConverter.convert(digimonDto.inBattle ?? null),
-      attributes: AttributesConverter.convert(digimonDto.attributes ?? null),
-      resistances: ResistancesConverter.convert(digimonDto.resistances ?? null),
-      equipments: EquipmentsConverter.convert(digimonDto.equipments ?? null),
-      digievolutions: digimonDto.digievolutions
-        ? digimonDto.digievolutions.map((slot) => DigievolutionSlotConverter.convert(slot))
-        : [],
-      storedDigievolutions: digimonDto.storedDigievolutions
-        ? digimonDto.storedDigievolutions.map((stored) =>
-            StoredDigievolutionConverter.convert(stored),
-          )
-        : [],
+      level: digimonDto.level,
+      tp: digimonDto.tp,
+      blast: digimonDto.blast,
+      experience: digimonDto.experience,
+      activeDigievolutionId: digimonDto.activeDigievolutionId,
+      hp: VitalConverter.convert(digimonDto.hp),
+      mp: VitalConverter.convert(digimonDto.mp),
+      inBattle: InBattleConverter.convert(digimonDto.inBattle),
+      attributes: AttributesConverter.convert(digimonDto.attributes),
+      resistances: ResistancesConverter.convert(digimonDto.resistances),
+      equipments: EquipmentsConverter.convert(digimonDto.equipments),
+      digievolutions: digimonDto.digievolutions.map((digievolutionSlotDto) =>
+        DigievolutionSlotConverter.convert(digievolutionSlotDto),
+      ),
+      storedDigievolutions: digimonDto.storedDigievolutions.map((storedDigievolutionDto) =>
+        StoredDigievolutionConverter.convert(storedDigievolutionDto),
+      ),
     };
   }
 }

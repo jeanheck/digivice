@@ -107,7 +107,7 @@ if (newPlayerDto.previousMapId !== undefined) {
 
 ### 3. Events converter
 
-- [ ] Map in `convert` from `Required<DTO>` → model (InitialState path)
+- [ ] Map in `convert` from `DeepRequired<DTO>` → model (InitialState path) — direct pass-through, no fallback (`?? 0`, `=== true`)
 
 ### 4. Syncer
 

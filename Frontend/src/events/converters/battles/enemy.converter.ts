@@ -1,17 +1,18 @@
+import type { DeepRequired } from "@/events/dto/deep-required";
 import type { EnemyDTO } from "@/events/dto/battles/enemy.dto";
 import type { Enemy } from "@/models/battle/enemy";
 import { VitalConverter } from "@/events/converters/parties/digimons/vital.converter";
 
 export class EnemyConverter {
-  public static convert(newEnemyDto: EnemyDTO): Enemy {
+  public static convert(enemyDto: DeepRequired<EnemyDTO>): Enemy {
     return {
-      id: newEnemyDto.id ?? 0,
-      groupId: newEnemyDto.groupId ?? 0,
-      condition: newEnemyDto.condition ?? 0,
-      strength: newEnemyDto.strength ?? 0,
-      defense: newEnemyDto.defense ?? 0,
-      speed: newEnemyDto.speed ?? 0,
-      hp: VitalConverter.convert(newEnemyDto.hp ?? null),
+      id: enemyDto.id,
+      groupId: enemyDto.groupId,
+      condition: enemyDto.condition,
+      strength: enemyDto.strength,
+      defense: enemyDto.defense,
+      speed: enemyDto.speed,
+      hp: VitalConverter.convert(enemyDto.hp),
     };
   }
 }

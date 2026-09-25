@@ -27,7 +27,7 @@ Paths under `Frontend/src/`. Property name = backend JSON camelCase (`{entity}`)
 ### 1. DTO + event map
 
 - [ ] `events/dto/{entity}.dto.ts` — `export interface {Entity}DTO` with **optional** props (`field?: type`); nested DTOs in a kebab subfolder
-- [ ] `events/dto/state.dto.ts` — `{entity}: Required<{Entity}DTO> | null;`
+- [ ] `events/dto/state.dto.ts` — `{entity}: DeepRequired<{Entity}DTO> | null;`
 - [ ] `events/events.map.ts` — `export type { {Entity}DTO }`, import, and `{Entity}Changed: {Entity}DTO;` in `EventsMap`
 
 ### 2. Model
@@ -38,7 +38,7 @@ Paths under `Frontend/src/`. Property name = backend JSON camelCase (`{entity}`)
 
 ### 3. Converter + syncer
 
-- [ ] `events/converters/{entity}.converter.ts` — `static convert(dto: Required<{Entity}DTO>): {Entity}`
+- [ ] `events/converters/{entity}.converter.ts` — `static convert(dto: DeepRequired<{Entity}DTO>): {Entity}`; direct pass-through, no fallback (`?? 0`, `=== true`)
 - [ ] `stores/syncers/{entity}.syncer.ts` — `static sync(previous, dto)`, one `if (dto.x !== undefined) { previous.x = dto.x; }` per prop (golden rule); nested objects delegate to child syncers
 
 ### 4. Store + handler

@@ -1,32 +1,16 @@
+import type { DeepRequired } from "@/events/dto/deep-required";
 import type { JournalDTO } from "@/events/dto/journal.dto";
-import type { QuestDTO } from "@/events/dto/journals/quest.dto";
 import type { Journal } from "@/models";
 import { QuestConverter } from "./journals/quest.converter";
 
 export class JournalConverter {
-  public static convert(journalDto: Required<JournalDTO>): Journal {
+  public static convert(journalDto: DeepRequired<JournalDTO>): Journal {
     return {
-      mainQuest: journalDto.mainQuest
-        ? QuestConverter.convert(journalDto.mainQuest as Required<QuestDTO>)
-        : null,
-      sideQuests: journalDto.sideQuests
-        ? journalDto.sideQuests.map((q) => QuestConverter.convert(q as Required<QuestDTO>))
-        : [],
-      legendaryWeapons: journalDto.legendaryWeapons
-        ? journalDto.legendaryWeapons.map((questDto) =>
-            QuestConverter.convert(questDto as Required<QuestDTO>),
-          )
-        : [],
-      driAgents: journalDto.driAgents
-        ? journalDto.driAgents.map((questDto) =>
-            QuestConverter.convert(questDto as Required<QuestDTO>),
-          )
-        : [],
-      duelIsland: journalDto.duelIsland
-        ? journalDto.duelIsland.map((questDto) =>
-            QuestConverter.convert(questDto as Required<QuestDTO>),
-          )
-        : [],
+      mainQuest: journalDto.mainQuest ? QuestConverter.convert(journalDto.mainQuest) : null,
+      sideQuests: journalDto.sideQuests.map((questDto) => QuestConverter.convert(questDto)),
+      legendaryWeapons: journalDto.legendaryWeapons.map((questDto) => QuestConverter.convert(questDto)),
+      driAgents: journalDto.driAgents.map((questDto) => QuestConverter.convert(questDto)),
+      duelIsland: journalDto.duelIsland.map((questDto) => QuestConverter.convert(questDto)),
     };
   }
 }

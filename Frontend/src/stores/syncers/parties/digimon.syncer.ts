@@ -1,5 +1,7 @@
 import type { Digimon } from "@/models";
+import type { DeepRequired } from "@/events/dto/deep-required";
 import type { DigimonDTO } from "@/events/dto/parties/digimon.dto";
+import type { StoredDigievolutionDTO } from "@/events/dto/parties/digimons/stored-digievolution.dto";
 import { VitalSyncer } from "./digimons/vital.syncer";
 import { InBattleSyncer } from "./digimons/in-battle.syncer";
 
@@ -72,11 +74,12 @@ export class DigimonSyncer {
           return;
         }
 
-        if (newStoredDigievolutionDto.level !== undefined) {
-          previousDigimon.storedDigievolutions.push(
-            StoredDigievolutionConverter.convert(newStoredDigievolutionDto),
-          );
-        }
+        // Backend sends the full entry when a digievolution is stored for the first time.
+        previousDigimon.storedDigievolutions.push(
+          StoredDigievolutionConverter.convert(
+            newStoredDigievolutionDto as DeepRequired<StoredDigievolutionDTO>,
+          ),
+        );
       });
     }
   }

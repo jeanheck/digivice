@@ -1,4 +1,6 @@
 import type { DigimonSlot } from "@/models";
+import type { DeepRequired } from "@/events/dto/deep-required";
+import type { DigimonDTO } from "@/events/dto/parties/digimon.dto";
 import type { DigimonSlotDTO } from "@/events/dto/parties/digimon-slot.dto";
 import { DigimonConverter } from "@/events/converters/parties/digimon.converter";
 import { DigimonSyncer } from "./digimon.syncer";
@@ -15,15 +17,10 @@ export class DigimonSlotSyncer {
     }
 
     if (newId !== undefined && newDigimon !== undefined) {
-      if (!previousDigimonSlot.digimon) {
+      if (!previousDigimonSlot.digimon || newId !== previousDigimonSlot.digimonId) {
         previousDigimonSlot.digimonId = newId;
-        previousDigimonSlot.digimon = DigimonConverter.convert(newDigimon);
-        return;
-      }
-
-      if (newId !== previousDigimonSlot.digimonId) {
-        previousDigimonSlot.digimonId = newId;
-        previousDigimonSlot.digimon = DigimonConverter.convert(newDigimon);
+        // Backend sends the full Digimon when the slot was empty or the Digimon changed.
+        previousDigimonSlot.digimon = DigimonConverter.convert(newDigimon as DeepRequired<DigimonDTO>);
         return;
       }
 

@@ -1,10 +1,11 @@
+import type { DeepRequired } from "@/events/dto/deep-required";
 import type { NpcBattleDTO } from "@/events/dto/npcs/npc-battle.dto";
 import type { NpcDTO } from "@/events/dto/npcs/npc.dto";
 import type { NpcsDTO } from "@/events/dto/npcs.dto";
 import type { Npc, NpcBattle, Npcs } from "@/models";
 
 export class NpcsConverter {
-  public static convert(npcsDto: Required<NpcsDTO>): Npcs {
+  public static convert(npcsDto: DeepRequired<NpcsDTO>): Npcs {
     return {
       genji: this.convertNpc(npcsDto.genji),
       natsumi: this.convertNpc(npcsDto.natsumi),
@@ -32,18 +33,18 @@ export class NpcsConverter {
     };
   }
 
-  public static convertNpc(npcDto: NpcDTO | undefined): Npc {
+  public static convertNpc(npcDto: DeepRequired<NpcDTO>): Npc {
     return {
-      battles: (npcDto?.battles ?? []).map((battleDto) => {
+      battles: npcDto.battles.map((battleDto) => {
         return this.convertBattle(battleDto);
       }),
     };
   }
 
-  public static convertBattle(battleDto: NpcBattleDTO): NpcBattle {
+  public static convertBattle(battleDto: DeepRequired<NpcBattleDTO>): NpcBattle {
     return {
       id: battleDto.id,
-      won: battleDto.won === true,
+      won: battleDto.won,
     };
   }
 }

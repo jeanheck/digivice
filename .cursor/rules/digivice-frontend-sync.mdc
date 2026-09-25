@@ -14,7 +14,7 @@ alwaysApply: false
 |--------|-------|-----------|
 | DTO | `events/dto/` (subpastas kebab: `parties/`, `journals/quests/`, `battles/`, `npcs/`) | `PlayerDTO` em `player.dto.ts`; propriedades opcionais (`field?: type`); exportado em `events/events.map.ts` |
 | Event map | `events/events.map.ts` | `EventsMap` tipa cada evento SignalR → DTO |
-| Converter | `events/converters/` | `Required<DTO>` → Model, estático `convert` |
+| Converter | `events/converters/` | `DeepRequired<DTO>` (`events/dto/deep-required.ts`) → Model, estático `convert`; repasse direto, sem `??` nem `=== true` |
 | Model | `models/` (subpastas `party/`, `journal/`, `battle/`) | Propriedades obrigatórias; reexport em `models/index.ts` |
 | Syncer | `stores/syncers/` | Estático `sync(previous, dto)`; muta o model existente |
 | Store | `stores/use-game-store.ts` | Uma action `sync{Entity}` por evento; `setInitialState` chama todos os converters |
@@ -24,6 +24,8 @@ alwaysApply: false
 
 - **Regra de ouro:** propriedade `undefined` no DTO → **não mutar**. Sempre `if (dto.field !== undefined) { model.field = dto.field; }`.
 - `null` explícito é valor válido (ex.: `enemy: null`, `activeDigievolutionId: null`) e deve ser aplicado.
+- **DTO completo vs delta:** os DTOs descrevem deltas (campos opcionais). Onde o backend garante o objeto completo (`InitialState` via `StateDTO`, e `ToDTO` nos differs), o tipo é `DeepRequired<DTO>` — remove `?`/`undefined` em profundidade e preserva `null` intencional. Converters **não** inventam fallback (`?? 0`, `?? 1`, `=== true`): contrato quebrado deve falhar visivelmente, não virar valor plausível.
+- **Substituição completa no syncer:** quando o syncer troca um objeto inteiro (slot vazio/Digimon trocado, digievolução trocada, digievolução guardada nova, inimigo novo), faz cast `as DeepRequired<DTO>` para o converter, com comentário curto citando a garantia do backend.
 - Syncers só **patcham** entidades já presentes do `InitialState`; não criam listas/itens novos (missões, NPCs, slots são fixos).
 - Nomes: camelCase igual ao JSON do backend (System.Text.Json camelCase). Rename existente: domínio `MapId` → DTO/model `location`.
 - **Selectors:**

@@ -1,4 +1,6 @@
 import type { DigievolutionSlot } from "@/models";
+import type { DeepRequired } from "@/events/dto/deep-required";
+import type { DigievolutionDTO } from "@/events/dto/parties/digimons/digievolution.dto";
 import type { DigievolutionSlotDTO } from "@/events/dto/parties/digimons/digievolution-slot.dto";
 import { DigievolutionSyncer } from "./digievolution.syncer";
 import { DigievolutionConverter } from "@/events/converters/parties/digimons/digievolution.converter";
@@ -18,7 +20,10 @@ export class DigievolutionSlotSyncer {
 
     if (newId !== undefined && newDigievolution !== undefined) {
       previousDigievolutionSlot.digievolutionId = newId;
-      previousDigievolutionSlot.digievolution = DigievolutionConverter.convert(newDigievolution);
+      // Backend sends the full digievolution when the slot id changes.
+      previousDigievolutionSlot.digievolution = DigievolutionConverter.convert(
+        newDigievolution as DeepRequired<DigievolutionDTO>,
+      );
       return;
     }
 

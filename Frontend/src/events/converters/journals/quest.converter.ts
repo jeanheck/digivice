@@ -1,16 +1,15 @@
+import type { DeepRequired } from "@/events/dto/deep-required";
 import type { QuestDTO } from "@/events/dto/journals/quest.dto";
 import type { Quest } from "@/models";
 import { RequisiteConverter } from "./quests/requisite.converter";
 import { StepConverter } from "./quests/step.converter";
 
 export class QuestConverter {
-  public static convert(questDto: Required<QuestDTO>): Quest {
+  public static convert(questDto: DeepRequired<QuestDTO>): Quest {
     return {
       id: questDto.id,
-      requisites: questDto.requisites
-        ? questDto.requisites.map((r) => RequisiteConverter.convert(r))
-        : [],
-      steps: questDto.steps ? questDto.steps.map((s) => StepConverter.convert(s)) : [],
+      requisites: questDto.requisites.map((requisiteDto) => RequisiteConverter.convert(requisiteDto)),
+      steps: questDto.steps.map((stepDto) => StepConverter.convert(stepDto)),
     };
   }
 }

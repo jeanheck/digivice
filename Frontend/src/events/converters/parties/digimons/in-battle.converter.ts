@@ -1,16 +1,17 @@
+import type { DeepRequired } from "@/events/dto/deep-required";
 import type { InBattleDTO } from "@/events/dto/parties/digimons/in-battle.dto";
 import type { InBattle } from "@/models/party/digimon/in-battle";
 import { VitalConverter } from "./vital.converter";
 
 export class InBattleConverter {
-  public static convert(newInBattleDto: InBattleDTO | null): InBattle {
+  public static convert(inBattleDto: DeepRequired<InBattleDTO>): InBattle {
     return {
-      condition: newInBattleDto?.condition ?? 0,
-      strength: newInBattleDto?.strength ?? 0,
-      defense: newInBattleDto?.defense ?? 0,
-      speed: newInBattleDto?.speed ?? 0,
-      hp: VitalConverter.convert(newInBattleDto?.hp ?? null),
-      mp: VitalConverter.convert(newInBattleDto?.mp ?? null),
+      condition: inBattleDto.condition,
+      strength: inBattleDto.strength,
+      defense: inBattleDto.defense,
+      speed: inBattleDto.speed,
+      hp: VitalConverter.convert(inBattleDto.hp),
+      mp: VitalConverter.convert(inBattleDto.mp),
     };
   }
 }
