@@ -19,10 +19,6 @@ export class QuestModalPresenter {
     const partyLevel = PartyService.getLevel(party);
     const mainQuestRaw = QuestRepository.getMainQuestRaw();
     if (mainQuestRaw.id === questId) {
-      if (journal.mainQuest === null) {
-        return null;
-      }
-
       return QuestConverter.convert(mainQuestRaw, journal.mainQuest, {
         calculateNewStatus: false,
         partyLevel,

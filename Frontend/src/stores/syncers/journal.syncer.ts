@@ -4,7 +4,7 @@ import { QuestSyncer } from "./journals/quest.syncer";
 
 export class JournalSyncer {
   public static sync(previousJournal: Journal, newJournalDto: Events.JournalDTO): void {
-    if (newJournalDto.mainQuest && previousJournal.mainQuest) {
+    if (newJournalDto.mainQuest !== undefined) {
       QuestSyncer.sync(previousJournal.mainQuest, newJournalDto.mainQuest);
     }
 

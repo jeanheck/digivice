@@ -1,6 +1,6 @@
 import * as signalR from "@microsoft/signalr";
 import { invoke } from "@tauri-apps/api/core";
-import type { EventsMap } from "./events.map";
+import type { EventDTO, EventsMap } from "./events.map";
 import { signalRLogger } from "./logger";
 import { APP_CONFIG } from "@/config";
 import { formatHubConnectionError } from "./hub-connection-error";
@@ -124,16 +124,9 @@ class SignalRService {
     );
 
     for (const eventName of backendEventNames) {
-      this.connection.on(eventName, (eventWrapper: any) => {
-        signalRLogger.debug(`Hub Event [${eventName}]`, eventWrapper);
-
-        // If we receive the wrapped structure from the backend, extract only the 'payload' property
-        const payload =
-          eventWrapper && typeof eventWrapper === "object" && "payload" in eventWrapper
-            ? eventWrapper.payload
-            : eventWrapper;
-
-        this.emit(eventName, payload);
+      this.connection.on(eventName, (eventDto: EventDTO<EventsMap[typeof eventName]>) => {
+        signalRLogger.debug(`Hub Event [${eventName}]`, eventDto);
+        this.emit(eventName, eventDto.payload);
       });
     }
   }

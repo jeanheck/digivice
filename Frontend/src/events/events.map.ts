@@ -1,4 +1,5 @@
 // Export everything from individual modular files in dto folder
+export type { EventDTO } from "./dto/event.dto";
 export type { PlayerDTO } from "./dto/player.dto";
 export type { ImportantItemsDTO } from "./dto/important-items.dto";
 export type { HealthDTO } from "./dto/health.dto";

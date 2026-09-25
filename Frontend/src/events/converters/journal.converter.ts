@@ -6,7 +6,7 @@ import { QuestConverter } from "./journals/quest.converter";
 export class JournalConverter {
   public static convert(journalDto: DeepRequired<JournalDTO>): Journal {
     return {
-      mainQuest: journalDto.mainQuest ? QuestConverter.convert(journalDto.mainQuest) : null,
+      mainQuest: QuestConverter.convert(journalDto.mainQuest),
       sideQuests: journalDto.sideQuests.map((questDto) => QuestConverter.convert(questDto)),
       legendaryWeapons: journalDto.legendaryWeapons.map((questDto) => QuestConverter.convert(questDto)),
       driAgents: journalDto.driAgents.map((questDto) => QuestConverter.convert(questDto)),

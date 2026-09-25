@@ -87,12 +87,7 @@ export const useGameStore = defineStore("game", () => {
     lastErrorDetail.value = event.errorDetail ?? null;
   }
 
-  function setInitialState(state: Events.StateDTO | null): void {
-    if (!state) {
-      clearGameState();
-      return;
-    }
-
+  function setInitialState(state: Events.StateDTO): void {
     currentState.value = {
       player: state.player ? PlayerConverter.convert(state.player) : null,
       importantItems: state.importantItems ? ImportantItemsConverter.convert(state.importantItems) : null,
@@ -105,72 +100,72 @@ export const useGameStore = defineStore("game", () => {
     };
   }
 
-  function syncPlayer(newPlayerDto: Events.PlayerDTO | null): void {
+  function syncPlayer(newPlayerDto: Events.PlayerDTO): void {
     const previousPlayer = currentState.value?.player;
-    if (!previousPlayer || !newPlayerDto) {
+    if (!previousPlayer) {
       return;
     }
 
     PlayerSyncer.sync(previousPlayer, newPlayerDto);
   }
 
-  function syncImportantItems(newImportantItemsDto: Events.ImportantItemsDTO | null): void {
+  function syncImportantItems(newImportantItemsDto: Events.ImportantItemsDTO): void {
     const previousImportantItems = currentState.value?.importantItems;
-    if (!previousImportantItems || !newImportantItemsDto) {
+    if (!previousImportantItems) {
       return;
     }
 
     ImportantItemsSyncer.sync(previousImportantItems, newImportantItemsDto);
   }
 
-  function syncJournal(newJournalDto: Events.JournalDTO | null): void {
+  function syncJournal(newJournalDto: Events.JournalDTO): void {
     const previousJournal = currentState.value?.journal;
-    if (!previousJournal || !newJournalDto) {
+    if (!previousJournal) {
       return;
     }
 
     JournalSyncer.sync(previousJournal, newJournalDto);
   }
 
-  function syncParty(newPartyDto: Events.PartyDTO | null): void {
+  function syncParty(newPartyDto: Events.PartyDTO): void {
     const previousParty = currentState.value?.party;
-    if (!previousParty || !newPartyDto) {
+    if (!previousParty) {
       return;
     }
 
     PartySyncer.sync(previousParty, newPartyDto);
   }
 
-  function syncDigimonBattle(newDigimonBattleDto: Events.DigimonBattleDTO | null): void {
+  function syncDigimonBattle(newDigimonBattleDto: Events.DigimonBattleDTO): void {
     const previousDigimonBattle = currentState.value?.digimonBattle;
-    if (!previousDigimonBattle || !newDigimonBattleDto) {
+    if (!previousDigimonBattle) {
       return;
     }
 
     DigimonBattleSyncer.sync(previousDigimonBattle, newDigimonBattleDto);
   }
 
-  function syncCardBattle(newCardBattleDto: Events.CardBattleDTO | null): void {
+  function syncCardBattle(newCardBattleDto: Events.CardBattleDTO): void {
     const previousCardBattle = currentState.value?.cardBattle;
-    if (!previousCardBattle || !newCardBattleDto) {
+    if (!previousCardBattle) {
       return;
     }
 
     CardBattleSyncer.sync(previousCardBattle, newCardBattleDto);
   }
 
-  function syncAuctions(newAuctionsDto: Events.AuctionsDTO | null): void {
+  function syncAuctions(newAuctionsDto: Events.AuctionsDTO): void {
     const previousAuctions = currentState.value?.auctions;
-    if (!previousAuctions || !newAuctionsDto) {
+    if (!previousAuctions) {
       return;
     }
 
     AuctionsSyncer.sync(previousAuctions, newAuctionsDto);
   }
 
-  function syncNpcs(newNpcsDto: Events.NpcsDTO | null): void {
+  function syncNpcs(newNpcsDto: Events.NpcsDTO): void {
     const previousNpcs = currentState.value?.npcs;
-    if (!previousNpcs || !newNpcsDto) {
+    if (!previousNpcs) {
       return;
     }
 

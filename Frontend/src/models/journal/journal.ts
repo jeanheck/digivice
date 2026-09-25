@@ -1,7 +1,7 @@
 import type { Quest } from "./quest";
 
 export interface Journal {
-  mainQuest: Quest | null;
+  mainQuest: Quest;
   sideQuests: Quest[];
   legendaryWeapons: Quest[];
   driAgents: Quest[];

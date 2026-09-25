@@ -7,10 +7,7 @@ import type { QuestViewModel } from "@/viewmodels/quest/quest.viewmodel";
 export class JournalPresenter {
   public static getJournalViewModel(journal: Journal, party: Party): JournalViewModel {
     const mainQuestRaw = QuestRepository.getMainQuestRaw();
-    const mainQuestViewModel =
-      journal.mainQuest === null
-        ? null
-        : QuestModalPresenter.getQuestViewModel(journal, mainQuestRaw.id, party);
+    const mainQuestViewModel = QuestModalPresenter.getQuestViewModel(journal, mainQuestRaw.id, party);
 
     const sideQuestsViewModels = QuestRepository.getSideQuestsRaw()
       .map((sideQuestRaw) =>
