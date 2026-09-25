@@ -166,10 +166,10 @@ Offsets in `DigimonStatusAddresses.json` → `Digievolutions` (`UnlockedDigievol
 |--------------|------|-------|
 | `+0x00` | Int16 | Digievolution **Id** |
 | `+0x02` | Int16 | **Level** |
-| `+0x04` | Int32 | **DVXP** — cumulative, never resets; 10 DVXP = 1 level for any digievolution |
+| `+0x04` | Int32 | **DVEXP** — cumulative, never resets; 10 DVEXP = 1 level for any digievolution |
 | `+0x08`…`+0x13` | 12 bytes | Unmapped (stable in Kotemon lv 14→15 test) |
 
-- Empty entries: zeroed or garbage pattern like `7F 96 98 00` — no valid Id/Level/DVXP.
+- Empty entries: zeroed or garbage pattern like `7F 96 98 00` — no valid Id/Level/DVEXP.
 
 ---
 

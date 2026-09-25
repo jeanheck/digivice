@@ -35,7 +35,7 @@ graph TD
 
 - **Responsabilidades:**
   - **Backend** lê a RAM e normaliza o necessário para que cada dado tenha significado próprio (sentinela → `null`, valor inválido ajustado — ex.: negativo → `0`). Não gera informação composta.
-  - **Frontend** gera informação nova a partir de dados já consistentes, em `stores/selectors/` (ex.: `isInBattle` = `mapId` + `inBattle.hp.max`; progresso de DVXP = `dvxp % 10`).
+  - **Frontend** gera informação nova a partir de dados já consistentes, em `stores/selectors/` (ex.: `isInBattle` = `mapId` + `inBattle.hp.max`; progresso de DVEXP = `dvexp % 10`).
   - Composição com dados estáticos (repositórios, equipamentos, i18n) fica em presenters/services, não em selectors.
 
 - **Game loop:** `GameLoopService` compõe o `State` via `StateComposer` a cada `GameLoop:PollingIntervalMs` (default **500ms**). Também emite `HealthChanged` (`HealthEventFactory`) para conexão com o emulador.
@@ -64,8 +64,8 @@ graph TD
 
 - Slot de digievolução: vazio ou preenchido. Válido: vazio→preenchido e preenchido(X)→preenchido(Y). **Proibido:** preenchido→vazio.
 - UI “empty” = slot que **nunca** foi preenchido (RAM `0` → domínio `null`), não um slot que “perdeu” evolução.
-- **Level/Dvxp do slot** (`DigievolutionSlotAssembler`): cruzamento por id com `StoredDigievolutions`; id ausente da lista → `Level = 1`, `Dvxp = 0`.
-- **DVXP:** valor **acumulado**, nunca zera. Cada 10 de DVXP = 1 nível, para **qualquer** digievolução (sem tabela individual). Progresso dentro do nível = `dvxp % 10` (0–9), calculado no `DigievolutionSelector`. RAM negativa → `0` no `DigievolutionSlotAssembler`.
+- **Level/Dvexp do slot** (`DigievolutionSlotAssembler`): cruzamento por id com `StoredDigievolutions`; id ausente da lista → `Level = 1`, `Dvexp = 0`.
+- **DVEXP:** valor **acumulado**, nunca zera. Cada 10 de DVEXP = 1 nível, para **qualquer** digievolução (sem tabela individual). Progresso dentro do nível = `dvexp % 10` (0–9), calculado no `DigievolutionSelector`. RAM negativa → `0` no `DigievolutionSlotAssembler`. Nome canônico **DVEXP** (`Dvexp` em C#, `dvexp` em TS/JSON); não usar `dvxp`.
 - **ActiveDigievolutionId:** sem evolução ativa = `null` (Assembler: RAM `<= 0`, inclusive sentinela `0xFFFF`, → `null`; não usar `0` como “vazio” no contrato).
 - **Equipamentos:** slot vazio = `null` (Assembler: RAM `<= 0` → `null`); frontend só repassa.
 - Técnicas por `digievolutionId` em JSON estático (`digievolution-technique.json`); assinatura = maior `learnLevel`. Nomes/descrições de técnicas usam i18n; nomes de Digimons/Digievoluções são **nomes próprios** — literais, **sem** `$t` / `getLocalized`.

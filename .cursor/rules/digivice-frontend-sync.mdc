@@ -31,5 +31,5 @@ alwaysApply: false
   - Nunca mutam o model nem gravam o valor derivado nele (o model continua espelho fiel do DTO).
   - Informação global que cruza entidades → `computed` no `useGameStore` chamando o selector. Informação por item → função pura chamada pelos presenters.
   - Normalização de dado bruto da RAM (sentinela, negativo) é do backend (Assembler), não do selector.
-  - Existentes: `DigimonBattleSelector` (`isInBattle`), `DigievolutionSelector` (`getDvxpProgress`).
+  - Existentes: `DigimonBattleSelector` (`isInBattle`), `DigievolutionSelector` (`getDvexpProgress`).
 - Não crie syncer/DTO paralelo para um campo novo — estenda o da entidade (skill `address-field-frontend`). Entidade nova → skill `memory-entity-frontend`.
