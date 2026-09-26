@@ -51,6 +51,7 @@ graph TD
 
 - **Name não é lido** pelo Digivice (referência futura). Address `0x00048D88`, buffer 10 bytes, charset custom (A–Z `0x0E`–`0x27`, a–z `0x28`–`0x41`, espaço `0x01`, termina em `0x00`/`0xFF`).
 - `MapId` e `PreviousMapId` são expostos com o mesmo nome no DTO (string hex `X4`).
+- `SeabedRoute` e `MapVariant`: RAM `0` → `null` no `PlayerAssembler` (sem rota / sem variante).
 
 ## Party
 

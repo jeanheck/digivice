@@ -2,6 +2,6 @@ export interface PlayerDTO {
   bits?: number;
   mapId?: string;
   previousMapId?: string;
-  seabedRoute?: number;
-  mapVariant?: number;
+  seabedRoute?: number | null;
+  mapVariant?: number | null;
 }

@@ -17,7 +17,7 @@ export class MobiusDesertMapPresenter {
 
   public static getMobiusDesertArea(
     locationId: string,
-    mapVariant: number,
+    mapVariant: number | null,
   ): DesertAreaMapCellViewModel | null {
     return MobiusDesertService.getMobiusDesertArea(locationId, mapVariant);
   }

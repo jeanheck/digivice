@@ -30,4 +30,24 @@ public class PlayerConverterTests
         Assert.True(dto.MapVariant.HasValue);
         Assert.Equal((byte)0x01, dto.MapVariant.Value);
     }
+
+    [Fact]
+    public void ToDTO_ShouldSendExplicitNull_WhenSeabedRouteAndMapVariantAreNull()
+    {
+        var player = new Player
+        {
+            Bits = 12345,
+            MapId = "00AF",
+            PreviousMapId = "023E",
+            SeabedRoute = null,
+            MapVariant = null
+        };
+
+        var dto = PlayerConverter.ToDTO(player);
+
+        Assert.True(dto.SeabedRoute.HasValue);
+        Assert.Null(dto.SeabedRoute.Value);
+        Assert.True(dto.MapVariant.HasValue);
+        Assert.Null(dto.MapVariant.Value);
+    }
 }

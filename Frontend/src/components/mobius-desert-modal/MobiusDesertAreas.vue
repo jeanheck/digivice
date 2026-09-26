@@ -8,7 +8,7 @@ import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel
 
 const props = defineProps<{
   location: LocationViewModel;
-  mapVariant: number;
+  mapVariant: number | null;
 }>();
 
 const emit = defineEmits<{

@@ -7,8 +7,8 @@ import type { SeabedConstant } from "@/constants/seabed.constant";
 import { SeabedPresenter } from "@/presenters/map/seabed.presenter";
 
 const props = defineProps<{
-  seabedRoute: number;
-  mapVariant: number;
+  seabedRoute: number | null;
+  mapVariant: number | null;
   locationId: string;
 }>();
 

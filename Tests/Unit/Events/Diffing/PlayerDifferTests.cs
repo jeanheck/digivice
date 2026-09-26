@@ -109,8 +109,8 @@ public class PlayerDifferTests
     [Fact]
     public void Diff_ShouldReturnSeabedRouteDelta_WhenOnlySeabedRouteChanged()
     {
-        var previousPlayer = new Player { Bits = 100, MapId = "0001", SeabedRoute = 0x00, MapVariant = 0x00 };
-        var newPlayer = new Player { Bits = 100, MapId = "0001", SeabedRoute = 0x08, MapVariant = 0x00 };
+        var previousPlayer = new Player { Bits = 100, MapId = "0001", SeabedRoute = null, MapVariant = null };
+        var newPlayer = new Player { Bits = 100, MapId = "0001", SeabedRoute = 0x08, MapVariant = null };
 
         var result = PlayerDiffer.Diff(previousPlayer, newPlayer);
 
@@ -125,7 +125,7 @@ public class PlayerDifferTests
     [Fact]
     public void Diff_ShouldReturnMapVariantDelta_WhenOnlyMapVariantChanged()
     {
-        var previousPlayer = new Player { Bits = 100, MapId = "0001", SeabedRoute = 0x08, MapVariant = 0x00 };
+        var previousPlayer = new Player { Bits = 100, MapId = "0001", SeabedRoute = 0x08, MapVariant = null };
         var newPlayer = new Player { Bits = 100, MapId = "0001", SeabedRoute = 0x08, MapVariant = 0x01 };
 
         var result = PlayerDiffer.Diff(previousPlayer, newPlayer);
@@ -141,7 +141,7 @@ public class PlayerDifferTests
     [Fact]
     public void Diff_ShouldReturnBothSeabedDeltas_WhenSeabedRouteAndMapVariantChanged()
     {
-        var previousPlayer = new Player { Bits = 100, MapId = "023E", SeabedRoute = 0x00, MapVariant = 0x00 };
+        var previousPlayer = new Player { Bits = 100, MapId = "023E", SeabedRoute = null, MapVariant = null };
         var newPlayer = new Player { Bits = 100, MapId = "02E2", SeabedRoute = 0x08, MapVariant = 0x01 };
 
         var result = PlayerDiffer.Diff(previousPlayer, newPlayer);
@@ -152,5 +152,21 @@ public class PlayerDifferTests
         Assert.Equal((byte)0x08, result.SeabedRoute.Value);
         Assert.True(result.MapVariant.HasValue);
         Assert.Equal((byte)0x01, result.MapVariant.Value);
+    }
+
+    [Fact]
+    public void Diff_ShouldReturnExplicitNullDeltas_WhenSeabedRouteAndMapVariantBecomeNull()
+    {
+        var previousPlayer = new Player { Bits = 100, MapId = "02E2", SeabedRoute = 0x08, MapVariant = 0x01 };
+        var newPlayer = new Player { Bits = 100, MapId = "02E2", SeabedRoute = null, MapVariant = null };
+
+        var result = PlayerDiffer.Diff(previousPlayer, newPlayer);
+
+        Assert.True(result.SeabedRoute.HasValue);
+        Assert.Null(result.SeabedRoute.Value);
+        Assert.True(result.MapVariant.HasValue);
+        Assert.Null(result.MapVariant.Value);
+        Assert.False(result.Bits.HasValue);
+        Assert.False(result.MapId.HasValue);
     }
 }

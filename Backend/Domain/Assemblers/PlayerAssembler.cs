@@ -12,8 +12,8 @@ namespace Backend.Domain.Assemblers
                 Bits = resource.Bits,
                 MapId = resource.MapId.ToString("X4"),
                 PreviousMapId = resource.PreviousMapId.ToString("X4"),
-                SeabedRoute = resource.SeabedRoute,
-                MapVariant = resource.MapVariant
+                SeabedRoute = resource.SeabedRoute == 0 ? null : resource.SeabedRoute,
+                MapVariant = resource.MapVariant == 0 ? null : resource.MapVariant
             };
         }
     }

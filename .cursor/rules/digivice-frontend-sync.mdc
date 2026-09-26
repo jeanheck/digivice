@@ -26,6 +26,7 @@ alwaysApply: false
 - **Regra de ouro:** propriedade `undefined` no DTO → **não mutar**. Sempre `if (dto.field !== undefined) { model.field = dto.field; }`.
 - `null` explícito é valor válido (ex.: `enemy: null`, `activeDigievolutionId: null`) e deve ser aplicado.
 - **Nulabilidade do estado:** `currentState` é o único ponto anulável (antes do `InitialState` e após desconexão/erro). As 8 entidades de `State`/`StateDTO` e `journal.mainQuest` nunca são `null`.
+- **Registro de handlers:** `signalRService.on()` pode ser chamado antes ou depois de `startConnection`; o evento é vinculado ao hub no primeiro `on()` (se já houver conexão) ou em `registerBackendEvents` ao conectar.
 - **Health:** sem converter; `HealthDTO` (`status`, `errorCode: string | null`, `errorDetail: string | null`) é usado direto em `syncHealth`.
 - **DTO completo vs delta:** os DTOs descrevem deltas (campos opcionais). Onde o backend garante o objeto completo (`InitialState` via `StateDTO`, e `ToDTO` nos differs), o tipo é `DeepRequired<DTO>` — remove `?`/`undefined` em profundidade e preserva `null` intencional. Converters **não** inventam fallback (`?? 0`, `?? 1`, `=== true`): contrato quebrado deve falhar visivelmente, não virar valor plausível.
 - **Substituição completa no syncer:** quando o syncer troca um objeto inteiro (slot vazio/Digimon trocado, digievolução trocada, digievolução guardada nova, inimigo novo), faz cast `as DeepRequired<DTO>` para o converter, com comentário curto citando a garantia do backend.

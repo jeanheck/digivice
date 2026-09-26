@@ -3,10 +3,14 @@ import type { SeabedRouteLocationViewModel } from "@/viewmodels/seabed/seabed-ro
 
 export class SeabedPresenter {
   public static getRouteLocation(
-    routeId: number,
+    routeId: number | null,
     locationId: string,
-    mapVariant: number,
+    mapVariant: number | null,
   ): SeabedRouteLocationViewModel | null {
+    if (routeId === null || mapVariant === null) {
+      return null;
+    }
+
     const locationKey = `${locationId}-${mapVariant}`;
     const seabedRouteLocationRaw = SeabedRoutesRepository.getByRouteAndLocation(
       String(routeId),

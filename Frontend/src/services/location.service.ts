@@ -36,8 +36,8 @@ export class LocationService {
     return true;
   }
 
-  public static getSeabedEnemies(seabedRoute: number): string[] {
-    return seabedRoute === 0 ? [] : SeabedRoutesRepository.getEnemiesByRoute(String(seabedRoute));
+  public static getSeabedEnemies(seabedRoute: number | null): string[] {
+    return seabedRoute === null ? [] : SeabedRoutesRepository.getEnemiesByRoute(String(seabedRoute));
   }
 
   public static getWalkingEnemies(locationId: string, lastCompletedMainQuestStep: number): string[] {

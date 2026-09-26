@@ -8,7 +8,7 @@ export class MobiusDesertAreasPresenter {
     return MobiusDesertAreasRepository.getAll() as DesertAreasViewModel;
   }
 
-  public static getCurrentAreaLabel(locationId: string, mapVariant: number): string | null {
+  public static getCurrentAreaLabel(locationId: string, mapVariant: number | null): string | null {
     if (!MobiusDesertService.isMobiusDesertLocation(locationId)) {
       return null;
     }

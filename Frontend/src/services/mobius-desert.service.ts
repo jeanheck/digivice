@@ -12,9 +12,9 @@ export class MobiusDesertService {
 
   public static getMobiusDesertArea(
     locationId: string,
-    mapVariant: number,
+    mapVariant: number | null,
   ): DesertAreaMapCellViewModel | null {
-    if (mapVariant <= 0) {
+    if (mapVariant === null) {
       return null;
     }
 

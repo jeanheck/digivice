@@ -28,7 +28,7 @@ public class PlayerAssemblerTests
     }
 
     [Fact]
-    public void Assemble_ShouldPassThroughRawValues_WhenFieldsAreZero()
+    public void Assemble_ShouldNormalizeSeabedRouteAndMapVariantToNull_WhenFieldsAreZero()
     {
         var resource = new PlayerResource
         {
@@ -45,7 +45,7 @@ public class PlayerAssemblerTests
         Assert.Equal(0, result.Bits);
         Assert.Equal("0000", result.MapId);
         Assert.Equal("0000", result.PreviousMapId);
-        Assert.Equal((byte)0, result.SeabedRoute);
-        Assert.Equal((byte)0, result.MapVariant);
+        Assert.Null(result.SeabedRoute);
+        Assert.Null(result.MapVariant);
     }
 }
