@@ -24,7 +24,7 @@ alwaysApply: false
 ## Regras
 
 - **Regra de ouro:** propriedade `undefined` no DTO → **não mutar**. Sempre `if (dto.field !== undefined) { model.field = dto.field; }`.
-- `null` explícito é valor válido (ex.: `enemy: null`, `activeDigievolutionId: null`) e deve ser aplicado.
+- `null` explícito é valor válido (ex.: `enemy: null`, `activeDigievolutionId: null`) e deve ser aplicado. **Exceção:** `DigievolutionSlotSyncer` ignora `digievolutionId`/`digievolution` `null` (preenchido→vazio é proibido) e registra `storeLogger.warn`.
 - **Nulabilidade do estado:** `currentState` é o único ponto anulável (antes do `InitialState` e após desconexão/erro). As 8 entidades de `State`/`StateDTO` e `journal.mainQuest` nunca são `null`.
 - **Registro de handlers:** `signalRService.on()` pode ser chamado antes ou depois de `startConnection`; o evento é vinculado ao hub no primeiro `on()` (se já houver conexão) ou em `registerBackendEvents` ao conectar.
 - **Health:** sem converter; `HealthDTO` (`status`, `errorCode: string | null`, `errorDetail: string | null`) é usado direto em `syncHealth`.

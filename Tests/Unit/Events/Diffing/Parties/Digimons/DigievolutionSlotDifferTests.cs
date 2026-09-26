@@ -85,4 +85,20 @@ public class DigievolutionSlotDifferTests
         Assert.True(result.Digievolution.Value.Level.HasValue);
         Assert.Equal(6, result.Digievolution.Value.Level.Value);
     }
+
+    [Fact]
+    public void Diff_ShouldReturnExplicitNulls_WhenFilledSlotBecomesEmpty()
+    {
+        var previous = new DigievolutionSlot { Index = 3, DigievolutionId = 12, Digievolution = new Digievolution { Level = 2, Dvexp = 15 } };
+        var newObj = new DigievolutionSlot { Index = 3, DigievolutionId = null, Digievolution = null };
+
+        var result = DigievolutionSlotDiffer.Diff(previous, newObj);
+
+        Assert.NotNull(result);
+        Assert.Equal(3, result.Index);
+        Assert.True(result.DigievolutionId.HasValue);
+        Assert.Null(result.DigievolutionId.Value);
+        Assert.True(result.Digievolution.HasValue);
+        Assert.Null(result.Digievolution.Value);
+    }
 }
