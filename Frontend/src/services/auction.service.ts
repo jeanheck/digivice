@@ -1,16 +1,16 @@
-import { AuctionStatusConstant } from "@/constants/auction-status.constant";
 import type { Auctions, Quest } from "@/models";
 import { AuctionConverter } from "@/presenters/converter/auction.converter";
 import { AuctionRepository } from "@/repositories/auction.repository";
 import type { AuctionStepsRaw } from "@/repositories/tables/raws/auction/auction-steps.raw";
 import { QuestService } from "@/services/quest.service";
+import type { AuctionStatus } from "@/types/auction-status.type";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 
 export class AuctionService {
   public static getAvailableAuction(auctions: Auctions, mainQuest: Quest): AuctionViewModel | null {
     return (
       this.getAuctions(auctions, mainQuest).find((auctionListItemViewModel) => {
-        return auctionListItemViewModel.status === AuctionStatusConstant.available;
+        return auctionListItemViewModel.status === "available";
       }) ?? null
     );
   }
@@ -34,17 +34,17 @@ export class AuctionService {
     steps: AuctionStepsRaw,
     lastCompletedStep: number,
     hasParticipated: boolean,
-  ): AuctionStatusConstant {
+  ): AuctionStatus {
     if (hasParticipated) {
-      return AuctionStatusConstant.participated;
+      return "participated";
     }
     if (lastCompletedStep < steps.startsWhenComplete) {
-      return AuctionStatusConstant.notYetOccurred;
+      return "notYetOccurred";
     }
     if (lastCompletedStep >= steps.startsWhenComplete && lastCompletedStep < steps.endsWhenComplete) {
-      return AuctionStatusConstant.available;
+      return "available";
     }
 
-    return AuctionStatusConstant.missed;
+    return "missed";
   }
 }

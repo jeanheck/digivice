@@ -1,7 +1,7 @@
-export type BoosterDroppedByKind = "enemy" | "tamer" | "duelIsland";
+import type { DropSourceKind } from "@/types/drop-source-kind.type";
 
 export interface BoosterDroppedByRaw {
-  kind: BoosterDroppedByKind;
+  kind: DropSourceKind;
   id: string;
   locationOnly?: string;
 }

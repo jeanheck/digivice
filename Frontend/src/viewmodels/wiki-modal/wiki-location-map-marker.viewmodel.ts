@@ -1,6 +1,5 @@
+import type { LabelPlacement } from "@/types/label-placement.type";
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
-
-export type WikiLocationMapLabelPlacementViewModel = "above" | "below" | "left" | "right";
 
 export type WikiLocationMapMarkerKindViewModel = "npc" | "boss" | "cardShop";
 
@@ -11,5 +10,5 @@ export interface WikiLocationMapMarkerViewModel {
   name?: string;
   imageUrl: string | null;
   coordinates: CoordinatesViewModel;
-  labelPlacement: WikiLocationMapLabelPlacementViewModel;
+  labelPlacement: LabelPlacement;
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from "vue";
 
-const DEFAULT_FOOTER_BAR_CLASS = "bg-linear-to-r from-blue-900 via-cyan-500 to-blue-900";
+const DefaultFooterBarClass = "bg-linear-to-r from-blue-900 via-cyan-500 to-blue-900";
 
 const props = withDefaults(
   defineProps<{
@@ -20,7 +20,7 @@ const props = withDefaults(
     panelClass: "",
     showHexPattern: true,
     showFooterBar: true,
-    footerBarClass: DEFAULT_FOOTER_BAR_CLASS,
+    footerBarClass: DefaultFooterBarClass,
     showCloseButton: true,
   },
 );

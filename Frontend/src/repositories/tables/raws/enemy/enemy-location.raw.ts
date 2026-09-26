@@ -1,11 +1,10 @@
 import type { NpcMainQuestStepDoneRaw } from "@/repositories/tables/raws/npc/npc-main-quest-step-done.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
-
-export type EnemyLocationSource = "walking" | "boss" | "fishing" | "kickingTree";
+import type { EnemySource } from "@/types/enemy-source.type";
 
 export interface EnemyLocationRaw {
   id: string;
-  sources: EnemyLocationSource[];
+  sources: EnemySource[];
   localCoordinates?: CoordinatesRaw;
   mainQuestStepDone?: NpcMainQuestStepDoneRaw;
 }

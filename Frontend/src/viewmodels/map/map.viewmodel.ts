@@ -1,6 +1,6 @@
-import type { LocationRegionConstant } from "@/constants/location-region.constant";
+import type { LocationRegion } from "@/types/location-region.type";
 
 export interface MapViewModel {
-  locationRegion: LocationRegionConstant;
+  locationRegion: LocationRegion;
   locationImageUrl: string | null;
 }

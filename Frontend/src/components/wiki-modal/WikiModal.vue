@@ -14,7 +14,7 @@ import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import { ImageCatalog } from "@/catalogs/image.catalog";
 import { WikiModalPresenter } from "@/presenters/map/wiki-modal.presenter";
 import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
-import type { DropSourceKind } from "@/viewmodels/drop/drop-source.viewmodel";
+import type { DropSourceKind } from "@/types/drop-source-kind.type";
 import type { SearchItemKind } from "@/viewmodels/search/search-item.viewmodel";
 
 const props = defineProps<{

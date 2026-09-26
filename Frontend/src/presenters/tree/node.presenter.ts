@@ -1,6 +1,5 @@
 import type { ComposerTranslation } from "vue-i18n";
 import type { Attributes, Digimon, Resistances } from "@/models";
-import { DigievolutionRequirementConstant } from "@/constants/digievolution-requirement.constant";
 import { DigievolutionRepository } from "@/repositories/digievolution.repository";
 import type { NodeViewModel } from "@/viewmodels/digievolution/node.viewmodel";
 import type { RequirementViewModel } from "@/viewmodels/digimon/requirement.viewmodel";
@@ -14,12 +13,12 @@ export class NodePresenter {
     const levelLabel = translate("digievolution.lv");
 
     switch (requirement.type) {
-      case DigievolutionRequirementConstant.DigimonLevel:
+      case "DigimonLevel":
         return `${digimonName} ${levelLabel} ${requirement.value}`;
-      case DigievolutionRequirementConstant.Attribute:
-      case DigievolutionRequirementConstant.Resistance:
+      case "Attribute":
+      case "Resistance":
         return `${digimonName}: ${this.capitalize(requirement.stat!)} >= ${requirement.value}`;
-      case DigievolutionRequirementConstant.DigievolutionLevel: {
+      case "DigievolutionLevel": {
         if (requirement.digievolution === undefined) {
           return translate("digievolution.unknownParam");
         }
@@ -34,18 +33,18 @@ export class NodePresenter {
 
   public static isRequirementMet(digimon: Digimon, requirement: RequirementViewModel): boolean {
     switch (requirement.type) {
-      case DigievolutionRequirementConstant.DigimonLevel:
+      case "DigimonLevel":
         return digimon.level >= requirement.value;
-      case DigievolutionRequirementConstant.Attribute: {
+      case "Attribute": {
         const attribute = digimon.attributes[requirement.stat?.toLowerCase() as keyof Attributes];
         return attribute >= requirement.value;
       }
-      case DigievolutionRequirementConstant.Resistance: {
+      case "Resistance": {
         const resistance =
           digimon.resistances[requirement.stat?.toLowerCase() as keyof Resistances];
         return resistance >= requirement.value;
       }
-      case DigievolutionRequirementConstant.DigievolutionLevel: {
+      case "DigievolutionLevel": {
         if (requirement.digievolution === undefined) {
           return false;
         }

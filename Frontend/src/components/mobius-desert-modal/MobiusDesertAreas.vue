@@ -3,7 +3,7 @@ import { computed } from "vue";
 import MobiusDesertArea from "@/components/mobius-desert-modal/MobiusDesertArea.vue";
 import { MobiusDesertAreasPresenter } from "@/presenters/mobius-desert-modal/mobius-desert-areas.presenter";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
-import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
+import type { MobiusDesertAreaType } from "@/types/mobius-desert-area-type.type";
 import type { LocationViewModel } from "@/viewmodels/location/location.viewmodel";
 
 const props = defineProps<{
@@ -23,7 +23,7 @@ const currentAreaLabel = computed(() => {
   return MobiusDesertAreasPresenter.getCurrentAreaLabel(props.location.id, props.mapVariant);
 });
 
-function isClickable(areaType: DesertAreaTypeViewModel): boolean {
+function isClickable(areaType: MobiusDesertAreaType): boolean {
   return areaType !== "border";
 }
 
@@ -80,11 +80,11 @@ function hasBottomConnection(areaIndex: number): boolean {
   );
 }
 
-function getRightNeighborType(areaIndex: number): DesertAreaTypeViewModel | null {
+function getRightNeighborType(areaIndex: number): MobiusDesertAreaType | null {
   return getRightNeighbor(areaIndex)?.type ?? null;
 }
 
-function getBottomNeighborType(areaIndex: number): DesertAreaTypeViewModel | null {
+function getBottomNeighborType(areaIndex: number): MobiusDesertAreaType | null {
   return getBottomNeighbor(areaIndex)?.type ?? null;
 }
 </script>

@@ -1,4 +1,4 @@
-import { MapIdConstant } from "@/constants/map-id.constant";
+import { MapId } from "@/constants/map-id.constant";
 import type { Quest } from "@/models";
 import { QuestRepository } from "@/repositories/quest.repository";
 import { LocationService } from "@/services/location.service";
@@ -10,8 +10,8 @@ export class LocationEncounterHelper {
 
   public static isAsukaSewersSafeZone(locationId: string, previousMapId: string): boolean {
     return (
-      locationId === MapIdConstant.asukaSewers &&
-      previousMapId === MapIdConstant.undergroundPath
+      locationId === MapId.asukaSewers &&
+      previousMapId === MapId.undergroundPath
     );
   }
 

@@ -2,16 +2,16 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { DesertNeighborHelper } from "@/presenters/helper/desert-neighbor.helper";
-import type { DesertAreaTypeViewModel } from "@/viewmodels/desert/desert-area-type.viewmodel";
+import type { MobiusDesertAreaType } from "@/types/mobius-desert-area-type.type";
 
 const props = defineProps<{
   hasRightConnection: boolean;
   hasBottomConnection: boolean;
   label: string;
-  type: DesertAreaTypeViewModel;
+  type: MobiusDesertAreaType;
   note?: string;
-  rightNeighborType: DesertAreaTypeViewModel | null;
-  bottomNeighborType: DesertAreaTypeViewModel | null;
+  rightNeighborType: MobiusDesertAreaType | null;
+  bottomNeighborType: MobiusDesertAreaType | null;
   clickable: boolean;
   isPlayerLocation: boolean;
 }>();
@@ -30,14 +30,14 @@ function onClick(): void {
   emit("click");
 }
 
-const backgroundClassByType: Record<DesertAreaTypeViewModel, string> = {
+const backgroundClassByType: Record<MobiusDesertAreaType, string> = {
   noiseDesertS: "bg-green-300",
   mirageTower: "bg-cyan-300",
   normal: "bg-[#e0db8e]",
   border: "bg-gray-700",
 };
 
-const textClassByType: Record<DesertAreaTypeViewModel, string> = {
+const textClassByType: Record<MobiusDesertAreaType, string> = {
   noiseDesertS: "text-[11px] text-blue-800",
   mirageTower: "text-[11px] text-blue-800",
   normal: "text-[20px] text-blue-800",
@@ -47,8 +47,8 @@ const textClassByType: Record<DesertAreaTypeViewModel, string> = {
 const translatedLabelKeys = new Set(["noiseDesertS", "mirageTower"]);
 
 function getConnectionColorClasse(
-  sourceType: DesertAreaTypeViewModel,
-  targetType: DesertAreaTypeViewModel | null,
+  sourceType: MobiusDesertAreaType,
+  targetType: MobiusDesertAreaType | null,
 ): string {
   if (sourceType === "border" || targetType === "border") {
     return "bg-gray-500";

@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import { EnemySourceConstant } from "@/constants/enemy-source.constant";
-import { IconConstant } from "@/constants/icon.constant";
+import { EnemySourceIcon } from "@/constants/icon.constant";
 import { splitLocationLabel } from "@/presenters/helper/location-label.helper";
-import type { EnemyLocationSourceViewModel } from "@/viewmodels/enemy/enemy-location-source.viewmodel";
+import type { EnemySource } from "@/types/enemy-source.type";
 import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 
 const props = withDefaults(
@@ -38,11 +37,11 @@ const isListVariant = computed(() => {
   return props.variant === "list";
 });
 
-const getSourceIcon = (source: EnemyLocationSourceViewModel): string => {
-  return IconConstant[EnemySourceConstant[source]];
+const getSourceIcon = (source: EnemySource): string => {
+  return EnemySourceIcon[source];
 };
 
-const getSourceAriaLabel = (source: EnemyLocationSourceViewModel): string => {
+const getSourceAriaLabel = (source: EnemySource): string => {
   return t(`enemy.locationSource.${source}`);
 };
 

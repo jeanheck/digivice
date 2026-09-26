@@ -1,7 +1,7 @@
-﻿import type { DesertAreaTypeViewModel } from "./desert-area-type.viewmodel";
+﻿import type { MobiusDesertAreaType } from "@/types/mobius-desert-area-type.type";
 
 export interface DesertAreaViewModel {
   label: string;
-  type: DesertAreaTypeViewModel;
+  type: MobiusDesertAreaType;
   note?: string;
 }

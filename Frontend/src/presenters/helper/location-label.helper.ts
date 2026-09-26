@@ -3,7 +3,7 @@ type LocationLabelDelimiterRule = {
   includeDelimiterInFirstLine: boolean;
 };
 
-const LOCATION_LABEL_DELIMITER_RULES: LocationLabelDelimiterRule[] = [
+const LocationLabelDelimiterRules: LocationLabelDelimiterRule[] = [
   { delimiter: ": ", includeDelimiterInFirstLine: true },
   { delimiter: " - ", includeDelimiterInFirstLine: false },
   { delimiter: " (", includeDelimiterInFirstLine: false },
@@ -11,7 +11,7 @@ const LOCATION_LABEL_DELIMITER_RULES: LocationLabelDelimiterRule[] = [
 ];
 
 export function splitLocationLabel(label: string): string[] {
-  for (const rule of LOCATION_LABEL_DELIMITER_RULES) {
+  for (const rule of LocationLabelDelimiterRules) {
     const delimiterIndex = label.indexOf(rule.delimiter);
     if (delimiterIndex === -1) {
       continue;

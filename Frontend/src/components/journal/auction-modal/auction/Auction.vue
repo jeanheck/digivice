@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { AuctionStatusConstant } from "@/constants/auction-status.constant";
 import type { AuctionViewModel } from "@/viewmodels/auction/auction.viewmodel";
 import AuctionAvailable from "./AuctionAvailable.vue";
 import AuctionMissed from "./AuctionMissed.vue";
@@ -12,14 +11,14 @@ defineProps<{
 </script>
 
 <template>
-  <AuctionAvailable v-if="auction.status === AuctionStatusConstant.available" :auction="auction" />
+  <AuctionAvailable v-if="auction.status === 'available'" :auction="auction" />
   <AuctionNotYetOccurred
-    v-else-if="auction.status === AuctionStatusConstant.notYetOccurred"
+    v-else-if="auction.status === 'notYetOccurred'"
     :auction="auction"
   />
   <AuctionParticipated
-    v-else-if="auction.status === AuctionStatusConstant.participated"
+    v-else-if="auction.status === 'participated'"
     :auction="auction"
   />
-  <AuctionMissed v-else-if="auction.status === AuctionStatusConstant.missed" :auction="auction" />
+  <AuctionMissed v-else-if="auction.status === 'missed'" :auction="auction" />
 </template>

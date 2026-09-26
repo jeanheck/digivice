@@ -1,3 +1,4 @@
+import { DigimonDebuff } from "@/constants/digimon-debuff.constant";
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Vital } from "@/models";
 
@@ -16,5 +17,11 @@ export class DigimonService {
     }
 
     return DigimonStatusConstant.healthy;
+  }
+
+  public static getActiveDebuffs(condition: number): DigimonDebuff[] {
+    return (Object.keys(DigimonDebuff) as DigimonDebuff[]).filter((debuff) => {
+      return (condition & DigimonDebuff[debuff]) !== 0;
+    });
   }
 }

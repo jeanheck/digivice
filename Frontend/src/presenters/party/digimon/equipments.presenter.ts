@@ -1,4 +1,3 @@
-import { EquipmentConstant } from "@/constants/equipment.constant";
 import type { Equipments } from "@/models";
 import { EquipmentConverter } from "@/presenters/converter/equipment.converter";
 import { DigimonRepository } from "@/repositories/digimon.repository";
@@ -10,28 +9,28 @@ export class EquipmentsPresenter {
   public static getEquipmentsViewModel(equipments: Equipments): EquipmentSlotViewModel[] {
     return [
       {
-        slotKey: EquipmentConstant.head,
-        equipment: this.getEquipmentViewModel(equipments[EquipmentConstant.head]),
+        slotKey: "head",
+        equipment: this.getEquipmentViewModel(equipments.head),
       },
       {
-        slotKey: EquipmentConstant.body,
-        equipment: this.getEquipmentViewModel(equipments[EquipmentConstant.body]),
+        slotKey: "body",
+        equipment: this.getEquipmentViewModel(equipments.body),
       },
       {
-        slotKey: EquipmentConstant.right,
-        equipment: this.getEquipmentViewModel(equipments[EquipmentConstant.right]),
+        slotKey: "right",
+        equipment: this.getEquipmentViewModel(equipments.right),
       },
       {
-        slotKey: EquipmentConstant.left,
-        equipment: this.getEquipmentViewModel(equipments[EquipmentConstant.left]),
+        slotKey: "left",
+        equipment: this.getEquipmentViewModel(equipments.left),
       },
       {
-        slotKey: EquipmentConstant.accessory1,
-        equipment: this.getEquipmentViewModel(equipments[EquipmentConstant.accessory1]),
+        slotKey: "accessory1",
+        equipment: this.getEquipmentViewModel(equipments.accessory1),
       },
       {
-        slotKey: EquipmentConstant.accessory2,
-        equipment: this.getEquipmentViewModel(equipments[EquipmentConstant.accessory2]),
+        slotKey: "accessory2",
+        equipment: this.getEquipmentViewModel(equipments.accessory2),
       },
     ];
   }

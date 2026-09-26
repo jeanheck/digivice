@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { EnemySourceConstant } from "@/constants/enemy-source.constant";
-import { IconConstant } from "@/constants/icon.constant";
+import { EnemySourceIcon } from "@/constants/icon.constant";
 import type { WikiLocationEncounterLineViewModel } from "@/viewmodels/wiki-modal/wiki-location-encounter-line.viewmodel";
 
 const props = defineProps<{
@@ -16,7 +15,7 @@ const emit = defineEmits<{
 const { t } = useI18n();
 
 const getSourceIcon = (source: WikiLocationEncounterLineViewModel["source"]): string => {
-  return IconConstant[EnemySourceConstant[source]];
+  return EnemySourceIcon[source];
 };
 
 const getSourceAriaLabel = (source: WikiLocationEncounterLineViewModel["source"]): string => {

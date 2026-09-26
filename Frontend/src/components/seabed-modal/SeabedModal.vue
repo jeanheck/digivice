@@ -4,7 +4,7 @@ import { useI18n } from "vue-i18n";
 import Modal from "@/components/modal/Modal.vue";
 import MapFrame from "@/components/map-frame/MapFrame.vue";
 import SeabedDocks from "@/components/seabed-modal/SeabedDocks.vue";
-import { MAP_FRAME_WIDTH_PX } from "@/constants/map-display.constant";
+import { MapFrameWidthPx } from "@/constants/map-display.constant";
 import { SeabedModalPresenter } from "@/presenters/seabed-modal/seabed-modal.presenter";
 import { useGameState } from "@/composables/use-game-state";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
@@ -94,7 +94,7 @@ const closeModal = () => {
         <div
           v-else
           class="flex flex-col items-center justify-center gap-3 px-8"
-          :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
+          :style="{ width: `${MapFrameWidthPx}px` }"
         >
           <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
             {{ $t("map.noDock") }}

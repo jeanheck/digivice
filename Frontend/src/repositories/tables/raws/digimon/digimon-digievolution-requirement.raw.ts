@@ -1,7 +1,7 @@
-import type { DigievolutionRequirementConstant } from "@/constants/digievolution-requirement.constant";
+import type { DigievolutionRequirement } from "@/types/digievolution-requirement.type";
 
 export interface DigimonDigievolutionRequirementRaw {
-  type: DigievolutionRequirementConstant;
+  type: DigievolutionRequirement;
   digievolution?: number;
   stat?: string;
   value: number;

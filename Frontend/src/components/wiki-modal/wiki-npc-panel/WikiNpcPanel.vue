@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
+import type { NpcBattleKind } from "@/types/npc-battle-kind.type";
 import { WikiNpcPanelPresenter } from "@/presenters/map/wiki-modal/wiki-npc-panel.presenter";
 import WikiNpcCardBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcCardBattlePanel.vue";
 import WikiNpcDigimonBattlePanel from "@/components/wiki-modal/wiki-npc-panel/WikiNpcDigimonBattlePanel.vue";
@@ -89,8 +89,8 @@ const selectedOption = computed(() => {
   );
 });
 
-const battleKindLabelKey = (kind: NpcBattleKindConstant): string => {
-  if (kind === NpcBattleKindConstant.card) {
+const battleKindLabelKey = (kind: NpcBattleKind): string => {
+  if (kind === "card") {
     return "npc.battle.card";
   }
 
@@ -249,14 +249,14 @@ const openLocation = () => {
 
     <div class="flex-1 min-w-0 min-h-0 flex flex-col overflow-hidden">
       <WikiNpcCardBattlePanel
-        v-if="selectedOption?.kind === NpcBattleKindConstant.card"
+        v-if="selectedOption?.kind === 'card'"
         :npc-id="npcId"
         :battle-id="selectedOption.battleId"
         @open-card="emit('open-card', $event)"
         @open-drops="emit('open-drops', $event)"
       />
       <WikiNpcDigimonBattlePanel
-        v-else-if="selectedOption?.kind === NpcBattleKindConstant.digimon"
+        v-else-if="selectedOption?.kind === 'digimon'"
         :npc-id="npcId"
         :battle-id="selectedOption.battleId"
         @open-drops="emit('open-drops', $event)"

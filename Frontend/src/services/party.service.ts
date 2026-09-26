@@ -1,5 +1,4 @@
 import type { Party } from "@/models";
-import { Constant } from "@/constants/constant";
 import { EquipmentRepository } from "@/repositories/equipment.repository";
 import { EquipmentService } from "@/services/equipment.service";
 import { StatService } from "@/services/stat.service";
@@ -26,10 +25,7 @@ export class PartyService {
       digimons.map((digimon) => {
         const equipmentIds = EquipmentService.getEquipmentIds(digimon.equipments);
         const equipmentsRaws = EquipmentRepository.getEquipmentsByIds(equipmentIds);
-        const charismaBonus = EquipmentService.calculateBonus(
-          Constant.charisma,
-          equipmentsRaws,
-        );
+        const charismaBonus = EquipmentService.calculateBonus("charisma", equipmentsRaws);
 
         return StatService.calculateStat(digimon.attributes.charisma, charismaBonus);
       }),

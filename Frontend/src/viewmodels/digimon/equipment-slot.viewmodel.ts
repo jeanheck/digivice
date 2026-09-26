@@ -1,7 +1,7 @@
-import type { EquipmentConstant } from "@/constants/equipment.constant";
+import type { EquipmentSlot } from "@/types/equipment-slot.type";
 import type { EquipmentViewModel } from "@/viewmodels/digimon/equipment.viewmodel";
 
 export interface EquipmentSlotViewModel {
-  slotKey: EquipmentConstant;
+  slotKey: EquipmentSlot;
   equipment: EquipmentViewModel | null;
 }

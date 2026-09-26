@@ -2,17 +2,17 @@
  * Centralized Application Configuration
  */
 
-export const APP_CONFIG = {
-  BACKEND: {
-    DEFAULT_PORT: 5000,
-    HUB_PATH: "/gamehub",
+export const AppConfig = {
+  backend: {
+    defaultPort: 5000,
+    hubPath: "/gamehub",
     // Helper to get the absolute fallback URL
-    get FALLBACK_URL() {
-      return `http://localhost:${this.DEFAULT_PORT}${this.HUB_PATH}`;
+    get fallbackUrl() {
+      return `http://localhost:${this.defaultPort}${this.hubPath}`;
     },
   },
   // Simple check to see if we are running inside Tauri
-  IS_TAURI: !!(window as any).__TAURI_INTERNALS__,
-  IS_DEV: import.meta.env.DEV,
-  IS_PROD: import.meta.env.PROD,
+  isTauri: !!(window as any).__TAURI_INTERNALS__,
+  isDev: import.meta.env.DEV,
+  isProd: import.meta.env.PROD,
 };

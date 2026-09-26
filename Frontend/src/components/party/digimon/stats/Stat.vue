@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { IconConstant } from "@/constants/icon.constant";
+import { DigimonStatIcon } from "@/constants/icon.constant";
 import { useI18n } from "vue-i18n";
-import { Constant } from "@/constants/constant";
+import type { DigimonStat } from "@/types/digimon-stat.type";
 import type { StatViewModel } from "@/viewmodels/digimon/stat.viewmodel";
 
 const props = defineProps<{
   statViewModel: StatViewModel;
-  stat: string;
+  stat: DigimonStat;
 }>();
 
 const emit = defineEmits<{
-  (e: "showIconTooltip", event: MouseEvent, title: string, propertyKey: Constant): void;
+  (e: "showIconTooltip", event: MouseEvent, title: string, propertyKey: DigimonStat): void;
   (
     e: "showMathTooltip",
     event: MouseEvent,
@@ -36,10 +36,8 @@ const label = computed(() => {
   return t(`stat.${props.stat}`);
 });
 
-const statKey = computed(() => props.stat as Constant);
-
 const icon = computed(() => {
-  return IconConstant[statKey.value];
+  return DigimonStatIcon[props.stat];
 });
 
 const battleDelta = computed(() => {
@@ -67,7 +65,7 @@ const buffOrDebuffClass = computed(() => {
   <div class="flex items-center gap-1.5 min-w-0">
     <div
       class="flex items-center w-5 shrink-0 justify-center cursor-help select-none z-20 tooltip-anchor relative"
-      @mouseenter="(event) => emit('showIconTooltip', event, label, statKey)"
+      @mouseenter="(event) => emit('showIconTooltip', event, label, stat)"
       @mousemove="(event) => emit('moveTooltip', event)"
       @mouseleave="emit('hideTooltip')"
     >

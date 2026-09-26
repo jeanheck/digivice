@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import MapFrame from "@/components/map-frame/MapFrame.vue";
-import { MAP_FRAME_WIDTH_PX } from "@/constants/map-display.constant";
+import { MapFrameWidthPx } from "@/constants/map-display.constant";
 import { MobiusDesertAreaDetailsPresenter } from "@/presenters/mobius-desert-modal/mobius-desert-area-details.presenter";
 import type { DesertAreaViewModel } from "@/viewmodels/desert/desert-area.viewmodel";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
@@ -59,7 +59,7 @@ const areaSlides = computed((): MapFrameSlideViewModel[] => {
     <div
       v-else
       class="flex flex-col items-center justify-center gap-3 px-8"
-      :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
+      :style="{ width: `${MapFrameWidthPx}px` }"
     >
       <span class="text-cyan-500/50 text-sm tracking-widest text-center animate-pulse">
         {{ $t("map.mobiusDesertHint") }}

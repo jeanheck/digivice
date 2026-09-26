@@ -15,7 +15,7 @@ const emit = defineEmits<{
   click: [questId: string];
 }>();
 
-const QUEST_CARD_VARIANT_CLASSES: Record<QuestCardVariant, string> = {
+const QuestCardVariantClasses: Record<QuestCardVariant, string> = {
   locked: "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70",
   unavailable: "border-gray-700/40 bg-[#0a0a1a] opacity-50 hover:opacity-70",
   done: "border-green-800/50 bg-green-900/20 hover:bg-green-900/40",
@@ -42,7 +42,7 @@ const cardClass = computed(() => {
     return "border-gray-600 bg-gray-800/50 hover:bg-gray-700/60";
   }
 
-  return QUEST_CARD_VARIANT_CLASSES[props.quest.cardVariant];
+  return QuestCardVariantClasses[props.quest.cardVariant];
 });
 
 const titleClass = computed(() => {

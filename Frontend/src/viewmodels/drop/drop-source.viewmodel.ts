@@ -1,4 +1,4 @@
-export type DropSourceKind = "enemy" | "tamer" | "duelIsland";
+import type { DropSourceKind } from "@/types/drop-source-kind.type";
 
 export interface DropSourceViewModel {
   kind: DropSourceKind;

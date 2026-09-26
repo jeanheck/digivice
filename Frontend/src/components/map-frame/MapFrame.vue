@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import { MAP_FRAME_MAX_HEIGHT_PX, MAP_FRAME_WIDTH_PX } from "@/constants/map-display.constant";
+import { MapFrameMaxHeightPx, MapFrameWidthPx } from "@/constants/map-display.constant";
 import { useMapFrame } from "@/composables/use-map-frame";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { MapFramePinViewModel } from "@/viewmodels/map-frame/map-frame-pin.viewmodel";
 
-const MAP_FRAME_DEFAULT_PIN_WRAPPER_SIZE_PX = 48;
-const MAP_FRAME_DEFAULT_PIN_DOT_SIZE_PX = 16;
-const MAP_FRAME_DEFAULT_PIN_LABEL_VERTICAL_OFFSET_PX = 40;
-const MAP_FRAME_DEFAULT_PIN_LABEL_VERTICAL_THRESHOLD_PERCENT = 25;
-const MAP_LABEL_LEFT_EDGE_THRESHOLD_PERCENT = 25;
-const MAP_LABEL_RIGHT_EDGE_THRESHOLD_PERCENT = 75;
+const MapFrameDefaultPinWrapperSizePx = 48;
+const MapFrameDefaultPinDotSizePx = 16;
+const MapFrameDefaultPinLabelVerticalOffsetPx = 40;
+const MapFrameDefaultPinLabelVerticalThresholdPercent = 25;
+const MapLabelLeftEdgeThresholdPercent = 25;
+const MapLabelRightEdgeThresholdPercent = 75;
 
 const props = withDefaults(
   defineProps<{
@@ -24,13 +24,13 @@ const props = withDefaults(
     pinLabelVerticalThresholdPercent?: number;
   }>(),
   {
-    width: MAP_FRAME_WIDTH_PX,
-    maxHeight: MAP_FRAME_MAX_HEIGHT_PX,
-    pinWrapperSizePx: MAP_FRAME_DEFAULT_PIN_WRAPPER_SIZE_PX,
-    pinDotSizePx: MAP_FRAME_DEFAULT_PIN_DOT_SIZE_PX,
+    width: MapFrameWidthPx,
+    maxHeight: MapFrameMaxHeightPx,
+    pinWrapperSizePx: MapFrameDefaultPinWrapperSizePx,
+    pinDotSizePx: MapFrameDefaultPinDotSizePx,
     pinLabelClass: "text-[9px] px-2 py-0.5",
-    pinLabelVerticalOffsetPx: MAP_FRAME_DEFAULT_PIN_LABEL_VERTICAL_OFFSET_PX,
-    pinLabelVerticalThresholdPercent: MAP_FRAME_DEFAULT_PIN_LABEL_VERTICAL_THRESHOLD_PERCENT,
+    pinLabelVerticalOffsetPx: MapFrameDefaultPinLabelVerticalOffsetPx,
+    pinLabelVerticalThresholdPercent: MapFrameDefaultPinLabelVerticalThresholdPercent,
   },
 );
 
@@ -76,11 +76,11 @@ const mapFrameOverflowClass = computed(() => {
 });
 
 function getPinLabelHorizontalAnchorClass(coordinateX: number): string {
-  if (coordinateX <= MAP_LABEL_LEFT_EDGE_THRESHOLD_PERCENT) {
+  if (coordinateX <= MapLabelLeftEdgeThresholdPercent) {
     return "left-1/2 translate-x-0 ml-3";
   }
 
-  if (coordinateX >= MAP_LABEL_RIGHT_EDGE_THRESHOLD_PERCENT) {
+  if (coordinateX >= MapLabelRightEdgeThresholdPercent) {
     return "left-1/2 -translate-x-full -mr-3";
   }
 

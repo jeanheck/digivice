@@ -1,11 +1,11 @@
-export type SeabedDirectionDockType = "normal" | "dead-end";
+import type { LabelPlacement } from "@/types/label-placement.type";
 
-export type DockLabelPosition = "above" | "below" | "left" | "right";
+export type SeabedDirectionDockType = "normal" | "dead-end";
 
 export interface SeabedDirectionDockRaw {
   location: string;
   x: number;
   y: number;
   type: SeabedDirectionDockType;
-  labelPlacement: DockLabelPosition;
+  labelPlacement: LabelPlacement;
 }

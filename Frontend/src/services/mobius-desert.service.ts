@@ -1,4 +1,3 @@
-import { LocationRegionConstant } from "@/constants/location-region.constant";
 import { MobiusDesertAreasMapRepository } from "@/repositories/mobius-desert-areas-map.repository";
 import { LocationService } from "@/services/location.service";
 import type { DesertAreaMapCellViewModel } from "@/viewmodels/desert/desert-area-map-cell.viewmodel";
@@ -6,7 +5,7 @@ import type { DesertAreaMapCellViewModel } from "@/viewmodels/desert/desert-area
 export class MobiusDesertService {
   public static isMobiusDesertLocation(locationId: string): boolean {
     return (
-      LocationService.getRegionByLocationId(locationId) === LocationRegionConstant.mobiusDesert
+      LocationService.getRegionByLocationId(locationId) === "mobiusDesert"
     );
   }
 

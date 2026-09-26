@@ -4,8 +4,7 @@ import Tooltip from "@/components/tooltip/Tooltip.vue";
 import { useI18n } from "vue-i18n";
 import { useTooltipPosition } from "@/composables/use-tooltip-position";
 import type { TechniqueViewModel } from "@/viewmodels/digievolution/technique.viewmodel";
-import type { Constant } from "@/constants/constant";
-import { IconConstant } from "@/constants/icon.constant";
+import { TechniqueTypeIcon } from "@/constants/icon.constant";
 
 const props = defineProps<{
   technique: TechniqueViewModel;
@@ -59,7 +58,7 @@ const moveTooltip = (event: MouseEvent) => {
 };
 
 const icon = computed(() => {
-  return IconConstant[props.technique.type as Constant];
+  return TechniqueTypeIcon[props.technique.type];
 });
 
 const TechniqueElementColorClass: Record<string, string> = {

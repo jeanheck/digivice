@@ -1,6 +1,6 @@
-import type { SeabedConstant } from "@/constants/seabed.constant";
+import type { SeabedDirection } from "@/types/seabed-direction.type";
 
 export interface SeabedRouteEmergeViewModel {
-  on: SeabedConstant;
+  on: SeabedDirection;
   location: string;
 }

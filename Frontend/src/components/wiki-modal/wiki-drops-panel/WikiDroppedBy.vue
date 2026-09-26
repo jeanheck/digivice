@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import WikiDroppedBySource from "@/components/wiki-modal/wiki-drops-panel/WikiDroppedBySource.vue";
-import type { DropSourceKind } from "@/viewmodels/drop/drop-source.viewmodel";
+import type { DropSourceKind } from "@/types/drop-source-kind.type";
 import type { WikiDroppedBySourceViewModel } from "@/viewmodels/wiki-modal/wiki-dropped-by-source.viewmodel";
 
 defineProps<{

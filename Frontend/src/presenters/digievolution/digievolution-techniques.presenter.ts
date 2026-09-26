@@ -1,4 +1,3 @@
-import { DigievolutionRequirementConstant } from "@/constants/digievolution-requirement.constant";
 import { DigievolutionTechniqueConverter } from "@/presenters/converter/digievolution-technique.converter";
 import { TechniqueConverter } from "@/presenters/converter/technique.converter";
 import { DigievolutionTechniquesHelper } from "@/presenters/helper/digievolution-techniques.helper";
@@ -56,7 +55,7 @@ export class DigievolutionTechniquesPresenter {
   ): LinkViewModel[] {
     return evolutionRequirements
       .filter(
-        (requirement) => requirement.type === DigievolutionRequirementConstant.DigievolutionLevel,
+        (requirement) => requirement.type === "DigievolutionLevel",
       )
       .map((requirement) => {
         const requirementDigievolutionId = requirement.digievolution!;
@@ -76,7 +75,7 @@ export class DigievolutionTechniquesPresenter {
       .filter(([, requirements]) => {
         return requirements.some((requirement) => {
           if (
-            requirement.type !== DigievolutionRequirementConstant.DigievolutionLevel ||
+            requirement.type !== "DigievolutionLevel" ||
             !requirement.digievolution
           ) {
             return false;

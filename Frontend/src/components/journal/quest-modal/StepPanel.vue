@@ -7,22 +7,22 @@ import type { StepViewModel } from "@/viewmodels/quest/step.viewmodel";
 
 /**
  * Canonical width for quest pin / zoomed-location map rendering.
- * Quest JSON coordinates are calibrated against this size (not MAP_FRAME_WIDTH_PX = 600).
+ * Quest JSON coordinates are calibrated against this size (not MapFrameWidthPx = 600).
  */
-const MAP_DISPLAY_WIDTH_PX = 512;
+const MapDisplayWidthPx = 512;
 
 /** Left padding (24px) + stable scrollbar gutter (~16px) around the fixed-width map. */
-const MAP_PANEL_HORIZONTAL_GUTTER_PX = 40;
-const MAP_PANEL_MIN_WIDTH_PX = MAP_DISPLAY_WIDTH_PX + MAP_PANEL_HORIZONTAL_GUTTER_PX;
+const MapPanelHorizontalGutterPx = 40;
+const MapPanelMinWidthPx = MapDisplayWidthPx + MapPanelHorizontalGutterPx;
 
-const MAP_FRAME_QUEST_WORLD_PIN_WRAPPER_SIZE_PX = 32;
-const MAP_FRAME_QUEST_WORLD_PIN_DOT_SIZE_PX = 10;
-const MAP_FRAME_QUEST_WORLD_PIN_LABEL_VERTICAL_OFFSET_PX = 26;
-const MAP_FRAME_QUEST_WORLD_PIN_LABEL_VERTICAL_THRESHOLD_PERCENT = 20;
+const MapFrameQuestWorldPinWrapperSizePx = 32;
+const MapFrameQuestWorldPinDotSizePx = 10;
+const MapFrameQuestWorldPinLabelVerticalOffsetPx = 26;
+const MapFrameQuestWorldPinLabelVerticalThresholdPercent = 20;
 
-const MAP_FRAME_QUEST_LOCAL_PIN_WRAPPER_SIZE_PX = 24;
-const MAP_FRAME_QUEST_LOCAL_PIN_DOT_SIZE_PX = 8;
-const MAP_FRAME_QUEST_LOCAL_PIN_LABEL_VERTICAL_OFFSET_PX = 25;
+const MapFrameQuestLocalPinWrapperSizePx = 24;
+const MapFrameQuestLocalPinDotSizePx = 8;
+const MapFrameQuestLocalPinLabelVerticalOffsetPx = 25;
 
 const props = defineProps<{
   selectedStep: StepViewModel | null;
@@ -58,7 +58,7 @@ const localMapSlides = computed(() => {
 <template>
   <div
     class="flex min-h-0 shrink-0 flex-col items-center gap-4 overflow-x-hidden overflow-y-auto custom-scroll [scrollbar-gutter:stable] lg:flex-[0.6] lg:border-l lg:border-[#0055ff]/30 lg:pl-6"
-    :style="{ minWidth: `${MAP_PANEL_MIN_WIDTH_PX}px` }"
+    :style="{ minWidth: `${MapPanelMinWidthPx}px` }"
   >
     <div
       v-if="!selectedStep"
@@ -84,25 +84,25 @@ const localMapSlides = computed(() => {
       <MapFrame
         v-if="worldMapSlides.length > 0"
         :slides="worldMapSlides"
-        :width="MAP_DISPLAY_WIDTH_PX"
+        :width="MapDisplayWidthPx"
         :max-height="null"
-        :pin-wrapper-size-px="MAP_FRAME_QUEST_WORLD_PIN_WRAPPER_SIZE_PX"
-        :pin-dot-size-px="MAP_FRAME_QUEST_WORLD_PIN_DOT_SIZE_PX"
+        :pin-wrapper-size-px="MapFrameQuestWorldPinWrapperSizePx"
+        :pin-dot-size-px="MapFrameQuestWorldPinDotSizePx"
         pin-label-class="text-[9px] px-3 py-1"
-        :pin-label-vertical-offset-px="MAP_FRAME_QUEST_WORLD_PIN_LABEL_VERTICAL_OFFSET_PX"
+        :pin-label-vertical-offset-px="MapFrameQuestWorldPinLabelVerticalOffsetPx"
         :pin-label-vertical-threshold-percent="
-          MAP_FRAME_QUEST_WORLD_PIN_LABEL_VERTICAL_THRESHOLD_PERCENT
+          MapFrameQuestWorldPinLabelVerticalThresholdPercent
         "
       />
 
       <MapFrame
         v-if="localMapSlides.length > 0"
         :slides="localMapSlides"
-        :width="MAP_DISPLAY_WIDTH_PX"
+        :width="MapDisplayWidthPx"
         :max-height="null"
-        :pin-wrapper-size-px="MAP_FRAME_QUEST_LOCAL_PIN_WRAPPER_SIZE_PX"
-        :pin-dot-size-px="MAP_FRAME_QUEST_LOCAL_PIN_DOT_SIZE_PX"
-        :pin-label-vertical-offset-px="MAP_FRAME_QUEST_LOCAL_PIN_LABEL_VERTICAL_OFFSET_PX"
+        :pin-wrapper-size-px="MapFrameQuestLocalPinWrapperSizePx"
+        :pin-dot-size-px="MapFrameQuestLocalPinDotSizePx"
+        :pin-label-vertical-offset-px="MapFrameQuestLocalPinLabelVerticalOffsetPx"
       />
     </template>
   </div>

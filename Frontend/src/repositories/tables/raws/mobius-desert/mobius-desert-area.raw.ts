@@ -1,7 +1,7 @@
-﻿import type { MobiusDesertAreaTypeRaw } from "./mobius-desert-area-type.raw";
+﻿import type { MobiusDesertAreaType } from "@/types/mobius-desert-area-type.type";
 
 export interface MobiusDesertAreaRaw {
   label: string;
-  type: MobiusDesertAreaTypeRaw;
+  type: MobiusDesertAreaType;
   note?: string;
 }

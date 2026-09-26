@@ -1,66 +1,66 @@
 import { resolveBattleFieldAssetName } from "@/constants/battle-field.constant";
 
-const MAP_ASSET_CONFIG = {
+const MapAssetConfig = {
   pathSuffix: "/maps/",
   extension: "webp",
 } as const;
 
-const DIGIMON_ICON_ASSET_CONFIG = {
+const DigimonIconAssetConfig = {
   pathSuffix: "/digimons/",
   extension: "png",
 } as const;
 
-const ENEMY_ICON_ASSET_CONFIG = {
+const EnemyIconAssetConfig = {
   pathSuffix: "/enemies/",
   extension: "png",
 } as const;
 
-const DIGIEVOLUTION_ICON_ASSET_CONFIG = {
+const DigievolutionIconAssetConfig = {
   pathSuffix: "/digievolutions/",
   extension: "png",
 } as const;
 
-const FLAG_ASSET_CONFIG = {
+const FlagAssetConfig = {
   pathSuffix: "/flags/",
   extension: "png",
 } as const;
 
-const CARD_ASSET_CONFIG = {
+const CardAssetConfig = {
   pathSuffix: "/cards/",
   extension: "png",
 } as const;
 
-const BATTLE_FIELD_ASSET_CONFIG = {
+const BattleFieldAssetConfig = {
   pathSuffix: "/battle/",
   extension: "jpg",
 } as const;
 
-const BATTLE_JUNIOR_ASSET_CONFIG = {
+const BattleJuniorAssetConfig = {
   pathSuffix: "/battle/",
   extension: "png",
 } as const;
 
-const NPC_ASSET_CONFIG = {
+const NpcAssetConfig = {
   pathSuffix: "/npcs/",
   extension: "png",
 } as const;
 
-const TAMER_ASSET_CONFIG = {
+const TamerAssetConfig = {
   pathSuffix: "/tamers/",
   extension: "png",
 } as const;
 
-const DUEL_ISLAND_ASSET_CONFIG = {
+const DuelIslandAssetConfig = {
   pathSuffix: "/duel-island/",
   extension: "png",
 } as const;
 
-const BOSS_ASSET_CONFIG = {
+const BossAssetConfig = {
   pathSuffix: "/bosses/",
   extension: "png",
 } as const;
 
-const STORE_ASSET_CONFIG = {
+const StoreAssetConfig = {
   pathSuffix: "/stores/",
   extension: "png",
 } as const;
@@ -151,8 +151,8 @@ export class ImageCatalog {
   public static getLocationImageUrl(imageName: string | null): string | null {
     return getImageUrl(
       mapModules,
-      MAP_ASSET_CONFIG.pathSuffix,
-      MAP_ASSET_CONFIG.extension,
+      MapAssetConfig.pathSuffix,
+      MapAssetConfig.extension,
       imageName,
     );
   }
@@ -160,8 +160,8 @@ export class ImageCatalog {
   public static getDigimonImageUrl(digimonName: string | null): string | null {
     return getImageUrl(
       digimonIconModules,
-      DIGIMON_ICON_ASSET_CONFIG.pathSuffix,
-      DIGIMON_ICON_ASSET_CONFIG.extension,
+      DigimonIconAssetConfig.pathSuffix,
+      DigimonIconAssetConfig.extension,
       digimonName,
     );
   }
@@ -169,8 +169,8 @@ export class ImageCatalog {
   public static getEnemyImageUrl(enemyName: string | null): string | null {
     return getImageUrl(
       enemyIconModules,
-      ENEMY_ICON_ASSET_CONFIG.pathSuffix,
-      ENEMY_ICON_ASSET_CONFIG.extension,
+      EnemyIconAssetConfig.pathSuffix,
+      EnemyIconAssetConfig.extension,
       enemyName,
     );
   }
@@ -178,8 +178,8 @@ export class ImageCatalog {
   public static getDigievolutionImageUrl(digievolutionName: string | null): string | null {
     return getImageUrl(
       digievolutionIconModules,
-      DIGIEVOLUTION_ICON_ASSET_CONFIG.pathSuffix,
-      DIGIEVOLUTION_ICON_ASSET_CONFIG.extension,
+      DigievolutionIconAssetConfig.pathSuffix,
+      DigievolutionIconAssetConfig.extension,
       digievolutionName,
     );
   }
@@ -187,8 +187,8 @@ export class ImageCatalog {
   public static getCardImageUrl(cardName: string | null): string | null {
     return getImageUrl(
       cardModules,
-      CARD_ASSET_CONFIG.pathSuffix,
-      CARD_ASSET_CONFIG.extension,
+      CardAssetConfig.pathSuffix,
+      CardAssetConfig.extension,
       cardName,
     );
   }
@@ -197,8 +197,8 @@ export class ImageCatalog {
     const assetName = resolveBattleFieldAssetName(fieldId);
     return getImageUrl(
       battleModules,
-      BATTLE_FIELD_ASSET_CONFIG.pathSuffix,
-      BATTLE_FIELD_ASSET_CONFIG.extension,
+      BattleFieldAssetConfig.pathSuffix,
+      BattleFieldAssetConfig.extension,
       assetName,
     );
   }
@@ -206,8 +206,8 @@ export class ImageCatalog {
   public static getJuniorImageUrl(): string | null {
     return getImageUrl(
       battleModules,
-      BATTLE_JUNIOR_ASSET_CONFIG.pathSuffix,
-      BATTLE_JUNIOR_ASSET_CONFIG.extension,
+      BattleJuniorAssetConfig.pathSuffix,
+      BattleJuniorAssetConfig.extension,
       "Junior",
     );
   }
@@ -215,8 +215,8 @@ export class ImageCatalog {
   public static getTamerImageUrl(imageName: string | null | undefined): string | null {
     return getImageUrl(
       tamerModules,
-      TAMER_ASSET_CONFIG.pathSuffix,
-      TAMER_ASSET_CONFIG.extension,
+      TamerAssetConfig.pathSuffix,
+      TamerAssetConfig.extension,
       imageName,
     );
   }
@@ -224,8 +224,8 @@ export class ImageCatalog {
   public static getNpcImageUrl(imageName: string | null | undefined): string | null {
     return getImageUrl(
       npcModules,
-      NPC_ASSET_CONFIG.pathSuffix,
-      NPC_ASSET_CONFIG.extension,
+      NpcAssetConfig.pathSuffix,
+      NpcAssetConfig.extension,
       imageName,
     );
   }
@@ -233,8 +233,8 @@ export class ImageCatalog {
   public static getDuelIslandImageUrl(imageName: string | null | undefined): string | null {
     return getImageUrl(
       duelIslandModules,
-      DUEL_ISLAND_ASSET_CONFIG.pathSuffix,
-      DUEL_ISLAND_ASSET_CONFIG.extension,
+      DuelIslandAssetConfig.pathSuffix,
+      DuelIslandAssetConfig.extension,
       imageName,
     );
   }
@@ -242,8 +242,8 @@ export class ImageCatalog {
   public static getBossImageUrl(imageName: string | null | undefined): string | null {
     return getImageUrl(
       bossModules,
-      BOSS_ASSET_CONFIG.pathSuffix,
-      BOSS_ASSET_CONFIG.extension,
+      BossAssetConfig.pathSuffix,
+      BossAssetConfig.extension,
       imageName,
     );
   }
@@ -251,8 +251,8 @@ export class ImageCatalog {
   public static getCardShopImageUrl(imageName: string | null | undefined): string | null {
     return getImageUrl(
       storeModules,
-      STORE_ASSET_CONFIG.pathSuffix,
-      STORE_ASSET_CONFIG.extension,
+      StoreAssetConfig.pathSuffix,
+      StoreAssetConfig.extension,
       imageName,
     );
   }
@@ -262,14 +262,14 @@ export class ImageCatalog {
   ): { src: string; src2x: string } | null {
     const src = getImageUrl(
       flagModules,
-      FLAG_ASSET_CONFIG.pathSuffix,
-      FLAG_ASSET_CONFIG.extension,
+      FlagAssetConfig.pathSuffix,
+      FlagAssetConfig.extension,
       flagCode,
     );
     const src2x = getImageUrl(
       flagModules,
-      FLAG_ASSET_CONFIG.pathSuffix,
-      FLAG_ASSET_CONFIG.extension,
+      FlagAssetConfig.pathSuffix,
+      FlagAssetConfig.extension,
       flagCode ? `${flagCode}@2x` : null,
     );
     if (!src || !src2x) {

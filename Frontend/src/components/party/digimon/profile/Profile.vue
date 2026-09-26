@@ -8,7 +8,6 @@ import Icon from "@/components/party/digimon/profile/Icon.vue";
 import TrainingPoints from "@/components/party/digimon/profile/TrainingPoints.vue";
 import DigievolutionsButton from "@/components/party/digimon/profile/DigievolutionsButton.vue";
 import Tooltip from "@/components/tooltip/Tooltip.vue";
-import { DigimonDebuffConstant } from "@/constants/digimon-debuff.constant";
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Digimon } from "@/models";
 import { ProfilePresenter } from "@/presenters/party/digimon/profile.presenter";
@@ -88,7 +87,9 @@ const digimonStatusTooltip = computed(() => {
     return t("digimon.status.healthy");
   }
 
-  return t(`digimon.debuff.${DigimonDebuffConstant[condition.value]}.affected`);
+  return ProfilePresenter.getActiveDebuffs(condition.value)
+    .map((debuff) => t(`digimon.debuff.${debuff}.affected`))
+    .join(", ");
 });
 </script>
 

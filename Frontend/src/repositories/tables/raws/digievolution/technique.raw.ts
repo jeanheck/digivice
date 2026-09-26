@@ -1,5 +1,7 @@
+import type { TechniqueType } from "@/types/technique-type.type";
+
 export interface TechniqueRaw {
-  type: string;
+  type: TechniqueType;
   element: string;
   elementStrength: number;
   mp: number;

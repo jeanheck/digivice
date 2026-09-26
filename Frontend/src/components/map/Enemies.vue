@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { IconConstant } from "@/constants/icon.constant";
-import { EnemySourceConstant } from "@/constants/enemy-source.constant";
-import { NpcBattleIconConstant } from "@/constants/npc-battle-icon.constant";
-import { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
+import { EnemySourceIcon, NpcBattleKindIcon } from "@/constants/icon.constant";
 import { MapEnemiesPresenter } from "@/presenters/map/map-enemies.presenter";
 import type { MapNpcViewModel } from "@/viewmodels/map/map-npc.viewmodel";
 
@@ -82,10 +79,10 @@ const openNpcWikiModal = (npcId: string) => {
             v-if="enemy.boss"
             class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5"
             aria-hidden="true"
-          >{{ IconConstant[EnemySourceConstant.boss] }}</span>
-          <span v-if="enemy.walking && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">{{ IconConstant[EnemySourceConstant.walking] }}</span>
-          <span v-if="enemy.fishing && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">{{ IconConstant[EnemySourceConstant.fishing] }}</span>
-          <span v-if="enemy.kickingTree && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">{{ IconConstant[EnemySourceConstant.kickingTree] }}</span>
+          >{{ EnemySourceIcon.boss }}</span>
+          <span v-if="enemy.walking && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">{{ EnemySourceIcon.walking }}</span>
+          <span v-if="enemy.fishing && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">{{ EnemySourceIcon.fishing }}</span>
+          <span v-if="enemy.kickingTree && !enemy.boss" class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5" aria-hidden="true">{{ EnemySourceIcon.kickingTree }}</span>
         </button>
       </div>
       <div
@@ -106,15 +103,15 @@ const openNpcWikiModal = (npcId: string) => {
         >
           <span>{{ $t(npc.nameKey) }}</span>
           <span
-            v-if="npc.availableBattleKind === NpcBattleKindConstant.card"
+            v-if="npc.availableBattleKind === 'card'"
             class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5 font-emoji filter-[sepia(1)_saturate(5)_hue-rotate(165deg)_brightness(1.05)] drop-shadow-[0_0_3px_rgba(34,211,238,0.7)]"
             aria-hidden="true"
-          >{{ NpcBattleIconConstant[NpcBattleKindConstant.card] }}</span>
+          >{{ NpcBattleKindIcon.card }}</span>
           <span
-            v-if="npc.availableBattleKind === NpcBattleKindConstant.digimon"
+            v-if="npc.availableBattleKind === 'digimon'"
             class="ml-0.5 text-[12px] 2xl:text-[16px] -translate-y-0.5 font-emoji"
             aria-hidden="true"
-          >{{ NpcBattleIconConstant[NpcBattleKindConstant.digimon] }}</span>
+          >{{ NpcBattleKindIcon.digimon }}</span>
         </button>
       </div>
     </div>

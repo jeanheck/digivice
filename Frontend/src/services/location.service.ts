@@ -1,4 +1,4 @@
-import { LocationRegionConstant } from "@/constants/location-region.constant";
+import type { LocationRegion } from "@/types/location-region.type";
 import { LocationBossRepository } from "@/repositories/location-boss.repository";
 import { LocationDuelIslandRepository } from "@/repositories/location-duel-island.repository";
 import { LocationNpcRepository } from "@/repositories/location-npc.repository";
@@ -92,8 +92,8 @@ export class LocationService {
     return matchingPhase.ids;
   }
 
-  public static getRegionByLocationId(id: string): LocationRegionConstant {
-    return LocationRepository.getLocationById(id).region ?? LocationRegionConstant.asukaServer;
+  public static getRegionByLocationId(id: string): LocationRegion {
+    return LocationRepository.getLocationById(id).region ?? "asukaServer";
   }
 
   public static getLocationImageNameByLocationId(id: string): string | null {

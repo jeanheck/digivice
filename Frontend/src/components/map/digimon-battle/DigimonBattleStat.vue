@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
 
-const BATTLE_DELTA_STAT_KEYS = new Set(["strength", "defense", "speed"]);
+const BattleDeltaStatKeys = new Set(["strength", "defense", "speed"]);
 
 const props = defineProps<{
   stat: EnemyStatViewModel;
@@ -18,7 +18,7 @@ const emit = defineEmits<{
 }>();
 
 const hasBattleDelta = computed(() => {
-  return BATTLE_DELTA_STAT_KEYS.has(props.stat.statKey) && (props.stat.delta ?? 0) !== 0;
+  return BattleDeltaStatKeys.has(props.stat.statKey) && (props.stat.delta ?? 0) !== 0;
 });
 
 const valueColorClass = computed(() => {

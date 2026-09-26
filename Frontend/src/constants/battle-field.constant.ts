@@ -1,16 +1,16 @@
-import { ElementConstant } from "@/constants/stat/element.constant";
+import type { DigimonElement } from "@/constants/digimon-element.constant";
 
-const battleFieldElementById: Readonly<Record<number, ElementConstant>> = {
-  2: ElementConstant.fire,
-  3: ElementConstant.water,
-  4: ElementConstant.ice,
-  5: ElementConstant.wind,
-  6: ElementConstant.thunder,
-  7: ElementConstant.machine,
-  8: ElementConstant.dark,
+const battleFieldElementById: Readonly<Record<number, DigimonElement>> = {
+  2: "fire",
+  3: "water",
+  4: "ice",
+  5: "wind",
+  6: "thunder",
+  7: "machine",
+  8: "dark",
 };
 
-function resolveBattleFieldElement(fieldId: number): ElementConstant | null {
+function resolveBattleFieldElement(fieldId: number): DigimonElement | null {
   return battleFieldElementById[fieldId] ?? null;
 }
 

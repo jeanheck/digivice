@@ -3,11 +3,11 @@ import { invoke } from "@tauri-apps/api/core";
 import type { EventsMap } from "./events.map";
 import type { EventDTO } from "./dto/event.dto";
 import { signalRLogger } from "./logger";
-import { APP_CONFIG } from "@/config";
+import { AppConfig } from "@/config";
 import { formatHubConnectionError } from "./hub-connection-error";
 
-const CONNECTION_MAX_ATTEMPTS = 20;
-const CONNECTION_RETRY_DELAY_MS = 250;
+const ConnectionMaxAttempts = 20;
+const ConnectionRetryDelayMs = 250;
 
 type HandlersMap = { [K in keyof EventsMap]?: ((data: EventsMap[K]) => void)[] };
 
@@ -34,19 +34,19 @@ class SignalRService {
 
   private async getHubUrl(): Promise<string> {
     // In development (Vite), we use the relative proxy.
-    if (APP_CONFIG.IS_DEV) {
-      return APP_CONFIG.BACKEND.HUB_PATH;
+    if (AppConfig.isDev) {
+      return AppConfig.backend.hubPath;
     }
 
     // In production (Tauri), we are trying to obtain the dynamic port from the backend.
     try {
       const port = await invoke<number>("get_backend_port");
-      return `http://localhost:${port}${APP_CONFIG.BACKEND.HUB_PATH}`;
+      return `http://localhost:${port}${AppConfig.backend.hubPath}`;
     } catch (err) {
       signalRLogger.warn(
-        `Failed to get backend port via Tauri. Using fallback: ${APP_CONFIG.BACKEND.DEFAULT_PORT}`,
+        `Failed to get backend port via Tauri. Using fallback: ${AppConfig.backend.defaultPort}`,
       );
-      return APP_CONFIG.BACKEND.FALLBACK_URL;
+      return AppConfig.backend.fallbackUrl;
     }
   }
 
@@ -67,7 +67,7 @@ class SignalRService {
     const connection = this.createConnection(hubUrl);
     let lastError: unknown = null;
 
-    for (let attempt = 1; attempt <= CONNECTION_MAX_ATTEMPTS; attempt++) {
+    for (let attempt = 1; attempt <= ConnectionMaxAttempts; attempt++) {
       try {
         await connection.start();
         signalRLogger.info(`Connected to GameHub at: ${hubUrl}`);
@@ -76,12 +76,12 @@ class SignalRService {
       } catch (err) {
         lastError = err;
         signalRLogger.warn(
-          `Connection attempt ${attempt}/${CONNECTION_MAX_ATTEMPTS} failed at ${hubUrl}`,
+          `Connection attempt ${attempt}/${ConnectionMaxAttempts} failed at ${hubUrl}`,
           err,
         );
 
-        if (attempt < CONNECTION_MAX_ATTEMPTS) {
-          await new Promise((resolve) => setTimeout(resolve, CONNECTION_RETRY_DELAY_MS));
+        if (attempt < ConnectionMaxAttempts) {
+          await new Promise((resolve) => setTimeout(resolve, ConnectionRetryDelayMs));
         }
       }
     }

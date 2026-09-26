@@ -4,8 +4,8 @@ import SeabedDockLabel from "@/components/seabed-modal/SeabedDockLabel.vue";
 import SeabedDockMarker from "@/components/seabed-modal/SeabedDockMarker.vue";
 import SeabedRouteLines from "@/components/seabed-modal/SeabedRouteLines.vue";
 import {
-  MAP_FRAME_MAX_HEIGHT_PX,
-  MAP_FRAME_WIDTH_PX,
+  MapFrameMaxHeightPx,
+  MapFrameWidthPx,
 } from "@/constants/map-display.constant";
 import { useMapFrame } from "@/composables/use-map-frame";
 import { SeabedDocksPresenter } from "@/presenters/map/seabed-docks.presenter";
@@ -23,7 +23,7 @@ const routes = SeabedDocksPresenter.getRoutes();
 const hoveredRouteId = ref<string | null>(null);
 
 const frameWidth = computed(() => {
-  return MAP_FRAME_WIDTH_PX;
+  return MapFrameWidthPx;
 });
 
 const { mapImageFrameStyle, onImageLoad } = useMapFrame(imageUrl, frameWidth);
@@ -49,8 +49,8 @@ function onSelectDock(locationId: string): void {
   <div
     class="relative shrink-0 min-h-0 overflow-visible bg-[#00051a] border border-cyan-800/50 rounded shadow-[0_0_15px_rgba(0,170,255,0.1)]"
     :style="{
-      width: `${MAP_FRAME_WIDTH_PX}px`,
-      maxHeight: `${MAP_FRAME_MAX_HEIGHT_PX}px`,
+      width: `${MapFrameWidthPx}px`,
+      maxHeight: `${MapFrameMaxHeightPx}px`,
     }"
   >
     <div class="relative overflow-visible" :style="mapImageFrameStyle">

@@ -1,4 +1,4 @@
-import { MapIdConstant } from "@/constants/map-id.constant";
+import { MapId } from "@/constants/map-id.constant";
 import { MapConverter } from "@/presenters/converter/map.converter";
 import { LocationRepository } from "@/repositories/location.repository";
 import type { MapViewModel } from "@/viewmodels/map/map.viewmodel";
@@ -9,10 +9,10 @@ export class MapPresenter {
   }
 
   public static isInBattle(locationId: string): boolean {
-    return locationId === MapIdConstant.digimonBattle;
+    return locationId === MapId.digimonBattle;
   }
 
   public static isInCardBattle(locationId: string): boolean {
-    return locationId === MapIdConstant.cardBattle;
+    return locationId === MapId.cardBattle;
   }
 }

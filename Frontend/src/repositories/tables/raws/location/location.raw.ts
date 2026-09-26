@@ -1,4 +1,4 @@
-import type { LocationRegionConstant } from "@/constants/location-region.constant";
+import type { LocationRegion } from "@/types/location-region.type";
 import type { InnerLocationRaw } from "@/repositories/tables/raws/location/inner-location.raw";
 import type { LocationBossRaw } from "@/repositories/tables/raws/location/location-boss.raw";
 import type { LocationDuelIslandRaw } from "@/repositories/tables/raws/location/location-duel-island.raw";
@@ -30,7 +30,7 @@ export interface LocationRaw {
   tamers?: LocationTamerRaw[];
   cardShops?: LocationCardShopRaw[];
   duelIsland?: LocationDuelIslandRaw[];
-  region?: LocationRegionConstant;
+  region?: LocationRegion;
   dock?: boolean;
 }
 

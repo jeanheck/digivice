@@ -1,5 +1,1 @@
-export enum HealthStatus {
-  Loading = "Loading",
-  Healthy = "Healthy",
-  Error = "Error",
-}
+export type HealthStatus = "Loading" | "Healthy" | "Error";

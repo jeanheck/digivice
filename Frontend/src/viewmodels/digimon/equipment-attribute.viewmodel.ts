@@ -1,7 +1,7 @@
-import type { Constant } from "@/constants/constant";
+import type { DigimonStat } from "@/types/digimon-stat.type";
 
 export interface EquipmentAttributeViewModel {
-  attribute: Constant;
+  attribute: DigimonStat;
   type: string;
   value: number;
 }

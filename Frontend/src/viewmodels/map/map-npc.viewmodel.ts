@@ -1,8 +1,8 @@
-import type { NpcBattleKindConstant } from "@/constants/npc-battle-kind.constant";
+import type { NpcBattleKind } from "@/types/npc-battle-kind.type";
 
 export interface MapNpcViewModel {
   id: string;
   nameKey: string;
   hasAvailableBattle: boolean;
-  availableBattleKind: NpcBattleKindConstant | null;
+  availableBattleKind: NpcBattleKind | null;
 }

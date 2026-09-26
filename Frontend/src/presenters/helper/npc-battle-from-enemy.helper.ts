@@ -1,7 +1,4 @@
-import {
-  NpcBattleKindConstant,
-  STORY_NPC_DIGIMON_BATTLE_ID,
-} from "@/constants/npc-battle-kind.constant";
+import { StoryNpcDigimonBattleId } from "@/constants/npc-battle.constant";
 import { NpcBattleOpponentHelper } from "@/presenters/helper/npc-battle-opponent.helper";
 import { EnemyRepository } from "@/repositories/enemy.repository";
 import type { NpcPartyMemberRaw } from "@/repositories/tables/raws/npc/npc-party-member.raw";
@@ -58,7 +55,7 @@ export class NpcBattleFromEnemyHelper {
     if (opponent.source === "npc") {
       return {
         npcId: opponentId,
-        battleOptionId: `${NpcBattleKindConstant.digimon}-${STORY_NPC_DIGIMON_BATTLE_ID}`,
+        battleOptionId: `digimon-${StoryNpcDigimonBattleId}`,
       };
     }
 
@@ -78,7 +75,7 @@ export class NpcBattleFromEnemyHelper {
     return {
       npcId: opponentId,
       battleOptionId:
-        battleId !== null ? `${NpcBattleKindConstant.digimon}-${battleId}` : null,
+        battleId !== null ? `digimon-${battleId}` : null,
     };
   }
 }

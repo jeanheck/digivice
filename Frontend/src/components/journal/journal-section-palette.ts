@@ -12,7 +12,7 @@ export interface JournalSectionPalette {
   questTitleHoverClass: string;
 }
 
-const JOURNAL_SECTION_PALETTES: Record<JournalSectionAccentColor, JournalSectionPalette> = {
+const JournalSectionPalettes: Record<JournalSectionAccentColor, JournalSectionPalette> = {
   emerald: {
     sectionTitleClass: "text-emerald-400",
     sectionBorderClass: "border-emerald-800",
@@ -54,7 +54,7 @@ const JOURNAL_SECTION_PALETTES: Record<JournalSectionAccentColor, JournalSection
 export function getJournalSectionPalette(
   accentColor: JournalSectionAccentColor,
 ): JournalSectionPalette {
-  return JOURNAL_SECTION_PALETTES[accentColor];
+  return JournalSectionPalettes[accentColor];
 }
 
 export const journalSectionPaletteKey: InjectionKey<ComputedRef<JournalSectionPalette>> =

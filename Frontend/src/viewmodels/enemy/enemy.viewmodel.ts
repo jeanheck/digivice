@@ -1,3 +1,4 @@
+import type { DigimonSpecies } from "@/types/digimon-species.type";
 import type { EnemyDropViewModel } from "@/viewmodels/enemy/enemy-drop.viewmodel";
 import type { EnemyLocationViewModel } from "@/viewmodels/enemy/enemy-location.viewmodel";
 
@@ -5,7 +6,7 @@ export interface EnemyViewModel {
   name: string;
   level: number;
   hp: number;
-  species: string;
+  species: DigimonSpecies;
   rate: number;
   attributes: {
     strength: number;

@@ -4,7 +4,7 @@ import MapFrame from "@/components/map-frame/MapFrame.vue";
 import WikiLocalMap from "@/components/wiki-modal/wiki-locations-panel/WikiLocalMap.vue";
 import WikiLocationEncounters from "@/components/wiki-modal/wiki-locations-panel/WikiLocationEncounters.vue";
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import { MAP_FRAME_WIDTH_PX } from "@/constants/map-display.constant";
+import { MapFrameWidthPx } from "@/constants/map-display.constant";
 import { useImageNaturalAspectRatio } from "@/composables/use-image-natural-aspect-ratio";
 import { WikiLocationsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-locations-panel.presenter";
 import { useGameState } from "@/composables/use-game-state";
@@ -65,16 +65,16 @@ const localImageUrl = computed(() => {
 const { aspectRatio: asukaAspectRatio } = useImageNaturalAspectRatio(asukaImageUrl);
 const { aspectRatio: localAspectRatio } = useImageNaturalAspectRatio(localImageUrl);
 
-const LOCAL_MAP_MAX_SLOT_RATIO = 0.95;
+const LocalMapMaxSlotRatio = 0.95;
 
 function computeMapWidth(
   slotHeightPx: number,
   aspectRatio: number | null,
-  slotWidthPx: number = MAP_FRAME_WIDTH_PX,
+  slotWidthPx: number = MapFrameWidthPx,
   maxSlotRatio: number = 1,
 ): number {
   if (aspectRatio === null || slotHeightPx === 0) {
-    return MAP_FRAME_WIDTH_PX;
+    return MapFrameWidthPx;
   }
 
   const maxWidth = Math.floor(slotWidthPx * maxSlotRatio);
@@ -138,8 +138,8 @@ const localMapWidth = computed(() => {
   return computeMapWidth(
     localMapSlotHeightPx.value,
     localAspectRatio.value,
-    MAP_FRAME_WIDTH_PX,
-    LOCAL_MAP_MAX_SLOT_RATIO,
+    MapFrameWidthPx,
+    LocalMapMaxSlotRatio,
   );
 });
 
@@ -161,7 +161,7 @@ const handleOpenCardShop = (cardShopId: string): void => {
     <div class="flex-1 min-h-0 flex gap-4 items-stretch justify-center overflow-hidden">
       <div
         class="flex flex-col gap-2 min-h-0 h-full self-stretch shrink-0"
-        :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
+        :style="{ width: `${MapFrameWidthPx}px` }"
       >
         <WikiLocationEncounters
           class="flex-[0_0_10%] min-h-0 overflow-y-auto custom-scroll"
@@ -193,7 +193,7 @@ const handleOpenCardShop = (cardShopId: string): void => {
         v-if="locationsViewModel.localSlides.length > 0"
         ref="localMapSlotElement"
         class="h-full min-h-0 shrink-0 flex flex-col justify-center items-center"
-        :style="{ width: `${MAP_FRAME_WIDTH_PX}px` }"
+        :style="{ width: `${MapFrameWidthPx}px` }"
       >
         <WikiLocalMap
           :image-url="localImageUrl"

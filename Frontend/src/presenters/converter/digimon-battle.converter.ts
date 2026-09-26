@@ -1,11 +1,10 @@
 import { ImageCatalog } from "@/catalogs/image.catalog";
-import { EnemySourceConstant } from "@/constants/enemy-source.constant";
-import { IconConstant } from "@/constants/icon.constant";
-import { toSpeciesConstant } from "@/constants/species.constant";
+import { DigimonSpeciesIcon, EnemySourceIcon } from "@/constants/icon.constant";
 import type { Vital } from "@/models";
 import { EnemyConditionConverter } from "@/presenters/converter/enemy-condition.converter";
 import { EnemyStatConverter } from "@/presenters/converter/enemy-stat.converter";
 import type { EnemyRaw } from "@/repositories/tables/raws/enemy/enemy.raw";
+import type { DigimonSpecies } from "@/types/digimon-species.type";
 import type { EnemyViewModel } from "@/viewmodels/enemy/enemy.viewmodel";
 import type { EnemyStatViewModel } from "@/viewmodels/enemy/enemy-stat.viewmodel";
 import type { DigimonBattleViewModel } from "@/viewmodels/map/digimon-battle.viewmodel";
@@ -106,17 +105,12 @@ export class DigimonBattleConverter {
     });
   }
 
-  private static toSpeciesEmoji(species: string | null, isBoss: boolean): string | null {
+  private static toSpeciesEmoji(species: DigimonSpecies, isBoss: boolean): string {
     if (isBoss) {
-      return IconConstant[EnemySourceConstant.boss];
+      return EnemySourceIcon.boss;
     }
 
-    const speciesConstant = toSpeciesConstant(species);
-    if (speciesConstant === null) {
-      return null;
-    }
-
-    return IconConstant[speciesConstant];
+    return DigimonSpeciesIcon[species];
   }
 
   private static toConditions(enemyRaw: EnemyRaw): EnemyViewModel["conditions"] {

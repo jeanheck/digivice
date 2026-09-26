@@ -1,11 +1,12 @@
 import type { EnemyDropRaw } from "./enemy-drop.raw";
 import type { EnemyLocationRaw } from "./enemy-location.raw";
+import type { DigimonSpecies } from "@/types/digimon-species.type";
 
 export interface EnemyRaw {
   name: string;
   level: number;
   hp: number;
-  species: string;
+  species: DigimonSpecies;
   rate: number;
   strength: number;
   defense: number;

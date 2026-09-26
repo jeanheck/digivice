@@ -5,6 +5,7 @@ import { ImageCatalog } from "@/catalogs/image.catalog";
 import type { DuelIslandRaw } from "@/repositories/tables/raws/duel-island/duel-island.raw";
 import type { NpcRaw } from "@/repositories/tables/raws/npc/npc.raw";
 import type { TamerRaw } from "@/repositories/tables/raws/tamer/tamer.raw";
+import type { NpcType } from "@/types/npc-type.type";
 
 export type NpcBattleOpponent =
   | { source: "tamer"; raw: TamerRaw }
@@ -12,8 +13,6 @@ export type NpcBattleOpponent =
   | { source: "npc"; raw: NpcRaw };
 
 export type NpcBattleOpponentRaw = TamerRaw | DuelIslandRaw;
-
-export type NpcBattleOpponentSearchKind = "tamer" | "leader" | "npc";
 
 export class NpcBattleOpponentHelper {
   public static resolveById(id: string): NpcBattleOpponent | undefined {
@@ -60,7 +59,7 @@ export class NpcBattleOpponentHelper {
     return null;
   }
 
-  public static getSearchKind(id: string): NpcBattleOpponentSearchKind | null {
+  public static getSearchKind(id: string): NpcType | null {
     const opponent = this.resolveById(id);
     if (opponent === undefined) {
       return null;

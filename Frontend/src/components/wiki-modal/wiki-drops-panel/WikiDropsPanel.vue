@@ -6,7 +6,7 @@ import WikiDropEquipment from "@/components/wiki-modal/wiki-drops-panel/WikiDrop
 import WikiDroppedBy from "@/components/wiki-modal/wiki-drops-panel/WikiDroppedBy.vue";
 import { WikiDropsPanelPresenter } from "@/presenters/map/wiki-modal/wiki-drops-panel.presenter";
 import type { DropType } from "@/repositories/tables/raws/drop/drop-type";
-import type { DropSourceKind } from "@/viewmodels/drop/drop-source.viewmodel";
+import type { DropSourceKind } from "@/types/drop-source-kind.type";
 
 const props = defineProps<{
   dropId: string;

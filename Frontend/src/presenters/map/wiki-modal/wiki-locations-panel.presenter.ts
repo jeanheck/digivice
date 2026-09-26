@@ -10,18 +10,17 @@ import { LocationCardShopRepository } from "@/repositories/location-card-shop.re
 import { CardShopRepository } from "@/repositories/card-shop.repository";
 import type { LocationBossRaw } from "@/repositories/tables/raws/location/location-boss.raw";
 import type { LocationDuelIslandRaw } from "@/repositories/tables/raws/location/location-duel-island.raw";
-import type { LocationMapLabelPlacementRaw } from "@/repositories/tables/raws/location/location-map-label-placement.raw";
 import type { LocationNpcRaw } from "@/repositories/tables/raws/location/location-npc.raw";
 import type { LocationCardShopRaw } from "@/repositories/tables/raws/location/location-card-shop.raw";
 import type { LocationTamerRaw } from "@/repositories/tables/raws/location/location-tamer.raw";
 import type { CoordinatesRaw } from "@/repositories/tables/raws/quest/coordinates.raw";
 import { QuestService } from "@/services/quest.service";
-import type { EnemyLocationSourceViewModel } from "@/viewmodels/enemy/enemy-location-source.viewmodel";
+import type { EnemySource } from "@/types/enemy-source.type";
 import type { MapFrameSlideViewModel } from "@/viewmodels/map-frame/map-frame-slide.viewmodel";
 import type { CoordinatesViewModel } from "@/viewmodels/quest/coordinates.viewmodel";
 import type { WikiLocationEncounterEnemyViewModel } from "@/viewmodels/wiki-modal/wiki-location-encounter-enemy.viewmodel";
 import type { WikiLocationEncounterLineViewModel } from "@/viewmodels/wiki-modal/wiki-location-encounter-line.viewmodel";
-import type { WikiLocationMapLabelPlacementViewModel } from "@/viewmodels/wiki-modal/wiki-location-map-marker.viewmodel";
+import type { LabelPlacement } from "@/types/label-placement.type";
 import type { WikiLocationMapMarkerViewModel } from "@/viewmodels/wiki-modal/wiki-location-map-marker.viewmodel";
 import type { WikiLocationsPanelViewModel } from "@/viewmodels/wiki-modal/wiki-locations-panel.viewmodel";
 
@@ -170,8 +169,8 @@ export class WikiLocationsPanelPresenter {
   }
 
   private static toLabelPlacement(
-    labelPlacement: LocationMapLabelPlacementRaw | undefined,
-  ): WikiLocationMapLabelPlacementViewModel {
+    labelPlacement: LabelPlacement | undefined,
+  ): LabelPlacement {
     if (labelPlacement === undefined) {
       return "below";
     }
@@ -185,13 +184,13 @@ export class WikiLocationsPanelPresenter {
     sideQuests: Quest[],
     previousMapId: string,
   ): WikiLocationEncounterLineViewModel[] {
-    const encounterSources: Exclude<EnemyLocationSourceViewModel, "boss">[] = [
+    const encounterSources: Exclude<EnemySource, "boss">[] = [
       "walking",
       "fishing",
       "kickingTree",
     ];
     const enemyIdsBySource: Record<
-      Exclude<EnemyLocationSourceViewModel, "boss">,
+      Exclude<EnemySource, "boss">,
       string[]
     > = {
       walking: LocationEncounterHelper.resolveWalkingIds(locationId, mainQuest, previousMapId),

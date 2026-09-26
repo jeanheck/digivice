@@ -17,7 +17,6 @@ import {
   type TooltipHorizontalAlign,
   type TooltipPlacement,
 } from "@/composables/use-tooltip-position";
-import { DigimonDebuffConstant } from "@/constants/digimon-debuff.constant";
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import { DigimonBattlePresenter } from "@/presenters/map/digimon-battle.presenter";
 import { useGameState } from "@/composables/use-game-state";
@@ -72,7 +71,9 @@ const digimonStatusTooltip = computed(() => {
     return t("digimon.status.healthy");
   }
 
-  return t(`digimon.debuff.${DigimonDebuffConstant[enemyCondition.value]}.affected`);
+  return DigimonBattlePresenter.getActiveDebuffs(enemyCondition.value)
+    .map((debuff) => t(`digimon.debuff.${debuff}.affected`))
+    .join(", ");
 });
 
 const canOpenWiki = computed(() => {

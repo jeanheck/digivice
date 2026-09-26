@@ -1,5 +1,4 @@
 import type { Digimon } from "@/models";
-import { Constant } from "@/constants/constant";
 import {
   AttributesConverter,
   type AttributesEquipmentBonuses,
@@ -59,12 +58,12 @@ export class StatsPresenter {
     rawEquipments: EquipmentRaw[],
   ): AttributesEquipmentBonuses {
     return {
-      strength: EquipmentService.calculateBonus(Constant.strength, rawEquipments),
-      defense: EquipmentService.calculateBonus(Constant.defense, rawEquipments),
-      spirit: EquipmentService.calculateBonus(Constant.spirit, rawEquipments),
-      wisdom: EquipmentService.calculateBonus(Constant.wisdom, rawEquipments),
-      speed: EquipmentService.calculateBonus(Constant.speed, rawEquipments),
-      charisma: EquipmentService.calculateBonus(Constant.charisma, rawEquipments),
+      strength: EquipmentService.calculateBonus("strength", rawEquipments),
+      defense: EquipmentService.calculateBonus("defense", rawEquipments),
+      spirit: EquipmentService.calculateBonus("spirit", rawEquipments),
+      wisdom: EquipmentService.calculateBonus("wisdom", rawEquipments),
+      speed: EquipmentService.calculateBonus("speed", rawEquipments),
+      charisma: EquipmentService.calculateBonus("charisma", rawEquipments),
     };
   }
 
@@ -72,13 +71,13 @@ export class StatsPresenter {
     rawEquipments: EquipmentRaw[],
   ): ResistancesEquipmentBonuses {
     return {
-      fire: EquipmentService.calculateBonus(Constant.fire, rawEquipments),
-      water: EquipmentService.calculateBonus(Constant.water, rawEquipments),
-      ice: EquipmentService.calculateBonus(Constant.ice, rawEquipments),
-      wind: EquipmentService.calculateBonus(Constant.wind, rawEquipments),
-      thunder: EquipmentService.calculateBonus(Constant.thunder, rawEquipments),
-      machine: EquipmentService.calculateBonus(Constant.machine, rawEquipments),
-      dark: EquipmentService.calculateBonus(Constant.dark, rawEquipments),
+      fire: EquipmentService.calculateBonus("fire", rawEquipments),
+      water: EquipmentService.calculateBonus("water", rawEquipments),
+      ice: EquipmentService.calculateBonus("ice", rawEquipments),
+      wind: EquipmentService.calculateBonus("wind", rawEquipments),
+      thunder: EquipmentService.calculateBonus("thunder", rawEquipments),
+      machine: EquipmentService.calculateBonus("machine", rawEquipments),
+      dark: EquipmentService.calculateBonus("dark", rawEquipments),
     };
   }
 

@@ -1,3 +1,4 @@
+import type { DigimonDebuff } from "@/constants/digimon-debuff.constant";
 import { DigimonStatusConstant } from "@/constants/digimon-status.constant";
 import type { Digimon, InBattle, Vital } from "@/models";
 import { DigimonRepository } from "@/repositories/digimon.repository";
@@ -27,5 +28,9 @@ export class ProfilePresenter {
 
   public static getStatus(condition: number, hp: Vital): DigimonStatusConstant {
     return DigimonService.getStatus(condition, hp);
+  }
+
+  public static getActiveDebuffs(condition: number): DigimonDebuff[] {
+    return DigimonService.getActiveDebuffs(condition);
   }
 }

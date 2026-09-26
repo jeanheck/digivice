@@ -1,9 +1,9 @@
-import type { LocationRegionConstant } from "@/constants/location-region.constant";
+import type { LocationRegion } from "@/types/location-region.type";
 
 export interface LocationViewModel {
   id: string;
   image: string;
   enemies: string[];
-  region: LocationRegionConstant;
+  region: LocationRegion;
   dock: boolean;
 }

@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
-import { HealthStatus, type State } from "@/models";
+import type { HealthStatus, State } from "@/models";
 import type { HealthDTO } from "@/events/dto/health.dto";
 import type { StateDTO } from "@/events/dto/state.dto";
 import type { PlayerDTO } from "@/events/dto/player.dto";
@@ -31,13 +31,13 @@ import { NpcsSyncer } from "./syncers/npcs.syncer";
 
 export const useGameStore = defineStore("game", () => {
   const isConnectedWithBackend = ref(false);
-  const healthStatus = ref<HealthStatus>(HealthStatus.Loading);
+  const healthStatus = ref<HealthStatus>("Loading");
   const backendProcessFailed = ref(false);
   const lastHubConnectionError = ref<string | null>(null);
   const lastErrorCode = ref<string | null>(null);
   const lastErrorDetail = ref<string | null>(null);
   const isConnected = computed(() => {
-    return isConnectedWithBackend.value && healthStatus.value === HealthStatus.Healthy;
+    return isConnectedWithBackend.value && healthStatus.value === "Healthy";
   });
   const currentState = ref<State | null>(null);
 
@@ -77,13 +77,13 @@ export const useGameStore = defineStore("game", () => {
   function syncHealth(healthDto: HealthDTO): void {
     healthStatus.value = healthDto.status;
 
-    if (healthDto.status === HealthStatus.Healthy) {
+    if (healthDto.status === "Healthy") {
       lastErrorCode.value = null;
       lastErrorDetail.value = null;
       return;
     }
 
-    if (healthDto.status === HealthStatus.Loading) {
+    if (healthDto.status === "Loading") {
       lastErrorCode.value = null;
       lastErrorDetail.value = null;
       return;

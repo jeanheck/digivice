@@ -1,6 +1,5 @@
 import { computed } from "vue";
 import { useGameStore } from "@/stores/use-game-store";
-import { HealthStatus } from "@/models";
 import type { AppHealthyScreenViewModel } from "@/viewmodels/app-healthy/app-healthy-screen.viewmodel";
 import { EmulatorConnectionErrorHelper } from "@/events/helpers/emulator-connection-error.helper";
 
@@ -25,7 +24,7 @@ export function useAppHealthyScreen() {
       };
     }
 
-    if (store.healthStatus === HealthStatus.Loading) {
+    if (store.healthStatus === "Loading") {
       return {
         kind: "loading",
         titleKey: "errors.loading.title",
@@ -33,7 +32,7 @@ export function useAppHealthyScreen() {
       };
     }
 
-    if (store.healthStatus === HealthStatus.Error) {
+    if (store.healthStatus === "Error") {
       const { titleKey, hintKey } = EmulatorConnectionErrorHelper.resolveErrorKeys(
         store.lastErrorCode,
       );

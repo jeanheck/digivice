@@ -1,10 +1,10 @@
 import type { SearchItemKind, SearchItemViewModel } from "@/viewmodels/search/search-item.viewmodel";
 
-const WILD_ENEMY_CONTEXT_KEY = "enemy.searchContext.wild";
+const WildEnemyContextKey = "enemy.searchContext.wild";
 
 export class SearchItemSortHelper {
   private static getGroupPriority(item: SearchItemViewModel): number {
-    if (item.kindLabelKey === WILD_ENEMY_CONTEXT_KEY) {
+    if (item.kindLabelKey === WildEnemyContextKey) {
       return 0;
     }
 
